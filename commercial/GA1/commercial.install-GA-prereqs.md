@@ -53,7 +53,7 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
 * An installer system to run the baremetal install and host the seed VM with the following configuration:
 
-    * A minimum of 8 GB of physical memory
+    * A minimum of 16 GB of physical memory
     * A minimum of 100 GB of disk space
     * Virtualization enabled 
     * Ubuntu 14.04 installed
@@ -195,6 +195,8 @@ Before starting the installation, you must first install the following required 
 * openvswitch
 * libvirt
 * python-libvirt
+
+On systems running Ubuntu 14.04, qemu-kvm is also required.
 
 Use the following command to install these packages:
 

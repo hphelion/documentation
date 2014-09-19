@@ -107,6 +107,8 @@ After you have installed HP StoreVirtual VSA, make sure you have met all the har
 
 ### Configure proxy information {#proxy}
 
+***QUESTION: This was in beta install. Still needed in GA???***
+
 Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
 
 1. Log in to your install system as root:
@@ -160,6 +162,8 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 4. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload the file to `/root`.
 
+	***QUESTION: Must use IPMI user vs ILO user in beta?***
+
 		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
 	**Notes**: 
@@ -179,23 +183,134 @@ Before you begin your installation, if necessary, configure the proxy informatio
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-4. Make sure the information in the [JSON configuration file](/helion/openstack/ga/install/json/) file is correct and complete.
 
-	The JSON configuration file must be named `overcloud-config.json` and saved to the `/root/tripleo/tripleo-incubator/scripts/ee-config.json /root/ directory`.
+4. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
-		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start#ee_ga_ironic_quick_start-BaremetalInstall.***
 
-5. Apply the JSON configuration file.
-
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
-6. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
-
-7. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
+6. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-8. To install and configure the undercloud and overcloud, run the following command from /root. 
+7. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands.
+
+	To set these variables:
+
+		export OVERCLOUD_NTP_SERVER=192.0.1.128
+		export UNDERCLOUD_NTP_SERVER=192.0.1.128
+
+4. The `BRIDGE_INTERFACE` must be set to the name of the device connected to the private network that connects all baremetal nodes. This private network is also where these nodes PXE boot. The installation script assumes this device name is `eth0`. If your device is NOT named `eth0`, then determine its name and set the environment variable as shown below:
+
+	***QUESTION: Still required? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start#ee_ga_ironic_quick_start-BaremetalInstall.***
+
+	To set this variable:
+
+		export BRIDGE_INTERFACE=<devicename>
+
+	For example:
+
+		export BRIDGE_INTERFACE=eth5
+
+8. The `FLOATING_START`, `FLOATING_END`, and `FLOATING_CIDR` variables control the range of IP addresses available for user VMs in the overcloud. You cannot have any active IP addresses within the Floating IP range. Complete the following steps to ensure the VSA IP does not land in this range.
+
+	Currently, the defaults are set as below and can be changed with the `export` command.
+
+	To set this variable:
+
+		export FLOATING_START=192.0.2.45
+		export FLOATING_END=192.0.2.254
+		export FLOATING_CIDR=192.0.2.0/24
+
+	*** QUESTION: Are statements in A, B and C accurate?***
+
+	A. VSA uses 192.0.2.253. change the `FLOATING_END` to 192.0.2.200. If necessary, also change the `FLOATING_START` and `FLOATING_CIDR`. 
+
+	B. Ensure the VSA system IP address is on the same network.
+
+	C. Ensure the Floating IP range does not include the IP addresses that have been used for systems running VSA.
+
+	**IMPORTANT**: If the VSA IP is within the Floating IP range, the last step of the installation fails.
+
+9. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Networking Operations service external traffic on your overcloud and undercloud. By default, it is `eth2`. The following example sets the value of the variable to `eth0`.
+
+	To set these variables:
+
+		export OVERCLOUD_NeutronPublicInterface=eth0
+		export UNDERCLOUD_NeutronPublicInterface=eth0   
+
+10. [Optional] You can configure a second network for API traffic and for the floating IP pool by setting `OVERCLOUD_NeutronPublicInterface` to a physically configured VLAN. 
+
+	To set these variables:
+
+		export OVERCLOUD_NeutronPublicInterface=vlan101 (ID of physically configured VLAN)
+		export NeutronPublicInterfaceIP=192.0.8.2/21
+		export NeutronPublicInterfaceRawDevice=eth0
+		export NeutronPublicInterfaceDefaultRoute=192.0.8.1
+		export FLOATING_START=192.0.8.20
+		export FLOATING_END=192.0.15.254
+		export FLOATING_CIDR=192.0.8.0/21
+
+11. Set `OVERCLOUD_COMPUTESCALE` to the number of overcloud compute nodes to deploy. 
+
+	If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud controller, and overcloud swift nodes are removed.
+
+	To set this variable:
+
+		export OVERCLOUD_COMPUTESCALE=<nodes>
+
+13. Set `OVERCLOUD_CINDER_LVMLOOPDEVSIZE` to change the size of the loopback device on your partition on the overcloud control node used to hold Volume Operations service volumes. For example, set this value higher if you plan to create snapshots of large bootable volumes. 
+
+	The partition is a shared device, so the loopback device should not occupy the entire partition. The partition size is calculated as (approximately) diskspace_GB (from baremetal.csv) less root partition size of 30GB.
+
+	The default Cinder LVM LOOP device size is set to 50000 (MB). 
+
+	To set this variable:
+
+		export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=<size_MB>
+
+14. Set `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` to assign a unique identifier. If you plan to run multiple installations of HP Helion OpenStack on the same network, each installation must be configured with a unique ID. The default value, if unset, is 51.
+
+	HP Helion OpenStack uses keepalived to manage virtual IPs. keepalived uses these unique IDs to synchronise its activities. 
+
+	To set this variable:
+
+		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=<ID>
+
+15. Set `OVERCLOUD_VSASTORAGESCALE` to determine the number of VSA nodes configured.
+
+	To set this variable:
+
+		export OVERCLOUD_VSASTORAGESCALE=5
+
+12. To enable HP StoreVirtual VSA, update the `tripleo/tripleo-incubator/scripts/configure_installer.sh` file in the seed with the VSA cluster information. You must change the configuration based on your specifications.
+
+	***QUESTION: Still required? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start#ee_ga_ironic_quick_start-BaremetalInstall.***
+
+	To set these variables:
+
+		export ENABLE_VSA="True"
+		export VSA_API_URL="https://XXX.XXX.XXX.XXX:8081/lhos"
+		export VSA_USERNAME="<user name>"
+		export VSA_PASSWORD="<password>"
+		export VSA_NAME="<cluster name>"
+		export VSA_ISCSI_CHAP_ENABLED="False"
+		export VSA_DEBUG="False"
+
+    * **ENABLE_VSA** - Change to `True` to enable HP StoreVirtual VSA configuration. By default the value is `False`.
+    
+    * **VSA_API_URL** - Enter the IP address used to access your VSA cluster. 
+    
+    * **VSA_USERNAME** - Enter the cluster user name.
+    
+    * **VSA_PASSWORD** - Enter the cluster password.
+    
+    * **VSA_NAME** - Enter the name of the cluster.
+    
+    * **VSA&#95;ISCSI&#95;CHAP_ENABLED** - Change to `True` if you want to enable CHAP authentication.
+    
+    * **VSA_DEBUG** - By default the value is `False`; to enable debugging, change to `True`.
+
+13. To install and configure the undercloud and overcloud, run the following command from /root. 
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 

@@ -230,7 +230,7 @@ The following hardware is supported for Helion OpenStack:
 ## Hardware and network configuration {#baremetal}
 You must have the following hardware and network configuration:
 
-* At least 5 and up to 30 baremetal systems meeting the requirements in the table below. Additional requirements are as follows:
+* At least 7 and up to 30 baremetal systems meeting the requirements in the table below. Additional requirements are as follows:
 
     * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
     * Capable of hosting VMs
@@ -268,6 +268,8 @@ You must have the following hardware and network configuration:
 
     * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
+	* The seed VM, the baremetal systems, and the BMC (IPMI controller) for all baremetal systems must be on a common network.
+
     * If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 
     * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
@@ -291,7 +293,7 @@ You must have the following hardware and network configuration:
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>8 GB - Memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host. </td>
+<td>16 GB - Memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host. </td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
