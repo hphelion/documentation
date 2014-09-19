@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Documentation"
+title: "HP Helion Development Platform Documentation for System Administrators"
 permalink: /helion/devplatform/sysadmin/
 product: devplatform
 

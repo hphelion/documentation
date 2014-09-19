@@ -27,29 +27,34 @@ PageRefresh();
 
 The EON client CLI package provides a http-client coupled command line tool for managing Eon (Esx management) services.
  
+
 You can use the following command using the EON Client CLI package in the UnderCloud:
 
 
-* [Help](#help)
+* [Help command](#help)
 
 * [API command](#api-command)
 
-* [vCenter Commands](#vcenter-commands)
+* [vCenter commands](#vcenter-commands)
 
-* [Cluster Commands](#cluster-commands)
+* [Cluster commands](#cluster-commands)
 
 * [Proxy commands](#proxy-command)
- 
-###Help {#help}
 
-You can display the help of this program or one of its sub-programs
+* [Options commands](#optional-commands)
+ 
+##Help command{#help}
+
+###Help
+
+You can display the help of this program or one of its sub-programs.
 
    	`eon --help `
 
 
-##Help subcommand
+###Help subcommand
 
-You get two sets of arguments- Positional arguments(mandatory) and Option(all mandatory fields are marked within **[Required]**)
+You get two sets of arguments- Positional (mandatory) and Options(all mandatory fields are marked within *[Required]*).
 
     eon help <sub-command> 
 
@@ -57,7 +62,7 @@ You get two sets of arguments- Positional arguments(mandatory) and Option(all ma
 You can use the following commands to view the help .
 
 
-##API Command {#api-command}
+##API command {#api-command}
 
 ### Bash-completion {#bash-completion}
 
@@ -66,7 +71,7 @@ Prints all of the commands and options to the standard output.
 		eon bash-completion
 
 
-##vCenter Commands{#vcenter-commands}
+##vCenter commands{#vcenter-commands}
 
 ### Add vCenter {#add-vcenter}
 
@@ -180,6 +185,41 @@ Recreates the Compute Proxy virtual machine with a previously activated clusters
 You can view the list of compute proxy.
 
 		compute-proxy-list
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+##Options commands {#optional-commands}
+
+
+###OS username {#os-username}
+Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
+  
+	--os-username OS_USERNAME
+                        
+ 
+###OS password{#os-password}
+Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
+	
+	 --os-password OS_PASSWORD
+                       
+ 
+###OS tenant ID{#os-tenant-id}
+Tenant identification of the OpenStack. Defaults to env[OS&#095;TENANT&#095;ID].
+
+	--os-tenant-id OS_TENANT_ID
+                                           
+ 
+###OS authentication URL{#os-auth-url}
+Authentication URL of OpenStack. Defaults to env[OS&#095;AUTH&#095;URL].
+ 
+	 --os-auth-url OS_AUTH_URL
+
+###OS authenticationtoken{#os-auth-token}
+Authentication token of OpenStack. Defaults to env[OS&#095;AUTH&#095;TOKEN].
+
+  	--os-auth-token OS_AUTH_TOKEN
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

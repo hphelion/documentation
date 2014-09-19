@@ -101,8 +101,7 @@ See [*Kato Command
 Reference*](/als/v1/admin/reference/kato-ref/#kato-command-ref) for a full list
 of options.
 
-The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP
-servers to help HP improve the web console experience. You can disable this by setting `theme_settings['pingback_allowed'] = false;` in the *settings.js* file described in the [*Theming and
+The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help HP improve the web console experience. You can disable this by setting `theme_settings['pingback_allowed'] = false;` in the *settings.js* file described in the [*Theming and
 Customization*](/als/v1/admin/console/customize/#customize) section.
 
 Welcome[](#welcome "Permalink to this headline")
