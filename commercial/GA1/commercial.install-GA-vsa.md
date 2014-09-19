@@ -105,8 +105,6 @@ Cinder API is a REST based interface to perform volume operations. As an end-use
 11.	Copy volumes to images
 12.	Volume migration(backend assisted).
 
-
-
 ### Scheduler {#scheduler}
 
 The Cinder Scheduler tracks various backend capabilities and chooses the backend to place a new volume on. There are various configurable plugins for the scheduler. Filter scheduler has filters and weighers which help in deciding the backend to be used for a new volume request. The selection criteria includes the filters like- volume type, available free space, QoS specs, Extra specs etc. Scheduler ensures that the volumes are uniformly spread across all available backend StoreVirtual Management Groups.
@@ -148,7 +146,7 @@ Differentiated storage offerings based on performance and quality can be realize
 <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
 
 ###Prerequisites {#prerequisite-vsa}
-Ensure the following prerequisites are fulfilled before VSA Storage systems are deployed.
+Ensure the following prerequisites are fulfilled before VSA Storage systems are deployed:
 
 * Dedicated hardware identified for StoreVirtual VSA storage systems
 

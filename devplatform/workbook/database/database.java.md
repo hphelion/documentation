@@ -1,17 +1,28 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Hello World Sample"
+title: "HP Helion Development Platform Workbook Java Database Sample"
 permalink: /helion/devplatform/workbook/database/java/
 product: devplatform
 
 ---
 #JAVA Database
 
+This is a simple Servlet-based Java webapp that uses MySQL. 
 
 This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/java/) sample, please do that one first.
 
 
 ## Prerequisites
+**MySQL**
+
+If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
+
+- Go to the Administrative console (e.g. *https://api.15.126.212.172.xip.io*, substitute your own instance's link)
+- On the **Admin** tab, click **Cluster**.
+- Click the **Settings** icon (a gear icon in the upper right corner)
+- The **MySQL** check box should be checked. If it is not, check it.
+- Click **Save**.
+
 **Stackato**
 
 1. You must have a Stackato instance available. 
@@ -31,7 +42,7 @@ The simplest way to install Maven is:
 
 	sudo apt-get install maven 
 ##Download the Application Files
-Download the files 
+[Download](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-java) the application files. 
 ###About the Application Files
  The `pom.xml` file 
 in the root directory is used by Maven to build the application.

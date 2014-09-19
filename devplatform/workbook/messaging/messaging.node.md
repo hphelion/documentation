@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Hello World Sample"
+title: "HP Helion Development Platform Workbook Node Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/node/
 product: devplatform
 
@@ -42,4 +42,4 @@ To deploy the application, make sure you are logged in successfully for your des
 5. In the upper right-hand corner, click **View App**.
 6. You should see a page that will accept a user's message.
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/node/) | [Next Sample](/helion/devplatform/workbook/database/node/)
+[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/node/)
