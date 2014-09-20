@@ -20,15 +20,15 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install/vsa/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/ovsvapp/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Installing and Configuring the ESX Hypervisor
+# HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
-HP Helion OpenStack can be installed on a VMware ESX bare-metal or virtual hypervisor. This document provides installation instructions for HP Helion OpenStack Edition preview on a suitably specified and prepared system.
+HP Helion Openstack allows you to manage the ESX hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition on a suitably specified and prepared system.
 
 HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
 ## Installing HP Helion OpenStack ## {#install}
 
-The installation and configuration process for ESX consists of the following general steps: 
+The installation and configuration process for CLOUD_TYPE ESX consists of the following general steps:
 
 * [Verify Prerequisites](#pre)
 * [Review the ESX deployment architecture](#deploy-arch)
@@ -68,7 +68,6 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-***QUESTION: New files names?***
 <table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
@@ -76,6 +75,10 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 <td><b> Installation package </b></td><td><b>File name</b></td>
 <tr style="background-color: white; color: black;">
  <td>HP Helion OpenStack</td><td>HPHelionOpenStack.tgz</td></tr>
+<tr style="background-color: white; color: black;">
+ <td>HP Helion OpenStack vCenter Proxy Appliance</td><td>overcloud_vcenter_compute_proxy.ova</td></tr>
+ <td>HP Helion OpenStack VCN Agent Appliance</td><td>overcloud-esx-ovsvapp.ova</td></tr>
+
 </table>
 
 
@@ -83,7 +86,6 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
-* [Configuring proxy information](#proxy)
 * [Unpacking installation file](#unpackinstall)
 * [Installing the seed VM and building your cloud](#startseed)
 
@@ -102,7 +104,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 3.  Extract the installation package to the `work` directory:
 
-		tar zxvf /root/<kit name>.tgz
+		tar zxvf /root/HPHelionOpenStack.tgz
 
 	This creates and populates a `tripleo/` directory within `work' directory.
 
@@ -120,14 +122,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 		ssh root@192.0.2.1
 
-3. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload the file to `/root`.
-
-
-	***QUESTION: Must use IPMI user vs ILO user in beta?***
-
+3. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#csv/) file is correct and in the following format and upload the file to `/root`.
+4. 
 		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
-	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. For example, your file should look similar to the following:
+	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly six lines for the ESX installation. For example, your file should look similar to the following:
 
 		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
 		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
@@ -138,16 +137,14 @@ Make sure you have met all the hardware requirements and have completed the requ
     
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-4. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
-
-	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/Cloud+type+ESX+installation.***
-
+4. [Optional] Use ipmitool to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
 5. Manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
     
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-6. Release floating IP addresses for networking.
+	<!-- Remove per Divakar??
+	6. Release floating IP addresses for networking.
 
 	***QUESTION: More info needed on how to determine the IP range??***
 
@@ -158,7 +155,8 @@ Make sure you have met all the hardware requirements and have completed the requ
 		# export FLOATING_START=<Start IP Address>
 		# export FLOATING_END=<End IP Address>
 
-	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
+	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range. 
+-->
 
 7. Set `OVERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for overcloud hosts. 
 
@@ -181,7 +179,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
-10. Set the installation type to ESX.
+10. Set the `OVERCLOUD_CLOUD_TYPE` to ESX
 
 	To set this variable:
 
@@ -192,16 +190,16 @@ Make sure you have met all the hardware requirements and have completed the requ
 	To set these variables:
 
 		export PROVIDER_NETWORK="192.168.10.0/24"
-		export OVERCLOUD_VIRTUAL_INTERFACE=eth0
+		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
 		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
 		export VLAN_RANGE="200:300"
 
 	**Where:**
 	
-	- `PROVIDER_NETWORK` is the 
-	- `OVERCLOUD_VIRTUAL_INTERFACE` in the 
-	- `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` is the 
-	- `VLAN_RANGE` is the 
+	- `PROVIDER_NETWORK` is the ESX Management Network
+	- `OVERCLOUD_VIRTUAL_INTERFACE` is the keep alive interface for HA 
+	- `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` is a unique identifier. If you plan to run multiple installations of HP Helion OpenStack on the same network, each installation must be configured with a unique ID. The default value, if unset, is 51.  HP Helion OpenStack uses keepalived to manage virtual IPs. keepalived uses these unique IDs to synchronise its activities.
+	- `VLAN_RANGE` is the tenant networks allocation range 
 
 	**For example**:
 
@@ -250,9 +248,9 @@ Make sure you can access the undercloud Horizon dashboard. To do this, follow th
 
 5. From your install system, open a web browser and point to:
 
-		http://<undercloud_IP>/icinga/
+		http://<undercloud_IP>
 
-6. Log in as user 'admin' with the admin password.
+6. Log in as user 'admin' with the admin password from step 4.
 
 ### Connect to the overcloud Horizon console ### {#connectconsole}
 
@@ -264,32 +262,33 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 2. Export the undercloud users.
 
-		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc
 
 3. Assign the overcloud IP address to a variable.
 
-		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}')
+		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json)
 
-4. With the IP address and root password, log in as the main user, root using the following command 
+	<!-- Remove per Divaker
+	4. With the IP address and root password, log in as the main user, root using the following command 
 
 		ssh root@${DEMO_IP}
 
-	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`.
+	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`. -->
 
 5. From your install system, open a web browser and point to.
 
 		http://<overcloud_IP>/
 
-6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
+6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 1.
 
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
 ## Next Steps
 
-- Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
+- Deploy vCenter ESX Compute proxy **(REQUIRED)**
 
-	To deploy vCenter Nova-Compute proxy into a cloud deployment a set of automated step is available through the scripts. But there are few manual steps still needed to bring up Nova-Compute proxy VM.
+	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor APIs.
 
 	See [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
 
