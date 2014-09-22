@@ -26,23 +26,23 @@ PageRefresh();
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations.
 
-* [Deployment architecture](#deploy-arch)
-* [Supported hardware](#supportedhw)
+* [Deployment Architecture](#deploy-arch)
+* [Supported Hardware](#supportedhw)
 * [Hardware and network configuration](#baremetal)
 * [Usable capacity](#usable-capacity)
 * [Physical network architecture](#physical-network-architecture)
 * [Software requirements](#software-requirements)
 
-##Deployment architecture {#deploy-arch}
+##Deployment Architecture {#deploy-arch}
 
 The following diagrams depict simplified deployment scenarios:
 
 * <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
 * <a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
 
-## Supported hardware ## {#supportedhw}
+## Supported Hardware ## {#supportedhw}
 
-The following hardware is supported for Helion OpenStack:
+HP supports the following hardware for Helion OpenStack:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
@@ -227,7 +227,7 @@ The following hardware is supported for Helion OpenStack:
 </table>
 
 
-## Hardware and network configuration {#baremetal}
+## Hardware and Network Configuration {#baremetal}
 You must have the following hardware and network configuration:
 
 * At least 7 and up to 30 baremetal systems meeting the requirements in the table below. Additional requirements are as follows:
@@ -407,7 +407,7 @@ You must have the following hardware and network configuration:
 </table>
 
 <!--
-### Hardware configuration
+### Hardware Configuration
 The following table shows the minimum recommendations for hardware by node type.
 
 <table style="text-align: left; vertical-align: top;">
@@ -494,7 +494,7 @@ The following table shows the minimum recommendations for hardware by node type.
 </table>
 -->
 
-## Usable capacity
+## Usable Capacity
 
 The following table maps the minimum server configuration into usable capacity of the overcloud.
 
@@ -533,7 +533,7 @@ or
 </table>
 
 <!--
-## Storage requirements
+## Storage Requirements
 
 The following table provides the storage requirements for the HP StoreVirtual (VSA). LHN OS 11.5 supports the following platforms:
 
@@ -577,7 +577,7 @@ The following table provides the storage requirements for the HP StoreVirtual (V
 <!--VSA 11.5 GA will only support ESX & HyperV flavors via public portal.
 VSA KVM support is being qualified with Ubuntu and hLinux but will NOT be published for general consumption till September when they complete qualification with other distros including SUSE and Red Hat-->
 
-## Physical network architecture
+## Physical Network Architecture
 This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
 
 - Physical network ports on each server
@@ -674,7 +674,7 @@ For detailed information, see the [Reference architecture](/helion/openstack/ga/
 
 </table>
 
-## Software requirements
+## Software Requirements
 
 Ubuntu 13.10/14.04 with the following package versions.
 
