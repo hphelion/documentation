@@ -270,6 +270,99 @@ Follow the steps described on the Quick Start Install wiki page to deploy the ov
 
 		service apache2 restart
 
- 
+Sample `overcloud_keystone_ldap.json` configuration file for openLDAP server
 
- 
+	 {
+
+     "keystone": {
+         "config": [
+             {
+                 "section": "identity",
+                 "values": [
+                     {
+                         "option": "driver",
+                         "value": "keystone.identity.backends.ldap.Identity"
+                     }
+                 ]
+             },
+             {
+                 "section": "assignment",
+                 "values": [
+                     {
+                         "option": "driver",
+                         "value": "keystone.assignment.backends.sql.Assignment"
+                     }
+                 ]
+             },
+             {
+                 "section": "ldap",
+                 "values": [
+                     {
+                         "option": "url",
+                         "value": "ldap://10.1.5.208"
+                     },
+                     {
+                         "option": "suffix",
+                         "value": "dc=hpswlabs,dc=apps,dc=hp,dc=com"
+                     },                   
+                     {
+                         "option": "user_tree_dn",
+                         "value": "ou=people,dc=hpswlabs,dc=apps,dc=hp,dc=com"
+                     },
+                     {
+                         "option": "user_objectclass",
+                         "value": "person"
+                     },
+                     {
+                         "option": "user_id_attribute",
+                         "value": "uid"
+                     },
+                     {
+                         "option": "user_name_attribute",
+                         "value": "uid"
+                     },                   
+                     {
+                         "option": "user_allow_create",
+                         "value": "False"
+                     },
+                     {
+                         "option": "user_allow_update",
+                         "value": "False"
+                     },
+                     {
+                         "option": "user_allow_delete",
+                         "value": "False"
+                     },                   
+                     {
+                         "option": "group_tree_dn",
+                         "value": "ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com"
+                     },
+                     {
+                         "option": "group_objectclass",
+                         "value": "posixGroup"
+                     },
+                     {
+                         "option": "group_id_attribute",
+                         "value": "cn"
+                     },
+                     {
+                         "option": "group_name_attribute",
+                         "value": "cn"
+                     },                   
+                     {
+                         "option": "use_tls",
+                         "value": "False"
+                     }
+                     {
+                         "option": "tls_req_cert",
+                         "value": "never"
+                     },
+                     {
+                         "option": "use_pool",
+                         "value": "True"
+                     }
+                 ]
+             }
+         ]
+     }
+	}
