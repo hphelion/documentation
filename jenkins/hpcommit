@@ -1,5 +1,5 @@
 #!/bin/bash -li
-#Author: greg.larsen@hp.com 22 Sept 2014
+#Author: greg.larsen@hp.comi   22 Sept 2014
 
 SOURCEVERSION=`sed -n '6p' <   ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
 #The THISVERSION line, below must remain line 6.
