@@ -1,4 +1,4 @@
-[Bbeta]
+[Bb]eta
 BETA
 Openstack
  the the 
