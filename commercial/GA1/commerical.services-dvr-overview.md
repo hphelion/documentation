@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
 
-# HP Helion OpenStack&#174; Distributed Virtual Routing (DVR) Overview and Configuration#
+# HP Helion OpenStack&#174; Distributed Virtual Routing (DVR) Overview
 
 Distributed Virtual Routing (DVR) allows you to define connectivity among different VNS as well as connectivity between VNS hosts and the external network. 
 
@@ -31,8 +31,10 @@ A distributed virtual router is conceptually a single entity, but it is implemen
 
 HP Helion OpenStack provides Distributed Virtual Routing to the cloud users. 
 
+For more details, refer to [OpenStack Neutron/DVR](//https://wiki.openstack.org/wiki/Neutron/DVR/HowTo).
 
-To configure and enable the DVR, modify the following files:
+
+<!---To configure and enable the DVR, modify the following files:
 
 
 
@@ -68,7 +70,7 @@ To enable distributed routing this flag is enabled. It can be either **True** or
 
 This is disabled by default.
 
-**Note**: Only Cloud Administrators can deploy or set the default router types (**Legacy**, **Centralized** or **Distributed**). User cannot control the type of routers that are created.
+**Note**: Only Cloud Administrators can deploy or set the default router types (**Legacy**, **Centralized** or **Distributed**). User cannot control the type of routers that are created.-->
 
 ----
 ####OpenStack trademark attribution

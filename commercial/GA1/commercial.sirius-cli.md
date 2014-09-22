@@ -22,7 +22,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
 # Configuring Your Storage Using Sirius
-Once you complete the Undercloud and Overcloud installation, you can use Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides a http-client coupled command line tool for managing Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps in configuring the storage devices such as StoreVirtual and StoreServ using Cinder as the backend.
+Once you complete the Undercloud and Overcloud installation, you can use Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides a http-client coupled command line tool for managing Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps in configuring the storage devices such as StoreVirtual and StoreServ as the backend for Cinder .
 
 
 To get the list of all the Sirius commands, commands You can use the Help command to get the list of commands that can used in Sirius.  
@@ -51,14 +51,14 @@ You can display the help of this program or one of its sub-programs
 	sirius --help
 
 
-### Help Subcommand
+### Help subcommand
 
 You get two sets of arguments- Positional(mandatory) and Options (all mandatory fields are marked within [*Required*])
 
 	sirius help <sub-command>
 
 
-## API commands {#api-commands} ##
+## API Commands {#api-commands} ##
 
 ### Get block info ###
 
@@ -67,12 +67,6 @@ You can list the block storage details of API version.
 
 	Sirius block-info
 
-### Supported devices###
-
-You can list the devices supported by Sirius API.
-
-	sirius supported-devices
-
 ### Bash Completetion
 
 You can prints all the commands and options to standard output
@@ -80,75 +74,76 @@ You can prints all the commands and options to standard output
 	sirius bash-completion
 
 
+### Supported devices###
+
+You can list the devices supported by Sirius API.
+
+	sirius supported-devices
+
+
+
+
 ## HP StoreVirtual commands {#storevirtual-commands}
 
-### Register VSA cluster ###
 
-You can register the VSA Cluster to Sirius database. This command requires all the arguments, else the user is prompted for the same.
+### List StoreVirtual cluster 
 
-	sirius register-vsa-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+You can list the clusters in StoreVirtual which are registered with Sirius.
 
-### List VSA cluster 
+	sirius storevirtual-cluster-list
 
-You can list the clusters in VSA which are registered with Sirius.
-
-	sirius vsa-cluster-list
-
-### Show VSA cluster  ###
+### Show StoreVirtual cluster  ###
 
 You can display the details of a particular cluster.
 
-	sirius vsa-cluster-show <CLUSTER_ID>
+	sirius storevirtual-cluster-show <CLUSTER_ID>
+
+### Register StoreVirtual cluster ###
+
+You can register the StoreVirtual Cluster to Sirius database. This command requires all the arguments, else the user is prompted for the same.
+
+	sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 
-### Update VSA cluster ###
+### Update StoreVirtual cluster ###
 
-You can update the VSA cluster in Sirius database. Only the CLUSTER_ID is  a mandatory argument.
+You can update the StoreVirtual cluster in Sirius database. Only the CLUSTER_ID is  a mandatory argument.
 
-	sirius update-vsa-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
+	sirius update-storevirtual-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
 
-### Delete VSA cluster ###
+### Delete StoreVirtual cluster ###
 
-You can unregister the specified VSA cluster from the Sirius database.
+You can unregister the specified StoreVirtual cluster from the Sirius database.
 
-	sirius delete-vsa-cluster <CLUSTER_ID>
+	sirius delete-storevirtual-cluster <CLUSTER_ID>
 
-### Add VSA backend
+### List StoreVirtual backend
 
-You can add a VSA backend
+Lists the StoreVirtual backends registered to Sirius
 
-    sirius add-vsa-backend <BACKEND ID?>
+	sirius storevirtual-backend-list
 
- 
+### Backend show                        
+    
+ Shows the information about specific backend
 
+	sirius backend-show        
+                       
+### Add StoreVirtual backend
 
-## HP StoreServ commands ##
+You can add a StoreVirtual backend
 
-### Register StoreServ ###
+    sirius add-storevirtual-backend <BACKEND_ID>
 
-You can register the StoreServ to Sirius.
+### Delete StoreVirtual backend
 
-	sirius register-storeserv --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
+Unregister StoreVirtual backend
 
+    sirius delete-storevirtual-backend <BACKEND_ID>
+                        
+	
 
-**Note:** 
-
-*Additional arguments*: --iscsi-ip <ISCSI_IP> [required for iSCSI type devices]
-
-register-cpg        Register the 3PAR CPGs
-
-
-### List CPG
-
-You can list all the registered 3PAR CPGs
-
-	sirius cpg-list
-
-### Show CPG
-
-You can list the 3PAR CPGs
-
-    sirius cpg-show           
+## HP StoreServ Commands ##
 
 
 ### List StoreServ  ###
@@ -171,6 +166,18 @@ You can display the details of a specific StoreServ.
 *Optional argument* --cpg-list <true/false> [Setting this to 'true' displays the available CPGs for the given StoreServ]
 
 
+### Register StoreServ ###
+
+You can register the StoreServ to Sirius.
+
+	sirius register-storeserv --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
+
+
+**Note:** 
+
+*Additional arguments*: --iscsi-ip &lt;ISCSI_IP> [required for iSCSI type devices]
+
+
 ### Update StoreServ ###
 
 You can update the StoreServ details in Sirius.
@@ -181,13 +188,40 @@ You can update the StoreServ details in Sirius.
 
 *Optional Arguments*:   --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
 
-*Additional arguments*: --iscsi-ip <ISCSI_IP> [required for iSCSI type devices]
+*Additional arguments*: --iscsi-ip &lt;ISCSI_IP> [required for iSCSI type devices]
 
 ### Delete StoreServ ###
 
 You can unregister the StoreServ from Sirius.
 
 	sirius delete-storeserv <STORESERV_ID>
+
+
+### List CPG
+
+You can list all the registered 3PAR CPGs
+
+	sirius cpg-list
+
+### Show CPG
+
+You can list the 3PAR CPGs
+
+    sirius cpg-show           
+
+### Register CPG
+
+You can register the 3PAR CPGs
+
+
+    sirius register-cpg --cpgs <CPG_UUID> [<CPG_UUID> ...] --storeserv-id <STORESERV_ID>
+     
+**Options:**
+  --cpgs <CPG_UUID> [<CPG_UUID> ...]  -- UUID(s) of the 3PAR StoreServ CPG(s) to be registered [Required].
+  
+--storeserv-id <STORESERV_ID>  --- *ID of the 3PAR StoreServ [Required]*.                    
+
+
 
 ### Delete CPG ###
 
@@ -196,26 +230,28 @@ You can unregister the 3PAR CPGs
 	sirius delete-cpg          
 
 
-### Add StoreServ Backend ###
+### Add StoreServ backend ###
 
 You can add a StoreServ backend.
 
     sirius add-storeserv-backend <BACKEND_ID?>
 
-###List Backends###
+###List backends###
 
  You can view the list of the backends registered to Sirius.
 
     sirius backend-list
                         
-###Show Backend
+###Show backend
 
 You can view the information about specific backend.
 
     sirius backend-show      
 
   
-##Optional commands
+## Required options
+
+The following options must be supplied as arguments or as environment variables.
 
 <!---###Version
 
