@@ -377,5 +377,5 @@ function newPopup(url) {
 		url,'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
 }
 </script>
-<a href="JavaScript:newPopup('/helion/openstack/ga/install/kvm/');">Open a popup window</a>
+<a href="JavaScript:newPopup('http://docs.qa1-stackato.cx.hpcloud.net/helion/openstack/ga/install/kvm/');">Open a popup window</a>
 
