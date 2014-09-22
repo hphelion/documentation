@@ -191,8 +191,8 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 
 		VCENTER_NAME is the name for the vCenter server where the proxy will deploy 
 		VCENTER_IP_ADDRESS is the IP address of the vCenter server where the proxy will deploy
-		VCENTER_USERNAME is the the username for the vCenter administrator
-		VCENTER_PASSWORD is the the password for the vCenter administrator
+		VCENTER_USERNAME is the username for the vCenter administrator
+		VCENTER_PASSWORD is the password for the vCenter administrator
 		VCENTER_PORT is the vCenter Server Port 
 		
 		**QUESTION!! What goes in these fields??**

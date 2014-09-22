@@ -623,7 +623,7 @@ This is a full and feature-rich OpenStack installation.
 
 ####How do I install the overcloud? #### {#installOC}
 
-####How do I verify the functionality of the overcloud?? #### {#verifyOC}
+####How do I verify the functionality of the overcloud? #### {#verifyOC}
 
 ####How do I deploy a software update to the overcloud? #### {#updateOC}
 

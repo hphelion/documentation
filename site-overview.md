@@ -33,7 +33,7 @@ You may have already noticed that the site has multiple methods for navigating; 
     - [**Community**](https://community.hpcloud.com/):  Links to HP Helion Public Cloud community resources ([Forum](https://community.hpcloud.com/forum), [Knowledge Base](https://community.hpcloud.com/knowledge-base), [System Status](https://community.hpcloud.com/status))
     - [**Blog**](http://h30529.www3.hp.com/t5/HP-Scaling-the-Cloud-Blog/bg-p/cloudBlog):  A link to our blog, where you can read contributions from a number of different members of the HP Helion Public Cloud team
     - [**Console**](https://horizon.hpcloud.com/):  A link directly to the HP Helion Public Cloud Console, so you can quickly access the HP Helion Public Cloud utilities
-* On the right-hand side, you'll see a navigation panel that remains constant from page to page.  This panel contains links to the the places we think you'll want to access most often:  the Site Map, the Knowledge Base, and the Forums.
+* On the right-hand side, you'll see a navigation panel that remains constant from page to page.  This panel contains links to the places we think you'll want to access most often:  the Site Map, the Knowledge Base, and the Forums.
 * Also on the right-hand side, when you are on certain pages lower in the documentation hierarchy, a second navigation bar appears to provide you with quick access different levels in that particular hierarchy.  For example, when you surf to Bindings page, you can see a secondary navigation box that contains links to Overview page, and the two subordinate bindings pages on Ruby Fog and jclouds. Whatever page you are on is highlighted, to help you keep your place in the hierarchy.
 
 ##Where to Start

@@ -47,7 +47,7 @@ It is important to read through this page before starting your installation. Bef
 
    * [Connecting remotely to Horizon console](#remoteconnect)
 
-   * [Connecting to to Monitoring UI](#monitoring)
+   * [Connecting to Monitoring UI](#monitoring)
 
 <!-- * [Post-installation configuration](#configure)
 
@@ -263,7 +263,7 @@ OPTIONAL: Modify which host to use as the gateway, for example:
 
 	`"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"`
 
-2. To build the cloud, start by logging in to the seed. Run the the following command from /root:
+2. To build the cloud, start by logging in to the seed. Run the following command from /root:
 
 	`ssh root@192.0.2.1`
 
@@ -380,7 +380,7 @@ Once your installation is complete, you should ensure you can connect to your HP
 
    * [Connecting remotely to Horizon console](#remoteconnect)
 
-   * [Connecting to to Monitoring UI](#monitoring)
+   * [Connecting to Monitoring UI](#monitoring)
 
 
 ### Connecting to the demo VM ### {#connectvm}
@@ -564,7 +564,7 @@ REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK T
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;">Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution

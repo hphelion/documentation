@@ -67,7 +67,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     HP StoreVirtual VSA allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
 
-    [Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install-beta/kvm). 
+    [Learn how to install and configure with a KVM hypervisor](/helion/openstack/install-beta/kvm). 
 
 * **ESX hypervisor with HP Virtual Cloud Networking (VCN) application support**
 
@@ -75,11 +75,11 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
     HP Virtual Cloud Networking (VCN) application enables you to build a robust, multi-tenant networking infrastructure. Once deployed, the Open vSwitch vApp template enables networking between the tenant VMs provisioned on your ESX compute nodes.
 
-    [Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install-beta/esx/).  
+    [Learn how to install and configure with an ESX hypervisor](/helion/openstack/install-beta/esx/).  
 
 After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. No matter what hypervisor you use, our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-[Learn how to to install and configure DNSaaS support](/helion/openstack/install-beta/dnsaas/).  
+[Learn how to install and configure DNSaaS support](/helion/openstack/install-beta/dnsaas/).  
 
 
 

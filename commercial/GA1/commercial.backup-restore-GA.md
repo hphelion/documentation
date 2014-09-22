@@ -521,7 +521,7 @@ If the admin user password was changed from the original password created during
 3. Open the `/root/tripleo/tripleo-undercloud-passwords` file.
 4. Update the `UNDERCLOUD_ADMIN_PASSWORD=` line with the new password and save the file.
 5. Open the file `/root/tripleo/ce_env.json`. 
-6. Update the the `undercloud` line with the new password and save the file.
+6. Update the `undercloud` line with the new password and save the file.
 7. SSH to the undercloud server.
 8. Open the `/root/stackrc` file.
 9. Update the `OS_PASSWORD=` line with the new password and save the file.

@@ -60,7 +60,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
 		HP 3PAR StoreServ is storage array (a physical device), which is integrated with HP Cloud OS to realize block storage of the cloud environment.
 
-	[Learn how to to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
+	[Learn how to install and configure with a KVM hypervisor](/helion/openstack/install/kvm). 
 
 * HP Helion OpenStack with a ESX hypervisor 
 
@@ -80,7 +80,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 	
 		The OVSvApp must be installed on each hypervisor in the HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. 
 
-	[Learn how to to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
+	[Learn how to install and configure with an ESX hypervisor](/helion/openstack/install/esx/).  
 
 After installing HP Helion OpenStack, you have the option to install: 
 

@@ -54,7 +54,7 @@ The rest of this page explains the beta installation and configuration process f
    * [Installing the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
    * [Connecting to Horizon console](#connectconsole)
-   * [Connecting to to Monitoring UI](#monitoring)
+   * [Connecting to Monitoring UI](#monitoring)
 * [Deploying Open vSwitch vApp](#ovsvapp)
 * [Installing DNS as a service](#configure)
 * [Next steps](#next-steps)

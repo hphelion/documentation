@@ -35,7 +35,7 @@ DNSaaS for OpenStack includes:
 - A framework in place to integrate with Nova and Quantum notifications (for auto-generated records)
 - Support for PowerDNS in the current version
 
-For example, if a user wants to to access `mytestdomain.com` in their browser, DNS provides the mechanism for the browser to know that the server (for example, `1.2.3.4`).
+For example, if a user wants to access `mytestdomain.com` in the browser, DNS provides the mechanism the browser uses to locate the server (for example, `1.2.3.4`).
 
 **Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion Openstack and verified that it is configured correctly and operational.
 
