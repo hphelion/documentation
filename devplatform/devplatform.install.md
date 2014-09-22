@@ -5,7 +5,7 @@ permalink: /helion/devplatform/community/install-dev-platform/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
  
 <p style="font-size: small;"> <a href="/helion/devplatform/community/release-notes/">&#9664; PREV</a> | <a href="/helion/devplatform/">&#9650; UP</a> | <a href="/helion/devplatform/community/related-topics/">NEXT &#9654;</a> </p>
 
@@ -52,7 +52,7 @@ If the packages are not found, the Installer prompts you to install them.
 
 To enable ALS to install dependencies for deployed applications, you must provide it with outbound Internet connectivity. For more information, see the baremetal installation instructions, [Starting the seed and building your cloud](/helion/community/install/#startseed/), Step 7.
 
-If an HTTP Proxy is required for Internet downloads, follow the instructions in the Administration Guide.[ADD LINK]  
+If an [HTTP Proxy](als/v1/admin/server/configuration/#http-proxy) is required for Internet downloads, follow the instructions in the Administration Guide.
     
 ## Installing the HP Helion Development Platform<a name="installing-the-hp-helion-development-platform"></a>
 
