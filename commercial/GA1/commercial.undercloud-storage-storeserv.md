@@ -28,13 +28,13 @@ The StoreServ option allows you to configure 3PAR as storage. Before you start w
 
 1. HP Helion Cloud is deployed.
 
-2. Sirius service is up and running in the Undercloud
+2. Sirius service is up and running in the Undercloud.
 
-3. HP StoreServ/3PAR device is accessible from Undercloud
+3. HP StoreServ/3PAR device is accessible from Undercloud.
 
-4. HP StoreServ/3PAR device(running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in Overcloud
+4. HP StoreServ/3PAR device(running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in Overcloud.
 
-5. Common Provisioning Groups (CPGs) are created for HP StoreServ (also named as  3PAR)
+5. Common Provisioning Groups (CPGs) are created for HP StoreServ (also named as  3PAR).
 
 6. HP 3PAR REST service is running and  HTTPS is enabled.
 
