@@ -28,10 +28,10 @@ This page provides an overview of the hardware and software that is supported fo
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
-* [Hardware and network configuration](#baremetal)
-* [Usable capacity](#usable-capacity)
-* [Physical network architecture](#physical-network-architecture)
-* [Software requirements](#software-requirements)
+* [Hardware and Network Configuration](#baremetal)
+* [Usable Capacity](#usable-capacity)
+* [Physical Network architecture](#physical-network-architecture)
+* [Software Requirements](#software-requirements)
 
 ##Deployment Architecture {#deploy-arch}
 
@@ -42,7 +42,7 @@ The following diagrams depict simplified deployment scenarios:
 
 ## Supported Hardware ## {#supportedhw}
 
-HP supports the following hardware for Helion OpenStack deployment:
+HP supports the following hardware for HP Helion OpenStack deployment:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
