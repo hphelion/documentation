@@ -12,7 +12,7 @@ Intro[](#intro "Permalink to this headline")
 
 Application Lifecycle Service includes a number of data services which can be bound to the
 applications you deploy. These include several databases (PostgreSQL,
-MySQL, MongoDB, Redis), the RabbitMQ messaging service, a [*persistent
+MySQL, Redis), the RabbitMQ messaging service, a [*persistent
 file system*](/als/v1/user/services/filesystem/#persistent-file-system) service and
 [*Memcached*](/als/v1/user/services/memcached/#memcached).
 
@@ -23,20 +23,20 @@ The data services your application requires need to be specified at the
 time your app is pushed to the Application Lifecycle Service server. This can be done in a
 number of ways:
 
-1.  Specifying the required services in the *stackato.yml* file.
+1.  Specifying the required services in the *manifest.yml* file.
 2.  Configuring services during the `push` process.
 3.  Configuring services manually.
 
 If you would like to use an external database system, see [*Using
 External Database Services*](#database-external).
 
-### Using stackato.yml[](#using-stackato-yml "Permalink to this headline")
+### Using manifest.yml[](#using-stackato-yml "Permalink to this headline")
 
-The stackato.yml file can hold a lot of application specific details
+The manifest.yml file can hold a lot of application specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
 when you run `helion push`. For complete details
-for the stackato.yml file, please see [*Configuration With
-stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml).
+for the manifest.yml file, please see [*Configuration With
+manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml).
 
 A simple example:
 
@@ -51,7 +51,6 @@ This tells the Application Lifecycle Service Client to request a MySQL database 
 
 -   [*filesystem*](/als/v1/user/reference/glossary/#term-filesystem)
 -   [*memcached*](/als/v1/user/reference/glossary/#term-memcached)
--   [*mongodb*](/als/v1/user/reference/glossary/#term-mongodb)
 -   [*mysql*](/als/v1/user/reference/glossary/#term-mysql)
 -   [*postgresql*](/als/v1/user/reference/glossary/#term-postgresql)
 -   [*rabbitmq*](/als/v1/user/reference/glossary/#term-rabbitmq)
@@ -62,7 +61,7 @@ Configured Database Services*](#database-accessing).
 
 ### Using helion push[](#using-helion-push "Permalink to this headline")
 
-If you do not specify services in the stackato.yml file, you will be
+If you do not specify services in the manifest.yml file, you will be
 prompted to create one during the push process. Should you want to set
 up a database service, enter "y" when asked, and follow the prompts:
 
@@ -83,7 +82,7 @@ up a database service, enter "y" when asked, and follow the prompts:
     ...
 
 In order to ensure the correct services are configured each time the app
-is pushed, your services should be listed in the stackato.yml file.
+is pushed, your services should be listed in the manifest.yml file.
 
 ### Creating and Binding Services[](#creating-and-binding-services "Permalink to this headline")
 
@@ -93,7 +92,7 @@ pushed to the Application Lifecycle Service server. There are two ways to do thi
 **helion create-service \<service\> \<name\> \<app\>**
 :   This combines all parameters into a single command.
     `service` is the type of service you want to
-    create (mysql, redis, postgresql, mongodb). `name` is the name you want to assign to the service.
+    create (mysql, redis, postgresql). `name` is the name you want to assign to the service.
     `app` is the name of the application the service
     is to be bound to.
 
@@ -194,7 +193,6 @@ service name set during deployment/service creation (e.g. "myapp-db").
 **If a non-relational data service type** is bound to the application,
 use the corresponding named environment variable:
 
--   MONGODB\_URL
 -   REDIS\_URL
 -   RABBITMQ\_URL
 
@@ -273,7 +271,7 @@ for compatibility with Cloud Foundry.
 
 **Note**
 
-VCAP\_SERVICES variables in Application Lifecycle Service v2.2 and later use non-versioned
+VCAP\_SERVICES variables use non-versioned
 service names The version number remains in 'label' key.
 
 Using External Databases[](#using-external-databases "Permalink to this headline")
@@ -313,7 +311,7 @@ the local system.
 It is also available inside application containers, providing a quick
 way to import data from dump files, or setting up schemas. For example,
 to import data from file in an application directory, you could use a
-hook in *stackato.yml* such as:
+hook in *manifest.yml* such as:
 
     hooks:
       post-staging:
@@ -439,7 +437,7 @@ create tables, and insert records as necessary, as in this Perl example:
 
     $dbh->disconnect;
 
-Next, modify your *stackato.yml* file to make use of the
+Next, modify your *manifest.yml* file to make use of the
 `post-staging` hook which will execute a command to
 run the script:
 
@@ -463,7 +461,7 @@ command to remotely execute the dbexport tool:
 
 This will run a `dbexport` of the named data service
 remotely and direct the output to a local file. If run from a directory
-containing the stackato.yml file, the application name may be omitted.
+containing the manifest.yml file, the application name may be omitted.
 
 #### Using helion tunnel[](#using-helion-tunnel "Permalink to this headline")
 
@@ -518,7 +516,7 @@ To import a MySQL database, use the `helion dbshell` command:
 This command redirects the contents of a local database dump file to the
 appropriate database client running in the application instance (i.e.
 equivalent to `helion run dbshell ...`). If run
-from a directory containing the *stackato.yml* file, the application and
+from a directory containing the *manifest.yml* file, the application and
 service names may be omitted.
 
 #### Using helion tunnel[](#id3 "Permalink to this headline")

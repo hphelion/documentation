@@ -94,7 +94,7 @@ If there is more than one Harbor service, `STACKATO_HARBOR` is not available. In
 variable will be created for each harbor service (service name
 upper-cased with hyphens replaced by underscores).
 
-For example, if your *stackato.yml* file configures the following
+For example, if your *manifest.yml* file configures the following
 services:
 
     services:
@@ -203,14 +203,14 @@ suffix 'https' to the name of your Harbor service. For example:
       custom-cert-https: harbor
 
 Put your server certificate and key (named *harbor.crt* and *harbor.key*
-respectively) in a folder called *cert* in the application's root
+respectively) in a folder called *certs* in the application's root
 directory. For example:
 
     app_root
-    	cert
-        	harbor.crt
-        	harbor.key
-  
+    	certs
+        harbor.crt
+        harbor.key
+    	...
 
 Alternatively, use a standalone or buildpack setup which provisions its
 own intermediate web server instead.
@@ -229,9 +229,9 @@ For example:
     	certs
         	harbor-https-custom-1.crt
         	harbor-https-custom-2.key
-    
-The proxy will look for these certs before reverting to *harbor.crt* and
-*harbor.key*.
+    	...
+
+The proxy will look for these certs before reverting to `harbor.crt` and `harbor.key`.
 
 ### Caveats[](#caveats "Permalink to this headline")
 

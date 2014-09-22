@@ -14,15 +14,15 @@ Deployment[](#deployment "Permalink to this headline")
 -------------------------------------------------------
 
 You will need at least two files to deploy a PHP app on Application Lifecycle Service:
-*index.php*, and *stackato.yml*.
+*index.php*, and *manifest.yml*.
 
-The *stackato.yml* must specify `php` as the framework type:
+The *manifest.yml* must specify `php` as the framework type:
 
     framework:
             type: php
 
-For full details on the stackato.yml and all possible options, see
-[*Configuration With stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml).
+For full details on the manifeststackato.yml and all possible options, see
+[*Configuration With manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml).
 
 Application URL[](#application-url "Permalink to this headline")
 -----------------------------------------------------------------
@@ -103,21 +103,20 @@ Document Root Access[](#document-root-access "Permalink to this headline")
 ---------------------------------------------------------------------------
 
 If your document root (the location of the main *index.php* file) is the
-main application directory, the information stored in *stackato.yml* and
-*manifest.yml* is exposed to the browser. Note that *manifest.yml* is
-generated automatically, even when you don't use *stackato.yml*.
+main application directory, the information stored in 
+*manifest.yml* is exposed to the browser.
 
 To prevent exposing this information, you can use an *.htaccess* file in
 the document root directory with the following rule:
 
-    <filesmatch "^(manifest|helion)\.yml$">
+    <filesmatch "^(manifest)\.yml$">
       order allow,deny
       deny from all
     </filesmatch>
 
 Alternatively, move your application into a subdirectory (e.g. move
 *index.php* to *www/index.php*) and explicitly set your document-root in
-*stackato.yml*:
+*manifest.yml*:
 
     framework:
       document-root: www
@@ -152,7 +151,7 @@ instances is dealing with user sessions.
 
 If your application uses a [*shared filesystem
 service*](/als/v1/user/services/filesystem/#persistent-file-system), you
-can store user sessions there. The following *stackato.yml* snippet
+can store user sessions there. The following *manifest.yml* snippet
 creates a persistent filesystem service, creates a directory for
 sessions, and writes a PHP config file to set the path to the session
 directory:

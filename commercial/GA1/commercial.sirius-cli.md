@@ -51,9 +51,9 @@ You can display the help of this program or one of its sub-programs
 	sirius --help
 
 
-##Help Subcommand
+### Help Subcommand
 
-You get two sets of arguments- Positional arguments(mandatory) and Keyword arguments(all mandatory fields are marked within [Required])
+You get two sets of arguments- Positional(mandatory) and Options (all mandatory fields are marked within [*Required*])
 
 	sirius help <sub-command>
 
@@ -75,7 +75,7 @@ You can list the devices supported by Sirius API.
 
 ### Bash Completetion
 
-You can prints all the commands and options to standard output(stdout???)
+You can prints all the commands and options to standard output
 
 	sirius bash-completion
 
@@ -217,7 +217,7 @@ You can view the information about specific backend.
   
 ##Optional commands
 
-###Version
+<!---###Version
 
 Shows the version number of the program and exit.
 
@@ -262,7 +262,7 @@ Path of CA TLS certificate(s) used to verify the remote server's certificate. Wi
 ###Timeout   
  Number of seconds to wait for a response.
 
-	--timeout TIMEOUT 
+	--timeout TIMEOUT -->
 
 ###OS username
 
@@ -283,10 +283,10 @@ Tenant identification of the OpenStack. Defaults to env[OS_TENANT_ID].
 	--os-tenant-id OS_TENANT_ID
                         
  
-###OS TENANT NAME
+<!---###OS TENANT NAME
 Tenant name of the OpenStack. Defaults to env[OS_TENANT_NAME].
 		
-	--os-tenant-name OS_TENANT_NAME
+	--os-tenant-name OS_TENANT_NAME-->
 
                         
  
@@ -297,10 +297,10 @@ Authentication URL of OpenStack. Defaults to env[OS_AUTH_URL].
                         
 
 
-###OS REGION NAME
+<!---###OS REGION NAME
 The region name of  OpenStack. Defaults to env[OS_REGION_NAME].
 
-  	--os-region-name OS_REGION_NAME
+  	--os-region-name OS_REGION_NAME  -->
                         
  
 ###OS AUTH TOKEN
@@ -309,7 +309,7 @@ Authentication token of OpenStack. Defaults to env[OS_AUTH_TOKEN].
   	--os-auth-token OS_AUTH_TOKEN
                        
 
-### Sirius URL  
+<!---### Sirius URL  
  
 The Sirius URL. Defaults to env[SIRIUS_URL].
   
@@ -331,7 +331,7 @@ The service type of OpenStack.Defaults to env[OS_SERVICE_TYPE].
 ###OS ENDPOINT TYPE
 The endpoint type of OpenStack. Defaults to env[OS_ENDPOINT_TYPE].
  	
-	--os-endpoint-type OS_ENDPOINT_TYPE
+	--os-endpoint-type OS_ENDPOINT_TYPE  -->
 
 
 

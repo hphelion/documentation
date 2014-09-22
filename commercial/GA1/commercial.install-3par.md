@@ -28,9 +28,19 @@ This page provides detailed information to configure HP 3PAR StoreServ in your c
 Storage Configuration Manager (SCM) service is used to facilitate configuration and deployment of StoreServ and StoreVirtual arrays.
 
 
-## Working with HP StoreServ using CLI
+## Working with HP StoreServ
 
-<TO BE ADDED>
+You can use the Horizon dashboards or CLI to work with HP StoreServ.
+
+### Using the dashboards {#UI}
+
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to configure HP StoreServ.
+
+###Using the CLI### {#cli}
+
+You can use the command-line interface to access HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/ga/sirius-cli/)
+
+For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

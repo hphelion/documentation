@@ -70,7 +70,7 @@ The relevant configuration in this example:
         )
 
 3.  adds the python-memcached module and a memcached service in
-    *stackato.yml*:
+    *manifest.yml*:
 
         requirements:
             pip:

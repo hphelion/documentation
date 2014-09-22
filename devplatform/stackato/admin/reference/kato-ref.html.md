@@ -171,9 +171,9 @@ database
 
 **--exclude-aok-config** Do not include AOK's configuration (default)
 
-**--helion-rest-db** Include Application Lifecycle Service Rest's database
+**--stackato-rest-db** Include Application Lifecycle Service Rest's database
 
-**--exclude-helion-rest-db** Do not include Application Lifecycle Service Rest's database
+**--exclude-stackato-rest-db** Do not include Application Lifecycle Service Rest's database
 
 **--filesystem** Include the filesystem service
 
@@ -326,9 +326,9 @@ database
 
 **--exclude-aok-config** Do not include AOK's configuration (default)
 
-**--helion-rest-db** Include Application Lifecycle Service Rest's database
+**--stackato-rest-db** Include Application Lifecycle Service Rest's database
 
-**--exclude-helion-rest-db** Do not include Application Lifecycle Service Rest's database
+**--exclude-stackato-rest-db** Do not include Application Lifecycle Service Rest's database
 
 **--filesystem** Include the filesystem service
 
@@ -631,7 +631,7 @@ node
 
 **node** **attach** [**options**] *\<core-ip\>*
 
-Attach this node to a helion core node
+Attach this node to a core node
 
 **-h** **--help** Show help information
 
@@ -649,7 +649,7 @@ any version mismatches
 
 **node** **detach** [**options**]
 
-Detach this node from a helion core node
+Detach this node from a core node
 
 **-h** **--help** Show help information
 
@@ -853,7 +853,7 @@ tests as warnings instead of upgrade failures.
 
 **op** **regenerate** **postgresql** [**--no-restart**]
 
-**op** **regenerate** **helion-rest-auth**
+**op** **regenerate** **stackato-rest-auth**
 
 **op** **regenerate** **cloud-controller-client-auth**
 

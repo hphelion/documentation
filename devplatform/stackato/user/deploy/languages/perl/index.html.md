@@ -125,7 +125,7 @@ versions of most CPAN modules and frameworks are available.
 
 Modules required by your app can be specified by adding a
 `requirements:` section to the
-[*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file. For example:
+[*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file. For example:
 
     requirements:
       ppm:
@@ -177,9 +177,9 @@ be reused rather than being rebuilt.
 You can specify modules for installation via `cpanm`
 by including them in one of the following files:
 
-#### stackato.yml[](#stackato-yml "Permalink to this headline")
+#### manifest.yml[](#stackato-yml "Permalink to this headline")
 
-Add a `cpan:` section to *stackato.yml* that
+Add a `cpan:` section to *manifest.yml* that
 specifies version conditions, requests a module via HTTP URL, or fetches
 a branch from a git repo. For example:
 

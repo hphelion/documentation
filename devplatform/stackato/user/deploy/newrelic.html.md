@@ -113,7 +113,7 @@ application:
               NEW_RELIC_LICENSE_KEY: <your license key>
 
 An alternative to modifying your python is to wrap
-`$PROCESSES_WEB` in *stackato.yml* with
+`$PROCESSES_WEB` in *manifest.yml* with
 [newrelic-admin](https://newrelic.com/docs/python/python-agent-admin-script).
 
 ### Bottle Currency Example[](#bottle-currency-example "Permalink to this headline")
@@ -160,7 +160,7 @@ New Relic for PHP[](#new-relic-for-php "Permalink to this headline")
 The New Relic agent PHP libraries are pre-installed on Application Lifecycle Service. To add
 monitoring, you need to add an agent configuration file to the root
 directory of the application and make some modifications to
-*stackato.yml*.
+*manifest.yml*.
 
 -   Add a `newrelic.ini` file in
     [*HOME*](/als/v1/user/reference/environment/#term-home) directory

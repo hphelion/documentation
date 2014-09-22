@@ -17,7 +17,7 @@ Upgrading Application Lifecycle Service[](#upgrading-helion "Permalink to this h
         -   [Node upgrade ordering](#node-upgrade-ordering)
         -   [Node Upgrade Process](#node-upgrade-process)
 
-Application Lifecycle Service 3.0 provides the ability to upgrade a node or cluster in place
+Application Lifecycle Service 1.0 provides the ability to upgrade a node or cluster in place
 via [*kato node
 upgrade*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
 without the need to rebuild the entire cluster. This section covers how
@@ -65,7 +65,7 @@ To upgrade an individual node, log into the node and run:
 
     $ kato node upgrade
 
-This will start the **Node Upgrade Process** described below.
+This will start the **Node Upgrade Process** as described below.
 
 ### Upgrading a cluster[](#upgrading-a-cluster "Permalink to this headline")
 

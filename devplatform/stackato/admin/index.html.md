@@ -106,8 +106,8 @@ Best Practices[](#best-practices "Permalink to this headline")
 -   [Best Practices](/als/v1/admin/best-practices/)
     -   [Applying Updates](/als/v1/admin/best-practices/#applying-updates)
     -   [Backup & Migration](/als/v1/admin/best-practices/#backup-migration)
-    -   [Upgrading (v3.0 and
-        later)](/als/v1/admin/best-practices/#upgrading-v3-0-and-later)
+    -   [Upgrading (v1.0 and
+        later)](/als/v1/admin/best-practices/#upgrading-v1-0-and-later)
     -   [Server Monitoring with New
         Relic](/als/v1/admin/best-practices/#server-monitoring-with-new-relic)
     -   [System Monitoring with

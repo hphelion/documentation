@@ -148,7 +148,7 @@ This is an array of items (see YAML format above), one for each app in the store
 **Note**
 
 The store definition settings do not override settings in the
-application's *stackato.yml* or *manifest.yml* file.
+application's *manifest.yml* file.
 
 ### Hosting the Store Definition Files[](#hosting-the-store-definition-files "Permalink to this headline")
 

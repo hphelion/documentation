@@ -239,9 +239,9 @@ Java applications will have different HOME directories on Application Lifecycle 
 depending on which Java framework is used:
 
 -   Java Web, Java EE (WAR file), Spring, Lift and Grails:
-    **/home/helion/tomcat/webapps/ROOT**
--   Java EE (EAR file): **/home/helion/jboss/standalone/deployments**
--   Buildpack - Java, Play: **/home/helion/app**
+    **/home/stackato/tomcat/webapps/ROOT**
+-   Java EE (EAR file): **/home/stackato/jboss/standalone/deployments**
+-   Buildpack - Java, Play: **/home/stackato/app**
 
 CATALINA\_OPTS[](#catalina-opts "Permalink to this headline")
 --------------------------------------------------------------

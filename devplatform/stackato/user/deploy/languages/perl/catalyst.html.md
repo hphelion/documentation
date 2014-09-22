@@ -24,7 +24,7 @@ installed via *requirements.txt*.
 
 Alternatively, the Home directory can be [set
 explicitly](https://metacpan.org/module/Catalyst#Home) with environment
-variables. For example, you could set CATALYST\_HOME in *stackato.yml*:
+variables. For example, you could set CATALYST\_HOME in *manifest.yml*:
 
     env:
       CATALYST_HOME: $HOME
