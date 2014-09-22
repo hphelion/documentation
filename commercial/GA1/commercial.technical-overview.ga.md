@@ -301,7 +301,7 @@ The HP Helion OpenStack High Availability (HA) architecture ensures that Cloud S
 
 The OpenStack services are deployed in a three node Controller cluster, that ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.
 
-For more details on HA configuration, refer to [HP Helion Openstack&#174; High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
+For more details on HA configuration, refer to [HP Helion OpenStack High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
 ## Security architecture ## {#security-architecutre}
 
