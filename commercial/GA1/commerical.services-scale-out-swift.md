@@ -27,27 +27,28 @@ HP Helion OpenStack allows you to deploy scale out Swift cluster using the conce
 
 The scale out object storage defines a new policy, storage-policy:1. Object ring (object-ring:1) associated with storage-policy:1 is used to store data for end cloud user. Once storage-policy:1 is created it becomes a default storage policy and a new container will use this ring to store objects. 
 
-Note that you can still continue to use storage-policy:0 if you continue to use old container to store data.
+**Note**: You can still continue to use storage-policy:0, if you continue to use old container to store data.
 
 ##HP Helion scale out architecture 
 
 The following diagram depicts the HP Helion scale out architecture.
 
-<img src ="media/swift-deployment_architecture.png/">
+<img src ="media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes/">
 
+<!---
 Furthermore, HP Helion provides an option for the deployment of scale out Swift. The following diagram depicts a simplified deployment scenario of scale out Swift.
 
 * <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">with one object ring(opens in a new window)</a>
 
 	<!--This architecture shows the deployment of swift without any object ring. --->
-
+<!---
  
 * <a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-overcloud-controller-nodes..png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">different object storage ring using Overcloud controller nodes(opens in a new window)</a> 
 
 
 
 * <a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">different object storage ring without using <over> cloud controller nodes(opens in a new window)</a>
-
+--->
 
 
 ###Deployment of Scale-out Swift
