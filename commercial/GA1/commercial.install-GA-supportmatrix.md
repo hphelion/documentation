@@ -42,7 +42,7 @@ The following diagrams depict simplified deployment scenarios:
 
 ## Supported Hardware ## {#supportedhw}
 
-HP supports the following hardware for Helion OpenStack:
+HP supports the following hardware for Helion OpenStack deployment:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
