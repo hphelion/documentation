@@ -366,3 +366,6 @@ Sample `overcloud_keystone_ldap.json` configuration file for openLDAP server
          ]
      }
 	}
+
+
+<a href="javascript:window.open('/helion/openstack/ga/install/envars/','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
