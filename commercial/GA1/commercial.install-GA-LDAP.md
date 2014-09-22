@@ -94,49 +94,100 @@ Create the following two files:
 
 	The following options must be set with proper values to provide integration with the LDAP server:
 
-	<tr style="background-color: white; color: black;">
-	<tr><td>admin</td<td>SomeValidPassword</td></tr>
-
-		Name
-    	
-    Description
-    	
-    AD/LDAP Default Values
-    	
-    OpenLDAP Default Values
-    [identity]
-    driver	(StrOpt) Identity backend driver.	keystone.identity.backends.ldap.Identity	keystone.identity.backends.ldap.Identity
-    [assignment]
-    driver	(StrOpt) Assignment backend driver.	keystone.assignment.backends.sql.Assignment	keystone.assignment.backends.sql.Assignment
-    [ldap]
-    group_id_attribute	(StrOpt) LDAP attribute mapped to group id.	cn	cn
-    group_name_attribute	(StrOpt) LDAP attribute mapped to group name.	cn	cn
-    group_objectclass	(StrOpt) LDAP objectclass for groups.	group	posixGroup
-    group_tree_dn	(StrOpt) Search base for groups.	CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com	ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com
-    group_allow_create	(BoolOpt) Allow group creation in LDAP backend.	False	False
-    group_allow_delete	(BoolOpt) Allow group deletion in LDAP backend.	False	False
-    group_allow_update	(BoolOpt) Allow group update in LDAP backend.	False	False
-    suffix	(StrOpt) LDAP server suffix	DC=hpswlabs,DC=apps,DC=hp,DC=com	dc=hpswlabs,dc=apps,dc=hp,dc=com
-    url	(StrOpt) URL for connecting to the LDAP server.	ldap://10.1.5.221	ldap://10.1.5.208
-    user_allow_create	(BoolOpt) Allow user creation in LDAP backend.	False	False
-    user_allow_delete	(BoolOpt) Allow user deletion in LDAP backend.	False	False
-    user_allow_update	(BoolOpt) Allow user updates in LDAP backend.	False	False
-    user_id_attribute	(StrOpt) LDAP attribute mapped to user id.	cn	uid
-    user_name_attribute	(StrOpt) LDAP attribute mapped to user name.	cn	uid
-    user_objectclass	(StrOpt) LDAP objectclass for users.	user	person
-    user_tree_dn	(StrOpt) Search base for users.	CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com	ou=people,dc=hpswlabs,dc=apps,dc=hp,dc=com
-    user	(StrOpt) User BindDN to query the LDAP server.	CN=Administrator,CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com	Not Required
-    password	(StrOpt) Password for the BindDN to query the LDAP server.	Passw0rd	Not Required
-    use_tls	(BoolOpt) Enable TLS for communicating with LDAP servers.	False	False
-    tls_req_cert	(StrOpt) Valid options for tls_req_cert are demand, never, and allow.	never	never
-    use_pool	(BoolOpt) Enable LDAP connection pooling. 	True	
-
-    True
-    user_enabled_attribute	(StrOpt) LDAP attribute mapped to user enabled flag.	userAccountControl	Not required
-    user_enabled_mask	(IntOpt) Bitmask integer to indicate the bit that the enabled value is stored in if the LDAP server represents "enabled" as a bit on an integer rather than a boolean. A value of "0" indicates the mask is not used. If this is not set to "0" the typical value is "2". This is typically used when "user_enabled_attribute = userAccountControl".	2	Not required
-    user_enabled_default	(StrOpt) Default value to enable users. This should match an appropriate int value if the LDAP server uses non-boolean (bitmask) values to indicate if a user is enabled or disabled. If this is not set to "True" the typical value is "512". This is typically used when "user_enabled_attribute = userAccountControl".	512	Not required
-    user_mail_attribute	(StrOpt) LDAP attribute mapped to user email.	userPrincipalName	Not required
-
+	<table style="text-align: left; vertical-align: top; width:650px;">
+	<tr style="background-color: lightgrey; color: black;">
+	<td><b> Username </b></td><td><b>Password</b></td><td><b> AD/LDAP Default values </b></td><td><b>OpenLDAP default values</b></td>
+	</tr>
+	<tr>
+	<td>[identity]</td><td> </td><td> </td><td> </td>
+	</tr>
+	<tr>
+	<td>driver</td><td>(StrOpt) Identity backend driver</td><td>keystone.identity.backends.ldap.Identity</td><td>keystone.identity.backends.ldap.Identity
+	</tr>
+	<tr>
+	<td>[assignment]</td><td> </td><td> </td><td> </td>
+	</tr>
+	<tr>
+	<td>driver</td><td>(StrOpt) Assignment backend driver</td><td>	keystone.assignment.backends.sql.Assignment</td><td>keystone.assignment.backends.sql.Assignment</td>
+	</tr>
+	<tr>
+	<td>[ldap]</td><td> </td><td> </td><td> </td>
+	</tr>
+	<tr>
+	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>cn</td>
+	</tr>
+	<tr>
+	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>cn</td>
+	</tr>
+	<tr>
+	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
+	</tr>
+	<tr>
+	<td>group_tree_dn</td><td>(StrOpt) Search base for groups.</td><td>CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	</tr>
+	<tr>
+	<td>group_allow_create</td><td>(BoolOpt) Allow group creation in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>group_allow_delete</td><td>(BoolOpt) Allow group deletion in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>group_allow_update</td><td>(BoolOpt) Allow group update in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>suffix</td><td>(StrOpt) LDAP server suffix</td><td>DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	</tr>
+	<tr>
+	<td>url</td><td>(StrOpt) URL for connecting to the LDAP server.</td><td>ldap://10.1.5.221</td><td>ldap://10.1.5.208</td>
+	</tr>
+	<tr>
+	<td>user_allow_create</td><td>(BoolOpt) Allow user creation in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>user_allow_delete</td><td>(BoolOpt) Allow user deletion in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>user_allow_update</td><td>(BoolOpt) Allow user updates in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>uid</td>
+	</tr>
+	<tr>
+	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>uid</td>
+	</tr>
+	<tr>
+	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>person</td>
+	</tr>
+	<tr>
+	<td>user_tree_dn</td><td>(StrOpt) Search base for users.</td><td>CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>ou=people,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	</tr>
+	<tr>
+	<td>user</td><td>(StrOpt) User BindDN to query the LDAP server.</td><td>CN=Administrator,CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>Not Required</td>
+	</tr>
+	<tr>
+	<td>password</td><td>(StrOpt) Password for the BindDN to query the LDAP server.</td><td>Passw0rd</td><td>Not Required</td>
+	</tr>
+	<tr>
+	<td>use_tls</td><td>(BoolOpt) Enable TLS for communicating with LDAP servers.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>tls_req_cert</td><td>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</td><td>never</td><td>never</td>
+	</tr>
+	<tr>
+	<td>use_pool</td><td>(BoolOpt) Enable LDAP connection pooling.</td><td>True</td><td>True</td>
+	</tr>
+	<tr>
+	<td>user_enabled_attribute</td><td>(StrOpt) LDAP attribute mapped to user enabled flag.</td><td>userAccountControl</td><td>Not required</td>
+	</tr>
+	<tr>
+	<td>user_enabled_mask</td><td>(IntOpt) Bitmask integer to indicate the bit that the enabled value is stored in if the LDAP server represents "enabled" as a bit on an integer rather than a boolean. A value of "0" indicates the mask is not used. If this is not set to "0" the typical value is "2". This is typically used when "user_enabled_attribute = userAccountControl".</td><td>2</td><td>Not required</td>
+	</tr>
+	<tr>
+	<td>user_enabled_default</td><td>(StrOpt) Default value to enable users. This should match an appropriate int value if the LDAP server uses non-boolean (bitmask) values to indicate if a user is enabled or disabled. If this is not set to "True" the typical value is "512". This is typically used when "user_enabled_attribute = userAccountControl".</td><td>512</td><td>Not required</td>
+	</tr>
+	<tr>
+	<td>user_mail_attribute</td><td>(StrOpt) LDAP attribute mapped to user email.</td><td>userPrincipalName</td><td>Not required</td>
+	</tr>
 	</table>
  
 

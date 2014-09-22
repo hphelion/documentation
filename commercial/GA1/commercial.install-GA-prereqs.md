@@ -105,7 +105,7 @@ You are responsible for providing the internal and external customer router and 
 **Notes:**
 
 - The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
-- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/ga/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
+- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/ga/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA or 3PAR.
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
 - The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
@@ -163,15 +163,20 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 The initial installation of the cloud will install two initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
 
 
-### Preparing the installer system ### {#installer}
+### Preparing the seed VM host ### {#installer}
 
 The following tasks need to be performed on the seed VM, known as the installer system.
 
+- [Install Ubuntu 14.04 LTS](#ubuntu)
 - [Obtaining a public key](#pub-key)
 - [Configuring SSH](#ssh)
 - [Installing Debian/Ubuntu packages](#packages)
 - [Install and configure NTP](#ntp)
 - [Creating the baremetal.csv file](#csv)
+
+#### Install Ubuntu 14.04 LTS #### {#ssh}
+
+The seed VM host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
 
 #### Configuring SSH #### {#ssh}
 
@@ -245,6 +250,12 @@ When creating this file, keep in mind the following:
 * The disk size specified should never exceed the physical disk size
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.
+
+#### Integrating LDAP (Lightweight Directory Access Protocol)
+	
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+
+For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/ga/install/ldap/).
 
 ## Downloading installation packages ## {#install-pkg}
 

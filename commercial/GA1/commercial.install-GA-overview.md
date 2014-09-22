@@ -46,6 +46,12 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
 	HP Helion OpenStack supports KVM (Kernel-based Virtual Machine). With our KVM integration, you  can provision and manage an overcloud KVM cluster. One of these two add-ons is required for the [Volume Operations](/helion/openstack/ga/services/volume/overview/) service:
 
+	- **Lightweight Directory Access Protocol integration:
+	
+		The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+
+	 	[Learn how to integrate LDAP](/helion/openstack/ga/install/ldap/) 
+
 	- HP StoreVirtual VSA:
 	
 		[HP StoreVirtual VSA](http://www8.hp.com/us/en/products/data-storage/storevirtual-vsa.html) allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. 
@@ -59,6 +65,12 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 * HP Helion OpenStack with a ESX hypervisor 
 
 	HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster.
+
+	- **Lightweight Directory Access Protocol integration:
+	
+		The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+
+	 	[Learn how to integrate LDAP](/helion/openstack/ga/install/ldap/) 
 
 	- HP Virtual Cloud Networking (VCN) application support**
 
@@ -76,9 +88,6 @@ After installing HP Helion OpenStack, you have the option to install:
 
 	 [Learn how to install and configure HP Helion OpenStack DNSaaS](/helion/openstack/ga/install/dnsaas/) 
 
-- **Lightweight Directory Access Protocol integration** the HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes.
-
-	 [Learn how to integrate LDAP](/helion/openstack/ga/install/ldap/) 
 
 ## About the installation process ## {#install-about}
 
@@ -88,14 +97,14 @@ The high-level process for installing HP Helion OpenStack involves the following
 
 2. Perform the necessary [Prerequisites](/helion/openstack/ga/install/prereqs)
 
-3. Install onto a KVM or ESX hypervisor:
+3. Install with KVM or ESX hypervisor support:
 
 	
-	- [Install onto a KVM hypervisor](/helion/openstack/ga/install/kvm/).
+	- [Install with KVM hypervisor support(/helion/openstack/ga/install/kvm/).
 
 		Then, [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/ga/install/3par/). 
 
-	- [Install onto an ESX hypervisor](/helion/openstack/ga/install/esx/).
+	- [Install with ESX hypervisor support](/helion/openstack/ga/install/esx/).
 
 		Then, [deploy the compute proxy on the ESX hosts](/helion/openstack/ga/install/esx/proxy/) and [deploy OVSvApp for HP Virtual Cloud Networking](/helion/openstack/ga/install/ovsvapp/).
 
