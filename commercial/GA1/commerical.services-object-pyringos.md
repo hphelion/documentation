@@ -21,6 +21,9 @@ PageRefresh();
 
 pyringos tool deploys Swift cluster with the help of SSH access to the servers, sudo and python only. It runs on the Undercloud, so it does not require servers, databases, or any other tools. It is an ideal tool if you want minimal extra bureaucracy to manage Swift cluster. The pyringos tool is not a generic deployment system and does not define the workflow of Swift cluster deployment or management.
 
+Note that you must be careful while planning for ring attributes as some of them (like part power) cannot be changed once deployed.
+
+
 <!--
 
 pyringos tool is a way to deploy Swift cluster relying only upon SSH access to the servers, sudo, and some Python. It runs on your Undercloud, and does not require servers, databases, or any other tools. It is an ideal tool if you want minimal extra bureaucracy to manage Swift cluster. The pyringos tool is not a generic deployment system and does not define the workflow of Swift cluster deployment or management.-->
@@ -55,11 +58,11 @@ List disks and size of the disks on a given node.
 ###format-disks {#format-disks}
 To format and mount all the available disks on a node.
 
-	ringos format-disks -n (IP address of the node) -u heat-admin -d all
+	ringos format-disks -n <IP address of the node> -u heat-admin -d all
 
 To format a specific disk.
 
-	ringos format-disks -n (IP address of the node) -u heat-admin -d /dev/sdc -l d2
+	ringos format-disks -n <IP address of the node> -u heat-admin -d /dev/sdc -l d2
 
 
 ###create-ring  {#create-ring }
@@ -78,7 +81,7 @@ Create a ring based on part&#095;power, replicas, and min&#095;part&#095;hours.
 ### Add disk to a ring {#add-disk-to-ring}
 Add disk to a ring.
 
-	ringos add-disk-to-ring -f
+	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <IP address of object node> -p <value> -d <value> -w <value> -r <value> -z <value>
 
 In the following example a disk is added to a ring:
 
@@ -90,7 +93,7 @@ In the following example a disk is added to a ring:
 ###view-ring {#view-ring}
 View contents of a given ring.
 
-	ringos view-ring -f 
+	ringos view-ring -f /root/ring-building/object-1.builder
 
 In the following example, you can view the content of the ring
 
@@ -110,24 +113,37 @@ In the following example, you can view the content of the ring
 ###rebalance-ring {#rebalance-ring}
 Rebalances a given ring after adding disk to the ring.
 
-	ringos rebalance-ring -f
+	ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 
 ###copy-ring  {#copy-ring}
-Push the ring files available with starter nodes to all the swift nodes to make all in sync.
 
-	ringos copy-ring
+Copy the ring files available with starter nodes to all the swift nodes. Perform this steps with all the available Swift nodes so that all the files are available in all the Swift nodes.
 
-	ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.100
-	
+	ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift nodes>
+
 
 ###remove-disk-from-ring {#remove-disk-from-ring}
-Removes a given disk from ring incase of failure
 
-	ringos remove-disk-from-ring -f
+Incase of failure you can removes a given disk from ring.
+
+	ringos remove-disk-from-ring -f /root/ring-building/object-1.builder -s d0
 
 ###set weight to disk
 
 To add ring gradually or remove gradually.
 
-	ringos set-weight -f 
+	ringos set-weight -f object-1.builder -s d5 -w 0
+
+###set replica
+
+Change replica count to given replicas
+
+
+###set-info	
+
+Set info of disk(s) matching search value
+
+###set-min-part-hours	
+
+Set min_part_hours for the given ring
