@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Distributed Virtual Routing (DVR) Overview
 
-Distributed Virtual Routing (DVR) allows you to define connectivity among different VNS as well as connectivity between VNS hosts and the external network. 
+Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. 
 
 Distributed virtual routing is achieved through a set of distributed virtual routers. Each tenant has its own distributed virtual router to define the connectivity among the VNSs under the same tenant. 
 
