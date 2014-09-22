@@ -150,9 +150,11 @@ Ensure the following prerequisites are fulfilled before VSA Storage systems are 
 
 * Dedicated hardware identified for StoreVirtual VSA storage systems
 
+* Disk recommendation- with Adaptive Optimization (AO) or without Adaptive Optimization(AO)
+
 * Seed Cloud is installed and running
 
-### Deployment Process {#deploy-process}
+<!---### Deployment Process {#deploy-process}
 
 You can deploy VSA:
 
@@ -188,17 +190,18 @@ You can deploy VSA during Overcloud creation or installation. To deploy, update 
 
 6. Run the install script. During the installation, the number of VSA storage systems that you specified, are installed.
 
-         /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+         /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh--update 
      
 
-<!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
+<img src="media/storevirtual-cluster-network-diagram1.png"/>
+
 
 
 ### Deploy VSA post Overcloud creation {#post-oc}
 
-You can add VSA storage systems to an existing Overcloud also. You can add VSA in any of the following scenarios:
+You can add VSA storage systems to an existing Overcloud also. <!---You can add VSA in any of the following scenarios:-->
 
-* Baremetal Server, to be used as VSA, is already enrolled (during the initial installation or creation of cloud)
+<!--* Baremetal Server, to be used as VSA, is already enrolled (during the initial installation or creation of cloud)
 
 * Enroll the Baremetal server and scale out VSA Storage 
 
@@ -234,12 +237,13 @@ To deploy, update the Helion Config file and the Overcloud using the following c
 
 6. Run the installer script to update the overcloud. During the installation, the number of VSA storage systems that you specified, are installed.
 
-    	 bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+    	 bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+-->
 
 
-#### Enroll the Baremetal server
+#### Enroll the new Baremetal server
 
-To deploy VSA, you need to first enroll the Baremetal server and then, update the Helion Config file and the Overcloud. Perform the following commands:
+To deploy Hp StoreVirtual, you need to first enroll the Baremetal server and then, update the Helion Config file and the Overcloud. Perform the following commands:
 
 
 1. SSH to Undercloud as heat-admin
@@ -260,82 +264,73 @@ To deploy VSA, you need to first enroll the Baremetal server and then, update th
  
         ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
-4. SSH to seed as root
+4. List the Baremetal nodes
+
+		ironic node-list
+
+5. SSH to seed as root
 
         ssh root@<IP Address>
 
-5. Edit `/root/baremetal.json` and add the required details of the Baremetal server (MAC address, user id/password, IP address etc.). Add a snippet, like  the following example with VSA node details, to the "nodes" list.
- 
-		{
-		     "mac": [
-		       "00:19:0b:ec:76:4a"
-		     ],
-		     "cpu": "1",
-		     "memory": "8192",
-		     "disk": "512",
-		     "arch": "amd64",
-		     "pm_user": "root",
-		     "pm_addr": "192.168.122.1",
-		     "pm_password": "password",
-		     "pm_type": "pxe_ssh"
-		},
-
-
 6. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
  
-       	cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-3. Edit the /root/overcloud-config.json and update the value for **vsa&#095;scale** or **vsa&#095;ao_scale** appropriately. 
+7. Edit the `/root/overcloud-config.json` and update the value for **vsa&#095;scale** or **vsa&#095;ao_scale** appropriately. 
 
        	vsa_scale: <no of VSA systems>
 
-	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine(VM)  other than the storage systems in the SAN.
+	**NOTE**: For HP StoreVirtual, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine(VM)  other than the storage systems in the SAN.
 
+8. Export the environment variables based on your configuration and the details of the StoreVirtual scale specified in the /root/overcloud-config.json
 
-4. Apply the configuration
+9. Apply the configuration
 
 		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-5. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
+10. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
 
 			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
    			 echo "HP - configuring overcloud - $(date)"
 			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END
 
-6. Run the installer script to update the Overcloud. During the installation, the number of VSA storage systems that you specified, are installed. 
+11. Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified, are installed. 
 
-     	bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+     	bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
+
+12. Login to the Overcloud and view nova list
+
+    nova-list  
 
 
 ##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
 
 
-You must install the CMC to perform the administrative tasks on HP StoreVirtual VSA storage. You can manage the entire network of VSAs from this CMC. 
+You must install the CMC to perform the administrative tasks on HP StoreVirtual  storage. You can manage the entire network of StoreVirtuals from this CMC. 
 
 
 ### Prerequisites {#prerequisites} 
 
 * You must be running the X Windows System to install the CMC.
 
-* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA.
+* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual.
 
 **Note**: These changes are required for 64-bit operating system only.
 
 * Execute the following commands:
 
 		apt-get update
-		dpkg --add-architecture i386
-		apt-cache search ia32-libs
 		apt-get install openjdk-7-jdk:i386
 
 ### Installation ###{#installation}
 
 1. Verify if the CMC installer file (packaged along with the installer) has the executable permission otherwise execute the following command:
 
-		chmod +x CMC_11.5.01.0023.0_Installer_Linux.bin
+		chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
 
+2. Launch the installer
 
-3. Click the CMC installer.
+		./CMC_11.5.01.0079.0_Installer_Linux.bin
 
 2. Follow the steps in the installation wizard to complete the installation.
 
@@ -351,24 +346,25 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
 
 * CMC is already installed 
 
-* VSA (one or more) is deployed in the same management network where CMC is installed.
+* HP StoreVirtual (one or more) is deployed in the same management network where CMC is installed.
 
 
 To create a cluster, do the following:
 
 1. Open CMC.
 
-    By default, the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
+    By default, the CMC is configured to discover the StoreVirtual nodes in the subnet on which it is installed. You can manually add the nodes also.
 
-2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
+2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed.</br>
 
-3. In the **Enter IP** pop-up box, enter the IP of the VSA node.
+3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.
 
 4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 
 6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the detials of the selected node.
+
 7. (Optional) Click **Remove** in the Find Systems box to delete a node.
 
 8. Click **Close** to return to the Home page.<br> The discovered nodes are displayed under **Available Systems** option in the left panel.
@@ -381,17 +377,23 @@ To create a cluster, do the following:
 
 12.  Synchronize the time using NTP server or manually and click **Next** to display the Domain Name Server Configuration page.
 
-13. (Optional) Define  DNS details and click **Next** to display the Email Notification Setup page.
+13. Define  DNS details and click **Next** to display the Email Notification Setup page and define SMTP details.
 
-    **Note**: Although the above step is optional, it is recommended to enter the details.
+    **Note**: It is optional to enter the details in the above step.
 
-14. (Optional) Enter the SMTP details and click **Next** to display a Wizard in the Create a Cluster page. 
+14. Click **Next** to display a Wizard in the Create a Cluster page. 
 
-13.  Select the cluster type from the displayed options and click **Next**.
+15. Select the cluster type from the displayed options and click **Next**.
 
-14. In the **Cluster Name** box, enter the name of the cluster and click **Next**.
+16. In the **Cluster Name** box, enter the name of the cluster and click **Next**.
 
-15. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br> The details are displayed in a table in the page.
+17. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br> The details are displayed in a table in the page.
+
+
+	**Note**: Ensure that the Virtual IP (VIP) is in the same subnet as the HP StoreVirtual node. To get the details of the HP StoreVirtual IP, log into StoreVirual node and check
+
+    	/etc/vsa/vsa_network_config.json
+
 
 16. Click **Next** to go to the next page.
 
@@ -400,17 +402,17 @@ To create a cluster, do the following:
 18. Click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
 
 
-## Adding a VSA node to an existing Management Group ##{#adding-a-node}
+## Adding HP StoreVirtual node to an existing Management Group ##{#adding-a-node}
 
-To add a VSA node to any existing Management Group, do the following:
+To add a StoreVirtual node to any existing Management Group, do the following:
 
 1. Open CMC.
 
-    By default, the CMC is configured to discover the VSA nodes in the subnet on which it is installed. You can manually add the nodes also.
+    By default, the CMC is configured to discover the HP StoreVirtual nodes in the subnet on which it is installed. You can manually add the nodes also.
 
 2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
 
-3. In the Enter IP pop-up box, enter the IP of the VSA node.
+3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.</br>
 
 4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
 
@@ -422,7 +424,7 @@ To add a VSA node to any existing Management Group, do the following:
 
 8. Click **Close** to return to the Home page.<br> The discovered nodes are displayed under **Available Systems** option in the left panel.
 
-9.  Right-click the node to display a menu and select **Add to an Existing Management Group**.<br> A page is displayed.
+9.  Right-click the node to display a menu and select **Add to an Existing Management Group**.
 
 10. Enter the name of the management group.
 
@@ -430,7 +432,8 @@ To add a VSA node to any existing Management Group, do the following:
 
 ## Next Steps
 
-- Configure HP StoreVirtual VSA **(REQUIRED)**. 
+- Configure HP StoreVirtual 
+-  **(REQUIRED)**. 
 
 	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
