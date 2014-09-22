@@ -23,12 +23,12 @@ PageRefresh();
 # HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
 
 
-This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can run in any hypervisor.
+This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
 
 
 
 
-##Prerequisite
+##Prerequisite {#preq}
 
 * HP Helion Openstack Installation
 * DNSaaS Installer Image - See DNSaaS Cloud OS Releases
@@ -107,38 +107,39 @@ Once Target credentials are successfully created you can create service credenti
 
 Before proceeding with the install ensure that you have met all the prequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
 
-##Publish CSU contents:
+###Publish CSU contents
 
-1. Use Target Credentials to login to the Overcloud's Horzon UI. 
+1. Login to the Overcloud's Horzon using **Target Credentials**. 
 2. Click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
 3. Click **Other** and then select **Updates and Extensions** to open the Updates and Extensions page.
-3. Select the appropriate build in the list  and click **Install** (soon to be renamed "Publish")
-4.A pop-up will appear, click "Install" again.
-5.Wait for several minutes for the status of the Build to proceed from "Installing" to "Installed"
+3. Select the appropriate build from the list  and click **Install**. Install dialog box is displayed.
+4.Click **Install**. It will take several minutes for the status of the Build to proceed from Installing to Installed.
 
-Booting the installer VM:
 
-1. Login to the Overcloud's Horzon UI using the "Target Credentials" (The "dnsaas" user, if the commands above were used)
-2. Navigate to "Project" -> "Compute" -> "Images"
-3. Find the "dnsaas-installer_0.1.0b12" image in the list, and click "Launch" (Note - the build number will change depending on the particular release) 
+###Boot the installer VM
 
-	a. Set the instance name to "dnsaas-installer", or similar.
+1. Login to OverCloud Horizon using **Target Credentials**.
+2. Click **Project** and then select Compute to  open the Images page.
+3. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_0.1.0b12** to launch this image.
 
-	b.Set the instance flavor to "m1.small"
+	a. Set the instance name to **dnsaas-installer**, or similar.
+
+	b.Set the instance flavor to **m1.small**
 	
 	c.Select an appropriate SSH keypair
 	
-	d.Select the "default-net" network, if not automatically populated.
+	d.Select the **default-net** network, if not automatically populated.
 
-	e.Click "Launch" to launch the VM
+	e.Click **Launch** to launch the VM
 
 4. Find the just-launched VM in the list, click "Associate Floating IP"
 	
-    a. Select/Create a Floating IP, make a note of the IP.
+    a. Select/Create a Floating IP. Ensure that you remember the IP.
 	
-	b. Click "Associate
+	b. Click **Associate**.
 
-5. Navigate to "Project" -> "Compute" -> "Access and Security"
+5. Click **Project** and then select Compute to  open the Images page.
+6. Navigate to "Project" -> "Compute" -> "Access and Security"
 6. Find the "default" security group, click "Manage Rules"
 
 	a. Click "Add Rule"
@@ -232,30 +233,80 @@ After you validate the configuration file, run the DNSaaS installer:
 
  You must configure HAProxy before you configure the OverCloud Load Balance for DNaaS.
 
-To configure HAProxy use the following command: 
+1. To configure HAProxy use the following command: 
 
 	$ dnsaas-installer --target-password <Target User Password> haproxy
 
+The HA Proxy configuration file will be displayed as the sample below:
+	
+	2014-09-17 23:31:05.670       INFO HAProxy configuration
+	### START HAPROXY CONFIG
+	listen designate
+	  bind 0.0.0.0:9001
+	  mode tcp
+	  balance source
+	  option tcpka
+	  option tcplog
+	   
+	  server 10.22.171.32 10.22.171.32 check inter 2000 rise 2 fall 5
+	  server 10.22.171.22 10.22.171.22 check inter 2000 rise 2 fall 5
+	  server 10.22.171.21 10.22.171.21 check inter 2000 rise 2 fall 5
+	### END HAPROXY CONFIG
+
+
 Once HAProxy is configured, SSH to all three OverCloud controller. Perform the following steps on each controller node:
 
-1. Log in to your install system as root:
+2.SSH OverCloud as root
+
+	ssh root@<IP address of OverCloud>
+
+3.vi `paas.cfg` to edit the configuration file 
+
+ 	/etc/haproxy/manual/paas.cfg
+
+4 Paste the HA Proxy configuration file, which is generated in step 1, at the end of the `pass.cfg` file
+
+5 Save the `pass.cfg` file.
+
+		:wq!
+
+6.Reload HA Proxy
+
+		service haproxy reload 
+
+7.Open the Designate API port in the firewall and run the following command:
+
+   a. Run `iptables -I INPUT 1 -p tcp -m tcp --dport 9001 -j ACCEPT`
+
+   b. Run `iptables-save > /etc/iptables/iptables` 
 
 
+#### Registering the service with Keystone
+You  can register the DNS service and endpoint as a user or an admin. 
 
-Next, SSH to all three overcloud controller. On each controller, perform the following steps:
-1.sudo to the "root" user
-2.open /etc/haproxy/manual/paas.cfg in a text editora.e.g. `nano /etc/haproxy/manual/paas.cfg`
+You do not have to immediately register the DNS service in Keystone; however, if you choose to register the DNS service and endpoint execute the following command:
+ 
+* Admin
 
-3.Towards the end of the file, paste the generated config section into the file
-4.Save the file
-5.Reload the haproxy service:a.Run `service haproxy reload`
+		$ dnsaas-installer --admin-password <Admin User Password> --target-password <Target User Password> keystone-registration
+ 
+* User
+ 
+		dnsaas-installer --target-password <Target User Password> keystone-registration
 
+###Initial Service Configuration
 
-6.Finally, Open the Designate API port in the firewall:a.Run `iptables -I INPUT 1 -p tcp -m tcp --dport 9001 -j ACCEPT`
-b.Run `iptables-save > /etc/iptables/iptables` 
+You must perform an initial configuration step to communicate the names of the servers that serve DNS to Designate. Please ensure you have a valid set of admin credentials in the standard OS_* environment variables before proceeding.
 
+For the "Nameserver FQDNs" gathered during the [prerequisites](#preq) step, issue a `server-create` command for each name to add the server:
+ 
+	$ designate server-create --name ns1.example.com.
 
+For example :
 
+For the HP Helion QA DynECT account:
+
+	designate server-create --name ns1.p13.dynect.net.
 
 
 
