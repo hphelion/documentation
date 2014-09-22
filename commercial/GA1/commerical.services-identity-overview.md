@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication for all HP Helion. It performs the following functions:
+Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. It performs the following functions:
 
 * **User Management**- It tracks users and their permissions.The main components are:
 
@@ -43,15 +43,13 @@ Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides o
 The Identity service primarily works on the following key concepts: 
 
 ### User ###
- It is  digital representation of a person, system, or service who uses the cloud. Identity authentication services validates incoming requests made by users. Users have a login and may be assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project.
+ It is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project.
 
 ### Credentials ###
 
 It is the data that belongs to, is owned by and is generally only known to a user. This data is used by the user to prove his/her identity. For example:
 
 * Username and password
-
-* Username and API key
 
 * An authentication token provided by the Identity Service
 
@@ -72,16 +70,16 @@ An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image S
 A network-accessible address, usually described by a URL, where a service may be accessed.
 
 ### Role ###
-A role defines the set of rights and privileges that can be assigned to a user. A role is also called a *personality*.
+A role defines set of rights and privileges that can be assigned to a user. A role is also called a *personality*.
 
 
 ## Keystone with LDAP
 
-Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of authority authentication. LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.
+Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of authority authentication. <!---LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.-->
 
 The requests to Identity service are delegated to the LDAP service which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
 
-The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes
+<!---The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes-->
 
 
 <!---
@@ -133,9 +131,9 @@ To [perform tasks using the Identity service](#howto), you can use the dashboard
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Identity service.
 
-###Using the API to access Identity### {#API}
+###Using the API ### {#API}
  
-You can use a low-level, raw REST API access to HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
+You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
 
 ###Using the CLI### {#cli}
 
