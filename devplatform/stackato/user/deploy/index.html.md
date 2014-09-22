@@ -20,9 +20,9 @@ README.md file of each app.
 
 **Note**
 
-In Application Lifecycle Service 3.0 and later (Cloud Foundry v2 API), application deployment
+In Application Lifecycle Service 1.0 and later (Cloud Foundry v2 API), application deployment
 is done primarily using [*Buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks). A
-special built-in 'Legacy' buildpack handles Application Lifecycle Service v2 frameworks for
+special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for
 existing application configurations.
 
 Targeting & Authenticating[](#targeting-authenticating "Permalink to this headline")
@@ -75,7 +75,7 @@ the config YAML file instead of prompting for them.
 The output of the push command will be something like:
 
     $ helion push -n
-    Using manifest file "stackato.yml"
+    Using manifest file "manifest.yml"
     Application Url: env.example.hphelion.com
     Creating Application [env] as [https://api.example.hphelion.com -> exampleco -> devel-example -> env] ... OK
       Map env.stacka.to ... OK
@@ -94,7 +94,7 @@ The output of the push command will be something like:
     app.0:   => http://0.0.0.0:50932/
     app.0: CTRL + C to shutdown
     OK
-    http://env.stacka.to/ deployed
+    http://env.heli.on/ deployed
 
 The `helion` client will show staging and running
 logs for the deployment process. To inspect these logs after deployment
@@ -117,23 +117,17 @@ examples:
 -   [Python](/als/v1/user/deploy/languages/python/)
 -   [Ruby](/als/v1/user/deploy/languages/ruby/)
 
-.NET support via [Mono](http://www.mono-project.com/Main_Page) is
-available with an Application Lifecycle Service add-on. Contact
-[als-support@hp.com](mailto:als-support@hp.com)
-for more information and access to the plugin.
-
 Configuring Your Application For Application Lifecycle Service[](#configuring-your-application-for-helion "Permalink to this headline")
 ---------------------------------------------------------------------------------------------------------------------
 
 Most applications should be able to run under Application Lifecycle Service with only a few
 changes.
 
-**stackato.yml / manifest.yml**
-:   A stackato.yml or manifest.yml file should be added to the root of
+**manifest.yml**
+:   A manifest.yml file should be added to the root of
     your application to hold installation details as well as setup
     configuration instructions for your app.
 
-    [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml)
 
     [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml)
 
@@ -254,7 +248,7 @@ crontab file.
 
 After setting up environment variables, we copy the *\$HOME/crontab*
 file, and finally the commands from the `cron:`
-section in *stackato.yml*. The resulting file is stored at
+section in *manifest.yml*. The resulting file is stored at
 *\$STACKATO\_APP\_ROOT/crontab*.
 
 ### Whitespace & Newlines in Environment Variables[](#whitespace-newlines-in-environment-variables "Permalink to this headline")

@@ -38,13 +38,13 @@ role**:
     template:
 
         $ kato config get fence docker/image
-        helion/stack/alsek
+        stackato/stack/alsek
 
 3.  Create a [Dockerfile](http://docs.docker.io/en/latest/use/builder/)
     which inherits the current Docker image, then runs an update or
     installation command. For example:
 
-        FROM helion/stack/alsek
+        FROM stackato/stack/alsek
         RUN apt-get -y install libgraphite2-dev
 
     -   [FROM](http://docs.docker.io/en/latest/use/builder/#from):
@@ -76,14 +76,14 @@ Admin Hooks[](#admin-hooks "Permalink to this headline")
 If an administrator wants to run arbitrary commands in all application
 containers, global admin hooks can be set to run immediately after
 corresponding user-specified deployment hooks (pre-staging,
-post-staging, pre-running) set in application *stackato.yml* or
+post-staging, pre-running) set in application 
 *manifest.yml* files.
 
 These hooks must be:
 
 -   plain bash scripts with the executable bit set (`chmod +x`)
 -   named *pre-staging*, *post-staging*, or *pre-running*
--   installed in */etc/helion/hooks* within the Docker image
+-   installed in */etc/stackato/hooks* within the Docker image
 
 For example, a pre-running admin hook might look like this:
 
@@ -108,26 +108,26 @@ subsequent releases.
 The Dockerfile for creating the image (see [*Modifying or Updating the
 Container Image*](#docker-modify-container) ) would use the ADD
 directive to put a local *hooks* directory in the Docker image's
-*/etc/helion/* directory:
+*/etc/stackato/* directory:
 
-    FROM helion/stack/alsek
-    ADD hooks /etc/helion/hooks
+    FROM stackato/stack/alsek
+    ADD hooks /etc/stackato/hooks
 
 The pre-running hook example above would require the addition of
 `newrelic-sysmond` to the Docker image. A Dockerfile
 enabling that might look like this:
 
-    FROM helion/stack/alsek
+    FROM stackato/stack/alsek
 
     RUN echo deb http://apt.newrelic.com/debian/ newrelic non-free >> /etc/apt/sources.list.d/newrelic.list
     RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
     RUN apt-get update
     RUN apt-get install newrelic-sysmond
     # The nrsysmond scripts are run with sudo
-    RUN echo "helion ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" >> /etc/sudoers
-    RUN echo "helion ALL= NOPASSWD: /usr/sbin/nrsysmond-config" >> /etc/sudoers
+    RUN echo "stackato ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" >> /etc/sudoers
+    RUN echo "stackato ALL= NOPASSWD: /usr/sbin/nrsysmond-config" >> /etc/sudoers
 
-    ADD hooks /etc/helion/hooks
+    ADD hooks /etc/stackato/hooks
 
 Creating a Docker Registry[](#creating-a-docker-registry "Permalink to this headline")
 ---------------------------------------------------------------------------------------
@@ -142,11 +142,11 @@ as a central repository for your container tempates.
     \<https://index.docker.io/u/samalba/docker-registry/\> image from
     the Docker index:
 
-        $ sudo docker pull helion/docker-registry
+        $ sudo docker pull stackato/docker-registry
 
 2.  Start the server:
 
-        $ sudo docker run -d -p 5000 helion/docker-registry
+        $ sudo docker run -d -p 5000 stackato/docker-registry
         f39d1b3f6fedc50e77875526352bd5a0f650a998dc1d7ca4e39c4a1eb8349e42
 
     This returns the ID of the running registry server image. A shorter
@@ -181,7 +181,7 @@ as a central repository for your container tempates.
 
 > Note
 >
-> The helion/stack/alsek and helion/base images (approximately
+> The stackato/stack/alsek and stackato/base images (approximately
 > 1.9GB) are pushed to the registry in addition to the new image. Make
 > sure you have sufficient disk space available on the VM.
 

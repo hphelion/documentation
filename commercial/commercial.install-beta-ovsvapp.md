@@ -119,12 +119,28 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 
 8. In the Seed VM's folder `/ovsvapp/hp-ovsvapp/src/ovsvm`, locate the `ovs_vapp.ini` file and add your settings for cloning and configuring OVSvApp VMs.
    
-	a. Add VMware settings.
+    Run the script to deploy OVSvApp VMs on the hosts specified in `ovs_vapp.ini` file.
+ 
+         python /ovsvapp/hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
-	* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
+<!---
+5. Install `pyvmomi` and `netaddr python` modules on the machine from where you  run the installer script, using the following command.
 
-	* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
-	
+    `pip install pyvmomi`
+
+    `pip install netaddr`
+
+6. In the `hp-ovsvapp\src\ovsvm` folder, locate the `ovs_vapp.ini` file, and add your settings
+for cloning and configuring OVSvApp VMs.
+
+**Note**: It is important that you carefully enter and verify the settings you add to the file because the configuration in the `ovs_vapp.ini` file is deployed to multiple OVSvApp VMs. -->
+
+		a. Add VMware settings.
+
+			* For clusters, specify the name of each cluster on which to host OVSvApp, separated by commas.
+
+			* For `skip_hosts`, specify the IP address of each host where you do not want to install OVSvApp, separated by commas.
+     
 			[vmware]
 			version=<vmware_version>
 			vcenter_ip=<vcenter_ip>
@@ -135,7 +151,7 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 			skip_hosts=<skip_host_IP,skip_host_IP>
 
 
-	b. Add network port settings. <!--Settings for `standard_port` group is optional. not for beta --->
+		b. Add network port settings. <!--Settings for `standard_port` group is optional. not for beta --->
 
 			[network]
 			data_interface={'<nic_type>':{'<port_group_name>'}
@@ -146,30 +162,30 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 			netmask=<netmask> 
 			gateway_ip=<gateway>
 
-	**Note**: The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
+		**Note**: The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
 
-	c. Specify the name for cloning the appliance.
+		c. Specify the name for cloning the appliance.
 			
 			[template]
 			template_name=overcloud-esx-ovsvapp
 		
-	d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp appliance.
+		d. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp appliance.
 
-	**Note**: During deployment, the `ovs_vm_name` setting is appended with each VM host name and IP address to appear as `<ovs_vm_name>_<IP>`
+			**Note**: During deployment, the ovs&#95;vm&#95;name setting is appended with each VM host name and IP address to appear as <ovs_vm_name>_<IP>
 			
 			[template]
 			ovs_vm_name=<ovs_vm_name>
 			num_cpu=<number_of_CPUs>
 			memory_mb=<amount_of_memory>
 
-	e. Specify RabbitMQ settings.
+		e. Specify RabbitMQ settings.
 
 			[rabbitmq]
 			rabbitmq_host=<rabbitmq_host_IP>
 			rabbitmq_user=<rabbitmq_username>
 			rabbitmq_pass=<rabbitmq_password>
 
-	f. Specify the level for logging errors, and a log file location. Default file location is 
+		f. Specify the level for logging errors, and a log file location. Default file location is 
 
 			`/var/log/ovsvapp_log`
 	
@@ -177,42 +193,43 @@ You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VM
 				log_level=<log_level>
 				log_file=<log_file_location>
 
-	**Example**
-	
-		[vmware]
-		version=5.1
-		vcenter_ip=15.21.18.1
-		vcenter_username=Administrator
-		vcenter_password=Password123
-		datacenter=Datacenter
-		clusters=testCluster
-		skip_hosts=15.21.18.3,15.21.18.6
-			
-		[network]
-		data_interface={'vmxnet3':'DataPort'}
-		mgmt_interface={'vmxnet3':'MgmtPort'}
-		trunk_interface={'vmxnet3':'TrunkPort'}
-			
-		[template]
-		template_name=overcloud-esx-ovsvapp
-			
-		[vmconfig]
-		ovs_vm_name=ovsvapp
-		num_cpu=2
-		memory_mb=2048
-			
-		[rabbitmq]
-		rabbitmq_host=10.10.11.12
-		rabbitmq_user=root
-		rabbitmq_pass=skyline
-			
-		[logger]
-		log_level=DEBUG
-		log_file=/var/logs/ovsvapp_vm.log
+Example
 
-9. Run the script to deploy OVSvApp appliance on the hosts specified in `ovs_vapp.ini` file.
 
-     `python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py`
+	#[vmware]
+	#version=5.1
+	#vcenter_ip=15.21.18.1
+	#vcenter_username=Administrator
+	#vcenter_password=Password123
+	#datacenter=Datacenter
+	#clusters=testCluster
+	#skip_hosts=15.21.18.3,15.21.18.6
+		
+	#[network]
+	#data_interface={'vmxnet3':'DataPort'}
+	#mgmt_interface={'vmxnet3':'MgmtPort'}
+	#trunk_interface={'vmxnet3':'TrunkPort'}
+		
+	#[template]
+	#template_name=overcloud-esx-ovsvapp
+		
+	#[vmconfig]
+	#ovs_vm_name=ovsvapp
+	#num_cpu=2
+	#memory_mb=2048
+		
+	#[rabbitmq]
+	#rabbitmq_host=10.10.11.12
+	#rabbitmq_user=root
+	#rabbitmq_pass=skyline
+		
+	#[logger]
+	#log_level=DEBUG
+	#log_file=/var/logs/ovsvapp_vm.log
+
+9.Run the script to deploy OVSvApp appliance on the hosts specified in `ovs_vapp.ini` file.
+
+     python /hp-ovsvapp/src/ovsvm/invoke_ovs_vapp.py
 
 
 ##Verifying your deployment {#deploymentverification}
@@ -278,22 +295,7 @@ Enter the following commands to stop and restart the HP VCN networking service:
 ##Uninstalling VCN on ESX hosts {#uninstallvcn}
 
 To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and delete each OVSvApp VM.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
-
-<!--- Removed from after step 8, In the Seed VM's folder /ovsvapp/hp-ovsvapp/src/ovsvm....
-5. Install `pyvmomi` and `netaddr python` modules on the machine from where you  run the installer script, using the following command.
-
-    `pip install pyvmomi`
-
-    `pip install netaddr`
-
-6. In the `hp-ovsvapp\src\ovsvm` folder, locate the `ovs_vapp.ini` file, and add your settings for cloning and configuring OVSvApp VMs.
-
-**Note**: It is important that you carefully enter and verify the settings you add to the file because the configuration in the `ovs_vapp.ini` file is deployed to multiple OVSvApp VMs. -->
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -5,7 +5,7 @@ permalink: /helion/devplatform/community/siteindex/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -29,7 +29,7 @@ PageRefresh();
 * [HP Helion Development Platform Documentation home page](/helion/devplatform/community/)
 * [Release notes](/helion/devplatform/community/release-notes/) 
 * [Related topics](/helion/devplatform/community/related-topics/)
-* [Install &amp; configure your HP Helion Development Platform](/helion/devplatform/community/install-dev-platform/) 
+* [Install and Configure your HP Helion Development Platform](/helion/devplatform/community/install-dev-platform/)
 
 #### Cloud Foundry&trade; references
 

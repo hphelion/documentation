@@ -24,7 +24,73 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication for all HP Cloud offerings. 
+Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. It performs the following functions:
+
+* **User Management**- It tracks users and their permissions.The main components are:
+
+	* Users
+
+	* Projects
+
+	* Roles
+
+* **Service catalog**- It provides a catalog of available services with their API endpoints. The main components are:
+
+	* Services
+
+	* Endpoints
+
+The Identity service primarily works on the following key concepts: 
+
+### User ###
+ It is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project.
+
+### Credentials ###
+
+It is the data that belongs to, is owned by and is generally only known to a user. This data is used by the user to prove his/her identity. For example:
+
+* Username and password
+
+* An authentication token provided by the Identity Service
+
+### Authentication
+
+It is the act of confirming the identity of a user. The Identity service confirms that the incoming request is being made by the user  by validating a set of claims that the user is making. 
+
+###Token###
+A random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.
+
+### Project ###
+A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).
+
+### Service ###
+An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.
+
+### Endpoint ###
+A network-accessible address, usually described by a URL, where a service may be accessed.
+
+### Role ###
+A role defines set of rights and privileges that can be assigned to a user. A role is also called a *personality*.
+
+
+## Keystone with LDAP
+
+Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of authority authentication. <!---LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.-->
+
+The requests to Identity service are delegated to the LDAP service which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
+
+<!---The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes-->
+
+
+<!---
+
+- **Token** -- An arbitrary bit of text that is used to access resources. Each token has a scope that describes which resources are accessible with it. 
+
+- **Project** -- A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc). Also known as *tenant*.
+
+- **Endpoint** -- A network-accessible address, usually described by URL, where a service may be accessed.
+
+- **Role** -- A set of rights and privileges that can be assigned to a user.  A user assuming that role inherits those rights and privileges. A role is also called a *personality*.
 
 The Identity service validates that incoming requests are being made by the user who claims to be making the call. 
 
@@ -42,6 +108,8 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 
 - **Credentials** -- Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are.
 
+
+
 - **Authentication** -- The act of confirming the identity of a user. The Identity service confirms that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. 
 
 - **Token** -- An arbitrary bit of text that is used to access resources. Each token has a scope that describes which resources are accessible with it. 
@@ -50,7 +118,10 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 
 - **Endpoint** -- A network-accessible address, usually described by URL, where a service may be accessed.
 
-- **Role** -- A set of rights and privileges that can be assigned to a user.  A user assuming that role inherits those rights and privileges. A role is also called a *personality*. 
+- **Role** -- A set of rights and privileges that can be assigned to a user.  A user assuming that role inherits those rights and privileges. A role is also called a *personality*. -->
+
+
+
 
 ## Working with the Identity Service
 
@@ -60,13 +131,13 @@ To [perform tasks using the Identity service](#howto), you can use the dashboard
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Identity service.
 
-###Using the API to access Identity### {#API}
+###Using the API ### {#API}
  
-You can use a low-level, raw REST API access to HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
+You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
 
 ###Using the CLI### {#cli}
 
-You can the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+You can use the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
@@ -147,7 +218,7 @@ Use the Identity service to reset a password for a user.
 
 ## For more information ##
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). <!-- The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.-->
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

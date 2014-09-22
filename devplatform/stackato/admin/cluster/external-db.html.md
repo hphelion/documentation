@@ -8,12 +8,10 @@ External Data Services[](#external-data-services "Permalink to this headline")
 ===============================================================================
 [General Principles](#general-principles)
     -   [MySQL](#mysql)
-    -   [Amazon RDS for MySQL](#amazon-rds-for-mysql)
     -   [PostgreSQL](#postgresql)
     -   [Troubleshooting](#troubleshooting)
 
-Application Lifecycle Service comes with several data services that can be enabled on a micro
-cloud or in a Stackto cluster. However, for implementations where high
+Application Lifecycle Service comes with several data services that can be enabled on an Application Lifecycle Service cluster. However, for implementations where high
 availability or high performance databases are required, it's advisable
 to configure Application Lifecycle Service to connect to an externally maintained database or
 data service.

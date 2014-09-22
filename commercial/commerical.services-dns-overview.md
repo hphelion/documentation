@@ -26,7 +26,7 @@ Based on OpenStack Designate, the HP Helion OpenStack DNS as a service project (
 
 DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
 
-DNSaaS for OpenStack includes:
+DNSaaS for OpenStack cloud includes:
 
 
 - REST APIs for domain/record management
@@ -35,9 +35,9 @@ DNSaaS for OpenStack includes:
 - A framework in place to integrate with Nova and Quantum notifications (for auto-generated records)
 - Support for PowerDNS in the current beta
 
-For example, if a user wants to to access `mytestdomain.com` in their browser, DNS provides the mechanism for the browser to know that the server (for example, `1.2.3.4`).
+For example, if a user wants to access `mytestdomain.com` in the browser, DNS provides the mechanism for the browser to locate that server (for example, `1.2.3.4`).
 
-**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion Openstack beta and verified that it is configured correctly and operational.
+**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack beta and verified that it is configured correctly and operational.
 
 Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
 
@@ -95,10 +95,7 @@ You can perform the following operations for DNS records:
 ## For more information ##
 
 For more information on OpenStack Designate, see [OpenStack Designate wiki](https://wiki.openstack.org/wiki/Designate).
-
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
 ####OpenStack trademark attribution
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>

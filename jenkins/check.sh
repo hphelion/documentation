@@ -11,8 +11,17 @@ git pull
 rm checktmp > /dev/null 2>&1  
 
 
-echo  Checking the $GIT_BRANCH branch for embarrassing strings...    
+echo  Checking the $GIT_BRANCH branch for embarrassing strings...  
 
+
+for i in `find . -name "*.md"`
+do 
+	a=`head -1 $i`
+	if   [ -z "$a" ];
+	then
+		echo "Blank lines at the top of file $i"
+	fi
+done   
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'

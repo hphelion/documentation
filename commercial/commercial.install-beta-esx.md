@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&reg;: Beta Installation and Configuration"
+title: "HP Helion OpenStack&#174;: Beta Installation and Configuration"
 permalink: /helion/openstack/install-beta/esx/
 product: commercial
 
@@ -20,18 +20,18 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/vsa/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/ovsvapp/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Beta Installation and Configuration for ESX Hypervisor
+# HP Helion OpenStack&trade;: Beta Installation and Configuration for ESX Hypervisor
 <!-- not required
-Welcome to the HP Helion Openstack beta. HP Helion OpenStack beta is based on  Icehouse version of OpenStack and uses TripleO program. It aims at installing, upgrading, and operating OpenStack clouds using OpenStack as the installation mechanism.  
+Welcome to the HP Helion OpenStack beta. HP Helion OpenStack beta is based on the Icehouse version of OpenStack software and uses TripleO. It aims at installing, upgrading, and operating OpenStack clouds using OpenStack technology as the installation mechanism.  
 
 
-HP Helion OpenStack beta Edition manages ESX hosts using the VMware vCenter driver available in the community. The VMware vCenter driver makes use of clusters exposed through vcenter to manage ESX hosts. This implies, The clusters in the vCenter needs to be managed by Cloud OS. This document provides installation instructions for HP Helion OpenStack beta Edition preview on a suitably specified and prepared single-node system.
+HP Helion OpenStack beta edition manages ESX hosts using the VMware vCenter driver available in the community. The VMware vCenter driver makes use of clusters exposed through vCenter to manage ESX hosts. This implies that the clusters in the vCenter need to be managed by Cloud OS. This document provides installation instructions for HP Helion OpenStack beta edition preview on a suitably specified and prepared single-node system.
 	
-The following topics explain the installation and configuration process of HP Helion OpenStack beta Edition in detail. To ensure successful installation, please read through the topics before you start.--->
+The following topics explain the installation and configuration process of HP Helion OpenStack beta edition in detail. To ensure successful installation, please read through the topics before you start.--->
 
   
 
-HP Helion Openstack beta allows you to manage the VMWare vCenter and provision virtual machines. <!---ESX integration in HP Helion Openstack beta enables cloud admin to bring up an overcloud and utilize the ESX environment to create virtual machines.-->  
+HP Helion OpenStack beta allows you to manage the VMWare vCenter and provision virtual machines. <!---ESX integration in HP Helion OpenStack beta enables the cloud admin to bring up an overcloud and utilize the ESX environment to create virtual machines.-->  
 
 It is important to read through this page before starting your installation. We also recommend that you review the following:
 
@@ -54,7 +54,7 @@ The rest of this page explains the beta installation and configuration process f
    * [Installing the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
    * [Connecting to Horizon console](#connectconsole)
-   * [Connecting to to Monitoring UI](#monitoring)
+   * [Connecting to Monitoring UI](#monitoring)
 * [Deploying Open vSwitch vApp](#ovsvapp)
 * [Installing DNS as a service](#configure)
 * [Next steps](#next-steps)
@@ -94,7 +94,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 </td></tr>
 
 <tr style="background-color: white; color: black;">
-<td>HP Helion OpenStrack DNSaaS (Optional) </td><td>HP_dnsaas-installer_0.0.4b11.tar.gz</td></tr>
+<td>HP Helion OpenStack DNSaaS (Optional) </td><td>HP_dnsaas-installer_0.0.4b11.tar.gz</td></tr>
 </td></tr>
 </table>
 
@@ -108,7 +108,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 For more details, refer to the *Creating the baremetal.csv file* section on the [HP Helion OpenStack Beta Installation: Before you begin](/helion/openstack/install-beta/prereqs/#install-pkg) page.
 
-## Installing HP Helion Openstack ## {#install}
+## Installing HP Helion OpenStack {#install}
 
 Ensure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -329,7 +329,7 @@ Deploy OVSvApp for ESX hosts. See [Deploying and configuring OVSvApp for HP Virt
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack beta and verified that it is configured correctly and operational. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion OpenStack beta and verified that it is configured correctly and operational. 
 
 Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
 
@@ -440,8 +440,8 @@ Perform the following steps to install OVSvAPP VM :
 
 --->
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

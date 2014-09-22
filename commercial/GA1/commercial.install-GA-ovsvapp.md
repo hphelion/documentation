@@ -47,7 +47,7 @@ The following topics in this section explain how to deploy and verify deployment
 
 Before you install the OVSvApp, ensure the following:
 
-* The HP Helion Openstack must be installed and configured.
+* The HP Helion OpenStack must be installed and configured.
 
 * The VMware vSphere&reg; platform must be installed and configured.
 
@@ -109,7 +109,7 @@ To deploy the OVSvApp:
 
 1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvAPP.
 
-2. Use the the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESX hosts in your data center: 
+2. Use the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESX hosts in your data center: 
 
 	a. In the vSphere Client, click **File > Deploy OVF Template**.
 

@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-#Performance of HP Helion Openstack
+#Performance of HP Helion OpenStack
 
 This section determines the performance of HP Helion OpenStack in terms of responsiveness and stability under a various workload. Scalability, reliability, and resource usage are the quality attributes of the system which are being measured for performance testing of this product. 
 

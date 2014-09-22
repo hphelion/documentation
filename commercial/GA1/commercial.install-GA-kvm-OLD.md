@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
-permalink: /helion/openstack/ga/install/kvm/
+permalink: /helion/openstack/ga/install/kvmold/
 product: commercial.ga
 
 ---
@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor
 
-HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. 
+HP Helion OpenStack allows you to manage the KVM hypervisor and provision virtual machines. 
 
 It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/ga/install-overview/##installation-requirements) and the [support matrix](/helion/openstack/ga/support-matrix/), and learn about the [installation process and complete any required tasks](/helion/openstack/ga/install/prereqs/). 
 
@@ -333,7 +333,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack and verified that it is configured correctly and operational. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion OpenStack and verified that it is configured correctly and operational. 
 
 Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
 

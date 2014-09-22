@@ -23,9 +23,94 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;  Troubleshooting
 
-HP Helion Openstack is an OpenStack technology couple with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
+HP Helion OpenStack is an OpenStack technology couple with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
+
+
+## Baremetal installation
+
+* When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error has occasionally occurred:
+
+    `Fatal PCI Express Device Error PCI Slot ?
+     B00/D00/F00`
+
+     If you get this error, reset the system that experienced the error:
+
+    1. Connect to the iLO using Internet Explorer:
+        `https://<iLO IP address>`
+    2. Navigate to Information / Diagnostics.
+    3. Reset iLO.
+    4. Log back into the iLO after 30 seconds.
+    5. Navigate to Remote Console / Remote Console.
+    6. Open the integrated remote console (.NET).
+    7. Click Power switch / Press and Hold.
+    8. Click Power switch / Momentary Press, and wait for the system to restart.
+
+    The system should now boot normally.
+
+* If the overcloud controller is rebooted (due to a power issue, hardware upgrade, and so forth), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
+ 
+  1. A user `root` on the overcloud controller must:
+  
+        A. Run the `os-refresh-config` scripts:
+
+            # os-refresh-config
+
+        B. Restart the `mysql` service:
+
+            # service mysql restart
+
+        C. Re-run the `os-refresh-config` scripts:
+
+            # os-refresh-config
+
+        D. Restart all Networking Operations (Neutron) services:
+
+            # service neutron-dhcp-agent restart
+            # service neutron-l3-agent restart
+            # service neutron-metadata-agent restart
+            # service neutron-openvswitch-agent restart
+            # service neutron-server restart
+
+  2. On each overcloud node, restart the neutron and nova services:
+  
+            $ sudo service neutron-openvswitch-agent restart
+            $ sudo service nova-compute restart
+            $ sudo service nova-scheduler restart
+            $ sudo service nova-conductor restart
+
+
+* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
+
+* On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
+
+        # ip addr add 192.168.185.131/16 dev eth0 scope global
+        # ip addr del 192.168.185.131/16 dev brbm
+        # ovs-vsctl del-port NIC
+
+        where
+        * eth0 is the external interface
+        * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
+        * The baremetal bridge is always called 'brbm'
+
+* Before you install HP Helion OpenStack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+
+    **Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
+
+    1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
+    
+            heat_metadata_server_url = http://192.0.202.2:8000
+            heat_waitcondition_server_url = http://192.0.202.2:8000/v1/waitcondition
+            heat_watch_server_url = http://192.0.202.2:8003
+
+        **Note**: You must have admin ssh access to the overcloud controller.
+
+    2. Save the file.
+    3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
+
+    4. Ensure there are no Heat resources in an Error state, and then delete any stale or corrupted Heat-related stacks.
+
 
 ## Baremetal installation
 
@@ -59,7 +144,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </table>
 
 
-##Installation
+##Network
 
 **IPMI fails with error and Unable to establish IPMI v2 / RMCP+ session** 
 
@@ -83,7 +168,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 </table>
 
-##Installation
+## Software Installation
 ####BIOS blocks are not set to correct date and time across all nodes
 
 

@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Services Overview #
 
-OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows the services to work together and allows users to interact with the service.
+OpenStack technology is comprised of several integrated services. Each service works through an API (application programming interface) that allows the services to work together and allows users to interact with the service.
 
 HP Helion OpenStack includes a number of additional services for working with your cloud. This section lists the services available for you to work with your cloud.
 
@@ -40,14 +40,16 @@ Assigning these accounts to a project could allow project users to access servic
 
 The service user accounts include, but are not limited to, the following:
 
-- Swift
-- Nova
-- Neutron
-- Glance
-- Cinder
-- Heat
-- Keystone
-- Ceilometer
+- swift
+- nova
+- neutron
+- sherpa
+- glance
+- cinder
+- heat
+- keystone
+- ceilometer
+
 
 ## OpenStack Services ## {#OpenStack}
 
@@ -85,7 +87,6 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
-
 ## Dashboard Services ## {#Dashboard}
 
 The following services are used by HP Helion OpenStack to create dashboards.
@@ -116,16 +117,14 @@ See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/
 
 ## For more information ##
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack cloud is put together. However, HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
 For more information on installing the command-line interface for interacting with services, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 
 <!-- Not in beta
@@ -158,3 +157,4 @@ the Topology Design Registry and Repository Service. Focus provides for persiste
 - [Overview of the Compute service](/helion/openstack/services/focus/overview)
 
 -->
+

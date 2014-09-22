@@ -6,7 +6,7 @@ product: image
 ---
 <!--PUBLISHED-->
 
-# HP Helion Public Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
+# HP Helion Public Cloud 13.5: How to Upload a Partner Image and Make it Public [#publishPartnerImage]
 
 This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in HP Helion Public Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Helion Public Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
@@ -83,7 +83,7 @@ Before you upload an image and make it public, you must:
 To interact with the HP Helion Public Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.
 
 #### The Nova and Glance client tools #### {#publishInstallGlance}
-Openstack's Nova client tool provides API access to the Nova service. Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Nova and Glance client tools.
+OpenStack's Nova client tool provides API access to the Nova service. OpenStack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to [OpenStack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Nova and Glance client tools.
 
 If the Glance client is not available for your platform, see the alternate instructions below for [installing curl](#installCurl).
 
@@ -394,7 +394,7 @@ Before using the Glance client (or curl), ensure you have configured your enviro
 
 There is also a section on the most [common HTTP errors](#publishGlanceErrors) that might occur when using the Glance client tool. 
 
-**Important:** For more information, see Openstack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
+**Important:** For more information, see OpenStack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
 
 ### Listing images ### {#publishGlanceList}
 To see a list of available images, follow the instructions below.
@@ -627,7 +627,7 @@ Possible HTTP return codes are listed in HP Helion Public Cloud Image API docume
 For additional information on uploading an image and making it publicly available, see:
 
 * [HP Helion Public Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)
-* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
+* [OpenStack documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
 * [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
 * [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
 * [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)

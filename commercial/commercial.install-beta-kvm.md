@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Beta Installation and Configuration"
+title: "HP Helion OpenStack&#174;: Beta Installation and Configuration"
 permalink: /helion/openstack/install-beta/kvm/
 product: commercial
 
@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;:  Beta Installation and Configuration for KVM Hypervisor
 
-HP Helion Openstack beta allows you to manage the KVM hypervisor and provision virtual machines. 
+HP Helion OpenStack beta allows you to manage the KVM hypervisor and provision virtual machines. 
 
 It is important to read through this page before starting your installation. We also recommend that you review the [hardware and network configuration requirements](/helion/openstack/install-beta-overview/##installation-requirements) and the [support matrix](/helion/openstack/support-matrix-beta/), and learn about the [installation process and complete any required tasks](/helion/openstack/install-beta/prereqs/). 
 
@@ -80,7 +80,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 For more details, refer to the [package download instructions](/helion/openstack/install-beta/prereqs/#install-pkg) on the HP Helion OpenStack Beta Installation: Before you begin page.
 	
 ## Installing HP StoreVirtual Virtual Storage Appliance (VSA) {#vsa}
-Before you install HP Helion OpenStack, [HP StoreVirtual VSA](https://docs.hpcloud.com/helion/openstack/install-beta/vsa/) must be installed and configured.
+Before you install HP Helion OpenStack, HP StoreVirtual VSA, must be installed and configured on the installer system.
 
 HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
 
@@ -213,7 +213,7 @@ Before you begin your installation, if necessary, configure the proxy informatio
      **IMPORTANT**: If the VSA IP is within the Floating IP range, the last step of the installation fails.
 
 
-9. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is `eth2`. The following example sets the value of the variable to `eth0`.
+9. Set OVERCLOUD_NeutronPublicInterface and UNDERCLOUD_NeutronPublicInterface to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
 
             $ export OVERCLOUD_NeutronPublicInterface=eth0
             $ export UNDERCLOUD_NeutronPublicInterface=eth0   
@@ -247,7 +247,7 @@ IP pool by setting OVERCLOUD_NeutronPublicInterface to a physically configured V
 
     * **ENABLE_VSA** - Change to `True` to enable HP StoreVirtual VSA configuration. By default the value is `False`.
     
-    * **VSA_API_URL** - Enter the IP address used to access your VSA cluster. 
+    * **VSA&#95;_API&#95;URL** - Enter the IP address used to access your VSA cluster. 
     
     * **VSA_USERNAME** - Enter the cluster user name.
     
@@ -333,7 +333,7 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion Openstack beta and verified that it is configured correctly and operational. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already installed HP Helion OpenStack beta and verified that it is configured correctly and operational. 
 
 Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
 
@@ -345,9 +345,9 @@ Learn how to [install DNS as a service](/helion/openstack/install-beta/dnsaas/).
 * [HP Helion OpenStack services overview](/helion/openstack/services/overview/)
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
-----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

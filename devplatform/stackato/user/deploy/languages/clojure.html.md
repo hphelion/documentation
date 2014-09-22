@@ -36,7 +36,7 @@ Clojure Database Services Example[](#clojure-database-services-example "Permalin
 -----------------------------------------------------------------------------------------------------
 
 Taken from the [4clojure sample
-app](https://github.com/Stackato-Apps/4clojure/blob/helion/src/foreclojure/config.clj#L6):
+app](https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6):
 
     (defn assoc-cloud-env
       "Import Cloud Foundry / Application Lifecycle Service environment settings"

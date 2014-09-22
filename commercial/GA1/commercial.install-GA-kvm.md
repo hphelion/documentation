@@ -19,78 +19,84 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/vsa/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor
+# HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor
 
-HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. 
+HP Helion OpenStack allows you to manage the KVM hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition preview on a suitably specified and prepared system.
 
 ## Installing HP Helion OpenStack ## {#install}
 
 The installation and configuration process for ESX consists of the following general steps: 
 
+* [Preparing for installation](#prepare)
+	* [Verify Prerequisites](#pre)
+	* [KVM deployment architecture](#deploy-arch)
+	* [Create a JSON configuration file](#json)
 * [Downloading the installation packages](#getinstall)
-* [Starting the installation](#install)
+* [Installing HP StoreVirtual Virtual Storage Appliance](#vsa)
+* [Installing HP Helion OpenStack](#install)
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
    * [Installing the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
    * [Connecting to Horizon console](#connectconsole)
-   * [Connecting to to Monitoring UI](#monitoring)
-* [Deploying Open vSwitch vApp](#ovsvapp)
+   * [Connecting to Monitoring UI](#monitoring)
 * [Installing DNS as a service](#configure)
 * [Next steps](#next-steps)
- 
 
-## Verify Prerequisites ## {#pre}
+## Preparing for installation {#prepare}
+
+Before starting the installation, review the following sections.
+
+### Verify Prerequisites ### {#pre}
 
 To ensure successful installation, please read through the topics before you start.
 
 * Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
 * Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/)
+* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/).
 
-##Review the ESX deployment architecture ## {#deploy-arch}
+
+### Review the KVM deployment architecture ### {#deploy-arch}
 
 The following diagram depicts the required network topology for a KVM installation.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
 
-For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Before you begin](/helion/openstack/ga/install/prereqs/#network_prepare).
+For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
-## Perform additional network requirements ## {#networkreq}
+### Create a JSON configuration file ### {#json}
 
-***QUESTION: Is this information OK? Accurate? Useful?***
+The HP Helion OpenStack installer uses a JSON configuration file to enter configuration values. 
 
-These additional network components are required for an ESX installation:
- 
-* VLAN trunking and native VLAN should be enabled on the private network. This is to cater to untagged PXE traffic with the tenant.<!--- Private network that caters to the PXE traffic needs to be a VLAN trunk line with a default VLAN (native) tag at the switch port side for all systems that are part of the environment.-->
- 
-* VMware vCenter management must be a part of the private network (192.0.2.x)
+For detailed requirements, see [HP Helion OpenStack&#174; Installation: Creating the JSON configuration file](/helion/openstack/ga/install/json/).
 
-## Download the installation packages {#getinstall}
+## Downloading the installation packages {#getinstall}
+
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
 1. Log in to your install system as root:
 
-        sudo su -
+    `sudo su -`
 
-2. Register and then log in to download the required installation packages from this site [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show)
+2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-
-***QUESTION: New file name?***
+***QUESTION: New files names?***
 <table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
-	
 <td><b> Installation package </b></td><td><b>File name</b></td>
+
 <tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack</td><td>HPHelionOpenStack.tgz</td></tr>
+<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack_BetaJune30.tgz</td></tr>
+</td></tr>
+
 </table>
 
-## Install HP Helion Openstack ## {#install}
 
-Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+## Installing HP Helion OpenStack {#install}
+After you have installed HP StoreVirtual VSA, make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
 * [Configuring proxy information](#proxy)
 * [Unpacking installation file](#unpackinstall)
@@ -98,13 +104,12 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 **IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
-### Configure proxy information {#proxy}
 
-***QUESTION: This section is not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start. Still required??***
+### Configure proxy information {#proxy}
 
 Before you begin your installation, if necessary, configure the proxy information for your environment using the following steps:
 
-1. Ensure you are logged into your install system as root; otherwise, log in as root: 
+1. Log in to your install system as root:
 
 		sudo su -
 
@@ -113,12 +118,12 @@ Before you begin your installation, if necessary, configure the proxy informatio
 		export http_proxy=http://<web proxy IP/
 		export https_proxy=http://web proxy IP/
 		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
- 
+
 3. Log out and re-login to your baremetal server to activate the proxy configuration.
 
 ### Unpack the installation file ## {#unpackinstall}
 
-1. Ensure you are logged into your install system as root; otherwise, log in as root:
+1. Log in to your install system as root:
 
 		sudo su -
 
@@ -127,217 +132,187 @@ Before you begin your installation, if necessary, configure the proxy informatio
 		mkdir /root/work
 		cd /root/work
 
-3.  Extract the installation package to the `work` directory:
+3. Extract the installation package to the `work` directory:
 
-		tar zxvf /root/work/<baremetal kit name>.tgz
+		tar zxvf /root/<baremetal kit name>.tgz
 
-	This creates and populates a `tripleo/` directory within `work' directory.
-
-4. If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name before executing the next step:
-
-		export BRIDGE_INTERFACE=<devicename>
-
-	Examples:
-
-		export BRIDGE_INTERFACE=em1  
-		export BRIDGE_INTERFACE=eth5
-
+	This creates and populates a `tripleo/` directory within root's home directory.
 
 ### Install the seed VM and build your cloud ### {#startseed}
 
 1. To start the seed VM installation, enter the following command:
 
-		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
+		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh
+
+	**Note**:The installation process takes approximately 10 minutes to complete.
 
 	If the seed startup is successful, you should see a message similar to the following:
 
-		"Wed Sept 09 11:25:10 PST 2014 --- completed setup seed"
-
-	**Note**:The installation process takes approximately 10 minutes to complete.
+		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"
 
 2. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
 
 		ssh root@192.0.2.1 
 
-    **Note**: It might take a few moments for the seed VM to become reachable. 
-  
+	**Note**: It might take a few moments for the seed VM to become reachable. 
+
 3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
-***QUESTION: Still required??***
 
-4. Ensure the information in the [`baremetal.csv` configuration file](/helion/openstack/qa/install/prereqs/#req-info) file is correct and in the following format and upload THE FILE to `/root`.
-	<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
+4. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and in the following format and upload the file to `/root`.
 
-	***QUESTION: Must use IPMI user vs ILO used in beta?***
+		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
-	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the ESX installation. For example, your file should look similar to the following:
+	**Notes**: 
 
-		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
+	- There must be one entry in this file for each baremetal system you intend to install.
+	- The first entry is used for the undercloud.
+	- The second entry is the node with the lowest-specifications (CPU/RAM/Disk size) node in the overcloud.
+
+	For example, your file should look similar to the following:
+
+		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048   
 		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
 		78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
 		78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
 		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
 		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
-    
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Before you begin* page.
 
-5. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your baremetal.csv is working.
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-	***QUESTION: Still optional? Not in https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/ee_ga_ironic_quick_start.***
+4. Make sure the information in the [JSON configuration file](/helion/openstack/ga/install/json/) file is correct and complete.
 
-6. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
-    
-	**IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
+	The JSON configuration file must be named `overcloud-config.json` and saved to the `/root/tripleo/tripleo-incubator/scripts/ee-config.json /root/ directory`.
 
-7. Set `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` to the name of the interface that carries Neutron external traffic on your overcloud and undercloud. By default, it is *eth2*. The following example sets the value of the variable to *eth0*.
+		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-		$ export OVERCLOUD_NeutronPublicInterface=eth0
-		$ export UNDERCLOUD_NeutronPublicInterface=eth0 
+5. Apply the JSON configuration file.
 
-8. Set `OVERCLOUD_COMPUTESCALE` to 3. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
+		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-	To set this variable:
+6. [Optional] If you have installed the IPMItool, use it to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
-		$ export OVERCLOUD_COMPUTESCALE=3
+7. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
 
-9. Create a pool of floating IP addresses that you can assign to virtual machines.
+	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-	By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can change the floating IP range by exporting the following variables:
-
-		export FLOATING_START=<Start IP Address>
-		export FLOATING_END=<End IP Address>
-		export FLOATING_CIDR=<CIDR in 192.x.x.x/24 format>
-
-	**For example**:
-
-		export FLOATING_START=192.0.2.129
-		export FLOATING_END=192.0.2.200
-		export FLOATING_CIDR=192.0.2.0/24
-
-	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range.
-
-10. Set `OVERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for overcloud hosts. 
-
-	To set this variable:
-
-		export OVERCLOUD_NTP_SERVER=<IP_address>
-
-11. Set `UNDERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for undercloud hosts. 
-
-	To set this variable:
-
-		export UNDERCLOUD_NTP_SERVER=<IP_address>
-
-12. Set `OVERCLOUD_CINDER_LVMLOOPDEVSIZE` to determine the size of the loopback device on your partition on the overcloud control node used to hold Volume Opeartion service volumes. Set it to a higher value, for
-example if you plan to create snapshots of large bootable volumes. The partition is a shared device, so the loopback device should not occupy the entire partition. The partition size is calculated as (approximately) diskspace_GB (from baremetal.csv) less root partition size of 30GB. The default is 50000MB.
-
-	To set this variable:
-
-		export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=55000
-
-13. Set `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` to set a unique ID for keepalived from 0 to 255. HP Helion OpenStack uses keepalived to manage virtual using unique IDs to synchronize its activities. If you plan to run multiple installations of HP Helion OpenStack on the same network, each installation must be configured with a unique ID by setting the environment variable to a unique number before running the installation. The default value, if unset, is 51.
-
-	To set this variable:
-
-		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=99
-
-14. Set `OVERCLOUD_VSASTORAGESCALE` to determine the number of VSA nodes to install.
-
-	To set this variable:
-
-		export OVERCLOUD_VSASTORAGESCALE=5
-
-
-15. **OPTIONAL:** You can configure a second network for API traffic and for the floating ip pool by setting `OVERCLOUD_NeutronPublicInterface` to a physically configured VLAN. The VLAN name used as the `OVERCLOUD_NeutronPublicInterface` is expected to be of the form "vlan" followed by the VLAN id (for example: `vlan101` ).
-
-	For example:
-
-		$ export OVERCLOUD_NeutronPublicInterface=vlan101
-		$ export NeutronPublicInterfaceIP=192.0.8.2/21
-		$ export NeutronPublicInterfaceRawDevice=eth0
-		$ export NeutronPublicInterfaceDefaultRoute=192.0.8.1
-		$ export FLOATING_START=192.0.8.20
-		$ export FLOATING_END=192.0.15.254
-		$ export FLOATING_CIDR=192.0.8.0/21
-
-	It is assumed in the above that the seed VM has been configured with a route to the external VLAN subnet.
-
-16. Install and configure the undercloud and overcloud, by running the following command from /root. 
+8. To install and configure the undercloud and overcloud, run the following command from /root. 
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
 	If your installation is successful, a message similar to the following is displayed:
- 
+
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-After you receive the *completed* message, you should verify the installation by connecting to the overcloud and undercloud dashboards.
+	**Note:** If `hp_ced_start_seed` fails to start the seed, need to restart the installation (step 1) and then follow the rest of the steps.
 
-## Verify your installation {#verifying-your-installation}
+## Verify your installation
 
-To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
+Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack baremetal cloud.
 
-### Connect to the Horizon console ### {#connectconsole}
 
-Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
+### Verify the demo VM
 
-1. From the seed, export the undercloud passwords:
+Make sure you can access the demo VM. To do this, follow the steps below:
+
+1. From the seed, export the overcloud passwords:
 
 		. /root/tripleo/tripleo-overcloud-passwords
 
 2. Export the undercloud users:
 
-		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
+		TTE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
+
+3. Verify that the server is present:
+
+		nova list
 
 3. Assign the overcloud IP address to a variable:
 
-		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}')
+		DEMO_IP=$(nova list | awk '/\| demo \|/{print $13}') 
 
-4. Determine the overcloud controller IP from the output of step 3 using the following command. It is in the last line returned.
-  
+4. With the IP address and root password, log in as the main user, root using the following command 
+
 		ssh root@${DEMO_IP}
 
-	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`.
-
-5. From your install system, open a web browser and point to:
-
-		http://<overcloud_IP>/
-
-6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
-
-
-**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
 ### Connect to the undercloud Horizon console ### {#monitoring}
 
-1. From the seed, run the following command:
+Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
+
+1. From the seed, run the following command.
 
 		. /root/stackrc
 
-2. Assign the undercloud IP address to a variable:
+2. Assign the undercloud IP address to a variable.
 
 		UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP
 
 3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
-  
+
 		echo ${UNDERCLOUD_IP}
 
 4. Obtain the undercloud admin password using the following command:
 
 		UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD
 
-5. From your install system, open a web browser and point to:
+4. From your install system, open a web browser and point to:
 
-		http://<undercloud_IP>/icinga/
+		http://<undercloud_IP>/
 
-6. Log in as user 'admin' with the admin password.
+5. Log in as user 'admin' with the admin password.
+
+		echo ${UNDERCLOUD_ADMIN_PASSWORD}
+
+### Connect to the overcloud Horizon console ### {#connectconsole}
+
+Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
+
+1. From the seed, export the undercloud passwords.
+
+		. /root/tripleo/tripleo-undercloud-passwords
+
+2. Export the undercloud users.
+
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
+
+3. Assign the overcloud IP address to a variable.
+
+		OVERCLOUD_IP=$(nova list | grep "overcloud-controller" | awk ' { print $12 } ' | sed s/ctlplane=// ); echo $OVERCLOUD_IP
+
+4. Obtain the overcloud admin password using the following command:
+
+		OVERCLOUD_ADMIN_PASSWORD=$(cat /root/tripleo/tripleo-overcloud-passwords | grep OVERCLOUD_ADMIN_PASSWORD | sed s/OVERCLOUD_ADMIN_PASSWORD=//); echo $OVERCLOUD_ADMIN_PASSWORD
+
+5. Determine the overcloud IP from the output of step 3 using the following command. It is in the last line returned.
+  
+		echo ${OVERCLOUD_IP}
+
+7. From your install system, open a web browser and point to.
+
+		http://<overcloud_IP>/
+
+8. Log in to the overcloud Horizon dashboard as user `demo` with the password you obtained.
 
 
 ## Next Steps
 
-- Configure HP StoreVirtual VSA **(REQUIRED)**. 
+- Configure HP StoreVirtual VSA. 
 
 	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
 	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+
+- Configure a Swift Scale-Out cluster
+
+	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
+
+	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+
+- Configure an HP 3Par storage array
+
+	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
+
+	For intructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/) document.
 
 - Install DNS as a service (DNSaaS) (Optional).
 
@@ -346,9 +321,10 @@ Ensure you can access the overcloud Horizon dashboard. To do this, follow the st
 	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
 
 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
-

@@ -218,9 +218,9 @@ Automation scripts - pyVins.tgz</td>
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
-* Before you install HP Helion Openstack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+* Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-    **Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
+    **Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
 
     1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
     
@@ -244,15 +244,14 @@ Automation scripts - pyVins.tgz</td>
 * [Installing and configuring DNSaaS support](/helion/openstack/install-beta/dnsaas/)
  
 ## For more information
-For more information on HP Helion OpenStack Community, see:
+For more information on HP Helion OpenStack, see:
 
 * [Support matrix](/helion/openstack/support-matrix-beta/) 
 * [FAQ](/helion/openstack/faq/) 
 * [Release notes](/helion/openstack/release-notes/) 
 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

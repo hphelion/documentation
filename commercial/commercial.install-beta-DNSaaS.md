@@ -21,11 +21,11 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/related-links/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174;: DNSaaS Beta Installation and Configuration
-This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack beta. It is important to read through this page before starting your installation.  No matter which hypervisor you use, our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack beta. It is important to read through this page before starting your installation.  No matter which hypervisor you use, our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 
 **IMPORTANT**: 
-Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already [installed HP Helion Openstack beta](/helion/openstack/install-beta/) and verified that it is configured correctly and operational. After you have verified your HP Helion OpenStack beta installation, download the DNSaaS installer image from the [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. 
+Installing HP Helion OpenStack DNSaaS is **optional**. Before you attempt the DNSaaS installation, you *must* have already [installed HP Helion OpenStack beta](/helion/openstack/install-beta/) and verified that it is configured correctly and operational. After you have verified your HP Helion OpenStack beta installation, download the DNSaaS installer image from the [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. 
 
 The rest of this page explains the installation and configuration process for DNSaaS. 
 
@@ -39,9 +39,9 @@ The rest of this page explains the installation and configuration process for DN
 * [For more information](#for-more-information)
 
 ##Prerequisites
-Before you install HP Helion Openstack's DNSaaS, you must modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+Before you install the HP Helion OpenStack DNSaaS, you must modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-**Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
+**Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
 
 1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
     
@@ -64,7 +64,7 @@ After you have modified the `/etc/heat/heat.conf` file and before you start the 
     * An SSH key installed in Nova
     * Networking in this tenant should be pre-configured
 * Obtained credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
-    * This user should have the "admin" and "_member_" (or member) roles. (The "admin" role should not be required, but, for whatever reason, Helion OpenStack Heat fails to delete the users it creates without this.)
+    * This user should have the "admin" and "_member_" (or member) roles. (The "admin" role should not be required, but, for whatever reason, HP Helion OpenStack Heat fails to delete the users it creates without this.)
     * Username
     * Password
     * Tenant/project name
@@ -222,10 +222,11 @@ For the "Nameserver FQDNs" gathered during the prerequisites step, issue a `serv
 For more information, see:
 
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
-* [Designate DNSaaS services for OpenStack](https://wiki.openstack.org/wiki/Designate)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+* [Designate DNSaaS services for OpenStack cloud](https://wiki.openstack.org/wiki/Designate)
 
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+

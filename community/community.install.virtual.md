@@ -10,7 +10,7 @@ product: community
 
 <p style="font-size: small;"> <a href="/helion/community/install/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg; Community Virtual Installation and Configuration
+# HP Helion OpenStack&trade; Community Virtual Installation and Configuration
 
 <!--meaningless change to fix merge issue -->
 
@@ -136,9 +136,9 @@ To begin the installation:
 
 2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 
-	[HP Helion OpenStack Community edition Installation Package ](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-	The download file is named Helion_Openstack_Community.tar.gz.
+The download file is named `Helion_Openstack_Community.tar.gz`
 
 3. Create a directory named `work`:
 
@@ -219,13 +219,18 @@ From within the seed VM, you should be able to connect to the test guest or demo
 
     Ensure you note the IP address of the demo VM from the output of 'nova list' command. 
 
+ 
 2. Of the two IP addresses shown for each instance, use the `192.x.x.x` IP address to ping the VM:
 
         root@hLinux:~# ping <ip of demo vm>
 
 3. Verify you can ssh into the VM:
 
-        root@hLinux:~# ssh root@<ip of demo vm>
+        root@hLinux:~# ethtool -K eth0 rx off tx off
+        root@hLinux:~# ssh root@<ip of demo vm> 
+
+
+
 
 ### Connecting to the Horizon console ### {#connectconsole}
 
@@ -238,7 +243,7 @@ From the physical system you are running the install on, you should be able to c
         root@hLinux:~# source ~root/tripleo/tripleo-incubator/undercloudrc
         root@hLinux:~# nova list
 
-    Ensure you note the IP address of the 'overcloud-controller' node in the output from 'nova list' command. 
+   Ensure that all of the instances from the nova list command are showing ACTIVE status. 
 
 2. Obtain the passwords for the `demo` and `admin` users:
 
@@ -247,7 +252,7 @@ From the physical system you are running the install on, you should be able to c
 
 3. Point your web browser on the physical host system to the overcloud Horizon console:
 
-        http://<IP of overcloud controller>
+        http://192.0.8.2
 
 4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.
 
