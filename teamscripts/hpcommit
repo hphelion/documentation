@@ -7,7 +7,7 @@ THISVERSION=1
 
 if [[ $THISVERSION < $SOURCEVERSION ]]
 	then
-	echo "This script has been updated.  Please copy the new version from ~/git/documentation/teamscripts to C:\RailsInstaller\Git\bin\ (or wherever you installed git on your Windows PC)."
+	echo "This script has been updated.  Please copy the new version from ~/git/documentation/teamscripts to the \"bin\" folder of wherever you installed git on your Windows PC (probably C:\Program Files (x86)\Git\bin or C:\RailsInstaller\Git\bin\)."
 	exit;
 fi
 
@@ -24,13 +24,13 @@ while [[ $1 = -* ]]; do
             echo "Usage: hpcommit [FILES]
 To use this script, copy it from ~/git/documentation/teamscripts to C:\RailsInstaller\Git\bin\ (or wherever you installed git on your Windows PC).
 
-This script helps hpcloud writers to correctly push their new and changed markdown files to the origin branch on git.hpcloud.net.  The script checks to ensure that the user is connected to the hpcloud.net VPN, is running the script in the documentation repository and from the documentation branch. 
+This script helps hpcloud writers to correctly push their new and changed markdown files to the documentation repository on git.hpcloud.net.  The script checks to ensure that the user is connected to the hpcloud.net VPN, is running the script in the documentation repository and from the documentation branch. 
 			
 The script process the FILES that the user indicates.  Wildcards may be used. If no files are provided by the user, the script processes all changed MD files in the current directory.
 
-The user is asked to provide a commit message, and must indicate if the files are draft files, or if they are ready to be published on docs.hpcloud.com. The user is then presented with a summary of the changes to be made.  If the user indicates that the change summary is corerct, the script modifies (or adds) the appropriate publication comment, then add, commits and pushes the files to net.hpcoud.com.
+The user is asked to provide a commit message, and must indicate if the files are draft files, or if they are ready to be published on docs.hpcloud.com. The user is then presented with a summary of the changes to be made.  If the user indicates that the change summary is correct, the script modifies (or adds) the appropriate publication comment, then add, commits and pushes the files to git.hpcoud.net.
 
-To use this script, copy it from ~/git/documentation/teamscripts to C:\RailsInstaller\Git\bin\ (or wherever you installed git on your Windows PC).
+To use this script, copy it from  ~/git/documentation/teamscripts to the \"bin\" folder of wherever you installed git on your Windows PC (probably C:\Program Files (x86)\Git\bin or C:\RailsInstaller\Git\bin\).
 			
 -v, --version
 -h, --help"
@@ -45,7 +45,7 @@ if [[ $CONNECTION == "" ]]
 then
 echo "ERROR!"
 echo "You are not connected to the hpcloud network. You must connect to the"
-echo "hpcloud VPN using Pulse before you can push files to the origin "
+echo "hpcloud VPN using Pulse before you can push files to the documentation "
 echo "repository.  Connect first and then rerun this script."
 echo ""
 echo "Exiting. No changes were made." 
@@ -97,8 +97,7 @@ if [[  "${BRANCH}" != "development"  ]] ##Test for the correct branch
 		exit 1
 fi
 
-echo "Pulling latest from the origin repository..."
-#git pull
+
 
 echo " " 
 
@@ -148,7 +147,7 @@ echo ""
 echo "$FILELIST" |  tr ' ' '\n'
 echo ""
 while true; do
-echo "Are these the files you want to push to origin? (y/n)"
+echo "Are these the files you want to push to the documentation repository? (y/n)"
 echo "(You can back out later if you change your mind.)"
     read -p "" yn
     case $yn in
@@ -158,25 +157,33 @@ echo "(You can back out later if you change your mind.)"
     esac
 done
 
-
-while true; do
-echo "Do you want to give these files the same comment"
-echo "when you commit them? (y/n)"
-    read -p "" yn
-    case $yn in
-        [Yy]* )  echo " " ; break;;
-        [Nn]* ) echo " " ;  echo "This script can only commit files that have the same comment.  Rerun the script on a single file or a group of files.  Wildcards can be used."; echo "" ; echo "Exiting. No changes were made."  exit;;
-        * ) echo "Please answer (y)es or (n)o.";;
-    esac
-done
+ 
+ 
+TEST=`echo "$FILELIST" |  tr ' ' '\n' | wc -l | tr -d ' '`
+ 
+if [[ "$TEST" != "1" ]]
+then
+	while true; do
+	echo "Do you want to give these files the same comment"
+	echo "when you commit them? (y/n)"
+		read -p "" yn
+		case $yn in
+			[Yy]* )  echo " " ; break;;
+			[Nn]* ) echo " " ;  echo "This script can only commit files that have the same comment.  Rerun the script on a single file or a group of files.  Wildcards can be used."; echo "" ; echo "Exiting. No changes were made.";  exit;;
+			* ) echo "Please answer (y)es or (n)o.";;
+		esac
+	done
+fi
+ 
 
 
 while true; do
 echo "Enter the commit comment and press [ENTER]:"
 echo "(You can back out later if you change your mind.)"
-    read -p " " a
-     if [[ -z "${a}" ]]; then
-          echo "The commit comment may not be empty.  Enter a short comment that describes what you changed in the files you are committing."
+    read -p " " MESSAGE
+     if [[ -z "${MESSAGE}" ]]; then
+          echo "The commit comment may not be empty.  Enter a short comment"
+          echo "that describes what you changed in the files you are committing."
      else
           echo " "
           break
@@ -204,7 +211,11 @@ echo "$FILELIST" |  tr ' ' '\n'
 echo ""
 echo "Summary:  For the files listed above, set the publish comment"
 echo "to $SHOULDBE (adding, if it is missing),"
-echo "then commit and push to the origin repository."
+echo "then commit with the following message:"
+echo ""
+echo "$MESSAGE"
+echo ""
+echo "and push to the documentation repository."
 echo ""
 
 while true; do
@@ -216,7 +227,7 @@ while true; do
     esac
 done
 
-exit;
+ 
 
 for i in `echo "$FILELIST"`
 do
@@ -265,13 +276,26 @@ w=`grep "$WRONG" $i`
 	fi	
 done
  
+ 
+echo "" 
+echo "Pulling any changes from the documentation repository..."
 
-echo add
-echo commit
+git pull 
+ 
+for i in `echo "$FILELIST"`
+	do
+	echo ""
+	echo "====Adding File====="
+	git add $i
+	echo ""
+	echo "====Committing File====="
+	git commit -m \""$MESSAGE"\" $i
+
+done
+echo ""
+echo "====Pushing Files====="
+
 echo push
-
-
-
 exit 0		
 		
  
