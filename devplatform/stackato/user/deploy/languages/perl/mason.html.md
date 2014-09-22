@@ -16,7 +16,7 @@ A basic files needed to create an app using Mason are:
 
 1.  *app.psgi*
 2.  *requirements.txt*
-3.  *stackato.yml*
+3.  *manifest.yml*
 
 Template files are also needed, which you can read about in the Mason
 documentation, or in our [Hello World sample
@@ -64,7 +64,7 @@ In the *app.psgi* file:
             $app;
     };
 
-The *stackato.yml* file contains deployment instructions for Application Lifecycle Service.
+The *manifest.yml* file contains deployment instructions for Application Lifecycle Service.
 See complete details for this file in the [*Configuration With
 stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) section.
 

@@ -17,7 +17,7 @@ to deploy Ruby on Rails applications.
 
 ### Using Ruby 2.0[](#using-ruby-2-0 "Permalink to this headline")
 
-The *stackato.yml* file must specify the Ruby runtime version and Rails as the
+The *manifest.yml* file must specify the Ruby runtime version and Rails as the
 framework type:
 
     framework:

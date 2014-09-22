@@ -4,7 +4,7 @@ permalink: /als/v1/user/deploy/stackatoyml/
 ---
 <!--PUBLISHED-->
 
-HP stackato.yml Options[](#stackato-yml-options "Permalink to this headline")
+HP manifest.yml Options[](#stackato-yml-options "Permalink to this headline")
 ===========================================================================
 [name:](#name)
     -   [buildpack:](#buildpack)
@@ -44,9 +44,9 @@ HP stackato.yml Options[](#stackato-yml-options "Permalink to this headline")
 
 
 Configuration options for Application Lifecycle Service applications can be stored in a
-*stackato.yml* file in the top-level application directory.
+*manifest.yml* file in the top-level application directory.
 
-The *stackato.yml* file defines **keys** and associated **values** which
+The *manifest.yml* file defines **keys** and associated **values** which
 the `helion` client uses to set options that are
 otherwise passed by the user as command arguments or answers to prompts.
 Other values are used by the server to install needed packages, or run
@@ -55,17 +55,6 @@ deployment.
 
 [*Key substitution*](#stackato-yml-key-substitution) can be used to
 insert values from one key into another.
-
-**Note**
-
-*stackato.yml* options take precedence over any declared in
-[*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml). Detailed specifications
-for these configuration files can be found in the [helion-cli source
-repository](https://github.com/HP/helion-cli/):
-
--   [stackato.yml specification](https://github.com/ActiveState/stackato-cli/blob/master/doc/stackato.yml.txt)
--   [manifest.yml specification](https://github.com/ActiveState/stackato-cli/blob/master/doc/manifest.yml.txt)
--   [stackato.yml to manifest.yml key mappings](https://github.com/ActiveState/stackato-cli/blob/master/doc/stackato-2-manifest.txt)
 
 The following sections describe the available keys and the values that
 can be assigned to them:
@@ -159,7 +148,7 @@ Example:
       document-root: web
 
 The document-root must always be specified relative to \$HOME
-(/home/helion/app).
+(/home/stackato/app).
 
 ### start-file:[](#start-file "Permalink to this headline")
 
@@ -742,19 +731,6 @@ Example:
 ### server:[](#server "Permalink to this headline")
 
 The minimum version of the Application Lifecycle Service server needed to run the app.
-
-To determine the server version, use `helion info`
-and use the version number shown in the first line. In this example, the
-version is **2.4.3**:
-
-    $ helion info
-
-    HP Application Lifecycle Service v2.4.3
-
-Example:
-
-    min_version:
-      server: 2.4.3
 
 Key Substitution[](#key-substitution "Permalink to this headline")
 -------------------------------------------------------------------

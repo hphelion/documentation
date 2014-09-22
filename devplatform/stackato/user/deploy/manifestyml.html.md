@@ -10,36 +10,15 @@ Manifest.yml Options[](#manifest-yml-options "Permalink to this headline")
     -   [depends-on](#depends-on)
     -   [helion](#helion)
 
-Using a *manifest.yml* file is an alternative to *stackato.yml* which
-allows for specific customization such as pushing more than one app
-with dependencies. It is the standard configuration file format for all
+Using a *manifest.yml* file is the standard configuration file format for all
 Cloud Foundry systems, allowing for portability from those systems to
 Application Lifecycle Service without configuration changes.
 
-As with *stackato.yml*, the client uses the keys to determine values
+The client uses the keys to determine values
 that are otherwise passed by the user as arguments or as answers to
 prompts.
 
-The options below are specific to the *manifest.yml* file. Most
-*stackato.yml* keys (see [*stackato.yml
-Options*](/als/v1/user/deploy/stackatoyml/#stackato-yml)) can also be declared in
-*manifest.yml*. Those that cannot are listed in the
-[*helion*](#manifest-yml-helion) section below.
-
-**Note**
-
-Options  in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) take
-precedence over those declared in *manifest.yml*. Detailed
-specifications for these configuration files can be found in the
-[helion-cli source
-repository](https://github.com/HP/helion-cli/):
-
--   [stackato.yml
-    specification](https://github.com/ActiveState/helion-cli/blob/master/doc/stackato.yml.txt)
--   [manifest.yml
-    specification](https://github.com/ActiveState/helion-cli/blob/master/doc/manifest.yml.txt)
--   [stackato.yml to manifest.yml key
-    mappings](https://github.com/ActiveState/helion-cli/blob/master/doc/helion-2-manifest.txt)
+The options below are specific to the *manifest.yml* file. 
 
 applications:[](#applications "Permalink to this headline")
 ------------------------------------------------------------
@@ -145,9 +124,3 @@ For example:
             server: 0.9.0.143
             client: 1.0
 
-**Note**
-
-The `env` key in *manifest.yml* must use the more
-verbose [*env attributes*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env-attributes)
-syntax rather than the simpler "ENV\_VAR: value" format allowed in
-*stackato.yml*.

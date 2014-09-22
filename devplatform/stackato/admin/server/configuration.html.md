@@ -52,8 +52,8 @@ option is useful in this scenario).
 
 ### Changing the Password[](#changing-the-password "Permalink to this headline")
 
-The default password for the `helion` system user
-is **helion**.
+The default password for the `stackato` system user
+is **stackato**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
 
 This password is changed to match the one set for the first
 administrative user created in the Management Console. Once you've set
@@ -128,7 +128,7 @@ Before we examine these scenarios in detail, let's review the separation
 of roles in a [*cluster*](/als/v1/admin/cluster/#cluster-setup):
 
 -   The **core** node which we conventionally call
-    `api.helion-xxxx.local` in a micro cloud will
+    `api.stackato-xxxx.local` in a micro cloud will
     be given its own hostname and IP address in a cluster so that you
     can reach it from both the [*Management
     Console*](/als/v1/user/console/#management-console) and the
@@ -329,7 +329,7 @@ example:
 
 The Application Lifecycle Service micro cloud uses [*multicast
 DNS*](/als/v1/user/reference/glossary/#term-multicast-dns). to
-broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local
+broadcast its generated hostname (e.g. `stackato-xxxx.local`). This mechanism is intended for VMs running on a local
 machine or subnet.
 
 For production use, the server will need:
@@ -403,7 +403,7 @@ but which do not merit the effort of manually configuring a DNS record
 #### xip.io[](#xip-io "Permalink to this headline")
 
 The quickest way to get wildcard DNS resolution is to use the
-[xip.io](http://xip.io/) service.
+[xip.io](http://xip.io/) service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.
 
 [*Change your hostname*](#server-config-hostname) using [*kato node
 rename*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
@@ -595,9 +595,6 @@ VM Filesystem Setup[](#vm-filesystem-setup "Permalink to this headline")
 The Application Lifecycle Service VM is distributed with a simple default partitioning scheme
 (i.e. everything but "/boot" mounted on "/").
 
-Additionally, some hypervisors (OpenStack/KVM) will start the VM with a
-relatively small disk (10GB).
-
 Warning
 
 When setting up a production cluster, additional filesystem
@@ -751,12 +748,6 @@ apps via HTTPS for the first time.
 Quota Definitions[](#quota-definitions "Permalink to this headline")
 ---------------------------------------------------------------------
 
-**Note**
-
-In Application Lifecycle Service 2.10 and earlier, every User and Group had a quota. In 3.0
-(Cloud Foundry v2) Quota Definitions are applied at the Organization
-level (i.e. members of an organizations share its quota).
-
 Quota definitions define limits for:
 
 -   physical memory (RAM) in MB
@@ -804,4 +795,4 @@ parameter of the `cloud_controller.yml` file:
     - "deb http://security.ubuntu.com/ubuntu natty-security main universe"
 
 The file is located on the Application Lifecycle Service server at
-`~/helion/vcap/cloud_controller/config/cloud_controller.yml`
+`~/stackato/vcap/cloud_controller/config/cloud_controller.yml`

@@ -18,11 +18,9 @@ DEA Auto Scaling[](#dea-auto-scaling "Permalink to this headline")
 
 
 Application Lifecycle Service can automatically add DEA nodes to a cluster to handle
-increasing numbers of user application instances. This feature, called
-auto scaling, is available for clusters running on HPCS, vSphere, EC2,
-or OpenStack.
+increasing numbers of user application instances.
 
-When auto scaling is enabled, helion will automatically grow the pool
+When auto scaling is enabled, the Application Lifecycle Service will automatically grow the pool
 of DEA nodes to accommodate new app deployments. Scaling events are
 triggered the available memory in the pool falls below a certain
 threshold.
@@ -39,11 +37,6 @@ the following commands on a fresh Application Lifecycle Service VM:
 This defers the `attach` command and enables the DEA
 role on the next boot. Shut down the VM once this is done.
 
-**Note**
-
-When shutting down in vSphere, right click the VM in vCenter and select
-*Create a Template*. It is important that it is a 'template' object so
-that it can be seamlessly deployed to any of the available ESXi hosts.
 
 DEA Scaling configuration[](#dea-scaling-configuration "Permalink to this headline")
 -------------------------------------------------------------------------------------
@@ -57,21 +50,7 @@ This file must be modified on each node running the Controller role.
 Comments throughout the file describe in detail what each option does,
 and what information is required for each infrastructure platform.
 
-The `enabled_plugins` key must be set to one of the
-following:
-
--   EC2
--   HPCS
--   OpenStack
--   vSphere
--   CloudStack
-
-**Note**
-
-It is possible to enable multiple plugins, but this is generally not
-recommended. You could use this feature to implement a "ping" plugin
-that doesn't provision a DEA, but instead sends a notification email, or
-pings a remote API.
+The `enabled_plugins` key must be set to OpenStack.
 
 Each platform has specific tunable settings under the
 `platform` key in *autoscaling.yaml* for setting
@@ -179,13 +158,6 @@ the relevant platform API output in the controller:
 
     $ kato log tail cloud_controller
 
-If you are using vSphere, make sure to monitor any logs and events on
-the vCenter GUI. A common issue is running out of available disk space
-on the filestores for new deployments.
-
-For EC2, you can monitor using the AWS console. It can provide useful
-insights into the health of the instance such as network reach-ability
-and OS responsiveness, as well as setting administrative alerts.
 
 Testing[](#testing "Permalink to this headline")
 -------------------------------------------------

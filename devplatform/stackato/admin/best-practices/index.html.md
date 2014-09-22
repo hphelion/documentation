@@ -16,11 +16,10 @@ Applying Updates[](#applying-updates "Permalink to this headline")
             -   [Hard-coded Database Connection
                 Info](#hard-coded-database-connection-info)
             -   [DEAs](#deas)
-        -   [Migrating to 3.0](#migrating-to-3-0)
         -   [Exporting the server data](#exporting-the-server-data)
         -   [Scheduled backups](#scheduled-backups)
         -   [Importing the server data](#importing-the-server-data)
-    -   [Upgrading (v3.0 and later)](#upgrading-v3-0-and-later)
+    -   [Upgrading (v1.0 and later)](#upgrading-v1-0-and-later)
     -   [Server Monitoring with New
         Relic](#server-monitoring-with-new-relic)
     -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
@@ -46,7 +45,7 @@ The command will list the updates available. For example:
 
     2 updates available to be installed.
 
-    Known updates for Application Lifecycle Service 2.10.4:
+    Known updates:
       dea-memory-usage-reporting: Fix the reporting of helion stats usage on the DEA end.
         severity: required
         roles affected: dea
@@ -77,8 +76,6 @@ new Application Lifecycle Service system. The export/import cycle is required fo
 
 -   backups of system data
 -   moving an Application Lifecycle Service cluster to a new location
--   upgrading from Application Lifecycle Service 2.10.x to 3.0 (subsequent upgrades can be
-    done with [*kato node upgrade*](/als/v1/admin/server/upgrade/#upgrade))
 
 ### Limitations[](#limitations "Permalink to this headline")
 
@@ -114,33 +111,6 @@ Droplet Execution Agent (DEA) nodes are not migrated directly from old
 nodes to new nodes. Instead, the application droplets (zip files
 containing staged applications) are re-deployed to new DEA nodes from
 the Controller.
-
-### Migrating to 3.0[](#migrating-to-3-0 "Permalink to this headline")
-
-The [*kato data
-import*](/als/v1/admin/reference/kato-ref/#kato-command-ref-data-import)
-command detects if you are upgrading from Application Lifecycle Service 2.x to 3.x and does
-some special processing to account for differences in the two versions:
-
--   Users will be imported, and each user will be added to their own
-    [*Organization*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces).
--   Existing admin users will have corresponding (global) admin
-    privileges in the new system.
--   [*Groups*](/als/v1/admin/reference/groups/#admin-groups) will be converted
-    into
-    [*Organization*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces).
-    All apps and users will be placed within a 'default'
-    [*Space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) within
-    each organization.
--   Services will be imported.
--   Apps will be automatically redeployed. Any apps which fail to do so
-    will be listed, and must be redeployed manually by their owners.
--   [*AOK*](/als/v1/admin/server/aok/#aok) (e.g. LDAP) configuration will be
-    imported.
-
-Otherwise, the migration will follow the same
-[*Export*](#bestpractices-migration-export) and
-[*Import*](#bestpractices-migration-import) steps outlined below.
 
 ### Exporting the server data[](#exporting-the-server-data "Permalink to this headline")
 
@@ -232,11 +202,11 @@ hostname of the old Core node:
 
     $ kato data import --cluster helion-host.example.com
 
-Upgrading (v3.0 and later)[](#upgrading-v3-0-and-later "Permalink to this headline")
+Upgrading (v1.0 and later)[](#upgrading-v1-0-and-later "Permalink to this headline")
 -------------------------------------------------------------------------------------
 
 The `kato node upgrade` command was added in
-Application Lifecycle Service 3.0 to allow upgrading Application Lifecycle Service systems in place. See
+Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
 [*Upgrading Application Lifecycle Service*](/als/v1/admin/server/upgrade/#upgrade) for full
 instructions.
 
@@ -259,90 +229,6 @@ server or cluster ([Supervisor](http://supervisord.org/)), it is
 advisable to add some external monitoring for production systems.
 [Nagios](http://www.nagios.org/) is a free, open source system
 monitoring tool that can provide this external monitoring.
-
-Below is an example Nagios config for a small cluster running on Amazon
-EC2 which monitors system load, free disk space and SSH connectivity.
-
-    define host {
-            use important-host
-            host_name ec2-xxx.us-west-2.compute.amazonaws.com
-    }
-
-    define host {
-            use important-host
-            host_name ec2-xxx.us-west-2.compute.amazonaws.com
-    }
-
-    define host {
-            use important-host
-            host_name ec2-xxx.us-west-2.compute.amazonaws.com
-    }
-
-    define host {
-            name                            important-host  ; The name of this host template
-            notifications_enabled           1       ; Host notifications are enabled
-            event_handler_enabled           1       ; Host event handler is enabled
-            flap_detection_enabled          1       ; Flap detection is enabled
-            failure_prediction_enabled      1       ; Failure prediction is enabled
-            process_perf_data               1       ; Process performance data
-            retain_status_information       1       ; Retain status information across program restarts
-            retain_nonstatus_information    1       ; Retain non-status information across program restarts
-            register                        0       ; DONT REGISTER THIS DEFINITION - ITS NOT A REAL HOST, JUST A TEMPLATE!
-            check_command                   check-host-alive
-            max_check_attempts              10
-            notification_interval           120
-            notification_period             24x7
-            notification_options            d,r
-            contact_groups                  admins
-    }
-
-    define service {
-            use                             generic-service
-            host_name                       ec2-xxx.us-west-2.compute.amazonaws.com, ec2-xxx.us-west-2.compute.amazonaws.com, ec2-xxx.us-west-2.compute.amazonaws.com
-            service_description             disk_free
-            is_volatile                     0
-            check_period                    24x7
-            max_check_attempts              4
-            normal_check_interval           5
-            retry_check_interval            1
-            contact_groups                  sandbox
-            notification_options            w,u,c,r
-            notification_interval           960
-            notification_period             24x7
-            check_command                   check_remote_disks
-    }
-
-    define service {
-            use                             generic-service
-            host_name                       ec2-xxx.us-west-2.compute.amazonaws.com, ec2-xxx.us-west-2.compute.amazonaws.com, ec2-xxx.us-west-2.compute.amazonaws.com
-            service_description             LOAD
-            is_volatile                     0
-            check_period                    24x7
-            max_check_attempts              4
-            normal_check_interval           5
-            retry_check_interval            1
-            contact_groups                  sandbox
-            notification_options            w,u,c,r
-            notification_interval           960
-            notification_period             24x7
-            check_command                   check_remote_load
-    }
-
-    define service {
-            use                             generic-service
-            host_name                       ec2-xxx.us-west-2.compute.amazonaws.com, ec2-xxx.us-west-2.compute.amazonaws.com, ec2-xxx.us-west-2.compute.amazonaws.com
-            service_description             SSH
-            is_volatile                     0
-            check_period                    24x7
-            max_check_attempts              4
-            normal_check_interval           5
-            retry_check_interval            1
-            contact_groups                  sandbox
-            notification_options            w,u,c,r
-            notification_interval           960
-            notification_period             24x7
-            check_command                   check_ssh
-    }
 
 Detailed instructions on installing and configuring Nagios can be found
 in the [Nagios Core
@@ -384,7 +270,7 @@ For example:
 **Note**
 
 For performance reasons, Application Lifecycle Service containers should not be relocated to
-EBS volumes.
+block volumes.
 
 ### Enabling Filesystem Quotas[](#enabling-filesystem-quotas "Permalink to this headline")
 
@@ -403,7 +289,7 @@ like this:
     $ sudo quotaon -v /mnt/containers
 
 To ensure the quotas are preserved after reboot, edit
-*/etc/init.d/setup\_helion\_lxc* to include mount commands for each
+*/etc/init.d/setup\_stackato\_lxc* to include mount commands for each
 partition. The example above would require a block such as this:
 
     # enable quotas for Application Lifecycle Service containers

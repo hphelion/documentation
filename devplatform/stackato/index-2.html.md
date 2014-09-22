@@ -18,12 +18,6 @@ hosting provider, it provides the backbone for your private or public PaaS.
 
 - All [Release & Support](#release-support) documentation.
  
-- Application Lifecycle Service 3.0 is based on Cloud Foundry v2 and there are a number of important differences to be aware of if you are moving from Application Lifecycle Service 2.x:
-	-   App deployment is now primarily done using [*buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks)
-	-   Some keys in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) have changed
-	-   Groups have been replaced with [*Organizations and Spaces*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces)
-	-   The Application Lifecycle Service v3 API is compatible with the [*Cloud Foundry v2 API*](/als/v1/user/reference/api/)
-
 
 ALS Admin Guide[](#admin-guide "Permalink to this headline")
 ---------------------------------------------------------
