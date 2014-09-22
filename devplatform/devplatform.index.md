@@ -5,7 +5,7 @@ permalink: /helion/devplatform/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 # HP Helion Development Platform Documentation
 
