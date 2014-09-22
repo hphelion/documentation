@@ -10,7 +10,7 @@ product: community
 
 <p style="font-size: small;"> <a href="/helion/community/install/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg; Community Virtual Installation and Configuration
+# HP Helion OpenStack&trade; Community Virtual Installation and Configuration
 
 <!--meaningless change to fix merge issue -->
 
@@ -136,9 +136,9 @@ To begin the installation:
 
 2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 
-	[HP Helion OpenStack Community edition Installation Package ](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-	The download file is named Helion_Openstack_Community.tar.gz.
+The download file is named `Helion_Openstack_Community.tar.gz`
 
 3. Create a directory named `work`:
 

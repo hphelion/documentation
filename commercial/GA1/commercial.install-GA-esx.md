@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
-HP Helion Openstack allows you to manage the ESX hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition on a suitably specified and prepared system.
+HP Helion OpenStack allows you to manage the ESX hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition on a suitably specified and prepared system.
 
 HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
@@ -82,7 +82,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 </table>
 
 
-## Installing HP Helion Openstack ## {#install}
+## Installing HP Helion OpenStack {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -224,7 +224,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ## Verify your installation {#verifying-your-installation}
 
-To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
+To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as follows.
 
 ### Connect to the undercloud Horizon console ### {#monitoring}
 

@@ -23,14 +23,14 @@ PageRefresh();
 # HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
 
 
-This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
+This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
 
 
 
 
 ##Prerequisite {#preq}
 
-* HP Helion Openstack Installation
+* HP Helion OpenStack Installation
 * DNSaaS Installer Image - See DNSaaS Cloud OS Releases
 * Credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
 	* This user should have the "admin" and "_member_" (or member) roles.

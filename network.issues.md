@@ -66,7 +66,7 @@ Note: Security Groups are a feature of  HP Helion Public Cloud Networking and ar
 
 **Background**
 
-Networking in Openstack is currently in something of a transition phase;  Neutron is the strategic network component which has its own API, but Nova still also supports the legacy nova-network components and so the Nova API also still includes support for basic network operations.  Because the current v2 Nova API pre-dates Neutron, the split of functionality on systems running both Nova and Neutron APIs is not as clean as it could be.
+Networking in OpenStack is currently in something of a transition phase;  Neutron is the strategic network component which has its own API, but Nova still also supports the legacy nova-network components and so the Nova API also still includes support for basic network operations.  Because the current v2 Nova API pre-dates Neutron, the split of functionality on systems running both Nova and Neutron APIs is not as clean as it could be.
 
 In addition HPCS has decided to continue to provide basic network capability, via the Nova API, to make the migration from 1.0 to 1.1 easier.  Nova in 1.1 therefore supports the Floating IP and Security Group API extensions, although these are really just translation layers to the Neutron API.
 

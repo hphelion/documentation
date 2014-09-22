@@ -83,7 +83,7 @@ This is the second phase of the HP Helion OpenStack installation.
 
 The Overcloud is the functional cloud available to run guest virtual machines and workloads. It offers access to Nova, Neutron, Glance, Keystone, Cinder, Swift, Ironic, Heat, Horizon, and Ceilometer services.  
 
-Setting up the Overcloud completes the overall Helion Openstack installation process. 
+Setting up the Overcloud completes the overall Helion OpenStack installation process. 
 
 ####What is available in the beta version announced on June 30th? #### {#preview}
 

@@ -47,7 +47,7 @@ The following topics in this section explain how to deploy and verify deployment
 
 Before you install the OVSvApp, ensure the following:
 
-* The HP Helion Openstack must be installed and configured.
+* The HP Helion OpenStack must be installed and configured.
 
 * The VMware vSphere&reg; platform must be installed and configured.
 

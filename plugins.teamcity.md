@@ -111,7 +111,7 @@ The following fields appear on the Cloud Profile form:
 	
 	Private key file - private key which is created in HP management console and which is matched public key from point 3 above.
 
-	Instance type - Openstack flavor (at least small)
+	Instance type - OpenStack flavor (at least small)
 
 	Security groups - the name of security group which is created in HP management console. Port 22 should be opened for agent.
 

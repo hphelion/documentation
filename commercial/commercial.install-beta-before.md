@@ -218,7 +218,7 @@ Automation scripts - pyVins.tgz</td>
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
-* Before you install the HP Helion Openstack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+* Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
     **Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
 

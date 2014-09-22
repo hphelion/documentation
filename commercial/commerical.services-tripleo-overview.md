@@ -24,7 +24,7 @@ PageRefresh();
 
 HP Helion OpenStack uses the standard TripleO deployment model. TripleO is a program aimed at installing, upgrading and operating OpenStack clouds using the OpenStack cloud facilities as the foundations - building on the [Compute](/helion/openstack/services/compute/overview/), [Networking](/helion/openstack/services/networking/overview/) and [Orchestration](/helion/openstack/services/orchestration/overview/) services to automate fleet management at data center scale (and scaling down to as few as two machines).
 
-The [HP Helion Openstack installation](/helion/openstack/install-beta/) includes the standard TripleO deployment model, creating a Seed, an Undercloud and an Overcloud.
+The [HP Helion OpenStack installation](/helion/openstack/install-beta/) includes the standard TripleO deployment model, creating a Seed, an Undercloud and an Overcloud.
 
 
 ##Key Terms
