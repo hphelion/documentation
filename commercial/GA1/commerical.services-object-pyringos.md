@@ -71,7 +71,7 @@ Create a ring based on part&#095;power, replicas, and min&#095;part&#095;hours.
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p <value> -r <value> -m <value>
 
- In the following example , we use one zone each partition power =10, replicas =3, min_part_hours =1
+ In the following example, we use one zone each partition power =10, replicas =3, min_part_hours =1
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
 	
