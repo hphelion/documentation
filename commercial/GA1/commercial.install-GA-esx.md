@@ -286,7 +286,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ## Next Steps
 
-- Deploy vCenter ESX Compute proxy **(REQUIRED)**
+- Deploy vCenter ESX Compute Proxy **(REQUIRED)**
 
 	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor APIs.
 
@@ -298,7 +298,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/) document for complete instructions. 
 
-- Install DNS as a service (DNSaaS) (Optional).
+- Install DNS as a Service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 

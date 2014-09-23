@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 
-The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor API’s.
+The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor API’s.
 
 The general process for deploying the vCenter ESX compute proxy involves the following:
 
@@ -40,10 +40,10 @@ To deploy vCenter ESX compute proxy into a cloud deployment, use the following s
 
 - [Verify that the cloud is installed up and running](/helion/openstack/ga/install/esx/#verifying-your-installation).
 - Setup the management port-group in DVS. Make sure there is a proper network connection between the overcloud controller and the port-group.
-- Verify the network connection between overcloud controller and the proxy. Ping the gateway of the ESX Network or try to login to the server where you will deploy the ESX Compute proxy.
-- Note the access credential for vCenter.
-- Choose the list of clusters to be configured as Helion compute resource.
-- Choose a cluster to deploy proxy. We recommended a cluster that is different from cluster selected for the compute resource.
+- Verify the network connection between overcloud controller and the proxy. Ping the gateway of the ESX Network or login to the server where you will deploy the ESX Compute proxy.
+- Note the access credentials for vCenter.
+- Choose a list of clusters to be configured as Helion compute resource.
+- Choose a cluster to deploy the proxy. We recommended a cluster that is different from the cluster selected for the compute resource.
 - Configure the proxy with either a static IP or use DHCP. If you use a static IP, prepare the network information( IP address, netmask and gateway).
 
 ## Create a VM template in vCenter
@@ -121,7 +121,6 @@ Use the following steps to create a VM template in vCenter:
 	b. Click **Template**.	
 
 	c. Select the **Convert to Template**.
-
 
 ## Deploy the proxy ## {#deploy}
 
