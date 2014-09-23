@@ -259,8 +259,8 @@ Additional requirements are as follows:
     * One of the following operating systems must be installed:
       * Ubuntu 13.10
       * Ubuntu 14.04  
-    * A browser installed to access the undercloud or overcloud
-    * A desktop emulator installed, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+    * A browser to access the undercloud or overcloud
+    * A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
     * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 

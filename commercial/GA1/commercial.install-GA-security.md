@@ -47,15 +47,15 @@ nodes.  If the 3PAR array is dedicated to Helion use, then define a firewall rul
 
 ## Secure the Swift Back-End Traffic<a name="swiftback"></a>
 
-Swift requests travel from the external network, to an HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network, depicted as follows:
-
-(NOTE: This is a lot of information, but I think we need to provide the customer with some sort of diagram as an aid to their understanding.  This diagram is a placeholder.  I think we should start with Sameer’s original source, but remove the interface labels from the threat analysis review: 5.SP-PAC (HTTP), etc.  We can go with all arrows being unlabeled.  If you guys think that including this diagram is “too much information” then I can agree to omit the diagram).
+Swift requests travel from the external network, to an HA proxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network, depicted as follows:
+<!--
+(NOTE: This is a lot of information, but I think we need to provide the customer with some sort of diagram as an aid to their understanding.  This diagram is a placeholder.  I think we should start with Sameer’s original source, but remove the interface labels from the threat analysis review: 5.SP-PAC (HTTP), etc.  We can go with all arrows being unlabeled.  If you guys think that including this diagram is “too much information” then I can agree to omit the diagram).??? -->
 
 <a href="javascript:window.open('/content/documentation/media/topology_swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
 To protect against insider abuse or mistakes, the customer router should be configured with rules as follows.  When adding rules to the customer router, take care not to introduce rules that will prevent authorized network traffic between nodes.
 
-1.  Block any requests directly to the Swift Object nodes from compute nodes.  (Valid user requests from the compute nodes will be passed via the HAproxy on the Controller nodes).
+1.  Block any requests directly to the Swift Object nodes from compute nodes.  (Valid user requests from the compute nodes will be passed via the HA proxy on the Controller nodes).
 
 2. For defense in depth, block requests from the external network to Swift Object nodes (as already mentioned for the firewall configuration).
 
@@ -80,3 +80,6 @@ Note that the Helion OpenStack Commercial release includes IPtables rules on eac
 
 ?? This section is out of scope for the work to be done by Sameer, Jack, Gary and David.  James Gu and David need to write the part for the Service LAN, but I think it makes sense to include all the network configuration guidance on one page.  I’ve added it as a reminder and placeholder here.
 -->  
+---
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

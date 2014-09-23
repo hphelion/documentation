@@ -199,7 +199,7 @@ To import a cluster from the vCenter Details page, do the following:
 5. Click **Done**. A message is displayed when the cluster is imported successful.
 
 
-##View Cluster Details<a name="view-cluster-details"></a>
+##View Cluster Details<a name="view-cluster"></a>
  To view the details of the registered ESX vCenter, do the following:
 
 1.  In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
@@ -218,14 +218,14 @@ To import a cluster from the vCenter Details page, do the following:
 
 You can unimport multiple clusters or a single cluster with a single command. 
 
-* [Unimport a cluster](#unimport-a-cluster)
+* [Unimport a single cluster](#unimport-a-cluster)
 
 * [Unimport multiple clusters](#unimport-multiple-clusters)
 
 
-**Unimport a cluster**<a name="unimport-a-cluster"></a>
+**Unimport a single cluster**<a name="unimport-a-cluster"></a>
 
-To unimport a cluster, do the following:
+To unimport one cluster, do the following:
 
 1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 

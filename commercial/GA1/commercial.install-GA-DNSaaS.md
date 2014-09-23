@@ -29,7 +29,7 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 - [Prerequisites](#preq)
 - [Creating Prerequisite Credentials](#credentials)
 - [Sherpa CSU "Publication" and Booting the Installer VM](#publication)
-- [Installing and configuring DNSaaS](#configure")
+- [Installing and configuring DNSaaS](#configure)
 - [Configure the Overcloud Load Balancer for DNSaaS](#configovercloud)
 - [Registering the service with Keystone](#keyreg)
 - [More information](#moreinfo)

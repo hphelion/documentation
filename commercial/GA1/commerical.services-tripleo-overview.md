@@ -22,20 +22,20 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; TripleO Service Overview#
 
-TripleO (OpenStack-On-OpenStack) is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundation. TripleO builds on the [Compute](/helion/openstack/ga/services/compute/overview/), [Networking](/helion/openstack/ga/services/networking/overview/) and [Orchestration](/helion/openstack/ga/services/orchestration/overview/) services to automate fleet management for as few as two machines or a full data center.
+TripleO (OpenStack-On-OpenStack) is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack's own cloud facilities as the foundation. TripleO builds on the [Compute](/helion/openstack/services/ga/compute/overview/), [Networking](/helion/openstack/ga/services/networking/overview/) and [Orchestration](/helion/openstack/ga/services/orchestration/overview/) services to automate fleet management for as few as two machines or a full data center.
 
-The [HP Helion OpenStack installation](/helion/openstack/ga/install/) follows the standard TripleO deployment model, creating a Seed, an Undercloud and an Overcloud.
+The [HP Helion OpenStack installation](/helion/openstack/ga/install/overview/) follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.
 
 
 ##Key Terms
 
 Key terms include:
 
-- **Seed** - The Seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion OpenStack, contains the minimum services required for OpenStack to function and to provision physical hardware to deploy the Undercloud.
+- **Seed** - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion OpenStack, contains the minimum services required for OpenStack to function and to provision physical hardware to deploy the Undercloud.
 
-- **Undercloud** - The Undercloud server is a basic single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack services; just enough to  permit interaction with the Overcloud. 
+- **Undercloud** - The undercloud server is a basic single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack services; just enough to  permit interaction with the overcloud. 
 
-- **Overcloud** - The Overcloud is the functional cloud available to end users for running guest virtual machines and workloads. 
+- **Overcloud** - The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. 
 
 ## For more information ##
 
