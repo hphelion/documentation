@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/ga/install/overview/">NEXT &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; Support Matrix
@@ -259,8 +259,8 @@ Additional requirements are as follows:
     * One of the following operating systems must be installed:
       * Ubuntu 13.10
       * Ubuntu 14.04  
-    * A browser installed to access the undercloud or overcloud
-    * A desktop emulator installed, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+    * A browser to access the undercloud or overcloud
+    * A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
     * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 

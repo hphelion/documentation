@@ -24,9 +24,9 @@ PageRefresh();
 
 #Compute Service
 
-Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
+The Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 
-Compute allows you to work with flavors, which are unique combinations of disk space, memory capacity, and CPU; images, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and servers, which are virtual instances created using a flavor and an image
+Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
 
 A variety of flavors and images are provided by HP Helion Compute that can be used to create a wide mix of servers.
 
