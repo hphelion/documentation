@@ -22,11 +22,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Horizon Service Overview#
 
-Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface, or the *dashboards*
+Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or **dashboards**.
 
-The dashboard provides a web-based user interface to HP Helion OpenStack services including [Compute](/helion/openstack/ga/services/compute/overview), [Volume Operations](/helion/openstack/ga/services/volume/overview/), [Networking](/helion/openstack/ga/services/networking/overview), and [Identity](/helion/openstack/ga/services/identity/overview). 
+The dashboards provide a web-based user interface to HP Helion&reg; OpenStack services including [Compute](/helion/openstack/ga/services/compute/overview), [Volume Operations](/helion/openstack/ga/services/volume/overview/), [Networking](/helion/openstack/ga/services/networking/overview), and [Identity](/helion/openstack/ga/services/identity/overview). 
 
-Horizon ships with several dashboards, including a *Project* dashboard, an *Admin* dashboard, and a *System* dashboard. These dashboards provide administrators and users a graphical interface to access, provision and automate cloud-based resources.
+Horizon ships with several dashboards, including a **Project** dashboard, an **Admin** dashboard, and a **System** dashboard. These dashboards provide administrators and users with a graphical interface to access, provision and automate cloud-based resources.
 
 ## For more information ##
 
@@ -37,4 +37,4 @@ For information on using the dashboards, see [HP Helion OpenStack Dashboard](/he
 
 ----
 ####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation or the OpenStack community.*

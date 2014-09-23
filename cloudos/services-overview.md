@@ -8,9 +8,9 @@ product: compute
 <!--PUBLISHED-->
 # HP Cloud OS Services Overview #
 
-HP Cloud OS 1.0 is built upon the OpenStack technology. 
+HP Cloud OS 1.0 is built upon OpenStack&reg; cloud technology. 
 
-HP Cloud OS is a foundation technology used for HP’s Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like a datacenter-level operating system (DCOS).
+HP Cloud OS is a foundation technology that HP uses for Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like a datacenter-level operating system (DCOS).
 
 Conceptually, HP Cloud OS is comprised of two primary environments, the Administrative Environment and the Execution Environment. 
 
@@ -57,7 +57,7 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 - [How To's with the HP Cloud OS Volume Management service](/cloudos/services/volume/howto/)
 
 
-**Image Operations**. Glance allows you to maintain images which you can use to bootstrap VM’s across the cloud and then manage them. Also known as *Glance*.
+**Image Operations**. Glance allows you to maintain images which you can use to bootstrap virtual machines across the cloud and then manage them. Also known as *Glance*.
 
 - [Overview of the Image service](/cloudos/services/imaging/overview)
 - [Getting started with the Cloud OS Image Management service](/cloudos/services/imaging/getting-started)

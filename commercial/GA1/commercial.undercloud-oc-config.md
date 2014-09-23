@@ -25,14 +25,14 @@ PageRefresh();
 
 # Manage Overcloud Configuration
 
-The Overcloud option  allows you to define the configurations for your Overcloud.You can define the configuration for ESX Clusters, StoreVirtual 
-backends and StoreServs backends.
+The Overcloud option  allows you to define the configurations for your Overcloud. You can define the configurations for [ESX Clusters](/helion/openstack/ga/undercloud/oc/config/esx/), [StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/), and [StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/).
 
-To define the configuration, do the following:
+To define the configuration:
 
-1. Log into the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
-2. From the left panel, click **Overcloud** Tab and then **Configure** to display the Configure Cloud page.<br>The page displays with three tabs- **ESX Clusters**, **StoreVirtual Backends** and **StoreServ Backends**. By default,<---> is the active tab.
+2. In the left panel, click the **Overcloud** tab.
+3. Click **Configure** to display the Configure Cloud page.<br>The page displays with three tabs- **ESX Clusters**, **StoreVirtual Backends** and **StoreServ Backends**.
 
 
 
@@ -40,9 +40,7 @@ To define the configuration, do the following:
 
 
  * [ESX Clusters](/helion/openstack/ga/undercloud/oc/config/esx/)
-
  * [StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
- 
  * [StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)
 
 

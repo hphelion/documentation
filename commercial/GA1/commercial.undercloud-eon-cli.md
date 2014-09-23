@@ -32,18 +32,13 @@ You can use the following command using the EON Client CLI package in the UnderC
 
 
 * [Help Commands](#help)
-
 * [API Command](#api-command)
-
 * [vCenter Commands](#vcenter-commands)
-
 * [Cluster Commands](#cluster-commands)
-
 * [Compute Proxy Commands](#proxy-command)
-
 * [Options Commands](#optional-commands)
  
-##Help Commands{#help}
+##Help Commands<a name="help"></a>
 
 ###Help
 
@@ -62,18 +57,18 @@ You get two sets of arguments- Positional (mandatory) and Optional arguments(all
 You can use the following commands to view the help .
 
 
-##API Command {#api-command}
+##API Command<a name="api-command"></a>
 
-### Bash-completion {#bash-completion}
+### Bash-completion<a name="bash-completion"></a>
 
 Prints all of the commands and options to the standard output.
 
 		eon bash-completion
 
 
-##vCenter Commands{#vcenter-commands}
+##vCenter Commands<a name="vcenter-commands"></a>
 
-###List vCenters {#list-vcenters}
+###List vCenters<a name="list-vcenters"></a>
 
 You can view the list of vCenters in your cloud environment. 
 
@@ -81,14 +76,14 @@ You can view the list of vCenters in your cloud environment.
     eon vcenter-list 
 
 
-###View vCenter details {#view-vcenter-details}
+###View vCenter details<a name="view-vcenter-details"></a>
 
 You can view the details of the specific vCenter. 
 
 	eon vcenter-show <VCENTER_ID>
 
 
-### Add vCenter {#add-vcenter}
+### Add vCenter<a name="add-vcenter"></a>
 
 You can add the vCenter to the EON database. You must enter all the arguments to add the vCenter, else you will be prompted for the same. 
 
@@ -110,14 +105,14 @@ You can add the vCenter to the EON database. You must enter all the arguments to
  * &lt;VCENTER&#095;PROXY&#095;CONFIG&#095;FILE>:  File location of the Proxy configuration.
 
 
-### Update vCenter {#update-vcenter}
+### Update vCenter<a name="update-vcenter"></a>
 
 You can update the exisitng vCenter to the EON database. You must enter all the arguments to add the vCenter, else you will be prompted for the same. 
 
 	eon vcenter-update [--name <VCENTER_NAME>] [--ip-address <VCENTER_IP>][--username <VCENTER_USERNAME>][--password <VCENTER_PASSWORD>][--port <VCENTER_PORT>]                       <VCENTER_ID>
 
 
-### Delete vCenter {#delete-vcenter}
+### Delete vCenter<a name="delete-vcenter"></a>
 
 You can delete the vCenter from EON database.  
 
@@ -125,85 +120,84 @@ You can delete the vCenter from EON database.
 
 In the vCenter you can import the cluster(s). One vCenter can have multiple cluster(s).
 
-###List vswitch {#vswitch-list}        
+###List vswitch<a name="vswitch-list"></a>        
 You can view the list of vswitches of vCenter.
 
     eon vswitch-list <VCENTER_ID>
 
 
-###View vswitch details {#vswitch-show}        
+###View vswitch details<a name="vswitch-show"></a>        
 
 You can view the vswitch details. It displays the ID of vcenter and MOID of vswitch.
 
 	 eon vswitch-show --vswitch-moid <VSWITCH_MOID> <VCENTER_ID>
 
 
-### Host details {#host-details}
+### Host details<a name="host-details"></a>
 
-You can view the list of hosts of cluster details of the host when cluster moid is specified.
+You can view the list of hosts of cluster details of the host when cluster `moid` is specified.
 
 	 eon host-list --vcenter-id <VCENTER_ID> [--clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]]
 
-##Cluster Commands {#cluster-command}
+##Cluster Commands<a name="cluster-command"></a>
 
-###List clusters {#list-clusters}
+###List clusters<a name="list-clusters"></a>
 
 You can view the list of clusters available for the given vCenter. 
 
 	eon cluster-list --vcenter-id <VCENTER_ID>
 
 
-###View cluster details {#view-cluster-details}
+###View cluster details<a name="view-cluster-details"></a>
 
 You can view of the details of the specific cluster. 
 
 	 eon cluster-show --vcenter-id <VCENTER_ID> --cluster-moid <CLUSTER_MOID>
 
 
-###Import clusters {#import-cluster}
+###Import clusters<a name="import-cluster"></a>
 
 You can import the clusters in the EON database under the give vCenter. 
 
 	 eon import-cluster --vcenter-id <VCENTER_ID> --cluster-name <CLUSTER_NAME> --cluster-moid <CLUSTER_MOID>
 
 
-###Update a cluster {#cluster-update}
-
+###Update a cluster<a name="cluster-update"></a>
 You can update the cluster details. 
 
 	eon cluster-update --vcenter-id <VCENTER_ID> --cluster-moid <CLUSTER_MOID> --state <STATE>
 
 
-###Unimport clusters {#unimport-clusters}
+###Unimport clusters<a name="unimport-clusters"></a>
 
 You can unimport the cluster(s) from the EON database under the give vCenter. To unimport  clusters, enter
 
 	eon unimport-cluster --vcenter-id <VCENTER_ID> --cluster-moid <CLUSTER_MOID>
 
 
-###Activate clusters {#activate-clusters}
+###Activate clusters<a name="activate-clusters"></a>
 You can activate the clusters using the following:
 
 	 eon activate-clusters --vcenter-id <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]
 
 
-### Deactivate clusters {#deactivate-clusters}
+### Deactivate clusters<a name="deactivate-clusters"></a>
 You can deactivate clusters.   
 
  	eon deactivate-clusters --vcenter-id <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]
 
             
 
-##Compute Proxy Commands {#proxy-command}
+##Compute Proxy Commands<a name="proxy-command"></a>
 
-###List of compute proxy {#compute-proxy-list}  
+###List of compute proxy<a name="compute-proxy-list"></a>  
 
-You can view the list of compute proxy.
+View the list of compute proxies.
 
 		eon compute-proxy-list
 
 
-### Restore proxy{#restore-proxy}       
+### Restore proxy<a name="restore-proxy"></a>       
 
 Recreates the Compute Proxy virtual machine with a previously activated clusters.
 
@@ -213,33 +207,33 @@ Recreates the Compute Proxy virtual machine with a previously activated clusters
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-##Required Options {#optional-arguments}
+##Required Options<a name="optional-arguments"></a>
 The following options must be supplied as arguments or as environment variables.
 
-###OS username {#os-username}
+###OS username<a name="os-username"></a>
 Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
   
 	--os-username OS_USERNAME
                         
  
-###OS password{#os-password}
+###OS password<a name="os-password"></a>
 Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
 	
 	 --os-password OS_PASSWORD
                        
  
-###OS tenant ID{#os-tenant-id}
+###OS tenant ID<a name="os-tenant-id"></a>
 Tenant identification of the OpenStack. Defaults to env[OS&#095;TENANT&#095;ID].
 
 	--os-tenant-id OS_TENANT_ID
                                            
  
-###OS authentication URL{#os-auth-url}
+###OS authentication URL<a name="os-auth-url"></a>
 Authentication URL of OpenStack. Defaults to env[OS&#095;AUTH&#095;URL].
  
 	 --os-auth-url OS_AUTH_URL
 
-###OS authenticationtoken{#os-auth-token}
+###OS authenticationtoken<a name="os-auth-token"></a>
 Authentication token of OpenStack. Defaults to env[OS&#095;AUTH&#095;TOKEN].
 
   	--os-auth-token OS_AUTH_TOKEN
