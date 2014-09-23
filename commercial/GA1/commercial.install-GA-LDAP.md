@@ -21,80 +21,85 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg;: Integrating LDAP
+# HP Helion OpenStack&reg;: Integrating LDAP 
 
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+
+The process for integrating LDAP involves the following steps:
+
+- [Verifying prerequisites](#pre)
+- [Generating configuration files](#config)
+- [Include the configuration files in the installation](#install)
 
 ## Prerequisites ## {#pre}
 
-LDAP server is up and running in a network accessible from the overcloud.
+Before starting the integration, review the following prerequisites:
 
-2. The following users need to be created on the LDAP server and their passwords must be set in accordance with the current LDAP server policy.
+- LDAP server is up and running in a network accessible from the overcloud.
 
-<table style="text-align: left; vertical-align: top; width:650px;">
+- The following users need to be created on the LDAP server and their passwords must be set in accordance with the current LDAP server policy.
 	
-<tr style="background-color: lightgrey; color: black;">
-<td><b> Username </b></td><td><b>Password</b></td>
+	- admin
+	- ceilometer
+	- cinder
+	- demo
+	- ec2
+	- glance
+	- heat
+	- neutron
+	- nova
+	- sherpa
+	- swift
 
-<tr style="background-color: white; color: black;">
-<tr><td>admin</td<td>SomeValidPassword</td></tr>
-<tr><td>ceilometer</td<td>SomeValidPassword</td></tr>
-<tr><td>cinder</td<td>SomeValidPassword</td></tr>
-<tr><td>demo</td<td>SomeValidPassword</td></tr>
-<tr><td>ec2</td<td>SomeValidPassword</td></tr>
-<tr><td>glance</td<td>SomeValidPassword</td></tr>
-<tr><td>heat</td<td>SomeValidPassword</td></tr>
-<tr><td>neutron</td<td>SomeValidPassword</td></tr>
-<tr><td>nova</td<td>SomeValidPassword</td></tr>
-<tr><td>sherpa</td<td>SomeValidPassword</td></tr>
-<tr><td>swift</td<td>SomeValidPassword</td></tr>
-</table>
 
 ## Generate configuration files ## {#config}
 
-Step 1: Create the following two files:
+The LDAP integration process requires two configuration files. 
 
-1. tripleo-overcloud-passwords
+- [TripleO OverCloud Password file](#tripleo)
+- [LDAP server connection settings](#connect)
 
-	This file contains the password for all the services users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
+### TripleO OverCloud Password file ### {#tripleo}
 
-		tripleo-overcloud-passwords file for openLDAP test server:
+This file contains the password for all the services users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
 
-		VERCLOUD_ADMIN_PASSWORD=<password>
-		OVERCLOUD_CEILOMETER_PASSWORD=<password>
-		OVERCLOUD_CINDER_PASSWORD=<password>
-		OVERCLOUD_DEMO_PASSWORD=<password>
-		OVERCLOUD_EC2_PASSWORD=<password>
-		OVERCLOUD_GLANCE_PASSWORD=<password>
-		OVERCLOUD_HEAT_PASSWORD=<password>
-		OVERCLOUD_NEUTRON_PASSWORD=<password>
-		OVERCLOUD_NOVA_PASSWORD=<password>
-		OVERCLOUD_SHERPA_PASSWORD=<password>
-		OVERCLOUD_SWIFT_PASSWORD=<password>
+**tripleo-overcloud-passwords file for openLDAP test server:**
 
-		tripleo-overcloud-passwords file for AD-LDAP test server:
+	VERCLOUD_ADMIN_PASSWORD=<password>
+	OVERCLOUD_CEILOMETER_PASSWORD=<password>
+	OVERCLOUD_CINDER_PASSWORD=<password>
+	OVERCLOUD_DEMO_PASSWORD=<password>
+	OVERCLOUD_EC2_PASSWORD=<password>
+	OVERCLOUD_GLANCE_PASSWORD=<password>
+	OVERCLOUD_HEAT_PASSWORD=<password>
+	OVERCLOUD_NEUTRON_PASSWORD=<password>
+	OVERCLOUD_NOVA_PASSWORD=<password>
+	OVERCLOUD_SHERPA_PASSWORD=<password>
+	OVERCLOUD_SWIFT_PASSWORD=<password>
 
-		OVERCLOUD_ADMIN_PASSWORD=Passw0rd
-		OVERCLOUD_CEILOMETER_PASSWORD=Passw0rd
-		OVERCLOUD_CINDER_PASSWORD=Passw0rd
-		OVERCLOUD_DEMO_PASSWORD=Passw0rd
-		OVERCLOUD_EC2_PASSWORD=Passw0rd
-		OVERCLOUD_GLANCE_PASSWORD=Passw0rd
-		OVERCLOUD_HEAT_PASSWORD=Passw0rd
-		OVERCLOUD_NEUTRON_PASSWORD=Passw0rd
-		OVERCLOUD_NOVA_PASSWORD=Passw0rd
-		OVERCLOUD_SHERPA_PASSWORD=Passw0rd
-		OVERCLOUD_SWIFT_PASSWORD=Passw0rd
+**tripleo-overcloud-passwords file for AD-LDAP test server:**
 
-	The file must end with a carriage return.  TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
+	OVERCLOUD_ADMIN_PASSWORD=Passw0rd
+	OVERCLOUD_CEILOMETER_PASSWORD=Passw0rd
+	OVERCLOUD_CINDER_PASSWORD=Passw0rd
+	OVERCLOUD_DEMO_PASSWORD=Passw0rd
+	OVERCLOUD_EC2_PASSWORD=Passw0rd
+	OVERCLOUD_GLANCE_PASSWORD=Passw0rd
+	OVERCLOUD_HEAT_PASSWORD=Passw0rd
+	OVERCLOUD_NEUTRON_PASSWORD=Passw0rd
+	OVERCLOUD_NOVA_PASSWORD=Passw0rd
+	OVERCLOUD_SHERPA_PASSWORD=Passw0rd
+	OVERCLOUD_SWIFT_PASSWORD=Passw0rd
 
+The file must end with a carriage return. TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
 
-2. overcloud_keystone_ldap.json
+### LDAP server connection settings ### {#connect}
 
-	This file contains the LDAP server connection settings.  The content of the file will be transparently propagated in /etc/keystone/keystone.conf on each of the overcloud controller node. Therefore, it must be a well-formed, syntax-error free json file.
+This file contains the LDAP server connection settings.  The content of the file will be transparently propagated in `/etc/keystone/keystone.conf` on each of the overcloud controller nodes. Therefore, it must be a well-formed, syntax-error free json file.
 
-	The following options must be set with proper values to provide integration with the LDAP server:
+The following options must be set with proper values to provide integration with the LDAP server:
 
-	<table style="text-align: left; vertical-align: top; width:650px;">
+<table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
 	<td><b> Username </b></td><td><b>Password</b></td><td><b> AD/LDAP Default values </b></td><td><b>OpenLDAP default values</b></td>
 	</tr>
@@ -189,17 +194,11 @@ Step 1: Create the following two files:
 	<td>user_mail_attribute</td><td>(StrOpt) LDAP attribute mapped to user email.</td><td>userPrincipalName</td><td>Not required</td>
 	</tr>
 	</table>
- 
-
-Sample overcloud_keystone_ldap.json configuration file for openLDAP server
- Expand source
 
 
-Sample overcloud_keystone_ldap.json configuration file for AD server
- Expand source
+## Include the configuration files in the installation ## {#install}
 
- 
-Step 2: Installation
+You need to copy the configuration files to the seed VM host during the installation, after the seed VM is installed and before launching the installation of the overcloud and undercloud.
 
 On the seed VM, perform the following:
 
@@ -217,7 +216,7 @@ Follow the steps described on the Quick Start Install wiki page to deploy the ov
 
 1. Enable LDAP user login.
 
-	Before a user can successfully login, they must assigned to a project.  Therefore a user with admin privileges must create one or more projects and associate each user to a project.
+	Before a user can successfully login, they must be assigned to a project. A user with admin privileges must create one or more projects and associate each user to a project.
 
 2. Disable CRUD (Create/Update/Delete) operations on users for a read-only identity backend on all three overcloud controller nodes.
 
@@ -370,12 +369,7 @@ Sample `overcloud_keystone_ldap.json` configuration file for openLDAP server
 
 <a href="javascript:window.open('/helion/openstack/ga/install/kvm/','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
 
-<script type="text/javascript">
-// Popup window code
-function newPopup(url) {
-	popupWindow = window.open(
-		url,'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-}
-</script>
-<a href="JavaScript:newPopup('http://docs.qa1-stackato.cx.hpcloud.net/helion/openstack/ga/install/kvm/');">Open a popup window</a>
 
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
