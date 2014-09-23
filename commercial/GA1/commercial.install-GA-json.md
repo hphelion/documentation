@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Installation: Creating the JSON configuration file
 
-The HP Helion OpenStack installer uses a JSON configuration file to enter configuration values. JSON (JavaScript Object Notation) is an open-standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs.
+The HP Helion OpenStack installer uses a JSON configuration file to enter configuration values. JSON (JavaScript Object Notation) is an open-standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs. 
 
 
 The `hp_ced_installer.sh` accepts the JSON as an input and either sets environment variables or writes passthrough JSON blobs based on the content of the JSON file.
