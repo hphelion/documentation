@@ -17,12 +17,12 @@ PageRefresh();
 
 </script>
 
-#Performance of HP Helion OpenStack&reg;
+#Measuring Performance of HP Helion OpenStack&reg;
 
 Performance of HP Helion OpenStack is determined in terms of responsiveness and stability under various workloads. Scalability, reliability, and resource usage are the quality attributes of the system which are measured during performance testing. 
 
  
-The performance, scalability, and reliability of HP Helion OpenStack is tested in the following ESX environment:
+The performance, scalability, and reliability of HP Helion OpenStack is tested using the following ESX environment:
 
 * 18 ESXi servers (9 Clusters)
 * 3000 VM Instances
@@ -43,3 +43,8 @@ The following resources are required to perform the test:
 * vCenter OVA
 * OVSVAPP OVA
 * Integrated Scripts
+
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

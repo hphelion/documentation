@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/security/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--UNDER REVISION--> 
 
 
 <script>
@@ -19,7 +19,6 @@ PageRefresh();
 </script>
 
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
-
 
 # HP Helion OpenStack&#174; Configuring your Helion network securely
 Guidance on configuring your Helion network securely

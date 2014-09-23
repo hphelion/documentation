@@ -23,9 +23,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
-HP Helion Openstack allows you to manage the KVM hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
+HP Helion OpenStack allows you to manage the KVM hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
-## Installing HP Helion OpenStack ## {#install}
+## Installing HP Helion OpenStack <a name="install"></a>
 
 The installation and configuration process for ESX consists of the following general steps: 
 
@@ -34,22 +34,21 @@ The installation and configuration process for ESX consists of the following gen
 	* [KVM deployment architecture](#deploy-arch)
 	* [Create a JSON configuration file](#json)
 * [Downloading the installation packages](#getinstall)
-* [Installing HP StoreVirtual Virtual Storage Appliance](#vsa)
 * [Installing HP Helion OpenStack](#install)
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
    * [Installing the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
-   * [Connecting to Horizon console](#connectconsole)
-   * [Connecting to Monitoring UI](#monitoring)
+   * [Connecting to Horizon Undercloud console](#connectconsoleunder)
+   * [Connecting to Horizon Overcloud console](#connectconsoleover)
 * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps)
 
-## Preparing for installation {#prepare}
+## Preparing for installation<a name="prepare"></a>
 
 Before starting the installation, review the following sections.
 
-### Verify Prerequisites ### {#pre}
+### Verify Prerequisites<a name="pre"></a>
 
 To ensure successful installation, please read through the following topics before you start.
 
@@ -58,7 +57,7 @@ To ensure successful installation, please read through the following topics befo
 * [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/).
 
 
-### Review the KVM deployment architecture ### {#deploy-arch}
+### Review the KVM deployment architecture<a name="deploy-arch"></a>
 
 The following diagram depicts the required network topology for a KVM installation.
 
@@ -66,7 +65,7 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
-### Create a identify environment variables file {#envars}
+### Create and identify environment variables file
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
@@ -82,7 +81,7 @@ For more information, see [Creating the baremetal.csv file](/helion/openstack/ga
 ### Preparing KVM Host to run seed VM
 On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack® Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
-## Downloading the installation packages {#getinstall}
+## Downloading the installation packages<a name="getinstall"></a>
 
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
@@ -92,7 +91,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-***QUESTION: New files names?***
+<!-- QUESTION: New files names?? 
 <table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
@@ -102,10 +101,10 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 <td>HP Helion OpenStack beta </td><td>HPHelionOpenStack_BetaJune30.tgz</td></tr>
 </td></tr>
 
-</table>
+</table>-->
 
 
-## Installing HP Helion OpenStack {#install}
+## Installing HP Helion OpenStack<a name="install"></a>
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed KVM host:
 
@@ -114,11 +113,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 * [Installing the seed VM and building your cloud](#startseed)
 
 
-### Configure proxy information {#proxy}
+### Configure proxy information<a name="proxy"></a>
 
 Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:
 
-1. 3. Launch a terminal and log in to your seed VM host as root:
+1. Launch a terminal and log in to your seed VM host as root:
 
 		sudo su -
 
@@ -132,7 +131,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Log out and re-login to your baremetal server to activate the proxy configuration.
 
-### Unpack the installation file ## {#unpackinstall}
+### Unpack the installation file <a name ="unpackinstall"></a>
 
 1. Make sure you are logged into the seed VM host as root. If not:
 
@@ -149,7 +148,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	This creates and populates a `tripleo/` directory within root's home directory.
 
-### Install the seed VM and build your cloud ### {#startseed}
+### Install the seed VM and build your cloud<a name="startseed"></a>
 
 1. Make sure you are logged into the seed VM host as root. If not:
 
@@ -213,12 +212,12 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** If `hp_ced_start_seed` fails to start the seed, need to restart the installation (step 1) and then follow the rest of the steps.
 
-## Verify your installation
+## Verify your installation<a name="verifying-your-installation"></a>
 
 Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack baremetal cloud.
 
 
-### Connect to the undercloud Horizon console ### {#monitoring}
+### Connect to the undercloud Horizon console <a name="connectconsoleunder"></a>
 
 Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
 
@@ -244,7 +243,7 @@ Make sure you can access the undercloud Horizon dashboard. To do this, follow th
 
 6. Log in as user 'admin' with the admin password from step 4.
 
-### Connect to the overcloud Horizon console ### {#connectconsole}
+### Connect to the overcloud Horizon console <a name="connectconsoleover"></a>
 
 Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
@@ -276,12 +275,12 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
-### Create projects for LDAP users {#ldap}
+### Create projects for LDAP users<a name="ldap"></a>
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack&reg;: Integrating LDAP page](/helion/openstack/ga/install/ldap/).
 
 
-## Next Steps
+## Next Steps<a name="next-steps"></a>
 
 - Configure HP StoreVirtual VSA. 
 
@@ -305,7 +304,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
+	For installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -27,9 +27,9 @@ This topic provides you links to pertinent documentation.
 
 ### OpenStack Links
 
-HP Helion OpenStack is OpenStack technology coupled with a Linux&reg; operating system. 
+The HP Helion OpenStack product contains OpenStack technology coupled with a Linux&reg; operating system. 
 
-For more information, refer to the OpenStack documentation site: 
+For more information, refer to the official open source OpenStack documentation site: 
 
 * [OpenStack documentation home page](http://docs.openstack.org/)
 * [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)

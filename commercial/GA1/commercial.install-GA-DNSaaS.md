@@ -26,15 +26,21 @@ PageRefresh();
 This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
 
 
+- [Prerequisites](#preq)
+- [Creating Prerequisite Credentials](#credentials)
+- [Sherpa CSU "Publication" and Booting the Installer VM](#publication)
+- [Installing and configuring DNSaaS](#configure)
+- [Configure the Overcloud Load Balancer for DNSaaS](#configovercloud)
+- [Registering the service with Keystone](#keyreg)
+- [More information](#moreinfo)
 
-
-##Prerequisite {#preq}
+##Prerequisites<a name="preq"></a>
 
 * HP Helion OpenStack Installation
 * DNSaaS Installer Image - See DNSaaS Cloud OS Releases
 * Credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
 	* This user should have the "admin" and "_member_" (or member) roles.
-		* (The "admin" role should not be required, but, for whatever reason, Helion OpenStack Heat will fail to delete the users it creates without this)
+		* (The "admin" role should not be required, but, for whatever reason, Helion OpenStack Heat will fail to delete the users it creates if this role is not created)
 
 	* Username
 	* Password
@@ -74,10 +80,10 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 	* API credentials for Akamai•Username
 	* Password
 
-
-## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa)
-
-## Creating Prerequisite Credentials
+<!--
+## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
+-->
+## Creating Prerequisite Credentials <a name="credentials"></a>
 
 You must create Target and Service credentials.
 
@@ -103,9 +109,9 @@ Once Target credentials are successfully created you can create service credenti
 		$ keystone user-create --name designate --tenant service --email designate@example.com --pass password
 
  
-## Sherpa CSU "Publication" and Booting the Installer VM
+## Sherpa CSU "Publication" and Booting the Installer VM<a name="publication"></a>
 
-Before proceeding with the install ensure that you have met all the prequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
+Before proceeding with the install ensure that you have met all the prerequisites: gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in an unsuccessful installation.
 
 ###Publish CSU contents
 
@@ -150,7 +156,7 @@ Before proceeding with the install ensure that you have met all the prequisites,
 
 	d.Click "Add
 
-##Installing and configuring DNSaaS
+##Installing and configuring DNSaaS<a name="configure"></a>
 
 1. SSH to install VM
 
@@ -229,7 +235,7 @@ After you validate the configuration file, run the DNSaaS installer:
 	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37351
 
 
-##Configure the Overcloud Load Balancer for DNSaaS
+##Configure the Overcloud Load Balancer for DNSaaS<a name="configovercloud"></a>
 
  You must configure HAProxy before you configure the OverCloud Load Balance for DNaaS.
 
@@ -281,7 +287,7 @@ Once HAProxy is configured, SSH to all three OverCloud controller. Perform the f
    b. Run `iptables-save > /etc/iptables/iptables` 
 
 
-#### Registering the service with Keystone
+## Registering the service with Keystone<a name="keyreg"></a>
 You  can register the DNS service and endpoint as a user or an admin. 
 
 You do not have to immediately register the DNS service in Keystone; however, if you choose to register the DNS service and endpoint execute the following command:
@@ -309,8 +315,7 @@ For the HP Helion QA DynECT account:
 	designate server-create --name ns1.p13.dynect.net.
 
 
-
-##For more information
+##For more information<a name="moreinfo"></a>
 For more information, see:
 
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
