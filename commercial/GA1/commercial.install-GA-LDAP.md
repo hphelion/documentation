@@ -26,7 +26,7 @@ PageRefresh();
 
 ## Prerequisites ## {#pre}
 
-1 LDAP server is up and running in a network accessible from the overcloud.
+LDAP server is up and running in a network accessible from the overcloud.
 
 2. The following users need to be created on the LDAP server and their passwords must be set in accordance with the current LDAP server policy.
 
@@ -51,7 +51,7 @@ PageRefresh();
 
 ## Generate configuration files ## {#config}
 
-Create the following two files:
+Step 1: Create the following two files:
 
 1. tripleo-overcloud-passwords
 
