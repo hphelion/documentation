@@ -1,9 +1,9 @@
-#!/bin/bash -li
+#!/bin/bash -i
 #Author: greg.larsen@hp.com 22 Sept 2014
-
+ 
 SOURCEVERSION=`sed -n '6p' < ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
 #The THISVERSION line, below must remain line 6.
-THISVERSION=2
+THISVERSION=3
  
  
 if [[ $THISVERSION < $SOURCEVERSION ]]
