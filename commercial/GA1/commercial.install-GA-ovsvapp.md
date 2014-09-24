@@ -43,8 +43,6 @@ The following topics in this section explain how to deploy and verify deployment
 
 ## Prerequisites ## {#prereqs}
 
-**QUESTION!! Are these prerequisites still required and accurate??**
-
 Before you install the OVSvApp, ensure the following:
 
 * The HP Helion OpenStack must be installed and configured.
@@ -55,7 +53,7 @@ Before you install the OVSvApp, ensure the following:
 
 * Per Datacenter, we have 2 Virtual Distributed Switches (vDS) and they are configured as follows: 
 
-    **vDS1**: This switch has no uplink ports configured on it and has a portgroup of type **VLAN** with **Trunking enabled**. It should contain the list of VLAN tags that are used by OverCloud Neutron service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** Tab of the **Portgroup**.	
+    **vDS1**: This switch has no uplink ports configured on it and has a portgroup of type **VLAN** with **Trunking enabled**. It should contain the list of VLAN tags that are used by OverCloud Neutron service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the **Portgroup**.	
 
       <!---***DVS1***: It should be created without any uplinks. Create a trunk portgroup with VLAN type as **VLAN Trunking** and specify the VLAN trunk range pertaining to the environment. Enable **Promiscuous Mode** and **Forged Transmits** in the portgroup security settings.-->
 

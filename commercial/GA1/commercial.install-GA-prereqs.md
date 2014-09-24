@@ -36,7 +36,7 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
 * At least 9 and up to 100 baremetal systems with the following configuration:
 
-    * A minimum of 32 GB of physical memory.
+    * A minimum of 32 GB of physical memory
     * A minimum of 2 TB of disk space
     * A minimum of 1 x 10 GB NIC with PXE support
 

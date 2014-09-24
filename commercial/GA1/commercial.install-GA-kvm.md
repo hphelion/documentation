@@ -166,7 +166,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	When the seed VM startup is complete, you should see a message similar to the following:
 
-		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"
+		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed" 
 
 6. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
 

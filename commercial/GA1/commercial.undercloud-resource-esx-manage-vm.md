@@ -34,8 +34,7 @@ Virtual Environment is a system which implements, manages, and controls multiple
 The virtual environment allows you to register and unregister vCenter and import clusters in the ESX vCenter environments. It also allows you to secure your vCenter by providing the SSL certificate while registering your vCenter.
 
 
-
-* [Register a vCenter](#register-vcenter)
+*  [Register a vCenter](#register-vcenter)
 * [View Registered ESX vCenters](#view-registered-vCenter)
 * [Edit a vCenter](#edit-vCenter)
 * [Unregistering vCenters](#unregister-vCenter)
@@ -46,6 +45,7 @@ The virtual environment allows you to register and unregister vCenter and import
 * [Unimporting Clusters](#unimport-cluster)
  	* [Unimport a Single Cluster](#unimport-a-cluster) 
 	* [Unimport Multiple Clusters](#unimport-multiple-clusters)
+
 
 
 ##Register vCenter<a name="register-vcenter"></a>
@@ -85,7 +85,9 @@ The tab displays with options in the left panel.
   			* In the **Compute Proxy Gateway** box, enter the compute proxy gateway.
   * Click **Register**. A message is displayed on successful registration of vCenter. <br> After successful registration the registered vCenter is displayed in the ESX vCenter table in Manage Virtual Environments page.
   
+
 ##View Registered ESX vCenters<a name="view-registered-vCenter"></a>
+
 
 To view the list of registered ESX vCenter, do the following:
 

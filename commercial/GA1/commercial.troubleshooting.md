@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;  Troubleshooting
 
-HP Helion OpenStack is an OpenStack technology couple with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
+HP Helion Openstack is an OpenStack technology couple with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
 
@@ -94,7 +94,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
-* Before you install HP Helion OpenStack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+* Before you install HP Helion Openstack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
     **Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
 
@@ -128,8 +128,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <td>Probable Cause</td>
 <td>Multiple NICs are enabled for Network Boot. &nbsp;</td></tr>
 <tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td></td>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>
@@ -160,9 +158,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <td>Probable Cause</td>
 <td> &nbsp;</td></tr>
 <tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td></td>
-<tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>
 
@@ -182,9 +177,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Time and date across nodes is not correct</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td></td>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>Reboot the node, using F9 to get to the BIOS configuration. BIOS date and time is set correctly and the same on all systems.
@@ -211,9 +203,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <td>Probable Cause</td>
 <td>Node doesnt have enough diskspace</td></tr>
 <tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td>Attachning screen shot ()</td>
-<tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td><ul><li> Check if target node has disk space mentioned in baremetal.csv and is greater than Node_min_disk mentioned in tripleo/tripleo-incubator/scripts/hp_ced_functions.sh 
 <li>If disk space is less than Node_min_disk, change Node_min_disk  along with DISK_SIZE in tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh  on Seed 
@@ -237,9 +226,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Node doesnt have enough diskspace, SAN boot is enabled for node or local disk is not attached to /sda</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td>Below screenshot and Nova-compute.log shows Clean up resource before rescheduling and Terminating instance()</td>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td><ul><li> Installer expects that SAN boot option is disabled for nodes. Can you check if SAN boot is disabled for BL 490c </ul></li>
@@ -266,32 +252,12 @@ Also can you boot targeted BL490c with ubuntu or any linux ISO to see what devic
 <td>Probable Cause</td>
 <td></td></tr>
 <tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td>Below screenshot</td>
-<tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>
 </td>
 </table>
 
-<table style="text-align: left; vertical-align: top;">
 
-<tr style="background-color: white; text-align: left; vertical-align: top;">
-<td>Symptoms type</td>
-<td>NovaCompute node fails with error: BadRequest: object of type 'NoneType' has no len() (HTTP 400) </td>
-</tr>
-<td>Primary software component</td>
-<td>Installation Dashboard</td>
-</tr>
-<td>Failure message </td>
-<td>Below screenshot</td>
-</tr>
-<td>Probable cause</td>
-<td</td>
-</tr>
-</table>
-
-###Solution
 
 
 

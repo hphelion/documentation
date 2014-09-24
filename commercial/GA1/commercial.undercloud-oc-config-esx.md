@@ -23,10 +23,16 @@ PageRefresh();
 
 ##Working with EXS Clusters
  
-In the UnderCloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud. Based on your preference and usage you can select the available clusters and activate it. 
+In the UnderCloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud. 
+
+You can perform the following activities in the undercloud Dashboard.
+
+* [Activate clusters](#activate-cluster)
+* [Deactivate clusters](#deactivate-cluster)
+* [Restore proxy](#restore-proxy) 
 
  
-##Activate clusters
+##Activate clusters {#activate-cluster}
 
 Perform the following steps to activate clusters:
 
@@ -45,6 +51,40 @@ Perform the following steps to activate clusters:
 7. (Optional) Click **Remove All** displayed  below the **Selected vCenter Choices** box to remove all the listed clusters. <br>OR<br> Select the desired cluster(s) from the **Selected vCenter Choices** box list and click &larr; to move the selected cluster (s) in the **Available vCenter Choices** box.
 
 5. Click **Configure**. After successful configuration of clusters a message is displayed. <br>The configured cluster(s) get listed in the in the **Activated Clusters** table.
+
+
+
+##Deactivate clusters {#deactivate-cluster}
+
+1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+
+2. Click **Overcloud** and then select **Configure** to open Configured Cloud page. 
+
+3. Click **Deactivate Clusters** on the top right corner of the page to deactivate the clusters for the cloud. The page navigates to Deactivate ESX Clusters page.
+
+4. Select the desired cluster(s) from the **Available vCenter Choices** box list. The selected cluster(s) is displayed in the **Selected vCenter Choices** box.
+
+5. (Optional) Click **Choose All** displayed below the **Available vCenter Choices** box to select all the  displayed clusters.
+
+6. Click  &rarr; to move the selected clusters in the **Selected vCenter Choices** box list. 
+
+7. (Optional) Click **Remove All** displayed  below the **Selected vCenter Choices** box to remove all the listed clusters. <br>OR<br> Select the desired cluster(s) from the **Selected vCenter Choices** box list and click &larr; to move the selected cluster (s) in the **Available vCenter Choices** box.
+
+5. Click **Deactivate**. After successful deactivation of clusters a message is displayed. 
+
+
+##Restore proxy {#restore-proxy}
+
+Restore proxy allows you to restore failed or deleted compute proxy. Select a vCenter to restore its compute proxy. Ensure that you remove any existing compute proxy VM (if any) from the vCenter before proceeding.
+
+1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+
+2. Click **Overcloud** and then select **Configure** to open Configured Cloud page. 
+
+3. Click **Restore Proxy** on the top right corner of the page to deactivate the clusters for the cloud. Restore Compute Proxy box is displayed.
+4. Click **vCenter** drop-down list and select the vCenter. 
+5.  Click Done.
+
 
 
 
