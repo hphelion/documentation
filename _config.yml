@@ -9,7 +9,7 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack
-    url: /helion/openstack/
+    url: /helion/openstack/ga
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
