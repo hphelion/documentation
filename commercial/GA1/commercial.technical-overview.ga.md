@@ -68,7 +68,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>Object Operations (Swift)</b></td>
 	<td>HP Helion OpenStack Swift allows to store and retrieve objects in publicly accessible physical machines. User can configure storage containers, upload and download container files, and delete container files.<br><br>
 	
-	<td>Administrator can easily start with two auto-configured Swift nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. <br><br><a href="/helion/openstack/services/object/overview/">Learn more</a> about Swift and Ringos.</td>
+	<td>Administrator can easily start with two auto-configured Swift nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. <br><br><a href=" /helion/openstack/ga/services/object/overview/">Learn more</a> about Swift and Ringos.</td>
  </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Network Operations (Neutron)<b></td>

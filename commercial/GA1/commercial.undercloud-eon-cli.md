@@ -41,7 +41,7 @@ You can use the following command using the EON Client CLI package in the UnderC
 
 * [Compute Proxy Commands](#proxy-command)
 
-* [Options Commands](#optional-commands)
+* [Required Commands](#required-arguments)
  
 ##Help Commands{#help}
 
@@ -95,7 +95,7 @@ You can add the vCenter to the EON database. You must enter all the arguments to
 	eon vcenter-add --name <VCENTER_NAME> --ip-address <VCENTER_IP> --username <VCENTER_USERNAME> --password <VCENTER_PASSWORD> --port <VCENTER_PORT> --proxy-config-file <VCENTER_PROXY_CONFIG_FILE>
 
 
-**Note**: You can add only three vCenters.
+**Note**: HP Helion OpenStack supports three vCenters.
 
  * &lt;VCENTER_NAME>: Name of the vcenter 
                         
@@ -112,18 +112,26 @@ You can add the vCenter to the EON database. You must enter all the arguments to
 
 ### Update vCenter {#update-vcenter}
 
-You can update the exisitng vCenter to the EON database. You must enter all the arguments to add the vCenter, else you will be prompted for the same. 
+You can update the exisitng vCenter to the EON database. It is mandatory to enter all the arguments to update the vCenter, else you will be prompted for the same. 
 
 	eon vcenter-update [--name <VCENTER_NAME>] [--ip-address <VCENTER_IP>][--username <VCENTER_USERNAME>][--password <VCENTER_PASSWORD>][--port <VCENTER_PORT>]                       <VCENTER_ID>
 
 
 ### Delete vCenter {#delete-vcenter}
 
+**Important:** If you have imported cluster(s) ensure that you have deactivated the cluster(s) and then unimported the cluster(s) before executing the delete command.
+
 You can delete the vCenter from EON database.  
 
 	eon vcenter-delete <VCENTER_ID>
 
-In the vCenter you can import the cluster(s). One vCenter can have multiple cluster(s).
+vCenter delete fails:
+
+* if you have imported cluster which is an activate cluster(s).
+
+
+To delete a deactivate the vcenter clusters then unimport clusters and then retry
+
 
 ###List vswitch {#vswitch-list}        
 You can view the list of vswitches of vCenter.
@@ -166,6 +174,7 @@ You can import the clusters in the EON database under the give vCenter.
 
 	 eon import-cluster --vcenter-id <VCENTER_ID> --cluster-name <CLUSTER_NAME> --cluster-moid <CLUSTER_MOID>
 
+In the vCenter you can import the cluster(s). One vCenter can have multiple cluster(s).
 
 ###Update a cluster {#cluster-update}
 
@@ -176,7 +185,7 @@ You can update the cluster details.
 
 ###Unimport clusters {#unimport-clusters}
 
-You can unimport the cluster(s) from the EON database under the give vCenter. To unimport  clusters, enter
+You can unimport the cluster(s) from the EON database under the give vCenter. 
 
 	eon unimport-cluster --vcenter-id <VCENTER_ID> --cluster-moid <CLUSTER_MOID>
 
@@ -205,7 +214,7 @@ You can view the list of compute proxy.
 
 ### Restore proxy{#restore-proxy}       
 
-Recreates the Compute Proxy virtual machine with a previously activated clusters.
+Incase of failure of Proxy-VM, the Compute Proxy VM can be restored to the previous configuration using following command. In other words it recreates the Compute Proxy virtual machine with a previously activated clusters.
 
 		eon restore-proxy <VCENTER_ID>
 
@@ -213,7 +222,7 @@ Recreates the Compute Proxy virtual machine with a previously activated clusters
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-##Required Options {#optional-arguments}
+##Required Options {#required-arguments}
 The following options must be supplied as arguments or as environment variables.
 
 ###OS username {#os-username}

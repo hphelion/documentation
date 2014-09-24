@@ -36,7 +36,7 @@ Manage virtual environment allows you to register, unregister vCenter, and impor
 
 
 * [Register vCenter](#register-vcenter)
-* [View registered ESX vCenter](#view-registered-vCenter)
+* [View registered vCenter](#view-registered-vCenter)
 * [Edit vCenter](#edit-vCenter)
 * [Unregister vCenter](#unregister-vCenter)
 	* [Unregister a vCenter](#unregister-a-vCenter)
@@ -85,7 +85,7 @@ The tab displays with options in the left panel.
   			* In the **Compute Proxy Gateway** box, enter the compute proxy gateway.
   * Click **Register**. A message is displayed on successful registration of vCenter. <br> After successful registration the registered vCenter is displayed in the ESX vCenter table in Manage Virtual Environments page.
   
-##View registered ESX vCenter {#view-registered-vCenter}
+##View registered vCenter {#view-registered-vCenter}
 
 To view the list of registered ESX vCenter, do the following:
 
