@@ -1,4 +1,8 @@
-Openstack
+[a-z] Over[Cc]loud
+[a-z] Under[Cc]loud
+[Bb]eta
+BETA
+[^_]Openstack
  the the 
  and and 
 [Pp]ubic

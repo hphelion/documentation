@@ -1414,7 +1414,7 @@ BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED I
 WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, 
 MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for 
 determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of 
-rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable 
+rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable 
 laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
 
 6) DISCLAIMER OF LIABILITY

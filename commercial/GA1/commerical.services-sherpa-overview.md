@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Sherpa Service Overview #
 
-HP Helion OpenStack Sherpa Service provides a link to the remote web catalog which has a repository of software that can be purchased and downloaded into the HP Helion environment. You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.  
+HP Helion OpenStack Sherpa Service provides a link to the remote web catalog which has a repository of software that can be purchased and downloaded into the HP Helion environment. You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.  
 
 
 Content may include patches, plugins, images, models, etc. that may be used to update or provide content to the cloud.

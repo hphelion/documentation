@@ -27,16 +27,12 @@ PageRefresh();
 This option allows you to do the following:
 
 * [Add Backend](#add-backend)
-
 * [Expand Backend](#expand-backend)
-
 * [Generate Config](#generate-config)
-
 * [Shrink Backend](#shrink-backend) 
-
 * [Delete Backend](#delete-backend)
 
-### Add backends ###{#add-backend}
+### Add backend<a name="add-backend"></a>
 
 **Note**: Ensure that you allocate only those CPGs which will be used by this cloud. Changing any attributes of CPG after allocating may disrupt cloud functionality if the corresponding change is not updated here.
 
@@ -56,7 +52,7 @@ This option allows you to do the following:
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page. The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
-### Expand backend ###{#expand-backend}
+### Expand backend<a name="expand-backend"></a>
 
 Expand backend is allocating new CPGs to an existing backend. You can select the required CPG(s) from the list of registered CPGs and add the same to a backend that has already been already configured.
 
@@ -77,7 +73,7 @@ To expand a backend, do the following:
 8. Click **Update**.<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
 
-### Shrink backend ###{#shrink-backend}
+### Shrink backend<a name="shrink-backend"></a>
 
 This option allows you to remove the CPGS from the backend which are allocated to your cloud. To reduce the backend, do the following:
 
@@ -96,7 +92,7 @@ This option allows you to remove the CPGS from the backend which are allocated t
 
 6. Click **Update**.<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
-###Delete backend##
+###Delete backend<a name="delete-backend"></a>
 
 Before you delete the backend CPG, detach the volume or migrate to a different backend as this backend will no longer be available once it is deleted. accessible.
 
@@ -109,7 +105,7 @@ Use this option to delete a backend. Do the following:
 3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process. 
 
 
-### Generate config ###{#generate-config}
+### Generate config<a name="generate-config"></a>
 You can download the Cinder configuration relevant to HP 3PAR for your cloud once  you have created the backend.
 
 To generate configuration file, do the following:
@@ -123,7 +119,7 @@ To generate configuration file, do the following:
 4. Click **OK** to download and save the file. <br>Once you download the config file, you can proceed to update the Overcloud configuration.</br>
 
 
-### Update Overcloud ###{#update-overcloud}
+### Update Overcloud<a name="update-overcloud"></a>
 
 To update your overcloud with the changes, do the following:
 

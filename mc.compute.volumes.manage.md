@@ -127,7 +127,7 @@ This launches the custom volumes details screen:
 
 (You can also launch the volume details screen by in the `Name` column, clicking on the name of the volume whose details you want to view.)
 
-The custom volume details screen displays the name, ID, status (active or inactive), description, size, container format (e.g. `BARE`), disk format, creation date, and source server for your volume.  You can can perform a number of functions from this screen, such as:
+The custom volume details screen displays the name, ID, status (active or inactive), description, size, container format (e.g. `BARE`), disk format, creation date, and source server for your volume.  You can perform a number of functions from this screen, such as:
 
 * [Deleting the volume](#Deleting)
 * [Creating a snapshot](/mc/compute/volumes/view-details#Snapshot/)

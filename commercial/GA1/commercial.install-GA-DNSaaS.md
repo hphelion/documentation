@@ -23,9 +23,16 @@ PageRefresh();
 # HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
 
 
-This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
+This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
 
 
+- [Prerequisites](#preq)
+- [Creating Prerequisite Credentials](#credentials)
+- [Sherpa CSU "Publication" and Booting the Installer VM](#publication)
+- [Installing and configuring DNSaaS](#configure)
+- [Configure the Overcloud Load Balancer for DNSaaS](#configovercloud)
+- [Registering the service with Keystone](#keyreg)
+- [More information](#moreinfo)
 
 
 ##Prerequisite {#preq}
@@ -68,8 +75,8 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 		* Username
 		* Password
 
-* Akamai (3rd Party)
 
+* Akamai (3rd Party)
 	* An active service contract with Akamai
 	* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namsever FQDNs")
 		* For "helion-qa" Akamai account
@@ -78,7 +85,11 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 		* Password
 
 
-## Creating Prerequisite Credentials
+<!--
+## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
+-->
+## Creating Prerequisite Credentials <a name="credentials"></a>
+
 
 You must create Target and Service credentials.
 
@@ -104,9 +115,9 @@ Once Target credentials are successfully created you can create service credenti
 		$ keystone user-create --name designate --tenant service --email designate@example.com --pass password
 
  
-## Sherpa CSU "Publication" and Booting the Installer VM
+## Sherpa CSU "Publication" and Booting the Installer VM<a name="publication"></a>
 
-Before proceeding with installation of DNaaS ensure that you have met all the perquisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
+Before proceeding with DNaaS installation ensure that you have met all the perquisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
 
 ###Publish CSU contents
 
@@ -162,7 +173,7 @@ Before proceeding with installation of DNaaS ensure that you have met all the pe
 
 17.Click **Add**.  The rule is added for the instance.(**What message is displayed after you click add??)**
 
-##Installing and configuring DNSaaS
+##Installing and configuring DNSaaS<a name="configure"></a>
 
 1. SSH to install VM
 
@@ -247,7 +258,7 @@ After you validate the configuration file, run the DNSaaS installer:
 	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37351
 
 
-##Configure the Overcloud Load Balancer for DNSaaS
+##Configure the Overcloud Load Balancer for DNSaaS<a name="configovercloud"></a>
 
  You must configure HAProxy before you configure the OverCloud Load Balance for DNaaS.
 
@@ -301,7 +312,7 @@ Perform the following steps on each controller node:
    	b. Run `iptables-save > /etc/iptables/iptables` 
 
 
-## Registering the service with Keystone
+## Registering the service with Keystone<a name="keyreg"></a>
 
 You  can register the DNS service and endpoint as a user or an admin. 
 
@@ -362,8 +373,7 @@ To uninstall the DNaaS:
 
 The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the Keystone documentation (here we point to Openstack documentation).
 
-
-##For more information
+##For more information<a name="moreinfo"></a>
 For more information, see:
 
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)

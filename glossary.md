@@ -39,7 +39,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    String which must be used for subsequent requests to other services.
 
 ###[Availability Zone](https://community.hpcloud.com/search/knowledge/Availibility+Zone) ### {#AvailabilityZone}
-:    A segment of the cloud and the largest organizational unit within it. Typically, a single availability zone is equivalent to a a single data center, but this is not a requirement.
+:    A segment of the cloud and the largest organizational unit within it. Typically, a single availability zone is equivalent to a single data center, but this is not a requirement.
 
 
 ## B ##
@@ -91,7 +91,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## D ##
 
 ###[Dependency Management](https://community.hpcloud.com/search/knowledge/Dependency+Management) ### {#DependencyManagement}
-:    Coordinating and overseeing the dependencies between compute modules (e.g., in jclouds development), usually via a project management tool such as [Apache Maven](#Maven).
+:    Coordinating and overseeing the dependencies between compute modules (e.g., in jclouds development), usually via project management tools such as [Apache Maven](#Maven).
 
 ###[Deprovisioning](https://community.hpcloud.com/search/knowledge/deprovisioning) ### {#Deprovisioning}
 :    Deallocating a cloud resource. See [Provisioning](#Provisioning).
@@ -160,7 +160,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 ## J ##
 
 ###[jclouds](https://community.hpcloud.com/search/knowledge/jclouds) ### {#jclouds}
-:    An open source library that provides java and clojure functionality in the HP Helion Public Cloud environment. 
+:    An open source library that provides clojure and java functionality in the HP Helion Public Cloud environment. 
 
 ## K ##
 

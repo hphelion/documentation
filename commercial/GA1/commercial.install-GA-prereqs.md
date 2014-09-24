@@ -26,10 +26,11 @@ Before you begin the installation process, take a few minutes to read this page 
 
 * [Hardware configuration](#hardware)
 * [Required tasks](#required)
-* [Downloading installation packages](#install-pkg)
-* [For more information](#for-more-information)
+<!--* [Downloading installation packages](#install-pkg)-->
+* [Next Steps](#nextstep)
+* [For more information](#moreinfo)
 
-## Hardware configuration ## {#hardware}
+## Hardware configuration<a name="hardware"></a>
 
 To install a HP Helion OpenStack baremetal multi-node configuration, you must have the following hardware configuration.
 
@@ -66,7 +67,7 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
     * **Physical servers** &mdash; When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
-## Required tasks {#required}
+## Required tasks<a name="required"></a>
 
 On the installer system, ensure the following required tasks are completed before you begin the installation.
 
@@ -76,13 +77,13 @@ On the installer system, ensure the following required tasks are completed befor
 - [Install and configure NTP](#ntp)
 - [Create the baremetal.csv file](#csv)
 
-### Preparing the network {#network_prepare}
+### Preparing the network<a name="network_prepare"></a>
 
 Before installing HP Helion OpenStack, you are responsible for [preparing the network](#network) for all installations. You must also prepare the network based on the type of hypervisor you are installing, [KVM](#network_KVM) or [ESX](#network_ESX). 
 
 The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
 
-#### Preparing all networks #### {#network}
+#### Preparing all networks<a name="network"></a>
 
 To ensure a successful installation, you must satisfy these network configuration requirements:
 
@@ -94,7 +95,7 @@ To ensure a successful installation, you must satisfy these network configuratio
 
 * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
 
-#### Preparing the network for a KVM instalation {#network_KVM}
+#### Preparing the network for a KVM installation <a name="network_KVM"></a>
 
 If you are installing HP Helion OpenStack in a KVM deployment, you must configure your network as shown in the following diagram.
 
@@ -105,13 +106,13 @@ You are responsible for providing the internal and external customer router and 
 **Notes:**
 
 - The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
-- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/ga/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA, 3PAR, LVM.
+- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/ga/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA or 3PAR.
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
 - The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
 <-- What does this mean?? -->
 
-#### Preparing the network for an ESX installation {#network_ESX}
+#### Preparing the network for an ESX installation <a name="network_ESX"></a>
 
 If you are installing HP Helion OpenStack in a ESX deployment, you must configure your network as shown in the following diagram.
 
@@ -133,7 +134,7 @@ For ESX deployments, you must install and configure two specific networks:
 
 2. The **Service network**. This network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
 
-##### Other customer responsibilities and requirements for ESX #####
+##### Other customer responsibilities and requirements for ESX
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
 
@@ -158,27 +159,32 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - enabling VLAN trunking and native VLAN on the private network. This is to cater to untagged PXE traffic with the tenant.
  
-##### Storage nodes installed during installation #####
+##### Storage nodes installed during installation
 
 The initial installation of the cloud will install two initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
 
 
-### Preparing the installer system ### {#installer}
+### Preparing the seed VM host<a name="installer"></a>
 
 The following tasks need to be performed on the seed VM, known as the installer system.
 
+- [Install Ubuntu 14.04 LTS](#ubuntu)
 - [Obtaining a public key](#pub-key)
 - [Configuring SSH](#ssh)
 - [Installing Debian/Ubuntu packages](#packages)
 - [Install and configure NTP](#ntp)
 - [Creating the baremetal.csv file](#csv)
 
-#### Configuring SSH #### {#ssh}
+#### Install Ubuntu 14.04 LTS<a name="ubuntuLTS"></a>
+
+The seed VM host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
+
+#### Configuring SSH<a name="ssh"></a>
 
 On the installer system, the OpenSSH server must be running and the firewall
  configuration should allow access to the SSH ports.
 
-#### Obtaining a public key #### {#pub-key}
+#### Obtaining a public key <a name="pub-key"></a>
 
 On the installer system (seed VM), the user `root` must have a public key, for example:
 
@@ -207,7 +213,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
     $ sudo /etc/init.d/libvirt-bin restart
 
 
-#### Install and configure NTP #### {#ntp}
+#### Install and configure NTP<a name="ntp"></a>
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
@@ -216,7 +222,7 @@ Before you start the installation, you must install NTP on the installer system 
 For information on installing NTP on the seed VM, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
 
 
-#### Creating the baremetal.csv file #### {#csv}
+#### Creating the baremetal.csv file<a name="csv"></a>
 
 **Note:** This section is for baremetal installations only.
 
@@ -246,9 +252,15 @@ When creating this file, keep in mind the following:
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.
 
-## Downloading installation packages ## {#install-pkg}
+#### Integrating LDAP (Lightweight Directory Access Protocol)
+	
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
-**PROCESS WILL CHANGE FOR GA!!!!!**
+For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/ga/install/ldap/).
+<!--
+## Downloading installation packages<a name="install-pkg"></a>
+
+**PROCESS WILL CHANGE FOR GA!!!!!**???
 
 The following packages are available to download from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show) web site. Register, and then log in to download the required packages.
 
@@ -307,13 +319,13 @@ Automation scripts - pyVins.tgz</td>
 
 </table>
 
+-->
 
-
-## Next steps
+## Next steps<a name="nextstep"></a>
 * [Installing and configuring on a KVM hypervisor](/helion/openstack/ga/install/kvm)
 * [Installing and configuring on an ESX hypervisor](/helion/openstack/ga/install/esx/)
  
-## For more information
+## For more information<a name="moreinfo"></a>
 For more information on HP Helion OpenStack Community, see:
 
 * [Support matrix](/helion/openstack/ga/support-matrix/) 

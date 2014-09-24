@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
-HP Helion Openstack allows you to manage the ESX hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition on a suitably specified and prepared system.
+HP Helion OpenStack allows you to manage the ESX hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition on a suitably specified and prepared system.
 
 HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
 
@@ -82,7 +82,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 </table>
 
 
-## Installing HP Helion Openstack ## {#install}
+## Installing HP Helion OpenStack {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -224,7 +224,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ## Verify your installation {#verifying-your-installation}
 
-To verify that the installation is successful, connect to the HP Helion Openstack dashboard and the undercloud dashboard as follows.
+To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as follows.
 
 ### Connect to the undercloud Horizon console ### {#monitoring}
 
@@ -286,7 +286,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ## Next Steps
 
-- Deploy vCenter ESX Compute proxy **(REQUIRED)**
+- Deploy vCenter ESX Compute Proxy **(REQUIRED)**
 
 	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor APIs.
 
@@ -296,9 +296,9 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
-	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
+	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/) document for complete instructions. 
 
-- Install DNS as a service (DNSaaS) (Optional).
+- Install DNS as a Service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 

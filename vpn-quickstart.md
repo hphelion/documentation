@@ -7,13 +7,13 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 # HP Helion Public Cloud Networking:  VPN setup quick start guide 
 
 
 With HP Helion Public Cloud Networking you can set up an IPsec, or site-to-site, VPN connecting your external network directly to your HP Helion Public Cloud virtual network. This guide provides the basic instructions for setting this up with your network using strongSwan. For more complex configuration, please refer to the [strongSwan documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation).
 
-**Note:** These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN.
+**Note:** These instructions use an Ubuntu server instance. You may, of course, choose to use another instance type and still use these directions as a general guide for setting up your VPN. 
 
 This guide covers the following:
 
