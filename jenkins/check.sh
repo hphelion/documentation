@@ -17,6 +17,10 @@ echo " "
 echo "===Blank lines============================="
 
 
+echo " "
+echo "===Spaces in filenames======================"
+find . -name "* *"
+
 
 for i in `find . -name "*.md"`
 do 
