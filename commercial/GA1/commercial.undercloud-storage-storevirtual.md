@@ -25,17 +25,17 @@ PageRefresh();
 
 # Working with HP StoreVirtual 
 
-The StoreVirtual option allows you to configure HP StoreVirtual VSA as storage. Before you start working with StoreVirtual, ensure that the following prerequisites have been fulfilled:
+The StoreVirtual option allows you to configure HP StoreVirtual as storage. Before you start working with StoreVirtual, ensure that the following prerequisites have been fulfilled:
 
 1. HP Helion Cloud is deployed
 
 2. Sirius service is up and running in the Undercloud
 
-3. HP Storevirtual VSA is deployed
+3. HP StoreVirtual is deployed
 
-4. HP Storevirtual VSA cluster is created and Virtual IP address is set.
+4. HP StoreVirtual cluster is created and Virtual IP address is set.
 
-5. HP Storevirtual VSA cluster is accessible by Cinder and Compute nodes running in the Overcloud.
+5. HP StoreVirtual cluster is accessible by Cinder and Compute nodes running in the Overcloud.
 
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
@@ -68,17 +68,17 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 5. In the dialog box, do the following:
 
-   * In the **Cluster Name** box, enter the VSA cluster name.
+   * In the **Cluster Name** box, enter the StoreVirtual cluster name.
 
 		**Note**: The cluster name is case sensitive
    
    * In the **IP Address** box, enter the virtual IP address of the cluster.
    
-   * In the **Subnet** box, enter the subnet of the VSA cluster.
+   * In the **Subnet** box, enter the subnet of the StoreVirtual cluster.
    
-   * In the **Username** box, enter the user name of the management group where VSA cluster is present.
+   * In the **Username** box, enter the user name of the management group where StoreVirtual cluster is present.
    
-   * In the **Password** box, enter the password of the management group where VSA cluster is present.
+   * In the **Password** box, enter the password of the management group where StoreVirtual cluster is present.
    
    * In the **Port** box, enter the port number for the SSH access or select the default value shown in the UI.
    
@@ -89,7 +89,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 ### Edit a cluster ###{#edit-cluster}
 
-**Note**: Ensure that you edit the VSA cluster only if there are any updates done through the CMC or the CLIQ for the selected cluster. After editing the details, the backend data should also be updated so that cinder config has the updated cluster information.
+**Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done through the CMC or the CLIQ for the selected cluster. After editing the details, the backend data should also be updated so that cinder config has the updated cluster information.
 
 To edit a cluster, do the following:
 

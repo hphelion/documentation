@@ -27,6 +27,8 @@ This page provides detailed information to configure HP 3PAR StoreServ in your c
 
 Storage Configuration Manager (SCM) service is used to facilitate configuration and deployment of StoreServ and StoreVirtual arrays.
 
+For more information, refer to www.hp.com/go/storeserv.
+
 
 ## Working with HP StoreServ
 
