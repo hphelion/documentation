@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/ga/services/object/swift/replica-status/
+permalink: /helion/openstack/ga/services/object/swift/health-check/
 product: commercial.ga
 
 ---
@@ -21,9 +21,9 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# Replica Swift Status 
+# Service Health Check 
 
-Icinga service, which runs in the Undercloud, helps cloud admin to monitor the duplicated status of the Swift storage node (s)
+Icinga service, which runs in the Undercloud, helps cloud admin to monitor health status of Account, Container, Proxy and Object services. 
 
 ##Prerequisite
 
@@ -37,16 +37,12 @@ Icinga service, which runs in the Undercloud, helps cloud admin to monitor the d
 3. Icinga service is active and running in the Undercloud
 
 
-##Monitoring Swift Replication Status
+##Monitoring Health of Swift Services
 
-You can monitor the time of the completed scan by a replicator. Following are the possible value for the replication status:
+ You can monitor the health status of swift-proxy, swift-account, swift-container and swift-object services. 
 
-* OK
-* WARNING
-* CRITICAL
-* UNKNOWN
 
-Perform the following steps to monitor the replication of Swift status:
+Perform the following steps to monitor the health status of Swift status:
 
 1. In the Undercloud, login to Icinga Dashboard <http://<**Undercloud_IP**>/icinga/>. Login credentials are:
 		
@@ -91,16 +87,9 @@ The page displays the following information of the selected host:
 
 For example: The above image displays the service status details for the host 192.0.2.26.
 
-Now, you view the replication status of the selected Swift node.
+Now, you view the health status of the selected Swift node.
 
-<img src ="media/swift_icinga-replication-status.png"/>
-
-If the status changes from OK to any other status then you must verify the following services:
-* swift-account-replicator
-* swift-container-replicator
-* swift-object-replicator services on the Swift storage nodes **<where do we verify this services>**
-
-After verification and restart the services as desired.
+<img src ="media/swift_icinga-health-status.png"/>
 
 
 ##View Service State Information

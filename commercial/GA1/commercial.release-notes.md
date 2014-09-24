@@ -22,21 +22,27 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Release Notes
 
-Thanks for your interest in HP Helion OpenStack! This release note contains the following information on our software package:
+Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0, including known issues and workarounds, and where to find further information on the product release:
 
 * [Features in HP Helion OpenStack](#features) 
-* [Recommendations for HP Helion OpenStack](#recommendations)
+* [Recommendations for HP Helion OpenStack](#recommendations) ***WHY???
 * [For further information](#for-further-information) 
 
 ##Features in HP Helion OpenStack## {#features}
 
-**OpenStack Icehouse service** - The full set of standard OpenStack services is available for you to use, including Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, and Heat.
+**OpenStack Juno Services** - The full set of standard OpenStack services is available for you to use: Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, Heat, Ceilometer, and TripleO (Ironic) for deployment.
+
+**TripleO (Ironic)** - Using OpenStack technology for deploying OpenStack services in a fully automated manner resulting in a bare-metal control plane deployed in a highly available configuration.
+
+**LogStash/ElasticSearch** - Enhancing security and supportability of the product by offering centralized logging.
+
+**Icinga** - Providing infrastructure monitoring ensuring the health of the cloud. 
 
 **HP StoreVirtual VSA** - The VSA is used as the default fault-tolerant, software-defined storage backend for Cinder, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.
 
-**Support for VMWare ESXi hypervisor** - Makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
+**Support for VMWare ESX** - Makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
 
-**HP Virtual Cloud Networking (VCN) application** - Allows you to create networks, subnets and ports, as well as security groups and security group rules for your ESX cluster.
+**HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
 
 ##Recommendations for HP Helion OpenStack## {#recommendations}
 
@@ -102,7 +108,7 @@ For additional information on HP Helion OpenStack, OpenStack Cloud Software and 
 * [FAQ](/helion/openstack/ga/faq/): Contains some frequently asked questions about the HP Helion OpenStack
 * [Installation and configuration](/helion/openstack/ga/install-overview/): A set of tasks that walk you through the installation and configuration process.
 * [Related Topics](/helion/openstack/ga/related-links/): Links to pertinent HP Helion OpenStack and OpenStack documentation.
-* [OpenStack documentation home page](http://docs.openstack.org/)
+* [OpenStack documentation web site](http://docs.openstack.org/)
 * [TripleO documentation](https://wiki.openstack.org/wiki/TripleO)
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Report issues with HP Helion OpenStack.
 

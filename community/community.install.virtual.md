@@ -53,7 +53,7 @@ It is important to read through this page before starting your installation. Bef
 
 * Undercloud &mdash; In a typical HP Helion OpenStack Community deployment, the undercloud is a baremetal server, but in this preview deployment the undercloud is simulated as a VM. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
 
-* Overcloud &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. In this virtual deployment, the overcloud comprises 4 nodes:
+* Overcloud<a name="overcloud"></a> &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. In this virtual deployment, the overcloud comprises 4 nodes:
 
     * 1 overcloud controller
     * 2 overcloud Object operation (Swift) nodes

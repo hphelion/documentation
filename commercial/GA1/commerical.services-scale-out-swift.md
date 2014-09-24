@@ -32,20 +32,23 @@ The scale out object storage defines a new policy, storage-policy:1. Object ring
 The object storage can be extended as necessary by adding one or more nodes to object-ring:1. You can still continue to use storage-policy:0, if you continue to use the old container to store data.
 
 
-##HP Helion OpenStack scale-out architecture 
+##HP Helion OpenStack Scale-out Architecture 
 
 The following diagram depicts the HP Helion OpenStack scale out architecture.
 
-<img src ="media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png/">
+<img src = "media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png/">
+
+<a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
 
 
 
 For Swift scale-out refer the following sections:
 
-* [Deploy Scale-out Swift]( /helion/openstack/ga/services/swift/deployment/)
+* [Deploy Scale-out Swift]( /helion/openstack/ga/services/swift/deployment-scale-out)
 * [Expand Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
-* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
+* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 * [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
+* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
 
 
 
