@@ -39,7 +39,7 @@ You can use the following commands using the Sirius Client CLI package in the Un
 
 * [HP StoreServ Commands](#storeserv-commands)
 
-* [Optional Commands](#optional-commands)
+* [Required Options](#required-options)
 
 
 ##Help Command {#help}
@@ -67,7 +67,7 @@ You can list the block storage details of API version.
 
 	Sirius block-info
 
-### Bash Completetion
+### Bash completetion
 
 You can prints all the commands and options to standard output
 
@@ -83,7 +83,7 @@ You can list the devices supported by Sirius API.
 
 
 
-## HP StoreVirtual commands {#storevirtual-commands}
+## HP StoreVirtual Commands {#storevirtual-commands}
 
 
 ### List StoreVirtual cluster 
@@ -96,7 +96,7 @@ You can list the clusters in StoreVirtual which are registered with Sirius.
 
 You can display the details of a particular cluster.
 
-	sirius storevirtual-cluster-show <CLUSTER_ID>
+	 sirius storevirtual-cluster-show [--backend-name <CINDER_BACKEND_NAME>]<CLUSTER_ID>                              
 
 ### Register StoreVirtual cluster ###
 
@@ -121,13 +121,13 @@ You can unregister the specified StoreVirtual cluster from the Sirius database.
 
 Lists the StoreVirtual backends registered to Sirius
 
-	sirius storevirtual-backend-list
+	sirius storevirtual-backend-list [--format <JSON_FLAG>]
 
 ### Backend show                        
     
  Shows the information about specific backend
 
-	sirius backend-show        
+	sirius backend-show [--format <JSON_FLAG>] <BACKEND_ID>        
                        
 ### Add StoreVirtual backend
 
@@ -157,9 +157,7 @@ You can list the StoreServ clusters registered with the Sirius database.
 
 You can display the details of a specific StoreServ.
 
-	sirius storeserv-show <STORESERV_ID> 
-
-
+	sirius storeserv-show [--cpg-list <CPG_LIST_FLAG>] <STORESERV_ID>
 
 **Note:** 
 
@@ -207,7 +205,8 @@ You can list all the registered 3PAR CPGs
 
 You can list the 3PAR CPGs
 
-    sirius cpg-show           
+    sirius cpg-show --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> [--backend-name <CINDER_BACKEND_NAME>]  
+                               
 
 ### Register CPG
 
@@ -227,29 +226,36 @@ You can register the 3PAR CPGs
 
 You can unregister the 3PAR CPGs
 
-	sirius delete-cpg          
+	sirius delete-cpg --storeserv_id <STORESERV_ID> --cpgs <CPG_ID> [<CPG_ID> ...]
+                                 
+###List backends###
+
+ You can view the list of the backends registered to Sirius.
+
+     sirius storeserv-backend-list [--format <JSON_FLAG>]
+
+                        
+###Show backend
+
+You can view the information about specific backend.
+
+    sirius backend-show [--format <JSON_FLAG>] <BACKEND_ID>
 
 
 ### Add StoreServ backend ###
 
 You can add a StoreServ backend.
 
-    sirius add-storeserv-backend <BACKEND_ID?>
+    sirius add-storeserv-backend --storeserv-id <STORESERV_ID> --cpg-id <CPG_UUID> --backend-name <BACKEND_NAME>
 
-###List backends###
+###Delete Storeserv backend
 
- You can view the list of the backends registered to Sirius.
+You can unregister a Storeserv backend
 
-    sirius backend-list
-                        
-###Show backend
-
-You can view the information about specific backend.
-
-    sirius backend-show      
-
-  
-## Required options
+ sirius delete-cpg --storeserv_id <STORESERV_ID> --cpgs <CPG_ID> [<CPG_ID> ...]
+                         
+   
+## Required Options {#required-options}
 
 The following options must be supplied as arguments or as environment variables.
 

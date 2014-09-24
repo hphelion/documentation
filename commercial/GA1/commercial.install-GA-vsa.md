@@ -22,46 +22,45 @@ PageRefresh();
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
 
-# HP Helion OpenStack&#174; Installation: HP StoreVirtual VSA Support
+# HP Helion OpenStack&#174; Installation: HP StoreVirtual Support
 
 This page provides detailed information on HP StoreVirtual for realizing cloud storage. It primarily covers the following topics:
 
-* [HP StoreVirtual VSA overview](#StoreVirtual-overview) 
+* [HP StoreVirtual overview](#StoreVirtual-overview) 
 * [Cinder architecture](#cinder-architecture)
    * [Cinder API](#cinder-api)
    * [Scheduler](#scheduler)
    * [Cinder volume and Lefthand driver](#cinder-volume)  
    * [Differentiated storage offerings](#differentiated-storage-offerings)
-* [Deploying VSA storage sytems](#deploy-vsa)
+* [Deploying HP StoreVirtual storage sytems](#deploy-vsa)
    * [Prerequisites](#prerequisites-vsa)
-   * [Deployment Process](#deploy-process)
-        * [During Overcloud creation](#during-oc-creation)
-        * [Post Overcloud creation](#post-oc)
+   * [Enrolling the new Baremetal server](#deploy-process)
+* [Verifying the StoreVirtual installation status](#verify-install)
 * [Installing HP StoreVirtual Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
    * [Prerequisites](#prerequisites)
    * [Installation](#install)
 * [Creating  and adding a StoreVirtual Cluster to a new Management Group](#create-cluster) 
-* [Adding a VSA node to an existing Management Group](#adding-a-node)
+* [Adding a StoreVirtual node to an existing Management Group](#adding-a-node)
 
 
 ## HP StoreVirtual overview {#storevirtual-overview}
 
-HP StoreVirtual VSA provides complete array functionality without an external array hardware, which:
+HP StoreVirtual provides complete array functionality without an external array hardware, which:
 
 * eliminates the need for external shared storage required to implement block storage feature
 * uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost
 
 
-HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
+HP StoreVirtual Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
 
-Multiple StoreVirtual VSAs running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID. A logical grouping of clusters is done to form a unit and is termed as management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
+Multiple StoreVirtual systems running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID. A logical grouping of clusters is done to form a unit and is termed as management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
 
-As of now, adding more StoreVirtual VSAs to the cluster grows the storage pool. With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual VSAs, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
-A single management group can contain up to 32 VSA nodes &#45; grouped into one or more clusters. A single cluster comprises 1 to 16 VSA nodes. Each management group can optimally manage a maximum of 1500 volumes. 
+As of now, adding more StoreVirtual systems to the cluster grows the storage pool. With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual, support the use of the storage pools by cloud instances.
+A single management group can contain up to 32 StoreVirtual nodes &#45; grouped into one or more clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes. 
 
-HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single VSA node on it.
+HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.
 
-HP StoreVirtual VSA enables the following features in HP Helion OpenStack: 
+HP StoreVirtual enables the following features in HP Helion OpenStack: 
 
 * **Storage clustering**: It allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. As storage needs increase, StoreVirtual can scale performance and capacity online.
 
@@ -69,7 +68,7 @@ HP StoreVirtual VSA enables the following features in HP Helion OpenStack:
 
 * **Thin provisioning**: It allocates space only as data is actually written without requiring pre-allocation of storage. This raises the overall utilization and efficiency and thus increases the ROI.
 
-* **Simplified data protection**: Snapshots create thinly provisioned, instant point-in-time copies of data on a per-volume basis. As and administrator, you can access snapshots to recover individual files/folders from the volume, or rollback an entire volume to a prior state.
+* **Simplified data protection**: Snapshots create thinly provisioned, instant point-in-time copies of data on a per-volume basis. As an administrator, you can access snapshots to recover individual files/folders from the volume, or rollback an entire volume to a prior state.
 
 
 
@@ -139,114 +138,37 @@ The cloud administrator, you create volume types to specify the storage offering
 
 Then, as the cloud administrator, you need to create three volume types &ndash; bronze, silver and gold &ndash; and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.
 
-Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping theses backends to different volume types as suggested above.
+Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping these backends to different volume types as suggested above.
 
 
-##Deploying VSA Storage Systems {#deployment-vsa}
+##Deploying HP StoreVitual Storage Systems {#deployment-vsa}
 <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
 
 ###Prerequisites {#prerequisite-vsa}
-Ensure the following prerequisites are fulfilled before VSA Storage systems are deployed:
+Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
 
-* Dedicated hardware identified for StoreVirtual VSA storage systems
+* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that there are no Baremetal servers available for provisioning.
+ 
+* Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first operating system disk where the OS image is deployed is not considered for StoreVirtual storage.
 
-* Disk recommendation- with Adaptive Optimization (AO) or without Adaptive Optimization(AO)
+* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. For more details, refer – [**Storevirtual documentation LINK**]
+
+* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have at least two(2) operating system disks(/dev/sda, /dev/sdb)
+
+* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) operating system disks(/dev/sda, /dev/sdb,/dev/sdc) - /dev/sdb should be Solid State Drive(SSD).
+
+* The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB or the RAID stripe configuration will fail. For more details, refer [**storevirtual documentation LINK**]
 
 * Seed Cloud is installed and running
 
-<!---### Deployment Process {#deploy-process}
+<!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
-You can deploy VSA:
+#### Enrolling the new Baremetal server {#enroll-new-baremetal-server}
 
-* [During Overcloud creation](#during-oc-creation)
-
-* [Post Overcloud creation (Scale out VSA storage)](#post-oc)
-
-	
-#### Deploy VSA during Overcloud creation {#during-oc-creation}
-
-You can deploy VSA during Overcloud creation or installation. To deploy, update the Helion Config file and create the Overcloud using the following commands:
- 
-
-1. SSH to seed as root
-
-	    ssh root@<IP Address>
-
-2. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
-
-		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-3. Edit the `/root/overcloud-config.json` and update the value for **vsa_scale** or **vsa&#095;ao&#095;scale** appropriately.
-
-        vsa_scale: <no of VSA systems>
-
-	**NOTE**:  For HP StoreVirtual VSA, a management group with two storage systems and a FailOver Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant, and do not require a FailOver Manager. The FailOver Manager is a specialized version of the LeftHand OS(HP StoreVirtual) software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine other than the VSA storage systems in the SAN.
- 
-4. Check `/root/baremetal.csv` and ensure that the Baremetal servers identified for VSA storage system(s) are enrolled for the cloud.
-
-5. Apply the configuration
-
-        source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
-6. Run the install script. During the installation, the number of VSA storage systems that you specified, are installed.
-
-         /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh--update 
-     
-
-<img src="media/storevirtual-cluster-network-diagram1.png"/>
+To deploy HP StoreVirtual, you need to first enroll the Baremetal server and then, update the Helion Config file and the Overcloud. Perform the following commands:
 
 
-
-### Deploy VSA post Overcloud creation {#post-oc}
-
-You can add VSA storage systems to an existing Overcloud also. <!---You can add VSA in any of the following scenarios:-->
-
-<!--* Baremetal Server, to be used as VSA, is already enrolled (during the initial installation or creation of cloud)
-
-* Enroll the Baremetal server and scale out VSA Storage 
-
-
-#### Baremetal server is already enrolled ####
-
-To deploy, update the Helion Config file and the Overcloud using the following commands:
-
-1. SSH to seed as root
-
-        ssh root@ <IP Address>
-
-2. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
- 
-       	cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-3. Edit the `/root/overcloud-config.json` and update the value for vsa&#095;scale or vsa&#095;ao_scale appropriately.
-
-       	vsa_scale: <no of VSA systems>
-
-	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine(VM)  other than the storage systems in the SAN.
-
-
-4. Apply the configuration
-
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
-5. Comment out the following line in  `/root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh` in the overcloud section
-
-			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
-   			 echo "HP - configuring overcloud - $(date)"
-			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END
-
-6. Run the installer script to update the overcloud. During the installation, the number of VSA storage systems that you specified, are installed.
-
-    	 bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
--->
-
-
-#### Enroll the new Baremetal server
-
-To deploy Hp StoreVirtual, you need to first enroll the Baremetal server and then, update the Helion Config file and the Overcloud. Perform the following commands:
-
-
-1. SSH to Undercloud as heat-admin
+1. SSH to Undercloud as heat-admin from seed
 
          ssh heat-admin@<IP Address>
          sudo -i
@@ -278,11 +200,11 @@ To deploy Hp StoreVirtual, you need to first enroll the Baremetal server and the
 
 7. Edit the `/root/overcloud-config.json` and update the value for **vsa&#095;scale** or **vsa&#095;ao_scale** appropriately. 
 
-       	vsa_scale: <no of VSA systems>
+       	vsa_scale: <no of StoreVirtual systems>
 
-	**NOTE**: For HP StoreVirtual, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/Virtual Machine(VM)  other than the storage systems in the SAN.
+	**NOTE**: For HP StoreVirtual, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
 
-8. Export the environment variables based on your configuration and the details of the StoreVirtual scale specified in the /root/overcloud-config.json
+8. Export the environment variables based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`
 
 9. Apply the configuration
 
@@ -298,9 +220,43 @@ To deploy Hp StoreVirtual, you need to first enroll the Baremetal server and the
 
      	bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 
-12. Login to the Overcloud and view nova list
+##Verifying StoreVirtual installation status {#verify-install}
 
-    nova-list  
+To verify that the StoreVirtual is deployed, perform the following checks:
+
+1. Login to Undercloud from seed
+
+		ssh root@<Undercloud IP Address>
+	
+
+		ssh heat-admin@<IP Address>
+ 		sudo -i
+ 		source stackrc   **SHOULD IT NOT BE THIS???**
+ 
+2. Source stackrc file and list the deployed StoreVirtual nodes
+
+		 source stackrc
+		 heat stack-list
+         nova list|grep vsa
+
+3. Login to the StoreVirtual system from the seed using the IP address retrieved 
+from the above steps
+
+		ssh heat-admin@<StoreVirtual system IP Address><**IS THIS CORRECT????**>
+
+4. Check the log files
+
+		tailf /installer.log
+
+	The message "*Started VM vsa-hostname*" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.
+
+5. To display the status of all the StoreVirtual VMs 
+
+		virsh list --all 
+
+	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log`
+
+6. On successful installation of StoreVirtual VM on Baremetal, launch the CMC and discover the storage systems. 
 
 
 ##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
@@ -346,7 +302,7 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
 
 * CMC is already installed 
 
-* HP StoreVirtual (one or more) is deployed in the same management network where CMC is installed.
+* HP StoreVirtual system (one or more) is deployed in the same management network where CMC is installed.
 
 
 To create a cluster, do the following:
@@ -430,7 +386,10 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 11. Click **Add** to add the node to the group that you specified.<br> The node is added to the Management Group.
 
-## Next Steps
+
+
+
+<!--## Next Steps
 
 - Configure HP StoreVirtual 
 -  **(REQUIRED)**. 
@@ -443,7 +402,7 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
+	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
 
 <!---## Next step
