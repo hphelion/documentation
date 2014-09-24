@@ -13,6 +13,10 @@ rm checktmp > /dev/null 2>&1
 
 echo  Checking the $GIT_BRANCH branch for embarrassing strings...  
 
+echo " "
+echo "===Blank lines============================="
+
+
 
 for i in `find . -name "*.md"`
 do 
