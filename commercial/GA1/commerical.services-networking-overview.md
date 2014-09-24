@@ -29,7 +29,9 @@ Leveraging OpenStack Neutron, HP Helion OpenStack Networking is a virtual networ
 
 The Networking service also provides an API to configure and manage a variety of network services.
 
-You can use the networking to connect guest servers or you can define and configure your own virtual network topology
+You can use the Networking service to connect guest servers or you can define and configure your own virtual network topology.
+
+You can also use the Networking service to [identify the actual IP address of a malicious user](#nat), if you know the user's NAT address.
 
 ## Working with the Networking Service
 
@@ -55,9 +57,9 @@ The following lists of tasks can be performed by a user or administrator through
 
 The administrator can work with all projects in a domain. A user can only work with projects associated with that user.
 
-### Tracking masked IP addresses when using network address translation (NAT) ###
+### Tracking masked IP addresses when using network address translation (NAT) ### {#nat}
 
-If a malicious user uses NAT, you can identify his actual IP address using if you know the user's NAT address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
+If you know the NAT address of a malicious user, you can identify his actual IP address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
 
 For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/ga/maskedIP).
 
