@@ -16,12 +16,6 @@ echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural er
 echo " "
 echo "===Blank lines============================="
 
-
-echo " "
-echo "===Spaces in filenames======================"
-find . -name "* *"
-
-
 for i in `find . -name "*.md"`
 do 
 	a=`head -1 $i`
@@ -30,6 +24,12 @@ do
 		echo "Blank lines at the top of file $i"
 	fi
 done   
+
+
+echo " "
+echo "===Spaces in filenames======================"
+find . -name "* *"
+
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'
