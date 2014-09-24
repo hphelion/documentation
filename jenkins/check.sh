@@ -11,7 +11,7 @@ git pull
 rm checktmp > /dev/null 2>&1  
 
 
-echo  Checking the $GIT_BRANCH branch for embarrassing strings...  
+echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors...  
 
 echo " "
 echo "===Blank lines============================="
