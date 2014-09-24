@@ -37,7 +37,7 @@ DNSaaS for OpenStack includes:
 
 For example, if a user wants to access `mytestdomain.com` in the browser, DNS provides the mechanism the browser uses to locate the server (for example, `1.2.3.4`).
 
-**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion Openstack and verified that it is configured correctly and operational.
+**Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack and verified that it is configured correctly and operational.
 
 Learn how to [install DNS as a service](/helion/openstack/ga/install/dnsaas/).
 

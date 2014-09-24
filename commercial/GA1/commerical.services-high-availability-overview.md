@@ -28,7 +28,7 @@ High Available system is the one which  minimizes as many failure conditions as 
 
 * **Data loss** - accidental deletion or destruction of data.  
  
- In addition to providing High Availability to the OpenStack Service components, HP Helion Openstack also provides HA service for the nova-compute service. it avoids Single-Point-Of-Failure (SPOF) and controls data loss.  
+ In addition to providing High Availability to the OpenStack Service components, HP Helion OpenStack also provides HA service for the nova-compute service. it avoids Single-Point-Of-Failure (SPOF) and controls data loss.  
 
 HA can be provided in the following two models.
 

@@ -22,14 +22,14 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
 # Configuring Your Storage Using Sirius
-Once you complete the Undercloud and Overcloud installation, you can use Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides a http-client coupled command line tool for managing Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps in configuring the storage devices such as StoreVirtual and StoreServ as the backend for Cinder .
+Once you complete the Undercloud and Overcloud installation, you can use the Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides an http client-coupled command-line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack&#174; technology; Keystone credentials are to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps with configuration of storage devices such as StoreVirtual and StoreServ as the back end for Cinder .
 
 
-To get the list of all the Sirius commands, commands You can use the Help command to get the list of commands that can used in Sirius.  
+You can use the Help command to get the list of commands that can used in Sirius.  
 
 
 
-You can use the following commands using the Sirius Client CLI package in the Undercloud.
+You can execute the following commands using the Sirius Client CLI package in the undercloud.
 
 * [Help Command](#help)
 
@@ -63,20 +63,20 @@ You get two sets of arguments- Positional(mandatory) and Options (all mandatory 
 ### Get block info ###
 
 
-You can list the block storage details of API version. 
+You can list the block storage details of the API version. 
 
 	Sirius block-info
 
 ### Bash Completetion
 
-You can prints all the commands and options to standard output
+You can print all the commands and options to standard output
 
 	sirius bash-completion
 
 
 ### Supported devices###
 
-You can list the devices supported by Sirius API.
+You can list the devices supported by the Sirius API.
 
 	sirius supported-devices
 
@@ -88,7 +88,7 @@ You can list the devices supported by Sirius API.
 
 ### List StoreVirtual cluster 
 
-You can list the clusters in StoreVirtual which are registered with Sirius.
+You can list the clusters in StoreVirtual that are registered with Sirius.
 
 	sirius storevirtual-cluster-list
 
@@ -100,14 +100,14 @@ You can display the details of a particular cluster.
 
 ### Register StoreVirtual cluster ###
 
-You can register the StoreVirtual Cluster to Sirius database. This command requires all the arguments, else the user is prompted for the same.
+You can register the StoreVirtual Cluster to the Sirius database. This command requires all the arguments; otherwise the user is prompted to enter them.
 
 	sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 
 ### Update StoreVirtual cluster ###
 
-You can update the StoreVirtual cluster in Sirius database. Only the CLUSTER_ID is  a mandatory argument.
+You can update the StoreVirtual cluster in the Sirius database. Only the CLUSTER_ID is a mandatory argument.
 
 	sirius update-storevirtual-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
 
@@ -119,25 +119,25 @@ You can unregister the specified StoreVirtual cluster from the Sirius database.
 
 ### List StoreVirtual backend
 
-Lists the StoreVirtual backends registered to Sirius
+Lists the StoreVirtual back ends registered to Sirius
 
 	sirius storevirtual-backend-list
 
 ### Backend show                        
     
- Shows the information about specific backend
+ Shows the information about the specific back end
 
 	sirius backend-show        
                        
 ### Add StoreVirtual backend
 
-You can add a StoreVirtual backend
+You can add a StoreVirtual back end
 
     sirius add-storevirtual-backend <BACKEND_ID>
 
 ### Delete StoreVirtual backend
 
-Unregister StoreVirtual backend
+Unregister StoreVirtual back end
 
     sirius delete-storevirtual-backend <BACKEND_ID>
                         
@@ -232,19 +232,19 @@ You can unregister the 3PAR CPGs
 
 ### Add StoreServ backend ###
 
-You can add a StoreServ backend.
+You can add a StoreServ back end.
 
     sirius add-storeserv-backend <BACKEND_ID?>
 
 ###List backends###
 
- You can view the list of the backends registered to Sirius.
+ You can view the list of the back ends registered to Sirius.
 
     sirius backend-list
                         
 ###Show backend
 
-You can view the information about specific backend.
+You can view the information about a specific back end.
 
     sirius backend-show      
 
@@ -255,7 +255,7 @@ The following options must be supplied as arguments or as environment variables.
 
 <!---###Version
 
-Shows the version number of the program and exit.
+Shows the version number of the program and exits.
 
 	sirius [--version]
 
@@ -285,13 +285,13 @@ Path of the certificate file to be used in SSL connection. This file can optiona
 
 ###Keyfile
 
-Path of client key to use in SSL connection. This option is not necessary if your key is prepended to your cert file.
+Path of the client key to use in SSL connection. This option is not necessary if your key is prepended to your cert file.
 
            [--key-file KEY_FILE] 
 
 ###ca certificate
 
-Path of CA TLS certificate(s) used to verify the remote server's certificate. Without this option sirius looks for the default system CA certificates.
+Path of CA TLS certificate(s) used to verify the remote server's certificate. Without this option, Sirius looks for the default system CA certificates.
 
 		[--os-cacert <ca-certificate-file>]
 
@@ -302,45 +302,45 @@ Path of CA TLS certificate(s) used to verify the remote server's certificate. Wi
 
 ###OS username
 
-Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
+Username of the keystone (OpenStack environment). Defaults to env[OS_USERNAME].
   
 	--os-username OS_USERNAME
                         
  
 ###OS PASSWORD
-Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
+Password of the keystone (OpenStack environment).  Defaults to env[OS_PASSWORD].
 	
 	 --os-password OS_PASSWORD
                        
  
 ###OS TENANT ID
-Tenant identification of the OpenStack. Defaults to env[OS_TENANT_ID].
+Tenant identification of the OpenStack environment. Defaults to env[OS_TENANT_ID].
 
 	--os-tenant-id OS_TENANT_ID
                         
  
 <!---###OS TENANT NAME
-Tenant name of the OpenStack. Defaults to env[OS_TENANT_NAME].
+Tenant name of the OpenStack environment. Defaults to env[OS_TENANT_NAME].
 		
 	--os-tenant-name OS_TENANT_NAME-->
 
                         
  
 ###OS AUTH URL
-Authentication URL of OpenStack. Defaults to env[OS_AUTH_URL].
+Authentication URL of the OpenStack environment. Defaults to env[OS_AUTH_URL].
  
 	 --os-auth-url OS_AUTH_URL
                         
 
 
 <!---###OS REGION NAME
-The region name of  OpenStack. Defaults to env[OS_REGION_NAME].
+The region name of the OpenStack environment. Defaults to env[OS_REGION_NAME].
 
   	--os-region-name OS_REGION_NAME  -->
                         
  
 ###OS AUTH TOKEN
-Authentication token of OpenStack. Defaults to env[OS_AUTH_TOKEN].
+Authentication token of the OpenStack environment. Defaults to env[OS_AUTH_TOKEN].
 
   	--os-auth-token OS_AUTH_TOKEN
                        
@@ -359,13 +359,13 @@ The API version of Sirius. Defaults to env[SIRIUS_API_VERSION] or 1
                         
  
 ###OS SERVICE TYPE
-The service type of OpenStack.Defaults to env[OS_SERVICE_TYPE].
+The service type of the OpenStack environment. Defaults to env[OS_SERVICE_TYPE].
 
  	--os-service-type OS_SERVICE_TYPE
                         
  
 ###OS ENDPOINT TYPE
-The endpoint type of OpenStack. Defaults to env[OS_ENDPOINT_TYPE].
+The endpoint type of the OpenStack environment. Defaults to env[OS_ENDPOINT_TYPE].
  	
 	--os-endpoint-type OS_ENDPOINT_TYPE  -->
 

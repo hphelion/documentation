@@ -19,12 +19,14 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/ga/install/overview/">NEXT &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; Support Matrix
 
-This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the minimum recommendations.
+To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
+
+This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
@@ -33,14 +35,14 @@ This page provides an overview of the hardware and software that is supported fo
 * [Physical Network architecture](#physical-network-architecture)
 * [Software Requirements](#software-requirements)
 
-##Deployment Architecture {#deploy-arch}
+##Deployment Architecture<a name="deploy-arch"></a>
 
 The following diagrams depict simplified deployment scenarios:
 
 * <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
 * <a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
 
-## Supported Hardware ## {#supportedhw}
+## Supported Hardware<a name="supportedhw"></a>
 
 HP supports the following hardware for HP Helion OpenStack deployment:
 <table style="text-align: left; vertical-align: top;">
@@ -227,26 +229,27 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 </table>
 
 
-## Hardware and Network Configuration {#baremetal}
+## Hardware and Network Configuration<a name="baremetal"></a>
 You must have the following hardware and network configuration:
 
-* At least 7 and up to 30 baremetal systems meeting the requirements in the table below. Additional requirements are as follows:
+* At least 7 and no more than 30 baremetal systems meeting the requirements as listed below.
+ 
+Additional requirements are as follows:
 
-    * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
-    * Capable of hosting VMs
-    * The boot order configured with Network/PXE boot as the first option
-    
-        For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
+- For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
+- Capable of hosting VMs
+- The boot order configured with Network/PXE boot as the first option:
+	- For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
+	- To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
 
-        To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
 
-    * The BIOS configured: 
-     
+* The BIOS configured: 
+   
       * To the correct date and time
       * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
-    * The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-    * For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
+* The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
+* For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
     **Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
@@ -255,8 +258,8 @@ You must have the following hardware and network configuration:
     * One of the following operating systems must be installed:
       * Ubuntu 13.10
       * Ubuntu 14.04  
-    * A browser installed to access the undercloud or overcloud
-    * A desktop emulator installed, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+    * A browser to access the undercloud or overcloud
+    * A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
     * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 
@@ -494,7 +497,7 @@ The following table shows the minimum recommendations for hardware by node type.
 </table>
 -->
 
-## Usable Capacity
+## Usable Capacity<a name="usable_capacity"></a>
 
 The following table maps the minimum server configuration into usable capacity of the overcloud.
 
@@ -577,7 +580,7 @@ The following table provides the storage requirements for the HP StoreVirtual (V
 <!--VSA 11.5 GA will only support ESX & HyperV flavors via public portal.
 VSA KVM support is being qualified with Ubuntu and hLinux but will NOT be published for general consumption till September when they complete qualification with other distros including SUSE and Red Hat-->
 
-## Physical Network Architecture
+## Physical Network Architecture<a name="physical-network-architecture"></a>
 This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
 
 - Physical network ports on each server
@@ -674,7 +677,7 @@ For detailed information, see the [Reference architecture](/helion/openstack/ga/
 
 </table>
 
-## Software Requirements
+## Software Requirements<a name="software-requirements"></a>
 
 Ubuntu 13.10/14.04 with the following package versions.
 
@@ -698,7 +701,7 @@ Ubuntu 13.10/14.04 with the following package versions.
 <tr style="background-color: white; color: black;">
 <td>virt-install</td> <td>0.600.1</td></tr></table>
 
-## Next Steps ## {#next}
+## Next Steps<a name="next"></a>
 
 Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/ga/technical-overview/).
 

@@ -1,13 +1,23 @@
-#!/bin/bash -li
+#!/bin/bash -i
 #Author: greg.larsen@hp.com 22 Sept 2014
-
-SOURCEVERSION=`sed -n '6p' <   ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
+ 
+SOURCEVERSION=`sed -n '6p' < ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
 #The THISVERSION line, below must remain line 6.
-THISVERSION=1
-
+THISVERSION=3
+ 
+ 
 if [[ $THISVERSION < $SOURCEVERSION ]]
 	then
-	echo "This script has been updated.  Please copy the new version from ~/git/documentation/teamscripts to the \"bin\" folder of wherever you installed git on your Windows PC (probably C:\Program Files (x86)\Git\bin or C:\RailsInstaller\Git\bin\)."
+	echo ""
+	while true; do
+    read -p "This script has been updated.  Do you want to install the new version? (y/n)" yn
+    case $yn in
+        [Yy]* ) cp ~/git/documentation/teamscripts/hpcommit /bin/; echo "New version installed." ; exit;;
+        [Nn]* )  echo "Skipping upgrade." ;  break;;
+        * ) echo "Please answer (y)es or (n)o.";;
+    esac
+done
+	
 	exit;
 fi
 
@@ -21,8 +31,9 @@ while [[ $1 = -* ]]; do
 			exit
             ;;
         -h | --help)
+		    echo ""
             echo "Usage: hpcommit [FILES]
-To use this script, copy it from ~/git/documentation/teamscripts to C:\RailsInstaller\Git\bin\ (or wherever you installed git on your Windows PC).
+ 
 
 This script helps hpcloud writers to correctly push their new and changed markdown files to the documentation repository on git.hpcloud.net.  The script checks to ensure that the user is connected to the hpcloud.net VPN, is running the script in the documentation repository and from the documentation branch. 
 			
@@ -30,7 +41,7 @@ The script process the FILES that the user indicates.  Wildcards may be used. If
 
 The user is asked to provide a commit message, and must indicate if the files are draft files, or if they are ready to be published on docs.hpcloud.com. The user is then presented with a summary of the changes to be made.  If the user indicates that the change summary is correct, the script modifies (or adds) the appropriate publication comment, then add, commits and pushes the files to git.hpcoud.net.
 
-To use this script, copy it from  ~/git/documentation/teamscripts to the \"bin\" folder of wherever you installed git on your Windows PC (probably C:\Program Files (x86)\Git\bin or C:\RailsInstaller\Git\bin\).
+To install this script (so that you can run it anywhere in the documenation repo) , run the following command in your git bash shell:  cp ~/git/documentation/teamscripts/hpcommit /bin/ 
 			
 -v, --version
 -h, --help"
@@ -164,7 +175,7 @@ TEST=`echo "$FILELIST" |  tr ' ' '\n' | wc -l | tr -d ' '`
 if [[ "$TEST" != "1" ]]
 then
 	while true; do
-	echo "Do you want to give these files the same comment"
+	echo "Do you want to give all these files the same comment"
 	echo "when you commit them? (y/n)"
 		read -p "" yn
 		case $yn in
@@ -193,13 +204,12 @@ done
 
 
 while true; do
-echo "Are these draft files that should only be visible on the QA server,"
-echo "or do you want to publish them publicly on docs.hpcloud.com? (d/p)"
-    read -p "" dp
-    case $dp in
-        [Dd]* ) clear; echo " " ; WRONG="<!--PUBLISHED-->" ; SHOULDBE="<!--UNDER REVISION-->"; break;;
-        [Pp]* ) clear; echo " "   ; WRONG="<!--UNDER REVISION-->" ; SHOULDBE="<!--PUBLISHED-->"; break;;
-        * ) echo "Please answer (d)raft or (p)ublish.";;
+echo "Are these files finished and ready to be flagged for publication? (y/n)"
+    read -p "" yn
+    case $yn in
+        [Nn]* ) clear; echo " " ; WRONG="<!--PUBLISHED-->" ; SHOULDBE="<!--UNDER REVISION-->"; break;;
+        [Yy]* ) clear; echo " "   ; WRONG="<!--UNDER REVISION-->" ; SHOULDBE="<!--PUBLISHED-->"; break;;
+        * ) echo "Please answer y or n.";;
     esac
 done
 
@@ -296,6 +306,11 @@ echo ""
 echo "====Pushing Files====="
 
 echo push
+
+
+echo "Push complete.  
+
+If you want to see your changes in the central git repository, load the following URL in your browser: https://git.hpcloud.net/DevExDocs/documentation/tree/development/"
 exit 0		
 		
  

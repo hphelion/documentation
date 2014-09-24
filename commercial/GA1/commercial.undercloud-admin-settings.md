@@ -24,14 +24,14 @@ PageRefresh();
 
 # Undercloud Horizon Dashboard: Settings Tab
 
-The Settings Tab is displayed in the left panel on the Horizon Undecloud Dashboard when you click the Admin icon on the top panel and select **Settings**. The Settings option allows you to do the following
+The options on the Settings tab allow changes to the following:
 
-* [User settings](#user-settings)
-
+* [User Settings](#user-settings)
 * [Change Password](#change-password) 
 
+To view the **Settings** tab, click the **Admin** icon in the top panel of the Horizon Undercloud Dashboard and select **Settings**. The tab appears in the left panel on the  Dashboard.
 
-## User settings {#user-settings}
+## User settings<a name="user-settings"></a>
 
 This option allows you to change the user settings. To change the settings, do the following:
 
@@ -47,7 +47,7 @@ This option allows you to change the user settings. To change the settings, do t
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## Change Password {#change-password}
+## Change Password<a name="change-password"></a>
 
 This option allows you to the change the password. Do the following:
 
@@ -66,4 +66,6 @@ This option allows you to the change the password. Do the following:
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

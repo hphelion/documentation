@@ -231,7 +231,7 @@ Once scale-out ring is deployed the following attributes cannot be changed:
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p <value> -r <value> -m <value>
 
-In the following example , we use a single region with 3 zones with each of these 3 nodes in one zone each partition power =10, replicas =3, min&#095;part&#095;hours =1
+In the following example, we use a single region with 3 zones with each of these 3 nodes in one zone each partition power =10, replicas =3, min&#095;part&#095;hours =1
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
 

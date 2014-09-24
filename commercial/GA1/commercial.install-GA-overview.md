@@ -84,7 +84,7 @@ With HP Helion OpenStack, you have two baremetal installation options depending 
 
 After installing HP Helion OpenStack, you have the option to install: 
 
-- **HP Helion OpenStack DNS as a service (DNSaaS)**. Our managed DNS service, based on the Openstack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+- **HP Helion OpenStack DNS as a service (DNSaaS)**. Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 	 [Learn how to install and configure HP Helion OpenStack DNSaaS](/helion/openstack/ga/install/dnsaas/) 
 

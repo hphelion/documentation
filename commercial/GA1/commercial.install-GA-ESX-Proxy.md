@@ -39,12 +39,12 @@ To deploy vCenter ESX compute proxy into a cloud deployment, use the following s
 ## Prerequisites ##
 
 - [Verify that the cloud is installed up and running](/helion/openstack/ga/install/esx/#verifying-your-installation).
+- Setup the management port-group in DVS. Make sure there is a proper network connection between the overcloud controller and the port-group.
 - Verify the network connection between overcloud controller and the proxy. Ping the gateway of the ESX Network or try to login to the server where you will deploy the ESX Compute proxy.
-- Obtain access information for vCenter.
-- Obtain a list of compute clusters where you will deploy the ESX Compute proxy.
-- Obtain the vCenter management cluster name.
-- Obtain the vCenter network port group information. The portgroup name should be part of the ESX Network management.
-- Assign network IP information for the servers where you will deploty the ESX Compute proxy using static IP.
+- Note the access credential for vCenter.
+- Choose the list of clusters to be configured as Helion compute resource.
+- Choose a cluster to deploy proxy. We recommended a cluster that is different from cluster selected for the compute resource.
+- Configure the proxy with either a static IP or use DHCP. If you use a static IP, prepare the network information( IP address, netmask and gateway).
 
 ## Create a VM template in vCenter
 
@@ -169,16 +169,16 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 
 	Where:
 
-		datacenter= enter the name of the vCenter Server
-		mgmt_cluster= enter the name of the vCenter Management Cluster
-		datastore= enter the name of the shared datastore
-		cert_location= enter the location of the `compute_proxy.conf` file
-		port_group_name= enter the name of the management port group
-		hostname= enter the name of the host name of the compute proxy
-		usedhcp= enter `true` to use DHCP; enter `false` to specify values
-		ipaddr= enter the compute proxy IP of the vCenter
-		netmask= enter the compute proxy netmask
-		gateway= enter the compute proxy gateway
+		datacenter = enter the name of the vCenter Server
+		mgmt_cluster = enter the name of the vCenter Management Cluster
+		datastore = enter the name of the shared datastore
+		cert_location = enter the location of the `compute_proxy.conf` file
+		port_group_name = enter the name of the management port group
+		hostname = enter the name of the host name of the compute proxy
+		usedhcp = enter `true` to use DHCP; enter `false` to specify values
+		ipaddr = enter the compute proxy IP of the vCenter
+		netmask = enter the compute proxy netmask
+		gateway = enter the compute proxy gateway
 
 2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/ ).
 
@@ -194,16 +194,14 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 		VCENTER_USERNAME is the username for the vCenter administrator
 		VCENTER_PASSWORD is the password for the vCenter administrator
 		VCENTER_PORT is the vCenter Server Port 
-		
-		**QUESTION!! What goes in these fields??**
-		COMPUTE PROXY CONFIG FILE
-		VCENTER_ID
+		COMPUTE PROXY CONFIG FILE is the complete path to the `compute_proxy.conf` file created in a previous step.
+		VCENTER_ID is the unique ID of the vCenter server where the proxy will deploy.
 		CLUSTER_MOID is the Managed Object ID (MOID) of the server where the proxy will deploy (assigned to each cluster by vCenter).
 		CLUSTER_NAME is the name of the server where the proxy will deploy
 		VCENTER_ID is the unique ID of the vCenter server where the proxy will deploy
-		CLUSTER_MOIDS 
+		CLUSTER_MOIDS the cluster ID (Managed Object ID). Use the `eon cluster-list –vcenter-id=<VCENTER_ID>` command, if needed, to obtain this value.
 
-	A vCenter proxy VM named `hp_helion_vcenter_proxy` will be available in the specified vCenter.
+	A vCenter proxy VM named `hp_helion_vcenter_proxy` will be available in the specified vCenter. You can access that proxy VM from the seed VM host as the `heat-admin` user without password.
 
 3. For each additional cluster to be managed, use the following command:
 

@@ -17,7 +17,7 @@ Welcome! This page introduces you to HP Helion OpenStack, an enterprise-grade di
 
 HP Helion OpenStack allows you to easily deploy OpenStack Cloud Services in a secure, highly available configuration, and subsequently deploy, manage and operate your cloud infrastructure in production. 
 
-It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hypervisors. KVM supports up to 30 physical nodes and 40 VMs per node.
+It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP OpenStack is enabled to manage KVM and VMWare ESX hypervisors. KVM supports up to 30 physical nodes and 40 VMs per node.
 
 
 * [HP Helion OpenStack services](#Helion-services)
@@ -301,7 +301,7 @@ The HP Helion OpenStack High Availability (HA) architecture ensures that Cloud S
 
 The OpenStack services are deployed in a three node Controller cluster, that ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.
 
-For more details on HA configuration, refer to [HP Helion Openstack&#174; High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
+For more details on HA configuration, refer to [HP Helion OpenStack High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
 ## Security architecture ## {#security-architecutre}
 
@@ -398,7 +398,7 @@ HP VCN enables you to build a robust, multi-tenant networking infrastructure tha
 
 ####DNS as a service (DNSaaS) {#DNSaaS}
 
-After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. The HP Helion OpenStack DNS (Domain Name System) service, based on the Openstack Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. The HP Helion OpenStack DNS (Domain Name System) service, based on the OpenStack Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 Currently, supported DNS servers and networks include: 
 

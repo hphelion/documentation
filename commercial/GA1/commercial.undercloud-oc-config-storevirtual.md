@@ -21,28 +21,21 @@ PageRefresh();
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
-# Working StoreVirtual Backends
-
-This option allows you to do the following:
+# Working With StoreVirtual Backends
 
 * [Add Backend](#add-backend)
-
 * [Expand Backend](#expand-backend)
-
 * [Shrink Backend](#shrink-backend) 
-
 * [Delete Backend](#delete-backend)
-
 * [Generate Config](#generate-config)
-
 * [Update Overcloud](#update-overcloud) 
 
 
-### Add Backends ###{#add-backend}
+### Add Backends<a name="add-backend"></a>
 
-1. In the Configure Cloud page, click **StoreVitual** Tab to activate it.
+1. In the** Configure Cloud **page, click the **StoreVitual** Tab.
 
-2. Click **Add Backend** displayed at the top to open the StoreVirtual Volume Backend page.
+2. Click **Add Backend** at the top to open the StoreVirtual Volume Backend page.
 
 3. In the **Volume Backend Name** box, enter the name for the backend.
 
@@ -56,9 +49,9 @@ This option allows you to do the following:
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page.</br>
 
-### Expand Backend ###{#expand-backend}
+### Expand Backend<a name="expand-backend"></a>
 
-Expand backend option allocates new clusters to an existing backend. You can select the required clusters from the list of registered clusters and add the same to a backend that has been already configured.
+Expansion allocates new clusters to an existing backend. You can select the required clusters from the list of registered clusters and add them to a backend that has already been configured.
 
 To expand a backend, do the following:
 
@@ -77,9 +70,9 @@ To expand a backend, do the following:
 8. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
 
-### Shrink Backend ###{#shrink-backend}
+### Shrink Backend<a name="shrink-backend"></a>
 
-This option allows you to remove the clusters from the backend which are allocated to your cloud. To reduce the backend, do the following:
+Shrinking removes the clusters from the backend which are allocated to your cloud. To reduce the backend, do the following:
 
 1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
 
@@ -96,11 +89,9 @@ This option allows you to remove the clusters from the backend which are allocat
 
 6. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
-###Delete backend## {#delete-backend}
+###Delete backend<a name="delete-backend"></a>
 
-**Note**: Before you delete a backend cluster,  detach the volumes or migrate as appropriate as the volumes from this cluster backend will no longer be available once it is deleted.
-
-Use this option to delete a backend. Do the following:
+**Note**: Before you delete a backend cluster, detach or migrate the volumes from this cluster, as this backend will no longer be available once it is deleted.
 
 1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
 
@@ -109,25 +100,25 @@ Use this option to delete a backend. Do the following:
 3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process.
 
 
-### Generate Config ###{#generate-config}
-You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once  you have created the backend.
+### Generate Configuration<a name="generate-config"></a>
+Download the Cinder configuration relevant to the HP StoreVirtual for your cloud once you have created the backend. This configuration file is necessary for backup, restore, and update operations.
 
-To generate configuration file, do the following:
+To generate a configuration file, do the following:
 
 1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The config file downloads automatically. 
 
-3. (Optional) Click Download StoreVirtual Config link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
+3. (Optional) Click** Download StoreVirtual Config** link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
 
-4. Click **OK** to download and save the file.<br>Once you download the config file, you can proceed to update the Overcloud configuration.
+4. Click **OK** to download and save the file.<br>Once you download the config file, you can proceed to update the overcloud configuration.
 
 
-### Update Overcloud ###{#update-overcloud}
+### Update Overcloud<a name="update-overcloud"></a>
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to seed as root.
+1. SSH to the seed server as root.
 
 		ssh root@ <IP address> 
 
@@ -135,17 +126,18 @@ To update your overcloud with the changes, do the following:
 
 		ls
 
-3. Copy overcloud template config file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+3. Copy the overcloud template config file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
 	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config). Refer to the example below.<**TO ADD THE SAMPLE FILE**> Ensure the JSON file format is intact.
+4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config). 
+Refer to the example below. Ensure the JSON file format is intact.
 
 5. Apply the configuration.
 
         source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6. Launch install script to update the Overcloud.
+6. Launch install script to update the overcloud.
 
 	    /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud
 
