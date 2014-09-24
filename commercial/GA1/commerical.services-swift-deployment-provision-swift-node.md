@@ -198,6 +198,11 @@ Ensure the deployment of Swift node using the following commands:
 
 It displays available Swift nodes including the newly added node.
 
+##Architecture of Swift proxy node
+
+The following diagram depicts the deployment architecture of Swift node proxy after provisioning.
+
+<a href="javascript:window.open('/content/documentation/media/sswift_proxy-node-provisioning.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift proxy node after provisioning (opens in a new window)</a>
 
 
 
