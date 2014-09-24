@@ -59,7 +59,11 @@ Perform the following steps to add Swift disk to a ring:
 2. Change the directory to ring builder
 
 		#cd /root/ring-building
-<**how do we identify container ring file**>
+3. List the builder file for account and container
+ 		
+		ls
+The file will be displayed as `account.builder` and `container.builder`
+
 3. List the scale-out proxy node
 
 		ringos list-swift-nodes -t proxy
