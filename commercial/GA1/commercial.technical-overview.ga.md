@@ -17,7 +17,7 @@ Welcome! This page introduces you to HP Helion OpenStack, an enterprise-grade di
 
 HP Helion OpenStack allows you to easily deploy OpenStack Cloud Services in a secure, highly available configuration, and subsequently deploy, manage and operate your cloud infrastructure in production. 
 
-It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP Cloud Openstack is enabled to manage KVM and VMWare ESX hypervisors. KVM supports up to 30 physical nodes and 40 VMs per node.
+It is  designed to offer a number of value-added services that complement and enhance OpenStack and set up a cloud. HP OpenStack is enabled to manage KVM and VMWare ESX hypervisors. KVM supports up to 30 physical nodes and 40 VMs per node.
 
 
 * [HP Helion OpenStack services](#Helion-services)
@@ -68,7 +68,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>Object Operations (Swift)</b></td>
 	<td>HP Helion OpenStack Swift allows to store and retrieve objects in publicly accessible physical machines. User can configure storage containers, upload and download container files, and delete container files.<br><br>
 	
-	<td>Administrator can easily start with two auto-configured Swift nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. <br><br><a href="/helion/openstack/services/object/overview/">Learn more</a> about Swift and Ringos.</td>
+	<td>Administrator can easily start with two auto-configured Swift nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. <br><br><a href=" /helion/openstack/ga/services/object/overview/">Learn more</a> about Swift and Ringos.</td>
  </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Network Operations (Neutron)<b></td>
@@ -301,7 +301,7 @@ The HP Helion OpenStack High Availability (HA) architecture ensures that Cloud S
 
 The OpenStack services are deployed in a three node Controller cluster, that ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.
 
-For more details on HA configuration, refer to [HP Helion Openstack&#174; High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
+For more details on HA configuration, refer to [HP Helion OpenStack High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
 ## Security architecture ## {#security-architecutre}
 
@@ -398,7 +398,7 @@ HP VCN enables you to build a robust, multi-tenant networking infrastructure tha
 
 ####DNS as a service (DNSaaS) {#DNSaaS}
 
-After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. The HP Helion OpenStack DNS (Domain Name System) service, based on the Openstack Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. The HP Helion OpenStack DNS (Domain Name System) service, based on the OpenStack Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 Currently, supported DNS servers and networks include: 
 
@@ -419,16 +419,12 @@ Centralized logging is based on Logstash, Elasticsearch, and Kinbana Dashboard w
 
 Centralized logging helps the administrator triage and troubleshoot the distributed Cloud deployment from the UnderCloud. Now, the user is not required to access the  several remote server (ssh) to view the individual log files.
 
-**<once link is available we need to insert it here>** **Learn more about Centralized Logging** here.
-
 
 ###Monitoring {#monitoring}
 
 The Administrator can monitor availability of all hosts and services in the OverCloud using the Icinga Monitoring server deployed in the UnderCloud.
 
 System and service health checks are based on the **check_mk** framework. Health checks are executed locally on each node, and their results are sent over to the central Icinga server, thereby distributing the processing and allowing the Icinga server to scale up. When new nodes are added to the cloud, they are automatically discovered and monitored.
-
-**<once link is available we need to insert it here>** **Learn more about monitoring here.**
 
 
 ###Add, remove and replace nodes {#add-remove-replace-nodes}

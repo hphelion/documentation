@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Virtual Environments"
+title: "HP Helion OpenStack&reg;: Virtual Environments"
 permalink: /helion/openstack/ga/undercloud/resource/esx/
 product: commercial.ga
 
@@ -27,30 +27,30 @@ PageRefresh();
 ## Virtual Environments
 
 
-Virtual Environment is a system which implements, manages, and control multiple virtual instances. HP Helion OpenStack supports two type of clouds, that is KVM and VMWare ESX. In ESX hypervisor, the only supported hypervisor is VMware Vsphere. With our ESX integration, you can provision and manage an overcloud ESX cluster. 
+Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. In ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an Overcloud ESX cluster. 
 
 ###Manage virtual environment
 
-Manage virtual environment allows you to register, unregister vCenter, and import clusters in the ESX vCenter environments. It also allows you to secure your vCenter by providing the SSL certificate while registering your vCenter.
+The virtual environment allows you to register and unregister vCenter and import clusters in the ESX vCenter environments. It also allows you to secure your vCenter by providing the SSL certificate while registering your vCenter.
+
+
+*  [Register a vCenter](#register-vcenter)
+* [View Registered ESX vCenters](#view-registered-vCenter)
+* [Edit a vCenter](#edit-vCenter)
+* [Unregistering vCenters](#unregister-vCenter)
+	* [Unregister a Single vCenter](#unregister-a-vCenter)
+	* [Unregister Multiple vCenters](#unregister-multiple-vCenter)
+* [Import a Cluster](#import-cluster)
+* [View Cluster Details](#view-cluster)
+* [Unimporting Clusters](#unimport-cluster)
+ 	* [Unimport a Single Cluster](#unimport-a-cluster) 
+	* [Unimport Multiple Clusters](#unimport-multiple-clusters)
 
 
 
-* [Register vCenter](#register-vcenter)
-* [View registered ESX vCenter](#view-registered-vCenter)
-* [Edit vCenter](#edit-vCenter)
-* [Unregister vCenter](#unregister-vCenter)
-	* [Unregister a vCenter](#unregister-a-vCenter)
-	* [Unregister multiple vCenter](#unregister-multiple-vCenter)
-* [Import cluster](#import-cluster)
-* [View cluster](#view-cluster)
-* [Unimport cluster](#unimport-cluster)
- 	* [Unimport a cluster](#unimport-a-cluster) 
-	* [Unimport multiple clusters](#unimport-multiple-clusters)
+##Register vCenter<a name="register-vcenter"></a>
 
-
-##Register vCenter {#register-vcenter}
-
-vCenter provides the centralized management of virtual host and virtual machines from a single console. vCenter are easier to manage. You can register only three vCenter in the compute service. A single administrator can manage multiple workloads.
+vCenter provides centralized management of virtual host and virtual machines from a single console. You can register only three vCenters in the compute service, although a single administrator can manage multiple workloads.
 
 To register vCenter, perform the following steps:
 
@@ -85,7 +85,9 @@ The tab displays with options in the left panel.
   			* In the **Compute Proxy Gateway** box, enter the compute proxy gateway.
   * Click **Register**. A message is displayed on successful registration of vCenter. <br> After successful registration the registered vCenter is displayed in the ESX vCenter table in Manage Virtual Environments page.
   
-##View registered ESX vCenter {#view-registered-vCenter}
+
+##View Registered ESX vCenters<a name="view-registered-vCenter"></a>
+
 
 To view the list of registered ESX vCenter, do the following:
 
@@ -98,13 +100,13 @@ The tab displays with options in the left panel.
   The following information is displayed:
    * **Name**: name of the vCenter.
    * **IP Address**: IP Address of the registered vCenter.
-   * **Switch Definition Status**: (???).
+<!--   * **Switch Definition Status**: (???).-->
    * **Actions**: tasks you can perform on the ESX vCenter. 
 
 All the registered vCenter will be listed in the Manage Virtual Environment page.
 
 
-##Edit vCenter {#edit-vCenter}
+##Edit vCenter<a name="edit-vCenter"></a>
 
 When there is any change in the vCenter details you can use the edit option to capture the modification made in the vCenter details in the HP Helion Undercloud Horizon dashboard.
 
@@ -122,18 +124,17 @@ To edit the vCenter, do the following:
 
 
 
-## Unregister vCenter {#unregister-vCenter}
+## Unregistering vCenters<a name="unregister-vCenter"></a>
 
-With a help of single command you can unregister one or multiple vCenter(s).
+With a help of single command you can unregister a single or multiple vCenter(s).
 
-* [Unregister a vCenter](#unregister-a-vCenter)
+* [Unregister a Single vCenter](#unregister-a-vCenter)
 
-* [Unregister multiple vCenter](#unregister-multiple-vCenter)
+* [Unregister Multiple vCenters](#unregister-multiple-vCenter)
 
- <br>
-**Unregister a vCenter** {#unregister-a-vCenter}
+**Unregister a vCenter**<a name="unregister-a-vCenter"></a>
 
-To unregister a vCenter, do the following:
+To unregister a single vCenter, do the following:
 
 1. In the Horizon Undercloud Dashboard,  click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
@@ -143,10 +144,11 @@ To unregister a vCenter, do the following:
 
 4.	Click **Unregister vCenter** to unregister the selected vCenter, else click **Cancel**.
 
-<br>
-**Unregister multiple vCenter** {#unregister-multiple-vCenter}
 
-To unregister multiple vCenter with a single command, do the following:
+
+**Unregister Multiple vCenters**<a name="unregister-multiple-vCenter"></a> 
+
+To unregister multiple vCenters with a single command, do the following:
 
 1. Click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
@@ -160,9 +162,9 @@ To unregister multiple vCenter with a single command, do the following:
 
 
 
-##Import Cluster {#import-cluster}
+##Import Cluster<a name="import-cluster"></a>
 
-You can import a clusters from Manage Virtual Environments page or vCenter Details (name of the vCenter). Manage Virtual Environments page displays the information related to registered vCenter and vCenter Details (name of the vCenter) page displays the vCenter details like name of the cluster, data center, CPU usage, memory usage, disk usage, and action.
+You can import a cluster from Manage Virtual Environments page or vCenter Details. The Manage Virtual Environments page displays the information related to the registered vCenter. The vCenter Details page displays details: the name of the cluster, the data center, CPU usage, memory usage, disk usage, and action.
 
 
 To import a cluster from Manage Virtual Environments page, do the following:
@@ -182,7 +184,7 @@ To import a cluster from Manage Virtual Environments page, do the following:
 <p>
 OR</p>
 
-To import cluster from vCenter Details: (name of vCenter), do the following:
+To import a cluster from the vCenter Details page, do the following:
 
 1.  In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
@@ -199,8 +201,7 @@ To import cluster from vCenter Details: (name of vCenter), do the following:
 5. Click **Done**. A message is displayed when the cluster is imported successful.
 
 
-##View Cluster details {#view-cluster-details}
-
+##View Cluster Details<a name="view-cluster"></a>
  To view the details of the registered ESX vCenter, do the following:
 
 1.  In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
@@ -215,56 +216,18 @@ To import cluster from vCenter Details: (name of vCenter), do the following:
   * **Disk Usage**: usage of the disk by a cumulative cluster of a particular vCenter.
   * **Action**: task you can perform, that is, unimport the cluster. 
 
-<!--not for GA
-##Configure Data Trunk
-
-
-To configure data trunk, do the following:
-
-1. Click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
-
-3.	Click **More** drop-down list against the vCenter  and select **Configure Data Trunk**. Configure Data Trunk dialog box is displayed.<br> In the Configure Data Trunk dialog box, do the following:
-</br>
-  * In the vCenter Name Server, the name of selected vCenter appears.
-  * Click Data Center drop-down list and select the data center.
-  * Click Distributed V- Switches drop-down list and select the dv-switches of your data center.
- 
-4. Click **Done**. A message is displayed when the distributed v-switches are configured.
-<br>
-
-OR
-</br> 
-
-To configure Data Trunk from vCenter Details: (name of vCenter), do the following:
-
-1.  Click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box of the vCenter. <br> vCenter Details (name of selected vCenter) page is displayed.
-
-4.	Click **Configure Data Trunk** on the top right corner of the page. Configure Data Trunk dialog box is displayed.<br> In the Configure Data Trunk dialog box, do the following:
-</br>
-  * In the vCenter Name Server, the name of selected vCenter appears.
-  * Click Data Center drop-down list and select the data center.
-  * Click Distributed V- Switches drop-down list and select the dv-switches of your data center.
- 
-5. Click **Done**. A message is displayed when the distributed v-switches are configured. -->
-
-##Unimport clusters {#unimport-cluster}
+##Unimporting Clusters<a name="unimport-cluster"></a>
 
 You can unimport multiple clusters or a single cluster with a single command. 
 
-* [Unimport a cluster](#unimport-a-cluster)
+* [Unimport a single cluster](#unimport-a-cluster)
 
 * [Unimport multiple clusters](#unimport-multiple-clusters)
 
 
-**Unimport a cluster** {#unimport-a-cluster}
+**Unimport a single cluster**<a name="unimport-a-cluster"></a>
 
-To unimport a cluster, do the following:
+To unimport one cluster, do the following:
 
 1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
@@ -277,7 +240,7 @@ To unimport a cluster, do the following:
 5. Click **Unimport Clusters** against the name of the cluster in the Action cloumn.
 
 
-**Unimport multiple clusters**{#unimport-multiple-clusters}
+**Unimport multiple clusters**<a name="unimport-multiple-clusters"></a>
 
  To unimport multiple clusters with a single command, do the following:
 

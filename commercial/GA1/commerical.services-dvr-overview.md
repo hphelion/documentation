@@ -22,14 +22,12 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Distributed Virtual Routing (DVR) Overview
 
-Distributed Virtual Routing (DVR) allows you to define connectivity among different VNS as well as connectivity between VNS hosts and the external network. 
+Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users.  
 
 Distributed virtual routing is achieved through a set of distributed virtual routers. Each tenant has its own distributed virtual router to define the connectivity among the VNSs under the same tenant. 
 
 
 A distributed virtual router is conceptually a single entity, but it is implemented across all the OpenFlow switches in the network. There is no single routing instance running on a single machine/hypervisor that all the VNS traffic must route through. In addition to this, there is a system-wide distributed virtual router which connects different tenant routers and defines the connectivity among different tenants and to the outside world. 
-
-HP Helion OpenStack provides Distributed Virtual Routing to the cloud users. 
 
 For more details, refer to [OpenStack Neutron/DVR](//https://wiki.openstack.org/wiki/Neutron/DVR/HowTo).
 
@@ -38,7 +36,7 @@ For more details, refer to [OpenStack Neutron/DVR](//https://wiki.openstack.org/
 
 
 
-<**WHERE WILL THESE FILES BE LOCATED?? WHAT ARE THE SET OF COMMANDS THAT WILL TAKE THE USER TO THE LOCATION AND START EDIT PROCESS???? APART FROM THIS WHAT ELSE DO WE NEED TO ADD?????**>
+<**WHERE WILL THESE FILES BE LOCATED??? WHAT ARE THE SET OF COMMANDS THAT WILL TAKE THE USER TO THE LOCATION AND START EDIT PROCESS???? APART FROM THIS WHAT ELSE DO WE NEED TO ADD?????**>
 
 
 

@@ -103,7 +103,7 @@ Once the Scheduler determines the backend to be used, the Cinder volume performs
 
 
 ### Differentiated storage offerings {#differentiated-storage-offerings}
-HP Helion Openstack beta edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual compliance and helps realize Software Defined Block Storage.
+HP Helion OpenStack beta edition uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual compliance and helps realize Software Defined Block Storage.
 
 Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
 

@@ -39,7 +39,7 @@ You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-
 
 ###Using the CLI### {#cli}
 
-You can use the command-line interface to access HP Sirius service. See [Configuring Storage Using Sirius](/helion/openstack/ga/sirius-cli/)
+You can use the command-line interface to access HP Sirius service. See [Configuring Your Storage Using Sirius](/helion/openstack/ga/sirius-cli/)
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 

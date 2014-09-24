@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
-This page provides detailed information to configure HP 3PAR StoreServ in your cloud environment.HP 3PAR StoreServ is storage array (a physical device), which is integrated with HP Cloud OS to realize block storage of the cloud environment. It is integrated as per the plug-in architecture of Cinder using Openstack block storage driver of HP 3PAR StoreServ. Device can be connected to Cinder using Fiber Channel (FC) as well as iSCSI protocol.The Cinder integration drivers run as python libraries in the Cinder service and facilitate communication between Cinder and StoreServ arrays. The StoreServ driver supports both iSCSI and Fiber Channel (FC) for Storage Area Networking (SAN) connectivity.
+This page provides detailed information to configure HP 3PAR StoreServ in your cloud environment.HP 3PAR StoreServ is storage array (a physical device), which is integrated with HP Cloud OS to realize block storage of the cloud environment. It is integrated as per the plug-in architecture of Cinder using OpenStack block storage driver of HP 3PAR StoreServ. Device can be connected to Cinder using Fiber Channel (FC) as well as iSCSI protocol.The Cinder integration drivers run as python libraries in the Cinder service and facilitate communication between Cinder and StoreServ arrays. The StoreServ driver supports both iSCSI and Fiber Channel (FC) for Storage Area Networking (SAN) connectivity.
 
 Storage Configuration Manager (SCM) service is used to facilitate configuration and deployment of StoreServ and StoreVirtual arrays.
 

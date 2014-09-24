@@ -35,7 +35,7 @@ Installer system requirements:
 * At least 48 GB of RAM
 * At least 200 GB of available disk space
 
-[Learn how to to install and configure a virtual cloud](/helion/community/install-virtual/). 
+[Learn how to install and configure a virtual cloud](/helion/community/install-virtual/). 
 
 ## Baremetal installation 
 
@@ -53,7 +53,7 @@ System requirements:
 * At least 5 and up to 30 baremetal systems
 * An additional pre-installed system to run the installer and host the seed VM
 
-[Learn how to to install and configure a baremetal cloud](/helion/community/install/). 
+[Learn how to install and configure a baremetal cloud](/helion/community/install/). 
 
 ## For more information
 For more information on HP Helion OpenStack Community, see:

@@ -10,7 +10,7 @@ product: community
 
 <p style="font-size: small;"> <a href="/helion/community/install/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&reg; Community Virtual Installation and Configuration
+# HP Helion OpenStack&trade; Community Virtual Installation and Configuration
 
 <!--meaningless change to fix merge issue -->
 
@@ -47,7 +47,7 @@ It is important to read through this page before starting your installation. Bef
 
 ## Overview
 
-<p>HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud. In this virtual installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a real deployment.</p> <!-- , as shown in the <a href="javascript:window.open('/content/documentation/media/community.install.deployment.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Community deployment diagram</a>.</p> -->
+<p>HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud. In this virtual installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a non-cloud deployment.</p> 
 
 * Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.
 
@@ -124,7 +124,7 @@ The virtual installation of HP Helion OpenStack Community for a single server is
 
 You can register and download the package from the following URL:
 
-[HP Helion OpenStack Community edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
 **Note:** This install file is approximately 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
@@ -132,13 +132,13 @@ To begin the installation:
 
 1. Log in to your system as root. 
 
-	sudo su -
+	`sudo su -`
 
 2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 
-	[HP Helion OpenStack Community edition Installation Package ](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-	The download file is named Helion_Openstack_Community.tar.gz.
+The download file is named: `Helion_Openstack_Community.tar.gz`
 
 3. Create a directory named `work`:
 
@@ -146,9 +146,7 @@ To begin the installation:
 
 	`cd /root/work`
 
-4.  Extract the kit to the `work` directory:
-
-	`tar zxvf /root/Helion_Openstack_Community.tar.gz`
+4.  Extract the kit to the `work` directory:`tar zxvf /root/Helion_Openstack_Community.tar.gz`
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
