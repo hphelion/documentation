@@ -74,7 +74,7 @@ See [Overview of the Networking service](/helion/openstack/ga/services/networkin
 
 **Object Operations**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. Also known as **Swift**.
 
-See [Overview of the Object Operations service](/helion/openstack/ga/services/object/overview).
+See [Overview of the Object Operations service](/helion/openstack/ga/services/object/overview/).
 
 **Orchestration**. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a [YAML](http://www.yaml.org/) file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  Also known as **Heat**.
 

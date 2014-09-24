@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;  Troubleshooting
 
-HP Helion OpenStack is OpenStack technology coupled with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
+HP Helion Openstack is an OpenStack technology couple with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
 
@@ -41,7 +41,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
         `https://<iLO IP address>`
     2. Navigate to Information / Diagnostics.
     3. Reset iLO.
-    4. Log back in to the iLO after 30 seconds.
+    4. Log back into the iLO after 30 seconds.
     5. Navigate to Remote Console / Remote Console.
     6. Open the integrated remote console (.NET).
     7. Click Power switch / Press and Hold.
@@ -81,7 +81,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
             $ sudo service nova-conductor restart
 
 
-* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state in which the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
+* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
 
 * On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
 
@@ -94,9 +94,9 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
-* Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+* Before you install HP Helion Openstack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-    **Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
+    **Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
 
     1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
     
@@ -114,7 +114,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 ## Baremetal installation
 
-####PXE boot on target node keeps switching between interfaces
+####PXE boot on target node keep switching between interfaces
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -123,19 +123,17 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>When the node boots up on the iLO console it shows the node waiting for PXE boot on multiple NICs.</td></tr>
+<td>When node boots up on iLo console it shows node waiting for PXE boot on multiple NICs.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Multiple NICs are enabled for Network Boot. &nbsp;</td></tr>
 <tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td></td>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>
 <ul>
  <li>Reboot the node, using F9 to get to the BIOS configuration.
- <li>Assuming NIC1(eth0/em1) for Node is connected to a private network shared across the node, enable it for Network Boot. 
+ <li>Assuming NIC1(eth0/em1) for Node is connected to private network shared across node  enable it for Network Boot. 
  <li> Select System Options > Embedded NICs
 <li> Set NIC 1 Boot Options = Network Boot
  <li>Set NIC 2 Boot Options = Disabled
@@ -146,7 +144,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 ##Network
 
-**IPMI fails with error and unable to establish IPMI v2 / RMCP+ session** 
+**IPMI fails with error and Unable to establish IPMI v2 / RMCP+ session** 
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -159,9 +157,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td> &nbsp;</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td></td>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>
@@ -178,13 +173,10 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Nodes PXE boot but ISCSI doesn't start</td></tr>
+<td>Nodes PXE boot but ISCSI doesnt start</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Time and date across nodes is not correct</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td></td>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td>Reboot the node, using F9 to get to the BIOS configuration. BIOS date and time is set correctly and the same on all systems.
@@ -198,7 +190,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </table>
 
 ##Installation
-####iLO console shows hLinux daemon.err tgtd while PXE is booting
+####ilo console hows hLinux daemon.err tgtd while pxe boot
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
@@ -209,10 +201,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <td>PXE boot gets stuck after daemon.err tgtd</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Node doesn't have enough disk space</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td>Attaching screen shot ()</td>
+<td>Node doesnt have enough diskspace</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td><ul><li> Check if target node has disk space mentioned in baremetal.csv and is greater than Node_min_disk mentioned in tripleo/tripleo-incubator/scripts/hp_ced_functions.sh 
@@ -224,7 +213,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 
 ##Installation
-####iLO console shows null waiting for notice of completion while PXE is booting
+####ilo console hows nullwaiting for notice of completion while PXE boot
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -233,26 +222,23 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Node is powered on and PXE booted, but it is powered off after daemon.err and stack create fails.</td></tr>
+<td>Node is powered on and pxe booted but it is powered off after daemon.err and stack create fails.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Node doesn't have enough disk space, SAN boot is enabled for node, or local disk is not attached to /sda</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td>Below screenshot and Nova-compute.log shows Clean up resource before rescheduling and Terminating instance()</td>
+<td>Node doesnt have enough diskspace, SAN boot is enabled for node or local disk is not attached to /sda</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
-<td><ul><li> Installer expects that SAN boot option is disabled for nodes. Check if SAN boot is disabled for BL 490c </ul></li>
+<td><ul><li> Installer expects that SAN boot option is disabled for nodes. Can you check if SAN boot is disabled for BL 490c </ul></li>
 
 On virtual connect window, you would see the following UI. It should be marked as disabled.
 <br><br>
-Also can you boot targeted BL490c with Ubuntu or any Linux ISO to see what device it shows up for local disk. For installer it should be /sda
+Also can you boot targeted BL490c with ubuntu or any linux ISO to see what device it shows up for local disk. For installer it should be /sda
 </td>
 </table>
 
 
 ##Installation
-##NovaCompute node fails when installing overcloud
+##NovaCompute node fails when installing Overcloud
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -262,37 +248,20 @@ Also can you boot targeted BL490c with Ubuntu or any Linux ISO to see what devic
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
 <td>NovaCompute node fails with error: BadRequest: object of type 'NoneType' has no len() (HTTP 400)</td></tr>
-<tr>
+<tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td></td></tr>
 <tr style="background-color: white; color: black;">
-<td>Failure Message</td>
-<td>Below screenshot</td>
-<tr style="background-color: white; color: black;">
 <td>Resolution</td>
-</tr>
-
-<tr>
-<td>Symptoms type</td>
-<td>NovaCompute node fails with error: BadRequest: object of type 'NoneType' has no len() (HTTP 400) </td>
-</tr>
-<td>Primary software component</td>
-<td>Installation Dashboard</td>
-</tr>
-<td>Failure message </td>
-<td>Below screenshot</td>
-</tr>
-<td>Probable cause</td>
-<td</td>
-</tr>
+<td>
+</td>
 </table>
 
-###Solution
+
+
+
 
 
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-

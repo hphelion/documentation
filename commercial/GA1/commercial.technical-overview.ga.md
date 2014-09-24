@@ -68,7 +68,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>Object Operations (Swift)</b></td>
 	<td>HP Helion OpenStack Swift allows to store and retrieve objects in publicly accessible physical machines. User can configure storage containers, upload and download container files, and delete container files.<br><br>
 	
-	<td>Administrator can easily start with two auto-configured Swift nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. <br><br><a href="/helion/openstack/services/object/overview/">Learn more</a> about Swift and Ringos.</td>
+	<td>Administrator can easily start with two auto-configured Swift nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. <br><br><a href=" /helion/openstack/ga/services/object/overview/">Learn more</a> about Swift and Ringos.</td>
  </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Network Operations (Neutron)<b></td>
@@ -419,16 +419,12 @@ Centralized logging is based on Logstash, Elasticsearch, and Kinbana Dashboard w
 
 Centralized logging helps the administrator triage and troubleshoot the distributed Cloud deployment from the UnderCloud. Now, the user is not required to access the  several remote server (ssh) to view the individual log files.
 
-**<once link is available we need to insert it here>** **Learn more about Centralized Logging** here.
-
 
 ###Monitoring {#monitoring}
 
 The Administrator can monitor availability of all hosts and services in the OverCloud using the Icinga Monitoring server deployed in the UnderCloud.
 
 System and service health checks are based on the **check_mk** framework. Health checks are executed locally on each node, and their results are sent over to the central Icinga server, thereby distributing the processing and allowing the Icinga server to scale up. When new nodes are added to the cloud, they are automatically discovered and monitored.
-
-**<once link is available we need to insert it here>** **Learn more about monitoring here.**
 
 
 ###Add, remove and replace nodes {#add-remove-replace-nodes}
