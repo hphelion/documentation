@@ -57,7 +57,13 @@ Perform the following steps to add Swift disk to a ring:
 2. Change the directory to ring builder
 
 		#cd /root/ring-building
-** <how to verify file**>
+
+3. List the builder file for object-ring:1
+
+		ls	
+
+	The file will be displayed as `object-1.builder`.
+
 3. List the disk on a node
 
 		ringos list-disks -n <IP address of node> -u heat-admin

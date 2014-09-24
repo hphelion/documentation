@@ -109,7 +109,7 @@ Using ringos utility you can add above provisioned nodes to Swift cluster. To  p
 
 It is recommended to deploy scale-out object nodes in a set of 3 (replica count as mentioned above) and allocate each node to one zone.
 
-Before starting the scale-out object nodes deployment configure the `overcloud-config.json` file as shown in the sample below.
+Before starting the scale-out object nodes deployment you must configure the `overcloud-config.json` file as shown in the sample below.
 
 
 	{
@@ -181,7 +181,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
  
 
-2.Create a ring with the attribute specified in **Defining ring attributes of object-ring:1** .
+2.Create a ring with the attribute specified in [Defining ring attributes of object-ring:1](#define-object-ring:1) .
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p <value> -r <value> -m <value>
 
@@ -202,7 +202,7 @@ A ring will be created as shown below:
 
 	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <value> -d <value> -w <value> -r <value> -z <value>
 
-**Note:** Use labels and disks obtained in output of section **Preparing disks of Swift nodes**
+**Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#preparing-disks-on-Swift-nodes)
 
 In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
 
