@@ -17,11 +17,11 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-# Tracking masked IP addresses when using network address translation (NAT)
+# HP Helion OpenStack&#174;: Tracking masked IP addresses when using network address translation (NAT)
 
-Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  If a malicious user uses NAT, he could perform a masked attack using resources in your Helion OpenStack&#174; cloud.  As a result, you might receive notification of abuse from a masked IP address that is part of your IP address range. Once you have detected such malicious activity, we have a process you can use to track the malicious user.
+Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  If a malicious user uses NAT, he could perform a masked attack using resources in your HP Helion OpenStack cloud.  As a result, you might receive notification of abuse from a masked IP address that is part of your IP address range. Once you have detected such malicious activity, we have a process you can use to track the malicious user.
 
-Since tracking down malicious users can be tricky, if you know the user’s NAT address you can identify his actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic. 
+Since tracking down malicious users can be tricky, if you know the user's NAT address you can identify his actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic. 
 
 
 ## Method 1
@@ -47,7 +47,7 @@ Since tracking down malicious users can be tricky, if you know the user’s NAT 
 
 ## Method 2
 
-1. Log in to the Network Controller node
+1. Log in to the Controller node
 
 2. For each tenant, run the command:   (Assuming 16.103.148.249 as the  malicious IP address)
 
@@ -59,7 +59,7 @@ Since tracking down malicious users can be tricky, if you know the user’s NAT 
 
 3. Capture the fixed-IP (in the second column) (eg.. 192.168.4.4) and tenant id
 
-4. Log in to the Nova controller node.
+4. Log in to the Compute node.
 
 5. Run nova list for the captured tenant id and fixed-ip address using the command:
 
@@ -105,7 +105,7 @@ Since tracking down malicious users can be tricky, if you know the user’s NAT 
  	Using this information, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
  
 ## Method 3
-1. Log in to the Network service node
+1. Log in to the Controller node
 
 2. Run the command:
 

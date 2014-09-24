@@ -49,12 +49,17 @@ You can use any of several command-line interface software to access Networking.
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-<!---
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
 The administrator can work with all projects in a domain. A user can only work with projects associated with that user.
+
+### Tracking masked IP addresses when using network address translation (NAT) ###
+
+If a malicious user uses NAT, you can identify his actual IP address using if you know the user's NAT address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
+
+For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/ga/maskedIP).
 
 ### Working with networks ###
 
