@@ -23,60 +23,54 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 
-The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor API’s.
+The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
 
 The general process for deploying the vCenter ESX compute proxy involves the following:
 
-- Uploading an OVA file into vCenter and saving the OVA as a template for the management cluster. 
-- Deploying the proxy appliance.
-- Enabling SSL by importing the vCenter certificate into the ESX Compute proxy.
+- Verify prerequisites
+- Upload an OVA file into vCenter
+- Save the OVA as a template for the management cluster. 
+- Deploy the proxy appliance.
+- Enable SSL by importing the vCenter certificate into the ESX Compute proxy.
 
-To deploy vCenter ESX compute proxy into a cloud deployment, use the following steps.
-
-**Note:** Your VMWare vCenter server should be configured for high availability using instructions provided by VMWare.
+**Note:** Your VMWare vCenter server should be configured for high availability using the instructions provided by VMWare.
 
 
 ## Prerequisites ##
 
-- [Verify that the cloud is installed up and running](/helion/openstack/ga/install/esx/#verifying-your-installation).
-- Setup the management port-group in DVS. Make sure there is a proper network connection between the overcloud controller and the port-group.
-- Verify the network connection between overcloud controller and the proxy. Ping the gateway of the ESX Network or login to the server where you will deploy the ESX Compute proxy.
+- [Verify your cloud installation](/helion/openstack/ga/install/esx/#verifying-your-installation).
+- Set up the management port-group in DVS. Make sure  that there is a proper network connection between the overcloud controller and the port-group.
+- Verify the network connection between the overcloud controller and the proxy.
+- Ping the gateway of the ESX Network or log in to the server where you will deploy the ESX Compute proxy.
 - Note the access credentials for vCenter.
-- Choose a list of clusters to be configured as Helion compute resource.
-- Choose a cluster to deploy the proxy. We recommended a cluster that is different from the cluster selected for the compute resource.
-- Configure the proxy with either a static IP or use DHCP. If you use a static IP, prepare the network information( IP address, netmask and gateway).
+- Choose a list of clusters to be configured as the Helion Compute resource.
+- Choose a cluster to deploy the proxy. We recommended you do **not** select the same cluster selected for the compute resource.
+- Configure the proxy with either a static IP or using DHCP. If you use a static IP, prepare the network information(IP address, netmask and gateway).
 
-## Create a VM template in vCenter
+## Create a VM Template in vCenter
 
 The first step in deploying the ESX compute proxy is to create a VM template that will make it easier to deploy the ESX compute proxy on each server.
 
-Use the following steps to create a VM template in vCenter:
+###Create a new VM
 
-1. Import the `overcloud-nova_compute_esx_proxy.ova` into the vCenter using the vSphere client: 
+1. Import the `overcloud-nova_compute_esx_proxy.ova` into the vCenter using the vSphere client.
+2. 3. In the vSphere Client, click **File** and then click **Deploy OVF Template**.
+4. Follow the instructions in the wizard to specify the data center, cluster, and node to install to. Refer to the VMWare vSphere documentation as needed.
+5. **Important**. You must enter `overcloud_vcenter_compute_proxy` as the name for the template.  
 
-	a. In the vSphere Client, click **File -> Deploy OVF Template**.
+A new VM, referred to here as ***OVF VM***, appears in the left pane. 
 
-	b. Follow the instructions in the wizard that displays to specify the data center, cluster, and node to install onto. Refer to the VMWare vSphere documentation, as needed.
+###Add a CD-ROM device to the OVF VM 
 
-	**Important**. You must enter `overcloud_vcenter_compute_proxy` as the name for the template.  
+1. In the vSphere Client, right-click the OVF VM.
+2. Click **Edit Settings**.	
+3. Select the **Hardware** tab and click **Add**.
+4. Select **DVD/CD-ROM Drive**.
+5. Follow the instructions in the wizard. Refer to the VMWare vSphere documentation as needed.
 
-	A new VM, referred to here as OVF VM, appears in the left pane. 
+###Power on the OVF VM using vCenter. 
 
-3. Add a **CD-ROM** device to the OVF VM using the vCenter. 
-
-	a. In the vSphere Client, right-click the OVF VM.
-
-	b. Click **Edit Settings**.	
-
-	c. Select the **Hardware** tab and click **Add**.
-
-	d. Select **DVD/CD-ROM Drive**.
-
-	e. Follow the instructions in the wizard that displays.
-
-	Refer to the VMWare vSphere documentation, as needed.
-
-5. Power on the OVF VM using vCenter. The default credentials to login to the OVF VM is `stack/stack`. 
+The default credentials to log in to the OVF VM are `stack/stack`. 
 
 6. Install the VMWare tools into the OVF VM: 
 	
@@ -100,35 +94,32 @@ Use the following steps to create a VM template in vCenter:
 
 	Follow the instructions to continue the installation.
 
-8. Remove the **CD-ROM** device from the OVF VM using vCenter. 
+### Remove the **CD-ROM** device from the OVF VM
 
-	a. In the vSphere Client, right-click the OVF VM.
+1. In the vSphere Client, right-click the OVF VM.
+2. Click **Edit Settings**.	
+3. Select the **Remove the CD/DVD drive**.
+4. Select the **Hardware** tab.
+5. Remove the DVD/CD-ROM drive.	Refer to the VMWare vSphere documentation as needed.
 
-	b. Click **Edit Settings**.	
+###Convert the OVF VM into a template
 
-	c. Select the **Remove the CD/DVD drive**.
+1. In the vSphere Client, right-click the OVF VM.
+2. Click **Template**.	
+3. Select **Convert to Template**.
 
-	d. Select the **Hardware** tab.
-
-	d. Remove the DVD/CD-ROM drive.
-
-	Refer to the VMWare vSphere documentation, as needed.
-
-9. Convert that VM into a template:
-
-	a. In the vSphere Client, right-click the OVF VM.
-
-	b. Click **Template**.	
-
-	c. Select the **Convert to Template**.
-
-## Deploy the proxy ## {#deploy}
+## Deploy the proxy
 
 Use the following steps to instantiate and run a copy of the VM template on each server.
 
-Perform the following steps on the undercloud node using the [EON CLI]{deploy_cli} or [vSphere client]{deploy_ui}.
+Perform the following steps on the undercloud node using the [EON CLI](deploy_cli) or [vSphere client](deploy_ui).
 
-### Deploy the proxy using the CLI ### {#deploy_cli}
+
+### Deploy the proxy using the vSphere client <a name="deploy_ui"></a>
+
+To deploy the ESX compute proxy using the vSphere client, see the [Register vCenter section](/helion/openstack/ga/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
+
+### Deploy the proxy using the EON CLI <a name="deploy_cli"></a>
 
 To deploy the ESX compute proxy using the EON CLI on the undercloud node: 
 
@@ -179,7 +170,7 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 		netmask = enter the compute proxy netmask
 		gateway = enter the compute proxy gateway
 
-2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/ ).
+2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/) reference.
 
 		source /root/stackrc
 		eon vcenter-add –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
@@ -213,16 +204,11 @@ If you need to delete an ESX Compute proxy, use the following command:
     eon deactivate-clusters <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...] 
     Proxy VM named hp_helion_vcenter_proxy will be deleted – ( if no clusters is in activated state for the vcenter )
 
-
-### Deploy the proxy using the vSphere client {deploy_ui}
-
-To deploy the ESX compute proxy using the vSphere client, see the [Register vCenter section](/helion/openstack/ga/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
-
 ## Enable SSL between vCenter and proxy VM ##
 
-Use the following steps to configure SSL between vCenter and the ESX computer proxy, using either the [CLI](#cli) or [vSphere client](#ui).
+Use the following steps to configure SSL between vCenter and the ESX computer proxy using either the [CLI](#cli) or [vSphere client](#ui).
 
-### Using the command-line ### {#cli}
+### Using the command-line<a name="cli"></a>
 
 1. Locate the root certificate from the vCenter server available at this location `C:\ProgramData\VMware\VMware VirtualCenter\SSL\cacert.pem`
 
@@ -234,7 +220,7 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 
 4. If DNS name resolution is not available add a `/etc/hosts` entry for the vCenter ip address.
 
-### Using the vSphere client {#ui}
+### Using the vSphere client<a name="ui"></a>
 
 1. Get the root certificate from the vCenter server available at this location `C:\ProgramData\VMware\VMware VirtualCenter\SSL\cacert.pem`
 
@@ -252,9 +238,9 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 
 - Install DNS as a service (DNSaaS) (Optional).
 
-	If you have not installed DNSaaS, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+	If you have not installed DNSaaS, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
-	DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+	DNSaaS is HP's managed DNS service based on the OpenStack Designate project. It is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently on either a public or private DNS server network.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
