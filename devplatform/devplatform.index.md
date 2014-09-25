@@ -13,7 +13,7 @@ Welcome! The HP Helion Development Platform preview edition is a free add-on for
 
 Before installing this platform, you must first install [HP Helion OpenStack Community](/helion/community/install-virtual/).
 
-##Starting to work with HP Helion Development Platform
+##Starting to work with HP Helion Development Platform ##
 
 Use the following links to get started with HP Helion Development Platform:
 
