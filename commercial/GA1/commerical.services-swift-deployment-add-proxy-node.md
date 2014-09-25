@@ -160,7 +160,7 @@ For more information refer [Provisioning Swift node]( /helion/openstack/ga/servi
  
 2. Copy account, container, object-0 , and generated `account.ring.gz`  and `container.ring.gz` files files to new nodes. 
 
-	ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift node>
+		ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift node>
 
 
 3. Press **yes** when asked to authenticate node.  
@@ -172,8 +172,33 @@ The sample of authentication node will be displayed as follows:
 	Are you sure you want to continue connecting (yes/no)? yes
 	Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 
+##Update load balancer with new proxy nodes
  
+1. After creation of Proxy node, list the Proxy IPs.
 
+		ringos list-swift-nodes -t proxy
+
+A list of Proxy nodes will be displayed as shown in the sample below:
+<br>
+<img src="media/swift_node_ha-proxy.png"/>
+
+2.Edit `swift-proxy.cfg` on each of the controller nodes. 
+
+	 /etc/haproxy/manual/swift-proxy.cfg
+
+3.Add the following content in the `swift-proxy.cfg` file.
+
+	  listen scale_swift_proxy
+	  bind 192.0.2.21:8080
+	  server ov--ce-soswiftproxy1-SwiftScaleoutProxy1-<hostname><>IP address of Proxy node>:8080 check inter 2000 rise 2 fall 5 
+
+**Note**:You will have the number of "server" lines equal to number of Swift proxies you have setup.
+
+4.Restart HA proxy service on all these nodes.
+
+	service haproxy restart
+
+Thus the Swift-Proxies are successfully enabled with HA proxy. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
