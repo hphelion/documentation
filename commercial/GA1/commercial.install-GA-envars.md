@@ -125,7 +125,7 @@ If you intend to use custom IP addresses and a VLAN provider network for externa
 		export OVERCLOUD_NEUTRON_DVR=False
 		export OVERCLOUD_COMPUTESCALE=5
 
-2. Edit overcloud_neutron_dhcp_agent.json located at 
+2. Edit `overcloud_neutron_dhcp_agent.json` located at 
 `/tripleo/hp_passthrough` and add the following lines under `dhcp_delete_namespaces`:
 
 		{""option"":""enable_isolated_metadata"",""value"":""True""},
@@ -166,11 +166,125 @@ If you intend to use custom IP addresses and a VLAN provider network for externa
 
 ## Environment variables file for a ESX install ## {#kvm}
 
+Identify the environment variables required for the installation based on the deployment scenario.
 
-	
+- [Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses](#esxone)
+- [Deployment Scenario 2: HP Helion OpenStack Deployment with default configuration](#esxtwo)
+- [Deployment Scenario 3: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access](#esxthree)
 
+
+### Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses ### {#esxone}
+
+If you intend to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the environment variables listed below. Save the file on the seed VM . You will copy the file to the appropriate location during the installation.
+
+All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for External and Service network access.
+
+		export BM_NETWORK_SEED_RANGE_START=172.30.100.2
+		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
+		export BM_NETWORK_UNDERCLOUD_RANGE_START=172.30.100.21
+		export BM_NETWORK_UNDERCLOUD_RANGE_END=172.30.100.40
+		export NeutronPublicInterface=eth0
+		export FLOATING_START=172.30.100.41
+		export FLOATING_END=172.30.100.200
+		export FLOATING_CIDR=172.30.100.0/24
+		export UNDERCLOUD_NTP_SERVER=16.110.135.123
+		export OVERCLOUD_NTP_SERVER=16.110.135.123
+		export OVERCLOUD_CLOUD_TYPE=ESX
+		export PROVIDER_NETWORK=192.168.10.0/24
+		export CUSTOMER_ROUTER_IP=172.30.100.1
+		export VLAN_RANGE="500:1000"
+		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
+		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=91
+
+[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/).
+
+### Deployment Scenario 2: HP Helion OpenStack Deployment with default configuration ### {#two}
+
+If you intend to use the default IP addresses and default VLAN IDs configured by the installation process in your HP Helion OpenStack deployment, create a file named `env_vars` and add the environment variables listed below. Save the file on the seed VM . You will copy the file to the appropriate location during the installation.
+
+All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for External and Service network access.
+
+		export OVERCLOUD_NTP_SERVER="16.110.135.123"
+		export UNDERCLOUD_NTP_SERVER="16.110.135.123"
+		export OVERCLOUD_CLOUD_TYPE="ESX"
+		export PROVIDER_NETWORK="192.168.10.0/24"
+		export CUSTOMER_ROUTER_IP="192.0.2.1"
+		export OVERCLOUD_VIRTUAL_INTERFACE=eth0
+		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
+		export VLAN_RANGE="500:1000"
+
+[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/).
+
+### Deployment Scenario 3: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access ### {#three}
+
+If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion OpenStack deployment:
+
+1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed VM. 
+
+	All VLAN ID's & IP addresses given in the next column are examples of customized IP addresses and VLAN identifiers for External network access.
+
+		export BM_NETWORK_SEED_RANGE_START=10.23.69.136
+		export BM_NETWORK_SEED_RANGE_END=10.23.69.141
+		export BM_NETWORK_UNDERCLOUD_RANGE_START=10.23.69.142
+		export BM_NETWORK_UNDERCLOUD_RANGE_END=10.23.69.150
+		export OVERCLOUD_NeutronPublicInterface=eth2
+		export NeutronPublicInterface=eth2
+		#export NeutronPublicInterfaceDefaultRoute=15.126.52.1
+		export FLOATING_START=15.126.54.20
+		export FLOATING_END=15.126.54.40
+		export FLOATING_CIDR=15.126.52.0/22
+		export UNDERCLOUD_NeutronPublicInterface=eth2
+		export OVERCLOUD_NTP_SERVER=10.23.69.129
+		export UNDERCLOUD_NTP_SERVER=10.23.69.129
+		export PROVIDER_NETWORK=10.23.70.128/26
+		export CUSTOMER_ROUTER_IP=10.23.69.129
+		export OVERCLOUD_NEUTRON_DVR=False
+		export OVERCLOUD_VIRTUAL_INTERFACE="br-ex"
+		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
+		export VLAN_RANGE=1701:1720   
+		export OVERCLOUD_CLOUD_TYPE="ESX"
+		export EXTERNAL_VLAN_ID=1634
+		export EXTERNAL_NETWORK_GATEWAY=15.126.52.1
+		#export NeutronPublicInterfaceRawDevice=eth2
+
+2. Edit `overcloud_neutron_dhcp_agent.json` located at 
+`/tripleo/hp_passthrough` and add the following lines under `dhcp_delete_namespaces`:
+
+		{""option"":""enable_isolated_metadata"",""value"":""True""},
+		{""option"":""dnsmasq_dns_servers"", ""value"":""10.1.0.20""}
+
+	After the changes, the file will look like as shown below, where 10.1.0.20 is the local DNS server.
+
+		---------------------------------------------------------
+		{""dhcp_agent"":
+			{""config"":
+			[
+				{""section"":""DEFAULT"",
+				""values"":
+					[
+						{""option"":""dhcp_delete_namespaces"",""value"":""True""},
+						{""option"":""enable_isolated_metadata"",""value"":""True""},
+						{""option"":""dnsmasq_dns_servers"", ""value"":""10.1.0.20""}
+					]
+				}
+			]
+		}
+		---------------------------------------------------------
+
+3. Edit `overcloud_neutron_ml2_conf.json` located at `/tripleo/hp_passthrough` and modify the following lines where `300:398` is the VLAN range for the environment.
+
+	Line no. 13
+	Default - ""value"": ""vxlan,vlan""
+	After modification - ""value"": ""vlan""
+
+	Line no. 32
+	Default - ""value"": ""physnet1""
+	After modification - ""value"": ""physnet1:300:398""
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/).
+
  
 
 ----
