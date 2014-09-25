@@ -37,20 +37,21 @@ If either of the servers that host the two overcloud controllers fails, the over
 
 The management controller is similar to the overcloud controller nodes, but additionally executes various services, including the Compute, Sherpa, Telemetry and Reporting, and Block Storage services. If the server that hosts the overcloud management controller fails, the management controller must be rebuilt and restored as soon as possible.
 
-**Overcloud database** The MySQL database (entire cluster) on the OverCloud Controllers can get corrupted and might need backup and restore for the databases. 
+**Overcloud database** The MySQL database (entire cluster) on the overcloud Controllers can get corrupted and might need backup and restore for the databases. 
 
-The following are instructions for how to back up and restore the seed, undercloud, and overcloud:
+The following instructions describe how to back up and restore the seed, undercloud, and overcloud:
 
 - [Create a configuration file for restoring the seed VM and undercloud](#config)
 - [Back up and restore the seed VM](#seed)
 - [Back up and restore the overcloud](#overcloud)
 - [Back up and restore the undercloud](#undercloud)
-- [Back up and restore script Help](#help)
 
-You execute scripts in the KVM Server, where:
+You execute scripts in the seed VM host server, where:
 
 - the seed VM is installed
 - the installation files are located
+
+If you need help, see [Back up and restore script Help](#help).
 
 ## Create a configuration file for restoring the seed VM and undercloud ## {#config}
 
@@ -71,15 +72,14 @@ Use the following steps to back up the seed VM:
 		export UNDERCLOUD_CODN_HTTPS_PROXY=http://<proxy.server.ip>
 
 	Where:
-	- BRIDGE_INTERFACE is the name of the device connected to the private network that connects all baremetal nodes. By default `eth0`.
-	- OVERCLOUD_NTP_SERVER is the IP address of the NTP server for the overcloud.
-	- UNDERCLOUD_NTP_SERVER is the IP address of the NTP server for the overcloud.
-	- OVERCLOUD_CODN_HTTP_PROXY is the
-	- OVERCLOUD_CODN_HTTPS_PROXY is the
-	- UNDERCLOUD_CODN_HTTP_PROXY is the
-	- UNDERCLOUD_CODN_HTTPS_PROXY is the
-	**QUESTION** What are these fields?
 
+		- BRIDGE_INTERFACE is the name of the device connected to the private network that connects all baremetal nodes. By default `eth0`.
+		- OVERCLOUD_NTP_SERVER is the IP address of the NTP server for the overcloud.
+		- UNDERCLOUD_NTP_SERVER is the IP address of the NTP server for the undercloud.
+		- OVERCLOUD_CODN_HTTP_PROXY is the
+		- OVERCLOUD_CODN_HTTPS_PROXY is the
+		- UNDERCLOUD_CODN_HTTP_PROXY is the
+		- UNDERCLOUD_CODN_HTTPS_PROXY is the
 
 ## Back up and restore the seed VM ## {#seed}
 
@@ -87,12 +87,12 @@ The following sections describe how and when to [back up](#backseed) and [restor
 
 ### Backing up the seed VM ### {#seedback} 
 
-You should create a backup from seed VM when any of the events below happen:
+You should create a backup from seed VM when any of the following events happen:
 
-- The seed backup should be done as soon as the whole installation is finished (seed/UnderCloud/overcloud)
-- When any change is make in the UnderCloud from the seed server
-- When UnderCloud restore process is executed (a new seed will be created)
- 
+- When the installation process is complete.
+- When any change is make in the undercloud from the seed server
+- When the undercloud restore process is performed (a new seed will be created)
+
 Use the following steps to back up the seed VM:
 
 1. Log in to the seed VM. 
@@ -121,24 +121,20 @@ Use the following steps to back up the seed VM:
 All required files are backed-up to the specified folder:
 	`/<destination folder>/backup_YY-MM-DD-HH-MM/seed` 
 
-
 ### Restoring the seed VM {#seedrest}
 
 You should restore the seed node when there is any problem with the node, for example:
 
-- The KVM host where the VM was located crashed (hardware/software problem)
-- There is any problem with the VM
-- There is any problem in the OS level
-- There is any problem with the installation that is not fixable
+- If the server where the VM is located fails (from a hardware or software issue).
+- If there is any problem with the VM.
+- If there is any problem in the operating system level.
+- If there is any problem with the installation that cannot be corrected.
 
-**Important:**
-
-- During the restore process the original seed VM will be deleted from the KVM Host.
-- During the backup process of the Seed VM won’t be affected.
+**Important:** During the restore process the original seed VM will be deleted from the server.
 
 Use the following steps to restore the seed VM:
 
-1.	Log in the seed VM. 
+1.	Log in to the seed VM host. 
 
 2. Create a [configuration file](#config) with all the parameters exported during the installation of the Seed VM (for example: /root/export.prop).
 
@@ -157,12 +153,7 @@ Use the following steps to restore the seed VM:
 
 	**Example**
 
-	If you enter the command:
-
 		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --seed -f /root/backup/backup_14-09-02-12-32
-
-	The seed VM will respond as follows:
-
 
 		HP Helion Community Edition Version Restore Procedure
 
@@ -185,20 +176,21 @@ Use the following steps to restore the seed VM:
 
 ## Back up and restore the undercloud ## {#under}
 
-The following sections describe how and when to [back up]{#underback} and [restore]{#underrest} the undercloud.
+The following sections describe how and when to [back up](#underback) and [restore](#underrest) the undercloud.
 
 ### Backing up the undercloud ### {#underback} 
 
-You should create a backup from undercloud when any of the events below happen:
+You should create a backup from undercloud as soon as the overcloud is deployed and configured the first time.
 
-- The UnderCloud backup should be done as soon as overcloud is deployed and configured the first time.
-- Also when any change is make in the OverCloud from the UnderCloud server
+Also you should create a backup when any change is made in the overcloud from the undercloud server.
 
-Use the following steps to back up the seed VM:
+**Important:** During the backup process the undercloud server will be unavailable.
 
-1.Log in the KVM server.
+Use the following steps to back up the undercloud:
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+1.Log in the seed VM host.
+
+2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
 		cd /root/work/tripleo/tripleo-incubator/scripts/
 
@@ -213,12 +205,9 @@ Use the following steps to back up the seed VM:
 
 **Example**
 
-If you enter the following command:
 
 		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --undercloud -f /root/backup/
 
-The seed VM will respond as follows:
- 
 		HP Helion Community Edition Version (unknown) Backup Procedure
  
 		Destination Host Folder: /root/backup/
@@ -239,25 +228,24 @@ All required files are backed-up to the specified folder:
  
 ### Restoring the undercloud ### {#underrest}
 
-Use the following steps to restore the seed VM:
+You should restore the seed node when there is any problem with the node, for example:
 
-- The server where the node was located crashed (hardware/software problem)
-- There is any problem in the OS level
-- There is any problem with the installation that is not fixable
+- If the server where the node was located fails (from a hardware or software issue)
+- If there is any problem in the OS level
+- If there is any problem with the installation that cannot be corrected
 
 **Important:**
 
-- During the restore of the UnderCloud the Seed VM will be deploy again, so is high recommend to create a new backup from seed after this procedure.
-- During the backup process of the UnderCloud server will be unavailable.
-- If the admin user password was changed from the original password created during the installation process, see [Undercloud password issues](#underpass).
+- During the restore of the undercloud the seed VM will be deployed again. You should [create a new backup from seed](#seedback) after the undercloud is restored.
+- If the admin user password was changed from the original password created during the installation process, see [Undercloud password issues](#underpass) before beginning the restore.
 
-Use the following steps to restore the seed VM:
+Use the following steps to restore the undercloud:
 
-1. Log in the KVM server.
+1. Log in the seed VM host.
 
-2. Create a [configuration file](#config) with all the parameters that was exported during before the installation of the undercloud node (for example: `/root/export.prop`).
+2. Create a [configuration file](#config) with all the parameters that was exported during before the installation of the undercloud node.
 
-3. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+3. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
 		cd /root/work/tripleo/tripleo-incubator/scripts/
 
@@ -284,15 +272,13 @@ You can [back up](#sherpaback) and [restore](#sherparest) the Sherpa overcloud o
 
 ### Backing up the Sherpa overcloud ### {#sherpaback} 
 
-You should create a backup from the overcloud if the event below happens:
+You should create a backup of the overcloud when any Update and Extension is download to the system.
 
-- When any Update and Extension is download to the system.
+Use the following steps to back up the Sherpa overcloud:
 
-Use the following steps to back up the overcloud:
+1. Log in the seed VM host.
 
-1. Log in the KVM server.
-
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
 		cd /root/work/tripleo/tripleo-incubator/scripts/
 
@@ -328,11 +314,15 @@ All required files are backed-up to the specified folder:
 
 Use the following steps to restore the seed VM:
 
-1. Log in the KVM server
+1. Log in the seed VM host.
 
-2. CD to “/root/work/tripleo/tripleo-incubator/scripts/” directory
+2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
-3. Execute the script “./hp_ced_restore.sh --overcloud -f <location of the backup files>”
+		cd /root/work/tripleo/tripleo-incubator/scripts/
+
+3. Execute the following script: 
+
+		./hp_ced_restore.sh --overcloud -f <location of the backup files>
 
 	When the process is complete, a message similar to the following displays:
 
@@ -361,11 +351,11 @@ Use the following steps to restore the seed VM:
 
 You should create a backup from the overcloud database on a regular basis as determined by the administrator or your organization's policies.
 
-Use the following steps to back up the overcloud:
+Use the following steps to back up the overcloud database:
 
-1. Log in the KVM server.
+1. Log in the seed VM host.
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
 		cd /root/work/tripleo/tripleo-incubator/scripts/
 
@@ -397,27 +387,25 @@ All required files are backed-up to the specified folder:
 
 		/<destination folder>/backup_YY-MM-DD-HH-MM/db
 
- 
-
 ### Restoring the overcloud database ### {#sherparest}
 
 You should restore the overcloud database when there is any problem with the node, for example:
 
-- The whole overcloud crashed (hardware/software problem)
-- The database got corrupted for any reason
-- An old database need to be recovered for any reason
+- If the overcloud server fails (from a hardware or software issues)
+- If the database becomes corrupted for any reason
+- If an old database needs to be recovered for any reason
 
 
 **Important:**
 
-- During the backup process of the OverCloud Database the server won’t be affected.
+- During the backup process of the overcloud database the server won’t be affected.
 - Every time that the overcloud database restore procedure is executed a backup of the current database will be created inside each node and will be located at `/mnt/state/var/lib/mysql_YY-MM-DD-HH-MM`.
 - If any problem happens during the restore, the operator can go and manually bring the MySQL cluster back and execute `os-refresh-config` in all the nodes
 
  
 Use the following steps to restore the overcloud database:
 
-1. Log in the KVM server
+1. Log in the seed VM host.
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
@@ -516,7 +504,7 @@ Other optional options that can be used during the backup/restore process, as:
 
 If the admin user password was changed from the original password created during the installation process, before performing the undercloud backup or restore process, you need to update the password in some files. If this process has been done and the files contain the correct password, you do not need to edit the files.
 
-1. Log in the KVM server.
+1. Log in the seed VM host.
 2. SSH to the Seed VM
 3. Open the `/root/tripleo/tripleo-undercloud-passwords` file.
 4. Update the `UNDERCLOUD_ADMIN_PASSWORD=` line with the new password and save the file.
