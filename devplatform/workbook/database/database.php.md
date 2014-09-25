@@ -13,6 +13,7 @@ This is the **second** sample in the Workbook; if you have not already examined 
 1. You must have a Stackato instance available. 
 2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
 3. You must have access to the web-based Administration console.
+4. You will need [Composer](https://getcomposer.org/) to install the dependencies for a PHP app.
 
 ##Download the Application Files
 [Download the PHP files](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-php/) from the code repository.
