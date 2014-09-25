@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--UNDER REVISION-->
 
-# HP Helion Development Platform Documentation
+# HP Helion Development Platform Documentation 
 
 Welcome! The HP Helion Development Platform preview edition is a free add-on for [HP Helion OpenStack&reg; Community](http://www8.hp.com/us/en/cloud/hphelion-openstack-community.html) which provides an integrated development platform that optimizes Cloud Foundry&trade; for OpenStack. 
 
