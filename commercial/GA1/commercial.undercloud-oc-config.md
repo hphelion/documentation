@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Edition: Manage Storage"
+title: "HP Helion OpenStack&#174; Edition: Manage Overcloud COnfiguration"
 permalink: /helion/openstack/ga/undercloud/oc/config/
 product: commercial.ga
 

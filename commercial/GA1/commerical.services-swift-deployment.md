@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Deploy Scale-out Swift Node"
 permalink: /helion/openstack/ga/services/swift/deployment-scale-out/
 product: commercial.ga
 
@@ -17,12 +17,12 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+
+<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
 
 
 
-# Deploy scale-out Swift Nodes with HP Helion  OpenStack&#174; 
+# Deploy Scale-out Swift Nodes with HP Helion  OpenStack&#174; 
 
 By deploying scale-out Swift you can create storage-policy:1 for object-ring:1, which is used to store the cloud user data. Storage-policy:1 is used to implement object-ring:1 and it adhere to 'no single point of failure' policy. We recommend you to use at least **two** nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
 
@@ -114,7 +114,19 @@ It is recommended to deploy three scale-out object server nodes (replica count a
 Also, you can deploy two scale-out object nodes server. Here every object is replicated across two different servers. In case of failure of node it will retain at least two copies. But it will be disadvantage for you because a loss of a server may cause loss of two replica(s) for some objects.
 
 
-Before starting the deployment of scale-out object nodes you must configure the `overcloud-config.json` file as shown in the sample below.
+Before starting the deployment of scale-out object nodes you must configure the `overcloud-config.json` file.
+
+1. Login to seed VM
+
+		ssh root@<IP address>
+
+2. Copy `/root/tripleo/tripleo-incubator/scripts/ee-config.json` to `/root/overcloud-config.json`
+
+		 cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+
+3.Enter `cat /root/overcloud-config.json` to view the content in the `overcloud-config.json` file.
+
+The Overcloud configuration file will be displayed as the sample below:
 
 
 	{
@@ -143,17 +155,30 @@ Before starting the deployment of scale-out object nodes you must configure the 
 	
 	}
 
-
+4. Edit `overcloud-config.json` file.
+ 
 For more detailed, refer [Provisioning Swift node(s)]( /helion/openstack/ga/services/swift/provision-nodes/)
+
+
+5.Enter the following command to source the `overcloud_config.json`  for the new values
+
+	source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+6.Run the installer script to update the cloud
+
+	root@hLinux:~# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
+
+Wait for the update cloud completion.
 
 
 ## Verifying deployed Swift nodes {#verifying-deployed-Swift-nodes}
 
 Perform the following steps to verify the deployment of  object nodes:
 
-1. Login to the undercloud 
+1. Login to the undercloud from seed
     
 		ssh heat-admin<Undercloud IP address> 
+		sudo -i
 
 2. Source stack RC using the following command:
 
@@ -183,6 +208,8 @@ Use the following command to format disk:
 
 You have the privilege to format and mount the disk one by one but ringos tool provide you to format all disk with a single command. Refer [pyringos]( /helion/openstack/GA1/services/object/pyringos/) for more details.
 
+Note: Repeat the above steps for all the swift nodes.
+
 ##Creating scale-out object-ring {#creating-scale-out-object-ring}
 
 Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is independent of starter Swift.
@@ -196,12 +223,12 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 2.Create a ring with the attribute specified in [Defining ring attributes of object-ring:1](#define-object-ring:1) .
 
-	ringos create-ring -f /root/ring-building/object-1.builder -p <value> -r <value> -m <value>
+	ringos create-ring -f /root/ring-building/object-1.builder -p <power> -r <replica> -m <min_part_hours>
 
 
 **Caution**: Once object-ring:1 will be deployed you cannot change your part power.
 
-In the following example , we use a single zone with each of these 3 nodes with each partition power =10, replicas =3, min&#095;part&#095;hours =1
+In the following example , we use a single zone with each of these 3 Swift nodes with each partition power =10, replicas =3, min&#095;part&#095;hours =1
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
 
@@ -213,28 +240,29 @@ A ring will be created as shown below:
 
 3.Add disk to the ring. 
 
-	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <value> -d <value> -w <value> -r <value> -z <value>
+	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <Port> -d <Disk label> -w <Weigh> -r <Region> -z <Zone>
 
 **Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#preparing-disks-on-Swift-nodes)
 
 In the following example we are adding disk to node(**192.0.2.29**) to zone 1:
 
 	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
+
 	Added disk 192.0.2.29:a1410063335 to ring
 
 You must add all the formatted disks to required zones and regions.
 
-5.Verify the contents of `object-1.builder` file to ensure that it meets your required configuration.
+4.Verify the contents of `object-1.builder` file to ensure that it meets your required configuration.
 
 	ringos view-ring -f /root/ring-building/object-1.builder
 
-6.Re-balance the ring 
+5.Re-balance the ring 
 
 	ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 This will generate a **object-1.ring.gz** file.
 
-7.Verify the content `object-1.builder` file after re-balancing the ring.
+6.Verify the content `object-1.builder` file after re-balancing the ring.
 
 	ringos view-ring -f /root/ring-building/object-1.builder
 
@@ -275,7 +303,7 @@ In the following example account, container, object-0 , and generated `object-1.
 	
 	    ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.32
 
-12.Press **yes** when asked to authenticate node.  
+5.Press **yes** when asked to authenticate node.  
 
 The sample of authentication node will be displayed as follows:
 
@@ -364,7 +392,7 @@ The Overcloud configuration file will be displayed as the sample below:
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 * [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
 * [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
-* 
+
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -76,11 +76,43 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 	 	run `hpssacli`
  
-**Note**: The diagnostics can be done either in the server or from SEED through ssh.
+	**Note**: The diagnostics can be done in the server or from SEED through ssh.
 
-##Examples
+9. You can collect the diagnostic report of the controller either in server or through SEED using ssh.
 
-* Example to collect the diagnostic report of the controllers in the server
+
+**To collect the diagnostic report of the controllers in the server**
+
+1. Login to the server
+
+		ssh heat-admin@<IP address of machine>
+
+ 
+
+root@overcloud-ce-vsaaostorage1-vsaaostorage1-yzp3byxuv6ux:/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl all show status
+
+Smart Array P420i in Slot 0 (Embedded)
+
+   Controller Status: OK
+
+   Cache Status: OK
+
+   Battery/Capacitor Status: OK
+
+ 
+
+root@overcloud-ce-vsaaostorage1-vsaaostorage1-yzp3byxuv6ux:/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl slot=0 diag file=all_details.zip
+
+ 
+
+   Generating diagnostic report...done
+
+root@overcloud-ce-vsaaostorage1-vsaaostorage1-yzp3byxuv6ux:/home/heat-admin/hp/hpssacli/bld# ls -l *.zip 
+
+-rw-r--r-- 1 root root 143142 Sep 24 13:07 all_details.zip
+
+
+
 * Example to collect the diagnostic report using ssh from SEED.
 
 
