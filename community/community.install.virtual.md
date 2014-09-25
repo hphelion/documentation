@@ -121,12 +121,9 @@ If the key does not exist, create one, omitting a passphrase and accepting the d
 
     
     	# ssh-keygen -t rsa
-<!-- this may be removed as far as install qemu-kvm-->
-Additionally, to enable full VM functionality, install the required `qemu-kvm` package using the following command:
-    
-    	sudo apt-get install -y qemu-kvm
 
-**Note:** On Ubuntu 14.04, you must also install qemu-kvm before starting the seed.
+
+
 
 ## Installing HP Helion OpenStack Community ## {#install}
 
@@ -300,9 +297,7 @@ For connecting remotely to the Horizon console from another networked machine on
     * Delete `/var/lib/libvirt/images/`.
     * Uninstall any packages that you no longer require.
 
-* To avoid an `unsupported locale setting` error when issuing Neutron commands from within the seed VM, set the following environment variable:
 
-        export LANG=C
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
