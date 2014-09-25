@@ -44,8 +44,8 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see the name of this application in the list of available applications.
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-	- If there are still any issues, click the **Log Stream** link on the app’s page to see a real-time stream of what’s going on with the app.  
-6. You should see a page that will 
+	- If there are still any issues, click the **Log Stream** link on the app's page to see a real-time stream of what's going on with the app.  
+6. The result should be a page displaying some text after your app has connected to MySQL and executed a query. 
 
 
 [Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/php/) | [Next Sample](/helion/devplatform/workbook/messaging/php/)
