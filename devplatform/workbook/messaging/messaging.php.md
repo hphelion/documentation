@@ -13,9 +13,9 @@ This is the **third** sample in the Workbook; if you have not already examined t
 **ALS**
 
 1. You must have a [ALS instance](/helion/devplatform/community/install-als/) available. 
-2. The  [ALS command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+2. The  [Helion command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
 3. The RabbitMQ service must be enabled. <br> ALS 3.4 appears have it enabled by default, but ALS 3.2 does not. 
-	- Open the Administrative console.
+	- Open the **Management Console**.  This is the web-based administrative interface.<br> For example: *https://api.example.com*. 
 	- On the **Admin** tab, click **Cluster**.
 	- Click the **Settings** icon (a gear icon in the upper right corner)
 	- Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
@@ -26,19 +26,23 @@ This is the **third** sample in the Workbook; if you have not already examined t
 Download the [PHP files](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-php) from the code repository.
 
 ##Install Dependencies
-Run the following command to install dependencies **after** you have downloaded the application files:
-  
-    php composer.phar install 
+**After** you have downloaded the application files:
 
-Or, if you have a global install of Composer:
+1. Open your terminal and navigate to this app's root directory. The root directory is the directory that contains the *manifest.yml* file.
 
-	composer install
+2. Run the following command to install dependencies
+	
+	`php composer.phar install` 
+
+3. Or, if you have a global install of Composer:
+
+	`composer install`
 
 ##Deploy the Application
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.example.com*.
 
-1. Open the  [ALS command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
+1. Open the  [Helion command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
 2.	Execute <br>`stackato target https://api.example.com`<br>substituting your own instance's link.
 3.	Execute <br>`stackato login`<br> using the Stackato management console username and password.
 4. Change directory (`cd`) the app's root directory.
@@ -46,7 +50,7 @@ To deploy the application, make sure you are logged in successfully for your des
 
 ##Run the Application
 
-1. Open the Management Console. This is the web-based administrative interface.
+1. Open the **Management Console**. This is the web-based administrative interface.<br> For example: *https://api.example.com*. 
 2. Click **Applications**.
 3. If the file push was successful, you should see the name of this application in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it.
