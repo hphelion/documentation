@@ -24,7 +24,7 @@ PageRefresh();
 #Swift Scale-out
 
 <!---
-HP Helion OpenStack&reg; offers an optional Swift scale-out cluster instance of between two and twelve servers that is used for production cloud Object storage use. Scale-Out Swift extends the Starter Swift Cluster, which enables greater capacity while maintaining any initial data present in Starter Swift. --->
+HP Helion OpenStack&reg; offers  an optional Swift scale-out cluster instance of between two and twelve servers that is used for production cloud Object storage use. Scale-Out Swift extends the Starter Swift Cluster, which enables greater capacity while maintaining any initial data present in Starter Swift. --->
 
 Scale-out Swift clusters are deployed using the concept of storage policy.
 
