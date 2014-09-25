@@ -87,7 +87,7 @@ Perform the following steps to add Swift disk to a ring:
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
 
 
-7.Re-balance both object-1 ring
+7.Re-balance object-1 ring
 
 		ringos rebalance-ring -f /root/ring-building/object-1.builder
 	
@@ -98,11 +98,7 @@ Perform the following steps to add Swift disk to a ring:
 	ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <IP address of Swift nodes>
 	
 
-9.Copy container file to all the nodes
-
-	ringos copy-ring -s /root/ring-building/container.ring.gz -n <IP address of Swift nodes>
-
-10.Repeat steps from **6 - 9** with the weights 50, 75, and 100 (w= 50, 75, 100).
+9.Repeat steps from **6 - 8** with the weights 50, 75, and 100 (w= 50, 75, 100).
 
 
  

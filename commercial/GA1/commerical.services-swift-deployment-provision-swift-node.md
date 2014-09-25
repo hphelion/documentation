@@ -23,7 +23,7 @@ PageRefresh();
 
 #Provision Swift Node(s) 
 
-This page describes the procedure to provision the Swift nodes. It follows the similar procedure to provision all types of Swift node (proxy and object) but you cannot provision both of the nodes together.
+This page describes the procedure to provision the Swift nodes. All type of Swift nodes will be provisioned similarly. But you cannot provision both of the nodes together.
 
 * [Prerequisite](#Preq)
 * [Adding physical server for scale-out Swift](#adding-physical-server-for-scale-out-Swift) 
@@ -39,7 +39,7 @@ HP Helion OpenStack cloud is successfully deployed and has the following:
 * Overcloud 
 * Two Swift nodes 
 
-Before provisioning swift node(s) ensure that the all nodes are **ACTIVE** and power state must be  **Running**.
+Before provisioning swift node(s) ensure that the all nodes are **ACTIVE** and  **Running**.
 
 You can view the status of the nodes using the following command:
 
@@ -67,11 +67,11 @@ Perform the following steps to add physical server for scale-out Swift:
 
 	**Note**: For HP server, use iLO to gather the above details.
 
-2. Login to seed VM
+2. Login to seed 
 
 		ssh root@<IP addredd of Seed> 
 
-	**Note**: It might take a few moments for the seed VM to become reachable. 
+	**Note**: It might take a few moments for the seed to become reachable. 
 
 3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
 
@@ -110,9 +110,9 @@ For example:
 
 ##Provision Swift node {#provision-swift-node}
 
-**Caution**: Do not provision proxy or scale-out object nodes together. The requirements are different for proxy nodes and scale-out object node. For example: It is recommended to use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
+**Caution**: Do not provision proxy or scale-out object nodes together. The requirements are different for proxy nodes and scale-out object node. It is recommended to use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
 
-You cannot provision proxy or scale-out object nodes together. For example: If you have 3 SL4540 and 2 SL230 servers and you want to configure scale-out object nodes and proxy nodes together. Also,  all the five servers are added in the inventory in the beginning and you have specified so&#095;swift_storage&#095;scale as 2 and so&#095;swift&#095;proxy&#095;scale  as 1. Now, run the update cloud script to provision node. Three (2+1) nodes are provisioned. But it is not guaranteed whether the proxy servers are deployed on SL230 and object storage nodes are deployed on SL 4540.  To avoid this confusion it is recommended to provision proxy and scale-out object one at a time.
+For example: If you have 3 SL4540 and 2 SL230 servers and you want to configure scale-out object nodes and proxy nodes together. Assuming that you have added all the five servers in the inventory in the beginning and you have specified so&#095;swift_storage&#095;scale as 2 and so&#095;swift&#095;proxy&#095;scale  as 1. Now, run the update cloud script to provision node. Three (2+1) nodes are provisioned. But it is not guaranteed whether the proxy servers are deployed on SL230 and object storage nodes are deployed on SL 4540.  To avoid this confusion it is recommended to provision proxy and scale-out object one at a time.
 
 For example:
 <img src ="media/swift_deployment-provison-both-nodes.png/">

@@ -42,7 +42,7 @@ You can add proxy node to store account, container, and object-ring.
 
 Perform the following steps to add proxy node:
 
-1. Login to seed VM
+1. Login to seed 
 
 		ssh root@<IP address>
 
@@ -92,7 +92,7 @@ For more information refer [Provisioning Swift node]( /helion/openstack/ga/servi
 
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
 
-	The cloud updates with the new nodes on successful operation
+	The cloud updates with the new nodes on successful operation.
 
 ##Add disk to account and container ring
 
@@ -105,6 +105,10 @@ For more information refer [Provisioning Swift node]( /helion/openstack/ga/servi
 
 		#cd /root/ring-building
 
+3. List the builder file
+
+		ls
+
 	Identify `account.builder` and `container.builder` files in the ring builder directory.
 
 3. List the Swift node
@@ -113,11 +117,11 @@ For more information refer [Provisioning Swift node]( /helion/openstack/ga/servi
 
 4. List the disk on the node
 
-		ringos list-disks -n <Undercloud IP> -u heat-admin
+		ringos list-disks -n <NODE IP> -u heat-admin
 
 5. Format a disk
 
-		ringos format-disks -n <Undercloud IP> -u heat-admin -d <disk>
+		ringos format-disks -n <NODE IP> -u heat-admin -d <disk>
 
 	**Note**: You can format all the disk with the single command (--all).
 

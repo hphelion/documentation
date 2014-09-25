@@ -26,8 +26,8 @@ PageRefresh();
 HP Helion OpenStack allows you to expand swift cluster in any of the followings ways:
 
 
-* [Add Disk to Proxy Node](/helion/openstack/ga/services/swift/deployment/add-disk/)
-* [Adding disk to Scale-out Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
+* [Add Disk to Account and Container Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
+* [Adding Disk to Scale-out Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
 * [Add Disk to Starter Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-starter/)
 * [Add New Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/) 
 * [Add New Scale-out Storage Node](/helion/openstack/ga/services/swift/deployment/add-disk-storage-node/) 

@@ -38,9 +38,9 @@ HP Helion OpenStack cloud is successfully deployed and has the following:
 
 **IMPORTANT**:  
  
-*  All of the rings generated must be stored at multiple location. These rings should be consistent all across the nodes.
+*  Store the generated rings at multiple location. These rings should be consistent all across the nodes.
 
-* It is recommended to take a backup of rings before any operation.
+* Take a backup of rings before any operation.
 
 
 ##Adding Swift disks to a ring
@@ -61,7 +61,7 @@ Perform the following steps to add Swift disk to a ring:
 
 		ls
 
-The file will be displayed as `object.builder`.
+	Identify the file name `object.builder`.
 
 3. List the starter node
 
@@ -92,22 +92,17 @@ The file will be displayed as `object.builder`.
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
 
 
-8.Re-balance both object-1 ring
+8.Re-balance the ring
 
 		ringos rebalance-ring -f /root/ring-building/object.builder
 	
 	Note: Wait for min_part_hours before another re-balance succeeds.	
 			
-9.Copy `object-1.ring.gz` file to all the nodes
+9.Copy object file to all the nodes
 
 	ringos copy-ring -s /root/ring-building/object.ring.gz -n <IP address of Swift nodes>
-	
 
-10.Copy container file to all the nodes
-
-	ringos copy-ring -s /root/ring-building/container.ring.gz -n <IP address of Swift nodes>
-
-11.Repeat steps from 7 - 10 with the weights 50, 75, and 100 (w= 50, 75, 100).
+10.Repeat steps from 7 - 9 with the weights 50, 75, and 100 (w= 50, 75, 100).
 
 
  

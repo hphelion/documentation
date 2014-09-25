@@ -50,14 +50,14 @@ Once thee Swift nodes are deployed ensure that you format the required disks and
 
 		ringos format-disks -n <IP address of Swift node> -u heat-admin -d all
 
-You have the privilege to format and mount the disk one by one but ringos tool provide you to format all disk with a single command. Refer pyringos  User Manual for more details
+You have the privilege to format and mount the disk one by one but ringos tool provide you to format all disk with a single command. Refer [pyringos]( /helion/openstack/GA1/services/object/pyringos/) for more details
 
 
 2.Add disk to the ring. 
 
 	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <value> -d <value> -w <value> -r <value> -z <value>
 
-**Note:** Use labels and disks obtained in output of section **Preparing disks of Swift nodes**
+**Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes]( /helion/openstack/ga/services/swift/deployment-scale-out/).
 
 In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
 
@@ -69,7 +69,7 @@ In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
 
 	ringos view-ring -f /root/ring-building/object-1.builder
 
-## Re-balance object-ring:1
+## Re-balance the ring
 
 1. Rebalance the ring using the following command:
 

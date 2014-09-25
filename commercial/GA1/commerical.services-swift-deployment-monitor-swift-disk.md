@@ -44,18 +44,18 @@ The usage of Swift disk are monitored based on the mount of file system used by 
 
 Perform the following steps to monitor the usage of Swift disk:
 
-1. In the Undercloud, login to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). Login credentials are:
+1. In the Undercloud, login to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). Following are the default login credentials:
 		
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
 Tactical Monitoring Overview page displays.
 
-2.Click **Status** on the left panel and then click **Host Detail**. 
+2.In the Tactical Monitoring Overview page, click **Status** on the left panel and then click **Host Detail**. 
 
 <img src ="media/icinga_host-details.png/">
 
-The page navigates to  Current Network Status. The page displays the Host Status Details For All Host in a tabular form. The table contains the following information:
+The page navigates to Current Network Status. The page displays the Host Status Details For All Host in a tabular form. The table contains the following information:
 
 * Host: IP address of the Host
 * Status: Displays the status of the Host i.e. Up and dowm. 
