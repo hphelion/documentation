@@ -21,14 +21,14 @@ PageRefresh();
 
 Performance of HP Helion OpenStack is determined in terms of responsiveness and stability under various workloads. Scalability, reliability, and resource usage are the quality attributes of the system which are measured during performance testing. 
 
+## ESX
  
 The performance, scalability, and reliability of HP Helion OpenStack is tested using the following ESX environment:
 
 
-* 18 ESXi servers (9 Clusters)
+* 19 ESXi servers (9 Clusters)
 * 3000 VM Instances
-* 100 VLANs (no VXLAN support in ESX)
-* 1000 Floating Point IPs
+* 2930 Floating Point IPs
 * 3000 Volume Attaches and Detaches
 * 25 Concurrent Operations
 
@@ -36,14 +36,11 @@ The performance, scalability, and reliability of HP Helion OpenStack is tested u
 ##Resource requirements
 The following resources are required to perform the test:
 
-* Bare metal servers 
-* 3PAR storage
-* ESX compute clusters and vCenter
-* hLinux ISO - hlinux-vsa-blaster-20140619.iso
-* CE Installer Builds
-* vCenter OVA
-* OVSVAPP OVA
-* Integrated Scripts
+<do we need to mention the resources??>
+
+##Maximum supported configuration values for HP Helion OpenStack
+
+The following table list the maximum supported configuration value for HP Helion OpenStack with respect to ESX.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -52,7 +49,7 @@ The following resources are required to perform the test:
     </tr>
 <tr style="background-color: white; color: black;">
 	<td>Managed virtual machine instances  </td>
-	<td>3,000</td>
+	<td>3000</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>Managed hypervisor hosts 
@@ -66,99 +63,194 @@ The following resources are required to perform the test:
 	<td>50</td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of Clusters per vCenter
+	<td>Clusters per vCenter
 </td>
 	<td>10</td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of vCenters
+	<td>Number of vCenters supported
+</td>
+	<td>???</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Self Service Portal users
+</td>
+	<td>32</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Self Service Portal simultaneous   users 
+</td>
+	<td>25</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Projects
+</td>
+	<td>256</td>
+</tr><tr style="background-color: white; color: black;">
+	<td>Virtual Machine Instance per projects
+</td>
+	<td>500</td>
+</tr><tr style="background-color: white; color: black;">
+	<td>Images
+</td>
+	<td>512</td>
+</tr><tr style="background-color: white; color: black;">
+	<td>Flavors
+</td>
+	<td>32</td>
+</tr><tr style="background-color: white; color: black;">
+	<td>External networks
+</td>
+<td>1</td>
+</tr>
+</tr><tr style="background-color: white; color: black;">
+	<td>Provider networks
+</td>
+	<td>32</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Private IP addresses
+</td>
+	<td>3000</td>
+</tr>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Floating IP addresses
+</td>
+	<td>3000</td>
+</tr>
+</tr><tr style="background-color: white; color: black;">
+	<td>Private (tenant)networks
+</td>
+	<td>25</td>
+
+<tr style="background-color: white; color: black;">
+	<td>Virtual machine instances belonging to a single security group
+</td>
+	<td>500</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Disk arrays
 </td>
 	<td>1</td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of total self service portal users
+	<td>ESX volumes attached to all virtual machine instances in an ESX cluster
 </td>
-	<td>25</td>
+	<td>3000</td>
+</tr>
+</table>
+
+
+##KVM
+ 
+The performance, scalability, and reliability of HP Helion OpenStack is tested using the following KVM environment:
+
+
+<**Please provide the details**>
+
+
+##Resource requirements
+The following resources are required to perform the test:
+
+<do we need to mention the resources??>
+
+
+
+The following table list the maximum supported configuration value for HP Helion OpenStack with respect to KVM.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+	<th>Parameters</th>
+	<th><center>Maximum Numbers</center></th>
+    </tr>
+<tr style="background-color: white; color: black;">
+	<td>Managed virtual machine instances  </td>
+	<td></td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of simultaneous self service portal users 
+	<td>Managed hypervisor hosts 
 </td>
-	<td>25</td>
+	<td>
+</td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of projects
+	<td>Managed virtual machine instances per hypervisor host 
 </td>
-	<td>25</td>
+	<td></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Clusters per vCenter
+</td>
+	<td></td>
+</tr>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Self Service Portal users
+</td>
+	<td></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Self Service Portal simultaneous   users 
+</td>
+	<td></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>Projects
+</td>
+	<td></td>
 </tr><tr style="background-color: white; color: black;">
-	<td>Number of VMs per projects
+	<td>Virtual Machine Instance per projects
 </td>
-	<td>358</td>
+	<td></td>
 </tr><tr style="background-color: white; color: black;">
-	<td>Number of images
+	<td>Images
 </td>
-	<td>2</td>
+	<td></td>
 </tr><tr style="background-color: white; color: black;">
-	<td>Number of flavors
+	<td>Flavors
 </td>
-	<td>2</td>
+	<td></td>
 </tr><tr style="background-color: white; color: black;">
-	<td>Number of external networks
+	<td>External networks
 </td>
-	<td>1</td>
+<td></td>
+</tr>
 </tr><tr style="background-color: white; color: black;">
-	<td>Number of Tenant private networks
+	<td>Provider networks
 </td>
-	<td>25</td>
+	<td></td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of private IP addresses
+	<td>Private IP addresses
 </td>
-	<td>2929</td>
+	<td></td>
+</tr>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of floating IP addresses
+	<td>Floating IP addresses
 </td>
-	<td>2929</td>
+	<td></td>
+</tr>
+</tr><tr style="background-color: white; color: black;">
+	<td>Private (tenant)networks
+</td>
+	<td></td>
+
+<tr style="background-color: white; color: black;">
+	<td>Virtual machine instances belonging to a single security group
+</td>
+	<td></td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of VMs belonging to a single security group
+	<td>Disk arrays
 </td>
-	<td>358</td>
+	<td></td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>Number of disk arrays
+	<td>KVM volumes attached to all virtual machine instances in a single KVM host
 </td>
-	<td>1</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>Number of VMFS storage volumes (Created)
-</td>
-	<td>3850</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>Number of VMFS storage volumes (Attached)
-</td>
-	<td>2946</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>Instance creation speed in VMs/minute per region
-</td>
-	<td>25</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>Delay in between Operations
-</td>
-	<td>10 second </td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>Delay in between Cycles
-</td>
-	<td>0</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>Number of VMs belonging to a single security group
-</td>
-	<td>358</td>
+	<td></td>
 </tr>
 </table>
 

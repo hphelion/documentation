@@ -11,8 +11,10 @@ git pull
 rm checktmp > /dev/null 2>&1  
 
 
-echo  Checking the $GIT_BRANCH branch for embarrassing strings...  
+echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors...  
 
+echo " "
+echo "===Blank lines============================="
 
 for i in `find . -name "*.md"`
 do 
@@ -22,6 +24,12 @@ do
 		echo "Blank lines at the top of file $i"
 	fi
 done   
+
+
+echo " "
+echo "===Spaces in filenames======================"
+find . -name "* *"
+
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'

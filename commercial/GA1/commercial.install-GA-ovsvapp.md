@@ -21,7 +21,6 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&reg;: Deploying and Configuring OVSvApp on ESX hosts 
-
 HP Virtual Cloud Networking (VCN) is an enhanced networking (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
 HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed on each ESX hypervisor in the HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, the OVSvApp enables networking between the tenant Virtual Machines (VMs).
@@ -72,8 +71,9 @@ Before you install the OVSvApp, ensure the following:
 Example:
 
 	DVS1  - trunk portgroup name - vlan_trunk
-	DVS2- Portgroup1  name- mgmt
-	Portgroup2 name- data
+	DVS2 
+		a. Portgroup1  name- mgmt
+		b. Portgroup2 name- data
 
 	Changes in ovs_vapp.ini for the above values
 	
@@ -433,10 +433,6 @@ Enter the following commands to stop and restart the HP VCN networking service (
 * `sudo service hpvcn-neutron-agent stop`
 
 * `sudo service hpvcn-neutron-agent start`
-
-Login to the OVSvApp
--          sudo –i os-svc-restart -n hpvcn-neutron-agent
-
 
 ## Uninstalling OVSvApp VM on ESX hosts {#uninstallvcn}
 

@@ -112,7 +112,7 @@ For example:
 
 **Caution**: Do not provision proxy or scale-out object nodes together. The requirements are different for proxy nodes and scale-out object node. For example: It is recommended to use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
 
-You cannot provision proxy or scale-out object nodes together. For example: If you have 3 SL4540 and 2 SL230 servers and you want to configure scale-out object nodes and proxy nodes together. Also,  all the five servers are added in the inventory in the beginning and you have specified so&#095;swift_storage&#095;scale as 2 and so&#095;swift&#095;proxy&#095;scale  as 1. Now, run the update cloud script to provision node. Three (2+1) nodes are provisioned. But it is not guaranteed whether the proxy servers are deployed on SL230 and object storage nodes are deployed on SL 4540.  To avoid this confusion it is recommended to provision proxy and scale-out object simultaneously.
+You cannot provision proxy or scale-out object nodes together. For example: If you have 3 SL4540 and 2 SL230 servers and you want to configure scale-out object nodes and proxy nodes together. Also,  all the five servers are added in the inventory in the beginning and you have specified so&#095;swift_storage&#095;scale as 2 and so&#095;swift&#095;proxy&#095;scale  as 1. Now, run the update cloud script to provision node. Three (2+1) nodes are provisioned. But it is not guaranteed whether the proxy servers are deployed on SL230 and object storage nodes are deployed on SL 4540.  To avoid this confusion it is recommended to provision proxy and scale-out object one at a time.
 
 For example:
 <img src ="media/swift_deployment-provison-both-nodes.png/">
@@ -120,9 +120,7 @@ For example:
 
 **Recommendation**:
 
-It is recommended to follow the below sequence:
-
-i. Add server either proxy or scale-out object to inventory. 
+It is recommended to add server proxy and scale-out object to inventory. 
 
 ii. Provision node using update cloud
 
@@ -200,6 +198,11 @@ Ensure the deployment of Swift node using the following commands:
 
 It displays available Swift nodes including the newly added node.
 
+##Architecture of Swift proxy node
+
+The following diagram depicts the deployment architecture of Swift node proxy after provisioning.
+
+<a href="javascript:window.open('/content/documentation/media/sswift_proxy-node-provisioning.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift proxy node after provisioning (opens in a new window)</a>
 
 
 

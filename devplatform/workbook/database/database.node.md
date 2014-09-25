@@ -17,7 +17,7 @@ This is a simple Node.js app that uses MySQL.
 3. You must have access to the web-based Administration console.
 
 ##Download the Application Files
-Download the files 
+[Download the Node files](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-node/) from the code repository.
 ###About the Application Files
 
 ##Build the Application

@@ -30,22 +30,21 @@ This page provides an overview of the hardware and software that is supported fo
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
-* [Hardware and network configuration](#baremetal)
-* [Usable capacity](#usable-capacity)
-* [Physical network architecture](#physical-network-architecture)
-* [Software requirements](#software-requirements)
-* [Next Steps](#next)
+* [Hardware and Network Configuration](#baremetal)
+* [Usable Capacity](#usable-capacity)
+* [Physical Network architecture](#physical-network-architecture)
+* [Software Requirements](#software-requirements)
 
 ##Deployment Architecture<a name="deploy-arch"></a>
 
 The following diagrams depict simplified deployment scenarios:
 
-* <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
-* <a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
+* <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
+* <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
 
 ## Supported Hardware<a name="supportedhw"></a>
 
-HP supports the following hardware for Helion OpenStack deployment:
+HP supports the following hardware for HP Helion OpenStack deployment:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
@@ -233,7 +232,7 @@ HP supports the following hardware for Helion OpenStack deployment:
 ## Hardware and Network Configuration<a name="baremetal"></a>
 You must have the following hardware and network configuration:
 
-* At least 7 and no more than 30 baremetal systems meeting the requirements as listed below.
+* At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
  
 Additional requirements are as follows:
 
@@ -256,9 +255,7 @@ Additional requirements are as follows:
 
 * An additional system to run the baremetal installer and host the seed VM meeting the requirements in the table below. Other requirements and recommendations are as follows:
 
-    * One of the following operating systems must be installed:
-      * Ubuntu 13.10
-      * Ubuntu 14.04  
+    * The Ubuntu 14.04 operating system must be installed
     * A browser to access the undercloud or overcloud
     * A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
     * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
@@ -585,17 +582,16 @@ VSA KVM support is being qualified with Ubuntu and hLinux but will NOT be publis
 This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
 
 - Physical network ports on each server
-  - One IPMI/iLO port
+  - One IPMI port
   - One physical ethernet port (for example, eth0) or two physical ethernet ports in a bond (for example, bond0) for the hypervisor/OS
 
 - Network fabric
-  - Two physical links, one for IPMI/iLO and one for the hypervisor/OS
+  - Two physical links, one for IPMI and one for the hypervisor/OS
   - Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
-
 
 - The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
 
-For detailed information, see the [Reference architecture](/helion/openstack/ga/technical-overview#ref-arch) section of the Technical Overview.
+For detailed information, see the [Preparing the network](/helion/openstack/ga/install/prereqs/#network) section of the *Prerequisites*.
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
@@ -680,7 +676,7 @@ For detailed information, see the [Reference architecture](/helion/openstack/ga/
 
 ## Software Requirements<a name="software-requirements"></a>
 
-Ubuntu 13.10/14.04 with the following package versions.
+Ubuntu 14.04 with the following package versions.
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 
