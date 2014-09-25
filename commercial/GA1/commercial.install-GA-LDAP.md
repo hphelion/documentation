@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Integrating LDAP 
 
-The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
 The process for integrating LDAP involves the following steps:
 
@@ -54,14 +54,14 @@ Before starting the integration, review the following prerequisites:
 
 ## Generate configuration files ## {#config}
 
-The LDAP integration process requires two configuration files. 
+The LDAP integration process requires two configuration files:
 
 - [TripleO OverCloud Password file](#tripleo)
 - [LDAP server connection settings](#connect)
 
 ### TripleO OverCloud Password file ### {#tripleo}
 
-This file contains the password for all the services users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
+This file contains the password for all the users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
 
 **tripleo-overcloud-passwords file for openLDAP test server:**
 
@@ -79,17 +79,17 @@ This file contains the password for all the services users created on the LDAP s
 
 **tripleo-overcloud-passwords file for AD-LDAP test server:**
 
-	OVERCLOUD_ADMIN_PASSWORD=Passw0rd
-	OVERCLOUD_CEILOMETER_PASSWORD=Passw0rd
-	OVERCLOUD_CINDER_PASSWORD=Passw0rd
-	OVERCLOUD_DEMO_PASSWORD=Passw0rd
-	OVERCLOUD_EC2_PASSWORD=Passw0rd
-	OVERCLOUD_GLANCE_PASSWORD=Passw0rd
-	OVERCLOUD_HEAT_PASSWORD=Passw0rd
-	OVERCLOUD_NEUTRON_PASSWORD=Passw0rd
-	OVERCLOUD_NOVA_PASSWORD=Passw0rd
-	OVERCLOUD_SHERPA_PASSWORD=Passw0rd
-	OVERCLOUD_SWIFT_PASSWORD=Passw0rd
+	OVERCLOUD_ADMIN_PASSWORD=<password>
+	OVERCLOUD_CEILOMETER_PASSWORD=<password>
+	OVERCLOUD_CINDER_PASSWORD=<password>
+	OVERCLOUD_DEMO_PASSWORD=<password>
+	OVERCLOUD_EC2_PASSWORD=<password>
+	OVERCLOUD_GLANCE_PASSWORD=<password>
+	OVERCLOUD_HEAT_PASSWORD=<password>
+	OVERCLOUD_NEUTRON_PASSWORD=<password>
+	OVERCLOUD_NOVA_PASSWORD=<password>
+	OVERCLOUD_SHERPA_PASSWORD=<password>
+	OVERCLOUD_SWIFT_PASSWORD=<password>
 
 The file must end with a carriage return. TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
 
@@ -202,15 +202,17 @@ You need to copy the configuration files to the seed VM host during the installa
 
 On the seed VM, perform the following:
 
-1. Copy the tripleo-overcloud-password file to the /root/tripleo folder.
+1. Copy the `tripleo-overcloud-password` file to the `/root/tripleo folder`:.
 
 		scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords
 
-2. Copy the overcloud_keystone_ldap.json file to the /root/tripleo/hp_passthrough folder.
+2. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
 
 		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json
 
-Follow the steps described on the Quick Start Install wiki page to deploy the overcloud nodes.
+Follow the steps described in the installation instructions to deploy the overcloud nodes.
+
+[HP Helion OpenStack®: Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/)
 
 ## Configuring Horizon ## {#horizon}
 

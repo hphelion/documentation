@@ -75,7 +75,7 @@ For more information, see [HP Helion OpenStack&reg;: Creating an Environment Var
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack® Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 
 ### Preparing KVM Host to run seed VM

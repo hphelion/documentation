@@ -237,6 +237,7 @@ You should restore the seed node when there is any problem with the node, for ex
 **Important:**
 
 - During the restore of the undercloud the seed VM will be deployed again. You should [create a new backup from seed](#seedback) after the undercloud is restored.
+- If the resource files are locally, the source files must be located in the `/tmp/` directory.
 - If the admin user password was changed from the original password created during the installation process, see [Undercloud password issues](#underpass) before beginning the restore.
 
 Use the following steps to restore the undercloud:
