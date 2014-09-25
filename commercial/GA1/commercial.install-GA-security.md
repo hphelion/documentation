@@ -21,7 +21,8 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Configuring your Helion network securely
-Guidance on configuring your Helion network securely
+
+This document provides guidance on configuring your Helion network securely.
 
 The Helion OpenStack Commercial release has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the Helion deployment (to protect against external abuse) as well as defining router rules within the Helion deployment (to protect against insider abuse or administrator mistakes).
 
