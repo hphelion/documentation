@@ -68,7 +68,7 @@ The tab displays with options in the left panel.
   * In the **vCenter Administrator** box, enter the vCenter administrator username. This is the vCenter credentails of the administrator.
   * In the **vCenter Server Password** box, enter the password.
   * In the **vCenter Server Port** box, enter the vCenter Server Port.
-  * (Optional) In the **vCenter SSL CA-certificate** box, paste the SSL certificate that you have generated in vCenter. <br>SSL CA certificate secures your connections.
+  * (Optional) In the **vCenter SSL CA-certificate** box do not enter any value as we are not supporting it in this release.
 <br>
 5. In the Proxy Details Tab, do the following:
 

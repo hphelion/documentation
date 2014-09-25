@@ -41,7 +41,7 @@ Where should the user login??
 
 ###Copy the utility to seed and to the servers where the disks has to be monitored
 
-Use scp to copy the utility package on to the servers and install it.
+Use `scp` to copy the utility package on to the servers and install it.
 
 1. Copy the package from KVM host to SEED.
 
@@ -49,25 +49,39 @@ Use scp to copy the utility package on to the servers and install it.
 
 2. Copy the package from SEED to machine where the disks to be monitored.
 
-		scp hpssacli.tar.gz heat-admin@192.0.2.34:
+		scp hpssacli.tar.gz heat-admin@<IP address of machine>
 
 3. Login to the server where the utility is copied and install the package.
 
-		
-		root@hLinux:~# ssh heat-admin@192.0.2.34
-		
-		The package will be available in /home/heat-admin/
-		
+		ssh heat-admin@<IP address of machine>
+
+4. Change the directory
+
 		cd /home/heat-admin/
 		
-		Install the package. For now, tar ball will be extracted.
-		
-		tar -xvf hpssacli.tar.gz
-		
-		The binary hpssacli will be in /home/heat-admin/hp/hpssacli/bld
-		
-		The diagnostics can be done either in the server or from SEED through ssh.
+5. List the files
 
+		ls
+	All the files present in that directory will be displayed.
+
+6. Search `tar -xvf hpssacli.tar.gz`
+
+7. Extract the tar file. 
+
+		 tar -xvf hpssacli.tar.gz
+
+	The extracted binary file will be available in `/home/heat-admin/hp/hpssacli/bld`
+
+8. Install the binary file.
+
+	 	run `hpssacli`
+ 
+**Note**: The diagnostics can be done either in the server or from SEED through ssh.
+
+##Examples
+
+* Example to collect the diagnostic report of the controllers in the server
+* Example to collect the diagnostic report using ssh from SEED.
 
 
  

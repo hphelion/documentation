@@ -62,23 +62,23 @@ You should carefully plan the following ring attributes before deployment of obj
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Zone</b></td>
-	<td>Single point of failure within your cluster. </td>
-    <td> Three zones</td>
+	<td>It defines single points of failure within your cluster </td>
+    <td>It is recommend to use single zone with multiple servers. Having multiple servers (of at least three in number) ensures that the replicas is distributed across servers.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Replica Count</b></td>
-	<td>Number of copies of objects.</td>
-    <td> Use three as replica count</td>
+	<td>It defines number of copy of objects</td>
+    <td> It is recommended to use three as replica count</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Part Power</b></td>
-	<td>The capacity of your storage cluster.</td>
-    <td>Use 20 assuming average available drive capacity as 1-3 TB.</td>
+	<td>It defines your storage cluster capacity</td>
+    <td>It is recommended to use 20 assuming that the average available drive capacity is 1-3 TB.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Min part hour</b></td>
 	<td>Time for the replication to copy data. </td>
-    <td> 24 (hour)</td>
+    <td>It depend on environment. The default value is 1.</td>
 </tr>
 </table>
 
@@ -109,7 +109,10 @@ To  perform this operation, it is necessary to enable SSH from Undercloud to Ove
 
 ##Deploying scale-out Swift object nodes {#deploying-scale-out-Swift-object-nodes}
 
-It is recommended to deploy scale-out object nodes in a set of 3 (replica count as mentioned above) and allocate each node to one zone.
+It is recommended to deploy three scale-out object server nodes (replica count as mentioned above) and allocate each node to one zone. This ensures that every object is replicated across three different servers, which helps to facilitate HP Helion OpenStack fault tolerance policy of 'No Single Point of Failure'.   
+
+Also, you can deploy two scale-out object nodes server. Here every object is replicated across two different servers. In case of failure of node it will retain at least two copies. But it will be disadvantage for you because a loss of a server may cause loss of two replica(s) for some objects.
+
 
 Before starting the deployment of scale-out object nodes you must configure the `overcloud-config.json` file as shown in the sample below.
 
@@ -148,13 +151,13 @@ For more detailed, refer [Provisioning Swift node(s)]( /helion/openstack/ga/serv
 
 Perform the following steps to verify the deployment of  object nodes:
 
-1. login to the undercloud 
+1. Login to the undercloud 
     
 		ssh heat-admin<Undercloud IP address> 
 
 2. Source stack RC using the following command:
 
-     # Source stackrc 
+    	 # Source stackrc 
  
 3. List the available scale-out swift nodes 
 
@@ -196,9 +199,9 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 	ringos create-ring -f /root/ring-building/object-1.builder -p <value> -r <value> -m <value>
 
 
-**Caution**: You cannot change your part power once you deploy object-ring:1.
+**Caution**: Once object-ring:1 will be deployed you cannot change your part power.
 
-In the following example , we use a single region with each of these 3 nodes in one zone each partition power =10, replicas =3, min&#095;part&#095;hours =1
+In the following example , we use a single zone with each of these 3 nodes with each partition power =10, replicas =3, min&#095;part&#095;hours =1
 
 	ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
 
@@ -219,13 +222,13 @@ In the following example we are adding disk to node(**192.0.2.29**) to zone 1:
 	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
 	Added disk 192.0.2.29:a1410063335 to ring
 
-You must add all the disks formatted earlier to required zones and regions.
+You must add all the formatted disks to required zones and regions.
 
 5.Verify the contents of `object-1.builder` file to ensure that it meets your required configuration.
 
 	ringos view-ring -f /root/ring-building/object-1.builder
 
-6.Re-balance the ring using the following command:
+6.Re-balance the ring 
 
 	ringos rebalance-ring -f /root/ring-building/object-1.builder
 
@@ -361,7 +364,7 @@ The Overcloud configuration file will be displayed as the sample below:
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 * [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
 * [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
-
+* 
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
