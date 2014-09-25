@@ -6,9 +6,13 @@ product: image
 ---
 <!--PUBLISHED-->
 
-# HP Helion Public Cloud 13.5: How to Upload a Partner Image and Make it Public # {#publishPartnerImage}
+# HP Helion Public Cloud 13.5: How to Upload a Partner Image and Make it Public<a name="publishPartnerImage"></a>
 
 This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in HP Helion Public Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Helion Public Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
+
+
+
+- Why upload an image and make it public<a name="publishImageReason"></a>
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
@@ -19,13 +23,13 @@ This document describes how to use the HP Helion Public Cloud Image API to uploa
 
 All other regions do not support the Image API.
 
-### Why upload an image and make it public ### {#publishImageReason}
+### Why upload an image and make it public<a name="publishImageReason"></a>
 HP Helion Public Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Helion Public Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a Linux distribution that we do not currently offer. Or, you might want to create a customized golden master image to import into HP Helion Public Cloud. Whatever the scenario, if you require a specific customized, public image that we do not currently offer, uploading your own image and making it public is ideal for you!
 
-### Image types ### {#publishImageTypes}
+### Image types<a name="publishImageTypes"></a>
 You can create either a public or private image to upload to HP Helion Public Cloud. Anyone can see and use a public image. If you upload a private image, it is listed in your image catalog and only visible to you.
 
-We have two types of public images:
+We have two types of **public** images:
 
 * HP Helion Public Cloud-created public images 
 * Partner-created public images
@@ -48,7 +52,7 @@ We also provide you with links to more information and ways to contact customer 
 * [Additional information](#MoreInfo)
 * [Contacting customer support](#contactSupport)
 
-## Getting started ## {#publishGetStarted}
+## Getting started<a name="publishGetStarted"></a>
 Image upload refers to the uploading of a virtual machine image into HP Helion Public Cloud, which creates a new image containing your image data and associated metadata.
 
 **Important:** Images are region-specific; an image is only available in the region to which it has been uploaded. If you need an image in multiple regions, you must create it in each region.
@@ -79,20 +83,20 @@ Before you upload an image and make it public, you must:
 * [Understand image requirements](#publishImageReqs)
 * [Understand required attributes and properties](#publishReqAttsProps)
 
-### Installing tools ### {#toolsInstall}
+### Installing tools<a name="toolsInstall"></a>
 To interact with the HP Helion Public Cloud Image API, you need to install the Nova and Glance client tools. If your platform does not support the Glance client, you can use the curl command.
 
-#### The Nova and Glance client tools #### {#publishInstallGlance}
-Openstack's Nova client tool provides API access to the Nova service. Openstack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to [Openstack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Nova and Glance client tools.
+#### The Nova and Glance client tools<a name="publishInstallGlance"></a>
+OpenStack's Nova client tool provides API access to the Nova service. OpenStack's Glance client tool provides the `glance` command, which is the preferred method for interacting with the HP Helion Public Cloud Image API. Refer to [OpenStack's documentation](http://docs.openstack.org/user-guide/content/install_clients.html) or [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for information on installing the Nova and Glance client tools.
 
 If the Glance client is not available for your platform, see the alternate instructions below for [installing curl](#installCurl).
 
-#### The curl command #### {#installCurl}
+#### The curl command<a name="installCurl"></a>
 The preferred method for interacting with the HP Helion Public Cloud Image API is to use the `glance` command in the Glance client tool. If the `glance` command is not available for your platform, you can manage your images using the `curl` command.
 
 **Important:** Before using curl, ensure that you have acquired a token and [configured environment variables](#publishConfigEnv) for your system.
 
-### Configuring environment variables ### {#publishConfigEnv}
+### Configuring environment variables<a name="publishConfigEnv"></a>
 Before using the Glance client (or curl) to manage images, ensure you have followed these instructions to set your environment variables. To interact with HP Helion Public Cloud Image API endpoint, appropriately set the following environment variables:
 
 <ul>
@@ -157,7 +161,7 @@ To configure your environment variables using bash, complete the following steps
 </li>
 </ol>
 
-### Acquiring a token (curl) ### {#publishCurlToken}
+### Acquiring a token (curl)<a name="publishCurlToken"></a>
 Before you can manage your images using curl, you must acquire a token using your credentials. To acquire a token:
 
 <ol><li>Run the following command:
@@ -207,7 +211,7 @@ Your uploaded images must adhere to the following:
     * If you use an HP Helion Public Cloud supplied licensed OS to create your own image from a snapshot, then the HP Helion Public Cloud provided license is included.
 * If you make any third-party software programs available through your image, you must comply with all third-party license requirements for such use. HP does not control and is not responsible for any of these programs or their content. If you are required to agree to terms and conditions set by a third party for usage of such third-party software programs, you are responsible for compliance with these requirements.
 
-#### Common requirements #### {#publishCommonReqs}
+#### Common requirements<a name="publishCommonReqs"></a>
 You must ensure that all uploaded images meet the following requirements:
 
 * An image must:
@@ -222,16 +226,16 @@ You must ensure that all uploaded images meet the following requirements:
 * An image should:
     * support the x86_64 architecture; the HP Helion Public Cloud supports the i686 architecture, but it is not as efficient.
 
-#### Linux requirements #### {#publishLinuxReqs}
+#### Linux requirements<a name="publishLinuxReqs"></a>
 Additionally, any Linux image:
 
 * Must support an SSH server.
 * Should support the cloud-init package for instance customization.
 
-#### Windows requirements #### {#publishWindowsReqs}
+#### Windows requirements<a name="publishWindowsReqs"></a>
 All Windows images must support Remote Desktop Protocol.
 
-#### Public image documentation requirements #### {#publishDocReqs}
+#### Public image documentation requirements<a name="publishDocReqs"></a>
 Because we require  documentation for all public images, you must provide a Knowledge Base document describing the intended use of the image, and:
 
 * Steps to create an instance on the HP Helion Public Cloud using your image (we encourage examples not using Management Console). 
@@ -248,10 +252,10 @@ You can find partner-provided examples of the required documentation on the foll
 * [CohesiveFT Partner Images](https://community.hpcloud.com/article/cohesiveft-partner-images-now-available)
 * [CohesiveFT VNS3 3.x Configuration for HP Helion Public Cloud](http://www.cohesiveft.com/dnld/CohesiveFT-VNS3-3.0.4_HPCS.pdf)
 
-#### Required attributes and properties for images #### {#publishReqAttsProps}
+#### Required attributes and properties for images<a name="publishReqAttsProps"></a>
 In general, you do not need to add additional attributes or properties to your image in order to use it in HP Helion Public Cloud with the Image API; however, you must define certain image attributes and properties for the image to either be **deployed on HP Helion Public Cloud** or **displayed in the HP Helion Public Cloud management console**. 
 
-##### Deploying images in HP Helion Public Cloud ##### {#publishReqsDeploy}
+##### Deploying images in HP Helion Public Cloud<a name="publishReqsDeploy"></a>
 To deploy an image in HP Helion Public Cloud, you must define/set the following attributes and properties when you create the image: 
 
 **Attributes**
@@ -265,7 +269,7 @@ To deploy an image in HP Helion Public Cloud, you must define/set the following 
 * architecture = `x86_64` or `i686`<br>
     This property is used by Nova to spin up instances and you must set it to either x86_64 or i686.
 
-##### Displaying images in the HP Helion Public Cloud management console ##### {#publishReqsDisplay}
+##### Displaying images in the HP Helion Public Cloud management console<a name="publishReqsDisplay"></a>
 The HP Helion Public Cloud management console uses custom properties to categorize and display an image. If you want to use the management console, set the following custom properties to control how the image is categorized and displayed. 
 
 <table>
@@ -319,7 +323,7 @@ The HP Helion Public Cloud management console uses custom properties to categori
 
 See the [Glance client](#publishGlanceCreate) and [curl](#publishCurlUpload) sections for the instructions to set these attributes and properties.
 
-## Creating an image from a snapshot ## {#publishWindowsSnap}
+## Creating an image from a snapshot<a name="publishWindowsSnap"></a>
 One way to create an image is to customize an HP Helion Public Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Helion Public Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance-135).
 
 <ol>
@@ -379,7 +383,7 @@ You are now ready to:
 
 <p><b>Important:</b> If you don't add the required properties to your snapshot file then it may not function properly.</p>
 
-## Uploading and managing images ## {#publishManageGlance}
+## Uploading and managing images<a name="publishManageGlance"></a>
 Using the `glance` command is the preferred method for interacting with the HP Helion Public Cloud Image API. In this section, we describe the basic `glance` commands to use for uploading and managing your images. If the Glance client is not available for your platform, see the alternate instructions in each section for using curl commands. 
 
 Before using the Glance client (or curl), ensure you have configured your environment variables. The rest of this section describes how to:
@@ -394,9 +398,9 @@ Before using the Glance client (or curl), ensure you have configured your enviro
 
 There is also a section on the most [common HTTP errors](#publishGlanceErrors) that might occur when using the Glance client tool. 
 
-**Important:** For more information, see Openstack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
+**Important:** For more information, see OpenStack's documentation on [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html) and the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html).
 
-### Listing images ### {#publishGlanceList}
+### Listing images<a name="publishGlanceList"></a>
 To see a list of available images, follow the instructions below.
 
 #### Glance client ####
@@ -433,7 +437,7 @@ Your output should be similar to this:
     `$ curl -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images?marker=fcc0edba-6f1b-4451-a4cc-7c63f20430b5`
 -->
 
-### Uploading an image ### {#publishGlanceCreate}
+### Uploading an image<a name="publishGlanceCreate"></a>
 When you upload your image, you must [define/set the required attributes and property](#publishReqsDeploy). To upload an image, follow the instructions below.
 
 **Note:** The `architecture` property you set and the attributes you define, allow you to upload and boot your image. If you want to use the HP Helion Public Cloud management console, you must [set additional properties](#publishReqsDisplay).
@@ -461,7 +465,7 @@ To upload your new image using the Glance `image-create` command:
 
 **Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Helion Public Cloud 13.5, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `progress`, use the curl command documented below.
 
-#### Curl #### {#publishCurlUpload}
+#### Curl<a name="publishCurlUpload"></a>
 **Important:** You must supply `"X-Image-Meta-Container_format"` and `"X-Image-Meta-Disk_format"` headers.
 
 To upload your image, complete the following steps:
@@ -494,7 +498,7 @@ To upload your image, complete the following steps:
 
 **Important:** When the upload is complete, your image status is `active`, and you can boot it using the relevant nova commands or the HP Helion Public Cloud web interface. See the documentation for [creating instances](https://community.hpcloud.com/article/creating-your-first-instance) for more information.
 
-### Updating properties required for HP Helion Public Cloud management console ### {#publishGlanceUpdate}
+### Updating properties required for HP Helion Public Cloud management console<a name="publishGlanceUpdate"></a>
 If you want your images to display in the HP Helion Public Cloud management console, you must [set additional properties](#publishReqsDisplay). To update these properties, follow the instructions below.
 
 #### Glance client ####
@@ -519,7 +523,7 @@ You can run this command for each required property, or you can include all the 
 </pre>
 If you want to define additional attributes or set additional properties, follow the same syntax.
 
-#### Curl #### {#publishCurlProps}
+#### Curl ####<a name="publishCurlProps"></a>
 Run the following command:
 <pre>
     curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-
@@ -533,7 +537,7 @@ For example, if you set the property `com.hp__1__image_type` to `disk`:
 </pre>
 Run this command for each required property substituting the property name and value. If you want to set additional custom properties, follow the same syntax.
 
-### Showing image details ### {#publishGlanceShow}
+### Showing image details<a name="publishGlanceShow"></a>
 Image details can be displayed using the `image-show` option. To see image details, follow the instructions below.
 
 #### Glance client ####
@@ -543,13 +547,13 @@ To display information about an image, run the following command:
 <br>
 <img src="media/glance-image-details.png" width="580" alt="" />
 
-#### Curl #### {#publishCurlShow}
+#### Curl<a name="publishCurlShow"></a>
 To display information about an image, run the following command:
 
     $ curl -v -XHEAD -H "X-Auth-Token: $TOKEN_ID" 
     $OS_IMAGE_URL/v1.0/images/<image_id>
 
-### Making an image public ### {#publishGlancePublic}
+### Making an image public<a name="publishGlancePublic"></a>
 Images are not public by default, and you must have been given privileges by HP Support to make an image publicly available. To make an image public, follow the instructions below.
 
 #### Glance client ####
@@ -559,7 +563,7 @@ To make an image public, run the `glance image-update` command:
 <br>
 <img src="media/glance-image-public.png" width="580" alt="" />
 
-#### Curl ### {#publishCurlPublic}
+#### Curl<a name="publishCurlPublic"></a>
 To make an image public, run the following command:
 <pre>
     $ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-
@@ -568,7 +572,7 @@ To make an image public, run the following command:
 </pre>
 **Important:** To avoid removal of existing custom properties, you must include `X-glance-registry-Purge-props: False`.
 
-### Deleting an image ### {#publishGlanceDelete}
+### Deleting an image<a name="publishGlanceDelete"></a>
 **Warning:** You should never delete an active public image without [contacting HP Support](https://www.hpcloud.com/contact_us) because there might be active virtual machines using that image.
 
 If you no longer want your image, follow the instructions below to delete it.
@@ -586,13 +590,13 @@ To delete an image, use the `image-delete` command to remove it.
 
     <img src="media/glance-image-delete.png" width="580" alt="" />
 
-#### Curl #### {#publishCurlDelete}
+#### Curl<a name="publishCurlDelete"></a>
 To delete an image, run the following command:
 
     curl -v -XDELETE -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0
     /images/<image ID>
 
-### Deprecating an image ### {#publishGlanceDeprecate}
+### Deprecating an image<a name="publishGlanceDeprecate"></a>
 <!--
 **Warning:** you should never deprecate an active public image without [contacting HP Support](https://www.hpcloud.com/contact_us) because there might be active virtual machines using that image.
 -->
@@ -622,12 +626,12 @@ Possible HTTP return codes are listed in HP Helion Public Cloud Image API docume
 * HTTP 403: (forbidden) you are not activated for HP Helion Public Cloud Compute Service
 * HTTP 404: (not found) you incorrectly specified the image id
 
-## For more information ## {#MoreInfo}
+## For more information<a name="MoreInfo"></a>
 
 For additional information on uploading an image and making it publicly available, see:
 
 * [HP Helion Public Cloud Image Service API documentation](https://docs.hpcloud.com/api/v13/image/)
-* [Openstack's documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
+* [OpenStack documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
 * [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
 * [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
 * [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)

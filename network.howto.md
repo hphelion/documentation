@@ -383,7 +383,7 @@ To change the name of a network:
 	
 ### How to edit a sub-net### {#EditSubCLI}
 
-You can modify a sub-net to rename the sub-net or change the the external gateway assigned to the sub-net.
+You can modify a sub-net to rename the sub-net or change the external gateway assigned to the sub-net.
 
 1. On a system configured to access the project, launch a Windows PowerShell window.  
 
