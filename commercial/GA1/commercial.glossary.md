@@ -66,7 +66,7 @@ used for the initial cloud installation, setup, configuration, and creation, bef
 
 ###Authentication### {#Auth}
 :     A service that confirms the identity of a user. The Identity Service confirms that each incoming request is made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials 
-(such as, username/password or user access keys). After initial confirmation, the Identity Service issues the user a [token](#AuthToken) that a user can provide when making subsequent requests.
+(such as, username/password or user access keys). After initial confirmation, the Identity Service issues the user a [token](#Token) that a user can provide when making subsequent requests.
 
 ###Authentication Token### {AuthToken}
 :     A string that an authenticated user must present for subsequent requests to other services.
@@ -81,7 +81,7 @@ used for the initial cloud installation, setup, configuration, and creation, bef
 ###Baremetal Host###
 :    The machine that runs the nova-compute and nova-baremetal-deploy-helper services. The baremetal host functions like a [hypervisor](#Hyper) by providing power management and imaging services.
 
-###Baremetal Node### {Baremetal}
+###Baremetal Node### {#Baremetal}
 :     A baremetal node is a computer in which a virtual machine is installed directly on hardware rather than within the host operating system (OS). The baremetal nodes are controlled by the baremetal host.
 
 ###Block storage###
@@ -199,7 +199,7 @@ A flat network can eb set up with a single adapter on the Baremetal host.
 
 ## I
 
-###Identity Management### {#Identity}
+###Identity Service### {#Identity}
 :     The HP OpenStack service that performs identity management (domains, projects and users), generates access tokens, and provides service catalog functionality.
 
 ###Image### {#Image}
@@ -223,7 +223,7 @@ See also [Private image](#ImagePriv) and [Public image](#ImagePub).
 ###Instance### {#Instance}
 :    A virtual machine that runs inside the cloud.
 
-###Intelligent Platform Management Interface (IPMI)###
+###Intelligent Platform Management Interface (IPMI){#IPMI}###
 :    A standardized computer interface used by administrators for out-of-band management of computers and monitoring of their operation. IPMI manages a computer that is powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
 ###IPMI Network###
@@ -280,7 +280,7 @@ This metering may occur at some level of abstraction that's appropriate to the t
 ###Node###
 :     A computing resource in a network. In other publications, sometimes called a machine.
 
-###Nova### {Nova}
+###Nova### {#Nova}
 :     See [Compute](#Compute).
 
 ## O
@@ -310,7 +310,7 @@ used to manage the cloud that you created.
 ## P
 
 ###Preboot Execution Environment (PXE) Booting### {#pxe}
-:    One of the components of [Intel's Wired for Management](#WFM) specification. PXE allows a machine to boot from a machine on a network prior to booting the operating system on the local hard drive. For more, start on this <a href="http://en.wikipedia.org/wiki/Preboot_Execution_Environment" target="pxe">Wikipedia.org page</a>. 
+:    One of the components of [Intel's Wired for Management](#http://www.intel.com/design/archives/wfm/) specification. PXE allows a machine to boot from a machine on a network prior to booting the operating system on the local hard drive. For more, start on this [Wikipedia.org page](#http://en.wikipedia.org/wiki/Preboot_Execution_Environment). 
 
 ###Private cloud###
 :     A cloud infrastructure that is provisioned for exclusive use by a single organization comprising multiple consumers, such as business units.  The private cloud may be owned, managed and operated by the organization, a third party. or some combination, and it may exist on or off the owner's premises.
