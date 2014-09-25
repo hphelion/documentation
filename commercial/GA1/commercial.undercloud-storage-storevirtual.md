@@ -29,13 +29,11 @@ The StoreVirtual option allows you to configure HP StoreVirtual as storage. Befo
 
 1. HP Helion Cloud is deployed
 
-2. Sirius service is up and running in the Undercloud
+2. HP StoreVirtual is deployed
 
-3. HP StoreVirtual is deployed
+3. HP StoreVirtual cluster is created.
 
-4. HP StoreVirtual cluster is created and Virtual IP address is set.
-
-5. HP StoreVirtual cluster is accessible by Cinder and Compute nodes running in the Overcloud.
+4. HP StoreVirtual cluster is accessible by Cinder and Compute nodes running in the Overcloud.
 
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
@@ -54,7 +52,9 @@ You can do the following tasks using the StoreVirtual option:
 
 ## Registering the cluster ##{#registering-cluster}
 
-You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius REST client. (Refer [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)). When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
+You can register a cluster using the Undercloud Horizon Dashboard.When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
+
+<!---You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)).-->
 
 To register the cluster using Undercloud Horizon Dashboard, do the following:
 
@@ -76,11 +76,11 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
    
    * In the **Subnet** box, enter the subnet of the StoreVirtual cluster.
    
-   * In the **Username** box, enter the user name of the management group where StoreVirtual cluster is present.
+   * In the **Username** box, enter the user name to access the cluster.
    
-   * In the **Password** box, enter the password of the management group where StoreVirtual cluster is present.
+   * In the **Password** box, enter the password to access the cluster.
    
-   * In the **Port** box, enter the port number for the SSH access or select the default value shown in the UI.
+  <!--- * In the **Port** box, enter the port number for the SSH access or select the default value. The Port by default is *16022*.-->
    
    * Click **Done** to save the details. 
 
@@ -89,7 +89,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 ### Edit a cluster ###{#edit-cluster}
 
-**Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done through the CMC or the CLIQ for the selected cluster. After editing the details, the backend data should also be updated so that cinder config has the updated cluster information.
+**Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done <!--through the CMC or the CLIQ -->for the selected cluster. After editing the details, the backend data should also be updated so that cinder configuration file has the updated cluster information.
 
 To edit a cluster, do the following:
 
@@ -108,10 +108,10 @@ To edit a cluster, do the following:
 
 ### Unregister a cluster ###{unregister-cluster}
 
-**Note**: Before you unregister the cluster, remove the backend associated with it. Detach the volumes or migrate as appropriate as the volumes from this cluster backend will no longer be available.
+**Note**: Before you unregister the cluster, remove the backend associated with it. Detach or migrate the volumes, as appropriate, as the volumes from this cluster backend will no longer be available.
 
 
-Unregistering a cluster, removes it from the cloud inventory.
+Unregistering a cluster will remove it from the cloud inventory.
 
 To unregister a cluster, do the following:
 
@@ -134,10 +134,9 @@ Use this option to unregister multiple clusters using a single command.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
-3. Select **StoreVirtual** option to a
-4. ctivate it.<br> HP StoreVirtual page is displayed.</br>
+3. Select **StoreVirtual** option to activate it.<br> HP StoreVirtual page is displayed.</br>
 
-4. Click the checkbox on the left of the **Name** column to select all the clusters. 
+4. Click the checkbox displayed against the **Name** column to select all the clusters. 
 
 5. Click **Unregister Clusters** to unregister the clusters.<br>A confirmation box is diplayed.</br>
 
@@ -158,6 +157,7 @@ Log into the Undercloud Horizon Dashboard.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
 ####OpenStack trademark attribution

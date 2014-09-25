@@ -23,17 +23,26 @@ PageRefresh();
 
 # Working With StoreVirtual Backends
 
+Once you have registered the StoreVirtual systems as per your requirements, you can use the Overcloud option in the Undercloud Horizon Dashboard for the following tasks:
+
 * [Add Backend](#add-backend)
+
 * [Expand Backend](#expand-backend)
+
 * [Shrink Backend](#shrink-backend) 
+
 * [Delete Backend](#delete-backend)
-* [Generate Config](#generate-config)
+
+* [Generate Configuration](#generate-config)
+
 * [Update Overcloud](#update-overcloud) 
 
 
 ### Add Backends<a name="add-backend"></a>
 
-1. In the** Configure Cloud **page, click the **StoreVitual** Tab.
+To add a backend, do the following:
+
+1. In the Configure Cloud page, click the **StoreVitual** Tab.
 
 2. Click **Add Backend** at the top to open the StoreVirtual Volume Backend page.
 
@@ -48,6 +57,7 @@ PageRefresh();
 7. (Optional) Click **Remove All** displayed below the **Selected StoreVirtual Cluster Choices** box or select the cluster(s) and click &larr;to move the cluster(s) back to **Available StoreServ Choices** box. 
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page.</br>
+
 
 ### Expand Backend<a name="expand-backend"></a>
 
@@ -91,7 +101,7 @@ Shrinking removes the clusters from the backend which are allocated to your clou
 
 ###Delete backend<a name="delete-backend"></a>
 
-**Note**: Before you delete a backend cluster, detach or migrate the volumes from this cluster, as this backend will no longer be available once it is deleted.
+**Note**: Before you delete a backend cluster, detach or migrate the volumes from this cluster, as this backend will not be available once it is deleted.
 
 1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
 
@@ -107,11 +117,11 @@ To generate a configuration file, do the following:
 
 1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
 
-2. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The config file downloads automatically. 
+2. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The configuration file downloads automatically. 
 
-3. (Optional) Click** Download StoreVirtual Config** link to download the file if the file does not download automatically.<br> A dialog box is displayed.</br>
+3. (Optional) Click **Download StoreVirtual Config** link to download the file if the file does not automatically download .<br> A dialog box is displayed.</br>
 
-4. Click **OK** to download and save the file.<br>Once you download the config file, you can proceed to update the overcloud configuration.
+4. Click **OK** to download and save the file.<br>Once you download the configuration file, you can proceed to update the overcloud configuration.
 
 
 ### Update Overcloud<a name="update-overcloud"></a>
@@ -125,13 +135,42 @@ To update your overcloud with the changes, do the following:
 2. View the list of files.
 
 		ls
-
-3. Copy the overcloud template config file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+		
+2. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
 	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
 4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config). 
-Refer to the example below. Ensure the JSON file format is intact.
+Refer to the following example. Ensure the JSON file format is complete.
+
+		{
+		  "cloud_type": "KVM",
+		  "compute_scale": 1,
+		  "vsa_scale": 0,
+		  "vsa_ao_scale": 0,
+		  "so_swift_storage_scale": 0,
+		  "so_swift_proxy_scale": 0,
+		  "bridge_interface": "eth0",
+		  "ntp": {
+		    "overcloud_server": "",
+		    "undercloud_server": ""
+		  },
+		  "vsa": {
+		    "DEFAULT": {
+		      "enabled_backends": [
+		        "cluster_a6487f02-447e-11e4-a128-80c16e21d1f0"
+		      ]
+		    },
+		    "cluster_a6487f02-447e-11e4-a128-80c16e21d1f0": {
+		      "hplefthand_iscsi_chap_enabled": "true",
+		      "hplefthand_password": "password",
+		      "hplefthand_clustername": "cluster1",
+		      "volume_backend_name": "LHN_backend",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver",
+		      "hplefthand_api_url": "https://192.0.2.40:8081/lhos",
+		      "hplefthand_debug": "false",
+		      "hplefthand_username": "test"
+		    }
 
 5. Apply the configuration.
 
@@ -139,7 +178,7 @@ Refer to the example below. Ensure the JSON file format is intact.
 
 6. Launch install script to update the overcloud.
 
-	    /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud
+	    bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
