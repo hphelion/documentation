@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Add New Proxy Node"
 permalink: /helion/openstack/ga/services/swift/deployment/add-proxy-node/
 product: commercial.ga
 

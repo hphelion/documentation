@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Deploy Scale-out Swift Node"
 permalink: /helion/openstack/ga/services/swift/deployment-scale-out/
 product: commercial.ga
 
@@ -22,7 +22,7 @@ PageRefresh();
 
 
 
-# Deploy scale-out Swift Nodes with HP Helion  OpenStack&#174; 
+# Deploy Scale-out Swift Nodes with HP Helion  OpenStack&#174; 
 
 By deploying scale-out Swift you can create storage-policy:1 for object-ring:1, which is used to store the cloud user data. Storage-policy:1 is used to implement object-ring:1 and it adhere to 'no single point of failure' policy. We recommend you to use at least **two** nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
 

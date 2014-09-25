@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Monitor Disk Usage"
 permalink: /helion/openstack/ga/services/object/swift/Monitor-disk/
 product: commercial.ga
 
@@ -39,30 +39,21 @@ Icinga service, which runs in the Undercloud, helps cloud admin to monitor the d
 
 ##Monitoring Usage of Swift Disk
 
-The usage of Swift disk are monitored based on the mount of file system used by the servers. It also verifies the percent usage for the devices used by Swift (/srv/node). Other file systems (/usr or /var) are not monitored. 
+The usage of Swift disk are monitored based on the mount of the file system used by the servers. It also verifies the percent usage for the devices used by Swift (/srv/node). Other file systems (/usr or /var) are not monitored. 
 
 
 Perform the following steps to monitor the usage of Swift disk:
 
-1. In the Undercloud, login to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). Following are the default login credentials:
+1. In the Undercloud Horizon, login to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). The default login credentials are as follows::
 		
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
-Tactical Monitoring Overview page displays.
-
-2.In the Tactical Monitoring Overview page, click **Status** on the left panel and then click **Host Detail**. 
+2. Click **Status** on the left panel and then click **Host Detail**. 
 
 <img src ="media/icinga_host-details.png/">
 
-The page navigates to Current Network Status. The page displays the Host Status Details For All Host in a tabular form. The table contains the following information:
 
-* Host: IP address of the Host
-* Status: Displays the status of the Host i.e. Up and dowm. 
-* Last Check: 
-* Duration:
-* Attempt:
-* Status Information: 
 
 3.In the Host column, click the icon icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
@@ -71,26 +62,14 @@ The page navigates to Current Network Status. The page displays the Host Status 
 **Note**: To reconfirm the Swift storage node see [Reconfirm storage swift node](#storage-swift)
 
 
-The page navigates to Service Status Details For Host <Swift node IP>. The page displays the Service Status Details of the selected host. 
-
-<img src ="media/swift_icinga_view-status-details-host.png"/>
-
-The page displays the following information of the selected host:
-
-* Host: IP address of the Host
-* Service: The service associated with the host.
-* Status: Displays the status of the Host-OK, WARNING,CRITICAL and UNKNOWN. 
-* Last Check: 
-* Duration:
-* Attempt:
-* Status Information: 
-
-For example: The above image displays the service status details for the host 192.0.2.26.
-
-Now, you view the disk usage of the selected Swift node.
+The page navigates to Service Status Details For Host <Swift node IP>. 
 
 <img src ="media/swift_icinga-disk-usage"/>
 
+Now, you can view the disk usage of the selected Swift node.
+
+
+4.(Optional)Click the name of the service listed in the table. The page navigated to Service State Information. It provides the detailed information of the service.
 
 
 ##Reconfirm storage swift node {#storage-swift}
@@ -113,6 +92,12 @@ A list of swift nodes will be displayed.
 
 
 
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
  
 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Add Disk to Account and Container Ring"
 permalink: /helion/openstack/ga/services/swift/deployment/add-disk-account-container/
 product: commercial.ga
 

@@ -96,7 +96,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
  	<td>HP Helion Orchestration Service enables you to deploy and configure multiple composite cloud applications using template formats. It enables you to work with nested stacks, which are a mechanism of using built-in stack definitions for specific resource types.<br><br>
 	User can create stacks, suspend and resume stacks, view information on stacks, view information on events, work with stack templates and infrastructure resources (such as servers, floating IPs, volumes, and security groups).<br><br>
 	<a href="/helion/openstack/services/orchestration/overview/">Learn more</a> Orchestration services.</td> 
-	<td>Administrator can deploy and configure the OpenStack OverCloud using the Heat Service provided in the UnderCloud.</td>
+	<td>Administrator can deploy and configure the OpenStack Overcloud using the Heat Service provided in the Undercloud.</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -335,25 +335,25 @@ A TripleO installation includes a Seed, the Undercloud and the Overcloud.
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: white; color: black;">
   	<td style><b>Overcloud<b></td>
- 	<td>The Overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The OverCloud comprises OpenStack Cloud Services deployed on Controller Nodes, and a number of Compute Nodes and Storage Nodes. 
-	<br><br>The Cloud Services in the OverCloud, used by end users, include Nova, Neutron, Cinder, Swift, Horizon, Glance, Keystone, Heat, and Ceilometer services, as described in the Functional Overview section above. These Cloud Services are deployed in a highly available cluster across the three Controller nodes. 
-	<br><br>For KVM based Hypervisor environments, the OverCloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
+ 	<td>The Overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The Overcloud comprises OpenStack Cloud Services deployed on Controller Nodes, and a number of Compute Nodes and Storage Nodes. 
+	<br><br>The Cloud Services in the Overcloud, used by end users, include Nova, Neutron, Cinder, Swift, Horizon, Glance, Keystone, Heat, and Ceilometer services, as described in the Functional Overview section above. These Cloud Services are deployed in a highly available cluster across the three Controller nodes. 
+	<br><br>For KVM based Hypervisor environments, the Overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </td>
 </tr>
 <tr style="background-color: white; color: black;">
 	 <td><b>Undercloud</b></td>
-	 <td>A single-server deployment of a limited set of OpenStack services, called the UnderCloud, is used to deploy, test, manage, and update all the OverCloud servers. 
+	 <td>A single-server deployment of a limited set of OpenStack services, called the Undercloud, is used to deploy, test, manage, and update all the Overcloud servers. 
 	<br><br>
-	The UnderCloud comprises Nova, Ironic, Neutron, Glance, Keystone, and Heat services, which are used to deploy and configure various nodes of the OverCloud, either on Virtual Machines or Baremetal servers.<br><br>The Centralized Logging and Monitoring components run in the UnderCloud and can be accessed using a Web Browser. <br><br>The Sherpa, Eon and Sirius services also run in the UnderCloud, and can be accessed via panels in the Horizon Dashboard also running in the UnderCloud.
-	The UnderCloud does not run in a HA configuration, but is an important component of the Cloud. 
+	The Undercloud comprises Nova, Ironic, Neutron, Glance, Keystone, and Heat services, which are used to deploy and configure various nodes of the Overcloud, either on Virtual Machines or Baremetal servers.<br><br>The Centralized Logging and Monitoring components run in the Undercloud and can be accessed using a Web Browser. <br><br>The Sherpa, Eon and Sirius services also run in the Undercloud, and can be accessed via panels in the Horizon Dashboard also running in the UnderCloud.
+	The Undercloud does not run in a HA configuration, but is an important component of the Cloud. 
 	<br><br>
-	Learn more about the Backup Restore procedures to restore the UnderCloud in event of server problems.
+	Learn more about the Backup Restore procedures to restore the Undercloud in event of server problems.
  </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Seed VM</b></td>
 	<td>The SeedCloud is deployed as a VM instance. This image contains bare minimal OpenStack services required to deploy and update the Undercloud on a baremetal server.
 	<br><br>
-	The Host Server running the SeedCloud VM is also used to run backup restore procedures for SeedCloud, UnderCloud and OverCloud Controllers. It is also used to run the StoreVirtual CMC Management Console.
+	The Host Server running the SeedCloud VM is also used to run backup restore procedures for SeedCloud, Undercloud and Overcloud Controllers. It is also used to run the StoreVirtual CMC Management Console.
 	<br><br>
 	The SeedCloud does not run in a HA configuration, but is an important component of the Cloud. Learn more about the Backup Restore procedures to restore the SeedCloud in event of server problems.
 </tr>
@@ -416,16 +416,18 @@ For more information refer
 
 ###Centralized Logging {#centralized-logging}
 
-Centralized logging is based on Logstash, Elasticsearch, and Kinbana Dashboard which is deployed in the UnderCloud server. 
+Centralized logging is based on Logstash, Elasticsearch, and Kinbana Dashboard which is deployed in the Undercloud server. 
 
-Centralized logging helps the administrator triage and troubleshoot the distributed Cloud deployment from the UnderCloud. Now, the user is not required to access the  several remote server (ssh) to view the individual log files.
+Centralized logging helps the administrator triage and troubleshoot the distributed Cloud deployment from the Undercloud. Now, the user is not required to access the  several remote server (ssh) to view the individual log files.
 
 
 ###Monitoring {#monitoring}
 
-The Administrator can monitor availability of all hosts and services in the OverCloud using the Icinga Monitoring server deployed in the UnderCloud.
+The Administrator can monitor availability of all hosts and services in the Overcloud using the Icinga Monitoring server deployed in the Undercloud.
 
 System and service health checks are based on the **check_mk** framework. Health checks are executed locally on each node, and their results are sent over to the central Icinga server, thereby distributing the processing and allowing the Icinga server to scale up. When new nodes are added to the cloud, they are automatically discovered and monitored.
+
+For more information refer [Monitoring](/helion/openstack/ga/services/object/swift/Monitor-cluster/)
 
 
 ###Add, remove and replace nodes {#add-remove-replace-nodes}
@@ -440,9 +442,11 @@ If any of the Controller Nodes fails, you can remove and replace Controller node
 
 ###Backup and Restore nodes {#backup-restore-nodes}
 
-Backup and restore scripts and procedures are provided for SeedCloud, UnderCloud, OverCloud Management Controller (running singleton services like Sherpa), as well as the MySQL database deployed in the Controller cluster. These are to be used by Administrators managing the OpenStack Cloud.
+Backup and restore scripts and procedures are provided for SeedCloud, UnderCloud, Overcloud Management Controller (running singleton services like Sherpa), as well as the MySQL database deployed in the Controller cluster. These are to be used by Administrators managing the OpenStack Cloud.
 
 Backup and Restore of VM instances/snapshots and Volumes/snapshots for Workloads in the Cloud is supported using Swift. These are to be used by end users of Projects deployed in the OpenStack Cloud.
+
+ For more information refer [HP Helion OpenStack® Back Up and Restore](/helion/openstack/ga/backup.restore/)
 
 ## Next Steps ## {#next}
 
