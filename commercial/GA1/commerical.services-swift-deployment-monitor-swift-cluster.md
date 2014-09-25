@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Monitor Swift Cluster"
 permalink: /helion/openstack/ga/services/object/swift/Monitor-cluster/
 product: commercial.ga
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Object Operations Service Overview"
+title: "HP Helion OpenStack&#174; Pyringos"
 permalink: /helion/openstack/GA1/services/object/pyringos/
 product: commercial.ga
 
@@ -17,9 +17,9 @@ PageRefresh();
 
 </script>
 
-#pyringos
+#Pyringos
 
-pyringos tool run on the Undercloud and helps to deploy Swift cluster.
+Pyringos tool run on the Undercloud and helps to deploy Swift cluster.
 
 You can use the following commands using the pyringos Client CLI package in the Undercloud.
 
