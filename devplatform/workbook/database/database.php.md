@@ -15,7 +15,8 @@ This is the **second** sample in the Workbook; if you have not already examined 
 3. You must have access to the web-based Administration console.
 
 ##Download the Application Files
-Download the files 
+[Download the PHP files](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-php/) from the code repository.
+
 ###About the Application Files
 
 ##Build the Application
