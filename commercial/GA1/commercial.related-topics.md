@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Related Documentation"
+title: "HP Helion OpenStack&#174; Related OpenStack Documentation"
 permalink: /helion/openstack/ga/related-links/
 product: commercial.ga
 
@@ -21,9 +21,9 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/dnsaas/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/glossary/"> NEXT &#9654</a> </p>
 
 
-# HP Helion OpenStack&reg; Related Documentation
+# HP Helion OpenStack&reg; Related OpenStack Documentation
 
-This topic provides you links to pertinent documentation.  
+This topic provides you links to OpenStack documentation that you might find helpful when working with HP Helion OpenStack.  
 
 ### OpenStack Links
 

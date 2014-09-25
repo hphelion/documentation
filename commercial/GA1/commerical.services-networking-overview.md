@@ -33,6 +33,8 @@ You can use the Networking service to connect guest servers or you can define an
 
 You can also use the Networking service to [identify the actual IP address of a malicious user](#nat), if you know the user's NAT address.
 
+
+
 ## Working with the Networking Service
 
 To [perform tasks using the Networking service](#howto), you can use the dashboard, API or CLI.
@@ -50,6 +52,8 @@ You can use a low-level, raw REST API access to Networking. See the [OpenStack C
 You can use any of several command-line interface software to access Networking. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
+
+<!---
 
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}
 
