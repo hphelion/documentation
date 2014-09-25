@@ -14,7 +14,7 @@ product: community
 
 <!--meaningless change to fix merge issue -->
 
-This page provides instructions on how to perform a virtual installation of HP Helion OpenStack Community onto a suitably specified and prepared single server. This cloud-in-a-box is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available. 
+This page provides instructions on how to perform a virtual installation of HP Helion OpenStack Community onto a suitably specified and prepared single server. This cloud-in-a-box is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads; therefore, no support is available. 
 
 It is important to read through this page before starting your installation. Before you begin your installation, we recommend you review the complete [Hardware and Software Requirements](/helion/community/hwsw-requirements/) page. Note, however, that we have included the basic requirements on this page.
 
@@ -84,35 +84,46 @@ The following Debian/Ubuntu packages are required:
 
 Even though these packages are added to the system if they are not already installed, we recommend you install them beforehand using the following command:
 
-  `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm openssh-server`
+    	$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm openssh-server
 
 After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
     $ sudo /etc/init.d/libvirt-bin restart
 
 ## Before you begin
-Before you begin the installation process, the user root must have a public key, for example:
+Before you begin the installation process, the root user must have private and public RSA keys. You can determine this by issuing the following commands:
 
-    `/root/.ssh/id_rsa`
-    `/root/.ssh/id_rsa.pub`
+	    $ sudo su –
+    	# ls –l ~root/.ssh
 
-If you do not have a public key, you can create one as follows:
+NOTE: The output should look like the example below:
+
+     	drwxr-x--- . 4096 May 11 09:23
+    	-rwxr-x--- ..4096 May 11 09:23
+    	-rwxr-x--- id_rsa1455 May 11 09:24
+    	-rwxr-x--- id_rsa.pub 1455 May 11 09:24
+
+
+If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
+    
+    	# ssh-keygen -t rsa
  
 1. Login as root:
-
-    `$ sudo su -`
+    
+    	$ sudo su -
 
 2. Determine if .ssh/id_rsa exists:
-
-    `# ls ~root/.ssh/id_rsa`
+    
+    	# ls ~root/.ssh/id_rsa
 
 3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
 
-    `# ssh-keygen -t rsa`
 
-
+    
+    	# ssh-keygen -t rsa
 Additionally, to enable full VM functionality, install the required `qemu-kvm` package using the following command:
-    `sudo apt-get install -y qemu-kvm`
+    
+    	sudo apt-get install -y qemu-kvm
 
 **Note:** On Ubuntu 14.04, you must also install qemu-kvm before starting the seed.
 
@@ -140,13 +151,11 @@ To begin the installation:
 
 The download file is named: `Helion_Openstack_Community.tar.gz`
 
-3. Create a directory named `work`:
+3. Extract the installation software to the root user’s home directory:
 
-	`mkdir /root/work`
+    	# cd /root
+    	# tar zxvf /{full path to downloaded file from step 2}/Helion_Openstack_Community.tar.gz
 
-	`cd /root/work`
-
-4.  Extract the kit to the `work` directory:`tar zxvf /root/Helion_Openstack_Community.tar.gz`
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
@@ -223,9 +232,17 @@ From within the seed VM, you should be able to connect to the test guest or demo
         root@hLinux:~# ping <ip of demo vm>
 
 3. Verify you can ssh into the VM:
+	
 
-        root@hLinux:~# ethtool -K eth0 rx off tx off
-        root@hLinux:~# ssh root@<ip of demo vm> 
+	If you have installed on Ubuntu 13.10:
+
+    	root@hLinux:~# ethtool -K eth0 rx off tx off
+    	root@hLinux:~# ssh root@<ip of demo vm> 
+	If you have installed on Ubuntu 14.04:
+
+    	root@hLinux:~# ethtool -K eth0 rx off tx off
+    	root@hLinux:~# ssh root@<ip of demo vm> 
+
 
 
 
@@ -245,8 +262,10 @@ From the physical system you are running the install on, you should be able to c
 
 2. Obtain the passwords for the `demo` and `admin` users:
 
-      `root@hLinux:~# grep OVERCLOUD_DEMO_PASSWORD ~root/tripleo/tripleo-overcloud-passwords`
-      `root@hLinux:~# grep OVERCLOUD_ADMIN_PASSWORD ~root/tripleo/tripleo-overcloud-passwords`
+	`root@hLinux:~# grep OVERCLOUD_DEMO_PASSWORD ~root/tripleo/tripleo-overcloud-passwords`
+
+
+	`root@hLinux:~# grep OVERCLOUD_ADMIN_PASSWORD ~root/tripleo/tripleo-overcloud-passwords`
 
 3. Point your web browser on the physical host system to the overcloud Horizon console:
 
@@ -258,17 +277,8 @@ From the physical system you are running the install on, you should be able to c
 
 ### Connecting remotely to the Horizon console ### {#remoteconnect}
 
-For remote system installations where you cannot open a browser on the remote system, you can ssh tunnel from a local system to your remote one. This requires ssh access from the local system to the remote system. 
+For connecting remotely to the Horizon console from another networked machine on the same subnet, update the local machine’s routing table (Linux) or Hosts file (Windows) with the IP address of the Ubuntu machine hosting the Seed – pointing to the 192.0.8.0 subnet of the Horizon Console
 
-1. Establish the tunnel by issuing the command below on the local system:
-
-      `$ ssh -L 9999:<IP of overcloud controller>:80 <hostname or IP of remote system>`
-
-2. Point the web browser of the local system to the link below:
-
-        http://localhost:9999
-
-3. Use the user names and passwords obtained in the [Connecting to the Horizon console](#connectconsole) section to access the console.
 
 ## Issues and troubleshooting {#troubleshooting}
 
