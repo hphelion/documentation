@@ -102,7 +102,7 @@ Cinder API is a REST based interface to perform volume operations. As an end-use
 9.	Create cloned volumes
 10.	Copy images to volumes
 11.	Copy volumes to images
-12.	Volume migration(backend assisted).
+<!---12.	Volume migration(backend assisted).-->
 
 ### Scheduler {#scheduler}
 
@@ -127,7 +127,7 @@ Cinder provides the concept of volume types to represent differentiated storage 
 
 <a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume type mapping (opens in a new window)</a>
 
-The cloud administrator, you create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:  
+As a cloud administrator, you can create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:  
 
 
 **1. Low Cost, Low Performance, High Capacity Storage** (Bronze)
@@ -140,6 +140,12 @@ Then, as the cloud administrator, you need to create three volume types &ndash; 
 
 Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping these backends to different volume types as suggested above.
 
+##High Level View of the StoreVirtual Integration
+
+The following diagram shows the workflow of StoreVirtual integration. 
+
+<a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual Integration diagram (opens in a new window)</a>
+
 
 ##Deploying HP StoreVitual Storage Systems {#deployment-vsa}
 <a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
@@ -147,17 +153,18 @@ Differentiated storage offerings based on performance and quality can be realize
 ###Prerequisites {#prerequisite-vsa}
 Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
 
-* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that there are no Baremetal servers available for provisioning.
+* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in Undercloud server does not have any free nodes.This is needed to register a new node which matches the disk requirements for StoreVirtual and is picked by installer for StoreVirtual deployment.
+
  
 * Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first operating system disk where the OS image is deployed is not considered for StoreVirtual storage.
 
-* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. For more details, refer – [**Storevirtual documentation LINK**]
+* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!---For more details, refer – [**Storevirtual documentation LINK**]-->
 
 * For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have at least two(2) operating system disks(/dev/sda, /dev/sdb)
 
-* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) operating system disks(/dev/sda, /dev/sdb,/dev/sdc) - /dev/sdb should be Solid State Drive(SSD).
+* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) operating system disks(/dev/sda, /dev/sdb,/dev/sdc). The operating system disk /dev/sdb should be a Solid State Drive(SSD).
 
-* The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB or the RAID stripe configuration will fail. For more details, refer [**storevirtual documentation LINK**]
+* The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB or the RAID stripe configuration will fail. <!---For more details, refer [**storevirtual documentation LINK**]-->
 
 * Seed Cloud is installed and running
 
@@ -174,6 +181,8 @@ To deploy HP StoreVirtual, you need to first enroll the Baremetal server and the
          sudo -i
          source stackrc
 
+	**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that #ironic node-list in Undercloud server does not have any free nodes.
+
 2. Register the new Baremetal in the Ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your Baremetal settings. 
 
 		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
@@ -186,7 +195,7 @@ To deploy HP StoreVirtual, you need to first enroll the Baremetal server and the
  
         ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
-4. List the Baremetal nodes
+4. List the Baremetal nodes, this will also list the newly added nodes.
 
 		ironic node-list
 
@@ -209,14 +218,12 @@ To deploy HP StoreVirtual, you need to first enroll the Baremetal server and the
 9. Apply the configuration
 
 		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
-10. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
+<!---10. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
 
 			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
    			 echo "HP - configuring overcloud - $(date)"
-			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END
-
-11. Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified, are installed. 
+			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END-->
+10.Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified, are installed. 
 
      	bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 
@@ -226,13 +233,8 @@ To verify that the StoreVirtual is deployed, perform the following checks:
 
 1. Login to Undercloud from seed
 
-		ssh root@<Undercloud IP Address>
-	
-
-		ssh heat-admin@<IP Address>
- 		sudo -i
- 		source stackrc   **SHOULD IT NOT BE THIS???**
- 
+		ssh heat-admin@<Undercloud IP Address>
+ 		 
 2. Source stackrc file and list the deployed StoreVirtual nodes
 
 		 source stackrc
@@ -242,7 +244,7 @@ To verify that the StoreVirtual is deployed, perform the following checks:
 3. Login to the StoreVirtual system from the seed using the IP address retrieved 
 from the above steps
 
-		ssh heat-admin@<StoreVirtual system IP Address><**IS THIS CORRECT????**>
+		ssh heat-admin@<StoreVirtual system IP Address>
 
 4. Check the log files
 
@@ -311,15 +313,23 @@ To create a cluster, do the following:
 
     By default, the CMC is configured to discover the StoreVirtual nodes in the subnet on which it is installed. You can manually add the nodes also.
 
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page (opens in a new window)</a>
+
 2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed.</br>
 
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find Systems option (opens in a new window)</a>
+
 3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.
+
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Add option (opens in a new window)</a>
+
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find option (opens in a new window)</a>
 
 4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 
-6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the detials of the selected node.
+6. (Optional) Click **Edit** in the Find Systems dialogue box to modify the details of the selected node.
 
 7. (Optional) Click **Remove** in the Find Systems box to delete a node.
 
