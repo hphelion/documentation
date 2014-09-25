@@ -121,6 +121,7 @@ If the key does not exist, create one, omitting a passphrase and accepting the d
 
     
     	# ssh-keygen -t rsa
+<!-- this may be removed as far as install qemu-kvm-->
 Additionally, to enable full VM functionality, install the required `qemu-kvm` package using the following command:
     
     	sudo apt-get install -y qemu-kvm
@@ -143,7 +144,7 @@ To begin the installation:
 
 1. Log in to your system as root. 
 
-    	sudo su -
+    	$ sudo su -
 
 2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 
@@ -236,7 +237,7 @@ From within the seed VM, you should be able to connect to the test guest or demo
 
 	If you have installed on Ubuntu 13.10:
 
-    	root@hLinux:~# ethtool -K eth0 rx off tx off
+    	
     	root@hLinux:~# ssh root@<ip of demo vm> 
 	If you have installed on Ubuntu 14.04:
 
