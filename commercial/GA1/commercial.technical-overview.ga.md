@@ -304,9 +304,6 @@ The OpenStack services are deployed in a three node Controller cluster, that ens
 
 For more details on HA configuration, refer to [HP Helion OpenStack High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
-## Security architecture ## {#security-architecutre}
-
-infor required
 
 
 ## Installation and configuration ## {#install-configure}
