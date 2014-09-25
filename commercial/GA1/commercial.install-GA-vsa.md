@@ -41,6 +41,7 @@ This page provides detailed information on HP StoreVirtual for realizing cloud s
    * [Installation](#install)
 * [Creating  and adding a StoreVirtual Cluster to a new Management Group](#create-cluster) 
 * [Adding a StoreVirtual node to an existing Management Group](#adding-a-node)
+* [Next Steps](#next-steps)
 
 
 ## HP StoreVirtual overview {#storevirtual-overview}
@@ -335,7 +336,11 @@ To create a cluster, do the following:
 
 8. Click **Close** to return to the Home page.<br> The discovered nodes are displayed under **Available Systems** option in the left panel.
 
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Discovered Nodes Under Available Systems (opens in a new window)</a>
+
 9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br> Create Management page is displayed.
+
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Create Management Page (opens in a new window)</a>
 
 10.  In the **Management Group Name** box, enter a name for the management group and click **Next** to display the Add Administrative User page.
 
@@ -363,9 +368,11 @@ To create a cluster, do the following:
 
 16. Click **Next** to go to the next page.
 
-17. (Optional) Click the check box displayed against **Skip Volume Creation**.
+17. (Optional) Click the checkbox displayed against **Skip Volume Creation**.
 
 18. Click **Next**.<br>The Management Group and Cluster is created and displays in the Home page of CMC.
+
+	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page with the Cluster (opens in a new window)</a>
 
 
 ## Adding HP StoreVirtual node to an existing Management Group ##{#adding-a-node}
@@ -399,21 +406,21 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 
 
-<!--## Next Steps
+## Next Steps {#next-steps}
 
-- Configure HP StoreVirtual 
--  **(REQUIRED)**. 
+- [Working with HP StoreVirtual](/helion/openstack/ga/undercloud/storage/storevirtual/) **REQUIRED**
 
-	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
+	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
-	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+	For detailed intructions, see the  document. -->
 
-- Install DNS as a service (DNSaaS) (Optional).
+- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/) **REQUIRED**
 
-	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+	<!---Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
+	For detailed installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
+<!---[Sirius CLI](/helion/openstack/ga/sirius-cli/) **OPTIONAL**-->
 
 <!---## Next step
 
