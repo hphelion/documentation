@@ -61,6 +61,19 @@ Perform the following steps to remove disks from ring:
 
 		#ringos view-ring -f /root/ring-building/object-1.builder 
 
+	Sample output disks in a current object-1.builder file is shown as follows:
+
+		object-1.builder, build version 9
+		1024 partitions, 3.000000 replicas, 1 regions, 3 zones, 9 devices, 100.00 balance
+		The minimum number of hours before a partition can be reassigned is 1
+		Devices:    id  region  zone      ip address  port  replication ip  replication port      name weight partitions balance meta
+		             0       1     1      192.0.2.29  6000      192.0.2.29              6000 a1410063335 100.00          0 -100.00
+		             1       1     1      192.0.2.29  6000      192.0.2.29              6000 b1410063336 100.00          0 -100.00
+		             2       1     1      192.0.2.29  6000      192.0.2.29              6000 c1410063336 100.00          0 -100.00
+		             3       1     2      192.0.2.30  6000      192.0.2.30              6000 a1410063357 100.00          0 -100.00
+		             4       1     2      192.0.2.30  6000      192.0.2.30              6000 b1410063357 100.00          0 -100.00
+
+
 5. Identify the disk to be removed from the list.
 
 **Recommendation**:
@@ -70,30 +83,33 @@ Perform the following steps to remove disks from ring:
 
 6.Set weight of the disk
 
-		#ringos set-weight -f object-1.builder -s d<value> -w <value>
+		# ringos set-weight -f object-1.builder -s d<disk ID> -w <weight>
 
+Sample output of weight of the disk is shown as follows:
+
+	d7r1z3-192.0.2.31:6000R192.0.2.31:6000/b1410063386_"" weight set to 75.0
 
 7.Re-balance the ring
 
-		ringos rebalance-ring -f /root/ring-building/object-1.builder
+		# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 **Note**: Wait for min&#095;part_hours before another re-balance succeeds.
 
 8.List all the Swift nodes
 
-		ringos list-swift-nodes -t all
+		# ringos list-swift-nodes -t all
 		
 		
 9.Copy `object-1.ring.gz` file to all nodes
 
-	ringos copy-ring -s /root/ring-building/account.ring.gz -n <IP address of Swift nodes>
+	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
 	
 
-10.Repeat steps from 6 - 8 with the weights 50, 25, and 0 (w= 50, 25, 0).
+10.Repeat steps from 6 - 9 with the weights set to 50, 25, and 0 (w= 50, 25, 0).
 
 11.Once weight is set to 0, remove the disk from the ring
 
-	ringos remove-disk-from-ring -f object-1.builder -s d<disk ID>
+	# ringos remove-disk-from-ring -f object-1.builder -s d<disk ID>
 
 
 

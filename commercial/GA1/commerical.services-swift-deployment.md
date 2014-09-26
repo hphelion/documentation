@@ -159,7 +159,7 @@ Sample output of list of Swift nodes is as follows:
 
 4.List the disk available on each nodes
 
-		#ringos list-disks -n <IP address of Swift node> 
+		#ringos list-disks -n <Swift nodes IP address> 
  
 Sample output of the available disk on the node **192.0.2.29** is as follows:
 
@@ -220,7 +220,7 @@ In the following example , we use a single zone with each of these 3 Swift nodes
 
 3.Add disk to the ring. 
 
-	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <Port> -d <Disk label> -w <Weigh> -r <Region> -z <Zone>
+	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <port> -d <disk label> -w <weigh> -r <region> -z <zone>
 
 **Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#preparing-disks-on-Swift-nodes)
 

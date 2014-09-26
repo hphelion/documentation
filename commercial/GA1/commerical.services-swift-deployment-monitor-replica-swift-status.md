@@ -23,7 +23,7 @@ PageRefresh();
 
 # Replication Status using Icinga
 
-Using the "icinga" service running in the undercloud the cloud admin can monitor the replication status of Swift. 
+Using the "icinga" service running in the Undercloud the cloud admin can monitor the replication status of Swift. 
 
 ##Prerequisite
 
@@ -34,12 +34,7 @@ Using the "icinga" service running in the undercloud the cloud admin can monitor
 
 ##Monitoring Swift Replication Status
 
-You can monitor the time of the completed scan by a replicator. Following are the possible value for the replication status:
-
-* OK
-* WARNING
-* FAIL
-* UNKNOWN
+You can monitor the time of the completed scan by a replicator. 
 
 Perform the following steps to monitor the replication status:
 
@@ -63,7 +58,35 @@ The page navigates to Service Status Details For Host <Swift node IP>.
 
 Now, you can view the replication status of the selected Swift node.
 
+Refer the following table for the status and message details.
 
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+	<th>Status</th>
+	<th><center>Message</center></th>
+    <th><center>Cause/Resolution</center></th>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>OK</td>
+	<td>Ok</td>
+    <td></td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>WARNING </td>
+	<td>Replication not progressing</td>
+    <td>An account, container or object replicator process has not finished a complete scan recently(elapsed time exceeded the threshold defined) . Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue..</td>
+</tr>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>FAIL </td>
+	<td>Replication never completed</td>
+    <td> The named replication process has never run on this node. Check that the replicator has been configured and started. Examine the log files to see if the replicator process has reported problems.</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>UNKNOWN</td>
+	<td>No Applicable</td>
+    <td></td></tr>
+</table>
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
