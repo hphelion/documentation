@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174;: Technical Overview"
 permalink: /helion/openstack/technical-overview/
-product: commercial.ga
+product: commercial
 
 ---
 <!--PUBLISHED-->
@@ -361,7 +361,7 @@ This baremetal installation is designed to deliver an open source OpenStack solu
 * At least 1 overcloud Compute node 
 
 
-[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack beta. 
+[Learn more]( /helion/openstack/install/overview/) about installing and configuring HP Helion OpenStack beta. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

@@ -15,7 +15,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <div style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table width="560px" border="0" cellpadding="2" cellspacing="2" style="background-color: #ffffff;">
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/openstack/ga/">HP Helion OpenStack&reg;</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/openstack/">HP Helion OpenStack&reg;</a></span></p>
 </td>
 <td>OpenStack&#174; technology coupled with a Linux operating system designed for administrators and developers who want a hardened enterprise-grade product set that speeds deployment and simplifies management of private, public or hybrid clouds and infrastructure services for developers, enterprises and service providers. </td>
 </tr>
