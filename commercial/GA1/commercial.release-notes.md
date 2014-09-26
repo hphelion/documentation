@@ -25,10 +25,10 @@ PageRefresh();
 Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0, including known issues and workarounds, and where to find further information on the product release:
 
 * [Features in HP Helion OpenStack](#features) 
-* [Recommendations for HP Helion OpenStack](#recommendations) ***WHY???
+* [Recommendations for HP Helion OpenStack](#recommendations)<!-- ***WHY??? -->
 * [For further information](#for-further-information) 
 
-##Features in HP Helion OpenStack## {#features}
+##Key Features of HP Helion OpenStack<a name="features"></a>
 
 **OpenStack Juno Services** - The full set of standard OpenStack services is available for you to use: Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, Heat, Ceilometer, and TripleO (Ironic) for deployment.
 
@@ -44,14 +44,14 @@ Thank you for your interest in HP Helion OpenStack! This document provides an ov
 
 **HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
 
-##Recommendations for HP Helion OpenStack## {#recommendations}
+##Recommendations for HP Helion OpenStack<a name="recommendations"></a>
 
-This section describes the HP recommendations for optimizing performance, utility, and functionality with this software version. We have also provided information about some known issues for reference purposes. This section contains:
+This section describes the current recommendations for optimizing performance, utility, and functionality with this software version. 
 
 * [Best practices recommendations](#best-practices) for optimizing functionality, performance and reliability 
 * [Known issues](#known-issues) in this release 
 
-###Recommendations ### {#best-practices} 
+###Best Practices<a name="best-practices}"></a>
 
 HP recommends the following best practices for this software version.
 
@@ -73,15 +73,17 @@ HP recommends the following best practices for this software version.
     - Uninstall any packages that you no longer require.
 
 * For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:
-    - sudo service nova-compute restart
-    - sudo service nova-scheduler restart
-    - sudo service nova-conductor restart
-    - sudo service neutron-openvswitch-agent restart
+
+    	sudo service nova-compute restart
+    	sudo service nova-scheduler restart
+    	sudo service nova-conductor restart
+    	sudo service neutron-openvswitch-agent restart
+
 
 * After deleting a cloud or an entire HP Helion OpenStack Commercial installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that might have been stored there. 	
 
 
-###Known issues in this release### {#known-issues}
+###Known issues in this release<a name="known-issues"></a>
 
 The following are the known issues for HP Helion OpenStack:
 
@@ -100,7 +102,7 @@ The following are the known issues for HP Helion OpenStack:
         service rsyslog restart
         
 
-##For further information## {#for-further-information}
+##For further information<a name="for-further-information"></a>
 
 For additional information on HP Helion OpenStack, OpenStack Cloud Software and TripleO:
 
@@ -113,7 +115,7 @@ For additional information on HP Helion OpenStack, OpenStack Cloud Software and 
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Report issues with HP Helion OpenStack.
 
 
-###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
+###Legal Notices and Disclaimers<a name="legal-notices-disclaimer"></a>
 
 <!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/ga/commercial-3rd-party-license-agreements/).-->
 

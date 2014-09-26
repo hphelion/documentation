@@ -25,11 +25,11 @@ PageRefresh();
 
 Based on OpenStack Glance, the HP Helion OpenStack Image Operations service is a web service for managing virtual machine images. It provides a set of RESTful APIs that enables querying/updating of image metadata as well as retrieval of the actual image data.
 
-With the Image Operations service you can work with image files, which are virtual disk image files that the [Compute](/helion/openstack/ga/services/compute/overview) service can use to create a virtual machine.
+With the Image Operations service you can work with image files, which are virtual disk image files that the [HP Helion Compute](/helion/openstack/ga/services/compute/overview) service can use to create a virtual machine.
 
 Each image has a name, an unique identifier (UUIDs in hexadecimal string notation) and a specific disc and container format.
 
-## Key terms## 
+## Key terms 
 
 - **Image files** -- An image file refers to a virtual disk image file that the Compute service can load up to create a virtual machine.
 
@@ -67,28 +67,28 @@ Each image has a name, an unique identifier (UUIDs in hexadecimal string notatio
 
 To [perform tasks using the Image Operations service](#howto), you can use the dashboard, API or CLI.
 
-### Using the dashboards {#UI}
+### Using the dashboards<a name="UI"></a>
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Image Operations service.
 
-###Using the API ### {#API}
+###Using the API<a name="API"></a>
  
 You can use a low-level, raw REST API access to HP Image Operations service. See the [OpenStack Image Service API v2.0 Reference](http://developer.openstack.org/api-ref-image-v2.html).
 
-###Using the CLI### {#cli}
+###Using the CLI<a name="cli"></a>
 
 You can use any of several command-line interface software to access HP Image service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/glanceclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 <!---
-## How To's with the HP Helion OpenStack Image Operations Service ## {#howto}
+## How To's with the HP Helion OpenStack Image Operations Service<a name="howto"></a>
 
  Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](
 http://docs.openstack.org/cli-reference/content/glanceclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-image-v2.html).
 
-### Tasks performed by users ### {#user}
+### Tasks performed by users<a name="user"></a>
 
 The following Image Operations service tasks are usually performed by someone with the *user* role.
 
@@ -100,7 +100,7 @@ Use the Image Operations service to create, delete, or modify a private instance
 
 Use the Image Operations service to modify the metadata for a private image.
 
-### Tasks performed by an Administrator ### {#admin}
+### Tasks performed by an Administrator<a name="admin"></a>
 
 The following Image Operations service tasks are usually performed by someone with the *administrator* role.
 
