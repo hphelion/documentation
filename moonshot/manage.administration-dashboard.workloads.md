@@ -325,7 +325,7 @@ Do the following:
 1.	In the Updates and Extensions page, click **Publish** against the document to publish.<br>
 Publish dialog box is displayed. The Update Name and Update Version are prepopulated.</br>
 
-2.	From the **Openstack Scope** drop-down list, select *Public*.<br>
+2.	From the **OpenStack Scope** drop-down list, select *Public*.<br>
 It displays the following options:</br>
 
     * Private: This means that the update is private to this project.

@@ -97,10 +97,6 @@ The DEA role is comprised of a number of processes:
 -   fence: Responsible for the management of application containers using Docker.
 -   apptail: Streams application logs via Logyard to various log drains.
 
-In previous versions of Application Lifecycle Service, staging and running were handled by
-separate components (Stager and DEA respectively), but these roles have
-been combined in version 3.0 and later.
-
 The Docker image used for the containers can be customized by admins.
 
 Service Roles[](#service-roles "Permalink to this headline")
@@ -114,7 +110,6 @@ services can be run separately on their own nodes, or grouped together.
 -   mysql
 -   postgresql
 -   redis
--   mongodb
 
 ### Other data services:[](#other-data-services "Permalink to this headline")
 

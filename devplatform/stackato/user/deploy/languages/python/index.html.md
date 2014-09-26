@@ -25,7 +25,7 @@ application:
     [example-python-django](https://github.com/Stackato-Apps/example-python-django)
     Application Lifecycle Service sample has the following simple *Procfile*:
 
-        web: gunicorn helion.wsgi -b 0.0.0.0:$PORT
+        web: gunicorn stackato.wsgi -b 0.0.0.0:$PORT
 
 This buildpack uses Python 2.7 by default. To specify Python 3.3, create
 a *runtime.txt* file setting the version (i.e. `python-3.3`) and use the \$PYTHON\_VERSION environment variable in the
@@ -33,7 +33,7 @@ Procfile `web:` command. For example:
 
     web: python$PYTHON_VERSION app.py
 
-See also: <https://github.com/HP/helion-buildpack-python>
+See also: <https://github.com/ActiveState/stackato-buildpack-python>
 
 Python with the Legacy Buildpack[](#python-with-the-legacy-buildpack "Permalink to this headline")
 ---------------------------------------------------------------------------------------------------
@@ -237,7 +237,7 @@ requirements to stackato.yml:
         - tornado
         - pymongo
 
-See the [stackato.yml of
+See the [manifest.yml of
 tornado-chat-mongo](https://github.com/Stackato-Apps/tornado-chat-mongo/blob/master/stackato.yml)
 sample app for an example.
 
@@ -284,7 +284,7 @@ First, clone the <https://github.com/Stackato-Apps/werkzeug-debugger>
 repository.
 
 Then add the following `BUILDPACK_URL` to the
-*stackato.yml* file:
+*manifest.yml* file:
 
     env:
       BUILDPACK_URL: git://github.com/HP/heroku-buildpack-pypy.git

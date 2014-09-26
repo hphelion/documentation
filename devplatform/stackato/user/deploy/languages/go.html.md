@@ -74,11 +74,11 @@ a file called .godir, in your project root, containing the path from
 
     example.com/hello
 
-#### stackato.yml[](#stackato-yml "Permalink to this headline")
+#### manifest.yml[](#manifest-yml "Permalink to this headline")
 
 This file is optional, as the framework will automatically be detected
 by Application Lifecycle Service. However, it can still be used to set the app name,
-configure settings, create services, etc. See the [*stackato.yml
+configure settings, create services, etc. See the [*manifest.yml
 docs*](/als/v1/user/deploy/stackatoyml/#stackato-yml).
 
 > name:

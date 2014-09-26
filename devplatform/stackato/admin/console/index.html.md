@@ -87,7 +87,7 @@ the license agreement.
 **Note**
 
 **The password you choose here becomes the login password for the**
-`helion` **user on the VM** (e.g. for
+`stackato` **user on the VM** (e.g. for
 `ssh` access).
 
 Once you've logged in, you can begin to add other users and admins,
@@ -101,10 +101,7 @@ See [*Kato Command
 Reference*](/als/v1/admin/reference/kato-ref/#kato-command-ref) for a full list
 of options.
 
-The Application Lifecycle Service Management Console will periodically send non-identifying
-pingbacks (Application Lifecycle Service version number and UUID) to HP
-servers to help us improve the web console experience. You can disable
-this by setting `theme_settings['pingback_allowed'] = false;` in the *settings.js* file described in the [*Theming and
+The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting `theme_settings['pingback_allowed'] = false;` in the *settings.js* file described in the [*Theming and
 Customization*](/als/v1/admin/console/customize/#customize) section.
 
 Welcome[](#welcome "Permalink to this headline")
@@ -239,12 +236,6 @@ categories:
     class names and IDs.
 
 ### Quota Definitions[](#quota-definitions "Permalink to this headline")
-
-**Note**
-
-In Application Lifecycle Service 2.10 and earlier, every User and Group had a quota. In 3.0
-(Cloud Foundry v2) Quota Definitions are applied at the Organization
-level (i.e. members of an organizations share its quota).
 
 Lists the Quota Definitions available to apply to Organizations on the
 system.
