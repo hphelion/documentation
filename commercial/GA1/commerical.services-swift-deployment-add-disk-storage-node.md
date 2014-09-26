@@ -73,7 +73,7 @@ In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
 
 1. Rebalance the ring using the following command:
 
-	ringos rebalance-ring -f /root/ring-building/object-1.builder
+		ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 This will generate a **object-1.ring.gz** file.
 

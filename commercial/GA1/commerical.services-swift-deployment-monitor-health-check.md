@@ -44,7 +44,7 @@ Icinga service, which runs in the Undercloud, helps cloud admin to monitor healt
 
 Perform the following steps to monitor the health status of Swift status:
 
-1. In the Undercloud, login to Icinga Dashboard <http://<**Undercloud_IP**>/icinga/>. Login credentials are:
+1. In the Undercloud, login to Icinga Dashboard <http://<Undercloud_IP>/icinga/>. Login credentials are:
 		
 	* Username- icingaadmin
 	* Password- icingaadmin 
