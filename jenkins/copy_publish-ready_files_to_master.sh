@@ -38,7 +38,10 @@ s=" "
 MDFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.md" `
 do 
-MDFILES_NOT_DESIGNATED=$X$s`egrep -L "\-\-PUBLISH|\-\-UNDER REVISION" *.md`; 
+
+MDFILES_NOT_DESIGNATED=$X$s`grep -vL "\-\-PUBLISH|\-\-UNDER REVISION" $i`; 
+
+echo "$MDFILES_NOT_DESIGNATED"
  
 done
  
