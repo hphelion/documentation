@@ -27,7 +27,9 @@ PageRefresh();
 ## Virtual Environments
 
 
-Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. In ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an Overcloud ESX cluster. 
+Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. 
+
+When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an overcloud ESX cluster. 
 
 ###Manage virtual environment
 

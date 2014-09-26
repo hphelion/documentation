@@ -19,22 +19,17 @@ PageRefresh();
 
 #Pyringos
 
-Pyringos tool run on the Undercloud and helps to deploy Swift cluster.
+The Pyringos tool runs on the Undercloud and helps to deploy Swift clusters.
 
-You can use the following commands using the pyringos Client CLI package in the Undercloud.
+You can use the following commands using the Pyringos Client CLI package in the undercloud.
 
-* [Help Command](#help)
-
+* [Help Commands](#help)
 * [Ring Commands](#ring)
-
 * [Node Commands](#node)
-
 * [Disk Commands](#disk)
-
 * [Miscellaneous Commands](#misc)
 
-
-##Help Command {#help}
+##Help Commands<a name="help"></a>
 
 ###Help
 
@@ -53,9 +48,9 @@ You get two sets of arguments- Positional and Optional.
 
 The following command line are used to perform ringos activities.
 
-## Ring Commands {#ring}
+## Ring Commands<a name="ring"></a>
 
-###Create ring  {#create-ring }
+###Create ring<a name="create-ring"></a>
 
 Create a ring based on part&#095;power, replicas, and min&#095;part&#095;hours.
 
@@ -70,7 +65,7 @@ Create a ring based on part&#095;power, replicas, and min&#095;part&#095;hours.
 	Created ring /root/ring-building/object-1.builder
 
 
-### Add disk to a ring {#add-disk-to-ring}
+### Add disk to a ring<a name="add-disk-to-ring"></a>
 Adding a ring to a disk.
 
  	ringos add-disk-to-ring -f <BUILDER> -i <IP> [-p <PORT>] -d <DISK> -w <WEIGHT> [-r <REGION>] [-z <ZONE>] 
@@ -92,7 +87,8 @@ In the following example a disk is added to a ring:
 	Added disk 192.0.2.29:a1410063335 to ring
 
 
-###View a ring {#view-ring}
+###View a ring<a name="view-ring"></a>
+
 View contents of a given ring.
 
 	ringos view-ring -f <BUILDER>
@@ -113,14 +109,13 @@ In the following example, you can view the content of the ring
 	  0         1    1               192.0.2.29  6000      192.0.2.29      6000        a1410063335    100.00          0-100.00
 
  
-###Re-balance a ring {#rebalance-ring}
+###Re-balance a ring<a name="rebalance-ring"></a>
 Re-balances a given ring after adding disk to the ring.
 
 	ringos view-ring -f <BUILDER>
 
-###copy-ring  {#copy-ring}
-
-Copies ring the the available nodes.
+###Copy a ring <a name="copy-ring"></a>
+Copies ring to the available nodes.
 
 	 ringos copy-ring -s <RING> -n <NODE> 
 
@@ -129,9 +124,9 @@ For example:
 	ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift nodes>
 
 
-### Remove a disk from the ring {#remove-disk-from-ring}
-
-Incase of failure you can removes a given disk from ring.
+### Remove a disk from the ring<a name="remove-disk-from-ring"></a>
+ 
+In case of failure you can removes a given disk from ring.
 
 			ringos remove-disk-from-ring -f <BUILDER> -s <SEARCH_VAL>
 
@@ -140,42 +135,43 @@ For example:
 	ringos remove-disk-from-ring -f /root/ring-building/object-1.builder -s d0
 
 
-### Validate-ring       
+###Validate a Ring<a name="validate-ring"></a>
+        
 
 Run validate routine on the ring.
 
   	ringos validate-ring -f <BUILDER>
 
 
-###search-ring
+###Search for a Ring<a name="search-ring"></a>
+
 
  Shows information about matching devices.
  
 	ringos search-ring -f <BUILDER> -s <SEARCH_VAL>
 
-### Write a ring 
+### Write to a Ring<a name="write-ring"></a>
 
  Writes the builder contents onto a ring file.
 
 	 ringos write-ring -f <BUILDER>
 
-
-##Node Commands {#node}
-
-###List Swift nodes {### list-swift-nodes ###}
+##Node Commands<a name="node"></a>
+ 
+###List Swift nodes<a name="list-swift-nodes"></a>
 
 List the available Swift nodes (starter, contianer, proxy, and object nodes) in the cloud.
 
 	ringos list-swift-nodes -t <TYPE>
 
-###List disks in nodes  {#list-disks}
+###List disks in nodes<a name="list-disks"></a>
 List disks and size of the disks on a given node.
 	
 	ringos list-disks -n <NODE> -u heat admin
 	
-##Disk Commands {#disk}
+##Disk Commands<a name="disk"></a>
 
-###format-disks {#format-disks}
+###Format and Mount Disks <a name="format-disks"></a>
 To format and mount all the available disks on a node.
 
 	ringos format-disks -n <IP address of the node> -u heat-admin -d all
@@ -185,7 +181,7 @@ To format a specific disk.
 	ringos format-disks -n <IP address of the node> -u heat-admin -d <DISK> [-l <LABEL>]
 
 
-###set weight to disk
+###Set weight to disk<a name="weight-disk"></a>
 
 To set the weight gradually or remove gradually.
 
@@ -195,7 +191,7 @@ For example:
 
 	ringos set-weight -f object-1.builder -s d5 -w 0
 
-##Miscellaneous Commands {#misc}
+##Miscellaneous Commands<a name="misc"></a>
 
 ###Set replica
 
@@ -217,7 +213,7 @@ Set min_part_hours for the given ring
 	ringos set-min-part-hours -f <BUILDER> -m <MIN_PART_HOURS>
 
 
-##Bash completion   
+###Bash completion   
 
 Prints all of the commands and options to the standard output.
 

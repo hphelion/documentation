@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;  Troubleshooting
 
-HP Helion Openstack is an OpenStack technology couple with the version of Linux&reg; provided by HP. Different usage scenarios might lead to abnormal system behavior or known issues. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
+HP Helion Openstack is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
 

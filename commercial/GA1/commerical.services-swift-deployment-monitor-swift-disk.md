@@ -27,19 +27,14 @@ Icinga service, which runs in the Undercloud, helps cloud admin to monitor the d
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed and has the following: 
-
-	* Seed
-	* Undercloud
-	* Overcloud 
-	* Two Swift nodes 
-2. Swift Storage node(s) are active and running
+1. HP Helion OpenStack cloud is successfully deployed.  
+2. Swift node(s) are active and running
 3. Icinga service is active and running in the Undercloud
 
 
-##Monitoring Usage of Swift Disk
+##Monitoring Disk Usage of Swift 
 
-The usage of Swift disk are monitored based on the mount of the file system used by the servers. It also verifies the percent usage for the devices used by Swift (/srv/node). Other file systems (/usr or /var) are not monitored. 
+This checks that the file systems used by the servers are mounted. Also it checks the disk usage(percentage) for the devices used by Swift (/srv/node). Other file systems such as /usr or /var is not monitored. 
 
 
 Perform the following steps to monitor the usage of Swift disk:
@@ -55,41 +50,17 @@ Perform the following steps to monitor the usage of Swift disk:
 
 
 
-3.In the Host column, click the icon icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
+3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
 <img src ="media/swift_icinga_view-details.png"/>
 
-**Note**: To reconfirm the Swift storage node see [Reconfirm storage swift node](#storage-swift)
 
 
-The page navigates to Service Status Details For Host <Swift node IP>. 
+The page navigates to Service Status Details For Host < Swift node IP>. 
 
 <img src ="media/swift_icinga-disk-usage"/>
 
 Now, you can view the disk usage of the selected Swift node.
-
-
-4.(Optional)Click the name of the service listed in the table. The page navigated to Service State Information. It provides the detailed information of the service.
-
-
-##Reconfirm storage swift node {#storage-swift}
-
-You can also reconfirm the Swift storage IP:
-
-a. ssh to the undercloud 
-    
-		ssh heat-admin<Undercloud IP address> 
-
-b. Source stack RC using the following command:
-
-     # Source stackrc 
-
-c. Use the following command to list the available Swift nodes
-    
-     ringos  list-swift-nodes
-
-A list of swift nodes will be displayed.
-
 
 
 

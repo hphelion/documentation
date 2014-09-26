@@ -29,18 +29,13 @@ It is recommended to use proxy node to store account, container objects based on
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed and has the following: 
-
-	* Seed
-	* Undercloud
-	* Overcloud 
-	* Starter Swift nodes (which is functional)
+1. HP Helion OpenStack cloud is successfully deployed 
 2. Scale-out object-ring:1 is deployed
 3. Scale out proxy node is deployed
 
 **IMPORTANT**:  
  
-*  Stored the generated rings at multiple location. These rings should be consistent all across nodes.
+* All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes. 
 
 * Take a backup of rings before any operation.
 
@@ -52,7 +47,7 @@ Perform the following steps to add Swift disk to a ring:
 
 1. Login to Undercloud 
 
-		ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin<Undercloud IP address> 
 		#sudo -i
 
 2. Change the directory to ring builder

@@ -247,40 +247,6 @@ If you intend to use custom IP addresses and a VLAN provider network for externa
 		export EXTERNAL_NETWORK_GATEWAY=15.126.52.1
 		#export NeutronPublicInterfaceRawDevice=eth2
 
-2. Edit `overcloud_neutron_dhcp_agent.json` located at 
-`/tripleo/hp_passthrough` and add the following lines under `dhcp_delete_namespaces`:
-
-		{""option"":""enable_isolated_metadata"",""value"":""True""},
-		{""option"":""dnsmasq_dns_servers"", ""value"":""10.1.0.20""}
-
-	After the changes, the file will look like as shown below, where 10.1.0.20 is the local DNS server.
-
-		---------------------------------------------------------
-		{""dhcp_agent"":
-			{""config"":
-			[
-				{""section"":""DEFAULT"",
-				""values"":
-					[
-						{""option"":""dhcp_delete_namespaces"",""value"":""True""},
-						{""option"":""enable_isolated_metadata"",""value"":""True""},
-						{""option"":""dnsmasq_dns_servers"", ""value"":""10.1.0.20""}
-					]
-				}
-			]
-		}
-		---------------------------------------------------------
-
-3. Edit `overcloud_neutron_ml2_conf.json` located at `/tripleo/hp_passthrough` and modify the following lines where `300:398` is the VLAN range for the environment.
-
-	Line no. 13
-	Default - ""value"": ""vxlan,vlan""
-	After modification - ""value"": ""vlan""
-
-	Line no. 32
-	Default - ""value"": ""physnet1""
-	After modification - ""value"": ""physnet1:300:398""
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/).

@@ -24,24 +24,20 @@ PageRefresh();
 
 #Updates and Extensions
 
-Updates and extensions provides a mechanism to download and install the content and updates for the Overcloud.
+HP provides a simple mechanism to download and install content and updates for the overcloud.
 
-* [Signup for Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
-
+* [Register on the Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 * [Configure credentials](#configcre)
-
 * [Import and install](#import-and-install)
-
 * [Download a package](#download-a-package)
 
-
-## Signup for Cloud OS Distribution Network Access {#Signup-for-Cloud-Distribution-Network}  
+##Register for Cloud OS Distribution Network Access<a name="Signup-for-Cloud-Distribution-Network"></a>
 
 You cannot access the updates from the HP Helion Horizon Undercloud Dashboard unless you are a registered user.
 
-Perform the following steps to Sign up to the Cloud OS Distribution Network:
+To register on the Cloud Distribution Network:
 
-1.  On the HP Helion Horizon Undercloud dashboard, click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
+1.  On the HP Helion Horizon Undercloud dashboard, click **Admin** Tab in the left panel.
 
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 
@@ -60,15 +56,14 @@ The page navigates to HP Helion Product Catalog. Do the following:</br>
 
 9. Click **Submit**.<br>The credentials are authenticated and the account is created.
 
-Now, you can configure your credentials.
+Once you register yourself on the HP Helion Product Catalog, you are required to configure your 
+credentials.
 
-##Configure credentials {#configcre}
+##Configure credentials<a name="configcre"></a>
 
-Once you register yourself on the HP Helion Product Catalog, you are required to configure your credentials.
+To configure your credentials:
 
-Perform the following steps to configure your credentials:
-
-1.  On the HP Helion Horizon Undercloud dashboard, click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
+1.  On the HP Helion Horizon Undercloud dashboard, click **Admin** Tab in the left panel.
 
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 
@@ -95,7 +90,7 @@ To import a package that is stored on your local system, do the following:
 
 3.	Click **Import** displayed at the top right corner of the page. An import dialog box is displayed.
 
-4.	Click **Browse** to select and import the **.csu** file.<br>The imported file is displayed in the Import dialog box.</br> Note: Only CSU file is supported.
+4.	Click **Browse** to select and import the **.csu** file.<br>The imported file is displayed in the Import dialog box.</br> **Note**: Only CSU file is supported.
 
 5.	Click **Import**.<br>The file is imported to your local cloud and displayed in the Updates and Extensions page.
 
@@ -112,11 +107,11 @@ To import a package that is stored on your local system, do the following:
 
 
 
-## Download a package {#download-a-package}
+## Download a package<a name="download-a-package"></a>
 
 Perform the following steps to download the packages:
 
-1. On the HP Helion Horizon Undercloud Dashboard, click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. On the HP Helion Horizon Undercloud Dashboard, click **Admin** Tab in the left panel.
 
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 3.	Click **More** drop-down list and select **Download** against the package that you want to download on your local system. A Confirm Download Update dialog box is displayed.
@@ -128,7 +123,7 @@ Perform the following steps to download the packages:
 
 	Click **Cancel** to abort and go to the previous screen.
 
-7. (Optional) To view the download status, click **More** drop-down list and select **View Progress**. <br>View Progress box is displayed. It displays the log, updated name, updated version, task type, and the status of the task. 
+7. (Optional) To view the download status, click **More** drop-down list and select **View Progress**. <br>The View Progress box is displayed, containing the log, updated name, updated version, task type, and the status of the task. 
 
 
 

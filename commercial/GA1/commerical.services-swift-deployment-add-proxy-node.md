@@ -64,7 +64,7 @@ A list of Proxy nodes will be displayed as shown in the sample below:
 
 	  listen scale_swift_proxy
 	  bind 192.0.2.21:8080
-	  server ov--ce-soswiftproxy1-SwiftScaleoutProxy1-<hostname><>IP address of Proxy node>:8080 check inter 2000 rise 2 fall 5 
+	  server <Proxy_node_hostname> <IP address of Proxy node>:8080 check inter 2000 rise 2 fall 5 
 
 **Note**:You will have the number of "server" lines equal to number of Swift proxies you have setup.
 

@@ -11,23 +11,25 @@ product: commercial.ga
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Leveraging OpenStack Compute, the HP Helion OpenStack Compute service provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers. Key terms include:
+The HP Helion OpenStack Compute service leverages the OpenStack Compute service to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers. 
 
-- Flavor - A unique combination of disk space, memory capacity, and CPU
-- Image - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.
-- Server - An instance created from a Flavor + an Image
+Key terms include:
+
+- **Flavor** - A unique combination of disk space, memory capacity, and CPU
+- **Image** - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.
+- **Server** - An instance created from a Flavor + an Image
 
 A variety of flavors and images are provided by the Compute service that can be used to create a wide mix of servers.
 
-### Using the dashboards {#UI}
+### Using the dashboards<a name="UI"></a>
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/services/dashboard/overview/) to work with the HP Compute service.
 
-###Using the API to access Networking### {#API}
+###Using the API to access Networking<a name="API"></a>
  
 You can use a low-level, raw REST API to access the Compute service. See the [HP Cloud v13.5 Compute Service API page](/api/v13/compute).
 
-###Using the CLI### {#cli}
+###Using the CLI<a name="cli"></a>
 
 You can use any of several command-line interfaces to access the Compute service. See [HP Cloud CLI](/cli/).
 

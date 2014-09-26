@@ -61,7 +61,7 @@ The LDAP integration process requires two configuration files:
 
 This file contains the password for all the users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
 
-**tripleo-overcloud-passwords file for openLDAP test server:**
+**tripleo-overcloud-passwords file**
 
 	OVERCLOUD_ADMIN_PASSWORD=<password>
 	OVERCLOUD_CEILOMETER_PASSWORD=<password>
@@ -74,21 +74,7 @@ This file contains the password for all the users created on the LDAP server. Th
 	OVERCLOUD_NOVA_PASSWORD=<password>
 	OVERCLOUD_SHERPA_PASSWORD=<password>
 	OVERCLOUD_SWIFT_PASSWORD=<password>
-
-**tripleo-overcloud-passwords file for AD-LDAP test server:**
-
-	OVERCLOUD_ADMIN_PASSWORD=<password>
-	OVERCLOUD_CEILOMETER_PASSWORD=<password>
-	OVERCLOUD_CINDER_PASSWORD=<password>
-	OVERCLOUD_DEMO_PASSWORD=<password>
-	OVERCLOUD_EC2_PASSWORD=<password>
-	OVERCLOUD_GLANCE_PASSWORD=<password>
-	OVERCLOUD_HEAT_PASSWORD=<password>
-	OVERCLOUD_NEUTRON_PASSWORD=<password>
-	OVERCLOUD_NOVA_PASSWORD=<password>
-	OVERCLOUD_SHERPA_PASSWORD=<password>
-	OVERCLOUD_SWIFT_PASSWORD=<password>
-
+	
 The file must end with a carriage return. TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
 
 ### LDAP server connection settings<a name="connect"></a>
@@ -168,7 +154,7 @@ The following options must be set with proper values to provide integration with
 	<td>user</td><td>(StrOpt) User BindDN to query the LDAP server.</td><td>CN=Administrator,CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>Not Required</td>
 	</tr>
 	<tr>
-	<td>password</td><td>(StrOpt) Password for the BindDN to query the LDAP server.</td><td>Passw0rd</td><td>Not Required</td>
+	<td>password</td><td>(StrOpt) Password for the BindDN to query the LDAP server.</td><td><Password></td><td>Not Required</td>
 	</tr>
 	<tr>
 	<td>use_tls</td><td>(BoolOpt) Enable TLS for communicating with LDAP servers.</td><td>False</td><td>False</td>
@@ -201,11 +187,11 @@ On the seed VM, perform the following:
 
 1. Copy the `tripleo-overcloud-password` file to the `/root/tripleo folder`:.
 
-		scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords
+		scp tripleo-overcloud-passwords root@<seed_IP_address>:/root/tripleo/tripleo-overcloud-passwords
 
 2. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
 
-		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json
+		scp overcloud_keystone_ldap.json root@<seed_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json
 
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
@@ -242,9 +228,10 @@ Follow the steps described in the installation instructions to deploy the overcl
 
 	Using the above sample horizon.conf file, the path to `local_settings.py` is `/opt/stack/venvs/openstack/lib/python2.7/site-packages/openstack_dashboard/local`.
 
-	b. Modify local_settings.py to disallow editing of users and groups.
+	b. Modify `local_settings.py` to disallow editing of users and groups.
 
 	Change
+
 		OPENSTACK_KEYSTONE_BACKEND = {
 			'name': 'native',
 			'can_edit_user': True,
@@ -268,7 +255,7 @@ Follow the steps described in the installation instructions to deploy the overcl
 
 		service apache2 restart
 
-Sample `overcloud_keystone_ldap.json` configuration file for openLDAP server
+The following is an example of a typical `overcloud_keystone_ldap.json` configuration file for openLDAP server. Use values appropriate for your environment.
 
 	 {
 
@@ -365,9 +352,9 @@ Sample `overcloud_keystone_ldap.json` configuration file for openLDAP server
      }
 	}
 
+Return to the [KVM installation](/helion/openstack/ga/install/kvm/#startseed/).
 
-<a href="javascript:window.open('/helion/openstack/ga/install/kvm/','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
-
+Return to the [ESX installation](/helion/openstack/ga/install/esx/#startseed/).
 
 ----
 ####OpenStack trademark attribution
