@@ -80,6 +80,7 @@ ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}
 
  
 echo 3
+echo "$ALL_FILES"
 #Checkout the master branch
 git checkout master
 
