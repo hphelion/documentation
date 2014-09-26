@@ -34,8 +34,8 @@ git pull origin
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
 MDFILES_NOT_DESIGNATED=`egrep -rL "\-\-PUBLISH|\-\-UNDER REVISION" *.md` 
 
-car s=" "
-var MDFILES_NOT_DESIGNATED=""
+s=" "
+MDFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.md" `
 do 
 MDFILES_TO_PUBLISH=$X$s`egrep -L "\-\-PUBLISH|\-\-UNDER REVISION" *.md`; 
@@ -59,8 +59,8 @@ fi
 
  
 
-var s=" "
-var MDFILES_TO_PUBLISH=""
+s=" "
+MDFILES_TO_PUBLISH=""
 for i in `find . -name "*.md" `
 do 
 MDFILES_TO_PUBLISH=$X$s`egrep -l "\-\-PUBLISH" $i`; 
