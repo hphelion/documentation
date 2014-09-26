@@ -12,7 +12,6 @@ product: community
 
 # HP Helion OpenStack&trade; Community Virtual Installation and Configuration
 
-<!--test-->
 
 This page provides instructions on how to perform a virtual installation of HP Helion OpenStack Community onto a suitably specified and prepared single server. This cloud-in-a-box is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads; therefore, no support is available. 
 
