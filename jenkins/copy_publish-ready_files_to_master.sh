@@ -70,7 +70,7 @@ do
 echo "merging $i"
 git checkout origin/${BRANCH} -- $i
 else
-echo "skipping"
+echo "skipping $i, no change found"
 fi
 done
 
