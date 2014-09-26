@@ -27,7 +27,7 @@ The HP Helion OpenStack installer uses a JSON configuration file to enter config
 
 The `hp_ced_installer.sh` accepts the JSON as an input and either sets environment variables or writes passthrough JSON blobs based on the content of the JSON file.
 
-All JSON blobs are written to the ~/tripleo/hp_passthrough directory
+All JSON blobs are written to the `~/tripleo/hp_passthrough` directory
 
 
 ## Editing the JSON file ##
@@ -306,4 +306,6 @@ To edit the JSON file:
 	<p>Contains string-encoded certificate data </td>
 	<td>OVERCLOUD_SSL_CERT</td>
 </table>
- 
+ ----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
