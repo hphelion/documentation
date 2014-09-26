@@ -27,32 +27,32 @@ PageRefresh();
 
 The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.  
 
-The interface, based on OpenStack Horizon, is grouped into dashboards, including: [Project](#DashProject), [Admin](#DashAdmin) and [Settings](#DashSettings). Tabs on the left side of the interface expand and contract to show available commands, grouped into *panels*. 
+The interface, based on OpenStack Horizon, is grouped into dashboards, including [Project](#DashProject), [Admin](#DashAdmin) and [Settings](#DashSettings). Tabs on the left side of the interface expand and contract to show available commands grouped into **panels**. 
 
 <!-- Need new
 <img src="media/HorizonCommunity.png" alt="" width="600" />
 -->
 
-Across the top are a menu to switch between projects and a menu where you can access user settings.
+Across the top are menus to switch between projects and menus where you can access user settings.
 
 <!--
 How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/ga/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/ga/dashboard/users/).
 -->
 To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/ga/dashboard/login/). 
 
-## Project dashboard ## {#DashProject}
+## Project dashboard<a name="DashProject"></a>
 
-Use the Project dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).
+Use the **Project** dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).
 
-## Admin dashboard ## {#DashAdmin}
+## Admin dashboard<a name="DashAdmin"></a>
 
-Use the Admin dashboard to view, allocate, and manage all resources within the cloud.
+Use the **Admin** dashboard to view, allocate, and manage all resources within the cloud.
 
 The Admin dashboard allows you to manage instances, define flavors, create and configure images, manage networks, view system resources, manage projects, and manage users.
 
-## Settings dashboard ## {#DashSettings}
+## Settings dashboard<a name="DashSettings"></a>
 
-Use the Settings dashboard to change your display language and settings, your time zone, and your password.
+Use the **Settings** dashboard to change your display language and settings, your time zone, and your password.
  
 Click **Settings** in the user menu to display the Settings dashboard. 
 

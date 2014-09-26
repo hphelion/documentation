@@ -23,21 +23,21 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Back Up and Restore
 
-The default HP Helion OpenStack environment consists of a three-node cluster for most of the services, as well as the RabbitMQ and MySQL, and is resilient to individual node failures as well as network split brain situations.
+The default HP Helion OpenStack environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.
 
 However, as part of your maintenance of the environment, you should create a back up of each component and be prepared to restore any component, should it become necessary.
 
-**Undercloud.** The undercloud is a critical component that runs Centralized Logging, Monitoring, and Orchestration engine for deployment and configuration automation of the overcloud and also provides DHCP Server for all nodes of the overcloud. 
+**Undercloud.** The undercloud is a critical component that runs the centralized Logging, Monitoring, and Orchestration engines for deployment and automated configuration of the overcloud. It also provides a DHCP Server for all nodes of the overcloud. 
 
 If the undercloud server fails, it must be rebuilt and restored as soon as possible.
 
-**Overcloud.** The overcloud includes two overcloud Controllers and one overcloud management controller. 
+**Overcloud.** The overcloud includes two overcloud controllers and one overcloud management controller. 
 
 If either of the servers that host the two overcloud controllers fails, the overcloud controller must be rebuilt and reconnected into the cluster as soon as possible.
 
-The management controller is similar to the overcloud controller nodes, but additionally executes various services, including the Compute, Sherpa, Telemetry and Reporting, and Block Storage services. If the server that hosts the overcloud management controller fails, the management controller must be rebuilt and restored as soon as possible.
+The management controller is similar to the overcloud controller nodes, but it also executes various additional services, including Compute, Sherpa, Telemetry, Reporting, and Block Storage services. If the server that hosts the overcloud management controller fails, the management controller must be rebuilt and restored as soon as possible.
 
-**Overcloud database** The MySQL database (entire cluster) on the overcloud Controllers can get corrupted and might need backup and restore for the databases. 
+**Overcloud database** The MySQL database or entire cluster on the overcloud Controllers may become corrupted. To prevent data loss, you will need back up and restore capability for the databases. 
 
 The following instructions describe how to back up and restore the seed, undercloud, and overcloud:
 
@@ -45,6 +45,9 @@ The following instructions describe how to back up and restore the seed, undercl
 - [Back up and restore the seed VM](#seed)
 - [Back up and restore the overcloud](#overcloud)
 - [Back up and restore the undercloud](#undercloud)
+- [Backup command options](#options)
+- [Restore command options](#roptions)
+- [Undercloud password issues](#underpass)
 
 You execute scripts in the seed VM host server, where:
 
@@ -53,7 +56,7 @@ You execute scripts in the seed VM host server, where:
 
 If you need help, see [Back up and restore script Help](#help).
 
-## Create a configuration file for restoring the seed VM and undercloud ## {#config}
+## Create a configuration file for restoring the seed VM and undercloud<a name="config"></a>
 
 During restore process for the seed VM and undercloud, a configuration file is required. The configuration file contains exported parameters used during the installation.
 
@@ -81,13 +84,13 @@ Use the following steps to back up the seed VM:
 		- UNDERCLOUD_CODN_HTTP_PROXY is the
 		- UNDERCLOUD_CODN_HTTPS_PROXY is the
 
-## Back up and restore the seed VM ## {#seed}
+## Back up and restore the seed VM<a name="seed"></a>
 
 The following sections describe how and when to [back up](#backseed) and [restore](#seedrest) the seed VM.
 
-### Backing up the seed VM ### {#seedback} 
+### Backing up the seed VM<a name="seedback"></a> 
 
-You should create a backup from seed VM when any of the following events happen:
+You should create a backup from the seed VM when any of the following events happen:
 
 - When the installation process is complete.
 - When any change is make in the undercloud from the seed server
@@ -130,7 +133,7 @@ You should restore the seed node when there is any problem with the node, for ex
 - If there is any problem in the operating system level.
 - If there is any problem with the installation that cannot be corrected.
 
-**Important:** During the restore process the original seed VM will be deleted from the server.
+**Important: During the restore process the original seed VM will be deleted from the server.**
 
 Use the following steps to restore the seed VM:
 
@@ -174,17 +177,17 @@ Use the following steps to restore the seed VM:
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## Back up and restore the undercloud ## {#under}
+## Back up and restore the undercloud<a name="under"></a>
 
 The following sections describe how and when to [back up](#underback) and [restore](#underrest) the undercloud.
 
-### Backing up the undercloud ### {#underback} 
+### Backing up the undercloud<a name="underback"></a> 
 
 You should create a backup from undercloud as soon as the overcloud is deployed and configured the first time.
 
 Also you should create a backup when any change is made in the overcloud from the undercloud server.
 
-**Important:** During the backup process the undercloud server will be unavailable.
+**Important: During the backup process the undercloud server will be unavailable.**
 
 Use the following steps to back up the undercloud:
 
@@ -226,7 +229,7 @@ All required files are backed-up to the specified folder:
 
 	/<destination folder>/backup_YY-MM-DD-HH-MM/uc
  
-### Restoring the undercloud ### {#underrest}
+### Restoring the undercloud<a name="underrest"></a>
 
 You should restore the seed node when there is any problem with the node, for example:
 
@@ -236,8 +239,8 @@ You should restore the seed node when there is any problem with the node, for ex
 
 **Important:**
 
-- During the restore of the undercloud the seed VM will be deployed again. You should [create a new backup from seed](#seedback) after the undercloud is restored.
-- If the resource files are locally, the source files must be located in the `/tmp/` directory.
+- During the restore of the undercloud, the seed VM will be deployed again. You should [create a new backup from seed](#seedback) after the undercloud is restored.
+- If the resource files are stored locally, the source files must be located in the `/tmp/` directory.
 - If the admin user password was changed from the original password created during the installation process, see [Undercloud password issues](#underpass) before beginning the restore.
 
 Use the following steps to restore the undercloud:
@@ -271,7 +274,7 @@ The following sections describe how and when to back up and restore the overclou
 
 You can [back up](#sherpaback) and [restore](#sherparest) the Sherpa overcloud or [back up](#databack) and [restore](#datarest) the overcloud database.
 
-### Backing up the Sherpa overcloud ### {#sherpaback} 
+### Backing up the Sherpa overcloud<a name="sherpaback"></a>} 
 
 You should create a backup of the overcloud when any Update and Extension is download to the system.
 
@@ -311,7 +314,7 @@ All required files are backed-up to the specified folder:
 
 	/<destination folder>/backup_YY-MM-DD-HH-MM/oc
 
-### Restoring the Sherpa overcloud ### {#sherparest}
+### Restoring the Sherpa overcloud<a name="sherparest"></a>
 
 Use the following steps to restore the seed VM:
 
@@ -348,7 +351,7 @@ Use the following steps to restore the seed VM:
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### Backing up the overcloud database ### {#sherpaback} 
+### Backing up the overcloud database<a name="sherpaback"></a>
 
 You should create a backup from the overcloud database on a regular basis as determined by the administrator or your organization's policies.
 
@@ -388,7 +391,7 @@ All required files are backed-up to the specified folder:
 
 		/<destination folder>/backup_YY-MM-DD-HH-MM/db
 
-### Restoring the overcloud database ### {#sherparest}
+### Restoring the overcloud database<a name="sherparest"></a>}
 
 You should restore the overcloud database when there is any problem with the node, for example:
 
@@ -435,14 +438,11 @@ Use the following steps to restore the overcloud database:
 		INFO:os-refresh-config:Completed phase migration
 		Restore Procedure Completed
 
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-## Back up and restore help ## {#help}
+## Back up and restore help<a name="help"></a>
 
 Use the following sections as needed.
 
-## Backup command options ##
+### Backup command options<a name="options"></a>
 
 The following lists all of the command options for the backup script, `hp_ced_backup.sh`.
 
@@ -467,7 +467,7 @@ The following lists all of the command options for the backup script, `hp_ced_ba
 			-u|--dest-host-user     - username of host to which to backup
 			-i|--identity-file      - selects a file from which the identity (private key) for public key authentication is read
 
-## Restore command options ##
+### Restore command options<a name="roptions"></a>
 
 The following lists all of the command options for the backup script, `hp_ced_restore.sh`.
 
@@ -501,9 +501,9 @@ Other optional options that can be used during the backup/restore process, as:
 - Backup/Restore the files in/from a remote server (using option H)
 - Backup Seed + Undercloud + … all at once using all the parameters at the same time (--seed, --undercloud --overcloud)
 
-### Undercloud password issues ### {#underpass}
+## Undercloud password issues<a name="underpass"></a>
 
-If the admin user password was changed from the original password created during the installation process, before performing the undercloud backup or restore process, you need to update the password in some files. If this process has been done and the files contain the correct password, you do not need to edit the files.
+If the admin user password was changed from the original password created during the installation process, you need to update the password in some files before performing the undercloud backup or restore process. If this process has been done and the files contain the correct password, you do not need to edit the files.
 
 1. Log in the seed VM host.
 2. SSH to the Seed VM
