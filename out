@@ -1,0 +1,828 @@
+./bindings.fog.cdn.md:<!--Details on a container?-->
+./bindings.fog.object-storage.md:        dir.public?               # => true
+./bindings.fog.object-storage.md:        dir.public?               # => false
+./bindings.jclouds.compute.md:<!--This command appears not to exist.  Mike A says: "has no effect that I can see...unsupported on hpcloud?"-->
+./bindings.jclouds.compute.md:        Set<? extends Location> locations = cs.listAssignableLocations();
+./bindings.jclouds.compute.md:        Set<? extends ComputeMetadata> nodes = cs.listNodes();
+./bindings.jclouds.compute.md:        Set<? extends Hardware> hardware = cs.listHardwareProfiles();
+./bindings.jclouds.compute.md:        Set<? extends org.jclouds.compute.domain.Image> image  = cs.listImages();
+./bindings.jclouds.compute.md:        Set<? extends NodeMetadata> groupedNodes = cs.createNodesInGroup("myGroup", 2, template);
+./bindings.jclouds.md:##Having trouble? ## {#HavingTrouble}
+./bindings.jclouds.object-storage.md:        PageSet<? extends StorageMetadata> objects = blobStore.list();
+./bindings.jclouds.object-storage.md:        PageSet<? extends StorageMetadata> containerObjects = blobStore.list(<container>);
+./bindings.md:One of the advantages of being active with OpenStack is that there is a healthy community of developers working on language bindings.  HP augments those in strategic areas and recommends others for your general use.  Take a gander at the choices you have at your disposal below.  Don't see what you need?  Don't be shy. [Get involved and create something for submittal back to OpenStack](http://openstack.org/community/).
+./block-storage.api.md:<iframe width="560" height="315" src="//www.youtube.com/embed/xxYVIHHZ9I4?list=PL8SRnLljMoSMk2veMd-qtZYj20nREEuzC" frameborder="0" allowfullscreen></iframe>
+./block-storage.md:Do you need low level, raw REST API access to HP Helion Public Cloud Block Storage?  Check out Block Storage API page for the HP Helion Public Cloud version you are using:
+./block-storage.volume.md:<!-- what other options are there? backing up volumes, maybe? what else? -->
+./cdn.api.md:<iframe src="http://player.vimeo.com/video/33235738?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe> -->
+./cdn.md:<!-- <iframe src="http://player.vimeo.com/video/40264189?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cdn.md:Do you need low level, raw REST API access to HP Helion Public Cloud CDN?  Head on over to the [CDN API page](/cdn/api) for details, including a video showing usage of the API using cURL.
+./cdn.md:Got a favorite programming language?  Ready to create your own CDN-based applications?  Take a look at our [Bindings section](/bindings) for details.
+./cli.unix.2.object-storage.md:<!-- <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cli.unix.articles.userdata.md:    Are you sure you want to continue connecting (yes/no)? yes
+./cli.unix.compute.md:<!-- <iframe src="http://player.vimeo.com/video/37689112?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cli.unix.object-storage.md:<!-- <iframe src="http://player.vimeo.com/video/32534203?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cli.win.folder-operations.md:Why don't we make sure that we can move these folders around on the server? Here we'll create another folder off of root and recursively copy what we just brought in from the 
+./cli.windows.2.containers-and-folders.md:**Note**: The HP Helion Public Cloud CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
+./cli.windows.2.containers-and-folders.md:<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cli.windows.2.containers-and-folders.md:    <?xml version="1.0">
+./cli.windows.2.installation.md:    change the execution policy?
+./cli.windows.2.installation.md:    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+./cli.windows.2.reference.md:<!--DOUG: Modify the fonts in the syntax sections--perhaps create a Jira case for them?-->
+./cli.windows.2.reference.md:<!--DOUG: Create a CDN examples page?-->
+./cli.windows.2.reference.md:<!--DOUG: include a section on environment variables, such as ENABLE-CREDENTIAL-TRACKING? Full list from Travis.-->
+./cli.windows.2.reference.md:**Note**: The HP Helion Public Cloud environment CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.2.reference.md:    (Type !? for Help.) 
+./cli.windows.2.reference.md:**Note**: **copy** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.2.reference.md:**Note**: **del** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.2.reference.md:    Object located at   : https://region-a.geo-1.objects.hpcloudsvc.com/v1/AUTH_e9e11fd3-ec18-4415-8b4f-e7b7ec9eed8e/Kaushik/test11.html?temp_url_sig=95110298407447%3a95110298407447%3a75713970004400%3a84d2be6d472d06b7e83ca4af42b5ea14cc01596c
+./cli.windows.2.reference.md:**Note**: **ls** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.2.tutorials.md:<iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+./cli.windows.containers-and-folders.md:**Note**: The HP Helion Public Cloud CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`) for the `ls, copy` and `delete` object storage commands.
+./cli.windows.containers-and-folders.md:<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cli.windows.containers-and-folders.md:    <?xml version="1.0">
+./cli.windows.installation.md:    change the execution policy?
+./cli.windows.installation.md:    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+./cli.windows.reference.md:<!--DOUG: Modify the fonts in the syntax sections--perhaps create a Jira case for them?-->
+./cli.windows.reference.md:<!--DOUG: Create a CDN examples page?-->
+./cli.windows.reference.md:<!--DOUG: include a section on environment variables, such as ENABLE-CREDENTIAL-TRACKING? Full list from Travis.-->
+./cli.windows.reference.md:**Note**: The HP Helion Public Cloud CLI software for Windows PowerShell supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.reference.md:    (Type !? for Help.) 
+./cli.windows.reference.md:**Note**: **copy** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.reference.md:**Note**: **del** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.reference.md:    Object located at   : https://region-a.geo-1.objects.hpcloudsvc.com/v1/AUTH_e9e11fd3-ec18-4415-8b4f-e7b7ec9eed8e/Kaushik/test11.html?temp_url_sig=95110298407447%3a95110298407447%3a75713970004400%3a84d2be6d472d06b7e83ca4af42b5ea14cc01596c
+./cli.windows.reference.md:**Note**: **ls** supports the [standard Windows wildcard](http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85).aspx) characters asterix (`*`), question mark (`?`), and range brackets (`[]`).
+./cli.windows.tutorials.md:<iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe>
+./cloudos/develop.md:* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
+./cloudos/develop.md:* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
+./cloudos/develop.md:* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
+./cloudos/develop.quickstart-intro.md:* [What are the HP Cloud OS Services?](#what-are-the-hp-cloud-os-services)
+./cloudos/develop.quickstart-intro.md:* [What is the HP Cloud OS API Documentation app?](#what-is-the-hp-cloud-os-api-documentation-app)
+./cloudos/develop.quickstart-intro.md:## What are the HP Cloud OS Services?
+./cloudos/develop.quickstart-intro.md:## What is the HP Cloud OS API Documentation app?
+./cloudos/develop.quickstart-intro.md:* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
+./cloudos/develop.quickstart-intro.md:* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
+./cloudos/develop.quickstart-intro.md:* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
+./cloudos/develop.quickstart-intro.md:You can include the returned token's value on the <code> ?/token=&lt;value> </code> query parameter with each REST call. 
+./cloudos/develop.quickstart-usecase3.md:* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
+./cloudos/develop.quickstart-usecase3.md:* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
+./cloudos/develop.quickstart-usecase3.md:* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
+./cloudos/install.customize-network-connections.md:2. The Edit Connection dialog presents the Physical Interface values in a succinct format, such as ?1g1. The value contains (up to) four characters, and follows these conventions: 
+./cloudos/install.customize-network-connections.md:    * 1st character: the allowable value is a question mark (?) or blank.  The question mark indicates a preferred connection, meaning the  available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
+./cloudos/install.install-modules-reference.md:<a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+./cloudos/install.install-modules-reference.md:18 represents 2^18 or 262,144 partitions. Used in ring builder commands. See <a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+./cloudos/manage.operational-dashboard.environment-tab.md:<li>1st character: the allowable value is a question mark (?) or blank. The question mark indicates a preferred connection, meaning the available bandwidth supported by the Network Interface card (NIC). If not specified (blank), Cloud OS configures the physical interface to the value specified by the next character.
+./cloudos/prepare.faqs.md:* [What is the HP POV on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
+./cloudos/prepare.faqs.md:* [What is HP Cloud?](#what-is-hp-cloud)
+./cloudos/prepare.faqs.md:* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
+./cloudos/prepare.faqs.md:* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+./cloudos/prepare.faqs.md:* [What is OpenStack?](#what-is-openstack)
+./cloudos/prepare.faqs.md:* [What are the HP differentiators?](#what-are-the-hp-differentiators)
+./cloudos/prepare.faqs.md:* [What does HP Cloud OS support?](#what-does-hp-cloud-os-support)
+./cloudos/prepare.faqs.md:* [How does HP Cloud OS help customers?](#how-does-hp-cloud-os-help-customers) 
+./cloudos/prepare.faqs.md:* [What is the HP Cloud OS technology preview?](#what-is-the-hp-cloud-os-technology-preview)
+./cloudos/prepare.faqs.md:* [How is HP Cloud OS integrated into the HP Cloud portfolio?](#how-is-hp-cloud-os-integrated-into-the-hp-cloud-portfolio)
+./cloudos/prepare.faqs.md:* [Where can I get the HP Cloud OS technology preview ISO?](#where-can-i-get-the-hp-cloud-os-technology-preview-iso)
+./cloudos/prepare.faqs.md:* [Where can I get the login credentials for the HP Cloud OS dashboards?](#where-can-i-get-login-credentials-for-the-hp-cloud-os-dashboards)
+./cloudos/prepare.faqs.md:## What is the HP POV on cloud solutions?  
+./cloudos/prepare.faqs.md:## What is HP Cloud?
+./cloudos/prepare.faqs.md:## How does HP help solve the challenges faced by enterprises?
+./cloudos/prepare.faqs.md:## What is HP Cloud OS?
+./cloudos/prepare.faqs.md:## What is OpenStack?
+./cloudos/prepare.faqs.md:## What are the HP differentiators?
+./cloudos/prepare.faqs.md:## What does HP Cloud OS support?
+./cloudos/prepare.faqs.md:## How does HP Cloud OS help customers?
+./cloudos/prepare.faqs.md:## What is the HP Cloud OS technology preview?
+./cloudos/prepare.faqs.md:## How is HP Cloud OS integrated into the HP Cloud portfolio? 
+./cloudos/prepare.faqs.md:## Where can I get the HP Cloud OS technology preview ISO?
+./cloudos/prepare.faqs.md:## Where can I get login credentials for the HP Cloud OS dashboards?
+./cloudos/prepare.glossary.md:For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json), 
+./cloudos/prepare.overview.md:* [Why is Cloud Computing Important?](#why-is-cloud-computing-important)
+./cloudos/prepare.overview.md:* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+./cloudos/prepare.overview.md:## Why is Cloud Computing Important?
+./cloudos/prepare.overview.md:## What is HP Cloud OS?
+./cloudos/prepare.videos.md:<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/XnUqB7V_j8Q?rel=0" frameborder="0" allowfullscreen> </iframe>
+./cloudos/prepare.videos.md:<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/NriyVYHqYQk?rel=0" frameborder="0" allowfullscreen> </iframe>
+./cloudos/prepare.videos.md:<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/4a8LwWhWAZs?rel=0" frameborder="0" allowfullscreen> </iframe>
+./cloudos/services-volume-getting-started.md:Need more storage for your HP Cloud Compute instances? HP Block Storage is the way to go. With HP Cloud version 13.5 block storage is provided as a separate but integrated service based on OpenStack Cinder.
+./cloudos/services-volume-overview.md:Need more storage for your HP Cloud Compute instances? HP Block Storage is the way to go. With HP Cloud version 13.5 block storage is provided as a separate but integrated service based on OpenStack Cinder.
+./cloudos/testjs.md:<h3>What is Cloud OS?</h3>
+./cloudos/testjs.md:<h3>What is OpenStack?</h3>
+./commercial/GA1/3rd-party-license-agreements.md:<p>The Covered Software is a .commercial item,. as that term is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of .commercial computer software. (as that term is defined at 48 C.F.R. ? 252.227-7014(a)(1)) and .commercial computer software documentation. as such terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users acquire Covered Software with only those rights set forth herein. This U.S. Government Rights clause is in lieu of, and supersedes, any other FAR, DFAR, or other clause or provision that addresses Government rights in computer software under this License.</p></li>
+./commercial/GA1/3rd-party-license-agreements.md:<p>Copyright 2009?2014 Kristopher Michael Kowal. All rights reserved.</p>
+./commercial/GA1/3rd-party-license-agreements.md:<p>for infringements caused by: (i) Your and any other third party?s modifications of Covered Software, or (ii) the combination of its Contributions with other software (except as part of its Contributor Version); or</p>
+./commercial/GA1/3rd-party-license-agreements.md:<p>All distribution of Covered Software in Source Code Form, including any Modifications that You create or to which You contribute, must be under the terms of this License. You must inform recipients that the Source Code Form of the Covered Software is governed by the terms of this License, and how they can obtain a copy of this License. You may not attempt to alter or restrict the recipients? rights in the Source Code Form.</p>
+./commercial/GA1/3rd-party-license-agreements.md:<p>You may distribute such Executable Form under the terms of this License, or sublicense it under different terms, provided that the license for the Executable Form does not attempt to limit or alter the recipients? rights in the Source Code Form under this License.</p>
+./commercial/GA1/3rd-party-license-agreements.md:</ol><p>Under no circumstances and under no legal theory, whether tort (including negligence), contract, or otherwise, shall any Contributor, or anyone who distributes Covered Software as permitted above, be liable to You for any direct, indirect, special, incidental, or consequential damages of any character including, without limitation, damages for lost profits, loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses, even if such party shall have been informed of the possibility of such damages. This limitation of liability shall not apply to liability for death or personal injury resulting from such party?s negligence to the extent applicable law prohibits such limitation. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so this exclusion and limitation may not apply to You.</p>
+./commercial/GA1/3rd-party-license-agreements.md:</ol><p>Any litigation relating to this License may be brought only in the courts of a jurisdiction where the defendant maintains its principal place of business and such litigation shall be governed by laws of that jurisdiction, without reference to its conflict-of-law provisions. Nothing in this Section shall prevent a party?s ability to bring cross-claims or counter-claims.</p>
+./commercial/GA1/3rd-party-license-agreements.md:Copyright: Copyright (C) 1989?2006 Free Software Foundation, Inc.
+./commercial/GA1/3rd-party-license-agreements.md:Copyright: Copyright (C) 1991?1994, 1997, 2003, 2006 Free Software
+./commercial/GA1/3rd-party-license-agreements.md:Copyright: Copyright (C) 1985?1986, 1988, 1990?2005
+./commercial/GA1/3rd-party-license-agreements.md:Copyright: Copyright (C) 1997?1999 James Troup (troup@debian.org)
+./commercial/GA1/3rd-party-license-agreements.md:           Copyright (C) 1999?2004 Dirk Eddelbuettel (edd@debian.org)
+./commercial/GA1/3rd-party-license-agreements.md:           Copyright (C) 2005?2013 John Hasler (jhasler@debian.org)
+./commercial/GA1/3rd-party-license-agreements.md:           Copyright (C) 2013?2014 Ryan Kavanagh (rak@debian.org)
+./commercial/GA1/3rd-party-license-agreements.md:Source: http://git.kernel.org/?p=linux/kernel/git/mason/btrfs-progs.git
+./commercial/GA1/3rd-party-license-agreements.md:  Copyright ? 1997, 1998, 1999, 2000, 2001  joost witteveen
+./commercial/GA1/3rd-party-license-agreements.md:  Copyright ? 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009  Clint Adams
+./commercial/GA1/3rd-party-license-agreements.md:  Copyright ? 2009  Regis Duchesne
+./commercial/GA1/3rd-party-license-agreements.md: #    - https://sourceforge.net/project/?group_id=1519
+./commercial/GA1/3rd-party-license-agreements.md:Danilo ?egan (danilo@gnome.org)
+./commercial/GA1/3rd-party-license-agreements.md:This package was debianized by Piotr O?arowski (piotr@debian.org) on
+./commercial/GA1/3rd-party-license-agreements.md:The Debian packaging is &copy; 2008-2011, Piotr O?arowski (piotr@debian.org) and
+./commercial/GA1/3rd-party-license-agreements.md:Copyright: (c) 2006 John Resig, Yehuda Katz, J?örn Zaefferer, Paul McLanahan
+./commercial/GA1/3rd-party-license-agreements.md:Upstream-Contact: This version released by Tye McQueen (http://perlmonks.org/?node=tye).
+./commercial/GA1/3rd-party-license-agreements.md:Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&amp;rev=135
+./commercial/GA1/3rd-party-license-agreements.md: 2009-2010, Krzysztof Krzy?aniak (eloy) (eloy@debian.org)
+./commercial/GA1/3rd-party-license-agreements.md:  (* What should the output format be?  If the user specified an
+./commercial/GA1/3rd-party-license-agreements.md:        ~backingfile:indisk ?backingformat:format ~compat:"1.1"
+./commercial/GA1/3rd-party-license-agreements.md:Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&amp;rev=202
+./commercial/GA1/3rd-party-license-agreements.md: *  interrupts us (except possibly for removal/insertion of the cable?)
+./commercial/GA1/3rd-party-license-agreements.md: See http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=365178 for more details.
+./commercial/GA1/3rd-party-license-agreements.md:Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?view=markup&amp;pathrev=174
+./commercial/GA1/3rd-party-license-agreements.md:This package was debianized by Piotr O?arowski (piotr@debian.org) on
+./commercial/GA1/3rd-party-license-agreements.md:The Debian packaging is &copy; 2010, Piotr O?arowski (piotr@debian.org) and
+./commercial/GA1/3rd-party-license-agreements.md:  http://git.debian.org/?p=collab-maint/module-assistant.git
+./commercial/GA1/3rd-party-license-agreements.md:???? ???
+./commercial/GA1/3rd-party-license-agreements.md:Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&amp;rev=196
+./commercial/GA1/3rd-party-license-agreements.md:    Copyright Ã?Â,Ã,Â&copy; 1991-2004 Unicode, Inc. All rights reserved. Distributed under
+./commercial/GA1/3rd-party-license-agreements.md:Copyright: (c) 2006-2012, Piotr O?arowski (piotr@debian.org)
+./commercial/GA1/3rd-party-license-agreements.md:This package was debianized by Piotr O?arowski (piotr@debian.org) on
+./commercial/GA1/3rd-party-license-agreements.md:The Debian packaging is &copy; 2006-2009, Piotr O?arowski (piotr@debian.org) and
+./commercial/GA1/3rd-party-license-agreements.md:http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=207
+./commercial/GA1/3rd-party-license-agreements.md:Source: https://alioth.debian.org/project/showfiles.php?group_id=1225
+./commercial/GA1/3rd-party-license-agreements.md:Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
+./commercial/GA1/3rd-party-license-agreements.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./commercial/GA1/3rd-party-license-agreements.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./commercial/GA1/3rd-party-license-agreements.md:The upstream author explained here: http://bugs.gentoo.org/show_bug.cgi?id=14760
+./commercial/GA1/3rd-party-license-agreements.md:The upstream author explained here: http://bugs.gentoo.org/show_bug.cgi?id=14760
+./commercial/GA1/3rd-party-license-agreements.md:The upstream author explained here: http://bugs.gentoo.org/show_bug.cgi?id=14760
+./commercial/GA1/3rd-party-license-agreements.md:Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
+./commercial/GA1/3rd-party-license-agreements.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./commercial/GA1/3rd-party-license-agreements.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./commercial/GA1/3rd-party-license-agreements.md:This package was debianized by Piotr O?arowski (piotr@debian.org) on
+./commercial/GA1/3rd-party-license-agreements.md:The Debian packaging is &copy; 2006-2009, Piotr O?arowski (piotr@debian.org) and
+./commercial/GA1/3rd-party-license-agreements.md:                    from                                compatible? (1)
+./commercial/GA1/3rd-party-license-agreements.md:                    from                                compatible? (1)
+./commercial/GA1/3rd-party-license-agreements.md:    The ?debian/repack? program removes those files to create the Debian
+./commercial/GA1/3rd-party-license-agreements.md:    &copy; 2004?2013 Ned Batchelder
+./commercial/GA1/3rd-party-license-agreements.md:    &copy; 2008?2014 Ben Finney (ben+debian@benfinney.id.au)
+./commercial/GA1/3rd-party-license-agreements.md:    &copy; 2007?2008 Lars Wirzenius (liw@iki.fi)
+./commercial/GA1/3rd-party-license-agreements.md:            from                                compatible? (1)
+./commercial/GA1/3rd-party-license-agreements.md:  Copyright 2008?2009 Michael Schutte (michi@uiae.at)
+./commercial/GA1/3rd-party-license-agreements.md:    http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&amp;rev=233
+./commercial/GA1/3rd-party-license-agreements.md:                    from                                compatible? (1)
+./commercial/GA1/3rd-party-license-agreements.md:           2010       Piotr O?arowski (piotr@debian.org),
+./commercial/GA1/3rd-party-license-agreements.md: implementation, with or without modification, any schema, IDL?s, or code
+./commercial/GA1/3rd-party-license-agreements.md:  ) So are you saying your word list is also in the public domain?
+./commercial/GA1/commercial.faq.md:* [What is HP Helion OpenStack?](#whatHelion)
+./commercial/GA1/commercial.faq.md:*  enable me to do?](#distroenable)
+./commercial/GA1/commercial.faq.md:* [What is TripleO?](#TripleO)
+./commercial/GA1/commercial.faq.md:* [What is a Seed?](#whatisseed)  
+./commercial/GA1/commercial.faq.md:* [What is the Undercloud?](#whatisundercloud) 
+./commercial/GA1/commercial.faq.md:* [What is the Overcloud?](#whatisovercloud) 
+./commercial/GA1/commercial.faq.md:* [What is available in the version announced on June 30th?](#preview)
+./commercial/GA1/commercial.faq.md:* [Is the release localized for non-English speaking markets?](#localized) 
+./commercial/GA1/commercial.faq.md:* [Does the HP Helion OpenStack work with hybrid or public cloud projects?](#hybridorpubliccloud)
+./commercial/GA1/commercial.faq.md:* [How many nodes and virtual machines does it support?](#nodes)  
+./commercial/GA1/commercial.faq.md:* [How can I update the software?](#softwareupdate)
+./commercial/GA1/commercial.faq.md:* [Does it include an Operating System (OS)?](#includeOS)
+./commercial/GA1/commercial.faq.md:* [Does this distribution include the OpenStack Icehouse release?](#icehouse) 
+./commercial/GA1/commercial.faq.md:* [Can HP Helion OpenStack run on non-HP hardware?](#nonhphardware)
+./commercial/GA1/commercial.faq.md:* [Are HP support services included with HP Helion OpenStack?](#supportservices)
+./commercial/GA1/commercial.faq.md:* [What support options are available?](#supportoptions)
+./commercial/GA1/commercial.faq.md:* [Where can I find more information?](#MoreInfo)
+./commercial/GA1/commercial.faq.md:* [Where can I report issues with HP OpenStack Helion?](#reportissues) 
+./commercial/GA1/commercial.faq.md:####What is HP Helion OpenStack? #### {#whatHelion}
+./commercial/GA1/commercial.faq.md:####What does HP Helion OpenStack enable me to do? #### {#distroenable}
+./commercial/GA1/commercial.faq.md:<!-- #### Removed per Gary's comments I How does HP Helion OpenStack compare to other OpenStack distributions on the market? #### {#howcompare}
+./commercial/GA1/commercial.faq.md:<!--#### Removed as per JR's comments Is there a cost associated with this distribution? #### {#distrocost} 
+./commercial/GA1/commercial.faq.md:####What is TripleO? #### {#TripleO}
+./commercial/GA1/commercial.faq.md:####What is a Seed? #### {#whatisseed}  
+./commercial/GA1/commercial.faq.md:####What is the Undercloud? #### {#whatisundercloud} 
+./commercial/GA1/commercial.faq.md:####What is the Overcloud? #### {#whatisovercloud}
+./commercial/GA1/commercial.faq.md:####What is available in the version announced on June 30th? #### {#preview}
+./commercial/GA1/commercial.faq.md:####When can I expect support for baremetal deployment? #### {#baremetal}
+./commercial/GA1/commercial.faq.md:####Is the release localized for non-English speaking markets? #### {#localized}
+./commercial/GA1/commercial.faq.md:####Does HP Helion OpenStack work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
+./commercial/GA1/commercial.faq.md:####How many nodes and virtual machines does it support? #### {#nodes}
+./commercial/GA1/commercial.faq.md:####How can I update the software? #### {#softwareupdate}
+./commercial/GA1/commercial.faq.md:####Does it include an Operating System (OS)? #### {#includeOS}
+./commercial/GA1/commercial.faq.md:###Does this distribution include the OpenStack Icehouse release? #### {#icehouse}
+./commercial/GA1/commercial.faq.md:####Can HP Helion OpenStack run on non-HP hardware? #### {#nonhphardware}
+./commercial/GA1/commercial.faq.md:####Are HP support services included with HP Helion OpenStack? #### {#supportservices}
+./commercial/GA1/commercial.faq.md:####What support options are available? #### {#supportoptions}
+./commercial/GA1/commercial.faq.md:####Where can I find more information? #### {#MoreInfo}
+./commercial/GA1/commercial.faq.md:####Where can I report issues with HP Helion OpenStack? #### {#reportissues}
+./commercial/GA1/commercial.faq.md:####Does the distribution include non-OpenStack tools? #### {#nonopenstack}
+./commercial/GA1/commercial.faq.md:[When can I expect support for bare metal deployment?](#baremetal)
+./commercial/GA1/commercial.faq.md:####Is HP Helion OpenStack integrated with other HP Helion products and solutions? #### {#integrated}
+./commercial/GA1/commercial.install-GA-DNSaaS.md:## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
+./commercial/GA1/commercial.install-GA-DNSaaS.md:16. (Optionally) Restrict the CIDR from which SSH connections should be allowed. (**how do we restrict CIDR? do we need to enter any value or select any value in the CIDR box??**)
+./commercial/GA1/commercial.install-GA-DNSaaS.md:17.Click **Add**.  The rule is added for the instance.(**What message is displayed after you click add??)**
+./commercial/GA1/commercial.install-GA-DNSaaS.md:4. Restart the `designate-msdnsagent` service using the windows Services GUI. (**are users aware of the window services GUI?? if no how do we direct that to user??)**
+./commercial/GA1/commercial.install-GA-esx.md:	<!-- Remove per Divakar??
+./commercial/GA1/commercial.install-GA-esx.md:	***QUESTION: More info needed on how to determine the IP range??***
+./commercial/GA1/commercial.install-GA-json.md:* What to name file???
+./commercial/GA1/commercial.install-GA-json.md:* Where to save/copy to?
+./commercial/GA1/commercial.install-GA-json.md:* Preferred method for editing?
+./commercial/GA1/commercial.install-GA-kvm.md:<!-- QUESTION: New files names?? 
+./commercial/GA1/commercial.install-GA-ovsvapp.md:		#Are this hosts already added to DVS ? True if already part of DVS. False If you want to add. (*Not required if is_new_hosts=False)
+./commercial/GA1/commercial.install-GA-prereqs.md:<-- What does this mean?? -->
+./commercial/GA1/commercial.install-GA-prereqs.md:**PROCESS WILL CHANGE FOR GA!!!!!**???
+./commercial/GA1/commercial.install-GA-security.md:For StoreVirtual network design best practices, see [HP StoreVirtual 4000 Storage – Network design considerations and best practices[(http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us).
+./commercial/GA1/commercial.install-GA-security.md:- [HP StoreVirtual 4000 Storage – Network design considerations and best practices](http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)
+./commercial/GA1/commercial.install-GA-security.md:- [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562">HP ProLiant BL420c Gen8 Server Blade</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949">HP ProLiant BL460c Gen8 Server Blade</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137">HP ProLiant BL465c Gen8 Server Blade</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287">HP ProLiant BL660c Gen8 Server Blade</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527">HP ProLiant DL320e Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527">HP ProLiant DL320e Gen8 Server V2</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570">HP ProLiant DL360e Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177953">HP ProLiant DL360p Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5261094">HP ProLiant DL380e Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server V2</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server SE</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584">HP ProLiant DL385p Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290">HP ProLiant DL560 Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916">HP ProLiant DL580 G7 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692">HP ProLiant DL580 Gen8 Server &mdash; Legacy Bios only (not uEFI)</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860">HP ProLiant Microserver Gen8</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594">HP ProLiant ML310e Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584">HP ProLiant ML350e Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177961">HP ProLiant ML350p Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937">HP ProLiant SL230s Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941">HP ProLiant SL250s Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945">HP ProLiant SL270s Gen8 Server</a>
+./commercial/GA1/commercial.install-GA-supportmatrix.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871">HP ProLiant SL4540 Gen8 Server</a>
+./commercial/GA1/commercial.release-notes.md:* [Recommendations for HP Helion OpenStack](#recommendations) ***WHY???
+./commercial/GA1/commercial.troubleshooting.md:    `Fatal PCI Express Device Error PCI Slot ?
+./commercial/GA1/commercial.undercloud-resource-esx-manage-vm.md:<!--   * **Switch Definition Status**: (???).-->
+./commercial/GA1/commercial.undercloud-storage-storeserv.md:<!--what is HP Helion CLoud referring to in bullet 1??-->
+./commercial/GA1/commerical.performance-and-scalability.md:<do we need to mention the resources??>
+./commercial/GA1/commerical.performance-and-scalability.md:	<td>???</td>
+./commercial/GA1/commerical.performance-and-scalability.md:<do we need to mention the resources??>
+./commercial/GA1/commerical.services-dvr-overview.md:<**WHERE WILL THESE FILES BE LOCATED??? WHAT ARE THE SET OF COMMANDS THAT WILL TAKE THE USER TO THE LOCATION AND START EDIT PROCESS???? APART FROM THIS WHAT ELSE DO WE NEED TO ADD?????**>
+./commercial/GA1/commerical.services-dvr-overview.md:<**PLEASE GIVE ME THE EXPLANATION OF EACH OF THE ABOVE VALUES AND WHEN THEY ARE USED?????**>
+./commercial/GA1/commerical.services-networking-overview.md:<!-- In GA aether only?
+./commercial/GA1/commerical.services-swift-deployment-add-disk-storage-node.md:	Are you sure you want to continue connecting (yes/no)? yes
+./commercial/GA1/commerical.services-swift-deployment-add-proxy-node.md:	Are you sure you want to continue connecting (yes/no)? yes
+./commercial/GA1/commerical.services-swift-deployment.md:	Are you sure you want to continue connecting (yes/no)? yes
+./commercial/GA1/commerical.services-swift-diagnosis-disk-health-hpssacli.md:Where should the user login??
+./community/community.3rd-party-licenses.md:Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=166
+./community/community.3rd-party-licenses.md:	http://www.habets.pp.se/synscan/programs.php?prog=arping
+./community/community.3rd-party-licenses.md:Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
+./community/community.3rd-party-licenses.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./community/community.3rd-party-licenses.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./community/community.3rd-party-licenses.md:The upstream author explained here: http://bugs.gentoo.org/show_bug.cgi?id=14760
+./community/community.3rd-party-licenses.md:The upstream author explained here: http://bugs.gentoo.org/show_bug.cgi?id=14760
+./community/community.3rd-party-licenses.md:The upstream author explained here: http://bugs.gentoo.org/show_bug.cgi?id=14760
+./community/community.3rd-party-licenses.md:Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
+./community/community.3rd-party-licenses.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./community/community.3rd-party-licenses.md: ) What is the FOSS License Exception?  Oracle's Free and Open Source
+./community/community.faq.md:* [What is HP Helion OpenStack Community edition? And how does it tie into the overall HP Helion portfolio?](#whatcommunity)
+./community/community.faq.md:* [What does this distro enable customers to do?](#distroenable)
+./community/community.faq.md:* [How does HP Helion OpenStack Community edition compare to other OpenStack distributions on the market?](#howcompare)
+./community/community.faq.md:* [Is there a cost associated with this distribution?](#distrocost)
+./community/community.faq.md:* [What is TripleO?](#TripleO)
+./community/community.faq.md:* [Is the release localized for non-English speaking markets?](#localized) 
+./community/community.faq.md:* [Will the HP Helion OpenStack Community edition work with hybrid or public cloud projects?](#hybridorpubliccloud)
+./community/community.faq.md:* [How many nodes does it support?](#nodes) 
+./community/community.faq.md:* [How many virtual machines does it support?](#virtualmachines)  
+./community/community.faq.md:* [How can customers update the software?](#softwareupdate)
+./community/community.faq.md:* [Does it include an operating system (OS)?](#includeOS)
+./community/community.faq.md:* [Is HP Helion OpenStack Community edition upgradeable?](#upgrade)
+./community/community.faq.md:* [Can HP Helion OpenStack Community edition be run on non-HP hardware?](#nonhphardware)
+./community/community.faq.md:* [Are HP support services included with HP Helion OpenStack Community edition?](#supportservices)
+./community/community.faq.md:* [What support options are available?](#supportoptions)
+./community/community.faq.md:* [Where can customers find more information?](#MoreInfo)
+./community/community.faq.md:* [How can customers report issues and participate in HP Helion OpenStack Community edition related discussions?](#reportissues) 
+./community/community.faq.md:####What is HP Helion OpenStack Community edition? And how does it tie into the overall HP Helion portfolio? #### {#whatcommunity}
+./community/community.faq.md:####What does this distro enable customers to do? #### {#distroenable}
+./community/community.faq.md:####How does HP Helion OpenStack Community edition compare to other OpenStack cloud distributions on the market? #### {#howcompare}
+./community/community.faq.md:####Is there a cost associated with this distribution? #### {#distrocost} 
+./community/community.faq.md:####What is TripleO? #### {#TripleO}
+./community/community.faq.md:####What is available in the current version? {#preview}
+./community/community.faq.md:####Is the release localized for non-English speaking markets? #### {#localized}
+./community/community.faq.md:####Will HP Helion OpenStack Community edition work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
+./community/community.faq.md:####How many nodes does it support? #### {#nodes}
+./community/community.faq.md:####How many virtual machines does it support? #### {#virtualmachines} 
+./community/community.faq.md:####How can customers update the software? #### {#softwareupdate}
+./community/community.faq.md:####Does it include an operating system (OS)? #### {#includeOS}
+./community/community.faq.md:####Is the HP Helion OpenStack Community edition upgradable? #### {#upgrade}
+./community/community.faq.md:####Can HP Helion OpenStack Community edition be run on non-HP hardware? #### {#nonhphardware}
+./community/community.faq.md:####Are HP support services included with HP Helion OpenStack Community edition? #### {#supportservices}
+./community/community.faq.md:####What support options are available? #### {#supportoptions}
+./community/community.faq.md:####Where can I find more information? #### {#MoreInfo}
+./community/community.faq.md:####How can I report issues and participate in HP Helion OpenStack Community edition related discussions? #### {#reportissues}
+./community/community.faq.md:####Is HP Helion OpenStack Community edition integrated with other HP Helion products and solutions? #### {#integrated}
+./community/community.faq.md:* [What is the value I get by using the HP Helion OpenStack Community edition?](#PrimaryValue)
+./community/community.faq.md:* [How does HP Helion OpenStack Community edition relate to the larger HP Helion OpenStack initiative?](#RelateInitiative)
+./community/community.faq.md:* [Who are the best prospects for the HP Helion OpenStack Community edition?](#BestProspects)
+./community/community.faq.md:* [What are the main benefits of the HP Helion OpenStack Community edition and the features that support them?](#MainBenefits)
+./community/community.faq.md:* [What is the competitive positioning, and how do I win?](#Positioning)
+./community/community.faq.md:* [If HP Helion OpenStack Community edition is free, why should I waste valuable sales cycles on it?](#Free)
+./community/community.faq.md:* [When and where will HP Helion OpenStack Community edition be released?](#WhenWhere) 
+./community/community.faq.md:* [Where can I download the HP Helion OpenStack Community edition?](#Download)
+./community/community.faq.md:* [When can I expect support for baremetal deployment?](#BareMetal)
+./community/community.faq.md:####What is the value I get by using the HP Helion OpenStack Community edition? #### {#PrimaryValue}
+./community/community.faq.md:####How does the HP Helion OpenStack Community edition relate to the larger HP Helion OpenStack initiative?#### {#RelateInitiative}
+./community/community.faq.md:####Who are the best prospects for the HP Helion OpenStack Community edition? #### {#BestProspects}
+./community/community.faq.md:####What are the main benefits of the HP Helion OpenStack Community edition and the features that support them? #### {#MainBenefits}
+./community/community.faq.md:####What is TripleO? #### {#TripleO}
+./community/community.faq.md:####What is the competitive positioning, and how do I win? #### {#Positioning}
+./community/community.faq.md:####What is the price for the HP Helion OpenStack Community edition? #### {#WhatPrice} 
+./community/community.faq.md:####If the HP Helion OpenStack Community edition is free, why should I waste valuable sales cycles on it? #### {#Free}
+./community/community.faq.md:####When and where will HP Helion OpenStack Community edition be released? #### {#WhenWhere}
+./community/community.faq.md:####Where can I download the HP Helion OpenStack Community edition? #### {#Download}
+./community/community.faq.md:####Is the latest HP Helion OpenStack Community release localized for non-English speaking markets? #### {#Localized}
+./community/community.faq.md:####When can I expect support for baremetal deployment? #### {#BareMetal}
+./community/community.faq.md:####Will the HP Helion OpenStack Community edition work with hybrid or public cloud projects? #### {#hybridorpubliccloud} 
+./community/community.faq.md:####How many nodes does the HP Helion OpenStack Community edition support? #### {#Nodes}
+./community/community.faq.md:####How many virtual machines does the HP Helion OpenStack Community edition support? #### {#VirtualMachines} 
+./community/community.faq.md:####How can Clients update the HP Helion OpenStack Community edition software? #### {#SoftwareUpdates}
+./community/community.faq.md:####Does the HP Helion OpenStack Community edition include an operating system (OS)? #### {#IncludeOS}
+./community/community.faq.md:####Does the distribution include tools not based on OpenStack technology? #### {#Distribution}
+./community/community.faq.md:####Does this distro include the OpenStack Icehouse release? #### {#Icehouse}
+./community/community.faq.md:####Is the HP Helion OpenStack Community upgradable? #### {#Upgrades}
+./community/community.faq.md:####Can the HP Helion OpenStack Community edition be run on non-HP hardware? #### {#RunonHardware}
+./community/community.faq.md:* [What are the prerequisites for installing and configuring the HP Helion OpenStack Community edition?](#prerequisites)
+./community/community.faq.md:* [How do I install the HP Helion OpenStack Community edition, and what’s included?](#HowdoIinstall)
+./community/community.faq.md:* [What are the minimum and maximum number of configurations allowed?](#minimumandmaximumconfigs)
+./community/community.faq.md:* [I’ve installed the HP Helion OpenStack Community edition. Now what?](#NowWhat)
+./community/community.faq.md:* [How long does it take to complete the installation and configuration of the HP Helion OpenStack Community edition?](#Howlonginstallation)
+./community/community.faq.md:* [Should I reboot after installation?](#rebootafterinstallation)
+./community/community.faq.md:* [How do I verify that the installation has succeeded?](verifyinstallsucceed)
+./community/community.faq.md:* [What is a seed?](#Whatisseed)
+./community/community.faq.md:* [How do I create a VM for the seed based on the CloudOS specifications?](#createVM) 
+./community/community.faq.md:* [How do I load a undercloud image into the seed VM?](#imageseedcloud) 
+./community/community.faq.md:* [How do I log into the seed VM and deploy the undercloud?](#deployUC) 
+./community/community.faq.md:* [What is an undercloud?](#Whatisundercloud)
+./community/community.faq.md:* [What is an overcloud?](#Whatisovercloud) 
+./community/community.faq.md:* [How do I set up the disk configurations of the undercloud and overcloud servers?](#UCOCservers) 
+./community/community.faq.md:* [How do I configure the physical network connecting the undercloud and overcloud servers?](#physicalnetwork) 
+./community/community.faq.md:* [How do I install the overcloud?](#installOC) 
+./community/community.faq.md:* [How do I verify the functionality of the overcloud?](#verifyOC) 
+./community/community.faq.md:* [How do I deploy a software update to the overcloud?](#updateOC)
+./community/community.faq.md:* [How do I add a compute node to the overcloud?](#computenode)  
+./community/community.faq.md:* [How do I verify that the configuration has succeeded?](verifyconfigsucceed) 
+./community/community.faq.md:* [Should I reboot after configuring the HP Helion OpenStack Community edition?](#rebootafterconfig)
+./community/community.faq.md:* [How do I shut down and restart the HP Helion OpenStack Community edition?](#ShutdownRestart)
+./community/community.faq.md:* [How do I launch the HP Helion OpenStack Community Dashboard?](#launchtheDashboard)
+./community/community.faq.md:* [What are the key actions I can perform within the Dashboard?](#DashboardActions) 
+./community/community.faq.md:* [What are the identity operations (Keystone) that I need to perform?](#identityoperations)
+./community/community.faq.md:* [What are the compute operations (Nova) I need to perform?](#computeoperations)  
+./community/community.faq.md:* [How do I create a VM?](#createVM)
+./community/community.faq.md:* [How do I create a VM that boots from a volume?](#VMboot) 
+./community/community.faq.md:* [How do I reboot a VM?](#VMreboot) 
+./community/community.faq.md:* [How do I rebuild a VM?](#VMrebuild) 
+./community/community.faq.md:* [How do I start a VM?](#VMstart)
+./community/community.faq.md:* [How do I stop a VM?](#VMstop) 
+./community/community.faq.md:* [How do I create a snapshot of a VM?](#VMsnapshot)
+./community/community.faq.md:* [How do I rescue a VM?](#VMrescue) 
+./community/community.faq.md:* [How do I unrescue a VM?](#VMunrescue)
+./community/community.faq.md:* [How do I delete a VM?](#VMdelete) 
+./community/community.faq.md:* [How do I attach a volume to or from a VM?](#VMattachvolume) 
+./community/community.faq.md:* [How do I detach a volume to or from a VM?](#VMdetachvolume) 
+./community/community.faq.md:* [How do I get the console log of a VM?](#VMconsolelog) 
+./community/community.faq.md:* [How do I get the VNC connection to a VM?](#VMVNC) 
+./community/community.faq.md:* [How do I create a security group?](#createsecuritygroup)
+./community/community.faq.md:* [How do I edit or delete security group?](#deletesecuritygroup)
+./community/community.faq.md:* [How do I create a key pair?](#createkeypair)
+./community/community.faq.md:* [How do I edit or delete a key pair?](#deletekeypair)
+./community/community.faq.md:* [How do I associate or disassociated a floating IP address?](#IPaddress) 
+./community/community.faq.md:* [How do I create a flavor?](#createflavor)
+./community/community.faq.md:* [How do I edit or delete a flavor?](#deleteflavor)
+./community/community.faq.md:* [How do I modify the ACL of a flavor?](#modifyflavor)
+./community/community.faq.md:* [How do I modify the quota of a project?](#projectquota)
+./community/community.faq.md:* [How do I modify the quota of a user within a project?](#userquota)
+./community/community.faq.md:* [How do I create an availability zone?](#addzone)  
+./community/community.faq.md:* [How do I edit or delete an availability zone?](#deletezone) 
+./community/community.faq.md:* [How do I create an aggregate?](#createaggregate) 
+./community/community.faq.md:* [How do I edit or delete an aggregate?](#deleteaggregate) 
+./community/community.faq.md:* [How do I enable or disable a service?](#enableservice) 
+./community/community.faq.md:* [How do I lock or unlock a VM?](#lockVM) 
+./community/community.faq.md:* [How do I pause or unpause a VM?](#pauseVM)
+./community/community.faq.md:* [How do I suspend or Resume a VM?](#resumeVM)<b><font color="red">(Is this a different use case from the one above?)</font></b>
+./community/community.faq.md:* [How do i create a network?](#createnetwork)
+./community/community.faq.md:* [How do I edit or delete a network?](#deletenetwork)
+./community/community.faq.md:* [How do I add a router?](#addrouter)
+./community/community.faq.md:* [How do I edit or delete a router?](#deleterouter) 
+./community/community.faq.md:* [How do I add subnet to a network?](#addsubnet) 
+./community/community.faq.md:* [How do I delete a subnet from a network?](#deletesubnet)
+./community/community.faq.md:* [How do I add a network to a router?](#networkrouter)
+./community/community.faq.md:* [How do I delete a network from a router?](#removerouter)
+./community/community.faq.md:* [How do I add an external network to a router?](#externalrouter)
+./community/community.faq.md:* [How do I remove an external network from a router?](#removeexternalnetwork)
+./community/community.faq.md:* [How do I create a port on a network?](#createport) 
+./community/community.faq.md:* [How do I edit or delete a port on a network?](#deleteport) 
+./community/community.faq.md:* [How do I allocate a floating IP address?](#allocatefloating) 
+./community/community.faq.md:* [How do I deallocate a floating IP address?](#deallocatefloating)
+./community/community.faq.md:* [How do I associate a floating IP address to a fixed IP address?](#floatingIPaddress)
+./community/community.faq.md:* [How do I disassociate a floating IP address from a fixed IP address?](#fixedIPaddress)
+./community/community.faq.md:* [How do i create a security group?](#createsecuritygroup) 
+./community/community.faq.md:* [How do i edit or delete a security group?](#deletesecuritygroup) 
+./community/community.faq.md:* [How do I create a security group rule?](#createrule)
+./community/community.faq.md:* [How do I edit or delete a security group rule?](#deleterule)  
+./community/community.faq.md:* [How do create an external network?](#externalnetwork)
+./community/community.faq.md:* [How do I edit the quota values of a project?](#quotavalues)
+./community/community.faq.md:* [How do I add a network to a DHCP agent?](#DHCPagent) 
+./community/community.faq.md:* [How do I remove a network from a DHCP agent?](#removenetwork) 
+./community/community.faq.md:* [How do I add a router to a L3 agent?](#L3agent) 
+./community/community.faq.md:* [How do I remove a router from a L3 agent?](#removeL3agent) 
+./community/community.faq.md:* [How do I record metering data?](#recorddata)
+./community/community.faq.md:* [How do I create an alarm?](#createalarm)
+./community/community.faq.md:* [How do I edit or delete an alarm?](#deletealarm) 
+./community/community.faq.md:* [How do I record alarm change?](#alarmchange)
+./community/community.faq.md:* [How do I record a metering event?](#recordevent) 
+./community/community.faq.md:* [How do I clear expired metering data?](#expireddata) 
+./community/community.faq.md:* [What types of measurements do I have access to?](#measurementtypes)
+./community/community.faq.md:* [Where can I get usage data for a specific meter?](#usagedata)
+./community/community.faq.md:* [Where can I find the computed statistics for a sample within a specific time range?](#sampletimerange)
+./community/community.faq.md:* [Where can I access a list of resources?](#accesslist) 
+./community/community.faq.md:* [Where can I find the resource details?](#resourcedetails)
+./community/community.faq.md:* [Where can I see the API capabilities supported by the current driver?](#currentdriver) 
+./community/community.faq.md:* [How can I filter and view alarms?](#filterview)
+./community/community.faq.md:* [Where can I find the details on a specific alarm?](#alarmdetails)
+./community/community.faq.md:* [Where can I Get the history of a specific alarm?](#alarmhistory) 
+./community/community.faq.md:* [Where can I find alarm status?](#alarmstatus)  
+./community/community.faq.md:* [How do I create a private image?](#createimage)
+./community/community.faq.md:* [How to I edit or delete a private image?](#deleteimage)
+./community/community.faq.md:* [How do I add or update metadata for a private image?](#updatemetadata)   
+./community/community.faq.md:* [How do I create a public image?](#createpublicimage)
+./community/community.faq.md:* [How do I edit or delete a public image?](#deletepublicimage)
+./community/community.faq.md:* [How do I add or update metadata for a public image?](#addmetadatapublicimage)
+./community/community.faq.md:* [How do I create a volume?](#createvolume)
+./community/community.faq.md:* [How do I delete a volume?](#deletevolume)
+./community/community.faq.md:* [How do I create a bootable volume from an image in glance?](#bootablevolume)
+./community/community.faq.md:* [How do I create a snapshot of a volume?](#createsnapshot) 
+./community/community.faq.md:* [How do I delete a snapshot of a volume?](#deletesnapshot)
+./community/community.faq.md:* [How do I create a backup of a volume in swift?](#createvolumebackup)
+./community/community.faq.md:* [How do I delete a backup of a volume in swift?](#deletevolumebackup)
+./community/community.faq.md:* [How do I create a volume from a backup in swift?](#createvolumebackup)
+./community/community.faq.md:* [How do I update the metadata of a volume?](#updatemetadatavolume) 
+./community/community.faq.md:* [How do I create an image in glance from a volume?](#createimageglance) 
+./community/community.faq.md:* [How do I rename a volume?](#renamevolume)
+./community/community.faq.md:* [How do I extend a volume?](#extendvolume)
+./community/community.faq.md:* [How do I transfer a volume between users?](#transfervolume)
+./community/community.faq.md:* [How do I modify the quota values of a project?](#modifyquota)
+./community/community.faq.md:* [How do I enable or disable a service?](#enableservice)
+./community/community.faq.md:* [How do I create a container?](#createcontainer)
+./community/community.faq.md:* [How do I edit or delete a container?](#deletecontainer)
+./community/community.faq.md:* [How do I upload files into a container?](#uploadcontainer)
+./community/community.faq.md:* [How do I download files from a container?](#downloadcontainer) 
+./community/community.faq.md:* [How do I delete files in a container?](#deletefiles)
+./community/community.faq.md:* [How can I update the HP Cloud software?](#updatesoftware)
+./community/community.faq.md:* [What will future releases of HP Helion OpenStack Community edition include?](#FutureReleases)
+./community/community.faq.md:* [Where can I access release notes?](#ReleaseNotes) 
+./community/community.faq.md:* [I'm stuck. Where can I get more help?](#gethelp) 
+./community/community.faq.md:* [Are HP support services included?](#supportservices)
+./community/community.faq.md:* [Where can I go to find more information?](#moreinformation)
+./community/community.faq.md:* [How can I contact HP Cloud Customer Support?](#contacts) 
+./community/community.faq.md:####Where can I see a list of use cases supported by the HP Helion OpenStack Community edition? #### {#usecases}
+./community/community.faq.md:####How is HP Helion OpenStack Community edition different from other OpenStack technology-based clouds? #### {#Howdifferent} 
+./community/community.faq.md:####What are the key features and components in the HP Helion OpenStack Community edition? #### {#Keycomponents}  
+./community/community.faq.md:####Is the HP Helion OpenStack Community edition secure? #### {#Commuinitysecure}
+./community/community.faq.md:####How do I get started with the HP Helion OpenStack Community edition? #### {GetStarted} 
+./community/community.faq.md:####Where can I deploy the HP Helion OpenStack Community edition? {WhereDeploy} 
+./community/community.faq.md:####Is the HP Helion OpenStack Community edition integrated with other HP cloud products and solutions? #### {#IntegratedwithOtherProducts}
+./community/community.faq.md:####What OpenStack components are supported in the HP Helion OpenStack Community edition? #### {#SupportedComponents}
+./community/community.faq.md:####How much does the HP Helion OpenStack Community edition cost? #### {#Communitycost}
+./community/community.faq.md:####Will the HP Helion OpenStack Community edition work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
+./community/community.faq.md:####Does the HP Helion OpenStack Community edition come with any images? #### {#ComeWithImages} 
+./community/community.faq.md:####How many nodes does the HP Helion OpenStack Community edition support? #### {#Howmanynodes}
+./community/community.faq.md:####Will the HP Helion OpenStack Community edition work with hybrid or public cloud projects? #### {#WorkWithHybrid} 
+./community/community.faq.md:####How many virtual machines does the HP Helion OpenStack Community edition support? #### {#Howmanyvirtualmachines}
+./community/community.faq.md:####Is the HP Helion OpenStack Community edition scalable?  What if I want to grow my cloud beyond 30 nodes and 600 VMs? #### {#CommunityScalable}
+./community/community.faq.md:####What are the prerequisites for installing and configuring the HP Helion OpenStack Community edition? #### {#prerequisites}
+./community/community.faq.md:####How do I install the HP Helion OpenStack Community edition, and what’s included? #### {#HowdoIinstall}
+./community/community.faq.md:####What are the minimum and maximum number of configurations allowed? #### {#minimumandmaximumconfigs}
+./community/community.faq.md:####How do I install and set up the HP Helion OpenStack Community edition Admin Node? #### {#installandsetup}
+./community/community.faq.md:####I’ve installed the HP Helion OpenStack Community edition. Now what? #### {#NowWhat}
+./community/community.faq.md:####How long does it take to install the HP Helion OpenStack Community edition? #### {#Howlonginstallation} 
+./community/community.faq.md:####Should I reboot after installation? #### {#rebootafterinstallation} 
+./community/community.faq.md:####How do I verify that the installation has succeeded? #### {verifyinstallsucceed}
+./community/community.faq.md:####What is a seed? #### {#Whatisseed}
+./community/community.faq.md:####How do I create a VM for the Seed based on the CloudOS specifications? #### {#createVM} 
+./community/community.faq.md:####How do I load a under cloud image into the seed VM? #### {#imageseedcloud} 
+./community/community.faq.md:####How do I log into the seed VM and deploy the undercloud? #### {#deployUC}   
+./community/community.faq.md:####What is an undercloud? #### {#Whatisundercloud}
+./community/community.faq.md:####What is an overcloud? #### {#Whatisovercloud}
+./community/community.faq.md:####How do I set up the disk configurations of the undercloud and overcloud servers? #### {#UCOCservers}
+./community/community.faq.md:####How do I configure the physical network connecting the undercloud and overcloud servers? #### {#physicalnetwork}
+./community/community.faq.md:####How do I install the overcloud? #### {#installOC}
+./community/community.faq.md:####How do I verify the functionality of the overcloud? #### {#verifyOC}
+./community/community.faq.md:####How do I deploy a software update to the overcloud? #### {#updateOC}
+./community/community.faq.md:####How do I add a compute node to the overcloud? #### {#computenode}
+./community/community.faq.md:####How do I launch the HP Helion OpenStack Community Dashboard? #### {#launchtheDashboard}
+./community/community.faq.md:####What are the key actions I can perform within the Dashboard? ####{#DashboardActions} 
+./community/community.faq.md:####What are the identity operations (Keystone) that I need to perform?] ####{#identityoperations}
+./community/community.faq.md:####What are the compute operations (Nova) I need to perform? #### {#computeoperations}  
+./community/community.faq.md:####How do I create a VM? #### {#createVM}
+./community/community.faq.md:####How do I create a VM that boots from a volume? #### {#VMboot} 
+./community/community.faq.md:####How do I reboot a VM?] #### {#VMreboot} 
+./community/community.faq.md:####How do I rebuild a VM? #### {#VMrebuild} 
+./community/community.faq.md:####How do I start a VM? #### {#VMstart}
+./community/community.faq.md:####How do I stop a VM? #### {#VMstop}
+./community/community.faq.md:####How do I create a snapshot of a VM? #### {#VMsnapshot}
+./community/community.faq.md:####How do I rescue a VM? #### {#VMrescue} 
+./community/community.faq.md:####How do I unrescue a VM? #### {#VMunrescue}
+./community/community.faq.md:####How do I delete a VM? #### {#VMdelete} 
+./community/community.faq.md:####How do I attach a volume to or from a VM? #### {#VMattachvolume} 
+./community/community.faq.md:####How do I detach a volume to or from a VM? #### {#VMdetachvolume} 
+./community/community.faq.md:####How do I get the console log of a VM? #### {#VMconsolelog} 
+./community/community.faq.md:####How do I get the VNC connection to a VM? #### {#VMVNC}
+./community/community.faq.md:####How do I create a security group? #### {#createsecuritygroup}
+./community/community.faq.md:####How do I edit or delete security group? #### {#deletesecuritygroup}
+./community/community.faq.md:####How do I create a key pair? #### {#createkeypair}
+./community/community.faq.md:####How do I edit or delete a key pair? #### {#deletekeypair}
+./community/community.faq.md:####How do I associate or disassociated a floating IP address? #### {#IPaddress} 
+./community/community.faq.md:####How do I create a flavor? #### {#createflavor}
+./community/community.faq.md:####How do I edit or delete a flavor? #### {#deleteflavor}
+./community/community.faq.md:####How do I modify the ACL of a flavor? #### {#modifyflavor}
+./community/community.faq.md:####How do I modify the quota of a project? #### {#projectquota}
+./community/community.faq.md:####How do I modify the quota of a user within a project? #### {#userquota}
+./community/community.faq.md:####How do I create an availability zone? #### {#addzone}  
+./community/community.faq.md:####How do I edit or delete an availability zone? #### {#deletezone} 
+./community/community.faq.md:####How do I create an aggregate? #### {#createaggregate} 
+./community/community.faq.md:####How do I edit or delete an aggregate? #### {#deleteaggregate} 
+./community/community.faq.md:####How do I enable or disable a service? #### {#enableservice} 
+./community/community.faq.md:####How do I lock or unlock a VM? #### {#lockVM} 
+./community/community.faq.md:####How do I pause or unpause a VM? #### {#pauseVM}
+./community/community.faq.md:####How do I suspend or Resume a VM? #### {#resumeVM}<b><font color="red">(Is this a different use case from the one above?)</font></b>
+./community/community.faq.md:####How do i create a network? #### {#createnetwork}
+./community/community.faq.md:####How do I edit or delete a network? #### {#deletenetwork}
+./community/community.faq.md:####How do I add a router? #### {#addrouter}
+./community/community.faq.md:####How do I edit or delete a router? #### {#deleterouter} 
+./community/community.faq.md:####How do I add subnet to a network? #### {#addsubnet} 
+./community/community.faq.md:####How do I delete a subnet from a network? #### {#deletesubnet}
+./community/community.faq.md:####How do I add a network to a router? #### {#networkrouter}
+./community/community.faq.md:####How do I delete a network from a router? #### {#removerouter}
+./community/community.faq.md:####How do I add an external network to a router? #### {#externalrouter}
+./community/community.faq.md:####How do I remove an external network from a router? #### {#removeexternalnetwork}
+./community/community.faq.md:####How do I create a port on a network? #### {#createport} 
+./community/community.faq.md:####How do I edit or delete a port on a network? #### {#deleteport} 
+./community/community.faq.md:####How do I allocate a floating IP address? #### {#allocatefloating} 
+./community/community.faq.md:####How do I deallocate a floating IP address? #### {#deallocatefloating}
+./community/community.faq.md:####How do I associate a floating IP address to a fixed IP address? #### {#floatingIPaddress}
+./community/community.faq.md:####How do I disassociate a floating IP address from a fixed IP address? #### {#fixedIPaddress}
+./community/community.faq.md:####How do i create a security group? #### {#createsecuritygroup} 
+./community/community.faq.md:####How do I create a security group rule? #### {#createrule}
+./community/community.faq.md:####How do I edit or delete a security group rule? #### {#deleterule}  
+./community/community.faq.md:####How do create an external network? #### {#externalnetwork}
+./community/community.faq.md:####How do I edit the quota values of a project? #### {#quotavalues}
+./community/community.faq.md:####How do I add a network to a DHCP agent? #### {#DHCPagent) 
+./community/community.faq.md:####How do I remove a network from a DHCP agent? #### {#removenetwork} 
+./community/community.faq.md:####How do I add a router to a L3 agent? #### {#L3agent} 
+./community/community.faq.md:####How do I remove a router from a L3 agent? #### {#removeL3agent} 
+./community/community.faq.md:####How do I record metering data? #### {#recorddata}
+./community/community.faq.md:####How do I create an alarm? #### {#createalarm}
+./community/community.faq.md:####How do I edit or delete an alarm? #### {#deletealarm} 
+./community/community.faq.md:####How do I record alarm change? #### {#alarmchange}
+./community/community.faq.md:####How do I record a metering event? #### {#recordevent}
+./community/community.faq.md:####How do I clear expired metering data? #### {#expireddata} 
+./community/community.faq.md:####What types of measurements do I have access to? #### {#measurementtypes}
+./community/community.faq.md:####Where can I get usage data for a specific meter? #### {#usagedata}
+./community/community.faq.md:####Where can I find the computed statistics for a sample within a specific time range?#### {#sampletimerange}
+./community/community.faq.md:####Where can I access a list of resources? #### {#accesslist}
+./community/community.faq.md:####Where can I find the resource details? #### {#resourcedetails}
+./community/community.faq.md:####Where can I see the API capabilities supported by the current driver? #### {#currentdriver} 
+./community/community.faq.md:####How can I filter and view alarms? #### {#filterview}
+./community/community.faq.md:####Where can I find the details on a specific alarm? #### {#alarmdetails}
+./community/community.faq.md:####Where can I Get the history of a specific alarm? #### {#alarmhistory} 
+./community/community.faq.md:####Where can I find alarm status? #### {#alarmstatus}  
+./community/community.faq.md:####How do I create a private image? #### {#createimage}
+./community/community.faq.md:####How to I edit or delete a private image? #### {#deleteimage}
+./community/community.faq.md:####How do I add or update metadata for a private image? #### {#updatemetadata}   
+./community/community.faq.md:####How do I create a public image? #### {#createpublicimage}
+./community/community.faq.md:####How do I edit or delete a public image? #### {#deletepublicimage}
+./community/community.faq.md:####How do I add or update metadata for a public image? #### {#addmetadatapublicimage}
+./community/community.faq.md:####How do I create a volume? #### {#createvolume}
+./community/community.faq.md:####How do I delete a volume? #### {#deletevolume}
+./community/community.faq.md:####How do I create a bootable volume from an image in glance? #### {#bootablevolume}
+./community/community.faq.md:####How do I create a snapshot of a volume? #### {#createsnapshot} 
+./community/community.faq.md:####How do I delete a snapshot of a volume? #### {#deletesnapshot}
+./community/community.faq.md:####How do I create a backup of a volume in swift? #### {#createvolumebackup}
+./community/community.faq.md:####How do I delete a backup of a volume in swift? #### {#deletevolumebackup}
+./community/community.faq.md:####How do I create a volume from a backup in swift? #### {#createvolumebackup}
+./community/community.faq.md:####How do I update the metadata of a volume? #### {#updatemetadatavolume} 
+./community/community.faq.md:####How do I create an image in glance from a volume? #### {#createimageglance} 
+./community/community.faq.md:####How do I rename a volume? #### {#renamevolume}
+./community/community.faq.md:####How do I extend a volume? #### {#extendvolume}
+./community/community.faq.md:####How do I transfer a volume between users? #### {#transfervolume}
+./community/community.faq.md:#### How do I modify the quota values of a project? #### {#modifyquota}
+./community/community.faq.md:#### How do I enable or disable a service? #### {#enableservice}
+./community/community.faq.md:####How do I create a container? #### {#createcontainer)
+./community/community.faq.md:####How do I edit or delete a container? #### {#deletecontainer)
+./community/community.faq.md:####How do I upload files into a container? #### {#uploadcontainer)
+./community/community.faq.md:####How do I download files from a container? #### {#downloadcontainer) 
+./community/community.faq.md:####How do I delete files in a container? #### {#deletefiles)
+./community/community.faq.md:####How can I update the HP Cloud software? #### {#updatesoftware}
+./community/community.faq.md:####What will future releases of HP Helion OpenStack Community edition include? #### {#FutureReleases}
+./community/community.faq.md:####Where can I access release notes? #### {#ReleaseNotes}
+./community/community.faq.md:####I'm stuck. Where can I get more help? #### {#gethelp} 
+./community/community.faq.md:####Where can I go to find more information? #### {#moreinformation}
+./community/community.faq.md:####How can I contact HP Cloud Customer Support? #### {#contacts}
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562">HP ProLiant BL420c Gen8 Server Blade</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949">HP ProLiant BL460c Gen8 Server Blade</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137">HP ProLiant BL465c Gen8 Server Blade</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287">HP ProLiant BL660c Gen8 Server Blade</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527">HP ProLiant DL320e Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527">HP ProLiant DL320e Gen8 Server V2</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570">HP ProLiant DL360e Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177953">HP ProLiant DL360p Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5261094">HP ProLiant DL380e Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server V2</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server SE</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584">HP ProLiant DL385p Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290">HP ProLiant DL560 Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916">HP ProLiant DL580 G7 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692">HP ProLiant DL580 Gen8 Server &mdash; Legacy Bios only (not uEFI)</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860">HP ProLiant Microserver Gen8</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594">HP ProLiant ML310e Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584">HP ProLiant ML350e Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177961">HP ProLiant ML350p Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937">HP ProLiant SL230s Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941">HP ProLiant SL250s Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945">HP ProLiant SL270s Gen8 Server</a>
+./community/community.hwsw-requirements.md:<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871">HP ProLiant SL4540 Gen8 Server</a>
+./community/community.hwsw-requirements.md:<td> ? </td>
+./community/community.hwsw-requirements.md:<td> ? </td>
+./community/community.hwsw-requirements.md:<td> ? </td>
+./community/community.hwsw-requirements.md:<td> ? </td>
+./community/community.hwsw-requirements.md:<td> ? </td>
+./community/community.hwsw-requirements.md:<td> ? </td>
+./community/community.install.md:Any post-installation configuration?
+./community/community.install.md:REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK TO SOME OF THE ADMIN USE CASES. SINCE WE ARE NOT INCLUDING THE USE CASES FOR 6/12, SHOULD I JUST INCLUDE A FEW OF THE MOST 'COMMON' USE CASES HERE N THIS DOCUMENT? -->
+./community/community.install.md:    `Fatal PCI Express Device Error PCI Slot ?
+./compute.api.md:<iframe src="http://player.vimeo.com/video/37391923?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe> -->
+./compute.api.md:In addition to the OpenStack Compute API, HP Helion Public Cloud Compute also offers EC2 compatibility.  Note that the authentication mechanism for the EC2 API differs from that of the OpenStack Compute API.  Both sets of keys can be found on the [Manage Console](https://console.hpcloud.com/account/api_keys).  Authentication specifics for the OpenStack Compute API can be found in the documents referenced above.  For EC2 API authentication, [see Amazon's documentation on the subject](http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-query-api.html#query-authentication).
+./compute.api.md:Want details?  Take a look at our [EC2 Compatibility Method List](/ec2-compatibility-method-list).
+./compute.md:<!-- <iframe src="http://player.vimeo.com/video/33922384?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./compute.md:Do you need low level, raw REST API access to HP Helion Public Cloud compute?  Take a look at the Compute API page for the version of HP Helion Public Cloud you are using:
+./compute.md:Want scriptable access you can put in a cron job or something similar?  Go on over to our [CLI documentation](/cli).
+./compute.networks.issues.md:Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
+./dbaas.md:Do you need low level, raw REST API access to HP Helion Public Cloud Relational Database? Take a look at our [Relational Database API for v13.5 page](/api/v13/dbaas/) for details.
+./dbaas.tutorial.introduction.md:What about re-building an instance from a snapshot? At this time, that step requires involvement from HP Helion Public Cloud staff.
+./devplatform/stackato/user/deploy/languages/clojure.html.md:    Application Deployed URL: 'myapp.helion-xxxx.local'?
+./devplatform/stackato/user/deploy/languages/java.html.md:    <?xml version="1.0" encoding="UTF-8"?>
+./devplatform/stackato/user/deploy/languages/perl/index.html.md:    my($user,$password,$host,$port,$name) = $ENV{MYSQL_URL} =~ m{mysql://(.+?):(.+)\@(.+?):(\d+)/(.*)}
+./devplatform/stackato/user/deploy/languages/php.html.md:    <?php
+./devplatform/stackato/user/deploy/languages/php.html.md:    ?>
+./devplatform/stackato/user/deploy/languages/php.html.md:    <?php
+./devplatform/stackato/user/deploy/languages/php.html.md:    ?>
+./devplatform/stackato/user/deploy/stackatoyml.html.md:        prompt: "What type of deployment?: "
+./devplatform/stackato/user/services/data-services.html.md:    Would you like to bind any services to 'cirrus' ?  [yN]: y
+./devplatform/stackato/user/services/data-services.html.md:    Which client would you like to start?
+./devplatform/stackato/user/services/data-services.html.md:    Which client would you like to start? **none**
+./devplatform/stackato/user/services/data-services.html.md:    Which client would you like to start?
+./devplatform/stackato/user/services/data-services.html.md:    Which client would you like to start?
+./dns.md:Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the [DNS API page](/api/dns/).
+./ec2-compatibility-method-list.md:* [AllocateAddress](http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/index.html?ApiReference-query-AllocateAddress.html)
+./faq.md:What is a web site without an FAQ or two?  Well, a pain in the neck to use, honestly; that's why we've tried to provide you with a comprehensive one here.  If you have any suggestions on additions or improvements to our little effort here, please let us know on the forums!
+./faq.md:* [How do I install or upgrade HP Helion Public Cloud Unix CLI?](#HowdoIinstallHPCloudUnixCLI)
+./faq.md:* [How do I get help with HP Helion Public Cloud Unix CLI?](#HowdoIgethelpwithHPCloudUnixCLI)
+./faq.md:* [How do I diagnose a problem with the CLI?](#HowdoIDebugHPCloudUnixCLI)
+./faq.md:* [How do I install HP Helion Public Cloud Unix CLI without RVM?](#HowdoIinstallHPCloudUnixCLIwithoutRVM)
+./faq.md:* [How do I uninstall HP Helion Public Cloud Unix CLI?](#HowdoIuninstallHPCloudUnixCLI)
+./faq.md:* [What if these FAQs didn't answer my questions?](#WhereelsecanIgoformoreinformationUnixCLI)
+./faq.md:### How do I install or upgrade HP Helion Public Cloud Unix CLI?### {#HowdoIinstallHPCloudUnixCLI}
+./faq.md:### How do I get help with HP Helion Public Cloud Unix CLI?### {#HowdoIgethelpwithHPCloudUnixCLI}
+./faq.md:### How do I diagnose problems with the HP Helion Public Cloud Unix CLI?### {#HowdoIDebugHPCloudUnixCLI}
+./faq.md:### How do I install HP Helion Public Cloud Unix CLI without RVM?### {#HowdoIinstallHPCloudUnixCLIwithoutRVM}
+./faq.md:### How do I uninstall HP Helion Public Cloud Unix CLI?### {#HowdoIuninstallHPCloudUnixCLI}
+./faq.md:### Where else can I go for more information?### {#WhereelsecanIgoformoreinformationUnixCLI}
+./faq.md:* [How do I install HP Helion Public Cloud Ruby Fog?](#HowdoIinstallHPCloudRubyFog)
+./faq.md:* [How do I install HP Helion Public Cloud Ruby Fog without RVM?](#HowdoIinstallHPCloudRubyFogwithoutRVM)
+./faq.md:* [How do I upgrade HP Helion Public Cloud Ruby Fog?](#HowdoIupgradeHPCloudRubyFog)
+./faq.md:* [How do I uninstall HP Helion Public Cloud Ruby Fog?](#HowdoIuninstallHPCloudRubyFog)
+./faq.md:* [What if these FAQs didn't answer my questions?](#WhereelsecanIgoformoreinformationRubyFog)
+./faq.md:### How do I install HP Helion Public Cloud Ruby Fog?### {#HowdoIinstallHPCloudRubyFog}
+./faq.md:### How do I install HP Helion Public Cloud Ruby Fog without RVM?### {#HowdoIinstallHPCloudRubyFogwithoutRVM}
+./faq.md:<!--link to nokogiri package and install information?-->
+./faq.md:### How do I upgrade HP Helion Public Cloud Ruby Fog?### {#HowdoIupgradeHPCloudRubyFog}
+./faq.md:### How do I uninstall HP Helion Public Cloud Ruby Fog?### {#HowdoIuninstallHPCloudRubyFog}
+./faq.md:### Where else can I go for more information?### {#WhereelsecanIgoformoreinformationRubyFog}
+./glossary.md::    A coding layer that provides programming language-specific access to the underlying core code base REST API HTTP calls.  For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json)</font>, and the other HTTP attributes, using the request layer you can simplify the call to `list_flavors()` (the specific call depends on the details of your specific request layer syntax).  The request layer handles all HTTP request and response parsing and exception handling.  Also **request layer**.
+./GLTEST.md:	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
+./horizonfeaturemap.md:[HP Helion Public Cloud version 13.5 overview](http://docs.hpcloud.com/version-overview?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
+./horizonfeaturemap.md:[HP Helion Public Cloud Services 12.12 to 13.5 transition overview](https://docs.hpcloud.com/migration-overview/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_migration-overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
+./identity.api.md:<iframe src="http://player.vimeo.com/video/35980431?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe> -->
+./identity.md:Do you need low level, raw REST API access to HP Identity Services?  Take a look at our Compute API page for the version of HP Helion Public Cloud you are using: 
+./identity.md:Want scriptable access you can put in a cron job or something similar?  Go on over to our [CLI documentation](/cli).
+./index.md:<!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./jclouds.md:Questions or comments?  Let us know [over at the Forum](/connect/forum).
+./lbaas.md:Do you need low level, raw REST API access to HP Helion Public Cloud LBaaS?  Take a look at the [LBaaS API page](/api/lbaas/).
+./maas.md:Do you need low-level, raw REST API access to HP Helion Public Cloud Monitoring?  Take a look at the [Monitoring v1.1 API page](/api/v13/monitoring/).
+./mc.compute.images.create.md:<!-- Other methods delete an image? -->
+./mc.compute.network.manage-ports.md:<!--What is this port? -->
+./mc.compute.network.manage-ports.md:<!--When cloudadmin tool deployed, add a link to it here?-->
+./mc.compute.network.manage-ports.md:<!--Include a link to the CLI process for creating a router here as well?-->
+./mc.compute.networks.manage-ports.md:<!--What is default port? -->
+./mc.compute.networks.manage-ports.md:<!--When cloudadmin tool deployed, add a link to it here?-->
+./mc.compute.networks.manage-ports.md:<!--Include a link to the CLI process for creating a router here as well?-->
+./mc.compute.networks.manage-routers.md:<!--Can users enable/disable routers in 13.5?
+./mc.compute.networks.manage-routers.md:<!--When cloudadmin tool deployed, add a link to it here?-->
+./mc.compute.networks.manage-routers.md:<!--Include a link to the CLI process for creating a router here as well?-->
+./mc.compute.networks.manage-routers.md:<!--Can users enable/disable routers in 13.5?
+./mc.compute.networks.sys-messages.md:Pre-reqs and overview of the screen item needed (screen shot of the networks screen with the appropriate item circled or something?).
+./mc.compute.servers.manage.md:<!-- Do we want to link stuff here to the glossary terms? -->
+./mc.compute.using.md:So you've fired up our [management console](https://console.hpcloud.com) (MC) and played around with it, maybe even read some of [our documentation](/mc) on it, and you're now asking yourself, "What are some of the cool things I can do with all this?"  Good question!  It's for just that reason that we've created a bunch of use cases for you to look through to help you out!
+./mc.md:Need more information on the MC?  Take a look at the following pages:
+./mc.sitemap.md:Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place!
+./mc.sitemap.md:&nbsp;&nbsp;&nbsp;&nbsp;[Security groups screen](/mc/compute/security-groups/) <!-- basic screen functions here such as selecting a project, listing security groups, etc.? --> <br>
+./migration-overview-reference.md:		<?xml version="1.0" ?>
+./migration-overview-reference.md:		<?xml version="1.0" ?>
+./migration-overview-reference.md:		<?xml version="1.0" ?>
+./migration-overview-reference.md:For more information on the available storage options, see [What cloud storage is right for you?](http://www.hpcloud.com/sites/default/files/Right-storage-for-you.pdf)
+./migration-overview-reference.md:	Are you sure you want to continue connecting (yes/no)? yes
+./migration-overview-reference.md:		Are you sure you want to continue connecting (yes/no)? yes
+./migration-overview-reference.md:**freeSSHd and freeFTPd website** at [freesshd.com](http://www.freesshd.com/?ctt=download). 
+./moonshot/develop.md:* Eve: https://my_server:21051/?token=&lt;keystone-token-value>
+./moonshot/develop.md:* Focus: https://my_server:21061/?token=&lt;keystone-token-value>
+./moonshot/develop.md:* Graffiti: https://my_server:21071/?token=&lt;keystone-token-value>
+./moonshot/develop.quickstart-intro.md:* [What are the HP Cloud OS for Moonshot Services?](#what-are-the-hp-cloud-os-for-moonshot-services)
+./moonshot/develop.quickstart-intro.md:* [What is the HP Cloud OS for Moonshot API Documentation app?](#what-is-the-hp-cloud-os-for-moonshot-api-documentation-app)
+./moonshot/develop.quickstart-intro.md:## What are the HP Cloud OS for Moonshot Services?
+./moonshot/develop.quickstart-intro.md:## What is the HP Cloud OS for Moonshot API Documentation app?
+./moonshot/develop.quickstart-intro.md:* Eve: http://my_server:21051/?token=&lt;keystone-token-value>
+./moonshot/develop.quickstart-intro.md:* Focus: http://my_server:21061/?token=&lt;keystone-token-value>
+./moonshot/develop.quickstart-intro.md:* Graffiti: http://my_server:21071/?token=&lt;keystone-token-value>
+./moonshot/develop.quickstart-intro.md:You can include the returned token's value on the <code> ?/token=&lt;value> </code> query parameter with each REST call. 
+./moonshot/install.install-modules-reference.md:<a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+./moonshot/install.install-modules-reference.md:18 represents 2^18 or 262,144 partitions. Used in ring builder commands. See <a href="http://searchcloudstorage.techtarget.com/answer/OpenStack-Swift-object-storage-How-does-data-placement-work" target="new2">OpenStack Swift Object Storage - How does Placement Work?"</a>. 
+./moonshot/prepare.faqs.md:* [What is the HP point of view on cloud solutions?](#what-is-the-hp-pov-on-cloud-solutions)
+./moonshot/prepare.faqs.md:* [What is HP Cloud?](#what-is-hp-cloud)
+./moonshot/prepare.faqs.md:* [How does HP help solve the challenges faced by enterprises?](#how-does-hp-help-solve-the-challenges-faced-by-enterprises)
+./moonshot/prepare.faqs.md:* [What is OpenStack?](#what-is-openstack)
+./moonshot/prepare.faqs.md:* [What is HP Moonshot?](#what-is-hp-moonshot)
+./moonshot/prepare.faqs.md:* [What is HP Cloud OS for Moonshot?](#what-is-hp-cloud-os-for-moonshot)
+./moonshot/prepare.faqs.md:* [What are the key advantages of HP Cloud OS for Moonshot?](#what-are-the-key-advantages-of-hp-cloud-os-for-moonshot)
+./moonshot/prepare.faqs.md:* [What does HP Cloud OS for Moonshot support?](#what-does-hp-cloud-os-for-moonshot-support)
+./moonshot/prepare.faqs.md:* [How does HP Cloud OS for Moonshot help customers?](#how-does-hp-cloud-os-for-moonshot-help-customers) 
+./moonshot/prepare.faqs.md:* [How do I order and license HP Cloud OS for Moonshot?](#how-do-i-order-and-license-hp-cloud-os-for-moonshot)
+./moonshot/prepare.faqs.md:* [Is there a list of all HP Cloud OS for Moonshot topics?](#is-there-a-list-of-all-hp-cloud-os-for-moonshot-topics)
+./moonshot/prepare.faqs.md:* [Where can I find more information about HP Moonshot and OpenStack?](#where-can-i-find-more-information-about-hp-moonshot-and-openstack)
+./moonshot/prepare.faqs.md:## What is the HP point of view on cloud solutions?
+./moonshot/prepare.faqs.md:## What is HP Cloud?
+./moonshot/prepare.faqs.md:## How does HP help solve the challenges faced by enterprises?
+./moonshot/prepare.faqs.md:## What is OpenStack?
+./moonshot/prepare.faqs.md:## What is HP Moonshot?
+./moonshot/prepare.faqs.md:## What is HP Cloud OS for Moonshot?
+./moonshot/prepare.faqs.md:## What are the key advantages of HP Cloud OS for Moonshot?
+./moonshot/prepare.faqs.md:## What does HP Cloud OS for Moonshot support?
+./moonshot/prepare.faqs.md:## How does HP Cloud OS for Moonshot help customers?
+./moonshot/prepare.faqs.md:## How do I order and license HP Cloud OS for Moonshot?
+./moonshot/prepare.faqs.md:## Is there a list of all HP Cloud OS for Moonshot topics?
+./moonshot/prepare.faqs.md:## Where can I find more information about HP Moonshot and OpenStack?
+./moonshot/prepare.glossary.md:For example, instead of including a call to the REST API by using HTTP **verb** (GET), path (/flavors), format (?format=json), 
+./moonshot/prepare.overview.md:* [Why is Cloud Computing Important?](#why-is-cloud-computing-important)
+./moonshot/prepare.overview.md:* [What is HP Cloud OS?](#what-is-hp-cloud-os)
+./moonshot/prepare.overview.md:## Why is Cloud Computing Important?
+./moonshot/prepare.overview.md:## What is HP Cloud OS?
+./moonshot/prepare.releasenotes.md:<!-- I'm still of the opinion that we should delete this item; there is no workaround, and what good does it do to tell the customer about it? -Doug -->
+./moonshot/prepare.supportmatrix.md:<th>Virtual?</th>
+./moonshot/prepare.videos.md:<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/NriyVYHqYQk?rel=0" frameborder="0" allowfullscreen> </iframe>
+./moonshot/prepare.videos.md:<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/XnUqB7V_j8Q?rel=0" frameborder="0" allowfullscreen> </iframe>
+./moonshot/prepare.videos.md:<iframe style="border: 1px solid gray;" width="400" height="225" src="//www.youtube.com/embed/4a8LwWhWAZs?rel=0" frameborder="0" allowfullscreen> </iframe>
+./node.38.md:<!--I'd like to take out those parentheticals and replace them with links to the definitions, but perhaps not; is there some programmatic way we can pull up definitions without the user having to surf to the glossary page?-->
+./node.38.md:Suppose we had a User named falken@wg.com who has activated the HP Helion Public Cloud Compute service only.  His own Tenant is the same as his login name and he’d like to obtain a Scoped Authentication Token for his Tenant.  How would he do this?
+./node.39.md:## How Am I Impacted?
+./object-storage.api.md:<iframe src="http://player.vimeo.com/video/32288319?title=0&amp;byline=0&amp;portrait=0" width="640" height="464" frameborder="0"> </iframe> -->
+./object-storage.md:<!-- <iframe src="https://player.vimeo.com/video/32118778?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./object-storage.md:Do you need low level, raw REST API access to HP Helion Public Cloud object storage?  Trot on over to the [Object Storage API page](/api/object-storage) for details.
+./object-storage.md:Got a favorite programming language?  Don't like to deal with the guts of a REST API?  Take a look at our [Bindings section](/bindings) to see what your options are for writing code against HP Helion Public Cloud Object Storage.
+./object-storage.tutorial.introduction.md:For example, take a file at `http://cdn.example.com/path/to/file.js`. Instead, use a name like `http://cdn.example.com/path/to/file.js?version=1`. When an update needs to be pushed out increment the version to 2. This will cause the CDN to deliver the new version of the file.
+./pc-overview.md:<!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./pc-overview.md:* [Information, pricing, and setting up a free trial of HP Helion Public Cloud](http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=)
+./rdb.md:Do you need low level, raw REST API access to HP Helion Public Cloud RDB?  Take a look at the [RDB API page](/api/v13/dbaas/).
+./site-overview.md:Welcome to the HP Helion Public Cloud website! We don't know about you, but whenever we go to a new site we're always thinking, "Yeah, okay; where the heck *is* everything?"  That's the question this page is designed to answer; it contains an overview of the site as a whole, as well as some details on other web pages on the site where you can get the information you need.  So ride along with us now:
+./sitemap.md:Having a bit of trouble navigating our site, and so you're looking for a single list of what we cover?  You've come to the right place.
+./storage-bulkimport-faq.md:- [What file system formats do you accept?](#fileformat)
+./storage-bulkimport-faq.md:- [Are there details to how the files will come out once uploaded?](#uploaddetail)
+./storage-bulkimport-faq.md:- [What hard disk device types do you accept?](#devices)
+./storage-bulkimport-faq.md:- [Are there any restrictions on the file type?](#filerestrict)
+./storage-bulkimport-faq.md:- [Are there any restrictions on the number of partitions on the drive?](#partitions)
+./storage-bulkimport-faq.md:- [How long will it take from the time of receiving the drive?](#time)
+./storage-bulkimport-faq.md:- [Do you send the drive back to me and how is it shipped or can you destroy the disk for me?](#drivereturn)
+./storage-bulkimport-faq.md:- [How will I know the status of my bulk Import?](#status)
+./storage-bulkimport-faq.md:- [How does Bulk Import work?](#howworks)
+./storage-bulkimport-faq.md:- [How much does Bulk Import cost?](#cost)
+./storage-bulkimport-faq.md:- [How do I use the Bulk Import script, and why would I use it?](#script)
+./storage-bulkimport-faq.md:####Q:	What file system formats do you accept?{#fileformat}
+./storage-bulkimport-faq.md:####Q:	Are there details to how the files will come out once uploaded? For example, if it’s in a Windows subfolder directory structure will the pseudo-directories be created in Swift?{#uploaddetail}
+./storage-bulkimport-faq.md:####Q:	What hard disk device types do you accept?{#devices}
+./storage-bulkimport-faq.md:####Q:	Are there any restrictions on the file type?{#filerestrict}
+./storage-bulkimport-faq.md:####Q:	Are there any restrictions on the number of partitions on the drive?{#partitions}
+./storage-bulkimport-faq.md:####Q:	How long will it take from the time of receiving the drive?{#time}
+./storage-bulkimport-faq.md:####Q:	Do you send the drive back to me and how is it shipped or can you destroy the disk for me?{#drivereturn}
+./storage-bulkimport-faq.md:####Q:	How will I know the status of my bulk Import?{#status}
+./storage-bulkimport-faq.md:####Q:	How does Bulk Import work?{#howworks}
+./storage-bulkimport-faq.md:####Q:	How much does Bulk Import cost?{#cost}
+./storage-bulkimport-faq.md:####Q:	How do I use the Bulk Import script, and why would I use it?{#script}
+./upload-publish-partner-images135.md:    `$ curl -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images?marker=fcc0edba-6f1b-4451-a4cc-7c63f20430b5`
+./vpn-multisite.md:- HP Networking MSR 20-40 Router Security Configuration Guide: [http://www.h3c.com/portal/download.do?id=1223846](http://www.h3c.com/portal/download.do?id=1223846)
+./vpn-quickstart.md:	# After the last command, a prompt appears stating that this command "may disrupt existing ssh connections. Proceed with operation (y|n)?"
