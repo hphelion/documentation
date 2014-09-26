@@ -21,7 +21,7 @@ fi
 
  
 
-git branch --set-upstream test origin/${BRANCH}
+git branch --set-upstream development origin/${BRANCH}
 git branch --set-upstream master origin/master
  
 git checkout -f master
