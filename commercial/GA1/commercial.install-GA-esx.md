@@ -22,11 +22,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
-HP Helion OpenStack allows you to manage the ESX hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack Edition on a suitably specified and prepared system.
+HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. 
 
-HP Helion OpenStack on an ESX hypervisor allows you to manage the VMware vCenter and provision virtual machines.
-
-## Installing HP Helion OpenStack ## {#install}
+## Installing HP Helion OpenStack<a name="install"></a>
 
 The installation and configuration process for CLOUD_TYPE ESX consists of the following general steps:
 
@@ -37,20 +35,19 @@ The installation and configuration process for CLOUD_TYPE ESX consists of the fo
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
    * [Installing the seed VM and building your cloud](#startseed)
-* [Verifying your installation](#verifying-your-installation)
+* [Verifying the installation](#verifying-your-installation)
    * [Connecting to the overcloud Horizon console](#connectconsole)
    * [Connecting to the undercloud Horizon console](#monitoring)
 * [Next steps](#next-steps) 
 
-## Verify Prerequisites ## {#pre}
-
+## Verify Prerequisites<a name="pre"></a>
 To ensure successful installation, please read through the topics before you start.
 
 * Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
 * Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
 * [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/).
 
-## Review the ESX deployment architecture ## {#deploy-arch}
+## Review the ESX deployment architecture<a name="deploy-arch"></a>
 
 The following diagram depicts the required network topology for a KVM installation.
 
@@ -59,7 +56,7 @@ The following diagram depicts the required network topology for a KVM installati
 For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
 
-## Download the installation packages {#getinstall}
+## Download the installation packages<a name="getinstall"></a>
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
 1. Log in to your install system as root:
@@ -82,7 +79,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 </table>
 
 
-## Installing HP Helion OpenStack {#install}
+## Installing HP Helion OpenStack<a name="install"></a>
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
 
@@ -91,7 +88,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 **IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
-### Unpack the installation file ### {#unpackinstall}
+### Unpack the installation file<a name="unpackinstall"></a>
 
 1.Log into your install system as root.
 
@@ -108,7 +105,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	This creates and populates a `tripleo/` directory within `work' directory.
 
-### Install the seed VM and build your cloud ### {#startseed}
+### Install the seed VM and build your cloud<a name="startseed"></a>
 
 1. Start the seed installation
 
@@ -137,11 +134,11 @@ Make sure you have met all the hardware requirements and have completed the requ
     
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-4. [Optional] Use ipmitool to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
+4. [Optional] Use **ipmitool** to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
 5. Manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
     
-	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
+	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shut down rather than automatically restarting.
 
 	<!-- Remove per Divakar??
 	6. Release floating IP addresses for networking.
@@ -222,11 +219,11 @@ Make sure you have met all the hardware requirements and have completed the requ
  
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-## Verify your installation {#verifying-your-installation}
+## Verify your installation<a name="verifying-your-installation"></a>
 
 To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as follows.
 
-### Connect to the undercloud Horizon console ### {#monitoring}
+### Connect to the undercloud Horizon console<a name="monitoring"></a>
 
 Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
 
@@ -252,7 +249,7 @@ Make sure you can access the undercloud Horizon dashboard. To do this, follow th
 
 6. Log in as user 'admin' with the admin password from step 4.
 
-### Connect to the overcloud Horizon console ### {#connectconsole}
+### Connect to the overcloud Horizon console <a name="connectconsole"></a>
 
 Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
@@ -284,7 +281,8 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
-## Next Steps
+## Next Steps<a name="next-steps"></a>
+
 
 - Deploy vCenter ESX Compute Proxy **(REQUIRED)**
 
@@ -311,5 +309,3 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
-
-

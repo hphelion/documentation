@@ -31,41 +31,39 @@ The process for integrating LDAP involves the following steps:
 - [Generating configuration files](#config)
 - [Include the configuration files in the installation](#install)
 
-## Prerequisites ## {#pre}
-
+## Prerequisites<a name="pre"></a>
 Before starting the integration, review the following prerequisites:
 
 - LDAP server is up and running in a network accessible from the overcloud.
 
 - The following users need to be created on the LDAP server and their passwords must be set in accordance with the current LDAP server policy.
 	
-	- admin
-	- ceilometer
-	- cinder
-	- demo
-	- ec2
-	- glance
-	- heat
-	- neutron
-	- nova
-	- sherpa
-	- swift
+	- Admin
+	- Ceilometer
+	- Cinder
+	- Demo
+	- EC2
+	- Glance
+	- Heat
+	- Neutron
+	- Nova
+	- Sherpa
+	- Swift
 
-
-## Generate configuration files ## {#config}
+## Generate configuration files<a name="config"></a>
 
 The LDAP integration process requires two configuration files:
 
 - [TripleO OverCloud Password file](#tripleo)
 - [LDAP server connection settings](#connect)
 
-### TripleO OverCloud Password file ### {#tripleo}
+### TripleO OverCloud Password file<a name="tripleo"></a>
 
 This file contains the password for all the users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
 
 **tripleo-overcloud-passwords file**
 
-	VERCLOUD_ADMIN_PASSWORD=<password>
+	OVERCLOUD_ADMIN_PASSWORD=<password>
 	OVERCLOUD_CEILOMETER_PASSWORD=<password>
 	OVERCLOUD_CINDER_PASSWORD=<password>
 	OVERCLOUD_DEMO_PASSWORD=<password>
@@ -79,7 +77,7 @@ This file contains the password for all the users created on the LDAP server. Th
 	
 The file must end with a carriage return. TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
 
-### LDAP server connection settings ### {#connect}
+### LDAP server connection settings<a name="connect"></a>
 
 This file contains the LDAP server connection settings.  The content of the file will be transparently propagated in `/etc/keystone/keystone.conf` on each of the overcloud controller nodes. Therefore, it must be a well-formed, syntax-error free json file.
 
@@ -181,8 +179,7 @@ The following options must be set with proper values to provide integration with
 	</tr>
 	</table>
 
-
-## Include the configuration files in the installation ## {#install}
+## Include the configuration files in the installation<a name="install"></a>
 
 You need to copy the configuration files to the seed VM host during the installation, after the seed VM is installed and before launching the installation of the overcloud and undercloud.
 
@@ -200,7 +197,7 @@ Follow the steps described in the installation instructions to deploy the overcl
 
 [HP Helion OpenStack®: Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/)
 
-## Configuring Horizon ## {#horizon}
+## Configuring Horizon<a name="horizon"></a>
 
 1. Enable LDAP user login.
 

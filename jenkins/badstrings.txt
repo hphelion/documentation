@@ -3,6 +3,7 @@
 [Bb]eta
 BETA
 [^_]Openstack
+[Ss]tackato
  the the 
  and and 
 [Pp]ubic

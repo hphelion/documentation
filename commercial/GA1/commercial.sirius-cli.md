@@ -22,34 +22,25 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
 # Configuring Your Storage Using Sirius
-Once you complete the Undercloud and Overcloud installation, you can use Sirius client CLI package to configure your storage. The python-Siriusclient CLI package provides a http-client coupled command line tool for managing Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command and is in line with other OpenStack clients.This service helps in configuring the storage devices such as StoreVirtual and StoreServ as the backend for Cinder .
+Once you complete the Undercloud and Overcloud installation, you can use the Sirius client CLI package to configure your storage. 
 
+The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other OpenStack clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.
 
-To get the list of all the Sirius commands, commands You can use the Help command to get the list of commands that can used in Sirius.  
-
-
-
-You can use the following commands using the Sirius Client CLI package in the Undercloud.
+You can use the following commands using the Sirius Client CLI package in the Undercloud. For a list of all available commands, use the [Help Commands](#help).
 
 * [Help Command](#help)
-
 * [API Commands](#api-commands)
-
 * [HP StoreVirual Commands](#storevirtual-commands)
-
 * [HP StoreServ Commands](#storeserv-commands)
-
 * [Required Options](#required-options)
 
-
-##Help Command {#help}
+##Help Commands<a name="help"></a>
 
 ###Help
 
 You can display the help of this program or one of its sub-programs
 
 	sirius --help
-
 
 ### Help subcommand
 
@@ -58,10 +49,9 @@ You get two sets of arguments- Positional(mandatory) and Options (all mandatory 
 	sirius help <sub-command>
 
 
-## API Commands {#api-commands} ##
+## API Commands<a name="api-commands"></a>
 
 ### Get block info ###
-
 
 You can list the block storage details of API version. 
 
@@ -69,7 +59,7 @@ You can list the block storage details of API version.
 
 ### Bash completetion
 
-You can prints all the commands and options to standard output
+You can print all the commands and options to standard output
 
 	sirius bash-completion
 
@@ -80,11 +70,7 @@ You can list the devices supported by Sirius API.
 
 	sirius supported-devices
 
-
-
-
-## HP StoreVirtual Commands {#storevirtual-commands}
-
+## HP StoreVirtual Commands<a name="storevirtual-commands"></a>
 
 ### List StoreVirtual cluster 
 

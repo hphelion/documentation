@@ -26,8 +26,7 @@ PageRefresh();
 
 #### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
-* [Support matrix](/helion/openstack/support-matrix-
-* /) 
+* [Support matrix](/helion/openstack/support-matrix/) 
 * [FAQs](/helion/openstack/ga/faq/)  
 * [Technical overview](/helion/openstack/ga/technical-overview/)
 * [Services overview](/helion/openstack/ga/services/overview/)   

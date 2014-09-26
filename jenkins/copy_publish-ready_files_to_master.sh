@@ -21,7 +21,7 @@ fi
 
  
 
-git branch --set-upstream test origin/${BRANCH}
+git branch --set-upstream ${BRANCH} origin/${BRANCH}
 git branch --set-upstream master origin/master
  
 git checkout -f master
@@ -32,7 +32,15 @@ git pull origin
 
 #Search to ensure that every md file contains one of the comments strings above. 
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
-MDFILES_NOT_DESIGNATED=`egrep -rL "\-\-PUBLISH|\-\-UNDER REVISION" *.md` 
+
+
+s=" "
+MDFILES_NOT_DESIGNATED=""
+for i in `find . -name "*.md" `
+do 
+MDFILES_NOT_DESIGNATED=$X$s`egrep -L "\-\-PUBLISH|\-\-UNDER REVISION" *.md`; 
+ 
+done
  
 if [ "$MDFILES_NOT_DESIGNATED" != "" ]
 then
@@ -42,14 +50,24 @@ echo " "
 echo "$MDFILES_NOT_DESIGNATED"
 echo " "
 echo "Add or correct the comment in these files and run this script again."
-git checkout master
+#git checkout master
 	exit 1
 fi
 
 
 #Search for and record the names of all the files that contain the comment: <!—PUBLISH-->
 
-MDFILES_TO_PUBLISH=`egrep -rl "\-\-PUBLISH" *.md` 
+ 
+
+s=" "
+MDFILES_TO_PUBLISH=""
+for i in `find . -name "*.md" `
+do 
+MDFILES_TO_PUBLISH=$X$s`egrep -l "\-\-PUBLISH" $i`; 
+ 
+done
+
+ 
 NON_MDFILES_TO_PUBLISH=`find . -type f -not -path "*.git*" -not -name "*.md"`
 
  
@@ -69,6 +87,8 @@ do
 	then
 echo "merging $i"
 git checkout origin/${BRANCH} -- $i
+else
+echo "skipping $i, no change found"
 fi
 done
 

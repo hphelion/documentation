@@ -22,11 +22,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Compute Service Overview #
 
-Leveraging OpenStack, the HP Helion OpenStack Compute Service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
+The HP Helion OpenStack Compute Service leverages the  OpenStack compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 
-Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
+Compute allows you to work with **flavors**, which are unique combinations of disk space, memory capacity, and CPU; **images**, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and **servers**, which are virtual instances created by combining a flavor and an image.
 
-A variety of flavors and images are provided by HP Compute that can be used to create a wide mix of servers.
+A variety of flavors and images are provided by the HP Helion OpenStack Compute Service to create a wide mix of servers.
 
 ##Key Terms
 
@@ -46,19 +46,18 @@ To [perform tasks using the Compute service](#howto), you can use the dashboard,
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Compute service.
 
-###Using the API ### {#API}
+###Using the API<a name="API"></a>
  
 You can use a low-level, raw REST API access to the HP Compute service. See the [OpenStack Compute API v2.0 Reference](http://api.openstack.org/api-ref-compute-v2.html).
 
-###Using the CLI### {#cli}
-
+###Using the CLI<a name="cli"></a>
 You can use the command-line interface software to access HP Compute. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
 
 <!---
-## How To's with the HP Helion OpenStack Compute Service ## {#howto}
+## How To's with the HP Helion OpenStack Compute Service<a name="howto"></a>
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 

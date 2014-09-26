@@ -3,7 +3,7 @@
  
 SOURCEVERSION=`sed -n '6p' < ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
 #The THISVERSION line, below must remain line 6.
-THISVERSION=3
+THISVERSION=4
  
  
 if [[ $THISVERSION < $SOURCEVERSION ]]
@@ -306,6 +306,7 @@ echo ""
 echo "====Pushing Files====="
 
 echo push
+git push
 
 
 echo "Push complete.  

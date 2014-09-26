@@ -28,7 +28,6 @@ This option allows you to define the required configurations for your cloud. The
 
 
 * [Compute](/helion/openstack/ga/undercloud/resource/esx/compute/)
-
 * [Storage](/helion/openstack/ga/undercloud/manage/resources/storage/)
 
 

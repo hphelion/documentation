@@ -29,9 +29,7 @@ Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides o
 * **User Management**- It tracks users and their permissions.The main components are:
 
 	* Users
-
 	* Projects
-
 	* Roles
 
 * **Service catalog**- It provides a catalog of available services with their API endpoints. The main components are:
@@ -47,10 +45,9 @@ The Identity service primarily works on the following key concepts:
 
 ### Credentials ###
 
-It is the data that belongs to, is owned by and is generally only known to a user. This data is used by the user to prove his/her identity. For example:
+Credentials are data that belongs to, is owned by and is generally only known to a user. This data is used by the user to prove his/her identity. For example:
 
 * Username and password
-
 * An authentication token provided by the Identity Service
 
 ### Authentication
@@ -72,7 +69,6 @@ A network-accessible address, usually described by a URL, where a service may be
 ### Role ###
 A role defines set of rights and privileges that can be assigned to a user. A role is also called a *personality*.
 
-
 ## Keystone with LDAP
 
 Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of authority authentication. <!---LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.-->
@@ -80,7 +76,6 @@ Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of 
 The requests to Identity service are delegated to the LDAP service which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
 
 <!---The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes-->
-
 
 <!---
 
@@ -120,22 +115,19 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 
 - **Role** -- A set of rights and privileges that can be assigned to a user.  A user assuming that role inherits those rights and privileges. A role is also called a *personality*. -->
 
-
-
-
 ## Working with the Identity Service
 
 To [perform tasks using the Identity service](#howto), you can use the dashboard, API or CLI.
 
-### Using the dashboards {#UI}
+### Using the dashboards<a name="UI"></a>
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Identity service.
 
-###Using the API ### {#API}
+###Using the API<a name="API"></a>
  
 You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
 
-###Using the CLI### {#cli}
+###Using the CLI<a name="cli"></a>
 
 You can use the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
@@ -143,14 +135,14 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 
 <!---
-## How To's with the HP Helion OpenStack Identity Service {#howto}
+## How To's with the HP Helion OpenStack Identity Service<a name="howto"></a>
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
 
-### Tasks performed by users ### {#user}
+### Tasks performed by users<a name="user"></a>
 
 The following Identity service tasks are usually performed by someone with the *user* role.
 
@@ -162,7 +154,7 @@ Use the Identity service to configure project associations.
 
 Use the Identity service to view a list of projects in your cloud environment.
 
-### Tasks performed by an Administrator ## {#admin}
+### Tasks performed by an Administrator<a name="admin"></a>
 
 The following Identity service tasks are usually performed by someone with the *administrator* role.
 

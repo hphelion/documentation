@@ -30,9 +30,9 @@ The overcloud options define the configurations of the overcloud. You can define
 To define the configuration:
 
 1. Log in to the undercloud Horizon Dashboard.
-
 2. In the left panel, click the **Overcloud** tab.
-3. Click **Configure** to display the Configure Cloud page.<br>The page displays with three tabs- **ESX Clusters**, **StoreVirtual Backends** and **StoreServ Backends**.
+3. Click **Configure**.
+4. Select the desired tab on the Configure Cloud page:**ESX Clusters**, **StoreVirtual Backends** and **StoreServ Backends**.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

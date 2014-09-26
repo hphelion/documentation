@@ -22,8 +22,9 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
 
+Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. 
 
-This page explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack. It is important to read through this page before starting your installation. Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. This service can supports any hypervisor.
+It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
 
 - [Prerequisites](#preq)
@@ -35,19 +36,19 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 - [More information](#moreinfo)
 
 
-##Prerequisite {#preq}
+##Prerequisites<a name="preq"></a>
 
 * HP Helion Openstack Installation
 * DNSaaS Installer Image
 * Obtained credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
-	* This user should have the "admin" and  "&#095;member_" (or member) roles.
-		* This user should have the "admin" and "member" (or member) roles. (The "admin" role should not be required, but, for some reason, HP Helion OpenStack Heat fails to delete the users it creates without this.)
+	* This user should have the **admin** and  **&#095;member_** (or **member**) roles.
+	*The "admin" role should not be required, but, for some reason, HP Helion OpenStack Heat fails to delete the users it creates without this.
 	* Username
 	* Password
 	* Tenant/Project Name
 
 * Obtained credentials for the user+tenant used to validate end user tokens ("Service Credentials"):
-	* This user should be in the "service" tenant, and have the "admin" and "member" (or member) roles, and be called "designate""
+	* This user should be in the **service** tenant, and have the **admin** and **member** (or _member_) roles, and be called **designate**.
 	* Username
 	* Password
 	* Tenant/Project Name
@@ -55,11 +56,11 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 * A chosen backend driver and its prerequisites:
 	* PowerDNS (self hosted) 
     
-		A domain name for the nameservers ("Namsever FQDNs"). For example, if your nameservers are to be ns1.mycompany.com., you will need the "mycompany.com." domain.
+		A domain name for the nameservers ("Namesever FQDNs"). For example, if your nameservers are to be named *ns1.mycompany.com*, you will need the *mycompany.com* domain.
 
-* Microsoft DNS (self hosted)
+* Microsoft DNS (self-hosted)
 	* At least one Microsoft DNS server installed and configured
-	* Knowledge of the FQDNs for all MS DNS servers to be used ("Namsever FQDNs")
+	* Knowledge of the FQDNs for all MS DNS servers to be used ("Namesever FQDNs")
 
 * DynECT (3rd Party)
 
@@ -75,10 +76,9 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 		* Username
 		* Password
 
-
 * Akamai (3rd Party)
 	* An active service contract with Akamai
-	* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namsever FQDNs")
+	* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namesever FQDNs")
 		* For "helion-qa" Akamai account
 	* API credentials for Akamai
 		* Username
@@ -90,11 +90,9 @@ This page explains how to install and configure DNS as a service (DNSaaS) for HP
 -->
 ## Creating Prerequisite Credentials <a name="credentials"></a>
 
+You must create target and service credentials.
 
-You must create Target and Service credentials.
-
-For Target credentials, you should create tenant and username.
-
+For target credentials you must create a tenant and a username.
 
 * Create tenant
 		
@@ -117,11 +115,11 @@ Once Target credentials are successfully created you can create service credenti
  
 ## Sherpa CSU "Publication" and Booting the Installer VM<a name="publication"></a>
 
-Before proceeding with DNaaS installation ensure that you have met all the perquisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
+Before proceeding with DNaaS installation ensure that you have met all the prerequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
 
 ###Publish CSU contents
 
-1. Login to the Overcloud's Horzon using **Target Credentials**. 
+1. Log in to the overcloud's Horizon dashboard using **Target Credentials**. 
 2. Click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
 3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 3. Select the appropriate build from the list  and click **Install**. Install dialog box is displayed.
@@ -130,7 +128,7 @@ Before proceeding with DNaaS installation ensure that you have met all the perqu
 
 ###Boot the installer VM
 
-1. Login to OverCloud Horizon using **Target Credentials**.
+1. Log in to the overcloud's Horizon dashboard using **Target Credentials**.
 2. Click **Project**. The tab displays an option in the left panel.
 3. Click **Compute**  and then select **Images** to open the Image page.
 4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_0.1.0b12** to launch this image. 
@@ -169,9 +167,9 @@ Before proceeding with DNaaS installation ensure that you have met all the perqu
 
 15. In the **Port** box, enter the port value as **22**.
 
-16. (Optionally) Restrict the CIDR from which SSH connections should be allowed. (**how do we restrict CIDR? do we need to enter any value or select any value in the CIDR box??**)
+16. (Optionally) Restrict the CIDR from which SSH connections should be allowed. <!-- (**how do we restrict CIDR? do we need to enter any value or select any value in the CIDR box??**) ?? -->
 
-17.Click **Add**.  The rule is added for the instance.(**What message is displayed after you click add??)**
+17.Click **Add**.  The rule is added for the instance.<!-- (**What message is displayed after you click add??)** -->
 
 ##Installing and configuring DNSaaS<a name="configure"></a>
 
