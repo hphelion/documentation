@@ -23,7 +23,7 @@ PageRefresh();
 
 # Service Health Check 
 
-Icinga service, which runs in the Undercloud, helps cloud admin to monitor health status of Account, Container, Proxy and Object services. 
+Using the "icinga" service running in the undercloud the cloud admin can monitor the health status of Account/Container/Proxy and Object services. 
 
 ##Prerequisite
 

@@ -21,9 +21,9 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# Replica Status - Swift
+# Replication Status of using Icinga
 
-Icinga service, which runs in the Undercloud, helps cloud admin to monitor the duplicated status of the Swift storage node (s)
+Using the "icinga" service running in the undercloud the cloud admin can monitor the replication status of Swift. 
 
 ##Prerequisite
 

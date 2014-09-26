@@ -127,14 +127,7 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 
 
-2. Copy `/root/tripleo/tripleo-incubator/scripts/ee-config.json` to `/root/overcloud-config.json`
-
-		 cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-
-
-
-3.Update `so_swift_storage_scale` parameter in `/root/overcloud-config.json` as per your scale.
+2.Update `so_swift_storage_scale` parameter in `/root/overcloud-config.json` as per your scale.
 
 The Overcloud configuration file will be displayed as the sample below:
 

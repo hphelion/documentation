@@ -39,6 +39,9 @@ TBD
 
 Where should the user login??
 
+
+
+
 ###Copy the utility to seed and to the servers where the disks has to be monitored
 
 Use `scp` to copy the utility package on to the servers and install it.
@@ -72,9 +75,9 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 	The extracted binary file will be available in `/home/heat-admin/hp/hpssacli/bld`
 
-8. Install the binary file.
+8. Execute the binary file.
 
-	 	run `hpssacli`
+	 	 ./hpssacli help
  
 	**Note**: The diagnostics can be done in the server or from SEED through ssh.
 
@@ -103,9 +106,23 @@ The slot details appear as shown in the following example:
 		
 		   Battery/Capacitor Status: OK
 
+4.To generate the diagnostic report of the particular slot
+
+		./hpssacli ctrl slot=0 diag file=<filenmae.zip>
+
+or 
+ To generate the diagnostic report for all slots
+
+		./hpssacli ctrl all diag file=<filename.zip>
 
 
+The file will be in location you mentioned.
 
+5.Copy the generated file to the desired location
+
+6. Extract the file
+
+7. Open the ADUReport.htm file in the browser.
 
 
 

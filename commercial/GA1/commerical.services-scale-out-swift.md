@@ -33,7 +33,7 @@ Scale-out Swift clusters are deployed using the concept of storage policy.
 
 When the HP Helion OpenStack is deployed two swift nodes are installed by default. They are termed as starter nodes. These two nodes are configured as storage-policy:0 for internal purposes as a part of its deployment. The object ring (for example, object-ring:0) associated with the storage-policy is used to store data for internal services like Glance, Sherpa, and so on. 
 
-The scale-out object storage defines a new policy as storage-policy:1. Object ring (object-ring:1) associated with storage-policy:1 is used to store data for end cloud user. Once storage-policy:1 is created, it becomes the default storage policy and a new container will use this ring to store objects. Storage-policy:1 is used to implement object-ring:1 and needs to adhere to 'no single point of failure' policy. It is recommended to use at last two nodes to implementing storage-policy:1.
+The scale-out object storage is realized by defining a new storage policy – storage-policy:1. Object-1 ring is associated with storage-policy 1. This ring is used to store end user data. Once the Storage-policy:1 is created,  It’s the default policy and all of the containers would be on this policy unless otherwise specified.
 
 
 You can expand the object storage by adding one or more nodes to object-ring:1. But you can still continue to use storage-policy:0, if you continue to use the old container to store data.
