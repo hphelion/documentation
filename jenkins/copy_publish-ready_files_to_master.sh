@@ -55,7 +55,7 @@ NON_MDFILES_TO_PUBLISH=`find . -type f -not -path "*.git*" -not -name "*.md"`
  
 ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}
 
- 
+echo $ALL_FILES
 
 #Checkout the master branch
 git checkout master
