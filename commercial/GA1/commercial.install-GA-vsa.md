@@ -32,6 +32,7 @@ This page provides detailed information on using HP StoreVirtual for realizing c
    * [Scheduler](#scheduler)
    * [Cinder volume and Lefthand driver](#cinder-volume)  
    * [Differentiated storage offerings](#differentiated-storage-offerings)
+* [High Level overview of StoreVirtual integration](#high-level-view)
 * [Deploying HP StoreVirtual storage sytems](#deploy-vsa)
    * [Prerequisites](#prerequisites-vsa)
    * [Enrolling the new Baremetal server](#deploy-process)
@@ -137,15 +138,77 @@ Then, as the cloud administrator, you need to create three volume types &ndash; 
 
 Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping these backends to different volume types as suggested above.
 
-##High Level View of the StoreVirtual Integration
-
-The following diagram shows the workflow of StoreVirtual integration. 
+##High level overview of StoreVirtual integration{#high-level-view}
 
 <a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual Integration diagram (opens in a new window)</a>
 
+The following section briefly explains the above diagram and the steps involved in StoreVirtual integration.
+
+1 - **Install CMC**
+     
+   The CMC binary is available in the installer package. Install CMC on the Seed node where the Seed cloud is running.
+
+2 - **Add VSA Baremetal nodes to ironic database**
+	
+   * Identify the hardware for StoreVirtual deployment and enrolls the Baremetal to the ironic database.
+
+	* Login to the Undercloud and source the environment variables(source stackrc).
+
+	* Execute ironic CLI commands from the Undercloud to enroll the Baremetal into ironic database.
+   
+    * Deploy StoreVirtual Storage Systems.
+
+3a - **Run update cloud script to provision VSA node**
+
+   * After enrollment of new Baremetal server in Undercloud , login to Seed cloud.
+
+   * Update overcloud.json file for StoreVirtual deployment and apply the configuration.
+	
+   * Execute the update cloud script.
+
+3b - **Discover StoreVirtual in CMC**
+
+   * After update cloud, StoreVirtual system is deployed in the new Baremetal server that is enrolled.
+
+   * Create StoreVirtual cluster.
+
+   * The IP address of the StoreVirtual storage system can be retrieved from `/etc/vsa/vsa_network_config.json` file in StoreVirtual node.
+
+   * Launch the CMC and discover the StoreVirtual systems that have been deployed.
+
+3c - **Create VSA cluster**
+
+   * After discovering the StoreVirtual storage systems in CMC, the create the StoreVirtual cluster from CMC.
+
+   * Create the Management Group and StoreVirtual cluster from CMC.
+
+   * Create StoreVirtual cluster.
+
+4a - **Launch Undercloud Horizon**
+
+4b - **Register VSA cluster**
+
+4c - **Creat VSA backend**
+
+4d- **Get Cinder configuration for VSA backend**
+
+   * Launch the Horizon dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system
+	
+   * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
+
+5a - **Update overcloud-config.json file with cinder configuration**
+
+   With the advise generated from the above steps, update the overcloud-config.json file in Seed cloud.
+
+5b - **Run update cloud script to update cinder.conf**
+
+   * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud 
+
+   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. 
+
 
 ##Deploying HP StoreVitual Storage Systems<a name="deployment-vsa"></a>
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>
+<!---<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>-->
 
 ###Prerequisites<a name="prerequisite-vsa"></a>
 
@@ -172,7 +235,7 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 To deploy HP StoreVirtual, you need to first enroll the baremetal server and then, update the Helion config file and the overcloud. Perform the following commands:
 
-1. SSH to undercloud as heat-admin from seed
+1. SSH to Undercloud as heat-admin from Seed
 
          ssh heat-admin@<IP Address>
          sudo -i
@@ -192,11 +255,11 @@ To deploy HP StoreVirtual, you need to first enroll the baremetal server and the
  
         ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
-4. List the baremetal nodes, this will also list the newly added nodes.
+4. List the Baremetal nodes, this will also list the newly added nodes.
 
 		ironic node-list
 
-5. Logout from Undercloud to go back to seed
+5. Logout from Undercloud to go back to Seed
 
        
 6. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
@@ -230,7 +293,7 @@ To deploy HP StoreVirtual, you need to first enroll the baremetal server and the
 
 To verify that the StoreVirtual is deployed, perform the following checks:
 
-1. Login to Undercloud from seed
+1. Login to Undercloud from Seed
 
 		ssh heat-admin@<Undercloud IP Address>
  		 
@@ -240,7 +303,7 @@ To verify that the StoreVirtual is deployed, perform the following checks:
 		 heat stack-list
          nova list|grep vsa
 
-3. Login to the StoreVirtual system from the seed using the IP address retrieved 
+3. Login to the StoreVirtual system from the Seed using the IP address retrieved 
 from the above steps
 
 		ssh heat-admin@<StoreVirtual system IP Address>
@@ -257,7 +320,7 @@ from the above steps
 
 	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log`
 
-6. On successful installation of StoreVirtual VM on baremetal, launch the CMC and discover the storage systems. 
+6. On successful installation of StoreVirtual VM on Baremetal, launch the CMC and discover the storage systems. 
 
 
 ##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux<a name="install-hp-storevirtual-cmc"></a>

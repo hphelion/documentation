@@ -66,7 +66,7 @@ You can register a cluster using the Undercloud Horizon Dashboard.When you regis
 
 To register the cluster using Undercloud Horizon Dashboard, do the following:
 
-1. Log into the Undercloud Horizon Dashboard.
+1. Login to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -107,7 +107,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 To edit a cluster, do the following:
 
-1. Log into the Undercloud Horizon Dashboard.
+1. Login to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -132,7 +132,7 @@ Unregistering a cluster will remove it from the cloud inventory.
 
 To unregister a cluster, do the following:
 
-1. Log into the Undercloud Horizon Dashboard.
+1. Login to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -149,7 +149,7 @@ To unregister a cluster, do the following:
 
 Use this option to unregister multiple clusters using a single command.
 
-1. Log into the Undercloud Horizon Dashboard.
+1. Login to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -166,7 +166,7 @@ Use this option to unregister multiple clusters using a single command.
 
 Use this option to view the cluster configuration as it displays in the *cinder.config* file.
 
-1. Log into the Undercloud Horizon Dashboard.
+1. Login to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
