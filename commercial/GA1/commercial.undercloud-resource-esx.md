@@ -22,13 +22,13 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>-->
 
-#Compute Service
+#HP Helion OpenStack&reg;: Compute Service
 
-The Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
+The HP Helion OpenStack Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 
-Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
+Compute allows you to work with **flavors**, which are unique combinations of disk space, memory capacity, and CPU; **images**, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and **servers**, which are virtual instances created by combining a flavor and an image.
 
-A variety of flavors and images are provided by HP Helion Compute that can be used to create a wide mix of servers.
+A variety of flavors and images are provided by the HP Helion Compute service to create a wide mix of servers.
 
 Currently Compute Service has the following option:
 

@@ -29,10 +29,10 @@ You can perform the following activities in the undercloud Dashboard.
 
 * [Activate clusters](#activate-cluster)
 * [Deactivate clusters](#deactivate-cluster)
-* [Restore proxy](#restore-proxy) 
+* [Restore a proxy](#restore-proxy) 
 
  
-##Activate clusters {#activate-cluster}
+##Activate clusters<a name="activate-cluster"></a>
 
 Perform the following steps to activate clusters:
 
@@ -52,9 +52,7 @@ Perform the following steps to activate clusters:
 
 5. Click **Configure**. After successful configuration of clusters a message is displayed. <br>The configured cluster(s) get listed in the in the **Activated Clusters** table.
 
-
-
-##Deactivate clusters {#deactivate-cluster}
+##Deactivate clusters<a name="deactivate-cluster"></a>
 
 1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
@@ -73,9 +71,9 @@ Perform the following steps to activate clusters:
 5. Click **Deactivate**. After successful deactivation of clusters a message is displayed. 
 
 
-##Restore proxy {#restore-proxy}
+##Restore a Proxy<a name="restore-proxy"></a>
 
-Restore proxy allows you to restore failed or deleted compute proxy. Select a vCenter to restore its compute proxy. Ensure that you remove any existing compute proxy VM (if any) from the vCenter before proceeding.
+You can restore failed or deleted compute proxies. Select a vCenter to restore its compute proxy. Ensure that you remove any existing compute proxy VM (if any) from the vCenter before proceeding.
 
 1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
@@ -84,8 +82,6 @@ Restore proxy allows you to restore failed or deleted compute proxy. Select a vC
 3. Click **Restore Proxy** on the top right corner of the page to deactivate the clusters for the cloud. Restore Compute Proxy box is displayed.
 4. Click **vCenter** drop-down list and select the vCenter. 
 5.  Click Done.
-
-
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -26,11 +26,8 @@ Once you complete the Undercloud and Overcloud installation, you can access the 
 The left panel displays the following tabs:
 
 * **Admin**
-
 * **Project**
-
 * **Resources**
-
 * **Overcloud**
  
 

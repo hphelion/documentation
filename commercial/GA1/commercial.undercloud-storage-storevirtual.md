@@ -28,13 +28,9 @@ PageRefresh();
 The StoreVirtual option allows you to configure HP StoreVirtual as storage. Before you start working with StoreVirtual, ensure that the following prerequisites have been fulfilled:
 
 1. HP Helion Cloud is deployed
-
 2. HP StoreVirtual is deployed
-
 3. HP StoreVirtual cluster is created.
-
 4. HP StoreVirtual cluster is accessible by Cinder and Compute nodes running in the Overcloud.
-
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
 
@@ -43,14 +39,11 @@ You can do the following tasks using the StoreVirtual option:
 * [Registering the cluster](#registering-cluster)
 
 	* [Edit cluster](#edit-cluster)
-	
-    * [Unregister a cluster](#unregister-cluster) 
-    
+    * [Unregister a single cluster](#unregister-cluster) 
 	* [Unregister multiple clusters](#unregister-multiple-clusters) 
-
 	* [View Configuration](#view-configuration)
 
-## Registering the cluster ##{#registering-cluster}
+## Registering the cluster<a name="registering-cluster"></a>
 
 You can register a cluster using the Undercloud Horizon Dashboard.When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
 
@@ -87,7 +80,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
     On successful registration, the cluster is added and is listed as *Registered*.
 
 
-### Edit a cluster ###{#edit-cluster}
+### Edit a cluster<a name="edit-cluster"></a>
 
 **Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done <!--through the CMC or the CLIQ -->for the selected cluster. After editing the details, the backend data should also be updated so that cinder configuration file has the updated cluster information.
 
@@ -106,7 +99,7 @@ To edit a cluster, do the following:
 6. Click **Done** to save the changes.   
 
 
-### Unregister a cluster ###{unregister-cluster}
+### Unregister a cluster<a name="unregister-cluster"></a>
 
 **Note**: Before you unregister the cluster, remove the backend associated with it. Detach or migrate the volumes, as appropriate, as the volumes from this cluster backend will no longer be available.
 
@@ -126,7 +119,7 @@ To unregister a cluster, do the following:
 5. Click **Unregister cluster** to unregister or click **Cancel** to cancel the process. 
 
 
-### Unregister multiple clusters ###{unregister-multiple-storevirtual}
+### Unregister multiple clusters<a name="unregister-multiple-storevirtual"></a>
 
 Use this option to unregister multiple clusters using a single command.
 
@@ -143,11 +136,12 @@ Use this option to unregister multiple clusters using a single command.
 5. Click **Unregister Cluster** to unregister or click **Cancel** to cancel the process. 
 
  
-### View configuration ###
+### View configuration<a name="view-configuration"></a>
 
-Use this option to view the cluster configuration as it displays in the cinder.config file.
 
-Log into the Undercloud Horizon Dashboard.
+Use this option to view the cluster configuration as it displays in the *cinder.config* file.
+
+1. Log into the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
