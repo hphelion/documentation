@@ -69,6 +69,8 @@ do
 	then
 echo "merging $i"
 git checkout origin/${BRANCH} -- $i
+else
+echo "skipping"
 fi
 done
 
