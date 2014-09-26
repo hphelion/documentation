@@ -30,7 +30,7 @@ git checkout -f ${BRANCH}
 git pull origin 
    
 
-#Search to ensure that every md file contains one of the comments  strings above. 
+#Search to ensure that every md file contains one of the comments strings above. 
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
 MDFILES_NOT_DESIGNATED=`egrep -rL "\-\-PUBLISH|\-\-UNDER REVISION" *.md` 
 
