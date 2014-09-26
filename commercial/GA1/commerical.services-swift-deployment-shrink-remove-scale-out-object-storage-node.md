@@ -68,16 +68,16 @@ Perform the following steps to remove disks from ring:
 
 		ringos view-ring -f /root/ring-building/object-1.builder 
 
-5. Identify the disk that need to be removed from the list.
+5. Identify the node that need to be removed from the list.
 
 **Recommendation**:
 
-* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 25.
+* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 75.
 
 
-6.Set weight of the driver 
+6.Set weight of the disks on the node 
 
-		ringos set-weight -f object-1.builder -s d<value> -w <value>
+		ringos set-weight -f object-1.builder -s d<Node IP address> -w <value>
 
 
 7.Re-balance the ring
@@ -100,47 +100,13 @@ Perform the following steps to remove disks from ring:
 
 11.Once weight is set to 0, remove the disk from the ring
 
-	ringos remove-disk-from-ring -f object-1.builder -s d<device ID>
+	ringos remove-disk-from-ring -f object-1.builder -s <NOde IP address>
 
 Repeat this step for each disk of the specific node.
 
-##Re-balancing
-
-After removing the disk of the specific node you must re-balance the ring.
-
-1. Rebalance the ring using the following command:
-
-		ringos rebalance-ring -f /root/ring-building/object-1.builder
-
-	This will generate a **object-1.ring.gz** file.
-
-2. Verify the content in `object-1.builder` file after rebalancing the ring.
-
-		ringos view-ring -f /root/ring-building/object-1.builder
-
-##Copying Object-ring:1 to all nodes
-
-1. List all the Swift nodes. 
-
-		ringos list-swift-nodes -t  all
- 
-2. Copy `object-1.ring.gz` files to all the nodes. 
-
-		ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift node>
-
-
-3. Press **yes** when asked to authenticate node.  
-
-	The sample of authentication node will be displayed as follows:
-
-		The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
-		ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
-		Are you sure you want to continue connecting (yes/no)? yes
-		Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
-
 ## Removing scale-out object node 
 
-Now remove the scale-out object node by removing the corresponding stack.
+Once the disks are removed from the ring, remove the scale-out object node by removing the corresponding stack.
 
 1. List the scale-out object node
 
@@ -159,7 +125,7 @@ The list appears as the sample shown below:
 
 ##Verifying the node removal
 
-	nova list
+	#nova list
 
 A list of nodes appears and the removed node will not be available.
 

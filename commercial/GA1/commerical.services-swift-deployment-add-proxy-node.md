@@ -26,6 +26,9 @@ PageRefresh();
 You can add proxy node to store account, container, and object-ring.
 
 
+Perform the following procedure to add new scale-out storage node. 
+
+
 ##Prerequisite
 
 1. HP Helion OpenStack cloud is successfully deployed and has the following: 
@@ -33,144 +36,15 @@ You can add proxy node to store account, container, and object-ring.
 	* Seed
 	* Undercloud
 	* Overcloud 
-	* Two Swift nodes (which is functional)
+	* Starter Swift nodes (which is functional)
 2. Scale-out object-ring:1 is deployed
 
 
+##Deploying new nodes
 
-##Deploying proxy node
-
-Perform the following steps to add proxy node:
-
-1. Login to seed 
-
-		ssh root@<IP address>
-
-2. Copy `/root/tripleo/tripleo-incubator/scripts/ee-config.json` to `/root/overcloud-config.json`
-
-		 cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-3. Enter `cat /root/overcloud-config.json` to view the content in the `overcloud-config.json` file.
-
-The Overcloud configuration file will be displayed as the sample below:
-
-	{
-	
-	    "cloud_type": "KVM",
-	
-	    "compute_scale": 1,
-	
-	    "vsa_scale": 0,
-	
-	    "vsa_ao_scale": 0,
-	
-	    "so_swift_storage_scale": 3,
-	
-	    "so_swift_proxy_scale": 0,
-	
-	    "bridge_interface": "eth0",
-	
-	    "ntp": {
-	
-	           "overcloud_server": "",
-	
-	           "undercloud_server": ""
-	
-	    }
-	
-	}
-
-4.vi `overcloud-config.json` to updated value for so&#095;swift_proxy&#095scale.
-
-For more information refer [Provisioning Swift node]( /helion/openstack/ga/services/swift/provision-nodes/)
-
-5.Enter the following command to source the `overcloud_config.json`  for the new values
-
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
-6.Run the installer script to update the cloud
-
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
-
-	The cloud updates with the new nodes on successful operation.
-
-##Add disk to account and container ring
-
-1. Login to Undercloud 
-
-		ssh heat-admin<Undercloud IP address> 
-		#sudo -i
-
-2. Change the directory to ring builder
-
-		#cd /root/ring-building
-
-3. List the builder file
-
-		ls
-
-	Identify `account.builder` and `container.builder` files in the ring builder directory.
-
-3. List the Swift node
-
-		ringos list-swift-nodes -t proxy
-
-4. List the disk on the node
-
-		ringos list-disks -n <NODE IP> -u heat-admin
-
-5. Format a disk
-
-		ringos format-disks -n <NODE IP> -u heat-admin -d <disk>
-
-	**Note**: You can format all the disk with the single command (--all).
-
-6. List all the Swift nodes. Ensure to capture the list of the nodes.
-
-		ringos list-swift-nodes -t all
-
-7. Add formatted disk to account and container ring
-
-		ringos add-disk-to-ring -f /root/ring-building/account.builder -i <IP address of Swift node> -p value -d <value> -w <weight> -r <region> -z <zone>
-		ringos add-disk-to-ring -f /root/ring-building/container.builder -i <IP address of Swift node> -p value -d <value> -w <weight> -r <region> -z <zone>
+Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy new node.
 
 
-##Re-balancing account and container rings 
-
-1. Perform the following command to re-balance both the rings.
-
-		ringos rebalance-ring -f /root/ring-building/account.builder
-		
-		ringos rebalance-ring -f /root/ring-building/container.builder	
-
-	This will generate a `account.ring.gz`  and `container.ring.gz` files.
-
-2. Verify the content in`account builder` and `container.builder` files after re-balancing the ring.
-
-		ringos view-ring -f /root/ring-building/account.builder
-	
-		ringos view-ring -f /root/ring-building/container.builder
-
-
-##Copying account, container, object-ring:0 and object-ring:1 to all nodes
-
-1. List all the Swift nodes. 
-
-		ringos list-swift-nodes -t  all
- 
-2. Copy account, container, object-0 , and generated `account.ring.gz`  and `container.ring.gz` files files to new nodes. 
-
-		ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift node>
-
-
-3. Press **yes** when asked to authenticate node.  
-
-The sample of authentication node will be displayed as follows:
-
-	The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
-	ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
-	Are you sure you want to continue connecting (yes/no)? yes
-	Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 
 ##Update load balancer with new proxy nodes
  

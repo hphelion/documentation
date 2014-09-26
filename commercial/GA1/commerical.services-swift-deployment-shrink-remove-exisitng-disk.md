@@ -73,7 +73,7 @@ Perform the following steps to remove disks from ring:
 * Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 25.
 
 
-6.Set weight of the driver 
+6.Set weight of the disk
 
 		ringos set-weight -f object-1.builder -s d<value> -w <value>
 
@@ -98,7 +98,7 @@ Perform the following steps to remove disks from ring:
 
 11.Once weight is set to 0, remove the disk from the ring
 
-	ringos remove-disk-from-ring -f object-1.builder -s d<device ID>
+	ringos remove-disk-from-ring -f object-1.builder -s d<disk ID>
 
 
 

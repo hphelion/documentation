@@ -88,7 +88,7 @@ You can also reconfirm the Swift storage IP:
 
 a. ssh to the undercloud 
     
-		ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin<Undercloud IP address> 
 
 b. Source stack RC using the following command:
 
@@ -96,7 +96,7 @@ b. Source stack RC using the following command:
 
 c. Use the following command to list the available Swift nodes
     
-     ringos  list-swift-nodes
+     #ringos  list-swift-nodes
 
 A list of swift nodes will be displayed.
 

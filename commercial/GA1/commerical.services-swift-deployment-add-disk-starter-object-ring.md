@@ -33,12 +33,12 @@ HP Helion OpenStack cloud is successfully deployed and has the following:
 * Seed
 * Undercloud
 * Overcloud 
-* Two Swift nodes (which is functional)
+* Starter Swift nodes
 
 
 **IMPORTANT**:  
  
-*  Store the generated rings at multiple location. These rings should be consistent all across the nodes.
+*  Store the generated rings at multiple location. These rings should be consistent all across the nodes. copy from wiki
 
 * Take a backup of rings before any operation.
 
@@ -57,29 +57,27 @@ Perform the following steps to add Swift disk to a ring:
 
 		#cd /root/ring-building
 
-3. List the builder file for object-O. 
-
-		ls
-
-	Identify the file name `object.builder`.
-
-3. List the starter node
+3. List the starter Swift nodes
 
 		ringos list-swift-nodes -t starter
 
-4. List the disk on the starter nodes
+4. List the disks on the starter nodes
 
 		ringos list-disks -n <Ip address of starter node> -u heat-admin
 
-5. Format a disk
+5. Format a given disk
 
 		ringos format-disks -n <IP address of starter node> -u heat-admin -d <disk>
 
-	**Note**: You can format all the disk with the single command (--all).
+	**Note**: You can format all the disks with the single command (-d --all).
 
-6. List all the Swift nodes. Ensure to capture the list of the nodes.
 
-		ringos list-swift-nodes -t all
+3. List the builder file for object-O. 
+
+		ls refer to before
+
+	Identify the file name `object.builder`.
+
 
 7. Add formatted disk to object-0 ring
 
@@ -96,8 +94,12 @@ Perform the following steps to add Swift disk to a ring:
 
 		ringos rebalance-ring -f /root/ring-building/object.builder
 	
-	Note: Wait for min_part_hours before another re-balance succeeds.	
-			
+Note: Wait for min_part_hours before another re-balance succeeds.	
+	
+6. List all the Swift nodes. 
+
+		ringos list-swift-nodes -t all
+		
 9.Copy object file to all the nodes
 
 	ringos copy-ring -s /root/ring-building/object.ring.gz -n <IP address of Swift nodes>

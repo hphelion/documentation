@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/Monitor-cluster/"> NEXT &#9654</a> </p>
 
 
-#Add New Scale-out Storage Node
+#Add New Scale-out Object Node
 
 Perform the following procedure to add new scale-out storage node. 
 
@@ -33,31 +33,31 @@ Perform the following procedure to add new scale-out storage node.
 	* Seed
 	* Undercloud
 	* Overcloud 
-	* Two Swift nodes (which is functional)
+	* Starter Swift nodes (which is functional)
 2. Scale-out object-ring:1 is deployed
 
 
-##Deploying new nodes for object-ring:1
+##Deploying new object nodes
 
-Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy new node for object-ring:1.
+Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy new node.
 
 
 ## Adding node and disks to object-ring:1
 
-Once thee Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
+Once the Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
 
 1. Use the following command to format disk:
 
-		ringos format-disks -n <IP address of Swift node> -u heat-admin -d all
+		#ringos format-disks -n <IP address of Swift node> -d all
 
-You have the privilege to format and mount the disk one by one but ringos tool provide you to format all disk with a single command. Refer [pyringos]( /helion/openstack/GA1/services/object/pyringos/) for more details
+Refer [ringos Manual]( /helion/openstack/GA1/services/object/pyringos/) for more details.
 
 
 2.Add disk to the ring. 
 
-	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <value> -d <value> -w <value> -r <value> -z <value>
+	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <value> -d <value> -w <value> -r <value> -z <value>
 
-**Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes]( /helion/openstack/ga/services/swift/deployment-scale-out/).
+**Note:** Use labels and disks obtained in output of step 1. 
 
 In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
 
@@ -79,7 +79,7 @@ This will generate a **object-1.ring.gz** file.
 
 2. Verify the content in `object-1.builder` file after rebalancing the ring.
 
-	ringos view-ring -f /root/ring-building/object-1.builder
+		ringos view-ring -f /root/ring-building/object-1.builder
 
 ##Copying Object-ring:1 to all nodes
 
@@ -92,7 +92,7 @@ This will generate a **object-1.ring.gz** file.
 	ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift node>
 
 
-3. Press **yes** when asked to authenticate node.  
+Press **yes** when asked to authenticate node.  
 
 The sample of authentication node will be displayed as follows:
 

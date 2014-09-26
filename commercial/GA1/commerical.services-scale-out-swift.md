@@ -26,35 +26,33 @@ PageRefresh();
 <!---
 HP Helion OpenStack&reg; offers  an optional Swift scale-out cluster instance of between two and twelve servers that is used for production cloud Object storage use. Scale-Out Swift extends the Starter Swift Cluster, which enables greater capacity while maintaining any initial data present in Starter Swift. --->
 
-Scale-out Swift clusters are deployed using the concept of storage policy.
 
-* storage-policy:0
-* storage-policy:1
 
-When the HP Helion OpenStack is deployed two swift nodes are installed by default. They are termed as starter nodes. These two nodes are configured as storage-policy:0 for internal purposes as a part of its deployment. The object ring (for example, object-ring:0) associated with the storage-policy is used to store data for internal services like Glance, Sherpa, and so on. 
+When the HP Helion OpenStack is deployed two swift nodes are installed by default. They are termed as starter nodes. These two nodes are configured as storage-policy:0 for internal purposes as part of deployment. The object ring associated with the storage-policy:0 is used to store data for internal services like Glance, Sherpa, and so on. 
 
-The scale-out object storage is realized by defining a new storage policy – storage-policy:1. Object-1 ring is associated with storage-policy 1. This ring is used to store end user data. Once the Storage-policy:1 is created,  It’s the default policy and all of the containers would be on this policy unless otherwise specified.
+The scale-out object storage is realized by defining a new storage policy – storage-policy:1. Object-1 ring is associated with storage-policy 1. This ring is used to store end user data. Once the storage-policy:1 is created,  it is the default policy and all of the containers would be on this policy unless otherwise specified.
 
 
 You can expand the object storage by adding one or more nodes to object-ring:1. But you can still continue to use storage-policy:0, if you continue to use the old container to store data.
 
+HP Helion OpenStack Swift ships a tool set- ringos which helps to create scale-out Swift. Refer to [ringos Manual]( /helion/openstack/GA1/services/object/pyringos/) for details
+
 
 ##HP Helion OpenStack scale-out architecture 
 
-The following diagram depicts the HP Helion OpenStack&reg; scale-out architecture.
+The following diagram depicts the HP Helion OpenStack&reg; Swift scale-out architecture.
 
 <a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
 
+##HP Helion OpenStack scale-out Deployment
+
+For deploying scale-out Swift refer the following sections:
 
 
-For Swift scale-out refer the following sections:
-
-**IMPORTANT:** Please read through the [Pyringos Manual]( /helion/openstack/GA1/services/object/pyringos/) before starting the deployment of Swift-scale out.
-
+* [Provision Swift Node(s)]( /helion/openstack/ga/services/swift/provision-nodes/)
 * [Deploy Scale-out Swift]( /helion/openstack/ga/services/swift/deployment-scale-out)
 * [Expand Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
-* [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
 * [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
 
 
