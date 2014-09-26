@@ -30,6 +30,7 @@ This page provides an overview of the hardware and software that is supported fo
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
+* [Supported Configurations](#supportedconfigurations)
 * [Hardware and Network Configuration](#baremetal)
 * [Usable Capacity](#usable-capacity)
 * [Physical Network architecture](#physical-network-architecture)
@@ -48,7 +49,7 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP </th>
+<th> HP Servers</th>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -143,12 +144,6 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 
 <tr style="background-color: white; color: black;">
 <td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant DL388e Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
 <a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290">HP ProLiant DL560 Gen8 Server</a>
 </td>
 </tr>
@@ -225,10 +220,49 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 </td>
 </tr>
 
+<tr style="background-color: #C8C8C8;">
+<th> HP Storage</th>
+</tr>
 
-</table>
+<tr style="background-color: white; color: black;">
+<td> 
+<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP 3PAR StoreServ 7000 Storage</a>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> 
+<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP 3PAR StoreServ 10000 Storage</a>
+</td>
+
+<tr style="background-color: white; color: black;">
+<td> 
+<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP StoreVirtual 4000</a>
+</td>
+
+</tr></table>
+
+## Supported Configurations<a name="supportedconfigurations"></a>
+
+HP supports the following configurations for HP Helion OpenStack deployment:
 
 
+
+- Host Interconnects/Protocols: 
+   
+      * 10Gb Software iSCSI
+      * 8Gb and 16Gb Fibre-Channel
+      * Software iSCSI and Fibre-Channel under KVM
+
+- Target Interconnects: 
+   
+      * 8Gb FC SAN
+      * 10Gb iSCSI CNA/NIC
+      
+
+- 3PAR InForm OS Version: 3.1.3 MU1 
+   
+     
 ## Hardware and Network Configuration<a name="baremetal"></a>
 You must have the following hardware and network configuration:
 
@@ -413,16 +447,16 @@ The following table shows the minimum recommendations for hardware by node type.
 
 <table style="text-align: left; vertical-align: top;">
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
-<th>Node type</th>
+<th>Node Type</th>
 <th>Virtual/physical</th>
-<th>CPU cores</th>
+<th>CPU Cores</th>
 <th>Memory</th>
-<th>Internal storage</th>
+<th>Internal Storage</th>
 <th>NICs</th>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> KVM host</td>
+<td> KVM Host</td>
 <td> Baremetal</td>
 <td>4* </td>
 <td> 8 GB*</td>
@@ -431,7 +465,7 @@ The following table shows the minimum recommendations for hardware by node type.
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Undercloud controller</td>
+<td> Undercloud Controller</td>
 <td> Baremetal</td>
 <td>8 </td>
 <td> </td>
@@ -440,7 +474,7 @@ The following table shows the minimum recommendations for hardware by node type.
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Overcloud controller </td>
+<td>Overcloud Controller </td>
 <td> Baremetal</td>
 <td>8 </td>
 <td> </td>
@@ -504,7 +538,7 @@ The following table maps the minimum server configuration into usable capacity o
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Service</th>
-<th>Usable capacity</th>
+<th>Usable Capacity</th>
 <th>Notes</th>
 </tr>
 
@@ -521,7 +555,7 @@ The following table maps the minimum server configuration into usable capacity o
 </tr>		
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Object storage</td>
+<td> Object Storage</td>
 <td> 400 GB; equivalent to:
 <ul><li>160 images, based on 2.5 GB images</li>
 or
@@ -612,7 +646,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Undercloud management </td>
+<td> Undercloud Management </td>
 <td> <ul><li>Traffic for undercloud internal OpenStack calls, Glance image downloads, etc.</li>
 <li>Provides access to undercloud API endpoints</li>
 <li>Used to PXE boot overcloud servers</li>
@@ -623,7 +657,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Overcloud management </td>
+<td> Overcloud Management </td>
 <td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
 <td> Untagged </td>
 <td> eth0 or bond0</td>
@@ -709,5 +743,5 @@ Prepare your environment for the installation, see [HP Helion OpenStack&#174; In
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
-####OpenStack trademark attribution
+####OpenStack Trademark Attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
