@@ -272,13 +272,17 @@ Use the following steps to restore the undercloud:
 
 The following sections describe how and when to back up and restore the overcloud.
 
-You can [back up](#sherpaback) and [restore](#sherparest) the Sherpa overcloud or [back up](#databack) and [restore](#datarest) the overcloud database.
+You can [back up](#sherpaback) and [restore](#sherparest) an overcloud server or [back up](#databack) and [restore](#datarest) the overcloud database.
 
+<<<<<<< HEAD
+### Backing up an overcloud server ### {#sherpaback} 
+=======
 ### Backing up the Sherpa overcloud<a name="sherpaback"></a>} 
+>>>>>>> 620709d341fc163628fab94f08361ef6b18f0884
 
-You should create a backup of the overcloud when any Update and Extension is download to the system.
+You should create a backup of the overcloud servers when any Update and Extension is download to the system.
 
-Use the following steps to back up the Sherpa overcloud:
+Use the following steps to back up the overcloud:
 
 1. Log in the seed VM host.
 
@@ -438,7 +442,40 @@ Use the following steps to restore the overcloud database:
 		INFO:os-refresh-config:Completed phase migration
 		Restore Procedure Completed
 
+<<<<<<< HEAD
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+### Rebuilding the Overcloud Management Controller ### {#mgmt}
+
+If the overcloud management controller goes down for a period of time or fails, you need to rebuild the overcloud management controller and any Volume Operation (Cinder) storage volume that were affected. 
+
+During the period that the server is re-building, you can temporarily restart the storage volumes using the following steps:
+
+1.  SSH to the undercloud controllers.
+
+2. Execute the following commands
+
+		os-svc-enable-upstart cinder-volume enable
+		service cinder-volume start
+
+After the the management controller is rebuilt, use the following steps below to disable the temporary solution:
+
+1. SSH to the same UnderCloud controllers where cinder-volume was enable before
+
+2. Execute the following commands
+
+		service cinder-volume stop
+		os-svc-enable-upstart cinder-volume disable
+
+**Important:** After manually enabling and starting the storage volumes on controller0 or controller1, if you run the `os-refresh-config` command, the Volume Operations service stops and is disabled again. You must make sure that you enables the service again.
+
+
+## Back up and restore help ## {#help}
+=======
 ## Back up and restore help<a name="help"></a>
+>>>>>>> 620709d341fc163628fab94f08361ef6b18f0884
 
 Use the following sections as needed.
 
