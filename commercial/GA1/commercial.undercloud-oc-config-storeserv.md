@@ -138,9 +138,9 @@ To generate configuration file, do the following:
 
 ### Update Overcloud<a name="update-overcloud"></a>
 
-To update your overcloud with the changes, do the following:
+To update your Overcloud with the changes, do the following:
 
-1. SSH to seed as root.
+1. SSH to Seed as root.
 
 		ssh root@ <IP address> 
 
@@ -148,7 +148,7 @@ To update your overcloud with the changes, do the following:
 
 		ls
 
-3. Copy overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+3. Copy Overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
 	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 

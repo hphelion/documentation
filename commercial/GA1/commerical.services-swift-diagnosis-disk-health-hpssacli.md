@@ -39,6 +39,9 @@ TBD
 
 Where should the user login??
 
+
+
+
 ###Copy the utility to seed and to the servers where the disks has to be monitored
 
 Use `scp` to copy the utility package on to the servers and install it.
@@ -72,9 +75,9 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 	The extracted binary file will be available in `/home/heat-admin/hp/hpssacli/bld`
 
-8. Install the binary file.
+8. Execute the binary file.
 
-	 	run `hpssacli`
+	 	 ./hpssacli help
  
 	**Note**: The diagnostics can be done in the server or from SEED through ssh.
 
@@ -86,34 +89,42 @@ Use `scp` to copy the utility package on to the servers and install it.
 1. Login to the server
 
 		ssh heat-admin@<IP address of machine>
+2. Change the directory
 
+		/home/heat-admin/hp/hpssacli/bld
+
+3. To know the controller slot
+		
+		./hpssacli ctrl all show status
  
+The slot details appear as shown in the following example:
+		Smart Array P420i in Slot 0 (Embedded)
+		
+		   Controller Status: OK
+		
+		   Cache Status: OK
+		
+		   Battery/Capacitor Status: OK
 
-root@overcloud-ce-vsaaostorage1-vsaaostorage1-yzp3byxuv6ux:/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl all show status
+4.To generate the diagnostic report of the particular slot
 
-Smart Array P420i in Slot 0 (Embedded)
+		./hpssacli ctrl slot=0 diag file=<filenmae.zip>
 
-   Controller Status: OK
+or 
+ To generate the diagnostic report for all slots
 
-   Cache Status: OK
-
-   Battery/Capacitor Status: OK
-
- 
-
-root@overcloud-ce-vsaaostorage1-vsaaostorage1-yzp3byxuv6ux:/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl slot=0 diag file=all_details.zip
-
- 
-
-   Generating diagnostic report...done
-
-root@overcloud-ce-vsaaostorage1-vsaaostorage1-yzp3byxuv6ux:/home/heat-admin/hp/hpssacli/bld# ls -l *.zip 
-
--rw-r--r-- 1 root root 143142 Sep 24 13:07 all_details.zip
+		./hpssacli ctrl all diag file=<filename.zip>
 
 
+The file will be in location you mentioned.
 
-* Example to collect the diagnostic report using ssh from SEED.
+5.Copy the generated file to the desired location
+
+6. Extract the file
+
+7. Open the ADUReport.htm file in the browser.
+
+
 
 
  

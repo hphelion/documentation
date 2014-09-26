@@ -23,23 +23,18 @@ PageRefresh();
 
 #Remove an existing Disk from Object Nodes
 
-
 Perform the following steps to remove a disk from object nodes.
 
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed and has the following: 
-	* Seed
-	* Undercloud
-	* Overcloud 
-	* Two Swift nodes (which is functional)
+1. HP Helion OpenStack cloud is successfully deployed.
 2. Scale-out object-ring:1 is deployed
 
 
 **IMPORTANT**:  
  
-*  Stored the generated rings at multiple location. These rings should be consistent all across nodes.
+*  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 
 * Take a backup of rings before any operation.
 
@@ -50,7 +45,7 @@ Perform the following steps to remove disks from ring:
 
 1. Login to Undercloud 
 
-		ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin<Undercloud IP address> 
 		#sudo -i
 
 2. Change the directory to ring builder
@@ -59,23 +54,23 @@ Perform the following steps to remove disks from ring:
 
 3. List the file in the directory
 
-		ls
+		#ls
 	The file with the name `object-1.builder` will be listed in the list.
 
 4. List the disks in the current `object-1.builder` file
 
-		ringos view-ring -f /root/ring-building/object-1.builder 
+		#ringos view-ring -f /root/ring-building/object-1.builder 
 
 5. Identify the disk to be removed from the list.
 
 **Recommendation**:
 
-* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 25.
+* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 75.
 
 
-6.Set weight of the driver 
+6.Set weight of the disk
 
-		ringos set-weight -f object-1.builder -s d<value> -w <value>
+		#ringos set-weight -f object-1.builder -s d<value> -w <value>
 
 
 7.Re-balance the ring
@@ -98,7 +93,7 @@ Perform the following steps to remove disks from ring:
 
 11.Once weight is set to 0, remove the disk from the ring
 
-	ringos remove-disk-from-ring -f object-1.builder -s d<device ID>
+	ringos remove-disk-from-ring -f object-1.builder -s d<disk ID>
 
 
 
