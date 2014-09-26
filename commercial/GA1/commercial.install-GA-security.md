@@ -20,19 +20,19 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Configuring your Helion network securely
+# HP Helion OpenStack&#174;: Configuring your Helion network securely
 
-This document provides guidance on configuring your Helion network securely.
+The Helion OpenStack Commercial release has many built-in security controls, but the customer must take responsibility for configuring the network devices which integrate Helion services into an existing data center environment.  
 
-The Helion OpenStack Commercial release has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the Helion deployment (to protect against external abuse) as well as defining router rules within the Helion deployment (to protect against insider abuse or administrator mistakes).
+Secure configuration includes defining firewall rules at the edge of the Helion deployment to protect against external abuse as well as defining router rules within the Helion deployment to protect against insider abuse or error.
 
 Helion is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
 
 <img src = "/content/documentation/media/Helion_Security1.png">
 
-In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that the Helion OpenStack Commercial release includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
+In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that the Helion OpenStack Commercial release includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices, as indicated in the sections that follow, will provide increased security.
 
-## Securing the Perimeter ## {#perimeter}
+## Securing the Perimeter<a name="perimeter"></a>
 
 To protect against external attack on Helion services, your firewall should be configured with a rule to block any request originating from outside the network attempting to reach the Seed, the Undercloud Controller, the Swift Object nodes, and any 3PAR StoreServ or StoreVirtual VSA appliances dedicated to the Helion installation, as indicated in this table:
 
@@ -51,7 +51,7 @@ To protect against external attack on Helion services, your firewall should be c
 </table>
 
 
-## Securing the Swift back-end network connections ## {#back-end}
+## Securing the Swift back-end network connections<a name="back-end"></a>
 
 Swift requests travel from the external network, to a HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows:
 
@@ -94,13 +94,13 @@ Applying access control lists (ACLs) for flows in the table above produces this 
 
 <img src = "/content/documentation/media/Helion_Security3.png">
 
-## Securing block storage network connections in Helion ## {#network}
+## Securing block storage network connections in Helion<a name="network"></a>
 
 A customer deploying Helion is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer’s network devices which may include routers, switches, or firewalls. Block storage data flows interacting with Helion are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with Helion nodes.
 
-Helion supports StoreVirtual or 3Par StoreServ storage arrays which will be describe separately.
+Helion supports StoreVirtual or 3Par StoreServ storage arrays which will be described separately.
 
-### StoreVirtual ### {#storevirt}
+### StoreVirtual<a name="storevirt"></a>
 
 Helion supports both StoreVirtual VSA (Virtual Storage Appliance) and P4000 hardware arrays. Three types of traffic flows into a StoreVirtual node:
 
@@ -110,7 +110,7 @@ Helion supports both StoreVirtual VSA (Virtual Storage Appliance) and P4000 hard
 
 VSA only supports one virtual network interface. As a result, the above three types of traffic must flow on the same network. For Helion, this is the management VLAN. P4000 hardware arrays support multiple network interfaces. For P4000, iSCSI and management traffic must flow through the management VLAN. However, inter-cluster traffic can be configure for a separate VLAN. This provides an additional level of network data isolation. 
 
-For StoreVirtual network design best practices, see [HP StoreVirtual 4000 Storage – Network design considerations and best practices[(http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us).
+For StoreVirtual network design best practices, see <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us">StoreVirtual 4000 Storage Network design considerations and best practices</a>. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link -->
 
 The following diagram depicts a StoreVirtual network deployed as a flat network:
 
@@ -153,7 +153,7 @@ StoreVirtual port usage is described in [HP4000 SAN – SANiQ TCP and UDP Port U
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-### 3Par StoreServ ### {#storeserv}
+### 3Par StoreServ<a name="storeserv"></a>
 
 Helion supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then Compute nodes and OverCloud controller hosting Cinder will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be via the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
 
@@ -200,14 +200,14 @@ The following diagram depicts a logical deployment after applying ACLs for flows
 
 Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with Helion nodes described above. This includes SSMC console access and Service Processor communication. 
 
-StoreServ port usage is describe on page 65 of [HP 3PAR StoreServ 10000 Storage Physical Planning Manual](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf).
+StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Storage Physical Planning Manual](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## Additional Block Storage Resources ## {#additional}
+## Additional Block Storage Resources<a name="additional"></a>
 
-- [HP StoreVirtual 4000 Storage – Network design considerations and best practices](http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)
+- <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage – Network design considerations and best practices</a> <!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
 - [HP4000 SAN – SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf)
 - [StoreVirtual information](http://hp.com/go/storevirtual)
 - [StoreServ information](http://hp.com/go/storeserv)
@@ -219,7 +219,7 @@ StoreServ port usage is describe on page 65 of [HP 3PAR StoreServ 10000 Storage 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## Securing ESX network connections in Helion ## {esx}
+## Securing ESX network connections in Helion<a name="esx"></a>
 
 If your deployment of Helion includes the ESX Integration, you can improve network security by configuring access control lists for the ESX network.  The ESX Tenant network (also shown below) is managed by Neutron.  The ESX network is not installed or managed by Helion. The customer installs and manages this network and makes sure there is a route to the Management network.  
 
@@ -258,7 +258,7 @@ The following table describes the data flow between Helion nodes and ESX nodes:
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## The Service network ## {#service}
+## The Service network<a name="service"></a>
 
 The Service Network (SVC) is created by Neutron.  It provides a path from Development Platform services (such as Database as a Service) running in Nova VMs to the Centralized Logging Service running in the Undercloud.   A route needs to exist from service subnet in Over Cloud to the RabbitMQ on the Under Cloud controller.
 

@@ -26,9 +26,9 @@ Before you begin the installation process, take a few minutes to read this page 
 
 * [Hardware configuration](#hardware)
 * [Required tasks](#required)
-<!--* [Downloading installation packages](#install-pkg)-->
 * [Next Steps](#nextstep)
 * [For more information](#moreinfo)
+<!--[Downloading installation packages](#install-pkg)-->
 
 ## Hardware configuration<a name="hardware"></a>
 
@@ -110,7 +110,7 @@ You are responsible for providing the internal and external customer router and 
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
 - The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
-<-- What does this mean?? -->
+<!-- What does this mean?? -->
 
 #### Preparing the network for an ESX installation <a name="network_ESX"></a>
 
@@ -193,7 +193,7 @@ On the installer system (seed VM), the user `root` must have a public key, for e
 
 If user `root` does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
 
-#### Installing Debian/Ubuntu packages #### {#packages}
+#### Installing Debian/Ubuntu packages<a name="packages"></a>
 
 Before starting the installation, you must first install the following required Debian/Ubuntu packages on the system running the installer:
 

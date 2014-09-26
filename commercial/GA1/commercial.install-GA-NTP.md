@@ -23,13 +23,13 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Installation: NTP Server
 
-This page provides detailed information on configuring the seed VM as a Network Time Protocol (NTP) server. NTP is a networking protocol for clock synchronization between computer systems. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
+This page provides detailed information on configuring the seed VM as a Network Time Protocol (NTP) server. NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.
 
-NTP clients should use only stratum 2 and higher servers
+**Note:** NTP clients should use only stratum 2 and higher servers
 
-Configure NTP:
+##Configure NTP
 
-1. Install ntp package using the following command:
+1. Install the NTP package using the following command:
 
 		sudo apt-get install ntp
 
@@ -37,11 +37,11 @@ Configure NTP:
 
 		ntpq -pd
 
-	**Note:** The NTP stratum must be 10 or higher in order to use as a source
+	**Note:** The NTP stratum must be 10 or higher in order to use as a source. If one is not available, you may be able to [fudge one](#fudge).
 
 3. Add NTP servers to /etc/ntp.conf
 
-4. Configure system timezone in the `/usr/bin/tzselect` directory.
+4. Configure system time zone in the `/usr/bin/tzselect` directory.
 
 	The output should be placed in /etc/profile and executed on the command line
 
@@ -99,13 +99,11 @@ If your client (including your NTP server) has trouble syncing time you can try 
 
 		sudo nmap -p123 -sU -P0 <localhost | known ntp host>
 
-###Stratum lower than 10 {#fudge}
+###Stratum lower than 10<a name="fudge"></a>
 
 NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a "stratum" and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy. 
 
-HP Helion OpenStack uses stratum 10. 
-
-If your NTP stratum is lower than 10, setup your host as the time source by fudging a stratum 10
+HP Helion OpenStack uses stratum 10. If your NTP stratum is lower than 10, set up your host as the time source by fudging a stratum 10.
 
 1. Configure host as a time source.
 
@@ -117,3 +115,7 @@ If your NTP stratum is lower than 10, setup your host as the time source by fudg
 3. Restart ntp service
 
 		service ntp restart
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

@@ -40,7 +40,7 @@ The following topics in this section explain how to deploy and verify deployment
 * [Uninstalling VCN on ESX hosts](#uninstallvcn)
 * [Next Steps](#next)
 
-## Prerequisites ## {#prereqs}
+## Prerequisites<a name="prereqs"></a>
 
 Before you install the OVSvApp, ensure the following:
 
@@ -86,7 +86,7 @@ Example:
 <img src="media/ESXi_hypervisor_networking.png"/>
 
 
-##Deploying the OVSvApp {#deploytemplate}
+##Deploying the OVSvApp<a name="deploytemplate"></a>
 
 You must upload the OVSvApp to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file that will be used to clone and deploy OVSvApp on each host being managed by the controller.
 
@@ -397,7 +397,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 
 	The installation log file will be located at `/hp-ovsvapp/log/ovs_vapp.log`
 
-## Verifying your deployment {#deploymentverification}
+## Verifying your deployment<a name="deploymentverification"></a>
 
 After the OVSvApp deployment script is run successfully, you can see the OVSvApp deployed on all the specified ESX hosts. 
 
@@ -426,20 +426,20 @@ After the OVSvApp deployment script is run successfully, you can see the OVSvApp
     All agents should indicate alive status that is denoted by**:-)**.
 
 
-## Managing HP VCN networking {#managevcnnetworkservice}
+## Managing HP VCN networking <a name="managevcnnetworkservice"></a>
 
 Enter the following commands to stop and restart the HP VCN networking service (`hpvcn-neutron-agent`):
 
-* `sudo service hpvcn-neutron-agent stop`
+`sudo service hpvcn-neutron-agent stop`
 
-* `sudo service hpvcn-neutron-agent start`
+`sudo service hpvcn-neutron-agent start`
 
-## Uninstalling OVSvApp VM on ESX hosts {#uninstallvcn}
+## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
 
 To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and delete each OVSvApp VM.
 
 
-## Next Steps {#next}
+## Next Steps<a name="next"></a>
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
