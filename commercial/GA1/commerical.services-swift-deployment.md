@@ -114,17 +114,27 @@ It is recommended to deploy three scale-out object server nodes (replica count a
 Also, you can deploy two scale-out object nodes server. Here every object is replicated across two different servers. In case of failure of node it will retain at least two copies. But it will be disadvantage for you because a loss of a server may cause loss of two replica(s) for some objects.
 
 
-Before starting the deployment of scale-out object nodes you must configure the `overcloud-config.json` file.
+	
+
+Before starting the deployment of scale-out object nodes you must configure the `overcloud-config.json` file. 
+
+**IMPORTANT:** If `overcloud-config.json` has already been created during installation, just edit the file.
+
 
 1. Login to seed VM
 
 		ssh root@<IP address>
 
+
+
 2. Copy `/root/tripleo/tripleo-incubator/scripts/ee-config.json` to `/root/overcloud-config.json`
 
 		 cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-3.Enter `cat /root/overcloud-config.json` to view the content in the `overcloud-config.json` file.
+
+
+
+3.Update `so_swift_storage_scale` parameter in `/root/overcloud-config.json` as per your scale.
 
 The Overcloud configuration file will be displayed as the sample below:
 
