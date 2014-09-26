@@ -23,7 +23,8 @@ PageRefresh();
 
 # Monitor Disk Usage
 
-Icinga service, which runs in the Undercloud, helps cloud admin to monitor the disk usage of Swift storage node (s)
+Icinga service, which runs in the Undercloud, helps cloud admin to monitor the disk usage of Swift storage node (s).
+
 
 ##Prerequisite
 
@@ -63,14 +64,52 @@ The page navigates to Service Status Details For Host < Swift node IP>.
 Now, you can view the disk usage of the selected Swift node.
 
 
+Refer the following table for the status and message details.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+	<th>Status</th>
+	<th><center>Message</center></th>
+    <th><center>Cause/Resolution</center></th>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>OK</td>
+	<td>No devices to report</td>
+    <td> This message appears on proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>OK </td>
+	<td>Percent used</td>
+    <td> Percent disk usage for devices used by Swift (/srv/node)</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>WARNING </td>
+	<td>disk space low</td>
+    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion Openstack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>FAIL </td>
+	<td>Disk space critically low</td>
+    <td> The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>FAIL </td>
+	<td>Not mounted</td>
+    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td>UNKNOWN</td>
+	<td>No devices to report</td>
+    <td></td></tr>
+</table>
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
- 
 
+ 
 
 
 

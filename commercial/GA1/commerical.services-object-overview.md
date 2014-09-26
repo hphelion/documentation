@@ -40,7 +40,6 @@ HP Helion OpenStack Object&#174; service will have swift cluster as a part of cl
 
 Swift is used for two different purposes:
 
-
 1. Cloud Controller Service data (used for Helion OpenStack&#174; Services implementation and HA) 
 2. Tenant Object Storage data (used by end Tenants / Project Users for scaled-out Object Storage).
 

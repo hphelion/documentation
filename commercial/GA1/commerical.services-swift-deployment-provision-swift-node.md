@@ -25,6 +25,7 @@ PageRefresh();
 
 This page describes the procedure to provision scale-out Swift nodes. All type of Swift nodes (object, proxy) will be provisioned similarly. But you cannot provision both the type of the nodes together.
 
+
 * [Prerequisite](#Preq)
 * [Adding physical server for scale-out Swift](#adding-physical-server-for-scale-out-Swift) 
 * [Provision Swift node](#provision-swift-node)
@@ -32,19 +33,15 @@ This page describes the procedure to provision scale-out Swift nodes. All type o
 
 ##Prerequisite {#Preq}
 
-HP Helion OpenStack cloud is successfully deployed and has the following nodes: 
-
-* Seed
-* Undercloud
-* Overcloud 
-* Starter Swift nodes 
+* HP Helion Cloud is deployed
+* Starter swift is functional which by default gets deployed as part of deployment of cloud
 
 Before provisioning swift node(s) ensure that the all nodes are **ACTIVE** and  **Running**.
 You can view the status of the nodes using the following command:
 
 	#nova list
 
-##Adding a physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
+##Adding physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
 
 You must add a server to the cloud inventory so that you can scale-out Swift nodes. 
 
@@ -66,7 +63,7 @@ Perform the following steps to add  a physical server for scale-out Swift:
 
 	**Note**: For HP server you can use iLO to gather the above details.
 
-2. Login to seed 
+2. Login to Seed 
 
 		#ssh root@<Seed IP address> 
 
@@ -84,8 +81,8 @@ Perform the following steps to add  a physical server for scale-out Swift:
 
 	For example, your file should look similar to the following:
 
-		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048   
-		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
+		E8:39:35:2B:FB:3E,Administrator,gone2far,10.1.192.33,12,73728,70
+		E4:11:5B:B7:AD:CE,Administrator,gone2far,10.1.192.34,12,73728,70
 
 5. Login to Undercloud 
 
@@ -95,15 +92,41 @@ Perform the following steps to add  a physical server for scale-out Swift:
 
  		ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
-For example:
+	For example:
 
- -p cpus=18 -p memory&#095;mb=78000 -p local&#095;gb=500 -p cpu&#095;arch=amd64 -i ipmi&#095;address=10.10.10.10 -i ipmi&#095;username=admin -i ipmi&#095;password=password **shanta**
-
+ 		# ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=73728 -p local_gb=70 -p cpu_arch=amd64 -i ipmi_address=10.1.192.33 -i ipmi_username=Administrator -i ipmi_password=gone2far
+		+--------------+-----------------------------------------------------------------------+
+		| Property     | Value                                                                 |
+		+--------------+-----------------------------------------------------------------------+
+		| uuid         | 08623d52-31cc-4d47-bb29-ecf34a59019b                                  |
+		| driver_info  | {u'ipmi_address': u'10.1.192.33', u'ipmi_username': u'Administrator', |
+		|              | u'ipmi_password': u'gone2far'}                                        |
+		| extra        | {}                                                                    |
+		| driver       | pxe_ipmitool                                                          |
+		| chassis_uuid | None                                                                  |
+		| properties   | {u'memory_mb': u'73728', u'cpu_arch': u'amd64', u'local_gb': u'70',   |
+		|              | u'cpus': u'12'}                                                       |
+		+--------------+-----------------------------------------------------------------------+
 7.Create port, enter MAC address and Node ID  using the following ironic command: 
  	
  		 #ironic create-port -a $MAC -n $NODE_ID
+
+	For example:
+		
+		# ironic port-create -a E8:39:35:2B:FB:3E -n 08623d52-31cc-4d47-bb29-ecf34a59019b
+		+-----------+--------------------------------------+
+		| Property  | Value                                |
+		+-----------+--------------------------------------+
+		| node_uuid | 08623d52-31cc-4d47-bb29-ecf34a59019b |
+		| extra     | {}                                   |
+		| uuid      | 1c5c5c54-bb3e-4883-8ebe-ba24e7f3d159 |
+		| address   | e8:39:35:2b:fb:3e                    |
+		+-----------+--------------------------------------+	
+
  
-8.Enter `ironic node-list` to verify the successful registration of a new physical server.
+8.Verify the successful registration of a new physical server
+
+	#ironic node-list
 
 ##Provision Swift node {#provision-swift-node}
 
@@ -112,28 +135,28 @@ For example:
 
 Perform the following steps to provision Swift node:
 
-1. Login to seed VM
+1. Login to seed
 
-		#ssh root@< Seed IP address>
+		#ssh root@<Seed IP address>
 
 2. Copy `ee-config.json` to root home directory
 
 		 #cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4.Edit `overcloud-config.json` file to configure the following values as per your requirement:
+3. Edit `overcloud-config.json` file to configure the following values as per your requirement:
  
  
 	 "so_swift_storage_scale": <number of object servers> , 
 	
 	 "so_swift_proxy_scale": <number of proxy servers> ,
 
-Note: While deploying scale-out proxy node so_swift_storage_scale must be set to 0 and while deploying scale-out object node so_swift_proxy_scale must be set to 0.
+**Note**: While deploying scale-out proxy node "so&#095;swift&#095;storage&#095;scale" must be set to 0 and while deploying scale-out object node "so&#095;swift&#095;proxy&#095;scale" must be set to 0.
  
-5.Enter the following command to source the `overcloud_config.json`  for the new values
+4.Enter the following command to source the `overcloud_config.json`  for the new values
 
 		#source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6.Run the installer script to update the cloud
+5.Run the installer script to update the cloud
 
 		#bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 

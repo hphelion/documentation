@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/ga/services/swift/deployment/add-disk-storage-node/
+permalink: /helion/openstack/ga/services/swift/deployment/add-disk-object-node/
 product: commercial.ga
 
 ---
@@ -28,68 +28,61 @@ Perform the following procedure to add new scale-out storage node.
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed and has the following: 
-
-	* Seed
-	* Undercloud
-	* Overcloud 
-	* Starter Swift nodes (which is functional)
+1. HP Helion OpenStack cloud is successfully deployed 
 2. Scale-out object-ring:1 is deployed
-
 
 ##Deploying new object nodes
 
-Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy new node.
+Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
 
 
 ## Adding node and disks to object-ring:1
 
 Once the Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
 
-1. Use the following command to format disk:
+1. Format a given disk
 
-		#ringos format-disks -n <IP address of Swift node> -d all
+		#ringos format-disks -n <Swift nodes IP address> -d all
 
-Refer [ringos Manual]( /helion/openstack/GA1/services/object/pyringos/) for more details.
+For more details,refer [ringos Manual]( /helion/openstack/GA1/services/object/pyringos/) 
 
 
 2.Add disk to the ring. 
 
-	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Node IP address> -p  <value> -d <value> -w <value> -r <value> -z <value>
+	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Swift nodes IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-**Note:** Use labels and disks obtained in output of step 1. 
 
 In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
 
-	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
+	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
 	Added disk 192.0.2.29:a1410063335 to ring
 
 
 3.Verify the contents of `object-1.builder` file to ensure that new node and disk are added to your existing ring.
 
-	ringos view-ring -f /root/ring-building/object-1.builder
+	#ringos view-ring -f /root/ring-building/object-1.builder
 
 ## Re-balance the ring
 
-1. Rebalance the ring using the following command:
+1. Re-balance the ring
 
-		ringos rebalance-ring -f /root/ring-building/object-1.builder
+		#ringos rebalance-ring -f /root/ring-building/object-1.builder
 
-This will generate a **object-1.ring.gz** file.
+	This will generate a **object-1.ring.gz** file.
 
 2. Verify the content in `object-1.builder` file after rebalancing the ring.
 
-		ringos view-ring -f /root/ring-building/object-1.builder
+		#ringos view-ring -f /root/ring-building/object-1.builder
 
 ##Copying Object-ring:1 to all nodes
 
 1. List all the Swift nodes. 
 
-		ringos list-swift-nodes -t  all
+		#ringos list-swift-nodes -t  all
  
-2. Copy account, container, object-0 , and generated`object-1.ring.gz` files to new nodes. 
+2. Copy account, container, object-0 , and generated `object-1.ring.gz` files to new nodes. 
 
-	ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift node>
+		#ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
 
 
 Press **yes** when asked to authenticate node.  
