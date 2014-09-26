@@ -196,10 +196,9 @@ To deploy HP StoreVirtual, you need to first enroll the baremetal server and the
 
 		ironic node-list
 
-5. SSH to seed as root
+5. Logout from Undercloud to go back to seed
 
-        ssh root@<IP Address>
-
+       
 6. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
  
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
@@ -210,7 +209,10 @@ To deploy HP StoreVirtual, you need to first enroll the baremetal server and the
 
 	**NOTE**: For HP StoreVirtual, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
 
-8. Export the environment variables based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`
+8. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+
+
+		source /root/env_vars
 
 9. Apply the configuration
 
@@ -278,7 +280,7 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
 
 ### Installation<a name="installation"></a>
 
-1. Verify if the CMC installer file (packaged along with the installer) has the executable permission otherwise execute the following command:
+1. Verify if the CMC installer file inside `tripleo` directory (packaged along with the installer) has the executable permission otherwise execute the following command:
 
 		chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
 
@@ -311,7 +313,7 @@ To create a cluster, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page (opens in a new window)</a>
 
-2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed.</br>
+2. In the CMC UI, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed.</br>
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find Systems option (opens in a new window)</a>
 
@@ -400,13 +402,13 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 ## Next Steps<a name="next-steps"></a>
 
-- [Working with HP StoreVirtual](/helion/openstack/ga/undercloud/storage/storevirtual/) **REQUIRED**
+- [Working with HP StoreVirtual](/helion/openstack/ga/undercloud/storage/storevirtual/)-  **REQUIRED**
 
 	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
 	For detailed intructions, see the  document. -->
 
-- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/) **REQUIRED**
+- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  **REQUIRED**
 
 	<!---Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 

@@ -23,16 +23,17 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array (a physical device) integrated with HP Cloud OS to realize block storage within the cloud. 
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array (a physical device) integrated with HP Helion Openstack to realize block storage within the cloud. 
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of Cinder using the OpenStack block storage driver of HP 3PAR StoreServ. The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays. 
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of Cinder using the OpenStack block storage driver of HP 3PAR StoreServ. It supports Fiber Channel (FC) as well as iSCSI protocol. <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 
-Devices can be connected to Cinder using Fiber Channel (FC) or using the iSCSI protocol. The StoreServ driver supports both iSCSI and Fiber Channel (FC) for Storage Area Networking (SAN) connectivity.
+<!---Devices can be connected to Cinder using Fiber Channel (FC) or using the iSCSI protocol.-->The StoreServ driver supports both iSCSI and Fiber Channel (FC) for Storage Area Networking (SAN) connectivity.
 
-The Storage Configuration Manager (SCM) service is used to facilitate configuration and deployment of StoreServ and StoreVirtual arrays.
+Sirius service is used to facilitate configuration and deployment of StoreServ and StoreVirtual arrays.
 
+## Working with HP StoreServ
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) can be managed from either the Horizon dashboard or via a CLI.
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) can be managed from either the Horizon dashboard or using CLI.
 
 ### Using the dashboards
 

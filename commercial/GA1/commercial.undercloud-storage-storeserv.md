@@ -25,15 +25,7 @@ PageRefresh();
 
 # Working with HP 3PAR StoreServ
 
-The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device. <!---the following prerequisites have been fulfilled:-->
-
-1. HP Helion Cloud is deployed.
-
-3. The HP StoreServ device is accessible from the undercloud.
-
-4. The HP StoreServ/3PAR device (running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in the overcloud.
-
-5. Common Provisioning Groups (CPGs) are created for HP StoreServ (also named 3PAR).
+The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device. This page describes the different tasks that you can perform using the StoreServ option.:<!---the following prerequisites have been fulfilled:-->
 
 <!---6. The HP 3PAR REST service is running and HTTPS is enabled.-->
 
@@ -41,19 +33,42 @@ The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3P
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
 
-You can perform the following tasks using the StoreServ option:
+* [Before you begin](#before-you-begin)
 
-* [Registering the 3PAR device](#registering-device)
+* [Register a 3PAR device](#registering-device)
 
-	* [Edit StoreServ](#edit-storeserv)
+	* [Edit a 3PAR StoreServ](#edit-storeserv)
 	
-    * [Unregister a StoreServ](#unregister-storeserv) 
+    * [Unregister a 3PAR StoreServ](#unregister-storeserv) 
     
-	* [Unregister multiple StoreServs](#unregister-multiple-storeservs) 
+	* [Unregister multiple 3PAR StoreServs](#unregister-multiple-storeservs) 
 
-* [Registering the required Common Provisioning Group(CPG)s](#registering-cpg)
+* [Register a Common Provisioning Group(CPG)s](#registering-cpg)
 
-## Registering the 3PAR device ##{#registering-device}
+	* [Edit a CPG](#edit-cpg) 
+	
+	* [Unregister a CPG](#unregister-cpg)
+	
+	* [Unregister multiple CPGs](#unregister-multiple-cpgs)
+	
+	* [View CPG configuration](#view-cpg)
+
+* [Next Steps](#next-steps)
+
+
+# Before you begin {#before-you-begin}
+
+Before you start working with 3PAR StoreServ, ensure that the following prerequisites have been fulfilled:
+
+1. HP Helion Cloud is deployed
+
+3. The HP StoreServ device is accessible from the undercloud
+
+4. The HP StoreServ/3PAR device (running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in the overcloud
+
+5. Common Provisioning Groups (CPGs) are created for HP 3PAR StoreServ
+
+## Register a 3PAR device ##{#registering-device}
 
 You can register a 3PAR device to Sirius by using the Undercloud Horizon Dashboard<!--- or Sirius REST client (Refer to the [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)-->.
 
@@ -65,7 +80,11 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
 3. Select the **StoreServ** option to activate it.<br> The HP StoreServ page is displayed.
 
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-main-page.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP 3PAR StoreServ Main Page (opens in a new window)</a>
+
 4. Click **Register StoreServ** displayed on the top right corner of the page to display the Register 3PAR StoreServ dialog box.
+
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-register-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Register StoreServ Dialog Box (opens in a new window)</a>
 
 5. In the dialog box, do the following:
 
@@ -91,8 +110,9 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
     On successful registration, the 3PAR device is added and is listed as the registered Storeserv.
 
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered StoreServ in the HP StoreServ Main Page (opens in a new window)</a>
 
-### Edit a StoreServ ###{#edit-storeserv}
+### Edit a 3PAR StoreServ {#edit-storeserv}
 
 To edit a StoreServ, do the following:
 
@@ -109,9 +129,9 @@ To edit a StoreServ, do the following:
 6. Click **Done** to save the changes.   
 
 
-### Unregister a StoreServ ###{unregister-storeserv}
+### Unregister a 3PAR StoreServ {#unregister-storeserv}
 
-**Note**: Before you unregister the storeserv, you need to unregister the CPG and remove the backend, etc. Once the 3PAR is unregistered, neither the CPGs nor the volume that are present from the array are accessible.
+**Note**: Before you unregister the storeserv, you need to unregister the CPG and remove the backend, etc. Once the 3PAR is unregistered, neither the CPGs nor the volume that are present are accessible from the array.
 
 
 Use this option to unregister a StoreServ.
@@ -122,12 +142,14 @@ Use this option to unregister a StoreServ.
 
 3. Select the **StoreServ** option to activate it.<br> The HP StoreServ page is displayed.
 
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-unregister-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">UnRegister a StoreServ Option (opens in a new window)</a>
+
 4. Click the **More** drop-down list against the StoreServ that you want to unregister and select **Unregister StoreServ**.<br> A confirmation box is diplayed.
 
 5. Click **Unregister StoreServ** to unregister, or click **Cancel** to cancel the process. 
 
 
-### Unregister multiple StoreServs ###{unregister-multiple-storeserv}
+### Unregister multiple 3PAR StoreServs{#unregister-multiple-storeserv}
 
 Use this option to unregister multiple StoreServs using a single command.
 
@@ -144,9 +166,9 @@ Use this option to unregister multiple StoreServs using a single command.
 5. Click **Unregister StoreServ** to unregister or click **Cancel** to cancel the process. 
 
  
-## Registering HP 3PAR Common Provisioning Groups (CPGs)##{#registering-cpg}
+## Register 3PAR StoreServ Common Provisioning Groups (CPGs){#registering-cpg}
 
-Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR may have many CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
+Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
 
 **Note**: Only registered CPG(s) can be configured as a storage backend for Cinder.
 
@@ -158,27 +180,34 @@ To register the CPGs, do the following:
 
 3. Select the **StoreServ** option to activate it.<br> The HP StoreServ page is displayed with the list of StoreServs.
 
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Register CPG Option (opens in a new window)</a>
+
 4. Click the **More** drop-down list against the StoreServ for which you want to register CPG and select **Register CPG**.<br> The Register CPG page is displayed with a list of CPGs that are present in the selected 3PAR array in the **Available CPG** box and a list of already selected CPGs in the **Selected CPG** box.</br>
 
-**OR**
+	**OR**
 
-   * Click the device name for which you want to register CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.
+	* Click the device name for which you want to register CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.
     
-    * Click **Register CPG**. <br>The Register CPG page is displayed with a list of CPGs that are present in the selected 3PAR array in the **Available CPG** box and a list of already selected CPGs in the **Selected CPG** box.</br> 
+	* Click **Register CPG**. <br>The Register CPG page is displayed with a list of CPGs that are present in the selected 3PAR array in the **Available CPG** box and a list of already selected CPGs in the **Selected CPG** box.</br> 
 
-5.Select the desired CPG(s) from the **Available CPG** box list.
+<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-register-cpgpage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Register CPG Page (opens in a new window)</a>
 
-6.Click &rarr; to move the CPG(s)to the **Selected CPG(s)** box.<br> The CPG is displayed in the **Selected CPG(s)** box.
+5. Select the desired CPG(s) from the **Available CPG** box list.
 
-6.(Optional) Click **Choose All** displayed below the **Available CPG** box to select all the CPGs . 
+6. Click &rarr; to move the CPG(s)to the **Selected CPG(s)** box.<br> The CPG is displayed in the **Selected CPG(s)** box.
 
-7.(Optional) Click **Remove All** displayed below the **Selected CPG** box to move all the CPGs back to the **Available CPG(s)** or select the CPG(s) and click &larr; to move them back.
+7. (Optional) Click **Choose All** displayed below the **Available CPG** box to select all the CPGs . 
 
-8.Click **Register** to register the CPG.
+8. (Optional) Click **Remove All** displayed below the **Selected CPG** box to move all the CPGs back to the **Available CPG(s)** or select the CPG(s) and click &larr; to move them back.
 
-9.To check the status of CPG registration, in the HP StoreServ page, click the device name to display the Common Provisioning Groups page. The selected CPG displays as **registered**.    
+9. Click **Register** to register the CPG.
 
-### Edit CPG ###
+10. To check the status of CPG registration, in the HP StoreServ page, click the device name to display the Common Provisioning Groups page. The selected CPG displays as **registered**.
+ 
+	 <a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered CPG Displays in the Common Provisioning Groups Page (opens in a new window)</a> 
+    
+
+### Edit a CPG {#edit-cpg}
 
 **Note**: You cannot edit a CPG that is in *'Reserved'* state. Ensure that you enter a CPG name that already exists on the 3PAR device when you edit the CPG details.
 
@@ -199,7 +228,7 @@ To edit a CPG, do the following:
 7. Click **Done** to save the changes or click **Cancel** to cancel the process.  
 
 
-### Unregister a CPG ###
+### Unregister a CPG {#unregister-cpg}
 
 **Note**: Before you unregister a CPG, remove the backend associated with this CPG. You need to either detach the volumes from Cinder or migrate to another backend as the volumes from this CPG will no longer be available.
 
@@ -218,7 +247,7 @@ To unregister, do the following:
 6. Click **Unregister CPG** to unregister or click **Cancel** to cancel the process.
 
 
-### Unregister multiple CPGs ###
+### Unregister multiple CPGs {unregister-multiple-cpgs}
 
 Use this option to unregister multiple CPGs using a single command.
 
@@ -236,7 +265,7 @@ Use this option to unregister multiple CPGs using a single command.
 
 5. Click **Unregister CPGs** to unregister or click **Cancel** to cancel the process. 
 
-### View CPG configuration ###
+### View CPG configuration {#view-cpg}
 
 Use this option to view the CPG configuration.
 
@@ -251,6 +280,10 @@ Use this option to view the CPG configuration.
 5. Click the **More** drop-down list against the CPG for which you want to view the configuration.<br> The configuration is displayed in a dialog box.</br>
 
 6. Click **Close** to close and return to the Common Provisioning Groups page. 
+
+##Next Steps {#next-steps}
+
+[Working With StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

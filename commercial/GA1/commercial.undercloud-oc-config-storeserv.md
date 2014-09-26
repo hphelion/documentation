@@ -24,7 +24,7 @@ PageRefresh();
 
 # Working with StoreServ Backends
 
-Once you have registered the StoreServ systems as per your requirements, you can use the Overcloud option in the Undercloud Horizon Dashboard for the following tasks:
+Once you register the StoreServ systems as per your requirements, you can use the Overcloud option in the Undercloud Horizon Dashboard for the following tasks:
 
 * [Add Backend](#add-backend)
 
@@ -38,11 +38,15 @@ Once you have registered the StoreServ systems as per your requirements, you can
 
 ### Add backend<a name="add-backend"></a>
 
-**Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of CPG after allocating may disrupt cloud functionality if the corresponding change is not updated here.
+**Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of CPG after allocating, may disrupt cloud functionality if the corresponding change is not updated here.
 
 1. In the Configure Cloud page, click **StoreServs** Tab to activate it.
 
+	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud StoreServ Option (opens in a new window)</a>
+
 2. Click **Add Backend** displayed at the top to open the StoreServ Volume Backend page.
+
+	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">StoreServ Volume Backend Page (opens in a new window)</a>
 
 3. In the **Volume Backend Name** box, enter the name for the backend.
 
@@ -54,11 +58,18 @@ Once you have registered the StoreServ systems as per your requirements, you can
 
 7. (Optional) Click **Remove All** displayed below the **Selected StoreServ Choices** box or select the CPG(s) and click &larr;to move the CPGs back to **Available StoreServ Choices** box. 
 
-8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page. The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
+8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page. 
+
+	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+
+The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
+
+	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+
 
 ### Expand backend<a name="expand-backend"></a>
 
-Expand backend is allocating new CPGs to an existing backend. You can select the required CPG(s) from the list of registered CPGs and add the same to a backend that has been already configured.
+Expand backend option allocates new CPGs to an existing backend. You can select the required CPG(s) from the list of registered CPGs and add them to a backend that has been already configured.
 
 To expand a backend, do the following:
 
@@ -98,7 +109,7 @@ This option allows you to remove the CPGs from the backend which are allocated t
 
 ###Delete backend<a name="delete-backend"></a>
 
-Before you delete the backend CPG, detach the volume or migrate to a different backend as the backend will no longer be available once it is deleted. 
+Before you delete the backend CPG, detach the volume or migrate to a different backend as the backend you delete will no longer be available. 
 
 Do the following to delete a backend:
 
@@ -110,11 +121,13 @@ Do the following to delete a backend:
 
 
 ### Generate configuration<a name="generate-config"></a>
-You can download the Cinder configuration relevant to HP 3PAR StoreServ for your cloud once you have created the backend.
+You can download the Cinder configuration relevant to HP 3PAR StoreServ for your cloud once you create the backend.
 
 To generate configuration file, do the following:
 
 1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
+
+	<a href="javascript:window.open('/content/documentation/media/storeServ-generate-configuration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
 
 2. Click **Generate Config** displayed at the top of the page to display Download Storeserv Config page.<br> The configuration file downloads automatically. 
 
@@ -139,7 +152,7 @@ To update your overcloud with the changes, do the following:
   
 	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config). Refer to the following example. Ensure the JSON file format is complete.
+4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is complete. A sample of the file is given below:
 
 		},
 		  "3par": {
