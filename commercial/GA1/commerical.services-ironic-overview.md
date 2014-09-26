@@ -22,9 +22,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Ironic Service Overview#
 
-HP Helion OpenStack uses the OpenStack Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.
+HP Helion OpenStack leverages the OpenStack Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.
 
-Ironic is an incubated OpenStack project to provision baremetal (as opposed to virtual) machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allow vendor-specific functionality to be added.
+Ironic is an incubated OpenStack project to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.
 
 ## For more information ##
 

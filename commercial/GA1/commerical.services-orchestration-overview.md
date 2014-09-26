@@ -24,21 +24,21 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Leveraging OpenStack Heat, the HP Helion OpenStack Orchestration service provides a template-based orchestration for describing a cloud application by executing OpenStack API calls to generate running cloud applications.  
+The HP Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.  
 
 ## Working with the Orchestration Service
 
 To [perform tasks using the Orchestration service](#howto), you can use the dashboard, API or CLI.
 
-### Using the dashboards {#UI}
+### Using the dashboards<a name="UI"></a>
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Orchestration service.
 
-###Using the API### {#API}
+###Using the API<a name="API"></a>
  
 You can use a low-level, raw REST API access to the Orchestration service. See the [OpenStack Orchestration API v1 Reference](http://developer.openstack.org/api-ref-orchestration-v1.html).
 
-###Using the CLI### {#cli}
+###Using the CLI<a name="cli"></a>
 
 You can use any of several command-line interface software to access the Orchestration service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/heatclient_commands.html).
 

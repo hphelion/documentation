@@ -23,17 +23,17 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Telemetry and Reporting Service Overview#
 
-Based on OpenStack Ceilometer, the HP Helion OpenStack Telemetry and Reporting service monitors the physical devices in your environment, including physical servers running services and network devices used in the environment (switches, firewalls). 
+The HP Helion OpenStack Telemetry and Reporting service leverages the OpenStack Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls. 
 
-The Telemetry and Reporting service allows you to collect measurements using only one agent throughout your environment, pulling usage data from every component and storing the data in a single place. 
+The Telemetry and Reporting service allows you to collect measurements using only one agent; it collects usage data from every component throughout your environment and stores the data in a single location. 
 
-The Telemetry and Reporting service contains three type of meters:
+The Telemetry and Reporting service contains three type of monitors:
 
 - **Cumulative** -- A cumulative meter measures date over time (for example, instance hours).
 - **Gauge** -- A gauge measures discrete items.(for example, floating IPs or image uploads) and fluctuating values (such as disk input or output).
 - **Delta** -- A delta measures change over time, for example, monitoring bandwidth.
 
-Each meter is collected from one or more *samples*, which are gathered from the messaging queue or polled by agents. Samples are represented by counter objects. Each counter has the following fields:
+Each meter is populated from one or more *samples*, which are gathered from the messaging queue or polled by agents. Samples are represented by counter objects. Each counter has the following fields:
 
 - the name of the meter
 - the type of meter (cumulative, gauge, or delta)
@@ -53,11 +53,11 @@ To [perform tasks using the Telemetry and Reporting service](#howto), you can us
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Telemetry and Reporting service.
 
-### Using the API ### {#API}
+### Using the API<a name="API"></a>
  
 You can use a low-level, raw REST API access to HP Telemetry and Reporting. See the [OpenStack Telemetry API v2.0 Reference](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
-###Using the CLI### {#cli}
+###Using the CLI<a name="cli"></a>
 
 You can use any of several command-line interface software to access HP Telemetry and Reporting. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html).
 
@@ -65,7 +65,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 <!---
 
-## How To's with the HP Helion Telemetry and Reporting Service ## {#howto}
+## How To's with the HP Helion Telemetry and Reporting Service<a name="howto"></a>
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
@@ -77,7 +77,6 @@ The Telemetry and Reporting service collects metrics across multiple projects in
 - **Recording metering events** -- Record a metering event.
 - **Viewing a list of meters** -- Display a list of available meters based on the types of measurements.
 - **Clearing expired metering data** -- Remove expired metering data using the CLI.
-
 
 ### Working with resource data ###
 
