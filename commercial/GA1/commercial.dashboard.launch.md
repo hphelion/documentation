@@ -23,17 +23,17 @@ PageRefresh();
 
 # Logging into the HP Helion OpenStack&reg; Dashboards
 
-1. Ask the cloud operator for the host name or public IP address from which you can access the dashboard, and for your user name and password.
+1. Ask the cloud operator for the host name or public IP address where the dashboard is located, your user name, and your password.
 
-2. Open a web browser that has JavaScript and cookies enabled.
+2. Open a web browser that has both JavaScript and cookies enabled.
 
 3. In the address bar, enter the host name or IP address for the dashboard.
 
-	**Note:** If a certificate warning appears when you try to access the URL for the first time, a self-signed certificate is in use, which is not considered trustworthy by default. Verify the certificate or add an exception in the browser to bypass the warning.
+	**Note:** If a certificate warning appears when you try to access the URL for the first time, a self-signed certificate is in use. These certificates are not considered trustworthy by default. Verify the certificate or add an exception in the browser to bypass the warning.
 
-4. On the Log In page, enter your user name and password, and click **Sign In**.
+4. On the **Log In** page, enter your user name and password and then click **Sign In**.
 
-5. If you are a non-admin user, select a project from the list at the top of the screen.
+5. If you are a non-admin user, you will only be able to select a project from the list at the top of the screen.
 
 <img src="media/HorizonProjectMenu.png" alt="" />
 

@@ -100,9 +100,9 @@ To  perform this operation, it is necessary to enable SSH from Undercloud to Ove
 
 		# scp ~/.ssh/id_rsa heat-admin@<Undercloud IP>:/home/heat-admin
 
-2. Login to Overcloud controller
+2. Login to Undercloud
 
-		#ssh heat-admin@<Overcloud IP>
+		#ssh heat-admin@<Undercloud IP>
 		#sudo -i
 		#mv ~heat-admin/id_rsa ~/.ssh/ 
 

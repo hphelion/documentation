@@ -25,7 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Leveraging OpenStack Neutron, HP Helion OpenStack Networking is a virtual networking service that provides network connectivity and addressing for HP Compute devices.
+HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack Neutron service to provide network connectivity and addressing for HP Compute devices.
 
 The Networking service also provides an API to configure and manage a variety of network services.
 
@@ -39,15 +39,15 @@ You can also use the Networking service to [identify the actual IP address of a 
 
 To [perform tasks using the Networking service](#howto), you can use the dashboard, API or CLI.
 
-### Using the dashboards {#UI}
+### Using the dashboards<a name="UI"></a>
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Networking service.
 
-###Using the API to access Compute### {#API}
+###Using the API<a name="API"></a>
  
 You can use a low-level, raw REST API access to Networking. See the [OpenStack Compute API v2.0 Reference](http://developer.openstack.org/api-ref-networking-v2.html).
 
-###Using the CLI### {#cli}
+###Using the CLI<a name="cli"></a>
 
 You can use any of several command-line interface software to access Networking. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html).
 

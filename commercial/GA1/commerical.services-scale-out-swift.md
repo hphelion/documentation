@@ -49,6 +49,8 @@ The following diagram depicts the HP Helion OpenStack&reg; scale-out architectur
 
 For Swift scale-out refer the following sections:
 
+**IMPORTANT:** Please read through the [Pyringos Manual]( /helion/openstack/GA1/services/object/pyringos/) before starting the deployment of Swift-scale out.
+
 * [Deploy Scale-out Swift]( /helion/openstack/ga/services/swift/deployment-scale-out)
 * [Expand Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)

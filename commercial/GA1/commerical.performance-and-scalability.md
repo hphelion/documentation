@@ -34,9 +34,7 @@ The performance, scalability, and reliability of HP Helion OpenStack is tested u
 
 
 ##Resource requirements
-The following resources are required to perform the test:
-
-<do we need to mention the resources??>
+The following resources are required to perform the test: <!-- do we need to mention the resources?? -->
 
 ##Maximum supported configuration values for HP Helion OpenStack
 
@@ -146,8 +144,7 @@ The following table list the maximum supported configuration value for HP Helion
  
 The performance, scalability, and reliability of HP Helion OpenStack is tested using the following KVM environment:
 
-
-<**Please provide the details**>
+<!-- **Please provide the details** -->
 
 
 ##Resource requirements

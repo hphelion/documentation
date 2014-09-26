@@ -44,6 +44,9 @@ The StoreVirtual option allows you to configure HP StoreVirtual as storage.This 
 * [Next Steps](#next-steps)
 
 
+<!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
+
+
 ## Before you begin {#before-you-begin}
 
 Before you start working with StoreVirtual, ensure that the following prerequisites have been fulfilled:
@@ -56,7 +59,7 @@ Before you start working with StoreVirtual, ensure that the following prerequisi
 
 
 ## Register a cluster{#register-cluster}
-
+	
 You can register a cluster using the Undercloud Horizon Dashboard.When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
 
 <!---You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)).-->
@@ -97,6 +100,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered Cluster Displays in the HP StoreVirtual Page (opens in a new window)</a>
 
+
 ## Edit a cluster {#edit-cluster}
 
 **Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done <!--through the CMC or the CLIQ -->for the selected cluster. After editing the details, the backend data should also be updated so that cinder configuration file has the updated cluster information.
@@ -119,6 +123,7 @@ To edit a cluster, do the following:
 
 
 ## Unregister a cluster {#unregister-cluster}
+
 
 **Note**: Before you unregister the cluster, remove the backend associated with it. Detach or migrate the volumes, as appropriate, as the volumes from this cluster backend will no longer be available.
 
@@ -159,9 +164,9 @@ Use this option to unregister multiple clusters using a single command.
  
 ## View configuration{#view-configuration}
 
-Use this option to view the cluster configuration as it displays in the cinder.config file.
+Use this option to view the cluster configuration as it displays in the *cinder.config* file.
 
-Log into the Undercloud Horizon Dashboard.
+1. Log into the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
