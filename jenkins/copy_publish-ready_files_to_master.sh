@@ -21,7 +21,7 @@ fi
 
  
 
-git branch --set-upstream documentation origin/${BRANCH}
+git branch --set-upstream ${BRANCH} origin/${BRANCH}
 git branch --set-upstream master origin/master
  
 git checkout -f master
