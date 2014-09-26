@@ -33,6 +33,14 @@ git pull origin
 #Search to ensure that every md file contains one of the comments strings above. 
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
 MDFILES_NOT_DESIGNATED=`egrep -rL "\-\-PUBLISH|\-\-UNDER REVISION" *.md` 
+
+car s=" "
+var MDFILES_NOT_DESIGNATED=""
+for i in `find . -name "*.md" `
+do 
+MDFILES_TO_PUBLISH=$X$s`egrep -L "\-\-PUBLISH|\-\-UNDER REVISION" *.md`; 
+ 
+done
  
 if [ "$MDFILES_NOT_DESIGNATED" != "" ]
 then
@@ -49,7 +57,17 @@ fi
 
 #Search for and record the names of all the files that contain the comment: <!—PUBLISH-->
 
-MDFILES_TO_PUBLISH=`for i in `find . -name "*.md" ` ; do egrep -l "\-\-PUBLISH" $i; done` 
+ 
+
+var s=" "
+var MDFILES_TO_PUBLISH=""
+for i in `find . -name "*.md" `
+do 
+MDFILES_TO_PUBLISH=$X$s`egrep -l "\-\-PUBLISH" $i`; 
+ 
+done
+
+ 
 NON_MDFILES_TO_PUBLISH=`find . -type f -not -path "*.git*" -not -name "*.md"`
 
  
