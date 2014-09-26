@@ -32,19 +32,12 @@ Before you begin the installation process, take a few minutes to read this page 
 
 ## Hardware configuration<a name="hardware"></a>
 
-To install a HP Helion OpenStack baremetal multi-node configuration, you must have the following hardware configuration.
+To install a HP Helion OpenStack baremetal, you must have the following hardware configuration.
 
-* At least 9 and up to 100 baremetal systems with the following configuration:
+See also Support Matrix
 
-    * A minimum of 32 GB of physical memory
-    * A minimum of 2 TB of disk space
-    * A minimum of 1 x 10 GB NIC with PXE support
-
-      * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
-
-    * Capable of hosting VMs
-    * The boot order configured with Network/PXE boot as the first option
-    * The BIOS configured: 
+	* The boot order configured with Network/PXE boot as the first option
+	* The BIOS configured: 
      
       * To the correct date and time
       * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
@@ -52,16 +45,12 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
     * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
 
-* An installer system to run the baremetal install and host the seed VM with the following configuration:
+* A seed cloud host to run the baremetal install and host the seed VM with the following configuration:
 
-    * A minimum of 16 GB of physical memory
-    * A minimum of 100 GB of disk space
-    * Virtualization enabled 
-    * Ubuntu 14.04 installed
-
+See Support Matrix
     
 * **Important** 
-    * **Installer system** &mdash; The installer system (also called seed VM) might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+    * **Seed Cloud Host** &mdash; The installer system (also called seed VM) might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
     
     * **Installer package** &mdash; The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
 
@@ -69,7 +58,7 @@ To install a HP Helion OpenStack baremetal multi-node configuration, you must ha
 
 ## Required tasks<a name="required"></a>
 
-On the installer system, ensure the following required tasks are completed before you begin the installation.
+Make sure the following required tasks are completed before you begin the installation.
 
 - [Preparing your network](#network_prepare)
 - [Obtain a public key](#pub-key)
@@ -85,7 +74,7 @@ The network is not installed or managed by the cloud. You must install and manag
 
 #### Preparing all networks<a name="network"></a>
 
-To ensure a successful installation, you must satisfy these network configuration requirements:
+To ensure a s	uccessful installation, you must satisfy these network configuration requirements:
 
 * The seed VM, the baremetal systems and the IPMI controller for all systems must be on the same network
 

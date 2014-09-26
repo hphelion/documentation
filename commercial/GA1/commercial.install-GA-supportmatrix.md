@@ -287,24 +287,24 @@ Additional requirements are as follows:
 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Seed cloud (VM) </td>
+<td rowspan="4"> Seed cloud host </td>
 <td>Disk </td>
 <td> 100 GB - There are additional disk space requirements on the host to store the downloaded images (including the seed). See the product image download details.</td>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>16 GB - Memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host. </td>
+<td>16 GB</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
-<td> 2 NICs</td>
+<td> 1 x 10 GB NIC</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
-<td> 4 CPU cores - They should be dedicated to this VM and not shared with other virtual machines on the same KVM host.</td>
+<td> 4 CPU cores</td>
 
 </tr>
 
@@ -335,7 +335,8 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud controller </td>
 <td>Disk </td>
-<td> 2 TB </td>
+<td> 500GB - 2TB
+ </td>
 
 
 
@@ -362,7 +363,7 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Compute server </td>
 <td>Disk </td>
-<td> 2 TB</td>
+<td> 500GB - 2TB</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -386,7 +387,8 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Swift server </td>
 <td>Disk </td>
-<td> 2 TB</td>
+<td> 500GB - 2TB
+</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -493,7 +495,7 @@ The following table shows the minimum recommendations for hardware by node type.
 <td> </td>
 </tr>
 </table>
--->
+
 
 ## Usable Capacity<a name="usable_capacity"></a>
 
@@ -532,7 +534,7 @@ or
 <p>Note: These are the maximum figures assuming the storage is used exclusively for that type of object.</p>  </td>
 </tr>			
 </table>
-
+-->
 <!--
 ## Storage Requirements
 
@@ -583,13 +585,12 @@ This table provides an overview of the physical network configuration requiremen
 
 - Physical network ports on each server
   - One IPMI port
-  - One physical ethernet port (for example, eth0) or two physical ethernet ports in a bond (for example, bond0) for the hypervisor/OS
+  - One physical ethernet port (for example, eth0) for the hypervisor/OS
 
 - Network fabric
-  - Two physical links, one for IPMI and one for the hypervisor/OS
-  - Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
-
-- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
+	- Two physical links, one for IPMI and one for the hypervisor/OS
+	- Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
+	- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
 
 For detailed information, see the [Preparing the network](/helion/openstack/ga/install/prereqs/#network) section of the *Prerequisites*.
 
@@ -618,7 +619,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <li>Used to PXE boot overcloud servers</li>
 </ul> </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -626,7 +627,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td> Overcloud management </td>
 <td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -634,7 +635,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td> SDN </td>
 <td> Network between workload VMs, e.g. carries VxLAN traffic </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -642,7 +643,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td> Storage </td>
 <td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -651,16 +652,16 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td><ul><li> Connected to internet or intranet</li>
 <li>Provides floating IPs</li></ul> </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> External-API </td>
-<td> <ul><li>Connected to internet or intranet</li>
-<li>Provides access to overcloud API endpoints</li></ul> </td>
-<td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> Service </td>
+<td> <ul><li></li>
+<li></li></ul> </td>
+<td></td>
+<td></td>
 
 </tr>
 
@@ -674,29 +675,13 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 
 </table>
 
-## Software Requirements<a name="software-requirements"></a>
+## Software Requirements <a name="software-requirements"></a>
+
+Software requirements for the seed cloud host:
 
 Ubuntu 14.04 with the following package versions.
 
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: lightgrey; color: black;">
-<th>Package</th><th>Version#</th>
-
-<tr style="background-color: white; color: black;">
-<td>qemu-common</td><td>1.0+noroms-0ubuntu14.13</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>qemu-kvm</td><td>1.0+noroms-0ubuntu14.13</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>emu-utils</td><td>1.0+noroms-0ubuntu14.13</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>virsh</td><td>0.9.8</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>virt-install</td> <td>0.600.1</td></tr></table>
+There are no software requirements for the undercloud and overcloud controllers.
 
 ## Next Steps<a name="next"></a>
 
