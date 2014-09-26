@@ -33,18 +33,20 @@ git pull origin
 #Search to ensure that every md file contains one of the comments strings above. 
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
 
-
+echo 0
 s=" "
 MDFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.md" `
 do 
 
-MDFILES_NOT_DESIGNATED=$X$s`grep -vL "\-\-PUBLISH|\-\-UNDER REVISION" $i`; 
-
-echo "$MDFILES_NOT_DESIGNATED"
+	if [[ -n $(grep -vL "\-\-PUBLISH|\-\-UNDER REVISION" $i) ]]; 
+	then
+	echo grep -vL "\-\-PUBLISH|\-\-UNDER REVISION" $i
+	fi
+ 
  
 done
- 
+ echo 1
 if [ "$MDFILES_NOT_DESIGNATED" != "" ]
 then
 echo "==========================================================================="
@@ -61,7 +63,7 @@ fi
 #Search for and record the names of all the files that contain the comment: <!—PUBLISH-->
 
  
-
+echo 2
 s=" "
 MDFILES_TO_PUBLISH=""
 for i in `find . -name "*.md" `
@@ -77,7 +79,7 @@ NON_MDFILES_TO_PUBLISH=`find . -type f -not -path "*.git*" -not -name "*.md"`
 ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}
 
  
-
+echo 3
 #Checkout the master branch
 git checkout master
 
