@@ -42,7 +42,7 @@ echo " "
 echo "$MDFILES_NOT_DESIGNATED"
 echo " "
 echo "Add or correct the comment in these files and run this script again."
-git checkout master
+#git checkout master
 	exit 1
 fi
 
