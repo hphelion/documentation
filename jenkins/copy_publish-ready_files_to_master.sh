@@ -68,7 +68,7 @@ s=" "
 MDFILES_TO_PUBLISH=""
 for i in `find . -name "*.md" `
 do 
-MDFILES_TO_PUBLISH=MDFILES_TO_PUBLISH$s`egrep -l "\-\-PUBLISH" $i`; 
+MDFILES_TO_PUBLISH=$MDFILES_TO_PUBLISH$s`egrep -l "\-\-PUBLISH" $i`; 
  
 done
 
