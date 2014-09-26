@@ -23,7 +23,7 @@ PageRefresh();
 
 #Provision Swift Node(s) 
 
-This page describes the procedure to provision the Swift nodes. All type of Swift nodes will be provisioned similarly. But you cannot provision both of the nodes together.
+This page describes the procedure to provision scale-out Swift nodes. All type of Swift nodes (object, proxy) will be provisioned similarly. But you cannot provision both the type of the nodes together.
 
 * [Prerequisite](#Preq)
 * [Adding physical server for scale-out Swift](#adding-physical-server-for-scale-out-Swift) 
@@ -32,24 +32,23 @@ This page describes the procedure to provision the Swift nodes. All type of Swif
 
 ##Prerequisite {#Preq}
 
-HP Helion OpenStack cloud is successfully deployed and has the following: 
+HP Helion OpenStack cloud is successfully deployed and has the following nodes: 
 
 * Seed
 * Undercloud
 * Overcloud 
-* Two Swift nodes 
+* Starter Swift nodes 
 
 Before provisioning swift node(s) ensure that the all nodes are **ACTIVE** and  **Running**.
-
 You can view the status of the nodes using the following command:
 
-	nova list
+	#nova list
 
-##Adding physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
+##Adding a physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
 
-You must add server to the cloud inventory so that you can scale-out Swift nodes. 
+You must add a server to the cloud inventory so that you can scale-out Swift nodes. 
 
-Perform the following steps to add physical server for scale-out Swift:
+Perform the following steps to add  a physical server for scale-out Swift:
 
 1. Get the server details:
 
@@ -65,13 +64,11 @@ Perform the following steps to add physical server for scale-out Swift:
 	
 	f. MAC address
 
-	**Note**: For HP server, use iLO to gather the above details.
+	**Note**: For HP server you can use iLO to gather the above details.
 
 2. Login to seed 
 
-		ssh root@<IP addredd of Seed> 
-
-	**Note**: It might take a few moments for the seed to become reachable. 
+		#ssh root@<Seed IP address> 
 
 3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
 
@@ -92,7 +89,7 @@ Perform the following steps to add physical server for scale-out Swift:
 
 5. Login to Undercloud 
 
-		ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin@<Undercloud IP address> 
 
 6. Add server details to ironic database using the following ironic command:
 
@@ -100,87 +97,45 @@ Perform the following steps to add physical server for scale-out Swift:
 
 For example:
 
- -p cpus=18 -p memory&#095;mb=78000 -p local&#095;gb=500 -p cpu&#095;arch=amd64 -i ipmi&#095;address=10.10.10.10 -i ipmi&#095;username=admin -i ipmi&#095;password=password
+ -p cpus=18 -p memory&#095;mb=78000 -p local&#095;gb=500 -p cpu&#095;arch=amd64 -i ipmi&#095;address=10.10.10.10 -i ipmi&#095;username=admin -i ipmi&#095;password=password **shanta**
 
 7.Create port, enter MAC address and Node ID  using the following ironic command: 
  	
- 		 ironic create-port -a $MAC -n $NODE_ID
+ 		 #ironic create-port -a $MAC -n $NODE_ID
  
 8.Enter `ironic node-list` to verify the successful registration of a new physical server.
 
 ##Provision Swift node {#provision-swift-node}
 
-**Caution**: Do not provision proxy or scale-out object nodes together. The requirements are different for proxy nodes and scale-out object node. It is recommended to use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
-
-For example: If you have 3 SL4540 and 2 SL230 servers and you want to configure scale-out object nodes and proxy nodes together. Assuming that you have added all the five servers in the inventory in the beginning and you have specified so&#095;swift_storage&#095;scale as 2 and so&#095;swift&#095;proxy&#095;scale  as 1. Now, run the update cloud script to provision node. Three (2+1) nodes are provisioned. But it is not guaranteed whether the proxy servers are deployed on SL230 and object storage nodes are deployed on SL 4540.  To avoid this confusion it is recommended to provision proxy and scale-out object one at a time.
-
-For example:
-<img src ="media/swift_deployment-provison-both-nodes.png/">
-
-
-**Recommendation**:
-
-It is recommended to add server proxy and scale-out object to inventory. 
-
-ii. Provision node using update cloud
+**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object node. It is recommended to use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
 
 
 Perform the following steps to provision Swift node:
 
 1. Login to seed VM
 
-		ssh root@<IP address>
+		#ssh root@< Seed IP address>
 
-2. Copy `/root/tripleo/tripleo-incubator/scripts/ee-config.json` to `/root/overcloud-config.json`
+2. Copy `ee-config.json` to root home directory
 
-		 cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+		 #cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-3.Enter `cat /root/overcloud-config.json` to view the content in the `overcloud-config.json` file.
-
-The Overcloud configuration file will be displayed as the sample below:
-
-		{
-		
-		 "cloud_type": "KVM",
-		
-		 "compute_scale": 1,
-		
-		 "vsa_scale": 0,
-		
-		 "vsa_ao_scale": 0,
-		
-		 "so_swift_storage_scale": 0,
-		
-		 "so_swift_proxy_scale": 0,
-		
-		 "bridge_interface": "eth0",
-		
-		 "ntp": {
-		
-		 "overcloud_server": "",
-		
-		 "undercloud_server": ""
-		
-		 }
-		
-		}
-
-
-4.vi `overcloud-config.json` to configure the following values as per your requirement:
+4.Edit `overcloud-config.json` file to configure the following values as per your requirement:
  
  
-	* so&#095;swift_storage&#095;scale
+	 "so_swift_storage_scale": <number of object servers> , 
+	
+	 "so_swift_proxy_scale": <number of proxy servers> ,
 
- 	* so&#095;swift&#095;proxy&#095;scale
-
+Note: While deploying scale-out proxy node so_swift_storage_scale must be set to 0 and while deploying scale-out object node so_swift_proxy_scale must be set to 0.
  
 5.Enter the following command to source the `overcloud_config.json`  for the new values
 
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+		#source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
 6.Run the installer script to update the cloud
 
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+		#bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
 	The cloud updates with the new nodes on successful operation
 
@@ -190,21 +145,13 @@ Ensure the deployment of Swift node using the following commands:
 
 1. Login to underloud
 
-		ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin@<Undercloud IP address> 
 
 2. List the available Swift nodes
 
-		nova list
+		#nova list
 
 It displays available Swift nodes including the newly added node.
-
-##Architecture of Swift proxy node
-
-The following diagram depicts the deployment architecture of Swift node proxy after provisioning.
-
-<a href="javascript:window.open('/content/documentation/media/sswift_proxy-node-provisioning.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift proxy node after provisioning (opens in a new window)</a>
-
-
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

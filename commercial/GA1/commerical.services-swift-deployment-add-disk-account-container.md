@@ -23,25 +23,19 @@ PageRefresh();
 
 #Add Disk to Account and Container Ring
 
-It is recommended to use proxy node to store account, container, and object-ring-0 objects based on scale-out architecture. When new disks are added to proxy node you can choose this disk to expand storage capacity of account and container ring. We also recommend to use same sets of account and container instead of separate disks for account and container.
+It is recommended to use proxy node to store account, container objects based on scale-out architecture. When new disks are added to proxy node you can choose this disk to expand storage capacity of account and container ring. We also recommend to use same sets of disks for account and container.
 
-The following procedure explains the expansion of capacity of account and container. 
 
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed and has the following: 
-
-	* Seed
-	* Undercloud
-	* Overcloud 
-	* Two Swift nodes (which is functional)
+1. HP Helion OpenStack cloud is successfully deployed 
 2. Scale-out object-ring:1 is deployed
 3. Scale out proxy node is deployed
 
 **IMPORTANT**:  
  
-*  Stored the generated rings at multiple location. These rings should be consistent all across nodes.
+* All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes. 
 
 * Take a backup of rings before any operation.
 
@@ -53,24 +47,19 @@ Perform the following steps to add Swift disk to a ring:
 
 1. Login to Undercloud 
 
-		ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin<Undercloud IP address> 
 		#sudo -i
 
 2. Change the directory to ring builder
 
 		#cd /root/ring-building
 
-3. List the file in the directory
-
-		ls
-
-	Identify `account.builder` and `container.builder` files in the ring builder directory.
 
 4. List the scale-out proxy node
 
 		ringos list-swift-nodes -t proxy
 
-5. List the disk on the proxy node
+5. List the disks on the proxy node
 
 		ringos list-disks -n <Node IP> -u heat-admin
 
@@ -78,11 +67,8 @@ Perform the following steps to add Swift disk to a ring:
 
 		ringos format-disks -n <Node IP> -u heat-admin -d <disk>
 
-	**Note**: You can format all the disk with a single command (--all).
+	**Note**: You can format all the disks with a single command (--all).
 
-7. List all the Swift nodes. Ensure to capture the list of the nodes.
-
-		ringos list-swift-nodes -t all
 
 8. Add formatted disk to account and container ring
 
@@ -95,12 +81,18 @@ Perform the following steps to add Swift disk to a ring:
                 
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
 
+3.List the file in the ring building directory. Identify `account.builder` and `container.builder`.
 
+	
 9.Re-balance both account and container ring
 
 		ringos rebalance-ring -f /root/ring-building/account.builder
 		
 		ringos rebalance-ring -f /root/ring-building/container.builder	
+
+7. List all the Swift nodes. 
+
+		ringos list-swift-nodes -t all
 
 10.Copy `account.ring.gz` file to all the nodes
 

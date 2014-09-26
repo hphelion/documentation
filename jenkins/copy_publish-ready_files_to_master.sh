@@ -68,7 +68,7 @@ s=" "
 MDFILES_TO_PUBLISH=""
 for i in `find . -name "*.md" `
 do 
-MDFILES_TO_PUBLISH=$X$s`egrep -l "\-\-PUBLISH" $i`; 
+MDFILES_TO_PUBLISH=$MDFILES_TO_PUBLISH$s`egrep -l "\-\-PUBLISH" $i`; 
  
 done
 
@@ -80,6 +80,7 @@ ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}
 
  
 echo 3
+echo "$ALL_FILES"
 #Checkout the master branch
 git checkout master
 
@@ -92,8 +93,7 @@ do
 	then
 echo "merging $i"
 git checkout origin/${BRANCH} -- $i
-else
-echo "skipping $i, no change found"
+
 fi
 done
 
@@ -102,7 +102,7 @@ done
 git add .
 
 #Commit the files.
-git commit -m "Merging <!--PUBLISH--> files from $BRANCH to master" .
+git commit -m "Merging <!--PUBLISHED--> files from $BRANCH to master" .
 
 git push
 

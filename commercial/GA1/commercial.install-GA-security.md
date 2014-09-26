@@ -34,7 +34,9 @@ In the diagram above, the customer’s devices that perform routing are depicted
 
 ## Securing the Perimeter<a name="perimeter"></a>
 
-To protect against external attack on Helion services, your firewall should be configured with a rule to block any request originating from outside the network attempting to reach the Seed, the Undercloud Controller, the Swift Object nodes, and any 3PAR StoreServ or StoreVirtual VSA appliances dedicated to the Helion installation, as indicated in this table:
+The perimeter is indicated by the *customer firewall* icon in the previous diagram.
+
+To protect against external attack on Helion services, your firewall should be configured with a rule to block any request originating from outside the network attempting to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the Helion installation, as indicated in this table:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -43,13 +45,11 @@ To protect against external attack on Helion services, your firewall should be c
 <tr>
 <td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>80, 443</td>
 </tr>
-<tr>
-<td>Access to user applications running as Nova VMs</td><td>External network</td><td>Compute Nodes</td><td>Only ports required by your enterprise applications</td>
-</tr>
 <td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
 </tr>
 </table>
 
+You need to allow traffic to flow to and from the External network (indicated in green in the previous diagram) from outside the cloud, as needed by the applications running in your Virtual Machines.  
 
 ## Securing the Swift back-end network connections<a name="back-end"></a>
 
