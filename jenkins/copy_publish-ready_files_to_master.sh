@@ -49,13 +49,13 @@ fi
 
 #Search for and record the names of all the files that contain the comment: <!—PUBLISH-->
 
-MDFILES_TO_PUBLISH=`egrep -rl "\-\-PUBLISH" *.md` 
+MDFILES_TO_PUBLISH=`for i in `find . -name "*.md" ` ; do egrep -l "\-\-PUBLISH" $i; done` 
 NON_MDFILES_TO_PUBLISH=`find . -type f -not -path "*.git*" -not -name "*.md"`
 
  
 ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}
 
-echo $ALL_FILES
+ 
 
 #Checkout the master branch
 git checkout master
