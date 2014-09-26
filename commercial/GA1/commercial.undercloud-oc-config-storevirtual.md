@@ -138,14 +138,14 @@ To generate a configuration file, do the following:
 
 3. (Optional) Click **Download StoreVirtual Config** link to download the file if the file does not automatically download .<br> A dialog box is displayed.</br>
 
-4. Click **OK** to download and save the file.<br>Once you download the configuration file, you can proceed to update the overcloud configuration.
+4. Click **OK** to download and save the file.<br>Once you download the configuration file, you can proceed to update the Overcloud configuration.
 
 
 ### Update Overcloud<a name="update-overcloud"></a>
 
-To update your overcloud with the changes, do the following:
+To update your Overcloud with the changes, do the following:
 
-1. SSH to the seed server as root.
+1. SSH to the Seed server as root.
 
 		ssh root@ <IP address> 
 
@@ -153,7 +153,7 @@ To update your overcloud with the changes, do the following:
 
 		ls
 		
-2. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+2. Copy the Overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
 	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
@@ -193,7 +193,7 @@ To update your overcloud with the changes, do the following:
 
         source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6. Launch install script to update the overcloud.
+6. Launch install script to update the Overcloud.
 
 	    bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 

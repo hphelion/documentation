@@ -21,19 +21,14 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# Replica Status - Swift
+# Replication Status using Icinga
 
-Icinga service, which runs in the Undercloud, helps cloud admin to monitor the duplicated status of the Swift storage node (s)
+Using the "icinga" service running in the undercloud the cloud admin can monitor the replication status of Swift. 
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed and has the following: 
-
-	* Seed
-	* Undercloud
-	* Overcloud 
-	* Two Swift nodes 
-2. Swift Storage node(s) are active and running
+1. HP Helion OpenStack cloud is successfully deployed
+2. Swift node(s) are active and running
 3. Icinga service is active and running in the Undercloud
 
 
@@ -43,10 +38,10 @@ You can monitor the time of the completed scan by a replicator. Following are th
 
 * OK
 * WARNING
-* CRITICAL
+* FAIL
 * UNKNOWN
 
-Perform the following steps to monitor the replication of Swift status:
+Perform the following steps to monitor the replication status:
 
 1. In the Undercloud, login to Icinga Dashboard <http://<**Undercloud_IP**>/icinga/>. The default login credentials are as follows:
 	* Username- icingaadmin
@@ -57,11 +52,9 @@ Perform the following steps to monitor the replication of Swift status:
 
 <img src ="media/icinga_host-details.png/">
 
-3.In the Host column, click the icon icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
+3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
 <img src ="media/swift_icinga_view-details.png"/>
-
-**Note**: To reconfirm the Swift storage node see [Reconfirm storage swift node](#storage-swift)
 
 
 The page navigates to Service Status Details For Host <Swift node IP>. 
@@ -69,36 +62,6 @@ The page navigates to Service Status Details For Host <Swift node IP>.
 <img src ="media/swift_icinga-replication-status.png"/>
 
 Now, you can view the replication status of the selected Swift node.
-
-**Note** 
-If the status changes from OK to any other status then you must verify the following services:
-
-* swift-account-replicator
-* swift-container-replicator
-* swift-object-replicator services on the Swift storage nodes **<where do we verify this services>**
-
-	After verification and restart the services as desired.
-
-4.(Optional)Click the name of the service listed in the table. The page navigated to Service State Information. It provides the detailed information of the service.
-
-
-##Reconfirm storage swift node {#storage-swift}
-
-You can also reconfirm the Swift storage IP:
-
-a. ssh to the undercloud 
-    
-		ssh heat-admin<Undercloud IP address> 
-
-b. Source stack RC using the following command:
-
-     # Source stackrc 
-
-c. Use the following command to list the available Swift nodes
-    
-     ringos  list-swift-nodes
-
-A list of swift nodes will be displayed.
 
 
 

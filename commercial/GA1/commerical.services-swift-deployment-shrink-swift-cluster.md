@@ -22,8 +22,7 @@ PageRefresh();
 
 #Shrink Swift Cluster
 
-HP Helion OpenStack allows you to remove swift cluster in any of the followings ways:
-
+HP Helion OpenStack&reg; allows you to remove Swift cluster in any of the followings ways:
 
 * [Remove an existing Disk from Object Nodes]( /helion/openstack/ga/services/swift/deployment/remove-existing-disk/)
 * [Remove Proxy Node]( )

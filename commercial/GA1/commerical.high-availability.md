@@ -20,11 +20,11 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
 
-# HP Helion OpenStack&#174; High Availability (HA)
+# HP Helion OpenStack&#174; High Availability(HA)
 
 This page covers the following topics:
 
-*  [High Availability( HA) Concepts Overview](#concepts-overview) 
+*  [High Availability( HA) concepts Overview](#concepts-overview) 
 *  [High Availability in HP Helion OpenStack](#ha-helion)
 *  [High Availability of Overcloud Controllers](#ha-overcloud)
 * [API Request Message Flow](#api-msg-flow)
@@ -48,7 +48,7 @@ This page covers the following topics:
 * [Networking](#networking)
 * [Highly Available Cloud Applications and Workloads](#ha-workloads)
 
-##High Availability Concepts overview<a name="concept-overview"></a>
+##High Availability concepts overview<a name="concept-overview"></a>
 
 Cloud Administrators of Highly Available Cloud Services ensure that resources are always available on request to enable uninterrupted operations. The projects are able to provision and manage the Compute, Storage, Network infrastructure resources i.e. Nova Compute VMs, Cinder Volumes, Neutron Networks, etc. at any given point in time.
 
@@ -169,7 +169,21 @@ Due to single threading required in cinder-volume and the drivers, the cinder-vo
 <img src="media/cinder-volume.png"/>
 
 Cinder-volume is deployed on all three Controller nodes, but kept active on only one node at a time. By default, cinder-volume is kept active on the OverCloud Management-Controller. If the Management Controller fails, you must enable and start cinder-volume service on one of the other Overcloud Controller nodes, until it is restored. Once Management Controller is restored, you must shut down the cinder-volume service from all other nodes and start it on the Management Controller to ensure it runs as a singleton. 
-Since cinder.conf is kept synchronized across all the 3 nodes, cinder volume can be run on any of the nodes any time – but you must take care to ensure it is run on only one node at any given time.
+Since cinder.conf is kept synchronized across all the 3 nodes, cinder volume can be run on any of the nodes at any given time. Ensure that it is run on only one node at any given time.
+
+**Steps to start Cinder-Volume**
+
+	os-svc-enable-upstart cinder-volume enable
+	
+	service cinder-volume start
+
+**Steps to stop Cinder-Volume**
+
+	service cinder-volume stop
+	
+	os-svc-enable-upstart cinder-volume disable
+
+
 
 ###Sherpa<a name="sherpa"></a>
 
