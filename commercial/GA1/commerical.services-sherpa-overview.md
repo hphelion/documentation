@@ -22,10 +22,12 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Sherpa Service Overview #
 
-HP Helion OpenStack Sherpa Service provides a link to the remote web catalog which has a repository of software that can be purchased and downloaded into the HP Helion environment. You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.  
+The HP Helion OpenStack Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment. 
+
+You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.  
 
 
-Content may include patches, plugins, images, models, etc. that may be used to update or provide content to the cloud.
+Content may include patches, plugins, images, models, and so forth that may be used to update, improve, extend, or provide content for the cloud.
 
 
 <!---Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
@@ -46,7 +48,7 @@ Key terms include:
 
 To perform tasks using the Sherpa service, you can use the Horizon dashboards.
 
-### Using the dashboards {#UI}
+### Using the dashboards<a name="UI"></a>
 
 You can use the [HP Helion OpenStack Dashboard](helion/openstack/ga/undercloud/admin/updates-and-extension/) to work with the Sherpa service.
 
@@ -66,13 +68,11 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).-->
 
-Depending upon your user type, Cloud Architect or Administrator, you can use the portal to update your clouds.
+The Dashboard presents different options depending on the installation, location within the cloud, and the role of the Sherpa user currently logged in. Cloud Architects or Administrators, for example, can use the dashboard to update their clouds.
 
-Based on the installation and location within the cloud, the Sherpa user has different functions. The content available is also based on the Sherpa user logged in.
+When Sherpa is deployed in the undercloud and connected to the remote catalog web service, it pulls overcloud images and other support content down into the undercloud so that the images are deployed or upgraded properly.
 
-Sherpa is deployed in the Undercloud to connect to the remote catalog web service.  It is configured to pull Overcloud images and other support content down into the Undercloud so that the images are deployed or upgraded.
-
-Sherpa may be deployed in the Overcloud to provide cloud content, and workloads to be deployed within the Overcloud.
+Sherpa may also be deployed in the overcloud to provide new content or workloads to be deployed within the overcloud. <!-- how?? -->
 
 <!---### Tasks performed by users ###
 
@@ -131,11 +131,11 @@ When working with the Compute service, you can perform a number of tasks with yo
 - **Pausing and un-pausing instances** -- Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
 - **Suspending and resuming virtual machines** -- Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
 
-## For more information ##
+For more general information on how to operate your cloud, refer to the [OpenStack Operations Guide](http://docs.openstack.org/ops/). 
 
-For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). 
-
-The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
