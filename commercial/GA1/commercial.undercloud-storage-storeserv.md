@@ -62,9 +62,9 @@ Before you start working with 3PAR StoreServ, ensure that the following prerequi
 
 1. HP Helion Cloud is deployed
 
-3. The HP StoreServ device is accessible from the Undercloud
+3. The HP StoreServ device is accessible from the undercloud
 
-4. The HP StoreServ/3PAR device (running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in the Overcloud
+4. The HP StoreServ/3PAR device (running operating system v 3.1.3 or later) is accessible by Cinder and Compute nodes running in the overcloud
 
 5. Common Provisioning Groups (CPGs) are created for HP 3PAR StoreServ
 
@@ -74,7 +74,7 @@ You can register a 3PAR device to Sirius by using the Undercloud Horizon Dashboa
 
 To register the device using the Undercloud Horizon Dashboard, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -116,7 +116,7 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
 To edit a StoreServ, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -131,12 +131,12 @@ To edit a StoreServ, do the following:
 
 ### Unregister a 3PAR StoreServ {#unregister-storeserv}
 
-**Note**: Before you unregister the storeserv, you need to unregister the CPG and remove the backend, etc. Once the 3PAR is unregistered, neither the CPGs nor the volume that are present are accessible from the array.
+**Note**: Before you unregister the storeserv, you need to unregister the CPG and remove the back end, etc. Once the 3PAR is unregistered, neither the CPGs nor the volume that are present are accessible from the array.
 
 
 Use this option to unregister a StoreServ.
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -153,7 +153,7 @@ Use this option to unregister a StoreServ.
 
 Use this option to unregister multiple StoreServs using a single command.
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -168,13 +168,13 @@ Use this option to unregister multiple StoreServs using a single command.
  
 ## Register 3PAR StoreServ Common Provisioning Groups (CPGs){#registering-cpg}
 
-Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
+Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder back end. A single HP 3PAR may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
 
-**Note**: Only registered CPG(s) can be configured as a storage backend for Cinder.
+**Note**: Only registered CPG(s) can be configured as a storage back end for Cinder.
 
 To register the CPGs, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -182,11 +182,11 @@ To register the CPGs, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Register CPG Option (opens in a new window)</a>
 
-4. Click the **More** drop-down list against the StoreServ for which you want to register CPG and select **Register CPG**.<br> The Register CPG page is displayed with a list of CPGs that are present in the selected 3PAR array in the **Available CPG** box and a list of already selected CPGs in the **Selected CPG** box.</br>
+4. Click the **More** drop-down list against the StoreServ for which you want to register the CPG and select **Register CPG**.<br> The Register CPG page is displayed with a list of CPGs that are present in the selected 3PAR array in the **Available CPG** box and a list of already selected CPGs in the **Selected CPG** box.</br>
 
 	**OR**
 
-	* Click the device name for which you want to register CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.
+	* Click the device name for which you want to register the CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.
     
 	* Click **Register CPG**. <br>The Register CPG page is displayed with a list of CPGs that are present in the selected 3PAR array in the **Available CPG** box and a list of already selected CPGs in the **Selected CPG** box.</br> 
 
@@ -213,13 +213,13 @@ To register the CPGs, do the following:
 
 To edit a CPG, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
 3. Select the **StoreServ** option to activate it.<br> The HP StoreServ page is displayed with the list of StoreServs.
 
-4. Click the device name for which you want to register CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.
+4. Click the device name for which you want to register the CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.
 
 5. Click **Edit CPG** against the CPG that you want to edit.<br> The Update CPG Details dialog box is displayed. 
 
@@ -230,17 +230,17 @@ To edit a CPG, do the following:
 
 ### Unregister a CPG {#unregister-cpg}
 
-**Note**: Before you unregister a CPG, remove the backend associated with this CPG. You need to either detach the volumes from Cinder or migrate to another backend as the volumes from this CPG will no longer be available.
+**Note**: Before you unregister a CPG, remove the back end associated with this CPG. You need to either detach the volumes from Cinder or migrate to another back end as the volumes from this CPG will no longer be available.
 
 To unregister, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then click **Storage** to display the overview page.
 
 3. Select the **StoreServ** option to activate it.<br> HP StoreServ page is displayed.
 
-4. Click the device name for which you want to unregister CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.<br> 
+4. Click the device name for which you want to unregister the CPG. <br>The Common Provisioning Groups page is displayed with a list of CPGs.<br> 
 
 5. Click the **More** drop-down list against the CPG you want to unregister and select **Uregister CPG**.<br> A confirmation dialog box is dislayed.
 
@@ -251,7 +251,7 @@ To unregister, do the following:
 
 Use this option to unregister multiple CPGs using a single command.
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -269,7 +269,7 @@ Use this option to unregister multiple CPGs using a single command.
 
 Use this option to view the CPG configuration.
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
