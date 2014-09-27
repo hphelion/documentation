@@ -18,18 +18,19 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/ga/install/overview/">NEXT &#9654;</a> </p>
-
+<!--
 
 # HP Helion OpenStack&#174; Support Matrix
-
+ 
 To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
+* [Supported Configurations](#supportedconfigurations)
 * [Hardware and Network Configuration](#baremetal)
 * [Usable Capacity](#usable-capacity)
 * [Physical Network architecture](#physical-network-architecture)
@@ -228,12 +229,33 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 
 </table>
 
+## Supported Configurations<a name="supportedconfigurations"></a>
 
+HP supports the following configurations for HP Helion OpenStack deployment:
+
+
+
+- Host Interconnects/Protocols: 
+   
+      * 10Gb Software iSCSI
+      * 8Gb and 16Gb Fibre-Channel
+      * Software iSCSI and Fibre-Channel under KVM
+
+- Target Interconnects: 
+   
+      * 8Gb FC SAN
+      * 10Gb iSCSI CNA/NIC
+      
+
+- 3PAR InForm OS Version: 3.1.3 MU1 
+   
+     
 ## Hardware and Network Configuration<a name="baremetal"></a>
+
 You must have the following hardware and network configuration:
 
-* At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
- 
+- At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
+
 Additional requirements are as follows:
 
 - For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
@@ -242,39 +264,35 @@ Additional requirements are as follows:
 	- For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
 	- To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
 
+- The BIOS configured: 
+	- To the correct date and time
+	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
-* The BIOS configured: 
-   
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+- The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
+- For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
-* The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
-* For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
+	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
-    **Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
+- An additional system to run the baremetal installer and host the seed VM meeting the requirements in the table below. Other requirements and recommendations are as follows:
 
-* An additional system to run the baremetal installer and host the seed VM meeting the requirements in the table below. Other requirements and recommendations are as follows:
+	- The Ubuntu 14.04 operating system must be installed
+	- A browser to access the undercloud or overcloud
+	- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+	- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
-    * The Ubuntu 14.04 operating system must be installed
-    * A browser to access the undercloud or overcloud
-    * A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
-    * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
+-You must also satisfy these network configuration requirements:
 
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+ - The seed VM, the baremetal systems and the baremetal controllers must be on the same network
 
-* You must also satisfy these network configuration requirements:
+- Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
-    * The seed VM, the baremetal systems and the baremetal controllers must be on the same network
+- The seed VM, the baremetal systems, and the BMC (IPMI controller) for all baremetal systems must be on a common network.
 
-    * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
+- If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 
-	* The seed VM, the baremetal systems, and the BMC (IPMI controller) for all baremetal systems must be on a common network.
-
-    * If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
-
-    * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
-
+- The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
 
 
 <table style="text-align: left; vertical-align: top;">
@@ -287,24 +305,24 @@ Additional requirements are as follows:
 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Seed cloud (VM) </td>
+<td rowspan="4"> Seed cloud host </td>
 <td>Disk </td>
 <td> 100 GB - There are additional disk space requirements on the host to store the downloaded images (including the seed). See the product image download details.</td>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>16 GB - Memory should be dedicated to this VM and not shared with other virtual machines on the same KVM host. </td>
+<td>16 GB</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
-<td> 2 NICs</td>
+<td> 1 x 10 GB NIC</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
-<td> 4 CPU cores - They should be dedicated to this VM and not shared with other virtual machines on the same KVM host.</td>
+<td> 4 CPU cores</td>
 
 </tr>
 
@@ -335,7 +353,8 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud controller </td>
 <td>Disk </td>
-<td> 2 TB </td>
+<td> 500GB - 2TB
+ </td>
 
 
 
@@ -362,7 +381,7 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Compute server </td>
 <td>Disk </td>
-<td> 2 TB</td>
+<td> 500GB - 2TB</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -386,7 +405,8 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Swift server </td>
 <td>Disk </td>
-<td> 2 TB</td>
+<td> 500GB - 2TB
+</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -493,7 +513,7 @@ The following table shows the minimum recommendations for hardware by node type.
 <td> </td>
 </tr>
 </table>
--->
+
 
 ## Usable Capacity<a name="usable_capacity"></a>
 
@@ -532,7 +552,7 @@ or
 <p>Note: These are the maximum figures assuming the storage is used exclusively for that type of object.</p>  </td>
 </tr>			
 </table>
-
+-->
 <!--
 ## Storage Requirements
 
@@ -583,13 +603,12 @@ This table provides an overview of the physical network configuration requiremen
 
 - Physical network ports on each server
   - One IPMI port
-  - One physical ethernet port (for example, eth0) or two physical ethernet ports in a bond (for example, bond0) for the hypervisor/OS
+  - One physical ethernet port (for example, eth0) for the hypervisor/OS
 
 - Network fabric
-  - Two physical links, one for IPMI and one for the hypervisor/OS
-  - Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
-
-- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
+	- Two physical links, one for IPMI and one for the hypervisor/OS
+	- Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
+	- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
 
 For detailed information, see the [Preparing the network](/helion/openstack/ga/install/prereqs/#network) section of the *Prerequisites*.
 
@@ -618,7 +637,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <li>Used to PXE boot overcloud servers</li>
 </ul> </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -626,7 +645,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td> Overcloud management </td>
 <td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -634,7 +653,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td> SDN </td>
 <td> Network between workload VMs, e.g. carries VxLAN traffic </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -642,7 +661,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td> Storage </td>
 <td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -651,16 +670,16 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 <td><ul><li> Connected to internet or intranet</li>
 <li>Provides floating IPs</li></ul> </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> External-API </td>
-<td> <ul><li>Connected to internet or intranet</li>
-<li>Provides access to overcloud API endpoints</li></ul> </td>
-<td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> Service </td>
+<td> <ul><li></li>
+<li></li></ul> </td>
+<td></td>
+<td></td>
 
 </tr>
 
@@ -674,29 +693,13 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 
 </table>
 
-## Software Requirements<a name="software-requirements"></a>
+## Software Requirements <a name="software-requirements"></a>
+
+Software requirements for the seed cloud host:
 
 Ubuntu 14.04 with the following package versions.
 
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: lightgrey; color: black;">
-<th>Package</th><th>Version#</th>
-
-<tr style="background-color: white; color: black;">
-<td>qemu-common</td><td>1.0+noroms-0ubuntu14.13</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>qemu-kvm</td><td>1.0+noroms-0ubuntu14.13</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>emu-utils</td><td>1.0+noroms-0ubuntu14.13</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>virsh</td><td>0.9.8</td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>virt-install</td> <td>0.600.1</td></tr></table>
+There are no software requirements for the undercloud and overcloud controllers.
 
 ## Next Steps<a name="next"></a>
 

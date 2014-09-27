@@ -7,7 +7,9 @@ product: commercial.ga
 ---
 <!--UNDER REVISION-->
 
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/glossary/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/3rd-party-license-agreements/"> NEXT &#9654;</a> </p>
+-->
 
 # Preview Agreement
  This Preview Agreement (the "Agreement") states the terms between  you ("You" or "Your")  and Hewlett-Packard Company and its subsidiaries ("HP") for the HP Helion OpenStack&reg; Software (defined below) that You download from HP’s website, as of the date of receipt of the Software (the "Effective Date").  By downloading, copying, or using the Software You agree to this Agreement.  If You do not agree to be bound by the terms of this Agreement, do not download, install, copy, or use the Software.

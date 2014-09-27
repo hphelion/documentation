@@ -18,8 +18,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
+-->
 
 # HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
@@ -151,7 +152,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 ### Install the seed VM and build your cloud<a name="startseed"></a>
 
 1. Make sure you are logged into the seed VM host as root. If not:
-
+ 
 		sudo su -
 
 2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.

@@ -47,7 +47,7 @@ Perform the following steps to add Swift disk to a ring:
 
 1. Login to Undercloud 
 
-		#ssh heat-admin<Undercloud IP address> 
+		#ssh heat-admin@<Undercloud IP address> 
 		#sudo -i
 
 2. Change the directory to ring builder
@@ -55,53 +55,81 @@ Perform the following steps to add Swift disk to a ring:
 		#cd /root/ring-building
 
 
-4. List the scale-out proxy node
+3. List the scale-out proxy node
 
-		ringos list-swift-nodes -t proxy
+		#ringos list-swift-nodes -t proxy
 
-5. List the disks on the proxy node
+	Sample out of the proxy nodes is as follows:
 
-		ringos list-disks -n <Node IP> -u heat-admin
+			+---------------+
+			| proxy-nodes   |
+			+---------------+
+			| 192.0.2.22    |
+			+---------------+
 
-6. Format a disk
+4. List the disks on the Proxy node
 
-		ringos format-disks -n <Node IP> -u heat-admin -d <disk>
+		#ringos list-disks -n <Proxy node IP address> 
 
-	**Note**: You can format all the disks with a single command (--all).
+	Sample out of the disk on the proxy node:
+
+				+----------+------------+
+				| disk     | size       |
+				+----------+------------+
+				| /dev/sdb | 1073741824 |
+				|          |            |
+				| /dev/sdc | 1073741824 |
+				|          |            |
+				+----------+------------+
+	
+5. Format a given disk
+
+		#ringos format-disks -n <Proxy node IP address>  -d <disk>
+
+	Sample out of the formatted disk:
+
+		+----------+-----------+---------+---------------------------------+-------------+------------+
+		| disk     | formatted | mounted | mount_point                     | label       | size       |
+		+----------+-----------+---------+---------------------------------+-------------+------------+
+		| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |
+		+----------+-----------+---------+---------------------------------+-------------+------------+
 
 
-8. Add formatted disk to account and container ring
+	**Note**: You can format all the disks with a single command (-d --all).
 
-		ringos add-disk-to-ring -f /root/ring-building/account.builder -i <IP address of Swift node> -p value -d <value> -w <weight> -r <region> -z <zone>
-		ringos add-disk-to-ring -f /root/ring-building/container.builder -i <IP address of Swift node> -p value -d <value> -w <weight> -r <region> -z <zone>
+
+6. Add formatted disk to account and container ring
+
+		#ringos add-disk-to-ring -f /root/ring-building/account.builder -i <Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
+		#ringos add-disk-to-ring -f /root/ring-building/container.builder -i <Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 **Recommendation**: 
 
-* Set zone as 2 for scale-out proxy nodes and region remains 1.
+* Set zone as 2 for scale-out Proxy nodes and region remains 1.
                 
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
 
-3.List the file in the ring building directory. Identify `account.builder` and `container.builder`.
+7.List the file in the ring building directory. Identify `account.builder` and `container.builder` files.
 
 	
-9.Re-balance both account and container ring
+8.Re-balance both account and container ring
 
-		ringos rebalance-ring -f /root/ring-building/account.builder
+		#ringos rebalance-ring -f /root/ring-building/account.builder
 		
-		ringos rebalance-ring -f /root/ring-building/container.builder	
+		#ringos rebalance-ring -f /root/ring-building/container.builder	
 
-7. List all the Swift nodes. 
+9.List all the Swift nodes 
 
-		ringos list-swift-nodes -t all
+		#ringos list-swift-nodes -t all
 
 10.Copy `account.ring.gz` file to all the nodes
 
-	ringos copy-ring -s /root/ring-building/account.ring.gz -n <IP address of Swift nodes>
+	#ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
 	
 
 11.Copy `container.ring.gz` file to all the nodes
 
-	ringos copy-ring -s /root/ring-building/container.ring.gz -n <IP address of Swift nodes>
+	#ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 
 12.Repeat steps from 6 - 11 with the weights 50, 75, and 100 (w= 50, 75, 100).
 

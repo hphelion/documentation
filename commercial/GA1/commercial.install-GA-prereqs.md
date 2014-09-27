@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&#174; Installation: Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page because it contains information about:
@@ -32,44 +32,27 @@ Before you begin the installation process, take a few minutes to read this page 
 
 ## Hardware configuration<a name="hardware"></a>
 
-To install a HP Helion OpenStack baremetal multi-node configuration, you must have the following hardware configuration.
+For supported hardware and hardware requirements, see the [HP Helion OpenStack&#174; Support Matrix](/helion/openstack/ga/support-matrix/).
 
-* At least 9 and up to 100 baremetal systems with the following configuration:
+To install a HP Helion OpenStack baremetal, you must have the following hardware configuration.
 
-    * A minimum of 32 GB of physical memory
-    * A minimum of 2 TB of disk space
-    * A minimum of 1 x 10 GB NIC with PXE support
+- The boot order configured with Network/PXE boot as the first option
+- The BIOS configured: 
+	- To the correct date and time
+	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+	- To stay powered off in the event of being shutdown rather than automatically restarting
+- Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
+- A seed cloud host to run the baremetal install and host the seed VM with the configuration in the [HP Helion OpenStack&#174; Support Matrix](/helion/openstack/ga/support-matrix/).
 
-      * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
+**Important:** 
 
-    * Capable of hosting VMs
-    * The boot order configured with Network/PXE boot as the first option
-    * The BIOS configured: 
-     
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-      * To stay powered off in the event of being shutdown rather than automatically restarting
-
-    * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-
-* An installer system to run the baremetal install and host the seed VM with the following configuration:
-
-    * A minimum of 16 GB of physical memory
-    * A minimum of 100 GB of disk space
-    * Virtualization enabled 
-    * Ubuntu 14.04 installed
-
-    
-* **Important** 
-    * **Installer system** &mdash; The installer system (also called seed VM) might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
-    
-    * **Installer package** &mdash; The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
-
-    * **Physical servers** &mdash; When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
+- The seed cloud host (also called installer system) might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+- The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
+- When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
 ## Required tasks<a name="required"></a>
 
-On the installer system, ensure the following required tasks are completed before you begin the installation.
+Make sure the following required tasks are completed before you begin the installation.
 
 - [Preparing your network](#network_prepare)
 - [Obtain a public key](#pub-key)
@@ -97,25 +80,28 @@ To ensure a successful installation, you must satisfy these network configuratio
 
 #### Preparing the network for a KVM installation <a name="network_KVM"></a>
 
-If you are installing HP Helion OpenStack in a KVM deployment, you must configure your network as shown in the following diagram.
+If you are installing HP Helion OpenStack with KVM hypervisor support, you must configure your network as shown in the following diagram.
+
+Network architecture diagram for KVM
+<img src="/content/documentation/media/topology_kvm.png">
 
 <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
 
 You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.
 
+The Service network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
+
 **Notes:**
 
-- The HP Helion OpenStack installation installs the two initial Object Storage nodes. You can install additional Object Storage nodes after the initial install. 
-- The Block Storage nodes are installed for deployments using the [StoreVirtual VSA driver](/helion/openstack/ga/install/vsa/) with the Object Storage service (Cinder). Object Storage can be configured to use drivers one or more of the following: StoreVirtual VSA or 3PAR.
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
-- The network path for Platform service log messages is from the VM, to the service network installed as a second vnic, to the Customer Router, to the management network, to the Under Cloud RabbitMQ, to LogStash.
-<!-- What does this mean?? -->
+- The network path for platform service log messages is from the VM, to the service network (installed as a second vnic), to the Customer Router, to  the management network, to the Under Cloud RabbitMQ, to LogStash.
 
 #### Preparing the network for an ESX installation <a name="network_ESX"></a>
 
-If you are installing HP Helion OpenStack in a ESX deployment, you must configure your network as shown in the following diagram.
+If you are installing HP Helion OpenStack for ESX hypervisor support, you must configure your network as shown in the following diagram.
 
+Netowrk architecture diagram for ESX network
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
 ##### Installing networks for ESX #####
@@ -208,7 +194,7 @@ Use the following command to install these packages:
 
   `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
 
-After you install the `libvirt` packages, you must reboot or restart `libvirt`:
+After you install the `libvirt` packages, you must reboot or restart `libvirt`: 
 
     $ sudo /etc/init.d/libvirt-bin restart
 

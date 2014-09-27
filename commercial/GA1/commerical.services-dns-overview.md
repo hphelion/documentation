@@ -17,16 +17,16 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/horizon/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/tripleo/overview/"> NEXT &#9654</a> </p>
-
+<!--
 # HP Helion OpenStack&#174; DNS as a Service (DNSaaS) Overview#
 
 Based on the OpenStack Designate project, the HP Helion OpenStack DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack users.
 
 DNSaaS includes a set of RESTful APIs for the display, creation, modification and deletion of DNS records.
 
-DNSaaS for OpenStack includes:
+DNSaaS for the OpenStack platform includes:
 
 - REST APIs for domain/record management
 - Multi-tenancy
@@ -44,7 +44,7 @@ Learn how to [install DNS as a service](/helion/openstack/ga/install/dnsaas/).
 
 Key terms include:
 
-- **DNS** -- A service that provides look up of the actual internet address (IP address) of domains. 
+- **DNS** -- A service that provides look up of the actual Internet address (IP address) of domains. 
 
 - **Domain Name** -- An identification string that defines a realm of administrative autonomy, authority, or control on the Internet.
 

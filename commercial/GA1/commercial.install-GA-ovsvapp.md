@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&reg;: Deploying and Configuring OVSvApp on ESX hosts 
 HP Virtual Cloud Networking (VCN) is an enhanced networking (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
@@ -443,7 +443,7 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
-	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
 
 - Install DNS as a service (DNSaaS) (Optional).
 

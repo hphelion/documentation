@@ -28,7 +28,7 @@ PageRefresh();
 The EON client CLI package provides an http-client coupled command-line tool for managing Eon (ESX management) services.
  
 
-You can use the following command using the EON client CLI package in the UnderCloud:
+You can issue the following command using the EON client CLI package in the undercloud:
 
 
 * [Help Commands](#help)
@@ -50,12 +50,12 @@ You can display help for this program or one of its sub-programs.
 
 ###Help Subcommand
 
-You get two sets of arguments- Positional (mandatory) and Optional arguments (all mandatory fields are marked within *[Required]*).
+You get two sets of arguments: Positional (mandatory) and Optional arguments (all mandatory fields are marked within *[Required]*).
 
    ` eon help <sub-command> `
 
 
-You can use the following commands to view the help .
+You can use the following commands to view the help.
 
 
 ##API Command<a name="api-command"></a>
@@ -91,7 +91,7 @@ You can add the vCenter to the EON database. You must enter all the arguments to
 	eon vcenter-add --name <VCENTER_NAME> --ip-address <VCENTER_IP> --username <VCENTER_USERNAME> --password <VCENTER_PASSWORD> --port <VCENTER_PORT> --proxy-config-file <VCENTER_PROXY_CONFIG_FILE>
 
 
-**Note**: HP Helion OpenStack supports three vCenters.
+**Note**: HP Helion OpenStack&#174; supports three vCenters.
 
  * &lt;VCENTER_NAME>: Name of the vCenter 
                         
@@ -116,11 +116,11 @@ You can update the exisitng vCenter to the EON database. You must enter all the 
 
 ### Delete vCenter<a name="delete-vcenter"></a>
 
-**Important:** If you have imported cluster(s) ensure that you have deactivated the cluster(s) and then unimported the cluster(s) before executing the delete command.
+**Important:** If you have any imported cluster ensure that you have deactivated them and then un-import the cluster(s) before executing the delete command.
 
 vCenter delete fails:
 
-* if you have imported cluster which is an activate cluster(s).
+* if you have any imported clusters that are activate clusters.
 
 You can delete the vCenter from the EON database.  
 
@@ -135,7 +135,7 @@ You can view the list of vswitches of vCenter.
 
 ###View vswitch details<a name="vswitch-show"></a>        
 
-You can view the vswitch details. It displays the ID of vCenter and MOID of vswitch.
+You can view the vswitch details. The ID of vCenter and MOID of vswitch will be displayed.
 
 	 eon vswitch-show --vswitch-moid <VSWITCH_MOID> <VCENTER_ID>
 
@@ -168,7 +168,7 @@ You can import the clusters in the EON database under the give vCenter.
 
 	 eon import-cluster --vcenter-id <VCENTER_ID> --cluster-name <CLUSTER_NAME> --cluster-moid <CLUSTER_MOID>
 
-In the vCenter you can import the cluster(s). One vCenter can have multiple cluster(s).
+In the vCenter you can import the cluster(s). One vCenter can have multiple clusters.
 
 ###Update a cluster<a name="cluster-update"></a>
 You can update the cluster details. 
@@ -178,7 +178,7 @@ You can update the cluster details.
 
 ###Unimport clusters<a name="unimport-clusters"></a>
 
-You can unimport the cluster(s) from the EON database under the give vCenter. 
+You can un-import the cluster(s) from the EON database under the give vCenter. 
 
 	eon unimport-cluster --vcenter-id <VCENTER_ID> --cluster-moid <CLUSTER_MOID>
 
@@ -207,7 +207,7 @@ View the list of compute proxies.
 
 ### Restore proxy<a name="restore-proxy"></a>       
 
-Incase of failure of Proxy-VM, the Compute Proxy VM can be restored to the previous configuration using following command. In other words it recreates the Compute Proxy virtual machine with a previously activated clusters.
+In case of failure of Proxy-VM, the Compute Proxy VM can be restored to the previous configuration using the following command. In other words, it recreates the Compute Proxy virtual machine with previously activated clusters.
 
 
 		eon restore-proxy <VCENTER_ID>
@@ -222,7 +222,7 @@ Incase of failure of Proxy-VM, the Compute Proxy VM can be restored to the previ
 The following options must be supplied as arguments or as environment variables.
 
 ###OS username<a name="os-username"></a>
-Username of the keystone (OpenStack&reg; environment). Defaults to env[OS_USERNAME].
+Username of the keystone (OpenStack environment). Defaults to env[OS_USERNAME].
   
 	--os-username OS_USERNAME
                         
@@ -245,7 +245,7 @@ Authentication URL of the OpenStack environment. Defaults to env[OS&#095;AUTH&#0
 	 --os-auth-url OS_AUTH_URL
 
 ###OS authenticationtoken<a name="os-auth-token"></a>
-Authentication token of OpenStack environment. Defaults to env[OS&#095;AUTH&#095;TOKEN].
+Authentication token of the OpenStack environment. Defaults to env[OS&#095;AUTH&#095;TOKEN].
 
   	--os-auth-token OS_AUTH_TOKEN
 

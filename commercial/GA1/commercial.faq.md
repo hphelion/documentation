@@ -7,7 +7,9 @@ product: commercial.ga
 ---
 <!--UNDER REVISION-->
 
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/release-notes/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/technical-overview/">NEXT &#9654;</a> </p>
+-->
 
 #HP Helion OpenStack&#174; FAQ#
 
