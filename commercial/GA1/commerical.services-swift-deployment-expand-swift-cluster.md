@@ -23,7 +23,7 @@ PageRefresh();
 
 #Expand Swift Cluster
 
-HP Helion OpenStack allows you to expand swift cluster in any of the followings ways:
+HP Helion OpenStack&#174; allows you to expand Swift cluster in any of the followings ways:
 
 
 * [Add New Scale-out Object Node](/helion/openstack/ga/services/swift/deployment/add-disk-storage-node/) 

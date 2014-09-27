@@ -25,11 +25,15 @@ PageRefresh();
 
 Perform the following procedure to add disk to a starter object ring. 
 
+1. [Prerequisite](#Prer)
+2. [Adding Swift disks to a ring](#adding-Swift-disks-to-a-ring)
 
-##Prerequisite
+
+
+##Prerequisite {#prer}
 
 * HP Helion Cloud is deployed
-* Starter swift is functional  which by default gets deployed as part of deployment of cloud
+* Starter swift is functional which by default gets deployed as part of deployment of cloud
 
 **IMPORTANT**:  
  
@@ -37,40 +41,40 @@ Perform the following procedure to add disk to a starter object ring.
 * Take a backup of rings before any operation.
 
 
-##Adding Swift disks to a ring
+##Adding Swift disks to a ring {#adding-Swift-disks-to-a-ring}
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Login to Undercloud 
+1. Login to Undercloud. 
 
-		#ssh heat-admin@<Undercloud IP address> 
-		#sudo -i
+		# ssh heat-admin@<Undercloud IP address> 
+		# sudo -i
 
-2. Change the directory to ring builder
+2. Change the directory to ring builder.
 
-		#cd /root/ring-building
+		# cd /root/ring-building
 
-3. List the starter Swift nodes
+3. List the starter Swift nodes.
 
-		#ringos list-swift-nodes -t starter
+		# ringos list-swift-nodes -t starter
 
-4. List the disks on the starter nodes
+4. List the disks on the starter nodes.
 
-		#ringos list-disks -n <Starter Swift nodes IP address> 
+		# ringos list-disks -n <Starter Swift nodes IP address> 
 
-5. Format a given disk
+5. Format a given disk.
 
-		#ringos format-disks -n <Starter Swift nodes IP address> -d <disk>
+		# ringos format-disks -n <Starter Swift nodes IP address> -d <disk>
 
 	**Note**: You can format all the disks with the single command (-d --all).
 
 
-6. List the file in ring directory and identify the file (object.builder) for object-O .
+6. List the file in ring directory and identify the `object.builder` file for object-0.
 
 	
-7. Add formatted disk to object-0 ring
+7. Add formatted disk to object-0 ring.
 
-		#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
+		# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 **Note**: Choose the zone and region information appropriately.
 
@@ -79,21 +83,21 @@ Perform the following steps to add Swift disk to a ring:
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
 
 
-8.Re-balance the ring
+8.Re-balance the ring.
 
-		ringos rebalance-ring -f /root/ring-building/object.builder
+		# ringos rebalance-ring -f /root/ring-building/object.builder
 	
-Note: Wait for min_part_hours before another re-balance succeeds.	
+**Note**: Wait for min&#95;part&#95;hours before another re-balance succeeds.	
 	
 9.List all the Swift nodes. 
 
-		#ringos list-swift-nodes -t all
+		# ringos list-swift-nodes -t all
 		
-10.Copy object file to all the nodes
+10.Copy object file to all the nodes.
 
-	#ringos copy-ring -s /root/ring-building/object.ring.gz -n <Swift nodes IP address>
+	# ringos copy-ring -s /root/ring-building/object.ring.gz -n <Swift nodes IP address>
 
-11.Repeat steps from 7 - 10 with the weights set to 50, 75, and 100 (w= 50, 75, 100).
+11.Repeat steps from **7 - 10** with the weights set to 50, 75, and 100 (w= 50, 75, 100).
 
 
  
