@@ -72,7 +72,7 @@ HP StoreVirtual enables the following features in HP Helion OpenStack:
 
 * **Simplified data protection**: Snapshots create thinly provisioned, instant point-in-time copies of data on a per-volume basis. As an administrator, you can access snapshots to recover individual files/folders from the volume, or rollback an entire volume to a prior state.
 
-##Cinder Architecture<a name="cinder-architecture"></a>
+##Cinder architecture<a name="cinder-architecture"></a>
 
 Cinder is the block-based storage component of the HP Helion OpenStack platform for cloud computing. It provides the software to create and centrally manage a service that provisions storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder can also be used independent of other OpenStack services. Cinder is based on the distributed architecture which has inherent tenets to scale horizontally and serve concurrent volume management requests. 
 
@@ -115,7 +115,7 @@ The Cinder volume service hosts the LeftHand Driver to communicate with the back
 
 **Note:** The Lefthand driver is the [HP LeftHand/StoreVirtual driver](http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html). The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
 
-Multiple Cinder volume processes can be run to achieve high availability of the Cinder components. Each backend instance maps to an instance of a StoreVirtual Management Group. Each Management Group listens at a Management API address that is configured in the Cinder backend entry in *cinder.conf*. A single Cinder volume can manage multiple backends.
+Multiple Cinder volume processes can be run to achieve high availability of the Cinder components. Each backend instance maps to an instance of a StoreVirtual Management Group. Each management group listens at a Management API address that is configured in the Cinder backend entry in *cinder.conf*. A single Cinder volume can manage multiple backends.
 
 
 ### Differentiated Storage Offerings<a name="differentiated-storage-offerings"></a>
@@ -142,25 +142,25 @@ Differentiated storage offerings based on performance and quality can be realize
 
 <a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual Integration diagram (opens in a new window)</a>
 
-The following section briefly explains the above diagram and the steps involved in StoreVirtual integration.
+The following section briefly explains the above diagram and the steps involved in integrating StoreVirtual with your cloud.
 
 1 - **Install CMC**
      
-   The CMC binary is available in the installer package. Install CMC on the Seed node where the Seed cloud is running.
+   The CMC binary is available in the installer package. [Install CMC](#install-hp-storevirtual-cmc) on the Seed node where the Seed cloud is running.
 
 2 - **Add VSA Baremetal nodes to ironic database**
 	
-   * Identify the hardware for StoreVirtual deployment and enrolls the Baremetal to the ironic database.
+   * Identify the hardware for StoreVirtual deployment and enroll the Baremetal to the ironic database.
 
-	* Login to the Undercloud and source the environment variables(source stackrc).
+   * Log in to the Undercloud and source the environment variables(source stackrc).
 
-	* Execute ironic CLI commands from the Undercloud to enroll the Baremetal into ironic database.
+   * Execute ironic CLI commands from the Undercloud to enroll the Baremetal into ironic database.
    
-    * Deploy StoreVirtual Storage Systems.
+   * [Deploy StoreVirtual storage systems](#deployment-vsa).
 
 3a - **Run update cloud script to provision VSA node**
 
-   * After enrollment of new Baremetal server in Undercloud , login to Seed cloud.
+   * After [enrollment of the new Baremetal server](#deployment-vsa) in the Undercloud , log in to Seed cloud.
 
    * Update overcloud.json file for StoreVirtual deployment and apply the configuration.
 	
@@ -168,7 +168,7 @@ The following section briefly explains the above diagram and the steps involved 
 
 3b - **Discover StoreVirtual in CMC**
 
-   * After update cloud, StoreVirtual system is deployed in the new Baremetal server that is enrolled.
+   * After updating the cloud, StoreVirtual system is deployed in the new Baremetal server that is enrolled.
 
    * Create StoreVirtual cluster.
 
@@ -180,7 +180,7 @@ The following section briefly explains the above diagram and the steps involved 
 
    * After discovering the StoreVirtual storage systems in CMC, the create the StoreVirtual cluster from CMC.
 
-   * Create the Management Group and StoreVirtual cluster from CMC.
+   * Create management group and StoreVirtual cluster from CMC.
 
    * Create StoreVirtual cluster.
 
@@ -188,44 +188,44 @@ The following section briefly explains the above diagram and the steps involved 
 
 4b - **Register VSA cluster**
 
-4c - **Creat VSA backend**
+4c - **Create VSA backend**
 
 4d- **Get Cinder configuration for VSA backend**
 
-   * Launch the Horizon dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system
+   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system.
 	
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
-5a - **Update overcloud-config.json file with cinder configuration**
+5a - **Update `overcloud-config.json` file with cinder configuration**
 
    With the advise generated from the above steps, update the overcloud-config.json file in Seed cloud.
 
 5b - **Run update cloud script to update cinder.conf**
 
-   * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud 
+   * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud.
 
    * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. 
 
 
-##Deploying HP StoreVitual Storage Systems<a name="deployment-vsa"></a>
+##Deploying HP StoreVitual Storage Systems<a name="deploy-vsa"></a>
 <!---<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>-->
 
-###Prerequisites<a name="prerequisite-vsa"></a>
+###Prerequisites<a name="prerequisites-vsa"></a>
 
 Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
 
-* Before enrolling the new baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in Undercloud server does not have any free nodes.This is needed to register a new node which matches the disk requirements for StoreVirtual and is picked by installer for StoreVirtual deployment.
+* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in Undercloud server does not have any free nodes.This is required to register a new node which matches the disk requirements for StoreVirtual and is picked by the installer for StoreVirtual deployment.
 
  
 * Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first operating system disk where the OS image is deployed is not considered for StoreVirtual storage.
 
 * Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!---For more details, refer – [**Storevirtual documentation LINK**]-->
 
-* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have at least two(2) operating system disks(/dev/sda, /dev/sdb)
+* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have at least two(2) operating system disks(/dev/sda, /dev/sdb).
 
 * For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) operating system disks(/dev/sda, /dev/sdb,/dev/sdc). The operating system disk /dev/sdb should be a Solid State Drive(SSD).
 
-* The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB or the RAID stripe configuration will fail. <!---For more details, refer [**storevirtual documentation LINK**]-->
+* The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB else the RAID stripe configuration will fail. <!---For more details, refer [**storevirtual documentation LINK**]-->
 
 * Seed Cloud is installed and running
 
@@ -233,38 +233,42 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 #### Enrolling the New Baremetal Server<a name="enroll-new-baremetal-server"></a>
 
+<<<<<<< HEAD
 To deploy HP StoreVirtual, you need to first enroll the baremetal server and then, update the HP Helion OpenStack config file and the overcloud. Perform the following commands:
+=======
+To deploy HP StoreVirtual, you first need to  enroll the Baremetal server and then, update the HP Helion OpenStack and the overcloud. Perform the following commands:
+>>>>>>> 2a4c95bb8fa5532409a012f522e6a9930463b968
 
 1. SSH to undercloud as heat-admin from Seed
 
-         ssh heat-admin@<IP Address>
-         sudo -i
-         source stackrc
+        # ssh heat-admin@<IP Address>
+        # sudo -i
+        # source stackrc
 
-	**Note:** Before enrolling the new baremetal server for StoreVirtual deployment, ensure that *#ironic node-list* in the undercloud server does not have any free nodes.
+	**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that *#ironic node-list* in the Undercloud server does not have any free nodes.
 
-2. Register the new baremetal server in the Ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your baremetal settings. 
+2. Register the new Baremetal server in the Ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your baremetal settings. 
 
-		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
+		# ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
 
 	Following is the example for reference:
 
-		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
+		# ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
 
 3. Create the ironic port for the ironic node that you created in the  previous step
  
-        ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
+        # ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
-4. List the Baremetal nodes, this will also list the newly added nodes.
+4. List the Baremetal nodes. This command also lists the newly added nodes
 
-		ironic node-list
+		# ironic node-list
 
-5. Logout from Undercloud to go back to Seed
+5. Log out from Undercloud to go back to Seed
 
        
 6. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
  
-		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+		# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
 7. Edit the `/root/overcloud-config.json` and update the value for **vsa&#095;scale** or **vsa&#095;ao_scale** appropriately. 
 
@@ -275,11 +279,11 @@ To deploy HP StoreVirtual, you need to first enroll the baremetal server and the
 8. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
 
-		source /root/env_vars
+		# source /root/env_vars
 
 9. Apply the configuration
 
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 <!---10. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
 
 			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
@@ -287,36 +291,36 @@ To deploy HP StoreVirtual, you need to first enroll the baremetal server and the
 			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END-->
 10.Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified, are installed. 
 
-     	bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
+     # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 
 ##Verifying StoreVirtual installation status<a name="verify-install"></a>
 
-To verify that the StoreVirtual is deployed, perform the following checks:
+To verify that the StoreVirtual storage system is deployed, perform the following checks:
 
-1. Login to Undercloud from Seed
+1. Log in to Undercloud from Seed
 
-		ssh heat-admin@<Undercloud IP Address>
+		# ssh heat-admin@<Undercloud IP Address>
  		 
 2. Source stackrc file and list the deployed StoreVirtual nodes
 
-		 source stackrc
-		 heat stack-list
-         nova list|grep vsa
+		 # source stackrc
+		 # heat stack-list
+         # nova list|grep vsa
 
-3. Login to the StoreVirtual system from the Seed using the IP address retrieved 
+3. Log in to the StoreVirtual system from the Seed using the IP address retrieved 
 from the above steps
 
-		ssh heat-admin@<StoreVirtual system IP Address>
+		# ssh heat-admin@<StoreVirtual system IP Address>
 
 4. Check the log files
 
-		tailf /installer.log
+		# tailf /installer.log
 
 	The message "*Started VM vsa-hostname*" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.
 
 5. To display the status of all the StoreVirtual VMs 
 
-		virsh list --all 
+		# virsh list --all 
 
 	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log`
 
@@ -338,18 +342,18 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
 
 * Execute the following commands:
 
-		apt-get update
-		apt-get install openjdk-7-jdk:i386
+		# apt-get update
+		# apt-get install openjdk-7-jdk:i386
 
 ### Installation<a name="installation"></a>
 
 1. Verify if the CMC installer file inside `tripleo` directory (packaged along with the installer) has the executable permission otherwise execute the following command:
 
-		chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
+		# chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
 
 2. Launch the installer
 
-		./CMC_11.5.01.0079.0_Installer_Linux.bin
+		#./CMC_11.5.01.0079.0_Installer_Linux.bin
 
 2. Follow the steps in the installation wizard to complete the installation.
 
@@ -386,7 +390,7 @@ To create a cluster, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc4.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find option (opens in a new window)</a>
 
-4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a tablular format in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 
@@ -418,12 +422,10 @@ To create a cluster, do the following:
 
 16. In the **Cluster Name** box, enter the name of the cluster and click **Next**.
 
-17. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br> The details are displayed in a table in the page.
+17. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br> The details are displayed in a tablular format in the page.
 
 
-	**Note**: Ensure that the Virtual IP (VIP) is in the same subnet as the HP StoreVirtual node. To get the details of the HP StoreVirtual IP, log into StoreVirual node and check
-
-    	/etc/vsa/vsa_network_config.json
+	**Note**: Ensure that the Virtual IP (VIP) is in the same subnet as the HP StoreVirtual node. To get the details of the HP StoreVirtual IP, log in to StoreVirual node and check `/etc/vsa/vsa_network_config.json` file.
 
 
 16. Click **Next** to go to the next page.
@@ -447,7 +449,7 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.</br>
 
-4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a table in the Find Systems dialogue box.
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a tablular format in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 
@@ -461,7 +463,7 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 10. Enter the name of the management group.
 
-11. Click **Add** to add the node to the group that you specified.<br> The node is added to the Management Group.
+11. Click **Add** to add the node to the group that you specified.<br> The node is added to the management group.
 
 ## Next Steps<a name="next-steps"></a>
 
