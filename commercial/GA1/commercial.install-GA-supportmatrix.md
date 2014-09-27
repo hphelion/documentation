@@ -18,12 +18,12 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/ga/install/overview/">NEXT &#9654;</a> </p>
-
+<!--
 
 # HP Helion OpenStack&#174; Support Matrix
-
+ 
 To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 

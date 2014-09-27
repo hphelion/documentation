@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&#174; Installation: Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page because it contains information about:
@@ -88,6 +88,8 @@ Network architecture diagram for KVM
 <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
 
 You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.
+
+The Service network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
 
 **Notes:**
 
@@ -192,7 +194,7 @@ Use the following command to install these packages:
 
   `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
 
-After you install the `libvirt` packages, you must reboot or restart `libvirt`:
+After you install the `libvirt` packages, you must reboot or restart `libvirt`: 
 
     $ sudo /etc/init.d/libvirt-bin restart
 

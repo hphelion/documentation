@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&#174; Installation: Creating the JSON configuration file
 
 The HP Helion OpenStack installer uses a JSON configuration file to enter configuration values. JSON (JavaScript Object Notation) is an open-standard format that uses human-readable text to transmit data objects consisting of attribute–value pairs. 

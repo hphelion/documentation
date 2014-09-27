@@ -17,9 +17,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
-
+-->
 
 #HP Helion OpenStack&reg; Scale-out Swift
 

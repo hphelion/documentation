@@ -17,9 +17,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
-
+-->
 
 
 # Deploy Scale-out Swift Nodes with HP Helion OpenStack&#174; 

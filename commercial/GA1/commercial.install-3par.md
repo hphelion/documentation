@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
-
+-->
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 

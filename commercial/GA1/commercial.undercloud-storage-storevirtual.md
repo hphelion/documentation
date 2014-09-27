@@ -25,7 +25,7 @@ PageRefresh();
 
 # Working with HP StoreVirtual 
 
-The StoreVirtual option allows you to configure HP StoreVirtual as storage.This page describes the different tasks that you can perform using the StoreVirtual option.
+The StoreVirtual option allows you to configure HP StoreVirtual as storage.You can configure your StoreVirtual by either using the Undercloud Horizon Dashboard or [Sirius client](/helion/openstack/ga/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreVirtual option in the Undercloud Horizon.
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
 
@@ -66,7 +66,7 @@ You can register a cluster using the Undercloud Horizon Dashboard.When you regis
 
 To register the cluster using Undercloud Horizon Dashboard, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -107,7 +107,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 To edit a cluster, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -132,7 +132,7 @@ Unregistering a cluster will remove it from the cloud inventory.
 
 To unregister a cluster, do the following:
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -149,7 +149,7 @@ To unregister a cluster, do the following:
 
 Use this option to unregister multiple clusters using a single command.
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 
@@ -157,7 +157,7 @@ Use this option to unregister multiple clusters using a single command.
 
 4. Click the checkbox displayed against the **Name** column to select all the clusters. 
 
-5. Click **Unregister Clusters** to unregister the clusters.<br>A confirmation box is diplayed.</br>
+5. Click **Unregister Clusters** to unregister the clusters.<br>A confirmation box is displayed.</br>
 
 5. Click **Unregister Cluster** to unregister or click **Cancel** to cancel the process. 
 
@@ -166,7 +166,7 @@ Use this option to unregister multiple clusters using a single command.
 
 Use this option to view the cluster configuration as it displays in the *cinder.config* file.
 
-1. Login to the Undercloud Horizon Dashboard.
+1. Log in to the Undercloud Horizon Dashboard.
 
 2. From the left panel, click **Resources** Tab and then **Storage** to display the Overview page.
 

@@ -40,7 +40,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 **Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of CPG after allocating, may disrupt cloud functionality if the corresponding change is not updated here.
 
-1. In the Configure Cloud page, click **StoreServs** Tab to activate it.
+1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.
 
 	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud StoreServ Option (opens in a new window)</a>
 
@@ -64,7 +64,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
-	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+   <a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
 
 ### Expand backend<a name="expand-backend"></a>
@@ -73,7 +73,7 @@ Expand backend option allocates new CPGs to an existing backend. You can select 
 
 To expand a backend, do the following:
 
-1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **Expand Backend** against the backend that you want to expand.<br> Expand StoreServ Volume Backend page is displayed.</br>
 
@@ -92,7 +92,7 @@ To expand a backend, do the following:
 
 This option allows you to remove the CPGs from the backend which are allocated to your cloud. To reduce the backend, do the following:
 
-1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **More** drop-down list against the Volume Backend for which you want to reduce the CPGs and select **Shrink Backend**.<br> Configure StoreServ Backend page is displayed.
 
@@ -113,11 +113,11 @@ Before you delete the backend CPG, detach the volume or migrate to a different b
 
 Do the following to delete a backend:
 
-1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
-2. Click **More** drop-down list against the Volume Backend which you want to delete and select **Delete Volume Backend**.<br> A confirmation dialog box is displayed.
+2. Click **More** drop-down list against the Volume Backend which you want to delete and select **Delete volume backend**.<br> A confirmation dialog box is displayed.
 
-3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process. 
+3. Click **Delete volume backend** to delete or **Cancel** to cancel the process. 
 
 
 ### Generate configuration<a name="generate-config"></a>
@@ -125,7 +125,7 @@ You can download the Cinder configuration relevant to HP 3PAR StoreServ for your
 
 To generate configuration file, do the following:
 
-1. In the Configure Cloud page, click **StoreServs** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 	<a href="javascript:window.open('/content/documentation/media/storeServ-generate-configuration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
 
@@ -140,7 +140,7 @@ To generate configuration file, do the following:
 
 To update your Overcloud with the changes, do the following:
 
-1. SSH to Seed as root.
+1. SSH to Seed as root from KVM host.
 
 		ssh root@ <IP address> 
 

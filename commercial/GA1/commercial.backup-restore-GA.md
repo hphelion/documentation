@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
-
+-->
 
 # HP Helion OpenStack&#174; Back Up and Restore
 
@@ -460,7 +460,7 @@ During the period that the server is re-building, you can temporarily restart th
 		os-svc-enable-upstart cinder-volume enable
 		service cinder-volume start
 
-After the the management controller is rebuilt, use the following steps below to disable the temporary solution:
+After the management controller is rebuilt, use the following steps below to disable the temporary solution:
 
 1. SSH to the same UnderCloud controllers where cinder-volume was enable before
 
@@ -547,7 +547,7 @@ If the admin user password was changed from the original password created during
 3. Open the `/root/tripleo/tripleo-undercloud-passwords` file.
 4. Update the `UNDERCLOUD_ADMIN_PASSWORD=` line with the new password and save the file.
 5. Open the file `/root/tripleo/ce_env.json`. 
-6. Update the the `undercloud` line with the new password and save the file.
+6. Update the `undercloud` line with the new password and save the file.
 7. SSH to the undercloud server.
 8. Open the `/root/stackrc` file.
 9. Update the `OS_PASSWORD=` line with the new password and save the file.
