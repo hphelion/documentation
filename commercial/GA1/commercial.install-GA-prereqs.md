@@ -89,6 +89,8 @@ Network architecture diagram for KVM
 
 You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.
 
+The Service network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
+
 **Notes:**
 
 - DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
@@ -192,7 +194,7 @@ Use the following command to install these packages:
 
   `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
 
-After you install the `libvirt` packages, you must reboot or restart `libvirt`:
+After you install the `libvirt` packages, you must reboot or restart `libvirt`: 
 
     $ sudo /etc/init.d/libvirt-bin restart
 

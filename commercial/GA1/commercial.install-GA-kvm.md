@@ -151,7 +151,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 ### Install the seed VM and build your cloud<a name="startseed"></a>
 
 1. Make sure you are logged into the seed VM host as root. If not:
-
+ 
 		sudo su -
 
 2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.

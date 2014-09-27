@@ -23,7 +23,7 @@ PageRefresh();
 
 
 # HP Helion OpenStack&#174; Support Matrix
-
+ 
 To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 

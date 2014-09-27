@@ -22,7 +22,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Configuring your Helion network securely
 
-The Helion OpenStack Commercial release has many built-in security controls, but the customer must take responsibility for configuring the network devices which integrate Helion services into an existing data center environment.  
+The Helion OpenStack Commercial release has many built-in security controls, but you must take responsibility for configuring the network devices which integrate Helion services into an existing data center environment.  
 
 Secure configuration includes defining firewall rules at the edge of the Helion deployment to protect against external abuse as well as defining router rules within the Helion deployment to protect against insider abuse or error.
 
@@ -30,20 +30,22 @@ Helion is deployed on three physical networks: IPMI, Fiber Channel, and the Clou
 
 <img src = "/content/documentation/media/Helion_Security1.png">
 
-In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that the Helion OpenStack Commercial release includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices, as indicated in the sections that follow, will provide increased security.
+In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  
+
+The following sections provide guidance on how to configure these network devices for improved security.  Note that the Helion OpenStack Commercial release includes IPtables rules on each node to close network ports that are not needed. Applying additional rules to your network devices, as indicated in the sections that follow, will provide increased security.
 
 ## Securing the Perimeter<a name="perimeter"></a>
 
 The perimeter is indicated by the *customer firewall* icon in the previous diagram.
 
-To protect against external attack on Helion services, your firewall should be configured with a rule to block any request originating from outside the network attempting to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the Helion installation, as indicated in this table:
+To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the Helion installation, as indicated in this table:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
 <th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
 </tr>
 <tr>
-<td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>80, 443</td>
+<td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>80</td>
 </tr>
 <td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
 </tr>
@@ -51,13 +53,15 @@ To protect against external attack on Helion services, your firewall should be c
 
 You need to allow traffic to flow to and from the External network (indicated in green in the previous diagram) from outside the cloud, as needed by the applications running in your Virtual Machines.  
 
-## Securing the Swift back-end network connections<a name="back-end"></a>
+## Securing the Object Operations (Swift) back-end network connections<a name="back-end"></a>
 
-Swift requests travel from the external network, to a HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows:
+Object Operations service (Swift) requests travel from the external network, to a HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows: 
 
 <img src = "/content/documentation/media/ ">
  
-You may choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Swift Object nodes from compute nodes.  (Valid user requests from the compute nodes will be passed via the HAproxy on the Controller nodes).  You could block requests from the external network to Swift Object nodes (as already mentioned for the firewall configuration). When adding rules to your router, take care not to introduce rules that will prevent authorized network traffic between nodes.
+You may choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Swift Object nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed via the HAproxy on the Controller nodes. 
+
+You can block requests from the external network to the Object Operations nodes (Swift), as already mentioned for the firewall configuration. When adding rules to your router, take care not to introduce rules that will prevent authorized network traffic between nodes.
 
 The following table describes the data flow between Helion nodes for Swift back-end traffic:
 
@@ -198,7 +202,7 @@ The following diagram depicts a logical deployment after applying ACLs for flows
 <img src = "/content/documentation/media/Helion_Security7.png">
 
 
-Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with Helion nodes described above. This includes SSMC console access and Service Processor communication. 
+Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with Helion nodes described in this section. This includes SSMC console access and Service Processor communication. 
 
 StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Storage Physical Planning Manual](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf).
 
@@ -221,20 +225,20 @@ StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Sto
 
 ## Securing ESX network connections in Helion<a name="esx"></a>
 
-If your deployment of Helion includes the ESX Integration, you can improve network security by configuring access control lists for the ESX network.  The ESX Tenant network (also shown below) is managed by Neutron.  The ESX network is not installed or managed by Helion. The customer installs and manages this network and makes sure there is a route to the Management network.  
+If your deployment includes ESX Integration, you can improve network security by configuring access control lists for the ESX network.  The ESX Tenant network (also shown below) is managed by the Networking Operations service (Neutron).  The ESX network is not installed or managed by HP Helion OpenStack. You must install and manage this network and makes sure there is a route to the Management network.  
 
 The ESX network is used for:
 
-- Traffic between OVSvApp VMs running on every ESX Host to communicate with the Neutron message queue on the Cloud Controller
-- The vCenter Proxy to communicate with the message queue for Cinder and Nova
-- EON to communicate with the vCenter server
+- Traffic between OVSvApp VMs running on every ESX Host to communicate with the Network Operations message queue on the overcloud controller
+- The vCenter Proxy to communicate with the message queue for the Volume Operations service (Cinder) and the Compute Operations service (Nova)
+- The EON service to communicate with the vCenter server
 
-The following diagram depicts the following Logical deployment of the ESX Integration in Helion::
+The following diagram depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack:
 
 <img src = "/content/documentation/media/Helion_Security8.png">
  
 
-The following table describes the data flow between Helion nodes and ESX nodes:
+The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -260,7 +264,7 @@ The following table describes the data flow between Helion nodes and ESX nodes:
 
 ## The Service network<a name="service"></a>
 
-The Service Network (SVC) is created by Neutron.  It provides a path from Development Platform services (such as Database as a Service) running in Nova VMs to the Centralized Logging Service running in the Undercloud.   A route needs to exist from service subnet in Over Cloud to the RabbitMQ on the Under Cloud controller.
+The Service Network (SVC) is created by the Network Operation service.  SVC provides a path from Development Platform services (such as Database as a Service) running in Compute Operations VMs to the Centralized Logging Service running in the undercloud.   A route needs to exist from service subnet in the overcloud to the RabbitMQ on the undercloud controller.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
