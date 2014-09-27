@@ -17,9 +17,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/vsa/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/ovsvapp/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
 HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. 
