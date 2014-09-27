@@ -30,7 +30,7 @@ This page provides an overview of the hardware and software that is supported fo
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
-* [Supported Configurations](supportedconfigurations)
+* [Supported Configurations](#supportedconfigurations)
 * [Hardware and Network Configuration](#baremetal)
 * [Usable Capacity](#usable-capacity)
 * [Physical Network architecture](#physical-network-architecture)
