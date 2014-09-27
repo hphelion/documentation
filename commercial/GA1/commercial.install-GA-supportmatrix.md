@@ -30,7 +30,6 @@ This page provides an overview of the hardware and software that is supported fo
 
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
-* [Supported Configurations](#supportedconfigurations)
 * [Hardware and Network Configuration](#baremetal)
 * [Usable Capacity](#usable-capacity)
 * [Physical Network architecture](#physical-network-architecture)
@@ -49,7 +48,7 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8;">
-<th> HP Servers</th>
+<th> HP </th>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -144,6 +143,12 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 
 <tr style="background-color: white; color: black;">
 <td> 
+<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant DL388e Server</a>
+</td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> 
 <a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290">HP ProLiant DL560 Gen8 Server</a>
 </td>
 </tr>
@@ -220,27 +225,8 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 </td>
 </tr>
 
-<tr style="background-color: #C8C8C8;">
-<th> HP Storage</th>
-</tr>
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP 3PAR StoreServ 7000 Storage</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP 3PAR StoreServ 10000 Storage</a>
-</td>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP StoreVirtual 4000</a>
-</td>
-
-</tr></table>
+</table>
 
 ## Supported Configurations<a name="supportedconfigurations"></a>
 
@@ -264,10 +250,11 @@ HP supports the following configurations for HP Helion OpenStack deployment:
    
      
 ## Hardware and Network Configuration<a name="baremetal"></a>
+
 You must have the following hardware and network configuration:
 
-* At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
- 
+- At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
+
 Additional requirements are as follows:
 
 - For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
@@ -276,39 +263,35 @@ Additional requirements are as follows:
 	- For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
 	- To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
 
+- The BIOS configured: 
+	- To the correct date and time
+	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
-* The BIOS configured: 
-   
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+- The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
+- For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
-* The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
-* For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
+	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
-    **Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
+- An additional system to run the baremetal installer and host the seed VM meeting the requirements in the table below. Other requirements and recommendations are as follows:
 
-* An additional system to run the baremetal installer and host the seed VM meeting the requirements in the table below. Other requirements and recommendations are as follows:
+	- The Ubuntu 14.04 operating system must be installed
+	- A browser to access the undercloud or overcloud
+	- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+	- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
-    * The Ubuntu 14.04 operating system must be installed
-    * A browser to access the undercloud or overcloud
-    * A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
-    * A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
+-You must also satisfy these network configuration requirements:
 
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+ - The seed VM, the baremetal systems and the baremetal controllers must be on the same network
 
-* You must also satisfy these network configuration requirements:
+- Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
-    * The seed VM, the baremetal systems and the baremetal controllers must be on the same network
+- The seed VM, the baremetal systems, and the BMC (IPMI controller) for all baremetal systems must be on a common network.
 
-    * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
+- If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 
-	* The seed VM, the baremetal systems, and the BMC (IPMI controller) for all baremetal systems must be on a common network.
-
-    * If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
-
-    * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
-
+- The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
 
 
 <table style="text-align: left; vertical-align: top;">
@@ -449,16 +432,16 @@ The following table shows the minimum recommendations for hardware by node type.
 
 <table style="text-align: left; vertical-align: top;">
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
-<th>Node Type</th>
+<th>Node type</th>
 <th>Virtual/physical</th>
-<th>CPU Cores</th>
+<th>CPU cores</th>
 <th>Memory</th>
-<th>Internal Storage</th>
+<th>Internal storage</th>
 <th>NICs</th>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> KVM Host</td>
+<td> KVM host</td>
 <td> Baremetal</td>
 <td>4* </td>
 <td> 8 GB*</td>
@@ -467,7 +450,7 @@ The following table shows the minimum recommendations for hardware by node type.
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Undercloud Controller</td>
+<td> Undercloud controller</td>
 <td> Baremetal</td>
 <td>8 </td>
 <td> </td>
@@ -476,7 +459,7 @@ The following table shows the minimum recommendations for hardware by node type.
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Overcloud Controller </td>
+<td>Overcloud controller </td>
 <td> Baremetal</td>
 <td>8 </td>
 <td> </td>
@@ -540,7 +523,7 @@ The following table maps the minimum server configuration into usable capacity o
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Service</th>
-<th>Usable Capacity</th>
+<th>Usable capacity</th>
 <th>Notes</th>
 </tr>
 
@@ -557,7 +540,7 @@ The following table maps the minimum server configuration into usable capacity o
 </tr>		
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Object Storage</td>
+<td> Object storage</td>
 <td> 400 GB; equivalent to:
 <ul><li>160 images, based on 2.5 GB images</li>
 or
@@ -647,7 +630,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Undercloud Management </td>
+<td> Undercloud management </td>
 <td> <ul><li>Traffic for undercloud internal OpenStack calls, Glance image downloads, etc.</li>
 <li>Provides access to undercloud API endpoints</li>
 <li>Used to PXE boot overcloud servers</li>
@@ -658,7 +641,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/ga/i
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Overcloud Management </td>
+<td> Overcloud management </td>
 <td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
 <td> Untagged </td>
 <td> eth0</td>
@@ -728,5 +711,5 @@ Prepare your environment for the installation, see [HP Helion OpenStack&#174; In
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
-####OpenStack Trademark Attribution
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
