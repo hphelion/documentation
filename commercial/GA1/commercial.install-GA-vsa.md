@@ -74,7 +74,7 @@ HP StoreVirtual enables the following features in HP Helion OpenStack:
 
 ##Cinder Architecture<a name="cinder-architecture"></a>
 
-Cinder is the block-based storage component of the HP OpenStack Helion platform for cloud computing. It provides the software to create and centrally manage a service that provisions storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder can also be used independent of other OpenStack services. Cinder is based on the distributed architecture which has inherent tenets to scale horizontally and serve concurrent volume management requests. 
+Cinder is the block-based storage component of the HP Helion OpenStack platform for cloud computing. It provides the software to create and centrally manage a service that provisions storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder can also be used independent of other OpenStack services. Cinder is based on the distributed architecture which has inherent tenets to scale horizontally and serve concurrent volume management requests. 
 
 Cinder consists of three basic services:
 
@@ -233,9 +233,9 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 #### Enrolling the New Baremetal Server<a name="enroll-new-baremetal-server"></a>
 
-To deploy HP StoreVirtual, you need to first enroll the baremetal server and then, update the Helion config file and the overcloud. Perform the following commands:
+To deploy HP StoreVirtual, you need to first enroll the baremetal server and then, update the HP Helion OpenStack config file and the overcloud. Perform the following commands:
 
-1. SSH to Undercloud as heat-admin from Seed
+1. SSH to undercloud as heat-admin from Seed
 
          ssh heat-admin@<IP Address>
          sudo -i
@@ -475,7 +475,7 @@ To add a StoreVirtual node to any existing Management Group, do the following:
 
 	<!---Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For detailed installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
+	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
 <!---[Sirius CLI](/helion/openstack/ga/sirius-cli/) **OPTIONAL**-->
 
