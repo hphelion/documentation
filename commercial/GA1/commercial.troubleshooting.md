@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;  Troubleshooting
 
-HP Helion Openstack is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you troubleshoot these issues, we have provided possible resolutions.
+HP Helion OpenStack is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
 
@@ -49,9 +49,9 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
     The system should now boot normally.
 
-* If the overcloud controller is rebooted (due to a power issue, hardware upgrade, and so forth), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
+* If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
  
-  1. A user `root` on the overcloud controller must:
+  1. As user `root` on the overcloud controller you must:
   
         A. Run the `os-refresh-config` scripts:
 
@@ -73,7 +73,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
             # service neutron-openvswitch-agent restart
             # service neutron-server restart
 
-  2. On each overcloud node, restart the neutron and nova services:
+  2. On each overcloud node, restart the Neutron and Nova services:
   
             $ sudo service neutron-openvswitch-agent restart
             $ sudo service nova-compute restart
@@ -81,7 +81,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
             $ sudo service nova-conductor restart
 
 
-* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
+* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state in which the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
 
 * On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
 
@@ -89,14 +89,14 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
         # ip addr del 192.168.185.131/16 dev brbm
         # ovs-vsctl del-port NIC
 
-        where
-        * eth0 is the external interface
-        * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
-        * The baremetal bridge is always called 'brbm'
+     where
+       * eth0 is the external interface     
+       * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
+       * The baremetal bridge is always called 'brbm'
 
-* Before you install HP Helion Openstack's DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+* Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-    **Important**: The installation of HP Helion OpenStack's DNSaaS fails if you do not make these modifications.
+    **Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
 
     1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
     
@@ -109,12 +109,12 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
     2. Save the file.
     3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
 
-    4. Ensure there are no Heat resources in an Error state, and then delete any stale or corrupted Heat-related stacks.
+    4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
 
 
 ## Baremetal installation
 
-####PXE boot on target node keep switching between interfaces
+####PXE boot on target node keeps switching between interfaces
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -123,7 +123,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>When node boots up on iLo console it shows node waiting for PXE boot on multiple NICs.</td></tr>
+<td>When node boots up on iLO console it shows node waiting for PXE boot on multiple NICs.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Multiple NICs are enabled for Network Boot. &nbsp;</td></tr>
@@ -133,7 +133,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <td>
 <ul>
  <li>Reboot the node, using F9 to get to the BIOS configuration.
- <li>Assuming NIC1(eth0/em1) for Node is connected to private network shared across node  enable it for Network Boot. 
+ <li>Assuming NIC1(eth0/em1) for the node is connected to a private network shared across node  enable it for Network Boot. 
  <li> Select System Options > Embedded NICs
 <li> Set NIC 1 Boot Options = Network Boot
  <li>Set NIC 2 Boot Options = Disabled
@@ -144,7 +144,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 ##Network
 
-**IPMI fails with error and Unable to establish IPMI v2 / RMCP+ session** 
+**IPMI fails with error and is unable to establish IPMI v2 / RMCP+ session** 
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -173,7 +173,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Nodes PXE boot but ISCSI doesnt start</td></tr>
+<td>Nodes PXE boot but ISCSI doesn't start</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
 <td>Time and date across nodes is not correct</td></tr>
@@ -190,7 +190,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </table>
 
 ##Installation
-####ilo console hows hLinux daemon.err tgtd while pxe boot
+####iLO console shows hLinux daemon.err tgtd while PXE booting
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
 <tr style="background-color: #C8C8C8;">
@@ -201,7 +201,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 <td>PXE boot gets stuck after daemon.err tgtd</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Node doesnt have enough diskspace</td></tr>
+<td>Node doesn't have enough disk space</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
 <td><ul><li> Check if target node has disk space mentioned in baremetal.csv and is greater than Node_min_disk mentioned in tripleo/tripleo-incubator/scripts/hp_ced_functions.sh 
@@ -213,7 +213,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 
 ##Installation
-####ilo console hows nullwaiting for notice of completion while PXE boot
+####iLO console shows null waiting for notice of completion while PXE booting
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
@@ -222,23 +222,23 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 </tr>
 <tr style="background-color: white; color: black;">
 <td>System Behavior/Message</td>
-<td>Node is powered on and pxe booted but it is powered off after daemon.err and stack create fails.</td></tr>
+<td>Node is powered on and PXE booted but it is powered off after daemon.err and stack create fails.</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Probable Cause</td>
-<td>Node doesnt have enough diskspace, SAN boot is enabled for node or local disk is not attached to /sda</td></tr>
+<td>Node doesn't have enough disk space, SAN boot is enabled for node or local disk is not attached to /sda</td></tr>
 <tr style="background-color: white; color: black;">
 <td>Resolution</td>
-<td><ul><li> Installer expects that SAN boot option is disabled for nodes. Can you check if SAN boot is disabled for BL 490c </ul></li>
+<td><ul><li> Installer expects that SAN boot option is disabled for nodes. Check if SAN boot is disabled for BL 490c </ul></li>
 
 On virtual connect window, you would see the following UI. It should be marked as disabled.
 <br><br>
-Also can you boot targeted BL490c with ubuntu or any linux ISO to see what device it shows up for local disk. For installer it should be /sda
+Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device it shows as the local disk. For the installer it should be /sda
 </td>
 </table>
 
 
 ##Installation
-##NovaCompute node fails when installing Overcloud
+##NovaCompute node fails when installing overcloud
 
 
 <table style="text-align: left; vertical-align: top; min-width: 700px;">
