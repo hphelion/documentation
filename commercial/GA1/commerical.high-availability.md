@@ -17,9 +17,15 @@ PageRefresh();
 
 </script>
 
+<<<<<<< HEAD
+
+<!---<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>-->
+
+=======
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
 -->
+>>>>>>> b5324ffda9a6d4d7ab073ca248b80a984639921a
 # HP Helion OpenStack&#174; High Availability(HA)
 
 This page covers the following topics:
@@ -35,7 +41,6 @@ This page covers the following topics:
 	* [Cinder Volume](#cinder-volume)
 	* [Sherpa](#sherpa) 
 	* [nova-consoleauth](#nova-console-auth) 
-	
 * [Rebuilding or Replacing failed Controller Nodes](#replace-rebuild)
 * [Highly Available Cloud Infrastructure](#ha-cloud-infra)
 * [Availability Zones](#availability-zones)

@@ -40,9 +40,11 @@ Once you register the StoreVirtual systems as per your requirements, you can use
 
 ### Add backend<a name="add-backend"></a>
 
+Adding a StoreVirtual cluster as a backend moves the cluster to 'reserved' state which means that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
+
 To add a backend, do the following:
 
-1. In the Configure Cloud page, click the **StoreVitual** Tab.
+1. In the Configure Cloud page, click the **StoreVitual Backends** Tab.
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud Page (opens in a new window)</a>
 
@@ -71,7 +73,7 @@ Expansion allocates new clusters to an existing backend. You can select the requ
 
 To expand a backend, do the following:
 
-1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreVirtual Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Option (opens in a new window)</a>
 
@@ -94,7 +96,7 @@ To expand a backend, do the following:
 
 Shrinking removes the clusters from the backend which are allocated to your cloud. To reduce the backend, do the following:
 
-1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreVirtual Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **More** drop-down list against the Volume Backend for which you want to reduce the cluster(s) and select **Shrink Backend**.<br> Configure StoreVirtual Backend page is displayed.
 
@@ -117,11 +119,11 @@ Shrinking removes the clusters from the backend which are allocated to your clou
 
 **Note**: Before you delete a backend cluster, detach or migrate the volumes from this cluster, as this backend will not be available once it is deleted.
 
-1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreVirtual Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
-2. Click **More** drop-down list against the Volume Backend which you want to delete and select **Delete Volume Backend**.<br> A confirmation dialog box is displayed.
+2. Click **More** drop-down list against the Volume Backend which you want to delete and select **Delete volume backend**.<br> A confirmation dialog box is displayed.
 
-3. Click **Delete Volume Backend** to delete or **Cancel** to cancel the process.
+3. Click **Delete volume backend** to delete or **Cancel** to cancel the process.
 
 
 ### Generate configuration<a name="generate-config"></a>
@@ -129,7 +131,7 @@ Download the Cinder configuration relevant to the HP StoreVirtual for your cloud
 
 To generate a configuration file, do the following:
 
-1. In the Configure Cloud page, click **StoreVirtual** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreVirtual Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Option (opens in a new window)</a>
 
@@ -145,7 +147,7 @@ To generate a configuration file, do the following:
 
 To update your Overcloud with the changes, do the following:
 
-1. SSH to the Seed server as root.
+1. SSH to the Seed as root from KVM host.
 
 		ssh root@ <IP address> 
 
