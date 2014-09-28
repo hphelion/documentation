@@ -25,24 +25,27 @@ PageRefresh();
 
 This topic shows how to add a proxy node to the store account, container and object-ring.
 
+1. [Prerequisite](#prer)
+2. [Deploying new node(s)](#deploying-new-node)
 
-##Prerequisite
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed 
+##Prerequisite {#prer}
+
+1. HP Helion OpenStack&#174; cloud is successfully deployed
+2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
 2. Scale-out object-ring:1 is deployed
 
 
-##Deploying new node(s)
+##Deploying new node(s) {#deploying-new-node}
 
 Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
-
 
 
 ##Update load balancer with new Proxy nodes
  
 1. After creation of the Proxy node, list the Proxy IP addresses.
 
-		#ringos list-swift-nodes -t proxy
+		# ringos list-swift-nodes -t proxy
 
 2. Edit `swift-proxy.cfg` on each of the controller nodes. 
 
@@ -52,13 +55,13 @@ Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with 
 
 		  listen scale_swift_proxy
 		  bind 192.0.2.21:8080
-		  server <Proxy_node_hostname> <Proxy nodes IP address of >:8080 check inter 2000 rise 2 fall 5 
+		  server <Proxy node hostname> <Proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
 
 	**Note**:The number of "server" lines will equal the number of Swift Proxies you have set up.
 
 4. Restart the HA Proxy service on all these nodes.
 
-		#service haproxy restart
+		# service haproxy restart
 
 The Swift Proxies are now successfully enabled with HA Proxy. 
 

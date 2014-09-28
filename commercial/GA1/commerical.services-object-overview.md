@@ -26,7 +26,7 @@ PageRefresh();
 
 Based on OpenStack Swift, HP Helion OpenStack&#174; Object service is a redundant, scalable, durable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store large amount of unstructured data and retrieve objects in publicly accessible physical machine.   
 
-Swift is also designed to be horizontally scaling, allowing it to handle large number of simultaneous connections. It enables you to store, retrieve, and delete files and contents through a simple RESTFul API interface.
+Swift is also designed to be horizontally scalable, allowing it to handle large number of simultaneous connections. It enables you to store, retrieve, and delete files and contents through a simple RESTFul API interface.
 
 A cloud storage container provides a way to organize your objects. An object can be any arbitrary data, including a document, image, video, backup file or any  data that is required by your application.
 
@@ -40,7 +40,7 @@ HP Helion OpenStack Object&#174; service will have swift cluster as a part of cl
 
 Swift is used for two different purposes:
 
-1. Cloud Controller Service data (used for Helion OpenStack&#174; Services implementation and HA) 
+1. Cloud Controller Service data (used for Helion OpenStack&#174; Services implementation and High Availability (HA)) 
 2. Tenant Object Storage data (used by end Tenants / Project Users for scaled-out Object Storage).
 
 HP Helion OpenStack&#174; Swift which is deployed by default during installation of HP Helion OpenStack is used to serve Cloud Controller internal data. This can be expanded to scale-out to server user data storage. 

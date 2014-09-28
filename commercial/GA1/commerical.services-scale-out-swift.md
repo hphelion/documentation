@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
 -->
 
-#HP Helion OpenStack Scale-out Swift
+#HP Helion OpenStack&reg; Scale-out Swift
 
 <!---
 HP Helion OpenStack&reg; offers  an optional Swift scale-out cluster instance of between two and twelve servers that is used for production cloud Object storage use. Scale-Out Swift extends the Starter Swift Cluster, which enables greater capacity while maintaining any initial data present in Starter Swift. --->
@@ -35,12 +35,12 @@ The scale-out object storage is realized by defining a new storage policy – st
 
 You can expand the object storage by adding one or more nodes to object-ring:1. But you can still continue to use storage-policy:0, if you continue to use the old container to store data.
 
-HP Helion OpenStack Swift&reg; ships a tool set- ringos which helps to create scale-out Swift. For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
+HP Helion OpenStack Swift ships a tool set- ringos which helps to create scale-out Swift. For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
 
 
 ##Scale-out Swift architecture 
 
-The following diagram depicts the HP Helion OpenStack&reg; scale-out Swift architecture.
+The following diagram depicts the HP Helion OpenStack scale-out Swift architecture.
 
 <a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
 
@@ -48,7 +48,7 @@ The following diagram depicts the HP Helion OpenStack&reg; scale-out Swift archi
 
 ##Swift Cluster Lifecycle
 
-Swift cluster is like a data center which can be big or small based on size of cluster. It needs constant human intervention to figure out the current health and perform appropriate action.You will need to do different actions at different point in time for various reasons. For example you may like to replace failed node, you may like to increase cluster capacity as client needs more storage space, you may want to add more proxy nodes as workload needs more throughput. Most of the time, you need to keep a constant eye on cluster. The below table lists the actions that you will be doing throughout life of Swift cluster along with section which you should refer for detailed operation.
+Swift cluster is like a data center which can be big or small based on size of cluster. It needs constant human intervention to figure out the current health and perform appropriate action.You will need to do different actions at different point in time for various reasons. For example you may like to replace failed node, you may like to increase cluster capacity as client needs more storage space, you may want to add more proxy nodes as workload needs more throughput. Most of the time, you need to keep a constant eye on cluster. The below table lists the actions that you will be doing throughout the life of Swift cluster and section which you should refer for detailed operation.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -69,20 +69,24 @@ Swift cluster is like a data center which can be big or small based on size of c
 	<td>Please see <a href=" /helion/openstack/ga/services/swift/deployment-scale-out/">Deploying scale-out Swift</a></td>
     </tr>
 <tr style="background-color: white; color: black;">
-	<td>Expand Swift Cluster</td>
+	<td>Extend Swift Cluster</td>
 	<td>Please refer<a href="/helion/openstack/ga/services/object/swift/expand-cluster/">Expand Swift Cluster</a></td>
+    </tr>
+<tr style="background-color: white; color: black;">
+	<td>Shrink Swift cluster</td>
+	<td>Please refer <a href="/helion/openstack/ga/services/object/swift/shrink-cluster/">Shrink Swift Cluster</a></td>
     </tr>
 <tr style="background-color: white; color: black;">
 	<td>Monitor Swift cluster</td>
 	<td>Please refer <a href="/helion/openstack/ga/services/object/swift/Monitor-cluster/">Monitor Swift Cluster</a></td>
     </tr>
 <tr style="background-color: white; color: black;">
-	<td>Shrink Swift cluster</td>
-	<td>Please refer <a href="/helion/openstack/ga/services/object/swift/shrink-cluster/">Shrink Swift Cluster</a></td>
+	<td>Maintain Swift cluster</td>
+	<td></a></td>
     </tr>
 </table>
 
-Above event is depicted below in life-cycle diagram:
+The above event is depicted below in the  life-cycle diagram.
 
 <a href="javascript:window.open('/content/documentation/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift cluster lifecycle.(opens in a new window) </a> 
 

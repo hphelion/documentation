@@ -28,16 +28,20 @@ Using the Icinga service running in the undercloud the cloud admin can monitor t
 ##Prerequisites
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Swift node(s) are active and running
-3. Icinga service is active and running in the undercloud
+2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+3. Icinga service is active and running in the Undercloud
+
 
 
 ##Monitoring the Health of Swift Services
 
  You can monitor the health status of swift-proxy, swift-account, swift-container and swift-object services by following these steps:
 
+
+Perform the following steps to monitor the health status of Swift status:
+
 1. In the undercloud, log in to the Icinga Dashboard <http://<Undercloud_IP>/icinga/>. Log-in credentials are:
-		
+
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
@@ -52,7 +56,8 @@ Using the Icinga service running in the undercloud the cloud admin can monitor t
 <img src ="media/swift_icinga_view-details.png"/>
 
 
-The page navigates to Service Status Details for Host <Swift node IP>. The page displays the Service Status Details of the selected host. 
+The page navigates to Service Status Details For Host  &lt; Swift node IP address &gt; . The page displays the Service Status Details of the selected host. 
+
 
 <img src ="media/swift_icinga_view-status-details-host.png"/>
 

@@ -171,7 +171,13 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 17.Click **Add**.  The rule is added for the instance.<!-- (**What message is displayed after you click add??)** -->
 
+
+
+
 ##Installing and configuring DNSaaS<a name="configure"></a>
+
+**IMPORTANT**: During DNSaaS installation, non-deterministic failures within the infrastructure layer may cause the install to fail. If this occurs, DNSaaS installation should be retried up to two times.
+
 
 1. SSH to install VM
 

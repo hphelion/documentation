@@ -29,23 +29,24 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 * [Prerequisite](#Preq)
 * [Adding physical server for scale-out Swift](#adding-physical-server-for-scale-out-Swift) 
 * [Provision Swift node](#provision-swift-node)
-* [Verify Swift node deployment](#verify-Swift-node-deployment)
+* [Verify Swift node deployment](#verify-Swift-node-deployment) 
 
 ##Prerequisite {#Preq}
 
 * HP Helion OpenStack&#174; is deployed
 * Starter swift is functional; by default it is deployed as part of  the cloud deployment
 
-Before provisioning swift node(s) ensure that the all nodes are **ACTIVE** and  **Running**.
+Before provisioning swift node(s) ensure that all the nodes are **ACTIVE** and  **Running**.
 You can view the status of the nodes using the following command:
 
-	nova list
+	# nova list
 
 ##Adding physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
 
 You must add a server to the cloud inventory so that you can scale out Swift nodes. 
 
-Perform the following steps to add  a physical server to scale out Swift:
+Perform the following steps to add physical server for a scale-out Swift:
+
 
 1. Get the server details:
 
@@ -63,9 +64,10 @@ Perform the following steps to add  a physical server to scale out Swift:
 
 	**Note**: For HP servers you can use iLO to gather the above details.
 
-2. Log in to Seed 
 
-		ssh root@<Seed IP address> 
+2. Log in to Seed. 
+
+		# ssh root@<Seed IP address> 
 
 3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
 
@@ -79,22 +81,22 @@ Perform the following steps to add  a physical server to scale out Swift:
 	- The first entry is used for the undercloud.
 	- The second entry is the node with the lowest specifications (CPU/RAM/Disk size) of nodes in the overcloud.
 
-	For example, your file should look similar to the following:
+	The following sample displays the `baremetal.csv` configuration file after adding server details.
 
 		E8:39:35:2B:FB:3E,Administrator,gone2far,10.1.192.33,12,73728,70
 		E4:11:5B:B7:AD:CE,Administrator,gone2far,10.1.192.34,12,73728,70
 
-5. Log in to the undercloud 
 
-		ssh heat-admin@<Undercloud IP address> 
+5. Log in to Undercloud. 
+
+		# ssh heat-admin@<Undercloud IP address> 
 
 6. Add server details to Ironic database using the following Ironic command:
 
- 		ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
+ 		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
-	For example:
+	The following sample displays the ironic database with the new server details:
 
- 		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=73728 -p local_gb=70 -p cpu_arch=amd64 -i ipmi_address=10.1.192.33 -i ipmi_username=Administrator -i ipmi_password=gone2far
 		+--------------+-----------------------------------------------------------------------+
 		| Property     | Value                                                                 |
 		+--------------+-----------------------------------------------------------------------+
@@ -107,13 +109,13 @@ Perform the following steps to add  a physical server to scale out Swift:
 		| properties   | {u'memory_mb': u'73728', u'cpu_arch': u'amd64', u'local_gb': u'70',   |
 		|              | u'cpus': u'12'}                                                       |
 		+--------------+-----------------------------------------------------------------------+
-7.Create port, and enter the MAC address and Node ID  using the following Ironic command: 
+7.Create port, and enter the MAC address and Node ID  using the following ironic command: 
  	
-		ironic create-port -a $MAC -n $NODE_ID
+ 		 # ironic create-port -a $MAC -n $NODE_ID
 
-	For example:
+
+	The following sample displays the output of above command: 
 		
-		ironic port-create -a E8:39:35:2B:FB:3E -n 08623d52-31cc-4d47-bb29-ecf34a59019b
 		+-----------+--------------------------------------+
 		| Property  | Value                                |
 		+-----------+--------------------------------------+
@@ -124,9 +126,10 @@ Perform the following steps to add  a physical server to scale out Swift:
 		+-----------+--------------------------------------+	
 
  
-8.Verify the successful registration of a new physical server
+8.Verify the successful registration of a new physical server.
 
-	ironic node-list
+	# ironic node-list
+
 
 ##Provision Swift node {#provision-swift-node}
 
@@ -135,46 +138,49 @@ Perform the following steps to add  a physical server to scale out Swift:
 
 Perform the following steps to provision the Swift node:
 
-1. Log in to seed
+1. Log in to Seed.
 
-		ssh root@<Seed IP address>
+		# ssh root@<Seed IP address>
 
-2. Copy `ee-config.json` to the root home directory
+2. Copy `ee-config.json` to root home directory.
 
-		 cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+		 # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
 3. Edit the `overcloud-config.json` file to configure the following values as per your requirement:
  
  
-	 "so_swift_storage_scale": <number of object servers> , 
+	 "so&#95;swift&#95;storage&#95;scale": &lt;number of object servers &gt;  , 
 	
-	 "so_swift_proxy_scale": <number of proxy servers> ,
+	 "so&#95;swift&#95;proxy_scale": &lt;number of proxy servers &gt;  ,
 
 **Note**: While deploying the scale-out proxy node "so&#095;swift&#095;storage&#095;scale" must be set to 0 and while deploying the scale-out object node "so&#095;swift&#095;proxy&#095;scale" must be set to 0.
  
-4.Enter the following command to source the `overcloud_config.json`  for the new values
+4.Enter the following command to source the `overcloud_config.json`  for the new values.
 
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-5.Run the installer script to update the cloud
+5.Run the installer script to update the cloud.
 
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
-	The cloud updates with the new nodes on successful operation
+	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
+
+
+The cloud updates with the new nodes on successful operation.
 
 ##Verify Swift node deployment {#verify Swift node deployment}
 
 Ensure the deployment of the Swift node using the following commands:
 
-1. Log in to the underloud
+1. Log in to Underloud.
 
-		ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<Undercloud IP address> 
 
-2. List the available Swift nodes
+2. List the available Swift nodes.
 
-		nova list
+		# nova list
 
-This will display the available Swift nodes including the newly added node.
+It displays available Swift nodes including the newly added node.
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

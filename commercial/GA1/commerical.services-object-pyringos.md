@@ -17,11 +17,11 @@ PageRefresh();
 
 </script>
 
-#Pyringos
+#ringos
 
-The Pyringos tool runs on the Undercloud and helps to deploy Swift clusters.
+The ringos tool runs on the Undercloud and helps to deploy Swift clusters.
 
-You can use the following commands using the Pyringos Client CLI package in the undercloud.
+You can use the following commands using the ringos Client CLI package in the undercloud.
 
 * [Help Commands](#help)
 * [Ring Commands](#ring)
@@ -79,13 +79,13 @@ Adding a ring to a disk.
 * &lt;REGION>:region 
 * &lt;ZONE>: Single point failure within a cluster
                        
-
+<!---
 In the following example a disk is added to a ring:
 
 	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  192.0.2.29 -p  6000 -d a1410063335 -w 100 -r 1 -z 1
 	
 	Added disk 192.0.2.29:a1410063335 to ring
-
+--->
 
 ###View a ring<a name="view-ring"></a>
 
@@ -93,7 +93,7 @@ View contents of a given ring.
 
 	ringos view-ring -f <BUILDER>
 
-
+<!---
 In the following example, you can view the content of the ring
 
 	ringos view-ring -f /root/ring-building/object-1.builder 
@@ -107,7 +107,7 @@ In the following example, you can view the content of the ring
 	Devices:   id  region zone      ip address  port  replication ip  replication port      name weight partitions balance meta
 	
 	  0         1    1               192.0.2.29  6000      192.0.2.29      6000        a1410063335    100.00          0-100.00
-
+--->
  
 ###Re-balance a ring<a name="rebalance-ring"></a>
 Re-balances a given ring after adding disk to the ring.

@@ -23,76 +23,83 @@ PageRefresh();
 
 #Add New Scale-out Object Node
 
-Perform the following procedure to add new scale-out storage node. 
+Perform the following procedure to add new scale-out object node. 
 
 
-##Prerequisite
+1. [Prerequisite](#preq)
+2. [Deploying new object nodes](#deploy-new-object-node)
+3. [Adding node and disks to object-ring:1](#add-disk-node)
+4. [Re-balancing the ring](#rebalance-ring)
+5. [Copying object-ring:1 to all nodes](#copy-object-node)
+
+
+##Prerequisite {#preq}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Scale-out object-ring:1 is deployed
+2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+3. Scale-out object-ring:1 is deployed
 
-##Deploying new object nodes
+##Deploying new object nodes {#deploy-new-object-node}
 
 Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
 
 
-## Adding node and disks to object-ring:1
+## Adding node and disks to object-ring:1 {#add-disk-node}
 
 Once the Swift nodes are deployed, ensure that you format the required disks and mount them before adding disks to the Swift cluster. 
 
-1. Format a given disk
+1. Format a given disk.
 
-		#ringos format-disks -n <Swift nodes IP address> -d all
+		# ringos format-disks -n <Object node IP address> -d <disk>
 
-For more details,refer [ringos Manual]( /helion/openstack/GA1/services/object/pyringos/) 
+**Note**: You can format all the disks with a single command (-d --all). 
 
 
 2.Add disk to the ring. 
 
-	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Swift nodes IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
+	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
+<!---
+In the following sample displays the addition of disk to **192.0.2.29** and its output:
 
-In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
-
-	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
-	Added disk 192.0.2.29:a1410063335 to ring
+	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
+	Added disk 192.0.2.29:a1410063335 to ring --->
 
 
 3.Verify the contents of `object-1.builder` file to ensure that the new node and disk are added to your existing ring.
 
-	#ringos view-ring -f /root/ring-building/object-1.builder
+	# ringos view-ring -f /root/ring-building/object-1.builder
 
-## Re-balance the ring
+## Re-balancing the ring {#rebalance-ring}
 
-1. Re-balance the ring
+1. Re-balance the ring.
 
-		#ringos rebalance-ring -f /root/ring-building/object-1.builder
+		# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 	This will generate an **object-1.ring.gz** file.
 
-2. Verify the content in the `object-1.builder` file after rebalancing the ring.
+2. Verify the content in `object-1.builder` file after re-balancing the ring.
 
-		#ringos view-ring -f /root/ring-building/object-1.builder
+		# ringos view-ring -f /root/ring-building/object-1.builder
 
-##Copying Object-ring:1 to all nodes
+
+##Copying object-ring:1 to all nodes{#copy-object-node}
 
 1. List all the Swift nodes. 
 
-		#ringos list-swift-nodes -t  all
+		# ringos list-swift-nodes -t  all
  
-2. Copy the account, container, object-0 , and generated `object-1.ring.gz` files to new nodes. 
+2. Copy account, container, object-0 , and generated `object-1.ring.gz` files to new nodes and press **yes** when asked to authenticate node. 
 
-		#ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift nodes IP address>
 
 
-Press **yes** when asked to authenticate node.  
+	The sample of authentication node will be displayed as follows:
 
-The sample of authentication node will be displayed as follows:
-
-	The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
-	ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
-	Are you sure you want to continue connecting (yes/no)? yes
-	Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
+		The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
+		ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
+		Are you sure you want to continue connecting (yes/no)? yes
+		Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -31,7 +31,7 @@ The HP Smart Storage Administrator CLI (HPSSACLI) is a commandline-based disk co
 
 ##Deployment of utility on servers
 
-The hpssacli utility is deployed onto the servers wherever the disks are to be monitored. For example: Swift, VSA, and Compute nodes. This page explains about the collection of diagnostic report of disks in the servers where the utility is loaded.
+The hpssacli utility is deployed onto the servers wherever the disks are to be monitored. For example:  Swift, VSA, and Compute nodes. This page explains about the collection of diagnostic report of disks in the servers where the utility is loaded.
 
 ###Download the hpssacli utility into the KVM host
 
@@ -48,28 +48,28 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 1. Copy the package from KVM host to SEED.
 
-		scp hpssacli.tar.gz root@1<IP address of Seed>
+		# scp hpssacli.tar.gz root@<IP address of Seed>
 
 2. Copy the package from SEED to machine where the disks to be monitored.
 
-		scp hpssacli.tar.gz heat-admin@<IP address of machine>
+		# scp hpssacli.tar.gz heat-admin@<IP address of machine>
 
-3. Login to the server where the utility is copied and install the package.
+3. Log in to the server where the utility is copied and install the package.
 
-		ssh heat-admin@<IP address of machine>
+		# ssh heat-admin@<IP address of machine>
 
 4. Change the directory
 
-		cd /home/heat-admin/
+		# cd /home/heat-admin/
 		
 5. List the files
 
-		ls
+		# ls
 	All the files present in that directory will be displayed.
 
 6. Search `tar -xvf hpssacli.tar.gz`
 
-7. Extract the tar file. 
+7. Extract the tar file 
 
 		 tar -xvf hpssacli.tar.gz
 
@@ -81,23 +81,25 @@ Use `scp` to copy the utility package on to the servers and install it.
  
 	**Note**: The diagnostics can be done in the server or from SEED through ssh.
 
-9. You can collect the diagnostic report of the controller either in server or through SEED using ssh.
+9. You can collect the diagnostic report of the controller either in server or through Seed using ssh.
 
 
 **To collect the diagnostic report of the controllers in the server**
+<!---
+1. Log in to the server
 
-1. Login to the server
-
-		ssh heat-admin@<IP address of machine>
+		# ssh heat-admin@<IP address of machine>
 2. Change the directory
 
 		/home/heat-admin/hp/hpssacli/bld
+--->
 
-3. To know the controller slot
+1. Enter the following command to know the controller slot
 		
 		./hpssacli ctrl all show status
  
-The slot details appear as shown in the following example:
+The following sample displays slot details:
+
 		Smart Array P420i in Slot 0 (Embedded)
 		
 		   Controller Status: OK
@@ -106,27 +108,145 @@ The slot details appear as shown in the following example:
 		
 		   Battery/Capacitor Status: OK
 
-4.To generate the diagnostic report of the particular slot
+2.Generate the diagnostic report of the particular slot
 
-		./hpssacli ctrl slot=0 diag file=<filenmae.zip>
+		./hpssacli ctrl slot=(slot number) diag file=<filename.zip>
+Or,
 
-or 
- To generate the diagnostic report for all slots
+Generate the report of all the slots 
 
 		./hpssacli ctrl all diag file=<filename.zip>
 
 
 The file will be in location you mentioned.
 
-5.Copy the generated file to the desired location
+3.Copy the generated file to the desired location.
 
-6. Extract the file
+4.Extract the file
 
-7. Open the ADUReport.htm file in the browser.
-
-
+OR
 
 
+**To generate diagnostic report using ssh from Seed**
+
+<!---
+1. Log in to the server
+
+		ssh heat-admin@<Machine IP address>
+
+2. Change the directory
+
+		/home/heat-admin/hp/hpssacli/bld
+--->
+
+3. Generate the diagnostic report of the particular slot
+
+		 ssh heat-admin@<Machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> diag file=all_details
+
+4. Copy the report from the server to Seed Vm
+
+ 		# scp heat-admin@<Machine IP address>:/home/heat-admin/<filename.zip> 
+
+5. Copy the report <filename.zip> to the KVM_host.
+	
+		# scp all_details.zip ubuntu@<KVM_Host IP address>:
+
+6. Enter login credentails ???
+
+5. Extract the file.
+
+
+10.Open the `ADUReport.htm` file in the browser. The html page displays complete details of the controller and the health status of the physical disks available in the machine.
+
+<image = utility_ADUR-report>
+
+11.Generate SmartSSD Wear Gauge Report either from local server or Seed
+
+* From local server
+
+		/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on
+* From Seed
+
+		# ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> diag file=<filename.zip>
+
+**Now retrieve the ssd_report.zip to kvm host using scp from server to analyse.??? is this applicable for seed only??** 
+
+The following SmartSSDWearGaugeReport.txt sample file displays the details of the  SSD drives. 
+
+	
+	ADU Version                             2.0.22.0
+	
+	Diagnostic Module Version               8.0.22.0
+	
+	Time Generated                          Tuesday September 16, 2014 12:26:57PM
+	
+	Device Summary:
+	
+	   Smart Array P420i in Embedded Slot
+	
+	Report for Smart Array P420i in Embedded Slot
+	
+	---------------------------------------------
+	
+	Smart Array P420i in Embedded Slot : Internal Drive Cage at Port 2I : Box 2 : Physical Drive (400 GB SAS SSD) 2I:2:6 : SmartSSD Wear Gauge
+	
+	   Status                               OK
+	
+	   Supported                            TRUE
+	
+	   Log Full                             FALSE
+	
+	   Utilization                          0.000000
+	
+	   Power On Hours                       1798
+	
+	   Has Smart Trip SSD Wearout           FALSE
+	
+	Smart Array P420i in Embedded Slot : Internal Drive Cage at Port 2I : Box 2 : Physical Drive (400 GB SAS SSD) 2I:2:7 : SmartSSD Wear Gauge
+	
+	   Status                               OK
+	
+	   Supported                            TRUE
+	
+	   Log Full                             FALSE
+	
+	   Utilization                          0.000000
+	
+	   Power On Hours                       1797
+	
+	   Has Smart Trip SSD Wearout           FALSE
+	
+	Smart Array P420i in Embedded Slot : Internal Drive Cage at Port 2I : Box 2 : Physical Drive (400 GB SAS SSD) 2I:2:8 : SmartSSD Wear Gauge
+	
+	   Status                               OK
+	
+	   Supported                            TRUE
+	
+	   Log Full                             FALSE
+	
+	   Utilization                          0.000000
+	
+	   Power On Hours                       1798
+	
+	   Has Smart Trip SSD Wearout           FALSE
+
+
+
+##Other useful commands
+
+1. To get the details of the physical disks and also the logical group status on the server
+
+        ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> show config detail"
+
+ 
+
+2. To execute other operations on physical drives
+
+        ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli help physicaldrive"
+
+3. Use help to explore other options with the utility
+
+        ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli help"
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
