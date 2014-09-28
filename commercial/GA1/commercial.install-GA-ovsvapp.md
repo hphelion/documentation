@@ -45,11 +45,15 @@ The following topics in this section explain how to deploy and verify deployment
 
 Before you install the OVSvApp, ensure the following:
 
-* The HP Helion OpenStack must be installed and configured.
+- The HP Helion OpenStack must be installed and configured.
 
-* The VMware vSphere&reg; platform must be installed and configured.
+- The VMware vSphere&reg; platform must be installed and configured.
 
-* The vCenter server must be reachable from the server where OVSvApp VM installation is triggered. 
+- The vCenter server must be reachable from the server where OVSvApp VM installation is launched. 
+
+- Unset the `https_proxy` environment variable on the server where OVSvApp VM deployment will be launched, using the following command:
+
+	unset https_proxy
 
 - The VM port binding is with the host name of the OVSvApp VM on the ESX Compute host which provisioned the tenant VM.
 
@@ -90,7 +94,7 @@ Before you install the OVSvApp, ensure the following:
 
 * The OVSvApp appliance supports ESX hosts with version 5.1.0 or greater. Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
 
-* The ESX host must be reachable from the server where OVSvApp VM installation is triggered. The IP address of each ESX host should be the same IP address used by the vCenter. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
+* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The IP address of each ESX host should be the same IP address used by the vCenter. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
 
 - All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.
 
@@ -174,9 +178,12 @@ To deploy the OVSvApp:
 		cd /vmware-tools-distrib
 		./vmware-tools-install.pl  --default
 
-	Verify that VMWare Tools is running. Do not proceed with the installation if VMWare Tools is not running.
+	Verify that VMWare Tools is running using the following command: 
 
-	Follow the instructions to continue the installation.
+		service vmware-tools status
+
+	Do not proceed with the installation if VMWare Tools is not running.
+
 
 8. When the installation completes, shutdown the OVSvApp appliance.
 
@@ -204,7 +211,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 
 1. Modify the `ovs_vapp.ini` file by adding settings for cloning and configuring OVSvApp VMs: 
 
-	a. Locate the `ovs_vapp.ini` file in the `/ovsvapp/hp-ovsvapp/src/ovsvm` directory.
+	a. Locate the `ovs_vapp.ini` file in the `/ovsvapp/hp-ovsvapp/conf` directory.
 	
 	b. Add VMware settings.
 	
@@ -403,10 +410,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		#Log level. Such as DEBUG, INFO
 		log_level=DEBUG
 
-2. Invoke the installer using the following commands:
-
-	cd /hp-ovsvapp/src/ovsvm/
-	Invoke the installer using the following commands:
+3. Invoke the installer using the following commands:
 
 		sudo su
 		cd /hp-ovsvapp/src/ovsvm/
@@ -462,7 +466,17 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
 
-If the `neutron agent list` command shows a specific OVSvApp agent up and running, but ESX maintenance mode is triggered, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor = false` in the `/etc/neuton/neutron.conf` file. Restart the server to take effect.
+	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but ESX maintenance mode is launched, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor = false` in the `/etc/neuton/neutron.conf` file. Restart the server to take effect.
+
+If you experience issues while installing the VMWare Tools, try and of the following references for help:
+
+- For any issues while installing VMware Tools: 
+<br>	[VMware Knowledge Base](http://kb.vmware.com/) 
+<br>	[VMware Support](https://www.vmware.com/support/vsphere/) 
+
+- For any Operating System related issues:
+<br>	[hLinux Bugzilla](http://hlinux-home.usa.hp.com/bugzilla/) 
+
 
 ## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
 
