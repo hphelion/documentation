@@ -23,24 +23,25 @@ PageRefresh();
 
 # Service Health Check 
 
-Using the "icinga" service running in the undercloud the cloud admin can monitor the health status of Account/Container/Proxy and Object services. 
+Using the Icinga service running in the undercloud the cloud admin can monitor the health status of Account/Container/Proxy and Object services. 
 
-##Prerequisite
+##Prerequisites
 
-1. HP Helion OpenStack cloud is successfully deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed
 2. Starter swift is functional which by default gets deployed as part of deployment of cloud
 3. Icinga service is active and running in the Undercloud
 
 
-##Monitoring Health of Swift Services
 
- You can monitor the health status of swift-proxy, swift-account, swift-container and swift-object services. 
+##Monitoring the Health of Swift Services
+
+ You can monitor the health status of swift-proxy, swift-account, swift-container and swift-object services by following these steps:
 
 
 Perform the following steps to monitor the health status of Swift status:
 
-1. In the Undercloud, log in to Icinga Dashboard <http://<Undercloud_IP>/icinga/>. Login credentials are:
-		
+1. In the undercloud, log in to the Icinga Dashboard <http://<Undercloud_IP>/icinga/>. Log-in credentials are:
+
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
@@ -50,24 +51,25 @@ Perform the following steps to monitor the health status of Swift status:
 <img src ="media/icinga_host-details.png/">
 
 
-3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
+3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note you will see a tooltip that shows View service details for this host)  
 
 <img src ="media/swift_icinga_view-details.png"/>
 
 
 The page navigates to Service Status Details For Host  &lt; Swift node IP address &gt; . The page displays the Service Status Details of the selected host. 
 
+
 <img src ="media/swift_icinga_view-status-details-host.png"/>
 
 
 
-Now, you view the health status of the selected Swift node.
+Now you may view the health status of the selected Swift node.
 
 <img src ="media/swift_icinga-health-status.png"/>
 
 
 
-Refer the following table for the status and message details.
+Refer to the following table for status and message details.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -77,15 +79,15 @@ Refer the following table for the status and message details.
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>Ok</td>
+	<td>OK</td>
     <td></td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
 	<td>Disabled : proxy-server</td>
     <td>Service is temporarily disabled.<br><br>
-	The proxy-server has been disabled by the creation of a file in the "disable_path" config parameter. This is often used to temporarily disable a proxy server by removing it from
-	load-balancer or high availability system. To resolve, delete the file named by the "disable_path" configuration parameter.</td>
+	The proxy-server has been disabled by the creation of a file in the "disable_path" config parameter. This is often used to temporarily disable a proxy server by removing it from the
+	load balancer or high availability system. To resolve this issue, delete the file indicated in the "disable_path" configuration parameter.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
@@ -95,15 +97,11 @@ Refer the following table for the status and message details.
 </table>
 
 
-
-
-
-
-
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
  

@@ -23,7 +23,7 @@ PageRefresh();
 
 #Add New Proxy Node
 
-You can add proxy node to store account, container and object-ring.
+This topic shows how to add a proxy node to the store account, container and object-ring.
 
 1. [Prerequisite](#prer)
 2. [Deploying new node(s)](#deploying-new-node)
@@ -31,19 +31,19 @@ You can add proxy node to store account, container and object-ring.
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack cloud is successfully deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed
 2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
 2. Scale-out object-ring:1 is deployed
 
 
 ##Deploying new node(s) {#deploying-new-node}
 
-Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
+Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
 
 
 ##Update load balancer with new Proxy nodes
  
-1. After creation of Proxy node, list the Proxy IPs.
+1. After creation of the Proxy node, list the Proxy IP addresses.
 
 		# ringos list-swift-nodes -t proxy
 
@@ -57,15 +57,18 @@ Perform the following steps mentioned in  [Procedure to deploy scale-out Swift n
 		  bind 192.0.2.21:8080
 		  server <Proxy node hostname> <Proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
 
-	**Note**:You will have the number of "server" lines equal to number of Swift Proxies you have setup.
+	**Note**:The number of "server" lines will equal the number of Swift Proxies you have set up.
 
-4. Restart HA Proxy service on all these nodes.
+4. Restart the HA Proxy service on all these nodes.
 
 		# service haproxy restart
 
-Thus the Swift-Proxies are successfully enabled with HA Proxy. 
+The Swift Proxies are now successfully enabled with HA Proxy. 
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

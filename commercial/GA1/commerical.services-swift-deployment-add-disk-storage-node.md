@@ -35,18 +35,18 @@ Perform the following procedure to add new scale-out object node.
 
 ##Prerequisite {#preq}
 
-1. HP Helion OpenStack cloud is successfully deployed 
+1. HP Helion OpenStack&#174; cloud is successfully deployed 
 2. Starter swift is functional which by default gets deployed as part of deployment of cloud
-2. Scale-out object-ring:1 is deployed
+3. Scale-out object-ring:1 is deployed
 
 ##Deploying new object nodes {#deploy-new-object-node}
 
-Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
+Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
 
 
 ## Adding node and disks to object-ring:1 {#add-disk-node}
 
-Once the Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
+Once the Swift nodes are deployed, ensure that you format the required disks and mount them before adding disks to the Swift cluster. 
 
 1. Format a given disk.
 
@@ -66,7 +66,7 @@ In the following sample displays the addition of disk to **192.0.2.29** and its 
 	Added disk 192.0.2.29:a1410063335 to ring --->
 
 
-3.Verify the contents of `object-1.builder` file to ensure that new node and disk are added to your existing ring.
+3.Verify the contents of `object-1.builder` file to ensure that the new node and disk are added to your existing ring.
 
 	# ringos view-ring -f /root/ring-building/object-1.builder
 
@@ -101,8 +101,9 @@ In the following sample displays the addition of disk to **192.0.2.29** and its 
 		Are you sure you want to continue connecting (yes/no)? yes
 		Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 
- 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

@@ -33,7 +33,7 @@ Once all the disks of the node are removed then the Scale-out object node can be
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack cloud is successfully deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed
 2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
 3. Scale-out object-ring:1 is deployed
 4. Scale-out object-ring:1 is deployed

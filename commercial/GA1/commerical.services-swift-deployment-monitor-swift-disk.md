@@ -28,7 +28,7 @@ Icinga service, which runs in the Undercloud, helps cloud admin to monitor the d
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed. 
+1. HP Helion OpenStack&#174; cloud is successfully deployed. 
 2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
 3. Icinga service is active and running in the Undercloud
 

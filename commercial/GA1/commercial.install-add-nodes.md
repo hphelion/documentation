@@ -24,117 +24,163 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Add and Remove Nodes
 
-This document describes the steps to Scale In Or Scale Out the VSA and Compute Nodes on an already installed Overcloud 
-Prerequisite
+This document describes the steps to add and remove nodes (scale in or scale out the VSA and Compute nodes) on an already installed overcloud 
 
-Install Seed, undercloud and OverCloud using the EE Installer with USE_TRICKLE=1 which is default installation.
-Scale Out Nodes
-Scenario 1 - There are already pre-allocated empy baremetal nodes which were created during the first install and can be used for adding new nodes
+- [Prerequisites](#pre)
+- [Add nodes](#add)
+- [Remove nodes](#pre)
 
-    SSH to Seed VM
+## Prerequisites ## {#pre}
 
-    Maintain the Scale Counts in environment variables file (env_vars) which is used during the initial installation (Big Bang Installation)
+Before adding and removing nodes, make sure th
 
-    To Scale Out vsa storage nodes, Update OVERCLOUD_VSA_STORAGESCALE to appropriale scale number.  For example - If there is already an existing VSA node, to add 1 more VSA node,
-    export OVERCLOUD_VSA_STORAGESCALE=2
+- The seed VM, undercloud and overcloud are installed. The using the EE Installer with USE_TRICKLE=1 which is default installation.
 
-    To Scale Out vsa ao storage nodes, Update OVERCLOUD_VSA_AO_STORAGESCALE to appropriale scale number. For example - If there is already an existing VSA AO node, to add 1 more node,
-    export OVERCLOUD_VSA_AO_STORAGESCALE=2
+## Add Nodes ## {#add}
 
-    To Scale Out compute nodes, Update OVERCLOUD_COMPUTESCALE  to appropriale scale number. For example - If there is already an existing Compute node, to add 1 more Compute node, 
-    export OVERCLOUD_COMPUTESCALE=2
+To add nodes, use the following procedures, depending on whether the nodes were allocated during the install:
 
-    Apply the configuration. Source the environment variables file updated in last Step. For example 
-    source /root/env_vars
+- [Pre-Allocated Empty Baremetal Nodes](#pre)
+- [Non-Allocated Empty Baremetal Nodes](#non)
 
-    Run the installer script
-    bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+### Scenario 1 - Pre-Allocated Empty Baremetal Nodes ### {#pre}
 
-    If because of some reason, the above command fails, try the alternative approach
-    export OVERCLOUD_SCALE_NODES=1
-    bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+There are already pre-allocated empty baremetal nodes which were created during the first install and can be used for adding new nodes
 
-Scenario 2 - User Adds a new baremetal which is not pre-allocated during the initial install.
+1. SSH to seed VM.
 
-On a BareMetal Install
+2. Maintain the Scale Counts in environment variables file (env_vars) which is used during the initial installation. Edit the `env_vars` file as follows:
 
-    SSH to Undercloud VM
+	- To scale out the VSA storage nodes, update the `OVERCLOUD_VSA_STORAGESCALE` value to the appropriale scale number.
 
-    Register the new baremetal in Ironic database. Replace the cpus, memory_mb,local_gb,ipmi_address, ipmi_password with your baremetal settings
-    ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p
-    cpu_arch=amd64 -i ipmi_address=10.22.28.73 -i ipmi_username=admin -i
-    ipmi_password=helion_001
+		export OVERCLOUD_VSA_STORAGESCALE=<number_of_nodes>
 
-    Create the ironic port for the ironic node created in previous step
-    ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
-    Make the respective baremetal entry in /root/baremetal.csv which exists in Seed VM.
-    Execute the Steps in Scenario 1
+	- To scale out the VSA AO storage nodes, update the OVERCLOUD_VSA_AO_STORAGESCALE to appropriate scale number.
 
-On a Virtual Install ( Only for Internal Use & Not for Customers )
+		export OVERCLOUD_VSA_AO_STORAGESCALE=<number_of_nodes>
 
-    Create a new VM with the same properties as the existing VMs. For that copy the attached Scripts (create-vm.sh, configure-vm, vm.xml) on KVM Host and execute create_vm.sh. Change the name of the baremetal in create_vm.sh before executing.
-    SSH to Undercloud VM
+	To scale out the Compute nodes, update the `OVERCLOUD_COMPUTESCALE` value to appropriale scale number. 
 
-    Register the new baremetal in Ironic database. Replace the cpus, memory_mb, local_gb, ssh_address, ssh_username with your baremetal settings
-    ironic node-create -d pxe_ssh -i ssh_virt_type=virsh  -i ssh_address=192.168.122.1  -i ssh_username=root -i
-    ssh_key_filename=/mnt/state/var/lib/ironic/virtual-power-key -p cpus=1 -p
-    memory_mb=8192 -p cpu_arch=amd64 -p local_gb=513
+		export OVERCLOUD_COMPUTESCALE=2
 
-    Create the ironic port for the ironic node created in previous step
-    ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
-    Make the respective baremetal entry in /root/baremetal.csv which exists in Seed VM.
-    Execute the Steps in Scenario 1
+3. Apply the configuration. Source the environment variables file that  you updated:  
 
-Scale In  Nodes
+		source /root/env_vars
 
-    SSH to Undercloud VM
+4. Run the installer script
 
-    Get the ID of the node to be deleted by executing
-    nova list
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 
-    Get the Ironic Node UUID 
-    ironic node-list | grep <node ID in last step>
+	If because of some reason, the above command fails, try the alternative approach
 
-    Get the MAC Address 
-    ironic node-port-list <Ironic Node UUID>
+		export OVERCLOUD_SCALE_NODES=1
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
 
-    Get the heat stack to be deleted for the particular Node
-    heat stack-list
+### Scenario 2 - Non-Allocated Empty Baremetal Nodes ### {#non}
 
-    Delete the particular  Stack
-    heat stack-delete <Stack to be Deleted>
+The baremetal nodes are not pre-allocated during the initial install.
 
-    If the deleted  Node has gone bad and needs to be removed from ironic
-    ironic node-delete <UUID from Step 3>
+1. SSH to undercloud VM
 
-    Perform this Step only for Nova Compute Node 
+2. Register the new baremetal in Ironic database. 
 
-    SSH to Controller0. Disable the particular Nova Compute on the Controller
-    nova-manage service disable --service=nova-compute --host=<hostName of Compute Node>
-    Remove the entry from /root/baremetal.csv which has the MAC Address retrieved in Step 4 ( Note: /root/baremetal.csv exists in Seed VM )
-    Also reduce OVERCLOUD_VSA_STORAGESCALE/OVERCLOUD_VSA_AO_STORAGESCALE/OVERCLOUD_COMPUTESCALE in /root/env_vars(environment variables file) on the Seed VM, so that next time a node is added, the installer doesn't try to add the deleted node. (Note: /root/env_vars file exists in Seed VM)
+	ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p
+	cpu_arch=amd64 -i ipmi_address=10.22.28.73 -i ipmi_username=admin -i
+	ipmi_password=helion_001
 
-Trouble Shooting
+3. Create the ironic port for the ironic node created in previous step `ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID`. Make the respective baremetal entry in `/root/baremetal.csv` on the seed VM.
 
-While adding VSA and compute nodes, sometimes the stack ovecloud_ce_controller is in UPDATE_IN_PROGRESS for a long time. Once the Critical defect  EEIN-42 - When updating an existing Cloud, trickle will call "stack-update" on stacks that have no changes is resolved, the issue will go away.
+4. SSH to seed VM.
+
+5. Maintain the Scale Counts in environment variables file (env_vars) which is used during the initial installation. Edit the `env_vars` file as follows:
+
+	- To scale out the VSA storage nodes, update the `OVERCLOUD_VSA_STORAGESCALE` value to the appropriale scale number.
+
+		export OVERCLOUD_VSA_STORAGESCALE=<number_of_nodes>
+
+	- To scale out the VSA AO storage nodes, update the OVERCLOUD_VSA_AO_STORAGESCALE to appropriate scale number.
+
+		export OVERCLOUD_VSA_AO_STORAGESCALE=<number_of_nodes>
+
+	To scale out the Compute nodes, update the `OVERCLOUD_COMPUTESCALE` value to appropriale scale number. 
+
+		export OVERCLOUD_COMPUTESCALE=2
+
+6. Apply the configuration. Source the environment variables file that  you updated:  
+
+		source /root/env_vars
+
+7. Run the installer script
+
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+
+	If because of some reason, the above command fails, try the alternative approach
+
+		export OVERCLOUD_SCALE_NODES=1
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+
+## Remove nodes {#pre}
+
+To remove a node:
+
+1. SSH to Undercloud VM
+
+2. Obtain the ID of the node you want to delete using the following command:
+
+		nova list
+
+3. Obtain the Ironic Node UUID using the following command: 
+
+		ironic node-list | grep <node ID in last step>
+
+4. Obtain the MAC Address 
+
+		ironic node-port-list <Ironic Node UUID>
+
+5. Obtain the heat stack to be deleted for the particular node using the following command:
+ 
+		heat stack-list
+
+6. Delete the particular stack using the following command:
+
+		heat stack-delete <Stack to be Deleted>
+
+7. If the deleted node has gone bad and needs to be removed from ironic, use the following command with the UUID from the previous step:
+
+		ironic node-delete <UUID>
+
+8. If you are removing a Compute node 
+
+	a. SSH to Controller0. 
+
+	b. Disable the particular Compute node using the following command:
+
+		nova-manage service disable --service=nova-compute --host=<hostName of Compute Node>
+
+	c. Remove the entry that has the MAC Address retrieved in the previous step from from the `/root/baremetal.csv` file on the seed VM.
+
+    d. Reduce the `OVERCLOUD_VSA_STORAGESCALE`, `OVERCLOUD_VSA_AO_STORAGESCALE`, and `OVERCLOUD_COMPUTESCALE` values in the `/root/env_vars` file on the seed VM. 
+
+## Troubleshooting ## {#trouble}
+
+While adding VSA and compute nodes, sometimes the stack `ovecloud_ce_controller` is in `UPDATE_IN_PROGRESS` for an extended time. 
 
 To troubleshoot, perform the following steps
 
-    SSH to all 3 controllers
+1. SSH to all 3 controllers
 
-    Check the mysql service. If it is stopped, restart 
-    service mysql restart
+2. Check the mysql service. If it is stopped, restart the controller using the following command: 
 
-    Look into /var/log/upstart/os-collect-config.log. If it is stuck at restarting rabbitmq, kill all the rabbitmq instances 
-    ps -ef | grep rabbitmq
-    pkill -u rabbitmq
+		service mysql restart
 
-    Remove 
-    rm -rf /mnt/state/var/lib/rabbitmq
-    os-refresh-config
+4. Look in the `/var/log/upstart/os-collect-config.log`. If it is hung at the restarting rabbitmq phase, kill all the rabbitmq instances using the following commands:
 
-     
+		ps -ef | grep rabbitmq
+		pkill -u rabbitmq
 
+		Remove 
+		rm -rf /mnt/state/var/lib/rabbitmq
+		os-refresh-config
 
 ----
 ####OpenStack trademark attribution

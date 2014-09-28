@@ -32,7 +32,7 @@ It is recommended to use Proxy node to store account, container objects based on
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack cloud is successfully deployed 
+1. HP Helion OpenStack&#174; cloud is successfully deployed 
 2. Starter swift is functional which by default gets deployed as part of deployment of cloud
 2. Scale-out object-ring:1 is deployed
 3. Scale-out Proxy node is deployed
@@ -127,7 +127,8 @@ Perform the following steps to add Swift disk to a ring:
 	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
 	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 
-11.Repeat steps from 7 - 10 with the weights set to 50, 75, and 100 (w= 50, 75, 100).
+11.Repeat steps from 7 - 10 with the weights set to 50, 75, and 100 (w= 50, 75, 100). These steps should be repeated until the weight becomes 100 for each disk.
+
 
 
  
