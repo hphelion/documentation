@@ -162,6 +162,17 @@ Note that  the build&#95;number is changed from null to the right variable.
 
 
 
+
+
+##Baremetal installation
+
+If you have set of baremetal servers which differ in specs (e.g. Memory and Disk), the installation will fail as the flavor to be used for overcloud nodes does not match with the server that has the lowest spec for memory, disk, cpu. 
+
+
+For the installatiion, the useer needs to create a configuration file, called baremetal.csv, that has information about each server you are going to install. It contains mac address, usernames/passwords, memory and such. For some reason, the smallest server in that set must be listed on the second line of the baremetal.csv.
+
+
+
 ## Baremetal installation
 
 ####PXE boot on target node keeps switching between interfaces
