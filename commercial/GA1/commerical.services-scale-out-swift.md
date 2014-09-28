@@ -48,7 +48,7 @@ The following diagram depicts the HP Helion OpenStack scale-out Swift architectu
 
 ##Swift Cluster Lifecycle
 
-Swift cluster is like a data center which can be big or small based on size of cluster. It needs constant human intervention to figure out the current health and perform appropriate action.You will need to do different actions at different point in time for various reasons. For example you may like to replace failed node, you may like to increase cluster capacity as client needs more storage space, you may want to add more proxy nodes as workload needs more throughput. Most of the time, you need to keep a constant eye on cluster. The below table lists the actions that you will be doing throughout life of Swift cluster along with section which you should refer for detailed operation.
+Swift cluster is like a data center which can be big or small based on size of cluster. It needs constant human intervention to figure out the current health and perform appropriate action.You will need to do different actions at different point in time for various reasons. For example you may like to replace failed node, you may like to increase cluster capacity as client needs more storage space, you may want to add more proxy nodes as workload needs more throughput. Most of the time, you need to keep a constant eye on cluster. The below table lists the actions that you will be doing throughout the life of Swift cluster and section which you should refer for detailed operation.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -86,7 +86,7 @@ Swift cluster is like a data center which can be big or small based on size of c
     </tr>
 </table>
 
-Above event is depicted below in life-cycle diagram:
+The above event is depicted below in the  life-cycle diagram.
 
 <a href="javascript:window.open('/content/documentation/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift cluster lifecycle.(opens in a new window) </a> 
 

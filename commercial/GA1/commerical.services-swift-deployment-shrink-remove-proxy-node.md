@@ -49,7 +49,7 @@ Once all the disks of the node are removed the scale-out Proxy node can be remov
 **IMPORTANT**:  
 
 *  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Take a backup of rings before any operation.
+* Take a backup of the rings before any operation.
 
 
 ##Identify the disks of the node to be removed {#identify-disk-node-removed}
@@ -75,7 +75,7 @@ Perform the following steps to identify the disks of the node to be removed:
 
 **Recommendation**:
 
-* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 75.
+* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
 
 
 5.Set weight of the disk for `account.builder` and `container.builder`files.
@@ -88,7 +88,7 @@ Perform the following steps to identify the disks of the node to be removed:
 	# ringos rebalance-ring -f account.builder
 	# ringos rebalance-ring -f container.builder
 
-**Note**: Wait for min&#095;part_hours before another re-balance succeeds.
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
 
 7.List all the Swift nodes.
 

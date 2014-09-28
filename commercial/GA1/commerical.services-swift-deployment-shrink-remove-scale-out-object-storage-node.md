@@ -43,7 +43,7 @@ Once all the disks of the node are removed then the Scale-out object node can be
 **IMPORTANT**:  
 
 *  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Take a backup of rings before any operation.
+* Take a backup of the rings before any operation.
 
 
 ##Removing disks from ring {#removing-disk}
@@ -72,7 +72,7 @@ Perform the following steps to remove disks from ring:
 
 **Recommendation**:
 
-* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. Initial weight is 75.
+* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
 
 
 6.Set weight of the disks on the node. 
@@ -85,7 +85,7 @@ Perform the following steps to remove disks from ring:
 	# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 
-**Note**: Wait for min&#095;part_hours before another re-balance succeeds.
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
 
 8.List all the Swift nodes.
 

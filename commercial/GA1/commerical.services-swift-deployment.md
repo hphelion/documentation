@@ -58,11 +58,11 @@ You should carefully plan the following ring attributes before deployment of obj
 <tr style="background-color: white; color: black;">
 	<td><b>Zone</b></td>
 	<td>It defines single points of failure within your cluster. </td>
-    <td>It is recommend to use single zone with multiple servers. Having multiple servers (of at least three in number) ensures that the replicas are distributed across servers.</td>
+    <td>It is recommended to use single zone with multiple servers. Having multiple servers (of at least three in number) ensures that the replicas are distributed across servers.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Replica Count</b></td>
-	<td>It defines number of copy of objects.</td>
+	<td>It defines the number of copies of objects.</td>
     <td> It is recommended to use 3 as replica count.</td>
 </tr>
 <tr style="background-color: white; color: black;">

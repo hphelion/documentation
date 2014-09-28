@@ -40,7 +40,7 @@ It is recommended to use Proxy node to store account, container objects based on
 **IMPORTANT**:  
  
 * All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes. 
-* Take a backup of rings before any operation.
+* Take a backup of the rings before any operation.
 
 
 ##Adding Swift disks to a ring {#adding-swift-disks-to-a-ring}
@@ -73,7 +73,7 @@ Perform the following steps to add Swift disk to a ring:
 
 		# ringos list-disks -n <Proxy node IP address> 
 
-	The following sample displays the list of disk available on the Proxy node **192.0.2.22**. 
+	The following sample displays the lists of disk available on the Proxy node **192.0.2.22**. 
 
 				+----------+------------+
 				| disk     | size       |
@@ -110,10 +110,10 @@ Perform the following steps to add Swift disk to a ring:
 
 * Set zone as 2 for scale-out Proxy nodes and region remains 1.
                 
-* Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
+* Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 
 
-8.Re-balance both account and container ring.
+8.Re-balance both account and container ring(s).
 
 	# ringos rebalance-ring -f /root/ring-building/account.builder
 	# ringos rebalance-ring -f /root/ring-building/container.builder	
@@ -127,7 +127,7 @@ Perform the following steps to add Swift disk to a ring:
 	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
 	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 
-11.Repeat steps from 7 - 10 with the weights set to 50, 75, and 100 (w= 50, 75, 100). These steps should be repeated until the weight becomes 100 for each disk.
+11.Repeat steps from **7 - 10** with the weights set to 50, 75, and 100 (w= 50, 75, 100). These steps should be repeated until the weight becomes 100 for each disk.
 
 
 

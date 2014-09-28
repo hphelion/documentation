@@ -32,13 +32,13 @@ Perform the following procedure to add disk to a starter object ring.
 
 ##Prerequisite {#prer}
 
-* HP Helion Cloud&#174; is deployed
+* HP Helion OpenStack&#174; cloud is deployed
 * Starter swift is functional which by default gets deployed as part of deployment of cloud
 
 **IMPORTANT**:  
  
 *  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Take a backup of rings before any operation.
+* Take a backup of the rings before any operation.
 
 
 ##Adding Swift disks to a ring {#adding-Swift-disks-to-a-ring}
@@ -80,14 +80,14 @@ Perform the following steps to add Swift disk to a ring:
 
 **Recommendation**: 
               
-* Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. Initial weight is 25.
+* Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 
 
 8.Re-balance the ring.
 
 		# ringos rebalance-ring -f /root/ring-building/object.builder
 	
-**Note**: Wait for min&#95;part&#95;hours before another re-balance succeeds.	
+**Note**: You must wait for min&#95;part&#95;hours before another re-balance succeeds.	
 	
 9.List all the Swift nodes. 
 
