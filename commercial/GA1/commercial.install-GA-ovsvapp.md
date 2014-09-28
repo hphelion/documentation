@@ -53,32 +53,36 @@ Before you install the OVSvApp, ensure the following:
 
 - The VM port binding is with the host name of the OVSvApp VM on the ESX Compute host which provisioned the tenant VM.
 
-* For Datacenter, the must be two Virtual Distributed Switches (vDS) and they are configured as follows: 
+- The two Virtual Distributed Switches (DVS) must be configured. 
 
-    **vDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The switch must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
+	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file called is set to true, the DVS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater.
+		
+	- **Manual DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file called is set to false, you need to create and configure the VDS as given below. Manual configuration supports any version of WSX.
 
-      <!---***DVS1***: It should be created without any uplinks. Create a trunk portgroup with VLAN type as **VLAN Trunking** and specify the VLAN trunk range pertaining to the environment. Enable **Promiscuous Mode** and **Forged Transmits** in the portgroup security settings.-->
+		There must be two Virtual Distributed Switches (vDS) and they are configured as follows: 
 
-    **Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
+    	**vDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The switch must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
+
+    	**Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
     
-    **vDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch. One of the management portgroups handles the management traffic and may or may not be not configured for VLAN. The data portgroup should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the data portgroup.
+		**vDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch. One of the management portgroups handles the management traffic and may or may not be not configured for VLAN. The data portgroup should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the data portgroup.
+		
+		**Note**: The name of the first portgroup must be associated with `mgmt_interface` parameter and name of the second portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. . You will create the INI file in [Modify and execute the installer](#modify).
 
-    **Note**: The name of the first portgroup must be associated with `mgmt_interface` parameter and name of the second portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. . You will create the INI file in [Modify and execute the installer](#modify).
+	Example:
 
-Example:
+		DVS1  - trunk portgroup name - vlan_trunk
+		DVS2 
+			a. Portgroup1  name- mgmt
+			b. Portgroup2 name- data
 
-	DVS1  - trunk portgroup name - vlan_trunk
-	DVS2 
-		a. Portgroup1  name- mgmt
-		b. Portgroup2 name- data
-
-	Changes in ovs_vapp.ini for the above values
+		Changes in ovs_vapp.ini for the above values
+		
+		[network]
 	
-	[network]
-
-	data_interface={'vmxnet3':'data'}
-	mgmt_interface={'vmxnet3':'mgmt'}
-	trunk_interface={'vmxnet3':'vlan_trunk'}
+		data_interface={'vmxnet3':'data'}
+		mgmt_interface={'vmxnet3':'mgmt'}
+		trunk_interface={'vmxnet3':'vlan_trunk'}
 
 <img src="media/ESXi_hypervisor_networking.png"/>
 
@@ -92,7 +96,7 @@ Example:
 
 - Use the vShpere client to select **Disable: Allow VM power on operations that violate availability constraints** as a part of cluster settings. If not, ESX host might hang at 2% during transition to maintenance mode. 
 
-- The physical NICs of ESX hosts must be unused (not a part of any Virtual Standard Switch - VSS or  Virtual Distributed Switch - VDS) during the OVSvApp VM deployment. These unused physical NICs should be same across all ESX hosts within a datacenter.
+- •	If DVS will be configured automatically (`is_auto_dvs = True`) the installer requires one physical NIC name as input. This physical NIC must be unused(not part of any VSS or VDS) and its name should be same across all esxi hosts within a datacenter. 
 
 - The traffic between two tenant VMs on the same network and on the same ESX Compute host cannot be blocked. If custom security groups are used, add explicit security group rules to allow traffic between the VMs. Using rules to allow traffic will help maintain VM connectivity.
 
@@ -468,7 +472,7 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
-	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
 
 - Install DNS as a service (DNSaaS) (Optional).
 

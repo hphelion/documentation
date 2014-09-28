@@ -214,7 +214,7 @@ For information on installing NTP on the seed VM, see HP Helion [OpenStack Insta
 
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step. 
 
-There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly five lines for the installation. 
+There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly 7 lines for the installation. 
 
 `<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>`
 
@@ -222,12 +222,13 @@ There must be one entry in this file for each baremetal system you intend to ins
 
 Your file should look similar to the following:
 
-	78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
-	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
-	78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
-	78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
-	78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
-	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
+		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048
+		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,900
+		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
+		78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
+		78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
+		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
+		78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,900
 
 When creating this file, keep in mind the following:
 
