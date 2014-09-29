@@ -106,7 +106,7 @@ Once the Swift nodes are deployed, ensure that you format the required disks and
 	# ringos set-weight -f /root/ring-building/object-1.builder -s <Object node IP address> -w <weight>
 
  
-12.Repeat steps from **8-10** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
+12.Repeat steps from **8-11** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
 
 
 
