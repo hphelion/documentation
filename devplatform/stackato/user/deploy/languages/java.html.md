@@ -7,11 +7,67 @@ permalink: /als/v1/user/deploy/languages/java/
 Java[](#java "Permalink to this headline")
 ===========================================
 
+Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+to enable successful development are available in Java.
+
+##Application Lifecycle Services
+Application Lifecycle Services (ALS), a Cloud Foundry based Platform as a Service,
+has support for multiple Java frameworks and for [Buildpacks](/als/v1/user/deploy/buildpack/#buildpacks) where you can define your own Java environment. Supported frameworks include Java Web, Spring,
+Java EE (via TomEE or JBoss), Grails, and Lift.
+
+To learn more see, the [stackato.yml reference](/als/v1/user/deploy/stackatoyml/).
+
+##Using jclouds with HP Helion
+
+Java applications can communicate directly with the [Helion APIs](http://docs.hpcloud.com/api/), through
+a REST client or use [Apache jclouds](http://jclouds.apache.org/) Apache provides a well-documented API set to simplify working with the services.
+
+For example, here is one way of writing and reading from object storage:
+    
+    // Get a context with hpcloud that offers the portable BlobStore API
+     BlobStoreContext context = ContextBuilder.newBuilder(&quot;hpcloud-objectstorage&quot;)
+      .credentials(&quot;tenantName:accessKey&quot;, &quot;password&quot;)
+      .buildView(BlobStoreContext.class);
+    
+    // Create a container in the default location
+    context.getBlobStore().createContainerInLocation(null, container);
+    
+    // Use the map interface for easy access to put/get things, keySet, etc.
+    context.createInputStreamMap(container).put(&quot;blob.txt&quot;, inputStream);
+    
+    // When you need access to hpcloud specific features, use the provider-specific context
+     HPCloudObjectStorageClient hpcloudClient =
+     HPCloudObjectStorageClient.class.cast(context.getProviderSpecificContext().getApi());
+    
+    // Create a container with public access
+   	boolean accessibleContainer = hpcloudClient.createContainer(&quot;public-container&quot;, withPublicAccess());
+    
+     ContainerMetadata cm = hpcloudClient.getContainerMetadata(&quot;public-container&quot;);
+     if (cm.isPublic()) {
+    ...
+     }
+    
+     // When you want to use CDN features with a container, use the provider-specific CDN client
+      HPCloudCDNClient cdnClient = hpcloudClient.getCDNExtension().get();
+    
+     // Get a CDN URL for the container
+      URI uri = cdnClient.enableCDN(container);
+    
+     // Get the CDN Metadata for the container
+     ContainerCDNMetadata cdnMetadata = cdnClient.getCDNMetadata(container)
+     if (cdnMetadata.isCDNEnabled()) {
+       ...
+     }
+    
+    // Be sure to close the context when done
+    context.close();
+    
+## Frameworks
 Application Lifecycle Service has several Java frameworks to choose from:
 
--   [*Java Web*](#java-web)
--   [*Spring*](#java-spring)
--   [*Java EE (via TomEE or JBoss)*](#java-ee)
+-   [Java Web](#java-web)
+-   [Spring](#java-spring)
+-   [Java EE (via TomEE or JBoss)](#java-ee)
 -   Grails
 -   Lift
 -   [Buildpack - Java](/als/v1/user/deploy/buildpack/#buildpacks)
