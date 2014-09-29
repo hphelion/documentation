@@ -22,30 +22,31 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&reg;: Add and Remove Nodes
+# HP Helion OpenStack&reg;: Add(Scale-Out) and Remove(Scale-In) Nodes
 
-This document describes the steps to add and remove nodes (scale in or scale out the VSA and Compute nodes) on an already installed overcloud 
+<!---This document describes the steps to add and remove nodes (scale in or scale out the VSA and Compute nodes) on an already installed overcloud-->
+This document describes the steps to add (Scale Out) or remove (Scale In) nodes  (KVM Compute Nodes) on an already installed Overcloud. 
 
 - [Prerequisites](#pre)
 - [Add nodes](#add)
-- [Remove nodes](#pre)
+- [Remove nodes](#remove)
 
 ## Prerequisites ## {#pre}
 
-Before adding and removing nodes, make sure th
+Before you begin, ensure the following:
 
-- The seed VM, undercloud and overcloud are installed. The using the EE Installer with USE_TRICKLE=1 which is default installation.
+- The Seed VM, Undercloud and Overcloud are installed using the EE Installer with USE_TRICKLE=1, which is the default installation.
 
 ## Add Nodes ## {#add}
 
-To add nodes, use the following procedures, depending on whether the nodes were allocated during the install:
+You can add nodes to an already installed Overcloud.You can add nodes in the following scenarios:
 
-- [Pre-Allocated Empty Baremetal Nodes](#pre)
-- [Non-Allocated Empty Baremetal Nodes](#non)
+- [Add nodes to pre-allocated empty Baremetal nodes](#pre-allocated)
+- [Enroll a new Baremetal and then add nodes](#non-allocated)
 
-### Scenario 1 - Pre-Allocated Empty Baremetal Nodes ### {#pre}
+### Add nodes to pre-allocated empty Baremetal nodes ### {#pre-allocated}
 
-There are already pre-allocated empty baremetal nodes which were created during the first install and can be used for adding new nodes
+You can add nodes to empty Baremetal nodes which have been already enrolled during the initial installation process.There are already pre-allocated empty baremetal nodes which were created during the first install and can be used for adding new nodes
 
 1. SSH to seed VM.
 

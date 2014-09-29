@@ -103,10 +103,10 @@ The following options must be set with proper values to provide integration with
 	<td>[ldap]</td><td> </td><td> </td><td> </td>
 	</tr>
 	<tr>
-	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>cn</td>
+	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
-	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>cn</td>
+	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
 	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
@@ -127,7 +127,7 @@ The following options must be set with proper values to provide integration with
 	<td>suffix</td><td>(StrOpt) LDAP server suffix</td><td>DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
 	</tr>
 	<tr>
-	<td>url</td><td>(StrOpt) URL for connecting to the LDAP server.</td><td>ldap://10.1.5.221</td><td>ldap://10.1.5.208</td>
+	<td>url</td><td>(StrOpt) URL for connecting to the LDAP server.</td><td>ldap://localhost</td><td>ldap://localhost</td>
 	</tr>
 	<tr>
 	<td>user_allow_create</td><td>(BoolOpt) Allow user creation in LDAP backend.</td><td>False</td><td>False</td>
@@ -139,13 +139,13 @@ The following options must be set with proper values to provide integration with
 	<td>user_allow_update</td><td>(BoolOpt) Allow user updates in LDAP backend.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>uid</td>
+	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
-	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>uid</td>
+	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
-	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>person</td>
+	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>Person</td>
 	</tr>
 	<tr>
 	<td>user_tree_dn</td><td>(StrOpt) Search base for users.</td><td>CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>ou=people,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
@@ -160,7 +160,7 @@ The following options must be set with proper values to provide integration with
 	<td>use_tls</td><td>(BoolOpt) Enable TLS for communicating with LDAP servers.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>tls_req_cert</td><td>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</td><td>never</td><td>never</td>
+	<td>tls_req_cert</td><td>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</td><td>never</td><td>Never</td>
 	</tr>
 	<tr>
 	<td>use_pool</td><td>(BoolOpt) Enable LDAP connection pooling.</td><td>True</td><td>True</td>
@@ -169,7 +169,7 @@ The following options must be set with proper values to provide integration with
 	<td>user_enabled_attribute</td><td>(StrOpt) LDAP attribute mapped to user enabled flag.</td><td>userAccountControl</td><td>Not required</td>
 	</tr>
 	<tr>
-	<td>user_enabled_mask</td><td>(IntOpt) Bitmask integer to indicate the bit that the enabled value is stored in if the LDAP server represents "enabled" as a bit on an integer rather than a boolean. A value of "0" indicates the mask is not used. If this is not set to "0" the typical value is "2". This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>2</td><td>Not required</td>
+	<td>user_enabled_mask</td><td>(IntOpt) Bitmask integer indicating which bit represents the enabled value.  This is used when the LDAP server represents the variable `enabled` as a bit in an integer rather than as a Boolean.  A value of "0" indicates the mask is not used. When not set to "0", the typical value is "2".  This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>2</td><td>Not required</td>
 	</tr>
 	<tr>
 	<td>user_enabled_default</td><td>(StrOpt) Default value to enable users. This should match an appropriate int value if the LDAP server uses non-boolean (bitmask) values to indicate if a user is enabled or disabled. If this is not set to "True" the typical value is "512". This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>512</td><td>Not required</td>
