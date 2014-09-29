@@ -23,11 +23,11 @@ PageRefresh();
 
 #Monitor Swift Cluster
 
-HP Helion OpenStack allows you to monitor swift cluster in any of the followings ways:
+HP Helion OpenStack&reg; allows you to monitor Swift cluster in any of the followings ways:
 
 
 * [Monitor Disk Usage]( /helion/openstack/ga/services/object/swift/Monitor-disk/)
-* [Replica Swift Status](/helion/openstack/ga/services/object/swift/replica-status/)
+* [Replication Status using Icinga](/helion/openstack/ga/services/object/swift/replica-status/)
 * [Service Health Check](/helion/openstack/ga/services/object/swift/health-check/)
 
 

@@ -271,7 +271,7 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 To deploy HP StoreVirtual, you first need to  enroll the Baremetal server and then, update the Helion configuration file and the Overcloud. Perform the following commands:
 
-1. SSH to Undercloud as heat-admin from Seed
+1. SSH to undercloud as heat-admin from Seed
 
         # ssh heat-admin@<IP Address>
         # sudo -i
@@ -470,7 +470,7 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 	<!---Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For detailed installation intructions, see [DNSaaS Beta Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
+	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
 <!---[Sirius CLI](/helion/openstack/ga/sirius-cli/) **OPTIONAL**-->
 

@@ -28,8 +28,8 @@ Icinga service, which runs in the Undercloud, helps cloud admin to monitor the d
 
 ##Prerequisite
 
-1. HP Helion OpenStack cloud is successfully deployed.  
-2. Swift node(s) are active and running
+1. HP Helion OpenStack&#174; cloud is successfully deployed. 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 3. Icinga service is active and running in the Undercloud
 
 
@@ -40,26 +40,25 @@ This checks that the file systems used by the servers are mounted. Also it check
 
 Perform the following steps to monitor the usage of Swift disk:
 
-1. In the Undercloud Horizon, login to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). The default login credentials are as follows::
+1. In the Undercloud Horizon, log in to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). The default login credentials are as follows::
 		
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
 2. Click **Status** on the left panel and then click **Host Detail**. 
 
-<img src ="media/icinga_host-details.png/">
-
+<img src="media/icinga_host-details.png"/>
 
 
 3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
-<img src ="media/swift_icinga_view-details.png"/>
+<img src="media/swift_icinga_view-details.png"/>
 
 
 
-The page navigates to Service Status Details For Host < Swift node IP>. 
+The page navigates to Service Status Details For Host < Swift node IP address>. 
 
-<img src ="media/swift_icinga-disk-usage"/>
+<img src="media/swift_icinga-disk-usage"/>
 
 Now, you can view the disk usage of the selected Swift node.
 
@@ -75,7 +74,7 @@ Refer the following table for the status and message details.
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
 	<td>No devices to report</td>
-    <td> This message appears on proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
+    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK </td>
@@ -84,13 +83,13 @@ Refer the following table for the status and message details.
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
-	<td>disk space low</td>
+	<td>Disk space low</td>
     <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion Openstack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
 	<td>Disk space critically low</td>
-    <td> The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
+    <td>The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value is given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>

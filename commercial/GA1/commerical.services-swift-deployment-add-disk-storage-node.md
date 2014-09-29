@@ -17,85 +17,103 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/Monitor-cluster/"> NEXT &#9654</a> </p>
-
+--->
 
 #Add New Scale-out Object Node
 
-Perform the following procedure to add new scale-out storage node. 
+Perform the following procedure to add new scale-out object node. 
 
 
-##Prerequisite
-
-1. HP Helion OpenStack cloud is successfully deployed 
-2. Scale-out object-ring:1 is deployed
-
-##Deploying new object nodes
-
-Perform the following steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
+1. [Prerequisite](#preq)
+2. [Deploying new object nodes](#deploy-new-object-node)
+3. [Adding node and disks to object-ring:1](#add-disk-node)
+4. [Re-balancing the ring](#rebalance-ring)
+5. [Copying object-ring:1 to all nodes](#copy-object-node)
 
 
-## Adding node and disks to object-ring:1
+##Prerequisite {#preq}
 
-Once the Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
+1. HP Helion OpenStack&#174; cloud is successfully deployed 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
+3. Scale-out object-ring:1 is deployed
 
-1. Format a given disk
+##Deploying new object nodes {#deploy-new-object-node}
 
-		#ringos format-disks -n <Swift nodes IP address> -d all
-
-For more details,refer [ringos Manual]( /helion/openstack/GA1/services/object/pyringos/) 
-
-
-2.Add disk to the ring. 
-
-	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Swift nodes IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
+Perform the steps mentioned in  [Provision Swift Node(s)]( /helion/openstack/ga/services/swift/provision-nodes/) to deploy a new node.
 
 
-In the following example we are adding disk of node(**192.0.2.29**) to zone 1:
+## Adding node and disks to object-ring:1 {#add-disk-node}
 
-	#ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
-	Added disk 192.0.2.29:a1410063335 to ring
+Once the Swift nodes are deployed, ensure that you format the required disks and mount them before adding disks to the Swift cluster. 
 
 
-3.Verify the contents of `object-1.builder` file to ensure that new node and disk are added to your existing ring.
+1. Login to the Undercloud from Seed.
+    
+		# ssh heat-admin@<Undercloud IP address> 
+		# sudo -i
 
-	#ringos view-ring -f /root/ring-building/object-1.builder
-
-## Re-balance the ring
-
-1. Re-balance the ring
-
-		#ringos rebalance-ring -f /root/ring-building/object-1.builder
-
-	This will generate a **object-1.ring.gz** file.
-
-2. Verify the content in `object-1.builder` file after rebalancing the ring.
-
-		#ringos view-ring -f /root/ring-building/object-1.builder
-
-##Copying Object-ring:1 to all nodes
-
-1. List all the Swift nodes. 
-
-		#ringos list-swift-nodes -t  all
+2. Change working directory to ring building directory
  
-2. Copy account, container, object-0 , and generated `object-1.ring.gz` files to new nodes. 
+		# cd /root/ring-building
 
-		#ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
+3. List the available scale-out Swift nodes and identify the created node. 
+
+		# ringos list-swift-nodes -t object
+
+4. List the disks available on the node.
+
+		# ringos list-disks -n <Object nodes IP address> 
+ 
+4. Format a given disk.
+
+		# ringos format-disks -n <Object nodes IP address> -d <disk>
 
 
-Press **yes** when asked to authenticate node.  
+	**Note**: You can format all the disks with a single command (-d --all).
 
-The sample of authentication node will be displayed as follows:
+5.List the files in the ring building directory and identify the`object-1.builder` file.
 
-	The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
-	ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
-	Are you sure you want to continue connecting (yes/no)? yes
-	Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
+6.Add a formatted disk(s) to object-1 ring.
+
+		# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <Object nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
+
+
+**Recommendation**: 
+              
+* Add a drive gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually increase by 25% until it reaches 100%. The initial weight is 25.
+
+7.Re-balance object-1 ring.
+
+	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+	
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.	
+
+8.List all the Swift nodes. 
+
+	# ringos list-swift-nodes -t all
+
+			
+9.Copy `object-1.ring.gz` file to all the nodes.
+
+	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+	
+
+10.Set weight of the disks using the following command:
+
+
+	# ringos set-weight -f /root/ring-building/object-1.builder -s <Object node IP address> -w <weight>
 
  
+11.Repeat steps from **7-10** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
+
+
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

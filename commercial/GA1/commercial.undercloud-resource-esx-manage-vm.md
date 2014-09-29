@@ -24,12 +24,14 @@ PageRefresh();
 
 
 
-## Virtual Environments
+## Working with Virtual Environment(s)
 
 
+The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Undercloud Horizon Dashboard or [EON]( /helion/openstack/ga/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the Undercloud Horizon.
+<!---
 Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. 
 
-When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an overcloud ESX cluster. 
+When using the ESX hypervisor, the only supported hypervisor is VMware Vsphere. With the ESX integration, you can provision and manage an overcloud ESX cluster. --->
 
 ###Manage virtual environment
 
@@ -52,6 +54,8 @@ The virtual environment allows you to register and unregister vCenter and import
 
 ##Register vCenter<a name="register-vcenter"></a>
 
+You can register vCenter using the Undercloud Horizon Dashboard.
+
 vCenter provides centralized management of virtual host and virtual machines from a single console. You can register only three vCenters in the compute service, although a single administrator can manage multiple workloads.
 
 To register vCenter, perform the following steps:
@@ -70,7 +74,7 @@ The tab displays with options in the left panel.
   * In the **vCenter Administrator** box, enter the vCenter administrator username. This is the vCenter credentails of the administrator.
   * In the **vCenter Server Password** box, enter the password.
   * In the **vCenter Server Port** box, enter the vCenter Server Port.
-  * (Optional) In the **vCenter SSL CA-certificate** box do not enter any value as we are not supporting it in this release.
+  * (Optional) In the **vCenter SSL CA-certificate** box, do not enter any value as we are not supporting it in this release.
 <br>
 5. In the Proxy Details Tab, do the following:
 

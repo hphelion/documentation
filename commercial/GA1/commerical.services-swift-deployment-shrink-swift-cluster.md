@@ -25,5 +25,12 @@ PageRefresh();
 HP Helion OpenStack&reg; allows you to remove Swift cluster in any of the followings ways:
 
 * [Remove an existing Disk from Object Nodes]( /helion/openstack/ga/services/swift/deployment/remove-existing-disk/)
-* [Remove Proxy Node]( )
-* [Removing scale-out object storage node]( )
+* [Remove Proxy Node]( /helion/openstack/ga/services/swift/deployment/remove-proxy-node/ )
+* [Removing scale-out Object Storage Node]( /helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/ )
+
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

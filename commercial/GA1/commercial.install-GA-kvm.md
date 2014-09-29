@@ -33,8 +33,11 @@ The installation and configuration process for ESX consists of the following gen
 * [Preparing for installation](#prepare)
 	* [Verify Prerequisites](#pre)
 	* [KVM deployment architecture](#deploy-arch)
-	* [Create a JSON configuration file](#json)
+	* [Create and identify environment variables file](#envvars)
+	* [Prepare baremetal.csv file](#csv)
+	* [Preparing cloud seed host to run seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
+* [Create and identify environment variables file](#envvars)
 * [Installing HP Helion OpenStack](#install)
    * [Configuring proxy information](#proxy)
    * [Unpacking installation file](#unpackinstall)
@@ -66,20 +69,20 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
-### Create and identify environment variables file
+### Create and identify environment variables file ### {#envvars}
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
 For more information, see [HP Helion OpenStack&reg;: Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
 
-### Prepare baremetal.csv file
+### Prepare baremetal.csv file ### {#csv}
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 
-### Preparing KVM Host to run seed VM
+### Preparing cloud seed host to run seed VM ### {#prepseed}
 On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack® Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
 ## Downloading the installation packages<a name="getinstall"></a>
@@ -92,18 +95,16 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-<!-- QUESTION: New files names?? 
-<table style="text-align: left; vertical-align: top; width:650px;">
+	<table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
 <td><b> Installation package </b></td><td><b>File name</b></td>
 
 <tr style="background-color: white; color: black;">
-<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack_BetaJune30.tgz</td></tr>
+<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack.tgz</td></tr>
 </td></tr>
 
-</table>-->
-
+</table>
 
 ## Installing HP Helion OpenStack<a name="install"></a>
 
@@ -145,7 +146,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Extract the installation package to the `work` directory:
 
-		tar zxvf /root/<baremetal kit name>.tgz
+		tar zxvf /root/HPHelionOpenStack.tgz
 
 	This creates and populates a `tripleo/` directory within root's home directory.
 

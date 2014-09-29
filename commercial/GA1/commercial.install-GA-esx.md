@@ -29,7 +29,10 @@ HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware v
 The installation and configuration process for CLOUD_TYPE ESX consists of the following general steps:
 
 * [Verify Prerequisites](#pre)
-* [Review the ESX deployment architecture](#deploy-arch)
+	* [Review the ESX deployment architecture](#deploy-arch)
+	* [Create and identify environment variables file](#envvars)
+	* [Prepare baremetal.csv file](#csv)
+	* [Preparing cloud seed host to run seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
 * [Starting the installation](#install)
    * [Configuring proxy information](#proxy)
@@ -55,6 +58,21 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
+### Create and identify environment variables file ### {#envvars}
+
+Before installing, make sure you have created the environment variables file that is required for installation.
+
+For more information, see [HP Helion OpenStack&reg;: Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+
+### Prepare baremetal.csv file ### {#csv}
+
+Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
+
+For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+
+### Preparing cloud seed host to run seed VM {#prepseed}
+On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack® Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+
 
 ## Download the installation packages<a name="getinstall"></a>
 Before you begin, you must download the required HP Helion OpenStack installation packages:
@@ -65,7 +83,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-<table style="text-align: left; vertical-align: top; width:650px;">
+	<table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
 	
@@ -88,6 +106,24 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 **IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
+### Configure proxy information<a name="proxy"></a>
+
+Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:
+
+1. Launch a terminal and log in to your seed VM host as root:
+
+		sudo su -
+
+2. Add the following lines to `/etc/environment`:
+
+		export http_proxy=http://<web_proxy_IP>/
+		export https_proxy=<http://web_proxy_IP>/
+		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
+	
+	Where `web_proxy_IP` is your web proxy IP address.
+
+3. Log out and re-login to your baremetal server to activate the proxy configuration.
+
 ### Unpack the installation file<a name="unpackinstall"></a>
 
 1.Log into your install system as root.
@@ -107,109 +143,56 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ### Install the seed VM and build your cloud<a name="startseed"></a>
 
-1. Start the seed installation
+1. Make sure you are logged into the seed VM host as root. If not:
+ 
+		sudo su -
 
-		OVERCLOUD_CLOUD_TYPE="ESX" bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
+2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-	When seed VM install is successful, you will see a message similar the following:
+		source env_vars
 
-		"Wed Sept 23 11:25:10 IST 2014 --- completed setup seed"
+5. Start the seed VM installation by entering the following command:
 
-2. Login to the seed VM using the following command:
+		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh
 
-		ssh root@192.0.2.1
+	**Note**:The installation process takes approximately 10 minutes to complete.
 
-3. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#csv/) file is correct and in the following format and upload the file to `/root`.
-4. 
-		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
+	When the seed VM startup is complete, you should see a message similar to the following:
 
-	**Important**: There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly six lines for the ESX installation. For example, your file should look similar to the following:
+		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed" 
 
-		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
-		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,8,16384,2048
-		78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
-		78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
-		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
-		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048
-    
+6. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
+
+		ssh root@192.0.2.1 
+
+	**Note**: It might take a few moments for the seed VM to become reachable. 
+7. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+
+8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
+
+9. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+
+		source env_vars
+
+10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and upload the file to `/root`.
+
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
+
+11. If you are integrating LDAP into your environment, copy the configuration files to the seed VM host, as described in [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/ga/install/ldap/).
+
+	a. Copy the `tripleo-overcloud-password` file to the /root/tripleo folder.
+
+		scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords
+
+	b. Copy the `overcloud_keystone_ldap.json` file to the /root/tripleo/hp_passthrough folder.
+
+		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json 
 
 4. [Optional] Use **ipmitool** to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
 5. Manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
     
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shut down rather than automatically restarting.
-
-	<!-- Remove per Divakar??
-	6. Release floating IP addresses for networking.
-
-	***QUESTION: More info needed on how to determine the IP range??***
-
-	By default, the installation creates a pool of floating IP addresses that you can assign to virtual machines. However, the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) required by the ESX environment requires a block of IP addresses. You create more IP addresses for OVSvApp by restricting the number of floating IP addresses created.
-
-	By default, the floating IP range is between 192.0.2.129 - 192.0.2.254. You can shrink the range by exporting the following variables:
-
-		# export FLOATING_START=<Start IP Address>
-		# export FLOATING_END=<End IP Address>
-
-	**Note:** If the above settings are changed, set the 'NeutronPublicInterfaceDefaultRoute' variable to the actual gateway for the customized IP range. 
--->
-
-7. Set `OVERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for overcloud hosts. 
-
-	To set this variable:
-
-		export OVERCLOUD_NTP_SERVER=<IP_address>
-
-8. Set `UNDERCLOUD_NTP_SERVER` to the IP address of the NTP server accessible on the public interface for undercloud hosts. 
-
-	To set this variable:
-
-		export UNDERCLOUD_NTP_SERVER=<IP_address>
-
-
-9. Set the IP address of the customer router in your network.
-
-	To set this variable:
-
-		export CUSTOMER_ROUTER_IP=<IP_address>
-
-	For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
-
-10. Set the `OVERCLOUD_CLOUD_TYPE` to ESX
-
-	To set this variable:
-
-		export OVERCLOUD_CLOUD_TYPE="ESX"
-
-11. Use the following commands to set environment variables
-
-	To set these variables:
-
-		export PROVIDER_NETWORK="192.168.10.0/24"
-		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
-		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
-		export VLAN_RANGE="200:300"
-
-	**Where:**
-	
-	- `PROVIDER_NETWORK` is the ESX Management Network
-	- `OVERCLOUD_VIRTUAL_INTERFACE` is the keep alive interface for HA 
-	- `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` is a unique identifier. If you plan to run multiple installations of HP Helion OpenStack on the same network, each installation must be configured with a unique ID. The default value, if unset, is 51.  HP Helion OpenStack uses keepalived to manage virtual IPs. keepalived uses these unique IDs to synchronise its activities.
-	- `VLAN_RANGE` is the tenant networks allocation range 
-
-	**For example**:
-
-		export FLOATING_START=192.0.2.129
-		export FLOATING_END=192.0.2.200
-		export OVERCLOUD_NTP_SERVER="16.110.135.123"
-		export UNDERCLOUD_NTP_SERVER="16.110.135.123"
-		export OVERCLOUD_CLOUD_TYPE="ESX"
-		export PROVIDER_NETWORK="192.168.10.0/24"
-		export CUSTOMER_ROUTER_IP="192.168.10.1"
-		export OVERCLOUD_VIRTUAL_INTERFACE=eth0
-		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
-		export VLAN_RANGE="200:300"
 
 12. Install and configure the undercloud and overcloud, run the following command from /root. 
 
@@ -218,6 +201,8 @@ Make sure you have met all the hardware requirements and have completed the requ
 	If your installation is successful, a message similar to the following is displayed:
  
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+
+	**Note:** If `hp_ced_start_seed` fails to start the seed, need to restart the installation (step 1) and then follow the rest of the steps.
 
 ## Verify your installation<a name="verifying-your-installation"></a>
 
@@ -280,6 +265,10 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
+
+### Create projects for LDAP users<a name="ldap"></a>
+
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack&reg;: Integrating LDAP page](/helion/openstack/ga/install/ldap/).
 
 ## Next Steps<a name="next-steps"></a>
 
