@@ -38,7 +38,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 ### Add backend<a name="add-backend"></a>
 
-**Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of CPG after allocating, may disrupt cloud functionality if the corresponding change is not updated here.
+**Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of the CPG after allocation, may disrupt cloud functionality if the corresponding change is not updated here.
 
 1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.
 
@@ -62,7 +62,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
-The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
+	The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
    <a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
@@ -109,13 +109,13 @@ This option allows you to remove the CPGs from the backend which are allocated t
 
 ###Delete backend<a name="delete-backend"></a>
 
-Before you delete the backend CPG, detach the volume or migrate to a different backend as the backend you delete will no longer be available. 
+Before you delete the backend CPG, detach the volume or migrate to a different backend, as the backend you delete will no longer be available. 
 
 Do the following to delete a backend:
 
 1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
-2. Click **More** drop-down list against the Volume Backend which you want to delete and select **Delete volume backend**.<br> A confirmation dialog box is displayed.
+2. Click **More** drop-down list against the volume backend which you want to delete and select **Delete volume backend**.<br> A confirmation dialog box is displayed.
 
 3. Click **Delete volume backend** to delete or **Cancel** to cancel the process. 
 
@@ -142,15 +142,15 @@ To update your Overcloud with the changes, do the following:
 
 1. SSH to Seed as root from KVM host.
 
-		ssh root@ <IP address> 
+		# ssh root@ <IP address> 
 
 2. View the list of files.
 
-		ls
+		# ls
 
 3. Copy Overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
-	    cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+	 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
 4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is complete. A sample of the file is given below:
 
@@ -191,13 +191,19 @@ To update your Overcloud with the changes, do the following:
 		      "iscsi_ip_address": "10.1.0.200"
 		    },
 		    
-5. Apply the configuration.
+5. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
-        source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6. Launch install script to update the Overcloud.
+		# source /root/env_vars
 
-	    bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
+
+6. Apply the configuration.
+
+     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+7. Launch install script to update the Overcloud.
+
+		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

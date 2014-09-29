@@ -33,13 +33,13 @@ This page provides detailed information on using HP StoreVirtual for realizing c
    * [Cinder volume and Lefthand driver](#cinder-volume)  
    * [Differentiated storage offerings](#differentiated-storage-offerings)
 * [High Level overview of StoreVirtual integration](#high-level-view)
+* [Installing HP StoreVirtual Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
+   * [Prerequisites](#prerequisites)
+   * [Installation](#install)
 * [Deploying HP StoreVirtual storage sytems](#deploy-vsa)
    * [Prerequisites](#prerequisites-vsa)
    * [Enrolling the new Baremetal server](#deploy-process)
 * [Verifying the StoreVirtual installation status](#verify-install)
-* [Installing HP StoreVirtual Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
-   * [Prerequisites](#prerequisites)
-   * [Installation](#install)
 * [Creating  and adding a StoreVirtual Cluster to a new Management Group](#create-cluster) 
 * [Adding a StoreVirtual node to an existing Management Group](#adding-a-node)
 * [Next Steps](#next-steps)
@@ -47,26 +47,20 @@ This page provides detailed information on using HP StoreVirtual for realizing c
 
 ## HP StoreVirtual overview<a name="storevirtual-overview"></a>
 
-HP StoreVirtual provides complete array functionality without an external array hardware, which:
+HP StoreVirtual Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
 
-* eliminates the need for external shared storage required to implement block storage feature
-* uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost
+Multiple StoreVirtual systems running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID. A logical grouping of clusters is done in order to form a unit and is called a management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
 
+With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual, support the use of the storage pools by cloud instances.
+A single management group can contain up to 32 StoreVirtual nodes &#45; grouped into clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes. 
 
-HP StoreVirtual Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
+HP Helion OpenStack&#174; supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.
 
-Multiple StoreVirtual systems running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID. A logical grouping of clusters is done to form a unit and is termed as management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
-
-As of now, adding more StoreVirtual systems to the cluster grows the storage pool. With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual, support the use of the storage pools by cloud instances.
-A single management group can contain up to 32 StoreVirtual nodes &#45; grouped into one or more clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes. 
-
-HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.
-
-HP StoreVirtual enables the following features in HP Helion OpenStack: 
+HP StoreVirtual enables the following features in HP Helion OpenStack&#174;: 
 
 * **Storage clustering**: It allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. As storage needs increase, StoreVirtual can scale performance and capacity online.
 
-* **Data availability**: Network RAID stripes and mirrors multiple copies of data across a cluster of storage nodes, eliminating any single point of failure in the StoreVirtual SAN. Applications have continuous data availability in the event of a power, network, disk, controller, or entire storage node failure.
+* **Data availability**: Network RAID strips and mirrors multiple copies of data across a cluster of storage nodes, eliminating any single point of failure in the StoreVirtual SAN. Applications have continuous data availability in the event of  power, network, disk, controller, or entire storage node failure.
 
 * **Thin provisioning**: It allocates space only as data is actually written without requiring pre-allocation of storage. This raises the overall utilization and efficiency and thus increases the ROI.
 
@@ -74,7 +68,7 @@ HP StoreVirtual enables the following features in HP Helion OpenStack:
 
 ##Cinder architecture<a name="cinder-architecture"></a>
 
-Cinder is the block-based storage component of the HP Helion OpenStack platform for cloud computing. It provides the software to create and centrally manage a service that provisions storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder can also be used independent of other OpenStack services. Cinder is based on the distributed architecture which has inherent tenets to scale horizontally and serve concurrent volume management requests. 
+Cinder is the block-based storage component of the HP  Helion OpenStack&#174; platform for cloud computing. It facilitates the provisioning of storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder is based on the distributed architecture which can scale horizontally and serve concurrent volume management requests. 
 
 Cinder consists of three basic services:
 
@@ -88,7 +82,7 @@ Cinder consists of three basic services:
 
 ### Cinder API <a name="cinder-api"></a>
 
-Cinder API is a REST based interface to perform volume operations. As an end-user, you can accomplish volume operations without having to worry about the storage backend used to provide the actual storage. The following volume operations are supported:
+Cinder API is a REST based interface to perform volume operations. As an end-user, you can accomplish volume operations without worrying about the storage  backend device used to provide the actual storage. The following volume operations are supported:
 
 1.  Create volumes
 2.	Delete volumes
@@ -105,21 +99,24 @@ Cinder API is a REST based interface to perform volume operations. As an end-use
 
 ### Scheduler<a name="scheduler"></a>
 
-The Cinder Scheduler tracks various backend capabilities and chooses the backend to place a new volume on. There are various configurable plugins for the scheduler. Filter scheduler has filters and weighers which help in deciding the backend to be used for a new volume request. The selection criteria includes the filters like- volume type, available free space, QoS specs, Extra specs etc. Scheduler ensures that the volumes are uniformly spread across all available backend StoreVirtual Management Groups.
+The Cinder Scheduler tracks various backend capabilities and chooses the backend to place a new volume on. There are various configurable plugins for the scheduler. Filter scheduler has filters and weighers which help in deciding the backend to be used for a new volume request. The selection criteria includes the filters like- volume type, available free space, QoS specs, Extra specs etc. Scheduler ensures that the volumes are uniformly spread across all available backend devices.
 
 ### Cinder Volume and LeftHand driver<a name="cinder-volume"></a>
 
 Once the Scheduler determines the backend to be used, the Cinder volume performs the actual operations against the backend.
 
-The Cinder volume service hosts the LeftHand Driver to communicate with the backend, representing the StoreVirtual Management Group using the LeftHand REST API. 
+The Cinder volume service hosts the LeftHand Driver to communicate with the backend representing the StoreVirtual cluster, using the LeftHand REST API. 
 
-**Note:** The Lefthand driver is the [HP LeftHand/StoreVirtual driver](http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html). The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
+**Note:** The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
+For more details on the Lefthand driver, refer to [HP LeftHand/StoreVirtual driver](http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html). 
 
-Multiple Cinder volume processes can be run to achieve high availability of the Cinder components. Each backend instance maps to an instance of a StoreVirtual Management Group. Each management group listens at a Management API address that is configured in the Cinder backend entry in *cinder.conf*. A single Cinder volume can manage multiple backends.
+When you configure multiple StoreVirtual backends, one cinder-volume is launched for each back-end storage or back-end storage pool. Each backend instance maps to an instance of a StoreVirtual cluster. Each cluster listens at a assigned VIP that is configured in the Cinder backend entry in *cinder.conf*. 
+
+A single Cinder volume can manage multiple backends.
 
 
 ### Differentiated Storage Offerings<a name="differentiated-storage-offerings"></a>
-HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.
+HP Helion OpenStack&#174; uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.
 
 Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
 
@@ -136,17 +133,19 @@ As a cloud administrator, you can create volume types to specify the storage off
 
 Then, as the cloud administrator, you need to create three volume types &ndash; bronze, silver and gold &ndash; and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.
 
-Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack by creating clusters of different capabilites, configuring clusters as backends and mapping these backends to different volume types as suggested above.
+Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack&#174; by creating clusters of different capabilities, configuring clusters as backends and mapping these backends to different volume types as suggested above.
 
 ##High level overview of StoreVirtual integration{#high-level-view}
 
+The following diagram gives an overview of the steps involved in integrating StoreVirtual with your cloud. The subsequent sections provide the detailed instructions on integration workflow.
+
+
 <a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual Integration diagram (opens in a new window)</a>
 
-The following section briefly explains the above diagram and the steps involved in integrating StoreVirtual with your cloud.
 
-1 - **Install CMC**
+<!--1 - **Install CMC**
      
-   The CMC binary is available in the installer package. [Install CMC](#install-hp-storevirtual-cmc) on the Seed node where the Seed cloud is running.
+   [Install CMC](#install-hp-storevirtual-cmc) on the Seed node where the Seed cloud is running. The CMC binary comes along with the HP Helion OpenStack installer and is present in the `tripleo` directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
 	
@@ -160,7 +159,7 @@ The following section briefly explains the above diagram and the steps involved 
 
 3a - **Run update cloud script to provision VSA node**
 
-   * After [enrollment of the new Baremetal server](#deployment-vsa) in the Undercloud , log in to Seed cloud.
+   * After the [enrollment of the new Baremetal server](#deployment-vsa) in the Undercloud , log in to Seed cloud.
 
    * Update overcloud.json file for StoreVirtual deployment and apply the configuration.
 	
@@ -178,11 +177,7 @@ The following section briefly explains the above diagram and the steps involved 
 
 3c - **Create VSA cluster**
 
-   * After discovering the StoreVirtual storage systems in CMC, the create the StoreVirtual cluster from CMC.
-
-   * Create management group and StoreVirtual cluster from CMC.
-
-   * Create StoreVirtual cluster.
+   * After discovering the StoreVirtual storage systems in CMC, [create the StoreVirtual cluster and management group](#create-cluster) from CMC.
 
 4a - **Launch Undercloud Horizon**
 
@@ -198,13 +193,53 @@ The following section briefly explains the above diagram and the steps involved 
 
 5a - **Update `overcloud-config.json` file with cinder configuration**
 
-   With the advise generated from the above steps, update the overcloud-config.json file in Seed cloud.
+   With the advise generated from the above steps, update the overcloud-config.json file in the Seed cloud.
 
 5b - **Run update cloud script to update cinder.conf**
 
    * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. 
+   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. -->
+
+##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux<a name="install-hp-storevirtual-cmc"></a>
+
+You must install the CMC to perform the administrative tasks on HP StoreVirtual VSA. You can manage the entire network of StoreVirtuals from this CMC. 
+
+
+### Prerequisites<a name="prerequisites"></a>
+
+* You must be running the X Windows System to install the CMC.
+
+* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA.
+
+**Note**: These changes are required for 64-bit operating system only.
+
+* Execute the following commands:
+
+		# apt-get update
+		# apt-get install openjdk-7-jdk:i386
+
+### Installation<a name="installation"></a>
+
+1. Log in to Seed
+
+			ssh root@<IP Address>
+
+2. Verify if the CMC installer file inside `tripleo` directory (packaged along with the HP Helion OpenStack&#174; installer) has the executable permission otherwise execute the following command:
+
+		# chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
+
+2. Launch the installer
+
+		#./CMC_11.5.01.0079.0_Installer_Linux.bin
+
+2. Follow the steps in the installation wizard to complete the installation.
+
+3. To start the CMC:<br>
+ From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
+</br>  
+
+<!---<img src="media/storevirtual-cluster-network-diagram2.png"/>-->
 
 
 ##Deploying HP StoreVitual Storage Systems<a name="deploy-vsa"></a>
@@ -221,9 +256,9 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 * Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!---For more details, refer – [**Storevirtual documentation LINK**]-->
 
-* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have at least two(2) operating system disks(/dev/sda, /dev/sdb).
+* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have a minimum two(2) disks(/dev/sda, /dev/sdb).
 
-* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) operating system disks(/dev/sda, /dev/sdb,/dev/sdc). The operating system disk /dev/sdb should be a Solid State Drive(SSD).
+* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) disks(/dev/sda, /dev/sdb,/dev/sdc). The disk /dev/sdb should be a Solid State Drive(SSD).
 
 * The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB else the RAID stripe configuration will fail. <!---For more details, refer [**storevirtual documentation LINK**]-->
 
@@ -231,13 +266,10 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 <!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
+
 #### Enrolling the New Baremetal Server<a name="enroll-new-baremetal-server"></a>
 
-<<<<<<< HEAD
-To deploy HP StoreVirtual, you need to first enroll the baremetal server and then, update the HP Helion OpenStack config file and the overcloud. Perform the following commands:
-=======
-To deploy HP StoreVirtual, you first need to  enroll the Baremetal server and then, update the HP Helion OpenStack and the overcloud. Perform the following commands:
->>>>>>> 2a4c95bb8fa5532409a012f522e6a9930463b968
+To deploy HP StoreVirtual, you first need to  enroll the Baremetal server and then, update the Helion configuration file and the Overcloud. Perform the following commands:
 
 1. SSH to undercloud as heat-admin from Seed
 
@@ -245,7 +277,7 @@ To deploy HP StoreVirtual, you first need to  enroll the Baremetal server and th
         # sudo -i
         # source stackrc
 
-	**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that *#ironic node-list* in the Undercloud server does not have any free nodes.
+	**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that *#ironic node-list* in the Undercloud server does not have any free nodes suitable for StoreVirtual installation. If a suitable node is available, skip the Baremetal registration steps and go to **step 5** below.
 
 2. Register the new Baremetal server in the Ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your baremetal settings. 
 
@@ -276,22 +308,18 @@ To deploy HP StoreVirtual, you first need to  enroll the Baremetal server and th
 
 	**NOTE**: For HP StoreVirtual, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
 
-8. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+8. Apply the configuration
+
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+9. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
 
 		# source /root/env_vars
 
-9. Apply the configuration
+10. Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified, are installed. 
 
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-<!---10. Comment out the following line in  /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh in the Overcloud section
-
-			if [ "$SKIP_INSTALL_OVERCLOUD" != "1" ] ; then
-   			 echo "HP - configuring overcloud - $(date)"
-			#    hp_ced_validate_ip ping -s $FLOATING_START -e $FLOATING_END-->
-10.Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified, are installed. 
-
-     # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
+ 	 	# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 
 ##Verifying StoreVirtual installation status<a name="verify-install"></a>
 
@@ -324,44 +352,9 @@ from the above steps
 
 	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log`
 
-6. On successful installation of StoreVirtual VM on Baremetal, launch the CMC and discover the storage systems. 
+6. On successful installation of StoreVirtual VM on Baremetal, go to the Centralized Management Console(CMC) and discover the storage systems. 
 
 
-##Installing HP StoreVirtual Centralized Management Console (CMC) on Linux<a name="install-hp-storevirtual-cmc"></a>
-
-You must install the CMC to perform the administrative tasks on HP StoreVirtual  storage. You can manage the entire network of StoreVirtuals from this CMC. 
-
-
-### Prerequisites<a name="prerequisites"></a>
-
-* You must be running the X Windows System to install the CMC.
-
-* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual.
-
-**Note**: These changes are required for 64-bit operating system only.
-
-* Execute the following commands:
-
-		# apt-get update
-		# apt-get install openjdk-7-jdk:i386
-
-### Installation<a name="installation"></a>
-
-1. Verify if the CMC installer file inside `tripleo` directory (packaged along with the installer) has the executable permission otherwise execute the following command:
-
-		# chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
-
-2. Launch the installer
-
-		#./CMC_11.5.01.0079.0_Installer_Linux.bin
-
-2. Follow the steps in the installation wizard to complete the installation.
-
-3. To start the CMC:<br>
- From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
-</br>  
-
-<!---<img src="media/storevirtual-cluster-network-diagram2.png"/>-->
 
 ## Creating a StoreVirtual Cluster and adding it to a new Management Group<a name="create-cluster"></a>
 
@@ -376,7 +369,7 @@ To create a cluster, do the following:
 
 1. Open CMC.
 
-    By default, the CMC is configured to discover the StoreVirtual nodes in the subnet on which it is installed. You can manually add the nodes also.
+    By default, the CMC is configured to discover the StoreVirtual nodes in the subnet in which it is installed. You can manually add the nodes also.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page (opens in a new window)</a>
 
@@ -384,7 +377,7 @@ To create a cluster, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Find Systems option (opens in a new window)</a>
 
-3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.
+3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the same subnet as that of CMC. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual system.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Add option (opens in a new window)</a>
 
@@ -402,7 +395,7 @@ To create a cluster, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Discovered Nodes Under Available Systems (opens in a new window)</a>
 
-9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br> Create Management page is displayed.
+9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br> Management Goups, Clusters, And Volumes wizard is displayed.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Create Management Page (opens in a new window)</a>
 
@@ -425,7 +418,7 @@ To create a cluster, do the following:
 17. In the Add VIP and Subnet Mask pop-up box, enter the virtual IP and Subnet Mask of the cluster in the respective boxes and click **OK**.<br> The details are displayed in a tablular format in the page.
 
 
-	**Note**: Ensure that the Virtual IP (VIP) is in the same subnet as the HP StoreVirtual node. To get the details of the HP StoreVirtual IP, log in to StoreVirual node and check `/etc/vsa/vsa_network_config.json` file.
+	**Note**: Ensure that the Virtual IP (VIP) is in the same subnet as the HP StoreVirtual system. To get the details of the HP StoreVirtual IP, log in to StoreVirual system and check `/etc/vsa/vsa_network_config.json` file.
 
 
 16. Click **Next** to go to the next page.
@@ -437,13 +430,13 @@ To create a cluster, do the following:
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc7.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">CMC Main Page with the Cluster (opens in a new window)</a>
 
 
-## Adding HP StoreVirtual node to an existing Management Group<a name="adding-a-node"></a>
+## Adding HP StoreVirtual System to an existing Management Group<a name="adding-a-node"></a>
 
-To add a StoreVirtual node to any existing Management Group, do the following:
+To add a StoreVirtual system to any existing Management Group, do the following:
 
 1. Open CMC.
 
-    By default, the CMC is configured to discover the HP StoreVirtual nodes in the subnet on which it is installed. You can manually add the nodes also.
+    By default, the CMC is configured to discover the HP StoreVirtual systems in the subnet on which it is installed. You can manually add the nodes also.
 
 2. In the CMC page, click **Find Systems** from the left panel.<br> Find Systems dialogue box is displayed with an Enter IP pop-up box.
 

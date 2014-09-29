@@ -102,17 +102,17 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
    
    * In the **SAN password** box, enter the valid 3PAR password of the SAN controller for SSH access to the array.
    
-   * From the **Device Type** drop-down list, select the device type. For example: FC, iSCSI. <br> By default, the device type is FC.</br>
+   * From the **Device Type** drop-down list, select the device type. For example: FC, iSCSI. <br> By default, the device type is **FC**.</br>
    
    * Click **Done** to save the details. 
 
-    On successful registration, the 3PAR device is added and is listed as the **registered** Storeserv.
+    On successful registration, the 3PAR device is added and is listed as the **registered** StoreServ.
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered StoreServ in the HP StoreServ Main Page (opens in a new window)</a>
 
 ### Edit a 3PAR StoreServ {#edit-storeserv}
 
-To edit a StoreServ, do the following:
+To edit the details of a StoreServ, do the following:
 
 1. Log in to the Undercloud Horizon Dashboard.
 
@@ -129,7 +129,7 @@ To edit a StoreServ, do the following:
 
 ### Unregister a 3PAR StoreServ {#unregister-storeserv}
 
-**Note**: Before you unregister the storeserv, you need to unregister the CPG and remove the back end, etc. Once the 3PAR is unregistered, neither the CPGs nor the volume that are present are accessible from the array.
+**Note**: Before you unregister the StoreServ, you need to unregister the CPG and remove the backend etc. Once the 3PAR is unregistered, neither the CPGs nor the volume that are present, are accessible from the array.
 
 
 Use this option to unregister a StoreServ.
@@ -166,9 +166,9 @@ Use this option to unregister multiple StoreServs using a single command.
  
 ## Register 3PAR StoreServ Common Provisioning Groups (CPGs){#registering-cpg}
 
-Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder back end. A single HP 3PAR may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
+Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder back end. A single HP 3PAR StoreServ may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
 
-**Note**: Only registered CPG(s) can be configured as a storage back end for Cinder.
+**Note**: Only registered CPG(s) can be configured as a storage backend for Cinder.
 
 To register the CPGs, do the following:
 
@@ -228,7 +228,7 @@ To edit a CPG, do the following:
 
 ### Unregister a CPG {#unregister-cpg}
 
-**Note**: Before you unregister a CPG, remove the back end associated with this CPG. You need to either detach the volumes from Cinder or migrate to another back end as the volumes from this CPG will no longer be available.
+**Note**: Before you unregister a CPG, remove the backend associated with this CPG. You need to either detach the volumes from Cinder or migrate to another backend as the volumes from this CPG will no longer be available.
 
 To unregister, do the following:
 

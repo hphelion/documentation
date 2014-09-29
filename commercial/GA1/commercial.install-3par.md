@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array (a physical device) integrated with HP Helion Openstack to realize block storage within the cloud. 
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array (a physical device) integrated with HP Helion Openstack&#174; to realize block storage within the cloud. 
 
 [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of Cinder using the OpenStack block storage driver of HP 3PAR StoreServ. It supports Fiber Channel (FC) as well as iSCSI protocol. <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 
@@ -43,7 +43,7 @@ The following section briefly explains the above diagram and the steps involved 
 
 2 - **Install IMC**
 
-  * Download the IMC from the Undercloud Horizon (the link is provided for downloading IMC) to manage the StoreServ device.
+  * Download the IMC from the Undercloud Horizon Dashboard (the link is provided for downloading IMC) to manage the StoreServ device.
 
   * Create CPG's in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.
 
@@ -57,15 +57,15 @@ The following section briefly explains the above diagram and the steps involved 
 
 3e - **Get Cinder configuration for 3PAR backends**
 
-  * Launch the Horizon dashboard and navigate to Resources->Storage->StoreServ page.
+  * Launch the Horizon Dashboard and navigate to **Resources**->**Storage**->**StoreServ** page.
 
   * Register the StoreServ device and then register the CPG's of the StoreServ.
 
-  * [Create the StoreServ backend with registered CPG](/helion/openstack/ga/undercloud/storage/storeserv/) details and get the Cinder configuration advise for StoreServ.
+  * [Create the StoreServ backend with registered CPG(s)](/helion/openstack/ga/undercloud/storage/storeserv/) details and get the Cinder configuration advise for StoreServ.
   
  4a - **Update overcloud-config.json file with Cinder configuration**
 
-  With the advise generated from the above steps, update the overcloud-config.json file in the Seed cloud
+  With the advise generated from the above steps, update the overcloud-config.json file in the Seed cloud.
 
 4b - **Run update cloud script to update cinder.conf**
 
@@ -84,7 +84,7 @@ You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/
 
 ###Using the CLI###
 
-You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/ga/sirius-cli/)
+You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/ga/sirius/cli/workflow/)
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
