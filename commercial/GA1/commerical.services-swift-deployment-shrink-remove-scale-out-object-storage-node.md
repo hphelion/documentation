@@ -33,10 +33,10 @@ Once all the disks of the node are removed then the Scale-out object node can be
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter Swift nodes are functional by default as they are part of cloud deployment 
-3. Scale-out object-ring:1 is deployed
-4. Scale-out object-ring:1 is deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed.
+2. Starter Swift nodes are functional by default as they are part of cloud deployment. 
+3. Scale-out object-ring:1 is deployed.
+4. Scale-out object-ring:1 is deployed.
 
 
 
@@ -50,7 +50,7 @@ Once all the disks of the node are removed then the Scale-out object node can be
 
 Perform the following steps to remove disks from ring:
 
-1. Log in to Undercloud. 
+1. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i

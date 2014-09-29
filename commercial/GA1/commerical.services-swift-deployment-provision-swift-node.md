@@ -33,8 +33,8 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 
 ##Prerequisite {#Preq}
 
-* HP Helion OpenStack&#174; is deployed
-* Starter Swift nodes are functional by default as they are part of cloud deployment
+* HP Helion OpenStack&#174; is deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
 
 You can check health of starter Swift nodes by nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
 
@@ -77,7 +77,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 	**Notes**: 
 
 	- There must be one entry in this file for each baremetal system you intend to install.
-	- The first entry is used for the undercloud.
+	- The first entry is used for the Undercloud.
 	- The second entry is the node with the lowest specifications (CPU/RAM/Disk size) of nodes in the overcloud.
 
 	The following sample displays the `baremetal.csv` configuration file after adding server details.
@@ -86,7 +86,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 		E4:11:5B:B7:AD:CE,Administrator,gone2far,10.1.192.34,12,73728,70
 
 
-5. Log in to Undercloud. 
+5. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 
@@ -170,7 +170,7 @@ The cloud updates with the new nodes on successful operation.
 
 Ensure the deployment of the Swift node using the following commands:
 
-1. Log in to Underloud.
+1. Log in to Underloud from Seed.
 
 		# ssh heat-admin@<Undercloud IP address> 
 

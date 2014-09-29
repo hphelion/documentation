@@ -86,7 +86,7 @@ The following are the known issues for HP Helion OpenStack:
 For additional information about HP Helion OpenStack, OpenStack Cloud Software, and the HP Helion Support Center:
 
 * [HP Helion OpenStack Documentation web site](/helion/openstack/ga/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
-* [OpenStack web site](http://docs.openstack.org/wiki/Main_Page): Provides information on computing, networking, and storage in OpenStack, various programs such as TripleO, and the OpenStack community.
+* [OpenStack web site](http://www.openstack.org/): Provides information on computing, networking, and storage in OpenStack, various programs such as TripleO, and the OpenStack community.
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Provides a way to report issues with HP Helion OpenStack.
 
 

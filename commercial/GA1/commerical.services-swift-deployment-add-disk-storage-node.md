@@ -35,9 +35,9 @@ Perform the following procedure to add new scale-out object node.
 
 ##Prerequisite {#preq}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter Swift nodes are functional by default as they are part of cloud deployment
-3. Scale-out object-ring:1 is deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed. 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment.
+3. Scale-out object-ring:1 is deployed.
 
 ##Deploying new object nodes {#deploy-new-object-node}
 
@@ -49,12 +49,12 @@ Perform the steps mentioned in  [Provision Swift Node(s)]( /helion/openstack/ga/
 Once the Swift nodes are deployed, ensure that you format the required disks and mount them before adding disks to the Swift cluster. 
 
 
-1. Login to the Undercloud from Seed.
+1. Log in to the Undercloud from Seed.
     
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
 
-2. Change working directory to ring building directory
+2. Change working directory to ring building directory.
  
 		# cd /root/ring-building
 

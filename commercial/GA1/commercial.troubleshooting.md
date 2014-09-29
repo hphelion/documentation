@@ -27,10 +27,11 @@ HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of L
 
 For easy reference, we categorized the known issues and solutions as follows:
 
-* Baremetal installation{#baremetal-install}
-	* [KVM](#baremetal-install)
-	* ESX
-* Logging {#logging}
+* [Baremetal installation](#baremetal-install)
+	* [KVM](#kvm)
+	* [ESX and OVSvAPP](#esx-ovsvapp)
+* [Logging](#logging)
+* [VSA](#vsa)
 
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
@@ -38,7 +39,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 ## Baremetal installation {#baremetal-install}
 
-###KVM {#baremetal-install}
+###KVM {#kvm}
 
 1. [Fatal PCI Express Device Error](#fatal-pci)
 2. [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
@@ -51,10 +52,6 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 9. [Failure of Hp_ced_installer.sh](#failure-installer)
 10. [Failure of Seed Installation](#seed-install-failure)
 11. [NovaCompute node fails when installing overcloud](#novacompute-fails)
-
-
-##Logging {#logging}
-
 
 
 ###Fatal PCI Express Device Error <#fatal-pci>
@@ -306,7 +303,7 @@ Node does not have enough disk space. SAN boot is enabled for node or local disk
 
 Installer expects that SAN boot option is disabled for nodes. Verify whether SAN boot is disabled for BL 490c.
 
-On virtual connect window, you would see the following UI. It should be marked as disabled. I am not able to view the image. (**I am not able to see the image where we should mark as disable. can u please share the screen shot.)** 
+On virtual connect window, you would see the following UI. It should be marked as disabled. I am not able to view the image. (**I am not able to see the image where should we mark as disable. can u please share the screen shot.)**  [**Pranoy**]
 
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
@@ -347,18 +344,323 @@ NovaCompute node fails with an error: BadRequest: object of type 'NoneType' has 
 
 **Resolution**
 
-Please provide the resolution for the same.
+**Please provide the resolution for the same.** [**Pranoy**]
 
+===============================================================================================
+
+## ESX and OVSvAPP {#esx-ovsvapp}
+
+1. [nova-manage service list does not list the compute service as running](#nova-compute)
+2. [Unable to login to vCenter proxy agent](#unable-login-vcenter)
+3. [Unable to backup volumes using Cinder backup](#unable-cinder-backup)
+4. [Failure of OVSvAPP deployment](#fails-ovsvapp)
+
+
+ 
+###nova-manage service list does not list the compute service as running {#nova-compute}
+
+**System Behavior/Message**
+
+There can be multiple reason why nova-compute service is not listed or has a :) as status.
+
+**Resolution**
+
+To resolve the above issue verify the following:
+
+1.	The ESX Management Network is able to reach the Helion Management Network.
+2.	nova-compute service is running (os-svc-restart –n nova-compute).
+3.	Verify `/etc/nova/nova-compute.conf` has the right entries.
+
+===============================================================================================
+
+### Unable to login to vCenter proxy agent {#unable-login-vcenter}
+
+**System Behavior/Message**
+
+ Unable to login to vCenter proxy agent through the console.
+
+**Resolution** 
+
+Users can login to the system using the user `heat-admin ` and the authorized key in the Seed VM.
+
+===============================================================================================
+
+### Unable to backup volumes using Cinder backup {#unable-cinder-backup}
+
+**System Behavior/Message**
+
+ Unable to backup volumes using Cinder backup.
+
+**Resolution**
+
+Cinder-backup is not supported.
+
+===============================================================================================
+
+###Failure of OVSvAPP deployment {#fails-ovsvapp}
+
+**System Behavior/Message**
+
+Failure of OVSvAPP deployment.
+
+**Resolution**
+
+Verify `tripleo/hp-ovsvapp/log/ovs_vapp.log` in the installer directory.
+
+
+===============================================================================================
+
+
+**System Behavior/Message**
+
+After reboot of Controller that has the VIP assigned, the hpvcn agent, nova-compute service, nova compute service in the proxy node and HCN agent in OVSvAPP needs to be restarted manually to resume normal operations.
+
+**Resolution**
+
+* To restart nova-compute, execute the following command in compute proxies
+
+		# service nova-compute restart  
+
+* To restart HP VCN agent, execute the following command in OVSvAPP vm's
+
+		#service hpvcn-neutron-agent restart 
+
+===============================================================================================
+
+
+##VSA {#vsa}
+
+1. [Failure to retrieve netmask from vsa-bridge](#fails-retrieve-netmask)
+2. [Installation script detects more than 7 available drive](install-script-detect)
+3. [Failure of script due to less than two drives](#failure-script)
+4. [Cannot enable AO as only one disk is available](#cannot-enable-ao)
+5. [Unable to update the default input json file ](#unable-update-json)
+6. [Virtual bridge creation failed for interface <NIC>](#fail-virtual-bridge)
+7. [Creation of storage pool failed](#storage-pool-fail)
+8. [Failed during post VSA deployment](#post-vsa-fail)
+9. [vsa&#95;network cannot be destroyed](#vsa-network)
+10.[vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+
+
+
+###Failure to retrieve netmask from vsa-bridge {#fails-retrieve-netmask}
+
+**System Behavior/Message**
+ 
+Cannot retrieve netmask from interface vsa-bridge
+
+**Probable Cause**
+
+VSA deployment script determines the net-mask and gateway details from the provided interface. When there is no IP address assigned to the physical NIC, this error may occur.
+
+**Resolution**
+
+To resolve this issue, perform the following steps:
+
+* Check whether the IP address is allocated for the NIC which is assigned for the StoreVirtual network in `/etc/vsa/vsa-network_config.json`
+
+* ifconfig vsa-bridge----**is this the command for above?*** **[Karthik and Vivek]**
+
+===============================================================================================
+
+
+###Installation script detects more than 7 available drive {install-script-detect}
+
+**System Behavior/Message**
+
+Maximum supported devices 7.
+
+**Probable Cause**
+
+This issue occurs when there are more than 7 available drives detected by the installation script to deploy StoreVirtual.
+
+**Resolution**
+
+Perform the following steps:
+
+* HP StoreVirtual VSA supports up to 7 disks
+
+* Execute `fdisk –l` and check for number of available drives in the machine other than /dev/sda
+
+===============================================================================================
+
+###Failure of script due to less than two drives {#failure-script}
+
+**System Behavior/Message**
+
+Minimum number of disks must be 2. No disks are available.
+
+**Probable Cause**
+When there are less than two drives in the machine, the script will fail to execute.
+
+**Resolution**
+
+To resolve, perform the following steps:
+
+* Execute `fdisk –l`
+
+* Minimum two drives and maximum of 7 drives should be available for the StoreVirtual deployment other than boot disk(/dev/sda)
+
+* At least three drives required for enabling AO
+
+===============================================================================================
+
+### Cannot enable AO as only one disk is available {#cannot-enable-ao}
+
+**Probable Cause**
+
+For Adaptive Optimization to be enabled, at least three drives must be available. /dev/sdb must be SSD drive(Tier 0) and the remaining will be Tier 1.
+
+**Resolution**
+
+To resolve the issue, do the following:
+
+* Use RAID controllers to create RAID groups.
+
+* Ensure that you create the RAID group for SSD drives immediately after creating the RAID group for boot volume. For example: If three RAID groups are to be created. The following is recommended :
+	
+	* **Step 1** : Create the first RAID group for HDD drives and mark this as boot volume(/dev/sda)
+
+	* **Step 2**: Create the second RAID group for SSD drives which should be used as Tier 0 for AO (/dev/sdb)
+
+	* **Step 3**: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)
+
+===============================================================================================
+
+
+### Unable to update the default input json file {#unable-update-json}
+
+**System Behavior/Message**
+
+Parsing the default JSON file failed. Unable to update the default input json file.
+
+**Probable Cause**
+
+The script will parse the configuration file and update the values based on the network and configuration files.
+
+**Resolution**
+
+Perform the following steps:
+
+* Verify whether the JSON content is valid in the following files:
+
+	* `/home/vsa-installer/pyVins/etc/vsa/vsa_config.json`
+
+	* `/etc/vsa/vsa_network_config.json`
+
+===============================================================================================
+
+### Virtual bridge creation failed for interface <NIC> {#fail-virtual-bridge}
+
+
+**Probable Cause**
+
+The virtual network is defined using virsh commands. The script  will create a xml file to define and start the network.
+
+**Resolution**
+
+Perform the following steps:
+
+* ifconfig <interface>
+
+* Verify whether the interface has got IP address assigned
+
+* Verify in the `/etc/vsa/vsa_network_config.json` file whether the values are as expected.
+
+===============================================================================================
+
+###Creation of storage pool failed{#storage-pool-fail}
+
+**Probable Cause**
+
+Virtual storage pool will be created for placing the extracted VSA VM image. The storage pool will be created based on local directory  on `/mnt/state/vsa-kvm-storage`
+
+**Resolution**
+
+Perform the following steps:
+
+* Check whether `/mnt/state/vsa-kvm-storage` directory is available.
+
+* Verify for available space to create storage pool in the system.
+
+* Check the libvirt logs for more errors
+
+Refer `/var/log/libvirt/libvirt.log` on VSA system.
+ 
+===============================================================================================
+
+###Failed during post VSA deployment {#post-vsa-fail}
+
+**Probable Cause**
+
+The script will persist required files in `/mnt/state/vsa` which will be used for recreating the VSA VM during re-imaging scenario
+
+**Resolution**
+
+This error will occur if the script fails to find network_vsa.xml, storagepool_vsa.xml and other configuration files which has to be preserved.
+
+* Check for the configuration files on “/” path.
+
+* On success, the script updates the `vsa_config.json` file with the updated and created time.
+
+===============================================================================================
+
+###VSA installation failed {#vsa-install-fail}
+
+**Probable Cause**
+
+When VSA installation fails for any of the above reasons, the script will rollback the network and storage pool created.
+
+**Resolution**
+
+Verify the `/installer.log`
+
+===============================================================================================
+
+
+###vsa&#95;network cannot be destroyed{#vsa-network}
+
+**Probable Cause**
+
+vsa_network will be destroyed when the VSA installation fails.
+
+**Resolution**
+
+Perform the following steps:
+
+* Check whether the network is already undefined
+
+* Check whether the network name in `<PYVINS_DIRS>/etc/vsa/vsa_config.json` is the same as in the output of `virsh net-list –all` command
+
+===============================================================================================
+
+### vsa&#95;storage&#95;pool pool cannot be destroyed {#vsa-pool-cannot-destroy}
+
+**Probable Cause**
+
+The pool destroy will happen when VSA installation fails
+
+**Resolution**
+
+Perform the following:
+
+* Verify whether the storage pool is already undefined
+
+* Verify whether the pool name is same as in `<PYVINS_DIRS>/etc/vsa/vsa_config.json`
+
+* Virsh command to list the pools
+
+        Virsh pool-list --all
+
+===============================================================================================
 
 ##Logging  {#logging}
 
 ####Issue in Logging {#issue-in-logging}
 
-
-
 The user needs to manually follow the below steps to re-configure Kibana for logging.
 
-1. Log into undercloud and start screen session.
+1. Log in to Undercloud and start screen session.
 2. In the screen, start following command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
 3. Press Control **&** '**a**', then '**c**' to create another shell.
 4. In a new shell execute command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
@@ -367,7 +669,9 @@ The user needs to manually follow the below steps to re-configure Kibana for log
  
 Note: Unfortunately has to be repeated if node reboots ??? **what has to be repeated? entire steps??.**
 
-EDIT: Added 'sudo -u logstash' at beginning of commands
+EDIT: Added 'sudo -u logstash' at beginning of commands **(I am not clear where should a user add this command)**
+
+[**Pranoy**]
 
 
 

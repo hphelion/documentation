@@ -26,7 +26,7 @@ PageRefresh();
 
 OpenStack Swift is a highly available, distributed, eventually consistent object/blob store. Organizations can use Swift to store lots of data efficiently, safely, and cheaply.
 
-Based on OpenStack Swift, HP Helion OpenStack&#174; Object service is a redundant, scalable, durable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store large amount of unstructured data and retrieve objects in publicly accessible physical machine.   
+Based on OpenStack Swift, HP Helion OpenStack&#174; object storage service is a redundant, scalable, durable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store large amount of unstructured data and retrieve objects in publicly accessible physical machine.   
 
 Swift is also designed to be horizontally scalable, allowing it to handle large number of simultaneous connections. It enables you to store, retrieve, and delete files and contents through a simple RESTFul API interface.
 
@@ -41,7 +41,7 @@ HP Helion OpenStack&#174; object storage service will have a Swift cluster by de
 
 
 
-HP Helion OpenStack introduces the support of scale-out Swift. For more details, refer [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/).
+HP Helion OpenStack&#174; introduces the support of scale-out Swift. For more details, refer [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

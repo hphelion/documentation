@@ -30,9 +30,9 @@ Perform the following steps to remove a disk from object nodes.
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter Swift nodes are functional by default as they are part of cloud deployment
-3. Scale-out object-ring:1 is deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed.
+2. Starter Swift nodes are functional by default as they are part of cloud deployment.
+3. Scale-out object-ring:1 is deployed.
 
 
 **IMPORTANT**:  
@@ -45,7 +45,7 @@ Perform the following steps to remove a disk from object nodes.
 
 Perform the following steps to remove disks from ring:
 
-1. Log in to Undercloud. 
+1. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
