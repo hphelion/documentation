@@ -274,11 +274,7 @@ The following sections describe how and when to back up and restore the overclou
 
 You can [back up](#sherpaback) and [restore](#sherparest) an overcloud server or [back up](#databack) and [restore](#datarest) the overcloud database.
 
-<<<<<<< HEAD
 ### Backing up an overcloud server ### {#sherpaback} 
-=======
-### Backing up the Sherpa overcloud<a name="sherpaback"></a>} 
->>>>>>> 620709d341fc163628fab94f08361ef6b18f0884
 
 You should create a backup of the overcloud servers when any Update and Extension is download to the system.
 
