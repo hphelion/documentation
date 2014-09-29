@@ -107,8 +107,6 @@ Perform the following steps to add Swift disk to a ring:
 		# ringos add-disk-to-ring -f /root/ring-building/container.builder -i <Proxy nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 **Recommendation**: 
-
-* It is recommended to set zone as 2 for scale-out Proxy nodes and region remains 1.
                 
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 

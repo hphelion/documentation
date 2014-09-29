@@ -25,29 +25,63 @@ PageRefresh();
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
+For easy reference, we categorized the known issues and solutions as follows:
+
+* Baremetal installation{#baremetal-install}
+	* [KVM](#baremetal-install)
+	* ESX
+* Logging {#logging}
+
+
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
 
 
-## Baremetal installation
+## Baremetal installation {#baremetal-install}
 
-* When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error has occasionally occurred:
+###KVM {#baremetal-install}
+
+1. [Fatal PCI Express Device Error](#fatal-pci)
+2. [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
+3. [Failure of Update Overcloud](#failure-overcloud)
+4. [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
+5. [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
+6. [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
+7. [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
+8. [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
+9. [Failure of Hp_ced_installer.sh](#failure-installer)
+10. [Failure of Seed Installation](#seed-install-failure)
+11. [NovaCompute node fails when installing overcloud](#novacompute-fails)
+
+
+##Logging {#logging}
+
+
+
+###Fatal PCI Express Device Error <#fatal-pci>
+
+**System Behavior/Message**
+
+When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error has occasionally occurred:
 
     `Fatal PCI Express Device Error PCI Slot ?
      B00/D00/F00`
 
-     If you get this error, reset the system that experienced the error:
 
-    1. Connect to the iLO using Internet Explorer:
+**Resolution**
+
+If you get this error, reset the system that experienced the error:
+
+   1. Connect to the iLO using Internet Explorer:
         `https://<iLO IP address>`
-    2. Navigate to Information / Diagnostics.
-    3. Reset iLO.
-    4. Log back into the iLO after 30 seconds.
-    5. Navigate to Remote Console / Remote Console.
-    6. Open the integrated remote console (.NET).
-    7. Click Power switch / Press and Hold.
-    8. Click Power switch / Momentary Press, and wait for the system to restart.
+   2. Navigate to Information / Diagnostics.
+   3. Reset iLO.
+   4. Log back into the iLO after 30 seconds.
+   5. Navigate to Remote Console / Remote Console.
+   6. Open the integrated remote console (.NET).
+   7. Click Power switch / Press and Hold.
+   8. Click Power switch / Momentary Press, and wait for the system to restart.
 
-    The system should now boot normally.
+   The system should now boot normally.
 
 * If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
  
@@ -112,34 +146,42 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
     4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
 
 
-##Baremetal Installation
+===============================================================================================
 
-**IPMI fails with error- unable to establish IPMI v2 / RMCP+ session** 
+###IPMI fails with error- unable to establish IPMI v2 / RMCP+ session{#IPMI-fails}
+
+**System Behavior/Message**
 
 When installing on HP ProLiant BL490c systems, the following error has occasionally occurred:
 
 
     unable to establish IPMI v2 / RMCP+ session
 
-If you get this error, reset the system that experienced the error:
+**Resolution**
+
+If you get this error, perform the following steps:
 
 1. Ensure that the iLO user has administrator privileges, which is required by the IPMITOOL.
 2. To check, from the iLO remote console, reboot the server and press **F8** to get to ILO management screen.
 3. Click **User** in the menu-bar and select **Edit**. Edit User pop-up box displays .
 4. If you are using a BL server in the QA C7000 enclosure, select the **cdl** user to edit.
-5. Use &darr;(down arrow key) to go to the field **Administer User Accounts**. Use the space bar to set the value to YES.
+5. Use &darr;(down arrow key) to select **Administer User Accounts**. Use the space bar to set the value to **YES**.
 6. Select **F10** to save.
 7. Click **File** and select **Exit** to close.
 
+==============================================================================================
 
-##Installation
-####Failure of Update Overcloud 
+### Failure of Update Overcloud {#failure-overcloud}
+
+**System Behavior/Message**
 
 Update Overcloud fails with the following error:
 
  `  Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)`
 
-IF you get this error, perform the below steps:
+**Resolution**
+
+If you get this error, perform the below steps:
 
  1. Log in to Seed.
  
@@ -147,7 +189,7 @@ IF you get this error, perform the below steps:
 
 2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
 
-The ce_env_json will be displayed as the sample below.
+The ce&#95;env&#95;json will be displayed as the sample below.
 
 		  "host-ip": "192.168.122.1", 
 		   "hp": { 
@@ -161,186 +203,155 @@ Note that  the build&#95;number is changed from null to the right variable.
 		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
 
+===============================================================================================
+
+### Installation failure as the flavor to be used for overcloud nodes does not match {#installation-failure}
+
+**System Behavior/Message**
+
+If you have a set of Baremetal servers which differ in specifications (e.g. memory and disk), the installation will fail as the flavor to be used for Overcloud nodes does not match with the server that has the lowest specification for memory, disk, CPU. 
+
+**Probable Cause**
+
+ The 2nd row in `baremetal.csv` which corresponds to the Overcloud Controller node is used to create a flavor for the Overcloud nodes.  
+
+**Resolution**
+
+Edit the **baremetal.csv** file to define the lowest specification server in the second row.
+
+===============================================================================================
 
 
+####PXE boot on target node keeps switching between interfaces{{#PXE-boot-on-target}
 
-##Baremetal installation
+**System Behavior/Message**
 
-If you have set of baremetal servers which differ in specs (e.g. Memory and Disk), the installation will fail as the flavor to be used for overcloud nodes does not match with the server that has the lowest spec for memory, disk, cpu. 
-
-
-For the installatiion, the useer needs to create a configuration file, called baremetal.csv, that has information about each server you are going to install. It contains mac address, usernames/passwords, memory and such. For some reason, the smallest server in that set must be listed on the second line of the baremetal.csv.
+When node boots up on iLO console it shows node waiting for PXE boot on multiple NICs.
 
 
+**Probable Cause**
 
-## Baremetal installation
-
-####PXE boot on target node keeps switching between interfaces
-
-
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation Dashboard</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>System Behavior/Message</td>
-<td>When node boots up on iLO console it shows node waiting for PXE boot on multiple NICs.</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td>Multiple NICs are enabled for Network Boot. &nbsp;</td></tr>
-<tr style="background-color: white; color: black;">
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td>
-<ul>
- <li>Reboot the node, using F9 to get to the BIOS configuration.
- <li>Assuming NIC1(eth0/em1) for the node is connected to a private network shared across node  enable it for Network Boot. </li><ul>
- 	<li> Select System Options > Embedded NICs
-<li> Set NIC 1 Boot Options = Network Boot
- <li>Set NIC 2 Boot Options = Disabled
-</ul>
-</td>
-</table>
+ Multiple NICs are enabled for Network Boot.
 
 
+**Resolution**
+
+* Reboot the node, using **F9** to get to the BIOS configuration.
+* Assuming NIC1(eth0/em1) for the node is connected to a private network shared across node enable it for Network Boot.
+* Select System Options > Embedded NICs
+* Set NIC 1 Boot Options = Network Boot
+* Set NIC 2 Boot Options = Disabled
+
+==============================================================================================
+
+####BIOS blocks are not set to correct date and time across all nodes {#bios-blocks-are-not-set-to-correct-date}
 
 
+**System Behavior/Message**
 
-## Software Installation
-####BIOS blocks are not set to correct date and time across all nodes
-
-
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>System Behavior/Message</td>
-<td>Nodes PXE boot but ISCSI does not start</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td>Time and date across nodes is incorrect</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td>Reboot the node, using F9 to get to the BIOS configuration. BIOS date and time is set correctly and the same on all systems.
-<ul><li>Select Date and Time
-<li>Set the Date
-<li>Set the Time
-<li>Use the &lt;ENTER> key to accept the new date and time
-<li>Save the BIOS, which reboots the node again
-<li>Once the node has rebooted, you can confirm its data and time from the iLO Overview
-</td>
-</table>
-
-##Installation
-####iLO console shows hLinux daemon.err tgtd while PXE booting
-
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>System Behavior/Message</td>
-<td>PXE boot gets stuck after daemon.err tgtd</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td>Node does not have enough disk space</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td><ul><li> Check if target node has disk space mentioned in baremetal.csv and is greater than Node_min_disk mentioned in tripleo/tripleo-incubator/scripts/hp_ced_functions.sh 
-<li>If disk space is less than Node_min_disk, change Node_min_disk  along with DISK_SIZE in tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh  on Seed 
-<li> Re-run the installation script 
-</ul></li>
-</td>
-</table>
+Nodes PXE boot but ISCSI does not start.
 
 
-##Installation
-####iLO console shows null waiting for notice of completion while PXE booting
+**Probable Cause**
+
+Time and date across nodes is incorrect.
 
 
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation Dashboard</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>System Behavior/Message</td>
-<td>Node is powered on and PXE booted but it is powered off after daemon.err and stack create fails.</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td>Node does not have enough disk space. SAN boot is enabled for node or local disk is not attached to /sda</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td><ul><li> Installer expects that SAN boot option is disabled for nodes. Check if SAN boot is disabled for BL 490c </ul></li>
+**Resolution**
 
-On virtual connect window, you would see the following UI. It should be marked as disabled. 
-<b>I am not able to view the image</b>
-<br><br>
+Reboot the node, using F9 to get to the BIOS configuration. BIOS date and time is set correctly and the same on all systems.
+
+* Select Date and Time
+* Set the Date
+* Set the Time
+* Use the <ENTER> key to accept the new date and time
+* Save the BIOS, which reboots the node again
+* Once the node has rebooted, you can confirm its data and time from the iLO Overview
+
+==============================================================================================
+
+####iLO console shows hLinux daemon.err tgtd while PXE booting {#ilo-console}
+
+**System Behavior/Message**
+
+PXE boot gets stuck after daemon.err tgtd
+
+
+**Probable Cause**
+
+Node does not have enough disk space
+
+
+**Resolution**
+
+* Check if target node has disk space mentioned in baremetal.csv and is greater than Node_min_disk mentioned in tripleo/tripleo-incubator/scripts/hp&#95;ced&#95;functions.sh
+* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in tripleo/tripleo-incubator/scripts/hp&#95;ced&#95;list_nodes.sh on Seed
+* Re-run the installation script.
+
+==============================================================================================
+
+####iLO console shows null waiting for notice of completion while PXE booting {#ilo-show-null}
+
+**System Behavior/Message**
+
+Node is powered on and PXE booted but it is powered off after daemon.err and stack create fails.
+
+**Probable Cause**
+
+Node does not have enough disk space. SAN boot is enabled for node or local disk is not attached to /sda
+
+**Resolution**
+
+Installer expects that SAN boot option is disabled for nodes. Check if SAN boot is disabled for BL 490c
+
+On virtual connect window, you would see the following UI. It should be marked as disabled. I am not able to view the image 
+
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device it shows as the local disk. For the installer it should be /sda
-</td>
-</table>
+
+===============================================================================================
+
+####Failure of Hp&#95;ced_installer.sh{#failure-installer}
+
+**System Behavior/Message**
+
+Hp&#95;ced_installer.sh fails because of baremetal.csv /sda
+
+
+**Resolution**
+Verify `baremetal.csv` for empty lines or special characters
+
+===============================================================================================
+
+####Failure of Seed Installation {#seed-install-failure}
+
+
+**System Behavior/Message**
+
+Seed installation fails with no space left on device
+
+
+**Resolution**
+
+Verify the tripleo directory- User, Owner, and Group. It must be root:root. If it is not root:root then change it to root using- chown root:root tripleo
+
+===============================================================================================
+
+###NovaCompute node fails when installing overcloud {novacompute-fails}
+
+**System Behavior/Message**
+
+NovaCompute node fails with error: BadRequest: object of type 'NoneType' has no len() (HTTP 400)
+
+**Resolution**
 
 
 
-## Baremetal Installation
-####Failure of Hp&#95;ced_installer.sh
 
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation Dashboard</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td> Hp&#95;ced_installer.sh fails because of baremetal.csv /sda</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td>Verify baremetal.csv for empty lines or special characters
-</td>
-</table>
+##Logging  {#logging}
+
+####Issue in Logging {#issue-in-logging}
 
 
-
-## Baremetal Installation
-####Failure of Seed Installation
-
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation Dashboard</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td>Seed installation fails with no space left on device </td></tr>
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td>Verify the tripleo directory User, Owner, and Group. It must be <b> root:root</b>. If it is not  <b> root:root</b> then change it to root using- <b> chown root:root tripleo<b>
-
-</td>
-</table>
-
-##Installation
-##NovaCompute node fails when installing overcloud
-
-
-<table style="text-align: left; vertical-align: top; min-width: 700px;">
-<tr style="background-color: #C8C8C8;">
-<th colspan="2">Software Component: Installation Dashboard</th>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>System Behavior/Message</td>
-<td>NovaCompute node fails with error: BadRequest: object of type 'NoneType' has no len() (HTTP 400)</td></tr>
-<tr style="background-color: white; color: black;">
-<td>Probable Cause</td>
-<td></td></tr>
-<tr style="background-color: white; color: black;">
-<td>Resolution</td>
-<td>
-</td>
-</table>
-
-
-
-##Logging  
-####Issue in Logging
 
 The user needs to manually follow the below steps to re-configure Kibana for logging.
 

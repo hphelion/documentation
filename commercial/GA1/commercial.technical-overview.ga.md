@@ -98,13 +98,13 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<a href="/helion/openstack/services/orchestration/overview/">Learn more</a> Orchestration services.</td> 
 	<td>Administrator can deploy and configure the OpenStack Overcloud using the Heat Service provided in the Undercloud.</td>
 </tr>
-
+<!---
 <tr style="background-color: white; color: black;">
 	<td><b>Telemetry and Reporting (Ceilometer)</b></td>
  	<td><a href="/helion/openstack/services/reporting/overview/">Learn more</a> OpenStack Ceilometer based HP Telemetry and Reporting services.
 	</td> 
 	<td>The Telemetry service provides access to metering data collected from the compute, network, and storage services. This information can be stored in the default MySQL database or in an optional HP Vertica system for advanced analytics. Information from Telemetry and Reporting service can be used for both operational and user monitoring and external billing use cases.</td>
-</tr>
+</tr> --->
 <tr style="background-color: white; color: black;">
 	<td><b>Sherpa</b></td>
  	<td>HP Helion content distribution catalog service provides a mechanism to download the content such as Glance images, Heat templates, etc from the HP Helion CODN and install  the content in the appropriate service such as Glance service etc.<br><br>

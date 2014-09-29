@@ -32,18 +32,18 @@ A cloud storage container provides a way to organize your objects. An object can
 
 Objects have a size limit of 5 GB. However, objects larger than 5 GB can be segmented and then concatenated together so that you can upload 5 GB segments and download a single concatenated object of any size. You can work with the segments and manifests directly with API requests.
 
-HP Helion OpenStack Object&#174; service will have swift cluster as a part of cloud creation. It allows to scale-out swift to store end cloud user data and also to protect from 'no single point of failure policy'. 
+HP Helion OpenStack Object&#174; service will have Swift cluster as a part of cloud creation. It allows to scale-out swift to store end cloud user data and also to protect from 'no single point of failure policy'. 
 
 
 
-##Purpose of Swift
+##Purpose
 
-Swift is used for two different purposes:
+HP Helion OpenStack&#174; Swift is used for two different purposes:
 
 1. Cloud Controller Service data (used for Helion OpenStack&#174; Services implementation and High Availability (HA)) 
 2. Tenant Object Storage data (used by end Tenants / Project Users for scaled-out Object Storage).
 
-HP Helion OpenStack&#174; Swift which is deployed by default during installation of HP Helion OpenStack is used to serve Cloud Controller internal data. This can be expanded to scale-out to server user data storage. 
+HP Helion OpenStack&#174; Swift which is deployed by default during installation of HP Helion OpenStack is used to serve Cloud Controller internal data. This can be scaled-out for user data. 
 
 
 HP Helion OpenStack introduces the support of scale-out Swift. For more details, refer [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/).

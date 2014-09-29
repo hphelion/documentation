@@ -36,8 +36,7 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 * HP Helion OpenStack&#174; is deployed
 * Starter Swift nodes are functional by default as they are part of cloud deployment
 
-Before provisioning Swift node(s) ensure that all the nodes are **ACTIVE** and  **Running**.
-You can view the status of the nodes using the following command:
+You can check health of starter Swift nodes by nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
 
 	# nova list
 
@@ -153,7 +152,7 @@ Perform the following steps to provision the Swift node:
 	
 	 "so&#95;swift&#95;proxy_scale": &lt;number of proxy servers &gt;  ,
 
-**Note**: While deploying the scale-out proxy node "so&#095;swift&#095;storage&#095;scale" must be set to 0 and while deploying the scale-out object node "so&#095;swift&#095;proxy&#095;scale" must be set to 0.
+**Note**: While deploying the scale-out proxy node ensure that "so&#095;swift&#095;storage&#095;scale"is unchanged and while deploying the scale-out object node ensure that "so&#095;swift&#095;proxy&#095;scale" is unchanged.
  
 4.Enter the following command to source the `overcloud_config.json`  for the new values.
 

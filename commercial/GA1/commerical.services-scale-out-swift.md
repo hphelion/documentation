@@ -35,7 +35,7 @@ The scale-out object storage is realized by defining a new storage policy – st
 
 You can expand the object storage by adding one or more nodes to object-ring:1. But you can still continue to use storage-policy:0, if you continue to use the old container to store data.
 
-HP Helion OpenStack Swift ships a tool set- ringos which helps to create scale-out Swift. For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
+HP Helion OpenStack Swift provides a utility named ringos which helps to create scale-out Swift. For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
 
 
 ##Scale-out Swift architecture 
