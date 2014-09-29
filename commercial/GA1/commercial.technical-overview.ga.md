@@ -145,7 +145,9 @@ The following diagram depicts a simplified deployment scenario using KVM.
 
 The following diagram depicts a simplified deployment scenario using ESX.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+<img src="/content/documentation/media/topology_esx.png">
+
+<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
 
 ### Hardware requirement<a name="hardware-req"></a>
