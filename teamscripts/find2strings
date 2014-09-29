@@ -1,5 +1,5 @@
 #!/bin/bash
-# script to search for all md files that contain both string X and Y
+#script to search for all md files that contain both string X and Y
 
 
 while [[ $1 = -* ]]; do
