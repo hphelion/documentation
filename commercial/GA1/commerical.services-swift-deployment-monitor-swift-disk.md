@@ -47,19 +47,18 @@ Perform the following steps to monitor the usage of Swift disk:
 
 2. Click **Status** on the left panel and then click **Host Detail**. 
 
-<img src ="media/icinga_host-details.png/">
-
+<img src="media/icinga_host-details.png"/>
 
 
 3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
-<img src ="media/swift_icinga_view-details.png"/>
+<img src="media/swift_icinga_view-details.png"/>
 
 
 
 The page navigates to Service Status Details For Host < Swift node IP address>. 
 
-<img src ="media/swift_icinga-disk-usage"/>
+<img src="media/swift_icinga-disk-usage"/>
 
 Now, you can view the disk usage of the selected Swift node.
 
