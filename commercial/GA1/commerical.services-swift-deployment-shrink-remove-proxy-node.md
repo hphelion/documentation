@@ -39,10 +39,10 @@ Once all the disks of the node are removed the scale-out Proxy node can be remov
 
 ##Prerequisite{#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter Swift nodes are functional by default as they are part of cloud deployment 
-3. Scale-out object-ring:1 is deployed
-4. Scale-out proxy node is deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed.
+2. Starter Swift nodes are functional by default as they are part of cloud deployment. 
+3. Scale-out object-ring:1 is deployed.
+4. Scale-out proxy node is deployed.
 
 
 
@@ -56,7 +56,7 @@ Once all the disks of the node are removed the scale-out Proxy node can be remov
 
 Perform the following steps to identify the disks of the node to be removed:
 
-1. Log in to Undercloud. 
+1. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i

@@ -32,10 +32,10 @@ It is recommended to use Proxy node to store account, container objects based on
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter Swift nodes are functional by default as they are part of cloud deployment
-2. Scale-out object-ring:1 is deployed
-3. Scale-out Proxy node is deployed
+1. HP Helion OpenStack&#174; cloud is successfully deployed. 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment.
+2. Scale-out object-ring:1 is deployed.
+3. Scale-out Proxy node is deployed.
 
 **IMPORTANT**:  
  

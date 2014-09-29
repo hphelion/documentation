@@ -33,8 +33,8 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 
 ##Prerequisite {#Preq}
 
-* HP Helion OpenStack&#174; is deployed
-* Starter Swift nodes are functional by default as they are part of cloud deployment
+* HP Helion OpenStack&#174; is deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
 
 You can check health of starter Swift nodes by nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
 
