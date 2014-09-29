@@ -22,13 +22,16 @@ It is  designed to offer a number of value-added services that complement and en
 * [Deployment architecture](#deploy-arch)
 	* [KVM environment](#KVM-env)
 	* [ESX environment](#esx-env)
-	* [Hardware requirement](#hardware-req)
-	* [Network Architecture](#networkarch)
+* [Hardware requirement](#hardware-req)
+* [Network Architecture](#networkarch)
+	* [Physical network architecture](#physical)
+	* [Virtual networks](#virtual)
+* [Network planning](#networkplan)
 * [High availability](#highavailability)
 * [Security architecture](#security-architecutre)
 * [Installation and configuration](#install-configure)
 	* [OpenStack on OpenStack -TripleO](##Deploy)
-	*  [Installation option](#install-option) 
+	* [Installation option](#install-option) 
 *  [Updates and extensions](#updates-and-extensions)
 *  [Operational management](#operate-manage)
 	* [Centralized Logging](centralized-logging)
@@ -37,7 +40,7 @@ It is  designed to offer a number of value-added services that complement and en
 	* [Backup and Restore nodes](#backup-restore-nodes)
 * [Next Step](#next)
 
-##HP Helion OpenStack Services- Functional Overview<a name="Helion-services"></a>
+## HP Helion OpenStack Services- Functional Overview<a name="Helion-services"></a>
 
 The following table outlines the functionality of HP Helion OpenStack services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](/helion/openstack/services/overview/) page.
 
@@ -150,7 +153,7 @@ The following diagram depicts a simplified deployment scenario using ESX.
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
 
-### Hardware requirement<a name="hardware-req"></a>
+## Hardware requirement<a name="hardware-req"></a>
 
 The following hardware requirement is required to install HP Helion OpenStack.
 
@@ -177,28 +180,110 @@ The following hardware requirement is required to install HP Helion OpenStack.
 
 For more information of Hardware configuration see [Hardware configuration](/helion/openstack/ga/install/prereqs/) and [Support Matrix](/helion/openstack/ga/support-matrix/).
 
-### Network architecture<a name="networkarch"></a>
+## Network architecture<a name="networkarch"></a>
 
-The following information describes the network configuration for [KVM](#KVM-Physical-network) and [ESX](#ESX-physical-network), which must be configured by the network administrator.
+The following information describes the network configuration for the [physical networks](#physical) and [virtual networks](#virtual), which must be configured by the network administrator.
 
-####KVM physical networks<a name="KVM-physical-network"></a>
-<table>
+### Physical network architecture {#physical}
+
+This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
+
+- Physical network ports on each server
+	- One IPMI port
+	- One physical ethernet port (for example, eth0) for the hypervisor/OS
+
+- Network fabric
+	- Two physical links, one for IPMI and one for the hypervisor/OS
+	- Network switches capable of basic VLAN, L2 and L3 functions;
+	- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
+
+For detailed information, see the [Preparing the network](/helion/openstack/ga/install/prereqs/#network) section of the *Prerequisites*.
+
+<table style="text-align: left; vertical-align: top; width:700px;">
+
 <tr style="background-color: #C8C8C8;">
-    <th>Network</th>
-    <th>Description</th>
-      </tr>
+<th> Network </th>
+<th> Description </th>
+<th> VLAN type </th>
+<th> Server port </th>
+
+</tr>
+
 <tr style="background-color: white; color: black;">
-    <td><b>IPMI/iLO</b></td>
-    <td>Base IPMI network used to boot and manage physical servers in the cloud</td>
- <tr style="background-color: white; color: black;">
-    <td><b>External</b></td>
-    <td>Network connecting compute nodes and controller nodes to the Internet or Intranet. External network access is required for DVR routing from compute nodes. 
-	<br><br>Floating IPs on the external network can be attached only to VMs that require a public IP address.
-</td>
- </tr>
+<td> IPMI / iLO </td>
+<td> Network for server hardware management </td>
+<td> Untagged </td>
+<td> IPMI or iLO</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Undercloud management </td>
+<td> <ul><li>Traffic for undercloud internal OpenStack calls, Glance image downloads, etc.</li>
+<li>Provides access to undercloud API endpoints</li>
+<li>Used to PXE boot overcloud servers</li>
+</ul> </td>
+<td> Untagged </td>
+<td> eth0</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Overcloud management </td>
+<td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
+<td> Untagged </td>
+<td> eth0</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> SDN </td>
+<td> Network between workload VMs, e.g. carries VxLAN traffic </td>
+<td> Untagged </td>
+<td> eth0</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Storage </td>
+<td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
+<td> Untagged </td>
+<td> eth0</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> External </td>
+<td><ul><li> Connected to internet or intranet</li>
+<li>Provides floating IPs</li></ul> </td>
+<td> Tagged </td>
+<td> eth0</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Service </td>
+<td>Connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud</td>
+<td>Tagged</td>
+<td>eth0</td>
+
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> Swift </td>
+<td> Communication between Swift servers (includes user data)  </td>
+<td> Untagged </td>
+<td> eth0</td>
+
+</tr>
+
 </table>
 
-####Virtual networks
+### Virtual networks ### {#virtual}
+The logical networks listed in the following table are implemented as VLANs on the physical network. The virtual networks are different for [KVM]{#virtualkvm} and [ESX]{#virtualesx}.
+
+#### Virtual networks for KVM hypervisor support #### {#virtualkvm}
+
 The logical networks listed in the following table are implemented as VLANs on the physical network.
 <table>
 
@@ -227,21 +312,11 @@ The logical networks listed in the following table are implemented as VLANs on t
 
 The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. For more information on guidelines for setting up security firewalls and routing see [Network security](/helion/openstack/ga/install/security/).
 
-####ESX physical network<a name="ESX-physical-network"></a>
-<table>
-<tr style="background-color: #C8C8C8;">
-    <th>Network</th>
-    <th>Description</th>
-          </tr>
-<tr style="background-color: white; color: black;">
-    <td><b>IPMI</b></td>
-    <td>Base IPMI network used to boot and manage physical servers</td>
-    
-    </tr>
-</table>
 
-####Virtual networks
+#### Virtual networks for ESX hypervisor support #### {#virtualesx}
+
 The logical networks listed in the following table are implemented as VLANs on the physical network.
+
 <table>
 <tr style="background-color: #C8C8C8;">
     <th>Network</th>
@@ -278,7 +353,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 </table>
 
 
-#### Network planning
+## Network planning {#networkplan}
 
 You must manage and prepare the network based on the type of hypervisor.
  
@@ -291,7 +366,7 @@ We recommend using one physical Ethernet port on a 10 GB network. Use an untagge
 
 The Seed VM is expected to use eth0 to connect to the cluster network (and hence through to the management network). If your host uses another NIC, for example eth1, then you need to set the environment variable appropriately, for example BRIDGE_INTERFACE=eth1, as seen by root.
 
-####Network fabric 
+#### Network fabric 
 * Two physical links, one for IPMI/iLO and one for the hypervisor/OS
 * Network switches capable of basic VLAN, L2 and L3 functions (there is no dependency on VxLAN-capable or OpenFlow-enabled switch, although the product supports VxLAN as the virtual/overlay network)
 
@@ -300,6 +375,45 @@ The physical cluster network can be shared by a number of logical networks, each
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+## Installation planning<a name="install-configure"></a>
+
+HP Helion OpenStack uses three linked installation phases to deploy a complete OpenStack cloud. TripleO simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment.
+
+OpenStack-on-OpenStack, or TripleO, is OpenStack's official project for deployment, configuration and life cycle management of OpenStack clouds. A TripleO installation includes a seed, undercloud and overcloud:
+
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: white; color: black;">
+	<td><b>Seed VM</b></td>
+	<td>The seed cloud is deployed as a VM instance. This image contains minimal OpenStack services required to deploy and update the undercloud on a baremetal server.
+	<br><br>
+	The Host Server running the seed VM is also used to run backup restore procedures for the seed VM, undercloud and overcloud. The seed VM is also used to run the StoreVirtual CMC Management Console.
+	<br><br>
+	The seed VM does not run in a HA configuration, but is an important component of the cloud. Learn more about the [Backup Restore procedures](#backup-restore-nodes) to restore the seed VM in event of server problems.
+</tr>
+</td>
+<tr style="background-color: white; color: black;">
+	 <td><b>Undercloud</b></td>
+	 <td>A single-server deployment of a limited set of OpenStack services, called the undercloud, is used to deploy, test, manage, and update all the overcloud servers. 
+	<br><br>
+	The undercloud comprises the Compute, Ironic, Networking Operations, Object Operations, Identity, and Orchestration services, which are used to deploy and configure various nodes of the overcloud on Baremetal servers.<br><br>The Centralized Logging and Monitoring components run in the undercloud and can be accessed using a Web Browser. <br><br>The Sherpa, Eon and Sirius services also run in the undercloud, and can be accessed via panels in the Horizon Dashboard fr the undercloud.
+	The undercloud does not run in a HA configuration, but is an important component of the cloud. 
+	<br><br>
+	Learn more about the [Backup Restore procedures](#backup-restore-nodes) to restore the Undercloud in event of server problems.
+ </tr>
+<tr style="background-color: white; color: black;">
+  	<td style><b>Overcloud<b></td>
+ 	<td>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
+	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Management, Orchestration, and Telemetry/Reporting services, as described in the [Functional Overview](#Helion-services) section above. 
+	<br><br>These services are deployed in a highly available cluster across the three Controller nodes. 
+	<br><br>For KVM based Hypervisor environments, the Overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
+</td>
+</tr>
+</table>
+
+**Note:** You cannot build or rebuild the images. Direct editing of the Heat templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
+
+[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
 
 
 ##High availability<a name="highavailability"></a>
@@ -312,55 +426,11 @@ For more details on HA configuration, refer to [HP Helion OpenStack High Availab
 
 
 
-## Installation and configuration<a name="install-configure"></a>
-
-HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of **9** baremetal servers, to which you can add **up to 100 Compute nodes**:
-
-* 1 seed cloud host (installer system)
-* 1 undercloud server
-* 3 overcloud controllers
-* 2 overcloud Swift nodes
-* At least 1 block storage node (not required if 3Par is being used for block storage) 
-* At least 1 overcloud Compute node 
-
-[Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
 
 ###OpenStack on OpenStack -TripleO<a name=""Deploy></a>
 
-HP Helion OpenStack uses three linked installation phases to deploy a complete OpenStack cloud. TripleO simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment.
 
 
-OpenStack-on-OpenStack, or TripleO, is OpenStack's official project for deployment, configuration and life cycle management of OpenStack clouds. A TripleO installation includes a seed, undercloud and overcloud.
-
-<table style="text-align: left; vertical-align: top; width:600px;">
-<tr style="background-color: white; color: black;">
-  	<td style><b>Overcloud<b></td>
- 	<td>The Overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The Overcloud comprises OpenStack Cloud Services deployed on Controller Nodes, and a number of Compute Nodes and Storage Nodes. 
-	<br><br>The Cloud Services in the Overcloud, used by end users, include Nova, Neutron, Cinder, Swift, Horizon, Glance, Keystone, Heat, and Ceilometer services, as described in the Functional Overview section above. These Cloud Services are deployed in a highly available cluster across the three Controller nodes. 
-	<br><br>For KVM based Hypervisor environments, the Overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
-</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	 <td><b>Undercloud</b></td>
-	 <td>A single-server deployment of a limited set of OpenStack services, called the Undercloud, is used to deploy, test, manage, and update all the Overcloud servers. 
-	<br><br>
-	The Undercloud comprises Nova, Ironic, Neutron, Glance, Keystone, and Heat services, which are used to deploy and configure various nodes of the Overcloud, either on Virtual Machines or Baremetal servers.<br><br>The Centralized Logging and Monitoring components run in the Undercloud and can be accessed using a Web Browser. <br><br>The Sherpa, Eon and Sirius services also run in the Undercloud, and can be accessed via panels in the Horizon Dashboard also running in the UnderCloud.
-	The Undercloud does not run in a HA configuration, but is an important component of the Cloud. 
-	<br><br>
-	Learn more about the Backup Restore procedures to restore the Undercloud in event of server problems.
- </tr>
-<tr style="background-color: white; color: black;">
-	<td><b>Seed VM</b></td>
-	<td>The SeedCloud is deployed as a VM instance. This image contains bare minimal OpenStack services required to deploy and update the Undercloud on a baremetal server.
-	<br><br>
-	The Host Server running the SeedCloud VM is also used to run backup restore procedures for SeedCloud, Undercloud and Overcloud Controllers. It is also used to run the StoreVirtual CMC Management Console.
-	<br><br>
-	The SeedCloud does not run in a HA configuration, but is an important component of the Cloud. Learn more about the Backup Restore procedures to restore the SeedCloud in event of server problems.
-</tr>
-</td>
-</table>
-
-**Note:** You cannot build or rebuild the images. Direct editing of the Heat templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
 
 ###Installation option<a name="install-option"></a>
 

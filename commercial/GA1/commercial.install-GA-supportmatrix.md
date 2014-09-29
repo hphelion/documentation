@@ -250,11 +250,11 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 - 3PAR InForm OS Version: 3.1.3 MU1 
    
      
-## Hardware and Network Configuration<a name="baremetal"></a>
+## Hardware Requirements<a name="baremetal"></a>
 
 You must have the following hardware and network configuration:
 
-- At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
+- At least 9 and no more than 100 baremetal systems meeting the requirements as listed below.
 
 Additional requirements are as follows:
 
@@ -554,100 +554,6 @@ or
 </table>
 -->
 
-
-## Physical Network Architecture<a name="physical-network-architecture"></a>
-This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
-
-- Physical network ports on each server
-	- One IPMI port
-	- One physical ethernet port (for example, eth0) for the hypervisor/OS
-
-- Network fabric
-	- Two physical links, one for IPMI and one for the hypervisor/OS
-	- Network switches capable of basic VLAN, L2 and L3 functions;
-	- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
-
-For detailed information, see the [Preparing the network](/helion/openstack/ga/install/prereqs/#network) section of the *Prerequisites*.
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th> Network </th>
-<th> Description </th>
-<th> VLAN type </th>
-<th> Server port </th>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> IPMI / iLO </td>
-<td> Network for server hardware management </td>
-<td> Untagged </td>
-<td> IPMI or iLO</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Undercloud management </td>
-<td> <ul><li>Traffic for undercloud internal OpenStack calls, Glance image downloads, etc.</li>
-<li>Provides access to undercloud API endpoints</li>
-<li>Used to PXE boot overcloud servers</li>
-</ul> </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Overcloud management </td>
-<td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> SDN </td>
-<td> Network between workload VMs, e.g. carries VxLAN traffic </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Storage </td>
-<td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> External </td>
-<td><ul><li> Connected to internet or intranet</li>
-<li>Provides floating IPs</li></ul> </td>
-<td> Tagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Service </td>
-<td>Connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud</td>
-<td>Tagged</td>
-<td>eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Swift </td>
-<td> Communication between Swift servers (includes user data)  </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-</table>
 
 ## Software Requirements <a name="software-requirements"></a>
 
