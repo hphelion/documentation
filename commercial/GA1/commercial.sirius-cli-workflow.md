@@ -38,7 +38,7 @@ This page describes the workflow for HP StoreVirtual and HP 3PAR StoreServ integ
 
 ## Before you begin <a name="add-backend"></a>
 
-Ensure the following prerequisites are fulfilled before start:
+Ensure the following prerequisites are fulfilled before you start:
 
 * HP Helion Cloud is deployed 
 
@@ -70,7 +70,7 @@ Ensure that the cluster details entered in the command correspond with the actua
 
 To register StoreVirtual clusters, enter the following command
 
-	sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+	 # sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 The sample output of the above command is given below:
 
@@ -93,11 +93,11 @@ The sample output of the above command is given below:
 
 ###Add StoreVirtual clusters as a backend for the cloud {#add-backend}
 
-The VOLUME&#095;BACKEND&#095;NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME&#095;BACKEND&#095; value to a specific volume type, created in the overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
+The VOLUME&#095;BACKEND&#095;NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME&#095;BACKEND&#095; value to a specific volume type, created in the Overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
 
 To add a backend, enter the following command
 
-	sirius add-storevirtual-backend <CLUSTER_ID> --backend-name <VOLUME_BACKEND_NAME>
+	# sirius add-storevirtual-backend <CLUSTER_ID> --backend-name <VOLUME_BACKEND_NAME>
 
 The sample output of the above command is given below:
 
@@ -119,7 +119,7 @@ The sample output of the above command is given below:
 
 To view the StoreVirtual cluster configuration, enter the following command
 
-	sirius storevirtual-cluster-show <CLUSTER_ID> --backend-name <VOLUME_BACKEND_NAME>
+	# sirius storevirtual-cluster-show <CLUSTER_ID> --backend-name <VOLUME_BACKEND_NAME>
 
 The sample output of the cinder.conf is given below:
 
@@ -137,7 +137,7 @@ The sample output of the cinder.conf is given below:
 
 To view the list of configured StoreVirtual backends, enter the following command
 
-	sirius storevirtual-backend-list
+	# sirius storevirtual-backend-list
 
 The sample output of the above command is given below:
 
@@ -168,7 +168,7 @@ Perform the following steps to add and configure StoreServ.
 
 To register StoreServ, enter the following command
 
-	sirius register-storeserv --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
+	# sirius register-storeserv --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
 
 *Additional arguments*: --iscsi-ip <ISCSI_IP> [required for iSCSI type devices].
 
@@ -199,7 +199,7 @@ The sample output of the above command is given below:
 
 List the available CPGs in the StoreServ device. From the available CPG list identify the ones to be registered to the cloud using the following command
 
-	sirius storeserv-show <STORESERV_ID> --cpg-list true
+    # sirius storeserv-show <STORESERV_ID> --cpg-list true
 
 The sample output of the above command is as below:
 
@@ -215,12 +215,12 @@ The sample output of the above command is as below:
 Register the CPG(s) under the StoreServ using the following command. Multiple CPGs can be registered at a time for a given StoreServ device
 
 
-	sirius register-cpg <STORESERV_ID> --cpgs [<CPG_ID> <CPG_ID>]
+	# sirius register-cpg <STORESERV_ID> --cpgs [<CPG_ID> <CPG_ID>]
 
 
 Verify the registered CPG list
 
-	sirius cpg-list <STORESERV_ID>
+	# sirius cpg-list <STORESERV_ID>
 
 The sample output of the above command is as below:
 
@@ -238,7 +238,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 
 To add the StoreServ CPG as backend, enter the following command
 
-	sirius add-storeserv-backend <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
+	# sirius add-storeserv-backend <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
 
 The sample output of the above command is given below:
 
@@ -261,13 +261,13 @@ The sample output of the above command is given below:
 
 To view the cinder configuration for the StoreServ CPG, enter the following command 
 
-	sirius cpg-show <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
+    # sirius cpg-show <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
 
 ### View the configured StoreServ backend list{#view-storeserv-list}
 
 To view the list of configured StoreServ backends, enter the following command
 
-	sirius storeserv-backend-list
+    # sirius storeserv-backend-list
 
 The sample output of the above command is given below:
 
@@ -295,7 +295,7 @@ You can download the Cinder configuration relevant to HP StoreVirtual for your c
 
 To generate StoreVirtual backend configuration JSON, enter the following command
 
-	sirius storevirtual-backend-list --format json
+    # sirius storevirtual-backend-list --format json
 
 The sample output of the above command is given below:
 
@@ -335,7 +335,7 @@ You can download the Cinder configuration relevant to HP StoreServ for your clou
 
 To generate StoreServ backend configuration JSON, enter the following command
 
-	sirius storeserv-backend-list --format json
+    # sirius storeserv-backend-list --format json
 
 The sample output of the above command is given below:
 
@@ -471,15 +471,15 @@ A sample of the file is before and after the update is give below:
 	
 Enter the following command
 
-    source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+    # source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
 ###Update Overcloud{#update-overcloud}
 
 Enter the following command to update the Overcloud
 
-	bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
+    # bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
 
-On completion of update, the Overcloud cinder will be configured with the StoreVirtual clusters and StoreServ CPG as backends
+On completion of update, the Overcloud cinder will be configured with the StoreVirtual clusters and StoreServ CPG as backends.
 
 ##More Information {#more-information}
 

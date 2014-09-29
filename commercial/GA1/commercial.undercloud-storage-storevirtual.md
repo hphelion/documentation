@@ -103,7 +103,7 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 ## Edit a cluster {#edit-cluster}
 
-**Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done <!--through the CMC or the CLIQ -->for the selected cluster. After editing the details, the backend data should also be updated so that cinder configuration file has the updated cluster information.
+**Note**: Ensure that you edit the StoreVirtual cluster only if there are any updates done through the CMC or the CLIQ for the selected cluster. After editing the details, the backend data should also be updated so that cinder configuration file has the updated cluster information.
 
 To edit a cluster, do the following:
 
@@ -124,11 +124,10 @@ To edit a cluster, do the following:
 
 ## Unregister a cluster {#unregister-cluster}
 
-
-**Note**: Before you unregister the cluster, remove the backend associated with it. Detach or migrate the volumes, as appropriate, as the volumes from this cluster backend will no longer be available.
-
-
 Unregistering a cluster will remove it from the cloud inventory.
+
+**Note**: When you unregister a cluster,the volumes from this cluster backend will no longer be available through Cinder. Ensure you have removed the backend associated with the cluster and detached all relevant volumes before unregistering. 
+
 
 To unregister a cluster, do the following:
 
@@ -172,7 +171,9 @@ Use this option to view the cluster configuration as it displays in the *cinder.
 
 3. Select **StoreVirtual** option to activate it.<br> HP StoreVirtual page is displayed.</br>
 
-4. Click **More** drop-down list against the cluster for which you want to view the configuration.<br> The configuration is displayed in a dialog box.</br>
+4. Click **More** drop-down list against the cluster for which you want to view the configuration.
+
+5. Click **View Configuration**.<br> The StoreVirtual Cluster Cinder configuration is displayed in a dialog box.</br> 
 
 
 ## Next Steps {#next-steps}
