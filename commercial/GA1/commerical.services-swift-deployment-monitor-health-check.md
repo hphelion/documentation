@@ -27,9 +27,9 @@ Using the Icinga service running in the undercloud the cloud admin can monitor t
 
 ##Prerequisites
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed.
-2. Starter Swift nodes are functional by default as they are part of cloud deployment.
-3. Icinga service is active and running in the Undercloud.
+* HP Helion OpenStack&#174; cloud is successfully deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
+* Icinga service is active and running in the Undercloud.
 
 
 
@@ -99,6 +99,9 @@ Refer to the following table for status and message details.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+**Related topics**
+
+* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 
 ----
 ####OpenStack trademark attribution

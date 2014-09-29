@@ -39,10 +39,10 @@ Once all the disks of the node are removed the scale-out Proxy node can be remov
 
 ##Prerequisite{#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed.
-2. Starter Swift nodes are functional by default as they are part of cloud deployment. 
-3. Scale-out object-ring:1 is deployed.
-4. Scale-out proxy node is deployed.
+* HP Helion OpenStack&#174; cloud is successfully deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment. 
+* Scale-out object-ring:1 is deployed.
+* Scale-out proxy node is deployed.
 
 
 
@@ -104,7 +104,7 @@ The following sample displays the output of the above command:
 
 		Copied ring /root/ring-building/container.ring.gz onto 192.0.2.25--->
 
-9.Repeat steps from **5 - 8 **with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+9.Repeat steps from **5 - 8** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 10.Verify the `account.ring.gz`  and `container.builder` files.
 
@@ -147,7 +147,7 @@ Repeat this step for each disk of the specific node.
 		# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes of IP address>
 
 
-##Removing the haproxy configuration from each of the Overcloud Controller nodes {#remove-haproxy}
+##Removing the haproxy configuration from each of the Overcloud Controller nodes{#remove-haproxy}
 
 
 1. Edit `swift-proxy.cfg` on each of the controller nodes. 
@@ -166,7 +166,7 @@ Repeat this step for each disk of the specific node.
 
 		# service haproxy restart
 
-##Remove the scale-out proxy node by removing the corresponding stack{#remove-scale-out-proxy}
+##Remove the scale-out proxy node by removing the corresponding stack {#remove-scale-out-proxy}
 
 Once the disks are removed from the ring, remove the scale-out proxy node by removing the corresponding stack.
 
@@ -186,8 +186,8 @@ The following sample displays the output of the above command:
 		| b8325052-ec52-4b3b-8304-eb6ec23dd2ac | overcloud-ce-soswiftstorage2 | UPDATE_COMPLETE | 2014-09-24T09:11:14Z |
 		+--------------------------------------+------------------------------+-----------------+----------------------+
 
-2. Identify the stack of the scale-out Proxy node.
-3. Remove the stack. 
+2.Identify the stack of the scale-out Proxy node.
+3.Remove the stack. 
 
 		heat stack-delete <id>
 
@@ -212,6 +212,11 @@ The following sample displays the removal of  **89581cb1-9c2e-46d6-8e0b-aa4518e7
 	+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+**Related topics**
+
+* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
+
 
 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
