@@ -46,7 +46,7 @@ Swift is used for two different purposes:
 HP Helion OpenStack&#174; Swift which is deployed by default during installation of HP Helion OpenStack is used to serve Cloud Controller internal data. This can be expanded to scale-out to server user data storage. 
 
 
-HP Helion OpenStack introduces the support of scale-out Swift. For more details, refer [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/)
+HP Helion OpenStack introduces the support of scale-out Swift. For more details, refer [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

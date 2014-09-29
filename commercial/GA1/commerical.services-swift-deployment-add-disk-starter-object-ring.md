@@ -33,7 +33,7 @@ Perform the following procedure to add disk to a starter object ring.
 ##Prerequisite {#prer}
 
 * HP Helion OpenStack&#174; cloud is deployed
-* Starter swift is functional which by default gets deployed as part of deployment of cloud
+* Starter Swift nodes are functional by default as they are part of cloud deployment
 
 **IMPORTANT**:  
  

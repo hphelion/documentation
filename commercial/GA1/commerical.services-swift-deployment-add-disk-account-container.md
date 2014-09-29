@@ -33,7 +33,7 @@ It is recommended to use Proxy node to store account, container objects based on
 ##Prerequisite {#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 2. Scale-out object-ring:1 is deployed
 3. Scale-out Proxy node is deployed
 
@@ -108,7 +108,7 @@ Perform the following steps to add Swift disk to a ring:
 
 **Recommendation**: 
 
-* Set zone as 2 for scale-out Proxy nodes and region remains 1.
+* It is recommended to set zone as 2 for scale-out Proxy nodes and region remains 1.
                 
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 

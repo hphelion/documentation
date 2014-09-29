@@ -46,7 +46,7 @@ The following diagram depicts the HP Helion OpenStack scale-out Swift architectu
 
 
 
-##Swift Cluster Lifecycle
+##Swift cluster lifecycle
 
 Swift cluster is like a data center which can be big or small based on size of cluster. It needs constant human intervention to figure out the current health and perform appropriate action.You will need to do different actions at different point in time for various reasons. For example you may like to replace failed node, you may like to increase cluster capacity as client needs more storage space, you may want to add more proxy nodes as workload needs more throughput. Most of the time, you need to keep a constant eye on cluster. The below table lists the actions that you will be doing throughout the life of Swift cluster and section which you should refer for detailed operation.
 
@@ -57,17 +57,17 @@ Swift cluster is like a data center which can be big or small based on size of c
     </tr>
 <tr style="background-color: white; color: black;">
 	<td>Deploying Starter Swift</td>
-	<td>Please see HP Helion OpenStack documentation</td>
-   </tr>
-<tr style="background-color: white; color: black;">
-	<td>Provision Swift Node(s) </td>
-	<td>Please refer <a href="/helion/openstack/ga/services/swift/provision-nodes/">Provision Swift Nodes</a></td> 
-</td>
+	<td>Please refer HP Helion OpenStack documentation</td>
    </tr>
 <tr style="background-color: white; color: black;">
 	<td>Deploy Scale-out Swift</td>
 	<td>Please see <a href=" /helion/openstack/ga/services/swift/deployment-scale-out/">Deploying scale-out Swift</a></td>
     </tr>
+<tr style="background-color: white; color: black;">
+	<td>Provision Swift Node(s) </td>
+	<td>Please refer <a href="/helion/openstack/ga/services/swift/provision-nodes/">Provision Swift Nodes</a></td> 
+</td>
+   </tr>
 <tr style="background-color: white; color: black;">
 	<td>Extend Swift Cluster</td>
 	<td>Please refer<a href="/helion/openstack/ga/services/object/swift/expand-cluster/">Expand Swift Cluster</a></td>

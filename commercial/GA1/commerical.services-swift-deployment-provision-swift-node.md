@@ -34,9 +34,9 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 ##Prerequisite {#Preq}
 
 * HP Helion OpenStack&#174; is deployed
-* Starter swift is functional; by default it is deployed as part of  the cloud deployment
+* Starter Swift nodes are functional by default as they are part of cloud deployment
 
-Before provisioning swift node(s) ensure that all the nodes are **ACTIVE** and  **Running**.
+Before provisioning Swift node(s) ensure that all the nodes are **ACTIVE** and  **Running**.
 You can view the status of the nodes using the following command:
 
 	# nova list
@@ -91,7 +91,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 
 		# ssh heat-admin@<Undercloud IP address> 
 
-6. Add server details to Ironic database using the following Ironic command:
+6. Add server details to ironic database using the following ironic command:
 
  		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
@@ -133,7 +133,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 
 ##Provision Swift node {#provision-swift-node}
 
-**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
+**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. 
 
 
 Perform the following steps to provision the Swift node:

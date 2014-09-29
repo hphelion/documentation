@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p>
 
 
-#Add New Proxy Node
+#Add New Scale-out Proxy Node
 
 This topic shows how to add a proxy node to the store account, container and object-ring.
 
@@ -32,7 +32,7 @@ This topic shows how to add a proxy node to the store account, container and obj
 ##Prerequisite {#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment 
 2. Scale-out object-ring:1 is deployed
 
 

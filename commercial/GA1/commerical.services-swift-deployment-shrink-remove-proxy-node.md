@@ -40,7 +40,7 @@ Once all the disks of the node are removed the scale-out Proxy node can be remov
 ##Prerequisite{#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment 
 3. Scale-out object-ring:1 is deployed
 4. Scale-out proxy node is deployed
 
@@ -97,8 +97,8 @@ Perform the following steps to identify the disks of the node to be removed:
 		
 8.Copy `account.ring.gz`  and  `container.ring.gz` files to all nodes.
 
-	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Object node IP address>
-	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Object nodes IP address>
+	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
+	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 <!---
 The following sample displays the output of the above command: 
 
@@ -143,8 +143,8 @@ Repeat this step for each disk of the specific node.
 
 2. Copy `account.ring.gz` and `container.ring.gz` files to all the nodes.
 
-		# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift Nodes of IP address>
-		# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift Nodes of IP address>
+		# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes of IP address>
+		# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes of IP address>
 
 
 ##Removing the haproxy configuration from each of the Overcloud Controller nodes {#remove-haproxy}
@@ -170,9 +170,11 @@ Repeat this step for each disk of the specific node.
 
 Once the disks are removed from the ring, remove the scale-out proxy node by removing the corresponding stack.
 
-1. List the scale-out proxy node
+1. List the scale-out proxy node.
 
 		# heat stack-list
+
+The following sample displays the output of the above command:
 
 		+--------------------------------------+------------------------------+-----------------+----------------------+
 		| id                                   | stack_name                   | stack_status    | creation_time        |
@@ -184,8 +186,8 @@ Once the disks are removed from the ring, remove the scale-out proxy node by rem
 		| b8325052-ec52-4b3b-8304-eb6ec23dd2ac | overcloud-ce-soswiftstorage2 | UPDATE_COMPLETE | 2014-09-24T09:11:14Z |
 		+--------------------------------------+------------------------------+-----------------+----------------------+
 
-2. Identify the stack of the scale-out Proxy node
-3. Remove the stack 
+2. Identify the stack of the scale-out Proxy node.
+3. Remove the stack. 
 
 		heat stack-delete <id>
 

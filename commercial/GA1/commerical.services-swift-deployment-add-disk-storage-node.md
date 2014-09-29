@@ -17,9 +17,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/Monitor-cluster/"> NEXT &#9654</a> </p>
-
+--->
 
 #Add New Scale-out Object Node
 
@@ -36,7 +36,7 @@ Perform the following procedure to add new scale-out object node.
 ##Prerequisite {#preq}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 3. Scale-out object-ring:1 is deployed
 
 ##Deploying new object nodes {#deploy-new-object-node}

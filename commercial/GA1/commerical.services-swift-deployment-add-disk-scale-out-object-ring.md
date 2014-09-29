@@ -33,7 +33,7 @@ Perform the following procedure to add a disk to a scale-out object ring.
 ##Prerequisite {#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 3. Scale-out object-ring:1 is deployed
 
 

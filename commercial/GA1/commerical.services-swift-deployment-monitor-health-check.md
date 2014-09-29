@@ -28,7 +28,7 @@ Using the Icinga service running in the undercloud the cloud admin can monitor t
 ##Prerequisites
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 3. Icinga service is active and running in the Undercloud
 
 
@@ -51,7 +51,7 @@ Perform the following steps to monitor the health status of Swift status:
 <img src ="media/icinga_host-details.png/">
 
 
-3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note you will see a tooltip that shows View service details for this host)  
+3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note: You will see a tooltip that shows View service details for this host)  
 
 <img src ="media/swift_icinga_view-details.png"/>
 
