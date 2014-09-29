@@ -2,13 +2,87 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-Ruby[](#ruby "Permalink to this headline")
-===========================================
+#Developing In Ruby
+<p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
+Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
+advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+to enable successful development are available in Ruby.</p>
+<div class="section" id="application-lifecycle-services">
+<h2>Application Lifecycle Services<a class="headerlink" href="#application-lifecycle-services" title="Permalink to this headline"></a></h2>
+<p>Application Lifecycle Services (ALS), a cloud foundry based Platform as a Service,
+provides a means to execute ruby applications on a managed platform. Deploying applications
+to the platform is as simple as adding configuration to a YAML configuration file and using
+a console application to push the application to ALS.</p>
+<p>At its simplist form the configuration file, <tt class="docutils literal"><span class="pre">stackato.yml</span></tt>, at the root of a project would like:</p>
+<div class="highlight-none"><div class="highlight"><pre>name: ruby-web-app
+framework:
+    type: ruby20
+</pre></div>
+</div>
+<p>This will tell ALS to have a ruby web application.</p>
+<p>To create a worker non-http application set the web process to null (~) and specify
+the command to run. For example,</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ruby-app</span>
+<span class="l-Scalar-Plain">framework</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rails3</span>
+  <span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ruby19</span>
+<span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ruby worker.rb</span>
+<span class="l-Scalar-Plain">processes</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">web</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">~</span>
+</pre></div>
+</div>
+<p>Management of the deployed application and its services happens through a web application or
+a console application.</p>
+<p>To learn more see:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/languages/ruby/">Working with applications in ruby</a></li>
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The stackato.yml reference</a></li>
+</ul>
+</div>
+<div class="section" id="hp-helion-sdk">
+<h2>HP Helion SDK<a class="headerlink" href="#hp-helion-sdk" title="Permalink to this headline"></a></h2>
+<p>Ruby applications can communicate directly with the <a class="reference external" href="http://docs.hpcloud.com/api">Helion APIs</a> through a REST client
+or use the SDK. The SDK is designed to have a simple well documented API to simplify working with the
+services.</p>
+<p>To understand how it works, here is an example of writing and reading from object storage:</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">def</span> <span class="nf">credentials_hash</span>
+  <span class="p">{</span>
+    <span class="ss">:provider</span> <span class="o">=&gt;</span> <span class="ss">:openstack</span><span class="p">,</span>
+    <span class="ss">:openstack_auth_url</span> <span class="o">=&gt;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;OS_AUTH_URL&#39;</span><span class="o">]</span><span class="p">,</span>
+    <span class="ss">:openstack_username</span> <span class="o">=&gt;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;OS_USER&#39;</span><span class="o">]</span><span class="p">,</span>
+    <span class="ss">:openstack_api_key</span> <span class="o">=&gt;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;OS_API_KEY&#39;</span><span class="o">]</span><span class="p">,</span>
+    <span class="ss">:openstack_tenant</span> <span class="o">=&gt;</span>  <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;OS_TENANT&#39;</span><span class="o">]</span> <span class="p">,</span>
+    <span class="ss">:openstack_region</span> <span class="o">=&gt;</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;OS_REGION&#39;</span><span class="o">]</span>
+  <span class="p">}</span>
+<span class="k">end</span>
 
-Deployment[](#deployment "Permalink to this headline")
--------------------------------------------------------
+<span class="n">storage</span> <span class="o">=</span> <span class="no">Fog</span><span class="o">::</span><span class="no">Storage</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">credentials_hash</span><span class="p">)</span>
+
+<span class="c1">#list directories</span>
+<span class="n">storage</span><span class="o">.</span><span class="n">directories</span>
+
+<span class="c1">#create a directory</span>
+<span class="n">storage</span><span class="o">.</span><span class="n">directories</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:key</span> <span class="o">=&gt;</span> <span class="s2">&quot;Example&quot;</span><span class="p">)</span>
+
+<span class="c1">#create an object</span>
+<span class="n">dir</span> <span class="o">=</span> <span class="n">storage</span><span class="o">.</span><span class="n">directories</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Example&quot;</span><span class="p">)</span>
+<span class="n">dir</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:key</span> <span class="o">=&gt;</span> <span class="s2">&quot;sample.txt&quot;</span><span class="p">,</span> <span class="ss">:body</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;/path/to/sample.txt&quot;</span><span class="p">))</span>
+
+<span class="c1">#get the same object out</span>
+<span class="n">dir</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">directories</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Example&quot;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sample.txt&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">key</span>   <span class="c1"># =&gt; sample.txt</span>
+<span class="n">file</span><span class="o">.</span><span class="n">content_type</span> <span class="c1"># =&gt; text/plain</span>
+</pre></div>
+</div>
+<!-- until i get the link syntax and locs sorted out <p>To learn more about getting and using the SDK see:</p>
+<ul class="simple">
+<li><a class="reference internal" href="sdk-getting-started.html#getting-started-in-ruby"><em>Get Started With the Ruby Library</em></a></li>
+<li><a class="reference internal" href="sdk-connect.html#sdk-ruby-connect"><em>Connecting To The Service</em></a></li>
+<li><a class="reference internal" href="sdk-object-storage.html#sdk-ruby-object-storage"><em>Object Storage Examples</em></a></li>
+-->
 
 **Note**
 

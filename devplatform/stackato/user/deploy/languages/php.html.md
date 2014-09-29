@@ -2,10 +2,130 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-PHP[](#php "Permalink to this headline")
-=========================================
+#Developing In PHP
+<p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
+Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
+advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+to enable successful development are available in PHP.</p>
+<div class="section" id="application-lifecycle-services">
+<h2>Application Lifecycle Services<a class="headerlink" href="#application-lifecycle-services" title="Permalink to this headline"></a></h2>
+<p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
+applications to this platform is as easy as adding details to a YAML configuration file and using
+a console application to push the application to ALS.</p>
+<p>At its simplest form, the configuration file, <tt class="docutils literal"><span class="pre">stackato.yml</span></tt>, located at the root of a project
+would look like:</p>
+<div class="highlight-none"><div class="highlight"><pre>name: php-web-app
+framework:
+    type: php
+</pre></div>
+</div>
+<p>This will set the ALS framework typr for a PHP web application.</p>
+<p>To create a worker non-http application set the web process to <strong>null</strong> (~) and specify
+the command to <strong>run</strong>. For example:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php-app</span>
+<span class="l-Scalar-Plain">framework</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php</span>
+<span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php worker.php</span>
+<span class="l-Scalar-Plain">processes</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">web</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">~</span>
+</pre></div>
+</div>
+<p>Management of the deployed application and its services happens through a web application or
+a console application.</p>
+<p>To learn more see:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/languages/php/">Working with applications in PHP</a></li>
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The stackato.yml reference</a></li>
+</ul>
+</div>
+<div class="section" id="hp-helion-sdk">
+<h2>HP Helion SDK<a class="headerlink" href="#hp-helion-sdk" title="Permalink to this headline"></a></h2>
+<p>PHP applications can communicate directly with the <a class="reference external" href="http://docs.hpcloud.com/api">HP Helion APIs</a> through a REST client
+or use the SDK. The SDK is designed to provide a well-documented API to simplify working with the
+services.</p>
+<p>As an example, here is one way of writing and reading from object storage:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// Use the composer autoloader.</span>
+<span class="k">require_once</span> <span class="s1">&#39;/vendor/autoload.php&#39;</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">\HPCloud\Bootstrap</span><span class="p">;</span>
+<span class="nx">Bootstrap</span><span class="o">::</span><span class="na">useStreamWrappers</span><span class="p">();</span>
+
+<span class="c1">// Provide credentials</span>
+<span class="nv">$settings</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="nx">YOUR_USERNAME</span><span class="p">,</span>
+  <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="nx">YOUR_PASSWORD</span><span class="p">,</span>
+  <span class="s1">&#39;tenantid&#39;</span> <span class="o">=&gt;</span> <span class="nx">YOUR_TENANT_ID</span><span class="p">,</span>
+  <span class="s1">&#39;endpoint&#39;</span> <span class="o">=&gt;</span> <span class="nx">IDENTITY_SERVICES_URL</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="nx">Bootstrap</span><span class="o">::</span><span class="na">setConfiguration</span><span class="p">(</span><span class="nv">$settings</span><span class="p">);</span>
+
+<span class="c1">// Create a new file and write it to the object store.</span>
+<span class="nv">$newfile</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;swift://mycontainer/my_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="nv">$newfile</span><span class="p">,</span> <span class="s2">&quot;Good Morning!&quot;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="nv">$newfile</span><span class="p">);</span>
+
+<span class="c1">// Check for an object:</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">file_exists</span><span class="p">(</span><span class="s1">&#39;swift://mycontainer/my_file.txt&#39;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">print</span> <span class="s2">&quot;Found my_file.txt.&quot;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Get an entire object at once:</span>
+<span class="nv">$file</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;swift://mycontainer/my_file.txt&#39;</span><span class="p">);</span>
+<span class="k">print</span> <span class="s1">&#39;File: &#39;</span> <span class="o">.</span> <span class="nv">$file</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The example above uses PHP <a class="reference external" href="http://www.php.net/manual/en/book.stream.php">stream wrappers</a>. Access to
+the low level API is available in the SDK as well. For example,</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="c1">// Set up.</span>
+<span class="k">require_once</span> <span class="s1">&#39;/vendor/autoload.php&#39;</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">\HPCloud\Bootstrap</span><span class="p">;</span>
+
+<span class="c1">// Authenticate to HP Cloud</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="s1">&#39;YOUR_USERNAME&#39;</span><span class="p">;</span>
+<span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;YOUR_PASSWORD&#39;</span><span class="p">;</span>
+<span class="nv">$tenantId</span> <span class="o">=</span> <span class="s1">&#39;ADD TENANT ID HERE&#39;</span><span class="p">;</span>
+<span class="nv">$endpoint</span> <span class="o">=</span> <span class="s1">&#39;ADD ENDPOINT URL HERE&#39;</span><span class="p">;</span>
+
+<span class="nv">$idService</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\HPCloud\Services\IdentityServices</span><span class="p">(</span><span class="nv">$endpoint</span><span class="p">);</span>
+<span class="nv">$token</span> <span class="o">=</span> <span class="nv">$idService</span><span class="o">-&gt;</span><span class="na">authenticateAsUser</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">,</span> <span class="nv">$tenantId</span><span class="p">);</span>
+
+<span class="c1">// Connect to Object Storage.</span>
+<span class="nv">$catalog</span> <span class="o">=</span> <span class="nv">$idService</span><span class="o">-&gt;</span><span class="na">serviceCatalog</span><span class="p">();</span>
+<span class="nv">$store</span> <span class="o">=</span> <span class="nx">ObjectStorage</span><span class="o">::</span><span class="na">newFromServiceCatalog</span><span class="p">(</span><span class="nv">$catalog</span><span class="p">,</span> <span class="nv">$token</span><span class="p">);</span>
+
+<span class="c1">// Create a Container.</span>
+<span class="nv">$store</span><span class="o">-&gt;</span><span class="na">createContainer</span><span class="p">(</span><span class="s1">&#39;Example&#39;</span><span class="p">);</span>
+<span class="nv">$container</span> <span class="o">=</span> <span class="nv">$store</span><span class="o">-&gt;</span><span class="na">container</span><span class="p">(</span><span class="s1">&#39;Example&#39;</span><span class="p">);</span>
+
+<span class="c1">// Create an Object.</span>
+<span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;hello.txt&#39;</span><span class="p">;</span>
+<span class="nv">$content</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">;</span>
+<span class="nv">$mime</span> <span class="o">=</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">;</span>
+<span class="nv">$localObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Object</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$content</span><span class="p">,</span> <span class="nv">$mime</span><span class="p">);</span>
+
+<span class="c1">// Put the Object in the Container.</span>
+<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$localObject</span><span class="p">);</span>
+
+<span class="c1">// And get the Object back out again.</span>
+<span class="nv">$object</span> <span class="o">=</span> <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">proxyObject</span><span class="p">(</span><span class="s1">&#39;hello.txt&#39;</span><span class="p">);</span>
+
+<span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;Name: %s </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">());</span>
+<span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;Size: %d </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">contentLength</span><span class="p">());</span>
+<span class="nb">printf</span><span class="p">(</span><span class="s2">&quot;Type: %s </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">contentType</span><span class="p">());</span>
+<span class="k">print</span> <span class="nv">$object</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">()</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+</pre></div>
+</div>
+<!-- until i get the locs and syntax nailed down
+<p>To learn more about getting and using the SDK:</p>
+<ul class="simple">
+<li><a class="reference internal" href="sdk-getting-started.html#get-started-php-sdk"><em>Get Started With The PHP Library</em></a></li>
+<li><a class="reference internal" href="sdk-authentication.html#auth-php-sdk"><em>Identity Service, Authentication, and the Service Catalog</em></a></li>
+<li><a class="reference internal" href="sdk-object-store.html#object-store-php-sdk"><em>Working With Object Storage in PHP</em></a></li>
+</ul>
+-->
 
 PHP applications are supported through Apache and mod\_php, and require
 very little configuration to deploy.

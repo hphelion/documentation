@@ -16,7 +16,6 @@ HP Helion Development Platform is based on Cloud Foundry&trade; and OpenStack&re
 
 You can find more information from the following sites:
 
-- [HP Helion Developer Network](https://dev.hpcloud.com)
 - [HP Helion Development Platform product FAQ](/helion/devplatform/faq-ce/)
 - [Cloud Foundry documentation](http://docs.cloudfoundry.org/)
 - [OpenStack Trove](https://wiki.openstack.org/wiki/Trove)
