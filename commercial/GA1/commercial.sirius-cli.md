@@ -57,7 +57,7 @@ You can list the block storage details of API version.
 
 	Sirius block-info
 
-### Bash completetion
+### Bash completion
 
 You can print all the commands and options to standard output
 
@@ -172,7 +172,9 @@ You can update the StoreServ details in Sirius.
 
 *Optional Arguments*:   --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
 
-*Additional arguments*: --iscsi-ip &lt;ISCSI_IP> [required for iSCSI type devices]
+*Additional arguments*: --iscsi-ip &lt;ISCSI_IP> [*required for iSCSI type devices]*
+
+**Note**: Currently, CLI does not support the change of Device Type from **FC** to **ISCSI**. 
 
 ### Delete StoreServ ###
 
@@ -183,15 +185,22 @@ You can unregister the StoreServ from Sirius.
 
 ### List CPG
 
-You can list all the registered 3PAR CPGs
+You can list all the 3PAR CPGs registered with specific StoreServ
 
-	sirius cpg-list
+	sirius cpg-list --storeserv-id <STORESERV_ID>
 
 ### Show CPG
 
-You can list the 3PAR CPGs
+Shows the details of specific 3PAR CPGs
 
     sirius cpg-show --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> [--backend-name <CINDER_BACKEND_NAME>]  
+
+**Options:**
+ -storeserv-id  <STORESERV&#095;ID>  --- *ID of the StoreServ [Required]*.
+ 
+ --cpg-id <CPG&#095;ID>    --- *ID of the StoreServ CPG to display detail [Required]*.
+ 
+ --backend-name <CINDER&#095;BACKEND_NAME> ---- *Optional input to show the details in cinder backend format with specified backend name*.
                                
 
 ### Register CPG
@@ -202,7 +211,7 @@ You can register the 3PAR CPGs
     sirius register-cpg --cpgs <CPG_UUID> [<CPG_UUID> ...] --storeserv-id <STORESERV_ID>
      
 **Options:**
-  --cpgs <CPG_UUID> [<CPG_UUID> ...]  -- UUID(s) of the 3PAR StoreServ CPG(s) to be registered [Required].
+  --cpgs <CPG_UUID> [<CPG_UUID> ...]  -- *UUID(s) of the 3PAR StoreServ CPG(s) to be registered [Required]*.
   
 --storeserv-id <STORESERV_ID>  --- *ID of the 3PAR StoreServ [Required]*.                    
 
@@ -213,6 +222,13 @@ You can register the 3PAR CPGs
 You can unregister the 3PAR CPGs
 
 	sirius delete-cpg --storeserv_id <STORESERV_ID> --cpgs <CPG_ID> [<CPG_ID> ...]
+
+**Options**:
+
+  --storeserv_id <STORESERV&#095;ID> ---- *ID of the 3PAR StoreServ [Required]*.
+  
+  --cpgs <CPG&#095;ID> [<CPG_ID> ...] ---- *ID(s) of the 3PAR StoreServ CPG(s) to be unregistered [Required].*
+
                                  
 ###List backends###
 
@@ -238,7 +254,7 @@ You can add a StoreServ backend.
 
 You can unregister a Storeserv backend
 
- sirius delete-cpg --storeserv_id <STORESERV_ID> --cpgs <CPG_ID> [<CPG_ID> ...]
+ sirius delete-storeserv-backend <BACKEND_ID> [<BACKEND_ID> ...]
                          
    
 ## Required Options {#required-options}

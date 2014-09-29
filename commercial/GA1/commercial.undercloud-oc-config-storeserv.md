@@ -129,11 +129,13 @@ To generate configuration file, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/storeServ-generate-configuration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
 
-2. Click **Generate Config** displayed at the top of the page to display Download Storeserv Config page.<br> The configuration file downloads automatically. 
+2. Select the backend for which you want to generate the configuration file.
 
-3. (Optional) Click Download StoreServ Config link to download the file if the file does not automatically download .<br> A dialog box is displayed.</br>
+3. Click **Generate Config** displayed at the top of the page to display Download Storeserv Config page.<br> The configuration file downloads automatically. 
 
-4. Click **OK** to download and save the file. <br>Once you download the configuration file, you can proceed to update the Overcloud configuration.</br>
+4. (Optional) Click Download StoreServ Config link to download the file if the file does not automatically download .<br> A dialog box is displayed.</br>
+
+5. Click **OK** to download and save the file. <br>Once you download the configuration file, you can proceed to update the Overcloud configuration.</br>
 
 
 ### Update Overcloud<a name="update-overcloud"></a>
@@ -142,7 +144,7 @@ To update your Overcloud with the changes, do the following:
 
 1. SSH to Seed as root from KVM host.
 
-		# ssh root@ <IP address> 
+		# ssh root@<IP address> 
 
 2. View the list of files.
 
@@ -191,15 +193,15 @@ To update your Overcloud with the changes, do the following:
 		      "iscsi_ip_address": "10.1.0.200"
 		    },
 		    
-5. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+5. Apply the configuration.
+
+     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+
+6. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
 
 		# source /root/env_vars
 
-
-6. Apply the configuration.
-
-     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
 7. Launch install script to update the Overcloud.
 
