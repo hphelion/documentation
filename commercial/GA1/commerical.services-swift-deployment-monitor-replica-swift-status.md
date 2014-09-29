@@ -28,7 +28,7 @@ Using the "icinga" service running in the Undercloud the cloud admin can monitor
 ##Prerequisite
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 3. Icinga service is active and running in the Undercloud
 
 

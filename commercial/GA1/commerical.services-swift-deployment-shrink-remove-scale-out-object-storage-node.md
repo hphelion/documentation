@@ -34,7 +34,7 @@ Once all the disks of the node are removed then the Scale-out object node can be
 ##Prerequisite {#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud 
+2. Starter Swift nodes are functional by default as they are part of cloud deployment 
 3. Scale-out object-ring:1 is deployed
 4. Scale-out object-ring:1 is deployed
 
@@ -103,6 +103,22 @@ Perform the following steps to remove disks from ring:
 	# ringos remove-disk-from-ring -f object-1.builder -s <Object Node IP address>
 
 Repeat this step for each disk of the specific node.
+
+12.Re-balance the ring.
+
+	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+
+
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
+
+13.List all the Swift nodes.
+
+	# ringos list-swift-nodes -t all
+		
+		
+14.Copy `object-1.ring.gz` file to all nodes.
+
+	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 ## Removing scale-out object node {#remove-scale-out-object-node}
 

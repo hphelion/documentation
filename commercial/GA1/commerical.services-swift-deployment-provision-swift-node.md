@@ -34,10 +34,9 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 ##Prerequisite {#Preq}
 
 * HP Helion OpenStack&#174; is deployed
-* Starter swift is functional; by default it is deployed as part of  the cloud deployment
+* Starter Swift nodes are functional by default as they are part of cloud deployment
 
-Before provisioning swift node(s) ensure that all the nodes are **ACTIVE** and  **Running**.
-You can view the status of the nodes using the following command:
+You can check health of starter Swift nodes by nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
 
 	# nova list
 
@@ -91,7 +90,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 
 		# ssh heat-admin@<Undercloud IP address> 
 
-6. Add server details to Ironic database using the following Ironic command:
+6. Add server details to ironic database using the following ironic command:
 
  		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
@@ -133,7 +132,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 
 ##Provision Swift node {#provision-swift-node}
 
-**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for proxy nodes and SL4540 servers for scale-out object storage nodes. 
+**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. 
 
 
 Perform the following steps to provision the Swift node:
@@ -153,7 +152,7 @@ Perform the following steps to provision the Swift node:
 	
 	 "so&#95;swift&#95;proxy_scale": &lt;number of proxy servers &gt;  ,
 
-**Note**: While deploying the scale-out proxy node "so&#095;swift&#095;storage&#095;scale" must be set to 0 and while deploying the scale-out object node "so&#095;swift&#095;proxy&#095;scale" must be set to 0.
+**Note**: While deploying the scale-out proxy node ensure that "so&#095;swift&#095;storage&#095;scale"is unchanged and while deploying the scale-out object node ensure that "so&#095;swift&#095;proxy&#095;scale" is unchanged.
  
 4.Enter the following command to source the `overcloud_config.json`  for the new values.
 

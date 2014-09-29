@@ -33,7 +33,7 @@ It is recommended to use Proxy node to store account, container objects based on
 ##Prerequisite {#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 2. Scale-out object-ring:1 is deployed
 3. Scale-out Proxy node is deployed
 
@@ -107,8 +107,6 @@ Perform the following steps to add Swift disk to a ring:
 		# ringos add-disk-to-ring -f /root/ring-building/container.builder -i <Proxy nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 **Recommendation**: 
-
-* Set zone as 2 for scale-out Proxy nodes and region remains 1.
                 
 * Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 
@@ -127,8 +125,14 @@ Perform the following steps to add Swift disk to a ring:
 	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
 	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 
-11.Repeat steps from **7 - 10** with the weights set to 50, 75, and 100 (w= 50, 75, 100). These steps should be repeated until the weight becomes 100 for each disk.
 
+11.Set weight of the disks using the following command:
+
+
+	# ringos set-weight -f /root/ring-building/account.builder -s <disk id> -w <weight>
+	# ringos set-weight -f /root/ring-building/container.builder -s <disk id> -w <weight>
+ 
+12.Repeat steps from **8-12** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
 
 
  

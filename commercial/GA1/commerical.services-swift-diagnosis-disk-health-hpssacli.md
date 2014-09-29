@@ -111,7 +111,7 @@ The following sample displays slot details:
 2.Generate the diagnostic report of the particular slot
 
 		./hpssacli ctrl slot=(slot number) diag file=<filename.zip>
-Or,
+Or
 
 Generate the report of all the slots 
 
@@ -124,7 +124,7 @@ The file will be in location you mentioned.
 
 4.Extract the file
 
-OR
+Or
 
 
 **To generate diagnostic report using ssh from Seed**

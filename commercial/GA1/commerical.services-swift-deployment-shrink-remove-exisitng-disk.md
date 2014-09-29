@@ -31,7 +31,7 @@ Perform the following steps to remove a disk from object nodes.
 ##Prerequisite {#prer}
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Starter swift is functional which by default gets deployed as part of deployment of cloud
+2. Starter Swift nodes are functional by default as they are part of cloud deployment
 3. Scale-out object-ring:1 is deployed
 
 
@@ -95,7 +95,7 @@ The following sample displays output of the above command:
 
 	# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
-**Note**: Wait for min&#095;part_hours before another re-balance succeeds.
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
 
 8.List all the Swift nodes.
 
@@ -107,7 +107,7 @@ The following sample displays output of the above command:
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
 
-10.Repeat steps from 6 - 9 with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+10.Repeat steps from **6 - 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 11.Once weight is set to 0, remove the disk from the ring.
 
@@ -117,7 +117,20 @@ The following sample displays the output of the above command:
 
 	Removed disk(s) matching d7 from ring object-1.builder
 
+12.Re-balance the ring.
 
+	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
+
+13.List all the Swift nodes.
+
+	# ringos list-swift-nodes -t all
+		
+		
+14.Copy `object-1.ring.gz` file to all nodes.
+
+	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

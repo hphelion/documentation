@@ -41,8 +41,8 @@ Perform the following steps to deploy scale-out object-ring:1
 
 ##Prerequisites {#preq}
 
-* HP Helion OpenStack Cloud is deployed
-* Starter swift is functional which by default gets deployed as part of deployment of cloud
+* HP Helion OpenStack&#174; Cloud is deployed
+* Starter Swift nodes are functional by default as they are part of cloud deployment
 
 ## Defining ring attributes of object-ring:1 {#define-object-ring:1}
 
@@ -73,7 +73,7 @@ You should carefully plan the following ring attributes before deployment of obj
 <tr style="background-color: white; color: black;">
 	<td><b>Min part hour</b></td>
 	<td>This should be set to however long a full replication/update cycle takes. </td>
-    <td>It depends on environment. The default value that can be used is 1.</td>
+    <td> The recommended value is 24 hours.</td>
 </tr>
 </table>
 
@@ -111,7 +111,7 @@ Before starting the deployment of scale-out object nodes you must configure the 
 		# ssh root@<Seed IP address>
 
 
-2.Update `so_swift_storage_scale` parameter in `/root/overcloud-config.json` as per your scale
+2. Update `so_swift_storage_scale` parameter in `/root/overcloud-config.json` as per your scale
 
  
 For more details, refer [Provisioning Swift node(s)]( /helion/openstack/ga/services/swift/provision-nodes/)
@@ -137,7 +137,7 @@ Perform the following steps to verify the deployment of  Swift nodes:
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
 
-2. Source stack RC using the following command:
+2. Source stackrc using the following command:
 
     	 # source stackrc 
  
@@ -154,9 +154,9 @@ Perform the following steps to verify the deployment of  Swift nodes:
 		| 192.0.2.30   |
 		+--------------+
 
-4. List the disk available on each nodes.
+4. List the disks available on each node.
 
-		# ringos list-disks -n <Swift nodes IP address> 
+		# ringos list-disks -n <Object nodes IP address> 
  
 The following sample displays the disk available on the node **192.0.2.29**.
 	
@@ -166,19 +166,18 @@ The following sample displays the disk available on the node **192.0.2.29**.
 		| /dev/sda | 1073741824 |
 		|          |            |
 		| /dev/sdb | 1073741824 |
-		|          |            |
 		+----------+------------+
 
 
-You must repeat the above steps for all the swift nodes.
+You must repeat the above steps for all the Object nodes.
 
 ##Preparing disks on Swift nodes{#preparing-disks-on-Swift-nodes}
 
 Once Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
 
-Use the following command to format disk:
+Format a given disk:
 
-	# ringos format-disks -n <Swift node IP address> -d all
+	# ringos format-disks -n <Object node IP address> -d all
 
 
 The following sample displays the output of formatted disk of **192.0.2.29**.
@@ -193,7 +192,7 @@ The following sample displays the output of formatted disk of **192.0.2.29**.
 **Note**: You can also format disks individually by using –d <device-name>.
 For more details, refer [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
 
-Repeat the above steps for all the swift nodes.
+Repeat the above steps for all the Object nodes.
 
 ##Creating scale-out object-ring {#creating-scale-out-object-ring}
 
@@ -210,15 +209,15 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 		# ringos create-ring -f /root/ring-building/object-1.builder -p <part_power> -r <replicas> -m <min_part_hours>
 
 
-The following sample displays the creation of ring by adding scale-out Swift node to a zone with partition power =10, replicas =3, min&#095;part&#095;hours =1
+The following sample displays the creation of ring by adding scale-out Swift node to a zone with partition power =10, replicas =3, min&#095;part&#095;hours =24
 
-	# ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
+	# ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 24
 	created ring /root/ring-building/object-1.builder
 
 
 3.Add disk to the ring. 
 
-	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Swift Node IP address> -p  <port> -d <disk label> -w <weigh> -r <region> -z <zone>
+	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object Node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 **Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#preparing-disks-on-Swift-nodes).
 
@@ -227,7 +226,7 @@ The following sample displays the addition of disk to **192.0.2.29** and its out
 	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i 192.0.2.29 -p 6000 -d a1410063335 -w 100 -r 1 -z 1
 	Added disk 192.0.2.29:a1410063335 to ring
 
-4.Verify the contents of `object-1.builder` file to ensure that it meets your required configuration.
+4.Verify the content of `object-1.builder` file to ensure that it meets your required configuration.
 
 	# ringos view-ring -f /root/ring-building/object-1.builder
 	
@@ -244,7 +243,7 @@ The following sample displays the content of `object-1.builder` file:
 
 	# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
-This will generate a **object-1.ring.gz** file.
+This will generate an **object-1.ring.gz** file.
 
  The following sample displays the output of re-balancing the ring:
 
@@ -273,12 +272,12 @@ This will generate a **object-1.ring.gz** file.
 	
 2. Get all the rings and builder files from either of the starter nodes.
 
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Swift node starters IP address>:/etc/swift/object.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Swift node starters IP address>:/etc/swift/account.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Swift node starters IP address>:/etc/swift/container.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<IP address of starter Swift node>:/etc/swift/object.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Swift node starters IP address>:/etc/swift/account.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Swift node starters IP address>:/etc/swift/container.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/object.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift node IP address>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift node IP address>:/etc/swift/container.builder /root/ring-building/
 
 	The following sample displays all the rings and builder files from **19.0.2.22**
 
@@ -294,7 +293,7 @@ This will generate a **object-1.ring.gz** file.
 
 		# ringos list-swift-nodes -t  all
  
-4. Copy account, container, object-0 , and generated `object-1.ring.gz` files to all nodes and press **yes** when asked to authenticate node. 
+4. Copy account, container, object-0 , and generated `object-1.ring.gz` files to all Swift nodes and press **yes** when asked to authenticate node. 
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
 
@@ -358,7 +357,7 @@ In the following example account, container, object-0 , and generated `object-1.
 	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
 
- 
+ <!---
 ##For further information
 
 * [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
@@ -366,7 +365,7 @@ In the following example account, container, object-0 , and generated `object-1.
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 * [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
 
- 
+ --->
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
