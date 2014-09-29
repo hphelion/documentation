@@ -165,7 +165,7 @@ The following hardware requirement is required to install HP Helion OpenStack.
 
 * An installer system to run the baremetal install and host the seed VM with the following configuration:
 
-    * A minimum of 8 GB of physical memory
+    * A minimum of 16 GB of physical memory
     * A minimum of 100 GB of disk space
     * Virtualization enabled 
     * Ubuntu 14.04 installed
