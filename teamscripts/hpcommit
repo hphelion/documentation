@@ -3,7 +3,7 @@
  
 SOURCEVERSION=`sed -n '6p' < ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
 #The THISVERSION line, below must remain line 6.
-THISVERSION=4
+THISVERSION=5
  
  
 if [[ $THISVERSION < $SOURCEVERSION ]]
@@ -223,7 +223,7 @@ echo "Summary:  For the files listed above, set the publish comment"
 echo "to $SHOULDBE (adding, if it is missing),"
 echo "then commit with the following message:"
 echo ""
-echo "$MESSAGE"
+echo "$MESSAGE (hpcommit)"
 echo ""
 echo "and push to the documentation repository."
 echo ""
@@ -299,7 +299,7 @@ for i in `echo "$FILELIST"`
 	git add $i
 	echo ""
 	echo "====Committing File====="
-	git commit -m \""$MESSAGE"\" $i
+	git commit -m \""$MESSAGE" (hpcommit)\" $i
 
 done
 echo ""
