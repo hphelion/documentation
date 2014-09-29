@@ -27,7 +27,7 @@ The HP Virtual Cloud Networking Open vSwitch vApp (OVSvApp) appliance must be in
 
 The deployment process includes the following basic steps:
 
-1. Uploading the OVSvApp file to one of the ESX hosts in your data center.The ESX host is each system where ESX is installed.
+1. Uploading the OVSvApp file to one of the ESX hosts in your data center.
 2. Adding your settings to the configuration file so that the OVSvApp deployment script can clone the file on each host being managed by the overcloud controller.
 3. Running the deployment script.
 
@@ -55,30 +55,30 @@ Before you install the OVSvApp, ensure the following:
 
 	unset https_proxy
 
-- The VM port binding is with the host name of the OVSvApp VM on the ESX Compute host which provisioned the tenant VM.
+- The two Virtual Distributed Switches (VDS) must be configured. 
 
-- The two Virtual Distributed Switches (DVS) must be configured. 
-
-	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file called is set to true, the DVS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater.
+	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to true, the VDS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater.
 		
-	- **Manual DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file called is set to false, you need to create and configure the VDS as given below. Manual configuration supports any version of WSX.
+	- **Manual DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to false, you need to create and configure the VDS as given below. Manual configuration requires ESX 5.0.0 or greater.
 
-		There must be two Virtual Distributed Switches (vDS) and they are configured as follows: 
+		There must be two Virtual Distributed Switches (VDS) and they are configured as follows: 
 
     	**vDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The switch must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
 
     	**Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
     
-		**vDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch. One of the management portgroups handles the management traffic and may or may not be not configured for VLAN. The data portgroup should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the data portgroup.
+		**vDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch – management, data.  Management portgroup handles the management traffic and may or may not be not configured for VLAN. 
+
+		The data portgroup should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the data portgroup.
 		
-		**Note**: The name of the first portgroup must be associated with `mgmt_interface` parameter and name of the second portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. . You will create the INI file in [Modify and execute the installer](#modify).
+		**Note**: You will need this information for a configuration file, `ovs_vapp.ini`. The management portgroup must be associated with the `mgmt_interface parameter` and the data portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
 
 	Example:
 
-		DVS1  - trunk portgroup name - vlan_trunk
-		DVS2 
-			a. Portgroup1  name- mgmt
-			b. Portgroup2 name- data
+		vDS1  - trunk portgroup name - vlan_trunk
+		vDS2 
+			a. Portgroup1  name-mgmt
+			b. Portgroup2 name-data
 
 		Changes in ovs_vapp.ini for the above values
 		
@@ -90,25 +90,29 @@ Before you install the OVSvApp, ensure the following:
 
 <img src="media/ESXi_hypervisor_networking.png"/>
 
-### Notes for deploying onto ESX hypervisors ### {#esx}
+### Notes for deploying OVSvApp VM onto ESX hypervisors ### {#esx}
+
+* The ESX version required depends upon how VDS is deployed, as described in [Prerequisites](#prereqs}.
 
 * The OVSvApp appliance supports ESX hosts with version 5.1.0 or greater. Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
 
-* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The IP address of each ESX host should be the same IP address used by the vCenter. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
+* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
 
 - All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.
 
-- Use the vShpere client to select **Disable: Allow VM power on operations that violate availability constraints** as a part of cluster settings. If not, ESX host might hang at 2% during transition to maintenance mode. 
+- Use the vShpere client to select **Disable: Allow VM power on operations that violate availability constraints** as a part of cluster settings, as shaown. If not, ESX host might hang at 2% during transition to maintenance mode. 
 
-- •	If DVS will be configured automatically (`is_auto_dvs = True`) the installer requires one physical NIC name as input. This physical NIC must be unused(not part of any VSS or VDS) and its name should be same across all esxi hosts within a datacenter. 
+	<img src="media/OVSvApp_all_vm_power.png">
 
-- The traffic between two tenant VMs on the same network and on the same ESX Compute host cannot be blocked. If custom security groups are used, add explicit security group rules to allow traffic between the VMs. Using rules to allow traffic will help maintain VM connectivity.
+- 	If DVS will be configured automatically (`is_auto_dvs = True`) the installer requires one physical NIC name as input. This physical NIC must be unused(not part of any VSS or VDS) and its name should be same across all ESX hosts within a datacenter. 
+
+- The traffic between two tenant VMs on the same network and on the same ESX Compute host cannot be blocked. If custom security groups are used, add explicit security group rules to allow traffic between the VMs, regardless of the compute host they are provisioned on . Using rules to allow traffic will help maintain VM connectivity.
 
 
 
 ##Deploying the OVSvApp<a name="deploytemplate"></a>
 
-You must upload the OVSvApp to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.
+You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.
 
 The deploy process installs the OVSvApp as a virtual machine, which is referred to as *OVSvApp VM* in this document.
 
@@ -117,7 +121,7 @@ The deploy process installs the OVSvApp as a virtual machine, which is referred 
 * The OVSvApp VMs must be installed on each ESX hypervisor. 
 * IP address are assigned to the OVSvApp VMs manually. The Administrator must keep a separate pool of IP addresses from the management VLAN to be assigned to the OVSvApp VMs. These IP addresses must be assigned to the Ethernet interfaces connecting to **Management Port Group**.
 * The management portgroup for OVSvApp VM must be different than the Compute proxy management portgroup.
-* Specify distributed virtual switch (DVS) ports in the `ovs_vapp.ini`. Make sure the DVS ports are attached with the proper hosts.
+* Specify distributed virtual switch (VDS) ports in the `ovs_vapp.ini`. Make sure the VDS ports are attached with the proper hosts.
 
 ### Create a VM template in vCenter
 
@@ -199,7 +203,7 @@ To deploy the OVSvApp:
 
 ### Install the prerequisite python libraries
 
-On the server where you extractd the `ovsvapp.tgz` file, install the prerequisite python libraries:
+On the server where you extracted the `ovsvapp.tgz` file, install the prerequisite python libraries:
 
 1.	Install [pyvmomi](https://pypi.python.org/pypi/pyvmomi).
 
@@ -328,87 +332,16 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		#Maintenance mode will trigger DRS to migrate the tenant VMS. If set to false, then esx host will be shut down along with all tenant VMs. (*OPTIONAL)
 		esx_maintenance_mode=true_or_false
 
-	**Note:** If set to true in a [DRS cluster](http://www.vmware.com/products/vsphere/features/drs-dpm), should the OVSvApp crashes or enters kernel panic, the ESX host is put in Maintenance Mode. Maintenance mode will trigger DRS to migrate the tenant VMs. 
-	If set to false, the ESX host will be shut down along with all tenant VMs.
+	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM’s kernel panic occurs. 
+
+	- If set to true, the ESX host is put in Maintenance Mode.  
+	- If set to false, the ESX host will be shut down along with all tenant VMs.
 
 	i. Specify the level for logging errors, and a log file location. Default file location is:`/var/log/ovsvapp_log`.
 
 		[logger]
 		#Log level. Such as DEBUG, INFO
 		log_level=DEBUG_or_INFO
-
-
-	**EXAMPLE**
-	
-		[vmware]
-		#VCenter IP
-		vcenter_ip=15.22.10.12
-		#Vcenter username
-		vcenter_username=Administrator
-		#Vcenter password
-		vcenter_password=Password@123
-		#Datacenter name
-		datacenter=Datacenter
-		#Clusters on which OVSvApp will be hosted
-		clusters=Cluster1, Cluster2, Cluster3
-		#SSL Communication Settings between OVSvApp and Vcenter
-		#Do you want to use Certificate Check
-		cert_check=True
-		#Certificate Path. Not required if cert_check=False
-		cert_path=/home/user/rui.cert
-		
-		[network]
-		#Tenant network type(vlan/vxlan)
-		tenant_network_type=vlan
-		#If you want to use existing DVS and don't want to create DVS automatically then make it False
-		is_auto_dvs=True
-		#Trunk and Uplink DVS name. For vxlan trunk DVS name will be changed automatically to <DVS_Name>_<ClusterName> (Not required if is_auto_dvs=False)
-		trunk_dvs_name=vappTrunk
-		uplink_dvs_name=vappUplink
-		#Portgroup Names. For vxlan trunk port group will be automatically changed to <Port_Group_Name>_<ClusterName>. For vxlan if is_auto_dvs is false then
-		#manually all the trunk port group name has to be <Trunk_Portgroup_Name>_<Cluster_Name>. And user has to input
-		#only <Trunk_Portgroup_Name>. Because for several clusters we can’t take all name as input.
-		#Eg. {'<adapter_type>':'<port_group_name>'}
-		trunk_interface={'vmxnet3':'vappTrunkPG'}
-		data_interface={'vmxnet3':'vappDataPG'}
-		mgmt_interface={'vmxnet3':'vappMgmtPG'}
-		#Start and End IP range for OVSvApp
-		start_ip_address=192.168.1.10
-		end_ip_address=192.168.1.20
-		#Netmask and gateway for OVSvApp
-		netmask=255.255.255.0
-		gateway_ip=192.168.1.1
-	
-		[template]
-		#Provide the template/appliance name that will be used for cloning
-		template_name=overcloud-esx-ovsvapp
-	
-		[vmconfig]
-		#The deployed ovsvapp name. It will be appended with esxi hostname. And will look like <ovs_vm_name>_<esxi_host_name>
-		ovs_vm_name=vapp
-		#Number of CPUs for the OVSvApp VM
-		num_cpu=2
-		#Amount of RAM for the OVSvApp VM
-		memory_mb=2048
-	
-		[rabbitmq]
-		#RabbitMQ host
-		rabbitmq_host=100.191.30.21
-		#RabbitMQ user
-		rabbitmq_user=guest
-		#RabbitMQ password
-		rabbitmq_pass=guest
-	
-		[ntp]
-		ntp_server=100.191.30.1
-		[disaster-recovery]
-		#If set to True (If you have a DRS enabled cluster), then on OVSvApp crash/kernel panic the host will be put to maintenance mode.
-		#Maintenance mode will trigger DRS to migrate the tenant VMS. If set to false, then esx host will be shut down along with all tenant VMs.
-		esx_maintenance_mode=True
-	
-		[logger]
-		#Log level. Such as DEBUG, INFO
-		log_level=DEBUG
 
 3. Invoke the installer using the following commands:
 
@@ -460,22 +393,22 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - During installation of OVSvApp VMs on a large scale, OVSvApp VM can hang and installation might not proceed. If this happens, execute the `neutron agent list` command. If the output shows a OVSvApp VM in the `xxx` agent state, rerun the installation for that specific failed OVSvApp VM by specifying the ESX host name in the `new_hosts` field under the `new-host-addition` section of the `ovs_vapp.ini` file.
 
-- In a multiple vCenter environment, during tenant VMs spawn, if a VM fails to spawn on one vCenter server and get spawned on another vCenter server, check for stale portgroups, which causes stale OVS Flows. 
-
-- If an OVSvApp agent needs to be restarted, the OVS flows might be slow to be restored. If that happens, restart the agent to stabilize the flows.
+- In a multiple vCenter environment, during tenant VMs spawn, if a VM fails to spawn on one vCenter server and successfully spawns on another vCenter server, check for stale portgroups, which causes stale OVS Flows. If an OVSvApp agent needs to be restarted, the OVS flows might be slow to be restored. If that happens, restart the agent to stabilize the flows.
 
 - If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
 
 	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but ESX maintenance mode is launched, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor = false` in the `/etc/neuton/neutron.conf` file. Restart the server to take effect.
 
-If you experience issues while installing the VMWare Tools, try and of the following references for help:
+- If you experience issues while installing the VMWare Tools, try any of the following references for help:
 
-- For any issues while installing VMware Tools: 
-<br>	[VMware Knowledge Base](http://kb.vmware.com/) 
-<br>	[VMware Support](https://www.vmware.com/support/vsphere/) 
+	For any issues while installing VMware Tools: 
+	<br>	[VMware Knowledge Base](http://kb.vmware.com/) 
+	<br>	[VMware Support](https://www.vmware.com/support/vsphere/) 
 
 - For any Operating System related issues:
 <br>	[hLinux Bugzilla](http://hlinux-home.usa.hp.com/bugzilla/) 
+
+- In a scalable environment, portgroups might not get deleted when the `nova delete` command is run.
 
 
 ## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>

@@ -17,16 +17,16 @@ This is the **second** sample in the Workbook; if you have not already examined 
 
 If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-- Open the Administrative console.
+- Go to the Administrative console (e.g. *https://api.15.126.212.172.xip.io*, substitute your own instance's link)
 - On the **Admin** tab, click **Cluster**.
 - Click the **Settings** icon (a gear icon in the upper right corner)
 - The **MySQL** check box should be checked. If it is not, check it.
 - Click **Save**.
 
-**ALS**
+**Stackato**
 
-1. You must have a [ALS instance](/helion/devplatform/community/install-als/) available. 
-2. The  [ALS command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+1. You must have a Stackato instance available. 
+2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
 3. You must have access to the web-based Administration console.
 
 **JDK**
@@ -59,21 +59,19 @@ This will create the .war file within the `target` directory.
 
 ##Deploy the Application
 
-To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.example.com*.
+To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
-1. Open the  [ALS command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
-2.	Execute <br>`stackato target https://api.example.com`<br>substituting your own instance's link.
-3.	Execute <br>`stackato login`<br> using the Stackato management console username and password.
-4. Change directory (`cd`) the app's root directory.
-5. Execute <br>`stackato push -n` 
+1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
+
+2. *cd* into the app's root directory.
+3. Execute `stackato push -n` 
 
 ##Run the Application
 
 1. Open the Management Console. This is the web-based administrative interface.
 2. Click **Applications**.
-3. If the file push was successful, you should see the name of this application in the list of available applications. 
-4. The status of the application should be **Online**. Click the name of the application to launch it.
-	- If there are still any issues, click the **Log Stream** link on the app's page to see a real-time stream of what's going on with the app. 
+3. If the file push was successful, you should see the new app in the list of available applications. 
+4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
 6. The result should be a page displaying some text after your app has connected to MySQL and executed a query.
 

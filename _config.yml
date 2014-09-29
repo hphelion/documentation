@@ -297,6 +297,8 @@ navigation:
     url: /helion/openstack/ga/install/esx/
   - text: Back Up and Restore
     url: /helion/openstack/ga/backup.restore/
+  - text: Troubleshooting
+    url: /helion/openstack/services/ga/troubleshooting/
   - text: Related Documentation
     url: /helion/openstack/ga/related-links/	
   - text: Glossary
