@@ -38,7 +38,7 @@ To install a HP Helion OpenStack baremetal, you must have the following hardware
 
 - The boot order configured with Network/PXE boot as the first option
 - The BIOS configured: 
-	- To the correct date and time
+	- To the correct date and time, set to the time on the seed cloud host
 	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 	- To stay powered off in the event of being shutdown rather than automatically restarting
 - Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
