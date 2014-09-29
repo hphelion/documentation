@@ -373,7 +373,7 @@ Kernel-based Virtual Machine is a virtualization infrastructure for the Linux ke
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. It eliminates the need for external shared storage required to implement Block Storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
+<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
 
 **Note:** For configuring your HP Helion OpenStack installation to use 3Par for block storage, please go to <add link here>
 
