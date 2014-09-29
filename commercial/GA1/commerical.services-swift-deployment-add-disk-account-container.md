@@ -32,10 +32,10 @@ It is recommended to use Proxy node to store account, container objects based on
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter Swift nodes are functional by default as they are part of cloud deployment
-2. Scale-out object-ring:1 is deployed
-3. Scale-out Proxy node is deployed
+* HP Helion OpenStack&#174; cloud is successfully deployed. 
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
+* Scale-out object-ring:1 is deployed.
+* Scale-out Proxy node is deployed.
 
 **IMPORTANT**:  
  
@@ -47,7 +47,7 @@ It is recommended to use Proxy node to store account, container objects based on
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Log in to Undercloud from Seed cloud. 
+1. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -138,5 +138,9 @@ Perform the following steps to add Swift disk to a ring:
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+
+**Related topics**
+
+* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

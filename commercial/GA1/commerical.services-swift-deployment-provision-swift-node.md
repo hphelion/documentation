@@ -33,8 +33,8 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 
 ##Prerequisite {#Preq}
 
-* HP Helion OpenStack&#174; is deployed
-* Starter Swift nodes are functional by default as they are part of cloud deployment
+* HP Helion OpenStack&#174; cloud is deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
 
 You can check health of starter Swift nodes by nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
 
@@ -77,7 +77,7 @@ Perform the following steps to add physical server for a scale-out Swift:
 	**Notes**: 
 
 	- There must be one entry in this file for each baremetal system you intend to install.
-	- The first entry is used for the undercloud.
+	- The first entry is used for the Undercloud.
 	- The second entry is the node with the lowest specifications (CPU/RAM/Disk size) of nodes in the overcloud.
 
 	The following sample displays the `baremetal.csv` configuration file after adding server details.
@@ -166,11 +166,11 @@ Perform the following steps to provision the Swift node:
 
 The cloud updates with the new nodes on successful operation.
 
-##Verify Swift node deployment {#verify Swift node deployment}
+##Verify Swift node deployment {#verify-swift-node-deployment}
 
 Ensure the deployment of the Swift node using the following commands:
 
-1. Log in to Underloud.
+1. Log in to Underloud from Seed.
 
 		# ssh heat-admin@<Undercloud IP address> 
 
@@ -182,6 +182,15 @@ It displays available Swift nodes including the newly added node.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+**Related topics**
+
+* [Deploy Scale-out Swift Nodes](/helion/openstack/ga/services/swift/deployment-scale-out/)
+* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
+* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
+* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
+
+
 
 
 ----

@@ -32,8 +32,8 @@ Perform the following procedure to add disk to a starter object ring.
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is deployed
-* Starter Swift nodes are functional by default as they are part of cloud deployment
+* HP Helion OpenStack&#174; cloud is deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
 
 **IMPORTANT**:  
  
@@ -45,7 +45,7 @@ Perform the following procedure to add disk to a starter object ring.
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Login to Undercloud. 
+1. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -112,5 +112,10 @@ Perform the following steps to add Swift disk to a ring:
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+
+
+**Related topics**
+
+* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

@@ -32,9 +32,9 @@ Perform the following procedure to add a disk to a scale-out object ring.
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed 
-2. Starter Swift nodes are functional by default as they are part of cloud deployment
-3. Scale-out object-ring:1 is deployed
+* HP Helion OpenStack&#174; cloud is successfully deployed. 
+* Starter Swift nodes are functional by default as they are part of cloud deployment.
+* Scale-out object-ring:1 is deployed.
 
 
 **IMPORTANT**:  
@@ -104,6 +104,10 @@ Perform the following steps to add disk to a Swift ring:
 11.Repeat steps from **7-10** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+**Related topics**
+
+* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 
 
 ----

@@ -24,7 +24,7 @@ PageRefresh();
 This page covers the following topics:
 
 *  [High Availability( HA) concepts overview](#concepts-overview) 
-*  [Scope of High Availability: Protection against Single Points of Failure(SPOF)](#scope-ha)
+	*  [Scope of High Availability: Protection against Single Points of Failure(SPOF)](#scope-ha)
 *  [Highly Available cloud services](#ha-helion)
 	*  [High Availability of Overcloud Controllers](#ha-overcloud)
 		* [API Request Message Flow](#api-msg-flow)
@@ -49,11 +49,11 @@ This page covers the following topics:
 
 ##High Availability concepts overview<a name="concept-overview"></a>
 
-Cloud Administrators of Highly Available Cloud Services ensure that resources are always available on request to enable uninterrupted operations. The projects are able to provision and manage the Compute, Storage, Network infrastructure resources i.e. Nova Compute VMs, Cinder Volumes, Neutron Networks, etc. at any given point in time.
+Cloud Administrators of Highly Available Cloud Services ensure that resources are always available on request to enable uninterrupted operations. The projects are able to provision and manage the Compute, Storage, Network infrastructure resources i.e. Nova Compute VMs, Cinder Volumes, Neutron Networks, etc. at any given point in time.This means that the Horizon Dashboard, and various OpenStack APIs for Nova, Cinder, Neutron, Swift, etc. must be reachable and be able to fulfill user requests. This is called **Highly Available Cloud Services**.
 
  <a href="javascript:window.open('/content/documentation/media/ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Resilient Cloud Infrastructure(opens in a new window)</a>
 
-The resource (Compute, Storage, Network) reliability in a particular cloud can be   reliability can be assessed in the following way: 
+The resource (Compute, Storage, Network) reliability in a particular cloud can be    assessed in the following way: 
 
 * If the Nova-Compute KVM Hypervisors/Servers hosting the Project compute Virtual Machine(VM) dies and the compute VM is lost along with its local ephemeral storage, the re-launching of the dead compute VM succeed as it launches on another Nova-Compute KVM Hypervisor/Server.
 
@@ -67,9 +67,9 @@ The resource (Compute, Storage, Network) reliability in a particular cloud can b
 
 The infrastructure that provides these features is called a **Highly Available Cloud Infrastructure**.
 
-HP Helion OpenStack Nova-Compute KVM Hypervisors do not support transparent HA to Project Applications – onus is on the Project Application Provider to deploy their Applications in a redundant and highly available manner, using multiple VMs spread appropriately across Availability Zones, routed through the  Load Balancers and made highly available through Clustering. These are known as Highly Available Cloud Aware Tenant Workloads.
+HP Helion OpenStack Nova-Compute KVM Hypervisors do not support transparent HA to Project Applications – onus is on the Project Application Provider to deploy their Applications in a redundant and highly available manner, using multiple VMs spread appropriately across Availability Zones, routed through the  Load Balancers and made highly available through Clustering. These are known as **Highly Available Cloud Aware Tenant Workloads**.
 
-## Scope of High Availability: Protection against Single Points of Failure(SPOF){#scope-ha}
+### Scope of High Availability: Protection against Single Points of Failure(SPOF){#scope-ha}
 
 In order to make the High Availability of Services, Infrastructure and Workloads; a contained, well defined, addressable problem; we define the scope of HA to be limited to protecting these only against Single Points of Failure.
 
