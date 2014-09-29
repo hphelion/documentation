@@ -138,14 +138,14 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 	
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
 
 
 ###ESX environment<a name="esx-env"></a>
 
 The following diagram depicts a simplified deployment scenario using ESX.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
 
 ### Hardware requirement<a name="hardware-req"></a>
@@ -156,7 +156,7 @@ The following hardware requirement is required to install HP Helion OpenStack.
 * At least 9 and up to 100 baremetal systems with the following configuration:
 
     * A minimum of 32 GB of physical memory
-    * A minimum of 2 TB of disk space
+    * A minimum 500GB to a maximum 2 TB of disk space
     * A minimum of 1 x 10 GB NIC with PXE support
     * Capable of hosting VMs
     * The boot order configured with Network/PXE boot as the first option
@@ -166,10 +166,10 @@ The following hardware requirement is required to install HP Helion OpenStack.
       * To stay powered off in the event of being shutdown rather than automatically restarting
     * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
 
-* An installer system to run the baremetal install and host the seed VM with the following configuration:
+* An installer system, called the *seed cloud host*, to run the baremetal install and host the seed VM with the following configuration:
 
     * A minimum of 16 GB of physical memory
-    * A minimum of 100 GB of disk space
+    * A minimum of 1 TB of disk space
     * Virtualization enabled 
     * Ubuntu 14.04 installed
 
@@ -304,7 +304,7 @@ The physical cluster network can be shared by a number of logical networks, each
 
 The HP Helion OpenStack High Availability (HA) architecture ensures that Cloud Services are deployed in a manner that is resilient, and remain available and functional in the event of Single Points Of Failure (SPOF) of software or hardware.
 
-The OpenStack services are deployed in a three node Controller cluster, that ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.
+The OpenStack services are deployed in a three node Controller cluster, which ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.
 
 For more details on HA configuration, refer to [HP Helion OpenStack High Availability](/helion/openstack/ga/high-availability/) and [OpenStack HA Guide](http://docs.openstack.org/high-availability-guide/content/index.html).
 
@@ -314,11 +314,11 @@ For more details on HA configuration, refer to [HP Helion OpenStack High Availab
 
 HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of **9** baremetal servers, to which you can add **up to 100 Compute nodes**:
 
-* 1 seed host (installer system)
+* 1 seed cloud host (installer system)
 * 1 undercloud server
 * 3 overcloud controllers
 * 2 overcloud Swift nodes
-* At least 1 block storage node 
+* At least 1 block storage node (not required if 3Par is being used for block storage) 
 * At least 1 overcloud Compute node 
 
 [Learn more]( /helion/openstack/ga/install/overview/) about installing and configuring HP Helion OpenStack. 
@@ -369,11 +369,13 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 Kernel-based Virtual Machine is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.(opens in a new window)  </a>
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.(opens in a new window)  </a>
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. It eliminates the need for external shared storage required to implement Block Storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
+<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping.(opens in a new window) </a> 
+
+**Note:** For configuring your HP Helion OpenStack installation to use 3Par for block storage, please go to <add link here>
 
 ####ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support<a name="esx-hypervisor"></a>
 
