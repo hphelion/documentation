@@ -28,14 +28,14 @@ HP Helion OpenStack&reg; offers  an optional Swift scale-out cluster instance of
 
 
 
-When the HP Helion OpenStack&reg; is deployed two swift nodes are installed by default. They are termed as starter nodes. These two nodes are configured as storage-policy:0 for internal purposes as part of deployment. The object ring associated with the storage-policy:0 is used to store data for internal services like Glance, Sherpa, and so on. 
+When the HP Helion OpenStack&reg; is deployed two swift nodes are installed by default. They are termed as starter nodes. These two nodes are configured as storage-policy:0 for internal purposes as a part of deployment. The object ring associated with the storage-policy:0 is used to store data for internal services like Glance, Sherpa, and so on. 
 
 The scale-out object storage is realized by defining a new storage policy – storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created,  it is the default policy and all of the containers would be on this policy unless otherwise specified.
 
 
 You can expand the object storage by adding one or more nodes to object-ring:1. But you can still continue to use storage-policy:0, if you continue to use the old container to store data.
 
-HP Helion OpenStack Swift provides a utility named ringos which helps to create scale-out Swift. For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
+HP Helion OpenStack&reg; Swift provides a utility named ringos which helps to create scale-out Swift. For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
 
 
 ##Scale-out Swift architecture 
@@ -65,7 +65,7 @@ Swift cluster is like a data center which can be big or small based on size of c
 </td>
    </tr>
 <tr style="background-color: white; color: black;">
-	<td>4. <a href="/helion/openstack/ga/services/object/swift/expand-cluster/">Expand Swift Cluster</a></td>
+	<td>4. <a href="/helion/openstack/ga/services/object/swift/expand-cluster/">Extend Swift Cluster</a></td>
     </tr>
 <tr style="background-color: white; color: black;">
 	<td>5. <a href="/helion/openstack/ga/services/object/swift/shrink-cluster/">Shrink Swift Cluster</a></td>

@@ -47,7 +47,7 @@ It is recommended to use Proxy node to store account, container objects based on
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Log in to Undercloud. 
+1. Log in to Undercloud from Seed cloud. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -132,7 +132,7 @@ Perform the following steps to add Swift disk to a ring:
 	# ringos set-weight -f /root/ring-building/account.builder -s <disk id> -w <weight>
 	# ringos set-weight -f /root/ring-building/container.builder -s <disk id> -w <weight>
  
-12.Repeat steps from **8-12** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
+12.Repeat steps from **8-11** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
 
 
  

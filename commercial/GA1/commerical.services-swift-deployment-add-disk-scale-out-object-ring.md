@@ -48,7 +48,7 @@ Perform the following procedure to add a disk to a scale-out object ring.
 Perform the following steps to add disk to a Swift ring:
 
 
-1. Log in to Undercloud. 
+1. Log in to Undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -101,7 +101,7 @@ Perform the following steps to add disk to a Swift ring:
 	# ringos set-weight -f /root/ring-building/object-1.builder -s <disk-id> -w <weight>
 
  
-11. Repeat steps from **8-10** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
+11.Repeat steps from **7-10** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
