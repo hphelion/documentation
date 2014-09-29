@@ -42,16 +42,16 @@ Perform the following steps to monitor the replication status:
 
 2.Click **Status** on the left panel and then click **Host Detail**. 
 
-<img src ="media/icinga_host-details.png/">
+<img src="media/icinga_host-details.png/">
 
 3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
-<img src ="media/swift_icinga_view-details.png"/>
+<img src="media/swift_icinga_view-details.png"/>
 
 
 The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;  
 
-<img src ="media/swift_icinga-replication-status.png"/>
+<img src="media/swift_icinga-replication-status.png"/>
 
 Now, you can view the replication status of the selected Swift node.
 
