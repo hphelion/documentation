@@ -222,7 +222,7 @@ Edit the **baremetal.csv** file to define the lowest specification server in the
 ===============================================================================================
 
 
-####PXE boot on target node keeps switching between interfaces{{#PXE-boot-on-target}
+####PXE boot on target node keeps switching between interfaces{#PXE-boot-on-target}
 
 **System Behavior/Message**
 
