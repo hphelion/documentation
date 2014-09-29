@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 layout: default
 title: "Ruby Fog for HP Helion Public Cloud Networking Examples"
