@@ -113,7 +113,7 @@ Repeat this step for each disk of the specific node.
 
 13.List all the Swift nodes.
 
-		# ringos list-swift-nodes -t all
+	# ringos list-swift-nodes -t all
 		
 		
 14.Copy `object-1.ring.gz` file to all nodes.
