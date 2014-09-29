@@ -117,7 +117,20 @@ The following sample displays the output of the above command:
 
 	Removed disk(s) matching d7 from ring object-1.builder
 
+12.Re-balance the ring.
 
+	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+
+**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
+
+13.List all the Swift nodes.
+
+	# ringos list-swift-nodes -t all
+		
+		
+14.Copy `object-1.ring.gz` file to all nodes.
+
+	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

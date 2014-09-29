@@ -38,20 +38,31 @@ This topic shows how to add a proxy node to the store account, container ring.
 
 ##Deploying new node(s) {#deploying-new-node}
 
-Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/) to deploy a new node.
+Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/ga/services/swift/provision-nodes/) to deploy a new node.
 
 
 ##Update load balancer with new Proxy nodes
  
-1. After creation of the Proxy node, list the Proxy IP addresses.
+1. Log in to Undercloud.
+ 
+		# ssh heat-admin@<Undercloud IP address> 
+		# sudo -i
+
+2. After creation of the Proxy node, list the Proxy IP addresses.
 
 		# ringos list-swift-nodes -t proxy
 
-2. Edit `swift-proxy.cfg` on each of the controller nodes. 
+3. List all the controller nodes
+
+ 		# nova list
+
+
+
+4. Edit `swift-proxy.cfg` on each of the controller nodes. 
 
 	 	/etc/haproxy/manual/swift-proxy.cfg
 
-3. Add the following content in the `swift-proxy.cfg` file.
+5. Add the following content in the `swift-proxy.cfg` file.
 
 		  listen scale_swift_proxy
 		  bind 192.0.2.21:8080
@@ -59,7 +70,7 @@ Perform the steps mentioned in  [Procedure to deploy scale-out Swift nodes with 
 
 	**Note**:The number of "server" lines will equal the number of Swift Proxies you have set up.
 
-4. Restart the HA Proxy service on all these nodes.
+6. Restart the HA Proxy service on all these nodes.
 
 		# service haproxy restart
 
