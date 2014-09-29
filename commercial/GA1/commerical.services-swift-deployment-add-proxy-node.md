@@ -23,7 +23,7 @@ PageRefresh();
 
 #Add New Scale-out Proxy Node
 
-This topic shows how to add a proxy node to the store account, container and object-ring.
+This topic shows how to add a proxy node to the store account, container ring.
 
 1. [Prerequisite](#prer)
 2. [Deploying new node(s)](#deploying-new-node)
