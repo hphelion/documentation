@@ -29,8 +29,6 @@ Perform the following procedure to add new scale-out object node.
 1. [Prerequisite](#preq)
 2. [Deploying new object nodes](#deploy-new-object-node)
 3. [Adding node and disks to object-ring:1](#add-disk-node)
-4. [Re-balancing the ring](#rebalance-ring)
-5. [Copying object-ring:1 to all nodes](#copy-object-node)
 
 
 ##Prerequisite {#preq}

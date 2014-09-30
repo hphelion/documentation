@@ -30,11 +30,13 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 * [Expand Backend](#expand-backend)
 
-* [Generate Configuration](#generate-config)
-
 * [Shrink Backend](#shrink-backend) 
 
 * [Delete Backend](#delete-backend)
+
+* [Generate Configuration](#generate-config)
+
+* [Update Overcloud](#update-overcloud)  
 
 ### Add backend<a name="add-backend"></a>
 
@@ -42,11 +44,11 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.
 
-	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud StoreServ Option (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud StoreServ Option (opens in a new window)</a>
 
 2. Click **Add Backend** displayed at the top to open the StoreServ Volume Backend page.
 
-	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">StoreServ Volume Backend Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">StoreServ Volume Backend Page (opens in a new window)</a>
 
 3. In the **Volume Backend Name** box, enter the name for the backend.
 
@@ -60,11 +62,11 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page. 
 
-	<a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
 	The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
-   <a href="javascript:window.open('/content/documentation/media/storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+   <a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
 
 ### Expand backend<a name="expand-backend"></a>
@@ -127,7 +129,7 @@ To generate configuration file, do the following:
 
 1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
-	<a href="javascript:window.open('/content/documentation/media/storeServ-generate-configuration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
 
 2. Select the backend for which you want to generate the configuration file.
 

@@ -29,7 +29,7 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 * [Prerequisite](#Preq)
 * [Adding physical server for scale-out Swift](#adding-physical-server-for-scale-out-Swift) 
 * [Provision Swift node](#provision-swift-node)
-* [Verify Swift node deployment](#verify-Swift-node-deployment) 
+* [Verify Swift node deployment](#verify-swift-node-deployment) 
 
 ##Prerequisite {#Preq}
 
