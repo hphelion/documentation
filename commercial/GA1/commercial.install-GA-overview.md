@@ -31,7 +31,18 @@ The HP Helion OpenStack installation follows the standard [TripleO deployment mo
 
 * **Overcloud**: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
 
+For more details on the seed, an undercloud and an overcloud, see the 
+
 ## The Installation Process
+
+HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of **9** baremetal servers, to which you can add **up to 100 Compute nodes**:
+
+* 1 seed cloud host (installer system)
+* 1 undercloud server
+* 3 overcloud controllers
+* 2 overcloud Swift nodes
+* At least 1 block storage node (not required if 3Par is being used for block storage) 
+* At least 1 overcloud Compute node 
 
 The high-level process for installing HP Helion OpenStack involves the following:
 

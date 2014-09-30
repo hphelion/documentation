@@ -240,11 +240,11 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 3. Run the installer validation command to verify the configuration file
 
-      $ dnsaas-installer --target-password <Target User Password> validate
+     	 $ dnsaas-installer --target-password <Target User Password> validate
 
 After you validate the configuration file, run the DNSaaS installer:
 
-       $ dnsaas-installer --target-password <Target User Password> install
+      	 $ dnsaas-installer --target-password <Target User Password> install
 
 4.Once the installation in completed, verify that the API and Nameservers are online using the endpoints supplied by the installer. From the installer VM, execute the following commands:
 
@@ -268,7 +268,7 @@ After you validate the configuration file, run the DNSaaS installer:
 
 * To configure HAProxy use the following command: 
 
-	$ dnsaas-installer --target-password <Target User Password> haproxy
+		$ dnsaas-installer --target-password <Target User Password> haproxy
 
 The HA Proxy configuration file will be displayed as the sample below:
 	
@@ -354,7 +354,7 @@ If you are using Microsoft DNS Server you should perform the following additiona
 
 		C:\Program Files (x86)\Designate\designate-msdnsagent.conf
 
-4. Restart the `designate-msdnsagent` service using the windows Services GUI. (**are users aware of the window services GUI?? if no how do we direct that to user??)**
+4. Restart the `designate-msdnsagent` service using the windows Services GUI. 
 
 ##Post-install cleanup
 
@@ -375,7 +375,7 @@ To uninstall the DNaaS:
 
 **Note**: Installer VM can also be deleted, if it is not deleted already.
 
-The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the Keystone documentation (here we point to Openstack documentation).
+The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the Keystone documentation (here we point to OpenStack documentation).
 
 ##For more information<a name="moreinfo"></a>
 For more information, see:

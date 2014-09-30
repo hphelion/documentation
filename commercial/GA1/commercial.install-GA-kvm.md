@@ -294,13 +294,13 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
-	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+	For intructions, see the [HP Helion OpenStack® Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
 
 - Configure an HP 3Par storage array 
 
 	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
 
-	For intructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/) document.
+	For intructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/ga/install/3par/) document.
 
 - Install DNS as a service (DNSaaS) (Optional).
 

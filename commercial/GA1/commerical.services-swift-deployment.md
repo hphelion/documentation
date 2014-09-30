@@ -41,7 +41,7 @@ Perform the following steps to deploy scale-out object-ring:1
 
 ##Prerequisites {#preq}
 
-* HP Helion OpenStack&#174; Cloud is deployed.
+* HP Helion OpenStack&#174; cloud is deployed.
 * Starter Swift nodes are functional by default as they are part of cloud deployment.
 
 ## Defining ring attributes of object-ring:1 {#define-object-ring:1}
@@ -82,7 +82,7 @@ You should carefully plan the following ring attributes before deployment of obj
 
 Using ringos utility you can add the [provisioned nodes]( /helion/openstack/ga/services/swift/provision-nodes/) to Swift cluster. 
 
-To  perform this operation, it is necessary to enable SSH from Undercloud to Overcloud node. To do that, copy the SSH keys from Seed cloud to Undercloud as mentioned below: 
+To  perform this operation, it is necessary to enable SSH from Undercloud to Overcloud node. To do that, copy the SSH keys from Seed to Undercloud as mentioned below: 
 
 1.  Login to Seed. 
 
@@ -189,8 +189,8 @@ The following sample displays the output of formatted disk of **192.0.2.29**.
 		| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |               
 		+----------+-----------+---------+---------------------------------+-------------+------------+
 
-**Note**: You can also format disks individually by using –d <device-name>.
-For more details, refer [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
+**Note**: You can also format disks individually by using &#45;d &lt;device-name&gt;.
+For more details, see [ringos]( /helion/openstack/GA1/services/object/pyringos/) manual.
 
 Repeat the above steps for all the Object nodes.
 
@@ -219,7 +219,7 @@ The following sample displays the creation of ring by adding scale-out Swift nod
 
 	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object Node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-**Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#preparing-disks-on-Swift-nodes).
+**Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#{#preparing-disks-on-Swift-nodes).
 
 The following sample displays the addition of disk to **192.0.2.29** and its output.
 
@@ -276,8 +276,8 @@ This will generate an **object-1.ring.gz** file.
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift node IP address>:/etc/swift/account.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift node IP address>:/etc/swift/container.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/container.builder /root/ring-building/
 
 	The following sample displays all the rings and builder files from **19.0.2.22**
 
@@ -356,17 +356,16 @@ In the following example account, container, object-0 , and generated `object-1.
 
 	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
- <!---
-##For further information
+**Related topic**
 
 * [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
 * [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 * [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
 
- --->
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

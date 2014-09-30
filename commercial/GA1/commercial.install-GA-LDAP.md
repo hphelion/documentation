@@ -23,13 +23,14 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg;: Integrating LDAP 
 
-The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion OpenStack installation process.
 
 The process for integrating LDAP involves the following steps:
 
-- [Verifying prerequisites](#pre)
-- [Generating configuration files](#config)
+- [Verify prerequisites](#pre)
+- [Generate configuration files](#config)
 - [Include the configuration files in the installation](#install)
+- [Configure Horizon](#horizon)
 
 ## Prerequisites<a name="pre"></a>
 Before starting the integration, review the following prerequisites:
@@ -54,10 +55,10 @@ Before starting the integration, review the following prerequisites:
 
 The LDAP integration process requires two configuration files:
 
-- [TripleO OverCloud Password file](#tripleo)
+- [TripleO overcloud password file](#tripleo)
 - [LDAP server connection settings](#connect)
 
-### TripleO OverCloud Password file<a name="tripleo"></a>
+### TripleO overcloud password file<a name="tripleo"></a>
 
 This file contains the password for all the service users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
 
@@ -103,10 +104,10 @@ The following options must be set with proper values to provide integration with
 	<td>[ldap]</td><td> </td><td> </td><td> </td>
 	</tr>
 	<tr>
-	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>cn</td>
+	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
-	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>cn</td>
+	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
 	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
@@ -124,10 +125,10 @@ The following options must be set with proper values to provide integration with
 	<td>group_allow_update</td><td>(BoolOpt) Allow group update in LDAP backend.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>suffix</td><td>(StrOpt) LDAP server suffix</td><td>DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	<td>suffix</td><td>(StrOpt) LDAP server suffix</td><td>DC=example,DC=com</td><td>dc=example,dc=com</td>
 	</tr>
 	<tr>
-	<td>url</td><td>(StrOpt) URL for connecting to the LDAP server.</td><td>ldap://10.1.5.221</td><td>ldap://10.1.5.208</td>
+	<td>url</td><td>(StrOpt) URL for connecting to the LDAP server.</td><td>ldap://localhost</td><td>ldap://localhost</td>
 	</tr>
 	<tr>
 	<td>user_allow_create</td><td>(BoolOpt) Allow user creation in LDAP backend.</td><td>False</td><td>False</td>
@@ -139,28 +140,28 @@ The following options must be set with proper values to provide integration with
 	<td>user_allow_update</td><td>(BoolOpt) Allow user updates in LDAP backend.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>uid</td>
+	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
-	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>uid</td>
+	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>Cn</td>
 	</tr>
 	<tr>
-	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>person</td>
+	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>Person</td>
+	</tr>
+	<tr> 
+	<td>user_tree_dn</td><td>(StrOpt) Search base for users.</td><td>CN=Users,DC=example,DC=com</td><td>ou=people,dc=example,dc=com</td>
 	</tr>
 	<tr>
-	<td>user_tree_dn</td><td>(StrOpt) Search base for users.</td><td>CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>ou=people,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	<td>user</td><td>(StrOpt) User BindDN to query the LDAP server.</td><td>CN=SomeLDAPUser,CN=Users,DC=example,DC=com</td><td>Not Required</td>
 	</tr>
 	<tr>
-	<td>user</td><td>(StrOpt) User BindDN to query the LDAP server.</td><td>CN=Administrator,CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>Not Required</td>
-	</tr>
-	<tr>
-	<td>password</td><td>(StrOpt) Password for the BindDN to query the LDAP server.</td><td><Passw0rd></td><td>Not Required</td>
+	<td>password</td><td>(StrOpt) Password for the BindDN to query the LDAP server.</td><td>password</td><td>Not Required</td>
 	</tr>
 	<tr>
 	<td>use_tls</td><td>(BoolOpt) Enable TLS for communicating with LDAP servers.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>tls_req_cert</td><td>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</td><td>never</td><td>never</td>
+	<td>tls_req_cert</td><td>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</td><td>never</td><td>Never</td>
 	</tr>
 	<tr>
 	<td>use_pool</td><td>(BoolOpt) Enable LDAP connection pooling.</td><td>True</td><td>True</td>
@@ -169,7 +170,7 @@ The following options must be set with proper values to provide integration with
 	<td>user_enabled_attribute</td><td>(StrOpt) LDAP attribute mapped to user enabled flag.</td><td>userAccountControl</td><td>Not required</td>
 	</tr>
 	<tr>
-	<td>user_enabled_mask</td><td>(IntOpt) Bitmask integer to indicate the bit that the enabled value is stored in if the LDAP server represents "enabled" as a bit on an integer rather than a boolean. A value of "0" indicates the mask is not used. If this is not set to "0" the typical value is "2". This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>2</td><td>Not required</td>
+	<td>user_enabled_mask</td><td>(IntOpt) Bitmask integer indicating which bit represents the enabled value.  This is used when the LDAP server represents the variable `enabled` as a bit in an integer rather than as a Boolean.  A value of "0" indicates the mask is not used. When not set to "0", the typical value is "2".  This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>2</td><td>Not required</td>
 	</tr>
 	<tr>
 	<td>user_enabled_default</td><td>(StrOpt) Default value to enable users. This should match an appropriate int value if the LDAP server uses non-boolean (bitmask) values to indicate if a user is enabled or disabled. If this is not set to "True" the typical value is "512". This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>512</td><td>Not required</td>
@@ -183,9 +184,9 @@ The following options must be set with proper values to provide integration with
 
 You need to copy the configuration files to the seed VM host during the installation, after the seed VM is installed and before launching the installation of the overcloud and undercloud.
 
-On the seed VM, perform the following:
+On the seed VM host, perform the following:
 
-1. Copy the `tripleo-overcloud-password` file to the `/root/tripleo folder`:
+1. Copy the `tripleo-overcloud-passwords` file to the `/root/tripleo folder`:
 
 		scp tripleo-overcloud-passwords root@<seed_VM_IP_address>:/root/tripleo/tripleo-overcloud-passwords
 
@@ -196,8 +197,10 @@ On the seed VM, perform the following:
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
 [HP Helion OpenStack®: Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/)
+
 [HP Helion OpenStack®: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/)
-## Configuring Horizon<a name="horizon"></a>
+
+## Configure Horizon<a name="horizon"></a>
 
 1. Enable LDAP user login.
 
@@ -234,99 +237,130 @@ Follow the steps described in the installation instructions to deploy the overcl
 
 The following is an example of a typical `overcloud_keystone_ldap.json` configuration file for openLDAP server. Use values appropriate for your environment.
 
-	 {
-
-     "keystone": {
-         "config": [
-             {
-                 "section": "identity",
-                 "values": [
-                     {
-                         "option": "driver",
-                         "value": "keystone.identity.backends.ldap.Identity"
-                     }
-                 ]
-             },
-             {
-                 "section": "assignment",
-                 "values": [
-                     {
-                         "option": "driver",
-                         "value": "keystone.assignment.backends.sql.Assignment"
-                     }
-                 ]
-             },
-             {
-                 "section": "ldap",
-                 "values": [
-                     {
-                         "option": "url",
-                         "value": "ldap://10.1.5.208"
-                     },
-                     {
-                         "option": "suffix",
-                         "value": "dc=hpswlabs,dc=apps,dc=hp,dc=com"
-                     },                   
-                     {
-                         "option": "user_tree_dn",
-                         "value": "ou=people,dc=hpswlabs,dc=apps,dc=hp,dc=com"
-                     },
-                     {
-                         "option": "user_objectclass",
-                         "value": "person"
-                     },
-                     {
-                         "option": "user_id_attribute",
-                         "value": "uid"
-                     },
-                     {
-                         "option": "user_name_attribute",
-                         "value": "uid"
-                     },                   
-                     {
-                         "option": "user_allow_create",
-                         "value": "False"
-                     },
-                     {
-                         "option": "user_allow_update",
-                         "value": "False"
-                     },
-                     {
-                         "option": "user_allow_delete",
-                         "value": "False"
-                     },                   
-                     {
-                         "option": "group_tree_dn",
-                         "value": "ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com"
-                     },
-                     {
-                         "option": "group_objectclass",
-                         "value": "posixGroup"
-                     },
-                     {
-                         "option": "group_id_attribute",
-                         "value": "cn"
-                     },
-                     {
-                         "option": "group_name_attribute",
-                         "value": "cn"
-                     },                   
-                     {
-                         "option": "use_tls",
-                         "value": "False"
-                     }
-                     {
-                         "option": "tls_req_cert",
-                         "value": "never"
-                     },
-                     {
-                         "option": "use_pool",
-                         "value": "True"
-                     }
-                 ]
-             }
-         ]
-     }
+	{
+	    "keystone": {
+	        "config": [
+	            {
+	                "section": "identity",
+	                "values": [
+	                    {
+	                        "option": "driver",
+	                        "value": "keystone.identity.backends.ldap.Identity"
+	                    }
+	                ]
+	            },
+	            {
+	                "section": "assignment",
+	                "values": [
+	                    {
+	                        "option": "driver",
+	                        "value": "keystone.assignment.backends.sql.Assignment"
+	                    }
+	                ]
+	            },
+	            {
+	                "section": "ldap",
+	                "values": [
+	                    {
+	                        "option": "url",
+	                        "value": "ldap://localhost"
+	                    },
+	                    {
+	                        "option": "suffix",
+	                        "value": "DC=example,DC=com"
+	                    },                    
+	                    {
+	                        "option": "user_tree_dn",
+	                        "value": "CN=Users,DC=example,DC=com"
+	                    },
+	                    {
+	                        "option": "user",
+	                        "value": "CN=SomeLDAPUser,CN=Users,DC=example,DC=com"
+	                    },
+	                    {
+	                        "option": "password",
+	                        "value": "password"
+	                    },
+	                    {
+	                        "option": "user_objectclass",
+	                        "value": "user"
+	                    },
+	                    {
+	                        "option": "user_id_attribute",
+	                        "value": "cn"
+	                    },
+	                    {
+	                        "option": "user_name_attribute",
+	                        "value": "cn"
+	                    },                    
+	                    {
+	                        "option": "user_allow_create",
+	                        "value": "False"
+	                    },
+	                    {
+	                        "option": "user_allow_update",
+	                        "value": "False"
+	                    },
+	                    {
+	                        "option": "user_allow_delete",
+	                        "value": "False"
+	                    },                                        
+	                    {
+	                        "option": "group_tree_dn",
+	                        "value": "CN=Users,DC=example,DC=com"
+	                    },
+	                    {
+	                        "option": "group_objectclass",
+	                        "value": "group"
+	                    },
+	                    {
+	                        "option": "group_id_attribute",
+	                        "value": "cn"
+	                    },
+	                    {
+	                        "option": "group_name_attribute",
+	                        "value": "cn"
+	                    },  
+	                    {
+	                        "option": "group_allow_create",
+	                        "value": "False"
+	                    },
+	                    {
+	                        "option": "group_allow_delete",
+	                        "value": "False"
+	                    },
+	                    {
+	                        "option": "group_allow_update",
+	                        "value": "False"
+	                    },                  
+	                    {
+	                        "option": "use_tls",
+	                        "value": "False"
+	                    },
+	                    {
+	                        "option": "tls_req_cert",
+	                        "value": "never"
+	                    },
+	                    {
+	                        "option": "user_enabled_attribute",
+	                        "value": "userAccountControl"
+	                    },
+	                    {
+	                        "option": "user_enabled_mask",
+	                        "value": "2"
+	                    },
+	                    {
+	                        "option": "user_enabled_default",
+	                        "value": "512"
+	                    },
+	                    {
+	                        "option": "user_mail_attribute",
+	                        "value": "userPrincipalName"
+	                    }
+	                ]
+	            }
+	        ]
+	    }
 	}
 
 Return to the [KVM installation](/helion/openstack/ga/install/kvm/#startseed/).

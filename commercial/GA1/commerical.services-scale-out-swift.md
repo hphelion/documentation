@@ -80,7 +80,7 @@ Swift cluster is like a data center which can be big or small based on size of c
 
 The above event is depicted below in the  life-cycle diagram.
 
-<a href="javascript:window.open('/content/documentation/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift cluster lifecycle.(opens in a new window) </a> 
+<a href="javascript:window.open('/content/documentation/media/swift-cluster-lifecycle.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Swift cluster lifecycle(opens in a new window) </a> 
 
 
 

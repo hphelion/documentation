@@ -20,7 +20,7 @@ PageRefresh();
 
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/ga/install/overview/">NEXT &#9654;</a> </p>
-<!--
+-->
 
 # HP Helion OpenStack&#174; Support Matrix
  
@@ -250,11 +250,11 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 - 3PAR InForm OS Version: 3.1.3 MU1 
    
      
-## Hardware and Network Configuration<a name="baremetal"></a>
+## Hardware Requirements<a name="baremetal"></a>
 
-You must have the following hardware and network configuration:
+You must have the following hardware configuration:
 
-- At least 7 and no more than 100 baremetal systems meeting the requirements as listed below.
+- At least 9 and no more than 100 baremetal systems meeting the requirements as listed below.
 
 Additional requirements are as follows:
 
@@ -284,7 +284,7 @@ Additional requirements are as follows:
 
 -You must also satisfy these network configuration requirements:
 
- - The seed VM, the baremetal systems and the baremetal controllers must be on the same network
+ - The seed cloud host, the baremetal systems and the baremetal controllers must be on the same network
 
 - Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
@@ -307,7 +307,7 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Seed cloud host </td>
 <td>Disk </td>
-<td> 100 GB - There are additional disk space requirements on the host to store the downloaded images (including the seed). See the product image download details.</td>
+<td> 1 TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</td>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -329,7 +329,7 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Undercloud controller</td>
 <td>Disk </td>
-<td> 2 TB - The undercloud contains the images and potentially many successive versions of update images for the overcloud and these all are stored on the local disk. Do not underestimate you storage needs.</td>
+<td>500GB – 2TB.</td>
 
 
 
@@ -553,151 +553,26 @@ or
 </tr>			
 </table>
 -->
-<!--
-## Storage Requirements
 
-The following table provides the storage requirements for the HP StoreVirtual (VSA). LHN OS 11.5 supports the following platforms:
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: lightgrey; color: black;">
-<th colspan="5"> LHN OS 11.5 </th>
-
-<tr style="background-color: white; color: black;">
-<th colspan="2">HP-provided Linux</th><th colspan="2">Ubuntu</th><th colspan="2">ESX</th></tr>
-
-<tr style="background-color: white; color: black;">
-<th>Package </th> <th>Version#</th> <th>Package</th><th>Version#</th><th>Version</th></tr>
-
-<tr style="background-color: white; color: black;">
-<td> qemu-kvm</td><td>1.7.0+dfsg-9</td><td>qemu-common</td><td>1.0+noroms-0ubuntu14.13</td><td>5.1.2, 5.5. ie., patched/approved versions of 5.1, 5.5</td></tr>
-
-<tr style="background-color: white; color: black;">
-
-<td>qemu-utils</td>	<td>1.7.0+dfsg-9</td> <td>qemu-kvm</td>	<td>1.0+noroms-0ubuntu14.13</td><td></td></tr>
-
-<tr style="background-color: white; color: black;">
-
-<td>virsh</td> <td>1.2.1</td><td>qemu-utils</td> <td>	1.0+noroms-0ubuntu14.13</td><td></td></tr>
-
-<tr style="background-color: white; color: black;">
-<td>virt-install</td> <td>0.600.4</td>	<td>virsh</td>	<td>0.9.8</td><td></td></tr>
-
-<tr style="background-color: white; color: black;">
-
-<td></td><td></td><td>virt-install</td> <td>0.600.1</td><td></td>	
-
-</table>
-
-\* Cisco Fabric Manager is not supported as of now.
-
-\* HP 3Par - Operating system version 3.1.3 or higher with HP 3PAR Web Services API enabled and one CPG.
-
-\* Brocade FOS 6.4.3 or later is supported but FOS 7.0.2 or later is recommended.
--->
-<!--VSA 11.5 GA will only support ESX & HyperV flavors via public portal.
-VSA KVM support is being qualified with Ubuntu and hLinux but will NOT be published for general consumption till September when they complete qualification with other distros including SUSE and Red Hat-->
-
-## Physical Network Architecture<a name="physical-network-architecture"></a>
-This table provides an overview of the physical network configuration requirements you must meet, with the following assumptions:
-
-- Physical network ports on each server
-  - One IPMI port
-  - One physical ethernet port (for example, eth0) for the hypervisor/OS
-
-- Network fabric
-	- Two physical links, one for IPMI and one for the hypervisor/OS
-	- Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
-	- The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
-
-For detailed information, see the [Preparing the network](/helion/openstack/ga/install/prereqs/#network) section of the *Prerequisites*.
-
-<table style="text-align: left; vertical-align: top; width:700px;">
-
-<tr style="background-color: #C8C8C8;">
-<th> Network </th>
-<th> Description </th>
-<th> VLAN type </th>
-<th> Server port </th>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> IPMI / iLO </td>
-<td> Network for server hardware management </td>
-<td> Untagged </td>
-<td> IPMI or iLO</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Undercloud management </td>
-<td> <ul><li>Traffic for undercloud internal OpenStack calls, Glance image downloads, etc.</li>
-<li>Provides access to undercloud API endpoints</li>
-<li>Used to PXE boot overcloud servers</li>
-</ul> </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Overcloud management </td>
-<td> Traffic for overcloud internal OpenStack calls, Glance image downloads, etc. </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> SDN </td>
-<td> Network between workload VMs, e.g. carries VxLAN traffic </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Storage </td>
-<td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
-<td> Untagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> External </td>
-<td><ul><li> Connected to internet or intranet</li>
-<li>Provides floating IPs</li></ul> </td>
-<td> Tagged </td>
-<td> eth0</td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Service </td>
-<td> <ul><li></li>
-<li></li></ul> </td>
-<td></td>
-<td></td>
-
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> Swift </td>
-<td> Communication between Swift servers (includes user data)  </td>
-<td> Untagged </td>
-<td> eth0 or bond0</td>
-
-</tr>
-
-</table>
 
 ## Software Requirements <a name="software-requirements"></a>
 
 Software requirements for the seed cloud host:
 
-Ubuntu 14.04 with the following package versions.
+Ubuntu 14.04 with the following packages.
+
+- xrdp 
+- xfce4 
+- qemu-kvm 
+- libvirt-bin 
+- openvswitch-switch 
+- openvswitch-common 
+- python-libvirt 
+- libssl-dev 
+- libffi-dev 
+- virt-manager 
+- chromium-browser
+
 
 There are no software requirements for the undercloud and overcloud controllers.
 

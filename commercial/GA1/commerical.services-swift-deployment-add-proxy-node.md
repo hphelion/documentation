@@ -23,7 +23,7 @@ PageRefresh();
 
 #Add New Scale-out Proxy Node
 
-This topic shows how to add a proxy node to the store account, container ring.
+This topic shows how to add a proxy node to the store account and container ring.
 
 1. [Prerequisite](#prer)
 2. [Deploying new node(s)](#deploying-new-node)
@@ -31,9 +31,9 @@ This topic shows how to add a proxy node to the store account, container ring.
 
 ##Prerequisite {#prer}
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed.
-2. Starter Swift nodes are functional by default as they are part of cloud deployment. 
-2. Scale-out object-ring:1 is deployed.
+* HP Helion OpenStack&#174; cloud is successfully deployed.
+* Starter Swift nodes are functional by default as they are part of cloud deployment. 
+* Scale-out object-ring:1 is deployed.
 
 
 ##Deploying new node(s) {#deploying-new-node}
@@ -79,6 +79,10 @@ The Swift Proxies are now successfully enabled with HA Proxy.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+
+**Related topics**
+
+* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 
 ----
 ####OpenStack trademark attribution
