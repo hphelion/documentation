@@ -77,8 +77,8 @@ Before you install the OVSvApp, ensure the following:
 
 		vDS1  - trunk portgroup name - vlan_trunk
 		vDS2 
-			a. Portgroup1  name-mgmt
-			b. Portgroup2 name-data
+			a. Portgroup1 name - mgmt
+			b. Portgroup2 name - data
 
 		Changes in ovs_vapp.ini for the above values
 		
@@ -106,7 +106,7 @@ Before you install the OVSvApp, ensure the following:
 
 - 	If DVS will be configured automatically (`is_auto_dvs = True`) the installer requires one physical NIC name as input. This physical NIC must be unused(not part of any VSS or VDS) and its name should be same across all ESX hosts within a datacenter. 
 
-- The traffic between two tenant VMs on the same network and on the same ESX Compute host cannot be blocked. If custom security groups are used, add explicit security group rules to allow traffic between the VMs, regardless of the compute host they are provisioned on . Using rules to allow traffic will help maintain VM connectivity.
+- The traffic between two tenant VMs on the same network and on the same ESX Compute host cannot be blocked. If custom security groups are used, add explicit security group rules to allow traffic between the VMs, regardless of the compute host they are provisioned on. Using rules to allow traffic will help maintain VM connectivity.
 
 
 
@@ -334,7 +334,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 
 	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM’s kernel panic occurs. 
 
-	- If set to true, the ESX host is put in Maintenance Mode.  
+	- If set to true, OVSvApp VM is powered off and the ESX host is put in Maintenance mode.
 	- If set to false, the ESX host will be shut down along with all tenant VMs.
 
 	i. Specify the level for logging errors, and a log file location. Default file location is:`/var/log/ovsvapp_log`.
@@ -410,6 +410,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - In a scalable environment, portgroups might not get deleted when the `nova delete` command is run.
 
+- The VM port binding is with the host name of the OVSvApp VM on the ESX Compute host which provisioned the tenant VM. 
 
 ## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
 
