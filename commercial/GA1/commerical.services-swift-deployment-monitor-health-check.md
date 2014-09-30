@@ -40,7 +40,7 @@ Using the Icinga service running in the undercloud the cloud admin can monitor t
 
 Perform the following steps to monitor the health status of Swift status:
 
-1. In the Undercloud, log in to the Icinga Dashboard <http://<Undercloud_IP>/icinga/>. Log-in credentials are:
+1. In the Undercloud, log in to the Icinga Dashboard &lt;http://&lt;**Undercloud_IP**&lt;/icinga/ &gt;. The default log-in credentials are as follows:
 
 	* Username- icingaadmin
 	* Password- icingaadmin 
@@ -53,21 +53,22 @@ Perform the following steps to monitor the health status of Swift status:
 
 
 
-3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note: You will see a tooltip that shows View service details for this host)  
+3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note: You will see a tooltip that shows View Service Details For This Host)  
 
-<img src="media/swift_icinga_view-details.png"/>
+<a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host All Hosts (opens in a new window)</a>
 
-
-The page navigates to Service Status Details For Host  &lt; Swift node IP address &gt; . The page displays the Service Status Details of the selected host. 
-
-
-<img src="media/swift_icinga_view-status-details-host.png"/>
+<!---
+<img src="media/swift_icinga_view-details.png"/>--->
 
 
+The page navigates to Service Status Details For Host  &lt; Swift node IP address &gt; . 
+
+<a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host &lt;Swift node IP address &gt;(opens in a new window)</a>
 
 Now you may view the health status of the selected Swift node.
 
-<img src="media/swift_icinga-health-status.png"/>
+<!---
+<img src="media/swift_icinga-health-status.png"/> --->
 
 
 
