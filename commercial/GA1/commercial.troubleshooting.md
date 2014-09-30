@@ -334,18 +334,6 @@ Verify the tripleo directory- user owner and group. It must be **root:root**. In
 
 ===============================================================================================
 
-###NovaCompute node fails when installing overcloud {novacompute-fails}
-
-**System Behavior/Message**
-
-NovaCompute node fails with an error: BadRequest: object of type 'NoneType' has no len() (HTTP 400)
-
-**Resolution**
-
-**Please provide the resolution for the same.** [**Pranoy**]
-
-=========================================================================================
-
 **System Behavior/Message**
 
 Inconsistent Rabbitmq failure seen on controller nodes while listing queues 

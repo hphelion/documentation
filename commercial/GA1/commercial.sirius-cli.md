@@ -31,7 +31,7 @@ You can use the following commands using the Sirius Client CLI package in the Un
 * [Help Command](#help)
 * [API Commands](#api-commands)
 * [HP StoreVirual Commands](#storevirtual-commands)
-* [HP StoreServ Commands](#storeserv-commands)
+* [HP StoreServ Commands](#hp-storeserv-commands)
 * [Required Options](#required-options)
 
 ##Help Commands<a name="help"></a>
@@ -129,7 +129,7 @@ Unregister StoreVirtual backend
                         
 	
 
-## HP StoreServ Commands ##
+## HP StoreServ Commands ##<a name="hp-storeserv-commands"></a>
 
 
 ### List StoreServ  ###

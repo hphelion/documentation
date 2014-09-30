@@ -307,7 +307,7 @@ Some of guidelines for consideration:
 
 2.	Build redundancy into your Application tiers
 
-   * Servers running your VM instances can die 
+   	* Servers running your VM instances can die 
 
       *	Replicate VMs containing Stateless Services such as Web Application Tier or Web Service API tier and put them behind Load Balancers (you must implement your own HA Proxy type Load Balancer in your Application VMs until Helion OpenStack delivers the LBaaS service)
   
@@ -317,7 +317,7 @@ Some of guidelines for consideration:
  
       *	Take periodic snapshots of the VM which will back it up to Swift through Glance.
 
-  *	Your Data can get corrupted
+  	* Your Data can get corrupted
 
       * Take regular snapshots of Cinder Volumes and also backup Cinder Volumes or your data exports into Swift
 
