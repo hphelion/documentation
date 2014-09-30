@@ -344,7 +344,20 @@ NovaCompute node fails with an error: BadRequest: object of type 'NoneType' has 
 
 **Please provide the resolution for the same.** [**Pranoy**]
 
-===============================================================================================
+=========================================================================================
+
+**System Behavior/Message**
+
+Inconsistent Rabbitmq failure seen on controller nodes while listing queues 
+
+	rabbitmqctl list_queues
+
+
+**Resolution**
+
+Restart the Rabbitmq service.
+
+=========================================================================================
 
 ## ESX and OVSvAPP {#esx-ovsvapp}
 
