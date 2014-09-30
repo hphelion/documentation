@@ -40,25 +40,38 @@ This checks that the file systems used by the servers are mounted. Also it check
 
 Perform the following steps to monitor the usage of Swift disk:
 
-1. In the Undercloud Horizon, log in to Icinga Dashboard (http://<**Undercloud_IP**>/icinga/). The default login credentials are as follows::
+1. In the Undercloud Horizon, log in to Icinga Dashboard &lt;http://&lt;**Undercloud_IP**&gt;/icinga/&gt;. The default login credentials are as follows::
 		
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
 2. Click **Status** on the left panel and then click **Host Detail**. 
 
-<img src="media/icinga_host-details.png"/>
+
+<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Details(opens in a new window)</a>
+
+<!---
+<img src="media/icinga_host-details.png"/> --->
 
 
-3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
-
-<img src="media/swift_icinga_view-details.png"/>
+3.In the Host column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.  
 
 
+<a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host All Hosts (opens in a new window)</a>
 
-The page navigates to Service Status Details For Host < Swift node IP address>. 
+<!---
 
-<img src="media/swift_icinga-disk-usage"/>
+<img src="media/swift_icinga_view-details.png"/> --->
+
+
+
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;. 
+
+
+<a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host &lt;Swift node IP address &gt;(opens in a new window)</a>
+
+<!---
+<img src="media/swift_icinga-disk-usage"/> --->
 
 Now, you can view the disk usage of the selected Swift node.
 

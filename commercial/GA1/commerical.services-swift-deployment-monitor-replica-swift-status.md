@@ -35,23 +35,30 @@ Using the "icinga" service running in the Undercloud the cloud admin can monitor
 ##Monitoring Swift Replication Status
 Perform the following steps to monitor the replication status:
 
-1. In the Undercloud, log in to Icinga Dashboard <http://<**Undercloud_IP**>/icinga/>. The default login credentials are as follows:
+1. In the Undercloud, log in to Icinga Dashboard &lt;http://<**Undercloud_IP**>/icinga/ &gt;. The default login credentials are as follows:
 	* Username- icingaadmin
 	* Password- icingaadmin 
 
 
 2.Click **Status** on the left panel and then click **Host Detail**. 
 
-<img src="media/icinga_host-details.png/">
+<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Details(opens in a new window)</a>
 
-3.In the Host column, click the icon next to the host IP (with tooltip that shows View service details for this host) of the Swift storage node that you want to monitor.  
 
+3.In the **Host** column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.  
+
+<a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Status Details For All Hosts(opens in a new window)</a>
+
+<!---
 <img src="media/swift_icinga_view-details.png"/>
-
+--->
 
 The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;  
 
-<img src="media/swift_icinga-replication-status.png"/>
+<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host &lt;Swift node IP address &gt;(opens in a new window)</a>
+
+<!---
+<img src="media/swift_icinga-replication-status.png"/> --->
 
 Now, you can view the replication status of the selected Swift node.
 

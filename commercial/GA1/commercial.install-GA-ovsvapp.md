@@ -63,20 +63,20 @@ Before you install the OVSvApp, ensure the following:
 
 		There must be two Virtual Distributed Switches (VDS) and they are configured as follows: 
 
-    	**vDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The switch must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
+    	**VDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The switch must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
 
     	**Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
     
-		**vDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch – management, data.  Management portgroup handles the management traffic and may or may not be not configured for VLAN. 
+		**VDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch – management, data.  Management portgroup handles the management traffic and may or may not be not configured for VLAN. 
 
 		The data portgroup should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the data portgroup.
 		
-		**Note**: You will need this information for a configuration file, `ovs_vapp.ini`. The management portgroup must be associated with the `mgmt_interface parameter` and the data portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
+		**Note**: You will need this information for a configuration file, `ovs_vapp.ini`. The management portgroup must be associated with `mgmt_interface parameter` and the data portgroup must be associated with `data_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
 
 	Example:
 
-		vDS1  - trunk portgroup name - vlan_trunk
-		vDS2 
+		VDS1  - trunk portgroup name - vlan_trunk
+		VDS2 
 			a. Portgroup1 name - mgmt
 			b. Portgroup2 name - data
 
@@ -94,7 +94,7 @@ Before you install the OVSvApp, ensure the following:
 
 * The ESX version required depends upon how VDS is deployed, as described in [Prerequisites](#prereqs}.
 
-* The OVSvApp appliance supports ESX hosts with version 5.1.0 or greater. Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
+* Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
 
 * The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
 
@@ -104,7 +104,7 @@ Before you install the OVSvApp, ensure the following:
 
 	<img src="media/OVSvApp_all_vm_power.png">
 
-- 	If DVS will be configured automatically (`is_auto_dvs = True`) the installer requires one physical NIC name as input. This physical NIC must be unused(not part of any VSS or VDS) and its name should be same across all ESX hosts within a datacenter. 
+- 	If VDS will be configured automatically (`is_auto_dvs = True`) the installer requires one physical NIC name as input. This physical NIC must be unused(not part of any VSS or VDS) and its name should be same across all ESX hosts within a datacenter. 
 
 - The traffic between two tenant VMs on the same network and on the same ESX Compute host cannot be blocked. If custom security groups are used, add explicit security group rules to allow traffic between the VMs, regardless of the compute host they are provisioned on. Using rules to allow traffic will help maintain VM connectivity.
 
@@ -398,6 +398,8 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 - If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
 
 	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but ESX maintenance mode is launched, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor = false` in the `/etc/neuton/neutron.conf` file. Restart the server to take effect.
+
+- Do not delete a tenant VM port via “neutron port-delete” command for a tenant VM.
 
 - If you experience issues while installing the VMWare Tools, try any of the following references for help:
 
