@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/ruby/compute
+permalink: /als/v1/user/deploy/languages/ruby/compute/
 ---
 <!--UNDER REVISION-->
 #Examples for working with HP Helion Compute Service

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/ruby/getstarted
+permalink: /als/v1/user/deploy/languages/ruby/getstarted/
 ---
 <!--UNDER REVISION-->
 Ruby Fog Bindings Examples for use with HP Helion

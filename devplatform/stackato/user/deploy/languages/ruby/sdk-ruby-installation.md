@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/ruby/install
+permalink: /als/v1/user/deploy/languages/ruby/install/
 ---
 <!--UNDER REVISION-->
 

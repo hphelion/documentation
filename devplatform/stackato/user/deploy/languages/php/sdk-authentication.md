@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/php/authentication
+permalink: /als/v1/user/deploy/languages/php/authentication/
 ---
 <!--UNDER REVISION-->
 #Identity Service, Authentication, and the Service Catalog

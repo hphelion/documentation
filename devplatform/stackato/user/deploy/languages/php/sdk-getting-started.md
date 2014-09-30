@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/php/getstarted
+permalink: /als/v1/user/deploy/languages/php/getstarted/
 ---
 <!--UNDER REVISION-->
 #Getting Started With The PHP SDK

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/php/objectstore
+permalink: /als/v1/user/deploy/languages/php/objectstore/
 ---
 <!--UNDER REVISION-->
 

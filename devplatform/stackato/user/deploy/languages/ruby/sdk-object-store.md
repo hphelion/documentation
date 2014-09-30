@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/ruby/objectstore
+permalink: /als/v1/user/deploy/languages/ruby/objectstore/
 ---
 <!--UNDER REVISION-->
 
