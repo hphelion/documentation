@@ -99,6 +99,6 @@ You can also work with streams for upload and download operations.
 
 To learn more about using the SDK:
 - 
-- [Getting Started with the Javascript SDK](/als/v1/user/deploy/languages/javascript/getstarted)
-- [Identity Service, Authentication, and the Service Catalog ](/als/v1/user/deploy/languages/javascript/authentication)
-- [Working With Object Storage in Javascript ](/als/v1/user/deploy/languages/javascript/objectstore)
+- [Getting Started with the Javascript SDK](/als/v1/user/deploy/languages/javascript/getstarted/)
+- [Identity Service, Authentication, and the Service Catalog ](/als/v1/user/deploy/languages/javascript/authentication/)
+- [Working With Object Storage in Javascript ](/als/v1/user/deploy/languages/javascript/objectstore/)

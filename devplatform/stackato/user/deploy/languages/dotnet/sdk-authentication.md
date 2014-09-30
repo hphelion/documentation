@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/dotnet/authentication
+permalink: /als/v1/user/deploy/languages/dotnet/authentication/
 ---
 <!--UNDER REVISION-->
 
