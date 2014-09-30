@@ -9,9 +9,9 @@ env | grep GIT
 echo  $GIT_BRANCH
 
   
-
- git fetch
- git  reset --hard "${GIT_BRANCH}"
+git checkout -f "${GIT_BRANCH}"
+git pull origin "${GIT_BRANCH}"
+ 
 
 
 echo " "
