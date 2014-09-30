@@ -48,7 +48,9 @@ Perform the following steps to monitor the health status of Swift status:
 
 2.Click **Status** on the left panel and then click **Host Detail**. 
 
-<img src ="media/icinga_host-details.png/">
+
+<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Details(opens in a new window)</a>
+
 
 
 3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note: You will see a tooltip that shows View service details for this host)  
