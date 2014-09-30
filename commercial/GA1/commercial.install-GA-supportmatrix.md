@@ -252,7 +252,7 @@ HP supports the following configurations for HP Helion OpenStack deployment:
      
 ## Hardware Requirements<a name="baremetal"></a>
 
-You must have the following hardware and network configuration:
+You must have the following hardware configuration:
 
 - At least 9 and no more than 100 baremetal systems meeting the requirements as listed below.
 
@@ -284,7 +284,7 @@ Additional requirements are as follows:
 
 -You must also satisfy these network configuration requirements:
 
- - The seed VM, the baremetal systems and the baremetal controllers must be on the same network
+ - The seed cloud host, the baremetal systems and the baremetal controllers must be on the same network
 
 - Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
@@ -307,7 +307,7 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Seed cloud host </td>
 <td>Disk </td>
-<td> 100 GB - There are additional disk space requirements on the host to store the downloaded images (including the seed). See the product image download details.</td>
+<td> 1 TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</td>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -329,7 +329,7 @@ Additional requirements are as follows:
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Undercloud controller</td>
 <td>Disk </td>
-<td> 2 TB - The undercloud contains the images and potentially many successive versions of update images for the overcloud and these all are stored on the local disk. Do not underestimate you storage needs.</td>
+<td>500GB – 2TB.</td>
 
 
 
