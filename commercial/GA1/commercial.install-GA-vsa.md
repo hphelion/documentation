@@ -460,19 +460,21 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 ## Next Steps<a name="next-steps"></a>
 
-- [Working with HP StoreVirtual](/helion/openstack/ga/undercloud/storage/storevirtual/)-  **REQUIRED**
+- [Working with HP Helion OpenStack&#174; Undercloud Horizon Dashboard](/helion/openstack/ga/undercloud/manage/resources/Overview/)-(Recommended)
+
+
+<!--- [Working with HP StoreVirtual](/helion/openstack/ga/undercloud/storage/storevirtual/)-  REQUIRED
 
 	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
-	For detailed intructions, see the  document. -->
+	For detailed intructions, see the  document. 
+- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
 
-- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  **REQUIRED**
-
-	<!---Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
 	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
-<!---[Sirius CLI](/helion/openstack/ga/sirius-cli/) **OPTIONAL**-->
+- [Sirius CLI](/helion/openstack/ga/sirius-cli/)
 
 <!---## Next step
 

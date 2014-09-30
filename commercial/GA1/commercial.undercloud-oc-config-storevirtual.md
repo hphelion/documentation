@@ -35,7 +35,9 @@ Once you register the StoreVirtual systems as per your requirements, you can use
 
 * [Generate configuration](#generate-config)
 
-* [Update Overcloud](#update-overcloud) 
+* [Update Overcloud](#update-overcloud)
+
+* [Next Steps](#next-steps)
 
 
 ### Add backend<a name="add-backend"></a>
@@ -161,7 +163,7 @@ To update your Overcloud with the changes, do the following:
   
 	    # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is complete. A sample of the file is given below:
+4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:
  
 
 		{
@@ -206,6 +208,10 @@ To update your Overcloud with the changes, do the following:
 
 	    # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
+
+## Next Steps{next-steps}
+
+To use the newly added Cinder backend, create volume type and associate it with this backend using Overcloud Horizon or Cinder CLI.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

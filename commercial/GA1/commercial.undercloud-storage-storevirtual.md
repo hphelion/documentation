@@ -25,7 +25,7 @@ PageRefresh();
 
 # Working with HP StoreVirtual 
 
-The StoreVirtual option allows you to configure HP StoreVirtual as storage.You can configure your StoreVirtual by either using the Undercloud Horizon Dashboard or [Sirius client](/helion/openstack/ga/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreVirtual option in the Undercloud Horizon.
+The StoreVirtual option allows you to configure HP StoreVirtual as storage.You can configure your StoreVirtual by either using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/ga/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreVirtual option in the Undercloud Horizon.
 
 <!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
 
@@ -126,7 +126,7 @@ To edit a cluster, do the following:
 
 Unregistering a cluster will remove it from the cloud inventory.
 
-**Note**: When you unregister a cluster,the volumes from this cluster backend will no longer be available through Cinder. Ensure you have removed the backend associated with the cluster and detached all relevant volumes before unregistering. 
+**Note**: When you unregister a cluster,the volumes from this cluster backend will no longer be available through Cinder.Ensure you detach all relevant volumes and remove the backend associated with the cluster before unregistering. 
 
 
 To unregister a cluster, do the following:
@@ -163,7 +163,7 @@ Use this option to unregister multiple clusters using a single command.
  
 ## View configuration{#view-configuration}
 
-Use this option to view the cluster configuration as it displays in the *cinder.config* file.
+Use this option to view the cluster configuration (as defined in OpenStack Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).
 
 1. Log in to the Undercloud Horizon Dashboard.
 

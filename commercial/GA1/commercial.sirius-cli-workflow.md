@@ -215,12 +215,12 @@ The sample output of the above command is as below:
 Register the CPG(s) under the StoreServ using the following command. Multiple CPGs can be registered at a time for a given StoreServ device
 
 
-	# sirius register-cpg <STORESERV_ID> --cpgs [<CPG_ID> <CPG_ID>]
+	# sirius register-cpg --cpgs <CPG_UUID> [<CPG_UUID> ...] --storeserv-id <STORESERV_ID>
 
 
 Verify the registered CPG list
 
-	# sirius cpg-list <STORESERV_ID>
+	# sirius cpg-list --storeserv-id <STORESERV_ID>
 
 The sample output of the above command is as below:
 
@@ -238,7 +238,7 @@ Adding a StoreServ CPG as a backend will move the CPG to 'reserved' state which 
 
 To add the StoreServ CPG as backend, enter the following command
 
-	# sirius add-storeserv-backend <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
+	# sirius add-storeserv-backend --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
 
 The sample output of the above command is given below:
 
@@ -257,11 +257,11 @@ The sample output of the above command is given below:
 	| volume_driver       | cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver |
 	+---------------------+--------------------------------------------------------+
 
-### Preview the cinder configuration for the StoreServ CPG{#preview-storeserv-cpg}
+### Preview the Cinder configuration for the StoreServ CPG{#preview-storeserv-cpg}
 
 To view the cinder configuration for the StoreServ CPG, enter the following command 
 
-    # sirius cpg-show <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
+    # sirius cpg-show --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
 
 ### View the configured StoreServ backend list{#view-storeserv-list}
 
