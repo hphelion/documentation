@@ -46,15 +46,15 @@ ESX on border (EON) service is an inventory which interacts with the VMware vCen
 
 The following diagram depicts the EON architecture of HP Helion OpenStack.
 
-<img src ="media/eon-architecture.png/">
+<img src="media/eon-architecture.png/">
 
 ## Working with the EON Service
 
-To [perform tasks using the EON service](#howto), you can use the dashboard or CLI.
+To perform tasks using the EON service, you can use the dashboard or CLI.
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the EON service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/resource/esx/compute/) to work with the EON service.
 
 ###Using the CLI<a name="cli"></a>
 
