@@ -36,7 +36,7 @@ This page describes the workflow for HP StoreVirtual and HP 3PAR StoreServ integ
 
 * [Reconfigure and update cloud](#reconfigure-update)
 
-## Before you begin <a name="add-backend"></a>
+## Before you begin {#before-you-begin}
 
 Ensure the following prerequisites are fulfilled before you start:
 
@@ -44,7 +44,7 @@ Ensure the following prerequisites are fulfilled before you start:
 
 * The block storage devices (HP StoreVirtual, HP 3PAR StoreServ) are accessible from the Undercloud
 
-##Process Flow
+##Process Flow {#process-flow}
 
 Configuration of block storage comprises of registering the resources to the cloud inventory, adding them as a backend, reconfiguring and updating the cloud. The following diagram provides a high level view of the process flow.
 
@@ -55,7 +55,7 @@ Configuration of block storage comprises of registering the resources to the clo
 
 Perform the following steps to add and configure Storevirtual.
 
-* [Register StoreVirtual clusters to the cloud inventory](#register-storeirtual)
+* [Register StoreVirtual clusters to the cloud inventory](#register-storevirtual)
 
 * [Add StoreVirtual clusters as a backend for the cloud](#add-backend)
 
@@ -64,7 +64,7 @@ Perform the following steps to add and configure Storevirtual.
 * [View the list of configured StoreVirtual backends](#view-configured-list) 
 
 
-### Register StoreVirtual clusters to the cloud inventory{#register-storeirtual}
+### Register StoreVirtual clusters to the cloud inventory{#register-storevirtual}
 
 Ensure that the cluster details entered in the command correspond with the actual cluster details from the Centralized Management Console (CMC) tool.
 
@@ -278,11 +278,13 @@ The sample output of the above command is given below:
 	| CPG_db8b945c-b4f1-464d-9790-554d9b8c321e | FC_r1    | 3par                |
 	+------------------------------------------+----------+---------------------+
 
-##Reconfigure and update cloud](#reconfigure-update)
+##Reconfigure and update cloud{#reconfigure-update}
 
 * [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
 
 * [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
+
+* [Update Overcloud configuration JSON](#update-overcloud-json)
 
 * [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
 
@@ -329,7 +331,7 @@ The sample output of the above command is given below:
 	}
 
 
-### Generate StoreServ backend configuration JSON {generate-storeserv-config}
+### Generate StoreServ backend configuration JSON {#generate-storeserv-config}
 
 You can download the Cinder configuration relevant to HP StoreServ for your cloud once you create the backend.
 
@@ -371,7 +373,7 @@ The sample output of the above command is given below:
 		}
 
 
-### Update Overcloud configuration JSON {update-overcloud}
+### Update Overcloud configuration JSON {#update-overcloud-json}
 
 Update the `/root/overcloud-config.json` in the Seed node with the generated backend data. Add the StoreVirtual backend configuration as a JSON key-pair with key **'vsa'** and StoreServ backend configuration with key **'3par'** to the existing JSON.
 

@@ -51,7 +51,8 @@ This page covers the following topics:
 
 Cloud Administrators of Highly Available Cloud Services ensure that resources are always available on request to enable uninterrupted operations. The projects are able to provision and manage the Compute, Storage, Network infrastructure resources i.e. Nova Compute VMs, Cinder Volumes, Neutron Networks, etc. at any given point in time.This means that the Horizon Dashboard, and various OpenStack APIs for Nova, Cinder, Neutron, Swift, etc. must be reachable and be able to fulfill user requests. This is called **Highly Available Cloud Services**.
 
- <a href="javascript:window.open('/content/documentation/media/ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Resilient Cloud Infrastructure(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Resilient Cloud Infrastructure (opens in a new window)</a> 
+
 
 The resource (Compute, Storage, Network) reliability in a particular cloud can be    assessed in the following way: 
 
@@ -116,7 +117,7 @@ The sections below cover the following topics in detail:
 
 The diagram below shows the flow for an API request in an Overcloud HA deployment. All API requests (internal and external) are sent through the VIP. 
 
-<a href="javascript:window.open('/content/documentation/media/ha-api-message-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA API Message Flow(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA API Message Flow(opens in a new window)</a>
 
 
 The flow of a sample API request is explained below:
@@ -157,7 +158,7 @@ It is important for the Overcloud HA setup to tolerate network failures, specifi
 #####MySQL Galera Cluster<a name="mysql-galera"></a>
 The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the Control Plane. As a result, requests can only be satisfied on Controller1 or Management Controller. Controller0 will continue to attempt to rejoin the cluster:
 
-<a href="javascript:window.open('/content/documentation/media/mysql-galer-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">MySQL Galera Cluster Diagram(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">MySQL Galera Cluster Diagram(opens in a new window)</a>
 
 When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.
 
@@ -176,7 +177,7 @@ The above services are deployed and activated on the third Controller called **M
 Due to single threading required in cinder-volume and the drivers, the cinder-volume service is run as a singleton in the Control plane.
 
 
-<a href="javascript:window.open('/content/documentation/media/cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Cinder Volume Diagram(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Cinder Volume Diagram(opens in a new window)</a>
 
 Cinder-volume is deployed on all three Controller nodes, but kept active on only one node at a time. By default, cinder-volume is kept active on the OverCloud Management-Controller. If the Management Controller fails, you must enable and start cinder-volume service on one of the other Overcloud Controller nodes, until it is restored. Once Management Controller is restored, you must shut down the cinder-volume service from all other nodes and start it on the Management Controller to ensure it runs as a singleton. 
 Since cinder.conf is kept synchronized across all the 3 nodes, cinder volume can be run on any of the nodes at any given time. Ensure that it is run on only one node at any given time.
@@ -296,13 +297,13 @@ Some of guidelines for consideration:
 
 1.	Assume intermittent failures and plan for retries 
 
-    * **OpenStack Service APIs**: invocations can fail – you should carefully evaluate the response of each invocation, and retry in case of failures.
+    * **OpenStack Service APIs**: invocations can fail &#45; you should carefully evaluate the response of each invocation, and retry in case of failures.
     
-	* **Compute**: VMs can die - monitor and restart them
+	* **Compute**: VMs can die &#45; monitor and restart them
 
-	* **Network**: Network calls can fail – retry should successful
+	* **Network**: Network calls can fail &#45; retry should successful
 
-	* **Storage**: Storage connection can hiccup – retry should successful
+	* **Storage**: Storage connection can hiccup &#45; retry should successful
 
 2.	Build redundancy into your Application tiers
 
@@ -320,7 +321,7 @@ Some of guidelines for consideration:
 
       * Take regular snapshots of Cinder Volumes and also backup Cinder Volumes or your data exports into Swift
 
-3.	Instead of rolling your own highly available stateful services, use readily available Helion OpenStack Platform Services such as:
+3. Instead of rolling your own highly available stateful services, use readily available Helion OpenStack Platform Services such as:
 
 	*	Database as a Service (DBaaS)
 	*	DNS as a Service(DNSaaS)

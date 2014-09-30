@@ -45,7 +45,7 @@ This page provides detailed information on using HP StoreVirtual for realizing c
 * [Next Steps](#next-steps)
 
 
-## HP StoreVirtual overview<a name="storevirtual-overview"></a>
+##HP StoreVirtual overview<a name="StoreVirtual-overview"></a>
 
 HP StoreVirtual Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
 
@@ -135,7 +135,7 @@ Then, as the cloud administrator, you need to create three volume types &ndash; 
 
 Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack&#174; by creating clusters of different capabilities, configuring clusters as backends and mapping these backends to different volume types as suggested above.
 
-##High level overview of StoreVirtual integration{#high-level-view}
+##High level overview of StoreVirtual integration {#high-level-view}
 
 The following diagram gives an overview of the steps involved in integrating StoreVirtual with your cloud. The subsequent sections provide the detailed instructions on integration workflow.
 
