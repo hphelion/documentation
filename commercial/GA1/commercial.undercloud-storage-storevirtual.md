@@ -80,20 +80,19 @@ To register the cluster using Undercloud Horizon Dashboard, do the following:
 
 5. In the dialog box, do the following:
 
-   * In the **Cluster Name** box, enter the StoreVirtual cluster name.
+    * In the **Cluster Name** box, enter the StoreVirtual cluster name.
 
 		**Note**: The cluster name is case sensitive
    
-   * In the **IP Address** box, enter the virtual IP address of the cluster.
+    * In the **IP Address** box, enter the virtual IP address of the cluster.
    
-   * In the **Subnet** box, enter the subnet of the StoreVirtual cluster.
+    * In the **Subnet** box, enter the subnet of the StoreVirtual cluster.
    
-   * In the **Username** box, enter the user name to access the cluster.
+    * In the **Username** box, enter the user name to access the cluster.
    
-   * In the **Password** box, enter the password to access the cluster.
+    * In the **Password** box, enter the password to access the cluster.
    
  	 <!--- * In the **Port** box, enter the port number for the SSH access or select the default value. The Port by default is *16022*.-->
-   
 6. Click **Done** to save the details. 
 
     On successful registration, the cluster is added and is listed as *Registered*.
@@ -178,7 +177,7 @@ Use this option to view the cluster configuration (as defined in OpenStack Confi
 
 ## Next Steps {#next-steps}
 
-[Working with StoreVirtual Backends](/helion/openstack/ga/undercloud/storage/storevirtual/)
+[Working with StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

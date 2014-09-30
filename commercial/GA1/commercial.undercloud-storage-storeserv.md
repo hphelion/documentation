@@ -88,25 +88,25 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
 5. In the dialog box, do the following:
 
-   * In the **Name** box, enter the name for the 3PAR array.
+    * In the **Name** box, enter the name for the 3PAR array.
    
-   * In the **IP Address** box, enter the IP address of the 3PAR Web Service API Server.
+    * In the **IP Address** box, enter the IP address of the 3PAR Web Service API Server.
    
-   * In the **Username** box, enter the user name of the 3PAR super user.
+    * In the **Username** box, enter the user name of the 3PAR super user.
    
-   * In the **Password** box, enter the password of the 3PAR super user.
+    * In the **Password** box, enter the password of the 3PAR super user.
    
-   * In the **Port** box, enter the Port for the 3PAR Web Service API service.
+    * In the **Port** box, enter the Port for the 3PAR Web Service API service.
    
-   * In the **SAN IP** box, enter the valid 3PAR IP address of the SAN controller for SSH access to the array.
+    * In the **SAN IP** box, enter the valid 3PAR IP address of the SAN controller for SSH access to the array.
    
-   * In the **SAN username** box, enter the valid 3PAR user name of the SAN controller for SSH access to the array.
+    * In the **SAN username** box, enter the valid 3PAR user name of the SAN controller for SSH access to the array.
    
-   * In the **SAN password** box, enter the valid 3PAR password of the SAN controller for SSH access to the array.
+    * In the **SAN password** box, enter the valid 3PAR password of the SAN controller for SSH access to the array.
    
-   * From the **Device Type** drop-down list, select the device type. For example: FC, iSCSI. <br> By default, the device type is **FC**.</br>
+    * From the **Device Type** drop-down list, select the device type. For example: FC, iSCSI. <br> By default, the device type is **FC**.</br>
    
-   * Click **Done** to save the details. 
+    * Click **Done** to save the details. 
 
     On successful registration, the 3PAR device is added and is listed as the **registered** StoreServ.
 
@@ -283,7 +283,7 @@ Use this option to view the CPG configuration (as defined in OpenStack Configura
 
 ##Next Steps {#next-steps}
 
-[Working With StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
+[Working with StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
