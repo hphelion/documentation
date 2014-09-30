@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Updates and Extension"
+title: "HP Helion OpenStack&#174;: Updates and Extension"
 permalink: /helion/openstack/ga/undercloud/admin/updates-and-extension/
 product: commercial.ga.
 
