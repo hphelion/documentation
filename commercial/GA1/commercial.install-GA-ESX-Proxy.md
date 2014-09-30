@@ -112,7 +112,7 @@ The default credentials to log in to the OVF VM are `stack/stack`.
 
 Use the following steps to instantiate and run a copy of the VM template on each server.
 
-Perform the following steps on the undercloud node using the [EON CLI](deploy_cli) or [vSphere client](deploy_ui).
+Perform the following steps on the undercloud node using the [EON CLI](#deploy_cli) or [vSphere client](#deploy_ui).
 
 
 ### Deploy the proxy using the vSphere client <a name="deploy_ui"></a>
