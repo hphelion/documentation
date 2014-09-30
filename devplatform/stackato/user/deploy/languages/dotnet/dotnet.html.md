@@ -32,15 +32,14 @@ or through the SDK. The SDK simplifies working with the REST services by providi
 </pre></div>
 </div>
 
-<!-- until i can get the internal link syntax and location sorted out
-<p>To learn more about using the SDK:</p>
-<ul class="simple">
-<li><a class="reference internal" href="sdk-getting-started.html#get-started-net-sdk"><em>Getting Started With The .NET Library</em></a></li>
-<li><a class="reference internal" href="sdk-authentication.html#auth-net-sdk"><em>Identity Service, Authentication, and the Service Catalog in .NET</em></a></li>
-<li><a class="reference internal" href="sdk-object-store.html#storage-net-sdk"><em>Working With Object Storage in .NET</em></a></li>
--->
+To learn more about using the SDK:
+- 
+- [Getting Started With The .NET Library](/als/v1/user/deploy/languages/dotnet/getstarted)
+- [Identity Service, Authentication, and the Service Catalog in .NET](/als/v1/user/deploy/languages/dotnet/authentication)
+- [Working With Object Storage in .NET](/als/v1/user/deploy/languages/dotnet/objectstore)
 
-<h2>HP Helion PowerShell Environment<a class="headerlink" href="#hp-helion-powershell-environment" title="Permalink to this headline"></a></h2>
-<p>The HP Helion PowerShell Environment allows users to manage storage, compute, and block storage services from the [Windows PowerShell Environment](https://docs.hpcloud.com/cli/)
+
+##HP Helion PowerShell Environment
+The HP Helion PowerShell Environment allows users to manage storage, compute, and block storage services from the [Windows PowerShell Environment](https://docs.hpcloud.com/cli/)
 
 

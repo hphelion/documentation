@@ -97,7 +97,8 @@ You can also work with streams for upload and download operations.
        return;
     })).pipe(writableFile);
 
-To learn more about getting and using the SDK see:
-href="sdk-getting-started.html#get-started-javascript-sdk"><em>Get Started With The Javascript Library
-href="sdk-authentication.html#auth-javascript-sdk"><em>Authentication in Javascript
-href="sdk-object-store.html#object-storage-javascript-sdk"><em>Working With Object Storage in Javascript
+To learn more about using the SDK:
+- 
+- [Getting Started with the Javascript SDK](/als/v1/user/deploy/languages/javascript/getstarted)
+- [Identity Service, Authentication, and the Service Catalog ](/als/v1/user/deploy/languages/javascript/authentication)
+- [Working With Object Storage in Javascript ](/als/v1/user/deploy/languages/javascript/objectstore)
