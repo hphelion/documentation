@@ -31,7 +31,7 @@ This page provides an overview of the hardware and software that is supported fo
 * [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
 * [Supported Configurations](#supportedconfigurations)
-* [Hardware and Network Configuration](#baremetal)
+* [Hardware Requirements](#baremetal)
 * [Usable Capacity](#usable-capacity)
 * [Physical Network architecture](#physical-network-architecture)
 * [Software Requirements](#software-requirements)
@@ -282,19 +282,6 @@ Additional requirements are as follows:
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
--You must also satisfy these network configuration requirements:
-
- - The seed cloud host, the baremetal systems and the baremetal controllers must be on the same network
-
-- Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
-
-- The seed VM, the baremetal systems, and the BMC (IPMI controller) for all baremetal systems must be on a common network.
-
-- If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
-
-- The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
-
-
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
@@ -428,93 +415,6 @@ Additional requirements are as follows:
 </table>
 
 <!--
-### Hardware Configuration
-The following table shows the minimum recommendations for hardware by node type.
-
-<table style="text-align: left; vertical-align: top;">
-<tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
-<th>Node type</th>
-<th>Virtual/physical</th>
-<th>CPU cores</th>
-<th>Memory</th>
-<th>Internal storage</th>
-<th>NICs</th>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> KVM host</td>
-<td> Baremetal</td>
-<td>4* </td>
-<td> 8 GB*</td>
-<td> 100 GB</td>
-<td>2 </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Undercloud controller</td>
-<td> Baremetal</td>
-<td>8 </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Overcloud controller </td>
-<td> Baremetal</td>
-<td>8 </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Overcloud Compute 1</td>
-<td> Baremetal</td>
-<td>8**</td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Overcloud Compute 2</td>
-<td> Baremetal</td>
-<td>8** </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Overcloud Compute 3 </td>
-<td> Baremetal</td>
-<td>8 </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Overcloud Swift 1 </td>
-<td> Baremetal</td>
-<td> 8</td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Overcloud Swift 2 </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-</table>
-
-
 ## Usable Capacity<a name="usable_capacity"></a>
 
 The following table maps the minimum server configuration into usable capacity of the overcloud.

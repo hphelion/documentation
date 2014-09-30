@@ -334,17 +334,18 @@ Verify the tripleo directory- user owner and group. It must be **root:root**. In
 
 ===============================================================================================
 
-###NovaCompute node fails when installing overcloud {novacompute-fails}
-
 **System Behavior/Message**
 
-NovaCompute node fails with an error: BadRequest: object of type 'NoneType' has no len() (HTTP 400)
+Inconsistent Rabbitmq failure seen on controller nodes while listing queues 
+
+	rabbitmqctl list_queues
+
 
 **Resolution**
 
-**Please provide the resolution for the same.** [**Pranoy**]
+Restart the Rabbitmq service.
 
-===============================================================================================
+=========================================================================================
 
 ## ESX and OVSvAPP {#esx-ovsvapp}
 

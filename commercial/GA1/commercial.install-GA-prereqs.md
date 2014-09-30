@@ -83,7 +83,6 @@ To ensure a successful installation, you must satisfy these network configuratio
 If you are installing HP Helion OpenStack with KVM hypervisor support, you must configure your network as shown in the following diagram.
 
 Network architecture diagram for KVM
-<img src="/content/documentation/media/topology_kvm.png">
 
 <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
 

@@ -391,7 +391,7 @@ All required files are backed-up to the specified folder:
 
 		/<destination folder>/backup_YY-MM-DD-HH-MM/db
 
-### Restoring the overcloud database<a name="sherparest"></a>}
+### Restoring the overcloud database<a name="sherparest"></a>
 
 You should restore the overcloud database when there is any problem with the node, for example:
 
@@ -438,11 +438,9 @@ Use the following steps to restore the overcloud database:
 		INFO:os-refresh-config:Completed phase migration
 		Restore Procedure Completed
 
-<<<<<<< HEAD
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
+<!--
 ### Rebuilding the Overcloud Management Controller ### {#mgmt}
 
 If the overcloud management controller goes down for a period of time or fails, you need to rebuild the overcloud management controller and any Volume Operation (Cinder) storage volume that were affected. 
@@ -466,12 +464,9 @@ After the management controller is rebuilt, use the following steps below to dis
 		os-svc-enable-upstart cinder-volume disable
 
 **Important:** After manually enabling and starting the storage volumes on controller0 or controller1, if you run the `os-refresh-config` command, the Volume Operations service stops and is disabled again. You must make sure that you enables the service again.
-
+-->
 
 ## Back up and restore help ## {#help}
-=======
-## Back up and restore help<a name="help"></a>
->>>>>>> 620709d341fc163628fab94f08361ef6b18f0884
 
 Use the following sections as needed.
 

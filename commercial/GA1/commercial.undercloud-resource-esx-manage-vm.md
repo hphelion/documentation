@@ -50,6 +50,8 @@ The virtual environment allows you to register and unregister vCenter and import
  	* [Unimport a Single Cluster](#unimport-a-cluster) 
 	* [Unimport Multiple Clusters](#unimport-multiple-clusters)
 
+* [Next Steps](#next-steps)
+
 
 
 ##Register vCenter<a name="register-vcenter"></a>
@@ -260,6 +262,9 @@ To unimport one cluster, do the following:
 
 5. Click **Unimport Clusters** on the top right corner of the page to unimport the selected clusters.
 
+##Next Steps {#next-steps}
+
+[Working with EXS Clusters]( /helion/openstack/ga/undercloud/oc/config/esx/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
