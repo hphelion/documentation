@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/dotnet/getstarted
+permalink: /als/v1/user/deploy/languages/dotnet/getstarted/
 ---
 <!--UNDER REVISION-->
 
