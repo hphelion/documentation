@@ -2,13 +2,10 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/python/django/
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-Deploying Django applications[](#deploying-django-applications "Permalink to this headline")
-=============================================================================================
+#Deploying Django applications
 
-Getting started[](#getting-started "Permalink to this headline")
------------------------------------------------------------------
 
 Your app needs a top-level *wsgi.py* file with a global variable named
 `application` that refers to your Django WSGI

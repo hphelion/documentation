@@ -5,7 +5,7 @@ permalink: /als/v1/user/deploy/languages/php/
 <!--UNDER REVISION-->
 
 #Developing In PHP
-<p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
+<p>Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
 to enable successful development are available in PHP.</p>
@@ -293,3 +293,9 @@ session storage instead:
       post-staging:
       - echo "session.save_handler = memcached" > "$STACKATO_APP_ROOT"/apache/php/sessions.ini
       - echo "session.save_path = $MEMCACHE_URL" >> "$STACKATO_APP_ROOT"/apache/php/sessions.ini
+
+To learn more about using the SDK:
+- 
+- [Getting Started With The PHP SDK](/als/v1/user/deploy/languages/php/getstarted)
+- [Identity Service, Authentication, and the Service Catalog in php](/als/v1/user/deploy/languages/php/authentication)
+- [Working With Object Storage in PHP](/als/v1/user/deploy/languages/php/objectstore)

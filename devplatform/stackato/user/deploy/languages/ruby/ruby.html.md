@@ -1,11 +1,12 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/
+
 ---
 <!--UNDER REVISION-->
 
 #Developing In Ruby
-<p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
+<p>Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
 to enable successful development are available in Ruby.</p>
@@ -77,16 +78,18 @@ services.</p>
 <span class="n">file</span><span class="o">.</span><span class="n">content_type</span> <span class="c1"># =&gt; text/plain</span>
 </pre></div>
 </div>
-<!-- until i get the link syntax and locs sorted out <p>To learn more about getting and using the SDK see:</p>
-<ul class="simple">
-<li><a class="reference internal" href="sdk-getting-started.html#getting-started-in-ruby"><em>Get Started With the Ruby Library</em></a></li>
-<li><a class="reference internal" href="sdk-connect.html#sdk-ruby-connect"><em>Connecting To The Service</em></a></li>
-<li><a class="reference internal" href="sdk-object-storage.html#sdk-ruby-object-storage"><em>Object Storage Examples</em></a></li>
--->
+
+To learn more about getting and using the SDK see:
+
+
+- [Get Started With the Ruby Library](/als/v1/user/deploy/languages/ruby/getstarted)
+- [Connecting To The Service](/als/v1/user/deploy/languages/ruby/connect)
+- [Object Storage Examples](/als/v1/user/deploy/languages/ruby/objectstore)
+
 
 **Note**
 
-See [*Buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks) for an alternative way
+See [Buildpacks](/als/v1/user/deploy/buildpack/#buildpacks) for an alternative way
 to deploy Ruby on Rails applications.
 
 ### Using Ruby 2.0[](#using-ruby-2-0 "Permalink to this headline")
@@ -203,8 +206,8 @@ To run `rake stats`, for instance, use the
 
     $ helion run *appname* bundle exec rake stats
 
-See the [*Command
-Reference*](/als/v1/user/reference/client-ref/#command-ref-client) for
+See the [Command
+Reference](/als/v1/user/reference/client-ref/#command-ref-client) for
 details on the use of `helion run`.
 
 References[](#references "Permalink to this headline")
