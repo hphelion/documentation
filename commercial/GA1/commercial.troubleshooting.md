@@ -143,7 +143,7 @@ If you get this error, reset the system that experienced the error:
     4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
 
 
-===============================================================================================
+==============================================================================================
 
 ###IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session {#IPMI-fails}
 
@@ -437,7 +437,7 @@ After reboot of Controller that has the VIP assigned, the hpvcn agent, nova-comp
 7. [Creation of storage pool failed](#storage-pool-fail)
 8. [Failed during post VSA deployment](#post-vsa-fail)
 9. [vsa&#95;network cannot be destroyed](#vsa-network)
-10.[vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+10. [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
 
 
 
@@ -449,15 +449,17 @@ Cannot retrieve netmask from interface vsa-bridge
 
 **Probable Cause**
 
-VSA deployment script determines the net-mask and gateway details from the provided interface. When there is no IP address assigned to the physical NIC, this error may occur.
+VSA deployment script determines the net-mask and gateway details from the provided interface. When there is no IP address assigned to the VSA bridge, this error may occur.
 
 **Resolution**
 
 To resolve this issue, perform the following steps:
 
-* Check whether the IP address is allocated for the NIC which is assigned for the StoreVirtual network in `/etc/vsa/vsa-network_config.json`
+* Check whether the IP address is allocated for the VSA bridge 
 
-* ifconfig vsa-bridge----**is this the command for above?*** **[Karthik and Vivek]**
+* Verify the VSA IP address by using the following command:
+
+  		ifconfig vsa-bridge
 
 ===============================================================================================
 
@@ -546,26 +548,7 @@ Perform the following steps:
 
 	* `/etc/vsa/vsa_network_config.json`
 
-===============================================================================================
-
-### Virtual bridge creation failed for interface <NIC> {#fail-virtual-bridge}
-
-
-**Probable Cause**
-
-The virtual network is defined using virsh commands. The script  will create a xml file to define and start the network.
-
-**Resolution**
-
-Perform the following steps:
-
-* ifconfig <interface>
-
-* Verify whether the interface has got IP address assigned
-
-* Verify in the `/etc/vsa/vsa_network_config.json` file whether the values are as expected.
-
-===============================================================================================
+==============================================================================================
 
 ###Creation of storage pool failed{#storage-pool-fail}
 
@@ -585,7 +568,7 @@ Perform the following steps:
 
 Refer `/var/log/libvirt/libvirt.log` on VSA system.
  
-===============================================================================================
+=============================================================================================
 
 ###Failed during post VSA deployment {#post-vsa-fail}
 
@@ -599,28 +582,28 @@ This error will occur if the script fails to find `network_vsa.xml`, `storagepoo
 
 * Check for the configuration files on &rdquo;/” path.
 
-* On success, the script updates the `vsa_config.json` file with the updated and created time.
+* On success, the script updates the `/mnt/state/vsa/vsa_config.json` file with the updated and created time.
 
-===============================================================================================
+=============================================================================================
 
 ###VSA installation failed {#vsa-install-fail}
 
 **Probable Cause**
 
-When VSA installation fails for any of the above reasons, the script will rollback the network and storage pool created.
+When VSA installation fails for any of the above reasons, the script will rollback the network and storage pool.
 
 **Resolution**
 
 Verify the `/installer.log`
 
-===============================================================================================
+==============================================================================================
 
 
 ###vsa&#95;network cannot be destroyed{#vsa-network}
 
 **Probable Cause**
 
-vsa_network will be destroyed when the VSA installation fails.
+VSA network will be destroyed when the VSA installation fails.
 
 **Resolution**
 
@@ -636,7 +619,7 @@ Perform the following steps:
 
 **Probable Cause**
 
-The pool destroy will happen when VSA installation fails
+The storage pool will be destroyed when VSA installation fails
 
 **Resolution**
 
@@ -665,11 +648,10 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 5. Repeat steps from **3-4** two times
 6. Press Control **&** '**a**' then '**d**' to detach.
  
-Note: Unfortunately has to be repeated if node reboots ??? **what has to be repeated? entire steps??.**
+**Note**: If node reboots repeat the step from **1-6**.
 
-EDIT: Added 'sudo -u logstash' at beginning of commands **(I am not clear where should a user add this command)**
+**EDIT**: Added `sudo -u logstash` at beginning of commands. 
 
-[**Pranoy**]
 
 
 
