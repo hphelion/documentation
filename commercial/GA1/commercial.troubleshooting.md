@@ -54,7 +54,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 11. [NovaCompute node fails when installing overcloud](#novacompute-fails)
 
 
-###Fatal PCI Express Device Error <#fatal-pci>
+###Fatal PCI Express Device Error {#fatal-pci}
 
 **System Behavior/Message**
 
@@ -145,7 +145,7 @@ If you get this error, reset the system that experienced the error:
 
 ===============================================================================================
 
-###IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session{#IPMI-fails}
+###IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session {#IPMI-fails}
 
 **System Behavior/Message**
 
@@ -185,7 +185,7 @@ If you get this error, perform the below steps:
  
 		# ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
+2.Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
 
 The ce&#95;env&#95;json will be displayed as the sample below.
 
@@ -202,7 +202,7 @@ Note that  the build&#95;number is changed from null to the right variable.
 
 During the installation, the number of build&#95;number and installed&#95;build&#95;number that you specified are installed.
 
-===============================================================================================
+===================================================================
 
 ### Installation failure as the flavor to be used for Overcloud nodes does not match {#installation-failure}
 
@@ -283,8 +283,8 @@ Node does not have enough disk space
 
 **Resolution**
 
-* Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp&#95;ced&#95;functions.sh`.
-* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp&#95;ced&#95;list_nodes.sh` on Seed.
+* Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp_ced_functions.sh`.
+* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
 * Re-run the installation script.
 
 ==============================================================================================
@@ -303,17 +303,15 @@ Node does not have enough disk space. SAN boot is enabled for node or local disk
 
 Installer expects that SAN boot option is disabled for nodes. Verify whether SAN boot is disabled for BL 490c.
 
-On virtual connect window, you would see the following UI. It should be marked as disabled. I am not able to view the image. (**I am not able to see the image where should we mark as disable. can u please share the screen shot.)**  [**Pranoy**]
-
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
 ===============================================================================================
 
-####Failure of Hp&#95;ced_installer.sh{#failure-installer}
+####Failure of Hp&#95;ced_installer.sh {#failure-installer}
 
 **System Behavior/Message**
 
-`Hp&#95;ced_installer.sh` fails because of `baremetal.csv /sda`.
+`Hp_ced_installer.sh` fails because of `baremetal.csv /sda`.
 
 
 **Resolution**
@@ -368,7 +366,7 @@ There can be multiple reason why nova-compute service is not listed or has a :) 
 To resolve the above issue verify the following:
 
 1.	The ESX Management Network is able to reach the Helion Management Network.
-2.	nova-compute service is running (os-svc-restart –n nova-compute).
+2.	nova-compute service is running (os-svc-restart &#45;n nova-compute).
 3.	Verify `/etc/nova/nova-compute.conf` has the right entries.
 
 ===============================================================================================
@@ -480,7 +478,7 @@ Perform the following steps:
 
 * HP StoreVirtual VSA supports up to 7 disks
 
-* Execute `fdisk –l` and check for number of available drives in the machine other than /dev/sda
+* Execute `fdisk &#45;l` and check for number of available drives in the machine other than `/dev/sda`
 
 ===============================================================================================
 
@@ -497,9 +495,9 @@ When there are less than two drives in the machine, the script will fail to exec
 
 To resolve, perform the following steps:
 
-* Execute `fdisk –l`
+* Execute `fdisk &#45;l`
 
-* Minimum two drives and maximum of 7 drives should be available for the StoreVirtual deployment other than boot disk(/dev/sda)
+* Minimum two drives and maximum of 7 drives should be available for the StoreVirtual deployment other than boot disk(`/dev/sda`)
 
 * At least three drives required for enabling AO
 
@@ -509,7 +507,7 @@ To resolve, perform the following steps:
 
 **Probable Cause**
 
-For Adaptive Optimization to be enabled, at least three drives must be available. /dev/sdb must be SSD drive(Tier 0) and the remaining will be Tier 1.
+For Adaptive Optimization to be enabled, at least three drives must be available. `/dev/sdb` must be SSD drive(Tier 0) and the remaining will be Tier 1.
 
 **Resolution**
 
@@ -597,9 +595,9 @@ The script will persist required files in `/mnt/state/vsa` which will be used fo
 
 **Resolution**
 
-This error will occur if the script fails to find network_vsa.xml, storagepool_vsa.xml and other configuration files which has to be preserved.
+This error will occur if the script fails to find `network_vsa.xml`, `storagepool_vsa.xml` and other configuration files which has to be preserved.
 
-* Check for the configuration files on “/” path.
+* Check for the configuration files on &rdquo;/” path.
 
 * On success, the script updates the `vsa_config.json` file with the updated and created time.
 
