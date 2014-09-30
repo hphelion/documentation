@@ -71,7 +71,7 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 ### Preparing cloud seed host to run seed VM {#prepseed}
-On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
 
 ## Download the installation packages<a name="getinstall"></a>
@@ -81,7 +81,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 		sudo su -
 
-2. Register and then log in to download the required installation packages from [HP Helion OpenStack#174; product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
+2. Register and then log in to download the required installation packages from [HP Helion OpenStack&#174; product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
 	<table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
@@ -286,9 +286,9 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see [DNSaaS Beta Installation and Configuration]( /helion/openstack/install/dnsaas/).
+	<!---For installation intructions, see [DNSaaS Beta Installation and Configuration]( /helion/openstack/install/dnsaas/).--->
 
-	See [HP Helion OpenStack: DNSaaS Installation and Configuration]( /helion/openstack/ga/install/dnsaas/)
+	See [HP Helion OpenStack&#174;: DNSaaS Installation and Configuration]( /helion/openstack/ga/install/dnsaas/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

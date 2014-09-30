@@ -33,7 +33,7 @@ Perform the following steps to deploy scale-out object-ring:1
 2. [Defining ring attributes of object-ring:1](#define-object-ring:1)
 2. [Preparing Undercloud to perform Swift cluster management operation(s)](#prepare-undercloudswift)
 3. [Deploying scale-out Swift object nodes](#deploying-scale-out-Swift-object-nodes)
-4. [Verifying deployed Swift nodes](#verifying-deployed-Swift-nodes)
+4. [Verifying deployed Swift nodes](#verifying-deployed-swift-nodes)
 5. [Preparing disks on Swift nodes](#preparing-disks-on-Swift-nodes)
 6. [Creating scale-out object-ring](#creating-scale-out-object-ring)
 7. [Copying the rings to all Swift nodes](#copying-the-rings-to-all-Swift-nodes)
@@ -171,7 +171,7 @@ The following sample displays the disk available on the node **192.0.2.29**.
 
 You must repeat the above steps for all the Object nodes.
 
-##Preparing disks on Swift nodes{#preparing-disks-on-Swift-nodes}
+##Preparing disks on Swift nodes {#preparing-disks-on-swift-nodes}
 
 Once Swift nodes are deployed ensure that you format the required disks and mount them before adding disks to Swift cluster. 
 
@@ -309,7 +309,7 @@ In the following example account, container, object-0 , and generated `object-1.
 
 <!--**Note**: The system may escape the authentication of node sometimes. --->
 
-##Updating the storage policy for scale-out Swift{#update-storage-scaleout-swift}
+##Updating the storage policy for scale-out Swift {#update-storage-scaleout-swift}
 
 1. Log in to Seed. 
 
