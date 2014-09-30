@@ -27,8 +27,6 @@ It is  designed to offer a number of value-added services that complement and en
 	* [Physical network architecture](#physical)
 	* [Virtual networks](#virtual)
 * [Network planning](#networkplan)
-* [High availability](#highavailability)
-* [Security architecture](#security-architecutre)
 * [Installation planning](#install-configure)
 	* [Installation option](#install-option) 
 * [High availability](#highavailability)
@@ -504,7 +502,7 @@ Backup and restore scripts and procedures are provided for the seed, undercloud,
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the Cloud is supported using the Object Operations service. These are to be used by end users of projects deployed in the OpenStack Cloud.
 
- For more information refer [HP Helion OpenStack® Back Up and Restore](/helion/openstack/ga/backup.restore/)
+ For more information refer [HP Helion OpenStack&#174; Back Up and Restore](/helion/openstack/ga/backup.restore/)
 
 ## Next Steps<a name="next"></a>
 
