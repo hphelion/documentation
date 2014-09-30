@@ -84,6 +84,7 @@ You can restore failed or deleted compute proxies. Select a vCenter to restore i
 5.  Click Done.
 
 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----

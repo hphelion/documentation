@@ -219,7 +219,7 @@ The following sample displays the creation of ring by adding scale-out Swift nod
 
 	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object Node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-**Note:** Use labels and disks obtained in output of section [Preparing disks of Swift nodes](#{#preparing-disks-on-Swift-nodes).
+**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-Swift-nodes).
 
 The following sample displays the addition of disk to **192.0.2.29** and its output.
 
@@ -358,7 +358,7 @@ In the following example account, container, object-0 , and generated `object-1.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-**Related topic**
+**Related topics**
 
 * [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
 * [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)

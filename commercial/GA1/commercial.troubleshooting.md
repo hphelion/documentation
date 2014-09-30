@@ -54,7 +54,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 11. [NovaCompute node fails when installing overcloud](#novacompute-fails)
 
 
-###Fatal PCI Express Device Error <#fatal-pci>
+###Fatal PCI Express Device Error {#fatal-pci}
 
 **System Behavior/Message**
 
@@ -143,9 +143,9 @@ If you get this error, reset the system that experienced the error:
     4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
 
 
-===============================================================================================
+==============================================================================================
 
-###IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session{#IPMI-fails}
+###IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session {#IPMI-fails}
 
 **System Behavior/Message**
 
@@ -185,7 +185,7 @@ If you get this error, perform the below steps:
  
 		# ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
+2.Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
 
 The ce&#95;env&#95;json will be displayed as the sample below.
 
@@ -202,7 +202,7 @@ Note that  the build&#95;number is changed from null to the right variable.
 
 During the installation, the number of build&#95;number and installed&#95;build&#95;number that you specified are installed.
 
-===============================================================================================
+===================================================================
 
 ### Installation failure as the flavor to be used for Overcloud nodes does not match {#installation-failure}
 
@@ -283,8 +283,8 @@ Node does not have enough disk space
 
 **Resolution**
 
-* Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp&#95;ced&#95;functions.sh`.
-* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp&#95;ced&#95;list_nodes.sh` on Seed.
+* Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp_ced_functions.sh`.
+* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
 * Re-run the installation script.
 
 ==============================================================================================
@@ -303,17 +303,15 @@ Node does not have enough disk space. SAN boot is enabled for node or local disk
 
 Installer expects that SAN boot option is disabled for nodes. Verify whether SAN boot is disabled for BL 490c.
 
-On virtual connect window, you would see the following UI. It should be marked as disabled. I am not able to view the image. (**I am not able to see the image where should we mark as disable. can u please share the screen shot.)**  [**Pranoy**]
-
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
 ===============================================================================================
 
-####Failure of Hp&#95;ced_installer.sh{#failure-installer}
+####Failure of Hp&#95;ced_installer.sh {#failure-installer}
 
 **System Behavior/Message**
 
-`Hp&#95;ced_installer.sh` fails because of `baremetal.csv /sda`.
+`Hp_ced_installer.sh` fails because of `baremetal.csv /sda`.
 
 
 **Resolution**
@@ -346,7 +344,20 @@ NovaCompute node fails with an error: BadRequest: object of type 'NoneType' has 
 
 **Please provide the resolution for the same.** [**Pranoy**]
 
-===============================================================================================
+=========================================================================================
+
+**System Behavior/Message**
+
+Inconsistent Rabbitmq failure seen on controller nodes while listing queues 
+
+	rabbitmqctl list_queues
+
+
+**Resolution**
+
+Restart the Rabbitmq service.
+
+=========================================================================================
 
 ## ESX and OVSvAPP {#esx-ovsvapp}
 
@@ -368,7 +379,7 @@ There can be multiple reason why nova-compute service is not listed or has a :) 
 To resolve the above issue verify the following:
 
 1.	The ESX Management Network is able to reach the Helion Management Network.
-2.	nova-compute service is running (os-svc-restart –n nova-compute).
+2.	nova-compute service is running (os-svc-restart &#45;n nova-compute).
 3.	Verify `/etc/nova/nova-compute.conf` has the right entries.
 
 ===============================================================================================
@@ -439,7 +450,7 @@ After reboot of Controller that has the VIP assigned, the hpvcn agent, nova-comp
 7. [Creation of storage pool failed](#storage-pool-fail)
 8. [Failed during post VSA deployment](#post-vsa-fail)
 9. [vsa&#95;network cannot be destroyed](#vsa-network)
-10.[vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+10. [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
 
 
 
@@ -451,15 +462,17 @@ Cannot retrieve netmask from interface vsa-bridge
 
 **Probable Cause**
 
-VSA deployment script determines the net-mask and gateway details from the provided interface. When there is no IP address assigned to the physical NIC, this error may occur.
+VSA deployment script determines the net-mask and gateway details from the provided interface. When there is no IP address assigned to the VSA bridge, this error may occur.
 
 **Resolution**
 
 To resolve this issue, perform the following steps:
 
-* Check whether the IP address is allocated for the NIC which is assigned for the StoreVirtual network in `/etc/vsa/vsa-network_config.json`
+* Check whether the IP address is allocated for the VSA bridge 
 
-* ifconfig vsa-bridge----**is this the command for above?*** **[Karthik and Vivek]**
+* Verify the VSA IP address by using the following command:
+
+  		ifconfig vsa-bridge
 
 ===============================================================================================
 
@@ -480,7 +493,7 @@ Perform the following steps:
 
 * HP StoreVirtual VSA supports up to 7 disks
 
-* Execute `fdisk –l` and check for number of available drives in the machine other than /dev/sda
+* Execute `fdisk &#45;l` and check for number of available drives in the machine other than `/dev/sda`
 
 ===============================================================================================
 
@@ -497,9 +510,9 @@ When there are less than two drives in the machine, the script will fail to exec
 
 To resolve, perform the following steps:
 
-* Execute `fdisk –l`
+* Execute `fdisk &#45;l`
 
-* Minimum two drives and maximum of 7 drives should be available for the StoreVirtual deployment other than boot disk(/dev/sda)
+* Minimum two drives and maximum of 7 drives should be available for the StoreVirtual deployment other than boot disk(`/dev/sda`)
 
 * At least three drives required for enabling AO
 
@@ -509,7 +522,7 @@ To resolve, perform the following steps:
 
 **Probable Cause**
 
-For Adaptive Optimization to be enabled, at least three drives must be available. /dev/sdb must be SSD drive(Tier 0) and the remaining will be Tier 1.
+For Adaptive Optimization to be enabled, at least three drives must be available. `/dev/sdb` must be SSD drive(Tier 0) and the remaining will be Tier 1.
 
 **Resolution**
 
@@ -548,26 +561,7 @@ Perform the following steps:
 
 	* `/etc/vsa/vsa_network_config.json`
 
-===============================================================================================
-
-### Virtual bridge creation failed for interface <NIC> {#fail-virtual-bridge}
-
-
-**Probable Cause**
-
-The virtual network is defined using virsh commands. The script  will create a xml file to define and start the network.
-
-**Resolution**
-
-Perform the following steps:
-
-* ifconfig <interface>
-
-* Verify whether the interface has got IP address assigned
-
-* Verify in the `/etc/vsa/vsa_network_config.json` file whether the values are as expected.
-
-===============================================================================================
+==============================================================================================
 
 ###Creation of storage pool failed{#storage-pool-fail}
 
@@ -587,7 +581,7 @@ Perform the following steps:
 
 Refer `/var/log/libvirt/libvirt.log` on VSA system.
  
-===============================================================================================
+=============================================================================================
 
 ###Failed during post VSA deployment {#post-vsa-fail}
 
@@ -597,32 +591,32 @@ The script will persist required files in `/mnt/state/vsa` which will be used fo
 
 **Resolution**
 
-This error will occur if the script fails to find network_vsa.xml, storagepool_vsa.xml and other configuration files which has to be preserved.
+This error will occur if the script fails to find `network_vsa.xml`, `storagepool_vsa.xml` and other configuration files which has to be preserved.
 
-* Check for the configuration files on “/” path.
+* Check for the configuration files on &rdquo;/” path.
 
-* On success, the script updates the `vsa_config.json` file with the updated and created time.
+* On success, the script updates the `/mnt/state/vsa/vsa_config.json` file with the updated and created time.
 
-===============================================================================================
+=============================================================================================
 
 ###VSA installation failed {#vsa-install-fail}
 
 **Probable Cause**
 
-When VSA installation fails for any of the above reasons, the script will rollback the network and storage pool created.
+When VSA installation fails for any of the above reasons, the script will rollback the network and storage pool.
 
 **Resolution**
 
 Verify the `/installer.log`
 
-===============================================================================================
+==============================================================================================
 
 
 ###vsa&#95;network cannot be destroyed{#vsa-network}
 
 **Probable Cause**
 
-vsa_network will be destroyed when the VSA installation fails.
+VSA network will be destroyed when the VSA installation fails.
 
 **Resolution**
 
@@ -638,7 +632,7 @@ Perform the following steps:
 
 **Probable Cause**
 
-The pool destroy will happen when VSA installation fails
+The storage pool will be destroyed when VSA installation fails
 
 **Resolution**
 
@@ -667,11 +661,10 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 5. Repeat steps from **3-4** two times
 6. Press Control **&** '**a**' then '**d**' to detach.
  
-Note: Unfortunately has to be repeated if node reboots ??? **what has to be repeated? entire steps??.**
+**Note**: If node reboots repeat the step from **1-6**.
 
-EDIT: Added 'sudo -u logstash' at beginning of commands **(I am not clear where should a user add this command)**
+**EDIT**: Added `sudo -u logstash` at beginning of commands. 
 
-[**Pranoy**]
 
 
 

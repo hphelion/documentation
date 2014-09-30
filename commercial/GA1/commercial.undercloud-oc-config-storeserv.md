@@ -36,19 +36,21 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 * [Generate Configuration](#generate-config)
 
-* [Update Overcloud](#update-overcloud)  
+* [Update Overcloud](#update-overcloud) 
+
+* [Next Steps](#next-steps) 
 
 ### Add backend<a name="add-backend"></a>
 
-**Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of the CPG after allocation, may disrupt cloud functionality if the corresponding change is not updated here.
+**Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of the CPG after allocation, may disrupt cloud functionality if the corresponding change is not updated in Sirius.
 
-1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.
+1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud StoreServ Option (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Configure Cloud StoreServ Option (opens in a new window)</a>
 
 2. Click **Add Backend** displayed at the top to open the StoreServ Volume Backend page.
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">StoreServ Volume Backend Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">StoreServ Volume Backend Page (opens in a new window)</a>
 
 3. In the **Volume Backend Name** box, enter the name for the backend.
 
@@ -62,11 +64,11 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page. 
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
 	The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
-   <a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+   <a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
 
 ### Expand backend<a name="expand-backend"></a>
@@ -75,7 +77,7 @@ Expand backend option allocates new CPGs to an existing backend. You can select 
 
 To expand a backend, do the following:
 
-1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **Expand Backend** against the backend that you want to expand.<br> Expand StoreServ Volume Backend page is displayed.</br>
 
@@ -92,9 +94,9 @@ To expand a backend, do the following:
 
 ### Shrink backend<a name="shrink-backend"></a>
 
-This option allows you to remove the CPGs from the backend which are allocated to your cloud. To reduce the backend, do the following:
+This option allows you to remove the CPGs from the backend which are allocated to your cloud. To shrink the backend, do the following:
 
-1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **More** drop-down list against the Volume Backend for which you want to reduce the CPGs and select **Shrink Backend**.<br> Configure StoreServ Backend page is displayed.
 
@@ -111,11 +113,11 @@ This option allows you to remove the CPGs from the backend which are allocated t
 
 ###Delete backend<a name="delete-backend"></a>
 
-Before you delete the backend CPG, detach the volume or migrate to a different backend, as the backend you delete will no longer be available. 
+Before you delete the backend CPG, detach the volumes from this CPG as the backend you delete will no longer be available. 
 
 Do the following to delete a backend:
 
-1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
 2. Click **More** drop-down list against the volume backend which you want to delete and select **Delete volume backend**.<br> A confirmation dialog box is displayed.
 
@@ -127,9 +129,9 @@ You can download the Cinder configuration relevant to HP 3PAR StoreServ for your
 
 To generate configuration file, do the following:
 
-1. In the Configure Cloud page, click **StoreServs Backends** Tab to activate it.<br> The page displays a list of backends.</br>
+1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storeServ-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Page (opens in a new window)</a>
 
 2. Select the backend for which you want to generate the configuration file.
 
@@ -156,7 +158,7 @@ To update your Overcloud with the changes, do the following:
   
 	 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is complete. A sample of the file is given below:
+4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
 
 		},
 		  "3par": {
@@ -208,6 +210,12 @@ To update your Overcloud with the changes, do the following:
 7. Launch install script to update the Overcloud.
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
+
+## Next Steps{next-steps}
+
+To use the newly added Cinder backend, create volume type and associate it with this backend using Overcloud Horizon or Cinder CLI. 
+
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

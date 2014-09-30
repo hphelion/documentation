@@ -29,6 +29,8 @@ HP Cloud OS for Moonshot Patch release 1.2 covers the following information:
 * [Resolved issues](#resolved-issues)
 
 * [Known issues](#known-issues) 
+<!---
+* [Bash vulnerability](#bash-vulnerability)--->
 
 * [For further information](#for-further-information)
 
@@ -107,7 +109,41 @@ Provisioning may fail in the following scenarios:
 4. In the Single Chassis View, click force refresh icon to restart Moonshot discovery.
 
 5. Wait for 5-10 minutes for Nova database to update. 
-	 
+
+<!--	 
+##Bash vulnerability {#bash-vulnerability}
+
+
+Bash and the Operating System keep track of the set of environment variables.The bash vulnerability is related to how Bash processes environmental variables passed by the operating system or by a program calling a Bash-based script. By crafting an environment variable with a specific structure, the bash security can be broken.
+
+
+To protect system from Bash vulnerability, perform the following steps:
+
+1. Download the bash Debian from the following URL:
+	
+	[http://in.archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb](http://in.archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb)
+
+2. Copy the downloaded Debian on all nodes ( Admin, Controller and Baremetal Host)
+	
+3. Verify the current version of bash 
+
+		dpkg –s bash
+
+4. Install the Bash Debian 
+
+		dpkg –i  bash_4.2-2ubuntu2.5_amd64.deb
+
+5. Verify the bash version again after installation.
+
+		dpkg –s bash
+
+	If the package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
+
+6. Perform steps 3-5 for all the nodes.
+
+--->
+
+
 ##For further information## {#for-further-information}
 
 For additional related information on HP Cloud OS for Moonshot, see:

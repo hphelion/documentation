@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
 # Manage Resources
-The Resources Tab is the part of Horizon Undercloud Dashboard. It allows you to define resources for your cloud. The Resources Tab displays two main options under it: **Compute** and **Storage**. You can define the configurations for the compute as well as the storage based on your requirements using this tab. 
+The **Resources** Tab, in Undercloud Horizon  Dashboard allows you to define resources for your cloud. This tab displays two main options under it: **Compute** and **Storage**. You can define the configurations for the compute as well as the storage based on your requirements using this tab. 
 
 ## Working with the Resources Tab ##
 This option allows you to define the required configurations for your cloud. The following options are displayed under the Resources Tab:

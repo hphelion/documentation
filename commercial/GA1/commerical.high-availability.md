@@ -117,7 +117,7 @@ The sections below cover the following topics in detail:
 
 The diagram below shows the flow for an API request in an Overcloud HA deployment. All API requests (internal and external) are sent through the VIP. 
 
-<a href="javascript:window.open('/content/documentation/media/ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA API Message Flow(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/Ha-api-request-flow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA API Message Flow(opens in a new window)</a>
 
 
 The flow of a sample API request is explained below:

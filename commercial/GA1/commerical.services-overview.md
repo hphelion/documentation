@@ -80,9 +80,9 @@ See [Overview of the Object Operations service](/helion/openstack/ga/services/ob
 
 See [Overview of the Orchestration service](/helion/openstack/ga/services/orchestration/overview).
 
-**Telemetry and Reporting**. The Telemetry and Reporting service enables a single infrastructure to collect measurements within your cloud environment.  Also known as **Ceilometer**.
+<!---**Telemetry and Reporting**. The Telemetry and Reporting service enables a single infrastructure to collect measurements within your cloud environment.  Also known as **Ceilometer**.
 
-See [Overview of the Telemetry and Reporting service](/helion/openstack/ga/services/reporting/overview).
+See [Overview of the Telemetry and Reporting service](/helion/openstack/ga/services/reporting/overview).-->
 
 **Volume Operations**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. Also known as **Cinder**.
 
