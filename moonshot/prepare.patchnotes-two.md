@@ -151,7 +151,7 @@ To protect system from bash vulnerability, perform the following steps:
 
    * Install the bash package 
 
-			dpkg –i <location of the file>/bash&#095;4.2-2ubuntu2.5_amd64.deb
+			dpkg –i <location of the file>/bash#&095;4.2-2ubuntu2.5_amd64.deb
 
    * Verify the bash version again after installation.
 
