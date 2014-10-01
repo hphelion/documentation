@@ -28,12 +28,9 @@ To ensure the performance and stability of the HP Helion OpenStack environment, 
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
-* [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
 * [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
-* [Usable Capacity](#usable-capacity)
-* [Physical Network architecture](#physical-network-architecture)
 * [Software Requirements](#software-requirements)
 
 ##Deployment Architecture<a name="deploy-arch"></a>
@@ -144,12 +141,6 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 
 <tr style="background-color: white; color: black;">
 <td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant DL388e Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
 <a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290">HP ProLiant DL560 Gen8 Server</a>
 </td>
 </tr>
@@ -163,13 +154,6 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 <tr style="background-color: white; color: black;">
 <td> 
 <a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692">HP ProLiant DL580 Gen8 Server &mdash; Legacy Bios only (not uEFI)</a>
-</td>
-</tr>
-
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379860">HP ProLiant Microserver Gen8</a>
 </td>
 </tr>
 
@@ -198,14 +182,6 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 <a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant SL210t Gen8 Server</a>
 </td>
 </tr>
-
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937">HP ProLiant SL230s Gen8 Server</a>
-</td>
-</tr>
-
 
 <tr style="background-color: white; color: black;">
 <td> 
@@ -269,7 +245,8 @@ Additional requirements are as follows:
 	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
-- For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
+- For Compute nodes, Intel or AMD hardware virtualization 
+- support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
@@ -278,33 +255,36 @@ Additional requirements are as follows:
 	- The Ubuntu 14.04 operating system must be installed
 	- A browser to access the undercloud or overcloud
 	- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
-	- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
+	- A simple command line tool installed, such as [IP
+	- MItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+
+The following table lists 
 
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
-<th>Node type</th>
-<th>Server hardware</th>
-<th>Minimum requirements and recommendations</th>
+<th>Node Type</th>
+<th>Server Hardware</th>
+<th>Minimum Requirements and Recommendations</th>
 </tr>
 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Seed cloud host </td>
+<td rowspan="4"> Seed Cloud Host </td>
 <td>Disk </td>
-<td> 1 TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</td>
+<td> 1TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</td>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>16 GB</td>
+<td>16GB</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
-<td> 1 x 10 GB NIC</td>
+<td> 1 x 10GB NIC</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -314,21 +294,21 @@ Additional requirements are as follows:
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Undercloud controller</td>
+<td rowspan="4"> Undercloud Controller</td>
 <td>Disk </td>
-<td>500GB – 2TB.</td>
+<td>500GB – 2TB</td>
 
 
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td> 32 GB </td>
+<td> 32GB </td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
+<td> 1 x 10GB NIC with PXE support</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -338,7 +318,7 @@ Additional requirements are as follows:
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud controller </td>
+<td rowspan="4"> Overcloud Controller </td>
 <td>Disk </td>
 <td> 500GB - 2TB
  </td>
@@ -348,12 +328,12 @@ Additional requirements are as follows:
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>32 GB </td>
+<td>32GB </td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
+<td> 1 x 10GB NIC with PXE support</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -366,19 +346,19 @@ Additional requirements are as follows:
 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud Compute server </td>
+<td rowspan="4"> Overcloud Compute Server </td>
 <td>Disk </td>
 <td> 500GB - 2TB</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>32 GB - Memory must be sized based on the VM instances hosted by the Compute node.</td>
+<td>32GB - Memory must be sized based on the VM instances hosted by the Compute node.</td>
 
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
+<td> 1 x 10GB NIC with PXE support</td>
 
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -398,7 +378,7 @@ Additional requirements are as follows:
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>32 GB </td>
+<td>32GB </td>
 
 </tr>
 <tr style="background-color: white; color: black;">
@@ -430,22 +410,22 @@ The following table maps the minimum server configuration into usable capacity o
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td> VMs </td>
-<td> 6 standard.medium (4 GB memory, 80 GB disk) </td>
-<td> Assumes 8 GB of memory and 200 GB of disk overhead. Capacity increases linearly with Compute nodes.</td>
+<td> 6 standard.medium (4GB memory, 80GB disk) </td>
+<td> Assumes 8GB of memory and 200GB of disk overhead. Capacity increases linearly with Compute nodes.</td>
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td> Volumes </td>
-<td> 1800 GB</td>
+<td> 1800GB</td>
 <td> Capacity is fixed</td>
 </tr>		
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td> Object storage</td>
-<td> 400 GB; equivalent to:
-<ul><li>160 images, based on 2.5 GB images</li>
+<td> 400GB; equivalent to:
+<ul><li>160 images, based on 2.5GB images</li>
 or
-<li>40 volume backups, based on 10 GB volumes</li>
+<li>40 volume backups, based on 10GB volumes</li>
 </li> </td>
 <td> In addition to your objects, object storage is used for images and volume backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of 2.5 GB (the 2.5 GB is the average size of images in the swift public cloud in US-East) and a 10 GB Cinder volume backup.
 
@@ -457,7 +437,7 @@ or
 
 ## Software Requirements <a name="software-requirements"></a>
 
-Software requirements for the seed cloud host:
+Software requirements for the Seed Cloud Host:
 
 Ubuntu 14.04 with the following packages.
 
@@ -474,7 +454,7 @@ Ubuntu 14.04 with the following packages.
 - chromium-browser
 
 
-There are no software requirements for the undercloud and overcloud controllers.
+There are no software requirements for the Undercloud and Overcloud controllers.
 
 ## Next Steps<a name="next"></a>
 
