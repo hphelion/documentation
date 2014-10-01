@@ -30,7 +30,7 @@ Distributed virtual routing is achieved through a set of distributed virtual rou
 
 A distributed virtual router is conceptually a single entity, but it is implemented across all the OpenFlow switches in the network. There is no single routing instance running on a single machine/hypervisor that all the VNS traffic must route through. In addition to this, there is a system-wide distributed virtual router which connects different tenant routers and defines the connectivity among different tenants and to the outside world. 
 
-For more details, refer to [OpenStack Neutron/DVR](//https://wiki.openstack.org/wiki/Neutron/DVR/HowTo).
+For more details, refer to [OpenStack Neutron/DVR](https://wiki.openstack.org/wiki/Neutron/DVR/HowTo).
 
 
 <!---To configure and enable the DVR, modify the following files:
