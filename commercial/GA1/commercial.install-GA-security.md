@@ -20,25 +20,23 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&#174;: Configuring your Helion network securely
+# HP Helion OpenStack&#174;: Configuring your network securely
 
-The Helion OpenStack Commercial release has many built-in security controls, but you must take responsibility for configuring the network devices which integrate Helion services into an existing data center environment.  
+HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrator mistakes).
 
-Secure configuration includes defining firewall rules at the edge of the Helion deployment to protect against external abuse as well as defining router rules within the Helion deployment to protect against insider abuse or error.
+## Network Topology ## {#network}
 
-Helion is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
+HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
 
 <img src = "/content/documentation/media/Helion_Security1.png">
 
-In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  
-
-The following sections provide guidance on how to configure these network devices for improved security.  Note that the Helion OpenStack Commercial release includes IPtables rules on each node to close network ports that are not needed. Applying additional rules to your network devices, as indicated in the sections that follow, will provide increased security.
+In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
 ## Securing the Perimeter<a name="perimeter"></a>
 
 The perimeter is indicated by the *customer firewall* icon in the previous diagram.
 
-To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the Helion installation, as indicated in this table:
+To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, as indicated in this table:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -47,11 +45,13 @@ To protect against external attack on Helion services, your firewall should be c
 <tr>
 <td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>80</td>
 </tr>
+<tr>
+<td>Access to user applications running as Nova VMs</td><td>External network</td><td>Compute Nodes</td><td>Only ports required by your enterprise applications</td>
+</tr>
 <td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
 </tr>
 </table>
 
-You need to allow traffic to flow to and from the External network (indicated in green in the previous diagram) from outside the cloud, as needed by the applications running in your Virtual Machines.  
 
 ## Securing the Object Operations (Swift) back-end network connections<a name="back-end"></a>
 
@@ -59,21 +59,24 @@ Object Operations service (Swift) requests travel from the external network, to 
 
 <img src = "/content/documentation/media/ ">
  
-You may choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Swift Object nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed via the HAproxy on the Controller nodes. 
+You may choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes (Swift) nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed via the HAproxy on the Controller nodes. 
 
 You can block requests from the external network to the Object Operations nodes (Swift), as already mentioned for the firewall configuration. When adding rules to your router, take care not to introduce rules that will prevent authorized network traffic between nodes.
 
-The following table describes the data flow between Helion nodes for Swift back-end traffic:
+The following table describes the data flow between Helion nodes for Object Operations (Swift) back-end traffic:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
 <th>Interface</th><th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
 </tr>
 <tr>
-<td>1</td><td>Admin access via SSH</td><td>Undercloud controller</td><td>Proxy-Account-Container (PAC)</td><td>22</td>
+<td>1</td><td>Admin access via SSH <br>Pyringos copy of ring files via SCP</td><td>Undercloud controller</td><td>Proxy-Account-Container (PAC)</td><td>22</td>
 </tr>
 <tr>
-<td>2</td><td>Admin access via SSH</td><td>Undercloud controller</td><td>Swift all in one (PACO)</td><td>22</td>
+<td>2</td><td>Admin access via SSH<br>Pyringos copy of ring files via SCP</td><td>Undercloud controller</td><td>Swift all in one (PACO)</td><td>22</td>
+</tr>
+<tr>
+<td>3</td><td>Admin access via SSH</td><td>Undercloud controller</td><td>Object Storage</td><td>22</td>
 </tr>
 <tr>
 <td>3</td><td>Pyringos copy of ring files via SCP</td><td>Undercloud controller</td><td>Object Storage</td><td>22</td>
@@ -85,6 +88,10 @@ The following table describes the data flow between Helion nodes for Swift back-
 <td>5</td><td>Swift proxy to object server over HTTP</td><td>Swift all in one (PACO)</td><td>Object Storage</td><td>80</td>
 </tr>
 <td>6</td><td>Swift proxy to proxy sync over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Swift all in one (PACO)</td><td>80</td>
+</tr>
+<td>6</td><td>Swift proxy to proxy sync over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Proxy-Account-Container (PAC)</td><td>80</td>
+</tr>
+<td>6</td><td>Swift object to object sync over HTTP</td><td>Object Storage</td><td>Object Storage</td><td>80</td>
 </tr>
 <tr>
 <td>7</td><td>HA Proxy forwards API requests via HTTP</td><td>Cloud Controller</td><td>Proxy-Account-Container (PAC)</td><td>80</td>
@@ -98,13 +105,13 @@ Applying access control lists (ACLs) for flows in the table above produces this 
 
 <img src = "/content/documentation/media/Helion_Security3.png">
 
-## Securing block storage network connections in Helion<a name="network"></a>
+## Securing Block Storage network connections<a name="network"></a>
 
-A customer deploying Helion is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer’s network devices which may include routers, switches, or firewalls. Block storage data flows interacting with Helion are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with Helion nodes.
+The customer deploying HP Helion OpenStack is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer’s network devices which may include routers, switches, or firewalls. Block storage data flows interacting with HP Helion OpenStack are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with HP Helion OpenStack nodes.
 
-Helion supports StoreVirtual or 3Par StoreServ storage arrays which will be described separately.
+HP Helion OpenStack supports StoreVirtual or 3Par StoreServ storage arrays which will be described separately.
 
-### StoreVirtual<a name="storevirt"></a>
+### StoreVirtual VSA<a name="storevirt"></a>
 
 Helion supports both StoreVirtual VSA (Virtual Storage Appliance) and P4000 hardware arrays. Three types of traffic flows into a StoreVirtual node:
 
@@ -131,19 +138,21 @@ The following table describes the data flow between Helion nodes and StoreVirtua
 <td>1</td><td>Compute node iSCSI</td><td>Compute node</td><td>VIP for StoreVirtual cluster</td><td>3260</td>
 </tr>
 <tr>
-<td>2</td><td>Cinder Volume Backup iSCSI</td><td>Cinder host</td><td>VIP for StoreVirtual cluster</td><td>3260</td>
+<td>2</td><td>Cinder Volume Backup iSCSI</td><td>Cloud Controller (Cinder host)</td><td>VIP for StoreVirtual cluster</td><td>3260</td>
 </tr>
 <tr>
-<td>3</td><td>StoreVirtual REST API (mgmt. interface)</td><td>Cinder host</td><td>VIP for StoreVirtual cluster</td><td>22</td>
+<td>3</td><td>StoreVirtual REST API (mgmt. interface)</td><td>Cloud Controller (Cinder host)</td><td>VIP for StoreVirtual cluster</td><td>22</td>
 </tr>
 <tr>
+<td>4</td><td>Sirius Service for Cinder backend configuration</td><td>UnderCloud Controller</td><td>VIP for StoreVirtual Management Group</td><td>22</td>
+</tr>
 <td>4</td><td>StoreVirtual CLiQ interface via SSH (mgmt. interface)</td><td>UnderCloud Controller</td><td>VIP for StoreVirtual cluster</td><td>16022</td>
 </tr>
 <tr>
 <td>5</td><td>StoreVirtual inter-cluster traffic</td><td>StoreVirtual</td><td>StoreVirtual</td><td>See Ref 2</td>
 </tr>
 <tr>
-<td>6</td><td>CMC to StoreVirtual</td><td>CMC</td><td>StoreVirtual</td><td>See Ref 2
+<td>6</td><td>CMC to StoreVirtual <br>Recommended to install on the seed cloud host</td><td>CMC</td><td>StoreVirtual</td><td>See Ref 2
 </table>
 
 The following diagram depicts a logical deployment after applying ACLs for flows in table:
@@ -159,7 +168,7 @@ StoreVirtual port usage is described in [HP4000 SAN – SANiQ TCP and UDP Port U
 
 ### 3Par StoreServ<a name="storeserv"></a>
 
-Helion supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then Compute nodes and OverCloud controller hosting Cinder will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be via the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
+Helion supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then Compute nodes and overcloud controller hosting Block Storage (Cinder) will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be via the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
 
 The following diagram depicts a StoreServ network deployed as a flat network:
 
@@ -176,19 +185,22 @@ The following table describes the data flow between Helion nodes and StoreServ s
 <td>1</td><td>Compute node iSCSI</td><td>Compute node</td><td>StoreServ</td><td>3260</td>
 </tr>
 <tr>
-<td>2</td><td>Cinder Volume Backup iSCSI</td><td>Cinder host</td><td>StoreServ</td><td>3260</td>
+<td>2</td><td>Cinder Volume Backup iSCSI</td><td>Overcloud Controller (Cinder host)</td><td>StoreServ</td><td>3260</td>
 </tr>
 <tr>
-<td>3</td><td>StoreServ REST API (mgmt. interface) via HTTPS</td><td>Cinder host</td><td>StoreServ</td><td>8080</td>
+<td>3</td><td>StoreServ REST API (mgmt. interface) via HTTPS</td><td>Overcloud Controller (Cinder host)</td><td>StoreServ</td><td>8080</td>
 </tr>
 <tr>
-<td>4</td><td>StoreServ command line interface (SSH)</td><td>Cinder host</td><td>StoreServ</td><td>22</td>
+<td>4</td><td>StoreServ command line interface (SSH)</td><td>Overcloud Controller (Cinder host)</td><td>StoreServ</td><td>22</td>
+</tr>
+<tr>
+<td>4</td><td>Sirius Service for Cinder backend configuration</td><td>Undercloud Controller</td><td>StoreServ</td><td>22</td>
 </tr>
 <tr>
 <td>5</td><td>StoreServ REST API (mgmt. interface) via HTTPS</td><td>UnderCloud Controller</td><td>StoreServ</td><td>8080</td>
 </tr>
 <tr>
-<td>6</td><td>SSMC to StoreServ	SSMC</td><td>StoreServ</td><td>See Ref 6</td>
+<td>6</td><td>SSMC to StoreServ	SSMC</td><td>StoreServ</td><td>StoreServ</td><td>See Ref 6</td>
 </tr>
 <tr>
 <td>7</td><td>Service Processor</td><td>Service Processor</td><td>StoreServ</td><td>See Ref 6</td>
