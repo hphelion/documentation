@@ -128,6 +128,10 @@ See [Overview of the TripleO Service](/helion/openstack/ga/services/tripleo/over
 
 See [Overview of the Ironic Service](/helion/openstack/ga/services/ironic/overview/).
 
+**DVR**. Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users. 
+
+See [Overview of DVR Service](/helion/openstack/ga/services/dvr/overview/).
+
 ## For more information<a name="info"></a>
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The **Architecture** section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The **Operations** section contains information on how to manage the system.
 
