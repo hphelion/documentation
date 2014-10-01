@@ -25,6 +25,7 @@ It is  designed to offer a number of value-added services that complement and en
 	* [Hardware requirement](#hardware-req)
 	* [Network Architecture](#networkarch)
 * [High availability](#highavailability)
+
 * [Security architecture](#security-architecutre)
 * [Installation and configuration](#install-configure)
 	* [OpenStack on OpenStack -TripleO](##Deploy)
@@ -32,6 +33,7 @@ It is  designed to offer a number of value-added services that complement and en
 *  [Updates and extensions](#updates-and-extensions)
 *  [Operational management](#operate-manage)
 	* [Centralized Logging](centralized-logging)
+
 	* [Monitoring](#monitoring)
 	* [Add, remove and replace nodes](#add-remove-replace-nodes)
 	* [Backup and Restore nodes](#backup-restore-nodes)
@@ -39,7 +41,7 @@ It is  designed to offer a number of value-added services that complement and en
 
 ##HP Helion OpenStack Services -- Functional Overview<a name="Helion-services"></a>
 
-The following table outlines the functionality of HP Helion OpenStack services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](/helion/openstack/services/overview/) page.
+The following table outlines the functionality of HP Helion OpenStack services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](/helion/openstack/ga/services/overview/) page.
 
 
 <table style="text-align: left; vertical-align: top; width:650px;">

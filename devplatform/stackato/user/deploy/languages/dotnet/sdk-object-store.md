@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/dotnet/objectstore
+permalink: /als/v1/user/deploy/languages/dotnet/objectstore/
 ---
 <!--UNDER REVISION-->
 #Working with Object Storage in .NET

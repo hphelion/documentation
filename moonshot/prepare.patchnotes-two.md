@@ -29,8 +29,8 @@ HP Cloud OS for Moonshot Patch release 1.2 covers the following information:
 * [Resolved issues](#resolved-issues)
 
 * [Known issues](#known-issues) 
-<!---
-* [Bash vulnerability](#bash-vulnerability)--->
+
+* [Bash vulnerability](#bash-vulnerability)
 
 * [For further information](#for-further-information)
 
@@ -110,45 +110,64 @@ Provisioning may fail in the following scenarios:
 
 5. Wait for 5-10 minutes for Nova database to update. 
 
-<!--	 
+
 ##Bash vulnerability {#bash-vulnerability}
 
 
 Bash and the Operating System keep track of the set of environment variables.The bash vulnerability is related to how Bash processes environmental variables passed by the operating system or by a program calling a Bash-based script. By crafting an environment variable with a specific structure, the bash security can be broken.
 
 
-To protect system from Bash vulnerability, perform the following steps:
+To protect system from bash vulnerability, perform the following steps:
 
-1. Download the bash Debian from the following URL:
+1. Ensure that no  operations are being performed on any of the nodes.
+
+2. To get the IP address of the nodes, do the following:
+ 
+   * In the Operational Dashboard, click **Manage Nodes** to open the Manage nodes page.
+  
+   * Click each node to view the node details.
+
+	**Note**: By default, the IP address of the Admin Node is *192.168.124.10*. This should be accessible from the Windows or Linux client.
+
+2. Download the bash package from the following URL to your Windows or Linux client.
 	
-	[http://in.archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb](http://in.archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb)
+	[http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5&#095;_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb)
 
-2. Copy the downloaded Debian on all nodes ( Admin, Controller and Baremetal Host)
+2. Copy the downloaded bash package on all the nodes (Admin Node, Controller Node and Baremetal Host(s)).
+
+    	scp <location of the package> <user home directory>
 	
-3. Verify the current version of bash 
+3. Perform the following steps on each of the nodes:
 
-		dpkg –s bash
+   * Login as root
+ 
+	     	sudo -i 
+   
+   * Verify the current version of bash 
 
-4. Install the Bash Debian 
+			dpkg –s bash
 
-		dpkg –i  bash_4.2-2ubuntu2.5_amd64.deb
+        The above command looks for the information on your bash package and displays the version that you are using. If the version displayed is  lower than `bash_4.2-2ubuntu2.5`, install the bash package by performing  next steps else you do not need to install the bash package.
 
-5. Verify the bash version again after installation.
+   * Install the bash package 
 
-		dpkg –s bash
+			dpkg –i <location of the file>/bash#&095;4.2-2ubuntu2.5_amd64.deb
 
-	If the package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
+   * Verify the bash version again after installation.
 
-6. Perform steps 3-5 for all the nodes.
+			dpkg –s bash
 
---->
+		If the displayed package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
+
+4. After successful upgrade on all the nodes, you can start working with your cloud.
 
 
 ##For further information## {#for-further-information}
 
 For additional related information on HP Cloud OS for Moonshot, see:
 
-* [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
+* [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): 
+* Provides the topics listed below, plus FAQs, video tutorials, and more.
 
 * [Building Images](/cloudos/moonshot/manage/image-builder/): Provides the steps to build the images for Linux and Windows.
 

@@ -23,7 +23,7 @@ PageRefresh();
 
 # Working With StoreVirtual Backends
 
-Once you register the StoreVirtual systems as per your requirements, you can use the Overcloud option in the Undercloud Horizon Dashboard for the following tasks:
+Once you register the StoreVirtual clusters as per your requirements, you can use the Overcloud option in the Undercloud Horizon Dashboard for the following tasks:
 
 * [Add backend](#add-backend)
 
@@ -42,7 +42,7 @@ Once you register the StoreVirtual systems as per your requirements, you can use
 
 ### Add backend<a name="add-backend"></a>
 
-This option allows you to add a backend. Adding a StoreVirtual cluster as a backend, moves the cluster to the 'reserved' state. This means that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
+This option allows you to add a backend. Adding a StoreVirtual cluster as a backend, moves the cluster to the 'reserved' state. This means that the cluster cannot be removed from the cloud inventory when Cinder is configured to use this cluster as storage backend.
 
 To add a backend, do the following:
 
@@ -62,7 +62,7 @@ To add a backend, do the following:
 
 5.  (Optional) Click **Choose All** displayed below the **Available StoreVirtual Cluster Choices** box to select all the clusters . 
 
-7. (Optional) Click **Remove All** displayed below the **Selected StoreVirtual Cluster Choices** box or select the cluster(s) and click &larr;to move the cluster(s) back to **Available StoreServ Choices** box. 
+7. (Optional) Click **Remove All** displayed below the **Selected StoreVirtual Cluster Choices** box or select the cluster(s) and click &larr;to move the cluster(s) back to **Available StoreVirtual Choices** box. 
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page.</br>
 
@@ -71,7 +71,7 @@ To add a backend, do the following:
 
 ### Expand backend<a name="expand-backend"></a>
 
-Expansion allocates additional clusters to an existing backend. You can select the required clusters from the list of registered clusters and add them to a backend that has already been configured.
+Expannd option allocates additional clusters to an existing backend. You can select the required clusters from the list of registered clusters and add them to a backend that has already been configured.
 
 To expand a backend, do the following:
 
@@ -96,7 +96,7 @@ To expand a backend, do the following:
 
 ### Shrink backend<a name="shrink-backend"></a>
 
-Shrinking removes the clusters from the backend which are allocated to your cloud. To shrink the backend, do the following:
+Shrinking removes the clusters from the backend which are allocated to your cloud. Shrinking the only available StoreVirtual cluster in the backend will delete the backend. To shrink the backend, do the following:
 
 1. In the Configure Cloud page, click **StoreVirtual Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
@@ -119,7 +119,9 @@ Shrinking removes the clusters from the backend which are allocated to your clou
 
 ###Delete backend<a name="delete-backend"></a>
 
-**Note**: Before you delete a backend cluster, detach the volumes from this cluster, as this backend will not be available once it is deleted.
+This option removes the backend from the cloud.
+
+**Note**: Before you delete a backend, detach the volumes from the VM instance, as this backend will not be available once it is deleted.
 
 1. In the Configure Cloud page, click **StoreVirtual Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
@@ -129,7 +131,7 @@ Shrinking removes the clusters from the backend which are allocated to your clou
 
 
 ### Generate configuration<a name="generate-config"></a>
-Download the Cinder configuration relevant to the HP StoreVirtual for your cloud once you have created the backend.
+Download the Cinder configuration for your cloud once you have created the backend.
 
 To generate a configuration file, do the following:
 
@@ -137,7 +139,7 @@ To generate a configuration file, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Option (opens in a new window)</a>
 
-2. Select the backend for which you want to generate the configuration file. 
+<!---2. Select the backend for which you want to generate the configuration file.--> 
 
 3. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The configuration file downloads automatically. 
 
