@@ -53,13 +53,13 @@ The following table outlines the functionality of HP Helion OpenStack services b
 <tr style="background-color: white; color: black;">
 	<td><b>Compute Operations (Nova)</b></td>
 	<td>The HP Helion OpenStack Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <br><br> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <br><br>
-	<a href=" /helion/openstack/services/ga/compute/overview/">Learn more</a> about the Compute Operations service.</td>
+	<a href="/helion/openstack/services/ga/compute/overview/">Learn more</a> about the Compute Operations service.</td>
     <td> Administrator can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Block Storage<br>Volume (Cinder)</b></td>
 	<td>The HP Helion OpenStack Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <br><br>User can create volumes, attach them to VMs, and take snapshots and backups.
-	<br><br><a href=" /helion/openstack/ga/services/volume/overview/">Learn more </a> about the Volume Operations service.
+	<br><br><a href="/helion/openstack/ga/services/volume/overview/">Learn more </a> about the Volume Operations service.
 	</td>
 	<td>Administrators can deploy StoreVirtual VSA Software Defined Storage, and configure drivers for StoreVirtual and StoreServ 3PAR using the Sirius service. <br><br>
 	Administrsators can create volume types and associate quality of service with volume types, and map StoreServ and StoreVirtual backends to the volume types.</td>
@@ -68,21 +68,21 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>Object Operations (Swift)</b></td>
 	<td>The HP Helion OpenStack Object and Operations service helps manage the storage and retrieval of objects in publicly accessible physical machines. 
 	<br><br>Users can configure storage containers, upload and download container files, and delete container files.<br><br>
-	<a href=" /helion/openstack/ga/services/object/overview/">Learn more</a> about the Object Operations service and Ringos.</td>
+	<a href="/helion/openstack/ga/services/object/overview/">Learn more</a> about the Object Operations service and Ringos.</td>
 	
 	<td>Administrators can easily start with two auto-configured storage nodes, and then scale out by deploying additional Swift Proxy and Object Storage nodes. <br><br>The Ringos CLI Utility is provided to format drives and easily manage Swift rings. </td>
  </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Network Operations (Neutron)<b></td>
 	<td>The HP Helion OpenStack Network Operations service provides network connectivity and IP addressing for virtual machines managed by Compute service.<br><br> User can create and configure virtual networks and routers, subnets, floating IP addresses, security groups, load balancers and firewalls.<br><br>
-	<a href=" /helion/openstack/ga/services/networking/overview/">Learn more</a> about the Network Operations service.</td>
+	<a href="/helion/openstack/ga/services/networking/overview/">Learn more</a> about the Network Operations service.</td>
 	<td>Administrators can also create an external network, and work with DHCP agents and L3 agents.</center></td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Identity Operations (Keystone)</b></td>
 	<td>The HP Helion OpenStack Identity Operations service provides one-stop authentication.
 
-	<br><br><a href=" /helion/openstack/ga/services/identity/overview/">Learn more</a> about the Identity Operations service.</td>
+	<br><br><a href="/helion/openstack/ga/services/identity/overview/">Learn more</a> about the Identity Operations service.</td>
 	<td>Administrators can create and configure projects/tenants and users, and set credentials, and issue security tokens.<br><br>MySQL and LDAP/ADS are supported.</td>
 	</tr>
 <tr style="background-color: white; color: black;">
@@ -90,7 +90,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td>The HP Helion OpenStack Image Operations service helps to manage virtual machine images, including querying and updating image metadata, and retrieval of the actual image data.
 	<br><br>
     User can create, modify, and delete private images.     <br><br>
-	<a href=" /helion/openstack/ga/services/imaging/overview/">Learn more</a> about Image Operations.</td>
+	<a href="/helion/openstack/ga/services/imaging/overview/">Learn more</a> about Image Operations.</td>
 	<td>Administrators can create, modify and delete public images and private images. These images are made available to the users.</td>
 </tr>
 
@@ -98,7 +98,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>Orchestration (Heat)</b></td>
  	<td>HP Helion Orchestration service enables you to deploy and configure multiple composite cloud applications using template formats. It enables you to work with nested stacks, which are a mechanism of using built-in stack definitions for specific resource types.<br><br>
 	Users can create stacks, suspend and resume stacks, view information on stacks, view information on events, work with stack templates and infrastructure resources (such as servers, floating IPs, volumes, and security groups).<br><br>
-	<a href=" /helion/openstack/ga/services/orchestration/overview/">Learn more</a> about the Orchestration services.</td> 
+	<a href="/helion/openstack/ga/services/orchestration/overview/">Learn more</a> about the Orchestration services.</td> 
 	<td>Administrators can deploy and configure the OpenStack overcloud using the Orchestration service provided in the undercloud.</td>
 </tr>
 <!---
@@ -506,7 +506,7 @@ Centralized logging helps the administrator triage and troubleshoot the distribu
 
 ### Monitoring<a name="monitoring"></a>
 
-The administrator can monitor the availability of all hosts and services in the overcloud using the <a href="https://www.icinga.org/>Icinga Monitoring server</a> deployed in the undercloud.
+The administrator can monitor the availability of all hosts and services in the overcloud using the <a href="https://www.icinga.org/">Icinga Monitoring server</a> deployed in the undercloud.
 
 System and service health checks are based on the **check_mk** framework. Health checks are executed locally on each node, and their results are sent over to the central Icinga server, thereby distributing the processing and allowing the Icinga server to scale up. When new nodes are added to the cloud, they are automatically discovered and monitored.
 
