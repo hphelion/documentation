@@ -27,17 +27,17 @@ Papertrail[](#papertrail "Permalink to this headline")
 
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
 2.  In the Dashboard screen, click *Add Systems*.
-	<img src="/devplatform/stackato/images/ppt1.png" />
+	<img src="/content/documentation/devplatform/stackato/images/ppt1.png" />
 
 3.  In the Setup Systems screen under *Other log methods*, click
     *Alternatives*.
-	<img src="/content/devplatform/stackato/images/ppt2.png" />
+	<img src="/content/documentation/devplatform/stackato/images/ppt2.png" />
 
 4.  Choose option C: *My system's hostname changes* and give it a
     suitable name.
-	<img src="/content/devplatform/stackato/images/ppt3.png" />
+	<img src="/content/documentation/devplatform/stackato/images/ppt3.png" />
 5.  Note down the **port number**. You need this later on.
-	<img src="/content/devplatform/stackato/images/ppt4.png" />
+	<img src="/content/documentation/devplatform/stackato/images/ppt4.png" />
 
 6. Enable system logging (via udp) by executing the following kato command:
 	
@@ -62,12 +62,12 @@ Loggly[](#loggly "Permalink to this headline")
 	<img src="/content/devplatform/stackato/images/loggly2.png" />
 4.  If we want to accept logs from any Application Lifecycle Service nodes or applications modify Allowed Devices section:
 	-   Click *Add device*
-	 <img src="/content/devplatform/stackato/images/loggly3.png" />
+	 <img src="/content/documentation/devplatform/stackato/images/loggly3.png" />
 	-   Add IP Address 0.0.0.0/0 when prompted
-	 <img src="/content/devplatform/stackato/images/loggly4.png" />
+	 <img src="/content/documentation/devplatform/stackato/images/loggly4.png" />
 5.  Turn off discovery since we allowed all devices. Also, note down the
     **port number**.
-	 <img src="/content/devplatform/stackato/images/loggly5.png" />
+	 <img src="/content/documentation/devplatform/stackato/images/loggly5.png" />
 6. Enable system logging by executing **one** of the following kato commands:
 
     	kato log drain add drain-name udp://logs.loggly.com:port#
@@ -84,7 +84,7 @@ Splunk[](#splunk "Permalink to this headline")
 
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
-	<img src="/content/devplatform/stackato/images/splunk1.png" />
+	<img src="/content/documentation/devplatform/stackato/images/splunk1.png" />
 3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/devplatform/stackato/images/splunk2.png"/>
 
 1. In the **Add New Source** screen:
@@ -92,7 +92,7 @@ Splunk[](#splunk "Permalink to this headline")
 	-   Give it a suitable **Source name**.
 	-   Set sourcetype to **Manual**
 	-   Leave Source Type **empty**
-	<img src="/content/devplatform/stackato/images/splunk3.png" />
+	<img src="/content/documentation/devplatform/stackato/images/splunk3.png" />
 5. Enable system logging by executing **one** of the following kato commands:
 
     	kato log drain add drain-name splunk-server-address:port#
