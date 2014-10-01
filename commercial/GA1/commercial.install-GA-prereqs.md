@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Installation and Configuration"
+title: "HP Helion OpenStack&#174; Installation Prerequisites"
 permalink: /helion/openstack/ga/install/prereqs/
 product: commercial.ga
 
@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174; Installation: Prerequisites
 
-Before you begin the installation process, take a few minutes to read this page because it contains information about:
+Before you begin the installation process, take a few minutes to read this page for information about:
 
 * [Hardware configuration](#hardware)
 * [Required tasks](#required)
@@ -30,25 +30,9 @@ Before you begin the installation process, take a few minutes to read this page 
 * [For more information](#moreinfo)
 <!--[Downloading installation packages](#install-pkg)-->
 
-## Hardware configuration<a name="hardware"></a>
+## Hardware and software requirements<a name="hardware"></a>
 
-For supported hardware and hardware requirements, see the [HP Helion OpenStack&#174; Support Matrix](/helion/openstack/ga/support-matrix/).
-
-To install a HP Helion OpenStack baremetal, you must have the following hardware configuration.
-
-- The boot order configured with Network/PXE boot as the first option
-- The BIOS configured: 
-	- To the correct date and time, set to the time on the seed cloud host
-	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-	- To stay powered off in the event of being shutdown rather than automatically restarting
-- Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-- A seed cloud host to run the baremetal install and host the seed VM with the configuration in the [HP Helion OpenStack&#174; Support Matrix](/helion/openstack/ga/support-matrix/).
-
-**Important:** 
-
-- The seed cloud host (also called installer system) might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
-- The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
-- When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
+For supported hardware and hardware requirements, and software requirements, see the [HP Helion OpenStack Support Matrix](/helion/openstack/ga/support-matrix/).
 
 ## Required tasks<a name="required"></a>
 
@@ -82,25 +66,20 @@ To ensure a successful installation, you must satisfy these network configuratio
 
 If you are installing HP Helion OpenStack with KVM hypervisor support, you must configure your network as shown in the following diagram.
 
-Network architecture diagram for KVM
-
 <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.</a>(opens in a new window)
 
 You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.
 
-The Service network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
-
 **Notes:**
 
-- DVR is used to route traffic between VMs and outside the cloud. Thus, every Compute Node has a connection to the external network.
+- Distributed Virtual Routing (DVR) is used to route traffic between VMs and outside the cloud. As such, every Compute Node has a connection to the external network.
 - Access to OpenStack service APIs is from the management network.
-- The network path for platform service log messages is from the VM, to the service network (installed as a second vnic), to the Customer Router, to  the management network, to the Under Cloud RabbitMQ, to LogStash.
+- The network path for platform service log messages is from the VM, to the service network (installed as a second vNIC), to the Customer Router, to  the management network, to the undercloud RabbitMQ, to LogStash.
 
 #### Preparing the network for an ESX installation <a name="network_ESX"></a>
 
 If you are installing HP Helion OpenStack for ESX hypervisor support, you must configure your network as shown in the following diagram.
 
-Netowrk architecture diagram for ESX network
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
 ##### Installing networks for ESX #####
@@ -117,7 +96,7 @@ For ESX deployments, you must install and configure two specific networks:
 
 	- the EON service sub-component communicates with the vCenter server.
 
-2. The **Service network**. This network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring as well as customer provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
+2. The **Service network**. This network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring, and customer-provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
 
 ##### Other customer responsibilities and requirements for ESX
 
@@ -125,9 +104,9 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - installing and configuring VMWare vSphere version 5.5; VMware vCenter management must be a part of the private network (192.0.2.x)
 
-- providing the Customer Router and making sure the external, IPMI, and ESX networks are routed to/from the management network;
+- providing the customer router and making sure the external, IPMI, and ESX networks are routed to and from the management network;
 
-- providing the Customer Router and making sure the external, IPMI, and service networks are routed to and from the management network;
+- providing the customer router and making sure the external, IPMI, and service networks are routed to and from the management network;
 
 - installing and managing the ESX network and for assigning IP addresses on it to the OVSvApp and vCenter Proxy nodes;
 
@@ -137,10 +116,10 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 - providing a route from the service subnet in the overcloud to the RabbitMQ on the undercloud controller:
 
-	- The target IP addresses should be limited the ip addresses of the RabbitMQ cluster nodes in the Under Cloud.
-	- The Port numbers shall be limited to 5672 (RabbitMQ)
+	- The target IP addresses should be limited the ip addresses of the RabbitMQ cluster nodes in the undercloud.
+	- The port numbers shall be limited to 5672 (RabbitMQ)
 
-- providing a route from the EON service on the Under Cloud and the vCenter server;
+- providing a route from the EON service on the undercloud and the vCenter server;
 
 - enabling VLAN trunking and native VLAN on the private network. This is to cater to untagged PXE traffic with the tenant.
  
@@ -154,60 +133,71 @@ The initial installation of the cloud will install two initial Object Storage no
 The following tasks need to be performed on the seed VM, known as the installer system.
 
 - [Install Ubuntu 14.04 LTS](#ubuntu)
-- [Obtaining a public key](#pub-key)
-- [Configuring SSH](#ssh)
-- [Installing Debian/Ubuntu packages](#packages)
+- [Obtain a public key](#pub-key)
+- [Configure SSH](#ssh)
+- [Install Debian/Ubuntu packages](#packages)
 - [Install and configure NTP](#ntp)
-- [Creating the baremetal.csv file](#csv)
+- [Create the environment variables file](#envars)
+- [Create the baremetal.csv file](#csv)
 
 #### Install Ubuntu 14.04 LTS<a name="ubuntuLTS"></a>
 
 The seed VM host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
 
-#### Configuring SSH<a name="ssh"></a>
+#### Configure SSH<a name="ssh"></a>
 
 On the installer system, the OpenSSH server must be running and the firewall
  configuration should allow access to the SSH ports.
 
-#### Obtaining a public key <a name="pub-key"></a>
+#### Obtain a public key <a name="pub-key"></a>
 
 On the installer system (seed VM), the user `root` must have a public key, for example:
 
-    `/root/.ssh/id_rsa`
-    `/root/.ssh/id_rsa.pub`
+	/root/.ssh/id_rsa
+	/root/.ssh/id_rsa.pub
 
 If user `root` does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
 
-#### Installing Debian/Ubuntu packages<a name="packages"></a>
+#### Install Debian/Ubuntu packages<a name="packages"></a>
 
-Before starting the installation, you must first install the following required Debian/Ubuntu packages on the system running the installer:
+Before starting the installation, you must first install Ubuntu 14.04 and the following required Debian/Ubuntu packages on the system running the installer:
 
-* qemu
-* openvswitch
-* libvirt
-* python-libvirt
-
-On systems running Ubuntu 14.04, qemu-kvm is also required.
+- xrdp 
+- xfce4 
+- qemu-kvm 
+- libvirt-bin 
+- openvswitch-switch 
+- openvswitch-common 
+- python-libvirt 
+- libssl-dev 
+- libffi-dev 
+- virt-manager 
+- chromium-browser
 
 Use the following command to install these packages:
 
-  `$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
+	sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openswitch commong python-libvirt qemu-kvm libssl-dev libffi-dev virtmanage chromium-browser
 
 After you install the `libvirt` packages, you must reboot or restart `libvirt`: 
 
-    $ sudo /etc/init.d/libvirt-bin restart
+	sudo /etc/init.d/libvirt-bin restart
 
 
 #### Install and configure NTP<a name="ntp"></a>
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
-Before you start the installation, you must install NTP on the installer system (seed VM) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
+Before you start the installation, you must install NTP on the seed VM host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
-For information on installing NTP on the seed VM, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
+For information on installing NTP on the seed VM host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
 
+#### Create the environment variables file #### {#envars}
 
-#### Creating the baremetal.csv file<a name="csv"></a>
+To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a file that will be executed automatically.
+
+For information on creating the environment variables file, see [Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+
+#### Create the baremetal.csv file<a name="csv"></a>
 
 **Note:** This section is for baremetal installations only.
 

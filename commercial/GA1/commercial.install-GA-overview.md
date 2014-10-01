@@ -31,7 +31,7 @@ The HP Helion OpenStack installation follows the standard [TripleO deployment mo
 
 * **Overcloud**: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
 
-For more details on the seed, an undercloud and an overcloud, see the 
+For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/ga/technical-overview/#install-configure/) in the Technical Overview.
 
 ## The Installation Process
 
@@ -72,10 +72,11 @@ There are a few things you should be aware of before you begin your HP Helion Op
     `/root/tripleo/tripleo_*_passwords`
 
 
-For more information on HP Helion OpenStack Community, see:
+**Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
-* [FAQ](/helion/openstack/ga/faq/) 
-* [Release notes](/helion/openstack/ga/release-notes/) 
+## Next Step ##
+
+Review the information in [Installation Prerequisites](/helion/openstack/ga/install/prereqs/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

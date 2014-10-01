@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Installation: NTP Server
+# HP Helion OpenStack&#174;: Installing an NTP Server
 
 This page provides detailed information on configuring the seed VM as a Network Time Protocol (NTP) server. NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.
 
