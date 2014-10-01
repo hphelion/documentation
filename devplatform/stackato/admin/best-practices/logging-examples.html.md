@@ -27,7 +27,7 @@ Papertrail[](#papertrail "Permalink to this headline")
 
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
 2.  In the Dashboard screen, click *Add Systems*.
-	<img src="/content/devplatform/stackato/images/ppt1.png" />
+	<img src="/devplatform/stackato/images/ppt1.png" />
 
 3.  In the Setup Systems screen under *Other log methods*, click
     *Alternatives*.
