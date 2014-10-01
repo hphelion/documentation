@@ -35,7 +35,7 @@ This document describes the steps to add (Scale Out) or remove (Scale In) nodes 
 
 Before you begin, ensure the following:
 
-- The Seed VM, Undercloud and Overcloud are installed using the EE Installer with USE_TRICKLE=1, which is the default installation.
+- The Seed VM, Undercloud and Overcloud are installed using the HP Helion OpenStack&#174; Installer with USE_TRICKLE=1, which is the default installation.
 
 ## Add Nodes ## {#add}
 
@@ -55,14 +55,9 @@ You can add nodes to empty Baremetal nodes which have been already enrolled duri
 
 2. To scale out compute nodes, edit the Scale Counts in environment variables file (env_vars) which is used during the initial installation. Edit the `env_vars` file as follows to define the appropriate scale number:
 
-	
-		# export OVERCLOUD_COMPUTESCALE=2
+		# export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
 
-<!---3. Apply the configuration. 
-
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
-
-4. Source the environment variables file that  you updated  
+3. Source the environment variables file that  you updated  
 
 		# source /root/env_vars
 
@@ -113,11 +108,7 @@ To add new compute nodes to a non allocated Baremetal node, first enroll the Bar
 7. Edit the `env_vars` file as follows to define the appropriate scale number:
 
 	
-		# export OVERCLOUD_COMPUTESCALE=2
-
-<!---3. Apply the configuration. 
-
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
+		# export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
 
 4. Source the environment variables file that  you updated:  
 
@@ -142,7 +133,7 @@ To remove a node:
 
 3. Obtain the Ironic Node UUID 
 
-		# ironic node-list | grep <node ID in last step>
+		# ironic node-list | grep <node ID from the previous step>
 
 4. Obtain the MAC Address 
 
@@ -156,7 +147,7 @@ To remove a node:
 		
 		# heat stack-delete <Stack to be Deleted>
 
-7. If the deleted node is in a bad state and needs to be removed from ironic, use the following command with the UUID from the previous step:
+7. If the deleted node is in a bad state and needs to be removed from ironic, use the following command with the UUID from the previous step
 
 		# ironic node-delete <UUID>
 
@@ -166,23 +157,19 @@ To remove a node:
 
 9. SSH to Seed VM
 
-		# ssh root@<IP Addresss>
+		# ssh <IP Addresss>
 
 10. Remove the entry with the MAC Address that you retrieved in step 4 from from the `/root/baremetal.csv` file
 
 10. Reduce OVERCLOUD_COMPUTESCALE in /root/env_vars(environment variables file) on the Seed VM, so that next time a node is added, the installer does not try to add the deleted node. 
 
-		 # export OVERCLOUD_COMPUTESCALE=2
+		 # export OVERCLOUD_COMPUTESCALE=<number>
 
-3. Apply the configuration. 
-
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
-4. Source the environment variables file that  you updated:  
+11. Source the environment variables file that  you updated:  
 
 		# source /root/env_vars
 
-4. Run the installer script
+12. Run the installer script
 
 		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 
