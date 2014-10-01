@@ -59,7 +59,7 @@ HP 3PAR StoreServ can be managed from either the Horizon dashboard or using CLI.
 
 ### Using the dashboards
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/manage/resources/Overview/) to configure HP StoreServ.(Recommended)
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/manage/resources/overview/) to configure HP StoreServ.(Recommended)
 
 ###Using the CLI###
 
