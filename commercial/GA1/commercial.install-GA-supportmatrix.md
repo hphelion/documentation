@@ -28,12 +28,9 @@ To ensure the performance and stability of the HP Helion OpenStack environment, 
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
-* [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
 * [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
-* [Usable Capacity](#usable-capacity)
-* [Physical Network architecture](#physical-network-architecture)
 * [Software Requirements](#software-requirements)
 
 ##Deployment Architecture<a name="deploy-arch"></a>
@@ -262,6 +259,8 @@ Additional requirements are as follows:
 	- MItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+
+The following table lists 
 
 <table style="text-align: left; vertical-align: top;">
 
