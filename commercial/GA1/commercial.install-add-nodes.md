@@ -39,149 +39,153 @@ Before you begin, ensure the following:
 
 ## Add Nodes ## {#add}
 
-You can add nodes to an already installed Overcloud.You can add nodes in the following scenarios:
+New nodes can be added to an already installed Overcloud.You can add nodes in any of the following scenarios:
 
 - [Add nodes to pre-allocated empty Baremetal nodes](#pre-allocated)
 - [Enroll a new Baremetal and then add nodes](#non-allocated)
 
 ### Add nodes to pre-allocated empty Baremetal nodes ### {#pre-allocated}
 
-You can add nodes to empty Baremetal nodes which have been already enrolled during the initial installation process.There are already pre-allocated empty baremetal nodes which were created during the first install and can be used for adding new nodes
+You can add nodes to empty Baremetal nodes which have been already enrolled during the initial installation process. Perform the following steps:
 
-1. SSH to seed VM.
 
-2. Maintain the Scale Counts in environment variables file (env_vars) which is used during the initial installation. Edit the `env_vars` file as follows:
+1. SSH to Seed as root
 
-	- To scale out the VSA storage nodes, update the `OVERCLOUD_VSA_STORAGESCALE` value to the appropriale scale number.
+ 		# ssh <IP Address>
 
-		export OVERCLOUD_VSA_STORAGESCALE=<number_of_nodes>
+2. To scale out compute nodes, edit the Scale Counts in environment variables file (env_vars) which is used during the initial installation. Edit the `env_vars` file as follows to define the appropriate scale number:
 
-	- To scale out the VSA AO storage nodes, update the OVERCLOUD_VSA_AO_STORAGESCALE to appropriate scale number.
+	
+		# export OVERCLOUD_COMPUTESCALE=2
 
-		export OVERCLOUD_VSA_AO_STORAGESCALE=<number_of_nodes>
+<!---3. Apply the configuration. 
 
-	To scale out the Compute nodes, update the `OVERCLOUD_COMPUTESCALE` value to appropriale scale number. 
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
 
-		export OVERCLOUD_COMPUTESCALE=2
+4. Source the environment variables file that  you updated  
 
-3. Apply the configuration. Source the environment variables file that  you updated:  
-
-		source /root/env_vars
+		# source /root/env_vars
 
 4. Run the installer script
 
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 
-	If because of some reason, the above command fails, try the alternative approach
-
-		export OVERCLOUD_SCALE_NODES=1
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
-
-### Scenario 2 - Non-Allocated Empty Baremetal Nodes ### {#non}
-
-The baremetal nodes are not pre-allocated during the initial install.
-
-1. SSH to undercloud VM
-
-2. Register the new baremetal in Ironic database. 
-
-	ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p
-	cpu_arch=amd64 -i ipmi_address=10.22.28.73 -i ipmi_username=admin -i
-	ipmi_password=helion_001
-
-3. Create the ironic port for the ironic node created in previous step `ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID`. Make the respective baremetal entry in `/root/baremetal.csv` on the seed VM.
-
-4. SSH to seed VM.
-
-5. Maintain the Scale Counts in environment variables file (env_vars) which is used during the initial installation. Edit the `env_vars` file as follows:
-
-	- To scale out the VSA storage nodes, update the `OVERCLOUD_VSA_STORAGESCALE` value to the appropriale scale number.
-
-		export OVERCLOUD_VSA_STORAGESCALE=<number_of_nodes>
-
-	- To scale out the VSA AO storage nodes, update the OVERCLOUD_VSA_AO_STORAGESCALE to appropriate scale number.
-
-		export OVERCLOUD_VSA_AO_STORAGESCALE=<number_of_nodes>
-
-	To scale out the Compute nodes, update the `OVERCLOUD_COMPUTESCALE` value to appropriale scale number. 
-
-		export OVERCLOUD_COMPUTESCALE=2
-
-6. Apply the configuration. Source the environment variables file that  you updated:  
-
-		source /root/env_vars
-
-7. Run the installer script
-
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
-
-	If because of some reason, the above command fails, try the alternative approach
+	<!---If because of some reason, the above command fails, try the alternative approach
 
 		export OVERCLOUD_SCALE_NODES=1
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log-->
 
-## Remove nodes {#pre}
+### Enroll a new Baremetal node and then add nodes ### {#non-allocated}
+
+To add new compute nodes to a non allocated Baremetal node, first enroll the Baremetal node and then add new nodes.
+
+1. SSH to Undercloud VM as heat-admin from Seed VM
+
+	    # ssh heat-admin@<IP Address>
+		# sudo -i
+		# source stackrc
+
+2. Register the new Baremetal server in the ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your Baremetal settings. 
+
+		# ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
+
+	Following is the example for reference:
+
+		# ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
+
+	
+3. Create the ironic port for the ironic node created in previous step
+
+	 `ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID`. 
+
+4. List the Baremetal nodes. This command also lists the newly added nodes
+
+		# ironic node-list
+
+5. Log out from Undercloud to go back to Seed
+
+       
+6. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
+ 
+		# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+
+
+7. Edit the `env_vars` file as follows to define the appropriate scale number:
+
+	
+		# export OVERCLOUD_COMPUTESCALE=2
+
+<!---3. Apply the configuration. 
+
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
+
+4. Source the environment variables file that  you updated:  
+
+		# source /root/env_vars
+
+4. Run the installer script
+
+		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+
+
+## Remove nodes {#remove}
 
 To remove a node:
 
 1. SSH to Undercloud VM
 
-2. Obtain the ID of the node you want to delete using the following command:
+		# ssh root@<IP Address>
 
-		nova list
+2. Verify the ID of the node you want to delete
 
-3. Obtain the Ironic Node UUID using the following command: 
+		# nova list
 
-		ironic node-list | grep <node ID in last step>
+3. Obtain the Ironic Node UUID 
+
+		# ironic node-list | grep <node ID in last step>
 
 4. Obtain the MAC Address 
 
-		ironic node-port-list <Ironic Node UUID>
+		# ironic node-port-list <Ironic Node UUID>
 
-5. Obtain the heat stack to be deleted for the particular node using the following command:
+5. Obtain the heat stack to be deleted for the particular node 
  
-		heat stack-list
+		# heat stack-list
 
-6. Delete the particular stack using the following command:
+6. Delete the particular stack 
+		
+		# heat stack-delete <Stack to be Deleted>
 
-		heat stack-delete <Stack to be Deleted>
+7. If the deleted node is in a bad state and needs to be removed from ironic, use the following command with the UUID from the previous step:
 
-7. If the deleted node has gone bad and needs to be removed from ironic, use the following command with the UUID from the previous step:
+		# ironic node-delete <UUID>
 
-		ironic node-delete <UUID>
+8. 	SSH to Controller0 and disable the compute node
 
-8. If you are removing a Compute node 
+		# nova-manage service disable --service=nova-compute --host=<hostName of Compute Node>
 
-	a. SSH to Controller0. 
+9. SSH to Seed VM
 
-	b. Disable the particular Compute node using the following command:
+		# ssh root@<IP Addresss>
 
-		nova-manage service disable --service=nova-compute --host=<hostName of Compute Node>
+10. Remove the entry with the MAC Address that you retrieved in step 4 from from the `/root/baremetal.csv` file
 
-	c. Remove the entry that has the MAC Address retrieved in the previous step from from the `/root/baremetal.csv` file on the seed VM.
+10. Reduce OVERCLOUD_COMPUTESCALE in /root/env_vars(environment variables file) on the Seed VM, so that next time a node is added, the installer does not try to add the deleted node. 
 
-    d. Reduce the `OVERCLOUD_VSA_STORAGESCALE`, `OVERCLOUD_VSA_AO_STORAGESCALE`, and `OVERCLOUD_COMPUTESCALE` values in the `/root/env_vars` file on the seed VM. 
+		 # export OVERCLOUD_COMPUTESCALE=2
 
-## Troubleshooting ## {#trouble}
+3. Apply the configuration. 
 
-While adding VSA and compute nodes, sometimes the stack `ovecloud_ce_controller` is in `UPDATE_IN_PROGRESS` for an extended time. 
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-To troubleshoot, perform the following steps
+4. Source the environment variables file that  you updated:  
 
-1. SSH to all 3 controllers
+		# source /root/env_vars
 
-2. Check the mysql service. If it is stopped, restart the controller using the following command: 
+4. Run the installer script
 
-		service mysql restart
+		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 
-4. Look in the `/var/log/upstart/os-collect-config.log`. If it is hung at the restarting rabbitmq phase, kill all the rabbitmq instances using the following commands:
-
-		ps -ef | grep rabbitmq
-		pkill -u rabbitmq
-
-		Remove 
-		rm -rf /mnt/state/var/lib/rabbitmq
-		os-refresh-config
 
 ----
 ####OpenStack trademark attribution
