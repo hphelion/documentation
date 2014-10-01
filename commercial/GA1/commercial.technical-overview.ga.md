@@ -521,7 +521,7 @@ You can prepare hardware servers and incrementally deploy HP Compute nodes, HP S
 
 Conversely, you can decommission servers and remove specific nodes from the cloud.
 
-If any of the controller nodes fails, you can remove and replace controller nodes, while re-connecting them automatically into the HA cluster.
+If any of the controller nodes fails, you can remove and replace controller nodes, while re-connecting them automatically into the HA cluster. 
 
 ### Backup and Restore nodes {#backup-restore-nodes}
 

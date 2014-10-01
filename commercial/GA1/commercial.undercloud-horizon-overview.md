@@ -22,15 +22,21 @@ PageRefresh();
 -->
 
 # HP Helion OpenStack&#174; Undercloud Horizon Overview
-Once you complete the Undercloud and Overcloud installation, you can access the Undercloud Horizon Dashboard, which is the management interface for the Undercloud. The Horizon Dashboard displays with options in the left panel. The name of the user logged in, is displayed on the top bar along with a drop-down menu. By default, the dashboard displays the Overview page.
+Once you complete the Undercloud and the Overcloud installations, you can access the Undercloud Horizon Dashboard, which is the management interface for the Undercloud. 
 
-The left panel displays the following tabs:
+##Dashboard Features
+
+The Horizon Dashboard displays the Overview page by default, and provides options in the left panel.
+
+There are additional options located under the following tabs: 
+
 
 * **Admin**
 * **Project**
 * **Resources**
 * **Overcloud**
- 
+
+The name of the user (who is logged in) is shown on the top bar along with a drop-down menu. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

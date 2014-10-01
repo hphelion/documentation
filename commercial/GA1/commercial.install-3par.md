@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array which supports Fiber Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of Cinder using the OpenStack block storage driver of HP 3PAR StoreServ. 
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array which supports Fiber Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of Cinder using the OpenStack block storage driver of HP 3PAR StoreServ. HP 3PAR StoreServ is also referred to as 3PAR.
 
 
 HP Helion Openstack&#174; provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud. 
@@ -43,19 +43,19 @@ The following prerequisites need to be performed before configuring 3PAR StoreSe
 
 1 - **Install 3PAR device**
 
-   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups(CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud.If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the Overcloud Controller where Cinder service is running and HP 3PAR StoreServ array.
+   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups(CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the Overcloud Controller where Cinder service is running and HP 3PAR StoreServ array.
 
 2 - **Install IMC**
 
-  * Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the Undercloud Horizon Dashboard.
+  * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. You may refer to the URL provided in the Undercloud Horizon Dashboard of HP Helion Openstack&#174;. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the Undercloud Horizon Dashboard.-->
 
   * Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.
 
-The subsequent sections provide the detailed instructions on integration workflow.
+The subsequent sections provide the detailed instructions on  the integration workflow.
 
 ## Working with HP StoreServ
 
-HP 3PAR StoreServ can be managed from either the Horizon dashboard or using CLI.
+HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or using HP Sirius CLI
 
 ### Using the dashboards
 
