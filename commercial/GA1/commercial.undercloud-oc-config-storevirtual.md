@@ -66,7 +66,7 @@ To add a backend, do the following:
 
 8. Click **Add**.<br>On successful addition of backend, the backend displays in the Backend Mapping table in the Configure Cloud page.</br>
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Displays in the Configure Cloud Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Displays in the Configure Cloud Page (opens in a new window)</a>
 
 
 ### Expand backend<a name="expand-backend"></a>
@@ -81,7 +81,7 @@ To expand a backend, do the following:
 
 2. Click **Expand Backend** against the backend that you want to expand.<br> Expand StoreVirtual Volume Backend page is displayed.</br>
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-expand-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page (opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-expand-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option(opens in a new window)</a>
 
 3. From the **Available StoreVirtual Cluster Choices** box, select the Cluster.
 
@@ -92,7 +92,7 @@ To expand a backend, do the following:
 7. (Optional) Click **Remove All** displayed below the **Selected StoreVirtual Cluster Choices** box or select the cluster(s) and click &larr;to move the clusters back to **Available StoreVirtual Cluster Choices** box. . 
 
 8. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>
+	<!---<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>-->
 
 ### Shrink backend<a name="shrink-backend"></a>
 
