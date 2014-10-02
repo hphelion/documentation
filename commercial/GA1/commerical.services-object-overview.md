@@ -25,39 +25,46 @@ PageRefresh();
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
 HP Helion OpenStack&#174; introduces integral, built-in support for [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) to the cloud.
+The HP Helion OpenStack&#174; cloud deployment includes automatic creation of a Swift cluster and starter nodes.
 
-The HP Helion OpenStack&#174; object storage service includes a Swift cluster as a default element of cloud creation. This cluster is used to store data for internal services but can also be scaled out as necessary to store large amounts of end user data. 
+Based on OpenStack&reg; Swift, the HP Helion OpenStack object storage service provides a highly available, resilient, and scalable storage pool for unstructured data.  
 
-Based on OpenStack&reg; Swift, the HP Helion OpenStack object storage service is designed to provide a safe, secure,  scalable way to store and retrieve large amounts of unstructured data and objects. The storage service is also horizontally scalable as necessary to handle large numbers of simultaneous connections. 
+##Architecture Overview
+At its core, Swift is built from a set of software services and data constructs hosted on a cluster of servers. 
 
-**Node** - a host machine running one or more Swift services
-<br>
-**Proxy** **node** - node that runs Proxy services; also runs TempAuth<br>
-**Storage** **node** - node that runs Account, Container, and Object services<br>
-**Ring** - a set of mappings of Swift data to physical devices
+A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. 
 
+The services in the Swift cluster are either ***access*** services or ***storage*** services.
 
-- [Provision a node](/helion/openstack/ga/services/swift/provision-nodes/)
-- Monitoring
+- The *access* services group is made up of the Swift Proxy Servers, which run Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack Keystone authentication service.
+- The *storage* services group is composed of Swift Object Servers and various background services such as replicators.  
+ 
+Each service group can be scaled ***independently*** to meet workload and redundancy requirements. The storage service can be scaled up as necessary ([scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/)) and is also horizontally scalable to handle an increased number of simultaneous connections. 
+
+##Expanding the Swift Deployment
+
+Note that the initial installation of Helion OpenStack cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.
+
+For more information and in-depth diagrams, see [About Scale-Out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/).
+
+1. Deploy Starter Swift<br>*(completed as part of the HP Helion OpenStack cloud deployment)*
+3. Scale up or expand 
+	- [Deploy new Swift object storage](/helion/openstack/ga/services/swift/deployment-scale-out/)
+	-  [Add new Storage Servers](/helion/openstack/ga/services/swift/provision-nodes)
+	-  [Extend Swift Cluster](/helion/openstack/ga/services/object/swift/expand-cluster/)
+	- [Add New Scale-out Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/)
+	- [Add a disk to Starter object ring](/helion/openstack/ga/services/swift/deployment/add-disk-starter/)
+	- [Add a disk to the Scale-out Object ring](/helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
+	- [Add a disk to an Account Container ring](/helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
+5. Shrink or scale down
+	- [Remove a disk from an Object Node]( /helion/openstack/ga/services/swift/deployment/remove-existing-disk/)
+	- [Remove a Proxy Node]( /helion/openstack/ga/services/swift/deployment/remove-proxy-node/ )
+	- [Removing a scale-out Object Storage Node]( /helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/ )
+6. Monitor
+	- [Monitor Swift Cluster](/helion/openstack/ga/services/object/swift/Monitor-cluster/)
 	- [Disk usage](/helion/openstack/ga/services/object/swift/Monitor-disk/)
 	- [Replication status](/helion/openstack/ga/services/object/swift/replica-status/)
 	- [Service health](/helion/openstack/ga/services/object/swift/health-check/)
-- Expand
-	- [Extend the Swift cluster](/helion/openstack/ga/services/object/swift/expand-cluster/)
-	- [Add New Scale-out Proxy Node](Add New Scale-out Proxy Node)
-	- Add disk starter object
-	- Add disk scale out object ring
-	- Add disk account container
-- Scale-out 
-	- scale-out swift
-	- Deploy scale-out nodes
-- Shrink
-	- 	Shrink a cluster
-	- 	Remove scale out object storage
-	- 	Remove a proxy node
-	- 	Remove an existing disk
-- Diagnose disk health
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

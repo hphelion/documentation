@@ -21,22 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
 -->
 
-
-# Deploy Scale-out Swift Nodes with HP Helion OpenStack&#174; 
-
-**Note**: The Policy-0 concept is not the same as the *default* policy. Each policy has both a friendly, configurable ***name*** as well as an ***index*** or number. The policy with index number zero (0) maps to the object ring that’s present by default in all installations. If you like you can change the name, but you cannot change the index, as there must always be a Policy-0. 
-
-Policy-0 is used by Swift when accessing legacy containers created prior to the implementation of storage policies.
-
-In contrast, the ***default*** policy can be any policy defined in the cluster. The default policy is automatically chosen when a container is created without a storage policy specified. Note that this means a container always has a storage policy; if a policy is not explicitly specified, the default policy is applied.
-
-In other words, default means *create the container using this policy if no policy was specified* and Policy-0 means *apply the legacy policy to an existing container that doesn’t have a specified policy*. Note that in the unique case where no other policies are defined, Policy-0 is also the default.
-
-The scale-out object storage is implemented by defining a new storage policy: Storage-Policy 1. It is recommended that you use **at least two** nodes to implement Storage-policy:1.
-
-Once the storage-policy:1 is created, it becomes the default policy for the ring, so all of the containers would be handled according to this policy unless otherwise specified.
-
-The Object-1 ring, which is used to store end user data, is associated with storage-policy:1. Object storage can be extended further by adding one or more additional nodes to Object-ring:1 as necessary.
+# Deploying Additional Scale-out Swift Nodes with HP Helion OpenStack&#174; 
 
 Perform the following steps to deploy scale-out object-ring:1 
 
