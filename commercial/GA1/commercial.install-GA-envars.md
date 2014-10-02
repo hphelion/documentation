@@ -42,14 +42,20 @@ The following section describes the environmental variables that affect your ins
 
 	export BRIDGE_INTERFACE=em2
 
+**Note:** For an ESX install, this variable is used for seed VM creation.
+
 `BM_NETWORK_SEED_IP`, `BM_NETWORK_CIDR` - Use these variables to specify a particular IP address for the seed VM, for example 192.168.130.0/24.
 
 	export BM_NETWORK_SEED_IP=192.168.130.3
 	export BM_NETWORK_CIDR=192.168.130.0/24
 
+**Note:** For an ESX install, this variable is used for seed VM creation.
+
 `BM_NETWORK_GATEWAY` - Use this variable to specify a host other than the seed as the gateway, for example 192.168.130.1. Typically this IP will be the physical gateway of the network.
 
 	export BM_NETWORK_GATEWAY=192.168.130.1
+
+**Note:** For an ESX install, this variable is used for seed VM creation.
 
 `BM_NETWORK_SEED_RANGE_START`, `BM_NETWORK_SEED_RANGE_END` - Use these variables to specify an IP address range for the seed cloud to administrate/manage the undercloud node(s), for example 192.168.130.4-192.168.130.22.
 
