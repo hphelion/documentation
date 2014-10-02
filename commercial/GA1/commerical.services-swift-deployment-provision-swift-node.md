@@ -36,7 +36,7 @@ This page describes the procedure to provision scale-out Swift nodes. All types 
 * HP Helion OpenStack&#174; cloud is deployed.
 * Starter Swift nodes are functional by default as they are part of cloud deployment.
 
-You can check health of starter Swift nodes by nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
+You can check the health of starter Swift nodes using the nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
 
 	# nova list
 
@@ -44,7 +44,7 @@ You can check health of starter Swift nodes by nova list command as shown below.
 
 You must add a server to the cloud inventory so that you can scale out Swift nodes. 
 
-Perform the following steps to add physical server for a scale-out Swift:
+Perform the following steps to add a physical server for a scale-out Swift:
 
 
 1. Get the server details:
@@ -77,8 +77,8 @@ Perform the following steps to add physical server for a scale-out Swift:
 	**Notes**: 
 
 	- There must be one entry in this file for each baremetal system you intend to install.
-	- The first entry is used for the Undercloud.
-	- The second entry is the node with the lowest specifications (CPU/RAM/Disk size) of nodes in the overcloud.
+	- The first entry is used for the undercloud.
+	- The second entry is the node with the lowest specifications (CPU/RAM/disk size) of nodes in the overcloud.
 
 	The following sample displays the `baremetal.csv` configuration file after adding server details.
 
@@ -86,15 +86,15 @@ Perform the following steps to add physical server for a scale-out Swift:
 		E4:11:5B:B7:AD:CE,Administrator,gone2far,10.1.192.34,12,73728,70
 
 
-5. Log in to Undercloud. 
+5. Log in to undercloud. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 
-6. Add server details to ironic database using the following ironic command:
+6. Add server details to the Ironic database using the following Ironic command:
 
  		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
-	The following sample displays the ironic database with the new server details:
+	The following sample displays the Ironic database with the new server details:
 
 		+--------------+-----------------------------------------------------------------------+
 		| Property     | Value                                                                 |
@@ -108,12 +108,12 @@ Perform the following steps to add physical server for a scale-out Swift:
 		| properties   | {u'memory_mb': u'73728', u'cpu_arch': u'amd64', u'local_gb': u'70',   |
 		|              | u'cpus': u'12'}                                                       |
 		+--------------+-----------------------------------------------------------------------+
-7.Create port, and enter the MAC address and Node ID  using the following ironic command: 
+7.Create the port, and enter the MAC address and node ID  using the following Ironic command: 
  	
  		 # ironic create-port -a $MAC -n $NODE_ID
 
 
-	The following sample displays the output of above command: 
+	The following sample displays the output of theabove command: 
 		
 		+-----------+--------------------------------------+
 		| Property  | Value                                |
@@ -152,7 +152,7 @@ Perform the following steps to provision the Swift node:
 	
 	 "so&#95;swift&#95;proxy_scale": &lt;number of proxy servers &gt;  ,
 
-**Note**: While deploying the scale-out proxy node ensure that "so&#095;swift&#095;storage&#095;scale"is unchanged and while deploying the scale-out object node ensure that "so&#095;swift&#095;proxy&#095;scale" is unchanged.
+**Note**: While deploying the scale-out proxy node ensure that "so&#095;swift&#095;storage&#095;scale" is unchanged and while deploying the scale-out object node ensure that "so&#095;swift&#095;proxy&#095;scale" is unchanged.
  
 4.Enter the following command to source the `overcloud_config.json`  for the new values.
 
@@ -170,7 +170,7 @@ The cloud updates with the new nodes on successful operation.
 
 Ensure the deployment of the Swift node using the following commands:
 
-1. Log in to Underloud from Seed.
+1. Log in to underloud from Seed.
 
 		# ssh heat-admin@<Undercloud IP address> 
 
@@ -181,8 +181,6 @@ Ensure the deployment of the Swift node using the following commands:
 It displays available Swift nodes including the newly added node.
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 **Related topics**
 
 * [Deploy Scale-out Swift Nodes](/helion/openstack/ga/services/swift/deployment-scale-out/)
@@ -191,6 +189,8 @@ It displays available Swift nodes including the newly added node.
 * [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
 
 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----
