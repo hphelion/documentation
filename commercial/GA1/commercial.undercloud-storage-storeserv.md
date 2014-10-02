@@ -204,7 +204,7 @@ To register the CPGs, do the following:
 
 10. To check the status of CPG registration, in the HP StoreServ page, click the device name to display the Common Provisioning Groups page. The selected CPG displays as **registered**.
  
-	 <a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-register-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered CPG Displays in the Common Provisioning Groups Page (opens in a new window)</a> 
+	 <a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-registered-cpg.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered CPG Displays in the Common Provisioning Groups Page (opens in a new window)</a> 
     
 
 ### Edit a CPG {#edit-cpg}

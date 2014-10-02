@@ -68,7 +68,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 	The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
-  	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+  	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Common Provisioning Groups Page with the Reserved CPG (opens in a new window)</a>
 
 
 ### Expand backend<a name="expand-backend"></a>
@@ -124,7 +124,7 @@ This option allows you to remove the CPGs from the backend which are allocated t
 	
 	<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
-	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Shrink Backend Option(opens in a new window)</a>
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Table with Reduced Number of Backends(opens in a new window)</a>
 
 ###Delete backend<a name="delete-backend"></a>
 
