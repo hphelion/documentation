@@ -21,7 +21,7 @@ product: commercial.ga
 
 **1. Applicability.** This end user license agreement (the "Agreement") governs the use of accompanying HP Helion OpenStack Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.
 
-**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/.
+**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: [HP Helion OpenStack&#174; Beta Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/openstack/ga/3rd-party-license-agreements/).
 
 **3. Authorization**. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.
 
@@ -57,26 +57,26 @@ HP does not warrant that the operation of software will be uninterrupted or erro
 **13. Termination.** This Agreement is effective until terminated or in the case of a limited-term license, upon expiration; however, your rights under this Agreement terminate if you fail to comply with it. Immediately upon termination or expiration, you will destroy the software and documentation and any copies, or return them to HP. You may keep one copy of software and documentation for archival purposes. We may ask you to certify in writing you have complied with this section. Warranty disclaimers, the limitation of liability, this section on termination, and Section 14 ("General") will survive termination.
 
 **14. General.**
-
+	
 a. Assignment. You may not assign this Agreement without prior written consent of HP, payment of transfer fees and compliance with HP's software license transfer policies. Authorized assignments will terminate your license to the software and you must deliver software and documentation and copies thereof to the assignee. The assignee will agree in writing to this Agreement. You may only transfer firmware if you transfer associated hardware.
-
-b. U.S. Government. If the software is licensed to you for use in the performance of a U.S. Government prime contract or subcontract, you agree that, consistent with FAR 12.211 and 12.212, commercial computer software, computer software documentation and technical data for commercial items are licensed under HP's standard commercial license.
-
+	
+b.  U.S. Government. If the software is licensed to you for use in the performance of a U.S. Government prime contract or subcontract, you agree that, consistent with FAR 12.211 and 12.212, commercial computer software, computer software documentation and technical data for commercial items are licensed under HP's standard commercial license.
+	
 c. Global Trade Compliance. You agree to comply with the trade-related laws and regulations of the U.S. and other national governments. If you export, import or otherwise transfer products provided under this Agreement, you will be responsible for obtaining any required export or import authorizations. You confirm that you are not located in a country that is subject to trade control sanctions (currently Cuba, Iran, N. Korea, N. Sudan, and Syria) and further agree that you will not retransfer the products to any such country. HP may suspend its performance under this Agreement to the extent required by laws applicable to either party.
-
+	
 d. Audit. HP may audit you for compliance with the software license terms. Upon reasonable notice, HP may conduct an audit during normal business hours (with the auditor's costs being at HP's expense). If an audit reveals underpayments then you will pay to HP such underpayments. If underpayments discovered exceed five (5) percent, you will reimburse HP for the auditor costs.
-
-e. Third Party and Open Source Components. To the extent any component of the software is subject to any third party license terms, including open source license terms, then those third party license terms or open source license terms shall govern with respect to the subject component; otherwise, the terms of this Agreement shall govern.  
-
-f. Notices. Written notices under this Agreement may be provided to HP via the method provided in the Supporting Material or if none, via "contact HP" site on www.hp.com.
-
+	
+e Third Party and Open Source Components. To the extent any component of the software is subject to any third party license terms, including open source license terms, then those third party license terms or open source license terms shall govern with respect to the subject component; otherwise, the terms of this Agreement shall govern.  
+	
+f. Notices. Written notices under this Agreement may be provided to HP via the method provided in the Supporting Material or if none, via "contact HP" site on [www.hp.com](www.hp.com).
+	
 g. Governing Law. This Agreement will be governed by the laws of the state of California, U.S.A., excluding rules as to choice and conflict of law. You and HP agree that the United Nations Convention on Contracts for the International Sale of Goods will not apply.
-
-h. Force Majeure. Neither party will be liable for performance delays nor for non-performance due to causes beyond its reasonable control, except for payment obligations.
-
-i. Entire Agreement. This Agreement represents our entire understanding with respect to its subject matter and supersedes any previous communication or agreements that may exist.  Modifications to the Agreement will be made only through a written amendment signed by both parties. If HP doesn't exercise its rights under this Agreement, such delay is not a waiver of its rights.
-
-15. Australian Consumers. If you acquired the software as a consumer within the meaning of the 'Australian Consumer Law' under the Australian Competition and Consumer Act 2010 (Cth) then despite any other provision of this Agreement, the terms at this URL apply: http://www.hp.com/go/SWLicensing.
+	
+e. Force Majeure. Neither party will be liable for performance delays nor for non-performance due to causes beyond its reasonable control, except for payment obligations.
+	
+f. Entire Agreement. This Agreement represents our entire understanding with respect to its subject matter and supersedes any previous communication or agreements that may exist.  Modifications to the Agreement will be made only through a written amendment signed by both parties. If HP doesn't exercise its rights under this Agreement, such delay is not a waiver of its rights.
+	
+**15. Australian Consumers.** If you acquired the software as a consumer within the meaning of the 'Australian Consumer Law' under the Australian Competition and Consumer Act 2010 (Cth) then despite any other provision of this Agreement, the terms at this URL apply: [http://www.hp.com/go/SWLicensing](http://www.hp.com/go/SWLicensing).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -145,7 +145,7 @@ Subject to Customer’s compliance with the terms and conditions of this Agreeme
 
 ## Part 3: Ancillary and Open Source Software for Software ## {#ancilliary}
 
-Additional license authorizations related to ancillary, third party and open source software components are available at: (http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/). 
+Additional license authorizations related to ancillary, third party and open source software components are available at: [HP Helion OpenStack&#174; Beta Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/openstack/ga/3rd-party-license-agreements/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
