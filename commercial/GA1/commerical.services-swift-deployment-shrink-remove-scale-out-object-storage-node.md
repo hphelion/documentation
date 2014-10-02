@@ -22,7 +22,7 @@ PageRefresh();
 
 #Remove Scale-out Object Storage Node
 
-It is recommended that you gradually reduce the weight in the ring when removing disks from the the Swift cluster to avoid poor performance. 
+It is recommended that you gradually reduce the weight in the ring when removing disks from the Swift cluster to avoid poor performance. 
 
 Object nodes can only be removed once all disks have been removed from the node.
 
