@@ -26,26 +26,26 @@ PageRefresh();
 Perform the following steps to remove a disk from object nodes.
 
 1. [Prerequisite](#prer)
-2. [Removing disks from ring](remove-disk-from-ring)
+2. [Removing disks from ring](#remove-disk-from-ring)
 
 ##Prerequisite {#prer}
 
 * HP Helion OpenStack&#174; cloud is successfully deployed.
-* Starter Swift nodes are functional by default as they are part of cloud deployment.
+* Starter Swift nodes are functional by default as they are part of the cloud deployment.
 * Scale-out object-ring:1 is deployed.
 
 
 **IMPORTANT**:  
- 
+ ,
 *  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Take a backup of the rings before any operation.
 
 
-##Removing disks from ring{#remove-disk-from-ring}
+##Removing disks from ring<a name="remove-disk-from-ring"></a>
 
 Perform the following steps to remove disks from ring:
 
-1. Log in to Undercloud from Seed. 
+1. Log in to the undercloud from Seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -80,14 +80,14 @@ Perform the following steps to remove disks from ring:
 
 **Recommendation**:
 
-* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
+* Remove a drive gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually decrease by 25% until it becomes 0. The initial weight is 75.
 
 
 6.Set weight of the disk.
 
 		# ringos set-weight -f object-1.builder -s d<device> -w <weight>
 
-The following sample displays output of the above command:
+The following sample displays the output of the above command:
 
 	d7r1z3-192.0.2.31:6000R192.0.2.31:6000/b1410063386_"" weight set to 75.0
 
@@ -102,14 +102,14 @@ The following sample displays output of the above command:
 	# ringos list-swift-nodes -t all
 		
 		
-9.Copy `object-1.ring.gz` file to all nodes.
+9.Copy the `object-1.ring.gz` file to all nodes.
 
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
 
-10.Repeat steps from **6 - 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+10.Repeat steps  **6 through 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
-11.Once weight is set to 0, remove the disk from the ring.
+11.Once the weight is set to 0, remove the disk from the ring.
 
 	# ringos remove-disk-from-ring -f object-1.builder -s d<disk>
 
@@ -128,7 +128,7 @@ The following sample displays the output of the above command:
 	# ringos list-swift-nodes -t all
 		
 		
-14.Copy `object-1.ring.gz` file to all nodes.
+14.Copy the `object-1.ring.gz` file to all nodes.
 
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 

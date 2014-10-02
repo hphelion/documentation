@@ -212,7 +212,7 @@ Any one of the controller servers can be shut down for a short duration for main
 
 **Note**: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.
 
-In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. <--Learn more about replacing/rebuilding controller nodes here [link to documentation on replacing/rebuilding controller nodes]**IS THIS THE SAME DOCUMENT AS BACKUP AND RESTORE** ?? -->
+In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes](/helion/openstack/ga/backup.restore/).
 
 ##Highly Available Cloud Infrastructure<a name="ha-cloud-infra"></a>
 
@@ -241,7 +241,7 @@ You can deploy your KVM Nova-Compute nodes either during initial installation, o
 
 While adding compute nodes post initial installation, you can specify the target physical servers for deploying the compute nodes.
 
-Learn more about adding Compute Nodes after initial installation here [provide link to Operational Procedures to Scale-Out Compute Nodes here**LINK TO BE PROVIDED HERE** 
+Learn more about [Adding Compute Nodes after Initial Installation](/helion/openstack/ga/install/add/nodes/).
 
 ####Nova Availability Zones<a name="nova-availability-zone"></a>
 
@@ -282,7 +282,7 @@ Cinder availability zones are not supported for general consumption in the curre
 
 ### Object Storage with Swift<a name="object-storage"></a>
 
-You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Pyringos tool here. Please refer to the [ringos](/helion/openstack/GA1/services/object/pyringos/) document.
+You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Pyringos tool here. Please refer to the [Ringos](/helion/openstack/GA1/services/object/pyringos/) document.
 
 <a href="javascript:window.open('/content/documentation/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA Swift  (opens in a new window)</a>
 
