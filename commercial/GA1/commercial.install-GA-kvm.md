@@ -95,7 +95,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-	<table style="text-align: left; vertical-align: top; width:650px;">
+	<table style="text-align:left; vertical-align:top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
 <td><b> Installation package </b></td><td><b>File name</b></td></tr>

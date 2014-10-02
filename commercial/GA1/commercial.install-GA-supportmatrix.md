@@ -370,28 +370,8 @@ The following table lists the minimum requirements for each type of node.
 <td>CPU </td>
 <td> 8 CPU cores - Intel or AMD 64-bit processor</td>
 </tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Block storage server*</td>
-<td rowspan="4">1</td>
-<td>Disk </td>
-<td> 500GB - 2TB
-</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Memory </td>
-<td>32GB </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>CPU </td>
-<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
-</tr>
 </table>
-*Not required if 3Par is being used for block storage in a KVM hypervisor cloud. 
+
 
 <!--
 ## Usable Capacity<a name="usable_capacity"></a>
