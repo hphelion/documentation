@@ -24,11 +24,11 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
-HP Helion OpenStack allows you to manage the KVM hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
+HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
 ## Installing HP Helion OpenStack <a name="install"></a>
 
-The installation and configuration process for ESX consists of the following general steps: 
+The installation and configuration process for KVM consists of the following general steps: 
 
 * [Preparing for installation](#prepare)
 	* [Verify Prerequisites](#pre)
@@ -294,7 +294,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
-	For intructions, see the [HP Helion OpenStack® Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
+	For intructions, see the [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
 
 - Configure an HP 3Par storage array 
 

@@ -25,6 +25,8 @@ PageRefresh();
 # HP Helion OpenStack&reg;: Add(Scale-Out) and Remove(Scale-In) Nodes
 
 <!---This document describes the steps to add and remove nodes (scale in or scale out the VSA and Compute nodes) on an already installed overcloud-->
+By default, HP Helion Openstack cloud deploys a two node (termed as start-up swift nodes) Swift cluster as part of its deployment.
+
 This document describes the steps to add (Scale Out) or remove (Scale In) nodes  (KVM Compute Nodes) on an already installed Overcloud. 
 
 - [Prerequisites](#pre)

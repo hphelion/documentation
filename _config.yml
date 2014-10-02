@@ -303,7 +303,7 @@ navigation:
     url: /helion/openstack/ga/related-links/	
   - text: Glossary
     url: /helion/openstack/ga/glossary/ 	
-  - text: Preview Agreement
+  - text: End User License Agreement
     url: /helion/openstack/ga/eula/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/openstack/ga/3rd-party-license-agreements/	
