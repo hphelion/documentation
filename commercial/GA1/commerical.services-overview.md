@@ -58,7 +58,7 @@ The following services are foundation technologies used by the HP Helion OpenSta
 
 **Compute Operations**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as **Nova**. 
 
-See [Overview of the Compute service](/helion/openstack/ga/services/compute/overview).
+See [Overview of the Compute service](/helion/openstack/services/ga/compute/overview/).
 
 **Identity Management**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
 
@@ -118,7 +118,7 @@ See [Overview of EON Service](/helion/openstack/ga/services/eon/overview/)
 
 **DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
 
-See [Overview of the DNS as a Service](/helion/openstack/ga/services/dns/overview/).
+See [Overview of the DNS as a Service](/helion/openstack/ga/install/dnsaas/).
 
 **TripleO**. TripleO (which stands for OpenStack-on-OpenStack) is a program designed to facilitate the installation of an OpenStack cloud. The HP Helion OpenStack installation process uses TripleO.
 
