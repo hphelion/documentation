@@ -24,12 +24,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;EON Service Overview #
 
-ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. A Nova scheduler sees each cluster as compute and uses the same for scheduling a new instance. 
+ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance. 
 
-An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. Therefore, it is required to capture the details of vCenter in the Cloud Controller and configures the ESX Proxy Compute node to manage a list of clusters from a vCenter server. EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node.
+The ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. This information is used for deployment and configuration of ESX Proxy Compute nodes. The EON service is deployed in the undercloud controller node. 
 
-
-ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. These information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in UnderCloud controller node. 
+EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node. The ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK. 
 
 
 <!---
@@ -46,7 +45,7 @@ ESX on border (EON) service is an inventory which interacts with the VMware vCen
 
 The following diagram depicts the EON architecture of HP Helion OpenStack.
 
-<img src="media/eon-architecture.png/">
+<img src="../../media/eon-architecture.png">
 
 ## Working with the EON Service
 
@@ -54,11 +53,11 @@ To perform tasks using the EON service, you can use the dashboard or CLI.
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard]( /helion/openstack/ga/undercloud/resource/esx/compute/) to work with the EON service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/resource/esx/compute/) to work with the EON service.
 
 ###Using the CLI<a name="cli"></a>
 
-You can use the command-line interface software to access HP EON service. See [Command Line Interface-EON]( /helion/openstack/ga/undercloud/eon/cli/)
+You can use the command-line interface software to access HP EON service. See [Command Line Interface-EON](/helion/openstack/ga/undercloud/eon/cli/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

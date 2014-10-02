@@ -19,49 +19,44 @@ PageRefresh();
 </script>
 # HP Helion OpenStack&#174;: Tracking masked IP addresses when using network address translation (NAT)
 
-Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  If a malicious user uses NAT, he could perform a masked attack using resources in your HP Helion OpenStack cloud.  As a result, you might receive notification of abuse from a masked IP address that is part of your IP address range. Once you have detected such malicious activity, we have a process you can use to track the malicious user.
+Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion OpenStack cloud.  
 
-Since tracking down malicious users can be tricky, if you know the user's NAT address you can identify his actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic. 
+As a result of this IP address masking, you may receive notification of abuse that appears to originate at an IP address which is part of your own IP address range. 
 
+Once you have detected such malicious activity, and if you can determine the user's NAT address, you may be able to identify the actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic. 
 
 ## Method 1
 
-
-1. Log in to the HP Helion OpenStack Commercial dashboards as cloud admin.
+1. Log in to the HP Helion OpenStack Commercial dashboard as cloud admin.
 
 2. Select the project you want to work with.
 
 3. Click the **Access & Security** link on the **Project** dashboard **Compute** panel.
+4. The **Access & Security** page is displayed with four tabs, **Security Groups**, **Key Pairs**, **Floating IPs**, and **API Access**. 
 
-	The **Access & Security** page is displayed with four tabs, **Security Groups**, **Key Pairs**, **Floating IPs**, and **API Access**. 
+4. Click the **Floating IPs** tab.
 
-4. Click the **Floating IPs** tab to activate that tab.
+5. In the list of floating IPs, locate the IP where the malicious activity originated from and note the instance that this IP is assigned to.
 
-5. In the list of floating IPs, locate the IP you know to be malicious and note the instance the IP is assigned to.
-
-6. Click the name of the instance in the list.
-
-	The **Instance Details** page displays.
-
-	Using this information, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
+6. Click the name of the instance in the list.	The **Instance Details** page displays. Using this information, you can now see all the details of the compromised instance. You may choose to shut it down, contact the instance owner to investigate further, or both.
 
 ## Method 2
 
 1. Log in to the Controller node
 
-2. For each tenant, run the command:   (Assuming 16.103.148.249 as the  malicious IP address)
+2. For each tenant, run the command:   (Using 16.103.148.249 as an example IP address)
 
         neutron floatingip-list | grep "16.103.148.249" 
 
-    Producing output similar to the following:
+which produces output similar to the following:
 
         | dc56c9ce-b126-4553-85f4-9a92fd7e8c43 | 192.168.4.4      | 16.103.148.249      | 262e4206-9713-4088-a6e9-928de30afa82 |
 
-3. Capture the fixed-IP (in the second column) (eg.. 192.168.4.4) and tenant id
+3. Capture the **fixed-IP** (in the second column) (eg.. 192.168.4.4) and **tenant id**.
 
 4. Log in to the Compute node.
 
-5. Run nova list for the captured tenant id and fixed-ip address using the command:
+5. Run ***nova list*** for the captured tenant id and fixed-ip address using the command:
 
         nova --os-tenant-id=<tenant-id> list | grep "192.168.4.4"
     
@@ -73,7 +68,7 @@ Since tracking down malicious users can be tricky, if you know the user's NAT ad
 
         nova  --os-tenant-id=<tenant-id> show 47c06647-375e-4bd6-8714-d6841840bd56
 
-    Producing output similar to the following:
+Which produces output similar to the following:
 
 	    +--------------------------------------+-------------------------------+
 	    | Property                             | Value                         |
@@ -102,7 +97,7 @@ Since tracking down malicious users can be tricky, if you know the user's NAT ad
 	    | config_drive                         |                               |
 	    +--------------------------------------+-------------------------------+
  
- 	Using this information, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
+ Using this information, you can now see all the details of the malicious instance.  You may choose to shut it down, contact the instance owner to investigate further, or both. 
  
 ## Method 3
 1. Log in to the Controller node
@@ -111,11 +106,11 @@ Since tracking down malicious users can be tricky, if you know the user's NAT ad
 
         ip netns | grep "qrouter"
 
-    Producing output similar to the following:
+    Which produces output similar to the following:
 
         qrouter-0fa45f02-6e89-4707-89f3-0f7c31cf03bf
 
-3. Assuming 16.103.148.249 as the malicious IP address, then for each qrouter, run the command:
+3. Assuming 16.103.148.249 is the malicious IP address: for each ***qrouter***, run the command:
 
         ip netns exec qrouter-0fa45f02-6e89-4707-89f3-0f7c31cf03bf iptables –L –v –t nat | grep “16.103.148.249”
 
@@ -141,9 +136,9 @@ Since tracking down malicious users can be tricky, if you know the user's NAT ad
 
         nova show 2edf0570-8ed7-4cc4-a836-f4095d64534e
 
-    Producing output similar to the output in Step 6 of Method 2.
+    Which produces output similar to the output in Step 6 of Method 2.
 
- 	Using this information, you can now see all the details of the malicious instance.  You can choose to shut it down, or contact the instance owner to investigate further. 
+ Using this information, you can now see all the details of the malicious instance.  You may choose to shut it down, contact the instance owner to investigate further.  or both. 
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
