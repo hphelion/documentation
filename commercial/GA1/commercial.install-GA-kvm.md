@@ -73,17 +73,17 @@ For detailed network requirements, see [HP Helion OpenStack&#174; Installation: 
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
-For more information, see [HP Helion OpenStack: Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+For more information, see [HP Helion OpenStack&reg;: Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
 
 ### Prepare baremetal.csv file ### {#csv}
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 
 ### Preparing cloud seed host to run seed VM ### {#prepseed}
-On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack&reg; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
 ## Downloading the installation packages<a name="getinstall"></a>
 
@@ -95,7 +95,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-	<table>
+	<table style="text-align: left; vertical-align: top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
 <td><b> Installation package </b></td><td><b>File name</b></td></tr>
@@ -188,7 +188,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-11. If you are integrating LDAP into your environment, copy the configuration files to the seed VM host, as described in [HP Helion OpenStack: Integrating LDAP](/helion/openstack/ga/install/ldap/).
+11. If you are integrating LDAP into your environment, copy the configuration files to the seed VM host, as described in [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/ga/install/ldap/).
 
 	a. Copy the `tripleo-overcloud-password` file to the /root/tripleo folder.
 
@@ -279,7 +279,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ### Create projects for LDAP users<a name="ldap"></a>
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack: Integrating LDAP page](/helion/openstack/ga/install/ldap/).
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack&reg;: Integrating LDAP page](/helion/openstack/ga/install/ldap/). 
 
 
 ## Next Steps<a name="next-steps"></a>
