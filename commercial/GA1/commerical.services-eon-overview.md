@@ -45,7 +45,7 @@ EON, a new service sub component, captures details of the vCenter server in a Cl
 
 The following diagram depicts the EON architecture of HP Helion OpenStack.
 
-<img src="../../media/eon-architecture.png">
+<img src="media/eon-architecture.png" />
 
 ## Working with the EON Service
 
