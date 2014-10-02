@@ -26,7 +26,7 @@ HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware v
 
 ## Installing HP Helion OpenStack<a name="install"></a>
 
-The installation and configuration process for CLOUD_TYPE ESX consists of the following general steps:
+The installation and configuration process for ESX consists of the following general steps:
 
 * [Verify Prerequisites](#pre)
 	* [Review the ESX deployment architecture](#deploy-arch)

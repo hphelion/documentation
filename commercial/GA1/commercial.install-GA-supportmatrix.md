@@ -260,12 +260,15 @@ Additional requirements are as follows:
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
-The following table lists 
+A baremetal multi-node deployment consists of a minimum of **9** baremetal servers, to which you can add **up to 100 Compute nodes**.
+
+The following table lists the minimum requirements for each type of node.
 
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Node Type</th>
+<th>Minimum Number</th>
 <th>Server Hardware</th>
 <th>Minimum Requirements and Recommendations</th>
 </tr>
@@ -273,126 +276,102 @@ The following table lists
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Seed Cloud Host </td>
+<td rowspan="4">1</td>
 <td>Disk </td>
 <td> 1TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</td>
 </tr>
-
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
-<td>16GB</td>
-
+<td colspan=2>16GB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
 <td> 1 x 10GB NIC</td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
 <td> 4 CPU cores</td>
-
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Undercloud Controller</td>
+<td rowspan="4">1</td>
 <td>Disk </td>
 <td>500GB – 2TB</td>
-
-
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
 <td> 32GB </td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
 <td> 1 x 10GB NIC with PXE support</td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
 <td>8 CPU cores - Intel or AMD 64-bit processor </td>
-
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Controller </td>
+<td rowspan="4">3</td>
 <td>Disk </td>
 <td> 500GB - 2TB
  </td>
-
-
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
 <td>32GB </td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Network </td>
 <td> 1 x 10GB NIC with PXE support</td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
 <td>8 CPU cores - Intel or AMD 64-bit processor </td>
-
-
-
 </tr>
-
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Compute Server </td>
+<td rowspan="4">1</td>
 <td>Disk </td>
 <td> 500GB - 2TB</td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
 <td>32GB - Memory must be sized based on the VM instances hosted by the Compute node.</td>
-
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Network </td>
 <td> 1 x 10GB NIC with PXE support</td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
 <td>8 CPU cores - Intel or AMD 64-bit processor with hardware virtualization support. The CPU cores must be sized based on the VM instances hosted by the Compute node. </td>
-
-
 </tr>
-
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Swift server </td>
+<td rowspan="4">2</td>
 <td>Disk </td>
 <td> 500GB - 2TB
 </td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
 <td>32GB </td>
-
 </tr>
 <tr style="background-color: white; color: black;">
 <td>Network </td>
 <td> 1 x 10 GB NIC with PXE support</td>
-
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
 <td> 8 CPU cores - Intel or AMD 64-bit processor</td>
-
 </tr>
-
 </table>
+
 
 <!--
 ## Usable Capacity<a name="usable_capacity"></a>

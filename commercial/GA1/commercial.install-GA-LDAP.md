@@ -113,7 +113,7 @@ The following options must be set with proper values to provide integration with
 	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
 	</tr>
 	<tr>
-	<td>group_tree_dn</td><td>(StrOpt) Search base for groups.</td><td>CN=Users,DC=hpswlabs,DC=apps,DC=hp,DC=com</td><td>ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	<td>group_tree_dn</td><td>(StrOpt) Search base for groups.</td><td>CN=Users,DC=example,DC=com</td><td>ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
 	</tr>
 	<tr>
 	<td>group_allow_create</td><td>(BoolOpt) Allow group creation in LDAP backend.</td><td>False</td><td>False</td>

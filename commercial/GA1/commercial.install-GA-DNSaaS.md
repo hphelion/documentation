@@ -41,14 +41,14 @@ It is important to read through this page before starting your installation as i
 * HP Helion Openstack Installation
 * DNSaaS Installer Image
 * Obtained credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
-	* This user should have the **admin** and  **&#095;member_** (or **member**) roles.
-	*The "admin" role should not be required, but, for some reason, HP Helion OpenStack Heat fails to delete the users it creates without this.
+	* This user should have the **admin** and  **&#095;member_** roles.
+	
 	* Username
 	* Password
 	* Tenant/Project Name
 
 * Obtained credentials for the user+tenant used to validate end user tokens ("Service Credentials"):
-	* This user should be in the **service** tenant, and have the **admin** and **member** (or _member_) roles, and be called **designate**.
+	* This user should be in the **service** tenant, have the **admin** and  **&#095;member_** roles, and be called **designate**.
 	* Username
 	* Password
 	* Tenant/Project Name
@@ -71,7 +71,7 @@ It is important to read through this page before starting your installation as i
 			* ns2.p13.dynect.net.
 			* ns3.p13.dynect.net.
 			* ns4.p13.dynect.net.
-	* API credentials for DynEXT
+	* API credentials for DynECT
 		* Customer Name
 		* Username
 		* Password
@@ -131,7 +131,7 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 1. Log in to the overcloud's Horizon dashboard using **Target Credentials**.
 2. Click **Project**. The tab displays an option in the left panel.
 3. Click **Compute**  and then select **Images** to open the Image page.
-4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_0.1.0b12** to launch this image. 
+4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_1.0.0.30** to launch this image. 
 
 	A Launch Instance dialog box displays with five tabs: Details Tab, Access & Security Tab, Networking Tab, Post-Creation Tab and Advance Options. By default, Details is the active tab.
 
@@ -154,7 +154,7 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 11. Perform the following steps in the Manage Floating IP Associations:
 
-   	a. From the **IP Address** drop-dwon list, select the Floating IP address. Ensure that you remember the selected IP address.
+   	a. From the **IP Address** drop-down list, select the Floating IP address. Ensure that you remember the selected IP address.
 	
    	b. From the **Port to be associated** drop-down list, select the  port.
 
@@ -221,21 +221,19 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 	D. If you select DynECT you must set the following options in the designate section:
 
-    * dynext&#095;customer&#095;name &mdash; Customer name provided by Dyn
+    * dynect&#095;customer&#095;name &mdash; Customer name provided by Dyn
     	
-	*  dynext&#095;username &mdash; Username provided by Dyn
+	*  dynect&#095;username &mdash; Username provided by Dyn
     
-	* dynext&#095;password &mdash; Password provided by Dyn
+	* dynect&#095;password &mdash; Password provided by Dyn
 
 
 	E. If you select Akamai you must set the following options in the designate section:
 	
-	* dynext_customer_name: Customer name provided by Dyn
+	* akamai_username: The username that was set up as part of your Akamai signup
 	
-	* dynext_username: Username provided by Dyn
+	* akamai_password: The password that was set up as part of your Akamai signup
 	
-	* dynect_password: Password provided by Dyn
-
 
 
 3. Run the installer validation command to verify the configuration file
@@ -246,20 +244,7 @@ After you validate the configuration file, run the DNSaaS installer:
 
       	 $ dnsaas-installer --target-password <Target User Password> install
 
-4.Once the installation in completed, verify that the API and Nameservers are online using the endpoints supplied by the installer. From the installer VM, execute the following commands:
 
-	$ curl http://<API ENDPOINT>:9001/
-	{
-	  "versions": [
-	    {
-	      "id": "v1",
-	      "status": "CURRENT"
-	    }
-	  ]
-	}
-	 
-	$ dig @<NAMESERVER ENDPOINT> example.com | grep status
-	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37351
 
 
 ##Configure the Overcloud Load Balancer for DNSaaS<a name="configovercloud"></a>
@@ -321,10 +306,6 @@ Perform the following steps on each controller node:
 You  can register the DNS service and endpoint as a user or an admin. 
 
 You do not have to immediately register the DNS service in Keystone; however, if you choose to register the DNS service and endpoint execute the following command:
- 
-* Admin
-
-		$ dnsaas-installer --admin-password <Admin User Password> --target-password <Target User Password> keystone-registration
  
 * User
  

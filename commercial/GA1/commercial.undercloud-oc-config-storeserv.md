@@ -68,7 +68,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 	The status of the selected CPG is displayed as *Reserved* in the StoreServ page under the **Resources** Tab.</br>
 
-   <a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
+  	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Page (opens in a new window)</a>
 
 
 ### Expand backend<a name="expand-backend"></a>
@@ -79,7 +79,12 @@ To expand a backend, do the following:
 
 1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.<br> The page displays a list of backends.</br>
 
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-expand-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Option (opens in a new window)</a>
+
 2. Click **Expand Backend** against the backend that you want to expand.<br> Expand StoreServ Volume Backend page is displayed.</br>
+
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-expand-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand StoreServ Volume Backend Page (opens in a new window)</a>
+
 
 3. From the **Available StoreServ CPG Choices** box, select the CPG.
 
@@ -91,12 +96,16 @@ To expand a backend, do the following:
 
 8. Click **Update**.<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-expand-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expanded Backend in the Backend Mapping Table(opens in a new window)</a>
+
 
 ### Shrink backend<a name="shrink-backend"></a>
 
 This option allows you to remove the CPGs from the backend which are allocated to your cloud. To shrink the backend, do the following:
 
 1. In the Configure Cloud page, click **StoreServ Backends** Tab to activate it.<br> The page displays a list of backends.</br>
+
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-shrink-backend.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Shrink Backend Option(opens in a new window)</a>
 
 2. Click **More** drop-down list against the Volume Backend for which you want to reduce the CPGs and select **Shrink Backend**.<br> Configure StoreServ Backend page is displayed.
 
@@ -109,7 +118,13 @@ This option allows you to remove the CPGs from the backend which are allocated t
 
 5. (Optional) Click **Select All** displayed below the **Removed StoreServ CPGs** box or select the CPG(s) and click &larr;to move the CPGs back to **Existing StoreServ CPGs** box.
 
-6. Click **Update**.<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
+6. Click **Update**.
+
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Shrink Backend Option(opens in a new window)</a>
+	
+	<br>On successful update, the number of CPGs mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
+
+	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Shrink Backend Option(opens in a new window)</a>
 
 ###Delete backend<a name="delete-backend"></a>
 

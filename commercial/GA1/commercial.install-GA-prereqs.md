@@ -199,11 +199,9 @@ For information on creating the environment variables file, see [Creating an Env
 
 #### Create the baremetal.csv file<a name="csv"></a>
 
-**Note:** This section is for baremetal installations only.
-
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step. 
 
-There must be one entry in this file for each baremetal system you intend to install. The file must contain exactly 7 lines for the installation. 
+There must be one entry in this file for each baremetal system you intend to install. 
 
 `<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>`
 
@@ -223,7 +221,7 @@ When creating this file, keep in mind the following:
 
 * The IPMI user and password **must have** ADMINISTRATOR privilege; it is not sufficient to have OPERATOR privilege
 * Memory must be at least 32 GB
-* Disk size should be at least 2 TB
+* Disk size must be between 500GB and 2 TB
 * The disk size specified should never exceed the physical disk size
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.

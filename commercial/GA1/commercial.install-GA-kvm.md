@@ -24,11 +24,11 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
-HP Helion OpenStack allows you to manage the KVM hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
+HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
 ## Installing HP Helion OpenStack <a name="install"></a>
 
-The installation and configuration process for ESX consists of the following general steps: 
+The installation and configuration process for KVM consists of the following general steps: 
 
 * [Preparing for installation](#prepare)
 	* [Verify Prerequisites](#pre)
@@ -83,7 +83,7 @@ For more information, see [Creating the baremetal.csv file](/helion/openstack/ga
 
 
 ### Preparing cloud seed host to run seed VM ### {#prepseed}
-On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack® Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack&reg; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
 ## Downloading the installation packages<a name="getinstall"></a>
 
@@ -95,7 +95,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
-	<table style="text-align: left; vertical-align: top; width:650px;">
+	<table style="text-align:left; vertical-align:top; width:650px;">
 	
 <tr style="background-color: lightgrey; color: black;">
 <td><b> Installation package </b></td><td><b>File name</b></td></tr>
@@ -279,7 +279,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ### Create projects for LDAP users<a name="ldap"></a>
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack&reg;: Integrating LDAP page](/helion/openstack/ga/install/ldap/).
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack&reg;: Integrating LDAP page](/helion/openstack/ga/install/ldap/). 
 
 
 ## Next Steps<a name="next-steps"></a>
@@ -294,7 +294,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
-	For intructions, see the [HP Helion OpenStack® Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
+	For intructions, see the [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
 
 - Configure an HP 3Par storage array 
 

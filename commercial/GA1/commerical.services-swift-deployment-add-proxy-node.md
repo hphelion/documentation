@@ -43,7 +43,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/ga/service
 
 ##Update load balancer with new Proxy nodes
  
-1. Log in to Undercloud from Seed.
+1. Log in to the undercloud from Seed.
  
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
