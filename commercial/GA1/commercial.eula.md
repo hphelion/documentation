@@ -14,7 +14,7 @@ product: commercial.ga
 # HP Helion OpenStack® Software License Terms
 
 ##Part 1–HP End User License Agreement  
-**1. 	Applicability.** This end user license agreement (the "Agreement") governs the use of accompanying HP Helion OpenStack Software (“Software”), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.
+**1. 	Applicability.** This end user license agreement (the "Agreement") governs the use of accompanying HP Helion OpenStack Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.
 
 **2. 	Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/.
 
@@ -73,7 +73,7 @@ i.	Entire Agreement. This Agreement represents our entire understanding with res
 
 ##Part 2–Additional License Authorizations for Software
 
-This Part 2 includes Additional License Authorizations (ALA) for the Software.  You may use the Software in accordance with the terms of this ALA in addition to the terms of your agreement with HP, or in the absence of such agreement, the HP End User License Agreement (EULA) in Part 1 above as well as the Ancillary and Open Source Software license terms listed in Part 3.  You may also be referred to as “Customer” below.
+This Part 2 includes Additional License Authorizations (ALA) for the Software.  You may use the Software in accordance with the terms of this ALA in addition to the terms of your agreement with HP, or in the absence of such agreement, the HP End User License Agreement (EULA) in Part 1 above as well as the Ancillary and Open Source Software license terms listed in Part 3.  You may also be referred to as "Customer" below.
 
 **Definitions**
 
@@ -112,7 +112,7 @@ Subject to Customer’s compliance with the terms and conditions of this Agreeme
 
 **d.	Compliance and Audit:**  HP shall have the right to audit the customer’s use of the Software at HP’s expense and in accordance with any agreement between the parties related to confidentiality.
 
-**e.	Confidentiality:** The Software contains confidential and proprietary information of HP (“Confidential Information”). Customer will hold in confidence and not use or disclose any Confidential Information, except as expressly permitted in the Agreement. To the extent this restriction is not prohibited under applicable law, and except as specifically authorized under in writing by HP, customer shall not disclose to any third party the results of (i) any performance benchmarks you run on the Software, or any portion thereof, or (ii) specific detailed comparisons you make between the Software, or any portion thereof, and any product owned by you or a third-party product.
+**e.	Confidentiality:** The Software contains confidential and proprietary information of HP ("Confidential Information"). Customer will hold in confidence and not use or disclose any Confidential Information, except as expressly permitted in the Agreement. To the extent this restriction is not prohibited under applicable law, and except as specifically authorized under in writing by HP, customer shall not disclose to any third party the results of (i) any performance benchmarks you run on the Software, or any portion thereof, or (ii) specific detailed comparisons you make between the Software, or any portion thereof, and any product owned by you or a third-party product.
 
 **f.	Copyright Notices:** Customer must reproduce all copyright notices that appear in or on the Software (including documentation) on all permitted copies or adaptions.  Copies of documentation are limited to internal use.
 
