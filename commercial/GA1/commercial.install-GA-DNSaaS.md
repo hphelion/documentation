@@ -66,11 +66,14 @@ It is important to read through this page before starting your installation as i
 
 	* An active service contract with DynECT
 	* Knowledge of the FQDNs for all DynECT nameservers allocated to your account ("Namsever FQDNs")
-		* For  "helion-qa" Dynect account:
-			* ns1.p13.dynect.net.
-			* ns2.p13.dynect.net.
-			* ns3.p13.dynect.net.
-			* ns4.p13.dynect.net.
+	
+		-     ns1.p13.dynect.net.
+		-     ns2.p13.dynect.net.
+		-     ns3.p13.dynect.net.
+		-     ns4.p13.dynect.net.
+
+
+	
 	* API credentials for DynECT
 		* Customer Name
 		* Username
@@ -79,7 +82,7 @@ It is important to read through this page before starting your installation as i
 * Akamai (3rd Party)
 	* An active service contract with Akamai
 	* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namesever FQDNs")
-		* For "helion-qa" Akamai account
+		
 	* API credentials for Akamai
 		* Username
 		* Password
@@ -309,7 +312,7 @@ You do not have to immediately register the DNS service in Keystone; however, if
  
 * User
  
-		dnsaas-installer --target-password <Target User Password> keystone-registration
+		dnsaas-installer --target-passwoinstallrd <Target User Password> keystone-registration
 
 ##Initial Service Configuration
 
@@ -320,8 +323,6 @@ For the "Nameserver FQDNs" gathered during the [prerequisites](#preq) step, issu
 	$ designate server-create --name ns1.example.com.
 
 For example :
-
-For the HP Helion QA DynECT account:
 
 	designate server-create --name ns1.p13.dynect.net.
 
