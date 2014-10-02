@@ -26,37 +26,34 @@ PageRefresh();
 Perform the following procedure to add new scale-out object node. 
 
 
-1. [Prerequisite](#preq)
+1. [Prerequisites](#preq)
 2. [Deploying new object nodes](#deploy-new-object-node)
 3. [Adding node and disks to object-ring:1](#add-disk-node)
 
 
 ##Prerequisite {#preq}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. 
-* Starter Swift nodes are functional by default as they are part of cloud deployment.
+* HP Helion OpenStack&#174; cloud is successfully deployed. *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 
 ##Deploying new object nodes {#deploy-new-object-node}
 
-Perform the steps mentioned in  [Provision Swift Node(s)]( /helion/openstack/ga/services/swift/provision-nodes/) to deploy a new node.
+1. Perform the steps mentioned in [Provision Swift Node(s)]( /helion/openstack/ga/services/swift/provision-nodes/) to deploy a new node.
 
 
-## Adding node and disks to object-ring:1 {#add-disk-node}
+##Format and Mount the Disks
+Once the Swift nodes are deployed, the required disks must be formatted and mounted them before adding them to the Swift cluster. 
 
-Once the Swift nodes are deployed, ensure that you format the required disks and mount them before adding disks to the Swift cluster. 
-
-
-1. Log in to the Undercloud from Seed.
+1. Log in to the undercloud from the seed.
     
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
 
-2. Change working directory to ring building directory.
+2. Change the working directory to the ring building directory.
  
 		# cd /root/ring-building
 
-3. List the available scale-out Swift nodes and identify the created node. 
+3. List the available scale-out Swift nodes and identify the newly-created node(s). 
 
 		# ringos list-swift-nodes -t object
 
@@ -64,58 +61,44 @@ Once the Swift nodes are deployed, ensure that you format the required disks and
 
 		# ringos list-disks -n <Object nodes IP address> 
  
-5. Format a given disk.
+5. Format the target disk.
 
 		# ringos format-disks -n <Object nodes IP address> -d <disk>
 
+	**Note**: You can format all the disks with a single command: `-d --all` but be very careful!
+## Adding nodes and disks to object-ring:1 {#add-disk-node} 
 
-	**Note**: You can format all the disks with a single command (-d --all).
+1.  List the files in the ring building directory and identify the *object-1.builder* file.
 
-6. List the files in the ring building directory and identify the`object-1.builder` file.
-
-7. Add a formatted disk(s) to object-1 ring.
+7. Add the formatted disk(s) to the object-1 ring.
 
 		# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <Object nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
+	**Recommendation**: Add drives gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually increase by 25% until it reaches 100%. The initial weight is 25.
 
-**Recommendation**: 
-              
-* Add a drive gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually increase by 25% until it reaches 100%. The initial weight is 25.
-
-8.Re-balance object-1 ring.
-
-	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+8. Re-balance the object-1 ring.
+    
+    	# ringos rebalance-ring -f /root/ring-building/object-1.builder
 	
-**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.	
+	**Note**: You must wait for the length of time specified in `min_part_hours` before another re-balance succeeds.	
 
-9.List all the Swift nodes. 
+9. List all the Swift nodes. 
 
-	# ringos list-swift-nodes -t all
-
+	    # ringos list-swift-nodes -t all
+    
 			
-10.Copy `object-1.ring.gz` file to all the nodes.
-
-	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+10. Copy `object-1.ring.gz` file to all the nodes.
+    
+    	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
 
-11.Set weight of the disks using the following command:
+11. Set the weight of the disks using the following command:
 
-
-	# ringos set-weight -f /root/ring-building/object-1.builder -s <Object node IP address> -w <weight>
-
+    	# ringos set-weight -f /root/ring-building/object-1.builder -s <Object node IP address> -w <weight>
  
-12.Repeat steps from **8-11** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
-
-
-
+12. Repeat steps from **3-6** as necessary, increasing the weight by 25 each time. [Change the weight to 50, then 75, and then 100 (w= 50, 75, 100).]
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-
-**Related topics**
-
-* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 
 ----
 ####OpenStack trademark attribution

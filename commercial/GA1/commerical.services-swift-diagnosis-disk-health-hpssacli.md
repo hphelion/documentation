@@ -22,24 +22,25 @@ PageRefresh();
 
 #Diagnosis of disk health using hpssacli utility for HP servers
 
-The health of the disk  of the HP servers can be diagnosed using hpsacli utility.
+The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*** utility.
 
 
-##HP Smart Storage Administrator CLI 2.0.22.0(HPSSACLI)
+##HP Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)
 
-The HP Smart Storage Administrator CLI (HPSSACLI) is a commandline-based disk configuration program for Smart Array Controllers.
+The HP Smart Storage Administrator CLI (HPSSACLI) is a command line disk configuration program for Smart Array Controllers.
 
-##Deployment of utility on servers
+##Deployment
 
-The hpssacli utility is deployed onto the servers wherever the disks are to be monitored. For example:  Swift, VSA, and Compute nodes. This page explains about the collection of diagnostic report of disks in the servers where the utility is loaded.
+The ***hpssacli*** utility is deployed onto the servers wherever the disks are to be monitored, usually all Swift, VSA, and Compute nodes. This page explains the collection of diagnostic reports from disks in the servers where the utility has been loaded.
 
+<!--
 ###Download the hpssacli utility into the KVM host
 
 TBD
 
 Where should the user login??
 
-
+-->
 
 
 ###Copy the utility to seed and to the servers where the disks has to be monitored
@@ -84,7 +85,8 @@ Use `scp` to copy the utility package on to the servers and install it.
 9. You can collect the diagnostic report of the controller either in server or through Seed using ssh.
 
 
-**To collect the diagnostic report of the controllers in the server**
+##Collect the diagnostic report
+**Using the server controller:**
 <!---
 1. Log in to the server
 
@@ -94,11 +96,11 @@ Use `scp` to copy the utility package on to the servers and install it.
 		/home/heat-admin/hp/hpssacli/bld
 --->
 
-1. Enter the following command to know the controller slot
+1. Enter the following command to determine the controller slot
 		
 		./hpssacli ctrl all show status
  
-The following sample displays slot details:
+	The following sample displays slot details:
 
 		Smart Array P420i in Slot 0 (Embedded)
 		
@@ -108,26 +110,22 @@ The following sample displays slot details:
 		
 		   Battery/Capacitor Status: OK
 
-2.Generate the diagnostic report of the particular slot
+2. Generate the diagnostic report of the particular slot
 
 		./hpssacli ctrl slot=(slot number) diag file=<filename.zip>
-Or
-
-Generate the report of all the slots 
+	Or generate the report of all the slots 
 
 		./hpssacli ctrl all diag file=<filename.zip>
 
 
-The file will be in location you mentioned.
+The file will be stored in the reported location.
 
-3.Copy the generated file to the desired location.
+3. Copy the generated file to the desired location.
 
-4.Extract the file
-
-Or
+4. Extract the file
 
 
-**To generate diagnostic report using ssh from Seed**
+**Using ssh from Seed:**
 
 <!---
 1. Log in to the server
@@ -151,25 +149,25 @@ Or
 	
 		# scp all_details.zip ubuntu@<KVM_Host IP address>:
 
-6. Enter login credentails ???
+	<!--Enter login credentails ???-->
 
 5. Extract the file.
 
 
-10.Open the `ADUReport.htm` file in the browser. The html page displays complete details of the controller and the health status of the physical disks available in the machine.
+10. Open the `ADUReport.htm` file in the browser. The html page displays complete details of the controller and the health status of the physical disks available in the machine.
 
-<image = utility_ADUR-report>
+<!-- <image = utility_ADUR-report> -->
 
-11.Generate SmartSSD Wear Gauge Report either from local server or Seed
+11. Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
 
-* From local server
+	* From the local server
 
-		/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on
-* From Seed
+	`	/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on`
+	* From the seed
 
-		# ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> diag file=<filename.zip>
+	`	# ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> diag file=<filename.zip>`
 
-**Now retrieve the ssd_report.zip to kvm host using scp from server to analyse.??? is this applicable for seed only??** 
+<!-- **Now retrieve the ssd_report.zip to kvm host using scp from server to analyse.??? is this applicable for seed only??** --> 
 
 The following SmartSSDWearGaugeReport.txt sample file displays the details of the  SSD drives. 
 
@@ -234,21 +232,22 @@ The following SmartSSDWearGaugeReport.txt sample file displays the details of th
 
 ##Other useful commands
 
-1. To get the details of the physical disks and also the logical group status on the server
+
+
+- To get the details of the physical disks and also the logical group status on the server
 
         ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> show config detail"
 
- 
-
-2. To execute other operations on physical drives
+- To execute other operations on physical drives
 
         ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli help physicaldrive"
 
-3. Use help to explore other options with the utility
+3. Open the help to explore other options with the utility
 
         ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli help"
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

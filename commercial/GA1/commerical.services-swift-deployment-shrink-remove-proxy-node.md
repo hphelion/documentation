@@ -20,11 +20,11 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
-#Remove Proxy Node
+#Remove a Proxy Node
 
-You are recommended to gradually reduce the weight in the ring and change the disk in the Swift cluster to avoid poor performance. 
+It is recommended that you gradually reduce the weight in the ring and change the disk in the Swift cluster to avoid poor performance. 
 
-Once all the disks of the node are removed the scale-out Proxy node can be removed from the cloud.
+Scale-out Proxy nodes can only be removed from the cloud after all the disks have been removed from the node.
 
 
 1. [Prerequisite](#prer)
@@ -36,15 +36,11 @@ Once all the disks of the node are removed the scale-out Proxy node can be remov
 7. [Remove the scale-out proxy node by removing the corresponding stack](#remove-scale-out-proxy)
 8. [Verify the node removal](#verify-node-removal)
 
-
 ##Prerequisite{#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.
-* Starter Swift nodes are functional by default as they are part of cloud deployment. 
-* Scale-out object-ring:1 is deployed.
-* Scale-out proxy node is deployed.
-
-
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* The scale-out Object Ring-1 has been deployed.
+* At least one scale-out proxy node has been deployed.
 
 **IMPORTANT**:  
 
@@ -73,43 +69,41 @@ Perform the following steps to identify the disks of the node to be removed:
 		# ringos view-ring -f /root/ring-building/container.builder
 
 
-**Recommendation**:
+	**Recommendation**:
 
-* Remove a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
+	Remove drives gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
 
 
-5.Set weight of the disk for `account.builder` and `container.builder`files.
+5. Set weight of the disk for `account.builder` and `container.builder`files.
 
-		# ringos set-weight -f account.builder -s d<device> -w <weight>
-		# ringos set-weight -f container.builder -s d<device> -w <weight>
+    		# ringos set-weight -f account.builder -s d<device> -w <weight>
+    		# ringos set-weight -f container.builder -s d<device> -w <weight>
 
-6.Re-balance the ring.
+6. Re-balance the ring.
 
-	# ringos rebalance-ring -f account.builder
-	# ringos rebalance-ring -f container.builder
+    	# ringos rebalance-ring -f account.builder
+    	# ringos rebalance-ring -f container.builder
 
-**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
+	**Note**: You must wait for the time specified by `min_part_hours` before another re-balance succeeds.
 
-7.List all the Swift nodes.
+7. List all the Swift nodes.
 
 		# ringos list-swift-nodes -t all
 		
-		
-8.Copy `account.ring.gz`  and  `container.ring.gz` files to all nodes.
-
-	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
-	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
+8. Copy `account.ring.gz`  and  `container.ring.gz` files to all nodes.
+    
+    	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
+    	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 <!---
 The following sample displays the output of the above command: 
 
 		Copied ring /root/ring-building/container.ring.gz onto 192.0.2.25--->
 
-9.Repeat steps from **5 - 8** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+9. Repeat steps from **5 - 8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
-10.Verify the `account.ring.gz`  and `container.builder` files.
-
-	# ringos view-ring -f /root/ring-building/account.builder
-	# ringos view-ring -f /root/ring-building/container.builder
+10. Verify the `account.ring.gz`  and `container.builder` files.
+    	# ringos view-ring -f /root/ring-building/account.builder
+    	# ringos view-ring -f /root/ring-building/container.builder
 
 ##Removing disk from the ring {#remove-disk-from-ring}
 
@@ -133,13 +127,11 @@ Repeat this step for each disk of the specific node.
 		# ringos view-ring -f /root/ring-building/account.builder
 		# ringos view-ring -f /root/ring-building/container.builder
 
-
-##Copying the rings to other nodes {#copy-ring}
+##Copy the rings to other nodes {#copy-ring}
 
 1. List all the Swift nodes.
 
 		# ringos list-swift-nodes -t all
-
 
 2. Copy `account.ring.gz` and `container.ring.gz` files to all the nodes.
 
@@ -147,8 +139,7 @@ Repeat this step for each disk of the specific node.
 		# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes of IP address>
 
 
-##Removing the haproxy configuration from each of the Overcloud Controller nodes{#remove-haproxy}
-
+##Remove the haproxy configuration from each of the Overcloud Controller nodes{#remove-haproxy}
 
 1. Edit `swift-proxy.cfg` on each of the controller nodes. 
 
@@ -166,15 +157,15 @@ Repeat this step for each disk of the specific node.
 
 		# service haproxy restart
 
-##Remove the scale-out proxy node by removing the corresponding stack {#remove-scale-out-proxy}
+##Remove the scale-out proxy node {#remove-scale-out-proxy}
 
 Once the disks are removed from the ring, remove the scale-out proxy node by removing the corresponding stack.
 
-1. List the scale-out proxy node.
+1. List the scale-out proxy nodes.
 
 		# heat stack-list
 
-The following sample displays the output of the above command:
+	The following sample displays the output of the above command:
 
 		+--------------------------------------+------------------------------+-----------------+----------------------+
 		| id                                   | stack_name                   | stack_status    | creation_time        |
@@ -186,11 +177,10 @@ The following sample displays the output of the above command:
 		| b8325052-ec52-4b3b-8304-eb6ec23dd2ac | overcloud-ce-soswiftstorage2 | UPDATE_COMPLETE | 2014-09-24T09:11:14Z |
 		+--------------------------------------+------------------------------+-----------------+----------------------+
 
-2.Identify the stack of the scale-out Proxy node.
-3.Remove the stack. 
+2. Identify the stack ID of the target scale-out Proxy node.
+3. Remove the stack. 
 
 		heat stack-delete <id>
-
 
 ##Verify the node removal {#verify-node-removal}
 
@@ -213,10 +203,6 @@ The following sample displays the removal of  **89581cb1-9c2e-46d6-8e0b-aa4518e7
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-**Related topics**
-
-* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
-
-
-
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

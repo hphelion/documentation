@@ -49,17 +49,18 @@ For more information and in-depth diagrams, see [About Scale-Out Swift](/helion/
 
 1. Deploy Starter Swift<br>*(completed as part of the HP Helion OpenStack cloud deployment)*
 3. Scale up or expand 
-	- [Deploy new Swift object storage](/helion/openstack/ga/services/swift/deployment-scale-out/)
-	-  [Add new Storage Servers](/helion/openstack/ga/services/swift/provision-nodes)
-	-  [Extend Swift Cluster](/helion/openstack/ga/services/object/swift/expand-cluster/)
-	- [Add New Scale-out Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/)
-	- [Add a disk to Starter object ring](/helion/openstack/ga/services/swift/deployment/add-disk-starter/)
-	- [Add a disk to the Scale-out Object ring](/helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
-	- [Add a disk to an Account Container ring](/helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
+	- [Deploy New Swift Object Storage](/helion/openstack/ga/services/swift/deployment-scale-out/)
+	-  [Add New Storage Servers](/helion/openstack/ga/services/swift/provision-nodes)
+	-  [Extend a Swift Cluster](/helion/openstack/ga/services/object/swift/expand-cluster/)
+	-  [Add a New Scale-out Object Node](/helion/openstack/ga/services/swift/deployment/add-disk-object-node/)
+	-  [Add a New Scale-out Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/)
+	-  [Add a Disk to a Scale-out Object Ring](/helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
+	-  [Add a Disk to an Account and Container Ring](/helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
+	-  [Add a Disk to the Starter Object Ring](/helion/openstack/ga/services/swift/deployment/add-disk-starter/)
 5. Shrink or scale down
-	- [Remove a disk from an Object Node]( /helion/openstack/ga/services/swift/deployment/remove-existing-disk/)
-	- [Remove a Proxy Node]( /helion/openstack/ga/services/swift/deployment/remove-proxy-node/ )
-	- [Removing a scale-out Object Storage Node]( /helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/ )
+	- [Remove a disk from an Object Node](/helion/openstack/ga/services/swift/deployment/remove-existing-disk/)
+	- [Remove a Proxy Node](/helion/openstack/ga/services/swift/deployment/remove-proxy-node/)
+	- [Removing a scale-out Object Storage Node](/helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/)
 6. Monitor
 	- [Monitor Swift Cluster](/helion/openstack/ga/services/object/swift/Monitor-cluster/)
 	- [Disk usage](/helion/openstack/ga/services/object/swift/Monitor-disk/)

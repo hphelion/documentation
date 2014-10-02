@@ -21,31 +21,18 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/swift/deployment-scale-out/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-disk-account-container/"> NEXT &#9654</a> </p> --->
 
 
-#Extend Swift Cluster
+#Extend a Swift Cluster
 
-HP Helion OpenStack&#174; allows you to extend Swift cluster in any of the followings ways:
+HP Helion OpenStack&#174; allows you to extend Swift cluster sin any of the followings ways:
 
-
-* [Add New Scale-out Object Node]( /helion/openstack/ga/services/swift/deployment/add-disk-object-node/) 
-* [Adding Disk to Scale-out Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
-* [Add New Scale-out Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/)
-* [Add Disk to Account and Container Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
-* [Add Disk to Starter Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-starter/)
+* [Add a New Scale-out Object Node]( /helion/openstack/ga/services/swift/deployment/add-disk-object-node/) 
+* [Add a New Scale-out Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/)
+* [Add a Disk to a Scale-out Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
+*  [Add a Disk to an Account and Container Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
+* [Add a Disk to the Starter Object Ring]( /helion/openstack/ga/services/swift/deployment/add-disk-starter/)
  
- 
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-**Related topics**
-
-* [Deploy Scale-out Swift Nodes](/helion/openstack/ga/services/swift/deployment-scale-out/)
-* [Provision Swift Node]( /helion/openstack/ga/services/swift/provision-nodes/)
-* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
-* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
-
-
-
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

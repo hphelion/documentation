@@ -23,60 +23,41 @@ PageRefresh();
 
 # Monitor Disk Usage
 
-Icinga service, which runs in the Undercloud, helps cloud admin to monitor the disk usage of Swift storage node (s).
+The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).
 
 
-##Prerequisite
+##Prerequisites
 
 * HP Helion OpenStack&#174; cloud is successfully deployed. 
 * Starter Swift nodes are functional by default as they are part of cloud deployment
-* Icinga service is active and running in the Undercloud
+* The Icinga service is active and running in the undercloud
 
 
 ##Monitoring Disk Usage of Swift 
 
-This checks that the file systems used by the servers are mounted. Also it checks the disk usage(percentage) for the devices used by Swift (/srv/node). Other file systems such as /usr or /var is not monitored. 
+Icinga checks the following:
 
+- That the file systems used by the servers are mounted. 
+- The disk usage (by percentage) for the devices in use by Swift (/srv/node). 
+
+Note that other file systems such as `/usr` or `/var` are not monitored. 
 
 Perform the following steps to monitor the usage of Swift disk:
 
-1. In the Undercloud Horizon, log in to Icinga Dashboard &lt;http://&lt;**Undercloud_IP**&gt;/icinga/&gt;. The default login credentials are as follows::
+1. In the undercloud Horizon dashboard, log in to the [Icinga Dashboard](http://<Undercloud_IP>/icinga/). The default login credentials are as follows::
 		
-	* Username- icingaadmin
-	* Password- icingaadmin 
+	* Username: *icingaadmin*
+	* Password: *icingaadmin* 
 
-2. Click **Status** on the left panel and then click **Host Detail**. 
+2. Click **Status** on the left panel and then click 
+<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b></a> (opens in a new window).
 
+3. In the **Host** column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.
+4. The <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host All Hosts</b></a> (opens in a new window) page opens.
 
-<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Details(opens in a new window)</a>
+6. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address &gt;</b> (opens in a new window)</a> to view the disk usage of the selected Swift node.
 
-<!---
-<img src="media/icinga_host-details.png"/> --->
-
-
-3.In the Host column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.  
-
-
-<a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host All Hosts (opens in a new window)</a>
-
-<!---
-
-<img src="media/swift_icinga_view-details.png"/> --->
-
-
-
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;. 
-
-
-<a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host &lt;Swift node IP address &gt;(opens in a new window)</a>
-
-<!---
-<img src="media/swift_icinga-disk-usage"/> --->
-
-Now, you can view the disk usage of the selected Swift node.
-
-
-Refer the following table for the status and message details.
+##Status Messages
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -115,15 +96,10 @@ Refer the following table for the status and message details.
     <td></td></tr>
 </table>
 
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
-**Related topics**
-
-* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
-
-
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
  
