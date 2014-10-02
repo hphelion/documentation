@@ -21,27 +21,36 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-#Provision Swift Node(s) 
+#Provisioning Swift Node(s) 
 
-This page describes the procedure to provision scale-out Swift nodes. All types of Swift nodes (object, proxy) will be provisioned similarly. But you cannot provision both types of nodes together.
+This page describes the procedure to provision scale-out Swift nodes. 
+**Caution**: Do not provision proxy and scale-out object nodes together as the requirements for each are different. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out object storage nodes. 
 
+* [Prerequisites](#Preq)
+* [Add a new physical server](#adding-physical-server-for-scale-out-Swift) 
+* [Provision the Swift node](#provision-swift-node)
+* [Verify the node deployment](#verify-swift-node-deployment) 
 
-* [Prerequisite](#Preq)
-* [Adding physical server for scale-out Swift](#adding-physical-server-for-scale-out-Swift) 
-* [Provision Swift node](#provision-swift-node)
-* [Verify Swift node deployment](#verify-swift-node-deployment) 
+##Prerequisites {#Preq}
 
-##Prerequisite {#Preq}
+A HP Helion OpenStack&#174; cloud must be deployed. This ensures that the Starter Swift nodes are installed and functional as they are part of the default HP Helion OpenStack cloud deployment.
 
+<<<<<<< HEAD
+You can check the health of the starter nodes using the following command. All nodes should be in **ACTIVE** status and the power state should be **Running**.
+=======
 * HP Helion OpenStack&#174; cloud is deployed.
 * Starter Swift nodes are functional by default as they are part of cloud deployment.
 
 You can check the health of starter Swift nodes using the nova list command as shown below. All nodes should be in '**ACTIVE**' status and power state should be '**Running**':
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
 
 	# nova list
 
 ##Adding physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
 
+<<<<<<< HEAD
+You must add a server to the cloud inventory to handle the increased number of nodes. 
+=======
 You must add a server to the cloud inventory so that you can scale out Swift nodes. 
 
 Perform the following steps to add a physical server for a scale-out Swift:
@@ -60,17 +69,23 @@ Perform the following steps to add a physical server for a scale-out Swift:
 	e. Disk capacity
 	
 	f. MAC address
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
 
-	**Note**: For HP servers you can use iLO to gather the above details.
+1. Note the server details. For HP servers you can use **iLO** to gather the required information.
+	- User name
+	- Password
+	- RAM
+	- CPU
+	- Disk capacity
+	- MAC address
 
-
-2. Log in to Seed. 
+2. Log in to the seed cloud. 
 
 		# ssh root@<Seed IP address> 
 
-3. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+3. When prompted for host authentication, type **yes** to allow the ssh connection to proceed.
 
-4. Add server details in the `baremetal.csv` configuration file  in the following format and upload the file to `/root`.
+4. Add server details in the ***baremetal.csv*** configuration file in the following format and upload the file to ***/root***.
 
 		<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>
 
@@ -78,7 +93,11 @@ Perform the following steps to add a physical server for a scale-out Swift:
 
 	- There must be one entry in this file for each baremetal system you intend to install.
 	- The first entry is used for the undercloud.
+<<<<<<< HEAD
+	- The second entry is the node with the weakest specifications (CPU/RAM/Disk size) of nodes in the overcloud.
+=======
 	- The second entry is the node with the lowest specifications (CPU/RAM/disk size) of nodes in the overcloud.
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
 
 	The following sample displays the `baremetal.csv` configuration file after adding server details.
 
@@ -86,11 +105,19 @@ Perform the following steps to add a physical server for a scale-out Swift:
 		E4:11:5B:B7:AD:CE,Administrator,gone2far,10.1.192.34,12,73728,70
 
 
+<<<<<<< HEAD
+5. Log in to the undercloud. 
+
+		# ssh heat-admin@<Undercloud IP address> 
+
+6. Add server details to ironic database using the following ***ironic*** command:
+=======
 5. Log in to undercloud. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 
 6. Add server details to the Ironic database using the following Ironic command:
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
 
  		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
@@ -134,55 +161,65 @@ Perform the following steps to add a physical server for a scale-out Swift:
 
 **Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. 
 
-
 Perform the following steps to provision the Swift node:
 
-1. Log in to Seed.
+1. Log in to the seed cloud.
 
 		# ssh root@<Seed IP address>
 
-2. Copy `ee-config.json` to root home directory.
+2. Copy the ***ee-config.json*** to the root home directory.
 
 		 # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-3. Edit the `overcloud-config.json` file to configure the following values as per your requirement:
+3. Edit the ***overcloud-config.json*** file to configure the following values:
  
  
 	 "so&#95;swift&#95;storage&#95;scale": &lt;number of object servers &gt;  , 
 	
 	 "so&#95;swift&#95;proxy_scale": &lt;number of proxy servers &gt;  ,
 
+<<<<<<< HEAD
+**Note**: While deploying a scale-out **proxy** node ensure that the value of "so&#095;swift&#095;storage&#095;scale" is unchanged. While deploying a scale-out **object** node ensure that the value of "so&#095;swift&#095;proxy&#095;scale" is unchanged.
+=======
 **Note**: While deploying the scale-out proxy node ensure that "so&#095;swift&#095;storage&#095;scale" is unchanged and while deploying the scale-out object node ensure that "so&#095;swift&#095;proxy&#095;scale" is unchanged.
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
  
-4.Enter the following command to source the `overcloud_config.json`  for the new values.
+4.Enter the following command to change the source for the ***overcloud_config.json *** file.
 
 	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
 5.Run the installer script to update the cloud.
 
-
 	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
-
-The cloud updates with the new nodes on successful operation.
-
 ##Verify Swift node deployment {#verify-swift-node-deployment}
+Verify that the new nodes were created and are functioning properly using the following commands:
 
+<<<<<<< HEAD
+1. Log in to the undercloud from the seed cloud.
+=======
 Ensure the deployment of the Swift node using the following commands:
 
 1. Log in to underloud from Seed.
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
 
 		# ssh heat-admin@<Undercloud IP address> 
 
-2. List the available Swift nodes.
+2. Generate a list of the available Swift nodes.
 
 		# nova list
 
-It displays available Swift nodes including the newly added node.
+The list should including the newly-added node(s).
 
 
 **Related topics**
 
+<<<<<<< HEAD
+* [Deploy scale-out Swift nodes](/helion/openstack/ga/services/swift/deployment-scale-out/)
+* [Extend Swift cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
+* [Monitor Swift cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
+* [Shrink Swift cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
+=======
 * [Deploy Scale-out Swift Nodes](/helion/openstack/ga/services/swift/deployment-scale-out/)
 * [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
 * [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
@@ -192,6 +229,7 @@ It displays available Swift nodes including the newly added node.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+>>>>>>> b3aceff53058b62996a68da6731f87ea6f4f9ecf
 
 ----
 ####OpenStack trademark attribution

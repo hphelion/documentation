@@ -24,24 +24,40 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-OpenStack Swift is a highly available, distributed, eventually consistent object/blob store. Organizations can use Swift to store lots of data efficiently, safely, and cheaply.
+HP Helion OpenStack&#174; introduces integral, built-in support for [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) to the cloud.
 
-Based on OpenStack Swift, HP Helion OpenStack&#174; object storage service is a redundant, scalable, durable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store large amount of unstructured data and retrieve objects in publicly accessible physical machine.   
+The HP Helion OpenStack&#174; object storage service includes a Swift cluster as a default element of cloud creation. This cluster is used to store data for internal services but can also be scaled out as necessary to store large amounts of end user data. 
 
-Swift is also designed to be horizontally scalable, allowing it to handle large number of simultaneous connections. It enables you to store, retrieve, and delete files and contents through a simple RESTFul API interface.
+Based on OpenStack&reg; Swift, the HP Helion OpenStack object storage service is designed to provide a safe, secure,  scalable way to store and retrieve large amounts of unstructured data and objects. The storage service is also horizontally scalable as necessary to handle large numbers of simultaneous connections. 
 
-A cloud storage container provides a way to organize your objects. An object can be any arbitrary data, including a document, image, video, backup file or any  data that is required by your application.
-
-Objects have a size limit of 5 GB. However, objects larger than 5 GB can be segmented and then concatenated together so that you can upload 5 GB segments and download a single concatenated object of any size. You can work with the segments and manifests directly with API requests.
-
-HP Helion OpenStack&#174; object storage service will have a Swift cluster by default as a part of cloud creation. This is used to store data for internal services like Glance, Sherpa and so on. It also allows user to scale-out the existing Swift cluster to store end user data. 
-
-
+**Node** - a host machine running one or more Swift services
+<br>
+**Proxy** **node** - node that runs Proxy services; also runs TempAuth<br>
+**Storage** **node** - node that runs Account, Container, and Object services<br>
+**Ring** - a set of mappings of Swift data to physical devices
 
 
+- [Provision a node](/helion/openstack/ga/services/swift/provision-nodes/)
+- Monitoring
+	- [Disk usage](/helion/openstack/ga/services/object/swift/Monitor-disk/)
+	- [Replication status](/helion/openstack/ga/services/object/swift/replica-status/)
+	- [Service health](/helion/openstack/ga/services/object/swift/health-check/)
+- Expand
+	- [Extend the Swift cluster](/helion/openstack/ga/services/object/swift/expand-cluster/)
+	- [Add New Scale-out Proxy Node](Add New Scale-out Proxy Node)
+	- Add disk starter object
+	- Add disk scale out object ring
+	- Add disk account container
+- Scale-out 
+	- scale-out swift
+	- Deploy scale-out nodes
+- Shrink
+	- 	Shrink a cluster
+	- 	Remove scale out object storage
+	- 	Remove a proxy node
+	- 	Remove an existing disk
+- Diagnose disk health
 
-
-HP Helion OpenStack&#174; introduces the support of scale-out Swift. For more details, refer [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
