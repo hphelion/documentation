@@ -7,10 +7,10 @@ product: devplatform
 ---
 
 #Resources for Application Developers
-###Sample Workbook
-HP has created a [Workbook](/helion/devplatform/workbook) with multiple small sample applications to walk you through understanding and exercising the Development Platform services.
+###Code Samples
+HP has created a series of small [sample applications](/helion/devplatform/workbook) to walk you through understanding and exercising the Development Platform services.
 
-Each sample in the Workbook builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages. 
+Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages. 
 
 ###Language-Specific Development
 
