@@ -98,3 +98,8 @@ Once your install is complete, and you do not want to use the automated tear-dow
 Once the installation completes, you can load the ALS Console at the URL provided at the end of the `assemble.py script`. After you log into the Console, you can access the ALS User Documentation for instructions to create users and deploy applications.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+

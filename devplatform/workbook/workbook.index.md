@@ -5,8 +5,8 @@ permalink: /helion/devplatform/workbook/
 product: devplatform
 
 ---
-# HP Helion Development Platform Workbook
-This Workbook is designed to exercise all the services which make up the HP Helion Development Platform. 
+# HP Helion Development Platform Samples
+These samples are designed to exercise all the services which make up the HP Helion Development Platform. 
 
 For best results, work with each sample in the order that they are provided, as each one builds on the knowledge provided in the previous sample. 
 
@@ -19,9 +19,7 @@ In order to download and deploy these sample applications, you must have the nec
 - You must have a Stackato instance available. 
 - The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
  
- 
-
-##Sample Workbook
+##Samples
 1. Hello World <br>
 The Hello World sample is as simple as it gets: Hello World! <br>This sample is available in the following languages:
 	- [JAVA](/helion/devplatform/workbook/helloworld/java/)
