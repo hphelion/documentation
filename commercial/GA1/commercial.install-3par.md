@@ -47,7 +47,7 @@ The following prerequisites need to be performed before configuring 3PAR StoreSe
 
 2 - **Install IMC**
 
-  * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. You may refer to the URL provided in the undercloud Horizon Dashboard of HP Helion Openstack. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.-->
+  * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. You may refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.-->
 
   * Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.
 

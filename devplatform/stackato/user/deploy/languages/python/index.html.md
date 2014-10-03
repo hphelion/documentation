@@ -67,9 +67,9 @@ user interface or a command line client.  To learn more see:</p>
 communicate directly with the <a class="reference external" href="http://docs.hpcloud.com/api">Helion REST APIs</a>
 with a client or the Python SDK.  Currently, the Python SDK is very
 limited in features, so you will probably be forced to use the CLIs.</p>
-<p>The unified Python Openstack Client has pretty good coverage of OpenStack
+<p>The unified Python OpenStack Client has pretty good coverage of OpenStack
 features except for network (Neutron) and object store (Swift).  To get full
-coverage of features you would need to instal the following CLIs in your
+coverage of features you would need to install the following CLIs in your
 <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> file (using our earlier cherrypy example):</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">cherrypy</span>
 <span class="l-Scalar-Plain">python-neutronclient</span>
