@@ -39,7 +39,7 @@ To connect to the HP Helion, follow these steps:
             :hp_auth_uri => ENV['OS_AUTH_URL'],
             :hp_access_key => ENV['OS_USER'],
             :hp_secret_key => ENV['OS_API_KEY'],
-            :hp_tenant_id =>  ENV['OS_TENANT'] ,
+            :hp_tenant_id =>  ENV['OS_TENANT'],
             :hp_avl_zone => ENV['OS_REGION']
           }
        end
