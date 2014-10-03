@@ -65,7 +65,7 @@ To ensure successful installation, please read through the following topics befo
 
 The following diagram depicts the required network topology for a KVM installation.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
 
 For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
@@ -101,7 +101,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 <td><b> Installation package </b></td><td><b>File name</b></td></tr>
 
 <tr style="background-color: white; color: black;">
-<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack.tgz</td></tr>
+<td>HP Helion OpenStack </td><td>HPHelionOpenStack.tgz</td></tr>
 
 
 </table>
