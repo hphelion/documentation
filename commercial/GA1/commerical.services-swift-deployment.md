@@ -275,11 +275,11 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 		# ringos list-swift-nodes -t  all
  
-4. Copy account, container, object-0 , and generated `object-1.ring.gz` files to all Swift nodes and press **yes** when asked to authenticate node. 
+4. Copy account, container, object-0, and generated `object-1.ring.gz` files to all Swift nodes and press **yes** when asked to authenticate node. 
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
 
-In the following example account, container, object-0 , and generated `object-1.ring.gz` are copied to all the nodes:
+In the following example account, container, object-0, and generated `object-1.ring.gz` are copied to all the nodes:
 
 	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.22
 	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.29

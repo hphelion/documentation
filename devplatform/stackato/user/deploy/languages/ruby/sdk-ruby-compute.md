@@ -662,7 +662,7 @@ Model Server Volume Operations
                   "volume_id"=>"65904",
                   "delete_on_termination"=>"0",
                   "device_name"=>"vda"
-              }] ,
+              }],
               {
                'security_groups' => ["mysecgroup"],
                'key_name' => "mykey"

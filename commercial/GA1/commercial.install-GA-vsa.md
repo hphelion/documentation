@@ -166,7 +166,7 @@ The following diagram gives an overview of the steps involved in integrating Sto
 
 3a - **Run update cloud script to provision VSA node**
 
-   * After the [enrollment of the new Baremetal server](#deployment-vsa) in the Undercloud , log in to Seed cloud.
+   * After the [enrollment of the new Baremetal server](#deployment-vsa) in the undercloud, log in to the seed cloud.
 
    * Update overcloud.json file for StoreVirtual deployment and apply the configuration.
 	
