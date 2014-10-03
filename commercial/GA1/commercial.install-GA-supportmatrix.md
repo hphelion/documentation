@@ -297,7 +297,7 @@ The following table lists the minimum requirements for each type of node.
 <td rowspan="4"> Undercloud Controller</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td>500GB – 2TB</td>
+<td>500GB - 2TB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>

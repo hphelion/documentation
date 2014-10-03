@@ -181,7 +181,7 @@ The following hardware requirement is required to install HP Helion OpenStack.
       * To stay powered off in the event of being shutdown rather than automatically restarting
     * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
 
-* An installer system, called the *seed cloud host*, to run the baremetal install and host the Seed VM with the following configuration:
+* A seed VM host, also called the installer system, to run the baremetal install and host the Seed VM with the following configuration:
 
     * A minimum of 16 GB of physical memory
     * A minimum of 1 TB of disk space
@@ -477,7 +477,7 @@ Currently, supported DNS servers and networks include:
 
 ## High availability<a name="highavailability"></a>
 
-The HP Helion OpenStack High Availability (HA) architecture ensures that cloud services are deployed in a manner that is resilient and remains available and functional in the event of Single Points Of Failure (SPOF) of software or hardware.
+The HP Helion OpenStack High Availability (HA) architecture ensures that cloud resources are always available on request, resulting in uninterrupted operations for users. 
 
 The OpenStack services are deployed in a three node Controller cluster, which ensures availability of stateless services like API services and stateful services like MySQL or RabbitMQ.
 
