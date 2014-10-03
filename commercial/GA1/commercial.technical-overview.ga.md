@@ -151,7 +151,7 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 	
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack beta (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
 
 
 ###ESX environment<a name="esx-env"></a>
