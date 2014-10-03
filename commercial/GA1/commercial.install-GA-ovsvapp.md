@@ -426,7 +426,7 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 
 - Install DNS as a service (DNSaaS) (Optional).
 
-	If you have not installed DNSaaS, see [DNSaaS Beta Installation and Configuration](/helion/openstack/install/dnsaas/).
+	If you have not installed DNSaaS, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 	DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
