@@ -89,12 +89,14 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
 	<td><b> Installation package </b></td><td><b>File name</b></td>
-<tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack</td><td>HPHelionOpenStack.tgz</td></tr>
-<tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack vCenter Proxy Appliance</td><td>overcloud_vcenter_compute_proxy.ova</td></tr>
- <td>HP Helion OpenStack VCN Agent Appliance</td><td>overcloud-esx-ovsvapp.ova</td></tr>
-</table>
+	<tr>
+ 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+	<tr>
+	<td>HP Helion OpenStack vCenter Proxy Appliance</td>
+	<td>overcloud_vcenter_compute_proxy.ova</td></tr>
+ 	<td>HP Helion OpenStack VCN Agent Appliance</td>
+	<td>ovsvapp.tgz</td></tr>
+	</table>
 
 
 ## Installing HP Helion OpenStack<a name="install"></a>

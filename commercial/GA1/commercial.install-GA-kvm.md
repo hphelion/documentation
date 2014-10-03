@@ -101,7 +101,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 <td><b> Installation package </b></td><td><b>File name</b></td></tr>
 
 <tr style="background-color: white; color: black;">
-<td>HP Helion OpenStack beta </td><td>HPHelionOpenStack.tgz</td></tr>
+<td>HP Helion OpenStack beta </td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
 
 
 </table>
