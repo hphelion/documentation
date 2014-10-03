@@ -88,7 +88,7 @@ The sample output of the above command is given below:
 
 ###Add StoreVirtual clusters as a backend for the cloud {#add-backend}
 
-The VOLUME&#095;BACKEND&#095;NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME&#095;BACKEND&#095; value to a specific volume type, created in the Overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
+The VOLUME&#095;BACKEND&#095;NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME&#095;BACKEND&#095; value to a specific volume type, created in the overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
 
 To add a backend, enter the following command
 
@@ -277,7 +277,7 @@ The sample output of the above command is given below:
 * [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
 * [Update Overcloud](#update-cloud) 
 
-The backends configured in the Undercloud Sirius database will not be effective until the Overcloud Cinder configuration is updated.
+The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.
 
 ### Generate StoreVirtual backend configuration JSON {generate-storevirtual-config}
 You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once you create the backend.
@@ -362,7 +362,7 @@ The sample output of the above command is given below:
 
 ### Update Overcloud configuration JSON {#update-overcloud-json}
 
-Update the `/root/overcloud-config.json` in the Seed node with the generated backend data. Add the StoreVirtual backend configuration as a JSON key-pair with key **'vsa'** and StoreServ backend configuration with key **'3par'** to the existing JSON.
+Update the `/root/overcloud-config.json` in the Seed node with the generated backend data. Add the StoreVirtual backend configuration as a JSON key-pair with key **vsa** and StoreServ backend configuration with key **3par** to the existing JSON.
 
 A sample of the file is before and after the update is give below:
 

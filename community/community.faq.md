@@ -59,7 +59,7 @@ It is free to download. An optional support package is available to purchase fro
 
 OpenStack on OpenStack, or TripleO, is the OpenStack community's official project for deployment of OpenStack systems. It builds on the core resource-provisioning strengths of OpenStack technology. It enables you to administer your cloud, and deploy and maintain virtual and baremetal installations of the OpenStack platform using the same APIs you are familiar with for deploying workloads on an OpenStack cloud. A template-based deployment engine (using OpenStack Heat) allows for rigorous testing and reliable, repeatable deployments of known configurations.
 
-A TripleO installation includes a Seed, the Undercloud, and the Overcloud. 
+A TripleO installation includes a seed, the undercloud, and the overcloud. 
 
 ####What is available in the current version? {#preview}
 
@@ -551,17 +551,17 @@ $ ssh 192.0.2.1 bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_installer
 
 The minimum configuration is seven physical servers:
 
-* One VM for the Seed 
-* One Undercloud Server
-* Three Overcloud Management Servers
-* Two Swift Object Servers
+* One VM for the seed 
+* One undercloud server
+* Three overcloud management servers
+* Two Swift object servers
 * One compute Server
 
 The maximum supported configuration is 36 servers. 
 
 ####How do I install and set up the HP Helion OpenStack Community edition Admin Node? #### {#installandsetup}
 
-You are recommended to only install the Admin Node on a virtual machine. 
+It is recommended to install the Admin Node on a virtual machine only. 
 Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
 
 1. Configure the hypervisor host's network. The host must provide connectivity to the virtual machine Admin Node on an isolated private network 
@@ -596,7 +596,7 @@ to all the baremetal nodes' port eth0. And the virtual machine Admin Node must a
 
 The seed machine is a single node that is effectively just an installer.  Its sole purpose is to create the undercloud, and that is all.  This is the equivalent of your workstation, laptop, or maybe staff-shell (if you ever used it).  It uses nova, glance and heat to install the undercloud.
 
-This is not a full OpenStack installation, it is a cut-down installation providing only the software required in order to enable the installation of the undercloud onto physical systems in the data center.
+This is not a full OpenStack installation; it is a cut-down installation providing only the software required in order to enable the installation of the undercloud onto physical systems in the data center.
 
 ####How do I create a VM for the Seed based on the CloudOS specifications? #### {#createVM} 
 
