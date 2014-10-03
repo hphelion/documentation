@@ -44,37 +44,45 @@ This page covers the following topics:
     * [Block Storage with StoreVirtual VSA](#block-storage)
     * [Block Storage with 3PAR StoreServ](#block-storeserv)
     * [Object Storage with Swift](#object-storage)
-    * [Networking](#networking)
+    * [Cinder Availability Zones](#cinder-avail)
 * [Highly Available Cloud Applications and Workloads](#ha-workloads)
+* [More information](#more-info)
 
 ##High Availability concepts overview<a name="concepts-overview"></a>
 
-Cloud administrators of highly available cloud services ensure that resources are always available on request to enable uninterrupted operations. The projects are able to provision and manage the compute, storage, and network infrastructure resources, i.e. Nova compute VMs, Cinder volumes, Neutron networks, etc. at any given point in time. This means that the Horizon Dashboard, and various OpenStack APIs for Nova, Cinder, Neutron, Swift, etc. must be reachable and be able to fulfill user requests. The result is **Highly Available Cloud Services**.
+Highly Available Cloud Services ensures that cloud resources are always available on request, resulting in uninterrupted operations for users. 
+
+Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be able to fulfill user requests. 
 
 <a href="javascript:window.open('/content/documentation/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Resilient Cloud Infrastructure (opens in a new window)</a> 
 
+The infrastructure that provides these features is called a **Highly Available Cloud Infrastructure**.
 
-The resource (compute, storage, network) reliability in a particular cloud can be assessed in the following way: 
+Once the Compute, Storage, Network resources are deployed, users expect these resources to be reliable in the following ways:  
 
 * If the Nova-Compute KVM Hypervisors/servers hosting the project compute virtual machine(VM) dies and the compute VM is lost along with its local ephemeral storage, the re-launching of the dead compute VM succeeds because it launches on another Nova-Compute KVM Hypervisor/server.
 
     * If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
 
-* Data stored in Cinder volumes is always available for I/O access and volumes are never lost by the service provider.
+* Data stored in Block Storage service volumes is always available and volumes are never lost by the service provider.
 
-* Data stored in Swift is always available and is never lost by the cloud service provider.
+* Data stored by the Object Operation service is always available and is never lost by the cloud service provider.
 
-* Network resources such as routers, subnets, and floating IP addresses provisioned by Neutron are never lost by the cloud service provider and continue to provide a network path to the project compute VMs. 
+* Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are never lost by the cloud service provider and will continue to provide a network path to the Compute VMs. 
 
-The infrastructure that provides these features is called a **Highly Available Cloud Infrastructure**.
+The infrastructure that provides these features is called a Highly Available Cloud Infrastructure.
 
-HP Helion OpenStack Nova-Compute KVM Hypervisors do not support transparent HA to project applications;  the onus is on the project application provider to deploy their applications in a redundant and highly available manner, using multiple VMs spread appropriately across availability zones, routed through the load balancers and made highly available through clustering. These are known as **Highly Available Cloud-Aware Tenant Workloads**.
+**Highly Available Cloud-Aware Tenant Workloads**
+
+HP Helion OpenStack Compute hypervisors do not support transparent high availability for user applications; as such, the project application provider is responsible for deploying their applications in a redundant and highly available manner, using multiple VMs spread appropriately across availability zones, routed through the load balancers and made highly available through clustering. 
+
+These are known as Highly Available Cloud-Aware Tenant Workloads.
 
 ### Scope of High Availability: Protection against Single Points of Failure(SPOF)<a name="scope-ha"></a>
 
-In order to achieve this high availability of services, infrastructure and workloads&#151;a contained, well defined, addressable problem&#151;we define the scope of HA to be limited to protecting these only against single points of failure (SPOF).
+In order to achieve this high availability of services, infrastructure and workloads, we define the scope of HA to be limited to protecting these only against single points of failure (SPOF).
 
-The single points of failure include:
+Single points of failure include:
 
 1. **Hardware SPOFs**: Hardware failures can take the form of servers failing, memory going bad, power failing, hypervisors crashing, hard disks dying, NIC cards breaking, switch ports failing, network cables loosening, and so forth.
 
@@ -276,7 +284,7 @@ The 3PAR StoreServ device family has several layers of redundancy built in throu
 
 You will typically connect the 3PAR StoreServ devices to the compute servers using two redundant SAN fabrics. The Cinder 3PAR driver supports multipath connectivity between the compute servers and the 3PAR devices, ensuring that the data I/O path remains available in the event of any single point of failure in the hardware path spanning – server HBA, port, switches, and the ports of the 3PAR devices.
 
-###Cinder Availability Zones
+###Cinder Availability Zones {#cinder-avail}
 
 Cinder availability zones are not supported for general consumption in the current release.
 
@@ -327,7 +335,7 @@ Some of guidelines for consideration:
     *    DNS as a Service(DNSaaS)
     *    Messaging as a Service (MSGaaS)
 
-## More information ##
+## More information ## {#more-info}
 
 [OpenStack High-availability Guide](http://docs.openstack.org/high-availability-guide/content/ch-intro.html)
 
