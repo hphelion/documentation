@@ -38,7 +38,7 @@ It is important to read through this page before starting your installation as i
 
 ##Prerequisites<a name="preq"></a>
 
-* HP Helion Openstack Installation
+* HP Helion OpenStack Installation
 * DNSaaS Installer Image
 * Obtained credentials of the user+tenant where the service is to be deployed ("Target Credentials"):
 	* This user should have the **admin** and  **&#095;member_** roles.

@@ -78,7 +78,7 @@ Perform the following steps to monitor the usage of Swift disk:
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
 	<td>Disk space low</td>
-    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion Openstack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
