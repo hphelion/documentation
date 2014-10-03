@@ -89,7 +89,7 @@ To begin the installation:
 
 1. To prepare the Installer and to ensure that prerequisites are met, use this command:
 
-    # ./install_installer.sh
+    `# ./install_installer.sh`
     
 
 
@@ -134,12 +134,11 @@ To run the installer:
 
 1. Install the Development Platform using this command:
 
-    # devplatform-installer -install
-
+    `# devplatform-installer -install`
 
 1. Once the installation is complete, verify the following output:
 
-    2014-06-17 16:53:19.765       INFO Install Complete
+    `2014-06-17 16:53:19.765       INFO Install Complete`
 
 ## Installing the Messaging Service<a name="installing-the-messaging-service"></a>
 
@@ -337,3 +336,6 @@ To configure the Marketplace Service:
 
 	**Service User Password (Required)** -- The password for the Admin user that is currently logged in. This password **MUST** match the password used to log in to Horizon.
    
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

@@ -39,17 +39,21 @@ Each sample builds on the previous one and all source code is provided for you t
 - [The Management Console](/als/v1/user/console/)
 - [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
 
+<!-- Removed 10/3/14; saved here in case we want to bring this content over at some later point so we don't have to search for it.
+
 Commands available through the developer API URL and the integration API URL.
 
 - [Root Admin API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_Root_Admin.html)<br>
 - [Domain Admin API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_Domain_Admin.html)<br>
 - [User API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_User.html)
+-->
 
 ###Best Practices
 
 - [The 12-Factor App](http://12factor.net/)
 - [Tips from CloudFoundry](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
-- [Shared Nothing architecture](http://en.wikipedia.org/wiki/Shared_nothing_architecture)
 
+<!-- removed 10/3/14 
 ###HP Helion OpenStack Development Community
 Join the [HP Helion developer forum](https://community.dev.hp.com/t5/Helion-Development-Platform/bd-p/cloud_board) or post on the [HP forums](https://connect.hpcloud.com/).
+--->

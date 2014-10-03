@@ -31,4 +31,8 @@ Before installing the Development Platform, you must first install [HP Helion Op
 ###Legal###
 * [Open source license and software license agreements](/helion/openstack/3rd-party-license-agreements/)
 * [End User License Agreement (EULA)](/helion/openstack/eula/)
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
  
