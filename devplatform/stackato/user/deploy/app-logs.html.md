@@ -151,19 +151,19 @@ software or services:
 
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
 2.  In the Dashboard screen, click *Add Systems*.
-    <img src="/content/devplatform/stackato/images/ppt11.png" />
-    <img src="/content/devplatform/stackato/images/logo.png" />
+    <img src="/content/documentation/devplatform/stackato/images/ppt11.png" />
+    <img src="/content/documentation/devplatform/stackato/images/logo.png" />
  
 3.  In the Setup Systems screen under *Other log methods*, click
     *Alternatives*.
-    <img src="/content/devplatform/stackato/images/ppt21w.png" />
+    <img src="/content/documentation/devplatform/stackato/images/ppt21w.png" />
  
 4.  Choose option C: *My system's hostname changes* and give it a
     suitable name.
-    <img src="/content/devplatform/stackato/images/ppt31.png" />
+    <img src="/content/documentation/devplatform/stackato/images/ppt31.png" />
 
 5.  Note the **port number**.
-    <img src="/content/devplatform/stackato/images/ppt41.png" />
+    <img src="/content/documentation/devplatform/stackato/images/ppt41.png" />
 
 6.  Enable application logging (via udp) by executing the following client command:
 
@@ -174,19 +174,19 @@ Loggly supports JSON format with minor configuration changes as shown below.
 
 1. [Create an account for Loggly](https://app.loggly.com/pricing)
 1. Under *Incoming Data* tab, click *Add Input*.
-	- 	<img src="/content/devplatform/stackato/images/loggly11.png" />
+	- 	<img src="/content/documentation/devplatform/stackato/imagesloggly11.png" />
 1. In the Add Input screen:
  	- Choose *Syslog UDP or TCP*
  	- Choose *Combination Log Type*
  	- [Optional] For JSON Logging, Choose UDP or TCP **with Stripe** and enable **JSON Logging**. (for system logs)
- 	<img src="/content/devplatform/stackato/images/loggly21.png" />
+ 	<img src="/content/documentation/devplatform/stackato/images/loggly21.png" />
 1.  If we want to accept logs from any Application Lifecycle Service nodes or applications, modify the Allowed Devices section:
  	- Click *Add device*
-	<img src="/content/devplatform/stackato/images/loggly31.png" />
+	<img src="/content/documentation/devplatform/stackato/images/loggly31.png" />
  	-   Add IP Address 0.0.0.0/0 when prompted
- 	<img src="/content/devplatform/stackato/images/loggly41.png" />
+ 	<img src="/content/documentation/devplatform/stackato/images/loggly41.png" />
 1.  Turn off discovery since we allowed all devices. Also note down the **port number**.
- 	<img src="/content/devplatform/stackato/images/loggly51.png" />
+ 	<img src="/ccontent/documentation/devplatform/stackato/images/loggly51.png" />
 1. Run **one** of the following client commands to create the log drain:
 
 
@@ -199,15 +199,15 @@ Splunk supports JSON format without further configuration.
 
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
-	<img src="/content/devplatform/stackato/images/splunk11.png" />
+	<img src="/content/documentation/devplatform/stackato/images/splunk11.png" />
 3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP).
-	<img src="/content/devplatform/stackato/images/splunk21.png" />
+	<img src="/content/documentation/devplatform/stackato/images/splunk21.png" />
 4.  In the Add new Source screen:
 	-   Select a TCP/UDP port greater than **9999**
 	-   Give it a suitable **Source name**.
 	-   Set sourcetype to **Manual**
 	-   Leave Source Type **empty**
-	<img src="/content/devplatform/stackato/images/splunk31.png" />
+	<img src="/content/documentation/devplatform/stackato/images/splunk31.png" />
 
 5.  Run the following client command to create the log drain: 
 `helion drain add drain-name udp://splunk-server-address:port#`

@@ -30,6 +30,8 @@ HP Cloud OS for Moonshot Patch release 1.2 covers the following information:
 
 * [Known issues](#known-issues) 
 
+* [Bash vulnerability](#bash-vulnerability)
+
 * [For further information](#for-further-information)
 
 These Patch Notes include updates to information presented in the HP Cloud OS for Moonshot 1.10 [Release Notes](/cloudos/moonshot/prepare/releasenotes).
@@ -107,12 +109,65 @@ Provisioning may fail in the following scenarios:
 4. In the Single Chassis View, click force refresh icon to restart Moonshot discovery.
 
 5. Wait for 5-10 minutes for Nova database to update. 
-	 
+
+
+##Bash vulnerability {#bash-vulnerability}
+
+
+Bash and the Operating System keep track of the set of environment variables.The bash vulnerability is related to how Bash processes environmental variables passed by the operating system or by a program calling a Bash-based script. By crafting an environment variable with a specific structure, the bash security can be broken.
+
+
+To protect system from bash vulnerability, perform the following steps:
+
+1. Ensure that no  operations are being performed on any of the nodes.
+
+2. To get the IP address of the nodes, do the following:
+ 
+   * In the Operational Dashboard, click **Manage Nodes** to open the Manage nodes page.
+  
+   * Click each node to view the node details.
+
+	**Note**: By default, the IP address of the Admin Node is *192.168.124.10*. This should be accessible from the Windows or Linux client.
+
+2. Download the bash package from the following URL to your Windows or Linux client.
+	
+	[http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5&#095;_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb)
+
+2. Copy the downloaded bash package on all the nodes (Admin Node, Controller Node and Baremetal Host(s)).
+
+    	scp <location of the package> <user home directory>
+	
+3. Perform the following steps on each of the nodes:
+
+   * Login as root
+ 
+	     	sudo -i 
+   
+   * Verify the current version of bash 
+
+			dpkg –s bash
+
+        The above command looks for the information on your bash package and displays the version that you are using. If the version displayed is  lower than `bash_4.2-2ubuntu2.5`, install the bash package by performing  next steps else you do not need to install the bash package.
+
+   * Install the bash package 
+
+			dpkg –i <location of the bash package>
+
+   * Verify the bash version again after installation.
+
+			dpkg –s bash
+
+		If the displayed package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
+
+4. After successful upgrade on all the nodes, you can start working with your cloud.
+
+
 ##For further information## {#for-further-information}
 
 For additional related information on HP Cloud OS for Moonshot, see:
 
-* [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): Provides the topics listed below, plus FAQs, video tutorials, and more.
+* [HP Cloud OS for Moonshot documentation web site](/cloudos/moonshot/): 
+* Provides the topics listed below, plus FAQs, video tutorials, and more.
 
 * [Building Images](/cloudos/moonshot/manage/image-builder/): Provides the steps to build the images for Linux and Windows.
 

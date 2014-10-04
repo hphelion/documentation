@@ -4,9 +4,118 @@ permalink: /als/v1/user/deploy/languages/python/
 ---
 <!--PUBLISHED-->
 
-Python[](#python "Permalink to this headline")
-===============================================
+<h1>Developing In Python<a class="headerlink" href="#developing-in-python" title="Permalink to this headline"></a></h1>
+<p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
+Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
+advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+to enable successful development are available in Python.</p>
+<div class="section" id="application-lifecycle-services">
+<h2>Application Lifecycle Services<a class="headerlink" href="#application-lifecycle-services" title="Permalink to this headline"></a></h2>
+<p>Application Lifecycle Services (ALS), a CloudFoundry-based Platform as a
+Service, provides a means to execute Python applications on a managed platform.
+Deploying Python applications to the platform is normally done using a built-in
+<a class="reference external" href="https://github.com/ActiveState/stackato-buildpack-python">Python buildpack</a>.
+In order to deploy an application user a Python buildpack, you will need the
+following at the top level of your application:</p>
+<ul class="simple">
+<li>A Procfile with the command to run the application.  If the <tt class="docutils literal"><span class="pre">wapiti.py</span></tt>
+file was the file that started your application, you might use something
+like:</li>
+</ul>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">web</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">python$PYTHON_VERSION wapiti.py</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>A <tt class="docutils literal"><span class="pre">stackato.yml</span></tt> file with at least your application name.  You may
+also place other configuration information in this file such as module
+requirements.  The minimal file would look like:</li>
+</ul>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">wapiti</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>If your module requirements are not in the <tt class="docutils literal"><span class="pre">stackato.yml</span></tt> file, you
+might need a <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> or <tt class="docutils literal"><span class="pre">requiremenbts.pypm</span></tt> (pypm) file.
+For example your <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> may contain:</li>
+</ul>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">cherrypy</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Possibly a <tt class="docutils literal"><span class="pre">runtime.txt</span></tt> file if the application is going to run some
+other version of Python other than Python 2.7 (the default).  If your
+application was to use Python 3.3 for example:</li>
+</ul>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">python-3.3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Finally, you will need a file to launch your application.  For this
+example, we have been talking about a <tt class="docutils literal"><span class="pre">wapiti.py</span></tt> file which would
+launch the application.</li>
+</ul>
+<p>Management of the deployed application and its services happens through a web
+user interface or a command line client.  To learn more see:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/languages/python/">Working with applications in Python</a></li>
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The stackato.yml reference</a></li>
+</ul>
+</div>
+<div class="section" id="controlling-hp-helion-with-your-application">
+<h2>Controlling HP Helion with your Application<a class="headerlink" href="#controlling-hp-helion-with-your-application" title="Permalink to this headline"></a></h2>
+<p>If your Python application is going to control HP Helion resources, it can
+communicate directly with the <a class="reference external" href="http://docs.hpcloud.com/api">Helion REST APIs</a>
+with a client or the Python SDK.  Currently, the Python SDK is very
+limited in features, so you will probably be forced to use the CLIs.</p>
+<p>The unified Python OpenStack Client has pretty good coverage of OpenStack
+features except for network (Neutron) and object store (Swift).  To get full
+coverage of features you would need to install the following CLIs in your
+<tt class="docutils literal"><span class="pre">requirements.txt</span></tt> file (using our earlier cherrypy example):</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">cherrypy</span>
+<span class="l-Scalar-Plain">python-neutronclient</span>
+<span class="l-Scalar-Plain">python-openstackclient</span>
+<span class="l-Scalar-Plain">python-swiftclient</span>
+</pre></div>
+</div>
+<p>Using the cherrypy example, you could implement a simple web server to show
+volumes.  Obviously, this needs to run under HTTPS:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">cherrypy</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
 
+<span class="k">class</span> <span class="nc">VolumeShow</span><span class="p">:</span>
+    <span class="nd">@cherrypy.expose</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">        &lt;html&gt;&lt;body&gt;</span>
+<span class="s">        &lt;form method=&#39;post&#39; action=&#39;/posted/&#39;&gt;</span>
+<span class="s">        User: &lt;input name=&quot;username&quot;/&gt;&lt;br&gt;</span>
+<span class="s">        Password: &lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;&lt;br&gt;</span>
+<span class="s">        Project: &lt;input name=&quot;project&quot;/&gt;&lt;br&gt;</span>
+<span class="s">        Auth URL: &lt;input name=&quot;url&quot;/&gt;&lt;br&gt;</span>
+<span class="s">        Region: &lt;input name=&quot;region&quot;/&gt;&lt;br&gt;</span>
+<span class="s">        Volume: &lt;input name=&quot;name&quot;/&gt;&lt;br&gt;</span>
+<span class="s">        &lt;input type=&#39;submit&#39; value=&#39;Submit&#39; /&gt;</span>
+<span class="s">        &lt;/form&gt;&lt;/body&gt;</span>
+<span class="s">        &lt;/html&gt;</span>
+<span class="s">        &quot;&quot;&quot;</span>
+
+    <span class="nd">@cherrypy.expose</span>
+    <span class="k">def</span> <span class="nf">posted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">project</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;OS_USERNAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;OS_PASSWORD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">password</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;OS_REGION_NAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;OS_PROJECT_NAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">project</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;OS_AUTH_URL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&quot;openstack&quot;</span><span class="p">,</span> <span class="s">&quot;volume&quot;</span><span class="p">,</span> <span class="s">&quot;show&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">],</span>
+                             <span class="n">env</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s">&quot;&lt;title&gt;Volume </span><span class="si">%s</span><span class="s">&lt;/title&gt;</span><span class="se">\n</span><span class="s">&lt;pre&gt;</span><span class="si">%s</span><span class="s">&lt;/pre&gt;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That example used the unified OpenStack CLI.  A similar thing would work for
+the network or object store clients.</p>
+   
 By default, Application Lifecycle Service uses the built-in Python
 [*Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks) to deploy Python
 applications. To deploy applications using this buildpack, your

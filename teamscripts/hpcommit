@@ -3,7 +3,7 @@
  
 SOURCEVERSION=`sed -n '6p' < ~/git/documentation/teamscripts/hpcommit | sed 's/THISVERSION=//'`
 #The THISVERSION line, below must remain line 6.
-THISVERSION=4
+THISVERSION=6
  
  
 if [[ $THISVERSION < $SOURCEVERSION ]]
@@ -223,7 +223,7 @@ echo "Summary:  For the files listed above, set the publish comment"
 echo "to $SHOULDBE (adding, if it is missing),"
 echo "then commit with the following message:"
 echo ""
-echo "$MESSAGE"
+echo "$MESSAGE hpcommit"
 echo ""
 echo "and push to the documentation repository."
 echo ""
@@ -278,10 +278,13 @@ w=`grep "$WRONG" $i`
 				fi
 				
 				echo $i has no comment.  Adding $SHOULDBE.
-				line=`grep -n product: $i | sed 's/:.*//'`
-				line=$((line+2))
-				echo $line
-				sed -i "$linei$SHOULDBE" $i
+				
+				line=`grep -n "\-\-\-" $i | sed -n 2p | sed 's/:.*//'`
+				line=$((line+1))
+				 
+				sed -i "$line i $SHOULDBE" $i
+				
+			 
 			fi
 	fi	
 done
@@ -299,7 +302,7 @@ for i in `echo "$FILELIST"`
 	git add $i
 	echo ""
 	echo "====Committing File====="
-	git commit -m \""$MESSAGE"\" $i
+	git commit -m "$MESSAGE hpcommit" $i
 
 done
 echo ""
@@ -312,6 +315,7 @@ git push
 echo "Push complete.  
 
 If you want to see your changes in the central git repository, load the following URL in your browser: https://git.hpcloud.net/DevExDocs/documentation/tree/development/"
+
 exit 0		
 		
  
