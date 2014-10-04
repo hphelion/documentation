@@ -146,12 +146,12 @@ To begin the installation:
 
 [HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-The download file is named: `Helion_Openstack_Community.tar.gz`
+The download file is named: `ce_installer.gz`
 
 3. Extract the installation software to the root user's home directory:
 
     	# cd /root
-    	# tar zxvf /{full path to downloaded file from step 2}/Helion_Openstack_Community.tar.gz
+    	# tar zxvf /{full path to downloaded file from step 2}/ce_installer.gz
 
 
 This creates and populates a `tripleo/` directory within root's home directory.
