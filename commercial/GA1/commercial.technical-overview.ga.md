@@ -167,11 +167,10 @@ The following diagram depicts a simplified deployment scenario using ESX.
 
 The following hardware requirement is required to install HP Helion OpenStack.
 
-
-* At least 9 and up to 100 baremetal systems with the following configuration:
+* At least 8 and up to 100 baremetal systems with the following configuration:
 
     * A minimum of 32 GB of physical memory
-    * A minimum 500GB to a maximum 2 TB of disk space
+    * A minimum 512GB to a maximum 2 TB of disk space, required for installation. You can add more capacity after installation.
     * A minimum of 1 x 10 GB NIC with PXE support
     * Capable of hosting VMs
     * Boot order configured with Network/PXE boot as the first option
@@ -320,6 +319,9 @@ The logical networks listed in the following table are implemented as VLANs on t
 </td>  <tr style="background-color: white; color: black;">
     <td><b>Fiber Channel</b></td>
     <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays
+    <td> </td>
+    <td> </td>
+  </tr>
 </table>
 
 

@@ -230,7 +230,7 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 
 You must have the following hardware configuration:
 
-- At least 9 and no more than 100 baremetal systems meeting the requirements as listed below.
+- At least 8 and no more than 100 baremetal systems meeting the requirements as listed below.
 
 Additional requirements are as follows:
 
@@ -250,7 +250,7 @@ Additional requirements are as follows:
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
-- An additional system to run the baremetal installer and host the seed VM meeting the requirements in the table below. Other requirements and recommendations are as follows:
+- Other requirements and recommendations are as follows:
 
 	- The Ubuntu 14.04 operating system must be installed
 	- A browser to access the undercloud or overcloud
@@ -260,9 +260,9 @@ Additional requirements are as follows:
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
-A baremetal multi-node deployment consists of a minimum of **9** baremetal servers, to which you can add **up to 100 Compute nodes**.
+A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes.
 
-The following table lists the minimum requirements for each type of node.
+The following table lists the minimum requirements required for installation of each type of node. The maximum of 2TB for the undercloud and overcloud nodes is mandatory for installation. 
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -297,7 +297,7 @@ The following table lists the minimum requirements for each type of node.
 <td rowspan="4"> Undercloud Controller</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td>500GB - 2TB</td>
+<td>512GB - 2TB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -316,7 +316,7 @@ The following table lists the minimum requirements for each type of node.
 <td rowspan="4"> Overcloud Controller </td>
 <td rowspan="4">3</td>
 <td>Disk </td>
-<td> 500GB - 2TB
+<td> 512GB - 2TB
  </td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -336,7 +336,7 @@ The following table lists the minimum requirements for each type of node.
 <td rowspan="4"> Overcloud Compute Server </td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td> 500GB - 2TB</td>
+<td> 512GB - 2TB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -355,7 +355,7 @@ The following table lists the minimum requirements for each type of node.
 <td rowspan="4"> Overcloud Swift server </td>
 <td rowspan="4">2</td>
 <td>Disk </td>
-<td> 500GB - 2TB
+<td> 512GB - 2TB
 </td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -371,6 +371,13 @@ The following table lists the minimum requirements for each type of node.
 <td> 8 CPU cores - Intel or AMD 64-bit processor</td>
 </tr>
 </table>
+
+**Notes:** 
+
+- For installations with KVM hypervisor support, an additional node is required for VSA block storage.
+
+- After the installation is complete, you can use the Block Storage and Object Operation services to add further storage capacity as allowed by your hardware.”
+
 
 
 <!--
