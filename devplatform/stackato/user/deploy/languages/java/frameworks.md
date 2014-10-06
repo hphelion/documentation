@@ -64,14 +64,13 @@ The java\_web framework will recognize the service and activate
 debugging through the port provided. Connect to this port with the JPDA
 debugger of your choice.
 
-To show the port number and external hostname for this service, use the
-[*helion service*](/als/v1/user/reference/client-ref/#command-services)
-command. For the 'my-java-app' example above, the command would be:
+To show the port number and external hostname for this service, use the 
+[helion service](/als/v1/user/reference/client-ref/#command-services)
+command. For the **my-java-app** example above, the command would be:
 
     $ helion service my-java-app-debug
 
-Use the 'hostname' (or 'host' for an IP address) and 'port' values in
-the 'credentials' section of the output to configure your local
+Use the **hostname** (or **host** for an IP address) and **port** values in the **credentials** section of the output to configure your local
 debugging client.
 
 <!--The
@@ -89,14 +88,13 @@ Application Lifecycle Service.
 
 ##Spring Framework<a name="spring"></a>
 
-Applications that use the Spring framework are detected and automaticaly
+Applications that use the Spring framework are detected and automatically
 configured if there is either a *spring-core* jar file or an
 *org/springframework* folder.
 
 ### Spring Service Configuration
 
-If there is only one service of a given type (e.g. one MySQL data
-service), the application is automatically reconfigured to use that
+If there is only one service of a given type for example, only one MySQL data service; the application is automatically reconfigured to use that
 service.
 
 Define a datasource bean like the following:
