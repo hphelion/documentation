@@ -60,4 +60,4 @@ To deploy the application, make sure you are logged in successfully for your des
 6. You should see a simple text message: Hello World!
 	
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)
+[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)

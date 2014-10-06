@@ -9,7 +9,7 @@ product: devplatform
 
 This is a simple Servlet-based Java webapp that uses MySQL. 
 
-This is the **second** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/java/) sample, please do that one first.
+This is the **second** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/java/) sample, please do that one first.
 
 
 ## Prerequisites
@@ -75,4 +75,4 @@ To deploy the application, make sure you are logged in successfully for your des
 5. In the upper right-hand corner, click **View App**.
 6. The result should be a page displaying some text after your app has connected to MySQL and executed a query.
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/messaging/java/)
+[Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/messaging/java/)
