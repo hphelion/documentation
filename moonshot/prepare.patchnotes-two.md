@@ -135,30 +135,31 @@ To protect system from bash vulnerability, perform the following steps:
 
 4. On each of the nodes (Admin Node, Controller Node and Baremetal Host(s)), perform the following steps: 
 
-       - Copy the previously downloaded bash package
+	- Copy the previously downloaded bash package
 
     		scp <location of the package> <user home directory>
 	
 
-       - Login as root
+	- Login as root
  
 	     	sudo -i 
    
-       - Verify the current version of bash 
+	- Verify the current version of bash 
 
-			dpkg –s bash
+			dpkg -s bash
 
         The above command looks for the information on your bash package and displays the version that you are using. If the version displayed is  previous thanthe `bash_4.2-2ubuntu2.5` version, install the bash package by performing  next steps else you do not need to install the bash package.
 
-      - Install the bash package 
+	- Install the bash package 
 
-			dpkg –i <location of the bash package>
+	  		dpkg -i <location of the bash package>
 
-      - Verify the bash version again after installation.
+	- Verify the bash version again after installation.
 
-			dpkg –s bash
+			dpkg -s bash
 
-		If the displayed package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
+		
+        If the displayed package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
 
 5.After successful upgrade on all the nodes, you can start working with your cloud.
 
