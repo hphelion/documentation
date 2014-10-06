@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/oc/config/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/add-disk-account-conta
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

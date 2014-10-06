@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/storage/storeserv/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

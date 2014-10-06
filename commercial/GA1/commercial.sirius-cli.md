@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/sirius-cli/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

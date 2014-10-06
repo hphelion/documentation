@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/remove-scale-out-objec
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

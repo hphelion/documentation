@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/backup.restore/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 	
 
 <script>

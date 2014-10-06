@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/manage/resources/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

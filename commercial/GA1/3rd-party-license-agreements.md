@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/3rd-party-license-agreements/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script> 
 

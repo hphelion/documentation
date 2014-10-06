@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/provision-nodes/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

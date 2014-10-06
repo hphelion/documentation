@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/focus/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # HP Helion OpenStack&#174; Focus Service Overview #
 

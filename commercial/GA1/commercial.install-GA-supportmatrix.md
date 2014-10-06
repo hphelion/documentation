@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/support-matrix/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

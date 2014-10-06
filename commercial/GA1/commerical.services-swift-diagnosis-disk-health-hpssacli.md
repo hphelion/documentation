@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/diagnosis-disk-health/hpssacli/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
