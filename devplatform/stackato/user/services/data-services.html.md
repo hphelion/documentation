@@ -164,7 +164,7 @@ Examples of how to parse and use these variables can be found in the
 [*Language Specific
 Deployment*](/als/v1/user/deploy/#language-specific-deploy) section.
 
-### DATABASE\_URL[](#database-url "Permalink to this headline")
+### DATABASE\_URL<a name="database-url"></a>
 
 **If only one relational database service** is bound to an application,
 use the DATABASE\_URL environment variable. It contains the connection
@@ -208,36 +208,10 @@ These have the same format as DATABASE\_URL.
 
 **If more than one database of the same type** is bound to the
 application (e.g. two MongoDB services), none of the URL formatted
-environment variables will be available. Use STACKATO\_SERVICES or
+environment variables will be available. Use
 VCAP\_SERVICES instead.
 
-### STACKATO\_SERVICES[](#helion-services "Permalink to this headline")
-
-Contains a JSON string listing the credentials for all bound services,
-grouped by service name. For example:
-
-    {
-            "postdb": {
-                    "name": "d4854a20e5854464891dbd56c08c440d9",
-                    "host": "192.168.0.112",
-                    "hostname": "192.168.0.112",
-                    "port": 5432,
-                    "user": "u74499595373c4bea84be2a87c2089101",
-                    "username": "u74499595373c4bea84be2a87c2089101",
-                    "password": "pdbbe19398c5a4463bba0644f7798f1f1"
-            },
-            "mydb": {
-                    "name": "d0a60c0be931f4982bbef153f993237bc",
-                    "hostname": "192.168.0.112",
-                    "host": "192.168.0.112",
-                    "port": 3306,
-                    "user": "u93Mm8XmGXQ9R",
-                    "username": "u93Mm8XmGXQ9R",
-                    "password": "p8LwNeQXMrNzi"
-            }
-    }
-
-### VCAP\_SERVICES[](#vcap-services "Permalink to this headline")
+### VCAP\_SERVICES <a name="vcap-services"></a>
 
 Contains a JSON string listing the credentials for all bound services,
 grouped by service type. For example:
