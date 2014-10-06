@@ -1,3 +1,52 @@
+ it it 
+ can can 
+   ,
+ of of 
+ a a 
+ to to 
+ is is 
+ how how 
+ the the 
+ and and 
+ eg[ :]
+ [Pp]ubic
+ [Pp]ersonalis 
+ eg 
+ personalisation 
+ lets do 
+ peform 
+ availablilty 
+ folloing 
+ serveer 
+ curent 
+ Detatch 
+ snapsot 
+ perfoming 
+ Unistalling 
+ fo 
+ ore 
+ thier 
+ adddress
+ balacner 
+ infomration 
+ seperated 
+ ouput
+ erver 
+ speciry 
+ more more 
+ uppdate 
+ creeate 
+ ontainer 
+ betwee 
+ a image 
+ deisgnated 
+ specifyied 
+ decendant 
+ namned 
+ Mangement 
+ Rempapping 
+ unistalled 
+ ommited 
 <<<<<<< HEAD
 (##
 {{#
@@ -7,15 +56,5 @@
 BETA
 [^_]Openstack
 [Ss]tackato
- the the 
- and and 
-[Pp]ubic
- to to 
- is is 
- how how 
 â€™
- ,
- of of 
- a a 
 ÎáÎáÎí
- can can 

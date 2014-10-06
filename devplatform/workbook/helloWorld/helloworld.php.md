@@ -39,5 +39,5 @@ To deploy the application, make sure you are logged in successfully for your des
 5. In the upper right-hand corner, click **View App**.
 6. You should see a simple text message: Hello World!
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/php/) 
+[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/php/) 
 
