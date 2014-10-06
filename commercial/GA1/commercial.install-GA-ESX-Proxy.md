@@ -54,7 +54,7 @@ The first step in deploying the ESX compute proxy is to create a VM template tha
 ###Create a new VM
 
 1. Import the `overcloud-nova_compute_esx_proxy.ova` into the vCenter using the vSphere client.
-2. 3. In the vSphere Client, click **File** and then click **Deploy OVF Template**.
+2. In the vSphere Client, click **File** and then click **Deploy OVF Template**.
 4. Follow the instructions in the wizard to specify the data center, cluster, and node to install to. Refer to the VMWare vSphere documentation as needed.
 5. **Important**. You must enter `overcloud_vcenter_compute_proxy` as the name for the template.  
 
@@ -112,12 +112,12 @@ The default credentials to log in to the OVF VM are `stack/stack`.
 
 Use the following steps to instantiate and run a copy of the VM template on each server.
 
-Perform the following steps on the undercloud node using the [EON CLI](#deploy_cli) or [vSphere client](#deploy_ui).
+Perform the following steps on the undercloud node using the [EON CLI](#deploy_cli) or the [Horizon dashboard](#deploy_ui).
 
 
-### Deploy the proxy using the vSphere client <a name="deploy_ui"></a>
+### Deploy the proxy using the undercloud Horizon dashboard <a name="deploy_ui"></a>
 
-To deploy the ESX compute proxy using the vSphere client, see the [Register vCenter section](/helion/openstack/ga/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
+To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the [Register vCenter section](/helion/openstack/ga/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
 
 ### Deploy the proxy using the EON CLI <a name="deploy_cli"></a>
 
@@ -204,6 +204,7 @@ If you need to delete an ESX Compute proxy, use the following command:
     eon deactivate-clusters <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...] 
     Proxy VM named hp_helion_vcenter_proxy will be deleted – ( if no clusters is in activated state for the vcenter )
 
+<!-- Hide per Satya
 ## Enable SSL between vCenter and proxy VM ##
 
 Use the following steps to configure SSL between vCenter and the ESX computer proxy using either the [CLI](#cli) or [vSphere client](#ui).
@@ -227,6 +228,8 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 2. Copy the contents of the certificate file into the text box provided for SSL certificates.
 
 3. Provide the FQDN host-name of the vCenter instead of the ip-address in the **Server Address** field.
+-->
+
 
 ## Next Steps
 

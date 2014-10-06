@@ -41,8 +41,9 @@ HP Helion OpenStack is designed to deliver an open source OpenStack solution at 
 * 1 undercloud server
 * 3 overcloud controllers
 * 2 overcloud Swift nodes
-* At least 1 block storage node (not required if 3Par is being used for block storage) 
 * At least 1 overcloud Compute node 
+
+After the installation, you can add additional block storage nodes (not required if 3Par is being used for block storage) 
 
 The high-level process for installing HP Helion OpenStack involves the following:
 
