@@ -96,13 +96,14 @@ For ESX deployments, you must install and configure two specific networks:
 
 	- the EON service sub-component communicates with the vCenter server.
 
+<!-- Remove per Satya; move to KVM??
 2. The **Service network**. This network is for trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The service network is used by all services for accessing the logging, monitoring, and customer-provided network services such as NTP and LDAP. VMs will need to add a NIC and attach a VLAN address to get access. Authentication is through the Identity Management service, where this Neutron Provider Network is defined for a single project. 
-
+-->
 ##### Other customer responsibilities and requirements for ESX
 
 You are responsible for the following before beginning the HP Helion OpenStack installation:
 
-- installing and configuring VMWare vSphere version 5.5; VMware vCenter management must be a part of the private network (192.0.2.x)
+- installing and configuring VMWare vSphere version 5.5;
 
 - providing the customer router and making sure the external, IPMI, and ESX networks are routed to and from the management network;
 
@@ -128,7 +129,7 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 The initial installation of the cloud will install two initial Object Storage nodes. All additional Object Storage nodes will be installed using customer procedures after the initial install. 
 
 
-### Preparing the seed VM host<a name="installer"></a>
+### Preparing the seed cloud host<a name="installer"></a>
 
 The following tasks need to be performed on the seed VM, known as the installer system.
 
@@ -142,7 +143,7 @@ The following tasks need to be performed on the seed VM, known as the installer 
 
 #### Install Ubuntu 14.04 LTS<a name="ubuntuLTS"></a>
 
-The seed VM host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
+The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
 
 #### Configure SSH<a name="ssh"></a>
 
@@ -173,11 +174,11 @@ Before starting the installation, you must first install Ubuntu 14.04 and the fo
 - libffi-dev 
 - virt-manager 
 - chromium-browser
-- openjdk‐7‐jdk:i386
+
 
 Use the following command to install these packages:
 
-	sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openswitch commong python-libvirt qemu-kvm libssl-dev libffi-dev virtmanage chromium-browser openjdk‐7‐jdk:i386
+	sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libssl-dev libffi-dev virtmanage chromium-browser
 
 After you install the `libvirt` packages, you must reboot or restart `libvirt`: 
 
@@ -188,9 +189,9 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
-Before you start the installation, you must install NTP on the seed VM host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
+Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
-For information on installing NTP on the seed VM host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
+For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
 
 #### Create the environment variables file #### {#envars}
 

@@ -153,7 +153,7 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 
 <tr style="background-color: white; color: black;">
 <td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692">HP ProLiant DL580 Gen8 Server &mdash; Legacy Bios only (not uEFI)</a>
+<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692">HP ProLiant DL580 Gen8 Server &mdash; Legacy BIOS only (not uEFI)</a>
 </td>
 </tr>
 
@@ -255,8 +255,7 @@ Additional requirements are as follows:
 	- The Ubuntu 14.04 operating system must be installed
 	- A browser to access the undercloud or overcloud
 	- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
-	- A simple command line tool installed, such as [IP
-	- MItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
+	- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
@@ -374,9 +373,9 @@ The following table lists the minimum requirements required for installation of 
 
 **Notes:** 
 
-- For installations with KVM hypervisor support, an additional node is required for VSA block storage.
+- For installations with KVM hypervisor support, one or more additional nodes are required for VSA block storage.
 
-- After the installation is complete, you can use the Block Storage and Object Operation services to add further storage capacity as allowed by your hardware.”
+- After the installation is complete, you can use the Block Storage and Object Operation services to add further storage capacity as allowed by your hardware.
 
 
 
@@ -438,6 +437,7 @@ Ubuntu 14.04 with the following packages.
 - libffi-dev 
 - virt-manager 
 - chromium-browser
+- openjdk‐7‐jdk:i386
 
 
 There are no software requirements for the Undercloud and Overcloud controllers.
