@@ -21,48 +21,30 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# Replication Status using Icinga
+#Monitor Node Replication Status using Icinga
 
-Using the "icinga" service running in the Undercloud the cloud admin can monitor the replication status of Swift. 
+Cloud admins can use the ***icinga*** service running in the undercloud to monitor the replication status of nodes within the Swift deployment. 
 
-##Prerequisite
+##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.
-* Starter Swift nodes are functional by default as they are part of cloud deployment.
-* Icinga service is active and running in the Undercloud.
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* The Icinga service is active and running in the Undercloud.
 
 
 ##Monitoring Swift Replication Status
 Perform the following steps to monitor the replication status:
 
-1. In the Undercloud, log in to Icinga Dashboard &lt;http://<**Undercloud_IP**>/icinga/ &gt;. The default login credentials are as follows:
-	* Username- icingaadmin
-	* Password- icingaadmin 
+1. In the Undercloud, log in to the [Icinga Dashboard](http://<Undercloud_IP>/icinga/) The default login credentials are as follows:
+	* Username: *icingaadmin*
+	* Password: *icingaadmin* 
 
+2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b></a> (opens in a new window).
 
-2.Click **Status** on the left panel and then click **Host Detail**. 
+3. In the **Host** column, click the icon next to the host IP to see <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Status Details For All Hosts</b></a> (opens in a new window).
 
-<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Details(opens in a new window)</a>
+4. Click the target Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>IP Address</i></b></a> (opens in a new window) to see the replication status of the selected Swift node.
 
-
-3.In the **Host** column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.  
-
-<a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Status Details For All Hosts(opens in a new window)</a>
-
-<!---
-<img src="media/swift_icinga_view-details.png"/>
---->
-
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;  
-
-<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host &lt;Swift node IP address &gt;(opens in a new window)</a>
-
-<!---
-<img src="media/swift_icinga-replication-status.png"/> --->
-
-Now, you can view the replication status of the selected Swift node.
-
-Refer the following table for the status and message details.
+##Status Messages
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -73,12 +55,12 @@ Refer the following table for the status and message details.
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
 	<td>Ok</td>
-    <td></td>
+    <td>Everything is fine.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
 	<td>Replication not progressing</td>
-    <td>An account, container or object replicator process has not finished a complete scan recently(elapsed time exceeded the threshold defined) . Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</td>
+    <td>An account, container or object replicator process has not finished a complete scan recently(elapsed time exceeded the threshold defined) . Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Restarting the relevant process usually resolves the issue.</td>
 </tr>
 </tr>
 <tr style="background-color: white; color: black;">
@@ -86,24 +68,14 @@ Refer the following table for the status and message details.
 	<td>Replication never completed</td>
     <td> The named replication process has never run on this node. Check that the replicator has been configured and started. Examine the log files to see if the replicator process has reported problems.</td>
 </tr>
-<tr style="background-color: white; color: black;">
+<!-- <tr style="background-color: white; color: black;">
 	<td>UNKNOWN</td>
-	<td>No Applicable</td>
-    <td></td></tr>
+	<td>Not Applicable</td>
+    <td>N/A</td></tr> If it won't appear, why include it?-->
 </table>
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
-**Related topics**
-
-* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
-
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
-
- 
-
-
-
-

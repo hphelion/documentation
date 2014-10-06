@@ -35,7 +35,7 @@ For more details on the seed, an undercloud and an overcloud, see the [Installat
 
 ## The Installation Process
 
-HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of **9** baremetal servers, to which you can add **up to 100 Compute nodes**:
+HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes:
 
 * 1 seed cloud host (installer system)
 * 1 undercloud server

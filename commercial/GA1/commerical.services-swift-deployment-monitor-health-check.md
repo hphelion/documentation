@@ -21,58 +21,31 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# Service Health Check 
-
-Using the Icinga service running in the undercloud the cloud admin can monitor the health status of Account/Container/Proxy and Object services. 
+# Monitoring the Health of Services using Icinga 
+Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the health status of Account, Container, Proxy, and Object services. 
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.
-* Starter Swift nodes are functional by default as they are part of cloud deployment.
-* Icinga service is active and running in the Undercloud.
-
-
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* The Icinga service is active and running in the Undercloud.
 
 ##Monitoring the Health of Swift Services
 
- You can monitor the health status of swift-proxy, swift-account, swift-container and swift-object services by following these steps:
+ You can monitor the health status of the swift-proxy, swift-account, swift-container and swift-object services by following these steps:
 
+1. In the undercloud Horizon dashboard, log in to the [Icinga Dashboard](http://<Undercloud_IP>/icinga/). The default login credentials are as follows::
+		
+	* Username: *icingaadmin*
+	* Password: *icingaadmin*  
 
-Perform the following steps to monitor the health status of Swift status:
-
-1. In the Undercloud, log in to the Icinga Dashboard &lt;http://&lt;**Undercloud_IP**&lt;/icinga/ &gt;. The default log-in credentials are as follows:
-
-	* Username- icingaadmin
-	* Password- icingaadmin 
-
-
-2.Click **Status** on the left panel and then click **Host Detail**. 
-
-
-<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Host Details(opens in a new window)</a>
+2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details </b></a>(opens in a new window)</a>.
 
 
 
-3.In the Host column, click the icon next to the host IP of the Swift storage node that you want to monitor. (Note: You will see a tooltip that shows View Service Details For This Host)  
+3. In the Host column, click the icon next to the host IP of the Swift storage node to open <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>All Hosts</i></b></a> (opens in a new window).
+4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>Swift node IP address </i></b></a> (opens in a new window) to view the health status of the selected Swift node.
 
-<a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host All Hosts (opens in a new window)</a>
-
-<!---
-<img src="media/swift_icinga_view-details.png"/>--->
-
-
-The page navigates to Service Status Details For Host  &lt; Swift node IP address &gt; . 
-
-<a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Service Status Details For Host &lt;Swift node IP address &gt;(opens in a new window)</a>
-
-Now you may view the health status of the selected Swift node.
-
-<!---
-<img src="media/swift_icinga-health-status.png"/> --->
-
-
-
-Refer to the following table for status and message details.
+##Status Messages
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -101,10 +74,6 @@ Refer to the following table for status and message details.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-**Related topics**
-
-* [Monitor Swift Cluster]( /helion/openstack/ga/services/object/swift/Monitor-cluster/)
 
 ----
 ####OpenStack trademark attribution

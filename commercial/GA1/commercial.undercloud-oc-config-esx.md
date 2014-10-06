@@ -23,9 +23,9 @@ PageRefresh();
 
 ##Working with EXS Clusters
  
-In the UnderCloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud. 
+In the undercloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud. 
 
-You can perform the following activities in the undercloud Dashboard.
+You can perform the following activities in the Horizon Undercloud Dashboard.
 
 * [Activate clusters](#activate-cluster)
 * [Deactivate clusters](#deactivate-cluster)

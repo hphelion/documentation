@@ -21,29 +21,22 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> --->
 
 
-#Add Disk to Account and Container Ring
+#Adding Disks to Account or Container Rings
 
-It is recommended to use Proxy node to store account, container objects based on scale-out architecture. When new disks are added to Proxy node you can choose this disk to expand storage capacity of account and container ring. We also recommend to use same sets of disks for account and container.
+Proxy nodes store account and container objects. When new disks are added to a proxy node, the new disks expand the storage capacity of the account and container rings. 
 
 1. [Prerequisite](#prer)
-2. [Adding Swift disks to a ring](#adding-swift-disks-to-a-ring)
-
-
+2. [Add Disks to an Account or Container Ring](#adding-swift-disks-to-a-ring)
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. 
-* Starter Swift nodes are functional by default as they are part of cloud deployment.
-* Scale-out object-ring:1 is deployed.
-* Scale-out Proxy node is deployed.
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* Scale-out object-ring:1 has been deployed.
+* At least one Scale-out Proxy node has been deployed.
+* All of the rings generated **must** be preserved, preferably at more than one location. Swift requires these rings to be consistent across all nodes. 
+* Make a backup of the rings before any operation.
 
-**IMPORTANT**:  
- 
-* All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes. 
-* Take a backup of the rings before any operation.
-
-
-##Adding Swift disks to a ring {#adding-swift-disks-to-a-ring}
+##Add Disks to an Account or Container Ring {#adding-swift-disks-to-a-ring}
 
 Perform the following steps to add Swift disk to a ring:
 
@@ -84,7 +77,7 @@ Perform the following steps to add Swift disk to a ring:
 				|          |            |
 				+----------+------------+
 	
-5. Format a given disk.
+5. Format the target disk.
 
 		# ringos format-disks -n <Proxy node IP address>  -d <disk>
 
@@ -101,46 +94,40 @@ Perform the following steps to add Swift disk to a ring:
 
 6. List the file in the ring building directory. Identify `account.builder` and `container.builder` files.
 
-7. Add formatted disk to account and container ring.
+7. Add the formatted disk to account and container ring.
 
 		# ringos add-disk-to-ring -f /root/ring-building/account.builder -i <Proxy nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 		# ringos add-disk-to-ring -f /root/ring-building/container.builder -i <Proxy nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-**Recommendation**: 
+	**Recommendation**: 
                 
-* Add a drive gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
+	Add drives gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 
 
-8.Re-balance both account and container ring(s).
+8. Re-balance both account and container ring(s).
 
-	# ringos rebalance-ring -f /root/ring-building/account.builder
-	# ringos rebalance-ring -f /root/ring-building/container.builder	
+    	# ringos rebalance-ring -f /root/ring-building/account.builder
+    	# ringos rebalance-ring -f /root/ring-building/container.builder	
 
-9.List all the Swift nodes. 
+9. List all the Swift nodes. 
+    
+    	# ringos list-swift-nodes -t all
 
-	# ringos list-swift-nodes -t all
+10. Copy `account.ring.gz`  and  `container.ring.gz` files to all the nodes.
 
-10.Copy `account.ring.gz`  and  `container.ring.gz` files to all the nodes.
-
-	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
-	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
-
-
-11.Set weight of the disks using the following command:
+    	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
+    	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 
 
-	# ringos set-weight -f /root/ring-building/account.builder -s <disk id> -w <weight>
-	# ringos set-weight -f /root/ring-building/container.builder -s <disk id> -w <weight>
+11. Set the weight of the disks using the following command:
+    
+    	# ringos set-weight -f /root/ring-building/account.builder -s <disk id> -w <weight>
+    	# ringos set-weight -f /root/ring-building/container.builder -s <disk id> -w <weight>
  
-12.Repeat steps from **8-11** with weight set to 50, 75, and 100 (w= 50, 75, 100) .
+12. Repeat steps from **8-11** increasing the weight by 25 each time; set the weight to 50, 75, and finally 100 (w= 50, 75, 100) .
 
-
- 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
-**Related topics**
-
-* [Extend Swift Cluster]( /helion/openstack/ga/services/object/swift/expand-cluster/)
-
+----
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

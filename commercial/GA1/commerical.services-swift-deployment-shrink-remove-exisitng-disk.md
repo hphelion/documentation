@@ -33,12 +33,8 @@ Perform the following steps to remove a disk from object nodes.
 * HP Helion OpenStack&#174; cloud is successfully deployed.
 * Starter Swift nodes are functional by default as they are part of the cloud deployment.
 * Scale-out object-ring:1 is deployed.
-
-
-**IMPORTANT**:  
- ,
-*  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Take a backup of the rings before any operation.
+*  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
+* Make a backup of the rings before any operation.
 
 
 ##Removing disks from ring<a name="remove-disk-from-ring"></a>

@@ -24,16 +24,12 @@ PageRefresh();
 
 # Sirius CLI Workflow
 
-This page describes the workflow for HP StoreVirtual and HP 3PAR StoreServ integration to your cloud using the Sirius CLI.
+This page describes the workflow for adding HP StoreVirtual and HP 3PAR StoreServ integration to your cloud using the Sirius CLI.
 
 * [Before you begin](#before-you-begin)
-
 * [Process flow](#process-flow)
-
 * [Add and configure HP StoreVirtual to your cloud inventory](#add-configure-storevirtual)
-
 * [Add and configure HP 3PAR StoreServ](#add-configure-storeserv) 
-
 * [Reconfigure and update cloud](#reconfigure-update)
 
 ## Before you begin {#before-you-begin}
@@ -41,34 +37,33 @@ This page describes the workflow for HP StoreVirtual and HP 3PAR StoreServ integ
 Ensure the following prerequisites are fulfilled before you start:
 
 * HP Helion Cloud is deployed 
-
-* The block storage devices (HP StoreVirtual, HP 3PAR StoreServ) are accessible from the Undercloud
+* The block storage devices (HP StoreVirtual, HP 3PAR StoreServ) are accessible from the undercloud
 
 ##Process Flow {#process-flow}
 
-Configuration of block storage comprises of registering the resources to the cloud inventory, adding them as a backend, reconfiguring and updating the cloud. The following diagram provides a high level view of the process flow.
+Configuration of block storage includes:
+- registering the resources to the cloud inventory
+- adding the resources as a backend
+- reconfiguring and updating the cloud.
+ 
+The following diagram provides a high level view of the process flow.
 
 <a href="javascript:window.open('/content/documentation/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Process Flow Diagram (opens in a new window)</a>
-
 
 ## Add and configure HP StoreVirtual to your cloud inventory {#add-configure-storevirtual}
 
 Perform the following steps to add and configure Storevirtual.
 
 * [Register StoreVirtual clusters to the cloud inventory](#register-storevirtual)
-
 * [Add StoreVirtual clusters as a backend for the cloud](#add-backend)
-
 * [Preview the cinder configuration for the StoreVirtual cluster](#preview-cluster)
-
 * [View the list of configured StoreVirtual backends](#view-configured-list) 
-
 
 ### Register StoreVirtual clusters to the cloud inventory{#register-storevirtual}
 
 Ensure that the cluster details entered in the command correspond with the actual cluster details from the Centralized Management Console (CMC) tool.
 
-To register StoreVirtual clusters, enter the following command
+To register StoreVirtual clusters, enter the following command:
 
 	 # sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
@@ -93,7 +88,7 @@ The sample output of the above command is given below:
 
 ###Add StoreVirtual clusters as a backend for the cloud {#add-backend}
 
-The VOLUME&#095;BACKEND&#095;NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME&#095;BACKEND&#095; value to a specific volume type, created in the Overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
+The VOLUME&#095;BACKEND&#095;NAME parameter allows you to map all the StoreVirtual clusters with the same VOLUME&#095;BACKEND&#095; value to a specific volume type, created in the overcloud. Adding a StoreVirtual cluster as a backend moves the cluster to  the 'reserved' state which implies that the cluster cannot be removed from the cloud unless the corresponding backends are removed.
 
 To add a backend, enter the following command
 
@@ -149,18 +144,14 @@ The sample output of the above command is given below:
 	| cluster_f2b30740-455a-11e4-a483-00b53da47ef7 | skcluster02  | lhn                 |
 	+----------------------------------------------+--------------+---------------------+
 
-## Add and configure HP 3PAR StoreServ to your cloud inventory {#add-configure-storeserv}
+## Add HP 3PAR StoreServ to your cloud inventory and configure {#add-configure-storeserv}
 
 Perform the following steps to add and configure StoreServ.
 
 *  [Register StoreServ to the cloud inventory](#register-storeserv)
-
 *  [Register StoreServ CPG to the cloud inventory](#register-inventory)
-
 *  [Add StoreServ CPG as a backend for the cloud](#add-cpg)
-
 *  [Preview the cinder configuration for the StoreServ CPG](#preview-storeserv-cpg)
-
 *  [View the configured StoreServ backend list](#view-storeserv-list)  
 
 
@@ -195,7 +186,7 @@ The sample output of the above command is given below:
 	| username     | 3paradm                              |
 	+--------------+--------------------------------------+
 
-###Register StoreServ CPG to the cloud inventory{#register-inventory}
+###Register StoreServ CPG to the cloud inventory {#register-inventory}
 
 List the available CPGs in the StoreServ device. From the available CPG list identify the ones to be registered to the cloud using the following command
 
@@ -281,16 +272,12 @@ The sample output of the above command is given below:
 ##Reconfigure and update cloud{#reconfigure-update}
 
 * [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
-
 * [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
-
 * [Update Overcloud configuration JSON](#update-overcloud-json)
-
 * [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
-
 * [Update Overcloud](#update-cloud) 
 
-The backends configured in the Undercloud Sirius database will not be effective until the Overcloud Cinder configuration is not updated.
+The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.
 
 ### Generate StoreVirtual backend configuration JSON {generate-storevirtual-config}
 You can download the Cinder configuration relevant to HP StoreVirtual for your cloud once you create the backend.
@@ -375,7 +362,7 @@ The sample output of the above command is given below:
 
 ### Update Overcloud configuration JSON {#update-overcloud-json}
 
-Update the `/root/overcloud-config.json` in the Seed node with the generated backend data. Add the StoreVirtual backend configuration as a JSON key-pair with key **'vsa'** and StoreServ backend configuration with key **'3par'** to the existing JSON.
+Update the `/root/overcloud-config.json` in the Seed node with the generated backend data. Add the StoreVirtual backend configuration as a JSON key-pair with key **vsa** and StoreServ backend configuration with key **3par** to the existing JSON.
 
 A sample of the file is before and after the update is give below:
 
@@ -481,11 +468,11 @@ Enter the following command to update the Overcloud
 
     # bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
 
-On completion of update, the Overcloud cinder will be configured with the StoreVirtual clusters and StoreServ CPG as backends.
+When the update has completed, the Cinder service in the overcloud will be configured to have the StoreVirtual clusters and StoreServ CPG as backends.
 
 ##More Information {#more-information}
 
-For the complete list of Sirius CLI commands, refer to [Sirius Manual]( /helion/openstack/ga/sirius-cli/).
+For the complete list of Sirius CLI commands, refer to  the[Sirius Manual]( /helion/openstack/ga/sirius-cli/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
-HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. 
+HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
 ## Installing HP Helion OpenStack<a name="install"></a>
 
@@ -34,17 +34,19 @@ The installation and configuration process for ESX consists of the following gen
 	* [Prepare baremetal.csv file](#csv)
 	* [Preparing cloud seed host to run seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
-* [Starting the installation](#install)
-   * [Configuring proxy information](#proxy)
-   * [Unpacking installation file](#unpackinstall)
-   * [Installing the seed VM and building your cloud](#startseed)
+* [Installing HP Helion OpenStack](#install)
+   * [Configure proxy information](#proxy)
+   * [Unpack installation file](#unpackinstall)
+   * [Install the seed VM and building your cloud](#startseed)
 * [Verifying the installation](#verifying-your-installation)
-   * [Connecting to the overcloud Horizon console](#connectconsole)
-   * [Connecting to the undercloud Horizon console](#monitoring)
+   * [Connect to the overcloud Horizon console](#connectconsole)
+   * [Connect to the undercloud Horizon console](#monitoring)
+   * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps) 
 
 ## Verify Prerequisites<a name="pre"></a>
-To ensure successful installation, please read through the topics before you start.
+
+To ensure a successful installation, please read through the following topics before you start.
 
 * Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
 * Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
@@ -56,13 +58,13 @@ The following diagram depicts the required network topology for a KVM installati
 
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
-For detailed network requirements, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
+For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
 
 ### Create and identify environment variables file ### {#envvars}
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
-For more information, see [HP Helion OpenStack&#174;: Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
 
 ### Prepare baremetal.csv file ### {#csv}
 
@@ -70,14 +72,15 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
-### Preparing cloud seed host to run seed VM {#prepseed}
-On the server identified to run the seed VM, make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+### Prepare the cloud seed host to create the seed VM {#prepseed}
+
+On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
 
 ## Download the installation packages<a name="getinstall"></a>
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
-1. Log in to your install system as root:
+1. Log in to your seed VM host as root:
 
 		sudo su -
 
@@ -86,22 +89,24 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
 	<td><b> Installation package </b></td><td><b>File name</b></td>
-<tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack</td><td>HPHelionOpenStack.tgz</td></tr>
-<tr style="background-color: white; color: black;">
- <td>HP Helion OpenStack vCenter Proxy Appliance</td><td>overcloud_vcenter_compute_proxy.ova</td></tr>
- <td>HP Helion OpenStack VCN Agent Appliance</td><td>overcloud-esx-ovsvapp.ova</td></tr>
-</table>
+	<tr>
+ 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+	<tr>
+	<td>HP Helion OpenStack vCenter Proxy Appliance</td>
+	<td>overcloud_vcenter_compute_proxy.ova</td></tr>
+ 	<td>HP Helion OpenStack VCN Agent Appliance</td>
+	<td>ovsvapp.tgz</td></tr>
+	</table>
 
 
 ## Installing HP Helion OpenStack<a name="install"></a>
 
-Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through:
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:
 
+* [Configure proxy information](#proxy)
 * [Unpacking installation file](#unpackinstall)
 * [Installing the seed VM and building your cloud](#startseed)
 
-**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must initiate the installation process again.
 
 ### Configure proxy information<a name="proxy"></a>
 
@@ -119,7 +124,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 	
 	Where `web_proxy_IP` is your web proxy IP address.
 
-3. Log out and re-login to your baremetal server to activate the proxy configuration.
+3. Log out and re-login to the seed VM host to activate the proxy configuration.
 
 ### Unpack the installation file<a name="unpackinstall"></a>
 
@@ -136,7 +141,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		tar zxvf /root/HPHelionOpenStack.tgz
 
-	This creates and populates a `tripleo/` directory within `work' directory.
+	This creates and populates a `tripleo/` directory within the `work' directory.
 
 ### Install the seed VM and build your cloud<a name="startseed"></a>
 
@@ -163,7 +168,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 		ssh root@192.0.2.1 
 
 	**Note**: It might take a few moments for the seed VM to become reachable. 
-7. When prompted for host authentication, type `yes` to allow the ssh connection to proceed.
+7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
 8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
 
@@ -175,13 +180,13 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
 
-11. If you are integrating LDAP into your environment, copy the configuration files to the seed VM host, as described in [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/ga/install/ldap/).
+11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/ga/install/ldap/), to the seed VM host.
 
-	a. Copy the `tripleo-overcloud-password` file to the /root/tripleo folder.
+	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
 
 		scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords
 
-	b. Copy the `overcloud_keystone_ldap.json` file to the /root/tripleo/hp_passthrough folder.
+	b. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder.
 
 		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json 
 
@@ -199,7 +204,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
  
 		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
 
-	**Note:** If `hp_ced_start_seed` fails to start the seed, need to restart the installation (step 1) and then follow the rest of the steps.
+	**Note:** If `hp_ced_start_seed.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
 ## Verify your installation<a name="verifying-your-installation"></a>
 
@@ -265,16 +270,16 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ### Create projects for LDAP users<a name="ldap"></a>
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [HP Helion OpenStack&reg;: Integrating LDAP page](/helion/openstack/ga/install/ldap/).
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/ga/install/ldap/).
 
 ## Next Steps<a name="next-steps"></a>
 
 
 - Deploy vCenter ESX Compute Proxy **(REQUIRED)**
 
-	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute Service Nova (Compute) requires this driver to interface with VMWare ESX hypervisor APIs.
+	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
 
-	See [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+	See [Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
 
 - Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
