@@ -32,6 +32,7 @@ This page provides an overview of the hardware and software that is supported fo
 * [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
 * [Software Requirements](#software-requirements)
+	* [Other seed cloud host requirements and recommendations](#otherseed)
 
 ##Deployment Architecture<a name="deploy-arch"></a>
 
@@ -250,17 +251,6 @@ Additional requirements are as follows:
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
-- Other requirements and recommendations are as follows:
-
-	- The Ubuntu 14.04 operating system must be installed
-	- A browser to access the undercloud or overcloud
-	- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
-	- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
-
-	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
-
-A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes.
-
 The following table lists the minimum requirements required for installation of each type of node. The maximum of 2TB for the undercloud and overcloud nodes is mandatory for installation. 
 
 <table style="text-align: left; vertical-align: top;">
@@ -378,7 +368,6 @@ The following table lists the minimum requirements required for installation of 
 - After the installation is complete, you can use the Block Storage and Object Operation services to add further storage capacity as allowed by your hardware.
 
 
-
 <!--
 ## Usable Capacity<a name="usable_capacity"></a>
 
@@ -441,6 +430,19 @@ Ubuntu 14.04 with the following packages.
 
 
 There are no software requirements for the Undercloud and Overcloud controllers.
+
+
+### Other seed cloud host requirements and recommendations ## {#otherseed}
+
+Other requirements and recommendations for the seed cloud host are as follows:
+
+- The Ubuntu 14.04 operating system must be installed
+- A browser to access the undercloud or overcloud
+- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
+
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+
 
 ## Next Steps<a name="next"></a>
 
