@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Development Platform Installation"
-permalink: /helion/devplatform/install/commercial
+permalink: /helion/devplatform/install
 product: devplatform
 
 ---
@@ -27,7 +27,7 @@ The following topics explain how to install and configure the HP Helion Developm
 
 ## Prerequisites<a name="prerequisites"></a>
 
-The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack Community Edition - Baremetal.  The HP Helion Development Platform has the same prerequisites as HP Helion OpenStack Community Edition - Baremetal.
+The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack Commercial Edition - Baremetal.  
 
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
  
@@ -78,7 +78,6 @@ Run this command to prepare the installer and ensure prerequisites are met. By d
  	
 After the install command completes, you should see the following output from the command:
 
-Once the installation is complete, you should see the following output:
 
     2014-06-17 16:53:19.765       INFO Install Complete
 
@@ -100,7 +99,7 @@ This section provides details on installing the Messaging service from the Devel
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Messaging (Beta)** panel under the current Project to begin using the Messaging Service.
 
 ## Install the Application Lifecycle Service (ALS)<a name="install-als"></a>
-This section provides details on installing the Application Lifecycle service from the Development Platform.
+This section provides details on installing the Application Lifecycle Service from the Development Platform.
 
 ### Prerequisites
 
@@ -118,7 +117,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
 
-3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
+3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to begin using Application Lifecycle Services.
 
 ## Install the Database Service<a name="install-database"></a>
 This section provides details on installing the Database Service from the Development Platform.
@@ -135,11 +134,13 @@ To configure the **Database Service** in a highly available manner, it is necess
 		nova aggregate-create aggregate-AZ-2 AZ-2
 		nova aggregate-create aggregate-AZ-3 AZ-3
 		
- 2. Validate that the availability zones were correctly created by issuing the following command.
+
+
+2. Validate that the availability zones were correctly created by issuing the following command.
  	
  		nova aggregate-list
  
-3. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone.
+3. The following command will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone.
 	
 		nova aggregate-add-host <id> <hostname>
  
@@ -163,6 +164,7 @@ If you are not configuring the Database Service to be highly available you must 
 |Security Groups|    6|
 |Volumes|                 4|
 |Volume Storage (GB)| 160|
+
 	
 If you have setup Availability Zones and plan to install the Database Service in a highly available configuration you must have the following quota available:
 
@@ -177,7 +179,7 @@ If you have setup Availability Zones and plan to install the Database Service in
 |Volumes|                 4|
 |Volume Storage (GB)| 160|
 
-In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.
+In addition to the quotas mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.
 
 ### Connect to the Download Service
 

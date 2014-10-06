@@ -20,7 +20,7 @@ In order to download and deploy these sample applications, you must have the nec
 - HP Helion OpenStack&reg; deployed
 	- [Community](/helion/community/install/)
 	- [Commercial](/helion/openstack/ga/install/overview/)
-- [Cluster](/als/v1/admin/cluster/) created
+- Helion Development Platform [Cluster](/als/v1/admin/cluster/) created
 - Logon and password credentials provided
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed. 
 
@@ -32,9 +32,9 @@ For best results, work with each sample in the order that they are provided, as 
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/java/) <br>
-Create a database and link to it.
+Create a database and execute a query against it.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Create a message entry field, enter a message, throw it, catch it, and display it.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.
 
 More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 
@@ -43,9 +43,9 @@ More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/node/) <br>
-Create a database and link to it.
+Create a database and execute a query against it.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Create a message entry field, enter a message, throw it, catch it, and display it.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.
 
 More Helion [Node](/als/v1/user/deploy/languages/node/) references.
  
@@ -54,9 +54,9 @@ More Helion [Node](/als/v1/user/deploy/languages/node/) references.
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/php/) <br>
-Create a database and link to it.
+Create a database and execute a query against it.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Create a message entry field, enter a message, throw it, catch it, and display it.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.
 
 More Helion [PHP](/als/v1/user/deploy/languages/php/) references.
 

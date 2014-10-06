@@ -73,6 +73,6 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see the new app in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. The result should be a page displaying some text after your app has connected to MySQL and executed a query.
+6. The result should be a page displaying some text after the app has connected the database and executed the query.
 
 [Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/messaging/java/)

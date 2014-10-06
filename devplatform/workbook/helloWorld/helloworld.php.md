@@ -7,7 +7,10 @@ product: devplatform
 ---
 # Hello World PHP
 
-**Stackato**
+This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application.
+
+
+##Prerequisites
 
 1. You must have a Stackato instance available. 
 2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 

@@ -16,9 +16,9 @@ see the [HP Helion OpenStack® Object Storage Service Overview](/helion/openstac
 For more information on authentication, see [Identity Service, Authentication, and the Service Catalog](/als/v1/user/deploy/languages/php/authentication/).
 
 ##Application Lifecycle Services
-<p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
+Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
-a console application to push the application to ALS.</p>
+a console application to push the application to ALS.
 At its simplest form, the configuration file *manifest.yml*, which is located at the root of a project, 
 would look like:
 <div class="highlight-none"><div class="highlight"><pre>name: php-web-app
@@ -26,10 +26,10 @@ framework:
     type: php
 </pre></div>
 </div>
-<p>This will set the ALS framework type for a PHP web application.</p>
+This will set the ALS framework type for a PHP web application.
 
-<p>To create a worker non-http application set the web process to <strong>null</strong> (~) and specify
-the command to <strong>run</strong>. For example:</p>
+To create a worker non-http application set the web process to <strong>null</strong> (~) and specify
+the command to <strong>run</strong>. For example:
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php-app</span>
 <span class="l-Scalar-Plain">framework</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php</span>
 <span class="l-Scalar-Plain">command</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">php worker.php</span>
@@ -37,7 +37,7 @@ the command to <strong>run</strong>. For example:</p>
     <span class="l-Scalar-Plain">web</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">~</span>
 </pre></div>
 </div>
-<p>Management of the deployed application and its services happens through a web application or
+Management of the deployed application and its services happens through a web application or
 a console application. To learn more see <a href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">the manifest.yml reference</a>.
 
 

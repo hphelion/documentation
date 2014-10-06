@@ -8,7 +8,17 @@ product: devplatform
 #Database PHP Sample
 This is the **second** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/php/) sample, please do that one first.
 ## Prerequisites
-You must have access to the web-based Administration console. (Horizon)
+You must have access to the web-based Management Console.
+
+**MySQL**
+
+If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
+
+- Go to the Administrative console (e.g. *https://api.15.126.212.172.xip.io*, substitute your own instance's link)
+- On the **Admin** tab, click **Cluster**.
+- Click the **Settings** icon (a gear icon in the upper right corner)
+- The **MySQL** check box should be checked. If it is not, check it.
+- Click **Save**.
 
 ##Download the Application Files
 [Download the PHP files](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-php/) from the code repository.
