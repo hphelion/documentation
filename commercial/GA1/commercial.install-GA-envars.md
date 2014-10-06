@@ -94,6 +94,12 @@ The following section describes the environmental variables that affect your ins
 
 	**Note:** The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the FLOATING_CIDR range.
 
+`OVERCLOUD_FIXED_RANGE_CIDR` - Use this variable to set the address range of the default private network.
+
+	For example:
+
+	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
+
 `UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your undercloud. The default value is `eth2`. If this is correct you do not need to set this variable.
 
 	export UNDERCLOUD_NeutronPublicInterface=eth2

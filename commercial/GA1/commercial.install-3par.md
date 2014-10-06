@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Edition: VSA Support"
+title: "HP Helion OpenStack&#174; Edition: HP StoreServ (3PAR) Support"
 permalink: /helion/openstack/ga/install/3par/
 product: commercial
 
@@ -23,31 +23,34 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array which supports Fiber Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of Cinder using the OpenStack block storage driver of HP 3PAR StoreServ. HP 3PAR StoreServ is also referred to as 3PAR.
-
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports Fiber Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
 
 HP Helion OpenStack provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud. 
+
+**Note:** 3PAR support applies only to HP Helion OpenStack with KVM hypervisor support.
 
 <!---The Cinder integration drivers run as Python libraries in the Cinder service to facilitate communication between Cinder and StoreServ arrays.-->
 
 <!---Devices can be connected to Cinder using Fiber Channel (FC) or using the iSCSI protocol.-->
 
-##High level overview of HP 3PAR StoreServ Integration
+##High-level overview of HP 3PAR StoreServ Integration
 
 The following diagram gives an overview of the steps involved in integrating HP 3PAR StoreServ with your cloud. 
 
 <a href="javascript:window.open('/content/documentation/media/storeserv-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreServ Integration diagram (opens in a new window)</a>
+
+### Prerequisites
 
 The following prerequisites need to be performed before configuring 3PAR StoreServ to use in the cloud.
 
 
 1 - **Install 3PAR device**
 
-   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups(CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the Overcloud Controller where Cinder service is running and HP 3PAR StoreServ array.
+   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the Overcloud Controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
 
 2 - **Install IMC**
 
-  * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. You may refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.-->
+  * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. Refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.-->
 
   * Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.
 
