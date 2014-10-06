@@ -123,21 +123,22 @@ To protect system from bash vulnerability, perform the following steps:
 
 2. To get the IP address of the nodes, do the following:
  
-   * In the Operational Dashboard, click **Manage Nodes** to open the Manage nodes page.
+   - In the Operational Dashboard, click **Manage Nodes** to open the Manage Nodes page.
   
-   * Click each node to view the node details.
+   - Click each node to view the node details.
 
 	**Note**: By default, the IP address of the Admin Node is *192.168.124.10*. This should be accessible from the Windows or Linux client.
 
-2. Download the bash package from the following URL to your Windows or Linux client.
+3. Download the bash package from the following URL to your Windows or Linux client.
 	
 	[http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5&#095;_amd64.deb](http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb)
 
-2. Copy the downloaded bash package on all the nodes (Admin Node, Controller Node and Baremetal Host(s)).
+4. On each of the nodes (Admin Node, Controller Node and Baremetal Host(s)), perform the following steps: 
 
-    	scp <location of the package> <user home directory>
+   * Copy the previously downloaded bash package
+
+    		scp <location of the package> <user home directory>
 	
-3. Perform the following steps on each of the nodes:
 
    * Login as root
  
@@ -147,7 +148,7 @@ To protect system from bash vulnerability, perform the following steps:
 
 			dpkg –s bash
 
-        The above command looks for the information on your bash package and displays the version that you are using. If the version displayed is  lower than `bash_4.2-2ubuntu2.5`, install the bash package by performing  next steps else you do not need to install the bash package.
+        The above command looks for the information on your bash package and displays the version that you are using. If the version displayed is  previous thanthe `bash_4.2-2ubuntu2.5` version, install the bash package by performing  next steps else you do not need to install the bash package.
 
    * Install the bash package 
 
@@ -159,7 +160,7 @@ To protect system from bash vulnerability, perform the following steps:
 
 		If the displayed package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
 
-4. After successful upgrade on all the nodes, you can start working with your cloud.
+6. After successful upgrade on all the nodes, you can start working with your cloud.
 
 
 ##For further information## {#for-further-information}
