@@ -5,7 +5,7 @@ permalink: /als/v1/user/deploy/languages/php/
 <!--UNDER REVISION-->
 
 #Developing In PHP
-<p>Whether you're deploying an application to the HP Helion Development Platform, a
+Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
 to enable successful development are available in PHP.
@@ -19,7 +19,7 @@ For more information on authentication, see [Identity Service, Authentication, a
 <p>Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
 a console application to push the application to ALS.</p>
-At its simplest form, the configuration file *manifest.yml*, located at the root of a project
+At its simplest form, the configuration file *manifest.yml*, which is located at the root of a project, 
 would look like:
 <div class="highlight-none"><div class="highlight"><pre>name: php-web-app
 framework:

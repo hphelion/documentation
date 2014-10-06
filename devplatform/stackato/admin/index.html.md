@@ -16,7 +16,7 @@ Management Console[](#management-console "Permalink to this headline")
 -----------------------------------------------------------------------
 
 -   [Management Console](/als/v1/admin/console/customize/)
--   [App Store](console/app-store)
+-   [Sample Applications](console/app-store)
 -   [Customization](/als/v1/admin/console/customize/)
 
 Server Configuration[](#server-configuration "Permalink to this headline")
@@ -108,18 +108,19 @@ Best Practices[](#best-practices "Permalink to this headline")
     -   [Backup & Migration](/als/v1/admin/best-practices/#backup-migration)
     -   [Upgrading (v1.0 and
         later)](/als/v1/admin/best-practices/#upgrading-v1-0-and-later)
-    -   [Server Monitoring with New
+<!--    -   [Server Monitoring with New
         Relic](/als/v1/admin/best-practices/#server-monitoring-with-new-relic)
     -   [System Monitoring with
         Nagios](/als/v1/admin/best-practices/#system-monitoring-with-nagios)
-    -   [Persistent
+    -->-   [Persistent
         Storage](/als/v1/admin/best-practices/#persistent-storage)
--   [Log Drain Examples](/als/v1/admin/best-practices/logging-examples/)
+- [Hello World Custom
+        Drain Sample](/als/v1/admin/best-practices/logging-examples/#hello-world-custom-drain)
+<!---   [Log Drain Examples](/als/v1/admin/best-practices/logging-examples/)
     -   [Papertrail](/als/v1/admin/best-practices/logging-examples/#papertrail)
     -   [Loggly](/als/v1/admin/best-practices/logging-examples/#loggly)
     -   [Splunk](/als/v1/admin/best-practices/logging-examples/#splunk)
-    -   [Hello World Custom
-        Drain](/als/v1/admin/best-practices/logging-examples/#hello-world-custom-drain)
+   -->
 
 Reference[](#reference "Permalink to this headline")
 -----------------------------------------------------

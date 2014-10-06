@@ -3,7 +3,7 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/newrelic/
 ---
 <!--PUBLISHED-->
-
+<!-- file deliberately orphaned, functionality not implmented 
 New Relic Monitoring[](#new-relic-monitoring "Permalink to this headline")
 ===========================================================================
    [New Relic for Ruby](#new-relic-for-ruby)
@@ -205,3 +205,5 @@ Results[](#results "Permalink to this headline")
 Push the app to the Application Lifecycle Service server, and make a few requests to it in a
 browser. After a few minutes, check the New Relic dashboard to confirm
 the information is being logged correctly.
+
+-->

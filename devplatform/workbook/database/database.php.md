@@ -7,30 +7,24 @@ product: devplatform
 ---
 #Database PHP Sample
 This is the **second** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/php/) sample, please do that one first.
-# Prerequisites
-**Stackato**
-
-1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
-3. You must have access to the web-based Administration console.
+## Prerequisites
+You must have access to the web-based Administration console. (Horizon)
 
 ##Download the Application Files
 [Download the PHP files](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-php/) from the code repository.
 
-###About the Application Files
+<!-- ###About the Application Files
 
 ##Build the Application
 
-
-
 ##Deploy the Application
-
+-->
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
-1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
+1. Open the  [Helion command-line interface (CLI)](/als/v1/user/client/).
 
 2. *cd* into the app's root directory.
-3. Execute `stackato push -n` 
+3. Execute `helion push -n` 
 
 ##Run the Application
 
