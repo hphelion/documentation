@@ -74,7 +74,6 @@ Review the following topics related to optional and required post-installation s
 - [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/)
 - [Configuring your network securely](/helion/openstack/ga/install/security/)[Back Up and Restore](/helion/openstack/ga/backup.restore/)[High Availability (HA)](/helion/openstack/ga/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/ga/maskedIP/)
-- [Measuring Performance of HP Helion OpenStack](/helion/openstack/GA1/performance-and-scalability/)
 
 ### Undercloud Horizon Dashboard
 

@@ -57,9 +57,7 @@ Before you install the OVSvApp, ensure the following:
 
 - The two Virtual Distributed Switches (VDS) must be configured. 
 
-	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to true, the VDS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater.
-	
-	To consume this functionality,in addition to the data VLANs in the uplink, the ESX management VLAN should also be allowed. If an existing ESX management network is in a different uplink, the new L2 network should be created for the ESX compute proxy and ovsvapp VM consumption.
+	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to true, the VDS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater. To consume this functionality,in addition to the data VLANs in the uplink, the ESX management VLAN should also be allowed. If an existing ESX management network is in a different uplink, the new L2 network should be created for the ESX compute proxy and ovsvapp VM consumption.
 		
 	- **Manual DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to false, you need to create and configure the VDS as given below. Manual configuration requires ESX 5.0.0 or greater.
 
@@ -399,7 +397,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
 
-	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the valu.
+- If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the value.
 
 - Do not delete a tenant VM port via “neutron port-delete” command for a tenant VM.
 
