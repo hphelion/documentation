@@ -80,7 +80,7 @@ Review the following topics related to optional and required post-installation s
 Review the following topics related to the undercloud Horizon dashboard:
 
 - [Undercloud Horizon Overview](/helion/openstack/ga/undercloud/horizon/overview/)
-- - [Undercloud Horizon Dashboard: Settings Tab](/helion/openstack/ga/undercloud/admin/settings/)
+- [Undercloud Horizon Dashboard: Settings Tab](/helion/openstack/ga/undercloud/admin/settings/)
 - [Updates and Extensions](/helion/openstack/ga/undercloud/admin/updates-and-extension/)
 - [Command Line Interface- EON](/helion/openstack/ga/undercloud/eon/cli/)
 - [Working with ESX Clusters](/helion/openstack/ga/undercloud/oc/config/esx/)
