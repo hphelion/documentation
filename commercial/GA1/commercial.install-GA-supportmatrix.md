@@ -263,14 +263,16 @@ Additional requirements are as follows:
 	- To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
 
 - The BIOS configured: 
-	- To the correct date and time
-	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+	- to the correct date and time
+	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
 - For Compute nodes, Intel or AMD hardware virtualization 
 - support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
+
+	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
 
 The following table lists the minimum requirements required for installation of each type of node. The maximum of 2TB for the undercloud and overcloud nodes is mandatory for installation. 
 
