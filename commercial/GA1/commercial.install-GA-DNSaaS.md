@@ -130,13 +130,30 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 4. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
 
-5. Log in using HP Cloud OS Content Delivery Network credentials. 
-6. Click **OK** to save the details. The updates are displayed in the Updates and Extensions page.
- <br>OR <br>
-Click **Cancel** to cancel the process.
+5. Log in with HP Cloud OS Content Delivery Network credentials. <br>If you do not have a login credentials for HP Cloud OS Content Delivery Network then create an account. Perform the following steps to create an account on the HP Cloud OS Content Delivery Network:
 
-7. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
-8. Select **dns.csu** file from the list and click **Publish**. Publish dialog box is displayed.
+	1. On the HP Helion Horizon Undercloud dashboard, click  the **Admin** tab in the left panel.
+
+	2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
+
+	3. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
+
+	4. Click **Sign up Now** below the description in the Configure dialog box.<br>
+       The page navigates to the HP Helion Product Catalog. Then, do the following:</br> 
+    
+	5. Click **Sign In** in the top of the page to open the HP Web ID dialog box.
+
+	6. Click **Sign Up for Web ID** to create log-in credentials. The HP WEB ID dialog box is displayed. 
+    
+	7. Enter the required details.
+  
+	8. Select the check box next to **I agree to the Terms of Use** to accept the terms and conditions.
+
+	9. Click **Submit**.<br>The credentials are authenticated and the account is created.
+
+		Once you register on the HP Helion Product Catalog, you are required to configure your credentials.
+6. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
+8. Select the appropriate file (for example: **dns.csu**) from the list and click **Publish**. Publish dialog box is displayed.
 
 9. Click **Publish** to install the package. 
 
