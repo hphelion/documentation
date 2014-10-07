@@ -13,6 +13,21 @@ rm checktmp > /dev/null 2>&1
 
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors...  
 
+echo "===Missing publish flag============================="
+for i in `find . -name "*.md" `
+do 
+
+	if [[ -n $(grep -L "\-\-PUBLISH" $i) ]]; 
+	then
+	if  [[ -n $(grep -L "\-\-UNDER REVISION" $i) ]]; 
+	then
+	echo $i
+ 
+	fi
+	fi
+ done 
+
+
 
 echo " "
 echo "===??============================="
