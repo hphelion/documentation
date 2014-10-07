@@ -89,8 +89,10 @@ The following table describes the data flow between Helion nodes for Object Oper
 </tr>
 <td>6</td><td>Swift proxy to proxy sync over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Swift all in one (PACO)</td><td>80</td>
 </tr>
+<tr>
 <td>6</td><td>Swift proxy to proxy sync over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Proxy-Account-Container (PAC)</td><td>80</td>
 </tr>
+<tr>
 <td>6</td><td>Swift object to object sync over HTTP</td><td>Object Storage</td><td>Object Storage</td><td>80</td>
 </tr>
 <tr>
