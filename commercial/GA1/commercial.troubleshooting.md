@@ -141,9 +141,9 @@ If you get this error, reset the system that experienced the error:
     3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
 
     4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
+<br><br>
+<hr>
 
-
-==============================================================================================
 
 ###IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session {#IPMI-fails}
 
@@ -166,8 +166,9 @@ If you get this error, perform the following steps:
 6. Use the space bar to set the value to **YES**.
 7. Select **F10** to save.
 8. Click **File** and select **Exit** to close.
+<br><br>
+<hr>
 
-==============================================================================================
 
 ### Failure of Update Overcloud {#failure-overcloud}
 
@@ -201,8 +202,9 @@ Note that  the build&#95;number is changed from null to the right variable.
 		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
 During the installation, the number of build&#95;number and installed&#95;build&#95;number that you specified are installed.
+<br>
+<hr>
 
-===================================================================
 
 ### Installation failure as the flavor to be used for Overcloud nodes does not match {#installation-failure}
 
@@ -217,11 +219,12 @@ If you have a set of Baremetal servers which differ in specifications (e.g. memo
 **Resolution**
 
 Edit the **baremetal.csv** file to define the lowest specification server in the second row.
+<br><br>
+<hr>
 
-===============================================================================================
 
 
-####PXE boot on target node keeps switching between interfaces{#PXE-boot-on-target}
+####PXE boot on target node keeps switching between interfaces {#PXE-boot-on-target}
 
 **System Behavior/Message**
 
@@ -240,8 +243,8 @@ When node boots up on iLO console it shows node waiting for PXE boot on multiple
 * Select System Options > Embedded NICs.
 * Set NIC 1 Boot Options = Network Boot.
 * Set NIC 2 Boot Options = Disabled.
-
-==============================================================================================
+<br><br>
+<hr>
 
 ####BIOS blocks are not set to correct date and time across all nodes {#bios-blocks-are-not-set-to-correct-date}
 
@@ -266,8 +269,8 @@ Reboot the node, using **F9** to get to the BIOS configuration. BIOS date and ti
 * Use the &lt;ENTER> key to accept the new date and time.
 * Save the BIOS, which reboots the node again.
 * Once the node has rebooted, you can confirm its data and time from the iLO Overview.
-
-==============================================================================================
+<br><br>
+<hr>
 
 ####iLO console shows hLinux daemon.err tgtd while PXE booting {#ilo-console}
 
@@ -286,8 +289,8 @@ Node does not have enough disk space
 * Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp_ced_functions.sh`.
 * If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
 * Re-run the installation script.
-
-==============================================================================================
+<br>
+<hr>
 
 ####iLO console shows null waiting for notice of completion while PXE booting {#ilo-show-null}
 
@@ -305,7 +308,8 @@ Installer expects that SAN boot option is disabled for nodes. Verify whether SAN
 
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
-===============================================================================================
+<br>
+<hr>
 
 ####Failure of Hp&#95;ced_installer.sh {#failure-installer}
 
@@ -317,9 +321,8 @@ Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what 
 **Resolution**
 
 Verify `baremetal.csv` for empty lines or special characters.
-
-===============================================================================================
-
+<br><br>
+<hr>
 ####Failure of Seed Installation {#seed-install-failure}
 
 
@@ -332,7 +335,8 @@ Seed installation fails with no space left on device.
 
 Verify the tripleo directory- user owner and group. It must be **root:root**. Incase it is not set as **root:root** then edit it to root using- `chown root:root tripleo`
 
-===============================================================================================
+<br><br>
+<hr>
 
 **System Behavior/Message**
 
@@ -345,7 +349,8 @@ Inconsistent Rabbitmq failure seen on controller nodes while listing queues
 
 Restart the Rabbitmq service.
 
-=========================================================================================
+<br><br>
+<hr>
 
 ## ESX and OVSvAPP {#esx-ovsvapp}
 
@@ -369,8 +374,8 @@ To resolve the above issue verify the following:
 1.	The ESX Management Network is able to reach the Helion Management Network.
 2.	nova-compute service is running (os-svc-restart &#45;n nova-compute).
 3.	Verify `/etc/nova/nova-compute.conf` has the right entries.
-
-===============================================================================================
+<br>
+<hr>
 
 ### Unable to login to vCenter proxy agent {#unable-login-vcenter}
 
@@ -381,8 +386,8 @@ To resolve the above issue verify the following:
 **Resolution** 
 
 Users can login to the system using the user `heat-admin ` and the authorized key in the Seed VM.
-
-===============================================================================================
+<br><br>
+<hr>
 
 ### Unable to backup volumes using Cinder backup {#unable-cinder-backup}
 
@@ -393,8 +398,8 @@ Users can login to the system using the user `heat-admin ` and the authorized ke
 **Resolution**
 
 Cinder-backup is not supported.
-
-===============================================================================================
+<br><br>
+<hr>
 
 ###Failure of OVSvAPP deployment {#fails-ovsvapp}
 
@@ -406,9 +411,8 @@ Failure of OVSvAPP deployment.
 
 Verify `tripleo/hp-ovsvapp/log/ovs_vapp.log` in the installer directory.
 
-
-===============================================================================================
-
+<br><br>
+<hr>
 
 **System Behavior/Message**
 
@@ -423,10 +427,8 @@ After reboot of Controller that has the VIP assigned, the hpvcn agent, nova-comp
 * To restart HP VCN agent, execute the following command in OVSvAPP vm's
 
 		#service hpvcn-neutron-agent restart 
-
-===============================================================================================
-
-
+<br><br>
+<hr>
 ##VSA {#vsa}
 
 1. [Failure to retrieve netmask from vsa-bridge](#fails-retrieve-netmask)
@@ -462,8 +464,8 @@ To resolve this issue, perform the following steps:
 
   		ifconfig vsa-bridge
 
-===============================================================================================
-
+<br>
+<hr>
 
 ###Installation script detects more than 7 available drive {install-script-detect}
 
@@ -483,7 +485,8 @@ Perform the following steps:
 
 * Execute `fdisk &#45;l` and check for number of available drives in the machine other than `/dev/sda`
 
-===============================================================================================
+<br>
+<hr>
 
 ###Failure of script due to less than two drives {#failure-script}
 
@@ -503,8 +506,8 @@ To resolve, perform the following steps:
 * Minimum two drives and maximum of 7 drives should be available for the StoreVirtual deployment other than boot disk(`/dev/sda`)
 
 * At least three drives required for enabling AO
-
-===============================================================================================
+<br>
+<hr>
 
 ### Cannot enable AO as only one disk is available {#cannot-enable-ao}
 
@@ -526,7 +529,7 @@ To resolve the issue, do the following:
 
 	* **Step 3**: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)
 
-===============================================================================================
+<br><hr>
 
 
 ### Unable to update the default input json file {#unable-update-json}
@@ -549,9 +552,8 @@ Perform the following steps:
 
 	* `/etc/vsa/vsa_network_config.json`
 
-==============================================================================================
-
-###Creation of storage pool failed{#storage-pool-fail}
+<br><hr>
+###Creation of storage pool failed {#storage-pool-fail}
 
 **Probable Cause**
 
@@ -569,7 +571,7 @@ Perform the following steps:
 
 Refer `/var/log/libvirt/libvirt.log` on VSA system.
  
-=============================================================================================
+<br><hr>
 
 ###Failed during post VSA deployment {#post-vsa-fail}
 
@@ -585,7 +587,7 @@ This error will occur if the script fails to find `network_vsa.xml`, `storagepoo
 
 * On success, the script updates the `/mnt/state/vsa/vsa_config.json` file with the updated and created time.
 
-=============================================================================================
+<br><hr>
 
 ###VSA installation failed {#vsa-install-fail}
 
@@ -597,10 +599,10 @@ When VSA installation fails for any of the above reasons, the script will rollba
 
 Verify the `/installer.log`
 
-==============================================================================================
+<br><hr>
 
 
-###vsa&#95;network cannot be destroyed{#vsa-network}
+###vsa&#95;network cannot be destroyed {#vsa-network}
 
 **Probable Cause**
 
@@ -614,7 +616,7 @@ Perform the following steps:
 
 * Check whether the network name in `<PYVINS_DIRS>/etc/vsa/vsa_config.json` is the same as in the output of `virsh net-list –all` command
 
-===============================================================================================
+<br><hr>
 
 ### vsa&#95;storage&#95;pool pool cannot be destroyed {#vsa-pool-cannot-destroy}
 
@@ -634,7 +636,7 @@ Perform the following:
 
         Virsh pool-list --all
 
-===============================================================================================
+<br><hr>
 
 ##Logging  {#logging}
 
@@ -654,7 +656,7 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 **EDIT**: Added `sudo -u logstash` at beginning of commands. 
 
 
-
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 
 

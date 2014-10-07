@@ -35,7 +35,7 @@ It is important to read through this page before starting your installation as i
 - [Registering the service with Keystone](#keyreg)
 - [More information](#moreinfo)
 
-
+<p>
 ##Prerequisites<a name="preq"></a>
 
 * HP Helion OpenStack Installation
@@ -380,7 +380,7 @@ For more information, see:
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
 * [Designate DNSaaS services for OpenStack](https://wiki.openstack.org/wiki/Designate)
 
-**Note**: Public Cloud API and Helion Openstack API details are similar.
+**Note**: Public Cloud API and HP Helion Openstack API details are similar.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
