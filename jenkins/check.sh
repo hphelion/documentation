@@ -32,7 +32,7 @@ do
 echo " "
 echo "===??============================="
 for i in `find . -name "*.md"`; do grep -H \?\? $i | grep -v '<!--' | grep -v '<\*\*' ; done
-
+echo "Note: lines that start with <!-- are ignored, so you can remove false ?? positives by commenting them out."
 
 
 echo " "
