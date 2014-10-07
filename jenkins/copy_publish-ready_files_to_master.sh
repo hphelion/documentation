@@ -6,7 +6,7 @@
  
 
 
- 
+BRANCH=development
 echo "$BRANCH"
  
 if [ "$BRANCH" == "" ]
