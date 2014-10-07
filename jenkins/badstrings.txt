@@ -8,9 +8,18 @@
  how how 
  the the 
  and and 
+ given given
  eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
+ builtin 
+ tempates 
+ initally 
+ recieves 
+ timout 
+ notificition 
+ selction 
+ additonal 
  eg 
  personalisation 
  lets do 
@@ -19,6 +28,8 @@
  folloing 
  serveer 
  curent 
+ neccessary
+ sofware 
  Detatch 
  snapsot 
  perfoming 
