@@ -35,8 +35,8 @@ It is important to read through this page before starting your installation as i
 - [Registering the service with Keystone](#keyreg)
 - [More information](#moreinfo)
 
-<p>
-##Prerequisites<a name="preq"></a>
+
+##Prerequisites {#preq}
 
 * HP Helion OpenStack Installation
 * DNSaaS Installer Image
@@ -91,7 +91,7 @@ It is important to read through this page before starting your installation as i
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
-## Creating Prerequisite Credentials <a name="credentials"></a>
+## Creating Prerequisite Credentials {#credentials}
 
 You must create target and service credentials.
 
@@ -119,7 +119,7 @@ Once Target credentials are successfully created you can create service credenti
 
 		$ keystone user-role-add --user designate --tenant service --role admin
  
-## Sherpa CSU "Publication" and Booting the Installer VM<a name="publication"></a>
+## Sherpa CSU "Publication" and Booting the Installer VM {#publication}
 
 Before proceeding with DNaaS installation ensure that you have met all the prerequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
 
@@ -206,7 +206,7 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 
 
-##Installing and configuring DNSaaS<a name="configure"></a>
+##Installing and configuring DNSaaS {#configure}
 
 **IMPORTANT**: During DNSaaS installation, non-deterministic failures within the infrastructure layer may cause the install to fail. If this occurs, DNSaaS installation should be retried up to two times.
 
@@ -282,7 +282,7 @@ After you validate the configuration file, run the DNSaaS installer:
 
 
 
-##Configure the Overcloud Load Balancer for DNSaaS<a name="configovercloud"></a>
+##Configure the Overcloud Load Balancer for DNSaaS {#configovercloud}
 
  You must configure HAProxy before you configure the OverCloud Load Balance for DNaaS.
 
@@ -336,7 +336,7 @@ Perform the following steps on each controller node:
    	b. Run `iptables-save > /etc/iptables/iptables` 
 
 
-## Registering the service with Keystone<a name="keyreg"></a>
+## Registering the service with Keystone {#keyreg}
 
 You  can register the DNS service and endpoint as a user or an admin. 
 
@@ -391,7 +391,7 @@ To uninstall the DNaaS:
 
 The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the Keystone documentation (here we point to OpenStack documentation).
 
-##For more information<a name="moreinfo"></a>
+##For more information {#moreinfo}
 For more information, see:
 
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
