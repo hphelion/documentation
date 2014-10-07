@@ -48,21 +48,31 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/ga/service
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
 
-2. After creation of the Proxy node, list the Proxy IP addresses.
+2. Change the directory to ring builder.
+
+		# cd /root/ring-building 
+
+3. Copy account, container, object-0 , and generated `object-1.ring.gz` files to proxy nodes and press **yes** when asked to authenticate the node. 
+
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Proxy node IP address> 
+
+
+
+4. After creation of the Proxy node, list the Proxy IP addresses.
 
 		# ringos list-swift-nodes -t proxy
 
-3. List all the controller nodes
+5. List all the controller nodes
 
  		# nova list
 
 
 
-4. Edit `swift-proxy.cfg` on each of the controller nodes. 
+6. Edit `swift-proxy.cfg` on each of the controller nodes. 
 
 	 	/etc/haproxy/manual/swift-proxy.cfg
 
-5. Add the following content in the `swift-proxy.cfg` file.
+7. Add the following content in the `swift-proxy.cfg` file.
 
 		  listen scale_swift_proxy
 		  bind 192.0.2.21:8080
@@ -70,7 +80,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/ga/service
 
 	**Note**:The number of "server" lines will equal the number of Swift Proxies you have set up.
 
-6. Restart the HA Proxy service on all these nodes.
+8. Restart the HA Proxy service on all these nodes.
 
 		# service haproxy restart
 

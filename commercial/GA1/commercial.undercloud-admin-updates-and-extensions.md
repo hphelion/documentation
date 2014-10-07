@@ -24,7 +24,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Updates and Extensions
 
-HP provides a simple mechanism for downloading and installing  content and updates for the overcloud.
+HP provides a simple mechanism for downloading and publishing the content and updates for the Overcloud.
 
 * [Register on the Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 * [Configure credentials](#configcre)
@@ -98,9 +98,9 @@ To import a package that is stored on your local system, take the following step
 
 	Click **Cancel** to abort and go to the previous screen.
 
-6. Click **Install** to install the imported file. The install dialog box is displayed.
+6. Click **Publish** to install the imported file. The Publish dialog box is displayed.
 
-7. Click **Install**.  A message is displayed after successful installation.
+7. Click **Publish**.  A message is displayed after successful installation.
 
 8. (Optional) To view the progress of the installation, click the **More** drop-down list and select **View Progress**.
 
@@ -115,7 +115,7 @@ Perform the following steps to download the packages:
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 3.	Click the **More** drop-down list and select **Download** next to the package that you want to download on your local system. A Confirm Download Update dialog box is displayed.
 
-4. Click **Download** to download the package. A message is displayed when the .csu file is successfully downloaded.
+4. Click **Download** to download the package. A message is displayed when the **.csu** file is successfully downloaded.
 
 
 	Or
