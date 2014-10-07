@@ -1,7 +1,7 @@
 #!/bin/bash -li
 
 echo 'running documentation/jenkins/check.sh'
-#Get the most recent version of the master branch
+#Get the most recent version of the master branch 
 env | grep GIT
 git checkout $GIT_BRANCH
 git pull
@@ -12,6 +12,21 @@ rm checktmp > /dev/null 2>&1
 
 
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors...  
+
+echo "===Missing publish flag============================="
+for i in `find . -name "*.md" `
+do 
+
+	if [[ -n $(grep -L "\-\-PUBLISH" $i) ]]; 
+	then
+	if  [[ -n $(grep -L "\-\-UNDER REVISION" $i) ]]; 
+	then
+	echo $i
+ 
+	fi
+	fi
+ done 
+
 
 
 echo " "
