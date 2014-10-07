@@ -46,7 +46,7 @@ To deploy the application, make sure you are logged in successfully for your des
 1. Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 
 2. If you are not already there, `cd` to the root directory of the sample.
-3. Execute `stackato push -n` 
+3. Execute `helion push -n` 
 
 ##Run the Application
 
