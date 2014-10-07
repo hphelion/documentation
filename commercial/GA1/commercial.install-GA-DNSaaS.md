@@ -128,9 +128,17 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 1. Log in to the overcloud's Horizon dashboard using **Target Credentials**. 
 2. Click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
 3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
-4. 
-3. Select **dns.csu** file from the list and click **Publish**. Publish dialog box is displayed.
-4. Click **Publish** to install the **.csu** file. 
+4. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
+
+5. Log in using HP Cloud OS Content Delivery Network credentials. 
+6. Click **OK** to save the details. The updates are displayed in the Updates and Extensions page.
+ <br>OR <br>
+Click **Cancel** to cancel the process.
+
+7. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
+8. Select **dns.csu** file from the list and click **Publish**. Publish dialog box is displayed.
+
+9. Click **Publish** to install the package. 
 
 
 ###Boot the installer VM
