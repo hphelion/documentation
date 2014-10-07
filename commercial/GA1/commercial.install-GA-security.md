@@ -28,7 +28,7 @@ HP Helion OpenStack has many built-in security controls, but the customer must t
 
 HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
 
-<img src = "/content/documentation/media/Helion_Security1.png">
+<a href="javascript:window.open('content/documentation/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Network Topology Diagram (opens in a new window)</a> 
 
 In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
@@ -57,7 +57,7 @@ To protect against external attack on Helion services, your firewall should be c
 
 Object Operations service (Swift) requests travel from the external network, to a HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows: 
 
-<img src = "/content/documentation/media/ ">
+<img src = "/content/documentation/media/content/documentation/media/Helion_Security2.png">
  
 You may choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes (Swift) nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed via the HAproxy on the Controller nodes. 
 
@@ -247,8 +247,7 @@ The ESX network is used for:
 
 The following diagram depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack:
 
-<img src = "/content/documentation/media/Helion_Security8.png">
- 
+<a href="javascript:window.open('content/documentation/media/Helion_Security8.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Logical Deployment of the ESX Integration Diagram (opens in a new window)</a> 
 
 The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:
 
