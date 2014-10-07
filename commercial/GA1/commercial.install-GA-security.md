@@ -36,7 +36,7 @@ In the diagram above, the customer’s devices that perform routing are depicted
 
 The perimeter is indicated by the *customer firewall* icon in the previous diagram.
 
-To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, as indicated in this table:
+To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, other than those indicated this table:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -44,9 +44,6 @@ To protect against external attack on Helion services, your firewall should be c
 </tr>
 <tr>
 <td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>80</td>
-</tr>
-<tr>
-<td>Access to user applications running as Nova VMs</td><td>External network</td><td>Compute Nodes</td><td>Only ports required by your enterprise applications</td>
 </tr>
 <td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
 </tr>

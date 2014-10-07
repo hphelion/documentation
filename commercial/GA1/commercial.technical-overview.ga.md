@@ -142,7 +142,8 @@ The following table outlines the functionality of HP Helion OpenStack services b
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-##Deployment architecture<a name="deploy-arch"></a>
+
+## <a name="deploy-arch"></a>  Deployment architecture
 
 You can deploy HP Helion OpenStack in two different environments depending on the hypervisor: KVM or ESX. 
 
