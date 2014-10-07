@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/siteindex/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -81,18 +81,18 @@ Review the following topics related to the undercloud Horizon dashboard:
 
 - [Undercloud Horizon Overview](/helion/openstack/ga/undercloud/horizon/overview/)
 - [Undercloud Horizon Dashboard: Settings Tab](/helion/openstack/ga/undercloud/admin/settings/)
-- [Updates and Extensions](/helion/openstack/ga/undercloud/admin/updates-and-extension/)
-- [Command Line Interface- EON](/helion/openstack/ga/undercloud/eon/cli/)
-- [Working with ESX Clusters](/helion/openstack/ga/undercloud/oc/config/esx/)
-- [Working with StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
-- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)
 - [Manage Overcloud Configuration](/helion/openstack/ga/undercloud/oc/config/)
 - [Compute Service](/helion/openstack/ga/undercloud/resource/esx/compute/)
-- [Working with Virtual Environment(s)](/helion/openstack/ga/undercloud/resource/esx/)
 - [Manage Resources](/helion/openstack/ga/undercloud/manage/resources/overview/)
+- [Updates and Extensions](/helion/openstack/ga/undercloud/admin/updates-and-extension/)
+- [Working with Virtual Environment(s)](/helion/openstack/ga/undercloud/resource/esx/)
 - [Working with Storage](/helion/openstack/ga/undercloud/manage/resources/storage/)
-- [Working with HP 3PAR StoreServ](/helion/openstack/ga/undercloud/storage/storeserv/)
 - [Working with HP StoreVirtual VSA](/helion/openstack/ga/undercloud/storage/storevirtual/)
+- [Working with ESX Clusters](/helion/openstack/ga/undercloud/oc/config/esx/)
+- [Working with StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
+- [Working with HP 3PAR StoreServ](/helion/openstack/ga/undercloud/storage/storeserv/)
+- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)
+- [Command Line Interface- EON](/helion/openstack/ga/undercloud/eon/cli/)
 
 ### Horizon Dashboard
 
