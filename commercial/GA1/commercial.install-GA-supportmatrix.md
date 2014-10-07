@@ -206,6 +206,27 @@ HP supports the following hardware for HP Helion OpenStack deployment:
 
 </table>
 
+### 	
+
+**IBM:**
+<br>[IBM System x3550 M4 Server](http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/)
+<br>CPU: Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz
+<br>Storage controller: LSI MegaRAID <ServerRAID M5110>  01.33.00
+<br>Network: Intel(R) Gigabit Ethernet Network Driver - version 5.0.5-k
+<br>Memory: 256 GB
+ 
+**Dell:**
+<br>[Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
+<br>BIOS version: 1.4.8
+<br>CPU: 2 (Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz   max 3600 MHz  8 cores
+<br>Memory: 256 GB
+<br>Network Device: Broadcom   (4 Port)
+<br>Storage controller: Integrated RAID controller 1:
+
+
+
+
+
 ## Supported Configurations<a name="supportedconfigurations"></a>
 
 HP supports the following configurations for HP Helion OpenStack deployment:
