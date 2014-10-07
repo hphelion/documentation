@@ -27,8 +27,7 @@ most commonly used resources:
     page.
 -   **Download the Client**: Link to the locally hosted [*CLI
     client*](/als/v1/user/client/#client) download.
--   **Deploy from the App Store**: Link to the [*App
-    Store*](#user-console-app-store).
+-   **Deploy from Sample Applications**: Link to the [Sample Applications](#user-console-app-store).
 -   **Organizations Membership**: Link to the end user view of the
     [*Organizations*](#user-console-welcome) page.
 -   **Account Details**: Shows the account details of the current user. Also
@@ -147,11 +146,10 @@ For more information on a service instance, such as its credentials, use
 the [`helion service`](/als/v1/user/reference/client-ref/#command-service)
 command.
 
-Marketplace[](#marketplace "Permalink to this headline")
+Sample Apps[](#marketplace "Permalink to this headline")
 -----------------------------------------------------
 
-The Marketplace is a collection of ready-to-run applications which can be
-deployed to Application Lifecycle Service by fetching the source code from the repository.
+The Sample Apps are collection of ready-to-run applications which can be deployed to Application Lifecycle Service by fetching the source code from the repository.
 
 Click the **Deploy App** button to start it on Application Lifecycle Service. You will be
 prompted to choose a Space and Domain for the app if there are multiple

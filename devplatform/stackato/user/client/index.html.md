@@ -19,7 +19,7 @@ available at the command line via the `helion help` command.
 
 Application Lifecycle Service Client Setup[](#helion-client-setup "Permalink to this headline")
 -----------------------------------------------------------------------------
-**Note**: using the Windows `helion` client with
+**Note**: using the Windows **Helion** client with
 [Cygwin](http://www.cygwin.com/) is not supported.
 
 1.  Download the client for your platform (Windows, OS X, Linux x86,
@@ -30,7 +30,7 @@ Application Lifecycle Service Client Setup[](#helion-client-setup "Permalink to 
 	-   creating a symlink from a directory in your \$PATH, or
 	-   creating a shell alias for the executable.
 4.  Confirm that the client is installed correctly by running
-    `helion help`.
+    *helion help*.
 
 
 
