@@ -174,7 +174,7 @@ The following sample displays the output of formatted disk of **192.0.2.29**.
 		+----------+-----------+---------+---------------------------------+-------------+------------+
 
 **Note**: You can also format disks individually by using `-d <device-name>`.
-For more details, see the [pyringos](/helion/openstack/GA1/services/object/pyringos/) manual.
+For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
 
 ## Create a New Scale-out Object Ring {#creating-scale-out-object-ring}
 

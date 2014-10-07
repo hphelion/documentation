@@ -25,7 +25,7 @@ PageRefresh();
 
 HP Helion OpenStack includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).
 
-We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *pyringos* utility to add additional drives on that server to the Swift Account and Container rings. For more details, see the [pyringos](/helion/openstack/GA1/services/object/pyringos/) manual.
+We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *ringos* utility to add additional drives on that server to the Swift Account and Container rings. For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
 
 - [Step by step instructions for deploying additional Scale-out Swift Nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/)
 
