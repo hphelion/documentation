@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/object/swift/Monitor-disk/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

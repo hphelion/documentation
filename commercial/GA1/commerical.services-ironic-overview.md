@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/ironic/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

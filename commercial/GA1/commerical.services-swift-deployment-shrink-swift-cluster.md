@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/object/swift/shrink-cluster/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

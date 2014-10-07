@@ -23,7 +23,7 @@ This is the **third** sample in the series; if you have not already examined the
 ##Download the Application Files
 Download the files [here](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-node).
 
- 
+
 ##Deploy the Application
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
@@ -40,6 +40,6 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see Hello World in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. You should see a page that will accept a user's message.
+6.You should see a page that has a text field to accept a brief message. Enter text into the field and click **Enter** to send the message. The text of the message should appear.
 
 [Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/node/)

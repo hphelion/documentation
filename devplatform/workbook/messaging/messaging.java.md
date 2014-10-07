@@ -12,10 +12,8 @@ This is the **third** sample in the series; if you have not already examined the
 
 
 ## Prerequisites
-**Stackato**
-
 1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+2. The  [Stackato command-line interface (CLI)] must be installed. 
 3. The RabbitMQ service must be enabled. <br> Stackato 3.4 appears have it enabled by default, but Stackato 3.2 does not. 
 	- Go to the Administrative console (e.g. *https://api.15.126.212.172.xip.io*, substitute your own instance's link)
 	- On the **Admin** tab, click **Cluster**.
@@ -67,7 +65,7 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see Hello World in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. You should see a page that will accept a user's message.
+6. You should see a page that has a text field to accept a brief message. Enter text into the field and click **Enter** to send the message. The text of the message should appear.
 
 
 [Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/java/) 

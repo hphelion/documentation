@@ -17,11 +17,13 @@ These samples are designed to exercise all the services which make up the HP Hel
 ##Prerequisites - Before you Begin
 In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
-- HP Helion OpenStack&reg; deployment
-- Cluster created
-- Logon and Password provided
-- You must have a Stackato instance available. 
-- The  [Helion command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+- HP Helion OpenStack&reg; deployed
+	- [Community](/helion/community/install/)
+	- [Commercial](/helion/openstack/ga/install/overview/)
+- Helion Development Platform [Cluster](/als/v1/admin/cluster/) created
+- Logon and password credentials provided
+- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed. 
+
  
 ##Sample Code
 For best results, work with each sample in the order that they are provided, as each one builds on the knowledge provided in the previous sample. 
@@ -30,9 +32,9 @@ For best results, work with each sample in the order that they are provided, as 
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/java/) <br>
-Create a database and link to it.
+Create a database and execute a query against it.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Create a message entry field, enter a message, throw it, catch it, and display it.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.
 
 More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 
@@ -41,9 +43,9 @@ More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/node/) <br>
-Create a database and link to it.
+Create a database and execute a query against it.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Create a message entry field, enter a message, throw it, catch it, and display it.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.
 
 More Helion [Node](/als/v1/user/deploy/languages/node/) references.
  
@@ -52,9 +54,9 @@ More Helion [Node](/als/v1/user/deploy/languages/node/) references.
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/php/) <br>
-Create a database and link to it.
+Create a database and execute a query against it.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Create a message entry field, enter a message, throw it, catch it, and display it.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.
 
 More Helion [PHP](/als/v1/user/deploy/languages/php/) references.
 
@@ -86,7 +88,7 @@ Commands available through the developer API URL and the integration API URL.
 - [User API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_User.html)
 -->
 ###Other References
-- [ALS command-line interface (CLI) reference](helion/devplatform/stackato/user/client/index.html#client)
+- [ALS command-line interface (CLI) reference](/als/v1/user/reference/client-ref/#command-ref-client)
 - [Application Lifecycle Service (ALS) User's Guide](/als/v1/user/)
 - [Remote Debugging](/als/v1/user/deploy/app-debug/)
 - [The Management Console](/als/v1/user/console/)
@@ -101,3 +103,7 @@ Commands available through the developer API URL and the integration API URL.
 ###HP Helion OpenStack Development Community
 Join the [HP Helion developer forum](https://community.dev.hp.com/t5/Helion-Development-Platform/bd-p/cloud_board) or post on the [HP forums](https://connect.hpcloud.com/).
 --->
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation or the OpenStack community.*

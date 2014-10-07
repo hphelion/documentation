@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/prereqs/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

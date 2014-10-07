@@ -10,25 +10,29 @@ This is the **second** sample in the series; if you have not already examined th
 
 This is a simple Node.js app that uses MySQL. 
 # Prerequisites
-**Stackato**
 
 1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+2. The  [Stackato command-line interface (CLI)] must be installed. 
 3. You must have access to the web-based Administration console.
+
+**MySQL**
+
+If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
+
+- Go to the Administrative console (e.g. *https://api.15.126.212.172.xip.io*, substitute your own instance's link)
+- On the **Admin** tab, click **Cluster**.
+- Click the **Settings** icon (a gear icon in the upper right corner)
+- The **MySQL** check box should be checked. If it is not, check it.
+- Click **Save**.
 
 ##Download the Application Files
 [Download the Node files](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-node/) from the code repository.
-###About the Application Files
-
-##Build the Application
-
-
 
 ##Deploy the Application
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
-1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
+1. Open the  [Stackato command-line interface (CLI)].
 
 2. *cd* into the app's root directory.
 3. Execute `stackato push -n` 
@@ -40,7 +44,7 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see the new app in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. The result should be a page displaying some text after the app has connected to MySQL and executed a query. 
+6. The result should be a page displaying some text after the app has connected the database and executed the query. 
 
 
 

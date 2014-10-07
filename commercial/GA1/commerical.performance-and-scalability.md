@@ -5,7 +5,7 @@ permalink: /helion/openstack/GA1/performance-and-scalability/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

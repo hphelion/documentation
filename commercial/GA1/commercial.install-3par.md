@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/3par/
 product: commercial
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

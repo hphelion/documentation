@@ -4,7 +4,7 @@ permalink: /als/v1/user/deploy/stackatoyml/
 ---
 <!--PUBLISHED-->
 
-HP manifest.yml Options[](#stackato-yml-options "Permalink to this headline")
+HP manifest.yml Options[](#yml-options "Permalink to this headline")
 ===========================================================================
 [name:](#name)
     -   [buildpack:](#buildpack)
@@ -53,7 +53,7 @@ Other values are used by the server to install needed packages, or run
 setup scripts during the staging, post-staging, or pre-running steps in
 deployment.
 
-[*Key substitution*](#stackato-yml-key-substitution) can be used to
+[*Key substitution*](#yml-key-substitution) can be used to
 insert values from one key into another.
 
 The following sections describe the available keys and the values that
@@ -105,7 +105,7 @@ The keys in the `framework` section are used with
 the [*Legacy Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy) only.
 Applications using language or framework-specific buildpacks do not
 require these values, and should instead specify the
-[*buildpack*](#stackato-yml-buildpack) or rely on the detection scripts
+[*buildpack*](#yml-buildpack) or rely on the detection scripts
 of the [*built-in buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
 
 ### type:[](#type "Permalink to this headline")
@@ -139,7 +139,7 @@ Overrides the default document-root setting (\$HOME) for the web server.
 Node.js, Perl, PHP, and Python frameworks only.
 
 Setting a deeper document root directory avoids the problem of exposing
-supporting files (e.g. *stackato.yml*) over HTTP.
+supporting files (e.g. *manifest.yml*) over HTTP.
 
 Example:
 
@@ -148,7 +148,7 @@ Example:
       document-root: web
 
 The document-root must always be specified relative to \$HOME
-(/home/stackato/app).
+(/home/helion/app).
 
 ### start-file:[](#start-file "Permalink to this headline")
 
@@ -173,8 +173,8 @@ Or:
 
 This value will be used by the
 [*PROCESSES\_WEB*](/als/v1/user/reference/environment/#term-processes-web) and
-STACKATO\_START\_FILE environment variables. Any changes to
-STACKATO\_START\_FILE at runtime will not change the value of
+HELION\_START\_FILE environment variables. Any changes to
+HELION\_START\_FILE at runtime will not change the value of
 [*PROCESSES\_WEB*](/als/v1/user/reference/environment/#term-processes-web) as
 the macro is expanded before the pre-running hooks are run.
 
@@ -194,8 +194,8 @@ sub-directory containing the output of ant or mvn builds:
     app-dir: target
 
 If required, you can also set
-[*document-root*](#stackato-yml-document-root) in the
-[*framework*](#stackato-yml-framework) section to specify a
+[*document-root*](#yml-document-root) in the
+[*framework*](#yml-framework) section to specify a
 sub-directory of the application \$HOME to be used as the document root.
 
 To launch multiple applications from multiple sub-directories use a
@@ -220,7 +220,7 @@ Example:
       paymentsdb: mysql
 
 The Application Lifecycle Service client supports [*key
-substitution*](#stackato-yml-key-substitution) for service names,
+substitution*](#yml-key-substitution) for service names,
 allowing you to create service names based on the specified application
 name. For example:
 
@@ -229,7 +229,7 @@ name. For example:
 
 The application name can be set as an option to the [*helion
 push*](/als/v1/user/reference/client-ref/#command-push) command, overriding
-the **name** value defined in *stackato.yml*. Use this technique when
+the **name** value defined in *manifest.yml*. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:
 
@@ -241,7 +241,7 @@ names) if you want them to use separate databases. For example:
     services:
       ${name}-db: mysql
 
-Using the name specified in *stackato.yml*, a data service is created to
+Using the name specified in *manifest.yml*, a data service is created to
 match that name:
 
     $ helion push -n
@@ -486,11 +486,6 @@ custom arguments to uWSGI. For example:
     processes:
       web: python3.2 app.py
 
-See app.py in:
-
--   [bottle-py3](https://github.com/Stackato-Apps/bottle-py3)
--   [cherrypy-p3](https://github.com/Stackato-Apps/cherrypy-py3)
-
 This key is required when using the
 [*generic*](/als/v1/user/deploy/other-frameworks/#generic-framework) framework, but is
 optionally available for all other frameworks.
@@ -513,7 +508,7 @@ that just runs a background Perl script might look like this:
 A 'command:' value must be present for worker applications.
 
 If the application exists solely to run commands via
-[*cron*](#stackato-yml-cron), a dummy command such as '*sleep 365d*'
+[*cron*](#yml-cron), a dummy command such as '*sleep 365d*'
 should be specified.
 
 The `$PROCESSES_WEB` and `$STACKATO_UWSGI` variables can also be used with `processes: web:`.
@@ -583,7 +578,7 @@ inherit:[](#inherit "Permalink to this headline")
 --------------------------------------------------
 
 This special key has the effect of treating its value as the name of a
-file to be included into *stackato.yml*.
+file to be included into *manifest.yml*.
 
 Example:
 
@@ -592,7 +587,7 @@ Example:
     env:
       COMPANY: The ABC Company
 
-*stackato.yml*:
+*manifest.yml*:
 
     name: example-app
     inherit: parent.yml
@@ -621,7 +616,7 @@ pushed. Commands are executed between application creation (when the URL
 and application resources are reserved) and the actual upload of the
 local code.
 
-The client will set the STACKATO\_HOOK\_ACTION variable to "create" if
+The client will set the HELION\_HOOK\_ACTION variable to "create" if
 the application is new, or "update" if it detects the application
 already exists. You can use this variable to run hooks differently in
 either context.
@@ -735,7 +730,7 @@ The minimum version of the Application Lifecycle Service server needed to run th
 Key Substitution[](#key-substitution "Permalink to this headline")
 -------------------------------------------------------------------
 
-The value of any key in *stackato.yml* can be inserted in other keys
+The value of any key in *manifest.yml* can be inserted in other keys
 using the \${*key*} syntax. For example:
 
     name: example-app
@@ -746,7 +741,7 @@ This defines a "MY\_NAME" environment variable with the value
 "example-app".
 
 A small number of keys are predefined for your use within
-*stackato.yml*:
+*manifest.yml*:
 
   ------------------------------------------------------------------------
   key
@@ -764,5 +759,5 @@ A small number of keys are predefined for your use within
 
 **Note**
 
-See the [*services*](#stackato-yml-services) section for an example of
+See the [*services*](#yml-services) section for an example of
 variable key substitution for yaml key names.

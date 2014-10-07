@@ -8,20 +8,16 @@ General Deployment[](#general-deployment "Permalink to this headline")
 =======================================================================
 
 Applications are typically deployed to Application Lifecycle Service by pushing source code
-and configuration to the system's API endpoint using the [*helion cli
-client*](/als/v1/user/client/#client) or other clients that use the
+and configuration to the system's API endpoint using the [*helion client*](/als/v1/user/client/#client) or other clients that use the
 Application Lifecycle Service or Cloud Foundry API.
 
 The steps for deploying applications will be slightly different
-depending on the application and its requirements. Instructions for
-deploying the [Application Lifecycle Service sample
-applications](https://github.com/Stackato-Apps) can be found in the
-README.md file of each app.
+depending on the application and its requirements. 
 
 **Note**
 
 In Application Lifecycle Service 1.0 and later (Cloud Foundry v2 API), application deployment
-is done primarily using [*Buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks). A
+is done primarily using [Buildpacks](/als/v1/user/deploy/buildpack/). A
 special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for
 existing application configurations.
 
@@ -32,7 +28,7 @@ Before deploying an app, the client must first target Application Lifecycle Serv
 endpoint URL. This will generally be the same URL that exposes the
 Management Console. For example:
 
-    $ helion target api.stacka.to
+    $ helion target api.example.com
     Successfully targeted to [https://api.example.hphelion.com]
     ...
 
@@ -96,7 +92,7 @@ The output of the push command will be something like:
     OK
     http://env.heli.on/ deployed
 
-The `helion` client will show staging and running
+The Helion client will show staging and running
 logs for the deployment process. To inspect these logs after deployment
 has finished, use the [*helion
 logs*](/als/v1/user/reference/client-ref/#command-logs) command.
@@ -107,16 +103,15 @@ Language Specific Deployment[](#language-specific-deployment "Permalink to this 
 See each of these sections for language specific deployment details and
 examples:
 
--   [Buildpacks](/als/v1/user/deploy/buildpack/)
--   [Clojure](/als/v1/user/deploy/languages/clojure/)
--   [Go](/als/v1/user/deploy/languages/go/)
 -   [Java](/als/v1/user/deploy/languages/java/)
--   [Node.js](/als/v1/user/deploy/languages/node/)
--   [Perl](/als/v1/user/deploy/languages/perl/)
+-   [Node](/als/v1/user/deploy/languages/node/)
 -   [PHP](/als/v1/user/deploy/languages/php/)
+<!---   [Clojure](/als/v1/user/deploy/languages/clojure/)
+-   [Go](/als/v1/user/deploy/languages/go/)
+-   [Perl](/als/v1/user/deploy/languages/perl/)
 -   [Python](/als/v1/user/deploy/languages/python/)
 -   [Ruby](/als/v1/user/deploy/languages/ruby/)
-
+-->
 Configuring Your Application For Application Lifecycle Service[](#configuring-your-application-for-helion "Permalink to this headline")
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -145,7 +140,7 @@ changes.
 **Environment Variables**
 :   A number of special environment variables are available during
     staging and runtime. These can be used in
-    [*hooks*](/als/v1/user/deploy/stackatoyml/#stackato-yml-hooks) or application code
+    [*hooks*](/als/v1/user/deploy/stackatoyml/#yml-hooks) or application code
     (for setting up databases, filesystem services, web server options,
     and cron jobs) in places where you would normally use hard-coded
     paths, credentials, or host-specific values.
@@ -163,9 +158,7 @@ API endpoint to reserve application URLs, allocate application
 instances, provision data services, upload application code, and
 optionally stage and start the application.
 
-The command will prompt for options or use those specified in a
-[*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) or
-[*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) file.
+The command will prompt for options or use those specified in a [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) file.
 
 **Note**
 
@@ -215,7 +208,7 @@ URLs, application names, and service names:
     [*space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces). The name given to a service
     during creation is a pointer to a globally unique string (i.e. the
     *actual* database name in the system as shown by
-    STACKATO\_SERVICES), so there is no possiblility of naming conflicts
+    VCAP\_SERVICES), so there is no possiblility of naming conflicts
     with services created in other orgs and spaces.
 
 Crontab Support[](#crontab-support "Permalink to this headline")
@@ -227,8 +220,8 @@ Cron commands are only executed on instance \#0 of the app.
 
 Cron commands can be provided either in a regular crontab file in the
 root directory of the app, or via the `cron:`
-section in *stackato.yml* (See [*stackato.yml
-Options*](/als/v1/user/deploy/stackatoyml/#stackato-yml)).
+section in *manifest.yml* (See [*manifest.yml
+Options*](/als/v1/user/deploy/stackatoyml/).
 
 The `HOME` and `PATH`
 environment variables, as well as all variables that start with
@@ -263,8 +256,8 @@ Mapping App URLs[](#mapping-app-urls "Permalink to this headline")
 
 Application Lifecycle Service automatically assigns to each application a URL made up of the
 application's name and the base URL for the system. An application named
-"myblog" deployed to an Application Lifecycle Service system at "api.stacka.to" would be given
-the URL "myblog.stacka.to".
+"myblog" deployed to an Application Lifecycle Service system at "api.example.com" would be given
+the URL "myblog.example.com".
 
 In addition to this default URL, additional URLs can be set for an
 application using the [*helion
@@ -279,20 +272,20 @@ For example, to map a URL to an existing application on Application Lifecycle Se
     +--------------+---+--------+----------------------------------+------------+
     | Application  | # | Health | URLS                             | Services   |
     +--------------+---+--------+----------------------------------+------------+
-    | myapp        | 1 | 100%   | myapp.stacka.to                  |            |
+    | myapp        | 1 | 100%   | myapp.example.com                  |            |
     +--------------+---+--------+----------------------------------+------------+
 
-    $ helion map myapp mydomain.com
+    $ helion map myapp example.com
 
     +--------------+---+--------+----------------------------------+------------+
     | Application  | # | Health | URLS                             | Services   |
     +--------------+---+--------+----------------------------------+------------+
-    | myapp        | 1 | 100%   | myapp.stacka.to                  |            |
-    |              |   |        | mydomain.com                     |            |
+    | myapp        | 1 | 100%   | myapp.example.com                  |            |
+    |              |   |        | example.com                     |            |
     +--------------+---+--------+----------------------------------+------------+
 
-If DNS is configured correctly, requests to "mydomain.com" will resolve
-transparently to "myapp.stacka.to".
+If DNS is configured correctly, requests to "example.com" will resolve
+transparently to "myapp.example.com".
 
 **Note**
 
@@ -303,25 +296,25 @@ URLs can be mapped to multiple applications owned by the same user,
 which can be useful for A/B testing. Application Lifecycle Service routes requests to the
 mapped URL randomly between all available app instances.
 
-Using the 'myapp.stacka.to' example above, you could push 'myapp-v2'
-(e.g. a more recent revision) then map 'mydomain.com' to that app as
+Using the 'myapp.example.com' example above, you could push 'myapp-v2'
+(e.g. a more recent revision) then map 'example.com' to that app as
 well. You can access the specific versions directly using
-'myapp.stacka.to' and 'myapp-v2.stacka.to', and use 'mydomain.com' to
+'myapp.example.com' and 'myapp-v2.example.com', and use 'example.com' to
 round robin between available instances of both versions:
 
     +-------------+---+---------+--------------------+-------------+
     | Application | # | Health  | URLS               | Services    |
     +-------------+---+---------+--------------------+-------------+
-    | myapp       | 5 | RUNNING | myapp.stacka.to    |             |
-    |             |   |         | mydomain.com       |             |
-    | myapp-v2    | 1 | RUNNING | myapp-v2.stacka.to |             |
-    |             |   |         | mydomain.com       |             |
+    | myapp       | 5 | RUNNING | myapp.example.com    |             |
+    |             |   |         | example.com       |             |
+    | myapp-v2    | 1 | RUNNING | myapp-v2.example.com |             |
+    |             |   |         | example.com       |             |
     +-------------+---+---------+--------------------+-------------+
 
 As you gain confidence with the new revision, you can increase the
 number of instances of 'myapp-v2' (i.e. phasing that version into
 production rather than cutting over) and eventually
-[*unmap*](/als/v1/user/reference/client-ref/#command-unmap) 'mydomain.com'
+[*unmap*](/als/v1/user/reference/client-ref/#command-unmap) 'example.com'
 from the original 'myapp'.
 
 Best Practices[](#best-practices "Permalink to this headline")
@@ -342,7 +335,7 @@ mapped to a "production" URL as well:
     +--------------------+---+---------+------------------------------+------------+
     | Application        | # | Health  | URLS                         | Services   |
     +--------------------+---+---------+------------------------------+------------+
-    | customertracker-v1 | 1 | RUNNING | customertracker-v1.stacka.to | customerdb |
+    | customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com | customerdb |
     |                    |   |         | customertracker.example.com  |            |
     +--------------------+---+---------+------------------------------+------------+
 
@@ -357,9 +350,9 @@ Push the updated code with a new application name:
     +--------------------+---+---------+------------------------------+------------+
     | Application        | # | Health  | URLS                         | Services   |
     +--------------------+---+---------+------------------------------+------------+
-    | customertracker-v1 | 1 | RUNNING | customertracker-v1.stacka.to | customerdb |
+    | customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com | customerdb |
     |                    |   |         | customertracker.example.com  |            |
-    | customertracker-v2 | 1 | RUNNING | customertracker-v2.stacka.to | customerdb |
+    | customertracker-v2 | 1 | RUNNING | customertracker-v2.example.com | customerdb |
     +--------------------+---+---------+------------------------------+------------+
 
 **Note**

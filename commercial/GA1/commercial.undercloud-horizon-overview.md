@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/horizon/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

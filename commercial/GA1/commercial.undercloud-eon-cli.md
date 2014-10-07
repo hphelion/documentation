@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/eon/cli/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

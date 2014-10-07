@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/glossary/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

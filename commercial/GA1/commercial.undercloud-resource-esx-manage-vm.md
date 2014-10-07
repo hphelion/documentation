@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/resource/esx/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

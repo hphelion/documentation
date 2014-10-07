@@ -4,10 +4,10 @@ permalink: /als/v1/user/deploy/languages/node/
 ---
 <!--PUBLISHED-->
 
-Node.js[](#node-js "Permalink to this headline")
+Developing in Node[](#node-js "Permalink to this headline")
 =================================================
 
-Application Lifecycle Service has a built in 'node' framework with multiple versions of the
+Application Lifecycle Service has a built in Node framework with multiple versions of the
 [Node.js](http://nodejs.org/) runtime. [NPM](https://npmjs.org/) is used
 to install Node packages automatically.
 
@@ -19,10 +19,9 @@ Your application should list dependencies in a standard, top-level
 automatically installs packages listed in the "dependencies" section
 before starting the server.
 
-Alternatively, you can call `npm` directly using
-[*hooks*](/als/v1/user/deploy/stackatoyml/#stackato-yml-hooks) in the *stackato.yml*
-file. For an example, see the [RailwayJS](https://github.com/Stackato-Apps/railwayjs/blob/master/stackato.yml)
-Application Lifecycle Service sample application.
+Alternatively, you can call NPM directly using
+[*hooks*](/als/v1/user/deploy/stackatoyml/#stackato-yml-hooks) in the *manifest.yml*
+file. 
 
 For NPM packages which include callable scripts or binaries, executable components are automatically added to the container's \$PATH, so a "global install" (`npm install -g`) is not required.
 
@@ -50,14 +49,13 @@ use structures such as:
 Using Data Services[](#using-data-services "Permalink to this headline")
 -------------------------------------------------------------------------
 
-Data services need to be configured with values from VCAP\_SERVICES,
-STACKATO\_SERVICES, DATABASE\_URL, or a database-specific environment
+Data services need to be configured with values from VCAP\_SERVICES, DATABASE\_URL, or a database-specific environment
 variable (see also [*Using Configured Database
 Services*](/als/v1/user/services/data-services/#database-accessing)).
 
 If the database module you use supports URL-formatted connection
 strings, using the
-[*DATABASE\_URL*](/als/v1/user/services/data-services/#database-database-url)
+[DATABASE\_URL](/als/v1/user/services/data-services/#database-database-url)
 or [*database-specific URL
 variable*](/als/v1/user/services/data-services/#database-specific-url)
 (REDIS\_URL, MONGODB\_URL, etc.) is often the simplest option.
@@ -72,7 +70,7 @@ database. For example:
       mongoose.connect("127.0.0.1", "myappdb", 27017);
     }
 
-Alternatively, `VCAP_SERVICES` is a JSON object
+`VCAP_SERVICES` is a JSON object
 containing information about all the data service bound to the
 application. A typical `VCAP_SERVICES` variable
 containing a single MongoDB service might look like this:
@@ -102,9 +100,7 @@ containing a single MongoDB service might look like this:
     }
 
 To use this information in your application code, use something similar
-to this block, which is from the
-[node-backbone-mongo](https://github.com/Stackato-Apps/node-backbone-mongo)
-demo application:
+to this block:
 
     if(process.env.VCAP_SERVICES){
       var services = JSON.parse(process.env.VCAP_SERVICES);

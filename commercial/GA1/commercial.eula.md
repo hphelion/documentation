@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/eula/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/glossary/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/3rd-party-license-agreements/"> NEXT &#9654;</a> </p>

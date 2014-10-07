@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/release-notes/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
