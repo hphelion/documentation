@@ -9,12 +9,12 @@ product: devplatform
 
 # HP Helion Development Platform Documentation
 
-Welcome! The HP Helion Development Platform preview edition is a free add-on for [HP Helion OpenStack&reg; Community](http://www8.hp.com/us/en/cloud/hphelion-openstack-community.html) which provides an integrated development platform that optimizes Cloud Foundry&trade; for OpenStack. 
+Welcome! The HP Helion Development Platform provides an integrated development platform that optimizes Cloud Foundry&trade; for OpenStack&reg;. 
 
 The Helion Development platform adds the Platform-as-a-Service (PaaS) layer to speed up application development and testing. PaaS helps application developers, developers extending the functionality of OpenStack services, and administrators get more out of the cloud faster than ever.
 
 **Note:**
-Before installing the Development Platform, you must first install [HP Helion OpenStack Community](/helion/community/install-virtual/).
+Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/ga/install/overview/)  HP Helion OpenStack&reg; cloud or microcloud. 
 
 ----------
 

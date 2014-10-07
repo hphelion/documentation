@@ -5,16 +5,19 @@ permalink: /helion/devplatform/workbook/helloworld/php/
 product: devplatform
 
 ---
-# Hello World PHP
+#PHP Sample: Hello World
 
 This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application.
 
 
 ##Prerequisites
 
-1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
-3. You must have access to the web-based Administration console.
+- HP Helion OpenStack&reg; cloud or micro-cloud deployed
+	- [Community](/helion/community/install/)
+	- [Commercial](/helion/openstack/ga/install/overview/)
+- Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available
+- Logon and password credentials for the cluster.
+- Access to  [Helion command-line interface (CLI)](/als/v1/user/client/); this is part of the Helion Developer Platform installation.
 ##Download the Application Files
 [Click here to access the download directory.](https://gitlab.gozer.hpcloud.net/developer-experience/sampleapps) There are several sets of files here; download only the Hello-World-PHP sample files.
 
@@ -30,7 +33,7 @@ To deploy the application, make sure you are logged in successfully for your des
 
 1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
 
-2. *cd* into the app's root directory.
+2. If you are not already there, `cd` to the root directory of the sample.
 3. Execute `stackato push -n` 
 
 ##Run the Application
