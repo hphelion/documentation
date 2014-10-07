@@ -24,7 +24,7 @@ PageRefresh();
 
 
 
-## Working with Virtual Environment(s)
+## HP Helion OpenStack&#174;: Working with Virtual Environment(s)
 
 
 The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Undercloud Horizon Dashboard or [EON]( /helion/openstack/ga/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the Undercloud Horizon.

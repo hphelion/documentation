@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/siteindex/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -23,36 +23,77 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Site Index
 
-#### [Release Notes](/helion/openstack/release-notes/) 
+#### [Release Notes](/helion/openstack/ga/release-notes/) 
 
 #### [Getting started with HP Helion OpenStack](/helion/openstack/)
 
-* [Support matrix](/helion/openstack/support-matrix/) 
 * [FAQs](/helion/openstack/ga/faq/)  
 * [Technical overview](/helion/openstack/ga/technical-overview/)
-* [Services overview](/helion/openstack/ga/services/overview/)   
+
 * [Glossary](/helion/openstack/ga/glossary/)
 
-#### Installing &amp; Configuring Your Cloud
-* [Overview](/helion/openstack/ga/install-overview/) 
-* [Before you begin](/helion/openstack/ga/install/prereqs/) 
-* [Installing and configuring with a KVM hypervisor](/helion/openstack/ga/install/kvm)
-* [Installing HP StoreVirtual VSA support](/helion/openstack/ga/install/vsa/)
-* [Installing and configuring with an ESX hypervisor](/helion/ga/openstack/install/esx/)
-* [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/)
-* [Installing and configuring DNSaaS support](/helion/openstack/ga/install/dnsaas/)
 
-#### [Related documentation](/helion/openstack/related-links)
- 
-* [OpenStack documentation home page](http://docs.openstack.org/)
-* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
-* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
-* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
-* [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
-* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+## Installing &amp; Configuring Your Cloud
+
+[Overview](/helion/openstack/ga/install-overview/) 
+[Support matrix](/helion/openstack/ga/support-matrix/)
+[Technical Overview](/helion/openstack/ga/technical-overview/)
+[Prerequisites](/helion/openstack/ga/install/prereqs/)
+[Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/)
+[Installing an NTP Server](/helion/openstack/ga/install/ntp/)
 
 
-## [HP Helion OpenStack Services]
+### Installing with KVM Hypervisor Support
+
+[Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/)
+ -[Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/)
+- [HP Helion OpenStack®: HP StoreServ (3PAR) Support](/helion/openstack/ga/install/3par/)
+- [Integrating LDAP](/helion/openstack/ga/install/ldap/)
+- [Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors](/helion/openstack/ga/install/add/nodes/)
+
+### Installing with ESX Hypervisor Support
+
+[Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/)
+- [Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/)
+- [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/)
+
+
+### Post-Installation Steps
+
+[Integrating LDAP](/helion/openstack/ga/install/ldap/)
+[DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/)
+[Configuring your network securely](/helion/openstack/ga/install/security/)
+[Back Up and Restore](/helion/openstack/ga/backup.restore/)
+[High Availability (HA)](/helion/openstack/ga/high-availability/)
+[Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/ga/maskedIP/)
+[Troubleshooting](/helion/openstack/services/ga/troubleshooting/)
+
+
+### Undercloud Horizon Dashboard
+
+[Undercloud Horizon Overview](/helion/openstack/ga/undercloud/horizon/overview/)
+
+- [Undercloud Horizon Dashboard: Settings Tab](/helion/openstack/ga/undercloud/admin/settings/)
+- [Updates and Extensions](/helion/openstack/ga/undercloud/admin/updates-and-extension/)
+- [Command Line Interface- EON](/helion/openstack/ga/undercloud/eon/cli/)
+- [Working with ESX Clusters](/helion/openstack/ga/undercloud/oc/config/esx/)
+- [Working with StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
+- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)
+- [Manage Overcloud Configuration](/helion/openstack/ga/undercloud/oc/config/)
+- [Compute Service](/helion/openstack/ga/undercloud/resource/esx/compute/)
+- [Working with Virtual Environment(s)](/helion/openstack/ga/undercloud/resource/esx/)
+- [Manage Resources](/helion/openstack/ga/undercloud/manage/resources/overview/)
+- [Working with Storage](/helion/openstack/ga/undercloud/manage/resources/storage/)
+- [Working with HP 3PAR StoreServ](/helion/openstack/ga/undercloud/storage/storeserv/)
+- [Working with HP StoreVirtual VSA](/helion/openstack/ga/undercloud/storage/storevirtual/)
+
+### Horizon Dashboard
+
+[How to use the Helion Dashboards](/helion/openstack/ga/dashboard/how-works/)
+[Logging into the Helion Dashboards](/helion/openstack/ga/dashboard/login/)
+
+
+### HP Helion OpenStack Services ###
 
 [Services Overview](/helion/openstack/ga/services/overview/)
 
@@ -72,11 +113,13 @@ PageRefresh();
 - [Reporting Service Overview](/helion/openstack/ga/services/reporting/overview/)
 - [Sherpa Service Overview](/helion/openstack/ga/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/ga/services/sirius/overview/)
+	- [Configuring Your Storage Using Sirius](/helion/openstack/ga/sirius/cli/workflow)
+	- [Configuring Your Storage Using Sirius](/helion/openstack/ga/sirius-cli/)
 - [Tripleo Service Overview](/helion/openstack/ga/services/tripleo/overview/)
 - [Volume Operations Service Overview](/helion/openstack/ga/services/volume/overview/)
 
 
-### Swift Deployment
+### Swift Deployment ###
 
 [Scale Out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/)
 
@@ -108,6 +151,17 @@ PageRefresh();
 
 #### [Preview Agreement](/helion/openstack/ga/eula/)
  
+## [Related documentation](/helion/openstack/related-links)
+ 
+* [OpenStack documentation home page](http://docs.openstack.org/)
+* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
+* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
+* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
+* [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
+* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
 ----
