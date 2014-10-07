@@ -6,7 +6,7 @@
  
 
 
-BRANCH=development
+ 
 echo "$BRANCH"
  
 if [ "$BRANCH" == "" ]
@@ -21,19 +21,20 @@ fi
 
  
 
-git branch --set-upstream ${BRANCH} origin/${BRANCH}
-git branch --set-upstream master origin/master
+git branch --set-upstream  ${BRANCH} origin/${BRANCH}
+git branch --set-upstream  master origin/master
  
 git checkout -f master
-git pull origin 
+git pull origin ls
+
 git checkout -f ${BRANCH}
 git pull origin 
    
 
-#Search to ensure that every md file contains one of the comments strings above. 
+#Search to ensure that every md file contains one of the publish flag comments strings . 
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
 
-echo 0
+ 
 s=" "
 MDFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.md" `
@@ -41,12 +42,10 @@ do
 
 	if [[ -n $(grep -vL "\-\-PUBLISH|\-\-UNDER REVISION" $i) ]]; 
 	then
-	echo grep -vL "\-\-PUBLISH|\-\-UNDER REVISION" $i
+	MDFILES_NOT_DESIGNATED=$MDFILES_NOT_DESIGNATED$s`echo $i`
 	fi
- 
- 
-done
- echo 1
+ done
+
 if [ "$MDFILES_NOT_DESIGNATED" != "" ]
 then
 echo "==========================================================================="
@@ -60,11 +59,41 @@ echo "Add or correct the comment in these files and run this script again."
 fi
 
 
+#Search to ensure that every yml file contains one of the comments strings above. 
+#(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
+
+ 
+YMLFILES_NOT_DESIGNATED=""
+for i in `find . -name "*.yml" `
+do 
+
+	if [[ -n $(grep -vL "#PUBLISH|#UNDER REVISION" $i) ]]; 
+ 
+	then
+		 
+	YMLFILES_NOT_DESIGNATED=$YMLFILES_NOT_DESIGNATED$s`echo $i`
+	fi
+ 
+ 
+done
+ 
+if [ "$YMLFILES_NOT_DESIGNATED" != "" ]
+then
+echo "==========================================================================="
+echo "The following files in the $BRANCH branch are missing a PUBLISH or UNDER REVISION comment"
+echo " "
+echo "$YMLFILES_NOT_DESIGNATED"
+echo " "
+echo "Add or correct the comment in these files and run this script again."
+#git checkout master
+	exit 1
+fi
+
+
+
 #Search for and record the names of all the files that contain the comment: <!—PUBLISH-->
 
  
-echo 2
-s=" "
 MDFILES_TO_PUBLISH=""
 for i in `find . -name "*.md" `
 do 
@@ -72,15 +101,23 @@ MDFILES_TO_PUBLISH=$MDFILES_TO_PUBLISH$s`egrep -l "\-\-PUBLISH" $i`;
  
 done
 
+YMLFILES_TO_PUBLISH=""
+for i in `find . -name "*.yml" `
+do 
+YMLFILES_TO_PUBLISH=$YMLFILES_TO_PUBLISH$s`egrep -l "#PUBLISH" $i`; 
+ 
+done
+
  
 NON_MDFILES_TO_PUBLISH=`find . -type f -not -path "*.git*" -not -name "*.md"`
 
  
-ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}
+ALL_FILES=${MDFILES_TO_PUBLISH}_list_${NON_MDFILES_TO_PUBLISH}_list_${YMLFILES_TO_PUBLISH}
 
  
-echo 3
-echo "$ALL_FILES"
+ 
+
+ 
 #Checkout the master branch
 git checkout master
 
