@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-#  
+#   
 #
 
  
 
 
- 
+BRANCH=development
 echo "$BRANCH"
  
 if [ "$BRANCH" == "" ]
