@@ -53,47 +53,50 @@ PageRefresh();
 
 
 ## [HP Helion OpenStack Services]
-[Services Overview](./commerical.services-overview.md:permalink: /helion/openstack/ga/services/overview/)
 
-[Compute Services Overview](/helion/openstack/services/ga/compute/overview/)
-[DNS Service Overview](/helion/openstack/ga/services/dns/overview/)
-[DVR Service Overview](/helion/openstack/ga/services/dvr/overview/)
-[EON Service Overview](/helion/openstack/ga/services/eon/overview/)
-[Eve Service Overview](/helion/openstack/ga/services/eve/overview/)
-[Focus Service Overview](/helion/openstack/ga/services/focus/overview/)
-[Horizon Service Overview](/helion/openstack/ga/services/horizon/overview/)
-[Identity Operations Service Overview](/helion/openstack/ga/services/identity/overview/)
-[Image Operations Service Overview](/helion/openstack/ga/services/imaging/overview/)
-[Ironic Service Overview](/helion/openstack/ga/services/ironic/overview/)
-[Networking Operations Service Overview](/helion/openstack/ga/services/networking/overview/)
-[Object Operations Service Overview](/helion/openstack/ga/services/object/overview/)
-[Orchestration Service Overview](/helion/openstack/ga/services/orchestration/overview/)
-[Reporting Service Overview](./commerical.services-reporting-overview.md:permalink: /helion/openstack/ga/services/reporting/overview/)
-./commerical.services-sherpa-overview.md:permalink: /helion/openstack/ga/services/sherpa/overview/
-./commerical.services-sirius-overview.md:permalink: /helion/openstack/ga/services/sirius/overview/
-./commerical.services-swift-deployment-add-disk-account-container.md:permalink: /helion/openstack/ga/services/swift/deployment/add-disk-account-container/
-./commerical.services-swift-deployment-add-disk-scale-out-object-ring.md:permalink: /helion/openstack/ga/services/swift/deployment/add-disk-scale-out/
-./commerical.services-swift-deployment-add-disk-starter-object-ring.md:permalink: /helion/openstack/ga/services/swift/deployment/add-disk-starter/
-./commerical.services-swift-deployment-add-disk-storage-node.md:permalink: /helion/openstack/ga/services/swift/deployment/add-disk-object-node/
-./commerical.services-swift-deployment-add-proxy-node.md:permalink: /helion/openstack/ga/services/swift/deployment/add-proxy-node/
-./commerical.services-swift-deployment-expand-swift-cluster.md:permalink: /helion/openstack/ga/services/object/swift/expand-cluster/
-./commerical.services-swift-deployment-monitor-health-check.md:permalink: /helion/openstack/ga/services/object/swift/health-check/
-./commerical.services-swift-deployment-monitor-replica-swift-status.md:permalink: /helion/openstack/ga/services/object/swift/replica-status/
-./commerical.services-swift-deployment-monitor-swift-cluster.md:permalink: /helion/openstack/ga/services/object/swift/Monitor-cluster/
-./commerical.services-swift-deployment-monitor-swift-disk.md:permalink: /helion/openstack/ga/services/object/swift/Monitor-disk/
-./commerical.services-swift-deployment-provision-swift-node.md:permalink: /helion/openstack/ga/services/swift/provision-nodes/
-./commerical.services-swift-deployment-shrink-remove-exisitng-disk.md:permalink: /helion/openstack/ga/services/swift/deployment/remove-existing-disk/
-./commerical.services-swift-deployment-shrink-remove-proxy-node.md:permalink: /helion/openstack/ga/services/swift/deployment/remove-proxy-node/
-./commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.md:permalink: /helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/
-./commerical.services-swift-deployment-shrink-swift-cluster.md:permalink: /helion/openstack/ga/services/object/swift/shrink-cluster/
-./commerical.services-swift-deployment.md:permalink: /helion/openstack/ga/services/swift/deployment-scale-out/
-./commerical.services-swift-diagnosis-disk-health-hpssacli.md:permalink: /helion/openstack/ga/services/swift/diagnosis-disk-health/hpssacli/
-./commerical.services-tripleo-overview.md:permalink: /helion/openstack/ga/services/tripleo/overview/
-./commerical.services-volume-overview.md:permalink: /helion/openstack/ga/services/volume/overview/
+[Services Overview](/helion/openstack/ga/services/overview/)
 
-### Scale-Out Swift
+- [Compute Services Overview](/helion/openstack/services/ga/compute/overview/)
+- [DNS Service Overview](/helion/openstack/ga/services/dns/overview/)
+- [DVR Service Overview](/helion/openstack/ga/services/dvr/overview/)
+- [EON Service Overview](/helion/openstack/ga/services/eon/overview/)
+- [Eve Service Overview](/helion/openstack/ga/services/eve/overview/)
+- [Focus Service Overview](/helion/openstack/ga/services/focus/overview/)
+- [Horizon Service Overview](/helion/openstack/ga/services/horizon/overview/)
+- [Identity Operations Service Overview](/helion/openstack/ga/services/identity/overview/)
+- [Image Operations Service Overview](/helion/openstack/ga/services/imaging/overview/)
+- [Ironic Service Overview](/helion/openstack/ga/services/ironic/overview/)
+- [Networking Operations Service Overview](/helion/openstack/ga/services/networking/overview/)
+- [Object Operations Service Overview](/helion/openstack/ga/services/object/overview/)
+- [Orchestration Service Overview](/helion/openstack/ga/services/orchestration/overview/)
+- [Reporting Service Overview](/helion/openstack/ga/services/reporting/overview/)
+- [Sherpa Service Overview](/helion/openstack/ga/services/sherpa/overview/)
+- [Sirius Service Overview](/helion/openstack/ga/services/sirius/overview/)
+- [Tripleo Service Overview](/helion/openstack/ga/services/tripleo/overview/)
+- [Volume Operations Service Overview](/helion/openstack/ga/services/volume/overview/)
 
-[Orchestration Service Overview](./commerical.services-scale-out-swift.md:permalink: /helion/openstack/ga/services/object/overview/scale-out-swift/)
+
+### Swift Deployment
+
+[Scale Out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/)
+
+- [Adding Disks to Account or Container Rings](/helion/openstack/ga/services/swift/deployment/add-disk-account-container/)
+- [Add a Disk to a Scale-out Object Ring](/helion/openstack/ga/services/swift/deployment/add-disk-scale-out/)
+- [Add a Disk to Starter Object Ring](/helion/openstack/ga/services/swift/deployment/add-disk-starter/)
+- [Add New Scale-out Object Node](/helion/openstack/ga/services/swift/deployment/add-disk-object-node/)
+- [Add New Scale-out Proxy Node](/helion/openstack/ga/services/swift/deployment/add-proxy-node/)
+- [Extend a Swift Cluster](/helion/openstack/ga/services/object/swift/expand-cluster/)
+- [Monitoring the Health of Services using Icinga](/helion/openstack/ga/services/object/swift/health-check/)
+- [Monitor Node Replication Status using Icinga](/helion/openstack/ga/services/object/swift/replica-status/)
+- [Monitor Swift Cluster](/helion/openstack/ga/services/object/swift/Monitor-cluster/)
+- [Monitor Disk Usage](/helion/openstack/ga/services/object/swift/Monitor-disk/)
+- [Provisioning Swift Node(s)](/helion/openstack/ga/services/swift/provision-nodes/)
+- [Remove an existing Disk from Object Nodes](/helion/openstack/ga/services/swift/deployment/remove-existing-disk/)
+- [Remove Scale-out Object Storage Node](/helion/openstack/ga/services/swift/deployment/remove-proxy-node/)
+- [Remove Scale-out Object Storage Node](/helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/)
+- [Shrink Swift Cluster](/helion/openstack/ga/services/object/swift/shrink-cluster/)
+- [Deploying Additional Scale-out Swift Nodes with HP Helion OpenStack](/helion/openstack/ga/services/swift/deployment-scale-out/)
+- [Diagnosis of disk health using hpssacli utility for HP servers](/helion/openstack/ga/services/swift/diagnosis-disk-health/hpssacli/)
 
 
 
