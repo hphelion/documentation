@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/eve/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # HP Helion OpenStack&#174; Eve Service Overview #
 

@@ -3,7 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/java/authentication/
 ---
 <!--UNDER REVISION-->
-
+ 
+<!--
 #Authentication With Apache jclouds and HP Helion
 
 The `Identity Service API <https://docs.hpcloud.com/identity>`_ is central to using the
@@ -14,9 +15,9 @@ Object Storage, and everything else is available.
 
 Apache jclouds provides functionality to interact with identity service and authentication
 to simply authenticate commonly and use it everywhere.
+-->
+#Authenticating with access key and token
 
-Authenticating with access key & token
----------------------------------------
 By default, the authentication mechanism for all OpenStack Keystone based APIs will use your
 password as the credential to log in.
 

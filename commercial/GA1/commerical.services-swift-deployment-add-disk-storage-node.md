@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/add-disk-object-node/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/Monitor-cluster/"> NEXT &#9654</a> </p>
 --->
 
-#Add New Scale-out Object Node
+#HP Helion OpenStack&#174;: Add New Scale-out Object Node
 
 Perform the following procedure to add new scale-out object node. 
 

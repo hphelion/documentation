@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/high-availability/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -19,7 +19,7 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion OpenStack&#174; High Availability(HA)
+# HP Helion OpenStack&#174;: High Availability(HA)
 
 This page covers the following topics:
 
@@ -161,7 +161,7 @@ Finally, when Controller0 comes back online, keepalived and HA proxy will resume
 
 ####Handling Network Partitions
 
-It is important for the overcloud HA setup to tolerate network failures, specifically those that result in a partition of the cluster, whereby one of the three nodes in the overcloud control plane cannot communicate with the remaining two nodes of the cluster. <!--The description of network partition handling is separated into the main HA components of the overcloud...**sentence seems to be incomplete. Please validate** ?? -->
+It is important for the overcloud HA setup to tolerate network failures, specifically those that result in a partition of the cluster, whereby one of the three nodes in the overcloud control plane cannot communicate with the remaining two nodes of the cluster. The description of network partition handling is separated into the main HA components of the overcloud...**sentence seems to be incomplete. Please validate** ?? 
 
 #####MySQL Galera Cluster<a name="mysql-galera"></a>
 The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is a partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the control plane. As a result, requests can only be satisfied on Controller1 or management controller. Controller0 will continue to attempt to rejoin the cluster:

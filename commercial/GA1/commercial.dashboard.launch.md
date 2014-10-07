@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/dashboard/login/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 
@@ -21,7 +21,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/managing/volumes/">&#9664; PREV</a> | <a href="/helion/openstack/dashboard/users/">&#9650; UP</a> | <a href="/helion/openstack/managing/routers/">NEXT &#9654;</a> </p>
 -->
-# Logging into the HP Helion OpenStack&reg; Dashboards
+# HP Helion OpenStack&#174;: Logging into the Helion Dashboards
 
 1. Ask the cloud operator for the host name or public IP address where the dashboard is located, your user name, and your password.
 

@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/add-disk-account-conta
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> --->
 
 
-#Adding Disks to Account or Container Rings
+#HP Helion OpenStack&#174; Adding Disks to Account or Container Rings
 
 Proxy nodes store account and container objects. When new disks are added to a proxy node, the new disks expand the storage capacity of the account and container rings. 
 

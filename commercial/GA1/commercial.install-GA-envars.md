@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/envars/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -22,8 +22,6 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&reg;:  Creating an Environment Variables File for Installation #
-
-To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a file that will be executed automatically.
 
 The HP Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables. As a user who is installing HP Helion OpenStack, you should create a file containing the environment variables based on the applicable scenario from the list below.
 
@@ -42,30 +40,28 @@ The following section describes the environmental variables that affect your ins
 
 	export BRIDGE_INTERFACE=em2
 
-**Note:** For an ESX install, this variable is used for seed VM creation.
-
 `BM_NETWORK_SEED_IP`, `BM_NETWORK_CIDR` - Use these variables to specify a particular IP address for the seed VM, for example 192.168.130.0/24.
 
 	export BM_NETWORK_SEED_IP=192.168.130.3
 	export BM_NETWORK_CIDR=192.168.130.0/24
 
-**Note:** For an ESX install, this variable is used for seed VM creation.
-
 `BM_NETWORK_GATEWAY` - Use this variable to specify a host other than the seed as the gateway, for example 192.168.130.1. Typically this IP will be the physical gateway of the network.
 
 	export BM_NETWORK_GATEWAY=192.168.130.1
-
-**Note:** For an ESX install, this variable is used for seed VM creation.
 
 `BM_NETWORK_SEED_RANGE_START`, `BM_NETWORK_SEED_RANGE_END` - Use these variables to specify an IP address range for the seed cloud to administrate/manage the undercloud node(s), for example 192.168.130.4-192.168.130.22.
 
 	export BM_NETWORK_SEED_RANGE_START=192.168.130.4
 	export BM_NETWORK_SEED_RANGE_END=192.168.130.22
 
+**Note:** You must choose the `BM_NETWORK_SEED_RANGE_xxx` and to be consistent with any values already chosen for `BM_NETWORK_SEED_IP` and `BM_NETWORK_CIDR`. All addresses must be on a common subnet.
+
 `BM_NETWORK_UNDERCLOUD_RANGE_START`, `BM_NETWORK_UNDERCLOUD_RANGE_END` - Use the variables to specify an IP address range for the undercloud to administrate/manage the overcloud node(s), for example 192.168.130.23-192.168.130.126.
 
 	export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.130.23
 	export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.130.126
+
+**Note:** You must choose the `BM_NETWORK_UNDERCLOUD_RANGE_xxx` to be consistent with any values already chosen for `BM_NETWORK_SEED_IP` and `BM_NETWORK_CIDR`. All addresses must be on a common subnet.
 
 `OVERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your overcloud. The default value is `eth2`. If this is correct you do not need to set this variable.
 
@@ -98,6 +94,12 @@ The following section describes the environmental variables that affect your ins
 
 	**Note:** The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the FLOATING_CIDR range.
 
+`OVERCLOUD_FIXED_RANGE_CIDR` - Use this variable to set the address range of the default private network.
+
+	For example:
+
+	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
+
 `UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your undercloud. The default value is `eth2`. If this is correct you do not need to set this variable.
 
 	export UNDERCLOUD_NeutronPublicInterface=eth2
@@ -120,18 +122,33 @@ The following section describes the environmental variables that affect your ins
 
 	export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=99
 
-A third network is configured for the platform service guest instances to connect to undercloud controller by setting NeutronSVCInterface to a physically configured VLAN. The vlan name used as the NeutronSVCInterface is expected to be of the form "vlan" followed by the vlan id ( ex. vlan102 ).
+A third network is configured for the platform service guest instances to connect to undercloud controller by setting `NeutronSVCInterface` to a physically configured VLAN. The VLAN name used as the `NeutronSVCInterface` is expected to be of the form `vlan` followed by the VLAN id ( ex. vlan102 ).
+
+**Note:** These variables are optional for the ESX cloud type. 
+
 For example: 
 
-	NeutronSVCInterface=vlan102 
-	NeutronSVCInterfaceDefaultRoute=192.168.132.1 
-	SVC_ALLOCATE_START=192.168.132.2 
-	SVC_ALLOCATE_END=192.168.132.250 
-	SVC_ALLOCATE_CIDR=192.168.132.0/24 
-	OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc 
-	OVERCLOUD_FLAT_NETWORKS=svcnet1 
+	export NeutronSVCInterface=vlan102 
+	export NeutronSVCInterfaceDefaultRoute=192.168.132.1 
+	export SVC_ALLOCATE_START=192.168.132.2 
+	export SVC_ALLOCATE_END=192.168.132.250 
+	export SVC_ALLOCATE_CIDR=192.168.132.0/24 
+	export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc 
+	export OVERCLOUD_FLAT_NETWORKS=svcnet1 
 
-**Note:** You must choose the BM_NETWORK_SEED_RANGE_xxx and BM_NETWORK_UNDERCLOUD_RANGE_xxx to be consistent with any values already chosen for BM_NETWORK_SEED_IP and BM_NETWORK_CIDR. All addresses must be on a common subnet.
+`VLAN_RANGE`- Use this variable to specify the VLAN ranges that could be used by tenant networks.  
+
+**Inportant** This option is required for the ESX cloud type.
+
+For example: 
+
+	export VLAN_RANGE=10:500
+
+`PROVIDER_NETWORK`- Use this variable to specify the management network of the ESX hypervisors. This is a required option for ESX cloud type.
+
+For example:
+
+	export PROVIDER_NETWORK=192.168.10.0/24
 
 
 ## Environment variables file for a KVM install ## {#kvm}
@@ -142,7 +159,7 @@ Identify the environment variables required for the installation based on the de
 
 ### Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses and VxLAN based Tenant Networks ### {#one}
 
-If you intend to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the environment variables listed below. Save the file on the installer system (seed cloud host). 
+If you intend to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the environment variables listed below. Save the file on the seed cloud host (installation system). 
 
 All VLAN ID's and IP addresses given in below are examples of customized IP addresses and VLAN identifiers for External and Service network access.
 
@@ -183,7 +200,7 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/).
 
-## Environment variables file for a ESX install ## {#kvm}
+## Environment variables file for an ESX cloud type ## {#kvm}
 
 Identify the environment variables required for the installation based on the deployment scenario.
 
@@ -193,18 +210,9 @@ Identify the environment variables required for the installation based on the de
 
 ### Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses ### {#esxone}
 
-If you intend to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the environment variables listed below. Save the file on the seed VM . You will copy the file to the appropriate location during the installation.
+If you intend to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the environment variables listed below. Save the file on the seed cloud host (installation system). 
 
-All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for External and Service network access.He can create one env_vars file but that should be executed twice. Once before creation of SEED VM and the next one in the SEED VM itself.
-
-My suggestion would be having two env_vars file one for the KVM host (system hosting the SEED VM) and the other for seed VM. 
-
-
-Before SEED VM creation,
-export BM_NETWORK_CIDR=172.30.100.0/24
-export BM_NETWORK_SEED_IP=172.30.100.1
-export BRIDGE_INTERFACE=em1
-
+All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for External and Service network access.
 
 		export BM_NETWORK_SEED_RANGE_START=172.30.100.2
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
@@ -230,10 +238,13 @@ export BRIDGE_INTERFACE=em1
 
 If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion OpenStack deployment:
 
-1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed VM. 
+1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
 
 	All VLAN ID's & IP addresses given in the next column are examples of customized IP addresses and VLAN identifiers for External network access.
 
+		export BM_NETWORK_CIDR=172.30.100.0/24
+		export BM_NETWORK_SEED_IP=172.30.100.1
+		export BRIDGE_INTERFACE=em1
 		export BM_NETWORK_SEED_RANGE_START=10.23.69.136
 		export BM_NETWORK_SEED_RANGE_END=10.23.69.141
 		export BM_NETWORK_UNDERCLOUD_RANGE_START=10.23.69.142

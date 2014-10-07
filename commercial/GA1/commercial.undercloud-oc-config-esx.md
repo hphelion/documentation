@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/oc/config/esx/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -21,7 +21,7 @@ PageRefresh();
 <!---
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p> --->
 
-##Working with EXS Clusters
+## HP Helion OpenStack&#174;: Working with ESX Clusters
  
 In the undercloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud. 
 

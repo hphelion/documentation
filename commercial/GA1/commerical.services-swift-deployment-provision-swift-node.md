@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/provision-nodes/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-#Provisioning Swift Node(s) 
+# HP Helion OpenStack&#174;: Provisioning Swift Node(s) 
 
 This page describes the procedure to provision scale-out Swift nodes. 
 **Caution**: Do not provision proxy and scale-out object nodes together as the requirements for each are different. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out object storage nodes. 

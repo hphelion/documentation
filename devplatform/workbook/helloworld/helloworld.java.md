@@ -6,12 +6,11 @@ product: devplatform
 
 ---
 ##Hello World JAVA
-This is a very simple Servlet-based Java webapp.
-##Prerequisites
-**Stackato**
+This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. This is a very simple Servlet-based Java web app.
 
+##Prerequisites
 1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+2. The  [Helion command-line interface (CLI)] must be installed. 
 3. You must have access to the web-based Administration console.
 
 **JDK**
@@ -45,7 +44,7 @@ This builds the application with Maven. It will create the *hello-world-java-1.0
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
-1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
+1. Open the  [Helion command-line interface (CLI)].
 
 2. *cd* into the app's root directory.
 3. Execute `stackato push -n` 
@@ -60,4 +59,4 @@ To deploy the application, make sure you are logged in successfully for your des
 6. You should see a simple text message: Hello World!
 	
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)
+[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)

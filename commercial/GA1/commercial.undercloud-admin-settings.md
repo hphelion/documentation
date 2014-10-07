@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/admin/settings/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 
@@ -22,7 +22,7 @@ PageRefresh();
 <!---
 <p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">NEXT &#9654;</a> </p>-->
 
-# Undercloud Horizon Dashboard: Settings Tab
+#  HP Helion OpenStack&#174; Undercloud Horizon Dashboard: Settings Tab
 
 The options on the Settings tab allow changes to the following:
 

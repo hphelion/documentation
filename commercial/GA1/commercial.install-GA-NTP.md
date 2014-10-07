@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/ntp/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

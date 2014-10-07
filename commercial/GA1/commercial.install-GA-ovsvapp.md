@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/ovsvapp/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -58,12 +58,14 @@ Before you install the OVSvApp, ensure the following:
 - The two Virtual Distributed Switches (VDS) must be configured. 
 
 	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to true, the VDS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater.
+	
+	To consume this functionality,in addition to the data VLANs in the uplink, the ESX management VLAN should also be allowed. If an existing ESX management network is in a different uplink, the new L2 network should be created for the ESX compute proxy and ovsvapp VM consumption.
 		
 	- **Manual DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to false, you need to create and configure the VDS as given below. Manual configuration requires ESX 5.0.0 or greater.
 
 		There must be two Virtual Distributed Switches (VDS) and they are configured as follows: 
 
-    	**VDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The switch must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
+    	**VDS1**: This switch has no uplink ports configured and has a portgroup of type **VLAN** with **Trunking enabled**. The portgroup must contain the list of VLAN tags that are used by overcloud Networking Operations (Neutron) service. The **Promiscuous Mode** and **Forged Transmits** options must be set to **Accept** under the **Security** tab for the **Portgroup**.	
 
     	**Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
     
@@ -397,7 +399,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
 
-	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but ESX maintenance mode is launched, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor = false` in the `/etc/neuton/neutron.conf` file. Restart the server to take effect.
+	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the valu.
 
 - Do not delete a tenant VM port via “neutron port-delete” command for a tenant VM.
 

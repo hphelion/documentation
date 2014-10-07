@@ -8,7 +8,7 @@ product: devplatform
 #PHP Messaging Sample
 Before you can begin working with the samples, ensure that you have met the technical prerequisites.
 
-This is the **third** sample in the Workbook; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/php/) sample and the [Database sample](/helion/devplatform/workbook/database/php/), please do those two first.
+This is the **third** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/php/) sample and the [Database sample](/helion/devplatform/workbook/database/php/), please do those two first.
 ##Prerequisites
 **Stackato**
 
@@ -40,6 +40,6 @@ To deploy the application, make sure you are logged in successfully for your des
 3. If the file push was successful, you should see Hello World in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. You should see a page that will accept a user's message.
+6.You should see a page that has a text field to accept a brief message. Enter text into the field and click **Enter** to send the message. The text of the message should appear.
 
-[Exit Workbook](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/php/)
+[Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/php/)

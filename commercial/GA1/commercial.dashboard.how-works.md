@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/dashboard/how-works/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 
@@ -23,7 +23,7 @@ PageRefresh();
 <!-- Hide until use cases are official
 <p style="font-size: small;"> <a href="/helion/openstack/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/manage/">&#9650; UP</a> | <a href="/helion/openstack/dashboard/users/">NEXT &#9654;</a> </p>
 -->
-# How to use the HP Helion OpenStack&reg; Dashboards
+# HP Helion OpenStack&#174;: How to use the Helion Dashboards
 
 The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.  
 

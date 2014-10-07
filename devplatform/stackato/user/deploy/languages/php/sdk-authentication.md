@@ -5,7 +5,7 @@ permalink: /als/v1/user/deploy/languages/php/authentication/
 <!--UNDER REVISION-->
 #Identity Service, Authentication, and the Service Catalog
 
-The `Identity Service API <https://docs.hpcloud.com/identity>`_ is central to using the
+The [Identity Service API](https://docs.hpcloud.com/identity) is central to using the
 APIs for the services by HP Helion. Identity Service not only deals with authentication
 but also supplies the catalog of information around the activated and available services.
 For example, this API is where the API endpoints for services like the different compute regions,
@@ -25,8 +25,6 @@ get a valid token for a set of services.
 
 Before you look at the helper function let's take a quick look at authenticating manually.
 
-.. code-block:: php
-
     $identity = new \HPCloud\Services\IdentityServices($endpoint);
     try {
         $token = $identity->authenticateAsAccount($account, $secret, $tenantId, $tenantName);
@@ -45,8 +43,6 @@ number of exceptions that can be caught depending on the type of error that occu
 If you want to authenticate as a user with your console username and password it looks
 almost the same as authenticating as an account.
 
-.. code-block:: php
-
     $identity = new \HPCloud\Services\IdentityServices($endpoint);
     try {
         $token = $identity->authenticateAsUser($username, $password, $tenantId, $tenantName);
@@ -55,16 +51,13 @@ almost the same as authenticating as an account.
         // Authentication failed.
     }
 
-Note, while you can authenticate with a username and password we recommend using the
-access key id and secret key method.
+Note that while you **can** authenticate with a username and password, we recommend using the access key id and secret key method.
 
-A Bootstrap Identity Helper
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+###A Bootstrap Identity Helper
+
 
 If the bootstrap mechanism to setup any global options was used there is a helper
 function to get an identity object. For example:
-
-.. code-block:: php
 
     <?php
     require_once 'vendor/autoload.php';
@@ -80,20 +73,16 @@ function to get an identity object. For example:
 
 Using the helper method identity an identity object is available.
 
-.. code-block:: php
 
     $identity = Bootstrap::identity();
 
 
 This object will be authenticated with the credentials provided to the bootstrap.
 
-Service Catalog
----------------
+##The Service Catalog
 The service catalog lists the available services. Accessing the catalog, which includes
 the API endpoints, is fairly simple through the use of the serviceCatalog method. To
 get the entire catalog call the method with no arguments.
-
-.. code-block:: php
 
     $identity = Bootstrap::identity();
     $catalog = $identity->serviceCatalog();
@@ -101,7 +90,8 @@ get the entire catalog call the method with no arguments.
 Calling the serviceCatalog method with the name of a service will return the service
 catalog for just this service.
 
-.. code-block:: php
-
     $identity = Bootstrap::identity();
     $catalog = $identity->serviceCatalog('object-store');
+
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

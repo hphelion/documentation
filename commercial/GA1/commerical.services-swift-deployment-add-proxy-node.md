@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/add-proxy-node/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p>
 
 
-#Add New Scale-out Proxy Node
+# HP Helion OpenStack&#174;: Add New Scale-out Proxy Node
 
 This topic shows how to add a proxy node to the store account and container ring.
 

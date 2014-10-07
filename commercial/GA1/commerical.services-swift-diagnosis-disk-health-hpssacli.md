@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/diagnosis-disk-health/hpssacli/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
-#Diagnosis of disk health using hpssacli utility for HP servers
+# HP Helion OpenStack&#174;: Diagnosis of disk health using hpssacli utility for HP servers
 
 The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*** utility.
 

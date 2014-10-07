@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/kvm/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -36,7 +36,7 @@ The installation and configuration process for KVM consists of the following gen
 	* [KVM deployment architecture](#deploy-arch)
 	* [Create and identify environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
-	* [Preparing cloud seed host to create the seed VM](#prepseed)
+	* [Preparing seed cloud host to create the seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
 	* [Configure proxy information](#proxy)
@@ -101,7 +101,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<td><b> Installation package </b></td><td><b>File name</b></td></tr>
 
 	<tr style="background-color: white; color: black;">
-	<td>HP Helion OpenStack beta </td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
 	</table>
 
 ## Installing HP Helion OpenStack<a name="install"></a>
@@ -144,7 +144,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Extract the installation package to the `work` directory:
 
-		tar zxvf /root/HPHelionOpenStack.tgz
+		tar zxvf /root/HPHelionOpenStack_1.0.tgz
 
 	This creates and populates a `tripleo/` directory within root's home directory.
 
@@ -168,7 +168,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed" 
 
-6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root`:
+6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed vm is defined in the environment variables fie::
 
 		ssh root@192.0.2.1 
 
@@ -202,9 +202,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-14. To install and configure the undercloud and overcloud, run the following command from `/root`. 
+14. To install and configure the undercloud and overcloud, run the following command from `/root`. This step creates a log file for the installation process which could be useful for debugging.
 
-		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee cloud_install.log
 
 	If your installation is successful, a message similar to the following is displayed:
 
@@ -282,29 +282,32 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 ## Next Steps<a name="next-steps"></a>
 
-- Configure HP StoreVirtual VSA **(REQUIRED)**
+Configure Block Storage by either deploying VSA or using HP 3Par Array
+
+- Configure HP StoreVirtual VSA
 
 	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
-	For intructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+	For instructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+
+- Configure an HP 3Par storage array
+
+	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
+
+	For instructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/ga/install/3par/) document.
+
 
 - Configure a Swift Scale-Out cluster (Optional)
 
 	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
-	For intructions, see the [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
-
-- Configure an HP 3Par storage array (Optional)
-
-	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
-
-	For intructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/ga/install/3par/) document.
+	For instructions, see the [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
 
 - Install DNS as a service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
+	For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

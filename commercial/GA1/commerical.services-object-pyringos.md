@@ -5,7 +5,7 @@ permalink: /helion/openstack/GA1/services/object/pyringos/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

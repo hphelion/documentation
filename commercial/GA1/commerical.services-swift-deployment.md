@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment-scale-out/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

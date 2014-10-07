@@ -76,9 +76,9 @@ By default, `helion logs` streams log data from
 (while running).
 
 You can add up to five additonal files to the log stream by modifying
-the **STACKATO\_LOG\_FILES** environment variable (in
-[*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env) or using [*helion
-set-env*](/als/v1/user/reference/client-ref/#command-set-env)).
+the **HELION\_LOG\_FILES** environment variable (in
+[*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env) or using [*helion
+set-env*](/als/v1/user/reference/client-ref/#command-set-env).
 
 The variable should contain a list of named files separated with ":" in
 the following format:
@@ -89,13 +89,13 @@ The *name* used in the value or individual variable name becomes part of
 each log line, and can be used for filtering the stream.
 
 For example, to add a specific Tomcat log file to the default
-\$STACKATO\_LOG\_FILES variable, you might set the following in
-*stackato.yml*:
+\$HELION\_LOG\_FILES variable, you might set the following in
+*manifest.yml*:
 
     env:
-      STACKATO_LOG_FILES: tomcat=/home/helion/tomcat/logs/catalina.2013-11-04.log:$STACKATO_LOG_FILES
+      HELION_LOG_FILES: tomcat=/home/helion/tomcat/logs/catalina.2013-11-04.log:$HELION_LOG_FILES
 
-Paths can be specified fully or specified relative to \$STACKATO\_APP\_ROOT.
+Paths can be specified fully or specified relative to \$HELION\_APP\_ROOT.
 
 helion drain[](#helion-drain "Permalink to this headline")
 ---------------------------------------------------------------
@@ -136,7 +136,7 @@ To check the status of your application drains, use the
 If the service at the receiving end of the drain goes offline or becomes
 disconnected, Application Lifecycle Service will retry the connection at increasing
 intervals.
-
+<!--
 Log Drain Examples[](#log-drain-examples "Permalink to this headline")
 -----------------------------------------------------------------------
 
@@ -150,20 +150,20 @@ software or services:
 ### Papertrail[](#papertrail "Permalink to this headline")
 
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
-2.  In the Dashboard screen, click *Add Systems*.
-    <img src="/content/documentation/devplatform/stackato/images/ppt11.png" />
-    <img src="/content/documentation/devplatform/stackato/images/logo.png" />
+2.  In the Dashboard screen, click **Add Systems**.
+    <img src="/als/v1/images/ppt11.png">
+    <img src="/als/v1/images/logo.png">
  
 3.  In the Setup Systems screen under *Other log methods*, click
     *Alternatives*.
-    <img src="/content/documentation/devplatform/stackato/images/ppt21w.png" />
+    <img src="/als/v1/images/ppt21w.png" />
  
 4.  Choose option C: *My system's hostname changes* and give it a
     suitable name.
-    <img src="/content/documentation/devplatform/stackato/images/ppt31.png" />
+    <img src="/content/documentation/devplatform/stackat0/images/ppt31.png" />
 
 5.  Note the **port number**.
-    <img src="/content/documentation/devplatform/stackato/images/ppt41.png" />
+    <img src="/content/documentation/devplatform/stackat0/images/ppt41.png" />
 
 6.  Enable application logging (via udp) by executing the following client command:
 
@@ -174,19 +174,19 @@ Loggly supports JSON format with minor configuration changes as shown below.
 
 1. [Create an account for Loggly](https://app.loggly.com/pricing)
 1. Under *Incoming Data* tab, click *Add Input*.
-	- 	<img src="/content/documentation/devplatform/stackato/imagesloggly11.png" />
+<image src="..\..\images\loggly11.png">
 1. In the Add Input screen:
  	- Choose *Syslog UDP or TCP*
  	- Choose *Combination Log Type*
  	- [Optional] For JSON Logging, Choose UDP or TCP **with Stripe** and enable **JSON Logging**. (for system logs)
- 	<img src="/content/documentation/devplatform/stackato/images/loggly21.png" />
+ 	<img src="..\..\images\loggly21.png">
 1.  If we want to accept logs from any Application Lifecycle Service nodes or applications, modify the Allowed Devices section:
  	- Click *Add device*
-	<img src="/content/documentation/devplatform/stackato/images/loggly31.png" />
+	<img src="..\..\images\loggly31.png">
  	-   Add IP Address 0.0.0.0/0 when prompted
- 	<img src="/content/documentation/devplatform/stackato/images/loggly41.png" />
+ 	<img src="..\..\images\loggly41.png" />
 1.  Turn off discovery since we allowed all devices. Also note down the **port number**.
- 	<img src="/ccontent/documentation/devplatform/stackato/images/loggly51.png" />
+ 	<img src="..\..\images\loggly51.png" />
 1. Run **one** of the following client commands to create the log drain:
 
 
@@ -199,23 +199,20 @@ Splunk supports JSON format without further configuration.
 
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
-	<img src="/content/documentation/devplatform/stackato/images/splunk11.png" />
+	<img src="/content/documentation/devplatform/stackat0/images/splunk11.png" />
 3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP).
-	<img src="/content/documentation/devplatform/stackato/images/splunk21.png" />
+	<img src="/content/documentation/devplatform/stackat0/images/splunk21.png" />
 4.  In the Add new Source screen:
 	-   Select a TCP/UDP port greater than **9999**
 	-   Give it a suitable **Source name**.
 	-   Set sourcetype to **Manual**
 	-   Leave Source Type **empty**
-	<img src="/content/documentation/devplatform/stackato/images/splunk31.png" />
+	<img src="/content/documentation/devplatform/stackat0/images/splunk31.png" />
 
 5.  Run the following client command to create the log drain: 
 `helion drain add drain-name udp://splunk-server-address:port#`
 OR
 helion drain add drain-name tcp://splunk-server-address:port#
-
-
-
 
 
 
@@ -237,22 +234,22 @@ Run one of the following client commands to create the log drain:
 OR
 
     helion drain add drain-name tcp://server-address:port#
-
+-->
 Rotating Application Log Files[](#rotating-application-log-files "Permalink to this headline")
 -----------------------------------------------------------------------------------------------
 
 Application Lifecycle Service does not automatically rotate application log files in
-*/home/stackato/logs/*. However, you can add log rotation for these
+*/home/helion/logs/*. However, you can add log rotation for these
 files yourself using `cron` and
 `logrotate`. Programming languages, frameworks, and utilities handle logging
 operations in different ways. Check for incompatibilities with
 `logrotate` before implementing log rotation scheme using it.
 
-1.  Add a cron key in *manifest.yml* to run `logrotate`. Set STACKATO\_CRON\_INSTANCES to "all" to specify that
+1.  Add a cron key in *manifest.yml* to run `logrotate`. Set HELION\_CRON\_INSTANCES to "all" to specify that
     the job should be run in all application instances. For example:
 
         env:
-          STACKATO_CRON_INSTANCES: all
+          HELION_CRON_INSTANCES: all
         cron:
           - 0 1 * * * /usr/sbin/logrotate --state /home/helion/app/logrotate-state /home/helion/app/app-logrotate.conf
 
@@ -262,7 +259,7 @@ operations in different ways. Check for incompatibilities with
 
 2.  Add an *app-logrotate.conf* file to the base directory of your application to specify which log files to rotate, and which `logrotate` options to use. For example:
 
-        /home/stackato/logs/\*.log {
+        /home/helion/logs/\*.log {
           daily
           compress
           copytruncate
@@ -273,3 +270,6 @@ operations in different ways. Check for incompatibilities with
           maxage 7
           size 3M
         }
+
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

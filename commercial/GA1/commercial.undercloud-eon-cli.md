@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/undercloud/eon/cli/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -22,7 +22,7 @@ PageRefresh();
 
 -->
 
-#Command Line Interface- EON 
+# HP Helion OpenStack&#174;: Command Line Interface- EON 
 
 
 The EON client CLI package provides an http-client coupled command-line tool for managing Eon (ESX management) services.

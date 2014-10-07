@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

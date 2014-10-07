@@ -5,13 +5,14 @@ permalink: /helion/devplatform/workbook/helloworld/node/
 product: devplatform
 
 ---
-
 #Hello World Node.js
+
+This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application.
+
 ##Pre-requisites
-**Stackato**
 
 1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
+2. The  [Stackato command-line interface (CLI)] must be installed. 
 3. You must have access to the web-based Administration console.
 
 ##Download the Application Files
@@ -50,4 +51,4 @@ To deploy the application, make sure you are logged in successfully for your des
 6. You should see a simple text message: Hello World!
 
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/node/) 
+[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/node/) 

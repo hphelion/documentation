@@ -7,7 +7,10 @@ product: devplatform
 ---
 # Hello World PHP
 
-**Stackato**
+This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application.
+
+
+##Prerequisites
 
 1. You must have a Stackato instance available. 
 2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
@@ -39,5 +42,5 @@ To deploy the application, make sure you are logged in successfully for your des
 5. In the upper right-hand corner, click **View App**.
 6. You should see a simple text message: Hello World!
 
-[Exit Workbook](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/php/) 
+[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/php/) 
 

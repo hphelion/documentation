@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/remove-scale-out-objec
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
-#Remove Scale-out Object Storage Node
+# HP Helion OpenStack&#174;: Remove Scale-out Object Storage Node
 
 It is recommended that you gradually reduce the weight in the ring when removing disks from the Swift cluster to avoid poor performance. 
 

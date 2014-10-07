@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/esx/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -32,7 +32,7 @@ The installation and configuration process for ESX consists of the following gen
 	* [Review the ESX deployment architecture](#deploy-arch)
 	* [Create and identify environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
-	* [Preparing cloud seed host to run seed VM](#prepseed)
+	* [Preparing seed cloud host to run seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
    * [Configure proxy information](#proxy)
@@ -72,7 +72,7 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
-### Prepare the cloud seed host to create the seed VM {#prepseed}
+### Prepare the seed cloud host to create the seed VM {#prepseed}
 
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
 
@@ -120,9 +120,12 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		export http_proxy=http://<web_proxy_IP>/
 		export https_proxy=<http://web_proxy_IP>/
-		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
+		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>,<provider_network>
 	
-	Where `web_proxy_IP` is your web proxy IP address.
+	Where:
+
+		web_proxy_IP is your web proxy IP address.
+		provider_Network is your ESX management network
 
 3. Log out and re-login to the seed VM host to activate the proxy configuration.
 
@@ -139,7 +142,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3.  Extract the installation package to the `work` directory:
 
-		tar zxvf /root/HPHelionOpenStack.tgz
+		tar zxvf /root/HPHelionOpenStack_1.0.tgz
 
 	This creates and populates a `tripleo/` directory within the `work' directory.
 
@@ -163,11 +166,12 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed" 
 
-6. To build the cloud, start by logging in to the seed VM. Run the following command from /root:
+6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed vm is defined in the environment variables file:
 
 		ssh root@192.0.2.1 
 
 	**Note**: It might take a few moments for the seed VM to become reachable. 
+
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
 8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
@@ -198,7 +202,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 12. Install and configure the undercloud and overcloud, run the following command from /root. 
 
-		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee cloud_install.log 
 
 	If your installation is successful, a message similar to the following is displayed:
  

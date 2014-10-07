@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/swift/deployment/add-disk-scale-out/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-disk-starter/"> NEXT &#9654</a> </p> --->
 
 
-#Add a Disk to a Scale-out Object Ring
+#HP Helion OpenStack&#174;: Add a Disk to a Scale-out Object Ring
 
 Perform the following procedure to add a disk to a scale-out object ring. 
 

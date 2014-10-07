@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/services/sirius/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

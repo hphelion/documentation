@@ -13,6 +13,13 @@ rm checktmp > /dev/null 2>&1
 
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors...  
 
+
+echo " "
+echo "===??============================="
+for i in `find . -name "*.md"`; do grep -H \?\? $i | grep -v '<!--' | grep -v '<\*\*' ; done
+
+
+
 echo " "
 echo "===Blank lines============================="
 

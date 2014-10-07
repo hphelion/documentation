@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/sirius/cli/workflow/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>

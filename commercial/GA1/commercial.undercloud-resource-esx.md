@@ -6,7 +6,7 @@ product: commercial.ga
 
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -22,7 +22,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>-->
 
-#HP Helion OpenStack&reg;: Compute Service
+# HP Helion OpenStack&reg;: Compute Service
 
 The HP Helion OpenStack Compute service provides a way to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 
