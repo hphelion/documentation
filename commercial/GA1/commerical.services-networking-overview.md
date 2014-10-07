@@ -25,7 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack Neutron service to provide network connectivity and addressing for HP Compute devices.
+HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack Neutron service to provide network connectivity to HP Compute devices and helps in addressing them.
 
 The Networking service also provides an API to configure and manage a variety of network services.
 
@@ -37,7 +37,7 @@ You can also use the Networking service to [identify the actual IP address of a 
 
 ## Working with the Networking Service
 
-To [perform tasks using the Networking service](#howto), you can use the dashboard, API or CLI.
+To perform tasks using the Networking service, you can use the dashboard, API or CLI.
 
 ### Using the dashboards<a name="UI"></a>
 
@@ -59,7 +59,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
-The administrator can work with all projects in a domain. A user can only work with projects associated with that user.
+The administrator can work with all projects in a domain. A user can only work with projects associated with that user.-->
 
 ### Tracking masked IP addresses when using network address translation (NAT) ### {#nat}
 
@@ -67,7 +67,7 @@ If you know the NAT address of a malicious user, you can identify his actual IP 
 
 For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/ga/maskedIP).
 
-### Working with networks ###
+<!---### Working with networks ###
 
 You can perform the following tasks:
 
