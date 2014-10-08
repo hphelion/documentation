@@ -160,7 +160,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 5. Start the seed VM installation by entering the following command:
 
-		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh --create-seed
+		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee seedinstall.log
+
+		**Note**:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named *seedinstall.log*.
 
 	**Note**:The installation process takes approximately 10 minutes to complete.
 
