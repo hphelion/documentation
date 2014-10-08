@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Deploy vCenter ESX compute proxy"
-permalink: /helion/openstack/ga/install/esx/proxy/
+permalink: /helion/openstack/install/esx/proxy/
 product: commercial.ga
 
 ---
@@ -38,7 +38,7 @@ The general process for deploying the vCenter ESX compute proxy involves the fol
 
 ## Prerequisites ##
 
-- [Verify your cloud installation](/helion/openstack/ga/install/esx/#verifying-your-installation).
+- [Verify your cloud installation](/helion/openstack/install/esx/#verifying-your-installation).
 - Set up the management port-group in DVS. Make sure  that there is a proper network connection between the overcloud controller and the port-group.
 - Verify the network connection between the overcloud controller and the proxy.
 - Ping the gateway of the ESX Network or log in to the server where you will deploy the ESX Compute proxy.
@@ -54,58 +54,71 @@ The first step in deploying the ESX compute proxy is to create a VM template tha
 ###Create a new VM
 
 1. Import the `overcloud-nova_compute_esx_proxy.ova` into the vCenter using the vSphere client.
+
 2. In the vSphere Client, click **File** and then click **Deploy OVF Template**.
-4. Follow the instructions in the wizard to specify the data center, cluster, and node to install to. Refer to the VMWare vSphere documentation as needed.
-5. **Important**. You must enter `overcloud_vcenter_compute_proxy` as the name for the template.  
+
+3. Follow the instructions in the wizard to specify the data center, cluster, and node to install to. Refer to the VMWare vSphere documentation as needed.
+
+4. **Important**. You must enter `overcloud_vcenter_compute_proxy` as the name for the template.  
 
 A new VM, referred to here as ***OVF VM***, appears in the left pane. 
 
 ###Add a CD-ROM device to the OVF VM 
 
 1. In the vSphere Client, right-click the OVF VM.
+
 2. Click **Edit Settings**.	
+
 3. Select the **Hardware** tab and click **Add**.
+
 4. Select **DVD/CD-ROM Drive**.
+
 5. Follow the instructions in the wizard. Refer to the VMWare vSphere documentation as needed.
 
 ###Power on the OVF VM using vCenter. 
 
 The default credentials to log in to the OVF VM are `stack/stack`. 
 
-6. Install the VMWare tools into the OVF VM: 
+1. Install the VMWare tools into the OVF VM: 
 	
 	a.In the vSphere Client, right-click the OVF VM.
 
 	b. Select **Guest > Install/Upgrade VMware Tools**. 
 
-7. Launch the OVF VM console to install the VMware Tools from command line terminal: 
+2. Launch the OVF VM console to install the VMware Tools from command line terminal: 
 
 	a. Right-click the OVF VM and select **Open Console**.
 
 	b. Enter the following commands:
 
-		mkdir /mnt/vmware-tools:
-		mount /dev/cdrom/ /mnt/vmware-tools
-		cp –rf /mnt/vmware-tools/VMwareTools-*.tar.gz /tmp/
+		mkdir /tmp/vmware-tools
+		sudo mount /dev/cdrom/  /tmp/vmware-tools
 		cd /tmp
-		tar zxpf VMwareTools-*.tar.gz
-		cd /vmware-tools-distrib
-		./vmware-tools-install.pl
+		tar xvzf  /tmp/vmware-tools/VMwareTools-*.tar.gz
+		cd vmware-tools-distrib
+		sudo ./vmware-tools-install.pl --default
+		sudo poweroff
 
 	Follow the instructions to continue the installation.
 
 ### Remove the **CD-ROM** device from the OVF VM
 
 1. In the vSphere Client, right-click the OVF VM.
+
 2. Click **Edit Settings**.	
+
 3. Select the **Remove the CD/DVD drive**.
+
 4. Select the **Hardware** tab.
+
 5. Remove the DVD/CD-ROM drive.	Refer to the VMWare vSphere documentation as needed.
 
 ###Convert the OVF VM into a template
 
 1. In the vSphere Client, right-click the OVF VM.
+
 2. Click **Template**.	
+
 3. Select **Convert to Template**.
 
 ## Deploy the proxy
@@ -117,11 +130,11 @@ Perform the following steps on the undercloud node using the [EON CLI](#deploy_c
 
 ### Deploy the proxy using the undercloud Horizon dashboard <a name="deploy_ui"></a>
 
-To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the [Register vCenter section](/helion/openstack/ga/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
+To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the [Register vCenter section](/helion/openstack/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
 
 ### Deploy the proxy using the EON CLI <a name="deploy_cli"></a>
 
-To deploy the ESX compute proxy using the EON CLI on the undercloud node: 
+To deploy the ESX compute proxy using the EON CLI, execute the following steps from the UNDERCLOUD node: 
 
 1. Create a `compute_proxy.conf` file that includes the following:
 
@@ -170,7 +183,7 @@ To deploy the ESX compute proxy using the EON CLI on the undercloud node:
 		netmask = enter the compute proxy netmask
 		gateway = enter the compute proxy gateway
 
-2. Use the [HP EON servcie CLI](/helion/openstack/ga/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/ga/undercloud/eon/cli/) reference.
+2. Use the [HP EON servcie CLI](/helion/openstack/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/undercloud/eon/cli/) reference.
 
 		source /root/stackrc
 		eon vcenter-add –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
@@ -235,7 +248,7 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 
 - Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
-	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/) document for complete instructions.
+	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions.
 
 	OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 

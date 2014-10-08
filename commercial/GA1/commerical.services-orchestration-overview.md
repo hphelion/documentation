@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration Service Overview"
-permalink: /helion/openstack/ga/services/orchestration/overview/
+permalink: /helion/openstack/services/orchestration/overview/
 product: commercial.ga
 
 ---
@@ -33,7 +33,7 @@ To [perform tasks using the Orchestration service](#howto), you can use the dash
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Orchestration service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Orchestration service.
 
 ###Using the API<a name="API"></a>
  
@@ -50,7 +50,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 Taken from http://docs.openstack.org/user-guide/content/heatclient_commands.html 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/ga/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
 
 ### Working with stacks ###
 

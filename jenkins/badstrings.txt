@@ -12,14 +12,14 @@
  eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
- builtin
- tempates
- initally
- recieves
- timout
- notificition
- selction
- additonal
+ builtin 
+ tempates 
+ initally 
+ recieves 
+ timout 
+ notificition 
+ selction 
+ additonal 
  eg 
  personalisation 
  lets do 

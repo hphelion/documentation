@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/ga/sirius/cli/workflow/
+permalink: /helion/openstack/sirius/cli/workflow/
 product: commercial.ga
 
 ---
@@ -472,7 +472,7 @@ When the update has completed, the Cinder service in the overcloud will be confi
 
 ##More Information {#more-information}
 
-For the complete list of Sirius CLI commands, refer to  the[Sirius Manual]( /helion/openstack/ga/sirius-cli/).
+For the complete list of Sirius CLI commands, refer to  the[Sirius Manual]( /helion/openstack/sirius-cli/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

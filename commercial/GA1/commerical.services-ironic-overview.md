@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Ironic Service Overview"
-permalink: /helion/openstack/ga/services/ironic/overview/
+permalink: /helion/openstack/services/ironic/overview/
 product: commercial.ga
 
 ---
@@ -30,7 +30,7 @@ Ironic is an incubated OpenStack project to provision baremetal, not virtual, ma
 
 For information on Ironic, see OpenStack [Ironic's developer documentation](http://docs.openstack.org/developer/ironic/).
 
-For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/ga/technical-overview/).
+For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/technical-overview/).
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

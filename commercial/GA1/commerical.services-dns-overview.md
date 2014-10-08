@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; DNS as a Service Overview"
-permalink: /helion/openstack/ga/services/dns/overview/
+permalink: /helion/openstack/services/dns/overview/
 product: commercial.ga
 
 ---
@@ -38,7 +38,7 @@ For example, if a user wants to access *mytestdomain.com* in a web browser, DNS 
 
 **Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack and verified that it is  correctly configured and operational.
 
-Learn how to [install DNS as a service](/helion/openstack/ga/install/dnsaas/).
+Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
 
 ##Key Terms
 

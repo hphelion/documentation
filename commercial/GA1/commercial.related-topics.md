@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Related OpenStack Documentation"
-permalink: /helion/openstack/ga/related-links/
+permalink: /helion/openstack/related-links/
 product: commercial.ga
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/ga/services/swift/diagnosis-disk-health/hpssacli/
+permalink: /helion/openstack/services/swift/diagnosis-disk-health/hpssacli/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
 # HP Helion OpenStack&#174;: Diagnosis of disk health using hpssacli utility for HP servers
 
@@ -85,7 +85,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 9. You can collect the diagnostic report of the controller either in server or through Seed using ssh.
 
 
-##Collect the diagnostic report
+###Collect the diagnostic report
 **Using the server controller:**
 <!---
 1. Log in to the server
@@ -113,12 +113,13 @@ Use `scp` to copy the utility package on to the servers and install it.
 2. Generate the diagnostic report of the particular slot
 
 		./hpssacli ctrl slot=(slot number) diag file=<filename.zip>
-	Or generate the report of all the slots 
+	Or <BR>
+		Generate the report for all the slots 
 
 		./hpssacli ctrl all diag file=<filename.zip>
 
 
-The file will be stored in the reported location.
+	The file will be stored in the selected location.
 
 3. Copy the generated file to the desired location.
 
@@ -158,7 +159,7 @@ The file will be stored in the reported location.
 
 <!-- <image = utility_ADUR-report> -->
 
-11. Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
+6.Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
 
 	* From the local server
 
@@ -231,7 +232,6 @@ The following SmartSSDWearGaugeReport.txt sample file displays the details of th
 
 
 ##Other useful commands
-
 
 
 - To get the details of the physical disks and also the logical group status on the server

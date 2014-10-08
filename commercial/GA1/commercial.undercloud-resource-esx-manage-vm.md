@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&reg;: Virtual Environments"
-permalink: /helion/openstack/ga/undercloud/resource/esx/
+permalink: /helion/openstack/undercloud/resource/esx/
 product: commercial.ga
 
 ---
@@ -27,7 +27,7 @@ PageRefresh();
 ## HP Helion OpenStack&#174;: Working with Virtual Environment(s)
 
 
-The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Undercloud Horizon Dashboard or [EON]( /helion/openstack/ga/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the Undercloud Horizon.
+The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Undercloud Horizon Dashboard or [EON]( /helion/openstack/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the Undercloud Horizon.
 <!---
 Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. 
 
@@ -264,7 +264,7 @@ To unimport one cluster, do the following:
 
 ##Next Steps {#next-steps}
 
-[Working with EXS Clusters]( /helion/openstack/ga/undercloud/oc/config/esx/)
+[Working with EXS Clusters]( /helion/openstack/undercloud/oc/config/esx/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

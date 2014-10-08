@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Compute Sherpa Overview"
-permalink: /helion/openstack/ga/services/sherpa/overview/
+permalink: /helion/openstack/services/sherpa/overview/
 product: commercial.ga
 
 ---
@@ -51,7 +51,7 @@ To perform tasks using the Sherpa service, you can use the Horizon dashboards.
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the <a href="helion/openstack/ga/undercloud/admin/updates-and-extension/">HP Helion OpenStack Dashboard</a> to work with the Sherpa service.
+You can use the <a href="helion/openstack/undercloud/admin/updates-and-extension/">HP Helion OpenStack Dashboard</a> to work with the Sherpa service.
 
 <!---###Using the API ### {#API}
  

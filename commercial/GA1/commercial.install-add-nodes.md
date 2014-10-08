@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Add and Remove Nodes"
-permalink: /helion/openstack/ga/install/add/nodes/
+permalink: /helion/openstack/install/add/nodes/
 product: commercial.ga
 
 ---
