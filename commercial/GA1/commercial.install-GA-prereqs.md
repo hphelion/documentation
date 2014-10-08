@@ -178,7 +178,7 @@ Before starting the installation, you must first install Ubuntu 14.04 and the fo
 
 Use the following command to install these packages:
 
-	sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libssl-dev libffi-dev virtmanage chromium-browser
+	sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libssl-dev libffi-dev virt-manager chromium-browser
 
 After you install the `libvirt` packages, you must reboot or restart `libvirt`: 
 
