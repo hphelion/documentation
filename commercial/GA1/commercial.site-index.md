@@ -106,6 +106,7 @@ Review the following topics related to the Horizon dashboard:
 
 Review the following topics related to the HP Horizon OpenStack services:
 
+
 - [Services Overview](/helion/openstack/ga/services/overview/)
 - [Compute Services Overview](/helion/openstack/services/ga/compute/overview/)
 - [DNS Service Overview](/helion/openstack/ga/services/dns/overview/)
