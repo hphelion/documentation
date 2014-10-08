@@ -41,170 +41,62 @@ The following diagrams depict simplified deployment scenarios:
 * <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
 * <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
 
-## Supported Hardware<a name="supportedhw"></a>
+## Supported Hardware {#supportedhw}
 
-HP supports the following hardware for HP Helion OpenStack deployment:
-<table style="text-align: left; vertical-align: top;">
+The following hardware has been tested and verified to work with HP Helion OpenStack:
 
-<tr style="background-color: #C8C8C8;">
-<th> HP </th>
-</tr>
+### HP Proliant BladeSystem
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant BL160 Gen8 Server Blade</a>
-</td>
-</tr>
+- [BL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
+- [BL420c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562)
+- [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
+- [BL465c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137)
+- [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562">HP ProLiant BL420c Gen8 Server Blade</a>
-</td>
-</tr>
+### HP Proliant Rack Servers
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949">HP ProLiant BL460c Gen8 Server Blade</a>
-</td>
-</tr>
+- [DL310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
+- [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
+- [DL360 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570)
+- [DL380 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
+- [DL385 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584)
+- [DL560 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290)
+- [DL580 G7](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916)
+- [DL580 Gen8 Legacy boot support only, no uEFI](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137">HP ProLiant BL465c Gen8 Server Blade</a>
-</td>
-</tr>
+### HP Proliant Tower Servers
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287">HP ProLiant BL660c Gen8 Server Blade</a>
-</td>
-</tr>
+- [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594)
+- [DL350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584)
+<br>
+### HP Proliant Scalable Systems
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant DL310e Gen8 Server V2</a>
-</td>
-</tr>
+- [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
+- [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
+- [SL270s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945)
+- [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871)
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527">HP ProLiant DL320e Gen8 Server</a>
-</td>
-</tr>
+### IBM systems ###
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527">HP ProLiant DL320e Gen8 Server V2</a>
-</td>
-</tr>
+- [IBM System x3550 M4 Server](http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/)
+<br>CPU: Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz
+<br>Storage controller: LSI MegaRAID <ServerRAID M5110>  01.33.00
+<br>Network: Intel(R) Gigabit Ethernet Network Driver - version 5.0.5-k
+<br>Memory: 256 GB
+ 
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570">HP ProLiant DL360e Gen8 Server</a>
-</td>
-</tr>
+### Dell systems###
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177953">HP ProLiant DL360p Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5261094">HP ProLiant DL380e Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server V2</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957">HP ProLiant DL380p Gen8 Server SE</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584">HP ProLiant DL385p Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290">HP ProLiant DL560 Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916">HP ProLiant DL580 G7 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6636692">HP ProLiant DL580 Gen8 Server &mdash; Legacy BIOS only (not uEFI)</a>
-</td>
-</tr>
+- [Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
+<br>BIOS version: 1.4.8
+<br>CPU: 2 (Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz   max 3600 MHz  8 cores
+<br>Memory: 256 GB
+<br>Network Device: Broadcom   (4 Port)
+<br>Storage controller: Integrated RAID controller 1:
 
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594">HP ProLiant ML310e Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584">HP ProLiant ML350e Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177961">HP ProLiant ML350p Gen8 Server</a>
-</td>
-</tr>
 
 
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable">HP ProLiant SL210t Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941">HP ProLiant SL250s Gen8 Server</a>
-</td>
-</tr>
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945">HP ProLiant SL270s Gen8 Server</a>
-</td>
-</tr>
-
-
-<tr style="background-color: white; color: black;">
-<td> 
-<a href="http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871">HP ProLiant SL4540 Gen8 Server</a>
-</td>
-</tr>
-
-
-</table>
 
 ## Supported Configurations<a name="supportedconfigurations"></a>
 
@@ -242,14 +134,16 @@ Additional requirements are as follows:
 	- To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
 
 - The BIOS configured: 
-	- To the correct date and time
-	- With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+	- to the correct date and time
+	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
 - For Compute nodes, Intel or AMD hardware virtualization 
 - support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
+
+	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
 
 The following table lists the minimum requirements required for installation of each type of node. The maximum of 2TB for the undercloud and overcloud nodes is mandatory for installation. 
 

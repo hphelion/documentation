@@ -5,13 +5,13 @@ permalink: /helion/devplatform/workbook/helloworld/java/
 product: devplatform
 
 ---
-##Hello World JAVA
+##Java Sample: Hello World
 This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. This is a very simple Servlet-based Java web app.
 
 ##Prerequisites
-1. You must have a Stackato instance available. 
-2. The  [Helion command-line interface (CLI)] must be installed. 
-3. You must have access to the web-based Administration console.
+1. You must have access to an ALS cluster. 
+2. The  [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/) must be installed. 
+3. You must have access to the web-based Helion Management console.
 
 **JDK**
 
@@ -33,30 +33,29 @@ The `pom.xml` file in the root directory of this sample is used by Maven to buil
  
 ##Build the Application
 The specific commands listed below are intended for Unix-like machines.
-
-Use the [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) to `cd` into the root directory of the sample and execute:
+If you are not already there, `cd` to the root directory of the sample and execute:
 
 	mvn clean package
 
-This builds the application with Maven. It will create the *hello-world-java-1.0.war* file within the `target` directory. 
+This builds the application with Maven. It will create the *hello-world-java-1.0.war* file within the target directory. 
 
 ##Deploy the Application
 
 To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
 
-1. Open the  [Helion command-line interface (CLI)].
+1. Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 
-2. *cd* into the app's root directory.
-3. Execute `stackato push -n` 
+2. If you are not already there, `cd` to the root directory of the sample.
+3. Execute `helion push -n` 
 
 ##Run the Application
 
-1. Open the Management Console. This is the web-based administrative interface.
+1. Open the Helion Management Console. This is the web-based administrative interface.
 2. Click **Applications**.
-3. If the file push was successful, you should see Hello World in the list of available applications. 
+3. If the file push was successful, you should see **Hello World** in the list of available applications. 
 4. The status of the application should be **Online**. Click the name of the application to launch it. 
 5. In the upper right-hand corner, click **View App**.
-6. You should see a simple text message: Hello World!
+6. You should see a simple text message: **Hello World!**
 	
 
 [Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)

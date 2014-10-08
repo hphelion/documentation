@@ -10,19 +10,17 @@ product: devplatform
 HP has created a series of small, simplified sample applications to walk you through understanding and exercising the Development Platform services.
 
 Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.
-
-# HP Helion Development Platform Samples
-These samples are designed to exercise all the services which make up the HP Helion Development Platform. 
+ 
 
 ##Prerequisites - Before you Begin
 In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
-- HP Helion OpenStack&reg; deployed
+- HP Helion OpenStack&reg; cloud or micro-cloud deployed
 	- [Community](/helion/community/install/)
 	- [Commercial](/helion/openstack/ga/install/overview/)
-- Helion Development Platform [Cluster](/als/v1/admin/cluster/) created
-- Logon and password credentials provided
-- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed. 
+- Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available
+- Logon and password credentials for the cluster.
+- Access to  [Helion command-line interface (CLI)](/als/v1/user/client/); this is part of the Helion Developer Platform installation.
 
  
 ##Sample Code

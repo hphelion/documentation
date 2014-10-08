@@ -5,7 +5,7 @@ permalink: /helion/openstack/ga/install/security/
 product: commercial.ga
 
 ---
-<!--PUBLISHED--> 
+<!--UNDER REVISION--> 
 
 
 <script>
@@ -28,7 +28,7 @@ HP Helion OpenStack has many built-in security controls, but the customer must t
 
 HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
 
-<img src = "/content/documentation/media/Helion_Security1.png">
+<a href="javascript:window.open('content/documentation/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Network Topology Diagram (opens in a new window)</a> 
 
 In the diagram above, the customer’s devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
@@ -36,7 +36,7 @@ In the diagram above, the customer’s devices that perform routing are depicted
 
 The perimeter is indicated by the *customer firewall* icon in the previous diagram.
 
-To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, as indicated in this table:
+To protect against external attack on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, other than those indicated this table:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -44,9 +44,6 @@ To protect against external attack on Helion services, your firewall should be c
 </tr>
 <tr>
 <td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>80</td>
-</tr>
-<tr>
-<td>Access to user applications running as Nova VMs</td><td>External network</td><td>Compute Nodes</td><td>Only ports required by your enterprise applications</td>
 </tr>
 <td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
 </tr>
@@ -57,7 +54,7 @@ To protect against external attack on Helion services, your firewall should be c
 
 Object Operations service (Swift) requests travel from the external network, to a HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows: 
 
-<img src = "/content/documentation/media/ ">
+<img src = "content/documentation/media/Helion_Security2.png">
  
 You may choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes (Swift) nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed via the HAproxy on the Controller nodes. 
 
@@ -89,8 +86,10 @@ The following table describes the data flow between Helion nodes for Object Oper
 </tr>
 <td>6</td><td>Swift proxy to proxy sync over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Swift all in one (PACO)</td><td>80</td>
 </tr>
+<tr>
 <td>6</td><td>Swift proxy to proxy sync over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Proxy-Account-Container (PAC)</td><td>80</td>
 </tr>
+<tr>
 <td>6</td><td>Swift object to object sync over HTTP</td><td>Object Storage</td><td>Object Storage</td><td>80</td>
 </tr>
 <tr>
@@ -247,8 +246,7 @@ The ESX network is used for:
 
 The following diagram depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack:
 
-<img src = "/content/documentation/media/Helion_Security8.png">
- 
+<a href="javascript:window.open('content/documentation/media/Helion_Security8.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Logical Deployment of the ESX Integration Diagram (opens in a new window)</a> 
 
 The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:
 

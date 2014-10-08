@@ -36,7 +36,7 @@ It is important to read through this page before starting your installation as i
 - [More information](#moreinfo)
 
 
-##Prerequisites<a name="preq"></a>
+##Prerequisites {#preq}
 
 * HP Helion OpenStack Installation
 * DNSaaS Installer Image
@@ -91,7 +91,7 @@ It is important to read through this page before starting your installation as i
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
-## Creating Prerequisite Credentials <a name="credentials"></a>
+## Creating Prerequisite Credentials {#credentials}
 
 You must create target and service credentials.
 
@@ -115,8 +115,11 @@ Once Target credentials are successfully created you can create service credenti
 
 		$ keystone user-create --name designate --tenant service --email designate@example.com --pass password
 
+* Add admin role to service user command 
+
+		$ keystone user-role-add --user designate --tenant service --role admin
  
-## Sherpa CSU "Publication" and Booting the Installer VM<a name="publication"></a>
+## Sherpa CSU "Publication" and Booting the Installer VM {#publication}
 
 Before proceeding with DNaaS installation ensure that you have met all the prerequisites, which includes gathering the required information, creating the necessary users/projects and ensuring the users/projects have the appropriate roles. Failure to do so will result in a failed install.
 
@@ -125,8 +128,34 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 1. Log in to the overcloud's Horizon dashboard using **Target Credentials**. 
 2. Click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
 3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
-3. Select the appropriate build from the list  and click **Install**. Install dialog box is displayed.
-4. Click **Install**. It will take several minutes for the status of the Build to proceed from Installing to Installed.
+4. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
+
+5. Log in with HP Cloud OS Content Delivery Network credentials. <br>If you do not have a login credentials for HP Cloud OS Content Delivery Network then create an account. Perform the following steps to create an account on the HP Cloud OS Content Delivery Network:
+
+	1. On the HP Helion Horizon Undercloud dashboard, click  the **Admin** tab in the left panel.
+
+	2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
+
+	3. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
+
+	4. Click **Sign up Now** below the description in the Configure dialog box.<br>
+       The page navigates to the HP Helion Product Catalog. Then, do the following:</br> 
+    
+	5. Click **Sign In** in the top of the page to open the HP Web ID dialog box.
+
+	6. Click **Sign Up for Web ID** to create log-in credentials. The HP WEB ID dialog box is displayed. 
+    
+	7. Enter the required details.
+  
+	8. Select the check box next to **I agree to the Terms of Use** to accept the terms and conditions.
+
+	9. Click **Submit**.<br>The credentials are authenticated and the account is created.
+
+		Once you register on the HP Helion Product Catalog, you are required to configure your credentials.
+6. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
+8. Select the appropriate file (for example: **dns.csu**) from the list and click **Publish**. Publish dialog box is displayed.
+
+9. Click **Publish** to install the package. 
 
 
 ###Boot the installer VM
@@ -177,14 +206,17 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 
 
-##Installing and configuring DNSaaS<a name="configure"></a>
+##Installing and configuring DNSaaS {#configure}
 
 **IMPORTANT**: During DNSaaS installation, non-deterministic failures within the infrastructure layer may cause the install to fail. If this occurs, DNSaaS installation should be retried up to two times.
 
 
 1. SSH to install VM
 
-		$ ssh debian@<Floating IP Address associated with the Installer Instance above>
+		$ ssh --i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
+
+<!--
+$ ssh debian@<Floating IP Address associated with the Installer Instance above> --->
 
 **Note**: Before you begin the installation, you must create a configuration file. You can do this by modifying the sample configuration file included with the DNSaaS installer files.
  
@@ -214,7 +246,7 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
     * service&#095;project &mdash; Project name for a user with permission to validate Keystone tokens
     * service&#095;user &mdash; Username for a user with permission to validate Keystone tokens
     * service&#095;password &mdash; Password for a user with permission to validate Keystone tokens
-    * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect)
+    * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect, akamai)
 
    	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
 
@@ -250,7 +282,7 @@ After you validate the configuration file, run the DNSaaS installer:
 
 
 
-##Configure the Overcloud Load Balancer for DNSaaS<a name="configovercloud"></a>
+##Configure the Overcloud Load Balancer for DNSaaS {#configovercloud}
 
  You must configure HAProxy before you configure the OverCloud Load Balance for DNaaS.
 
@@ -279,9 +311,9 @@ After the configuration of  HAProxy, SSH to all three Overcloud controller.
 
 Perform the following steps on each controller node:
 
-1. SSH OverCloud as root
+1. SSH Overcloud as root
 
-		ssh root@<IP address of Overcloud>
+		ssh heat-admin@<IP address of Overcloud>
 
 2. vi `paas.cfg` to edit the configuration file 
 
@@ -291,7 +323,7 @@ Perform the following steps on each controller node:
 
 4. Save the `pass.cfg` file.
 
-		:wq!
+		 CTRL+X
 
 5. Reload HA Proxy
 
@@ -304,7 +336,7 @@ Perform the following steps on each controller node:
    	b. Run `iptables-save > /etc/iptables/iptables` 
 
 
-## Registering the service with Keystone<a name="keyreg"></a>
+## Registering the service with Keystone {#keyreg}
 
 You  can register the DNS service and endpoint as a user or an admin. 
 
@@ -351,7 +383,7 @@ To uninstall the DNaaS:
 	`$ heat stack-list`
 
 
-2. Delete the Stack ID
+2. Using python-heatclient and the Target Credentials supplied to the installer, verify the DNSaaS Stack ID and delete it.
 
 		$ heat stack-delete <stack ID>
 
@@ -359,11 +391,13 @@ To uninstall the DNaaS:
 
 The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the Keystone documentation (here we point to OpenStack documentation).
 
-##For more information<a name="moreinfo"></a>
+##For more information {#moreinfo}
 For more information, see:
 
 * [HP Helion Public Cloud DNS API Specifications](https://docs.hpcloud.com/api/dns/)
 * [Designate DNSaaS services for OpenStack](https://wiki.openstack.org/wiki/Designate)
+
+**Note**: Public Cloud API and HP Helion Openstack API details are similar.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
