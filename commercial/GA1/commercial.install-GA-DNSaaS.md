@@ -315,7 +315,7 @@ Perform the following steps on each controller node:
 
 		ssh heat-admin@<IP address of Overcloud>
 
-2. vi `paas.cfg` to edit the configuration file 
+2. nano  `paas.cfg` to edit the configuration file 
 
  		/etc/haproxy/manual/paas.cfg
 
