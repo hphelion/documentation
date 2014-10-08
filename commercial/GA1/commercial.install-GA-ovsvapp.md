@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Installation and Configuration"
-permalink: /helion/openstack/ga/install/ovsvapp/
+permalink: /helion/openstack/install/ovsvapp/
 product: commercial.ga
 
 ---
@@ -96,7 +96,7 @@ Before you install the OVSvApp, ensure the following:
 
 * Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
 
-* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
+* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/install/prereqs/#network_prepare) in *Prerequisites*. 
 
 - All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.
 
@@ -422,7 +422,7 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
-	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/).
 
 - Install DNS as a service (DNSaaS) (Optional).
 

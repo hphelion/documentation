@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&reg; Open Source and Third-Party Software License Agreements"
-permalink: /helion/openstack/ga/3rd-party-license-agreements/
+permalink: /helion/openstack/3rd-party-license-agreements/
 product: commercial.ga
 
 ---

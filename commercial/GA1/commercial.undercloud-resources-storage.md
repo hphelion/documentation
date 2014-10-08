@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/ga/undercloud/manage/resources/storage/
+permalink: /helion/openstack/undercloud/manage/resources/storage/
 product: commercial.ga
 
 ---
@@ -28,8 +28,8 @@ The **Storage** option under the **Resources** Tab allows you to configure stora
 
 The Storage option has two sub options:
 
-* [StoreVirtual](/helion/openstack/ga/undercloud/storage/storevirtual/)
-* [StoreServ](/helion/openstack/ga/undercloud/storage/storeserv/)
+* [StoreVirtual](/helion/openstack/undercloud/storage/storevirtual/)
+* [StoreServ](/helion/openstack/undercloud/storage/storeserv/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

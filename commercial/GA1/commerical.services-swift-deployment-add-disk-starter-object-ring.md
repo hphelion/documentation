@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Add Disk to Starter Object Ring"
-permalink: /helion/openstack/ga/services/swift/deployment/add-disk-starter/
+permalink: /helion/openstack/services/swift/deployment/add-disk-starter/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href="/helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-proxy-node/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href="/helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-proxy-node/"> NEXT &#9654</a> </p>-->
 
 
 #HP Helion OpenStack&#174;: Add a Disk to Starter Object Ring

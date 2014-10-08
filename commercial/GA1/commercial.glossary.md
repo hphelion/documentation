@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Glossary"
-permalink: /helion/openstack/ga/glossary/
+permalink: /helion/openstack/glossary/
 product: commercial.ga
 
 ---

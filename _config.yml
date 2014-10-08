@@ -12,7 +12,7 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack
-    url: /helion/openstack/ga
+    url: /helion/openstack/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
@@ -279,39 +279,39 @@ navigation:
     url: / 
   commercial.ga: 
   - text: HP Helion OpenStack Doc Home
-    url: /helion/openstack/ga/
+    url: /helion/openstack/
   - text: Release Notes
-    url: /helion/openstack/ga/release-notes/ 
+    url: /helion/openstack/release-notes/ 
   - text: FAQ
-    url: /helion/openstack/ga/faq/  
+    url: /helion/openstack/faq/  
   - text: Technical Overview
-    url: /helion/openstack/ga/technical-overview/ 
+    url: /helion/openstack/technical-overview/ 
   - text: Services Overview
-    url: /helion/openstack/ga/services/overview/
+    url: /helion/openstack/services/overview/
   - text: Support Matrix
-    url: /helion/openstack/ga/support-matrix/ 		
+    url: /helion/openstack/support-matrix/ 		
   - text: Installation & Configuration Overview
-    url: /helion/openstack/ga/install/overview/	
+    url: /helion/openstack/install/overview/	
   - text: Installation Prerequisites
-    url: /helion/openstack/ga/install/prereqs/
+    url: /helion/openstack/install/prereqs/
   - text: Installation for KVM Hypervisor
-    url: /helion/openstack/ga/install/kvm/
+    url: /helion/openstack/install/kvm/
   - text: Installation for ESX Hypervisor
-    url: /helion/openstack/ga/install/esx/
+    url: /helion/openstack/install/esx/
   - text: Back Up and Restore
-    url: /helion/openstack/ga/backup.restore/
+    url: /helion/openstack/backup.restore/
   - text: Troubleshooting
-    url: /helion/openstack/services/ga/troubleshooting/
+    url: /helion/openstack/services/troubleshooting/
   - text: Related Documentation
-    url: /helion/openstack/ga/related-links/	
+    url: /helion/openstack/related-links/	
   - text: Glossary
-    url: /helion/openstack/ga/glossary/ 	
+    url: /helion/openstack/glossary/ 	
   - text: End User License Agreement
-    url: /helion/openstack/ga/eula/
+    url: /helion/openstack/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/ga/3rd-party-license-agreements/	
+    url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
-    url: /helion/openstack/ga/siteindex/
+    url: /helion/openstack/siteindex/
   - text: HP Helion Documentation
     url: / 
   devplatform: 

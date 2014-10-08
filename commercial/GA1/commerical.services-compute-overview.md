@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Compute Service Overview"
-permalink: /helion/openstack/services/ga/compute/overview/
+permalink: /helion/openstack/services/compute/overview/
 product: commercial.ga
 
 ---
@@ -45,7 +45,7 @@ To [perform tasks using the Compute service](#howto), you can use the dashboard,
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Compute service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Compute service.
 
 ###Using the API<a name="API"></a>
  
@@ -62,7 +62,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
 
 Depending upon your user type, user or administrator, you can perform the following tasks.
 

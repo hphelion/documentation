@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP StoreServ (3PAR) Support"
-permalink: /helion/openstack/ga/install/3par/
+permalink: /helion/openstack/install/3par/
 product: commercial
 
 ---
@@ -62,11 +62,11 @@ HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or
 
 ### Using the dashboards
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/manage/resources/overview/) to configure HP StoreServ.(Recommended)
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/undercloud/manage/resources/overview/) to configure HP StoreServ.(Recommended)
 
 ###Using the CLI###
 
-You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/ga/sirius/cli/workflow/)
+You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/sirius/cli/workflow/)
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 

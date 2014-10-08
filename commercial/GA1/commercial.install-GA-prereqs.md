@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation Prerequisites"
-permalink: /helion/openstack/ga/install/prereqs/
+permalink: /helion/openstack/install/prereqs/
 product: commercial.ga
 
 ---
@@ -32,7 +32,7 @@ Before you begin the installation process, take a few minutes to read this page 
 
 ## Hardware and software requirements<a name="hardware"></a>
 
-For supported hardware and hardware requirements, and software requirements, see the [HP Helion OpenStack Support Matrix](/helion/openstack/ga/support-matrix/).
+For supported hardware and hardware requirements, and software requirements, see the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
 
 ## Required tasks<a name="required"></a>
 
@@ -191,13 +191,13 @@ NTP is a networking protocol for clock synchronization between computer systems.
 
 Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
-For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/ga/install/ntp/).
+For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
 
 #### Create the environment variables file #### {#envars}
 
 To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a file that will be executed automatically.
 
-For information on creating the environment variables file, see [Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+For information on creating the environment variables file, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 #### Create the baremetal.csv file<a name="csv"></a>
 
@@ -232,7 +232,7 @@ When creating this file, keep in mind the following:
 	
 The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
-For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/ga/install/ldap/).
+For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/install/ldap/).
 <!--
 ## Downloading installation packages<a name="install-pkg"></a>
 
@@ -298,15 +298,15 @@ Automation scripts - pyVins.tgz</td>
 -->
 
 ## Next steps<a name="nextstep"></a>
-* [Installing and configuring on a KVM hypervisor](/helion/openstack/ga/install/kvm)
-* [Installing and configuring on an ESX hypervisor](/helion/openstack/ga/install/esx/)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/install/kvm)
+* [Installing and configuring on an ESX hypervisor](/helion/openstack/install/esx/)
  
 ## For more information<a name="moreinfo"></a>
 For more information on HP Helion OpenStack Community, see:
 
-* [Support matrix](/helion/openstack/ga/support-matrix/) 
-* [FAQ](/helion/openstack/ga/faq/) 
-* [Release notes](/helion/openstack/ga/release-notes/) 
+* [Support matrix](/helion/openstack/support-matrix/) 
+* [FAQ](/helion/openstack/faq/) 
+* [Release notes](/helion/openstack/release-notes/) 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

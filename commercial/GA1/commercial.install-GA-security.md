@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Configuring your Helion network securely"
-permalink: /helion/openstack/ga/install/security/
+permalink: /helion/openstack/install/security/
 product: commercial.ga
 
 ---

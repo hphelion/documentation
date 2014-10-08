@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration High Availability Service Overview"
-permalink: /helion/openstack/ga/high-availability/
+permalink: /helion/openstack/high-availability/
 product: commercial.ga
 
 ---
@@ -178,7 +178,7 @@ The following three services run as singletons in the control plane for the curr
 * [Sherpa](#sherpa) 
 * [nova-consoleauth](#nova-console-auth) 
  
-The above services are deployed and activated on the third controller called **Management Controller**. Automated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the [Backup and Restore](/helion/openstack/ga/backup.restore/) document. 
+The above services are deployed and activated on the third controller called **Management Controller**. Automated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the [Backup and Restore](/helion/openstack/backup.restore/) document. 
 
 ####Cinder-Volume<a name="cinder-volume"></a>
 
@@ -220,7 +220,7 @@ Any one of the controller servers can be shut down for a short duration for main
 
 **Note**: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.
 
-In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes](/helion/openstack/ga/backup.restore/).
+In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes](/helion/openstack/backup.restore/).
 
 ##Highly Available Cloud Infrastructure<a name="ha-cloud-infra"></a>
 
@@ -249,7 +249,7 @@ You can deploy your KVM Nova-Compute nodes either during initial installation, o
 
 While adding compute nodes post initial installation, you can specify the target physical servers for deploying the compute nodes.
 
-Learn more about [Adding Compute Nodes after Initial Installation](/helion/openstack/ga/install/add/nodes/).
+Learn more about [Adding Compute Nodes after Initial Installation](/helion/openstack/install/add/nodes/).
 
 ####Nova Availability Zones<a name="nova-availability-zone"></a>
 
@@ -272,7 +272,7 @@ The underlying SAN/iQ operating system of the StoreVirtual VSA ensures that the 
 This Network RAID 10 capability ensures that failure of any single server does not cause data loss, and maintains data access to the clients.
 
 Furthermore, each of the VSA nodes of the cluster can be strategically deployed in different zones of your data center for maximum redundancy and resiliency.
-For more information on how to deploy VSA nodes on desired target servers, refer to the[ Deploy VSA](/helion/openstack/ga/install/vsa/) document. 
+For more information on how to deploy VSA nodes on desired target servers, refer to the[ Deploy VSA](/helion/openstack/install/vsa/) document. 
 
 
 <a href="javascript:window.open('/content/documentation/media/ha-block-storage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA Block Storage (opens in a new window)</a>

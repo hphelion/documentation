@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: DNSaaS Installation and Configuration"
-permalink: /helion/openstack/ga/install/dnsaas/
+permalink: /helion/openstack/install/dnsaas/
 product: commercial.ga
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Volume Operations Service Overview"
-permalink: /helion/openstack/ga/services/volume/overview/
+permalink: /helion/openstack/services/volume/overview/
 product: commercial.ga
 
 ---
@@ -36,7 +36,7 @@ Once created, you can easily disconnect block storage volumes from one instance 
 To perform tasks using the Volume Operations service, you can use the dashboard, API or CLI.
 
 ### Using the dashboards<a name="UI"></a>
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Volume Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Volume Operations service.
 
 ###Using the API<a name="API"></a>
  
