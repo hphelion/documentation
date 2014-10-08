@@ -34,7 +34,7 @@ Perform the following procedure to add disk to a starter object ring.
 *  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Make a backup of the rings before any operation.
 
-##[Add disks to a Starter Object Ring {#adding-Swift-disks-to-a-ring}
+## Add disks to a Starter Object Ring {#adding-Swift-disks-to-a-ring}
 
 Perform the following steps to add Swift disk to a ring:
 

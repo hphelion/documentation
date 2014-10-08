@@ -34,15 +34,15 @@ Cloud admins can use the ***icinga*** service running in the undercloud to monit
 ##Monitoring Swift Replication Status
 Perform the following steps to monitor the replication status:
 
-1. In the Undercloud, log in to the [Icinga Dashboard](http://<Undercloud_IP>/icinga/) The default login credentials are as follows:
+1. In the Undercloud, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/) The default login credentials are as follows:
 	* Username: *icingaadmin*
 	* Password: *icingaadmin* 
 
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b></a> (opens in a new window).
+2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b> (opens in a new window) </a>.
 
-3. In the **Host** column, click the icon next to the host IP to see <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Status Details For All Hosts</b></a> (opens in a new window).
+3. In the **Host** column, click the icon next to the host IP to see <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Status Details For All Hosts</b> (opens in a new window)</a>.
 
-4. Click the target Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>IP Address</i></b></a> (opens in a new window) to see the replication status of the selected Swift node.
+4. Click the target Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>IP Address</i></b> (opens in a new window)</a> to see the replication status of the selected Swift node.
 
 ##Status Messages
 

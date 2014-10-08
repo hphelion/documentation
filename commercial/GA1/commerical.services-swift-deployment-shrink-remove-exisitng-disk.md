@@ -37,7 +37,7 @@ Perform the following steps to remove a disk from object nodes.
 * Make a backup of the rings before any operation.
 
 
-##Removing disks from ring<a name="remove-disk-from-ring"></a>
+##Removing disks from ring {#remove-disk-from-ring}
 
 Perform the following steps to remove disks from ring:
 
@@ -103,7 +103,7 @@ The following sample displays the output of the above command:
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
 
-10.Repeat steps  **6 through 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+10.Repeat steps from **6 - 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 11.Once the weight is set to 0, remove the disk from the ring.
 

@@ -33,7 +33,7 @@ We recommend you use these Starter servers as Swift Proxy Servers for the scaled
 
 The HP Helion OpenStack scale-out Swift architecture.
 
-<a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
 
 The HP Helion OpenStack life-cycle diagram.
 

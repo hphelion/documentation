@@ -201,7 +201,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
     	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object Node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-	**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-Swift-nodes).
+	**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes).
 
 	The following sample displays the addition of disk to **192.0.2.29** and its output.
 
