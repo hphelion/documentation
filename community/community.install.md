@@ -214,7 +214,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 	`cd /root/work`
 
-4.  Extract the kit to the `work` directory:`tar zxvf /root/Helion_Openstack_Community.tar.gz`
+4.  Extract the kit to the `work` directory:`tar zxvf /root/ce_installer.gz`
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
