@@ -89,7 +89,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 
 - [Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
 <br>BIOS version: 1.4.8
-<br>CPU: 2 (Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz   max 3600 MHz  8 cores
+<br>CPU: 2 Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz   max 3600 MHz  8 cores
 <br>Memory: 256 GB
 <br>Network Device: Broadcom   (4 Port)
 <br>Storage controller: Integrated RAID controller 1:
