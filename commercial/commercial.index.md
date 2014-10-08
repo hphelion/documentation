@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Documentation Home"
+title: "HP Helion OpenStack&#174; Documentation Home
+<meta http-equiv="refresh" content="0; url=http://docs.hpcloud.com/helion/openstack/ga/" />
 permalink: /helion/openstack/
 product: commercial.ga
 
