@@ -320,7 +320,6 @@ Ubuntu 14.04 with the following packages.
 - libffi-dev 
 - virt-manager 
 - chromium-browser
-- openjdk‐7‐jdk:i386
 
 
 There are no software requirements for the Undercloud and Overcloud controllers.
