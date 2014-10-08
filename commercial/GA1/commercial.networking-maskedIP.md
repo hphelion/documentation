@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Documentation Home"
-permalink: /helion/openstack/ga/maskedIP/
+permalink: /helion/openstack/maskedIP/
 product: commercial.ga
 
 ---

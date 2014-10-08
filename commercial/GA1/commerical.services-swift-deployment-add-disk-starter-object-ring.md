@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Add Disk to Starter Object Ring"
-permalink: /helion/openstack/ga/services/swift/deployment/add-disk-starter/
+permalink: /helion/openstack/services/swift/deployment/add-disk-starter/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href="/helion/openstack/ga/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/ga/services/swift/deployment/add-proxy-node/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href="/helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-proxy-node/"> NEXT &#9654</a> </p>-->
 
 
 #HP Helion OpenStack&#174;: Add a Disk to Starter Object Ring
@@ -34,7 +34,7 @@ Perform the following procedure to add disk to a starter object ring.
 *  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Make a backup of the rings before any operation.
 
-##[Add disks to a Starter Object Ring {#adding-Swift-disks-to-a-ring}
+## Add disks to a Starter Object Ring {#adding-Swift-disks-to-a-ring}
 
 Perform the following steps to add Swift disk to a ring:
 

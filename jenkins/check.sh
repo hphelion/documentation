@@ -11,8 +11,35 @@ git pull
 rm checktmp > /dev/null 2>&1  
 
 
-echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors...  
+echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
 
+#for i in `find . -name "*.md" `
+#do
+# grep "](/.*)" $i | sed 's/.*](//' | sed 's/).*//' | grep -v "/api/" >> permalinklist.txt
+# grep permalink $i | sed 's|.* /||'  >> filepermalink.txt
+
+#done
+ 
+ 
+#for i in `cat permalinklist.txt | uniq | grep -v http`
+#do
+ 
+	 
+	 
+#			if [[ -n $(grep $i filepermalink.txt ) ]];
+#			then
+			#echo "found $i"
+#			break;
+#			else
+#			echo "misssing $i"
+#			fi
+		 
+#done
+
+#rm permalinklist.txt 
+#rm filepermalink.txt
+ 
+#exit
 echo "===Missing publish flag============================="
 for i in `find . -name "*.md" `
 do 

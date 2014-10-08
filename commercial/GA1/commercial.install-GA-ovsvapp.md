@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Installation and Configuration"
-permalink: /helion/openstack/ga/install/ovsvapp/
+permalink: /helion/openstack/install/ovsvapp/
 product: commercial.ga
 
 ---
@@ -57,9 +57,7 @@ Before you install the OVSvApp, ensure the following:
 
 - The two Virtual Distributed Switches (VDS) must be configured. 
 
-	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to true, the VDS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater.
-	
-	To consume this functionality,in addition to the data VLANs in the uplink, the ESX management VLAN should also be allowed. If an existing ESX management network is in a different uplink, the new L2 network should be created for the ESX compute proxy and ovsvapp VM consumption.
+	- **Automatic DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to true, the VDS will be configured during the deployment. Automatic configuration requires ESX 5.1 or greater. To consume this functionality,in addition to the data VLANs in the uplink, the ESX management VLAN should also be allowed. If an existing ESX management network is in a different uplink, the new L2 network should be created for the ESX compute proxy and ovsvapp VM consumption.
 		
 	- **Manual DVS configuration:** If the `is_auto_dvs` value in the `ovs_vapp.ini` file is set to false, you need to create and configure the VDS as given below. Manual configuration requires ESX 5.0.0 or greater.
 
@@ -98,7 +96,7 @@ Before you install the OVSvApp, ensure the following:
 
 * Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
 
-* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/ga/install/prereqs/#network_prepare) in *Prerequisites*. 
+* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/install/prereqs/#network_prepare) in *Prerequisites*. 
 
 - All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.
 
@@ -399,7 +397,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
 
-	If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the valu.
+- If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the value.
 
 - Do not delete a tenant VM port via “neutron port-delete” command for a tenant VM.
 
@@ -424,7 +422,7 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
-	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/).
 
 - Install DNS as a service (DNSaaS) (Optional).
 

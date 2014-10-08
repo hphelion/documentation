@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Installing and Configuring the ESX Hypervisor"
-permalink: /helion/openstack/ga/install/esx/
+permalink: /helion/openstack/install/esx/
 product: commercial.ga
 
 ---
@@ -48,9 +48,9 @@ The installation and configuration process for ESX consists of the following gen
 
 To ensure a successful installation, please read through the following topics before you start.
 
-* Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
-* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/).
+* Review the [support matrix](/helion/openstack/support-matrix/) for information on the supported hardware and software.
+* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
+* [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
 
 ## Review the ESX deployment architecture<a name="deploy-arch"></a>
 
@@ -58,23 +58,23 @@ The following diagram depicts the required network topology for a KVM installati
 
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
-For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
+For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
 ### Create and identify environment variables file ### {#envvars}
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
-For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 ### Prepare baremetal.csv file ### {#csv}
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 ### Prepare the seed cloud host to create the seed VM {#prepseed}
 
-On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
 
 ## Download the installation packages<a name="getinstall"></a>
@@ -180,11 +180,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		source env_vars
 
-10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and upload the file to `/root`.
+10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
 
-11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/ga/install/ldap/), to the seed VM host.
+11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed VM host.
 
 	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
 
@@ -274,7 +274,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ### Create projects for LDAP users<a name="ldap"></a>
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/ga/install/ldap/).
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/install/ldap/).
 
 ## Next Steps<a name="next-steps"></a>
 
@@ -283,13 +283,13 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
 
-	See [Deploy vCenter ESX compute proxy](/helion/openstack/ga/install/esx/proxy/).
+	See [Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/).
 
 - Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
 	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 
-	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/ga/install/ovsvapp/) document for complete instructions. 
+	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
 
 - Install DNS as a Service (DNSaaS) (Optional).
 
@@ -297,7 +297,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 	<!---For installation intructions, see [DNSaaS Beta Installation and Configuration]( /helion/openstack/install/dnsaas/).--->
 
-	See [HP Helion OpenStack&#174;: DNSaaS Installation and Configuration]( /helion/openstack/ga/install/dnsaas/)
+	See [HP Helion OpenStack&#174;: DNSaaS Installation and Configuration]( /helion/openstack/install/dnsaas/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

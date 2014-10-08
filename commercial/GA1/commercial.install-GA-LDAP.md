@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Intergrating LDAP"
-permalink: /helion/openstack/ga/install/ldap/
+permalink: /helion/openstack/install/ldap/
 product: commercial.ga
 
 ---
@@ -196,9 +196,9 @@ On the seed VM host, perform the following:
 
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
-[HP Helion OpenStack®: Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/)
+[HP Helion OpenStack®: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
 
-[HP Helion OpenStack®: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/)
+[HP Helion OpenStack®: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
 
 ## Configure Horizon<a name="horizon"></a>
 
@@ -363,9 +363,9 @@ The following is an example of a typical `overcloud_keystone_ldap.json` configur
 	    }
 	}
 
-Return to the [KVM installation](/helion/openstack/ga/install/kvm/#startseed/).
+Return to the [KVM installation](/helion/openstack/install/kvm/#startseed/).
 
-Return to the [ESX installation](/helion/openstack/ga/install/esx/#startseed/).
+Return to the [ESX installation](/helion/openstack/install/esx/#startseed/).
 
 ----
 ####OpenStack trademark attribution

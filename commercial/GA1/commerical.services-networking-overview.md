@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Networking Service Overview"
-permalink: /helion/openstack/ga/services/networking/overview/
+permalink: /helion/openstack/services/networking/overview/
 product: commercial.ga
 
 ---
@@ -41,7 +41,7 @@ To perform tasks using the Networking service, you can use the dashboard, API or
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Networking service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Networking service.
 
 ###Using the API<a name="API"></a>
  
@@ -57,7 +57,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
 The administrator can work with all projects in a domain. A user can only work with projects associated with that user.-->
 
@@ -65,7 +65,7 @@ The administrator can work with all projects in a domain. A user can only work w
 
 If you know the NAT address of a malicious user, you can identify his actual IP address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
 
-For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/ga/maskedIP).
+For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/maskedIP).
 
 <!---### Working with networks ###
 

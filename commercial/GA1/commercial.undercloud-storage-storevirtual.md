@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/ga/undercloud/storage/storevirtual/
+permalink: /helion/openstack/undercloud/storage/storevirtual/
 product: commercial.ga
 
 
@@ -25,7 +25,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Working with HP StoreVirtual VSA 
 
-The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/ga/sirius/cli/workflow/). 
+The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). 
 
 This page describes the different tasks that you can perform using the StoreVirtual option in the Undercloud Horizon Dashboard.
 
@@ -61,7 +61,7 @@ Before you start working with StoreVirtual, ensure that the following prerequisi
 	
 Use Undercloud Horizon Dashboard to register a cluster. When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
 
-<!---You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/ga/sirius-cli/)).-->
+<!---You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/sirius-cli/)).-->
 
 To register the cluster using the Undercloud Horizon Dashboard, do the following:
 
@@ -178,7 +178,7 @@ Use this option to view the cluster configuration (as defined in the HP Helion O
 
 ## Next Steps {#next-steps}
 
-[Working with StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)
+[Working with StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

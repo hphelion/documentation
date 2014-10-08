@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
-permalink: /helion/openstack/ga/install/ntp/
+permalink: /helion/openstack/install/ntp/
 product: commercial.ga
 
 ---

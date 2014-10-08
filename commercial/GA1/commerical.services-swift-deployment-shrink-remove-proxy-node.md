@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/ga/services/swift/deployment/remove-proxy-node/
+permalink: /helion/openstack/services/swift/deployment/remove-proxy-node/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
 #HP Helion OpenStack&#174;: Remove a Proxy Node
 
@@ -36,7 +36,7 @@ Scale-out Proxy nodes can only be removed from the cloud after all the disks hav
 7. [Remove the scale-out proxy node by removing the corresponding stack](#remove-scale-out-proxy)
 8. [Verify the node removal](#verify-node-removal)
 
-##Prerequisite{#prer}
+##Prerequisite {#prer}
 
 * HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
 * The scale-out Object Ring-1 has been deployed.
@@ -139,7 +139,7 @@ Repeat this step for each disk of the specific node.
 		# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes of IP address>
 
 
-##Remove the haproxy configuration from each of the Overcloud Controller nodes{#remove-haproxy}
+##Remove the haproxy configuration from each of the Overcloud Controller nodes {#remove-haproxy}
 
 1. Edit `swift-proxy.cfg` on each of the controller nodes. 
 

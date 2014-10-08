@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Deploy Scale-out Swift Node"
-permalink: /helion/openstack/ga/services/swift/deployment-scale-out/
+permalink: /helion/openstack/services/swift/deployment-scale-out/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/ga/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
 -->
 
 # Deploying Additional Scale-out Swift Nodes with HP Helion OpenStack&#174; 
@@ -72,7 +72,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 
 ##Prepare the Undercloud to Manage Swift Clusters {#prepare-undercloudswift}
 
-Using the ***ringos*** utility you can add the [provisioned nodes](/helion/openstack/ga/services/swift/provision-nodes/) to the Swift cluster. 
+Using the ***ringos*** utility you can add the [provisioned nodes](/helion/openstack/services/swift/provision-nodes/) to the Swift cluster. 
 
 1. Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to the undercloud. 
 
@@ -101,7 +101,7 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 2. Update the `so_swift_storage_scale` parameter in the `/root/overcloud-config.json` file according to your storage needs.
  
-	For more details, refer [Provisioning Swift node(s)](/helion/openstack/ga/services/swift/provision-nodes/)
+	For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
 
 
 3. Enter the following command to source the `overcloud_config.json`  for the new values.
@@ -201,7 +201,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
     	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object Node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-	**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-Swift-nodes).
+	**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes).
 
 	The following sample displays the addition of disk to **192.0.2.29** and its output.
 

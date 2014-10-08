@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; EON Overview"
-permalink: /helion/openstack/ga/services/eon/overview/
+permalink: /helion/openstack/services/eon/overview/
 product: commercial.ga
 
 ---
@@ -53,11 +53,11 @@ To perform tasks using the EON service, you can use the dashboard or CLI.
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/undercloud/resource/esx/compute/) to work with the EON service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/undercloud/resource/esx/compute/) to work with the EON service.
 
 ###Using the CLI<a name="cli"></a>
 
-You can use the command-line interface software to access HP EON service. See [Command Line Interface-EON](/helion/openstack/ga/undercloud/eon/cli/)
+You can use the command-line interface software to access HP EON service. See [Command Line Interface-EON](/helion/openstack/undercloud/eon/cli/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

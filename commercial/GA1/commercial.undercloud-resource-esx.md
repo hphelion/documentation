@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Compute Service"
-permalink: /helion/openstack/ga/undercloud/resource/esx/compute/
+permalink: /helion/openstack/undercloud/resource/esx/compute/
 product: commercial.ga
 
 
@@ -32,7 +32,7 @@ A variety of flavors and images are provided by the HP Helion Compute service to
 
 Currently Compute Service has the following option:
 
-* [Virtual Environments (ESX)](/helion/openstack/ga/undercloud/resource/esx/)
+* [Virtual Environments (ESX)](/helion/openstack/undercloud/resource/esx/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

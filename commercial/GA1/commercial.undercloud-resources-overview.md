@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Manage Resources"
-permalink: /helion/openstack/ga/undercloud/manage/resources/overview/
+permalink: /helion/openstack/undercloud/manage/resources/overview/
 product: commercial.ga
 
 ---
@@ -27,8 +27,8 @@ The **Resources** Tab, in Undercloud Horizon  Dashboard allows you to define res
 This option allows you to define the required configurations for your cloud. The following options are displayed under the Resources Tab:
 
 
-* [Compute](/helion/openstack/ga/undercloud/resource/esx/compute/)
-* [Storage](/helion/openstack/ga/undercloud/manage/resources/storage/)
+* [Compute](/helion/openstack/undercloud/resource/esx/compute/)
+* [Storage](/helion/openstack/undercloud/manage/resources/storage/)
 
 
 
