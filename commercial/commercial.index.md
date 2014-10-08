@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Documentation Home
-redirect to: http://docs.hpcloud.com/helion/openstack/ga/
 permalink: /helion/openstack/
 product: commercial.ga
 
