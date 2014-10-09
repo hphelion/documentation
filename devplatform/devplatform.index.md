@@ -23,7 +23,7 @@ Before installing the Development Platform, you must first install a [Community]
   
 ###[Resources for Sysadmins and Installers](/helion/devplatform/sysadmin/)
   
-### [Resources for OpenStack Integration, Extension, and Service Development](/helion/devplatform/servicedev/)
+<!--### [Resources for OpenStack Integration, Extension, and Service Development](/helion/devplatform/servicedev/) -->
 
 
 ----------
