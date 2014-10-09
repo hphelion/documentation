@@ -1131,7 +1131,7 @@ Display details about a snapshot.
 :  ID of the snapshot.
 
 ###Examples
-Display the details for snapsot `939`:
+Display the details for snapshot `939`:
 
     $ nova volume-snapshot-show 939
     +--------------------+---------------------+
