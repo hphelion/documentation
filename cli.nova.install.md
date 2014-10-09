@@ -348,7 +348,7 @@ To install the HP Helion Public Cloud Python-Novaclient on your system, follow t
 
         python setup.py install
     
-5. In the `Command Prompt` window, install the correct version of the Python `prettytable` package by executing the folloing commands:
+5. In the `Command Prompt` window, install the correct version of the Python `prettytable` package by executing the following commands:
 
         easy_install pip
         pip uninstall prettytable==0.6.1
