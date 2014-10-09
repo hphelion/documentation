@@ -36,6 +36,7 @@ do
 			do
 			grep -l $i $a
 			done
+			echo ""
 			fi
 		 
 done
