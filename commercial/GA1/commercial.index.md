@@ -20,7 +20,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Documentation Home
 
-Welcome! HP Helion OpenStack is OpenStack technology coupled with a Linux&#174; Operating System (OS). It is designed for administrators and developers who want a hardened, enterprise-grade product set that speeds deployment for developers and simplifies management of private clouds and infrastructure services for enterprises and service providers.
+HP Helion OpenStack is a commercial-grade distribution of OpenStack, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.
 
 HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/services/overview/) for a complete list of services.
 
