@@ -227,7 +227,7 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
 		dpkg --add-architecture i386
 		apt-get install openjdk-7-jdk:i386
 
-### Installation<a name="installation"></a>
+### Installation<a name="install"></a>
 
 1. Verify if the CMC installer file inside `tripleo` directory (packaged along with the HP Helion OpenStack&#174; installer) has the executable permission otherwise execute the following command:
 
@@ -282,7 +282,7 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 <!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
 
-#### Enrolling the New Baremetal Server<a name="enroll-new-baremetal-server"></a>
+#### Enrolling the New Baremetal Server<a name="deploy-process"></a>
 
 To deploy HP StoreVirtual VSA, perform the following:
 
