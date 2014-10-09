@@ -43,7 +43,7 @@ done
 rm permalinklist.txt 
 rm filepermalink.txt
  
-exit
+ 
 echo ""
 echo "===Missing publish flag============================="
 for i in `find . -name "*.md" `
