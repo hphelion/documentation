@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Volume Operations Service Overview"
-permalink: /helion/openstack/ga/services/volume/overview/
+permalink: /helion/openstack/services/volume/overview/
 product: commercial.ga
 
 ---
@@ -25,11 +25,14 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-The HP Helion OpenStack Volume Operations service  leverages the OpenStack Cinder (Block Storage) service to manage storage volumes, including creating volumes, creating volume snapshots, and configuring volumes. 
+The HP Helion OpenStack Volume Operations service uses the OpenStack Cinder (Block Storage) service to manage storage volumes, including creating volumes, creating volume snapshots, and configuring volumes. 
 
 Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots to copy a volume before making significant changes to it. Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.
 
 **Note:** HP Helion OpenStack uses StoreVirtual as a back end to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor. 
+
+
+
 
 ## Working with the Volume Operations Service ##
 
