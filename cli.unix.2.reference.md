@@ -2308,7 +2308,7 @@ Add a node to the load balancer.
 
 
 ###Description
-Add a node to the load balancer with the specified adddress and port.
+Add a node to the load balancer with the specified address and port.
 
 ###Examples
 Create a new node for load balancer 'loady':
@@ -2440,7 +2440,7 @@ Remove load balancer (specified by name or ID).
 
 
 ###Description
-Remove load balancers by specifying their names or ID. You may specify more than one load balacner name or ID on a command line.
+Remove load balancers by specifying their names or ID. You may specify more than one load balancer name or ID on a command line.
 
 ###Examples
 Delete the load balancers `thing1` and `thing2`:
