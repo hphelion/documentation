@@ -13,33 +13,38 @@ rm checktmp > /dev/null 2>&1
 
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
 
-#for i in `find . -name "*.md" `
-#do
-# grep "](/.*)" $i | sed 's/.*](//' | sed 's/).*//' | grep -v "/api/" >> permalinklist.txt
-# grep permalink $i | sed 's|.* /||'  >> filepermalink.txt
 
-#done
+echo  ""
+echo "==== Links to files that don't exist==="
+for i in `find . -name "*.md" `
+do
+ grep "](/.*)" $i | grep -v "<!--" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" >> permalinklist.txt
+ grep permalink $i | sed 's|.* /|/|'  >> filepermalink.txt
+
+done
  
  
-#for i in `cat permalinklist.txt | uniq | grep -v http`
-#do
+for i in `cat permalinklist.txt | uniq | grep -v http`
+do
  
 	 
 	 
-#			if [[ -n $(grep $i filepermalink.txt ) ]];
-#			then
-			#echo "found $i"
-#			break;
-#			else
-#			echo "misssing $i"
-#			fi
+			if [[ -z $(grep $i filepermalink.txt ) ]];
+			then
+			echo "The permalink $i does not exist but is referenced in:"
+			for a in `find . -name "*.md"`
+			do
+			grep -l $i $a
+			done
+			fi
 		 
-#done
+done
 
-#rm permalinklist.txt 
-#rm filepermalink.txt
+rm permalinklist.txt 
+rm filepermalink.txt
  
-#exit
+exit
+echo ""
 echo "===Missing publish flag============================="
 for i in `find . -name "*.md" `
 do 
