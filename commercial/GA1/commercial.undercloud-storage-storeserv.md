@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/ga/undercloud/storage/storeserv/
+permalink: /helion/openstack/undercloud/storage/storeserv/
 product: commercial.ga
 
 ---
@@ -27,7 +27,7 @@ PageRefresh();
 
 The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the Undercloud and you have all the required details to register the device using Sirius service.
 
-You can configure a 3PAR device by using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/ga/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the Undercloud Horizon.<!---the following prerequisites have been fulfilled:-->
+You can configure a 3PAR device by using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the Undercloud Horizon.<!---the following prerequisites have been fulfilled:-->
 
 <!---6. The HP 3PAR REST service is running and HTTPS is enabled.-->
 
@@ -283,7 +283,7 @@ Use this option to view the CPG configuration (as defined in OpenStack Configura
 
 ##Next Steps {#next-steps}
 
-[Working with StoreServ Backends](/helion/openstack/ga/undercloud/oc/config/storeserv/)
+[Working with StoreServ Backends](/helion/openstack/undercloud/oc/config/storeserv/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Creating an Environment Variables File for Installation"
-permalink: /helion/openstack/ga/install/envars/
+permalink: /helion/openstack/install/envars/
 product: commercial.ga
 
 ---
@@ -199,7 +199,7 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 	export OVERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
 	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
-[Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/ga/install/kvm/).
+[Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/).
 
 
 ## Environment variables file for an ESX cloud type ## {#esx}
@@ -233,7 +233,7 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
 		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=91
 
-[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/).
+[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/).
 
 
 ### Deployment Scenario 2: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access ### {#esxtwo}
@@ -273,7 +273,7 @@ If you intend to use custom IP addresses and a VLAN provider network for externa
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/ga/install/esx/).
+[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/).
 
  
 

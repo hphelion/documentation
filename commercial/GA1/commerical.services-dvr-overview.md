@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration High Availability Service Overview"
-permalink: /helion/openstack/ga/services/dvr/overview/
+permalink: /helion/openstack/services/dvr/overview/
 product: commercial.ga
 
 ---

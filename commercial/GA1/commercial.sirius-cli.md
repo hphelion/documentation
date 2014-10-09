@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/ga/sirius-cli/
+permalink: /helion/openstack/sirius-cli/
 product: commercial.ga
 
 ---

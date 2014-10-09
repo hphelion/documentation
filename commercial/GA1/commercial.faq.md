@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; FAQ"
-permalink: /helion/openstack/ga/faq/
+permalink: /helion/openstack/faq/
 product: commercial.ga
 
 ---
@@ -47,7 +47,7 @@ HP Helion OpenStack is a scaled out, hardened and curated commercial-grade produ
 
 ####What does HP Helion OpenStack enable me to do?<a name="distroenable"></a>
 
-You have consistently given us feedback to release a distribution of OpenStack technology - fully tested, hardened and supported by HP. With this version, you can deploy a cloud configuration with an out-of-the-box experience for a 20 to 30 node cloud environment.  
+You have consistently given us feedback to release a distribution of OpenStack technology - fully tested, hardened and supported by HP. With this version, you can deploy a cloud with a minimum of 8 nodes and up to 100 nodes and have the ability to experience OpenStack technology.  
 
 <!-- Removed per JR's comments The final version of this free distribution enables you to evaluate OpenStack and to deploy small-scale private clouds in production (up to 30 nodes). They will be able to do this more quickly and easily with HP's simplified installation and update mechanisms.-->
 
@@ -111,7 +111,7 @@ No. Currently, HP Helion OpenStack is supported by HP for small-scale, private c
 
 ####How many nodes and virtual machines does it support?<a name="nodes"></a>
 
-HP Helion OpenStack will support up to 30 nodes and 40 VMs per node. 
+HP Helion OpenStack will support up to 100 nodes and 40 VMs per node. 
 
 <!--In the final release, it will support scalable deployments of thousands of compute nodes supporting tens of thousands of VMs. This has been tested and proven using the best practices developed by HP over the past three years running OpenStack public cloud services at scale.-->
   

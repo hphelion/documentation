@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration High Availability Service Overview"
-permalink: /helion/openstack/services/ga/troubleshooting/
+permalink: /helion/openstack/services/troubleshooting/
 product: commercial.ga
 
 ---

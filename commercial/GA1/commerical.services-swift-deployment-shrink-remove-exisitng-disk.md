@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/ga/services/swift/deployment/remove-existing-disk/
+permalink: /helion/openstack/services/swift/deployment/remove-existing-disk/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
 
 # HP Helion OpenStack&#174;: Remove an existing Disk from Object Nodes
@@ -37,7 +37,7 @@ Perform the following steps to remove a disk from object nodes.
 * Make a backup of the rings before any operation.
 
 
-##Removing disks from ring<a name="remove-disk-from-ring"></a>
+##Removing disks from ring {#remove-disk-from-ring}
 
 Perform the following steps to remove disks from ring:
 
@@ -103,7 +103,7 @@ The following sample displays the output of the above command:
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
 
-10.Repeat steps  **6 through 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+10.Repeat steps from **6 - 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 11.Once the weight is set to 0, remove the disk from the ring.
 
@@ -132,7 +132,7 @@ The following sample displays the output of the above command:
 
 **Related topics**
 
-* [Shrink Swift Cluster]( /helion/openstack/ga/services/object/swift/shrink-cluster/)
+* [Shrink Swift Cluster]( /helion/openstack/services/object/swift/shrink-cluster/)
 
 
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

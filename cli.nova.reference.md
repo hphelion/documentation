@@ -623,7 +623,7 @@ Shutdown, re-image, and re-boot a server.
 :  Name or ID of the new image.
 
 ###Example
-Rebuild serveer 703829 with image 75845:
+Rebuild server 703829 with image 75845:
 
     $ nova rebuild 703829 75845
     +-----------------+----------------------------------------------------------+
@@ -1131,7 +1131,7 @@ Display details about a snapshot.
 :  ID of the snapshot.
 
 ###Examples
-Display the details for snapsot `939`:
+Display the details for snapshot `939`:
 
     $ nova volume-snapshot-show 939
     +--------------------+---------------------+

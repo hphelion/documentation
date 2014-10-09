@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
-permalink: /helion/openstack/ga/install/kvm/
+permalink: /helion/openstack/install/kvm/
 product: commercial.ga
 
 ---
@@ -56,9 +56,9 @@ Before starting the installation, review the following sections.
 
 To ensure successful installation, please read through the following topics before you start.
 
-* Review the [support matrix](/helion/openstack/ga/support-matrix/) for information on the supported hardware and software.
-* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/ga/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/ga/install/prereqs/).
+* Review the [support matrix](/helion/openstack/support-matrix/) for information on the supported hardware and software.
+* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
+* [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
 
 
 ### Review the KVM deployment architecture<a name="deploy-arch"></a>
@@ -67,23 +67,23 @@ The following diagram depicts the required network topology for a KVM installati
 
 <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
 
-For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#network_prepare).
+For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
 ### Create and identify environment variables file ### {#envvars}
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
-For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/ga/install/envars/).
+For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 ### Prepare baremetal.csv file ### {#csv}
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 
 ### Prepare the cloud seed host to create the seed VM ### {#prepseed}
-On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/ga/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
 ## Downloading the installation packages<a name="getinstall"></a>
 
@@ -184,11 +184,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		source env_vars
 
-10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/ga/install/prereqs/#req-info) file is correct and upload the file to `/root`.
+10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/ga/install/prereqs/#req-info) on the *Prerequisites* page.
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
 
-11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/ga/install/ldap/), to the seed VM host.
+11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed VM host.
 
 	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
 
@@ -279,7 +279,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 ### Create projects for LDAP users<a name="ldap"></a>
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/ga/install/ldap/). 
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/install/ldap/). 
 
 
 ## Next Steps<a name="next-steps"></a>
@@ -290,26 +290,26 @@ Configure Block Storage by either deploying VSA or using HP 3Par Array
 
 	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
-	For instructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) document. 
+	For instructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/) document. 
 
 - Configure an HP 3Par storage array
 
 	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
 
-	For instructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/ga/install/3par/) document.
+	For instructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/) document.
 
 
 - Configure a Swift Scale-Out cluster (Optional)
 
 	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
-	For instructions, see the [Scale-out Swift](/helion/openstack/ga/services/object/overview/scale-out-swift/) document. 
+	For instructions, see the [Scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/) document. 
 
 - Install DNS as a service (DNSaaS) (Optional).
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).
+	For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/ga/services/swift/deployment/remove-scale-out-object-node/
+permalink: /helion/openstack/services/swift/deployment/remove-scale-out-object-node/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/ga/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
 # HP Helion OpenStack&#174;: Remove Scale-out Object Storage Node
 
@@ -27,7 +27,7 @@ It is recommended that you gradually reduce the weight in the ring when removing
 Object nodes can only be removed once all disks have been removed from the node.
 
 1. [Prerequisites](#prer)
-2. [Removing disks from ring](removing-disk)
+2. [Removing disks from ring](#removing-disk)
 3. [Removing scale-out object node](#remove-scale-out-object-node)
 4. [Verify the node removal](#node-removal)
 
@@ -71,12 +71,12 @@ Perform the following steps to remove the disks from ring:
 
 6. Set weight of the disks on the node. 
 
-	# ringos set-weight -f object-1.builder -s d<device> -w <weight>
+		# ringos set-weight -f object-1.builder -s d<device> -w <weight>
 
 
 7. Re-balance the ring.
 
-	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+		# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 	**Note**: You must wait for the time specified by `min_part_hours` before another re-balance succeeds.
 
@@ -87,7 +87,7 @@ Perform the following steps to remove the disks from ring:
 		
 9. Copy the `object-1.ring.gz` file to all nodes.
 
-	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+		# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 10. Repeat steps from **6 - 9** and decrease the weight each time until the weight becomes 0 for each disk.[Set the weight to 50, then 25, and then 0 (w= 50, 25, 0).]
 
@@ -95,7 +95,7 @@ Perform the following steps to remove the disks from ring:
 
     	# ringos remove-disk-from-ring -f object-1.builder -s <Object Node IP address>
 
-Repeat this step for each disk of the specific node.
+	Repeat this step for each disk of the specific node.
 
 12. Re-balance the ring.
 
@@ -105,7 +105,7 @@ Repeat this step for each disk of the specific node.
 
 13. List all the Swift nodes.
 
-	# ringos list-swift-nodes -t all
+		# ringos list-swift-nodes -t all
 		
 		
 14.Copy the `object-1.ring.gz` file to all nodes.

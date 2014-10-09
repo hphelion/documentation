@@ -9,7 +9,7 @@ permalink: /als/v1/user/deploy/languages/java/
 Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion OpenStack® to manage infrastructure or software services, tools to enable successful development are available in Java.
 
 For more information on working with object storage, 
-see the [HP Helion OpenStack® Object Storage Service Overview](/helion/openstack/ga/services/object/overview/).
+see the [HP Helion OpenStack® Object Storage Service Overview](/helion/openstack/services/object/overview/).
 
 For information about authentication, see [Authenticating with Access Key and Token](/als/v1/user/deploy/languages/java/authentication/).
 

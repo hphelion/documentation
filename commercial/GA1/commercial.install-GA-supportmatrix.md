@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Support Matrix"
-permalink: /helion/openstack/ga/support-matrix/
+permalink: /helion/openstack/support-matrix/
 product: commercial.ga
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/ga/install/overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/overview/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Support Matrix
@@ -79,20 +79,10 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 ### IBM systems ###
 
 - [IBM System x3550 M4 Server](http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/)
-<br>CPU: Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz
-<br>Storage controller: LSI MegaRAID <ServerRAID M5110>  01.33.00
-<br>Network: Intel(R) Gigabit Ethernet Network Driver - version 5.0.5-k
-<br>Memory: 256 GB
- 
 
 ### Dell systems###
 
 - [Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
-<br>BIOS version: 1.4.8
-<br>CPU: 2 (Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz   max 3600 MHz  8 cores
-<br>Memory: 256 GB
-<br>Network Device: Broadcom   (4 Port)
-<br>Storage controller: Integrated RAID controller 1:
 
 
 
@@ -320,7 +310,6 @@ Ubuntu 14.04 with the following packages.
 - libffi-dev 
 - virt-manager 
 - chromium-browser
-- openjdk‐7‐jdk:i386
 
 
 There are no software requirements for the Undercloud and Overcloud controllers.
@@ -340,9 +329,9 @@ Other requirements and recommendations for the seed cloud host are as follows:
 
 ## Next Steps<a name="next"></a>
 
-Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/ga/technical-overview/).
+Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/technical-overview/).
 
-Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/ga/install/prereqs/).
+Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 
 

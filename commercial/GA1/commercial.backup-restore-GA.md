@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
-permalink: /helion/openstack/ga/backup.restore/
+permalink: /helion/openstack/backup.restore/
 product: commercial.ga
 
 ---

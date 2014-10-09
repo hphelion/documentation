@@ -194,7 +194,7 @@ The following diagram gives an overview of the steps involved in integrating Sto
 
 4d- **Get Cinder configuration for VSA backend**
 
-   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system.
+   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/undercloud/oc/config/storevirtual/) system.
 	
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
@@ -206,7 +206,7 @@ The following diagram gives an overview of the steps involved in integrating Sto
 
    * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. -->
+   * Execute [update cloud script](/helion/openstack/undercloud/oc/config/storevirtual/) from Seed cloud. -->
 
 ##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux<a name="install-hp-storevirtual-cmc"></a>
 
@@ -485,21 +485,21 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 ## Next Steps<a name="next-steps"></a>
 
-- [Working with HP Helion OpenStack&#174; Undercloud Horizon Dashboard](/helion/openstack/ga/undercloud/manage/resources/overview/)-(Recommended)
+- [Working with HP Helion OpenStack&#174; Undercloud Horizon Dashboard](/helion/openstack/undercloud/manage/resources/overview/)-(Recommended)
 
 
-<!--- [Working with HP StoreVirtual VSA](/helion/openstack/ga/undercloud/storage/storevirtual/)-  REQUIRED
+<!--- [Working with HP StoreVirtual VSA](/helion/openstack/undercloud/storage/storevirtual/)-  REQUIRED
 
 	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
 	For detailed intructions, see the  document. 
-- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
+- [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)-  REQUIRED
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
+	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).-->
 
-- [Sirius CLI](/helion/openstack/ga/sirius-cli/)
+- [Sirius CLI](/helion/openstack/sirius-cli/)
 
 <!---## Next step
 

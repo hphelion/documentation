@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/ga/install/overview/
+permalink: /helion/openstack/install/overview/
 product: commercial.ga
 
 ---
@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Installation Overview
 
-The HP Helion OpenStack installation follows the standard [TripleO deployment model](/helion/openstack/ga/services/tripleo/overview/), creating a seed, an undercloud and an overcloud.
+The HP Helion OpenStack installation follows the standard [TripleO deployment model](/helion/openstack/services/tripleo/overview/), creating a seed, an undercloud and an overcloud.
 
 * **Seed**: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
@@ -31,7 +31,7 @@ The HP Helion OpenStack installation follows the standard [TripleO deployment mo
 
 * **Overcloud**: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
 
-For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/ga/technical-overview/#install-configure/) in the Technical Overview.
+For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/technical-overview/#install-configure/) in the Technical Overview.
 
 ## The Installation Process
 
@@ -47,18 +47,18 @@ After the installation, you can add additional block storage nodes (not required
 
 The high-level process for installing HP Helion OpenStack involves the following:
 
-1. Review the information in the [Support Matrix](/helion/openstack/ga/support-matrix/) and [Technical Overview](/helion/openstack/technical-overview/) for details about hardware and software requirements.
+1. Review the information in the [Support Matrix](/helion/openstack/support-matrix/) and [Technical Overview](/helion/openstack/technical-overview/) for details about hardware and software requirements.
 
-2. Verify that the necessary [Prerequisites](/helion/openstack/ga/install/prereqs) have been performed.
+2. Verify that the necessary [Prerequisites](/helion/openstack/install/prereqs) have been performed.
 
 3. Install with either KVM or ESX hypervisor support:
 
 	
-	- [Install with KVM hypervisor support](/helion/openstack/ga/install/kvm/) and then [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/ga/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/ga/install/3par/). 
+	- [Install with KVM hypervisor support](/helion/openstack/install/kvm/) and then [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). 
 
-	- [Install with ESX hypervisor support](/helion/openstack/ga/install/esx/) and then [deploy the compute proxy on the ESX hosts](/helion/openstack/ga/install/esx/proxy/) and [deploy OVSvApp for HP Virtual Cloud Networking](/helion/openstack/ga/install/ovsvapp/).
+	- [Install with ESX hypervisor support](/helion/openstack/install/esx/) and then [deploy the compute proxy on the ESX hosts](/helion/openstack/install/esx/proxy/) and [deploy OVSvApp for HP Virtual Cloud Networking](/helion/openstack/install/ovsvapp/).
 
-4. Optionally, [install and configure DNSaaS support](/helion/openstack/ga/install/dnsaas/).
+4. Optionally, [install and configure DNSaaS support](/helion/openstack/install/dnsaas/).
 
 There are a few things you should be aware of before you begin your HP Helion OpenStack baremetal installation.
 
@@ -77,7 +77,7 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 ## Next Step ##
 
-Review the information in [Installation Prerequisites](/helion/openstack/ga/install/prereqs/).
+Review the information in [Installation Prerequisites](/helion/openstack/install/prereqs/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

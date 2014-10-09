@@ -11,7 +11,7 @@ advantage of HP Helion OpenStack® to manage infrastructure or software services
 to enable successful development are available in PHP.
 
 For more information on working with object storage, 
-see the [HP Helion OpenStack® Object Storage Service Overview](/helion/openstack/ga/services/object/overview/).
+see the [HP Helion OpenStack® Object Storage Service Overview](/helion/openstack/services/object/overview/).
 
 For more information on authentication, see [Identity Service, Authentication, and the Service Catalog](/als/v1/user/deploy/languages/php/authentication/).
 

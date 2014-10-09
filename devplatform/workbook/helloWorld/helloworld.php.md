@@ -14,7 +14,7 @@ This sample displays the text "Hello World!". This is a demonstration of the min
 
 - HP Helion OpenStack&reg; cloud or micro-cloud deployed
 	- [Community](/helion/community/install/)
-	- [Commercial](/helion/openstack/ga/install/overview/)
+	- [Commercial](/helion/openstack/install/overview/)
 - Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available
 - Logon and password credentials for the cluster.
 - Access to  [Helion command-line interface (CLI)](/als/v1/user/client/); this is part of the Helion Developer Platform installation.
