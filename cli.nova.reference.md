@@ -623,7 +623,7 @@ Shutdown, re-image, and re-boot a server.
 :  Name or ID of the new image.
 
 ###Example
-Rebuild serveer 703829 with image 75845:
+Rebuild server 703829 with image 75845:
 
     $ nova rebuild 703829 75845
     +-----------------+----------------------------------------------------------+
