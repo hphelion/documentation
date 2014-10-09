@@ -28,7 +28,7 @@ Clicking the `+ Create Router` button launches the router creation screen.  Clic
 
 From the networks screen you can perform any of the following functions:
 
-* [Managing routers](/mc/compute/networks/manage-routers.md)
+* [Managing routers](/mc/compute/networks/manage-routers)
 * [Viewing router details](/mc/compute/networks/view-router)
 
 
