@@ -1790,7 +1790,7 @@ Remove images by name or identifier.
 
 
 ###Description
-Remove existing images by specifying thier names or IDs. Optionally, you may specify an availability zone.
+Remove existing images by specifying their names or IDs. Optionally, you may specify an availability zone.
 
 ###Examples
 Delete image 'my-image':
