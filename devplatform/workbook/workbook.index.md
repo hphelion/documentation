@@ -5,6 +5,7 @@ permalink: /helion/devplatform/workbook/
 product: devplatform
 
 ---
+<!—UNDER REVISION-->
 # HP Helion Development Platform Samples
 These samples are designed to exercise all the services which make up the HP Helion Development Platform. 
 

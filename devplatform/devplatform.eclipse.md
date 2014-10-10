@@ -1,9 +1,11 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Documentation for System Administrators"
+title: "Using the Eclipse Deployment Plugin"
 permalink: /helion/devplatform/eclipse/
 product: devplatform
------------
+---
+<!--UNDER REVISION-->
+
 Stub for the eclipse deployment plugin documentation.
 
 ----

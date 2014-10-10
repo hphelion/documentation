@@ -1,46 +1,30 @@
 ---
 layout: default-devplatform
 title: "Creating a Database Instance"
-permalink: /helion/devplatform/
+permalink: /helion/devplatform/createdatabase/
 product: devplatform
 
 ---
 <!--UNDER REVISION-->
 
+#Working with the Database Service 
+The database service provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
 
-<script>
+These instances can then be utilized by your applications to provide standard datastore/backend functions. <!--  For more information on database access please refer to <Document: Database access> -->
 
-function PageRefresh {
-onLoad="window.refresh"
-}
+##Key Learnings
+You will understand the procedures necessary to create and replicate a database instance inside the public cloud. 
 
-PageRefresh();
+- [Create a database instance](#create)
+- [Create a database backup](#backup)
+- [Replicate a database](#replicate)
 
-</script>
-<!--
-???
--->
-
-#Background 
-
-The database service (DBaaS) provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
-
-#Creating a Database Instance#
-This tutorial aims to help you create and manage a database instance in the public cloud. These instances can then be utilized by your applications to provide standard Datastore/backend functions.   For more information on database access please refer to <Document: Database access>
-
-The following topics explain how to create and manage a database instance:
-
-- Creating a database instance
-- Creating a database backup
-- Replicating a database
-
-###Prerequisites
+##Prerequisites
 1. Install the HP Helion Development Platform 
-2. Configure the database service
-
-##Creating the instance##
+2. Configure the database service.
 
 
+##Creating the instance<a name="create"></a>
 
 1. Log into Horizon and open the Database panel under your Project. Click on the instances tab. 
 2. Click the **Launch Instance** button.
@@ -57,7 +41,7 @@ The following topics explain how to create and manage a database instance:
 7.	Open the **Instances** panel of the **Database** tab to view the status of the newly created database instance. Once the database instance has been created it will show up in Active status.
 8.	The database instance is now ready to use.
 
-##Creating a database backup##
+##Creating a database backup<a name="backup"></a>
 The following section will demonstrate how to backup an existing database instance. This will take a backup of the entire database instance and can be restored into a new instance at a later time. 
 
 1.	Log into Horizon and open the Database panel under your Project. Click on the instances tab. A list of active databases instances will be shown.
@@ -72,18 +56,15 @@ The following section will demonstrate how to backup an existing database instan
 5.	Open the **Backups** tab of the **Database** panel to view all existing backups.
 6.	The newly created backup will be displayed there.
 
- 
-
-##Replicating a database##
-The following will demonstrate configuring database replication. Replicating a database creates a slave for your instance that will replicate every action on the master. Creating a database instance that is replicated results in more durable data and can prevent data loss in a disaster scenario.
+##Replicating a database<a name="replicate"></a>
+Replicating a database creates a slave for your instance that replicates every action on the master. Creating a database instance that is replicated results in more durable data and can prevent data loss in a disaster scenario.
 
 ###Prerequisites###
-To follow this guide, you must have already created a database instance that will be the master database.  
+To follow this guide, you must have already [created](#create) a database instance that will be the master database.  
 
 ###Steps###
-
 1.	Log into Horizon and open the Database panel under your Project. Click on the instances tab.
-2.	Click the **Launch Instance** button.
+2.	Click **Launch Instance**.
 3.	In the **Launch Instance** dialog's **Details** tab, specify the following options:
 	- Instance Name - the name of the MySQL instance that will be the slave instance.
 	- Flavor - the size of the instance to host the slave database on.
@@ -91,12 +72,9 @@ To follow this guide, you must have already created a database instance that wil
 	- Datastore - the MySQL datastore version to create.
 	- Availability Zone (optional) - the availability zone that the database will be created in. For replication it is often important for this to be in a different AZ than the master.
 
- 
-
 4.	Under the **Networking** tab of the **Launch Instance** dialog, specify the network to associate the database instance to. This is required and should be the same network that any application that accesses the database is on.
 5.	Click the **Advanced** tab and in the **Replicate from Instance** drop-down select the master instance to replicate.
 6.	Click the **Launch** button to create the replica.
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

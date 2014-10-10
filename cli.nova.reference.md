@@ -877,7 +877,7 @@ Delete a rule from security group `pgroup`:
 
 
 ##secgroup-list## {#secgroup-list}
-List security groups for the curent tenant.
+List security groups for the current tenant.
 ###Syntax
 `nova secgroup-list`
 ###Examples
