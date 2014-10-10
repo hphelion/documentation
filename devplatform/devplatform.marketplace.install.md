@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Creating a Database Instance"
-permalink: /helion/devplatform/marketplace
+permalink: /helion/devplatform/marketplace/
 product: devplatform
 
 ---

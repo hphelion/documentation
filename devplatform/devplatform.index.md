@@ -9,12 +9,13 @@ product: devplatform
 
 # HP Helion Development Platform Documentation
 
-Welcome! The HP Helion Development Platform provides an integrated development platform that optimizes Cloud Foundry&trade; for OpenStack&reg;. 
+Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on Cloud Foundry™ and integrated with HP Helion OpenStack®, the HP Helion Development Platform is open and interoperable, ensuring developers can focus on building the right app for any environment.
 
-The Helion Development platform adds the Platform-as-a-Service (PaaS) layer to speed up application development and testing. PaaS helps application developers, developers extending the functionality of OpenStack services, and administrators get more out of the cloud faster than ever.
+This documentation will help you get up to speed on the  Helion Development Platform.  You’ll read about the [Application Lifecycle Service (ALS)](/als/v1/) that provides a managed runtime environment for applications. You’ll learn about other building block services including [database](/helion/devplatform/createdatabase/), [messaging](/helion/devplatform/messageservice/), and [marketplace](/helion/devplatform/marketplace/).
 
-**Note:**
-Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/install/overview/)  HP Helion OpenStack&reg; cloud. 
+**Note**: Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/install/overview/) HP Helion OpenStack® cloud.
+<!-- If you don’t have an OpenStack environment, the fastest way to try Helion Development Platform is through [the trial] on HP Helion public cloud.-->
+
 
 ----------
 
