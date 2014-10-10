@@ -18,7 +18,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/openstack/">HP Helion OpenStack&reg;</a></span></p>
 </td>
-<td>HP Helion OpenStack&#174; is a cloud management platform (CMP). It is software from the OpenStack community: hardened and made ready for commercial-grade use by HP. It is designed for private, managed, hybrid and public clouds. HP Helion OpenStack is the underlying platform for the Helion Development Platform.</td>
+<td>A commercial grade solution that enables customers to deploy private, managed, hybrid, and public cloud services based on OpenStack.  HP Helion OpenStack reduces complexity of cloud deployments, and is the underlying platform for the Helion Development Platform.</td>
 </tr>
 
 
