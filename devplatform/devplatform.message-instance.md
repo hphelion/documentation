@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
-title: "Creating a Database Instance"
-permalink: /helion/devplatform/createmessaging/
+title: "Create a RabbitMQ Messaging Instance"
+permalink: /helion/devplatform/createmessage/
 product: devplatform
 
 ---

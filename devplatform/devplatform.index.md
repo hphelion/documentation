@@ -13,8 +13,7 @@ Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) th
 
 This documentation will help you get up to speed on the  Helion Development Platform.  You'll read about the [Application Lifecycle Service (ALS)](/als/v1/) that provides a managed runtime environment for applications. You'll learn about other building block services including [database](/helion/devplatform/createdatabase/), [messaging](/helion/devplatform/messageservice/), and [marketplace](/helion/devplatform/marketplace/).
 
-**Note**: Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/install/overview/) HP Helion OpenStack® cloud.
-<!-- If you don’t have an OpenStack environment, the fastest way to try Helion Development Platform is through [the trial] on HP Helion public cloud.-->
+**Note**: Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/install/overview/) HP Helion OpenStack cloud. If you don’t have an OpenStack environment, the fastest way to try Helion Development Platform is through the trial on HP Helion public cloud.
 
 
 ----------
