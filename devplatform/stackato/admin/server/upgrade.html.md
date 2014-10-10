@@ -144,7 +144,7 @@ upgrade takes place.
 
 After the components have been upgraded, the node is restarted and then
 post-upgrade validation takes place. If any failures occur, the upgrade
-process is stopped and you will be given given the option to roll back
+process is stopped and you will be given the option to roll back
 the upgrade. As with the pre-upgrade validation, this can be skipped
 using the `--ignore-inspect-failures` option (see
 warning above).
