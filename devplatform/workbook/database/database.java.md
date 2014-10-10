@@ -6,6 +6,8 @@ product: devplatform
 
 ---
 <!—UNDER REVISION-->
+
+
 #JAVA MySQL Database Sample
 This very simple Servlet-based Java webapp displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
@@ -38,7 +40,8 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
     sudo apt-get install default-jdk
 
 
-On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/) and run the appropriate installer for your chosen platform.
+On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and run the appropriate installer for your chosen platform.
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ###Maven
 
@@ -48,11 +51,14 @@ The simplest way to install Maven on a Mac/UNIX environment is:
 	sudo apt-get install maven 
 
 The simplest way to install Maven on a PC environment is to [download the latest version of Maven](http://maven.apache.org/download.cgi) and then follow the [installation directions](http://maven.apache.org/guides/getting-started/windows-prerequisites.html).
+
 ##Download the Application Files
 [Download](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-java) the application files. 
+
 ###About the Application Files
  The `pom.xml` file 
 in the root directory is used by Maven to build the application.
+
 ##Build the Application
 
 The specific commands listed below are intended for Unix-like machines.
