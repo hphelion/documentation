@@ -5,41 +5,74 @@ permalink: /helion/devplatform/workbook/messaging/node/
 product: devplatform
 
 ---
-#Node Messaging Sample
-Before you can begin working with the samples, ensure that you have met the technical prerequisites.
+#Node RabbitMQ Messaging Sample
+This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen.
+
+This is a demonstration of the minimum requirements to build an application that can connect to and interact with a RabbitMQ cluster provided by ALS. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.
 
 This is the **third** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/node/) sample and the [Database sample](/helion/devplatform/workbook/database/node/), please do those two first.
-##Prerequisites
-**Stackato**
 
-1. You must have a Stackato instance available. 
-2. The  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client) must be installed. 
-3. The RabbitMQ service must be enabled. <br> Stackato 3.4 appears have it enabled by default, but Stackato 3.2 does not. 
-	- Go to the Administrative console (e.g. *https://api.15.126.212.172.xip.io*, substitute your own instance's link)
+##Prerequisites
+If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
+
+1.	You must have access to an ALS cluster.
+2.	The Helion command-line interface (CLI) must be installed.
+3.	You must have access to the web-based Helion Management console.
+3. The RabbitMQ service must be enabled. If it is not enabled, or you are not sure, follow these steps: 
+	- Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster’s link.
 	- On the **Admin** tab, click **Cluster**.
 	- Click the **Settings** icon (a gear icon in the upper right corner)
 	- Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
 	- Click **Save**.
-##Download the Application Files
-Download the files [here](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-node).
 
+**Note**: If a more durable messaging service is needed, follow [these instructions](http://dbaas/docs) to set up a service binding in ALS that uses Helion Messaging as a service cluster instead of an unmanaged RabbitMQ cluster.
+##Download the Application Files
+[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-node).
 
 ##Deploy the Application
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin].
 
-To deploy the application, make sure you are logged in successfully for your desired target environment; for example, *https://api.yourapp.com*.
-
-1. Open the  [Stackato command-line interface (CLI)](http://docs.stackato.com/user/client/index.html#client).
-
-2. *cd* into the app's root directory.
-3. Execute `stackato push -n` 
+1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
+2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
+4.	If you are not already there, `cd` to the root directory of the sample.
+5.	Execute `helion push -n`
 
 ##Run the Application
+1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
+2.	Click **Applications**.
+3.	If the file push was successful, you should see **rabbitmq-node** in the list of available applications.
 
-1. Open the Management Console. This is the web-based administrative interface.
-2. Click **Applications**.
-3. If the file push was successful, you should see Hello World in the list of available applications. 
-4. The status of the application should be **Online**. Click the name of the application to launch it. 
-5. In the upper right-hand corner, click **View App**.
-6.You should see a page that has a text field to accept a brief message. Enter text into the field and click **Enter** to send the message. The text of the message should appear.
+##Key Code Snippets
+	app.configure(function(){
+	  app.set('port', process.env.VCAP_APP_PORT || 3000);
+	  app.set('views', __dirname + '/views');
+	  app.set('view engine', 'jade');
+	  app.use(express.bodyParser());
+	  app.use(express.static(path.join(__dirname, 'public')));
+	});
+
+
+This section of the App.js file shows how to retrieve the connection information for the RabbitMQ cluster from the application’s environment variables.
+	
+	---
+	applications:
+	  .:
+	    framework:
+	      name: node
+	    name: rabbitmq-node
+	    mem: 128M
+	    url: ${name}.${target-base}
+	    services:
+	      rabbitmq:
+	        type: rabbitmq3
+	    instances: 1
+
+The *manifest.yaml* file is the configuration information used by ALS to set up the environment. The *services* element instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.
+
+##Key Learnings
+1.	You need to provide configuration information so that ALS can bind to a RabbitMQ service.
+2.	You need to retrieve connection information for RabbitMQ from the application’s environment variables.
+3.	You interact with and deploy your app using the Helion CLI or the Eclipse Plugin.
 
 [Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/node/)
