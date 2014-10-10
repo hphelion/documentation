@@ -3149,7 +3149,7 @@ Detach a volume or volumes.
 
 
 ###Description
-Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more more volumes in a command line.
+Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more volumes in a command line.
 
 ###Examples
 Detach the volume 'myVolume':
@@ -6370,7 +6370,7 @@ Detach a volume or volumes.
 
 
 ###Description
-Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more more volumes in a command line.
+Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more volumes in a command line.
 
 ###Examples
 Detach the volume 'myVolume':

@@ -86,7 +86,7 @@ To list subnets:
       | 28adaad7 | subby     | d1a803d8   | 127.2.0.0/24 |             |        | 127.0.0.1 | true |
       +----------+-----------+------------+--------------+-------------+--------+-----------+------+
 
-To uppdate a subnet:
+To update a subnet:
 
     $ hpcloud subnets:update subby -g 100.1.1.1
     Updated subnet 'subby'.
