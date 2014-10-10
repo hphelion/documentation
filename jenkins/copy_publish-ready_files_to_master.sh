@@ -18,7 +18,8 @@ fi
 #Checkout the branch to merge to master.
 
 
-rm rm -r *
+
+ 
 
 git branch --set-upstream  ${BRANCH} origin/${BRANCH}
 git branch --set-upstream  master origin/master
