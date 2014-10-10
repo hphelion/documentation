@@ -8,23 +8,23 @@ product: devplatform
 <!--UNDER REVISION-->
 #Resources for Application Developers
 
-HP has created a series of small, simplified sample applications to walk you through understanding and exercising the Development Platform services.
+HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.
 
 Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.
  
-##Prerequisites - Before you Begin
+##Prerequisites - Before you begin
 In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
 - HP Helion OpenStack&reg; cloud deployed:
 	- [Community](/helion/community/install/)
 	- [Commercial](/helion/openstack/install/overview/)
-- Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available
+- Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available.
 - Logon and password credentials for the cluster.
 - Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
 - (Optional) Access to the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
-##Sample Code
-For best results, work with each sample in the order that they are provided, as each one builds on the knowledge provided in the previous sample. 
+##Sample code
+For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample. 
 ###Java
 1. [Hello World](/helion/devplatform/workbook/helloworld/java/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
@@ -88,7 +88,7 @@ Commands available through the developer API URL and the integration API URL.
 - [Domain Admin API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_Domain_Admin.html)<br>
 - [User API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_User.html)
 -->
-###Other References
+###Other references
 - [Installing the Marketplace](/helion/devplatform/marketplace)
 - [ALS command-line interface (CLI) reference](/als/v1/user/reference/client-ref/#command-ref-client)
 - [Application Lifecycle Service (ALS) User's Guide](/als/v1/user/)
@@ -96,7 +96,7 @@ Commands available through the developer API URL and the integration API URL.
 - [The Management Console](/als/v1/user/console/)
 - [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
 
-###Best Practices
+###Best practices
 
 - [The 12-Factor App](http://12factor.net/)
 - [Tips from CloudFoundry](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
