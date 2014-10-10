@@ -7,19 +7,19 @@ permalink: /als/v1/user/client/
 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
 =================================================================
 
-The `helion` client is the command-line interface
+The Helion client is the command-line interface
 to Application Lifecycle Service. You can use it to push application code up to the server,
 start and stop applications, create data services and link them to
 applications, and a number of other application management operations.
 
-The [*Command
-Reference*](/als/v1/user/reference/client-ref/#command-ref-client) has full
+The [Command
+Reference](/als/v1/user/reference/client-ref/#command-ref-client) has full
 descriptions of all client commands and options. These details are also
 available at the command line via the `helion help` command.
 
 Application Lifecycle Service Client Setup[](#helion-client-setup "Permalink to this headline")
 -----------------------------------------------------------------------------
-**Note**: using the Windows **Helion** client with
+**Note**: using the Windows Helion client with
 [Cygwin](http://www.cygwin.com/) is not supported.
 
 1.  Download the client for your platform (Windows, OS X, Linux x86,
@@ -29,6 +29,11 @@ Application Lifecycle Service Client Setup[](#helion-client-setup "Permalink to 
 	-   moving it to a directory in your \$PATH,
 	-   creating a symlink from a directory in your \$PATH, or
 	-   creating a shell alias for the executable.
+
+	For Linux or Mac OS X: Make sure the file is set as executable
+	- (`chmod +x helion`) or
+	- 	On some systems read access is also necessary    (`chmod 755 helion`).
+
 4.  Confirm that the client is installed correctly by running
     *helion help*.
 
@@ -41,8 +46,8 @@ To get a list of available commands or help on a particular command:
 
     $ helion help [COMMAND]
 
-See also the [*Command
-Reference*](/als/v1/user/reference/client-ref/#command-ref-client) for a full
+See also the [Command
+Reference](/als/v1/user/reference/client-ref/#command-ref-client) for a full
 list of commands.
 
 Targeting the API Endpoint[](#targeting-the-api-endpoint "Permalink to this headline")
@@ -80,3 +85,7 @@ Removing the Client[](#removing-the-client "Permalink to this headline")
 
 To remove or uninstall the client, simply delete the executable and remove any
 aliases or `\$PATH` modifications you have made for it.
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

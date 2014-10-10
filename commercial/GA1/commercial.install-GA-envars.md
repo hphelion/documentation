@@ -1,4 +1,4 @@
-	---
+---
 layout: default
 title: "HP Helion OpenStack: Creating an Environment Variables File for Installation"
 permalink: /helion/openstack/install/envars/
