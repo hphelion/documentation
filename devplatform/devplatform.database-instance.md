@@ -76,8 +76,6 @@ To follow this guide, you must have already [created](#create) a database instan
 5.	Click the **Advanced** tab and in the **Replicate from Instance** drop-down select the master instance to replicate.
 6.	Click the **Launch** button to create the replica.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
