@@ -386,7 +386,7 @@ described below:
         appdrain.: 24h
         tmp.: 25m
 
-    To set a timout (minimum 21m), use [*kato config
+    To set a time-out (minimum 21m), use [*kato config
     set*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
     example, to set the timeout limit to 10 hours on all drains named
     with the prefix "papertrail":
