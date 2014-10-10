@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  
+#   
 #
 
  
@@ -25,7 +25,7 @@ git branch --set-upstream  ${BRANCH} origin/${BRANCH}
 git branch --set-upstream  master origin/master
  
 git checkout -f master
-git pull origin ls
+git pull origin
 
 git checkout -f ${BRANCH}
 git pull origin 
