@@ -1,25 +1,13 @@
 ---
 layout: default-devplatform
 title: "Using the Messaging Service"
-permalink: /helion/devplatform/
+permalink: /helion/devplatform/messageservice/
 product: devplatform
 
 ---
 <!--UNDER REVISION-->
-<script>
 
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-<!--
-???
--->
-
-#Using the Messaging Service#
+#Using the RabbitMQ Messaging Service#
 The messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications. 
 
 The following topics explain how to create and manage a RabbitMQ instance:

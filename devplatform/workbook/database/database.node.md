@@ -5,6 +5,7 @@ permalink: /helion/devplatform/workbook/database/node/
 product: devplatform
 
 ---
+<!—UNDER REVISION-->
 #Node MySQL Database Sample
 This very simple Node.js app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
@@ -111,7 +112,7 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service.
-2.	You need to retrieve connection information for MySQL from the application’s environment variables, and parse the information into a JDBC compliant connection string.
+2.	You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
 [Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/node/) | [Next Sample](/helion/devplatform/workbook/messaging/node/)

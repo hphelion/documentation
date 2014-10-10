@@ -1,25 +1,11 @@
 ---
 layout: default-devplatform
 title: "Creating a Database Instance"
-permalink: /helion/devplatform/
+permalink: /helion/devplatform/createdatabase
 product: devplatform
 
 ---
 <!--UNDER REVISION-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-<!--
-???
--->
 
 #Background 
 

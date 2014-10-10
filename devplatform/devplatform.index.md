@@ -14,7 +14,7 @@ Welcome! The HP Helion Development Platform provides an integrated development p
 The Helion Development platform adds the Platform-as-a-Service (PaaS) layer to speed up application development and testing. PaaS helps application developers, developers extending the functionality of OpenStack services, and administrators get more out of the cloud faster than ever.
 
 **Note:**
-Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/install/overview/)  HP Helion OpenStack&reg; cloud or microcloud. 
+Before installing the Development Platform, you must first install a [Community](/helion/community/install/) or [Commercial](/helion/openstack/install/overview/)  HP Helion OpenStack&reg; cloud. 
 
 ----------
 

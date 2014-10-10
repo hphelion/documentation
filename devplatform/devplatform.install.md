@@ -23,15 +23,10 @@ The HP Helion Development Platform installs four products:
 The following topics explain how to install and configure the HP Helion Development Platform:
 
 * [Prerequisites](#prerequisites)
-
 * [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
-
 * [Installing the Messaging Service](#installing-the-messaging-service)
-
 * [Installing the Application Lifecycle Service (ALS)](#installing-the-application-lifecycle-service-(ALS))
-
 * [Installing the Database Service](#installing-the-database-service)
-
 * [Installing the Marketplace Service](#installing-the-marketplace-service)
 
 ## Prerequisites<a name="prerequisites"></a>
