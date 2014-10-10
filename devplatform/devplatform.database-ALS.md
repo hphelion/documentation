@@ -22,7 +22,7 @@ Alternatively, if the Database Service was not integrated with the cluster at th
 		$ kato config set mysql_node mysql/port 3306
 		$ kato config set mysql_node mysql/user root
 		$ kato config set mysql_node mysql/pass CorrectHorseBatteryStaple
-1. Increase the timeout settings to make the [*thin*](http://code.macournoyer.com/thin/) mysql\_gateway reliably connect to the database instance. 
+1. Increase the timeout settings to make the [*thin*](http://code.macournoyer.com/thin/) mysql\_gateway connect reliably to the database instance. 
 2. Run the following commands:
 
     	$ kato config set mysql_node connection_wait_timeout 100
