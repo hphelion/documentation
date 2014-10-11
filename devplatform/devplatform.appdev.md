@@ -23,7 +23,7 @@ In order to download and deploy these sample applications, you must have the nec
 
 ##Sample code
 For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample. 
-###Java
+###Java<a name="java"></a>
 1. [Hello World](/helion/devplatform/workbook/helloworld/java/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
 
@@ -35,7 +35,7 @@ Or jump to the full [database services](/helion/devplatform/createdatabase/) tut
 
 More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 
-###Node
+###Node<a name="node"></a>
 1.  [Hello World](/helion/devplatform/workbook/helloworld/node/)<br>
 The Hello World sample is as simple as it gets: Hello World! 
 
@@ -47,7 +47,7 @@ Create a database and execute a query against it.<br> Or jump to the full [datab
 
 More Helion [Node](/als/v1/user/deploy/languages/node/) references.
  
-###PHP
+###PHP<a name="php"></a>
 1.  [Hello World](/helion/devplatform/workbook/helloworld/php/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
 
