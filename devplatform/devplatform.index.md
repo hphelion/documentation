@@ -34,31 +34,30 @@ The HP Helion Development Platform provides additional Application Services that
 
 The Database as a Service is optionally [installed](/helion/devplatform/install/#database/) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then [configure](/helion/devplatform/connectdatabase/#configure/) it for use from within the Application Lifecycle Service.
 
-##Messaging Service (Beta)
+###Messaging Service (Beta)
 The Messaging Service provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
 
-- The Messaging Service integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
+- [The Messaging Service](/helion/devplatform/createmessage/) integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.
-- The Messaging Service is optionally installed as part of the Helion Development Platform. It not installed as part of the platform, you can install it and then configure it for use from within the Application Development Platform.
+- The Messaging Service is optionally installed as part of the Helion Development Platform. It not installed as part of the platform, you can [install](/helion/devplatform/install/#message/) it and then [configure](/helion/devplatform/createmessage/) it for use from within the Application Development Platform.
 
 ###The Marketplace (Beta)
-The Marketplace is a product catalog that will be used to deliver the best-of-breed applications and services required to support world-class, enterprise-grade applications. Use it to streamline installing applications and services to accelerate your development efforts.
+The [Marketplace](/helion/devplatform/marketplace/) is a product catalog that will be used to deliver the best-of-breed applications and services required to support world-class, enterprise-grade applications. [Install](/helion/devplatform/install/#marketplace/) it to streamline application and service installations and accelerate your development efforts.
 
-- The Marketplace automates installation and enablement of supported applications and services.
+- The Marketplace automates installation and enabling of supported applications and services.
 - The Beta version allows you to install an instance of Vertica Community Edition.
-- The Marketplace is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can install it later. 
+- The Marketplace is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#marketplace/) it later. 
 
 ##Platform Tools
 The Helion Development Platform is accessible via the following tools: 
-**Helion Command-Line Interface** (CLI)<br>
-Use the Helion CLI to deploy your app to the development platform through the command line.  The installation instructions are also available here.
 
-	- Windows
-	- Unix/Mac
+**Helion Command-Line Interface (CLI)**<br>
+[Install](/als/v1/user/client/) and use the Helion CLI to deploy your app to the development platform through the command line. [Setup](/als/v1/user/client/#helion-client-setup/) instructions are available for both Windows&reg; and Unix/Mac operating systems.
+
 **Eclipse Plugin**<br>
- If your developers work in the Eclipse IDE, use this plug-in to set up Helion Development Platform as a deployment target for your app.  Follow these steps in order to install and use the plug-in.
+ If your developers work in the Eclipse IDE, [install and use](/helion/devplatform/eclipse/) the Eclipse plug-in to quickly configure the Helion Development Platform as a deployment target for your app. 
 
-##Installation Notes
+##Installation Options
 Most of the Helion Developer Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:
  
 - **Quick Start Developer Trial**: The fastest way to set up a functional Helion Development Platform environment is the Quick Start Developer Trial (sandbox) on the public cloud.
