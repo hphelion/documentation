@@ -10,7 +10,7 @@ product: devplatform
 #Connecting the Database Service with the Application Lifecycle Service
 If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. This is an option at cluster create time.
 
-<img src="/helion/media/databaseALS.png">
+<img src="media/databaseALS.png"/>
 
 Alternatively, if the Database Service was not integrated with the cluster at the time of cluster creation, the administrator of the ALS cluster can switch from the unmanaged MySQL service to the managed Database Service using the following kato commands:
 
