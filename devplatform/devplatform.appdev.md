@@ -15,9 +15,7 @@ Each sample builds on the previous one and all source code is provided for you t
 ##Prerequisites - Before you begin
 In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
-- HP Helion OpenStack&reg; cloud deployed:
-	- [Community](/helion/community/install/)
-	- [Commercial](/helion/openstack/install/overview/)
+- HP Helion OpenStack&reg; [cloud deployed](/helion/openstack/install/overview/)
 - Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available.
 - Logon and password credentials for the cluster.
 - Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
