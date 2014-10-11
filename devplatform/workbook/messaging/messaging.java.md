@@ -4,7 +4,7 @@ title: "HP Helion Development Platform Workbook Java Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/java/
 product: devplatform
 ---
-<!—UNDER REVISION-->
+<!--UNDER REVISION-->
 #Java RabbitMQ Messaging Sample
 This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen.
 

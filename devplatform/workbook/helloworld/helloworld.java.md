@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/helloworld/java/
 product: devplatform
 
 ---
-<!—UNDER REVISION-->
+<!--UNDER REVISION-->
 ##Java Hello World Sample
 This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application in the form of a Servlet-based Java web app.  Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 

@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/messaging/php/
 product: devplatform
 
 ---
-<!—UNDER REVISION-->
+<!--UNDER REVISION-->
 #PHP RabbitMQ Messaging Sample
 Before you can begin working with the samples, ensure that you have met the technical prerequisites.
 

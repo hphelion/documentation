@@ -11,11 +11,10 @@ product: devplatform
 ##Installation
 
 * [HP Helion OpenStack&trade; Installation](/helion/openstack/install/overview/)
-* [Development Platform Installation and Configuration](/helion/devplatform/community/install-dev-platform/)
-* [Application Lifecycle Service (ALS) Installation and Configuration](/helion/devplatform/community/install-als/)
-* [Application Lifecycle Service Client Installation](/als/v1/user/quick-start/#helion-client)
+* [Development Platform Installation and Configuration](/helion/devplatform/install/)
+* [Application Lifecycle Service (ALS) Information](/als/v1/)
+* [Application Lifecycle Service Client Installation](/als/v1/user/client/)
 * [Installing the Marketplace](/helion/devplatform/marketplace)
-* [Release notes](/helion/devplatform/community/release-notes/)
 
 ##Administration
 Access control is role-based, with each role granting permissions in either an organization or an application space. 

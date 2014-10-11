@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/database/php/
 product: devplatform
 
 ---
-<!—UNDER REVISION-->
+<!--UNDER REVISION-->
 #PHP MySQL Database Sample
 This very simple Node.js web application displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 

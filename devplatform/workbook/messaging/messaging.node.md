@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/messaging/node/
 product: devplatform
 
 ---
-<!—UNDER REVISION-->
+<!--UNDER REVISION-->
 #Node RabbitMQ Messaging Sample
 This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen.
 

@@ -99,7 +99,7 @@ Commands available through the developer API URL and the integration API URL.
 ###Best practices
 
 - [The 12-Factor App](http://12factor.net/)
-- [Tips from CloudFoundry](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
+- [Tips from Cloud Foundry&trade;](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
 
 <!-- removed 10/3/14 
 ###HP Helion OpenStack Development Community

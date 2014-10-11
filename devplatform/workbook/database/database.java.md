@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/database/java/
 product: devplatform
 
 ---
-<!—UNDER REVISION-->
+<!--UNDER REVISION-->
 
 
 #JAVA MySQL Database Sample

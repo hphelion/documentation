@@ -78,7 +78,7 @@ Logs in to the current or specified target with the named user.
     <td>The password to use. For ALS 3, this is a shorthand for <i>--credentials 'password:</i></td>
     </tr><tr>
     <td>--space</td>
-    <td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
+    <td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible s in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
     </tr><tr>
     <td>--target</td>
     <td>The one-off target to use for the current operation only.</td>
@@ -3976,7 +3976,7 @@ Disconnect the named service from the specified application.
     <td>Alias of --trace.</td>
     </tr>
 </table>
-### Organizations[](#organizations "Permalink to this headline")###
+## Organizations<a name="organizations"></a>
 ### helion create-org *\<name\*###
 Create a new organization. This is an Application Lifecycle Service 3 specific command.
 
@@ -4342,7 +4342,7 @@ Remove the specified user from the named organization, in various roles. This is
     <td>-t</td>
     <td>Alias of --trace.</td>
     </tr></table>
-### Spaces[](#spaces "Permalink to this headline")###
+## Spaces<a name="spaces"></a>
 ### helion create-space *\<name\*###
 Create a new space. This is an Application Lifecycle Service 3 specific command.
 
