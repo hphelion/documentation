@@ -16,7 +16,7 @@ Before you begin, we recommend having [Eclipse IDE for Java EE developers](https
 ##Installation
 
 
-1. The plugin currently depends on software from Cloud Foundry.  Install the package [directly from the site](http:/marketplace.eclipse.org/content/cloud-foundry-integration-eclipse#.U9J-4lZ6Hlc/).
+1. The plugin currently depends on software from Cloud Foundry.  Install the package [directly from the site](http://marketplace.eclipse.org/content/cloud-foundry-integration-eclipse#.VDmkTRb7xig).
 2. Open an Eclipse IDE window.
 3. Drag the install link into the Package Explorer view.
 
