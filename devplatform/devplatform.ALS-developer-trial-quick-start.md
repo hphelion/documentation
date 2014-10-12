@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Using the Messaging Service"
-permalink: /helion/devplatform/ALS-Developer-Trial-quick-start/
+permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
 
 ---
