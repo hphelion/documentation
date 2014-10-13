@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "Connecting the Database Service"
+title: "Connecting the Database Service with ALS"
 permalink: /helion/devplatform/connectdatabase/
 product: devplatform
 
