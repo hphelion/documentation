@@ -68,9 +68,12 @@ To begin the installation:
     	# cd dev-platform-installer
 
 ###Preparing to Run the Installer {#prepare}
-1.	To prepare the Installer and to ensure that prerequisites are met, use this command:
+1.	If your network uses a proxy, it may be necessary to set the proxy shell variable:
 
-    	# ./install_installer.sh -p {admin_user_password} -a {auth_host_ip_address}
+		# export https_proxy=<ip address or url of http proxy> 
+2.	To prepare the installer and ensure prerequisites are met run the following command. By default the Username is "admin", the Tenant Name is "admin" and the Region is "regionOne":
+
+    	# .DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
 
 3.	Optionally, you can specify the Username, Tenant, and Region.
 The defaults to use for this option are:
@@ -78,11 +81,11 @@ The defaults to use for this option are:
 	- **Tenant** **name** = admin
 	- **Region** = regionOne 
 
-    		#./install_installer.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region name}
+    		#./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region name}
 
 1.	Use the Help feature if you need additional information about the installation script:
 	
-		 #./install_installer.sh -h
+		 #./DevelopmentPlatform_Setup.sh -h
     
 2.	After the install command completes, verify the following output:
 
@@ -137,7 +140,7 @@ To download and configure the Application Lifecycle Service:
 6.	Log back into the Horizon console as a non-admin user.
 7.	Under the current project, click the Application Lifecycle Service tab to begin using the Application Lifecycle Service.
 ##Installing the Database Service {#database}
-This section provides the steps to install the Application Lifecycle Service from the Development Platform.
+This section provides the steps to install the Database Service from the Development Platform.
 ###Prerequisites
 There are two prerequisites to install the Database Service: 
 
@@ -244,7 +247,7 @@ You must be connected to the undercloud node to perform the following steps:
 
     		listen trove_api
     		bind <Virtual IP from step 2>:8779
-    		server trove-trove<n>_api <API server ns IP Address> check
+    		server trove-trove<n>_api<uniqueid> <API server ns IP Address> check
     		inter 2000 rise 2 fall 5
 
 	B. Edit the */etc/iptables/iptables* file.<br>Add to the end of it:
@@ -255,6 +258,10 @@ You must be connected to the undercloud node to perform the following steps:
   		
 			$ iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
 
+  	D. Reload the haproxy service configuration:
+  		
+			$ sudo service haproxy reload
+	
 1.	Log out from the Horizon panel.
 2.	Log back into the Horizon panel as a non-admin user.
 3.	Under the current project, click the Database tab to begin using the Database Service.
@@ -263,7 +270,7 @@ You must be connected to the undercloud node to perform the following steps:
 This section provides the steps to install the Marketplace Service from the Development Platform.
 
 ###Quotas
-The Messaging Service is installed in the Admin Tenant of the HP Helion OpenStack installation. The Admin Tenant must have sufficient quota available and unused for the resources that the Messaging Service uses.
+The Marketplace Service is installed in the Admin Tenant of the HP Helion OpenStack installation. The Admin Tenant must have sufficient quota available and unused for the resources that the Marketplace Service uses.
 
 To check the existing quota availability:
 
