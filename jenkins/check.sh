@@ -42,7 +42,7 @@ grep permalink $i | sed 's|.* /|/|'  >> filepermalink.txt
 
 done
 
-cat cat permalinklist.txt | uniq | grep -v http
+ cat permalinklist.txt | uniq | grep -v http
 
 for i in `cat permalinklist.txt | uniq | grep -v http`
 do
