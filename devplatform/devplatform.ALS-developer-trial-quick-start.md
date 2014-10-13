@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "Using the Messaging Service"
+title: "Quick Start Developer Trial"
 permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
 

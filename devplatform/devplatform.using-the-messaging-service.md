@@ -8,7 +8,7 @@ product: devplatform
 <!--UNDER REVISION-->
 
 #Using the RabbitMQ Messaging Service#
-The messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications. 
+The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications. 
 
 The following topics explain how to create and manage a RabbitMQ instance:
 
@@ -18,8 +18,8 @@ The following topics explain how to create and manage a RabbitMQ instance:
 
 ###Prerequisites###
 
-1.	Install the HP Helion Development Platform 
-2.	Configure the database service
+1.	Install the HP Helion Development Platform.
+2.	Configure the database service.
 
 ##Creating a RabbitMQ Cluster##
 The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster using the Messaging Service.
@@ -27,14 +27,14 @@ The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster
 1.	Log into Horizon and open the **Messaging (Beta)** panel under you project. Click on the **RabbitMQ** tab.
 2.	Click the **Create Cluster** button. In the Create RabbitMQ dialog, specify the following information:
 3.
-	- Cluster Name - A name for the cluster that will be created.
-	- Number of Cluster Instances - the number of instances of RabbitMQ to have in the cluster. This can be 1, 3 or 5.
-	- Flavor of Cluster Instances - The flavor size to use when creating the RabbitMQ instances in the cluster.
-	- Network - The network to join the cluster to. This should be the network that your application will use to connect to the cluster.
-	- SSH Key Pair - A key pair to use when connecting to the cluster. You can choose to create one if one does not already exist.
-	- Floating IP Pool - A pool to choose a floating IP from to assign to the cluster.
-	- SSL Credentials - The certificate to use when interacting with RabbitMQ in the cluster.
-	- Password for user - The password for the user that is currently logged in.
+	- **Cluster Name** - A name for the cluster that will be created.
+	- **Number of Cluster Instances** - the number of instances of RabbitMQ to have in the cluster. This can be 1, 3 or 5.
+	- **Flavor of Cluster Instances** - The flavor size to use when creating the RabbitMQ instances in the cluster.
+	- **Network** - The network to join the cluster to. This should be the network that your application will use to connect to the cluster.
+	- **SSH Key Pair** - A key pair to use when connecting to the cluster. You can choose to create one if one does not already exist.
+	- **Floating IP Pool** - A pool to choose a floating IP from to assign to the cluster.
+	- **SSL Credentials** - The certificate to use when interacting with RabbitMQ in the cluster.
+	- **Password for user** - The password for the user that is currently logged in.
 
  
 3.	Click the **Launch** button.
@@ -55,16 +55,13 @@ RabbitMQ clusters have a built-in dashboard for managing the cluster; this allow
 2.	Identify the RabbitMQ cluster that you will manage from the clusters listed in the **Clusters** table.
 3.	Click on **Manage Cluster** next to your cluster.
 
-4.	A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion OpenStack&#174; when creating the RabbitMQ cluster and select **Login**.
+4.	A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion OpenStack&reg; when creating the RabbitMQ cluster and select **Login**.
  
 5.	The management console for RabbitMQ will open. In the management console you can perform tasks such as monitor the queues and message rates, check resource usage on the instances, manage user accounts, and many others.  
 
- 
+For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the [RabbitMQ documentation site](https://www.rabbitmq.com/documentation.html).
 
-For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the <a href="https://www.rabbitmq.com/documentation.html">RabbitMQ documentation site</a>.
-
-For more information using HP Helion OpenStack, visit the <a href="http://docs.hpcloud.com">documentation page</a>.
-
+For more information using HP Helion OpenStack, visit the [documentation page](http://docs.hpcloud.com).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

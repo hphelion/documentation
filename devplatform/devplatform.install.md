@@ -213,8 +213,8 @@ To download the Database Service:
 2.	In the Configuration dialog, specify the following configuration options:
 	- **Key Pair** (Required) -The Key Pair to install on all instances created as part of the Database Service. An Admin can use the public key to get SSH access to all instances.
 	- **External Network** (Required) -The Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition, this network is named ext-net.
-	- **NTP Server IP **-The IP Address to an NTP server to use if instances will not have outbound access to the Internet.
-	- **Service User Password **(Required) -The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
+	- **NTP Server IP** -The IP Address to an NTP server to use if instances will not have outbound access to the Internet.
+	- **Service User Password**(Required) -The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
 	- **Pool User Password** (Required) -Specify a password for the pool user that is created as part of the installation. Keep this password for future use.
 	- **Icinga User Password** (Required) -Specify a password for the Icinga Service that is created as part of the installation. Keep this password for future use.
 	- **Volume Type** (Required) -The volume type to use when creating database instances.
