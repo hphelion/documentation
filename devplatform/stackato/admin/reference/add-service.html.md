@@ -21,6 +21,6 @@ target, as well as a list of Provisioned Services allocated to the
 authenticated user.
 
 Administrators can configure external data services to work in the same
-way as core Application Lifecycle Service System Services, exposing existing sofware and
+way as core Application Lifecycle Service System Services, exposing existing software and
 infrastructure for use by Application Lifecycle Service and its users.
 

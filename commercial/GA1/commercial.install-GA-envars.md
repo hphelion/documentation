@@ -56,14 +56,14 @@ The following section describes the environmental variables that affect your ins
 
 **Note:** You must choose the `BM_NETWORK_SEED_RANGE_xxx` and to be consistent with any values already chosen for `BM_NETWORK_SEED_IP` and `BM_NETWORK_CIDR`. All addresses must be on a common subnet.
 
-`BM_NETWORK_UNDERCLOUD_RANGE_START`, `BM_NETWORK_UNDERCLOUD_RANGE_END` - Use the variables to specify an IP address range for the undercloud to administrate/manage the overcloud node(s), for example 192.168.130.23-192.168.130.126.
+`BM_NETWORK_UNDERCLOUD_RANGE_START`, `BM_NETWORK_UNDERCLOUD_RANGE_END` - Use the variables to specify an IP address range for the undercloud to administrate/manage the overcloud node(s). The IPs assigned by this variable are for the undercloud to distribute among the overcloud nodes. Make sure you assign at least one IP address for each baremetal server in your environment and an additional IP used as a virtual IP for HA.
 
 	export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.130.23
 	export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.130.126
 
 **Note:** You must choose the `BM_NETWORK_UNDERCLOUD_RANGE_xxx` to be consistent with any values already chosen for `BM_NETWORK_SEED_IP` and `BM_NETWORK_CIDR`. All addresses must be on a common subnet.
 
-`OVERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your overcloud. The default value is `eth2`. If this is correct you do not need to set this variable.
+`OVERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your overcloud. This is the physical interface associated with the BM_NETWORK networks. The default value is `eth2`. If this is correct you do not need to set this variable.
 
 	export OVERCLOUD_NeutronPublicInterface=eth2
 
@@ -81,20 +81,16 @@ Then the FLOATING_START, FLOATING_END, and FLOATING_CIDR cannot be anything in t
 
 	$ export OVERCLOUD_VIRTUAL_INTERFACE=eth0
 
-**Configure a second network** 
+`UNDERCLOUD_CODN_HTTP_PROXY` and `UNDERCLOUD_CODN_HTTPS_PROXY` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the undercloud.
 
-A second network can be configured for the floating ip pool by setting `OVERCLOUD_NeutronPublicInterface` to a physically configured VLAN. The vlan name used as the `OVERCLOUD_NeutronPublicInterface` is expected to be of the form "vlan" followed by the vlan id ( ex. vlan101 ).
+	export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export UNDERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 
-For example:
 
-	export OVERCLOUD_NeutronPublicInterface=vlan101
-	export NeutronPublicInterfaceRawDevice=eth0
-	export FLOATING_START=192.0.8.20
-	export FLOATING_END=192.0.15.254
-	export FLOATING_CIDR=192.0.8.0/21
-	export OVERCLOUD_VIRTUAL_INTERFACE=eth0
+`OVERCLOUD_CODN_HTTP_PROXY` and `OVERCLOUD_CODN_HTTPS_PROXY` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the overcloud.
 
-**Note:** The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the `FLOATING_CIDR` range.
+	export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 
 `OVERCLOUD_FIXED_RANGE_CIDR` - Use this variable to set the address range of the default private network.
 
@@ -102,7 +98,7 @@ For example:
 
 	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
-`UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your undercloud. The default value is `eth2`. If this is correct you do not need to set this variable.
+`UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your undercloud. This is the the physical interface associated with the BM_NETWORK* networks. The default value is `eth2`. If this is correct you do not need to set this variable.
 
 	export UNDERCLOUD_NeutronPublicInterface=eth2
 
@@ -124,9 +120,27 @@ HP Helion OpenStack uses keepalived to manage virtual IPs. keepalived uses a uni
 
 	export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=99
 
-**Configure a third network** 
+**Configure a second network** 
 
-A third network can be configured for the platform service guest instances to connect to undercloud controller by setting `NeutronSVCInterface` to a physically configured VLAN. The VLAN name used as the `NeutronSVCInterface` is expected to be of the form `vlan` followed by the VLAN id ( ex. vlan102 ).
+A second network can be configured for the floating ip pool by setting `OVERCLOUD_NeutronPublicInterface` to a physically configured VLAN. The vlan name used as the `OVERCLOUD_NeutronPublicInterface` is expected to be of the form "vlan" followed by the vlan id ( ex. vlan101 ).
+
+For example:
+
+	export OVERCLOUD_NeutronPublicInterface=vlan101
+	export NeutronPublicInterfaceRawDevice=eth0
+	export FLOATING_START=192.0.8.20
+	export FLOATING_END=192.0.15.254
+	export FLOATING_CIDR=192.0.8.0/21
+	export OVERCLOUD_VIRTUAL_INTERFACE=eth0
+
+**Note:** The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the `FLOATING_CIDR` range.
+
+
+**Configure the Service network** 
+
+Helion OpenStack requires a 3rd VLAN network called as Service Network which connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud. The purpose is to aggregate logs of PaaS components running on the VMs in the overcloud to the undercloud via this network.
+
+This third network can be configured for the platform service guest instances to connect to undercloud controller by setting `NeutronSVCInterface` to a physically configured VLAN. The VLAN name used as the `NeutronSVCInterface` is expected to be of the form `vlan` followed by the VLAN id ( ex. vlan102 ).
 
 **Note:** These variables are optional for the ESX cloud type. 
 
@@ -180,11 +194,11 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 	export UNDERCLOUD_NeutronPublicInterface=eth1
 	export BRIDGE_INTERFACE=em2
 	export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=202
-	export OVERCLOUD_NTP_SERVER=16.110.135.123
-	export UNDERCLOUD_NTP_SERVER=16.110.135.123
+	export OVERCLOUD_NTP_SERVER=18.110.135.123
+	export UNDERCLOUD_NTP_SERVER=18.110.135.123
 	export OVERCLOUD_COMPUTESCALE=4
-	export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080
-	export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
+	export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export UNDERCLOUD_CODN_HTTPS_PROXY=https://19.65.150.175:8080
 	export OVERCLOUD_VIRTUAL_INTERFACE=eth1
 	export OVERCLOUD_NeutronPublicInterface=vlan331
 	export NeutronPublicInterfaceRawDevice=eth1
@@ -195,8 +209,8 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 	export SVC_ALLOCATE_CIDR=192.168.132.0/24
 	export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc
 	export OVERCLOUD_FLAT_NETWORKS=svcnet1
-	export OVERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080
-	export OVERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
+	export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/).
@@ -224,8 +238,8 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export FLOATING_START=172.30.100.41
 		export FLOATING_END=172.30.100.200
 		export FLOATING_CIDR=172.30.100.0/24
-		export UNDERCLOUD_NTP_SERVER=16.110.135.123
-		export OVERCLOUD_NTP_SERVER=16.110.135.123
+		export UNDERCLOUD_NTP_SERVER=18.110.135.123
+		export OVERCLOUD_NTP_SERVER=18.110.135.123
 		export OVERCLOUD_CLOUD_TYPE=ESX
 		export PROVIDER_NETWORK=192.168.10.0/24
 		export CUSTOMER_ROUTER_IP=172.30.100.1

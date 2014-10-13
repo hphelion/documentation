@@ -5,23 +5,24 @@ permalink: /helion/devplatform/sysadmin/
 product: devplatform
 
 ---
+<!--UNDER REVISION-->
 #Resources for Sysadmins and Installers <a name="sysadmin"></a>
 
 ##Installation
 
-* [Release notes](/helion/devplatform/community/release-notes/)
-* [HP Helion OpenStack&trade; Community Installation](https://docs.hpcloud.com/helion/community/install-virtual/)
-* [Development Platform Installation and Configuration](/helion/devplatform/community/install-dev-platform/)
-* [Application Lifecycle Service (ALS) Installation and Configuration](/helion/devplatform/community/install-als/)
-* [Application Lifecycle Service Client Installation](/als/v1/user/quick-start/#helion-client)
+* [HP Helion OpenStack&trade; Installation](/helion/openstack/install/overview/)
+* [Development Platform Installation and Configuration](/helion/devplatform/install/)
+* [Application Lifecycle Service (ALS) Information](/als/v1/)
+* [Application Lifecycle Service Client Installation](/als/v1/user/client/)
+* [Installing the Marketplace](/helion/devplatform/marketplace)
 
 ##Administration
+Access control is role-based, with each role granting permissions in either an organization or an application space. 
 
-Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the  `cf` Command Line Interface (CLI). For more information, see [Organizations, Spaces, Roles, and Permissions](http://docs.cloudfoundry.org/concepts/roles.html).
 
-* [Application Lifecycle Service (ALS) Administrators Guide](/als/v1/admin/)
-* [The Management Console](/als/v1/user/console/)
-* [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
+- To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/als/v1/user/quick-start/#helion-client) or the [Management Console](/als/v1/user/console/)
+- For more information, see [Organizations](/als/v1/user/reference/client-ref/#organizations/), [Spaces](/als/v1/user/reference/client-ref/#spaces/), and the [Application Lifecycle Service (ALS) Administrators Guide](/als/v1/admin/)
+- [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
 
 ----
 ####OpenStack trademark attribution

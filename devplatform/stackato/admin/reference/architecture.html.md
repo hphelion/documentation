@@ -67,7 +67,7 @@ VM's in the cluster connect to.
 A single Controller is sufficient for small and mid-sized clusters, but
 [*multiple
 Controllers*](/als/v1/admin/cluster/#cluster-multi-controllers) can be
-configured if neccessary for larger implementations.
+configured if necessary for larger implementations.
 
 ### Router[](#router "Permalink to this headline")
 

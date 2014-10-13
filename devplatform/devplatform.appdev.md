@@ -5,56 +5,57 @@ permalink: /helion/devplatform/appdev/
 product: devplatform
 
 ---
+<!--UNDER REVISION-->
 #Resources for Application Developers
 
-HP has created a series of small, simplified sample applications to walk you through understanding and exercising the Development Platform services.
+HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.
 
 Each sample builds on the previous one and all source code is provided for you to build, deploy, and take apart. Each sample is provided in multiple languages.
  
-
-##Prerequisites - Before you Begin
+##Prerequisites - Before you begin
 In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
-- HP Helion OpenStack&reg; cloud or micro-cloud deployed
-	- [Community](/helion/community/install/)
-	- [Commercial](/helion/openstack/install/overview/)
-- Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available
+- HP Helion OpenStack&reg; [cloud deployed](/helion/openstack/install/overview/)
+- Application Lifecycle Service [Cluster](/als/v1/admin/cluster/) available.
 - Logon and password credentials for the cluster.
-- Access to  [Helion command-line interface (CLI)](/als/v1/user/client/); this is part of the Helion Developer Platform installation.
+- Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
+- (Optional) Access to the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
- 
-##Sample Code
-For best results, work with each sample in the order that they are provided, as each one builds on the knowledge provided in the previous sample. 
-###Java
+##Sample code
+For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample. 
+###Java[](#java)
 1. [Hello World](/helion/devplatform/workbook/helloworld/java/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/java/) <br>
-Create a database and execute a query against it.
+Create a database and execute a query against it. <br>
+Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.<br> Or jump to the full [messaging service](/helion/devplatform/messageservice/) tutorial.
 
 More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 
-###Node
+###Node[](#node)
 1.  [Hello World](/helion/devplatform/workbook/helloworld/node/)<br>
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/node/) <br>
-Create a database and execute a query against it.
+Create a database and execute a query against it.<br> Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.
+
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.<br> Or jump to the full [messaging service](/helion/devplatform/messageservice/) tutorial.
 
 More Helion [Node](/als/v1/user/deploy/languages/node/) references.
  
-###PHP
+###PHP[](#PHP)
 1.  [Hello World](/helion/devplatform/workbook/helloworld/php/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/php/) <br>
-Create a database and execute a query against it.
+Create a database and execute a query against it.<br>
+Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.
+3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.<br> Or jump to the full [messaging service](/helion/devplatform/messageservice/) tutorial.
 
 More Helion [PHP](/als/v1/user/deploy/languages/php/) references.
 
@@ -85,17 +86,18 @@ Commands available through the developer API URL and the integration API URL.
 - [Domain Admin API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_Domain_Admin.html)<br>
 - [User API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_User.html)
 -->
-###Other References
+###Other references
+- [Installing the Marketplace](/helion/devplatform/marketplace)
 - [ALS command-line interface (CLI) reference](/als/v1/user/reference/client-ref/#command-ref-client)
 - [Application Lifecycle Service (ALS) User's Guide](/als/v1/user/)
 - [Remote Debugging](/als/v1/user/deploy/app-debug/)
 - [The Management Console](/als/v1/user/console/)
 - [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
 
-###Best Practices
+###Best practices
 
 - [The 12-Factor App](http://12factor.net/)
-- [Tips from CloudFoundry](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
+- [Tips from Cloud Foundry&trade;](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
 
 <!-- removed 10/3/14 
 ###HP Helion OpenStack Development Community

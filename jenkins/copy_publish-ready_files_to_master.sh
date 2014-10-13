@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  
+#   
 #
 
  
@@ -18,14 +18,14 @@ fi
 #Checkout the branch to merge to master.
 
 
-
- 
+git fetch --all
+git reset --hard origin/master
 
 git branch --set-upstream  ${BRANCH} origin/${BRANCH}
 git branch --set-upstream  master origin/master
  
 git checkout -f master
-git pull origin ls
+git pull origin
 
 git checkout -f ${BRANCH}
 git pull origin 
