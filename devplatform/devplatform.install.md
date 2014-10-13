@@ -29,7 +29,7 @@ The following topics explain how to install and configure the HP Helion Developm
 
 ## Prerequisites<a name="prerequisites"></a>
 
-The HP Helion Development Platform is installed in the HP Helion OpenStack [overcloud](http://docs.hpcloud.com/helion/openstack/glossary/#o-jumplink-span).  The HP Helion Development Platform has the same prerequisites as [HP Helion OpenStack]((http://docs.hpcloud.com/helion/openstack/install/prereqs/)).
+The HP Helion Development Platform is installed in the HP Helion OpenStack [overcloud](http://docs.hpcloud.com/helion/openstack/glossary/#o-jumplink-span).  The HP Helion Development Platform has the same prerequisites as [HP Helion OpenStack](http://docs.hpcloud.com/helion/openstack/install/prereqs/).
 
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
  
@@ -104,7 +104,7 @@ This section provides details on installing the Application Lifecycle service fr
 
 ### Prerequisites
 
-For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of ["Starting the seed and building your cloud"](http://docs.hpcloud.com/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
+For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
 
 ### Connect to the Download Service
 
