@@ -1,7 +1,7 @@
 #!/bin/bash -li
 
 echo 'running documentation/jenkins/check.sh'
-#Get the most recent version of the master branch 
+#Get the most recent version of the master branch  
 env | grep GIT
 git checkout $GIT_BRANCH
 git pull
@@ -9,20 +9,38 @@ git pull
 
 #Delete any tempfiles left over from the last run and write introduction
 rm checktmp > /dev/null 2>&1  
-
-
+echo " "
+echo " "
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
 
 
 echo  ""
-echo "==== Links to files that don't exist==="
+
+
+ for i in `find . -name "*.md"`; 
+ 
+ 
+ do  
+ if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
+then
+echo "==== Incorrect header divider ==="
+echo "(Header must begin and end with a three-dash line.)"
+ echo $i
+fi
+done 
+
+
+
+echo  ""
+echo "==== Links to files that don't exist ==="
 for i in `find . -name "*.md" `
 do
- grep "](/.*)" $i | grep -v "<!--" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" >> permalinklist.txt
- grep permalink $i | sed 's|.* /|/|'  >> filepermalink.txt
+sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" >> permalinklist.txt
+
+grep permalink $i | sed 's|.* /|/|'  >> filepermalink.txt
 
 done
- 
+
  
 for i in `cat permalinklist.txt | uniq | grep -v http`
 do
