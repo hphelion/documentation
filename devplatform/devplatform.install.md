@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "Using the Messaging Service"
+title: "Helion Development Platform Installation and Configuration"
 permalink: /helion/devplatform/install/
 product: devplatform
 
@@ -42,11 +42,11 @@ The Installer requires the following packages:
 
 If the packages are not found, the Installer prompts you to install them.
 
-##Installing the HP Helion Development Platform {#install}
+##Installing the HP Helion Development Platform  {#install}
 This section provides instructions to:
 
-- [Download and unpack the installation file](#unpack)
-- [Prepare to run the Installer](#prepare)
+- Download and unpack the installation file
+- Prepare to run the Installer
 - Edit the Development Platform configuration
 - Activate the Installer
 - Run the Installer
