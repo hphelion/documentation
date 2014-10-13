@@ -26,7 +26,7 @@ As long as you have a system with at least 48 GB of RAM and Ubuntu 13.10 or 14.0
 This cloud-in-a-box is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available. This installation is a fixed, virtual configuration of:
 
 * 1 undercloud
-* 1 overcloud controller
+* 3 overcloud controllers
 * 2 overcloud swift nodes 
 * 1 overcloud compute node 
 
@@ -42,7 +42,7 @@ Installer system requirements:
 This HP Helion OpenStack Community baremetal multi-node deployment is for a small-scale, private cloud. The installation deploys to a minimum 5 baremetal server configuration:
 
 * 1 undercloud
-* 1 overcloud controller
+* 3 overcloud controllers
 * 2 overcloud swift nodes 
 * At least 1 overcloud compute nodes 
 

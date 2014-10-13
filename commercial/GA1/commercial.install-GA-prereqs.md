@@ -205,19 +205,21 @@ During the installation process after the seed VM is installed, the installer sc
 
 There must be one entry in this file for each baremetal system you intend to install. 
 
-`<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>`
+`<BRIDGE_INTERFACEmacaddress>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>`
+
+Where `<BRIDGE_INTERFACE_mac_address>` is the MAC address of the bridge interface on the seed cloud host, for example `em2` or `eth2`.
 
 **Example:** 
 
 Your file should look similar to the following:
 
-		78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048
-		78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,900
-		78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
-		78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
-		78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
-		78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
-		78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,900
+	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048
+	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,900
+	78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
+	78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
+	78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
+	78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
+	78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,900
 
 When creating this file, keep in mind the following:
 
