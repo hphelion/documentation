@@ -35,14 +35,14 @@ echo  ""
 echo "==== Links to files that don't exist ==="
 for i in `find . -name "*.md" `
 do
-sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/\/|\/|' >> permalinklist.txt
+sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|$|/|' | sed 's|\/\/|\/|' >> permalinklist.txt
 
 
 grep permalink $i | sed 's|.* /|/|'  >> filepermalink.txt
 
 done
 
-cat permalinklist.txt
+cat cat permalinklist.txt | uniq | grep -v http
 
 for i in `cat permalinklist.txt | uniq | grep -v http`
 do
