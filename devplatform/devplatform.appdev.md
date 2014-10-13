@@ -29,7 +29,6 @@ The Hello World sample is as simple as it gets: Hello World!
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/java/) <br>
 Create a database and execute a query against it. <br>
-Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
 3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.<br> 
 
@@ -53,39 +52,11 @@ The Hello World sample is as simple as it gets: Hello World!
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/php/) <br>
 Create a database and execute a query against it.<br>
-Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
 3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.<br> 
 
 More Helion [PHP](/als/v1/user/deploy/languages/php/) references.
 
-<!-- don't want to expose this but also don't want to lose it
-###Language-Specific Development
-
-[HP Helion Buildpacks](/als/v1/user/deploy/buildpack/)
-
-* [Clojure](/als/v1/user/deploy/languages/clojure/)
-* [Go](/als/v1/user/deploy/languages/go/)
-
-	* [Tips for Java Developers](http://docs.cloudfoundry.org/buildpacks/java/java-tips.html)
-	* [The Eclipse plugin](http://docs.cloudfoundry.org/buildpacks/java/sts.html)
-* [Javascript](/als/v1/user/deploy/languages/javascript/)
-* [.Net](/als/v1/user/deploy/languages/dotnet/)
-
-	* [Tips for Node Developers](http://docs.cloudfoundry.org/buildpacks/node/node-tips.html)
-* [Perl](/als/v1/user/deploy/languages/perl/)
-
-* [Python](/als/v1/user/deploy/languages/python/)
-* [Ruby](/als/v1/user/deploy/languages/ruby/)
-	* [Tips for Ruby Developers](http://docs.cloudfoundry.org/buildpacks/ruby/ruby-tips.html)
-	* [Deploying Ruby on Rails](http://docs.cloudfoundry.org/buildpacks/ruby/gsg-ror.html)
-
-Commands available through the developer API URL and the integration API URL.
-
-- [Root Admin API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_Root_Admin.html)<br>
-- [Domain Admin API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_Domain_Admin.html)<br>
-- [User API](http://cloudstack.apache.org/docs/api/apidocs-4.4/TOC_User.html)
--->
 ###Other references
 - [Installing the Marketplace](/helion/devplatform/marketplace)
 - [ALS command-line interface (CLI) reference](/als/v1/user/reference/client-ref/#command-ref-client)
@@ -98,11 +69,6 @@ Commands available through the developer API URL and the integration API URL.
 
 - [The 12-Factor App](http://12factor.net/)
 - [Tips from Cloud Foundry&trade;](http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html)
-
-<!-- removed 10/3/14 
-###HP Helion OpenStack Development Community
-Join the [HP Helion developer forum](https://community.dev.hp.com/t5/Helion-Development-Platform/bd-p/cloud_board) or post on the [HP forums](https://connect.hpcloud.com/).
---->
 
 ----
 ####OpenStack trademark attribution
