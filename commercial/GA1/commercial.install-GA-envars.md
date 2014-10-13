@@ -36,7 +36,7 @@ This file will be used to conduct operations such as adding or removing a node a
 The following section describes the environmental variables that affect your installation.
 
 
-`BRIDGE_INTERFACE` - Use this variable to specify the interface on the seed cloud host as the bridge interface, for example `em2` or `eth2`. This interface connects to the untagged management network and will be used to PXE boot undercloud and overcloud servers:
+`BRIDGE_INTERFACE` - Use this variable to specify the interface on the seed cloud host to use as the bridge interface, for example `em2` or `eth2`. This interface connects to the untagged management network and will be used to PXE boot undercloud and overcloud servers:
 
 	export BRIDGE_INTERFACE=em2
 
@@ -234,7 +234,6 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
 		export BM_NETWORK_UNDERCLOUD_RANGE_START=172.30.100.21
 		export BM_NETWORK_UNDERCLOUD_RANGE_END=172.30.100.40
-		export NeutronPublicInterface=eth0
 		export FLOATING_START=172.30.100.41
 		export FLOATING_END=172.30.100.200
 		export FLOATING_CIDR=172.30.100.0/24
@@ -266,7 +265,6 @@ If you intend to use custom IP addresses and a VLAN provider network for externa
 		export BM_NETWORK_UNDERCLOUD_RANGE_START=10.23.69.142
 		export BM_NETWORK_UNDERCLOUD_RANGE_END=10.23.69.150
 		export OVERCLOUD_NeutronPublicInterface=eth2
-		export NeutronPublicInterface=eth2
 		export NeutronPublicInterfaceDefaultRoute=15.126.52.1
 		export FLOATING_START=15.126.54.20
 		export FLOATING_END=15.126.54.40

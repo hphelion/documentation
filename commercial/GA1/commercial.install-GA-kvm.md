@@ -1,4 +1,4 @@
----
+	---
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/install/kvm/
@@ -32,7 +32,7 @@ The installation and configuration process for KVM consists of the following gen
 
 * [Preparing for installation](#prepare)
 	* [Verify Prerequisites](#pre)
-	* [Review the KVM deployment architecture](deploy-arch)
+	* [Review the KVM deployment architecture](#deploy-arch)
 	* [KVM deployment architecture](#deploy-arch)
 	* [Create and identify environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
@@ -43,16 +43,18 @@ The installation and configuration process for KVM consists of the following gen
 	* [Unpack the installation file](#unpackinstall)
 	* [Install the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
-	* [Connecting to Horizon Undercloud console](#connectconsoleunder)
-	* [Connecting to Horizon Overcloud console](#connectconsoleover)
-	* [Create projects for LDAP users](#ldap)
+	* [Connect to Horizon Undercloud console](#connectconsoleunder)
+	* [Connect to Horizon Overcloud console](#connectconsoleover)
+	* [Connect to the monitoring interface](#connectmonitor)
+	* [Connect to the logging interface](#connectlogging)
+* [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps)
 
-## Preparing for installation<a name="prepare"></a>
+## Preparing for installation {#prepare}
 
 Before starting the installation, review the following sections.
 
-### Verify Prerequisites<a name="pre"></a>
+### Verify Prerequisites {#pre}
 
 To ensure successful installation, please read through the following topics before you start.
 
@@ -61,7 +63,7 @@ To ensure successful installation, please read through the following topics befo
 * [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
 
 
-### Review the KVM deployment architecture<a name="deploy-arch"></a>
+### Review the KVM deployment architecture {#deploy-arch}
 
 The following diagram depicts the required network topology for a KVM installation.
 
@@ -85,7 +87,7 @@ For more information, see [Creating the baremetal.csv file](/helion/openstack/in
 ### Prepare the cloud seed host to create the seed VM ### {#prepseed}
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
-## Downloading the installation packages<a name="getinstall"></a>
+## Downloading the installation packages {#getinstall}
 
 Before you begin, you must download the required HP Helion OpenStack installation packages:
 
@@ -104,7 +106,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
 	</table>
 
-## Installing HP Helion OpenStack<a name="install"></a>
+## Installing HP Helion OpenStack {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:
 
@@ -113,7 +115,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 * [Install the seed VM and building your cloud](#startseed)
 
 
-### Configure proxy information<a name="proxy"></a>
+### Configure proxy information {#proxy}
 
 Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:
 
@@ -131,7 +133,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Log out and re-login to the seed VM host to activate the proxy configuration.
 
-### Unpack the installation file <a name ="unpackinstall"></a>
+### Unpack the installation file {#unpackinstall}
 
 1. Make sure you are logged into the seed VM host as root. If not:
 
@@ -148,7 +150,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	This creates and populates a `tripleo/` directory within root's home directory.
 
-### Install the seed VM and build your cloud<a name="startseed"></a>
+### Install the seed VM and build your cloud {#startseed}
 
 1. Make sure you are logged into the seed VM host as root. If not:
  
@@ -214,12 +216,12 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** If `hp_ced_start_seed.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
-## Verify your installation<a name="verifying-your-installation"></a>
+## Verify your installation {#verifying-your-installation}
 
 Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack baremetal cloud.
 
 
-### Connect to the undercloud Horizon console <a name="connectconsoleunder"></a>
+### Connect to the undercloud Horizon console {#connectconsoleunder}
 
 Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
 
@@ -245,7 +247,7 @@ Make sure you can access the undercloud Horizon dashboard. To do this, follow th
 
 6. Log in as user 'admin' with the admin password from step 4.
 
-### Connect to the overcloud Horizon console <a name="connectconsoleover"></a>
+### Connect to the overcloud Horizon console {#connectconsoleover}
 
 Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
@@ -277,12 +279,50 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
-### Create projects for LDAP users<a name="ldap"></a>
+### Connect to the monitoring interface {#connectmonitor}
+
+1. Retrieve the undercloud IP by entering the following commands on the seed VM: 
+
+		. /root/stackrc
+		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		echo $UNDERCLOUD_IP
+
+	Note: The `echo $UNDERCLOUD_IP` command prints the IP address of the undercloud to the screen.
+
+2. Open a web browser and point to:
+
+		http://<undercloud IP>/icinga/
+
+3. Log in as user `icingaadmin` with the password `icingaadmin`.
+
+### Connect to the logging interface {#connectlogging}
+
+1. Retrieve the undercloud IP by entering the following commands on the seed VM: 
+
+		. /root/stackrc
+		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		echo $UNDERCLOUD_IP
+
+	Note: The `echo $UNDERCLOUD_IP` command prints the IP address of the undercloud to the screen.
+
+2. Retrieve the logging interface password in the `htpasswd.cfg` file located at:
+
+		/opt/kibana/htpasswd.cfg
+
+
+3. Open a web browser and point to:
+
+		http://<undercloud IP>:81/
+ 
+
+4. Log in as user `kibana` and the password from the `htpasswd.cfg` file.
+
+## Create projects for LDAP users {#a name="ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/install/ldap/). 
 
 
-## Next Steps<a name="next-steps"></a>
+## Next Steps {#next-steps}
 
 Configure Block Storage by either deploying VSA or using HP 3Par Array
 
