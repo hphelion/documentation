@@ -67,7 +67,7 @@ The following issues have been resolved:
 
 ### Bash Vulnerability
 
-The Bash vulnerability issue is fixed. 
+The Bash vulnerability issue is fixed with this patch release. 
 
 
 ###Installation

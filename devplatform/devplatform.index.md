@@ -17,7 +17,7 @@ This documentation will help you get up to speed on the  Helion Development Plat
 
 The [Application Lifecycle Service (ALS)](/als/v1/) is a Cloud Foundry-based, managed runtime environment for applications. 
 
-- ALS supports [Java](/helion/devplatform/appdev/#java/), [Node](/helion/devplatform/appdev/#node/), [PHP](/helion/devplatform/appdev/#php/), and other language runtimes.
+- ALS supports [Java](/helion/devplatform/appdev/#java), [Node](/helion/devplatform/appdev/#node/), [PHP](/helion/devplatform/appdev/#php/), and other language runtimes.
 - ALS provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.
 - ALS allows Disk, Memory and Placement Zone constraints to be set per application.
 - ALS provides auto-scaling and application log drains.
