@@ -1,7 +1,7 @@
 #!/bin/bash -li
 
 echo 'running documentation/jenkins/check.sh'
-#Get the most recent version of the master branch 
+#Get the most recent version of the master branch  
 env | grep GIT
 git checkout $GIT_BRANCH
 git pull
@@ -9,9 +9,26 @@ git pull
 
 #Delete any tempfiles left over from the last run and write introduction
 rm checktmp > /dev/null 2>&1  
-
-
+echo " "
+echo " "
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
+
+
+echo  ""
+
+
+ for i in `find . -name "*.md"`; 
+ 
+ 
+ do  
+ if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
+then
+echo "==== Incorrect header divider ==="
+echo "(Header must begin and end with a three-dash line.)"
+ echo $i
+fi
+done
+
 
 
 echo  ""
