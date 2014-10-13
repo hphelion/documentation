@@ -25,7 +25,7 @@ The following topics explain how to install and configure each section of the HP
 - [Installing the Database Service](#database)
 - [Installing the Marketplace Service](#marketplace) 
 
-##Prerequisites<a name="prereq"></a>
+##Prerequisites {#prereq}
 The HP Helion Development Platform  has the same prerequisites as HP Helion OpenStack&reg;. 
 
 The system running the Installer must have Python 2.7.
@@ -42,7 +42,7 @@ The Installer requires the following packages:
 
 If the packages are not found, the Installer prompts you to install them.
 
-##Installing the HP Helion Development Platform<a name="install"></a>
+##Installing the HP Helion Development Platform {#install}
 This section provides instructions to:
 
 - [Download and unpack the installation file](#unpack)
@@ -51,7 +51,7 @@ This section provides instructions to:
 - Activate the Installer
 - Run the Installer
 
-###Downloading and Unpacking the Installation file<a name="unpack"></a>
+###Downloading and Unpacking the Installation file {#unpack}
 The installation of the HP Helion Development Platform for the HP Helion OpenStack is provided as a small compressed *tar* file. The images for the actual services are downloaded at the Installer's request.
 
 You can register and download the package from the following URL:
@@ -67,7 +67,7 @@ To begin the installation:
 
     	# cd dev-platform-installer
 
-###Preparing to Run the Installer<a name="prepare"></a>
+###Preparing to Run the Installer {#prepare}
 1.	To prepare the Installer and to ensure that prerequisites are met, use this command:
 
     	# ./install_installer.sh -p {admin_user_password} -a {auth_host_ip_address}
@@ -88,7 +88,7 @@ The defaults to use for this option are:
 
 		2014-06-17 16:53:19.765 INFO Install Complete
 
-##Installing the Messaging Service<a name="message"></a>
+##Installing the Messaging Service {#message}
 This section provides the steps to install the Messaging Service from the Development Platform.
 
 ###Connecting to the Download Service
@@ -113,7 +113,7 @@ To download and configure the Messaging Service:
 6.	Log back into the Horizon console as a non-admin user.
 7.	Under the current project, click the **Messaging** tab to begin using the Messaging Service.
 
-##Installing the Application Lifecycle Service (ALS)<a name="als"></a>
+##Installing the Application Lifecycle Service (ALS) {#als}
 This section provides the steps to install the Application Lifecycle Service from the Development Platform.
 
 ###Connecting to the Download Service
@@ -136,7 +136,7 @@ To download and configure the Application Lifecycle Service:
 5.	Log out from the Horizon console.
 6.	Log back into the Horizon console as a non-admin user.
 7.	Under the current project, click the Application Lifecycle Service tab to begin using the Application Lifecycle Service.
-##Installing the Database Service<a name="database"></a>
+##Installing the Database Service {#database}
 This section provides the steps to install the Application Lifecycle Service from the Development Platform.
 ###Prerequisites
 There are two prerequisites to install the Database Service: 
@@ -259,7 +259,7 @@ You must be connected to the undercloud node to perform the following steps:
 2.	Log back into the Horizon panel as a non-admin user.
 3.	Under the current project, click the Database tab to begin using the Database Service.
 
-##Installing the Marketplace Service<a name="marketplace"></a>
+##Installing the Marketplace Service {#marketplace}
 This section provides the steps to install the Marketplace Service from the Development Platform.
 
 ###Quotas

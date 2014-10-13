@@ -16,7 +16,7 @@ The [Command Reference](/als/v1/user/reference/client-ref/#command-ref-client) h
 descriptions of all client commands and options. These details are also
 available at the command line via the *helion help* command.
 
-##Application Lifecycle Service Client Setup[](#helion-client-setup "Permalink to this headline")
+##Application Lifecycle Service Client Setup {#helion-client-setup}
 
 **Note**: using the Windows Helion client with
 [Cygwin](http://www.cygwin.com/) is not supported.
@@ -38,7 +38,7 @@ available at the command line via the *helion help* command.
 
 
 
-##Getting Help[](#getting-help "Permalink to this headline")
+##Getting Help {#getting-help}
 
 
 To get a list of available commands or help on a particular command:
@@ -48,7 +48,7 @@ To get a list of available commands or help on a particular command:
 See also the [Command Reference](/als/v1/user/reference/client-ref/#command-ref-client) for a full
 list of commands.
 
-##Targeting the API Endpoint[](#targeting-the-api-endpoint "Permalink to this headline")
+##Targeting the API Endpoint {#targeting-the-api-endpoint})
 
 
 Before you can use the client, you must set the target URL, which is also known
@@ -60,7 +60,7 @@ For a micro-cloud VM, it might be something like:
 
     $ helion target api.helion-xxxx.local
 
-##HTTP Proxies[](#http-proxies "Permalink to this headline")
+##HTTP Proxies {#http-proxies}
 **Note**: On the Windows operating system only, this configuration step should not be necessary, as the client queries the Internet Settings
 values. 
 
