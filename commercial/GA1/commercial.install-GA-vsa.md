@@ -308,11 +308,11 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 **$MAC_ADDR** refers to the MAC Address of the Baremetal server.
 
-4. List the Baremetal nodes. This command also lists the newly added nodes
+4. List the Baremetal nodes. This command also lists the newly added nodes.
 
 		ironic node-list
 
-5. Log out from Undercloud to go back to Seed 
+5. Log out from Undercloud to go back to Seed.
 
 6. Edit the `/root/baremetal.csv file` in Seed cloud with the details of the newly added node.
 

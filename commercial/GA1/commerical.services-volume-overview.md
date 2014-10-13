@@ -21,15 +21,18 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/reporting/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/horizon/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Volume Operations Service Overview #
+# HP Helion OpenStack&#174; Block Storage Volume Operations Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-The HP Helion OpenStack Volume Operations service uses the OpenStack Cinder (Block Storage) service to manage storage volumes, including creating volumes, creating volume snapshots, and configuring volumes. 
+The HP Helion OpenStack Block Storage Volume Operations uses the OpenStack Cinder (Block Storage) service to manage storage volumes, including creating volumes, creating volume snapshots, and configuring volumes. 
 
-Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots to copy a volume before making significant changes to it. Custom volumes ranging in sizes from 1 GB to 2 TB can be created using a variety of file system types.
+Once created, you can easily disconnect block storage volumes from one instance and attach them to another. You can also create snapshots of these volumes. 
 
-**Note:** HP Helion OpenStack uses StoreVirtual as a back end to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor. 
+HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor. 
+
+
+HP Helion OpenStack also supports HP StoreServ 3PAR as Cinder backend.
 
 
 
@@ -37,6 +40,12 @@ Once created, you can easily disconnect block storage volumes from one instance 
 ## Working with the Volume Operations Service ##
 
 To perform tasks using the Volume Operations service, you can use the dashboard, API or CLI.
+
+* [Working with HP StoreVirtual VSA](/helion/openstack/install/vsa/)
+
+* [Working with HP 3PAR StoreServ](/helion/openstack/install/3par/)
+
+
 
 ### Using the dashboards<a name="UI"></a>
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Volume Operations service.
