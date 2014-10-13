@@ -29,7 +29,6 @@ The Hello World sample is as simple as it gets: Hello World!
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/java/) <br>
 Create a database and execute a query against it. <br>
-Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
 3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.<br> 
 
@@ -53,7 +52,6 @@ The Hello World sample is as simple as it gets: Hello World!
 
 2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/php/) <br>
 Create a database and execute a query against it.<br>
-Or jump to the full [database services](/helion/devplatform/createdatabase/) tutorial.
 
 3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.<br> 
 
