@@ -19,12 +19,12 @@ Before you begin, we recommend having [Eclipse IDE for Java EE developers](https
 2. Open an Eclipse IDE window.
 3. Drag the install link into the Package Explorer view.
 
- 	<img src="eclipse1.png">
+ 	<img src="eclipse1.png"/>
 
 1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.
-  <img src="eclipse2.png">
+  <img src="eclipse2.png"/>
 2. Type in the link to the software site that distributes the Helion Eclipse plugin.  The link is https://region-b.geo-1.objects.hpcloudsvc.com/v1/10822257696083/helioneclipseplugin.  Once the packages are discovered, ensure HP Helion Development Platform is checked and click **Next**.
-	<img src="eclipse3.png">
+	<img src="eclipse3.png"/>
 3. Accept the license agreement and click **Finish**.  Note that you might see a warning about unsigned content.  If you see this dialog box, click **OK** to proceed.
 4. You will be prompted to restart Eclipse.  
 ##Setup/Configuration
