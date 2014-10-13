@@ -19,9 +19,7 @@ Before you begin, we recommend having [Eclipse IDE for Java EE developers](https
 2. Open an Eclipse IDE window.
 3. Drag the install link into the Package Explorer view.
 
- 	<img src="media/eclipse1.png">
-
-
+ 	<img src="eclipse1.png">
 
 1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.
   <img src="media/eclipse2.png">
