@@ -21,17 +21,10 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
+# HP Helion OpenStack&#174;Installation: Deploy and Configure HP StoreVirtual VSA 
 
-# HP Helion OpenStack&#174; Installation: HP StoreVirtual VSA Support
+This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.It covers the following topics:
 
-This page provides detailed information on using HP StoreVirtual VSA for realizing cloud storage. 
-
-* [HP StoreVirtual VSA overview](#StoreVirtual-overview) 
-* [Cinder architecture](#cinder-architecture)
-   * [Cinder API](#cinder-api)
-   * [Scheduler](#scheduler)
-   * [Cinder volume and Lefthand driver](#cinder-volume)  
-   * [Differentiated storage offerings](#differentiated-storage-offerings)
 * [High Level overview of StoreVirtual integration](#high-level-view)
 * [Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
    * [Prerequisites](#prerequisites)
@@ -44,110 +37,12 @@ This page provides detailed information on using HP StoreVirtual VSA for realizi
 * [Adding a StoreVirtual node to an existing Management Group](#adding-a-node)
 * [Next Steps](#next-steps)
 
+##Deployment and Configuration Procedure Overview {#high-level-view}
 
-##HP StoreVirtual VSA overview<a name="StoreVirtual-overview"></a>
-
-HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external 
-array hardware. It transforms your server’s internal or direct-attached storage into a fully featured shared storage array—without the cost and complexity 
-associated with dedicated storage. HP StoreVirtual VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
-
-Multiple StoreVirtual systems running on different servers create a clustered pool of storage with the ability to make data highly available by 
-protecting volumes with network RAID.A logical grouping of clusters is done in order to form a unit and is called a management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
-
-<!---HP StoreVirtual Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management. 
-
-Multiple StoreVirtual systems running on multiple servers create a clustered pool of storage with the ability to make data highly available by protecting volumes with network RAID.--> 
-
-With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
-A single management group can contain up to 32 StoreVirtual nodes &#45; grouped into clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes. 
-
-HP Helion OpenStack&#174; supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.
-
-HP StoreVirtual VSA enables the following features in HP Helion OpenStack&#174;: 
-
-* **Storage clustering**: It allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. As storage needs increase, StoreVirtual can scale performance and capacity online.
-
-* **Data availability**: Network RAID strips and mirrors multiple copies of data across a cluster of storage nodes, eliminating any single point of failure in the StoreVirtual SAN. Applications have continuous data availability in the event of  power, network, disk, controller, or entire storage node failure.
-
-* **Thin provisioning**: It allocates space only as data is actually written without requiring pre-allocation of storage. This raises the overall utilization and efficiency and thus increases the Return on Investment(ROI).
-
-* **Simplified data protection**: Snapshots create thinly provisioned, instant point-in-time copies of data on a per-volume basis. As an administrator, you can access snapshots to recover individual files/folders from the volume, or rollback an entire volume to a prior state.
-
-##Cinder architecture<a name="cinder-architecture"></a>
-
-Cinder is the block-based storage component of the HP  Helion OpenStack&#174; platform for cloud computing. It facilitates the provisioning of storage in the form of block devices known as Cinder volumes. In the most common scenario, the Cinder volumes provide persistent storage to guest virtual machines (known as instances) that are managed by OpenStack Compute software. Cinder is based on the distributed architecture which can scale horizontally and serve concurrent volume management requests. 
-
-Cinder consists of three basic services:
-
-* **Cinder API**
-
-* **Cinder scheduler**
-
-* **Cinder volume** *along with an underlying dedicated database*
-
-<img src="media/cinder-services.png"/>
-
-### Cinder API <a name="cinder-api"></a>
-
-Cinder API is a REST based interface to perform volume operations. As an end-user, you can accomplish volume operations without worrying about the storage  backend device used to provide the actual storage. The following volume operations are supported:
-
-1.  Create volumes
-2.	Delete volumes
-3.	Extend volumes
-4.	Attach volumes
-5.	Detach volumes
-6.	Create snapshots
-7.	Delete snapshots
-8.	Create volumes from snapshots
-9.	Create cloned volumes
-10.	Copy images to volumes
-11.	Copy volumes to images
-<!--12.	Volume Backup to Swift
-13.	Volume Restore from Swift-->
-<!---12.	Volume migration(backend assisted).-->
-
-### Scheduler<a name="scheduler"></a>
-
-The Cinder Scheduler tracks various backend capabilities and chooses the backend to place a new volume on. There are various configurable plugins for the scheduler. Filter scheduler has filters and weighers which help in deciding the backend to be used for a new volume request. The selection criteria includes the filters like- volume type, available free space, QoS specs, Extra specs etc. Scheduler ensures that the volumes are uniformly spread across all available backend devices.
-
-### Cinder Volume and LeftHand driver<a name="cinder-volume"></a>
-
-Once the Scheduler determines the backend to be used, the Cinder volume performs the actual operations against the backend.
-
-The Cinder volume service hosts the LeftHand Driver to communicate with the backend representing the StoreVirtual cluster, using the LeftHand REST API. 
-
-**Note:** The HPLeftHandISCSIDriver is based on the Block Storage service (Cinder) plug-in architecture. Volume operations are run by communicating with the HP LeftHand/StoreVirtual system over HTTPS, or SSH connections. 
-For more details on the Lefthand driver, refer to [HP LeftHand/StoreVirtual driver](http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html). 
-
-When you configure multiple StoreVirtual backends, one cinder-volume is launched for each back-end storage or back-end storage pool. Each backend instance maps to an instance of a StoreVirtual cluster. Each cluster listens at an assigned VIP that is configured in the Cinder backend entry in *cinder.conf*. 
+The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.
 
 
-### Differentiated Storage Offerings<a name="differentiated-storage-offerings"></a>
-HP Helion OpenStack&#174; uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that storage controller runs as a virtual appliance and helps realize Software Defined Block Storage.
-
-Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
-
-
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume type mapping (opens in a new window)</a>
-
-As a cloud administrator, you can create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:  
-
-**1. Low Cost, Low Performance, High Capacity Storage** (Bronze)
-
-**2. Medium Cost, Medium Performance, Medium Capacity Storage** (Silver) 
-
-**3. High Cost, High Performance, Low Capacity Storage** (Gold)
-
-Then, as the cloud administrator, you need to create three volume types &ndash; bronze, silver and gold &ndash; and configure Cinder with three different backends. Each backend needs to be mapped to bronze, silver and gold, respectively.
-
-Differentiated storage offerings based on performance and quality can be realized in HP Helion OpenStack&#174; by creating clusters of different capabilities, configuring clusters as backends and mapping these backends to different volume types as suggested above.
-
-##High level overview of StoreVirtual integration {#high-level-view}
-
-The following diagram gives an overview of the steps involved in integrating StoreVirtual with your cloud. The subsequent sections provide the detailed instructions on integration workflow.
-
-
-<a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual VSA Integration diagram (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</a>
 
 
 <!--1 - **Install CMC**
@@ -194,7 +89,7 @@ The following diagram gives an overview of the steps involved in integrating Sto
 
 4d- **Get Cinder configuration for VSA backend**
 
-   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/undercloud/oc/config/storevirtual/) system.
+   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system.
 	
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
@@ -206,18 +101,20 @@ The following diagram gives an overview of the steps involved in integrating Sto
 
    * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/undercloud/oc/config/storevirtual/) from Seed cloud. -->
+   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. -->
+
 
 ##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux<a name="install-hp-storevirtual-cmc"></a>
 
-You must install the CMC to perform the administrative tasks on HP StoreVirtual VSA. You can manage the entire network of StoreVirtual VSAs  from CMC. 
+In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack management network.
 
 
 ### Prerequisites<a name="prerequisites"></a>
 
 * You must be running the X Windows System to install the CMC.
 
-* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA.
+* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.
+
 
 **Note**: These changes are required for 64-bit operating system only.
 
@@ -227,7 +124,7 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
 		dpkg --add-architecture i386
 		apt-get install openjdk-7-jdk:i386
 
-### Installation<a name="install"></a>
+### Installation<a name="installation"></a>
 
 1. Verify if the CMC installer file inside `tripleo` directory (packaged along with the HP Helion OpenStack&#174; installer) has the executable permission otherwise execute the following command:
 
@@ -243,13 +140,11 @@ You must install the CMC to perform the administrative tasks on HP StoreVirtual 
  From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
 </br>  
 
-**Note**: To launch the CMC from CLI, navigate to the location where it is installed and enter `# ./"HP Store Virtual Centralized Management Console"`.
-
-<!---<img src="media/storevirtual-cluster-network-diagram2.png"/>-->
+**Note**: To launch the CMC from command line (CLI), navigate to the location where it is installed and enter `# ./"HP Store Virtual Centralized Management Console"`.
 
 
 ##Deploying HP StoreVirtual VSA<a name="deploy-vsa"></a>
-<!---<a href="javascript:window.open('/content/documentation/media/commercial_kvm_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM (opens in a new window)</a>-->
+
 
 ###Prerequisites<a name="prerequisites-vsa"></a>
 
@@ -275,18 +170,18 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
          
 	   **Step 3**: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)
 
-* The total amount of the configured storage on the StoreVirtual system should not exceed 50 TB. 
-
-* Seed Cloud is installed and running
+ * Seed Cloud is installed and is running.
+ 
+ * The bundled license for the StoreVirtual VSA has a maximum limit of 50TB per node, and hence the the total amount of the configured storage on the StoreVirtual system should not exceed 50 TB.
 
 <!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
 
-#### Enrolling the New Baremetal Server<a name="deploy-process"></a>
+#### Enrolling the New Baremetal Server<a name="enroll-new-baremetal-server"></a>
 
 To deploy HP StoreVirtual VSA, perform the following:
 
-1. SSH to undercloud as heat-admin from Seed
+1. SSH to undercloud as heat-admin from Seed.
 
 		ssh heat-admin@<IP Address>
 		sudo -i
@@ -302,22 +197,22 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
 
-3. Create the ironic port for the ironic node that you created in the  previous step
+3. Create the ironic port for the ironic node that you created in the  previous step.
  
 		ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
-**$MAC_ADDR** refers to the MAC Address of the Baremetal server.
+	**$MAC_ADDR** refers to the MAC Address of the Baremetal server.
 
-4. List the Baremetal nodes. This command also lists the newly added nodes
+4. List the Baremetal nodes. This command also lists the newly added nodes.
 
 		ironic node-list
 
-5. Log out from Undercloud to go back to Seed 
+5. Log out from Undercloud to go back to Seed.
 
 6. Edit the `/root/baremetal.csv file` in Seed cloud with the details of the newly added node.
 
 
-7. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`
+7. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`.
  
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
@@ -329,7 +224,7 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
 
-8. Apply the configuration
+8. Apply the configuration.
 
 		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
@@ -346,28 +241,28 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:
 
-1. Log in to Undercloud from Seed
+1. Log in to Undercloud from Seed.
 
 		ssh heat-admin@<Undercloud IP Address>
  		 
-2. Source stackrc file and list the deployed StoreVirtual nodes
+2. Source stackrc file and list the deployed StoreVirtual nodes.
 
 		source stackrc
 		heat stack-list
 		nova list|grep vsa
 
 3. Log in to the StoreVirtual system from the Seed using the IP address retrieved 
-from the above steps
+from the above steps.
 
 		ssh heat-admin@<StoreVirtual system IP Address>
 
-4. Check the log files
+4. Check the log files.
 
 		tailf /installer.log
 
 	The message "*Started VM vsa-hostname*" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.
 
-5. To display the status of all the StoreVirtual VMs 
+5. To display the status of all the StoreVirtual VMs.
 
 		virsh list --all 
 
@@ -481,25 +376,25 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 10. Enter the name of the management group.
 
-11. Click **Add** to add the node to the group that you specified.<br> The node is added to the management group.
+11. Click **Add** to add the node to the group that you specified.<br> The node is added to the management group.-->
 
 ## Next Steps<a name="next-steps"></a>
 
 - [Working with HP Helion OpenStack&#174; Undercloud Horizon Dashboard](/helion/openstack/undercloud/manage/resources/overview/)-(Recommended)
 
 
-<!--- [Working with HP StoreVirtual VSA](/helion/openstack/undercloud/storage/storevirtual/)-  REQUIRED
+<!--- [Working with HP StoreVirtual VSA](/helion/openstack/ga/undercloud/storage/storevirtual/)-  REQUIRED
 
 	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
 	For detailed intructions, see the  document. 
-- [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)-  REQUIRED
+- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
 
 	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
 
-	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).-->
+	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
-- [Sirius CLI](/helion/openstack/sirius-cli/)
+- [Sirius CLI](/helion/openstack/ga/sirius-cli/)
 
 <!---## Next step
 

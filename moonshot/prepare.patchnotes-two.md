@@ -18,35 +18,35 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/moonshot/prepare/">&#9664; PREV | <a href="/cloudos/moonshot/prepare/">&#9650; UP</a> | <a href="/cloudos/moonshot/prepare/releasenotes/">NEXT &#9654;</a> </p>
 
-# HP Cloud OS for Moonshot 1.2 Patch Notes 
+# HP Cloud OS for Moonshot 1.21 Patch Notes 
 
-HP Cloud OS for Moonshot Patch release 1.2 covers the following information:
+HP Cloud OS for Moonshot Patch release 1.21 covers the following information:
 
 * [Features in HP Cloud OS for Moonshot Patch](#features)
 
-* [Procedure to apply HP Cloud OS for Moonshot Patch 1.2](#apply-patch)
+* [Procedure to apply HP Cloud OS for Moonshot Patch 1.21](#apply-patch)
 
 * [Resolved issues](#resolved-issues)
 
 * [Known issues](#known-issues) 
 
-* [Bash vulnerability](#bash-vulnerability)
+<!---* [Bash vulnerability](#bash-vulnerability)-->
 
 * [For further information](#for-further-information)
 
-These Patch Notes include updates to information presented in the HP Cloud OS for Moonshot 1.10 [Release Notes](/cloudos/moonshot/prepare/releasenotes).
+These Patch Notes include updates to information presented in the HP Cloud OS for Moonshot 1.20 [Release Notes](/cloudos/moonshot/prepare/releasenotes).
 
-## Features in HP Cloud OS for Moonshot Patch 1.2 {#features}
+## Features in HP Cloud OS for Moonshot Patch 1.21 {#features}
 
 
-**Enabled license in the product** &mdash; With this release, the user has the option to upgrade to the licensed version of HP Cloud OS for Moonshot. The HP Cloud OS for Moonshot license is a chassis based license.The license comes with two Stock Keeping Units(SKUs) one for a 1year term and the other for a 3year term. Each license has an expiry date and capacity associated with it. The capacity is the number of chassis units that are managed by the product license. A unit from the imported license is consumed when a chassis is added and a unit is released
-when the chassis is deleted.
+**Enabled license in the product** &mdash; With this release, the user has the option to upgrade to the licensed version of HP Cloud OS for Moonshot. The HP Cloud OS for Moonshot license is a chassis based license.The license comes with two Stock Keeping Units(SKUs) one for a 1year term and the other for a 3year term. Each license has an expiry date and capacity associated with it. The capacity is the number of chassis units that are managed by the product license. A unit from the imported license is consumed when a chassis is added and a unit is released when the chassis is deleted.
 
-## Procedure to apply the HP Cloud OS for Moonshot Patch 1.2 {#apply-patch}
 
-**Note:** Before you apply patch 1.2, ensure no operations are being performed using the Administration Dashboard or log out of the Administration Dashboard. 
+## Procedure to apply the HP Cloud OS for Moonshot Patch 1.21 {#apply-patch}
 
-Perform the following steps to apply the patch 1.2:
+**Note:** Before you apply patch 1.21, ensure no operations are being performed using the Administration Dashboard or log out of the Administration Dashboard. 
+
+Perform the following steps to apply the patch 1.21:
 
 1. Launch the [HP Cloud OS for Moonshot Operational Dashboard](/cloudos/moonshot/install/install-setup-admin-node/).  
 
@@ -54,7 +54,7 @@ Perform the following steps to apply the patch 1.2:
 
 3. Select  **Updates and Extensions** to display the Updates and Extensions page. <br> The patch *Cloud OS for Moonshot Patch* is listed here.</br>
 
-4. Click **Download** displayed against *Cloud OS for Moonshot Patch* to download *hp-cos4ms-patch1.20* file. Once the patch successfully downloads, you can install it.
+4. Click **Download** displayed against *Cloud OS for Moonshot Patch* to download *hp-cos4ms-patch1.21* file. Once the patch successfully downloads, you can install it.
 </br>
 5. Click **Install**. <br>Once the installation completes, the status changes to installed. 
 
@@ -63,6 +63,12 @@ Perform the following steps to apply the patch 1.2:
 ## Resolved issues {#resolved-issues}
 
 The following issues have been resolved:
+
+
+### Bash Vulnerability
+
+The Bash vulnerability issue is fixed. 
+
 
 ###Installation
 
@@ -111,7 +117,7 @@ Provisioning may fail in the following scenarios:
 5. Wait for 5-10 minutes for Nova database to update. 
 
 
-##Bash vulnerability {#bash-vulnerability}
+<!---##Bash vulnerability {#bash-vulnerability}
 
 
 Bash and the Operating System keep track of the set of environment variables.The bash vulnerability is related to how Bash processes environmental variables passed by the operating system or by a program calling a Bash-based script. By crafting an environment variable with a specific structure, the bash security can be broken.
@@ -161,7 +167,7 @@ To protect system from bash vulnerability, perform the following steps:
 		
         If the displayed package version is bash_4.2-2ubuntu2.5, bash is successfully upgraded.
 
-5.After successful upgrade on all the nodes, you can start working with your cloud.
+5.After successful upgrade on all the nodes, you can start working with your cloud.-->
 
 
 ##For further information## {#for-further-information}
