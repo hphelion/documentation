@@ -71,7 +71,7 @@ To begin the installation:
 1.	If your network uses a proxy, it may be necessary to set the proxy shell variable:
 
 		# export https_proxy=<ip address or url of http proxy> 
-2.	Optionally, you can specify the Username, Tenant, and Region.
+2.	Run this command to prepare the installer and ensure prerequisites are met. By default: the Username and Tenant is "admin," and the Region is "regionOne." If necessary, you can specify the Username, Tenant, and Region.
 The defaults to use for this option are:
 	- **Username** = admin
 	- **Tenant** **name** = admin
