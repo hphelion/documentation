@@ -9,7 +9,7 @@ product: devplatform
 
 #HP Helion Development Platform Installation and Configuration
 
-The HP Helion Development Platform installs four additional services:
+The HP Helion Development Platform installs four services:
 
 - Messaging Service
 - Application Lifecycle Service (ALS)
@@ -23,14 +23,14 @@ The following topics explain how to install and configure each section of the HP
 - [Installing the Messaging Service](#message)
 - [Installing the Application Lifecycle Service (ALS)](#als)
 - [Installing the Database Service](#database)
-- [Installing the Marketplace Service](#marketplace) 
+- [Installing the Marketplace Service](#marketplace)
 
 ##Prerequisites {#prereq}
-The HP Helion Development Platform  has the same prerequisites as HP Helion OpenStack&reg;. 
+The HP Helion Development Platform requires[HP Helion OpenStack](http://docs.hpcloud.com/helion/openstack/install/prereqs/)&reg; and has the same prerequisites. 
 
 The system running the Installer must have Python 2.7.
 
-Most modern operating systems include Python as part of their base toolkit. The information presented here is geared toward a Linux operating system; however, the Installer will also run on other operating systems with some minor modifications to the command-line statements (provided).
+Most modern operating systems include Python as part of their base toolkit. The information presented here is geared toward a Linux operating system; however, the Installer will also run on other operating systems with some minor modifications to the command-line statements.
 
 The Installer requires the following packages:
 
@@ -40,7 +40,7 @@ The Installer requires the following packages:
 - python-virtualenv
 - python-pip
 
-If the packages are not found, the Installer prompts you to install them.
+When installing, if the packages are not found, the Installer will prompt you to install them.
 
 ##Installing the HP Helion Development Platform  {#install}
 This section provides instructions to:
@@ -52,10 +52,10 @@ This section provides instructions to:
 - Run the Installer
 
 ###Downloading and Unpacking the Installation file {#unpack}
-The installation of the HP Helion Development Platform for the HP Helion OpenStack is provided as a small compressed *tar* file. The images for the actual services are downloaded at the Installer's request.
+The installation of the HP Helion Development Platform is provided as a small compressed *tar* file. The images for the actual services are downloaded at the Installer's request.
 
 You can register and download the package from the following URL:
-HP Helion Development Platform
+[https://helion.hpwsportal.com/#/Home/Show](https://helion.hpwsportal.com/#/Home/Show)
 
 To begin the installation:
 
@@ -71,15 +71,15 @@ To begin the installation:
 1.	If your network uses a proxy, it may be necessary to set the proxy shell variable:
 
 		# export https_proxy=<ip address or url of http proxy> 
-2.	Run this command to prepare the installer and ensure prerequisites are met. By default: the Username and Tenant is "admin," and the Region is "regionOne." If necessary, you can specify the Username, Tenant, and Region.
-The defaults to use for this option are:
+2.	Run this command to prepare the installer and ensure prerequisites are met. If necessary, you can specify the Username, Tenant, and Region.
+By default the options are set to:
 	- **Username** = admin
 	- **Tenant** **name** = admin
 	- **Region** = regionOne 
 
     		#./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region name}
 
-1.	Use the Help feature if you need additional information about the installation script:
+1.	If you need additional information about installation you can use the Help feature:
 	
 		 #./DevelopmentPlatform_Setup.sh -h
     
@@ -99,7 +99,7 @@ To connect to the Download Service:
 2.	Click the **Admin** tab and then click the **Development Platform** tab.
 4.	Click the **Configure Services** sub-tab and then click **Connect**.
 6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the HP Cloud OS Content Delivery Network.
+7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
 ###Downloading and Configuring the Messaging Service
 To download and configure the Messaging Service:
 
@@ -123,13 +123,13 @@ To connect to the Download Service:
 2.	Click the **Admin** tab and then click the **Development Platform** tab.
 4.	Click the **Configure Services** sub-tab and then click **Connect**.
 6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the HP Cloud OS Content Delivery Network.
+7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
 ###Downloading and Configuring the Application Lifecycle Service
 To download and configure the Application Lifecycle Service:
 
 
 1. In the **Configure Services** tab, go to the **Configure Services** table and locate the **Application Lifecycle Service**.
-2.	Select **Download Service **and wait for the download to complete.
+2.	Select **Download Service** and wait for the download to complete.
 3.	Once the download is complete, click **Configure Service**.
 4.	Wait for the configuration step to complete.
 5.	Log out from the Horizon console.
@@ -201,7 +201,7 @@ To connect to the Download Service:
 2.	Click the **Admin** tab and then click the **Development Platform** tab.
 4.	Click the **Configure Services** sub-tab and then click **Connect**.
 6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the HP Cloud OS Content Delivery Network.
+7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
 ###Downloading and Configuring the Database Service
 To download the Database Service:
 
@@ -282,7 +282,7 @@ To connect to the Download Service:
 2.	Click the **Admin** tab and then click the **Development Platform** tab.
 4.	Click the **Configure Services** sub-tab and then click **Connect**.
 6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the HP Cloud OS Content Delivery Network.
+7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
 ###Downloading and Configuring the Marketplace Service
 To download the Marketplace Service:
 
