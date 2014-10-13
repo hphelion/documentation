@@ -46,7 +46,7 @@ If you are not already there, `cd` to the root directory of the sample and execu
 This builds the application with Maven. It will create the *hello-world-java-1.0.war* file within the target directory. 
 
 ##Deploy the Application
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
@@ -103,6 +103,20 @@ This simple Servlet prints "Hello World".
 	        </dependency>
 	    </dependencies>
 	</project>
+
+## Run the Application
+
+1. Open the Helion Management Console. This is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window..
+
+2. Click **Applications**.
+
+3. If the file push was successful, you should see **Hello World** in the list of available applications.
+
+4. The status of the application should be `Online`. Click the name of the application to launch it.
+
+5. In the upper right-hand corner, click **View App**.
+
+6. You should see a simple text message: `Hello World!` 
 
 ##Key Learnings
 1.	ALS requires configuration information to create an environment for your app. Tools like Maven generate the *pom.xml* file for you.

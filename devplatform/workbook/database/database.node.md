@@ -6,7 +6,9 @@ product: devplatform
 
 ---
 <!--UNDER REVISION-->
-#Node MySQL Database Sample
+
+# Node MySQL Database Sample
+
 This very simple Node.js app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
 This is the **second** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/node/) sample, please do that one first.
@@ -28,7 +30,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 4. The **MySQL** check box should be checked. If it is not, check it.
 5. Click **Save**.
 
-**Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to Connecting the Database Service with ALS. 
+**Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Creating a Database Instance in the Database Service](/helion/devplatform/createdatabase/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/). 
 
 ##Download the Application Files
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-mysql-node/)
@@ -42,10 +44,6 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 4.	If you are not already there, `cd` to the root directory of the sample.
 5.	Execute `helion push -n`
 
-##Run the Application
-1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
-2.	Click **Applications**.
-3.	If the file push was successful, you should see **mysql-node** in the list of available applications.
 
 ##Key Code Snippets
 	var services = process.env.VCAP_SERVICES;
@@ -109,6 +107,12 @@ The first line in this section of the Server.js file shows how to retrieve the c
 	      type: mysql
 
 The *manifest.yaml* file is the configuration information used by ALS to set up the environment. The *services* element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.
+
+##Run the Application
+1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
+2.	Click **Applications**.
+3.	If the file push was successful, you should see **mysql-node** in the list of available applications.
+
 
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service.
