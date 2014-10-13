@@ -27,7 +27,7 @@ echo "==== Incorrect header divider ==="
 echo "(Header must begin and end with a three-dash line.)"
  echo $i
 fi
-done
+done 
 
 
 
