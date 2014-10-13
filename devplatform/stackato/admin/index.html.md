@@ -4,23 +4,25 @@ permalink: /als/v1/admin/
 ---
 <!--PUBLISHED-->
 
-Application Lifecycle Service Admin Guide[](#helion-admin-guide "Permalink to this headline")
-===========================================================================
+#Application Lifecycle Service Admin Guide {#helion-admin-guide}
 
 Application Lifecycle Service is HP's cloud application framework for creating a
 multi-language, secure and private Platform-as-a-Service (PaaS). This
 guide covers how to set it up and how to configure it for your end
 users.
 
-Management Console[](#management-console "Permalink to this headline")
------------------------------------------------------------------------
+##Wizard-Based Cluster Creation
+- [Creating a Cluster from the Project Dashboard](/helion/devplatform/ALS/deploy/)       
+- [Creating a Cluster from the Command Line](/als/v1/user/client/) 
 
--   [Management Console](/als/v1/admin/console/customize/)
+##Helion Development Platform Management Console {#management-console}
+
+-   [Management Console](/als/v1/user/console/#management-console)
 -   [Sample Applications](console/app-store)
--   [Customization](/als/v1/admin/console/customize/)
 
-Server Configuration[](#server-configuration "Permalink to this headline")
----------------------------------------------------------------------------
+
+##Advanced/Manual Server Configuration {#server-configuration}
+This section covers advanced configuration settings that allow you to modify default cluster component behavior. 
 
 -   [Server Configuration](/als/v1/admin/server/)
     -   [Accessing Server via the Command
@@ -56,8 +58,9 @@ Server Configuration[](#server-configuration "Permalink to this headline")
     -   [Executing the
         upgrade](/als/v1/admin/server/upgrade/#executing-the-upgrade)
 
-Cluster Configuration[](#cluster-configuration "Permalink to this headline")
------------------------------------------------------------------------------
+##Advanced/Manual Cluster Configuration {#cluster-configuration}
+
+This section provides information on how to set up a standalone cluster and modify default cluster level settings.
 
 -   [Cluster Setup](/als/v1/admin/cluster/)
     -   [Roles](/als/v1/admin/cluster/#roles)
@@ -91,8 +94,6 @@ Cluster Configuration[](#cluster-configuration "Permalink to this headline")
     -   [General
         Principles](/als/v1/admin/cluster/external-db/#general-principles)
     -   [MySQL](/als/v1/admin/cluster/external-db/#mysql)
-    -   [Amazon RDS for
-        MySQL](/als/v1/admin/cluster/external-db/#amazon-rds-for-mysql)
     -   [PostgreSQL](/als/v1/admin/cluster/external-db/#postgresql)
     -   [Troubleshooting](/als/v1/admin/cluster/external-db/#troubleshooting)
 -   [Harbor: TCP/UDP Port Service](/als/v1/admin/cluster/harbor/)
@@ -100,8 +101,7 @@ Cluster Configuration[](#cluster-configuration "Permalink to this headline")
     -   [Requirements & Setup](/als/v1/admin/cluster/harbor/#requirements-setup)
     -   [Troubleshooting](/als/v1/admin/cluster/harbor/#troubleshooting)
 
-Best Practices[](#best-practices "Permalink to this headline")
----------------------------------------------------------------
+##Best Practices {#best-practices}
 
 -   [Best Practices](/als/v1/admin/best-practices/)
     -   [Applying Updates](/als/v1/admin/best-practices/#applying-updates)
@@ -122,9 +122,7 @@ Best Practices[](#best-practices "Permalink to this headline")
     -   [Splunk](/als/v1/admin/best-practices/logging-examples/#splunk)
    -->
 
-Reference[](#reference "Permalink to this headline")
------------------------------------------------------
-
+##Reference {#reference}
 -   [Kato Command Reference](/als/v1/admin/reference/kato-ref/)
 -   [Managing Groups, Users & Limits](/als/v1/admin/reference/groups/)
 -   [Architectural Design](/als/v1/admin/reference/architecture/)

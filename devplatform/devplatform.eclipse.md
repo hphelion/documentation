@@ -7,22 +7,19 @@ product: devplatform
 ---
 <!--UNDER REVISION-->
 #Using the Eclipse Development Plugin
-If you’re building apps in Eclipse, use this plug-in to configure, package, and deploy your app directly to HP Helion Development Platform. 
+If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform. 
 
 Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.
 
-Before you begin, we recommend having [Eclipse IDE for Java EE developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1) installed along with the Java Runtime Environment and [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if you’d like to deploy the Java samples we provide.
+Before you begin, we recommend having [Eclipse IDE for Java EE developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1) installed along with the Java Runtime Environment and [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if youd like to deploy the Java samples we provide.
 
 ##Installation
 
 1. The plugin currently depends on software from Cloud Foundry.  Install the package [directly from the site](http://marketplace.eclipse.org/content/cloud-foundry-integration-eclipse#.VDmkTRb7xig).
 2. Open an Eclipse IDE window.
-3. Drag the install link into the Package Explorer view.
+3. Drag the install link into the Package Explorer view.<br><img src="eclipse1.png">
 
- 	<img src="eclipse1.png"/>
-
-1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.
-  <img src="eclipse2.png"/>
+1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.<br><img src="eclipse2.png"/>
 2. Type in the link to the software site that distributes the Helion Eclipse plugin.  The link is https://region-b.geo-1.objects.hpcloudsvc.com/v1/10822257696083/helioneclipseplugin.  Once the packages are discovered, ensure HP Helion Development Platform is checked and click **Next**.
 	<img src="eclipse3.png"/>
 3. Accept the license agreement and click **Finish**.  Note that you might see a warning about unsigned content.  If you see this dialog box, click **OK** to proceed.
