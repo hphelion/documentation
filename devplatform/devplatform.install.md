@@ -48,7 +48,7 @@ The installer requires the following packages. If they are not found, it will pr
 
 The installation of the HP Helion Development Platform for the HP Helion OpenStack is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installers request.
 
-You can register and download the package from the [Helion Download Network](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show).
+You can register and download the package from the [Helion Download Network](https://helion.hpwsportal.com).
 
 To begin the installation, unpack the tar file:
 
