@@ -49,7 +49,7 @@ The [Marketplace](/helion/devplatform/marketplace/) (Beta) is a product catalog 
 - It automates installation and enablement of supported applications and services.
 - The Beta version allows you to install an instance of Vertica Community Edition.
 
-The Marketplace is optionally installed as part of the Helion Development Platform, you can [install](/helion/devplatform/install/#marketplace) it and then use it to easily install applications and services to accelerate your development efforts.
+The Marketplace is optionally installed as part of the Helion Development Platform, you can [install](/helion/devplatform/install/#marketplace) it and then [use](/helion/devplatform/marketplace/) it to easily install applications and services to accelerate your development efforts.
 
 ##Platform Tools
 The Helion Development Platform is accessible via the following tools: 
