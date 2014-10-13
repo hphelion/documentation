@@ -83,14 +83,14 @@ Then the FLOATING_START, FLOATING_END, and FLOATING_CIDR cannot be anything in t
 
 `UNDERCLOUD_CODN_HTTP_PROXY` and `UNDERCLOUD_CODN_HTTPS_PROXY` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the undercloud.
 
-	export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080
-	export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
+	export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export UNDERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 
 
 `OVERCLOUD_CODN_HTTP_PROXY` and `OVERCLOUD_CODN_HTTPS_PROXY` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the overcloud.
 
-	export OVERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080
-	export OVERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
+	export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 
 `OVERCLOUD_FIXED_RANGE_CIDR` - Use this variable to set the address range of the default private network.
 
@@ -194,11 +194,11 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 	export UNDERCLOUD_NeutronPublicInterface=eth1
 	export BRIDGE_INTERFACE=em2
 	export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=202
-	export OVERCLOUD_NTP_SERVER=16.110.135.123
-	export UNDERCLOUD_NTP_SERVER=16.110.135.123
+	export OVERCLOUD_NTP_SERVER=18.110.135.123
+	export UNDERCLOUD_NTP_SERVER=18.110.135.123
 	export OVERCLOUD_COMPUTESCALE=4
-	export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080
-	export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
+	export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export UNDERCLOUD_CODN_HTTPS_PROXY=https://19.65.150.175:8080
 	export OVERCLOUD_VIRTUAL_INTERFACE=eth1
 	export OVERCLOUD_NeutronPublicInterface=vlan331
 	export NeutronPublicInterfaceRawDevice=eth1
@@ -209,8 +209,8 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 	export SVC_ALLOCATE_CIDR=192.168.132.0/24
 	export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc
 	export OVERCLOUD_FLAT_NETWORKS=svcnet1
-	export OVERCLOUD_CODN_HTTP_PROXY=http://16.85.175.150:8080
-	export OVERCLOUD_CODN_HTTPS_PROXY=http://16.85.175.150:8080
+	export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+	export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/).
@@ -238,8 +238,8 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export FLOATING_START=172.30.100.41
 		export FLOATING_END=172.30.100.200
 		export FLOATING_CIDR=172.30.100.0/24
-		export UNDERCLOUD_NTP_SERVER=16.110.135.123
-		export OVERCLOUD_NTP_SERVER=16.110.135.123
+		export UNDERCLOUD_NTP_SERVER=18.110.135.123
+		export OVERCLOUD_NTP_SERVER=18.110.135.123
 		export OVERCLOUD_CLOUD_TYPE=ESX
 		export PROVIDER_NETWORK=192.168.10.0/24
 		export CUSTOMER_ROUTER_IP=172.30.100.1

@@ -1790,7 +1790,7 @@ Remove images by name or identifier.
 
 
 ###Description
-Remove existing images by specifying thier names or IDs. Optionally, you may specify an availability zone.
+Remove existing images by specifying their names or IDs. Optionally, you may specify an availability zone.
 
 ###Examples
 Delete image 'my-image':
@@ -4841,7 +4841,7 @@ Detach a volume or volumes.
 
 
 ###Description
-Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more more volumes in a command line.
+Detach volumes from all servers.  You may specify the volume by name or ID.  You can detach one more volumes in a command line.
 
 ###Examples
 Detach the volume 'myVolume':

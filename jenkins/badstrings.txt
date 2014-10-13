@@ -12,36 +12,36 @@
  eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
- builtin 
- tempates 
- initally 
- recieves 
- timout 
- notificition 
- selction 
- additonal 
+ [bB]uiltin 
+ [Tt]empates 
+ [Ii]nitally 
+ [Rr]recieves 
+ [Tt]imout 
+ [Nn]otificition 
+ [Ss]elction 
+ [Aa]dditonal 
  eg 
- personalisation 
+ [Pp]ersonalisation 
  lets do 
- peform 
- availablilty 
- folloing 
- serveer 
- curent 
- neccessary
- sofware 
- Detatch 
- snapsot 
- perfoming 
- Unistalling 
- fo 
+ [Pp]eform 
+ [Aa]vailablilty 
+ [Ff]olloing 
+ [Ss]erveer 
+ [Cc]urent 
+ [Nn]eccessary
+ [Ss]ofware 
+ [Dd]etatch 
+ [Ss]napsot 
+ [pP]erfoming 
+ [uU]nistalling 
+ [Ff]o 
  ore 
  thier 
- adddress
- balacner 
- infomration 
- seperated 
- ouput
+ [Aa]dddress
+ [Bb]alacner 
+ [Ii]nfomration 
+ [Ss]eperated 
+ [Oo]uput
  erver 
  speciry 
  more more 
@@ -54,7 +54,7 @@
  specifyied 
  decendant 
  namned 
- Mangement 
+ [Mm]angement 
  Rempapping 
  unistalled 
  ommited 
