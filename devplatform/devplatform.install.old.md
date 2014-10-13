@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Helion Development Platform Installation and Configuration"
-permalink: /helion/devplatform/install/
+permalink: /helion/devplatform/install/old
 product: devplatform
 
 ---
