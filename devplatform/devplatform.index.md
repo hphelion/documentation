@@ -64,7 +64,7 @@ The Helion Development Platform is accessible via the following tools:
 Most of the Helion Developer Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:
  
 - **Quick Start Developer Trial**: The fastest way to set up a functional Helion Development Platform environment is the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) (sandbox) on the public cloud.
-- **Standard Installation**: Install a [Commercial HP Helion OpenStack](/helion/openstack/install/overview/)&reg; cloud and then [install](/helion/devplatform/install/) the Helion Development Platform. 
+- **Standard Installation**: Install a [Commercial HP Helion OpenStack](/helion/openstack/install/overview/)&reg; cloud and then [install](/helion/devplatform/install/) the Helion Development Platform.  
 
 ----------
 ###[Resources for Application Developers](/helion/devplatform/appdev/)
