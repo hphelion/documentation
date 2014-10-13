@@ -1,303 +1,315 @@
 ---
 layout: default-devplatform
-title: "Helion Development Platform Installation and Configuration"
+title: "HP Helion OpenStack Development Platform Installation"
 permalink: /helion/devplatform/install/
 product: devplatform
 
 ---
 <!--UNDER REVISION-->
 
-#HP Helion Development Platform Installation and Configuration
+# HP Helion Development Platform Installation and Configuration
 
-The HP Helion Development Platform installs four services:
+The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.
 
-- Messaging Service
-- Application Lifecycle Service (ALS)
-- Database Service
-- Marketplace Service
+The following topics explain how to install and configure the HP Helion Development Platform.
 
-The following topics explain how to install and configure each section of the HP Helion Development Platform:
+* [Prerequisites](#prerequisites)
 
-- [Prerequisites](#prereq)
-- [Installing the HP Helion Development Platform](#install)
-- [Installing the Messaging Service](#message)
-- [Installing the Application Lifecycle Service (ALS)](#als)
-- [Installing the Database Service](#database)
-- [Installing the Marketplace Service](#marketplace)
+* [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
 
-##Prerequisites {#prereq}
-The HP Helion Development Platform requires[HP Helion OpenStack](http://docs.hpcloud.com/helion/openstack/install/prereqs/)&reg; and has the same prerequisites. 
+* [Install the Messaging Service](#install-messaging)
 
-The system running the Installer must have Python 2.7.
+* [Install the Application Lifecycle Service](#install-als)
 
-Most modern operating systems include Python as part of their base toolkit. The information presented here is geared toward a Linux operating system; however, the Installer will also run on other operating systems with some minor modifications to the command-line statements.
+* [Install the Database Service](#install-database)
 
-The Installer requires the following packages:
+* [Install the Marketplace Service](#install-marketplace)
 
-- python-dev
-- libffi-dev
-- libssl-dev
-- python-virtualenv
-- python-pip
+* [Troubleshooting](#troubleshooting)
 
-When installing, if the packages are not found, the Installer will prompt you to install them.
+## Prerequisites<a name="prerequisites"></a>
 
-##Installing the HP Helion Development Platform  {#install}
-This section provides instructions to:
+The HP Helion Development Platform is installed in the HP Helion OpenStack [overcloud](http://docs.hpcloud.com/helion/openstack/glossary/#o-jumplink-span).  The HP Helion Development Platform has the same prerequisites as [HP Helion OpenStack]((http://docs.hpcloud.com/helion/openstack/install/prereqs/)).
 
-- Download and unpack the installation file
-- Prepare to run the Installer
-- Edit the Development Platform configuration
-- Activate the Installer
-- Run the Installer
+The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
+ 
+The installer requires the following packages. If they are not found, it will prompt you to install them.
 
-###Downloading and Unpacking the Installation file {#unpack}
-The installation of the HP Helion Development Platform is provided as a small compressed *tar* file. The images for the actual services are downloaded at the Installer's request.
+* python-dev 
+* libffi-dev 
+* libssl-dev 
+* python-virtualenv
+* python-pip
 
-You can register and download the package from the following URL:
-[https://helion.hpwsportal.com/#/Home/Show](https://helion.hpwsportal.com/#/Home/Show)
-
-To begin the installation:
-
-1.	Unpack the tar file:
-
-    	# tar -zxvf hp_helion_devplatform_commercial.tar.gz.csu
-
-3.	Verify the creation (and population) of a dev-platform-installer directory.
-
-    	# cd dev-platform-installer
-
-###Preparing to Run the Installer {#prepare}
-1.	If your network uses a proxy, it may be necessary to set the proxy shell variable:
-
-		# export https_proxy=<ip address or url of http proxy> 
-2.	Run this command to prepare the installer and ensure prerequisites are met. If necessary, you can specify the Username, Tenant, and Region.
-By default the options are set to:
-	- **Username** = admin
-	- **Tenant** **name** = admin
-	- **Region** = regionOne 
-
-    		#./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region name}
-
-1.	If you need additional information about installation you can use the Help feature:
-	
-		 #./DevelopmentPlatform_Setup.sh -h
     
-2.	After the install command completes, verify the following output:
+## Installing the HP Helion Development Platform<a name="installing-the-hp-helion-development-platform"></a>
 
-		2014-06-17 16:53:19.765 INFO Install Complete
+### Downloading and unpacking the installation file
 
-##Installing the Messaging Service {#message}
-This section provides the steps to install the Messaging Service from the Development Platform.
+The installation of the HP Helion Development Platform for the HP Helion OpenStack is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installers request.
 
-###Connecting to the Download Service
+You can register and download the package from the [Helion Download Network](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show).
 
-To connect to the Download Service:
+To begin the installation, unpack the tar file:
 
+    # tar -zxvf hp_helion_devplatform_commercial.tar.gz.csu
+    
+This creates and populates a `dev-platform-installer` directory.
 
-1. Open the Horizon console and log in as an Admin user.
-2.	Click the **Admin** tab and then click the **Development Platform** tab.
-4.	Click the **Configure Services** sub-tab and then click **Connect**.
-6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
-###Downloading and Configuring the Messaging Service
-To download and configure the Messaging Service:
+    # cd dev-platform-installer
+    
+### Preparing to run the installer
 
+If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-1. In the **Configure Services** tab, go to the **Configure Services** table and locate the** Messaging Service**.
-2.	Select **Download Service** and wait for the download to complete.
-3.	Once the download is complete, click **Configure Service**.
-4.	Wait for the configuration step to complete.
-5.	Log out from the Horizon console.
-6.	Log back into the Horizon console as a non-admin user.
-7.	Under the current project, click the **Messaging** tab to begin using the Messaging Service.
+	# export https_proxy=<ip address or url of http proxy> 
 
-##Installing the Application Lifecycle Service (ALS) {#als}
-This section provides the steps to install the Application Lifecycle Service from the Development Platform.
+Run this command to prepare the installer and ensure prerequisites are met. By default the Username is "admin", the Tenant Name is "admin" and the Region is "regionOne":
 
-###Connecting to the Download Service
-To connect to the Download Service:
+    # ./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
+    
+ Optionally, you can specify the Username, Tenant and Region
+    
+    # ./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
+    
+ The install script also has a help feature
+ 
+ 	# ./DevelopmentPlatform_Setup.sh -h
+ 	
+After the install command completes, you should see the following output from the command:
 
+Once the installation is complete, you should see the following output:
 
-1. Open the Horizon console and log in as an Admin user.
-2.	Click the **Admin** tab and then click the **Development Platform** tab.
-4.	Click the **Configure Services** sub-tab and then click **Connect**.
-6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
-###Downloading and Configuring the Application Lifecycle Service
-To download and configure the Application Lifecycle Service:
+    2014-06-17 16:53:19.765       INFO Install Complete
 
+## Install the Messaging Service<a name="install-messaging"></a>
+This section provides details on installing the Messaging service from the Development Platform.
 
-1. In the **Configure Services** tab, go to the **Configure Services** table and locate the **Application Lifecycle Service**.
-2.	Select **Download Service** and wait for the download to complete.
-3.	Once the download is complete, click **Configure Service**.
-4.	Wait for the configuration step to complete.
-5.	Log out from the Horizon console.
-6.	Log back into the Horizon console as a non-admin user.
-7.	Under the current project, click the Application Lifecycle Service tab to begin using the Application Lifecycle Service.
-##Installing the Database Service {#database}
-This section provides the steps to install the Database Service from the Development Platform.
-###Prerequisites
-There are two prerequisites to install the Database Service: 
+### Connect to the Download Service
 
+1. Open Horizon and login as the "admin" user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click **Configure Services**.
 
-- Availability Zones
-- Quotas
+2. Click the **Connect** button on the **Configure Services** screen and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
 
-##Creating Availability Zones
+### Download and Configure the Messaging Service
 
-To configure the Database Service in a highly available manner, you must create Availability Zones for the compute hosts in the service.
+1. In the **Configure Services** panel locate the Messaging (Beta) item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
-The following steps describe how to create three Availability Zones and then assign a compute host to the zone:
+2. Once the download is complete, click the **Configure Service** button to configure the Messaging Service and wait for the configuration step to complete.
 
+3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Messaging (Beta)** panel under the current Project to begin using the Messaging Service.
 
+## Install the Application Lifecycle Service (ALS)<a name="install-als"></a>
+This section provides details on installing the Application Lifecycle service from the Development Platform.
 
-1. Connect to an overcloud controller node and execute the following commands to create three Availability Zones named: AZ-1, AZ-2, and AZ-3 
+### Prerequisites
 
-		nova aggregate-create aggregate-AZ-1 AZ-1 
-		nova aggregate-create aggregate-AZ-2 AZ-2 
-		nova aggregate-create aggregate-AZ-3 AZ-3
-	 
-1.	Validate that the Availability Zones were correctly created by issuing the following command to list them:
+For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of ["Starting the seed and building your cloud"](http://docs.hpcloud.com/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
+
+### Connect to the Download Service
+
+1. Open Horizon and login as the "Admin" user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click on **Configure Services**.
+
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+
+### Download and Configure the Application Lifecycle Service
+
+1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
+
+3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
+
+## Install the Database Service<a name="install-database"></a>
+This section provides details on installing the Database Service from the Development Platform.
+
+### Prerequisites
+
+#### Availability Zones
+
+To configure the **Database Service** in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.
+
+1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3". 
 	
-		nova aggregate-list
-
-2.	Add a compute host to your newly created Availability Zone by issuing the following command:
+		nova aggregate-create aggregate-AZ-1 AZ-1
+		nova aggregate-create aggregate-AZ-2 AZ-2
+		nova aggregate-create aggregate-AZ-3 AZ-3
+		
+ 2. Validate that the availability zones were correctly created by issuing the following command.
+ 	
+ 		nova aggregate-list
+ 
+3. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone.
 	
 		nova aggregate-add-host <id> <hostname>
-	**NOTE**: Perform this step for each compute host that you want to associate with an Availability Zone.
-1.	Verify the Availability Zones by issuing the following command to list all zones and the compute hosts associated with them:
-
-    	nova availability-zone-list
-
-###Quotas
-The Database Service is installed in the Admin Tenant of the HP Helion OpenStack installation. 
-
-The Admin Tenant must have sufficient quota available and unused for the resources that the Database Service uses.
-To check the existing quota availability:
-
-
-1. Log on to Horizon as the Admin.
-2.	Click the **Compute** tab and then open the **Overview** panel.
-3.	If you are not configuring the Database Service to be highly available, you must have the following quotas available:
-	- Instances: 6
-	- RAM: 24GB
-	- Floating IPs: 6
-	- Volumes: 4
-	- Volume Storage: 160GB
-
-4. If you have set up Availability Zones and plan to install the Database Service in a highly available configuration, you must have the following quotas available:
-	- Instances: 16 
-	- RAM 64GB 
-	- Floating IPs: 16 
-	- Volumes: 4 
-	- Volume Storage: 160GB
-
-###Connecting to the Download Service
-To connect to the Download Service:
-
-
-1. Open the Horizon console and log in as an Admin user.
-2.	Click the **Admin** tab and then click the **Development Platform** tab.
-4.	Click the **Configure Services** sub-tab and then click **Connect**.
-6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
-###Downloading and Configuring the Database Service
-To download the Database Service:
-
-
-1. In the **Configure Services** tab, go to the **Configure Services** table and locate the Database Service.
-2. Click **Download Service** and wait for the download to complete.
-3. Once the download is complete, click **Configure Service**.
-2.	In the Configuration dialog, specify the following configuration options:
-	- **Key Pair** (Required) -The Key Pair to install on all instances created as part of the Database Service. An Admin can use the public key to get SSH access to all instances.
-	- **External Network** (Required) -The Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition, this network is named ext-net.
-	- **NTP Server IP** -The IP Address to an NTP server to use if instances will not have outbound access to the Internet.
-	- **Service User Password**(Required) -The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
-	- **Pool User Password** (Required) -Specify a password for the pool user that is created as part of the installation. Keep this password for future use.
-	- **Icinga User Password** (Required) -Specify a password for the Icinga Service that is created as part of the installation. Keep this password for future use.
-	- **Volume Type** (Required) -The volume type to use when creating database instances.
-	- **Enable HA** -Specify if the Database Service is to be setup in an HA configuration. If selected, each component of the service will have three instances created, and will be active at all times.
-	- **RabbitMQ IP Address** (Required) -Specify the IP address of the central Helion OpenStack Logstash Server.
-3.	After you provide the information for all of the configuration options, click **Configure**. Wait for the configuration status to change to **Configured**.
-
-##Configuring the Load Balancer for the Database Service<a name=""></a>
-The steps in this section configure the Load Balancer to take advantage of the highly available Database Service.
-
-Perform these steps **only** if you have configured the Availability Zones and configured the Database Service with the *Enable HA* option.
-
-You must be connected to the undercloud node to perform the following steps:
-
-1. Identify the API server IPs on the SVC network by running this command:
  
-		$ nova list | awk '/trove[0-9]*_api/{print $12 }' | cut -d "=" -f 2
+4. The following command can be used to list all availability zones and the compute hosts associated with them.
 
-	You should have as many API servers (and IPs) as you have Available Zones in your HP Helion OpenStack installation.
-1.	Identify the Virtual IP that the controller nodes use to load balance the Helion OpenStack services by running this command:
+		nova availability-zone-list
 
-		$ keystone endpoint-list | awk '/8779/{print $6}' | egrep -0 "[0-9]+.[0-9]+.[0-9]+.[0-9]+."
+#### Quotas
 
-2.	Update the configuration on each of the Helion OpenStack controller nodes by connecting to the controller and performing these steps:
+The **Database Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
 
-	A.	Edit the */etc/haproxy/manual/paas.cfg* file. <br>Add the following lines, repeating the last line once for each API server you identified in Step 1:
-
-    		listen trove_api
-    		bind <Virtual IP from step 2>:8779
-    		server trove-trove<n>_api<uniqueid> <API server ns IP Address> check
-    		inter 2000 rise 2 fall 5
-
-	B. Edit the */etc/iptables/iptables* file.<br>Add to the end of it:
+If you are not configuring the Database Service to be highly available you must have the following quota available:
 	
-			-I INPUT -p -tcp --dport 8779 -j ACCEPT
-
-  	C. Run the following command as *root*:
-  		
-			$ iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
-
-  	D. Reload the haproxy service configuration:
-  		
-			$ sudo service haproxy reload
+|Resource | Usage |
+|--------------|-------------:|
+|Floating IPs|            6|
+|Instances|               6|         
+|Networks|              2|
+|RAM (GB)|               24|
+|Routers|                  2|
+|Security Groups|    6|
+|Volumes|                 4|
+|Volume Storage (GB)| 160|
 	
-1.	Log out from the Horizon panel.
-2.	Log back into the Horizon panel as a non-admin user.
-3.	Under the current project, click the Database tab to begin using the Database Service.
+If you have setup Availability Zones and plan to install the Database Service in a highly available configuration you must have the following quota available:
 
-##Installing the Marketplace Service {#marketplace}
-This section provides the steps to install the Marketplace Service from the Development Platform.
+|Resource | Usage |
+|--------------|-------------:|
+|Floating IPs|            16|
+|Instances|               16|         
+|Networks|                  2|
+|RAM (GB)|               64|
+|Routers|                   2|
+|Security Groups|    6|
+|Volumes|                 4|
+|Volume Storage (GB)| 160|
 
-###Quotas
-The Marketplace Service is installed in the Admin Tenant of the HP Helion OpenStack installation. The Admin Tenant must have sufficient quota available and unused for the resources that the Marketplace Service uses.
+In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.
 
-To check the existing quota availability:
+### Connect to the Download Service
 
-1. Log on to Horizon as Admin.
-2.	Click the **Compute** tab and then open the **Overview** panel.
-3.	Ensure that the Admin Tenant has enough quota available to create four small instances.
-###Connecting to the Download Service
+1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** panel under Admin. Then click on the **Configure Services** sub-panel.
 
-To connect to the Download Service:
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
 
+### Download and Configure the Database Service
 
-1. Open the Horizon console and log in as an Admin user.
-2.	Click the **Admin** tab and then click the **Development Platform** tab.
-4.	Click the **Configure Services** sub-tab and then click **Connect**.
-6.	Click **Sign-up** and complete the sign-up process if you do not yet have an account.
-7.	Enter your username and password for the [HP Cloud OS Content Delivery Network](https://helion.hpwsportal.com/#/Home/Show).
-###Downloading and Configuring the Marketplace Service
-To download the Marketplace Service:
+In the **Configure Services** panel locate the Database Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
+#### Configuring the Database Service
 
-1. In the **Configure Services** tab, go to the **Configure Services** table and locate the Application Lifecycle Service For HP Helion OpenStack.
-2.	Click **Download Service** and wait for the download to complete.
-3. Once the download is complete, click **Configure Service**.
-2.	In the configuration dialog, specify the following configuration options:
-	- **Key Pair** (Required) -- The Key Pair to install on all instances created as part of the Marketplace Service. An Admin can use the public key to get SSH access to all instances.
-	- **External Network** (Required) -- The Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition, this network is named ext-net.
-	- **NTP Server IP** -- The IP Address to an NTP server to use if instances will not have outbound access to the Internet.
-	- **Service User Password** (Required) -- The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
-	- **Subnet Range** -- The subnet to use for the Marketplace Service.
+1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+	**Key Pair (Required)** - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
 
+	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack this network is named 'ext-net'
+
+	**NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet. 
+
+	**Service User Password (Required)** - The password for the Admin user that is currently logged in. This password **MUST** match the password used to login to Horizon.
+
+	**Icinga User Password (Required)** - Specify a password for the Icinga service that is created as part of the install. Keep this password for future use.
+
+	**Volume Type (Required)** - The volume type to use when creating database instances.
+
+	**Enable HA** - Specify if the database service is to be setup in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
+
+	**RabbitMQ IP Address (Required)** - Specify the IP address of the central Helion OpenStack Logstash server.
+
+2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
+3. The following steps will configure the load balancer to take advantage of the highly available database service. Only execute these steps if you have configured Availability Zones and selected the "Enable HA" option when configuring the **Database Service**. To perform the following steps you must be connected to the undercloud node.
+	
+	1. Identify the API server IPs on the SVC network:
+
+			$ nova list | awk '/trove[0-9]*_api/{ print $12 }' | cut -d "=" -f 2
+		You should have as many API servers (and IPs) as you have AZs in your Helion OpenStack install.
+
+	2. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion 	OpenStack services:
+			
+			$ keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+
+	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
+
+		a. Edit the /etc/haproxy/manual/paas.cfg and add the following lines. The last line should be repeated once for each API server identified in step 1. 
+	
+				listen trove_api
+				bind <Virtual IP from step 2>:8779
+				server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5
+
+		b. Edit the /etc/iptables/iptables file and add to the end of it:
+
+				-I INPUT -p tcp --dport 8779 -j ACCEPT
+
+		c. Run the following command as root:
+
+				$ sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
+				
+		d. Reload the haproxy service configuration
+		
+				$ sudo service haproxy reload
+
+3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Database** panel under the current Project to being using Database Service.
+
+## Install the Marketplace Service<a name="install-marketplace"></a>
+This section provides details on installing the Marketplace service from the Development Platform.
+
+### Prerequisites
+
+The **Marketplace Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
+
+|Resource | Usage      | 
+|--------------|-------------:|
+|Floating IPs|           16|
+|Instances|                4|         
+|Networks|                1|
+|RAM (GB)|               8|
+|Routers|                   2|
+|Security Groups|   4|
+
+### Connect to the Download Service
+
+1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under Admin. Then click on the **Configure Services** sub-panel.
+
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+
+### Download and Configure the Marketplace Service
+
+In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+#### Configuring the Marketplace Service
+
+1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
+
+	**Key Pair (Required)** - Key Pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.
+
+	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack this network is named 'ext-net'
+
+	**NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet. 
+
+	**Service User Password (Required)** - The password for the Admin user that is currently logged in. This password **MUST** match the password used to login to Horizon.
+
+	**Subnet Range** - The subnet to use for Marketplace
+	
+## Troubleshooting<a name="troubleshooting"></a>
+
+### Service is stuck in download
+
+There are several situations in which a download will not complete.  One cause which is documented, is because the `tmp` directory ran out of space. There is a prerequisite to mount the `tmp` directory to a larger partition.  If you have completed this and it is still failing to download then we will need to reset the download. In the current release, this requires a manual process.
+
+As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the wscatalog.<id> folder which contains the cached download. The service should now be available to download again.
+
+### Configuring the Application LifeCycle Servce to Use an HTTP Proxy
+
+If your network has an HTTP proxy, the helion client may attempt to use this when connecting to api.helion-xxxx.local and fail because the changes in /etc/hosts file are not reflected in the proxy. To work around this problem in Windows, enable \*.local in the ProxyOverride registry key HCU/Software/Microsoft/Windows/CurrentVersion/Internet Settings.
+
+In some cases, it may be a requirement that any HTTP request is first handled through an upstream or parent proxy. In this case it is necessary to tell Polipo in ALS about the proxy so it knows how to handle this correctly.
+
+1. Log into the ALS Server and open the Polipo config file /etc/polipo/config. 
+	a. If you are using a parent proxy add the following lines: 
+
+  			parentProxy = <IP>:<PORT>
+			parentAuthCredentials = "myuser:mypassw"
+		
+	b. If you are using a SOCKS proxy add the following lines:
+	
+	  		socksParentProxy=<IP>:<PORT>
+			socksProxyType=socks4a | OR | socks5;
+
+2. Restart Polipo using the following command:
+
+  		$ sudo /etc/init.d/polipo restart
+
+For log info, any errors reported by Polipo are available on the Application Lifecycle Service server in /var/log/polipo/polipo.log.
