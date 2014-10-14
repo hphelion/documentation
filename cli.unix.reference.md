@@ -2383,7 +2383,7 @@ Remove a rule from the security group.
 
 
 ###Description
-Remove a rule from the security group, specifyied its ID. Optionally, you can specify an availability zone.
+Remove a rule from the security group, specified its ID. Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the rule `mysecgroup` from security group `111`:
@@ -5604,7 +5604,7 @@ Remove a rule from the security group.
 
 
 ###Description
-Remove a rule from the security group, specifyied its ID. Optionally, you can specify an availability zone.
+Remove a rule from the security group, specified its ID. Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the rule `mysecgroup` from security group `111`:
