@@ -511,13 +511,13 @@ If the application exists solely to run commands via
 [*cron*](#yml-cron), a dummy command such as '*sleep 365d*'
 should be specified.
 
-The `$PROCESSES_WEB` and `$STACKATO_UWSGI` variables can also be used with `processes: web:`.
+The `$PROCESSES_WEB` and `$HELION_UWSGI` variables can also be used with `processes: web:`.
 
 `$PROCESSES_WEB` contains the command that is used
 to start the web application, if you want to override the default
 command.
 
-`$STACKATO_UWSGI` is defined for runtimes using
+`$HELION_UWSGI` is defined for runtimes using
 uWSGI (Perl and Python), and it contains the command to start uWSGI with
 all relevant options. It can be used if you are appending additional
 uWSGI options to the command.

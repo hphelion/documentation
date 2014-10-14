@@ -87,7 +87,7 @@ the license agreement.
 **Note**
 
 **The password you choose here becomes the login password for the**
-`stackato` **user on the VM** (e.g. for
+`helion` **user on the VM** (e.g. for
 `ssh` access).
 
 Once you've logged in, you can begin to add other users and admins,

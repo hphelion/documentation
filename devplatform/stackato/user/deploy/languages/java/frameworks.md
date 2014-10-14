@@ -34,7 +34,6 @@ below:
 
 -   DATABASE\_URL
 -   VCAP\_SERVICES
-<!---   STACKAT0\_SERVICES-->
 
 If your application uses only one data service, use the DATABASE\_URL
 variable. If it uses more than one, use

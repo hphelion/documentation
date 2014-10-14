@@ -22,8 +22,7 @@ Apache Maven
 app
 :   Any application software intended for instantiation in Application Lifecycle Service. At
     minimum it consists of the application, expressed in a dynamic
-    language, plus a configuration file named *stackato.yml* or
-    *manifest.yml*.
+    language, plus a configuration file named *manifest.yml*.
 
 Avahi
 :   An implementation of [*multicast
@@ -87,7 +86,7 @@ dynamic DNS
 
 filesystem
 :   In Application Lifecycle Service, **filesystem** refers to persistent storage accessed by
-    an application :term\`service\` specified in *stackato.yml* through
+    an application :term\`service\` specified in *manifest.yml* through
     a server which has been assigned the filesystem
     [*role*](/als/v1/user/reference/glossary/#term-role).
 
@@ -214,7 +213,7 @@ service
 :   In Application Lifecycle Service, a **service** is a type of
     [*role*](/als/v1/user/reference/glossary/#term-role) that may be
     provisioned on a server and accessed by an application as specified
-    in *stackato.yml*.
+    in *manifest.yml*.
 
 supervisord
 :   A process control system used by Application Lifecycle Service internally. (see
@@ -226,7 +225,6 @@ tty console
 
 YAML
 :   A notation for structured text data, acronym for [YAML Ain't Markup
-    Language](http://en.wikipedia.org/wiki/YAML), used in *stackato.yml*
-    and *manifest.yml* configuration files.
+    Language](http://en.wikipedia.org/wiki/YAML), used in *manifest.yml* configuration files.
 
  

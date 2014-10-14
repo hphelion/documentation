@@ -46,7 +46,7 @@ To get a list of available commands or help on a particular command:
 See also the [Command Reference](/als/v1/user/reference/client-ref/#command-ref-client) for a full
 list of commands.
 
-##Targeting the API Endpoint {#targeting-the-api-endpoint})
+##Targeting the API Endpoint {#targeting-the-api-endpoint}
 
 
 Before you can use the client, you must set the target URL, which is also known

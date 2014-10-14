@@ -54,8 +54,8 @@ each app. For example:
       services: mysql
       license: MPL
       commit: master
-      src: https://github.com/Stackato-Apps/bugzilla.git
-      info: https://github.com/Stackato-Apps/bugzilla.git#readme
+      src: https://github.com/Helion-Apps/bugzilla.git
+      info: https://github.com/Helion-Apps/bugzilla.git#readme
       icon: https://get.helion.com/store/icon/bugzilla.png
       mem: 256
 
@@ -67,8 +67,8 @@ each app. For example:
       services: postgresql
       license: BSD
       commit: helion
-      src: https://github.com/Stackato-Apps/django-cms.git
-      info: https://github.com/Stackato-Apps/django-cms.git#readme
+      src: https://github.com/Helion-Apps/django-cms.git
+      info: https://github.com/Helion-Apps/django-cms.git#readme
       icon: https://get.helion.com/store/icon/django-cms.png
       mem: 128
 
@@ -81,8 +81,8 @@ each app. For example:
       icon: https://get.helion.com/store/icon/chat.png
       mem: 64
       license: MIT
-      src: https://github.com/Stackato-Apps/node-chat.git
-      info: https://github.com/Stackato-Apps/node-chat.git#readme
+      src: https://github.com/Helion-Apps/node-chat.git
+      info: https://github.com/Helion-Apps/node-chat.git#readme
 
 The YAML string requires two top-level keys: `store`
 and `apps`.

@@ -23,7 +23,7 @@ a console application.
 To learn more see:
 
 - [Working with applications in Node](/als/v1/user/deploy/languages/node/)
-- [The stackato.yml reference](/als/v1/user/deploy/stackatoyml/)
+- [The manifest.yml reference](/als/v1/user/deploy/stackatoyml/)
 
 ##HP Helion SDK
 Javascript applications can communicate directly with the [Helion APIs](ref="http://docs.hpcloud.com/api) through a REST client

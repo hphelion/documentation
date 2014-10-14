@@ -18,7 +18,7 @@ Server Log Files[](#server-log-files "Permalink to this headline")
 
 
 If you need to troubleshoot or monitor Application Lifecycle Service logs with a third party,
-they can be found in the \~/stackato/logs/\* directory on the Application Lifecycle Service
+they can be found in the \~/helion/logs/\* directory on the Application Lifecycle Service
 server.
 
 These logs are under daily log rotation with the use of
@@ -26,7 +26,7 @@ These logs are under daily log rotation with the use of
 Up to three days worth of compressed logs are kept before deletion of
 the oldest archive.
 
-To modify the log rotation, edit the */etc/logrotate.d/stackato* file as
+To modify the log rotation, edit the */etc/logrotate.d/helion* file as
 needed. To disable Application Lifecycle Service log rotation, delete the file or move it to
 another folder.
 

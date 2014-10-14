@@ -26,7 +26,7 @@ like:</li>
 </pre></div>
 </div>
 <ul class="simple">
-<li>A <tt class="docutils literal"><span class="pre">stackato.yml</span></tt> file with at least your application name.  You may
+<li>A <tt class="docutils literal"><span class="pre">manifest.yml</span></tt> file with at least your application name.  You may
 also place other configuration information in this file such as module
 requirements.  The minimal file would look like:</li>
 </ul>
@@ -34,7 +34,7 @@ requirements.  The minimal file would look like:</li>
 </pre></div>
 </div>
 <ul class="simple">
-<li>If your module requirements are not in the <tt class="docutils literal"><span class="pre">stackato.yml</span></tt> file, you
+<li>If your module requirements are not in the <tt class="docutils literal"><span class="pre">manifest.yml</span></tt> file, you
 might need a <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> or <tt class="docutils literal"><span class="pre">requiremenbts.pypm</span></tt> (pypm) file.
 For example your <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> may contain:</li>
 </ul>
@@ -58,7 +58,7 @@ launch the application.</li>
 user interface or a command line client.  To learn more see:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/languages/python/">Working with applications in Python</a></li>
-<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The stackato.yml reference</a></li>
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The manifest.yml reference</a></li>
 </ul>
 </div>
 <div class="section" id="controlling-hp-helion-with-your-application">
@@ -123,7 +123,7 @@ application will need the following in the root directory of the
 application:
 
 -   a list of module requirements in a
-    [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml),
+    [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml),
     [requirements.txt
     (pip)](http://www.pip-installer.org/en/latest/cookbook.html#requirements-files),
     or *requirements.pypm* ([pypm](http://code.activestate.com/pypm/))
@@ -134,7 +134,7 @@ application:
     [example-python-django](https://github.com/Stackato-Apps/example-python-django)
     Application Lifecycle Service sample has the following simple *Procfile*:
 
-        web: gunicorn stackato.wsgi -b 0.0.0.0:$PORT
+        web: gunicorn helion.wsgi -b 0.0.0.0:$PORT
 
 This buildpack uses Python 2.7 by default. To specify Python 3.3, create
 a *runtime.txt* file setting the version (i.e. `python-3.3`) and use the \$PYTHON\_VERSION environment variable in the
@@ -160,10 +160,10 @@ application object. For a minimal sample application, see
 [wsgi-helloworld](https://github.com/Stackato-Apps/wsgi-helloworld).
 
 You may add additional arguments to uWSGI in your
-`stackato.yml`, eg:
+`manifest.yml`, eg:
 
     processes:
-      web: $STACKATO_UWSGI --mount foo=app.py --import module
+      web: $HELION_UWSGI --mount foo=app.py --import module
 
 It is possible to [*serve static files with
 uWSGI*](#uwsgi-python-static-files).

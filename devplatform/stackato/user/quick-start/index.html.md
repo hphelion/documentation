@@ -130,12 +130,10 @@ necessary.
 ### Sample Applications[](#sample-applications "Permalink to this headline")
 
 Numerous sample applications are available from
-[Application Lifecycle Service-Apps](https://github.com/stackato-Apps) on Github, each with a
+[Application Lifecycle Service-Apps](https://github.com/Stackato-Apps) on Github, each with a
 README.md file showing how to deploy it on Application Lifecycle Service.
 
-Many of these have a
-[*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) or
-[*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) configuration
+Many of these have a [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) configuration
 file, so you can skip the interactive prompts by using the
 `-n` option.
 
