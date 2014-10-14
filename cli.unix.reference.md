@@ -2457,7 +2457,7 @@ Add a server.
 : Volume to use to create the server.
 
 **-s, --security-group=SECURITY_GROUP**
-: Specify a security group or comma seperated list of security groups to be used.
+: Specify a security group or comma separated list of security groups to be used.
 
 **-p, --private-key-file=PRIVATE_KEY_FILE**
 : Name of the pem file with your private key.
@@ -5678,7 +5678,7 @@ Add a server.
 : Volume to use to create the server.
 
 **-s, --security-group=SECURITY_GROUP**
-: Specify a security group or comma seperated list of security groups to be used.
+: Specify a security group or comma separated list of security groups to be used.
 
 **-p, --private-key-file=PRIVATE_KEY_FILE**
 : Name of the pem file with your private key.
