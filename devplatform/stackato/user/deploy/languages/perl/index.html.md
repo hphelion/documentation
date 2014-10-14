@@ -161,7 +161,7 @@ normal method:
     use MyCustomPM;
 
 Any non-core dependencies required by these custom modules should be
-specified explicitly in *requirements.txt*, *stackato.yml* or
+specified explicitly in *requirements.txt*, *manifest.yml* or
 *Makefile.PL* (see below) otherwise those dependencies will not be
 packed in the application droplet.
 
@@ -236,7 +236,7 @@ large test suites.
 
 To disable testing for cpanm in staging, set
 [PERL\_CPANM\_OPT](http://search.cpan.org/dist/App-cpanminus/bin/cpanm#OPTIONS)
-to '--notest' in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml):
+to '--notest' in [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml):
 
     name: myapp
     env:
@@ -257,19 +257,19 @@ Serving Static Files with uWSGI[](#serving-static-files-with-uwsgi "Permalink to
 
 It is possible to serve static files with uWSGI using
 `processes: web:` in the
-[*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to specify
+[*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to specify
 folders that will be served statically and not by the app.
 
 To make a single folder serve statically, use `--check-static`:
 
     processes:
-        web: $STACKATO_UWSGI --check-static $HOME/<folder>
+        web: $HELION_UWSGI --check-static $HOME/<folder>
 
 To specify multiple folders with static files that do not share a common
 root, use `--static-map`:
 
     processes:
-        web: $STACKATO_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub
+        web: $HELION_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub
 
 In this case */foo/index.html* would serve *\$HOME/static/index.html*,
 and */bar/index.html* would serve *\$HOME/sub/index.html*. If the file
