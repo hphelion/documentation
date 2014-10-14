@@ -10,7 +10,7 @@ product: devplatform
 
 This very simple Node.js web app displays the text "Hello World!". This sample is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
-##Pre-requisites
+##Prerequisites
 If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
@@ -38,10 +38,19 @@ The *Procfile* tells the Helion Development Platform how to run your Node.js app
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
+2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute 
+
+		helion login
+
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute 
+
+		helion target https://api.xx.xx.xx.xx.example.com
+
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push -n`
+
+5.	Execute 
+
+		helion push -n
 
 ##Run the Application
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
