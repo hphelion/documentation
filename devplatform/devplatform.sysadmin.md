@@ -17,10 +17,10 @@ product: devplatform
 * [Installing the Marketplace](/helion/devplatform/marketplace)
 
 ##Administration
-Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/als/v1/user/quick-start/#helion-client). For more information, see [Organizations](/als/v1/user/reference/client-ref/#organizations/).
+Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/als/v1/user/reference/client-ref/). For more information, see [Organizations](/als/v1/user/reference/client-ref/#organizations/).
 
 - [Application Lifecycle Service (ALS) Administrators Guide](/als/v1/admin/)
-- [The Management Console](/als/v1/user/console/)
+- [Management Console](/als/v1/user/console/)
 - [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
 
 ----

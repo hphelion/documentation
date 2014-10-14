@@ -6943,56 +6943,52 @@ Exit the shell. No-op if not in a shell.
     <td>Alias of --no-prompt.</td>
     </tr>
 </table>
-### helion quota help *\<cmdname\*###
-Retrieve help for a command or command set. Without arguments help
-    for all commands is given. The default format is --full.
+### helion quota help *\<cmdname\>*###
+Retrieve help for a command or command set. Without arguments, help for all commands is given. The default format is --full.
     
 <table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--by-category</td>
-    <td>Activate by-category form of the help.</td>
-    </tr>    <tr><td>--full</td>
-    <td>Activate full form of the help.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Activate json form of the help.</td>
-    </tr>    <tr><td>--list</td>
-    <td>Activate list form of the help.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--short</td>
-    <td>Activate short form of the help.</td>
-    </tr>    <tr><td>--width</td>
-    <td>The line width to format the help for. Defaults to the terminal
-    width, or 80 when no terminal is available.</td> </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-w</td>
-    <td>Alias of --width.</td>
-    </tr>
+<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+<tr><td>--by-category</td>
+<td>Activate by-category form of the help.</td>
+</tr>    <tr><td>--full</td>
+<td>Activate full form of the help.</td>
+</tr>    <tr><td>--json</td>
+<td>Activate json form of the help.</td>
+</tr>    <tr><td>--list</td>
+<td>Activate list form of the help.</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--short</td>
+<td>Activate short form of the help.</td>
+</tr>    <tr><td>--width</td>
+<td>The line width to format the help for. Defaults to the terminal
+width, or 80 when no terminal is available.</td> </tr><tr>
+<td>-n</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>-w</td>
+<td>Alias of --width.</td>
+</tr>
 </table>
 ### helion trace###
 Print the saved REST trace for the last client command to stdout.
     
 <table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-
-    </tr></table>
+<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+<tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>-n</td>
+<td>Alias of --no-prompt.</td>
+</tr></table>

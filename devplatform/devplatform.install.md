@@ -27,7 +27,7 @@ The following topics explain how to install and configure the HP Helion Developm
 
 * [Troubleshooting](#troubleshooting)
 
-## Prerequisites<a name="prerequisites"></a>
+## <a name="prerequisites"></a>Prerequisites
 
 The HP Helion Development Platform is installed in the HP Helion OpenStack [overcloud](http://docs.hpcloud.com/helion/openstack/glossary/#o-jumplink-span).  The HP Helion Development Platform has the same prerequisites as [HP Helion OpenStack](http://docs.hpcloud.com/helion/openstack/install/prereqs/).
 
@@ -42,7 +42,7 @@ The installer requires the following packages. If they are not found, it will pr
 * python-pip
 
     
-## Installing the HP Helion Development Platform<a name="installing-the-hp-helion-development-platform"></a>
+## <a name="installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</a>
 
 ### Downloading and unpacking the installation file
 
@@ -82,7 +82,7 @@ Once the installation is complete, you should see the following output:
 
     2014-06-17 16:53:19.765       INFO Install Complete
 
-## Install the Messaging Service<a name="install-messaging"></a>
+## <a name="install-messaging"></a>Install the Messaging Service
 This section provides details on installing the Messaging service from the Development Platform.
 
 ### Connect to the Download Service
@@ -99,7 +99,7 @@ This section provides details on installing the Messaging service from the Devel
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Messaging (Beta)** panel under the current Project to begin using the Messaging Service.
 
-## Install the Application Lifecycle Service (ALS)<a name="install-als"></a>
+## <a name="install-als"></a>Install the Application Lifecycle Service (ALS)
 This section provides details on installing the Application Lifecycle service from the Development Platform.
 
 ### Prerequisites
@@ -120,7 +120,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
 
-## Install the Database Service<a name="install-database"></a>
+## Install the Database Service {#install-database}
 This section provides details on installing the Database Service from the Development Platform.
 
 ### Prerequisites
@@ -129,30 +129,30 @@ This section provides details on installing the Database Service from the Develo
 
 To configure the **Database Service** in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.
 
-1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3". 
-	
-		nova aggregate-create aggregate-AZ-1 AZ-1
-		nova aggregate-create aggregate-AZ-2 AZ-2
-		nova aggregate-create aggregate-AZ-3 AZ-3
-		
- 2. Validate that the availability zones were correctly created by issuing the following command.
- 	
- 		nova aggregate-list
+1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3".
  
-3. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone.
-	
-		nova aggregate-add-host <id> <hostname>
+		 nova aggregate-create aggregate-AZ-1 AZ-1 
+		 nova aggregate-create aggregate-AZ-2 AZ-2	
+		 nova aggregate-create aggregate-AZ-3 AZ-3
  
-4. The following command can be used to list all availability zones and the compute hosts associated with them.
-
-		nova availability-zone-list
+2. Validate that the availability zones were correctly created by issuing the following command. 
+ 
+		 nova aggregate-list
+ 
+6. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone. 
+ 
+		 nova aggregate-add-host <id> <hostname>
+ 
+10. The following command can be used to list all availability zones and the compute hosts associated with them. 
+ 
+		 nova availability-zone-list 
 
 #### Quotas
 
 The **Database Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
 
 If you are not configuring the Database Service to be highly available you must have the following quota available:
-	
+
 |Resource | Usage |
 |--------------|-------------:|
 |Floating IPs|            6|
@@ -243,7 +243,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Database** panel under the current Project to being using Database Service.
 
-## Install the Marketplace Service<a name="install-marketplace"></a>
+## <a name="install-marketplace"></a>Install the Marketplace Service
 This section provides details on installing the Marketplace service from the Development Platform.
 
 ### Prerequisites
@@ -283,7 +283,7 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 	**Subnet Range** - The subnet to use for Marketplace
 	
-## Troubleshooting<a name="troubleshooting"></a>
+## <a name="troubleshooting"></a>Troubleshooting
 
 ### Service is stuck in download
 
@@ -313,3 +313,10 @@ In some cases, it may be a requirement that any HTTP request is first handled th
   		$ sudo /etc/init.d/polipo restart
 
 For log info, any errors reported by Polipo are available on the Application Lifecycle Service server in /var/log/polipo/polipo.log.
+
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+ 
+

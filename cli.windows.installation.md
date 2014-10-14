@@ -128,4 +128,4 @@ the install folder specified while in the setup wizard. From there you can regis
 
 When you upgrade to a new version of the HP Helion Public Cloud environment CLI software for Windows PowerShell, you must first de-install the previous version of the software.  You can do this using the Windows `Add/Remove Programs` or `Programs and Features` utility (depending on the version of Windows you're using).  Search through the listing of programs for "HPCS-Powershell" and uninstall it.  
 
-Once you have unistalled the previous revision, simply follow the instructions above to install the latest version, and you're be good to go!
+Once you have uninstalled the previous revision, simply follow the instructions above to install the latest version, and you're be good to go!

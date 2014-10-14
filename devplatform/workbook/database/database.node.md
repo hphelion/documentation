@@ -24,7 +24,7 @@ If you are missing any of these items, you will need to [install them](/helion/d
 
 If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster’s link.
+1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
 2. On the **Admin** tab, click **Cluster**.
 3. Click the **Settings** icon (a gear icon in the upper right corner)
 4. The **MySQL** check box should be checked. If it is not, check it.
@@ -119,4 +119,7 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 2.	You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
-[Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/node/) | [Next Sample](/helion/devplatform/workbook/messaging/node/)
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+ 

@@ -17,7 +17,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
 - Access to the web-based Helion Management console.
 ##Download the Application Files
-[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-phps)
+[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-mysql-php)
 
 ### About the Application Files
 To create a CloudFoundry&trade; app in PHP, the only mandatory files are the *index.php* and *manifest.yml* files. 
@@ -57,6 +57,4 @@ This simple PHP script prints "Hello World".
 The *manifest.yaml* file is the configuration information used by ALS to set up the environment. <br>
 The *buildpack* element provides ALS with the correct buildpack to use for PHP, which ensures the correct tools and runtimes are installed in the application environment.
 
-
-[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/php/) 
 

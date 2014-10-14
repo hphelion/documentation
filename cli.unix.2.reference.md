@@ -457,7 +457,7 @@ Revoke the specified permissions.
 
 
 ###Description
-Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
+Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
 Revoke public read from 'my_container':
@@ -1607,7 +1607,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. You may filter the images displayed by specifying one or more image names or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 List the images:
@@ -1726,7 +1726,7 @@ Add metadata to an image.
 
 
 ###Description
-Add metadata to a image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
+Add metadata to an image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
 
 ###Examples
 Add the specified metadata to the image (if the metadata exists, it is updated):
@@ -3803,7 +3803,7 @@ Add a server.
 : Volume to use to create the server.
 
 **-s, --security-group=SECURITY_GROUP**
-: Specify a security group or comma seperated list of security groups to be used.
+: Specify a security group or comma separated list of security groups to be used.
 
 **-p, --private-key-file=PRIVATE_KEY_FILE**
 : Name of the pem file with your private key.
@@ -3890,7 +3890,7 @@ Get the console output of a server or extract the windows password.
 Display the console output of a server.  When the `-p` option is used with the private key file for the server, if the decrypted password is still available on the console, it is displayed.
 
 ###Examples
-Display 100 lines of console ouput:
+Display 100 lines of console output:
 
     hpcloud servers:console my-server 100
 
@@ -3993,7 +3993,7 @@ Add metadata to a server.
 
 
 ###Description
-Add metadata to a server in your compute account.  You can specify the erver name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
+Add metadata to a server in your compute account.  You can specify the server name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
 
 ###Examples
 Add the specified metadata to the server (if the metadata exists, it is updated):
@@ -4029,7 +4029,7 @@ Remove metadata from a server.
 
 
 ###Description
-Remove metadata from a server in your compute account.  You can speciry the erver name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
+Remove metadata from a server in your compute account.  You can specify the server name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the r2 and c3 metadata from the server:

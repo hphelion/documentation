@@ -831,7 +831,7 @@ When you set to a new config file and the new file contains different credential
     compute				Compute					HPCloud-ComputeDrive
     
     ------------------------------------------------------------------------------------------------------
-    Object Storage Services available. Rempapping to the following drives.
+    Object Storage Services available. Remapping to the following drives.
     ------------------------------------------------------------------------------------------------------
     
     Storage Container : ECOM-61 now available.

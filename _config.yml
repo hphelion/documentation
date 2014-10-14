@@ -319,14 +319,18 @@ navigation:
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
-  - text: Application Lifecycle Service Installation & Configuration
-    url: /helion/devplatform/community/install-als/
+  - text: Application Lifecycle Service Configuration and Deployment
+    url: /helion/devplatform/als/config-and-deploy/
   - text: ALS Documentation
     url: /als/v1/
   - text: Release Notes
     url: /helion/devplatform/release-notes/
   - text: Related Documentation
     url: /helion/devplatform/related-topics/
+  - text: End User License Agreement
+    url: /helion/devplatform/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/devplatform/3rd-party-license-agreements/
   - text: HP Helion Documentation Home
     url: /
   apinavigation:
