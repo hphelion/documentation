@@ -56,7 +56,7 @@ or PHPSESSID cookies set (configurable in the router's
 application instances. If the backend assigned on the first request
 goes down, a new one is automatically assigned. Clients can delete
 their sticky session assignment by removing the
-STACKATO\_SESSION\_AFFINITY cookie.
+HELION\_SESSION\_AFFINITY cookie.
 
 **x\_frame\_options**: Prevent clickjacking on requests with
 [X-Frame response

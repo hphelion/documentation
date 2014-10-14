@@ -369,7 +369,7 @@ data is stored on disk, so backing them with a persistent filesystem is
 recommended.
 
 In clusters with multiple Cloud Controllers, the nodes **must** share a
-common */home/stackato/stackato/data* mount point as described
+common */home/helion/helion/data* mount point as described
 [*below*](#cluster-multi-controllers) in order to work together
 properly.
 
@@ -483,13 +483,13 @@ high-availability filesystem server. For example:
 
     -   Mount the shared filesystem on the mount point. [[1]](#id4)
 
-    -   Set aside the original `/home/stackato/stackato/data`:
+    -   Set aside the original `/home/helion/helion/data`:
 
-            $ mv /home/stackato/stackato/data /home/stackato/stackato/data.old
+            $ mv /home/helion/helion/data /home/helion/helion/data.old
 
-    -   Create a symlink from `/home/stackato/stackato/data` to the mount point:
+    -   Create a symlink from `/home/helion/helion/data` to the mount point:
 
-            $ ln -s /mnt/controller /home/stackato/stackato/data
+            $ ln -s /mnt/controller /home/helion/helion/data
 
 -   On the Core node, start the controller process:
 

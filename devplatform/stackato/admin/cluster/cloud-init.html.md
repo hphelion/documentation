@@ -43,14 +43,14 @@ To lock down and secure this new node, you could use standard cloud-config direc
 
     #cloud-config
 
-    stackato:
+    helion:
       nats:
         ip: 10.2.3.4
       roles: ['data-services']
 
     chpasswd:
      list: |
-       stackato:RANDOM
+       helion:RANDOM
        root:RANDOM
        ubuntu:RANDOM
      expire: false

@@ -32,9 +32,7 @@ administrator can run the following commands on the Cloud Controller:
     $ kato config set memcached_node sasl_enabled true
     $ kato restart memcached_node
 
-With SASL enabled, applications must parse the
-[*STACKATO\_SERVICES*](/als/v1/user/services/data-services/#database-services-helion-services)
-or [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
+With SASL enabled, applications must parse the[*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
 environment variables to extract the `name`, `user`, and `password`
 strings from the memcached `credentials` list. Using SASL with Memcached
 requires client libraries/modules in the application which support

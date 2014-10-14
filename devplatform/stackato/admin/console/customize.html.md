@@ -128,11 +128,11 @@ Renaming the Client[](#renaming-the-client "Permalink to this headline")
 The `helion` client is distributed as a single
 file executable for Windows, OS X and Linux (x86 and x86\_64). Zip files
 containing executables for each platform can be found in the
-`~/stackato/static` directory.
+`~/helion/static` directory.
 
 After renaming the executable, you can re-package them in .zip files and
 modify the
-*\~/stackato/code/console/js/views/client/templates/client.html*
+*\~/helion/code/console/js/views/client/templates/client.html*
 template to point to the renamed files. 
 
 
