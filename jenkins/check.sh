@@ -9,6 +9,9 @@ git pull
 
 #Delete any tempfiles left over from the last run and write introduction
 rm checktmp > /dev/null 2>&1  
+rm permalinklist.txt  > /dev/null 2>&1  
+rm filepermalink.txt > /dev/null 2>&1  
+
 echo " "
 echo " "
 echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
@@ -17,11 +20,9 @@ echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural er
 echo  ""
 
 
- for i in `find . -name "*.md"`; 
- 
- 
- do  
- if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
+for i in `find . -name "*.md"`; 
+do  
+if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
 then
 echo "==== Incorrect header divider ==="
 echo "(Header must begin and end with a three-dash line.)"
@@ -32,7 +33,7 @@ done
 
 
 echo  ""
-echo "==== Links to files that don't exist ==="
+echo "==== Broken permalinks to documentation.git files ==="
 for i in `find . -name "*.md" `
 do
 sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||'  >> permalinklist.txt
@@ -45,20 +46,19 @@ done
  
 
 for i in `cat permalinklist.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
-do
- 
-	 
-	 
+do 
 			if [[ -z $(grep $i filepermalink.txt ) ]];
 			then
-			echo "The permalink $i does not exist but is referenced in:"
-			for a in `find . -name "*.md"`
-			do
-			grep -l $i $a
-			done
+				echo "The permalink $i does not exist but is referenced in:"
+				for a in `find . -name "*.md"`
+				do
+					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
+					then
+						echo $a
+					fi
+				done
 			echo ""
 			fi
-		 
 done
 
 rm permalinklist.txt 
@@ -84,8 +84,15 @@ do
 
 echo " "
 echo "===??============================="
-for i in `find . -name "*.md"`; do grep -H \?\? $i | grep -v '<!--' | grep -v '<\*\*' ; done
-echo "Note: lines that start with <!-- are ignored, so you can remove false ?? positives by commenting them out."
+for i in `find . -name "*.md"`; 
+do 
+
+if [[ -z "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
+					then
+						echo $i
+					fi
+done
+ 
 
 
 echo " "
