@@ -23,7 +23,7 @@ If you are missing any of these items, you will need to [install them](/helion/d
 	- Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
 	- Click **Save**.
 
-**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your ALS cluster follow these instructions to [use the Messaging Service with your application](/helion/devplatform/msgaas/als). 
+**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your ALS cluster; follow these instructions to [use the Messaging Service with your application](/helion/devplatform/msgaas/als). 
 
 ###JDK
 You must have the Java Development Kit (JDK) installed before you can install the other prerequisites.
@@ -33,7 +33,7 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
     sudo apt-get install default-jdk
 
 
-On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/) and run the appropriate installer for your chosen platform.
+On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html/) and run the appropriate installer for your chosen platform.
 
 ###Maven
 
