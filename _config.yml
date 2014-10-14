@@ -318,15 +318,15 @@ navigation:
   - text: HP Helion Development Platform Doc Home
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
-    url: /helion/devplatform/community/install-dev-platform/
-  - text: Application Lifecycle Service Installation & Configuration
-    url: /helion/devplatform/community/install-als/
+    url: /helion/devplatform/install/
+  - text: Application Lifecycle Service Configuration and Deployment
+    url: /helion/devplatform/als/config-and-deploy/
   - text: ALS Documentation
     url: /als/v1/
   - text: Release Notes
-    url: /helion/devplatform/community/release-notes/     
+    url: /helion/devplatform/release-notes/
   - text: Related Documentation
-    url: /helion/devplatform/community/related-topics/
+    url: /helion/devplatform/related-topics/
   - text: HP Helion Documentation Home
     url: /
   apinavigation:
