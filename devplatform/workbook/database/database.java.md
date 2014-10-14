@@ -11,11 +11,8 @@ product: devplatform
 #Java MySQL Database Sample
 This very simple Servlet-based Java webapp displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
-This is the **second** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/java/) sample, please do that one first.
-
-
 ##Prerequisites
-If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
+If you are missing any of these items, please [install them](/helion/devplatform/appdev/).
 
 1.	You must have access to an ALS cluster.
 2.	The Helion command-line interface (CLI) must be installed.
@@ -31,17 +28,14 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 4. The **MySQL** check box should be checked. If it is not, check it.
 5. Click **Save**.
 
+**NOTE**: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Creating a Database Instance in the Database Service](/helion/devplatform/createdatabase/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/).
 
 ###JDK
-You must have the Java Development Kit (JDK) installed before you can install the other prerequisites.
-
-On a Mac/UNIX environment, the JDK can be installed with the following command:
 
     sudo apt-get install default-jdk
 
+The simplest way to install JDK on a PC environment is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), select and run the appropriate installer for your chosen platform.
 
-On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and run the appropriate installer for your chosen platform.
-http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 ###Maven
 
@@ -53,36 +47,28 @@ The simplest way to install Maven on a Mac/UNIX environment is:
 The simplest way to install Maven on a PC environment is to [download the latest version of Maven](http://maven.apache.org/download.cgi) and then follow the [installation directions](http://maven.apache.org/guides/getting-started/windows-prerequisites.html).
 
 ##Download the Application Files
-[Download](https://gitlab.gozer.hpcloud.net/developer-experience/mysql-java) the application files. 
+[Click here to access the download directory](https://github.com/HelionDevPlatform/helion-mysql-java). 
 
-###About the Application Files
- The `pom.xml` file 
-in the root directory is used by Maven to build the application.
 
 ##Build the Application
 
-The specific commands listed below are intended for Unix-like machines.
-
- *cd* into this app's root directory and execute:
+If you are not already there, *cd* into this app's root directory and execute:
 
 	mvn clean package
 
-This will create the .war file within the `target` directory.
+This builds the application with Maven. It will create the *mysql-java-1.0.war* file within the target directory.
 
 
 ##Deploy the Application
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
 4.	If you are not already there, `cd` to the root directory of the sample.
 5.	Execute `helion push -n`
-
-##Run the Application
-1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
-2.	Click **Applications**.
-3.	If the file push was successful, you should see **mysql-java** in the list of available applications.
+6.	Accept any default values that you may be prompted for.
+	<br>	**Note**: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
 
 ##Key Code Snippets
 
@@ -132,11 +118,14 @@ This first line in this section of the MysqlServlet.java file shows how to retri
 	    ${name}-db:
 	      type: mysql
 
-The *manifest.yaml *file is the configuration information used by ALS to set up the environment. The *services* element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.
+The manifest.yaml file is the configuration information used by ALS to set up the environment. The services element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.
+
+##Run the Application
+1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
+2.	Click **Applications**.
+3.	If the file push was successful, you should see **mysql-java** in the list of available applications.
 
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service.
 2.	You need to retrieve connection information for MySQL from the application’s environment variables, and parse the information into a JDBC compliant connection string.
-3.	You interact with and deploy your app using the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
-
-[Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/messaging/java/)
+3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).

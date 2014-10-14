@@ -267,7 +267,7 @@ The **Marketplace Service** will be installed into the admin tenant of the Helio
 
 ### Download and Configure the Marketplace Service
 
-In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+In the **Configure Services** panel locate the Marketplace Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
 #### Configuring the Marketplace Service
 
