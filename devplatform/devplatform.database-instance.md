@@ -25,14 +25,17 @@ The following topics explain how to create and manage a database:
 
 ##Create a database instance {#create}
 1. Log into the Horizon console.
+
 2. Under your project, open the Database panel and then click the **Instances** tab. <br><img src="media/createDBinstance1.png"/>
+
 2. Click **Launch Instance**.
+
 3. In the **Details** tab, specify the following options: 
 	- **Instance Name** - the name of the MySQL instance to create 
 	- **Flavor** - the size of the instance to host the database on<br><img src="media/createDBinstance2.png"/>
 	- **Volume Size** - the size of the volume to host the data on (in GB). Note: this **cannot** be changed later.
 	- **Datastore** - the MySQL database version to create
-	- **Availability Zone** (optional) – the availability zone that the database will be created in.
+	- **Availability Zone** (optional) – the availability zone that the database will be created in.<br><img src="media/createDBinstance1.png"/>
 
 4.	Under the **Networking** tab, specify the network to associate the database instance with. This is required and should be the same network that any application that accesses the database is on. <br><img src="media/createDBinstance3.png"/>
 5.	Optional - Specify the initial database to create on the database instance. This option can be used to pre-populate the instance with a database and a user for that database.  <br><img src="media/createDBinstance4.png"/>

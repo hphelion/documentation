@@ -319,8 +319,8 @@ navigation:
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
-  - text: Application Lifecycle Service Installation & Configuration
-    url: /helion/devplatform/community/install-als/
+  - text: Application Lifecycle Service Configuration and Deployment
+    url: /helion/devplatform/als/config-and-deploy/
   - text: ALS Documentation
     url: /als/v1/
   - text: Release Notes
