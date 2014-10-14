@@ -27,7 +27,6 @@ You need to have [installed](/helion/devplatform/install/) the Helion Developmen
 	- **Prefix**: DNS acceptable hostname string (not fully qualified DNS name) used to name the virtual machines created for the cluster.
 	- **Admin Email**
 	- **Admin Password**
-<<<<<<< HEAD
 	- **Availability Zone** – where the cluster will be created.
 	- **DEA flavor** – Droplet Execution Agents (DEAs) are responsible for running and staging applications in ALS. DEA flavors specify different amounts of RAM available per DEA instance, ranging from 0.5GB to 16GB.
 	- **DEA Instance Count** – the number of DEA instances to use in the cluster.
