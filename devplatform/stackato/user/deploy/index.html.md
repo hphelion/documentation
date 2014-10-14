@@ -59,7 +59,7 @@ Pushing Application Code[](#pushing-application-code "Permalink to this headline
 
 Change to the root directory of your source code project, and use the
 `helion push` command to deploy your application.
-If you have a [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) or
+If you have a [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) or
 [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) config file in this
 directory, you can use just:
 
