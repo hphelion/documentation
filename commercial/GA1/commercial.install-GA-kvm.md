@@ -1,4 +1,4 @@
-	---
+---
 layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/install/kvm/
