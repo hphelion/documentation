@@ -63,6 +63,10 @@ The following section describes the environmental variables that affect your ins
 
 **Note:** You must choose the `BM_NETWORK_UNDERCLOUD_RANGE_xxx` to be consistent with any values already chosen for `BM_NETWORK_SEED_IP` and `BM_NETWORK_CIDR`. All addresses must be on a common subnet.
 
+`CUSTOMER_ROUTER_IP` - Use this value to set the interface IP on the external customer router needed for SVC network to function. The `CUSTOMER_ROUTER_IP` will reside on the `BM_NETWORK`, facing undercloud server. In most of the cases it will be equal to `BM_NETWORK_GATEWAY`
+
+	export CUSTOMER_ROUTER_IP=192.168.130.1
+
 `OVERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your overcloud. This is the physical interface associated with the BM_NETWORK networks. The default value is `eth2`. If this is correct you do not need to set this variable.
 
 	export OVERCLOUD_NeutronPublicInterface=eth2
@@ -188,6 +192,7 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 	export BM_NETWORK_SEED_RANGE_END=192.168.130.22
 	export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.130.23
 	export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.130.126
+	export CUSTOMER_ROUTER_IP=192.168.130.1
 	export FLOATING_START=192.168.131.2
 	export FLOATING_END=192.168.131.245
 	export FLOATING_CIDR=192.168.131.0/24
@@ -234,6 +239,7 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
 		export BM_NETWORK_UNDERCLOUD_RANGE_START=172.30.100.21
 		export BM_NETWORK_UNDERCLOUD_RANGE_END=172.30.100.40
+		export CUSTOMER_ROUTER_IP=192.168.130.1
 		export FLOATING_START=172.30.100.41
 		export FLOATING_END=172.30.100.200
 		export FLOATING_CIDR=172.30.100.0/24
