@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Deploying the Application Lifecycle Service"
-permalink: /helion/devplatform/ALS/deploy
+permalink: /helion/devplatform/ALS/deploy/
 product: devplatform
 
 ---
