@@ -12,6 +12,8 @@ guide covers how to set it up and how to configure it for your end
 users.
 
 ##Wizard-Based Cluster Creation
+You can easily create and access Application Lifecycle Service clusters from the Project Dashboard or from the command-line.
+
 - [Creating a Cluster from the Project Dashboard](/helion/devplatform/ALS/deploy/)       
 - [Creating a Cluster from the Command Line](/als/v1/user/client/) 
 
@@ -19,7 +21,6 @@ users.
 
 -   [Management Console](/als/v1/user/console/#management-console)
 -   [Sample Applications](console/app-store)
-
 
 ##Advanced/Manual Server Configuration {#server-configuration}
 This section covers advanced configuration settings that allow you to modify default cluster component behavior. 
