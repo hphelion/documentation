@@ -402,7 +402,7 @@ described below:
 
 -   **cloud\_controller\_ng** **max\_drains\_per\_app** (default 2):
     limits the number of drains an application can have. Once this limit
-    is reached, users will see the following notificition when trying to
+    is reached, users will see the following notification when trying to
     add a new drain:
 
         Adding drain [fail] ... Error 123: Per-app drain limit (2) reached.
