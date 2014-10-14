@@ -17,7 +17,7 @@ This documentation will help you get up to speed on the  Helion Development Plat
 
 The [Application Lifecycle Service (ALS)](/als/v1/) is a Cloud Foundry-based, managed runtime environment for applications. 
 
-- It supports [Java](/helion/devplatform/appdev/#java), [Node](/helion/devplatform/appdev/#node), [PHP](/helion/devplatform/appdev/#php), and other language runtimes.
+- It supports [Java](/helion/devplatform/appdev/#java), [Node](/helion/devplatform/appdev/#node), [PHP](/helion/devplatform/appdev/#PHP), and other language runtimes.
 - It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.
 - It allows Disk, Memory and Placement Zone constraints to be set per application.
 - It provides auto-scaling and application log drains.
@@ -28,7 +28,7 @@ The Application Lifecycle Service is installed as part of the Helion Development
 The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:
 
 ###Database as a Service 
-The Database as a Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#database)it and then [configure](/helion/devplatform/connectdatabase/#configure) it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
+The Database as a Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#database) it and then [configure](/helion/devplatform/connectdatabase/#configure) it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
 - An implementation of OpenStack Trove, [Database as a Service](/helion/devplatform/createdatabase/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
 - The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  
@@ -36,7 +36,7 @@ The Database as a Service is optionally installed as part of the Helion Developm
 The Database as a Service is optionally installed as part of the Helion Development Platform; you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
 ###Messaging Service (Beta)
-The [The Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
+The [Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
 
 - The Messaging Service integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.

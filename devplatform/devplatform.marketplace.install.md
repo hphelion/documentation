@@ -18,20 +18,20 @@ The following topics explain how to install and deploy a Marketplace instance:
 - [Creating a Deployed Instance of an Application](#deploy)
 - [Deployment Notes](#notes)
 
-##Marketplace Concepts<a name="concepts"></a>
+## <a name="concepts"></a>Marketplace Concepts
 The Marketplace deploys packages of services and applications to specified environments. 
 
 - The term **Application** refers to both applications and services that can reside in the Marketplace. For the purposes of this documentation, we will use the term Application for deploying a database, which is a service. 
 - **Packages** are compressed files that contain instructions for Application deployment.
 - **Environments** are groups of Applications managed by a single tenant. Applications within a single Environment *may* be logically related to one other, but do not have to be.  Applications in different Environments are always independent from one another. 
 
-##Pre-requisites<a name="prereq"></a>
+##<a name="prereq"></a>Pre-requisites
 Install the Marketplace component of the [HP Helion Development Platform](/helion/devplatform/install/) during the Development Platform install process.
 
-##Installing a Package<a name="install"></a>
+##<a name="install"></a>Installing a Package
 In this example, the package being installed is the Vertica 7 Community Edition package. 
 
-###Create a Target Environment<a name="create"></a>
+###<a name="create"></a>Create a Target Environment
 1. Log into Horizon and open the **Marketplace** panel under your Project.
 2. Click the **Instances** tab and then click **Application Catalog**.
 3. Click the **Environments** tab.  
@@ -47,7 +47,7 @@ In this example, the package being installed is the Vertica 7 Community Edition 
 	<img src="media/marketplace3.png"/>
  
 
-###Create a Deployed Instance of an Application<a name="deploy"></a>
+###<a name="deploy"></a>Create a Deployed Instance of an Application
 This section will show how to create an instance of Vertica 7 Community Edition in the Environment created above.
 
 1. Log into the Horizon console.
@@ -95,7 +95,7 @@ This section will show how to create an instance of Vertica 7 Community Edition 
 
 	<img src="media/marketplace11.png"/>
  
-###Deployment Notes<a name="notes"></a>
+###<a name="notes"></a>Deployment Notes
 This section discusses some of the details of deployment that you may encounter.
 
 

@@ -33,7 +33,7 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
     sudo apt-get install default-jdk
 
 
-On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/) and run the appropriate installer for your chosen platform.
+On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and run the appropriate installer for your chosen platform.
 
 ###Maven
 
@@ -164,6 +164,6 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 1.	You need to provide configuration information so that ALS can bind to a RabbitMQ service.
 2.	You need to provide configuration information so that ALS can create an environment for you app.  Tools like Maven generate the *pom.xml* files for you.
 3.	You need to retrieve connection information for RabbitMQ from the application’s environment variables.
-4.	You interact with and deploy your app using the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
+4.	You interact with and deploy your app using the Helion CLI or the [Eclipse deployment plugin](/helion/devplatform/eclipse/).
 
 [Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/java/) 

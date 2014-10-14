@@ -24,7 +24,7 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
     sudo apt-get install default-jdk
 
 
-On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/) and run the appropriate installer for your chosen platform.
+On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and run the appropriate installer for your chosen platform.
 
 ###Maven
 
@@ -120,6 +120,6 @@ This simple Servlet prints "Hello World".
 
 ##Key Learnings
 1.	ALS requires configuration information to create an environment for your app. Tools like Maven generate the *pom.xml* file for you.
-2.	You can deploy your app using either the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
+2.	You can deploy your app using either the Helion CLI or the [Eclipse deployment plugin](/helion/devplatform/eclipse/).
 
 [Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)
