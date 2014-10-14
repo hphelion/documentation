@@ -33,29 +33,25 @@ The HP Smart Storage Administrator CLI (HPSSACLI) is a command line disk configu
 
 The ***hpssacli*** utility is deployed onto the servers wherever the disks are to be monitored, usually all Swift, VSA, and Compute nodes. This page explains the collection of diagnostic reports from disks in the servers where the utility has been loaded.
 
-<!--
-###Download the hpssacli utility into the KVM host
+###Download the hpssacli debian package into the KVM host
 
-TBD
-
-Where should the user login??
-
--->
+[http://downloads.linux.hp.com/SDR/repo/mcp/pool/non-free/hpssacli-2.0-16.0_amd64.deb](http://downloads.linux.hp.com/SDR/repo/mcp/pool/non-free/hpssacli-2.0-16.0_amd64.deb)
 
 
-###Copy the utility to seed and to the servers where the disks has to be monitored
+###Copy the debian to seed and to the servers where the disks has to be monitored
 
 Use `scp` to copy the utility package on to the servers and install it.
 
 1. Copy the package from KVM host to SEED.
 
-		# scp hpssacli.tar.gz root@<IP address of Seed>
+		# scp scp "hpssacli-2.0-16.0_amd64.deb" root@<IP address of Seed>
 
 2. Copy the package from SEED to machine where the disks to be monitored.
 
-		# scp hpssacli.tar.gz heat-admin@<IP address of machine>
+		# scp scp "hpssacli-2.0-16.0_amd64.deb" heat-admin@<IP address of machine>
 
-3. Log in to the server where the utility is copied and install the package.
+
+3. Log in to the server where the debian is copied and install the package.
 
 		# ssh heat-admin@<IP address of machine>
 
@@ -68,18 +64,11 @@ Use `scp` to copy the utility package on to the servers and install it.
 		# ls
 	All the files present in that directory will be displayed.
 
-6. Search `tar -xvf hpssacli.tar.gz`
+6. Install the following package
 
-7. Extract the tar file 
+		# dpkg -i hpssacli-2.0-16.0_amd64.deb
 
-		 tar -xvf hpssacli.tar.gz
 
-	The extracted binary file will be available in `/home/heat-admin/hp/hpssacli/bld`
-
-8. Execute the binary file.
-
-	 	 ./hpssacli help
- 
 	**Note**: The diagnostics can be done in the server or from SEED through ssh.
 
 9. You can collect the diagnostic report of the controller either in server or through Seed using ssh.
@@ -98,7 +87,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 1. Enter the following command to determine the controller slot
 		
-		./hpssacli ctrl all show status
+		# hpssacli ctrl all show status
  
 	The following sample displays slot details:
 
@@ -110,13 +99,13 @@ Use `scp` to copy the utility package on to the servers and install it.
 		
 		   Battery/Capacitor Status: OK
 
-2. Generate the diagnostic report of the particular slot
+2. Generate the diagnostic report for a particular slot
 
 		./hpssacli ctrl slot=(slot number) diag file=<filename.zip>
 	Or <BR>
 		Generate the report for all the slots 
 
-		./hpssacli ctrl all diag file=<filename.zip>
+		# hpssacli ctrl all diag file=<filename.zip>
 
 
 	The file will be stored in the selected location.
@@ -140,7 +129,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 3. Generate the diagnostic report of the particular slot
 
-		 ssh heat-admin@<Machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> diag file=all_details
+		 ssh heat-admin@<Machine IP address> "sudo hpssacli ctrl slot=<slot number> diag file=details_slot_<slot number>.zip"
 
 4. Copy the report from the server to Seed Vm
 
@@ -148,25 +137,26 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 5. Copy the report <filename.zip> to the KVM_host.
 	
-		# scp all_details.zip ubuntu@<KVM_Host IP address>:
+		# scp details_slot_<slot number>.zip ubuntu@<KVM_Host IP address>:
 
 	<!--Enter login credentails ???-->
 
 5. Extract the file.
 
 
-10. Open the `ADUReport.htm` file in the browser. The html page displays complete details of the controller and the health status of the physical disks available in the machine.
+6. Open the `ADUReport.htm` file in the browser. The html page displays complete details of the controller and the health status of the physical disks available in the machine.
 
 <!-- <image = utility_ADUR-report> -->
 
-6.Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
+7.Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
 
-	* From the local server
+* From the local server
 
-	`	/home/heat-admin/hp/hpssacli/bld# ./hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on`
-	* From the seed
+	`	# hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on`
+	
+* From the seed
 
-	`	# ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> diag file=<filename.zip>`
+	`	# ssh heat-admin@<machine IP address> "sudo hpssacli ctrl slot=<slot number> diag file=<filename.zip>`
 
 <!-- **Now retrieve the ssd_report.zip to kvm host using scp from server to analyse.??? is this applicable for seed only??** --> 
 
@@ -236,15 +226,15 @@ The following SmartSSDWearGaugeReport.txt sample file displays the details of th
 
 - To get the details of the physical disks and also the logical group status on the server
 
-        ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli ctrl slot=<slot number> show config detail"
+        ssh heat-admin@<machine IP address> "sudo hpssacli ctrl slot=<slot number> show config detail"
 
 - To execute other operations on physical drives
 
-        ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli help physicaldrive"
+        ssh heat-admin@<machine IP address> "sudo hpssacli help physicaldrive"
 
 3. Open the help to explore other options with the utility
 
-        ssh heat-admin@<machine IP address> "sudo /home/heat-admin/hp/hpssacli/bld/hpssacli help"
+        ssh heat-admin@<machine IP address> "sudo hpssacli help"
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
