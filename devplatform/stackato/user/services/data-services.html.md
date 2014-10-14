@@ -30,7 +30,7 @@ number of ways:
 If you would like to use an external database system, see [*Using
 External Database Services*](#database-external).
 
-### Using manifest.yml {#using-stackato-yml}
+###Using manifest.yml {#using-stackato-yml}
 
 The manifest.yml file can hold a lot of application specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
