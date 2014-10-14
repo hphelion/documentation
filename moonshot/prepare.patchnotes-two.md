@@ -34,7 +34,7 @@ HP Cloud OS for Moonshot Patch release 1.21 covers the following information:
 
 * [For further information](#for-further-information)
 
-These Patch Notes include updates to information presented in the HP Cloud OS for Moonshot 1.20 [Release Notes](/cloudos/moonshot/prepare/releasenotes).
+These Patch Notes include updates to information presented in the HP Cloud OS for Moonshot 1.10 [Release Notes](/cloudos/moonshot/prepare/releasenotes).
 
 ## Features in HP Cloud OS for Moonshot Patch 1.21 {#features}
 
