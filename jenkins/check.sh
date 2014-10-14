@@ -87,7 +87,7 @@ echo "===??============================="
 for i in `find . -name "*.md"`; 
 do 
 
-if [[ -z "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
+if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  -H \?\? )" ]];
 					then
 						echo $i
 					fi
