@@ -88,12 +88,10 @@ To list available images, run:
       | 75893 | BitNami DevPack 1.3-0-linux-ubuntu-12.04 64-bit - Partner Image        | 2012-12-12T08:28:56Z | ACTIVE |
       | 75845 | Ubuntu Precise 12.04 LTS Server 64-bit 20121026                        | 2012-12-11T15:35:38Z | ACTIVE |
       | 75839 | Ubuntu Quantal 12.10 Server 64-bit 20121017                            | 2012-12-11T15:20:20Z | ACTIVE |
-      | 74707 | ActiveState Stackato v2.4.3 - Partner Image                            | 2012-11-06T12:38:37Z | ACTIVE |
       | 74661 | Windows Server 2008 Enterprise SP2 x86 Volume License 20121031         | 2012-11-05T11:13:41Z | ACTIVE |
       | 74659 | Windows Server 2008 Enterprise SP2 x64 Volume License 20121031         | 2012-11-05T11:03:22Z | ACTIVE |
       | 74563 | Windows Server 2008 R2 Enterprise SP1 x64 Volume License 20121005      | 2012-11-02T11:22:46Z | ACTIVE |
       | 66441 | TestImage1                                                             | 2012-10-18T21:31:46Z | ACTIVE |
-      | 14345 | ActiveState Stackato v1.2.6 - Partner Image (deprecated)               | 2012-05-23T07:23:18Z | ACTIVE |
       | 9995  | EnterpriseDB PSQL 9.1.3 - Partner Image                                | 2012-05-11T04:26:51Z | ACTIVE |
       | 9953  | EnterpriseDB PPAS 9.1.2 - Partner Image                                | 2012-05-11T01:01:05Z | ACTIVE |
       +-------+------------------------------------------------------------------------+----------------------+--------+

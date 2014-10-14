@@ -30,7 +30,7 @@ number of ways:
 If you would like to use an external database system, see [*Using
 External Database Services*](#database-external).
 
-### Using manifest.yml[](#using-stackato-yml "Permalink to this headline")
+### Using manifest.yml {#using-stackato-yml}
 
 The manifest.yml file can hold a lot of application specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
@@ -373,7 +373,7 @@ run, it can be done by the use of a hook during the staging process.
 This can be accomplished in two steps.
 
 First, create a script file in the app's root directory that uses the
-same data source variables from STACKATO\_SERVICES as the ones being
+same data source variables from VCAP\_SERVICES as the ones being
 used in the app. This file will open a connection to the database,
 create tables, and insert records as necessary, as in this Perl example:
 
@@ -384,7 +384,7 @@ create tables, and insert records as necessary, as in this Perl example:
     use DBD::mysql;
     use JSON "decode_json";
 
-    my $services = decode_json($ENV{STACKATO_SERVICES});
+    my $services = decode_json($ENV{VCAP_SERVICES});
     my $credentials = $services->{mydb};
 
     my $dbh = DBI->connect("DBI:mysql:database=$credentials->{name};hostname=$credentials->{hostname};port=$credentials->{port};",

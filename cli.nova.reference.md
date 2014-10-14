@@ -395,8 +395,7 @@ Display a list of the available bootable images:
     | 1236  | Ubuntu Lucid 10.04 LTS Server 64-bit 20111212                          | ACTIVE |                                      |
     | 1237  | Ubuntu Maverick 10.10 Server 64-bit 20111212 (Kernel)                  | ACTIVE |                                      |
     | 1238  | Ubuntu Maverick 10.10 Server 64-bit 20111212                           | ACTIVE |                                      |
-    | 1239  | Ubuntu Natty 11.04 Server 64-bit 20111212 (Kernel)                     | ACTIVE |                                      |
-    | 9127  | ActiveState Stackato v1.2.5 - Partner Image (deprecated)               | ACTIVE |                                      |
+    | 1239  | Ubuntu Natty 11.04 Server 64-bit 20111212 (Kernel)                     | ACTIVE |                                                                          |
     | 9953  | EnterpriseDB PPAS 9.1.2 - Partner Image                                | ACTIVE |                                      |
     | 9995  | EnterpriseDB PSQL 9.1.3 - Partner Image                                | ACTIVE |                                      |
     +-------+------------------------------------------------------------------------+--------+--------------------------------------+
