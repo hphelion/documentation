@@ -16,7 +16,7 @@ to enable successful development are available in Ruby.</p>
 provides a means to execute ruby applications on a managed platform. Deploying applications
 to the platform is as simple as adding configuration to a YAML configuration file and using
 a console application to push the application to ALS.</p>
-<p>At its simplist form the configuration file, <tt class="docutils literal"><span class="pre">stackato.yml</span></tt>, at the root of a project would like:</p>
+<p>At its simplist form the configuration file, <tt class="docutils literal"><span class="pre">manifest.yml</span></tt>, at the root of a project would like:</p>
 <div class="highlight-none"><div class="highlight"><pre>name: ruby-web-app
 framework:
     type: ruby20
@@ -39,7 +39,7 @@ a console application.</p>
 <p>To learn more see:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/languages/ruby/">Working with applications in ruby</a></li>
-<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The stackato.yml reference</a></li>
+<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/stackatoyml/">The manifest.yml reference</a></li>
 </ul>
 </div>
 <div class="section" id="hp-helion-sdk">
