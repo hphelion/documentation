@@ -17,11 +17,11 @@ The following topics explain how to create and manage a database:
 - [Create a database instance](#create)
 - [Create a database backup](#backup)
 - [Replicate a database](#replicate)
+- [Attach a Floating IP](#floatIP)
 
 ##Prerequisites
 1. Install the [HP Helion Development Platform](/helion/devplatform/install/). 
 2. [Configure](/helion/devplatform/install/#install-database) the database service.
-
 
 ##Create a database instance {#create}
 1. Log into the Horizon console.
@@ -75,25 +75,29 @@ To follow this guide, you must have already [created](#create) a database instan
 6.	Click **Launch** to create the replica.<br><img src="media/createDBinstance13.png"/>
 
 ##Attaching a Floating IP to the Database Instance {#floatIP}
-It is possible to attach a floating IP address to a database instance – this will make it possible to access your instance from outside of your cloud environment. To create a database with a floating IP address follow these steps from the command line. Note the following instructions require that you use the Trove CLI to create a database instance. For more information on using the Trove CLI refer to the More Resources section at the end of this guide.
+It is possible to attach a floating IP address to a database instance – this will make it possible to access your instance from outside of your cloud environment. 
+
+To create a database with a floating IP address follow these steps from the command line. Note the following instructions require that you use the Trove CLI to create a database instance.
+
+For more information on using the Trove CLI, refer to the [More Resources](#more) section at the end of this guide.
 
 1.	Pre-provision a port on the network that the instance will be attached to using the neutron CLI. Note down the port-id of the port created:
-
-$ neutron port-create <network-id>
-
+	
+		$ neutron port-create <network-id>
+	
 2.	When creating the trove instance pass in the port id as the nic parameter:
-
-$ trove create <name> <flavor-id> --size <size> --nic port-id=<port-id>
-
-3.	Create a Floating IP using neutron and attach it to the port provisioned in step 1:
-$ neutron floatingip-create <floating-network>
-$ neutron floatingip-associate <floating-ip-id> <port-id>
+	
+		$ trove create <name> <flavor-id> --size <size> --nic port-id=<port-id>
+	
+6.	Create a Floating IP using neutron and attach it to the port provisioned in step 1:
+	
+		$ neutron floatingip-create <floating-network>
+		$ neutron floatingip-associate <floating-ip-id> <port-id>
 
 ##More Resources {#more}
 
-- [More information on Trove](http://docs.openstack.org/developer/trove/).
-
-- [More information on using the Trove CLI to create a database instance]( https://community.hpcloud.com/article/creating-and-configuring-database-instance).
+- More information on [Trove](http://docs.openstack.org/developer/trove/).
+- More information on [using the Trove CLI]( https://community.hpcloud.com/article/creating-and-configuring-database-instance) to create a database instance.
 
 ----
 ####OpenStack trademark attribution
