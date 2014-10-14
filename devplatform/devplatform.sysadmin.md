@@ -10,7 +10,7 @@ product: devplatform
 
 ##Installation
 
-* [HP Helion OpenStack&trade; Installation](/helion/openstack/install/overview/)
+* [HP Helion OpenStack&reg; Installation](/helion/openstack/install/overview/)
 * [Development Platform Installation and Configuration](/helion/devplatform/install/)
 * [Application Lifecycle Service (ALS) Information](/als/v1/)
 * [Application Lifecycle Service Client Installation](/als/v1/user/client/)
