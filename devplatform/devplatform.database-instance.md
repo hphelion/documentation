@@ -20,7 +20,7 @@ The following topics explain how to create and manage a database:
 
 ##Prerequisites
 1. Install the [HP Helion Development Platform](/helion/devplatform/install/). 
-2. Configure the database service.
+2. [Configure](/helion/devplatform/install/#install-database) the database service.
 
 
 ##Create a database instance {#create}
