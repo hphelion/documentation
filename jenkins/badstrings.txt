@@ -1,4 +1,4 @@
-[Ss]tackato
+[^#\/][Ss]tackato
  it it 
  can can 
    ,
