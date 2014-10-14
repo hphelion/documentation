@@ -397,7 +397,7 @@ Revoke the specified permissions.
 
 
 ###Description
-Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
+Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
 Revoke public read from 'my_container'
@@ -2383,7 +2383,7 @@ Remove a rule from the security group.
 
 
 ###Description
-Remove a rule from the security group, specifyied its ID. Optionally, you can specify an availability zone.
+Remove a rule from the security group, specified its ID. Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the rule `mysecgroup` from security group `111`:
@@ -3618,7 +3618,7 @@ Revoke the specified permissions.
 
 
 ###Description
-Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user fo the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
+Revoke the access control list (ACL) values from the specified container. The supported permissions are `r` (read), `w` (write), or `rw` (read and write). You may specify one or more user for the given permission.  If you do not specify a user, the permissions are set to public.  Public write permissions are not allowed.
 
 ###Examples
 Revoke public read from 'my_container'
@@ -5604,7 +5604,7 @@ Remove a rule from the security group.
 
 
 ###Description
-Remove a rule from the security group, specifyied its ID. Optionally, you can specify an availability zone.
+Remove a rule from the security group, specified its ID. Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the rule `mysecgroup` from security group `111`:
