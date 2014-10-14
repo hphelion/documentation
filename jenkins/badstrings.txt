@@ -10,6 +10,7 @@
  the the 
  and and 
  given given
+ [^_]Openstack
  eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
@@ -65,7 +66,6 @@
 [a-z] Under[Cc]loud
 [Bb]eta
 BETA
-[^_]Openstack
 [Ss]tackato
 â€™
 ÎáÎáÎí
