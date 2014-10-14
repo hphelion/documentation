@@ -247,8 +247,8 @@ If you intend to use your public image outside of the HP Helion Public Cloud env
 
 You can find partner-provided examples of the required documentation on the following pages:
 
-* [Setting up Stackato on HP Helion Public Cloud](https://community.hpcloud.com/article/how-do-i-set-activestate-stackato-hp-cloud-services) 
-* [Stackato HP Helion Public Cloud documentation](http://docs.stackato.com/admin/server/hpcs.html)
+<-- * [Setting up Stackat0 on HP Helion Public Cloud](https://community.hpcloud.com/article/how-do-i-set-activestate-stackat0-hp-cloud-services) 
+* [Stackat0 HP Helion Public Cloud documentation](http://docs.stackat0.com/admin/server/hpcs.html) -->
 * [CohesiveFT Partner Images](https://community.hpcloud.com/article/cohesiveft-partner-images-now-available)
 * [CohesiveFT VNS3 3.x Configuration for HP Helion Public Cloud](http://www.cohesiveft.com/dnld/CohesiveFT-VNS3-3.0.4_HPCS.pdf)
 
@@ -619,7 +619,7 @@ To deprecate an image, run the following command:
     'X-Image-Meta-Property-com.hp__1__image_lifecycle: deprecated' 
     $OS_IMAGE_URL/v1.0/images/&lt;image ID&gt;
 </pre>
-### Common errors when using the Glance client### {#publishGlanceErrors}
+### Common errors when using the Glance client {#publishGlanceErrors}
 Possible HTTP return codes are listed in HP Helion Public Cloud Image API documentation. The most common errors (and possible explanations) are:
 
 * HTTP 401: (unauthorized) you specified invalid credentials
@@ -637,7 +637,7 @@ For additional information on uploading an image and making it publicly availabl
 * [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)
 * [Technical support knowledge base](https://community.hpcloud.com)
 
-## Contacting support ## {#contactSupport}
+## Contacting support {#contactSupport}
 If you need further assistance, you can contact support in any of these ways:
 
 * [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)

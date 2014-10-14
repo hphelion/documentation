@@ -289,7 +289,7 @@ like this:
     $ sudo quotaon -v /mnt/containers
 
 To ensure the quotas are preserved after reboot, edit
-*/etc/init.d/setup\_stackato\_lxc* to include mount commands for each
+*/etc/init.d/setup\_helion\_lxc* to include mount commands for each
 partition. The example above would require a block such as this:
 
     # enable quotas for Application Lifecycle Service containers

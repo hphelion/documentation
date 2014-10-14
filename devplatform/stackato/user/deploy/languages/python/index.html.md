@@ -271,19 +271,19 @@ Serving Static Files with uWSGI[](#serving-static-files-with-uwsgi "Permalink to
 
 It is possible to serve static files with uWSGI using
 `processes: web:` in the
-[*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to specify
+[*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to specify
 folders that will be served statically and not by the app.
 
 To make a single folder serve statically, use `--check-static`:
 
     processes:
-        web: $STACKATO_UWSGI --check-static $HOME/<folder>
+        web: $HELION_UWSGI --check-static $HOME/<folder>
 
 To specify multiple folders with static files that do not share a common
 root, use `--static-map`:
 
     processes:
-        web: $STACKATO_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub
+        web: $HELION_UWSGI --static-map /foo=$HOME/static --static-map /bar=$HOME/sub
 
 In this case */foo/index.html* would serve *\$HOME/static/index.html*,
 and */bar/index.html* would serve *\$HOME/sub/index.html*. If the file
@@ -298,8 +298,8 @@ Using a custom web server[](#using-a-custom-web-server "Permalink to this headli
 -------------------------------------------------------------------------------------
 
 To use a different web server, instead of uWSGI, specify its startup
-command in `stackato.yml`. Here's a sample
-stackato.yml used to deploy a Django 1.4 application named "dj14" using
+command in `manifest.yml`. Here's a sample
+manifest.yml used to deploy a Django 1.4 application named "dj14" using
 gunicorn:
 
     name: dj14
@@ -339,7 +339,7 @@ and/or [*pip*](/als/v1/admin/reference/glossary/#term-pip).
 Definition [*PyPM*](/als/v1/admin/reference/glossary/#term-pypm)
 
 To install packages during application deployment with PyPM, add the
-requirements to stackato.yml:
+requirements to manifest.yml:
 
     requirements:
       pypm:
@@ -376,7 +376,7 @@ tornado-chat-mongo sample installs "pycurl" using
         - pycurl
 
 If your application already contains a `requirements.txt` file, that will be automatically used to install dependencies;
-no need to specify them manually in stackato.yml. The name of this file
+no need to specify them manually in manifest.yml. The name of this file
 can be overriden by setting the `PIP_REQUIREMENTS_FILE` environment variable.
 
 **Note**
