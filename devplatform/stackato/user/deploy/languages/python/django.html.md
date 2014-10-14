@@ -102,7 +102,7 @@ Configuring project location[](#configuring-project-location "Permalink to this 
 Your project's *settings.py* may not always reside at the root directory. Furthermore, you may want to extend
 `sys.path` to point to certain project sub-directories.
 
-To persist such environment changes (across wsgi.py, settings.py, manage.py, etc.), add the following to stackato.yml:
+To persist such environment changes (across wsgi.py, settings.py, manage.py, etc.), add the following to manifest.yml:
 
     env:
       DJANGO_SETTINGS_MODULE: myproject.settings
