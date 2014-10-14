@@ -134,8 +134,8 @@ Review the following topics related to the HP Horizon OpenStack services:
 
 Review the following topics related to Swift deployment:
 
-- [Swift overview](helion/openstack/services/object/overview/)
-- [Scaling up or Expanding the Swift Deployment overview](helion/openstack/services/object/overview/scale-out-swift/)
+- [Swift overview](/helion/openstack/services/object/overview/)
+- [Scaling up or Expanding the Swift Deployment overview](/helion/openstack/services/object/overview/scale-out-swift/)
 
 	- Scale up or expand 
 		- [Deploy New Swift Object Storage](/helion/openstack/services/swift/deployment-scale-out/)
@@ -158,6 +158,7 @@ Review the following topics related to Swift deployment:
 	- [Disk usage](/helion/openstack/services/object/swift/Monitor-disk/)
 	- [Replication status](/helion/openstack/services/object/swift/replica-status/)
 	- [Service health](/helion/openstack/services/object/swift/health-check/)
+	- [Diagnosis of disk health using hpssacli utility for HP servers](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/)
 
 [Ringo Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
 

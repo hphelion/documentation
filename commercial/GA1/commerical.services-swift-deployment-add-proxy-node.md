@@ -66,8 +66,6 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
  		# nova list
 
-
-
 6. Edit `swift-proxy.cfg` on each of the controller nodes. 
 
 	 	/etc/haproxy/manual/swift-proxy.cfg
