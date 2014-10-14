@@ -11,7 +11,7 @@ product: win-cli
 ##Folder Operations
 
 When you consider the sheer quantity of data that could be potentially moved into the cloud you soon realize that operations on individual files are impractical at best. To remedy this we have the ability to copy entire sets of objects from your local machine to
-the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any decendant folders beneath the target path.To address a folder, remember to include a trailing \ on the 
+the store, within the store, and to your local machine in one operation. Each of these commands can be tailored to affect a specific folders contents, or any descendant folders beneath the target path.To address a folder, remember to include a trailing \ on the 
 end of each path to indicate that you are working with a folder and not an individual file.
 
 

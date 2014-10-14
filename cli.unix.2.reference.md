@@ -1607,7 +1607,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. You may filter the images displayed by specifying one or more image names or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 List the images:

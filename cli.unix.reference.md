@@ -570,7 +570,7 @@ Remove or release a public IP address.
 
 
 ###Description
-Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
+Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one or more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove IP address '111.111.111.111':
@@ -980,7 +980,7 @@ Synchronize :btainer to remote container :atainer
 
     hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
 
-Create a two way synchronization betwee :atainer and :btainer
+Create a two way synchronization between :atainer and :btainer
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
@@ -1466,7 +1466,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. You may filter the images displayed by specifying one or more image names or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 List the images:
@@ -3791,7 +3791,7 @@ Remove or release a public IP address.
 
 
 ###Description
-Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
+Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one or more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove IP address '111.111.111.111':
@@ -4201,7 +4201,7 @@ Synchronize :btainer to remote container :atainer
 
     hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
 
-Create a two way synchronization betwee :atainer and :btainer
+Create a two way synchronization between :atainer and :btainer
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
@@ -4687,7 +4687,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. You may filter the images displayed by specifying one or more image names or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 List the images:
