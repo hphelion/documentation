@@ -19,11 +19,11 @@ Applying Updates {#applying-updates}
         -   [Exporting the server data](#exporting-the-server-data)
         -   [Scheduled backups](#scheduled-backups)
         -   [Importing the server data](#importing-the-server-data)
-    -   [Upgrading (v1.0 and later)](#upgrading-v1-0-and-later)
+    -   [Upgrading (v1.0 and later)](#upgrade)
     -   [Server Monitoring with New
         Relic](#server-monitoring-with-new-relic)
     -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
-    -   [Persistent Storage](#persistent-storage)
+    -   [Persistent Storage](#storage)
         -   [Relocating Services, Droplets, and
             Containers](#relocating-services-droplets-and-containers)
         -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
@@ -202,8 +202,8 @@ hostname of the old Core node:
 
     $ kato data import --cluster helion-host.example.com
 
-Upgrading (v1.0 and later) {#upgrading}
--------------------------------------------------------------------------------------
+##Upgrading (v1.0 and later) {#upgrade}
+
 
 The `kato node upgrade` command was added in
 Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
@@ -234,8 +234,7 @@ Detailed instructions on installing and configuring Nagios can be found
 in the [Nagios Core
 Documentation](http://nagios.sourceforge.net/docs/3_0/toc)
 
-Persistent Storage {#persistent-storage}
------------------------------------------------------------------------
+##Persistent Storage {#storage}
 
 Cloud hosting providers have different default partition sizes and
 configurations. The default root volumes on some cloud hosted VM

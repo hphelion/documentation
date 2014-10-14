@@ -108,9 +108,9 @@ This section provides information on how to set up a standalone cluster and modi
     -   [Applying Updates](/als/v1/admin/best-practices/#applying-updates)
     -   [Backup & Migration](/als/v1/admin/best-practices/#backup-migration)
     -   [Upgrading (v1.0 and
-        later)](/als/v1/admin/best-practices/#upgrading)
-	-   [Persistent
-        Storage](/als/v1/admin/best-practices/#persistent-storage)
+        later)](/als/v1/admin/best-practices/#upgrade)
+	- [Persistent
+        Storage](/als/v1/admin/best-practices/#storage)
 - [Hello World Custom Drain Sample](/als/v1/admin/best-practices/logging-examples/#hello-world-custom-drain)
 
 ##Reference {#reference}
