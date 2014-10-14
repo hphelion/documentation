@@ -26,7 +26,7 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
 
 On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and run the appropriate installer for your chosen platform.
 
-###Maven
+###Maven 
 
 [Maven](http://maven.apache.org/ "Maven") must be installed. 
 The simplest way to install Maven on a Mac/UNIX environment is:
