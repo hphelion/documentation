@@ -257,7 +257,7 @@ Allows you to add meta-data elements to an existing resource. Storage objects ca
 : Server ID.
 
 **md**
-: Pipe-delimited set of key value pairs seperated by commas.
+: Pipe-delimited set of key value pairs separated by commas.
 
 ###Examples###
 EXAMPLE 1
@@ -612,10 +612,10 @@ new-server -n "*name*" -i "*image-ref-ID*" -f "*flavor-ref-ID*"
 : The flavor identifier (FlavorRefId) used to define the server.
 
 **md** (optional)
-: Pipe-delimited set of metadata name value pairs seperated by commas.
+: Pipe-delimited set of metadata name value pairs separated by commas.
 
 **s** (optional)
-: The identifier (ServerId) used to associate the metadata for the server. If your currently viewing a servers details, this parameter may be ommited as it's supplied for you.
+: The identifier (ServerId) used to associate the metadata for the server. If your currently viewing a servers details, this parameter may be omitted as it's supplied for you.
 
 **sg**
 : Set of SecurityGroup names that are to be applied to the newly created server separated by commas.

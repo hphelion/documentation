@@ -75,7 +75,7 @@ By default, `helion logs` streams log data from
 *staging\_tasks.log* (while staging), *stdout.log* and *stderr.log*
 (while running).
 
-You can add up to five additonal files to the log stream by modifying
+You can add up to five additional files to the log stream by modifying
 the **HELION\_LOG\_FILES** environment variable (in
 [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env) or using [*helion
 set-env*](/als/v1/user/reference/client-ref/#command-set-env).
