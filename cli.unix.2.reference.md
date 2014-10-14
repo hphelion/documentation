@@ -3890,7 +3890,7 @@ Get the console output of a server or extract the windows password.
 Display the console output of a server.  When the `-p` option is used with the private key file for the server, if the decrypted password is still available on the console, it is displayed.
 
 ###Examples
-Display 100 lines of console ouput:
+Display 100 lines of console output:
 
     hpcloud servers:console my-server 100
 
@@ -3993,7 +3993,7 @@ Add metadata to a server.
 
 
 ###Description
-Add metadata to a server in your compute account.  You can specify the erver name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
+Add metadata to a server in your compute account.  You can specify the server name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
 
 ###Examples
 Add the specified metadata to the server (if the metadata exists, it is updated):
@@ -4029,7 +4029,7 @@ Remove metadata from a server.
 
 
 ###Description
-Remove metadata from a server in your compute account.  You can speciry the erver name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
+Remove metadata from a server in your compute account.  You can specify the server name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the r2 and c3 metadata from the server:

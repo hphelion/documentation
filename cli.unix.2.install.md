@@ -69,7 +69,7 @@ Please be sure to confirm the default values for `Auth Uri` and your various zon
 
 Now that you've finished installing the software package, it's time to [perform a few configuration steps](/cli/unix/configuration)!
 
-## Unistalling ##  {#Unistalling}
+## Uninstalling ##  {#Unistalling}
 
 Its recommended that you uninstall a previous version prior to upgrading. To uninstall:
 

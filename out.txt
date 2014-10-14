@@ -1,0 +1,69 @@
+Searching...this may take a while...
+./cli.nova.reference.md:`nova boot [--flavor <flavor>] [--image <image>] [--meta <key=value>] [--file <dst-path=src-path>] [--key_name <key_name>] [--user_data <user-data>] [--security_groups <security_groups>] [--block_device_mapping <dev_name=mapping>] [--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>] [--config-drive <value>] <backup>`
+./cli.nova.reference.md::  Store arbitrary files from <src-path> locally to <dst-path> on the new server. You may store up to 5 files.
+./cli.windows.2.containers-and-folders.md:<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./cli.windows.containers-and-folders.md:<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
+./commercial/GA1/commercial.install-GA-ovsvapp.md:		cd /hp-ovsvapp/src/ovsvm/
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" "> 
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
+./devplatform/devplatform.eclipse.md:3. Drag the install link into the Package Explorer view.<br><img src="eclipse1.png">
+./devplatform/devplatform.eclipse.md:1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.<br><img src="eclipse2.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse3.png"/>
+./devplatform/devplatform.eclipse.md:	 <img src="eclipse4.png">
+./devplatform/devplatform.eclipse.md:	<img src="eclipse7.png">
+./devplatform/devplatform.eclipse.md:	<img src="eclipse6.png">
+./devplatform/devplatform.eclipse.md:	<img src="eclipse5.png">
+./devplatform/devplatform.eclipse.md:	<img src="eclipse8.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse10.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse12.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse13.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse14.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse15.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse16.png"/>
+./devplatform/devplatform.eclipse.md:	<img src="eclipse17.png"/>
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="content/documentation/devplatform/stackato/imagesppt1.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/ppt2.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/ppt3.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/ppt4.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/loggly1.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/loggly2.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	 <img src="/content/documentation/devplatform/stackato/images/images/loggly3.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	 <img src="/content/documentation/devplatform/stackato/images/loggly4.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	 <img src="/content/documentation/devplatform/stackato/images/loggly5.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/splunk1.png" />
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/documentation/devplatform/stackato/images/splunk2.png"/>
+./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/splunk3.png" />
+./devplatform/stackato/admin/reference/architecture.html.md:<img src="/content/documentation/devplatform/stackato/images/helion-architecture-diagram.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/als/v1/images/ppt11.png">
+./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/als/v1/images/logo.png">
+./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/als/v1/images/ppt21w.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/content/documentation/devplatform/stackat0/images/ppt31.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/content/documentation/devplatform/stackat0/images/ppt41.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:<image src="..\..\images\loggly11.png">
+./devplatform/stackato/user/deploy/app-logs.html.md: 	<img src="..\..\images\loggly21.png">
+./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="..\..\images\loggly31.png">
+./devplatform/stackato/user/deploy/app-logs.html.md: 	<img src="..\..\images\loggly41.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md: 	<img src="..\..\images\loggly51.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="/content/documentation/devplatform/stackat0/images/splunk11.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="/content/documentation/devplatform/stackat0/images/splunk21.png" />
+./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="/content/documentation/devplatform/stackat0/images/splunk31.png" />
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Initial_Screen.png">
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/New_Server.png">
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Connect-To-Server.png">
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Manage-Cloud-Url.png">
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Connect-To-Server-2.png">
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images//Select-Org-Space.png">
+./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Server-Connected.png">
+./node.38.md:<!--<iframe src="LINK" width="640" height="464" frameborder="0"> </iframe>-->
+ 
+Finished searching
+ 
+If you got more results than you can read easily in the shell, use 
+   find2strings [string1] [string2] > out.txt 
+to send the results to a file named out.txt

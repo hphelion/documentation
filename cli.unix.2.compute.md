@@ -30,7 +30,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 _________________________________________
 
-This page addresses perfoming compute tasks using HP Helion Public Cloud with examples for the following command types:
+This page addresses performing compute tasks using HP Helion Public Cloud with examples for the following command types:
 
 * [Flavor Commands](#FlavorCommands)
 * [Image Commands](#ImageCommands)
