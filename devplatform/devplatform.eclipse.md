@@ -29,12 +29,11 @@ Before you begin, we recommend having [Eclipse IDE for Java EE developers](https
 3. Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.<br><img src="media/eclipse7.png"/>
 4. Enter the credentials used to access your ALS cluster in the resulting dialog and then click **Validate** to ensure that the plugin can access the URL.
 	- **Note**: If you encounter issues validating the connection, ensure that your proxy settings are configured correctly, and that you have access to the ALS cluster endpoint. Contact your IT Administrator for more help regarding network settings and trouble shooting.
-<br><img src="media/eclipse8.png"/>  
-5. Note that you might get a warning about the site using a *self-signed certificate*.   Click **Yes** to import the organizations and spaces that you've set up into the IDE.  Click **Finish**.  If you do not have an organization or space set up, please create those through your ALS console by visiting the endpoint URL in a browser window.
+  	<img src="media/eclipse8.png"/> 
+6. Note that you might get a warning about the site using a *self-signed certificate*.   Click **Yes** to import the organizations and spaces that you've set up into the IDE.  Click **Finish**.  If you do not have an organization or space set up, please create those through your ALS console by visiting the endpoint URL in a browser window.
 6. Now you should see **Helion Development Platform** as a configured Server in your IDE.  You can explore the apps that have been deployed already, or continue reading to learn how to deploy a sample app.
 
-
-##Using the Eclipse Plugin: Tutorial
+##Usage
 In order to demonstrate how the plugin works, we'll use a simple Java sample app that connects to a MySQL service.  If you'd like to follow along, [download and install](https://github.com/HelionDevPlatform/helion-mysql-java) the sample on your development machine.  If not, please skip the following 5 steps.
 
 1. Start by adding a new project. Right-click on Project Explorer and select **New** > **Dynamic Web Project**. Name the project **MySQLSample** and then click **Finish**.<br><img src="media/eclipse9.png"/>
@@ -47,12 +46,12 @@ In order to demonstrate how the plugin works, we'll use a simple Java sample app
 Now that our Sample app is set up, let's deploy it using the Helion Development Platform plugin.  
 
 1. Right-click the project in Project Explorer and select Configure > Enable as Cloud Foundry App.<br><img src="media/eclipse14.png"/>
-2. We'll deploy this app to the Helion Development Platform by right-clicking on the project and selecting **Run As** > **Run As Server**.<br><img src="media/eclipse15.png"/>
-2. Select **Helion Development Platform** and click **Next**.  You can check the box to skip this step in future deployments.<br><img src="media/eclipse15.png"/>
-3. Next specify a name for your app and optionally pick a specific custom buildpack.  You can save these settings to your manifest if you'd deploy using the command-line tools in the future.  Since this is a standard Java applet, we'll stick with the default buildpack that is built into Helion Development Platform.<br><img src="media/eclipse16.png"/>
-4. You can see the deployment progressing in the console.<br><img src="media/eclipse17.png"/>
+2. We'll deploy this app to the Helion Development Platform by right-clicking on the project and selecting **Run As** > **Run on Server**.<br><img src="media/eclipse15.png"/>
+2. Select **Helion Development Platform** and click **Next**.  You can check the box to skip this step in future deployments.<br><img src="media/eclipse16.png"/>
+3. Next specify a name for your app and optionally pick a specific custom buildpack.  You can save these settings to your manifest if you'd deploy using the command-line tools in the future.  Since this is a standard Java applet, we'll stick with the default buildpack that is built into Helion Development Platform.<br><img src="media/eclipse17.png"/>
+4. You can see the deployment progressing in the console.<br><img src="media/eclipse18.png"/>
 
-Once your app is deployed, you can use the plugin to interact with it directly from Eclipse.  You can select Show Console to bring up the ALS console.  You can view the app in the browser by selecting Open Home Page and you can also stop/restart/remove it.<br><img src="media/eclipse18.png"/>
+Once your app is deployed, you can use the plugin to interact with it directly from Eclipse.  You can select Show Console to bring up the ALS console.  You can view the app in the browser by selecting Open Home Page and you can also stop/restart/remove it.<br><img src="media/eclipse19.png"/>
 
 ----
 ####OpenStack trademark attribution
