@@ -890,7 +890,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
@@ -1584,7 +1584,7 @@ Add metadata to an image.
 
 
 ###Description
-Add metadata to a image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
+Add metadata to an image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
 
 ###Examples
 Add the specified metadata to the image (if the metadata exists, it is updated):
@@ -4111,7 +4111,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
