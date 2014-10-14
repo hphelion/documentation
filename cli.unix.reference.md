@@ -5849,7 +5849,7 @@ Remove metadata from a server.
 
 
 ###Description
-Remove metadata from a server in your compute account.  You can speciry the server name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
+Remove metadata from a server in your compute account.  You can specify the server name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the r2 and c3 metadata from the server:
