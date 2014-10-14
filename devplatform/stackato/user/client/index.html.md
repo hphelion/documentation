@@ -8,9 +8,9 @@ permalink: /als/v1/user/client/
 
 
 The Helion client is the command-line interface
-to Application Lifecycle Service. You can use it to push application code up to the server;
-start and stop applications; create data services and link them to
-applications; and a number of other application management operations.
+to Application Lifecycle Service. You can use it to push application code up to the server,
+start and stop applications, create data services and link them to
+applications, and a number of other application management operations.
 
 The [Command Reference](/als/v1/user/reference/client-ref/#command-ref-client) has full
 descriptions of all client commands and options. These details are also

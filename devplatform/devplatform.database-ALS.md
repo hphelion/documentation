@@ -12,6 +12,8 @@ If a more durable or scalable MySQL database service is needed, ensure your ALS 
 
 <img src="media/databaseALS.png"/>
 
+ALS cluster create wizard
+
 ##Configuration {#configure} 
 Alternatively, if the Database Service was not integrated with the cluster at the time of cluster creation, the administrator of the ALS cluster can switch from the unmanaged MySQL service to the managed Database Service using the following kato commands:
 
