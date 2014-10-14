@@ -20,49 +20,49 @@ echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural er
 echo  ""
 
 
-#for i in `find . -name "*.md"`; 
-#do  
-#if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
-#then
-#echo "==== Incorrect header divider ==="
-#echo "(Header must begin and end with a three-dash line.)"
-#echo $i
-#fi
-#done 
+for i in `find . -name "*.md"`; 
+do  
+if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
+then
+echo "==== Incorrect header divider ==="
+echo "(Header must begin and end with a three-dash line.)"
+echo $i
+fi
+done 
 
 
 
-#echo  ""
-#echo "==== Broken permalinks to documentation.git files ==="
-#for i in `find . -name "*.md" `
-#do
-#sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||'  >> permalinklist.txt
+echo  ""
+echo "==== Broken permalinks to documentation.git files ==="
+for i in `find . -name "*.md" `
+do
+sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||'  >> permalinklist.txt
 
 
-#grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink.txt
+grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink.txt
 
-#done
+done
 
  
 
-#for i in `cat permalinklist.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
-#do 
-#			if [[ -z $(grep $i filepermalink.txt ) ]];
-#			then
-#				echo "The permalink $i does not exist but is referenced in:"
-#				for a in `find . -name "*.md"`
-#				do
-#					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
-#					then
-#						echo $a
-#					fi
-#				done
-#			echo ""
-#			fi
-#done
+for i in `cat permalinklist.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
+do 
+			if [[ -z $(grep $i filepermalink.txt ) ]];
+			then
+				echo "The permalink $i does not exist but is referenced in:"
+				for a in `find . -name "*.md"`
+				do
+					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
+					then
+						echo $a
+					fi
+				done
+			echo ""
+			fi
+done
 
-#rm permalinklist.txt 
-#rm filepermalink.txt
+rm permalinklist.txt 
+rm filepermalink.txt
  
  
 echo ""
