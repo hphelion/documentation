@@ -33,7 +33,7 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
     sudo apt-get install default-jdk
 
 
-On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html/) and run the appropriate installer for your chosen platform.
+On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and run the appropriate installer for your chosen platform.
 
 
 ###Maven
