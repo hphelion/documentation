@@ -120,7 +120,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
 
-## Install the Database Service<a name="install-database"></a>
+## Install the Database Service {#install-database}
 This section provides details on installing the Database Service from the Development Platform.
 
 ### Prerequisites
@@ -129,30 +129,30 @@ This section provides details on installing the Database Service from the Develo
 
 To configure the **Database Service** in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.
 
-1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3". 
-	
-		nova aggregate-create aggregate-AZ-1 AZ-1
-		nova aggregate-create aggregate-AZ-2 AZ-2
-		nova aggregate-create aggregate-AZ-3 AZ-3
-		
- 2. Validate that the availability zones were correctly created by issuing the following command.
- 	
- 		nova aggregate-list
+1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3".
  
-3. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone.
-	
-		nova aggregate-add-host <id> <hostname>
+		 nova aggregate-create aggregate-AZ-1 AZ-1 
+		 nova aggregate-create aggregate-AZ-2 AZ-2	
+		 nova aggregate-create aggregate-AZ-3 AZ-3
  
-4. The following command can be used to list all availability zones and the compute hosts associated with them.
-
-		nova availability-zone-list
+2. Validate that the availability zones were correctly created by issuing the following command. 
+ 
+		 nova aggregate-list
+ 
+6. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone. 
+ 
+		 nova aggregate-add-host <id> <hostname>
+ 
+10. The following command can be used to list all availability zones and the compute hosts associated with them. 
+ 
+		 nova availability-zone-list 
 
 #### Quotas
 
 The **Database Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
 
 If you are not configuring the Database Service to be highly available you must have the following quota available:
-	
+
 |Resource | Usage |
 |--------------|-------------:|
 |Floating IPs|            6|
