@@ -2,7 +2,7 @@
 layout: default
 title: "Open Source and Third-Party Software License Agreements"
 permalink: /helion/devplatform/3rd-party-license-agreements/
-product: commercial.ga
+product: devplatform
 
 ---
 <!--UNDER REVISION-->

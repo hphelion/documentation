@@ -2,7 +2,7 @@
 layout: default
 title: "Preview Agreement"
 permalink: /helion/devplatform/eula/
-product: commercial.ga
+product: devplatform
 
 ---
 <!--UNDER REVISION-->
