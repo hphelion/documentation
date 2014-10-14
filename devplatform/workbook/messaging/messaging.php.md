@@ -30,7 +30,7 @@ If you are missing any of these items, you will need to [install them](/helion/d
 
 ##Download the Application Files
 
-Download the files [here](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-php).
+[Click here to access the download directory.](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-php).
 
 ##Deploy the Application
 

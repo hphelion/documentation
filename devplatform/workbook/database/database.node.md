@@ -24,7 +24,7 @@ If you are missing any of these items, you will need to [install them](/helion/d
 
 If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster’s link.
+1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
 2. On the **Admin** tab, click **Cluster**.
 3. Click the **Settings** icon (a gear icon in the upper right corner)
 4. The **MySQL** check box should be checked. If it is not, check it.
