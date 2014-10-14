@@ -132,16 +132,22 @@ Perform the following steps to provision the Swift node:
 
 		 # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-3. Edit the ***overcloud-config.json*** file to configure the following values:
+3. Use the Environment Variables file named env_vars created during initial installation and add the following content to it.
  
+<!---Set the following variables <!---**overcloud-config.json*** file to configure the following values--->
+
+		export OVERCLOUD_SOSWIFT_STORAGESCALE=<number of object servers>
+		export OVERCLOUD_SOSWIFT_PROXYSCALE=<number of proxy servers>
+ 
+<!----
  	    so_swift_storage_scale: <number of object servers>,
-	    so_swift_proxy_scale: <number of proxy servers>,
+	    so_swift_proxy_scale: <number of proxy servers>, --->
 
 **Note**: While deploying a scale-out **proxy** node ensure that the value of `so_swift_storage_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `so_swift_proxy_scale` is unchanged.
  
-4.Enter the following command to change the source for the *overcloud_config.json* file.
+4.Source the environment variables from the Environment Variables file 
 
-	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+	# source /root/env_vars
 
 5.Run the installer script to update the cloud.
 

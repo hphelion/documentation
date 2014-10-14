@@ -570,7 +570,7 @@ Remove or release a public IP address.
 
 
 ###Description
-Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
+Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one or more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove IP address '111.111.111.111':
@@ -890,7 +890,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may create multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
@@ -980,7 +980,7 @@ Synchronize :btainer to remote container :atainer
 
     hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
 
-Create a two way synchronization betwee :atainer and :btainer
+Create a two way synchronization between :atainer and :btainer
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
@@ -1466,7 +1466,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. You may filter the images displayed by specifying one or more image names or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 List the images:
@@ -1584,7 +1584,7 @@ Add metadata to an image.
 
 
 ###Description
-Add metadata to a image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
+Add metadata to an image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
 
 ###Examples
 Add the specified metadata to the image (if the metadata exists, it is updated):
@@ -2532,7 +2532,7 @@ Get the console output of a server or extract the windows password.
 Display the console output of a server.  When the `-p` option is used with the private key file for the server, if the decrypted password is still available on the console, it is displayed.
 
 ###Examples
-Display 100 lines of console ouput:
+Display 100 lines of console output:
 
     hpcloud servers:console my-server 100
 
@@ -2599,7 +2599,7 @@ Add metadata to a server.
 
 
 ###Description
-Add metadata to a server in your compute account.  You can specify the erver name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
+Add metadata to a server in your compute account.  You can specify the server name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
 
 ###Examples
 Add the specified metadata to the server (if the metadata exists, it is updated):
@@ -2628,7 +2628,7 @@ Remove metadata from a server.
 
 
 ###Description
-Remove metadata from a server in your compute account.  You can speciry the erver name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
+Remove metadata from a server in your compute account.  You can specify the server name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the r2 and c3 metadata from the server:
@@ -3791,7 +3791,7 @@ Remove or release a public IP address.
 
 
 ###Description
-Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one ore more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
+Remove or release a previously allocated public IP address. Any server instances that were associated to this address are disassociated. You may specify one or more address IPs or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove IP address '111.111.111.111':
@@ -4111,7 +4111,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the ontainer name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may create multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
@@ -4201,7 +4201,7 @@ Synchronize :btainer to remote container :atainer
 
     hpcloud containers:sync :btainer keyo https://region-a.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/atainer
 
-Create a two way synchronization betwee :atainer and :btainer
+Create a two way synchronization between :atainer and :btainer
 
     hpcloud containers:sync :atainer keyo https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/96XXXXXX/btainer
 
@@ -4687,7 +4687,7 @@ List the available images in your compute account.
 
 
 ###Description
-List the images in your compute account. You may filter the images displayed by specifying one ore more image names or IDs on the command line.  Optionally, you can specify an availability zone.
+List the images in your compute account. You may filter the images displayed by specifying one or more image names or IDs on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 List the images:
@@ -4805,7 +4805,7 @@ Add metadata to an image.
 
 
 ###Description
-Add metadata to a image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
+Add metadata to an image in your compute account.  You may specify the mage name or ID.  If metadata already exists, it is updated.  You must specify the Mmetadata as a comma separated list of name value pairs.  Optionally, you may specify an availability zone.
 
 ###Examples
 Add the specified metadata to the image (if the metadata exists, it is updated):
@@ -5753,7 +5753,7 @@ Get the console output of a server or extract the windows password.
 Display the console output of a server.  When the `-p` option is used with the private key file for the server, if the decrypted password is still available on the console, it is displayed.
 
 ###Examples
-Display 100 lines of console ouput:
+Display 100 lines of console output:
 
     hpcloud servers:console my-server 100
 
@@ -5820,7 +5820,7 @@ Add metadata to a server.
 
 
 ###Description
-Add metadata to a server in your compute account.  You can specify the erver name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
+Add metadata to a server in your compute account.  You can specify the server name or ID.  Optionally, you can an availability zone. The metadata should be a comma separated list of name value pairs.
 
 ###Examples
 Add the specified metadata to the server (if the metadata exists, it is updated):
@@ -5849,7 +5849,7 @@ Remove metadata from a server.
 
 
 ###Description
-Remove metadata from a server in your compute account.  You can speciry the erver name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
+Remove metadata from a server in your compute account.  You can specify the server name or ID.  You can specify one or more metadata keys on the command line.  Optionally, you can specify an availability zone.
 
 ###Examples
 Remove the r2 and c3 metadata from the server:
