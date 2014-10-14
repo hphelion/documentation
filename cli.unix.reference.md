@@ -890,7 +890,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may create multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
@@ -4111,7 +4111,7 @@ Add a container.
 
 
 ###Description
-Add a new container to your storage account. You may creeate multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
+Add a new container to your storage account. You may create multiple containers by specifying more than one container name on the command line.  You can specify the container name  with or without the preceding colon: `my_container` or `:my_container`. Optionally, you can specify an availability zone.
 
 ###Examples
 Create a new container called 'my_container':
