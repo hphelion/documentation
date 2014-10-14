@@ -15,9 +15,7 @@ RabbitMQ is also available within ALS as a single-instance, unmanaged service. I
 If the Helion OpenStack&reg; cloud was configured with three availability zones, the Messaging Service will automatically deploy the cluster across all three so that the cluster is resilient to server, VM, or availability zone failures.
 
 ##Prerequisites
-
-
-1. [Create a RabbitMQ cluster](/helion/devplatform/messageservice/) from the OpenStack&reg; Dashboard if a cluster does not already exist. 
+1. [Create a RabbitMQ cluster](/helion/devplatform/messageservice/#create) from the OpenStack&reg; Dashboard if a cluster does not already exist. 
 2.	Once a cluster has been created, you can connect an application deployed to ALS with the Messaging Service.
 3.	To connect an application, add an environment variable in the *manifest.yml* file of the application you wish to connect to the Messaging Service. This variable tells your application how to connect to the cluster using AMQP. The environment variable can be named anything you prefer. We will use **MQ\_URL** in this example.
 	1.	The connection string and MQ_URL value will look something like: 

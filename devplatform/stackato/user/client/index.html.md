@@ -36,8 +36,6 @@ available at the command line via the *helion help* command.
 4.  Confirm that the client is installed correctly by running
     *helion help*.
 
-
-
 ##Getting Help {#getting-help}
 
 
