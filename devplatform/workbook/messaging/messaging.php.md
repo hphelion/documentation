@@ -13,8 +13,6 @@ This sample displays a simple form that takes a string from the user, adds the m
 
 ## Prerequisites
 
-If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
-
 1.	You must have access to an ALS cluster.
 2.	The Helion command-line interface (CLI) must be installed.
 3.	You must have access to the web-based Helion Management console.

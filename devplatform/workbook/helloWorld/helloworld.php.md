@@ -12,7 +12,7 @@ This sample displays the text "Hello World!". This is a demonstration of the min
 
 ##Prerequisites
 1. You must have access toa n ALS cluster.
-2. The Helion [command-ine interface (CLI](/als/v1/user/client/)) must be installed.
+2. The Helion [command-ine interface (CLI)](als/v1/user/reference/client-ref/) must be installed.
 3. You must ahve access tot he web-based Helion Management console.
 
 If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
