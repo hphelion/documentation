@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "Creating a Database Instance"
+title: "The Marketplace"
 permalink: /helion/devplatform/marketplace/
 product: devplatform
 
@@ -61,8 +61,9 @@ The following section will show how to create an instance of Vertica 7 Community
 
 
 1. The **Add Application to &lt;selected environment&gt;** dialog will come up. Fill out
-	- **Application name** – can be anything
-	**Flavor** for instances, can be:
+	- **Application name** - can be anything
+	
+	- **Flavor** for instances, can be:
 		- m1.medium
 		- m1.large
 		- m1.xlarge
