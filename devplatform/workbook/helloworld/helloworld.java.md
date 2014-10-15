@@ -52,12 +52,11 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push -n`
+5.	Execute `helion push`
+6.	Accept any default values that you may be prompted for. Note: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. &lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io)
 
-##Run the Application
-1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
-2.	Click **Applications**.
-3.	If the file push was successful, you should see **hello-world-java** in the list of available applications.
+
+
 
 ##Key Code Snippets
 
@@ -84,7 +83,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 		}
 	}
 
-This simple Servlet prints "Hello World".
+This simple Servlet prints "Hello World". Yay!
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
