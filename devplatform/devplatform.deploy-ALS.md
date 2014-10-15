@@ -23,18 +23,18 @@ You need to have [installed](/helion/devplatform/install/) the Helion Developmen
 2.	Click on the **Create Cluster** button to bring up the **Create Cluster** dialog.<br><img src="media/ALSConfig2.png"/>
  
 3.	Fill out required fields in the Details tab of the Create Cluster dialog, including
-	- **Title**: name of cluster
-	- **Prefix**: DNS acceptable hostname string (not fully qualified DNS name) used to name the virtual machines created for the cluster.
+	- **Title** - name of cluster
+	- **Prefix** - DNS acceptable hostname string (not fully qualified DNS name) used to name the virtual machines created for the cluster.
 	- **Admin Email**
 	- **Admin Password**
-	- **Availability Zone** – where the cluster will be created.
-	- **DEA flavor** – Droplet Execution Agents (DEAs) are responsible for running and staging applications in ALS. DEA flavors specify different amounts of RAM available per DEA instance, ranging from 0.5GB to 16GB.
-	- **DEA Instance Count** – the number of DEA instances to use in the cluster.
-	- **Key Pair** – required for authentication.
-	- **Availability Zone**: where the cluster will be created.
+	- **Availability Zone** - where the cluster will be created.
+	- **DEA flavor** - Droplet Execution Agents (DEAs) are responsible for running and staging applications in ALS. DEA flavors specify different amounts of RAM available per DEA instance, ranging from 0.5GB to 16GB.
+	- **DEA Instance Count** - the number of DEA instances to use in the cluster.
+	- **Key Pair** - required for authentication.
+	- **Availability Zone** - where the cluster will be created.
 	- **DEA flavor**: Droplet Execution Agents (DEAs) are responsible for running and staging applications in ALS. DEA flavors specify different amounts of RAM available per DEA instance, ranging from 0.5GB to 16GB.
-	- **DEA Instance Count**: the number of DEA instances to use in the cluster.
-	- **Key Pair**: required for authentication.
+	- **DEA Instance Count** - the number of DEA instances to use in the cluster.
+	- **Key Pair** - required for authentication.
 
 4.	Click on the **Networking** tab of the Create Cluster dialog and drag an available network to the **Selected Networks** area.<br><img src="media/ALSConfig3.png"/>
 
