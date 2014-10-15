@@ -32,6 +32,8 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 
 ###JDK
 
+In order to install other prerequisites like Maven you have to have the Java Development Kit (JDK) installed.  The JDK can be installedwith he following command on a Mac/UNIX environment.
+
     sudo apt-get install default-jdk
 
 The simplest way to install JDK on a PC environment is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), select and run the appropriate installer for your chosen platform.
@@ -60,7 +62,7 @@ This builds the application with Maven. It will create the *mysql-java-1.0.war* 
 
 
 ##Deploy the Application
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally use the [plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
@@ -68,7 +70,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 4.	If you are not already there, `cd` to the root directory of the sample.
 5.	Execute `helion push -n`
 6.	Accept any default values that you may be prompted for.
-	<br>	**Note**: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
+	<br>	**Note**: By default, ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
 
 ##Key Code Snippets
 
@@ -124,6 +126,8 @@ The manifest.yaml file is the configuration information used by ALS to set up th
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
 2.	Click **Applications**.
 3.	If the file push was successful, you should see **mysql-java** in the list of available applications.
+4.	The status of the application should be **Online**.  Click the name of the application to launch it.
+5.	In the upper right-hand corner, click **View App**.
 
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service.
