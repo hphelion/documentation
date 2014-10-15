@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 <!--UNDER REVISION-->
-#Resources for Sysadmins and Installers <a name="sysadmin"></a>
+#Resources for ITOps {#sysadmin}
 
 ##Installation
 
