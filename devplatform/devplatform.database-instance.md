@@ -50,10 +50,10 @@ The following section will demonstrate how to back up an existing database insta
 2.	Under your project, open the **Database** panel and then click the **Instances** tab.
 3.	A list of active database instances will be displayed. Identify the database instance to back up and click **Create Backup** next to that instance.<br><img src="media/createDBinstance6.png"/>	
 3.	In the **Backup Database** dialog, specify the following information:
-	- **Name** – the name of the backup to create. This name will help you identify the backup in the future.
-	- **Database Instance** – The database instance that will be backed up.
-	- **Description** – a text description of the backup (optional).
-	- **Parent Backup** – if a previous backup of this database instance exists. it is possible to take an incremental backup. An incremental backup will process faster because it only stores the differences between the two. Select the previous backup if an incremental backup is desired.<br><img src="media/createDBinstance7.png"/>
+	- **Name** - the name of the backup to create. This name will help you identify the backup in the future.
+	- **Database Instance** - The database instance that will be backed up.
+	- **Description** - a text description of the backup (optional).
+	- **Parent Backup** - if a previous backup of this database instance exists. it is possible to take an incremental backup. An incremental backup will process faster because it only stores the differences between the two. Select the previous backup if an incremental backup is desired.<br><img src="media/createDBinstance7.png"/>
 4.	Click **Backup**.
 5.	In the **Database** panel, click the **Backups** tab to view all existing backups, including the newly-created backup.<br><img src="media/createDBinstance8.png"/>
 
