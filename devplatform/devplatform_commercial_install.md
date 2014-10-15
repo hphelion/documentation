@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Development Platform Installation"
-permalink: /helion/devplatform/install
+permalink: /helion/devplatform/install/commercial/
 product: devplatform
 
 ---
