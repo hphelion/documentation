@@ -67,7 +67,7 @@ Before you start the installation and configuration process, ensure that you hav
 This deletes your VMs, releases the floating IP addresses and removes the cluster security groups.
 5. Once your install is complete, and if you do not want to use the automated tear-down capabilities of the Constructor, you can terminate the Constructor VM.
 
-##After you install
+##After you install<a name="after"></a>
 
 Once the installation completes, you can load the ALS Console at the URL provided at the end of the assemble.py script. After you log in to the Console, you can access the ALS User Documentation for instructions for creating users and deploying applications.
  
