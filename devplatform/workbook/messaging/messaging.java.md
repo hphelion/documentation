@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Java Messaging Sample" permalink: /helion/devplatform/workbook/messaging/java/ 
+title: "HP Helion Development Platform Workbook Java Messaging Sample" permalink: /helion/devplatform/workbook/messaging/java/
 product: devplatform
 
 ---

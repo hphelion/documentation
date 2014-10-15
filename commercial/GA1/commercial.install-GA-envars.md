@@ -185,38 +185,40 @@ If you plan to use custom IP addresses in your HP Helion OpenStack deployment, c
 
 All VLAN ID's and IP addresses given in below are examples of customized IP addresses and VLAN identifiers for External and Service network access.
 
-	export BM_NETWORK_CIDR=192.168.130.0/24
-	export BM_NETWORK_GATEWAY=192.168.130.1
-	export BM_NETWORK_SEED_IP=192.168.130.3
-	export BM_NETWORK_SEED_RANGE_START=192.168.130.4
-	export BM_NETWORK_SEED_RANGE_END=192.168.130.22
-	export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.130.23
-	export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.130.126
-	export CUSTOMER_ROUTER_IP=192.168.130.1
-	export FLOATING_START=192.168.131.2
-	export FLOATING_END=192.168.131.245
-	export FLOATING_CIDR=192.168.131.0/24
-	export UNDERCLOUD_NeutronPublicInterface=eth1
-	export BRIDGE_INTERFACE=em2
-	export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=202
-	export OVERCLOUD_NTP_SERVER=18.110.135.123
-	export UNDERCLOUD_NTP_SERVER=18.110.135.123
-	export OVERCLOUD_COMPUTESCALE=4
-	export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
-	export UNDERCLOUD_CODN_HTTPS_PROXY=https://19.65.150.175:8080
-	export OVERCLOUD_VIRTUAL_INTERFACE=eth1
-	export OVERCLOUD_NeutronPublicInterface=vlan331
-	export NeutronPublicInterfaceRawDevice=eth1
-	export NeutronSVCInterface=vlan332
-	export NeutronSVCInterfaceDefaultRoute=192.168.132.1
-	export SVC_ALLOCATE_START=192.168.132.2
-	export SVC_ALLOCATE_END=192.168.132.250
-	export SVC_ALLOCATE_CIDR=192.168.132.0/24
-	export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc
-	export OVERCLOUD_FLAT_NETWORKS=svcnet1
-	export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
-	export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
-	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
+1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
+
+		export BM_NETWORK_CIDR=192.168.130.0/24
+		export BM_NETWORK_GATEWAY=192.168.130.1
+		export BM_NETWORK_SEED_IP=192.168.130.3
+		export BM_NETWORK_SEED_RANGE_START=192.168.130.4
+		export BM_NETWORK_SEED_RANGE_END=192.168.130.22
+		export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.130.23
+		export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.130.126
+		export CUSTOMER_ROUTER_IP=192.168.130.1
+		export FLOATING_START=192.168.131.2
+		export FLOATING_END=192.168.131.245
+		export FLOATING_CIDR=192.168.131.0/24
+		export UNDERCLOUD_NeutronPublicInterface=eth1
+		export BRIDGE_INTERFACE=em2
+		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=202
+		export OVERCLOUD_NTP_SERVER=18.110.135.123
+		export UNDERCLOUD_NTP_SERVER=18.110.135.123
+		export OVERCLOUD_COMPUTESCALE=4
+		export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+		export UNDERCLOUD_CODN_HTTPS_PROXY=https://19.65.150.175:8080
+		export OVERCLOUD_VIRTUAL_INTERFACE=eth1
+		export OVERCLOUD_NeutronPublicInterface=vlan331
+		export NeutronPublicInterfaceRawDevice=eth1
+		export NeutronSVCInterface=vlan332
+		export NeutronSVCInterfaceDefaultRoute=192.168.132.1
+		export SVC_ALLOCATE_START=192.168.132.2
+		export SVC_ALLOCATE_END=192.168.132.250
+		export SVC_ALLOCATE_CIDR=192.168.132.0/24
+		export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc
+		export OVERCLOUD_FLAT_NETWORKS=svcnet1
+		export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
+		export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
+		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/).
 
@@ -234,6 +236,8 @@ Identify the environment variables required for the installation based on the de
 If you plan to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
 
 All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for External and Service network access.
+
+1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
 
 		export BM_NETWORK_SEED_RANGE_START=172.30.100.2
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
@@ -280,9 +284,7 @@ If you intend to use custom IP addresses and a VLAN provider network for externa
 		export UNDERCLOUD_NTP_SERVER=10.23.69.129
 		export PROVIDER_NETWORK=10.23.70.128/26
 		export CUSTOMER_ROUTER_IP=10.23.69.129
-		export OVERCLOUD_NEUTRON_DVR=False
 		export OVERCLOUD_VIRTUAL_INTERFACE="br-ex"
-		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID="101"
 		export VLAN_RANGE=1701:1720   
 		export OVERCLOUD_CLOUD_TYPE="ESX"
 		export EXTERNAL_VLAN_ID=1634
