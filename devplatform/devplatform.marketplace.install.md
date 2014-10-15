@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "Creating a Database Instance"
+title: "The Marketplace"
 permalink: /helion/devplatform/marketplace/
 product: devplatform
 
