@@ -21,7 +21,7 @@ debugging session automatically.
 See the [*JPDA Debugging*](/als/v1/user/deploy/languages/java/#java-web-debug) section
 of the Java deployment documentation for an example.
 
-STACKATO\_DEBUG\_COMMAND[](#helion-debug-command "Permalink to this headline")
+HELION\_DEBUG\_COMMAND[](#helion-debug-command "Permalink to this headline")
 ---------------------------------------------------------------------------------
 
 The helion client can automatically start a local debugger client or
@@ -29,7 +29,7 @@ IDE instance with connection information for a newly pushed application.
 
 When the `-d` debugging option is given to
 [*helion push*](/als/v1/user/reference/client-ref/#command-push) command,
-the client looks for a STACKATO\_DEBUG\_COMMAND environment variable. If
+the client looks for a HELION\_DEBUG\_COMMAND environment variable. If
 present, the command specified in that variable is run after the push
 completes as child process in the foreground (i.e. blocking the parent
 `helion` process) in the local application source

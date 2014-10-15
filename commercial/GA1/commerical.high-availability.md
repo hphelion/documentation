@@ -26,7 +26,7 @@ This page covers the following topics:
 *  [High Availability( HA) concepts overview](#concepts-overview) 
     *  [Scope of High Availability: Protection against Single Points of Failure (SPOF)](#scope-ha)
 *  [Highly Available cloud services](#ha-helion)
-    *  [High Availability of Overcloud Controllers](#ha-helion)
+    *  [High Availability of Overcloud Controllers](#ha-overcloud-controller)
         * [API Request Message Flow](#api-msg-flow)
         * [Handling Node Failure](#handling-node-failure)
         * [Handling Network Partitions](#handling-network-partition)
@@ -96,7 +96,7 @@ Hence, the cloud operator is encouraged to recover and restore any failed compon
 
 The HP Helion OpenStack installer deploys highly available configurations of OpenStack cloud services, resilient against single points of failure.
 
-###High Availability of Overcloud Controllers
+###High Availability of Overcloud Controllers<a name="ha-overcloud-controller"></a>
 
 The high availability of the overcloud controller components comes in two main forms.
 
@@ -161,7 +161,7 @@ Finally, when Controller0 comes back online, keepalived and HA proxy will resume
 
 ####Handling Network Partitions
 
-It is important for the overcloud HA setup to tolerate network failures, specifically those that result in a partition of the cluster, whereby one of the three nodes in the overcloud control plane cannot communicate with the remaining two nodes of the cluster. The description of network partition handling is separated into the main HA components of the overcloud...**sentence seems to be incomplete. Please validate** ?? 
+It is important for the overcloud HA setup to tolerate network failures, specifically those that result in a partition of the cluster, whereby one of the three nodes in the overcloud control plane cannot communicate with the remaining two nodes of the cluster. The description of network partition handling is separated into the main HA components of the Overcloud.<!---**sentence seems to be incomplete. Please validate** ??-->
 
 #####MySQL Galera Cluster<a name="mysql-galera"></a>
 The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is a partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the control plane. As a result, requests can only be satisfied on Controller1 or management controller. Controller0 will continue to attempt to rejoin the cluster:
@@ -239,7 +239,7 @@ The highly available cloud infrastructure consists of the following:
 
 <a href="javascript:window.open('/content/documentation/media/ha-availability-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Availability Zones (opens in a new window)</a>
 
-While planning your OpenStack deployment, you should decide on how to zone various types of nodes – such as compute, block storage, and object storage. For example, you may decide to place all servers in the same rack in the same zone. For larger deployments, you may plan more elaborate redundancy schemes for redundant power, network ISP connection, and even physical firewalling between zones (*this aspect is outside the scope of this document*).
+While planning your OpenStack deployment, you should decide on how to zone various types of nodes &#45; such as compute, block storage, and object storage. For example, you may decide to place all servers in the same rack in the same zone. For larger deployments, you may plan more elaborate redundancy schemes for redundant power, network ISP connection, and even physical firewalling between zones (*this aspect is outside the scope of this document*).
 
 HP Helion OpenStack offers APIs, CLIs and Horizon UIs for the administrator to define and user to consume, availability zones for each of Nova, Cinder and Swift services. This section outlines the process to deploy specific types of nodes to specific physical servers, and makes a statement of available support for these types of availability zones in the current release. 
 
@@ -282,7 +282,7 @@ For more information on how to deploy VSA nodes on desired target servers, refer
 
 The 3PAR StoreServ device family has several layers of redundancy built in through its hardware architecture. For more information, refer to the 3PAR StoreServ documentation.
 
-You will typically connect the 3PAR StoreServ devices to the compute servers using two redundant SAN fabrics. The Cinder 3PAR driver supports multipath connectivity between the compute servers and the 3PAR devices, ensuring that the data I/O path remains available in the event of any single point of failure in the hardware path spanning – server HBA, port, switches, and the ports of the 3PAR devices.
+You will typically connect the 3PAR StoreServ devices to the compute servers using two redundant SAN fabrics. The Cinder 3PAR driver supports multipath connectivity between the compute servers and the 3PAR devices, ensuring that the data I/O path remains available in the event of any single point of failure in the hardware path spanning &#45; server HBA, port, switches, and the ports of the 3PAR devices.
 
 ###Cinder Availability Zones {#cinder-avail}
 

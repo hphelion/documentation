@@ -52,8 +52,8 @@ option is useful in this scenario).
 
 ### Changing the Password[](#changing-the-password "Permalink to this headline")
 
-The default password for the `stackato` system user
-is **stackato**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
+The default password for the `helion` system user
+is **helion**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
 
 This password is changed to match the one set for the first
 administrative user created in the Management Console. Once you've set
@@ -128,7 +128,7 @@ Before we examine these scenarios in detail, let's review the separation
 of roles in a [*cluster*](/als/v1/admin/cluster/#cluster-setup):
 
 -   The **core** node which we conventionally call
-    `api.stackato-xxxx.local` in a micro cloud will
+    `api.helion-xxxx.local` in a micro cloud will
     be given its own hostname and IP address in a cluster so that you
     can reach it from both the [*Management
     Console*](/als/v1/user/console/#management-console) and the
@@ -329,7 +329,7 @@ example:
 
 The Application Lifecycle Service micro cloud uses [*multicast
 DNS*](/als/v1/user/reference/glossary/#term-multicast-dns). to
-broadcast its generated hostname (e.g. `stackato-xxxx.local`). This mechanism is intended for VMs running on a local
+broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local
 machine or subnet.
 
 For production use, the server will need:
@@ -795,4 +795,4 @@ parameter of the `cloud_controller.yml` file:
     - "deb http://security.ubuntu.com/ubuntu natty-security main universe"
 
 The file is located on the Application Lifecycle Service server at
-`~/stackato/vcap/cloud_controller/config/cloud_controller.yml`
+`~/helion/vcap/cloud_controller/config/cloud_controller.yml`

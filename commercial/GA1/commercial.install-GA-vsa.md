@@ -172,7 +172,7 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
  * Seed Cloud is installed and is running.
  
- * The bundled license for the StoreVirtual VSA has a maximum limit of 50TB per node, and hence the the total amount of the configured storage on the StoreVirtual system should not exceed 50 TB.
+ * The bundled license for the StoreVirtual VSA has a maximum limit of 50TB per node, and hence the total amount of the configured storage on the StoreVirtual system should not exceed 50 TB.
 
 <!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
@@ -394,7 +394,7 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
 
-- [Sirius CLI](/helion/openstack/ga/sirius-cli/)
+- [Sirius CLI](/helion/openstack/sirius-cli/)
 
 <!---## Next step
 
