@@ -24,7 +24,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Cinder Block Storage Using HP StoreVirtual VSA 
 
-HP Helion OpenStack® bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack Cinder Block Storage.
+HP Helion OpenStack&#174; bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack Cinder Block Storage.
 
 This page provides detailed information on using HP StoreVirtual VSA for realizing cloud storage. 
 
@@ -41,11 +41,11 @@ This page provides detailed information on using HP StoreVirtual VSA for realizi
 ##HP StoreVirtual VSA overview {#StoreVirtual-overview}
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external 
-array hardware. It transforms your server’s internal or direct-attached storage into a fully featured shared storage array—without the cost and complexity 
+array hardware. It transforms your server&#39;s internal or direct-attached storage into a fully featured shared storage array—without the cost and complexity 
 associated with dedicated storage. HP StoreVirtual VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
 
 Multiple StoreVirtual systems running on different servers create a clustered pool of storage with the ability to make data highly available by 
-protecting volumes with network RAID.A logical grouping of clusters is done in order to form a unit and is called a management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
+protecting volumes with network RAID. A logical grouping of clusters is done in order to form a unit and is called a management group. Each cluster can be treated as storage node by hypervisor and is accessed using VIP (virtual IP). 
 
 With Network RAID, blocks of data are striped and mirrored across multiple StoreVirtual systems, allowing volumes and applications to stay online in the event of disk, storage subsystem or server failure. iSCSI connectivity on HP StoreVirtual VSA, support the use of the storage pools by cloud instances.
 A single management group can contain up to 32 StoreVirtual nodes &#45; grouped into clusters. A single cluster comprises 1 to 16 StoreVirtual nodes. Each management group can optimally manage a maximum of 1500 volumes. 
@@ -65,13 +65,13 @@ HP StoreVirtual VSA enables the following features in HP Helion OpenStack&#174;:
 * **Centralized Management Console (CMC)**: Multiple data centers and sites can be managed from an all inclusive "single pane-of-glass." All  StoreVirtual SAN features are managed from the Centralized Management Console (CMC) for simple, easy-to-manage storage.
 
 
-###HP StoreVirtual Deployment Models supported in HP Helion OpenStack&#174;{#hp-storevirtual-dep-platform}
+###HP StoreVirtual Deployment Models supported in HP Helion OpenStack&#174; {#hp-storevirtual-dep-platform}
 
 The following diagram displays the different development platforms supported in HP Helion OpenStack&#174;.
 
-There are 3 supported models for deploying StoreVirtual in HP Helion OpenStack®:
+There are 3 supported models for deploying StoreVirtual in HP Helion OpenStack&#174;:
 
-1. You can deploy and configure dedicated HP StoreVirtual VSA Storage nodes using HP Helion OpenStack® TripleO/Heat based Installer. Licenses for these VSA nodes are included for use from HP Helion OpenStack Compute Cloud Nodes only.
+1. You can deploy and configure dedicated HP StoreVirtual VSA Storage nodes using HP Helion OpenStack&#174; TripleO/Heat based Installer. Licenses for these VSA nodes are included for use from HP Helion OpenStack Compute Cloud Nodes only.
 
 2.      User deploys and configures StoreVirtual VSA in VMware ESX platform, and maps these to Cinder backends. Licenses for these must be separately procured and are not included with HP Helion OpenStack.
 

@@ -65,7 +65,7 @@ Ensure that the cluster details entered in the command correspond with the actua
 
 To register StoreVirtual clusters, enter the following command:
 
-	 # sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+	 # sirius register-storevirtual-cluster -name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 The sample output of the above command is given below:
 
@@ -275,7 +275,7 @@ The sample output of the above command is given below:
 * [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
 * [Update Overcloud configuration JSON](#update-overcloud-json)
 * [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
-* [Update Overcloud](#update-cloud) 
+* [Update Overcloud](#update-overcloud) 
 
 The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.
 
@@ -462,7 +462,7 @@ Enter the following command
 
     # source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-###Update Overcloud{#update-overcloud}
+###Update Overcloud {#update-overcloud}
 
 Enter the following command to update the Overcloud
 

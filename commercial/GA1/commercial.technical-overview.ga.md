@@ -118,7 +118,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>EON services</b></td>
-	<td>The HP Helion ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. The information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
+	<td>The HP Helion ESX onboarding (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. The information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
 
 	<br><br> <a href =" /helion/openstack/services/eon/overview/"> Learn more</a> HP Helion EON services.</td>
 	<td>Administrators can interact with VMware vCenter servers to discover, inventory and map ESX clusters to be used by the Compute service. 
