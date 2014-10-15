@@ -7,7 +7,7 @@ permalink: /als/v1/admin/best-practices/
 Best Practices[](#index-0 "Permalink to this headline")
 ========================================================
 
-Applying Updates[](#applying-updates "Permalink to this headline")
+Applying Updates {#applying-updates}
 -------------------------------------------------------------------
 [Applying Updates](#applying-updates)
     -   [Backup & Migration](#backup-migration)
@@ -19,11 +19,11 @@ Applying Updates[](#applying-updates "Permalink to this headline")
         -   [Exporting the server data](#exporting-the-server-data)
         -   [Scheduled backups](#scheduled-backups)
         -   [Importing the server data](#importing-the-server-data)
-    -   [Upgrading (v1.0 and later)](#upgrading-v1-0-and-later)
+    -   [Upgrading (v1.0 and later)](#upgrade)
     -   [Server Monitoring with New
         Relic](#server-monitoring-with-new-relic)
     -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
-    -   [Persistent Storage](#persistent-storage)
+    -   [Persistent Storage](#storage)
         -   [Relocating Services, Droplets, and
             Containers](#relocating-services-droplets-and-containers)
         -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
@@ -68,7 +68,7 @@ prevent this, use the `--no-restart` option.
 To apply a patch only to the local Application Lifecycle Service VM (not the whole cluster),
 use the `--only-this-node` option.
 
-Backup & Migration[](#backup-migration "Permalink to this headline")
+Backup & Migration {#backup-migration}
 ---------------------------------------------------------------------
 
 This section describes backing up Application Lifecycle Service data and importing it into a
@@ -202,8 +202,8 @@ hostname of the old Core node:
 
     $ kato data import --cluster helion-host.example.com
 
-Upgrading (v1.0 and later)[](#upgrading-v1-0-and-later "Permalink to this headline")
--------------------------------------------------------------------------------------
+##Upgrading (v1.0 and later) {#upgrade}
+
 
 The `kato node upgrade` command was added in
 Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
@@ -234,8 +234,7 @@ Detailed instructions on installing and configuring Nagios can be found
 in the [Nagios Core
 Documentation](http://nagios.sourceforge.net/docs/3_0/toc)
 
-Persistent Storage[](#persistent-storage "Permalink to this headline")
------------------------------------------------------------------------
+##Persistent Storage {#storage}
 
 Cloud hosting providers have different default partition sizes and
 configurations. The default root volumes on some cloud hosted VM

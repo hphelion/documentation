@@ -85,7 +85,7 @@ Applications using web sockets must use the VCAP\_APP\_PORT or PORT
 variables*](/als/v1/user/reference/environment/#environment-variables)
 to set the default listener port of the WebSocket server.
 
-SPDY[](#router-spdy "Permalink to this headline")
+SPDY {#router-spdy}
 --------------------------------------------------
 
 [SPDY](http://dev.chromium.org/spdy/) is a protocol developed by Google
