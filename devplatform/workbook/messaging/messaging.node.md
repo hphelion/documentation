@@ -29,7 +29,7 @@ If the RabbitMQ service is not enabled on your cluster, or if you are not sure, 
 - Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
 - Click **Save**.
 
-**Note**: If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS,   please follow [these instructions](http://dbaas/docs) create and manage a RabbitMQ cluster in the Messaging Service, and link that instance to your ALS cluster.
+**Note**: If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/messageservice) to create and manage a RabbitMQ cluster in the Messaging Service, and link that instance to your ALS cluster.
 
 ##Download the Application Files
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-node).
