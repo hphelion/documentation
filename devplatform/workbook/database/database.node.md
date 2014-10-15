@@ -96,7 +96,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 	   });
 	      }
 
-The first line in this section of the Server.js file shows how to retrieve the connection information for the MySQL instance from the application’s environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, connects to the database, execute a query, and prints the response.
+The first line in this section of the Server.js file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, connects to the database, execute a query, and prints the response.
 
 	---
 	applications:
