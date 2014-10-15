@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--UNDER REVISION-->
 #Node RabbitMQ Messaging Sample
-This sample displays a simple form that takes a stirng from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. 
+This sample displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. 
 
 This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS, and interact with it. This is a very simple Node.js web app.  Use this sample to ensure that you have set up your environment correctly for connecting to, and working with RabbitMQ on the Helion Development Platform.
 
