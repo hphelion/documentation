@@ -121,4 +121,4 @@ This simple Servlet prints "Hello World". Yay!
 1.	ALS requires configuration information to create an environment for your app. Tools like Maven generate the *pom.xml* file for you.
 2.	You can deploy your app using either the Helion CLI or the [Eclipse deployment plugin](/helion/devplatform/eclipse/).
 
-[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/java/)
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/java/) | [Next Sample](/helion/devplatform/workbook/database/java/)

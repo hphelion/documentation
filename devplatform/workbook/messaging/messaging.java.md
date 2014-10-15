@@ -176,8 +176,4 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 3.	You need to retrieve connection information for RabbitMQ from the application's environment variables.
 4.	You interact with and deploy your app using the Helion CLI or the [Eclipse deployment plugin](/helion/devplatform/eclipse/).
 
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
- 
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/database/java/) | [Next Sample](/helion/devplatform/workbook/helloworld/java/)

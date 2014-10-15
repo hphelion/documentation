@@ -113,3 +113,5 @@ The manifest.yaml file is the configuration information used by ALS to set up th
 1. You will need to provide information about which build pack to use for PHP, so that ALS can create an environment for you app 
 1. You will need to retrieve connection information for MySQL from the application’s environment variables, and parse the information into a connection string that can be used by PHP.
 1. You interact and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/helloworld/php/) | [Next Sample](/helion/devplatform/workbook/messaging/php/)

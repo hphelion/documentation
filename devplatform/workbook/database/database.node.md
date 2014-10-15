@@ -117,3 +117,5 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 1.	You need to provide configuration information so that ALS can bind to a MySQL service.
 2.	You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/helloworld/node/) | [Next Sample](/helion/devplatform/workbook/messaging/node/)
