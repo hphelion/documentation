@@ -11,8 +11,6 @@ product: devplatform
 
 This very simple Node.js app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
-This is the **second** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/node/) sample, please do that one first.
-
 ## Prerequisites
 If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
 
@@ -36,14 +34,15 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-mysql-node/)
 
 ##Deploy the Application
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
 4.	If you are not already there, `cd` to the root directory of the sample.
 5.	Execute `helion push -n`
-
+6.	Accept any default values that you may be prompted for.
+	<br>	**Note**: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
 
 ##Key Code Snippets
 	var services = process.env.VCAP_SERVICES;
@@ -117,9 +116,4 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service.
 2.	You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.
-3.	You interact with and deploy your app using the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
- 
+3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
