@@ -32,7 +32,7 @@ If the RabbitMQ is not enabled, or you are not sure, follow these steps:
 
 ##Download the Application Files
 
-[Click here to access the download directory.](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-php).
+[Click here to access the download directory.]https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
 
 ##Deploy the Application
 
