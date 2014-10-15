@@ -93,6 +93,3 @@ This simple Servlet prints "Hello World".
 ##Key Learnings
 
 - You can deploy your app using either the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
-
-
-[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/node/) 
