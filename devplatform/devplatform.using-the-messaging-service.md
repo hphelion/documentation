@@ -8,12 +8,8 @@ product: devplatform
 <!--UNDER REVISION-->
 
 #Using the RabbitMQ Messaging Service#
-<<<<<<< HEAD
 
-The Messaging service is a key aspect of applications architected for the cloud as it helps to create scalable and distributed applications. This is achieved by enabling your software applications and services to communicate with each other as sub-components of a larger-scale application, while allowing you to incorporate data from users, devices, and data streams. 
-=======
 The Messaging service is a key aspect of applications architected for the cloud as it helps to create scalable and distributed applications. This is achieved by enabling your software applications and services to communicate with each other as sub-components of a larger-scale application while allowing you to incorporate data from users, devices, and data streams. 
->>>>>>> 322d8e0924cb541fe0b60dab291b88e6ceb743aa
 
 The Messaging service (beta) provisions RabbitMQ clusters that can be used for robust messaging in applications. 
 
@@ -41,16 +37,13 @@ The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster
 	- **SSH Key Pair** - A key pair to use when connecting to the cluster. You can choose to create one if one does not already exist.
 	- **Floating IP Pool** - A pool to choose a floating IP from to assign to the cluster.
 	- **SSL Credentials** - The certificate to use when interacting with RabbitMQ in the cluster.
-	- **Password for user** - The password for the user that is currently logged in.<br><img src="media/messaging1.png"/>
+	- **Password for user** - The password for the user that is currently logged in.
 
  
 3.	Click the **Launch** button.
-<<<<<<< HEAD
-4.	Open the **RabbitMQ** tab under the **Messaging (Beta)** panel and identify the **RabbitMQ** cluster from the list that was created in the previous step. Wait for the cluster to go to the **Complete** state.<br><img src="media/messaging2.png"/>
 
-=======
 4.	Open the **RabbitMQ** tab under the **Messaging (Beta)** panel and identify the **RabbitMQ** cluster from the list that was created in the previous step. Wait for the cluster to go to the **Complete** state<br><img src="media/usingRMQ2.png"/>
->>>>>>> 322d8e0924cb541fe0b60dab291b88e6ceb743aa
+
 5.	Your cluster is now ready to use.
 
 ##Deleting a RabbitMQ Cluster {#delete}
@@ -65,13 +58,6 @@ RabbitMQ clusters have a built-in dashboard for managing the cluster; this allow
 
 1.	Log in to Horizon and open the **Messaging (Beta)** panel under you project. Click on the **RabbitMQ** tab.
 2.	Identify the RabbitMQ cluster that you will manage from the clusters listed in the **Clusters** table.
-<<<<<<< HEAD
-3.	Click on **Manage Cluster** next to your cluster.<br><img src="media/messaging3.png"/>
-
-4.	A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion OpenStack&reg; when creating the RabbitMQ cluster and select **Login**.<br><img src="media/messaging4.png"/>
- 
-5.	The management console for RabbitMQ will open. In the management console you can perform tasks such as monitor the queues and message rates, check resource usage on the instances, manage user accounts, and many others.<br><img src="media/messaging4.png"/>  
-=======
 3.	Click on **Manage Cluster** next to your cluster.<br><img src="media/usingRMQ3.png"/>
 4.	A new browser window will open with the log-in screen for the RabbitMQ cluster. Enter the same username and password you used to log in to HP Helion OpenStack&reg; when creating the RabbitMQ cluster and select **Login**.<br><img src="media/usingRMQ4.png"/>
 5.	The management console for RabbitMQ will open. In the management console you can perform tasks such as monitor the queues and message rates, check resource usage on the instances, manage user accounts, and many others.  <br><img src="media/usingRMQ5.png"/>
@@ -80,8 +66,6 @@ RabbitMQ clusters have a built-in dashboard for managing the cluster; this allow
 
 
 - For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the [RabbitMQ documentation site](https://www.rabbitmq.com/documentation.html).
->>>>>>> 322d8e0924cb541fe0b60dab291b88e6ceb743aa
-
 
 - For more information using HP Helion OpenStack, visit the [documentation page](http://docs.hpcloud.com/helion/openstack/).
 

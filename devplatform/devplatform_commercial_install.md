@@ -1,13 +1,11 @@
 ---
-layout: default-devplatform
+layout: default
 title: "HP Helion OpenStack Development Platform Installation"
-permalink: /helion/devplatform/install/
+permalink: /helion/devplatform/install/commercial/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
-
-# HP Helion Development Platform Installation and Configuration
+# HP Helion Development Platform Commercial Installation and Configuration
 
 The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.
 
@@ -27,9 +25,9 @@ The following topics explain how to install and configure the HP Helion Developm
 
 * [Troubleshooting](#troubleshooting)
 
-## <a name="prerequisites"></a>Prerequisites
+## Prerequisites<a name="prerequisites"></a>
 
-The HP Helion Development Platform is installed in the HP Helion OpenStack [overcloud](http://docs.hpcloud.com/helion/openstack/glossary/#o-jumplink-span).  The HP Helion Development Platform has the same prerequisites as [HP Helion OpenStack](http://docs.hpcloud.com/helion/openstack/install/prereqs/).
+The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack Community Edition - Baremetal.  The HP Helion Development Platform has the same prerequisites as HP Helion OpenStack Community Edition - Baremetal.
 
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
  
@@ -42,13 +40,15 @@ The installer requires the following packages. If they are not found, it will pr
 * python-pip
 
     
-## <a name="installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</a>
+## Installing the HP Helion Development Platform<a name="installing-the-hp-helion-development-platform"></a>
 
 ### Downloading and unpacking the installation file
 
-The installation of the HP Helion Development Platform for the HP Helion OpenStack is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installers request.
+The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installers request.
 
-You can register and download the package from the [Helion Download Network](https://helion.hpwsportal.com).
+You can register and download the package from the following URL:
+
+[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
 
 To begin the installation, unpack the tar file:
 
@@ -82,7 +82,7 @@ Once the installation is complete, you should see the following output:
 
     2014-06-17 16:53:19.765       INFO Install Complete
 
-## <a name="install-messaging"></a>Install the Messaging Service
+## Install the Messaging Service<a name="install-messaging"></a>
 This section provides details on installing the Messaging service from the Development Platform.
 
 ### Connect to the Download Service
@@ -99,12 +99,12 @@ This section provides details on installing the Messaging service from the Devel
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Messaging (Beta)** panel under the current Project to begin using the Messaging Service.
 
-## <a name="install-als"></a>Install the Application Lifecycle Service (ALS)
+## Install the Application Lifecycle Service (ALS)<a name="install-als"></a>
 This section provides details on installing the Application Lifecycle service from the Development Platform.
 
 ### Prerequisites
 
-For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
+For ALS to install dependencies for deployed applications, you must provide ALS with outbound Internet connectivity. This process is documented in Step 7 of ["Starting the seed and building your cloud"](http://docs.hpcloud.com/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
 
 ### Connect to the Download Service
 
@@ -120,7 +120,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
 
-## Install the Database Service {#install-database}
+## Install the Database Service<a name="install-database"></a>
 This section provides details on installing the Database Service from the Development Platform.
 
 ### Prerequisites
@@ -129,30 +129,30 @@ This section provides details on installing the Database Service from the Develo
 
 To configure the **Database Service** in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.
 
-1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3".
+1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3". 
+	
+		nova aggregate-create aggregate-AZ-1 AZ-1
+		nova aggregate-create aggregate-AZ-2 AZ-2
+		nova aggregate-create aggregate-AZ-3 AZ-3
+		
+ 2. Validate that the availability zones were correctly created by issuing the following command.
+ 	
+ 		nova aggregate-list
  
-		 nova aggregate-create aggregate-AZ-1 AZ-1 
-		 nova aggregate-create aggregate-AZ-2 AZ-2	
-		 nova aggregate-create aggregate-AZ-3 AZ-3
+3. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone.
+	
+		nova aggregate-add-host <id> <hostname>
  
-2. Validate that the availability zones were correctly created by issuing the following command. 
- 
-		 nova aggregate-list
- 
-6. The following commands will add a compute host to your newly created availability zones. Issue this command for every compute host that you wish to associate with an availability zone. 
- 
-		 nova aggregate-add-host <id> <hostname>
- 
-10. The following command can be used to list all availability zones and the compute hosts associated with them. 
- 
-		 nova availability-zone-list 
+4. The following command can be used to list all availability zones and the compute hosts associated with them.
+
+		nova availability-zone-list
 
 #### Quotas
 
 The **Database Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
 
 If you are not configuring the Database Service to be highly available you must have the following quota available:
-
+	
 |Resource | Usage |
 |--------------|-------------:|
 |Floating IPs|            6|
@@ -195,7 +195,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 	**Key Pair (Required)** - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
 
-	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack this network is named 'ext-net'
+	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
 
 	**NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet. 
 
@@ -243,7 +243,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Database** panel under the current Project to being using Database Service.
 
-## <a name="install-marketplace"></a>Install the Marketplace Service
+## Install the Marketplace Service<a name="install-marketplace"></a>
 This section provides details on installing the Marketplace service from the Development Platform.
 
 ### Prerequisites
@@ -267,7 +267,7 @@ The **Marketplace Service** will be installed into the admin tenant of the Helio
 
 ### Download and Configure the Marketplace Service
 
-In the **Configure Services** panel locate the Marketplace Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
 #### Configuring the Marketplace Service
 
@@ -275,7 +275,7 @@ In the **Configure Services** panel locate the Marketplace Service item in the C
 
 	**Key Pair (Required)** - Key Pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.
 
-	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack this network is named 'ext-net'
+	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
 
 	**NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet. 
 
@@ -283,7 +283,7 @@ In the **Configure Services** panel locate the Marketplace Service item in the C
 
 	**Subnet Range** - The subnet to use for Marketplace
 	
-## <a name="troubleshooting"></a>Troubleshooting
+## Troubleshooting<a name="troubleshooting"></a>
 
 ### Service is stuck in download
 
@@ -291,32 +291,4 @@ There are several situations in which a download will not complete.  One cause w
 
 As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the wscatalog.<id> folder which contains the cached download. The service should now be available to download again.
 
-### Configuring the Application LifeCycle Servce to Use an HTTP Proxy
-
-If your network has an HTTP proxy, the helion client may attempt to use this when connecting to api.helion-xxxx.local and fail because the changes in /etc/hosts file are not reflected in the proxy. To work around this problem in Windows, enable \*.local in the ProxyOverride registry key HCU/Software/Microsoft/Windows/CurrentVersion/Internet Settings.
-
-In some cases, it may be a requirement that any HTTP request is first handled through an upstream or parent proxy. In this case it is necessary to tell Polipo in ALS about the proxy so it knows how to handle this correctly.
-
-1. Log into the ALS Server and open the Polipo config file /etc/polipo/config. 
-	a. If you are using a parent proxy add the following lines: 
-
-  			parentProxy = <IP>:<PORT>
-			parentAuthCredentials = "myuser:mypassw"
-		
-	b. If you are using a SOCKS proxy add the following lines:
-	
-	  		socksParentProxy=<IP>:<PORT>
-			socksProxyType=socks4a | OR | socks5;
-
-2. Restart Polipo using the following command:
-
-  		$ sudo /etc/init.d/polipo restart
-
-For log info, any errors reported by Polipo are available on the Application Lifecycle Service server in /var/log/polipo/polipo.log.
-
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
- 
 

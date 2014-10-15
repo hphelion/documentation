@@ -18,20 +18,17 @@ to simply authenticate commonly and use it everywhere.
 -->
 #Authenticating with access key and token
 
-By default, the authentication mechanism for all OpenStack Keystone based APIs will use your
+By default, the authentication mechanism for all OpenStack&reg; Keystone based APIs will use your
 password as the credential to log in.
 
 The following specifications may serve as a guide if you wish to set API Access Keys:
 
-.. code-block:: java
 
     properties.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.API_ACCESS_KEY_CREDENTIALS)
 
 You can provision `Access keys & tokens <https://community.hpcloud.com/article/understanding-hp-cloud-authentication>`_
 that are scoped to services on a per-key basis and manage them individually.
 To create a client that uses an access key and secret key pair,
-
-.. code-block:: java
 
     Properties overrides = new Properties();
     properties.setProperty(KeystoneProperties.CREDENTIAL_TYPE, CredentialTypes.API_ACCESS_KEY_CREDENTIALS)

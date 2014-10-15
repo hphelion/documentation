@@ -16,7 +16,7 @@ Each sample builds on the previous one and all source code is provided for you t
 In order to download and deploy these sample applications, you must have the necessary framework installed and configured.
 
 - HP Helion OpenStack&reg; [cloud deployed](/helion/openstack/install/overview/)
-- Application Lifecycle Service [Cluster](/helion/devplatform/ALS/deploy) available with MySQL and RabbitMQ enabled.
+- Application Lifecycle Service [Cluster](/helion/devplatform/deploy) available with MySQL and RabbitMQ enabled.
 - Logon and password credentials for the cluster.
 - Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
 - (Optional) Access to the Eclipse [deployment plugin](/helion/devplatform/eclipse/).

@@ -10,7 +10,7 @@ product: devplatform
 
 This very simple Node.js web app displays the text "Hello World!". This sample is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
-##Pre-requisites
+##Prerequisites
 If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
@@ -38,15 +38,26 @@ The *Procfile* tells the Helion Development Platform how to run your Node.js app
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
-4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push -n`
+2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute 
 
-##Run the Application
-1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
-2.	Click **Applications**.
-3.	If the file push was successful, you should see **hello-world-node** in the list of available applications.
+		helion login
+
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute 
+
+		helion target https://api.xx.xx.xx.xx.example.com
+
+4.	If you are not already there, `cd` to the root directory of the sample.
+
+5.	Execute 
+
+		helion push 
+
+Accept any default values that you may be prompted for.  
+
+**NOTE:** by default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
+
+
+
 
 ##Key Code Snippets
 
@@ -81,9 +92,17 @@ This simple Servlet prints "Hello World".
 - This is an extremely basic manifest file. 
 - Note that the **name** is always required while other fields are optional. 
 
+##Run the Application
+1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
+2.	Click **Applications**.
+3.	If the file push was successful, you should see **hello-world-node** in the list of available applications.
+4.	The status of the application should be **Online**.  Click the name of the application to launch it.
+5.	In the upper right-hand corner, click **View App**.
+6.	You should see a simple text message: **Hello World**
+
 ##Key Learnings
 
 - You can deploy your app using either the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
+- You will need to provide configuration information so that ALS can create an environment for your app.
 
-[Exit Samples](/helion/devplatform/) | [Next Sample](/helion/devplatform/workbook/database/node/) 

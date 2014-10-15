@@ -12,14 +12,15 @@ guide covers how to set it up and how to configure it for your end
 users.
 
 ##Wizard-Based Cluster Creation
-- [Creating a Cluster from the Project Dashboard](/helion/devplatform/ALS/deploy/)       
-- [Creating a Cluster from the Command Line](/als/v1/user/client/) 
+You can easily create and access Application Lifecycle Service clusters from the Project Dashboard or from the command-line.
+
+- [Creating a Cluster from the Project Dashboard](/helion/devplatform/deploy/)       
+- [Creating a Cluster from the Command Line](/als/v1/user/client/)  
 
 ##Helion Development Platform Management Console {#management-console}
 
 -   [Management Console](/als/v1/user/console/#management-console)
 -   [Sample Applications](console/app-store)
-
 
 ##Advanced/Manual Server Configuration {#server-configuration}
 This section covers advanced configuration settings that allow you to modify default cluster component behavior. 
@@ -107,24 +108,14 @@ This section provides information on how to set up a standalone cluster and modi
     -   [Applying Updates](/als/v1/admin/best-practices/#applying-updates)
     -   [Backup & Migration](/als/v1/admin/best-practices/#backup-migration)
     -   [Upgrading (v1.0 and
-        later)](/als/v1/admin/best-practices/#upgrading-v1-0-and-later)
-<!--    -   [Server Monitoring with New
-        Relic](/als/v1/admin/best-practices/#server-monitoring-with-new-relic)
-    -   [System Monitoring with
-        Nagios](/als/v1/admin/best-practices/#system-monitoring-with-nagios)
-    -->-   [Persistent
-        Storage](/als/v1/admin/best-practices/#persistent-storage)
-- [Hello World Custom
-        Drain Sample](/als/v1/admin/best-practices/logging-examples/#hello-world-custom-drain)
-<!---   [Log Drain Examples](/als/v1/admin/best-practices/logging-examples/)
-    -   [Papertrail](/als/v1/admin/best-practices/logging-examples/#papertrail)
-    -   [Loggly](/als/v1/admin/best-practices/logging-examples/#loggly)
-    -   [Splunk](/als/v1/admin/best-practices/logging-examples/#splunk)
-   -->
+        later)](/als/v1/admin/best-practices/#upgrade)
+	- [Persistent
+        Storage](/als/v1/admin/best-practices/#storage)
+- [Hello World Custom Drain Sample](/als/v1/admin/best-practices/logging-examples/#hello-world-custom-drain)
 
 ##Reference {#reference}
 -   [Kato Command Reference](/als/v1/admin/reference/kato-ref/)
--   [Managing Groups, Users & Limits](/als/v1/admin/reference/groups/)
+-   [Managing Groups, Users & Limits](/als/v1/user/deploy/orgs-spaces/#orgs-spaces)
 -   [Architectural Design](/als/v1/admin/reference/architecture/)
 -   [Glossary](reference/glossary)
 -   [Troubleshooting](reference/troubleshoot)

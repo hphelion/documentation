@@ -16,15 +16,15 @@ Accessing Server via the Command Line[](#accessing-server-via-the-command-line "
 
 The Application Lifecycle Service server has one user account initally:
 
-	Username: stackato
-	Password: stackato
+	Username: helion
+	Password: helion
 
 If the Application Lifecycle Service server is running on a publicly routable network, the
 password should be changed as soon as possible.
 
 **Note**
 
-The password of the `stackato` account is changed to
+The password of the `helion` account is changed to
 match the first user created in the Management Console. If you've
 created this "primary admin" user, use that password instead.  If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must login with your SSH key you selected during cluster creation.
 
@@ -38,12 +38,12 @@ Command access to the Application Lifecycle Service server is available in sever
     command, which in addition to specialized functions can provide
     remote shell access to the server:
 
-        $ helion target stackato@helion-xxxx.local
+        $ helion target helion@helion-xxxx.local
         $ helion ssh api
 
 -   The familiar `ssh` command:
 
-        $ ssh stackato@helion-xxxx.local
+        $ ssh helion@helion-xxxx.local
 
 **Note**
 

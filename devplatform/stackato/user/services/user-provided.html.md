@@ -10,8 +10,7 @@ User-Provided Services[](#user-provided-services "Permalink to this headline")
 User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the
 credentials into the application. The service instance provides the
-connection information to the application via the VCAP\_SERVICES or
-STACKATO\_SERVICES environment variables, just like the [*built-in data
+connection information to the application via the VCAP\_SERVICES environment variables, just like the [*built-in data
 services*](/als/v1/user/services/data-services/#data-services).
 
 Think of user-provided services as a credentials database for your
@@ -50,7 +49,7 @@ applications, just like any other service:
     Stopping Application [django-cms] ... OK
     Starting Application [django-cms] ...
     OK
-    http://django-cms.stackato.example.com/ deployed
+    http://django-cms.helion.example.com/ deployed
 
 Using[](#using "Permalink to this headline")
 ---------------------------------------------
@@ -77,16 +76,13 @@ credentials:
     | Applications | django-cms                   |
     +--------------+------------------------------+
 
-The
-[*STACKATO\_SERVICES*](/als/v1/user/services/data-services/#database-services-helion-services)
-and
-[*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
+The [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
 variables will expose the connection information within the application
 container. The parameter names you provided when setting up the service
 instance become the keys in the `prod-db-int` JSON
 object:
 
-    django-cms$ echo $STACKATO_SERVICES |json
+    django-cms$ echo VCAP_SERVICES |json
     {
       "prod-db-int": {
         "database": "prod-django-321",

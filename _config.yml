@@ -327,6 +327,10 @@ navigation:
     url: /helion/devplatform/release-notes/
   - text: Related Documentation
     url: /helion/devplatform/related-topics/
+  - text: End User License Agreement
+    url: /helion/devplatform/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/devplatform/3rd-party-license-agreements/
   - text: HP Helion Documentation Home
     url: /
   apinavigation:

@@ -17,26 +17,26 @@ This documentation will help you get up to speed on the  Helion Development Plat
 
 The [Application Lifecycle Service (ALS)](/als/v1/) is a Cloud Foundry-based, managed runtime environment for applications. 
 
-- It supports [Java](/helion/devplatform/appdev/#java), [Node](/helion/devplatform/appdev/#node), [PHP](/helion/devplatform/appdev/#php), and other language runtimes.
+- It supports [Java](/helion/devplatform/appdev/#java), [Node](/helion/devplatform/appdev/#node), [PHP](/helion/devplatform/appdev/#PHP), and other language runtimes.
 - It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.
 - It allows Disk, Memory and Placement Zone constraints to be set per application.
 - It provides auto-scaling and application log drains.
  
-The Application Lifecycle Service is installed as part of the Helion Development Platform. You can explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
+The Application Lifecycle Service is [installed](/helion/devplatform/install/) as part of the Helion Development Platform. You can explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
 
 ##Application Services
 The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:
 
 ###Database as a Service 
-The Database as a Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#database)it and then [configure](/helion/devplatform/connectdatabase/#configure) it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
 - An implementation of OpenStack Trove, [Database as a Service](/helion/devplatform/createdatabase/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
 - The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  
 
-The Database as a Service is optionally installed as part of the Helion Development Platform; you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
+The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally [installed and configured](/helion/devplatform/install/#database) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
 ###Messaging Service (Beta)
-The [The Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
+
+The [Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
 
 - The Messaging Service integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.
@@ -44,24 +44,26 @@ The [The Messaging Service](/helion/devplatform/messageservice/)  provides devel
 The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#message) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Development Platform](/helion/devplatform/msgaas/als).
 
 ###The Marketplace (Beta)
-The [Marketplace](/helion/devplatform/marketplace/) (Beta) is a product catalog that will be used to deliver the best of breed applications and services required to support world class, enterprise grade applications.
+
+The [Marketplace](/helion/devplatform/marketplace/) (Beta) is a product catalog that will be used to deliver the best of breed applications and services required to support world-class, enterprise-grade applications.
 
 - It automates installation and enablement of supported applications and services.
 - The Beta version allows you to install an instance of Vertica Community Edition.
 
-The Marketplace is optionally installed as part of the Helion Development Platform, you can [install](/helion/devplatform/install/#marketplace) it and then [use](/helion/devplatform/marketplace/) it to easily install applications and services to accelerate your development efforts.
+The Marketplace is optionally installed as part of the Helion Development Platform, you can [install](/helion/devplatform/install/#install-marketplace) and [use](/helion/devplatform/marketplace/) it to easily install applications and services to accelerate your development efforts.
 
 ##Platform Tools
 The Helion Development Platform is accessible via the following tools: 
 
 **Helion Command-Line Interface (CLI)**<br>
-[Install](/als/v1/user/client/) and use the Helion CLI to deploy your app to the development platform through the command line. [Setup](/als/v1/user/client/#helion-client-setup) instructions are available for both Windows&reg; and Unix/Mac operating systems.
+
+Use the Helion CLI to deploy your app to the development platform through the command line. [Setup](/als/v1/user/client/#helion-client-setup) instructions are available for here both Windows&reg; and Unix/Mac operating systems.
 
 **Eclipse Plugin**<br>
  If your developers work in the Eclipse IDE, [install and use](/helion/devplatform/eclipse/) the Eclipse plug-in to quickly configure the Helion Development Platform as a deployment target for your app. 
 
 ##Installation Options
-Most of the Helion Developer Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:
+Most of the Helion Development Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:
  
 - **Quick Start Developer Trial**: The fastest way to set up a functional Helion Development Platform environment is the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) (sandbox) on the public cloud.
 - **Standard Installation**: Install a [Commercial HP Helion OpenStack](/helion/openstack/install/overview/)&reg; cloud and then [install](/helion/devplatform/install/) the Helion Development Platform.  
@@ -72,11 +74,6 @@ Most of the Helion Developer Platform documentation assumes that you've already 
 ###[Resources for Sysadmins and Installers](/helion/devplatform/sysadmin/)
   
 <!--### [Resources for OpenStack Integration, Extension, and Service Development](/helion/devplatform/servicedev/) -->
-----------
-
-###Legal###
-* [Open source license and software license agreements](/helion/openstack/3rd-party-license-agreements/)
-* [End User License Agreement (EULA)](/helion/openstack/eula/)
 
 ----
 ####OpenStack trademark attribution

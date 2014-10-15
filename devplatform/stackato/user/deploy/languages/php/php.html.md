@@ -125,7 +125,7 @@ PHP.ini[](#php-ini "Permalink to this headline")
 -------------------------------------------------
 
 Additional PHP ini files will be loaded from the
-`$STACKATO_APP_ROOT/apache/php/` directory. Refer to
+`$HELION_APP_ROOT/apache/php/` directory. Refer to
 the example below for more information.
 
 Document Root Access[](#document-root-access "Permalink to this headline")
@@ -189,8 +189,8 @@ directory:
       ${name}-fs: filesystem
     hooks:
       post-staging:
-      - mkdir -p "$STACKATO_FILESYSTEM"/sessions
-      - echo "session.save_path = $STACKATO_FILESYSTEM/sessions" > "$STACKATO_APP_ROOT"/apache/php/sessions.ini
+      - mkdir -p "$HELION_FILESYSTEM"/sessions
+      - echo "session.save_path = $HELION_FILESYSTEM/sessions" > "$HELION_APP_ROOT"/apache/php/sessions.ini
 
 For better performance, use a
 [*Memcached*](/als/v1/user/services/memcached/#memcached) service for
@@ -200,8 +200,8 @@ session storage instead:
       ${name}-cache: memcached
     hooks:
       post-staging:
-      - echo "session.save_handler = memcached" > "$STACKATO_APP_ROOT"/apache/php/sessions.ini
-      - echo "session.save_path = $MEMCACHE_URL" >> "$STACKATO_APP_ROOT"/apache/php/sessions.ini
+      - echo "session.save_handler = memcached" > "$HELION_APP_ROOT"/apache/php/sessions.ini
+      - echo "session.save_path = $MEMCACHE_URL" >> "HELIONO_APP_ROOT"/apache/php/sessions.ini
 
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

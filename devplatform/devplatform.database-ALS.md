@@ -12,6 +12,8 @@ If a more durable or scalable MySQL database service is needed, ensure your ALS 
 
 <img src="media/databaseALS.png"/>
 
+ALS cluster create wizard
+
 ##Configuration {#configure} 
 Alternatively, if the Database Service was not integrated with the cluster at the time of cluster creation, the administrator of the ALS cluster can switch from the unmanaged MySQL service to the managed Database Service using the following kato commands:
 
@@ -31,7 +33,7 @@ Alternatively, if the Database Service was not integrated with the cluster at th
 
 The way in which you deploy applications does not change between the managed and unmanaged versions of the MySQL service. A developer connects to and interacts with the MySQL database in exactly the same way regardless of which service is used.
 
-The unmanaged service has a lighter footprint (fewer virtual machines) and no dependency on the Database Service being configured and available. The managed service provides full lifecycle management and scalability capabilities that are not available in the unmanaged service.
+The benefits of the unmanaged service include a lighter footprint (fewer virtual machines) and no dependency on the Database Service being configured and available. The managed service provides full lifecycle management and scalability, capabilities not found in the unmanaged service.
 
 ----
 ####OpenStack trademark attribution

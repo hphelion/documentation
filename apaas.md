@@ -25,4 +25,4 @@ If you're already a member of our private beta program, you can [go right over t
     * [Best practices](https://apaas-docs.hpcloud.com/index.html#best-practices)
     * [Reference](https://apaas-docs.hpcloud.com/index.html#reference)
 
-**Note**: HP Helion Public Cloud aPaaS uses the [Stackato application framework](http://docs.stackato.com) for creating a multi-language, secure and private Platform-as-a-Service (PaaS).
+<!--**Note**: HP Helion Public Cloud aPaaS uses the [Stackat0 application framework](http://docs.stackat0.com) for creating a multi-language, secure and private Platform-as-a-Service (PaaS).-->
