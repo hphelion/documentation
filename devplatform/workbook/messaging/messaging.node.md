@@ -11,8 +11,6 @@ This very simple Servlet-based Java web app displays a simple form that takes a 
 
 This is a demonstration of the minimum requirements to build an application that can connect to and interact with a RabbitMQ cluster provided by ALS. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.
 
-This is the **third** sample in the series; if you have not already examined the [HelloWorld](/helion/devplatform/workbook/helloworld/node/) sample and the [Database sample](/helion/devplatform/workbook/database/node/), please do those two first.
-
 ##Prerequisites
 If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
 
@@ -73,7 +71,5 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a RabbitMQ service.
-2.	You need to retrieve connection information for RabbitMQ from the application’s environment variables.
+2.	You need to retrieve connection information for RabbitMQ from the application's environment variables.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse Plugin.
-
-[Exit Samples](/helion/devplatform/) | [Previous Sample](/helion/devplatform/workbook/database/node/)
