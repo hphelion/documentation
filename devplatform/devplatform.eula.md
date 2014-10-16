@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174;: Preview Agreement"
-permalink: /helion/openstack/eula/
+title: "HP Helion Development Platform Software License Terms" 
+permalink: /helion/devplatform/eula/
 product: commercial.ga
 
 ---
