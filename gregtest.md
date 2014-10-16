@@ -4,8 +4,9 @@ layout: default
 title: "HP Helion Public Cloud version 13.5 overview" permalink: /greg/version-overview/
 product: public-cloud
 
----
-<!--PUBLISHED-->
+--
+
+
 # HP Helion Public Cloud version 13.5 overview
 HP Helion Public Cloud is based on the open source cloud computing platform OpenStack core code base, releasing regular updates on the current tested and approved OpenStack versions.  One of the most significant changes is the addition of our new best-in-class software defined networking (SDN) for virtual private clouds. This new networking service provides enhanced network functionality and the ability to fine-tune and define your own virtual network.
 
@@ -270,7 +271,7 @@ HP Helion Public Cloud v13.5 builds on the OpenStack Neutron service complemente
 - A router connected to the subnet and externally to the Internet
 - A security group with basic server options
 
-Our [Networking API](/api/v13/networking/) or the [Management Console](/mc/compute/networks/) exposes a rich set of additional functionality including the ability to 
+Our [Networking API](/apitest/v13/networking/) or the [Management Console](/mc/compute/networks/) exposes a rich set of additional functionality including the ability to 
 
 - Define and configure your own private Virtual L2 Networks
 - Establish Virtual Private Network (VPN)  
@@ -292,3 +293,4 @@ Block storage has always been available in the HP Helion Public Cloud Compute se
 
 ## Bulk data import ## {#BulkImp}
 Bulk import means we load your data into HP Helion Public Cloud Block Storage or HP Helion Public Cloud Object Storage--just send a hard drive directly to the HP data centers where we rapidly transfer your data to the cloud. Get apps with big data sets to the HP Helion Public Cloud quickly and easily.
+
