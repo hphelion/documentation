@@ -34,8 +34,8 @@ The HP Helion Development Platform provides additional Application Services that
 
 The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally [installed and configured](/helion/devplatform/install/#database) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
-<table style="width:500px">
-<tr><td><a href="install/#database">Install</a></td><td align="right"><a href="connectdatabase">Provision</a></td></tr>
+<table>
+<tr><td width="200"><a href="install/#database">Install</a></td><td width="200" align="right"><a href="connectdatabase">Provision</a></td></tr>
 <table>
 ###Messaging Service (Beta)
 
