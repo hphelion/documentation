@@ -40,7 +40,7 @@ Once you register the StoreServ systems as per your requirements, you can use th
 
 * [Next Steps](#next-steps) 
 
-### Add backend<a name="add-backend"></a>
+### Add backend {#add-backend}
 
 **Note**: Ensure that you allocate only those CPGs that will be used by this cloud. Changing any attributes of the CPG after allocation, may disrupt cloud functionality if the corresponding change is not updated in Sirius.
 
@@ -71,7 +71,9 @@ Once you register the StoreServ systems as per your requirements, you can use th
   	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-add-backendoption2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Common Provisioning Groups Page with the Reserved CPG (opens in a new window)</a>
 
 
-### Expand backend<a name="expand-backend"></a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+### Expand backend {#expand-backend}
 
 Expand backend option allocates new CPGs to an existing backend. You can select the required CPG(s) from the list of registered CPGs and add them to a backend that has been already configured.
 
@@ -99,7 +101,7 @@ To expand a backend, do the following:
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-expand-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expanded Backend in the Backend Mapping Table(opens in a new window)</a>
 
 
-### Shrink backend<a name="shrink-backend"></a>
+### Shrink backend {#shrink-backend}
 
 This option allows you to remove the CPGs from the backend which are allocated to your cloud. To shrink the backend, do the following:
 
@@ -126,7 +128,9 @@ This option allows you to remove the CPGs from the backend which are allocated t
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-shrink-backend2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Mapping Table with Reduced Number of Backends(opens in a new window)</a>
 
-###Delete backend<a name="delete-backend"></a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+###Delete backend {#delete-backend}
 
 Before you delete the backend CPG, detach the volumes from this CPG as the backend you delete will no longer be available. 
 
@@ -139,7 +143,8 @@ Do the following to delete a backend:
 3. Click **Delete volume backend** to delete or **Cancel** to cancel the process. 
 
 
-### Generate configuration<a name="generate-config"></a>
+### Generate configuration {#generate-config}
+
 You can download the Cinder configuration relevant to HP 3PAR StoreServ for your cloud once you create the backend.
 
 To generate configuration file, do the following:
@@ -156,8 +161,9 @@ To generate configuration file, do the following:
 
 5. Click **OK** to download and save the file. <br>Once you download the configuration file, you can proceed to update the Overcloud configuration.</br>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### Update Overcloud<a name="update-overcloud"></a>
+### Update Overcloud {#update-overcloud}
 
 To update your Overcloud with the changes, do the following:
 
@@ -251,7 +257,7 @@ To update your Overcloud with the changes, do the following:
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
-## Next Steps{next-steps}
+## Next Steps {#next-steps}
 
 To use the newly added Cinder backend, create volume type and associate it with this backend using Overcloud Horizon or Cinder CLI. 
 
