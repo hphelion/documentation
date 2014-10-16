@@ -1,0 +1,144 @@
+#!/bin/bash -li
+
+echo 'running documentation/jenkins/check.sh'
+#Get the most recent version of the master branch  
+env | grep GIT
+git checkout $GIT_BRANCH
+git pull
+
+
+#Delete any tempfiles left over from the last run and write introduction
+rm checktmp > /dev/null 2>&1  
+rm permalinklist.txt  > /dev/null 2>&1  
+rm filepermalink.txt > /dev/null 2>&1  
+
+echo " "
+echo " "
+echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
+
+
+echo  ""
+
+
+for i in `find . -name "*.md"`; 
+do  
+if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
+then
+echo "==== Incorrect header divider ==="
+echo "(Header must begin and end with a three-dash line.)"
+echo $i
+ echo "1" > checktmp
+fi
+done 
+
+
+
+echo  ""
+echo "==== Broken permalinks to documentation.git files ==="
+for i in `find . -name "*.md" `
+do
+sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||'  >> permalinklist.txt
+
+
+grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink.txt
+
+done
+
+ 
+
+for i in `cat permalinklist.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
+do 
+			if [[ -z $(grep $i filepermalink.txt ) ]];
+			then
+				echo "The permalink $i does not exist but is referenced in:"
+				for a in `find . -name "*.md"`
+				do
+					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
+					then
+						echo $a
+						 echo "1" > checktmp
+					fi
+				done
+			echo ""
+			fi
+done
+
+rm permalinklist.txt 
+rm filepermalink.txt
+ 
+ 
+echo ""
+echo "===Missing publish flag============================="
+for i in `find . -name "*.md" `
+do 
+
+	if [[ -n $(grep -L "\-\-PUBLISH" $i) ]]; 
+	then
+	if  [[ -n $(grep -L "\-\-UNDER REVISION" $i) ]]; 
+	then
+	echo $i
+  echo "1" > checktmp
+	fi
+	fi
+ done 
+
+
+ 
+
+echo " "
+echo "===Blank lines============================="
+
+for i in `find . -name "*.md"`
+do 
+	a=`head -1 $i`
+	if   [ -z "$a" ];
+	then
+		echo "Blank lines at the top of file $i"
+		 echo "1" > checktmp
+	fi
+done   
+
+
+echo " "
+echo "===Spaces in filenames======================"
+find . -name "* *"
+
+
+#Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
+IFS='%'
+
+
+#Search yml files for HTML codes
+cat ./jenkins/badYAMLstrings.txt |
+
+while read BAD
+do
+
+  #Do a recursive grep for all yml files for the badstring and assign result to RESULT
+     RESULT=`grep -r --include="*.yml" --exclude-dir=jenkins "${BAD}" ./`
+
+
+     #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
+     if [ -z "$RESULT" ]
+          then
+          EXIT=""
+     else
+          echo ""
+          echo "===$BAD============================="
+          echo "$RESULT"
+          echo "1" > checktmp
+     fi
+
+done  
+ 
+#Read chcktemp and assign content to EXIT (indicating that at least one error was found)
+EXIT=`cat checktmp` > /dev/null 2>&1
+
+
+#Exit script with 1 if an error was found.  Otherwise exit with 0.
+if [ -z "$EXIT" ]
+     then
+          exit 0
+     else
+          exit 1
+fi
