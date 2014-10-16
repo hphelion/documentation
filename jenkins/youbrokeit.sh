@@ -86,7 +86,7 @@ do
 	echo "===Missing publish flag============================="
 	echo $i
 	echo "Last checked in by:"
-	git log -1 $a | egrep "(Author|Date)"
+	git log -1 $i | egrep "(Author|Date)"
 	echo "1" > checktmp
 	fi
 	fi
@@ -106,7 +106,7 @@ do
 	echo "===Blank lines============================="
 		echo "Blank lines at the top of file $i"
 		echo "Last checked in by:"
-		git log -1 $a | egrep "(Author|Date)"
+		git log -1 $i | egrep "(Author|Date)"
 		echo "1" > checktmp
 	fi
 done   
