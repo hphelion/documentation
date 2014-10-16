@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/
+product: devplatform
+
 ---
 <!--PUBLISHED-->
 
