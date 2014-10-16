@@ -323,7 +323,7 @@ navigation:
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
   - text: Application Developer Resources
-    url: /helion/devplatform/appdev/#sample
+    url: /helion/devplatform/appdev/
   - text: ITOps Resources
     url: /helion/devplatform/sysadmin/
   - text: Sample Workbook
@@ -333,7 +333,7 @@ navigation:
   - text: Related Documentation
     url: /helion/devplatform/related-topics/
   - text: ALS Lifecycle Service Configuration and Deployment
-    url: /helion/devplatform/ALS/deploy/
+    url: /helion/devplatform/deploy/
   - text: ALS Documentation
     url: /als/v1/admin/
   - text: End User License Agreement
