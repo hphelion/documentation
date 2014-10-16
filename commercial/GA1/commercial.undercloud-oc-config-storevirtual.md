@@ -40,7 +40,7 @@ Once you register the StoreVirtual clusters as per your requirements, you can us
 * [Next Steps](#next-steps)
 
 
-### Add backend<a name="add-backend"></a>
+### Add backend {#add-backend}
 
 This option allows you to add a backend. Adding a StoreVirtual cluster as a backend, moves the cluster to the 'reserved' state. This means that the cluster cannot be removed from the cloud inventory when Cinder is configured to use this cluster as storage backend.
 
@@ -69,7 +69,7 @@ To add a backend, do the following:
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Backend Displays in the Configure Cloud Page (opens in a new window)</a>
 
 
-### Expand backend<a name="expand-backend"></a>
+### Expand backend {#expand-backend}
 
 Expannd option allocates additional clusters to an existing backend. You can select the required clusters from the list of registered clusters and add them to a backend that has already been configured.
 
@@ -94,7 +94,7 @@ To expand a backend, do the following:
 8. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 	<!---<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>-->
 
-### Shrink backend<a name="shrink-backend"></a>
+### Shrink backend {#shrink-backend}
 
 Shrinking removes the clusters from the backend which are allocated to your cloud. Shrinking the only available StoreVirtual cluster in the backend will delete the backend. To shrink the backend, do the following:
 
@@ -117,7 +117,7 @@ Shrinking removes the clusters from the backend which are allocated to your clou
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-shrink-backend1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Shrink Backend Page with Update Option (opens in a new window)</a>
 
-###Delete backend<a name="delete-backend"></a>
+###Delete backend {#delete-backend}
 
 This option removes the backend from the cloud.
 
@@ -130,7 +130,7 @@ This option removes the backend from the cloud.
 3. Click **Delete volume backend** to delete or **Cancel** to cancel the process.
 
 
-### Generate configuration<a name="generate-config"></a>
+### Generate configuration {#generate-config}
 Download the Cinder configuration for your cloud once you have created the backend.
 
 To generate a configuration file, do the following:
@@ -149,7 +149,7 @@ To generate a configuration file, do the following:
 4. Click **OK** to download and save the file.<br>Once you download the configuration file, you can proceed to update the Overcloud configuration.
 
 
-### Update Overcloud<a name="update-overcloud"></a>
+### Update Overcloud {#update-overcloud}
 
 To update your Overcloud with the changes, do the following:
 
@@ -211,7 +211,7 @@ To update your Overcloud with the changes, do the following:
 	    # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 
-## Next Steps{next-steps}
+## Next Steps {#next-steps}
 
 To use the newly added Cinder backend, create volume type and associate it with this backend using Overcloud Horizon or Cinder CLI.
 

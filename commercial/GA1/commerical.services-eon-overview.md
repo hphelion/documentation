@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 
-# HP Helion OpenStack&#174;EON Service Overview #
+# HP Helion OpenStack&#174; EON Service Overview #
 
 ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance. 
 
@@ -45,7 +45,10 @@ EON, a new service sub component, captures details of the vCenter server in a Cl
 
 The following diagram depicts the EON architecture of HP Helion OpenStack.
 
-<img src="media/eon-architecture.png" />
+<a href="javascript:window.open('/content/documentation/media//eon-architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">EON Architecture(opens in a new window)</a>
+
+<!---
+<img src="media/eon-architecture.png" /> --->
 
 ## Working with the EON Service
 

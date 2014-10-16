@@ -43,7 +43,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 1. [Fatal PCI Express Device Error](#fatal-pci)
 2. [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
-3. [Failure of Update Overcloud](#failure-overcloud)
+3. [Failure of Update Overcloud](#failure-update-overcloud)
 4. [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
 5. [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
 6. [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
@@ -170,7 +170,7 @@ If you get this error, perform the following steps:
 <hr>
 
 
-### Failure of Update Overcloud {#failure-overcloud}
+### Failure of Update Overcloud {#failure-update-overcloud}
 
 **System Behavior/Message**
 
@@ -186,7 +186,7 @@ If you get this error, perform the below steps:
  
 		# ssh root@<Seed IP address>
 
-2.Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
+2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
 
 The ce&#95;env&#95;json will be displayed as the sample below.
 
@@ -195,7 +195,7 @@ The ce&#95;env&#95;json will be displayed as the sample below.
 		     "build_number": 11, 
 		     "installed_build_number": 11 
 
-Note that  the build&#95;number is changed from null to the right variable.
+  Note that  the build&#95;number is changed from null to the right variable.
  
 3.Run the installer script to update the Overcloud. 
  

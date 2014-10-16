@@ -101,7 +101,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 2. Generate the diagnostic report for a particular slot
 
-		./hpssacli ctrl slot=(slot number) diag file=<filename.zip>
+		# hpssacli ctrl slot=(slot number) diag file=<filename.zip>
 	Or <BR>
 		Generate the report for all the slots 
 

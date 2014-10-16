@@ -40,13 +40,13 @@ You can use the following commands using the Sirius Client CLI package in the Un
 
 You can display the help of this program or one of its sub-programs
 
-	sirius --help
+	# sirius --help
 
 ### Help subcommand
 
 You get two sets of arguments- Positional(mandatory) and Options (all mandatory fields are marked within [*Required*])
 
-	sirius help <sub-command>
+	# sirius help <sub-command>
 
 
 ## API Commands<a name="api-commands"></a>
@@ -55,20 +55,23 @@ You get two sets of arguments- Positional(mandatory) and Options (all mandatory 
 
 You can list the block storage details of API version. 
 
-	Sirius block-info
+	# Sirius block-info
 
 ### Bash completion
 
 You can print all the commands and options to standard output
 
-	sirius bash-completion
+	# sirius bash-completion
 
 
 ### Supported devices###
 
 You can list the devices supported by Sirius API.
 
-	sirius supported-devices
+	# sirius supported-devices
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## HP StoreVirtual Commands<a name="storevirtual-commands"></a>
 
@@ -76,74 +79,74 @@ You can list the devices supported by Sirius API.
 
 You can list the clusters in StoreVirtual which are registered with Sirius.
 
-	sirius storevirtual-cluster-list
+	# sirius storevirtual-cluster-list
 
 ### Show StoreVirtual cluster  ###
 
 You can display the details of a particular cluster.
 
-	 sirius storevirtual-cluster-show [--backend-name <CINDER_BACKEND_NAME>]<CLUSTER_ID>                              
+	 # sirius storevirtual-cluster-show [--backend-name <CINDER_BACKEND_NAME>]<CLUSTER_ID>                              
 
 ### Register StoreVirtual cluster ###
 
 You can register the StoreVirtual Cluster to Sirius database. This command requires all the arguments, else the user is prompted for the same.
 
-	sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+	# sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 
 ### Update StoreVirtual cluster ###
 
 You can update the StoreVirtual cluster in Sirius database. Only the CLUSTER_ID is  a mandatory argument.
 
-	sirius update-storevirtual-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
+	# sirius update-storevirtual-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
 
 ### Delete StoreVirtual cluster ###
 
 You can unregister the specified StoreVirtual cluster from the Sirius database.
 
-	sirius delete-storevirtual-cluster <CLUSTER_ID>
+	# sirius delete-storevirtual-cluster <CLUSTER_ID>
 
 ### List StoreVirtual backend
 
 Lists the StoreVirtual backends registered to Sirius
 
-	sirius storevirtual-backend-list [--format <JSON_FLAG>]
+	# sirius storevirtual-backend-list [--format <JSON_FLAG>]
 
 ### Backend show                        
     
  Shows the information about specific backend
 
-	sirius backend-show [--format <JSON_FLAG>] <BACKEND_ID>        
+	# sirius backend-show [--format <JSON_FLAG>] <BACKEND_ID>        
                        
 ### Add StoreVirtual backend
 
 You can add a StoreVirtual backend
 
-    sirius add-storevirtual-backend <BACKEND_ID>
+    # sirius add-storevirtual-backend <BACKEND_ID>
 
 ### Delete StoreVirtual backend
 
 Unregister StoreVirtual backend
 
-    sirius delete-storevirtual-backend <BACKEND_ID>
+    # sirius delete-storevirtual-backend <BACKEND_ID>
                         
-	
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>	
 
-## HP StoreServ Commands ##<a name="hp-storeserv-commands"></a>
+## HP StoreServ Commands<a name="hp-storeserv-commands"></a>
 
 
 ### List StoreServ  ###
 
 You can list the StoreServ clusters registered with the Sirius database.
 
-	sirius storeserv-list
+	# sirius storeserv-list
 
 
 ### Show StoreServ  ###
 
 You can display the details of a specific StoreServ.
 
-	sirius storeserv-show [--cpg-list <CPG_LIST_FLAG>] <STORESERV_ID>
+	# sirius storeserv-show [--cpg-list <CPG_LIST_FLAG>] <STORESERV_ID>
 
 **Note:** 
 
@@ -154,7 +157,7 @@ You can display the details of a specific StoreServ.
 
 You can register the StoreServ to Sirius.
 
-	sirius register-storeserv --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
+	# sirius register-storeserv --name <STORESERV_NAME> --hostname <STORESERV_IP> --username <USERNAME> --password <PASSWORD> --port <SSH_PORT> --san-ip <SAN_IP> --san-username <SAN_USERNAME> --san-password <SAN_PASSWORD> --device-type <DEVICE_TYPE>
 
 
 **Note:** 
@@ -166,7 +169,7 @@ You can register the StoreServ to Sirius.
 
 You can update the StoreServ details in Sirius.
 
-	sirius update-storeserv <STORESERV_ID>
+	# sirius update-storeserv <STORESERV_ID>
 
 **Note:**
 
@@ -180,20 +183,20 @@ You can update the StoreServ details in Sirius.
 
 You can unregister the StoreServ from Sirius.
 
-	sirius delete-storeserv <STORESERV_ID>
+	# sirius delete-storeserv <STORESERV_ID>
 
 
 ### List CPG
 
 You can list all the 3PAR CPGs registered with specific StoreServ
 
-	sirius cpg-list --storeserv-id <STORESERV_ID>
+	# sirius cpg-list --storeserv-id <STORESERV_ID>
 
 ### Show CPG
 
 Shows the details of specific 3PAR CPGs
 
-    sirius cpg-show --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> [--backend-name <CINDER_BACKEND_NAME>]  
+    # sirius cpg-show --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> [--backend-name <CINDER_BACKEND_NAME>]  
 
 **Options:**
  -storeserv-id  <STORESERV&#095;ID>  --- *ID of the StoreServ [Required]*.
@@ -208,7 +211,7 @@ Shows the details of specific 3PAR CPGs
 You can register the 3PAR CPGs
 
 
-    sirius register-cpg --cpgs <CPG_UUID> [<CPG_UUID> ...] --storeserv-id <STORESERV_ID>
+    # sirius register-cpg --cpgs <CPG_UUID> [<CPG_UUID> ...] --storeserv-id <STORESERV_ID>
      
 **Options:**
   --cpgs <CPG_UUID> [<CPG_UUID> ...]  -- *UUID(s) of the 3PAR StoreServ CPG(s) to be registered [Required]*.
@@ -221,7 +224,7 @@ You can register the 3PAR CPGs
 
 You can unregister the 3PAR CPGs
 
-	sirius delete-cpg --storeserv_id <STORESERV_ID> --cpgs <CPG_ID> [<CPG_ID> ...]
+	# sirius delete-cpg --storeserv_id <STORESERV_ID> --cpgs <CPG_ID> [<CPG_ID> ...]
 
 **Options**:
 
@@ -234,29 +237,31 @@ You can unregister the 3PAR CPGs
 
  You can view the list of the backends registered to Sirius.
 
-     sirius storeserv-backend-list [--format <JSON_FLAG>]
+     # sirius storeserv-backend-list [--format <JSON_FLAG>]
 
                         
 ###Show backend
 
 You can view the information about specific backend.
 
-    sirius backend-show [--format <JSON_FLAG>] <BACKEND_ID>
+    # sirius backend-show [--format <JSON_FLAG>] <BACKEND_ID>
 
 
 ### Add StoreServ backend ###
 
 You can add a StoreServ backend.
 
-    sirius add-storeserv-backend --storeserv-id <STORESERV_ID> --cpg-id <CPG_UUID> --backend-name <BACKEND_NAME>
+    # sirius add-storeserv-backend --storeserv-id <STORESERV_ID> --cpg-id <CPG_UUID> --backend-name <BACKEND_NAME>
 
 ###Delete Storeserv backend
 
 You can unregister a Storeserv backend
 
- sirius delete-storeserv-backend <BACKEND_ID> [<BACKEND_ID> ...]
+ 	# sirius delete-storeserv-backend <BACKEND_ID> [<BACKEND_ID> ...]
                          
-   
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>   
+
 ## Required Options {#required-options}
 
 The following options must be supplied as arguments or as environment variables.
@@ -265,79 +270,79 @@ The following options must be supplied as arguments or as environment variables.
 
 Shows the version number of the program and exit.
 
-	sirius [--version]
+	# sirius [--version]
 
 
 ###debug
  Defaults to env[SIRIUSCLIENT_DEBUG].
 
-	sirius [-d]
+	# sirius [-d]
 
 ###verbose
 Print more verbose output.
 
-	sirius [-v]
+	# sirius [-v]
 
 ###insecure 
 
 Explicitly allow siriusclient to perform "insecure" SSL (https) requests. The server's certificate will not be verified against any certificate authorities. This option should be used with caution.
  	
-    sirius [-k]   
+    # sirius [-k]   
 
 
 ###Certificate
 
 Path of the certificate file to be used in SSL connection. This file can optionally be prepended with the private key.
 
- 	[--cert-file CERT_FILE]
+ 	# [--cert-file CERT_FILE]
 
 ###Keyfile
 
 Path of client key to use in SSL connection. This option is not necessary if your key is prepended to your cert file.
 
-           [--key-file KEY_FILE] 
+      # [--key-file KEY_FILE] 
 
 ###ca certificate
 
 Path of CA TLS certificate(s) used to verify the remote server's certificate. Without this option sirius looks for the default system CA certificates.
 
-		[--os-cacert <ca-certificate-file>]
+		# [--os-cacert <ca-certificate-file>]
 
 ###Timeout   
  Number of seconds to wait for a response.
 
-	--timeout TIMEOUT -->
+	 # --timeout TIMEOUT -->
 
 ###OS username
 
 Username of the keystone (OpenStack). Defaults to env[OS_USERNAME].
   
-	--os-username OS_USERNAME
+	# --os-username OS_USERNAME
                         
  
 ###OS PASSWORD
 Password of the keystone (OpenStack).  Defaults to env[OS_PASSWORD].
 	
-	 --os-password OS_PASSWORD
+	# --os-password OS_PASSWORD
                        
  
 ###OS TENANT ID
-Tenant identification of the OpenStack. Defaults to env[OS_TENANT_ID].
+Tenant identification of the OpenStack. Defaults to env[OS&#095;TENANT_ID].
 
-	--os-tenant-id OS_TENANT_ID
+    # --os-tenant-id OS_TENANT_ID
                         
  
 <!---###OS TENANT NAME
-Tenant name of the OpenStack. Defaults to env[OS_TENANT_NAME].
+Tenant name of the OpenStack. Defaults to env[OS&#095;TENANT_NAME].
 		
 	--os-tenant-name OS_TENANT_NAME-->
 
                         
  
 ###OS AUTH URL
-Authentication URL of OpenStack. Defaults to env[OS_AUTH_URL].
+Authentication URL of OpenStack. Defaults to env[OS&#095;AUTH_URL].
  
-	 --os-auth-url OS_AUTH_URL
+	# --os-auth-url OS_AUTH_URL
                         
 
 
@@ -348,9 +353,9 @@ The region name of  OpenStack. Defaults to env[OS_REGION_NAME].
                         
  
 ###OS AUTH TOKEN
-Authentication token of OpenStack. Defaults to env[OS_AUTH_TOKEN].
+Authentication token of OpenStack. Defaults to env[OS&#095;AUTH_TOKEN].
 
-  	--os-auth-token OS_AUTH_TOKEN
+    # --os-auth-token OS_AUTH_TOKEN
                        
 
 <!---### Sirius URL  
@@ -380,7 +385,9 @@ The endpoint type of OpenStack. Defaults to env[OS_ENDPOINT_TYPE].
 
 
 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
 ####OpenStack trademark attribution
