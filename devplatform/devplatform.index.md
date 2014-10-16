@@ -35,7 +35,7 @@ The HP Helion Development Platform provides additional Application Services that
 The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally [installed and configured](/helion/devplatform/install/#database) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
 <table style="vertical-align: top; width: 650px; background-color: white; border: 0px;">
-<tr><td><a href="install/#database">Install</a><br></td><td align="right"><a href="createdatabase">Provision</a><br><a href="connectdatabase">Connect with ALS</a></td></tr>
+<tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#database">Install</a><br></td><td style="border: 0px; align: right;"><a href="createdatabase">Provision</a><br><a href="connectdatabase">Connect with ALS</a></td></tr>
 </table>
 ###Messaging Service (Beta)
 
@@ -46,6 +46,10 @@ The [Messaging Service](/helion/devplatform/messageservice/)  provides developer
 
 The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#message) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Development Platform](/helion/devplatform/msgaas/als).
 
+<table style="vertical-align: top; width: 650px; background-color: white; border: 0px;">
+<tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#message">Install</a><br></td><td style="border: 0px; align: right;"><a href="messageservice">Provision</a><br><a href="msgaas/als">Connect with ALS</a></td></tr>
+</table>
+
 ###The Marketplace (Beta)
 
 The [Marketplace](/helion/devplatform/marketplace/) (Beta) is a product catalog that will be used to deliver the best of breed applications and services required to support world-class, enterprise-grade applications.
@@ -54,6 +58,10 @@ The [Marketplace](/helion/devplatform/marketplace/) (Beta) is a product catalog 
 - The Beta version allows you to install an instance of Vertica Community Edition.
 
 The Marketplace is optionally installed as part of the Helion Development Platform, you can [install](/helion/devplatform/install/#install-marketplace) and [use](/helion/devplatform/marketplace/) it to easily install applications and services to accelerate your development efforts.
+
+<table style="vertical-align: top; width: 650px; background-color: white; border: 0px;">
+<tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#install-marketplace">Install</a><br></td><td style="border: 0px; align: right;"><a href="marketplace">Provision</a></td></tr>
+</table>
 
 ##Platform Tools
 The Helion Development Platform is accessible via the following tools: 
