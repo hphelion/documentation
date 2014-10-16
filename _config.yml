@@ -28,6 +28,8 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
+  - text: HP Helion Documentation
+    url: / 
   - text: HP Helion Public Cloud Documentation
     url: /pc-overview/
   - text: Available Services
@@ -42,8 +44,7 @@ navigation:
     url: /faq/
   - text: Site Overview 
     url: /site-overview/
-  - text: HP Helion Documentation
-    url: / 
+
   mc:
   - text: Overview
     url: /mc/
@@ -203,6 +204,8 @@ navigation:
   - text: HP Helion Documentation
     url: /
   moonshot:
+  - text: HP Helion Documentation
+    url: /
   - text: HP Cloud OS for Moonshot Home
     url: /cloudos/moonshot/
   - text: Prepare
@@ -219,10 +222,10 @@ navigation:
     url: /cloudos/moonshot/related-topics/	
   - text: Site Index
     url: /cloudos/moonshot/siteindex/
+  community: 
   - text: HP Helion Documentation
     url: /
-  community: 
-  - text: HP Helion OpenStack Community Doc Home
+  - text: HP Helion OpenStack Community Documentation Home
     url: /helion/community/
   - text: Release Notes
     url: /helion/community/release-notes/  	
@@ -236,10 +239,10 @@ navigation:
     url: /helion/community/eula/
   - text: Site Index
     url: /helion/community/siteindex/
+  commercial: 
   - text: HP Helion Documentation
     url: /
-  commercial: 
-  - text: HP Helion OpenStack Doc Home
+  - text: HP Helion OpenStack Documentation Home
     url: /helion/openstack/
   - text: Release Notes
     url: /helion/openstack/release-notes/ 
@@ -275,10 +278,10 @@ navigation:
     url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
     url: /helion/openstack/siteindex/
-  - text: HP Helion Documentation
-    url: / 
   commercial.ga: 
-  - text: HP Helion OpenStack Doc Home
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack DocumentationHome
     url: /helion/openstack/
   - text: Release Notes
     url: /helion/openstack/release-notes/ 
@@ -312,27 +315,31 @@ navigation:
     url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
     url: /helion/openstack/siteindex/
-  - text: HP Helion Documentation
-    url: / 
   devplatform: 
-  - text: HP Helion Development Platform Doc Home
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion Development Platform Documentation Home
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
-  - text: Application Lifecycle Service Configuration and Deployment
-    url: /helion/devplatform/als/config-and-deploy/
-  - text: ALS Documentation
-    url: /als/v1/
+  - text: Application Developer Resources
+    url: /helion/devplatform/appdev/#sample
+  - text: ITOps Resources
+    url: /helion/devplatform/sysadmin/
+  - text: Sample Workbook
+    url: /helion/devplatform/appdev/#sample
   - text: Release Notes
     url: /helion/devplatform/release-notes/
   - text: Related Documentation
     url: /helion/devplatform/related-topics/
+  - text: ALS Lifecycle Service Configuration and Deployment
+    url: /helion/devplatform/ALS/deploy/
+  - text: ALS Documentation
+    url: /als/v1/admin/
   - text: End User License Agreement
     url: /helion/devplatform/eula/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/devplatform/3rd-party-license-agreements/
-  - text: HP Helion Documentation Home
-    url: /
   apinavigation:
   - text: Site home page
     url: /
