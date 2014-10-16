@@ -58,7 +58,7 @@ fi
 if [[ -n $(head -10 $i | egrep  "(layout:.*title:|title:.*permalink:|permalink:.*product: )";) ]];
 then
 echo "==== Incorrect header ==="
-echo "The layout, title, permalink and product declarations must all be on separate lines."
+echo "The layout, title, permalink and product declarations must all be on seperate lines."
 echo "The build will not fail, but the md file will not be included in the output."
 echo $i
 echo "Last checked in by:"
@@ -122,7 +122,7 @@ do
 	then
 	
 	echo ""
-	echo "===Missing publish flag============================="
+	echo "===Missing publish flag============================= "
 	echo "When the publish file is missing, the file will be visible on http://15.184.32.138/"
 	echo "But will not be copied to the master branch, and so will not be visible on "
 	echo "http://docs.qa1-stackato.cx.hpcloud.net/ or http:/docs.hpcloud.com"
