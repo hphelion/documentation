@@ -61,5 +61,4 @@ The manifest.yaml file is the configuration information used by ALS to set up th
 1. You will need to rpovide configuration informatoin, including build-pack information for PHP, so that ALS can create an environment for your application. 
 2. You can deploy your app using the Helion CLI or the Eclipse Plugin.
 
-
-
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)

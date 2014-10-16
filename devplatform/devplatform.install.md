@@ -14,17 +14,11 @@ The HP Helion Development Platform currently contains four products: Application
 The following topics explain how to install and configure the HP Helion Development Platform.
 
 * [Prerequisites](#prerequisites)
-
 * [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
-
 * [Install the Messaging Service](#install-messaging)
-
 * [Install the Application Lifecycle Service](#install-als)
-
 * [Install the Database Service](#install-database)
-
 * [Install the Marketplace Service](#install-marketplace)
-
 * [Troubleshooting](#troubleshooting)
 
 ## <a name="prerequisites"></a>Prerequisites
@@ -99,7 +93,7 @@ This section provides details on installing the Messaging service from the Devel
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Messaging (Beta)** panel under the current Project to begin using the Messaging Service.
 
-## <a name="install-als"></a>Install the Application Lifecycle Service (ALS)
+##Install the Application Lifecycle Service (ALS) {#install-als}
 This section provides details on installing the Application Lifecycle service from the Development Platform.
 
 ### Prerequisites
@@ -243,7 +237,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Database** panel under the current Project to being using Database Service.
 
-## <a name="install-marketplace"></a>Install the Marketplace Service
+##Install the Marketplace Service {#install-marketplace}
 This section provides details on installing the Marketplace service from the Development Platform.
 
 ### Prerequisites

@@ -35,14 +35,14 @@ You can use the following commands using the ringos Client CLI package in the un
 
 You can display the help of this program or one of its sub-programs
 
-	ringos help
+	# ringos help
 
 
 ### Help subcommand
 
 You get two sets of arguments- Positional and Optional.
 
-	ringos help <sub-command>
+	# ringos help <sub-command>
 
 
 
@@ -55,12 +55,12 @@ The following command line are used to perform ringos activities.
 Create a ring based on part&#095;power, replicas, and min&#095;part&#095;hours.
 
 	
-	ringos create-ring -f <BUILDER> -p <PART_POWER> -r <REPLICAS> -m <MIN_PART_HOURS>
+	# ringos create-ring -f <BUILDER> -p <PART_POWER> -r <REPLICAS> -m <MIN_PART_HOURS>
 
 
  In the following example, we use one zone each partition power =10, replicas =3, min_part_hours =1
 
-	ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
+	# ringos create-ring -f /root/ring-building/object-1.builder -p 10 -r 3 -m 1
 	
 	Created ring /root/ring-building/object-1.builder
 
@@ -68,7 +68,7 @@ Create a ring based on part&#095;power, replicas, and min&#095;part&#095;hours.
 ### Add disk to a ring<a name="add-disk-to-ring"></a>
 Adding a ring to a disk.
 
- 	ringos add-disk-to-ring -f <BUILDER> -i <IP> [-p <PORT>] -d <DISK> -w <WEIGHT> [-r <REGION>] [-z <ZONE>] 
+ 	# ringos add-disk-to-ring -f <BUILDER> -i <IP> [-p <PORT>] -d <DISK> -w <WEIGHT> [-r <REGION>] [-z <ZONE>] 
 
 
 * &lt;BUILDER>: builder file.
@@ -82,7 +82,7 @@ Adding a ring to a disk.
 <!---
 In the following example a disk is added to a ring:
 
-	ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  192.0.2.29 -p  6000 -d a1410063335 -w 100 -r 1 -z 1
+	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  192.0.2.29 -p  6000 -d a1410063335 -w 100 -r 1 -z 1
 	
 	Added disk 192.0.2.29:a1410063335 to ring
 --->
@@ -91,12 +91,12 @@ In the following example a disk is added to a ring:
 
 View contents of a given ring.
 
-	ringos view-ring -f <BUILDER>
+	# ringos view-ring -f <BUILDER>
 
 <!---
 In the following example, you can view the content of the ring
 
-	ringos view-ring -f /root/ring-building/object-1.builder 
+	# ringos view-ring -f /root/ring-building/object-1.builder 
 	
 	object-1.builder,build version 9 
 	
@@ -112,27 +112,27 @@ In the following example, you can view the content of the ring
 ###Re-balance a ring<a name="rebalance-ring"></a>
 Re-balances a given ring after adding disk to the ring.
 
-	ringos view-ring -f <BUILDER>
+	# ringos view-ring -f <BUILDER>
 
 ###Copy a ring <a name="copy-ring"></a>
 Copies ring to the available nodes.
 
-	 ringos copy-ring -s <RING> -n <NODE> 
+	 # ringos copy-ring -s <RING> -n <NODE> 
 
 For example:
 
-	ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift nodes>
+	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift nodes>
 
 
 ### Remove a disk from the ring<a name="remove-disk-from-ring"></a>
  
 In case of failure you can removes a given disk from ring.
 
-			ringos remove-disk-from-ring -f <BUILDER> -s <SEARCH_VAL>
+	# ringos remove-disk-from-ring -f <BUILDER> -s <SEARCH_VAL>
 
 For example:
 
-	ringos remove-disk-from-ring -f /root/ring-building/object-1.builder -s d0
+	# ringos remove-disk-from-ring -f /root/ring-building/object-1.builder -s d0
 
 
 ###Validate a Ring<a name="validate-ring"></a>
@@ -140,7 +140,7 @@ For example:
 
 Run validate routine on the ring.
 
-  	ringos validate-ring -f <BUILDER>
+  	# ringos validate-ring -f <BUILDER>
 
 
 ###Search for a Ring<a name="search-ring"></a>
@@ -148,13 +148,13 @@ Run validate routine on the ring.
 
  Shows information about matching devices.
  
-	ringos search-ring -f <BUILDER> -s <SEARCH_VAL>
+	# ringos search-ring -f <BUILDER> -s <SEARCH_VAL>
 
 ### Write to a Ring<a name="write-ring"></a>
 
  Writes the builder contents onto a ring file.
 
-	 ringos write-ring -f <BUILDER>
+	# ringos write-ring -f <BUILDER>
 
 ##Node Commands<a name="node"></a>
  
@@ -162,34 +162,34 @@ Run validate routine on the ring.
 
 List the available Swift nodes (starter, contianer, proxy, and object nodes) in the cloud.
 
-	ringos list-swift-nodes -t <TYPE>
+	# ringos list-swift-nodes -t <TYPE>
 
 ###List disks in nodes<a name="list-disks"></a>
 List disks and size of the disks on a given node.
 	
-	ringos list-disks -n <NODE> -u heat admin
+	# ringos list-disks -n <NODE> -u heat admin
 	
 ##Disk Commands<a name="disk"></a>
 
 ###Format and Mount Disks <a name="format-disks"></a>
 To format and mount all the available disks on a node.
 
-	ringos format-disks -n <IP address of the node> -u heat-admin -d all
+	# ringos format-disks -n <IP address of the node> -u heat-admin -d all
 
 To format a specific disk.
 
-	ringos format-disks -n <IP address of the node> -u heat-admin -d <DISK> [-l <LABEL>]
+	# ringos format-disks -n <IP address of the node> -u heat-admin -d <DISK> [-l <LABEL>]
 
 
 ###Set weight to disk<a name="weight-disk"></a>
 
 To set the weight gradually or remove gradually.
 
-	ringos set-weight -f <BUILDER> -s <SEARCH_VAL> -w <WEIGHT>
+	# ringos set-weight -f <BUILDER> -s <SEARCH_VAL> -w <WEIGHT>
 
 For example:
 
-	ringos set-weight -f object-1.builder -s d5 -w 0
+	# ringos set-weight -f object-1.builder -s d5 -w 0
 
 ##Miscellaneous Commands<a name="misc"></a>
 
@@ -197,27 +197,27 @@ For example:
 
 Change replica count to given replicas
 
-	ringos set-replicas -f <BUILDER> -r <REPLICAS>
+	# ringos set-replicas -f <BUILDER> -r <REPLICAS>
 
 
 ###Set information	
 
 Set info of disk(s) matching search value
 
-	ringos set-info -f <BUILDER> -s <SEARCH_VAL> -i <INFO>
+	# ringos set-info -f <BUILDER> -s <SEARCH_VAL> -i <INFO>
 
 ###set min part hours	
 
 Set min_part_hours for the given ring
 
-	ringos set-min-part-hours -f <BUILDER> -m <MIN_PART_HOURS>
+	# ringos set-min-part-hours -f <BUILDER> -m <MIN_PART_HOURS>
 
 
 ###Bash completion   
 
 Prints all of the commands and options to the standard output.
 
-	ringos bash-completion
+	# ringos bash-completion
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

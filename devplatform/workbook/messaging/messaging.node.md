@@ -81,3 +81,6 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 1.	You will need to provide configuration information so that ALS can bind to a RabbitMQ service.
 2.	You will need to retrieve connection information for RabbitMQ from the application's environment variables.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse Plugin.
+
+
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/database/node/) | [Next Sample](/helion/devplatform/workbook/helloworld/node/)
