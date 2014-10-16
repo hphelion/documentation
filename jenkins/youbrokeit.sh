@@ -58,7 +58,7 @@ fi
 if [[ -n $(head -10 $i | egrep  "(layout:.*title:|title:.*permalink:|permalink:.*product: )";) ]];
 then
 echo "==== Incorrect header ==="
-echo "The layout, title, permalink and product declarations must all be on seperate lines."
+echo "The layout, title, permalink and product declarations must all be on separate lines."
 echo "The build will not fail, but the md file will not be included in the output."
 echo $i
 echo "Last checked in by:"
