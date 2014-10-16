@@ -102,7 +102,7 @@ For example:
 
 	export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
-`UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your undercloud. This is the the physical interface associated with the BM_NETWORK* networks. The default value is `eth2`. If this is correct you do not need to set this variable.
+`UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the Networking Operations service (Neutron) external traffic on your undercloud. This is the physical interface associated with the BM_NETWORK* networks. The default value is `eth2`. If this is correct you do not need to set this variable.
 
 	export UNDERCLOUD_NeutronPublicInterface=eth2
 
