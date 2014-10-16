@@ -203,23 +203,27 @@ For information on creating the environment variables file, see [Creating an Env
 
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step. 
 
+The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
+
 There must be one entry in this file for each baremetal system you intend to install. 
 
-`<BRIDGE_INTERFACEmacaddress>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GB>`
+`<BRIDGE_INTERFACEmacaddress>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiGB>`
 
 Where `<BRIDGE_INTERFACE_mac_address>` is the MAC address of the bridge interface on the seed cloud host, for example `em2` or `eth2`.
+
+**Important** The diskspace size value must be specified in Gibibytes, not Gigabytes.  
 
 **Example:** 
 
 Your file should look similar to the following:
 
-	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048
-	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,900
-	78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048
-	78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048
-	78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048
-	78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048
-	78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,900
+	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
+	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,800
+	78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,1900
+	78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,1900
+	78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,1900
+	78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,1900
+	78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,800
 
 When creating this file, keep in mind the following:
 
