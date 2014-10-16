@@ -47,28 +47,44 @@ The Helion client to deploy your app to Helion Development Platform.  If you are
 
 
 ##Key Code Snippets
-	app.configure(function(){
-	  app.set('port', process.env.VCAP_APP_PORT || 3000);
-	  app.set('views', __dirname + '/views');
-	  app.set('view engine', 'jade');
-	  app.use(express.bodyParser());
-	  app.use(express.static(path.join(__dirname, 'public')));
-	});
+This section of the messaging.js file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The code then creates a connection to the cluster and publishes a message to a queue.
+		
+	//get the rabbitMQ connection string from the environment variables.
+	var connectionString = process.env.RABBITMQ_URL || "amqp://localhost";
 
-
-This section of the App.js file shows how to retrieve the connection information for the RabbitMQ cluster from the application’s environment variables.
+	//Connect to RabbitMQ.
+	var rabbitMqConnection = amqp.createConnection({ url: connectionString });
 	
+	…
+
+	rabbitMqConnection.once('ready', function() {
+    	rabbitMqConnection.queue('msg-queue', {} , function(queue) {
+    	  rabbitMqConnection.publish('msg-queue', { message: newMessage });
+
+This section of the messaging.js file shows how to create a connection to the RabbitMQ cluster then subscribe to a message queue and extract the message text.
+
+	//Connect to RabbitMQ.
+	var rabbitMqConnection = amqp.createConnection({ url: connectionString });
+	
+	…
+	
+	rabbitMqConnection.once('ready', function() {
+    	rabbitMqConnection.queue('msg-queue', {} , function(queue) {
+    	  queue.subscribe(function(msg) {
+        	var message = msg.message;
+
+The *manifest.yml* file is the configuration information used by ALS to set up the environment. The *services* element listed below instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.
+
 	---
 	applications:
-	  .:
-	    name: rabbitmq-node
-	    mem: 128M
-	    services:
-	      rabbitmq:
-	        type: rabbitmq3
-	    instances: 1
-
-The *manifest.yaml* file is the configuration information used by ALS to set up the environment. The *services* element listed above instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.
+	  .:    framework:
+	      name: node
+  	 name: rabbitmq-node
+  	 mem: 128M
+  	 services:
+     	 rabbitmq:
+     	   type: rabbitmq3
+    	instances: 1
 
 ##Run the Application
 1.	Open the Helion Management Console. This is the web-based administrative interface.
@@ -81,6 +97,5 @@ The *manifest.yaml* file is the configuration information used by ALS to set up 
 1.	You will need to provide configuration information so that ALS can bind to a RabbitMQ service.
 2.	You will need to retrieve connection information for RabbitMQ from the application's environment variables.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse Plugin.
-
 
 [Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/database/node/) | [Next Sample](/helion/devplatform/workbook/helloworld/node/)
