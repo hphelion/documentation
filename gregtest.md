@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "HP Helion Public Cloud version 13.5 overview" 
