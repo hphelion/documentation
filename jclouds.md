@@ -14,5 +14,6 @@ Java access to HP Helion Public Cloud Compute and HP Helion Public Cloud Objects
 To get started, take a look at the [HP Helion Public Cloud Quick Start](http://http://code.google.com/p/jclouds/wiki/QuickStartOpenStack), which walks you through the installation process and some sample code.
 
 For more elaborate examples, take a look at the [jclouds-examples repository over at GitHub](https://github.com/jclouds/jclouds-examples).
-
+<!--
 Questions or comments?  Let us know [over at the Forum](/connect/forum).
+-->
