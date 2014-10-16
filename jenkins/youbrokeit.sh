@@ -25,12 +25,26 @@ do
 if [[ -n $(head -10 $i | egrep  "(\-\-\-\-|^\-\-$)";) ]];
 then
 echo "==== Incorrect header divider ==="
-echo "(Header must begin and end with a three-dash line.)"
+echo "Header must begin and end with a three-dash line."
+echo "The build will not fail, but the md file will not be included in the output."
 echo $i
 echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
 echo "1" > checktmp
 fi
+
+if [[ -n $(head -10 $i | egrep  "(layout:.*title:|title:.*permalink:|permalink:.*product: )";) ]];
+then
+echo "==== Incorrect header ==="
+echo "The layout, title, permalink and product declarations must all be on seperate lines."
+echo "The build will not fail, but the md file will not be included in the output."
+echo $i
+echo "Last checked in by:"
+git log -1 $i | egrep "(Author|Date)"
+echo "1" > checktmp
+fi
+
+
 done 
 
 
@@ -53,6 +67,7 @@ do
 			then
 			echo  ""
 			echo "==== Broken permalinks to documentation.git files ==="
+			echo "The file will build, but the output will contain a broken link"
 			
 				echo "The permalink $i does not exist but is referenced in:"
 				for a in `find . -name "*.md"`
@@ -84,6 +99,9 @@ do
 	
 	echo ""
 	echo "===Missing publish flag============================="
+	echo "When the publish file is missing, the file will be visible on http://15.184.32.138/"
+	echo "But will not be copied to the master branch, and so will not be visible on "
+	echo "http://docs.qa1-stackato.cx.hpcloud.net/ or http:/docs.hpcloud.com"
 	echo $i
 	echo "Last checked in by:"
 	git log -1 $i | egrep "(Author|Date)"
@@ -105,6 +123,9 @@ do
 	echo " "
 	echo "===Blank lines============================="
 		echo "Blank lines at the top of file $i"
+		echo "When the mdfile begins with a, the file will be visible on http://15.184.32.138/"
+		echo "But will not be copied to the master branch, and so will not be visible on "
+		echo "http://docs.qa1-stackato.cx.hpcloud.net/ or http:/docs.hpcloud.com"
 		echo "Last checked in by:"
 		git log -1 $i | egrep "(Author|Date)"
 		echo "1" > checktmp
