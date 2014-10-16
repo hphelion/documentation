@@ -155,6 +155,7 @@ For example:
 	export SVC_ALLOCATE_START=192.168.132.2 
 	export SVC_ALLOCATE_END=192.168.132.250 
 	export SVC_ALLOCATE_CIDR=192.168.132.0/24 
+	export CUSTOMER_ROUTER_IP=10.23.69.129
 	export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc 
 	export OVERCLOUD_FLAT_NETWORKS=svcnet1 
 
@@ -211,6 +212,7 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 		export NeutronPublicInterfaceRawDevice=eth1
 		export NeutronSVCInterface=vlan332
 		export NeutronSVCInterfaceDefaultRoute=192.168.132.1
+		export CUSTOMER_ROUTER_IP=192.168.130.1
 		export SVC_ALLOCATE_START=192.168.132.2
 		export SVC_ALLOCATE_END=192.168.132.250
 		export SVC_ALLOCATE_CIDR=192.168.132.0/24
@@ -235,7 +237,7 @@ Identify the environment variables required for the installation based on the de
 
 If you plan to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
 
-All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for External and Service network access.
+All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for external network access.
 
 1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
 
@@ -243,7 +245,6 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
 		export BM_NETWORK_UNDERCLOUD_RANGE_START=172.30.100.21
 		export BM_NETWORK_UNDERCLOUD_RANGE_END=172.30.100.40
-		export CUSTOMER_ROUTER_IP=192.168.130.1
 		export FLOATING_START=172.30.100.41
 		export FLOATING_END=172.30.100.200
 		export FLOATING_CIDR=172.30.100.0/24
@@ -251,10 +252,10 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 		export OVERCLOUD_NTP_SERVER=18.110.135.123
 		export OVERCLOUD_CLOUD_TYPE=ESX
 		export PROVIDER_NETWORK=192.168.10.0/24
-		export CUSTOMER_ROUTER_IP=172.30.100.1
 		export VLAN_RANGE="500:1000"
 		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
 		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=91
+		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/).
 
