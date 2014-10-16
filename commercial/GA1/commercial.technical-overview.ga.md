@@ -27,7 +27,7 @@ It is  designed to offer a number of value-added services that complement and en
 	* [Physical network architecture](#physical)
 	* [Virtual networks](#virtual)
 * [Network planning](#networkplan)
-	* [Network security](networksecurity)
+	* [Network security](#networksecurity)
 * [Installation planning](#install-configure)
 	* [Installation options](#install-option) 
 * [High availability](#highavailability)
@@ -143,7 +143,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 
 
 
-## Deployment architecture {#deploy}  
+## Deployment architecture {#deploy-arch}  
 
 You can deploy HP Helion OpenStack in two different environments depending on the hypervisor: KVM or ESX. 
 
@@ -291,10 +291,10 @@ For detailed information, see the [Preparing the network](/helion/openstack/inst
 
 </table>
 
-### Virtual networks ### {#virtual}
+### Virtual networks {#virtual}
 The logical networks listed in the following table are implemented as VLANs on the physical network. The virtual networks are different for [KVM](#virtualkvm) and [ESX](#virtualesx).
 
-#### Virtual networks for KVM hypervisor support #### {#virtualkvm}
+#### Virtual networks for KVM hypervisor support  {#virtualkvm}
 
 The logical networks listed in the following table are implemented as VLANs on the physical network.
 <table>
@@ -326,7 +326,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 </table>
 
 
-#### Virtual networks for ESX hypervisor support #### {#virtualesx}
+#### Virtual networks for ESX hypervisor support {#virtualesx}
 
 The logical networks listed in the following table are implemented as VLANs on the physical network.
 
@@ -372,7 +372,7 @@ You must manage and prepare the network based on the type of hypervisor.
  
 For more details information on network planning see [Preparing your network](/helion/openstack/install/prereqs/).  
 
-### Network security ### {#networksecurity}
+### Network security {#networksecurity}
 
 The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. For more information on guidelines for setting up security firewalls and routing see [Network security](/helion/openstack/install/security/).
 
@@ -421,7 +421,7 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 <tr style="background-color: white; color: black;">
   	<td style><b>Overcloud<b></td>
  	<td>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
-	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the [Functional Overview](#Helion-services) section above. 
+	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <a href ="/helion/openstack/technical-overview/"> Functional Overview </a>section above. 
 	<br><br>These services are deployed in a highly available cluster across the three Controller nodes.
 	<br><br>For KVM based Hypervisor environments, the Overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </br>
