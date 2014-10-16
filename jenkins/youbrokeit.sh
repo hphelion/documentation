@@ -33,7 +33,7 @@ do
 		echo "$i"
 		echo "files with spaces in the filename can cause scripts to fail"
 		echo "Last checked in by:"
-		git log -1 $i | egrep "(Author|Date)"
+		git log -1 "$i" | egrep "(Author|Date)"
 		echo "1" > checktmp
 	fi
 done   
