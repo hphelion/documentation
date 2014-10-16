@@ -27,7 +27,9 @@ then
 echo "==== Incorrect header divider ==="
 echo "(Header must begin and end with a three-dash line.)"
 echo $i
- echo "1" > checktmp
+echo "Last checked in by:"
+git log -1 $i | egrep "(Author|Date)"
+echo "1" > checktmp
 fi
 done 
 
@@ -58,6 +60,8 @@ do
 					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
 					then
 						echo $a
+						echo "Last checked in by:"
+						git log -1 $a | egrep "(Author|Date)"
 						 echo "1" > checktmp
 					fi
 				done
@@ -81,6 +85,8 @@ do
 	echo ""
 	echo "===Missing publish flag============================="
 	echo $i
+	echo "Last checked in by:"
+	git log -1 $a | egrep "(Author|Date)"
 	echo "1" > checktmp
 	fi
 	fi
@@ -99,7 +105,9 @@ do
 	echo " "
 	echo "===Blank lines============================="
 		echo "Blank lines at the top of file $i"
-		 echo "1" > checktmp
+		echo "Last checked in by:"
+		git log -1 $a | egrep "(Author|Date)"
+		echo "1" > checktmp
 	fi
 done   
 
@@ -135,6 +143,8 @@ do
      fi
 
 done  
+ 
+echo "" 
  
 #Read chcktemp and assign content to EXIT (indicating that at least one error was found)
 EXIT=`cat checktmp` > /dev/null 2>&1
