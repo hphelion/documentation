@@ -23,20 +23,20 @@ echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a fa
 
 echo  ""
 
-for i in `find . -name "* *"`
-do 
  
-	if   [ -z "$i" ];
+ 
+if [[ -n $(find . -name "* *") ]];
 	then
 	echo " "
 	echo "===Spaces in filenames======================"
-		echo "$i"
-		echo "files with spaces in the filename can cause scripts to fail"
-		echo "Last checked in by:"
-		git log -1 "$i" | egrep "(Author|Date)"
+		find . -name "* *" 
+		echo "Files with spaces in the filename can cause scripts, like this one, to fail."
+		echo "Use git mv old name newname to rename the file, then push again."
+		echo ""
+	 
 		echo "1" > checktmp
 	fi
-done   
+ 
 
 
 
