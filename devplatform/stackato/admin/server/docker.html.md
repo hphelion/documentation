@@ -38,13 +38,13 @@ role**:
     template:
 
         $ kato config get fence docker/image
-        stackato/stack/alsek
+        helion/stack/alsek
 
 3.  Create a [Dockerfile](http://docs.docker.io/en/latest/use/builder/)
     which inherits the current Docker image, then runs an update or
     installation command. For example:
 
-        FROM stackato/stack/alsek
+        FROM helion/stack/alsek
         RUN apt-get -y install libgraphite2-dev
 
     -   [FROM](http://docs.docker.io/en/latest/use/builder/#from):
@@ -83,7 +83,7 @@ These hooks must be:
 
 -   plain bash scripts with the executable bit set (`chmod +x`)
 -   named *pre-staging*, *post-staging*, or *pre-running*
--   installed in */etc/stackato/hooks* within the Docker image
+-   installed in */etc/helion/hooks* within the Docker image
 
 For example, a pre-running admin hook might look like this:
 
@@ -94,13 +94,13 @@ For example, a pre-running admin hook might look like this:
       echo "setting default New Relic key"
       export NEW_RELIC_LICENSE_KEY="bdb9b44e8n4411d8bf39870f1919927d79cr0f1r"
     fi
-    export STACKATO_HOOK_ENV=PRE_RUN_DATE,EXAMPLECO_KEY
+    export HELION_HOOK_ENV=PRE_RUN_DATE,EXAMPLECO_KEY
     sudo /usr/sbin/nrsysmond-config --set license_key=$NEW_RELIC_LICENSE_KEY
     sudo /etc/init.d/newrelic-sysmond start
 
 **Note**
 
-The `STACKATO_HOOK_ENV` environment variable is
+The `HELION_HOOK_ENV` environment variable is
 needed to expose the specified variables in `helion ssh` sessions, the application container's crontab, and PHP
 applications using the Legacy buildpack. This requirement may change in
 subsequent releases.
@@ -108,26 +108,26 @@ subsequent releases.
 The Dockerfile for creating the image (see [*Modifying or Updating the
 Container Image*](#docker-modify-container) ) would use the ADD
 directive to put a local *hooks* directory in the Docker image's
-*/etc/stackato/* directory:
+*/etc/helion/* directory:
 
-    FROM stackato/stack/alsek
-    ADD hooks /etc/stackato/hooks
+    FROM helion/stack/alsek
+    ADD hooks /etc/helion/hooks
 
 The pre-running hook example above would require the addition of
 `newrelic-sysmond` to the Docker image. A Dockerfile
 enabling that might look like this:
 
-    FROM stackato/stack/alsek
+    FROM helion/stack/alsek
 
     RUN echo deb http://apt.newrelic.com/debian/ newrelic non-free >> /etc/apt/sources.list.d/newrelic.list
     RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
     RUN apt-get update
     RUN apt-get install newrelic-sysmond
     # The nrsysmond scripts are run with sudo
-    RUN echo "stackato ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" >> /etc/sudoers
-    RUN echo "stackato ALL= NOPASSWD: /usr/sbin/nrsysmond-config" >> /etc/sudoers
+    RUN echo "HELION ALL= NOPASSWD: /etc/init.d/newrelic-sysmond" >> /etc/sudoers
+    RUN echo "HELION ALL= NOPASSWD: /usr/sbin/nrsysmond-config" >> /etc/sudoers
 
-    ADD hooks /etc/stackato/hooks
+    ADD hooks /etc/helion/hooks
 
 Creating a Docker Registry[](#creating-a-docker-registry "Permalink to this headline")
 ---------------------------------------------------------------------------------------
@@ -142,11 +142,11 @@ as a central repository for your container tempates.
     \<https://index.docker.io/u/samalba/docker-registry/\> image from
     the Docker index:
 
-        $ sudo docker pull stackato/docker-registry
+        $ sudo docker pull helion/docker-registry
 
 2.  Start the server:
 
-        $ sudo docker run -d -p 5000 stackato/docker-registry
+        $ sudo docker run -d -p 5000 helion/docker-registry
         f39d1b3f6fedc50e77875526352bd5a0f650a998dc1d7ca4e39c4a1eb8349e42
 
     This returns the ID of the running registry server image. A shorter
@@ -181,7 +181,7 @@ as a central repository for your container tempates.
 
 > Note
 >
-> The stackato/stack/alsek and stackato/base images (approximately
+> The helion/stack/alsek and helion/base images (approximately
 > 1.9GB) are pushed to the registry in addition to the new image. Make
 > sure you have sufficient disk space available on the VM.
 

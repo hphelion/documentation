@@ -47,7 +47,7 @@ REDIS\_URL: Location of and credentials for the bound **Redis** service, if ther
 
 RABBITMQ\_URL: Location of and credentials for the bound **RabbitMQ** service, if there is (only) one.
 
-HOME: Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/stackato/app/* by default.
+HOME: Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
 
 HTTP\_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.
 
@@ -80,28 +80,28 @@ PYPM\_OPTS: Custom/alternate [*PyPM*](/als/v1/user/reference/glossary/#term-pypm
         env:
             PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"
 
-STACKATO\_APP\_ENV: Note
+HELION\_APP\_ENV: Note
 
     Internal use, subject to change.
 
     Contains a list of all environment variables set with [*helion
     env-add*](/als/v1/user/reference/client-ref/#command-ref-client) or
-    [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env).
+    [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml-env).
 
-STACKATO\_APP\_NAME: Contains the application name as specified during application push
+HELION\_APP\_NAME: Contains the application name as specified during application push
     (or in *manifest.yml*). Available during staging
     as well as in the application instance.
-STACKATO\_APP\_NAME\_UPCASE: Contains the same value as STACKATO\_APP\_NAME transformed to uppercase, with dashes replaced by underscores. For example if STACKATO\_APP\_NAME is "php-info", then STACKATO\_APP\_NAME\_UPCASE will be "PHP\_INFO".
+HELION\_APP\_NAME\_UPCASE: Contains the same value as HELION\_APP\_NAME transformed to uppercase, with dashes replaced by underscores. For example if HELION\_APP\_NAME is "php-info", then HELION\_APP\_NAME\_UPCASE will be "PHP\_INFO".
 
 This makes it possible to access the environment variables for [*harbor*](/als/v1/user/services/port-service/#port-service-env-vars) and [*filesystem*](/als/v1/user/services/filesystem/#file-system-usage) services.
 
-STACKATO\_APP\_ROOT: This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.
+HELION\_APP\_ROOT: This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.
 
 The [*HOME*](#term-home) environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *manifest.yml* and all the application files live.
 
-STACKATO\_DOCUMENT\_ROOT: This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/stackato/app).
+HELION\_DOCUMENT\_ROOT: This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/helion/app).
 
-STACKATO\_FILESYSTEM: If the app uses a single `filesystem` service, then the local mount point is stored in this variable. If there is more than one `filesystem` service, `STACKATO_FILESYSTEM` is not available. Instead, a custom environment variable `STACKATO_FILESYSTEM_*` will be created based on the name of each filesystem service (with hyphens replaced by underscores).
+HELION\_FILESYSTEM: If the app uses a single `filesystem` service, then the local mount point is stored in this variable. If there is more than one `filesystem` service, `HELION_FILESYSTEM` is not available. Instead, a custom environment variable `HELION_FILESYSTEM_*` will be created based on the name of each filesystem service (with hyphens replaced by underscores).
 
     For example, if your *manifest.yml* file configures the following
     services:
@@ -111,18 +111,15 @@ STACKATO\_FILESYSTEM: If the app uses a single `filesystem` service, then the lo
           plugins: filesystem
 
     Two environment variables would be created:
-    `STACKATO_FILESYSTEM_MY_DATA` and
-    `STACKATO_FILESYSTEM_PLUGINS`.
+    `HELION_FILESYSTEM_MY_DATA` and
+    `HELION_FILESYSTEM_PLUGINS`.
 
+HELION\_TARGET: Can be set in the local shell to specify the API endpoint target for the `helion` client. When set, the `helion target` command is ignored until the variable is explicitly unset. Can be overridden with the `--target` option.
 
-STACKATO\_SERVICES: Contains connection details and credentials for services bound to the application. For filesystem services, it contains the local mount point. See [*STACKATO\_SERVICES*](/als/v1/user/services/data-services/#database-services-helion-services).
-
-STACKATO\_TARGET: Can be set in the local shell to specify the API endpoint target for the `helion` client. When set, the `helion target` command is ignored until the variable is explicitly unset. Can be overridden with the `--target` option.
-
-STACKATO\_UWSGI: Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml):
+HELION\_UWSGI: Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml):
 
         processes:
-          web: $STACKATO_UWSGI --another-uwsgi-option
+          web: $HELION_UWSGI --another-uwsgi-option
 
 VCAP\_APP\_HOST: This variable contains the IP address of the host that the application is running on.
 
@@ -130,4 +127,4 @@ VCAP\_APP\_PORT: This variable contains the port that the application will be ex
 
 VCAP\_APPLICATION: This variable contails all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)
 
-VCAP\_SERVICES: Contains connection details, credentials, and meta data for services bound to the application. See    [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services).
+VCAP\_SERVICES: Contains connection details, credentials, and meta data for services bound to the application. See [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services).

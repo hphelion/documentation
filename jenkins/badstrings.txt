@@ -1,4 +1,4 @@
-[Ss]tackato
+[^#\/][Ss]tackato
  it it 
  can can 
    ,
@@ -10,10 +10,10 @@
  the the 
  and and 
  given given
+ [^_]Openstack
  eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
- [bB]uiltin 
  [Tt]empates 
  [Ii]nitally 
  [Rr]recieves 
@@ -66,7 +66,6 @@
 [a-z] Under[Cc]loud
 [Bb]eta
 BETA
-[^_]Openstack
 [Ss]tackato
 â€™
 ÎáÎáÎí

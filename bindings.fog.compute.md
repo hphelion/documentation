@@ -496,7 +496,7 @@ For information on connecting to the service, please see the [Connecting to the 
         )
     **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
 
-7. Create a new Linux-based server with advanced personalisation options:
+7. Create a new Linux-based server with advanced personalization options:
 
         response = conn.create_server(
             "My Shiny Server",

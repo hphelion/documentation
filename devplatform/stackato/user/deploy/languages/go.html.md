@@ -29,7 +29,7 @@ You will need the following files to deploy a Go app on Application Lifecycle Se
     app.go
     Procfile
     .godir
-    stackato.yml
+    manifest.yml
 
 #### app.go[](#app-go "Permalink to this headline")
 

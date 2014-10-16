@@ -26,7 +26,7 @@ Generic[](#generic "Permalink to this headline")
 
 The Generic framework requires a custom [*processes:
 web:*](/als/v1/user/deploy/stackatoyml/#stackato-yml-processes) setting in
-*stackato.yml* specifying a command to start the web process (e.g. a
+*manifest.yml* specifying a command to start the web process (e.g. a
 custom web server).
 
 The example below shows a web process that serves static files from the
@@ -50,7 +50,7 @@ The Standalone framework uses a custom command specified in the
 [*command:*](/als/v1/user/deploy/stackatoyml/#stackato-yml-command) key to start a
 background worker process.
 
-The example below shows *stackato.yml* configuration for an application
+The example below shows *manifest.yml* configuration for an application
 running a simple Python worker script.
 
     name: worker

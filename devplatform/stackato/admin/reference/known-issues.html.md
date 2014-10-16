@@ -82,8 +82,7 @@ address, it's generally best practice to use the hostname.
 If not, Application Lifecycle Service provides various [*environment
 variables*](/als/v1/user/reference/environment/#environment-variables)
 so that applications do not need to hardcode them at install time. Some
-examples are `VCAP_SERVICES`,
-`STACKATO_SERVICES`, and `DATABASE_URL`. We strongly encourage their use.
+examples are `VCAP_SERVICES` and `DATABASE_URL`. We strongly encourage their use.
 
 A known issue is that some applications have install procedures that
 can't be configured to make use of these variables. If the server that's

@@ -55,16 +55,16 @@ The filesystem service creates a path which your app can use to store
 and read files.
 
 If there is only one filesystem service, the
-`STACKATO_FILESYSTEM` environment variable can be
+`HELION_FILESYSTEM` environment variable can be
 used to get the path.
 
 If there is more than one filesystem service,
-`STACKATO_FILESYSTEM` is not available. Instead, a
-custom environment variable `STACKATO_FILESYSTEM_*`
+`HELION_FILESYSTEM` is not available. Instead, a
+custom environment variable `HELION_FILESYSTEM_*`
 will be created based on the name of each filesystem service (with
 hyphens replaced by underscores).
 
-For example, if your *stackato.yml* file configures the following
+For example, if your *manifest.yml* file configures the following
 services:
 
     services:
@@ -72,11 +72,11 @@ services:
         plugins: filesystem
 
 Two environment variables would be created:
-`STACKATO_FILESYSTEM_MY_DATA` and
-`STACKATO_FILESYSTEM_PLUGINS`.
+`HELION_FILESYSTEM_MY_DATA` and
+`HELION_FILESYSTEM_PLUGINS`.
 
 This naming scheme can be used in conjunction with the
-`STACKATO_APP_NAME_UPCASE` environment variable. For
+`HELION_APP_NAME_UPCASE` environment variable. For
 example, in an app with the following filesystem service defined:
 
     services:
@@ -86,7 +86,7 @@ example, in an app with the following filesystem service defined:
 The filesystem mount point for the "foo" filesystem service can be
 accessed within the container using constructs such as:
 
-    FOO=STACKATO_FILESYSTEM_${STACKATO_APP_NAME_UPCASE}_FOO
+    FOO=HELION_FILESYSTEM_${HELION_APP_NAME_UPCASE}_FOO
     mkdir ${!FOO}/myapp
 
 **Note**
@@ -96,7 +96,8 @@ To use declarations like these in
 separate bash script. Brace expansion and grouping cannot be used
 directly in YAML files.
 
-Alternatively, `STACKATO_SERVICES` contains
+<!-- Does this also apply for VCAP services? if so should be rewritten perhaps. 
+Alternatively, `STACKAT0_SERVICES` contains
 information for all services:
 
     {
@@ -116,11 +117,11 @@ information for all services:
                         "password": "p4XQAhZr8xfHg"
                 }
         }
-
+-->
 Since the [*environment
 variables*](/als/v1/user/reference/environment/#environment-variables) are
 available during the staging process, it is possible to make use of them
-in the [*stackato.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to
+in the [*manifest.yml*](/als/v1/user/deploy/stackatoyml/#stackato-yml) file to
 configure a filesystem service and create a symlink to it for use by the
 app. (see example below)
 
@@ -139,23 +140,23 @@ this general approach if your application stores user generated content
 in more than one location. In WordPress, they are stored in wp-content
 folder.
 
-We need to add the following to our stackato.yml:
+We need to add the following to our manifest.yml:
 
     services:
         fs-wp: filesystem
     hooks:
         post-staging:
         # create wp-content in the shared filesystem
-        - mkdir -p "$STACKATO_FILESYSTEM"/wp-content
+        - mkdir -p "$HELION_FILESYSTEM"/wp-content
 
         # migrate existing wp-content data into the shared filesystem
-        - mv wp-content/* "$STACKATO_FILESYSTEM"/wp-content
+        - mv wp-content/* "$HELION_FILESYSTEM"/wp-content
 
         # remove unused wp-content directories
         - rm -rf wp-content
 
         # link to wp-content folder in the shared filesystem
-        - ln -s "$STACKATO_FILESYSTEM"/wp-content wp-content
+        - ln -s "$HELION_FILESYSTEM"/wp-content wp-content
 
 **Note**
 

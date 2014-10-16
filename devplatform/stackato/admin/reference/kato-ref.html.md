@@ -171,9 +171,9 @@ database
 
 **--exclude-aok-config** Do not include AOK's configuration (default)
 
-**--stackato-rest-db** Include Application Lifecycle Service Rest's database
+**--helion-rest-db** Include Application Lifecycle Service Rest's database
 
-**--exclude-stackato-rest-db** Do not include Application Lifecycle Service Rest's database
+**--exclude-helion-rest-db** Do not include Application Lifecycle Service Rest's database
 
 **--filesystem** Include the filesystem service
 
@@ -326,9 +326,9 @@ database
 
 **--exclude-aok-config** Do not include AOK's configuration (default)
 
-**--stackato-rest-db** Include Application Lifecycle Service Rest's database
+**--helion-rest-db** Include Application Lifecycle Service Rest's database
 
-**--exclude-stackato-rest-db** Do not include Application Lifecycle Service Rest's database
+**--exclude-helion-rest-db** Do not include Application Lifecycle Service Rest's database
 
 **--filesystem** Include the filesystem service
 
@@ -853,7 +853,7 @@ tests as warnings instead of upgrade failures.
 
 **op** **regenerate** **postgresql** [**--no-restart**]
 
-**op** **regenerate** **stackato-rest-auth**
+**op** **regenerate** **helion-rest-auth**
 
 **op** **regenerate** **cloud-controller-client-auth**
 

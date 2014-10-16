@@ -1356,10 +1356,10 @@ Create an empty application with the specified configuration.
     <td>Url of a custom buildpack. This is an Application Lifecycle Service 3 specific option.</td>
     </tr>    <tr><td>--command</td>
     <td>The application's start command. Defaults to a framework-specific
-    value if required and not specified by stackato.yml.</td>
+    value if required and not specified by manifest.yml.</td>
     </tr>    <tr><td>--disk</td>
     <td>The application's per-instance disk allocation. Defaults to a
-    framework-specific value if not specified by stackato.yml.</td>
+    framework-specific value if not specified by manifest.yml.</td>
     </tr>    <tr><td>--env</td>
     <td>Environment variable overrides. These are always applied
     regardless of --env-mode. The mode is restricted to the variable
@@ -1380,7 +1380,7 @@ Create an empty application with the specified configuration.
     Application Lifecycle Service 2 option.</td>
     </tr>    <tr><td>--instances</td>
     <td>The number of application instances to create. Defaults to 1, if
-    not specified by a stackato.yml.</td>
+    not specified by a manifest.yml.</td>
     </tr>    <tr><td>--json</td>
     <td>Print raw json as output, not human-formatted data.</td>
     </tr>    <tr><td>--manifest</td>
@@ -1388,7 +1388,7 @@ Create an empty application with the specified configuration.
     done.</td>
     </tr>    <tr><td>--mem</td>
     <td>The application's per-instance memory allocation. Defaults to a
-    framework-specific value if not specified by stackato.yml.</td>
+    framework-specific value if not specified by manifest.yml.</td>
     </tr>    <tr><td>--no-framework</td>
     <td>Create application without any framework. Cannot be used together
     with --framework. This is an Application Lifecycle Service 2 specific option.</td>
@@ -1415,7 +1415,7 @@ Create an empty application with the specified configuration.
     <td>Analogue of --env-mode, for the regular settings.</td>
     </tr>    <tr><td>--runtime</td>
     <td>The name of the runtime to use. Default is framework specific, if
-    not specified by a stackato.yml. This is an Application Lifecycle Service 2 specific
+    not specified by a manifest.yml. This is an Application Lifecycle Service 2 specific
     option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
@@ -1916,7 +1916,7 @@ consisting of host and domain)
     </tr>
 </table>
 ### helion open *\<application\*###
-Open the url of the specified application in the default web browser. If 'api' is specified as the app name, the Management Console is opened. With no arguments, the 'name' value from the stackato.yml/manifest.yml in the current directory is used (if            present). 
+Open the url of the specified application in the default web browser. If 'api' is specified as the app name, the Management Console is opened. With no arguments, the 'name' value from the manifest.yml in the current directory is used (if            present). 
 
 <table>
     <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
@@ -1985,14 +1985,14 @@ Configure, create, push, map, and start a new application.
     <td>Url of a custom buildpack. This is an Application Lifecycle Service 3 specific option.</td>
     </tr>    <tr><td>--command</td>
     <td>The application's start command. Defaults to a framework-specific
-    value if required and not specified by stackato.yml.</td>
+    value if required and not specified by manifest.yml.</td>
     </tr>    <tr><td>--copy-unsafe-links</td>
 
     <td>Links pointing outside of the application directory are copied
     into the application.</td>
     </tr>    <tr><td>--disk</td>
     <td>The application's per-instance disk allocation. Defaults to a
-    framework-specific value if not specified by stackato.yml.</td>
+    framework-specific value if not specified by manifest.yml.</td>
     </tr>    <tr><td>--env</td>
     <td>Environment variable overrides. These are always applied
     regardless of --env-mode. The mode is restricted to the variable
@@ -2015,13 +2015,13 @@ Configure, create, push, map, and start a new application.
     Application Lifecycle Service 2 option.</td>
     </tr>    <tr><td>--instances</td>
     <td>The number of application instances to create. Defaults to 1, if
-    not specified by a stackato.yml.</td>
+    not specified by a manifest.yml.</td>
     </tr>    <tr><td>--manifest</td>
     <td>Path of the manifest file to use. If not specified a search is
     done.</td>
     </tr>    <tr><td>--mem</td>
     <td>The application's per-instance memory allocation. Defaults to a
-    framework-specific value if not specified by stackato.yml.</td>
+    framework-specific value if not specified by manifest.yml.</td>
     </tr>    <tr><td>--no-framework</td>
     <td>Create application without any framework. Cannot be used together
     with --framework. This is an Application Lifecycle Service 2 specific option.</td>
@@ -2056,7 +2056,7 @@ Configure, create, push, map, and start a new application.
     <td>Analogue of --env-mode, for the regular settings.</td>
     </tr>    <tr><td>--runtime</td>
     <td>The name of the runtime to use. Default is framework specific, if
-    not specified by a stackato.yml. This is an Application Lifecycle Service 2 specific
+    not specified by a manifest.yml. This is an Application Lifecycle Service 2 specific
     option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by

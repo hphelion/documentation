@@ -46,7 +46,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
 
         wget https://docs.hpcloud.com/file/python-novaclient_2.6.8-17.deb --no-check-certificate
         
-    **Note**: If you are installing the software on Ubuntu 12.10, you must all peform the following steps to install the correct version of the `prettytable` package before continuing to Step 4:
+    **Note**: If you are installing the software on Ubuntu 12.10, you must all preform the following steps to install the correct version of the `prettytable` package before continuing to Step 4:
     
     * wget http://launchpadlibrarian.net/88803305/python-prettytable_0.5-1ubuntu2_all.deb
     * apt-get remove python-prettytable

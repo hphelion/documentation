@@ -104,7 +104,7 @@ application:
 
         application = newrelic.agent.wsgi_application()(application)
 
-3.  Add required newrelic environment variables to *stackato.yml*:
+3.  Add required newrelic environment variables to *manifest.yml*:
 
         env:
               NEW_RELIC_LOG: stderr
@@ -141,12 +141,13 @@ add monitoring, you must include the agent with your application.
 -   Save your changes and place the newrelic folder in the root
     directory of your application along with WEB-INF folder.
 
--   Add the following section to a "hooks" section in *stackato.yml*:
+-   Add the following section to a "hooks" section in *
+-   .yml*:
 
         hooks:
             pre-running:
-            - mv newrelic $STACKATO_APP_ROOT/tomcat/
-            - cd $STACKATO_APP_ROOT/tomcat/newrelic
+            - mv newrelic $HELION_APP_ROOT/tomcat/
+            - cd $HELION_APP_ROOT/tomcat/newrelic
             - java -jar newrelic.jar install
 
 ### Pet Catalog Example[](#pet-catalog-example "Permalink to this headline")
@@ -188,11 +189,11 @@ directory of the application and make some modifications to
     Agent Settings
     documentation](http://newrelic.com/docs/php/php-agent-phpini-settings).
 
--   Add the following section to a "hooks" section in *stackato.yml*:
+-   Add the following section to a "hooks" section in *manifest.yml*:
 
         hooks:
             pre-running:
-            - mv -f newrelic.ini $STACKATO_APP_ROOT/apache/php/newrelic.ini
+            - mv -f newrelic.ini $HELION_APP_ROOT/apache/php/newrelic.ini
 
 ### WordPress Example[](#wordpress-example "Permalink to this headline")
 
