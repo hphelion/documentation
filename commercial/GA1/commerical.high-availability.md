@@ -296,7 +296,17 @@ You can configure your Swift Rings by specifying a target zone for each drive th
 
 <!--
 ### Neutron Networking<a name="networking"></a>
- **-TBD_** -->
+ 
+Neutron Netwoking in HA covers the following:
+
+1. Neutron Server (API) and its underlying MySQL and RabbitMQ are HA using HAproxy, Galera and Mirrored queue technologies for clustering.
+
+2. With the advent of DVR, the Neutron L3 agent no longer lives on central controller nodes, but is distributed and runs on each Compute node, such that, if it fails, its impact is only limited to VMs within that compute node. (do you have some pointer we could refer the user for further info on DVR concepts)
+
+3. DHCP agent is still running on central Cloud controllers – should a cloud controller running DHCP services fail, you must manually migrate over all the DHCP services to any of the remaining cloud controller nodes using the procedures outlined and validated (still work in progress) in https://jira.hpcloud.net/browse/CORE-1777. Until the DHCP services are migrated, no new VMs will be able to launch and existing VMs will not be able to renew their DHCP leases upon expiration.
+
+4. SNAT services still run on one of the central Cloud controller – should a cloud controller running SNAT services fail, your VMs will lose SNAT ability and will not be able to reach services on external networks. You can work around this by attaching a floating IP to your VM, which will allow it to reach to external networks without going through the central SNAT. 
+ -->
 
 ##Highly Available Cloud Applications and Workloads <a name="ha-workloads"></a>
 Projects writing applications to be deployed in the cloud must be aware of the cloud architecture and potential points of failure and architect their applications accordingly for high availability.
@@ -337,11 +347,15 @@ Some of guidelines for consideration:
 
 ## More information ## {#more-info}
 
-[OpenStack High-availability Guide](http://docs.openstack.org/high-availability-guide/content/ch-intro.html)
+- [OpenStack High-availability Guide](http://docs.openstack.org/high-availability-guide/content/ch-intro.html)
 
 <!-- http://www.ibm.com/developerworks/cloud/library/cl-cloudappdevelop/ **pretty sure we can't link HP's website to IBM's** -->
 
-[12-Factor Apps](http://12factor.net/)
+- [12-Factor Apps](http://12factor.net/)
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
 ####OpenStack trademark attribution
