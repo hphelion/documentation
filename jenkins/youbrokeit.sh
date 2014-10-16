@@ -30,6 +30,7 @@ echo "The build will not fail, but the md file will not be included in the outpu
 echo $i
 echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
+echo ""
 echo "1" > checktmp
 fi
 
@@ -41,6 +42,7 @@ echo "The build will not fail, but the md file will not be included in the outpu
 echo $i
 echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
+echo ""
 echo "1" > checktmp
 fi
 
@@ -77,6 +79,7 @@ do
 						echo $a
 						echo "Last checked in by:"
 						git log -1 $a | egrep "(Author|Date)"
+						echo ""
 						 echo "1" > checktmp
 					fi
 				done
@@ -105,6 +108,7 @@ do
 	echo $i
 	echo "Last checked in by:"
 	git log -1 $i | egrep "(Author|Date)"
+	echo ""
 	echo "1" > checktmp
 	fi
 	fi
@@ -133,9 +137,23 @@ do
 done   
 
 
-echo " "
-echo "===Spaces in filenames======================"
-find . -name "* *"
+for i in `find . -name "* *"`
+do 
+ 
+	if   [ -z "$i" ];
+	then
+	echo " "
+	echo "===Spaces in filenames======================"
+		echo "$i"
+		echo "files with spaces in the filename can cause scripts to fail
+		echo "Last checked in by:"
+		git log -1 $i | egrep "(Author|Date)"
+		echo "1" > checktmp
+	fi
+done   
+
+
+ 
 
 
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
