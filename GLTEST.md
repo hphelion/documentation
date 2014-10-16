@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud version 13.5 overview"
-permalink: /version-overview/
+permalink: /GREG/version-overview/
 product: public-cloud
 
 --
