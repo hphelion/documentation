@@ -281,7 +281,7 @@ navigation:
   commercial.ga: 
   - text: HP Helion Documentation
     url: /
-  - text: HP Helion OpenStack DocumentationHome
+  - text: HP Helion OpenStack Documentation Home
     url: /helion/openstack/
   - text: Release Notes
     url: /helion/openstack/release-notes/ 
