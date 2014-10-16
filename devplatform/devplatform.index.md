@@ -34,13 +34,9 @@ The HP Helion Development Platform provides additional Application Services that
 
 The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally [installed and configured](/helion/devplatform/install/#database) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
-
-|----------|------------------:|
-| [Install](/helion/devplatform/install/#database)  |         [Provision](/helion/devplatform/createdatabase/) |
-|          |  [Connect with ALS](/helion/devplatform/connectdatabase/) |
-
-
-
+<table width=99%>
+<tr><td><a href="devplatform.install.md/#database">Install</a></td><td align="right"><a href="devplatform.database-instance.md">Provision</a></td></tr>
+<table>
 ###Messaging Service (Beta)
 
 The [Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
