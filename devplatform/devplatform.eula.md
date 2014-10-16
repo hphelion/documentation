@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion Development Platform Software License Terms" 
 permalink: /helion/devplatform/eula/
-product: commercial.ga
+product: devplatform
 
 ---
 <!--UNDER REVISION-->

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook PHP Messaging Sample"
+title: "HP Helion Development Platform PHP Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/php/
 product: devplatform
 

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Node Hello World Sample"
+title: "HP Helion Development Platform Node Hello World Sample"
 permalink: /helion/devplatform/workbook/helloworld/node/
 product: devplatform
 

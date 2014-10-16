@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook PHP Hello World Sample"
+title: "HP Helion Development Platform PHP Hello World Sample"
 permalink: /helion/devplatform/workbook/helloworld/php/
 product: devplatform
 

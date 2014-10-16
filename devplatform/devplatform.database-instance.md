@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "Creating a Database Instance"
+title: "Working with the Database Service"
 permalink: /helion/devplatform/createdatabase/
 product: devplatform
 

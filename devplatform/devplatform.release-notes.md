@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Documentation"
+title: "HP Helion Development Platform Release Notes"
 permalink: /helion/devplatform/release-notes/
 product: devplatform
 

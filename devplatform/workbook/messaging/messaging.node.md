@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Node Messaging Sample"
+title: "HP Helion Development Platform Node Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/node/
 product: devplatform
 

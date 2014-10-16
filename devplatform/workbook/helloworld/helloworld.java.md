@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Java Hello World Sample"
+title: "HP Helion Development Platform Java Hello World Sample"
 permalink: /helion/devplatform/workbook/helloworld/java/
 product: devplatform
 

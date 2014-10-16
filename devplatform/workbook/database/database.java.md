@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Java Database Sample"
+title: "HP Helion Development Platform Java Database Sample"
 permalink: /helion/devplatform/workbook/database/java/
 product: devplatform
 

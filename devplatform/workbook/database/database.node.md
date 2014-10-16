@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Node Database Sample"
+title: "HP Helion Development Platform Node Database Sample"
 permalink: /helion/devplatform/workbook/database/node/
 product: devplatform
 
