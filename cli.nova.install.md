@@ -73,7 +73,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
         
     Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are those you use to access the HP Helion Public Cloud Management Console.  You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
 
-    **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
+    **Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availability zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
 7. Save and exit your `.bashrc` file.
 
@@ -149,7 +149,7 @@ CentOS has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Helion Public Cloud console.  You can find the values for these variables on through the [HP Helion Public Cloud Console](https://horizon.hpcloud.com). Click the project menu and select *Manage Access Keys* and *Account Info*.
 
-**Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
+**Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availability zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
 14. Save and exit your `.bashrc` file.
 
@@ -230,7 +230,7 @@ Fedora has both Python 2.6.6 and Python-Setuptools 0.1.10 installed by default. 
         
 Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use to access the HP Helion Public Cloud console.  (You can find the values for these variable on your [API Keys](https://console.hpcloud.com/account/api_keys) page in the services console.)
 
-**Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availablilty zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
+**Note**: The `NOVA_REGION_NAME` variable in this example is set to communicate with instances in the AZ1 availability zone.  To use other availability zones, insert AZ2 or AZ3 as the variable instead: `az-2.region-a.geo-1` or `az-3.region-a.geo-1`.
 
 14. Save and exit your `.bashrc` file.
 
