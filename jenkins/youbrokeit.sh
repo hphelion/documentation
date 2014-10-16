@@ -33,8 +33,7 @@ done
 
 
 
-echo  ""
-echo "==== Broken permalinks to documentation.git files ==="
+
 for i in `find . -name "*.md" `
 do
 sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||'  >> permalinklist.txt
@@ -50,6 +49,9 @@ for i in `cat permalinklist.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
 do 
 			if [[ -z $(grep $i filepermalink.txt ) ]];
 			then
+			echo  ""
+			echo "==== Broken permalinks to documentation.git files ==="
+			
 				echo "The permalink $i does not exist but is referenced in:"
 				for a in `find . -name "*.md"`
 				do
@@ -67,8 +69,7 @@ rm permalinklist.txt
 rm filepermalink.txt
  
  
-echo ""
-echo "===Missing publish flag============================="
+
 for i in `find . -name "*.md" `
 do 
 
@@ -76,8 +77,11 @@ do
 	then
 	if  [[ -n $(grep -L "\-\-UNDER REVISION" $i) ]]; 
 	then
+	
+	echo ""
+	echo "===Missing publish flag============================="
 	echo $i
-  echo "1" > checktmp
+	echo "1" > checktmp
 	fi
 	fi
  done 
@@ -85,14 +89,15 @@ do
 
  
 
-echo " "
-echo "===Blank lines============================="
+
 
 for i in `find . -name "*.md"`
 do 
 	a=`head -1 $i`
 	if   [ -z "$a" ];
 	then
+	echo " "
+	echo "===Blank lines============================="
 		echo "Blank lines at the top of file $i"
 		 echo "1" > checktmp
 	fi
