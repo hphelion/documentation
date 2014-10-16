@@ -77,7 +77,7 @@ If an administrator wants to run arbitrary commands in all application
 containers, global admin hooks can be set to run immediately after
 corresponding user-specified deployment hooks (pre-staging,
 post-staging, pre-running) set in application 
-*manifest.yml* files.
+[manifest.yml](/als/v1/user/deploy/manifestyml/) files.
 
 These hooks must be:
 

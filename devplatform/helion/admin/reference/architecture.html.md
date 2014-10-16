@@ -24,7 +24,7 @@ in one instance. For use on a larger scale, the VM can be cloned and
 assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.
 
-<img src="/content/documentation/devplatform/stackato/images/helion-architecture-diagram.png" />
+<img src="/content/documentation/devplatform/helion/images/helion-architecture-diagram.png" />
 
 Roles[](#roles "Permalink to this headline")
 ---------------------------------------------

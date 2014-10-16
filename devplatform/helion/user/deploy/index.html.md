@@ -139,7 +139,7 @@ changes.
 **Environment Variables**
 :   A number of special environment variables are available during
     staging and runtime. These can be used in
-    [*hooks*](/als/v1/user/deploy/stackatoyml/#yml-hooks) or application code
+    [*hooks*](/als/v1/user/deploy/manifestyml/#hooks) or application code
     (for setting up databases, filesystem services, web server options,
     and cron jobs) in places where you would normally use hard-coded
     paths, credentials, or host-specific values.
@@ -220,12 +220,12 @@ Cron commands are only executed on instance \#0 of the app.
 Cron commands can be provided either in a regular crontab file in the
 root directory of the app, or via the `cron:`
 section in *manifest.yml* (See [*manifest.yml
-Options*](/als/v1/user/deploy/stackatoyml/).
+Options*](/als/v1/user/deploy/manifestyml/).
 
 The `HOME` and `PATH`
 environment variables, as well as all variables that start with
 `PERL`, `PYTHON`,
-`STACKATO`, `VCAP`,
+`VCAP`,
 `BUNDLE`, `LEIN`,
 `GEM`, `RACK`, `RAILS`, `RUBY` or `http`
 are exported to the top of the crontab file. When applicable, the
@@ -241,7 +241,7 @@ crontab file.
 After setting up environment variables, we copy the *\$HOME/crontab*
 file, and finally the commands from the `cron:`
 section in *manifest.yml*. The resulting file is stored at
-*\$STACKATO\_APP\_ROOT/crontab*.
+*\$HELION\_APP\_ROOT/crontab*.
 
 ### Whitespace & Newlines in Environment Variables[](#whitespace-newlines-in-environment-variables "Permalink to this headline")
 
@@ -414,17 +414,17 @@ the following methods:
         $ helion apps --target api.helion-xxx1.local
 
 2.  Use two or more terminals to access multiple targets. Within each
-    terminal, set the `STACKATO_TARGET` environment
+    terminal, set the `HELION_TARGET` environment
     variable for the API endpoint URL you want to work with in that
     terminal. The client will use this URL, overriding any target set
     with the `helion target` command:
 
-        $ export STACKATO_TARGET='api.helion-xxx2.local'
+        $ export HELION_TARGET='api.helion-xxx2.local'
 
  This target is used until the variable is unset or the terminal is
  closed. To unset it:
 
-	$ unset STACKATO_TARGET
+	$ unset HELION_TARGET
 
 Persistent Sessions[](#persistent-sessions "Permalink to this headline")
 -------------------------------------------------------------------------

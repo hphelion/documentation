@@ -27,17 +27,17 @@ Papertrail[](#papertrail "Permalink to this headline")
 
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
 2.  In the Dashboard screen, click *Add Systems*.
-	<img src="content/documentation/devplatform/stackato/imagesppt1.png" />
+	<img src="content/documentation/devplatform/helion/imagesppt1.png" />
 
 3.  In the Setup Systems screen under *Other log methods*, click
     *Alternatives*.
-	<img src="/content/documentation/devplatform/stackato/images/ppt2.png" />
+	<img src="/content/documentation/devplatform/helion/images/ppt2.png" />
 
 4.  Choose option C: *My system's hostname changes* and give it a
     suitable name.
-	<img src="/content/documentation/devplatform/stackato/images/ppt3.png" />
+	<img src="/content/documentation/devplatform/helion/images/ppt3.png" />
 5.  Note down the **port number**. You need this later on.
-	<img src="/content/documentation/devplatform/stackato/images/ppt4.png" />
+	<img src="/content/documentation/devplatform/helion/images/ppt4.png" />
 
 6. Enable system logging (via udp) by executing the following kato command:
 	
@@ -54,20 +54,20 @@ Loggly[](#loggly "Permalink to this headline")
 
 1.  [Create an account for Loggly](https://app.loggly.com/pricing)
 2.  Under *Incoming Data* tab, click *Add Input*.
-	<img src="/content/documentation/devplatform/stackato/images/loggly1.png" />
+	<img src="/content/documentation/devplatform/helion/images/loggly1.png" />
 3.  In the Add Input screen:
 	-   Choose *Syslog UDP or TCP*
 	-   Choose *Combination Log Type*
 	-   [Optional] For JSON Logging, Choose UDP or TCP **with Stripe** and enable **JSON Logging**. (for system logs)
-	<img src="/content/documentation/devplatform/stackato/images/loggly2.png" />
+	<img src="/content/documentation/devplatform/helion/images/loggly2.png" />
 4.  If we want to accept logs from any Application Lifecycle Service nodes or applications modify Allowed Devices section:
 	-   Click *Add device*
-	 <img src="/content/documentation/devplatform/stackato/images/images/loggly3.png" />
+	 <img src="/content/documentation/devplatform/helion/images/images/loggly3.png" />
 	-   Add IP Address 0.0.0.0/0 when prompted
-	 <img src="/content/documentation/devplatform/stackato/images/loggly4.png" />
+	 <img src="/content/documentation/devplatform/helion/images/loggly4.png" />
 5.  Turn off discovery since we allowed all devices. Also, note down the
     **port number**.
-	 <img src="/content/documentation/devplatform/stackato/images/loggly5.png" />
+	 <img src="/content/documentation/devplatform/helion/images/loggly5.png" />
 6. Enable system logging by executing **one** of the following kato commands:
 
     	kato log drain add drain-name udp://logs.loggly.com:port#
@@ -84,15 +84,15 @@ Splunk[](#splunk "Permalink to this headline")
 
 1.  [Set up Splunk Server](http://www.splunk.com/download).
 2.  In the welcome screen, click *Add data*
-	<img src="/content/documentation/devplatform/stackato/images/splunk1.png" />
-3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/documentation/devplatform/stackato/images/splunk2.png"/>
+	<img src="/content/documentation/devplatform/helion/images/splunk1.png" />
+3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/documentation/devplatform/helion/images/splunk2.png"/>
 
 1. In the **Add New Source** screen:
 	-   Select a TCP/UDP port greater than **9999**
 	-   Give it a suitable **Source name**.
 	-   Set sourcetype to **Manual**
 	-   Leave Source Type **empty**
-	<img src="/content/documentation/devplatform/stackato/images/splunk3.png" />
+	<img src="/content/documentation/devplatform/helion/images/splunk3.png" />
 5. Enable system logging by executing **one** of the following kato commands:
 
     	kato log drain add drain-name splunk-server-address:port#
