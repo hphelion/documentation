@@ -14,10 +14,31 @@ rm filepermalink.txt > /dev/null 2>&1
 
 echo " "
 echo " "
-echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
+echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files."
+
+
+
+
 
 
 echo  ""
+
+for i in `find . -name "* *"`
+do 
+ 
+	if   [ -z "$i" ];
+	then
+	echo " "
+	echo "===Spaces in filenames======================"
+		echo "$i"
+		echo "files with spaces in the filename can cause scripts to fail
+		echo "Last checked in by:"
+		git log -1 $i | egrep "(Author|Date)"
+		echo "1" > checktmp
+	fi
+done   
+
+
 
 
 for i in `find . -name "*.md"`; 
@@ -137,20 +158,7 @@ do
 done   
 
 
-for i in `find . -name "* *"`
-do 
- 
-	if   [ -z "$i" ];
-	then
-	echo " "
-	echo "===Spaces in filenames======================"
-		echo "$i"
-		echo "files with spaces in the filename can cause scripts to fail
-		echo "Last checked in by:"
-		git log -1 $i | egrep "(Author|Date)"
-		echo "1" > checktmp
-	fi
-done   
+
 
 
  
