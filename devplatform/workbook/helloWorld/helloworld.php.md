@@ -8,14 +8,14 @@ product: devplatform
 <!--UNDER REVISION-->
 #PHP Hello World Sample
 
-This sample displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. This is a very simple PHP web app. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
+This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
 ##Prerequisites
-1. You must have access to an ALS cluster.
-2. The Helion [command-ine interface (CLI)](als/v1/user/reference/client-ref/) must be installed.
-3. You must have access to the web-based Helion Management console.
-
 If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
+
+- Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
+- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
+- Access to the web-based [Helion Management Console](/als/v1/user/client/).
 
 ##Download the Application Files
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-mysql-php)
@@ -43,7 +43,8 @@ The Helion client to deploy your app to Helion Development Platform.  If you are
 	
 		helion push 
 
-Note: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
+
+1. Accept any default values that you may be prompted for. <br>**Note**: By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 
 ##Key Code Snippets
@@ -56,7 +57,7 @@ This simple PHP script prints "Hello World".
 	
 	?>
 
-The manifest.yml file is the configuration information used by ALS to set up the environment. The buildpack element here instructs ALS on the correct buildpack to use for PHP, and ensures the correct tools and runtimes are installed in the application environment.
+The *manifest.yml* file is the configuration information used by ALS to set up the environment. The **buildpack** element here informs ALS on the correct buildpack to use for PHP, which ensures the correct tools and runtimes are installed in the application environment.
 
 	---
 	applications:
@@ -64,7 +65,7 @@ The manifest.yml file is the configuration information used by ALS to set up the
 	  buildpack: https://github.com/cloudfoundry/php-buildpack.git
 
 ##Run the Application
-1.	Open the Helion Management Console. <br> This is the web-based administrative interface.
+1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
 2.	Click **Applications**.
 3.	If the file push was successful, you should see **Hello World** in the list of available applications.
 4.	The status of the application should be **Online**. click the name of the application to launch it.
@@ -73,7 +74,7 @@ The manifest.yml file is the configuration information used by ALS to set up the
 
 ##Key Learnings
 
-1. You will need to provide configuration information, including build-pack information for PHP, so that ALS can create an environment for your application. 
-2. You can deploy your app using the Helion CLI or the Eclipse Plugin.
+1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file. 
+- You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
 
 [Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)
