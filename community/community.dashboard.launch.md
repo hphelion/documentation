@@ -5,13 +5,11 @@ permalink: /helion/openstack/community/dashboard/login/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
+<script>
 
-
-<script> 
-
-function PageRefresh { 
+function PageRefresh {
 onLoad="window.refresh"
 }
 
@@ -19,7 +17,9 @@ PageRefresh();
 
 </script>
 
+<!--
 <p style="font-size: small;"> <a href="/helion/openstack/managing/volumes/">&#9664; PREV</a> | <a href="/helion/openstack/dashboard/users/">&#9650; UP</a> | <a href="/helion/openstack/managing/routers/">NEXT &#9654;</a> </p>
+-->
 
 # Logging into the HP Helion OpenStack&reg; Dashboards
 

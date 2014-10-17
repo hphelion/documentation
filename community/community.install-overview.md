@@ -5,10 +5,21 @@ permalink: /helion/community/install-overview/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
+<script>
 
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!--
 <p style="font-size: small;"> <a href="/helion/community/hwsw-requirements/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install">NEXT &#9654;</a> </p>
+-->
 
 # HP Helion OpenStack&#174; Community Installation and Configuration
 With HP Helion OpenStack Community, you can quickly and easily spin up clouds using two types of installation paths:
