@@ -429,7 +429,6 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 </tr>
 </table>
 
-[Backup and Restore procedures](#backup-restore-nodes)
 
 **Note:** You cannot build or rebuild the images. Direct editing of the Orchestration (Heat) templates is possible, but not supported. Configuration is limited to those items supported by the configuration tool and Horizon.
 
