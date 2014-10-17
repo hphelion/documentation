@@ -18,6 +18,8 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 - Access to the web-based [Helion Management Console](/als/v1/user/client/).
 
 ##Download the Application Files
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging). The sample  application required access to the Internet in order to download dependent packages. 
+
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-node)
 
 ###About the Application Files
