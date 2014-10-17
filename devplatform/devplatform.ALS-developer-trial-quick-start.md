@@ -26,7 +26,7 @@ Before you start the installation and configuration process, ensure that you hav
 ##Installing your Quick Start Developer Trial {#install}
 1. Log into the Horizon Console using the HP Helion Public Cloud username and password that you created during signup.
 2. Create a new project, if you don't already have one.
-3. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/>
+3. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/><br><br>
 5. Create a new **Compute** instance in the US East region.<br><img src="media/quickstartB.png"/>
 6. Click on the  **+ Launch Instance** button to open the launch instance dialog.<br><img src="media/quickstartC.png"/>
 7. On the resulting dialog, fill out the details and select **Boot from image** to enable selection of the Constructor VM.  The selections shown below are good defaults.<br><img src="media/quickstartD.png"/>
@@ -48,10 +48,8 @@ Before you start the installation and configuration process, ensure that you hav
 	- **OpenStack&reg; Username** This is the username for your HP Public Cloud account.
 	- **OpenStack Password** This is the password for your HP Public Cloud account.
 	- **Tenant ID** If you have multiple values, select one.
-	- **Availability Zone** Select **AZ1**.
 	- **Network ID** If you have multiple values, select one.
 	- **Image ID** If you have multiple values, select one.
-	- **Cluster Title** Give your developer trial cluster a name.
 	- **Cluster Prefix** Give your developer trial a prefix.
 	- **Services** Enter a comma-separated list of services (e.g. mysql, redis, rabbit).
 	- **First user's admin email** The login account for your new developer trial.
@@ -63,7 +61,7 @@ Before you start the installation and configuration process, ensure that you hav
 
 			python ./assemble.py
 
-3. After the assemble script creates the cluster, it presents you with the ALS Console URL with which you can login to your browser. This URL will have the form *api.<PublicIP>.xip.io*  For example, *api.255.255.255.255.xip.io*
+3. After the assemble script creates the cluster, it presents you with the ALS Console URL with which you can login to your browser. This URL will have the form *api.<IPAddress>.xip.io*  For example, *api.255.255.255.255.xip.io* <BR> The cluster will be running on a single virtual machine in your account that will have a name ending in "-core" prefixed with 5 random characters.  For example: **acxpq-core**. 
 4. If an error occurs or you want to terminate the cluster, run the following command. This command deletes your VMs, releases the floating IP addresses, and removes the cluster security groups: 
 
 		python ./assemble.py -D 
