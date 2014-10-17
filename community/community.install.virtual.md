@@ -22,17 +22,19 @@ It is important to read through this page before starting your installation. Bef
 
 * [Hardware and system requirements](#virtual)
 
-   * [Software requirements](#software-requirements)
+	* [Software requirements](#software-requirements)
 
 * [Before you begin](#before-you-begin)
+
+	* [Known issues for the installation](#known)
 
 * [Installing HP Helion OpenStack Community](#install)
 
    * [Downloading and unpacking installation file](#getinstall)
 
-   * [Starting the seed VM](#startvm)
+	* [Starting the seed VM](#startvm)
 
-   * [Starting the undercloud, overcloud and test guest VM](#startclouds)
+	* [Starting the undercloud, overcloud and test guest VM](#startclouds)
 
 * [Verifying your installation](#verifying-your-installation)
 
@@ -52,11 +54,16 @@ It is important to read through this page before starting your installation. Bef
 
 * Undercloud &mdash; In a typical HP Helion OpenStack Community deployment, the undercloud is a baremetal server, but in this preview deployment the undercloud is simulated as a VM. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
 
-* Overcloud<a name="overcloud"></a> &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. In this virtual deployment, the overcloud comprises 4 nodes:
+* Overcloud<a name="overcloud"></a> &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. In this virtual deployment, the overcloud comprises 6 nodes:
 
-    * 1 overcloud controller
+    * 3 overcloud controllers (2 controllers and 1 management controller)
     * 2 overcloud Object operation (Swift) nodes
     * 1 overcloud Compute (Nova) node
+
+* Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/openstack/services/icinga/).
+
+**Important:** When installing make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
+
 
 
 ## Hardware and system requirements {#virtual}
@@ -65,10 +72,8 @@ TripleO creates several large VMs as part of this virtual deployment process, so
 * At least 48GB of RAM
 * At least 200GB of available disk space
 * Virtualization support **enabled** in the BIOS
-* One of the following operating systems installed:
+* The Ubuntu 13.10 operating system installed
 
-    * Ubuntu 13.10
-    * Ubuntu 14.04
 
 ### Software requirements
 The following Debian/Ubuntu packages are required:
@@ -90,6 +95,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
     $ sudo /etc/init.d/libvirt-bin restart
 
 ## Before you begin
+
 Before you begin the installation process, the root user must have private and public RSA keys. You can determine this by issuing the following commands:
 
 	$ sudo su -
@@ -117,10 +123,21 @@ If the key does not exist, create one, omitting a passphrase and accepting the d
 
 3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
 
+		# ssh-keygen -t rsa -N
 
-    
-    	# ssh-keygen -t rsa
+### Known issues for the installation {#known}
 
+- Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
+
+- ElasticSearch indexes are not deleted automatically. Log data will build up over time, potentially filling the space available, unless managed. To see the indexes, ssh to the undercloud node and run:
+
+		curl "localhost:9200/_cat/indices?v"
+
+	To remove indexes, run this (you must be on the undercloud node):
+
+		curl -XDELETE "localhost:9200/logstash-<DATE>"
+
+	where <DATE> is in the format `YYYY.MM.DD`"; for example: `2014.09.09`.
 
 
 
@@ -148,11 +165,11 @@ To begin the installation:
 
 The download file is named: `ce_installer.gz`
 
-3. Extract the installation software to the root user's home directory:
+3. In the root user's home directory, create the `work` directory and extract the installation software to the `work` directory:
 
-    	# cd /root
-    	# tar zxvf /{full path to downloaded file from step 2}/ce_installer.gz
-
+		mkdir work
+		cd /work
+		tar zxvf /{full path to downloaded file from step 2}/ce_installer.gz
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
@@ -160,14 +177,14 @@ This creates and populates a `tripleo/` directory within root's home directory.
 ### Starting the seed VM ### {#startvm}
 
 Start the seed VM using the following command:
-    
-    # HP_VM_MODE=y bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh
+
+		HP_VM_MODE=y bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create seed
 
 The process of starting the seed takes approximately ten minutes, depending on the capabilities of your system, and there are numerous logging messages generated by the script. The first time the script is run, it checks for and attempts to install any missing required packages, as described in [System requirements](#system-requirements). If you are prompted, accept all package installations.
 
-If the seed VM is successful, a message similar to the following is displayed:
+When the seed VM install completes, a message similar to the following is displayed:
 
-    Wed Apr 23 11:25:10 UTC 2014 --- completed setup seed
+	Wed Oct 23 11:25:10 UTC 2014 --- completed setup seed
 
 **Note:** The seed VM continues its self-initialization after the startup script has terminated. 
 
@@ -177,126 +194,135 @@ This section explains to you how to deploy and configure the undercloud and over
 
 1. Log in to the seed VM; it might take a few moments for the VM to become reachable:
 
-        # ssh 192.0.2.1
+		ssh 192.0.2.1
 
-2. Type `yes` to allow the ssh connection to proceed when prompted for host authentication.
+2. Set the following environment variables:
+
+	`OVERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for overcloud hosts.
+
+	**Example:**
+
+		export OVERCLOUD_NTP_SERVER=192.0.1.128
+
+	`UNDERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for undercloud hosts.
+
+	**Example:**
+
+		export OVERCLOUD_NTP_SERVER=192.0.1.128
+
+	`OVERCLOUD_NEUTRON_DVR` - Use this variable to disable Distributed Virtual Routers (DVR). By default, the overcloud is configured for Distributed Virtual Routers If this behaviour is not desirable, set the value to 'False'.
+
+	**Example:**
+
+		export OVERCLOUD_NEUTRON_DVR=False
+
+	**Note:** The environment variable `NeutronPublicInterfaceIP` is no longer supported. The install will exit with an error message if this variable is set.
 
 3. Start the deployment of the undercloud and overcloud:
-    
-    	root@hLinux:~# bash -x ~root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-     This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 10 minutes and includes two pauses while services and VMs are set up in the background.
+		cd /root
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-4. If the deployment completes successfully, a message similar to the following is displayed:
+	This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 10 minutes and includes two pauses while services and VMs are set up in the background.
 
-        HP - completed -Wed May 07 16:20:02 UTC 2014
+	When the deployment completes, a message similar to the following is displayed:
 
-<!--Verify that the seed has completed its self-initialization by confirming that no further logging messages are being appended to the `os-collect-config` log:
-
-    root@hLinux:~# tail -f /var/log/upstart/os-collect-config.log
-
-If the initialization process has completed, it will usually be indicated by a concluding log entry like:
-
-    [2014-04-23 11:38:52,892] (os-refresh-config) [INFO] Completed phase migration
-
-You can then break out of the tail command using CTRL-C.-->
+		HP - completed -Wed Oct 23 16:20:02 UTC 2014
 
 
 ## Verifying your installation
 
+From within the seed cloud host, you should be able to connect to the test guest or demo VM created.
+
 ### Connecting to test guest VM ### {#connectvm}
 
-If the installation is successful, you will see a message similar to:
+It may take a few minutes for the demo vm to become sshable after finishing installation. The install will run until the demo completes loading the demo VM.
 
-	"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+1. From the seed, you should be able to connect to the demo vm created
 
-From within the seed VM, you should be able to connect to the test guest or demo VM created.
+		. /root/tripleo/tripleo-overcloud-passwords
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
 
-**Note** It may take a few minutes for the demo vm to become sshable after finishing installation. The install will run until the demo completes loading the demo VM.
+2. List the running instances:
 
-1. Set up your environment to access the overcloud, and list the running instances:
+		nova list
 
-        root@hLinux:~# source ~root/tripleo/tripleo-overcloud-passwords
-        root@hLinux:~# TE_DATAFILE=tripleo/testenv.json
-        root@hLinux:~# source ~root/tripleo/tripleo-incubator/overcloudrc-user
-        root@hLinux:~# nova list
+	Make sure you note the IP address of the demo VM from the output of 'nova list' command.
 
-    Ensure you note the IP address of the demo VM from the output of 'nova list' command. 
+3. Connect to the demo VM using SSH:
 
- 
-2. Of the two IP addresses shown for each instance, use the `192.x.x.x` IP address to ping the VM:
-
-        root@hLinux:~# ping <ip of demo vm>
-
-3. Verify you can ssh into the VM:
-	
-
-	If you have installed on Ubuntu 13.10:
-
-    	
-    	root@hLinux:~# ssh root@<ip of demo vm> 
-	If you have installed on Ubuntu 14.04:
-
-    	root@hLinux:~# ethtool -K eth0 rx off tx off
-    	root@hLinux:~# ssh root@<ip of demo vm> 
-
-
-
+		ssh root@${DEMO_IP}
 
 
 ### Connecting to the Horizon console ### {#connectconsole}
 
-From the physical system you are running the install on, you should be able to connect to the overcloud Horizon console.
+From the seed cloud host, connect to the overcloud Horizon console.
 
-1. From within the seed VM, set your environment to access the undercloud, then list the overcloud instances and find the IP address of the overcloud controller node:
+1. Obtain the passwords for the `demo` from `/root/tripleo/tripleo-overcloud-passwords`.
 
-        root@hLinux:~# source ~root/tripleo/tripleo-undercloud-passwords
-        root@hLinux:~# TE_DATAFILE=tripleo/testenv.json
-        root@hLinux:~# source ~root/tripleo/tripleo-incubator/undercloudrc
-        root@hLinux:~# nova list
+2. Point your web browser on the seed cloud host to the overcloud Horizon console:
 
-   Ensure that all of the instances from the nova list command are showing ACTIVE status. 
+		http://192.0.2.24
 
-2. Obtain the passwords for the `demo` and `admin` users:
-    
-    	root@hLinux:~# grep OVERCLOUD_DEMO_PASSWORD ~root/tripleo/tripleo-overcloud-passwords
+	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
 
-    
-    	root@hLinux:~# grep OVERCLOUD_ADMIN_PASSWORD ~root/tripleo/tripleo-overcloud-passwords
+		. /root/tripleo/tripleo-undercloud-passwords
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
+		OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
+		echo $OVERCLOUD_IP
 
-3. Point your web browser on the physical host system to the overcloud Horizon console:
+4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 1.
 
-        http://192.0.8.2
+### Connecting to the monitoring interface ### {#connectmonitor}
 
-4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 2.
+Community Edition includes a monitoring interface. You can access this with the following steps:
 
-**Note:** If you cannot connect to the Horizon console, check your proxy settings to make sure access to the controller VM is not being unsuccessfully redirected through a proxy.
+1. Point your web browser on the seed cloud host to the undercloud monitoring console:
 
-### Connecting remotely to the Horizon console ### {#remoteconnect}
+		http://192.0.2.2
 
-For connecting remotely to the Horizon console from another networked machine on the same subnet, update the local machine's routing table (Linux) or Hosts file (Windows) with the IP address of the Ubuntu machine hosting the Seed - pointing to the 192.0.8.0 subnet of the Horizon Console
+	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
 
+		. /root/stackrc
+		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		echo $UNDERCLOUD_IP
+
+2. Login as user `icingaadmin` with password `icingaadmin`.
 
 ## Issues and troubleshooting {#troubleshooting}
 
-* If the `hp_ced_start_seed` script fails to start the seed, run the script again.
-
-* There are stalls loading images (1-2 mins) and building the undercloud (12 or more mins) and overcloud.
-
-* NEVER run hp_ced_start_seed.sh WITHOUT HP_VM_MODE=y or you may need to reboot as it resets your networking for baremetal.
-
-* The installer script will wait for os-collect-config to complete on the seed, but will time out after 10 minutes of waiting.
-
-* The virtual installation does not persist across system reboots. When you reboot your system, be sure to start a new VM installation.
-
+* The install will run until the demo completes loading the demo VM.
+* There are stalls loading images (1-2 mins) and building the undercloud (12 or more mins) and overcloud (at least that again).
+* If the `hp_ced_host_manager` fails to start the seed run the command again.
 * There are no restrictions imposed on external device name on the host system in virtual mode as the external interface is not used.
+* The installer now includes an interactive query before running a hardware census script at the end of the install. This script is optional.
 
-* For best performance, cleanup any VMs using excess space using the following commands: 
-    * Delete the KVM VMs and their storage volumes using `virsh` commands.
-    * Delete `/var/lib/libvirt/images/`.
-    * Uninstall any packages that you no longer require.
+## Enable name resolution from tenant VMs in the overcloud
 
+To enable name resolution from tenant vms in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq`.
 
+Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
+items.  
+
+The `overcloud_neutron_dhcp_agent.json` file should also be copied over to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
+
+Use the following commands:
+
+	{"dhcp_agent":
+		{"config":
+			[
+				{"section":"DEFAULT",
+					"values":
+						[
+							{"option":"dhcp_delete_namespaces","value":"True"},
+							{"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}
+						]
+					}
+				]
+			}
+		}
+
+Where `value` is the IP address of the DNS server to use.  Multiple DNS servers can be specified as a comma separated list.
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
