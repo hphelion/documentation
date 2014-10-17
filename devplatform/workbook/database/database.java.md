@@ -74,6 +74,8 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 
 ##Key Code Snippets
 
+This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application’s environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, and builds the appropriate JDBC connection string.
+
 	String vcap_services = System.getenv("VCAP_SERVICES");
 	
 	        Connection dbConnection = null;
@@ -109,7 +111,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 	            }
 	        }
 
-This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application’s environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, and builds the appropriate JDBC connection string.
+The manifest.yaml file is the configuration information used by ALS to set up the environment. The services element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.	
 	
 	---
 	applications: 
@@ -120,7 +122,7 @@ This first line in this section of the MysqlServlet.java file shows how to retri
 	    ${name}-db:
 	      type: mysql
 
-The manifest.yaml file is the configuration information used by ALS to set up the environment. The services element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.
+
 
 ##Run the Application
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
