@@ -217,56 +217,56 @@ The [multi-node baremetal installation of HP Helion OpenStack Community](/helion
 
 * At least 5 and up to 30 baremetal systems with the following configuration:
 
-    * A minimum of 32 GB of physical memory
-    * A minimum of 2 TB of disk space
-    * A minimum of 1 x 10 GB NIC with PXE support
+	* A minimum of 64 GB of physical memory
+	* A maximum of 2 TB of disk space
+	* A minimum of 1 x 10 GB NIC with PXE support
 
-      * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
+		* For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
 
-    * Capable of hosting VMs
-    * The boot order configured with Network/PXE boot as the first option
-    
-        For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
+	* Capable of hosting VMs
+	* The boot order configured with Network/PXE boot as the first option
 
-        To unset, enter `set system1/bootconfig1/bootsource5 bootorder=5`.
+		For example, to set the boot order for a HP SL390, from the iLO prompt enter: 
 
-    * The BIOS configured: 
-     
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+			`set system1/bootconfig1/bootsource5 bootorder=1`.
 
-    * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
+		To unset, enter: 
 
+			`set system1/bootconfig1/bootsource5 bootorder=5`.
 
-    **Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
+	* The BIOS configured: 
+
+		* To the correct date and time
+		* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+
+		* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
+
+	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
 * An additional system to run the baremetal installer and host the seed VM with the following configuration:
 
-    * A minimum of 8 GB of physical memory
-    * A minimum of 100 GB of disk space 
-    * One of the following operating systems installed:
+	* A minimum of 16 GB of physical memory
+	* A minimum of 100 GB of disk space 
+	* The Ubuntu 13.10 operating system installed
 
-      * Ubuntu 13.10
-      * Ubuntu 14.04
+	* If they are not already installed, the following required Debian/Ubuntu packages are added to the system; however, we recommend you install them beforehand.
 
-    * If they are not already installed, the following required Debian/Ubuntu packages are added to the system; however, we recommend you install them beforehand.
+		* qemu
+		* openvswitch
+		* libvirt
+		* python-libvirt
 
-     * qemu
-     * openvswitch
-     * libvirt
-     * python-libvirt
-
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualisation configuration.
 
 * You must also satisfy these network configuration requirements:
 
-    * The seed VM, the baremetal systems and the baremetal controllers must be on the same network
+	* The seed VM, the baremetal systems and the baremetal controllers must be on the same network
 
-    * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
+	* Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
-    * If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
+	* If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 
-    * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
+	* The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
 
 ## Hardware and software configuration for virtual installation {#virtual}
 For the [virtual installation](/helion/community/install-virtual/) you must use a system that meets or exceeds the following hardware specification:
@@ -274,10 +274,7 @@ For the [virtual installation](/helion/community/install-virtual/) you must use 
 * At least 48 GB of RAM
 * At least 200 GB of available disk space
 * Virtualization support **enabled** in the BIOS
-* One of the following operating systems installed:
-
-    * Ubuntu 13.10
-    * Ubuntu 14.04
+* * The Ubuntu 13.10 operating system installed
 
 * If they are not already installed, the following required Debian/Ubuntu packages are added to the system:
 
@@ -287,7 +284,7 @@ For the [virtual installation](/helion/community/install-virtual/) you must use 
     * python-libvirt
     * openssh-server
 
-        **Note:** Ensure that the firewall configuration allows access to the ssh ports.
+        **Note:** Ensure that the firewall configuration allows access to the SSH ports.
 
 ## Usable capacity
 
@@ -341,6 +338,8 @@ This table provides an overview of the physical network configuration requiremen
 
 - The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet
 - If you have other DHCP servers on the same network, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
+- The seed VM, the baremetal systems and the BMC (IPMI controller) for all
+  baremetal systems must be on a common network.
 
 <!--
 For detailed information, see the [Reference architecture](/helion/community//reference-architecture/).

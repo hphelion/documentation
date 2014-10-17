@@ -25,11 +25,9 @@ It is important to read through this page before starting your installation. Bef
 
 * [Before you begin](#before-you-begin)
 
-	* [Known issues for the installation](#known)
-
 * [Installing HP Helion OpenStack Community](#install)
 
-   * [Downloading and unpacking installation file](#getinstall)
+	* [Downloading and unpacking installation file](#getinstall)
 
 	* [Starting the seed VM](#startvm)
 
@@ -37,11 +35,13 @@ It is important to read through this page before starting your installation. Bef
 
 * [Verifying your installation](#verifying-your-installation)
 
-   * [Connecting to test guest VM](#connectvm)
+	* [Connecting to test guest VM](#connectvm)
 
-   * [Connecting to Horizon console](#connectconsole)
+	* [Connecting to Horizon console](#connectconsole)
 
-   * [Connecting remotely to Horizon console](#remoteconnect)
+	* [Connecting remotely to Horizon console](#remoteconnect)
+
+* [Enable name resolution from tenant VMs in the overcloud](#dnsmasq)
 
 * [Issues and troubleshooting](#troubleshooting)
 
@@ -59,16 +59,15 @@ It is important to read through this page before starting your installation. Bef
     * 2 overcloud Object operation (Swift) nodes
     * 1 overcloud Compute (Nova) node
 
-* Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/openstack/services/icinga/).
+	Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/openstack/services/icinga/).
 
 **Important:** When installing make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
-
 
 
 ## Hardware and system requirements {#virtual}
 TripleO creates several large VMs as part of this virtual deployment process, so you must use a system that meets or exceeds the following hardware requirements:
 
-* At least 48GB of RAM
+* At least 64GB of RAM
 * At least 200GB of available disk space
 * Virtualization support **enabled** in the BIOS
 * The Ubuntu 13.10 operating system installed
@@ -83,9 +82,9 @@ The following Debian/Ubuntu packages are required:
 * python-libvirt
 * openssh-server
 
-**Note:** Ensure that the firewall configuration allows access to the ssh ports.
+**Note:** Make sure that the firewall configuration allows access to the SSH ports.
 
-Even though these packages are added to the system if they are not already installed, we recommend you install them beforehand using the following command:
+Even though these packages are added to the system if they are not already installed, before starting the installation, first install the following required Debian/Ubuntu packages on the system running the installer:
 
     $ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm openssh-server
 
@@ -96,21 +95,6 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 ## Before you begin
 
 Before you begin the installation process, the root user must have private and public RSA keys. You can determine this by issuing the following commands:
-
-	$ sudo su -
-    # ls -l ~root/.ssh
-
-NOTE: The output should look like the example below:
-
-     	drwxr-x--- . 4096 May 11 09:23
-    	-rwxr-x--- ..4096 May 11 09:23
-    	-rwxr-x--- id_rsa1455 May 11 09:24
-    	-rwxr-x--- id_rsa.pub 1455 May 11 09:24
-
-
-If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
-    
-	# ssh-keygen -t rsa
  
 1. Log in as root:
     
@@ -120,31 +104,24 @@ If the key does not exist, create one, omitting a passphrase and accepting the d
     
     	# ls ~root/.ssh/id_rsa
 
+NOTE: The output should look like the example below:
+
+     	drwxr-x--- . 4096 May 11 09:23
+    	-rwxr-x--- ..4096 May 11 09:23
+    	-rwxr-x--- id_rsa1455 May 11 09:24
+    	-rwxr-x--- id_rsa.pub 1455 May 11 09:24
+
 3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
 
 		# ssh-keygen -t rsa -N
 
-### Known issues for the installation {#known}
-
-- Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
-
-- ElasticSearch indexes are not deleted automatically. Log data will build up over time, potentially filling the space available, unless managed. To see the indexes, ssh to the undercloud node and run:
-
-		curl "localhost:9200/_cat/indices?v"
-
-	To remove indexes, run this (you must be on the undercloud node):
-
-		curl -XDELETE "localhost:9200/logstash-<DATE>"
-
-	where <DATE> is in the format `YYYY.MM.DD`"; for example: `2014.09.09`.
-
-
+**Note:** Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
 
 ## Installing HP Helion OpenStack Community ## {#install}
 
 ### Unpacking the installation file ## {#getinstall}
 
-The virtual installation of HP Helion OpenStack Community for a single server is provided as a compressed tar file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.
+The virtual installation of HP Helion OpenStack Community for a single server is provided as a compressed TAR file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.
 
 You can register and download the package from the following URL:
 
@@ -160,9 +137,9 @@ To begin the installation:
 
 2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 
-[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+	[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-The download file is named: `ce_installer.gz`
+	The download file is named: `ce_installer.gz`
 
 3. In the root user's home directory, create the `work` directory and extract the installation software to the `work` directory:
 
@@ -189,7 +166,7 @@ When the seed VM install completes, a message similar to the following is displa
 
 ### Starting the undercloud, overcloud, and test guest VM ### {#startclouds}
 
-This section explains to you how to deploy and configure the undercloud and overcloud, and to start a test guest VM in the overcloud compute node.
+This section explains how to deploy and configure the undercloud and overcloud, and to start a demo VM in the overcloud compute node.
 
 1. Log in to the seed VM; it might take a few moments for the VM to become reachable:
 
@@ -209,7 +186,7 @@ This section explains to you how to deploy and configure the undercloud and over
 
 		export OVERCLOUD_NTP_SERVER=192.0.1.128
 
-	`OVERCLOUD_NEUTRON_DVR` - Use this variable to disable Distributed Virtual Routers (DVR). By default, the overcloud is configured for Distributed Virtual Routers If this behaviour is not desirable, set the value to 'False'.
+	`OVERCLOUD_NEUTRON_DVR` - Use this variable to disable Distributed Virtual Routers (DVR). By default, the overcloud is configured for Distributed Virtual Routers. You can disable DVR by setting the value to 'False'.
 
 	**Example:**
 
@@ -222,7 +199,7 @@ This section explains to you how to deploy and configure the undercloud and over
 		cd /root
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-	This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 10 minutes and includes two pauses while services and VMs are set up in the background.
+	This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 10 minutes and includes pauses while services and VMs are set up in the background.
 
 	When the deployment completes, a message similar to the following is displayed:
 
@@ -235,23 +212,29 @@ From within the seed cloud host, you should be able to connect to the test guest
 
 ### Connecting to test guest VM ### {#connectvm}
 
-It may take a few minutes for the demo vm to become sshable after finishing installation. The install will run until the demo completes loading the demo VM.
+From the seed cloud host, you can connect to the demo VM using the following steps:
 
-1. From the seed, you should be able to connect to the demo vm created
+1. Export the overcloud passwords:
 
-		. /root/tripleo/tripleo-overcloud-passwords
-		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user
+	`. /root/tripleo/tripleo-overcloud-passwords`
 
-2. List the running instances:
+2. Export the overcloud users:
 
-		nova list
+	`TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user`
 
-	Make sure you note the IP address of the demo VM from the output of 'nova list' command.
+3. Verify you can view the nova instances:
 
-3. Connect to the demo VM using SSH:
+	`nova list`
 
-		ssh root@${DEMO_IP}
+4. Assign the demo VM IP address to a variable:
 
+	`DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
+
+5. Connect to the demo vm:
+
+	`ssh debian@${DEMO_IP}`
+
+**Note:** It may take a few minutes for the demo vm to become reachable after the installation is complete. The install runs until the demo VM is loaded.
 
 ### Connecting to the Horizon console ### {#connectconsole}
 
@@ -274,7 +257,7 @@ From the seed cloud host, connect to the overcloud Horizon console.
 
 ### Connecting to the monitoring interface ### {#connectmonitor}
 
-Community Edition includes a monitoring interface. You can access this with the following steps:
+HP Helion OpenStack Community includes a monitoring interface. You can access this with the following steps:
 
 1. Point your web browser on the seed cloud host to the undercloud monitoring console:
 
@@ -295,10 +278,21 @@ Community Edition includes a monitoring interface. You can access this with the 
 * If the `hp_ced_host_manager` fails to start the seed run the command again.
 * There are no restrictions imposed on external device name on the host system in virtual mode as the external interface is not used.
 * The installer now includes an interactive query before running a hardware census script at the end of the install. This script is optional.
+* ElasticSearch indexes are not deleted automatically. Log data will build up over time, potentially filling the space available, unless managed. To see the indexes, SSH to the undercloud node and run:
 
-## Enable name resolution from tenant VMs in the overcloud
+		curl "localhost:9200/_cat/indices?v"
 
-To enable name resolution from tenant vms in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq`.
+	To remove indexes, run the following command on the undercloud node:
+
+		curl -XDELETE "localhost:9200/logstash-<DATE>"
+
+	where <DATE> is in the format `YYYY.MM.DD`"; for example: `2014.09.09`.
+
+
+
+## Enable name resolution from tenant VMs in the overcloud {#dnsmasq}
+
+To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq`.
 
 Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
 items.  
