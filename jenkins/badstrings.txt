@@ -1,5 +1,5 @@
 \<\<\!--
---\>\>
+\-\-\>\>
 OpenStack®
 [^#\/][Ss]tackato
  it it 
