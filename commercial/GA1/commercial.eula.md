@@ -145,7 +145,7 @@ Subject to Customer’s compliance with the terms and conditions of this Agreeme
 
 ## Part 3: Ancillary and Open Source Software for Software ## {#ancilliary}
 
-Additional license authorizations related to ancillary, third party and open source software components are available at: [HP Helion OpenStack&#174; Beta Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/). 
+Additional license authorizations related to ancillary, third party and open source software components are available at: [HP Helion OpenStack&#174; Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
