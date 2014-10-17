@@ -35,7 +35,7 @@ The *package.json* file is your standard metadata file. **Name** and **version**
 The *Procfile* tells the Helion Development Platform how to run your Node.js application. An extremely simple one is included with this sample.
 
 ##Deploy the Application
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute 
@@ -50,16 +50,15 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 
 5.	Execute 
 
-		helion push 
+		helion push -n
 
 Accept any default values that you may be prompted for.  
 
-**NOTE:** by default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
-
-
-
+**NOTE:** By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e.* <app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 ##Key Code Snippets
+
+This simple Servlet prints "Hello World".
 
 	// Load the http module 
 	var http = require('http');
@@ -79,18 +78,17 @@ Accept any default values that you may be prompted for.
 	// Print to the terminal
 	console.log("Server listening to port: " + port);
 
-This simple Servlet prints "Hello World".
+The *package.json* file is used by ALS during deployment. This is an extremely basic manifest file. 
+Note that the **name** is always required while other fields are optional.
 
-	{
-	  "name": "hello-world-node",
-	  "version": "1.0.0",
-	  "description" : "A 'Hello World' app demonstrating Node.js running on the Helion Development Platform.",
-	  "repository" : {"type": "git", "url": "git://notyetpublished"}
-	}
+		{
+		  "name": "hello-world-node",
+		  "version": "1.0.0",
+		  "description" : "A 'Hello World' app demonstrating Node.js running on the Helion Development Platform.",
+		  "repository" : {"type": "git", "url": "git://notyetpublished"}
+		}
 
-- The `package.json` file above is used by ALS during deployment.
-- This is an extremely basic manifest file. 
-- Note that the **name** is always required while other fields are optional. 
+ 
 
 ##Run the Application
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.

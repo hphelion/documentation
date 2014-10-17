@@ -26,21 +26,31 @@ Before you start the installation and configuration process, ensure that you hav
 ##Installing your Quick Start Developer Trial {#install}
 1. Log into the Horizon Console using the HP Helion Public Cloud username and password that you created during signup.
 2. Create a new project, if you don't already have one.
-3. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/><br><br>
-5. Create a new **Compute** instance in the US East region.<br><img src="media/quickstartB.png"/>
-6. Click on the  **+ Launch Instance** button to open the launch instance dialog.<br><img src="media/quickstartC.png"/>
-7. On the resulting dialog, fill out the details and select **Boot from image** to enable selection of the Constructor VM.  The selections shown below are good defaults.<br><img src="media/quickstartD.png"/>
-8. Select the **HP Helion Development Platform Application Lifecycle Service Installer** option from the images list. Note that the version number at the end of the image name may vary as newer versions are released.<br><img src="media/quickstartE.png"/>
+3. If you have not already created a network with public internet access inside of your account, then you will need to do so as your ALS cluster will need such a network.  This step only needs to be performed one time as part of the initial configuration of your HP Helion Public Cloud account.  To create a network, please follow [these directions](/hpcloudconsole/#Createanetwork).
+4. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/><br><br>
+
+ 
+5. Create a new **Compute** instance in the US East region.<br><img src="media/quickstartB.png"/><br><br>
+6. Click on the  **+ Launch Instance** button to open the launch instance dialog.<br><img src="media/quickstartC.png"/><br><br>
+
+7. On the resulting dialog, fill out the details and select **Boot from image** to enable selection of the Constructor VM.  The selections shown below are good defaults.<br><img src="media/quickstartD.png"/><br><br>
+ 
+8. Select the **HP Helion Development Platform Application Lifecycle Service Installer** option from the images list. Note that the version number at the end of the image name may vary as newer versions are released.<br><img src="media/quickstartE.png"/><br><br>
+
 9. Next, you will need to provide a key pair for this VM in the **Access & Security** section. If a key pair has already been created and imported, skip to step 10. If a key pair has not been created and imported, create one:
 	- By clicking on the **+** (plus) button and following the instructions in the resulting dialog (pictured below).<br><img src="media/quickstartF.png"/>
-	- By using a tool such as PuTTY (on a PC) and following the the [instructions here](http://kb.siteground.com/).
-1. Click **Import Key Pair** and then the **Launch**   button. <br>For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).<br><img src="media/quickstartG.png"/>
-2. Now we can assign a floating IP address to the installer VM that you just created.  You can do that from the **More** button under **Actions**.  Choose any available IP address in the resulting dialog and make note of it for the next step. When you're done, click the **Associate** button.<br><img src="media/quickstartH.png"/>
+	- By using a tool such as PuTTY (on a PC) and following the the [instructions here](http://kb.siteground.com/how_to_generate_an_ssh_key_on_windows_using_putty/).
+1. Click **Import Key Pair** and then the **Launch**   button. <br>For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).<br><img src="media/quickstartG.png"/><br><br>
+2. Now we can assign a floating IP address to the installer VM that you just created.  You can do that from the **More** button under **Actions**.  Choose any available IP address in the resulting dialog and make note of it for the next step. When you're done, click the **Associate** button.<br><img src="media/quickstartH.png"/><br><br>
+ 
 3. SSH into the installer VM with the user **debian** and the SSH key you selected when you started the virtual machine. You can do that on a Mac/UNIX machine with the ssh command. In this example, you named your private key *cloud.key* and you chose an IP address of 15.126.234.185
 
 		ssh -i cloud.key debian@15.126.234.185
 
-1. Run the configuration script to create your cluster.conf configuration file using the following command:
+
+
+
+1.  Run the configuration script to create your cluster.conf configuration file using the following command:
 
 		python ./trial_configure.py
 
