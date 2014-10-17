@@ -39,7 +39,7 @@ Before you start the installation and configuration process, ensure that you hav
 
 9. Next, you will need to provide a key pair for this VM in the **Access & Security** section. If a key pair has already been created and imported, skip to step 10. If a key pair has not been created and imported, create one:
 	- By clicking on the **+** (plus) button and following the instructions in the resulting dialog (pictured below).<br><img src="media/quickstartF.png"/>
-	- By using a tool such as PuTTY (on a PC) and following the the [instructions here](http://kb.siteground.com/).
+	- By using a tool such as PuTTY (on a PC) and following the the [instructions here](http://kb.siteground.com/how_to_generate_an_ssh_key_on_windows_using_putty/).
 1. Click **Import Key Pair** and then the **Launch**   button. <br>For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).<br><img src="media/quickstartG.png"/><br><br>
 2. Now we can assign a floating IP address to the installer VM that you just created.  You can do that from the **More** button under **Actions**.  Choose any available IP address in the resulting dialog and make note of it for the next step. When you're done, click the **Associate** button.<br><img src="media/quickstartH.png"/><br><br>
  
