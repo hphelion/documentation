@@ -5,10 +5,21 @@ permalink: /helion/community/install-virtual/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
+<script>
 
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!--
 <p style="font-size: small;"> <a href="/helion/community/install/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
+-->
 
 # HP Helion OpenStack&trade; Community Virtual Installation and Configuration
 
@@ -65,12 +76,8 @@ It is important to read through this page before starting your installation. Bef
 
 
 ## Hardware and system requirements {#virtual}
-TripleO creates several large VMs as part of this virtual deployment process, so you must use a system that meets or exceeds the following hardware requirements:
+TripleO creates several large VMs as part of this virtual deployment process, make sure you meet the hardware requirements described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
-* At least 64GB of RAM
-* At least 200GB of available disk space
-* Virtualization support **enabled** in the BIOS
-* The Ubuntu 13.10 operating system installed
 
 
 ### Software requirements

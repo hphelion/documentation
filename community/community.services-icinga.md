@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Monitor Disk Usage"
+title: "HP Helion OpenStack&#174; Icinga Service"
 permalink: /helion/community/services/icinga/
-product: commercial.ga
+product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 

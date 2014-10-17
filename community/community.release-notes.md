@@ -5,7 +5,19 @@ permalink: /helion/community/release-notes/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
 # HP Helion OpenStack&reg; Community Release Notes
 
 <!--**Product Name:** HP Helion OpenStack&reg; Community

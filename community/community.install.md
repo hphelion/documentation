@@ -5,11 +5,21 @@ permalink: /helion/community/install/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
+<script>
 
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!--
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
 
 This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
@@ -55,91 +65,12 @@ It is important to read through this page before starting your installation. Bef
 
 ## Hardware and network requirements
 
-To install a HP Helion OpenStack Community baremetal multi-node configuration, you must have the following hardware configuration.
+To install a HP Helion OpenStack Community multi-node baremetal configuration, you must meet the hardware requirements described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
-* At least 5 and up to 30 baremetal systems with the following configuration:
-
-	* A minimum of 32 GB of physical memory
-	* A minimum of 2 TB of disk space
-	* A minimum of 1 x 10 GB NIC with PXE support
-
-		* For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
-
-	* Capable of hosting VMs
-	* The boot order configured with Network/PXE boot as the first option
-	* The BIOS configured: 
-		* To the correct date and time
-		* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-		* To stay powered off in the event of being shutdown rather than automatically restarting
-
-	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-
-		**Important:** The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
-
-* An additional system to run the baremetal installer and host the seed VM with the following configuration:
-
-	* A minimum of 8 GB of physical memory
-	* A minimum of 100 GB of disk space 
-	* The Ubuntu 13.10 operating system installed
-
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 ### Network configuration
 
-To ensure a successful installation, you must also satisfy these network configuration requirements:
-
-* The seed VM, the baremetal systems and the IPMI controller for all systems must be on the same network
-
-* Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
-
-* If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
-
-* The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
-
-The IPMI/BMC interfaces of the real hardware must be accessible from the seed VM.
-
- 
-### Network defaults {#NetworkDefault}
-
-The installation process includes a number of default configurations. You can change many of these defaults during the installation, using the steps detailed in the appropriate sections.
-
-Note the following default settings:
-
-- The default network configuration uses a single subnet 192.0.2.0/24 for all networking. 
-- The Seed VM is assigned an IP address of 192.0.2.1, in addition to the IP address assigned by the [libvirt package](#packages). 
-- The external interface of HOST of the seed VM is added to a software bridge, called *brbm*, on the HOST and the IP address of the external interface is transferred to the bridge. This allows external traffic on 192.0.2.0/24 to be routed to the seed VM.
-- The SEED VM is the GATEWAY for all traffic outside the baremetal network.
-- IP addresses are assigned by default as follows:
-
-	- 192.0.2.2-192.0.2.20 is used by seed cloud to administer undercloud nodes
-	- 192.0.2.21-192.0.2.124 is used by undercloud to administer overcloud nodes
-	- 192.0.2.129-1920.0.2.254 is used as a pool of addresses for floating IPS for virtual machines in the overcloud.
-
-- The IP address range for the private IPs assigned to new virtual instances is 10.0.0.0/8. 
-
-#### Changing the default networking configuration 
-
-In the default configuration, the default pool of floating IP addresses for the overcloud is within the baremetal subnet. You can select a different pool of addresses during the installation. If you select a pool of
-addresses outside the baremetal subnet, make sure those addresses are accessible.
-
-**Example:**
-
-The following example shows how to select a range of IP addresses from 10.23.144.10 to 10.23.151.254 with a subnet mask of 10.23.144.0/21. To avoid overlap with the default private network range of 10.0.0.0/8, `OVERCLOUD_FIXED_RANGE_CIDR` is changed to 10.0.0.0/16.
-
-You must set `OVERCLOUD_NeutronPublicInterface` to the name of the vlan on which the floating IP addresses will reside (you must create this VLAN separately).
-
-	export FLOATING_START=10.23.144.10
-	export FLOATING_END=10.23.151.254
-	export FLOATING_CIDR=10.23.144.0/21
-	export OVERCLOUD_FIXED_RANGE_CIDR=10.0.0.0/16
-	export OVERCLOUD_NeutronPublicInterface=vlan1515
-	export NeutronPublicInterfaceRawDevice=eth0
-	export OVERCLOUD_VIRTUAL_INTERFACE=eth0
-
-  This example assumes a homogeneous overcloud compute hardware.
-
-**Important:** IP addresses in the ranges chosen for the undercloud and overcloud must not be used by other nodes
-on your network.
+To ensure a successful installation, you must meet the hardware requirements described in [Community Network Architecture and Configuration](/helion/community/network-requirements/).
 
 ##Before you begin
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
@@ -161,19 +92,6 @@ If user root does not have a public key, you can create one using the `ssh-keyge
 ### Installing Debian/Ubuntu packages ### {#packages}
 If they are not already installed, the following required Debian/Ubuntu packages are added to the system on which the installer is running:
 
-* qemu
-* qemu-kvm
-* openvswitch
-* libvirt
-* python-libvirt
-
-However, we recommend you install these packages before starting the installation process using the following command:
-
-`$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
-
-After you install the `libvirt` packages, you must reboot or restart `libvirt`:
-
-`$ sudo /etc/init.d/libvirt-bin restart`
 
 ### Obtaining required information ### {#req-info}
 

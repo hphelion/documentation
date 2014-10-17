@@ -5,13 +5,25 @@ permalink: /helion/community/faq/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!--
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
+-->
 
 <h1>HP Helion OpenStack&#174; Community FAQ</h1> 
 
-Welcome! You've got questions. We have the answers.  
+You've got questions. We have the answers.  
 
 ##Understanding the HP Helion OpenStack Community edition 
 
