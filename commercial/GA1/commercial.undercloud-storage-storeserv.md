@@ -112,6 +112,8 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storeserv-registered-storeserv.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered StoreServ in the HP StoreServ Main Page (opens in a new window)</a>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### Edit a 3PAR StoreServ {#edit-storeserv}
 
 To edit the details of a StoreServ, do the following:
@@ -165,6 +167,7 @@ Use this option to unregister multiple StoreServs using a single command.
 
 5. Click **Unregister StoreServ** to unregister or click **Cancel** to cancel the process. 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
 ## Register 3PAR StoreServ Common Provisioning Groups (CPGs) {#registering-cpg}
 
@@ -227,6 +230,7 @@ To edit a CPG, do the following:
 
 7. Click **Done** to save the changes or click **Cancel** to cancel the process.  
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### Unregister a CPG {#unregister-cpg}
 

@@ -5,11 +5,21 @@ permalink: /helion/community/install/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
+<script>
 
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!--
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
-
+-->
 # HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
 
 This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
@@ -36,8 +46,6 @@ It is important to read through this page before starting your installation. Bef
 
    * [Downloading and unpacking installation file](#getinstall)
 
-   * [Changing the Default Network Interface](#NetworkInt)
-
    * [Starting the seed and building your cloud](#startseed)
 
 * [Verifying your installation](#verifying-your-installation)
@@ -50,78 +58,19 @@ It is important to read through this page before starting your installation. Bef
 
    * [Connecting to Monitoring UI](#monitoring)
 
-<!-- * [Post-installation configuration](#configure)
-
-* [Next steps](#next-steps) -->
+* [Enable name resolution from tenant VMs in the overcloud](#dnsmasq)
 
 * [Issues and troubleshooting](#issues-and-troubleshooting)
 
 
 ## Hardware and network requirements
 
-To install a HP Helion OpenStack Community baremetal multi-node configuration, you must have the following hardware configuration.
+To install a HP Helion OpenStack Community multi-node baremetal configuration, you must meet the hardware requirements described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
-* At least 5 and up to 30 baremetal systems with the following configuration:
-
-    * A minimum of 32 GB of physical memory
-    * A minimum of 2 TB of disk space
-    * A minimum of 1 x 10 GB NIC with PXE support
-
-      * For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
-
-    * Capable of hosting VMs
-    * The boot order configured with Network/PXE boot as the first option
-    * The BIOS configured: 
-     
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-      * To stay powered off in the event of being shutdown rather than automatically restarting
-
-    * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-
-
-    **Important:** The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
-
-* An additional system to run the baremetal installer and host the seed VM with the following configuration:
-
-    * A minimum of 8 GB of physical memory
-    * A minimum of 100 GB of disk space 
-    * One of the following operating systems installed:
-
-      * Ubuntu 13.10
-      * Ubuntu 14.04
-
-    **Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 ### Network configuration
 
-To ensure a successful installation, you must also satisfy these network configuration requirements:
-
-* The seed VM, the baremetal systems and the IPMI controller for all systems must be on the same network
-
-* Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
-
-* If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
-
-* The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
- 
-### Network defaults {#NetworkDefault}
-
-The installation process includes a number of default configurations. You can change many of these defaults during the installation, using the steps detailed in the appropriate sections.
-
-Note the following default settings:
-
-- The default network configuration uses a single subnet 192.0.2.0/24 for all networking. 
-- The Seed VM is assigned an IP address of 192.0.2.1, in addition to the IP address assigned by the [libvirt package](#packages). 
-- The external interface of HOST of the seed VM is added to a software bridge, called *brbm*, on the HOST and the IP address of the external interface is transferred to the bridge. This allows external traffic on 192.0.2.0/24 to be routed to the seed VM.
-- The SEED VM is the GATEWAY for all traffic outside the baremetal network.
-- IP addresses are assigned by default as follows:
-
-	- 192.0.2.2-192.0.2.20 is used by seed cloud to administer undercloud nodes
-	- 192.0.2.21-192.0.2.124 is used by undercloud to administer overcloud nodes
-	- 192.0.2.129-1920.0.2.254 is used as a pool of addresses for floating IPS for virtual machines in the overcloud.
-
-- The IP address range for the private IPs assigned to new virtual instances is 10.0.0.0/8. 
+To ensure a successful installation, you must meet the hardware requirements described in [Community Network Architecture and Configuration](/helion/community/network-requirements/).
 
 ##Before you begin
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
@@ -143,19 +92,6 @@ If user root does not have a public key, you can create one using the `ssh-keyge
 ### Installing Debian/Ubuntu packages ### {#packages}
 If they are not already installed, the following required Debian/Ubuntu packages are added to the system on which the installer is running:
 
-* qemu
-* qemu-kvm
-* openvswitch
-* libvirt
-* python-libvirt
-
-However, we recommend you install these packages before starting the installation process using the following command:
-
-`$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
-
-After you install the `libvirt` packages, you must reboot or restart `libvirt`:
-
-`$ sudo /etc/init.d/libvirt-bin restart`
 
 ### Obtaining required information ### {#req-info}
 
@@ -207,70 +143,53 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 2. Register and then log in to download the HP Helion OpenStack Community baremetal package from this site:
 
-   [HP Helion OpenStack Community edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+	[HP Helion OpenStack Community edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-3. Create a directory named `work`:
+3. Create a directory named `work` and extract the kit to the `work` directory:
 
-	`mkdir /root/work`
+		`mkdir /root/work`
+		`cd /root/work`
+		`tar zxvf /root/ce_installer.gz`
 
-	`cd /root/work`
+	This creates and populates a `tripleo/` directory within root's home directory.
 
-4.  Extract the kit to the `work` directory:`tar zxvf /root/ce_installer.gz`
+4. Shutdown any running `baremetal_n` virtual machines using the `virsh destroy` command:
 
-This creates and populates a `tripleo/` directory within root's home directory.
+	`virsh destroy baremetal_n`
 
-5. Shutdown any running `baremetal_n` virtual machines using virsh destroy:
+5. **Optional:** To use an interface other than ‘eth0’ on the HOST as the bridge interface, for example eth3, use the following command:
 
-	`$ virsh destroy baremetal_n`
+		export BRIDGE_INTERFACE=eth3
 
-	**BEFORE you begin this step:** If the external device name on the host system (the one through which the host, and indirectly the seed, accesses the IPMI network) is **NOT** named `eth0`, then determine the device name:
+6. **Optional:** To use an IP address for the seed VM other than the default (192.0.2.1), use the following command:
 
-	`$ export BRIDGE_INTERFACE=<devicename>`
+		export BM_NETWORK_SEED_IP=192.168.10.1
+		export BM_NETWORK_CIDR=192.168.0.0/16
 
-	Two examples:
+6. **Optional:** To use a host other than the seed as the gateway, use the following command:
 
-		$ export BRIDGE_INTERFACE=em1
-		$ export BRIDGE_INTERFACE=eth5
+		export BM_NETWORK_GATEWAY=192.168.10.254
 
-### Changing the Default Network Interface ### {#NetworkInt}
-
-The bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
-
-OPTIONAL: Modify the default bridge interface on the HOST, for example: 
-
-`$ export BRIDGE_INTERFACE=eth3`
-
-OPTIONAL: Modify the IP address of the Seed VM, for example:
-
-`$export BM_NETWORK_SEED_IP=192.168.10.1`
-
-`$export BM_NETWORK_CIDR=192.168.0.0/16`
-
-OPTIONAL: Modify which host to use as the gateway, for example:   
-
-`$ export BM_NETWORK_GATEWAY=192.168.10.254`
-
-**Note:** If you change the gateway host, you must also execute this command during `hp_ced_installer` as detailed in the next section.
+	**Note:** This must also be set on the seed during hp_ced_installer as detailed in the next section
 
 
 ### Starting the seed and building your cloud ### {#startseed}
 1. Start the seed using the following command:
 
-	`bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_start_seed.sh`
+	`bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed`
 
 	If the seed startup is successful, you should see a message similar to the following:
 
-	`"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"`
+		"Wed Oct 23 11:25:10 IST 2014 --- completed setup seed"
 
 2. To build the cloud, start by logging in to the seed. Run the following command from /root:
 
-	`ssh root@192.0.2.1`
+		ssh debian@192.0.2.1
 
 3. Using your favorite editor, create a file in /root called `baremetal.csv`.
 
 4. Edit `baremetal.csv` to add the following information in the specified format for each of the your baremetal systems:
-
-	`<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace_GB>`
+	`<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<#cpus>,<memory_MB>,<diskspace_GB>`
 
 	For example, for a 7 baremetal system your file should look similar to this:
 
@@ -288,73 +207,114 @@ OPTIONAL: Modify which host to use as the gateway, for example:
 
 	**IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting. Refer to the [Network configuration](#additional-hardware-configuration) section.
 
-6. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands, for example:
+6. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands, 
 
-	`$ export OVERCLOUD_NTP_SERVER=192.0.1.128`
+	To set this variable:
 
-	`$ export UNDERCLOUD_NTP_SERVER=192.0.1.128`
+	`export OVERCLOUD_NTP_SERVER=192.0.1.128`
+	`export UNDERCLOUD_NTP_SERVER=192.0.1.128`
 
 7. If required, set the following environmental variables, which can affect your installation. Some of these variables set public, or floating, IP addresses. The floating IP addresses cannot be in the same range as the private network addresses (by default, 10.x.x.x)
 
-	* `OVERCLOUD_NeutronPublicInterface` and `UNDERCLOUD_NeutronPublicInterface` - You should set these to the value of the name of the interface that carries the neutron external traffic on your overcloud and undercloud. The default value is `eth2`. If this is correct, you do not need to set this variable.
+	**Important**  The environment variable `NeutronPublicInterfaceIP` is no longer supported. The install will exit with an error message if this variable is set.
+
+	* `OVERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the neutron external traffic on your overcloud. The default value is `eth2`. If this is correct, you do not need to set this variable.
 
 		To set this variable:
 
-		`$ export OVERCLOUD_NeutronPublicInterface=eth2`
-		`$ export UNDERCLOUD_NeutronPublicInterface=eth2`
- 
-	* `FLOATING_START`, `FLOATING_END`, and `FLOATING_CIDR` - These variables control the range of IP addresses available for user VMs in the overcloud. The defaults are currently set as below but can be changed if desired.
+		`export OVERCLOUD_NeutronPublicInterface=eth2`
 
-		`$ export FLOATING_START=192.0.2.45`
-		`$ export FLOATING_END=192.0.2.254`
-		`$ export FLOATING_CIDR=192.0.2.0/24`
+	* `UNDERCLOUD_NeutronPublicInterface` - Use this variable to set the value of the name of the interface that carries the neutron external traffic on your undercloud. The default value is `eth2`. If this is correct, you do not need to set this variable.
+
+		To set this variable:
+
+		`export UNDERCLOUD_NeutronPublicInterface=eth2`
+
+	* `FLOATING_START`, `FLOATING_END`, and `FLOATING_CIDR` - Use these variables to control the range of IP addresses available for user VMs in the overcloud. The defaults are currently set as below but can be changed if desired.
+
+		To set these variables:
+
+			export FLOATING_START=192.0.2.45
+			export FLOATING_END=192.0.2.254
+			export FLOATING_CIDR=192.0.2.0/24
+
+		Note the following:
+
+		- If you choose a pool of addresses outside the baremetal subnet, you should make sure those addresses are accessible.
+
+		- The range defined by the variables `FLOATING_START`, `FLOATING_END` and `FLOATING_CIDR` cannot be in conflict with the address range of the default private network. By default the range of the default private network is between 10.0.0.1 and 10.255.255.254 (CIDR 10.0.0.0/8). Then the `FLOATING_START`, `FLOATING_END`, and `FLOATING_CIDR` cannot be anything in the form of 10.x.y.z.  The address range of the default private network isdefined by the variable OVERCLOUD_FIXED_RANGE_CIDR.
+
+		- The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the FLOATING_CIDR range.
+
+	* `OVERCLOUD_VIRTUAL_INTERFACE` - Use this variable to set the interface that the Overcloud virtual IP (used for accessing API services) will be assigned to. This is required.
+
+		The interface must exist on the two overcloud controller nodes and the overcloud management controller node.
+
+		To set this variable:
+
+			export OVERCLOUD_VIRTUAL_INTERFACE=eth0
 
 	* **OPTIONAL**: You can optionally configure a second network for API traffic and for the floating IP pool by setting `OVERCLOUD_NeutronPublicInterface` to a physically configured VLAN. For example:
 
-		`$ export OVERCLOUD_NeutronPublicInterface=vlan101`
-		`$ export NeutronPublicInterfaceIP=192.0.8.2/21`
-		`$ export NeutronPublicInterfaceRawDevice=eth0`
-		`$ export NeutronPublicInterfaceDefaultRoute=192.0.8.1`
-		`$ export FLOATING_START=192.0.8.20`
-		`$ export FLOATING_END=192.0.15.254`
-		`$ export FLOATING_CIDR=192.0.8.0/21`
-    
-    * `OVERCLOUD_COMPUTESCALE` - You should not set this to a higher value than three as a limit of 7 nodes is enforced. If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
+			export OVERCLOUD_NeutronPublicInterface=vlan101
+			export NeutronPublicInterfaceIP=192.0.8.2/21
+			export NeutronPublicInterfaceRawDevice=eth0
+			export NeutronPublicInterfaceDefaultRoute=192.0.8.1
+			export FLOATING_START=192.0.8.20
+			export FLOATING_END=192.0.15.254
+			export FLOATING_CIDR=192.0.8.0/21
+
+	* `OVERCLOUD_COMPUTESCALE` - Use this variable to set the number overcloud compute nodes to deploy. 
+	
+		If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
 
 		To set this variable:
 
-		`$ export OVERCLOUD_COMPUTESCALE=3`
+			export OVERCLOUD_COMPUTESCALE=3
 
 	* `OVERCLOUD_CINDER_LVMLOOPDEVSIZE` - This is the size of the loopback device on your partition on the overcloud control node used to hold Cinder volumes, and it is set by default to 50000 MB. You can set it to a higher value if, for example, you plan to create snapshots of large bootable volumes. The partition is a shared device, so the loopback device should not occupy the entire partition. The partition size is calculated as (approximately) diskspace_GB from the baremetal.csv file minus the root partition size of 30 GB.
 
 		To set this variable: 
 
-		`$ export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=50000`
+			export OVERCLOUD_CINDER_LVMLOOPDEVSIZE=50000
+
+	* `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` - HP Helion OpenStack Community  uses keepalived to manage virtual IPs. keepalived uses a unique id to synchronise its activities. If you plan to run multiple installations of HP Helion OpenStack Community edition on the same network, each installation must be configured with a unique id by setting the environment variable `OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID` to a unique number (from 0 to 255) before running the installation. The default value, if unset, is 51.
+
+		To set this variable: 
+
+			export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=99
 
 8. By [default](#NetworkDefault), the bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
  
 
-    * **OPTIONAL:** Change the IP address range to administer undercloud nodes by entering the starting and ending IP addresses for the range, for example:
+	* **OPTIONAL:** Change the IP address range to administer undercloud nodes by entering the starting and ending IP addresses for the range, for example:
   
-		`$ export BM_NETWORK_SEED_RANGE_START=192.168.10.2`
-		`$ export BM_NETWORK_SEED_RANGE_END=192.168.10.20`
+			export BM_NETWORK_SEED_RANGE_START=192.168.10.2`
+			export BM_NETWORK_SEED_RANGE_END=192.168.10.20`
 
 		This IP address range must be on the same subnet as the Seed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
 
-    * **OPTIONAL:** Change the IP address range to administer overcloud nodes from the undercloud by entering the starting and ending IP addresses for the range, for example:
+	* **OPTIONAL:** Change the IP address range to administer overcloud nodes from the undercloud by entering the starting and ending IP addresses for the range, for example:
   
-		`$ export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.10.2`
-		`$ export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.10.20`
+			export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.10.2`
+			export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.10.20`
 
 		This IP address range must be on the same subnet as the Seed VM, as configured in [Changing the Default Network Interface](#NetworkInt).
 
-    * **OPTIONAL**: If you modified the gateway host, execute:
+	* **OPTIONAL**: If you modified the gateway host, execute:
 
-		`$ export BM_NETWORK_GATEWAY=192.168.10.254`
+			export BM_NETWORK_GATEWAY=192.168.10.254`
 
-    * **OPTIONAL**: Modify the IP address range for the private network assigned by default to each virtual instance in the overcloud, for example:
+	* **OPTIONAL**: Modify the IP address range for the private network assigned by default to each virtual instance in the overcloud, for example:
 
-		`$ export OVERCLOUD_FIXED_RANGE_CIDR=10.20.240.0/20`
+			export OVERCLOUD_FIXED_RANGE_CIDR=10.20.240.0/20`
+
+	* **OPTIONAL**: `OVERCLOUD_NEUTRON_DVR` - Use this variable to disable Distributed Virtual Routers (DVR). By default, the overcloud is configured for Distributed Virtual Routers. You can disable DVR by setting the value to 'False'.
+
+		**Example:**
+
+			export OVERCLOUD_NEUTRON_DVR=False
+
 
 9. From /root, install and configure the undercloud and overcloud by running the following command. 
 
@@ -364,7 +324,7 @@ OPTIONAL: Modify which host to use as the gateway, for example:
 
 	If your installation is successful, message similar to the following is displayed:
 
-	`"HP - completed - Tue Apr 22 16:20:20 UTC 2014"`
+		"HP - completed - Wed Oct 23 16:20:20 UTC 2014"
 
 **Note:** If `hp_ced_start_seed` fails to start the seed, you simply need to restart it (Step 1) and then follow the rest of the steps.
 
@@ -373,17 +333,15 @@ OPTIONAL: Modify which host to use as the gateway, for example:
 
 Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack Community baremetal cloud. You can accomplish this in any of the following ways:
 
-   * [Connecting to demo VM](#connectvm)
+* [Connecting to demo VM](#connectvm)
 
-   * [Connecting to Horizon console](#connectconsole)
+* [Connecting to Horizon console](#connectconsole)
 
-   * [Connecting remotely to Horizon console](#remoteconnect)
-
-   * [Connecting to Monitoring UI](#monitoring)
-
+* [Connecting to Monitoring UI](#connectmonitor)
 
 ### Connecting to the demo VM ### {#connectvm}
-From the seed, you can connect to the demo VM using the following steps:
+
+From the seed cloud host, you can connect to the demo VM using the following steps:
 
 1. Export the overcloud passwords:
 
@@ -391,7 +349,7 @@ From the seed, you can connect to the demo VM using the following steps:
 
 2. Export the overcloud users:
 
-	`TE_DATAFILE=/root/tripleo/testenv.json . /root/tripleo/tripleo-incubator/overcloudrc-user`
+	`TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user`
 
 3. Verify you can view the nova instances:
 
@@ -403,102 +361,44 @@ From the seed, you can connect to the demo VM using the following steps:
 
 5. Connect to the demo vm:
 
-	`ssh root@${DEMO_IP}`
+	`ssh debian@${DEMO_IP}`
 
 	**Note:** It might take a few minutes for the demo vm to become available using ssh after finishing the installation.
 
-### Connecting to Horizon console ### {#connectconsole}
-Ensure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
+### Connecting to the Horizon console ### {#connectconsole}
 
-1. From the seed, export the undercloud passwords:
+From the seed cloud host, connect to the overcloud Horizon console.
 
-	`. /root/tripleo/tripleo-undercloud-passwords`
+1. Obtain the passwords for the `demo` from `/root/tripleo/tripleo-overcloud-passwords`.
 
-2. Export the undercloud users:
+2. Point your web browser on the seed cloud host to the overcloud Horizon console:
 
-	`TE_DATAFILE=/root/tripleo/testenv.json . /root/tripleo/tripleo-incubator/undercloudrc`
+		http://192.0.2.24
 
-3. Assign the overcloud IP address to a variable:
+	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
 
-	`OVERCLOUD_IP=$(nova list | grep "overcloud-controller" | awk ' { print $12 } ' | sed s/ctlplane=// )`
+		. /root/tripleo/tripleo-undercloud-passwords
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
+		OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
+		echo $OVERCLOUD_IP
 
-4. Determine the overcloud controller IP from the output of **Step 3** using the following command. It is in the last line returned.
+4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 1.
 
-	`echo ${OVERCLOUD_IP}`
+### Connecting to the monitoring interface ### {#connectmonitor}
 
-	If the optional second network was configured, the overcloud controller IP is the value set for NeutronPublicInterfaceIP.
+HP Helion OpenStack Community includes a monitoring interface. You can access this with the following steps:
 
-4. Open the `/root/tripleo/tripleo-overcloud-passwords` file and make note of the demo user password.
+1. Point your web browser on the seed cloud host to the undercloud monitoring console:
 
-5. From your install system, open a web browser and point to:
+		http://192.0.2.2
 
-	http://<overcloud_IP>/
+	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
 
-6. Log in to the overcloud Horizon dashboard as user `demo` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
+		. /root/stackrc
+		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		echo $UNDERCLOUD_IP
 
-**Note:** If you cannot connect to the Horizon console, check your proxy settings to make sure access to the controller VM is not being unsuccessfully redirected through a proxy.
-
-### Connecting remotely to Horizon console ### {#remoteconnect}
-
-For installations where you cannot open a browser on the install system, you can set up an ssh tunnel from a local system to your remote install system. This requires ssh access from the local system to the remote system. 
-
-1. Establish the tunnel by issuing the command below on the local system:
-
-	`$ ssh -L 9999:<overcloud_IP>:80 <hostname or IP of remote system>`
-
-2. From the seed, export the undercloud passwords:
-
-	`. /root/tripleo/tripleo-undercloud-passwords`
-
-3. Export the undercloud users:
-
-	`TE_DATAFILE=/root/tripleo/testenv.json . /root/tripleo/tripleo-incubator/undercloudrc`
-
-4. Assign the overcloud IP address to a variable:
-
-	`OVERCLOUD_IP=$(nova list | grep "overcloud-controller" | awk ' { print $12 } ' | sed s/ctlplane=// )`
-
-5. Determine the overcloud controller IP from the output of step 3 using the following command. It is in the last line returned.
-
-	`echo ${OVERCLOUD_IP}`
-
-	If the optional second network was configured, the overcloud controller IP is the value set for NeutronPublicInterfaceIP.2. Open the `/root/tripleo/tripleo-overcloud-passwords` file and make note of the demo user password.
-
-6. Point the web browser of the local system to the link below:
-
-	[http://localhost:9999](http://localhost:9999)
-
-7. Log in to the overcloud Horizon dashboard as user `demo` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 5.
-
-### Connecting to Monitoring UI ### {#monitoring}
-
-1. From the seed, run the following command:
-
-	`./root/stackrc`
-
-2. Assign the undercloud IP address to a variable:
-
-	`UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )`
-
-3. Determine the undercloud IP from the output of **Step 2** using the following command. It is in the last line returned.
-
-	echo ${UNDERCLOUD_IP}
-
-4. From your install system, open a web browser and point to:
-
-	http://<undercloud_IP>/icinga/
-
-5. Log in user 'icingaadmin' with password 'icingaadmin'.
-
-<!-- ## Post-installation configuration {#configure}
-
-**QUESTIONS for reviewers:**
-
-Any post-installation configuration?
-
-
-## Next steps
-REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK TO SOME OF THE ADMIN USE CASES. SINCE WE ARE NOT INCLUDING THE USE CASES FOR 6/12, SHOULD I JUST INCLUDE A FEW OF THE MOST 'COMMON' USE CASES HERE N THIS DOCUMENT? -->
+2. Login as user `icingaadmin` with password `icingaadmin`.
 
 ## Issues and troubleshooting 
 * When installing on HP ProLiant SL390s systems, the following error has occasionally occurred:
@@ -563,7 +463,140 @@ REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK T
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;">Return to Top &#8593; </a>
+
+
+## Enable name resolution from tenant VMs in the overcloud {#dnsmasq}
+
+To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq`.
+
+Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
+items.  
+
+The `overcloud_neutron_dhcp_agent.json` file should also be copied over to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
+
+Use the following commands:
+
+	{"dhcp_agent":
+		{"config":
+			[
+				{"section":"DEFAULT",
+					"values":
+						[
+							{"option":"dhcp_delete_namespaces","value":"True"},
+							{"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}
+						]
+					}
+				]
+			}
+		}
+
+Where `value` is the IP address of the DNS server to use.  Multiple DNS servers can be specified as a comma separated list.
+
+
+
+## Known issues and workarounds {#known}
+
+- The following error has been intermittently observed on HP ProLiant SL390s systems on which installs are being performed:
+
+		Fatal PCI Express Device Error PCI Slot ?
+		B00/D00/F00
+
+	To reset a system that experiences this error,
+	1. Connect to the iLO using a web browser (https://<iLO IP address>)
+	2. Navigate to Information / Diagnostics
+	3. Reset iLO
+	4. Log back into the iLO after 30 seconds
+	5. Navigate to Remote Console / Remote Console
+	6. Bring up integrated remote console (.NET)
+	7. Click Power switch / Press and Hold
+	8. Click Power switch / Momentary Press
+	9. Wait for system to restart
+	10. System should boot normally
+
+- The BIOS must be set to the correct date and time on all systems.
+
+	On HP ProLiant systems you can do the following:
+	1. Power UP the server and configure the BIOS (press F9)
+	2. Set Date and Time in the BIOS, and exit confirming your selection.
+	3. Power the server off prior to installation
+
+- On many HP systems, including HP servers running iLO 3 firmware, the
+  iLO time can be set to propagate to the BIOS on powerup.
+  You should disable propagation and set the BIOS time to the correct
+  date and time on all systems.
+
+	1. Connect to the iLO using a web browser (https://<iLO IP address>)
+	2. Navigate to Network/Shared Network Port or the Network/Dedicated Network Port (Primary Time Server, Secondary Time Server, Time Zone, and Time Propagation settings are shared between all iLO Network Ports).
+	3. Navigate to SNTP
+	4. UNSET 'Propagate NTP Time to Host'
+	5. Reset iLO
+	6. Follow the steps above to set the time in the BIOS
+
+- If the iLO time propagates to the BIOS, setting an incorrect time,
+  the undercloud or overcloud may fail to initialize with the following message:
+
+		Timing out after 60 seconds:
+		11:46:38 COMMAND=wait_for_hypervisor_stats 8
+
+	Follow the steps above to set the time in the BIOS correctly.
+
+- The following error has also been observed on the console of a baremetal system during installation when the BIOS date/time are incorrect
+
+		/etc/init.d/open-iscsi: 73: /etc/init.d/open-iscsi: cannot create /etc/iscsi/initiatorname.iscsi: Read-only file system
+
+	Follow the steps above to set the time in the BIOS correctly.
+
+- Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
+
+- These files contain credentials for the undercloud and the overcloud; you
+  should ensure that they are securely stored separately from the seed.
+
+		/root/stackrc
+		/root/tripleo/tripleo_passwords
+
+- On the seed cloud host (the system on which the installer is run), the seed VM's networking will be bridged onto the external LAN.
+
+	To revert this change, reboot the system then execute this command on the console of the host:
+
+		ovs-vsctl del-port eth0
+
+	If you specified BRIDGE_INTERFACE as something other than eth0 then replace eth0 in the command above with that value.
+
+- If the `hp_ced_host_manager` fails to start the seed, execute the command again (a failure could be the result of a race condition in libvirt).
+
+- If the undercloud controller is rebooted, you must login to it and run the following command as root:
+
+		os-refresh-config
+
+	Failure to do this will prevent subsequent reboots of the overcloud nodes.
+
+- The installation pauses 1-2 minutes loading images and pauses of 12 or more minutes building the undercloud and overcloud.
+
+- The installer script will wait for os-collect-config to complete on the seed but times out after 10 minutes of waiting.
+
+- The installer uses IPMI commands to reset nodes and change their power status. Some systems have been seen to get into a state where the Server Power status as reported by the iLO stays stuck in the "RESET" state. If this occurs, it is neccesary to physically remove power from the server for 10 seconds. If the problem persists after that, contact HP Support - there might be a defective component in the system.
+
+- If using the seed vm as your gateway (default setting), you will need to execute the following commands after you have run `hp_ced_host_manager.sh` on the host machine.
+
+		MAC=$(virsh dumpxml --domain seed | grep "mac address" | head -1 | awk -F "'" '{print $2}')
+		VM_IP=$(arp -n | grep $MAC | awk '{print $1}')
+		ip route replace <BM_NETWORK_CIDR> dev virbr0 via $VM_IP
+
+- The installer now includes an interactive query before running a hardware
+  census script at the end of the install. This script is optional.
+
+- ElasticSearch indexes are not deleted automatically. Log data will build up over time, potentially filling the space available, unless managed. To see the indexes, ssh to the undercloud node and run:
+
+		curl "localhost:9200/_cat/indices?v"
+
+	To remove indexes, run this (you must be on the undercloud node):
+
+		curl -XDELETE "localhost:9200/logstash-<DATE>"
+
+	Where <DATE> is in the format "YYYY.MM.DD" EG "2014.09.09".
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;">Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution

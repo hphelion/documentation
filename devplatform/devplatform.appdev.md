@@ -21,7 +21,7 @@ In order to download and deploy these sample applications, you must have the nec
 - Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
 - (Optional) Access to the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
-##Sample code
+##Sample code {#sample}
 For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample. 
 ###Java {#java}
 1. [Hello World](/helion/devplatform/workbook/helloworld/java/) <br>

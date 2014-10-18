@@ -5,7 +5,7 @@ permalink: /helion/community/siteindex/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -17,8 +17,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/">&#9664; PREV</a> | <a href="/helion/">&#9650; UP</a> | NEXT &#9654; </p>
+-->
 
 # HP Helion OpenStack&reg; Community Site Index
 

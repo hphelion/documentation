@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Monitor Disk Usage"
-permalink: /helion/openstack/services/object/swift/Monitor-disk/
-product: commercial.ga
+title: "HP Helion OpenStack&#174; Icinga Service"
+permalink: /helion/community/services/icinga/
+product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 

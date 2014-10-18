@@ -50,6 +50,8 @@ The following diagram provides a high level view of the process flow.
 
 <a href="javascript:window.open('/content/documentation/media/sirius-cli-processflow.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Process Flow Diagram (opens in a new window)</a>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ## Add and configure HP StoreVirtual to your cloud inventory {#add-configure-storevirtual}
 
 Perform the following steps to add and configure Storevirtual.
@@ -65,7 +67,7 @@ Ensure that the cluster details entered in the command correspond with the actua
 
 To register StoreVirtual clusters, enter the following command:
 
-	 # sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+	 # sirius register-storevirtual-cluster -name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS> --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 The sample output of the above command is given below:
 
@@ -110,7 +112,7 @@ The sample output of the above command is given below:
 	| volume_driver                 | cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver |
 	+-------------------------------+----------------------------------------------------------------------+
 
-###Preview the cinder configuration for StoreVirtual cluster{#preview-cluster}
+###Preview the cinder configuration for StoreVirtual cluster {#preview-cluster}
 
 To view the StoreVirtual cluster configuration, enter the following command
 
@@ -143,6 +145,8 @@ The sample output of the above command is given below:
 	| cluster_8f45ef72-2a77-11e4-af1e-00cd664a1470 | skcluster01  | lhn                 |
 	| cluster_f2b30740-455a-11e4-a483-00b53da47ef7 | skcluster02  | lhn                 |
 	+----------------------------------------------+--------------+---------------------+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Add HP 3PAR StoreServ to your cloud inventory and configure {#add-configure-storeserv}
 
@@ -248,16 +252,16 @@ The sample output of the above command is given below:
 	| volume_driver       | cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver |
 	+---------------------+--------------------------------------------------------+
 
-### Preview the Cinder configuration for the StoreServ CPG{#preview-storeserv-cpg}
+### Preview the Cinder configuration for the StoreServ CPG {#preview-storeserv-cpg}
 
 To view the cinder configuration for the StoreServ CPG, enter the following command 
 
     # sirius cpg-show --storeserv-id <STORESERV_ID> --cpg-id <CPG_ID> --backend-name <VOLUME_BACKEND_NAME>
 
-### View the configured StoreServ backend list{#view-storeserv-list}
+### View the configured StoreServ backend list {#view-storeserv-list}
 
 To view the list of configured StoreServ backends, enter the following command
-
+ 
     # sirius storeserv-backend-list
 
 The sample output of the above command is given below:
@@ -269,13 +273,15 @@ The sample output of the above command is given below:
 	| CPG_db8b945c-b4f1-464d-9790-554d9b8c321e | FC_r1    | 3par                |
 	+------------------------------------------+----------+---------------------+
 
-##Reconfigure and update cloud{#reconfigure-update}
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+##Reconfigure and update cloud {#reconfigure-update}
 
 * [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
 * [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
 * [Update Overcloud configuration JSON](#update-overcloud-json)
 * [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
-* [Update Overcloud](#update-cloud) 
+* [Update Overcloud](#update-overcloud) 
 
 The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.
 
@@ -462,7 +468,7 @@ Enter the following command
 
     # source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-###Update Overcloud{#update-overcloud}
+###Update Overcloud {#update-overcloud}
 
 Enter the following command to update the Overcloud
 
@@ -472,7 +478,7 @@ When the update has completed, the Cinder service in the overcloud will be confi
 
 ##More Information {#more-information}
 
-For the complete list of Sirius CLI commands, refer to  the[Sirius Manual]( /helion/openstack/sirius-cli/).
+For the complete list of Sirius CLI commands, refer to  the [Sirius Manual]( /helion/openstack/sirius-cli/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook PHP Messaging Sample"
+title: "HP Helion Development Platform PHP Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/php/
 product: devplatform
 
@@ -9,19 +9,16 @@ product: devplatform
 
 #PHP RabbitMQ Messaging Sample
 
-This sample displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS, and interact with it. This is a very simple PHP web app. Use this sample to ensure that you have set up your environment correctly for connecting to, and working with RabbitMQ on the Helion Development Platform. 
+This very simple PHP web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform. 
 
 ## Prerequisites
+If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
 
-If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
+- Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
+- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
+- Access to the web-based [Helion Management Console](/als/v1/user/client/).
 
-1.	You must have access to an ALS cluster.
-2.	The Helion command-line interface (CLI) must be installed.
-3.	You must have access to the web-based Helion Management console.
-
-If you are missing any of these items, please [install them](/helion/devplatform/appdev).
-
-If the RabbitMQ is not enabled, or you are not sure, follow these steps:
+If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
 
 - Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
 - On the **Admin** tab, click **Cluster**.
@@ -29,27 +26,35 @@ If the RabbitMQ is not enabled, or you are not sure, follow these steps:
 - Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
 - Click **Save**.
 
-**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your [ALS cluster](/helion/devplatform/msgaas/als/).
+**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your [ALS cluster](/helion/devplatform/msgaas/als/).
 
 
 ##Download the Application Files
 
-[Click here to access the download directory.](https://gitlab.gozer.hpcloud.net/developer-experience/rabbitmq-php).
+[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
 
 ##Deploy the Application
 
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [deployment plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
+2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute
+	
+		helion login
+	 
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute 
+	
+		helion target https://api.xx.xx.xx.xx.example.com
+	
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push -n`
-6.	Accecpt any default values that you may be prompted for.
-
-Note: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
+5.	Execute 
+	
+		helion push
+	
+6.	Accecpt any default values that you may be prompted for. <br>**Note**: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 ##Key Code Snippets
+This section of the ProcessForm.php file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The code then creates a queue, an exchange, post the message to the queue, reads the message from the queue then writes it back out to the user.
 
 	$url = parse_url(getenv('RABBITMQ_URL'));
 	$conn = new AMQPConnection($url['host'], $url['port'], $url['user'], $url['pass'], substr($url['path'], 1));
@@ -78,7 +83,7 @@ Note: By default ALS clusters are configured with two domains (private and publi
 	$ch->close();
 	$conn->close(); 
 
-This section of the ProcessForm.php file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The code then creates a queue, an exchange, post the message to the queue, reads the message from the queue then writes it back out to the user. 
+ The *manifest.yml* file is the configuration information used by ALS to set up the environment. The **services** element informs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application. <br>The file also provides the **buildpack** element used by ALS to configure the application environment for using PHP.<br>In addition to specifying a buildpack, the file includes a pre-staging hook that directs the ALS cluster to download and install the Composer Dependency Manager package for PHP. 
 
 	---
 	---
@@ -89,7 +94,7 @@ This section of the ProcessForm.php file shows how to retrieve the connection in
 	rabbitmq:
 	type: rabbitmq3 
 
-The manifest.yaml file is the configuration information used by ALS to set up the environment. The services element listed above instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application. The file also uses the buildpack element that is used by ALS to configure the application environment for using PHP. In addition to specifying a build pack the file includes a pre-staging hook that directs the ALS cluster to download and install the Composer Dependency Manager package for PHP. 
+
 
 
 ##Run the Application
@@ -101,14 +106,11 @@ The manifest.yaml file is the configuration information used by ALS to set up th
 
 
 ##Key Learnings
-1. You will need to provide configuration information so that ALS can bind to a RabbitMQ service.
-1. You will need to provide information about which build pack to use for PHP, so that ALS can create an environment for you app
+1. You will need to provide configuration information so that ALS can bind to a RabbitMQ service. Configuration information is contained in the *manifest.yml* file.
+1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
 1. You will need to retrieve connection information for RabbitMQ from the application’s environment variables.
-1. You interact and deploy your app using the Helion CLI or the Eclipse Plugin.
+1. You interact with and deploy your app using the Helion CLI or the [Eclipse plugin](/helion/devplatform/eclipse/).
 
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/database/php/) | [Next Sample](/helion/devplatform/workbook/helloworld/php/)
  
 

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-title: "The Marketplace"
+title: "Working with the Marketplace"
 permalink: /helion/devplatform/marketplace/
 product: devplatform
 

@@ -5,13 +5,11 @@ permalink: /helion/community/community-3rd-party-license-agreements/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-<!-- minor bit -->
+<script>
 
-<script> 
-
-function PageRefresh { 
+function PageRefresh {
 onLoad="window.refresh"
 }
 
@@ -19,8 +17,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href="/helion/community//">&#9664; PREV | <a href="/helion/community//">&#9650; UP</a> | NEXT &#9654; </p>
+-->
 
 # HP Helion OpenStack&reg; Community edition Open Source and Third-Party Software License Agreements 
 

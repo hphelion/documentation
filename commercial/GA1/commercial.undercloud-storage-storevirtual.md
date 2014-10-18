@@ -57,7 +57,7 @@ Before you start working with StoreVirtual, ensure that the following prerequisi
 2. HP StoreVirtual VSA cluster is created and is accessible by Cinder
 
 
-## Register a StoreVirtual cluster <a name="register-cluster"></a>
+## Register a StoreVirtual cluster {#register-cluster}
 	
 Use Undercloud Horizon Dashboard to register a cluster. When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
 
@@ -161,7 +161,7 @@ Use this option to unregister multiple clusters using a single command.
 5. Click **Unregister Cluster** to unregister or click **Cancel** to cancel the process. 
 
  
-## View configuration<a name="view-configuration"></a>
+## View configuration {#view-configuration}
 
 Use this option to view the cluster configuration (as defined in the HP Helion OpenStack&#174; Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).
 
