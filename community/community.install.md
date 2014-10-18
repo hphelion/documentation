@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&trade; Community Baremetal Installation and Configuration"
-permalink: /helion/community/install/
+permalink: /helion/community/install/renamed/
 product: community
 
 ---
