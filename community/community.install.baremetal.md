@@ -29,58 +29,59 @@ This page explains how to install and configure HP Helion OpenStack Community ba
 * 2 overcloud swift nodes 
 * At least 1 overcloud compute nodes 
 
-It is important to read through this page before starting your installation. Before you begin your installation, we recommend you review the complete [Hardware and Software Requirements](/helion/community/hwsw-requirements/) page. Note, however, that we have included the basic requirements on this page.
+It is important to read through this page before starting your installation. 
 
+* [Installation requirements](#hardware-and-network-requirements)
 
-* [Hardware and network requirements](#hardware-and-network-requirements)
-
-   * [Network configuration](#network-configuration)
+	* [Hardware requirements](#hardware)
+	* [Software requirements](#software)
+	* [Network configuration](#network)
 
 * [Before you begin](#before-you-begin)
    * [Obtaining a public key](#pub-key)
-   * [Installing Debian/Ubuntu packages](#packages)
    * [Obtaining required information](#req-info)
    * [About the installation process](#install-notes)
 
 * [Installing HP Helion OpenStack Community](#install)
-
    * [Downloading and unpacking installation file](#getinstall)
-
    * [Starting the seed and building your cloud](#startseed)
 
 * [Verifying your installation](#verifying-your-installation)
-
    * [Connecting to demo VM](#connectvm)
-
    * [Connecting to Horizon console](#connectconsole)
-
    * [Connecting remotely to Horizon console](#remoteconnect)
-
    * [Connecting to Monitoring UI](#monitoring)
 
 * [Enable name resolution from tenant VMs in the overcloud](#dnsmasq)
-
 * [Issues and troubleshooting](#issues-and-troubleshooting)
 
 
-## Hardware and network requirements
+## Installation requirements {#hardware-and-network-requirements}
+
+Before starting the installation, make sure your hardware, software, and networking meet the minimum requirements and are properly configured.
+
+## Hardware requirements {#hardware}
 
 To install a HP Helion OpenStack Community multi-node baremetal configuration, you must meet the hardware requirements described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
+### Software requirements {#software}
 
-### Network configuration
+To ensure a successful installation, you must meet the software requirements described in the [Software configuration](/helion/community/hwsw-requirements/#software) section in Community Hardware and Software Requirements.
+
+### Network configuration {#network}
 
 To ensure a successful installation, you must meet the hardware requirements described in [Community Network Architecture and Configuration](/helion/community/network-requirements/).
 
 ##Before you begin
+
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
 
    * [Obtaining a public key](#pub-key)
-   * [Installing Debian/Ubuntu packages](#packages)
    * [Obtaining required information](#req-info)
    * [About the installation process](#install-notes)
 
-### Obtaining a public key ### {#pub-key}
+### Obtain a public key ### {#pub-key}
+
 On the system on which the install is running, user root must have a public key, for example:
 
 `/root/.ssh/id_rsa`
@@ -89,14 +90,10 @@ On the system on which the install is running, user root must have a public key,
 
 If user root does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
 
-### Installing Debian/Ubuntu packages ### {#packages}
-If they are not already installed, the following required Debian/Ubuntu packages are added to the system on which the installer is running:
-
 
 ### Obtaining required information ### {#req-info}
 
 During the installation process, you will need to create a file called `baremetal.csv`. This file must contain one entry for each of the seven baremetal systems; thus, the file must contain a minimum of 7 lines, and each line must contain the following information:
-
     `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace_GB>`
 
 For example: `78:e7:d1:22:5d:58,operator,password,192.168.11.1,12,32768,2048`
@@ -118,10 +115,10 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * These files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
 
-`/root/stackrc`
+		/root/stackrc
+		/root/tripleo/tripleo_passwords
 
-`/root/tripleo/tripleo_passwords`
-
+In the event you have trouble with the installation, review the [Issues and troubleshooting](#issues-and-troubleshooting) section on this page and [FAQ](/helion/community/faq/) page.
 
 ## Installing HP Helion OpenStack Community {#install}
 Once you have ensured you meet all the hardware requirements and have completed the required tasks, you can begin your installation. The following two sections will walk you through:
@@ -423,75 +420,46 @@ HP Helion OpenStack Community includes a monitoring interface. You can access th
 * If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), OpenStack compute tools such as `nova-list` report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
   1. As user root on the overcloud controller you must:
   
-        A. Run the os-refresh-config scripts:
+        a. Run the os-refresh-config scripts:
 
-            # os-refresh-config
+            os-refresh-config
 
-        B. Restart the mysql service:
+        b. Restart the mysql service:
 
-            # service mysql restart
+            service mysql restart
 
-        C. Re-run the os-refresh-config scripts:
+        c. Re-run the os-refresh-config scripts:
 
-            # os-refresh-config
+            os-refresh-config
 
-        D. Restart all neutron services:
+        d. Restart all neutron services:
 
-            # service neutron-dhcp-agent restart
-            # service neutron-l3-agent restart
-            # service neutron-metadata-agent restart
-            # service neutron-openvswitch-agent restart
-            # service neutron-server restart
+            service neutron-dhcp-agent restart
+            service neutron-l3-agent restart
+            service neutron-metadata-agent restart
+            service neutron-openvswitch-agent restart
+            service neutron-server restart
 
   2. On each overcloud node, restart the neutron and nova services:
   
-            $ sudo service neutron-openvswitch-agent restart
-            $ sudo service nova-compute restart
-            $ sudo service nova-scheduler restart
-            $ sudo service nova-conductor restart
+            sudo service neutron-openvswitch-agent restart
+            sudo service nova-compute restart
+            sudo service nova-scheduler restart
+            sudo service nova-conductor restart
 
 * The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the "Server Power" status as reported by the iLO is stuck in the "RESET". If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
 
 * On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack Community, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
 
-        # ip addr add 192.168.185.131/16 dev eth0 scope global
-        # ip addr del 192.168.185.131/16 dev brbm
-        # ovs-vsctl del-port NIC
+        ip addr add 192.168.185.131/16 dev eth0 scope global
+        ip addr del 192.168.185.131/16 dev brbm
+        ovs-vsctl del-port NIC
 
-        where
-        * eth0 is the external interface
-        * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
-        * The baremetal bridge is always called 'brbm'
+	where
 
-
-
-## Enable name resolution from tenant VMs in the overcloud {#dnsmasq}
-
-To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq`.
-
-Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
-items.  
-
-The `overcloud_neutron_dhcp_agent.json` file should also be copied over to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
-
-Use the following commands:
-
-	{"dhcp_agent":
-		{"config":
-			[
-				{"section":"DEFAULT",
-					"values":
-						[
-							{"option":"dhcp_delete_namespaces","value":"True"},
-							{"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}
-						]
-					}
-				]
-			}
-		}
-
-Where `value` is the IP address of the DNS server to use.  Multiple DNS servers can be specified as a comma separated list.
-
+	* eth0 is the external interface
+	* 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
+	* The baremetal bridge is always called 'brbm'
 
 
 ## Known issues and workarounds {#known}
@@ -594,6 +562,12 @@ Where `value` is the IP address of the DNS server to use.  Multiple DNS servers 
 		curl -XDELETE "localhost:9200/logstash-<DATE>"
 
 	Where <DATE> is in the format "YYYY.MM.DD" EG "2014.09.09".
+
+## Next Step
+
+Enable name resolution from tenant VMs in the overcloud by configuring the DNS servers that will be used by `dnsmasq`. See [Enabling name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)
+
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;">Return to Top &#8593; </a>

@@ -27,12 +27,11 @@ This page provides instructions on how to perform a virtual installation of HP H
 
 It is important to read through this page before starting your installation. Before you begin your installation, we recommend you review the complete [Hardware and Software Requirements](/helion/community/hwsw-requirements/) page. Note, however, that we have included the basic requirements on this page.
 
+* [Installation requirements](#hardware-and-network-requirements)
 
-* [Overview](#overview)
-
-* [Hardware and system requirements](#virtual)
-
-	* [Software requirements](#software-requirements)
+	* [Hardware requirements](#hardware)
+	* [Software requirements](#software)
+	* [Network configuration](#network)
 
 * [Before you begin](#before-you-begin)
 
@@ -56,48 +55,18 @@ It is important to read through this page before starting your installation. Bef
 
 * [Issues and troubleshooting](#troubleshooting)
 
-## Overview
-
-<p>HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud. In this virtual installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a non-cloud deployment.</p> 
-
-* Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.
-
-* Undercloud &mdash; In a typical HP Helion OpenStack Community deployment, the undercloud is a baremetal server, but in this preview deployment the undercloud is simulated as a VM. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
-
-* Overcloud<a name="overcloud"></a> &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. In this virtual deployment, the overcloud comprises 6 nodes:
-
-    * 3 overcloud controllers (2 controllers and 1 management controller)
-    * 2 overcloud Object operation (Swift) nodes
-    * 1 overcloud Compute (Nova) node
-
-	Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/openstack/services/icinga/).
-
-**Important:** When installing make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
 
 
-## Hardware and system requirements {#virtual}
+## Installation requirements {#hardware-and-network-requirements}
+
+Before starting the installation, make sure your hardware and software the minimum requirements and are properly configured.
+
+### Hardware and system requirements {#virtual}
 TripleO creates several large VMs as part of this virtual deployment process, make sure you meet the hardware requirements described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
+### Software requirements {#software}
 
-
-### Software requirements
-The following Debian/Ubuntu packages are required:
-
-* qemu
-* openvswitch
-* libvirt
-* python-libvirt
-* openssh-server
-
-**Note:** Make sure that the firewall configuration allows access to the SSH ports.
-
-Even though these packages are added to the system if they are not already installed, before starting the installation, first install the following required Debian/Ubuntu packages on the system running the installer:
-
-    $ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm openssh-server
-
-After you install the `libvirt` packages, you must reboot or restart `libvirt`:
-
-    $ sudo /etc/init.d/libvirt-bin restart
+To ensure a successful installation, you must meet the software requirements described in the [Software configuration](/helion/community/hwsw-requirements/#software) section in Community Hardware and Software Requirements.
 
 ## Before you begin
 
@@ -122,7 +91,9 @@ NOTE: The output should look like the example below:
 
 		# ssh-keygen -t rsa -N
 
-**Note:** Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
+### Filesystem checking
+
+Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
 
 ## Installing HP Helion OpenStack Community ## {#install}
 
@@ -295,34 +266,12 @@ HP Helion OpenStack Community includes a monitoring interface. You can access th
 
 	where <DATE> is in the format `YYYY.MM.DD`"; for example: `2014.09.09`.
 
+## Next Step
+
+Enable name resolution from tenant VMs in the overcloud by configuring the DNS servers that will be used by `dnsmasq`. See [Enabling name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)
 
 
-## Enable name resolution from tenant VMs in the overcloud {#dnsmasq}
 
-To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq`.
-
-Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
-items.  
-
-The `overcloud_neutron_dhcp_agent.json` file should also be copied over to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
-
-Use the following commands:
-
-	{"dhcp_agent":
-		{"config":
-			[
-				{"section":"DEFAULT",
-					"values":
-						[
-							{"option":"dhcp_delete_namespaces","value":"True"},
-							{"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}
-						]
-					}
-				]
-			}
-		}
-
-Where `value` is the IP address of the DNS server to use.  Multiple DNS servers can be specified as a comma separated list.
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

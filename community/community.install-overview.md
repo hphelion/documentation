@@ -21,16 +21,22 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/hwsw-requirements/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Community Installation and Configuration
+# HP Helion OpenStack&#174; Community Installation Overview
+
+HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud.  
+
+* Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.
+
+* Undercloud &mdash; In a typical HP Helion OpenStack Community deployment, the undercloud is a baremetal server, but in this preview deployment the undercloud is simulated as a VM. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
+
+* Overcloud<a name="overcloud"></a> &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. 
 
 With HP Helion OpenStack Community, you can quickly and easily spin up clouds using two types of installation paths:
 
-* A virtual installation for testing and proof-of-concept use
-* A multi-node, barmetal installation for small-scale production
+* A virtual installation for testing and proof-of-concept use. In the virtual installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a non-cloud deployment.
+* A multi-node, barmetal installation for small-scale production. For the baremetal installation, you will need to have available enough baremetal servers to accommodate your installation, as described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
-As long as you have a system with at least 64 GB of RAM and Ubuntu 13.10 installed, you can have a cloud in approximately 30 minutes!
-
-[Register and download the HP Helion OpenStack Community edition installation package.](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+**Important:** When installing make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
 
 
 ## Virtual installation  
@@ -62,6 +68,9 @@ The installation deploys to a minimum 7 baremetal server configuration:
 * 2 overcloud swift nodes 
 * At least 1 overcloud compute node 
 
+	Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/openstack/services/icinga/).
+
+
 In addition, an installation system, called the seed cloud host, that meets the following configuration is required:
 
 * At least 64 GB of RAM
@@ -70,12 +79,14 @@ In addition, an installation system, called the seed cloud host, that meets the 
 
 [Learn how to install and configure a baremetal cloud](/helion/community/install/). 
 
-## For more information
-For more information on HP Helion OpenStack Community, see:
+## Next Steps:
 
-* [Hardware and Software Requirements](/helion/community/hwsw-requirements/) 
-* [FAQ](/helion/community/faq/) 
-* [Release notes](/helion/community/release-notes/) 
+* Review the information on the minimum requirements for your hardware and software before starting the installation. See [Hardware and Software Requirements](/helion/community/hwsw-requirements/).
+
+* For more information on HP Helion OpenStack Community, see:
+
+	* [FAQ](/helion/community/faq/) 
+	* [Release notes](/helion/community/release-notes/) 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
