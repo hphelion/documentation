@@ -22,12 +22,13 @@ PageRefresh();
 -->
 
 # HP Helion OpenStack&#174; Community Installation and Configuration
+
 With HP Helion OpenStack Community, you can quickly and easily spin up clouds using two types of installation paths:
 
 * A virtual installation for testing and proof-of-concept use
 * A multi-node, barmetal installation for small-scale production
 
-As long as you have a system with at least 48 GB of RAM and Ubuntu 13.10 or 14.04 installed, you can have a cloud in approximately 30 minutes!
+As long as you have a system with at least 64 GB of RAM and Ubuntu 13.10 installed, you can have a cloud in approximately 30 minutes!
 
 [Register and download the HP Helion OpenStack Community edition installation package.](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
@@ -59,7 +60,7 @@ The installation deploys to a minimum 7 baremetal server configuration:
 * 1 undercloud
 * 3 overcloud controllers
 * 2 overcloud swift nodes 
-* At least 1 and up to 30 overcloud compute nodes 
+* At least 1 overcloud compute node 
 
 In addition, an installation system, called the seed cloud host, that meets the following configuration is required:
 
