@@ -20,8 +20,7 @@ Detailed Configuration[](#detailed-configuration "Permalink to this headline")
         -   [Adding DNS Nameservers](#adding-dns-nameservers)
         -   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
         -   [HTTP Proxy](#http-proxy)
-        -   [Staging Cache & App HTTP
-            Proxy](#staging-cache-app-http-proxy)
+        -   [Staging Cache & App HTTP Proxy](#staging)
     -   [VM Filesystem Setup](#vm-filesystem-setup)
     -   [Application Lifecycle Service Data Services vs. High Availability
         Databases](#helion-data-services-vs-high-availability-databases)
@@ -560,7 +559,7 @@ Then restart Polipo:
 For log info, any errors reported by Polipo are available on the
 Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
 
-### Staging Cache & App HTTP Proxy[](#staging-cache-app-http-proxy "Permalink to this headline")
+###Staging Cache & App HTTP Proxy {#staging}
 
 Application Lifecycle Service caches all application dependencies that are downloaded by
 module managers that support the

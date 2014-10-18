@@ -15,9 +15,11 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based Helion Management console.
+- Access to the web-based [Helion Management Console](/als/v1/user/client/).
 
 ##Download the Application Files
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging). The sample  application required access to the Internet in order to download dependent packages. 
+
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-node)
 
 ###About the Application Files
@@ -50,11 +52,11 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 
 5.	Execute 
 
-		helion push -n
+		helion push 
 
-Accept any default values that you may be prompted for.  
 
-**NOTE:** By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e.* <app-name>.xxx.xxx.xxx.xxx.xip.io*)
+
+1. Accept any default values that you may be prompted for. <br>**Note**: By default, ALS Clusters are configured with two domains (private and public).  In some situations, the Helion CLI may prompt you to select a target domain.  If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 ##Key Code Snippets
 
@@ -79,7 +81,7 @@ This simple Servlet prints "Hello World".
 	console.log("Server listening to port: " + port);
 
 The *package.json* file is used by ALS during deployment. This is an extremely basic manifest file. 
-Note that the **name** is always required while other fields are optional.
+Note that **name** is always required while other fields are optional.
 
 		{
 		  "name": "hello-world-node",
@@ -89,7 +91,6 @@ Note that the **name** is always required while other fields are optional.
 		}
 
  
-
 ##Run the Application
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
 2.	Click **Applications**.
@@ -100,8 +101,8 @@ Note that the **name** is always required while other fields are optional.
 
 ##Key Learnings
 
-- You can deploy your app using either the Helion CLI or the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
+- You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
 
-- You will need to provide configuration information so that ALS can create an environment for your app.
+- ALS requires configuration information to create an environment for your app. Configuration information is contained in the *manifest.yml* file.
 
 [Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/node/) | [Next Sample](/helion/devplatform/workbook/database/node/)
