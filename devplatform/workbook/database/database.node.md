@@ -16,7 +16,7 @@ If you are missing any of these items, you will need to [install them](/helion/d
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/als/v1/user/client/).
+- Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ###MySQL
 
