@@ -261,9 +261,7 @@ permissible. Once you have this secondary address set up, see the
 [*/etc/hosts*](#server-config-etc-hosts) section for final configuration
 of the server.
 
-### Modifying hosts file(#modifying-etc-hosts)
-
-### Modifying the
+### Modifying /etc/hosts {#modifying-etc-hosts}
 
 The `/etc/hosts` file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
