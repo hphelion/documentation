@@ -50,7 +50,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Zone</b></td>
-	<td>Defines single points of failure within your cluster. </td>
+	<td>Defines single point of failure within your cluster. </td>
     <td>It is recommended to use a single zone with multiple servers. Having multiple servers (at least three) ensures that the replicas are distributed across servers, not all on one.</td>
 </tr>
 <tr style="background-color: white; color: black;">

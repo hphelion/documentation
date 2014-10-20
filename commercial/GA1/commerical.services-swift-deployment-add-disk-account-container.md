@@ -23,7 +23,7 @@ PageRefresh();
 
 #HP Helion OpenStack&#174; Adding Disks to Account or Container Rings
 
-Proxy nodes store account and container objects. When new disks are added to a proxy node, the new disks expand the storage capacity of the account and container rings. 
+Proxy nodes store account and container objects. When new disks are added to a proxy node, the new disks expand the storage capacity of the account and container rings. We also recommend to use same sets of disks for account and container.
 
 1. [Prerequisite](#prer)
 2. [Add Disks to an Account or Container Ring](#adding-swift-disks-to-a-ring)
@@ -40,7 +40,7 @@ Proxy nodes store account and container objects. When new disks are added to a p
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Log in to Undercloud from Seed. 
+1. Log in to the undercloud from seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -77,7 +77,7 @@ Perform the following steps to add Swift disk to a ring:
 				|          |            |
 				+----------+------------+
 	
-5. Format the target disk.
+5. Format a given disk.
 
 		# ringos format-disks -n <Proxy node IP address>  -d <disk>
 
@@ -94,7 +94,7 @@ Perform the following steps to add Swift disk to a ring:
 
 6. List the file in the ring building directory. Identify `account.builder` and `container.builder` files.
 
-7. Add the formatted disk to account and container ring.
+7. Add the formatted disk to account and container ring(s).
 
 		# ringos add-disk-to-ring -f /root/ring-building/account.builder -i <Proxy nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 		# ringos add-disk-to-ring -f /root/ring-building/container.builder -i <Proxy nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
