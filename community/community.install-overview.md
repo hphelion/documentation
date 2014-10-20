@@ -25,23 +25,20 @@ PageRefresh();
 
 HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud.  
 
-* Seed &mdash; The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.
+* Seed  - The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using the HP Ironic service to deploy a specific undercloud machine image.
 
-* Undercloud &mdash; In a typical HP Helion OpenStack Community deployment, the undercloud is a baremetal server, but in this preview deployment the undercloud is simulated as a VM. The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud.
+* Undercloud - The undercloud is a complete OpenStack installation, which is then used to deploy the overcloud. In HP Helion OpenStack Community, the undercloud can be a separate baremetal server or a virtual machine on the Seed host. 
 
-* Overcloud<a name="overcloud"></a> &mdash; The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack Community deployment, the overcloud comprises several baremetal servers. 
+* Overcloud<a name="overcloud"></a> - The overcloud is the end-user OpenStack cloud. In HP Helion OpenStack Community, the undercloud can be separate baremetal servers or virtual machines on the Seed host. 
 
 With HP Helion OpenStack Community, you can quickly and easily spin up clouds using two types of installation paths:
 
 * A virtual installation for testing and proof-of-concept use. In the virtual installation, TripleO simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) that play the roles that baremetal machines would in a non-cloud deployment.
 * A multi-node, barmetal installation for small-scale production. For the baremetal installation, you will need to have available enough baremetal servers to accommodate your installation, as described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
-**Important:** When installing make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
-
-
 ## Virtual installation  
 
-This cloud-in-a-box is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available. 
+This demonstration release is designed to let you test the functionality of HP Helion OpenStack Community. It is not intended to be used in a production environment to run real workloads, and therefore no support is available. 
 
 This installation is a fixed, virtual configuration of:
 

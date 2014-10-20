@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&trade; Community Baremetal Installation and Configuration"
+title: "HP Helion OpenStack&#174; Community Baremetal Installation and Configuration"
 permalink: /helion/community/install/
 product: community
 
@@ -22,12 +22,14 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
 
-This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
+This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. 
+
+This installation, which is launched on an installer system, deploys to a minimum of 7 baremetal servers, to which you can add up to 36 compute nodes:
 
 * 1 undercloud
-* 1 overcloud controller
+* 3 overcloud controllers
 * 2 overcloud swift nodes 
-* At least 1 overcloud compute nodes 
+* At least 1 overcloud compute node 
 
 It is important to read through this page before starting your installation. 
 
@@ -39,28 +41,18 @@ It is important to read through this page before starting your installation.
 
 * [Before you begin](#before-you-begin)
    * [Obtaining a public key](#pub-key)
-   * [Obtaining required information](#req-info)
+   * [Creating the baremetal configuration file](#baremetalcfg)
    * [About the installation process](#install-notes)
 
 * [Installing HP Helion OpenStack Community](#install)
    * [Downloading and unpacking installation file](#getinstall)
    * [Starting the seed and building your cloud](#startseed)
 
-* [Verifying your installation](#verifying-your-installation)
-   * [Connecting to demo VM](#connectvm)
-   * [Connecting to Horizon console](#connectconsole)
-   * [Connecting remotely to Horizon console](#remoteconnect)
-   * [Connecting to Monitoring UI](#monitoring)
-
-* [Enable name resolution from tenant VMs in the overcloud](#dnsmasq)
-* [Issues and troubleshooting](#issues-and-troubleshooting)
-
-
 ## Installation requirements {#hardware-and-network-requirements}
 
 Before starting the installation, make sure your hardware, software, and networking meet the minimum requirements and are properly configured.
 
-## Hardware requirements {#hardware}
+### Hardware requirements {#hardware}
 
 To install a HP Helion OpenStack Community multi-node baremetal configuration, you must meet the hardware requirements described in [Community Hardware and Software Requirements](/helion/community/hwsw-requirements/).
 
@@ -70,40 +62,72 @@ To ensure a successful installation, you must meet the software requirements des
 
 ### Network configuration {#network}
 
-To ensure a successful installation, you must meet the hardware requirements described in [Community Network Architecture and Configuration](/helion/community/network-requirements/).
+To ensure a successful installation, you must meet the network requirements described in [Community Network Architecture and Configuration](/helion/community/network-requirements/).
 
 ##Before you begin
 
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
 
    * [Obtaining a public key](#pub-key)
-   * [Obtaining required information](#req-info)
+   * [Creating the baremetal configuration file](#baremetalcfg)
+   * [Set DNS servers by default](#name-resolution)
    * [About the installation process](#install-notes)
 
 ### Obtain a public key ### {#pub-key}
 
-On the system on which the install is running, user root must have a public key, for example:
+Before you begin the installation process, the root user must have private and public RSA keys. You can determine this by issuing the following commands:
+ 
+1. Log in as root:
+    
+    	sudo su -
 
-`/root/.ssh/id_rsa`
+2. Determine if .ssh/id_rsa exists:
+    
+    	ls -l ~root/.ssh/id_rsa
 
-`/root/.ssh/id_rsa.pub`
+	NOTE: The output should look like the example below:
 
-If user root does not have a public key, you can create one using the `ssh-keygen -t rsa -N ""` command.
+     	drwxr-x--- . 4096 May 11 09:23
+    	-rwxr-x--- ..4096 May 11 09:23
+    	-rwxr-x--- id_rsa1455 May 11 09:24
+    	-rwxr-x--- id_rsa.pub 1455 May 11 09:24
 
+3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
 
-### Obtaining required information ### {#req-info}
+		ssh-keygen -t rsa -N
 
-During the installation process, you will need to create a file called `baremetal.csv`. This file must contain one entry for each of the seven baremetal systems; thus, the file must contain a minimum of 7 lines, and each line must contain the following information:
-    `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace_GB>`
+### Creating the baremetal configuration file ### {#baremetalcfg}
 
-For example: `78:e7:d1:22:5d:58,operator,password,192.168.11.1,12,32768,2048`
+During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called baremetal.csv. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step.
+
+The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
+
+There must be one entry in this file for each baremetal system you intend to install.
+    `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace>`
+
+**Important:** The diskspace size value must be specified in Gibibytes, not Gigabytes. For example:
+
+    900GB = 838 GiB
+    1TB = 1000GB = 931 GiB
+
+**Example:**
+
+	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
+	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,800
+	78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,1900
+	78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,1900
+	78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,1900
+	78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,1900
+	78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,16384,800
 
 To make creating this file easier during installation, we recommend that you gather this required information before you begin your installation, keeping in mind the following:
 
 * The IPMI user and password **must have** ADMINISTRATOR privilege; it is not sufficient to have OPERATOR privilege
-* Memory must be at least 32 GB
-* Disk size should be at least 2 TB
 * The disk size specified should never exceed the physical disk size
+
+### Set DNS servers by default {#name-resolution}
+
+To set a default DNS name server for your HP Helion OpenStack Community cloud, refer to [Enabling name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/) before installation.
 
 ### About the installation process ### {#install-notes}
 
@@ -113,25 +137,29 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * The seed must remain booted while the undercloud and overcloud are up.
 
-* These files contain credentials for the undercloud and the overcloud; you should ensure that they are securely stored separately from the seed.
+* These files contain credentials for the undercloud and the overcloud; you should make sure that they are securely stored separately from the seed.
 
 		/root/stackrc
 		/root/tripleo/tripleo_passwords
 
-In the event you have trouble with the installation, review the [Issues and troubleshooting](#issues-and-troubleshooting) section on this page and [FAQ](/helion/community/faq/) page.
+
+* Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
+
+* In the event you have trouble with the installation, review the [Issues and troubleshooting](/helion/community/troubleshooting/) and [FAQ](/helion/community/faq/) pages.
+
 
 ## Installing HP Helion OpenStack Community {#install}
-Once you have ensured you meet all the hardware requirements and have completed the required tasks, you can begin your installation. The following two sections will walk you through:
+Once you have met all of the hardware requirements and have completed the required tasks, you can begin your installation. The following two sections will walk you through:
 
    * [Downloading and unpacking installation file](#getinstall)
 
    * [Starting the seed and building your cloud](#startseed)
 
-**IMPORTANT:** During the installation process, **DO NOT RESTART** the system running the installer and seed VM. Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must complete the installation process again.
+**IMPORTANT:** During the installation process, **DO NOT RESTART** the seed cloud host (the system running the installer and seed VM). Restarting this system disrupts the baremetal bridge networking configuration and disables both the undercloud and overcloud. If the system is inadvertently restarted, you must complete the installation process again.
 
 ### Downloading and unpacking installation file ## {#getinstall}
 
-The HP Helion OpenStack Community baremetal installation is provided as a compressed tar file. To download and unpack this file, complete the following steps.
+The HP Helion OpenStack Community baremetal installation is provided as a compressed TAR file. To download and unpack this file, complete the following steps.
 
 
 1. Log in to your install system as root:
@@ -150,10 +178,6 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 	This creates and populates a `tripleo/` directory within root's home directory.
 
-4. Shutdown any running `baremetal_n` virtual machines using the `virsh destroy` command:
-
-	`virsh destroy baremetal_n`
-
 5. **Optional:** To use an interface other than ‘eth0’ on the HOST as the bridge interface, for example eth3, use the following command:
 
 		export BRIDGE_INTERFACE=eth3
@@ -171,47 +195,47 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 
 ### Starting the seed and building your cloud ### {#startseed}
-1. Start the seed using the following command:
+
+
+Start the seed using the following command:
 
 	`bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed`
 
-	If the seed startup is successful, you should see a message similar to the following:
+The process of starting the seed takes approximately ten minutes, depending on the capabilities of your system, and there are numerous logging messages generated by the script. The first time the script is run, it checks for and attempts to install any missing required packages, as described in [Software configuration](/helion/community/hwsw-requirements/#software) section in Community Hardware and Software Requirements. If you are prompted, accept all package installations.
+
+When the seed VM install completes, you should see a message similar to the following:
 
 		"Wed Oct 23 11:25:10 IST 2014 --- completed setup seed"
 
-2. To build the cloud, start by logging in to the seed. Run the following command from /root:
+**Note:** The seed VM continues its self-initialization after the startup script has terminated. 
+
+
+### Starting the undercloud, overcloud, and test guest VM ### {#startclouds}
+
+This section explains how to deploy and configure the undercloud and overcloud, and to start a demo VM in the overcloud compute node.
+
+1. To build the cloud, start by logging in to the seed. Run the following command from /root:
 
 		ssh debian@192.0.2.1
 
-3. Using your favorite editor, create a file in /root called `baremetal.csv`.
+2. Using your favorite editor, create a file in /root called `baremetal.csv`.
 
-4. Edit `baremetal.csv` to add the following information in the specified format for each of the your baremetal systems:
-	`<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<#cpus>,<memory_MB>,<diskspace_GB>`
+3. Make sure the information in the `baremetal.csv` configuration file file is correct and upload the file to /root.
 
-	For example, for a 7 baremetal system your file should look similar to this:
+	**Note:** For more information on creating this file, refer back to the [Creating the baremetal configuration file](#baremetalcfg).
 
-	`78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048`
-	`78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048`
-	`78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048`
-	`78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048`
-	`78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048`
-	`78:e7:d1:22:5d:a8,administrator,password,192.168.11.6,12,32768,2048`
-	`78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048`
-
-	**Note:** For more information on creating this file, refer back to the [system configuration requirements](#sys-config).
-
-5. Manually power off each baremetal system specified in /root/baremetal.csv before proceeding with the installation. 
+4. Manually power off each baremetal system specified in the `baremetal.csv` file before proceeding with the installation. 
 
 	**IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting. Refer to the [Network configuration](#additional-hardware-configuration) section.
 
-6. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands, 
+5. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands, 
 
 	To set this variable:
 
 	`export OVERCLOUD_NTP_SERVER=192.0.1.128`
-	`export UNDERCLOUD_NTP_SERVER=192.0.1.128`
+<br>	`export UNDERCLOUD_NTP_SERVER=192.0.1.128`
 
-7. If required, set the following environmental variables, which can affect your installation. Some of these variables set public, or floating, IP addresses. The floating IP addresses cannot be in the same range as the private network addresses (by default, 10.x.x.x)
+6. If required, set the following environmental variables, which can affect your installation. Some of these variables set public, or floating, IP addresses. The floating IP addresses cannot be in the same range as the private network addresses (by default, 10.x.x.x)
 
 	**Important**  The environment variable `NeutronPublicInterfaceIP` is no longer supported. The install will exit with an error message if this variable is set.
 
@@ -263,7 +287,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 	* `OVERCLOUD_COMPUTESCALE` - Use this variable to set the number overcloud compute nodes to deploy. 
 	
-		If you do not specify a value, the value is derived based on the number of lines remaining in `/root/baremetal.csv` once the undercloud, overcloud control, and overcloud swift nodes are removed.
+		If you do not specify a value, the value is derived based on the number of lines remaining in the `baremetal.csv` file once the undercloud, overcloud control, and overcloud swift nodes are removed.
 
 		To set this variable:
 
@@ -281,7 +305,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 			export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=99
 
-8. By [default](#NetworkDefault), the bridge interface, the Seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
+7. By [default](#NetworkDefault), the bridge interface, the seed VM IP address, and the gateway host are configured during the installation process. To change any or all of those configurations, complete the following steps:
  
 
 	* **OPTIONAL:** Change the IP address range to administer undercloud nodes by entering the starting and ending IP addresses for the range, for example:
@@ -313,9 +337,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 			export OVERCLOUD_NEUTRON_DVR=False
 
 
-9. From /root, install and configure the undercloud and overcloud by running the following command. 
-
-	**Important:** You must have completed any manual configuration steps listed under [Hardware requirements](#hardware-requirements) before starting the installation.
+8. From `/root`, install and configure the undercloud and overcloud by running the following command. 
 
 	`bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh`
 
@@ -325,247 +347,9 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 **Note:** If `hp_ced_start_seed` fails to start the seed, you simply need to restart it (Step 1) and then follow the rest of the steps.
 
-
-## Verifying your installation
-
-Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack Community baremetal cloud. You can accomplish this in any of the following ways:
-
-* [Connecting to demo VM](#connectvm)
-
-* [Connecting to Horizon console](#connectconsole)
-
-* [Connecting to Monitoring UI](#connectmonitor)
-
-### Connecting to the demo VM ### {#connectvm}
-
-From the seed cloud host, you can connect to the demo VM using the following steps:
-
-1. Export the overcloud passwords:
-
-	`. /root/tripleo/tripleo-overcloud-passwords`
-
-2. Export the overcloud users:
-
-	`TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user`
-
-3. Verify you can view the nova instances:
-
-	`nova list`
-
-4. Assign the demo VM IP address to a variable:
-
-	`DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
-
-5. Connect to the demo vm:
-
-	`ssh debian@${DEMO_IP}`
-
-	**Note:** It might take a few minutes for the demo vm to become available using ssh after finishing the installation.
-
-### Connecting to the Horizon console ### {#connectconsole}
-
-From the seed cloud host, connect to the overcloud Horizon console.
-
-1. Obtain the passwords for the `demo` from `/root/tripleo/tripleo-overcloud-passwords`.
-
-2. Point your web browser on the seed cloud host to the overcloud Horizon console:
-
-		http://192.0.2.24
-
-	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
-
-		. /root/tripleo/tripleo-undercloud-passwords
-		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
-		OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
-		echo $OVERCLOUD_IP
-
-4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 1.
-
-### Connecting to the monitoring interface ### {#connectmonitor}
-
-HP Helion OpenStack Community includes a monitoring interface. You can access this with the following steps:
-
-1. Point your web browser on the seed cloud host to the undercloud monitoring console:
-
-		http://192.0.2.2
-
-	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
-
-		. /root/stackrc
-		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
-		echo $UNDERCLOUD_IP
-
-2. Login as user `icingaadmin` with password `icingaadmin`.
-
-## Issues and troubleshooting 
-* When installing on HP ProLiant SL390s systems, the following error has occasionally occurred:
-
-    `Fatal PCI Express Device Error PCI Slot ?
-     B00/D00/F00`
-
-     If you get this error, reset the system that experienced the error:
-
-    1. Connect to the iLO using Internet Explorer:
-        `https://<iLO IP address>`
-    2. Navigate to Information / Diagnostics.
-    3. Reset iLO.
-    4. Log back into the iLO after 30 seconds.
-    5. Navigate to Remote Console / Remote Console.
-    6. Open the integrated remote console (.NET).
-    7. Click Power switch / Press and Hold.
-    8. Click Power switch / Momentary Press, and wait for the system to restart.
-
-    The system should now boot normally.
-
-* If the overcloud controller is rebooted (power issue, hardware upgrade, etc.), OpenStack compute tools such as `nova-list` report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
-  1. As user root on the overcloud controller you must:
-  
-        a. Run the os-refresh-config scripts:
-
-            os-refresh-config
-
-        b. Restart the mysql service:
-
-            service mysql restart
-
-        c. Re-run the os-refresh-config scripts:
-
-            os-refresh-config
-
-        d. Restart all neutron services:
-
-            service neutron-dhcp-agent restart
-            service neutron-l3-agent restart
-            service neutron-metadata-agent restart
-            service neutron-openvswitch-agent restart
-            service neutron-server restart
-
-  2. On each overcloud node, restart the neutron and nova services:
-  
-            sudo service neutron-openvswitch-agent restart
-            sudo service nova-compute restart
-            sudo service nova-scheduler restart
-            sudo service nova-conductor restart
-
-* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state where the "Server Power" status as reported by the iLO is stuck in the "RESET". If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
-
-* On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack Community, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
-
-        ip addr add 192.168.185.131/16 dev eth0 scope global
-        ip addr del 192.168.185.131/16 dev brbm
-        ovs-vsctl del-port NIC
-
-	where
-
-	* eth0 is the external interface
-	* 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
-	* The baremetal bridge is always called 'brbm'
-
-
-## Known issues and workarounds {#known}
-
-- The following error has been intermittently observed on HP ProLiant SL390s systems on which installs are being performed:
-
-		Fatal PCI Express Device Error PCI Slot ?
-		B00/D00/F00
-
-	To reset a system that experiences this error,
-	1. Connect to the iLO using a web browser (https://<iLO IP address>)
-	2. Navigate to Information / Diagnostics
-	3. Reset iLO
-	4. Log back into the iLO after 30 seconds
-	5. Navigate to Remote Console / Remote Console
-	6. Bring up integrated remote console (.NET)
-	7. Click Power switch / Press and Hold
-	8. Click Power switch / Momentary Press
-	9. Wait for system to restart
-	10. System should boot normally
-
-- The BIOS must be set to the correct date and time on all systems.
-
-	On HP ProLiant systems you can do the following:
-	1. Power UP the server and configure the BIOS (press F9)
-	2. Set Date and Time in the BIOS, and exit confirming your selection.
-	3. Power the server off prior to installation
-
-- On many HP systems, including HP servers running iLO 3 firmware, the
-  iLO time can be set to propagate to the BIOS on powerup.
-  You should disable propagation and set the BIOS time to the correct
-  date and time on all systems.
-
-	1. Connect to the iLO using a web browser (https://<iLO IP address>)
-	2. Navigate to Network/Shared Network Port or the Network/Dedicated Network Port (Primary Time Server, Secondary Time Server, Time Zone, and Time Propagation settings are shared between all iLO Network Ports).
-	3. Navigate to SNTP
-	4. UNSET 'Propagate NTP Time to Host'
-	5. Reset iLO
-	6. Follow the steps above to set the time in the BIOS
-
-- If the iLO time propagates to the BIOS, setting an incorrect time,
-  the undercloud or overcloud may fail to initialize with the following message:
-
-		Timing out after 60 seconds:
-		11:46:38 COMMAND=wait_for_hypervisor_stats 8
-
-	Follow the steps above to set the time in the BIOS correctly.
-
-- The following error has also been observed on the console of a baremetal system during installation when the BIOS date/time are incorrect
-
-		/etc/init.d/open-iscsi: 73: /etc/init.d/open-iscsi: cannot create /etc/iscsi/initiatorname.iscsi: Read-only file system
-
-	Follow the steps above to set the time in the BIOS correctly.
-
-- Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
-
-- These files contain credentials for the undercloud and the overcloud; you
-  should ensure that they are securely stored separately from the seed.
-
-		/root/stackrc
-		/root/tripleo/tripleo_passwords
-
-- On the seed cloud host (the system on which the installer is run), the seed VM's networking will be bridged onto the external LAN.
-
-	To revert this change, reboot the system then execute this command on the console of the host:
-
-		ovs-vsctl del-port eth0
-
-	If you specified BRIDGE_INTERFACE as something other than eth0 then replace eth0 in the command above with that value.
-
-- If the `hp_ced_host_manager` fails to start the seed, execute the command again (a failure could be the result of a race condition in libvirt).
-
-- If the undercloud controller is rebooted, you must login to it and run the following command as root:
-
-		os-refresh-config
-
-	Failure to do this will prevent subsequent reboots of the overcloud nodes.
-
-- The installation pauses 1-2 minutes loading images and pauses of 12 or more minutes building the undercloud and overcloud.
-
-- The installer script will wait for os-collect-config to complete on the seed but times out after 10 minutes of waiting.
-
-- The installer uses IPMI commands to reset nodes and change their power status. Some systems have been seen to get into a state where the Server Power status as reported by the iLO stays stuck in the "RESET" state. If this occurs, it is neccesary to physically remove power from the server for 10 seconds. If the problem persists after that, contact HP Support - there might be a defective component in the system.
-
-- If using the seed vm as your gateway (default setting), you will need to execute the following commands after you have run `hp_ced_host_manager.sh` on the host machine.
-
-		MAC=$(virsh dumpxml --domain seed | grep "mac address" | head -1 | awk -F "'" '{print $2}')
-		VM_IP=$(arp -n | grep $MAC | awk '{print $1}')
-		ip route replace <BM_NETWORK_CIDR> dev virbr0 via $VM_IP
-
-- The installer now includes an interactive query before running a hardware
-  census script at the end of the install. This script is optional.
-
-- ElasticSearch indexes are not deleted automatically. Log data will build up over time, potentially filling the space available, unless managed. To see the indexes, ssh to the undercloud node and run:
-
-		curl "localhost:9200/_cat/indices?v"
-
-	To remove indexes, run this (you must be on the undercloud node):
-
-		curl -XDELETE "localhost:9200/logstash-<DATE>"
-
-	Where <DATE> is in the format "YYYY.MM.DD" EG "2014.09.09".
-
 ## Next Step
 
-Enable name resolution from tenant VMs in the overcloud by configuring the DNS servers that will be used by `dnsmasq`. See [Enabling name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)
+Verify that the installation completed successfully by connecting to the demo VM, Horizon dashboard and the monitoring interface. See [Verifying your installation](/helion/community/verify/).
 
 
 
