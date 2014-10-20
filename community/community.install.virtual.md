@@ -57,9 +57,9 @@ To ensure a successful installation, you must meet the software requirements des
 
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
 
-	* [Obtaining a public key](#pub-key)
-	* [Set DNS servers by default](#name-resolution)
-	* [About the installation process](#install-notes)
+* [Obtaining a public key](#pub-key)
+* [Set DNS servers by default](#name-resolution)
+* [About the installation process](#install-notes)
 
 ### Obtain a public key ### {#pub-key}
 

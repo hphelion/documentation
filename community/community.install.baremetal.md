@@ -68,10 +68,10 @@ To ensure a successful installation, you must meet the network requirements desc
 
 Before you begin the installation process, ensure you have read the following and completed any required tasks:
 
-   * [Obtaining a public key](#pub-key)
-   * [Creating the baremetal configuration file](#baremetalcfg)
-   * [Set DNS servers by default](#name-resolution)
-   * [About the installation process](#install-notes)
+* [Obtaining a public key](#pub-key)
+* [Creating the baremetal configuration file](#baremetalcfg)
+* [Set DNS servers by default](#name-resolution)
+* [About the installation process](#install-notes)
 
 ### Obtain a public key ### {#pub-key}
 

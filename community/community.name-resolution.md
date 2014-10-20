@@ -58,6 +58,11 @@ To enable name resolution from tenant VMs in the overcloud, it is necessary to c
 
 4. Copy the `overcloud_neutron_dhcp_agent.json` file to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
 
+## Next Step
+
+* [Return to the baremetal install](/helion/community/install/)
+
+* [Return to the virtual install](/helion/community/install-virtual/)
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
