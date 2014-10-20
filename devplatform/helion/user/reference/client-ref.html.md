@@ -1446,7 +1446,7 @@ Create an empty application with the specified configuration.
     command to print the saved trace to stdout.</td>
     </tr><tr>
     </tr>    <tr><td>--url</td>
-    <td>The urls to map the application to. I.e. can be specified muliple
+    <td>The urls to map the application to. I.e. can be specified multiple
     times.</td>
     </tr><tr>
     <td>-d</td>
@@ -2096,7 +2096,7 @@ Configure, create, push, map, and start a new application.
     command to print the saved trace to stdout.</td>
     </tr><tr>
     </tr>    <tr><td>--url</td>
-    <td>The urls to map the application to. I.e. can be specified muliple
+    <td>The urls to map the application to. I.e. can be specified multiple
     times.</td>
     </tr><tr>
     <td>-d</td>

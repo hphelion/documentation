@@ -7,7 +7,7 @@ permalink: /als/v1/user/deploy/languages/ruby/objectstore/
 #Examples for working with HP Helion Object Storage Service
 
 
-The HP Helion Extensions to Ruby Fog libary provides Object Storage
+The HP Helion Extensions to Ruby Fog library provides Object Storage
 services support using two abstractions: a model layer and a request
 layer. Executing commands in both layers are detailed in this page.
 
@@ -247,7 +247,7 @@ set the metadata on the containers for syncing.
 
    ::
 
-       # Now, lets do a two way sync between dir and target containers
+       # Now, let's do a two way sync between dir and target containers
        dir = conn.directories.get('imp_stuff')
        target_dir = conn.directories.get('sync_archive')
 
@@ -490,7 +490,7 @@ set the metadata on the containers for syncing.
 
    ::
 
-       # Now, lets do a two way sync between dir and target containers
+       # Now, let's do a two way sync between dir and target containers
        # to sync we need to put some metadata on the source and target containers
        conn.put_container('imp_stuff',
                            {'X-Container-Sync-To'  => "/url/to/the/target/sync_archive",

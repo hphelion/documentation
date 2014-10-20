@@ -38,10 +38,10 @@ Perform the following procedure to add new scale-out object node.
 
 ##Deploying new object nodes {#deploy-new-object-node}
 
-1. Perform the steps mentioned in [Provision Swift Node(s)]( /helion/openstack/services/swift/provision-nodes/) to deploy a new node.
+*  Perform the steps mentioned in [Provision Swift Node(s)]( /helion/openstack/services/swift/provision-nodes/) to deploy a new node.
 
+## Adding nodes and disks to object-ring:1 {#add-disk-node} 
 
-##Format and Mount the Disks
 Once the Swift nodes are deployed, the required disks must be formatted and mounted them before adding them to the Swift cluster. 
 
 1. Log in to the undercloud from the seed.
@@ -61,14 +61,13 @@ Once the Swift nodes are deployed, the required disks must be formatted and moun
 
 		# ringos list-disks -n <Object nodes IP address> 
  
-5. Format the target disk.
+5. Format the given disk.
 
 		# ringos format-disks -n <Object nodes IP address> -d <disk>
 
-	**Note**: You can format all the disks with a single command: `-d --all` but be very careful!
-## Adding nodes and disks to object-ring:1 {#add-disk-node} 
+	**Note**: You can format all the disks with a single command: `-d --all`.
 
-1.  List the files in the ring building directory and identify the *object-1.builder* file.
+6. List the files in the ring building directory and identify the `object-1.builder` file.
 
 7. Add the formatted disk(s) to the object-1 ring.
 

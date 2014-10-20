@@ -108,7 +108,7 @@ To set the Space you want to deploy applications to:
 
 **Note**:If your account is not a member of a Space, you will need an
 Organization Manager to add you as a Developer. If you are an
-Organization Manager or Admin, you can create create new Spaces in the
+Organization Manager or Admin, you can create new Spaces in the
 [*Management Console*](/als/v1/admin/console/customize/#user-console-space) or with
 the [*helion
 create-space*](/als/v1/user/reference/client-ref/#command-create-space)

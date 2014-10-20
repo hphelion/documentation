@@ -204,7 +204,7 @@ Uninstalling
 ------------
 
 Its recommended that you uninstall a previous version prior to
-upgrading. To uninstall, execute the followin command while logged in as
+upgrading. To uninstall, execute the following command while logged in as
 the root user:
 
 ::

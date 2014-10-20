@@ -38,7 +38,7 @@ Perform the following procedure to add disk to a starter object ring.
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Log in to Undercloud from Seed. 
+1. Log in to the undercloud from seed. 
 
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -55,7 +55,7 @@ Perform the following steps to add Swift disk to a ring:
 
 		# ringos list-disks -n <Starter Swift nodes IP address> 
 
-5. Format the target disk.
+5. Format the given disk.
 
 		# ringos format-disks -n <Starter Swift nodes IP address> -d <disk>
 
