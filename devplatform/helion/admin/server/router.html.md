@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/server/router/
+product: devplatform
 ---
 <!--PUBLISHED-->
 

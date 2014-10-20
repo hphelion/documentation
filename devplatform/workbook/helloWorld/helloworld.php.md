@@ -77,7 +77,7 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 6.	You should see a simple text message: **Hello World!**
 
 ##Key Learnings
-1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file. 
-- You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
+2. You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
 
 [Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)

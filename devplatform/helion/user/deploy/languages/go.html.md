@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/go/
+product: devplatform
 ---
 <!--PUBLISHED-->
 
