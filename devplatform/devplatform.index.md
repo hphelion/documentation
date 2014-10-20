@@ -44,7 +44,7 @@ The [Messaging Service](/helion/devplatform/messageservice/)  provides developer
 - The Messaging Service integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.
 
-The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#messaging) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Development Platform](/helion/devplatform/msgaas/als).
+The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#install-messaging) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Development Platform](/helion/devplatform/msgaas/als).
 
 <table style="vertical-align: top; width: 650px; background-color: white; border: 0px;">
 <tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#install-messaging">Install</a><br></td><td style="border: 0px; align: right;"><a href="messageservice">Provision</a><br><a href="msgaas/als">Connect with ALS</a></td></tr>
