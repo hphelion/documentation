@@ -25,7 +25,7 @@ PageRefresh();
 
 This page provides an overview of important information on the network configuration required for a baremetal HP Helion OpenCloud Community edition installation.
 
-For virtual installations, the installation simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) on a single system. As such, no network configuration is required.
+For virtual installations, the installation simulates the deployment of OpenStack by creating and configuring a set of virtual machines (VMs) on a single system. As such, no manual network configuration is required.
 
 * [Physical network architecture](#physical-network-architecture)
 * [Network configuration for a baremetal installation](#config)
@@ -39,14 +39,13 @@ The table in this section provides an overview of the physical network configura
 
 - Physical network ports on each server:
   - One IPMI/iLO port
-  - One physical ethernet port (for example, eth0) or two physical ethernet ports in a bond (for example, bond0) for the hypervisor/OS
+  - One physical ethernet port (for example, eth0) for the hypervisor/OS
 
 - Network fabric
   - Two physical links, one for IPMI/iLO and one for the hypervisor/OS
   - Network switches capable of basic VLAN, L2 and L3 functions; no dependency on, for example, VxLAN-capable or OpenFlow-enabled switch
 
 - The physical hypervisor/OS network is shared by a number of logical networks, and each logical network has its own VLAN and IP subnet.
-- If you have other DHCP servers on the same network, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 - The seed VM, the baremetal systems, and the BMC (IPMI controller) for all
   baremetal systems must be on a common network.
 
@@ -79,7 +78,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <li>Used to PXE boot overcloud servers</li>
 </ul> </td>
 <td> Untagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -87,7 +86,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <td> Overcloud management </td>
 <td> Traffic for overcloud internal OpenStack calls, glance image downloads, etc. </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -95,7 +94,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <td> SDN </td>
 <td> Network between workload VMs, e.g. carries VxLAN traffic </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -103,7 +102,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <td> Storage </td>
 <td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -112,7 +111,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <td><ul><li> Connected to internet or intranet</li>
 <li>Provides floating IPs</li></ul> </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -121,7 +120,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <td> <ul><li>Connected to internet or intranet</li>
 <li>Provides access to overcloud API endpoints</li></ul> </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -129,7 +128,7 @@ For detailed information, see the [Reference architecture](/helion/community//re
 <td> Swift </td>
 <td> Communication between swift servers (includes user data)  </td>
 <td> Tagged </td>
-<td> eth0 or bond0</td>
+<td> eth0</td>
 
 </tr>
 
@@ -145,6 +144,8 @@ Make sure your network is configured to include the following criteria:
 * Any network interfaces that are not used for PXE boot must be disabled from BIOS to prevent PXE boot attempts from those devices.
 
 * Any DHCP servers on the same network as your system must not hand out IP addresses to your physical nodes as they PXE boot.
+
+* Make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
 
 * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
 

@@ -23,6 +23,12 @@ PageRefresh();
 
 # Enabling name resolution from tenant VMs in the overcloud
 
+This page provides instructions for setting a default DNS name server for your HP Helion OpenStack Community cloud. These steps need to be performed prior to installation.
+
+**Note:** After the installation, you can specify DNS servers on a per-subnet basis using the `neutron subnet-create --dns-nameserver` command. Refer to the OpenStack documentation, such as [Advanced Networking operations](http://docs.openstack.org/admin-guide-cloud/content/advanced_networking.html).
+
+## Enable name resolution
+
 To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers that will be used by `dnsmasq`.
 
 Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
@@ -30,7 +36,7 @@ items.
 
 The `overcloud_neutron_dhcp_agent.json` file should also be copied over to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
 
-Use the following commands:
+Your JSON should appear similar to the following:
 
 	{"dhcp_agent":
 		{"config":
@@ -46,8 +52,7 @@ Use the following commands:
 			}
 		}
 
-Where `value` is the IP address of the DNS server to use.  Multiple DNS servers can be specified as a comma separated list.
-
+Replace `value` with the IP address of your DNS server.  Multiple DNS servers can be specified as a comma separated list.
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
