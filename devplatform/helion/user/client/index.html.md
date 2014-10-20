@@ -25,7 +25,8 @@ available at the command line via the *helion help* command.
     Linux x64)
 2.  Unzip the archive in a convenient directory.
 3.  Add the executable to your system/shell \$PATH by:
-	-   moving it to a directory in your \$PATH,
+	-   Windows: path = %path%; (where path is the path to the Helion cli)
+	-   Linux, OS X: moving it to a directory in your \$PATH,
 	-   creating a symlink from a directory in your \$PATH, or
 	-   creating a shell alias for the executable.
 
