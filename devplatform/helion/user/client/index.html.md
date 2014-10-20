@@ -23,6 +23,8 @@ available at the command line via the *helion help* command.
 
 1.  Download the client for your platform (Windows, OS X, Linux x86,
     Linux x64)
+	1. From the ALS cluster management console, find and click ont he "Download the Client" button.
+	2. You will taken to a page showing your download options. Select the option for your desired platform.
 2.  Unzip the archive in a convenient directory.
 3.  Add the executable to your system/shell \$PATH by:
 	-   Windows: path = %path%; (where path is the path to the Helion cli)
