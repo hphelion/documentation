@@ -167,7 +167,7 @@ To connect to the HP Cloud Compute V2 Service, follow these steps:
               }]
         )
         new_server.id       # returns the id of the server
-        new_server.name     # => "My Personalised Server"
+        new_server.name     # => "My Personalized Server"
 
         # Note: that un-encoded user data can also be provided by setting the user_data property
         # although, encoding the data on the client is faster and efficient
@@ -670,7 +670,7 @@ Model Server Volume Operations
         )
     **Note**: In *block_device_mapping*, *volume_size* is ignored; it is automatically retrieved from the specified bootable volume. To delete the bootable volume after the server instance is killed you can set  *delete_on_termination* to `1`.  To preserve the bootable volume, set it to `0` as shown above.
 
-10. Create a new Linux-based server with advanced personalisation options:
+10. Create a new Linux-based server with advanced personalization options:
 
 .. code-block:: ruby
 
