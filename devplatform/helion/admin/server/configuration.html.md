@@ -1,3 +1,4 @@
+---
 layout: default-devplatform
 permalink: /als/v1/admin/server/configuration/
 product: devplatform
