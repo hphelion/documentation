@@ -62,7 +62,7 @@ This section of the messaging.js file shows how to retrieve the connection infor
 	//Connect to RabbitMQ.
 	var rabbitMqConnection = amqp.createConnection({ url: connectionString });
 	
-	…
+	...
 
 	rabbitMqConnection.once('ready', function() {
     	rabbitMqConnection.queue('msg-queue', {} , function(queue) {
@@ -73,7 +73,7 @@ This section of the messaging.js file shows how to create a connection to the Ra
 	//Connect to RabbitMQ.
 	var rabbitMqConnection = amqp.createConnection({ url: connectionString });
 	
-	…
+	...
 	
 	rabbitMqConnection.once('ready', function() {
     	rabbitMqConnection.queue('msg-queue', {} , function(queue) {
