@@ -81,6 +81,7 @@ Before you start the installation and configuration process, ensure that you hav
 ##After you install {#after}
 
 Once the installation completes, you can load the ALS Console at the URL obtained in step 15 using the first username and first password you specified in step 13. After you log into the Console, you can access the [ALS User Documentation](/als/v1/user/) for instructions to create users and deploy applications.
+You may be presented with text that warns or notes that the site has a self-signed certificate. When loaded in a browser, you may get a display indicating that this sight is not *trusted*.
  
 ----
 ####OpenStack trademark attribution

@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/best-practices/logging-examples/
+product: devplatform
 ---
 <!--PUBLISHED-->
 
