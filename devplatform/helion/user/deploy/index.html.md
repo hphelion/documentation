@@ -207,7 +207,7 @@ URLs, application names, and service names:
     [*space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces). The name given to a service
     during creation is a pointer to a globally unique string (i.e. the
     *actual* database name in the system as shown by
-    VCAP\_SERVICES), so there is no possiblility of naming conflicts
+    VCAP\_SERVICES), so there is no possibility of naming conflicts
     with services created in other orgs and spaces.
 
 Crontab Support[](#crontab-support "Permalink to this headline")
