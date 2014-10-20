@@ -13,7 +13,6 @@
 [Aa]thorization
 [Mm]uliple
 [Mm]anging
-[Rr]ecognises
 [Mm]utiple
  tot he 
  ahve 
