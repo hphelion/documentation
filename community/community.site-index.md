@@ -31,11 +31,14 @@ PageRefresh();
 * [FAQ](/helion/community/faq/)  
 * [Related topics](/helion/community/related-links/)
 
-#### [Install &amp; configure your HP Helion OpenStack Community  cloud](/helion/community/install-overview/)
+#### Install &amp; configure your HP Helion OpenStack Community cloud
 
-* [Hardware and software requirements](#/helion/community/hwsw-requirements/)
-* [Virtual installation](#/helion/community/install-virtual/)
-* [Baremetal installation](#/helion/community/install/)
+* [Installation overview](/helion/community/install-overview/)
+* [Hardware and software requirements](/helion/community/hwsw-requirements/)
+* [Network Architecture and Configuration -- Baremetal Installations Only](/helion/community/network-requirements/)
+* [Enable name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)
+* [Baremetal Installation and Configuration](#/helion/community/install/)
+* [Virtual Installation and Configuration](#/helion/community/install-virtual/)
 
 ####[HP Helion OpenStack Community FAQ](/helion/community/faq/)
 
