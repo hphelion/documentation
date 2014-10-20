@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/javascript/authentication/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 Authentication
 ==========================================================
 The `Identity Service API <https://docs.hpcloud.com/identity>`_ is central to using the

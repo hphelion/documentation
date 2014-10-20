@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/dotnet/objectstore/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Working with Object Storage in .NET
 
 [Object Storage](http://docs.hpcloud.com/object-storage) is a web scale storage system.

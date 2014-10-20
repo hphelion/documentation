@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/eclipse/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 ##Eclipse Plugin for HP Helion Development Platform (APaaS)
 

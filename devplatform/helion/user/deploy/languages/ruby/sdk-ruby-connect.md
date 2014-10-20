@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/connect/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #Connecting to HP Helion using Ruby Fog Bindings
 The HP Helion uses OpenStack as the platform and you can connect and set

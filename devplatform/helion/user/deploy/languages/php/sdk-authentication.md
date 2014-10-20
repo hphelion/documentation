@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/authentication/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Identity Service, Authentication, and the Service Catalog
 
 The [Identity Service API](https://docs.hpcloud.com/identity) is central to using the

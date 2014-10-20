@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/java/frameworks
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Java Frameworks
 Application Lifecycle Service has several Java frameworks to choose from:
 

@@ -3,7 +3,7 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #Developing In Ruby
 <p>Whether you're deploying an application to the HP Helion Development Platform, a

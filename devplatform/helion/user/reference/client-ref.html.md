@@ -4,9 +4,8 @@ title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/
 product: 
 
-
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 Application Lifecycle Service Client Command Reference[](#helion-client-command-reference "Permalink to this headline")
 =====================================================================================================
