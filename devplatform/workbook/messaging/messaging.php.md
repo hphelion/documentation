@@ -101,8 +101,8 @@ This section of the ProcessForm.php file shows how to retrieve the connection in
 ##Run the Application
 1. Open the Helion Management Console. This is the web-based administrative interface.
 1. Click **Applications**.
-1. If the file push was successful, you should see **Hello World** in the list of available applications.
-1. The status of the application should be **Online**. Click the name of the application to launch it.
+1. If the file push was successful, you should see **hello-world-php** in the list of available applications.
+1. The status of the application should be **Started**. Click the name of the application to launch it.
 1. In the upper right-hand corner, click **View App**.
 
 

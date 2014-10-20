@@ -97,7 +97,7 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 1.	Open the Helion Management Console. This is the web-based administrative interface.
 2.	Click **Applications**.
 3.	If the file push was successful, you should see **rabbitmq-node** in the list of available applications.
-4.	The status of the application should be `Online`. Click the name of the application to launch it.
+4.	The status of the application should be **Started**. Click the name of the application to launch it.
 5.  In the upper right-hand corner, click **View App**.
 
 ##Key Learnings

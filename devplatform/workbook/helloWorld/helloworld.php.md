@@ -68,8 +68,8 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 ##Run the Application
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
 2.	Click **Applications**.
-3.	If the file push was successful, you should see **Hello World** in the list of available applications.
-4.	The status of the application should be **Online**. click the name of the application to launch it.
+3.	If the file push was successful, you should see **hello-world-php** in the list of available applications.
+4.	The status of the application should be **Started**. click the name of the application to launch it.
 5.	In the upper right-hand corner, click **View App**.
 6.	You should see a simple text message: **Hello World!**
 
