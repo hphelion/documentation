@@ -46,6 +46,16 @@ These release notes cover both deployments.
 
 ##Features in HP Helion OpenStack Community## {#features}
 
+The following sections list the features in the current version, 1.4, and previous versions.
+
+### Features in HP Helion OpenStack Community 1.4
+
+**Additional overcloud controllers for high availability** &mdash; The number of installed overcloud controller nodes has been increased to 3. The additional nodes should allow Community to continue operating if a single control node fails. Previously, the Community edition installed a single overcloud controller node. 
+
+**Icinga monitoring support** &mdash; Icinga 2 is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
+
+### Features in HP Helion OpenStack Community GA
+
 **Pure OpenStack technology** &mdash; This edition allows you to experience a cloud deployment using [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO).
 
 **Speeds cloud service delivery** &mdash; Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.

@@ -345,8 +345,6 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 		"HP - completed - Wed Oct 23 16:20:20 UTC 2014"
 
-**Note:** If `hp_ced_start_seed` fails to start the seed, you simply need to restart it (Step 1) and then follow the rest of the steps.
-
 ## Next Step
 
 Verify that the installation completed successfully by connecting to the demo VM, Horizon dashboard and the monitoring interface. See [Verifying your installation](/helion/community/verify/).

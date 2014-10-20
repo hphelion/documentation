@@ -181,7 +181,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 3. Start the deployment of the undercloud and overcloud:
 
 		cd /root
-		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh
 
 	This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 10 minutes and includes pauses while services and VMs are set up in the background.
 

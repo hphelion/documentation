@@ -21,13 +21,13 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
 -->
 
-# Enabling name resolution from tenant VMs in the overcloud
+# Enable name resolution from tenant VMs in the overcloud
 
 This page provides instructions for setting a default DNS name server for your HP Helion OpenStack Community cloud. These steps need to be performed prior to installation.
 
 **Note:** After the installation, you can specify DNS servers on a per-subnet basis using the `neutron subnet-create --dns-nameserver` command. Refer to the OpenStack documentation, such as [Advanced Networking operations](http://docs.openstack.org/admin-guide-cloud/content/advanced_networking.html).
 
-## Enable name resolution
+## Enabling name resolution
 
 To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers that will be used by `dnsmasq` as forwarders.
 
