@@ -5,7 +5,7 @@ permalink: /helion/devplatform/release-notes/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #HP Helion Development Platform Release Notes
 

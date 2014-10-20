@@ -5,7 +5,7 @@ permalink: /helion/devplatform/install/old
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #HP Helion Development Platform Installation and Configuration
 

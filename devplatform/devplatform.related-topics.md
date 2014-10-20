@@ -5,7 +5,7 @@ permalink: /helion/devplatform/related-topics/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #HP Helion Development Platform Related Documentation
 

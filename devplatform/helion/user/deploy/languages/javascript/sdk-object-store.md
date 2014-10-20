@@ -2,8 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/javascript/objectstore/
 ---
-<!--UNDER REVISION-->
-
+<!--PUBLISHED-->
 #Working With Object Storage in Javascript
 
 `Object Storage <http://docs.hpcloud.com/object-storage>`_ is a web scale storage system.

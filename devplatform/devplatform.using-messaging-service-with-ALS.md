@@ -5,7 +5,7 @@ permalink: /helion/devplatform/msgaas/als/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Using the Messaging Service with ALS
 
 The Messaging Service provides on-demand RabbitMQ clusters and enables automatic access to the RabbitMQ management console. RabbitMQ is also available within ALS as a single-instance, unmanaged service. If your application relies on high message throughput or if you want to move an application from dev/test into production, you should strongly consider using the Messaging Service instead of the RabbitMQ service embedded with ALS.  

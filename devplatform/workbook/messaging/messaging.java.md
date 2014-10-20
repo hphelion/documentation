@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/messaging/java/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Java RabbitMQ Messaging Sample
 This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.
 

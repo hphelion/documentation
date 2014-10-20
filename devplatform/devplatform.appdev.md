@@ -5,7 +5,7 @@ permalink: /helion/devplatform/appdev/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Resources for Application Developers
 
 HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.

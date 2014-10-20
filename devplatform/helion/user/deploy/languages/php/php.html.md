@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #Developing In PHP
 Whether you're deploying an application to the HP Helion Development Platform, a

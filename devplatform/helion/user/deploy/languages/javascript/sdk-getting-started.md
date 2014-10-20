@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/javascript/getstarted/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 .. _get-started-javascript-sdk:
 
 #Getting Started with the Javascript SDK

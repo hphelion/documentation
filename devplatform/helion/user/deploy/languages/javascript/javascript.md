@@ -2,8 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/javascript/
 ---
-<!--UNDER REVISION-->
-
+<!--PUBLISHED-->
 Developing in Javascript[](#java "Permalink to this headline")
 ===========================================
 

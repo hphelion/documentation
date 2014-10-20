@@ -5,7 +5,7 @@ permalink: /helion/devplatform/workbook/database/node/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # Node MySQL Database Sample
 

@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/java/authentication/
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
  
 <!--
 #Authentication With Apache jclouds and HP Helion

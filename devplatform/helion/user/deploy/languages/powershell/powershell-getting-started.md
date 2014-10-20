@@ -3,7 +3,7 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/powershell/
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #HP Helion Public Cloud CLI Software for Windows PowerShell
 Welcome to the Quick Start Page for the Helion PowerShell Environment. 
 
