@@ -14,7 +14,7 @@ If you are missing any of these items, please [install them](/helion/devplatform
 
 1.	You must have access to an [ALS cluster](/als/v1/admin/cluster/).
 2.	The [Helion command-line interface](/als/v1/user/client/) (CLI) must be installed.
-3.	You must have access to the web-based [Helion Management console](/als/v1/user/client/).
+3.	You must have access to the web-based [Helion Management console](/als/v1/user/console/).
 
 ##RabbitMQ
 
