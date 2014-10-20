@@ -28,7 +28,7 @@ To create a CloudFoundry&trade; app in PHP, the only mandatory files are the *in
 The *composer.json* file is completely optional; however, certain buildpacks may issue a warning if the file is not present.
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging). The sample  application required access to the Internet in order to download dependent packages. 
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
 The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
