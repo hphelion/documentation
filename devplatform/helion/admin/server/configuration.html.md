@@ -52,9 +52,8 @@ The default password for the Helion system user
 is **helion**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
 
 This password is changed to match the one set for the first
-administrative user created in the Management Console. Once you've set
-up the primary Application Lifecycle Service admin account, use that account's password when
-logging in to the VM at the command line.
+administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when
+logging in to the VM at the command line. 
 
 In an Application Lifecycle Service cluster, this change only happens on the node serving the
 Management Console pages (which could be one of [*multiple Controller
