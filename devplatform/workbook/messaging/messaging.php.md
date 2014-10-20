@@ -18,6 +18,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
 - Access to the web-based [Helion Management Console](/als/v1/user/client/).
 
+## Rabbit MQ ##
 If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
 
 - Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
