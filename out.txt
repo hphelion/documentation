@@ -1,69 +1,663 @@
-Searching...this may take a while...
-./cli.nova.reference.md:`nova boot [--flavor <flavor>] [--image <image>] [--meta <key=value>] [--file <dst-path=src-path>] [--key_name <key_name>] [--user_data <user-data>] [--security_groups <security_groups>] [--block_device_mapping <dev_name=mapping>] [--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>] [--config-drive <value>] <backup>`
-./cli.nova.reference.md::  Store arbitrary files from <src-path> locally to <dst-path> on the new server. You may store up to 5 files.
-./cli.windows.2.containers-and-folders.md:<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-./cli.windows.containers-and-folders.md:<!-- <iframe src="http://player.vimeo.com/video/33349560?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
-./commercial/GA1/commercial.install-GA-ovsvapp.md:		cd /hp-ovsvapp/src/ovsvm/
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" "> 
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.ALS-developer-trial-quick-start.md:<img src=" ">
-./devplatform/devplatform.eclipse.md:3. Drag the install link into the Package Explorer view.<br><img src="eclipse1.png">
-./devplatform/devplatform.eclipse.md:1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.<br><img src="eclipse2.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse3.png"/>
-./devplatform/devplatform.eclipse.md:	 <img src="eclipse4.png">
-./devplatform/devplatform.eclipse.md:	<img src="eclipse7.png">
-./devplatform/devplatform.eclipse.md:	<img src="eclipse6.png">
-./devplatform/devplatform.eclipse.md:	<img src="eclipse5.png">
-./devplatform/devplatform.eclipse.md:	<img src="eclipse8.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse10.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse12.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse13.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse14.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse15.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse16.png"/>
-./devplatform/devplatform.eclipse.md:	<img src="eclipse17.png"/>
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="content/documentation/devplatform/stackato/imagesppt1.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/ppt2.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/ppt3.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/ppt4.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/loggly1.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/loggly2.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	 <img src="/content/documentation/devplatform/stackato/images/images/loggly3.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	 <img src="/content/documentation/devplatform/stackato/images/loggly4.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	 <img src="/content/documentation/devplatform/stackato/images/loggly5.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/splunk1.png" />
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/documentation/devplatform/stackato/images/splunk2.png"/>
-./devplatform/stackato/admin/best-practices/logging-examples.html.md:	<img src="/content/documentation/devplatform/stackato/images/splunk3.png" />
-./devplatform/stackato/admin/reference/architecture.html.md:<img src="/content/documentation/devplatform/stackato/images/helion-architecture-diagram.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/als/v1/images/ppt11.png">
-./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/als/v1/images/logo.png">
-./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/als/v1/images/ppt21w.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/content/documentation/devplatform/stackat0/images/ppt31.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:    <img src="/content/documentation/devplatform/stackat0/images/ppt41.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:<image src="..\..\images\loggly11.png">
-./devplatform/stackato/user/deploy/app-logs.html.md: 	<img src="..\..\images\loggly21.png">
-./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="..\..\images\loggly31.png">
-./devplatform/stackato/user/deploy/app-logs.html.md: 	<img src="..\..\images\loggly41.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md: 	<img src="..\..\images\loggly51.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="/content/documentation/devplatform/stackat0/images/splunk11.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="/content/documentation/devplatform/stackat0/images/splunk21.png" />
-./devplatform/stackato/user/deploy/app-logs.html.md:	<img src="/content/documentation/devplatform/stackat0/images/splunk31.png" />
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Initial_Screen.png">
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/New_Server.png">
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Connect-To-Server.png">
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Manage-Cloud-Url.png">
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Connect-To-Server-2.png">
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images//Select-Org-Space.png">
-./devplatform/stackato/user/deploy/languages/eclipse/index.md:<img src="/images/Server-Connected.png">
-./node.38.md:<!--<iframe src="LINK" width="640" height="464" frameborder="0"> </iframe>-->
- 
-Finished searching
- 
-If you got more results than you can read easily in the shell, use 
-   find2strings [string1] [string2] > out.txt 
-to send the results to a file named out.txt
+http-proxy
+http/sessions/
+http://&lt;Undercloud_IP&gt;/icinga/
+http://12factor.net/
+http://192.168.124.10/nagios3/
+http://33hops.com/xsibackup-vmware-esxi-backup.html
+http://<admin.node.ip>:8091/<image.name>
+http://ant.apache.org/
+http://api.openstack.org/api-ref-compute-v2.html
+http://api.openstack.org/api-ref-identity-v2.html
+http://api.openstack.org/api-ref.html
+http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.2-2ubuntu2.5_amd64.deb
+http://argo.sourceforge.net/downloads.html
+http://blog.cloudfoundry.com/2012/03/12/using-cloud-foundry-services-with-ruby-part-1-auto-reconfiguration/
+http://blog.cloudfoundry.com/2012/03/15/using-cloud-foundry-services-with-ruby-part-2-run-time-support-for-ruby-applications
+http://blog.docker.io/2013/07/how-to-use-your-own-registry/
+http://cloudfoundry.org/index.html
+http://cloudglossary.com/
+http://code.activestate.com/ppm
+http://code.activestate.com/pypm
+http://code.activestate.com/pypm/
+http://code.google.com/p/go/downloads/list
+http://code.google.com/p/jclouds
+http://code.google.com/p/jclouds/wiki/QuickStartOpenStack
+http://code.google.com/p/memcached-session-manager/
+http://code.macournoyer.com/thin/
+http://community.hpcloud.com/article/managing-your-key-pairs-0
+http://dev.chromium.org/spdy/
+http://developer.openstack.org/api-ref-blockstorage-v2.html
+http://developer.openstack.org/api-ref-image-v2.html
+http://developer.openstack.org/api-ref-networking-v2.html
+http://developer.openstack.org/api-ref-orchestration-v1.html
+http://developer.openstack.org/api-ref-telemetry-v2.html
+http://dmtf.org/standards/ovf
+http://docs.activestate.com/activeperl/5.14/
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-AssociateAddress.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-AuthorizeSecurityGroupIngress.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-CreateKeyPair.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-CreateSecurityGroup.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DeleteKeyPair.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DeleteSecurityGroup.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeAddresses.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeImageAttribute.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeImages.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstances.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeKeyPairs.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSecurityGroups.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DisassociateAddress.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-GetConsoleOutput.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-ModifyImageAttribute.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-RebootInstances.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-ReleaseAddress.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-RevokeSecurityGroupIngress.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-RunInstances.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-TerminateInstances.html
+http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/index.html?ApiReference-query-AllocateAddress.html
+http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-query-api.html#query-authentication
+http://docs.cloudfoundry.com/frameworks/ruby/ruby-rails-sinatra
+http://docs.cloudfoundry.org/
+http://docs.cloudfoundry.org/concepts/architecture/execution-agent.html
+http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html
+http://docs.docker.io/en/latest/
+http://docs.docker.io/en/latest/use/builder/
+http://docs.docker.io/en/latest/use/builder/#add
+http://docs.docker.io/en/latest/use/builder/#from
+http://docs.docker.io/en/latest/use/builder/#run
+http://docs.hpcloud.com/api/
+http://docs.hpcloud.com/api/dns
+http://docs.hpcloud.com/api/v13/monitoring/#AlarmExpressions-jumplink-span
+http://docs.hpcloud.com/cli/nova
+http://docs.hpcloud.com/cli/unix
+http://docs.hpcloud.com/cli/unix/network
+http://docs.hpcloud.com/cli/windows/2/reference#Connect-Server
+http://docs.hpcloud.com/cli/windows/2/reference#reset-password
+http://docs.hpcloud.com/cli/windows/installation
+http://docs.hpcloud.com/cli/windows/reference
+http://docs.hpcloud.com/cli/windows/release-notes/
+http://docs.hpcloud.com/cloudos/install/
+http://docs.hpcloud.com/compute/
+http://docs.hpcloud.com/compute/vpn-quickstart
+http://docs.hpcloud.com/helion/community/install-overview/
+http://docs.hpcloud.com/helion/openstack/
+http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/
+http://docs.hpcloud.com/helion/openstack/install/prereqs/
+http://docs.hpcloud.com/lbaas
+http://docs.hpcloud.com/mc/compute/networks/
+http://docs.hpcloud.com/object-storage
+http://docs.hpcloud.com/version-overview?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=
+http://docs.newrelic.com/docs/server/server-monitor-installation-ubuntu-and-debian
+http://docs.nuget.org/docs/start-here/using-the-package-manager-console
+http://docs.openstack.org
+http://docs.openstack.org/
+http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html
+http://docs.openstack.org/api/quick-start/content/index.html#Compute_API_Quick_Start
+http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html
+http://docs.openstack.org/cli-reference/content/cinderclient_commands.html
+http://docs.openstack.org/cli-reference/content/glanceclient_commands.html
+http://docs.openstack.org/cli-reference/content/heatclient_commands.html
+http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html
+http://docs.openstack.org/cli-reference/content/neutronclient_commands.html
+http://docs.openstack.org/cli-reference/content/novaclient_commands.html
+http://docs.openstack.org/developer/horizon/
+http://docs.openstack.org/developer/ironic/
+http://docs.openstack.org/developer/trove/
+http://docs.openstack.org/glossary/content/glossary.html
+http://docs.openstack.org/high-availability-guide/content/ch-intro.html
+http://docs.openstack.org/high-availability-guide/content/index.html
+http://docs.openstack.org/ops/
+http://docs.openstack.org/trunk/config-reference/content/HP-LeftHand-StoreVirtual-driver.html
+http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html
+http://docs.openstack.org/trunk/openstack-network/admin/content/index.html
+http://docs.openstack.org/trunk/openstack-ops/content/index.html
+http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html
+http://docs.openstack.org/user-guide/content/ch_cli.html
+http://docs.openstack.org/user-guide/content/cli_manage_images.html
+http://docs.openstack.org/user-guide/content/glanceclient_commands.html
+http://docs.openstack.org/user-guide/content/index.html
+http://docs.openstack.org/user-guide/content/install_clients.html
+http://docs.stackat0.com
+http://docs.stackat0.com/admin/server/hpcs.html
+http://downloads.linux.hp.com/SDR/repo/mcp/pool/non-free/hpssacli-2.0-16.0_amd64.deb
+http://drupal.org
+http://drupal.org/project/hpcloud
+http://embeddedjs.com/
+http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol
+http://en.wikipedia.org/wiki/Beowulf_cluster
+http://en.wikipedia.org/wiki/Dnsmasq
+http://en.wikipedia.org/wiki/Domain_Name_System
+http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol
+http://en.wikipedia.org/wiki/Framekiller
+http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names
+http://en.wikipedia.org/wiki/JSON
+http://en.wikipedia.org/wiki/Message_broker
+http://en.wikipedia.org/wiki/Multicast_DNS
+http://en.wikipedia.org/wiki/Network_address_translation
+http://en.wikipedia.org/wiki/NoSQL
+http://en.wikipedia.org/wiki/Platform_as_a_service
+http://en.wikipedia.org/wiki/Server_Name_Indication
+http://en.wikipedia.org/wiki/YAML
+http://fog.io
+http://fog.io/
+http://github.com/fog/fog
+http://github.com/geemus/excon
+http://go.hpcloud.com/PaaS-private-beta-signup
+http://golang.org/
+http://guide.python-distribute.org/pip.html#running-your-own-package-index
+http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf
+http://h17007.www1.hp.com/us/en/enterprise/servers/products/moonshot/index.aspx#tab=TAB2
+http://h20427.www2.hp.com/campaign/hp-cloud-centre-of-excellence/ap/en/index.html
+http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken
+http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf
+http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5
+http://h30529.www3.hp.com/t5/HP-Scaling-the-Cloud-Blog/Migrating-your-files-with-the-Windows-CLI/ba-p/523
+http://h30529.www3.hp.com/t5/HP-Scaling-the-Cloud-Blog/bg-p/cloudBlog
+http://hlinux-home.usa.hp.com/bugzilla/
+http://hp.com/go/storeserv
+http://hp.com/go/storevirtual
+http://hpcloud.codeplex.com/
+http://hpcloud.codeplex.com/releases/view/95187
+http://hpcloud.com
+http://hpcloud.github.com/HPCloud-PHP/
+http://hpcloud.github.io/hpcloud-js/
+http://jclouds.apache.org/start/install/
+http://kb.siteground.com/how_to_generate_an_ssh_key_on_windows_using_putty/
+http://kb.vmware.com/
+http://keystone.openstack.org/
+http://loggly.com/
+http://manpages.ubuntu.com/manpages/lucid/man1/scp.1
+http://manpages.ubuntu.com/manpages/man5/interfaces.5
+http://manpages.ubuntu.com/manpages/man7/environ.7
+http://manpages.ubuntu.com/manpages/man8/iptables.8
+http://manpages.ubuntu.com/manpages/man8/logrotate.8
+http://manpages.ubuntu.com/manpages/man8/resolvconf.8
+http://manpages.ubuntu.com/manpages/oneiric/man1/crontab.1
+http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=106257
+http://maven.apache.org/
+http://maven.apache.org/ "Maven"
+http://maven.apache.org/guides/getting-started/windows-prerequisites.html
+http://memcached.org/
+http://mmcgrana.github.com/2012/09/getting-started-with-go-on-heroku
+http://msdn.microsoft.com/en-us/library/windows/desktop/aa383015(v=vs.85
+http://msdn.microsoft.com/en-us/library/windows/desktop/aa717088(v=vs.85
+http://nagios.sourceforge.net/docs/3_0/toc
+http://newrelic.com/
+http://newrelic.com/docs/php/php-agent-phpini-settings
+http://newrelic.com/docs/python/new-relic-for-python
+http://npmjs.org/doc/json
+http://openstack.org/community/
+http://openstack.org/projects/compute/
+http://openstack.org/projects/storage/
+http://peak.telecommunity.com/dist/ez_setup.py
+http://php.net/manual/en/memcached.sessions.php
+http://plackperl.org/
+http://projects.unbit.it/uwsgi/
+http://pypi.python.org/pypi/setuptools
+http://pypi.python.org/pypi/setuptools#windows
+http://python-designateclient.readthedocs.org/en/latest/installation.html
+http://python-designateclient.readthedocs.org/en/latest/shell.html
+http://rpm.newrelic.com/
+http://rubygems.org/gems/fog
+http://rubygems.org/gems/hpcloud
+http://search.cpan.org/dist/App-cpanminus/bin/cpanm
+http://search.cpan.org/dist/App-cpanminus/bin/cpanm#OPTIONS
+http://search.cpan.org/~markstos/CGI-Application-4.50/lib/CGI/Application.pm
+http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS
+http://sourceforge.net/projects/ipmitool/
+http://south.aeracode.org/
+http://supervisord.org/
+http://support.openview.hp.com/selfsolve/document/KM01061665/binary/CSA_410_LangSupport_Readme.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061666/binary/CSA_410_Release_Notes.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061667/binary/CSA_410_Management_Console_Help.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061668/binary/CSA_410_Marketplace_Portal_Help.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061669/binary/CSA_410_Content_Archive_Tool.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061670/binary/CSA_410_API_Reference.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061671/binary/CSA_410_Concepts_Guide.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061712/binary/CSA_410_FIPS_140-2_Compliance_Statement_Doc.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061713/binary/CSA_410_Installation_Guide.zip
+http://support.openview.hp.com/selfsolve/document/KM01061714/binary/CSA_410_Troubleshooting.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061715/binary/CSA_410_Linux_Configuration_Guide.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061716/binary/CSA_410_Win_Configuration_Guide.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061717/binary/CSA_410_Upgrade_Guide.zip
+http://support.openview.hp.com/selfsolve/document/KM01061718/binary/CSA_410_OS-3rdPty-Licenses.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061719/binary/CSA_410_IntegrationPack.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061720/binary/CSA_410_Reporting.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061721/binary/CSA_410_Process_Definition_Tool.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061722/binary/CSA_410_AppDeploymentRealizedTopoOnSequencedDesigns.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061723/binary/CSA_410_Oracle_RAC_Configuration.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061724/binary/CSA_410_SupportMatrix.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061725/binary/CSA_410_Whats_New.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061726/binary/CSA_410_Config_Linux_Cluster_Server_Failover.pdf
+http://support.openview.hp.com/selfsolve/document/KM01061727/binary/CSA_410_Config_Win_Cluster_Server_Failover.pdf
+http://support.openview.hp.com/selfsolve/document/KM01073005/binary/CSA_410_Release_Notes_ja.pdf
+http://support.openview.hp.com/selfsolve/document/KM01082360/binary/CSA_410_Configuring_Intelligent_Resource_Management.pdf
+http://support.openview.hp.com/selfsolve/document/KM01082361/binary/CSA_410_CustomerResoureProvider_PoolSelection.pdf
+http://support.openview.hp.com/selfsolve/document/KM01082362/binary/CSA_410_CustomerResoureProvider_Selection.pdf
+http://support.openview.hp.com/selfsolve/document/KM01085662/binary/CSA_410_Provider_Configuration_Tool.pdf
+http://support.openview.hp.com/selfsolve/document/KM01085663/binary/CSA_410_API_Quick_Start.pdf
+http://talks.codegram.com/heroku-buildpacks
+http://tomcat.apache.org/tomcat-6.0-doc/config/manager
+http://tools.ietf.org/html/rfc1918
+http://tools.ietf.org/html/rfc2136
+http://tools.ietf.org/html/rfc3259
+http://tools.ietf.org/html/rfc3723#page-28
+http://tools.ietf.org/html/rfc7143
+http://us-support.external.hp.com/portal/site/hpsc/public
+http://virt-manager.org/
+http://webnoir.org/
+http://wiki.nginx.org/
+http://wiki.strongswan.org
+http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection
+http://wiki.strongswan.org/projects/strongswan/wiki/FAQ
+http://wiki.strongswan.org/projects/strongswan/wiki/InstallationDocumentation "strongSwan wiki"
+http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf
+http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets
+http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation
+http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation"
+http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/
+http://www.amqp.org/about/what
+http://www.apache.org/licenses/LICENSE-2.0
+http://www.bouncycastle.org
+http://www.changeip.com/freedomains.asp
+http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+http://www.chromium.org/spdy
+http://www.cohesiveft.com/dnld/CohesiveFT-VNS3-3.0.4_HPCS.pdf
+http://www.cpan.org/
+http://www.cygwin.com/
+http://www.dell.com/us/business/p/poweredge-r620/pd
+http://www.eclipse.org/m2e
+http://www.freesshd.com/?ctt=download
+http://www.gnu.org/copyleft/gpl.txt
+http://www.gnu.org/licenses/
+http://www.h3c.com/portal/download.do?id=1223846
+http://www.hp.com/go/SWLicensing
+http://www.hp.com/software/licensing
+http://www.hpcloud.com/
+http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=
+http://www.hpcloud.com/about/contact
+http://www.hpcloud.com/blog/blog-series-software-development-cloud
+http://www.hpcloud.com/blog/cloud-dev-test-changes-everything
+http://www.hpcloud.com/blog/holy-grail-devtest-deploying-production-identical-dev-environments-minutes
+http://www.hpcloud.com/blog/releasing-ruby-bindings-wild
+http://www.hpcloud.com/free-trial
+http://www.hpcloud.com/products-services/object-storage
+http://www.hpcloud.com/sites/default/files/Right-storage-for-you.pdf
+http://www.jclouds.org
+http://www.jclouds.org/documentation/quickstart/hpcloud
+http://www.jclouds.org/documentation/userguide/blobstore-guide
+http://www.jclouds.org/documentation/userguide/installation-guide
+http://www.jetbrains.com/teamcity/plugins/
+http://www.kernel.org/pub/linux/libs/pam/
+http://www.microsoft.com/net/
+http://www.mysql.com/about/legal/licensing/foss-exception.html
+http://www.nagios.org/
+http://www.openssl.org/
+http://www.openstack.org/
+http://www.openstack.org/software/openstack-networking/
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+http://www.pip-installer.org/en/latest/
+http://www.pip-installer.org/en/latest/cookbook.html#requirements-files
+http://www.pip-installer.org/en/latest/requirements
+http://www.python.org/download/
+http://www.python.org/ftp/python/2.7.3/python-2.7.3.amd64.msi
+http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi
+http://www.rabbitmq.com/devtools.html
+http://www.splunk.com/download
+http://www.sqlite.org/
+http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/
+http://www.websocket.org/aboutwebsocket
+http://www.yaml.org/
+http://www8.hp.com/us/en/cloud/hphelion-openstack-community.html
+http://www8.hp.com/us/en/cloud/hphelion-openstack.html
+http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html
+http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871
+http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527
+http://xip.io/
+http://yaml.org/type/bool
+httpd.apache.org/docs/current/howto/htaccess
+httpd.apache.org/docs/current/mod/mod_rewrite.html#rewriterule
+https
+https://&lt;Admin node IP&gt;:3000
+https://192.168.124.10/nagios3/
+https://<iLO IP address>
+https://account.hpcloud.com/cases
+https://account.hpcloud.com/cases#support_chat
+https://account.hpcloud.com/login
+https://account.hpcloud.com/signup
+https://apaas-docs.hpcloud.com
+https://apaas-docs.hpcloud.com/client/index.html
+https://apaas-docs.hpcloud.com/console/index.html
+https://apaas-docs.hpcloud.com/index.html#best-practices
+https://apaas-docs.hpcloud.com/index.html#deploy-applications
+https://apaas-docs.hpcloud.com/index.html#language-specific-deployment
+https://apaas-docs.hpcloud.com/index.html#reference
+https://apaas-docs.hpcloud.com/quick-start/index.html
+https://apaas-docs.hpcloud.com/tutorial.html
+https://apaas.hpcloud.com/shared/free-private-beta/signup
+https://api.shared.apaas.hpcloudsvc.com/
+https://app.loggly.com/pricing
+https://ask.openstack.org
+https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion
+https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion/page:1/
+https://bugs.launchpad.net/bugs/1191429
+https://bugs.launchpad.net/bugs/1191431
+https://bugs.launchpad.net/cinder/+bug/1188039
+https://bugs.launchpad.net/cirros/+bug/1099611
+https://bugs.launchpad.net/nova/+bug/1176446
+https://bugs.launchpad.net/nova/+bug/1186354
+https://bugs.launchpad.net/nova/+bug/851159
+https://bugs.launchpad.net/quantum/+bug/1191159
+https://bugs.launchpad.net/ubuntu/+source/keystone/+bug/1032633
+https://community.dev.hp.com/t5/Forum/bd-p/cloud_board
+https://community.hpcloud.com
+https://community.hpcloud.com/
+https://community.hpcloud.com/article/activating-cdn-your-object-storage
+https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
+https://community.hpcloud.com/article/cohesiveft-partner-images-now-available
+https://community.hpcloud.com/article/common-errors-using-windows-powershell-cli
+https://community.hpcloud.com/article/common-ports-and-their-service
+https://community.hpcloud.com/article/configuring-your-windows-firewall-mirror-your-security-group
+https://community.hpcloud.com/article/converting-your-keypair-file
+https://community.hpcloud.com/article/creating-snapshot-instance-135
+https://community.hpcloud.com/article/creating-your-first-instance
+https://community.hpcloud.com/article/creating-your-first-instance-135
+https://community.hpcloud.com/article/creating-your-first-instance-135#persconsole
+https://community.hpcloud.com/article/getting-prompted-password-when-accessing-your-instance-first-time-135
+https://community.hpcloud.com/article/getting-started-compute-135
+https://community.hpcloud.com/article/getting-started-compute-135#actservice
+https://community.hpcloud.com/article/getting-started-guide
+https://community.hpcloud.com/article/getting-started-guide/
+https://community.hpcloud.com/article/how-addremove-security-groups-existing-instance
+https://community.hpcloud.com/article/how-do-i-set-activestate-stackat0-hp-cloud-services
+https://community.hpcloud.com/article/hp-cloud-account-limits-135
+https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide
+https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135
+https://community.hpcloud.com/article/managing-account-users
+https://community.hpcloud.com/article/managing-your-block-storage-135
+https://community.hpcloud.com/article/managing-your-block-storage-135#console
+https://community.hpcloud.com/article/managing-your-block-storage-135#consoleattach
+https://community.hpcloud.com/article/managing-your-floating-ips-135
+https://community.hpcloud.com/article/managing-your-key-pairs-135
+https://community.hpcloud.com/article/managing-your-security-groups-135
+https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs
+https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs-135
+https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs-135#keyapi
+https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs-135#keylinux
+https://community.hpcloud.com/article/migrating-or-transferring-your-key-pairs-135#keywin
+https://community.hpcloud.com/article/mounting-additional-space
+https://community.hpcloud.com/article/mounting-additional-space#CentOS6.2
+https://community.hpcloud.com/article/naming-convention-best-practices
+https://community.hpcloud.com/article/preparing-your-block-storage-volume-use
+https://community.hpcloud.com/article/python-novaclient-linux-installation
+https://community.hpcloud.com/article/relational-database-v136-python-troveclient-cli-linux-installation-0
+https://community.hpcloud.com/article/understanding-network-topology-135
+https://community.hpcloud.com/article/uploading-files-linux-instance-linux-or-mac-osx-using-rsync
+https://community.hpcloud.com/article/using-rsync-upload-or-transfer-files-linux-and-mac-osx
+https://community.hpcloud.com/article/using-sftp-transfer-files-between-windows-instances
+https://community.hpcloud.com/article/using-vnc-console-access-your-instance-135
+https://community.hpcloud.com/forum
+https://community.hpcloud.com/knowledge-base
+https://community.hpcloud.com/knowledge-base-categories/compute-v135
+https://community.hpcloud.com/search/forum/network
+https://community.hpcloud.com/search/knowledge/API
+https://community.hpcloud.com/search/knowledge/API+key
+https://community.hpcloud.com/search/knowledge/Apache+Maven
+https://community.hpcloud.com/search/knowledge/Availibility+Zone
+https://community.hpcloud.com/search/knowledge/CCU
+https://community.hpcloud.com/search/knowledge/CDN
+https://community.hpcloud.com/search/knowledge/CDN+enabled
+https://community.hpcloud.com/search/knowledge/CLI
+https://community.hpcloud.com/search/knowledge/Cloud+compute
+https://community.hpcloud.com/search/knowledge/CodePlex
+https://community.hpcloud.com/search/knowledge/Compute+Cluster
+https://community.hpcloud.com/search/knowledge/Container
+https://community.hpcloud.com/search/knowledge/Dependency+Management
+https://community.hpcloud.com/search/knowledge/EC2
+https://community.hpcloud.com/search/knowledge/GitHub
+https://community.hpcloud.com/search/knowledge/IKE
+https://community.hpcloud.com/search/knowledge/IPsec
+https://community.hpcloud.com/search/knowledge/Maven
+https://community.hpcloud.com/search/knowledge/Metadata
+https://community.hpcloud.com/search/knowledge/Model+Abstraction
+https://community.hpcloud.com/search/knowledge/OpenStack
+https://community.hpcloud.com/search/knowledge/PHP
+https://community.hpcloud.com/search/knowledge/PowerShell
+https://community.hpcloud.com/search/knowledge/Provisioning
+https://community.hpcloud.com/search/knowledge/REST
+https://community.hpcloud.com/search/knowledge/RVM
+https://community.hpcloud.com/search/knowledge/Request+abstraction
+https://community.hpcloud.com/search/knowledge/Ruby
+https://community.hpcloud.com/search/knowledge/Ruby+Fox
+https://community.hpcloud.com/search/knowledge/SSL
+https://community.hpcloud.com/search/knowledge/Security+Group
+https://community.hpcloud.com/search/knowledge/Security+Group+Rule
+https://community.hpcloud.com/search/knowledge/SendGrid
+https://community.hpcloud.com/search/knowledge/Server
+https://community.hpcloud.com/search/knowledge/Service+Catalog
+https://community.hpcloud.com/search/knowledge/Token
+https://community.hpcloud.com/search/knowledge/User
+https://community.hpcloud.com/search/knowledge/WebFarm
+https://community.hpcloud.com/search/knowledge/abstraction+layer
+https://community.hpcloud.com/search/knowledge/acl
+https://community.hpcloud.com/search/knowledge/allocation
+https://community.hpcloud.com/search/knowledge/authentication
+https://community.hpcloud.com/search/knowledge/authentication+token
+https://community.hpcloud.com/search/knowledge/bindings
+https://community.hpcloud.com/search/knowledge/block+storage
+https://community.hpcloud.com/search/knowledge/bootable+image
+https://community.hpcloud.com/search/knowledge/bucket
+https://community.hpcloud.com/search/knowledge/burst
+https://community.hpcloud.com/search/knowledge/credentials
+https://community.hpcloud.com/search/knowledge/deprovisioning
+https://community.hpcloud.com/search/knowledge/endpoint
+https://community.hpcloud.com/search/knowledge/flavor
+https://community.hpcloud.com/search/knowledge/floating+IP+address
+https://community.hpcloud.com/search/knowledge/gem
+https://community.hpcloud.com/search/knowledge/git
+https://community.hpcloud.com/search/knowledge/identity+management
+https://community.hpcloud.com/search/knowledge/image
+https://community.hpcloud.com/search/knowledge/image+bootable
+https://community.hpcloud.com/search/knowledge/image+partner
+https://community.hpcloud.com/search/knowledge/image+private
+https://community.hpcloud.com/search/knowledge/image+public
+https://community.hpcloud.com/search/knowledge/instance
+https://community.hpcloud.com/search/knowledge/jclouds
+https://community.hpcloud.com/search/knowledge/key
+https://community.hpcloud.com/search/knowledge/key+pair
+https://community.hpcloud.com/search/knowledge/management+console
+https://community.hpcloud.com/search/knowledge/nat-t
+https://community.hpcloud.com/search/knowledge/object
+https://community.hpcloud.com/search/knowledge/private+image
+https://community.hpcloud.com/search/knowledge/public+image
+https://community.hpcloud.com/search/knowledge/role
+https://community.hpcloud.com/search/knowledge/rule
+https://community.hpcloud.com/search/knowledge/snapshot
+https://community.hpcloud.com/search/knowledge/strongSwan
+https://community.hpcloud.com/search/knowledge/tenant
+https://community.hpcloud.com/search/knowledge/tenant+ID
+https://community.hpcloud.com/search/knowledge/volume
+https://community.hpcloud.com/search/knowledge/volume+bootable
+https://community.hpcloud.com/status
+https://connect.hpcloud.com
+https://connect.hpcloud.com/
+https://console.hpcloud.com
+https://console.hpcloud.com/
+https://console.hpcloud.com/account/api_keys
+https://console.hpcloud.com/login
+https://console.hpcloud.com/manage
+https://devcenter.heroku.com/articles/buildpacks
+https://devcenter.heroku.com/articles/procfile
+https://devcenter.heroku.com/articles/profiled
+https://devcenter.heroku.com/articles/ruby#webserver
+https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options
+https://developers.google.com/speed/docs/best-practices/caching#LeverageBrowserCaching "Leverage browser caching"
+https://docs.djangoproject.com/en/1.3/howto/static-files/#using-django-contrib-staticfiles
+https://docs.hpcloud.com
+https://docs.hpcloud.com/
+https://docs.hpcloud.com/api/dns/
+https://docs.hpcloud.com/api/v13/compute/
+https://docs.hpcloud.com/api/v13/compute/#4.1.12SecurityGroups
+https://docs.hpcloud.com/api/v13/compute/#createKeypair
+https://docs.hpcloud.com/api/v13/compute/#createSecGroupRule-jumplink-span
+https://docs.hpcloud.com/api/v13/image/
+https://docs.hpcloud.com/api/v13/networking/
+https://docs.hpcloud.com/bindings/fog/install
+https://docs.hpcloud.com/cli
+https://docs.hpcloud.com/cli/
+https://docs.hpcloud.com/cli/nova/install
+https://docs.hpcloud.com/cli/nova/reference
+https://docs.hpcloud.com/cli/unix
+https://docs.hpcloud.com/cli/unix/account-management
+https://docs.hpcloud.com/cli/unix/block-storage
+https://docs.hpcloud.com/cli/unix/cdn
+https://docs.hpcloud.com/cli/unix/compute
+https://docs.hpcloud.com/cli/unix/configuration
+https://docs.hpcloud.com/cli/unix/dns
+https://docs.hpcloud.com/cli/unix/install
+https://docs.hpcloud.com/cli/unix/object-storage
+https://docs.hpcloud.com/cli/unix/reference
+https://docs.hpcloud.com/cli/unix/release-notes
+https://docs.hpcloud.com/compute/using/
+https://docs.hpcloud.com/helion/community
+https://docs.hpcloud.com/helion/openstack/
+https://docs.hpcloud.com/identity
+https://docs.hpcloud.com/library
+https://docs.hpcloud.com/migration-overview/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_migration-overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=
+https://en.wikipedia.org/wiki/CNAME_record "Wikipedia: CNAME record"
+https://en.wikipedia.org/wiki/Content_delivery_network "Wikipedia: Content delivery network"
+https://en.wikipedia.org/wiki/HTTPS "Wikipedia: HTTP Secure"
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection "Wikipedia: List of HTTP status codes"
+https://github.com/ActiveState/stackato-samples/commit/59ec0791
+https://github.com/HP/logyard-devguide#readme
+https://github.com/HelionDevPlatform/helion-hello-world-java
+https://github.com/HelionDevPlatform/helion-hello-world-node
+https://github.com/HelionDevPlatform/helion-mysql-java
+https://github.com/HelionDevPlatform/helion-mysql-node/
+https://github.com/HelionDevPlatform/helion-mysql-php
+https://github.com/HelionDevPlatform/helion-mysql-php/
+https://github.com/HelionDevPlatform/helion-rabbitmq-java
+https://github.com/HelionDevPlatform/helion-rabbitmq-node
+https://github.com/HelionDevPlatform/helion-rabbitmq-php/
+https://github.com/Stackato-Apps
+https://github.com/Stackato-Apps/4clojure/blob/stackato/src/foreclojure/config.clj#L6
+https://github.com/Stackato-Apps/bottle-currency
+https://github.com/Stackato-Apps/bottle-currency/tree/newrelic
+https://github.com/Stackato-Apps/bottle-py3
+https://github.com/Stackato-Apps/bugzilla
+https://github.com/Stackato-Apps/catalyst-tut2
+https://github.com/Stackato-Apps/catalyst-tut3
+https://github.com/Stackato-Apps/catalyst-welcome
+https://github.com/Stackato-Apps/celery-demo
+https://github.com/Stackato-Apps/dancer-helloworld
+https://github.com/Stackato-Apps/django-gtd
+https://github.com/Stackato-Apps/example-python-django
+https://github.com/Stackato-Apps/go-hello-buildpack
+https://github.com/Stackato-Apps/mason-helloworld
+https://github.com/Stackato-Apps/mojo-helloworld
+https://github.com/Stackato-Apps/mojo-helloworld/app.pl
+https://github.com/Stackato-Apps/mojo-scalingdemo
+https://github.com/Stackato-Apps/node-env
+https://github.com/Stackato-Apps/perlcgi-env
+https://github.com/Stackato-Apps/perlcritic.com
+https://github.com/Stackato-Apps/pet-catalog/tree/newrelic
+https://github.com/Stackato-Apps/photobooth
+https://github.com/Stackato-Apps/pinax-social
+https://github.com/Stackato-Apps/pyramid-default
+https://github.com/Stackato-Apps/pyramid-virginia
+https://github.com/Stackato-Apps/retester
+https://github.com/Stackato-Apps/rubric
+https://github.com/Stackato-Apps/tornado-chat-mongo
+https://github.com/Stackato-Apps/tornado-chat-mongo/blob/master/stackato.yml
+https://github.com/Stackato-Apps/werkzeug-debugger
+https://github.com/Stackato-Apps/wordpress/tree/newrelic
+https://github.com/Stackato-Apps/wsgi-helloworld
+https://github.com/balor/connect-memcached#connect-memcached
+https://github.com/fog/fog
+https://github.com/fog/fog/blob/master/lib/fog/hp/README.md
+https://github.com/fog/fog/blob/master/lib/fog/hp/examples/getting_started_examples.md
+https://github.com/fog/fog/graphs/contributors
+https://github.com/ha/doozerd/#readme
+https://github.com/helion-apps/helion-worker/tree/master
+https://github.com/hpcloud/hpcloud-js
+https://github.com/hpcloud/unix_cli
+https://github.com/jclouds/jclouds-examples
+https://github.com/jcoleman/tomcat-redis-session-manager
+https://github.com/pypa/pip/issues/219
+https://github.com/stackforge/openstack-sdk-dotnet
+https://github.com/technomancy/leiningen
+https://helion.hpwsportal.com
+https://helion.hpwsportal.com/#/Home/Show
+https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show
+https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show
+https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show
+https://help.ubuntu.com/community/CloudInit
+https://help.ubuntu.com/community/DynamicDNS#Registering_with_a_Dynamic_DNS_provider
+https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication
+https://help.ubuntu.com/community/UFW
+https://horizon.hpcloud.com
+https://horizon.hpcloud.com/
+https://horizon.hpcloud.com/control_services/projects
+https://horizon.hpcloud.com/control_services/projects/
+https://horizon.hpcloud.com/control_services/users/
+https://horizon.hpcloud.com/landing
+https://horizon.hpcloud.com/landing/
+https://horizon.hpcloud.com/landing/pbr/hpext:lbaas
+https://horizon.hpcloud.com/metering_billing/
+https://horizon.hpcloud.com/project/networks/
+https://horizon.hpcloud.com/register
+https://horizon.hpcloud.com/settings/account_info
+https://horizon.hpcloud.com/settings/account_info/
+https://horizon.hpcloud.com/settings/cases/
+https://hp.com/go/cloudmanagement
+https://launchpad.net/wsrep/
+https://manage.hpcloud.com
+https://marketplace.hpcloud.com/
+https://metacpan.org/module/Carton
+https://metacpan.org/module/Catalyst
+https://metacpan.org/module/Catalyst#Home
+https://metacpan.org/module/ExtUtils::MakeMaker::Tutorial
+https://metacpan.org/module/MIYAGAWA/Module-CPANfile-0.9031/lib/cpanfile.pod
+https://metacpan.org/module/MIYAGAWA/Module-CPANfile-0.9031/lib/cpanfile.pod#SYNOPSIS
+https://newrelic.com/docs/python/python-agent-admin-script
+https://npmjs.org/
+https://papertrailapp.com/
+https://papertrailapp.com/plans
+https://pkg.helion.com/
+https://pypi.python.org/packages/source/P/PrettyTable/prettytable-0.5.tar.gz
+https://pypi.python.org/pypi/netaddr
+https://pypi.python.org/pypi/pyvmomi
+https://region-a.geo-1.identity.hpcloudsvc.com:35357/auth/v1.0/
+https://upgrade.helion.com/
+https://wiki.openstack.org/wiki/Designate
+https://wiki.openstack.org/wiki/Neutron
+https://wiki.openstack.org/wiki/Neutron/DVR/HowTo
+https://wiki.openstack.org/wiki/Nova
+https://wiki.openstack.org/wiki/OpenStackClient
+https://wiki.openstack.org/wiki/Quantum
+https://wiki.openstack.org/wiki/SDKs
+https://wiki.openstack.org/wiki/TripleO
+https://wiki.openstack.org/wiki/Trove
+https://www.hpcloud.com/#
+https://www.hpcloud.com/contact_us
+https://www.hpcloud.com/content/hp-cloud-identity-service
+https://www.hpcloud.com/learn
+https://www.hpcloud.com/products/RDB
+https://www.hpcloud.com/support
+https://www.nuget.org/packages/OpenStack-SDK-DotNet
+https://www.rabbitmq.com/documentation.html
+https://www.vmware.com/support/vsphere/

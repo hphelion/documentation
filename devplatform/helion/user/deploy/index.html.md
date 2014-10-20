@@ -245,7 +245,7 @@ section in *manifest.yml*. The resulting file is stored at
 
 ### Whitespace & Newlines in Environment Variables[](#whitespace-newlines-in-environment-variables "Permalink to this headline")
 
-To prevent breakage in cron, embedded newlines ("\\n") in environent
+To prevent breakage in cron, embedded newlines ("\\n") in environment
 variable values will be replaced with "\\\\n" when generating the
 crontab. Any leading and trailing spaces in environment variable values
 are also stripped.
