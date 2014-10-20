@@ -1,31 +1,31 @@
-betweeen
-sucessful
+[bB]etweeen
+[sS]ucessful
  on on 
-succesfully
-overriden
-simplist
-libary
-documenation
-followin 
-targetted
-requried
+[Ss]succesfully
+[Oo]verriden
+[sS]implist
+[lL]ibary
+[Dd]ocumenation
+[Ff]ollowin 
+[Tt]argetted
+[Rr]equried
  create create 
-athorization
-muliple
-manging
-recognises
+[Aa]thorization
+[Mm]uliple
+[Mm]anging
+[Rr]ecognises
 [Mm]utiple
  tot he 
  ahve 
  rpovide
- informatoin
+ [Ii]nformatoin
  [Aa]ccecpt
-environent
-possiblility
-selction
-initally
-tempates
-deploed
+ [Ee]nvironent
+[Pp]ossiblility
+[Ss]elction
+[Ii]nitally
+[Tt]empates
+[Dd]eploed
 Servce
 \<\<\!\-\-
 OpenStack®
