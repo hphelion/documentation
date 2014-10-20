@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/server/configuration/
@@ -6,36 +7,33 @@ permalink: /als/v1/admin/server/configuration/
 
 Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 ===============================================================================
+
    [Changing the Password](#changing-the-password)
-    -   [Network Setup](#network-setup)
-        -   [Changing the Hostname](#changing-the-hostname)
-        -   [Changing IP Addresses](#changing-ip-addresses)
-        -   [Setting a Static IP](#setting-a-static-ip)
-        -   [Modifying /etc/hosts](#modifying-etc-hosts)
-        -   [DNS](#dns)
-        -   [Dynamic DNS](#dynamic-dns)
-        -   [Alternate DNS Techniques](#alternate-dns-techniques)
-            -   [xip.io](#xip-io)
-            -   [dnsmasq](#dnsmasq)
-        -   [Adding DNS Nameservers](#adding-dns-nameservers)
-        -   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
-        -   [HTTP Proxy](#http-proxy)
-        -   [Staging Cache & App HTTP
-            Proxy](#staging-cache-app-http-proxy)
-    -   [VM Filesystem Setup](#vm-filesystem-setup)
-    -   [Application Lifecycle Service Data Services vs. High Availability
-        Databases](#helion-data-services-vs-high-availability-databases)
-    -   [HTTPS & SSL](#https-ssl)
-        -   [Using your own SSL
-            certificate](#using-your-own-ssl-certificate)
-        -   [Adding Custom SSL Certs
-            (SNI)](#adding-custom-ssl-certs-sni)
-        -   [CA Certificate Chaining](#ca-certificate-chaining)
-        -   [Generating a self-signed SSL
-            certificate](#generating-a-self-signed-ssl-certificate)
-    -   [Quota Definitions](#quota-definitions)
-        -   [sudo](#sudo)
-        -   [Allowed Repositories](#allowed-repositories)
+
+-   [Network Setup](#network-setup)
+	-   [Changing the Hostname](#changing-the-hostname)
+	-   [Changing IP Addresses](#changing-ip-addresses)
+	-   [Setting a Static IP](#setting-a-static-ip)
+	-   [Modifying the hosts file](#modifying-etc-hosts)
+	-   [DNS](#dns)
+	-   [Dynamic DNS](#dynamic-dns)
+	-   [Alternate DNS Techniques](#alternate-dns-techniques)
+		-   [xip.io](#xip-io)
+		-   [dnsmasq](#dnsmasq)
+		-   [Adding DNS Nameservers](#adding-dns-nameservers)
+		-   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
+		-   [HTTP Proxy](#http-proxy)
+		-   [Staging Cache & App HTTP Proxy](#staging)
+	-   [VM Filesystem Setup](#vm-filesystem-setup)
+	-   [Application Lifecycle Service Data Services vs. High Availability Databases](#helion-data-services-vs-high-availability-databases)
+	-   [HTTPS & SSL](#https-ssl)
+		-   [Using your own SSL certificate](#using-your-own-ssl-certificate)
+		-   [Adding Custom SSL Certs (SNI)](#adding-custom-ssl-certs-sni)
+		-   [CA Certificate Chaining](#ca-certificate-chaining)
+		-   [Generating a self-signed SSL certificate](#generating-a-self-signed-ssl-certificate)
+	-   [Quota Definitions](#quota-definitions)
+		-   [sudo](#sudo)
+		-   [Allowed Repositories](#allowed-repositories)
 
 General[](#general "Permalink to this headline")
 -------------------------------------------------
@@ -264,7 +262,9 @@ permissible. Once you have this secondary address set up, see the
 [*/etc/hosts*](#server-config-etc-hosts) section for final configuration
 of the server.
 
-### Modifying /etc/hosts[](#modifying-etc-hosts "Permalink to this headline")
+ 
+### Modifying /etc/hosts {#modifying-etc-hosts}
+ 
 
 The `/etc/hosts` file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
@@ -400,7 +400,7 @@ environment or connecting from a Windows system without mDNS support)
 but which do not merit the effort of manually configuring a DNS record
 (e.g. a test server) alternative methods are available.
 
-#### xip.io[](#xip-io "Permalink to this headline")
+#### xip.io []{#xip-io}
 
 The quickest way to get wildcard DNS resolution is to use the
 [xip.io](http://xip.io/) service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.
@@ -450,7 +450,7 @@ For Application Lifecycle Service VMs with a static IP, add the nameservers when
 when running the `kato op static_ip` command (see
 [*Setting a Static IP*](#server-config-static-ip) above).
 
-### TCP/UDP Port Configuration[](#tcp-udp-port-configuration "Permalink to this headline")
+### TCP/UDP Port Configuration {#tcp-udp-port-configuration}
 
 The Application Lifecycle Service [*micro
 cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
@@ -560,7 +560,7 @@ Then restart Polipo:
 For log info, any errors reported by Polipo are available on the
 Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
 
-### Staging Cache & App HTTP Proxy[](#staging-cache-app-http-proxy "Permalink to this headline")
+###Staging Cache & App HTTP Proxy {#staging}
 
 Application Lifecycle Service caches all application dependencies that are downloaded by
 module managers that support the
@@ -796,3 +796,5 @@ parameter of the `cloud_controller.yml` file:
 
 The file is located on the Application Lifecycle Service server at
 `~/helion/vcap/cloud_controller/config/cloud_controller.yml`
+=======
+>>>>>>> Stashed changes

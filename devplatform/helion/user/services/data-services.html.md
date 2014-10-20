@@ -140,7 +140,7 @@ These two commands do the same thing as if all three parameters were passed usin
         | myapp       | 1 | RUNNING | myapp.helion-xxxx.local | ordersdb, customerdb  |
         +-------------+---+---------+---------------------------+-----------------------+
 
-For further information on the commands for manging services, please see
+For further information on the commands for managing services, please see
 the [*helion services*](/als/v1/user/reference/client-ref/#command-services)
 command reference.
 

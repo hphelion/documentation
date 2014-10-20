@@ -31,8 +31,7 @@ This topic shows how to add a proxy node to the store account and container ring
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.
-* Starter Swift nodes are functional by default as they are part of cloud deployment. 
+* HP Helion OpenStack&#174; cloud is successfully deployed. *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 
 
@@ -43,7 +42,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 ##Update load balancer with new Proxy nodes
  
-1. Log in to the undercloud from Seed.
+1. Log in to the undercloud from seed.
  
 		# ssh heat-admin@<Undercloud IP address> 
 		# sudo -i
@@ -88,9 +87,6 @@ The Swift Proxies are now successfully enabled with HA Proxy.
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-**Related topics**
-
-* [Extend Swift Cluster]( /helion/openstack/services/object/swift/expand-cluster/)
 
 ----
 ####OpenStack trademark attribution

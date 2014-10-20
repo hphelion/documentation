@@ -136,7 +136,7 @@ The steps above will work with smaller clusters or micro clouds where
 the creation of Docker images on each DEA can be done manually. On
 larger clusters, you should set up a [Docker
 registry](http://blog.docker.io/2013/07/how-to-use-your-own-registry/)
-as a central repository for your container tempates.
+as a central repository for your container templates.
 
 1.  On the Core node of your cluster, pull the docker-registry
     \<https://index.docker.io/u/samalba/docker-registry/\> image from

@@ -4,38 +4,38 @@ permalink: /als/v1/admin/console/app-store/
 ---
 <!--PUBLISHED-->
 
-App Store[](#index-0 "Permalink to this headline")
+Sample Applications[](#index-0 "Permalink to this headline")
 ===================================================
- [App Store Definition](#app-store-definition)
+ [Sample Applications Definition](#app-store-definition)
             -   [store](#store)
             -   [apps](#apps)
         -   [Hosting the Store Definition
             Files](#hosting-the-store-definition-files)
-    -   [Adding the App Store to
+    -   [Adding the Sample Applications to
         Application Lifecycle Service](#adding-the-app-store-to-helion)
 
-The App Store is a collection of ready-to-run applications which can be
+The Sample Applications are a collection of ready-to-run applications which can be
 deployed to Application Lifecycle Service with a couple of clicks. This interface uses the
 same API as the CLI client, pulling the source code from a Git
 repository rather than pushing an archive from the user's local
 filesystem.
 
-Users have access to the main App Store interface (see the Application Lifecycle Service User
+Users have access to the main Sample Applications interface (see the Application Lifecycle Service User
 Guide), but do not have access to add new applications or store
 definitions.
 
-Creating an App Store[](#creating-an-app-store "Permalink to this headline")
+Creating Sample Applications[](#creating-an-app-store "Permalink to this headline")
 -----------------------------------------------------------------------------
 
-The App Store interface exposes multiple "stores" which specify the
+The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
 specified in the main [*Settings*](/als/v1/admin/console/#settings) page of
 the Management Console or set using [*kato
 config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config).
 
-### App Store Definition[](#app-store-definition "Permalink to this headline")
+### Sample Applications Definition[](#app-store-definition "Permalink to this headline")
 
-App Store definition
+Sample Applications definition
 [*YAML*](/als/v1/user/reference/glossary/#term-yaml) files describe
 each store and its apps, including a link to the source location for
 each app. For example:
@@ -90,17 +90,17 @@ and `apps`.
 #### store[](#store "Permalink to this headline")
 Contains entries that define the store.
 
-**title**:Text used as a display name for the App Store in the Management Console.
+**title**:Text used as a display name for the Sample Applications in the Management Console.
 
 **contact**: The name and email address of the store maintainer.
 
-**icon**: An image used for the App Store icon. Specified as a full URL.
+**icon**: An image used for the Sample Applications icon. Specified as a full URL.
 
 #### apps[](#apps "Permalink to this headline")
 
 This is an array of items (see YAML format above), one for each app in the store. Each app is defined by the following fields:
 
-**name**:   The name of the app as displayed in the App Store list.
+**name**:   The name of the app as displayed in the Sample Applications list.
 
 **desc**:   A short description of the app, displayed below the name.
 
@@ -115,7 +115,7 @@ This is an array of items (see YAML format above), one for each app in the store
     branch is used.
 
 **framework**
-:   The framework, if the app is deploed using the [*Legacy
+:   The framework, if the app is deployed using the [*Legacy
     Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
     (e.g. `perl`, `python`,
     `node`, `rails3`).
@@ -155,20 +155,20 @@ application's *manifest.yml* file.
 The YAML files defining the stores can be served via HTTP or HTTPS by
 any web server at a URL accessible from the Cloud Controller.
 
-Adding the App Store to Application Lifecycle Service[](#adding-the-app-store-to-helion "Permalink to this headline")
+Adding the Sample Applications to Application Lifecycle Service[](#adding-the-app-store-to-helion "Permalink to this headline")
 ---------------------------------------------------------------------------------------------------
 
 1.  Log into the [*Management
     Console*](/als/v1/user/console/#management-console),
 2.  Select **Settings \> Cloud Controller** from the menu.
-3.  In the **App Store URLs** section, enter a name and content URL for
-    your store definition YAML file then click **Add App Store URL**.
+3.  In the **Sample Applications URLs** section, enter a name and content URL for
+    your store definition YAML file then click **Add Sample Applications URL**.
 
-To confirm the App Store is loading correctly, select "App Store" in the
+To confirm the Sample Applications are loading correctly, select "Sample Applications" in the
 menu and view the list of applications displayed. A "CC Catalog Manager"
-error appear in the Event Log if an App Store URL fails to load.
+error appear in the Event Log if a Sample Applications URL fails to load.
 
-App Store URLs can also be viewed, added, deleted, enabled, and disabled
+Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
 with [*kato
 config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
 example:
