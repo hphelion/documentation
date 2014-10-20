@@ -257,7 +257,7 @@ system.
 -   **Support Email**: The email address displayed to end users when
     errors are encountered. Use an address which is monitored by
     Application Lifecycle Service administrators.
--   **App Store URLs**: URIs for JSON files which populate the [*App
+-   **Sample Applications URLs**: URIs for JSON files which populate the [*App
     Store*](app-store.html#app-store). The URIs need not be public, but
     must be accessible from the controller node.
 -   **Allowed Repos**: Debian package repositories allowed in

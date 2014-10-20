@@ -84,7 +84,7 @@ Management Console[](#management-console "Permalink to this headline")
     -   [Application View](/als/v1/admin/console/customize/#application-view)
     -   [Service Instance
         View](/als/v1/admin/console/customize/#service-instance-view)
-    -   [App Store](/als/v1/admin/console/customize/#app-store)
+    -   [Sample Applications](/als/v1/admin/console/customize/#app-store)
     -   [Support](/als/v1/admin/console/customize/#support)
 
 Reference[](#reference "Permalink to this headline")
