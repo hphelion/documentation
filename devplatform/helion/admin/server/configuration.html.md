@@ -11,7 +11,7 @@ Detailed Configuration[](#detailed-configuration "Permalink to this headline")
         -   [Changing the Hostname](#changing-the-hostname)
         -   [Changing IP Addresses](#changing-ip-addresses)
         -   [Setting a Static IP](#setting-a-static-ip)
-        -   [Modifying /etc/hosts](#modifying-etc-hosts1)
+        -   [Modifying /etc/hosts](#modifying-etc-hosts)
         -   [DNS](#dns)
         -   [Dynamic DNS](#dynamic-dns)
         -   [Alternate DNS Techniques](#alternate-dns-techniques)
@@ -263,7 +263,7 @@ permissible. Once you have this secondary address set up, see the
 [*/etc/hosts*](#server-config-etc-hosts) section for final configuration
 of the server.
 
-### Modifying /etc/hosts[](#modifying-etc-hosts1 "Permalink to this headline")
+### Modifying /etc/hosts[](#modifying-etc-hosts "Permalink to this headline")
  
 
 The `/etc/hosts` file is used to resolve certain
