@@ -14,9 +14,9 @@ This very simple Node.js app displays the text "Executed query "SELECT "Hello Wo
 ## Prerequisites
 If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an ALS cluster.
-2.	The Helion command-line interface (CLI) must be installed.
-3.	You must have access to the web-based Helion Management console.
+- Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
+- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
+- Access to the web-based [Helion Management Console](/als/v1/user/client/).
 
 ###MySQL
 

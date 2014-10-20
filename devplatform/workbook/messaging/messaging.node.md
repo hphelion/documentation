@@ -20,11 +20,11 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-- Go to the Administrative console for your ALS cluster. (e.g. *https://api.xx.xx.xx.xx.xip.io*);  substitute your own cluster’s link)
-- On the **Admin** tab, click **Cluster**.
-- Click the **Settings** icon (a gear icon in the upper right corner)
-- Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
-- Click **Save**.
+1. Go to the Administrative console for your ALS cluster. (e.g. *https://api.xx.xx.xx.xx.xip.io*);  substitute your own cluster’s link)
+1. On the **Admin** tab, click **Cluster**.
+1. Click the **Settings** icon (a gear icon in the upper right corner)
+1. Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
+1. Click **Save**.
 
 **Note**: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/messageservice) to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.
 

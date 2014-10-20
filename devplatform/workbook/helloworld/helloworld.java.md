@@ -52,7 +52,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
 	
-		helion target https://api.xx.xx.xx.xx.example.com2.	
+		helion target https://api.xx.xx.xx.xx.example.com2	
 
 
 1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
@@ -60,7 +60,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 		helion login
 		
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Deploy the application, by using the command: 
+5.	Deploy the application by using the command: 
 	
 		helion push
 	
