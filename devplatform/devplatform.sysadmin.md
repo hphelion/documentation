@@ -5,7 +5,7 @@ permalink: /helion/devplatform/sysadmin/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Resources for ITOps {#sysadmin}
 
 ##Installation

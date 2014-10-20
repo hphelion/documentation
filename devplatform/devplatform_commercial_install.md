@@ -5,7 +5,7 @@ permalink: /helion/devplatform/install/commercial/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Development Platform Commercial Installation and Configuration
 
 The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.

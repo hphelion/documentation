@@ -5,7 +5,7 @@ permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #HP Helion Development Platform: Quick Start Developer Trial#
 <a name="top"></a>

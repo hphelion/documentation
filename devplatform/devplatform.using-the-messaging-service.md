@@ -5,7 +5,7 @@ permalink: /helion/devplatform/messageservice/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #Using the RabbitMQ Messaging Service#
 

@@ -5,7 +5,7 @@ permalink: /helion/devplatform/eclipse/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Using the Eclipse Development Plugin
 If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.
 
