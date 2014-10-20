@@ -1,3 +1,23 @@
+[nN]eccesary 
+[rR]ecieves
+[Cc]retate
+[tT]radtional 
+[pP]roceses
+[dD]ependenies
+[cC]ontails 
+[rR]ecognises 
+[AA]ccecpt 
+[MM]icroSoft
+[dD]iabled
+[aA]xdress
+[dD]etatching 
+[oO]nformaton
+[cC]ommmands 
+[SS]pecifiy 
+[fF]inalise 
+[aA]poproximately
+[Cc]artitrdge
+[aA]while 
 [bB]etweeen
 [sS]ucessful
  on on 
