@@ -32,15 +32,24 @@ If the RabbitMQ service is not enabled on your cluster, or if you are not sure, 
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-node).
 
 ##Deploy the Application
-The Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the [plugin](/helion/devplatform/eclipse/).
+
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
+2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute
+	
+		helion login
+	 
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute 
+	
+		helion target https://api.xx.xx.xx.xx.example.com
+	
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push -n`
-6.	Accept any default values that you may be prompted for.  
-**Note:** By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. &lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io) 
+5.	Execute 
+	
+		helion push
+	
+6.	Accecpt any default values that you may be prompted for. <br>**Note**: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 
 ##Key Code Snippets
