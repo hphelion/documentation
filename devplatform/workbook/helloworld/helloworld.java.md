@@ -49,14 +49,15 @@ This builds the application with Maven. It will create the *hello-world-java-1.0
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute
-	
-		helion login
-	 
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
 	
-		helion target https://api.xx.xx.xx.xx.example.com
+		helion target https://api.xx.xx.xx.xx.example.com2.	
+
+
+1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
 	
+		helion login
+		
 4.	If you are not already there, `cd` to the root directory of the sample.
 5.	Execute 
 	
