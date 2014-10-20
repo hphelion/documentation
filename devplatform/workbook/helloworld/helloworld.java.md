@@ -39,7 +39,7 @@ The simplest way to install Maven on a PC environment is to [download the latest
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-java) 
  
 ##Build the Application
-If you are not already there, `cd` to the root directory of the sample and execute:
+In the root directory of the sample package, execute the following command:
 
 	mvn clean package
 
