@@ -6,35 +6,33 @@ permalink: /als/v1/admin/server/configuration/
 
 Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 ===============================================================================
+
    [Changing the Password](#changing-the-password)
-    -   [Network Setup](#network-setup)
-        -   [Changing the Hostname](#changing-the-hostname)
-        -   [Changing IP Addresses](#changing-ip-addresses)
-        -   [Setting a Static IP](#setting-a-static-ip)
-        -   [Modifying /etc/hosts](#modifying-etc-hosts)
-        -   [DNS](#dns)
-        -   [Dynamic DNS](#dynamic-dns)
-        -   [Alternate DNS Techniques](#alternate-dns-techniques)
-            -   [xip.io](#xip-io)
-            -   [dnsmasq](#dnsmasq)
-        -   [Adding DNS Nameservers](#adding-dns-nameservers)
-        -   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
-        -   [HTTP Proxy](#http-proxy)
-        -   [Staging Cache & App HTTP Proxy](#staging)
-    -   [VM Filesystem Setup](#vm-filesystem-setup)
-    -   [Application Lifecycle Service Data Services vs. High Availability
-        Databases](#helion-data-services-vs-high-availability-databases)
-    -   [HTTPS & SSL](#https-ssl)
-        -   [Using your own SSL
-            certificate](#using-your-own-ssl-certificate)
-        -   [Adding Custom SSL Certs
-            (SNI)](#adding-custom-ssl-certs-sni)
-        -   [CA Certificate Chaining](#ca-certificate-chaining)
-        -   [Generating a self-signed SSL
-            certificate](#generating-a-self-signed-ssl-certificate)
-    -   [Quota Definitions](#quota-definitions)
-        -   [sudo](#sudo)
-        -   [Allowed Repositories](#allowed-repositories)
+
+-   [Network Setup](#network-setup)
+	-   [Changing the Hostname](#changing-the-hostname)
+	-   [Changing IP Addresses](#changing-ip-addresses)
+	-   [Setting a Static IP](#setting-a-static-ip)
+	-   [Modifying the hosts file](#modifying-etc-hosts)
+	-   [DNS](#dns)
+	-   [Dynamic DNS](#dynamic-dns)
+	-   [Alternate DNS Techniques](#alternate-dns-techniques)
+		-   [xip.io](#xip-io)
+		-   [dnsmasq](#dnsmasq)
+		-   [Adding DNS Nameservers](#adding-dns-nameservers)
+		-   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
+		-   [HTTP Proxy](#http-proxy)
+		-   [Staging Cache & App HTTP Proxy](#staging)
+	-   [VM Filesystem Setup](#vm-filesystem-setup)
+	-   [Application Lifecycle Service Data Services vs. High Availability Databases](#helion-data-services-vs-high-availability-databases)
+	-   [HTTPS & SSL](#https-ssl)
+		-   [Using your own SSL certificate](#using-your-own-ssl-certificate)
+		-   [Adding Custom SSL Certs (SNI)](#adding-custom-ssl-certs-sni)
+		-   [CA Certificate Chaining](#ca-certificate-chaining)
+		-   [Generating a self-signed SSL certificate](#generating-a-self-signed-ssl-certificate)
+	-   [Quota Definitions](#quota-definitions)
+		-   [sudo](#sudo)
+		-   [Allowed Repositories](#allowed-repositories)
 
 General[](#general "Permalink to this headline")
 -------------------------------------------------
@@ -263,8 +261,9 @@ permissible. Once you have this secondary address set up, see the
 [*/etc/hosts*](#server-config-etc-hosts) section for final configuration
 of the server.
 
-### Modifying /etc/hosts[](#modifying-etc-hosts "Permalink to this headline")
- 
+### Modifying hosts file(#modifying-etc-hosts)
+
+### Modifying the
 
 The `/etc/hosts` file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
