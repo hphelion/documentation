@@ -447,7 +447,7 @@ For Application Lifecycle Service VMs with a static IP, add the nameservers when
 when running the `kato op static_ip` command (see
 [*Setting a Static IP*](#server-config-static-ip) above).
 
-### TCP/UDP Port Configuration[](#tcp-udp-port-configuration "Permalink to this headline")
+### TCP/UDP Port Configuration {#tcp-udp-port-configuration}
 
 The Application Lifecycle Service [*micro
 cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
