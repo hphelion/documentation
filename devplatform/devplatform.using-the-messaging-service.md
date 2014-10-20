@@ -27,7 +27,7 @@ The following topics explain how to create and manage a RabbitMQ instance:
 ##Creating a RabbitMQ Cluster {#create}
 The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster using the Messaging Service.
 
-1.	Log into Horizon and open the **Messaging (Beta)** panel under you project. Click on the **RabbitMQ** tab.
+1.	Log into Horizon and open the **Messaging (Beta)** panel under your project. Click on the **RabbitMQ** tab.
 2.	Click the **Create Cluster** button.<br><img src="media/usingRMQ1.png"/>
 3.	In the Create RabbitMQ dialog, specify the following information:
 	- **Cluster Name** - A name for the cluster that will be created.
