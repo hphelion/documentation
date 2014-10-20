@@ -29,31 +29,40 @@ This page provides instructions for setting a default DNS name server for your H
 
 ## Enable name resolution
 
-To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers that will be used by `dnsmasq`.
+To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers that will be used by `dnsmasq` as forwarders.
 
-Edit the `overcloud_neutron_dhcp_agent.json file` in the `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
-items.  
+1. Log in to your install system as root:
 
-The `overcloud_neutron_dhcp_agent.json` file should also be copied over to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
+	`sudo su -`
 
-Your JSON should appear similar to the following:
+2. Locate the `overcloud_neutron_dhcp_agent.json file` at `ce-installer/tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json`
 
-	{"dhcp_agent":
-		{"config":
-			[
-				{"section":"DEFAULT",
-					"values":
-						[
-							{"option":"dhcp_delete_namespaces","value":"True"},
-							{"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}
-						]
-					}
-				]
+3. Add the desired `dnsmasq_dns_servers` items by modifying the `value` field with the IP address of your DNS server.  Multiple DNS servers can be specified as a comma separated list.
+
+	Your JSON should appear similar to the following:
+
+		{"dhcp_agent":
+			{"config":
+				[
+					{"section":"DEFAULT",
+						"values":
+							[
+								{"option":"dhcp_delete_namespaces","value":"True"},
+								{"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}
+							]
+						}
+					]
+				}
 			}
-		}
 
-Replace `value` with the IP address of your DNS server.  Multiple DNS servers can be specified as a comma separated list.
 
+4. Copy the `overcloud_neutron_dhcp_agent.json` file to a new file named `undercloud_neutron_dhcp_agent.json` to configure the same forwarders for the undercloud.
+
+## Next Step
+
+* [Return to the baremetal install](/helion/community/install/)
+
+* [Return to the virtual install](/helion/community/install-virtual/)
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
