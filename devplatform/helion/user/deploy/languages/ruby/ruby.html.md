@@ -16,7 +16,7 @@ to enable successful development are available in Ruby.</p>
 provides a means to execute ruby applications on a managed platform. Deploying applications
 to the platform is as simple as adding configuration to a YAML configuration file and using
 a console application to push the application to ALS.</p>
-<p>At its simplist form the configuration file, <tt class="docutils literal"><span class="pre">manifest.yml</span></tt>, at the root of a project would like:</p>
+<p>At its simplest form the configuration file, <tt class="docutils literal"><span class="pre">manifest.yml</span></tt>, at the root of a project would like:</p>
 <div class="highlight-none"><div class="highlight"><pre>name: ruby-web-app
 framework:
     type: ruby20

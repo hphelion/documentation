@@ -379,7 +379,7 @@ Map the "production" URL to the new app:
 
 While both versions of the application are live and mapped to the same
 production URL, the router will round-robin web requests to this URL
-betweeen both versions.
+between both versions.
 
 Next, unmap the production URL from the first app:
 

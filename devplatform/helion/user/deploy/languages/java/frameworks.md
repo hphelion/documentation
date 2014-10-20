@@ -12,7 +12,7 @@ Application Lifecycle Service has several Java frameworks to choose from:
 -	[HOME directories](#home-dir)
 
 
-You can push bytecode built on on your local machine with tools like [Maven](http://maven.apache.org/) or build the Java bytecode on Application Lifecycle Service
+You can push bytecode built on your local machine with tools like [Maven](http://maven.apache.org/) or build the Java bytecode on Application Lifecycle Service
 itself using the [Java Buildpack](/als/v1/user/deploy/buildpack/#buildpacks)
 
 

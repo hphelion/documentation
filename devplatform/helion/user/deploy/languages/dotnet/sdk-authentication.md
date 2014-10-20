@@ -40,7 +40,7 @@ Code-block: csharp
 If authentication failed or there was another error an exception is thrown. There are a
 number of exceptions that can be caught depending on the type of error that occurred.
 
-If authentication is sucessful, the client can be used to access individual service clients for each of the supported services. The client retains all of the authentication details and passes them along to the requested service clients. The actual authentication token is stored in the AccessTokenId property of the client.
+If authentication is successful, the client can be used to access individual service clients for each of the supported services. The client retains all of the authentication details and passes them along to the requested service clients. The actual authentication token is stored in the AccessTokenId property of the client.
 
 ## Service Catalog
 

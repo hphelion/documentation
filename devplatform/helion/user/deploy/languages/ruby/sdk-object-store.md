@@ -7,7 +7,7 @@ permalink: /als/v1/user/deploy/languages/ruby/objectstore/
 #Examples for working with HP Helion Object Storage Service
 
 
-The HP Helion Extensions to Ruby Fog libary provides Object Storage
+The HP Helion Extensions to Ruby Fog library provides Object Storage
 services support using two abstractions: a model layer and a request
 layer. Executing commands in both layers are detailed in this page.
 
