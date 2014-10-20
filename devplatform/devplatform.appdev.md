@@ -17,6 +17,7 @@ In order to download and deploy these sample applications, you must have the nec
 
 - HP Helion OpenStack&reg; [cloud deployed](/helion/openstack/install/overview/)
 - Application Lifecycle Service [Cluster](/helion/devplatform/deploy) available with MySQL and RabbitMQ enabled.
+	- You can also quickly setup a cluster in the free and publicly available Helion cloud as part of the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/): 
 - Logon and password credentials for the cluster.
 - Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
 - (Optional) Access to the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
