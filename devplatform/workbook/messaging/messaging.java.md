@@ -12,9 +12,9 @@ This very simple Servlet-based Java web app displays a simple form that takes a 
 ## Prerequisites
 If you are missing any of these items, please [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an ALS cluster.
-2.	The Helion command-line interface (CLI) must be installed.
-3.	You must have access to the web-based Helion Management console.
+1.	You must have access to an [ALS cluster](/als/v1/admin/cluster/).
+2.	The [Helion command-line interface](/als/v1/user/client/) (CLI) must be installed.
+3.	You must have access to the web-based [Helion Management console](/als/v1/user/client/).
 
 If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps: 
 
