@@ -547,7 +547,7 @@ Show the disk reservation for a deployed application.
     <tr><td>    --token</td>
     <td>The once-off authentication token to use for the current operation.</td></tr>
     <tr><td> --token-file</td>
-    <td>Path to an existing and readable file containing the targets and athorization tokens.</td></tr>
+    <td>Path to an existing and readable file containing the targets and authorization tokens.</td></tr>
     <tr><td>   --trace</td>
     <td>Activate tracing of the issued REST requests and responses. This option is a no-op now. Tracing is always active. See the 'trace' command to print the saved trace to stdout.</td></tr>
     <tr><td>    -n</td>

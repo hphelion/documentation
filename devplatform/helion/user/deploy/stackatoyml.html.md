@@ -750,7 +750,7 @@ A small number of keys are predefined for your use within
   value
   -------------- ---------------------------------------------------------
   \${random-word \${target-base}
-  }              The hostname of the targetted Application Lifecycle Service system, for
+  }              The hostname of the targeted Application Lifecycle Service system, for
   A short        example **helion-xxxx.local**
   alphanumeric   
   string of      

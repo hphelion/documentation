@@ -45,7 +45,7 @@ these steps while logged in as the root user:
 
        apt-get install libxml2 libxml2-dev libxslt1-dev libxslt1.1 sgml-base xml-core
 
-4. Install the RDoc Ruby source documenation generator package:
+4. Install the RDoc Ruby source documentation generator package:
 
    ::
 

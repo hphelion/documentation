@@ -91,7 +91,7 @@ New Relic for Python[](#new-relic-for-python "Permalink to this headline")
 
 The New Relic Python agent is pre-installed on Application Lifecycle Service.
 
-The minimal steps requried to integrate New Relic to your Python WSGI
+The minimal steps required to integrate New Relic to your Python WSGI
 application:
 
 1.  At the top of *wsgi.py*, add:
