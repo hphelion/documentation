@@ -69,7 +69,7 @@ declare how your web process type is run:
 #### .godir[](#godir "Permalink to this headline")
 
 The `go` tool uses the directory name of your
-project to name executables and determine package import paths. Cretate
+project to name executables and determine package import paths. Create
 a file called .godir, in your project root, containing the path from
 *\$GOPATH/src* to your project root:
 
