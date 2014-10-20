@@ -354,7 +354,7 @@ Alternatively, you can list the modules in a top-level
 `requirements-pypm.txt` file. The format is similar,
 if not same, as [pip requirements
 files](http://www.pip-installer.org/en/latest/requirements) and
-accepts version specification. The name of this file can be overriden by
+accepts version specification. The name of this file can be overridden by
 setting the `PYPM_REQUIREMENTS_FILE` environment
 variable.
 
@@ -377,7 +377,7 @@ tornado-chat-mongo sample installs "pycurl" using
 
 If your application already contains a `requirements.txt` file, that will be automatically used to install dependencies;
 no need to specify them manually in manifest.yml. The name of this file
-can be overriden by setting the `PIP_REQUIREMENTS_FILE` environment variable.
+can be overridden by setting the `PIP_REQUIREMENTS_FILE` environment variable.
 
 **Note**
 

@@ -14,7 +14,7 @@ virtualization host.
 Accessing Server via the Command Line[](#accessing-server-via-the-command-line "Permalink to this headline")
 -------------------------------------------------------------------------------------------------------------
 
-The Application Lifecycle Service server has one user account initally:
+The Application Lifecycle Service server has one user account initially:
 
 	Username: helion
 	Password: helion

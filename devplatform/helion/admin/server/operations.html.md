@@ -70,7 +70,7 @@ Setting the Time Zone[](#setting-the-time-zone "Permalink to this headline")
 
 At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set
 this to your local time zone, use the `kato op set_timezone` command. When run without arguments, the command will prompt
-for time zone selction, but the time zone can be set non-interactively
+for time zone selection, but the time zone can be set non-interactively
 with the `--timezone` option. For example:
 
     $ kato op set_timezone --timezone America/Chicago

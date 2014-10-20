@@ -115,7 +115,7 @@ This is an array of items (see YAML format above), one for each app in the store
     branch is used.
 
 **framework**
-:   The framework, if the app is deploed using the [*Legacy
+:   The framework, if the app is deployed using the [*Legacy
     Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
     (e.g. `perl`, `python`,
     `node`, `rails3`).

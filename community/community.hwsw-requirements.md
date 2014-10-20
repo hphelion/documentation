@@ -23,18 +23,19 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Community Hardware and Software Requirements
 
-This page provides an overview of the hardware and software that is supported for HP Helion OpenStack Community edition, and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.
+This page provides an overview of the hardware and software that is supported for HP Helion OpenStack Community edition and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.
 
 * [Supported hardware](#supportedhw)
 * [Hardware configuration](#hardware)
 	* [Hardware configuration for baremetal installation](#baremetal)
 	* [Hardware configuration for virtual installation](#virtual)
+* [Software configuration](#software)
 * [Usable capacity](#usable-capacity)
 
 
 ## Supported hardware ## {#supportedhw}
 
-The following hardware is supported for Helion OpenStack Community Edition for both virtual and baremetal installations:
+The following hardware is supported for Helion OpenStack Community edition for both virtual and baremetal installations:
 
 ### HP Proliant BladeSystem
 
@@ -84,20 +85,20 @@ Make sure your server(s) meet the following requirements, depending on the insta
 
 ### Hardware configuration for baremetal installations {#baremetal}
 
-The [multi-node baremetal installation of HP Helion OpenStack Community](/helion/community/install/), is configured for a minimum of 5 and maximum of 30 baremetal systems. For this installation, you must have the following hardware and network configuration:
+The [multi-node baremetal installation of HP Helion OpenStack Community](/helion/community/install/) is configured for a minimum of 7 and maximum of 36 baremetal systems, plus a system to run the installation. For this installation, your hardware must meet the following minimum requirements:
 
-* A system to run the baremetal installer (called the seed cloud host or installer system) and host the seed VM that meets the following configuration:
+* A system to run the installer (called the seed cloud host or installer system) and host the seed VM that meets the following minimum requirements:
 
-	* A minimum of 8 GB of physical memory
+	* A minimum of 16 GB of physical memory
 	* A minimum of 100 GB of disk space 
-	* The Ubuntu 13.10 operating system installed
+	* The Ubuntu 13.10 or 14.04 operating system installed
 
-	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages and changes to the network or visualization configuration.
 
 * At least 7 and up to 36 baremetal systems that meet the following configuration:
 
 	* A minimum of 32 GB of physical memory
-	* A minimum of 2 TB of disk space
+	* A maximum of 2 TB of disk space
 	* A minimum of 1 x 10 GB NIC with PXE support
 
 		* For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
@@ -109,13 +110,15 @@ The [multi-node baremetal installation of HP Helion OpenStack Community](/helion
 		* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 		* To stay powered off in the event of being shutdown rather than automatically restarting
 
-	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
+	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, and network adapter firmware.
 
-		**Important:** The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
+	* The installer currently uses only the first available disk; servers with RAID controllers need to be pre-configured to present their storage as a single logical disk. RAID across multiple disks is strongly recommended for both performance and resilience.
+
+	* When installing make sure there is no wildcard DHCP server on your network. The wildcard DHCP server will likely reply to the booting under/overcloud servers before the seed VM, which will cause the PXE boot process to fail.
 
 ## Hardware and software configuration for virtual installations {#virtual}
 
-For the [virtual installation](/helion/community/install-virtual/) you must use a system that meets or exceeds the following hardware specification:
+For the [virtual installation](/helion/community/install-virtual/) you must use a system that meets the following minimum requirements:
 
 * At least 64GB of RAM
 * At least 200GB of available disk space
@@ -126,23 +129,25 @@ For the [virtual installation](/helion/community/install-virtual/) you must use 
 
 Make sure your server(s) meet the following requirements for both virtual and baremetal installations:
 
-If they are not already installed, the following required Debian/Ubuntu packages are added to the system:
+If they are not already installed, install the following required Debian/Ubuntu packages:
 
-    * qemu
-    * openvswitch
-    * libvirt
-    * python-libvirt
-    * openssh-server
+* `qemu`
+* `openvswitch`
+* `libvirt`
+* `python-libvirt`
+* `openssh-server`
 
-        **Note:** Ensure that the firewall configuration allows access to the SSH ports.
+Baremetal installations running Ubuntu 14.04 also must install the `qemu-kvm` package.
+
+**Note:** Ensure that the firewall configuration allows access to the SSH ports.
 
 Install these packages before starting the installation process using the following command:
 
-`$ sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86 qemu-kvm`
+`sudo apt-get install -y libvirt-bin openvswitch-switch python-libvirt qemu-system-x86`
 
 After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
-`$ sudo /etc/init.d/libvirt-bin restart`
+`sudo /etc/init.d/libvirt-bin restart`
 
 
 ## Usable capacity
@@ -176,7 +181,7 @@ The following table maps the minimum server configuration into usable capacity o
 or
 <li>40 volume backups, based on 10 GB volumes</li>
 </li> </td>
-<td> In addition to your objects, object storage is used for images and volume backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of 2.5 GB (the 2.5 GB is the average size of images in the swift public cloud in US-East) and a 10 GB cinder volume backup.
+<td> In addition to your objects, object storage is used for images and volume backups. With 640 GB per server (after subtracting 60 GB for the OS) this leaves about 400 usable GB (1280/3.2). This is assuming an average Linux image/snapshot of 2.5 GB and a 10 GB cinder volume backup.
 
 <p>Note: These are the maximum figures assuming the storage is used exclusively for that type of object.</p>  </td>
 </tr>			

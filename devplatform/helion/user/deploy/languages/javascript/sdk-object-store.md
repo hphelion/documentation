@@ -52,7 +52,7 @@ Create, Read, Update, and Delete operations happen on storage objects and are fa
           console.dir(err);
           return;
          }
-        console.log("File uploaded succesfully");
+        console.log("File uploaded successfully");
         // delete the temporary file.
         fs.unlinkSync('temp.json');
     }));
@@ -62,5 +62,5 @@ Create, Read, Update, and Delete operations happen on storage objects and are fa
         console.dir(err);
         return;
       }
-      console.log('object deleted succesfully');
+      console.log('object deleted successfully');
     });
