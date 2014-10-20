@@ -27,6 +27,4 @@ The Open Source and Third-Party Software License Agreements for HP Helion Develo
 
  <a href="http://g867c39a921f179b9eb3ba7424144b70a.cdn.hpcloudsvc.com/source/DP_Thirdparty v2.pdf">Download the PDF document.</a>
 
-<p style="font-size: small;"> <a hre
-f="/helion/"> &#171; Return to HP Helion  home </a> </p>
 
