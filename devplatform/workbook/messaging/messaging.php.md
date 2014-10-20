@@ -34,6 +34,7 @@ If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
 
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging). The sample  application required access to the Internet in order to download dependent packages. 
 
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 

@@ -27,7 +27,6 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
 On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and run the appropriate installer for your chosen platform.
 
 ###Maven 
-
 [Maven](http://maven.apache.org/ "Maven") must be installed. 
 The simplest way to install Maven on a Mac/UNIX environment is:
 
@@ -46,6 +45,8 @@ In the root directory of the sample package, execute the following command:
 This builds the application with Maven. It will create the *hello-world-java-1.0.war* file within the target directory. 
 
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging). The sample  application required access to the Internet in order to download dependent packages. 
+
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
