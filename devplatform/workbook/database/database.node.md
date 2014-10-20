@@ -37,14 +37,15 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
+	
+		helion target https://api.xx.xx.xx.xx.example.com2.	
+
+
+1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
 	
 		helion login
 	 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
-	
-		helion target https://api.xx.xx.xx.xx.example.com
-	
 4.	If you are not already there, `cd` to the root directory of the sample.
 5.	Execute
 	
