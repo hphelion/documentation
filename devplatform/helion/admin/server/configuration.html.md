@@ -263,7 +263,7 @@ permissible. Once you have this secondary address set up, see the
 [*/etc/hosts*](#server-config-etc-hosts) section for final configuration
 of the server.
 
-### Modifying /etc/hosts[](#modifying-etc-hosts "Permalink to this headline")
+### Modifying /etc/hosts [](#modifying-etc-hosts "Permalink to this headline")
 
 The `/etc/hosts` file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
@@ -399,7 +399,7 @@ environment or connecting from a Windows system without mDNS support)
 but which do not merit the effort of manually configuring a DNS record
 (e.g. a test server) alternative methods are available.
 
-#### xip.io[](#xip-io "Permalink to this headline")
+#### xip.io [](#xip-io "Permalink to this headline")
 
 The quickest way to get wildcard DNS resolution is to use the
 [xip.io](http://xip.io/) service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.
