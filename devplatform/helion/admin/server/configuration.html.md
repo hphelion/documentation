@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/server/configuration/
@@ -795,3 +796,5 @@ parameter of the `cloud_controller.yml` file:
 
 The file is located on the Application Lifecycle Service server at
 `~/helion/vcap/cloud_controller/config/cloud_controller.yml`
+=======
+>>>>>>> Stashed changes
