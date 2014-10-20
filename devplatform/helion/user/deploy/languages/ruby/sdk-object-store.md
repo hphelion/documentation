@@ -247,7 +247,7 @@ set the metadata on the containers for syncing.
 
    ::
 
-       # Now, lets do a two way sync between dir and target containers
+       # Now, let's do a two way sync between dir and target containers
        dir = conn.directories.get('imp_stuff')
        target_dir = conn.directories.get('sync_archive')
 
@@ -490,7 +490,7 @@ set the metadata on the containers for syncing.
 
    ::
 
-       # Now, lets do a two way sync between dir and target containers
+       # Now, let's do a two way sync between dir and target containers
        # to sync we need to put some metadata on the source and target containers
        conn.put_container('imp_stuff',
                            {'X-Container-Sync-To'  => "/url/to/the/target/sync_archive",
