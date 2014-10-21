@@ -172,8 +172,8 @@ Use the following steps to restore the seed VM:
 		Wait for seed up
 		...
 		...
-		Restore Seed Finished.
-		Restore Procedure Completed
+		Restore seed finished.
+		Restore procedure completed
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -203,8 +203,8 @@ Use the following steps to back up the undercloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		Backup Undercloud Finished.
-		Backup Procedure Completed
+		Backup undercloud finished.
+		Backup procedure completed.
 
 **Example**
 
@@ -217,15 +217,15 @@ Use the following steps to back up the undercloud:
 		Starting of Backup procedure for undercloud...
 		The backup will be written to /root/backup//backup_14-09-03-12-17
 		Temporary folder: /tmp/backup_14-09-03-12-17
-		Backing up Seed Files...
+		Backing up seed Files...
 		...
 		...
-		Deleting temporary Undercloud Backup files...
+		Deleting temporary undercloud backup files...
 		Warning: Permanently added '192.0.2.2' (ECDSA) to the list of known hosts.
-		Backup Undercloud Finished.
-		Backup Procedure Completed
+		Backup undercloud finished.
+		Backup procedure completed.
 
-All required files are backed-up to the specified folder:
+All required files are backed up to the specified folder:
 
 	/<destination folder>/backup_YY-MM-DD-HH-MM/uc
  
@@ -241,7 +241,7 @@ You should restore the seed node when there is any problem with the node, for ex
 
 - During the restore of the undercloud, the seed VM will be deployed again. You should [create a new backup from seed](#seedback) after the undercloud is restored.
 - If the resource files are stored locally, the source files must be located in the `/tmp/` directory.
-- If the admin user password was changed from the original password created during the installation process, see [Undercloud password issues](#underpass) before beginning the restore.
+- If the admin user password was changed from the original password created during the installation process, see [undercloud password issues](#underpass) before beginning the restore.
 
 Use the following steps to restore the undercloud:
 
@@ -263,8 +263,8 @@ Use the following steps to restore the undercloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		"Restore Undercloud Finished."
-		"Restore Procedure Completed"
+		"Restore undercloud finished."
+		"Restore procedure completed"
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -292,8 +292,8 @@ Use the following steps to back up the overcloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		Backup Overcloud Finished.
-		Backup Procedure Completed
+		Backup overcloud finished.
+		Backup procedure completed
 
 	**Example**
 
@@ -306,9 +306,9 @@ Use the following steps to back up the overcloud:
 		The backup will be written to /root/backup/backup_14-09-03-12-30
 		...
 		...
-		Deleting temporary Overcloud Backup files...
-		Backup Overcloud Finished.
-		Backup Procedure Completed
+		Deleting temporary overcloud backup files...
+		Backup overcloud finished.
+		Backup procedure completed
 
 All required files are backed-up to the specified folder:
 
@@ -330,8 +330,8 @@ Use the following steps to restore the seed VM:
 
 	When the process is complete, a message similar to the following displays:
 
-		Restore Overcloud Finished.
-		Restore Procedure Completed
+		Restore overcloud finished.
+		Restore procedure completed
 
 	**Example**
 
@@ -346,8 +346,8 @@ Use the following steps to restore the seed VM:
 		Restore name: backup_14-09-03-12-30
 		...
 		...
-		Restore Overcloud Finished.
-		Restore Procedure Completed
+		Restore overcloud finished.
+		Restore procedure completed
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -369,8 +369,8 @@ Use the following steps to back up the overcloud database:
 
 	When the process is complete, a message similar to the following displays:
 
-		Backup Overcloud Database Finished.
-		Backup Procedure Completed
+		Backup overcloud database finished.
+		Backup procedure completed
 
 	**Example**
 
@@ -383,9 +383,9 @@ Use the following steps to back up the overcloud database:
 		The backup will be written to /root/backup/backup_14-09-03-12-46 temporary folder /tmp/backup_14-09-03-12-46
 		...
 		...
-		Deleting temporary Overcloud Database Backup files...
-		Backup Overcloud Database Finished.
-		Backup Procedure Completed
+		Deleting temporary overcloud database backup files...
+		Backup overcloud database finished.
+		Backup procedure completed
 
 All required files are backed-up to the specified folder:
 
@@ -421,8 +421,8 @@ Use the following steps to restore the overcloud database:
 
 	When the process is complete, a message similar to the following displays:
 
-		Restore Overcloud Database Finished.
-		Restore Procedure Completed
+		Restore overcloud database finished.
+		Restore procedure completed
 
 	**Example**
 
@@ -456,7 +456,7 @@ During the period that the server is re-building, you can temporarily restart th
 
 After the management controller is rebuilt, use the following steps below to disable the temporary solution:
 
-1. SSH to the same Undercloud controllers where cinder-volume was enable before
+1. SSH to the same undercloud controllers where cinder-volume was enable before
 
 2. Execute the following commands
 
@@ -477,11 +477,11 @@ The following lists all of the command options for the backup script, `hp_ced_ba
 		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --help
 		HP Helion Community Edition Version Backup Procedure
 		Usage: hp_ced_backup.sh [options]
-		The Backup tool can backup following
-			1. Seed
-			2. Undercloud
-			3. Overcloud
-			4. Overcloud Database
+		The Backup tool can back up the following:
+			1. seed
+			2. undercloud
+			3. overcloud
+			4. overcloud Database
 		 
 		Options:
 			[Required]
@@ -506,10 +506,10 @@ The following lists all of the command options for the backup script, `hp_ced_re
 		Usage: hp_ced_restore.sh [options]
  
 		The Restore tool can restore the following from a previous restore
-			1. Seed
-			2. Undercloud
-			3. Overcloud
-			4. Overcloud Database
+			1. seed
+			2. undercloud
+			3. overcloud
+			4. overcloud Database
  
 		Options:
 		[Required]
@@ -527,14 +527,14 @@ The following lists all of the command options for the backup script, `hp_ced_re
 Other optional options that can be used during the backup/restore process, as:
 
 - Backup/Restore the files in/from a remote server (using option H)
-- Backup Seed + undercloud + ... all at once using all the parameters at the same time (--seed, --undercloud --overcloud)
+- Backup seed + undercloud + ... all at once using all the parameters at the same time (--seed, --undercloud --overcloud)
 
 ## Undercloud password issues<a name="underpass"></a>
 
 If the admin user password was changed from the original password created during the installation process, you need to update the password in some files before performing the undercloud backup or restore process. If this process has been done and the files contain the correct password, you do not need to edit the files.
 
 1. Log in the seed VM host.
-2. SSH to the Seed VM
+2. SSH to the seed VM
 3. Open the `/root/tripleo/tripleo-undercloud-passwords` file.
 4. Update the `UNDERCLOUD_ADMIN_PASSWORD=` line with the new password and save the file.
 5. Open the file `/root/tripleo/ce_env.json`. 
