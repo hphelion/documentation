@@ -22,10 +22,13 @@ available at the command line via the *helion help* command.
 **Note**: using the Windows Helion client with
 [Cygwin](http://www.cygwin.com/) is not supported.
 
-1.  Download the client for your platform (Windows, OS X, Linux x86,
-    Linux x64)
-	1. From the ALS cluster management console, find and click on the "Download the Client" button.
-	2. You will taken to a page showing your download options. Select the option for your desired platform.
+Download the client for your platform (Windows, OS X, Linux x86,
+    Linux x64) by following these instructions.
+
+
+
+1. From the ALS cluster management console, find and click on the "Download the Client" button.
+1. You will taken to a page showing your download options. Select the option for your desired platform.
 2.  Unzip the archive in a convenient directory.
 3.  Add the executable to your system/shell \$PATH by:
 	-   Windows: path = %path%; (where path is the path to the Helion cli)
