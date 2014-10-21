@@ -45,9 +45,9 @@ Object nodes can only be removed once all disks have been removed from the node.
 
 Perform the following steps to remove the disks from ring:
 
-1. Log in to Undercloud from Seed. 
+1. Log in to undercloud from seed. 
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the directory to ring builder.
