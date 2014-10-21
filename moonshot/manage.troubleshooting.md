@@ -803,7 +803,7 @@ For Internet Explorer:
 <td>Cloud OS Distribution Network (CODN) can only handle a certain number of download activities simultaneously. </td></tr>
 <tr style="background-color: white; color: black;">
 <td>Possible Resolution</td>
-<td>Wait for awhile and retry the download. For details, check the log file <b>/var/log/codn/codn.log</b> on the Controller node.</td></tr>
+<td>Wait for a while and retry the download. For details, check the log file <b>/var/log/codn/codn.log</b> on the Controller node.</td></tr>
 </table>
 
 #### Publishing workload from Updates and Extension panel does not show up in dashboard
