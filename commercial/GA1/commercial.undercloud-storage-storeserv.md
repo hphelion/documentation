@@ -25,15 +25,9 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Working with HP 3PAR StoreServ
 
-The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the Undercloud and you have all the required details to register the device using Sirius service.
+The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.
 
-You can configure a 3PAR device by using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the Undercloud Horizon.<!---the following prerequisites have been fulfilled:-->
-
-<!---6. The HP 3PAR REST service is running and HTTPS is enabled.-->
-
-
-
-<!---Configuration of HP StoreServ/3PAR as Cinder backend using Sirius service involves the following steps:-->
+You can configure a 3PAR device by using the undercloud Horizon dashboard (*Recommended*) or the [Sirius client](/helion/openstack/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.
 
 * [Before you begin](#before-you-begin)
 
@@ -64,9 +58,9 @@ Before you start working with 3PAR StoreServ, ensure that the following prerequi
 
 1. HP Helion Cloud is deployed
 
-2. The HP 3PAR StoreServ device is accessible from the Undercloud
+2. The HP 3PAR StoreServ device is accessible from the undercloud
 
-3. The HP 3PAR StoreServ device (running operating system v 3.1.3 or later) is accessible by the Compute nodes and Cinder running in the Overcloud
+3. The HP 3PAR StoreServ device (running operating system v 3.1.3 or later) is accessible by the Compute nodes and Cinder running in the overcloud.
 
 4. Common Provisioning Groups (CPGs) are created for HP 3PAR StoreServ
 
@@ -74,7 +68,7 @@ Before you start working with 3PAR StoreServ, ensure that the following prerequi
 
 To register the device using the Undercloud Horizon Dashboard, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -118,7 +112,7 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
 To edit the details of a StoreServ, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -138,7 +132,7 @@ To edit the details of a StoreServ, do the following:
 
 Use this option to unregister a StoreServ.
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -171,13 +165,13 @@ Use this option to unregister multiple StoreServs using a single command.
  
 ## Register 3PAR StoreServ Common Provisioning Groups (CPGs) {#registering-cpg}
 
-Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR StoreServ may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for Overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
+Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common Provisioning Group) is a fundamental unit that can be configured as a Cinder backend. A single HP 3PAR StoreServ may have multiple CPGs. You can choose and allocate them to the cloud as a per your requirement. <!---First register the CPG in Sirius and then configure the CPG as backend for overcloud Cinder service. You can register a few CPGs and allocate them as and when required. The Cinder configuration file is updated only during the allocation, the registeration of the CPG just updates the Sirius database.-->
 
 **Note**: Only registered CPG(s) can be configured as a storage backend for Cinder.
 
 To register the CPGs, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -216,7 +210,7 @@ To register the CPGs, do the following:
 
 To edit a CPG, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -238,7 +232,7 @@ To edit a CPG, do the following:
 
 To unregister, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then click **Storage** to display the overview page.
 
@@ -255,7 +249,7 @@ To unregister, do the following:
 
 Use this option to unregister multiple CPGs using a single command.
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -273,7 +267,7 @@ Use this option to unregister multiple CPGs using a single command.
 
 Use this option to view the CPG configuration (as defined in OpenStack Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon Dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
