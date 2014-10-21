@@ -293,7 +293,7 @@ In the following example account, container, object-0, and generated `object-1.r
 
 ##Update the Storage Policy {#update-storage-scaleout-swift}
 
-1. Log in to Seed. 
+1. Log in to seed. 
 
 		# ssh root@<Seed IP address>
 
@@ -329,12 +329,12 @@ In the following example account, container, object-0, and generated `object-1.r
 		  }
 		}
 
-4. Re-source the `overcloud-config.json` file to point to the edited file.
+3. Re-source the `overcloud-config.json` file to point to the edited file.
     
     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
 
-5. Run the installer script to update the storage policies across the cloud.
+4. Run the installer script to update the storage policies across the cloud.
 
     	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 

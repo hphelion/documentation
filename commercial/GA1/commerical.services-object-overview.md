@@ -32,14 +32,20 @@ Based on OpenStack&reg; Swift, the HP Helion OpenStack object storage service pr
 ##Architecture Overview
 At its core, Swift is built from a set of software services and data constructs hosted on a cluster of servers. 
 
-A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. 
+<!---
+A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. --->
+
+
+A Swift cluster is Software Defined Storage (SDS) architecture, layered on top of industry standard servers, using native storage devices which are typically disk drives. 
+
+**Note**: It is not recommended to run Swift on top of other systems (hardware or software) that hide the failure domains or native storage devices like using RAID group on top of drives.
 
 The services in the Swift cluster are either ***access*** services or ***storage*** services.
 
 - The *access* services group is made up of the Swift Proxy Servers, which run Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack Keystone authentication service.
 - The *storage* services group is composed of Swift Object Servers and various background services such as replicators.  
  
-Each service group can be scaled ***independently*** to meet workload and redundancy requirements. The storage service can be scaled up as necessary ([scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/)) and is also horizontally scalable to handle an increased number of simultaneous connections. 
+Each service group can be scaled ***independently*** to meet workload and redundancy requirements. The storage service can be scaled up as necessary ([scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/)). It can also be horizontally scalable to handle an increased number of simultaneous connections as well as large number of objects. 
 
 ##Expanding the Swift Deployment
 
