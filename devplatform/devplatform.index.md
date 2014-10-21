@@ -29,6 +29,8 @@ The HP Helion Development Platform provides additional Application Services that
 
 ###Database as a Service 
 
+The database service (DBaaS) provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful API’s or the Horizon dashboard. 
+
 - An implementation of OpenStack Trove, [Database as a Service](/helion/devplatform/createdatabase/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
 - The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  
 
@@ -82,7 +84,7 @@ Most of the Helion Development Platform documentation assumes that you've alread
 ----------
 ###[Resources for Application Developers](/helion/devplatform/appdev/)
   
-###[Resources for ITOps](/helion/devplatform/sysadmin/)
+###[Resources for IT Ops](/helion/devplatform/sysadmin/)
   
 <!--### [Resources for OpenStack Integration, Extension, and Service Development](/helion/devplatform/servicedev/) -->
 

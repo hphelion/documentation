@@ -8,7 +8,7 @@ product: devplatform
 
 Application Lifecycle Service Documentation[](#helion-documentation "Permalink to this headline")
 ===============================================================================
- The **Application Lifecycle Service**  is polyglot
+ The **Application Lifecycle Service** is a Cloud Foundry-based, managed runtime environment for applications. It is polyglot
 Platform-as-a-Service (PaaS) software. Whether you run it in your own data
 center using the hypervisor of your choice or on your favorite cloud
 hosting provider, it provides the backbone for your private or public PaaS.
