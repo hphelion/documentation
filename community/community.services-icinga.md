@@ -56,13 +56,16 @@ Perform the following steps to monitor the usage of Swift disk:
     * Username: *icingaadmin*
 	* Password: *icingaadmin* 
 
-2. Click **Status** on the left panel and then click 
-<a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b> (opens in a new window)</a>
+2. Click **Status** on the left panel and then click <b>Host Details</b>.
+<br><img src="/content/documentation/media/icinga_host-details.png">
 
 3. In the **Host** column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.
-4. The <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host All Hosts</b> (opens in a new window) </a> page opens.
 
-5. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address &gt;</b> (opens in a new window)</a> to view the disk usage of the selected Swift node.
+4. The <b>Service Status Details For Host All Hosts</b> page opens.
+<br><img src="/content/documentation/media/swift_icinga_view-details.png">
+
+5. Click the target Swift node IP address to open the <b>Service Status Details For Host &lt;Swift node IP address &gt;</b> to view the disk usage of the selected Swift node.
+<br><img src="/content/documentation/media/swift_icinga-disk-usage.png">
 
 ### Status Messages for disk usage monitoring
 
@@ -117,11 +120,13 @@ Perform the following steps to monitor the replication status:
 	* Username: *icingaadmin*
 	* Password: *icingaadmin* 
 
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b> (opens in a new window) </a>.
+2. Click **Status** on the left panel and then click <b>Host Details</b>.
+<br><img src="/content/documentation/media/icinga_host-details.png"> 
 
-3. In the **Host** column, click the icon next to the host IP to see <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Status Details For All Hosts</b> (opens in a new window)</a>.
-
-4. Click the target Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>IP Address</i></b> (opens in a new window)</a> to see the replication status of the selected Swift node.
+3. In the **Host** column, click the icon next to the host IP to see <b>Host Status Details For All Hosts</b>.
+<br><img src="/content/documentation/media/swift_icinga_view-details.png"> 
+4. Click the target Swift node IP address to open the <b>Service Status Details For Host <i>IP Address</i></b> to see the replication status of the selected Swift node.
+<br><img src="/content/documentation/media/swift_icinga-replication-status.png">
 
 ###Status Messages for replication monitoring
 
@@ -167,11 +172,14 @@ You can monitor the health status of the swift-proxy, swift-account, swift-conta
 	* Username: *icingaadmin*
 	* Password: *icingaadmin*  
 
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details </b>(opens in a new window)</a>.
+2. Click **Status** on the left panel and then click <b>Host Details </b>.
+<br><img src="/content/documentation/media/icinga_host-details.png">
 
-3. In the Host column, click the icon next to the host IP of the Swift storage node to open <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>All Hosts</i></b> (opens in a new window)</a>.
+3. In the Host column, click the icon next to the host IP of the Swift storage node to open <b>Service Status Details For Host <i>All Hosts</i></b>.
+<br><img src="/content/documentation/media/swift_icinga_view-details.png">
 
-4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>Swift node IP address </i></b> (opens in a new window)</a> to view the health status of the selected Swift node.
+4. Click the Swift node IP address to open the <b>Service Status Details For Host <i>Swift node IP address </i></b> to view the health status of the selected Swift node.
+<br><img src="/content/documentation/media/swift_icinga-health-status.png">
 
 ### Status Messages for health monitoring
 
