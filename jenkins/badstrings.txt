@@ -60,7 +60,6 @@ OpenStack®
  and and 
  given given
  [^_]Openstack
- eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
  [Tt]empates 
