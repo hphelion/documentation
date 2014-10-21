@@ -22,7 +22,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster’s link.
+1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
 2. On the **Admin** tab, click **Cluster**.
 3. Click the **Settings** icon (a gear icon in the upper right corner)
 4. The **MySQL** check box should be checked. If it is not, check it.
@@ -86,7 +86,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 
 ##Key Code Snippets
 
-This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application’s environment variables. The connection information is represented using JSON. 
+This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. 
 
 The rest of the code shown here parses the JSON string that was retrieved and builds the appropriate JDBC connection string.
 

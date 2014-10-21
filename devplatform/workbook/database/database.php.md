@@ -21,7 +21,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster’s link.
+1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
 2. On the **Admin** tab, click **Cluster**.
 3. Click the **Settings** icon (a gear icon in the upper right corner)
 4. The **MySQL** check box should be checked. If it is not, check it.
@@ -56,7 +56,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 	<br>	**Note**: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 ##Key Code Snippets
-This first line in this section of the index.php file shows how to retrieve the connection information for the MySQL instance from the application’s environment variables. The connection information is represented using JSON. 
+This first line in this section of the index.php file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. 
 
 The rest of the code shown here parses the JSON string that was retrieved and builds the appropriate connection string. Once the connection has been made, the code executes a query, reads the results, and closes the connection. 
 
