@@ -37,7 +37,7 @@ Thanks for your interest in HP Helion OpenStack Community! These release notes c
 This release of the HP Helion OpenStack Community edition contains a single download of the product that covers both virtual and bare metal deployment:
 
 * *A virtual deployment of HP Helion OpenStack Community*. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. 
-* *A bare-metal deployment of HP Helion OpenStack Community*. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on a controller host, 2 physical Swift nodes, and up to 30 physical compute nodes. 
+* *A bare-metal deployment of HP Helion OpenStack Community*. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on 3 controller hosts, 2 physical Swift nodes, and up to 36 physical compute nodes. 
 
 These release notes cover both deployments.
 
@@ -54,7 +54,7 @@ The following sections list the features in the current version, 1.4, and previo
 
 **Kibana interface support** &mdash; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
 
-**OpenStack Juno-2 milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1. For more information on the Juno-2 release, see {OpenStack 2014.2 (Juno) Release Notes](https://wiki.openstack.org/wiki/ReleaseNotes/Juno).
+**OpenStack Juno-2 milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1. For more information on the Juno-2 release, see [OpenStack 2014.2 (Juno) Release Notes](https://wiki.openstack.org/wiki/ReleaseNotes/Juno).
 
 **Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the OpenStack DVR implemented in OpenStack Juno-3.
 
@@ -64,7 +64,7 @@ The following sections list the features in the current version, 1.4, and previo
 
 **Speeds cloud service delivery** &mdash; Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
 
-**Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology – we closely track the community trunk release.
+**Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology, closely tracking the community trunk release.
 
 
 ##Supported services ## {#supported-services} 
@@ -98,26 +98,24 @@ HP recommends the following best practices for this software version.
 
 **Installation**
 
-* To enable VM functionality, be sure to install the required `qemu-kvm` package.  You can install this package with the command: 
-
-        sudo apt-get install -y qemu-kvm
+* To enable VM functionality, be sure to install the required Ubuntu packages, as described in the [Software configuration](/helion/community/hwsw-requirements/#software) section in Community Hardware and Software Requirements.
 
 **Operations**
 
 * When issuing Neutron commands from inside the seed VM, we recommend you set the `LANG` environment variable to `C`.  Add the following line to the appropriate user configuration file:
 
-        export LANG=C
-        
+		export LANG=C
+
 * We recommend cleaning up any VMs using excess space, by executing the following commands:
-    - Delete the KVM VMs and their storage volumes with the `virsh` command.
-    - Delete the file `/tmp/seed_options`.
-    - Uninstall any packages that you no longer require.
+	- Delete the KVM VMs and their storage volumes with the `virsh` command.
+	- Delete the file `/tmp/seed_options`.
+	- Uninstall any packages that you no longer require.
 
 * For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:
-    - sudo service nova-compute restart
-    - sudo service nova-scheduler restart
-    - sudo service nova-conductor restart
-    - sudo service neutron-openvswitch-agent restart
+	- sudo service nova-compute restart
+	- sudo service nova-scheduler restart
+	- sudo service nova-conductor restart
+	- sudo service neutron-openvswitch-agent restart
 
 * After deleting a cloud or an entire HP Helion OpenStack Community installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that might have been stored there.
 
