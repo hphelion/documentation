@@ -27,7 +27,7 @@ PageRefresh();
 
 The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.
 
-You can configure a 3PAR device by using the undercloud Horizon dashboard (*Recommended*) or the [Sirius client](/helion/openstack/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.
+You can configure a 3PAR device by using the undercloud Horizon dashboard (*recommended*) or the [Sirius client](/helion/openstack/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.
 
 * [Before you begin](#before-you-begin)
 
@@ -58,7 +58,7 @@ Before you start working with 3PAR StoreServ, ensure that the following prerequi
 
 1. HP Helion Cloud is deployed
 
-2. The HP 3PAR StoreServ device is accessible from the undercloud
+2. The HP 3PAR StoreServ device is accessible from the undercloud.
 
 3. The HP 3PAR StoreServ device (running operating system v 3.1.3 or later) is accessible by the Compute nodes and Cinder running in the overcloud.
 
@@ -66,9 +66,9 @@ Before you start working with 3PAR StoreServ, ensure that the following prerequi
 
 ## Register a 3PAR device {#registering-device}
 
-To register the device using the Undercloud Horizon Dashboard, do the following:
+To register the device using the undercloud Horizon dashboard, do the following:
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -112,7 +112,7 @@ To register the device using the Undercloud Horizon Dashboard, do the following:
 
 To edit the details of a StoreServ, do the following:
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -132,7 +132,7 @@ To edit the details of a StoreServ, do the following:
 
 Use this option to unregister a StoreServ.
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -149,7 +149,7 @@ Use this option to unregister a StoreServ.
 
 Use this option to unregister multiple StoreServs using a single command.
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -171,7 +171,7 @@ Once you register the 3PAR device, choose the CPGs for your cloud. CPG (Common P
 
 To register the CPGs, do the following:
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -210,7 +210,7 @@ To register the CPGs, do the following:
 
 To edit a CPG, do the following:
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -232,7 +232,7 @@ To edit a CPG, do the following:
 
 To unregister, do the following:
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then click **Storage** to display the overview page.
 
@@ -249,7 +249,7 @@ To unregister, do the following:
 
 Use this option to unregister multiple CPGs using a single command.
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
@@ -267,7 +267,7 @@ Use this option to unregister multiple CPGs using a single command.
 
 Use this option to view the CPG configuration (as defined in OpenStack Configuration Manual for HP 3PAR Cinder Block Storage Volume Driver).
 
-1. Log in to the undercloud Horizon Dashboard.
+1. Log in to the undercloud Horizon dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the overview page.
 
