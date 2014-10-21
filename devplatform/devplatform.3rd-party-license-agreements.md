@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-devplatform
 title: "Helion Development Platform Open Source and Third-Party Software License Agreements"
 permalink: /helion/devplatform/3rd-party-license-agreements/
 product: devplatform
