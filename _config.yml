@@ -334,7 +334,7 @@ navigation:
     url: /helion/devplatform/related-topics/
   - text: Application Lifecycle Service Configuration and Deployment
     url: /helion/devplatform/deploy/
-  - text: ALS Documentation
+  - text: ALS Admin Guide
     url: /als/v1/admin/
   - text: End User License Agreement
     url: /helion/devplatform/eula/
@@ -363,7 +363,7 @@ navigation:
     url: /api/dns/
   - text: Monitoring
     url: /api/monitoring/
-  - text: ALS Documentation
+  - text: ALS Admin Guide
     url: https://apaas-docs.hpcloud.com
   - text: Messaging
     url: /api/msgaas/ 
