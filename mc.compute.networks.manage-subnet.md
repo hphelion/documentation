@@ -97,7 +97,7 @@ To create host routes in the [subnet creation screen](#Creating), enter the `Des
 
 ##Editing a subnet## {#Editing}
 
-To modify details of your subnet (such as the name, gateway IP axdress, host routes, and so on), you can use the edit subnet details screen.  There are 
+To modify details of your subnet (such as the name, gateway IP address, host routes, and so on), you can use the edit subnet details screen.  There are 
 
 From the main networks screen, click the name of the subnet you want to modify in the `Subnets` column of the `Networks` list:
 
