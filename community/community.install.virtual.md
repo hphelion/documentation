@@ -123,13 +123,13 @@ To begin the installation:
 
 	[HP Helion OpenStack Community Edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
-	The download file is named: `ce_installer.gz`
+	The download file is named: `Helion_Openstack_Community.tar.gz`
 
 3. In the root user's home directory, create the `work` directory and extract the installation software to the `work` directory:
 
 		mkdir work
 		cd /work
-		tar zxvf /{full path to downloaded file from step 2}/ce_installer.gz
+		tar zxvf /{full path to downloaded file from step 2}/Helion_Openstack_Community.tar.gz
 
 This creates and populates a `tripleo/` directory within root's home directory.
 
@@ -156,7 +156,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 		ssh 192.0.2.1
 
-2. Set the following environment variables:
+2. Set the following environment variablehp_ced_installer.shs:
 
 	`OVERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for overcloud hosts.
 

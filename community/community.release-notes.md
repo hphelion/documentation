@@ -52,7 +52,12 @@ The following sections list the features in the current version, 1.4, and previo
 
 **Additional overcloud controllers for high availability** &mdash; The number of installed overcloud controller nodes has been increased to 3. The additional nodes should allow Community to continue operating if a single control node fails. Previously, the Community edition installed a single overcloud controller node. 
 
-**Icinga monitoring support** &mdash; Icinga 2 is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
+**Icinga monitoring support** &mdash; Icinga is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
+
+**Kibana interface support** &mdash; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
+
+
+
 
 ### Features in HP Helion OpenStack Community GA
 
@@ -169,7 +174,8 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 **Operations**
 
-* If you determine that your VM seed has not started correctly when you executed the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
+* When accessing Horizon in a virtual environment, use the public network address, not the management network address. In a default configuration, the URL is http://192.0.8.2.
+* If you determine that your VM seed has not started correctly when you executed the `hp_ced_host_manager.sh` script, run the script a second time to ensure you start the seed.
 * VM installations do not currently persist across reboots.  When you reboot your system, be sure to start a new VM installation.
 * If after an overcloud controller reboot you determine the VMs are in an ERROR state, execute the following commands to restart the services and remove the error:
   

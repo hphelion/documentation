@@ -23,7 +23,7 @@ PageRefresh();
 <!-- Hide until use cases are official
 <p style="font-size: small;"> <a href="/helion/openstack/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/manage/">&#9650; UP</a> | <a href="/helion/openstack/dashboard/users/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&#174;: How to use the Helion Dashboards
+# HP Helion OpenStack&#174; Community: How to use the Helion Dashboards
 
 The HP Helion OpenStack Community dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.  
 
@@ -39,6 +39,8 @@ Across the top are menus to switch between projects and menus where you can acce
 How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/dashboard/users/).
 -->
 To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/dashboard/login/). 
+
+**Note:** When accessing Horizon in a virtual environment, use the public network address, not the management network address. In a default configuration, the URL is http://192.0.8.2.
 
 ## Project dashboard<a name="DashProject"></a>
 
