@@ -24,7 +24,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Working with StoreServ Backends
 
-Once you register the StoreServ systems as per your requirements, you can use the Overcloud option in the Undercloud Horizon Dashboard for the following tasks:
+Once you register the StoreServ systems as per your requirements, you can use the overcloud option in the Horizon undercloud dashboard for the following tasks:
 
 * [Add Backend](#add-backend)
 
@@ -159,13 +159,13 @@ To generate configuration file, do the following:
 
 4. (Optional) Click Download StoreServ Config link to download the file if the file does not automatically download .<br> A dialog box is displayed.</br>
 
-5. Click **OK** to download and save the file. <br>Once you download the configuration file, you can proceed to update the Overcloud configuration.</br>
+5. Click **OK** to download and save the file. <br>Once you download the configuration file, you can proceed to update the overcloud configuration.</br>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### Update Overcloud {#update-overcloud}
 
-To update your Overcloud with the changes, do the following:
+To update your overcloud with the changes, do the following:
 
 1. SSH to Seed as root from KVM host.
 
@@ -175,7 +175,7 @@ To update your Overcloud with the changes, do the following:
 
 		# ls
 
-3. Copy Overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
 	 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
@@ -253,13 +253,13 @@ To update your Overcloud with the changes, do the following:
 		# source /root/env_vars
 
 
-7. Launch install script to update the Overcloud.
+7. Launch install script to update the overcloud.
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this backend using Overcloud Horizon or Cinder CLI. 
+To use the newly added Cinder backend, create volume type and associate it with this backend using the Horizon overcloud dashboard or Cinder CLI. 
 
 
 
