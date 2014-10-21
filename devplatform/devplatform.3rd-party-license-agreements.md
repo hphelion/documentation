@@ -7,10 +7,22 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
+<<<<<<< HEAD
 #  #HP Helion Development Platform Open Source and Third-Party Software License Agreements
+=======
 
-The Open Source and Third-Party Software License Agreements for HP Helion Development Platform are available as a PDF download
 
+
+<h1 id="hp-helion-openstack-beta-open-source-and-third-party-software-license-agreements">HP Helion Development Platform Open Source and Third-Party Software License Agreements</h1>
+>>>>>>> origin/development
+
+<p>The Open Source and Third-Party Software License Agreements for HP Helion Development Platform are available as a PDF download
+
+<<<<<<< HEAD
 Download the PDF document [here.](http://g867c39a921f179b9eb3ba7424144b70a.cdn.hpcloudsvc.com/source/DP_Thirdparty v2.pdf)
 
+=======
+ <a href="http://g867c39a921f179b9eb3ba7424144b70a.cdn.hpcloudsvc.com/source/DP_Thirdparty v2.pdf">Download the PDF document.</a>
+</p>
+>>>>>>> origin/development
 
