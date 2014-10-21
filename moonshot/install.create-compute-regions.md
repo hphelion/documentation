@@ -63,7 +63,7 @@ To create a compute region:
 
 The compute region will go through series of steps to create and will display the completion percentage. Once the Compute Region is created, the state will display as <b>Active</b>.
 
-**Note:** This process takes apoproximately 10 minutes to complete.
+**Note:** This process takes approximately 10 minutes to complete.
 
 
 ## Next Step

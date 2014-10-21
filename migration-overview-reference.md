@@ -1315,7 +1315,7 @@ To create a block volume and attach the volume to the instance:
 	
 		device - The Linux device name (or drive name) ID of the device where the instance resides. This value is typically /dev/vda#.
 		
-	**Tip**: Use the Linux commmands such as `fdisk -l` or `cat /proc/partitions` to view a list of device names.
+	**Tip**: Use the Linux commands such as `fdisk -l` or `cat /proc/partitions` to view a list of device names.
 
 	The following example attaches a volume, *test*, to the srv1 instance on */dev/vdi*.
 
