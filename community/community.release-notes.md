@@ -5,7 +5,7 @@ permalink: /helion/community/release-notes/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

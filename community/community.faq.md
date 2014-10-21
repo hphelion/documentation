@@ -5,7 +5,7 @@ permalink: /helion/community/faq/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
