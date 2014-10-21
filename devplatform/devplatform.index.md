@@ -84,7 +84,7 @@ Most of the Helion Development Platform documentation assumes that you've alread
 ----------
 ###[Resources for Application Developers](/helion/devplatform/appdev/)
   
-###[Resources for ITOps](/helion/devplatform/sysadmin/)
+###[Resources for IT Ops](/helion/devplatform/sysadmin/)
   
 <!--### [Resources for OpenStack Integration, Extension, and Service Development](/helion/devplatform/servicedev/) -->
 

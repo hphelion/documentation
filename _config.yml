@@ -324,7 +324,7 @@ navigation:
     url: /helion/devplatform/install/
   - text: Application Developer Resources
     url: /helion/devplatform/appdev/
-  - text: ITOps Resources
+  - text: IT Ops Resources
     url: /helion/devplatform/sysadmin/
   - text: Sample Workbook
     url: /helion/devplatform/appdev/#sample
