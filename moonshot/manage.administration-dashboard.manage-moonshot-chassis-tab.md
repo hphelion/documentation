@@ -221,7 +221,7 @@ The Nodes View also displays two tabs on the right- **Workload** and **Configura
    
   * Changing the Power status of a cartridge also changes the power status of all related nodes. <br>
 
-To change the power status of Cartitrdge/Node:
+To change the power status of Cartridge/Node:
 
 1. To power On/Off nodes of a cartridge, click the cartridge or node in the table or click the cartridge on the chassis image in the Chassis Snapshot section to select it
 

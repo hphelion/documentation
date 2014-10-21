@@ -583,7 +583,7 @@ The script will persist required files in `/mnt/state/vsa` which will be used fo
 
 This error will occur if the script fails to find `network_vsa.xml`, `storagepool_vsa.xml` and other configuration files which has to be preserved.
 
-* Check for the configuration files on &rdquo;/” path.
+* Check for the configuration files on &rdquo;/&lsquo; path.
 
 * On success, the script updates the `/mnt/state/vsa/vsa_config.json` file with the updated and created time.
 

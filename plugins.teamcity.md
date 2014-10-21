@@ -10,7 +10,7 @@ product: compute
 HP TeamCity Plugin for HP Helion Public Cloud
 =============================
 
-HP has developed an HP Helion Public Cloud plugin for TeamCity CI/CD server. The plugin provides implementation of TeamCity’s Cloud API and allows creation of virtual build agent on-demand in HP Helion Public Cloud. 
+HP has developed an HP Helion Public Cloud plugin for TeamCity CI/CD server. The plugin provides implementation of TeamCity's Cloud API and allows creation of virtual build agent on-demand in HP Helion Public Cloud. 
 
 Please download the latest version of the [HP TeamCity Plugin for HP Helion Public Cloud](http://www.jetbrains.com/teamcity/plugins/)!
 
@@ -41,7 +41,7 @@ http://confluence.jetbrains.com/display/TCD7/Installing+and+Configuring+the+Team
 
 In addition, note the following:
 - Make sure that the firewall and security group rules allow traffic to and from the port used by TeamCity (port 8111, by default).
-- Update “/etc/hosts” and add server`s name, if necessary.
+- Update &ldquo;/etc/hosts&rdquo;  and add server`s name, if necessary.
 
 
 ## Installing the HP TeamCity Plugin ##
@@ -71,7 +71,7 @@ To install the plugin:
  
 HP Helion Public Cloud plug-in needs a virtual image with pre-configured build agents to establish a connection with TeamCity server. A Cloud Image is any custom image or can be created from a snapshot using any of the pre-existing public/private images, for instance sizes equal to or greater than SMALL and for any Operating System.  
 
-To create a Cloud Image, install the TeamCity build agent, Java SDK and other DevTest environment dependencies on the preferred virtual image and take a snapshot. Any user can upload the newly created or customized virtual image to HP Helion Public Cloud as a Public/Private/Partner image using HP’s OpenStack based Glance service. 
+To create a Cloud Image, install the TeamCity build agent, Java SDK and other DevTest environment dependencies on the preferred virtual image and take a snapshot. Any user can upload the newly created or customized virtual image to HP Helion Public Cloud as a Public/Private/Partner image using HP's OpenStack based Glance service. 
 
 
 ### Creating a build agent snapshot ###
@@ -93,7 +93,7 @@ To create a Cloud Image, install the TeamCity build agent, Java SDK and other De
 
 ## Create Cloud Profile ##
 
-The TeamCity server supports Cloud integration using a configurable Cloud Profile. A user can create a new Cloud profile by selecting “HP Helion Public Cloud” from the Cloud Type drop-down.
+The TeamCity server supports Cloud integration using a configurable Cloud Profile. A user can create a new Cloud profile by selecting &ldquo;HP Helion Public Cloud&rdquo;  from the Cloud Type drop-down.
 
 Complete the Cloud Profile form with tenant credentials (Project Id, Access Key ID, and Secret Access Key) to establish a connection with HP Helion Public Cloud from TeamCity server. 
 
@@ -101,7 +101,7 @@ The following fields appear on the Cloud Profile form:
 
 	Location - Region where agent`s server should be started
 
-	Availability zone - is always has “default” value
+	Availability zone - is always has &ldquo;default&rdquo;  value
 
 	Key pair name - the name of public key which was created in HP management console
 
@@ -115,7 +115,7 @@ The following fields appear on the Cloud Profile form:
 
 	Security groups - the name of security group which is created in HP management console. Port 22 should be opened for agent.
 
-	Agent Images and Instances - image which should be used for Agent. Please check that selected image has Agent pre-installed. Currently the “plain-tc-agent” image can be used.
+	Agent Images and Instances - image which should be used for Agent. Please check that selected image has Agent pre-installed. Currently the &ldquo;plain-tc-agent&rdquo image can be used.
 
 	Maximum instances count - The maximum number of instances that can be run simultaneously.
 

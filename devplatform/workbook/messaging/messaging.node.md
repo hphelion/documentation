@@ -20,7 +20,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-1. Go to the Administrative console for your ALS cluster. (e.g. *https://api.xx.xx.xx.xx.xip.io*);  substitute your own cluster’s link)
+1. Go to the Administrative console for your ALS cluster. (e.g. *https://api.xx.xx.xx.xx.xip.io*);  substitute your own cluster's link)
 1. On the **Admin** tab, click **Cluster**.
 1. Click the **Settings** icon (a gear icon in the upper right corner)
 1. Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
@@ -51,7 +51,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 	
 		helion push
 	
-6.	Accecpt any default values that you may be prompted for. <br>**Note**: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
+6.	Accept any default values that you may be prompted for. <br>**Note**: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 
 ##Key Code Snippets

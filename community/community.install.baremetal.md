@@ -180,7 +180,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 	This creates and populates a `tripleo/` directory within root's home directory.
 
-5. **Optional:** To use an interface other than ‘eth0’ on the HOST as the bridge interface, for example eth3, use the following command:
+5. **Optional:** To use an interface other than 'eth0' on the HOST as the bridge interface, for example eth3, use the following command:
 
 		export BRIDGE_INTERFACE=eth3
 

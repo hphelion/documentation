@@ -105,7 +105,7 @@ To remove an existing account, use the [`account:remove <account_name>`](/cli/un
     Removed account 'account_2'
 
 ## Specifying an Account for a Single Operation ## {#DefiningAccountsPerCommand}
-Account name can be specified for a single command line operation and does not affect your account’s base credentials. To run a command on an account other than the default account use the `-a` option.
+Account name can be specified for a single command line operation and does not affect your account's base credentials. To run a command on an account other than the default account use the `-a` option.
 
 To show the servers on `account2` rather than the default:
 
@@ -114,7 +114,7 @@ To show the servers on `account2` rather than the default:
 Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/reference) to determine if a particular command supports the option.
 
 ## Specifying an Availability Zone for a Single Operation ## {#DefiningAZsPerCommand}
-Availability Zone can be specified for a single command line operation and does not affect your account’s base credentials. You can use this switch to quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see [the full list of current availability zones](#ListofAZs) down at the bottom of this page.
+Availability Zone can be specified for a single command line operation and does not affect your account's base credentials. You can use this switch to quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see [the full list of current availability zones](#ListofAZs) down at the bottom of this page.
 
 To view servers using the `az-2.region-a.geo-1` availability zone:
 

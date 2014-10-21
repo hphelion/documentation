@@ -263,8 +263,8 @@ Use the following steps to restore the undercloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		“Restore UnderCloud Finished.”
-		“Restore Procedure Completed”
+		"Restore UnderCloud Finished."
+		"Restore Procedure Completed"
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -402,7 +402,7 @@ You should restore the overcloud database when there is any problem with the nod
 
 **Important:**
 
-- During the backup process of the overcloud database the server won’t be affected.
+- During the backup process of the overcloud database the server won't be affected.
 - Every time that the overcloud database restore procedure is executed a backup of the current database will be created inside each node and will be located at `/mnt/state/var/lib/mysql_YY-MM-DD-HH-MM`.
 - If any problem happens during the restore, the operator can go and manually bring the MySQL cluster back and execute `os-refresh-config` in all the nodes
 
