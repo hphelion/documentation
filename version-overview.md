@@ -274,7 +274,7 @@ Our [Networking API](/api/v13/networking/) or the [Management Console](/mc/compu
 
 - Define and configure your own private Virtual L2 Networks
 - Establish Virtual Private Network (VPN)  
-- Specify IP address ranges and security group parameters that define the firewall rules for your instances to ensure they don’t conflict with your existing on-premise network
+- Specify IP address ranges and security group parameters that define the firewall rules for your instances to ensure they don't conflict with your existing on-premise network
 - Allocate and manage public floating IP addresses
 - Connect to a specific network
 - Connect an instance to more than one network

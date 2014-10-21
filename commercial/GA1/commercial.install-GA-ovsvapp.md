@@ -332,7 +332,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		#Maintenance mode will trigger DRS to migrate the tenant VMS. If set to false, then esx host will be shut down along with all tenant VMs. (*OPTIONAL)
 		esx_maintenance_mode=true_or_false
 
-	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM’s kernel panic occurs. 
+	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM's kernel panic occurs. 
 
 	- If set to true, OVSvApp VM is powered off and the ESX host is put in Maintenance mode.
 	- If set to false, the ESX host will be shut down along with all tenant VMs.
