@@ -54,9 +54,9 @@ The following sections list the features in the current version, 1.4, and previo
 
 **Kibana interface support** &mdash; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
 
-* **OpenStack Juno-2 milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1. For more information on the Juno-2 release, see {OpenStack 2014.2 (Juno) Release Notes](https://wiki.openstack.org/wiki/ReleaseNotes/Juno).
+**OpenStack Juno-2 milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1. For more information on the Juno-2 release, see {OpenStack 2014.2 (Juno) Release Notes](https://wiki.openstack.org/wiki/ReleaseNotes/Juno).
 
-* **Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the OpenStack DVR implemented in OpenStack Juno-3.
+**Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the OpenStack DVR implemented in OpenStack Juno-3.
 
 ### Features in HP Helion OpenStack Community GA
 
