@@ -19,10 +19,10 @@ Before going any further, though, we highly recommend that you read Introducing 
 
 With a change to something as fundamental as how authentication works, all customers currently in private beta are impacted.  The most common situations customers find themselves in include:
 
-* _Manage Console_ – Login credentials (email address and password) remain exactly the same.  In this first wave of Identity Service-based changes you will not be able to assign a Tenant to another user, but that ability will be coming later.  The biggest change will be on the API Keys screen, which now features a single set of keys and a Tenant ID: (graphic here)
-* _Bindings and CLIs_ – More specific details are provided later in this document, but generally speaking, you will need to download new versions of the bindings and CLIs you are using.  All HP-supported bindings and CLIs have been upgraded to interact with the new Identity Service.  In many cases, the only impact after using the new version is that instead of using just access keys for authentication, you must now use access keys and your Tenant ID.
+* _Manage Console_ - Login credentials (email address and password) remain exactly the same.  In this first wave of Identity Service-based changes you will not be able to assign a Tenant to another user, but that ability will be coming later.  The biggest change will be on the API Keys screen, which now features a single set of keys and a Tenant ID: (graphic here)
+* _Bindings and CLIs_ - More specific details are provided later in this document, but generally speaking, you will need to download new versions of the bindings and CLIs you are using.  All HP-supported bindings and CLIs have been upgraded to interact with the new Identity Service.  In many cases, the only impact after using the new version is that instead of using just access keys for authentication, you must now use access keys and your Tenant ID.
 * _Service Endpoints for Object Storage and Compute_ - If you have written your own code on top of the raw REST API for Object Storage or Compute, the authentication for each is now performed with the Identity Service, which then also presents the endpoints for activated services.  More details on this are available in the Identity Service REST API documentation.
-* _EC2 Compatibility_ (and 3rd party tools like euca2ools) – More details are presented later in this document, but the short version is that your endpoint won’t change but you will need to change your access key.
+* _EC2 Compatibility_ - (and 3rd party tools like euca2ools) – More details are presented later in this document, but the short version is that your endpoint won't change but you will need to change your access key.
 
 ## Interruption of Service During the Upgrade
 
