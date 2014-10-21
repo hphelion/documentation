@@ -203,7 +203,7 @@ Use the following steps to back up the undercloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		Backup UnderCloud Finished.
+		Backup Undercloud Finished.
 		Backup Procedure Completed
 
 **Example**
@@ -222,7 +222,7 @@ Use the following steps to back up the undercloud:
 		…
 		Deleting temporary Undercloud Backup files...
 		Warning: Permanently added '192.0.2.2' (ECDSA) to the list of known hosts.
-		Backup UnderCloud Finished.
+		Backup Undercloud Finished.
 		Backup Procedure Completed
 
 All required files are backed-up to the specified folder:
@@ -263,7 +263,7 @@ Use the following steps to restore the undercloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		"Restore UnderCloud Finished."
+		"Restore Undercloud Finished."
 		"Restore Procedure Completed"
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -292,7 +292,7 @@ Use the following steps to back up the overcloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		Backup OverCloud Finished.
+		Backup Overcloud Finished.
 		Backup Procedure Completed
 
 	**Example**
@@ -307,7 +307,7 @@ Use the following steps to back up the overcloud:
 		…
 		…
 		Deleting temporary Overcloud Backup files...
-		Backup OverCloud Finished.
+		Backup Overcloud Finished.
 		Backup Procedure Completed
 
 All required files are backed-up to the specified folder:
@@ -330,7 +330,7 @@ Use the following steps to restore the seed VM:
 
 	When the process is complete, a message similar to the following displays:
 
-		Restore OverCloud Finished.
+		Restore Overcloud Finished.
 		Restore Procedure Completed
 
 	**Example**
@@ -346,7 +346,7 @@ Use the following steps to restore the seed VM:
 		Restore name: backup_14-09-03-12-30
 		…
 		…
-		Restore OverCloud Finished.
+		Restore Overcloud Finished.
 		Restore Procedure Completed
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -369,7 +369,7 @@ Use the following steps to back up the overcloud database:
 
 	When the process is complete, a message similar to the following displays:
 
-		Backup OverCloud Database Finished.
+		Backup Overcloud Database Finished.
 		Backup Procedure Completed
 
 	**Example**
@@ -384,7 +384,7 @@ Use the following steps to back up the overcloud database:
 		…
 		…
 		Deleting temporary Overcloud Database Backup files...
-		Backup OverCloud Database Finished.
+		Backup Overcloud Database Finished.
 		Backup Procedure Completed
 
 All required files are backed-up to the specified folder:
@@ -421,7 +421,7 @@ Use the following steps to restore the overcloud database:
 
 	When the process is complete, a message similar to the following displays:
 
-		Restore OverCloud Database Finished.
+		Restore Overcloud Database Finished.
 		Restore Procedure Completed
 
 	**Example**
@@ -456,7 +456,7 @@ During the period that the server is re-building, you can temporarily restart th
 
 After the management controller is rebuilt, use the following steps below to disable the temporary solution:
 
-1. SSH to the same UnderCloud controllers where cinder-volume was enable before
+1. SSH to the same Undercloud controllers where cinder-volume was enable before
 
 2. Execute the following commands
 
@@ -479,9 +479,9 @@ The following lists all of the command options for the backup script, `hp_ced_ba
 		Usage: hp_ced_backup.sh [options]
 		The Backup tool can backup following
 			1. Seed
-			2. UnderCloud
-			3. OverCloud
-			4. OverCloud Database
+			2. Undercloud
+			3. Overcloud
+			4. Overcloud Database
 		 
 		Options:
 			[Required]
@@ -507,9 +507,9 @@ The following lists all of the command options for the backup script, `hp_ced_re
  
 		The Restore tool can restore the following from a previous restore
 			1. Seed
-			2. UnderCloud
-			3. OverCloud
-			4. OverCloud Database
+			2. Undercloud
+			3. Overcloud
+			4. Overcloud Database
  
 		Options:
 		[Required]
@@ -527,7 +527,7 @@ The following lists all of the command options for the backup script, `hp_ced_re
 Other optional options that can be used during the backup/restore process, as:
 
 - Backup/Restore the files in/from a remote server (using option H)
-- Backup Seed + Undercloud + … all at once using all the parameters at the same time (--seed, --undercloud --overcloud)
+- Backup Seed + undercloud + … all at once using all the parameters at the same time (--seed, --undercloud --overcloud)
 
 ## Undercloud password issues<a name="underpass"></a>
 
