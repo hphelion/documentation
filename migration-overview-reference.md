@@ -652,7 +652,7 @@ To create an ephemeral instance using Python Novaclient commands:
 
 		--security_groups (optional) - The name of the security group to use. 
 	
-		--block_device_mapping (optional) - A definition of any block devices to attach to the instance. For onformaton, see [Block mapping](#blockmapping). 
+		--block_device_mapping (optional) - A definition of any block devices to attach to the instance. For information, see [Block mapping](#blockmapping). 
 
 		--nic (optional) - Create a network interface card (NIC) on the server. Specify the option multiple times to create multiple NICs. Use either the UUID or IPv4 fixed address for the NIC.
 
