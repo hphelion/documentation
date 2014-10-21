@@ -18,12 +18,10 @@ PageRefresh();
 </script>
 
 
-# HP Helion OpenStack&reg; Community Release Notes
+# HP Helion OpenStack&reg; Community 1.4 Release Notes
 
 <!--**Product Name:** HP Helion OpenStack&reg; Community
 **OpenStack&reg; release name:** Icehouse-->
-
-<!--Thanks for installing the HP Helion OpenStack Community edition! The initial "cloud-in-a-box" virtual deployment allows you to evaluate the Community edition and Icehouse release of OpenStack.  Frequent updates will be available&mdash;approximately every 6 weeks&mdash;to remain as close to the OpenStack trunk release as possible.  The Community edition is the foundational technology for the HP Helion portfolio of products, allowing HP Helion products to quickly leverage OpenStack capabilities.-->
 
 Thanks for your interest in HP Helion OpenStack Community! These release notes contain the following information about this release:
 
@@ -56,8 +54,9 @@ The following sections list the features in the current version, 1.4, and previo
 
 **Kibana interface support** &mdash; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
 
+* **OpenStack Juno-2 milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1. For more information on the Juno-2 release, see {OpenStack 2014.2 (Juno) Release Notes](https://wiki.openstack.org/wiki/ReleaseNotes/Juno).
 
-
+* **Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the OpenStack DVR implemented in OpenStack Juno-3.
 
 ### Features in HP Helion OpenStack Community GA
 
@@ -85,52 +84,6 @@ This release of the Community edition is shipped with the following supported se
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
  <td>Orchestration (Heat)<td>Full support<td>N/A
 </table>
-
-<!--
-<table style="text-align: left; vertical-align: top;"><tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;"><th>OpenStack-powered capabilities<th>OpenStack version<th>API supported<th>API version<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Compute (Nova)<td>ICEHOUSE<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Object Storage (Swift)<td>ICEHOUSE<td>Full support<td>v1.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Block Storage (Cinder)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Networking (Neutron)<td>ICEHOUSE<td>Full support<td>v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Image Service (Glance)<td>ICEHOUSE<td>Full support<td>v1.0 and v2.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Identity (Keystone)<td>ICEHOUSE<td>Full support<td>v2.0 and v3.0<tr style="background-color: white; color: black; text-align: left; vertical-align: top;"><td>Dashboard (Horizon)<td>ICEHOUSE<td>Full support<td>N/A</table>
--->
-
-<!--
-
-
-## Prerequisites 
-
-Note: This section commented out; appears to be a duplicate--and out of date--version of the same information in the install page
-
-This release of the Community edition requires the following:
-
-* [Hardware requirements](#hardwarereqs)
-* [System software preparation](#softwareprep)
-
-### Hardware requirements ## {#hardwarereqs}
-
-The [OpenStack TripleO utility](https://wiki.openstack.org/wiki/TripleO) creates several large virtual machines (VMs) as part of the cloud-in-a-box deployment process, so you must use a system that meets or exceeds the following hardware specifications:
-
-* At least 16 GB of RAM
-* At least 200 GB of available disk space
-* Virtualization support enabled in the BIOS
-
-**Host OS:** Ubuntu 13.10 or 14.04, running on the physical machine
-**Supported Guest OS:** Ubuntu 13.10
-
-
-### Software system preparation ## {softwareprep}
-
-* You must have an Ubuntu 13.10 or 14.04 host operating system installed. Other host operating systems might work but have not been tested. Also, this system does not currently install into a virtual machine.
-**Note:** To avoid an install error, where the seed cloud works, but the undercloud and overcloud does not, you must use Ubuntu 13.10 Server **OR** install openssh-server on and Ubuntu 13.10 desktop version and disable all firewalls (ufw). * The host must allow root ssh login.
-* The following packages must be installed:
-$ sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 qemu-kvm
-* If you have just installed the libvirt packages, you must reboot or restart libvirt:
-$ sudo /etc/init.d/libvirt-bin restart
-* Ensure that the root user has a private/public keypair. 1. Login as root:
-$ sudo su -
-2. Check whether .ssh/id_rsa exists:
-      # ls ~root/.ssh/id_rsa
-3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
-      # ssh-keygen -t rsa
-
-
--->
 
 ##Recommendations for HP Helion OpenStack Community## {#recommendations}
 
@@ -202,13 +155,8 @@ For additional information on HP Helion OpenStack Community, OpenStack Cloud Sof
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-<!--See the [HP Helion OpenStack Community Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/).-->
-
-Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
-
-The OpenStack Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and is used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+* [Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/)
+* [End User License Agreement](/helion/community/eula/)
 
 ----
 ####OpenStack trademark attribution
