@@ -464,7 +464,7 @@ and DHCP services. It is a single service in a cloud and can co-exist with the c
 
 <tr style="background-color: white; color: black;">
 <td> <b>Provider Network Name</b> </td>
-<td> Specifiy a network name; by default flat_network1 is displayed. </td>
+<td> Specify a network name; by default flat_network1 is displayed. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

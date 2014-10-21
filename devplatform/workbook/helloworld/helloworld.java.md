@@ -14,7 +14,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/als/v1/user/client/).
+- Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ###JDK
 You must have the Java Development Kit (JDK) installed before you can install the other prerequisites.
@@ -27,7 +27,6 @@ On a Mac/UNIX environment, the JDK can be installed with the following command:
 On a PC environment, the simplest way to install the JDK is to visit the [JDK installation page](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and run the appropriate installer for your chosen platform.
 
 ###Maven 
-
 [Maven](http://maven.apache.org/ "Maven") must be installed. 
 The simplest way to install Maven on a Mac/UNIX environment is:
 
@@ -46,12 +45,14 @@ In the root directory of the sample package, execute the following command:
 This builds the application with Maven. It will create the *hello-world-java-1.0.war* file within the target directory. 
 
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
+
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
 	
-		helion target https://api.xx.xx.xx.xx.example.com2.	
+		helion target https://api.xx.xx.xx.xx.example.com2	
 
 
 1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
@@ -59,7 +60,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 		helion login
 		
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute 
+5.	Deploy the application by using the command: 
 	
 		helion push
 	

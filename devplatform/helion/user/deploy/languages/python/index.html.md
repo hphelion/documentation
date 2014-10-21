@@ -252,7 +252,7 @@ the Health Manager.
 
 To deploy worker applications, you need to use the
 [*command*](/als/v1/user/deploy/manifestyml/#command) key and set the
-[*proceses:
+[*processes:
 web*](/als/v1/user/deploy/manifestyml/#web) key to
 Null ("\~").
 

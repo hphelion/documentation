@@ -12,20 +12,21 @@ This very simple Servlet-based Java web app displays a simple form that takes a 
 ## Prerequisites
 If you are missing any of these items, please [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an ALS cluster.
-2.	The Helion command-line interface (CLI) must be installed.
-3.	You must have access to the web-based Helion Management console.
+1.	You must have access to an [ALS cluster](/als/v1/admin/cluster/).
+2.	The [Helion command-line interface](/als/v1/user/client/) (CLI) must be installed.
+3.	You must have access to the web-based [Helion Management console](/als/v1/user/console/).
 
-If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps: 
+##RabbitMQ
 
-- Go to the Administrative console for your ALS cluster (e.g. *https://api.xx.xx.xx.xx.xip.io*); substitute your own cluster’s link).
-- On the **Admin** tab, click **Cluster**.
-- Click the **Settings** icon (a gear icon in the upper right corner)
-- Both the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
--  Click **Save**.
- 
+If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your ALS cluster. 
+1. Go to the Administrative console for your ALS cluster. (e.g. *https://api.xx.xx.xx.xx.xip.io*);  substitute your own cluster's link)
+1. On the **Admin** tab, click **Cluster**.
+1. Click the **Settings** icon (a gear icon in the upper right corner)
+1. Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
+1. Click **Save**.
+
+**Note**: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/messageservice) to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.
 
 ###JDK
 In order to install other perquisites such as Maven you have to have the Java Development Kit (JDK) installed. The JDK can be installed with the following command in a Mac/UNIX environment:
@@ -56,6 +57,8 @@ If you are not already there, `cd` to the root directory of the sample and execu
 This builds the application with Maven. It will create the *rabbitmq-java-1.0.war* file  within the target directory. 
 
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
+
 Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)

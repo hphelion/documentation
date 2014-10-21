@@ -15,7 +15,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/als/v1/user/client/).
+- Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ##Download the Application Files
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-php)
@@ -26,7 +26,10 @@ To create a CloudFoundry&trade; app in PHP, the only mandatory files are the *in
 *Manifest.yml* is a configuration file used to specify settings that would otherwise be specified by a command-line tool. For PHP, only the **name** and **buildpack** fields are required. The **buildpack** field is a URL for the buildpack that supports the necessary language and/or framework.
 
 The *composer.json* file is completely optional; however, certain buildpacks may issue a warning if the file is not present.
+
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
+
 The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
@@ -74,8 +77,7 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 6.	You should see a simple text message: **Hello World!**
 
 ##Key Learnings
-
-1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file. 
-- You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
+2. You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
 
 [Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)

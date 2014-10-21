@@ -77,7 +77,7 @@ For simplicity, assume that all routers you will connect use the IKE and IPsec p
 
 	Configure the IKE SA as follows
 	- Authentication Method    : Pre-Shared Key
-	- Pre-Shared Key           : “abcd” 
+	- Pre-Shared Key           : &ldquo;abcd&rdquo;  
 	- Authentication Algorithm : sha1
 	- Encryption Algorithm     : aes-128-cbc
 	- Lifetime                 : 28800 seconds
@@ -129,7 +129,7 @@ These files are in the /etc/ directory of the installation file as well as a fol
 
 ####IPsec.conf file
 
-Before looking into the configuration options of this file, familiarize yourself with some of the key configuration attributes.  When configuring the VPC VPN instance, always consider it as the LEFT node and the remote server as the RIGHT node. The diagram below shows the basic pieces of the network’s LEFT and RIGHT sides.  
+Before looking into the configuration options of this file, familiarize yourself with some of the key configuration attributes.  When configuring the VPC VPN instance, always consider it as the LEFT node and the remote server as the RIGHT node. The diagram below shows the basic pieces of the network's LEFT and RIGHT sides.  
 
 insert image
 
@@ -153,7 +153,7 @@ The *config setup* subsection in the `IPsec.conf` file defines the general confi
 
 Setting to all logs all Pluto-related messages, but control only enables the control related messages.
 
-**Note:** Other strongSwan paramaters and configuration options are not covered here. For detailed information, refer to the [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation)  or the “VPN Quick Start Guide.”
+**Note:** Other strongSwan paramaters and configuration options are not covered here. For detailed information, refer to the [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation)  or the &ldquo; VPN Quick Start Guide.&rdquo; 
 
 ####Customize the IPsec.conf file
 Modify the configuration file for your connections.
@@ -351,8 +351,8 @@ The *ipsec.conf* file can hold multiple connection sections. Because we have thr
 
 	#include /var/lib/strongswan/ipsec.secrets.inc
 	10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
-	10.2.79.21 209.65.244.239 172.168.2.50 : PSK “siteb”
-	10.2.79.21 209.65.244.240 172.168.1.50 : PSK “sitec”
+	10.2.79.21 209.65.244.239 172.168.2.50 : PSK &ldquo; siteb&rdquo; 
+	10.2.79.21 209.65.244.240 172.168.1.50 : PSK &rldquo; sitec&rdquo; 
 
 back to the [top](#top)
 

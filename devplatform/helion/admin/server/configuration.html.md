@@ -1,12 +1,11 @@
-<<<<<<< Updated upstream
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/server/configuration/
+product: devplatform
 ---
 <!--PUBLISHED-->
 
-Detailed Configuration[](#detailed-configuration "Permalink to this headline")
-===============================================================================
+#Detailed Configuration {#detailed-configuration} 
 
    [Changing the Password](#changing-the-password)
 
@@ -23,7 +22,7 @@ Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 		-   [Adding DNS Nameservers](#adding-dns-nameservers)
 		-   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
 		-   [HTTP Proxy](#http-proxy)
-		-   [Staging Cache & App HTTP Proxy](#staging)
+		-   [Staging Cache & App HTTP Proxy](#staging-cache-app-http-proxy)
 	-   [VM Filesystem Setup](#vm-filesystem-setup)
 	-   [Application Lifecycle Service Data Services vs. High Availability Databases](#helion-data-services-vs-high-availability-databases)
 	-   [HTTPS & SSL](#https-ssl)
@@ -35,8 +34,7 @@ Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 		-   [sudo](#sudo)
 		-   [Allowed Repositories](#allowed-repositories)
 
-General[](#general "Permalink to this headline")
--------------------------------------------------
+##General {#general}
 
 **Note**
 
@@ -48,15 +46,14 @@ immediately after boot (the
 [*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
 option is useful in this scenario).
 
-### Changing the Password[](#changing-the-password "Permalink to this headline")
+### Changing the Password {#changing-the-password}
 
-The default password for the `helion` system user
+The default password for the Helion system user
 is **helion**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
 
 This password is changed to match the one set for the first
-administrative user created in the Management Console. Once you've set
-up the primary Application Lifecycle Service admin account, use that account's password when
-logging in to the VM at the command line.
+administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when
+logging in to the VM at the command line. 
 
 In an Application Lifecycle Service cluster, this change only happens on the node serving the
 Management Console pages (which could be one of [*multiple Controller
@@ -64,11 +61,9 @@ nodes*](/als/v1/admin/cluster/#cluster-multi-controllers)). In this case,
 it's best to log in to each node in the cluster to change the password
 manually with the `passwd` command.
 
-Network Setup[](#network-setup "Permalink to this headline")
--------------------------------------------------------------
+##Network Setup {#network-setup}
 
-### Changing the Hostname[](#changing-the-hostname "Permalink to this headline")
-
+### Changing the Hostname {#changing-the-hostname}
 You may want or need to change the hostname of the Application Lifecycle Service system,
 either to match a DNS record you've created or just to make the system
 URLs more convenient. This can be done using the [*kato node
@@ -98,7 +93,7 @@ In a [*cluster*](/als/v1/user/reference/glossary/#term-cluster), you
 may also need to manually [*modify the /etc/hosts
 file*](#server-config-etc-hosts).
 
-### Changing IP Addresses[](#changing-ip-addresses "Permalink to this headline")
+### Changing IP Addresses {#changing-ip-addresses}
 
 The Application Lifecycle Service *micro cloud* server is initially set up for
 [*DHCP*](/als/v1/user/reference/glossary/#term-dhcp) and [*multicast
@@ -182,7 +177,7 @@ the new addresses. You should also use this opportunity to ping the
 router and DNS server for this subnet. Check with your network
 administrator for their addresses.
 
-### Setting a Static IP[](#setting-a-static-ip "Permalink to this headline")
+### Setting a Static IP {#setting-a-static-ip}
 
 The easiest way to configure an Application Lifecycle Service VM with a static IP address is
 to use the [*kato op
@@ -198,9 +193,9 @@ This command will prompt for the following inputs:
 -   (optional) comma-separated list of DNS search domains (e.g.
     example.com, example.org)
 
-kato will verify the IP addresses given are within legal ranges,
+`kato` will verify the IP addresses given are within legal ranges,
 automatically calculate the network / broadcast addresses for you, and
-prompt for the 'sudo' password to write the changes.
+prompt for the *sudo* password to write the changes.
 
 As a precaution, the command does not automatically restart networking
 services. To do so, run the following commands:
@@ -261,11 +256,9 @@ network administrator for advice on which addresses and subnets are
 permissible. Once you have this secondary address set up, see the
 [*/etc/hosts*](#server-config-etc-hosts) section for final configuration
 of the server.
-
  
 ### Modifying /etc/hosts {#modifying-etc-hosts}
  
-
 The `/etc/hosts` file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
 need to [*change the local hostname*](#server-config-hostname), you will
@@ -325,7 +318,7 @@ example:
 
     $ sudo vi /etc/hosts
 
-### DNS[](#dns "Permalink to this headline")
+### DNS {#dns}
 
 The Application Lifecycle Service micro cloud uses [*multicast
 DNS*](/als/v1/user/reference/glossary/#term-multicast-dns). to
@@ -354,8 +347,7 @@ application pushed to Application Lifecycle Service as well as the following two
     aok.helion.example.com)
 
 If you intend to expose your applications at URLs on other domains (e.g.
-using [*helion
-map*](/als/v1/user/reference/client-ref/#command-map)) add these names
+using [*helion map*](/als/v1/user/reference/client-ref/#command-map) add these names
 to the DNS zone file as well. For example:
 
     app.domain.com              IN    CNAME    helion.example.com
@@ -375,7 +367,7 @@ necessary. To turn it off on the Application Lifecycle Service server, use the c
 
     $ kato role remove mdns
 
-### Dynamic DNS[](#dynamic-dns "Permalink to this headline")
+###Dynamic DNS {#dynamic-dns}
 
 If you don't have access to a DNS server, you can use a dynamic DNS
 provider, such as [ChangeIP](http://www.changeip.com/freedomains.asp)
@@ -393,14 +385,14 @@ assignment is made on the subdomain to handle `api`
 and related application subdomains. Then wait to receive the
 authorization email, and verify the zone transfer before proceeding.
 
-### Alternate DNS Techniques[](#alternate-dns-techniques "Permalink to this headline")
+### Alternate DNS Techniques {#alternate-dns-techniques)
 
 For situations where mDNS will not work (e.g. running in a cloud hosting
 environment or connecting from a Windows system without mDNS support)
 but which do not merit the effort of manually configuring a DNS record
 (e.g. a test server) alternative methods are available.
 
-#### xip.io []{#xip-io}
+####xip.io {#xip-io}
 
 The quickest way to get wildcard DNS resolution is to use the
 [xip.io](http://xip.io/) service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.
@@ -417,7 +409,7 @@ Application Lifecycle Service settings. The xip.io DNS servers will resolve the 
 '10.9.8.7.xip.io' and all sub-domains to '10.9.8.7'. This works for
 private subnets as well as public IP addresses.
 
-#### dnsmasq[](#dnsmasq "Permalink to this headline")
+####dnsmasq {#dnsmasq}
 
 Locally, you can run
 [*dnsmasq*](/als/v1/user/reference/glossary/#term-dnsmasq) as a simple
@@ -432,7 +424,7 @@ You must restart the service to pick up the changed configuration:
 
     $ /etc/init.d/dnsmasq restart
 
-### Adding DNS Nameservers[](#adding-dns-nameservers "Permalink to this headline")
+###Adding DNS Nameservers {#adding-dns-nameservers}
 
 You may need to add site-specific DNS nameservers manually if the
 Application Lifecycle Service VM or applications running in Application Lifecycle Service containers need to
@@ -450,10 +442,9 @@ For Application Lifecycle Service VMs with a static IP, add the nameservers when
 when running the `kato op static_ip` command (see
 [*Setting a Static IP*](#server-config-static-ip) above).
 
-### TCP/UDP Port Configuration {#tcp-udp-port-configuration}
+###TCP/UDP Port Configuration {#tcp-udp-port-configuration}
 
-The Application Lifecycle Service [*micro
-cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
+The Application Lifecycle Service [*micro cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
 the following ports exposed:
 
 <table>
@@ -518,7 +509,7 @@ Comments:
 -   The optional Harbor port service has a configurable port range
     (default 41000 - 61000) which can be exposed externally if required.
 
-### HTTP Proxy[](#http-proxy "Permalink to this headline")
+### HTTP Proxy {#http-proxy}
 
 **Note**
 
@@ -560,7 +551,7 @@ Then restart Polipo:
 For log info, any errors reported by Polipo are available on the
 Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
 
-###Staging Cache & App HTTP Proxy {#staging}
+###Staging Cache & App HTTP Proxy {#staging-cache-app-http-proxy}
 
 Application Lifecycle Service caches all application dependencies that are downloaded by
 module managers that support the
@@ -589,8 +580,8 @@ set*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example:
 Adding this configuration sets the 'http\_proxy' environment variable
 within all subsequently created application containers.
 
-VM Filesystem Setup[](#vm-filesystem-setup "Permalink to this headline")
--------------------------------------------------------------------------
+##VM Filesystem Setup {#vm-filesystem-setup)
+
 
 The Application Lifecycle Service VM is distributed with a simple default partitioning scheme
 (i.e. everything but "/boot" mounted on "/").
@@ -613,8 +604,7 @@ data can be found in the [*Persistent
 Storage*](/als/v1/admin/best-practices/#bestpractices-persistent-storage)
 section.
 
-Application Lifecycle Service Data Services vs. High Availability Databases[](#helion-data-services-vs-high-availability-databases "Permalink to this headline")
-----------------------------------------------------------------------------------------------------------------------------------------------
+##Application Lifecycle Service Data Services vs. High Availability Databases {#helion-data-services-vs-high-availability-databases}
 
 Application Lifecycle Service data services do not offer any built-in redundancy. For
 business-critical data storage, a high-availability database or cluster
@@ -630,8 +620,7 @@ To tie external databases to Application Lifecycle Service as a data service, se
 examples in the [*Adding System
 Services*](/als/v1/admin/reference/add-service/#add-service) section.
 
-HTTPS & SSL[](#https-ssl "Permalink to this headline")
--------------------------------------------------------
+###HTTPS & SSL {#https-ssl}
 
 HTTPS mode provides access to the provisioned apps using wild card SSL
 certificates through the router or
@@ -649,7 +638,7 @@ can be found in:
 If you change the hostname, you will need to regenerate the certificates
 or use your own (signed or self-signed) certificate.
 
-### Using your own SSL certificate[](#using-your-own-ssl-certificate "Permalink to this headline")
+### Using your own SSL certificate {#using-your-own-ssl-certificate}
 
 On all router nodes, upload your *.key* file to the */etc/ssl/private/*
 directory and your *.crt* file to */etc/ssl/certs/*. Change the
@@ -659,7 +648,7 @@ point to the new files:
     "sslKeyFile": "/etc/ssl/private/example.key",
     "sslCertFile": "/etc/ssl/certs/example.crt",
 
-### Adding Custom SSL Certs (SNI)[](#adding-custom-ssl-certs-sni "Permalink to this headline")
+### Adding Custom SSL Certs (SNI) {#adding-custom-ssl-certs-sni}
 
 The Application Lifecycle Service router supports
 [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication), and custom
@@ -679,7 +668,7 @@ SNI support with multiple Application Lifecycle Service routers works only with 
 balancers (e.g. HAProxy, iptables, F5) not HTTP load balancers (e.g.
 Nginx, Application Lifecycle Service load balancer).
 
-### CA Certificate Chaining[](#ca-certificate-chaining "Permalink to this headline")
+### CA Certificate Chaining {#ca-certificate-chaining}
 
 When using a signed certificate for Application Lifecycle Service, the certificates in the
 chain must be concatenated in a specific order:
@@ -711,7 +700,7 @@ the list. For example:
      2 s:/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
        i:/C=US/O=Entrust.net/OU=www.entrust.net/CPS incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority
 
-### Generating a self-signed SSL certificate[](#generating-a-self-signed-ssl-certificate "Permalink to this headline")
+### Generating a self-signed SSL certificate {#generating-a-self-signed-ssl-certificate}
 
 You can re-generate Application Lifecycle Service's self-signed SSL certificate by running
 the following command on the VM:
@@ -745,8 +734,7 @@ messages. The certificate will need to be added to the browser exception
 rules, which you will be prompted to do so when visiting one of your
 apps via HTTPS for the first time.
 
-Quota Definitions[](#quota-definitions "Permalink to this headline")
----------------------------------------------------------------------
+##Quota Definitions {#quota-definitions}
 
 Quota definitions define limits for:
 
@@ -773,14 +761,14 @@ Existing quota definitions can also be viewed and edited in the
 Management Console [*Quota Definitions
 settings*](/als/v1/admin/console/customize/#console-settings-quota-definitions)
 
-### sudo[](#sudo "Permalink to this headline")
+### sudo {#sudo}
 
 Quota Definitions can give all users in an Organization the use of the
 `sudo` command within application containers. This
 option is disabled by default as a security precaution, and should only
 be enabled for Organizations where all users are trusted.
 
-### Allowed Repositories[](#allowed-repositories "Permalink to this headline")
+### Allowed Repositories {#allowed-repositories}
 
 Even if `sudo` is restricted, special access can be
 given to specific repositories for modules and resources needed during
@@ -796,5 +784,3 @@ parameter of the `cloud_controller.yml` file:
 
 The file is located on the Application Lifecycle Service server at
 `~/helion/vcap/cloud_controller/config/cloud_controller.yml`
-=======
->>>>>>> Stashed changes

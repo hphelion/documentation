@@ -94,7 +94,7 @@ in the governing Agreement.
 
 **Commercial Service Provider** - A customer acting as a third party service provider contracted by an end user to provide commercial services to that end user.
 
-**Internal Use** - Use of the Software for purposes of supporting Customer’s internal business operations or functions.
+**Internal Use** - Use of the Software for purposes of supporting Customer's internal business operations or functions.
 
 **Management Software** - An HP Helion OpenStack management software running on a Physical Server for the sole purpose of deploying or managing a Cloud Fabric.
 
@@ -108,7 +108,7 @@ in the governing Agreement.
 ### Additional License Terms ###
 
 **1.	Software:** 
-Subject to Customer’s compliance with the terms and conditions of this Agreement, HP grants to Customer a non-exclusive, limited, non-sublicenseable, non-transferable, revocable license to Use Software to manage cloud services on a per Physical Server basis for the term as specified in the purchase agreement.
+Subject to Customer's compliance with the terms and conditions of this Agreement, HP grants to Customer a non-exclusive, limited, non-sublicenseable, non-transferable, revocable license to Use Software to manage cloud services on a per Physical Server basis for the term as specified in the purchase agreement.
  
 - Per Server License: Following purchase, this per-server license is to be assigned to a Physical Server that will be used to run your Cloud Fabric.  After the Physical Servers are licensed and those licenses are properly assigned, you may run any number of instances of the Management Software to deploy, configure, manage and operate your Cloud Fabric.
 
@@ -120,7 +120,7 @@ Subject to Customer’s compliance with the terms and conditions of this Agreeme
 
 **c. Commercial Service Providers:** You must have an active HP Partner One agreement, Cloud Agile Service Provider agreement, Helion Network agreement or other HP resale or service provider agreement in order to resell Software or provide commercial services using the Software.  If you do not have an active reseller or service provider agreement you may only use the Software for Internal Use purposes. 
 
-**d. Compliance and Audit:**  HP shall have the right to audit the customer’s use of the Software at HP’s expense and in accordance with any agreement between the parties related to confidentiality.
+**d. Compliance and Audit:**  HP shall have the right to audit the customer's use of the Software at HP's expense and in accordance with any agreement between the parties related to confidentiality.
 
 **e. Confidentiality:** The Software contains confidential and proprietary information of HP ("Confidential Information"). Customer will hold in confidence and not use or disclose any Confidential Information, except as expressly permitted in the Agreement. To the extent this restriction is not prohibited under applicable law, and except as specifically authorized under in writing by HP, customer shall not disclose to any third party the results of (i) any performance benchmarks you run on the Software, or any portion thereof, or (ii) specific detailed comparisons you make between the Software, or any portion thereof, and any product owned by you or a third-party product.
 
@@ -138,7 +138,7 @@ Subject to Customer’s compliance with the terms and conditions of this Agreeme
 
 **l. Updates and Supplements:**  We may update or supplement the Software. If so, you may use that update or supplement with the Software, subject to any additional terms that accompany the update or supplement.
 
-**m.** The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation’s permission.
+**m.** The OpenStack word mark and the Square O Design, together or apart, are trademarks or registered trademarks of OpenStack Foundation in the United States and other countries, and are used with the OpenStack Foundation's permission.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

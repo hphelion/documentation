@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/newrelic/
+product: devplatform
 ---
 <!--PUBLISHED-->
 <!-- file deliberately orphaned, functionality not implemented 

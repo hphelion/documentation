@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/admin/server/logging/
+product: devplatform
 ---
 <!--PUBLISHED-->
 
@@ -78,7 +79,7 @@ command. For example:
 
     $ kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345
 
-This creates a UDP drain that recieves messages from **kato.log** (on
+This creates a UDP drain that receives messages from **kato.log** (on
 all nodes in the cluster) and forwards them to
 [Papertrail](https://papertrailapp.com/) on port 12345.
 

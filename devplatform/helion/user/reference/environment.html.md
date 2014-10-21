@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/reference/environment/
+product: devplatform
 ---
 <!--PUBLISHED-->
 
@@ -125,6 +126,6 @@ VCAP\_APP\_HOST: This variable contains the IP address of the host that the appl
 
 VCAP\_APP\_PORT: This variable contains the port that the application will be exposed on.
 
-VCAP\_APPLICATION: This variable contails all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)
+VCAP\_APPLICATION: This variable contains all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)
 
 VCAP\_SERVICES: Contains connection details, credentials, and meta data for services bound to the application. See [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services).

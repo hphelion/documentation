@@ -332,7 +332,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		#Maintenance mode will trigger DRS to migrate the tenant VMS. If set to false, then esx host will be shut down along with all tenant VMs. (*OPTIONAL)
 		esx_maintenance_mode=true_or_false
 
-	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM’s kernel panic occurs. 
+	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM's kernel panic occurs. 
 
 	- If set to true, OVSvApp VM is powered off and the ESX host is put in Maintenance mode.
 	- If set to false, the ESX host will be shut down along with all tenant VMs.
@@ -399,7 +399,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the value.
 
-- Do not delete a tenant VM port via “neutron port-delete” command for a tenant VM.
+- Do not delete a tenant VM port via "neutron port-delete" command for a tenant VM.
 
 - If you experience issues while installing the VMWare Tools, try any of the following references for help:
 

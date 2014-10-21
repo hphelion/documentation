@@ -2,7 +2,7 @@
 layout: default
 title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/
-product: 
+product: devplatform
 
 ---
 <!--PUBLISHED-->

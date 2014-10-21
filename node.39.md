@@ -11,7 +11,7 @@ product: identity
 <!--This is a comment. Comments are not displayed in the browser-->
 
 
-With the introduction of the HP Helion Public Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else’s service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
+With the introduction of the HP Helion Public Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else's service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
 
 Before going any further, though, we highly recommend that you read Introducing the HP Helion Public Cloud Identity Service for an overview of how this new service works (an explanation of the new terminology, etc.).  The remainder of this document will focus on how steps that existing private beta customers will need to take in order to keep your use of HP Helion Public Cloud functional to take advantage of this new authentication and access management approach.
 
@@ -19,10 +19,10 @@ Before going any further, though, we highly recommend that you read Introducing 
 
 With a change to something as fundamental as how authentication works, all customers currently in private beta are impacted.  The most common situations customers find themselves in include:
 
-* _Manage Console_ – Login credentials (email address and password) remain exactly the same.  In this first wave of Identity Service-based changes you will not be able to assign a Tenant to another user, but that ability will be coming later.  The biggest change will be on the API Keys screen, which now features a single set of keys and a Tenant ID: (graphic here)
-* _Bindings and CLIs_ – More specific details are provided later in this document, but generally speaking, you will need to download new versions of the bindings and CLIs you are using.  All HP-supported bindings and CLIs have been upgraded to interact with the new Identity Service.  In many cases, the only impact after using the new version is that instead of using just access keys for authentication, you must now use access keys and your Tenant ID.
+* _Manage Console_ - Login credentials (email address and password) remain exactly the same.  In this first wave of Identity Service-based changes you will not be able to assign a Tenant to another user, but that ability will be coming later.  The biggest change will be on the API Keys screen, which now features a single set of keys and a Tenant ID: (graphic here)
+* _Bindings and CLIs_ - More specific details are provided later in this document, but generally speaking, you will need to download new versions of the bindings and CLIs you are using.  All HP-supported bindings and CLIs have been upgraded to interact with the new Identity Service.  In many cases, the only impact after using the new version is that instead of using just access keys for authentication, you must now use access keys and your Tenant ID.
 * _Service Endpoints for Object Storage and Compute_ - If you have written your own code on top of the raw REST API for Object Storage or Compute, the authentication for each is now performed with the Identity Service, which then also presents the endpoints for activated services.  More details on this are available in the Identity Service REST API documentation.
-* _EC2 Compatibility_ (and 3rd party tools like euca2ools) – More details are presented later in this document, but the short version is that your endpoint won’t change but you will need to change your access key.
+* _EC2 Compatibility_ - (and 3rd party tools like euca2ools) – More details are presented later in this document, but the short version is that your endpoint won't change but you will need to change your access key.
 
 ## Interruption of Service During the Upgrade
 
@@ -100,7 +100,7 @@ If you are using the nova command line tools or programs that make use of the py
 * Tenant name. This is now the same concept as project id. The tenant name is your email address.
 * Username. This is your email address that you log into the Management Console with.
 * Password. This is the password you use to log onto the Management Console.
-* Version. You must set this to “1.1”
+* Version. You must set this to &ldquo;1.1&rdquo;
 
 Here is an example of using the Nova command:
 
@@ -118,7 +118,7 @@ The Identity Service is compatible with euca2ools and EC2 compatibly for HP Heli
 * EC2-URL – set to:
     * Compute endpoint (from the publicURL field in the Service Catalog)
     * Remove path /v1.1/<tenant-id>
-    * Add path “/services/Cloud”
+    * Add path &ldquo;/services/Cloud&rdquo;
 * EC2_ACCESS_KEY – is <tenant_id>:<access_key>
 * EC2-SECRET_KEY – use the secretKey from the response shown above.
 

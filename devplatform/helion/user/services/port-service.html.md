@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/services/port-service/
+product: devplatform
 ---
 <!--PUBLISHED-->
 
@@ -144,7 +145,7 @@ port.
 Multiple Application Instances[](#multiple-application-instances "Permalink to this headline")
 -----------------------------------------------------------------------------------------------
 
-Harbor recognises when you have multiple instances of your app running,
+Harbor recognizes when you have multiple instances of your app running,
 and will update the available app backends accordingly.
 
 -   For TCP connections it will round-robin between your available
@@ -203,7 +204,7 @@ directory. For example:
 Alternatively, use a standalone or buildpack setup which provisions its
 own intermediate web server instead.
 
-### Multiple SSL Certificates[](#mutiple-ssl-certificates "Permalink to this headline")
+### Multiple SSL Certificates[](#multiple-ssl-certificates "Permalink to this headline")
 
 If your application uses multiple SSL certificates, use the following
 naming scheme:

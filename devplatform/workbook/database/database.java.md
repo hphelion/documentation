@@ -16,13 +16,13 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/als/v1/user/client/).
+- Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ###MySQL
 
 If the MySQL service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster’s link.
+1. Go to the Administrative console for your ALS cluster. <br>For example: *https://api.xx.xx.xx.xx.xip.io*, substitute your own cluster's link.
 2. On the **Admin** tab, click **Cluster**.
 3. Click the **Settings** icon (a gear icon in the upper right corner)
 4. The **MySQL** check box should be checked. If it is not, check it.
@@ -32,7 +32,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 
 ###JDK
 
-In order to install other prerequisites like Maven you have to have the Java Development Kit (JDK) installed.  The JDK can be installedwith he following command on a Mac/UNIX environment.
+In order to install other prerequisites like Maven you have to have the Java Development Kit (JDK) installed.  The JDK can be installed with he following command on a Mac/UNIX environment.
 
     sudo apt-get install default-jdk
 
@@ -62,6 +62,8 @@ This builds the application with Maven. It will create the *mysql-java-1.0.war* 
 
 
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
+
 Use the Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally use the [plugin](/helion/devplatform/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
@@ -84,7 +86,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 
 ##Key Code Snippets
 
-This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application’s environment variables. The connection information is represented using JSON. 
+This first line in this section of the MysqlServlet.java file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. 
 
 The rest of the code shown here parses the JSON string that was retrieved and builds the appropriate JDBC connection string.
 
