@@ -14,7 +14,7 @@ frameworks using a variety of data services simply by pushing your
 source code to the system.
 
 Application Lifecycle Service handles the automatic configuration of the language runtime,
-web server, application dependenies, databases, and other services.
+web server, application dependencies, databases, and other services.
 
 Quick Start[](#quick-start "Permalink to this headline")
 ---------------------------------------------------------

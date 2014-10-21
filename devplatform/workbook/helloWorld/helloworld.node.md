@@ -15,7 +15,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/als/v1/user/client/).
+- Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ##Download the Application Files
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-node)
@@ -35,7 +35,7 @@ The *package.json* file is your standard metadata file. **Name** and **version**
 The *Procfile* tells the Helion Development Platform how to run your Node.js application. An extremely simple one is included with this sample.
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging). The sample  application required access to the Internet in order to download dependent packages. 
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
 
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
@@ -51,7 +51,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 	
 4.	If you are not already there, `cd` to the root directory of the sample.
 
-5.	Execute 
+5.	Deploy the application by using the command: 
 
 		helion push 
 

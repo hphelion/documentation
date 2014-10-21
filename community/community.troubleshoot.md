@@ -148,7 +148,7 @@ If you encounter any issues when installing HP Helion OpenStack Community, refer
 
 - The installer script will wait for os-collect-config to complete on the seed but times out after 10 minutes of waiting.
 
-- The installer uses IPMI commands to reset nodes and change their power status. Some systems have been seen to get into a state where the Server Power status as reported by the iLO stays stuck in the "RESET" state. If this occurs, it is neccesary to physically remove power from the server for 10 seconds. If the problem persists after that, contact HP Support - there might be a defective component in the system.
+- The installer uses IPMI commands to reset nodes and change their power status. Some systems have been seen to get into a state where the Server Power status as reported by the iLO stays stuck in the "RESET" state. If this occurs, it is necessary to physically remove power from the server for 10 seconds. If the problem persists after that, contact HP Support - there might be a defective component in the system.
 
 - If using the seed vm as your gateway (default setting), you will need to execute the following commands after you have run `hp_ced_host_manager.sh` on the host machine.
 

@@ -31,7 +31,7 @@ It is possible to [*serve static files with
 uWSGI*](#uwsgi-perl-static-files).
 
 The [*perlcgi*](/als/v1/user/deploy/languages/perl/perlcgi/#perlcgi) framework is also available for
-running tradtional Perl CGI applications without PSGI.
+running traditional Perl CGI applications without PSGI.
 
 Deploying Applications[](#deploying-applications "Permalink to this headline")
 -------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ the Health Manager.
 
 To deploy worker applications, you need to use the
 [*command*](/als/v1/user/deploy/manifestyml/#command) key and set the
-[*proceses:
+[*processes:
 web*](/als/v1/user/deploy/manifestyml/#web) key to
 Null ("\~").
 
