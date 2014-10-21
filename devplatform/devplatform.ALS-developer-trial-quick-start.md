@@ -84,7 +84,7 @@ Once the installation completes, you can load the ALS Console at the URL obtaine
 You may be presented with text that warns or notes that the site has a self-signed certificate. When loaded in a browser, you may get a display indicating that this sight is not *trusted*.
 
 
-Your infrastructure is now ready for development. You can find some simple sample development tasks in our [workbook](/helion/devplatform/appdev/) section. This area will will be updated continuously with more languages and samples, so please stop by often to see the newest content.
+Your infrastructure is now ready for development. You can find some simple sample development tasks in our [workbook](/helion/devplatform/appdev/) section. This area will be updated continuously with more languages and samples, so please stop by often to see the newest content.
  
 ----
 ####OpenStack trademark attribution
