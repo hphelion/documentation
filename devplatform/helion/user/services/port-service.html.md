@@ -145,7 +145,7 @@ port.
 Multiple Application Instances[](#multiple-application-instances "Permalink to this headline")
 -----------------------------------------------------------------------------------------------
 
-Harbor recognises when you have multiple instances of your app running,
+Harbor recognizes when you have multiple instances of your app running,
 and will update the available app backends accordingly.
 
 -   For TCP connections it will round-robin between your available
