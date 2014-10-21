@@ -32,7 +32,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 
 ###JDK
 
-In order to install other prerequisites like Maven you have to have the Java Development Kit (JDK) installed.  The JDK can be installedwith he following command on a Mac/UNIX environment.
+In order to install other prerequisites like Maven you have to have the Java Development Kit (JDK) installed.  The JDK can be installed with he following command on a Mac/UNIX environment.
 
     sudo apt-get install default-jdk
 
