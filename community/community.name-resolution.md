@@ -5,7 +5,7 @@ permalink: /helion/community/name-resolution/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

@@ -5,7 +5,7 @@ permalink: /helion/community/eula/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # End User License Agreement
 
