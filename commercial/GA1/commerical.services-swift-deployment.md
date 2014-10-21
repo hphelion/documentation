@@ -78,15 +78,15 @@ Using the ***ringos*** utility you can add the [provisioned nodes](/helion/opens
 
 2. Log in to the seed. 
 
-		# ssh root@<Seed IP address>
+		# ssh root@<seed IP address>
  
 3. Copy the SSH key from the seed cloud to undercloud.
 
-		# scp ~/.ssh/id_rsa heat-admin@<Undercloud IP address>:/home/heat-admin
+		# scp ~/.ssh/id_rsa heat-admin@<\undercloud IP address>:/home/heat-admin
 
 4. Log in to the undercloud.
 
-		# ssh heat-admin@<Undercloud IP address>
+		# ssh heat-admin@<undercloud IP address>
 		# sudo -i
 		# mv ~heat-admin/id_rsa ~/.ssh/ 
 
@@ -97,7 +97,7 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 1. Log in to the seed. 
 
-		# ssh root@<Seed IP address>
+		# ssh root@<seed IP address>
 
 2. Update the `so_swift_storage_scale` parameter in the `/root/overcloud-config.json` file according to your storage needs.
  
@@ -118,7 +118,7 @@ Perform the following steps to verify the deployment of Swift nodes:
 
 1. Log in to the undercloud from the seed.
     
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Source **stackrc** using the following command:
@@ -295,7 +295,7 @@ In the following example account, container, object-0, and generated `object-1.r
 
 1. Log in to seed. 
 
-		# ssh root@<Seed IP address>
+		# ssh root@<seed IP address>
 
 2. Edit ` /root/tripleo/hp_passthrough/overcloud_swift_conf.json` to replace the default values with the ones listed:
 
