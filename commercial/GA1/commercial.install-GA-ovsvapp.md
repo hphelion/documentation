@@ -399,7 +399,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the value.
 
-- Do not delete a tenant VM port via “neutron port-delete” command for a tenant VM.
+- Do not delete a tenant VM port via "neutron port-delete" command for a tenant VM.
 
 - If you experience issues while installing the VMWare Tools, try any of the following references for help:
 

@@ -1,4 +1,4 @@
----
+----
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
 permalink: /helion/openstack/backup.restore/
@@ -263,8 +263,8 @@ Use the following steps to restore the undercloud:
 
 	When the process is complete, a message similar to the following displays:
 
-		“Restore UnderCloud Finished.”
-		“Restore Procedure Completed”
+		"Restore UnderCloud Finished."
+		"Restore Procedure Completed"
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
