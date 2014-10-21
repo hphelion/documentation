@@ -135,7 +135,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>DVR services</b></td>
  	<td>HP Helion OpenStack Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users.
 	 <br><br> <a href =" /helion/openstack/services/dvr/overview/">Learn more</a> HP Helion OpenStack DVR service.</td> 
-	<td>Administrators can maintain an inventory of 3PAR devices and CPGs, and StoreVirtual devices and VSAs and configure Cinder 3PAR and StoreVirtual backends.</td>
+	<td> Administrators can  create centralised router (legacy router).</td>
 </tr> 
 </table>
 
