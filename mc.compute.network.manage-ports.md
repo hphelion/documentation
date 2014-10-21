@@ -71,7 +71,7 @@ To rename a port:
 
 ## Enable a port ## {#Enable}
 
-Ports are enabled by default. However, if a port has been diabled, you can enable the port by turning the administrative status `UP`.
+Ports are enabled by default. However, if a port has been disabled, you can enable the port by turning the administrative status `UP`.
 
 To enable a port:
 
