@@ -11,7 +11,7 @@ product: identity
 <!--This is a comment. Comments are not displayed in the browser-->
 
 
-With the introduction of the HP Helion Public Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else’s service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
+With the introduction of the HP Helion Public Cloud Identity Service, the days of having to keep track of different sets of access keys for each individual service and not being able to access anyone else's service except your own will be over.  A much more sophisticated mechanism for managing access to services will become available and this document spells out how you will be impacted by this significant, but welcome change.
 
 Before going any further, though, we highly recommend that you read Introducing the HP Helion Public Cloud Identity Service for an overview of how this new service works (an explanation of the new terminology, etc.).  The remainder of this document will focus on how steps that existing private beta customers will need to take in order to keep your use of HP Helion Public Cloud functional to take advantage of this new authentication and access management approach.
 

@@ -70,7 +70,7 @@ A:	HP will inform you of status via updates along the way. You will be notified 
 
 ####Q:	How does Bulk Import work?{#howworks}
 
-A:	The bulk import service works with your existing HP Helion Public Cloud account. If you don’t have an account, [create one here](http://www.hpcloud.com/free-trial).
+A:	The bulk import service works with your existing HP Helion Public Cloud account. If you don't have an account, [create one here](http://www.hpcloud.com/free-trial).
 1.	Use the 
 [HP Helion Public Cloud Console](https://horizon.hpcloud.com/) to contact your HP Helion Public Cloud support technician. He or she will get the process started for you. 
 
@@ -82,7 +82,7 @@ A:	The bulk import service works with your existing HP Helion Public Cloud accou
 
 5.	Download the HP Helion Public Cloud Bulk Import client script and run the script on your data to prepare your account for bulk import.
 
-6.	You support contact will review all the logistics with respect to shipping your device to an HP Helion Public Cloud data center. When we receive your data, we'll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we’ll ship your device back to you or destroy it based on your directions.
+6.	You support contact will review all the logistics with respect to shipping your device to an HP Helion Public Cloud data center. When we receive your data, we'll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we 'll ship your device back to you or destroy it based on your directions.
 
 ####Q:	How much does Bulk Import cost?{#cost}
 
