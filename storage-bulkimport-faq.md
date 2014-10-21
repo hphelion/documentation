@@ -30,7 +30,7 @@ _____________
 
 A: 	We accept NTFS, ext2, ext3, ext4, and FAT32 file system formats.
 
-####Q:	Are there details to how the files will come out once uploaded? For example, if it’s in a Windows subfolder directory structure will the pseudo-directories be created in Swift?{#uploaddetail}
+####Q:	Are there details to how the files will come out once uploaded? For example, if it's in a Windows subfolder directory structure will the pseudo-directories be created in Swift?{#uploaddetail}
 
 A:	Your directory structure will be maintained.
 
@@ -82,7 +82,7 @@ A:	The bulk import service works with your existing HP Helion Public Cloud accou
 
 5.	Download the HP Helion Public Cloud Bulk Import client script and run the script on your data to prepare your account for bulk import.
 
-6.	You support contact will review all the logistics with respect to shipping your device to an HP Helion Public Cloud data center. When we receive your data, we’ll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we’ll ship your device back to you or destroy it based on your directions.
+6.	You support contact will review all the logistics with respect to shipping your device to an HP Helion Public Cloud data center. When we receive your data, we'll hook up your device to a workstation that has a direct Gigabit link to our Cloud storage infrastructure. Once your data is copied, we’ll ship your device back to you or destroy it based on your directions.
 
 ####Q:	How much does Bulk Import cost?{#cost}
 

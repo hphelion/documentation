@@ -281,10 +281,10 @@ Yes. The advantage of open source is clients can avoid vendor lock-in. Standards
 
 ### Getting Started  
 * [What are the prerequisites for installing and configuring the HP Helion OpenStack Community edition?](#prerequisites)
-* [How do I install the HP Helion OpenStack Community edition, and what’s included?](#HowdoIinstall)
+* [How do I install the HP Helion OpenStack Community edition, and what's included?](#HowdoIinstall)
 * [What are the minimum and maximum number of configurations allowed?](#minimumandmaximumconfigs)
 * [How do I install and set up the HP Helion OpenStack Community edition Admin Node](#installandsetup)
-* [I’ve installed the HP Helion OpenStack Community edition. Now what?](#NowWhat)
+* [I've installed the HP Helion OpenStack Community edition. Now what?](#NowWhat)
 * [How long does it take to complete the installation and configuration of the HP Helion OpenStack Community edition?](#Howlonginstallation)
 * [Should I reboot after installation?](#rebootafterinstallation)
 * [How do I verify that the installation has succeeded?](verifyinstallsucceed)
@@ -523,7 +523,7 @@ TripleO creates several large VMs as part of the demo deployment process, hence 
 1. The following packages must be installed:
 $ sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common pythonlibvirt
 qemu-system-x86 qemu-kvm
-2. If you’ve just installed the libvirt packages above, you will need to restart libvirt:
+2. If you've just installed the libvirt packages above, you will need to restart libvirt:
 $ sudo /etc/init.d/libvirt-bin restart
 3. Ensure that the root user has a public key. Login as root:
 $ sudo su -<br>
@@ -532,7 +532,7 @@ $ sudo su -<br>
 If the key does not exist, create one, omitting a passphrase (just hit return):
 $ ssh-keygen -t rsa 
 
-####How do I install the HP Helion OpenStack Community edition, and what’s included? #### {#HowdoIinstall}
+####How do I install the HP Helion OpenStack Community edition, and what's included? #### {#HowdoIinstall}
 
 1. Before you begin, remove the item re. creating a VM for the seed. This is done by the installer tool.
 2. Login as root and unpack the tar file into root’s home directory:

@@ -129,7 +129,7 @@ These files are in the /etc/ directory of the installation file as well as a fol
 
 ####IPsec.conf file
 
-Before looking into the configuration options of this file, familiarize yourself with some of the key configuration attributes.  When configuring the VPC VPN instance, always consider it as the LEFT node and the remote server as the RIGHT node. The diagram below shows the basic pieces of the network’s LEFT and RIGHT sides.  
+Before looking into the configuration options of this file, familiarize yourself with some of the key configuration attributes.  When configuring the VPC VPN instance, always consider it as the LEFT node and the remote server as the RIGHT node. The diagram below shows the basic pieces of the network's LEFT and RIGHT sides.  
 
 insert image
 
