@@ -204,7 +204,7 @@ directory. For example:
 Alternatively, use a standalone or buildpack setup which provisions its
 own intermediate web server instead.
 
-### Multiple SSL Certificates[](#mutiple-ssl-certificates "Permalink to this headline")
+### Multiple SSL Certificates[](#multiple-ssl-certificates "Permalink to this headline")
 
 If your application uses multiple SSL certificates, use the following
 naming scheme:
