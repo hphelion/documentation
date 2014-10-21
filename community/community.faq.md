@@ -7,11 +7,23 @@ product: community
 ---
 <!--PUBLISHED-->
 
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!--
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/">NEXT &#9654;</a> </p>
+-->
 
 <h1>HP Helion OpenStack&#174; Community FAQ</h1> 
 
-Welcome! You've got questions. We have the answers.  
+You've got questions. We have the answers.  
 
 ##Understanding the HP Helion OpenStack Community edition 
 
@@ -164,7 +176,7 @@ HP Helion OpenStack is a hardened product set that speeds deployment and simplif
 
 * Enterprises looking toward trials or PoCs for evaluation and development to gain an early competitive advantage from a distro that is hardened for enterprise. 
 * Enterprises seeking a small-scale private cloud deployment, looking at Community edition as a longer-term play over a PoC are ideal for a support package upsell.
-* Smart enterprise developers who are interested in participating in the OpenStack community and being on the leading edge of the “New Style of IT” transformation.
+* Smart enterprise developers who are interested in participating in the OpenStack community and being on the leading edge of the &ldquo;New Style of IT&rdquo;  transformation.
 
 ####What are the main benefits of the HP Helion OpenStack Community edition and the features that support them? #### {#MainBenefits}
 
@@ -269,10 +281,10 @@ Yes. The advantage of open source is clients can avoid vendor lock-in. Standards
 
 ### Getting Started  
 * [What are the prerequisites for installing and configuring the HP Helion OpenStack Community edition?](#prerequisites)
-* [How do I install the HP Helion OpenStack Community edition, and what’s included?](#HowdoIinstall)
+* [How do I install the HP Helion OpenStack Community edition, and what's included?](#HowdoIinstall)
 * [What are the minimum and maximum number of configurations allowed?](#minimumandmaximumconfigs)
 * [How do I install and set up the HP Helion OpenStack Community edition Admin Node](#installandsetup)
-* [I’ve installed the HP Helion OpenStack Community edition. Now what?](#NowWhat)
+* [I've installed the HP Helion OpenStack Community edition. Now what?](#NowWhat)
 * [How long does it take to complete the installation and configuration of the HP Helion OpenStack Community edition?](#Howlonginstallation)
 * [Should I reboot after installation?](#rebootafterinstallation)
 * [How do I verify that the installation has succeeded?](verifyinstallsucceed)
@@ -465,7 +477,7 @@ Yes. The advantage of open source is clients can avoid vendor lock-in. Standards
 ####Where can I deploy the HP Helion OpenStack Community edition? {WhereDeploy} 
 
 ####Is the HP Helion OpenStack Community edition integrated with other HP cloud products and solutions? #### {#IntegratedwithOtherProducts}
-Yes. These products will reference “Powered by HP Helion OpenStack.”
+Yes. These products will reference &ldquo;Powered by HP Helion OpenStack.&rdquo; 
 
 ####What OpenStack components are supported in the HP Helion OpenStack Community edition? #### {#SupportedComponents}
 
@@ -511,7 +523,7 @@ TripleO creates several large VMs as part of the demo deployment process, hence 
 1. The following packages must be installed:
 $ sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common pythonlibvirt
 qemu-system-x86 qemu-kvm
-2. If you’ve just installed the libvirt packages above, you will need to restart libvirt:
+2. If you've just installed the libvirt packages above, you will need to restart libvirt:
 $ sudo /etc/init.d/libvirt-bin restart
 3. Ensure that the root user has a public key. Login as root:
 $ sudo su -<br>
@@ -520,14 +532,14 @@ $ sudo su -<br>
 If the key does not exist, create one, omitting a passphrase (just hit return):
 $ ssh-keygen -t rsa 
 
-####How do I install the HP Helion OpenStack Community edition, and what’s included? #### {#HowdoIinstall}
+####How do I install the HP Helion OpenStack Community edition, and what's included? #### {#HowdoIinstall}
 
 1. Before you begin, remove the item re. creating a VM for the seed. This is done by the installer tool.
-2. Login as root and unpack the tar file into root’s home directory:
+2. Login as root and unpack the tar file into root's home directory:
 	$ sudo su -
 	$ tar xvf <location-of-.tar.gz-file>
 
-2. This will create and populate a tripleo/ directory within root’s home directory.
+2. This will create and populate a tripleo/ directory within root's home directory.
 
 3. Ensure that no LC_ variables are set:
 $ env | grep ^LC_
@@ -579,7 +591,7 @@ to all the baremetal nodes' port eth0. And the virtual machine Admin Node must a
 
 4. Configure the virtual machine Admin Node to point to the ISO as a CD/DVD drive or install media ISO image. 
 
-####I’ve installed the HP Helion OpenStack Community edition. Now what? #### {#NowWhat}
+####I've installed the HP Helion OpenStack Community edition. Now what? #### {#NowWhat}
 
 ####How long does it take to install the HP Helion OpenStack Community edition? #### {#Howlonginstallation} 
 
@@ -640,10 +652,10 @@ To launch the Operational Dashboard:
 
 1. Get the IP address of your main control plane node via <b><font color="red"><yet to be defined process></font></b>
 2. Open a web browser pointing to the IP address.
-3. Log in as the ‘admin’ user using the admin password provided via <b><font color="red"><yet to be defined process><
+3. Log in as the 'admin' user using the admin password provided via <b><font color="red"><yet to be defined process><
 pre-defined login creds: I cannot comment at this point. The admin password MAY be hard-coded into 
 images provided, or MAY be randomly generated during install.
-Note – don’t refer to “ZIP” files. I doubt we’ll use the zip format.<.font></b>
+Note – don't refer to &ldquo;ZIP&rdquo;  files. I doubt we'll use the zip format.<.font></b>
 
 
 
