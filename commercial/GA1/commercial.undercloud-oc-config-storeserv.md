@@ -218,7 +218,7 @@ To update your Overcloud with the changes, do the following:
 		      "iscsi_ip_address": "10.1.0.200"
 		    },
 
-	**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
+	<!---**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
 
 	
 		"3par": {
@@ -241,7 +241,7 @@ To update your Overcloud with the changes, do the following:
 		        "hp3par_iscsi_ips":"10.1.0.200,10.1.0.201:3030"
 		    }
 		  }
-
+-->
 		    
 5. Apply the configuration.
 
