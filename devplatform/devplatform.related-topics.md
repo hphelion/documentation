@@ -1,11 +1,11 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Documentation"
+title: "HP Helion Development Platform Related Documentation"
 permalink: /helion/devplatform/related-topics/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #HP Helion Development Platform Related Documentation
 

@@ -7,7 +7,6 @@ product: commercial.ga
 ---
 <!--PUBLISHED-->
 
-
 <script>
 
 function PageRefresh {

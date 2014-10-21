@@ -5,7 +5,7 @@ permalink: /helion/devplatform/appdev/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Resources for Application Developers
 
 HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.
@@ -17,20 +17,21 @@ In order to download and deploy these sample applications, you must have the nec
 
 - HP Helion OpenStack&reg; [cloud deployed](/helion/openstack/install/overview/)
 - Application Lifecycle Service [Cluster](/helion/devplatform/deploy) available with MySQL and RabbitMQ enabled.
+	- You can also quickly setup a cluster in the free and publicly available Helion cloud as part of the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/): 
 - Logon and password credentials for the cluster.
 - Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
 - (Optional) Access to the Eclipse [deployment plugin](/helion/devplatform/eclipse/).
 
-##Sample code
+##Sample code {#sample}
 For best results, work with each sample in the order in which they are provided, as each one builds on the knowledge provided in the previous sample. 
 ###Java {#java}
 1. [Hello World](/helion/devplatform/workbook/helloworld/java/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
 
-2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/java/) <br>
+2. [Working with Databases](/helion/devplatform/workbook/database/java/) <br>
 Create a database and execute a query against it. <br>
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.<br> 
+3. [Working with Messaging](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.<br> 
 
 More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 
@@ -38,11 +39,11 @@ More Helion [Java](/als/v1/user/deploy/languages/java/) references.
 1.  [Hello World](/helion/devplatform/workbook/helloworld/node/)<br>
 The Hello World sample is as simple as it gets: Hello World! 
 
-2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/node/) <br>
+2. [Working with Databases](/helion/devplatform/workbook/database/node/) <br>
 Create a database and execute a query against it.<br> 
 
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.<br> 
+3. [Working with Messaging](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.<br> 
 
 More Helion [Node](/als/v1/user/deploy/languages/node/) references.
  
@@ -50,10 +51,10 @@ More Helion [Node](/als/v1/user/deploy/languages/node/) references.
 1.  [Hello World](/helion/devplatform/workbook/helloworld/php/) <br>
 The Hello World sample is as simple as it gets: Hello World! 
 
-2. [Database as a Service (DBaaS)](/helion/devplatform/workbook/database/php/) <br>
+2. [Working with Databases](/helion/devplatform/workbook/database/php/) <br>
 Create a database and execute a query against it.<br>
 
-3. [Messaging as a Service (MSGaaS)](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.<br> 
+3. [Working with Messaging](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.<br> 
 
 More Helion [PHP](/als/v1/user/deploy/languages/php/) references.
 

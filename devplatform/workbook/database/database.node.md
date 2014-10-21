@@ -1,11 +1,11 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Node Database Sample"
+title: "HP Helion Development Platform Node Database Sample"
 permalink: /helion/devplatform/workbook/database/node/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # Node MySQL Database Sample
 
@@ -14,9 +14,9 @@ This very simple Node.js app displays the text "Executed query "SELECT "Hello Wo
 ## Prerequisites
 If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an ALS cluster.
-2.	The Helion command-line interface (CLI) must be installed.
-3.	You must have access to the web-based Helion Management console.
+- Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
+- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
+- Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ###MySQL
 
@@ -34,17 +34,31 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 [Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-mysql-node/)
 
 ##Deploy the Application
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
+
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
+	
+		helion target https://api.xx.xx.xx.xx.example.com2.	
+
+
+1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
+	
+		helion login
+	 
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push -n`
+5.	Execute
+	
+		helion push
+	
 6.	Accept any default values that you may be prompted for.
-	<br>	**Note**: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. <app-name>.xxx.xxx.xxx.xxx.xip.io)
+	<br>	**Note**: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *<app-name>.xxx.xxx.xxx.xxx.xip.io*)
 
 ##Key Code Snippets
+The first line in this section of the Server.js file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, connects to the database, execute a query, and prints the response.
+
 	var services = process.env.VCAP_SERVICES;
 
   	// Parse the JSON so that we can extract the individual components needed for
@@ -95,7 +109,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 	   });
 	      }
 
-The first line in this section of the Server.js file shows how to retrieve the connection information for the MySQL instance from the application's environment variables. The connection information is represented using JSON. The rest of the code shown here parses the JSON string that was retrieved, connects to the database, execute a query, and prints the response.
+The *manifest.yml* file is the configuration information used by ALS to set up the environment. The **services** element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.
 
 	---
 	applications:
@@ -105,16 +119,16 @@ The first line in this section of the Server.js file shows how to retrieve the c
 	    ${name}-db:
 	      type: mysql
 
-The *manifest.yaml* file is the configuration information used by ALS to set up the environment. The *services* element instructs ALS how to bind to the MySQL service provided by the ALS cluster to the application.
-
 ##Run the Application
 1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
 2.	Click **Applications**.
 3.	If the file push was successful, you should see **mysql-node** in the list of available applications.
+4.	The status of the application should be **Started**. Click the name of the application to launch it. 
+5. In the upper right-hand corner, click **View App**.
 
 
 ##Key Learnings
-1.	You need to provide configuration information so that ALS can bind to a MySQL service.
+1.	You need to provide configuration information so that ALS can bind to a MySQL service. Configuration information is contained in the *manifest.yml* file.
 2.	You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.
 3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
 

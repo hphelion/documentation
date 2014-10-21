@@ -1,3 +1,53 @@
+[nN]eccesary 
+[rR]ecieves
+[Cc]retate
+[tT]radtional 
+[pP]roceses
+[dD]ependenies
+[cC]ontails 
+[rR]ecognises 
+[AA]ccecpt 
+[MM]icroSoft
+[dD]iabled
+[aA]xdress
+[dD]etatching 
+[oO]nformaton
+[cC]ommmands 
+[SS]pecifiy 
+[fF]inalise 
+[aA]poproximately
+[Cc]artitrdge
+[aA]while 
+[bB]etweeen
+[sS]ucessful
+ on on 
+[Ss]succesfully
+[Oo]verriden
+[sS]implist
+[lL]ibary
+[Dd]ocumenation
+[Ff]ollowin 
+[Tt]argetted
+[Rr]equried
+ create create 
+[Aa]thorization
+[Mm]uliple
+[Mm]anging
+[Mm]utiple
+ tot he 
+ ahve 
+ rpovide
+ [Ii]nformatoin
+ [Aa]ccecpt
+ [Ee]nvironent
+[Pp]ossiblility
+[Ss]elction
+[Ii]nitally
+[Tt]empates
+[Dd]eploed
+Servce
+\<\<\!\-\-
+OpenStack®
 [^#\/][Ss]tackato
  it it 
  can can 

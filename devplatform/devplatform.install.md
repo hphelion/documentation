@@ -5,7 +5,7 @@ permalink: /helion/devplatform/install/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # HP Helion Development Platform Installation and Configuration
 
@@ -285,28 +285,23 @@ There are several situations in which a download will not complete.  One cause w
 
 As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the wscatalog.<id> folder which contains the cached download. The service should now be available to download again.
 
-### Configuring the Application LifeCycle Servce to Use an HTTP Proxy
+### Staging Cache & App HTTP Proxy
 
-If your network has an HTTP proxy, the helion client may attempt to use this when connecting to api.helion-xxxx.local and fail because the changes in /etc/hosts file are not reflected in the proxy. To work around this problem in Windows, enable \*.local in the ProxyOverride registry key HCU/Software/Microsoft/Windows/CurrentVersion/Internet Settings.
+The Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the HTTP_PROXY environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.
 
-In some cases, it may be a requirement that any HTTP request is first handled through an upstream or parent proxy. In this case it is necessary to tell Polipo in ALS about the proxy so it knows how to handle this correctly.
+1. If you have an upstream HTTP proxy that deployed applications and the staging system need to traverse to access the internet execute the following command on all DEA nodes:
 
-1. Log into the ALS Server and open the Polipo config file /etc/polipo/config. 
-	a. If you are using a parent proxy add the following lines: 
+		$ kato op upstream_proxy set 192.168.0.99:3128
+			
+1. To later remove the proxy setting:
 
-  			parentProxy = <IP>:<PORT>
-			parentAuthCredentials = "myuser:mypassw"
-		
-	b. If you are using a SOCKS proxy add the following lines:
-	
-	  		socksParentProxy=<IP>:<PORT>
-			socksProxyType=socks4a | OR | socks5;
-
-2. Restart Polipo using the following command:
-
-  		$ sudo /etc/init.d/polipo restart
-
-For log info, any errors reported by Polipo are available on the Application Lifecycle Service server in /var/log/polipo/polipo.log.
+		$ kato op upstream_proxy delete <proxy_addr>
+			
+2. To set an HTTP proxy exclusively for apps, add an environment/app_http_proxysetting in the dea_ng config using kato config set. For example:
+			
+		$ kato config set dea_ng environment/app_http_proxy 10.0.0.47:3000
+			
+Adding this configuration sets the 'http_proxy' environment variable within all subsequently created application containers.
 
 
 ----

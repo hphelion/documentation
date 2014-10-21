@@ -5,9 +5,9 @@ permalink: /helion/devplatform/eclipse/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #Using the Eclipse Development Plugin
-If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform. 
+If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.
 
 Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.
 
@@ -15,22 +15,25 @@ Before you begin, we recommend having [Eclipse IDE for Java EE developers](https
 
 ##Installation
 
-1. Open the Eclipse IDE and install the plugin through the **add new software** dialog.  You can find this dialog by clicking on **Help** and then **Install New Software**.<br><img src="media/eclipseA.png"/>
-2. Type in the link to the software site that distributes the Helion Eclipse plugin. The link is https://region-b.geo-1.objects.hpcloudsvc.com/v1/10822257696083/
-3. Click on **Add** and name the update site **HP Helion Development Platform**.<br><img src="media/eclipse2.png"/>
-4.Once the packages are discovered, ensure HP Helion Development Platform and Cloud Foundry Integration for Eclipse is checked and click **Next**.<br><img src="media/eclipse3.png"/>
+1. Open the Eclipse IDE and install the plugin through the **Eclipse Marketplace** dialog.  You can find this dialog by clicking on **Help** and then **Eclipse Marketplace**.<br><img src="media/eclipseA.png"/>
+2. Type in the text **Helion** and hit **go** to find the Helion Eclipse plugin in the marketplace.
+3. Click on **Install** and follow the prompts to install the **HP Helion Development Platform Eclipse Plugin**.<br><img src="media/eclipse2.png"/>
+4. Once the packages are discovered, ensure **HP Helion Development Platform** is checked and click **Confirm**.<br><img src="media/eclipse3.png"/>
 3. Accept the license agreement and Finish the wizard.
 4. You will be prompted to restart Eclipse.  
 ##Setup/Configuration
 
-1. Once Eclipse has reloaded, open the Servers window by navigating to Window-> Show View-> Servers. Note that if you have a different version of Eclipse, you might need to go to Window-> Show View -> Other -> Servers.<br><img src="media/eclipse4.png"/>
+1. Once Eclipse has reloaded, open the Servers window by navigating to Window-> Show View-> Servers. Note that if you have a different version of Eclipse, you might need to go to Window -> Show View -> Other -> Servers.<br><img src="media/eclipse4.png"/>
 2. Launch the HP Helion Development Platform plugin by clicking on the **Add New Server** link in the Servers window.  
 2. Select **HP Helion Development Platform** from the tree view and click **Next**.<br><img src="media/eclipse5.png"/><img src="media/eclipse6.png"/>
 3. Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.<br><img src="media/eclipse7.png"/>
-4. Enter the credentials used to access your ALS cluster in the resulting dialog and then click **Validate** to ensure that the plugin can access the URL.
+- **Note**: You may receive a warning that the peer is not authenticated, this is expected behavior as ALS images use a self-signed certificate. Select Yes when prompted with this error message.
+	<img src="media/eclipse8.png"/>
+4. Enter the credentials used to access your ALS cluster in the resulting dialog and then click **Validate Account** to ensure that the plugin can access the URL.
 	- **Note**: If you encounter issues validating the connection, ensure that your proxy settings are configured correctly, and that you have access to the ALS cluster endpoint. Contact your IT Administrator for more help regarding network settings and trouble shooting.
-  	<img src="media/eclipse8.png"/> 
-6. Note that you might get a warning about the site using a *self-signed certificate*.   Click **Yes** to import the organizations and spaces that you've set up into the IDE.  Click **Finish**.  If you do not have an organization or space set up, please create those through your ALS console by visiting the endpoint URL in a browser window.
+  	<img src="media/eclipse8.png"/>
+6. Note that you might get a warning about the site using a *self-signed certificate*.
+6. Click **Next** to list your organizations and spaces. Pick an organization and space to work with in this connection and click **Yes** to import them into the IDE.  Click **Finish**.  If you do not have an organization or space set up, please create those through your ALS console by visiting the endpoint URL in a browser window.
 6. Now you should see **Helion Development Platform** as a configured Server in your IDE.  You can explore the apps that have been deployed already, or continue reading to learn how to deploy a sample app.
 
 ##Usage

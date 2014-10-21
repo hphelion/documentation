@@ -30,9 +30,9 @@ For easy reference, we categorized the known issues and solutions as follows:
 * [Baremetal installation](#baremetal-install)
 	* [KVM](#kvm)
 	* [ESX and OVSvAPP](#esx-ovsvapp)
-* [Logging](#logging)
 * [VSA](#vsa)
-
+* [Configuring the dnsmasq_dns_servers list for the undercloud and overcloud](#config_dnas)
+* [Logging](#logging)
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
 
@@ -43,7 +43,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 
 1. [Fatal PCI Express Device Error](#fatal-pci)
 2. [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
-3. [Failure of Update Overcloud](#failure-update-overcloud)
+3. [Failure of Update overcloud](#failure-update-overcloud)
 4. [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
 5. [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
 6. [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
@@ -170,11 +170,11 @@ If you get this error, perform the following steps:
 <hr>
 
 
-### Failure of Update Overcloud {#failure-update-overcloud}
+### Failure of Update overcloud {#failure-update-overcloud}
 
 **System Behavior/Message**
 
-Update Overcloud fails with the following error:
+Update overcloud fails with the following error:
 
  `  Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)`
 
@@ -197,7 +197,7 @@ The ce&#95;env&#95;json will be displayed as the sample below.
 
   Note that  the build&#95;number is changed from null to the right variable.
  
-3.Run the installer script to update the Overcloud. 
+3.Run the installer script to update the overcloud. 
  
 		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
@@ -206,15 +206,15 @@ During the installation, the number of build&#95;number and installed&#95;build&
 <hr>
 
 
-### Installation failure as the flavor to be used for Overcloud nodes does not match {#installation-failure}
+### Installation failure as the flavor to be used for overcloud nodes does not match {#installation-failure}
 
 **System Behavior/Message**
 
-If you have a set of Baremetal servers which differ in specifications (e.g. memory and disk), the installation will fail as the flavor to be used for Overcloud nodes does not match with the server that has the lowest specification for memory, disk, and CPU. 
+If you have a set of Baremetal servers which differ in specifications (e.g. memory and disk), the installation will fail as the flavor to be used for overcloud nodes does not match with the server that has the lowest specification for memory, disk, and CPU. 
 
 **Probable Cause**
 
- The 2nd row in `baremetal.csv` which corresponds to the Overcloud Controller node is used to create a flavor for the Overcloud nodes.  
+ The 2nd row in `baremetal.csv` which corresponds to the overcloud Controller node is used to create a flavor for the overcloud nodes.  
 
 **Resolution**
 
@@ -637,6 +637,40 @@ Perform the following:
         Virsh pool-list --all
 
 <br><hr>
+
+##Configuring the dnsmasq_dns_servers list for the undercloud and overcloud {#config_dnas}
+
+To enable name resolution from tenant VMs in the overcloud, it is necessary
+to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To
+perform this:
+
+1. Edit the `overcloud_neutron_dhcp_agent.json` file in the
+`ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
+items. 
+2. Copy the `overcloud_neutron_dhcp_agent.json` file to a
+new file named `undercloud_neutron_dhcp_agent.json` and configure the same
+forwarders for the undercloud.
+
+	
+		{"dhcp_agent":
+		  {"config":
+		    [
+		      {"section":"DEFAULT",
+		        "values":
+		          [
+		            {"option":"dhcp_delete_namespaces","value":"True"},
+		            {"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}  <----set the value to the ip
+		                                                                      address of the DNS server
+		                                                                      to use.  Multiple DNS
+		                                                                      servers can be specified
+		                                                                      as a comma separated list.
+		          ]
+		      }
+		    ]
+		  }
+		}
+
+<hr>
 
 ##Logging  {#logging}
 

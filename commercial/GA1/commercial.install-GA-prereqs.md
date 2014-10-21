@@ -211,7 +211,9 @@ There must be one entry in this file for each baremetal system you intend to ins
 
 Where `<BRIDGE_INTERFACE_mac_address>` is the MAC address of the bridge interface on the seed cloud host, for example `em2` or `eth2`.
 
-**Important** The diskspace size value must be specified in Gibibytes, not Gigabytes.  
+**Important** The diskspace size value must be specified in Gibibytes, not Gigabytes.  For example:<br>
+- 900GB = 838 GiB<br>
+- 1TB = 1000GB = 931 GiB
 
 **Example:** 
 
@@ -229,7 +231,7 @@ When creating this file, keep in mind the following:
 
 * The IPMI user and password **must have** ADMINISTRATOR privilege; it is not sufficient to have OPERATOR privilege
 * Memory must be at least 32 GB
-* Disk size must be between 500GB and 2 TB
+* Disk size must be between 500GB/512GiB and 2TiB
 * The disk size specified should never exceed the physical disk size
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.

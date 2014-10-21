@@ -5,7 +5,7 @@ permalink: /helion/devplatform/connectdatabase/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 #Connecting the Database Service with the Application Lifecycle Service
 If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. This is an option at cluster create time.

@@ -1,33 +1,32 @@
 ---
 layout: default-devplatform
-title: "HP Helion Development Platform Workbook Java Messaging Sample"
+title: "HP Helion Development Platform Java Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/java/
 product: devplatform
 
 ---
-<!--UNDER REVISION-->
-#Java Sample: RabbitMQ 
-This sample displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. 
-
-This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS, and interact with it. This is a very simple Servlet-based Java web app.  Use this sample to ensure that you have set up your environment correctly for connecting to, and working with RabbitMQ on the Helion Development Platform.
+<!--PUBLISHED-->
+#Java RabbitMQ Messaging Sample
+This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.
 
 ## Prerequisites
 If you are missing any of these items, please [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an ALS cluster.
-2.	The Helion command-line interface (CLI) must be installed.
-3.	You must have access to the web-based Helion Management console.
+1.	You must have access to an [ALS cluster](/als/v1/admin/cluster/).
+2.	The [Helion command-line interface](/als/v1/user/client/) (CLI) must be installed.
+3.	You must have access to the web-based [Helion Management console](/als/v1/user/console/).
 
-If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps: 
+##RabbitMQ
 
-- Go to the Administrative console for your ALS cluster (e.g. https://api.xx.xx.xx.xx.xip.io); substitute your own cluster’s link).
-- On the **Admin** tab, click **Cluster**.
-- Click the **Settings** icon (a gear icon in the upper right corner)
-- Both the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
--  Click **Save**.
- 
+If the RabbitMQ service is not enabled on your cluster, or if you are not sure, follow these steps:
 
-**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your ALS cluster. 
+1. Go to the Administrative console for your ALS cluster. (e.g. *https://api.xx.xx.xx.xx.xip.io*);  substitute your own cluster’s link)
+1. On the **Admin** tab, click **Cluster**.
+1. Click the **Settings** icon (a gear icon in the upper right corner)
+1. Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
+1. Click **Save**.
+
+**Note**: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/messageservice) to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.
 
 ###JDK
 In order to install other perquisites such as Maven you have to have the Java Development Kit (JDK) installed. The JDK can be installed with the following command in a Mac/UNIX environment:
@@ -58,39 +57,51 @@ If you are not already there, `cd` to the root directory of the sample and execu
 This builds the application with Maven. It will create the *rabbitmq-java-1.0.war* file  within the target directory. 
 
 ##Deploy the Application
-Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you can optionally use the [plugin](/helion/devplatform/eclipse/) to deploy.
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
+
+Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
-2.	Ensure that you are logged in to your desired environment.  <br>If you are not, execute `helion login` 
-3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute `helion target https://api.xx.xx.xx.xx.example.com`
-4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute `helion push`
-6.	Accept any default values that you may be prompted for
-Note: By default ALS clusters are configured with two domains (private and public). In some situations the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. &lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io)
+3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
+	
+		helion target https://api.xx.xx.xx.xx.example.com2.	
 
+
+1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
+	
+		helion login
+		
+4.	If you are not already there, `cd` to the root directory of the sample.
+5.	Execute
+	
+		helion push
+	
+6.	Accept any default values that you may be prompted for. <br>**Note**: By default, ALS clusters are configured with two domains (private and public). In some situations, the Helion CLI may prompt you to select a target domain. If prompted, select the public domain from the given list (i.e. *&lt;app-name&gt;.xxx.xxx.xxx.xxx.xip.io*)
 
 
 ##Key Code Snippets
-	String uri = System.getenv("RABBITMQ_URL");
-	
-	        ConnectionFactory factory = new ConnectionFactory();
-	        try {
-	            factory.setUri(uri);
-	        } catch (KeyManagementException e) {
-	            e.printStackTrace();
-	        } catch (NoSuchAlgorithmException e) {
-	            e.printStackTrace();
-	        } catch (URISyntaxException e) {
-	            e.printStackTrace();
-	        }
-	        Connection connection = factory.newConnection();
-	        Channel channel = connection.createChannel();
-	
-	        channel.queueDeclare("hello", false, false, false, null);
-	
-	        writer.close();
+This first Line in this section of the RabbitServlet.java file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The rest of the code makes a connection to the cluster, creates a channel, and defines a message queue called **hello**.
 
-This first line in this section of the RabbitServlet.java file shows how to retrieve the connection information for the RabbitMQ cluster from the application's environment variables. The rest of the code makes a connection to the cluster, creates a channel, and defines a message queue called **hello**.
+	String uri = System.getenv("RABBITMQ_URL");
+
+        ConnectionFactory factory = new ConnectionFactory();
+        try {
+            factory.setUri(uri);
+        } catch (KeyManagementException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        Connection connection = factory.newConnection();
+        Channel channel = connection.createChannel();
+
+        channel.queueDeclare("hello", false, false, false, null);
+
+        writer.close();
+
+This section of the ProcessMessage.java file shows how to publish to a message queue, retrieve the published message, convert the message from a byte array to a string, and print it out to the user.
 
 	String routingKey = "thekey";
         String exchangeName = "exchange";
@@ -124,33 +135,34 @@ This first line in this section of the RabbitServlet.java file shows how to retr
             channel.basicAck(deliveryTag, false);
         }
 
-This section of the ProcessMessage.java file shows how to publish to a message queue, retrieve the published message, convert the message from a byte array to a string, and print it out to the user.
-
+The *POM.xml* file is the configuration information generated by Maven and used by ALS to set up the environment. You can see that it has added a dependency for the **amqp-client**.
+	
 	<?xml version="1.0" encoding="UTF-8"?>
 	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.hp.samples</groupId>
-    <artifactId>rabbitmq-java</artifactId>
-    <version>1.0</version>
-    <packaging>war</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-  			<groupId>com.rabbitmq</groupId>
-  			<artifactId>amqp-client</artifactId>
-  			<version>2.8.1</version>
-		</dependency>
-    </dependencies>
+	        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	    <modelVersion>4.0.0</modelVersion>
+	    <groupId>org.hp.samples</groupId>
+	    <artifactId>rabbitmq-java</artifactId>
+	    <version>1.0</version>
+	    <packaging>war</packaging>
+	    <dependencies>
+	        <dependency>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>servlet-api</artifactId>
+	            <version>2.5</version>
+	            <scope>provided</scope>
+	        </dependency>
+	        <dependency>
+	  			<groupId>com.rabbitmq</groupId>
+	  			<artifactId>amqp-client</artifactId>
+	  			<version>2.8.1</version>
+			</dependency>
+	    </dependencies>
 	</project>
 
-The POM.xml file is the configuration information generated by Maven and used by ALS to set up the environment. You can see that it has added a dependency for the amqp-client.
-	
+The *manifest.yml* file is the configuration information used by ALS to set up the environment. The **services** element informs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.
+
+	---
 	applications: 
 	- name: rabbitmq-java
 	  mem: 512M
@@ -159,13 +171,11 @@ The POM.xml file is the configuration information generated by Maven and used by
 	    rabbitmq:
 	      type: rabbitmq3
 
-The *manifest.yaml* file is the configuration information used by ALS to set up the environment. The *services* element instructs ALS on how to bind the RabbitMQ service provided by the ALS cluster to the application.
-
 ##Run the Application
-1.	Open the Helion Management Console. This is the web-based administrative.
+1.	Open the Helion Management Console. <br> The Management Console is the web-based administrative interface that can be reached by typing the ALS endpoint URL into a browser window.
 2.	Click **Applications**.
 3.	If the file push was successful, you should see **rabbitmq-java** in the list of available applications.
-4.	The status of the application should be Online. Click the name of the application to launch it.
+4.	The status of the application should be **Started**. Click the name of the application to launch it.
 5.	In the upper right-hand corner, click **View App**.
 
 	
