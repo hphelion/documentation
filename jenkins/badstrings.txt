@@ -14,7 +14,6 @@
 [oO]nformaton
 [cC]ommmands 
 [SS]pecifiy 
-[fF]inalise 
 [aA]poproximately
 [Cc]artitrdge
 [aA]while 
