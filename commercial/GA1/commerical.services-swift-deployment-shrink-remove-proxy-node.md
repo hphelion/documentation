@@ -102,7 +102,8 @@ The following sample displays the output of the above command:
 9. Repeat steps from **5 - 8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 10. Verify the `account.ring.gz`  and `container.builder` files.
-    	# ringos view-ring -f /root/ring-building/account.builder
+    	
+		# ringos view-ring -f /root/ring-building/account.builder
     	# ringos view-ring -f /root/ring-building/container.builder
 
 ##Removing disk from the ring {#remove-disk-from-ring}
