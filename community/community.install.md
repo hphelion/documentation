@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&trade; Community Baremetal Installation and Configuration"
-permalink: /helion/community/install/renamed/
+title: "HP Helion OpenStack&#174; Community Baremetal Installation and Configuration"
+permalink: /helion/community/install/
 product: community
 
 ---
@@ -11,7 +11,6 @@ product: community
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
 
 # HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
-
 This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. This installation deploys to a minimum of 5 baremetal servers, to which you can add **up to 30 compute nodes**:
 
 * 1 undercloud
@@ -48,7 +47,7 @@ It is important to read through this page before starting your installation. Bef
 
    * [Connecting remotely to Horizon console](#remoteconnect)
 
-   * [Connecting to Monitoring UI](#monitoring)
+   * [Connecting to to Monitoring UI](#monitoring)
 
 <!-- * [Post-installation configuration](#configure)
 
@@ -207,7 +206,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 2. Register and then log in to download the HP Helion OpenStack Community baremetal package from this site:
 
-   [HP Helion OpenStack Community edition Installation Package](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
+    [HP Helion OpenStack Community edition Installation Package ](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221320%22%7D/Show)
 
 3. Create a directory named `work`:
 
@@ -215,11 +214,13 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 
 	`cd /root/work`
 
-4.  Extract the kit to the `work` directory:`tar zxvf /root/ce_installer.gz`
+4.  Extract the kit to the `work` directory:
 
-This creates and populates a `tripleo/` directory within root's home directory.
+	`tar zxvf /root/Helion_Openstack_Community.tar.gz`
 
-5. Shutdown any running `baremetal_n` virtual machines using virsh destroy:
+	This creates and populates a `tripleo/` directory within root's home directory.
+
+5. Shutdown any running 'baremetal_n' virtual machines using virsh destroy:
 
 	`$ virsh destroy baremetal_n`
 
@@ -262,7 +263,7 @@ OPTIONAL: Modify which host to use as the gateway, for example:
 
 	`"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed"`
 
-2. To build the cloud, start by logging in to the seed. Run the following command from /root:
+2. To build the cloud, start by logging in to the seed. Run the the following command from /root:
 
 	`ssh root@192.0.2.1`
 
@@ -379,7 +380,7 @@ Once your installation is complete, you should ensure you can connect to your HP
 
    * [Connecting remotely to Horizon console](#remoteconnect)
 
-   * [Connecting to Monitoring UI](#monitoring)
+   * [Connecting to to Monitoring UI](#monitoring)
 
 
 ### Connecting to the demo VM ### {#connectvm}
@@ -563,7 +564,7 @@ REVIEWERS: NEED TO DISCUSS THIS SECTION. I HAD INTENDED TO TALK ABOUT AND LINK T
         * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
         * The baremetal bridge is always called 'brbm'
 
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;">Return to Top &#8593; </a>
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution
