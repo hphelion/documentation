@@ -111,7 +111,7 @@ In the event you have trouble with the installation, review the [Issues and trou
 
 The virtual installation of HP Helion OpenStack Community for a single server is provided as a compressed TAR file. This is a large file because it contains all of the machine images required for the seed VM, the undercloud, the overcloud, and a guest VM image.
 
-**Note:** This install file is approximately 4GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
+**Note:** This install file is approximately 5.6GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
 
 To begin the installation:
 

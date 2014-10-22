@@ -14,14 +14,34 @@ rm filepermalink.txt > /dev/null 2>&1
 
 echo " "
 echo " "
-echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files."
-
-
-
-
-
-
+echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files. "
 echo  ""
+
+
+
+for i in `find . -name "*.md" | grep "\./devplatform/"`
+	do
+	if [[ -n $(grep layout: $i | grep -v default-devplatform) ]];
+	then
+		echo " "
+		echo "This devplatform file needs to use the default-devplatform layout:"
+		echo $i
+		echo "1" > checktmp
+	fi
+
+done
+
+for i in `find . -name "*.md" | grep -v "\./devplatform/"`
+	do
+	if [[ -n $(grep layout: $i | grep  default-devplatform) ]];
+	then
+		echo " "
+		echo "This file should not use the default-devplatform layout."
+		echo $i
+		echo "1" > checktmp
+	fi
+
+done
 
  
  

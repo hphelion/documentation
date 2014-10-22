@@ -29,7 +29,7 @@ The options on the Settings tab allow changes to the following:
 * [User Settings](#user-settings)
 * [Change Password](#change-password) 
 
-To view the **Settings** tab, click the **Admin** icon in the top panel of the Horizon Undercloud Dashboard and select **Settings**. The tab appears in the left panel on the  Dashboard.
+To view the **Settings** tab, click the **Admin** icon in the top panel of the Horizon undercloud dashboard and select **Settings**. The tab appears in the left panel on the dashboard.
 
 ## User settings<a name="user-settings"></a>
 

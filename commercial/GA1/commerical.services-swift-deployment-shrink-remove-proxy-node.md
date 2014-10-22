@@ -52,9 +52,9 @@ Scale-out Proxy nodes can only be removed from the cloud after all the disks hav
 
 Perform the following steps to identify the disks of the node to be removed:
 
-1. Log in to Undercloud from Seed. 
+1. Log in to the undercloud from seed. 
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the directory to ring builder.
@@ -102,7 +102,8 @@ The following sample displays the output of the above command:
 9. Repeat steps from **5 - 8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 10. Verify the `account.ring.gz`  and `container.builder` files.
-    	# ringos view-ring -f /root/ring-building/account.builder
+    	
+		# ringos view-ring -f /root/ring-building/account.builder
     	# ringos view-ring -f /root/ring-building/container.builder
 
 ##Removing disk from the ring {#remove-disk-from-ring}
@@ -139,7 +140,7 @@ Repeat this step for each disk of the specific node.
 		# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes of IP address>
 
 
-##Remove the haproxy configuration from each of the Overcloud Controller nodes {#remove-haproxy}
+##Remove the haproxy configuration from each of the overcloud Controller nodes {#remove-haproxy}
 
 1. Edit `swift-proxy.cfg` on each of the controller nodes. 
 

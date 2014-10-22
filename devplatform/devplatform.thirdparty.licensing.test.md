@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Open Source and Third-Party Software License Agreements"
-permalink: /helion/devplatform/3rd-party-license-agreements/
+permalink: /helion/devplatform/3rd-party-license-agreements-test/
 product: devplatform
 
 ---
@@ -23,5 +23,3 @@ PageRefresh();
 The Open Source and Third-Party Software License Agreements for HP Helion Development Platform are available as a PDF download.
 
  [Download the PDF document](http://g867c39a921f179b9eb3ba7424144b70a.cdn.hpcloudsvc.com/source/DP_Thirdparty%20v2.pdf)
-
-Please allow sufficient time for the document to fully load.
