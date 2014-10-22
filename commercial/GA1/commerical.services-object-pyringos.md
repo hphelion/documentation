@@ -19,7 +19,7 @@ PageRefresh();
 
 #ringos
 
-The ringos tool runs on the Undercloud and helps to deploy Swift clusters.
+The ringos tool runs on the undercloud and helps to deploy Swift clusters.
 
 You can use the following commands using the ringos Client CLI package in the undercloud.
 
