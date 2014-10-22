@@ -416,7 +416,7 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 	The undercloud comprises the Compute, Ironic, Networking Operations, Object Operations, Identity Operations, and Orchestration services, which are used to deploy and configure various nodes of the overcloud on baremetal servers.<br><br>The Centralized Logging and Monitoring components run in the undercloud and can be accessed using a Web Browser. <br><br>The Sherpa, Eon and Sirius services also run in the undercloud, and can be accessed via panels in the Horizon Dashboard fr the undercloud.
 	The undercloud does not run in a HA configuration, but is an important component of the cloud. 
 	<br><br>
-	Learn more about the <a href ="/helion/openstack/backup.restore/">Backup and Restore procedures</a> to restore the undercloud in event of server problems.
+	Learn more about the <a href ="/helion/openstack/backup.restore/">Backup and Restore procedures</a> to restore the undercloud in event of server problems. 
  </tr>
 <tr style="background-color: white; color: black;">
   	<td style><b>Overcloud<b></td>
