@@ -94,6 +94,8 @@ To expand a backend, do the following:
 8. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
 	<!---<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-add-backendoption1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Expand Backend Page with Update Option (opens in a new window)</a>-->
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 ### Shrink backend {#shrink-backend}
 
 Shrinking removes the clusters from the backend which are allocated to your cloud. Shrinking the only available StoreVirtual cluster in the backend will delete the backend. To shrink the backend, do the following:
@@ -129,6 +131,7 @@ This option removes the backend from the cloud.
 
 3. Click **Delete volume backend** to delete or **Cancel** to cancel the process.
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ### Generate configuration {#generate-config}
 Download the Cinder configuration for your cloud once you have created the backend.

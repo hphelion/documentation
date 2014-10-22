@@ -98,6 +98,7 @@ To register the cluster using the Undercloud Horizon Dashboard, do the following
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-registered-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Registered Cluster Displays in the HP StoreVirtual VSA Page (opens in a new window)</a>
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Edit a StoreVirtual cluster {#edit-cluster}
 
@@ -141,6 +142,7 @@ To unregister a cluster, do the following:
 
 5. Click **Unregister cluster** to unregister or click **Cancel** to cancel the process. 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Unregister multiple clusters {#unregister-multiple-clusters}
 
