@@ -24,9 +24,9 @@ PageRefresh();
 This page covers the following topics:
 
 *  [High Availability( HA) concepts overview](#concepts-overview) 
-    *  [Scope of High Availability: Protection against Single Points of Failure (SPOF)](#scope-ha)
+    * [Scope of High Availability: Protection against Single Points of Failure (SPOF)](#scope-ha)
 *  [Highly Available cloud services](#ha-helion)
-    *  [High Availability of Overcloud Controllers](#ha-overcloud-controller)
+    * [High Availability of Overcloud Controllers](#ha-overcloud-controller)
         * [API Request Message Flow](#api-msg-flow)
         * [Handling Node Failure](#handling-node-failure)
         * [Handling Network Partitions](#handling-network-partition)

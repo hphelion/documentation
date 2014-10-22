@@ -28,7 +28,7 @@ This installation, which is launched on an installer system, deploys to a minimu
 
 * 1 undercloud
 * 3 overcloud controllers
-* 2 overcloud swift nodes 
+* 2 overcloud Swift nodes 
 * At least 1 overcloud compute node 
 
 It is important to read through this page before starting your installation. 
@@ -275,7 +275,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 		- The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the FLOATING_CIDR range.
 
-	* `OVERCLOUD_VIRTUAL_INTERFACE` - Use this variable to set the interface that the Overcloud virtual IP (used for accessing API services) will be assigned to. This is required.
+	* `OVERCLOUD_VIRTUAL_INTERFACE` - Use this variable to set the interface that the overcloud virtual IP (used for accessing API services) will be assigned to. This is required.
 
 		The interface must exist on the two overcloud controller nodes and the overcloud management controller node.
 

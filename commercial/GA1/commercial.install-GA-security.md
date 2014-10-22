@@ -52,7 +52,7 @@ To protect against external attack on Helion services, your firewall should be c
 
 ## Securing the Object Operations (Swift) back-end network connections<a name="back-end"></a>
 
-Object Operations service (Swift) requests travel from the external network, to a HAproxy on an Overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows: 
+Object Operations service (Swift) requests travel from the external network to an HAproxy on an overcloud controller, which then forwards the request to a Swift node over the Management network.  By default, this traffic travels over a flat network, as follows: 
 
 <img src = "content/documentation/media/Helion_Security2.png">
  
