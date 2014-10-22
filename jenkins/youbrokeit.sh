@@ -26,6 +26,7 @@ for i in `find . -name "*.md" | grep "\./devplatform/"`
 		echo " "
 		echo "This devplatform file needs to use the default-devplatform layout:"
 		echo $i
+		echo "1" > checktmp
 	fi
 
 done
@@ -37,6 +38,7 @@ for i in `find . -name "*.md" | grep -v "\./devplatform/"`
 		echo " "
 		echo "This file should not use the default-devplatform layout."
 		echo $i
+		echo "1" > checktmp
 	fi
 
 done
