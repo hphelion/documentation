@@ -100,7 +100,7 @@ Before you begin the installation process, the root user must have private and p
 
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called baremetal.csv. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step.
 
-The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
+The baremetal.csv file informs the installer of the size of the computer that each node will be installed into.
 
 **Notes:**
 - The first line of the the baremetal.csv file is the undercloud node

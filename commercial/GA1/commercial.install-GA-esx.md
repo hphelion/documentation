@@ -32,6 +32,7 @@ The installation and configuration process for ESX consists of the following gen
 	* [Review the ESX deployment architecture](#deploy-arch)
 	* [Create and identify environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
+	* [Set DNS servers by default](#name-resolution)
 	* [Preparing seed cloud host to run seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
@@ -71,6 +72,11 @@ For more information, see [Creating an Environment Variables File for Installati
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+
+### Set DNS servers by default {#name-resolution}
+
+To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/overstack/name-resolution/) before installation.
+
 
 ### Prepare the seed cloud host to create the seed VM {#prepseed}
 
