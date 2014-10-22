@@ -165,6 +165,8 @@ Once you have met all of the hardware requirements and have completed the requir
 
 The HP Helion OpenStack Community baremetal installation is provided as a compressed TAR file. To download and unpack this file, complete the following steps.
 
+**Note:** This install file is approximately 5.6GB and does not fit on a memory stick formatted as FAT32. If you are planning to store the installation files on removable media, use something like NTFS.
+
 
 1. Log in to your install system as root:
 
