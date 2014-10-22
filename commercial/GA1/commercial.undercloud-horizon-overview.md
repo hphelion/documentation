@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 # HP Helion OpenStack&#174;: Undercloud Horizon Overview
-Once you complete the Undercloud and the Overcloud installations, you can access the Undercloud Horizon Dashboard, which is the management interface for the Undercloud. 
+Once you complete the undercloud and the overcloud installations, you can access the undercloud Horizon dashboard, which is the management interface for the undercloud. 
 
 ##Dashboard Features
 
