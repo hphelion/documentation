@@ -25,7 +25,7 @@ PageRefresh();
  
 In the undercloud, you register your vCenter and import the clusters from the EON data of the registered vCenter. These resources are available in your cloud after registration and it can be allocated for the usage of cloud. 
 
-You can perform the following activities in the Horizon Undercloud Dashboard.
+You can perform the following activities in the Horizon undercloud dashboard.
 
 * [Activate clusters](#activate-cluster)
 * [Deactivate clusters](#deactivate-cluster)
@@ -36,7 +36,7 @@ You can perform the following activities in the Horizon Undercloud Dashboard.
 
 Perform the following steps to activate clusters:
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Overcloud** and then select **Configure** to open Configured Cloud page. 
 
@@ -54,7 +54,7 @@ Perform the following steps to activate clusters:
 
 ##Deactivate clusters<a name="deactivate-cluster"></a>
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Overcloud** and then select **Configure** to open Configured Cloud page. 
 
@@ -75,7 +75,7 @@ Perform the following steps to activate clusters:
 
 You can restore failed or deleted compute proxies. Select a vCenter to restore its compute proxy. Ensure that you remove any existing compute proxy VM (if any) from the vCenter before proceeding.
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Overcloud** and then select **Configure** to open Configured Cloud page. 
 

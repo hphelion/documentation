@@ -28,13 +28,13 @@ Cloud admins can use the ***icinga*** service running in the undercloud to monit
 ##Prerequisites
 
 * HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
-* The Icinga service is active and running in the Undercloud.
+* The Icinga service is active and running in the undercloud.
 
 
 ##Monitoring Swift Replication Status
 Perform the following steps to monitor the replication status:
 
-1. In the Undercloud, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/) The default login credentials are as follows:
+1. In the undercloud, log in to the **Icinga Dashboard** (http://&lt;<i>undercloud_IP</i>&gt;/icinga/) The default login credentials are as follows:
 	* Username: *icingaadmin*
 	* Password: *icingaadmin* 
 
