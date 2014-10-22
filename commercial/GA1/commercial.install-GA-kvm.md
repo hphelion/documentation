@@ -36,6 +36,7 @@ The installation and configuration process for KVM consists of the following gen
 	* [KVM deployment architecture](#deploy-arch)
 	* [Create and identify environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
+	* [Set DNS servers by default](#name-resolution)
 	* [Preparing seed cloud host to create the seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
@@ -83,6 +84,9 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
+### Set DNS servers by default {#name-resolution}
+
+To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/overstack/name-resolution/) before installation.
 
 ### Prepare the cloud seed host to create the seed VM ### {#prepseed}
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
