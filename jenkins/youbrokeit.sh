@@ -28,7 +28,6 @@ for i in `find . -name "*.md" | grep "\./devplatform/"`
 		echo "Devplatform files need to use the default-devplatform layout."
 		echo $i
 	fi
-
 done
  
  
