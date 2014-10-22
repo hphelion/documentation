@@ -22,7 +22,7 @@ The [Application Lifecycle Service (ALS)](/als/v1/) is a Cloud Foundry-based, ma
 - It allows Disk, Memory and Placement Zone constraints to be set per application.
 - It provides auto-scaling and application log drains.
  
-The Application Lifecycle Service is [installed](/helion/devplatform/install/) as part of the Helion Development Platform. You can explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
+The Application Lifecycle Service is [installed](/helion/devplatform/install/#install-als) as part of the Helion Development Platform. You can explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
 
 ##Application Services
 The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:
@@ -43,7 +43,7 @@ The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally 
 
 The [Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
 
-- The Messaging Service integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
+- The Messaging Service integrates with [Keystone](/helion/openstack/services/identity/overview/) to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.
 
 The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#install-messaging) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Lifecycle Service](/helion/devplatform/msgaas/als).
