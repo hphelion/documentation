@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Community Virtual Installation and Configuration"
-permalink: /helion/community/install-virtual/
+permalink: /helion/community/install-virtual-temp/
 product: community
 
 ---
