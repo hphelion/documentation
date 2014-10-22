@@ -110,7 +110,7 @@ To import a package that is stored on your local system, take the following step
 
 Perform the following steps to download the packages:
 
-1. On the HP Helion Horizon Undercloud dashboard, click  the **Admin** tab in the left panel.
+1. On the HP Helion Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
 
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 3.	Click the **More** drop-down list and select **Download** next to the package that you want to download on your local system. A Confirm Download Update dialog box is displayed.
