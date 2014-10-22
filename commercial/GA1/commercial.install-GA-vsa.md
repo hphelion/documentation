@@ -246,10 +246,10 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:
 
-1. Log in to the Undercloud from seed.
+1. Log in to the undercloud from seed.
 
 
-		# ssh heat-admin@<Undercloud IP Address>
+		# ssh heat-admin@<undercloud IP address>
 
  		 
 2. Source stackrc file and list the deployed StoreVirtual nodes.
