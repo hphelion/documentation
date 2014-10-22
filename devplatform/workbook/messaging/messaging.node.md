@@ -29,7 +29,7 @@ If the RabbitMQ service is not enabled on your cluster, or if you are not sure, 
 **Note**: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/messageservice) to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.
 
 ##Download the Application Files
-[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-node).
+[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-rabbitmq-node)
 
 ##Deploy the Application
 **Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
@@ -39,7 +39,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
 	
-		helion target https://api.xx.xx.xx.xx.example.com2.	
+		helion target https://api.xx.xx.xx.xx.example.com2	
 
 
 1. Ensure that you are logged in to your desired environment.  <br>If you are not, execute
