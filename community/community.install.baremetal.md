@@ -28,7 +28,7 @@ This installation, which is launched on an installer system, deploys to a minimu
 
 * 1 undercloud
 * 3 overcloud controllers
-* 2 overcloud swift nodes 
+* 2 overcloud Swift nodes 
 * At least 1 overcloud compute node 
 
 It is important to read through this page before starting your installation. 
@@ -103,8 +103,8 @@ During the installation process after the seed VM is installed, the installer sc
 The baremetal.csv file informs the installer of the size of the computer that each node will be installed into.
 
 **Notes:**
-- The first line of the the baremetal.csv file is the undercloud node
-- The second line is is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.
+- The first line of the baremetal.csv file is the undercloud node.
+- The second line is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.
 
 There must be one entry in this file for each baremetal system you intend to install.
     `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace>`
@@ -275,7 +275,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 		- The overcloud neutron external network (ext-net) assumes the gateway IP is the lowest non-zero host IP address in the FLOATING_CIDR range.
 
-	* `OVERCLOUD_VIRTUAL_INTERFACE` - Use this variable to set the interface that the Overcloud virtual IP (used for accessing API services) will be assigned to. This is required.
+	* `OVERCLOUD_VIRTUAL_INTERFACE` - Use this variable to set the interface that the overcloud virtual IP (used for accessing API services) will be assigned to. This is required.
 
 		The interface must exist on the two overcloud controller nodes and the overcloud management controller node.
 

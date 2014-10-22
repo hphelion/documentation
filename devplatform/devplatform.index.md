@@ -29,15 +29,15 @@ The HP Helion Development Platform provides additional Application Services that
 
 ###Database as a Service  
 
-The [Database as a Service (DBaaS)](/helion/devplatform/createdatabase/) provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
+The [Database as a Service (DBaaS)](/helion/devplatform/databaseservice/) provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
 
-- An implementation of [OpenStack Trove](https://wiki.openstack.org/wiki/Trove), [Database as a Service](/helion/devplatform/createdatabase/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
+- An implementation of [OpenStack Trove](https://wiki.openstack.org/wiki/Trove), [Database as a Service](/helion/devplatform/databaseservice/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
 - The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  
 
 The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally [installed and configured](/helion/devplatform/install/#install-database) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
 
 <table style="vertical-align: top; width: 650px; background-color: white; border: 0px;">
-<tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#install-database">Install</a><br></td><td style="border: 0px; align: right;"><a href="createdatabase">Provision</a><br><a href="connectdatabase">Connect with ALS</a></td></tr>
+<tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#install-database">Install</a><br></td><td style="border: 0px; align: right;"><a href="databaseservice">Provision</a><br><a href="connectdatabase">Connect with ALS</a></td></tr>
 </table>
 ###Messaging Service (Beta)
 

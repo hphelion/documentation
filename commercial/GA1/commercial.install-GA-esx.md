@@ -40,8 +40,8 @@ The installation and configuration process for ESX consists of the following gen
    * [Unpack installation file](#unpackinstall)
    * [Install the seed VM and building your cloud](#startseed)
 * [Verifying the installation](#verifying-your-installation)
-   * [Connect to the overcloud Horizon console](#connectconsole)
-   * [Connect to the undercloud Horizon console](#monitoring)
+   * [Connect to the Overcloud Horizon console](#connectconsole)
+   * [Connect to the Undercloud Horizon console](#monitoring)
    * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps) 
 

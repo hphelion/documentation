@@ -27,7 +27,7 @@ It is recommended that you gradually reduce the weight in the ring and change th
 Scale-out Proxy nodes can only be removed from the cloud after all the disks have been removed from the node.
 
 
-1. [Prerequisite](#prer)
+1. [Prerequisites](#prer)
 2. [Identify the disks of the node to be removed](#identify-disk-node-removed)
 3. [Removing disk from the ring](#remove-disk-from-ring)
 4. [Re-balancing the ring](#re-balance-ring)
@@ -36,7 +36,7 @@ Scale-out Proxy nodes can only be removed from the cloud after all the disks hav
 7. [Remove the scale-out proxy node by removing the corresponding stack](#remove-scale-out-proxy)
 8. [Verify the node removal](#verify-node-removal)
 
-##Prerequisite {#prer}
+##Prerequisites {#prer}
 
 * HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
 * The scale-out Object Ring-1 has been deployed.

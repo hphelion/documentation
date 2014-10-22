@@ -470,7 +470,7 @@ Enter the following command
 
 ###Update Overcloud {#update-overcloud}
 
-Enter the following command to update the Overcloud
+Enter the following command to update the overcloud:
 
     # bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
 
