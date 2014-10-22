@@ -103,8 +103,8 @@ During the installation process after the seed VM is installed, the installer sc
 The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
 
 **Notes:**
-- The first line of the the baremetal.csv file is the undercloud node
-- The second line is is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.
+- The first line of the baremetal.csv file is the undercloud node.
+- The second line is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.
 
 There must be one entry in this file for each baremetal system you intend to install.
     `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace>`
