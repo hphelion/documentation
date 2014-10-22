@@ -25,7 +25,7 @@ PageRefresh();
 
 HP Helion OpenStack includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).
 
-it is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:
+It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:
 
 1.	Swift Proxy 
 2.	Swift Account
@@ -42,7 +42,7 @@ We recommend you use these Starter servers as Swift Proxy Servers for the scaled
 
 The HP Helion OpenStack scale-out Swift architecture.
 
-<a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
 
 The HP Helion OpenStack life-cycle diagram.
 

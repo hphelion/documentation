@@ -114,7 +114,7 @@ Perform the following steps to add a physical server:
 		+-----------+--------------------------------------+	
 
  
-8. Verify the successful registration of a new physical server.
+8.Verify the successful registration of a new physical server.
 
 	`# ironic node-list`
 

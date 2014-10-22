@@ -27,7 +27,7 @@ The HP Helion OpenStack Sirius Service is a REST-based web service for storage d
 
 The Cloud Administrator is the primary user. Like the other HP Helion OpenStack services, the HP Helion OpenStack Sirius Service is compliant with the Keystone authentication service.
 
-All the devices managed by Sirius are consumed by the overcloud to realize a cloud storage offered to cloud users. The service runs in the Undercloud to realize all its operation.
+All the devices managed by Sirius are consumed by the overcloud to realize a cloud storage offered to cloud users. The service runs in the undercloud to realize all its operation.
 
 
 ## Working with the Sirius Service ##

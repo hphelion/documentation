@@ -5,7 +5,7 @@ permalink: /helion/community/release-notes/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -107,7 +107,7 @@ HP recommends the following best practices for this software version.
 		export LANG=C
 
 * We recommend cleaning up any VMs using excess space, by executing the following commands:
-	- Delete the KVM VMs and their storage volumes with the `virsh` command.
+	- Delete the KVM VMs and their storage volumes with the `virsh destroy` command.
 	- Uninstall any packages that you no longer require.
 
 * For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:

@@ -5,7 +5,7 @@ permalink: /helion/community/install/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -101,6 +101,10 @@ Before you begin the installation process, the root user must have private and p
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called baremetal.csv. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step.
 
 The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
+
+**Notes:**
+- The first line of the the baremetal.csv file is the undercloud node
+- The second line is is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.
 
 There must be one entry in this file for each baremetal system you intend to install.
     `<mac_address>,<ilouser>,<ilopassword>,<iloipaddress>,<#cpus>,<memory_MB>,<diskspace>`
@@ -295,7 +299,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 			export OVERCLOUD_COMPUTESCALE=3
 
-	* `OVERCLOUD_CINDER_LVMLOOPDEVSIZE` - This is the size of the loopback device on your partition on the overcloud control node used to hold Cinder volumes, and it is set by default to 50000 MB. You can set it to a higher value if, for example, you plan to create snapshots of large bootable volumes. The partition is a shared device, so the loopback device should not occupy the entire partition. The partition size is calculated as (approximately) diskspace_GB from the baremetal.csv file minus the root partition size of 30 GB.
+	* `OVERCLOUD_CINDER_LVMLOOPDEVSIZE` - This is the size of the loopback device on your partition on the overcloud control node used to hold Cinder volumes, and it is set by default to 50000 MB. You can set it to a higher value if, for example, you plan to create snapshots of large bootable volumes. The partition is a shared device, so the loopback device should not occupy the entire partition. The partition size is calculated as (approximately) `diskspace` from the baremetal.csv file minus the root partition size of 30 GB.
 
 		To set this variable: 
 
@@ -343,7 +347,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 	`bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh`
 
-	If your installation is successful, message similar to the following is displayed:
+	When the deployment completes, message similar to the following is displayed:
 
 		"HP - completed - Wed Oct 23 16:20:20 UTC 2014"
 

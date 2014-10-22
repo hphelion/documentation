@@ -5,7 +5,7 @@ permalink: /helion/community/services/icinga/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -51,7 +51,7 @@ Note that other file systems such as `/usr` or `/var` are not monitored.
 
 Perform the following steps to monitor the usage of Swift disk:
 
-1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
+1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;undercloud_IP&gt;/icinga/). The default login credentials are as follows:
 		
     * Username: *icingaadmin*
 	* Password: *icingaadmin* 
@@ -116,7 +116,7 @@ Cloud admins can use the ***icinga*** service running in the undercloud to monit
 
 Perform the following steps to monitor the replication status:
 
-1. In the Undercloud, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/) The default login credentials are as follows:
+1. In the undercloud, log in to the **Icinga Dashboard** (http://&lt;undercloud_IP&gt;/icinga/) The default login credentials are as follows:
 	* Username: *icingaadmin*
 	* Password: *icingaadmin* 
 

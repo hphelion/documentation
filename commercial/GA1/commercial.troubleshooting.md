@@ -678,7 +678,7 @@ forwarders for the undercloud.
 
 The user needs to manually follow the below steps to re-configure Kibana for logging.
 
-1. Log in to Undercloud and start screen session.
+1. Log in to the undercloud and start screen session.
 2. In the screen, start following command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
 3. Press Control **&** '**a**', then '**c**' to create another shell.
 4. In a new shell execute command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`

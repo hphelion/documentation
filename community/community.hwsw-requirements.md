@@ -5,7 +5,7 @@ permalink: /helion/community/hwsw-requirements/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -93,7 +93,7 @@ The [multi-node baremetal installation of HP Helion OpenStack Community](/helion
 	* A minimum of 100 GB of disk space 
 	* The Ubuntu 13.10 or 14.04 operating system installed
 
-	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages and changes to the network or visualization configuration.
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages and changes to the network or virtualization configuration.
 
 * At least 7 and up to 36 baremetal systems that meet the following configuration:
 

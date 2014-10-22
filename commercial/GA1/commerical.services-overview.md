@@ -111,7 +111,7 @@ See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
 
 See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
 
-**EON**. ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. These information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in UnderCloud controller node.
+**EON**. ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. These information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
 
 See [Overview of EON Service](/helion/openstack/services/eon/overview/)
 

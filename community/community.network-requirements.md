@@ -5,7 +5,7 @@ permalink: /helion/community/network-requirements/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

@@ -47,15 +47,15 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
 <!--1 - **Install CMC**
      
-   [Install CMC](#install-hp-storevirtual-cmc) on the Seed node where the Seed cloud is running. The CMC binary comes along with the HP Helion OpenStack installer and is present in the `tripleo` directory. 
+   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes along with the HP Helion OpenStack installer and is present in the **Tripleo** directory. 
 
 2 - **Add VSA Baremetal nodes to ironic database**
 	
    * Identify the hardware for StoreVirtual deployment and enroll the Baremetal to the ironic database.
 
-   * Log in to the Undercloud and source the environment variables(source stackrc).
+   * Log in to the undercloud and source the environment variables(source stackrc).
 
-   * Execute ironic CLI commands from the Undercloud to enroll the Baremetal into ironic database.
+   * Execute ironic CLI commands from the undercloud to enroll the Baremetal into ironic database.
    
    * [Deploy StoreVirtual storage systems](#deployment-vsa).
 
@@ -63,7 +63,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
    * After the [enrollment of the new Baremetal server](#deployment-vsa) in the undercloud, log in to the seed cloud.
 
-   * Update overcloud.json file for StoreVirtual deployment and apply the configuration.
+   * Update the *overcloud.json* file for StoreVirtual deployment and apply the configuration.
 	
    * Execute the update cloud script.
 
@@ -81,7 +81,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
    * After discovering the StoreVirtual storage systems in CMC, [create the StoreVirtual cluster and management group](#create-cluster) from CMC.
 
-4a - **Launch Undercloud Horizon**
+4a - **Launch the undercloud Horizon dashboard**
 
 4b - **Register VSA cluster**
 
@@ -95,13 +95,13 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
 5a - **Update `overcloud-config.json` file with cinder configuration**
 
-   With the advise generated from the above steps, update the overcloud-config.json file in the Seed cloud.
+   With the advise generated from the above steps, update the overcloud-config.json file in the seed cloud.
 
 5b - **Run update cloud script to update cinder.conf**
 
-   * The cinder.conf in the Overcloud should be updated after updating the overcloud-config.json file in the Seed cloud.
+   * The cinder.conf in the overcloud should be updated after updating the overcloud-config.json file in the seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from Seed cloud. -->
+   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from seed cloud. -->
 
 
 ##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
@@ -113,26 +113,26 @@ In order to configure the HP StoreVirtual VSA nodes, you must first install the 
 
 * You must be running the X Windows System to install the CMC.
 
-* We recommend that you install CMC on the same KVM host that is used to run the Seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.
+* We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.
 
 
 **Note**: These changes are required for 64-bit operating system only.
 
 * Execute the following commands:
 
-		apt-get update
-		dpkg --add-architecture i386
-		apt-get install openjdk-7-jdk:i386
+		# apt-get update
+		# dpkg --add-architecture i386
+		# apt-get install openjdk-7-jdk:i386
 
 ### Installation {#installation}
 
 1. Verify if the CMC installer file inside `tripleo` directory (packaged along with the HP Helion OpenStack&#174; installer) has the executable permission otherwise execute the following command:
 
-		chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
+		# chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
 
 2. Launch the installer
 
-		./CMC_11.5.01.0079.0_Installer_Linux.bin
+		# ./CMC_11.5.01.0079.0_Installer_Linux.bin
 
 3. Follow the steps in the console based installation wizard to complete the installation.
 
@@ -153,7 +153,7 @@ In order to configure the HP StoreVirtual VSA nodes, you must first install the 
 
 Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
 
-* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in Undercloud server does not have any free nodes.This is required to register a new node which matches the disk requirements for StoreVirtual and is picked by the installer for StoreVirtual deployment.
+* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in the undercloud server does not have any free nodes.This is required to register a new node which matches the disk requirements for StoreVirtual and is picked by the installer for StoreVirtual deployment.
 
  
 * Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first RAID group where the OS image is deployed is not considered for StoreVirtual storage.
@@ -184,40 +184,40 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
 
 To deploy HP StoreVirtual VSA, perform the following:
 
-1. SSH to undercloud as heat-admin from Seed.
+1. SSH to undercloud as heat-admin from seed.
 
-		ssh heat-admin@<IP Address>
-		sudo -i
-		source stackrc
+		# ssh heat-admin@<IP Address>
+		# sudo -i
+		# source stackrc
 
-	**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `ironic node-list` in the Undercloud server does not have any free nodes suitable for StoreVirtual installation. If a suitable node is available, skip the Baremetal registration steps and go to **step 5** below.
+	**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `ironic node-list` in the undercloud server does not have any free nodes suitable for StoreVirtual installation. If a suitable node is available, skip the Baremetal registration steps and go to **step 5** below.
 
 2. Register the new Baremetal server in the Ironic database. Replace the cpus, memory&#095;mb,local&#095;gb,ipmi&#095;address, ipmi&#095;password variable values with your Baremetal settings. 
 
-		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
+		# ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
 
 	Following is the example for reference:
 
-		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
+		# ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
 
 3. Create the ironic port for the ironic node that you created in the  previous step.
  
-		ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
+		# ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
 	**$MAC_ADDR** refers to the MAC Address of the Baremetal server.
 
 4. List the Baremetal nodes. This command also lists the newly added nodes.
 
-		ironic node-list
+		# ironic node-list
 
-5. Log out from Undercloud to go back to Seed.
+5. Log out from the undercloud to go back to the seed.
 
-6. Edit the `/root/baremetal.csv file` in Seed cloud with the details of the newly added node.
+6. Edit the `/root/baremetal.csv file` in seed cloud with the details of the newly added node.
 
 
-7. If `/root/overcloud-config.json` is not present, copy Overcloud template config file to `/root/overcloud-config.json`.
+7. If `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`.
  
-		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+		# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
 7. Edit the `/root/overcloud-config.json` and update the value for `vsa_scale` or `vsa_scale` appropriately. 
 
@@ -229,16 +229,16 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 8. Apply the configuration.
 
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
 9. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
 
-		source /root/env_vars
+		# source /root/env_vars
 
-10. Run the installer script to update the Overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
+10. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
 
- 	 	bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
+ 	 	# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -246,30 +246,32 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 To verify that the StoreVirtual storage system is deployed successfully, perform the following checks:
 
-1. Log in to Undercloud from Seed.
+1. Log in to the Undercloud from seed.
 
-		ssh heat-admin@<Undercloud IP Address>
+
+		# ssh heat-admin@<Undercloud IP Address>
+
  		 
 2. Source stackrc file and list the deployed StoreVirtual nodes.
 
-		source stackrc
-		heat stack-list
-		nova list|grep vsa
+		# source stackrc 
+		# heat stack-list
+		# nova list|grep vsa
 
-3. Log in to the StoreVirtual system from the Seed using the IP address retrieved 
+3. Log in to the StoreVirtual system from the seed using the IP address retrieved 
 from the above steps.
 
-		ssh heat-admin@<StoreVirtual system IP Address>
+		# ssh heat-admin@<StoreVirtual system IP Address>
 
 4. Check the log files.
 
-		tailf /installer.log
+		# tailf /installer.log
 
 	The message "*Started VM vsa-hostname*" indicates the successful installation of StoreVirtual on the machine.The IP Address of the StoreVirtual storage system can be retrieved from this log file.
 
 5. To display the status of all the StoreVirtual VMs.
 
-		virsh list --all 
+		# virsh list --all 
 
 	To get more details on the installer logs, check the `/var/log/storevirtual-installer.log` file.
 
@@ -368,7 +370,7 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the subnet. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual node.</br>
 
-4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a tablular format in the Find Systems dialogue box.
+4. Click **OK** to proceed or click **Cancel** to cancel the process.<br>The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.
 
 5. (Optional) Click **Add** in the Find Systems dialogue box to add more nodes. 
 

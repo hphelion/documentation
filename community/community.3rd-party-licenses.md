@@ -5,7 +5,7 @@ permalink: /helion/community/community-3rd-party-license-agreements/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

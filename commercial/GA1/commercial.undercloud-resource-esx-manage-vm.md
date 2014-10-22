@@ -27,7 +27,7 @@ PageRefresh();
 ## HP Helion OpenStack&#174;: Working with Virtual Environment(s)
 
 
-The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Undercloud Horizon Dashboard or [EON]( /helion/openstack/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the Undercloud Horizon.
+The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Horizon dashboard in the undercloud or [EON]( /helion/openstack/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the undercloud.
 <!---
 Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. 
 
@@ -56,13 +56,13 @@ The virtual environment allows you to register and unregister vCenter and import
 
 ##Register vCenter<a name="register-vcenter"></a>
 
-You can register vCenter using the Undercloud Horizon Dashboard.
+You can register vCenter using the Horizon dashboard in the undercloud.
 
 vCenter provides centralized management of virtual host and virtual machines from a single console. You can register only three vCenters in the compute service, although a single administrator can manage multiple workloads.
 
 To register vCenter, perform the following steps:
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab.<br>
+1. In the Horizon undercloud dashboard, click the **Resource** Tab.<br>
 The tab displays with options in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page.
@@ -99,7 +99,7 @@ The tab displays with options in the left panel.
 
 To view the list of registered ESX vCenter, do the following:
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab.<br>
+1. In the Horizon undercloud dashboard, click the **Resource** Tab.<br>
 The tab displays with options in the left panel.
 
 2. Click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
@@ -116,11 +116,11 @@ All the registered vCenter will be listed in the Manage Virtual Environment page
 
 ##Edit vCenter<a name="edit-vCenter"></a>
 
-When there is any change in the vCenter details you can use the edit option to capture the modification made in the vCenter details in the HP Helion Undercloud Horizon dashboard.
+When there is any change in the vCenter details you can use the edit option to capture the modification made in the vCenter details in the HP Helion Horizon undercloud  dashboard.
 
 To edit the vCenter, do the following:
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page.
 
@@ -144,7 +144,7 @@ With a help of single command you can unregister a single or multiple vCenter(s)
 
 To unregister a single vCenter, do the following:
 
-1. In the Horizon Undercloud Dashboard,  click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard,  click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
 
@@ -177,7 +177,7 @@ You can import a cluster from Manage Virtual Environments page or vCenter Detail
 
 To import a cluster from Manage Virtual Environments page, do the following:
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
 
@@ -194,7 +194,7 @@ OR</p>
 
 To import a cluster from the vCenter Details page, do the following:
 
-1.  In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1.  In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
  
@@ -212,7 +212,7 @@ To import a cluster from the vCenter Details page, do the following:
 ##View Cluster Details<a name="view-cluster"></a>
  To view the details of the registered ESX vCenter, do the following:
 
-1.  In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1.  In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
  
@@ -237,7 +237,7 @@ You can unimport multiple clusters or a single cluster with a single command.
 
 To unimport one cluster, do the following:
 
-1. In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1. In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
  
@@ -252,7 +252,7 @@ To unimport one cluster, do the following:
 
  To unimport multiple clusters with a single command, do the following:
 
-1.  In the Horizon Undercloud Dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
+1.  In the Horizon undercloud dashboard, click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
  
