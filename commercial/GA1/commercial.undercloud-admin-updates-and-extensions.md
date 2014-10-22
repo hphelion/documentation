@@ -24,7 +24,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Updates and Extensions
 
-HP provides a simple mechanism for downloading and publishing the content and updates for the Overcloud.
+HP provides a simple mechanism for downloading and publishing the content and updates for the overcloud.
 
 * [Register on the Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 * [Configure credentials](#configcre)
