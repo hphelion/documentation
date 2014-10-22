@@ -341,7 +341,7 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td><b>Management</b></td>
     <td>This network is used for most cloud traffic including, tenant access to service APIs, internal traffic between services, VxLAN traffic between tenant VMs, VM access to block and object storage, replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, CODN access to catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
     <td>untagged</td>
-    <td>eth0<br>(PXE boot for Overcloud servers)</br></td>
+    <td>eth0<br>(PXE boot for overcloud servers)</br></td>
   </tr>
 <tr style="background-color: white; color: black;">
     <td><b>External</b></td>
@@ -397,7 +397,7 @@ The physical cluster network can be shared by a number of logical networks, each
 
 HP Helion OpenStack uses three linked installation phases, called OpenStack-on-OpenStack (TripleO), to deploy a complete OpenStack cloud. TripleO simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment.
 
-TripleO is OpenStack's official project for deployment, configuration, and life cycle management of OpenStack clouds. A TripleO installation includes a Seed, Undercloud and Overcloud:
+TripleO is OpenStack's official project for deployment, configuration, and life cycle management of OpenStack clouds. A TripleO installation includes a seed, undercloud and overcloud:
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: white; color: black;">
@@ -416,14 +416,14 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 	The undercloud comprises the Compute, Ironic, Networking Operations, Object Operations, Identity Operations, and Orchestration services, which are used to deploy and configure various nodes of the overcloud on baremetal servers.<br><br>The Centralized Logging and Monitoring components run in the undercloud and can be accessed using a Web Browser. <br><br>The Sherpa, Eon and Sirius services also run in the undercloud, and can be accessed via panels in the Horizon Dashboard fr the undercloud.
 	The undercloud does not run in a HA configuration, but is an important component of the cloud. 
 	<br><br>
-	Learn more about the <a href ="/helion/openstack/backup.restore/">Backup and Restore procedures</a> to restore the undercloud in event of server problems.
+	Learn more about the <a href ="/helion/openstack/backup.restore/">Backup and Restore procedures</a> to restore the undercloud in event of server problems. 
  </tr>
 <tr style="background-color: white; color: black;">
   	<td style><b>Overcloud<b></td>
  	<td>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
 	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <a href ="/helion/openstack/technical-overview/"> Functional Overview </a>section above. 
 	<br><br>These services are deployed in a highly available cluster across the three Controller nodes.
-	<br><br>For KVM based Hypervisor environments, the Overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
+	<br><br>For KVM based Hypervisor environments, the overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </br>
 </td>
 </tr>
@@ -493,7 +493,7 @@ For more details on HA configuration, refer to [HP Helion OpenStack High Availab
 
 ## Updates and extensions {#updates-and-extensions}
 
-Updates and extensions provides a mechanism to download and install the content and updates for the Overcloud.
+Updates and extensions provides a mechanism to download and install the content and updates for the overcloud.
 
 For more information refer
 [Updates and extension](/helion/openstack/undercloud/admin/updates-and-extension/).

@@ -46,7 +46,7 @@ The following prerequisites need to be performed before configuring 3PAR StoreSe
 
 1 - **Install 3PAR device**
 
-   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the Overcloud Controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
+   Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the overcloud controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
 
 2 - **Install IMC**
 

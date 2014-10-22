@@ -1,16 +1,16 @@
 ---
 layout: default-devplatform
 title: "Working with the Database Service"
-permalink: /helion/devplatform/createdatabase/
+permalink: /helion/devplatform/databaseservice/
 product: devplatform
 
 ---
 <!--PUBLISHED-->
 
-#Working with the Database Service 
+#Using the Database Service 
 The database service provides lifecycle services for MySQL database instances. Lifecycle services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
 
-These instances can then be utilized by your applications to provide standard datastore/back-end functionality. <!--For more information on database access please refer to //Document: Database access.--> 
+These instances can then be utilized by your applications to provide standard datastore/back-end functionality.  
 
 The following topics explain how to create and manage a database:
 
@@ -23,7 +23,7 @@ The following topics explain how to create and manage a database:
 1. Install the [HP Helion Development Platform](/helion/devplatform/install/). 
 2. [Configure](/helion/devplatform/install/#install-database) the database service.
 
-##Create a database instance {#create}
+##Creating a Database Instance {#create}
 1. Log into the Horizon console.
 
 2. Under your project, open the Database panel and then click the **Instances** tab. <br><img src="media/createDBinstance1.png"/>
@@ -43,7 +43,7 @@ The following topics explain how to create and manage a database:
 7.	In the **Database** tab, open the **Instances** panel. This panel displays the status of the newly created database instance. <br><img src="media/createDBinstance5.png"/>
 8.	Once the database instance has reached **Active** status, the instance is ready to use.
 
-##Create a database backup<a name="backup"></a>
+##Creating a Database Backup<a name="backup"></a>
 The following section will demonstrate how to back up an existing database instance. This will take a backup of the entire database instance. If necessary, the backup can be restored to a new instance at a later time. 
 
 1.	Log in to the Horizon console.
@@ -57,7 +57,7 @@ The following section will demonstrate how to back up an existing database insta
 4.	Click **Backup**.
 5.	In the **Database** panel, click the **Backups** tab to view all existing backups, including the newly-created backup.<br><img src="media/createDBinstance8.png"/>
 
-##Replicate a database {#replicate}
+##Replicating a Database {#replicate}
 Replicating a database creates a slave for your instance that replicates every action on the master. Creating a database instance that is automatically replicated results in more durable data and can prevent data loss in a disaster scenario.
 
 ###Prerequisites###

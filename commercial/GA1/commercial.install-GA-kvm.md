@@ -36,6 +36,7 @@ The installation and configuration process for KVM consists of the following gen
 	* [KVM deployment architecture](#deploy-arch)
 	* [Create and identify environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
+	* [Set DNS servers by default](#name-resolution)
 	* [Preparing seed cloud host to create the seed VM](#prepseed)
 * [Downloading the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
@@ -71,20 +72,23 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
-### Create and identify environment variables file ### {#envvars}
+### Create and identify environment variables file {#envvars}
 
 Before installing, make sure you have created the environment variables file that is required for installation.
 
 For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
 
-### Prepare baremetal.csv file ### {#csv}
+### Prepare baremetal.csv file {#csv}
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
+### Set DNS servers by default {#name-resolution}
 
-### Prepare the cloud seed host to create the seed VM ### {#prepseed}
+To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/overstack/name-resolution/) before installation.
+
+### Prepare the cloud seed host to create the seed VM {#prepseed}
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
 ## Downloading the installation packages {#getinstall}
@@ -317,7 +321,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 4. Log in as user `kibana` and the password from the `htpasswd.cfg` file.
 
-## Create projects for LDAP users {#a name="ldap}
+## Create projects for LDAP users {#ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/install/ldap/). 
 
