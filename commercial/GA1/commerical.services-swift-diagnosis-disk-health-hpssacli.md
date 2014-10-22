@@ -55,16 +55,16 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 		# ssh heat-admin@<IP address of machine>
 
-4. Change the directory
+4. Change the directory.
 
 		# cd /home/heat-admin/
 		
-5. List the files
+5. List the files.
 
 		# ls
 	All the files present in that directory will be displayed.
 
-6. Install the following package
+6. Install the following package.
 
 		# dpkg -i hpssacli-2.0-16.0_amd64.deb
 
@@ -85,7 +85,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 		/home/heat-admin/hp/hpssacli/bld
 --->
 
-1. Enter the following command to determine the controller slot
+1. Enter the following command to determine the controller slot.
 		
 		# hpssacli ctrl all show status
  
@@ -99,7 +99,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 		
 		   Battery/Capacitor Status: OK
 
-2. Generate the diagnostic report for a particular slot
+2. Generate the diagnostic report for a particular slot.
 
 		# hpssacli ctrl slot=(slot number) diag file=<filename.zip>
 	Or <BR>
@@ -112,7 +112,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 3. Copy the generated file to the desired location.
 
-4. Extract the file
+4. Extract the file.
 
 
 **Using ssh from Seed:**
@@ -127,15 +127,15 @@ Use `scp` to copy the utility package on to the servers and install it.
 		/home/heat-admin/hp/hpssacli/bld
 --->
 
-3. Generate the diagnostic report of the particular slot
+3. Generate the diagnostic report of the particular slot.
 
 		 ssh heat-admin@<Machine IP address> "sudo hpssacli ctrl slot=<slot number> diag file=details_slot_<slot number>.zip"
 
-4. Copy the report from the server to Seed Vm
+4. Copy the report from the server to Seed VM.
 
  		# scp heat-admin@<Machine IP address>:/home/heat-admin/<filename.zip> 
 
-5. Copy the report <filename.zip> to the KVM_host.
+5. Copy the report <filename.zip> to the KVM_host
 	
 		# scp details_slot_<slot number>.zip ubuntu@<KVM_Host IP address>:
 
@@ -232,7 +232,7 @@ The following SmartSSDWearGaugeReport.txt sample file displays the details of th
 
         ssh heat-admin@<machine IP address> "sudo hpssacli help physicaldrive"
 
-3. Open the help to explore other options with the utility
+- Open the help to explore other options with the utility
 
         ssh heat-admin@<machine IP address> "sudo hpssacli help"
  

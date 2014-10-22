@@ -4,7 +4,6 @@ exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins, "unu
 include: [devplatform/stackato/images]
 relative_permalinks: false
 
-#TEST COMMENT
 
 
 navigation: 
@@ -326,7 +325,7 @@ navigation:
     url: /helion/devplatform/appdev/
   - text: IT Ops Resources
     url: /helion/devplatform/sysadmin/
-  - text: Sample Workbook
+  - text: Sample Code
     url: /helion/devplatform/appdev/#sample
   - text: Release Notes
     url: /helion/devplatform/release-notes/

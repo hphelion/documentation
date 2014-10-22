@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-devplatform
 title: "HP Helion OpenStack Development Platform Installation"
 permalink: /helion/devplatform/install/commercial/
 product: devplatform
