@@ -5,7 +5,7 @@ permalink: /helion/community/verify/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 

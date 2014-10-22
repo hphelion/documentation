@@ -5,7 +5,7 @@ permalink: /helion/community/release-notes/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion OpenStack&reg; Community 1.4 Release Notes
+# HP Helion OpenStack&reg; Community Release Notes
 
 <!--**Product Name:** HP Helion OpenStack&reg; Community
 **OpenStack&reg; release name:** Icehouse-->
