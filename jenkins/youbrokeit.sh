@@ -24,11 +24,23 @@ for i in `find . -name "*.md" | grep "\./devplatform/"`
 	if [[ -n $(grep layout: $i | grep -v default-devplatform) ]];
 	then
 		echo " "
-		echo "===Inforrect layout======================"
-		echo "Devplatform files need to use the default-devplatform layout."
+		echo "This devplatform file needs to use the default-devplatform layout:"
 		echo $i
 	fi
+
 done
+
+for i in `find . -name "*.md" | grep -v "\./devplatform/"`
+	do
+	if [[ -n $(grep layout: $i | grep  default-devplatform) ]];
+	then
+		echo " "
+		echo "This file should not use the default-devplatform layout."
+		echo $i
+	fi
+
+done
+
  
  
 if [[ -n $(find . -name "* *") ]];
