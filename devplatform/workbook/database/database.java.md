@@ -28,7 +28,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 4. The **MySQL** check box should be checked. If it is not, check it.
 5. Click **Save**.
 
-**NOTE**: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Creating a Database Instance in the Database Service](/helion/devplatform/createdatabase/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/).
+**NOTE**: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/).
 
 ###JDK
 

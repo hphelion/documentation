@@ -19,7 +19,7 @@ The following topics explain how to create and manage a RabbitMQ instance:
 - [Deleting a RabbitMQ cluster](#delete)
 - [Managing a RabbitMQ cluster](#manage)
 
-###Prerequisites###
+##Prerequisites
 
 1. Install the [HP Helion Development Platform](/helion/devplatform/install/). 
 2. [Configure](/helion/devplatform/install/#install-database) the services.
