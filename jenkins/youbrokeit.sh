@@ -14,7 +14,7 @@ rm filepermalink.txt > /dev/null 2>&1
 
 echo " "
 echo " "
-echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files."
+echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files. "
 echo  ""
 
 
@@ -24,12 +24,9 @@ for i in `find . -name "*.md" | grep "\./devplatform/"`
 	if [[ -n $(grep layout: $i | grep -v default-devplatform) ]];
 	then
 		echo " "
-		echo "===Incorrect layout======================"
 		echo "This devplatform file needs to use the default-devplatform layout:"
 		echo $i
 		echo "1" > checktmp
-	else
-		echo "Devplatform files have the correct layout. :-)"
 	fi
 
 done
@@ -39,12 +36,9 @@ for i in `find . -name "*.md" | grep -v "\./devplatform/"`
 	if [[ -n $(grep layout: $i | grep  default-devplatform) ]];
 	then
 		echo " "
-		echo "===Incorrect layout======================"
 		echo "This file should not use the default-devplatform layout."
 		echo $i
 		echo "1" > checktmp
-	else
-		echo "Devplatform layout only used in devplatform files. :-)"
 	fi
 
 done
@@ -61,8 +55,6 @@ if [[ -n $(find . -name "* *") ]];
 		echo ""
 	 
 		echo "1" > checktmp
-	else
-		echo "No spaces in filen names. :-)"
 	fi
  
 
@@ -81,8 +73,6 @@ echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
 echo ""
 echo "1" > checktmp
-else
-		echo "All headers begin and end with a three dash line. :-)"
 fi
 
 if [[ -n $(head -10 $i | egrep  "(layout:.*title:|title:.*permalink:|permalink:.*product: )";) ]];
@@ -95,8 +85,6 @@ echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
 echo ""
 echo "1" > checktmp
-	else
-		echo "Layout, title, permalink and product declarations are all on seperate lines. :-)"
 fi
 
 
@@ -165,8 +153,6 @@ do
 	echo "1" > checktmp
 	fi
 	fi
-		else
-		echo "All files contain a publish flag. :-)"
  done 
 
 
@@ -189,8 +175,6 @@ do
 		git log -1 $i | egrep "(Author|Date)"
 		echo "1" > checktmp
 	fi
-		else
-		echo "No files begin with a blank line. :-)"
 done   
 
 
@@ -304,7 +288,7 @@ do
 			
 		if [[  "${permalink2[c]}" == "${permalink[i]}" && "${permalink2[c]}" != "" ]]
 		then
-			if [[ "${names2[c]}" != "${names[i]}"  ]]
+			if [[  "${names2[c]}" != "${names[i]}"  ]]
 			#echo "${names2[10]}"
 			#echo  "name $c = ${names2[c]} name $i = ${names[i]}"
 			 
@@ -322,7 +306,7 @@ do
 				echo "You should probably modify the permalink in ${GIT_BRANCH} branch."
 				
 				echo ""
-				echo "1" > checktmp
+				 echo "1" > checktmp
 			fi
 		fi
 	done	
