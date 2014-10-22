@@ -39,7 +39,7 @@ The following topics as needed contain information about HP Helion OpenStack:
 
 Review the following topics before you start the installation:
 
-- [Overview](/helion/openstack/install-overview/) 
+- [Overview](/helion/openstack/install/overview/) 
 - [Support matrix](/helion/openstack/support-matrix/)
 - [Technical Overview](/helion/openstack/technical-overview/)
 - [Prerequisites](/helion/openstack/install/prereqs/)
