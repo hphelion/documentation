@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Open Source and Third-Party Software License Agreements"
-permalink: /helion/devplatform/3rd-party-license-agreements/
+permalink: /helion/devplatform/3rd-party-license-agreements-test/
 product: devplatform
 
 ---
