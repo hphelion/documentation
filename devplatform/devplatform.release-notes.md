@@ -17,7 +17,7 @@ Known Issues:
 
 1. **Database Service will not install if there are more than three availability zones**. You need to have only three availability zones to install the database service.
 
-1. **Database Instance deletion not available from the Horizon UI**. The Horizon UI is not able to delete database instances. This is a known issue and will be fixed in the next release.
+1. **Database Instance and backup deletion not available from the Horizon UI**. The Horizon UI is not able to delete database instances and backups. This is a known issue and will be fixed in the next release.
 
 2. **Password Field is not used when creating a RabbitMQ cluster**. The password field in the Horizon panel is not necessary when creating a RabbitMQ cluster, and will be ignored. This is a known issue and will be fixed in the next release.
 

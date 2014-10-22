@@ -583,7 +583,7 @@ The script will persist required files in `/mnt/state/vsa` which will be used fo
 
 This error will occur if the script fails to find `network_vsa.xml`, `storagepool_vsa.xml` and other configuration files which has to be preserved.
 
-* Check for the configuration files on &rdquo;/” path.
+* Check for the configuration files on &rdquo;/&lsquo; path.
 
 * On success, the script updates the `/mnt/state/vsa/vsa_config.json` file with the updated and created time.
 
@@ -678,7 +678,7 @@ forwarders for the undercloud.
 
 The user needs to manually follow the below steps to re-configure Kibana for logging.
 
-1. Log in to Undercloud and start screen session.
+1. Log in to the undercloud and start screen session.
 2. In the screen, start following command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
 3. Press Control **&** '**a**', then '**c**' to create another shell.
 4. In a new shell execute command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`

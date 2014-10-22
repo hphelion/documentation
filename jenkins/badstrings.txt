@@ -1,3 +1,8 @@
+installedwith
+ont he 
+ t he 
+beginnging 
+ will will 
 [nN]eccesary 
 [rR]ecieves
 [Cc]retate
@@ -14,7 +19,6 @@
 [oO]nformaton
 [cC]ommmands 
 [SS]pecifiy 
-[fF]inalise 
 [aA]poproximately
 [Cc]artitrdge
 [aA]while 
@@ -61,7 +65,6 @@ OpenStack®
  and and 
  given given
  [^_]Openstack
- eg[ :]
  [Pp]ubic
  [Pp]ersonalis 
  [Tt]empates 

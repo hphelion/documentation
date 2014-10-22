@@ -54,7 +54,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>Compute Operations (Nova)</b></td>
 	<td>The HP Helion OpenStack Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <br><br> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <br><br>
 	<a href="/helion/openstack/services/compute/overview/">Learn more</a> about the Compute Operations service.</td>
-    <td> Administrator can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</td>
+    <td> Administrators can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Block Storage<br>Volume (Cinder)</b></td>
@@ -96,7 +96,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 
 <tr style="background-color: white; color: black;">
 	<td><b>Orchestration (Heat)</b></td>
- 	<td>HP Helion Orchestration service enables you to deploy and configure multiple composite cloud applications using template formats. It enables you to work with nested stacks, which are a mechanism of using built-in stack definitions for specific resource types.<br><br>
+ 	<td>The HP Helion Orchestration service enables you to deploy and configure multiple composite cloud applications using template formats. It enables you to work with nested stacks, which are a mechanism of using built-in stack definitions for specific resource types.<br><br>
 	Users can create stacks, suspend and resume stacks, view information on stacks, view information on events, work with stack templates and infrastructure resources (such as servers, floating IPs, volumes, and security groups).<br><br>
 	<a href="/helion/openstack/services/orchestration/overview/">Learn more</a> about the Orchestration services.</td> 
 	<td>Administrators can deploy and configure the OpenStack overcloud using the Orchestration service provided in the undercloud.</td>
@@ -135,7 +135,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>DVR services</b></td>
  	<td>HP Helion OpenStack Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users.
 	 <br><br> <a href =" /helion/openstack/services/dvr/overview/">Learn more</a> HP Helion OpenStack DVR service.</td> 
-	<td>Administrators can maintain an inventory of 3PAR devices and CPGs, and StoreVirtual devices and VSAs and configure Cinder 3PAR and StoreVirtual backends.</td>
+	<td> Administrators can  create centralised router (legacy router).</td>
 </tr> 
 </table>
 
@@ -319,7 +319,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 </td>  <tr style="background-color: white; color: black;">
     <td><b>Fiber Channel</b></td>
-    <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays
+    <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
     <td> </td>
     <td> </td>
   </tr>
@@ -339,7 +339,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td><b>Management</b></td>
-    <td>This network is used for most cloud traffic including, tenant access to service APIs, internal traffic between services, VxLAN traffic between tenant VMs, VM access to block and object storage, replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, CODN access to catalog, logging traffic to centralized logging, monitoring checks to Icinga</td>
+    <td>This network is used for most cloud traffic including, tenant access to service APIs, internal traffic between services, VxLAN traffic between tenant VMs, VM access to block and object storage, replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, CODN access to catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
     <td>untagged</td>
     <td>eth0<br>(PXE boot for Overcloud servers)</br></td>
   </tr>
@@ -374,7 +374,7 @@ For more details information on network planning see [Preparing your network](/h
 
 ### Network security {#networksecurity}
 
-The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. For more information on guidelines for setting up security firewalls and routing see [Network security](/helion/openstack/install/security/).
+The Network Administrator must set up routing and firewalls for tenants to access service APIs which are only exposed on the management network. For more information on guidelines for setting up security firewalls and routing see [Network security]( /helion/openstack/install/security/).
 
 <!---
 

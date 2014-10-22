@@ -125,14 +125,14 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 ###Publish CSU contents
 
-1. Log in to the overcloud's Horizon dashboard using **Target Credentials**. 
+1. Log in to the Horizon dashboard using **Target Credentials**. 
 2. Click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
 3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 4. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
 
 5. Log in with HP Cloud OS Content Delivery Network credentials. <br>If you do not have a login credentials for HP Cloud OS Content Delivery Network then create an account. Perform the following steps to create an account on the HP Cloud OS Content Delivery Network:
 
-	1. On the HP Helion Horizon Undercloud dashboard, click  the **Admin** tab in the left panel.
+	1. On the Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
 
 	2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 
@@ -160,7 +160,7 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 
 ###Boot the installer VM
 
-1. Log in to the overcloud's Horizon dashboard using **Target Credentials**.
+1. Log in to the Horizon dashboard using **Target Credentials**.
 2. Click **Project**. The tab displays an option in the left panel.
 3. Click **Compute**  and then select **Images** to open the Image page.
 4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_1.0.0.30** to launch this image. 
@@ -284,7 +284,7 @@ After you validate the configuration file, run the DNSaaS installer:
 
 ##Configure the Overcloud Load Balancer for DNSaaS {#configovercloud}
 
- You must configure HAProxy before you configure the OverCloud Load Balance for DNaaS.
+ You must configure HAProxy before you configure the overcloud Load Balance for DNaaS.
 
 * To configure HAProxy use the following command: 
 
@@ -307,13 +307,13 @@ The HA Proxy configuration file will be displayed as the sample below:
 	### END HAPROXY CONFIG
 
 
-After the configuration of  HAProxy, SSH to all three Overcloud controller. 
+After the configuration of HAProxy, SSH to all three overcloud controllers. 
 
 Perform the following steps on each controller node:
 
-1. SSH Overcloud as root
+1. SSH overcloud as root
 
-		ssh heat-admin@<IP address of Overcloud>
+		ssh heat-admin@<IP address of overcloud>
 
 2. nano  `paas.cfg` to edit the configuration file 
 

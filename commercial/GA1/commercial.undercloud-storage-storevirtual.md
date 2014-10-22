@@ -25,9 +25,9 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Working with HP StoreVirtual VSA 
 
-The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Undercloud Horizon Dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). 
+The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). 
 
-This page describes the different tasks that you can perform using the StoreVirtual option in the Undercloud Horizon Dashboard.
+This page describes the different tasks that you can perform using the StoreVirtual option in the Horizon undercloud dashboard.
 
 
 * [Before you begin](#before-you-begin)
@@ -59,13 +59,13 @@ Before you start working with StoreVirtual, ensure that the following prerequisi
 
 ## Register a StoreVirtual cluster {#register-cluster}
 	
-Use Undercloud Horizon Dashboard to register a cluster. When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a backend to the Overcloud Cinder.
+Use the Horizon undercloud dashboard to register a cluster. When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a back end to the overcloud Cinder.
 
-<!---You can register a cluster by either using the Undercloud Horizon Dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/sirius-cli/)).-->
+<!---You can register a cluster by either using the Horizon undercloud dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/sirius-cli/)).-->
 
-To register the cluster using the Undercloud Horizon Dashboard, do the following:
+To register the cluster using the Horizon undercloud dashboard, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the Horizon undercloud dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the Overview page.
 
@@ -106,7 +106,7 @@ To register the cluster using the Undercloud Horizon Dashboard, do the following
 
 To edit a cluster, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the Horizon undercloud dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the Overview page.
 
@@ -130,7 +130,7 @@ Unregistering a cluster will remove it from the cloud inventory.
 
 To unregister a cluster, do the following:
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the Horizon undercloud dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the Overview page.
 
@@ -150,7 +150,7 @@ To unregister a cluster, do the following:
 
 Use this option to unregister multiple clusters using a single command.
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the Horizon undercloud dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the Overview page.
 
@@ -167,7 +167,7 @@ Use this option to unregister multiple clusters using a single command.
 
 Use this option to view the cluster configuration (as defined in the HP Helion OpenStack&#174; Configuration Manual for HP LeftHand/StoreVirtual Block Storage Volume Driver).
 
-1. Log in to the Undercloud Horizon Dashboard.
+1. Log in to the Horizon undercloud dashboard.
 
 2. From the left panel, click the **Resources** tab and then **Storage** to display the Overview page.
 

@@ -5,7 +5,7 @@ permalink: /helion/community/siteindex/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

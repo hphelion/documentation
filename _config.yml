@@ -4,7 +4,6 @@ exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins, "unu
 include: [devplatform/stackato/images]
 relative_permalinks: false
 
-#TEST COMMENT
 
 
 navigation: 
@@ -324,9 +323,9 @@ navigation:
     url: /helion/devplatform/install/
   - text: Application Developer Resources
     url: /helion/devplatform/appdev/
-  - text: ITOps Resources
+  - text: IT Ops Resources
     url: /helion/devplatform/sysadmin/
-  - text: Sample Workbook
+  - text: Sample Code
     url: /helion/devplatform/appdev/#sample
   - text: Release Notes
     url: /helion/devplatform/release-notes/
@@ -334,7 +333,7 @@ navigation:
     url: /helion/devplatform/related-topics/
   - text: Application Lifecycle Service Configuration and Deployment
     url: /helion/devplatform/deploy/
-  - text: ALS Documentation
+  - text: ALS Admin Guide
     url: /als/v1/admin/
   - text: End User License Agreement
     url: /helion/devplatform/eula/
@@ -363,7 +362,7 @@ navigation:
     url: /api/dns/
   - text: Monitoring
     url: /api/monitoring/
-  - text: ALS Documentation
+  - text: ALS Admin Guide
     url: https://apaas-docs.hpcloud.com
   - text: Messaging
     url: /api/msgaas/ 

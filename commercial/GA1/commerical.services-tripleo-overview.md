@@ -32,11 +32,11 @@ The [HP Helion OpenStack installation](/helion/openstack/install/overview/) foll
 
 Key terms include:
 
-- **Seed** - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion OpenStack, contains the minimum services required for OpenStack to function and to provision physical hardware to deploy the Undercloud.
+- **seed** - The seed cloud is a bootable image that is deployed in a VM instance. This image, which is provided as part of HP Helion OpenStack, contains the minimum services required for OpenStack to function and to provision physical hardware to deploy the undercloud.
 
-- **Undercloud** - The undercloud server is a basic single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the Undercloud. It contains a strictly limited sub-set of OpenStack services; just enough to  permit interaction with the overcloud. 
+- **undercloud** - The undercloud server is a basic single-node OpenStack installation running on a single physical server used to deploy, test, manage, and update the overcloud servers. There is no HA configuration for the undercloud. It contains a strictly limited sub-set of OpenStack services; just enough to  permit interaction with the overcloud. 
 
-- **Overcloud** - The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. 
+- **overcloud** - The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. 
 
 ## For more information ##
 

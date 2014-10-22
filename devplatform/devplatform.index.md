@@ -27,9 +27,11 @@ The Application Lifecycle Service is [installed](/helion/devplatform/install/) a
 ##Application Services
 The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:
 
-###Database as a Service 
+###Database as a Service  
 
-- An implementation of OpenStack Trove, [Database as a Service](/helion/devplatform/createdatabase/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
+The [Database as a Service (DBaaS)](/helion/devplatform/createdatabase/) provides lifecycle services for MySQL database instances. Lifecycle services includes provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
+
+- An implementation of [OpenStack Trove](https://wiki.openstack.org/wiki/Trove), [Database as a Service](/helion/devplatform/createdatabase/) provides scalable and reliable cloud database provisioning functionality for both relational and non-relational databases.  
 - The Database service provides a simple and easy way to access and utilize features in a database without the overhead of administration.  
 
 The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally [installed and configured](/helion/devplatform/install/#install-database) as part of the Helion Development Platform. If not installed as part of the platform, you can install it and then configure it for [use from within the Application Lifecycle Service](/helion/devplatform/connectdatabase/).
@@ -44,7 +46,7 @@ The [Messaging Service](/helion/devplatform/messageservice/)  provides developer
 - The Messaging Service integrates with Keystone to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.
 
-The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#install-messaging) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Development Platform](/helion/devplatform/msgaas/als).
+The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#install-messaging) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Lifecycle Service](/helion/devplatform/msgaas/als).
 
 <table style="vertical-align: top; width: 650px; background-color: white; border: 0px;">
 <tr style="border: 0px;vertical-align: top;"><td style="border: 0px;"><a href="install/#install-messaging">Install</a><br></td><td style="border: 0px; align: right;"><a href="messageservice">Provision</a><br><a href="msgaas/als">Connect with ALS</a></td></tr>
@@ -82,7 +84,7 @@ Most of the Helion Development Platform documentation assumes that you've alread
 ----------
 ###[Resources for Application Developers](/helion/devplatform/appdev/)
   
-###[Resources for ITOps](/helion/devplatform/sysadmin/)
+###[Resources for IT Ops](/helion/devplatform/sysadmin/)
   
 <!--### [Resources for OpenStack Integration, Extension, and Service Development](/helion/devplatform/servicedev/) -->
 

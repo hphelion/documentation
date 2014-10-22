@@ -311,7 +311,7 @@ Ubuntu 14.04 with the following packages.
 - chromium-browser
 
 
-There are no software requirements for the Undercloud and Overcloud controllers.
+There are no software requirements for the undercloud and Overcloud controllers.
 
 
 ### Other seed cloud host requirements and recommendations ## {#otherseed}

@@ -38,7 +38,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[Floating IPs screen](/mc/compute/floating-ips/) <!-- basic screen functions here such as selecting a project --> <br>
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to a server]()<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Allocating and deallocating an IP address]()<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detatching an IP address to your server]()<br>-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Attaching and detaching an IP address to your server]()<br>-->
 &nbsp;&nbsp;&nbsp;&nbsp;[Key pairs screen](/mc/compute/key-pairs/)<br>
 <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adding and deleting a key pair]() <br> -->
 <!-- [Using the management console: Some compute service use cases](/mc/compute/using/) <br>

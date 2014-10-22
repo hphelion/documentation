@@ -5,7 +5,7 @@ permalink: /helion/community/release-notes/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -36,7 +36,7 @@ Thanks for your interest in HP Helion OpenStack Community! These release notes c
 
 This release of the HP Helion OpenStack Community edition contains a single download of the product that covers both virtual and bare metal deployment:
 
-* *A virtual deployment of HP Helion OpenStack Community*. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. 
+* *A virtual deployment of HP Helion OpenStack Community*. First released in early May, 2014, this provides a "cloud-in-a-box" virtual deployment targeted towards enterprises and cloud administrators interested in evaluating, developing and deploying a private cloud based on OpenStack Cloud Software. It's a pure, free and downloadable OpenStack distribution that speeds up deployment and simplifies the management of small-scale, open cloud environments and infrastructure services. It is not intended to be used in a production environment to run real workloads.
 * *A bare-metal deployment of HP Helion OpenStack Community*. First released in June, 2014, this edition installs in a physical environment. The baremetal installation allows you to build an OpenStack cloud spanning multiple physical nodes. During installation, this edition sets up an undercloud host and deploys the overcloud on 3 controller hosts, 2 physical Swift nodes, and up to 36 physical compute nodes. 
 
 These release notes cover both deployments.
@@ -50,13 +50,13 @@ The following sections list the features in the current version, 1.4, and previo
 
 **Additional overcloud controllers for high availability** &mdash; The number of installed overcloud controller nodes has been increased to 3. The additional nodes should allow Community to continue operating if a single control node fails. Previously, the Community edition installed a single overcloud controller node. 
 
-**Icinga monitoring support** &mdash; Icinga is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
+**Icinga monitoring support** &mdash; Icinga V1.11.5 is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
 
 **Kibana interface support** &mdash; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
 
-**OpenStack Juno-2 milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1. For more information on the Juno-2 release, see [OpenStack 2014.2 (Juno) Release Notes](https://wiki.openstack.org/wiki/ReleaseNotes/Juno).
+**OpenStack Juno-2 development milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1.
 
-**Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the OpenStack DVR implemented in OpenStack Juno-3.
+**Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the DVR implemented in OpenStack Juno-3 plus some fixes from Juno-final.
 
 ### Features in HP Helion OpenStack Community GA
 
@@ -107,8 +107,7 @@ HP recommends the following best practices for this software version.
 		export LANG=C
 
 * We recommend cleaning up any VMs using excess space, by executing the following commands:
-	- Delete the KVM VMs and their storage volumes with the `virsh` command.
-	- Delete the file `/tmp/seed_options`.
+	- Delete the KVM VMs and their storage volumes with the `virsh destroy` command.
 	- Uninstall any packages that you no longer require.
 
 * For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:
@@ -116,6 +115,8 @@ HP recommends the following best practices for this software version.
 	- sudo service nova-scheduler restart
 	- sudo service nova-conductor restart
 	- sudo service neutron-openvswitch-agent restart
+
+* It is possible in busier systems that Kibana logging system might not cope with amount of logs collected. You can correct this issue by increasing the heap size specified in the `/etc/default/elasticsearch` file from the default 2G to a higher value and restarting elasticsearch service.
 
 * After deleting a cloud or an entire HP Helion OpenStack Community installation, make sure you perform a full disk erasure on the associated storage devices to prevent exposure of sensitive data that might have been stored there.
 
