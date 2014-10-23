@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Networking Guide"
-permalink: /compute/network-guide/
+permalink: /publiccloud/compute/network-guide/
 product: compute
 categories: neutron
 tags: networking neutron
@@ -136,7 +136,7 @@ __Use the MC to__:
 
 * View network, subnet, and router details
 
-See [the MC networking pages](/mc/compute/networks/) for more information about setting up networking using the MC.
+See [the MC networking pages](/publiccloud/mc/compute/networks/) for more information about setting up networking using the MC.
 
 
 __Use the command line to__:
@@ -145,7 +145,7 @@ Setup networking parameters from the command line on Unix, MacOS, or Windows.
  
 The Unix Command Line Interface is a tool which allows Unix or Mac users to manage HP Helion Public Cloud from the command line or through automated scripts. You do not need to understand the underlying REST API or XML document format to use the Unix CLI. 
 
-[Click here](https://docs.hpcloud.com/cli/) for more information on using the command line, including:
+[Click here](https://docs.hpcloud.com/publiccloud/cli/) for more information on using the command line, including:
 
 * Network Commands (version 13.5 and later)
 * Subnet Commands (version 13.5 and later)
