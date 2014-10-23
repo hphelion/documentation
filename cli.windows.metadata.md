@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Working with Meta-Data"
 permalink: /cli/windows/metadata/
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->
