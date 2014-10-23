@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud FAQ"
-permalink: /faq/
+permalink: /publiccloud/faq/
 product: public-cloud
 
 ---
