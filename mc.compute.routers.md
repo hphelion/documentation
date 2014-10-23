@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Networks screen"
 permalink: /mc/compute/routers/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
