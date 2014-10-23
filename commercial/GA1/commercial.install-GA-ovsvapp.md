@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/ovsvapp/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -203,11 +203,9 @@ To deploy the OVSvApp:
 
 ### Install the prerequisite python libraries
 
-On the server where you extracted the `ovsvapp.tgz` file, install the prerequisite python libraries:
+On the server where you extracted the `ovsvapp.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
 
-1.	Install [pyvmomi](https://pypi.python.org/pypi/pyvmomi).
-
-2.	Install [netaddr](https://pypi.python.org/pypi/netaddr).
+pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage ESX, ESXi, and vCenter.
 
 ### Modify and execute the installer {#modify}
 
