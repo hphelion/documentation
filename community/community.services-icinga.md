@@ -5,7 +5,7 @@ permalink: /helion/community/services/icinga/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

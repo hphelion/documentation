@@ -5,7 +5,7 @@ permalink: /helion/community/install-temp/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

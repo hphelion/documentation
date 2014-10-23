@@ -5,7 +5,7 @@ permalink: /helion/openstack/community/dashboard/login/
 product: commercial
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

@@ -5,7 +5,7 @@ permalink: /helion/community/hwsw-requirements/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
