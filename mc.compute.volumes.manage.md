@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Managing volumes"
 permalink: /mc/compute/volumes/manage/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
