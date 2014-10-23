@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Viewing server details"
 permalink: /mc/compute/servers/view-details/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

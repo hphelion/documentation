@@ -2,8 +2,8 @@
 layout: default
 title: "HP Helion Public Cloud Windows PowerShell Tutorials"
 permalink: /cli/windows/tutorials/
-published: false
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->

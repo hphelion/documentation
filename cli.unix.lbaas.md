@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud LBaaS Examples"
 permalink: /cli/unix/lbaas/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

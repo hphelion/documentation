@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Managing a subnet"
 permalink: /mc/compute/networks/manage-subnet/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud Network Examples"
 permalink: /cli/unix/network/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

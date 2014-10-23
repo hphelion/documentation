@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Managing Projects"
 permalink: /mc/account/projects/
 product: mc-account
+published: false
 
 ---
 <!--PUBLISHED-->

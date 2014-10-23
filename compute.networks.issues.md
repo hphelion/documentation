@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Compute Networking"
-permalink: /compute/networks/issues/
+permalink: /publiccloud/compute/networks/issues/
 product: compute
 
 ---
@@ -108,6 +108,6 @@ repeat as needed
 
 ##For further information## {#ForFurtherInformation}
 
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
-* Use the MC [site map](/mc/sitemap) for a full list of all available MC documentation pages
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/publiccloud/compute/) page
+* Use the MC [site map](/publiccloud/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)

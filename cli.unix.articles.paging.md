@@ -5,6 +5,8 @@ permalink: /cli/unix/articles/paging
 product: unix-cli
 categories: cli linux unix
 tags: report paging
+published: false
+
 ---
 <!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Modifying report paging v12.12#

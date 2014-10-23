@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Windows CLI: Folder Copy Operations"
-permalink: /cli/win/folder-operations/
+permalink: /cli/win/old/folder-operations/
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->

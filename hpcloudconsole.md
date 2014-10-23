@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Console: Getting Started"
-permalink: /hpcloudconsole/
+permalink: /publiccloud/hpcloudconsole/
 product: public-cloud
 
 ---
@@ -11,13 +11,9 @@ product: public-cloud
 # Getting Started with HP Helion Public Cloud Console
 Welcome to HP Helion Public Cloud Horizon Console! We want you up and running quickly, so this Getting Started guide walks you through network setup and connection (if not going with the default configuration setup when you activate compute services), instance and volume creation, security options, identity parameters, and management tools that facilitate your organization's use of HP Helion Public Cloud. **This page takes you through the interface in the chronological order needed to get up and running, rather than the order displayed in the console**. 
 
-After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/). 
-
-For information on moving from the HP Classic Console to HP Helion Public Cloud Console see [Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console](/hpcloudconsolefeaturemap). 
-
+After initial setup, revisit the interface to monitor usage, modify, add, and delete networks, instances, volumes, roles, groups, and more. For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/publiccloud/whats_new_with_HP_Cloud_Console/). 
 
 <img src="media/landingpage.png" width="580" alt="" />
-
 
 This page contains the following sections:
 
@@ -419,9 +415,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
     <img src="media/Notification5.png" width="580" alt="" />
 
-
 11. Enter a notification method name in the "Name" box, a type, and an email address, and click "Create Notification Method."
-
 
 ####Create alarm name####
 
@@ -433,7 +427,7 @@ After completing these tasks, you receive the metrics in JSON format at the loca
 
 3. Enter alarm name in "Create Alarm" box.
 
-4. Enter an alarm expression as indicated under "Description" in the "Create Alarm" box.  [Click](http://docs.hpcloud.com/api/v13/monitoring/#AlarmExpressions-jumplink-span) to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.
+4. Enter an alarm expression as indicated under "Description" in the "Create Alarm" box.  [Click](http://docs.hpcloud.com/publiccloud/api/monitoring/#AlarmExpressions) to see the "Alarm Expressions" section for setup information or use the link in the interface. When the expression you set is true, it triggers a notification.
 
 5. Select an alarm action name and click "Create Alarm."
 
@@ -441,7 +435,6 @@ After completing these tasks, you receive the metrics in JSON format at the loca
     <img src="media/Alarms2.png" width="580" alt="" />
 
      
-
 ###Organize and manage HP Helion Public Cloud access## {#Identity}
 
 Click  "Identity" in the left-hand interface to display links:
@@ -461,8 +454,8 @@ Click  "Identity" in the left-hand interface to display links:
 
 ##For further information## {#Forfurtherinformation}
 
-*For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/whats_new_with_HP_Cloud_Console/)..
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page
-* If you'd rather use the HP Helion Public Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP Helion Public Cloud CLI](/cli) pages.
+*For the latest updates to the current HP Helion Public Cloud Console release, see [What's new with HP Helion Public Cloud Console](/publiccloud/whats_new_with_HP_Cloud_Console/)..
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/publiccloud/compute/) page
+* If you'd rather use the HP Helion Public Cloud Command Line Interface (CLI) features, choose your topic of interest from our [HP Helion Public Cloud CLI](/publiccloud/cli) pages.
 
 

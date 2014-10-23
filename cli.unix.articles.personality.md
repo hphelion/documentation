@@ -5,6 +5,8 @@ permalink: /cli/unix/articles/personality
 product: unix-cli
 categories: cli linux compute servers configure personality
 tags: cli linux compute personality
+published: false
+
 ---
 <!--PUBLISHED-->
 #UNIX CLI for HP  Cloud: Creating servers with custom Personality v12.12#

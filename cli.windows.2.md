@@ -1,26 +1,27 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell"
-permalink: /cli/windows/2/
+permalink: /publiccloud/cli/windows/
 product: win-2-cli
 
 ---
 <!--PUBLISHED-->
-# HP Helion Public Cloud CLI Software for Windows PowerShell
+
+#HP Helion Public Cloud CLI Software for Windows PowerShell
 
 The HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.
 
-Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.  <!--The [tutorials](/cli/windows/tutorials) page contains a video tutorial for the Object Storage functionality; full tutorials for Compute and CDN are coming soon.  -->
+Surf to the appropriate page to learn how to install the software, use the various features, and see how to go about getting help.
 
-For a full list of all the commands available, start with the [command line reference](/cli/windows/2/reference).
+For a full list of all the commands available, start with the [command line reference](/publiccloud/cli/windows/reference).
 
-+ [Installation](/cli/windows/2/installation)
-+ [Commands Overview](/cli/windows/2/commands)
-+ [Compute Examples](/cli/windows/2/compute)
-+ [Object Storage Examples](/cli/windows/2/containers-and-folders)
-+ [Block Storage Examples](/cli/windows/2/block-storage)
-+ [Command Line Reference](/cli/windows/2/reference)
-+ [Getting Help](/cli/windows/2/help)
-+ [Release Notes](/cli/windows/2/release-notes)
++ [Installation](/publiccloud/cli/windows/installation)
++ [Commands Overview](/publiccloud/cli/windows/commands)
++ [Compute Examples](/publiccloud/cli/windows/compute)
++ [Object Storage Examples](/publiccloud/cli/windows/containers-and-folders)
++ [Block Storage Examples](/publiccloud/cli/windows/block-storage)
++ [Command Line Reference](/publiccloud/cli/windows/reference)
++ [Getting Help](/publiccloud/cli/windows/help)
++ [Release Notes](/publiccloud/cli/windows/release-notes)
 
 [**Download** the HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell](/file/WinCLI-1.3.5.7.zip). 

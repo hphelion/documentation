@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Viewing volume details"
 permalink: /mc/compute/volumes/view-details/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

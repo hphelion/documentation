@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What's New with the HP Helion Public Cloud Console"
-permalink: /whats_new_with_HP_Cloud_Console/
+permalink: /publiccloud/whats_new_with_HP_Cloud_Console/
 product: public-cloud
 
 ---
@@ -20,7 +20,6 @@ The HP Helion Public Cloud Console now includes the following features:
 * [More object storage uses](#Moreobjectstorageuses)
 
 * [Other improvements](#Otherimprovements)
-
 
 ##Enhanced identity management## {#Enhancedidentitymanagement}
 

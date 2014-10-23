@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell Compute Examples"
-permalink: /cli/windows/2/compute/
+permalink: /publiccloud/cli/windows/compute/
 product: win-2-cli
 
 ---

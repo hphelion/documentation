@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Release Notes for the HP Helion Public Cloud CLI Software for Windows PowerShell"
-permalink: /cli/windows/2/release-notes/
+permalink: /publiccloud/cli/windows/release-notes/
 product: win-2-cli
 
 ---
@@ -36,7 +36,7 @@ This release was made available on 11/15/2013 and contains the following new fea
 This release was made available on 4/22/2013 and contains the following new features:
 
 * Support for automatic update checking when opening the shell.
-* Added cmdlets `[New-Container](/cli/windows/reference#New-Container)` and `[Remove-Container](/cli/windows/reference#Remove-Container)` to add and remove containers owned by other users to your list of available containers.
+* Added cmdlets `[New-Container](/publiccloud/cli/windows/reference#New-Container)` and `[Remove-Container](/publiccloud/cli/windows/reference#Remove-Container)` to add and remove containers owned by other users to your list of available containers.
 * Support for file uploads for files greater than 1 gigbyte in size has been added.
 * The `Connect-Server` cmdlet now works with non-Windows instances in conjunction with *putty.exe*.
 * New argument for `Get-Zones` cmdlet. Adding `–v` will return more details about each zone including containers in that zone and available services. Example: `get-zones -v`.
@@ -55,14 +55,14 @@ This release was made available on 4/22/2013 and contains the following new feat
 
 This release was made available on 10/29/2012 and contains the following new features:
 
-* Support for temporary URLs via new attributes for the cmdlet `[get-uri](/cli/windows/reference#ObjectStorage)`.
-* Support for wild cards for Object-Storage with the commands, `[ls, del, copy](/cli/windows/reference#ObjectStorage)`.
+* Support for temporary URLs via new attributes for the cmdlet `[get-uri](/publiccloud/cli/windows/reference#ObjectStorage)`.
+* Support for wild cards for Object-Storage with the commands, `[ls, del, copy](/publiccloud/cli/windows/reference#ObjectStorage)`.
 * Support for [Windows images](/cli/windows/compute#CreateanImageofaServer)
-* Added cmdlet `[connect-server](/cli/windows/reference#Compute)` to quick-connect to Windows Instances
-* Added cmdlet `[get-limits](/cli/windows/reference#Compute)` to show Compute quota information
-* Added cmdlet `[ping-server](/cli/windows/reference#Compute)` to ping a server.
+* Added cmdlet `[connect-server](/publiccloud/cli/windows/reference#Compute)` to quick-connect to Windows Instances
+* Added cmdlet `[get-limits](/publiccloud/cli/windows/reference#Compute)` to show Compute quota information
+* Added cmdlet `[ping-server](/publiccloud/cli/windows/reference#Compute)` to ping a server.
 * Added cmdlet `[get-password](/cli/windows/reference#Compute)` for recovering of Administrator password for Windows Instances
-* Support for syncing Windows Administrator password for cmdlet `[reset-password](/cli/windows/reference#Compute)`
+* Support for syncing Windows Administrator password for cmdlet `[reset-password](/publiccloud/cli/windows/reference#Compute)`
 
 ###Known Issues###
 

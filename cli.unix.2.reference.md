@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud: Command Line Reference"
 permalink: /cli/unix/2/reference/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

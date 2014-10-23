@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Working with Meta-Data"
-permalink: /cli/windows/2/metadata/
+permalink: /publiccloud/cli/windows/metadata/
 product: win-2-cli
 
 ---
@@ -16,5 +16,5 @@ In addition, you can also see how one would view meta-data on an existing object
 
 Recommended Links 
  
-* [Index](/cli/windows)
-* [Misc Features](/cli/windows/misc)
+* [Index](/publiccloud/cli/windows)
+* [Misc Features](/publiccloud/cli/windows/misc)

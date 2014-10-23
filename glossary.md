@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Glossary of HP Helion Public Cloud Terms"
-permalink: /glossary/
+permalink: /publiccloud/glossary/
 product: public-cloud
 
 ---

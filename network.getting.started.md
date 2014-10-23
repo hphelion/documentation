@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Getting Started with HP Helion Public Cloud Networking"
-permalink: /compute/network/getting-started
+permalink: /publiccloud/compute/network/getting-started
 product: compute
 
 ---
@@ -27,7 +27,7 @@ This page covers the following topics:
 * [Using Regions and Availability Zones](#az)
 * [For further information](#info)
 
-For more details on how to work with your network, see [HP Helion Public Cloud Networking: Quick start guide](/compute/network/quick-start/) or [How To's with HP Helion Public Cloud Networking version 13.5](/compute/network/howto/).
+For more details on how to work with your network, see [HP Helion Public Cloud Networking: Quick start guide](/publiccloud/compute/network/quick-start/) or [How To's with HP Helion Public Cloud Networking version 13.5](/publiccloud/compute/network/howto/).
 
 ##Using the Default Network Configuration## {#default}
 
@@ -71,7 +71,7 @@ You can expand your network up to the following per-domain maximums:
 * 10 Security Groups 
 * 50 Security Group Rules
 
-For more information on modifying the default network and creating additional networks, see either [HP Helion Public Cloud Networking: Quick start guide](/compute/network/quick-start/) or [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide) in the HP Helion Public Cloud community.
+For more information on modifying the default network and creating additional networks, see either [HP Helion Public Cloud Networking: Quick start guide](/publiccloud/compute/network/quick-start/) or [Quick Start Guide](https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide) in the HP Helion Public Cloud community.
 
 ## Accessing the Networking service ##
 
@@ -79,21 +79,21 @@ There are a  number of tools that you can use to access and manage the Networkin
 
 ###Using the console to access Networking### {#console}
 
-You can use the HP Helion Public Cloud console to access the Networking service. For more information on using the console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
+You can use the HP Helion Public Cloud console to access the Networking service. For more information on using the console, see [Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole).
 
 
 ###Using the API to access Networking### {#API}
  
-You can use a low level, raw REST API to access Compute services. For more information on using the Networking API, see [HP Helion Public Cloud Networking API Specifications](/api/v13/networking).
+You can use a low level, raw REST API to access Compute services. For more information on using the Networking API, see [HP Helion Public Cloud Networking API Specifications](/publiccloud/api/networking).
 
 ###Using the CLI### {#cli}
 
 
-You can use any of several command-line interface software to access Compute services. For more information on using the Networking CLI, see [HP Helion Public Cloud CLI](/cli/).
+You can use any of several command-line interface software to access Compute services. For more information on using the Networking CLI, see [HP Helion Public Cloud CLI](/publiccloud/cli/).
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access Compute services. For more information on using the Networking bindings, see [HP Helion Public Cloud binding support](/bindings/).
+You can use any of several language bindings to access Compute services. For more information on using the Networking bindings, see [HP Helion Public Cloud binding support](/publiccloud/bindings/).
 
 ##Using VPN with the Networking service## {#vpn}
 
@@ -101,7 +101,7 @@ With the Networking service you can set up an IPsec, or site-to-site, VPN connec
 
 For VPN site-to-site connectivity, you will need to modify either the provided default network configuration or create your own network, subnet, router and ports.
 
-For more information on using VPN with Networking, see [HP Helion Public Cloud Networking: VPN setup quick start guide](/compute/vpn-quickstart).
+For more information on using VPN with Networking, see [HP Helion Public Cloud Networking: VPN setup quick start guide](/publiccloud/compute/vpn-quickstart).
 
 ##Using Security Groups with the Networking service## {#security}
 
@@ -136,7 +136,7 @@ The Networking service's regional capabilities include:
 
 Check out the following pages for more information on using HP Helion Public Cloud Networking services:
 
-- [Known Issues and Workarounds with the Networking Service](/compute/network/known-issues/)
-- [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
-- [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+- [Known Issues and Workarounds with the Networking Service](/publiccloud/compute/network/known-issues/)
+- [Helion Public Cloud - Quick Start Guide](https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide)
+- [Management console: Networks screen](http://docs.hpcloud.com/publiccloud/mc/compute/networks/)
 - [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
