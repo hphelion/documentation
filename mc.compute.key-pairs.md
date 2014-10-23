@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Key Pairs Screen"
 permalink: /mc/compute/key-pairs/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

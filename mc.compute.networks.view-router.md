@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Viewing router details"
 permalink: /mc/compute/networks/view-router/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

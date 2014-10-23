@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Managing Ports"
 permalink: /mc/compute/network/manage-ports/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
