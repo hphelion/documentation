@@ -3,6 +3,7 @@ layout: default
 title: "Connecting to the HP Helion Public Cloud"
 permalink: /v13/bindings/fog/connect/
 product: fog
+published: false
 
 ---
 <!--PUBLISHED-->
