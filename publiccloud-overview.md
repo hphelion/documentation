@@ -29,7 +29,7 @@ HP Helion Public Cloud consists of many services based on the different OpenStac
 Use the following links and tools to get to work with HP Helion Public Cloud:
 
 * [Information, pricing, and setting up a free trial of HP Helion Public Cloud](http://www.hpcloud.com/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_newsl/hpcs_home2/20130905&elq=c335ccb3cf434b9b969905b419a13b18&elqCampaignId=)
-* [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) walks you through HP Helion Public Cloud setup
+* [Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) walks you through HP Helion Public Cloud setup
 
   We recommend that you visit this Getting Started page before you log on to the console.
 * [What's new with HP Helion Public Cloud Console](/publiccloud/whats_new_with_HP_Cloud_Console/) has the latest updates to the current HP Helion Public Cloud Console release
