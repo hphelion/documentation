@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud Compute API"
 permalink: /compute/api/
 product: compute
+published: false
 
 ---
 <!--PUBLISHED-->
