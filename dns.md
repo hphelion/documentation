@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud DNS Overview"
-permalink: /dns/
+permalink: /publiccloud/dns/
 product: public-cloud 
 
 ---
@@ -11,4 +11,4 @@ product: public-cloud
 The HP Helion Public Cloud Domain Name service (DNS) provides you with a managed domain name service that features anycast routing hosted by HP Helion Public Cloud.  
 
 ## API
-Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the [DNS API page](/api/dns/).
+Do you need low level, raw REST API access to HP Helion Public Cloud DNS?  Take a look at the [DNS API page](/publiccloud/api/dns/).
