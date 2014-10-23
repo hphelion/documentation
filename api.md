@@ -10,11 +10,11 @@ product: public-cloud
 
 We offer a number of HP Helion Public Cloud APIs. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.
 
-* [APIs in general availability](#api135)
+* [APIs in general availability](#apiga)
 * [APIs in public beta](#pubbeta)
 * [APIs in private beta](#privbeta)
 
-##HP Helion Public Cloud APIs in General Availability {#api135}
+##HP Helion Public Cloud APIs in General Availability {#apiga}
 
 There are a number of HP Helion Public Cloud APIs available for your programming pleasure: 
 
