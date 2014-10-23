@@ -6,16 +6,18 @@ product: devplatform
 <!--PUBLISHED-->
 
 #Sample Applications {#index-0}
-- [Creating Sample Applications](#creating-an-app-store)
-	- [Sample Applications Definition File](#app-store-definition)
-	- [Hosting Definition Files](#hosting-the-store-definition-files)
-- [Adding the Sample Applications to the Application Lifecycle Service](#adding-the-app-store-to-helion)
 
 The Sample Applications are a collection of ready-to-run applications which can be
 deployed to Application Lifecycle Service with a couple of clicks. This interface uses the
 same API as the CLI client and pulls the source code from a Git
 repository rather than pushing an archive from the user's local
 filesystem.
+
+- [Creating Sample Applications](#creating-an-app-store)
+	- [Sample Applications Definition File](#app-store-definition)
+	- [Hosting Definition Files](#hosting-the-store-definition-files)
+- [Adding the Sample Applications to the Application Lifecycle Service](#adding-the-app-store-to-helion)
+
 
 Users have access to the main Sample Applications interface (see the [Application Lifecycle Service User
 Guide](/als/v1/user/), but do not have access to add new applications or add/modify the definition file.
@@ -141,7 +143,7 @@ This is an array of items (see YAML format above), one for each app in the conta
 The store definition settings do not override settings in the
 application's *manifest.yml* file.
 
-### Hosting the Definition Files {#hosting-the-store-definition-files)
+###Hosting the Definition Files {#hosting-the-store-definition-files}
 
 The YAML files defining the stores can be served via HTTP or HTTPS by
 any web server at a URL accessible from the Cloud Controller.
