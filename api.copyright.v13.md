@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Copyright for HP Helion Public Cloud APIs (v13.5)"
-permalink: /api/v13/copyright/
+title: "Copyright for HP Helion Public Cloud APIs"
+permalink: /publiccloud/api/copyright/
 product: public-cloud
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-# Copyright for HP Helion Public Cloud APIs (v13.5)
+# Copyright for HP Helion Public Cloud APIs
 
 ## Identity  ## {#identity}
 
