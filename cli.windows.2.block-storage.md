@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell Block Storage Examples"
-permalink: /cli/windows/2/block-storage/
+permalink: /publiccloud/cli/windows/block-storage/
 product: win-2-cli
 
 ---
