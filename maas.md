@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Monitoring Overview"
-permalink: /maas/
+permalink: /publiccloud/maas/
 product: public-cloud 
 
 ---
@@ -12,4 +12,4 @@ HP Helion Public Cloud Monitoring provides you with a managed service that facil
 
 
 ## API ##
-Do you need low-level, raw REST API access to HP Helion Public Cloud Monitoring?  Take a look at the [Monitoring v1.1 API page](/api/v13/monitoring/).
+Do you need low-level, raw REST API access to HP Helion Public Cloud Monitoring?  Take a look at the [Monitoring v1.1 API page](/publiccloud/api/monitoring/).
