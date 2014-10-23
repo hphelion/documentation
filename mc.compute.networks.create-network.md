@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Creating and Deleting a Network"
 permalink: /mc/compute/networks/create-network/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
