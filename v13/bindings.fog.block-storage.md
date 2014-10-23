@@ -3,6 +3,7 @@ layout: default
 title: "Ruby Fog for HP Helion Public Cloud Block Storage v2.0 Examples"
 permalink: /v13/bindings/fog/block-storage/
 product: fog
+published: false
 
 ---
 <!--PUBLISHED-->
