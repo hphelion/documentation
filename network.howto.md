@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To's with the Network Service"
-permalink: /compute/network/howto/
+permalink: /publiccloud/compute/network/howto/
 product: compute
 
 ---
@@ -25,7 +25,7 @@ You might need to modify the default network or create additional networks.  Thi
 
 If you have not previously created an account and activated the compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  
 
-If you prefer to use the [HP Helion Public Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
+If you prefer to use the [HP Helion Public Cloud CLI for Windows PowerShell](/publiccloud/cli/windows/installation/) make sure the CLI is installed and you have sufficient access permissions.
 
 #### Assigning access permission to services #### {#access}
 
@@ -216,7 +216,7 @@ You can change the name of many of the items on the Network screens, as follows:
 
 The HP Helion Public Cloud environment command-line interface (CLI) software for Windows PowerShell allows Windows users to manage their HP Helion Public Cloud services from the command line.
 
-To use the [HP Helion Public Cloud CLI for Windows PowerShell](/cli/windows/2/installation/) make sure the CLI is installed and you have sufficient access permissions.
+To use the [HP Helion Public Cloud CLI for Windows PowerShell](/publiccloud/cli/windows/installation/) make sure the CLI is installed and you have sufficient access permissions.
 
 You need to install and use the CLI on a system configured to access the project associated with the network you want to work with. The installation instructions show how to configure the CLI to interact with a specific project. 
 
@@ -231,7 +231,7 @@ You can use the Windows PowerShell CLI to perform the following tasks:
 - [Edit a sub-net](#EditSubCLI)
 - [Rename a port](#RenamePortCLI)
 
-For the full reference of supported HP Helion Public Cloud CLI commands for Windows PowerShell, see [HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference](/cli/windows/2/reference/). 
+For the full reference of supported HP Helion Public Cloud CLI commands for Windows PowerShell, see [HP Helion Public Cloud Environment CLI Software for Windows PowerShell Command Line Reference](/publiccloud/cli/windows/reference/). 
 
 ### How to create a network ### {#CreatingCLI}
 
@@ -440,8 +440,8 @@ You can change the name of a port, as needed.
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the router details screen, take a look at the [Viewing router details](/mc/compute/networks/view-router/) page.
-* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/compute/) page.
-* For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/compute/network/known-issues/).
-* Use the [documentation site map](/mc/sitemap) for a full list of all available MC documentation pages
+* For information about the router details screen, take a look at the [Viewing router details](/publiccloud/mc/compute/networks/view-router/) page.
+* For basic information about our HP Helion Public Cloud compute services, take a look at the [HP Helion Public Cloud compute overview](/publiccloud/compute/) page.
+* For a list of issues and workarounds for working with the Networking service, see [Known Issues and Workarounds with the Networking Service](/publiccloud/compute/network/known-issues/).
+* Use the [documentation site map](/publiccloud/mc/sitemap) for a full list of all available MC documentation pages
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
