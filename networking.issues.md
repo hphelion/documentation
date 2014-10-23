@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Known Issues and Workarounds with the Networking Service"
-permalink: /compute/network/known-issues/
+permalink: /publiccloud/compute/network/known-issues/
 product: compute
 
 ---
