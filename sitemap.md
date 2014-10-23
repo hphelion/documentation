@@ -44,11 +44,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/publiccloud/api/monitoring)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Application Platform as a Service (aPaaS) Overview](/apaas)<br>
 [HP Helion Public Cloud Bindings](/publiccloud/bindings)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[Ruby Fog for HP Helion Public Cloud Overview](/publiccloud/bindings/fog)<br>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using the Ruby Fog bindings](/bindings/fog/articles/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Using authentication caching](/bindings/fog/articles/authcache)<br> -->
-&nbsp;&nbsp;&nbsp;&nbsp;[Java/Clojure jclouds Overview and Installation](/publiccloud/bindings/jclouds)<br>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Connecting to the Service](/bindings/jclouds/connecting)<br> -->
 [HP Helion Public Cloud CLI Documentation](/publiccloud/cli)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Windows Powershell CLI Overview](/publiccloud/cli/windows/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Installation](/publiccloud/cli/windows/installation)<br>
