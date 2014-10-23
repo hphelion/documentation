@@ -3,6 +3,7 @@ layout: default
 title: "Management console main dashboard"
 permalink: /mc/dashboard/
 product: mc
+published: false
 
 ---
 <!--PUBLISHED-->
