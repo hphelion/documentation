@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell"
-permalink: /cli/windows/2/
+permalink: /publiccloud/cli/windows
 product: win-2-cli
 
 ---
