@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud: jclouds Bindings Compute Examples"
 permalink: /bindings/jclouds/compute/
 product: jclouds
+published: false
 
 ---
 <!--PUBLISHED-->
