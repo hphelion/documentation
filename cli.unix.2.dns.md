@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud DNS Examples"
 permalink: /cli/unix/2/dns/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->
