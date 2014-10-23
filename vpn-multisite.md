@@ -1,18 +1,18 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Networking:  VPN multi-site configuration guide"
-permalink: /compute/vpn-multisite/
+permalink: /publiccloud/compute/vpn-multisite/
 product: compute
 categories: neutron 
 tags: networking neutron vpn  
 
 ---
 <!--PUBLISHED-->
-# HP Helion Public Cloud Networking:  VPN multi-site configuration guide {#top}
+# HP Helion Public Cloud Networking: VPN multi-site configuration guide {#top}
 
 Once you have set up your initial VPN connection, you can extend your network to your different private sites. This guide provides you the basic steps to configure a VPN Virtual Machine (instance) and establish a secure connection between private sites to your HP Helion Public Cloud VPN.
 
-For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart) to set up the initial VPN instance).
+For this procedure, we assume that you have an active HP Helion Public Cloud account with a VPN instance set up (see the [VPN Quick Start Guide](http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart) to set up the initial VPN instance).
 
 While you can set up your Compute service instance and VPN using any Linux OS, for the purpose of this guide, we use an Ubuntu instance and strongSwan IPsec. This configuration has been tested, but you can use this guide as a basis for connecting your sites to your HP Helion Public Cloud VPN.
 
@@ -104,12 +104,12 @@ back to the [top](#top)
 
 This section uses strongSwan to configure the IKE and IPsec proposals from the previous section.
 
-**Note:** Make sure you have configured your VPN Gateway instance according to the ["VPN Quick Start Guide"](http://docs.hpcloud.com/compute/vpn-quickstart).
+**Note:** Make sure you have configured your VPN Gateway instance according to the ["VPN Quick Start Guide"](http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart).
 
 ###strongSwan configuration files
 
 1.	SSH into the VPN instance on your VPC using your Public IP Address and ssh keys. 
-**Note:** Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN instance shell (see the [VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart)).
+**Note:** Use either a Windows client with PuTTY or a Linux client with ssh to access your VPN instance shell (see the [VPN Quick Start Guide](http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart)).
 2.	Once logged in, run the following command to see the *IPsec.conf* file in the strongSwan configuration files.
 
 	ls IPsec* strongswan*
@@ -378,7 +378,7 @@ back to the [top](#top)
 
 ## Troubleshoot and verify connections## {#trouble}
 
-See the "[VPN Quick Start Guide](http://docs.hpcloud.com/compute/vpn-quickstart)" for instructions on how to troubleshoot and verify connections.
+See the "[VPN Quick Start Guide](http://docs.hpcloud.com/publiccloud/compute/vpn-quickstart)" for instructions on how to troubleshoot and verify connections.
 
 ###For further information## {#info}
 
