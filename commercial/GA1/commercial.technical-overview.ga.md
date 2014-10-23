@@ -152,15 +152,13 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 	
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
+<img src="media/topology_kvm.png"/)
 
 
 ###ESX environment {#esx-env}
 
 The following diagram depicts a simplified deployment scenario using ESX.
-
-
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+<img src="media/topology_esx.png"/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -389,8 +387,6 @@ The Seed VM is expected to use eth0 to connect to the cluster network (and hence
 
 The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. --->
 
-
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Installation planning {#install-configure}
@@ -443,11 +439,15 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.(opens in a new window)  </a>
+HP Helion OpenStack architecture diagram for KVM network architecture.
+
+<img src="media/topology_kvm.png"/)
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping (opens in a new window) </a> 
+HP Helion OpenStack architecture diagram for Store Virtual volume type mapping
+
+<img src="media/reference-architecture-StoreVirtual-volume-type-mapping.png"/> 
 
 **Note:** For configuring your HP Helion OpenStack installation to use 3Par for block storage, please go to <add link here>
 
@@ -459,7 +459,8 @@ An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK
  
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.  
 
-<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+HP Helion OpenStack architecture diagram for ESX 
+<img src="media/commercial_esx_network_architecture.png"/>
 
 The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
