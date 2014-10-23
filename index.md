@@ -49,8 +49,6 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 </td>
 </tr>
 
-
-
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudos/moonshot/">HP Cloud OS for Moonshot</a></span></p>
 </td>
