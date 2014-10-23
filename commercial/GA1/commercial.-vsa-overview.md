@@ -69,7 +69,7 @@ HP StoreVirtual VSA enables the following features in HP Helion OpenStack:
 
 The following diagram displays the different development platforms supported in HP Helion OpenStack.
 
-<img src="media/storevirtual-development-platform.png"/>
+<img src="media/storevitual-development-platform.png"/>
 
 There are three supported models for deploying StoreVirtual in HP Helion OpenStack:
 
@@ -132,9 +132,7 @@ HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizont
 
 Cinder provides the concept of volume types to represent differentiated storage offerings based on various performance outputs, quality of service and backend devices that are used to realize cloud storage. Essentially, a volume type is mapped to one or more backends of similar capabilities as illustrated in figure below:
 
-<!---<a href="javascript:window.open('C:\Users\sapruv\Desktop\git\Oct8/StoreVirtual-volume-mapping-new.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume type mapping (opens in a new window)</a>-->
-
-<img src="media/Storevirtual-volume-mapping-new.png"/>
+<img src="media/storevirtual-volume-mapping-new.png"/>
 
 As a cloud administrator, you can create volume types to specify the storage offerings of the cloud and  configure Cinder with backends which have the ability to serve storage characteristics represented by the volume types. For example, as a cloud admin, you have the following storage capabilities:  
 
@@ -152,9 +150,7 @@ Differentiated storage offerings based on performance and quality can be realize
 ##Scale Out Cinder Block Storage with StoreVirtual VSA {#scale-out-vsa}
 The following diagram displays a reference design that is used as a starting point for scale out Cinder Block Storage with HP StoreVirtual VSA.
 
-<!---<a href="javascript:window.open('C:\Users\sapruv\Desktop\git\Oct8/StoreVirtual-scale-out-vsa.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Volume type mapping (opens in a new window)</a>-->
-
-<img src="media/StoreVirtual-scale-out-vsa.png"/>
+<img src="media/storevirtual-scale-out-vsa.png"/>
 
 The sizing of the StoreVirtual VSA Management Groups, Clusters and Instances is an intricate exercise used in balancing various parameters and preferences and should be done to optimize configurations for your specific deployment. 
 
@@ -162,22 +158,6 @@ The sizing of the StoreVirtual VSA Management Groups, Clusters and Instances is 
 ## Next Steps {#next-steps}
 
 - [Deploy and Configure HP StoreVirtual VSA](/helion/openstack/install/vsa/)
-
-<!--- [Working with HP StoreVirtual VSA](/helion/openstack/ga/undercloud/storage/storevirtual/)-  REQUIRED
-
-	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
-
-	For detailed intructions, see the  document. 
-- [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)-  REQUIRED
-
-	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
-	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
-
-<!---## Next step
-
-Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
