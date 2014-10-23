@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Networking:  VPN setup quick start guide"
-permalink: /compute/vpn-quickstart/
+permalink: /publiccloud/compute/vpn-quickstart/
 product: compute
 categories: neutron
 tags: networking neutron vpn
@@ -49,7 +49,6 @@ Before starting, ensure that you have adequate permissions to accomplish each of
 
 **Note:** VPN instances are a potential single point of failure. We will soon be posting a high availability VPN setup guide, so please stay tuned. 
 
-
 ### Audience ### {#audience}
 This guide is designed for those in the following or similar roles:   
 
@@ -65,7 +64,6 @@ To use this solution effectively, you should be familiar with
 - Virtual Private Networks (VPN)    
 - strongSwan or other IPsec-based software solutions   
     
-
 ### Key Terms ### {#terms}
 
 **IKE** - Internet Key Exchange
@@ -117,11 +115,11 @@ $PORT_ID1 = id of port 1 (vm-gateway)
 $PORT_ID2 = id of port 2 (vm-test)    
 $VM_GATEWAY = address of the VPN VM gateway (e.g., 10.2.0.21)   
 
-For more details on the Nova and Neutron commands please see the [HP Helion Public Cloud Networking](https://docs.hpcloud.com/api/v13/networking/) and [Compute](https://docs.hpcloud.com/api/v13/compute/) API specifications.
+For more details on the Nova and Neutron commands please see the [HP Helion Public Cloud Networking](https://docs.hpcloud.com/publiccloud/api/networking/) and [Compute](https://docs.hpcloud.com/publiccloud/api/compute/) API specifications.
 
-### Activate the Compute  service in HP Helion Public Cloud ### {#compute}
+### Activate the Compute service in HP Helion Public Cloud ### {#compute}
 
-If you have not previously created an account and activated the Compute  service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the Compute  service, you need to install the [compute](https://docs.hpcloud.com/api/v13/compute/) and [networking](https://docs.hpcloud.com/api/v13/networking/) clients or the [CLI](http://docs.hpcloud.com/cli/unix/network). Make sure you activate a Compute service instance in HP Helion Public Cloud version 13.5 to access the networking and VPN capabilities.
+If you have not previously created an account and activated the Compute service please sign up at [http://hpcloud.com](http://hpcloud.com).  Once you activate the Compute service, you need to install the [compute](https://docs.hpcloud.com/publiccloud/api/compute/) and [networking](https://docs.hpcloud.com/publiccloud/api/networking/) clients or the [CLI](http://docs.hpcloud.com/publiccloud/cli/openstack/). Make sure you activate a Compute service instance to access the networking and VPN capabilities.
 
 ##Create a new Ubuntu server instance
 
@@ -195,7 +193,7 @@ The above command creates a new keypair called **ipsec_vpn_gateway**.  View all 
 
 #### Select your Compute service image
 
-To boot a Compute service instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/api/v13/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
+To boot a Compute service instance you will need to know which [operating system and size of image](https://docs.hpcloud.com/publiccloud/api/compute/) you would like to use.  For the purpose of this guide, we use a small image using Ubuntu. Select the type of image you want and then assess the amount of bandwidth you need and select the appropriately sized flavor.
 
 #### Boot the gateway instance and test instance
 
@@ -465,9 +463,8 @@ back to the [top](#top)
 
 ## For further information ## {#refs}
 
-- [UNIX CLI for HP Helion Public Cloud Network Examples](http://docs.hpcloud.com/cli/unix/network)
-- [HP Helion Public Cloud Networking API Specifications](https://docs.hpcloud.com/api/v13/networking/)
-- [HP Helion Public Cloud Compute Service API Reference](https://docs.hpcloud.com/api/v13/compute/)
+- [HP Helion Public Cloud Networking API Specifications](https://docs.hpcloud.com/publiccloud/api/networking/)
+- [HP Helion Public Cloud Compute Service API Reference](https://docs.hpcloud.com/publiccloud/api/compute/)
 - [strongSwan wiki FAQ](http://wiki.strongswan.org/projects/strongswan/wiki/FAQ)
 - [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
 - [strongSwan ipsec.conf reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf)

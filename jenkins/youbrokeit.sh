@@ -17,7 +17,7 @@ echo " "
 echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files. "
 echo  ""
 
-
+ 
 
 for i in `find . -name "*.md" | grep "\./devplatform/"`
 	do
