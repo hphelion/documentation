@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Networking Overview"
-permalink: /compute/networks/
+permalink: /publiccloud/compute/networks/
 product: compute
 
 ---
@@ -18,21 +18,21 @@ You can now define and configure your own virtual network topology, including co
 
 ###Using the console to access Networking### {#console}
 
-You can use the HP Helion Public Cloud console to access HP Helion Public Cloud Networking Service. For more information on using the HP Helion Public Cloud console, see [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole).
+You can use the HP Helion Public Cloud console to access HP Helion Public Cloud Networking Service. For more information on using the HP Helion Public Cloud console, see [Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole).
 
 
 ###Using the API to access Networking### {#API}
  
-You can use a low level, raw REST API to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud Networking API Specifications](/api/v13/networking).
+You can use a low level, raw REST API to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud Networking API Specifications](/publiccloud/api/networking).
 
 
 ###Using language bindings### {#bindings}
 
-You can use any of several language bindings to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud binding support](/bindings/).
+You can use any of several language bindings to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud binding support](/publiccloud/bindings/).
 
 ###Using the CLI### {#cli}
 
-You can use any of several command-line interface software to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud CLI](/cli/).
+You can use any of several command-line interface software to access HP Helion Public Cloud compute. For more information on using the HP Helion Public Cloud Networking API, see [HP Helion Public Cloud CLI](/publiccloud/cli/).
 
 
 ##For further information## {#info} 
@@ -40,6 +40,6 @@ You can use any of several command-line interface software to access HP Helion P
 Check out the following pages for more information on using HP Helion Public Cloud Networking services:
 
 - [Known Issues and Best Practices in Compute and Networking in 13.5](https://community.hpcloud.com/article/known-issues-and-best-practices-compute-and-networking-135)
-- [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135)
-- [Management console: Networks screen](http://docs.hpcloud.com/mc/compute/networks/)
+- [HP Helion Public Cloud - Quick Start Guide](https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide)
+- [Management console: Networks screen](http://docs.hpcloud.com/publiccloud/mc/compute/networks/)
 - [OpenStack networking wiki](https://wiki.openstack.org/wiki/Quantum)
