@@ -28,7 +28,7 @@ HP Helion OpenStack has many built-in security controls, but the customer must t
 
 HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
 
-<a href="javascript:window.open('content/documentation/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Network Topology Diagram (opens in a new window)</a> 
+<img src="media/Helion_Security1.png"/>
 
 In the diagram above, the customer's devices that perform routing are depicted as a small cloud icon.  The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtables rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
