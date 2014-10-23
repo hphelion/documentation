@@ -310,7 +310,7 @@ Automation scripts - pyVins.tgz</td>
 * [Installing and configuring on an ESX hypervisor](/helion/openstack/install/esx/)
  
 ## For more information<a name="moreinfo"></a>
-For more information on HP Helion OpenStack Community, see:
+For more information on HP Helion OpenStack, see:
 
 * [Support matrix](/helion/openstack/support-matrix/) 
 * [FAQ](/helion/openstack/faq/) 

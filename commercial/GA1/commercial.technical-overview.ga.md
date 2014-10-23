@@ -152,13 +152,13 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 	
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<img src="media/topology_kvm.png"/)
+<img src="media/topology_kvm.png"/)>
 
 
 ###ESX environment {#esx-env}
 
 The following diagram depicts a simplified deployment scenario using ESX.
-<img src="media/topology_esx.png"/)
+<img src="media/topology_esx.png"/)>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -441,7 +441,7 @@ Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Li
 
 HP Helion OpenStack architecture diagram for KVM network architecture.
 
-<img src="media/topology_kvm.png"/)
+<img src="media/topology_kvm.png"/)>
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
@@ -449,7 +449,7 @@ HP Helion OpenStack architecture diagram for Store Virtual volume type mapping
 
 <img src="media/reference-architecture-StoreVirtual-volume-type-mapping.png"/> 
 
-**Note:** For configuring your HP Helion OpenStack installation to use 3Par for block storage, please go to <add link here>
+**Note:** Your HP Helion OpenStack installation can be configured [to use 3Par for block storage](/helion/openstack/install/3par/).
 
 #### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {esx-hypervisor}
 
