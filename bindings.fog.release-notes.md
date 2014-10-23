@@ -3,6 +3,7 @@ layout: default
 title: "Release Notes for the HP Helion Public Cloud: Ruby Fog Binding"
 permalink: /bindings/fog/release-notes/
 product: fog
+published: false
 
 ---
 <!--PUBLISHED-->
