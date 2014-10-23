@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Website Overview"
-permalink: /site-overview/
+permalink: /publiccloud/site-overview/
 product: public-cloud
 
 ---
