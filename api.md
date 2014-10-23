@@ -5,7 +5,7 @@ permalink: /publiccloud/api/
 product: public-cloud
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud APIs
 
 We offer a number of HP Helion Public Cloud APIs. In addition, we have some public beta and private beta APIs that you can put to use, so please give them a try.
