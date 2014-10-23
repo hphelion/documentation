@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Software Downloads"
-permalink: /downloads/
+permalink: /publiccloud/downloads/
 product: public-cloud
 
 ---
@@ -12,7 +12,6 @@ HP Helion Public Cloud has a few software downloads, each of which is on its app
 
 Here's what we have for you:
 
-* [UNIX CLI](#UNIXCLIInstall)
 * [Windows CLI](#WinCLIInstall)
 * [Python NovaClient](#PythonNovaClient)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
@@ -23,12 +22,6 @@ Here's what we have for you:
 
 ##Command-line Interface (CLI) Packages##
 
-###UNIX CLI### {#UNIXCLIInstall}
-* [OpenStack Unified CLI Download and Documentation](https://wiki.openstack.org/wiki/OpenStackClient)
-* [HP Unix CLI Installation package, Version 1.9.1](/file/hpcloud-1.9.1.gem) (Available for download until May 5th, 2014)
-* [Overview page](/cli/unix)
-* [Release Notes](/cli/unix/release-notes)
-
 ###Windows CLI### {#WinCLIInstall}
 * [Installation package, Version 1.3.3.9](/file/WinCLI-1.3.3.9.zip)  (for software version 12.12)
 * [Installation package, Version 1.3.5.7](/file/WinCLI-1.3.5.7.zip)  (for software version 13.5)
@@ -37,8 +30,8 @@ Here's what we have for you:
 
 **Note**: See the [HP Helion Public Cloud version 13.5 overview](/version-overview/) page for information on software versions.
 
-###Python NovaClient### {#PythonNovaClient}
-* [Installation package, Version 2.6.8-17](/file/python-novaclient_2.6.8-17.tar.gz)
+###Openstack CLI Tools### {#OpenstackCLI}
+* [Installation package, Version 2.6.8-17](http://docs.hpcloud.com/cli/nova)
 * [Overview page](/cli/nova)
 
 ##Language Bindings##
