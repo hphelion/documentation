@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud: jclouds Binding Object Storage Examples"
 permalink: /bindings/jclouds/object-storage/
 product: jclouds
+published: false
 
 ---
 <!--PUBLISHED-->
