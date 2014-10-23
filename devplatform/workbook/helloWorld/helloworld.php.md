@@ -43,7 +43,7 @@ The Helion client to deploy your app to Helion Development Platform.  If you are
 		helion login
 	
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute 
+5.	Deploy the application by using the command:
 	
 		helion push 
 
