@@ -3,6 +3,7 @@ layout: default
 title: "Using the MC: compute examples"
 permalink: /mc/compute/using/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
