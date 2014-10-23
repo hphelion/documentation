@@ -13,7 +13,7 @@ HP Helion Public Cloud has a few software downloads, each of which is on its app
 Here's what we have for you:
 
 * [Windows CLI](#WinCLIInstall)
-* [Python NovaClient](#PythonNovaClient)
+* [Openstack CLI Tools](#OpenstackCLI)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
 * [Java/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
@@ -23,16 +23,12 @@ Here's what we have for you:
 ##Command-line Interface (CLI) Packages##
 
 ###Windows CLI### {#WinCLIInstall}
-* [Installation package, Version 1.3.3.9](/file/WinCLI-1.3.3.9.zip)  (for software version 12.12)
 * [Installation package, Version 1.3.5.7](/file/WinCLI-1.3.5.7.zip)  (for software version 13.5)
-* [Overview page](/cli/windows)
-* [Release Notes](/cli/windows/release-notes)
-
-**Note**: See the [HP Helion Public Cloud version 13.5 overview](/version-overview/) page for information on software versions.
+* [Overview page](/publiccloud/cli/windows)
+* [Release Notes](/publiccloud/cli/windows/release-notes)
 
 ###Openstack CLI Tools### {#OpenstackCLI}
-* [Installation package, Version 2.6.8-17](http://docs.hpcloud.com/cli/nova)
-* [Overview page](/cli/nova)
+* [Overview page](/publiccloud/cli/openstack)
 
 ##Language Bindings##
 
@@ -59,4 +55,4 @@ We have moved all our Ruby Fog bindings to the Fog Community; please continue to
 * [Installation page](https://github.com/hpcloud/hpcloud-js) (This is the GitHub repository page for the installation package)
 * [Overview page](http://hpcloud.github.io/hpcloud-js/)
 
-If you need any more information about these downloads, or our software in general, we urge you to visit our [site map](/sitemap) to locate the information you're looking for.  In addition, you can try our [knowledge base](https://community.hpcloud.com/knowledge-base), or our [forums](https://community.hpcloud.com/forum).
+If you need any more information about these downloads, or our software in general, we urge you to visit our [site map](/publiccloud/sitemap) to locate the information you're looking for.  In addition, you can try our [knowledge base](https://community.hpcloud.com/knowledge-base), or our [forums](https://community.hpcloud.com/forum).
