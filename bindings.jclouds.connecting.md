@@ -2,8 +2,8 @@
 layout: default
 title: "Connecting to the HP Helion Public Cloud Service"
 permalink: /bindings/jclouds/connecting/
-published: false
 product: jclouds
+published: false
 
 ---
 <!--PUBLISHED-->

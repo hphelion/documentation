@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud: jclouds Java/Clojure Bindings"
 permalink: /bindings/jclouds/
 product: jclouds
+published: false
 
 ---
 <!--PUBLISHED-->

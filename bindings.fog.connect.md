@@ -3,6 +3,7 @@ layout: default
 title: "Ruby Fog Bindings for HP Helion Public Cloud: Connecting to the HP Helion Public Cloud Service"
 permalink: /bindings/fog/connect/
 product: fog
+published: false
 
 ---
 <!--PUBLISHED-->
