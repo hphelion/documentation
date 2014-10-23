@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Object Storage Overview"
-permalink: /object-storage/
+permalink: /publiccloud/object-storage/
 product: public-cloud 
 
 ---
@@ -18,10 +18,10 @@ Leveraging [OpenStack Storage](http://openstack.org/projects/storage/), HP Helio
 The best way to learn more is to start using it yourself over at the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
 ## API
-Do you need low level, raw REST API access to HP Helion Public Cloud object storage?  Trot on over to the [Object Storage API page](/api/object-storage) for details.
+Do you need low level, raw REST API access to HP Helion Public Cloud object storage?  Trot on over to the [Object Storage API page](/publiccloud/api/object-storage) for details.
 
 ## Bindings
-Got a favorite programming language?  Don't like to deal with the guts of a REST API?  Take a look at our [Bindings section](/bindings) to see what your options are for writing code against HP Helion Public Cloud Object Storage.
+Got a favorite programming language?  Don't like to deal with the guts of a REST API?  Take a look at our [Bindings section](/publiccloud/bindings) to see what your options are for writing code against HP Helion Public Cloud Object Storage.
 
 ## CLI
-If you need a scriptable interface, look at our [CLI documentation](/cli).
+If you need a scriptable interface, look at our [CLI documentation](/publiccloud/cli).
