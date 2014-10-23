@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud Python Novaclient CLI Installation"
 permalink: /cli/nova/install/
 product: nova-cli
+published: false
 
 ---
 <!--PUBLISHED-->
