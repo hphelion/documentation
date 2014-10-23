@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: misc-features"
 permalink: /cli/windows/misc/
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->
