@@ -5,7 +5,7 @@ permalink: /publiccloud/overview/
 product: public-cloud
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 # HP Helion Public Cloud Overview
