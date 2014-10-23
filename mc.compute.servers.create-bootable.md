@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Creating a new server from an image"
 permalink: /mc/compute/servers/create-bootable/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
