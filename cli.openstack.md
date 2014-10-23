@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Python Nova Client"
-permalink: /cli/openstack/
+permalink: /publiccloud/cli/openstack/
 product: nova-cli
 
 ---
