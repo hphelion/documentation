@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell Non-Service Specific Commands"
-permalink: /cli/windows/2/commands/
+permalink: /publiccloud/cli/windows/commands/
 product: win-2-cli
 
 ---
