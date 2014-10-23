@@ -3,6 +3,7 @@ layout: default
 title: "Management Console Compute Dashboard"
 permalink: /mc/compute/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
