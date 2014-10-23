@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: wrapper-public-cloud
 title: "HP Helion Public Cloud Overview"
-permalink: /pc-overview/
+permalink: /publiccloud/overview/
 product: public-cloud
 
 ---
