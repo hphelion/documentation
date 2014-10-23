@@ -2,8 +2,8 @@
 layout: default
 title: Installing And Usint The Swift CLI Client
 permalink: /object-storage/tutorial/installing-and-using-swift-cli-client/
-product:
-  - object-storage
+product: object-storage
+published: false
 
 ---
 <!--PUBLISHED-->
