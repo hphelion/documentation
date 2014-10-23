@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Creating and deleting a router"
 permalink: /mc/compute/networks/manage-routers/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
