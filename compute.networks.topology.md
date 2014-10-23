@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud Horizon Console: Network Topology screen"
 permalink: /publiccloud/mc/compute/topology/
 product: mc-compute
+
 ---
 <!--PUBLISHED-->
 # HP Helion Public Cloud Horizon Console: Network Topology Screen
