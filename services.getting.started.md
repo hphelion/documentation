@@ -3,6 +3,7 @@ layout: default
 title: "Getting Started with HP Helion Public Cloud OS Compute Service"
 permalink: /cloudos/api/services/compute/getting-started
 product: compute
+published: false
 
 ---
 <!--PUBLISHED-->

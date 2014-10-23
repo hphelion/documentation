@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Release Notes"
-permalink: /release-notes/
+permalink: /publiccloud/release-notes/
 product: public-cloud
 
 ---
@@ -19,7 +19,7 @@ This page contains the following information on our software package:
 
 ##New and updated in version 13.5## {#v135features}
 
-**New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Helion Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) for more information.
+**New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Helion Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) for more information.
 
 **Larger compute instances for big data and high-performance computing** -  New larger instance types allow you to run big data, analytics, and high performance computing (HPC) workloads in the public cloud.  You can access instances with up to 120 GB of RAM and up to 16 virtual cores. The new instance types allow even greater flexibility to choose the virtual machine size that best fits your application's compute resource needs.
 
@@ -59,14 +59,12 @@ As a domain admin, you can manage each user's projects, roles, and groups.  You 
 * Network Admin
 * Object Storage Admin
 
-
 ##Recommendations for version 13.5## {#Recommendations}
 
 This section of the release notes describes the HP recommendations for best performance, utility, and functionality with this software version.   We have also provided information about some limitations and known issues for reference purposes.  This section contains
 
 * [Best practices recommendations](#Recommendations) for best functionality and performance
 * [Known issues](#Issues) and workarounds with version 13.5
-
 
 ###Recommendations## {#Recommendations} 
 
@@ -82,14 +80,14 @@ The following are our best-practices recommendations for versions 13.5.
 ####Cloud Networking###
 
 * To ensure full external node access, HP recommends that you do not delete  egress rules and allow those rules to remain part of their security groups.
-* To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/hpcloudconsole#ManageHPPublicCloud).
+* To get the most timely and accurate results for your quota checks, use the [Neutron networking interface](/publiccloud/hpcloudconsole#ManageHPPublicCloud).
 * To ensure that your Linux instance is able to resolve its own hostname, add an entry to the `/etc/hosts` file that matches the hostname.  This can be accomplished by running the command:
     echo "` -l` `hostname`" | sudo tee -a /etc/hosts
 
 ####Command-line Interface####
 
-* For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
-* For easiest password reset, use the [HP Helion Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities.
+* For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [Public Cloud Console](https://horizon.hpcloud.com).
+* For easiest password reset, use the [HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) interface.
 * Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
 * To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
     - Shut down the instance
@@ -101,7 +99,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 ####Windows####
 
-* For best ease-of-use, use the [management console](/mc/) rather than the Windows command-line interface (CLI) to attach or detach a volume.
+* For best ease-of-use, use the [Public Cloud Console](https://horizon.hpcloud.com) rather than the Windows command-line interface (CLI) to attach or detach a volume.
 * For best results when deleting a volume, unmount the volume (or for Windows instances take it offline) and detach the volume prior to deleting it.
 * For optimum performance and reliability when running Windows instances, HP recommends you use flavors with sizes of 4GB or greater.
 * When creating a Windows instance, you must use a flavor of `small` or greater. The `xsmall` flavor contains a 10GB root disk, which is too small to accommodate a Windows root disk. 

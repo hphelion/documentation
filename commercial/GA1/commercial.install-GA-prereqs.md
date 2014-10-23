@@ -207,9 +207,9 @@ The baremetal.csv file informs the installer of the size of the Computer that ea
 
 There must be one entry in this file for each baremetal system you intend to install. 
 
-`<BRIDGE_INTERFACEmacaddress>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiGB>`
+`<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiGB>`
 
-Where `<BRIDGE_INTERFACE_mac_address>` is the MAC address of the bridge interface on the seed cloud host, for example `em2` or `eth2`.
+Where `<mac_address>` is the MAC address of the network interface from which to boot. Do not use the the iLO NIC interface.
 
 **Important** The diskspace size value must be specified in Gibibytes, not Gigabytes.  For example:<br>
 - 900GB = 838 GiB<br>

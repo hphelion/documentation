@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Networking: Quick Start Guide"
-permalink: /compute/teamcity/
+permalink: /publiccloud/compute/teamcity/
 product: compute
 
 ---
@@ -30,7 +30,6 @@ The following software should be installed on TeamCity server virtual machine:
 - git - A source code management system to checkout the source code from repository
 - JDK - Java Development Kit to compile, debug, and run applets and applications written using the Java programming language (such as [openJDK](http://openjdk.java.net/) or http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-
 ## Installing the TeamCity server ## {#installing}
 
 http://confluence.jetbrains.com/display/TCD7/Installing+and+Configuring+the+TeamCity+Server
@@ -42,7 +41,6 @@ http://confluence.jetbrains.com/display/TCD7/Installing+and+Configuring+the+Team
 In addition, note the following:
 - Make sure that the firewall and security group rules allow traffic to and from the port used by TeamCity (port 8111, by default).
 - Update &ldquo;/etc/hosts&rdquo;  and add server`s name, if necessary.
-
 
 ## Installing the HP TeamCity Plugin ##
 
@@ -72,7 +70,6 @@ To install the plugin:
 HP Helion Public Cloud plug-in needs a virtual image with pre-configured build agents to establish a connection with TeamCity server. A Cloud Image is any custom image or can be created from a snapshot using any of the pre-existing public/private images, for instance sizes equal to or greater than SMALL and for any Operating System.  
 
 To create a Cloud Image, install the TeamCity build agent, Java SDK and other DevTest environment dependencies on the preferred virtual image and take a snapshot. Any user can upload the newly created or customized virtual image to HP Helion Public Cloud as a Public/Private/Partner image using HP's OpenStack based Glance service. 
-
 
 ### Creating a build agent snapshot ###
 
