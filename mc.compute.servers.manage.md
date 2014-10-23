@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Managing servers"
 permalink: /mc/compute/servers/manage/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
