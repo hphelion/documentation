@@ -4,7 +4,7 @@ title: "HP Helion Documentation"
 permalink: /
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
@@ -36,7 +36,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 </tr>
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/pc-overview/">HP Helion Public Cloud</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/publiccloud/overview/">HP Helion Public Cloud</a></span></p>
 </td>
 <td>Provides a transparent, enterprise-grade public cloud based on OpenStack technology with on-demand, pay-as-you-go cloud services for computing and storage infrastructure as well as platform services.
 </td>
