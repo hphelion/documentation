@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Misc-features"
-permalink: /cli/windows/2/misc/
+permalink: /publiccloud/cli/windows/misc/
 product: win-2-cli
 
 ---
@@ -96,5 +96,5 @@ The Get-Notes command gives you the ability to view release notes for the curren
 
 Recommended Links
 
-* [Index](/cli/windows) 
-* [Command Line Reference](/cli/windows/reference) 
+* [Index](/publiccloud/cli/windows) 
+* [Command Line Reference](/publiccloud/cli/windows/reference) 
