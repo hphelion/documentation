@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Compute Overview"
-permalink: /compute/
+permalink: /publiccloud/compute/
 product: public-cloud 
 
 ---
@@ -18,21 +18,18 @@ Leveraging [OpenStack Compute](http://openstack.org/projects/compute/), HP Helio
 
 A variety of flavors and images are provided by HP Helion Public Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
-HP Helion Public Cloud currently offers two versions of our cloud&mdash;v12.12 and the latest v13.5. See the [Version Overview](/version-overview) page for a description of what's new in v13.5.
-
-**Note**: For security purposes, when you create a server in HP Helion Public Cloud v12.12, it is automatically assigned a floating, non-removable IP address. With the latest v13.5, you have the full functionality of the OpenStack Neutron project complemented with Software Defined Networking (SDN) technology from HP Networking.
+See the [Version Overview](/publiccloud/version-overview) page for a description of what's new in v13.5.
 
 ## API
 Do you need low level, raw REST API access to HP Helion Public Cloud compute?  Take a look at the Compute API page for the version of HP Helion Public Cloud you are using:
 
-* [**Compute API page for v13.5**](/api/v13/compute)
-* [**Compute API page for v12.12**](/api/compute)
+* [**Compute API page**](/publiccloud/api/compute)
 
 ## Bindings
 If you are looking for an easier to use, language-specific way of using HP Helion Public Cloud compute, check out our [Bindings section](/bindings).
 
 ## CLI
-Want scriptable access you can put in a cron job or something similar?  Go on over to our [CLI documentation](/cli).
+Want scriptable access you can put in a cron job or something similar?  Go on over to our [CLI documentation](/publiccloud/cli).
 
 ## For further information
 
