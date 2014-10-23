@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud LBaaS Overview"
-permalink: /lbaas/
+permalink: /publiccloud/lbaas/
 product: public-cloud 
 
 ---
@@ -14,4 +14,4 @@ The HP Helion Public Cloud LBaas service is currently in private beta.  Please [
 
 
 ## API
-Do you need low level, raw REST API access to HP Helion Public Cloud LBaaS?  Take a look at the [LBaaS API page](/api/lbaas/).
+Do you need low level, raw REST API access to HP Helion Public Cloud LBaaS?  Take a look at the [LBaaS API page](/publiccloud/api/lbaas/).
