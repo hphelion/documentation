@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Getting Help"
 permalink: /cli/windows/help/
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->
