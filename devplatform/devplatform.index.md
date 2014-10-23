@@ -22,7 +22,7 @@ The [Application Lifecycle Service (ALS)](/als/v1/) is a Cloud Foundry-based, ma
 - It allows Disk, Memory and Placement Zone constraints to be set per application.
 - It provides auto-scaling and application log drains.
  
-The Application Lifecycle Service is [installed](/helion/devplatform/install/#install-als) as part of the Helion Development Platform. You can explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
+The Application Lifecycle Service is [installed](/helion/devplatform/install/#install-als) as part of the Helion Development Platform. You can easily [create and configure](/als/v1/admin/#wizard-based-cluster-creation) Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
 
 ##Application Services
 The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:
