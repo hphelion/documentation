@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Block Storage Overview"
-permalink: /block-storage/
+permalink: /publiccloud/block-storage/
 product: public-cloud 
 
 ---
@@ -20,6 +20,5 @@ You can take Snapshots to easily copy a volume before making significant changes
 ## API
 Do you need low level, raw REST API access to HP Helion Public Cloud Block Storage?  Check out Block Storage API page for the HP Helion Public Cloud version you are using:
 
-* [**Block Storage API page for v13.5**](/api/v13/block-storage/)
-* [**Block Storage API page for v12.12**](/api/block-storage/)
+* [**Block Storage API page**](/publiccloud/api/block-storage/)
 
