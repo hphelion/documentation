@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CDN"
-permalink: /cdn/
+permalink: /publiccloud/cdn/
 product: public-cloud 
 
 ---
@@ -17,10 +17,10 @@ For a step-by-step guide to enable CDN on the [HP Helion Public Cloud Console](h
 If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
 ## API
-Do you need low level, raw REST API access to HP Helion Public Cloud CDN?  Head on over to the [CDN API page](/cdn/api) for details, including a video showing usage of the API using cURL.
+Do you need low level, raw REST API access to HP Helion Public Cloud CDN?  Head on over to the [CDN API page](/publiccloud/cdn/api) for details, including a video showing usage of the API using cURL.
 
 ## Bindings
-Got a favorite programming language?  Ready to create your own CDN-based applications?  Take a look at our [Bindings section](/bindings) for details.
+Got a favorite programming language?  Ready to create your own CDN-based applications?  Take a look at our [Bindings section](/publiccloud/bindings) for details.
 
 Early access to HP Helion Public Cloud CDN features two different language bindings.  If you are a Java person, take a look at our [jclouds binding](/bindings/jclouds) and follow the instructions in the README.txt to get started.
 
