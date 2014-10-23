@@ -5,6 +5,8 @@ permalink: /cli/unix/articles/reports
 product: unix-cli
 categories: cli linux object store compute reports
 tags: cli linux object store compute reports
+published: false
+
 ---
 <!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Generating custom reports v12.12#
