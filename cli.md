@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud CLI"
-permalink: /cli/
+permalink: /publiccloud/cli/
 product: public-cloud
 
 ---
