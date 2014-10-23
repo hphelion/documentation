@@ -26,13 +26,13 @@ Guide](/als/v1/user/), but do not have access to add new applications or add/mod
 
 The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
-specified in the main [*Settings*](/als/v1/admin/console/#settings) page of
-the Management Console or set using [*kato
-config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config).
+specified in the main [Settings](/als/v1/admin/console/#settings) page of
+the Management Console or set using [kato
+config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config).
 
 ### Sample Applications Definition File {#app-store-definition}
 
-[*YAML*](/als/v1/user/reference/glossary/#term-yaml) files describe the settings for each set of apps, including the container and a link to the source  repository for
+[YAML](/als/v1/user/reference/glossary/#term-yaml) files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:
 
     store:
@@ -130,8 +130,8 @@ This is an array of items (see YAML format above), one for each app in the conta
 :   Memory requirements of the app (integer, in MB).
 
 **runtime**
-:   The runtime, if the app is deployed using the [*Legacy
-    Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
+:   The runtime, if the app is deployed using the [Legacy
+    Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
     (e.g. `java`, `python32`,
     `ruby19`, `php`,
     `perl518`).
