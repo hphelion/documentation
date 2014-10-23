@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion Public Cloud Networking: Quick start guide"
-permalink: /compute/network/quick-start/
+permalink: /publiccloud/compute/network/quick-start/
 product: compute
 categories: neutron
 tags: networking neutron vpn
@@ -123,9 +123,9 @@ HP Helion Public Cloud Networking allows you to perform many tasks beyond those 
 - creating one or more networks
 - configuring subnets 
 
-For more information on networking capabilities, see [Getting Started with HP Helion Public Cloud Networking]( /compute/network/getting-started).
+For more information on networking capabilities, see [Getting Started with HP Helion Public Cloud Networking](/publiccloud/compute/network/getting-started).
 
-**Note:** You can also use the [HP Helion Public Cloud v13.5 Compute Service API](/api/v13/compute/) and [HP Helion Public Cloud v13.5 Networking API](/api/v13/networking/) to configure your network. 
+**Note:** You can also use the [HP Helion Public Cloud v13.5 Compute Service API](/publiccloud/api/compute/) and [HP Helion Public Cloud v13.5 Networking API](/publiccloud/api/networking/) to configure your network. 
 
 
 ### Creating a network ### {#CreateNetwork}
@@ -180,7 +180,7 @@ To see a graphic display of your network setup, click **Network Topology** under
 
 #### Using the CLI to create a network and subnet #### {#CreateNetworkCLI}
 
-Once you [activate](#compute) the Compute service, in order to use the HP Helion Public Cloud 13.5 CLI to configure the network, you need to [install the CLI](http://docs.hpcloud.com/cli/nova). 
+Once you [activate](#compute) the Compute service, in order to use the HP Helion Public Cloud 13.5 CLI to configure the network, you need to [install the CLI](http://docs.hpcloud.com/publiccloud/cli/openstackcli). 
 
 To create a network and subnet, use the following steps:
 
@@ -415,6 +415,6 @@ To create an instance or your network, use the following steps:
 
 ##For further information## {#ForFurtherInformation}
 
-* For information about the HP Helion Public Cloud Networking, take a look at the [HP Helion Public Cloud Networking Overview](/compute/network/overview/) page
-* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/compute/) page
+* For information about the HP Helion Public Cloud Networking, take a look at the [HP Helion Public Cloud Networking Overview](/publiccloud/compute/network/overview/) page
+* For basic information about our HP Helion Public Cloud Compute services, take a look at the [HP Helion Public Cloud Compute overview](/publiccloud/compute/) page
 * For information about the Open Stack networking features, surf on over to [their networking wiki](https://wiki.openstack.org/wiki/Quantum)
