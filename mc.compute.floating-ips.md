@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Floating IPs Screen"
 permalink: /mc/compute/floating-ips/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->
