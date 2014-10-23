@@ -2,8 +2,8 @@
 layout: default
 title: "Java jclouds Binding"
 permalink: /jclouds/
-published: false
 product: jclouds
+published: false
 
 ---
 <!--PUBLISHED-->
