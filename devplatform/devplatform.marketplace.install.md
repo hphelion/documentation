@@ -96,16 +96,21 @@ The following section will show how to create an instance of Vertica 7 Community
 ###<a name="notes"></a>Deployment Notes
 This section discusses some of the details of deployment that you may encounter.
 
-
-
 1. Environments cannot be deployed unless there is at least one Application in the Environment. 
 2. Deploying an Application to an Environment that has already been deployed follows the same flow as above.
 	- In order to instantiate a newly-configured application, re-deploy its Environment.
 	- When an Environment is re-deployed, all applications it contains will be re-deployed. 
+3. If a Vertica instance is restarted or power cycled, the Vertica database must be restarted manually once the instance is reachable. This is by design to avoid potential database corruption in the event of a power event. Note that **all** VMs are shut down and then restarted during the Helion upgrade process. 
+	1. SSH into your instance
+	1. Become the dbadmin user:
 
+ 			sudo su - dbadmin
+	  
+	1. Run the following command:
+	 
+			admintools -t stop_db --database=DB_NAME --password=DB_PASSWORD
 
- 
-----
+ ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
