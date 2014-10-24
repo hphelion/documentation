@@ -14,11 +14,11 @@ Welcome to the HP Helion Public Cloud website! We don't know about you, but when
 ##Quicklinks
 Rather than force you to read this whole page to find the info you need, here are a few links that maybe can help you out quickly:
 
-* [Site Map](/sitemap): This is a full map of all the documentation pages on the site.  Go here if you are looking for information on something specific, such as Ruby Fog Bindings, the Identity Service API, and other similar topics.
+* [Site Map](/publiccloud/sitemap): This is a full map of all the documentation pages on the site.  Go here if you are looking for information on something specific, such as Ruby Fog Bindings, the Identity Service API, and other similar topics.
 * [Knowledge Base](https://community.hpcloud.com/knowledge-base): A collection of searchable information about HP Helion Public Cloud. (This link is also in the navigation sidebar over on the right-hand side of every page.)
 * [Forums](https://community.hpcloud.com/): Where users get together and discuss issues with each other and some members of the HP Helion Public Cloud team. (This link is also in the navigation sidebar over on the right-hand side of every page.)
 * [Console](https://horizon.hpcloud.com/): A link straight to the main HP Helion Public Cloud console.  Click on it and go!
-* [Downloads](/downloads): A listing of all the downloads currently available for HP Helion Public Cloud.
+* [Downloads](/publiccloud/downloads): A listing of all the downloads currently available for HP Helion Public Cloud.
 
 <!--Add this back in at GA:
 * [Release Notes](/release-notes): Overall release note information for the HP Helion Public Cloud software. -->
@@ -26,10 +26,10 @@ Rather than force you to read this whole page to find the info you need, here ar
 ##Site Navigation
 You may have already noticed that the site has multiple methods for navigating; we've included these so that you can choose the method that works best for you:
 
-* The [Site Map](/sitemap) itself, as mentioned above, contains a full map of all the documentation pages on the website.
+* The [Site Map](/publiccloud/sitemap) itself, as mentioned above, contains a full map of all the documentation pages on the website.
 * Next to the HP Helion Public Cloud logo at the top of the page, there are three navigation pull-down menus and two quick links:
     - [**Products**](https://www.hpcloud.com/): Links to all the HP Helion Public Cloud products ([Compute](https://www.hpcloud.com/products/cloud-compute), [Object Storage](https://www.hpcloud.com/products/object-storage), [CDN](https://www.hpcloud.com/products/CDN), [Block Storage](https://www.hpcloud.com/products/block-storage), [Relational Database](https://www.hpcloud.com/products/RDB), [Identity Service](https://www.hpcloud.com/content/hp-cloud-identity-service))
-    - [**Documentation**](https://docs.hpcloud.com/): This here stuff you're currently reading; all the documentation available for the HP Helion Public Cloud software ([Compute](/compute), [Object Storage](/object-storage), [CDN](/cdn), [Block Storage](/block-storage), [Identity Service](/identity), [API](/api), [CLI](/cli), [Bindings](/bindings))
+    - [**Documentation**](https://docs.hpcloud.com/publiccloud/overview): This here stuff you're currently reading; all the documentation available for the HP Helion Public Cloud software ([Compute](/publiccloud/compute), [Object Storage](/publiccloud/object-storage), [CDN](/publiccloud/cdn), [Block Storage](/publiccloud/block-storage), [Identity Service](/publiccloud/identity), [API](/publiccloud/api), [CLI](/publiccloud/cli), [Bindings](/publiccloud/bindings))
     - [**Community**](https://community.hpcloud.com/):  Links to HP Helion Public Cloud community resources ([Forum](https://community.hpcloud.com/forum), [Knowledge Base](https://community.hpcloud.com/knowledge-base), [System Status](https://community.hpcloud.com/status))
     - [**Blog**](http://h30529.www3.hp.com/t5/HP-Scaling-the-Cloud-Blog/bg-p/cloudBlog):  A link to our blog, where you can read contributions from a number of different members of the HP Helion Public Cloud team
     - [**Console**](https://horizon.hpcloud.com/):  A link directly to the HP Helion Public Cloud Console, so you can quickly access the HP Helion Public Cloud utilities
@@ -38,7 +38,7 @@ You may have already noticed that the site has multiple methods for navigating; 
 
 ##Where to Start
 
-* See the [Getting Started Guide with HP Helion Public Cloud Console ](/hpcloudconsole) to start navigating the web interface, activating your services, and getting up and running with the various available services
+* See the [Getting Started Guide with HP Helion Public Cloud Console ](/publiccloud/hpcloudconsole) to start navigating the web interface, activating your services, and getting up and running with the various available services
 * If you're already well versed in the cloud, feel free to just go straight to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/) and get going
 
 So there you have it; a quick overview of what's available to you.  If you have any comments or questions, please get in touch with us via the forums.  Enjoy!
