@@ -1,4 +1,4 @@
---
+---
 layout: default
 title: "HP Helion OpenStack&#174;: Enabling the VLAN Provider Network"
 permalink: /helion/openstack/install/enable/vlan/
