@@ -43,7 +43,7 @@ PageRefresh();
 ### Horizon Dashboard
 
 * [How to use the Helion Dashboards](/helion/community/dashboard/how-works/)
-* [Logging into the Helion Dashboards](/helion/openstack/community/dashboard/login/)
+* [Logging into the Helion Dashboards](/helion/community/dashboard/login/)
 
 #### OpenStack reference
  
