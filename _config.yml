@@ -39,8 +39,6 @@ navigation:
     url: /publiccloud/api/
   - text: CLIs
     url: /publiccloud/cli/
-  - text: FAQ
-    url: /publiccloud/faq/
   - text: Site Overview 
     url: /publiccloud/site-overview/
 
