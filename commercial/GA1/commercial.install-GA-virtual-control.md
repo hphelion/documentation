@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
 
-In our 1.0.1 patch release, we’ve added a new deployment option that will allow a user to deploy various nodes of the Control Plane as Virtual Machines instead of Bare Metal Machines, while still allowing user to add Compute Nodes or Storage Nodes as Bare Metal. This is referred to as “Hybrid Control Plane deployment” and is being released in the 1.0.1 as an experimental feature only suitable for Proof Of Concept situations.
+In our 1.0.1 patch release, we've added a new deployment option that will allow a user to deploy various nodes of the Control Plane as Virtual Machines instead of Bare Metal Machines, while still allowing user to add Compute Nodes or Storage Nodes as Bare Metal. This is referred to as “Hybrid Control Plane deployment” and is being released in the 1.0.1 as an experimental feature only suitable for Proof Of Concept situations.
 
 
 Installation
