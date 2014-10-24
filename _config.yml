@@ -27,8 +27,6 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
-  - text: HP Helion Documentation
-    url: / 
   - text: HP Helion Public Cloud Documentation
     url: /publiccloud/overview/
   - text: Available Services
