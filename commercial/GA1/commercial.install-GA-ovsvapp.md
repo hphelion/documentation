@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&reg;: Deploying and Configuring OVSvApp on ESX hosts 
 HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
@@ -38,6 +38,7 @@ The following topics in this section explain how to deploy and verify deployment
 * [Verifying your deployment](#deploymentverification)
 * [Managing the HP VCN networking service](#managevcnnetworkservice)
 * [Troubleshooting OVSvApp](#trouble)
+* [Cleaning up or deleting the OVSvApp](#clean)
 * [Uninstalling VCN on ESX hosts](#uninstallvcn)
 * [Next Steps](#next)
 
@@ -226,6 +227,8 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		vcenter_username=vcenter_admin_user
 		#Vcenter password
 		vcenter_password=vcenter_admin_strong_password
+		#Vcenter HTTPS Port
+		vcenter_https_port=vcenter_https_port_for_connection
 		#Datacenter name
 		datacenter=vcenter_datacenter_name
 		#Clusters on which OVSvApp will be hosted
@@ -237,9 +240,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		
 		[new-host-addition]
 		#Keep this field False for Fresh Installation
-		installing_new_hosts=true_or_false
-		#If you want to add new esxi hosts at later point of time. Provide esxi host name separated by comma.(*Not required if is_new_hosts=False)
-		new_hosts=new_esx_host1, new_esx_host2
+		add_new_hosts=true_or_false
 		#Are this hosts already added to DVS ? True if already part of DVS. False If you want to add. (*Not required if is_new_hosts=False)
 		#If host_in_dvs=False then Except *OPTIONAL each and every other fields are mandatory.
 		host_in_dvs=true_or_false
@@ -292,9 +293,6 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
     **Note**: During deployment, the `ovs_vm_name` setting is appended with each VM host name and IP address to appear as `<ovs_vm_name>_<IP>`.
 	
 		[vmconfig]
-		#The deployed ovsvapp name. It will be appended with esxi hostname. And will look like <ovs_vm_name>_<vm_ip>
-		ovs_vm_name=ovsvapp_prefix_name
-		
 		#Number of CPUs for the OVSvApp VM
 		num_cpu=number_of_cpu_for_ovsvapp
 		#Amount of RAM for the OVSvApp VM(In MB)
@@ -344,7 +342,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 3. Invoke the installer using the following commands:
 
 		sudo su
-		cd /hp-ovsvapp/src/ovsvm/
+		cd /hp-ovsvapp/src/installer/
 		python  invoke_vapp_installer.py
 
 	The installation log file will be located at `/hp-ovsvapp/log/ovs_vapp.log`.
@@ -411,6 +409,20 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 - In a scalable environment, portgroups might not get deleted when the `nova delete` command is run.
 
 - The VM port binding is with the host name of the OVSvApp VM on the ESX Compute host which provisioned the tenant VM. 
+
+## Cleaning up or deleting the OVSvApp {#clean}
+
+To clean up or delete the OVSvAPP setup:
+
+1. On the server where you extracted the `ovsvapp.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
+
+2. Modify the `ovs_vapp.ini` file by entering only the connection details.
+
+Run the following commands and follow the instructions:
+
+		cd /hp-ovsvapp/src/cleanup/
+		python cleanup.py
+
 
 ## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
 

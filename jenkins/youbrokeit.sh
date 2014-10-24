@@ -26,7 +26,7 @@ for i in `find . -name "*.md" | grep "\./devplatform/"`
 		echo " "
 		echo "This devplatform file needs to use the default-devplatform layout:"
 		echo $i
-		echo "1" > checktmp
+		 EXIT="1"
 	fi
 
 done
@@ -38,7 +38,7 @@ for i in `find . -name "*.md" | grep -v "\./devplatform/"`
 		echo " "
 		echo "This file should not use the default-devplatform layout."
 		echo $i
-		echo "1" > checktmp
+		 EXIT="1"
 	fi
 
 done
@@ -54,7 +54,7 @@ if [[ -n $(find . -name "* *") ]];
 		echo "Use git mv old name newname to rename the file, then push again."
 		echo ""
 	 
-		echo "1" > checktmp
+		 EXIT="1"
 	fi
  
 
@@ -72,7 +72,7 @@ echo $i
 echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
 echo ""
-echo "1" > checktmp
+ EXIT="1"
 fi
 
 if [[ -n $(head -10 $i | egrep  "(layout:.*title:|title:.*permalink:|permalink:.*product: )";) ]];
@@ -84,7 +84,7 @@ echo $i
 echo "Last checked in by:"
 git log -1 $i | egrep "(Author|Date)"
 echo ""
-echo "1" > checktmp
+ EXIT="1"
 fi
 
 
@@ -121,7 +121,7 @@ do
 						echo "Last checked in by:"
 						git log -1 $a | egrep "(Author|Date)"
 						echo ""
-						 echo "1" > checktmp
+						EXIT="1"
 					fi
 				done
 			echo ""
@@ -150,7 +150,7 @@ do
 	echo "Last checked in by:"
 	git log -1 $i | egrep "(Author|Date)"
 	echo ""
-	echo "1" > checktmp
+	 EXIT="1"
 	fi
 	fi
  done 
@@ -173,7 +173,7 @@ do
 		echo "http://docs.qa1-stackato.cx.hpcloud.net/ or http:/docs.hpcloud.com"
 		echo "Last checked in by:"
 		git log -1 $i | egrep "(Author|Date)"
-		echo "1" > checktmp
+		 EXIT="1"
 	fi
 done   
 
@@ -201,12 +201,12 @@ do
      #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$RESULT" ]
           then
-          EXIT=""
+          echo 
      else
           echo ""
           echo "===$BAD============================="
           echo "$RESULT"
-          echo "1" > checktmp
+          EXIT="1"
      fi
 
 done  
@@ -252,7 +252,7 @@ do
 				echo " "
 			 	echo "The file ${names[c]} contains a duplicated permalink: ${permalink[c]} "
 				git log -1 ${names[c]} | grep Author | sed 's/Author/In development branch, last committed by/'
-				 echo "1" > checktmp
+				  EXIT="1"
 			 fi
 		done	
 done
@@ -306,7 +306,7 @@ do
 				echo "You should probably modify the permalink in ${GIT_BRANCH} branch."
 				
 				echo ""
-				 echo "1" > checktmp
+				EXIT="1"
 			fi
 		fi
 	done	
@@ -323,8 +323,7 @@ fi
  
  
  
-#Read chcktemp and assign content to EXIT (indicating that at least one error was found)
-EXIT=`cat checktmp` > /dev/null 2>&1
+ 
 
 
 #Exit script with 1 if an error was found.  Otherwise exit with 0.

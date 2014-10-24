@@ -27,8 +27,6 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
-  - text: HP Helion Documentation
-    url: / 
   - text: HP Helion Public Cloud Documentation
     url: /publiccloud/overview/
   - text: Available Services
@@ -39,8 +37,6 @@ navigation:
     url: /publiccloud/api/
   - text: CLIs
     url: /publiccloud/cli/
-  - text: FAQ
-    url: /publiccloud/faq/
   - text: Site Overview 
     url: /publiccloud/site-overview/
 
@@ -148,9 +144,9 @@ navigation:
     url: /cli/windows/2/release-notes/
   nova-cli:
   - text: Site home page
-    url: /
+    url: /publiccloud/overview/
   - text: Overview
-    url: /cli/nova
+    url: /publiccloud/cli/openstack/
   - text: Installation
     url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
   fog:

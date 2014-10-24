@@ -101,7 +101,7 @@ HP Helion OpenStack Community includes a monitoring interface. You can access th
 
 * Review [OpenStack documentation](/helion/community/related-links/) 
 
-* See how to [log in to and use the Horizon dashboard](/helion/openstack/community/dashboard/login/).
+* See how to [log in to and use the Horizon dashboard](/helion/community/dashboard/login/).
 
 
 

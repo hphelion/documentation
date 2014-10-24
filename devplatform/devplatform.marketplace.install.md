@@ -5,7 +5,7 @@ permalink: /helion/devplatform/marketplace/
 product: devplatform
 
 ---
-<!--UNDER REVISON-->
+<!--UNDER REVISION-->
 #The Marketplace (Beta)
 The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition. 
 
