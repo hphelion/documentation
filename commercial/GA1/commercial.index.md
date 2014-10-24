@@ -39,7 +39,6 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 
 There's a lot of information out there to help you get going with your services. We recommend you browse through the [site index](/helion/openstack/siteindex/) for a full list of the technical content pages available on the site.
 
-If you have questions, feel free to [post on our forums](https://connect.hpcloud.com/). We'd love to help.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
