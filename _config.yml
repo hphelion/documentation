@@ -144,9 +144,9 @@ navigation:
     url: /cli/windows/2/release-notes/
   nova-cli:
   - text: Site home page
-    url: /
+    url: /publiccloud/overview/
   - text: Overview
-    url: /cli/nova
+    url: /publiccloud/cli/openstack/
   - text: Installation
     url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
   fog:
