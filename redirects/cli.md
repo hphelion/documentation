@@ -4,7 +4,7 @@ redirect: /publiccloud/cli/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
