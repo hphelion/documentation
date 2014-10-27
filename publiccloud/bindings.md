@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud: Binding Support"
 permalink: /publiccloud/bindings/
 product: public-cloud
