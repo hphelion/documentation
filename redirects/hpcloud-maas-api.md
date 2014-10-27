@@ -1,9 +1,10 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: api/monitoring/
+redirect: /publiccloud/api/monitoring/
 layout: redirect
+
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
