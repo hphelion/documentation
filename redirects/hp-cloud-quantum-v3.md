@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/networking/
+redirect: /publiccloud/api/networking/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
