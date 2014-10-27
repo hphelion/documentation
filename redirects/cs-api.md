@@ -4,7 +4,7 @@ redirect: /publiccloud/api/identity/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
