@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Networking Guide"
 permalink: /publiccloud/compute/network-guide/
 product: compute
