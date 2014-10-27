@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/
+redirect: /publiccloud/api/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
