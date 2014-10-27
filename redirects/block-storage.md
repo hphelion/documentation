@@ -4,7 +4,7 @@ redirect: /publiccloud/block-storage/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
