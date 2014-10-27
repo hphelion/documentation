@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/object-storage/
+redirect: /publiccloud/api/object-storage/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
