@@ -4,7 +4,7 @@ redirect: /publiccloud/api/object-storage/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
