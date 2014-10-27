@@ -13,7 +13,7 @@ HP Helion Public Cloud has a few software downloads, each of which is on its app
 Here's what we have for you:
 
 * [Windows CLI](#WinCLIInstall)
-* [Openstack CLI Tools](#OpenstackCLI)
+* [OpenStack CLI Tools](#OpenstackCLI)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
 * [Java/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
@@ -27,7 +27,7 @@ Here's what we have for you:
 * [Overview page](/publiccloud/cli/windows)
 * [Release Notes](/publiccloud/cli/windows/release-notes)
 
-###Openstack CLI Tools### {#OpenstackCLI}
+###OpenStack CLI Tools### {#OpenstackCLI}
 * [Overview page](/publiccloud/cli/openstack)
 
 ##Language Bindings##
