@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: Using HP Helion Public Cloud Relational Database
 permalink: /publiccloud/dbaas/tutorial/introduction/
 product: dbaas
