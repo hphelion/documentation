@@ -1,9 +1,10 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /dns
+redirect: /publiccloud/dns/
 layout: redirect
+
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
