@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /bindings/
+redirect: /publiccloud/bindings/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
