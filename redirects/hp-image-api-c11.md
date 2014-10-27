@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/image/
+redirect: /publiccloud/api/image/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
