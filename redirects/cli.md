@@ -1,5 +1,5 @@
 ---
-permalink: /cli
+permalink: /cli/
 redirect: /publiccloud/cli/
 layout: redirect
 
