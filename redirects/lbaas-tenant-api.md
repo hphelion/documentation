@@ -4,7 +4,7 @@ redirect: /publiccloud/api/lbaas/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
