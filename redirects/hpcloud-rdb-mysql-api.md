@@ -4,7 +4,7 @@ redirect: /publiccloud/api/dbaas/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
