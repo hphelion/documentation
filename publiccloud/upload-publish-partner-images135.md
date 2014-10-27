@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud 13.5: Upload and Make Public a Partner Image"
 permalink: /publiccloud/upload-publish-partner-images135/
 product: image
