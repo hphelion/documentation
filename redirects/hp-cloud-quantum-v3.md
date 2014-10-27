@@ -4,7 +4,7 @@ redirect: /publiccloud/api/networking/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
