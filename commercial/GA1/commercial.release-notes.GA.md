@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/
+permalink: /helion/openstack/release-notes/GA/
 product: commercial.ga
 
 ---
@@ -20,12 +20,12 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; 1.0.1 Release Notes
+# HP Helion OpenStack&reg; Release Notes
 
-Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0.1, including known issues and workarounds, and where to find further information on the product release:
+Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0, including known issues and workarounds, and where to find further information on the product release:
 
 * [Features in HP Helion OpenStack](#features) 
-* [Known Issues in this Release](#known-issues)
+
 * [For Further Information](#For-Further-Information) 
 
 ##Features in HP Helion OpenStack## {#features}
