@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/identity/
+redirect: /publiccloud/api/identity/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
