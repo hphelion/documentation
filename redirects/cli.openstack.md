@@ -4,7 +4,7 @@ redirect: /publiccloud/cli/openstack/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
