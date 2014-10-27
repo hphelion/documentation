@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/CDN/
+redirect: /publiccloud/api/CDN/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
