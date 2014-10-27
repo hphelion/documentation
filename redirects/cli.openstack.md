@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /cli/nova/
+redirect: /publiccloud/cli/openstack/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
