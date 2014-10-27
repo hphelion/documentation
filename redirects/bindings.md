@@ -4,7 +4,7 @@ redirect: /publiccloud/bindings/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
