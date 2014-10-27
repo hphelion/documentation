@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/copyright/
+redirect: /publiccloud/api/copyright/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
