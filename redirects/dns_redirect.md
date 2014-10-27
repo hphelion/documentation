@@ -4,7 +4,7 @@ redirect: /publiccloud/api/dns/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
