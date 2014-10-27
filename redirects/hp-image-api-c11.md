@@ -4,7 +4,7 @@ redirect: /publiccloud/api/image/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
