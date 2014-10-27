@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/lbaas/
+redirect: /publiccloud/api/lbaas/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 

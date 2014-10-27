@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/dbaas/
+redirect: /publiccloud/api/dbaas/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 

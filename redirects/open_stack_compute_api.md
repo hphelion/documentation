@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/compute/
+redirect: /publiccloud/api/compute/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
