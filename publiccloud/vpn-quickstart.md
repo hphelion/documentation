@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Networking:  VPN setup quick start guide"
 permalink: /publiccloud/compute/vpn-quickstart/
 product: compute

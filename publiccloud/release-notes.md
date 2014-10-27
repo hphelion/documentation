@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Release Notes"
 permalink: /publiccloud/release-notes/
 product: public-cloud

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: public-cloud
 title: "Copyright for HP Helion Public Cloud APIs"
 permalink: /publiccloud/api/copyright/
 product: public-cloud

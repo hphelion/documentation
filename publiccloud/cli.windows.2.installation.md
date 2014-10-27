@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell Installation"
 permalink: /publiccloud/cli/windows/installation/
 product: win-2-cli

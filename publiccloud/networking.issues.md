@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "Known Issues and Workarounds with the Networking Service"
 permalink: /publiccloud/compute/network/known-issues/
 product: compute

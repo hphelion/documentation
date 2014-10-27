@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "Glossary of HP Helion Public Cloud Terms"
 permalink: /publiccloud/glossary/
 product: public-cloud

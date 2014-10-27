@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Folder Operations"
 permalink: /publiccloud/cli/windows/folder-operations/
 product: win-2-cli

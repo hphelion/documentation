@@ -1,12 +1,12 @@
 ---
-layout: default
-title: "HP Helion Public Cloud 13.5: Upload and Make Public a Partner Image"
+layout: public-cloud
+title: "HP Helion Public Cloud: Upload and Make Public a Partner Image"
 permalink: /publiccloud/upload-publish-partner-images135/
 product: image
 ---
 <!--PUBLISHED-->
 
-# HP Helion Public Cloud 13.5: How to Upload a Partner Image and Make it Public<a name="publishPartnerImage"></a>
+# HP Helion Public Cloud: How to Upload a Partner Image and Make it Public<a name="publishPartnerImage"></a>
 
 This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in HP Helion Public Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Helion Public Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
 
@@ -16,8 +16,8 @@ This document describes how to use the HP Helion Public Cloud Image API to uploa
 
 **Important:** The following regions support uploading an image and making it publicly available:
 
-* Region A - West 13.5 (region-a.geo-1)
-* Region B - East 13.5 (region-b.geo-1)
+* Region A - US West (region-a.geo-1)
+* Region B - US East (region-b.geo-1)
 
 All other regions do not support the Image API.
 

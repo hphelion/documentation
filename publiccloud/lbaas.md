@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud LBaaS Overview"
 permalink: /publiccloud/lbaas/
 product: public-cloud 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Networking:  VPN multi-site configuration guide"
 permalink: /publiccloud/compute/vpn-multisite/
 product: compute

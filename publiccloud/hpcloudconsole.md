@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Console: Getting Started"
 permalink: /publiccloud/hpcloudconsole/
 product: public-cloud
