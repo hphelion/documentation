@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /cli
+redirect: /publiccloud/cli/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
