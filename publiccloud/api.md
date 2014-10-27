@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud APIs"
 permalink: /publiccloud/api/
 product: public-cloud
