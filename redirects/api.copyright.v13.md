@@ -4,7 +4,7 @@ redirect: /publiccloud/api/copyright/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
