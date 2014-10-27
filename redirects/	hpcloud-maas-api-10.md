@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/monitoring/
+redirect: /publiccloud/api/monitoring/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
