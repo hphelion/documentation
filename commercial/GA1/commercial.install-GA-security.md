@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/
+title: "HP Helion OpenStack&#174; Configuring your Helion network securely"
+permalink: /helion/openstack/install/security/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION--> 
 
 
 <script>
@@ -18,91 +18,379 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&reg; 1.0.1 Release Notes
+# HP Helion OpenStack&#174;: Configuring your network securely
 
-Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0.1, including known issues and workarounds, and where to find further information on the product release:
+HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrative errors).
 
-* [Features in HP Helion OpenStack](#features) 
+## Network Topology ## {#network}
 
-* [For Further Information](#For-Further-Information) 
+HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the following Network Topology diagram.  
 
-##Features in HP Helion OpenStack## {#features}
+<img src="media/Helion_Security1.png"/>
 
-**OpenStack Juno Services** - The full set of standard OpenStack services is available for you to use: Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, Heat, Ceilometer, and TripleO (Ironic) for deployment.
+In the diagram above, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
-**TripleO (Ironic)** - Using OpenStack technology for deploying OpenStack services in a fully automated manner resulting in a bare-metal control plane deployed in a highly available configuration.
+## Securing the Perimeter<a name="perimeter"></a>
 
-**LogStash/ElasticSearch** - Enhancing security and supportability of the product by offering centralized logging.
+The perimeter is indicated by the *Border Router* icon in the previous diagram.
 
-**Icinga** - Providing infrastructure monitoring ensuring the health of the cloud. 
+When securing the perimeter, consider the following:
 
-**HP StoreVirtual VSA** - The VSA is used as the default fault-tolerant, software-defined storage backend for Cinder, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.
+### VLAN ###
 
-**Support for VMWare ESX** - Makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
+* External VLAN – Used for binding a routable address to a Compute (Nova) VM launched in Helion. Compute VMs are hosted in a Compute Node.  
+* Management VLAN – Every baremetal host has an address on this network for in-band management purposes.
+* Service VLAN - Provides a path from Development Platform services (such as Database as a Service) running in the Compute VMs to the Centralized Logging Service running in the undercloud.
+* Intelligent Platform Management Interface (IPMI) VLAN – Provides a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
-**HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
+### IP Addressing ###
+* External VLAN - Usually public IP subnet, size according to max desired VM count that needs to be external facing.
+* Management VLAN - Private IP subnet, size according to max physical servers in deployment.
+* Service VLAN - Private IP subnet, size accordingly with Management VLAN.
 
-###Known Issues in this Release### {#known-issues}
+### VLAN Routing Interfaces###
 
-The following are the known issues for HP Helion OpenStack:
+* All the three VLANs have their respective routing interface configured on an aggregation router(s).  The IP address on each of these VLAN interfaces will serve as gateway IP for servers in that particular VLAN.
 
-**Operations**
+### Access Controls ###
 
-* If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
-* If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
-  
-		$ sudo service nova-compute restart
-		$ sudo service nova-scheduler restart
-		$ sudo service nova-conductor restart
-		$ sudo service neutron-openvswitch-agent restart
+* Outbound and Inbound access to External VLAN is controlled at both the border and aggregation router(s).
+* Outbound and Inbound access to the Management and Service VLANs is controlled at the aggregation router(s).
 
-* In some instances, the centralized logging feature does not function after the  product installation. If this occurs, repeat the following steps on the overcloud controller and all compute nodes
+### Server Connectivity ###
 
-        service rsyslog restart
-        
-**Other Issues**
+As shown in the above diagram, all of the Cloud Controller servers are members of all three ISV VLANs. All servers have three IP addresses configured on their respective VLANs.
 
-* When you resize an instance of Nova, it produces an error.
-* Volume backups that are created in one project are accessible to all projects.
-* Changing the user settings in a non-admin role affects all users across all projects.
-* An admin is unable to retrieve object details in an Object Store.
-* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack.
-* The update overcloud process fails intermittently and occurs when an OLD_BUILD value is set to NULL instead of the correct build number from ce_env.json.
-* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails.
-* When a controller node crashes, it must be rebooted to return to its operational state.
-* The installation process can fail if the user is attempting to add more than 2000GB (2TB) to the CSV file (even if the baremetal server has more space).
-* The Helion Core installation process leaves behind a shared private network defined.
-* When the VIP is moved to a new controller, the OpenStack services stop responding to any CLI commands.
-* Nova does not handle or recover from RabbitMQ Server process failure.
-* The keepalived processes do not restart automatically when they are killed.
-* The HAProxy does not automatically restart when it is killed.
-* A user can register but cannot update a vCenter through the UI. 
+### Recommendations for exposing public endpoints ###
+
+We recommend a load balancer be placed in front of the OpenStack APIs that can fill these functions:
+
+A. Terminate the SSL connection.
+<br>B. Redirect http > https.
+<br>C. Map standard https port (tcp/443) to native OpenStack ports.
+
+### Load Balancer configuration steps ###
+
+1. Obtain an SSL certificate for the fully qualified domain name (FQDN) from a public Certificate Authority (CA).
+2. Configure the SSL Virtual Server IP (VIP) with SSL Offloading on the Load Balancer.
+3. Configure an HTTP Virtual Server IP (VIP) on the Load Balancer with an *http to https* redirection policy.
+4. Create a DNS *A* record for the FQDN in the DNS server.
+5. Update required access control lists or firewall rules to allow traffic to the Public VIP IP.
+
+### SSL Offloading on Load Balancer explained ###
+
+SSL offload is designed to function in a similar manner to the following image.
+
+<img src="media/Helion_Security1a.png"/>
+
+All traffic encryption/decryption between the client and server is handled by the Load Balancer. The Load Balancer decrypts all the SSL traffic from client. Once the data has been decrypted it is sent to the backend server in plain text HTTP. Similarly, plain HTTP traffic from the backend server is encrypted back to HTTPS by teh Load Balancer before sending it to client.
+
+### IP Mapping ###
+
+A typical deployment would have public to mgmt. IP mapping as follows:
+
+* Overcloud Horizon Dashboard access
+* External url - https://horizon.fqdn.com/
+* Internal url (VIP) - http://<HelionOpenStackInternalVirtualIP>/
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<th>API</th><th>Public Endpoint</th><th>Management Endpoint</th><th>
+</tr>
+<tr>
+<td>Identity (Keystone)</td><td>https://keystone.fqdn.com/v2.0</td><td>
+http://&lt;internalVIP>:5000/v2.0</td></tr>
+
+<tr>
+<td>Image (Glance)</td><td>https://glance.fqdn.com/</td><td>http://&lt;internalVIP>:9292/</td></tr>
+
+<tr>
+<td>Network (Neutron)</td><td>https://neutron.fqdn.com/</td><td>http://&lt;internalVIP>:9696/</td></tr>
+
+<tr>
+<td>Compute (Nova)</td><td>https://nova.fqdn.com/v2/$(tenant_id)s</td><td>http://&lt;internalVIP>:8774/v2/$(tenant_id)s</td></tr>
+
+<tr>
+<td>Volume (Cinder)</td><td>https://cinder.fqdn.com/v1/%(tenant_id)s</td><td>http://&lt;internalVIP>:8776/v1/%(tenant_id)s</td></tr>
+
+<tr>
+<td>Orchestration (Heat)</td><td>https://heat.fqdn.com/v1/%(tenant_id)s</td><td>http://&lt;internalVIP>:8004/v1/%(tenant_id)s</td></tr>
+
+<tr>
+<td>Object Store (Swift)</td><td>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</td><td>http://&lt;internalVIP>:8080/v1/AUTH_%(tenant_id)s</td></tr>
+
+</table>
+
+**Note:**  These mapping are not an integral part of the Keystone service catalog. When a Keystone catalog is requested, it will always return the management IP. The Cloud administrator needs to publish the equivalent public endpoint for each service that needs to be externalized. Consider other endpoints to consider, such as the VNC console and so forth. 
 
 
-##For Further Information## {#For-Further-Information}
+To protect against external attacks on Helion services, your firewall should be configured with a rule to block any requests originating from outside the network that attempts to reach any of the HP Helion OpenStack nodes or any 3PAR StoreServ  or StoreVirtual VSA appliances dedicated to the HP Helion OpenStack installation, other than those indicated this table:
 
-For additional information about HP Helion OpenStack, OpenStack Cloud Software, and the HP Helion Support Center:
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
+</tr>
+<tr>
+<td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>443, 80, 5000, 9292, 9696, 8774, 8776, 8004</td>
+</tr>
+<td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
+</tr>
+</table>
 
-* [HP Helion OpenStack Documentation web site](/helion/openstack/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
-* [OpenStack web site](http://www.openstack.org/): Provides information on computing, networking, and storage in OpenStack, various programs such as TripleO, and the OpenStack community.
-* [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Provides a way to report issues with HP Helion OpenStack.
 
+## Securing the Object Operations (Swift) back-end network connections<a name="back-end"></a>
 
-###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
+Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as follows: 
 
-<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
+<img src = "content/documentation/media/Helion_Security2.png">
+ 
+You can choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed through the HA proxy on the Controller nodes. 
 
-Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
+You can block requests from the external network to the Object Operations nodes, as already mentioned for the firewall configuration. When adding rules to your router, take care not to introduce rules that will prevent authorized network traffic between nodes.
 
-The OpenStack Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and is used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+The following table describes the data flow between Helion nodes for Object Operations (Swift) back-end traffic:
 
-**HP Helion OpenStack Warranty**: 
-The programs included with the Debian Host Linux system are free software. The exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian Host Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<th>Interface</th><th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
+</tr>
+<tr>
+<td>1</td><td>Admin access via SSH <br>Pyringos copy of ring files via SCP</td><td>Undercloud controller</td><td>Proxy-Account-Container (PAC)</td><td>22</td>
+</tr>
+<tr>
+<td>2</td><td>Admin access via SSH<br>Pyringos copy of ring files via SCP</td><td>Undercloud controller</td><td>Swift all in one (PACO)</td><td>22</td>
+</tr>
+<tr>
+<td>3</td><td>Admin access via SSH</td><td>Undercloud controller</td><td>Object Storage</td><td>22</td>
+</tr>
+<tr>
+<td>3</td><td>Pyringos copy of ring files via SCP</td><td>Undercloud controller</td><td>Object Storage</td><td>22</td>
+</tr>
+<tr>
+<td>4</td><td>Swift proxy to object server over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Object Storage</td><td>6000</td>
+</tr>
+<td>4</td><td>Rsync</td><td>Proxy-Account-Container (PAC)</td><td>Object Storage</td><td>873</td></tr>
+<tr>
+<td>4</td><td>Rsync</td><td>Object Storage</td><td>Proxy-Account-Container (PAC)</td><td>873</td></tr>
+<tr>
+<td>4</td><td>Container update over HTTP</td><td>Object Storage</td><td>Proxy-Account-Container (PAC)</td><td>6001,6002</td></tr>
+<tr>
+<td>5</td><td>Swift proxy to object server over HTTP</td><td>Swift all in one (PACO)</td><td>Object Storage</td><td>6000</td>
+</tr>
+<tr>
+<td>5</td><td>Rsync</td><td>Swift all in one (PACO)</td><td>Object Storage</td><td>873</td></tr>
+<tr>
+<td>5</td><td>Rsync</td><td>Object Storage</td><td>Swift all in one (PACO)</td><td>873</tr>
+<tr>
+<td>5</td><td>Container update over HTTP</td><td>Object Storage</td><td>Swift all in one (PACO)</td><td>6001,6002
+</tr>
+<tr><td>6</td><td>Rsync</td><td>Proxy-Account-Container (PAC)</td><td>Swift all in one (PACO)</td><td>873</td></tr>
+<tr><td>6</td><td>Rsync</td><td>Swift all in one (PACO)</td><td>Proxy-Account-Container (PAC)</td><td>873</td></tr>
+<tr><td>6</td><td>Container update over HTTP</td><td>Proxy-Account-Container (PAC)</td><td>Swift all in one (PACO)</td><td>6001,6002</td></tr>
+<tr><td>6</td><td>Container update over HTTP</td><td>Swift all in one (PACO)</td><td>Proxy-Account-Container (PAC)</td><td>6001,6002
+</tr>
+<tr>
+<td>7</td><td>HA Proxy forwards API requests via HTTP</td><td>Cloud Controller</td><td>Proxy-Account-Container (PAC)</td><td>8080</td>
+</tr>
+<tr>
+<td>8</td><td>HA Proxy forwards API requests via HTTP</td><td>Cloud Controller</td><td>Swift all in one (PACO)</td><td>8080</td>
+</tr>
+<tr><td>8</td><td>Rsync</td><td>Object Storage</td><td>Object Storage	</td><td>873</td></tr>
+</table>
+
+Applying access control lists (ACLs) for flows in the table above produces this logical deployment:
+
+<img src = "/content/documentation/media/Helion_Security3.png">
+
+## Securing Block Storage network connections<a name="network"></a>
+
+The customer deploying HP Helion OpenStack is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer's network devices which can include routers, switches, or firewalls. Block storage data flows interacting with HP Helion OpenStack are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with HP Helion OpenStack nodes.
+
+HP Helion OpenStack supports StoreVirtual or 3Par StoreServ storage arrays which are described separately.
+
+### StoreVirtual VSA<a name="storevirt"></a>
+
+Helion supports both StoreVirtual VSA (Virtual Storage Appliance) and P4000 hardware arrays. Three types of traffic flows into a StoreVirtual node:
+
+- iSCSI traffic
+- Management traffic for REST API and management command line interface (CLIQ or SSH)
+- StoreVirtual inter-cluster traffic between all nodes in the cluster
+
+VSA supports only one virtual network interface. As a result, the above three types of traffic must flow on the same network. For Helion, this is the management VLAN. P4000 hardware arrays support multiple network interfaces. For P4000, iSCSI and management traffic must flow through the management VLAN. However, inter-cluster traffic can be configured for a separate VLAN to provide an additional level of network data isolation. 
+
+For StoreVirtual network design best practices, see <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us">StoreVirtual 4000 Storage Network design considerations and best practices</a>. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link -->
+
+The following diagram depicts a StoreVirtual network deployed as a flat network:
+
+<img src = "/content/documentation/media/Helion_Security4.png">
+
+The following table describes the data flow between Helion nodes and StoreVirtual systems:
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<tr>
+<th>Interface</th><th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
+</tr>
+<tr>
+<td>1</td><td>Compute node iSCSI</td><td>Compute node</td><td>VIP for StoreVirtual cluster</td><td>3260</td>
+</tr>
+<tr>
+<td>2</td><td>Cinder Volume Backup iSCSI</td><td>Cloud Controller (Cinder host)</td><td>VIP for StoreVirtual cluster</td><td>3260</td>
+</tr>
+<tr>
+<td>3</td><td>StoreVirtual REST API (mgmt. interface)</td><td>Cloud Controller (Cinder host)</td><td>VIP for StoreVirtual cluster</td><td>22</td>
+</tr>
+<tr>
+<td>4</td><td>Sirius Service for Cinder backend configuration</td><td>UnderCloud Controller</td><td>VIP for StoreVirtual Management Group</td><td>22</td>
+</tr>
+<td>4</td><td>StoreVirtual CLiQ interface via SSH (mgmt. interface)</td><td>Undercloud Controller</td><td>VIP for StoreVirtual cluster</td><td>16022</td>
+</tr>
+<tr>
+<td>5</td><td>StoreVirtual inter-cluster traffic</td><td>StoreVirtual</td><td>StoreVirtual</td><td>[See Ref 2](#additional)</td>
+</tr>
+<tr>
+<td>6</td><td>CMC to StoreVirtual <br>Recommended to install on the seed cloud host</td><td>CMC</td><td>StoreVirtual</td><td>[See Ref 2](#additional)</td>
+</table>
+
+The following diagram depicts a logical deployment after applying ACLs for flows in table:
+
+<img src = "/content/documentation/media/Helion_Security5.png">
+
+Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP. 
+
+StoreVirtual port usage is described in [HP4000 SAN – SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+
+### 3Par StoreServ<a name="storeserv"></a>
+
+HP Helion Openstack supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
+
+The following diagram depicts a StoreServ network deployed as a flat network:
+
+<img src = "/content/documentation/media/Helion_Security6.png">
+
+The following table describes the data flow between the Helion nodes and StoreServ systems:
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<tr>
+<th>Interface</th><th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
+</tr>
+<tr>
+<td>1</td><td>Compute node iSCSI</td><td>Compute node</td><td>StoreServ</td><td>3260</td>
+</tr>
+<tr>
+<td>2</td><td>Volume Backup iSCSI</td><td>Overcloud Controller (Volume Operations host)</td><td>StoreServ</td><td>3260</td>
+</tr>
+<tr>
+<td>3</td><td>StoreServ REST API (mgmt. interface) via HTTPS</td><td>Overcloud Controller (Volume Operations host)</td><td>StoreServ</td><td>8080</td>
+</tr>
+<tr>
+<td>4</td><td>StoreServ command line interface (SSH)</td><td>Overcloud Controller (Volume Operations host)</td><td>StoreServ</td><td>22</td>
+</tr>
+<tr>
+<td>4</td><td>Sirius Service for Volume Operartions backend configuration</td><td>Undercloud Controller</td><td>StoreServ</td><td>22</td>
+</tr>
+<tr>
+<td>5</td><td>StoreServ REST API (mgmt. interface) via HTTPS</td><td>UnderCloud Controller</td><td>StoreServ</td><td>8080</td>
+</tr>
+<tr>
+<td>6</td><td>SSMC to StoreServ	SSMC</td><td>StoreServ</td><td>StoreServ</td><td>[See Ref 6](#additional)</td>
+</tr>
+<tr>
+<td>7</td><td>Service Processor</td><td>Service Processor</td><td>StoreServ</td><td>[See Ref 6](#additional)</td>
+</tr>
+</table>
+
+When deploying StoreServ with Fiberchannel, interfaces 1 and 2 run over Fiberchannel network instead of iSCSI.
+
+The following diagram depicts a logical deployment after applying ACLs for flows in table:
+
+<img src = "/content/documentation/media/Helion_Security7.png">
+
+
+Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with the Helion nodes described in this section. This includes SSMC console access and Service Processor communication. 
+
+StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Storage Physical Planning Manual](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf).
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+## Additional Block Storage Resources {#additional}
+
+Use the following resources when securing the network:
+
+<br>1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage – Network design considerations and best practices</a> <!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
+<br>2. [HP4000 SAN – SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf)
+<br>3. [StoreVirtual information](http://hp.com/go/storevirtual)
+<br>4. [StoreServ information](http://hp.com/go/storeserv)
+<br>5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
+<br>6. [HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf)
+<br>7. [RFC3723 – Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
+<br>8. [RFC7143 – Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+## Securing ESX network connections in Helion<a name="esx"></a>
+
+If your deployment includes ESX Integration, you can improve network security by configuring access control lists for the ESX network.  The ESX Tenant network (also shown below) is managed by the Networking Operations service (Neutron).  The ESX network is not installed or managed by HP Helion OpenStack. You must install and manage this network and makes sure there is a route to the Management network.  
+
+The ESX network is used for:
+
+- Traffic between the OVSvApp VMs running on every ESX Host to communicate with the Network Operations message queue on the overcloud controller
+- The vCenter Proxy to communicate with the message queue for the Volume Operations service (Cinder) and the Compute Operations service (Nova)
+- The EON service to communicate with the vCenter server
+
+The following diagram depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack:
+
+<a href="javascript:window.open('content/documentation/media/Helion_Security8.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Logical Deployment of the ESX Integration Diagram (opens in a new window)</a> 
+
+The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<tr>
+<th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
+</tr>
+<tr>
+<td>OVSvApp VM communication with Neutron message queue</td><td>OVSvApp VMs</td><td>Cloud Controller</td><td>5672</td>
+</tr>
+<tr>
+<td>vCenter Proxy communication with Nova and Cinder message queues</td><td>vCenter Proxy</td><td>Cloud Controller</td><td>5672</td>
+</tr>
+<tr>
+<td>vCenter Proxy communication with MySQL</td><td>vCenter Proxy</td><td>Cloud Controller</td><td>3306</td>
+</tr>
+<tr>
+<td>EON conductor reads vCenter resource information</td><td>Undercloud Controller</td><td>vCenter Proxy</td><td>443</td>
+</tr>
+</table>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+## The Service network<a name="service"></a>
+
+The Service Network (SVC) is created by the Network Operation service.  SVC provides a path from the Development Platform services (such as Database as a Service) running in Compute Operations VMs to the Centralized Logging Service running in the undercloud.   A route needs to exist from service subnet in the overcloud to the RabbitMQ on the undercloud controller.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: lightgrey; color: black;">
+<tr>
+<th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
+</tr>
+<tr>
+<td>Dev Platform services connect to Logging Service over Rabbit MQ</td><td>Cloud Controller</td><td>Undercloud Controller</td><td>5672</td>
+</tr>
+</table>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 ----
-####OpenStack Trademark Attribution
+####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
