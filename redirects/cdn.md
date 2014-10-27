@@ -4,7 +4,7 @@ redirect: /publiccloud/cdn/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
