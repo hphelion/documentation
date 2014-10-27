@@ -4,7 +4,7 @@ redirect: /publiccloud/api/
 layout: redirect
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--
