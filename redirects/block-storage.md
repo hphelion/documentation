@@ -1,7 +1,8 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /block-storage/
+redirect: /publiccloud/block-storage/
 layout: redirect
+
 ---
 <!--UNDER REVISION-->
 
