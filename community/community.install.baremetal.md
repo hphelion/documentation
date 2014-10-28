@@ -205,7 +205,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 ### Starting the seed and building your cloud ### {#startseed}
 
 
-Start the seed using the following command:
+Start the seed using the following command: 
 
 	bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 
