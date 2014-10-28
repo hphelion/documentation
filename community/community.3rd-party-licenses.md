@@ -186,7 +186,7 @@ the laws of that jurisdiction excluding its conflict-of-law provisions. The
 application of the United Nations Convention on Contracts for the International
 Sale of Goods is expressly excluded. Any use of the Original Work outside the
 scope of this License or after its termination shall be subject to the
-requirements and penalties of the U.S. Copyright Act, 17 U.S.C. Â§ 101 et
+requirements and penalties of the U.S. Copyright Act, 17 U.S.C. &sect; 101 et
 seq., the equivalent laws of other countries, and international treaty. This
 section shall survive the termination of this License.
 
@@ -5243,7 +5243,7 @@ License can be found in /usr/share/common-licenses/GPL file.
 
 FILE "augeas-1.0.0/debian/copyright":
 
-This package was debianized by Nicolas ValcÃ¡rcel (nvalcarcel@ubuntu.com) on
+This package was debianized by Nicolas Valc&aacute;rcel (nvalcarcel@ubuntu.com) on
 Wed, 18 Jun 2008 18:57:49 -0500.
 
 It was downloaded from http://augeas.net/download/.
@@ -5378,7 +5378,7 @@ License version 2 can be found in `/usr/share/common-licenses/GPL-2'
 On Debian systems, the complete text of the GNU General Public
 License version 3 can be found in `/usr/share/common-licenses/GPL-3'
 
-The Debian packaging is (C) 2008, Nicolas ValcÃ¡rcel (nvalcarcel@ubuntu.com) and
+The Debian packaging is (C) 2008, Nicolas Valc&aacute;rcel (nvalcarcel@ubuntu.com) and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
 
