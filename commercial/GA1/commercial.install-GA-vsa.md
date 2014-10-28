@@ -173,9 +173,9 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
          
 	   **Step 3**: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)
 
- * Seed Cloud is installed and is running.
+* Seed Cloud is installed and is running.
  
- * The bundled license for the StoreVirtual VSA has a maximum limit of 50TB per node, and hence the total amount of the configured storage on the StoreVirtual system should not exceed 50 TB.
+* The bundled license for the StoreVirtual VSA has a maximum limit of 50TB per node, and hence the total amount of the configured storage on the StoreVirtual system should not exceed 50 TB.
 
 <!---<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
@@ -219,7 +219,7 @@ To deploy HP StoreVirtual VSA, perform the following:
  
 		# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-7. Edit the `/root/overcloud-config.json` and update the value for `vsa_scale` or `vsa_scale` appropriately. 
+7. Edit the `/root/overcloud-config.json` and update the value for `vsa_scale` or `vsa_ao_scale` appropriately. 
 
        	vsa_scale: <no of StoreVirtual systems>
 
@@ -279,7 +279,7 @@ from the above steps.
 
 
 
-## Creating a StoreVirtual Cluster and adding it to a new Management Group {# create-cluster}
+## Creating a StoreVirtual Cluster and adding it to a new Management Group {#create-cluster}
 
 **Prerequisites**
 
