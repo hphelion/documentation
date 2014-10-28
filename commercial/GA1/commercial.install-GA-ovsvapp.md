@@ -68,7 +68,7 @@ Before you install the OVSvApp, ensure the following:
 
     	**Note**: The name of VLAN trunk portgroup must be associated with `trunk_interface` parameter in the `ovs_vapp.ini`. You will create the INI file in [Modify and execute the installer](#modify).
     
-		**VDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch – management, data.  Management portgroup handles the management traffic and may or may not be not configured for VLAN. 
+		**VDS2**: This switch should have an uplink port connecting to the overcloud baremetal network. Two portgroups should be available for this switch - management, data.  Management portgroup handles the management traffic and may or may not be not configured for VLAN. 
 
 		The data portgroup should be of type VLAN with `Trunking enabled`. It should contain the list of VLAN tags that are used by overcloud Networking Operations service. The **Promiscuous Mode** and **Forged Transmits** options should be set to **Accept** under the **Security** tab for the data portgroup.
 		

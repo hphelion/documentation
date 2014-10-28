@@ -40,10 +40,10 @@ When securing the perimeter, consider the following:
 
 ### VLAN ###
 
-* External VLAN – Used for binding a routable address to a Compute (Nova) VM launched in Helion. Compute VMs are hosted in a Compute Node.  
-* Management VLAN – Every baremetal host has an address on this network for in-band management purposes.
+* External VLAN - Used for binding a routable address to a Compute (Nova) VM launched in Helion. Compute VMs are hosted in a Compute Node.  
+* Management VLAN - Every baremetal host has an address on this network for in-band management purposes.
 * Service VLAN - Provides a path from Development Platform services (such as Database as a Service) running in the Compute VMs to the Centralized Logging Service running in the undercloud.
-* Intelligent Platform Management Interface (IPMI) VLAN – Provides a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
+* Intelligent Platform Management Interface (IPMI) VLAN - Provides a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
 ### IP Addressing ###
 * External VLAN - Usually public IP subnet, size according to max desired VM count that needs to be external facing.
@@ -260,7 +260,7 @@ The following diagram depicts a logical deployment after applying ACLs for flows
 
 Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP. 
 
-StoreVirtual port usage is described in [HP4000 SAN – SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf).
+StoreVirtual port usage is described in [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -324,14 +324,14 @@ StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Sto
 
 Use the following resources when securing the network:
 
-<br>1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage – Network design considerations and best practices</a> <!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
-<br>2. [HP4000 SAN – SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf)
+<br>1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage - Network design considerations and best practices</a> <!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
+<br>2. [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf)
 <br>3. [StoreVirtual information](http://hp.com/go/storevirtual)
 <br>4. [StoreServ information](http://hp.com/go/storeserv)
 <br>5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
 <br>6. [HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf)
-<br>7. [RFC3723 – Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
-<br>8. [RFC7143 – Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
+<br>7. [RFC3723 - Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
+<br>8. [RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

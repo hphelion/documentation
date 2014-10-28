@@ -56,8 +56,8 @@ Detailed installation steps:
 
 Assumption:
 
-•	Port 2 of all the baremetal nodes are wired and used as bm_network – referred here as em2 or eth1
-•	1 Untagged network for Mangemenet – subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
+•	Port 2 of all the baremetal nodes are wired and used as bm_network - referred here as em2 or eth1
+•	1 Untagged network for Mangemenet - subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
 •	90 tagged networks used for tenant VLANs as provider network
 •	For test purpose VLAN 300 (192.168.1
 

@@ -23,7 +23,7 @@ With a change to something as fundamental as how authentication works, all custo
 * _Manage Console_ - Login credentials (email address and password) remain exactly the same.  In this first wave of Identity Service-based changes you will not be able to assign a Tenant to another user, but that ability will be coming later.  The biggest change will be on the API Keys screen, which now features a single set of keys and a Tenant ID: (graphic here)
 * _Bindings and CLIs_ - More specific details are provided later in this document, but generally speaking, you will need to download new versions of the bindings and CLIs you are using.  All HP-supported bindings and CLIs have been upgraded to interact with the new Identity Service.  In many cases, the only impact after using the new version is that instead of using just access keys for authentication, you must now use access keys and your Tenant ID.
 * _Service Endpoints for Object Storage and Compute_ - If you have written your own code on top of the raw REST API for Object Storage or Compute, the authentication for each is now performed with the Identity Service, which then also presents the endpoints for activated services.  More details on this are available in the Identity Service REST API documentation.
-* _EC2 Compatibility_ - (and 3rd party tools like euca2ools) – More details are presented later in this document, but the short version is that your endpoint won't change but you will need to change your access key.
+* _EC2 Compatibility_ - (and 3rd party tools like euca2ools) - More details are presented later in this document, but the short version is that your endpoint won't change but you will need to change your access key.
 
 ## Interruption of Service During the Upgrade
 
@@ -73,9 +73,9 @@ All of this is fairly transparent to your application since you find this path e
 ## OpenStack swift-python-client and the swift Command Line
 If you are using a version of the swift-python-client which does not support V2-style authentication, it can still be made to work with the Identity Service through the backward compatible API described earlier.
 
-Alternatively, the swift program itself supports the V2-style API.  Using the –V and –U switches, you can make version 1.x.x or later work with the Identity Service as follows:
+Alternatively, the swift program itself supports the V2-style API.  Using the -V and -U switches, you can make version 1.x.x or later work with the Identity Service as follows:
 
-        $ swift –V 2 \ 
+        $ swift -V 2 \ 
                 -A https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens \
                 -U sally.smith@hp.com:sally.smith@hp.com \
                 -K EH...kJ list
@@ -116,12 +116,12 @@ Here is an example of using the Nova command:
 ## Euca2ools and EC2™ compatibility
 The Identity Service is compatible with euca2ools and EC2 compatibly for HP Helion Public Cloud Compute by setting environment variables in a way similar to the Object Storage backward compatibility described above.  To use euca200ls, you set your environment variables as follows:
 
-* EC2-URL – set to:
+* EC2-URL - set to:
     * Compute endpoint (from the publicURL field in the Service Catalog)
     * Remove path /v1.1/<tenant-id>
     * Add path &ldquo;/services/Cloud&rdquo;
-* EC2_ACCESS_KEY – is <tenant_id>:<access_key>
-* EC2-SECRET_KEY – use the secretKey from the response shown above.
+* EC2_ACCESS_KEY - is <tenant_id>:<access_key>
+* EC2-SECRET_KEY - use the secretKey from the response shown above.
 
 For example:  
 

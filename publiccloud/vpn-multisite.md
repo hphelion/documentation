@@ -123,10 +123,10 @@ strongSwan creates three configuration files during installation:
 
 These files are in the /etc/ directory of the installation file as well as a folder called IPsec.d that contains subfolders such as *cacerts*, *certs*, *private, crl*, etc., which can store the certificates and keys used for authentication. 
 
-*/etc/IPsec.d/cacerts* – Holds the CA certificate.
-*/etc/IPsec.d/certs* – Holds the Host certificates.
-*/etc/IPsec.d/private* – Holds the private keys.
-*/etc/IPsec.d/crl* – Holds the certification revocation list.
+*/etc/IPsec.d/cacerts* - Holds the CA certificate.
+*/etc/IPsec.d/certs* - Holds the Host certificates.
+*/etc/IPsec.d/private* - Holds the private keys.
+*/etc/IPsec.d/crl* - Holds the certification revocation list.
 
 ####IPsec.conf file
 

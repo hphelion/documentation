@@ -158,7 +158,7 @@ Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage 
  
 * Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first RAID group where the OS image is deployed is not considered for StoreVirtual storage.
 
-* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!---For more details, refer – [**Storevirtual documentation LINK**]-->
+* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!---For more details, refer - [**Storevirtual documentation LINK**]-->
 
 * For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have a minimum two(2) disks(/dev/sda, /dev/sdb).
 
