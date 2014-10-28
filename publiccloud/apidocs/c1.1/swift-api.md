@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: public-cloud
 permalink: /publiccloud/api/object-storage/
 title: HP Helion Public Cloud Object Storage API
 description: "HP Helion Public Cloud Object Storage API Specifications"
