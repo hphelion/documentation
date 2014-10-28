@@ -3104,11 +3104,11 @@ Copyright: 2009 The Apache Software Foundation
 License: Apache 2.0 and Zeus
 
 Files: debian/a2query.in debian/debhelper/dh_apache2
-Copyright: 2012 Arno TÃ¶ll
+Copyright: 2012 Arno T&ouml;ll
 License: Apache 2.0 or GPL-2+
 
 Files: debian/debhelper/apache2-maintscript-helper
-Copyright: 2012 Arno TÃ¶ll
+Copyright: 2012 Arno T&ouml;ll
 License: MIT
 
 Files: debian/a2enmod
