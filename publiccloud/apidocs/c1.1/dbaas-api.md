@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: public-cloud
 permalink: /publiccloud/api/dbaas/
 title: HP Helion Public Cloud Relational Database API Reference
 description: "HP Helion Public Cloud Relational Database API Documentation."
