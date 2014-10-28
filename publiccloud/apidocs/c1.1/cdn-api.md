@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: public-cloud
+title: "HP Helion Public Cloud CDN"
 permalink: /publiccloud/api/CDN/
-title: HP Helion Public Cloud CDN 
 description: "HP Helion Public Cloud CDN API"
 keywords: "content data network, cdn, object storage"
 product: cdn
