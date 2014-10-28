@@ -451,7 +451,7 @@ HP Helion OpenStack architecture diagram for Store Virtual volume type mapping
 
 **Note:** Your HP Helion OpenStack installation can be configured [to use 3Par for block storage](/helion/openstack/install/3par/).
 
-#### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {esx-hypervisor}
+#### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {#esx-hypervisor}
 
 HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.
 
