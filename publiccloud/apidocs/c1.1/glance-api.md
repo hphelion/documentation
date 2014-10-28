@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: public-cloud
 title: HP Helion Public Cloud Image Service API Reference
 permalink: /publiccloud/api/image/
 description: This document describes the HP Helion Public Cloud Image Service. HP Helion Public Cloud Image is based on OpenStack Glance.
