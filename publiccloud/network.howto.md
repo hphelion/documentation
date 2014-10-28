@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "How To's with the Network Service"
 permalink: /publiccloud/compute/network/howto/
 product: compute

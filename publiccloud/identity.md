@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Identity Service Overview"
 permalink: /publiccloud/identity/
 product: public-cloud 

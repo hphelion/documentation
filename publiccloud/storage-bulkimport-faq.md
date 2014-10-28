@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "Bulk Import Service for Object Storage and Block Storage FAQ"
 permalink: /publiccloud/object-storage/bulk-importFAQ/
 product:

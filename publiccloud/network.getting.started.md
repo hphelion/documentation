@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "Getting Started with HP Helion Public Cloud Networking"
 permalink: /publiccloud/compute/network/getting-started
 product: compute

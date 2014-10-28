@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Working with Meta-Data"
 permalink: /publiccloud/cli/windows/metadata/
 product: win-2-cli

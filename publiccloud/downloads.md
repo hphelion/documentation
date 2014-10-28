@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Software Downloads"
 permalink: /publiccloud/downloads/
 product: public-cloud
@@ -13,7 +13,7 @@ HP Helion Public Cloud has a few software downloads, each of which is on its app
 Here's what we have for you:
 
 * [Windows CLI](#WinCLIInstall)
-* [Openstack CLI Tools](#OpenstackCLI)
+* [OpenStack CLI Tools](#OpenstackCLI)
 * [Ruby Fog Bindings](#RubyFogBindingsInstall)
 * [Java/Clojure jclouds Bindings](#jcloudsBindingsInstall)
 * [PHP Bindings](#PHPBindingsInstall)
@@ -27,7 +27,7 @@ Here's what we have for you:
 * [Overview page](/publiccloud/cli/windows)
 * [Release Notes](/publiccloud/cli/windows/release-notes)
 
-###Openstack CLI Tools### {#OpenstackCLI}
+###OpenStack CLI Tools### {#OpenstackCLI}
 * [Overview page](/publiccloud/cli/openstack)
 
 ##Language Bindings##
@@ -42,8 +42,6 @@ We have moved all our Ruby Fog bindings to the Fog Community; please continue to
 
 ###Java/Clojure jclouds Bindings### {#jcloudsBindingsInstall}
 * [Installation page](http://jclouds.apache.org/start/install/) (This is the [jclouds.org](http://www.jclouds.org) installation page)
-* [Overview page](/bindings/jclouds)
-<!-- * [Release Notes](bindings/jclouds/release-notes) -->
 
 ###PHP Bindings### {#PHPBindingsInstall} 
 * [Installation page](http://hpcloud.github.com/HPCloud-PHP/) (This is the GitHub repository page for the installation package)
