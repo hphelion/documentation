@@ -1,13 +1,13 @@
 ---
-layout: page
+layout: public-cloud
+title: "HP Helion Public Cloud Identity Services API"
 permalink: /publiccloud/api/identity/
-title: HP Helion Public Cloud Identity Services API
 description: "HP Helion Public Cloud Identity Services API documenation."
 keywords: "Keystone, Identity Services"
 product: identity
 
 ---
-
+<!--PUBLISHED-->
 #HP Helion Public Cloud Identity Services API
 
 Date: May 2014
