@@ -412,7 +412,7 @@ This bundle is designed specifically for the ProLiant m300 server cartridge and 
 <tr style="background-color: white; color: black;">
 
 <td><b>Drivers</b></td> <td>Chipset - Drivers that support the ProLiant m300 server cartridge platform and eliminate yellow bangs in Windows Device Manager.
-<br>Ethernet — Folder containing NIC drivers for Windows deployment on the ProLiant m300 server cartridge.</br>
+<br>Ethernet &mdash Folder containing NIC drivers for Windows deployment on the ProLiant m300 server cartridge.</br>
 </td></tr>
 
 <tr style="background-color: white; color: black;">
@@ -433,7 +433,7 @@ This bundle is specifically designed for the ProLiant m700 server cartridge and 
 
 <tr style="background-color: white; color: black;">
 <td><b>Drivers</b></td> <td>Chipset - Drivers that support the ProLiant m700 server cartridge platform and eliminate yellow bangs in Windows Device Manager.
-<br>Ethernet — Folder containing NIC drivers for Windows deployment on the ProLiant m700 server cartridge</td></tr></br>
+<br>Ethernet &mdash Folder containing NIC drivers for Windows deployment on the ProLiant m700 server cartridge</td></tr></br>
 
 <tr style="background-color: white; color: black;">
 <td><b>Scripts</b></td> <td>Scripts used for customizing boot.wim and install.wim files from the Windows 7 Enterprise with SP1 media.</td></tr>
