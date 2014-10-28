@@ -24,10 +24,14 @@ PageRefresh();
 
 HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrative errors).
 
-- [Network Topology](#network)
-- [Securing the Perimeter](#perimeter)
-- [Securing the Object Operations (Swift) back-end network connections](#back-end)
-- [Securing Block Storage network connections](#network)
+* [Network Topology](#network)
+* [Securing the Perimeter](#perimeter)
+* [Securing the Object Operations (Swift) back-end network connections](#back-end)
+* [Securing Block Storage network connections](#blockstorage)
+* [Additional Block Storage Resources](#additional)
+* [Securing ESX network connections in Helion](#esx)
+* [Service network](#service)
+
 
 ## Network Topology ## {#network}
 
@@ -55,9 +59,6 @@ When securing the perimeter, consider the following:
 * [Load Balancer configuration steps](#loadbalance)
 * [SSL Offloading on Load Balancer explained](#ssloffload)
 * [IP Mapping](#ipmapping)
-* [Additional Block Storage Resources](#additional)
-* [Securing ESX network connections in Helion](#esx)
-* [Service network](#service)
 
 #### VLAN configuration#### {vlan}
 
@@ -229,7 +230,7 @@ Applying access control lists (ACLs) for flows in the table above produces this 
 ##### Figure 4: Object Operations in a logical deployment {#fig4}
 <img src = "/content/documentation/media/Helion_Security4.png">
 
-## Securing Block Storage network connections {#network}
+## Securing Block Storage network connections {#blockstorage}
 
 The customer deploying HP Helion OpenStack is responsible for securing the block storage networks. Network data flows for block storage should be restricted using access control lists or other mechanisms in the customer's network devices which can include routers, switches, or firewalls. Block storage data flows interacting with HP Helion OpenStack are described here to assist with defining those controls. References are given to documentation on data flows within the storage cluster itself, but not necessarily interacting with HP Helion OpenStack nodes.
 
