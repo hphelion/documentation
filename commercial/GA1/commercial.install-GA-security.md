@@ -35,14 +35,14 @@ HP Helion OpenStack has many built-in security controls, but the customer must t
 
 ## Network Topology ## {#network}
 
-HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in the [Figure 1](#fig1).  
+HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in [Figure 1](#fig1).  
 
 ##### Figure 1: Typical HP Helion OpenStack network topology {#fig1}
 <img src="media/Helion_Security1_50.png"/>
 
 <a href="javascript:window.open('/content/documentation/media/Helion_Security1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
 
-In the Figure 1, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
+In [Figure 1](#fig1), the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
 ## Securing the Perimeter {#perimeter}
 
@@ -60,7 +60,9 @@ When securing the perimeter, consider the following:
 * [SSL Offloading on Load Balancer explained](#ssloffload)
 * [IP Mapping](#ipmapping)
 
-#### VLAN configuration#### {vlan}
+#### VLAN configuration#### {#vlan}
+
+When configuring the VLAN, consider the following:
 
 * External VLAN - Used for binding a routable address to a Compute (Nova) VM launched in Helion. Compute VMs are hosted in a Compute Node.  
 * Management VLAN - Every baremetal host has an address on this network for in-band management purposes.
@@ -69,20 +71,28 @@ When securing the perimeter, consider the following:
 
 #### IP Addressing #### {#ipaddressing}
 
+When configuring IP addressed, consider the following:
+
 * External VLAN - Usually public IP subnet, size according to max desired VM count that needs to be external facing.
 * Management VLAN - Private IP subnet, size according to max physical servers in deployment.
 * Service VLAN - Private IP subnet, size accordingly with Management VLAN.
 
 #### VLAN Routing Interfaces#### {#vlanrouting}
 
+When configuring the VLAN routing interfaces, consider the following:
+
 * All the three VLANs have their respective routing interface configured on an aggregation router(s).  The IP address on each of these VLAN interfaces will serve as gateway IP for servers in that particular VLAN.
 
 #### Access Controls #### {#accesscontrol}
+
+When controlling inbound and outbound traffic access, consider the following:
 
 * Outbound and Inbound access to External VLAN is controlled at both the border and aggregation router(s).
 * Outbound and Inbound access to the Management and Service VLANs is controlled at the aggregation router(s).
 
 #### Server Connectivity #### {#serverconnect}
+
+When configuring server connectivity, consider the following:
 
 As shown in the above diagram, all of the Cloud Controller servers are members of all three ISV VLANs. All servers have three IP addresses configured on their respective VLANs.
 
@@ -96,6 +106,8 @@ A. Terminate the SSL connection.
 
 #### Load Balancer configuration steps #### {#loadbalance}
 
+Use the following steps when configuring the load balancer:
+
 1. Obtain an SSL certificate for the fully qualified domain name (FQDN) from a public Certificate Authority (CA).
 2. Configure the SSL Virtual Server IP (VIP) with SSL Offloading on the Load Balancer.
 3. Configure an HTTP Virtual Server IP (VIP) on the Load Balancer with an *http to https* redirection policy.
@@ -104,20 +116,20 @@ A. Terminate the SSL connection.
 
 #### SSL Offloading on Load Balancer explained #### {#ssloffload}
 
-SSL offload is designed to function in a similar manner to the following image.
+SSL offload is designed to function in a similar manner to [Figure 2](#fig2).
 
 ##### Figure 2: SSL offload {#fig2}
 <img src="media/Helion_Security2.png"/>
 
-All traffic encryption/decryption between the client and server is handled by the Load Balancer. The Load Balancer decrypts all the SSL traffic from client. Once the data has been decrypted it is sent to the backend server in plain text HTTP. Similarly, plain HTTP traffic from the backend server is encrypted back to HTTPS by teh Load Balancer before sending it to client.
+All traffic encryption/decryption between the client and server is handled by the Load Balancer. The Load Balancer decrypts all the SSL traffic from client. Once the data has been decrypted it is sent to the backend server in plain text HTTP. Similarly, plain HTTP traffic from the backend server is encrypted back to HTTPS by the Load Balancer before sending it to client.
 
 #### IP Mapping #### {#ipmapping}
 
 A typical deployment would have public to mgmt. IP mapping as follows:
 
 * Overcloud Horizon Dashboard access
-* External url - https://horizon.fqdn.com/
-* Internal url (VIP) - http://<HelionOpenStackInternalVirtualIP>/
+* External url - `https://horizon.fqdn.com/`
+* Internal url (VIP) - `http://<HelionOpenStackInternalVirtualIP>/`
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -166,10 +178,10 @@ To protect against external attacks on Helion services, your firewall should be 
 
 ## Securing the Object Operations (Swift) back-end network connections {#back-end}
 
-Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as follows: 
+Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as shown in [Figure 3](#fig3): 
 
 ##### Figure 3: Object Operations in a flat deployment{#fig3}
-<img src = "content/documentation/media/Helion_Security3.png">
+<img src="content/documentation/media/Helion_Security3.png">
  
 You can choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed through the HA proxy on the Controller nodes. 
 
@@ -225,7 +237,7 @@ The following table describes the data flow between Helion nodes for Object Oper
 <tr><td>8</td><td>Rsync</td><td>Object Storage</td><td>Object Storage	</td><td>873</td></tr>
 </table>
 
-Applying access control lists (ACLs) for flows in the table above produces this logical deployment:
+Applying access control lists (ACLs) for flows in the table above produces the logical deployment, displayed in [Figure 4](#fig4):
 
 ##### Figure 4: Object Operations in a logical deployment {#fig4}
 <img src = "/content/documentation/media/Helion_Security4.png">
@@ -248,7 +260,7 @@ VSA supports only one virtual network interface. As a result, the above three ty
 
 For StoreVirtual network design best practices, see <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us">StoreVirtual 4000 Storage Network design considerations and best practices</a>. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link -->
 
-The following diagram depicts a StoreVirtual network deployed as a flat network:
+The following diagram depicts a StoreVirtual network deployed as a flat network, as shown in [Figure 5](#fig5):
 
 ##### Figure 5: StoreVirtual in a flat deployment {#fig5}
 <img src = "/content/documentation/media/Helion_Security5.png">
@@ -281,7 +293,7 @@ The following table describes the data flow between Helion nodes and StoreVirtua
 <td>6</td><td>CMC to StoreVirtual <br>Recommended to install on the seed cloud host</td><td>CMC</td><td>StoreVirtual</td><td>[See Ref 2](#additional)</td>
 </table>
 
-The following diagram depicts a logical deployment after applying ACLs for flows in table:
+[Figure 6](#fig6) depicts a logical deployment after applying ACLs for flows in table:
 
 ##### Figure 6: StoreVirtual in a logical deployment {#fig6}
 <img src = "/content/documentation/media/Helion_Security6.png">
@@ -297,7 +309,7 @@ StoreVirtual port usage is described in [HP4000 SAN - SANiQ TCP and UDP Port Usa
 
 HP Helion Openstack supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
 
-The following diagram depicts a StoreServ network deployed as a flat network:
+The following diagram depicts a StoreServ network deployed as a flat network, as shown in [Figure 7](#fig7):
 
 ##### Figure 7: 3Par StoreServ in a flat deployment {#fig7}
 <img src = "/content/documentation/media/Helion_Security7.png">
@@ -337,7 +349,7 @@ The following table describes the data flow between the Helion nodes and StoreSe
 
 When deploying StoreServ with Fiberchannel, interfaces 1 and 2 run over Fiberchannel network instead of iSCSI.
 
-The following diagram depicts a logical deployment after applying ACLs for flows in table:
+[Figure 8](#fig8) depicts a logical deployment after applying ACLs for flows in table:
 
 ##### Figure 8: 3Par StoreServ in a logical deployment {#fig8}
 <img src = "/content/documentation/media/Helion_Security8.png">
@@ -375,10 +387,12 @@ The ESX network is used for:
 - The vCenter Proxy to communicate with the message queue for the Volume Operations service (Cinder) and the Compute Operations service (Nova)
 - The EON service to communicate with the vCenter server
 
-The following diagram depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack.
+[Figure 9](#fig9) depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack.
 
 ##### Figure 9: ESX Integration in a logical deployment {#fig9}
-<a href="javascript:window.open('content/documentation/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Logical Deployment of the ESX Integration Diagram (opens in a new window)</a> 
+<img src="media/Helion_Security9_50.png"/>
+
+<a href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)(opens in a new window)</a> 
 
 The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:
 
