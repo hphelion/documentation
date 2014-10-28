@@ -98,7 +98,7 @@ Which produces output similar to the following:
 	    +--------------------------------------+-------------------------------+
  
  Using this information, you can now see all the details of the malicious instance.  You may choose to shut it down, contact the instance owner to investigate further, or both. 
- 
+
 ## Method 3
 1. Log in to the Controller node
 
