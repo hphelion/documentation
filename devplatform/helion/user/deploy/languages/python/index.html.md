@@ -7,7 +7,7 @@ permalink: /als/v1/user/deploy/languages/python/
 <h1>Developing In Python<a class="headerlink" href="#developing-in-python" title="Permalink to this headline"></a></h1>
 <p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools
 to enable successful development are available in Python.</p>
 <div class="section" id="application-lifecycle-services">
 <h2>Application Lifecycle Services<a class="headerlink" href="#application-lifecycle-services" title="Permalink to this headline"></a></h2>
