@@ -119,7 +119,7 @@ Which produces output similar to the following:
         0 0 DNAT  all -- any  any anywhere     16.103.148.249  to:192.168.4.2
         0 0 DNAT  all -- any  any anywhere     16.103.148.24   to:192.168.4.2
         0 0 SNAT  all -- any  any 192.168.4.2  anywhere        to:16.103.148.249
- 
+
 4. If the command returns any results, capture the fixed IP address, which is 192.168.4.2 in the above example (Look in the “to: “ field of DNAT rows)
 
 5. Log in to the Nova controller node
