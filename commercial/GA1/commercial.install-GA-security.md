@@ -390,7 +390,7 @@ The ESX network is used for:
 [Figure 9](#fig9) depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack.
 
 ##### Figure 9: ESX Integration in a logical deployment {#fig9}
-<img src="media/Helion_Security9_50.png"/>
+<img src="media/Helion_Security9.png"/>
 
 <a href="javascript:window.open('/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)(opens in a new window)</a> 
 
