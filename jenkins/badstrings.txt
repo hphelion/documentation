@@ -117,7 +117,5 @@ OpenStack®
 {{#
 ^[^#\*].*[a-z] Over[Cc]loud
 ^[^#\*].*[a-z] Under[Cc]loud
-[Bb]eta
-BETA
 â€™
 ÎáÎáÎí
