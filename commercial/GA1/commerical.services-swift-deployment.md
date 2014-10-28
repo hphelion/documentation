@@ -99,16 +99,20 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 		# ssh root@<seed IP address>
 
-2. Update the `so_swift_storage_scale` parameter in the `/root/overcloud-config.json` file according to your storage needs.
+		
+2. Update the ` OVERCLOUD_SOSWIFT_STORAGESCALE` parameter in the `/root/overcloud-config.json` file according to your storage needs.
  
-	For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
-
+ 	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
 
 3. Enter the following command to source the `overcloud_config.json`  for the new values.
     
     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-4. Run the installer script to update the cloud.
+4. Source the environment variables file created during initial installation. 
+
+		# source /root/env_vars
+
+5. Run the installer script to update the cloud.
 
     	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
