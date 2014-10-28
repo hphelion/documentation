@@ -6802,12 +6802,12 @@ Copyright: 2008-2009 Sun Microsystems Inc
 License: BSD (3 clause)
 
 Files: */storage/ndb/test/src/getarg.c
-Copyright: 1997-2000 - Kungliga Tekniska Högskolan
+Copyright: 1997-2000 - Kungliga Tekniska H&ouml;gskolan
 License: BSD (3 clause)
 
 Files: */storage/ndb/test/include/getarg.h
 Copyright: 2003 MySQL AB
- 1997-1999 Kungliga Tekniska Högskolan
+ 1997-1999 Kungliga Tekniska H&ouml;gskolan
 License: BSD (3 clause) GPL-2
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -6822,7 +6822,7 @@ License: BSD (3 clause) GPL-2
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
  .
- Copyright (c) 1997, 1999 Kungliga Tekniska Högskolan
+ Copyright (c) 1997, 1999 Kungliga Tekniska H&ouml;gskolan
  (Royal Institute of Technology, Stockholm, Sweden). 
  All rights reserved. 
  .
@@ -7969,12 +7969,12 @@ Copyright: 2008-2009 Sun Microsystems Inc
 License: BSD (3 clause)
 
 Files: */storage/ndb/test/src/getarg.c
-Copyright: 1997-2000 - Kungliga Tekniska Högskolan
+Copyright: 1997-2000 - Kungliga Tekniska H&ouml;gskolan
 License: BSD (3 clause)
 
 Files: */storage/ndb/test/include/getarg.h
 Copyright: 2003 MySQL AB
- 1997-1999 Kungliga Tekniska Högskolan
+ 1997-1999 Kungliga Tekniska H&ouml;gskolan
 License: BSD (3 clause) GPL-2
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -7989,7 +7989,7 @@ License: BSD (3 clause) GPL-2
  along with this program; if not, write to the Free Software
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
  .
- Copyright (c) 1997, 1999 Kungliga Tekniska Högskolan
+ Copyright (c) 1997, 1999 Kungliga Tekniska H&ouml;gskolan
  (Royal Institute of Technology, Stockholm, Sweden). 
  All rights reserved. 
  .
@@ -10620,12 +10620,12 @@ Copyright: 2008-2009 Sun Microsystems Inc
 License: BSD (3 clause)
 
 Files: storage/ndb/test/src/getarg.c
-Copyright: 1997-2000 - Kungliga Tekniska Högskolan
+Copyright: 1997-2000 - Kungliga Tekniska H&ouml;gskolan
 License: BSD (3 clause)
 
 Files: storage/ndb/test/include/getarg.h
 Copyright: 2003 MySQL AB
- 1997-1999 Kungliga Tekniska Högskolan
+ 1997-1999 Kungliga Tekniska H&ouml;gskolan
 License: BSD (3 clause) GPL-2
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -10641,7 +10641,7 @@ License: BSD (3 clause) GPL-2
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
  USA.
  .
- Copyright (c) 1997, 1999 Kungliga Tekniska Högskolan
+ Copyright (c) 1997, 1999 Kungliga Tekniska H&ouml;gskolan
  (Royal Institute of Technology, Stockholm, Sweden).
  All rights reserved.
  .
