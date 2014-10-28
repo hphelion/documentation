@@ -5157,7 +5157,7 @@ It was downloaded from:
 
 Upstream Author: Thomas Habets (thomas@habets.pp.se)
 
-Copyright: Copyright Â© 2000-2008 Thomas Habets (thomas@habets.pp.se)
+Copyright: Copyright Â&copy; 2000-2008 Thomas Habets (thomas@habets.pp.se)
 
 License:
 
@@ -5180,7 +5180,7 @@ License:
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
 
-The Debian packaging is Â© 2008, Giuseppe Iuculano (giuseppe@iuculano.it) and
+The Debian packaging is Â&copy; 2008, Giuseppe Iuculano (giuseppe@iuculano.it) and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
 
