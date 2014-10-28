@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Services Windows PowerShell Tutorials"
 permalink: /cli/windows/2/tutorials/
 product: win-2-cli

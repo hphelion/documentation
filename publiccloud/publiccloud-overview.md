@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Overview"
 permalink: /publiccloud/overview/
 product: public-cloud

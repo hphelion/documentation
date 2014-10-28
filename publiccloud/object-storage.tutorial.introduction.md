@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: An Introduction To Using CDN With Object Storage
 permalink: /publiccloud/object-storage/tutorial/introduction/
 product:

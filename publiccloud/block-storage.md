@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "HP Helion Public Cloud Block Storage Overview"
 permalink: /publiccloud/block-storage/
 product: public-cloud 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: public-cloud
 title: "Release Notes for the HP Helion Public Cloud CLI Software for Windows PowerShell"
 permalink: /publiccloud/cli/windows/release-notes/
 product: win-2-cli
