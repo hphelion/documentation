@@ -30,6 +30,9 @@ HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel,
 
 <img src="media/Helion_Security1_50.png"/>
 
+<a href="javascript:window.open('/content/documentation/media/Helion_Security1_50.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
+
+
 In the diagram above, the Border Router and the Aggregation Router are customer devices that perform routing at the perimeter of the environment. The Load Balancer is a recommended customer device to provide TLS termination. The following sections provide guidance on how to configure these network devices for improved security.  Note that HP Helion OpenStack includes IPtable rules on each node to close network ports that are not needed, but applying additional rules to your network devices (as indicated in the sections that follow) will provide increased security.
 
 ## Securing the Perimeter<a name="perimeter"></a>
