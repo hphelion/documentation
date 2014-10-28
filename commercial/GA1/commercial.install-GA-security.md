@@ -50,17 +50,17 @@ The perimeter is indicated by the *Border Router* icon in [Figure 1](#fig1).
 
 When securing the perimeter, consider the following:
 
-* [VLAN configuration](#vlan)
-* [IP Addressing](#ipaddressing)
-* [VLAN Routing Interfaces](#vlanrouting)
-* [Access Controls](#accesscontrol)
-* [Server Connectivity](#serverconnect)
-* [Recommendations for exposing public endpoints](#publicend)
-* [Load Balancer configuration steps](#loadbalance)
-* [SSL Offloading on Load Balancer explained](#ssloffload)
-* [IP Mapping](#ipmapping)
+* [VLAN configuration recommendations](#vlan)
+* [IP addressing recommendations](#ipaddressing)
+* [VLAN routing interface recommendations](#vlanrouting)
+* [Access control recommendations](#accesscontrol)
+* [Server connectivity recommendations](#serverconnect)
+* [Public endpoint recommendations](#publicend)
+* [Configuring the load balancer](#loadbalance)
+* [About SSL Offloading on Load Balancer](#ssloffload)
+* [IP mapping concerns](#ipmapping)
 
-#### VLAN configuration#### {#vlan}
+#### VLAN configuration recommendations #### {#vlan}
 
 When configuring the VLAN, consider the following:
 
@@ -69,7 +69,7 @@ When configuring the VLAN, consider the following:
 * Service VLAN - Provides a path from Development Platform services (such as Database as a Service) running in the Compute VMs to the Centralized Logging Service running in the undercloud.
 * Intelligent Platform Management Interface (IPMI) VLAN - Provides a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
-#### IP Addressing #### {#ipaddressing}
+#### IP addressing recommendations #### {#ipaddressing}
 
 When configuring IP addressed, consider the following:
 
@@ -77,26 +77,26 @@ When configuring IP addressed, consider the following:
 * Management VLAN - Private IP subnet, size according to max physical servers in deployment.
 * Service VLAN - Private IP subnet, size accordingly with Management VLAN.
 
-#### VLAN Routing Interfaces#### {#vlanrouting}
+#### VLAN routing interface recommendations #### {#vlanrouting}
 
 When configuring the VLAN routing interfaces, consider the following:
 
 * All the three VLANs have their respective routing interface configured on an aggregation router(s).  The IP address on each of these VLAN interfaces will serve as gateway IP for servers in that particular VLAN.
 
-#### Access Controls #### {#accesscontrol}
+#### Access control recommendations #### {#accesscontrol}
 
 When controlling inbound and outbound traffic access, consider the following:
 
 * Outbound and Inbound access to External VLAN is controlled at both the border and aggregation router(s).
 * Outbound and Inbound access to the Management and Service VLANs is controlled at the aggregation router(s).
 
-#### Server Connectivity #### {#serverconnect}
+#### Server connectivity recommendations #### {#serverconnect}
 
 When configuring server connectivity, consider the following:
 
 As shown in the above diagram, all of the Cloud Controller servers are members of all three ISV VLANs. All servers have three IP addresses configured on their respective VLANs.
 
-#### Recommendations for exposing public endpoints #### {#publicend}
+#### Public endpoint recommendations #### {#publicend}
 
 We recommend a load balancer be placed in front of the OpenStack APIs that can fill these functions:
 
@@ -104,7 +104,7 @@ A. Terminate the SSL connection.
 <br>B. Redirect http > https.
 <br>C. Map standard https port (tcp/443) to native OpenStack ports.
 
-#### Load Balancer configuration steps #### {#loadbalance}
+#### Configuring the load balancer #### {#loadbalance}
 
 Use the following steps when configuring the load balancer:
 
@@ -114,7 +114,7 @@ Use the following steps when configuring the load balancer:
 4. Create a DNS *A* record for the FQDN in the DNS server.
 5. Update required access control lists or firewall rules to allow traffic to the Public VIP IP.
 
-#### SSL Offloading on Load Balancer explained #### {#ssloffload}
+#### About SSL offloading on the load balancer #### {#ssloffload}
 
 SSL offload is designed to function in a similar manner to [Figure 2](#fig2).
 
@@ -123,9 +123,9 @@ SSL offload is designed to function in a similar manner to [Figure 2](#fig2).
 
 All traffic encryption/decryption between the client and server is handled by the Load Balancer. The Load Balancer decrypts all the SSL traffic from client. Once the data has been decrypted it is sent to the backend server in plain text HTTP. Similarly, plain HTTP traffic from the backend server is encrypted back to HTTPS by the Load Balancer before sending it to client.
 
-#### IP Mapping #### {#ipmapping}
+#### IP mapping recommendations #### {#ipmapping}
 
-A typical deployment would have public to mgmt. IP mapping as follows:
+A typical deployment would have `public to mgmt` IP mapping as follows:
 
 * Overcloud Horizon Dashboard access
 * External url - `https://horizon.fqdn.com/`
@@ -248,7 +248,10 @@ The customer deploying HP Helion OpenStack is responsible for securing the block
 
 HP Helion OpenStack supports StoreVirtual or 3Par StoreServ storage arrays which are described separately.
 
-### StoreVirtual VSA {#storevirt}
+* [Securing StoreVirtual VSA network connections](#storevirt)
+* [Securing 3Par StoreServ network connections](#storeserv)
+
+### Securing StoreVirtual VSA network connections {#storevirt}
 
 Helion supports both StoreVirtual VSA (Virtual Storage Appliance) and P4000 hardware arrays. Three types of traffic flows into a StoreVirtual node:
 
@@ -258,7 +261,7 @@ Helion supports both StoreVirtual VSA (Virtual Storage Appliance) and P4000 hard
 
 VSA supports only one virtual network interface. As a result, the above three types of traffic must flow on the same network. For Helion, this is the management VLAN. P4000 hardware arrays support multiple network interfaces. For P4000, iSCSI and management traffic must flow through the management VLAN. However, inter-cluster traffic can be configured for a separate VLAN to provide an additional level of network data isolation. 
 
-For StoreVirtual network design best practices, see <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us">StoreVirtual 4000 Storage Network design considerations and best practices</a>. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link -->
+For StoreVirtual network design best practices, see <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us">StoreVirtual 4000 Storage Network design considerations and best practices</a> in PDF. <!-- note that this hyperlink is deliberately in html due to the nested parentheses which screws up the native MDP formatting and thus breaks the link -->
 
 The following diagram depicts a StoreVirtual network deployed as a flat network, as shown in [Figure 5](#fig5):
 
@@ -300,12 +303,11 @@ The following table describes the data flow between Helion nodes and StoreVirtua
 
 Note that there are additional traffic flows necessary for StoreVirtual operation in addition to the interaction with Helion nodes described above. This includes CMC management console access, StoreVirtual inter-cluster communication and access to network services such as NTP. 
 
-StoreVirtual port usage is described in [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf).
+StoreVirtual port usage is described in [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf) in PDF.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-
-### 3Par StoreServ {#storeserv}
+### Securing 3Par StoreServ network connections {#storeserv}
 
 HP Helion Openstack supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
 
@@ -357,7 +359,7 @@ When deploying StoreServ with Fiberchannel, interfaces 1 and 2 run over Fibercha
 
 Note that there are additional traffic flows necessary for StoreServ operation in addition to the interaction with the Helion nodes described in this section. This includes SSMC console access and Service Processor communication. 
 
-StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Storage Physical Planning Manual](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf).
+StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Storage Physical Planning Manual](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf) in PDF.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -366,14 +368,14 @@ StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Sto
 
 Use the following resources when securing the network:
 
-<br>1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage - Network design considerations and best practices</a> <!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
-<br>2. [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf)
-<br>3. [StoreVirtual information](http://hp.com/go/storevirtual)
-<br>4. [StoreServ information](http://hp.com/go/storeserv)
-<br>5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
-<br>6. [HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf)
-<br>7. [RFC3723 - Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
-<br>8. [RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
+1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage - Network design considerations and best practices</a> (PDF)<!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
+2. [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf) (PDF)
+3. [StoreVirtual information](http://hp.com/go/storevirtual)
+4. [StoreServ information](http://hp.com/go/storeserv)
+5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
+6. [HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf) (PDF)
+7. [RFC3723 - Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
+8. [RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
