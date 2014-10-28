@@ -405,7 +405,7 @@ Display a list of the available bootable images:
 ##image-meta## {#image-meta}
 Set or Delete metadata on an image.
 ###Syntax
-`nova image-meta  <image> [<action> <key=value> [<key=value> …]]`
+`nova image-meta  <image> [<action> <key=value> [<key=value> ...]]`
 
 **image**
 :  Name or ID of image.
@@ -577,7 +577,7 @@ List the active servers:
 ##meta## {#meta}
 Set or Delete metadata on a server.
 ###Syntax
-`nova meta  <server> [<action> <key=value> [<key=value> …]]`
+`nova meta  <server> [<action> <key=value> [<key=value> ...]]`
 
 **server**
 :  Name or ID of server.

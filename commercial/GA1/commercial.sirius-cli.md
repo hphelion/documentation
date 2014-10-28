@@ -91,14 +91,14 @@ You can display the details of a particular cluster.
 
 You can register the StoreVirtual Cluster to Sirius database. This command requires all the arguments, else the user is prompted for the same.
 
-	# sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+	# sirius register-storevirtual-cluster -name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 
 ### Update StoreVirtual cluster ###
 
 You can update the StoreVirtual cluster in Sirius database. Only the CLUSTER_ID is  a mandatory argument.
 
-	# sirius update-storevirtual-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
+	# sirius update-storevirtual-cluster <CLUSTER_ID>  -name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
 
 ### Delete StoreVirtual cluster ###
 

@@ -614,7 +614,7 @@ Perform the following steps:
 
 * Check whether the network is already undefined
 
-* Check whether the network name in `<PYVINS_DIRS>/etc/vsa/vsa_config.json` is the same as in the output of `virsh net-list –all` command
+* Check whether the network name in `<PYVINS_DIRS>/etc/vsa/vsa_config.json` is the same as in the output of `virsh net-list -all` command
 
 <br><hr>
 

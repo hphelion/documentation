@@ -1325,7 +1325,7 @@ EXAMPLE 2
 This examples creates another sub-folder but this time the target location is two levels deep from the current location (root).
 
 ##Migrate-Drive## {#Migrate-Drive}
-Migrates existing stores of data from external sources like S3, Dropbox and Skydrive to a target Container within HP Object Storage.
+Migrates existing stores of data from external sources like S3, Dropbox and Skydrive to a target Container within HP Object Storage.
 
 ### Syntax###
  migrate-drive -p "*bucket*" -sk "*secret-key*" -ak "*access-key*"
@@ -1346,9 +1346,9 @@ Migrates existing stores of data from external sources like S3, Dropbo
 ###Examples###
 EXAMPLE 1
 
-    migrate-drive -p "S3" -sk "aa78676dhhh100" -ak "jhjhgu64332" -b "testb1", "testb2"
+    migrate-drive -p "S3" -sk "aa78676dhhh100" -ak "jhjhgu64332" -b "testb1", "testb2"
 
-Copies the `testb1` and `testb2` S3 buckets to the HP object storage containers of the same name, using a secret-key value of "`aa78676dhhh100`" and an access-key value of "`jhjhgu64332`".
+Copies the `testb1` and `testb2` S3 buckets to the HP object storage containers of the same name, using a secret-key value of "`aa78676dhhh100`" and an access-key value of "`jhjhgu64332`".
 
 ##New-Container## {#New-Container}
 Creates a new storage container.

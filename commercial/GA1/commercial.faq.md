@@ -13,17 +13,18 @@ product: commercial.ga
 
 #HP Helion OpenStack&#174; FAQ#
 
-Welcome! You've got questions? We have the answers.  
+Welcome to FAQ! 
 
-##Understanding HP Helion OpenStack
+This page answers most commonly asked  queries that you might have while working with HP Helion OpenStack.
+
+<!---##Understanding HP Helion OpenStack-->
 
 * [What is HP Helion OpenStack?](#whatHelion)
 * [What does HP Helion OpenStack enable me to do?](#distroenable)
 * [What is TripleO?](#TripleO)
 * [What is a seed?](#whatisseed)  
 * [What is the undercloud?](#whatisundercloud) 
-* [What is the overcloud?](#whatisovercloud) 
-* [What is available in the version announced on June 30th?](#preview)
+* [What is the overcloud?](#whatisovercloud) <!---* [What is available in this release?](#preview)-->
 * [Is the release localized for non-English speaking markets?](#localized) 
 * [Does the HP Helion OpenStack work with hybrid or public cloud projects?](#hybridorpubliccloud)
 * [How many nodes and virtual machines does it support?](#nodes)  
@@ -88,11 +89,11 @@ The overcloud is the functional cloud available to run guest virtual machines an
 
 Setting up the overcloud completes the overall Helion OpenStack installation process. 
 
-####What is available in the version announced on June 30th?<a name="preview"></a>
+<!---####What is available in this version?<a name="preview"></a>
 
 On June 30th, we announced a preview of HP Helion OpenStack that enables you to deploy an OpenStack TripleO-based cloud experience and evaluate the Icehouse release of OpenStack.  
 
-It is available with support for baremetal deployments (up to 30 Compute nodes). We plan to release new versions roughly every six weeks.
+It is available with support for baremetal deployments (up to 30 Compute nodes). We plan to release new versions roughly every six weeks.-->
 
 <!--
 ####When can I expect support for baremetal deployment? #### {#baremetal}

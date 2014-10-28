@@ -6,7 +6,7 @@ permalink: /als/v1/user/deploy/languages/dotnet/getstarted/
 
 #Getting Started With The .NET SDK
 
-The .NET SDK library is built on top of HP Helion OpenStack® APIs, which removes many of the
+The .NET SDK library is built on top of HP Helion OpenStack&reg; APIs, which removes many of the
 complexities of working with the APIs so that developers can focus on writing applications.
 
 The library is designed to be pulled into a .NET application that interacts with HP Helion OpenStack&reg; services through the use of .NET objects, methods, and functions.

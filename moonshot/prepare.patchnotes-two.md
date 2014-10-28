@@ -120,7 +120,7 @@ Provisioning may fail in the following scenarios:
 <!---##Bash vulnerability {#bash-vulnerability}
 
 
-Bash and the Operating System keep track of the set of environment variables.The bash vulnerability is related to how Bash processes environmental variables passed by the operating system or by a program calling a Bash-based script. By crafting an environment variable with a specific structure, the bash security can be broken.
+Bash and the Operating System keep track of the set of environment variables.The bash vulnerability is related to how Bash processes environmental variables passed by the operating system or by a program calling a Bash-based script. By crafting an environment variable with a specific structure, the bash security can be broken.
 
 
 To protect system from bash vulnerability, perform the following steps:

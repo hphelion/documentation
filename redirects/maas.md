@@ -1,9 +1,10 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /maas/
+redirect: /publiccloud/maas/
 layout: redirect
+
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--

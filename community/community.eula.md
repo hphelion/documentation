@@ -69,7 +69,7 @@ HP End User License Agreement - HP Helion OpenStack Community
 
 
 
-© 2014 Hewlett-Packard Development Company, L.P.		2
+&copy; 2014 Hewlett-Packard Development Company, L.P.		2
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

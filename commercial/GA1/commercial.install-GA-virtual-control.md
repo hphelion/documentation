@@ -22,20 +22,33 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174;: Installing Overcloud Controllers on Virtual Machines
 
-In our 1.0.1 patch release, we've added a new deployment option that will allow a user to deploy various nodes of the Control Plane as Virtual Machines instead of Bare Metal Machines, while still allowing user to add Compute Nodes or Storage Nodes as Bare Metal. This is referred to as “Hybrid Control Plane deployment” and is being released in the 1.0.1 as an experimental feature only suitable for Proof Of Concept situations.
+In our 1.0.1 patch release, we've added a new deployment option that will allow a user to deploy various nodes of the Control Plane as Virtual Machines instead of Baremetal Machines, while still allowing user to add Compute Nodes or Storage Nodes as Baremetal. This is referred to as "Hybrid Control Plane deployment" and is being released in the 1.0.1 as an experimental feature only suitable for Proof Of Concept situations.
 
 
-Installation
+##Installation
 
-1. Deploy the SEED VM with HP_VM_MODE=y
+1. Deploy the SEED VM with HP&#95;VM&#95;MODE=y
 
 		# HP_VM_MODE=y bash -x /myStore/myWork/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
+
+2. In the second KVM host, pre-create the required number of VMs and capture the information of them required to register as resources. (not clear)
+3. The captured information should be appended to `baremetal.csv` file in the seed VM
+4. Login to the SEED VM 
+		
+		# ssh root@<seed IP address>
+ 
+5. Deploy the Undercloud only
+
+		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-overcloud --skip-demo
+
+
+<!---
 
 2. Login to the SEED VM and deploy the undercloud only
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-overcloud --skip-demo
-
-3. On successful installation of the underlcoud stack & its configuration, login to the undercloud and add the physical nodes for nova-compute (OC)
+--->
+3. On successful installation of the underlcoud stack and its configuration, login to the undercloud and add the physical nodes for nova-compute (OC)
 
 		root@hLinux:~# ssh -l heat-admin 192.0.2.2
 
@@ -47,7 +60,7 @@ Installation
 		undercloud-controller-xyz# nova flavor-key <flavor_name> set "cpu_arch"=amd64 "baremetal:deploy_kernel_id"=<kernel_id> "barmetal:deploy_ramdisk_id"=<ramdisk_id>
 		undercloud-controller-xyz#
 
-4. Edit nova-compute-instance.yaml and modify the Default flavor
+4. Edit `nova-compute-instance.yaml` and modify the default flavor
 
 		root@hLinux:~# vi tripleo/tripleo-heat-templates/nova-compute-instance.yaml
 		>>>Snippet
@@ -57,7 +70,7 @@ Installation
 			Default: <flavor_name>
 		<<<<<
 
-5. Edit overcloud-source.yaml and modify the compute flavor:
+5. Edit `overcloud-source.yaml` and modify the compute flavor:
 
 		root@hLinux:~# vi tripleo/tripleo-heat-templates/overcloud-source.yaml
 		>>>>> Snippet
@@ -80,7 +93,7 @@ Installation
 		"OvercloudComputeFlavor": "'"${flavor_name}"'"
 		}
 -->
-
+<!--- We are referring to option 4 from the wiki page
 **Important:** If in excess of physical servers, there is a possibility that another component along with Nova-compute will also be installed on physical servers. This is because of best-fit along with least used resource.
 
 ## Alternative Solution
@@ -131,9 +144,9 @@ ComputeCapabilitiesFilter enabled us to overcome the above limitation. This is o
 
 9. Complete the installation
 
-	root@hLinux:~# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-seed --skip-undercloud
+		root@hLinux:~# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-seed --skip-undercloud
 
-
+---->
 
 
 

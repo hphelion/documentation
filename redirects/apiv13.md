@@ -1,9 +1,10 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/v13/
+redirect: /publiccloud/api/
 layout: redirect
+
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--

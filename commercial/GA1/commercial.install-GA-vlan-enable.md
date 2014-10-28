@@ -22,15 +22,15 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174;: Enabling the VLAN Provider Network
 
-OpenStack is like a complex LEGO™ kit. Using an installer to speed up construction, it can be deployed in multiple ways to fulfill certain requirements. 
+OpenStack is like a complex LEGO&trade; kit. Using an installer to speed up construction, it can be deployed in multiple ways to fulfill certain requirements. 
 
 One very important requirement is tenant network isolation.  Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants.  
 
 These two newer networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation independent of any hardware (Switch/Router) configuration. 
 
-Accordingly, HP’s Helion OpenStack (Helion Cloud) defaults to VxLan to support tenant network isolation. However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. 
+Accordingly, HP's Helion OpenStack (Helion Cloud) defaults to VxLan to support tenant network isolation. However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. 
 
-This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network. Such deployments enable a tenant’s virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. 
+This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network. Such deployments enable a tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. 
 
 Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).
 	
@@ -48,18 +48,18 @@ Figure 2. Network Layout.
 
 The solution is to set up Overcloud Neutron Network to provide tenant network isolation by means of VLAN, instead of the default VxLAN. Setting up the Overcloud Neutron in VLAN requires two things:
 1.	Passing the right configuration parameters to the installer and templates for setting up neutron configuration files: 
-/etc/neutron/plugins/ml2/ml2_conf.ini  sets up tenant network type, provides VLAN ranges and maps to the physical bridge
-/etc/neutron/dhcp-agent.ini   enables Metadata Server access through DHCP Namespace
+/etc/neutron/plugins/ml2/ml2_conf.ini - sets up tenant network type, provides VLAN ranges and maps to the physical bridge
+/etc/neutron/dhcp-agent.ini - enables Metadata Server access through DHCP Namespace
 2.	Passing the right export variables pertinent to VLAN Provider Network 
 
 Detailed installation steps:
 
 Assumption:
 
-•	Port 2 of all the baremetal nodes are wired and used as bm_network – referred here as em2 or eth1
-•	1 Untagged network for Mangemenet – subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
-•	90 tagged networks used for tenant VLANs as provider network
-•	For test purpose VLAN 300 (192.168.1
+* Port 2 of all the baremetal nodes are wired and used as bm_network - referred here as em2 or eth1
+* 1 Untagged network for Mangemenet - subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
+* 90 tagged networks used for tenant VLANs as provider network
+* For test purpose VLAN 300 (192.168.1
 
 Instructions:
 

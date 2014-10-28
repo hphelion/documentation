@@ -7,11 +7,11 @@ permalink: /als/v1/user/deploy/languages/php/
 #Developing In PHP
 Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools
 to enable successful development are available in PHP.
 
 For more information on working with object storage, 
-see the [HP Helion OpenStack® Object Storage Service Overview](/helion/openstack/services/object/overview/).
+see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/openstack/services/object/overview/).
 
 For more information on authentication, see [Identity Service, Authentication, and the Service Catalog](/als/v1/user/deploy/languages/php/authentication/).
 
