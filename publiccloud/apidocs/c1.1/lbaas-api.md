@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: public-cloud
 permalink: /publiccloud/api/lbaas/
 title: HP Helion Public Cloud LBaaS API
 description: "HP Helion Public Cloud Load Balancer Service API Specification"
