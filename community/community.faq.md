@@ -889,7 +889,7 @@ Note – don't refer to &ldquo;ZIP&rdquo;  files. I doubt we'll use the zip form
 
 <b><font color="red">Need more info Raj / Gavin</font></b> 
 
-Please visit http:/community.hpcloud.com or  …
+Please visit http:/community.hpcloud.com or  ...
 
 ####Where can I go to find more information? #### {#moreinformation}
 

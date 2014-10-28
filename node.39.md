@@ -78,7 +78,7 @@ Alternatively, the swift program itself supports the V2-style API.  Using the �
         $ swift –V 2 \ 
                 -A https://region-a.geo-1.identity.hpcloudsvc.com:35357/v2.0/tokens \
                 -U sally.smith@hp.com:sally.smith@hp.com \
-                -K EH…kJ list
+                -K EH...kJ list
 
 ## OpenStack nova-python-client
 In order to use the nova-python-client with the Identity Service (which is based on OpenStack Keystone), you must upgrade to version 2.6.8 or later as earlier versions are not Keystone-enabled.  In the client setup, the NOVA_API_KEY must be now be replaced with NOVA_PASSWORD. For instance, instantiating a Client object would look something like:
@@ -111,7 +111,7 @@ Here is an example of using the Nova command:
         % export NOVA_VERSION=1.1
         % export NOVA_USERNAME=sally.smith@hp.com
         % export NOVA_PASSWORD= mypassword
-        % nova …
+        % nova ...
 
 ## Euca2ools and EC2™ compatibility
 The Identity Service is compatible with euca2ools and EC2 compatibly for HP Helion Public Cloud Compute by setting environment variables in a way similar to the Object Storage backward compatibility described above.  To use euca200ls, you set your environment variables as follows:

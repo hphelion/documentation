@@ -916,7 +916,7 @@ To configure the log level, change the INFO to one of allowed values of DEBUG, E
  &nbsp; &nbsp;'loggers': {
  &nbsp; &nbsp; &nbsp; &nbsp;'root': {'level': 'INFO', 'handlers': ['console']},
  &nbsp; &nbsp; &nbsp; &nbsp;'codn': {'level': 'INFO', 'handlers': ['file']},
- &nbsp; &nbsp; ….</pre></td>
+ &nbsp; &nbsp; ....</pre></td>
 <td>
 /var/log/codn/codn.log (Controller node)</td></tr>
 
@@ -929,7 +929,7 @@ Workload service (Administration Dashboard &gt; Provisioning &gt; Workload</td>
 To configure the log level, change the INFO to one of allowed values defined in LOG_LEVELS in the same file:
 
 <pre>LOGGING = {
-…. &nbsp; 
+.... &nbsp; 
  &nbsp; &nbsp; &nbsp; &nbsp;'cloudos_file': {
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'level': 'INFO',
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'class': 'logging.handlers.RotatingFileHandler',
@@ -999,7 +999,7 @@ To configure the log level, change the INFO to one of allowed values of DEBUG, E
 <pre>
 [logger_root]
 level = INFO
-…</pre>
+...</pre>
 <b>Note: </b>Update the same log level for the other loggers in this file. (Loggers starts with <code>[logger_xxx]</code>.)
 In /etc/nova/nova.conf, under DEFAULT section, add following line:
 <pre>debug=True</pre>
