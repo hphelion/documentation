@@ -343,7 +343,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 
 		sudo su
 		cd /hp-ovsvapp/src/installer/
-		python  invoke_vapp_installer.py
+		python invoke_vapp_installer.py
 
 	The installation log file will be located at `/hp-ovsvapp/log/ovs_vapp.log`.
 
@@ -412,16 +412,35 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 ## Cleaning up or deleting the OVSvApp {#clean}
 
+
+
 To clean up or delete the OVSvAPP setup:
 
 1. On the server where you extracted the `ovsvapp.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
 
-2. Modify the `ovs_vapp.ini` file by entering only the connection details.
+2. Modify the `ovs_vapp.ini` file:
 
-Run the following commands and follow the instructions:
+	a. Enter information for the [vmware] section.
+<br>	b. Leave the 
+ 
+ 
+by entering only the connection details.
+
+3. Run the following commands and follow the instructions:
 
 		cd /hp-ovsvapp/src/cleanup/
 		python cleanup.py
+
+	The installer presents 
+
+4. Select an option:
+
+		1. Delete all OVSvApps from a Datacenter
+		2. Delete all OVSvApps with Trunk and Uplink VDS from a Datacenter
+		3. Delete all OVSvApps from given Clusters...
+		4. Delete a single or a comma separated list of OVSvApp...
+
+
 
 
 ## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
