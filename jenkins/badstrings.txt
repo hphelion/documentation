@@ -115,7 +115,7 @@ OpenStack®
 <<<<<<< HEAD
 (##
 {{#
-^[^ #\*\["title"].*[a-z] Over[Cc]loud
-^[^ #\*\["title"].*[a-z] Under[Cc]loud
+^[^ #\*\["title"].*[a-z] Over[Cc]loud.*[^\]]
+^[^ #\*\["title"].*[a-z] Under[Cc]loud.*[^\]]
 â€™
 ÎáÎáÎí
