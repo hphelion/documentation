@@ -68,16 +68,16 @@ To begin the installation:
     	# cd dev-platform-installer
 
 ###Preparing to Run the Installer {#prepare}
-1.	If your network uses a proxy, it may be necessary to set the proxy shell variable:
+1.	If your network uses a proxy, it may be necessary to set the proxy shell variable:
 
-		# export https_proxy=<ip address or url of http proxy> 
-2.	Run this command to prepare the installer and ensure prerequisites are met. If necessary, you can specify the Username, Tenant, and Region.
+		# export https_proxy=<ip address or url of http proxy> 
+2.	Run this command to prepare the installer and ensure prerequisites are met. If necessary, you can specify the Username, Tenant, and Region.
 By default the options are set to:
 	- **Username** = admin
 	- **Tenant** **name** = admin
 	- **Region** = regionOne 
 
-    		#./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region name}
+    		#./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region name}
 
 1.	If you need additional information about installation you can use the Help feature:
 	
