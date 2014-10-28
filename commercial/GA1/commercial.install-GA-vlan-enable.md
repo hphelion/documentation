@@ -48,8 +48,8 @@ Figure 2. Network Layout.
 
 The solution is to set up Overcloud Neutron Network to provide tenant network isolation by means of VLAN, instead of the default VxLAN. Setting up the Overcloud Neutron in VLAN requires two things:
 1.	Passing the right configuration parameters to the installer and templates for setting up neutron configuration files: 
-/etc/neutron/plugins/ml2/ml2_conf.ini  sets up tenant network type, provides VLAN ranges and maps to the physical bridge
-/etc/neutron/dhcp-agent.ini   enables Metadata Server access through DHCP Namespace
+/etc/neutron/plugins/ml2/ml2_conf.ini - sets up tenant network type, provides VLAN ranges and maps to the physical bridge
+/etc/neutron/dhcp-agent.ini - enables Metadata Server access through DHCP Namespace
 2.	Passing the right export variables pertinent to VLAN Provider Network 
 
 Detailed installation steps:
