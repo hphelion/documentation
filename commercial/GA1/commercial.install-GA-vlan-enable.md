@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174;: Enabling the VLAN Provider Network
 
-OpenStack is like a complex LEGO™ kit. Using an installer to speed up construction, it can be deployed in multiple ways to fulfill certain requirements. 
+OpenStack is like a complex LEGO&trade; kit. Using an installer to speed up construction, it can be deployed in multiple ways to fulfill certain requirements. 
 
 One very important requirement is tenant network isolation.  Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants.  
 
