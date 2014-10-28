@@ -5157,7 +5157,7 @@ It was downloaded from:
 
 Upstream Author: Thomas Habets (thomas@habets.pp.se)
 
-Copyright: Copyright Â&copy; 2000-2008 Thomas Habets (thomas@habets.pp.se)
+Copyright: Copyright &copy; 2000-2008 Thomas Habets (thomas@habets.pp.se)
 
 License:
 
