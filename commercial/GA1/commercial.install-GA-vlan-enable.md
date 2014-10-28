@@ -28,7 +28,7 @@ One very important requirement is tenant network isolation.  Installers depend o
 
 These two newer networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation independent of any hardware (Switch/Router) configuration. 
 
-Accordingly, HP’s Helion OpenStack (Helion Cloud) defaults to VxLan to support tenant network isolation. However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. 
+Accordingly, HP's Helion OpenStack (Helion Cloud) defaults to VxLan to support tenant network isolation. However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. 
 
 This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network. Such deployments enable a tenant’s virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. 
 
