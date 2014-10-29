@@ -272,28 +272,28 @@ Availability Zones are further clustered into regions and geographies. Compute i
 
 The listing below shows a fragment of the Service Catalog returned by the Identity Service which contains the endpoints for Compute. Note that a set of endpoints is returned for each region.
 
-    {
-        "name": "Compute",
-        "type": "compute",
-        "endpoints": [
-            {
-                "tenantId": "12345678910111",
-                "publicURL": "https:\\region-a.geo-1.compute.hpcloudsvc.com\v2\12345678910111",
-                "region": "region-a.geo-1",
-                "versionId": "2",
-                "versionInfo": "https:\\region-a.geo-1.compute.hpcloudsvc.com\v2\",
-                "versionList": "https:\\region-a.geo-1.compute.hpcloudsvc.com"
-            }
-            {
-                "tenantId": "12345678910111",
-                "publicURL": "https:\\region-b.geo-1.compute.hpcloudsvc.com\v2\12345678910111",
-                "region": "region-b.geo-1",
-                "versionId": "2",
-                "versionInfo": "https:\\region-b.geo-1.compute.hpcloudsvc.com\v2\",
-                "versionList": "https:\\region-b.geo-1.compute.hpcloudsvc.com"
-            }
-        ]
-    }
+		{
+			"name": "Compute",
+			"type": "compute",
+			"endpoints": [
+				{
+					"tenantId": "12345678910111",
+					"publicURL": "https:\\region-a.geo-1.compute.hpcloudsvc.com\v2\12345678910111",
+					"region": "region-a.geo-1",
+					"versionId": "2",
+					"versionInfo": "https:\\region-a.geo-1.compute.hpcloudsvc.com\v2\",
+					"versionList": "https:\\region-a.geo-1.compute.hpcloudsvc.com"
+				}
+				{
+					"tenantId": "12345678910111",
+					"publicURL": "https:\\region-b.geo-1.compute.hpcloudsvc.com\v2\12345678910111",
+					"region": "region-b.geo-1",
+					"versionId": "2",
+					"versionInfo": "https:\\region-b.geo-1.compute.hpcloudsvc.com\v2\",
+					"versionList": "https:\\region-b.geo-1.compute.hpcloudsvc.com"
+				}
+			]
+		}
 
 ### 3.4 Request/Response Types ### {#Section3_4}
 
