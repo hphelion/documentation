@@ -50,9 +50,9 @@ The Networking service is based upon OpenStack Neutron v2.0 API.
 
 | Document Version| Date        | Description    |
 | :-------------- | :--------   | :------------  |
-|	1.0			        | 5/27/2013	  | Initial release  |
-|	1.1			        | 1/27/2014	  | Fixed internal link  |
-|	1.2			        | 4/3/2014	  | Changed instances of security_group to security-group. Updated XML and JSON code examples under  4.5.3.3  Create Port|
+| 1.0             | 5/27/2013   | Initial release  |
+| 1.1             | 1/27/2014   | Fixed internal link  |
+| 1.2             | 4/3/2014    | Changed instances of security_group to security-group. Updated XML and JSON code examples under  4.5.3.3  Create Port|
 | 1.3             | 4/8/2014    | Fixed JSON, XML, and Curl code examples under each section.  Updated Quota Limits fields.  |
 | 1.4             | 4/11/2014   | Added API call for /quotas  |
 | 1.5 | May 2014 | HP Helion updates |
@@ -76,29 +76,29 @@ The high-level task flow for Networking is as follows:
   E.g., the tenant creates the *newrouter* router.
 
 2. The tenant creates a network.   
-	E.g., the tenant creates the *net1* network.
+  E.g., the tenant creates the *net1* network.
 
 3. The tenant associates a subnet with that network.   
-	E.g., the tenant associates the 10.0.0.0/24 subnet with the *net1* network.
+  E.g., the tenant associates the 10.0.0.0/24 subnet with the *net1* network.
 
 4. The tenant adds an interface between the router and the subnet.
 
 5. The tenant boots a virtual machine (VM) and specifies a single NIC that connects to the network.
 
-	Example A: Compute contacts Networking and creates the *port1* port on the *net1* network   
-		
+  Example A: Compute contacts Networking and creates the *port1* port on the *net1* network   
+    
     $ nova boot --image image_name --nic net-id="id_of_net1" server_name
-	
-	Example B:  Tenant creates a port prior to booting the VM   
-		
+  
+  Example B:  Tenant creates a port prior to booting the VM   
+    
     $ nova boot --image image_name --nic port-id="id_of_port1" server_name
 
 6. Networking assigns an IP address to the *port1* port.   
-	**Note:** Networking chooses the IP address by default.
+  **Note:** Networking chooses the IP address by default.
 
 7. The tenant deletes the VM.
-	* Compute contacts Networking and deletes the *port1* port.
-	* The allocated IP address is returned to the pool of available IP addresses.
+  * Compute contacts Networking and deletes the *port1* port.
+  * The allocated IP address is returned to the pool of available IP addresses.
 
 ### 2.2 Conceptual/Logical Architecture View
 #### 2.2.1 Core APIs
@@ -167,15 +167,15 @@ When a port is created in Networking it is associated with a security group. If 
 ### 2.4 Service Quotas
 Quotas are established for the following resources on a per-project basis. Quotas may be increased by contacting Public Cloud Support.
 
-| Quota				   | Value   | Description    |                          
+| Quota          | Value   | Description    |                          
 | :------------------- | :------ | :------------------------------------------ |
-|	Networks | 5 | Number of networks available. |
-|	Subnets | 5	| Number of subnets available. |
-|	Ports	| 70	| Number of ports available. |
-|	Floating IPs | 45 | Number of floating IP addresses available. |
-|	Routers | 1 | Number of routers. |
-|	Security Groups | 10 | Number of Security Groups allowed. |
-|	Security Group Rules | 50 | Number of Security Group Rules allowed across all Security Groups. |
+| Networks | 5 | Number of networks available. |
+| Subnets | 5 | Number of subnets available. |
+| Ports | 70  | Number of ports available. |
+| Floating IPs | 45 | Number of floating IP addresses available. |
+| Routers | 1 | Number of routers. |
+| Security Groups | 10 | Number of Security Groups allowed. |
+| Security Group Rules | 50 | Number of Security Group Rules allowed across all Security Groups. |
 
 ### 2.5 Rate Limits
 In order to ensure fair sharing of cloud resources, limits are placed on the rate at which an individual tenant can make requests to the Networking API servers. The rate limits are specified in terms of HTTP verbs (GET, PUT, POST, DELETE).
@@ -305,7 +305,7 @@ Example:
 **Filtering by Value**   
 Any other fields except the *fields* attribute may be used to filter resources. 
 Example:   
-	
+  
     https://region-a.geo-1.network.hpcloudsvc.com/v2.0/networks?name=test1&amp;name=test2. 
 
 ### 4.2 Common Request Headers
@@ -454,11 +454,11 @@ These operations are used to manage Network resources.
 
 | Verb    | URI        |      Description |
 | :------------ | :---------- | :-------- |
-|	GET    | /v2.0/networks             |   Lists a summary of all networks |
-|	GET    | /v2.0/networks/{id} |  Lists detailed information for the specified network. |
-|	POST   | /v2.0/networks              |  Creates a new network.|
-|	PUT    | /v2.0/networks/{id} |  Updates the specified network. |
-|	DELETE | /v2.0/networks/{id} |  Destroys the specified network. |
+| GET    | /v2.0/networks             |   Lists a summary of all networks |
+| GET    | /v2.0/networks/{id} |  Lists detailed information for the specified network. |
+| POST   | /v2.0/networks              |  Creates a new network.|
+| PUT    | /v2.0/networks/{id} |  Updates the specified network. |
+| DELETE | /v2.0/networks/{id} |  Destroys the specified network. |
 
 The following table describes the attributes available for network objects:   
 
@@ -927,27 +927,27 @@ Manage subnet resources.
 
 | Verb    | URI        |      Description |
 | :------------ | :---------- | :-------- |
-|	GET    |  /v2.0/subnets        |       Lists all subnets that are accessible to the tenant who submits the request.|
-|	GET     | /v2.0/subnets/{id} |  Lists detailed information for the specified subnet.|
-|	POST    | /v2.0/subnets              | Creates a subnet on the specified network.|
-|	PUT     | /v2.0/subnets/{id}  | Updates the specified subnet.|
-|	DELETE  | /v2.0/subnets/{id}  | Removes the specified subnet.|
+| GET    |  /v2.0/subnets        |       Lists all subnets that are accessible to the tenant who submits the request.|
+| GET     | /v2.0/subnets/{id} |  Lists detailed information for the specified subnet.|
+| POST    | /v2.0/subnets              | Creates a subnet on the specified network.|
+| PUT     | /v2.0/subnets/{id}  | Updates the specified subnet.|
+| DELETE  | /v2.0/subnets/{id}  | Removes the specified subnet.|
 
 The following table describes the attributes for subnet objects: 
  
-| Attribute	| Type	| Required	| CRUD 	| Default Value	| Validation | Description	| Notes |
+| Attribute | Type  | Required  | CRUD  | Default Value | Validation | Description  | Notes |
 | :---------- | :---------- | :------------ | :-------------- | :----------- | :----------------------- | :---------------- | :---------------- |
-| id	| uuid-str	| N/A	| R	| generated	| N/A	| UUID of the subnet |
-| network_id | uuid-str | Yes | CR	| N/A	| Network this subnet is associated with. | |	
-| name	| string	| No	| CRU	| None	| N/A	| Human-readable name for the subnet. Might not be unique. |
-| ip_version	| int	| No	| CR	| 4	| 4	|IP version | IPv6 is not supported
-| CIDR	| string	| Yes	| CR	| N/A	| valid CIDR in the form *network_address/prefix*	| CIDR representing the IP range for this subnet.  Based on the IP version |
-|gateway_ip	|string	| No	| CRUD	| first address in CIDR	| Valid IP address or null	| Default gateway used by devices in this subnet. |
-| dns_nameservers	| list(str)	| No	| CRU	| Empty list	| N/A |	DNS name servers used by hosts in this subnet. |
-| allocation_pools |list(dict) |No	| CR	|Every address in CIDR, excluding gateway_ip if configured |start/end of range must be valid IP |Sub-ranges of CIDR available for dynamic allocation to ports [ { "start": "10.0.0.2", "end": "10.0.0.254"} ] |
-|host_routes	| list(dict)|No	| CRU |	Empty List	| [] | Routes that should be used by devices with IPs from this subnet (not including local subnet route). | 
-|enable_dhcp | bool |No	| CRU	| true	| true, false	|Specifies whether DHCP is enabled for this subnet or not.|
-|tenant_id	| uuid-str	| No |	CR	| N/A| N/A | Owner of the network.  Only admin users can specify a tenant identifier other than its own.|
+| id  | uuid-str  | N/A | R | generated | N/A | UUID of the subnet |
+| network_id | uuid-str | Yes | CR  | N/A | Network this subnet is associated with. | | 
+| name  | string  | No  | CRU | None  | N/A | Human-readable name for the subnet. Might not be unique. |
+| ip_version  | int | No  | CR  | 4 | 4 |IP version | IPv6 is not supported
+| CIDR  | string  | Yes | CR  | N/A | valid CIDR in the form *network_address/prefix* | CIDR representing the IP range for this subnet.  Based on the IP version |
+|gateway_ip |string | No  | CRUD  | first address in CIDR | Valid IP address or null  | Default gateway used by devices in this subnet. |
+| dns_nameservers | list(str) | No  | CRU | Empty list  | N/A | DNS name servers used by hosts in this subnet. |
+| allocation_pools |list(dict) |No  | CR  |Every address in CIDR, excluding gateway_ip if configured |start/end of range must be valid IP |Sub-ranges of CIDR available for dynamic allocation to ports [ { "start": "10.0.0.2", "end": "10.0.0.254"} ] |
+|host_routes  | list(dict)|No | CRU | Empty List  | [] | Routes that should be used by devices with IPs from this subnet (not including local subnet route). | 
+|enable_dhcp | bool |No | CRU | true  | true, false |Specifies whether DHCP is enabled for this subnet or not.|
+|tenant_id  | uuid-str  | No |  CR  | N/A| N/A | Owner of the network.  Only admin users can specify a tenant identifier other than its own.|
 
 **Unsupported API calls**   
 Bulk Create Subnets
@@ -1064,7 +1064,7 @@ If an error occurs, the response body contains a description of the error.
 | 401 | Unauthorized | The caller does not have the privilege required to perform the operation. |
 
 **Curl Example**
-	
+  
     curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v2.0/subnets
 
 ##### 4.5.3.2 Show Subnet ##### {#get_subnet}
@@ -1117,10 +1117,10 @@ JSON
             tenant_id: "10979209027984"
             dns_nameservers: [0]
             allocation_pools: [1]
-           	    0:  {
+                0:  {
                 start: "10.0.0.2"
                 end: "10.0.0.254"
-           	    }
+                }
             host_routes: [0]
             ip_version: 4
             gateway_ip: "10.0.0.1"
@@ -1179,7 +1179,7 @@ By default, Networking creates IPv4 subnets. Networking does not try to derive t
 
 To specify a subnet without a gateway, specify the value null for the *gateway_ip* attribute in the request body. If the *allocation_pools* attribute is not specified, Networking automatically allocates pools for covering all IP addresses in the CIDR, excluding the address reserved for the subnet gateway. Otherwise, you can explicitly specify allocation pools as shown in the following example.
 
-When the attributes	*allocation_pools* and *gateway_ip* are both specified, it is up to the user to ensure the gateway IP does not overlap with the specified allocation pools; otherwise a 409 Conflict error will be returned.
+When the attributes *allocation_pools* and *gateway_ip* are both specified, it is up to the user to ensure the gateway IP does not overlap with the specified allocation pools; otherwise a 409 Conflict error will be returned.
 
 A subnet can only be added to a network that is owned by the same tenant. Attempting to add a subnet to another users network will result in a 403 error:  Tenant not allowed to create subnet on this network.
 
@@ -1214,7 +1214,7 @@ JSON
     }
 
 XML
-	
+  
     POST /v2.0/subnets
     Content-Type: application/xml
     Accept: application/xml
@@ -1305,7 +1305,7 @@ See [HTTP Status Codes](#http_codes) for more information.
 | 409 | Conflict | Duplicate Network present. |
 
 **Curl Example**
-	
+  
     curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"subnet": {name: "{name}", "network_id": "{id}","ip_version": 4,"cidr": "10.0.0.0/24","allocation_pools": [{"start": "10.0.0.2", "end": "10.0.0.254"}]}}' {BaseURI}/v2.0/subnets
 
 ##### 4.5.3.4 Update Subnet ##### {#update_subnet}
@@ -1478,26 +1478,26 @@ Manage port resources.
 
 | Verb    | URI        |      Description |
 | :------------ | :---------- | :-------- |
-|	GET    |  /v2.0/ports            | Lists all ports |
-|	GET     | /v2.0/ports/{id}   |Shows information for the specified port |
-|	POST    | /v2.0/ports             |Creates a new port|
-|	PUT     | /v2.0/ports/{id}   |Updates the specified port|
-|	DELETE  | /v2.0/ports/{id}   |Removes the specified port|
+| GET    |  /v2.0/ports            | Lists all ports |
+| GET     | /v2.0/ports/{id}   |Shows information for the specified port |
+| POST    | /v2.0/ports             |Creates a new port|
+| PUT     | /v2.0/ports/{id}   |Updates the specified port|
+| DELETE  | /v2.0/ports/{id}   |Removes the specified port|
 
 The following table describes the attributes for port objects: 
 
 | Attribute | Type | Required | CRUD | Default Value | Validation | Description |
 | :-------- | :--- | :------- | :--- | :------------ | :--------- | :----------- |
-| id	| uuid-str	| N/A	| R	| generated	| N/A	| UUID of the port. |
-| network_id | uuid-str | Yes | CR	| N/A	| Network this port is associated with. |	
-| name	| string	| No	| CRU	| None	| N/A	| Human-readable name for the port. Not required to be unique. |
-|admin_state_up	| bool	| No	| CRU	| true	| true, false |Administrative state of the port. If false (down), port will not forward packets.|
-| status | string	| N/A	| R	| N/A	| N/A	|Indicates if network is currently operational. Possible values include:  ACTIVE, DOWN, BUILD, ERROR |
-|mac_address |	string	| No	|CR	|generated	|Valid MAC in 6-octet form separated by colons|	MAC address to use on this port. |
-|fixed_ips |	list(dict)	| No |	CRU	| automatically allocated from pool|	Valid IP address and existing subnet identifier |	Specifies IP addresses for the port thus associating the port itself with the subnets where the IP addresses are picked from |
-| device_id |	string |	No	| CRUD	| None	| No constraint	|Identifies the device (e.g., virtual server) using this port. |
-|device_owner	| string	| No	| CRUD	| None	| No constraint	| Identifies the entity (e.g., dhcp agent) using this port. |
-|tenant_id	| uuid-str	| No | CR	| N/A |	No constraint	| Owner of network. Only admin users can specify a tenant_id other than their own. |
+| id  | uuid-str  | N/A | R | generated | N/A | UUID of the port. |
+| network_id | uuid-str | Yes | CR  | N/A | Network this port is associated with. | 
+| name  | string  | No  | CRU | None  | N/A | Human-readable name for the port. Not required to be unique. |
+|admin_state_up | bool  | No  | CRU | true  | true, false |Administrative state of the port. If false (down), port will not forward packets.|
+| status | string | N/A | R | N/A | N/A |Indicates if network is currently operational. Possible values include:  ACTIVE, DOWN, BUILD, ERROR |
+|mac_address |  string  | No  |CR |generated  |Valid MAC in 6-octet form separated by colons| MAC address to use on this port. |
+|fixed_ips |  list(dict)  | No |  CRU | automatically allocated from pool|  Valid IP address and existing subnet identifier | Specifies IP addresses for the port thus associating the port itself with the subnets where the IP addresses are picked from |
+| device_id | string |  No  | CRUD  | None  | No constraint |Identifies the device (e.g., virtual server) using this port. |
+|device_owner | string  | No  | CRUD  | None  | No constraint | Identifies the entity (e.g., dhcp agent) using this port. |
+|tenant_id  | uuid-str  | No | CR | N/A | No constraint | Owner of network. Only admin users can specify a tenant_id other than their own. |
 |port_security_enabled | bool | N | CR | same value as network |  | If set to True, the rules of the default security group will be applied on the port.  If False, no security group rules will be applied. |
 
 **Unsupported API calls**   
@@ -1729,12 +1729,12 @@ This operation creates a new port. The network where the port is created must be
 
 - A symbolic name for the port
 - MAC address. If an invalid address is specified a 400 Bad Request error will be returned, whereas a 409 Conflict error will be returned if the specified MAC address is already in use.
-	- If the MAC address is not specified, Networking will try to allocate one for the port being created. If there is a failure while generating the address, a 503 Service Unavailable error will be returned.
+  - If the MAC address is not specified, Networking will try to allocate one for the port being created. If there is a failure while generating the address, a 503 Service Unavailable error will be returned.
 - Administrative state. Set to true for up, and false for down.
 - Fixed IPs
-	- If you specify just a subnet ID, Networking allocates an available IP from that subnet to the port.
-	- If you specify both a subnet ID and an IP address, Networking tries to allocate the specified address to the port.
-	- Host routes for the port, in addition to the host routes defined for the subnets that the port is associated with.
+  - If you specify just a subnet ID, Networking allocates an available IP from that subnet to the port.
+  - If you specify both a subnet ID and an IP address, Networking tries to allocate the specified address to the port.
+  - Host routes for the port, in addition to the host routes defined for the subnets that the port is associated with.
 
 **Request Data**   
 The *network_id* must be specified in the request body.
@@ -2006,24 +2006,24 @@ A router has an interface for each subnet it is associated with. By default the 
 
 | Verb    | URI        |      Description |
 | :------------ | :---------- | :-------- |
-|	GET    |  /v2.0/routers    |         List of logical routers to which the tenant has access	|
-|	GET     | /v2.0/routers/{id} |	Show details of the specified logical router|
-|	POST	| /v2.0/routers			|	Create a new logical router|
-|	PUT     | /v2.0/routers/{id}|  Update the specified logical router|
-|	DELETE  | /v2.0/routers/{id} | Removes the specified logical router and its external gateway interface, if it exists|
-|	PUT		| /v2.0/routers/{id}/add_router_interface | Add a new internal interface to the specified logical router|
-|	PUT		| /v2.0/routers/{id}/remove_router_interface | Remove the internal interface to the specified logical router|
+| GET    |  /v2.0/routers    |         List of logical routers to which the tenant has access |
+| GET     | /v2.0/routers/{id} |  Show details of the specified logical router|
+| POST  | /v2.0/routers     | Create a new logical router|
+| PUT     | /v2.0/routers/{id}|  Update the specified logical router|
+| DELETE  | /v2.0/routers/{id} | Removes the specified logical router and its external gateway interface, if it exists|
+| PUT   | /v2.0/routers/{id}/add_router_interface | Add a new internal interface to the specified logical router|
+| PUT   | /v2.0/routers/{id}/remove_router_interface | Remove the internal interface to the specified logical router|
 
 The following table describes the attributes for router objects: 
- 	
-| Attribute	| Type	| Required	| CRUD	| Default Value	| Validation | Description	|
+  
+| Attribute | Type  | Required  | CRUD  | Default Value | Validation | Description  |
 | :---------- | :---------- | :------------ | :-------------- | :----------- | :----------------------- | :---------------- | 
-| id	| uuid-str	| N/A	| R	| generated	| N/A	| UUID of the router. |
-| name |	string |	No |	CRU	| None	| N/A |	Human readable name for the router. Name is not required to be unique. |
-| admin_state_up	| bool |	No |	CRU	| true	|true, false |	Administrative state of the router. |
-|status	| string	| N/A	| R	| N/A	| N/A	| Indicates whether a router is currently operational or not. |
-| tenant_id	| uuid-str	| No | 	CR	| Derived from Authentication token	| N/A	|Owner of the network.  Only admin users can specify an identifier other than their own. |
-|external_gateway_info | 	dict	| No	|CRU	|None	|No constraints	|Information on external gateway for the router. |
+| id  | uuid-str  | N/A | R | generated | N/A | UUID of the router. |
+| name |  string |  No |  CRU | None  | N/A | Human readable name for the router. Name is not required to be unique. |
+| admin_state_up  | bool |  No |  CRU | true  |true, false |  Administrative state of the router. |
+|status | string  | N/A | R | N/A | N/A | Indicates whether a router is currently operational or not. |
+| tenant_id | uuid-str  | No |  CR  | Derived from Authentication token | N/A |Owner of the network.  Only admin users can specify an identifier other than their own. |
+|external_gateway_info |  dict  | No  |CRU  |None |No constraints |Information on external gateway for the router. |
 
 **Status Lifecycle**   
 N/A
@@ -2091,7 +2091,7 @@ JSON
         tenant_id: "10979209027984"
         id: "797568e9-15e1-4b0a-b4a6-4181a8659897"
         }
-		}
+    }
 
 XML
 
@@ -2122,7 +2122,7 @@ If an error occurs, the response body contains a description of the error.
 | 401 | Unauthorized | The caller does not have the privilege required to perform the operation. |
 
 **Curl Example**
-	
+  
     curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v2.0/routers
 
 ##### 4.5.5.1.2 Show Router ##### {#get_router}
@@ -2272,7 +2272,7 @@ See [HTTP Status Codes](#http_codes) for more information.
 This operation returns a response body.
 
 JSON
-	
+  
     Content-Type: application/json
     
     {
@@ -2360,15 +2360,15 @@ JSON
     }
 
 XML
-	
+  
     PUT /v2.0/routers/{id}
     Content-Type: application/xml
     Accept: application/xml
     
     <router>
-		<external_gateway_info>
-      	<network_id>{id}</network_id>
-		</external_gateway_info>
+    <external_gateway_info>
+        <network_id>{id}</network_id>
+    </external_gateway_info>
     <name>{name}</name>
     <admin_state_up>true</admin_state_up>
     </router>
@@ -2540,10 +2540,10 @@ JSON
     Content-Type: application/json
     
     {
-		    subnet_id: "8a96392c-86cd-472b-bd05-0498303f088e"
-		    tenant_id: "10979209027984"
-		    port_id: "11aa37b3-3e40-45b3-b869-ddfe209ff186"
-		    id: "797568e9-15e1-4b0a-b4a6-4181a8659897"
+        subnet_id: "8a96392c-86cd-472b-bd05-0498303f088e"
+        tenant_id: "10979209027984"
+        port_id: "11aa37b3-3e40-45b3-b869-ddfe209ff186"
+        id: "797568e9-15e1-4b0a-b4a6-4181a8659897"
     }
 
 XML
@@ -2618,7 +2618,7 @@ See [HTTP Status Codes](#http_codes) for more information.
 
 **Response Data**   
 This request does not return a response body.
-	
+  
 **Error Response**   
 If an error occurs, the response body contains a description of the error.
 
@@ -2642,23 +2642,23 @@ Manage floating IPs through the Networking L3 API extension.
 
 | Verb    | URI        |      Description |
 | :------------ | :---------- | :-------- |
-|	GET     | /v2.0/floatingips  |List of Floating IPs accessible to the tenant submitting the request |
-|  GET | /v2.0/floatingips/{id} |	Show details about the specified Floating IP|
-|	POST	| /v2.0/floatingips		|	Create a new floating IP|
-|	PUT      |/v2.0/floatingips/{id}|   Update a Floating IP|
-|	DELETE   |/v2.0/floatingips/{id} | 	Delete a Floating IP|
+| GET     | /v2.0/floatingips  |List of Floating IPs accessible to the tenant submitting the request |
+|  GET | /v2.0/floatingips/{id} | Show details about the specified Floating IP|
+| POST  | /v2.0/floatingips   | Create a new floating IP|
+| PUT      |/v2.0/floatingips/{id}|   Update a Floating IP|
+| DELETE   |/v2.0/floatingips/{id} |  Delete a Floating IP|
 
 The following table describes the attributes for Floating IP objects:  
 
-| Attribute	| Type	| Required	| CRUD	| Default Value	| Validation | Constraints	| Notes |
+| Attribute | Type  | Required  | CRUD  | Default Value | Validation | Constraints  | Notes |
 | :---------- | :---------- | :------------ | :-------------- | :----------- | :----------------------- | :---------------- | :---------------- |
-| id	| uuid-str	| N/A	| R	| generated	| N/A	| UUID of the Floating IP instance |
-|router_id	| uuid-str |	Yes	| CR |	N/A	| UUID Pattern |	UUID of the router where the Floating IP will be created. |
-|floating_network_id	| uuid-str |	Yes	| CR |	N/A	| UUID Pattern |	UUID of the external network where the Floating IP will be created. |
-|port_id	| uuid-str	| Yes	| CRU	| N/A	| UUID Pattern	| UUID of the port on an internal network which should be associated to the Floating IP.|
-|fixed_ip_address	| IP Address |	No |	CRU |	None |	IP address or null |	Specific IP address on the port_id which should be associated with the Floating IP. |
-|floating_ip_address	| IP Address |	N/A	| R| Automatically allocated from pool |	N/A |	Address of the Floating IP on the external network. |
-|tenant_id	| uuid-str	| No	| CR| Derived from Authentication token |	N/A	| Owner of the network.  Only admin users can specify an identifier other than their own. |
+| id  | uuid-str  | N/A | R | generated | N/A | UUID of the Floating IP instance |
+|router_id  | uuid-str |  Yes | CR |  N/A | UUID Pattern |  UUID of the router where the Floating IP will be created. |
+|floating_network_id  | uuid-str |  Yes | CR |  N/A | UUID Pattern |  UUID of the external network where the Floating IP will be created. |
+|port_id  | uuid-str  | Yes | CRU | N/A | UUID Pattern  | UUID of the port on an internal network which should be associated to the Floating IP.|
+|fixed_ip_address | IP Address |  No |  CRU | None |  IP address or null |  Specific IP address on the port_id which should be associated with the Floating IP. |
+|floating_ip_address  | IP Address |  N/A | R| Automatically allocated from pool |  N/A | Address of the Floating IP on the external network. |
+|tenant_id  | uuid-str  | No  | CR| Derived from Authentication token | N/A | Owner of the network.  Only admin users can specify an identifier other than their own. |
 
 **Status Lifecycle**   
 N/A
@@ -2689,7 +2689,7 @@ Users can control which attributes should be returned by using the *fields* quer
 This operation does not require a request body.
 
 JSON 
-	
+  
     GET /v2.0/floatingips
     Content-Type: application/json
     Accept: application/json
@@ -2738,7 +2738,7 @@ JSON
     }
 
 XML
-	
+  
     Content-Type: application/xml
     
     <?xml version='1.0' encoding='UTF-8' ?>
@@ -2780,13 +2780,13 @@ This operation does not require a request body.
 **URL Parameters**   
 Users can control which attributes should be returned by using the *fields* query parameter. See [Filtering and Column Selection](#filtering) for more information. Filtering is supported on all top level attributes of an API entity. For example: 
 
-	GET /v2.0/floatingips/{id}?fields=fixed_ip_address
+  GET /v2.0/floatingips/{id}?fields=fixed_ip_address
 
 **Data Parameters**   
 This operation does not require a request body.
 
 JSON
-	
+  
     GET /v2.0/floatingips/{id}
     Content-Type: application/json
     Accept: application/json
@@ -2830,13 +2830,13 @@ XML
     
     <?xml version='1.0' encoding='UTF-8' ?>
     <floatingip>
-		    <router_id>797568e9-15e1-4b0a-b4a6-4181a8659897</router_id>
-		    <tenant_id>10979209027984</tenant_id>
-		    <floating_network_id>7da74520-9d5e-427b-a508-213c84e69616</floating_network_id>
-		    <fixed_ip_address>10.1.1.100</fixed_ip_address>
-		    <floating_ip_address>15.126.245.242</floating_ip_address>
-		    <port_id>da92aabc-a633-4773-b410-a5fe75245c51</port_id>
-		    <id>01b17b81-544c-4538-ba79-c7f6cfbbd00a</id>
+        <router_id>797568e9-15e1-4b0a-b4a6-4181a8659897</router_id>
+        <tenant_id>10979209027984</tenant_id>
+        <floating_network_id>7da74520-9d5e-427b-a508-213c84e69616</floating_network_id>
+        <fixed_ip_address>10.1.1.100</fixed_ip_address>
+        <floating_ip_address>15.126.245.242</floating_ip_address>
+        <port_id>da92aabc-a633-4773-b410-a5fe75245c51</port_id>
+        <id>01b17b81-544c-4538-ba79-c7f6cfbbd00a</id>
     </floatingip>
 
 **Error Response**   
@@ -2892,8 +2892,8 @@ XML
     Accept: application/xml
     
     <floatingip>
-		    <floating_network_id>{id}</floating_network_id>
-		    <port_id>{id}</port_id>
+        <floating_network_id>{id}</floating_network_id>
+        <port_id>{id}</port_id>
     </floatingip>
 
 **Success Response**   
@@ -3019,7 +3019,7 @@ JSON - Associate response
             "port_id": "fc861431-0e6c-4842-a0ed-e2363f9bc3a8",
             "id": "01b17b81-544c-4538-ba79-c7f6cfbbd00a"
             }
-	  }
+    }
 
 JSON - Disassociate response
 
@@ -3117,20 +3117,20 @@ When a port is created in Networking it is associated with a security group. If 
 |:-----| :--- | :--------------|
 |GET    | security-groups      |List of security groups accessible to the tenant submitting the request|
 |GET    | security-groups/{id} |Show details of a specific security group|
-|POST	| security-groups	    |Create a security group|
-|DELETE	| security-groups/{id}	|Delete a security group |
+|POST | security-groups     |Create a security group|
+|DELETE | security-groups/{id}  |Delete a security group |
 
 The following table describes the attributes for Security Group objects:
 
-| Attribute	| Type	| Required	| CRUD	| Default Value	| Validation | Description	|
+| Attribute | Type  | Required  | CRUD  | Default Value | Validation | Description  |
 | :---------- | :---------- | :------------ | :-------------- | :----------- | :----------------------- | :---------------- | 
-| id	| uuid-str	| N/A	| R	| generated	| N/A	| UUID of the security group. |
-| name |	string |	No |	CRU	| None	| N/A |	Human-readable name for the security group. Name is not required to be unique. A new Security Group is not allowed to be named *default* as a rule of that name is automatically created for the tenant.|
+| id  | uuid-str  | N/A | R | generated | N/A | UUID of the security group. |
+| name |  string |  No |  CRU | None  | N/A | Human-readable name for the security group. Name is not required to be unique. A new Security Group is not allowed to be named *default* as a rule of that name is automatically created for the tenant.|
 | description | string | No | CRU | None|  N/A | Human-readable description of a security group.|
-|tenant_id	| uuid-str	| No	| CR| Derived from Authentication token |	N/A	| Owner of the network.  Only admin users can specify an identifier other than their own.|
+|tenant_id  | uuid-str  | No  | CR| Derived from Authentication token | N/A | Owner of the network.  Only admin users can specify an identifier other than their own.|
 
 **NOTE:** Updating of a Security Group Rule is not supported.  To accomplish the update operation you must first delete and then create the new rule.
-	
+  
 Upon creation of the Security Group, it can be attached to a port using the [Port APIs](#port_api)
 
 **Status Lifecycle**   
@@ -3169,7 +3169,7 @@ JSON
     Accept: application/json
 
 XML
-	
+  
     GET /v2.0/security-groups
     Content-Type: application/xml
     Accept: application/xml
@@ -3310,7 +3310,7 @@ This operation does not require a request body.
 **URL Parameters**  
 Users can control which attributes should be returned by using the fields query parameter. See [Filtering and Column Selection](#filtering) for more information. Filtering is supported on all top level attributes of an API entity. For example: 
 
-	GET /v2.0/security-groups/{id}?name={name} 
+  GET /v2.0/security-groups/{id}?name={name} 
 
 **Data Parameters**    
 This operation does not require a request body.
@@ -3393,10 +3393,10 @@ XML
     
     <?xml version='1.0' encoding='UTF-8' ?>
     <security_groups>
-		<security_group>
-		<tenant_id>10979209027984</tenant_id>
-		<name>default</name>
-		<description>default</description>
+    <security_group>
+    <tenant_id>10979209027984</tenant_id>
+    <name>default</name>
+    <description>default</description>
         <security_group_rules>
         <security_group_rule>
         <remote_group_id xsi:nil="true" />
@@ -3469,7 +3469,7 @@ N/A
 
 **Data Parameters**  
 This operation requires a request body. 
-	
+  
 JSON  
 
     POST /v2.0/security-groups
@@ -3484,13 +3484,13 @@ JSON
     }
 
 XML
-	
+  
     POST /v2.0/security-groups
     Content-Type: application/xml
     Accept: application/xml
     
     <security_group>
-		  <name>{name}</name>
+      <name>{name}</name>
     </security_group>
 
 **Success Response**   
@@ -3503,7 +3503,7 @@ See [HTTP Status Codes](#http_codes) for more information.
 This operation returns a response body.
 
 JSON   
-	
+  
     Content-Type: application/json
     
     {
@@ -3545,36 +3545,36 @@ XML
     
     <?xml version='1.0' encoding='UTF-8' ?>
     <security_group>
-		<tenant_id>10979209027984</tenant_id>
-		<name>SecGroup_Name</name>
-		<description />
-			<security_group_rules>
-				<security_group_rule>
-					<remote_group_id xsi:nil="true" />
-					<direction>egress</direction>
-					<remote_ip_prefix xsi:nil="true" />
-					<protocol xsi:nil="true" />
-					<ethertype>IPv4</ethertype>
-					<tenant_id>10979209027984</tenant_id>
-					<port_range_max xsi:nil="true" />
-					<port_range_min xsi:nil="true" />
-					<id>4767f837-58da-4b11-8999-7ad8a6048257</id>
-					<security_group_id>3c8a70ef-a55f-412f-9d1d-754e963ddeea</security_group_id>
-				</security_group_rule>
-			<security_group_rule>
-				<remote_group_id xsi:nil="true" />
-				<direction>egress</direction>
-				<remote_ip_prefix xsi:nil="true" />
-				<protocol xsi:nil="true" />
-				<ethertype>IPv6</ethertype>
-				<tenant_id>10979209027984</tenant_id>
-				<port_range_max xsi:nil="true" />
-				<port_range_min xsi:nil="true" />
-				<id>13e888df-e290-477f-8934-8fc0d36da590</id>
-				<security_group_id>3c8a70ef-a55f-412f-9d1d-754e963ddeea</security_group_id>
-				</security_group_rule>
-			</security_group_rules>
-		<id>3c8a70ef-a55f-412f-9d1d-754e963ddeea</id>
+    <tenant_id>10979209027984</tenant_id>
+    <name>SecGroup_Name</name>
+    <description />
+      <security_group_rules>
+        <security_group_rule>
+          <remote_group_id xsi:nil="true" />
+          <direction>egress</direction>
+          <remote_ip_prefix xsi:nil="true" />
+          <protocol xsi:nil="true" />
+          <ethertype>IPv4</ethertype>
+          <tenant_id>10979209027984</tenant_id>
+          <port_range_max xsi:nil="true" />
+          <port_range_min xsi:nil="true" />
+          <id>4767f837-58da-4b11-8999-7ad8a6048257</id>
+          <security_group_id>3c8a70ef-a55f-412f-9d1d-754e963ddeea</security_group_id>
+        </security_group_rule>
+      <security_group_rule>
+        <remote_group_id xsi:nil="true" />
+        <direction>egress</direction>
+        <remote_ip_prefix xsi:nil="true" />
+        <protocol xsi:nil="true" />
+        <ethertype>IPv6</ethertype>
+        <tenant_id>10979209027984</tenant_id>
+        <port_range_max xsi:nil="true" />
+        <port_range_min xsi:nil="true" />
+        <id>13e888df-e290-477f-8934-8fc0d36da590</id>
+        <security_group_id>3c8a70ef-a55f-412f-9d1d-754e963ddeea</security_group_id>
+        </security_group_rule>
+      </security_group_rules>
+    <id>3c8a70ef-a55f-412f-9d1d-754e963ddeea</id>
     </security_group>
 
 **Error Response**   
@@ -3648,27 +3648,27 @@ Security group rules allows administrators and tenants the ability to specify th
 
 | Verb | URI | Description |
 |:-----| :--- | :--------------|
-|GET	 |security-group-rules	|List of security group rules accessible to the tenant submitting the request. |
-|GET	|security-group-rules/{id}	|Show details of a specific security group rule. |
-|POST	|security-group-rules	|Create a security group rule|
-|DELETE	|security-group-rules/{id}	|Delete the specified security group rule|
+|GET   |security-group-rules  |List of security group rules accessible to the tenant submitting the request. |
+|GET  |security-group-rules/{id}  |Show details of a specific security group rule. |
+|POST |security-group-rules |Create a security group rule|
+|DELETE |security-group-rules/{id}  |Delete the specified security group rule|
 
 **NOTE** Updating of a Security Group Rule is not supported.  To accomplish the update operation you must first delete and then create the new rule.
 
 The following table describes the attributes for Security Group Rule objects:
 
-| Attribute	| Type	| Required	| CRUD	| Default Value	| Validation | Description	| 
+| Attribute | Type  | Required  | CRUD  | Default Value | Validation | Description  | 
 | :---------- | :---------- | :------------ | :-------------- | :----------- | :----------------------- | :---------------- | 
-| id	| uuid-str	|Y	|  R	| generated	| N/A	| UUID of the security group rule. |
+| id  | uuid-str  |Y  |  R  | generated | N/A | UUID of the security group rule. |
 |security-group-id | uuid-str | Y | C | generated | N/A | Security group ID the rule is associated with.|
-| direction | string | Y | CR | N/A | |Ingress or egress: The direction in which the security group rule is applied. For a compute instance, an ‘ingress’ security group rule matches traffic that is incoming (ingress) for that instance. An ‘egress’ rule is applied to traffic leaving the instance. |
+| direction | string | Y | CR | N/A | | Ingress or egress: The direction in which the security group rule is applied. For a compute instance, an 'ingress' security group rule matches traffic that is incoming (ingress) for that instance. An 'egress' rule is applied to traffic leaving the instance. |
 | protocol | string | N | CR | None | | IP Protocol (icmp, tcp, udp, etc)|
 | port_range_min | integer |N | CR | None | | The minimum port number in the range that is matched by the security group rule. If the protocol is TCP or UDP, this value must be less than or equal to the value of the port_range_max attribute. If the protocol is ICMP, this value must be an ICMP type. |
 | port_range_max | integer | N | CR | None | | The maximum port number in the range that is matched by the security group rule. The port_range_min attribute constrains the port_range_max attribute. If the protocol is ICMP, this value must be an ICMP type. |
 | ethertype | string | N | | None | R | Ethertype in L2 packet (IPv4, IPv6, etc).|
 | remote_ip_prefix | string | N | CR| None | Must be a valid CIDR address | The remote IP prefix to be associated with this security group rule. You can specify either remote_group_id or remote_ip_prefix in the request body. This attribute matches the specified IP prefix as the source IP address of the IP packet. |
 | remote_group_id | uuid | N| CR |generated |  | The remote group ID to be associated with this security group rule. You can specify either remote_group_id or remote_ip_prefix in the request body.|
-|tenant_id	| uuid-str	|N|  R| Derived from Authentication token |	N/A	| Owner of the network.  Only admin users can specify an identifier other than their own. |
+|tenant_id  | uuid-str  |N|  R| Derived from Authentication token | N/A | Owner of the network.  Only admin users can specify an identifier other than their own. |
 
 **Status Lifecycle**   
 N/A
@@ -4024,19 +4024,19 @@ If an error occurs, the response body contains a description of the error.
 
 ## 5. Glossary
 
-	Term              Description
-	---------------   ------------------------------------- 
-	CIDR			  Classless Inter-Domain Routing (or supernetting)
-	CRUD              In computer programming, create, read, update, and delete (CRUD) functions are the basic functions of persistent storage.
-	Entity            Any piece of hardware or software that wants to connect to the network services. An entity can use Networking services by implementing a VIF.
-	IPAM              Internet Protocol Address Management (IPAM) is a means of planning, tracking, and managing the Internet Protocol (IP) address space that is used in a network.
-	L2 Network  	  A virtual Ethernet network that is managed by the Networking service. Currently, only Ethernet networks are managed.
-	Network           An isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it unless the network is configured to be shared. Tenants can create multiple networks until they reach the thresholds specified by per-tenant quotas.
-	Plugin            A software component that implements API v2.
-	Port              A virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP addresses to be assigned to the interfaces plugged into them. When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet.
-	Subnet            An IP address block that can be used to assign IP addresses to virtual instances. Each subnet must have a CIDR and must be associated with a network. IPs can be either selected from the whole subnet CIDR or from allocation pools that can be specified by the user.
-	URI				  Uniform Resource Identifier
-	VIF				  Virtual Network Interface also known as a Virtual Interface
-	VIP				  Virtual IP
-	VM                Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system.
-	VPC				  Virtual Private Cloud 
+  Term              Description
+  ---------------   ------------------------------------- 
+  CIDR        Classless Inter-Domain Routing (or supernetting)
+  CRUD              In computer programming, create, read, update, and delete (CRUD) functions are the basic functions of persistent storage.
+  Entity            Any piece of hardware or software that wants to connect to the network services. An entity can use Networking services by implementing a VIF.
+  IPAM              Internet Protocol Address Management (IPAM) is a means of planning, tracking, and managing the Internet Protocol (IP) address space that is used in a network.
+  L2 Network      A virtual Ethernet network that is managed by the Networking service. Currently, only Ethernet networks are managed.
+  Network           An isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it unless the network is configured to be shared. Tenants can create multiple networks until they reach the thresholds specified by per-tenant quotas.
+  Plugin            A software component that implements API v2.
+  Port              A virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP addresses to be assigned to the interfaces plugged into them. When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet.
+  Subnet            An IP address block that can be used to assign IP addresses to virtual instances. Each subnet must have a CIDR and must be associated with a network. IPs can be either selected from the whole subnet CIDR or from allocation pools that can be specified by the user.
+  URI         Uniform Resource Identifier
+  VIF         Virtual Network Interface also known as a Virtual Interface
+  VIP         Virtual IP
+  VM                Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system.
+  VPC         Virtual Private Cloud 
