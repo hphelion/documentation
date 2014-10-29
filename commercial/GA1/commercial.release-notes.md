@@ -28,7 +28,16 @@ Thank you for your interest in HP Helion OpenStack! This document provides an ov
 * [Known Issues in this Release](#known-issues)
 * [For Further Information](#For-Further-Information) 
 
-##Features in HP Helion OpenStack## {#features}
+##Features in HP Helion OpenStack ## {#features}
+
+The following features have been added to HP Helion OpenStack, by release.
+
+##Features in HP Helion OpenStack 1.0.1 ##
+
+* Defect fixes
+* [SSL documentation to secure Helion OpenStack Perimeter](/helion/openstack/install/security/)
+
+##Features in HP Helion OpenStack 1.0 ##
 
 **OpenStack Juno Services** - The full set of standard OpenStack services is available for you to use: Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, Heat, Ceilometer, and TripleO (Ironic) for deployment.
 
@@ -50,6 +59,7 @@ The following are the known issues for HP Helion OpenStack:
 
 **Operations**
 
+* Sherpa can not upload images with the same name to glance in 2 different tenants. (CODN-24)
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   

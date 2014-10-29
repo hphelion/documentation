@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/prereqs/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -207,6 +207,13 @@ The baremetal.csv file informs the installer of the size of the Computer that ea
 
 There must be one entry in this file for each baremetal system you intend to install. 
 
+**Notes:** 
+
+- The first line of the baremetal.csv file is the undercloud node. 
+- The second line is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.The second entry must be the smallest sized disc.
+
+Use the following format in the `baremetal.csv` file.
+
 `<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiGB>`
 
 Where `<mac_address>` is the MAC address of the network interface from which to boot. Do not use the iLO NIC interface.
@@ -231,7 +238,7 @@ When creating this file, keep in mind the following:
 
 * The IPMI user and password **must have** ADMINISTRATOR privilege; it is not sufficient to have OPERATOR privilege
 * Memory must be at least 32 GB
-* Disk size must be between 500GB/512GiB and 2TiB
+* Disk size must be minimum 512GB/477GiB
 * The disk size specified should never exceed the physical disk size
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.

@@ -5,7 +5,7 @@ permalink: /helion/openstack/support-matrix/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -135,7 +135,7 @@ Additional requirements are as follows:
 
 	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
 
-The following table lists the minimum requirements required for installation of each type of node. The maximum of 2TB for the undercloud and overcloud nodes is mandatory for installation. 
+The following table lists the minimum requirements required for installation of each type of node. 
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -170,7 +170,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Undercloud Controller</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td>512GB - 2TB</td>
+<td>512GB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -189,7 +189,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Controller </td>
 <td rowspan="4">3</td>
 <td>Disk </td>
-<td> 512GB - 2TB
+<td> 512GB
  </td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -209,7 +209,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Compute Server </td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td> 512GB - 2TB</td>
+<td> 512GB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -228,7 +228,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Swift server </td>
 <td rowspan="4">2</td>
 <td>Disk </td>
-<td> 512GB - 2TB
+<td> 512GB
 </td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">

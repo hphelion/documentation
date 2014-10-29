@@ -5,7 +5,7 @@ permalink: /helion/openstack/technical-overview/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <!---
 <p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p> -->
@@ -168,8 +168,9 @@ The following hardware requirement is required to install HP Helion OpenStack.
 
 * At least 8 and up to 100 baremetal systems with the following configuration:
 
+<!-- Need maximum disk space; 2TB requirement no longer applicable (10/29/14 -->
     * A minimum of 32 GB of physical memory
-    * A minimum 512GB to a maximum 2 TB of disk space, required for installation. You can add more capacity after installation.
+    * A minimum 512GB of disk space, required for installation. 
     * A minimum of 1 x 10 GB NIC with PXE support
     * Capable of hosting VMs
     * Boot order configured with Network/PXE boot as the first option
