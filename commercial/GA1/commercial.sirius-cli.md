@@ -164,6 +164,14 @@ You can register the StoreServ to Sirius.
 
 *Additional arguments*: --iscsi-ip &lt;ISCSI_IP> [required for iSCSI type devices]
 
+For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required. 
+
+*Example:*
+
+--iscsi-ip 10.1.2.200,10.1.2.100:3380,10.1.2.102
+
+
+
 
 ### Update StoreServ ###
 

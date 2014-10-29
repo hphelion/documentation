@@ -41,11 +41,9 @@ Scale-out Proxy nodes can only be removed from the cloud after all the disks hav
 * HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
 * The scale-out Object Ring-1 has been deployed.
 * At least one scale-out proxy node has been deployed.
-
-**IMPORTANT**:  
-
-*  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
+* All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Take a backup of the rings before any operation.
+
 
 
 ##Identify the disks of the node to be removed {#identify-disk-node-removed}
@@ -74,7 +72,7 @@ Perform the following steps to identify the disks of the node to be removed:
 	Remove drives gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
 
 
-5. Set weight of the disk for `account.builder` and `container.builder`files.
+5. Set the weight of the disk for `account.builder` and `container.builder`files.
 
     		# ringos set-weight -f account.builder -s d<device> -w <weight>
     		# ringos set-weight -f container.builder -s d<device> -w <weight>
@@ -94,12 +92,8 @@ Perform the following steps to identify the disks of the node to be removed:
     
     	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
     	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
-<!---
-The following sample displays the output of the above command: 
 
-		Copied ring /root/ring-building/container.ring.gz onto 192.0.2.25--->
-
-9. Repeat steps from **5 - 8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
+9. Repeat steps from **5-8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 10. Verify the `account.ring.gz`  and `container.builder` files.
     	
@@ -152,9 +146,9 @@ Repeat this step for each disk of the specific node.
 		  bind 192.0.2.21:8080
 		  server <Proxy node hostname> <Proxy nodes IP address of >:8080 check inter 2000 rise 2 fall 5 
 
-	**Note**:You will have the number of "server" lines equal to number of Swift Proxies you have setup.
+	**Note**:You will have the number of "server" lines equal to number of Swift proxies you have setup.
 
-3. Restart HA Proxy service on all these nodes.
+3. Restart HA proxy service on all these nodes.
 
 		# service haproxy restart
 
@@ -178,7 +172,7 @@ Once the disks are removed from the ring, remove the scale-out proxy node by rem
 		| b8325052-ec52-4b3b-8304-eb6ec23dd2ac | overcloud-ce-soswiftstorage2 | UPDATE_COMPLETE | 2014-09-24T09:11:14Z |
 		+--------------------------------------+------------------------------+-----------------+----------------------+
 
-2. Identify the stack ID of the target scale-out Proxy node.
+2. Identify the stack ID of the target scale-out proxy node.
 3. Remove the stack. 
 
 		heat stack-delete <id>

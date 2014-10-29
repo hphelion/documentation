@@ -33,7 +33,7 @@ Perform the following procedure to add a disk to a scale-out object ring.
 * HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
 * Scale-out object-ring:1 has been deployed.
 *  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Make a backup of the rings before any operation.
+* Take a backup of the rings before any operation.
 
 ##Add Disks to a Scale-out Ring {#adding-Swift-disks-to-a-ring}
 

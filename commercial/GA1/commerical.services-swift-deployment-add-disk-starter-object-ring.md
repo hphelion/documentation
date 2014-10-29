@@ -25,7 +25,7 @@ PageRefresh();
 
 Perform the following procedure to add disk to a starter object ring. 
 
-1. [Prerequisite](#Prer)
+1. [Prerequisite](#prer)
 2. [Add disks to a Starter Object Ring](#adding-Swift-disks-to-a-ring)
 
 ##Prerequisite {#prer}
@@ -40,7 +40,7 @@ Perform the following steps to add Swift disk to a ring:
 
 1. Log in to the undercloud from seed. 
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the directory to ring builder.
@@ -53,11 +53,11 @@ Perform the following steps to add Swift disk to a ring:
 
 4. List the disks on the starter nodes.
 
-		# ringos list-disks -n <Starter Swift nodes IP address> 
+		# ringos list-disks -n <starter Swift nodes IP address> 
 
 5. Format the given disk.
 
-		# ringos format-disks -n <Starter Swift nodes IP address> -d <disk>
+		# ringos format-disks -n <starter Swift nodes IP address> -d <disk>
 
 	**Note**: You can format all the disks with the single command (-d --all).
 
