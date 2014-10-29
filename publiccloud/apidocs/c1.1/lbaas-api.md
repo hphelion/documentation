@@ -7,7 +7,7 @@ keywords: "lbaas,loadbalancer"
 product: lbaas
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud Load Balancer Service API
 
 **Date:** May 2014
