@@ -418,7 +418,7 @@ JSON
 		"fault_element": {
 			"code": HTTP error code (integer),
 			"message": "Fault information...",
-			"details": "Fault Details…",
+			"details": "Fault Details...",
 			"internal_code": "Internal error log code"
 		}
 	}
