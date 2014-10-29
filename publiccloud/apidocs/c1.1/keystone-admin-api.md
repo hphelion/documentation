@@ -2,7 +2,7 @@
 layout: page
 permalink: /api/v13/identity/admin/
 title: Identity Services Admin API
-description: "HP Cloud Identity Services Admin API documenation."
+description: "HP Cloud Identity Services Admin API documentation."
 keywords: "Keystone, Identity Services"
 product: identity
 private: true
@@ -19,10 +19,7 @@ Document Version: 1.3
 
 *Brief introduction and overview of the service and its intended use.*
 
-
-
 ### 1.1 API Maturity Level
-
 
 **Maturity Level**: GA
 
