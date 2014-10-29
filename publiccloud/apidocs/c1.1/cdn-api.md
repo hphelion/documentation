@@ -7,7 +7,7 @@ keywords: "content data network, cdn, object storage"
 product: cdn
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud CDN API Specifications
 
 **Date:** June 2014
