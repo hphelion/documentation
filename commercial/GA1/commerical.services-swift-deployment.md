@@ -23,7 +23,7 @@ PageRefresh();
 
 # Deploying Additional Scale-out Swift Nodes with HP Helion OpenStack&#174; 
 
-The scale-out object storage is realized by defining a new storage policy – storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created, it is the default policy and all of the containers would be on this policy unless otherwise specified. We recommend you to use at least **two** nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
+The scale-out object storage is realized by defining a new storage policy - storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created, it is the default policy and all of the containers would be on this policy unless otherwise specified. We recommend you to use at least **two** nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
 
 Perform the following steps to deploy scale-out object-ring:1 
 
