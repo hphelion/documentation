@@ -216,10 +216,7 @@ region-b.geo-1.network.hpcloudsvc.com
 The service is exposed in the service catalog, as shown in the following fragment:
  
     {
-      ...
-      ...
-      ,
-      "serviceCatalog": [
+     "serviceCatalog": [
         {
           "name": "Networking",
           "type": "network",
@@ -4043,4 +4040,3 @@ If an error occurs, the response body contains a description of the error.
 	VIP				  Virtual IP
 	VM                Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system.
 	VPC				  Virtual Private Cloud 
-  
