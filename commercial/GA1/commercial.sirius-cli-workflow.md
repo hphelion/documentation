@@ -190,6 +190,13 @@ The sample output of the above command is given below:
 	| username     | 3paradm                              |
 	+--------------+--------------------------------------+
 
+**Note**: For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required. 
+
+*Example:*
+
+--iscsi-ip 10.1.2.200,10.1.2.100:3380,10.1.2.102
+
+
 ###Register StoreServ CPG to the cloud inventory {#register-inventory}
 
 List the available CPGs in the StoreServ device. From the available CPG list identify the ones to be registered to the cloud using the following command
