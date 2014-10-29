@@ -7,7 +7,7 @@ keywords: Image, Glance, OpenStack
 product: image
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #HP Helion Public Cloud Image Service API Specifications
 
 **Date:** May 2014
