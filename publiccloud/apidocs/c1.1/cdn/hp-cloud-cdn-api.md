@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: public-cloud
 permalink: /publiccloud/api/CDN/
 title: HP Helion Public Cloud CDN 
 description: "HP Helion Public Cloud CDN API"
@@ -7,7 +7,7 @@ keywords: "content data network, cdn, object storage"
 product: cdn
 
 ---
-
+<!--UNDER REVISION-->
 # HP Helion Public Cloud CDN API Specifications
 
 **Date:** June 2014
