@@ -6642,34 +6642,34 @@ Content-Length: 380
 Date: Thu, 25 Aug 2011 23:33:19 GMT
  
 {"roles": {"role": [
-      {
-      "roleAssignmentId": "000",
-      "id": "001",
-      "name": "role01",
+    {
+    "roleAssignmentId": "000",
+    "id": "001",
+    "name": "role01",
       "description": "role01-description",
       "serviceId" : "xxxxxxxxxxxxxx",
       "domain_id": "xxxxxxxxxxxxxx",
-      "project_id": "xxxxxxxxxxxxxx",
-      "subjectName": "user-1",
-      "subjectType": "User",
-      "subjectId": "xxxxxxxxxxxxxx",
-      "isCrossDomain": false,
+    "project_id": "xxxxxxxxxxxxxx",
+    "subjectName": "user-1",
+    "subjectType": "User",
+    "subjectId": "xxxxxxxxxxxxxx",
+    "isCrossDomain": false,
       "links": {
           "self": "https://www.hpcloud.com:35357/v3/roles/001"
       }
    },
-      {
-      "roleAssignmentId": "111",
+    {
+    "roleAssignmentId": "111",
       "id": "002",
       "name": "role02",
       "description": "role02-description",
       "serviceId" : "xxxxxxxxxxxxxx",
       "domain_id": "xxxxxxxxxxxxxx",
-      "project_id": "xxxxxxxxxxxxxx",
-      "subjectName": "user-1",
-      "subjectType": "User",
-      "subjectId": "xxxxxxxxxxxxxx",
-      "isCrossDomain": false,
+    "project_id": "xxxxxxxxxxxxxx",
+    "subjectName": "user-1",
+    "subjectType": "User",
+    "subjectId": "xxxxxxxxxxxxxx",
+    "isCrossDomain": false,
       "links": {
           "self": "https://www.hpcloud.com:35357/v3/roles/002"
       }
@@ -6689,33 +6689,33 @@ Date: Thu, 25 Aug 2011 23:33:19 GMT
  
 <roles xmlns="http://www.hp.com/identity/api/ext/HP-IDM/v1.0">
    <role>
-      <roleAssignmentId>000</roleAssignmentId>
-      <id>001</id>
-      <name>role01</name>
-      <subjectName>user-1</subjectName>
-      <subjectType>User</subjectType>
-      <description>role01-description"</description>
-      <subjectId>xxxxxxxxxxxxxx</subjectId>
-      <domainId>xxxxxxxxxxxxxx</domainId>
-      <serviceId>xxxxxxxxxxxxxx</serviceId>
-      <project_id>xxxxxxxxxxxxxx</project_id>
-      <isCrossDomain>false</isCrossDomain>
+    <roleAssignmentId>000</roleAssignmentId>
+    <id>001</id>
+    <name>role01</name>
+    <subjectName>user-1</subjectName>
+    <subjectType>User</subjectType>
+    <description>role01-description"</description>
+    <subjectId>xxxxxxxxxxxxxx</subjectId>
+    <domainId>xxxxxxxxxxxxxx</domainId>
+    <serviceId>xxxxxxxxxxxxxx</serviceId>
+    <project_id>xxxxxxxxxxxxxx</project_id>
+    <isCrossDomain>false</isCrossDomain>
       <links>
           <self>https://www.hpcloud.com:35357/v3/roles/001</self>
       </links>
    </role>
    <role>
-      <roleAssignmentId>111</roleAssignmentId>
-      <id>002</id>
-      <name>role02</name>
-      <subjectName>user-1</subjectName>
-      <subjectType>User</subjectType>
-      <description>role02-description"</description>
-      <subjectId>xxxxxxxxxxxxxx</subjectId>
-      <domainId>xxxxxxxxxxxxxx</domainId>
-      <serviceId>xxxxxxxxxxxxxx</serviceId>
-      <project_id>xxxxxxxxxxxxxx</project_id>
-      <isCrossDomain>false</isCrossDomain>
+    <roleAssignmentId>111</roleAssignmentId>
+    <id>002</id>
+    <name>role02</name>
+    <subjectName>user-1</subjectName>
+    <subjectType>User</subjectType>
+    <description>role02-description"</description>
+    <subjectId>xxxxxxxxxxxxxx</subjectId>
+    <domainId>xxxxxxxxxxxxxx</domainId>
+    <serviceId>xxxxxxxxxxxxxx</serviceId>
+    <project_id>xxxxxxxxxxxxxx</project_id>
+    <isCrossDomain>false</isCrossDomain>
       <links>
           <self>https://www.hpcloud.com:35357/v3/roles/002</self>
       </links>
@@ -11248,5 +11248,4 @@ curl -k --cacert ca.pem --cert hpmiddleware.pem -H "X-Subject-Token:HPAuth_fd6f4
     curl -k https://region-b.geo-1.identity.hpcloudsvc.com:35357
     
     **Additional Notes**  
-    This API is not defined in Openstack keystone v3.  
-    
+    This API is not defined in Openstack keystone v3.
