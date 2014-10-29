@@ -7,7 +7,7 @@ keywords: "MySQL, RDB, DBaaS"
 product: dbaas
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud Relational Database API
 
 **Date:** June 2014
