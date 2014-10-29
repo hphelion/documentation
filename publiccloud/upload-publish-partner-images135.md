@@ -9,9 +9,7 @@ product: image
 
 # HP Helion Public Cloud: How to Upload a Partner Image and Make it Public<a name="publishPartnerImage"></a>
 
-This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in HP Helion Public Cloud 13.5. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Helion Public Cloud Image Service API specification](https://docs.hpcloud.com/api/v13/image/).
-
-- Why upload an image and make it public<a name="publishImageReason"></a>
+This document describes how to use the HP Helion Public Cloud Image API to upload images and make them available for public use in the public cloud. It is not intended to be an exhaustive description of [managing images using the Glance client](http://docs.openstack.org/user-guide-admin/content/cli_manage_images.html). For additional detail, see the [glance command reference](http://docs.openstack.org/user-guide-admin/content/glanceclient_commands.html) and the [HP Helion Public Cloud Image Service API specification](http://docs.hpcloud.com/publiccloud/api/image/).
 
 **Note:** As an image owner, it is your responsibility to ensure you have rights to use any software included in the image. HP is not responsible or liable for any unauthorized use of software by the owner of an image.
 
@@ -22,11 +20,11 @@ This document describes how to use the HP Helion Public Cloud Image API to uploa
 
 All other regions do not support the Image API.
 
-### Why upload an image and make it public<a name="publishImageReason"></a>
-HP Helion Public Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Helion Public Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a Linux distribution that we do not currently offer. Or, you might want to create a customized golden master image to import into HP Helion Public Cloud. Whatever the scenario, if you require a specific customized, public image that we do not currently offer, uploading your own image and making it public is ideal for you!
+### Why upload an image and make it public
+HP Helion Public Cloud offers several public images for you to use; however, we might not have the exact image you require. With that in mind, HP Helion Public Cloud allows you to upload your own images and make them publicly available. For example, you might want a version of a Linux distribution that we do not currently offer. Or, you might want to create a customized golden master image to import into HP Helion Public Cloud. Whatever the scenario, if you require a specific customized, public image that we do not currently offer, uploading your own image and optionally making it public may be the right option for you.
 
-### Image types<a name="publishImageTypes"></a>
-You can create either a public or private image to upload to HP Helion Public Cloud. Anyone can see and use a public image. If you upload a private image, it is listed in your image catalog and only visible to you.
+### Image types
+You can create either a public or private image to upload to HP Helion Public Cloud. Anyone can see and use a public image. If you upload a private image, it is listed in the image catalog for your Project and only visible to you.
 
 We have two types of **public** images:
 
@@ -61,7 +59,7 @@ Making an image public refers to setting the `is_public` metadata of an image wh
 * Are visible when users list images.
 * Can be used by all users to create new virtual machine instances in the region.
 
-**Note:** An image whose `is_public` metadata field is `False` is referred to as a private image. Private images are only visible to and accessible by their owners.
+An image whose `is_public` metadata field is `False` is referred to as a private image. Private images are only visible to and accessible by their owners.
 
 In brief, to upload an image and make it public, you must: 
 
@@ -107,10 +105,9 @@ Before using the Glance client (or curl) to manage images, ensure you have follo
 <li>OS_REGION_NAME
 <p><b>Important:</b> The following regions support uploading an image and making it publicly available:
 
-<ul><li>Region A West 13.5 (region-a.geo-1)</li>
-<li>Region B East 13.5 (region-b.geo-1)</li>
-</ul>
-<p>All other regions do not support the Image API.</p></p>
+<ul><li>Region A - US West 13.5 (region-a.geo-1)</li>
+<li>Region B - US East 13.5 (region-b.geo-1)</li>
+</ul></p>
 </li>
 <li>OS_IMAGE_URL
 <p><b>Important:</b> If you are using curl, you must also set the image URL. Since the Glance client determines the image URL automatically, if it is set, you do not need this variable.</p>
@@ -166,7 +163,7 @@ Before you can manage your images using curl, you must acquire a token using you
 <ol><li>Run the following command:
 
 <pre>
-    $ curl -X POST -H "Content-Type: application/json" -d "{\"auth\":{\"tenantName\": \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\", \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
+$ curl -X POST -H "Content-Type: application/json" -d "{\"auth\":{\"tenantName\": \"$OS_TENANT_NAME\", \"passwordCredentials\": {\"username\": \"$OS_USERNAME\", \"password\": \"$OS_PASSWORD\"}}}" $OS_AUTH_URL/tokens
 </pre>
 
 **Important:** Be careful using the double quotes (") and escaped double quotes (\") in the command above.
