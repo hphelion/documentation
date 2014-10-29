@@ -28,8 +28,7 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. 
-* Starter Swift nodes are functional by default as they are part of cloud deployment
+* HP Helion OpenStack&#174; cloud is successfully deployed. <br> (*Starter Swift nodes are functional by default as they are part of cloud deployment*)
 * The Icinga service is active and running in the undercloud
 
 
@@ -53,9 +52,9 @@ Perform the following steps to monitor the usage of Swift disk:
 <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b> (opens in a new window)</a>
 
 3. In the **Host** column, click the icon next to the host IP (with tooltip that shows View Service Details For This Host) of the Swift storage node that you want to monitor.
-4. The <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host All Hosts</b> (opens in a new window) </a> page opens.
+<br>The <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host All Hosts</b> (opens in a new window) </a> page opens.
 
-6. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address &gt;</b> (opens in a new window)</a> to view the disk usage of the selected Swift node.
+4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address &gt;</b> (opens in a new window)</a> to view the disk usage of the selected Swift node.
 
 ##Status Messages
 

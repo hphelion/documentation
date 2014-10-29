@@ -33,7 +33,7 @@ Perform the following procedure to add new scale-out object node.
 
 ##Prerequisite {#preq}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br> *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 
 ##Deploying new object nodes {#deploy-new-object-node}
@@ -46,7 +46,7 @@ Once the Swift nodes are deployed, the required disks must be formatted and moun
 
 1. Log in to the undercloud from the seed.
     
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the working directory to the ring building directory.
@@ -59,11 +59,11 @@ Once the Swift nodes are deployed, the required disks must be formatted and moun
 
 4. List the disks available on the node.
 
-		# ringos list-disks -n <Object nodes IP address> 
+		# ringos list-disks -n <object nodes IP address> 
  
 5. Format the given disk.
 
-		# ringos format-disks -n <Object nodes IP address> -d <disk>
+		# ringos format-disks -n <object nodes IP address> -d <disk>
 
 	**Note**: You can format all the disks with a single command: `-d --all`.
 
@@ -93,9 +93,9 @@ Once the Swift nodes are deployed, the required disks must be formatted and moun
 
 11. Set the weight of the disks using the following command:
 
-    	# ringos set-weight -f /root/ring-building/object-1.builder -s <Object node IP address> -w <weight>
+    	# ringos set-weight -f /root/ring-building/object-1.builder -s <object node IP address> -w <weight>
  
-12. Repeat steps from **3-6** as necessary, increasing the weight by 25 each time. [Change the weight to 50, then 75, and then 100 (w= 50, 75, 100).]
+12. Repeat steps from **8-11** as necessary, increasing the weight by 25 each time. [Change the weight to 50, then 75, and then 100 (w= 50, 75, 100).]
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

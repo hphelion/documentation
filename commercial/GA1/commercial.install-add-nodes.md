@@ -85,7 +85,7 @@ To add new compute nodes that were not created during the initial installation p
 
 		source stackrc
 
-2. Register the new baremetal server in the Ironic database. Replace the CPU, memory, local memory, IPMI address, and IPMI password variable values with your baremetal settings: 
+3. Register the new baremetal server in the Ironic database. Replace the CPU, memory, local memory, IPMI address, and IPMI password variable values with your baremetal settings: 
 
 		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
 
@@ -93,31 +93,30 @@ To add new compute nodes that were not created during the initial installation p
 
 		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
 
-3. Create the Ironic port for the Ironic node created in the previous step:
+4. Create the Ironic port for the Ironic node created in the previous step:
 
 		ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
 
-4. List the baremetal nodes. This command also lists the newly added nodes:
+5. List the baremetal nodes. This command also lists the newly added nodes:
 
 		ironic node-list
 
-5. Log out from undercloud to go back to the seed VM:
+6. Log out from undercloud to go back to the seed VM:
 
 		ssh root@<IP Address>
 
-6. If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`:
- 
-		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-7. Edit the `env_vars` file as follows to define the appropriate scale number:
+7. Make the respective Baremetal entry in `/root/baremetal.csv`.   
+	<!---If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`: 
+		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
+8. Edit the `env_vars` file as follows to define the appropriate scale number:
 
 		export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
 
-4. Source the environment variables file that  you updated:  
+9. Source the environment variables file that  you updated:  
 
 		source /root/env_vars
 
-4. Run the installer script:
+10. Run the installer script:
 
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 
@@ -164,17 +163,17 @@ To remove a node:
 
 10. Remove the entry with the MAC Address that you retrieved in step 4 from from the `/root/baremetal.csv` file:
 
-10. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/env_vars` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
+<!---11. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/env_vars` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
 
 		export OVERCLOUD_COMPUTESCALE=<number>
 
-11. Source the environment variables file that  you updated:  
+12. Source the environment variables file that  you updated:  
 
 		source /root/env_vars
 
-12. Run the installer script:
+13. Run the installer script:
 
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log-->
 
 
 ----
