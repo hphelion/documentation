@@ -7,7 +7,7 @@ keywords: "swift, object storage"
 product: object-storage
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #HP Helion Public Cloud Object Storage API Specification
 
 **Date:** May 2014 
