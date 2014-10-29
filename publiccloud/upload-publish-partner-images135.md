@@ -123,29 +123,29 @@ To configure your environment variables using bash, complete the following steps
 <li>Run the following command to create a text file to store the variables, where <code>.glancerc</code> is your file name:
 
 <pre>
-    $ touch .glancerc</pre>
+$ touch .glancerc</pre>
 </li>
 <li>Change permissions on the file so that only you can read and write to it:
 <pre>
-    $ chmod 600 .glancerc</pre>
+$ chmod 600 .glancerc</pre>
 </li>
 <li>Open you editor of choice, such as vi:
 <pre>
-    $ vi .glancerc</pre>
+$ vi .glancerc</pre>
 </li>
 <li>Add the required variables and their values:
 
 <pre>
-    # Account specific
-    export OS_USERNAME={username}  
-    export OS_TENANT_NAME={project_name}  
-    export OS_PASSWORD={password}  
-    # Not-account specific (same for all users)  
-    export OS_AUTH_URL=https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0  
-    export OS_AUTH_STRATEGY=keystone  
-    export OS_REGION_NAME=region-b.geo-1  
-    # Note: If using 'curl' you must set "OS_IMAGE_URL"  
-    export OS_IMAGE_URL=https://region-b.geo-1.images.hpcloudsvc.com:443
+# Account specific
+export OS_USERNAME={username}  
+export OS_TENANT_NAME={project_name}  
+export OS_PASSWORD={password}  
+# Not-account specific (same for all users)  
+export OS_AUTH_URL=https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0  
+export OS_AUTH_STRATEGY=keystone  
+export OS_REGION_NAME=region-b.geo-1  
+# Note: If using 'curl' you must set "OS_IMAGE_URL"  
+export OS_IMAGE_URL=https://region-b.geo-1.images.hpcloudsvc.com:443
 </pre>
 
 </li>
@@ -153,7 +153,7 @@ To configure your environment variables using bash, complete the following steps
 <li>Save your changes and exit the editor.</li>
 <li>Establish the environment:
 <pre>
-    $ source .glancerc</pre>
+$ source .glancerc</pre>
 </li>
 </ol>
 
@@ -171,18 +171,16 @@ $ curl -X POST -H "Content-Type: application/json" -d "{\"auth\":{\"tenantName\"
 The curl command should return output, such as:
 
 <pre>
-    {"access": {  
-      "token": {  
-        "expires": "2013-05-24T22:03:30.036Z",   
-        "id": "HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917",  
-        "tenant": {  
-           "id": "12345678",   
-           "name": "jane.smith@example.com"  
-           }  
-        },
-    .  
-    .  
-    .
+{"access": {  
+  "token": {  
+    "expires": "2013-05-24T22:03:30.036Z",   
+    "id": "HPAuth10_a73d39f83b98359a7a0951f51a393aaeafdc00fcbcd31c300384917",  
+    "tenant": {  
+       "id": "12345678",   
+       "name": "jane.smith@example.com"  
+       }  
+    },
+.  
 </pre>
 </li>
 <li> Copy the token ID to the system clipboard. For example, in the output above the token ID is:
@@ -243,9 +241,7 @@ If you intend to use your public image outside of the HP Helion Public Cloud env
 
 You can find partner-provided examples of the required documentation on the following pages:
 
-<-- * [Setting up Stackat0 on HP Helion Public Cloud](https://community.hpcloud.com/article/how-do-i-set-activestate-stackat0-hp-cloud-services) 
-* [Stackat0 HP Helion Public Cloud documentation](http://docs.stackat0.com/admin/server/hpcs.html) -->
-* [CohesiveFT Partner Images](https://community.hpcloud.com/article/cohesiveft-partner-images-now-available)
+* [CohesiveFT Partner Images](https://community.hpcloud.com/article/cohesiveft-partner-images-now-available)   
 * [CohesiveFT VNS3 3.x Configuration for HP Helion Public Cloud](http://www.cohesiveft.com/dnld/CohesiveFT-VNS3-3.0.4_HPCS.pdf)
 
 #### Required attributes and properties for images<a name="publishReqAttsProps"></a>
@@ -320,7 +316,7 @@ The HP Helion Public Cloud management console uses custom properties to categori
 See the [Glance client](#publishGlanceCreate) and [curl](#publishCurlUpload) sections for the instructions to set these attributes and properties.
 
 ## Creating an image from a snapshot<a name="publishWindowsSnap"></a>
-One way to create an image is to customize an HP Helion Public Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Helion Public Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance-135).
+One way to create an image is to customize an HP Helion Public Cloud-provided licensed, public image. There are several ways you can do this; however, the steps below describe one method for customizing an HP Helion Public Cloud-provided licensed image. For more detailed information or to see alternative methods, see [Creating a snapshot of an instance](https://community.hpcloud.com/article/creating-snapshot-instance-0).
 
 <ol>
 <li>
@@ -342,7 +338,7 @@ Boot an HP-provided instance and note the instance ID.</li>
 
 <li>Verify that the instance is shut down:
 
-<p><code>nova show &lt;instance_id&gt;</code></p>
+<pre>nova show &lt;instance_id&gt;</pre>
 
 </li>
 <li>Create the snapshot: 
