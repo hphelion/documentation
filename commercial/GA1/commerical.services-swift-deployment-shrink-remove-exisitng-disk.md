@@ -30,20 +30,19 @@ Perform the following steps to remove a disk from object nodes.
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.
-* Starter Swift nodes are functional by default as they are part of the cloud deployment.
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>(*Starter Swift nodes are functional by default as they are part of the cloud deployment*).
 * Scale-out object-ring:1 is deployed.
 *  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Make a backup of the rings before any operation.
+* Take a backup of the rings before any operation.
 
 
 ##Removing disks from ring {#remove-disk-from-ring}
 
 Perform the following steps to remove disks from ring:
 
-1. Log in to the undercloud from Seed. 
+1. Log in to the undercloud from seed. 
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the directory to ring builder.
@@ -79,7 +78,7 @@ Perform the following steps to remove disks from ring:
 * Remove a drive gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually decrease by 25% until it becomes 0. The initial weight is 75.
 
 
-6.Set weight of the disk.
+6.Set the weight of the disk.
 
 		# ringos set-weight -f object-1.builder -s d<device> -w <weight>
 
@@ -91,7 +90,7 @@ The following sample displays the output of the above command:
 
 	# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
-**Note**: You must wait for min&#095;part_hours before another re-balance succeeds.
+**Note**: You must wait for `min_part_hours` before another re-balance succeeds.
 
 8.List all the Swift nodes.
 

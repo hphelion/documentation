@@ -31,7 +31,7 @@ This topic shows how to add a proxy node to the store account and container ring
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br> *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 
 
@@ -44,7 +44,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
  
 1. Log in to the undercloud from seed.
  
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the directory to ring builder.
@@ -53,7 +53,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 3. Copy account, container, object-0 , and generated `object-1.ring.gz` files to proxy nodes and press **yes** when asked to authenticate the node. 
 
-		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Proxy node IP address> 
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <proxy node IP address> 
 
 
 
@@ -73,7 +73,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 		  listen scale_swift_proxy
 		  bind 192.0.2.21:8080
-		  server <Proxy node hostname> <Proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
+		  server <Proxy node hostname> <proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
 
 	**Note**:The number of "server" lines will equal the number of Swift Proxies you have set up.
 

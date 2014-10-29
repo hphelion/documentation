@@ -23,6 +23,8 @@ PageRefresh();
 
 # Deploying Additional Scale-out Swift Nodes with HP Helion OpenStack&#174; 
 
+The scale-out object storage is realized by defining a new storage policy – storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created, it is the default policy and all of the containers would be on this policy unless otherwise specified. We recommend you to use at least **two** nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
+
 Perform the following steps to deploy scale-out object-ring:1 
 
 1. [Prerequisite](#preq)
@@ -133,7 +135,7 @@ Perform the following steps to verify the deployment of Swift nodes:
 
 		# ringos list-swift-nodes -t object
 
-	Sample out put of a list command: 
+	The following sample displays scale-out Swift nodes: 
 
 		+--------------+
 		| object-nodes |
@@ -144,9 +146,9 @@ Perform the following steps to verify the deployment of Swift nodes:
 
 4. List the disks available on each node.
 
-		# ringos list-disks -n <Object nodes IP address> 
+		# ringos list-disks -n <object nodes IP address> 
  
-	Sample output of disks available on the node **192.0.2.29**:
+	The following sample displays the disk available on the node **192.0.2.29**.
 	
 		+----------+------------+
 		| disk     | size       |
@@ -157,7 +159,7 @@ Perform the following steps to verify the deployment of Swift nodes:
 		+----------+------------+
 
 
-5. Repeat the verification process for each Object node.
+5. Repeat the verification process for all of the object node(s).
 
 ##Prepare the Disks on the Deployed Nodes {#preparing-disks-on-swift-nodes}
 
@@ -165,7 +167,7 @@ Once Swift nodes are deployed, the next step is to format and mount the required
 
 To format a given disk:
 
-	# ringos format-disks -n <Object node IP address> -d all
+	# ringos format-disks -n <object node IP address> -d all
 
 
 The following sample displays the output of formatted disk of **192.0.2.29**.
@@ -179,6 +181,8 @@ The following sample displays the output of formatted disk of **192.0.2.29**.
 
 **Note**: You can also format disks individually by using `-d <device-name>`.
 For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
+
+Repeat the above steps for all of the object nodes.
 
 ## Create a New Scale-out Object Ring {#creating-scale-out-object-ring}
 
@@ -203,7 +207,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 3. Add the disk to the ring. 
 
-    	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <Object Node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
+    	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <object node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 	**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes).
 
@@ -258,12 +262,12 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 	
 2. Get all the rings and builder files from either of the starter nodes.
 
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/object.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<Starter Swift nodes IP address>:/etc/swift/container.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.builder /root/ring-building/
 
 	The following sample displays all the rings and builder files from **19.0.2.22**
 
@@ -333,7 +337,7 @@ In the following example account, container, object-0, and generated `object-1.r
 		  }
 		}
 
-3. Re-source the `overcloud-config.json` file to point to the edited file.
+3. Source the `overcloud-config.json` file.
     
     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
