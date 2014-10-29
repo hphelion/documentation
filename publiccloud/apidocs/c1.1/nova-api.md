@@ -7,7 +7,7 @@ keywords: Compute, Nova, OpenStack
 product: compute
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud Compute Service API Reference
 
 **Date:** May 2014
