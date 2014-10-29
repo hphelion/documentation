@@ -7,7 +7,7 @@ keywords: "monitoring, maas"
 product: monitoring
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud Monitoring API Specifications
 
 **Date:** May 2014
