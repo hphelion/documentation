@@ -62,13 +62,13 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 	<td>WARNING </td>
 	<td>Disabled : proxy-server</td>
     <td>Service is temporarily disabled.<br><br>
-	The proxy-server has been disabled by the creation of a file in the "disable_path" config parameter. This is often used to temporarily disable a proxy server by removing it from the
-	load balancer or high availability system. To resolve this issue, delete the file indicated in the "disable_path" configuration parameter.</td>
+	The proxy-server is disabled by the creation of a file in the disable_path configuration parameter. This is often used to temporarily disable a proxy server by removing it from the
+	load balancer or high availability system. Delete the file indicated in the disable_path configuration parameter to resolve it.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
 	<td>No response</td>
-    <td> The named server is not responding. The process may not be running or may be stuck in some way. To resolve, start or restart the server.</td>
+    <td> The named server is not responding. The process may not be running or may be stuck in some way. Start or restart the server to resolve it.</td>
 </tr>
 </table>
 

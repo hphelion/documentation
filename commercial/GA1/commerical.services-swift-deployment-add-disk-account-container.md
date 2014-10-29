@@ -42,7 +42,7 @@ Perform the following steps to add Swift disk to a ring:
 
 1. Log in to the undercloud from seed. 
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
 2. Change the directory to ring builder.
@@ -50,7 +50,7 @@ Perform the following steps to add Swift disk to a ring:
 		# cd /root/ring-building
 
 
-3. List the scale-out Proxy node.
+3. List the scale-out proxy node.
 
 		# ringos list-swift-nodes -t proxy
 
@@ -62,9 +62,9 @@ Perform the following steps to add Swift disk to a ring:
 			| 192.0.2.22    |
 			+---------------+
 
-4. List the disks on the Proxy node.
+4. List the disks on the proxy node.
 
-		# ringos list-disks -n <Proxy node IP address> 
+		# ringos list-disks -n <proxy node IP address> 
 
 	The following sample displays the lists of disk available on the Proxy node **192.0.2.22**. 
 
@@ -77,9 +77,9 @@ Perform the following steps to add Swift disk to a ring:
 				|          |            |
 				+----------+------------+
 	
-5. Format a given disk.
+5. Format the given disk.
 
-		# ringos format-disks -n <Proxy node IP address>  -d <disk>
+		# ringos format-disks -n <proxy node IP address>  -d <disk>
 
 	The following sample displays the output of formatted disk of **192.0.2.22**.
 
