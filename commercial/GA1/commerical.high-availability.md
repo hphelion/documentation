@@ -112,7 +112,7 @@ The above diagram  illustrates the HA architecture with the focus on VIP managem
 
 In the above diagram, requests from an OpenStack client to the overcloud API services are sent to VIP and port combination; for example, 192.0.2.26:8774 for a Nova request. The load balancer listens for requests on that VIP and port. When it receives a request, it selects one of the controller nodes configured for handling Nova requests, in this particular case, and then forwards the request to the IP of the selected controller node on the same port. 
 
-The nova-api service list, which is listening for requests on the IP of its host machine, then receives the request and deals with it accordingly. The database service is also accessed through the load balancer <!---(TODO: Section discussing database lockup issue with concurrent writes – this could require HA proxy always selecting a single node for access or just for writes, if possible)-->. RabbitMQ, on the other hand, is not currently accessed through VIP/HA proxy as the clients are configured with the set of nodes in the RabbitMQ cluster and failover between cluster nodes is automatically handled by the clients.
+The nova-api service list, which is listening for requests on the IP of its host machine, then receives the request and deals with it accordingly. The database service is also accessed through the load balancer <!---(TODO: Section discussing database lockup issue with concurrent writes - this could require HA proxy always selecting a single node for access or just for writes, if possible)-->. RabbitMQ, on the other hand, is not currently accessed through VIP/HA proxy as the clients are configured with the set of nodes in the RabbitMQ cluster and failover between cluster nodes is automatically handled by the clients.
 
 The sections below cover the following topics in detail:
 
@@ -303,9 +303,9 @@ Neutron Netwoking in HA covers the following:
 
 2. With the advent of DVR, the Neutron L3 agent no longer lives on central controller nodes, but is distributed and runs on each Compute node, such that, if it fails, its impact is only limited to VMs within that compute node. (do you have some pointer we could refer the user for further info on DVR concepts)
 
-3. DHCP agent is still running on central Cloud controllers – should a cloud controller running DHCP services fail, you must manually migrate over all the DHCP services to any of the remaining cloud controller nodes using the procedures outlined and validated (still work in progress) in https://jira.hpcloud.net/browse/CORE-1777. Until the DHCP services are migrated, no new VMs will be able to launch and existing VMs will not be able to renew their DHCP leases upon expiration.
+3. DHCP agent is still running on central Cloud controllers - should a cloud controller running DHCP services fail, you must manually migrate over all the DHCP services to any of the remaining cloud controller nodes using the procedures outlined and validated (still work in progress) in https://jira.hpcloud.net/browse/CORE-1777. Until the DHCP services are migrated, no new VMs will be able to launch and existing VMs will not be able to renew their DHCP leases upon expiration.
 
-4. SNAT services still run on one of the central Cloud controller – should a cloud controller running SNAT services fail, your VMs will lose SNAT ability and will not be able to reach services on external networks. You can work around this by attaching a floating IP to your VM, which will allow it to reach to external networks without going through the central SNAT. 
+4. SNAT services still run on one of the central Cloud controller - should a cloud controller running SNAT services fail, your VMs will lose SNAT ability and will not be able to reach services on external networks. You can work around this by attaching a floating IP to your VM, which will allow it to reach to external networks without going through the central SNAT. 
  -->
 
 ##Highly Available Cloud Applications and Workloads <a name="ha-workloads"></a>

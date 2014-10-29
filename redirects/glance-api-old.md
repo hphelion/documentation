@@ -1,9 +1,10 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/image/
+redirect: /publiccloud/api/image/
 layout: redirect
+
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--

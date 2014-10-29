@@ -74,7 +74,7 @@ Note that It is expected that nova-network will be deprecated in the IceHouse re
 
 At a high level, the current situation can be summarized as:
 
-"In 1.1 you can do everything you're used to doing in 1.0 though just the Nova API.  You can do even more by also using the Neutron API.  But once you start using both there are some things we need to make you aware of …"
+"In 1.1 you can do everything you're used to doing in 1.0 though just the Nova API.  You can do even more by also using the Neutron API.  But once you start using both there are some things we need to make you aware of ..."
 
 This page capture those things you need to be aware of.
 

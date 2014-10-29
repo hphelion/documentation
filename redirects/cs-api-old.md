@@ -1,9 +1,10 @@
 ---
-permalink: /old/
-redirect: /new/
+permalink: /api/identity/
+redirect: /publiccloud/api/identity/
 layout: redirect
+
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <!--

@@ -50,7 +50,7 @@ To access Moonshot Management option:
 
 ##Datacenter View <a name= "Datacenter View"></a>
 
-This view provides an overview of the chassis that are managed in a Datacenter. It displays Add, Edit and Delete options at the top and Events Log panel on the right. The Datacenter View has two representations – Grid View and Table View.
+This view provides an overview of the chassis that are managed in a Datacenter. It displays Add, Edit and Delete options at the top and Events Log panel on the right. The Datacenter View has two representations - Grid View and Table View.
 
  * Click the Grid and Table Views to toggle between the views. <br>By default, the chassis information is displayed in the Grid view of the Datacenter view.
  
@@ -201,7 +201,7 @@ The Nodes View also displays two tabs on the right- **Workload** and **Configura
 
 * Selecting / de-selecting a cartridge or a node in the Cartridges or Nodes table is a toggle function. 
 
-* You can select multiple cartridges or nodes by selecting the particular rows one-by-one, in the Cartridges or Nodes table – as the case may be.
+* You can select multiple cartridges or nodes by selecting the particular rows one-by-one, in the Cartridges or Nodes table - as the case may be.
 
 * Selecting a cartridge in the Cartridges table also selects that cartridge on the Chassis Snapshot and vice versa.
 
@@ -298,7 +298,7 @@ Events log displays of the sequence of events in the selected view. You can sear
 
 **View Event Log in Datacenter View**
 
-Events log is displayed on the right panel of Datacenter View page. The Panel displays two tabs – **High + Warning** and **Informational**. By default **High + Warning** is the active tab and displays the high severity events and warnings. The **Informational** Tab displays the informational details of general events. You  can search for particular events by defining the search criteria.
+Events log is displayed on the right panel of Datacenter View page. The Panel displays two tabs - **High + Warning** and **Informational**. By default **High + Warning** is the active tab and displays the high severity events and warnings. The **Informational** Tab displays the informational details of general events. You  can search for particular events by defining the search criteria.
 
 1. In the **Events Panel**, in the **From** box, click  calendar  to select the start date for searching the events.
 

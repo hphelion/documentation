@@ -78,7 +78,7 @@ To follow this guide, you must have already [created](#create) a database instan
 6.	Click **Launch** to create the replica.<br><img src="media/createDBinstance13.png"/>
 
 ##Attaching a Floating IP to the Database Instance {#floatIP}
-It is possible to attach a floating IP address to a database instance – this will make it possible to access your instance from outside of your cloud environment. 
+It is possible to attach a floating IP address to a database instance - this will make it possible to access your instance from outside of your cloud environment. 
 
 To create a database with a floating IP address follow these steps from the command line. Note the following instructions require that you use the Trove CLI to create a database instance.
 

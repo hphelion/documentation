@@ -186,7 +186,7 @@ To deploy the ESX compute proxy using the EON CLI, execute the following steps f
 2. Use the [HP EON servcie CLI](/helion/openstack/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/undercloud/eon/cli/) reference.
 
 		source /root/stackrc
-		eon vcenter-add –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
+		eon vcenter-add -name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
 		eon import-cluster --vcenter-id=<VCENTER_ID> --cluster-moid=<CLUSTER_MOID> --cluster-name=<CLUSTER_NAME>
 		eon activate-clusters <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...] 
 
@@ -202,7 +202,7 @@ To deploy the ESX compute proxy using the EON CLI, execute the following steps f
 		CLUSTER_MOID is the Managed Object ID (MOID) of the server where the proxy will deploy (assigned to each cluster by vCenter).
 		CLUSTER_NAME is the name of the server where the proxy will deploy
 		VCENTER_ID is the unique ID of the vCenter server where the proxy will deploy
-		CLUSTER_MOIDS the cluster ID (Managed Object ID). Use the `eon cluster-list –vcenter-id=<VCENTER_ID>` command, if needed, to obtain this value.
+		CLUSTER_MOIDS the cluster ID (Managed Object ID). Use the `eon cluster-list -vcenter-id=<VCENTER_ID>` command, if needed, to obtain this value.
 
 	A vCenter proxy VM named `hp_helion_vcenter_proxy` will be available in the specified vCenter. You can access that proxy VM from the seed VM host as the `heat-admin` user without password.
 
@@ -215,7 +215,7 @@ To deploy the ESX compute proxy using the EON CLI, execute the following steps f
 If you need to delete an ESX Compute proxy, use the following command:
 
     eon deactivate-clusters <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...] 
-    Proxy VM named hp_helion_vcenter_proxy will be deleted – ( if no clusters is in activated state for the vcenter )
+    Proxy VM named hp_helion_vcenter_proxy will be deleted - ( if no clusters is in activated state for the vcenter )
 
 <!-- Hide per Satya
 ## Enable SSL between vCenter and proxy VM ##

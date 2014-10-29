@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/
+permalink: /helion/openstack/release-notes/101/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -20,12 +20,12 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Release Notes
+# HP Helion OpenStack&reg; 1.0.1 Release Notes
 
-Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0, including known issues and workarounds, and where to find further information on the product release:
+Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0.1, including known issues and workarounds, and where to find further information on the product release:
 
 * [Features in HP Helion OpenStack](#features) 
-
+* [Known Issues in this Release](#known-issues)
 * [For Further Information](#For-Further-Information) 
 
 ##Features in HP Helion OpenStack## {#features}
@@ -64,20 +64,19 @@ The following are the known issues for HP Helion OpenStack:
         
 **Other Issues**
 
-* When you resize an instance of Nova, it produces an error.
-* Volume backups that are created in one project are accessible to all projects.
-* Changing the user settings in a non-admin role affects all users across all projects.
-* An admin is unable to retrieve object details in an Object Store.
-* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack.
-* The update overcloud process fails intermittently and occurs when an OLD_BUILD value is set to NULL instead of the correct build number from ce_env.json.
-* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails.
-* When a controller node crashes, it must be rebooted to return to its operational state.
-* The installation process can fail if the user is attempting to add more than 2000GB (2TB) to the CSV file (even if the baremetal server has more space).
-* The Helion Core installation process leaves behind a shared private network defined.
-* When the VIP is moved to a new controller, the OpenStack services stop responding to any CLI commands.
-* Nova does not handle or recover from RabbitMQ Server process failure.
-* The keepalived processes do not restart automatically when they are killed.
-* The HAProxy does not automatically restart when it is killed.
+* When you resize an instance of Nova, it produces an error (NOV-6664). 
+* Volume backups that are created in one project are accessible to all projects (HORI-3009).
+* Changing the user settings in a non-admin role affects all users across all projects (HORI-2934).
+* An admin is unable to retrieve object details in an Object Store (HORI-2930).
+* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack (EE-21).
+* The update overcloud process fails intermittently and occurs when an OLD_BUILD value is set to NULL instead of the correct build number from ce_env.json (CORE-1697).
+* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails. Specify the server with the lowest specs as the second entry in the `baremetal.csv` file (CORE-1409).
+* When a controller node crashes, it must be rebooted to return to its operational state (CORE-1387).
+* The Helion Core installation process leaves behind a shared private network defined (CORE-586).
+* When the VIP is moved to a new controller, the OpenStack services stop responding to any CLI commands (CORE-1716).
+* Nova does not handle or recover from RabbitMQ Server process failure (CORE-1559).
+* The keepalived processes do not restart automatically when they are killed (CORE-972).
+* The HAProxy does not automatically restart when it is killed (CORE-943).
 * A user can register but cannot update a vCenter through the UI. 
 
 

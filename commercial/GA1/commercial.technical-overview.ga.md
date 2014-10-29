@@ -530,6 +530,8 @@ Conversely, you can decommission servers and remove specific nodes from the clou
 
 If any of the controller nodes fails, you can remove and replace controller nodes, while re-connecting them automatically into the HA cluster. 
 
+For more information on adding (Scale Out) or removing (Scale In) nodes (KVM Compute Nodes) to an already-installed overcloud on a KVM hypervisor, see [HP Helion OpenStack&#174; Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors](/helion/openstack/install/add/nodes/).
+
 ### Backup and Restore nodes {#backup-restore-nodes}
 
 Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the OpenStack Cloud.
