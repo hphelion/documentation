@@ -1,5 +1,5 @@
 ---
-layout: public-cloud
+layout: page
 permalink: /publiccloud/api/monitoring/
 title: HP Helion Public Cloud Monitoring API
 description: "HP Helion Public Cloud Monitoring API Specifications"

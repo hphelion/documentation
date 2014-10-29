@@ -1,5 +1,5 @@
 ---
-layout: public-cloud
+layout: page
 permalink: /publiccloud/api/identity/
 title: HP Helion Public Cloud Identity Services API
 description: "HP Helion Public Cloud Identity Services API documenation."

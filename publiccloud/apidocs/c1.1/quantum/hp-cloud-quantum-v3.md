@@ -1,5 +1,5 @@
 ---
-layout: public-cloud   
+layout: page   
 permalink: /publiccloud/api/networking/
 title: HP Helion Public Cloud Networking Service API Specifications   
 description: "HP Helion Public Cloud Networking Service. This service is based upon OpenStack Networking"

@@ -1,5 +1,5 @@
 ---
-layout: public-cloud
+layout: page
 permalink: /api/v13/identity/admin/
 title: Identity Services Admin API
 description: "HP Cloud Identity Services Admin API documenation."

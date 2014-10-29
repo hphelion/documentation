@@ -1,5 +1,5 @@
 ---
-layout: public-cloud
+layout: page
 permalink: /publiccloud/api/block-storage/
 title: HP Helion Public Cloud Block Storage API
 description: "HP Helion Public Cloud Block Storage API Specification"

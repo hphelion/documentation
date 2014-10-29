@@ -1,5 +1,5 @@
 ---
-layout: public-cloud
+layout: page
 permalink: /api/devex/messaging/
 title: HP Cloud Management Console Messaging API
 description: "Management Console Messaging API documentation."

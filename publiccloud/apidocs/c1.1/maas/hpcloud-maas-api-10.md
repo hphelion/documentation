@@ -1,5 +1,5 @@
 ---
-layout: public-cloud
+layout: page
 permalink: /api/monitoring/
 title: HP Cloud Monitoring API
 description: "HP Cloud Monitoring API Specifications"
