@@ -1,5 +1,5 @@
 ---
-layout: page   
+layout: page
 permalink: /publiccloud/api/networking/
 title: HP Helion Public Cloud Networking Service API Specifications   
 description: "HP Helion Public Cloud Networking Service. This service is based upon OpenStack Networking"
@@ -66,7 +66,7 @@ Key features of Networking include:
 
 * As a tenant you own your own dedicated private network.  
 * As a tenant you own your IP space.
-* Ability to to duplicate IP addresses across autonomous networks
+* Ability to duplicate IP addresses across autonomous networks
 
 #### 2.1.1 High-Level Task Flow
 
@@ -1748,7 +1748,7 @@ This operation requires a request body.
 The *port_security_enabled* attribute is optional.  If not specified, the attribute will have the same value as the network object value.
 
 <!--
-Also optional are the *device_id* and and the *security_groups* attributes. -->
+Also optional are the *device_id* and the *security_groups* attributes. -->
 
 JSON
 
