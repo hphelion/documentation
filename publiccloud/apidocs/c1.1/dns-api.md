@@ -8,7 +8,7 @@ keywords: "dns, domain name service, routing"
 product: dnsaas
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #HP Helion Public Cloud DNS API Specifications
 
 **Date**: May 2014
