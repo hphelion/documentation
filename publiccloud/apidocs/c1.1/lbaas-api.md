@@ -210,7 +210,7 @@ The following are the non-configurable, default load balancer settings.
 | TCP                        | Ports 443, 8443 are supported.                                                        |
 | HTTP                       | Ports 80, 8080 are supported.                                                        
 | TCP Sessions               | Source-IP Affinity turned ON by default. No current option to turn this function OFF. |
-| HTTP Sessions              | Session Persistence is turned ON by default. The session persistent cookie name is SERVID and the contents will be “id-xxxxx” where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function.                       |
+| HTTP Sessions              | Session Persistence is turned ON by default. The session persistent cookie name is SERVID and the contents will be "id-xxxxx" where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function.                       |
 | HTTP X-Forwarded-For (XFF) | On by default                                                                         |
 | Assignable IP Addresses    | Only Compute service IP range; no support for external IP addresses for nodes. |
 
