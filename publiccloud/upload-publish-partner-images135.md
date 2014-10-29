@@ -507,7 +507,7 @@ $ glance image-update &lt;image_name_or_id&gt; --property com.hp__1__image_type=
 
 If you want to define additional attributes or set additional properties, follow the same syntax.
 
-#### Curl ####<a name="publishCurlProps"></a>
+#### Curl<a name="publishCurlProps"></a>
 Run the following command:
 <pre>
 curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property=&lt;property_name&gt;: &lt;property_value&gt;' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;</pre>
