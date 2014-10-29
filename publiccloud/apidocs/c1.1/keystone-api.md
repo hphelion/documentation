@@ -8,7 +8,7 @@ product: identity
 private: true
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # Identity Services Admin API
 
 Date: May 2013
