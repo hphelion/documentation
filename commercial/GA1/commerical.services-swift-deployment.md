@@ -159,7 +159,7 @@ Perform the following steps to verify the deployment of Swift nodes:
 		+----------+------------+
 
 
-5. Repeat the verification process for all of the Object node(s).
+5. Repeat the verification process for all of the object node(s).
 
 ##Prepare the Disks on the Deployed Nodes {#preparing-disks-on-swift-nodes}
 
@@ -182,7 +182,7 @@ The following sample displays the output of formatted disk of **192.0.2.29**.
 **Note**: You can also format disks individually by using `-d <device-name>`.
 For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
 
-Repeat the above steps for all of the Object nodes.
+Repeat the above steps for all of the object nodes.
 
 ## Create a New Scale-out Object Ring {#creating-scale-out-object-ring}
 
