@@ -7,7 +7,7 @@ keywords: "Keystone, Identity Services"
 product: identity
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 #HP Helion Public Cloud Identity Services API
 
 Date: May 2014
