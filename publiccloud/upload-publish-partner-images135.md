@@ -341,29 +341,34 @@ Boot an HP-provided instance and note the instance ID.</li>
 <pre>nova show &lt;instance_id&gt;</pre>
 
 </li>
-<li>Create the snapshot: 
-<p>
-<code>nova image-create &lt;instance_id&gt; &lt;my snapshot name&gt;</code>
-</p>
+<li>Create the snapshot:
+
+<pre>nova image-create &lt;instance_id&gt; &lt;my snapshot name&gt;</pre>
 
 <p><b>Note:</b> Only the root disk is included with the snapshot; the ephemeral storage will be lost.</p>
 </li>
 
 <li>Verify that the image status shows "SAVING" and changes to "ACTIVE" when the snapshot is saved:
-<p><code>nova image-show &lt;my_snapshot_name&gt;</code></p>
+
+<pre>nova image-show &lt;my_snapshot_name&gt;</pre>
+
 <p><img src="media/glance-snapshot-details.png" width="580" alt="" /></p>
 </li>
 
 <li>Remove the snapshot image properties:
 <p><b>For Windows snapshots</b> you need to ensure you leave the following properties on the snapshot: <code>com.hp__1__license_os</code> and <code>hp_image_license</code> by forming your command like this:</p>
-<p><code>glance image-update {image_id} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</code></p>
+
+<pre>glance image-update {image_id} --purge-props --property com.hp__1__license_os={id} --property hp_image_license={id}</pre>
+
 <p><b>For Linux snapshots</b> you should use this command:
-<p><code>glance image-update {image_id} --purge-props</code></p>
+
+<pre>glance image-update {image_id} --purge-props</pre>
 </p>
 <p><img src="media/glance-snapshot-details-purged.png" width="580" alt="" /></p>
 </li>
 <li><p>Your instance from which the snapshot was taken will need to be deleted as it's had it's final sysprep performed on it and you will not be able to retrieve the Administrator password for it, preventing you from connecting to it again:</p>
-<p><code>nova delete &lt;instance_id&gt;</code></p>
+
+<pre>nova delete &lt;instance_id&gt;</pre>
 </li>
 </ol>
 
@@ -400,34 +405,25 @@ To see a list of available images, follow the instructions below.
 1. Open your choice of command shell.
 2. Run the following command at the prompt to see a list of images:
 
-    <pre>$ glance image-list</pre>
+<pre>
+$ glance image-list</pre>
 
-    <img src="media/glance-image-list.png" width="580" alt="" />
+<img src="media/glance-image-list.png" width="580" alt="" />
 
 #### Curl ####
 
 Type the following command, where `OS_IMAGE_URL/v1.0/images` is the location of your images:
 
-<pre>$ curl -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images</pre>
+<pre>
+$ curl -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images</pre>
 
 Your output should be similar to this:
 
 <pre>
-    {"images": [{"name": "CentOS 6.3 Server 64-bit 20130116 (b)",
-    "container_format": "bare", "disk_format": "qcow2", "checksum":   
-    "b43071530a6a1704b5b8b644a6f5231e", "id": "2ffc3a4c-8272-478f-
-    a5a8-0067c0012e33", "size": 325020160}, {"name": "CentOS 5.8 
-    Server 64-bit 20120828 (b)", "container_format": "bare","disk_format": 
-    "qcow2", "checksum": "e66bad1137c6d519fc5c6fb175e45b71", "id":   
-    "fcc0edba-6f1b-4451-a4cc-7c63f20430b5", "size": 305438208}]}
+{"images": [{"name": "CentOS 6.3 Server 64-bit 20130116 (b)", "container_format": "bare", "disk_format": "qcow2", "checksum": "b43071530a6a1704b5b8b644a6f5231e", "id": "2ffc3a4c-8272-478f-a5a8-0067c0012e33", "size": 325020160}, {"name": "CentOS 5.8 Server 64-bit 20120828 (b)", "container_format": "bare","disk_format": "qcow2", "checksum": "e66bad1137c6d519fc5c6fb175e45b71", "id": "fcc0edba-6f1b-4451-a4cc-7c63f20430b5", "size": 305438208}]}
 </pre>
 
 **Note:** This command lists up to 1000 images.
-<!--
-2. (Optionally) If you have more than 1000 images available, add the last image ID to the command as a marker to list more images. For example, when the last image ID is fcc0edba-6f1b-4451-a4cc-7c63f20430b5:
-
-    `$ curl -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images?marker=fcc0edba-6f1b-4451-a4cc-7c63f20430b5`
--->
 
 ### Uploading an image<a name="publishGlanceCreate"></a>
 When you upload your image, you must [define/set the required attributes and property](#publishReqsDeploy). To upload an image, follow the instructions below.
@@ -440,10 +436,8 @@ To upload your new image using the Glance `image-create` command:
 1. Open your choice of command shell.
 2. Run the following command to upload your new image and define/set the required attributes and property, where your image name is `My Custom Image` and your image file location is `/root/images/my_test_image.qcow2`:
 
-   
-    `$ glance image-create --name 'My Custom Image' --container-format `
-    `bare --disk-format qcow2 --property architecture=x86_64 < /root/`
-    `images/my_test_image.qcow2`
+<pre>
+$ glance image-create --name 'My Custom Image' --container-format bare --disk-format qcow2 --property architecture=x86_64 /root/images/my_test_image.qcow2</pre>
     
     **Note:** You can define/set all [required](#publishReqsDeploy) and [optional](#publishReqsDisplay) attributes and properties in this step.
 
@@ -451,11 +445,11 @@ To upload your new image using the Glance `image-create` command:
 
     **Important:** After your upload completes, your image should have status 'active'. 
 
-    <img src="media/glance-image-attributes.png" width="580" alt="" />
+<img src="media/glance-image-attributes.png" width="580" alt="" />
 
 4. After the image status is `active`, you can boot it using the appropriate nova commands or the HP Helion Public Cloud web interface. See the documentation for [creating instances](https://community.hpcloud.com/article/creating-your-first-instance) for more information.
 
-**Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Helion Public Cloud 13.5, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `progress`, use the curl command documented below.
+**Important:** Image upload duration will vary depending on your internet service provider's bandwidth and on the image size. If you have a problem with your system timing out, you can upload the image to an instance running on HP Helion Public Cloud, and then use the Glance client tool to upload the image to Glance. Newer Glance clients provide a `progress` argument to allow you to monitor the progress of the upload. If you need to monitor the progress and your version of the Glance client does not support `progress`, use the curl command documented below.
 
 #### Curl<a name="publishCurlUpload"></a>
 **Important:** You must supply `"X-Image-Meta-Container_format"` and `"X-Image-Meta-Disk_format"` headers.
@@ -496,37 +490,32 @@ If you want your images to display in the HP Helion Public Cloud management cons
 #### Glance client ####
 Use the `--property` option of the `glance` command:
 
-    $ glance image-update <image_name_or_id> --property 
-    <property_name>=<property_value>
+<pre>
+$ glance image-update <image_name_or_id> --property <property_name>=<property_value></pre>
 
 For example, to set the `image type` property to `disk`, run the following command:
 
-    $ glance image-update <image_name_or_id> --property 
-    com.hp__1__image_type=disk
+<pre>
+$ glance image-update <image_name_or_id> --property com.hp__1__image_type=disk</pre>
+
 <br>
 <img src="media/glance-image-property.png" width="580" alt="" />
 
 You can run this command for each required property, or you can include all the required properties in one command. For example:
 <pre>
-    $ glance image-update &lt;image_name_or_id&gt; --property 
-    com.hp__1__image_type=disk --property com.hp__1__image_lifecycle
-    =active --property com.hp__1__bootable_volume=true --property 
-    com.hp__1__os_distro=org.debian
-</pre>
+$ glance image-update &lt;image_name_or_id&gt; --property com.hp__1__image_type=disk --property com.hp__1__image_lifecycle=active --property com.hp__1__bootable_volume=true --property com.hp__1__os_distro=org.debian</pre>
+
 If you want to define additional attributes or set additional properties, follow the same syntax.
 
 #### Curl ####<a name="publishCurlProps"></a>
 Run the following command:
 <pre>
-    curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-
-    &lt;property_name&gt;: &lt;property_value&gt;' $OS_IMAGE_URL/v1.0/
-    images/&lt;image_id&gt;
-</pre>
+curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property=&lt;property_name&gt;: &lt;property_value&gt;' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;</pre>
+
 For example, if you set the property `com.hp__1__image_type` to `disk`:
 <pre>
-    curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-Property-
-    com.hp__1__image_type: disk' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;
-</pre>
+curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-Property=com.hp__1__image_type: disk' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;</pre>
+
 Run this command for each required property substituting the property name and value. If you want to set additional custom properties, follow the same syntax.
 
 ### Showing image details<a name="publishGlanceShow"></a>
@@ -535,15 +524,17 @@ Image details can be displayed using the `image-show` option. To see image detai
 #### Glance client ####
 To display information about an image, run the following command:
 
-    $ glance image-show <image_name_or_id>
+<pre>
+$ glance image-show <image_name_or_id></pre>
+
 <br>
 <img src="media/glance-image-details.png" width="580" alt="" />
 
 #### Curl<a name="publishCurlShow"></a>
 To display information about an image, run the following command:
 
-    $ curl -v -XHEAD -H "X-Auth-Token: $TOKEN_ID" 
-    $OS_IMAGE_URL/v1.0/images/<image_id>
+<pre>
+$ curl -v -XHEAD -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images/<image_id></pre>
 
 ### Making an image public<a name="publishGlancePublic"></a>
 Images are not public by default, and you must have been given privileges by HP Support to make an image publicly available. To make an image public, follow the instructions below.
@@ -551,17 +542,16 @@ Images are not public by default, and you must have been given privileges by HP 
 #### Glance client ####
 To make an image public, run the `glance image-update` command:
 
-    $ glance image-update <image_name_or_id> --is-public=true
+<pre>
+$ glance image-update <image_name_or_id> --is-public=true</pre>
 <br>
 <img src="media/glance-image-public.png" width="580" alt="" />
 
 #### Curl<a name="publishCurlPublic"></a>
 To make an image public, run the following command:
 <pre>
-    $ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-
-    Is_public: True' -H 'X-glance-registry-Purge-props: False'  
-    $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;
-</pre>
+$ curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID" -H 'X-Image-Meta-Is_public: True' -H 'X-glance-registry-Purge-props: False' $OS_IMAGE_URL/v1.0/images/&lt;image_id&gt;</pre>
+
 **Important:** To avoid removal of existing custom properties, you must include `X-glance-registry-Purge-props: False`.
 
 ### Deleting an image<a name="publishGlanceDelete"></a>
@@ -574,19 +564,21 @@ To delete an image, use the `image-delete` command to remove it.
 
 1. Type the following command: 
 
-    `$ glance image-delete <image_name_or_id>`
+<pre>
+$ glance image-delete <image_name_or_id></pre>
 
 2. Type the following command to verify your image was deleted:
 
-    `$ glance image-show <image_name_or_id>`
+<pre>
+$ glance image-show <image_name_or_id></pre>
 
-    <img src="media/glance-image-delete.png" width="580" alt="" />
+<img src="media/glance-image-delete.png" width="580" alt="" />
 
 #### Curl<a name="publishCurlDelete"></a>
 To delete an image, run the following command:
 
-    curl -v -XDELETE -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0
-    /images/<image ID>
+<pre>
+curl -v -XDELETE -H "X-Auth-Token: $TOKEN_ID" $OS_IMAGE_URL/v1.0/images/<image ID></pre>
 
 ### Deprecating an image<a name="publishGlanceDeprecate"></a>
 <!--
@@ -600,17 +592,13 @@ As long as an image exists in HP Helion Public Cloud, it will appear in all imag
 #### Glance client ####
 To deprecate an image in HP Helion Public Cloud management console:
 <pre>
-    $ glance image-update &lt;image_name_or_id&gt; --property 
-    com.hp__1__image_lifecycle=deprecated --name 
-    '&lt;image_name&gt; (deprecated)'
-</pre>
+$ glance image-update &lt;image_name_or_id&gt; --property com.hp__1__image_lifecycle=deprecated --name '&lt;image_name&gt; (deprecated)'</pre>
+
 #### Curl #### {#publishCurlDeprecate}
 To deprecate an image, run the following command:
 <pre>
-    curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 
-    'X-Image-Meta-Property-com.hp__1__image_lifecycle: deprecated' 
-    $OS_IMAGE_URL/v1.0/images/&lt;image ID&gt;
-</pre>
+curl -v -XPUT -H "X-Auth-Token: $TOKEN_ID"  -H 'X-Image-Meta-Property-com.hp__1__image_lifecycle: deprecated' $OS_IMAGE_URL/v1.0/images/&lt;image ID&gt;</pre>
+
 ### Common errors when using the Glance client {#publishGlanceErrors}
 Possible HTTP return codes are listed in HP Helion Public Cloud Image API documentation. The most common errors (and possible explanations) are:
 
@@ -624,7 +612,7 @@ For additional information on uploading an image and making it publicly availabl
 
 * [HP Helion Public Cloud Image Service API documentation](https://docs.hpcloud.com/publiccloud/api/image/)
 * [OpenStack documentation](http://docs.openstack.org/user-guide/content/ch_cli.html)
-* [Cloud 13.5 CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
+* [Public Cloud CLI Installation Instructions](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions)
 * [Manage images using the Glance client](http://docs.openstack.org/user-guide/content/cli_manage_images.html)
 * [glance command reference](http://docs.openstack.org/user-guide/content/glanceclient_commands.html)
 * [Technical support knowledge base](https://community.hpcloud.com)
@@ -632,7 +620,7 @@ For additional information on uploading an image and making it publicly availabl
 ## Contacting support {#contactSupport}
 If you need further assistance, you can contact support in any of these ways:
 
-* [Live chat from hpcloud.com](https://account.hpcloud.com/cases#support_chat)
-* [Open a support case](https://account.hpcloud.com/cases)
+* [Live chat from hpcloud.com](https://community.hpcloud.com/article/how-contact-support-assistance#chat)
+* [Open a support case](https://horizon.hpcloud.com/settings/cases)
 * [Email support@hpcloud.com](mailto:support@hpcloud.com)
 * Call at 1-855-61CLOUD (1-855-612-5683) in the U.S. or +1-678-745-9010 internationally.
