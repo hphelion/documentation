@@ -1184,7 +1184,7 @@ With bulk delete you can  delete up to 10,000 objects or containers in one reque
 
 To indicate that you are performing a bulk delete operation, add the `?bulk-delete` query paramater to the path. The path should be the account (e.g., `/v1/12345678912345`) containing the objects and containers. The [Content-Type](#content_type_request) request header must be set to `text/plain`.
 
-The request body comprises a list of object or container names, seperated by a newline character. In addition:
+The request body comprises a list of object or container names, separated by a newline character. In addition:
 
 * The names must be UFT-8 encoded and then URL-encoded.
 
