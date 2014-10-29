@@ -7,7 +7,7 @@ keywords: "block storage, volume, cinder, bootable volume, volume backup"
 product: block-storage
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud Block Storage API Specification
 
 **Date:** May 2014
