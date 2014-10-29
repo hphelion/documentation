@@ -9296,7 +9296,7 @@ Where a user has created additional networks for a project via the Network API, 
 
 ## 7. Glossary ##
 
-**Server:** A server is a a virtual machine instance within Compute. See [Servers](#Servers).
+**Server:** A server is a irtual machine instance within Compute. See [Servers](#Servers).
 
 **Flavor:** A set of attributes which describe the resources available to a server. See [Flavors](#Flavors).
 
