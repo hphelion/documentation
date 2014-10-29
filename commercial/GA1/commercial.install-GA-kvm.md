@@ -26,7 +26,7 @@ PageRefresh();
 
 HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
-## Installing HP Helion OpenStack <a name="install"></a>
+## Installing HP Helion OpenStack
 
 The installation and configuration process for KVM consists of the following general steps: 
 
