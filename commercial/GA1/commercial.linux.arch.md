@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/update/undercloud/101/
+permalink: /helion/openstack/install/linux/arch/
 product: commercial.ga
 
 ---
