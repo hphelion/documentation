@@ -174,7 +174,7 @@ hlinux-hrepo.usa.hp.com
 <th>Backup?</th>
 <th>Description</th>
 </tr>
-<tr style="background-color: white; color: black;">
+<tr>
 <td>Linux packages</td>
 <td>Public</td>
 <td>High</td>
