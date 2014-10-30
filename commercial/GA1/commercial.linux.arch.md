@@ -64,23 +64,22 @@ debian.org
 * Community run FLOSS distribution
 * An operating system composed of free software mostly carrying the GNU General Public License.The operating system is developed by an internet collaboration of volunteers.
 * Accessible globally via Debian Mirrors
-* Managed by The Debian Project.
+
 
 kernel.org
 
 * A main repository of source code for the Linux kernel
-* Managed by Linux Kernel Organization
+
 
 WWW
 
 * FLOSS not found in Debian, but available on the Web.
 * Requested by HP cloud developers
-* Managed by various developers (not hp)
+
 
 seedy.fc.hp.com
 
 * Mirrors Debian, providing a local Debian mirror for use within the HP Intranet.
-* Managed by Richard (Craig) Lamparter and Brett Johnson (not the hLinux team)
 
 hlinux-incoming.usa.hp.com
 
@@ -90,7 +89,7 @@ hlinux-incoming.usa.hp.com
 	* Download and package other software outside of Debian on request
 * Re-branding of packages
 * Validation
-* Managed by the hLinux team
+
 
 hlinux-deejay.usa.hp.com
 
@@ -98,14 +97,14 @@ hlinux-deejay.usa.hp.com
 	* Repo signing
 	* Generate package checksums
 * Validation
-* Organize & present as hLinux "repo"
-* Managed by the hLinux team
+* Organize & present as Host Linux "repo"
+
 
 hlinux-hrepo.usa.hp.com
 
-* Used by developers to access the hLinux repo
-* Fetches packages from deejay as needed
-* Managed by the hLinux team
+* Used by developers to access the Host Linux repo
+* Fetches packages from deejay as needed 
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
