@@ -27,6 +27,8 @@ HP Helion OpenStack Host Linux (Debian-based) project standardizes and controls 
 The Host Linux repository provides a base Linux image for use by HP Helion OpenStack (Helion) teams to package and build undercloud and overcloud nodes.
 
 * [Service Description and Purpose](#description)
+* [Host Linux Repository](#repo)
+* [Service Architecture](#servicearch)
 * [Components](#components)
 * [Interfaces](#interfaces)
 * [Data](#data)
@@ -46,7 +48,35 @@ Host Linux runs on physical servers (bare metal) to support the Helion stack, an
 
 Host Linux is internal and HP-use-only at this time, delivered to customers as a component of HP Helion OpenStack and HP Helion OpenStack Community.
 
-**Service Architecture Diagram**
+## Host Linux Repository ## {#repo}
+
+This section describes how Host Linux repository integrates `Debian.org`, `Kernel.org`, and foreign sources. The repository allows partners to select any current or archived packages, as needed.
+
+The packages in the repository are refreshed with each HP Helion OpenStack release. 
+
+Benefits of using the Host Linux repository instead of the `Debian.org`, `Kernel.org`, and foreign sources include:
+
+* The packages are more stable
+* The packages are optimized to work with HP Helion OpenStack
+* The repository is more secure and provides a smaller attack surface
+
+### Debian.org ###
+
+The HP Helion OpenStack Host Linux repository contains a focused set of 576 Debian packages, Host Linux re-branded. The `Debian.org` repository contains approximately 65,000 packages. 
+
+
+### Kernel.org ### 
+
+The HP Helion OpenStack Host Linux repository contains the full set of 6 `Kernel.org` packages, optimized to work with HP Helion OpenStack, including kernel parameter tuning, removal of modules not required by Helion, and added drivers.
+
+### Foreign Packages
+
+The HP Helion OpenStack Host Linux repository contains 8 non-Debian packages and 10 Debian packages.
+
+These packages provide required HP Helion OpenStack support not provided in OpenStack.
+
+
+## Service Architecture ## {#servicearch}
 
 The following diagram represents the Host Linux service architecture.
 
@@ -107,6 +137,8 @@ hlinux-hrepo.usa.hp.com
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 
 
 ## Interfaces ## {#interfaces}
