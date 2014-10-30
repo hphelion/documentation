@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&reg; Community Open Source and Third-Party Software License Agreements"
 permalink: /helion/community/3rd-party-license-agreements/
-product: commercial.ga
+product: community
 
 ---
 <!--PUBLISHED-->
