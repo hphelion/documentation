@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publiccloud/api/dns/
-title: HP Helion Public Cloud DNS API
+title: "HP Helion Public Cloud DNS API"
 description: "HP Helion Public Cloud DNS as a Service (DNSaaS) API Specification"
 version: v1
 keywords: "dns, domain name service, routing"
@@ -16,6 +16,7 @@ product: dnsaas
 **Document version:** 1.1
 
 ## 1. Overview
+st checked in by:
 
 This guide is intended for software developers who wish to create applications using the HP Helion Public Cloud DNS set of APIs. It assumes the reader has a general understanding of cloud APIs, DNS concepts, RESTful web services, HTTP/1.1 conventions and JSON serialization formats. The HP Helion Public Cloud DNS set of APIs utilize and take advantage of a variety of Openstack cloud API patterns which are described in detail.
 

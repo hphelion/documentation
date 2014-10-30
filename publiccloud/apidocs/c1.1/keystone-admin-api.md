@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /api/v13/identity/admin/
-title: Identity Services Admin API
+title: "Identity Services Admin API"
 description: "HP Cloud Identity Services Admin API documentation."
 keywords: "Keystone, Identity Services"
 product: identity
