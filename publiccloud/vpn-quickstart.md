@@ -7,7 +7,7 @@ categories: neutron
 tags: networking neutron vpn
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 # HP Helion Public Cloud Networking:  VPN setup quick start guide 
 
 
