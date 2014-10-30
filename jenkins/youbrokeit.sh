@@ -87,6 +87,17 @@ echo ""
  EXIT="1"
 fi
 
+if [[ -n $(head -10 $i | grep title: |   grep -v ".*\".*\"" ;) ]];
+then
+echo "==== Title missing ending quotation mark ==="
+echo "The title string must end with a quotation mark."
+echo "The build will not fail, but the md file will not be included in the output."
+echo $i
+echo "Last checked in by:"
+git log -1 $i | egrep "(Author|Date)"
+echo ""
+ EXIT="1"
+fi
 
 done 
 

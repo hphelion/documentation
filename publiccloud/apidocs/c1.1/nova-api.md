@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HP Helion Public Cloud Compute Service API Reference
+title: "HP Helion Public Cloud Compute Service API Reference"
 permalink: /publiccloud/api/compute/
 description: This document describes the HP Helion Public Cloud Compute Service. HP Helion Public Cloud Compute is based on OpenStack Nova.
 keywords: Compute, Nova, OpenStack
