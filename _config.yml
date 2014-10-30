@@ -230,6 +230,8 @@ navigation:
     url: /helion/community/install-overview/		
   - text: Related Documentation
     url: /helion/community/related-links/	
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/community/3rd-party-license-agreements/	
   - text: End User License Agreement
     url: /helion/community/eula/
   - text: Site Index
