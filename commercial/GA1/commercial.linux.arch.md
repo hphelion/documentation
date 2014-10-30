@@ -34,7 +34,6 @@ The Host Linux repository provides a base Linux image for use by HP Helion OpenS
 * [Sequence Diagrams](#sequence)
 * [Implementation](#implement)
 
-
 ## Service Description and Purpose ## {#description}
 
 Host Linux is an HP-controlled, HP-internal only, Open Source Software Repository derived from the Debian GNU/Linux distribution and is tailored to support HP Helion OpenStack product versions and OpenStack. 
@@ -53,7 +52,7 @@ The following diagram represents the Host Linux service architecture.
 
 <img src="media/LinuxServiceArch_resize2.png"> 
 
-<a href="javascript:window.open('/content/documentation/media/LinuxServiceArch_resize2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image</a> (opens in a new window)
+<a href="javascript:window.open('/content/documentation/media/LinuxServiceArch_resize1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image</a> (opens in a new window)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -253,8 +252,6 @@ The following diagram represents the Host Linux chain of custody.
 <img src="media/LinuxCustodyChain.png">
 
 <a href="javascript:window.open('/content/documentation/media/LinuxCustodyChain75.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image</a> (opens in a new window)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
