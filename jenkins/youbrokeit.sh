@@ -87,7 +87,7 @@ echo ""
  EXIT="1"
 fi
 
-if [[ -n $(head -10 $i | egrep  "title:.*[^\"]$";) ]];
+if [[ -n $(head -10 $i | egrep  "title:.*[^\"]$" ;) ]];
 then
 echo "==== Title missing ending quotation mark ==="
 echo "The title string must end with a quotation mark."
