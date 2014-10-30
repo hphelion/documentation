@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Community Software License Terms
-permalink: /helion/community/eula/
+permalink: /helion/bob/
 product: community
 
 ---
