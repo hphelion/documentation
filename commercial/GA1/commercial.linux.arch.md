@@ -76,7 +76,7 @@ The HP Helion OpenStack Host Linux repository contains 8 non-Debian packages and
 These packages provide required HP Helion OpenStack support not provided in OpenStack.
 
 
-## Service Architecture ## {#servicearch}
+## Service Architecture  ## {#servicearch}
 
 The following diagram represents the Host Linux service architecture.
 
