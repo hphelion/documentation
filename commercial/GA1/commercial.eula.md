@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174;: Preview Agreement"
+title: "HP Helion OpenStack&#174;: Community Software License Terms"
 permalink: /helion/openstack/eula/
 product: commercial.ga
 

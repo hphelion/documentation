@@ -6640,7 +6640,7 @@ Expires: -1
 Content-Type: application/json
 Content-Length: 380
 Date: Thu, 25 Aug 2011 23:33:19 GMT
- 
+
 {"roles": {"role": [
     {
     "roleAssignmentId": "000",
@@ -6657,7 +6657,7 @@ Date: Thu, 25 Aug 2011 23:33:19 GMT
       "links": {
           "self": "https://www.hpcloud.com:35357/v3/roles/001"
       }
-   },
+    },
     {
     "roleAssignmentId": "111",
       "id": "002",
@@ -6673,7 +6673,7 @@ Date: Thu, 25 Aug 2011 23:33:19 GMT
       "links": {
           "self": "https://www.hpcloud.com:35357/v3/roles/002"
       }
-   }
+    }
 ]}}
     
     XML  
@@ -6686,25 +6686,25 @@ Expires: -1
 Content-Type: application/xml
 Content-Length: 380
 Date: Thu, 25 Aug 2011 23:33:19 GMT
- 
+
 <roles xmlns="http://www.hp.com/identity/api/ext/HP-IDM/v1.0">
-   <role>
-    <roleAssignmentId>000</roleAssignmentId>
-    <id>001</id>
-    <name>role01</name>
-    <subjectName>user-1</subjectName>
-    <subjectType>User</subjectType>
-    <description>role01-description"</description>
-    <subjectId>xxxxxxxxxxxxxx</subjectId>
-    <domainId>xxxxxxxxxxxxxx</domainId>
-    <serviceId>xxxxxxxxxxxxxx</serviceId>
-    <project_id>xxxxxxxxxxxxxx</project_id>
-    <isCrossDomain>false</isCrossDomain>
-      <links>
+    <role>
+        <roleAssignmentId>000</roleAssignmentId>
+        <id>001</id>
+        <name>role01</name>
+        <subjectName>user-1</subjectName>
+        <subjectType>User</subjectType>
+        <description>role01-description"</description>
+        <subjectId>xxxxxxxxxxxxxx</subjectId>
+        <domainId>xxxxxxxxxxxxxx</domainId>
+        <serviceId>xxxxxxxxxxxxxx</serviceId>
+        <project_id>xxxxxxxxxxxxxx</project_id>
+        <isCrossDomain>false</isCrossDomain>
+        <links>
           <self>https://www.hpcloud.com:35357/v3/roles/001</self>
       </links>
-   </role>
-   <role>
+    </role>
+    <role>
     <roleAssignmentId>111</roleAssignmentId>
     <id>002</id>
     <name>role02</name>
@@ -6719,8 +6719,8 @@ Date: Thu, 25 Aug 2011 23:33:19 GMT
       <links>
           <self>https://www.hpcloud.com:35357/v3/roles/002</self>
       </links>
-   </role>
-   <links>
+    </role>
+    <links>
        <previous>https://www.hpcloud.com:35357/v3/projects/xxx/users/yyy/roles?page=1</previous>
        <next>https://www.hpcloud.com:35357/v3/projects/xxx/users/yyy/roles?page=3</next>
    </links>
