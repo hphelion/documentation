@@ -2,7 +2,7 @@
 layout: public-cloud
 title: "HP Helion Public Cloud Networking: Quick Start Guide"
 permalink: /publiccloud/compute/teamcity/
-product: compute
+product: public-cloud
 
 ---
 <!--PUBLISHED-->
