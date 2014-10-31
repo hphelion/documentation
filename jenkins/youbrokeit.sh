@@ -54,7 +54,7 @@ do
 					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
 					then
 						echo $a
-						echo "Last checked in by:"
+						echo "Last committed by:"
 						git log -1 $a | egrep "(Author|Date)"
 						echo ""
 						EXIT="1"
@@ -68,7 +68,7 @@ done
 #rm filepermalink.txt
  
  
- exit ;
+ 
  
  
  
