@@ -18,8 +18,6 @@ Leveraging [OpenStack Compute](http://openstack.org/projects/compute/), HP Helio
 
 A variety of flavors and images are provided by HP Helion Public Cloud compute that can be used to create a wide mix of servers.  The best way to learn more is to start using it yourself over at the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/).  If you have any questions, try our [Forums](https://community.hpcloud.com) where you can learn from our own internal experts as well as other users in the HP Helion Public Cloud community.
 
-See the [Version Overview](/publiccloud/version-overview) page for a description of what's new in v13.5.
-
 ## API
 Do you need low level, raw REST API access to HP Helion Public Cloud compute?  Take a look at the Compute API page for the version of HP Helion Public Cloud you are using:
 
