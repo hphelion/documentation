@@ -86,15 +86,16 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 
 The Base Layer contains those advance services above the kernel which provide services to the kernel or essentially perform like a subsystem.
 
-**Eden**. Scalabilty manageability, control. 
+<!-- **Eden**. Scalabilty manageability, control. 
 
 A framework which is used to build all the HP Cloud OS services. It provides common functionality across all service. 
 
 Eden also provides scalability and manageability around services and a way to control and understand how those services are performing
 
-- [Overview of the Eden service](/cloudos/services/eden/overview)
+- Overview of the Eden service
 - Getting started with the Eden service
 - Eden service use cases/solutions/how to use/examples
+-->
 
 **Peer** A resource pool registry; Allows you to interact with other clouds.
 HP Public is a resource pool registry, which allows you to tap into any OpenStack cloud. This allows for a hybrid cloud approach for sharing resources. Example: using HP Public Cloud Services in conjunction with your internal private cloud services.
