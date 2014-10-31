@@ -24,7 +24,7 @@ Focus allows you to:
 
 ###Using the Administration Dashboard### {#dashboard}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/services/dashboard/overview/) to work with the Focus service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/services/dashboard/how-works/) to work with the Focus service.
 
 
 ###Using the API to access Focus### {#API}
