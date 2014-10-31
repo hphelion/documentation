@@ -59,7 +59,8 @@ The following are the known issues for HP Helion OpenStack:
 
 **Operations**
 
-* Sherpa can not upload images with the same name to glance in 2 different tenants. (CODN-24)
+* Sherpa can not upload images with the same name to glance in 2 different tenants. If re-download is tried, the status gets stuck to download and the user can't install the package. Only option is to clean from the backend and reimport and install.
+(CODN-24)
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
