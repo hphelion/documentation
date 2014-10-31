@@ -3,20 +3,79 @@
 echo 'running documentation/jenkins/check.sh'
 #Get the most recent version of the master branch  
 env | grep GIT
-git checkout $GIT_BRANCH
-git pull
+#git checkout $GIT_BRANCH
+#git pull
+
+
+
+
+
 
 
 #Delete any tempfiles left over from the last run and write introduction
 rm checktmp > /dev/null 2>&1  
-rm permalinklist.txt  > /dev/null 2>&1  
-rm filepermalink.txt > /dev/null 2>&1  
+rm permalinklist1.txt  > /dev/null 2>&1  
+rm filepermalink1.txt > /dev/null 2>&1  
 
 echo " "
 echo " "
 echo  "Checking the $GIT_BRANCH branch for structural errors that can cause a failure for the entire build or for individual files. "
 echo  ""
 
+ 
+ 
+ 
+ 
+ 
+ 
+
+for i in `find . -name "*.md" `
+do
+sed ':a;N;$!ba;s/\n/ /g' $i   | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | sed 's|](|\n](|g'  | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||' >> permalinklist1.txt
+
+
+grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink1.txt
+
+done
+
+ 
+
+for i in `cat permalinklist1.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
+do 
+			if [[ -z $(grep $i filepermalink1.txt ) ]];
+			then
+			echo  ""
+			echo "==== Broken permalinks to documentation.git files ==="
+			echo "The file will build, but the output will contain a broken link"
+			
+				echo "The permalink $i does not exist but is referenced in:"
+				for a in `find . -name "*.md"`
+				do
+					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
+					then
+						echo $a
+						echo "Last checked in by:"
+						git log -1 $a | egrep "(Author|Date)"
+						echo ""
+						EXIT="1"
+					fi
+				done
+			echo ""
+			fi
+done
+
+#rm permalinklist.txt 
+#rm filepermalink.txt
+ 
+ 
+ exit ;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 
 for i in `find . -name "*.md" | grep "\./devplatform/"`
@@ -103,45 +162,6 @@ done
 
 
 
-
-for i in `find . -name "*.md" `
-do
-sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||'  >> permalinklist.txt
-
-
-grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink.txt
-
-done
-
- 
-
-for i in `cat permalinklist.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
-do 
-			if [[ -z $(grep $i filepermalink.txt ) ]];
-			then
-			echo  ""
-			echo "==== Broken permalinks to documentation.git files ==="
-			echo "The file will build, but the output will contain a broken link"
-			
-				echo "The permalink $i does not exist but is referenced in:"
-				for a in `find . -name "*.md"`
-				do
-					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
-					then
-						echo $a
-						echo "Last checked in by:"
-						git log -1 $a | egrep "(Author|Date)"
-						echo ""
-						EXIT="1"
-					fi
-				done
-			echo ""
-			fi
-done
-
-rm permalinklist.txt 
-rm filepermalink.txt
- 
  
 
 for i in `find . -name "*.md" `
