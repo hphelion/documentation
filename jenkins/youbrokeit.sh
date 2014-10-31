@@ -28,14 +28,15 @@ echo  ""
  
  
  
-
-for i in `find . -name "*.md" `
-do
+for i in `find . -path ./redirects -prune -o -name "*.md" | grep -v redirects`
+	do
+		if [[ -z $(head $i | grep "published: false") ]];
+		then
 sed ':a;N;$!ba;s/\n/ /g' $i   | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | sed 's|](|\n](|g'  | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||' >> permalinklist1.txt
 
 
 grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink1.txt
-
+fi
 done
 
  
