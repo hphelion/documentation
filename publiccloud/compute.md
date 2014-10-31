@@ -35,7 +35,4 @@ Want scriptable access you can put in a cron job or something similar?  Go on ov
 
 Check out the following pages for more information on using HP Helion Public Cloud compute services:
 
-* [Ruby Fog bindings compute examples](/bindings/fog/compute/)
-* [CLI UNIX compute examples](/cli/unix/compute/)
-* [Windows PowerShell CLI compute examples](/cli/windows/compute/)
-* [Management console compute dashboard information](/mc/compute/)
+* [Windows PowerShell CLI compute examples](/publiccloud/cli/windows/compute/)
