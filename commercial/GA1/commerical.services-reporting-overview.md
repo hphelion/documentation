@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/reporting/overview/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -62,7 +62,6 @@ You can use any of several command-line interfaces to access HP Telemetry and Re
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-<!---
 
 ## How To's with the HP Helion Telemetry and Reporting Service<a name="howto"></a>
 
@@ -102,8 +101,7 @@ The Telemetry and Reporting contains threshold alarms that you can configure to 
 - **Viewing details on a specific alarm** -- Obtain information on a specific alarm.
 - **Viewing the state of an alarm** -- Get details on the state of a specific alarm.
 - **Viewing the history of a specific alarm** -- Obtain a historical list of a specific alarm usage.
- --->
-
+ 
 ## For more information ##
 
 For information on how to operate your cloud, we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.

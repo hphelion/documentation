@@ -7,8 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-#HP Helion Development Platform: Quick Start Developer Trial#
-<a name="top"></a>
+#HP Helion Development Platform: Quick Start Developer Trial {#top}
 This document explains the process to install and configure Helion Development Platform Application Lifecycle Service (ALS) in the public cloud. This is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform.
 
 ALS Cluster creation is enabled by using an ALS Constructor, a Virtual Machine (VM) image pre-loaded with configuration and orchestration software.  This image is available in every public cloud account.
@@ -26,7 +25,7 @@ Before you start the installation and configuration process, ensure that you hav
 ##Installing your Quick Start Developer Trial {#install}
 1. Log into the Horizon Console using the HP Helion Public Cloud username and password that you created during signup.
 2. Create a new project, if you don't already have one.
-3. If you have not already created a network with public internet access inside of your account, then you will need to do so as your ALS cluster will need such a network.  This step only needs to be performed one time as part of the initial configuration of your HP Helion Public Cloud account.  To create a network, please follow [these directions](/hpcloudconsole/#Createanetwork).
+3. If you have not already created a network with public internet access inside of your account, then you will need to do so as your ALS cluster will need such a network. This step only needs to be performed one time as part of the initial configuration of your HP Helion Public Cloud account.  To create a network, please follow [these directions](https://community.hpcloud.com/article/how-create-or-delete-network#create).
 4. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/><br><br>
 
  
