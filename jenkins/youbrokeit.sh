@@ -2,9 +2,9 @@
 
 echo 'running documentation/jenkins/check.sh'
 #Get the most recent version of the master branch  
-env | grep GIT
-#git checkout $GIT_BRANCH
-#git pull
+ env | grep GIT
+ git checkout $GIT_BRANCH
+ git pull
 
 
 
