@@ -50,10 +50,11 @@ Backup a copy of seed node to restore in case of catastrophic failures.  For inf
 
 1. [Download and extract new HP Helion release](/helion/openstack/install/update/download/101/).  
 
-2. Install the seed node as described in installation instructions at https://docs.hpcloud.com/helion/openstack/install/overview/ providing details for pre-requisites used during initial install.
+2. Install the seed node as described in the [installation instructions](/helion/openstack/install/overview/) providing details for pre-requisites as used during  the initial installation.
 
 **Note:** If the cloud is stood up as virtual machines on a single host, execute the following command on host node before reinstalling seed to avoid losing undercloud and overcloud node virtual machines.
-export MIN_VMS=0
+
+	export MIN_VMS=0
 
 ## Restore original seed settings ## {#restoreseed}
 
