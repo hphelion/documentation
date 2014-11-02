@@ -302,20 +302,14 @@ echo "Checking for duplicate permalinks in $GIT_BRANCH..."
 
 #Find all the md files and assign to an array:
 names=($(find . -name "*.md"))  
-echo $names
-names=""
+ 
 
 
 for i in `find . -path ./redirects -prune -o -name "*.md" | grep -v "/redirects"`
 	do
 		if [[ -z $(head $i | grep "published: false") ]];
 		then
- names=$names+$i
- fi
- done
- echo $names
-
-exit
+  
 # for every file name entry in the array:
 for (( c=0; c<${#names[*]}; c++ )) 
 do	
