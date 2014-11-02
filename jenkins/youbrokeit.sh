@@ -305,47 +305,47 @@ names=($(find . -name "*.md"))
  
 
 
-for i in `find . -path ./redirects -prune -o -name "*.md" | grep -v "/redirects"`
+for i in `find . "*.md" | grep -v "/redirects"`
 	do
 		if [[ -z $(head $i | grep "published: false") ]];
 		then
   
-# for every file name entry in the array:
-for (( c=0; c<${#names[*]}; c++ )) 
-do	
-#echo "Name = ${names[c]}"
-	# get the permalink and assign the permalink array with the coresponding index
-	permalink[c]=`grep permalink  ${names[c]} | sed 's|permalink: ||' | sed 's|^ ||' | sed $'s/\r//'  ` 
+			# for every file name entry in the array:
+			for (( c=0; c<${#names[*]}; c++ )) 
+			do	
+				#echo "Name = ${names[c]}"
+				# get the permalink and assign the permalink array with the coresponding index
+				permalink[c]=`grep permalink  ${names[c]} | sed 's|permalink: ||' | sed 's|^ ||' | sed $'s/\r//'  ` 
 
 
-	# write the permalink to a temp file that we can check later
-	echo ${permalink[c]} >> tmp
-#	echo "Permalink = ${permalink[c]} "
-done
-#cat tmp
-cat tmp |  sort | uniq -D | uniq | sed '/^$/d'
-#Check the temp file to see if there are any duplicate permalinks?
-sort tmp | uniq -D | uniq | sed '/^$/d' |    
+				# write the permalink to a temp file that we can check later
+				echo ${permalink[c]} >> tmp
+				#	echo "Permalink = ${permalink[c]} "
+			done
+			#cat tmp
+			cat tmp |  sort | uniq -D | uniq | sed '/^$/d'
+			#Check the temp file to see if there are any duplicate permalinks?
+			sort tmp | uniq -D | uniq | sed '/^$/d' |    
 
 
-#If there are any duplicate permalinks then do the following:
-while read DUPLICATE
-do
+			#If there are any duplicate permalinks then do the following:
+			while read DUPLICATE
+			do
  
-	# for every entry in the array:
-	for (( c=0; c<${#names[*]}; c++ ))
-		do
-			 #Check to see which permalink array entries match the duplicate string
-			 if [[  "${permalink[c]}" == "$DUPLICATE"  ]]
-			 then
-				#Write a notification message with the name array entry with the corresponding index.
-				echo " "
-			 	echo "The file ${names[c]} contains a duplicated permalink: ${permalink[c]} "
-				git log -1 ${names[c]} | grep Author | sed 's/Author/In development branch, last committed by/'
-				  EXIT="1"
-			 fi
-		done	
-done
+				# for every entry in the array:
+				for (( c=0; c<${#names[*]}; c++ ))
+				do
+					#Check to see which permalink array entries match the duplicate string
+					if [[  "${permalink[c]}" == "$DUPLICATE"  ]]
+					then
+						#Write a notification message with the name array entry with the corresponding index.
+						echo " "
+						echo "The file ${names[c]} contains a duplicated permalink: ${permalink[c]} "
+						git log -1 ${names[c]} | grep Author | sed 's/Author/In development branch, last committed by/'
+						EXIT="1"
+					fi
+				done	
+			done
 	echo "=================================================="
 	echo " "
 
