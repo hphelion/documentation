@@ -26,8 +26,12 @@ echo  ""
   
 
 
-for i in `find . -name "*.md" `
-do
+for i in `find . -path ./redirects -prune -o -name "*.md" | grep -v "/redirects"`
+	do
+		if [[ -z $(head $i | grep "published: false") ]];
+		then
+ 
+ 
 sed ':a;N;$!ba;s/\n/ /g' $i   | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | sed 's|](|\n](|g'  | grep "](/.*)" | sed 's/.*](//' | sed 's/).*//' | sed 's|#.*||' | grep -v "/api/" | grep -v "^/file/" | sed 's|\/$||' >> permalinklist1.txt
 
 
@@ -35,7 +39,7 @@ sed ':a;N;$!ba;s/\n/ /g' $i   | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | sed
 
 grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink1.txt
 
-
+fi
 done
 
 
@@ -44,27 +48,31 @@ done
 
 for i in `cat permalinklist1.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
 do 
-			if [[ -z $(grep $i filepermalink1.txt ) ]];
+	if [[ -z $(grep $i filepermalink1.txt ) ]];
+	then
+		echo  ""
+		echo "==== Broken permalinks to documentation.git files ==="
+		echo "The file will build, but the output will contain a broken link"
+
+		echo "The permalink $i does not exist but is referenced in:"
+		for a in `find . -name "*.md"`
+		do
+			if [[ -z $(head $a | grep "published: false") ]];
 			then
-			echo  ""
-			echo "==== Broken permalinks to documentation.git files ==="
-			echo "The file will build, but the output will contain a broken link"
-
-
-				echo "The permalink $i does not exist but is referenced in:"
-				for a in `find . -name "*.md"`
-				do
-					if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
+				if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $a | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | grep  $i )" ]];
 					then
 						echo $a
 						echo "Last committed by:"
 						git log -1 $a | egrep "(Author|Date)"
 						echo ""
 						EXIT="1"
-					fi
-				done
+				fi
+			fi	
+		done
 			echo ""
-			fi
+			
+	fi
+		 
 done
 
 
@@ -294,8 +302,20 @@ echo "Checking for duplicate permalinks in $GIT_BRANCH..."
 
 #Find all the md files and assign to an array:
 names=($(find . -name "*.md"))  
+echo $names
+names=""
 
 
+for i in `find . -path ./redirects -prune -o -name "*.md" | grep -v "/redirects"`
+	do
+		if [[ -z $(head $i | grep "published: false") ]];
+		then
+ names=$names+$i
+ fi
+ done
+ echo $names
+
+exit
 # for every file name entry in the array:
 for (( c=0; c<${#names[*]}; c++ )) 
 do	
