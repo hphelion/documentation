@@ -14,7 +14,11 @@ One of the advantages of being active with OpenStack is that there is a healthy 
 We created this set of bindings and have them available as open source.  While not actively supported, we use these ourselves for various use cases and anyone in the public is free to expand upon them.
 
 ###Java/Clojure
-HP offers the Java/Clojure supported [jclouds multi-cloud binding](/bindings/jclouds).
+Java access to HP Helion Public Cloud Compute and HP Helion Public Cloud Objects is accomplished using the [jclouds multi-cloud library](http://code.google.com/p/jclouds).  This easy to use library abstracts common cloud functionality into a simple interface.  HP has contributed a provider for both HP Helion Public Cloud Compute and HP Helion Public Cloud Objects back to the jclouds community to make our services accessible to Java programmers.
+
+To get started, take a look at the [HP Helion Public Cloud Quick Start](http://http://code.google.com/p/jclouds/wiki/QuickStartOpenStack), which walks you through the installation process and some sample code.
+
+For more elaborate examples, take a look at the [jclouds-examples repository over at GitHub](https://github.com/jclouds/jclouds-examples).
 
 ###PHP Bindings for HP Helion Public Cloud
 The [PHP Bindings for HP Helion Public Cloud](http://hpcloud.github.com/HPCloud-PHP/) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
