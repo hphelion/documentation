@@ -1,0 +1,619 @@
+./activity-stream.md##/activity-stream/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:43:24 2014 -0500 JB Remove
+./api.copyright.md##/api/copyright/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:46:24 2014 -0500 JB Remove
+./api.v13.md##/api/v13/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:47:15 2014 -0500 JB Remove
+./automation/csa.index.md##/automation/### Michael Burke <michael.burke2@hp.com> # Thu Aug 28 14:44:16 2014 -0400 removed Helion from CSA
+./best-practices.md##/best-practices/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:49:36 2014 -0500 JB Remove
+./bindings.fog.articles.authcache.md##/bindings/fog/articles/authcache### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:51:19 2014 -0500 JB Remove
+./bindings.fog.articles.md##/bindings/fog/articles/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:51:34 2014 -0500 JB Remove
+./bindings.fog.block-storage.md##/bindings/fog/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:51:51 2014 -0500 JB Remove
+./bindings.fog.cdn.md##/bindings/fog/cdn/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:52:13 2014 -0500 JB Remove
+./bindings.fog.compute.md##/bindings/fog/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:52:42 2014 -0500 JB Remove
+./bindings.fog.connect.md##/bindings/fog/connect/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:53:16 2014 -0500 JB Remove
+./bindings.fog.install.md##/bindings/fog/install/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:53:29 2014 -0500 JB Remove
+./bindings.fog.md##/bindings/fog/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 15:12:43 2014 -0500 JB Remove
+./bindings.fog.object-storage.md##/bindings/fog/object-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:53:53 2014 -0500 JB Remove
+./bindings.fog.release-notes.md##/bindings/fog/release-notes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:54:03 2014 -0500 JB Remove
+./bindings.jclouds.block-storage.md##/bindings/jclouds/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:54:19 2014 -0500 JB Remoev
+./bindings.jclouds.cdn.md##/bindings/jclouds/cdn/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:54:52 2014 -0500 JB Remove
+./bindings.jclouds.compute.md##/bindings/jclouds/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:55:28 2014 -0500 JB Remove
+./bindings.jclouds.connecting.md##/bindings/jclouds/connecting/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:56:02 2014 -0500 JB Remove
+./bindings.jclouds.md##/bindings/jclouds/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:56:20 2014 -0500 JB Remove
+./bindings.jclouds.object-storage.md##/bindings/jclouds/object-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:56:31 2014 -0500 JB Remove
+./bindings.jclouds.release-notes.md##/bindings/jclouds/release-notes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:56:41 2014 -0500 JB Remove
+./block-storage.api.md##/block-storage/api/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:57:40 2014 -0500 JB Remove
+./block-storage.volume.md##/block-storage/volume/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:57:57 2014 -0500 JB Remove
+./cdn.api.md##/cdn/api/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:58:11 2014 -0500 JB Remove
+./cli.nova-release-notes.md##/cli/nova/release-notes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 12:58:30 2014 -0500 JB Remove
+./cli.nova.install.md##/cli/nova/install/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:31:46 2014 +0100 replace elipsis character with ...
+./cli.nova.reference.md##/cli/nova/reference/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:31:46 2014 +0100 replace elipsis character with ...
+./cli.unix.2.account-management.md##/cli/unix/2/account-management/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:01:50 2014 -0500 JB Remove
+./cli.unix.2.block-storage.md##/cli/unix/2/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:02:01 2014 -0500 JB Remove
+./cli.unix.2.cdn.md##/cli/unix/2/cdn/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:02:13 2014 -0500 JB Remove
+./cli.unix.2.compute.md##/cli/unix/2/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:04:05 2014 -0500 JB Remove
+./cli.unix.2.configuration.md##/cli/unix/2/configuration/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:04:15 2014 -0500 JB Remove
+./cli.unix.2.dns.md##/cli/unix/2/dns/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:04:25 2014 -0500 JB Remove
+./cli.unix.2.install.md##/cli/unix/2/install/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:04:35 2014 -0500 JB Remove
+./cli.unix.2.md##/cli/unix/2/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:07:53 2014 -0500 JB Remove
+./cli.unix.2.object-storage.md##/cli/unix/2/object-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:08:06 2014 -0500 JB Remove
+./cli.unix.2.reference.md##/cli/unix/2/reference/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:08:18 2014 -0500 JB Remove
+./cli.unix.2.release-notes.md##/cli/unix/2/release-notes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:08:29 2014 -0500 JB Remove
+./cli.unix.account-management.md##/cli/unix/account-management/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:08:39 2014 -0500 JB Remove
+./cli.unix.articles.complete.md##/cli/unix/articles/complete### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:08:53 2014 -0500 JB Remove
+./cli.unix.articles.debugging.md##/cli/unix/articles/debugging### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:09:04 2014 -0500 JB Remove
+./cli.unix.articles.large.md##/cli/unix/articles/large### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:09:16 2014 -0500 JB Remove
+./cli.unix.articles.managedkeypairs.md##/cli/unix/articles/managedkeypairs### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:09:28 2014 -0500 JB Remove
+./cli.unix.articles.md##/cli/unix/articles/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:09:39 2014 -0500 JB Remove
+./cli.unix.articles.migration.md##/cli/unix/articles/migration/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:09:54 2014 -0500 JB Remove
+./cli.unix.articles.paging.md##/cli/unix/articles/paging### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:10:05 2014 -0500 JB Remove
+./cli.unix.articles.personality.md##/cli/unix/articles/personality### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:10:16 2014 -0500 JB Remove
+./cli.unix.articles.reports.md##/cli/unix/articles/reports### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:10:26 2014 -0500 JB Remove
+./cli.unix.articles.userdata.md##/cli/unix/articles/userdata### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:11:14 2014 -0500 JB Remove
+./cli.unix.block-storage.md##/cli/unix/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:11:25 2014 -0500 JB Remove
+./cli.unix.cdn.md##/cli/unix/cdn/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:16:09 2014 -0500 JB Remove
+./cli.unix.compute.md##/cli/unix/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:16:19 2014 -0500 JB Remove
+./cli.unix.configuration.md##/cli/unix/configuration/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:17:17 2014 -0500 JB Remove
+./cli.unix.dns.md##/cli/unix/dns/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:17:26 2014 -0500 JB Remove
+./cli.unix.install.md##/cli/unix/install/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:17:36 2014 -0500 JB Remove
+./cli.unix.lbaas.md##/cli/unix/lbaas/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:17:47 2014 -0500 JB Remove
+./cli.unix.md##/cli/unix/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:18:20 2014 -0500 JB Remove
+./cli.unix.network.md##/cli/unix/network/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:18:30 2014 -0500 JB Remove
+./cli.unix.object-storage.md##/cli/unix/object-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:19:07 2014 -0500 JB Remove
+./cli.unix.reference.md##/cli/unix/reference/ /cli/unix/reference/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:19:22 2014 -0500 JB Remove
+./cli.unix.release-notes.md##/cli/unix/release-notes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:19:35 2014 -0500 JB Remove
+./cli.win.folder-operations.md##/cli/win/old/folder-operations/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:21:46 2014 -0500 JB Remove
+./cli.windows.block-storage.md##/cli/windows/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:30:49 2014 -0500 JB Remove
+./cli.windows.commands.md##/cli/windows/commands/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:30:59 2014 -0500 JB Remove
+./cli.windows.compute.md##/cli/windows/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:31:08 2014 -0500 JB Remove
+./cli.windows.containers-and-folders.md##/cli/windows/containers-and-folders/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:31:46 2014 +0100 replace elipsis character with ...
+./cli.windows.folder-operations.md##/cli/windows/folder-operations/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:31:25 2014 -0500 JB Remove
+./cli.windows.help.md##/cli/windows/help/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:31:35 2014 -0500 JB Remove
+./cli.windows.installation.md##/cli/windows/installation/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:31:44 2014 -0500 JB Remove
+./cli.windows.md##/cli/windows/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:58:49 2014 -0500 JB Remove
+./cli.windows.metadata.md##/cli/windows/metadata/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:32:02 2014 -0500 JB Remove
+./cli.windows.misc.md##/cli/windows/misc/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:32:12 2014 -0500 JB Remove
+./cli.windows.release-notes.md##/cli/windows/release-notes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:32:58 2014 -0500 JB Remove
+./cli.windows.tutorials.md##/cli/windows/tutorials/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:33:11 2014 -0500 JB Remove
+./cloudos/community.md##/cloudos/forum/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/develop.md##/cloudos/develop/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/develop.quickstart-intro.md##/cloudos/develop/quickstart-intro/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/develop.quickstart-usecase1.md##/cloudos/develop/quickstart-usecase1/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/develop.quickstart-usecase2.md##/cloudos/develop/quickstart-usecase2/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/develop.quickstart-usecase3.md##/cloudos/develop/quickstart-usecase3/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/index.md##/cloudos/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.admin-node-prerequisites.md##/cloudos/install/admin-node-prerequisites/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.advanced-cloud-setup.md##/cloudos/install/advanced-cloud-setup/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.beforeyouinstall.md##/cloudos/install/before-you-install/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.complete-admin-node-installation.md##/cloudos/install/complete-admin-node-installation/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.create-cloud.md##/cloudos/install/create-cloud/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.customize-network-connections.md##/cloudos/install/customize-network-connections/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.customize-network-settings.md##/cloudos/install/customize-network-settings/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.customize-server-types.md##/cloudos/install/customize-server-types/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.deploy-swift.md##/cloudos/install/deploy-swift/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.hotfixes.md##/cloudos/install/hot-fixes/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.install-modules-reference.md##/cloudos/install/install-modules-reference/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.launch-admin-dashboard.md##/cloudos/install/launch-admin-dashboard/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.license.md##/cloudos/install/license/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.md##/cloudos/install/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.overview.md##/cloudos/install/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.setup-swift.md##/cloudos/install/setup-swift/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/install.updates-and-extensions.md##/cloudos/install/updates-and-extensions/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.before-you-begin.md##/cloudos/manage/administration-dashboard/before-you-begin/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.getting-started.md##/cloudos/manage/administration-dashboard/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.md##/cloudos/manage/administration-dashboard/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.tasks-by-role.md##/cloudos/manage/administration-dashboard/tasks-by-role/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.tasks-by-tab.md##/cloudos/manage/administration-dashboard/tasks-by-tab/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.topology-designs.md##/cloudos/manage/administration-dashboard/topology-designs/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.administration-dashboard.welcome.md##/cloudos/manage/administration-dashboard/welcome/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.md##/cloudos/manage/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.operational-dashboard.cloud-tab.md##/cloudos/manage/operational-dashboard/cloud-tab/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.operational-dashboard.environment-tab.md##/cloudos/manage/operational-dashboard/environment-tab/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.operational-dashboard.how-opdash-works.md##/cloudos/manage/operational-dashboard/how-opdash-works/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.operational-dashboard.md##/cloudos/manage/operational-dashboard/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.operational-dashboard.settings-tab.md##/cloudos/manage/operational-dashboard/settings-tab/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.troubleshooting.md##/cloudos/manage/troubleshooting/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/manage.utilities.md##/cloudos/manage/utilities/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/openstack.md##/cloudos/openstack/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/os-3rd-party-licenses.md##/cloudos/os-3rd-party-license-agreements/### Jayme Perlman <jayme.perlman@hp.com> # Mon Sep 22 15:34:29 2014 -0700 fixing comma and caps redface errors
+./cloudos/prepare.cloudtypes.md##/cloudos/prepare/cloudtypes/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/prepare.faqs.md##/cloudos/prepare/faqs/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/prepare.glossary.md##/cloudos/prepare/glossary/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/prepare.md##/cloudos/prepare/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/prepare.overview.md##/cloudos/prepare/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/prepare.releasenotes.md##/cloudos/prepare/releasenotes/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./cloudos/prepare.supportmatrix.md##/cloudos/prepare/supportmatrix/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/prepare.videos.md##/cloudos/prepare/videos/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-compute-getting-started.md##/cloudos/services/compute/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-compute-howto.md##/cloudos/services/compute/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-compute-overview.md##/cloudos/services/compute/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-eve-getting-started.md##/cloudos/services/eve/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-eve-overview.md##/cloudos/services/eve/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-focus-getting-started.md##/cloudos/services/focus/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-focus-overview.md##/cloudos/services/focus/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-identity-getting-started.md##/cloudos/services/identity/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-identity-howto.md##/cloudos/services/identity/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-identity-overview.md##/cloudos/services/identity/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-imaging-getting-started.md##/cloudos/services/imaging/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-imaging-howto.md##/cloudos/services/imaging/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-imaging-overview.md##/cloudos/services/imaging/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-networking-getting-started.md##/cloudos/services/networking/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-networking-howto.md##/cloudos/services/networking/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-networking-overview.md##/cloudos/services/networking/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-object-getting-started.md##/cloudos/services/object/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-object-howto.md##/cloudos/services/object/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-object-overview.md##/cloudos/services/object/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-overview.md##/cloudos/services/overview/### Jayme Perlman <jayme.perlman@hp.com> # Mon Sep 22 18:22:22 2014 -0700 grammar and legal checks. not hyperlinks yet
+./cloudos/services-peer-getting-started.md##/cloudos/services/peer/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-peer-overview.md##/cloudos/services/peer/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-reporting-getting-started.md##/cloudos/services/reporting/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-reporting-howto.md##/cloudos/services/reporting/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-reporting-overview.md##/cloudos/services/reporting/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-volume-getting-started.md##/cloudos/services/volume/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-volume-howto.md##/cloudos/services/volume/howto/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services-volume-overview.md##/cloudos/services/volume/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/services.md##/cloudos/api/services/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/siteindex.md##/cloudos/siteindex/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./cloudos/testjs.md##/cloudos/testjs/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./commercial/GA1/3rd-party-license-agreements.md##/helion/openstack/3rd-party-license-agreements/### Greg Larsen <greg.larsen@hp.com> # Thu Oct 9 10:26:01 2014 +0200 merged files incorrectly changed on master branch
+./commercial/GA1/commercial.-vsa-overview.md##/helion/openstack/install/vsa/overview/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:52:17 2014 +0100 replace emdsh character with HTML entity
+./commercial/GA1/commercial.backup-restore-GA.md##/helion/openstack/backup.restore/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 16:33:09 2014 -0700 fixing caps
+./commercial/GA1/commercial.dashboard.how-works.md##/helion/openstack/dashboard/how-works/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.dashboard.launch.md##/helion/openstack/dashboard/login/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.eula.md##/helion/openstack/eula/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 15:38:32 2014 +0200 correct redface errors.
+./commercial/GA1/commercial.faq.md##/helion/openstack/faq/### Vandana <vandana.sapru@hp.com> # Tue Oct 28 16:24:20 2014 +0530 made minor edits
+./commercial/GA1/commercial.glossary.md##/helion/openstack/glossary/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.index.md##/helion/openstack/### Amanda Fekety <amanda.fekety@hp.com> # Fri Oct 24 11:24:44 2014 -0700 removed forum
+./commercial/GA1/commercial.install-3par.md##/helion/openstack/install/3par/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 10:12:59 2014 -0700 redface error fixing
+./commercial/GA1/commercial.install-add-nodes.md##/helion/openstack/install/add/nodes/### Vandana <vandana.sapru@hp.com> # Wed Oct 29 16:05:56 2014 +0530 made changes based on comments received for storeserv and add nodes
+./commercial/GA1/commercial.install-GA-DNSaaS.md##/helion/openstack/install/dnsaas/### nancy michell <nancy.mitchell@hp.com> # Tue Oct 21 18:25:28 2014 -0400 undr over cloud caps some are beg of sentences
+./commercial/GA1/commercial.install-GA-envars.md##/helion/openstack/install/envars/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./commercial/GA1/commercial.install-GA-ESX-Proxy.md##/helion/openstack/install/esx/proxy/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./commercial/GA1/commercial.install-GA-esx.md##/helion/openstack/install/esx/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 10:12:59 2014 -0700 redface error fixing
+./commercial/GA1/commercial.install-GA-kvm.md##/helion/openstack/install/kvm/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 12:07:12 2014 -0700 fix for 557 and 561
+./commercial/GA1/commercial.install-GA-LDAP.md##/helion/openstack/install/ldap/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./commercial/GA1/commercial.install-GA-NTP.md##/helion/openstack/install/ntp/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.install-GA-overview.md##/helion/openstack/install/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.install-GA-ovsvapp.md##/helion/openstack/install/ovsvapp/### Michael Burke <michael.burke2@hp.com> # Tue Oct 28 09:41:28 2014 -0400 Merge branch development of git.hpcloud.net:DevExDocs/documentation into development
+./commercial/GA1/commercial.install-GA-prereqs.md##/helion/openstack/install/prereqs/### Michael Burke <michael.burke2@hp.com> # Wed Oct 29 10:09:07 2014 -0400 new drafts for 1.0.1
+./commercial/GA1/commercial.install-GA-security.md##/helion/openstack/install/security/### Michael Burke <michael.burke2@hp.com> # Wed Oct 29 10:09:07 2014 -0400 new drafts for 1.0.1
+./commercial/GA1/commercial.install-GA-supportmatrix.md##/helion/openstack/support-matrix/### Michael Burke <michael.burke2@hp.com> # Wed Oct 29 10:09:07 2014 -0400 new drafts for 1.0.1
+./commercial/GA1/commercial.install-GA-virtual-control.md##/helion/openstack/install/hybrid/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 14:08:46 2014 +0100 correct smart-quotes
+./commercial/GA1/commercial.install-GA-vlan-enable.md##/helion/openstack/install/enable/vlan/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 14:22:32 2014 +0100 correct bad characters
+./commercial/GA1/commercial.install-GA-vsa.md##/helion/openstack/install/vsa/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./commercial/GA1/commercial.name-resolution.md##/helion/openstack/name-resolution/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 12:19:54 2014 -0400 adding DNS name resolution to commercial install docs
+./commercial/GA1/commercial.networking-maskedIP.md##/helion/openstack/maskedIP/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 14:11:54 2014 +0100 correct bad characters
+./commercial/GA1/commercial.related-topics.md##/helion/openstack/related-links/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.release-notes.GA.md##/helion/openstack/release-notes/GA/### Michael Burke <michael.burke2@hp.com> # Mon Oct 27 14:54:54 2014 -0400 release notes draft for 101, renamed GA version
+./commercial/GA1/commercial.release-notes.md##/helion/openstack/release-notes/101/### Michael Burke <michael.burke2@hp.com> # Wed Oct 29 10:09:07 2014 -0400 new drafts for 1.0.1
+./commercial/GA1/commercial.release-notes_101.md##/helion/openstack/release-notes/101/### Michael Burke <michael.burke2@hp.com> # Mon Oct 27 16:22:24 2014 -0400 fixing live release notes
+./commercial/GA1/commercial.sirius-cli-workflow.md##/helion/openstack/sirius/cli/workflow/### Vandana <vandana.sapru@hp.com> # Wed Oct 29 16:05:56 2014 +0530 made changes based on comments received for storeserv and add nodes
+./commercial/GA1/commercial.sirius-cli.md##/helion/openstack/sirius-cli/### Vandana <vandana.sapru@hp.com> # Wed Oct 29 16:05:56 2014 +0530 made changes based on comments received for storeserv and add nodes
+./commercial/GA1/commercial.site-index.md##/helion/openstack/siteindex/### Michael Burke <michael.burke2@hp.com> # Mon Oct 27 16:26:15 2014 -0400 fixing broken link
+./commercial/GA1/commercial.technical-overview.ga.md##/helion/openstack/technical-overview/### Michael Burke <michael.burke2@hp.com> # Wed Oct 29 10:09:07 2014 -0400 new drafts for 1.0.1
+./commercial/GA1/commercial.troubleshooting.md##/helion/openstack/services/troubleshooting/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./commercial/GA1/commercial.undercloud-admin-settings.md##/helion/openstack/undercloud/admin/settings/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 17:08:33 2014 -0700 hopefully the end of undercloud caps errors
+./commercial/GA1/commercial.undercloud-admin-updates-and-extensions.md##/helion/openstack/undercloud/admin/updates-and-extension/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 10:12:59 2014 -0700 redface error fixing
+./commercial/GA1/commercial.undercloud-eon-cli.md##/helion/openstack/undercloud/eon/cli/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:45:12 2014 +0100 bad character correction
+./commercial/GA1/commercial.undercloud-horizon-overview.md##/helion/openstack/undercloud/horizon/overview/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 17:08:33 2014 -0700 hopefully the end of undercloud caps errors
+./commercial/GA1/commercial.undercloud-oc-config-esx.md##/helion/openstack/undercloud/oc/config/esx/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 17:01:02 2014 -0700 caps error fixing
+./commercial/GA1/commercial.undercloud-oc-config-storeserv.md##/helion/openstack/undercloud/oc/config/storeserv/### nancy michell <nancy.mitchell@hp.com> # Tue Oct 21 18:54:23 2014 -0400 undr over cloud caps some are beg of sentences
+./commercial/GA1/commercial.undercloud-oc-config-storevirtual.md##/helion/openstack/undercloud/oc/config/storevirtual/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 12:17:34 2014 -0700 fixed numbered list error due to comment
+./commercial/GA1/commercial.undercloud-oc-config.md##/helion/openstack/undercloud/oc/config/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.undercloud-resource-esx-manage-vm.md##/helion/openstack/undercloud/resource/esx/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 15:22:09 2014 -0700 undercloud caps fixing
+./commercial/GA1/commercial.undercloud-resource-esx.md##/helion/openstack/undercloud/resource/esx/compute/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commercial.undercloud-resources-overview.md##/helion/openstack/undercloud/manage/resources/overview/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 16:49:13 2014 -0700 caps fixing
+./commercial/GA1/commercial.undercloud-resources-storage.md##/helion/openstack/undercloud/manage/resources/storage/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 10:28:27 2014 -0700 last of the overcloud fixes hopefully
+./commercial/GA1/commercial.undercloud-storage-storeserv.md##/helion/openstack/undercloud/storage/storeserv/### Vandana <vandana.sapru@hp.com> # Wed Oct 29 16:05:56 2014 +0530 made changes based on comments received for storeserv and add nodes
+./commercial/GA1/commercial.undercloud-storage-storevirtual.md##/helion/openstack/undercloud/storage/storevirtual/### Vandana <vandana.sapru@hp.com> # Wed Oct 22 12:59:07 2014 +0530 updated
+./commercial/GA1/commerical.high-availability.md##/helion/openstack/high-availability/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./commercial/GA1/commerical.services-compute-overview.md##/helion/openstack/services/compute/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-dns-overview.md##/helion/openstack/services/dns/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-dvr-overview.md##/helion/openstack/services/dvr/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-eon-overview.md##/helion/openstack/services/eon/overview/### Binamra <binamra.sharma@hp.com> # Thu Oct 16 15:28:54 2014 +0530 updated with review comments and fixed cross-ref
+./commercial/GA1/commerical.services-eve-overview.md##/helion/openstack/services/eve/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-focus-overview.md##/helion/openstack/services/focus/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-horizon-overview.md##/helion/openstack/services/horizon/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-identity-overview.md##/helion/openstack/services/identity/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-imaging-overview.md##/helion/openstack/services/imaging/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-ironic-overview.md##/helion/openstack/services/ironic/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-networking-overview.md##/helion/openstack/services/networking/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-object-overview.md##/helion/openstack/services/object/overview/### Binamra <binamra.sharma@hp.com> # Tue Oct 21 15:07:49 2014 +0530 updated with review comments
+./commercial/GA1/commerical.services-object-pyringos.md##/helion/openstack/GA1/services/object/pyringos/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 17:12:02 2014 -0700 one more
+./commercial/GA1/commerical.services-orchestration-overview.md##/helion/openstack/services/orchestration/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-overview.md##/helion/openstack/services/overview/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 17:08:33 2014 -0700 hopefully the end of undercloud caps errors
+./commercial/GA1/commerical.services-reporting-overview.md##/helion/openstack/services/reporting/overview/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-scale-out-swift.md##/helion/openstack/services/object/overview/scale-out-swift/### Binamra <binamra.sharma@hp.com> # Wed Oct 22 13:01:40 2014 +0530 corrected diagram
+./commercial/GA1/commerical.services-sherpa-overview.md##/helion/openstack/services/sherpa/overview/### Vandana <vandana.sapru@hp.com> # Thu Oct 9 20:56:13 2014 +0530 resolved merge conflicts
+./commercial/GA1/commerical.services-sirius-overview.md##/helion/openstack/services/sirius/overview/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 17:08:33 2014 -0700 hopefully the end of undercloud caps errors
+./commercial/GA1/commerical.services-swift-deployment-add-disk-account-container.md##/helion/openstack/services/swift/deployment/add-disk-account-container/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-add-disk-scale-out-object-ring.md##/helion/openstack/services/swift/deployment/add-disk-scale-out/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-add-disk-starter-object-ring.md##/helion/openstack/services/swift/deployment/add-disk-starter/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-add-disk-storage-node.md##/helion/openstack/services/swift/deployment/add-disk-object-node/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:26:34 2014 +0530 verified consistency
+./commercial/GA1/commerical.services-swift-deployment-add-proxy-node.md##/helion/openstack/services/swift/deployment/add-proxy-node/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:26:34 2014 +0530 verified consistency
+./commercial/GA1/commerical.services-swift-deployment-expand-swift-cluster.md##/helion/openstack/services/object/swift/expand-cluster/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-swift-deployment-monitor-health-check.md##/helion/openstack/services/object/swift/health-check/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-monitor-replica-swift-status.md##/helion/openstack/services/object/swift/replica-status/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-monitor-swift-cluster.md##/helion/openstack/services/object/swift/Monitor-cluster/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-swift-deployment-monitor-swift-disk.md##/helion/openstack/services/object/swift/Monitor-disk/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-provision-swift-node.md##/helion/openstack/services/swift/provision-nodes/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 11:15:10 2014 +0530 corrected procedure
+./commercial/GA1/commerical.services-swift-deployment-shrink-remove-exisitng-disk.md##/helion/openstack/services/swift/deployment/remove-existing-disk/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-shrink-remove-proxy-node.md##/helion/openstack/services/swift/deployment/remove-proxy-node/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-shrink-remove-scale-out-object-storage-node.md##/helion/openstack/services/swift/deployment/remove-scale-out-object-node/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:18:07 2014 +0530 validated the old and modified content
+./commercial/GA1/commerical.services-swift-deployment-shrink-swift-cluster.md##/helion/openstack/services/object/swift/shrink-cluster/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 8 15:10:04 2014 +0200 removing /ga/ from permalinks
+./commercial/GA1/commerical.services-swift-deployment.md##/helion/openstack/services/swift/deployment-scale-out/### Binamra <binamra.sharma@hp.com> # Wed Oct 29 12:26:34 2014 +0530 verified consistency
+./commercial/GA1/commerical.services-swift-diagnosis-disk-health-hpssacli.md##/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/### Binamra <binamra.sharma@hp.com> # Wed Oct 22 11:57:43 2014 +0530 corrected numbering
+./commercial/GA1/commerical.services-tripleo-overview.md##/helion/openstack/services/tripleo/overview/### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 21 16:53:26 2014 -0700 caps fixing
+./commercial/GA1/commerical.services-volume-overview.md##/helion/openstack/services/volume/overview/### Vandana <vandana.sapru@hp.com> # Mon Oct 13 16:25:48 2014 +0530 updated
+./community/community.3rd-party-licenses.md##/helion/community/community-3rd-party-license-agreements/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 14:21:09 2014 +0100 correct bad characters
+./community/community.dashboard.how-works.md##/helion/community/dashboard/how-works/### Michael Burke <michael.burke2@hp.com> # Thu Oct 23 22:46:49 2014 -0400 changed permalink in launch.md, per DOCS-673; updated links site index and how-works
+./community/community.dashboard.launch.md##/helion/community/dashboard/login/### Michael Burke <michael.burke2@hp.com> # Thu Oct 23 22:46:49 2014 -0400 changed permalink in launch.md, per DOCS-673; updated links site index and how-works
+./community/community.eula.md##/helion/community/eula/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 14:01:30 2014 +0100 replace copyright symbol with html entity
+./community/community.faq.md##/helion/community/faq/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./community/community.hwsw-requirements.md##/helion/community/hwsw-requirements/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.index.md##/helion/community/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.install-overview.md##/helion/community/install-overview/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.install.baremetal.md##/helion/community/install/### Michael Burke <michael.burke2@hp.com> # Tue Oct 28 12:25:42 2014 -0400 fixed formatting in community baremetal install
+./community/community.install.virtual.md##/helion/community/install-virtual/### Michael Burke <michael.burke2@hp.com> # Tue Oct 28 12:10:57 2014 -0400 fixed error in community virtual install, per DOCS 676
+./community/community.name-resolution.md##/helion/community/name-resolution/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.network-requirements.md##/helion/community/network-requirements/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.related-topics.md##/helion/community/related-links/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.release-notes.md##/helion/community/release-notes/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:44:27 2014 -0400 fixing changes made earlier to revert
+./community/community.services-compute-howto.md##/cloudos/community/services/compute/howto/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.services-icinga.md##/helion/community/services/icinga/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.site-index.md##/helion/community/siteindex/### Michael Burke <michael.burke2@hp.com> # Thu Oct 23 22:46:49 2014 -0400 changed permalink in launch.md, per DOCS-673; updated links site index and how-works
+./community/community.troubleshoot.md##/helion/community/troubleshooting/### Michael Burke <michael.burke2@hp.com> # Wed Oct 22 20:22:54 2014 -0400 moving community 1.4 to live server
+./community/community.verify.md##/helion/community/verify/### Michael Burke <michael.burke2@hp.com> # Thu Oct 23 22:59:40 2014 -0400 updated link to dashboard.launch
+./compute.api.md##/compute/api/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:35:44 2014 -0500 JB Remove
+./devplatform/devplatform.ALS-developer-trial-quick-start.md##/helion/devplatform/ALS-developer-trial-quick-start/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 17:29:15 2014 +0200 correcting typos
+./devplatform/devplatform.appdev.md##/helion/devplatform/appdev/### Jerry Condon <jerry.condon@hp.com> # Tue Oct 21 09:34:23 2014 -0700 DOCS 661
+./devplatform/devplatform.database-ALS.md##/helion/devplatform/connectdatabase/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:18:37 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/devplatform.database-instance.md##/helion/devplatform/databaseservice/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./devplatform/devplatform.deploy-ALS.md##/helion/devplatform/deploy/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:48:01 2014 -0700 DOCS 609
+./devplatform/devplatform.eclipse.md##/helion/devplatform/eclipse/### Jerry Condon <jerry.condon@hp.com> # Thu Oct 23 08:41:46 2014 -0700 Docs 661
+./devplatform/devplatform.eula.md##/helion/devplatform/eula/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/devplatform.index.md##/helion/devplatform/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 10:58:28 2014 -0700 changes for 597
+./devplatform/devplatform.install.md##/helion/devplatform/install/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 12:44:29 2014 -0700 fix for 562 maybe
+./devplatform/devplatform.install.old.md##/helion/devplatform/install/old### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:45:12 2014 +0100 bad character correction
+./devplatform/devplatform.marketplace.install.md##/helion/devplatform/marketplace/### Jayme Perlman <jayme.perlman@hp.com> # Fri Oct 24 15:20:36 2014 -0700 flipping marketplace flag
+./devplatform/devplatform.related-topics.md##/helion/devplatform/related-topics/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:18:37 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/devplatform.release-notes.md##/helion/devplatform/release-notes/### Jerry Condon <jerry.condon@hp.com> # Tue Oct 21 09:29:27 2014 -0700 DOCS 658
+./devplatform/devplatform.sysadmin.md##/helion/devplatform/sysadmin/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 20:02:50 2014 +0200 change ITOps to IT OPS
+./devplatform/devplatform.thirdparty.licensing.md##/helion/devplatform/3rd-party-license-agreements/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 22 13:36:54 2014 +0200 correcting layout
+./devplatform/devplatform.using-messaging-service-with-ALS.md##/helion/devplatform/msgaas/als/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:18:37 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/devplatform.using-the-messaging-service.md##/helion/devplatform/messageservice/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 11:51:18 2014 -0700 fixes for DOCS585
+./devplatform/devplatform_commercial_install.md##/helion/devplatform/install/commercial/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 22 13:36:54 2014 +0200 correcting layout
+./devplatform/helion/admin/best-practices/index.html.md##/als/v1/admin/best-practices/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/best-practices/logging-examples.html.md##/als/v1/admin/best-practices/logging-examples/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 17:28:15 2014 +0200 correcting typos
+./devplatform/helion/admin/cluster/autoscaling.html.md##/als/v1/admin/cluster/autoscaling/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/cluster/cloud-init.html.md##/als/v1/admin/cluster/cloud-init/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/cluster/external-db.html.md##/als/v1/admin/cluster/external-db/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/cluster/harbor.html.md##/als/v1/admin/cluster/harbor/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/cluster/index.html.md##/als/v1/admin/cluster/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/console/app-store.html.md##/als/v1/admin/console/app-store/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 10:11:58 2014 -0700 fixing italics and other formatting minutae
+./devplatform/helion/admin/console/customize.html.md##/als/v1/admin/console/customize/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/console/index.html.md##/als/v1/admin/console/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/index.html.md##/als/v1/admin/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 10:58:28 2014 -0700 changes for 597
+./devplatform/helion/admin/reference/add-service.html.md##/als/v1/admin/reference/add-service/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/reference/architecture.html.md##/als/v1/admin/reference/architecture/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/reference/glossary.html.md##/als/v1/admin/reference/glossary/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/reference/groups.html.md##/als/v1/admin/reference/groups/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/reference/kato-ref.html.md##/als/v1/admin/reference/kato-ref/### Jayme Perlman <jayme.perlman@hp.com> # Wed Oct 22 14:03:41 2014 -0700 further fix for 628
+./devplatform/helion/admin/reference/known-issues.html.md##/als/v1/admin/reference/known-issues/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/reference/troubleshoot.html.md##/als/v1/admin/reference/troubleshoot/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/server/aok.html.md##/als/v1/admin/server/aok/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/server/configuration.html.md##/als/v1/admin/server/configuration/### Jayme Perlman <jayme.perlman@hp.com> # Mon Oct 20 15:37:00 2014 -0700 finding awol config file
+./devplatform/helion/admin/server/docker.html.md##/als/v1/admin/server/docker/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/server/index.html.md##/als/v1/admin/server/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/server/logging.html.md##/als/v1/admin/server/logging/### Jayme Perlman <jayme.perlman@hp.com> # Mon Oct 20 16:32:24 2014 -0700 fixing redface typos
+./devplatform/helion/admin/server/operations.html.md##/als/v1/admin/server/operations/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/server/router.html.md##/als/v1/admin/server/router/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/admin/server/upgrade.html.md##/als/v1/admin/server/upgrade/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/index-2.html.md##/als/v1/index-2/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/index.html.md##/als/v1/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 10:58:28 2014 -0700 changes for 597
+./devplatform/helion/user/client/index.html.md##/als/v1/user/client/### Amanda Fekety <amanda.fekety@hp.com> # Tue Oct 21 10:12:43 2014 -0700 DOCS-630
+./devplatform/helion/user/console/index.html.md##/als/v1/user/console/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/app-debug.html.md##/als/v1/user/deploy/app-debug/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/app-logs.html.md##/als/v1/user/deploy/app-logs/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/buildpack.html.md##/als/v1/user/deploy/buildpack/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/index.html.md##/als/v1/user/deploy/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/languages/clojure.html.md##/als/v1/user/deploy/languages/clojure/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/languages/dotnet/dotnet.html.md##/als/v1/user/deploy/languages/dotnet/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/dotnet/sdk-authentication.md##/als/v1/user/deploy/languages/dotnet/authentication/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/dotnet/sdk-getting-started.md##/als/v1/user/deploy/languages/dotnet/getstarted/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/helion/user/deploy/languages/dotnet/sdk-object-store.md##/als/v1/user/deploy/languages/dotnet/objectstore/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/eclipse/index.md##/als/v1/user/deploy/languages/eclipse/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/go.html.md##/als/v1/user/deploy/languages/go/### Jayme Perlman <jayme.perlman@hp.com> # Mon Oct 20 16:32:24 2014 -0700 fixing redface typos
+./devplatform/helion/user/deploy/languages/java/frameworks.md##/als/v1/user/deploy/languages/java/frameworks### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/java/java.html.md##/als/v1/user/deploy/languages/java/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/helion/user/deploy/languages/java/sdk-authentication.md##/als/v1/user/deploy/languages/java/authentication/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/javascript/javascript.md##/als/v1/user/deploy/languages/javascript/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/helion/user/deploy/languages/javascript/sdk-authentication.md##/als/v1/user/deploy/languages/javascript/authentication/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/javascript/sdk-getting-started.md##/als/v1/user/deploy/languages/javascript/getstarted/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/javascript/sdk-object-store.md##/als/v1/user/deploy/languages/javascript/objectstore/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/node.html.md##/als/v1/user/deploy/languages/node/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/languages/perl/catalyst.html.md##/als/v1/user/deploy/languages/perl/catalyst/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/deploy/languages/perl/cgiapppsgi.html.md##/als/v1/user/deploy/languages/perl/cgiapppsgi/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/deploy/languages/perl/dancer.html.md##/als/v1/user/deploy/languages/perl/dancer/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/deploy/languages/perl/index.html.md##/als/v1/user/deploy/languages/perl/### Jayme Perlman <jayme.perlman@hp.com> # Mon Oct 20 16:32:24 2014 -0700 fixing redface typos
+./devplatform/helion/user/deploy/languages/perl/mason.html.md##/als/v1/user/deploy/languages/perl/mason/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/deploy/languages/perl/mojo.html.md##/als/v1/user/deploy/languages/perl/mojo/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/deploy/languages/perl/perlcgi.html.md##/als/v1/user/deploy/languages/perl/perlcgi/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/deploy/languages/php/php.html.md##/als/v1/user/deploy/languages/php/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/helion/user/deploy/languages/php/sdk-authentication.md##/als/v1/user/deploy/languages/php/authentication/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/php/sdk-object-store.md##/als/v1/user/deploy/languages/php/objectstore/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/powershell/powershell-getting-started.md##/als/v1/user/deploy/languages/powershell/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/python/django.html.md##/als/v1/user/deploy/languages/python/django/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/python/index.html.md##/als/v1/user/deploy/languages/python/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/helion/user/deploy/languages/ruby/ruby.html.md##/als/v1/user/deploy/languages/ruby/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./devplatform/helion/user/deploy/languages/ruby/sdk-getting-started.md##/als/v1/user/deploy/languages/ruby/getstarted/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/ruby/sdk-object-store.md##/als/v1/user/deploy/languages/ruby/objectstore/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/ruby/sdk-ruby-compute.md##/als/v1/user/deploy/languages/ruby/compute/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/ruby/sdk-ruby-connect.md##/als/v1/user/deploy/languages/ruby/connect/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/languages/ruby/sdk-ruby-installation.md##/als/v1/user/deploy/languages/ruby/install/### Greg Larsen <greg.larsen@hp.com> # Mon Oct 20 22:28:13 2014 +0200 change to PUBLISHED per Jerry.
+./devplatform/helion/user/deploy/manifestyml.html.md##/als/v1/user/deploy/manifestyml/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/newrelic.html.md##/als/v1/user/deploy/newrelic/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/orgs-spaces.html.md##/als/v1/user/deploy/orgs-spaces/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/other-frameworks.html.md##/als/v1/user/deploy/other-frameworks/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/deploy/stackatoyml.html.md##/als/v1/user/deploy/stackatoyml/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/index.html.md##/als/v1/user/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 09:48:20 2014 -0700 fix for 613
+./devplatform/helion/user/quick-start/index.html.md##/als/v1/user/quick-start/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/reference/api.html.md##/als/v1/user/reference/api/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 16:01:06 2014 -0700 570
+./devplatform/helion/user/reference/client-ref.html.md##/als/v1/user/reference/client-ref/### Greg Larsen <greg.larsen@hp.com> # Wed Oct 22 13:36:54 2014 +0200 correcting layout
+./devplatform/helion/user/reference/environment.html.md##/als/v1/user/reference/environment/### Jayme Perlman <jayme.perlman@hp.com> # Mon Oct 20 16:32:24 2014 -0700 fixing redface typos
+./devplatform/helion/user/reference/glossary.html.md##/als/v1/user/reference/glossary/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 16 14:06:49 2014 -0700 changing folder name to helion from stackato and all the file links committing because user folder is done not admin yet
+./devplatform/helion/user/reference/troubleshoot.html.md##/als/v1/user/reference/troubleshoot/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/services/data-services.html.md##/als/v1/user/services/data-services/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/services/filesystem.html.md##/als/v1/user/services/filesystem/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/services/memcached.html.md##/als/v1/user/services/memcached/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/helion/user/services/port-service.html.md##/als/v1/user/services/port-service/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 14:35:34 2014 +0200 correct redface errors.
+./devplatform/helion/user/services/user-provided.html.md##/als/v1/user/services/user-provided/### Jerry Condon <jerry.condon@hp.com> # Mon Oct 20 14:19:35 2014 -0700 DOCS 578
+./devplatform/workbook/database/database.java.md##/helion/devplatform/workbook/database/java/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./devplatform/workbook/database/database.node.md##/helion/devplatform/workbook/database/node/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./devplatform/workbook/database/database.php.md##/helion/devplatform/workbook/database/php/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./devplatform/workbook/helloWorld/helloworld.java.md##/helion/devplatform/workbook/helloworld/java/##
+./devplatform/workbook/helloWorld/helloworld.node.md##/helion/devplatform/workbook/helloworld/node/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 09:23:15 2014 -0700 fix 583
+./devplatform/workbook/helloWorld/helloworld.php.md##/helion/devplatform/workbook/helloworld/php/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./devplatform/workbook/messaging/messaging.java.md##/helion/devplatform/workbook/messaging/java/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./devplatform/workbook/messaging/messaging.node.md##/helion/devplatform/workbook/messaging/node/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./devplatform/workbook/messaging/messaging.php.md##/helion/devplatform/workbook/messaging/php/### Jayme Perlman <jayme.perlman@hp.com> # Thu Oct 23 16:26:27 2014 -0700 fix for 643
+./ec2-compatibility-method-list.md##/ec2-compatibility-method-list/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:52:55 2014 -0500 JB Remove
+./horizonfeaturemap.md##/publiccloud/hpcloudconsolefeaturemap/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 13:55:34 2014 -0500 JB Remove
+./identity.api.md##/identity/api/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:00:09 2014 -0500 JB Remove
+./jclouds.md##/jclouds/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:02:00 2014 -0500 JB Remove
+./mc.account.md##/mc/account/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:03:50 2014 -0500 JB Remove
+./mc.account.projects.md##/mc/account/projects/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:04:05 2014 -0500 JB Remove
+./mc.compute.floating-ips.md##/mc/compute/floating-ips/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:04:14 2014 -0500 JB Remove
+./mc.compute.images.create.md##/mc/compute/images/create/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:05:21 2014 -0500 JB Remove
+./mc.compute.images.manage.md##/mc/compute/images/manage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:05:30 2014 -0500 JB Remove
+./mc.compute.images.md##/mc/compute/images/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:05:39 2014 -0500 JB Remove
+./mc.compute.key-pairs.md##/mc/compute/key-pairs/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:05:52 2014 -0500 JB Remove
+./mc.compute.md##/mc/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:06:05 2014 -0500 JB Remove
+./mc.compute.network.manage-ports.md##/mc/compute/network/manage-ports/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:06:14 2014 -0500 JB Remove
+./mc.compute.networks.create-network.md##/mc/compute/networks/create-network/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:06:57 2014 -0500 JB Remove
+./mc.compute.networks.enable-network.md##/mc/compute/networks/enable-network/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:07:06 2014 -0500 JB Remove
+./mc.compute.networks.manage-ports.md##/mc/compute/networks/manage-ports/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:07:16 2014 -0500 JB Remove
+./mc.compute.networks.manage-routers.md##/mc/compute/networks/manage-routers/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:07:39 2014 -0500 JB Remove
+./mc.compute.networks.manage-subnet.md##/mc/compute/networks/manage-subnet/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:07:48 2014 -0500 JB Remove
+./mc.compute.networks.md##/mc/compute/networks/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:07:58 2014 -0500 JB Remove
+./mc.compute.networks.sys-messages.md##/mc/compute/networks/sys-messages/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:08:08 2014 -0500 JB Remove
+./mc.compute.networks.view-network.md##/mc/compute/networks/view-network/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:08:23 2014 -0500 JB Remove
+./mc.compute.networks.view-router.md##/mc/compute/networks/view-router/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:08:32 2014 -0500 JB Remove
+./mc.compute.networks.view-subnet.md##/mc/compute/networks/view-subnet/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:08:44 2014 -0500 JB Remove
+./mc.compute.routers.md##/mc/compute/routers/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:11:26 2014 -0500 JB Remove
+./mc.compute.security-groups.md##/mc/compute/security-groups/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:11:46 2014 -0500 JB Remove
+./mc.compute.servers.create-bootable.md##/mc/compute/servers/create-bootable/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:31:18 2014 -0500 JB Remove
+./mc.compute.servers.create-image.md##/mc/compute/servers/create-image/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:31:34 2014 -0500 JB Remove
+./mc.compute.servers.manage.md##/mc/compute/servers/manage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:31:46 2014 -0500 JB Remove
+./mc.compute.servers.md##/mc/compute/servers/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:31:56 2014 -0500 JB Remove
+./mc.compute.servers.view-details.md##/mc/compute/servers/view-details/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:32:07 2014 -0500 JB Remove
+./mc.compute.using.md##/mc/compute/using/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:32:17 2014 -0500 JB Remove
+./mc.compute.volumes.manage.md##/mc/compute/volumes/manage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:32:27 2014 -0500 JB Remove
+./mc.compute.volumes.md##/mc/compute/volumes/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:32:36 2014 -0500 JB Remove
+./mc.compute.volumes.view-details.md##/mc/compute/volumes/view-details/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:32:47 2014 -0500 JB Remove
+./mc.dashboard.md##/mc/dashboard/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:32:57 2014 -0500 JB Remove
+./mc.md##/mc/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:33:07 2014 -0500 JB Remove
+./mc.sitemap.md##/publiccloud/mc/sitemap/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:49:20 2014 -0500 JB Remove
+./migration-details-reference.md##/migration-details-reference/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:34:08 2014 -0500 JB Remove
+./migration-details.md##/migration-details/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:34:17 2014 -0500 JB Remove
+./migration-overview-reference.md##/migration-overview-reference/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:34:26 2014 -0500 JB Remove
+./migration-overview.md##/migration-overview/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 14:34:35 2014 -0500 JB Remove
+./moonshot/community.md##/cloudos/moonshot/community/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/develop.md##/cloudos/moonshot/develop/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/develop.quickstart-intro.md##/cloudos/moonshot/develop/quickstart-intro/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/index.md##/cloudos/moonshot/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.admin-node-prerequisites.md##/cloudos/moonshot/install/admin-node-prerequisites/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.advanced-cloud-setup.md##/cloudos/moonshot/install/advanced-cloud-setup/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.beforeyouinstall.md##/cloudos/moonshot/install/before-you-install/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.complete-admin-node-installation.md##/cloudos/moonshot/install/complete-admin-node-installation/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.create-cloud.md##/cloudos/moonshot/install/create-cloud/### Michael Burke <michael.burke2@hp.com> # Tue Aug 12 14:35:04 2014 -0400 push to use for screen shots
+./moonshot/install.create-compute-regions.md##/cloudos/moonshot/install/create-compute-regions/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 14:34:11 2014 +0200 correct redface errors.
+./moonshot/install.customize-networks.md##/cloudos/moonshot/install/customize-networks/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.customize-user-settings.md##/cloudos/moonshot/install/customize-user-settings/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.install-modules-reference.md##/cloudos/moonshot/install/install-modules-reference/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.launch-admin-dashboard.md##/cloudos/moonshot/install/launch-admin-dashboard/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.license-poetic.md##/cloudos/moonshot/install/license-poetic/### Binamra <binamra.sharma@hp.com> # Tue Aug 12 10:01:23 2014 +0530 updated
+./moonshot/install.license.md##/cloudos/moonshot/install/license/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/install.md##/cloudos/moonshot/install/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/install.overview.md##/cloudos/moonshot/install/overview/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.setup-admin-node.md##/cloudos/moonshot/install/install-setup-admin-node/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/install.updates-and-extensions.md##/cloudos/moonshot/install/updates-and-extensions/### Binamra <binamra.sharma@hp.com> # Tue Aug 12 12:35:52 2014 +0530 updated
+./moonshot/install.view-connection-settings.md##/cloudos/moonshot/install/view-connection-settings/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.admimistration-dashboard.project-images.md##/cloudos/moonshot/manage/administration-dashboard/project-images/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dasboard.project-instances.md##/cloudos/moonshot/manage/administration-dashboard/project-instances/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.access-and-security.md##/cloudos/moonshot/manage/administration-dashboard/manage-access-and-security/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.before-you-begin.md##/cloudos/moonshot/manage/administration-dashboard/before-you-begin/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.cloud-images.md##/cloudos/moonshot/manage/administration-dashboard/cloud-images/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.cloud-projects.md##/cloudos/moonshot/manage/administration-dashboard/cloud-projects/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.cloud-roles.md##/cloudos/moonshot/manage/administration-dashboard/cloud-roles/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.cloud-users.md##/cloudos/moonshot/manage/administration-dashboard/cloud-users/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.deployment-profiles.md##/cloudos/moonshot/manage/administration-dashboard/deployment-profiles/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.getting-started.md##/cloudos/moonshot/manage/administration-dashboard/getting-started/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.manage-moonshot-chassis-tab.md##/cloudos/moonshot/manage/administration-dashboard/manage-moonshot-chasssis-tab/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./moonshot/manage.administration-dashboard.md##/cloudos/moonshot/manage/administration-dashboard/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.project-networks.md##/cloudos/moonshot/manage/administration-dashboard/project-networks/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.region-flavors.md##/cloudos/moonshot/manage/administration-dashboard/region-flavors/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.region-images.md##/cloudos/moonshot/manage/administration-dashboard/region-images/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.region-instances.md##/cloudos/moonshot/manage/administration-dashboard/region-instances/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.region-networks.md##/cloudos/moonshot/manage/administration-dashboard/region-networks/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.resource-pool.md##/cloudos/moonshot/manage/administration-dashboard/resource-pools/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.running-topologies.md##/cloudos/moonshot/manage/administration-dashboard/running-topologies/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.setting-tab.md##/cloudos/moonshot/manage/administration-dashboard/setting-tab/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.tasks-by-role.md##/cloudos/moonshot/manage/administration-dashboard/tasks-by-role/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.tasks-by-tab.md##/cloudos/moonshot/manage/administration-dashboard/tasks-by-tab/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.topology-designs.md##/cloudos/moonshot/manage/administration-dashboard/topology-designs/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.updates-extensions.md##/cloudos/moonshot/manage/administration-dashboard/manage-updates-extensions/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.welcome.md##/cloudos/moonshot/manage/administration-dashboard/welcome/### Greg Larsen <greg.larsen@hp.com> # Fri Aug 1 12:28:35 2014 +0200 Add PUBLISHED comment for new publish stragegy
+./moonshot/manage.administration-dashboard.working-with-cloud-tab.md##/cloudos/moonshot/manage/administration-dashboard/working-with-cloud-tab/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.administration-dashboard.working-with-project-tab.md##/cloudos/moonshot/manage/administration-dashboard/working-with-project-tab/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.administration-dashboard.working-with-region-tab.md##/cloudos/moonshot/manage/administration-dashboard/working-with-region-tab/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.administration-dashboard.workloads.md##/cloudos/moonshot/manage/administration-dashboard/workloads/### Jayme Perlman <jayme.perlman@hp.com> # Mon Sep 22 14:40:21 2014 -0700 fixing openstack caps errors
+./moonshot/manage.backup-process.md##/cloudos/moonshot/manage/backup-process/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.imagebuilder.md##/cloudos/moonshot/manage/image-builder/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:52:17 2014 +0100 replace emdsh character with HTML entity
+./moonshot/manage.md##/cloudos/moonshot/manage/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.operational-dashboard.cloud-tab.md##/cloudos/moonshot/manage/operational-dashboard/cloud-tab/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 21 14:23:33 2014 +0200 correct redface errors.
+./moonshot/manage.operational-dashboard.environment-tab.md##/cloudos/moonshot/manage/operational-dashboard/environment-tab/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.operational-dashboard.how-opdash-works.md##/cloudos/moonshot/manage/operational-dashboard/how-opdash-works/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.operational-dashboard.md##/cloudos/moonshot/manage/operational-dashboard/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.operational-dashboard.settings-tab.md##/cloudos/moonshot/manage/operational-dashboard/settings-tab/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/manage.troubleshooting.md##/cloudos/moonshot/manage/troubleshooting/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:31:46 2014 +0100 replace elipsis character with ...
+./moonshot/manage.utilities.md##/cloudos/moonshot/manage/utilities/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/os-3rd-party-licenses.md##/cloudos/moonshot/os-3rd-party-license-agreements/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.faqs.md##/cloudos/moonshot/prepare/faqs/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.glossary.md##/cloudos/moonshot/prepare/glossary/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.md##/cloudos/moonshot/prepare/### Vandana <vandana.sapru@hp.com> # Mon Oct 13 20:12:53 2014 +0530 new patch
+./moonshot/prepare.order-license.md##/cloudos/moonshot/prepare/order-license/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.overview.md##/cloudos/moonshot/prepare/overview/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.patchnotes-two.md##/cloudos/moonshot/prepare/patchnotes-two/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:45:12 2014 +0100 bad character correction
+./moonshot/prepare.patchnotes.md##/cloudos/moonshot/prepare/patchnotes/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.releasenotes.md##/cloudos/moonshot/prepare/releasenotes/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.supportmatrix.md##/cloudos/moonshot/prepare/supportmatrix/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/prepare.videos.md##/cloudos/moonshot/prepare/videos/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/related-topics.md##/cloudos/moonshot/related-topics/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./moonshot/siteindex.md##/cloudos/moonshot/siteindex/### Michael Burke <michael.burke2@hp.com> # Mon Aug 11 12:04:08 2014 -0400 pushed files
+./noblecode.md##/noblecode/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:15:34 2014 -0500 JB Remove
+./node.38.md##/node/38### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:14:53 2014 -0500 JB Remove
+./node.39.md##/node/39### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:40:10 2014 +0100 replace tm character with HTML entity
+./object-storage.api.md##/object-storage/api/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:13:09 2014 -0500 JB Remove
+./object-storage.tutorial.installing-and-using-swift-cli-client.md##/object-storage/tutorial/installing-and-using-swift-cli-client/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:12:44 2014 -0500 JB Remove
+./publiccloud/apaas.md##/apaas/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 09:35:12 2014 -0500 Testing new layout
+./publiccloud/api.copyright.v13.md##/publiccloud/api/copyright/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:22:29 2014 -0500 Updating layout
+./publiccloud/api.md##/publiccloud/api/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:23:15 2014 -0500 Updating layout
+./publiccloud/apidocs/c1.1/cdn-api.md##/publiccloud/api/CDN/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:25:39 2014 -0500 Update and rename hp-cloud-cdn-api.md to cdn-api.md
+./publiccloud/apidocs/c1.1/cinder-api.md##/publiccloud/api/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:25:25 2014 -0500 Update and rename hp-block-storage-api.md to cinder-api.md
+./publiccloud/apidocs/c1.1/dbaas-api.md##/publiccloud/api/dbaas/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:28:22 2014 -0500 Update and rename hpcloud-rdb-mysql-api.md to dbaas-api.md
+./publiccloud/apidocs/c1.1/dns-api.md##/publiccloud/api/dns/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:26:40 2014 -0500 Update and rename hpcloud-dns-v1.md to dns-api.md
+./publiccloud/apidocs/c1.1/glance-api.md##/publiccloud/api/image/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:26:10 2014 -0500 Update and rename hp-image-api-c11.md to glance-api.md
+./publiccloud/apidocs/c1.1/keystone-admin-api.md##/api/v13/identity/admin/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 11:16:36 2014 -0500 Update keystone-admin-api.md
+./publiccloud/apidocs/c1.1/keystone-api.md##/publiccloud/api/identity/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:43:05 2014 -0500 Update keystone-api.md
+./publiccloud/apidocs/c1.1/lbaas-api.md##/publiccloud/api/lbaas/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 11:03:42 2014 -0500 Update lbaas-api.md
+./publiccloud/apidocs/c1.1/maas-api.md##/publiccloud/api/monitoring/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 11:02:59 2014 -0500 Update maas-api.md
+./publiccloud/apidocs/c1.1/neutron-api.md##/publiccloud/api/networking/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:58:58 2014 -0500 Update neutron-api.md
+./publiccloud/apidocs/c1.1/nova-api.md##/publiccloud/api/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 10:53:53 2014 -0500 Update nova-api.md
+./publiccloud/apidocs/c1.1/swift-api.md##/publiccloud/api/object-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Wed Oct 29 11:02:08 2014 -0500 Update swift-api.md
+./publiccloud/bindings.md##/publiccloud/bindings/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:23:28 2014 -0500 Updating layout
+./publiccloud/block-storage.md##/publiccloud/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:23:46 2014 -0500 Updating layout
+./publiccloud/cdn.md##/publiccloud/cdn/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:24:09 2014 -0500 Updating layout
+./publiccloud/cli.md##/publiccloud/cli/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:24:24 2014 -0500 Update cli.md
+./publiccloud/cli.openstack.md##/publiccloud/cli/openstack/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:24:41 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.block-storage.md##/publiccloud/cli/windows/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:25:13 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.commands.md##/publiccloud/cli/windows/commands/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:25:25 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.compute.md##/publiccloud/cli/windows/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:25:41 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.containers-and-folders.md##/publiccloud/cli/windows/containers-and-folders/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:31:37 2014 +0100 replace elipsis character with ...
+./publiccloud/cli.windows.2.folder-operations.md##/publiccloud/cli/windows/folder-operations/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:28:36 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.help.md##/publiccloud/cli/windows/help/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:28:48 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.installation.md##/publiccloud/cli/windows/installation/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:29:01 2014 -0500 Updating layout
+./publiccloud/cli.windows.2.md##/publiccloud/cli/windows/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:30:04 2014 -0500 Update cli.windows.2.md
+./publiccloud/cli.windows.2.metadata.md##/publiccloud/cli/windows/metadata/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:30:45 2014 -0500 Update cli.windows.2.metadata.md
+./publiccloud/cli.windows.2.misc.md##/publiccloud/cli/windows/misc/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:30:51 2014 -0500 Update cli.windows.2.misc.md
+./publiccloud/cli.windows.2.reference.md##/publiccloud/cli/windows/reference/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:45:12 2014 +0100 bad character correction
+./publiccloud/cli.windows.2.release-notes.md##/publiccloud/cli/windows/release-notes/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./publiccloud/cli.windows.2.tutorials.md##/cli/windows/2/tutorials/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:31:15 2014 -0500 Update cli.windows.2.tutorials.md
+./publiccloud/cli.windows.reference.md##/publiccloud/cli/old/windows/reference/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:45:12 2014 +0100 bad character correction
+./publiccloud/compute.md##/publiccloud/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:31:30 2014 -0500 Update compute.md
+./publiccloud/compute.network-guide.md##/publiccloud/compute/network-guide/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:31:43 2014 -0500 Update compute.network-guide.md
+./publiccloud/compute.networks.issues.md##/publiccloud/compute/networks/issues/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:32:00 2014 -0500 Update compute.networks.issues.md
+./publiccloud/compute.networks.md##/publiccloud/compute/networks/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:32:07 2014 -0500 Update compute.networks.md
+./publiccloud/compute.networks.topology.md##/publiccloud/mc/compute/topology/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:32:14 2014 -0500 Update compute.networks.topology.md
+./publiccloud/dbaas.md##/publiccloud/dbaas/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:32:30 2014 -0500 Update dbaas.md
+./publiccloud/dbaas.tutorial.introduction.md##/publiccloud/dbaas/tutorial/introduction/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:32:37 2014 -0500 Update dbaas.tutorial.introduction.md
+./publiccloud/dns.md##/publiccloud/dns/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:32:46 2014 -0500 Update dns.md
+./publiccloud/downloads.md##/publiccloud/downloads/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:35:49 2014 -0500 Update downloads.md
+./publiccloud/faq.md##/publiccloud/faq/### Joel Brandenburg <joel.brandenburg@hp.com> # Fri Oct 24 10:21:07 2014 -0500 JB Remove
+./publiccloud/glossary.md##/publiccloud/glossary/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:37:32 2014 +0100 replace registered character with HTML entity
+./publiccloud/hpcloudconsole.md##/publiccloud/hpcloudconsole/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:38:05 2014 -0500 Updating layout
+./publiccloud/hz.whatsnewjan.2014.md##/publiccloud/whats_new_with_HP_Cloud_Console/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:38:15 2014 -0500 Updating layout
+./publiccloud/identity.md##/publiccloud/identity/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:38:27 2014 -0500 Updating layout
+./publiccloud/index.md##/### Greg Larsen <greg.larsen@hp.com> # Fri Oct 24 16:59:15 2014 +0200 moving files at request of Joel Brandenburg
+./publiccloud/lbaas.md##/publiccloud/lbaas/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:39:35 2014 -0500 Updating layout
+./publiccloud/maas.md##/publiccloud/maas/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:39:44 2014 -0500 Updating layout
+./publiccloud/network-quickstart.md##/publiccloud/compute/network/quick-start/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:42:38 2014 -0500 Update network-quickstart.md
+./publiccloud/network.getting.started.md##/publiccloud/compute/network/getting-started### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:45:15 2014 -0500 Update network.getting.started.md
+./publiccloud/network.howto.md##/publiccloud/compute/network/howto/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:45:24 2014 -0500 Update network.howto.md
+./publiccloud/network.issues.md##/publiccloud/compute/known-issues/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:31:37 2014 +0100 replace elipsis character with ...
+./publiccloud/network.overview.md##/publiccloud/compute/network/overview/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:45:42 2014 -0500 Update network.overview.md
+./publiccloud/networking.issues.md##/publiccloud/compute/network/known-issues/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:45:50 2014 -0500 Update networking.issues.md
+./publiccloud/object-storage.md##/publiccloud/object-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:46:01 2014 -0500 Update object-storage.md
+./publiccloud/object-storage.tutorial.introduction.md##/publiccloud/object-storage/tutorial/introduction/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:46:17 2014 -0500 Update object-storage.tutorial.introduction.md
+./publiccloud/plugins.teamcity.md##/publiccloud/compute/teamcity/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:46:25 2014 -0500 Update plugins.teamcity.md
+./publiccloud/publiccloud-overview.md##/publiccloud/overview/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:46:32 2014 -0500 Update publiccloud-overview.md
+./publiccloud/rdb.md##/publiccloud/rdb/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:46:42 2014 -0500 Update rdb.md
+./publiccloud/release-notes.md##/publiccloud/release-notes/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:45:12 2014 +0100 bad character correction
+./publiccloud/services.getting.started.md##/cloudos/api/services/compute/getting-started### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:46:58 2014 -0500 Update services.getting.started.md
+./publiccloud/services.md##/publiccloud/services/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:47:06 2014 -0500 Update services.md
+./publiccloud/site-overview.md##/publiccloud/site-overview/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:47:15 2014 -0500 Update site-overview.md
+./publiccloud/sitemap.md##/publiccloud/sitemap/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:47:23 2014 -0500 Update sitemap.md
+./publiccloud/storage-bulkimport-faq.md##/publiccloud/object-storage/bulk-importFAQ/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:47:34 2014 -0500 Update storage-bulkimport-faq.md
+./publiccloud/upload-publish-partner-images135.md##/publiccloud/upload-publish-partner-images135/### Joel Brandenburg <joel.brandenburg@hp.com> # Tue Oct 28 17:01:18 2014 -0500 Update upload-publish-partner-images135.md
+./publiccloud/vpn-multisite.md##/publiccloud/compute/vpn-multisite/### Greg Larsen <greg.larsen@hp.com> # Tue Oct 28 13:34:45 2014 +0100 replace n-dash with hyphen
+./publiccloud/vpn-quickstart.md##/publiccloud/compute/vpn-quickstart/### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 10:49:10 2014 -0500 Update vpn-quickstart.md
+./README.md##### Jayme Perlman <jayme.perlman@hp.com> # Tue Oct 14 13:07:00 2014 -0700 stackato purge
+./redirects/api.copyright.v13.md##/api/v13/copyright/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:12:03 2014 -0500 Update api.copyright.v13.md
+./redirects/api.md##/api/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:12:12 2014 -0500 Update api.md
+./redirects/apiv13.md##/api/v13/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 15:56:34 2014 -0500 redirect
+./redirects/bindings.md##/bindings/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:12:21 2014 -0500 Update bindings.md
+./redirects/block-storage.md##/block-storage/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:12:29 2014 -0500 Update block-storage.md
+./redirects/cdn.md##/cdn/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:12:38 2014 -0500 Update cdn.md
+./redirects/cinder-boot-old.md##/api/block-storage/boot/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/cinder-overview.md##/api/block-storage/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/cinder-storage-old.md##/api/block-storage/storage/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/cinder-volback-old.md##/api/block-storage/backup/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/cli.md##/cli/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 15:11:16 2014 -0500 Update cli.md
+./redirects/cli.openstack.md##/cli/nova/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:12:54 2014 -0500 Update cli.openstack.md
+./redirects/compute-api-old.md##/api/compute/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/compute.md##/compute/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:15:35 2014 -0500 redirect
+./redirects/cs-api-old.md##/api/identity/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/cs-api.md##/api/v13/identity/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:13:06 2014 -0500 Update cs-api.md
+./redirects/dbaas-api-old.md##/api/dbaas/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/dbaas.md##/dbaas/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:16:33 2014 -0500 redirect
+./redirects/dbaas.tutorial.introduction.md##/dbaas/tutorial/introduction/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:17:28 2014 -0500 redirect
+./redirects/dns.md##/dns permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:19:35 2014 -0500 redirect
+./redirects/dns_redirect.md##/api/dns/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:13:16 2014 -0500 Update dns_redirect.md
+./redirects/downloads.md##/downloads/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 16:01:17 2014 -0500 redirect
+./redirects/example.md##/old/ permalink = The deprecated URL that you want to redirect to a new URL.### Greg Larsen <greg.larsen@hp.com> # Mon Oct 27 15:03:12 2014 +0100 example redirect file
+./redirects/glance-api-old.md##/api/image/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/glossary.md##/glossary/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 16:02:06 2014 -0500 redirect
+./redirects/hp-block-storage-api.md##/api/v13/block-storage/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:11:52 2014 -0500 Update hp-block-storage-api.md
+./redirects/hp-cloud-cdn-api.md##/api/CDN/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:13:38 2014 -0500 Update hp-cloud-cdn-api.md
+./redirects/hp-cloud-quantum-v3.md##/api/v13/networking/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:13:48 2014 -0500 Update hp-cloud-quantum-v3.md
+./redirects/hp-image-api-c11.md##/api/v13/image/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:13:57 2014 -0500 Update hp-image-api-c11.md
+./redirects/hp-object-storage-api.md##/api/object-storage/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:14:06 2014 -0500 Update hp-object-storage-api.md
+./redirects/hpcloud-maas-api.md##api/monitoring/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 16:07:34 2014 -0500 redirect
+./redirects/hpcloud-rdb-mysql-api.md##/api/v13/dbaas/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:14:15 2014 -0500 Update hpcloud-rdb-mysql-api.md
+./redirects/identity.md##/identity/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 16:03:05 2014 -0500 redirect
+./redirects/lbaas-tenant-api.md##/api/lbaas/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:14:25 2014 -0500 Update lbaas-tenant-api.md
+./redirects/lbaas.md##/lbaas/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 16:05:25 2014 -0500 redirect
+./redirects/maas.md##/maas/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 16:06:20 2014 -0500 redirect
+./redirects/object-storage.md##/object-storage/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 13:54:50 2014 -0500 redirect
+./redirects/open_stack_compute_api.md##/api/v13/compute/ permalink = The deprecated URL that you want to redirect to a new URL.### Joel Brandenburg <joel.brandenburg@hp.com> # Mon Oct 27 14:14:34 2014 -0500 Update open_stack_compute_api.md
+./redirects/publiccloud-overview.md##/pc-overview/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/rdb.md##/rdb/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/services.md##/services/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/site-overview.md##/site-overview/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/sitemap.md##/sitemap/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/upload-publish-partner-images135.md##/upload-publish-partner-images135/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/vpn-multisite.md##/compute/vpn-multisite/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./redirects/vpn-quickstart.md##/compute/vpn-quickstart/ permalink = The deprecated URL that you want to redirect to a new URL.### brandejo <joel.brandenburg@hp.com> # Tue Oct 28 15:10:21 2014 -0500 redirects
+./v13/bindings.fog.block-storage.md##/v13/bindings/fog/block-storage/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:16:30 2014 -0500 JB Remove
+./v13/bindings.fog.compute.md##/v13/bindings/fog/compute/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:16:42 2014 -0500 JB Remove
+./v13/bindings.fog.connect.md##/v13/bindings/fog/connect/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:16:52 2014 -0500 JB Remove
+./v13/bindings.fog.networking.md##/v13/bindings/fog/networking/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:17:03 2014 -0500 JB Remove
+./version-overview.md##/publiccloud/version-overview/### Joel Brandenburg <joel.brandenburg@hp.com> # Thu Oct 23 16:00:45 2014 -0500 JB Remove

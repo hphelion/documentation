@@ -27,7 +27,7 @@ PageRefresh();
 
 Leveraging OpenStack Compute, the HP Helion OpenStack Community Compute provides a way to instantiate virtual servers on publicly accessible physical machines hosted in HP data centers.
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Community Dashboard](/cloudos/community/services/dashboard/overview/), the OpenStack CLI or OpenStack API.
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Community Dashboard](/cloudos/manage/operational-dashboard/how-opdash-works/), the OpenStack CLI or OpenStack API.
 
 For details on performing these tasks using the API or CLI, see the following OpenStack documentation:
 
@@ -50,7 +50,6 @@ Use the Compute service to create a new virtual machine.
 
 1. Launch the HP Helion OpenStack interface.
 2. On the Project dashboard, click **Compute** > **Instance**.
-3. 
 
 #### Launching a virtual machine that boots from a Volume ####
 

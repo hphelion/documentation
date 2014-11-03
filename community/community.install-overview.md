@@ -65,7 +65,7 @@ The installation deploys to a minimum 7 baremetal server configuration:
 * 2 overcloud swift nodes 
 * At least 1 overcloud compute node 
 
-	Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/openstack/services/icinga/).
+	Two of the overcloud controllers provide for high availability failover. You can use the **Icinga Dashboard** as described in [Using the Icinga Service](/helion/community/services/icinga/).
 
 
 In addition, an installation system, called the seed cloud host, that meets the following configuration is required:

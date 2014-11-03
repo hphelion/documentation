@@ -42,7 +42,7 @@ This page answers most commonly asked  queries that you might have while working
 
 ####What is HP Helion OpenStack?<a name="whatHelion"></a>
 
-HP Helion OpenStack is a scaled out, hardened and curated commercial-grade product designed to deliver the best open source cloud computing technology in a resilient, maintainable platform. 
+HP Helion OpenStack is a commercial distribution built on OpenStack technology that provides an open, scalable, highly available enterprise-grade cloud software platform to help customers build, manage, and consume hybrid clouds. 
 
 <!-- Removed per Gary's comments I HP Helion OpenStack is the first OpenStack distribution from HP. It is free to download and will be kept updated frequently to stay current with OpenStack developments. It is the foundational technology for all HP Helion products in the future.-->
 
