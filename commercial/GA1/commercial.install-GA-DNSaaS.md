@@ -240,42 +240,42 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 		
    	A. DEFAULT section:
 
-   * auth&#095;url &mdash; Keystone auth URL
-   * target&#095;project&#095;name &mdash; Project name where the service is installed
-   * target&#095;username &mdash; Username used to deploy and run the service
-   * target&#095;region&#095;name &mdash; Region name to deploy the service in
-    
+	   * auth&#095;url &mdash; Keystone auth URL
+	   * target&#095;project&#095;name &mdash; Project name where the service is installed
+	   * target&#095;username &mdash; Username used to deploy and run the service
+	   * target&#095;region&#095;name &mdash; Region name to deploy the service in
+	    
    	B. Designate section:
 
-   * ssh&#095;public&#095;key &mdash; The SSH public key to be installed on the instances for management access
-   * ntp&#095;server &mdash; An IP or DNS name for an NTP server to sync time with
-   * database&#095;root&#095;password &mdash; Password for the database root user
-   * database&#095;designate&#095;password &mdash; Password for the database designate user
-   * database&#095;powerdns&#095;password &mdash; Password for the database powerdns user
-   * messaging&#095;root&#095;password &mdash; Password for the messaging root user
-   * messaging&#095;designate&#095;password &mdash; Password for the messaging designate user
-   * keystone&#095;host &mdash; Hostname or IP address of Keystone endpoint.
-  * service&#095;project &mdash; Project name for a user with permission to validate Keystone tokens
-  * service&#095;user &mdash; Username for a user with permission to validate Keystone tokens
-  * service&#095;password &mdash; Password for a user with permission to validate Keystone tokens
-  * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect, akamai)
+	   * ssh&#095;public&#095;key &mdash; The SSH public key to be installed on the instances for management access
+	   * ntp&#095;server &mdash; An IP or DNS name for an NTP server to sync time with
+	   * database&#095;root&#095;password &mdash; Password for the database root user
+	   * database&#095;designate&#095;password &mdash; Password for the database designate user
+	   * database&#095;powerdns&#095;password &mdash; Password for the database powerdns user
+	   * messaging&#095;root&#095;password &mdash; Password for the messaging root user
+	   * messaging&#095;designate&#095;password &mdash; Password for the messaging designate user
+	   * keystone&#095;host &mdash; Hostname or IP address of Keystone endpoint.
+	  * service&#095;project &mdash; Project name for a user with permission to validate Keystone tokens
+	  * service&#095;user &mdash; Username for a user with permission to validate Keystone tokens
+	  * service&#095;password &mdash; Password for a user with permission to validate Keystone tokens
+	  * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect, akamai)
 
  	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
 
- * msdns&#095;servers: A comma separated list of the Microsoft DNS servers short hostnames
- * messaging&#095;access&#095;cidr: A CIDR to allow inbound access from the Microsoft DNS servers
+	 * msdns&#095;servers: A comma separated list of the Microsoft DNS servers short hostnames
+	 * messaging&#095;access&#095;cidr: A CIDR to allow inbound access from the Microsoft DNS servers
 
 
 	D. If you select DynECT you must set the following options in the designate section:
 
-   * dynect&#095;customer&#095;name &mdash; Customer name provided by Dyn
-   *  dynect&#095;username &mdash; Username provided by Dyn
-   * dynect&#095;password &mdash; Password provided by Dyn
+	   * dynect&#095;customer&#095;name &mdash; Customer name provided by Dyn
+	   *  dynect&#095;username &mdash; Username provided by Dyn
+	   * dynect&#095;password &mdash; Password provided by Dyn
 
 
 	E. If you select Akamai you must set the following options in the designate section:
 	
-	* akamai_username: The username that was set up as part of your Akamai signup
+	   * akamai_username: The username that was set up as part of your Akamai signup
 	* akamai_password: The password that was set up as part of your Akamai signup
 	
 
