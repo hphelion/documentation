@@ -208,7 +208,7 @@ This command will update only one compute node, you will have to repeat it for e
 A set at a time (set can be 1 to n):
 This command may update only update a subset of compute nodes, it is the responsibility of the user to update all the nodes with multiple commands if necessary.
 
-		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l “IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n” -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
+		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l "IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n" -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
 
 
 Swift (n-scale):  Swift it is strongly encouraged that you update 1 at a time (node by node):

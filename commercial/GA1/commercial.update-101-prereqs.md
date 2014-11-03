@@ -36,7 +36,7 @@ ssh heat-admin@<undercloudIP>
 sudo -i
 edit the stackrc file to contain the new password and save it off (OS_PASSWORD).
 2.	Prior to starting update you need to verify you are updated to a patch that is greater than:  3.13.0-36 on your seed host machine.  Verifying and obtaining the correct kernel may vary depending on distribution:  From a command prompt running on the host machine running the Seed VM do the following:
-uname –r   
+uname -r   
 Follow instructions for your Linux distribution to update.
 
 ### Extract the required scripts and libraries ### {#extract}
@@ -124,18 +124,18 @@ overcloud-ce-novacompute3-NovaCompute3-riojhsd6dllx    10.23.67.148
 
 	E.g. If asked for the controllerMgmt IP you would provide 10.23.67.144.
 Determine Glace ID of image:
-•	Undercloud:
-o	SSH into the seed:
-sudo ssh <Insert Seed IP address>
-source ./stackrc
-glance image-list | grep qcow2
+* Undercloud:
+	SSH into the seed:
+	sudo ssh <Insert Seed IP address>
+	source ./stackrc
+	glance image-list | grep qcow2
 
 | ID                                   | Name                   | Disk Format | Container Format | Size       | Status |
 | 94763220-a2f1-4558-a289-edfd686c1a59 | undercloud         | qcow2       | bare             | 1368129536 | active |
 o	The id is the GUID to the left of the image name you are looking for.  E.g. the Undercloud main image is undercloud and it has image id 94763220-a2f1-4558-a289-edfd686c1a59. 
-•	Overcloud:
-o	SSH into the seed 
-	sudo ssh <Insert Seed IP Address.
+* Overcloud:
+	SSH into the seed 
+	sudo ssh <Insert Seed IP Address.
 o	Execute step for overcloud Pointing Ansible at the cloud you want to update: 
 glance image-list | grep qcow2
 
