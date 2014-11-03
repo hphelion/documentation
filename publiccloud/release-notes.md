@@ -86,7 +86,6 @@ The following are our best-practices recommendations for versions 13.5.
 
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [Public Cloud Console](https://horizon.hpcloud.com).
 * For easiest password reset, use the [HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) interface.
-* Use the [classic management console](/mc/) to display the `Flavors Details` information rather than the Windows CLI.
 * To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
     - Shut down the instance
     - Delete the instance and wait until the volume is marked as `available`
