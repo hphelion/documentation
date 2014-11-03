@@ -81,7 +81,7 @@ Perform the following steps to add a physical server:
 
 6. Add the server details to the ironic database using the following ***ironic*** command:
 
- 		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
+ 		# ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
 	The following sample displays the ironic database with the new server details:
 
