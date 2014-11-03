@@ -12,12 +12,10 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 
 [Getting Started with HP Helion Public Cloud](/publiccloud/overview/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Documentation Site Overview](/publiccloud/site-overview)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;HP Helion Public Cloud Console -- 13.5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HP Helion Public Cloud Console<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[What's new with the HP Helion Public Cloud Console](/publiccloud/whats_new_with_HP_Cloud_Console/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console](/publiccloud/hpcloudconsolefeaturemap/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Software release notes](/publiccloud/release-notes/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud FAQ](/publiccloud/faq)<br>
 [HP Helion Public Cloud Available Services](/publiccloud/services/)<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Compute Services Overview](/publiccloud/compute)<br>
 <!-- Hiding until we can find the file
@@ -25,8 +23,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Compute Services API](/publiccloud/api/compute/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Identity Service Overview](/publiccloud/identity/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Identity Service API](/publiccloud/api/identity/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Networking Service Overview](/publiccloud/compute/network/overview/)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Network setup quick start guide](/publiccloud/compute/network/quick-start/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Networking Service API](/publiccloud/api/networking/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Object Storage Overview](/publiccloud/object-storage/)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Object Storage API](/publiccloud/api/object-storage/)<br>
