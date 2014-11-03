@@ -418,7 +418,7 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 <tr style="background-color: white; color: black;">
   	<td style><b>Overcloud<b></td>
  	<td>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
-	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <a href ="/helion/openstack/technical-overview/"> Functional Overview </a>section above. 
+	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <a href ="/helion/openstack/technical-overview/#Helion-services"> Functional Overview </a>section above. 
 	<br><br>These services are deployed in a highly available cluster across the three Controller nodes.
 	<br><br>For KVM based Hypervisor environments, the overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </br>
