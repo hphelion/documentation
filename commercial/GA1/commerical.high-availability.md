@@ -46,6 +46,7 @@ This page covers the following topics:
     * [Object Storage with Swift](#object-storage)
     * [Cinder Availability Zones](#cinder-avail)
 * [Highly Available Cloud Applications and Workloads](#ha-workloads)
+* [What is not Highly Available](#not-ha)
 * [More information](#more-info)
 
 ##High Availability concepts overview<a name="concepts-overview"></a>
@@ -344,6 +345,37 @@ Some of guidelines for consideration:
     *    Database as a Service (DBaaS)
     *    DNS as a Service(DNSaaS)
     *    Messaging as a Service (MSGaaS)
+
+## What's not Highly Available {#not-ha}
+
+The following is not HA supported:
+
+###Undercloud
+
+All the services running on undercloud node are not highly available and the failure of undercloud node can impact the overcloud functionality. 
+
+Please ensure the following points:
+
+a. Ensure there is periodic backup of Undercloud node. For details, please refer to Backup Restore link
+
+b. In case of undercloud node failure, the overcloud continues to function. However, if any of the overcloud node crashes or is shutdown, it will not boot up as it's dependent on undercloud to provide the PXE image.
+
+c. In above case, it is recommended to recover undercloud node by following the documented restore process and bring it back for it to serve overcloud node PXE requests during restarts.
+
+
+###Seed 
+
+All services running on seed VM are not highly available and in case of failure of seed VM, the undercloud functionality is impacted.
+
+
+Ensure the following points:
+
+a. Ensure there is periodic backup of seed VM. Ref: Add Backup Restore link.
+
+b. In case of seed VM failure, the undercloud will continue to function. However, if any of the undercloud node crashes or is shutdown, it will not boot up as it's dependent on seed to provide the PXE image.
+
+c. In above case, it is recommended to recover Seed VM by following the documented restore process and bring it back in order for it to serve undercloud node PXE requests during restarts.
+
 
 ## More information ## {#more-info}
 
