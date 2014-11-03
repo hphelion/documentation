@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Master Index
+title: "Master Index"
 permalink: /masterindex/
 ---
 <!--UNDER REVISION-->
