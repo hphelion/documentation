@@ -39,6 +39,6 @@ To access the Sherpa UI:
 
 	<img src="media/SherpaConfigure.jpg">
 
-4.	Provide the credentials if you have already signed up, if not, sign up by clicking the **Sign up now”** link.
+4.	Provide the credentials if you have already signed up, if not, sign up by clicking the **Sign up now** link.
  
 	If you are signing up for a new account, send an email to codn@hp.com to get your account assigned to test group.  
