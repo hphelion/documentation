@@ -141,12 +141,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		sudo su -
 
-2. Create a directory named `work`.
-
-		mkdir /root/work
-		cd /root/work
-
-3.  Extract the installation package to the `work` directory:
+2.  Extract the installation package to the `root` directory:
 
 		tar zxvf /root/HPHelionOpenStack_1.0.tgz
 

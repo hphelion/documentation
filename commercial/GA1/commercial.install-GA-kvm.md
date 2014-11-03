@@ -139,20 +139,15 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 ### Unpack the installation file {#unpackinstall}
 
-1. Make sure you are logged into the seed VM host as root. If not:
+1. Log into your install system as root.
 
 		sudo su -
 
-2. Create a directory named `work`:
-
-		mkdir /root/work
-		cd /root/work
-
-3. Extract the installation package to the `work` directory:
+2.  Extract the installation package to the `root` directory:
 
 		tar zxvf /root/HPHelionOpenStack_1.0.tgz
 
-	This creates and populates a `tripleo/` directory within root's home directory.
+	This creates and populates a `tripleo/` directory within the `work' directory.
 
 ### Install the seed VM and build your cloud {#startseed}
 
