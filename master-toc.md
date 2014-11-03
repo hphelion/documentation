@@ -6,6 +6,7 @@ permalink: /masterindex/
 <!--UNDER REVISION-->
 #Master Index#
 
+This is the master index of all doc.hpcloud.com documents:
 
 *[HP Cloud Service Automation](/automation/)
 *[Connect on the HP Cloud Community Forum](/cloudos/forum/)
