@@ -16,7 +16,6 @@ This page contains the following information on our software package:
 
 <!--Moving forward, there will be more bulleted items for each release-->
 
-
 ##New and updated in version 13.5## {#v135features}
 
 **New look and feel for the Management Console** - Based on the [OpenStack Horizon project](http://docs.openstack.org/developer/horizon/), the new HP Helion Public Cloud Console interface and user experience is significantly improved from the original classic management console.  This new user interface provides you with project dashboards that display group-related services for easier availability and service management.  Documentation is  provided in-line and embedded throughout the console on many forms, reducing your clicks and improving your console experience. Although workflows may look different, you can still manage your standard functions through the console, including initializing instances, creating volumes, launching images and snapshots, and creating security groups and key pairs.  See [Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) for more information.
@@ -25,7 +24,7 @@ This page contains the following information on our software package:
 
 **New virtual private cloud (VPC) networking capabilities** - The new VPC functionality provides the ability to deploy your workloads with even greater security within the public cloud for hybrid delivery or public cloud only by enabling you to create  isolated virtual networks within the HP Helion Public Cloud compute service. UsingSoftware Defined Networking (SDN), VPC  allows you to create a wide variety of network configurations specific to your individual workloads needs with a variety of public Internet accessibility options. You can also connect your public cloud network to your on-premise network, enabling true hybrid delivery through private and public infrastructures with a secure VPN connection performing as a single integrated system.
 
-**Networking topology visualization** - The new [Horizon-based public cloud console](/hpcloudconsole) inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.
+**Networking topology visualization** - The new [Horizon-based public cloud console](/publiccloud/hpcloudconsole) inherits network topology infographics.  In addition to visualizing network relationships, you can perform dynamic network management, interactively creating networks and routers, and launching instances through a 2-D visualization scene.
 
 **Faster data upload to the Cloud** - A new bulk import service reduces the time to market for applications requiring existing data by allowing you to quickly and easily load your data into [HP Helion Public Cloud Block Storage](http://www.hpcloud.com/products-services/block-storage) or [HP Helion Public Cloud Object Storage](http://www.hpcloud.com/products-services/object-storage). The new service bypasses the process of transferring large amounts of information over the Internet and allows you to provide hard drives directly to HP's data centers where your data can be rapidly transferred.
 
@@ -33,13 +32,11 @@ This page contains the following information on our software package:
 
 **Larger file size transfers via the CLI** - You can now use the Windows CLI to transfer files up to 700MB for downloads and 5GB for uploads, a significant increase in the file size ceiling for transfers via the Windows CLI.
 
-**Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the new HP Helion Public Cloud [Relational Database](/dbaas/) service.
+**Enhanced identity management** - Particularly attractive for administrators in the enterprise, this release provides more flexibility and options when managing roles, domains, users and groups in the new Horizon-based public cloud console. Specifically, roles can now be assigned to groups of users, or domain administrators can be defined for managing domains and respective users.   In addition, you can assign roles around the latest platform services, such as the HP Helion Public Cloud [Relational Database](/publiccloud/dbaas/) service.
 
 As a domain admin, you can manage each user's projects, roles, and groups.  You can manage the membership of each group, and manage the user assignment within each role. 
 
 **Hybrid cloud focus** - In response to significant feedback received from our rapidly growing open source developer community, and the notably modest usage of the AWS EC2 API in the open HP Helion Public Cloud environment, support for the AWS EC2 API and Eucalyptus API have been discontinued at this time.
-
-**Jclouds support** - Jclouds support is provided for the Keystone version 2 (and earlier) API.
 
 **User roles** - The following user roles are available with this release (new user roles *italicized*):
 
@@ -71,6 +68,7 @@ This section of the release notes describes the HP recommendations for best perf
 The following are our best-practices recommendations for versions 13.5.
 
 ####Cloud Compute####
+
 * For best performance and reliability with multiple instances, launch instances in batches of at most 100.
 * For reliability, boot instances created from an instance with flavor `small` or larger from an instance of flavor `small` or larger.  For example, don't boot an instance of flavor `small` from an instance of flavor `xsmall`.
 * To ensure proper operation, do not delete an instance in `shutdown` state; reboot the instance to ensure it is in `Active` or `Error` state prior to deletion.
@@ -105,11 +103,9 @@ The following are our best-practices recommendations for versions 13.5.
 * When creating a Windows instance, you must use a flavor of `small` or greater. The `xsmall` flavor contains a 10GB root disk, which is too small to accommodate a Windows root disk. 
 * For best reliability, reboot instances of sizes `standard.2xlarge`, `standard.4xlarge`, and `standard.8xlarge` from within the instance.
 
-
 ###Known issues### {#Issues}
 
 The following are the known issues for Version 13.5 of the HP Helion Public Cloud software.
-
 
 ####Cloud Block Storage####
 
@@ -118,20 +114,16 @@ The following are the known issues for Version 13.5 of the HP Helion Public Clou
 ####Command-line Interface####
 
 * After successfully launching an instance if you find `ssh` not functioning properly, just relaunch the instance.
-* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Helion Public Cloud Console](/hpcloudconsole) interface or the [classic management console](/mc/) or the [UNIX CLI](/cli/unix/) utilities. The fields are:
-    - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/cli/windows/reference#Attach-Volume)` command
-    - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/cli/windows/reference#Update-Router)` command
-    - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/cli/windows/reference#New-Server)` command<br>
+* Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) interface. The fields are:
+    - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the `[Attach-Volume](/publiccloud/cli/windows/reference#Attach-Volume)` command
+    - The `Ext Gateway` field may display as blank after you execute the `[Update-Router](/publiccloud/cli/windows/reference#Update-Router)` command
+    - The `Assigned Network Addresses` field may display as blank after you execute the `[New-Server](/publiccloud/cli/windows/reference#New-Server)` command<br>
     
-
 ####HP Helion Public Cloud Console####
 
-* If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Helion Public Cloud Console](/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI or the [classic management console](/mc/).
-* If you encounter a quota issue when performing network tasks while using the [HP Helion Public Cloud Console](/hpcloudconsole), use the [classic management console](/mc/).
-
+* If you use the Identity service role-based access control (RBAC) at the panel level in the [HP Helion Public Cloud Console](/publiccloud/hpcloudconsole), you may see action and service options that exceed your permission levels.  You can access these features through the CLI.
 
 <!--##Resolved Issues in Version 13.5## {#v135resolved}
-
 
 The following are resolved issues in version 13.5 of the HP Helion Public Cloud software:
 
@@ -142,17 +134,9 @@ The following are resolved issues in version 13.5 of the HP Helion Public Cloud 
 
 Additional related information about HP Helion Public Cloud can be found in the following links. Please note that HP Helion Public Cloud 12.12 support will be discontinued when the product is fully deprecated on June 1, 2014
 
-* [Getting Started with HP Helion Public Cloud Console](/hpcloudconsole) for detailed console information.
-* [HP Helion Public Cloud version 13.5 overview](/version-overview/) for an overview of the 13.5 release set.
-* [HP Helion Public Cloud Service APIs (v13.5)](/api/v13/) for an overview of the 13.5 API specifications.
-* [migration overview page](/migration-overview/) for information on migrating from version 12.12 to 13.5.
-* [Getting Started with Compute 13.5](https://community.hpcloud.com/article/getting-started-compute-135) for information on how to get started with the compute service in version 13.5.
-* The [Getting Started Guide](https://community.hpcloud.com/article/getting-started-guide/) is a great resource for getting yourself up and running with the various HP Helion Public Cloud services in general.
+* [Getting Started with HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) for detailed console information.
+* [HP Helion Public Cloud Service APIs](/publiccloud/api/) for an overview of the API specifications.
+* [HP Helion Public Cloud Support Reference](https://community.hpcloud.com/article/hp-helion-public-cloud-support-reference) for information on how to get started with the service.
+* The [Quick Start Guide](https://community.hpcloud.com/article/hp-helion-public-cloud-quick-start-guide) is a great resource for getting yourself up and running with the various HP Helion Public Cloud services in general.
 * [HP Helion Public Cloud web site](https://www.hpcloud.com/#) for a discussion of our various products and services. 
 * Our [support page](https://www.hpcloud.com/support) provides support information.
-
-While these release notes contain information information for the software package as a whole, we also have release notes for individual products and services:
-
-* [Ruby Fog Bindings](/bindings/fog/release-notes/)
-* [UNIX command-line interface (CLI)](/cli/unix/release-notes/)
-* [Windows PowerShell CLI](/cli/windows/release-notes/)
