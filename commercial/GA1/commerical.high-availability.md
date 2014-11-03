@@ -348,33 +348,33 @@ Some of guidelines for consideration:
 
 ## What's not Highly Available {#not-ha}
 
-The following is not HA supported:
-
-###Undercloud
-
-All the services running on undercloud node are not highly available and the failure of undercloud node can impact the overcloud functionality. 
-
-Please ensure the following points:
-
-a. Ensure there is periodic backup of Undercloud node. For details, please refer to Backup Restore link
-
-b. In case of undercloud node failure, the overcloud continues to function. However, if any of the overcloud node crashes or is shutdown, it will not boot up as it's dependent on undercloud to provide the PXE image.
-
-c. In above case, it is recommended to recover undercloud node by following the documented restore process and bring it back for it to serve overcloud node PXE requests during restarts.
-
+The following section defines the different services in Seed and Undercloud that are not HA supported:
 
 ###Seed 
 
-All services running on seed VM are not highly available and in case of failure of seed VM, the undercloud functionality is impacted.
+All services running on the Seed VM are not highly available and if the Seed VM fails, it has an impact on the Undercloud functionality.
 
 
 Ensure the following points:
 
-a. Ensure there is periodic backup of seed VM. Ref: Add Backup Restore link.
+- Ensure a periodic backup of Seed VM. Please refer to the [Backup and Restore](/helion/openstack/backup.restore/) document for more details.
 
-b. In case of seed VM failure, the undercloud will continue to function. However, if any of the undercloud node crashes or is shutdown, it will not boot up as it's dependent on seed to provide the PXE image.
+- In case of Seed VM failure, the Undercloud continues to function. However, if any of the Undercloud nodes crash or is shutdown, it does not boot up as it is dependent on Seed to provide the PXE image.
 
-c. In above case, it is recommended to recover Seed VM by following the documented restore process and bring it back in order for it to serve undercloud node PXE requests during restarts.
+- In the above case, it is recommended to recover Seed VM by following the documented restore process and bring it up in order for it to serve Undercloud node PXE requests during the restart process.
+
+
+###Undercloud
+
+All the services running on Undercloud node are not highly available and if the Undercloud node fails, it impacts the Overcloud functionality. 
+
+Ensure the following points:
+
+- Ensure the periodic backup of Undercloud node. Please refer to the [Backup and Restore](/helion/openstack/backup.restore/) document for more details.
+
+- In case of Undercloud node failure, the Overcloud continues to function. However, if any of the Overcloud nodes crash or is shutdown, it does not boot up as it is dependent on the Undercloud to provide the PXE image.
+
+- In the above case, it is recommended to recover the Undercloud node by following the documented restore process and bring it up for it to serve Overcloud node PXE requests during the restart process.
 
 
 ## More information ## {#more-info}
