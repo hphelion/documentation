@@ -48,7 +48,7 @@ Backup a copy of seed node to restore in case of catastrophic failures.  For inf
 
 ## Update the seed cloud host ## {#updateseed}
 
-1. [Download and extract new HP Helion release](/helion/openstack/install/update/download/101/).  
+1. [Download and extract new HP Helion release](/helion/openstack/update/download/101/).  
 
 2. Install the seed node as described in the [installation instructions](/helion/openstack/install/overview/) providing details for pre-requisites as used during  the initial installation.
 
