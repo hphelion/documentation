@@ -8,6 +8,7 @@ published: false
 <!--UNDER REVISION-->
 #Master Index#
 [HP Cloud Service Automation](/automation/)
+<!--
 [Connect on the HP Cloud Community Forum](/cloudos/forum/)
 [Cloud OS Development](/cloudos/develop/)
 [API Quick Start - Introduction](/cloudos/develop/quickstart-intro/)
@@ -448,4 +449,4 @@ published: false
 [HP Helion Public Cloud: Upload and Make Public a Partner Image](/publiccloud/upload-publish-partner-images135/)
 [HP Helion Public Cloud Networking: VPN multi-site configuration guide](/publiccloud/compute/vpn-multisite/)
 [HP Helion Public Cloud Networking: VPN setup quick start guide](/publiccloud/compute/vpn-quickstart/)
-
+-->
