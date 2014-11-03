@@ -21,7 +21,3 @@ Do you need low level, raw REST API access to HP Helion Public Cloud CDN?  Head 
 
 ## Bindings
 Got a favorite programming language?  Ready to create your own CDN-based applications?  Take a look at our [Bindings section](/publiccloud/bindings) for details.
-
-Early access to HP Helion Public Cloud CDN features two different language bindings.  If you are a Java person, take a look at our [jclouds binding](/bindings/jclouds) and follow the instructions in the README.txt to get started.
-
-If Ruby is more your thing, we have a version of [Ruby Fog](/bindings/fog/install) that enables access to CDN.  Detailed examples can be found on the [HP Helion Public Cloud Fog Binding CDN Examples](/bindings/fog/cdn) page.
