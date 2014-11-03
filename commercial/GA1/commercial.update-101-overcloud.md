@@ -104,7 +104,7 @@ Before you start, do the following:
 
 * Determine the overcloud nodes that will need to be updated. The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the *Extract the scripts and libraries necessary to perform the update* of the Appendix.  
 
-	For each node, obtain the image ID and IP address.  For each of these you’ll want to record the ID, to get the ID see Appendix section Gather information needed for update: sub section Determine Glace ID of image.
+	For each node, obtain the image ID and IP address.  For each of these, record the ID, to get the ID see Appendix section Gather information needed for update: sub section Determine Glace ID of image.
 
 
 To manually update the overcloud nodes:
@@ -121,7 +121,7 @@ To manually update the overcloud nodes:
 
 		ssh heat-admin@<Insert IP of controller-mgmt node>
 		sudo -i
-		. stackrc #– to source the credentials or setup crednetials
+		. stackrc # - to source the credentials or setup crednetials
 		nova list
 		heat stack-list
 		glance image-list
@@ -149,7 +149,7 @@ To manually update the overcloud nodes:
 
 		ssh heat-admin@<Insert IP of controller-mgmt node>
 		sudo -i
-		. stackrc #– to source the credentials or setup crednetials
+		. stackrc # - to source the credentials or setup crednetials
 		nova list
 		heat stack-list
 		glance image-list
@@ -177,7 +177,7 @@ To manually update the overcloud nodes:
 
 		ssh heat-admin@<Insert IP of controller-mgmt node>
 		sudo -i
-		. stackrc #– to source the credentials or setup crednetials
+		. stackrc # - to source the credentials or setup crednetials
 		nova list
 		heat stack-list
 		glance image-list
@@ -193,20 +193,22 @@ To manually update the overcloud nodes:
 
 Note:  n-scale nodes are rolled out 1 per stack and can scale from 1 to n in number.
 
-Compute (n-scale, not ESX):  It is recommended that a user update their compute nodes in such a way as to allow workloads to continue to function.  To do this it is recommended that a user migrate their workloads to nodes that won’t be down during a particular compute node set update and then migrate them back when done.  It is impossible to know all the scenarios here that a customer will want.  To aid them in selecting n-scale nodes for update here is a list of a few helpful commands.  It is also important to note they very well could update all the compute nodes at once, but there will be outages if this happens.  
+Compute (n-scale, not ESX):  It is recommended that a user update their compute nodes in such a way as to allow workloads to continue to function.  To do this it is recommended that a user migrate their workloads to nodes that will not be down during a particular compute node set update and then migrate them back when done.  It is impossible to know all the scenarios here that a customer will want.  To aid them in selecting n-scale nodes for update here is a list of a few helpful commands.  It is also important to note they very well could update all the compute nodes at once, but there will be outages if this happens.  
 1.	nova list from the Undercloud will give the full set of compute nodes available to be updated.
-2.	If availability zones are employed it’s good to not bring down all availability zones.  So selecting one zone and not all are a good idea if you don’t want to stop all workloads.  
+2.	If availability zones are employed it is good to not bring down all availability zones.  So selecting one zone and not all are a good idea if you do not want to stop all workloads.  
 a.	To get a list of availability zones: nova availability-zone-list 
 b.	To get a list of hosts inside a zone: nova host-list [--zone <zone>]
 3.	Migrating hosts is outside the scope of this document, however using the list and availability zone info a user can use techniques here http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html and http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html to migrate workloads to a specific node.
 4.	If this update is over several maintenance cycles the user may want to run the help script that shows where they are in the update process.  Please see section All high-level pre update scripts should be run: for more info.
 One at a time:
 This command will update only one compute node, you will have to repeat it for every compute IP address.
-ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -l <IP of overcloud-compute > -e nova_compute_rebuild_image_id =<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
+
+		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -l <IP of overcloud-compute > -e nova_compute_rebuild_image_id =<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
 
 A set at a time (set can be 1 to n):
 This command may update only update a subset of compute nodes, it is the responsibility of the user to update all the nodes with multiple commands if necessary.
-ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l “IP_Compute_1:IP_Compute_2:IP_Compute_3….:IP_Compute_n” -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
+
+		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l “IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n” -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
 
 
 Swift (n-scale):  Swift it is strongly encouraged that you update 1 at a time (node by node):
@@ -233,7 +235,7 @@ Another helper script exists that will show you the progress of your update.  Fo
 
 Validation and Recovery steps if you encountered an issue in the Overcloud:   If an error is encountered please use guide in /opt/stack/tripleo-ansible/troubleshooting.rst
  
-Cleanup:  After all the clouds and nodes have been updated it is possible to remove the old images put into glance to reduce required space.  It is recommended that this isn’t done until all validation has been run and user is comfortable that they won’t have to update to the old version.
+Cleanup:  After all the clouds and nodes have been updated it is possible to remove the old images put into glance to reduce required space.  It is recommended that this isn't done until all validation has been run and user is comfortable that they won't have to update to the old version.
 
 
 

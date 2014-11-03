@@ -70,11 +70,11 @@ Perform these basic tests to verify that the environment settings have been rest
 
 1.	Verify local services
 
-		. stackrc – Source the credentials for verification 
-		nova list – Should list the servers
-		glance image-list – Should list the images in glance
-		heat stack-list – Should list the undercloud stack
-		neutron net-list – Should list the ctlplanes
+		. stackrc - Source the credentials for verification 
+		nova list - Should list the servers
+		glance image-list - Should list the images in glance
+		heat stack-list - Should list the undercloud stack
+		neutron net-list - Should list the ctlplanes
 
 2.	Verify connectivity
 

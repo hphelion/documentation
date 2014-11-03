@@ -65,7 +65,7 @@ To upgrade the undercloud using the `HelionUpdate.sh` script included in the pat
 3. Run the following command:
 
 		cd /opt/stack/tripleo-ansible/
-		./update-helpers/HelionUpdate.sh –undercloud
+		./update-helpers/HelionUpdate.sh -undercloud
 
 	This script will setup the environment, allow you to do test `ping` and perform pre-update checking, and also update the node.  
 
@@ -119,7 +119,7 @@ Use the following steps to load upload an image and its dependencies:
 
 		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -l <IP of undercloud> -e undercloud_rebuild_image_id=<glance Image_ID of undercloud> playbooks/update_cloud.yml
 
-	Ansible will show progress and alert you to failures.  The –vvvv option makes information available in case of failure. 
+	Ansible will show progress and alert you to failures.  The `-vvvv` option makes information available in case of failure. 
 
 7. When the update is done, [validate the update](#validate). 
 
@@ -137,7 +137,7 @@ Verify that services and communication between nodes is functional.
 
 3. Run the following commands to make sure all systems appear as expected:
 
-		. stackrc – to source the credentials or setup credentials
+		. stackrc - to source the credentials or setup credentials
 		nova list
 		heat stack-list
 		glance image-list

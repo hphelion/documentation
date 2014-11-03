@@ -25,7 +25,7 @@ PageRefresh();
 There are two methods to obtain latest working update code:
 
 * Using Cloud OS Distribution Network by connecting to the catalog.
-* Import for cases where there is no network connectivity or would like to obtain the latest csu’s that are not published in the catalog.
+* Import for cases where there is no network connectivity or would like to obtain the latest CSU's that are not published in the catalog.
 
 ## Downloading from catalog: 
 

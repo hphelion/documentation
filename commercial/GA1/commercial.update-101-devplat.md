@@ -24,7 +24,7 @@ PageRefresh();
 
 If you have installed [HP Helion Development Platform service](/helion/devplatform/), you need to take service control plane down before performing update on overcloud, if you are planning to update all overcloud the nodes at once. 
 
-If you are planning to do an update one node at time (even on the compute nodes) then you don’t need to do anything specific for handling Dev-Platform Services.
+If you are planning to do an update one node at time (even on the compute nodes) then you do not need to do anything specific for handling Dev-Platform Services.
 
 Since Dev-Platform services run the control plane in a clustered setup, we need to make sure that cluster is stopped in the correct order before updating the overcloud compute nodes. After the update is complete, you need to start the control plane with following command, which again ensure the order for starting the cluster.
 
