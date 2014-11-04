@@ -22,7 +22,6 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Updating the Overcloud
 
-
 [Update the undercloud](#update)
 [Validate the update](#validate)
 [Next Steps](#next-steps)
@@ -58,7 +57,50 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 
 		ssh root@192.0.2.1 
 
-3. Run the following command:
+3. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
+
+	To point the script to update the overcloud, use the following steps:
+
+	a. Copy the `stackrc` file it from the undercloud and rename the file for the undercloud:
+
+		ssh heat-admin@<Undercloud IP>
+		sudo -i
+		cp stackrc /home/heat-admin/uc_stackrc
+
+	b. On the seed cloud host, copy the  the Undercloud to get it.
+	scp heat-admin@<Undercloud ip>:uc_stackrc ~/
+
+	c. Edit the `uc_stackrc` file to replace the localhost in the `OS_AUTH_URL` variable with the IP address of the undercloud.  
+
+		export OS_AUTH_URL=http://<Undercloud>:5000/v2.0
+	
+	d. Source the file:
+	
+		source ~/uc_stackrc
+	
+	e. Execute the following commands:
+
+		source /opt/stack/venvs/ansible/bin/activate
+		cd /opt/stack/tripleo-ansible
+		bash scripts/inject_nova_meta.bash
+		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
+		mkdir -p /var/log/ansible
+
+	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
+
+	c. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+
+		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
+
+	If successful the ping command will show a ping of every node in a particular cloud.  It will look similar to this with one for each node.  
+
+		192.0.2.28 | success >> {
+			"changed": false,
+			"ping": "pong"
+		}	
+
+
+3. Run the following command to start the update:
 
 		cd /opt/stack/tripleo-ansible/
 		./update-helpers/HelionUpdate.sh

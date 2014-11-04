@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Release Notes"
+title: "HP Helion OpenStack&#174; Updating the Seed Cloud Host"
 permalink: /helion/openstack/update/seed/101/
 product: commercial.ga
 
@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Updating the Seed Cloud Host
+# HP Helion OpenStack&reg; Updating the Seed VM
 
 The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will included Seed updates, please check the [HP Helion OpenStack Release Notes](/helion/openstack/release-notes/) to determine if there is a seed update.
 

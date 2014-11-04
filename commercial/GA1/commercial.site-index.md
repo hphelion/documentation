@@ -5,7 +5,7 @@ permalink: /helion/openstack/siteindex/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -23,9 +23,24 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Site Index
 
-#### [Release Notes](/helion/openstack/release-notes/) 
+* [Release Notes](#release)
+* [Getting started with HP Helion OpenStack](#getstart)
+* [Related documentation](#related)
+* [Installing HP Helion OpenStack](#install)
+* [Updating HP Helion OpenStack](#update)
+* [Undercloud Horizon Dashboard](#underdash)
+* [Horizon Dashboard](#dash)
+* [HP Helion OpenStack Services](#services)
+* [Swift Deployment](#swift)
+* [License files](#license)
+* [Related documentation](#related)
 
-#### [Getting started with HP Helion OpenStack](/helion/openstack/)
+
+## Release Notes {#release}
+
+[Release Notes](/helion/openstack/release-notes/) 
+
+## Getting started with HP Helion OpenStack {#getstart}
 
 The following topics as needed contain information about HP Helion OpenStack:
 
@@ -35,7 +50,7 @@ The following topics as needed contain information about HP Helion OpenStack:
 - [Glossary](/helion/openstack/glossary/)
 
 
-## Installing &amp; Before You Install
+## Installing HP Helion OpenStack {#install}
 
 Review the following topics before you start the installation:
 
@@ -78,8 +93,21 @@ Review the following topics related to optional and required post-installation s
 <!-- - [Configuring your network securely](/helion/openstack/install/security/) 
 -->
 
+## Updating HP Helion OpenStack ## {#update}
 
-### Undercloud Horizon Dashboard
+Review the following topics before you start an update:
+
+* [Update Overview](/helion/openstack/update/overview/101/)
+* [Obtaining the Patch Update](/helion/openstack/update/download/101/)
+* [Update Prerequisites](/helion/openstack/update/prereqs/101/)
+* [Monitoring the Update](/helion/openstack/update/monitor/101/)
+* [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/)
+* [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
+* [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
+* [Updating the Development-Platform Services](/helion/openstack/update/devplat/101/)
+
+
+## Undercloud Horizon Dashboard {#underdash}
 
 Review the following topics related to the undercloud Horizon dashboard:
 
@@ -98,7 +126,7 @@ Review the following topics related to the undercloud Horizon dashboard:
 - [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)
 - [Command Line Interface- EON](/helion/openstack/undercloud/eon/cli/)
 
-### Horizon Dashboard
+## Horizon Dashboard {#dash}
 
 Review the following topics related to the Horizon dashboard:
 
@@ -106,7 +134,7 @@ Review the following topics related to the Horizon dashboard:
 - [Logging into the Helion Dashboards](/helion/openstack/dashboard/login/)
 
 
-### HP Helion OpenStack Services ###
+## HP Helion OpenStack Services ## {#services}
 
 Review the following topics related to the HP Horizon OpenStack services:
 
@@ -134,7 +162,7 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Volume Operations Service Overview](/helion/openstack/services/volume/overview/)
 
 
-### Swift Deployment ###
+## Swift Deployment ## {#swift}
 
 Review the following topics related to Swift deployment:
 
@@ -164,25 +192,20 @@ Review the following topics related to Swift deployment:
 	- [Service health](/helion/openstack/services/object/swift/health-check/)
 	- [Diagnosis of disk health using hpssacli utility for HP servers](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/)
 
-[Ringo Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
+- [Ringo Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
 
-## License files
+## License files {#license}
 
 Review the following license files, as needed:
 
 - [Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/)
 - [Preview Agreement](/helion/openstack/eula/)
  
-## [Related documentation](/helion/openstack/related-links)
+## Related documentation {#related}
 
-Review the following related documentation, as needed:
- 
-* [OpenStack documentation home page](http://docs.openstack.org/)
-* [OpenStack Glossary](http://docs.openstack.org/glossary/content/glossary.html)
-* [OpenStack End User Guide](http://docs.openstack.org/user-guide/content/index.html)
-* [OpenStack Cloud Administrator Guide](http://docs.openstack.org/trunk/openstack-compute/admin/content/index.html)
-* [OpenStack Administrator Guide for Networking](http://docs.openstack.org/admin-guide-cloud/content/ch_networking.html)
-* [OpenStack Operations Guide](http://docs.openstack.org/trunk/openstack-ops/content/index.html)
+This topic provides you links to OpenStack documentation that you might find helpful when working with HP Helion OpenStack.\:
+
+* [Related documentation](/helion/openstack/related-links)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
