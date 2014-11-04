@@ -136,7 +136,7 @@ To obtain the IP addresses of the undercloud nodes, run the following commands:
 
 		source ./stackrc
 
-	**Note:** This command is described in [Updating the Undercloud](/helion/openstack/update/Undercloud/101/).
+	**Note:** This command is described in [Updating the Undercloud](/helion/openstack/update/undercloud/101/). 
 
 4. Run the following command:
 
