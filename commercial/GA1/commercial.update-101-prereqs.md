@@ -161,7 +161,7 @@ To determine image ID of the undercloud nodes:
 
 		source ./stackrc
 
-	**Note:** This command is described in [Updating the Undercloud](/helion/openstack/update/Undercloud/101/).
+	**Note:** This command is described in [Updating the Undercloud](/helion/openstack/update/undercloud/101/).
 
 4. Run the following command:
 
