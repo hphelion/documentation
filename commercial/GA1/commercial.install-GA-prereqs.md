@@ -138,7 +138,7 @@ The following tasks need to be performed on the seed VM, known as the installer 
 - [Configure SSH](#ssh)
 - [Install Debian/Ubuntu packages](#packages)
 - [Install and configure NTP](#ntp)
-- [Create the environment variables file](#envars)
+- [Create the JSON environment variables file](#envars)
 - [Create the baremetal.csv file](#csv)
 
 #### Install Ubuntu 14.04 LTS<a name="ubuntuLTS"></a>
@@ -193,11 +193,11 @@ Before you start the installation, you must install NTP on the seed cloud host (
 
 For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
 
-#### Create the environment variables file #### {#envars}
+#### Create the JSON environment variables file #### {#envars}
 
-To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a file that will be executed automatically.
+To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.
 
-For information on creating the environment variables file, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
+For information on editing the JSON environment variables file, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 #### Create the baremetal.csv file<a name="csv"></a>
 

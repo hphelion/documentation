@@ -247,10 +247,10 @@ To update your overcloud with the changes, do the following:
 
      	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 
-6. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+6. Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
 
-		# source /root/env_vars
+		# source /root/kvm-custom-ips.json 
 
 
 7. Launch install script to update the overcloud.

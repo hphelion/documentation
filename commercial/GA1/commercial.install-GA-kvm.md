@@ -72,11 +72,11 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
-### Create and identify environment variables file {#envvars}
+### Edit the JSON environment variables file ### {#envvars}
 
-Before installing, make sure you have created the environment variables file that is required for installation.
+Before installing, make sure you have edited the JSON environment variables file that is required for installation.
 
-For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
+For more information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 ### Prepare baremetal.csv file {#csv}
 
@@ -155,9 +155,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
  
 		sudo su -
 
-2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+2. Execute the `kvm-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source esx-custom-ips.json
 
 5. Start the seed VM installation by entering the following command:
 
@@ -179,11 +179,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
-8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
+8. Copy the `esx-custom-ips.json` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
 
-9. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+9. Execute the `esx-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source esx-custom-ips.json
 
 10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
