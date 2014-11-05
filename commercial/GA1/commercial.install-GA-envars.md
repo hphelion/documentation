@@ -201,7 +201,11 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 2. Locate the `kvm-custom-ips.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
-3. Open the `kvm-custom-ips.json` file and edit the environment variable listed below.  
+3. Optionally, make a backup copy of the JSON file in case it is needed.
+
+	cp kvm-custom-ips.json kvm-custom-ips.json-backup
+
+4. Open the `kvm-custom-ips.json` file and edit the environment variable listed below.  
 
 		export BM_NETWORK_CIDR=192.168.130.0/24
 		export BM_NETWORK_GATEWAY=192.168.130.1
@@ -237,7 +241,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 		export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
-4. Save the file on the seed cloud host.
+5. Save the file on the seed cloud host.
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/).
 
@@ -262,7 +266,11 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 2. Locate the `esx-custom-ips.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
-3. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
+3. Optionally, make a backup copy of the JSON file in case it is needed.
+
+	cp kvm-custom-ips.json kvm-custom-ips.json-backup
+
+4. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
 
 		export BM_NETWORK_SEED_RANGE_START=172.30.100.2
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
@@ -295,7 +303,11 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 2. Locate the `esx-custom-ips-vlan.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
-3. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
+3. Optionally, make a backup copy of the JSON file in case it is needed.
+
+	cp kvm-custom-ips.json kvm-custom-ips.json-backup
+
+4. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
 
 
 		export BM_NETWORK_CIDR=172.30.100.0/24
