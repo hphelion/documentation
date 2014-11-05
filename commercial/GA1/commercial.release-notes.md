@@ -57,10 +57,13 @@ The following features have been added to HP Helion OpenStack, by release.
 
 The following are the known issues for HP Helion OpenStack:
 
+**Update**
+
+* If you need to restore the overcloud controllers and overcloud database after running the patch upgrade, the registered vCenter clusters might be powered off. You will need to restart the clusters. It is recommended that you perform a [back-up](/helion/openstack/backup.restore/) before running the patch upgrade. If there is a problem with the upgrade, you can use the [restore process](/helion/openstack/backup.restore/) to return the controllers and database to their pre-update state. 
+
 **Operations**
 
-* Sherpa can not upload images with the same name to glance in 2 different tenants. If re-download is tried, the status gets stuck to download and the user can't install the package. Only option is to clean from the backend and reimport and install.
-(CODN-24)
+* If you use the Sherpa UI to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). (CODN-24)
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
