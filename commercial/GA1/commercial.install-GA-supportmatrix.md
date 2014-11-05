@@ -123,7 +123,7 @@ You must have the following hardware configuration:
 
 Additional requirements are as follows:
 
-- For systems with multiple NICs, only one NIC must be active or connected.
+- For systems with multiple NICs, only one NIC may be active or connected.
 - Capable of hosting VMs
 - The boot order configured with Network/PXE boot as the first option:
 	- For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
