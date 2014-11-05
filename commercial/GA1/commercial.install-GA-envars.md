@@ -27,7 +27,7 @@ The HP Helion OpenStack Installation process requires various configuration para
 
 As a user who is installing HP Helion OpenStack, can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.
 
-The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`.
+The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
 
 You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable text-based file to store information that can be used to transfer data between servers.
 
@@ -199,7 +199,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 		sudo su -
 
-2. Locate the `kvm-custom-ips.json` in the installation package.
+2. Locate the `kvm-custom-ips.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
 3. Open the `kvm-custom-ips.json` file and edit the the environment variable listed below.  
 
@@ -260,7 +260,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 		sudo su -
 
-2. Locate the `esx-custom-ips.json` in the installation package.
+2. Locate the `esx-custom-ips.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
 3. Open the `esx-custom-ips.json` file and edit the the environment variable listed below.  
 
@@ -293,7 +293,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 		sudo su -
 
-2. Locate the `esx-custom-ips.json` in the installation package.
+2. Locate the `esx-custom-ips-vlan.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
 3. Open the `esx-custom-ips.json` file and edit the the environment variable listed below.  
 
