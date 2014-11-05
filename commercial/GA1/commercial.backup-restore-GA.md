@@ -43,8 +43,8 @@ The following instructions describe how to back up and restore the seed, undercl
 
 - [Create a configuration file for restoring the seed VM and undercloud](#config)
 - [Back up and restore the seed VM](#seed)
-- [Back up and restore the overcloud](#overcloud)
-- [Back up and restore the undercloud](#undercloud)
+- [Back up and restore the undercloud](#under)
+- [Back up and restore the overcloud](#over)
 - [Backup command options](#options)
 - [Restore command options](#roptions)
 - [Undercloud password issues](#underpass)
@@ -56,7 +56,7 @@ You execute scripts in the seed VM host server, where:
 
 If you need help, see [Back up and restore script Help](#help).
 
-## Create a configuration file for restoring the seed VM and undercloud<a name="config"></a>
+## Create a configuration file for restoring the seed VM and undercloud {#config}
 
 During restore process for the seed VM and undercloud, a configuration file is required. The configuration file contains exported parameters used during the installation.
 
@@ -84,11 +84,11 @@ Use the following steps to back up the seed VM:
 		- UNDERCLOUD_CODN_HTTP_PROXY is the
 		- UNDERCLOUD_CODN_HTTPS_PROXY is the
 
-## Back up and restore the seed VM<a name="seed"></a>
+## Back up and restore the seed VM {#seed}
 
 The following sections describe how and when to [back up](#backseed) and [restore](#seedrest) the seed VM.
 
-### Backing up the seed VM<a name="seedback"></a> 
+### Backing up the seed VM {#seedback} 
 
 You should create a backup from the seed VM when any of the following events happen:
 
@@ -177,11 +177,11 @@ Use the following steps to restore the seed VM:
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## Back up and restore the undercloud<a name="under"></a>
+## Back up and restore the undercloud {#under}
 
 The following sections describe how and when to [back up](#underback) and [restore](#underrest) the undercloud.
 
-### Backing up the undercloud<a name="underback"></a> 
+### Backing up the undercloud {#underback} 
 
 You should create a backup from undercloud as soon as the overcloud is deployed and configured the first time.
 
@@ -229,7 +229,7 @@ All required files are backed up to the specified folder:
 
 	/<destination folder>/backup_YY-MM-DD-HH-MM/uc
  
-### Restoring the undercloud<a name="underrest"></a>
+### Restoring the undercloud {#underrest}
 
 You should restore the seed node when there is any problem with the node, for example:
 
@@ -314,7 +314,7 @@ All required files are backed-up to the specified folder:
 
 	/<destination folder>/backup_YY-MM-DD-HH-MM/oc
 
-### Restoring the Sherpa overcloud<a name="sherparest"></a>
+### Restoring the Sherpa overcloud {#sherparest}
 
 Use the following steps to restore the seed VM:
 
@@ -351,7 +351,7 @@ Use the following steps to restore the seed VM:
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-### Backing up the overcloud database<a name="sherpaback"></a>
+### Backing up the overcloud database {#sherpaback}
 
 You should create a backup from the overcloud database on a regular basis as determined by the administrator or your organization's policies.
 
@@ -391,7 +391,7 @@ All required files are backed-up to the specified folder:
 
 		/<destination folder>/backup_YY-MM-DD-HH-MM/db
 
-### Restoring the overcloud database<a name="sherparest"></a>
+### Restoring the overcloud database {#sherparest}
 
 You should restore the overcloud database when there is any problem with the node, for example:
 
@@ -470,7 +470,7 @@ After the management controller is rebuilt, use the following steps below to dis
 
 Use the following sections as needed.
 
-### Backup command options<a name="options"></a>
+### Backup command options {#options}
 
 The following lists all of the command options for the backup script, `hp_ced_backup.sh`.
 
@@ -495,7 +495,7 @@ The following lists all of the command options for the backup script, `hp_ced_ba
 			-u|--dest-host-user     - username of host to which to backup
 			-i|--identity-file      - selects a file from which the identity (private key) for public key authentication is read
 
-### Restore command options<a name="roptions"></a>
+### Restore command options {#roptions}
 
 The following lists all of the command options for the backup script, `hp_ced_restore.sh`.
 
@@ -529,7 +529,7 @@ Other optional options that can be used during the backup/restore process, as:
 - Backup/Restore the files in/from a remote server (using option H)
 - Backup seed + undercloud + ... all at once using all the parameters at the same time (--seed, --undercloud --overcloud)
 
-## Undercloud password issues<a name="underpass"></a>
+## Undercloud password issues {#underpass}
 
 If the admin user password was changed from the original password created during the installation process, you need to update the password in some files before performing the undercloud backup or restore process. If this process has been done and the files contain the correct password, you do not need to edit the files.
 
