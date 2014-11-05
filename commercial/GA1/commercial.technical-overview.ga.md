@@ -440,9 +440,10 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-HP Helion OpenStack architecture diagram for KVM network architecture.
+HP Helion OpenStack architecture diagram for [KVM network architecture](#KVM-env).
 
-<img src="media/topology_kvm.png"/)>
+<!--- this is redundant diagram
+<img src="media/topology_kvm.png"/)> --->
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 

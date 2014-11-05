@@ -24,7 +24,7 @@ PageRefresh();
 
 The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the *Extract the scripts and libraries necessary to perform the update* of the Appendix.  
 
-If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/undercloud/101/).
+If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
     
 
 ## Prerequisites ## {#prereqs}
@@ -62,7 +62,34 @@ To upgrade the undercloud using the `HelionUpdate.sh` script included in the pat
 
 		ssh root@192.0.2.1 
 
-3. Run the following command:
+3. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
+
+	a. Point the script to update the undercloud, run the following command:
+
+		source ~/stackrc
+
+	b. Execute the following commands:
+
+		source /opt/stack/venvs/ansible/bin/activate
+		cd /opt/stack/tripleo-ansible
+		bash scripts/inject_nova_meta.bash
+		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
+		mkdir -p /var/log/ansible
+
+	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
+
+	c. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+
+		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
+
+	If successful the ping command will show a ping of every node in a particular cloud.  It will look similar to this with one for each node.  
+
+		192.0.2.28 | success >> {
+			"changed": false,
+			"ping": "pong"
+		}	
+
+3. Run the following command to start the update:
 
 		cd /opt/stack/tripleo-ansible/
 		./update-helpers/HelionUpdate.sh -undercloud
