@@ -224,7 +224,7 @@ although based on sequence it should not be the last node.  As a result the erro
 
 **Symptoms:**
 
-* Update Failed with error message "Galera Replication - Node appears to be the last node in a cluster - cannot safely proceed unless overriden via single_controller setting - See README.rst"
+* Update Failed with error message "Galera Replication - Node appears to be the last node in a cluster - cannot safely proceed unless overridden via single_controller setting - See README.rst"
 
 **Solutions:**
 
