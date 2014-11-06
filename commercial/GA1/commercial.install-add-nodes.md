@@ -55,13 +55,13 @@ If you want to enroll (add) nodes that were created during the initial installat
 
  		ssh <IP Address>
 
-2. Edit the scale counts in environment variables file (env_vars) that was used during the initial installation. Edit the `env_vars` file as follows to define the appropriate scale number:
+2. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
 
 		export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
 
 3. Source the environment variables file that you updated:  
 
-		source /root/env_vars
+		source /root/kvm-custom-ips.json
 
 4. Run the installer script:
 
@@ -108,13 +108,14 @@ To add new compute nodes that were not created during the initial installation p
 7. Make the respective Baremetal entry in `/root/baremetal.csv`.   
 	<!---If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`: 
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
-8. Edit the `env_vars` file as follows to define the appropriate scale number:
 
-		export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
+8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
+
+		OVERCLOUD_COMPUTESCALE=<number of compute nodes>
 
 9. Source the environment variables file that  you updated:  
 
-		source /root/env_vars
+		source /root/kvm-custom-ips.json
 
 10. Run the installer script:
 
@@ -163,13 +164,13 @@ To remove a node:
 
 10. Remove the entry with the MAC Address that you retrieved in step 4 from from the `/root/baremetal.csv` file:
 
-<!---11. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/env_vars` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
+<!---11. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/kvm-custom-ips.json` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
 
 		export OVERCLOUD_COMPUTESCALE=<number>
 
 12. Source the environment variables file that  you updated:  
 
-		source /root/env_vars
+		source /root/kvm-custom-ips.json
 
 13. Run the installer script:
 

@@ -38,7 +38,7 @@ The installation and configuration process for KVM consists of the following gen
 	* [Prepare baremetal.csv file](#csv)
 	* [Set DNS servers by default](#name-resolution)
 	* [Preparing seed cloud host to create the seed VM](#prepseed)
-* [Downloading the installation packages](#getinstall)
+* [Downloading and extracting the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
 	* [Configure proxy information](#proxy)
 	* [Unpack the installation file](#unpackinstall)
@@ -72,11 +72,11 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
-### Create and identify environment variables file {#envvars}
+### Edit the JSON environment variables file ### {#envvars}
 
-Before installing, make sure you have created the environment variables file that is required for installation.
+Before installing, make sure you have edited the JSON environment variables file that is required for installation.
 
-For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
+For more information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 ### Prepare baremetal.csv file {#csv}
 
@@ -91,24 +91,8 @@ To set a default DNS name server for your HP Helion OpenStack Commercial cloud, 
 ### Prepare the cloud seed host to create the seed VM {#prepseed}
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
-## Downloading the installation packages {#getinstall}
-
-Before you begin, you must download the required HP Helion OpenStack installation packages:
-
-1. Log in to your install system as root:
-
-        sudo su -
-
-2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
-
-	<table style="text-align:left; vertical-align:top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	<td><b> Installation package </b></td><td><b>File name</b></td></tr>
-
-	<tr style="background-color: white; color: black;">
-	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
-	</table>
+## Downloading and extracting the installation packages {#getinstall}
+Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See [Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 ## Installing HP Helion OpenStack {#install}
 
@@ -137,17 +121,6 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Log out and re-login to the seed VM host to activate the proxy configuration.
 
-### Unpack the installation file {#unpackinstall}
-
-1. Log into your install system as root.
-
-		sudo su -
-
-2.  Extract the installation package to the `root` directory:
-
-		tar zxvf /root/HPHelionOpenStack_1.0.tgz
-
-	This creates and populates a `tripleo/` directory within the `work' directory.
 
 ### Install the seed VM and build your cloud {#startseed}
 
@@ -155,9 +128,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
  
 		sudo su -
 
-2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+2. Execute the `kvm-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source esx-custom-ips.json
 
 5. Start the seed VM installation by entering the following command:
 
@@ -179,11 +152,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
-8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
+8. Copy the `esx-custom-ips.json` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
 
-9. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+9. Execute the `esx-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source esx-custom-ips.json
 
 10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 

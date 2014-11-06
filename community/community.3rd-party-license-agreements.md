@@ -25,7 +25,7 @@ PageRefresh();
 
 The Open Source and Third-Party Software License Agreements for HP Helion OpenStack Communitry are available as a PDF download.
 
-<a href="http://g867c39a921f179b9eb3ba7424144b70a.cdn.hpcloudsvc.com/source/Community-OSRB-10-30-14.pdf">Download the PDF document.</a>
+<a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Community-OSRB-10-30-14.pdf">Download the PDF document.</a>
 
 
 

@@ -21,7 +21,7 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
-# HP Helion OpenStack&#174;Installation: Deploy and Configure HP StoreVirtual VSA 
+# HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA 
 
 This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.It covers the following topics:
 
@@ -234,7 +234,7 @@ To deploy HP StoreVirtual VSA, perform the following:
 9. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
 
-		# source /root/env_vars
+		# source /root/kvm-custom-ips.json
 
 10. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
 

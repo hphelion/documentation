@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
 -->
 
-# Deploying Additional Scale-out Swift Nodes with HP Helion OpenStack&#174; 
+# HP Helion OpenStack&#174;: Deploying Additional Scale-out Swift Nodes
 
 The scale-out object storage is realized by defining a new storage policy - storage-policy:1. Object-1 ring is associated with storage-policy:1. This ring is used to store end user data. Once the storage-policy:1 is created, it is the default policy and all of the containers would be on this policy unless otherwise specified. We recommend you to use at least **two** nodes to implement storage-policy:1. Also, you can extend the object storage by adding one or more nodes to object-ring:1 as per your requirement.
 
@@ -112,7 +112,9 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 4. Source the environment variables file created during initial installation. 
 
-		# source /root/env_vars
+	# source /root/kvm-custom-ips.json
+	-or-
+	# source /root/esx-custom-ips.json
 
 5. Run the installer script to update the cloud.
 

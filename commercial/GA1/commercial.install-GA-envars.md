@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack: Creating an Environment Variables File for Installation"
+title: "HP Helion OpenStack: Editing the JSON Environment Variables File for Installation"
 permalink: /helion/openstack/install/envars/
 product: commercial.ga
 
@@ -21,15 +21,24 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&reg;:  Creating an Environment Variables File for Installation #
+# HP Helion OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
 
-The HP Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables. As a user who is installing HP Helion OpenStack, you should create a file containing the environment variables based on the applicable scenario from the list below.
+The HP Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables. 
+
+As a user who is installing HP Helion OpenStack, can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.
+
+The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
+
+You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable text-based file to store information that can be used to transfer data between servers.
+
+This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
+
+Edit the JSON file based on the applicable scenario:
 
 - [Definition of Environment variables used during install](#env)
 - [Environment variables file for a KVM install](#kvm)
 - [Environment variables file for a ESX install](#esx)
 
-This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
 
 ## Definition of Environment variables used during install ## {#env}
 
@@ -182,11 +191,21 @@ Identify the environment variables required for the installation based on the de
 
 ### Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses and VxLAN based Tenant Networks ### {#one}
 
-If you plan to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
+If you plan to use custom IP addresses in your HP Helion OpenStack deployment, open the JSON file in the installation package named `kvm-custom-ips.json` and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
 
-All VLAN ID's and IP addresses given in below are examples of customized IP addresses and VLAN identifiers for External and Service network access.
+All VLAN ID's & IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.
 
-1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
+1. Log into your install system as root.
+
+		sudo su -
+
+2. Locate the `kvm-custom-ips.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
+
+3. Optionally, make a backup copy of the JSON file in case it is needed.
+
+	cp kvm-custom-ips.json kvm-custom-ips.json-backup
+
+4. Open the `kvm-custom-ips.json` file and edit the environment variable listed below.  
 
 		export BM_NETWORK_CIDR=192.168.130.0/24
 		export BM_NETWORK_GATEWAY=192.168.130.1
@@ -222,6 +241,8 @@ All VLAN ID's and IP addresses given in below are examples of customized IP addr
 		export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
 		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
+5. Save the file on the seed cloud host.
+
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/).
 
 
@@ -235,11 +256,21 @@ Identify the environment variables required for the installation based on the de
 
 ### Deployment Scenario 1: HP Helion OpenStack Deployment with custom IP addresses ### {#esxone}
 
-If you plan to use custom IP addresses in your HP Helion OpenStack deployment, create a file named `env_vars` and add the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
+If you plan to use custom IP addresses in your HP Helion OpenStack deployment, open the JSON file in the installation package named `esx-custom-ips.json` and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
 
-All VLAN ID's & IP addresses given in the next column are example of customized IP addresses and VLAN identifiers for external network access.
+All VLAN ID's & IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.
 
-1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
+1. Log into your install system as root.
+
+		sudo su -
+
+2. Locate the `esx-custom-ips.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
+
+3. Optionally, make a backup copy of the JSON file in case it is needed.
+
+	cp kvm-custom-ips.json kvm-custom-ips.json-backup
+
+4. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
 
 		export BM_NETWORK_SEED_RANGE_START=172.30.100.2
 		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
@@ -262,11 +293,22 @@ All VLAN ID's & IP addresses given in the next column are example of customized 
 
 ### Deployment Scenario 2: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access ### {#esxtwo}
 
-If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion OpenStack deployment, create a file named `env_vars` and add the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
+If you intend to use custom IP addresses and a VLAN provider network for external access in your HP Helion OpenStack deployment, open the JSON file in the installation package named `esx-custom-ips.json` and edit the following environment variables. Save the file on the seed cloud host (installation system). The variables are defined in [Definition of Environment variables used during install](#env).
 
-1. Create a file named `env_vars` and add the environment variable listed below. Save the file on the seed cloud host. 
+All VLAN ID's & IP addresses given in the following procedure are examples of customized IP addresses and VLAN identifiers for external network access.
 
-	All VLAN ID's & IP addresses given in the next column are examples of customized IP addresses and VLAN identifiers for External network access.
+1. Log into your install system as root.
+
+		sudo su -
+
+2. Locate the `esx-custom-ips-vlan.json` in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
+
+3. Optionally, make a backup copy of the JSON file in case it is needed.
+
+	cp kvm-custom-ips.json kvm-custom-ips.json-backup
+
+4. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
+
 
 		export BM_NETWORK_CIDR=172.30.100.0/24
 		export BM_NETWORK_SEED_IP=172.30.100.1

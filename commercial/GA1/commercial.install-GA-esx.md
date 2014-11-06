@@ -30,11 +30,11 @@ The installation and configuration process for ESX consists of the following gen
 
 * [Verify Prerequisites](#pre)
 	* [Review the ESX deployment architecture](#deploy-arch)
-	* [Create and identify environment variables file](#envvars)
+	* [Edit the JSON environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
 	* [Set DNS servers by default](#name-resolution)
 	* [Preparing seed cloud host to run seed VM](#prepseed)
-* [Downloading the installation packages](#getinstall)
+* [Download and extracting the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
    * [Configure proxy information](#proxy)
    * [Unpack installation file](#unpackinstall)
@@ -45,7 +45,7 @@ The installation and configuration process for ESX consists of the following gen
    * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps) 
 
-## Verify Prerequisites<a name="pre"></a>
+## Verify Prerequisites {#pre}
 
 To ensure a successful installation, please read through the following topics before you start.
 
@@ -53,7 +53,7 @@ To ensure a successful installation, please read through the following topics be
 * Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
 * [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
 
-## Review the ESX deployment architecture<a name="deploy-arch"></a>
+## Review the ESX deployment architecture {#deploy-arch}
 
 The following diagram depicts the required network topology for a KVM installation.
 
@@ -61,11 +61,11 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
-### Create and identify environment variables file ### {#envvars}
+### Edit the JSON environment variables file ### {#envvars}
 
-Before installing, make sure you have created the environment variables file that is required for installation.
+Before installing, make sure you have edited the JSON environment variables file that is required for installation.
 
-For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
+For more information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 ### Prepare baremetal.csv file ### {#csv}
 
@@ -83,29 +83,10 @@ To set a default DNS name server for your HP Helion OpenStack Commercial cloud, 
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
 
-## Download the installation packages<a name="getinstall"></a>
-Before you begin, you must download the required HP Helion OpenStack installation packages:
+## Downloading and extracting the installation packages {#getinstall}
+Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See [Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
-1. Log in to your seed VM host as root:
-
-		sudo su -
-
-2. Register and then log in to download the required installation packages from [HP Helion OpenStack&#174; product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
-
-	<table style="text-align: left; vertical-align: top; width:650px;">
-	<tr style="background-color: lightgrey; color: black;">
-	<td><b> Installation package </b></td><td><b>File name</b></td>
-	<tr>
- 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
-	<tr>
-	<td>HP Helion OpenStack vCenter Proxy Appliance</td>
-	<td>overcloud_vcenter_compute_proxy.ova</td></tr>
- 	<td>HP Helion OpenStack VCN Agent Appliance</td>
-	<td>ovsvapp.tgz</td></tr>
-	</table>
-
-
-## Installing HP Helion OpenStack<a name="install"></a>
+## Installing HP Helion OpenStack {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:
 
@@ -114,7 +95,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 * [Installing the seed VM and building your cloud](#startseed)
 
 
-### Configure proxy information<a name="proxy"></a>
+### Configure proxy information {#proxy}
 
 Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:
 
@@ -135,27 +116,15 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Log out and re-login to the seed VM host to activate the proxy configuration.
 
-### Unpack the installation file<a name="unpackinstall"></a>
-
-1. Log into your install system as root.
-
-		sudo su -
-
-2.  Extract the installation package to the `root` directory:
-
-		tar zxvf /root/HPHelionOpenStack_1.0.tgz
-
-	This creates and populates a `tripleo/` directory within the `work' directory.
-
-### Install the seed VM and build your cloud<a name="startseed"></a>
+### Install the seed VM and build your cloud {#startseed}
 
 1. Make sure you are logged into the seed VM host as root. If not:
  
 		sudo su -
 
-2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+2. Execute the `esx-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source esx-custom-ips.json
 
 5. Start the seed VM installation by entering the following command:
 
@@ -175,11 +144,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
-8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
+8. Copy the `esx-custom-ips.json` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
 
-9. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+9. Execute the `esx-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source esx-custom-ips.json
 
 10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
@@ -211,11 +180,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** If `hp_ced_start_seed.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
-## Verify your installation<a name="verifying-your-installation"></a>
+## Verify your installation {#verifying-your-installation}
 
 To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as follows.
 
-### Connect to the undercloud Horizon console<a name="monitoring"></a>
+### Connect to the undercloud Horizon console {#monitoring}
 
 Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
 
@@ -241,7 +210,7 @@ Make sure you can access the undercloud Horizon dashboard. To do this, follow th
 
 6. Log in as user 'admin' with the admin password from step 4.
 
-### Connect to the overcloud Horizon console <a name="connectconsole"></a>
+### Connect to the overcloud Horizon console {#connectconsole}
 
 Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
@@ -273,11 +242,11 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
-### Create projects for LDAP users<a name="ldap"></a>
+### Create projects for LDAP users {#ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/install/ldap/).
 
-## Next Steps<a name="next-steps"></a>
+## Next Steps {#next-steps}
 
 
 - Deploy vCenter ESX Compute Proxy **(REQUIRED)**
