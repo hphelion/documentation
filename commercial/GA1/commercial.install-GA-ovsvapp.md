@@ -89,7 +89,8 @@ Before you install the OVSvApp, ensure the following:
 		mgmt_interface={'vmxnet3':'mgmt'}
 		trunk_interface={'vmxnet3':'vlan_trunk'}
 
-<img src="media/ESXi_hypervisor_networking.png"/>
+	Use the following diagram for reference:
+	<img src="media/ESXi_hypervisor_networking.png"/>
 
 ### Notes for deploying OVSvApp VM onto ESX hypervisors ### {#esx}
 
