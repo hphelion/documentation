@@ -51,8 +51,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 8. [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
 9. [Failure of Hp_ced_installer.sh](#failure-installer)
 10. [Failure of Seed Installation](#seed-install-failure)
-11. [NovaCompute node fails when installing overcloud](#novacompute-fails)
-
+11. [Ironic intermitently set maintenance mode to True during update](#ironic)
 
 ###Fatal PCI Express Device Error {#fatal-pci}
 
@@ -348,6 +347,39 @@ Inconsistent Rabbitmq failure seen on controller nodes while listing queues
 **Resolution**
 
 Restart the Rabbitmq service.
+
+<br><br>
+<hr>
+
+### Ironic intermitently set maintenance mode to True during update {#ironic}
+
+This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. 
+
+**System Behavior/Message**
+
+If the update fails:
+
+1. Execute the `ironic node-show` command:
+
+		ironic node-show <uuid>
+
+2. In the output, check the `last_error` field for an error similar to the following:
+
+	During sync_power_state, max retries exceeded for node 81baacd5-657e-476f-b7ef, node state None does not match expected state
+
+	'None'. Updating DB state to 'None' Switching node to maintenance mode. 
+
+**Resolution**
+
+1. Execute the `nova list` command to determine which node(s) is in a error state.
+
+2. Execute the `nova show <instance-id>` to verify if the error message reports the node(s) is in maintenance mode.
+
+3. If any node is maintenance mode, run the `ironic node-list` command to determine if the node(s) should in maintenance mode.
+
+4. Change the node(s) to false for the maintenance option, using the following command:
+
+		`ironic node-update <id> replace maintenance=False`
 
 <br><br>
 <hr>

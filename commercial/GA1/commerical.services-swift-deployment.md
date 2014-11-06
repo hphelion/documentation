@@ -102,7 +102,7 @@ Before starting the deployment of scale-out object nodes you must configure the 
 		# ssh root@<seed IP address>
 
 		
-2. Update the ` OVERCLOUD_SOSWIFT_STORAGESCALE` parameter in the `/root/overcloud-config.json` file according to your storage needs.
+2. Update the `so_swift_storage_scale` parameter in the `/root/overcloud-config.json` file according to your storage needs.
  
  	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
 
@@ -112,9 +112,9 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 4. Source the environment variables file created during initial installation. 
 
-	# source /root/kvm-custom-ips.json
-	-or-
-	# source /root/esx-custom-ips.json
+		# source /root/kvm-custom-ips.json
+		-or-
+		# source /root/esx-custom-ips.json
 
 5. Run the installer script to update the cloud.
 

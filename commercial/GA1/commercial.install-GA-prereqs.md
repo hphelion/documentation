@@ -79,7 +79,11 @@ The network is not installed or managed by the cloud. You must install and manag
 
 To ensure a successful installation, you must satisfy these network configuration requirements:
 
-* The machine hosting the seed VM, and all baremetal systems have to be connected to a management network. Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.
+* The machine hosting the seed VM, and all baremetal systems have to be connected to a management network. 
+
+* Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.
+
+* The Helion OpenStack architecture assumes that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.
 
 * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
@@ -136,6 +140,7 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 - installing and managing the ESX network and for assigning IP addresses on it to the OVSvApp and vCenter Proxy nodes;
 
 - providing a route for traffic between the Compute and Volume Operations services running on the vCenter Proxy node and the RabbitMQ and mySQL on the Cloud Controller:
+
 	- The target IP addresses should be limited the ip addresses of the MySQL cluster nodes and RabbitMQ cluster nodes in the Over Cloud.
 	- The Port numbers shall be limited to 5672 (RabbitMQ) and 3306 (MySQL)
 
