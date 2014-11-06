@@ -22,20 +22,22 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Update Troubleshooting
 
+<!-- taken from https://git.gozer.hpcloud.net/cgit/hp/tripleo-ansible/tree/Troubleshooting.rst -->
+
 This topic describes known issues that you might encounter while updating. To help you resolve these issues, we have provided possible solutions.
 
-[Retrying failed actions](#retry)
-[Node goes to ERROR state during rebuild](#@nodeerror)
-[MySQL CLI configuration file missing](mysqlmissing)
-[MySQL fails to start upon retrying update](#mysqlfails)
-[MySQL/Percona/Galera is out of sync](#mysqlsync)
-[MysQL "Node appears to be the last node in a cluster" error](#lastnode)
-[SSH Connectivity is lost](#sshlost)
-[Postfix fails to reload](#posfix)
-[Apache2 Fails to start](#apache2)
-[RabbitMQ still running when restart is attempted](#rabbitmq)
-[Instance reported with status == "SHUTOFF" and task_state == "powering on"](#shutoff)
-[State drive /mnt is not mounted](#mnt)
+* [Retrying failed actions](#retry)
+* [Node goes to ERROR state during rebuild](#@nodeerror)
+* [MySQL CLI configuration file missing](mysqlmissing)
+* [MySQL fails to start upon retrying update](#mysqlfails)
+* [MySQL/Percona/Galera is out of sync](#mysqlsync)
+* [MysQL "Node appears to be the last node in a cluster" error](#lastnode)
+* [SSH Connectivity is lost](#sshlost)
+* [Postfix fails to reload](#posfix)
+* [Apache2 Fails to start](#apache2)
+* [RabbitMQ still running when restart is attempted](#rabbitmq)
+* [Instance reported with status == "SHUTOFF" and task_state == "powering on"](#shutoff)
+* [State drive /mnt is not mounted](#mnt)
 
 ## Retrying failed actions ## {#retry}
 
