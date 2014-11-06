@@ -290,8 +290,8 @@ Once the update of overcloud node is complete, you should backup the node in cas
 
 ## Redeploy Compute Proxy and OVSvAPP on ESX Host ## {#redeploy}
 
-After updating the Controller Management node, update  Nova Compute Proxy and OVSvAPP if the infrastructure includes ESX Proxied Hosts and the update package contains new images for ESX. Failure to do so will prevent users from launching VM’s in vCenter Hosts.
-To manage the VM’s launched using the older compute proxy, use the same hostname entered for older Compute Proxy.
+After updating the Controller Management node, update  Nova Compute Proxy and OVSvAPP if the infrastructure includes ESX Proxied Hosts and the update package contains new images for ESX. Failure to do so will prevent users from launching VM's in vCenter Hosts.
+To manage the VM's launched using the older compute proxy, use the same hostname entered for older Compute Proxy.
 
 Redeploy Nova Compute Proxy:
 1. Login to Undercloud
