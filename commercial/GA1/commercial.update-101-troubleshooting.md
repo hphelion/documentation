@@ -27,8 +27,8 @@ PageRefresh();
 This topic describes known issues that you might encounter while updating. To help you resolve these issues, we have provided possible solutions.
 
 * [Retrying failed actions](#retry)
-* [Node goes to ERROR state during rebuild](#@nodeerror)
-* [MySQL CLI configuration file missing](mysqlmissing)
+* [Node goes to ERROR state during rebuild](#nodeerror)
+* [MySQL CLI configuration file missing](#mysqlmissing)
 * [MySQL fails to start upon retrying update](#mysqlfails)
 * [MySQL/Percona/Galera is out of sync](#mysqlsync)
 * [MysQL "Node appears to be the last node in a cluster" error](#lastnode)
@@ -56,7 +56,7 @@ optionally re-attempt or resume playbook executions.
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## Node goes to ERROR state during rebuild ## {#@nodeerror}
+## Node goes to ERROR state during rebuild ## {#nodeerror}
 
 This can happen from time to time due to network errors or temporary
 overload of the undercloud.
@@ -78,7 +78,7 @@ After an error, the `nova list` command shows a node in `ERROR` state.
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## MySQL CLI configuration file missing ## {mysqlmissing}
+## MySQL CLI configuration file missing ## {#mysqlmissing}
 
 If the post-rebuild restart fails, it is possible that the MySQL CLI configuration file is missing.
 
