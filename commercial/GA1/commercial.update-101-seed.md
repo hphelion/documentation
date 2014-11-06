@@ -38,11 +38,9 @@ Backup a copy of seed node to restore in case of catastrophic failures.  For inf
 
 ## Backup Original Seed Settings ## {#backupsettings}
 
-1. Copy the `seed_update_1.00-1.01.tar` file to the seed host.  
+Before you proceed with seed node update, you should have [extracted the update scripts](/helion/openstack/update/prereqs/101/#extract) delivered as part of the patch.  
 
-2. Extract the contents of the file to a folder. 
-
-3. Backup and copy the seed settings by executing the following script:
+Execute the `seed_update.sh` script to backup and copy the seed settings to host system:
 
 		./seed_update.sh --backup-seed <IP Address of Seed> <Backup Destination Folder>
 

@@ -207,39 +207,57 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 4. Open the `kvm-custom-ips.json` file and edit the environment variable listed below.  
 
-		export BM_NETWORK_CIDR=192.168.130.0/24
-		export BM_NETWORK_GATEWAY=192.168.130.1
-		export BM_NETWORK_SEED_IP=192.168.130.3
-		export BM_NETWORK_SEED_RANGE_START=192.168.130.4
-		export BM_NETWORK_SEED_RANGE_END=192.168.130.22
-		export BM_NETWORK_UNDERCLOUD_RANGE_START=192.168.130.23
-		export BM_NETWORK_UNDERCLOUD_RANGE_END=192.168.130.126
-		export CUSTOMER_ROUTER_IP=192.168.130.1
-		export FLOATING_START=192.168.131.2
-		export FLOATING_END=192.168.131.245
-		export FLOATING_CIDR=192.168.131.0/24
-		export UNDERCLOUD_NeutronPublicInterface=eth1
-		export BRIDGE_INTERFACE=em2
-		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=202
-		export OVERCLOUD_NTP_SERVER=18.110.135.123
-		export UNDERCLOUD_NTP_SERVER=18.110.135.123
-		export OVERCLOUD_COMPUTESCALE=4
-		export UNDERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
-		export UNDERCLOUD_CODN_HTTPS_PROXY=https://19.65.150.175:8080
-		export OVERCLOUD_VIRTUAL_INTERFACE=eth1
-		export OVERCLOUD_NeutronPublicInterface=vlan331
-		export NeutronPublicInterfaceRawDevice=eth1
-		export NeutronSVCInterface=vlan332
-		export NeutronSVCInterfaceDefaultRoute=192.168.132.1
-		export CUSTOMER_ROUTER_IP=192.168.130.1
-		export SVC_ALLOCATE_START=192.168.132.2
-		export SVC_ALLOCATE_END=192.168.132.250
-		export SVC_ALLOCATE_CIDR=192.168.132.0/24
-		export OVERCLOUD_BRIDGE_MAPPINGS=svcnet1:br-svc
-		export OVERCLOUD_FLAT_NETWORKS=svcnet1
-		export OVERCLOUD_CODN_HTTP_PROXY=http://19.65.150.175:8080
-		export OVERCLOUD_CODN_HTTPS_PROXY=http://19.65.150.175:8080
-		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
+		{
+			"cloud_type": "KVM",
+			"vsa_scale": 0,
+			"vsa_ao_scale": 0,
+			"so_swift_storage_scale": 0,
+			"so_swift_proxy_scale": 0,
+			"compute_scale": 4,
+			"bridge_interface": "em2",
+			"virtual_interface": "eth1",
+			"fixed_range_cidr": "172.0.100.0/24",
+			"control_virtual_router_id": "202",
+			"baremetal": {
+				"network_seed_ip": "192.168.130.3",
+				"network_cidr": "192.168.130.0/24",
+				"network_gateway": "192.168.130.1",
+				"network_seed_range_start": "192.168.130.4",
+				"network_seed_range_end": "192.168.130.22",
+				"network_undercloud_range_start": "192.168.130.23",
+				"network_undercloud_range_end": "192.168.130.126"
+		},
+			"neutron": {
+				"public_interface_raw_device": "eth1",
+				"overcloud_public_interface": "vlan331",
+				"undercloud_public_interface": "eth1"
+			},
+			"ntp": {
+				"overcloud_server": "16.110.135.123",
+				"undercloud_server": "16.110.135.123"
+			},
+			"floating_ip": {
+				"start": "192.168.131.2",
+				"end": "192.168.131.245",
+				"cidr": "192.168.131.0/24"
+			},
+			"svc": {
+				"interface": "vlan332",
+				"interface_default_route": "192.168.132.1",
+				"allocate_start": "192.168.132.2",
+				"allocate_end": "192.168.132.250",
+				"allocate_cidr": "192.168.132.0/24",
+				"overcloud_bridge_mappings": "svcnet1:br-svc",
+				"overcloud_flat_networks": "svcnet1",
+				"customer_router_ip": "10.23.69.129"
+			},
+			"codn": {
+				"undercloud_http_proxy": "http://16.85.175.150:8080",
+				"undercloud_https_proxy": "http://16.85.175.150:8080",
+				"overcloud_http_proxy": "http://16.85.175.150:8080",
+				"overcloud_https_proxy": "http://16.85.175.150:8080"
+			}
+		}
 
 5. Save the file on the seed cloud host.
 
@@ -272,21 +290,35 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 4. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
 
-		export BM_NETWORK_SEED_RANGE_START=172.30.100.2
-		export BM_NETWORK_SEED_RANGE_END=172.30.100.20
-		export BM_NETWORK_UNDERCLOUD_RANGE_START=172.30.100.21
-		export BM_NETWORK_UNDERCLOUD_RANGE_END=172.30.100.40
-		export FLOATING_START=172.30.100.41
-		export FLOATING_END=172.30.100.200
-		export FLOATING_CIDR=172.30.100.0/24
-		export UNDERCLOUD_NTP_SERVER=18.110.135.123
-		export OVERCLOUD_NTP_SERVER=18.110.135.123
-		export OVERCLOUD_CLOUD_TYPE=ESX
-		export PROVIDER_NETWORK=192.168.10.0/24
-		export VLAN_RANGE="500:1000"
-		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
-		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=91
-		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
+		{
+			"cloud_type": "ESX",
+			"baremetal": {
+				"network_seed_range_start": "172.30.100.2",
+				"network_seed_range_end": "172.30.100.20",
+				"network_undercloud_range_start": "172.30.100.21",
+				"network_undercloud_range_end": "72.30.100.40"
+			},
+			"neutron": {
+				"overcloud_public_interface": "eth0",
+				"undercloud_public_interface": "eth0"
+			},
+			"ntp": {
+				"overcloud_server": "16.110.135.123",
+				"undercloud_server": "16.110.135.123"
+			},
+			"floating_ip": {
+				"start": "172.30.100.41",
+				"end": "172.30.100.200",
+				"cidr": "172.30.100.0/24"
+			},
+			"vcenter": {
+				"provider_network": "192.168.10.0/24",
+				"vlan_range": "500:1000",
+				"customer_router_ip": "172.30.100.1"
+			},
+			"virtual_interface": "br-ex",
+			"customer_router_ip": "10.23.69.129"
+		}
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/).
 
@@ -309,36 +341,46 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 4. Open the `esx-custom-ips.json` file and edit the environment variable listed below.  
 
-
-		export BM_NETWORK_CIDR=172.30.100.0/24
-		export BM_NETWORK_SEED_IP=172.30.100.1
-		export BRIDGE_INTERFACE=em1
-		export BM_NETWORK_SEED_RANGE_START=10.23.69.136
-		export BM_NETWORK_SEED_RANGE_END=10.23.69.141
-		export BM_NETWORK_UNDERCLOUD_RANGE_START=10.23.69.142
-		export BM_NETWORK_UNDERCLOUD_RANGE_END=10.23.69.150
-		export OVERCLOUD_NeutronPublicInterface=eth2
-		export NeutronPublicInterfaceDefaultRoute=15.126.52.1
-		export FLOATING_START=15.126.54.20
-		export FLOATING_END=15.126.54.40
-		export FLOATING_CIDR=15.126.52.0/22
-		export UNDERCLOUD_NeutronPublicInterface=eth2
-		export OVERCLOUD_NTP_SERVER=10.23.69.129
-		export UNDERCLOUD_NTP_SERVER=10.23.69.129
-		export PROVIDER_NETWORK=10.23.70.128/26
-		export CUSTOMER_ROUTER_IP=10.23.69.129
-		export OVERCLOUD_VIRTUAL_INTERFACE="br-ex"
-		export VLAN_RANGE=1701:1720   
-		export OVERCLOUD_CLOUD_TYPE="ESX"
-		export EXTERNAL_VLAN_ID=1634
-		export EXTERNAL_NETWORK_GATEWAY=15.126.52.1
-		export NeutronPublicInterfaceRawDevice=eth2
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+		{
+			"cloud_type": "ESX",
+			"baremetal": {
+				"network_cidr": "172.30.100.0/24",
+				"network_seed_ip": "172.30.100.1",
+				"network_seed_range_start": "10.23.69.136",
+				"network_seed_range_end": "10.23.69.141",
+				"network_undercloud_range_start": "10.23.69.142",
+				"network_undercloud_range_end": "10.23.69.150"
+			},
+			"neutron": {
+				"overcloud_public_interface": "eth2",
+				"undercloud_public_interface": "eth2",
+				"public_interface_default_route": "15.126.52.1",
+				"public_interface_raw_device": "eth2"
+			},
+			"ntp": {
+				"overcloud_server": "10.23.69.129",
+				"undercloud_server": "10.23.69.129"
+			},
+			"floating_ip": {
+				"start": "15.126.54.20",
+				"end": "15.126.54.40",
+				"cidr": "15.126.52.0/22"
+			},
+			"vcenter": {
+				"provider_network": "10.23.70.128/26",
+				"vlan_range": "1701:1720",
+				"customer_router_ip": "10.23.69.129",
+				"external_vlan_id": 1634,
+				"external_network_gateway": "15.126.52.1"
+			},
+			"virtual_interface": "br-ex",
+			"bridge_interface": "em1",
+			"customer_router_ip": "10.23.69.129"
+		}
 
 [Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/).
 
- 
+
 
 ----
 ####OpenStack trademark attribution

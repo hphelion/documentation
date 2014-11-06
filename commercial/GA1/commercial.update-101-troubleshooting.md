@@ -38,6 +38,7 @@ This document describes known issues that you might encounter while updating. To
 * [RabbitMQ still running when restart is attempted](#rabbitmq)
 * [Instance reported as powering on but the instance is in shutoff state](#shutoff)
 * [State drive /mnt is not mounted](#mnt)
+* [Ironic intermitently set maintenance mode to True during installation](#ironic)
 
 ## Retrying failed actions ## {#retry}
 
@@ -442,6 +443,38 @@ RabbitMQ.
 4. Re-execute the pre-flight check, and proceed with the upgrade.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+## Ironic intermitently set maintenance mode to True during installation {#ironic}
+
+This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. 
+
+**Symptoms:**
+
+If the update fails:
+
+1. Execute the `ironic node-show` command:
+
+		ironic node-show <uuid>
+
+2. In the output, check the `last_error` field for an error similar to the following:
+
+	During sync_power_state, max retries exceeded for node 81baacd5-657e-476f-b7ef, node state None does not match expected state
+
+	'None'. Updating DB state to 'None' Switching node to maintenance mode. 
+
+**Solution**
+
+1. Execute the `nova list` command to determine which node(s) is in a error state.
+
+2. Execute the `nova show <instance-id>` to verify if the error message reports the node(s) is in maintenance mode.
+
+3. If any node is maintenance mode, run the `ironic node-list` command to determine if the node(s) should in maintenance mode.
+
+4. Change the node(s) to false for the maintenance option, using the following command:
+
+		`ironic node-update <id> replace maintenance=False`
+
 
 ---
 ####OpenStack trademark attribution

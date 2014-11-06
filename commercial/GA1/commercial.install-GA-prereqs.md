@@ -54,7 +54,7 @@ For supported hardware and hardware requirements, and software requirements, see
 Make sure the following required tasks are completed before you begin the installation.
 
 - [Preparing your network](#network_prepare)
-	- [Preparing all networks {#network}
+	- [Preparing all networks](network)
 	- [Preparing the network for a KVM installation](#network_KVM)
 	- [Preparing the network for an ESX installation](#network_ESX)
 - [Storage nodes installed during installation](#storage_nodes)
