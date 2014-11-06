@@ -180,7 +180,7 @@ To deploy the OVSvApp:
 		cp -f /mnt/vmware-tools/VMwareTools-*.tar.gz /tmp/
 		cd /tmp
 		tar -zxpf VMwareTools-*.tar.gz
-		cd /vmware-tools-distrib
+		cd vmware-tools-distrib/
 		./vmware-tools-install.pl  --default
 
 	Verify that VMWare Tools is running using the following command: 
