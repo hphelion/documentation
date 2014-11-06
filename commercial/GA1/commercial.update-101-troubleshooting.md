@@ -252,7 +252,7 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 		debug1: auto-mux: Trying existing master
 		debug2: fd 3 setting O_NONBLOCK
 		mux_client_hello_exchange: write packet: Broken pipe
-		FATAL: all hosts have already failed – aborting
+		FATAL: all hosts have already failed - aborting
 
 **Solution:**
 
@@ -404,7 +404,7 @@ RabbitMQ.
 
 * Upgrade execution returns with an error indicating:
 
-		TASK: [fail msg="Galera Replication - Node appears to be the last node in a cluster - cannot safely proceed unless overriden via single_controller setting - See README.rst"] *** 
+		TASK: [fail msg="Galera Replication - Node appears to be the last node in a cluster - cannot safely proceed unless overridden via single_controller setting - See README.rst"] *** 
 
 **Symptoms:**
 
