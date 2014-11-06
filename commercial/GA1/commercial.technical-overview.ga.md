@@ -440,7 +440,7 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-HP Helion OpenStack architecture diagram for [KVM network architecture](#KVM-env).
+[HP Helion OpenStack architecture diagram for KVM network architecture](#KVM-env).
 
 <!--- this is redundant diagram
 <img src="media/topology_kvm.png"/)> --->
@@ -461,8 +461,9 @@ An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK
  
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.  
 
-HP Helion OpenStack architecture diagram for ESX 
-<img src="media/commercial_esx_network_architecture.png"/>
+[HP Helion OpenStack architecture diagram for ESX](#esx-env)
+<!---redundant diagram
+<img src="media/commercial_esx_network_architecture.png"/> --->
 
 The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
