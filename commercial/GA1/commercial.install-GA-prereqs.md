@@ -79,7 +79,7 @@ The network is not installed or managed by the cloud. You must install and manag
 
 To ensure a successful installation, you must satisfy these network configuration requirements:
 
-* The seed VM, the baremetal systems and the IPMI controller for all systems must be on the same network
+* The machine hosting the seed VM, and all baremetal systems have to be connected to a management network. Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.
 
 * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
