@@ -496,7 +496,7 @@ If the update fails, from undercloud node:
 		
 		ironic node-update <id> replace maintenance=False
 
-##Ironic service cannot be restarted on the undercloud{#ansible}
+##Ironic service cannot be restarted on the undercloud {#ansible}
 
 When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. 
 
