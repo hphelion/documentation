@@ -24,24 +24,25 @@ PageRefresh();
 
 <!-- taken from https://git.gozer.hpcloud.net/cgit/hp/tripleo-ansible/tree/Troubleshooting.rst -->
 
-This topic describes known issues that you might encounter while updating. To help you resolve these issues, we have provided possible solutions.
+This document describes known issues that you might encounter while updating. To help you resolve these issues, we have provided possible solutions.
 
 * [Retrying failed actions](#retry)
 * [Node goes to ERROR state during rebuild](#nodeerror)
 * [MySQL CLI configuration file missing](#mysqlmissing)
 * [MySQL fails to start upon retrying update](#mysqlfails)
 * [MySQL/Percona/Galera is out of sync](#mysqlsync)
-* [MysQL "Node appears to be the last node in a cluster" error](#lastnode)
+* [MySQL "Node appears to be the last node in a cluster" error](#lastnode)
 * [SSH Connectivity is lost](#sshlost)
 * [Postfix fails to reload](#posfix)
 * [Apache2 Fails to start](#apache2)
 * [RabbitMQ still running when restart is attempted](#rabbitmq)
-* [Instance reported with status == "SHUTOFF" and task_state == "powering on"](#shutoff)
+* [Instance reported as powering on but the instance is in shutoff state](#shutoff)
 * [State drive /mnt is not mounted](#mnt)
+* [Ironic intermitently set maintenance mode to True during installation](#ironic)
 
 ## Retrying failed actions ## {#retry}
 
-In some cases, steps may fail as some components may not yet be ready for
+In some cases, steps might fail as some components might not yet be ready for
 use due to initialization times, which can vary based on hardware and volume
 
 In the event that this occurs, two options exist that allows a user to
@@ -49,9 +50,11 @@ optionally re-attempt or resume playbook executions.
 
 **Solutions**
 
-* Ansible ansible-playbook command option --start-at-task="TASK NAME" allows resumption of a playbook, when used with the -l limit option.
+1. Ansible ansible-playbook command option --start-at-task="TASK NAME" allows resumption of a playbook, when used with the -l limit option.
 
-* Ansible ansible-playbook command option --step allows a user to confirm each task executed by Ansible before it is executed upon.
+		ansible-playbook --start-at-task="<TASK NAME>" -l
+
+2. Ansible ansible-playbook command option --step allows a user to confirm each task executed by Ansible before it is executed upon.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -65,13 +68,13 @@ After an error, the `nova list` command shows a node in `ERROR` state.
 
 **Solution**
 
-* Verify that the  hardware is in working order.
+1. Verify that the  hardware is in working order.
 
-* Get the image ID of the machine with `nova show`::
+2. Get the image ID of the machine with `nova show`:
 
 		nova show $node_id
 
-* Rebuild manually::
+3. Rebuild manually:
 
 		nova rebuild $node_id $image_id
 
@@ -84,31 +87,31 @@ If the post-rebuild restart fails, it is possible that the MySQL CLI configurati
 
 **Symptoms:**
 
-* Attempts to access the MySQL CLI command return an error::
+* Attempts to access the MySQL CLI command return an error:
 
 		ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
 
 **Solution:**
 
-* Verify that the MySQL CLI config file stored on the state drive is present and has content within the file.  You can do this by executing the following command to display the contents in your terminal:
+1. Verify that the MySQL CLI config file (`.my.cnf`) stored on the state drive is present and has content within the file.  You can do this by executing the following command to display the contents in your terminal:
 
 		sudo cat /mnt/state/root/metadata.my.cnf
 
-* If the file is empty, run the following command to retrieve the current metadata and update the config files on disk:
+2. If the file is empty, run the following command to retrieve the current metadata and update the config files on disk:
 
 		sudo os-collect-config --force --one --command=os-apply-config
 
-* Verify that the MySQL CLI config file is present in the root user directory by executing the following command:
+3. Verify that the MySQL CLI config file is present in the root user directory by executing the following command:
 
 		sudo cat /root/.my.cnf
 
-* If the `.my.cnf` file does not exist or is empty, two options exist.
+4. If the `.my.cnf` file does not exist or is empty, two options exist.
 
 	* Add the following to your MySQL CLI command line:
 
 			--defaults-extra-file=/mnt/state/root/metadata.my.cnf
 
-	* Or, copy configuration from the state drive:
+	* Copy the configuration file from the `/state` directory:
 
 			sudo cp -f /mnt/state/root/metadata.my.cnf /root/.my.cnf
 
@@ -136,23 +139,29 @@ If the update was aborted or failed during the update sequence before a single M
 
 **Solution:**
 
-* Use `nova list` to determine the IP of the congtrollerMgmt node, then ssh into it:
+1. Use `nova list` to determine the IP of the congtrollerMgmt node.
+
+2. SSH into the node:
 
 		ssh heat-admin@$IP
 
-* Verify MySQL is down by running the mysql client as root. It _should_ fail:
+3. Verify MySQL is down by running the MySQL client as root. It _should_ fail:
 
 		sudo mysql -e "SELECT 1"
 
-* Attempt to restart MySQL in case another cluster node is online. This should fail in this error state, however if it succeeds your cluster should again be operational and the next step can be skipped:
+4. Attempt to restart MySQL in case another cluster node is online. This *should* fail in this error state:
 
 		sudo /etc/init.d/mysql start
 
-* Start MySQL back up in single node bootstrap mode:
+	Note: If this command succeeds your cluster should again be operational. No further action is required.
+
+5. Start MySQL back up in single node bootstrap mode:
 
 		sudo /etc/init.d/mysql bootstrap-pxc
 
-**IMPORTANT:** The `/etc/init.d/mysql bootstrap-pxc` command should only ever be executed when an entire MySQL cluster is down, and then only on the last node to have been shut down.  Running this command on multiple nodes will cause the MySQL cluster to enter a split brain scenario effectively breaking the cluster which will result in unpredictable behavior.
+	**IMPORTANT:** The `/etc/init.d/mysql bootstrap-pxc` command should only ever be executed when an entire MySQL cluster is down, and then only on the last node to have been shut down.  Running this command on multiple nodes will cause the MySQL cluster to enter a *split brain* scenario effectively breaking the cluster, which will result in unpredictable behavior.
+
+	Split brain syndrome occurs when a cluster of nodes is dividedinto smaller clusters, each of which believes it is the only active cluster. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -168,69 +177,73 @@ complement of servers before updates can be performed safely.
 
 * Update fails with errors about Galera and/or MySQL being "Out of Sync".
 
-**Solutions:**
+**Solution:**
 
-* Use `nova list` to determine IP of controllerMgmt node, then SSH to it:
+1. Use `nova list` to determine IP of controllerMgmt node:
+
+2. SSH into the node:
 
 		ssh heat-admin@$IP
 
-* Verify replication is out of sync:
+3. Verify replication is out of sync:
 
 		sudo mysql -e "SHOW STATUS like 'wsrep_%'"
 
-* Stop mysql:
+4. Stop MySQL:
 
 		sudo /etc/init.d/mysql stop
 
-* Verify it is down by running the mysql client as root. It _should_ fail:
+5. Verify that MySQL is down by running the MySQL client as root. The command *should* fail:
 
 		sudo mysql -e "SELECT 1"
 
-* Start controllerMgmt0 MySQL back up in single node bootstrap mode:
+6. Start controllerMgmt0 MySQL back up in single node bootstrap mode:
 
 		sudo /etc/init.d/mysql bootstrap-pxc
 
-* On the remaining controller nodes obseved to be having issues, utilize the IP address via `nova list` and login to them.:
+7. On the remaining controller nodes obseved to be having issues, utilize the IP address using `nova list` and login to them.:
 
 		ssh heat-admin@$IP
 
-* Verify replication is out of sync:
+7. Verify replication is out of sync:
 
 		sudo mysql -e "SHOW STATUS like 'wsrep_%'"
 
-* Stop mysql:
+8. Stop MySQL:
 
 		sudo /etc/init.d/mysql stop
 
-* Verify it is down by running the mysql client as root. It _should_ fail:
+9. Verify it is down by running the MySQL client as root. It *should* fail:
 
 		sudo mysql -e "SELECT 1"
 
-* Start MySQL back up so it attempts to connect to controllerMgmt0::
+10. Start MySQL back up so it attempts to connect to controllerMgmt0:
 
 		sudo /etc/init.d/mysql start
 
-* If restarting MySQL fails, then the database is most certainly out of sync and the MySQL error logs, located at /var/log/mysql/error.log, will need to be consulted.  In this case, never attempt to restart MySQL with `sudo /etc/init.d/mysql bootstrap-pxc` as it will bootstrap the host as a single node cluster thus worsening what already appears to be a split-brain scenario.
+	If restarting MySQL fails, then the database might be out of sync. Consult the MySQL error logs, located at /var/log/mysql/error.log.  In this case, never attempt to restart MySQL with `sudo /etc/init.d/mysql bootstrap-pxc` as it will bootstrap the host as a single node cluster thus worsening what already appears to be a split-brain scenario.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## MysQL "Node appears to be the last node in a cluster" error ## {#lastnode}
+## MySQL "Node appears to be the last node in a cluster" error ## {#lastnode}
 
 This error occurs when one of the controller nodes does not have MySQL running.
 
-The playbook has detected that the current node is the last running node,
-although based on sequence it should not be the last node.  As a result the error is thrown and update aborted.
+The playbook has detected that the current node is the last running node.
+However, based on sequence, the current node should not be the last node.  As a result the error is thrown and update aborted.
 
 **Symptoms:**
 
-* Update Failed with error message "Galera Replication - Node appears to be the last node in a cluster - cannot safely proceed unless overridden via single_controller setting - See README.rst"
+* Update failed with error message:
 
-**Solutions:**
+	`Galera Replication - Node appears to be the last node in a cluster - cannot safely proceed unless overridden via single_controller setting - See README.rst`
 
-* Run the pre-flight_check.yml playbook.  It will atempt to restart MySQL on each node in the "Ensuring MySQL is running -" step.  If that step succeeeds, you should be able to re-run the playbook and not encounter "Node appears to be last node in a cluster" error.
+**Solution:**
 
-* If the pre-flight_check fails to restart MySQL, you will need to consult the MySQL logs (/var/log/mysql/error.log) to determine why the other nodes are not restarting.
+1. Run the `pre-flight_check.yml` playbook.  It will atempt to restart MySQL on each node in the `Ensuring MySQL is running` step.  If that step succeeeds, you should be able to re-run the playbook and not encounter "Node appears to be last node in a cluster" error.
+
+	If the `pre-flight_check` fails to restart MySQL, you will need to consult the MySQL logs (/var/log/mysql/error.log) to determine why the other nodes are not restarting.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -241,9 +254,7 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 
 **Symptoms:**
 
-* Ansible update attempt fails.
-
-* Error output::
+* Ansible update attempt fails with the following error:
 
 		fatal: [192.0.2.25] => SSH encountered an unknown error. The output was:
 		OpenSSH_6.6.1, OpenSSL 1.0.1i-dev xx XXX xxxx
@@ -260,7 +271,7 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 
 	See [MySQL fails to start upon retrying update](#mysqlfails) to correct this issue.
 
-    * Early Ubuntu Trusty kernel versions have known issues with KVM which  will severely impact SSH connectivity to instances. Test hosts should have a minimum kernel version of 3.13.0-36-generic.
+* Early Ubuntu Trusty kernel versions have known issues with KVM that can impact SSH connectivity to instances. Test hosts should have a minimum kernel version of 3.13.0-36-generic.
 
 	The update steps, as root, are::
 
@@ -270,15 +281,15 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 
 * If this issue is repeatedly encountered on a physical environment, the network infrastucture should be inspected for errors.
 
-* Similar error messages to the error noted in the Symptom may occur with long running processes, such as database creation/upgrade steps.  These cases will generally have partial program execution log output immediately before the broken pipe message visible.
+* Similar error messages might occur with long running processes, such as database creation/upgrade steps.  These cases will generally have partial program execution log output immediately before the broken pipe message visible.
 
-	Should this be the case, Ansible and OpenSSH may need to have their configuration files tuned to meet the needs of the environment.
+	In this case, Ansible and OpenSSH might need to have their configuration files tuned to meet the needs of the environment.
 
 	Consult the Ansible configuration file to see available connection settings `ssh_args`, `timeout`, and `pipelining`.
 
 	See the [ansible/examples/ansible.cfg GitHub](https://github.com/ansible/ansible/blob/release1.7.0/examples/ansible.cfg).
 
-	Because Ansible uses OpenSSH, please reference the ssh_config manual, in paricular the ServerAliveInterval and ServerAliveCountMax options.
+	Because Ansible uses OpenSSH, refer to the ssh_config man page, in paricular the ServerAliveInterval and ServerAliveCountMax options.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -288,13 +299,13 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 Occasionally the postfix mail transfer agent will fail to reload because
 it is not running when the system expects it to be running.
 
-**Symptoms:**
+**Symptom:**
 
-* The `/var/log/upstart/os-collect-config.log` shows that `service postfix reload`' failed.
+The `/var/log/upstart/os-collect-config.log` shows that `service postfix reload`' failed.
 
 **Solution:**
 
-* Start postfix::
+Start postfix:
 
 		sudo service postfix start
 
@@ -303,9 +314,7 @@ it is not running when the system expects it to be running.
 
 ## Apache2 Fails to start ## {#apache2}
 
-Apache2 requires some self-signed SSL certificates to be put in place
-that may not have been configured yet due to earlier failures in the
-setup process.
+Apache2 requires some self-signed SSL certificates to be put in place. If these certificates have not have been configured yet due to earlier failures in the setup process, the following error displays.
 
 **Error Message:**
 
@@ -320,7 +329,7 @@ setup process.
 
 **Solution:**
 
-* Re-run `os-collect-config` to reassert the SSL certificates:
+Re-run `os-collect-config` to reassert the SSL certificates:
 
 		sudo os-collect-config --force --one
 
@@ -329,23 +338,22 @@ setup process.
 
 ## RabbitMQ still running when restart is attempted ## {#rabbitmq}
 
-There are certain system states that cause RabbitMQ to fail to die on normal kill signals.
+There are certain system states that cause RabbitMQ to fail to respond to normal kill signals.
 
 **Symptoms:**
 
-* Attempts to start rabbitmq fail because it is already running.
+Attempts to start RabbitMQ fail because it is already running.
 
 **Solution:**
 
-* Find any processes running as `rabbitmq` on the box, and kill them, forcibly if need be.
+Find any processes running as `rabbitmq` on the box, and kill them, forcibly if need be.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## Instance reported with status == "SHUTOFF" and task_state == "powering on" ## {#shutoff}
+## Instance reported as powering on but the instance is in shutoff state ## {#shutoff}
 
-If nova atempts to restart an instance when the compute node is not ready,
-it is possible that nova could entered a confused state where it thinks that an instance is starting when in fact the compute node is doing nothing.
+If Compute atempts to restart an instance when the compute node is not ready, Compute could have entered into a state where it determined that an instance is starting when in fact the compute node is down.
 
 **Symptoms:**
 
@@ -355,7 +363,7 @@ it is possible that nova could entered a confused state where it thinks that an 
 
 * No instance appears to be running on the compute node.
 
-* Nova hangs upon retrieving logs or returns old logs from the previous boot.
+* Compute service hangs upon retrieving logs or returns old logs from the previous boot.
 
 * Console session cannot be established.
 
@@ -363,30 +371,30 @@ it is possible that nova could entered a confused state where it thinks that an 
 
 On a controller logged in as root, after executing `source stackrc`:
 
-* Execute `nova list --all-tenants` to obtain instance ID(s)
+1. Execute `nova list --all-tenants` to obtain instance ID(s)
 
-* Execute `nova show <instance-id>` on each suspected ID to identify suspected compute nodes.
+2. Execute `nova show <instance-id>` on each suspected ID to identify suspected compute nodes.
 
-* Log into the suspected compute node(s) and execute:
+3. Log into the suspected compute node(s) and execute:
 
 		`os-collect-config --force --one`
 
-* Return to the controller node that you were logged into previously, and using the instancce IDs obtained previously, take the following steps.
+4. Return to the controller node that you were logged into previously, and using the instancce IDs obtained previously, take the following steps.
 
-* Execute `nova reset-state --active <instance-id>`
+5. Execute `nova reset-state --active <instance-id>`
 
-* Execute `nova stop <instance-id>`
+6. Execute `nova stop <instance-id>`
 
-* Execute `nova start <instance-id>`
+7. Execute `nova start <instance-id>`
 
-* Once the above steps have been taken in order, you should see the instance status return to ACTIVE and the instance become accessible via the network.
+8. Once the above steps have been taken in order, you should see the instance status return to ACTIVE and the instance become accessible over the network.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ## State drive /mnt is not mounted ## {#mnt}
 
-In the rare event that something bad happened between the state drive being unmounted and the rebuild command being triggered, the /mnt volume on the instance that was being executed upon at that time will be in an unmounted state.
+In the rare event that something bad happened between the state drive being unmounted and the rebuild command being triggered, the `/mnt` volume on the instance that was being executed upon at that time will be in an unmounted state.
 
 In such a state, pre-flight checks will fail attempting to start MySQL and
 RabbitMQ.
@@ -414,27 +422,83 @@ RabbitMQ.
 
 **Solution:**
 
- Execute the `os-collect config` which will re-mount the state drive. This command may fail without additional intervention, however it should mount the state drive which is all that is needed to proceed to the next step.
+1. Execute the `os-collect config` which will re-mount the state drive. This command might fail without additional intervention, however it should mount the state drive which is all that is needed to proceed to the next step.
 
 		sudo os-collect-config --force --one
 
-* At this point, the `/mnt` volume should be visible in the output of the `df` command.
+	At this point, the `/mnt` volume should be visible in the output of the `df` command.
 
-* Start MySQL by executing::
+2. Start MySQL by executing:
 
 		sudo /etc/init.d/mysqld start
 
-* If MySQL fails to start, and it has been verified that MySQL is not running on any controller nodes, then you will need to identify the *last* node that MySQL was stopped on and consult the section "MySQL fails to start upon retrying update" for guidence on restarting the cluster.
+	If MySQL fails to start and you have verified that MySQL is not running on any controller nodes, you will need to identify the *last* node that MySQL was stopped on and consult [MySQL fails to start upon retrying update](#mysqlfails) for guidance on restarting the cluster.
 
-* Start RabbitMQ by executing::
+3.  Start RabbitMQ by executing:
 
 		service rabbitmq-server start
 
-* If rabbitmq-server fails to start, then the cluster may be down. If this is the case, then the *last* node to be stopped will need to be identified and started before attempting to restart RabbitMQ on this node.
+	* If `rabbitmq-server` fails to start, the cluster might be down. If this is the case, then the *last* node to be stopped will need to be identified and started before attempting to restart RabbitMQ on this node.
 
-* At this point, re-execute the pre-flight check, and proceed with the upgrade.
+4. Re-execute the pre-flight check, and proceed with the upgrade.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+## Ironic intermitently set maintenance mode to True during installation {#ironic}
+
+This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. 
+
+**Symptoms:**
+
+If the update fails, from undercloud node:
+
+1. Source the stackrc file:
+ 
+		source stackrc 
+
+2. Execute the `nova list` command to determine which Compute node(s) is in an error state. The node will have a status of ERROR.
+
+		nova list
+
+3. Execute the `heat stack-list` command to determine which Heat stack is in an error state. The stack will have a status of `CREATE_FAILED`.
+
+		heat stack-list
+
+3. Execute the `ironic node-list` command to determine which node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
+
+		ironic node-list
+
+3. Execute the `ironic node-show` command for the node that is node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
+
+		ironic node-show <UUID>
+
+	In the output, check the `last_error` field for an error similar to the following:
+
+		During sync_power_state, max retries exceeded for node 81baacd5-657e-476f-b7ef, node state None does not match expected state
+
+		'None'. Updating DB state to 'None' Switching node to maintenance mode. 
+
+
+**Solution**
+
+1. Remove the node in maintenance mode using the following command:
+
+		nova node-delete <ID of error node>
+
+2. List the stacks using the following command:
+
+		heat stack-list
+
+
+3. Delete the stack with the failed Nova node.
+
+		heat stack-delete <ID of failed node>
+
+4. Change the node(s) to false for the maintenance option, using the following command:
+		
+		`ironic node-update <id> replace maintenance=False`
+
 
 ---
 ####OpenStack trademark attribution

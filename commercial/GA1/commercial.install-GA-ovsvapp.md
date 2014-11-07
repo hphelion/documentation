@@ -89,7 +89,8 @@ Before you install the OVSvApp, ensure the following:
 		mgmt_interface={'vmxnet3':'mgmt'}
 		trunk_interface={'vmxnet3':'vlan_trunk'}
 
-<img src="media/ESXi_hypervisor_networking.png"/>
+	Use the following diagram for reference:
+	<img src="media/ESXi_hypervisor_networking.png"/>
 
 ### Notes for deploying OVSvApp VM onto ESX hypervisors ### {#esx}
 
@@ -180,8 +181,8 @@ To deploy the OVSvApp:
 		cp -f /mnt/vmware-tools/VMwareTools-*.tar.gz /tmp/
 		cd /tmp
 		tar -zxpf VMwareTools-*.tar.gz
-		cd /vmware-tools-distrib
-		./vmware-tools-install.pl  --default
+		cd vmware-tools-distrib/
+		./vmware-install.pl --default
 
 	Verify that VMWare Tools is running using the following command: 
 

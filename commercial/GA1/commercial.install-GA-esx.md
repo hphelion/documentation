@@ -28,7 +28,8 @@ HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware v
 
 The installation and configuration process for ESX consists of the following general steps:
 
-* [Verify Prerequisites](#pre)
+* [Preparing for installation](#prepare)
+	* [Verify Prerequisites](#pre)
 	* [Review the ESX deployment architecture](#deploy-arch)
 	* [Edit the JSON environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
@@ -45,7 +46,11 @@ The installation and configuration process for ESX consists of the following gen
    * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps) 
 
-## Verify Prerequisites {#pre}
+## Preparing for installation {#prepare}
+
+Before starting the installation, review the following sections.
+
+### Verify Prerequisites {#pre}
 
 To ensure a successful installation, please read through the following topics before you start.
 
@@ -53,7 +58,7 @@ To ensure a successful installation, please read through the following topics be
 * Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
 * [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
 
-## Review the ESX deployment architecture {#deploy-arch}
+### Review the ESX deployment architecture {#deploy-arch}
 
 The following diagram depicts the required network topology for a KVM installation.
 

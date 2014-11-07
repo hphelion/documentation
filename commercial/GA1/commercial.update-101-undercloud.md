@@ -25,7 +25,14 @@ PageRefresh();
 The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the *Extract the scripts and libraries necessary to perform the update* of the Appendix.  
 
 If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
-    
+
+* [Prerequisites](#prereqs)
+* [Update the undercloud](#update)
+* [Validate the update](#validate)
+* [Backup the updated overcloud](#backup)
+* [Next Steps](#next-steps)
+
+You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
 
 ## Prerequisites ## {#prereqs}
 
@@ -33,13 +40,54 @@ Before you begin the update:
 
 * You must have upgraded the seed VM on the seed cloud host, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
 
+* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
+
 * Backup a copy of the undercloud to restore in case of catastrophic failures.  For information, see [Back Up and Restore](/helion/openstack/backup.restore/).  
 
 * Make sure that you have a least 7GB of space available on the seed node. Converting to the raw mode will take space on the seed. If you are low on space and you updated the seed previously please refer to the [Cleanup section](/helion/openstack/update/seed/101/) in *Updating the Seed Cloud Host* for information on removing post-update files. The backup/restore process should remove these files. You can check to make sure the files have been removed.
 
-[Update the undercloud](#update)
-[Validate the update](#validate)
-[Next Steps](#next-steps)
+* Point the install script to the overcloud. The patch update script is based on the Ansible platform. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
+
+	To point the script to update the overcloud, use the following steps:
+
+	a. Copy the `stackrc` file it from the undercloud and rename the file for the undercloud:
+
+		ssh heat-admin@<Undercloud IP>
+		sudo -i
+		cp stackrc /home/heat-admin/uc_stackrc
+
+	b. On the seed cloud host, copy the  the Undercloud to get it.
+	scp heat-admin@<Undercloud ip>:uc_stackrc ~/
+
+	c. Edit the `uc_stackrc` file to replace the localhost in the `OS_AUTH_URL` variable with the IP address of the undercloud.  
+
+		export OS_AUTH_URL=http://<Undercloud>:5000/v2.0
+	
+	d. Source the file:
+	
+		source ~/uc_stackrc
+	
+	e. Execute the following commands:
+
+		source /opt/stack/venvs/ansible/bin/activate
+		cd /opt/stack/tripleo-ansible
+		bash scripts/inject_nova_meta.bash
+		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
+		mkdir -p /var/log/ansible
+
+	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
+
+	c. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+
+		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
+
+	If successful the ping command will show a ping of every node in a particular cloud.  It will look similar to this with one for each node.  
+
+		192.0.2.28 | success >> {
+			"changed": false,
+			"ping": "pong"
+		}	
+
 
 ## Update the undercloud ## {#update}
 
@@ -115,8 +163,6 @@ Use the following steps to load upload an image and its dependencies:
 
 	At the end of this step you should have an ssh session with (ansible) in the prompt.  Run all further Undercloud operations from this session (Verification steps may be run from a different session unless noted).
 
-	<TODO: confirm with JAGADISH no need to do this step if there was a Seed update>
-
 2. Copy the new undercloud images into the seed glance repo.  
 
 	* `undercloud.qcow2` 
@@ -170,6 +216,10 @@ Verify that services and communication between nodes is functional.
 		glance image-list
 
 4. [Launch the Horizon UI](/helion/openstack/dashboard/login/) and make sure you can authenticate successfully.
+
+### Backup the updated undercloud ### {#backup}
+
+Once the update of undercloud node is complete, you should backup the node in case of failures.  See [Back Up and Restore](/helion/openstack/backup.restore/).
 
 ## Next Steps {#next-steps}
 

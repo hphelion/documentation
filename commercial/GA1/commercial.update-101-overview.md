@@ -32,7 +32,12 @@ There are unique images for all the node types in the cloud.  Only the images th
 
 There are multiple ways to update your cloud. This HP Helion OpenStack documentation will describe the recommended path and provide alternatives for some nodes in advanced situations.  Unless you are an advanced user it is strongly suggested that you follow the recommended path.  To avoid errors please read the documentation in its entirety prior to starting an update.  
 
-## Overview of the Update Process
+* [Overview of the Update Process](#overview)
+* [About the Update Options](#options)
+* [Update Troubleshooting](#trouble)
+* [Next Steps](#next-steps)
+
+## Overview of the Update Process {#overview}
 
 This section describes what you need to know at a high level to perform an update. 
  
@@ -63,7 +68,7 @@ This section describes what you need to know at a high level to perform an updat
 
 	Throughout the update process you may be asked for particular IP addresses or image IDs to perform a particular manual step.  Steps on how to obtain these are listed in the [Update Prerequisites](/helion/openstack/update/prereqs/101/).
 
-## About the Update Options ## {#process}
+## About the Update Options ## {#options}
 
 There are a few ways to update once you have laid out your maintenance plan: 
 
@@ -78,6 +83,10 @@ Inside the update sections, you will see clearly marked helper script vs. manual
 * If the update fails or the verification steps do not show the expected results, then recovery steps might be listed.  With each patch there will be `troubleshooting.rst` delivered in the `/opt/stack/tripleo-ansible` directory that will have potential issues and workarounds.  Always use the new `troubleshooting.rst` delivered with the update. If you cannot recover a node using the troubleshooting steps, use the Backup/Restore functionality to get the node back to original state.
 
 **Note:** The seed update is different in that it only has helper script components. 
+
+## Update Troubleshooting {#trouble}
+
+If you have problems during the patch update, refer to the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) for a list of known issues and possible solutions.
 
 ## Next Steps {#next-steps}
 

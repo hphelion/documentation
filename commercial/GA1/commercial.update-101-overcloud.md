@@ -22,9 +22,15 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Updating the Overcloud
 
-[Update the undercloud](#update)
-[Validate the update](#validate)
-[Next Steps](#next-steps)
+The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the *Extract the scripts and libraries necessary to perform the update* of the Appendix.  
+
+If the Readme.txt does not list overcloud nodes, the update is complete.
+
+* [Prerequisites](#prereqs)
+* [Update the overcloud](#update)
+* [Validate the update](#validate)
+* [Backup the updated overcloud](#backup)
+* [Next Steps](#next-steps)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
 
@@ -34,30 +40,9 @@ Before you begin the update:
 
 * Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in [Back Up and Restore](/helion/openstack/backup.restore/#overcloud).
 
+* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
-## Update the overcloud ## {#update}
-
-There are two methods to update the overcloud: 
-
-[Automatic upgrade using the helper script](#upgradescript)
-[Manual upgrade](#upgrademanual)
-
-You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
-
-
-### Update the undercloud using the script ### {#upgradescript}
-
-To upgrade the overcloud using the `HelionUpdate.sh` script included in the patch update download, use the following steps:
-
-1. Log in the seed VM host.
-
-		sudo su -
-
-2. SSH to the seed VM.
-
-		ssh root@192.0.2.1 
-
-3. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
+* Point the install script to the overcloud. The patch update script is based on the Ansible platform. For the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.
 
 	To point the script to update the overcloud, use the following steps:
 
@@ -100,6 +85,29 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 		}	
 
 
+
+## Update the overcloud ## {#update}
+
+There are two methods to update the overcloud: 
+
+[Automatic upgrade using the helper script](#upgradescript)
+[Manual upgrade](#upgrademanual)
+
+You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
+
+
+### Update the overcloud using the script ### {#upgradescript}
+
+To upgrade the overcloud using the `HelionUpdate.sh` script included in the patch update download, use the following steps:
+
+1. Log in the seed VM host.
+
+		sudo su -
+
+2. SSH to the seed VM.
+
+		ssh root@192.0.2.1 
+
 3. Run the following command to start the update:
 
 		cd /opt/stack/tripleo-ansible/
@@ -115,7 +123,7 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 
 4. When the update is done, validate the update. 
 
-
+**Note:**  If your cloud has ESX host and the update includes new images for ESX Proxy and ESX OVSvAPP, refer to [Redeploy Compute Proxy and OVSvAPP on ESX Host](#redeploy) after updating Controller Management node and before proceeding to controller nodes.
 
 ### Update the undercloud manually ### {#upgrademanual}
 
@@ -135,7 +143,7 @@ All ansible commands must be run in the SSH session setup above that has (ansbil
 
 Run through the appropriate commands below for this order.
 
-#### Prerequisites for manua update ###
+#### Prerequisites for manual update ###
 
 Before you start, do the following:
 
@@ -151,13 +159,11 @@ Before you start, do the following:
 
 To manually update the overcloud nodes:
 
-1.	Run the steps in [Setup the update environment](/helion/openstack/update/prereqs/101/#setup) in *Update Prerequisites* to point to the cloud to be updated for the Undercloud.  
-
-2. Update the overcloud Management Controller using the following command:
+1. Update the overcloud Management Controller using the following command:
  
 		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -e single_controller=True  -l <IP of controller mgmt> -e controllermgmt_rebuild_image_id=<glance Image_ID of  overcloud-control-mgmt> playbooks/update_cloud.yml
 
-3. Verify that the management controller is running by performing the following steps, from a separate ssh window:
+2. Verify that the management controller is running by performing the following steps, from a separate ssh window:
 
 	a. SSH into overcloud-controller-mgmt node:
 
@@ -176,8 +182,9 @@ To manually update the overcloud nodes:
 
 	The `progress.sh` should disply `needed N`, meaning the image ID matches the latest the patch knows about for the management controller node
 
+	**Note:**  If your cloud has ESX host and the update includes new images for ESX Proxy and ESX OVSvAPP, refer to [Redeploy Compute Proxy and OVSvAPP on ESX Host](#redeploy) after updating Controller Management node and before proceeding to controller nodes.
 
-4. Update overcloud controller0 using the following command:
+3. Update overcloud controller0 using the following command:
 
 		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -e single_controller=True -l <IP of controller> -e controller_rebuild_image_id=<glance Image_ID of overcloud-control> playbooks/update_cloud.yml
 	Where:
@@ -185,7 +192,7 @@ To manually update the overcloud nodes:
 	* `<IP of controller>` is the IP address of overcloud controller0
 	* `<glance Image_ID of overcloud-control>` is the image ID of controller0
 
-3. Verify that the controller0 is running by performing the following steps, from a separate ssh window:
+4. Verify that the controller0 is running by performing the following steps, from a separate ssh window:
 
 	a. SSH into overcloud-controller-mgmt node:
 
@@ -199,8 +206,8 @@ To manually update the overcloud nodes:
 
 	b. Run `progress.sh` script to validate that the image ID matches the one expected by the update by running the following command:
 
-		cd /opt/stack/tripleo-ansible:
-		./update-helpers/progress.sh
+		cd /opt/stack/tripleo-ansible/update-helpers/
+		./progress.sh
 
 	The `progress.sh` should disply `needed N`, meaning the image ID matches the latest the patch knows about for the management controller node
 
@@ -213,7 +220,7 @@ To manually update the overcloud nodes:
 	* `<glance Image_ID of overcloud-control>` is the image ID of controller1
 
 
-3. Verify that the controller0 is running by performing the following steps, from a separate ssh window:
+5. Verify that the controller0 is running by performing the following steps, from a separate ssh window:
 
 	a. SSH into overcloud-controller-mgmt node:
 
@@ -227,8 +234,8 @@ To manually update the overcloud nodes:
 
 	b. Run `progress.sh` script to validate that the image ID matches the one expected by the update by running the following command:
 
-		cd /opt/stack/tripleo-ansible:
-		./update-helpers/progress.sh
+		cd /opt/stack/tripleo-ansible/update-helpers/
+		./progress.sh
 
 	The `progress.sh` should disply `needed N`, meaning the image ID matches the latest the patch knows about for the management controller node
 
@@ -250,7 +257,7 @@ This command will update only one compute node, you will have to repeat it for e
 A set at a time (set can be 1 to n):
 This command may update only update a subset of compute nodes, it is the responsibility of the user to update all the nodes with multiple commands if necessary.
 
-		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l "IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n" -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
+		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
 
 
 Swift (n-scale):  Swift it is strongly encouraged that you update 1 at a time (node by node):
@@ -264,8 +271,6 @@ ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebui
 Verification:
 1.	Authenticate to n-scale node updated using SSH.
 
-All Nodes:  The user always has the option of updating all nodes at once.  This is NOT the recommend way to update the cloud, but here is the command if they choose to do so:  Note: If you choose to use the not recommended All Nodes method and have HP Development Platform installed in your cloud please read Dev-Platform Services: prior to running the all node.
-ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -e controller_rebuild_image_id=<glance Image_ID of  overcloud-controller> -e nova_compute_rebuild_image_id=<glance Image_ID of  nova compute> -e swift_storage_rebuild_image_id=<glance Image_ID of swift-storage> controllermgmt_rebuild_image_id=<glance Image_ID of  overcloud-control-mgmt> playbooks/update_cloud.yml
 
 
 ## Validate the update ### {#validate}
@@ -278,6 +283,29 @@ Another helper script exists that will show you the progress of your update.  Fo
 Validation and Recovery steps if you encountered an issue in the Overcloud:   If an error is encountered please use guide in /opt/stack/tripleo-ansible/troubleshooting.rst
  
 Cleanup:  After all the clouds and nodes have been updated it is possible to remove the old images put into glance to reduce required space.  It is recommended that this isn't done until all validation has been run and user is comfortable that they won't have to update to the old version.
+
+### Backup the updated overcloud ### {#backup}
+
+Once the update of overcloud node is complete, you should backup the node in case of failures.  See [Back Up and Restore](/helion/openstack/backup.restore/).
+
+## Redeploy Compute Proxy and OVSvAPP on ESX Host ## {#redeploy}
+
+After updating the Controller Management node, update  Nova Compute Proxy and OVSvAPP if the infrastructure includes ESX Proxied Hosts and the update package contains new images for ESX. Failure to do so will prevent users from launching VM's in vCenter Hosts.
+To manage the VM's launched using the older compute proxy, use the same hostname entered for older Compute Proxy.
+
+Redeploy Nova Compute Proxy:
+1. Login to Undercloud
+2. Deactivate the activated cluster
+3. Delete overcloud_vcenter_compute_proxy template in the vCenter
+4. Deploy Compute proxy similar to how you did before(http://docs.hpcloud.com/helion/openstack/install/esx/proxy/), but use the latest overcloud_vcenter_compute_proxy.ova
+5. Activate the cluster which was imported before
+Redeploy OVSvAPP:
+1. Power off and delete the OVSvAPP vms in the vCenter
+2. Login to Overcloud ControllerMgmt node
+3. Delete the HP VCN L2 agents
+   neutron agent-delete <HP VCN L2 agent ID>
+4. Delete overcloud-esx-ovsvapp template in the vCenter
+5. Follow the steps (http://docs.hpcloud.com/helion/openstack/install/ovsvapp/) as before to install OVSvAPP, but use the latest overcloud-esx-ovsvapp.ova and ovsvapp.tgz
 
 
 

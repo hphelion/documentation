@@ -57,7 +57,7 @@ If you want to enroll (add) nodes that were created during the initial installat
 
 2. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
 
-		export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
+		"compute_scale":<number of compute nodes>,
 
 3. Source the environment variables file that you updated:  
 
@@ -111,7 +111,7 @@ To add new compute nodes that were not created during the initial installation p
 
 8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
 
-		OVERCLOUD_COMPUTESCALE=<number of compute nodes>
+		"compute_scale":<number of compute nodes>,
 
 9. Source the environment variables file that  you updated:  
 

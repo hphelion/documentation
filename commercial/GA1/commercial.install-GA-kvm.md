@@ -34,7 +34,7 @@ The installation and configuration process for KVM consists of the following gen
 	* [Verify Prerequisites](#pre)
 	* [Review the KVM deployment architecture](#deploy-arch)
 	* [KVM deployment architecture](#deploy-arch)
-	* [Create and identify environment variables file](#envvars)
+	* [Edit the JSON environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
 	* [Set DNS servers by default](#name-resolution)
 	* [Preparing seed cloud host to create the seed VM](#prepseed)
@@ -130,7 +130,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 2. Execute the `kvm-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source esx-custom-ips.json
+		source kvm-custom-ips.json
 
 5. Start the seed VM installation by entering the following command:
 
@@ -152,11 +152,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
-8. Copy the `esx-custom-ips.json` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
+8. Copy the `kvm-custom-ips.json` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
 
-9. Execute the `esx-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+9. Execute the `kvm-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source esx-custom-ips.json
+		source kvm-custom-ips.json
 
 10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 

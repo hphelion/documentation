@@ -24,7 +24,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Updates and Extensions
 
-HP provides a simple mechanism for downloading and publishing the content and updates for the overcloud.
+HP provides a simple mechanism for downloading and publishing the content and updates for the Undercloud node.
 
 * [Register on the Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
 * [Configure credentials](#configcre)
@@ -113,7 +113,10 @@ Perform the following steps to download the packages:
 1. On the HP Helion Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
 
 2.	Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
-3.	Click the **More** drop-down list and select **Download** next to the package that you want to download on your local system. A Confirm Download Update dialog box is displayed.
+3. Click **Download** to download the file to your local system, if the file is being downloaded for the first time.
+<br>
+Or<br>
+Click the **More** drop-down list and select **Download** next to the package that you want to download on your local system. A Confirm Download Update dialog box is displayed.
 
 4. Click **Download** to download the package. A message is displayed when the **.csu** file is successfully downloaded.
 
