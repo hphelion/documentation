@@ -447,7 +447,7 @@ RabbitMQ.
 
 ## Ironic intermitently set maintenance mode to True during installation {#ironic}
 
-This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. 
+This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
 
 **Symptoms:**
 
