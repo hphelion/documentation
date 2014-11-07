@@ -22,22 +22,22 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Obtaining the Patch Update Package
 
-A HP Helion OpenStack patch update is a series of images and scripts that enhance functionality or fix issues found in a Helion release.  
+An HP Helion OpenStack patch update is a series of images and scripts that enhance functionality or fix issues found in a previous Helion release.  
 
-Before beginning the update, obtain the patch update package using of the two following methods:
+Before beginning the update, obtain the patch update package using one of the two following methods:
 
-* Using Cloud OS Distribution Network by connecting to the catalog.
-* Import for cases where there is no network connectivity or would like to obtain the latest CSU's that are not published in the catalog.
+* Using the Helion Distribution Network by connecting to the catalog.
+* Importing a local copy when there is no network connectivity or when the user would like to obtain the latest files that are not yet published in the catalog.
 
-## Downloading from catalog: 
+## Downloading from the Catalog
 
-To use the Cloud OS Distribution Network (CODN) to download the patch update from the catalog.
+To use the Helion Distribution Network (HDN) to download the patch update from the catalog.
 
-1. [Login to the Sherpa UI on the undercloud](/helion/openstack/services/sherpa/accessing/).
+1. [Log in to the Sherpa UI on the undercloud](/helion/openstack/services/sherpa/accessing/).
 
 2. Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**.
 
-3.	Click **Configure** to authenticate to the Cloud OS Distribution Network.
+3.	Click **Configure** to authenticate to the Helion Distribution Network.
 
 	<img src="media/SherpaConfigure.jpg">
 
@@ -45,9 +45,9 @@ To use the Cloud OS Distribution Network (CODN) to download the patch update fro
 
 5. Review the information in [Update Prerequisites](/helion/openstack/update/prereqs/101/).
  
-## Importing local copy ##
+## Importing a Local Copy ##
 
-1. [Login to the Sherpa UI on the undercloud](/helion/openstack/services/sherpa/accessing/).
+1. [Log in to the Sherpa UI on the undercloud](/helion/openstack/services/sherpa/accessing/).
 
 2. Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**.
 
@@ -59,13 +59,11 @@ To use the Cloud OS Distribution Network (CODN) to download the patch update fro
 
 	<img src="media/SherpaImport.jpg">
 
-
-
 ## Next Steps {#next-steps}
 
 Review the Prerequisites for information or tasks that need to be performed before starting the update. 
 
-For prerequisites, see [Update Prerequisites](/helion/openstack/update/prereqs/101/).
+For prerequisites, see the [Update Prerequisites](/helion/openstack/update/prereqs/101/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

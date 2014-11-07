@@ -22,9 +22,9 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Updating the Overcloud
 
-The *Readme.txt* that comes with a patch update lists the nodes that need to be updated as a result of this patch. The file is located in the directory described in the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) of the Update Prerequisites.  
+The *Readme.txt* that comes with a patch update lists the nodes that need to be updated as a result of this patch. This file is located in the directory described in the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) of the Update Prerequisites.  
 
-If the Readme.txt does not list overcloud nodes, the update is complete.
+If the Readme.txt does not list any overcloud nodes, the update is complete.
 
 * [Prerequisites](#prereqs)
 * [Update the overcloud](#update)
@@ -43,7 +43,7 @@ Before you begin the update:
 
 * Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
-* Point the install script to the overcloud. The patch update script is based on the Ansible platform. For the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.
+* Point the install script to the overcloud. The patch update script is based on the Ansible platform. When patching the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.
 
 	To point the script to update the overcloud, use the following steps:
 
@@ -75,7 +75,7 @@ Before you begin the update:
 
 	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
 
-	f. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+	f. To test that the ansible environment is correctly set up, use the following command to ping all the nodes that ansible can find via its inventory: 
 
 		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
 
@@ -119,9 +119,9 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 
 	The script allows you to update by node type. For example all the controllers are done as a group. Inside each group the individual nodes are presented for the user to update, skip or exit. If you wish to skip a whole group skip at the group level. 
 
-	You might want to skip a node if you want to test update on a particular node or if you want to resume an update later on.  To skip a node, presst the `s` key until you get to a node you want to update.
+	You might want to skip a node if you want to test the update on a particular node or if you want to resume an update later on. To skip a node, press the `s` key until you get to a node you want to update.
 	
-	**Note:** The script will detect if a node fails to update. If such a failure is detected the script will exit.  When this happens you should refer to the [Update Troublshooting](/helion/openstack/update/troubleshooting/101/) document for known workarounds.
+	**Note:** The script will detect if a node fails to update. If such a failure is detected the script will exit.  When this happens you should refer to the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) document for known workarounds.
 
 4. When the update is done, validate the update. 
 
@@ -141,7 +141,7 @@ The recommended update order is
 4. Object Operations (Swift) service 
 5. HP StoreVirtual VSA (for KVM only)
 
-All ansible commands must be run in the SSH session setup that has (ansbile) in the command prompt.  Validation techniques may be run from any seed SSH session.
+All Ansible commands must be run in the SSH session setup that has `ansible` in the command prompt.  Validation techniques may be run from any seed SSH session.
 
 Run through the appropriate commands below for this order.
 
@@ -282,30 +282,30 @@ To do this, migrate the workloads to nodes that will not be down during a partic
 
 ### Swift (n-scale):  
 
-Swift it is strongly encouraged that you update one node at a time (node by node).
+For Swift, it is strongly encouraged that you update one node at a time (node by node).
 
-The folowing command updates only one swift node, you will have to repeat it for every swift IP address.
+The following command updates only one Swift node; you will have to repeat it for every swift IP address.
 
 	ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -l <IP of overcloud-swift nscale> -e swift_storage_rebuild_image_id =<glance Image_ID of overcloud-swift nscale> playbooks/update_cloud.yml
 
 ### VSA (n-scale):
 
-This command updates only one VSA node, you will have to repeat it for every VSA IP address.
+This command updates only one VSA node; you will have to repeat it for every VSA IP address.
 
 	ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -l <IP of vsa overcloud node> -e vsa_rebuild_image_id =<glance Image_ID of vsa overcloud node > playbooks/update_cloud.yml
 
-### Backup the updated overcloud ### {#backup}
+### Back up the updated overcloud ### {#backup}
 
-Once the update of overcloud node is complete, you should backup the node in case of failures.  See [Back Up and Restore](/helion/openstack/backup.restore/).
+Once the update of overcloud node is complete, you should back up the node in case of failures.  See [Back Up and Restore](/helion/openstack/backup.restore/).
 
 ## Redeploy Compute Proxy and OVSvAPP on ESX Host ## {#redeploy}
 
-If your infrastructure includes ESX proxy hosts, after updating the overcloud controller management node, update the Compute Proxy and OVSvAPP. The update package contains new images for ESX. Failure to do so will prevent users from launching VM's in vCenter Hosts.
-To manage the VM's launched using the older compute proxy, use the same hostname entered for older Compute Proxy.
+If your infrastructure includes ESX proxy hosts, update the Compute Proxy and OVSvAPP after updating the overcloud controller management node. The update package contains new images for ESX. Failure to do so will prevent users from launching VMs in vCenter Hosts.
+To manage the VMs launched using the older Compute proxy, use the same hostname entered for older Compute proxy.
 
 **Redeploy Nova Compute Proxy**
 
-1. Login to Undercloud.
+1. Log in to the undercloud.
 
 2. Deactivate the activated cluster.
 
@@ -317,9 +317,9 @@ To manage the VM's launched using the older compute proxy, use the same hostname
 
 **Redeploy OVSvAPP**
 
-1. Power off and delete the OVSvAPP vms in the vCenter.
+1. Power off and delete the OVSvAPP VMs in the vCenter.
 
-2. Login to Overcloud ControllerMgmt node.
+2. Log in to the overcloud ControllerMgmt node.
 
 3. Delete the HP VCN L2 agents:
 
