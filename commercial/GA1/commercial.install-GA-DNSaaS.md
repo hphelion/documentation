@@ -26,6 +26,8 @@ Our managed DNS service, based on the OpenStack Designate project, is engineered
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
+**Note**: To migrate from DNSaaS 1.0  to DNSaaS 1.0.1, you must uninstall DNSaaS 1.0 and then install DNSaaS 1.0.1.
+
 
 - [Prerequisites](#preq)
 - [Creating Prerequisite Credentials](#credentials)
