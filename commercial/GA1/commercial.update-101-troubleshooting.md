@@ -84,7 +84,7 @@ After an error, the `nova list` command shows a node in `ERROR` state.
 
 ## MySQL CLI configuration file missing ## {#mysqlmissing}
 
-If the post-rebuild restart fails, it is possible that the MySQL CLI configuration file is missing.
+If the post-rebuild restart fails, it is possible that the MySQL CLI configuration file is missing. <!-- ANSUPDATE-116 -->
 
 **Symptoms:**
 
@@ -502,17 +502,17 @@ If the update fails, from undercloud node:
 
 ## During ansible execution to update undercloud was observer a lock problem in ironic {#ansible}
 
-When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. <!-- CORE 2043 -->
+When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 -->
 
 
-**Symptoms**
+**Symptom**
 
-* The update process fails.
+* A message similar to the following appears in the `ironic-api.log` file:
 
-* A message similar to the following appears in the Ironic log:
-
-	2014-10-23 23:03:51.302 31612 WARNING wsme.api [-] Client-side error: Node c241b0d5-abe1-4219-883c-e8dbaf1c5b35 is locked by host hLinux, please retry after the current operation is completed.
-	Traceback (most recent call last):
+		2014-10-23 23:03:51.302 31612 WARNING wsme.api [-] Client-side error: Node c241b0d5-abe1-4219-883c-e8dbaf1c5b35 is locked by host hLinux, please retry after the current operation is completed.
+		Traceback (most recent call last):
+	
+	The file is located at: `/var/log/upstart/ironic-api.log`. Search for `locked by host hLinux`.
 
 ** Solution **
 

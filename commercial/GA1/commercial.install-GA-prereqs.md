@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174; Installation: Prerequisites
 
-Before you begin the installation process, take a few minutes to read this page for information about:
+Before you begin the installation process, take a few minutes to read this page for information about: 
 
 * [Hardware and software requirements](#hardware)
 * [Required tasks](#required)
