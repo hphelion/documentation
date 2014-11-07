@@ -39,7 +39,7 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 3.	Click **Configure** to authenticate to the Helion Distribution Network.
 
-	<img src="media/SherpaConfigure.jpg">
+	<img src="media/SherpaConfigure.png">
 
 4. Select **Patch Update Code** and click **Download**.
 
