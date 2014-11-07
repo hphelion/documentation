@@ -335,9 +335,9 @@ After the update is complete, you can execute a script to restart the service. S
 
 ## Next Steps {#next-steps}
 
-Upgrade the overcloud. 
+Upgrade the undercloud. 
 
-For installation instructions, see [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
+For installation instructions, see [Updating the Undercloud](/helion/openstack/update/undercloud/101/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
