@@ -203,6 +203,15 @@ To deploy the OVSvApp:
 
 	d. Clear the **Enable VMCI between VMs** option.
 
+10. Convert that OVSvApp appliance to template format. 
+
+	a. Right-click the OVSvApp appliance.
+
+	b. Click **Template > Convert to Template**.
+
+	vCenter Server marks that virtual machine as a template and displays the task in the Recent Tasks pane.
+
+
 ### Install the prerequisite python libraries
 
 On the server where you extracted the `ovsvapp.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
