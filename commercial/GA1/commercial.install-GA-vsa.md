@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/vsa/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -222,16 +222,11 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
 
-8. Apply the configuration.
+8. Execute the `kvm-custom-ips.json` file using the source command
 
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
-9. Source the environment variables from the Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
-
-
-		# source /root/kvm-custom-ips.json
-
-10. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
+9. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
 
  	 	# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 

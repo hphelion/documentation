@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/security/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION--> 
+<!--PUBLISHED--> 
 
 
 <script>
