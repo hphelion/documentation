@@ -83,7 +83,7 @@ To ensure a successful installation, you must satisfy these network configuratio
 
 * Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.
 
-* The Helion OpenStack architecture assumes that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.
+* The Helion OpenStack architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.
 
 * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
