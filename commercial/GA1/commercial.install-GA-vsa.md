@@ -21,7 +21,7 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
-# HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA 
+# HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA  
 
 This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.It covers the following topics:
 
@@ -214,12 +214,7 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 6. Edit the `/root/baremetal.csv file` in seed cloud with the details of the newly added node.
 
-
-7. If `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`.
- 
-		# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-7. Edit the `/root/overcloud-config.json` and update the value for `vsa_scale` or `vsa_ao_scale` appropriately. 
+7. Edit the `/root/tripleo/configs/kvm-custom-ips.json` and update the value for `vsa_scale` or `vsa_ao_scale` appropriately. 
 
        	vsa_scale: <no of StoreVirtual systems>
 
@@ -322,7 +317,7 @@ To create a cluster, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc5.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Discovered Nodes Under Available Systems (opens in a new window)</a>
 
-9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br> Management Goups, Clusters, And Volumes wizard is displayed.
+9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br> Management Groups, Clusters, And Volumes wizard is displayed.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc6.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Create Management Page (opens in a new window)</a>
 
