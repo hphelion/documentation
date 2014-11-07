@@ -63,8 +63,8 @@ The following are the known issues for HP Helion OpenStack:
 
 **Operations**
 
-* A snapshot of instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot is listed as an image (not snapshot) with a size of 0 and a blank disk format (GLAN-1706).
-* If you use the Sherpa UI to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). (CODN-24)
+* A snapshot of instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot is listed as an image (not snapshot) with a size of 0 and a blank disk format <!-- (GLAN-1706) -->.
+* If you use the Sherpa UI to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). <!-- (CODN-24) -->
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
@@ -80,24 +80,24 @@ The following are the known issues for HP Helion OpenStack:
 
 **Helion Dashboard**
 
-* On the **Floating IPs** tab in the Helion Dashboard (**Project > Access & Security > Floating IPs**) all of the buttons (Associate, Disassociate, Release Floating IP) might not appear under certain circumstances. To make the buttons appear, first attempt to allocate a new floating IP. If the buttons are still not present, log out and log in as the same user (HORI-3110).
+* On the **Floating IPs** tab in the Helion Dashboard (**Project > Access & Security > Floating IPs**) all of the buttons (Associate, Disassociate, Release Floating IP) might not appear under certain circumstances. To make the buttons appear, first attempt to allocate a new floating IP. If the buttons are still not present, log out and log in as the same user <!--(HORI-3110) -->.
 
 **Other Issues**
 
-* After updating the undercloud to 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashbaord, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster (ANSUPDATE-155).
+* After updating the undercloud to 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashbaord, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster <!-- (ANSUPDATE-155) -->.
 * When you resize an instance of Nova, it produces an error (NOV-6664). 
-* Volume backups that are created in one project are accessible to all projects (HORI-3009).
-* Changing the user settings in a non-admin role affects all users across all projects (HORI-2934).
-* An admin is unable to retrieve object details in an Object Store (HORI-2930).
-* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack (EE-21).
-* The update overcloud process fails intermittently and occurs when an OLD_BUILD value is set to NULL instead of the correct build number from ce_env.json (CORE-1697).
-* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails. Specify the server with the lowest specs as the second entry in the `baremetal.csv` file (CORE-1409).
-* When a controller node crashes, it must be rebooted to return to its operational state (CORE-1387).
-* The Helion Core installation process leaves behind a shared private network defined (CORE-586).
-* When the VIP is moved to a new controller, the OpenStack services stop responding to any CLI commands (CORE-1716).
-* Nova does not handle or recover from RabbitMQ Server process failure (CORE-1559).
-* The keepalived processes do not restart automatically when they are killed (CORE-972).
-* The HAProxy does not automatically restart when it is killed (CORE-943).
+* Volume backups that are created in one project are accessible to all projects <!-- (HORI-3009) -->.
+* Changing the user settings in a non-admin role affects all users across all projects <!-- (HORI-2934) -->.
+* An admin is unable to retrieve object details in an Object Store <!-- (HORI-2930) -->.
+* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack <!-- (EE-21) -->.
+* The update overcloud process fails intermittently and occurs when an OLD_BUILD value is set to NULL instead of the correct build number from ce_env.json <!-- (CORE-1697) -->.
+* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails. Specify the server with the lowest specs as the second entry in the `baremetal.csv` file <!-- (CORE-1409) -->.
+* When a controller node crashes, it must be rebooted to return to its operational state <!-- (CORE-1387) -->.
+* The Helion Core installation process leaves behind a shared private network defined <!-- (CORE-586) -->.
+* When the VIP is moved to a new controller, the OpenStack services stop responding to any CLI commands <!-- (CORE-1716) -->.
+* Nova does not handle or recover from RabbitMQ Server process failure <!-- (CORE-1559) -->.
+* The keepalived processes do not restart automatically when they are killed <!-- (CORE-972) -->.
+* The HAProxy does not automatically restart when it is killed <!-- (CORE-943) -->.
 * A user can register but cannot update a vCenter through the UI. 
 
 
