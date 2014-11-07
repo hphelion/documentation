@@ -92,7 +92,7 @@ If you have problems during the patch update, refer to the [Update Troubleshooti
 
 Download the software package that contains the patch update software, README file, and other information.
 
-For information, see [Obtaining the Patch Update Package](/helion/openstack/update/prereqs/101/).
+For information, see [Obtaining the Patch Update Package](/helion/openstack/update/download/101/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
