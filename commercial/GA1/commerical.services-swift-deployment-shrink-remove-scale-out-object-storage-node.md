@@ -133,11 +133,15 @@ The following sample displays the output of the stack list:
 
 ##Verify the node removal {#node-removal}
 
+1. Use the nova list command to view a list of nodes.
+
 	# nova list
 
-A list of nodes appears and the removed node will not be available.
+	The removed node will not be available.
 
+2. On seed VM, update the `kvm-custom-ips.json` file to reflect number of scale-out object nodes remaining.
 
+		"so_swift_storage_scale": 2,
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
