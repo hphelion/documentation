@@ -199,7 +199,7 @@ The following sample displays the removal of  **89581cb1-9c2e-46d6-8e0b-aa4518e7
 
 4.	On the seed VM, update the `/root/tripleo/configs/kvm-custom-ips.json` file to reflect new scale number of swift scale-out proxy node. 
 
-		"so_swift_proxy_scale": 2,
+		"so_swift_proxy_scale": 2, 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

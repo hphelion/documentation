@@ -21,7 +21,7 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
-# HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA 
+# HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA  
 
 This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.It covers the following topics:
 
