@@ -27,7 +27,7 @@ Before you begin the installation process, take a few minutes to read this page 
 * [Hardware and software requirements](#hardware)
 * [Required tasks](#required)
 	- [Preparing your network](#network_prepare)
-		- [Preparing all networks {#network}
+		- [Preparing all networks](#network)
 		- [Preparing the network for a KVM installation](#network_KVM)
 		- [Preparing the network for an ESX installation](#network_ESX)
 	- [Storage nodes installed during installation](#storage_nodes)
