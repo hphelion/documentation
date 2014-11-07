@@ -515,6 +515,8 @@ Centralized logging is based on <a href="http://logstash.net/">Logstash</a>, <a 
 
 Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The user is not required to access the  several remote server (SSH) to view the individual log files.
 
+**Note:** Logging requires 4GB of disk space to make sure that all logging messages are retained. <!-- CORE-1964 -->
+
 ### Monitoring {#monitoring}
 
 The administrator can monitor the availability of all hosts and services in the overcloud using the <a href="https://www.icinga.org/">Icinga Monitoring server</a> deployed in the undercloud.
