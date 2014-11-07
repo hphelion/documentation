@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Obtaining the Patch Update Package
 
-A HP Helion OpenStack patch update is a series of images and scripts that enhance functionality or fix issues found after a Helion release.  
+A HP Helion OpenStack patch update is a series of images and scripts that enhance functionality or fix issues found in a Helion release.  
 
 Before beginning the update, obtain the patch update package using of the two following methods:
 
@@ -53,13 +53,12 @@ To use the Cloud OS Distribution Network (CODN) to download the patch update fro
 
 3.	Click the **Import** button on top right corner.
 
-4.	Select the CSU file created by the build process or a manually created file. You can ignore the signature file.
+4.	Select the patch update file to download.
 
-5.	Click **Import** to deliver the CSU file for further processing.
+5.	Click **Import** to deliver the patch update file for further processing.
 
 	<img src="media/SherpaImport.jpg">
 
-6.	Review the information in [Update Prerequisites](/helion/openstack/update/prereqs/101/).
 
 
 ## Next Steps {#next-steps}
