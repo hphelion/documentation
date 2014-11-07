@@ -23,6 +23,8 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Site Index
 
+The documentation for HP Helion OpenStack includes the following:
+
 * [Release Notes](#release)
 * [Getting started with HP Helion OpenStack](#getstart)
 * [Related documentation](#related)

@@ -34,8 +34,9 @@ The following features have been added to HP Helion OpenStack, by release.
 
 ##Features in HP Helion OpenStack 1.0.1 ##
 
-* Defect fixes
-* [SSL documentation to secure Helion OpenStack Perimeter](/helion/openstack/install/security/)
+* **Defect fixes** - A number of defects were addressed and fixed in this release.
+* ** Security documentation ** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can place at the edge of the HP Helion OpenStack deployment to protect against external abuse and defining router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
+* **Patch update functionality** -- The HP Helion OpenStack 1.0.1 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
 ##Features in HP Helion OpenStack 1.0 ##
 
@@ -53,7 +54,7 @@ The following features have been added to HP Helion OpenStack, by release.
 
 **HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
 
-###Known Issues in this Release### {#known-issues}
+##Known Issues in this Release## {#known-issues}
 
 The following are the known issues for HP Helion OpenStack:
 
@@ -64,7 +65,7 @@ The following are the known issues for HP Helion OpenStack:
 **Operations**
 
 * A snapshot of instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot is listed as an image (not snapshot) with a size of 0 and a blank disk format <!-- (GLAN-1706) -->.
-* If you use the Sherpa UI to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). <!-- (CODN-24) -->
+* If you use the Updates and Extensions tab of the Helion Dashboard for the overcloud (called the *Sherpa UI*) to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). <!-- (CODN-24) -->
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
@@ -84,7 +85,7 @@ The following are the known issues for HP Helion OpenStack:
 
 **Other Issues**
 
-* After updating the undercloud to 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashbaord, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster <!-- (ANSUPDATE-155) -->.
+* After updating the undercloud to HP Helion OpenStack 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashbaord, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster <!-- (ANSUPDATE-155) -->.
 * When you resize an instance of Nova, it produces an error (NOV-6664). 
 * Volume backups that are created in one project are accessible to all projects <!-- (HORI-3009) -->.
 * Changing the user settings in a non-admin role affects all users across all projects <!-- (HORI-2934) -->.
