@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Stopping and Starting the Development-Platform Services
+# HP Helion OpenStack&reg; Stopping and Starting the Development-Platform Services During the Upgrade Process
 
 If you have installed [HP Helion Development Platform service](/helion/devplatform/), you need to take service control plane down before performing update on the overcloud. 
 
