@@ -105,6 +105,7 @@ Review the following topics before you start an update:
 * [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
 * [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
 * [Updating the Development-Platform Services](/helion/openstack/update/devplat/101/)
+* [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
 
 
 ## Undercloud Horizon Dashboard {#underdash}
@@ -156,7 +157,7 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Reporting Service Overview](/helion/openstack/services/reporting/overview/)
 - [Sherpa Service Overview](/helion/openstack/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/services/sirius/overview/)
-	- [Configuring Your Storage Using Sirius](/helion/openstack/sirius/cli/workflow)
+	- [Sirius CLI Workflow](/helion/openstack/sirius/cli/workflow)
 	- [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
 - [Tripleo Service Overview](/helion/openstack/services/tripleo/overview/)
 - [Volume Operations Service Overview](/helion/openstack/services/volume/overview/)

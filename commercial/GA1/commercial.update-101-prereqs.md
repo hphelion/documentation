@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Update Prerequisites
 
-Prior to getting a system ready for update and performing the update, there might be a few tasks that you need to complete that could affect the update outcome.  Read this page for information about:
+Prior to getting a system ready for update and performing the update, there might be a few tasks that you need to complete that could affect the update outcome.  Read this document for information about:
 
 * [Performing a System check](#check)
 * [Extracting the required scripts and libraries](#extract)
@@ -32,7 +32,7 @@ Prior to getting a system ready for update and performing the update, there migh
 
 1.	If you have changed your admin password for undercloud you need to make sure you update the files below, if you have not already done so. 
 
-	If you do not update the password in configuration files will result in the update failing.  
+	If you do not update the password in configuration files, the update will fail.  
 
 	If you have not changed your undercloud admin password you can skip this task.
 
@@ -85,9 +85,6 @@ To extract the files:
 
 	* <Insert undercloudIP> is the IP of the undercloud node
 	* /tmp/heat_templates/ is the default location of the TAR files; enter the appropriate location, if you [changed the location](#default).
-	* <version> is.....  
-
-	At the end of above step you will have the seed node updated with latest working copy of tripleo-ansible code and the helper scripts.  
 
 	The files will now be extracted in the seed tmp node.  If desired, you can delete the files in the `/tmp/heat_templates` directory.
 
@@ -97,15 +94,15 @@ It is possible to change the location of the undercloud patch update TAR files, 
 
 If you have done so you can recall where you have changed the directory to by viewing the Sherpa configuration file.  
 
-1.	The Sherpa configuration file for the undercloud can be found at `/etc/sherpa/sherpa.conf`. 
+The Sherpa configuration file for the undercloud can be found at `/etc/sherpa/sherpa.conf`. 
 
-	The directory where the files where stored can be found by looking in the `RepositoryMgr` portion of `/etc/sherpa/sherpa.conf`. Search for the directory attribute as seen below:
+The directory where the files where stored can be found by looking in the `RepositoryMgr` portion of `/etc/sherpa/sherpa.conf`. Search for the directory attribute as seen below:
 
-		'file': {
-		'classname': 'sherpa.handlers.repository.file.FileSystemHandler',
-		'destinations': [
-		{
-		'directory': '/tmp/heat_templates',
+	'file': {
+	'classname': 'sherpa.handlers.repository.file.FileSystemHandler',
+	'destinations': [
+	{
+	'directory': '/tmp/heat_templates',
 
 When extracting the update files, use the directroy set in `/etc/sherpa/sherpa.conf`.
 
@@ -202,15 +199,15 @@ To obtain the IP addresses of the overcloud nodes, perform the following:
 
 **Overcloud Image ID**
 
-1. Log in the seed VM host.
+1. Log in the seed VM host:
 
 		sudo su -
 
-2. SSH to the seed VM.
+2. SSH to the seed VM:
 
 		ssh root@192.0.2.1 
 
-3. SSH into the Undercloud then become root and source the stackrc file
+3. SSH into the undercloud then become root and source the stackrc file:
 
 		ssh heat-admin@<Undercloud IP>
 		sudo -i
