@@ -411,7 +411,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - The VM port binding is with the host name of the OVSvApp VM on the ESX Compute host which provisioned the tenant VM. 
 
-- When vCenter username ["vCenter_username"] has domain included, provide username details in username@domain format.
+- When vCenter username <"vCenter_username"> has domain included, provide username details in username@domain format.
 
 - When cert_check is False, please ensure to make cert_path as a blank field
 
