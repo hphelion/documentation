@@ -65,7 +65,7 @@ The following are the known issues for HP Helion OpenStack:
 **Operations**
 
 * A snapshot of instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot is listed as an image (not snapshot) with a size of 0 and a blank disk format <!-- (GLAN-1706) -->.
-* If you use the Updates and Extensions tab of the Helion Dashboard for the overcloud (called the *Sherpa UI*) to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). <!-- (CODN-24) -->
+* If you use the Updates and Extensions tab of the Helion Dashboard for the overcloud (known as the *Sherpa UI*) to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). <!-- (CODN-24) -->
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
