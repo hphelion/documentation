@@ -211,74 +211,82 @@ Before proceeding with DNaaS installation ensure that you have met all the prere
 **IMPORTANT**: During DNSaaS installation, non-deterministic failures within the infrastructure layer may cause the install to fail. If this occurs, DNSaaS installation should be retried up to two times.
 
 
-1. SSH to install VM
+1. SSH to install VM.
 
 		$ ssh --i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
 
-<!--
-$ ssh debian@<Floating IP Address associated with the Installer Instance above> --->
 
-**Note**: Before you begin the installation, you must create a configuration file. You can do this by modifying the sample configuration file included with the DNSaaS installer files.
+	<!--
+	$ ssh debian@<Floating IP Address associated with the Installer Instance above> --->
+
+	**Note**: Before you begin the installation, you must create a configuration file. You can do this by modifying the sample configuration file included with the DNSaaS installer files.
+
+2. Create the SSH Public Key which is used by the Service VMs.
+
+	It is recommended to use the same SSH key which was used to boot the installer VM. If you choose to use a different SSH key, please ensure you retain both SSH private keys for future use.
+
+3. Copy the SSH Public Key. 
+
+		$ cp .ssh/authorized_keys id_rsa.pub
+
+
+4. Copy the sample configuration file to your home directory:
+
+     	$ cp /etc/dnsaas-installer/dnsaas-installer.conf.sample ~/dnsaas-installer.conf
+
+5. Edit your copy of the configuration file with the required changes:
  
-2. Copy the sample configuration file to your home directory:
-
-        $ cp /etc/dnsaas-installer/dnsaas-installer.conf.sample ~/dnsaas-installer.conf
-
-2. Edit your copy of the configuration file with the required changes:
- 
-        $ nano dnsaas-installer.conf
+    	$ nano dnsaas-installer.conf
 		
-	 A. DEFAULT section:
-    * auth&#095;url &mdash; Keystone auth URL
-    * target&#095;project&#095;name &mdash; Project name where the service is installed
-    * target&#095;username &mdash; Username used to deploy and run the service
-    * target&#095;region&#095;name &mdash; Region name to deploy the service in
-    
-    B. Designate section:
-    * ssh&#095;public&#095;key &mdash; The SSH public key to be installed on the instances for management access
-    * ntp&#095;server &mdash; An IP or DNS name for an NTP server to sync time with
-    * database&#095;root&#095;password &mdash; Password for the database root user
-    * database&#095;designate&#095;password &mdash; Password for the database designate user
-    * database&#095;powerdns&#095;password &mdash; Password for the database powerdns user
-    * messaging&#095;root&#095;password &mdash; Password for the messaging root user
-    * messaging&#095;designate&#095;password &mdash; Password for the messaging designate user
-    * keystone&#095;host &mdash; Hostname or IP address of Keystone endpoint.
-    * service&#095;project &mdash; Project name for a user with permission to validate Keystone tokens
-    * service&#095;user &mdash; Username for a user with permission to validate Keystone tokens
-    * service&#095;password &mdash; Password for a user with permission to validate Keystone tokens
-    * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect, akamai)
+   	A. DEFAULT section:
 
-   	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
+	   * auth&#095;url &mdash; Keystone auth URL
+	   * target&#095;project&#095;name &mdash; Project name where the service is installed
+	   * target&#095;username &mdash; Username used to deploy and run the service
+	   * target&#095;region&#095;name &mdash; Region name to deploy the service in
+	    
+   	B. Designate section:
 
-	* msdns&#095;servers: A comma separated list of the Microsoft DNS servers short hostnames
-	* messaging&#095;access&#095;cidr: A CIDR to allow inbound access from the Microsoft DNS servers
+	   * ssh&#095;public&#095;key &mdash; The SSH public key to be installed on the instances for management access
+	   * ntp&#095;server &mdash; An IP or DNS name for an NTP server to sync time with
+	   * database&#095;root&#095;password &mdash; Password for the database root user
+	   * database&#095;designate&#095;password &mdash; Password for the database designate user
+	   * database&#095;powerdns&#095;password &mdash; Password for the database powerdns user
+	   * messaging&#095;root&#095;password &mdash; Password for the messaging root user
+	   * messaging&#095;designate&#095;password &mdash; Password for the messaging designate user
+	   * keystone&#095;host &mdash; Hostname or IP address of Keystone endpoint.
+	  * service&#095;project &mdash; Project name for a user with permission to validate Keystone tokens
+	  * service&#095;user &mdash; Username for a user with permission to validate Keystone tokens
+	  * service&#095;password &mdash; Password for a user with permission to validate Keystone tokens
+	  * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect, akamai)
+
+ 	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
+
+	 * msdns&#095;servers: A comma separated list of the Microsoft DNS servers short hostnames
+	 * messaging&#095;access&#095;cidr: A CIDR to allow inbound access from the Microsoft DNS servers
 
 
 	D. If you select DynECT you must set the following options in the designate section:
 
-    * dynect&#095;customer&#095;name &mdash; Customer name provided by Dyn
-    	
-	*  dynect&#095;username &mdash; Username provided by Dyn
-    
-	* dynect&#095;password &mdash; Password provided by Dyn
+	   * dynect&#095;customer&#095;name &mdash; Customer name provided by Dyn
+	   *  dynect&#095;username &mdash; Username provided by Dyn
+	   * dynect&#095;password &mdash; Password provided by Dyn
 
 
 	E. If you select Akamai you must set the following options in the designate section:
 	
-	* akamai_username: The username that was set up as part of your Akamai signup
-	
+	   * akamai_username: The username that was set up as part of your Akamai signup
 	* akamai_password: The password that was set up as part of your Akamai signup
 	
 
 
-3. Run the installer validation command to verify the configuration file
+6. Run the installer validation command to verify the configuration file
 
      	 $ dnsaas-installer --target-password <Target User Password> validate
 
-After you validate the configuration file, run the DNSaaS installer:
+7. After you validate the configuration file, run the DNSaaS installer:
 
       	 $ dnsaas-installer --target-password <Target User Password> install
-
 
 
 
@@ -372,7 +380,7 @@ If you are using Microsoft DNS Server you should perform the following additiona
 
 ##Post-install cleanup
 
-Now the installer VM is not required. Please archive the configuration file used and optionally delete the dnsaas-installer instance.
+Now the installer VM is not required. Please archive the configuration file and the SSH public and private keys used and optionally delete the dnsaas-installer instance.
 
 ##Uninstall
 

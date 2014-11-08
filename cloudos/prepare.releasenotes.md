@@ -182,7 +182,7 @@ The following two sections identify the known and resolved OpenStack community i
 
 ####Resolved OpenStack Issues####
 
-* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful – although it has failed in the background. Community issue [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).
+* When you provision from the HP Cloud OS Administration Dashboard and the space available is inadequate to create the volume, the dashboard still shows volume creations as successful - although it has failed in the background. Community issue [1188039](https://bugs.launchpad.net/cinder/+bug/1188039).
 * A security group is used to grant accessibility to an instance, such as ping (ICMP) and SSH (TCP), by enabling the associated ports. The default security group provided for each project is pre-filled with two rules that are incorrectly specified.  Remove the provided rules. Add new rules as appropriate.
 
 ##For Further Information## {#for-further-information}

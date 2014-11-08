@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud Installation"
 permalink: /cli/unix/2/install/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

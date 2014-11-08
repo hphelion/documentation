@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Viewing network details"
 permalink: /mc/compute/networks/view-network/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

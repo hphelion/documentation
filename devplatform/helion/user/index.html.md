@@ -5,8 +5,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-Application Lifecycle Service User Guide[](#helion-user-guide "Permalink to this headline")
-=========================================================================
+#Application Lifecycle Service User Guide {#helion-user-guide}
 
 Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
 deploy applications written in a wide range of languages and web
@@ -16,8 +15,7 @@ source code to the system.
 Application Lifecycle Service handles the automatic configuration of the language runtime,
 web server, application dependencies, databases, and other services.
 
-Quick Start[](#quick-start "Permalink to this headline")
----------------------------------------------------------
+##Quick Start {#quick-start}
 
 -   [Quick Start](/als/v1/user/quick-start/)
     -   [Management Console](/als/v1/user/quick-start/#management-console)

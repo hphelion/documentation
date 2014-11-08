@@ -99,6 +99,12 @@ To register the device using the undercloud Horizon dashboard, do the following:
     * In the **SAN password** box, enter the valid 3PAR password of the SAN controller for SSH access to the array.
    
     * From the **Device Type** drop-down list, select the device type. For example: FC, iSCSI. <br> By default, the device type is **FC**.</br>
+
+	 	**Note**: If the device type is selected as iSCSI and more than one iSCSI IP addresses need to be specified,  use a comma separated list for the same. You can also specify the ports alongwith the IP addresses (separated by colon), if required. 
+
+		*For example:* 
+
+		*10.1.2.200,10.1.2.100:3380,10.1.2.102*
    
     * Click **Done** to save the details. 
 

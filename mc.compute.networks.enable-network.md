@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Enabling and disabling a network"
 permalink: /mc/compute/networks/enable-network/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

@@ -5,40 +5,34 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-Sample Applications[](#index-0 "Permalink to this headline")
-===================================================
- [Sample Applications Definition](#app-store-definition)
-            -   [store](#store)
-            -   [apps](#apps)
-        -   [Hosting the Store Definition
-            Files](#hosting-the-store-definition-files)
-    -   [Adding the Sample Applications to
-        Application Lifecycle Service](#adding-the-app-store-to-helion)
+#Sample Applications {#index-0}
 
 The Sample Applications are a collection of ready-to-run applications which can be
 deployed to Application Lifecycle Service with a couple of clicks. This interface uses the
-same API as the CLI client, pulling the source code from a Git
+same API as the CLI client and pulls the source code from a Git
 repository rather than pushing an archive from the user's local
 filesystem.
 
-Users have access to the main Sample Applications interface (see the Application Lifecycle Service User
-Guide), but do not have access to add new applications or store
-definitions.
+- [Creating Sample Applications](#creating-an-app-store)
+	- [Sample Applications Definition File](#app-store-definition)
+	- [Hosting Definition Files](#hosting-the-store-definition-files)
+- [Adding the Sample Applications to the Application Lifecycle Service](#adding-the-app-store-to-helion)
 
-Creating Sample Applications[](#creating-an-app-store "Permalink to this headline")
------------------------------------------------------------------------------
+
+Users have access to the main Sample Applications interface (see the [Application Lifecycle Service User
+Guide](/als/v1/user/), but do not have access to add new applications or add/modify the definition file.
+
+##Creating Sample Applications {#creating-an-app-store}
 
 The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
-specified in the main [*Settings*](/als/v1/admin/console/#settings) page of
-the Management Console or set using [*kato
-config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config).
+specified in the main [Settings](/als/v1/admin/console/#settings) page of
+the Management Console or set using [kato
+config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config).
 
-### Sample Applications Definition[](#app-store-definition "Permalink to this headline")
+### Sample Applications Definition File {#app-store-definition}
 
-Sample Applications definition
-[*YAML*](/als/v1/user/reference/glossary/#term-yaml) files describe
-each store and its apps, including a link to the source location for
+[YAML](/als/v1/user/reference/glossary/#term-yaml) files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:
 
     store:
@@ -85,21 +79,21 @@ each app. For example:
       src: https://github.com/Helion-Apps/node-chat.git
       info: https://github.com/Helion-Apps/node-chat.git#readme
 
-The YAML string requires two top-level keys: `store`
-and `apps`.
+The YAML string requires two top-level keys: **store**
+and **apps**.
 
-#### store[](#store "Permalink to this headline")
-Contains entries that define the store.
+###store {#store}
+Contains entries that define the container for each set of Sample Applications.
 
 **title**:Text used as a display name for the Sample Applications in the Management Console.
 
-**contact**: The name and email address of the store maintainer.
+**contact**: The name and email address of the party responsible for maintaining these sample applications. 
 
 **icon**: An image used for the Sample Applications icon. Specified as a full URL.
 
-#### apps[](#apps "Permalink to this headline")
+###apps {#apps}
 
-This is an array of items (see YAML format above), one for each app in the store. Each app is defined by the following fields:
+This is an array of items (see YAML format above), one for each app in the container. Each app is defined by the following fields:
 
 **name**:   The name of the app as displayed in the Sample Applications list.
 
@@ -108,7 +102,7 @@ This is an array of items (see YAML format above), one for each app in the store
 **id**: A short, lowercase, unique string associated with the app. Apps are sorted alphabetically in the list based on this field.
 
  **repo**
-:   URL of the git repository where the app code resides.
+:   URL of the Git repository where the app code resides.
 
 **commit**
 :   Branch name, tag name, or exact commit hash to use. If
@@ -116,15 +110,13 @@ This is an array of items (see YAML format above), one for each app in the store
     branch is used.
 
 **framework**
-:   The framework, if the app is deployed using the [*Legacy
-    Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
+:   The framework, if the app is deployed using the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
     (e.g. `perl`, `python`,
     `node`, `rails3`).
 
 **icon**
-:   An image used for the app icon specified either as a full URL, a
-    file relative to the `store` key **icon-url**
-    URL, `default`, or other variable values.
+:   An image used for the app icon specified either as a full URL, a file relative to the **store** key **icon-url**
+    URL, **default**, or other variable value.
 
 **info**
 :   A URL pointing to documentation for the app.
@@ -138,8 +130,8 @@ This is an array of items (see YAML format above), one for each app in the store
 :   Memory requirements of the app (integer, in MB).
 
 **runtime**
-:   The runtime, if the app is deployed using the [*Legacy
-    Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
+:   The runtime, if the app is deployed using the [Legacy
+    Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
     (e.g. `java`, `python32`,
     `ruby19`, `php`,
     `perl518`).
@@ -151,27 +143,26 @@ This is an array of items (see YAML format above), one for each app in the store
 The store definition settings do not override settings in the
 application's *manifest.yml* file.
 
-### Hosting the Store Definition Files[](#hosting-the-store-definition-files "Permalink to this headline")
+###Hosting the Definition Files {#hosting-the-store-definition-files}
 
 The YAML files defining the stores can be served via HTTP or HTTPS by
 any web server at a URL accessible from the Cloud Controller.
 
-Adding the Sample Applications to Application Lifecycle Service[](#adding-the-app-store-to-helion "Permalink to this headline")
----------------------------------------------------------------------------------------------------
+##Adding the Sample Applications to Application Lifecycle Service {#adding-the-app-store-to-helion}
 
-1.  Log into the [*Management
-    Console*](/als/v1/user/console/#management-console),
+1.  Log into the [Management
+    Console](/als/v1/user/console/#management-console),
 2.  Select **Settings \> Cloud Controller** from the menu.
 3.  In the **Sample Applications URLs** section, enter a name and content URL for
     your store definition YAML file then click **Add Sample Applications URL**.
 
-To confirm the Sample Applications are loading correctly, select "Sample Applications" in the
-menu and view the list of applications displayed. A "CC Catalog Manager"
-error appear in the Event Log if a Sample Applications URL fails to load.
+To confirm the Sample Applications are loading correctly, select **Sample Applications** in the
+menu and view the list of applications displayed. A **CC Catalog Manager**
+error appears in the Event Log if a Sample Applications URL fails to load.
 
 Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
-with [*kato
-config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
+with [kato
+config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
 example:
 
     $ kato config get cloud_controller_ng app_store

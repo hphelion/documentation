@@ -3,6 +3,7 @@ layout: default
 title: "Unix CLI for HP Helion Public Cloud Block Storage Examples"
 permalink: /cli/unix/2/block-storage/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

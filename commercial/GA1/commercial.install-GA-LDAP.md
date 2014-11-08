@@ -196,9 +196,9 @@ On the seed VM host, perform the following:
 
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
-[HP Helion OpenStack®: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
+[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
 
-[HP Helion OpenStack®: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
+[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
 
 ## Configure Horizon<a name="horizon"></a>
 

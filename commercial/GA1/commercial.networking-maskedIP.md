@@ -78,27 +78,27 @@ Which produces output similar to the following:
 	    | OS-EXT-STS:task_state                | None                          |
 	    | OS-EXT-SRV-ATTR:host                 | icehousecompute               |
 	    | key_name                             | None                          |
-	    | image                                | tty-linux (503cd8f1-ae6c …)   |
-	    | hostId                               | 091ce2ae798d669b1ec9cc53 …    |
+	    | image                                | tty-linux (503cd8f1-ae6c ...)   |
+	    | hostId                               | 091ce2ae798d669b1ec9cc53 ...    |
 	    | OS-EXT-STS:vm_state                  | active                        |
 	    | OS-EXT-SRV-ATTR:instance_name        | instance-0000000f             |
 	    | OS-SRV-USG:launched_at               | 2014-06-26T01:41:22.000000    |
 	    | OS-EXT-SRV-ATTR:hypervisor_hostname  | icehousecompute.example.com   |
 	    | flavor                               | m1.tiny (1)                   |
-	    | id                                   | 47c06647-375e-4bd6-8714 …     |
+	    | id                                   | 47c06647-375e-4bd6-8714 ...     |
 	    | security_groups                      | [{u'name': u'default'}]       |
 	    | OS-SRV-USG:terminated_at             | None                          |
-	    | user_id                              | e888a6ffca9249bf810f73 …      |
+	    | user_id                              | e888a6ffca9249bf810f73 ...      |
 	    | name                                 | test1                         |
 	    | created                              | 2014-06-26T01:40:59Z          |
-	    | tenant_id                            | 408806a339b340e88d1b1 …       |
+	    | tenant_id                            | 408806a339b340e88d1b1 ...       |
 	      (etc)
 	    | n1 network                           | 192.168.4.4, 16.103.148.249   |
 	    | config_drive                         |                               |
 	    +--------------------------------------+-------------------------------+
  
  Using this information, you can now see all the details of the malicious instance.  You may choose to shut it down, contact the instance owner to investigate further, or both. 
- 
+
 ## Method 3
 1. Log in to the Controller node
 
@@ -112,15 +112,15 @@ Which produces output similar to the following:
 
 3. Assuming 16.103.148.249 is the malicious IP address: for each ***qrouter***, run the command:
 
-        ip netns exec qrouter-0fa45f02-6e89-4707-89f3-0f7c31cf03bf iptables –L –v –t nat | grep &ldquo;16.103.148.249&rdquo;
+        ip netns exec qrouter-0fa45f02-6e89-4707-89f3-0f7c31cf03bf iptables -L -v -t nat | grep &ldquo;16.103.148.249&rdquo;
 
     Producing output similar to the following:
 
         0 0 DNAT  all -- any  any anywhere     16.103.148.249  to:192.168.4.2
         0 0 DNAT  all -- any  any anywhere     16.103.148.24   to:192.168.4.2
         0 0 SNAT  all -- any  any 192.168.4.2  anywhere        to:16.103.148.249
- 
-4. If the command returns any results, capture the fixed IP address, which is 192.168.4.2 in the above example (Look in the “to: “ field of DNAT rows)
+
+4. If the command returns any results, capture the fixed IP address, which is 192.168.4.2 in the above example (Look in the "to: " field of DNAT rows)
 
 5. Log in to the Nova controller node
 

@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud Python Novaclient CLI Installation"
 permalink: /cli/nova/install/
 product: nova-cli
+published: false
 
 ---
 <!--PUBLISHED-->
@@ -266,11 +267,11 @@ To install the public Python software on your Windows system, follow these steps
 
     <img src="media/python_setup_03.png" width="519" alt="" />
 
-4. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
+4. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables...`:
 
     <img src="media/python_setup_04.png" alt="" />
     
-5. In the `Environment Variables` dialog, select the Path environment variable and click `Edit…`:
+5. In the `Environment Variables` dialog, select the Path environment variable and click `Edit...`:
 
     <img src="media/python_setup_05.png" alt="" />
 
@@ -290,7 +291,7 @@ To install the Python Setup tools, follow these steps:
 
 2. Download [the `ez_setup.py` package](http://pypi.python.org/pypi/setuptools#windows):
     * Right-mouse click the [`ez_setup.py`](http://peak.telecommunity.com/dist/ez_setup.py) link
-    * Select `Save link as…` in the pop-up menu
+    * Select `Save link as...` in the pop-up menu
     * Click `Save` in the `Save As` dialog box to save the file to your local system
 
 3. In the `Start` menu, select `All Programs`, `Accessories`, then `Command Prompt` to open a CLI command window.
@@ -318,11 +319,11 @@ To install the Python Setup tools, follow these steps:
 
     <img src="media/python_setup_03.png" width="519" height="424" alt="" />
 
-6. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
+6. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables...`:
 
     <img src="media/python_setup_04.png" alt="" />
     
-7. In the `Environment Variables` dialog, select the Path environment variable and click `Edit…`:
+7. In the `Environment Variables` dialog, select the Path environment variable and click `Edit...`:
 
     <img src="media/python_setup_05.png" alt="" />
 
@@ -364,11 +365,11 @@ To configure variables for the Python NovaClient, follow these steps:
 
     <img src="media/python_setup_03.png" width="519" alt="" />
 
-2. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables…`:
+2. In the `Advanced` dialog, select the `Advanced` tab and click `Environment Variables...`:
 
     <img src="media/python_setup_04.png" alt="" />
     
-3. In the `Environment Variables…` dialog in the `System variables` section, click `New`:
+3. In the `Environment Variables...` dialog in the `System variables` section, click `New`:
 
     <img src="media/python_setup_07.png" alt="" />
 

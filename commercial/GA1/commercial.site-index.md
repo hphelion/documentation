@@ -39,7 +39,7 @@ The following topics as needed contain information about HP Helion OpenStack:
 
 Review the following topics before you start the installation:
 
-- [Overview](/helion/openstack/install-overview/) 
+- [Overview](/helion/openstack/install/overview/) 
 - [Support matrix](/helion/openstack/support-matrix/)
 - [Technical Overview](/helion/openstack/technical-overview/)
 - [Prerequisites](/helion/openstack/install/prereqs/)
@@ -72,8 +72,12 @@ Review the following topics related to optional and required post-installation s
 
 - [Integrating LDAP](/helion/openstack/install/ldap/)
 - [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/)
-- [Configuring your network securely](/helion/openstack/install/security/)[Back Up and Restore](/helion/openstack/backup.restore/)[High Availability (HA)](/helion/openstack/high-availability/)
+- [Back Up and Restore](/helion/openstack/backup.restore/)
+- [High Availability (HA)](/helion/openstack/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
+<!-- - [Configuring your network securely](/helion/openstack/install/security/) 
+-->
+
 
 ### Undercloud Horizon Dashboard
 

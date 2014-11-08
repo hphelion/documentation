@@ -91,14 +91,14 @@ You can display the details of a particular cluster.
 
 You can register the StoreVirtual Cluster to Sirius database. This command requires all the arguments, else the user is prompted for the same.
 
-	# sirius register-storevirtual-cluster –name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
+	# sirius register-storevirtual-cluster -name=<CLUSTER_NAME> --hostname=<CLUSTER_IP_ADDRESS>  --subnet=<SUBNET> --username=<USERNAME> --password=<PASSWORD> --port=<SSH_PORT>
 
 
 ### Update StoreVirtual cluster ###
 
 You can update the StoreVirtual cluster in Sirius database. Only the CLUSTER_ID is  a mandatory argument.
 
-	# sirius update-storevirtual-cluster <CLUSTER_ID>  –name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
+	# sirius update-storevirtual-cluster <CLUSTER_ID>  -name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --status=<CLOUD_STATUS>
 
 ### Delete StoreVirtual cluster ###
 
@@ -163,6 +163,14 @@ You can register the StoreServ to Sirius.
 **Note:** 
 
 *Additional arguments*: --iscsi-ip &lt;ISCSI_IP> [required for iSCSI type devices]
+
+For more than one iSCSI IP addresses, use a comma separated list . The ports can also be specified along with the IP addresses (separated by colon), if required. 
+
+*Example:*
+
+--iscsi-ip 10.1.2.200,10.1.2.100:3380,10.1.2.102
+
+
 
 
 ### Update StoreServ ###

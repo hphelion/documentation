@@ -26,7 +26,7 @@ PageRefresh();
 
 HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
-## Installing HP Helion OpenStack <a name="install"></a>
+## Installing HP Helion OpenStack
 
 The installation and configuration process for KVM consists of the following general steps: 
 
@@ -86,7 +86,7 @@ For more information, see [Creating the baremetal.csv file](/helion/openstack/in
 
 ### Set DNS servers by default {#name-resolution}
 
-To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/overstack/name-resolution/) before installation.
+To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
 
 ### Prepare the cloud seed host to create the seed VM {#prepseed}
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).

@@ -8,7 +8,7 @@ Developing in Javascript[](#java "Permalink to this headline")
 
 Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
-advantage of HP Helion OpenStack® to manage infrastructure or software services, tools
+advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools
 to enable successful development are available in JavaScript.
 
 ##Application Lifecycle Services

@@ -56,7 +56,7 @@ Perform the following steps to add a physical server:
 
 2. Log in to the seed cloud. 
 
-		# ssh root@<Seed IP address> 
+		# ssh root@<seed IP address> 
 
 3. When prompted for host authentication, type **yes** to allow the ssh connection to proceed.
 
@@ -77,13 +77,13 @@ Perform the following steps to add a physical server:
 
 5. Log in to the undercloud. 
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 
 6. Add the server details to the ironic database using the following ***ironic*** command:
 
- 		# ironic node-create -d pxe_ipmitool <-p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
+ 		# ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
-	The following sample displays the Ironic database with the new server details:
+	The following sample displays the ironic database with the new server details:
 
 		+--------------+-----------------------------------------------------------------------+
 		| Property     | Value                                                                 |
@@ -163,9 +163,9 @@ Verify that the new nodes were created and are functioning properly using the fo
 
 1. Log in to the undercloud from the seed cloud.
 
-		# ssh heat-admin@<Undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 
-2. List of the available Swift nodes.
+2. List the available Swift nodes.
 
 		# nova list
 

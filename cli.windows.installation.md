@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell Installation"
 permalink: /cli/windows/installation/
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->

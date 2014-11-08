@@ -49,7 +49,7 @@ The simplest way to install Maven on a Mac/UNIX environment is:
 The simplest way to install Maven on a PC environment is to [download the latest version of Maven](http://maven.apache.org/download.cgi) and then follow the [installation directions](http://maven.apache.org/guides/getting-started/windows-prerequisites.html).
 
 ##Download the Application Files
-[Click here to access the download directory](https://github.com/HelionDevPlatform/helion-mysql-java). 
+[Click here to access the code repository](https://github.com/HelionDevPlatform/helion-mysql-java). 
 
 
 ##Build the Application
@@ -77,7 +77,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 		helion login
 	
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute
+5.	Deploy the application by using the command:
 	
 		helion push
 	

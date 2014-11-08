@@ -18,7 +18,7 @@ If you are missing any of these items, you must [install them](/helion/devplatfo
 - Access to the web-based [Helion Management Console](/als/v1/user/console/).
 
 ##Download the Application Files
-[Click here to access the download directory.](https://github.com/HelionDevPlatform/helion-hello-world-php)
+[Click here to access the code repository.](https://github.com/HelionDevPlatform/helion-hello-world-php)
 
 ### About the Application Files
 To create a CloudFoundry&trade; app in PHP, the only mandatory files are the *index.php* and *manifest.yml* files. 
@@ -43,7 +43,7 @@ The Helion client to deploy your app to Helion Development Platform.  If you are
 		helion login
 	
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute 
+5.	Deploy the application by using the command:
 	
 		helion push 
 

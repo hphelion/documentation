@@ -5,6 +5,8 @@ permalink: /cli/unix/articles/debugging
 product: unix-cli
 categories: cli linux
 tags: cli linux
+published: false
+
 ---
 <!--PUBLISHED-->
 #UNIX CLI for HP Helion Public Cloud: Generating verbose debugging output v12.12#

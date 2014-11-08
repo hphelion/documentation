@@ -52,7 +52,6 @@ The high-level process for installing HP Helion OpenStack involves the following
 2. Verify that the necessary [Prerequisites](/helion/openstack/install/prereqs) have been performed.
 
 3. Install with either KVM or ESX hypervisor support:
-
 	
 	- [Install with KVM hypervisor support](/helion/openstack/install/kvm/) and then [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). 
 
@@ -71,6 +70,8 @@ There are a few things you should be aware of before you begin your HP Helion Op
     `/root/stackrc`
 
     `/root/tripleo/tripleo_*_passwords`
+
+* The installation will create two initial Object Storage nodes. If you need additional Object Storage nodes, you must create them manually after installation. 
 
 
 **Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 

@@ -21,7 +21,7 @@ The following topics explain how to install and deploy an instance of Vertica 7 
 ## <a name="concepts"></a>Marketplace Concepts
 The Marketplace deploys packages of services and applications to specified environments. 
 
-- The term **Application** actually covers applications and services that can reside in the Marketplace. For the purposes of this documentation, we will use the term Application even though we are deploying a database, which is a service. 
+- The term **Application** covers both applications and services that can reside in the Marketplace. For the purposes of this documentation, we will use the term Application even though we are deploying a database, which is a service. 
 - **Packages** are zip files that contain instructions for Application deployment.
 - **Environments** are groups of Applications managed by a single tenant. Applications within a single Environment *may* be logically related to one another, but do not have to be.  Applications in different Environments are always independent from one another. 
 
@@ -92,20 +92,51 @@ The following section will show how to create an instance of Vertica 7 Community
 1. When this process has completed, you will see that the Vertica 7 Community Edition is available for consumption. Connection information is given in the **last operation** column.
 
 	<img src="media/marketplace11.png"/>
+1. Take the following steps to ensure that your newly deployed instance of Vertica is secure by modifying its default key pair:
+	1. Log into the instance using the private key you used during database creation.
+	
+			ssh dbadmin@<ip> -i <path to private key>
+	3. Remove the existing default key from the keys file.
+	 
+			cd ~/.ssh
+			grep -v "`cat id_rsa.pub`" authorized_keys > authorized_keys.tmp
+			mv authorized_keys.tmp authorized_keys
+			chmod 0600 authorized_keys
+			rm authorized_keys.tmp
+	9. Remove the existing default key:
+			
+			rm ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+
+	11. Generate a new, unique default key pair:
+
+			ssh-keygen -b 2048 -t rsa -f /home/dbadmin/.ssh/id_rsa -q -N ""
+
+10.	You can also implement additional security by modifying the access rules for the security group associated with the environment that the Vertica instance was deployed into. In the example above, the environment name is **Test1**. The associated security group can be accessed from the Horizon panel as follows:
+	1.	In the Horizon console under **Compute** -> **Access & Security**, go to the **Security Groups** tab.
+	2.	Search for a group with the **Test1** string in the group name. Group names are auto-generated to ensure that they are unique.
+	3.	Click **Manage Rules**.
+		- 		To change the access rules for SSH, add a new security group allowing access on port 22 from the IP range you wish to grant access to.
+		- 		To allow access to Vertica, add a new rule on port 5433 that specifies the IP range you wish to grant access to. You can then remove the corresponding default rule.
  
+
 ###<a name="notes"></a>Deployment Notes
 This section discusses some of the details of deployment that you may encounter.
-
-
 
 1. Environments cannot be deployed unless there is at least one Application in the Environment. 
 2. Deploying an Application to an Environment that has already been deployed follows the same flow as above.
 	- In order to instantiate a newly-configured application, re-deploy its Environment.
 	- When an Environment is re-deployed, all applications it contains will be re-deployed. 
+3. If a Vertica instance is restarted or power cycled, the Vertica database must be restarted manually once the instance is reachable. This is by design to avoid potential database corruption in the event of a power event. Note that **all** VMs are shut down and then restarted during the Helion upgrade process. 
+	1. SSH into your instance
+	1. Become the dbadmin user:
 
+ 			sudo su - dbadmin
+	  
+	1. Run the following command:
+	 
+			admintools -t stop_db --database=DB_NAME --password=DB_PASSWORD
 
- 
-----
+ ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 

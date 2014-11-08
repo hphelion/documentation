@@ -3,6 +3,7 @@ layout: default
 title: "Management console: Security groups screen"
 permalink: /mc/compute/security-groups/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

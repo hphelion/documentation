@@ -75,7 +75,7 @@ For more information, see [Creating the baremetal.csv file](/helion/openstack/in
 
 ### Set DNS servers by default {#name-resolution}
 
-To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/overstack/name-resolution/) before installation.
+To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
 
 
 ### Prepare the seed cloud host to create the seed VM {#prepseed}

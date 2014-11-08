@@ -17,7 +17,7 @@ navigation:
   - text: HP Helion Development Platform 
     url: /helion/devplatform/
   - text: HP Helion Public Cloud
-    url: /pc-overview/
+    url: /publiccloud/overview/
   - text: HP Cloud Service Automation
     url: /automation/
   - text: HP Cloud OS for Moonshot
@@ -27,22 +27,18 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
-  - text: HP Helion Documentation
-    url: / 
   - text: HP Helion Public Cloud Documentation
-    url: /pc-overview/
+    url: /publiccloud/overview/
   - text: Available Services
-    url: /services/
+    url: /publiccloud/services/
   - text: Language Bindings
-    url: /bindings/
+    url: /publiccloud/bindings/
   - text: APIs
-    url: /api/
+    url: /publiccloud/api/
   - text: CLIs
-    url: /cli/
-  - text: FAQ
-    url: /faq/
+    url: /publiccloud/cli/
   - text: Site Overview 
-    url: /site-overview/
+    url: /publiccloud/site-overview/
 
   mc:
   - text: Overview
@@ -148,9 +144,9 @@ navigation:
     url: /cli/windows/2/release-notes/
   nova-cli:
   - text: Site home page
-    url: /
+    url: /publiccloud/overview/
   - text: Overview
-    url: /cli/nova
+    url: /publiccloud/cli/openstack/
   - text: Installation
     url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
   fog:
@@ -234,6 +230,8 @@ navigation:
     url: /helion/community/install-overview/		
   - text: Related Documentation
     url: /helion/community/related-links/	
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/community/3rd-party-license-agreements/	
   - text: End User License Agreement
     url: /helion/community/eula/
   - text: Site Index
@@ -343,26 +341,24 @@ navigation:
   - text: Site home page
     url: /
   - text: API Overview
-    url: /api/
+    url: /publiccloud/api/
   - text: Identity Service
-    url: /api/identity/
+    url: /publiccloud/api/identity/
   - text: Object Storage
-    url: /api/object-storage/
+    url: /publiccloud/api/object-storage/
   - text: Compute Service
-    url: /api/compute/
+    url: /publiccloud/api/compute/
   - text: Block Storage
-    url: /api/block-storage/
+    url: /publiccloud/api/block-storage/
   - text: CDN
-    url: /api/CDN/
+    url: /publiccloud/api/CDN/
   - text: RDB for MySQL
-    url: /api/dbaas/
+    url: /publiccloud/api/dbaas/
   - text: Load Balancer
-    url: /api/lbaas/
+    url: /publiccloud/api/lbaas/
   - text: DNS
-    url: /api/dns/
+    url: /publiccloud/api/dns/
   - text: Monitoring
-    url: /api/monitoring/
+    url: /publiccloud/api/monitoring/
   - text: ALS Admin Guide
     url: https://apaas-docs.hpcloud.com
-  - text: Messaging
-    url: /api/msgaas/ 

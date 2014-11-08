@@ -30,7 +30,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 **Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/). 
 
 ##Download the Application Files
-[Click here to access the download directory](https://github.com/HelionDevPlatform/helion-mysql-php/).
+[Click here to access the code repository](https://github.com/HelionDevPlatform/helion-mysql-php/).
 
 ##Deploy the Application
 **Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
@@ -48,7 +48,7 @@ Use the Helion client to deploy your app to Helion Development Platform.  If you
 		helion login
 	
 4.	If you are not already there, `cd` to the root directory of the sample.
-5.	Execute 
+5.	Deploy the application by using the command:
 	
 		helion push
 	

@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud Compute Examples"
 permalink: /cli/unix/compute/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

@@ -45,14 +45,14 @@ You can issue the following command using the EON client CLI package in the unde
 
 You can display help for this program or one of its sub-programs.
 
-   	`eon --help `
+   	`eon --help `
 
 
 ###Help Subcommand
 
 You get two sets of arguments: Positional (mandatory) and Optional arguments (all mandatory fields are marked within *[Required]*).
 
-   ` eon help <sub-command> `
+   ` eon help <sub-command> `
 
 
 You can use the following commands to view the help.

@@ -38,7 +38,7 @@ Across the top are menus to switch between projects and menus where you can acce
 <!--
 How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/dashboard/users/).
 -->
-To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/dashboard/login/). 
+To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/community/dashboard/login/). 
 
 **Note:** When accessing Horizon in a virtual environment, use the public network address, not the management network address. In a default configuration, the URL is http://192.0.8.2.
 

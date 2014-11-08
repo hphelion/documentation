@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Managing Images"
 permalink: /mc/compute/images/manage/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

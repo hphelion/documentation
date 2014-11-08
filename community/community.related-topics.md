@@ -7,11 +7,9 @@ product: community
 ---
 <!--PUBLISHED-->
 
+<script>
 
-
-<script> 
-
-function PageRefresh { 
+function PageRefresh {
 onLoad="window.refresh"
 }
 
@@ -19,8 +17,9 @@ PageRefresh();
 
 </script>
 
+<!--
 <p style="font-size: small;"> <a href="/helion/community/dashboard/how-works/">&#9664; PREV</a> | <a href="/helion/community/dashboard/">&#9650; UP</a> | <a href="/helion/community/dashboard/admin/">NEXT &#9654;</a> </p>
-
+-->
 
 # HP Helion OpenStack&reg; Community Related Documentation
 

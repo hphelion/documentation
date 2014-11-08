@@ -3,6 +3,7 @@ layout: default
 title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Folder Operations"
 permalink: /cli/windows/folder-operations/
 product: win-cli
+published: false
 
 ---
 <!--PUBLISHED-->

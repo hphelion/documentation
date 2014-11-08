@@ -2,8 +2,8 @@
 layout: default
 title: "HP Helion Public Cloud: jclouds Binding Block Storage Examples"
 permalink: /bindings/jclouds/block-storage/
-published: true
 product: jclouds
+published: false
 
 ---
 <!--PUBLISHED-->

@@ -34,15 +34,15 @@ Cloud admins can use the ***icinga*** service running in the undercloud to monit
 ##Monitoring Swift Replication Status
 Perform the following steps to monitor the replication status:
 
-1. In the undercloud, log in to the **Icinga Dashboard** (http://&lt;<i>undercloud_IP</i>&gt;/icinga/) The default login credentials are as follows:
+1. In the undercloud, log in to the **Icinga Dashboard** (http://&lt;<i>undercloud_IP</i>&gt;/icinga/). The default login credentials are as follows:
 	* Username: *icingaadmin*
 	* Password: *icingaadmin* 
 
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Details</b> (opens in a new window) </a>.
+2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Details</b></i><!--- (opens in a new window)---></a>.
 
-3. In the **Host** column, click the icon next to the host IP to see <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Host Status Details For All Hosts</b> (opens in a new window)</a>.
+3. In the **Host** column, click the icon next to the host IP to see <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Status Details For All Hosts</i></b><!--- (opens in a new window)----></a>.
 
-4. Click the target Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host <i>IP Address</i></b> (opens in a new window)</a> to see the replication status of the selected Swift node.
+4. Click the target Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host IP Address</i></b> <!---(opens in a new window)---></a> to see the replication status of the selected Swift node.
 
 ##Status Messages
 
@@ -55,12 +55,12 @@ Perform the following steps to monitor the replication status:
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
 	<td>Ok</td>
-    <td>Everything is fine.</td>
+    <td></td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
 	<td>Replication not progressing</td>
-    <td>An account, container or object replicator process has not finished a complete scan recently(elapsed time exceeded the threshold defined) . Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Restarting the relevant process usually resolves the issue.</td>
+    <td>An account, container or object replicator process has not finished a complete scan recently (elapsed time exceeded the threshold defined) . Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</td>
 </tr>
 </tr>
 <tr style="background-color: white; color: black;">
@@ -68,10 +68,10 @@ Perform the following steps to monitor the replication status:
 	<td>Replication never completed</td>
     <td> The named replication process has never run on this node. Check that the replicator has been configured and started. Examine the log files to see if the replicator process has reported problems.</td>
 </tr>
-<!-- <tr style="background-color: white; color: black;">
+<tr style="background-color: white; color: black;">
 	<td>UNKNOWN</td>
 	<td>Not Applicable</td>
-    <td>N/A</td></tr> If it won't appear, why include it?-->
+    <td>N/A</td></tr> 
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

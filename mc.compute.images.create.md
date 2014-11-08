@@ -3,6 +3,7 @@ layout: default
 title: "Management Console: Creating and Deleting Images"
 permalink: /mc/compute/images/create/
 product: mc-compute
+published: false
 
 ---
 <!--PUBLISHED-->

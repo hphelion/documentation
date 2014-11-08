@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud: Articles on how to use the UNIX CLI"
 permalink: /cli/unix/articles/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

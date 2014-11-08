@@ -3,6 +3,7 @@ layout: default
 title: "Release Notes for the HP Helion Public Cloud Environment CLI Software for Python NovaClient"
 permalink: /cli/nova/release-notes/
 product: nova-cli
+published: false
 
 ---
 <!--PUBLISHED-->

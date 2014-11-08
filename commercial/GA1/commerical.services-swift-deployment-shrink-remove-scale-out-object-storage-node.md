@@ -34,12 +34,8 @@ Object nodes can only be removed once all disks have been removed from the node.
 ##Prerequisite {#prer}
 * HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)* 
 * Scale-out object-ring:1 is deployed.
-
-**IMPORTANT**:  
-
-*  All of the rings generated must be preserved preferably at more than one location. Swift needs these rings to be consistent across all nodes.
-* Make a backup of the rings before any operation.
-
+* All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
+* Take a backup of the rings before any operation.
 
 ##Removing disks from ring {#removing-disk}
 
@@ -69,7 +65,7 @@ Perform the following steps to remove the disks from ring:
 
 	Remove drives gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually decrease by 25% until it becomes 0%. The initial weight is 75.
 
-6. Set weight of the disks on the node. 
+6. Set the weight of the disks on the node. 
 
 		# ringos set-weight -f object-1.builder -s d<device> -w <weight>
 
@@ -133,13 +129,13 @@ The following sample displays the output of the stack list:
 
 3.Remove the stack. 
 
-	# heat stack-delete <id number>
+	# heat stack-delete <id>
 
 ##Verify the node removal {#node-removal}
 
 	# nova list
 
-The removed node should not appear in the list.
+A list of nodes appears and the removed node will not be available.
 
 
 

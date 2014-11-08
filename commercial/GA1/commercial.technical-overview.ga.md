@@ -135,7 +135,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	<td><b>DVR services</b></td>
  	<td>HP Helion OpenStack Distributed Virtual Routing (DVR) allows you to define connectivity among different Virtual Network Switches (VNS) as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users.
 	 <br><br> <a href =" /helion/openstack/services/dvr/overview/">Learn more</a> HP Helion OpenStack DVR service.</td> 
-	<td> Administrators can  create centralised router (legacy router).</td>
+	<td> Administrators can  create centralized router (legacy router).</td>
 </tr> 
 </table>
 
@@ -152,15 +152,13 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 	
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
+<img src="media/topology_kvm.png"/)>
 
 
 ###ESX environment {#esx-env}
 
 The following diagram depicts a simplified deployment scenario using ESX.
-
-
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+<img src="media/topology_esx.png"/)>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -389,8 +387,6 @@ The Seed VM is expected to use eth0 to connect to the cluster network (and hence
 
 The physical cluster network can be shared by a number of logical networks, each with its own tagged VLAN and IP subnet. We recommend using at least one such network as the external network, with floating IPs coming from its subnet range. --->
 
-
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Installation planning {#install-configure}
@@ -443,15 +439,19 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for KVM network architecture.(opens in a new window)  </a>
+HP Helion OpenStack architecture diagram for KVM network architecture.
+
+<img src="media/topology_kvm.png"/)>
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-<a href="javascript:window.open('/content/documentation/media/reference-architecture-StoreVirtual-volume-type-mapping.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for Store Virtual volume type mapping (opens in a new window) </a> 
+HP Helion OpenStack architecture diagram for Store Virtual volume type mapping
 
-**Note:** For configuring your HP Helion OpenStack installation to use 3Par for block storage, please go to <add link here>
+<img src="media/reference-architecture-StoreVirtual-volume-type-mapping.png"/> 
 
-#### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {esx-hypervisor}
+**Note:** Your HP Helion OpenStack installation can be configured [to use 3Par for block storage](/helion/openstack/install/3par/).
+
+#### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {#esx-hypervisor}
 
 HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.
 
@@ -459,7 +459,8 @@ An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK
  
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.  
 
-<a href="javascript:window.open('/content/documentation/media/commercial_esx_network_architecture.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
+HP Helion OpenStack architecture diagram for ESX 
+<img src="media/commercial_esx_network_architecture.png"/>
 
 The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
@@ -528,6 +529,8 @@ You can prepare hardware servers and incrementally deploy HP Compute nodes, HP S
 Conversely, you can decommission servers and remove specific nodes from the cloud.
 
 If any of the controller nodes fails, you can remove and replace controller nodes, while re-connecting them automatically into the HA cluster. 
+
+For more information on adding (Scale Out) or removing (Scale In) nodes (KVM Compute Nodes) to an already-installed overcloud on a KVM hypervisor, see [HP Helion OpenStack&#174; Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors](/helion/openstack/install/add/nodes/).
 
 ### Backup and Restore nodes {#backup-restore-nodes}
 

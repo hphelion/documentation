@@ -206,32 +206,37 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
 3. The following steps will configure the load balancer to take advantage of the highly available database service. Only execute these steps if you have configured Availability Zones and selected the "Enable HA" option when configuring the **Database Service**. To perform the following steps you must be connected to the undercloud node.
 	
-	1. Identify the API server IPs on the SVC network:
+	A. Identify the API server IPs on the SVC network:
 
 			$ nova list | awk '/trove[0-9]*_api/{ print $12 }' | cut -d "=" -f 2
 		You should have as many API servers (and IPs) as you have AZs in your Helion OpenStack install.
 
-	2. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion 	OpenStack services:
+	B. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion 	OpenStack services:
 			
 			$ keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
 
-	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
+	C. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
 
-		a. Edit the /etc/haproxy/manual/paas.cfg and add the following lines. The last line should be repeated once for each API server identified in step 1. 
+	1. Edit the /etc/haproxy/manual/paas.cfg and add the following lines. The last line should be repeated once for each API server identified in step 1.
 	
-				listen trove_api
-				bind <Virtual IP from step 2>:8779
-				server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5
+			listen trove_api
+			bind <Virtual IP from step 2>:8779
+			server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5
 
-		b. Edit the /etc/iptables/iptables file and add to the end of it:
+
+	1. Edit the /etc/iptables/iptables file and add to the end of it:
 
 				-I INPUT -p tcp --dport 8779 -j ACCEPT
 
-		c. Run the following command as root:
+
+
+	1. Run the following command as root:
 
 				$ sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
 				
-		d. Reload the haproxy service configuration
+
+
+	1. Reload the haproxy service configuration
 		
 				$ sudo service haproxy reload
 

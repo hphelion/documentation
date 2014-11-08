@@ -5,87 +5,104 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-Kato Command Reference[](#kato-command-reference "Permalink to this headline")
-===============================================================================
+#Kato Command Reference {#kato-command-reference}
+
 [Commands](#commands)
     -   [Command Usage Details](#command-usage-details)
 
 
 Application Lifecycle Service administration utility
 
-Usage[](#usage "Permalink to this headline")
----------------------------------------------
+##Usage {#usage}
 
 **kato** *command* [**-h**] [**--help**] [*arguments*]
 [*command-options*]
 
-Commands[](#commands "Permalink to this headline")
----------------------------------------------------
+##List of Commands {#commands}
 
--   [*config*](#kato-command-ref-config) Manipulate configuration values
+-   [config](#kato-command-ref-config) Manipulate configuration values
     of Application Lifecycle Service components.
--   [*data*](#kato-command-ref-data-export) Import or export Application Lifecycle Service
+-   [data](#kato-command-ref-data) Import or export Application Lifecycle Service
     system data to or from clusters/nodes.
-    -   [*data export*](#kato-command-ref-data-export)
-    -   [*data import*](#kato-command-ref-data-import)
-    -   [*data users*](#kato-command-ref-data-users)
--   [*debug*](#kato-command-ref-debug-configwatch) Commands for
+    -   data export
+    -   data import
+    -   data users
+-   [debug](#kato-command-ref-debug-configwatch) Commands for
     debugging for Application Lifecycle Service internals.
-    -   [*debug configwatch*](#kato-command-ref-debug-configwatch)
-    -   [*debug redis*](#kato-command-ref-debug-redis)
--   [*history*](#kato-command-ref-history) Show the kato commands that
+    -   debug configwatch
+    -   debug redis
+-   [history](#kato-command-ref-history) Show the kato commands that
     have been run
--   [*info*](#kato-command-ref-info) Show information about this node or
-    cluster including assigned and
--   [*inspect*](#kato-command-ref-inspect) Detect common problems with
-    your Application Lifecycle Service install using 'kato inspect'
--   [*log*](#kato-command-ref-log-stream) Logging utilities for Application Lifecycle Service
-    -   [*log drain*](#kato-command-ref-log-drain-add)
-    -   [*log stream*](#kato-command-ref-log-stream)
-    -   [*log tail*](#kato-command-ref-log-tail)
--   [*node*](#kato-command-ref-node-attach) Node management
-    -   [*node attach*](#kato-command-ref-node-attach)
-    -   [*node detach*](#kato-command-ref-node-detach)
-    -   [*node list*](#kato-command-ref-node-list)
-    -   [*node migrate*](#kato-command-ref-node-migrate)
-    -   [*node remove*](#kato-command-ref-node-remove)
-    -   [*node rename*](#kato-command-ref-node-rename)
-    -   [*node reset*](#kato-command-ref-node-reset)
-    -   [*node retire*](#kato-command-ref-node-retire)
-    -   [*node setup*](#kato-command-ref-node-setup-core)
-    -   [*node upgrade*](#kato-command-ref-node-upgrade)
-    -   [*node version*](#kato-command-ref-node-version)
--   [*op*](#kato-command-ref-op) Various operational commands
--   [*patch*](#kato-command-ref-patch) Update an Application Lifecycle Service cluster with
+-   [info](#kato-command-ref-info) Show information about this node or cluster.
+-   [inspect](#kato-command-ref-inspect) Detect common problems with your Application Lifecycle Service installation.
+-   [log](#kato-command-ref-log-stream) Logging utilities for Application Lifecycle Service
+    -   log drain
+    -   log stream
+    -   log tail
+-   [node](#kato-command-ref-node-attach) Node management
+    -   node attach
+    -   node detach
+    -   node list
+    -   node migrate
+    -   node remove
+    -   node rename
+    -   node reset
+    -   node retire
+    -   node setup
+    -   node upgrade
+    -   node version
+-   [op](#kato-command-ref-op) Various operational commands
+-   [other commands](#other)
+	- custom\_ssl\_cert
+	- dhcp
+	- defer
+	- max\_client\_upload
+	- regenerate
+	- remap\_hosts
+	- run\_deferred
+	- set\_timezone
+	- static\_ip
+	- upstream\_proxy
+	- update\_hostsfile
+	- generate\_service\_tokens
+	- help
+	- user
+	- pass
+	- no-restart
+-   [patch](#kato-command-ref-patch) Update an Application Lifecycle Service cluster with
     post-release fixes.
--   [*process*](#kato-command-ref-process-list) Start, stop, or restart
-    individual processes. Generally not required;
-    -   [*process list*](#kato-command-ref-process-list)
-    -   [*process ready*](#kato-command-ref-process-ready)
-    -   [*process restart*](#kato-command-ref-process-restart)
-    -   [*process start*](#kato-command-ref-process-start)
-    -   [*process stop*](#kato-command-ref-process-stop)
--   [*relocate*](#kato-command-ref-relocate) Move containers,
-    application droplets, or services to a new mount point
--   [*report*](#kato-command-ref-report) Generate a report that can be
+-   [process](#kato-command-ref-process-list) Start, stop, or restart
+    individual processes. Generally not required.
+    -   process list
+    -   process ready
+    -   process restart
+    -   process start
+    -   process stop
+-   [relocate](#kato-command-ref-relocate) Move containers, application droplets, or services to a new mount point
+-   [report](#kato-command-ref-report) Generate a report that can be
     sent to Application Lifecycle Service support.
--   [*restart*](#kato-command-ref-restart) Restart Application Lifecycle Service or
+-   [restart](#kato-command-ref-restart) Restart Application Lifecycle Service or
     individual roles.
--   [*role*](#kato-command-ref-role-add) Management of node roles
-    -   [*role add*](#kato-command-ref-role-add)
-    -   [*role info*](#kato-command-ref-role-info)
-    -   [*role remove*](#kato-command-ref-role-remove)
--   [*shell*](#kato-command-ref-shell) Interactive shell for kato
--   [*start*](#kato-command-ref-start) Start Application Lifecycle Service or individual
+-   [role](#kato-command-ref-role-add) Management of node roles
+    -   role add
+    -   role info
+    -   role remove
+-   [shell](#kato-command-ref-shell) Interactive shell for kato
+-   [start](#kato-command-ref-start) Start Application Lifecycle Service or individual
     roles.
--   [*status*](#kato-command-ref-status) List configured roles and their
+-   [status](#kato-command-ref-status) List configured roles and their
     current status across the cluster.
--   [*stop*](#kato-command-ref-stop) Stop Application Lifecycle Service or individual roles.
--   [*version*](#kato-command-ref-version) Display the version of
-    Application Lifecycle Service being run.
+-   [stop](#kato-command-ref-stop) Stop Application Lifecycle Service or individual roles.
+-   [version](#kato-command-ref-version) Display the version of Application Lifecycle Service being run.
 
-Command Usage Details[](#command-usage-details "Permalink to this headline")
------------------------------------------------------------------------------
+##Command Usage Details {#command-usage-details}
+###Config {#kato-command-ref-config}
+Manipulate configuration values  of Application Lifecycle Service components.
+
+*\<value\>* If value is not given for "set", then it read from STDIN.
+
+*\<component\>* Can be "cluster", "local" or the name of a process.
+
 
 **config** **get** [**options**] [*\<component\>*] [*\<key-path\>*]
 
@@ -100,12 +117,6 @@ Command Usage Details[](#command-usage-details "Permalink to this headline")
 **config** **pop** [**options**] *\<component\>* *\<key-path\>*
 *\<value\>*
 
-Manipulates configuration values of Application Lifecycle Service components.
-
-*\<value\>* If value is not given for "set", then it read from STDIN.
-
-*\<component\>* Can be "cluster", "local" or the name of a process.
-
 **-h** **--help** Show help information
 
 **-j** **--json** For "set", use JSON format when setting config key values.
@@ -117,15 +128,19 @@ Manipulates configuration values of Application Lifecycle Service components.
 
 **--force** Force updating value to different type.
 <hr>
+###Data {#kato-command-ref-data}
+Import or export Application Lifecycle Service system data to or from clusters/nodes.
+
+####Data Export
+Exports Application Lifecycle Service system data to or from clusters/nodes. With no options specified, includes all data except 'resources' and 'aok-config'.
+
+*\<filename\>* The filename the export will be written to
+
 **data** **export** **--only-this-node** [**options**] [*\<filename\>*]
 
 **data** **export** **--cluster** [**options**] [*\<filename\>*]
 
 **data** **export** **--manual** [**options**] [*\<filename\>*]
-
-Exports Application Lifecycle Service system data to or from clusters/nodes. With no options specified, includes all data except 'resources' and 'aok-config'.
-
-*\<filename\>* The filename the export will be written to
 
 **-h** **--help** Show help information
 
@@ -262,17 +277,17 @@ metadata
  metadata
 
 <hr>
+####Data Import
+Imports Application Lifecycle Service system data to or from clusters/nodes. With no options
+specified, includes all data except 'resources' and 'aok-config'.
+
+*\<source\>* This can be a hostname or a filename to import from.
 
 **data** **import** **--only-this-node** [**options**] *\<source\>*
 
 **data** **import** **--cluster** [**options**] *\<source\>*
 
 **data** **import** **--manual** [**options**] *\<source\>*
-
-Imports Application Lifecycle Service system data to or from clusters/nodes. With no options
-specified, includes all data except 'resources' and 'aok-config'.
-
-*\<source\>* This can a hostname or a filename to import from
 
 **-h** **--help** Show help information
 
@@ -417,13 +432,13 @@ metadata
 metadata
 
 <hr>
+####Data Users
+ Import or export a list of Application Lifecycle Service users (CSV format).
 
 **data** **users** **import** [**options**] *\<filename\>*
 
 **data** **users** **export** [**options**]
 [**--exclude-password-hashes**] [*\<filename\>*]
-
- Import or export a list of Application Lifecycle Service users (CSV format).
 
  **-h** **--help** Show help information
 
@@ -433,6 +448,8 @@ metadata
  **-d** **--dry-run** Do not import/export anything, just show what will be done
 
 <hr>
+###Debug  {#kato-command-ref-debug-configwatch}
+Commands for debugging for Application Lifecycle Service internals.
 
 **debug** **configwatch** [**options**] [*\<process-name\>...*]
 
@@ -442,17 +459,15 @@ Watch changes to cluster config
 
 **-s** **--no-value** Do not print the value of path
 
-<hr>
-
 **debug** **redis**
 
 Connect to the Redis server used for cluster config via redis-cli
 
 <hr>
+###History {#kato-command-ref-history}
+Show the kato commands that have been run.
 
 **history** [**--help**] [**-n** *\<node-IP\>*] [**--json**]
-
-Show the kato commands that have been run
 
 **-h** **--help** Show help information
 
@@ -462,11 +477,10 @@ cluster node
 **-j** **--json** Output as JSON
 
 <hr>
+###Info {#kato-command-ref-info}
+Show information about this node or cluster including assigned and available roles. 
 
 **info** [**--help**] [**-n** *\<node-IP\>*] [**--json**] [**--yaml**]
-
-Show information about this node or cluster including assigned and
-available roles.
 
 **-h** **--help** Show help information
 
@@ -477,6 +491,9 @@ available roles.
 **-y** **--yaml** Output as YAML
 
 <hr>
+###Inspect {#kato-command-ref-inspect}
+
+Detect common problems with your Application Lifecycle Service installation.
 
 **inspect** [**options**]
 
@@ -485,8 +502,6 @@ available roles.
 **inspect** [**options**] **group** *\<group-name\>*
 
 **inspect** [**options**] **tests** *\<test-name\>...*
-
-Detect common problems with your Application Lifecycle Service install using 'kato inspect'
 
 To run all tests, run:
 
@@ -498,7 +513,6 @@ To use a specific group of tests, run:
 
 To run specific tests, run:
 
-
     kato inspect tests \<test1\> \<test2\> \<test3\>
 
 
@@ -507,32 +521,42 @@ To run specific tests, run:
 **-v** **--verbose** Verbose output
 
 <hr>
+###Log {#kato-command-ref-log-stream}
+Logging utilities for Application Lifecycle Service.
 
 **log** **drain** **add** [**options**] *\<name\>* *\<uri\>*
 [*\<param\>...*]
 
 Add a new log drain.
 
-Examples:
+####Examples:
 
-\# Add a drain to receive system logs
 
-    kato log drain add system\_splunk udp://logs.splunk.com:1234/
 
-\# Add a drain to forward all application and system logs as json
+- Add a drain to receive system logs
 
-    kato log drain add -f json -p apptail,systail app\_sys\_splunk
-    udp://logs.splunk.com:1235/
+   		 kato log drain add system\_splunk udp://logs.splunk.com:1234/
 
-\# Add a drain with a custom or named format,
 
-    kato log drain add -f "{{.Name}}: {{.Text}}" system\_splunk\_2
-    udp://logs.splunk.com:1236/ kato log drain add -f systail-syslog
-    system\_splunk\_2 udp://logs.splunk.com:1236/
 
-\# Passing custom parameters to a drain
+- Add a drain to forward all application and system logs as json
 
-    kato log drain add mydrain redis://localhost:6379 key=logdata
+    		kato log drain add -f json -p apptail,systail app\_sys\_splunk
+    		udp://logs.splunk.com:1235/
+
+
+
+- Add a drain with a custom or named format,
+
+	    kato log drain add -f "{{.Name}}: {{.Text}}" system\_splunk\_2
+	    udp://logs.splunk.com:1236/ kato log drain add -f systail-syslog
+	    system\_splunk\_2 udp://logs.splunk.com:1236/
+
+
+
+- Passing custom parameters to a drain
+
+    	kato log drain add mydrain redis://localhost:6379 key=logdata
 
 **-h** **--help** Show help information
 
@@ -577,19 +601,20 @@ Show the status of all or specified log drains
 
 **log** **stream** [**options**] *\<key\>...*
 
- Examples:
+###Examples:
 
-\# stream cloud events
+- stream cloud events
 
-	kato log stream event
+		kato log stream event
     
-\# stream DEA and app log stream
+- stream DEA and app log stream
 
-    kato log stream systail.dea systail.stager apptail
+    	kato log stream systail.dea systail.stager apptail
 
-\# stream system logs (equivalent to 'kato log tail')
 
-    kato log stream systail
+- stream system logs (equivalent to 'kato log tail')
+
+    	kato log stream systail
 
 *\<key\>* Logyard stream key prefix (eg: systail.dea)
 
@@ -629,6 +654,9 @@ node
 
 **-l** **--local** Only show logs from the current node
 <hr>
+###Node {#kato-command-ref-node-attach}
+
+Node management commands.
 
 **node** **attach** [**options**] *\<core-ip\>*
 
@@ -827,9 +855,12 @@ tests as warnings instead of upgrade failures.
 
 **node** **version** [**options**] [*\<node-IP\>*]
 
-> **-h** **--help** Show help information.
+ **-h** **--help** Show help information.
 
 <hr>
+###Op {#kato-command-ref-op}
+
+Various operational commands.
 
 **op** **--help**
 
@@ -877,8 +908,7 @@ tests as warnings instead of upgrade failures.
 
 **op** **generate\_service\_tokens**
 <hr>
-Various operational commands
-
+###Other commands {#other}
 **custom\_ssl\_cert** Allows admin configuration of custom SSL
 certificates to be used in conjunction with router2g and deployed applications.
 
@@ -916,6 +946,8 @@ URI mapped to the CC's internal IP
 **-r** **--no-restart** Do not restart processes.
 
 <hr>
+###Patch {#kato-command-ref-patch}
+Update an Application Lifecycle Service cluster with post-release fixes.
 
 **patch** **status** [**--all**]
 
@@ -929,8 +961,6 @@ URI mapped to the CC's internal IP
 **patch** **reinstall** [**--only-this-node**] [**--no-restart**]
 *\<patchname\>*
 
-Updates an Application Lifecycle Service cluster with post-release fixes.
-
 **-h** **--help** Show help information
 
 **-a** **--all** Show status for all patches
@@ -941,6 +971,8 @@ cluster will be patched)
 **-r** **--no-restart** Don't restart any roles during patching
 
 <hr>
+###Process {#kato-command-ref-process-list} 
+Start, stop, or restart individual processes. Generally not required.
 
 **process** **list** [**options**] [*\<process\>...*]
 
@@ -963,7 +995,7 @@ Lists configured processes and their current running status.
 
 **-h** **--help** Show help information
 
-**-b** **--block** *\<seconds\>* Block until ready, for max \<seconds\> seconds. If \<seconds\> is 0, then block forever
+**-b** **--block** *\<seconds\>* Block until ready, for max \<seconds\> seconds. If \<seconds\> is 0, then block forever.
 
 **-n** **--node** *\<node-IP\>* Check process on a specific cluster node
 
@@ -982,10 +1014,9 @@ node
 
 **process** **start** [**options**] [*\<process\>...*]
 
-> **-h** **--help** Show help information
->
-> **-n** **--node** *\<node-IP\>* Start process on a specific cluster
-> node
+ **-h** **--help** Show help information
+
+ **-n** **--node** *\<node-IP\>* Start process on a specific cluster node
 
 <hr>
 
@@ -996,6 +1027,8 @@ node
 **-n** **--node** *\<node-IP\>* Stop process on a specific cluster
 node
 <hr>
+###Relocate {#kato-command-ref-relocate}
+Move containers, application droplets, or services to a new mount point or filesystem location.
 
 **relocate** [**-h**] **containers** *\<new\_location\>*
 
@@ -1003,21 +1036,17 @@ node
 
 **relocate** [**-h**] **services** *\<new\_location\>*
 
-Move containers, application droplets, or services to a new mount
-point or filesystem location.
-
 **-h** **--help** Show help information
 <hr>
 
-**report**
+###Report {#kato-command-ref-report}
+Generate a report that can be sent to Application Lifecycle Service support.
 
 **report** **--node** *\<node-IP\>*
 
 **report** **--cluster**
 
 **report** **--help**
-
-Generate a report that can be sent to Application Lifecycle Service support.
 
 **-h** **--help** Show help information
 
@@ -1026,12 +1055,13 @@ Generate a report that can be sent to Application Lifecycle Service support.
 **-n** **--node** *\<node-IP\>* Gather report from a specific cluster node
 
 <hr>
+###Restart {#kato-command-ref-restart}
+
+Restart the Application Lifecycle Service or individual roles.
 
 **restart** [**options**] [*\<role\>...*]
 
 **restart** **--help**
-
-Restart Application Lifecycle Service or individual roles.
 
 **-a** **--all** Also restart core processes
 
@@ -1040,6 +1070,9 @@ Restart Application Lifecycle Service or individual roles.
 **-v** **--verbose** Show process information
 
 <hr>
+###Role {#kato-command-ref-role-add}
+
+Management of node roles.
 
 **role** **add** **--help**
 
@@ -1104,20 +1137,22 @@ node
 **-v** **--verbose** Show process information
 
 <hr>
+###Shell {#kato-command-ref-shell}
+
+Interactive shell for kato.
 
 **shell** [**--help**]
-
-Interactive shell for kato
 
 **-h** **--help** Show help information
 
 <hr>
+###Start {#kato-command-ref-start}
+
+Start Application Lifecycle Service or individual roles.
 
 **start** [**options**] [*\<role\>...*]
 
 **start** **--help**
-
-Start Application Lifecycle Service or individual roles.
 
 **-n** **--node** *\<node-IP\>* Start a specific cluster node
 
@@ -1125,6 +1160,9 @@ Start Application Lifecycle Service or individual roles.
 
 **-v** **--verbose** Show process information
 <hr>
+###Status {#kato-command-ref-status}
+
+List configured roles and their current status across the cluster.
 
 **status** [**options**]
 
@@ -1140,21 +1178,23 @@ cluster
 **-y** **--yaml** Use YAML format for displaying output.
 
 <hr>
+###Stop {#kato-command-ref-stop}
+
+Stop Application Lifecycle Service or individual roles. 
 
 **stop** [**options**] [*\<role\>...*]
 
 **stop** **--help**
-
-Stop Application Lifecycle Service or individual roles.
 
 **-n** **--node** *\<node-IP\>* Stop a specific cluster node
 
 **-v** **--verbose** Show process information
 
 <hr>
-
-**version** [**--help**]
+###Version {#kato-command-ref-version}
 
 Display the version of Application Lifecycle Service being run.
+
+**version** [**--help**]
 
 **-h** **--help** Show help information

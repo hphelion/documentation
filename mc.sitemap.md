@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "HP Helion Public Cloud management console documentation site map"
-permalink: /mc/sitemap/
+permalink: /publiccloud/mc/sitemap/
 product: mc
+published: false
 
 ---
 <!--PUBLISHED-->

@@ -112,6 +112,7 @@ Shrinking removes the clusters from the backend which are allocated to your clou
 
 4. (Optional) Click **Remove All** displayed below the **Existing StoreVirtual Cluster(s)** box to move all the cluster(s) to **Removed StoreVirtual Clusters** box.
 
+
 5. (Optional) Click **Select All** displayed below the **Removed StoreVirtual Clusters** box or select the cluster(s) and click &larr;to move the cluster(s) back to **Existing StoreVirtual Clusters** box.
 
 6. Click **Update**.<br>On successful update, the number of clusters mapped to the backend is updated and displays in the Backend Mapping table in the Configure Cloud page.</br>
@@ -141,7 +142,10 @@ To generate a configuration file, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/undercloud-storevirtual-generate-config.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Generate Configuration Option (opens in a new window)</a>
 
+<!---2. Select the backend for which you want to generate the configuration file.--> 
+
 3. Click **Generate Config** displayed at the top of the page to display Download StoreVirtual Config page.<br> The configuration file downloads automatically. 
+
 
 3. (Optional) Click **Download StoreVirtual Config** link to download the file if the file does not automatically download .<br> A dialog box is displayed.</br>
 
@@ -153,7 +157,6 @@ To generate a configuration file, do the following:
 To update your overcloud with the changes, do the following:
 
 1. SSH to the Seed as root from KVM host.
-
 
 		# ssh root@ <IP address> 
 

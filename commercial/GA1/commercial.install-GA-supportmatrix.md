@@ -31,7 +31,8 @@ This page provides an overview of the hardware and software that is supported fo
 * [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
 * [Software Requirements](#software-requirements)
-	* [Other seed cloud host requirements and recommendations](#otherseed)
+	* [Guest OS Support Matrix](#guestOS)
+	* [seed cloud host requirements and recommendations](#otherseed)
 
 ##Deployment Architecture<a name="deploy-arch"></a>
 
@@ -51,6 +52,9 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
 - [BL465c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137)
 - [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
+- BL460 Gen7
+- BL490c Gen7
+- SL390s Gen7
 
 ### HP Proliant Rack Servers
 
@@ -103,9 +107,11 @@ HP supports the following configurations for HP Helion OpenStack deployment:
    
       * 8Gb FC SAN
       * 10Gb iSCSI CNA/NIC
-      
 
-- 3PAR InForm OS Version: 3.1.3 MU1 
+- 3PAR InForm OS Version: 3.1.3 MU1
+   
+    * HP StoreVirtual 4000 Storage
+
    
      
 ## Hardware Requirements<a name="baremetal"></a>
@@ -116,7 +122,7 @@ You must have the following hardware configuration:
 
 Additional requirements are as follows:
 
-- For systems with multiple NICs, the NICs must not be connected to the same Layer 2 network or VLAN.
+- For systems with multiple NICs, only one NIC may be active or connected.
 - Capable of hosting VMs
 - The boot order configured with Network/PXE boot as the first option:
 	- For example, to set the boot order for a HP SL390, from the iLO prompt enter `set system1/bootconfig1/bootsource5 bootorder=1`.
@@ -292,7 +298,7 @@ or
 -->
 
 
-## Software Requirements <a name="software-requirements"></a>
+## Software Requirements {#software-requirements}
 
 Software requirements for the Seed Cloud Host:
 
@@ -310,11 +316,78 @@ Ubuntu 14.04 with the following packages.
 - virt-manager 
 - chromium-browser
 
+### Guest OS Support Matrix {#guestOS}
+A **Qualified** Guest OS has been tested and will support the Guest OS running on HP Helion OpenStack.
+
+A **Certified** Guest OS has been officially certified with the appropriate vendor of the OS.
+
+<table><tr style="background-color: #808080; color: white; text-align: left; vertical-align: top;">
+<td>OS</td>
+<td>Qualified</td>
+<td>Certified</td>
+</tr>
+<tr>
+<td>Windows 2012 R2
+</td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td> Ubuntu 14.10
+</td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td> Ubuntu 14.04
+ </td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td>Debian 8
+</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr><tr>
+<td>Debian 7
+</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr><tr>
+<td>CentOS 7</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr><tr>
+<td> CentOS 6.5
+</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr><tr>
+<td>RHEL 7.0</td>
+<td>Yes</td>
+<td>No</td>
+</tr><tr>
+<td> 
+ RHEL 6.5
+ </td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>
+ Fedora
+ </td>
+<td>No</td>
+<td>-</td>
+</tr><tr>
+<td>SLES</td>
+<td>No</td>
+<td>-</td>
+</tr>
+</table>
+
+
+### Other seed cloud host requirements and recommendations {#otherseed}
 
 There are no software requirements for the undercloud and overcloud controllers.
-
-
-### Other seed cloud host requirements and recommendations ## {#otherseed}
 
 Other requirements and recommendations for the seed cloud host are as follows:
 

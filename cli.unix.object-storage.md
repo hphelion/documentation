@@ -3,6 +3,7 @@ layout: default
 title: "UNIX CLI for HP Helion Public Cloud Object Storage Examples"
 permalink: /cli/unix/object-storage/
 product: unix-cli
+published: false
 
 ---
 <!--PUBLISHED-->

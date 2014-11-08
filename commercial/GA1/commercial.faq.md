@@ -13,17 +13,18 @@ product: commercial.ga
 
 #HP Helion OpenStack&#174; FAQ#
 
-Welcome! You've got questions? We have the answers.  
+Welcome to FAQ! 
 
-##Understanding HP Helion OpenStack
+This page answers most commonly asked  queries that you might have while working with HP Helion OpenStack.
+
+<!---##Understanding HP Helion OpenStack-->
 
 * [What is HP Helion OpenStack?](#whatHelion)
 * [What does HP Helion OpenStack enable me to do?](#distroenable)
 * [What is TripleO?](#TripleO)
 * [What is a seed?](#whatisseed)  
 * [What is the undercloud?](#whatisundercloud) 
-* [What is the overcloud?](#whatisovercloud) 
-* [What is available in the version announced on June 30th?](#preview)
+* [What is the overcloud?](#whatisovercloud) <!---* [What is available in this release?](#preview)-->
 * [Is the release localized for non-English speaking markets?](#localized) 
 * [Does the HP Helion OpenStack work with hybrid or public cloud projects?](#hybridorpubliccloud)
 * [How many nodes and virtual machines does it support?](#nodes)  
@@ -41,7 +42,7 @@ Welcome! You've got questions? We have the answers.
 
 ####What is HP Helion OpenStack?<a name="whatHelion"></a>
 
-HP Helion OpenStack is a scaled out, hardened and curated commercial-grade product designed to deliver the best open source cloud computing technology in a resilient, maintainable platform. 
+HP Helion OpenStack is a commercial distribution built on OpenStack technology that provides an open, scalable, highly available enterprise-grade cloud software platform to help customers build, manage, and consume hybrid clouds. 
 
 <!-- Removed per Gary's comments I HP Helion OpenStack is the first OpenStack distribution from HP. It is free to download and will be kept updated frequently to stay current with OpenStack developments. It is the foundational technology for all HP Helion products in the future.-->
 
@@ -88,11 +89,11 @@ The overcloud is the functional cloud available to run guest virtual machines an
 
 Setting up the overcloud completes the overall Helion OpenStack installation process. 
 
-####What is available in the version announced on June 30th?<a name="preview"></a>
+<!---####What is available in this version?<a name="preview"></a>
 
 On June 30th, we announced a preview of HP Helion OpenStack that enables you to deploy an OpenStack TripleO-based cloud experience and evaluate the Icehouse release of OpenStack.  
 
-It is available with support for baremetal deployments (up to 30 Compute nodes). We plan to release new versions roughly every six weeks.
+It is available with support for baremetal deployments (up to 30 Compute nodes). We plan to release new versions roughly every six weeks.-->
 
 <!--
 ####When can I expect support for baremetal deployment? #### {#baremetal}
