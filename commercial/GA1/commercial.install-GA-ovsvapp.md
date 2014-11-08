@@ -230,30 +230,30 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 	
 		[vmware]
 		#VCenter IP
-		vcenter_ip=vcenter_ipv4_address
+		vcenter_ip=
 		#Vcenter FQDN(Provide FQDN, only if your vcenter certificate is generated with FQDN)(*OPTIONAL)
-		vcenter_fqdn=vcenter_server.yourcompany.com
+		vcenter_fqdn=
 		#Vcenter username
-		vcenter_username=vcenter_admin_user
+		vcenter_username=
 		#Vcenter password
-		vcenter_password=vcenter_admin_strong_password
+		vcenter_password=
 		#Vcenter HTTPS Port
-		vcenter_https_port=vcenter_https_port_for_connection
+		vcenter_https_port=
 		#Datacenter name
-		datacenter=vcenter_datacenter_name
-		#Clusters on which OVSvApp will be hosted
-		clusters=tenant_cluster1,tenant_cluster2
-		#SSL Communication Settings between OVSvApp and Vcenter(*OPTIONAL)
-		cert_check=true_or_false
+		datacenter=
+		#Clusters on which OVSvAPP will be hosted
+		clusters=
+		#SSL Communication Settings between OVSvAPP and Vcenter(*OPTIONAL)
+		cert_check=
 		#Certificate Path. Must required if cert_check=True(*OPTIONAL)
-		cert_path=/path/to/vcenter/certificate
+		cert_path=
 		
 		[new-host-addition]
 		#Keep this field False for Fresh Installation
-		add_new_hosts=true_or_false
-		#Are this hosts already added to DVS ? True if already part of DVS. False If you want to add. (*Not required if is_new_hosts=False)
+		add_new_hosts=
+		#Hosts in the given cluster are already added to DVS ? True if already part of DVS. False If you want to add.
+		host_in_dvs=
 		#If host_in_dvs=False then Except *OPTIONAL each and every other fields are mandatory.
-		host_in_dvs=true_or_false
 
 	c. Add network port settings.
 	
@@ -261,32 +261,31 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 		#Tenant network type(vlan/vxlan)
 		tenant_network_type=vlan
 		#Do you want to use PCI Pass through.
-		is_pci_passthrough=true_or_false
+		is_pci_passthrough=
 		#If you want to use existing DVS and don't want to create DVS automatically then make it False
-		is_auto_dvs=true_or_false
+		is_auto_dvs=
 		#Unused Physical NIC (same nic across all hosts) to be used for uplink DVS. Make sure no VSS or VDS is using this NIC(*Not required if is_auto_dvs=False).
-		nic_name=physical_nic_name
+		nic_name=
 		#Trunk and Uplink DVS name. For vxlan trunk DVS name will be changed automatically to <DVS_Name>_<ClusterName> (*Not required if is_auto_dvs=False)
-		trunk_dvs_name=trunk_dvs_name
+		trunk_dvs_name=
 		#*Not required if is_pci_passthrough=True
-		uplink_dvs_name=uplink_dvs_name
+		uplink_dvs_name=
 		#Portgroup Names. For vxlan trunk port group will be automatically changed to <Port_Group_Name>_<ClusterName>. For vxlan if is_auto_dvs is false then
 		#manually all the trunk port group name has to be <Trunk_Portgroup_Name>_<Cluster_Name>. And user has to input
 		#only <Trunk_Portgroup_Name>. Because for several clusters we can not take all name as input.
 		#Eg. {'<adapter_type>':'<port_group_name>'}
-		trunk_interface={'vmxnet3':'trunk_port_group_name'}
+		trunk_interface={'':''}
 		#Data and Mgmt Portgroups Name (*Not required if is_pci_passthrough=True)
-		data_interface={'vmxnet3':'uplink_port_group_name'}
-		mgmt_interface={'vmxnet3':'mgmt_port_group_name'}
+		data_interface={'':''}
+		mgmt_interface={'':''}
 		#VLAN ID for Management Port group(*OPTIONAL)
-		mgmt_vlan=mgmt_vlan_id
+		mgmt_vlan=
 		#Start and End IP range for OVSvAPP
-		start_ip_address=ovsvapp_ipv4_start_address
-		end_ip_address=ovsvapp_ipv4_end_address
+		start_ip_address=
+		end_ip_address=
 		#Netmask and gateway for OVSvAPP
-		netmask=ovsvapp_ipv4_netmask
-		gateway_ip=ovsvapp_ipv4_gateway
-
+		netmask=
+		gateway_ip=
 	**Notes**: 
 	- The start IP address and the end IP address is the block of IPs that was reserved from the Management Network for OVSvApp deployment.
 	- The `trunk_interface` must be the VLAN trunk portgroup, as described in the [prerequisites](#prereqs). 
@@ -296,29 +295,29 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 	
 		[template]
 		#Provide the template/appliance name that will be used for cloning
-		template_name=overcloud-esx-ovsvapp
+		template_name=
 
 	e. Specify a name, the number of CPUs, and the amount of RAM  for the deployed OVSvApp.
 
     **Note**: During deployment, the `ovs_vm_name` setting is appended with each VM host name and IP address to appear as `<ovs_vm_name>_<IP>`.
 	
 		[vmconfig]
-		#Number of CPUs for the OVSvApp VM
-		num_cpu=number_of_cpu_for_ovsvapp
-		#Amount of RAM for the OVSvApp VM(In MB)
-		memory_mb=ram_in_mb_for_ovsvapp
-		#SSH key file path for OVSvAPP password less login
-		ssh_key_path=/path/to/ssh/key
+		#Number of CPUs for the OVSvAPP VM
+		num_cpu=
+		#Amount of RAM for the OVSvAPP VM(In MB)
+		memory_mb=
+		#SSH key file path for OVSvAPP password less login.
+		ssh_key_path=
 
 	f. Specify RabbitMQ settings.
 
 		[rabbitmq]
 		#RabbitMQ host(Mulitple hosts can be given by comma separated value)
-		rabbitmq_host=rabbitmq_host_ipv4_address
+		rabbitmq_host=
 		#RabbitMQ user
-		rabbitmq_user=rabbitmq_user_name
+		rabbitmq_user=
 		#RabbitMQ password
-		rabbitmq_pass=rabbitmq_password
+		rabbitmq_pass=
 
 	Where:
 	- controller0 is overcloud controller0
@@ -328,15 +327,14 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 	g. Specify the IP address of your NTP server.
 
 		[ntp]
-		ntp_server=ntp_server_ipv4_address
-
+		ntp_server=
 
 	h. Specify disaster recovery information.
 
 		[disaster-recovery]
-		#If set to True(If you have a DRS enabled cluster), then on OVSvApp crash/kernel panic the host will be put to maintenance mode.
+		#If set to True(If you have a DRS enabled cluster), then on OVSvAPP crash/kernel panic the host will be put to maintenance mode.
 		#Maintenance mode will trigger DRS to migrate the tenant VMS. If set to false, then esx host will be shut down along with all tenant VMs. (*OPTIONAL)
-		esx_maintenance_mode=true_or_false
+		esx_maintenance_mode=
 
 	**Note:** The agent monitoring module monitors the OVSvApp agent and takes the following action when OVSvApp VM's kernel panic occurs. 
 
@@ -347,7 +345,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 
 		[logger]
 		#Log level. Such as DEBUG, INFO
-		log_level=DEBUG_or_INFO
+		log_level=DEBUG
 
 3. Invoke the installer using the following commands:
 
@@ -397,6 +395,12 @@ Enter the following commands to stop and restart the HP VCN networking service (
 
 If you are having issues with the installation or operation of the OVSvApp, review these tips:
 
+- Install prerequisite [python library pyvmomi](https://pypi.python.org/pypi/pyvmomi). You can install the library using the following command:
+
+		pip install --upgrade pyvmomi
+
+	Even if pyvmomi is already installed, run the command again to update the library to get major fixes.
+
 - During installation of OVSvApp VMs on a large scale, OVSvApp VM can hang and installation might not proceed. If this happens, execute the `neutron agent list` command. If the output shows a OVSvApp VM in the `xxx` agent state, rerun the installation for that specific failed OVSvApp VM by specifying the ESX host name in the `new_hosts` field under the `new-host-addition` section of the `ovs_vapp.ini` file.
 
 - In a multiple vCenter environment, during tenant VMs spawn, if a VM fails to spawn on one vCenter server and successfully spawns on another vCenter server, check for stale portgroups, which causes stale OVS Flows. If an OVSvApp agent needs to be restarted, the OVS flows might be slow to be restored. If that happens, restart the agent to stabilize the flows.
@@ -427,19 +431,13 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 ## Cleaning up or deleting the OVSvApp {#clean}
 
-
-
 To clean up or delete the OVSvAPP setup:
 
 1. On the server where you extracted the `ovsvapp.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
 
-2. Modify the `ovs_vapp.ini` file:
+2. Modify the `ovs_vapp.ini` file by entering only the connection details in the [vmware] section.
 
-	a. Enter information for the [vmware] section.
-<br>	b. Leave the 
- 
- 
-by entering only the connection details.
+	Note: You do not need to specify the `Clusters on which OVSvApp will be hosted` value.
 
 3. Run the following commands and follow the instructions:
 
@@ -452,10 +450,11 @@ by entering only the connection details.
 
 		1. Delete all OVSvApps from a Datacenter
 		2. Delete all OVSvApps with Trunk and Uplink VDS from a Datacenter
-		3. Delete all OVSvApps from given Clusters...
-		4. Delete a single or a comma separated list of OVSvApp...
+		3. Delete all OVSvApps from given Clusters
+		4. Delete a single or a comma separated list of OVSvApp
 
-
+	For option 3, you must enter the name of the clusters from which you want to delete the OVSvApp appliances.
+	For option 4, you must enter the name of the OVSvApp applicances you want to delete, separated by a comma.
 
 
 ## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
