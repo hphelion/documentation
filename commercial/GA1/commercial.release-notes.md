@@ -35,7 +35,9 @@ The following features have been added to HP Helion OpenStack, by release.
 ### Features in HP Helion OpenStack 1.0.1 ###
 
 **Defect fixes** - A number of defects were addressed and fixed in this release.
+
 **Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
+
 **Patch update functionality** -- The HP Helion OpenStack 1.0.1 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
 ### Features in HP Helion OpenStack 1.0 ### 
