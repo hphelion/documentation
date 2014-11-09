@@ -185,7 +185,7 @@ If you get this error, perform the below steps:
  
 		# ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
+2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number. <!-- (CORE-1697) -->
 
 The ce&#95;env&#95;json will be displayed as the sample below.
 
@@ -414,7 +414,6 @@ If the update fails, from undercloud node:
 4. [Failure of OVSvAPP deployment](#fails-ovsvapp)
 
 
- 
 ###nova-manage service list does not list the compute service as running {#nova-compute}
 
 **System Behavior/Message**
