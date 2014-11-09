@@ -92,8 +92,7 @@ Review the following topics related to optional and required post-installation s
 - [Back Up and Restore](/helion/openstack/backup.restore/)
 - [High Availability (HA)](/helion/openstack/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
-<!-- - [Configuring your network securely](/helion/openstack/install/security/) 
--->
+- [Configuring your network securely](/helion/openstack/install/security/)
 
 ## Updating HP Helion OpenStack ## {#update}
 
