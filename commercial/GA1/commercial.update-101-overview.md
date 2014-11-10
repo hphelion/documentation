@@ -70,7 +70,7 @@ This section describes what you need to know at a high level to perform an updat
 
 5. After the update is complete:
 	
-	* If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Servcer as a Service), upgrade DNSaaS. For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
+	* If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS. For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 	The process for updating DNSaaS is to uninstall the current version of DNSaaS, then runnig the update package to re-install. Do not attempt to install version 1.0.1 over the previous version. 
 
