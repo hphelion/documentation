@@ -42,7 +42,7 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 
 
 3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon<!-- </b> (opens in a new window)--></b></a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br> 
-The page navigates to <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address &gt;</b> <!---(opens in a new window)---></a> and displays health status of the selected Swift node.
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">health status <!---(opens in a new window)---></a> and displays  of the selected Swift node.
 
 <!--
 4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address </b> <!---(opens in a new window)---></a><!-- to view the health status of the selected Swift node.--->
