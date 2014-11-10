@@ -43,15 +43,15 @@ This section describes what you need to know at a high level to perform an updat
  
 1.	The first step of an [update is to obtain the patch update package](/helion/openstack/update/download/101/) using the Helion Horizon HDN client or the Helion catalog.
 
-	- In general, patch updates can be downloaded to the undercloud using the Sherpa UI, which is the Helion Horizon HDN client. The client can be found on the Updates and Extensions tab in the Helion Dashboard on the overcloud. 
+- In general, patch updates can be downloaded to the undercloud using the Sherpa UI, which is the Helion Horizon HDN client. The client can be found on the Updates and Extensions tab in the Helion Dashboard on the overcloud. 
 
-	- For clouds that do not have Internet access, use the Helion catalog to download the update and then copy the update to the undercloud using the Sherpa import feature.  
+- For clouds that do not have Internet access, use the Helion catalog to download the update and then copy the update to the undercloud using the Sherpa import feature.  
 
 2.	Prior to performing an update you must know your cloud infrastructure.  This is vital so that you can choose a path that helps meet your system needs.  Important things to know about your cloud infrastructure are:
 	
-	* Which additional services and software you have installed, such as the HP Development Platform for Helion.  If you know the recommended update plans for these services, that can help you plan your overall Helion update.
+* Which additional services and software you have installed, such as the HP Development Platform for Helion.  If you know the recommended update plans for these services, that can help you plan your overall Helion update.
 
-	* Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the [Compute (n-scale, not ESX)](/helion/openstack/update/overcloud/101/) section of *Updating the Overcloud*. 
+* Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the [Compute (n-scale, not ESX)](/helion/openstack/update/overcloud/101/) section of *Updating the Overcloud*. 
 
 3.	Each patch update package will be unique, containing only the images of the node types that need to be updated.  
 
@@ -72,7 +72,7 @@ This section describes what you need to know at a high level to perform an updat
 	
 	* If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS. For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
-	The process for updating DNSaaS is to uninstall the current version of DNSaaS, then runnig the update package to re-install. Do not attempt to install version 1.0.1 over the previous version. 
+		The process for updating DNSaaS is to uninstall the current version of DNSaaS, then runnig the update package to re-install. Do not attempt to install version 1.0.1 over the previous version. 
 
 	* Review [Configuring Your Network Securely](/helion/openstack/install/security/) for information on configuring your HP Helion OpenStack deployment to protect against external abuse and insider abuse or administrative errors.
 
