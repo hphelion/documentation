@@ -199,7 +199,7 @@ Once the update of undercloud node is complete, you should backup the node in ca
 
 Upgrade the overcloud. 
 
-For installation instructions, see [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
+For installation instructions, see [Updating the Overcloud](/helion/openstack/update/overcloud/101/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
