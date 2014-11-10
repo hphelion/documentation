@@ -187,10 +187,11 @@ Review the following topics related to Swift deployment:
 
 - Shrink or scale down
 
-	- [Remove a disk from an Object Node](/helion/openstack/services/swift/deployment/remove-existing-disk/)
-	- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
-	- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
-
+	- [Shrink Swift Cluster](/helion/openstack/services/object/swift/shrink-cluster/) 
+		- [Remove a disk from an Object Node](/helion/openstack/services/swift/deployment/remove-existing-disk/)
+		- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
+		- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
+	
 - Monitor
 	- [Monitor Swift Cluster](/helion/openstack/services/object/swift/Monitor-cluster/)
 	- [Disk usage](/helion/openstack/services/object/swift/Monitor-disk/)
