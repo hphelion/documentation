@@ -5,7 +5,7 @@ permalink: /helion/openstack/siteindex/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -22,6 +22,8 @@ PageRefresh();
 -->
 
 # HP Helion OpenStack&#174; Site Index
+
+The documentation for HP Helion OpenStack includes the following:
 
 * [Release Notes](#release)
 * [Getting started with HP Helion OpenStack](#getstart)
@@ -90,8 +92,7 @@ Review the following topics related to optional and required post-installation s
 - [Back Up and Restore](/helion/openstack/backup.restore/)
 - [High Availability (HA)](/helion/openstack/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
-<!-- - [Configuring your network securely](/helion/openstack/install/security/) 
--->
+- [Configuring your network securely](/helion/openstack/install/security/)
 
 ## Updating HP Helion OpenStack ## {#update}
 
@@ -104,7 +105,7 @@ Review the following topics before you start an update:
 * [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/)
 * [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
 * [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
-* [Updating the Development-Platform Services](/helion/openstack/update/devplat/101/)
+* [Starting and Stopping the Development-Platform Services for the Upgrade](/helion/openstack/update/devplat/101/)
 * [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
 
 

@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/monitor/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
