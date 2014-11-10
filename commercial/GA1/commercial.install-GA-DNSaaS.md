@@ -43,7 +43,7 @@ It is important to read through this page before starting your installation as i
 ##Prerequisites {#preq}
 
 * HP Helion OpenStack Installation
-* DNSaaS Installer Image </br>
+* DNSaaS Installer Image <br /> 
 	**Caution**: Before migrating to DNSaaS 1.0.1, you must first uninstall DNSaaS 1.0. Do **not** attempt to install version 1.0.1 over the previous version.
 * Obtain [Target Credentials](#target-cred): credentials of the user+tenant where the service is to be deployed.
 	* This user should have the **admin** and  **\_member_** roles.
@@ -124,11 +124,11 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 ###Publish CSU contents
 
 1. Log in to the Horizon dashboard using **Target Credentials**. 
-2. Click **Admin** Tab in the left panel.<br> The tab displays an option in the left panel.
+2. Click **Admin** Tab in the left panel.<br />  The tab displays an option in the left panel.
 3. Click **Updates and Extensions** and then select **Updates and Extensions** to open the Updates and Extensions page.
 4. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
 
-5. Log in with Helion Content Delivery Network credentials. <br>If you do not yet have login credentials for the Helion Delivery Network, create an account.
+5. Log in with Helion Content Delivery Network credentials. <br /> If you do not yet have login credentials for the Helion Delivery Network, create an account.
 
 	a. On the Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
 
@@ -136,8 +136,8 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
 	c. Click **Configure** in the top-right corner of the page to display the Configure dialog box.
 
-	d. Click **Sign up Now** below the description in the Configure dialog box.<br>
-       The page navigates to the HP Helion Product Catalog. Then, do the following:</br> 
+	d. Click **Sign up Now** below the description in the Configure dialog box.<br /> 
+       The page navigates to the HP Helion Product Catalog. Then, do the following:<br />  
     
 	e. Click **Sign In** in the top of the page to open the HP Web ID dialog box.
 
@@ -147,7 +147,7 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
   
 	h. Select the check box next to **I agree to the Terms of Use** to accept the terms and conditions.
 
-	i. Click **Submit**.</br>The credentials are authenticated and the account is created. </br>		Once you register on the HP Helion Product Catalog, you are required to configure your credentials.
+	i. Click **Submit**.<br /> The credentials are authenticated and the account is created. <br /> Once you register on the HP Helion Product Catalog, you are required to configure your credentials.
 6. Click **Download** against the package that you want to download on your local system from a  list of .csu file. 
 8. Select the appropriate file (for example: **dns.csu**) from the list and click **Publish**. 
 9. Click **Publish** to install the package. 
@@ -158,7 +158,7 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 1. Log in to the Horizon dashboard using **Target Credentials**.
 2. Click **Project**. The tab displays an option in the left panel.
 3. Click **Compute**  and then select **Images** to open the Image page.
-4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_1.0.0.30** to launch this image. </br>
+4. Select the image file from the list and click **Launch**. For example: select  **dnsaas-installer_1.0.0.30** to launch this image. <br />
 	A Launch Instance dialog box displays with five tabs: Details Tab, Access & Security Tab, Networking Tab, Post-Creation Tab and Advance Options. By default, Details is the active tab.
 
 5. On the Details Tab, do the following:
