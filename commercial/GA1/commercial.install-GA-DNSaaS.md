@@ -58,36 +58,32 @@ It is important to read through this page before starting your installation as i
 	* Tenant/Project Name
 * A generated SSH Key for accessing the Service VMs
 * A chosen backend driver and its prerequisites:
-	* PowerDNS (self hosted) 
-    
+	* PowerDNS (self hosted)  
 		A domain name for the nameservers ("Namesever FQDNs"). For example, if your nameservers are to be named *ns1.mycompany.com*, you will need the *mycompany.com* domain.
 
-* Microsoft DNS (self-hosted)
-	* At least one Microsoft DNS server installed and configured
-	* Knowledge of the FQDNs for all MS DNS servers to be used ("Namesever FQDNs")
+	* Microsoft DNS (self-hosted)
+		* At least one Microsoft DNS server installed and configured
+		* Knowledge of the FQDNs for all MS DNS servers to be used ("Namesever FQDNs")
 
-* DynECT (3rd Party)
-
-	* An active service contract with DynECT
-	* Knowledge of the FQDNs for all DynECT nameservers allocated to your account ("Namsever FQDNs")
+	* DynECT (3rd Party)
+		* An active service contract with DynECT
+		* Knowledge of the FQDNs for all DynECT nameservers allocated to your account ("Namsever FQDNs")
 	
-		-     ns1.p13.dynect.net.
-		-     ns2.p13.dynect.net.
-		-     ns3.p13.dynect.net.
-		-     ns4.p13.dynect.net.
+			-     ns1.p13.dynect.net.
+			-     ns2.p13.dynect.net.
+			-     ns3.p13.dynect.net.
+			-     ns4.p13.dynect.net.
+		* API credentials for DynECT
+			* Customer Name
+			* Username
+			* Password
 
-	* API credentials for DynECT
-		* Customer Name
-		* Username
-		* Password
-
-* Akamai (3rd Party)
-	* An active service contract with Akamai
-	* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namesever FQDNs")
-		
-	* API credentials for Akamai
-		* Username
-		* Password
+	* Akamai (3rd Party)
+		* An active service contract with Akamai
+		* Knowledge of the FQDNs for all Akamai nameservers allocated to your account ("Namesever FQDNs")
+		* API credentials for Akamai
+			* Username
+			* Password
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
