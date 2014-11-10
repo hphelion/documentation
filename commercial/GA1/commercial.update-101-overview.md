@@ -37,15 +37,16 @@ There are multiple ways to update your cloud. This HP Helion OpenStack documenta
 * [Update Troubleshooting](#trouble)
 * [Next Steps](#next-steps)
 
+
 ## Overview of the Update Process {#overview}
 
 This section describes what you need to know at a high level to perform an update. 
- 
+
 1. The first step of an [update is to obtain the patch update package](/helion/openstack/update/download/101/) using the Helion Horizon HDN client or the Helion catalog:
 
-	- In general, patch updates can be downloaded to the undercloud using the Sherpa UI, which is the Helion Horizon HDN client. The client can be found on the Updates and Extensions tab in the Helion Dashboard on the overcloud. 
+	In general, patch updates can be downloaded to the undercloud using the Sherpa UI, which is the Helion Horizon HDN client. The client can be found on the Updates and Extensions tab in the Helion Dashboard on the overcloud. 
 
-	- For clouds that do not have Internet access, use the Helion catalog to download the update and then copy the update to the undercloud using the Sherpa import feature.  
+	For clouds that do not have Internet access, use the Helion catalog to download the update and then copy the update to the undercloud using the Sherpa import feature.  
 
 2. Prior to performing an update you must know your cloud infrastructure.  This is vital so that you can choose a path that helps meet your system needs.  Important things to know about your cloud infrastructure are:
 
