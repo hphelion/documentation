@@ -146,8 +146,6 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [DNS Service Overview](/helion/openstack/services/dns/overview/)
 - [DVR Service Overview](/helion/openstack/services/dvr/overview/)
 - [EON Service Overview](/helion/openstack/services/eon/overview/)
-- [Eve Service Overview](/helion/openstack/services/eve/overview/)
-- [Focus Service Overview](/helion/openstack/services/focus/overview/)
 - [Horizon Service Overview](/helion/openstack/services/horizon/overview/)
 - [Identity Operations Service Overview](/helion/openstack/services/identity/overview/)
 - [Image Operations Service Overview](/helion/openstack/services/imaging/overview/)
@@ -155,13 +153,18 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Networking Operations Service Overview](/helion/openstack/services/networking/overview/)
 - [Object Operations Service Overview](/helion/openstack/services/object/overview/)
 - [Orchestration Service Overview](/helion/openstack/services/orchestration/overview/)
-- [Reporting Service Overview](/helion/openstack/services/reporting/overview/)
 - [Sherpa Service Overview](/helion/openstack/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/services/sirius/overview/)
 	- [Sirius CLI Workflow](/helion/openstack/sirius/cli/workflow)
 	- [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
 - [Tripleo Service Overview](/helion/openstack/services/tripleo/overview/)
 - [Volume Operations Service Overview](/helion/openstack/services/volume/overview/)
+
+<!-- Not in 1.0.1
+- [Eve Service Overview](/helion/openstack/services/eve/overview/)
+- [Focus Service Overview](/helion/openstack/services/focus/overview/)
+- [Reporting Service Overview](/helion/openstack/services/reporting/overview/) -->
+
 
 
 ## Swift Deployment ## {#swift}
