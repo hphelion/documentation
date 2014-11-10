@@ -48,7 +48,7 @@ Prior to getting a system ready for update and performing the update, there migh
 		ssh heat-admin@<undercloudIP>
 		sudo -i
 
-2.	Prior to starting update you need to verify you are running Ububtu that is greater than 3.13.0-36 on your seed host machine. 
+2.	Prior to starting update you need to verify you are running Ubuntu that is greater than 3.13.0-36 on your seed host machine. 
 
 	Verifying and obtaining the correct kernel may vary depending on distribution.  From a command prompt seed cloud host run the following command to verify the operating system and current version:
 
@@ -104,7 +104,7 @@ The directory where the files where stored can be found by looking in the `Repos
 	{
 	'directory': '/tmp/heat_templates',
 
-When extracting the update files, use the directroy set in `/etc/sherpa/sherpa.conf`.
+When locating the update files, use the directory set in `/etc/sherpa/sherpa.conf`.
 
 
 ## Gather information needed for update {#info}

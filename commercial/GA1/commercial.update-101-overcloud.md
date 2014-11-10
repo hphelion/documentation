@@ -35,19 +35,21 @@ If the Readme.txt does not list any overcloud nodes, the update is complete.
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
 
-## Prerequisites ## {#pre}
+## Prerequisites for the overcloud update ## {#pre}
 
 Before you begin the update:
+
+* If the undercloud needed updating, perform this update before updating the overcloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/undercloud/101/)
 
 * Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in [Back Up and Restore](/helion/openstack/backup.restore/#overcloud).
 
 * Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
-* Point the install script to the overcloud. The patch update script is based on the Ansible platform. When patching the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.
+* Point the install script to the overcloud. The patch update scripts are based on the Ansible platform. When patching the overcloud, because the script is launched from the seed VM, you need to point the script to the overcloud node.
 
 	To point the script to update the overcloud, use the following steps:
 
-	a. Copy the `stackrc` file it from the undercloud and rename the file for the undercloud:
+	a. Copy the `stackrc` file from the undercloud and rename the file for the undercloud:
 
 		ssh heat-admin@<Undercloud IP>
 		sudo -i
@@ -92,7 +94,7 @@ Before you begin the update:
 
 There are two methods to update the overcloud: 
 
-* [Automatic upgrade using the helper script](#upgradescript)
+* [Upgrade using the helper script](#upgradescript)
 * [Manual upgrade](#upgrademanual)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
@@ -123,7 +125,7 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 	
 	**Note:** The script will detect if a node fails to update. If such a failure is detected the script will exit.  When this happens you should refer to the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) document for known workarounds.
 
-4. When the update is done, validate the update. 
+4. When the node update is done, validate the updated node. 
 
 **Note:**  If your cloud has ESX host and the update includes new images for ESX Proxy and ESX OVSvAPP, refer to [Redeploy Compute Proxy and OVSvAPP on ESX Host](#redeploy) after updating Controller Management node and before proceeding to controller nodes.
 
@@ -165,7 +167,7 @@ To manually update the overcloud nodes:
  
 		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -e single_controller=True  -l <IP of controller mgmt> -e controllermgmt_rebuild_image_id=<glance Image_ID of  overcloud-control-mgmt> playbooks/update_cloud.yml
 
-2. Verify that the management controller is running by performing the following steps, from a separate SSH window:
+2. Verify that the management controller is running by performing the following steps, from a separate seed SSH window:
 
 	a. SSH into overcloud-controller-mgmt node:
 
@@ -175,7 +177,7 @@ To manually update the overcloud nodes:
 		nova list
 		heat stack-list
 		glance image-list
-		msql 
+		mysql 
 
 	b. Run `progress.sh` script to validate that the image ID matches the one expected by the update by running the following command:
 
@@ -265,7 +267,7 @@ To do this, migrate the workloads to nodes that will not be down during a partic
 
 3.	Migrating hosts is outside the scope of this document, however using the list and availability zone info a user can use techniques. See [Migrate instances](http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html) and [Configure migrations](http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html) to migrate workloads to a specific node.
 
-4.	If this update affects several maintenance cycles, you can run the helper script to see where they are in the update process.  
+4.	If this update affects several maintenance cycles, you can run the progress script to see where they are in the update process.  
 
 	**One at a time:**
 
@@ -332,12 +334,6 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 ## Restart the HP Helion Development Platform {#devplat}
 
 After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplat/101/). 
-
-## Next Steps {#next-steps}
-
-Upgrade the undercloud. 
-
-For installation instructions, see [Updating the Undercloud](/helion/openstack/update/undercloud/101/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
