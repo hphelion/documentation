@@ -21,10 +21,12 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Updating the Overcloud
-
+<!-- No README in 1.0.1
 The *Readme.txt* that comes with a patch update lists the nodes that need to be updated as a result of this patch. This file is located in the directory described in the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) of the Update Prerequisites.  
 
-If the Readme.txt does not list any overcloud nodes, the update is complete.
+If the Readme.txt does not list any overcloud nodes, the update is complete. -->
+
+Use the this document when updating the overcloud nodes.
 
 * [Prerequisites](#prereqs)
 * [Update the overcloud](#update)
@@ -334,6 +336,13 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 ## Restart the HP Helion Development Platform {#devplat}
 
 After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplat/101/). 
+
+
+## Next Steps {#next-steps}
+
+If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Servcer as a Service), upgrade DNSaaS. 
+
+For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
