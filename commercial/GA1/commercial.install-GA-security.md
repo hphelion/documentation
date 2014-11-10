@@ -296,7 +296,7 @@ The following table describes the data flow between Helion nodes and StoreVirtua
 <td>6</td><td>CMC to StoreVirtual <br>Recommended to install on the seed cloud host</td><td>CMC</td><td>StoreVirtual</td><td>See Reference 2 below</td>
 </table>
 
-Jump to [Reference 2: [HP4000 SAN - SANiQ TCP and UDP Port Usage](#ref2).
+Jump to [Reference 2: HP4000 SAN - SANiQ TCP and UDP Port Usage](#ref2).
 
 [Figure 6](#fig6) depicts a logical deployment after applying ACLs for flows in table:
 
@@ -376,7 +376,7 @@ StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Sto
 Use the following resources when securing the network:
 
 1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage - Network design considerations and best practices</a> (PDF)<!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
-<a name="ref2">2. [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf) (PDF)
+2. <a name="ref2">[HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf) (PDF)
 3. [StoreVirtual information](http://hp.com/go/storevirtual)
 4. [StoreServ information](http://hp.com/go/storeserv)
 5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
