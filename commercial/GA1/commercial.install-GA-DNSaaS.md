@@ -42,7 +42,7 @@ It is important to read through this page before starting your installation as i
 
 
 ##Prerequisites {#preq}
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first uninstall DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
 
 * HP Helion OpenStack Installation
 * DNSaaS Installer Image <br /> 
