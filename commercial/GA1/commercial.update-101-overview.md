@@ -68,6 +68,8 @@ This section describes what you need to know at a high level to perform an updat
 
 	Throughout the update process you may be asked for particular IP addresses or image IDs to perform a particular manual step.  Steps on how to obtain these are listed in the [Update Prerequisites](/helion/openstack/update/prereqs/101/).
 
+5. After the update is complete, review [Configuring Your Network Securely](/helion/openstack/install/security/) for information on configuring your HP Helion OpenStack deployment to protect against external abuse and insider abuse or administrative errors.
+
 ## About the Update Options ## {#options}
 
 There are two ways to update once you have laid out your update plan: 
