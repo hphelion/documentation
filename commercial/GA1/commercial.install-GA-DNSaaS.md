@@ -26,7 +26,7 @@ Our managed DNS service, based on the OpenStack Designate project, is engineered
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first uninstall DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
 
 
 - [Prerequisites](#preq)
@@ -37,6 +37,7 @@ It is important to read through this page before starting your installation as i
 - [Installing and Configuring DNSaaS](#configure)
 - [Configure the Overcloud Load Balancer for DNSaaS](#configovercloud)
 - [Registering the Service with Keystone](#keyreg)
+- [Uninstalling DNaaS](#uninstall)
 - [More Information](#moreinfo)
 
 
@@ -377,7 +378,7 @@ If you are using Microsoft DNS Server you should perform the following additiona
 
 The installer VM is no longer required. Archive the configuration file and the SSH public and private keys used and optionally delete the dnsaas-installer instance.
 
-##Uninstall DNaaS
+##Uninstall DNaaS {#uninstall}
 
 To uninstall the DNaaS:
 
