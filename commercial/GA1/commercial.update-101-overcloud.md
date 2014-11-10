@@ -340,7 +340,7 @@ After the update is complete, you can execute a script to restart the service. S
 
 ## Next Steps {#next-steps}
 
-If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Servcer as a Service), upgrade DNSaaS. 
+If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), upgrade DNSaaS. 
 
 For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
