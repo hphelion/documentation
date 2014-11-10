@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/security/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION--> 
+<!--PUBLISHED--> 
 
 
 <script>
@@ -181,7 +181,7 @@ To protect against external attacks on Helion services, your firewall should be 
 Object Operations (Swift) service requests travel from the external network to an HA proxy on an overcloud controller, which then forwards the request to a Object Operations node over the Management network. By default, this traffic travels over a flat network, as shown in [Figure 3](#fig3): 
 
 ##### Figure 3: Object Operations in a flat deployment {#fig3}
-<img src="content/documentation/media/Helion_Security3.png">
+<img src="media/Helion_Security3.png">
  
 You can choose to configure rules in your network devices to apply additional security controls to protect against attacks, insider abuse or mistakes.  For example, your router could block any requests directly to the Object Operations nodes nodes from Compute nodes.  Valid user requests from the Compute nodes will be passed through the HA proxy on the Controller nodes. 
 
@@ -392,7 +392,10 @@ The ESX network is used for:
 [Figure 9](#fig9) depicts the following Logical deployment of the ESX Integration in HP Helion OpenStack.
 
 ##### Figure 9: ESX Integration in a logical deployment {#fig9}
-<img src="media/Helion_Security9.png"/>
+<img src="media/Helion_Security9_50.png"/>
+
+<a href="javascript:window.open('/content/documentation/media/Helion_Security9.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
+
 
 The following table describes the data flow between HP Helion OpenStack nodes and ESX nodes:
 

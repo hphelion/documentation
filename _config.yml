@@ -27,6 +27,8 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
+  - text: HP Helion Documentation
+    url: /
   - text: HP Helion Public Cloud Documentation
     url: /publiccloud/overview/
   - text: Available Services
@@ -41,6 +43,8 @@ navigation:
     url: /publiccloud/site-overview/
 
   mc:
+  - text: HP Helion Documentation
+    url: /
   - text: Overview
     url: /mc/
   - text: Main Dashboard
@@ -48,6 +52,8 @@ navigation:
   - text: Console Pages Site Map
     url: /mc/sitemap/
   mc-compute:
+  - text: HP Helion Documentation
+    url: /
   - text: Console Overview
     url: /mc/
   - text: Servers Screen
@@ -67,6 +73,8 @@ navigation:
   - text: Console Pages Site Map
     url: /mc/sitemap/
   mc-object-storage:
+  - text: HP Helion Documentation
+    url: /
   - text: Console Overview
     url: /mc/
   - text: Object Storage Dashboard
@@ -74,7 +82,7 @@ navigation:
   - text: Use Cases
     url: /mc/object-storage/use-cases/
   unix-cli:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /cli/unix/
@@ -101,7 +109,7 @@ navigation:
   - text: Release Notes
     url: /cli/unix/release-notes/
   win-cli:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /cli/windows/
@@ -122,7 +130,7 @@ navigation:
   - text: Release Notes
     url: /cli/windows/release-notes/
   win-2-cli:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /cli/windows/2/
@@ -143,6 +151,8 @@ navigation:
   - text: Release Notes
     url: /cli/windows/2/release-notes/
   nova-cli:
+  - text: HP Helion Documentation
+    url: /
   - text: Site home page
     url: /publiccloud/overview/
   - text: Overview
@@ -150,7 +160,7 @@ navigation:
   - text: Installation
     url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
   fog:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /bindings/fog/
@@ -169,7 +179,7 @@ navigation:
   - text: Release Notes
     url: /bindings/fog/release-notes/
   jclouds:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /bindings/jclouds/
@@ -180,6 +190,8 @@ navigation:
   - text: Object Storage Examples
     url: /bindings/jclouds/object-storage/
   cloudos:
+  - text: HP Helion Documentation
+    url: /
   - text: HP Cloud OS Home  (Deprecated)
     url: /cloudos/
   - text: Prepare
@@ -196,8 +208,6 @@ navigation:
     url: /cloudos/openstack/	
   - text: Site Index
     url: /cloudos/siteindex/
-  - text: HP Helion Documentation
-    url: /
   moonshot:
   - text: HP Helion Documentation
     url: /
@@ -281,7 +291,7 @@ navigation:
   - text: HP Helion OpenStack Documentation Home
     url: /helion/openstack/
   - text: Release Notes
-    url: /helion/openstack/release-notes/ 
+    url: /helion/openstack/release-notes/101/ 
   - text: FAQ
     url: /helion/openstack/faq/  
   - text: Technical Overview
@@ -292,12 +302,8 @@ navigation:
     url: /helion/openstack/support-matrix/ 		
   - text: Installation & Configuration Overview
     url: /helion/openstack/install/overview/	
-  - text: Installation Prerequisites
-    url: /helion/openstack/install/prereqs/
-  - text: Installation for KVM Hypervisor
-    url: /helion/openstack/install/kvm/
-  - text: Installation for ESX Hypervisor
-    url: /helion/openstack/install/esx/
+  - text: Update Overview
+    url: /helion/openstack/update/overview/101/
   - text: Back Up and Restore
     url: /helion/openstack/backup.restore/
   - text: Troubleshooting

@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/troubleshooting/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -38,7 +38,8 @@ This document describes known issues that you might encounter while updating. To
 * [RabbitMQ still running when restart is attempted](#rabbitmq)
 * [Instance reported as powering on but the instance is in shutoff state](#shutoff)
 * [State drive /mnt is not mounted](#mnt)
-* [Ironic intermitently set maintenance mode to True during installation](#ironic)
+* [Ironic intermittently set maintenance mode to True during installation](#ironic)
+* [During ansible execution to update undercloud was observer a lock problem in ironic](#ansible)
 
 ## Retrying failed actions ## {#retry}
 
@@ -50,11 +51,11 @@ optionally re-attempt or resume playbook executions.
 
 **Solutions**
 
-1. Ansible ansible-playbook command option --start-at-task="TASK NAME" allows resumption of a playbook, when used with the -l limit option.
+1. The Ansible ansible-playbook command option *--start-at-task="TASK NAME"* allows resumption of a playbook when used with the *-l* limit option.
 
 		ansible-playbook --start-at-task="<TASK NAME>" -l
 
-2. Ansible ansible-playbook command option --step allows a user to confirm each task executed by Ansible before it is executed upon.
+2. The Ansible ansible-playbook command option *--step* allows a user to confirm each task executed by Ansible before it is executed upon.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -83,7 +84,7 @@ After an error, the `nova list` command shows a node in `ERROR` state.
 
 ## MySQL CLI configuration file missing ## {#mysqlmissing}
 
-If the post-rebuild restart fails, it is possible that the MySQL CLI configuration file is missing.
+If the post-rebuild restart fails, it is possible that the MySQL CLI configuration file is missing. <!-- ANSUPDATE-116 -->
 
 **Symptoms:**
 
@@ -159,19 +160,16 @@ If the update was aborted or failed during the update sequence before a single M
 
 		sudo /etc/init.d/mysql bootstrap-pxc
 
-	**IMPORTANT:** The `/etc/init.d/mysql bootstrap-pxc` command should only ever be executed when an entire MySQL cluster is down, and then only on the last node to have been shut down.  Running this command on multiple nodes will cause the MySQL cluster to enter a *split brain* scenario effectively breaking the cluster, which will result in unpredictable behavior.
+	**IMPORTANT:** The `/etc/init.d/mysql bootstrap-pxc` command should only ever be executed when an entire MySQL cluster is down, and then only on the last node to have been shut down.  Running this command on multiple nodes will cause the MySQL cluster to enter a "split brain" scenario, effectively breaking the cluster, which results in unpredictable behavior.
 
-	Split brain syndrome occurs when a cluster of nodes is dividedinto smaller clusters, each of which believes it is the only active cluster. 
+	"Split brain" syndrome occurs when a cluster of nodes is divided into smaller clusters, each of which believes it is the only active cluster. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ## MySQL/Percona/Galera is out of sync ## {#mysqlsync}
 
-OpenStack is configured to store all of its state in a multi-node
-synchronous replication Percona XtraDB Cluster database, which uses
-Galera for replication. This database must be in sync and have the full
-complement of servers before updates can be performed safely.
+Helion OpenStack is configured to store all of its state in a multi-node synchronous replication Percona XtraDB Cluster database, which uses Galera for replication. This database must be in sync and have the full complement of servers before updates can be performed safely.
 
 **Symptoms:**
 
@@ -241,7 +239,7 @@ However, based on sequence, the current node should not be the last node.  As a 
 
 **Solution:**
 
-1. Run the `pre-flight_check.yml` playbook.  It will atempt to restart MySQL on each node in the `Ensuring MySQL is running` step.  If that step succeeeds, you should be able to re-run the playbook and not encounter "Node appears to be last node in a cluster" error.
+1. Run the `pre-flight_check.yml` playbook.  It will attempt to restart MySQL on each node in the `Ensuring MySQL is running` step.  If that step succeeds, you should be able to re-run the playbook and not encounter "Node appears to be last node in a cluster" error.
 
 	If the `pre-flight_check` fails to restart MySQL, you will need to consult the MySQL logs (/var/log/mysql/error.log) to determine why the other nodes are not restarting.
 
@@ -250,7 +248,7 @@ However, based on sequence, the current node should not be the last node.  As a 
 
 ## SSH Connectivity is lost ## {#sshlost}
 
-Ansible uses SSH to communicate with remote nodes. In heavily loaded, single host virtualized environments, SSH can lose connectivity.  It should be noted that similar issues in a physical environment may indicate issues in the underlying network infrasucture.
+Ansible uses SSH to communicate with remote nodes. In heavily loaded, single host virtualized environments, SSH can lose connectivity.  It should be noted that similar issues in a physical environment may indicate issues in the underlying network infrastructure.
 
 **Symptoms:**
 
@@ -279,7 +277,7 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 		apt-get dist-upgrade
 		reboot
 
-* If this issue is repeatedly encountered on a physical environment, the network infrastucture should be inspected for errors.
+* If this issue is repeatedly encountered on a physical environment, the network infrastructure should be inspected for errors.
 
 * Similar error messages might occur with long running processes, such as database creation/upgrade steps.  These cases will generally have partial program execution log output immediately before the broken pipe message visible.
 
@@ -296,8 +294,7 @@ Ansible uses SSH to communicate with remote nodes. In heavily loaded, single hos
 
 ## Postfix fails to reload ## {#posfix}
 
-Occasionally the postfix mail transfer agent will fail to reload because
-it is not running when the system expects it to be running.
+Occasionally the postfix mail transfer agent will fail to reload because it is not running when the system expects it to be running.
 
 **Symptom:**
 
@@ -353,7 +350,7 @@ Find any processes running as `rabbitmq` on the box, and kill them, forcibly if 
 
 ## Instance reported as powering on but the instance is in shutoff state ## {#shutoff}
 
-If Compute atempts to restart an instance when the compute node is not ready, Compute could have entered into a state where it determined that an instance is starting when in fact the compute node is down.
+If Compute attempts to restart an instance when the compute node is not ready, Compute could enter into a state where it determines that an instance is starting when in fact the compute node is down.
 
 **Symptoms:**
 
@@ -379,7 +376,7 @@ On a controller logged in as root, after executing `source stackrc`:
 
 		`os-collect-config --force --one`
 
-4. Return to the controller node that you were logged into previously, and using the instancce IDs obtained previously, take the following steps.
+4. Return to the controller node that you were logged into previously, and using the instance IDs obtained previously, take the following steps.
 
 5. Execute `nova reset-state --active <instance-id>`
 
@@ -445,9 +442,9 @@ RabbitMQ.
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-## Ironic intermitently set maintenance mode to True during installation {#ironic}
+## Ironic intermittently set maintenance mode to True during installation {#ironic}
 
-This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. 
+This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
 
 **Symptoms:**
 
@@ -497,8 +494,40 @@ If the update fails, from undercloud node:
 
 4. Change the node(s) to false for the maintenance option, using the following command:
 		
-		`ironic node-update <id> replace maintenance=False`
+		ironic node-update <id> replace maintenance=False
 
+##Ironic service cannot be restarted on the undercloud {#ansible}
+
+When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. 
+
+**Symptom**
+
+* A message similar to the following appears in the `ironic-api.log` file:
+
+		2014-10-23 23:03:51.302 31612 WARNING wsme.api [-] Client-side error: Node c241b0d5-abe1-4219-883c-e8dbaf1c5b35 is locked by host hLinux, please retry after the current operation is completed.
+		Traceback (most recent call last):
+	
+	The file is located at: `/var/log/upstart/ironic-api.log`. Search for `locked by host hLinux`.
+
+**Solution**
+
+Workaround when this happens is:
+
+1. Execute the following command in the undercloud:
+
+		mysql --defaults-file=/mnt/state/root/metadata.my.cnf --socket /var/run/mysqld/mysqld.sock ironic -e 'update nodes set reservation=NULL where reservation="hLinux";'
+
+2. Change the **Instance** status from `Error` to `Active`.
+
+		nova reset-state --active <instance ID>
+
+3. Start the server manually or use the following command: 
+
+		nova stop/nova start
+
+4. Execute the update process again.
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ---
 ####OpenStack trademark attribution

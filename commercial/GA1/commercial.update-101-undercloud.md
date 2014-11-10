@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/undercloud/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -22,7 +22,8 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Updating the Undercloud
 
-The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the *Extract the scripts and libraries necessary to perform the update* of the Appendix.  
+The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract).
+.  
 
 If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
 
@@ -46,7 +47,7 @@ Before you begin the update:
 
 * Make sure that you have a least 7GB of space available on the seed node. Converting to the raw mode will take space on the seed. If you are low on space and you updated the seed previously please refer to the [Cleanup section](/helion/openstack/update/seed/101/) in *Updating the Seed Cloud Host* for information on removing post-update files. The backup/restore process should remove these files. You can check to make sure the files have been removed.
 
-* Point the install script to the overcloud. The patch update script is based on the Ansible platform. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
+* Point the install script to the overcloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
 
 	To point the script to update the overcloud, use the following steps:
 
@@ -56,8 +57,9 @@ Before you begin the update:
 		sudo -i
 		cp stackrc /home/heat-admin/uc_stackrc
 
-	b. On the seed cloud host, copy the  the Undercloud to get it.
-	scp heat-admin@<Undercloud ip>:uc_stackrc ~/
+	b. On the seed cloud host, copy the `undercloud stackrc` file:
+
+		scp heat-admin@<Undercloud ip>:uc_stackrc ~/
 
 	c. Edit the `uc_stackrc` file to replace the localhost in the `OS_AUTH_URL` variable with the IP address of the undercloud.  
 
@@ -77,11 +79,11 @@ Before you begin the update:
 
 	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
 
-	c. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+	f. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
 
 		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
 
-	If successful the ping command will show a ping of every node in a particular cloud.  It will look similar to this with one for each node.  
+	If successful, the ping command will show a ping of every node in a particular cloud.  It will look similar to this with one for each node.  
 
 		192.0.2.28 | success >> {
 			"changed": false,
@@ -93,8 +95,8 @@ Before you begin the update:
 
 There are two methods to update the undercloud: 
 
-[Automatic upgrade using the helper script](#upgradescript)
-[Manual upgrade](#upgrademanual)
+* [Automatic upgrade using the helper script](#upgradescript)
+* [Manual upgrade](#upgrademanual)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
 
@@ -110,33 +112,6 @@ To upgrade the undercloud using the `HelionUpdate.sh` script included in the pat
 
 		ssh root@192.0.2.1 
 
-3. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
-
-	a. Point the script to update the undercloud, run the following command:
-
-		source ~/stackrc
-
-	b. Execute the following commands:
-
-		source /opt/stack/venvs/ansible/bin/activate
-		cd /opt/stack/tripleo-ansible
-		bash scripts/inject_nova_meta.bash
-		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
-		mkdir -p /var/log/ansible
-
-	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
-
-	c. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
-
-		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
-
-	If successful the ping command will show a ping of every node in a particular cloud.  It will look similar to this with one for each node.  
-
-		192.0.2.28 | success >> {
-			"changed": false,
-			"ping": "pong"
-		}	
-
 3. Run the following command to start the update:
 
 		cd /opt/stack/tripleo-ansible/
@@ -151,9 +126,9 @@ To upgrade the undercloud using the `HelionUpdate.sh` script included in the pat
 
 The manual method generally gives you more control of the update. 
 
-There are three images that you need to place into the seed glance for the Undercloud. These images will be delivered via a file called undercloud.tar and will be placed in the Undercloud local filesystem.  
+There are three images that you need to place into the seed glance for the Undercloud. These images will be delivered in a file called `undercloud.tar` and are located in the undercloud local filesystem.  
 
-Please refer to [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract) in *Update Prerequisites* for instructions on locating the directory where Sherpa delivered the undercloud.tar.  
+Please refer to [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract) in *Update Prerequisites* for instructions on locating the directory the undercloud.tar.  
 
 To update a node, the patch image needs to be loaded into the seed VM Image Operations service (Glance).  A `qcow2` image used for image update has dependencies on `vmlinuz` and `initrd` images.  
 
@@ -161,7 +136,7 @@ Use the following steps to load upload an image and its dependencies:
 
 1.	Run the steps in [Setup the update environment](/helion/openstack/update/prereqs/101/#setup) in *Update Prerequisites* to point to the cloud to be updated for the Undercloud.  
 
-	At the end of this step you should have an ssh session with (ansible) in the prompt.  Run all further Undercloud operations from this session (Verification steps may be run from a different session unless noted).
+	At the end of this step you should have an SSH session with (ansible) in the prompt.  Run all undercloud operations from this session (Verification steps may be run from a different session unless noted).
 
 2. Copy the new undercloud images into the seed glance repo.  
 
@@ -173,12 +148,12 @@ Use the following steps to load upload an image and its dependencies:
 
  		ssh <IP Address>
 
-	To do this from the seed ssh session where you will run the update do the following:
+4. Run the update do the following:
 
 		scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/undercloud.tar /tmp.  
 		tar xvf undercloud.tar 
 
-4. Run the following commands:
+5. Run the following commands:
 
 		glance image-create --is-public True --is-protected False --name undercloud.vmlinuz --file undercloud.vmlinuz --disk-format aki --container-format aki
 
@@ -186,7 +161,7 @@ Use the following steps to load upload an image and its dependencies:
 
 		glance image-create --name <image name> --disk-format qcow2 --container-format bare --is-public True --file patch1.qcow2 --property ramdisk_id=<GlanceId of initrd image>  --property kernel_id=<GlanceId of vmlinuz image
 
-5.	Make sure you are in the `/opt/stack/tripleo-ansible` directory and that you have the `(ansbile)` as part of your command prompt (from the step of setting up the ansible environment above).
+5.	Make sure you are in the `/opt/stack/tripleo-ansible` directory and that you have the `(ansbile)` as part of your command prompt.
 
 6. Run the following command:
 

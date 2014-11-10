@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/seed/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -22,21 +22,21 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Updating the Seed VM
 
-The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will included Seed updates, please check the [HP Helion OpenStack Release Notes](/helion/openstack/release-notes/) to determine if there is a seed update.
+The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will included seed updates, please check the [HP Helion OpenStack Release Notes](/helion/openstack/release-notes/) to determine if there is a seed update.
 
 Updating the seed node involves saving current environment and configuration settings and restoring them after the update.
 
 * [Backup the seed cloud host](#backup)
-* [Backup Original Seed Settings](#backupsettings)
+* [Backup the original seed settings](#backupsettings)
 * [Update the seed cloud host](#updateseed)
-* [Restore original seed settings](#restoreseed)
+* [Restore the original seed settings](#restoreseed)
 * [Verify the update](#verify)
 
 ## Backup the seed cloud host ## {#backup}
 
 Backup a copy of seed node to restore in case of catastrophic failures.  For information, see [Back Up and Restore](/helion/openstack/backup.restore/).  
 
-## Backup Original Seed Settings ## {#backupsettings}
+## Backup the original seed settings ## {#backupsettings}
 
 Before you proceed with seed node update, you should have [extracted the update scripts](/helion/openstack/update/prereqs/101/#extract) delivered as part of the patch.  
 
@@ -46,9 +46,9 @@ Execute the `seed_update.sh` script to backup and copy the seed settings to host
 
 ## Update the seed cloud host ## {#updateseed}
 
-1. [Download and extract new HP Helion release](/helion/openstack/update/download/101/).  
+1. [Download and extract the HP Helion OpenStack patch upgrade](/helion/openstack/update/download/101/).  
 
-2. Install the seed node as described in the [installation instructions](/helion/openstack/install/overview/) providing details for pre-requisites as used during  the initial installation.
+2. Upgrade the seed node as described in the [installation instructions](/helion/openstack/install/overview/) providing details for pre-requisites as used during  the initial installation.
 
 **Note:** If the cloud is stood up as virtual machines on a single host, execute the following command on host node before reinstalling seed to avoid losing undercloud and overcloud node virtual machines.
 

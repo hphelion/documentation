@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/monitor/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -26,7 +26,6 @@ To assess the progress of HP Helion Cloud update, the progress utility provides 
 
 This provides an option to get a snapshot of the current state or to monitor the update progress.
 
-Getting an overview of number of nodes to update provides the administrator information to plan the migration.  The utility progress.sh provides this information as a snapshot of the current status or can be used to actively monitor the update progress.
 
 ## View the current status
 

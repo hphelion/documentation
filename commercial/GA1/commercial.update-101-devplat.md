@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/devplat/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -20,13 +20,11 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Updating the Development-Platform Services
+# HP Helion OpenStack&reg; Stopping and Starting the Development-Platform Services During the Upgrade Process
 
-If you have installed [HP Helion Development Platform service](/helion/devplatform/), you need to take service control plane down before performing update on overcloud, if you are planning to update all overcloud the nodes at once. 
+If you have installed [HP Helion Development Platform service](/helion/devplatform/), you need to take service control plane down before performing update on the overcloud. 
 
-If you are planning to do an update one node at time (even on the compute nodes) then you do not need to do anything specific for handling Dev-Platform Services.
-
-Since Dev-Platform services run the control plane in a clustered setup, we need to make sure that cluster is stopped in the correct order before updating the overcloud compute nodes. After the update is complete, you need to start the control plane with following command, which again ensure the order for starting the cluster.
+Since Dev-Platform services run the control plane in a clustered setup, we need to make sure that cluster is stopped in the correct order before updating the overcloud compute nodes. After the update is complete, you need to start the control plane using a command, which ensures the order for starting the cluster.
 
 ## Prerequisites
 
@@ -46,17 +44,17 @@ To check the health of your clusters, on the server where the Development Platfo
 
 Use following command to stop the clusters. This command stops individual nodes in the cluster in a correct order. 
 
-Note: By stopping the services, corresponding Development Platform service API will be unavailable until you start the services again after completing update on the overcloud.
+**Note:** By stopping the services, corresponding Development Platform service API will be unavailable until you start the services again after completing update on the overcloud.
 
 To stop each Development Platform service, run the following command:
 
-		ansible-playbook -vvvv --extra-vars dev_plat_service=trove --private-key <path to SSH private key> -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_stop.yml
+	ansible-playbook -vvvv --extra-vars dev_plat_service=trove --private-key <path to SSH private key> -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_stop.yml
 
-	Where:
+Where:
 
-	`dev_plat_service` is the service that you are targeting.
+	dev_plat_service is the service that you are targeting.
 
-	<table>
+<table>
 	<tr>
 	<th>Service</th><th>Value of dev_plat_service</th>
 	</tr>
@@ -68,7 +66,7 @@ To stop each Development Platform service, run the following command:
 	<td>DNSaaS</td><td>dnsaas</td></tr>
 	</table>
 
-	`private-key` is the full path to SSH private key
+	private-key is the full path to SSH private key
 
 ## Starting Services ##
 
@@ -79,11 +77,11 @@ Before running following command, set the correct value for dev_plat_service, de
 
 		ansible-playbook -vvvv --extra-vars dev_plat_service=trove --private-key <path to SSH private key> -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_start.yml
 
-	Where:
+Where:
 
-	`dev_plat_service` is the service that you are targeting.
+	dev_plat_service is the service that you are targeting.
 
-	<table>
+<table>
 	<tr>
 	<th>Service</th><th>Value of dev_plat_service</th>
 	</tr>

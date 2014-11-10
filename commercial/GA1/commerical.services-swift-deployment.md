@@ -129,7 +129,7 @@ Perform the following steps to verify the deployment of Swift nodes:
 		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
-2. Source **stackrc** using the following command:
+2. Source `stackrc` using the following command:
 
     	 # source stackrc 
  
