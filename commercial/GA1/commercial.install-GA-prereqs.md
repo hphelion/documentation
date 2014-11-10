@@ -65,7 +65,7 @@ Make sure the following required tasks are completed before you begin the instal
 	- [Install Debian/Ubuntu packages](#packages)
 	- [Install and configure NTP](#ntp)
 	- [Download the installation packages](#getinstall)
-	- [Create the JSON environment variables file](#envars)
+	- [Editing the JSON Environment Variables File for Installation](#envars)
 	- [Create the baremetal.csv file](#csv)
 	- [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap)
 
