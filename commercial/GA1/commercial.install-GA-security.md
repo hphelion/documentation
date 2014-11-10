@@ -380,7 +380,7 @@ Use the following resources when securing the network:
 3. [StoreVirtual information](http://hp.com/go/storevirtual)
 4. [StoreServ information](http://hp.com/go/storeserv)
 5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
-<a name="ref6>6. [HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf) (PDF) </a> 
+6. <a name="ref6">[HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf) (PDF) </a> 
 7. [RFC3723 - Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
 8. [RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
 
