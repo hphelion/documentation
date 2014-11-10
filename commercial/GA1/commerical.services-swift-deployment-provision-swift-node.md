@@ -129,16 +129,17 @@ Perform the following steps to provision the Swift node:
 1. Log in to the seed cloud.
 
 		ssh root@<Seed IP address>
+		
+2. Update the `so_swift_storage_scale` and `so_swift_proxy_scale` parameter in the `/root/tripleo/configs/kvm-default.json` file according to your object storage node and proxy node requirements.
+ 
+	<!---
+ 	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
+--->
+3. Enter the following command to source the `kvm-default.json`  for the new values.
+    
+    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
 
-2. Copy the ***ee-config.json*** to the root home directory.
-
-		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-3. Enter the following command to source the `overcloud_config.json`  for the new values.
-
-		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json 
-
-4. Use the JSON Environment Variables file created during initial installation and add the following content to it, either `kvm-custom-ips.json` or `esx-custom-ips.json`. 
+4. Use the JSON Environment Variables file created during initial installation and add the following content to  `kvm-custom-ips.json`. 
 
 		"so_swift_storage_scale":<number of object servers>,
 		"so_swift_proxy_scale":<number of proxy servers>,
@@ -148,15 +149,15 @@ Perform the following steps to provision the Swift node:
 		so_swift_storage_scale: <number of object servers>,
 		so_swift_proxy_scale: <number of proxy servers>, --->
 
-	 **Note**: While deploying a scale-out **proxy** node ensure that the value of `OVERCLOUD_SOSWIFT_STORAGESCALE` is unchanged. While deploying a scale-out **object** node ensure that the value of `OVERCLOUD_SOSWIFT_PROXYSCALE` is unchanged.
+ **Note**: While deploying a scale-out **proxy** node ensure that the value of `OVERCLOUD_SOSWIFT_STORAGESCALE` is unchanged. While deploying a scale-out **object** node ensure that the value of `OVERCLOUD_SOSWIFT_PROXYSCALE` is unchanged.
 
-5. Source the environment variables file created during initial installation.
+<!---
+5.Source the environment variables file created during initial installation.
 
 		source /root/kvm-custom-ips.json
-		-or-
-		source /root/esx-custom-ips.json
+		--->
 
-6. Run the installer script to update the cloud.
+5.Run the installer script to update the cloud.
 
 	bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 

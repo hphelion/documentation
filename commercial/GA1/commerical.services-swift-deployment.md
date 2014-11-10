@@ -95,27 +95,25 @@ Using the ***ringos*** utility you can add the [provisioned nodes](/helion/opens
 
 ##Deploy the Scale-out Object Nodes {#deploying-scale-out-Swift-object-nodes}
 
-Before starting the deployment of scale-out object nodes you must configure the `overcloud-config.json` file. If `overcloud-config.json` has already been created during installation, edit the file instead.
+Before starting the deployment of scale-out object nodes you must configure the `kvm-default.json` file. If `kvm-default.json` has already been created during installation, edit the file instead.
 
 1. Log in to the seed. 
 
 		# ssh root@<seed IP address>
 
 		
-2. Update the `so_swift_storage_scale` parameter in the `/root/overcloud-config.json` file according to your storage needs.
+2. Update the `so_swift_storage_scale` parameter in the `/root/tripleo/configs/kvm-default.json` file according to your storage needs.
  
  	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
 
-3. Enter the following command to source the `overcloud_config.json`  for the new values.
+3. Enter the following command to source the `kvm-default.json`  for the new values.
     
-    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
 
 4. Source the environment variables file created during initial installation. 
 
 		# source /root/kvm-custom-ips.json
-		-or-
-		# source /root/esx-custom-ips.json
-
+		
 5. Run the installer script to update the cloud.
 
     	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
@@ -267,18 +265,15 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.builder /root/ring-building/
+		
 
 	The following sample displays all the rings and builder files from **19.0.2.22**
 
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/object.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/account.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/container.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/object.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/account.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/container.builder /root/ring-building/
+	
+	**Note**: The ring files are identical on both the starter swift nodes. You can copy **.gz** files  in either of the starter nodes as they are identical.
 
 
 3. List all the Swift nodes. 
