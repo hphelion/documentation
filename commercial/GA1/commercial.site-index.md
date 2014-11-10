@@ -89,6 +89,7 @@ Review the following topics related to optional and required post-installation s
 
 - [Integrating LDAP](/helion/openstack/install/ldap/)
 - [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/)
+- [Configuring Your Network Securely](/helion/openstack/install/security/)
 - [Back Up and Restore](/helion/openstack/backup.restore/)
 - [High Availability (HA)](/helion/openstack/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
