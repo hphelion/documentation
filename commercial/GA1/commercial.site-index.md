@@ -60,7 +60,7 @@ Review the following topics before you start the installation:
 - [Support matrix](/helion/openstack/support-matrix/)
 - [Technical Overview](/helion/openstack/technical-overview/)
 - [Prerequisites](/helion/openstack/install/prereqs/)
-- [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/)
+- [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/)
 - [Installing an NTP Server](/helion/openstack/install/ntp/)
 
 

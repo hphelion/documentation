@@ -38,7 +38,7 @@ Before you begin the installation process, take a few minutes to read this page 
 		- [Install Debian/Ubuntu packages](#packages)
 		- [Install and configure NTP](#ntp)
 		- [Download the installation packages](#getinstall)
-		- [Create the JSON environment variables file](#envars)
+		- [Editing the JSON Environment Variables File for Installation](#envars)
 		- [Create the baremetal.csv file](#csv)
 		- [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap)
 * [Next Steps](#nextstep)
@@ -261,7 +261,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	This creates and populates a `tripleo/` directory within the `work' directory.
 
 
-#### Create the JSON environment variables file #### {#envars}
+#### Editing the JSON Environment Variables File for Installation #### {#envars}
 
 To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.
 
