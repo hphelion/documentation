@@ -36,7 +36,7 @@ The installation and configuration process for KVM consists of the following gen
 	* [KVM deployment architecture](#deploy-arch)
 	* [Edit the JSON environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
-	* [Set DNS servers by default](#name-resolution)
+	* [Set DNS servers](#name-resolution)
 	* [Preparing seed cloud host to create the seed VM](#prepseed)
 * [Downloading and extracting the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)

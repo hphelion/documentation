@@ -39,7 +39,7 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 3.	Click **Configure** to authenticate to the Helion Distribution Network.
 
-4. Provide the credentials if you have already signed up, if not, sign up by clicking on the link “Sign up now” 
+4. Provide the credentials if you have already signed up, if not, sign up by clicking the **Sign up now** link. 
 
 	<img src="media/SherpaConfigure.png">
 
@@ -54,7 +54,7 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 If you have no internet access on the undercloud or you prefer not to use the internet, you can download directly from the download site using a browser. Then move or copy the patch update file to the undercloud node. 
 
-1. Use a browser on a separate system that has internet access and navigate to: [helion.hpwsportal.com](helion.hpwsportal.com).
+1. Use a browser on a separate system that has internet access and navigate to: [https://helion.hpwsportal.com/](helion.hpwsportal.com).
 
 2. Log in using your HP Web ID.
 
