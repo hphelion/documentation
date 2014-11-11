@@ -120,7 +120,7 @@ Perform the following steps to deploy scale-out Object nodes:
 
 For example: 
  
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
 
 <!---
 3. Enter the following command to source the `kvm-default.json`  for the new values.
