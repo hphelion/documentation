@@ -21,11 +21,12 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Updating the Undercloud
+<!-- No readme in 1.0.1 per Jon Lowe
+The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract).  
 
-The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract).
-.  
+If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/). -->
 
-If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
+Use the this document when updating the overcloud nodes.
 
 * [Prerequisites](#prereqs)
 * [Update the undercloud](#update)
@@ -39,7 +40,7 @@ You can monitor the update process, see [Monitoring the Update](/helion/openstac
 
 Before you begin the update:
 
-* You must have upgraded the seed VM on the seed cloud host, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
+* If the seed VM needed updating, perform this update before updating the undercloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
 
 * Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
@@ -49,7 +50,7 @@ Before you begin the update:
 
 * Point the install script to the overcloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
 
-	To point the script to update the overcloud, use the following steps:
+	To point the script to update the undercloud, use the following steps:
 
 	a. Copy the `stackrc` file it from the undercloud and rename the file for the undercloud:
 
@@ -126,7 +127,7 @@ To upgrade the undercloud using the `HelionUpdate.sh` script included in the pat
 
 The manual method generally gives you more control of the update. 
 
-There are three images that you need to place into the seed glance for the Undercloud. These images will be delivered in a file called `undercloud.tar` and are located in the undercloud local filesystem.  
+There are three images that you need to place into the seed glance for the Undercloud. These images will be delivered in a file called `undercloud.tar` and are located in the undercloud local filesystem after you [obtain and extract the update package](/helion/openstack/update/download/101/).  
 
 Please refer to [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract) in *Update Prerequisites* for instructions on locating the directory the undercloud.tar.  
 
@@ -185,7 +186,7 @@ Verify that services and communication between nodes is functional.
 
 3. Run the following commands to make sure all systems appear as expected:
 
-		. stackrc - to source the credentials or setup credentials
+		#. stackrc - to source the credentials or setup credentials
 		nova list
 		heat stack-list
 		glance image-list
@@ -200,7 +201,7 @@ Once the update of undercloud node is complete, you should backup the node in ca
 
 Upgrade the overcloud. 
 
-For installation instructions, see [Updating the Undercloud](/helion/openstack/update/overcloud/101/).
+For installation instructions, see [Updating the Overcloud](/helion/openstack/update/overcloud/101/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

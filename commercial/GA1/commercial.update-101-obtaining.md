@@ -57,7 +57,7 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 5.	Click **Import** to deliver the patch update file for further processing.
 
-	<img src="media/SherpaImport.jpg">
+	<img src="media/SherpaImport.png">
 
 ## Next Steps {#next-steps}
 

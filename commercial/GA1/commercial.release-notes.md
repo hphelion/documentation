@@ -42,7 +42,7 @@ The following features have been added to HP Helion OpenStack, by release.
 
 ### Features in HP Helion OpenStack 1.0 ### 
 
-**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), Ceilometer, TripleO, and Ironic.
+**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
 
 **Other Services** [Other services](/helion/openstack/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
 
@@ -127,7 +127,8 @@ When using HP Helion OpenStack you might experience the following issues:
 
 Other issues you might experience when using HP Helion OpenStack:
 
-* After updating the undercloud to HP Helion OpenStack 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashbaord, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
+* When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->. 
+* After updating the undercloud to HP Helion OpenStack 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
 
 * A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack. <!-- (EE-21) -->
 

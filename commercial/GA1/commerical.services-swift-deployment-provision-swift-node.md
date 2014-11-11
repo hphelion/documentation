@@ -130,16 +130,8 @@ Perform the following steps to provision the Swift node:
 
 		ssh root@<Seed IP address>
 		
-2. Update the `so_swift_storage_scale` and `so_swift_proxy_scale` parameter in the `/root/tripleo/configs/kvm-default.json` file according to your object storage node and proxy node requirements.
- 
-	<!---
- 	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
---->
-3. Enter the following command to source the `kvm-default.json`  for the new values.
-    
-    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
 
-4. Use the JSON Environment Variables file created during initial installation and add the following content to  `kvm-custom-ips.json`. 
+2. Set the following variables in the environment variables file to configure the following values:
 
 		"so_swift_storage_scale":<number of object servers>,
 		"so_swift_proxy_scale":<number of proxy servers>,
@@ -149,15 +141,18 @@ Perform the following steps to provision the Swift node:
 		so_swift_storage_scale: <number of object servers>,
 		so_swift_proxy_scale: <number of proxy servers>, --->
 
+	
  **Note**: While deploying a scale-out **proxy** node ensure that the value of `OVERCLOUD_SOSWIFT_STORAGESCALE` is unchanged. While deploying a scale-out **object** node ensure that the value of `OVERCLOUD_SOSWIFT_PROXYSCALE` is unchanged.
 
-<!---
-5.Source the environment variables file created during initial installation.
+3.Source the environment variables file created during initial installation.
 
-		source /root/kvm-custom-ips.json
-		--->
+	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
 
-5.Run the installer script to update the cloud.
+For example:
+
+	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+
+4.Run the installer script to update the cloud.
 
 	bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
