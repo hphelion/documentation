@@ -107,7 +107,7 @@ Perform the following steps to deploy scale-out Object nodes:
 
 		ssh root@<seed IP address>
 
-2. Update the `so_swift_storage_scale` parameter in the environment variables file used during the initial installation according to your storage needs.	
+2. Update the `so_swift_storage_scale` parameter in the environment variables file, used during the initial installation, according to your storage needs.	
 
 	<!---	
 	2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.--->
