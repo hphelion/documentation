@@ -39,25 +39,50 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 3.	Click **Configure** to authenticate to the Helion Distribution Network.
 
+4. Provide the credentials if you have already signed up, if not, sign up by clicking on the link “Sign up now” 
+
 	<img src="media/SherpaConfigure.png">
 
-4. Select **Patch Update Code** and click **Download**.
+5. Select patch update file and click **Download**. You should have received and email with the patch update file name and location
 
-5. Review the information in [Update Prerequisites](/helion/openstack/update/prereqs/101/).
- 
+	The patch update file might take a long time to download, depending upon your connection speed.  
+	
+7. When the download is complete, click this **Publish** button to extract the package contents into the undercloud repositories necessary to perform the update.
+
+
 ## Importing a Local Copy ##
 
-1. [Log in to the Sherpa UI on the undercloud](/helion/openstack/services/sherpa/accessing/).
+If you have no internet access on the undercloud or you prefer not to use the internet, you can download directly from the download site using a browser. Then move or copy the patch update file to the undercloud node. 
 
-2. Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**.
+1. Use a browser on a separate system that has internet access and navigate to: [helion.hpwsportal.com](helion.hpwsportal.com).
 
-3.	Click the **Import** button on top right corner.
+2. Log in using your HP Web ID.
 
-4.	Select the patch update file to download.
+3. Locate the patch update file and click **Download**. You should have received and email with the patch update file name and location.
 
-5.	Click **Import** to deliver the patch update file for further processing.
+	The patch update file might take a long time to download, depending upon your connection speed.  
+
+4. Use a method as appropriate for your organization to move or copy the patch update file to the undercloud.
+
+5. [Log in to the Sherpa UI on the undercloud](/helion/openstack/services/sherpa/accessing/).
+
+	You can find your password from the seed VM. Use SSH to access the seed VM and use the following command:
+
+		cat tripleo/tripleo-undercloud-passwords
+
+6. Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**.
+
+7.	Click the **Import** button on top right corner.
+
+8.	Select the CSU patch update file to download.
+
+9.	Click **Import** to deliver the patch update file for further processing.
 
 	<img src="media/SherpaImport.png">
+
+10. Once the import of the package is complete, click the **Publish** button next to the package to extract the downloaded package contents into the undercloud repositories necessary to perform the update.
+
+**Note:**  If you have published the same CSU multiple times, the Publish function will upload multiples copies of overcloud images into the Image Operations (Glance) service. You can delete the duplicate images by using the `build_no` property of the glance image.
 
 ## Next Steps {#next-steps}
 
