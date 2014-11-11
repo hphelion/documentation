@@ -99,20 +99,17 @@ Before starting the deployment of scale-out object nodes you must configure the 
 
 1. Log in to the seed. 
 
-		# ssh root@<seed IP address>
+		ssh root@<seed IP address>
 
 		
-2. Update the `so_swift_storage_scale` parameter in the `/root/tripleo/configs/kvm-default.json` file according to your storage needs.
+2. Update the `so_swift_storage_scale` parameter in the `/root/configs/kvm-custom-ips.json ` file according to your storage needs.
  
  	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
 
 3. Enter the following command to source the `kvm-default.json`  for the new values.
-    
-    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
 
-4. Source the environment variables file created during initial installation. 
+	 	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
-		# source /root/kvm-custom-ips.json
 		
 5. Run the installer script to update the cloud.
 
@@ -334,10 +331,9 @@ In the following example account, container, object-0, and generated `object-1.r
 		  }
 		}
 
-3. Source the `overcloud-config.json` file.
+3. Source the configuration file.
     
-    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
-
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
 4. Run the installer script to update the storage policies across the cloud.
 

@@ -30,7 +30,6 @@ Before you begin the installation process, take a few minutes to read this page 
 		- [Preparing all networks](#network)
 		- [Preparing the network for a KVM installation](#network_KVM)
 		- [Preparing the network for an ESX installation](#network_ESX)
-	- [Storage nodes installed during installation](#storage_nodes)
 	- [Preparing the seed cloud host](#installer)
 		- [Install Ubuntu 14.04 LTS](#ubuntu)
 		- [Configure SSH](#ssh)
@@ -54,10 +53,9 @@ For supported hardware and hardware requirements, and software requirements, see
 Make sure the following required tasks are completed before you begin the installation.
 
 - [Preparing your network](#network_prepare)
-	- [Preparing all networks](network)
+	- [Preparing all networks](#network)
 	- [Preparing the network for a KVM installation](#network_KVM)
 	- [Preparing the network for an ESX installation](#network_ESX)
-- [Storage nodes installed during installation](#storage_nodes)
 - [Preparing the seed cloud host](#installer)
 	- [Install Ubuntu 14.04 LTS](#ubuntu)
 	- [Configure SSH](#ssh)
@@ -156,7 +154,7 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 ### Preparing the seed cloud host {#installer}
 
-The following tasks need to be performed on the seed VM, known as the installer system.
+The following tasks need to be performed on the seed cloud host, known as the installer system.
 
 - [Install Ubuntu 14.04 LTS](#ubuntu)
 - [Configure SSH](#ssh)
@@ -174,12 +172,12 @@ The seed cloud host must have Ubuntu 14.04 LTS installed before performing the H
 
 #### Configure SSH {#ssh}
 
-On the installer system, the OpenSSH server must be running and the firewall
+On the seed cloud host, the OpenSSH server must be running and the firewall
  configuration should allow access to the SSH ports.
 
 #### Obtain a public key {#pub-key}
 
-On the installer system (seed VM), the user `root` must have a public key, for example:
+On the seed cloud host, the user `root` must have a public key, for example:
 
 	/root/.ssh/id_rsa
 	/root/.ssh/id_rsa.pub
@@ -223,11 +221,8 @@ For information on installing NTP on the seed cloud host, see HP Helion [OpenSta
 
 Before you begin, you must download the required HP Helion OpenStack installation package(s):
 
-1. Log in to your install system as root:
 
-        sudo su -
-
-2. Register and then log in to download the required installation package(s) from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
+1. Register and then log in to download the required installation package(s) from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
 
 	* **For KVM installs**
 
@@ -254,7 +249,13 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<td>ovsvapp.tgz</td></tr>
 	</table>
 
-3.  Extract the HP Helion OpenStack installation package to the `root` directory:
+2. Log in to your seed cloud host as root:
+
+        sudo su -
+
+3. Copy the installation package to the seed cloud host.
+
+4.  Extract the HP Helion OpenStack installation package to the `root` directory:
 
 		tar zxvf /root/HPHelionOpenStack_1.0.tgz
 
@@ -269,7 +270,7 @@ For information on editing the JSON environment variables file, see [Editing the
 
 #### Create the baremetal.csv file {#csv}
 
-During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (seed VM) at the appropriate installation step. 
+During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (called the seed cloud host) at the appropriate installation step. 
 
 The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
 

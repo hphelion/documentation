@@ -37,6 +37,7 @@ There are multiple ways to update your cloud. This HP Helion OpenStack documenta
 * [Update Troubleshooting](#trouble)
 * [Next Steps](#next-steps)
 
+The HP Helion OpenStack 1.0.1 update with apply to all of the nodes: seed, undercloud, overcloud controllers, overcloud Swift, overcloud VSA, and overcloud compute nodes. There is also an update for the optional HP Helion OpenStack DNSaaS. 
 
 ## Overview of the Update Process {#overview}
 
