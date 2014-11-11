@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/devplat/101/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>

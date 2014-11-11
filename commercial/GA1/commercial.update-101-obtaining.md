@@ -39,7 +39,7 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 3.	Click **Configure** to authenticate to the Helion Distribution Network.
 
-4. Provide the credentials if you have already signed up, if not, sign up by clicking the **Sign up now** link. 
+4. Provide the credentials if you have already signed up, if not, sign up by clicking the **Sign up now** link.  
 
 	<img src="media/SherpaConfigure.png">
 

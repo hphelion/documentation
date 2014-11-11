@@ -65,8 +65,11 @@ When securing the perimeter, consider the following:
 When configuring the VLAN, consider the following:
 
 * External VLAN - Used for binding a routable address to a Compute (Nova) VM launched in Helion. Compute VMs are hosted in a Compute Node.  
+
 * Management VLAN - Every baremetal host has an address on this network for in-band management purposes.
+
 * Service VLAN - Provides a path from Development Platform services (such as Database as a Service) running in the Compute VMs to the Centralized Logging Service running in the undercloud.
+
 * Intelligent Platform Management Interface (IPMI) VLAN - Provides a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
 #### IP addressing recommendations #### {#ipaddressing}
@@ -74,7 +77,9 @@ When configuring the VLAN, consider the following:
 When configuring IP addressed, consider the following:
 
 * External VLAN - Usually public IP subnet, size according to max desired VM count that needs to be external facing.
+
 * Management VLAN - Private IP subnet, size according to max physical servers in deployment.
+
 * Service VLAN - Private IP subnet, size accordingly with Management VLAN.
 
 #### VLAN routing interface recommendations #### {#vlanrouting}
@@ -88,6 +93,7 @@ When configuring the VLAN routing interfaces, consider the following:
 When controlling inbound and outbound traffic access, consider the following:
 
 * Outbound and Inbound access to External VLAN is controlled at both the border and aggregation router(s).
+
 * Outbound and Inbound access to the Management and Service VLANs is controlled at the aggregation router(s).
 
 #### Server connectivity recommendations #### {#serverconnect}
