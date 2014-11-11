@@ -109,12 +109,13 @@ Before starting the deployment of scale-out object nodes you must configure the 
 3. Enter the following command to source the `kvm-default.json`  for the new values.
     
     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
-
+<!---
 4. Source the environment variables file created during initial installation. 
 
-		# source /root/kvm-custom-ips.json
+		# source /root/kvm-custom-ips.json ---->
+
 		
-5. Run the installer script to update the cloud.
+4.Run the installer script to update the cloud.
 
     	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
@@ -334,9 +335,9 @@ In the following example account, container, object-0, and generated `object-1.r
 		  }
 		}
 
-3. Source the `overcloud-config.json` file.
+3. Source the `kvm-default.json` file.
     
-    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
 
 
 4. Run the installer script to update the storage policies across the cloud.
