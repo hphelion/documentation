@@ -142,7 +142,7 @@ Perform the following steps to provision the Swift node:
 		so_swift_proxy_scale: <number of proxy servers>, --->
 
 	
- **Note**: While deploying a scale-out **proxy** node ensure that the value of `OVERCLOUD_SOSWIFT_STORAGESCALE` is unchanged. While deploying a scale-out **object** node ensure that the value of `OVERCLOUD_SOSWIFT_PROXYSCALE` is unchanged.
+ **Note**: While deploying a scale-out **proxy** node ensure that the value of `so_swift_storage_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `so_swift_proxy_scale` is unchanged.
 
 3.Source the environment variables file created during initial installation.
 

@@ -116,7 +116,7 @@ Perform the following steps to deploy scale-out Object nodes:
 
 3.Enter the following command to source the environment variables file  for the new values.
 
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/<environment variable file name>
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/<environment variables file name>
 
 For example: 
  
@@ -366,7 +366,7 @@ In the following example account, container, object-0, and generated `object-1.r
 
 3. Source the environment variables file.
     
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variable file name>
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
 
 	For example:
 		
