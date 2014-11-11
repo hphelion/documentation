@@ -42,6 +42,7 @@ Perform the following steps to deploy scale-out object-ring:1
 A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nodes are created as an integral part of cloud deployment.
 
 ##Define the Ring Attributes of Object Ring-1 {#define-object-ring:1}
+
 **Caution**:Plan the following ring attributes before deployment of object-ring:1 because many attributes, such as **part power** and **replica count**, cannot be changed after the ring has been deployed.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -95,23 +96,47 @@ Using the ***ringos*** utility you can add the [provisioned nodes](/helion/opens
 
 ##Deploy the Scale-out Object Nodes {#deploying-scale-out-Swift-object-nodes}
 
-Before starting the deployment of scale-out object nodes you must configure the `kvm-default.json` file. If `kvm-default.json` has already been created during installation, edit the file instead.
+
+<!---Source the same file <!---(`kvm-default.json` or `kvm-custom-ips.json`)that is used during the initial installation for specifying the environment IPs. In the following steps we are assuming the usage of kvm-custom-ips.json file at the initial installation.--->
+
+<!---
+Before starting the deployment of scale-out object nodes you must configure the `kvm-default.json` file. If `kvm-default.json` has already been created during installation, edit the file instead.---->
+Perform the following steps to deploy scale-out Object nodes:
 
 1. Log in to the seed. 
 
 		ssh root@<seed IP address>
 
-		
-2. Update the `so_swift_storage_scale` parameter in the `/root/configs/kvm-custom-ips.json ` file according to your storage needs.
+2. Update the `so_swift_storage_scale` parameter in the environment variables file, used during the initial installation, according to your storage needs.	
+
+	<!---	
+	2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.--->
  
  	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
 
+3.Enter the following command to source the environment variables file  for the new values.
+
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/<environment variables file name>
+
+For example: 
+ 
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
+
+<!---
 3. Enter the following command to source the `kvm-default.json`  for the new values.
+    
+    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
+
+3. Source the environment variables file created during initial installation. 
+
+		# source /root/kvm-custom-ips.json 
+<!---
 
 	 	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
+--->
 		
-5. Run the installer script to update the cloud.
+4.Run the installer script to update the cloud.
 
     	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
@@ -331,9 +356,21 @@ In the following example account, container, object-0, and generated `object-1.r
 		  }
 		}
 
-3. Source the configuration file.
+
+	<!---
+
+	3. Source the `kvm-default.json` file.
     
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
+	--->
+
+3. Source the environment variables file.
+    
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
+
+	For example:
+		
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
 4. Run the installer script to update the storage policies across the cloud.
 
