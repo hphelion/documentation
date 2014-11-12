@@ -29,10 +29,11 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 Use the this document when updating the overcloud nodes.
 
 * [Prerequisites](#prereqs)
+	* [Stop the HP Helion Development Platform](#devplatstop)
 * [Update the overcloud](#update)
 * [Validate the update](#validate)
 * [Backup the updated overcloud](#backup)
-* [Restart the HP Helion Development Platform](#devplat)
+* [Restart the HP Helion Development Platform](#devplatstart)
 * [Next Steps](#next-steps)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
@@ -90,7 +91,9 @@ Before you begin the update:
 			"ping": "pong"
 		}	
 
-* Stop the HP Helion Development Platform service. Before you run the patch update on the overcloud, you must stop the HP Helion Development Platform service using a script. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplat/101/). After the update is complete, you can execute another script to restart the service.
+### Stop the HP Helion Development Platform {#devplatstop}
+
+Before you run the patch update on the overcloud, you must stop the HP Helion Development Platform service using a script. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplatstop/101/). After the update is complete, you can execute another script to [restart the service](#devplatstart).
 
 ## Update the overcloud ## {#update}
 
@@ -333,7 +336,7 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 
 5. Follow the steps in [Deploying and Configuring OVSvApp on ESX hosts](/helion/openstack/install/ovsvapp/) to install OVSvAPP, but use the latest `overcloud-esx-ovsvapp.ova` and `ovsvapp.tgz`.
 
-## Restart the HP Helion Development Platform {#devplat}
+## Restart the HP Helion Development Platform {#devplatstart}
 
 After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplat/101/). 
 

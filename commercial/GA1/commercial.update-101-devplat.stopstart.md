@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Updating the Development-Platform Services"
-permalink: /helion/openstack/update/devplat/101/
+permalink: /helion/openstack/update/devplatstop/101/
 product: commercial.ga
 
 ---
