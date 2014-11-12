@@ -194,12 +194,12 @@ To format a given disk:
 
 The following sample displays the output of formatted disk of **192.0.2.29**.
 
-		+----------+-----------+---------+---------------------------------+-------------+------------+
-		| disk     | formatted | mounted | mount_point                     | label       | size       |
-		+----------+-----------+---------+---------------------------------+-------------+------------+
-		| /dev/sda | y         | y       | /mnt/state/srv/node/a1410063335 | a1410063335 | 1073741824 |
-		| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |               
-		+----------+-----------+---------+---------------------------------+-------------+------------+
+	+----------+-----------+---------+---------------------------------+-------------+------------+
+	| disk     | formatted | mounted | mount_point                     | label       | size       |
+	+----------+-----------+---------+---------------------------------+-------------+------------+
+	| /dev/sda | y         | y       | /mnt/state/srv/node/a1410063335 | a1410063335 | 1073741824 |
+	| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |               
+	+----------+-----------+---------+---------------------------------+-------------+------------+
 
 **Note**: You can also format disks individually by using `-d <device-name>`.
 For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
@@ -366,7 +366,7 @@ In the following example account, container, object-0, and generated `object-1.r
 
 3. Source the environment variables file.
     
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
 
 	For example:
 		
