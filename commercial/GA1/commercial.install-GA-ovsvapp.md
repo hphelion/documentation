@@ -510,7 +510,7 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	Note the ID.
 
-9. On the controller, execute the following command to remove the entry from “neutron agent-list”
+9. On the controller, execute the following command to remove the entry from `neutron agent-list`.
 
 		neutron agent-delete <ovsvapp_agent_id>
 
