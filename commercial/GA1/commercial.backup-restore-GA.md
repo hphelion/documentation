@@ -49,7 +49,7 @@ The following instructions describe how to back up and restore the seed, undercl
 - [Restore command options](#roptions)
 - [Undercloud password issues](#underpass)
 
-You execute scripts in the seed VM host server, where:
+You execute scripts in the seed cloud host server, where:
 
 - the seed VM is installed
 - the installation files are located
@@ -62,7 +62,7 @@ During restore process for the seed VM and undercloud, a configuration file is r
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the seed VM. 
+1. Log in to the seed cloud host. 
 
 2. Create a configuration file that contains all of the following information:
 
@@ -98,7 +98,7 @@ You should create a backup from the seed VM when any of the following events hap
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the seed VM. 
+1. Log in to the seed cloud host. 
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
@@ -137,7 +137,7 @@ You should restore the seed node when there is any problem with the node, for ex
 
 Use the following steps to restore the seed VM:
 
-1.	Log in to the seed VM host. 
+1.	Log in to the seed cloud host. 
 
 2. Create a [configuration file](#config) with all the parameters exported during the installation of the Seed VM (for example: /root/export.prop).
 
@@ -147,7 +147,7 @@ Use the following steps to restore the seed VM:
 
 3.	Execute the following script:
 
-		./hp_ced_restore.sh --seed -f <location of the backup files>
+		./hp_ced_restore.sh --seed -f <location of the backup files> -c /root/export.prop
 
 	When the process is complete, a message similar to the following displays:
 
@@ -156,7 +156,7 @@ Use the following steps to restore the seed VM:
 
 	**Example**
 
-		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --seed -f /root/backup/backup_14-09-02-12-32
+		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --seed -f /root/backup/backup_14-09-02-12-32 -c /root/export.prop
 
 		HP Helion Community Edition Version Restore Procedure
 
@@ -191,7 +191,7 @@ Also you should create a backup when any change is made in the overcloud from th
 
 Use the following steps to back up the undercloud:
 
-1.Log in the seed VM host.
+1.Log in to the seed cloud host.
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
@@ -245,7 +245,7 @@ You should restore the seed node when there is any problem with the node, for ex
 
 Use the following steps to restore the undercloud:
 
-1. Log in the seed VM host.
+1. Log in to the seed cloud host.
 
 2. Create a [configuration file](#config) with all the parameters that was exported during before the installation of the undercloud node.
 
@@ -253,9 +253,17 @@ Use the following steps to restore the undercloud:
 
 		cd /root/work/tripleo/tripleo-incubator/scripts/
 
-4. Create a file called `baremetal.csv` and save to the same location where the script is located.
+4. Create a file called `baremetal.csv` and save to the same location where the backup and restore scripts are located.
 
-5. Edit the `baremetal.csv file` and add the line of the physical server that will be used to restore the undercloud.
+	**Example**
+
+		/root/work/tripleo/tripleo-incubator/scripts
+
+5. Edit the `baremental.csv` file to include only the line from your initial baremetal installation for your undercloud node. This is the first line in the initial `baremetal.csv` file.
+
+	**Example**
+
+		 78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
 
 6. Execute the following script:
 
@@ -280,7 +288,7 @@ You should create a backup of the overcloud servers when any Update and Extensio
 
 Use the following steps to back up the overcloud:
 
-1. Log in the seed VM host.
+1. Log in to the seed cloud host.
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
@@ -316,9 +324,9 @@ All required files are backed-up to the specified folder:
 
 ### Restoring the Sherpa overcloud {#sherparest}
 
-Use the following steps to restore the seed VM:
+Use the following steps to restore the Sherpa overcloud:
 
-1. Log in the seed VM host.
+1. Log in to the seed cloud host.
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
@@ -357,7 +365,7 @@ You should create a backup from the overcloud database on a regular basis as det
 
 Use the following steps to back up the overcloud database:
 
-1. Log in the seed VM host.
+1. Log in to the seed cloud host.
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
 
@@ -409,7 +417,7 @@ You should restore the overcloud database when there is any problem with the nod
  
 Use the following steps to restore the overcloud database:
 
-1. Log in the seed VM host.
+1. Log in to the seed cloud host.
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
@@ -533,7 +541,7 @@ Other optional options that can be used during the backup/restore process, as:
 
 If the admin user password was changed from the original password created during the installation process, you need to update the password in some files before performing the undercloud backup or restore process. If this process has been done and the files contain the correct password, you do not need to edit the files.
 
-1. Log in the seed VM host.
+1. Log in to the seed cloud host.
 2. SSH to the seed VM
 3. Open the `/root/tripleo/tripleo-undercloud-passwords` file.
 4. Update the `UNDERCLOUD_ADMIN_PASSWORD=` line with the new password and save the file.
