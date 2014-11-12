@@ -282,7 +282,7 @@ navigation:
   - text: Preview Agreement
     url: /helion/openstack/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/3rd-party-license-agreements/	
+    url: /helion/openstack/3rd-party-license-agreements/
   - text: Site Index
     url: /helion/openstack/siteindex/
   commercial.ga: 
@@ -300,7 +300,7 @@ navigation:
     url: /helion/openstack/services/overview/
   - text: Support Matrix
     url: /helion/openstack/support-matrix/ 		
-  - text: Installation & Configuration Overview
+  - text: Installation Overview
     url: /helion/openstack/install/overview/	
   - text: Update Overview
     url: /helion/openstack/update/overview/101/
