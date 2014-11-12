@@ -19,8 +19,7 @@ PageRefresh();
 
 </script>
 
-<!---
-<p style="font-size: small;"> <a href="/cloudos/moonshot/manage/operational-dashboard/cloud-tab/">&#9664; PREV</a> | <a href="/cloudos/moonshot/manage/operational-dashboard/">&#9650; UP</a> | <a href="/cloudos/moonshot/manage/administration-dashboard/">NEXT &#9654;</a> </p>-->
+ 
 
 #  HP Helion OpenStack&#174; Undercloud Horizon Dashboard: Settings Tab
 
