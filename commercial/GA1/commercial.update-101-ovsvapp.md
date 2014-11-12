@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Installation and Configuration"
-permalink: /helion/openstack/update/overcloud/101/
+permalink: /helion/openstack/update/ovsvapp/101/
 product: commercial.ga
 
 ---
