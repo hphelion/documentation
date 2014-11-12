@@ -36,7 +36,7 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	**Note:** DRS safeguards tenant VM traffic from being black-holed.
 
-2. Disable vMotion from vSwitch properties. This won’t let DRS to bring back VMs on the host when the host is brought back from maintenance mode as in Step 4.
+2. Disable vMotion from vSwitch properties. This won't let DRS to bring back VMs on the host when the host is brought back from maintenance mode as in Step 4.
 
 	a. In the vSphere client, select the host in the vSphere Client inventory.
 
