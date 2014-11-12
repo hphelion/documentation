@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&reg;:Development Platform Commercial 1.0.1 Update
+# HP Helion OpenStack&reg;: Development Platform Commercial 1.0.1 Update
 
 The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
 
@@ -87,9 +87,13 @@ To download the latest version of ALS:
 
 ## Update the Database Service {#update-database}
 
-This section provides details on updating the Database Service for Helion OpenStack Development Platform. This assumes that you have already installed the Database Service. If you have not, then see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-database).
+This section provides details on updating the Database Service for Helion OpenStack Development Platform. This assumes that the Database service is installed in your cloud. 
+
+**Note:** If the Database service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-database).
 
 ### Download the Database Service {#download-db}
+
+To download the latest version of the Database service:
 
 1. In the **Configure Services** panel locate the **Database Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
@@ -97,11 +101,13 @@ This section provides details on updating the Database Service for Helion OpenSt
 
 ## Update the Marketplace Service {#update-marketplace}
 
-This section provides details on updating the Marketplace service for the Helion OpenStack Development Platform. This assumes that you have already installed the Marketplace Service. If you have not, then see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-marketplace).
+This section provides details on updating the Marketplace service for the Helion OpenStack Development Platform. This assumes that the Marketplace service is installed in your cloud. 
+
+**Note:** If the Marketplace service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-marketplace).
 
 ### Download the Marketplace Service {#update-marketplace}
 
-1. In the **Configure Services** panel locate the Marketplace Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+1. In the **Configure Services** panel locate the **Marketplace Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
 2. Once the download is complete, the new images for Marketplace Service will be available. If at any point, you choose to rebuild the Marketplace Service control plane, it will use the latest images.
 	

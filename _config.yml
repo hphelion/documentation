@@ -306,7 +306,7 @@ navigation:
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
-  - text:Development Platform Community Edition Installation & Configuration
+  - text: Development Platform Community Edition Installation & Configuration
     url: /helion/devplatform/install/community/
   - text: Application Developer Resources
     url: /helion/devplatform/appdev/
