@@ -38,7 +38,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. This ensures that the Starte
 
 You can check the health of the starter nodes using the following command. All nodes should be in **ACTIVE** status and the power state should be **Running**.
 
-		nova list
+	# nova list
 
 ##Adding physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
 
@@ -56,7 +56,7 @@ Perform the following steps to add a physical server:
 
 2. Log in to the seed cloud. 
 
-		ssh root@<seed IP address> 
+		# ssh root@<seed IP address> 
 
 3. When prompted for host authentication, type **yes** to allow the ssh connection to proceed.
 
@@ -77,11 +77,11 @@ Perform the following steps to add a physical server:
 
 5. Log in to the undercloud. 
 
-		ssh heat-admin@<undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 
 6. Add the server details to the ironic database using the following ***ironic*** command:
 
- 		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
+ 		# ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP address> -i ipmi_username=<admin user name> -i ipmi_password=<password> 
 
 	The following sample displays the ironic database with the new server details:
 
@@ -99,7 +99,7 @@ Perform the following steps to add a physical server:
 		+--------------+-----------------------------------------------------------------------+
 7. Create the port, and enter the MAC address and node ID  using the following ironic command: 
  	
-		ironic create-port -a $MAC -n $NODE_ID
+		# ironic create-port -a $MAC -n $NODE_ID
 
 
 	The following sample displays the output of the above command: 
@@ -116,7 +116,7 @@ Perform the following steps to add a physical server:
  
 8. Verify the successful registration of a new physical server.
 
-		ironic node-list
+		# ironic node-list
 
  	The newly created server should appear in the list.
 
@@ -128,7 +128,7 @@ Perform the following steps to provision the Swift node:
 
 1. Log in to the seed cloud.
 
-		ssh root@<Seed IP address>
+		# ssh root@<Seed IP address>
 		
 
 2. Set the following variables in the environment variables file to configure the following values:
@@ -146,26 +146,26 @@ Perform the following steps to provision the Swift node:
 
 3.Source the environment variables file created during initial installation.
 
-	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
+	# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
 
 For example:
 
-	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+	# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
 4.Run the installer script to update the cloud.
 
-	bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
+	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
 ## Verify Swift node deployment {#verify-swift-node-deployment}
 Verify that the new nodes were created and are functioning properly using the following commands:
 
 1. Log in to the undercloud from the seed cloud.
 
-		ssh heat-admin@<undercloud IP address> 
+		# ssh heat-admin@<undercloud IP address> 
 
 2. List the available Swift nodes.
 
-		nova list
+		# nova list
 
 	It displays available Swift nodes including the newly added node(s).
 
