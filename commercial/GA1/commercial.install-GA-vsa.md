@@ -226,7 +226,7 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
-9. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
+9. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `kvm-config.ips.json`, are deployed. 
 
  	 	# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 

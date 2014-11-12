@@ -37,7 +37,7 @@ This document describes the steps to add (Scale Out) or remove (Scale In) nodes 
 
 Before you begin, ensure the following:
 
-- The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack&#174; Installer with USE_TRICKLE=1, which is the default installation.
+- The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack&#174; installer.
 
 ## Add compute nodes ## {#add}
 

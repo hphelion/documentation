@@ -233,7 +233,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 3. Assign the overcloud IP address to a variable:
 
-		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json)
+		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json); echo ${OVERCLOUD_IP}
 
 	<!-- Remove per Divaker
 	4. With the IP address and root password, log in as the main user, root using the following command 
@@ -289,7 +289,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 		http://<undercloud IP>:81/
  
 
-4. Log in as user `kibana` and the password from the `htpasswd.cfg` file.
+4. Log in as user `kibana` and the password from Step 4.
 
 ## Create projects for LDAP users {#ldap}
 
