@@ -40,9 +40,10 @@ The following topics in this section explain how to deploy and verify deployment
 * [Troubleshooting OVSvApp](#trouble)
 * [Cleaning up or deleting the OVSvApp](#clean)
 * [Uninstalling VCN on ESX hosts](#uninstallvcn)
+* [Update OVSvApp](#update)
 * [Next Steps](#next)
 
-## Prerequisites<a name="prereqs"></a>
+## Prerequisites {#prereqs}
 
 Before you install the OVSvApp, ensure the following:
 
@@ -112,7 +113,7 @@ Before you install the OVSvApp, ensure the following:
 
 
 
-##Deploying the OVSvApp<a name="deploytemplate"></a>
+##Deploy the OVSvApp {deploytemplate}
 
 You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.
 
@@ -125,7 +126,13 @@ The deploy process installs the OVSvApp as a virtual machine, which is referred 
 * The management portgroup for OVSvApp VM must be different than the Compute proxy management portgroup.
 * Specify distributed virtual switch (VDS) ports in the `ovs_vapp.ini`. Make sure the VDS ports are attached with the proper hosts.
 
-### Create a VM template in vCenter
+The deploy process installs the OVSvApp as a virtual machine, which is referred to as *OVSvApp VM* in this document.
+
+* [Create a VM template in vCenter](#createtemp)
+* [Install the prerequisite python libraries](#python)
+* [Modify and execute the installer](#modify)
+
+### Create a VM template in vCenter {#createtemp}
 
 The first step in deploying the OVSvApp is to create a VM template that will make it easier to deploy the OVSvApp on each ESX hypervisor.
 
@@ -212,7 +219,7 @@ To deploy the OVSvApp:
 	vCenter Server marks that virtual machine as a template and displays the task in the Recent Tasks pane.
 
 
-### Install the prerequisite python libraries
+### Install the prerequisite python libraries ### {#python}
 
 On the server where you extracted the `ovsvapp.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
 
@@ -355,7 +362,7 @@ On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.i
 
 	The installation log file will be located at `/hp-ovsvapp/log/ovs_vapp.log`.
 
-## Verifying your deployment<a name="deploymentverification"></a>
+## Verify your deployment {#deploymentverification}
 
 After the OVSvApp deployment script executes successfully, you can see the OVSvApp deployed on all the specified ESX hosts. 
 
@@ -384,14 +391,14 @@ After the OVSvApp deployment script executes successfully, you can see the OVSvA
     All agents should indicate alive status that is denoted by**:-)**.
 
 
-## Managing HP VCN networking <a name="managevcnnetworkservice"></a>
+## Manage HP VCN networking {#managevcnnetworkservice}
 
 Enter the following commands to stop and restart the HP VCN networking service (`hpvcn-neutron-agent`):
 
 	sudo service hpvcn-neutron-agent stop
 	sudo service hpvcn-neutron-agent start
 
-## Troubleshooting OVSvApp ## {#trouble}
+## Troubleshoot OVSvApp ## {#trouble}
 
 If you are having issues with the installation or operation of the OVSvApp, review these tips:
 
@@ -405,7 +412,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - In a multiple vCenter environment, during tenant VMs spawn, if a VM fails to spawn on one vCenter server and successfully spawns on another vCenter server, check for stale portgroups, which causes stale OVS Flows. If an OVSvApp agent needs to be restarted, the OVS flows might be slow to be restored. If that happens, restart the agent to stabilize the flows.
 
-- If DRS and HA are enabled on the cluster, tenant VMs except OVSvApp VM will migrate to other ESX hosts.
+- If DRS and HA are enabled on the cluster, VMs except OVSvApp VM will migrate to other ESX hosts.
 
 - If the `neutron agent list` command shows a specific OVSvApp agent up and running, but you see an ESX host in maintenance mode, you can disable agent monitoring for the OVSvApp solution. To disable agent monitoring, add a flag `enable_agent_monitor` set to `false` as `enable_agent_monitor = false` to the `/etc/neuton/neutron.conf` file. Restart the server to activate the value.
 
@@ -426,10 +433,12 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - When vCenter username <"vCenter_username"> has domain included, provide username details in username@domain format.
 
-- When cert_check is False, please ensure to make cert_path as a blank field
+- When `cert_check` is **False**, `cert_path` should be a blank field.
+
+- For Helion ESX type install, do not attempt to restore the Overcloud nodes. Restoring will power down the ESX hosts associated with the registered vCenter cluster.
 
 
-## Cleaning up or deleting the OVSvApp {#clean}
+## Clean up or deleting the OVSvApp {#clean}
 
 To clean up or delete the OVSvAPP setup:
 
@@ -457,11 +466,79 @@ To clean up or delete the OVSvAPP setup:
 	For option 4, you must enter the name of the OVSvApp applicances you want to delete, separated by a comma.
 
 
-## Uninstalling OVSvApp VM on ESX hosts<a name="uninstallvcn"></a>
+## Uninstall OVSvApp VM on ESX hosts {#uninstallvcn}
 
 To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and delete each OVSvApp VM.
 
-## Next Steps<a name="next"></a>
+## Update OVSvApp {#update}
+
+To update the OVSvApp from version 1.0 to version 1.0.1:
+
+1. Make sure that DRS is enabled on the cluster on which 1.0.1 version of OVSvApp will be installed:
+
+	a. In the vSphere client, select the cluster in the vSphere Client inventory.
+
+	b. Right-click and select **Edit Settings**.
+
+	c. In the left panel, select General, and make sure **Turn On vSphere DRS** is selected.
+
+	d. Click **OK**.
+
+	**Note:** DRS safeguards tenant VM traffic from being black-holed.
+
+2. Place the ESX host on which the 1.0.1 version of OVSvApp will be installed into maintenance mode :
+
+	In the vSphere Client, right click on the ESX host and select **Enter Maintenance mode**.
+
+	All virtual machines on the host are migrated to different hosts when the host enters maintenance mode.
+
+3. Exit maintenance mode.
+
+	In the vSphere Client, right click on the ESX host and select **Exit Maintenance mode**.
+
+	Having the host in Maintenance Mode prevents virtual machine from migrating back to the ESX host. See Step 1.
+
+5. Delete the OVSvApp appliance:
+
+	a. Right-click the **OVSvApp VM**. 
+
+	b. Select **Delete**.
+
+6. On the controller, execute the following command to obtain the `ovsvapp_agent_id`.
+
+		neutron agent-list 
+
+	Note the ID.
+
+9. On the controller, execute the following command to remove the entry from “neutron agent-list”
+
+		neutron agent-delete <ovsvapp_agent_id>
+
+	**Where:**
+
+	`<ovsvapp_agent_id>` is the OVSvApp ID obtained.
+
+10. Install 1.0.1 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
+
+11. Re-enable vMotion on vSwitch properties of that ESX host.
+
+	a. In the vSphere Client, right click on the ESX host.
+
+	b. Click the **Configuration** tab.
+
+	c. In the **Hardware** section, click **Networking**. 
+
+	d. Click **Properties** for the virtual switch where a VMkernel port has been configured.
+
+	e. In the dialog box that opens, select `vmkernel` in the **Ports** tab and click **Edit**. 
+
+	f. Select **Enabled** next to vMotion.
+
+	g. Click **OK**.
+
+
+
+## Next Steps {#next}
 
 - Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
 
