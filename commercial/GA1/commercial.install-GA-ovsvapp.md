@@ -520,6 +520,8 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 10. Install 1.0.1 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
 
+		add_new_hosts=True
+
 11. Re-enable vMotion on vSwitch properties of that ESX host.
 
 	a. In the vSphere Client, right click on the ESX host.
