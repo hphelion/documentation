@@ -5,7 +5,7 @@ permalink: /helion/openstack/map/volumetype/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
