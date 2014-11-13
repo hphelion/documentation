@@ -53,7 +53,7 @@ The first step in deploying the ESX compute proxy is to create a VM template tha
 
 ###Create a new VM
 
-1. Import the `overcloud-nova_compute_esx_proxy.ova` into the vCenter using the vSphere client.
+1. Import the `overcloud-nova_compute_esx_proxy_1.0.1.ova` into the vCenter using the vSphere client.
 
 2. In the vSphere Client, click **File** and then click **Deploy OVF Template**.
 

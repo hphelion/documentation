@@ -138,7 +138,7 @@ The first step in deploying the OVSvApp is to create a VM template that will mak
 
 To deploy the OVSvApp:
 
-1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvApp appliance.
+1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp-1.0.1.tgz`. Extract the `ovsvapp_1.0.1.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvApp appliance.
 
 2. Use the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESX hosts in your data center: 
 
@@ -221,13 +221,13 @@ To deploy the OVSvApp:
 
 ### Install the prerequisite python libraries ### {#python}
 
-On the server where you extracted the `ovsvapp.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
+On the server where you extracted the `ovsvapp_1.0.1.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
 
 pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage ESX, ESXi, and vCenter.
 
 ### Modify and execute the installer {#modify}
 
-On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.ini` file.
+On the server where you extracted the `ovsvapp_1.0.1.tgz` file, locate the `ovs_vapp.ini` file.
 
 1. Modify the `ovs_vapp.ini` file by adding settings for cloning and configuring OVSvApp VMs: 
 
@@ -442,7 +442,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 To clean up or delete the OVSvAPP setup:
 
-1. On the server where you extracted the `ovsvapp.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
+1. On the server where you extracted the `ovsvapp_1.0.1.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
 
 2. Modify the `ovs_vapp.ini` file by entering only the connection details in the [vmware] section.
 
