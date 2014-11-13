@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/
+permalink: /helion/openstack/release-notes/101/
 product: commercial.ga
 
 ---
@@ -20,37 +20,84 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Release Notes
+# HP Helion OpenStack&reg; 1.0.1 Release Notes
 
-Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0, including known issues and workarounds, and where to find further information on the product release:
+Thank you for your interest in HP Helion OpenStack. This document provides an overview of the features contained within HP Helion OpenStack version 1.0.1, including known issues and workarounds, and where to find further information on the product release:
 
 * [Features in HP Helion OpenStack](#features) 
-
+* [Known Issues in this Release](#known-issues)
 * [For Further Information](#For-Further-Information) 
 
-##Features in HP Helion OpenStack## {#features}
+## Features in HP Helion OpenStack ## {#features}
 
-**OpenStack Juno Services** - The full set of standard OpenStack services is available for you to use: Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, Heat, Ceilometer, and TripleO (Ironic) for deployment.
+The following features have been added to HP Helion OpenStack, by release.
 
-**TripleO (Ironic)** - Using OpenStack technology for deploying OpenStack services in a fully automated manner resulting in a bare-metal control plane deployed in a highly available configuration.
+### Features in HP Helion OpenStack 1.0.1 ###
 
-**LogStash/ElasticSearch** - Enhancing security and supportability of the product by offering centralized logging.
+**Defect fixes** - A number of defects were addressed and fixed in this release.
 
-**Icinga** - Providing infrastructure monitoring ensuring the health of the cloud. 
+**Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
 
-**HP StoreVirtual VSA** - The VSA is used as the default fault-tolerant, software-defined storage backend for Cinder, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.
+**Patch update functionality** -- The HP Helion OpenStack 1.0.1 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
-**Support for VMWare ESX** - Makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
+### Features in HP Helion OpenStack 1.0 ### 
+
+**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
+
+**Other Services** [Other services](/helion/openstack/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
+
+**LogStash/ElasticSearch** - This service provides enhanced security and supportability of the cloud by offering centralized logging.
+
+**Icinga** - This service provides infrastructure monitoring ensuring the health of the cloud. 
+
+**HP StoreVirtual VSA** -  [HP StoreVirtual VSA](http://www8.hp.com/us/en/products/storage-software/product-detail.html?oid=5306917) is storage virtualization software used as the default fault-tolerant, software-defined storage backend for the Volume Operations service, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.
+
+**Support for VMWare ESX** - [VMWare ESX](bare-metal hypervisor) is a bare-metal hypervisor. HP Helion OpenStack makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
 
 **HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
 
-###Known Issues in this Release### {#known-issues}
+## Known Issues in this Release ## {#known-issues}
 
 The following are the known issues for HP Helion OpenStack:
 
-**Operations**
+**Patch Update Issues**
+
+You might experience the following issues when performing the upgrade to HP Helion OpenStack 1.0.1:
+
+* It is recommended that you perform a [back-up](/helion/openstack/backup.restore/) before running the patch upgrade. If there is a problem with the upgrade, you can use the [restore process](/helion/openstack/backup.restore/) to return the controllers and database to their pre-update state. 
+
+* If you need to restore the overcloud controllers and overcloud database after running the patch upgrade, the registered vCenter clusters might have gotten powered off during the upgrade process. <! -- ALM 11335 -->
+
+	You will need to restart the clusters.
+
+* If using the Ansible-based helper script to update, the Ironic service might not restart because of a lock situation in Ironic. If you experience this issue, refer to [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/#ansible). <!-- CORE 2043 -->
+
+* The update overcloud process fails intermittently because of build number settings in the `ce_env.json` file. <!-- (CORE-1697) -->
+
+	If the update fails with the following error:
+	 `Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES) `
+
+	Ensure that tripleo/ce_env.json on seed node has right build number for the `build_number` and `installed_build_number`. See [Troublshooting](/helion/openstack/services/troubleshooting/#failure-update-overcloud)
+
+**Installation Issues**
+
+When installing HP Helion OpenStack you might experience the following issues:
+
+* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails. Specify the server with the lowest specs as the second entry in the `baremetal.csv` file. <!-- (CORE-1409) -->
+
+
+**Operational Issues**
+
+When using HP Helion OpenStack you might experience the following issues:
+
+* A snapshot of an instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot will be listed as an image (not a snapshot) with a size of 0 and a blank disk format.
+
+	Even though with Horizon and CLI report the snapshot incorrectly,  the snapshot launches properly. <!-- (GLAN-1706) -->
+
+* If you use the Updates and Extensions tab of the Helion Dashboard for the overcloud (known as the *Sherpa UI*) to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). Avoid using images that use the same name. <!-- (CODN-24) -->
 
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
+
 * If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
 		$ sudo service nova-compute restart
@@ -58,26 +105,47 @@ The following are the known issues for HP Helion OpenStack:
 		$ sudo service nova-conductor restart
 		$ sudo service neutron-openvswitch-agent restart
 
-* In some instances, the centralized logging feature does not function after the  product installation. If this occurs, repeat the following steps on the overcloud controller and all compute nodes
+* In some instances, the centralized logging feature does not function after the  product installation. If this occurs, perform the following steps on the overcloud controller and all compute nodes:
 
         service rsyslog restart
         
+
+**Helion Dashboard**
+
+When using HP Helion OpenStack you might experience the following issues:
+
+* On the **Floating IPs** tab in the Helion Dashboard (**Project > Access & Security > Floating IPs**) all of the buttons (Associate, Disassociate, Release Floating IP) might not appear under certain circumstances. To make the buttons appear, first attempt to allocate a new floating IP. If the buttons are still not present, log out and log in as the same user. 
+
+	To potentially avoid this issue, when creating users and projects, .  first create the project, then create user(s), and add those users to the project (rather than creating the user first, then creating a project).<!--(HORI-3110) -->
+
+* Volume backups that are created in one project are accessible to all projects. In other projects, the information displayed might not be correct. Volume backups should not appear in other projects. There is no workaround. <!-- (HORI-3009) -->
+
+* Changing the user settings in a non-admin role affects all users across all projects. Changes to a user role should not affect other roles. There is no workaround. <!-- (HORI-2934) -->
+
+* An admin is unable to retrieve object details in an Object Store. The admin might see a blank dialog box or receive the *Error: Unable to retrieve details.* error. Access object details as a non-admin user. <!-- (HORI-2930) -->
+
+
 **Other Issues**
 
-* When you resize an instance of Nova, it produces an error.
-* Volume backups that are created in one project are accessible to all projects.
-* Changing the user settings in a non-admin role affects all users across all projects.
-* An admin is unable to retrieve object details in an Object Store.
-* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack.
-* The update overcloud process fails intermittently and occurs when an OLD_BUILD value is set to NULL instead of the correct build number from ce_env.json.
-* If a set of baremetal servers differ in specifications (such as memory or disk capacity), the installation fails.
-* When a controller node crashes, it must be rebooted to return to its operational state.
-* The installation process can fail if the user is attempting to add more than 2000GB (2TB) to the CSV file (even if the baremetal server has more space).
-* The Helion Core installation process leaves behind a shared private network defined.
-* When the VIP is moved to a new controller, the OpenStack services stop responding to any CLI commands.
-* Nova does not handle or recover from RabbitMQ Server process failure.
-* The keepalived processes do not restart automatically when they are killed.
-* The HAProxy does not automatically restart when it is killed.
+Other issues you might experience when using HP Helion OpenStack:
+
+* When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->. 
+* After updating the undercloud to HP Helion OpenStack 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
+
+* A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack. <!-- (EE-21) -->
+
+* When a controller node crashes, it must be rebooted to return to its operational state. <!-- (CORE-1387) -->
+
+* The Helion Core installation process leaves behind a shared private network defined. <!-- (CORE-586) -->
+
+* When a virtual IP address (VIP) is moved to a new controller, the OpenStack services stop responding to any CLI commands. The system will recover after several minutes. <!-- (CORE-1716) -->
+
+* The Compute service does not handle or recover from RabbitMQ Server process failure. <!-- (CORE-1559) -->
+
+* The keepalived processes do not restart automatically when they are killed. Use the service `keepalived start` to restart keepalived. <!-- (CORE-972) -->
+
+* The HAProxy does not automatically restart when it is killed. Restart haproxy manually using `service haproxy restart`. <!-- (CORE-943) -->
+
 * A user can register but cannot update a vCenter through the UI. 
 
 

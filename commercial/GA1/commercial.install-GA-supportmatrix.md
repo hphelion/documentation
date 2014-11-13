@@ -45,6 +45,7 @@ The following diagrams depict simplified deployment scenarios:
 
 The following hardware has been tested and verified to work with HP Helion OpenStack:
 
+
 ### HP Proliant BladeSystem
 
 - [BL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
@@ -52,8 +53,8 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
 - [BL465c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137)
 - [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
-- BL460 Gen7
-- BL490c Gen7
+- BL460 Gen7 
+- BL490c Gen7 
 - SL390s Gen7
 
 ### HP Proliant Rack Servers
@@ -107,11 +108,11 @@ HP supports the following configurations for HP Helion OpenStack deployment:
    
       * 8Gb FC SAN
       * 10Gb iSCSI CNA/NIC
+      
 
-- 3PAR InForm OS Version: 3.1.3 MU1
-   
-    * HP StoreVirtual 4000 Storage
+- 3PAR InForm OS Version: 3.1.3 MU1 
 
+      * HP StoreVirtual 4000 Storage
    
      
 ## Hardware Requirements<a name="baremetal"></a>
@@ -140,7 +141,7 @@ Additional requirements are as follows:
 
 	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
 
-The following table lists the minimum requirements required for installation of each type of node. The maximum of 2TB for the undercloud and overcloud nodes is mandatory for installation. 
+The following table lists the minimum requirements required for installation of each type of node. 
 
 <table style="text-align: left; vertical-align: top;">
 
@@ -175,7 +176,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Undercloud Controller</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td>512GB - 2TB</td>
+<td>512GB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -194,7 +195,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Controller </td>
 <td rowspan="4">3</td>
 <td>Disk </td>
-<td> 512GB - 2TB
+<td> 512GB
  </td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
@@ -214,7 +215,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Compute Server </td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td> 512GB - 2TB</td>
+<td> 512GB</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -233,7 +234,7 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Swift server </td>
 <td rowspan="4">2</td>
 <td>Disk </td>
-<td> 512GB - 2TB
+<td> 512GB
 </td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">

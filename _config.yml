@@ -20,13 +20,13 @@ navigation:
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
     url: /automation/
-  - text: HP Cloud OS for Moonshot
-    url: /cloudos/moonshot/
   - text: HP CloudSystem
     url: http://www.hp.com/go/cloudsystem/docs
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
+  - text: HP Helion Documentation
+    url: /
   - text: HP Helion Public Cloud Documentation
     url: /publiccloud/overview/
   - text: Available Services
@@ -41,6 +41,8 @@ navigation:
     url: /publiccloud/site-overview/
 
   mc:
+  - text: HP Helion Documentation
+    url: /
   - text: Overview
     url: /mc/
   - text: Main Dashboard
@@ -48,6 +50,8 @@ navigation:
   - text: Console Pages Site Map
     url: /mc/sitemap/
   mc-compute:
+  - text: HP Helion Documentation
+    url: /
   - text: Console Overview
     url: /mc/
   - text: Servers Screen
@@ -67,6 +71,8 @@ navigation:
   - text: Console Pages Site Map
     url: /mc/sitemap/
   mc-object-storage:
+  - text: HP Helion Documentation
+    url: /
   - text: Console Overview
     url: /mc/
   - text: Object Storage Dashboard
@@ -74,7 +80,7 @@ navigation:
   - text: Use Cases
     url: /mc/object-storage/use-cases/
   unix-cli:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /cli/unix/
@@ -101,7 +107,7 @@ navigation:
   - text: Release Notes
     url: /cli/unix/release-notes/
   win-cli:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /cli/windows/
@@ -122,7 +128,7 @@ navigation:
   - text: Release Notes
     url: /cli/windows/release-notes/
   win-2-cli:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /cli/windows/2/
@@ -143,6 +149,8 @@ navigation:
   - text: Release Notes
     url: /cli/windows/2/release-notes/
   nova-cli:
+  - text: HP Helion Documentation
+    url: /
   - text: Site home page
     url: /publiccloud/overview/
   - text: Overview
@@ -150,7 +158,7 @@ navigation:
   - text: Installation
     url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
   fog:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /bindings/fog/
@@ -169,7 +177,7 @@ navigation:
   - text: Release Notes
     url: /bindings/fog/release-notes/
   jclouds:
-  - text: Site home page
+  - text: HP Helion Documentation
     url: /
   - text: Overview
     url: /bindings/jclouds/
@@ -180,6 +188,8 @@ navigation:
   - text: Object Storage Examples
     url: /bindings/jclouds/object-storage/
   cloudos:
+  - text: HP Helion Documentation
+    url: /
   - text: HP Cloud OS Home  (Deprecated)
     url: /cloudos/
   - text: Prepare
@@ -196,27 +206,6 @@ navigation:
     url: /cloudos/openstack/	
   - text: Site Index
     url: /cloudos/siteindex/
-  - text: HP Helion Documentation
-    url: /
-  moonshot:
-  - text: HP Helion Documentation
-    url: /
-  - text: HP Cloud OS for Moonshot Home
-    url: /cloudos/moonshot/
-  - text: Prepare
-    url: /cloudos/moonshot/prepare/  	
-  - text: Install
-    url: /cloudos/moonshot/install/
-  - text: Manage
-    url: /cloudos/moonshot/manage/
-  - text: Develop
-    url: /cloudos/moonshot/develop/
-  - text: Community Forum
-    url: /cloudos/moonshot/community/		
-  - text: Related Topics
-    url: /cloudos/moonshot/related-topics/	
-  - text: Site Index
-    url: /cloudos/moonshot/siteindex/
   community: 
   - text: HP Helion Documentation
     url: /
@@ -272,7 +261,7 @@ navigation:
   - text: Preview Agreement
     url: /helion/openstack/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/3rd-party-license-agreements/	
+    url: /helion/openstack/3rd-party-license-agreements/
   - text: Site Index
     url: /helion/openstack/siteindex/
   commercial.ga: 
@@ -281,7 +270,7 @@ navigation:
   - text: HP Helion OpenStack Documentation Home
     url: /helion/openstack/
   - text: Release Notes
-    url: /helion/openstack/release-notes/ 
+    url: /helion/openstack/release-notes/101/ 
   - text: FAQ
     url: /helion/openstack/faq/  
   - text: Technical Overview
@@ -290,14 +279,12 @@ navigation:
     url: /helion/openstack/services/overview/
   - text: Support Matrix
     url: /helion/openstack/support-matrix/ 		
-  - text: Installation & Configuration Overview
+  - text: Installation Overview
     url: /helion/openstack/install/overview/	
-  - text: Installation Prerequisites
-    url: /helion/openstack/install/prereqs/
-  - text: Installation for KVM Hypervisor
-    url: /helion/openstack/install/kvm/
-  - text: Installation for ESX Hypervisor
-    url: /helion/openstack/install/esx/
+  - text: Update Overview
+    url: /helion/openstack/update/overview/101/
+  - text: Configuring Your Network Securely
+    url: /helion/openstack/install/security/
   - text: Back Up and Restore
     url: /helion/openstack/backup.restore/
   - text: Troubleshooting
@@ -319,6 +306,10 @@ navigation:
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
+  - text: Development Platform Community Edition Installation & Configuration
+    url: /helion/devplatform/install/community/
+  - text: Development Platform Commercial 1.0.1 Update
+    url: /helion/openstack/update/devplat/101/
   - text: Application Developer Resources
     url: /helion/devplatform/appdev/
   - text: IT Ops Resources

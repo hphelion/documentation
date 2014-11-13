@@ -164,27 +164,29 @@ The following diagram depicts a simplified deployment scenario using ESX.
 
 ## Hardware requirement {#hardware-req}
 
-The following hardware requirement is required to install HP Helion OpenStack.
+The following hardware requirements are required to install HP Helion OpenStack.
 
 * At least 8 and up to 100 baremetal systems with the following configuration:
+	* A minimum of 32 GB of physical memory
+	* A minimum 512GB of disk space, required for installation. 
+	* A minimum of 1 x 10 GB NIC with PXE support
+	* Capable of hosting VMs
+	* Boot order configured with Network/PXE boot as the first option
+	* BIOS configured: 
+	* To the correct date and time
+	* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+	* To stay powered off in the event of being shutdown rather than automatically restarting
+	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
 
-    * A minimum of 32 GB of physical memory
-    * A minimum 512GB to a maximum 2 TB of disk space, required for installation. You can add more capacity after installation.
-    * A minimum of 1 x 10 GB NIC with PXE support
-    * Capable of hosting VMs
-    * Boot order configured with Network/PXE boot as the first option
-    * BIOS configured: 
-      * To the correct date and time
-      * With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-      * To stay powered off in the event of being shutdown rather than automatically restarting
-    * Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
+<!-- Need maximum disk space; 2TB requirement no longer applicable (10/29/14 -->
+
 
 * A seed VM host, also called the installer system, to run the baremetal install and host the Seed VM with the following configuration:
 
-    * A minimum of 16 GB of physical memory
-    * A minimum of 1 TB of disk space
-    * Virtualization enabled 
-    * Ubuntu 14.04 installed
+	* A minimum of 16 GB of physical memory
+	* A minimum of 1 TB of disk space
+	* Virtualization enabled 
+	* Ubuntu 14.04 installed
 
 For more information of Hardware configuration see [Hardware configuration](/helion/openstack/install/prereqs/) and [Support Matrix](/helion/openstack/support-matrix/).
 
@@ -417,7 +419,7 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 <tr style="background-color: white; color: black;">
   	<td style><b>Overcloud<b></td>
  	<td>The overcloud is the functional cloud available to end users for running guest virtual machines and workloads. The overcloud comprises OpenStack Cloud Services deployed on controller nodes, and a number of compute nodes and storage nodes. 
-	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <a href ="/helion/openstack/technical-overview/"> Functional Overview </a>section above. 
+	<br><br>The cloud services in the overcloud, used by end users, include Compute, Networking, Block Storage, Object Operations, Horizon, Image Operations, Identity Operations, and Orchestration as described in the <a href ="/helion/openstack/technical-overview/#Helion-services"> Functional Overview </a>section above. 
 	<br><br>These services are deployed in a highly available cluster across the three Controller nodes.
 	<br><br>For KVM based Hypervisor environments, the overcloud also comprises Nova Compute nodes running the KVM hypervisor, and Block Storage nodes running the StoreVirtual VSA.
 </br>
@@ -439,9 +441,10 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
-HP Helion OpenStack architecture diagram for KVM network architecture.
+[HP Helion OpenStack architecture diagram for KVM network architecture](#KVM-env).
 
-<img src="media/topology_kvm.png"/)>
+<!--- this is redundant diagram
+<img src="media/topology_kvm.png"/)> --->
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
@@ -459,8 +462,9 @@ An ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK
  
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.  
 
-HP Helion OpenStack architecture diagram for ESX 
-<img src="media/commercial_esx_network_architecture.png"/>
+[HP Helion OpenStack architecture diagram for ESX](#esx-env)
+<!---redundant diagram
+<img src="media/commercial_esx_network_architecture.png"/> --->
 
 The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
@@ -510,6 +514,8 @@ The following systems help you manage your cloud services.
 Centralized logging is based on <a href="http://logstash.net/">Logstash</a>, <a href="http://www.elasticsearch.org/">Elasticsearch</a>, and <a href="http://www.elasticsearch.org/guide/en/kibana/current/_dashboard_schema.html">Kibana Dashboard</a> which is deployed in the undercloud server. 
 
 Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The user is not required to access the  several remote server (SSH) to view the individual log files.
+
+**Note:** Logging requires 4GB of disk space to make sure that all logging messages are retained. <!-- CORE-1964 -->
 
 ### Monitoring {#monitoring}
 

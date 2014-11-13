@@ -97,9 +97,9 @@ Perform the following steps to add a physical server:
 		| properties   | {u'memory_mb': u'73728', u'cpu_arch': u'amd64', u'local_gb': u'70',   |
 		|              | u'cpus': u'12'}                                                       |
 		+--------------+-----------------------------------------------------------------------+
-7.Create the port, and enter the MAC address and node ID  using the following ironic command: 
+7. Create the port, and enter the MAC address and node ID  using the following ironic command: 
  	
- 		 # ironic create-port -a $MAC -n $NODE_ID
+		# ironic create-port -a $MAC -n $NODE_ID
 
 
 	The following sample displays the output of the above command: 
@@ -114,9 +114,9 @@ Perform the following steps to add a physical server:
 		+-----------+--------------------------------------+	
 
  
-8.Verify the successful registration of a new physical server.
+8. Verify the successful registration of a new physical server.
 
-	`# ironic node-list`
+		# ironic node-list
 
  	The newly created server should appear in the list.
 
@@ -129,36 +129,34 @@ Perform the following steps to provision the Swift node:
 1. Log in to the seed cloud.
 
 		# ssh root@<Seed IP address>
+		
 
-2. Copy the ***ee-config.json*** to the root home directory.
+2. Set the following variables in the environment variables file to configure the following values:
 
-		 # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-3. Enter the following command to source the `overcloud_config.json`  for the new values.
-
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json 
-
-4. Use the Environment Variables file named `env_vars` created during initial installation and add the following content to it.
-
-		export OVERCLOUD_SOSWIFT_STORAGESCALE=<number of object servers>
-		export OVERCLOUD_SOSWIFT_PROXYSCALE=<number of proxy servers>
+		"so_swift_storage_scale":<number of object servers>,
+		"so_swift_proxy_scale":<number of proxy servers>,
 <!--
 3.Set the following variables **overcloud-config.json*** file to configure the following values
 
- 	    so_swift_storage_scale: <number of object servers>,
-	    so_swift_proxy_scale: <number of proxy servers>, --->
+		so_swift_storage_scale: <number of object servers>,
+		so_swift_proxy_scale: <number of proxy servers>, --->
 
- **Note**: While deploying a scale-out **proxy** node ensure that the value of `OVERCLOUD_SOSWIFT_STORAGESCALE` is unchanged. While deploying a scale-out **object** node ensure that the value of `OVERCLOUD_SOSWIFT_PROXYSCALE` is unchanged.
+	
+ **Note**: While deploying a scale-out **proxy** node ensure that the value of `so_swift_storage_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `so_swift_proxy_scale` is unchanged.
 
-5.Source the environment variables from the Environment Variables file. 
+3.Source the environment variables file created during initial installation.
 
-	# source /root/env_vars
+	# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
 
-6.Run the installer script to update the cloud.
+For example:
+
+	# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+
+4.Run the installer script to update the cloud.
 
 	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
-##Verify Swift node deployment {#verify-swift-node-deployment}
+## Verify Swift node deployment {#verify-swift-node-deployment}
 Verify that the new nodes were created and are functioning properly using the following commands:
 
 1. Log in to the undercloud from the seed cloud.

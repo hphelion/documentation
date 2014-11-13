@@ -30,51 +30,47 @@ By default, HP Helion Openstack cloud deploys a two node (termed as start-up swi
 This document describes the steps to add (Scale Out) or remove (Scale In) nodes (KVM Compute Nodes) to an already-installed overcloud on a KVM hypervisor. 
 
 - [Prerequisites](#pre)
-- [Add nodes](#add)
+- [Add compute nodes](#add)
 - [Remove nodes](#remove)
 
 ## Prerequisites ## {#pre}
 
 Before you begin, ensure the following:
 
-- The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack&#174; Installer with USE_TRICKLE=1, which is the default installation.
+- The seed VM, undercloud and overcloud are installed using the HP Helion OpenStack installer.
 
-## Add Nodes ## {#add}
+## Add compute nodes ## {#add}
 
-New nodes can be added to an already-installed overcloud. You can add nodes in any of the following scenarios:
+New compute nodes can be added to an already-installed overcloud. You can add nodes in any of the following scenarios:
 
-- [Add nodes to pre-allocated empty baremetal nodes](#pre-allocated)
+- [Configure compute nodes to pre-allocated empty baremetal nodes](#pre-allocated)
 - [Enroll a new baremetal and then add nodes](#non-allocated)
 
-### Add nodes to pre-allocated empty baremetal nodes ### {#pre-allocated}
+### Configure compute nodes to pre-allocated empty baremetal nodes ### {#pre-allocated}
 
-If you want to enroll (add) nodes that were created during the initial installation process. Perform the following steps:
+You can enroll (add) nodes that that are present in baremetal.csv but have not been used, perform the following steps:
 
 
 1. SSH to the seed VM as `root`:
 
  		ssh <IP Address>
 
-2. Edit the scale counts in environment variables file (env_vars) that was used during the initial installation. Edit the `env_vars` file as follows to define the appropriate scale number:
+2. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
 
-		export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
+		"compute_scale":<number of compute nodes>,
 
 3. Source the environment variables file that you updated:  
 
-		source /root/env_vars
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
 4. Run the installer script:
 
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 
-If the above command fails, try the following:
 
-		export OVERCLOUD_SCALE_NODES=1
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-install-seed --skip-install-undercloud 2>&1 | tee update.log
+### Enroll a new baremetal node and then configure compute nodes ### {#non-allocated}
 
-### Enroll a new baremetal node and then add nodes ### {#non-allocated}
-
-To add new compute nodes that were not created during the initial installation process, first enroll the baremetal node and then add new node.
+To add new compute nodes that were not present during the initial installation process, first enroll the baremetal node and then configure the new node.
 
 1. SSH to undercloud VM as the heat-admin user from the seed VM:
 
@@ -108,13 +104,14 @@ To add new compute nodes that were not created during the initial installation p
 7. Make the respective Baremetal entry in `/root/baremetal.csv`.   
 	<!---If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`: 
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
-8. Edit the `env_vars` file as follows to define the appropriate scale number:
 
-		export OVERCLOUD_COMPUTESCALE=<number of compute nodes>
+8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
+
+		"compute_scale":<number of compute nodes>,
 
 9. Source the environment variables file that  you updated:  
 
-		source /root/env_vars
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
 10. Run the installer script:
 
@@ -163,13 +160,13 @@ To remove a node:
 
 10. Remove the entry with the MAC Address that you retrieved in step 4 from from the `/root/baremetal.csv` file:
 
-<!---11. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/env_vars` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
+<!---11. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/kvm-custom-ips.json` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
 
 		export OVERCLOUD_COMPUTESCALE=<number>
 
 12. Source the environment variables file that  you updated:  
 
-		source /root/env_vars
+		source /root/kvm-custom-ips.json
 
 13. Run the installer script:
 
@@ -179,3 +176,5 @@ To remove a node:
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+
+     

@@ -32,7 +32,7 @@ The process for integrating LDAP involves the following steps:
 - [Include the configuration files in the installation](#install)
 - [Configure Horizon](#horizon)
 
-## Prerequisites<a name="pre"></a>
+## Prerequisites {#pre}
 Before starting the integration, review the following prerequisites:
 
 - LDAP server is up and running in a network accessible from the overcloud.
@@ -51,14 +51,14 @@ Before starting the integration, review the following prerequisites:
 	- sherpa
 	- swift
 
-## Generate configuration files<a name="config"></a>
+## Generate configuration files {#config}
 
 The LDAP integration process requires two configuration files:
 
 - [TripleO overcloud password file](#tripleo)
 - [LDAP server connection settings](#connect)
 
-### TripleO overcloud password file<a name="tripleo"></a>
+### TripleO overcloud password file {#tripleo}
 
 This file contains the password for all the service users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
 
@@ -78,7 +78,7 @@ This file contains the password for all the service users created on the LDAP se
 	
 The file must end with a carriage return. TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
 
-### LDAP server connection settings<a name="connect"></a>
+### LDAP server connection settings {#connect}
 
 This file contains the LDAP server connection settings.  The content of the file will be transparently propagated in `/etc/keystone/keystone.conf` on each of the overcloud controller nodes. Therefore, it must be a well-formed, syntax-error free json file.
 
@@ -180,7 +180,7 @@ The following options must be set with proper values to provide integration with
 	</tr>
 	</table>
 
-## Include the configuration files in the installation<a name="install"></a>
+## Include the configuration files in the installation {#install}
 
 You need to copy the configuration files to the seed VM host during the installation, after the seed VM is installed and before launching the installation of the overcloud and undercloud.
 
@@ -200,7 +200,7 @@ Follow the steps described in the installation instructions to deploy the overcl
 
 [HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
 
-## Configure Horizon<a name="horizon"></a>
+## Configure Horizon {#horizon}
 
 1. Enable LDAP user login.
 

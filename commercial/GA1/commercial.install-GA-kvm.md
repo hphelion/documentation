@@ -34,11 +34,11 @@ The installation and configuration process for KVM consists of the following gen
 	* [Verify Prerequisites](#pre)
 	* [Review the KVM deployment architecture](#deploy-arch)
 	* [KVM deployment architecture](#deploy-arch)
-	* [Create and identify environment variables file](#envvars)
+	* [Edit the JSON environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
-	* [Set DNS servers by default](#name-resolution)
+	* [Set DNS servers](#name-resolution)
 	* [Preparing seed cloud host to create the seed VM](#prepseed)
-* [Downloading the installation packages](#getinstall)
+* [Downloading and extracting the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
 	* [Configure proxy information](#proxy)
 	* [Unpack the installation file](#unpackinstall)
@@ -72,11 +72,11 @@ The following diagram depicts the required network topology for a KVM installati
 
 For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
 
-### Create and identify environment variables file {#envvars}
+### Edit the JSON environment variables file ### {#envvars}
 
-Before installing, make sure you have created the environment variables file that is required for installation.
+Before installing, make sure you have edited the JSON environment variables file that is required for installation.
 
-For more information, see [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/).
+For more information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
 
 ### Prepare baremetal.csv file {#csv}
 
@@ -84,38 +84,21 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
-### Set DNS servers by default {#name-resolution}
+### Set DNS servers {#name-resolution}
 
 To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
 
 ### Prepare the cloud seed host to create the seed VM {#prepseed}
 On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
-## Downloading the installation packages {#getinstall}
-
-Before you begin, you must download the required HP Helion OpenStack installation packages:
-
-1. Log in to your install system as root:
-
-        sudo su -
-
-2. Register and then log in to download the required installation packages from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show).
-
-	<table style="text-align:left; vertical-align:top; width:650px;">
-	
-	<tr style="background-color: lightgrey; color: black;">
-	<td><b> Installation package </b></td><td><b>File name</b></td></tr>
-
-	<tr style="background-color: white; color: black;">
-	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
-	</table>
+## Downloading and extracting the installation packages {#getinstall}
+Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See [Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 ## Installing HP Helion OpenStack {#install}
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:
 
 * [Configure proxy information](#proxy)
-* [Unpack the installation file](#unpackinstall)
 * [Install the seed VM and building your cloud](#startseed)
 
 
@@ -137,22 +120,6 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 3. Log out and re-login to the seed VM host to activate the proxy configuration.
 
-### Unpack the installation file {#unpackinstall}
-
-1. Make sure you are logged into the seed VM host as root. If not:
-
-		sudo su -
-
-2. Create a directory named `work`:
-
-		mkdir /root/work
-		cd /root/work
-
-3. Extract the installation package to the `work` directory:
-
-		tar zxvf /root/HPHelionOpenStack_1.0.tgz
-
-	This creates and populates a `tripleo/` directory within root's home directory.
 
 ### Install the seed VM and build your cloud {#startseed}
 
@@ -160,9 +127,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
  
 		sudo su -
 
-2. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+2. Execute the `kvm-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source env_vars
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
 5. Start the seed VM installation by entering the following command:
 
@@ -174,21 +141,17 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	When the seed VM startup is complete, you should see a message similar to the following:
 
-		"Wed Apr 23 11:25:10 IST 2014 --- completed setup seed" 
+		"Wed Oct 23 11:25:10 IST 2014 --- completed setup seed" 
 
-6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed vm is defined in the environment variables fie::
+	**Note:** If `hp_ced_host_manager.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
-		ssh root@192.0.2.1 
+6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file:
+
+		ssh root@<seed_VM_IP_address>
 
 	**Note**: It might take a few moments for the seed VM to become reachable. 
 
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
-
-8. Copy the `env_vars` file to `/root`. You can use the `scp` to copy the file from seed VM host to the seed VM.
-
-9. Execute the `env_vars` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
-
-		source env_vars
 
 10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
@@ -210,15 +173,20 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-14. To install and configure the undercloud and overcloud, run the following command from `/root`. This step creates a log file for the installation process which could be useful for debugging.
+14. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
+
+14. Install and configure the undercloud and overcloud by running the following command from `/root`. This step creates a log file for the installation process which could be useful for debugging.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee cloud_install.log
 
 	If your installation is successful, a message similar to the following is displayed:
 
-		"HP - completed - Tue Apr 22 16:20:20 UTC 2014"
+		"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
 
-	**Note:** If `hp_ced_start_seed.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
+	**Note:** If the installation does not complete properly, refer to the [Troubleshooting](/helion/openstack/services/troubleshooting/) document.
+
 
 ## Verify your installation {#verifying-your-installation}
 
@@ -255,17 +223,17 @@ Make sure you can access the undercloud Horizon dashboard. To do this, follow th
 
 Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
 
-1. From the seed, export the undercloud passwords:
+1. From the seed, export the overcloud passwords:
 
 		. /root/tripleo/tripleo-overcloud-passwords
 
-2. Export the undercloud users:
+2. Export the overcloud users:
 
 		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc
 
 3. Assign the overcloud IP address to a variable:
 
-		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json)
+		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json); echo ${OVERCLOUD_IP}
 
 	<!-- Remove per Divaker
 	4. With the IP address and root password, log in as the main user, root using the following command 
@@ -274,12 +242,15 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`. -->
 
+4.	Obtain the overcloud admin password using the following command:
+
+		OVERCLOUD_ADMIN_PASSWORD=$(grep OVERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-overcloud-passwords | sed 's/OVERCLOUD_ADMIN_PASSWORD=//'); echo $OVERCLOUD_ADMIN_PASSWORD
+
 5. From your install system, open a web browser and point to:
 
 		http://<overcloud_IP>/
 
-6. Log in to the overcloud Horizon dashboard as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 1.
-
+6. Log in to the overcloud as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
@@ -309,21 +280,20 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	Note: The `echo $UNDERCLOUD_IP` command prints the IP address of the undercloud to the screen.
 
-2. Retrieve the logging interface password in the `htpasswd.cfg` file located at:
+2. Obtain the logging interface password using the following command:
 
-		/opt/kibana/htpasswd.cfg
-
+		UNDERCLOUD_KIBANA_PASSWORD=$(grep UNDERCLOUD_KIBANA_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ KIBANA _PASSWORD=//'); echo $UNDERCLOUD_ KIBANA _PASSWORD
 
 3. Open a web browser and point to:
 
 		http://<undercloud IP>:81/
  
 
-4. Log in as user `kibana` and the password from the `htpasswd.cfg` file.
+4. Log in as user `kibana` and the password from Step 4.
 
 ## Create projects for LDAP users {#ldap}
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Include the configuration files in the installation* on the [Integrating LDAP page](/helion/openstack/install/ldap/). 
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/install/ldap/#horizon).
 
 
 ## Next Steps {#next-steps}

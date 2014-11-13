@@ -196,6 +196,11 @@ The following sample displays the removal of  **89581cb1-9c2e-46d6-8e0b-aa4518e7
 	| a8f60488-d257-4e71-b42d-72c1d5aee7d2 | overcloud-ce-novacompute1-NovaCompute1-5zry7wzanhhs   | ACTIVE | -          | Running     | ctlplane=192.0.2.28 |
 	+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
 
+
+4.	On the seed VM, update the `/root/tripleo/configs/kvm-custom-ips.json` file to reflect new scale number of swift scale-out proxy node. 
+
+		"so_swift_proxy_scale": 2, 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----

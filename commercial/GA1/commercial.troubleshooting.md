@@ -51,8 +51,7 @@ If you need further assistance, contact [HP Customer Support]([http://www.hpclou
 8. [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
 9. [Failure of Hp_ced_installer.sh](#failure-installer)
 10. [Failure of Seed Installation](#seed-install-failure)
-11. [NovaCompute node fails when installing overcloud](#novacompute-fails)
-
+11. [Ironic intermitently set maintenance mode to True during update](#ironic)
 
 ###Fatal PCI Express Device Error {#fatal-pci}
 
@@ -186,7 +185,7 @@ If you get this error, perform the below steps:
  
 		# ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number.
+2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number. <!-- (CORE-1697) -->
 
 The ce&#95;env&#95;json will be displayed as the sample below.
 
@@ -352,6 +351,61 @@ Restart the Rabbitmq service.
 <br><br>
 <hr>
 
+## Ironic intermitently set maintenance mode to True during installation {#ironic}
+
+This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
+
+**Symptoms:**
+
+If the update fails, from undercloud node:
+
+1. Source the stackrc file:
+ 
+		source stackrc 
+
+2. Execute the `nova list` command to determine which Compute node(s) is in an error state. The node will have a status of ERROR.
+
+		nova list
+
+3. Execute the `heat stack-list` command to determine which Heat stack is in an error state. The stack will have a status of `CREATE_FAILED`.
+
+		heat stack-list
+
+3. Execute the `ironic node-list` command to determine which node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
+
+		ironic node-list
+
+3. Execute the `ironic node-show` command for the node that is node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
+
+		ironic node-show <UUID>
+
+	In the output, check the `last_error` field for an error similar to the following:
+
+		During sync_power_state, max retries exceeded for node 81baacd5-657e-476f-b7ef, node state None does not match expected state
+
+		'None'. Updating DB state to 'None' Switching node to maintenance mode. 
+
+
+**Solution**
+
+1. Remove the node in maintenance mode using the following command:
+
+		nova node-delete <ID of error node>
+
+2. List the stacks using the following command:
+
+		heat stack-list
+
+
+3. Delete the stack with the failed Nova node.
+
+		heat stack-delete <ID of failed node>
+
+4. Change the node(s) to false for the maintenance option, using the following command:
+		
+		`ironic node-update <id> replace maintenance=False`
+
+
 ## ESX and OVSvAPP {#esx-ovsvapp}
 
 1. [nova-manage service list does not list the compute service as running](#nova-compute)
@@ -360,7 +414,6 @@ Restart the Rabbitmq service.
 4. [Failure of OVSvAPP deployment](#fails-ovsvapp)
 
 
- 
 ###nova-manage service list does not list the compute service as running {#nova-compute}
 
 **System Behavior/Message**

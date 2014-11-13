@@ -1,0 +1,128 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174;: Installation and Configuration"
+permalink: /helion/openstack/update/devplat/101/
+product: commercial.ga
+
+---
+<!--PUBLISHED-->
+
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+<!--
+<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
+-->
+# HP Helion OpenStack&reg;: Development Platform Commercial 1.0.1 Update
+
+The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
+
+The following sections explain how to update the HP Helion Development Platform.
+
+* [Prerequisites](#prerequisites)
+* [Update the Messaging Service](#update-messaging)
+* [Update the Application Lifecycle Service](#update-als)
+* [Update the Database Service](#update-database)
+* [Update the Marketplace Service](#update-marketplace)
+* [Troubleshooting](#troubleshooting)
+
+## Prerequisites {#prerequisites}
+
+This update guide assumes that you have updated HP Helion OpenStack 1.0 to 1.0.1 and that you have one or more HP Helion OpenStack Development Platform Services is installed in your cloud. 
+
+**Note:** If you created a new installation of 1.0.1, bypassing 1.0, you need to install HP Helion OpenStack Development Platform Services, and not update. See [Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/).
+
+## Update the Messaging Service {#update-messaging} 
+
+This section provides details on updating the Messaging Service for Helion OpenStack Development Platform. This assumes that the Messaging Service is installed in your cloud. 
+
+**Note:** If the Message Service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-messaging).
+
+### Download the Messaging Service {#download}
+
+1. Log into the Horizon Dashboard.
+
+2. Click on the **Admin** panel and select **Development Platform**. Then, click **Configure Services**.
+
+4. Locate the **Messaging Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+5. Once the download is complete, the new image for Messaging clusters will be available. All clusters created from this point forward will be using the Messaging Service 1.0.1 version.
+
+## Update the Application Lifecycle Service (ALS) {#update-als}
+
+This section provides details on updating the Application Lifestyle service (ALS) for Helion OpenStack Development Platform. This assumes that (ALS) is installed in your cloud. 
+
+**Note:** If the Message Service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-als).
+
+The process for updating ALS requires you to remove then have asked that you remove the current version then installing ALS 1.0.1. 
+
+### Remove Application Lifecycle Service 1.0 {#remove-als}
+
+To remove ALS:
+
+1. Log into the Horizon Dashboard.
+
+2. In the **Projects** Images panel locate the Application Lifecycle Service images.
+
+3. Select the two (2) ALS images.
+
+3. Click **Delete Images** and confirm.
+
+The ALS images are deleted and the service has been removed.
+
+### Download the Application Lifecycle Service 1.0.1 {#dowload-als}
+
+To download the latest version of ALS:
+
+1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, the new image for Application Lifecycle Service clusters will be available. All clusters created from this point forward will be using the Application Lifecycle Service 1.0.1 version.
+
+## Update the Database Service {#update-database}
+
+This section provides details on updating the Database Service for Helion OpenStack Development Platform. This assumes that the Database service is installed in your cloud. 
+
+**Note:** If the Database service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-database).
+
+### Download the Database Service {#download-db}
+
+To download the latest version of the Database service:
+
+1. In the **Configure Services** panel locate the **Database Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, the new images for Database Service will be available. If at any point, you choose to rebuild the Database Service control plane, it will use the latest images.
+
+## Update the Marketplace Service {#update-marketplace}
+
+This section provides details on updating the Marketplace service for the Helion OpenStack Development Platform. This assumes that the Marketplace service is installed in your cloud. 
+
+**Note:** If the Marketplace service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-marketplace).
+
+### Download the Marketplace Service {#update-marketplace}
+
+1. In the **Configure Services** panel locate the **Marketplace Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, the new images for Marketplace Service will be available. If at any point, you choose to rebuild the Marketplace Service control plane, it will use the latest images.
+	
+## Troubleshooting {#troubleshooting}
+
+### Service is stuck in download 
+
+There are several situations in which a download will not complete.  One cause which is documented, is because the `tmp` directory ran out of space. There is a prerequisite to mount the `tmp` directory to a larger partition.  If you have completed this and it is still failing to download then we will need to reset the download. In the current release, this requires a manual process.
+
+As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the `wscatalog.<id>` folder which contains the cached download. The service should now be available to download again.
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
