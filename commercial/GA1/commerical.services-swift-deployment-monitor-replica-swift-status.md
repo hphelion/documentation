@@ -65,7 +65,7 @@ Perform the following steps to monitor the replication status:
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
 	<td>Replication not progressing</td>
-    <td>An account, container or object replicator process has not finished a complete scan recently (elapsed time exceeded the threshold defined) . Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</td>
+    <td>An account, container or object replicator process has not finished a complete scan  within the defined threshold  (Default set to 24 hours (86400 seconds) for HP Helion OpenStack 1.0). Examine the account-replicator, container-replicator and object-replicator logs to see which process is "stuck". Usually, restarting the relevant process resolves the issue.</td>
 </tr>
 </tr>
 <tr style="background-color: white; color: black;">
