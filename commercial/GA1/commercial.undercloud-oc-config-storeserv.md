@@ -175,11 +175,17 @@ To update your overcloud with the changes, do the following:
 
 		# ls
 
-3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+
+3. Source the cloud configuration file to `/root/<environment variable file>` if it is absent.
   
 	 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
+# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:-->
+
+3.Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
+
 
 		},
 		  "3par": {
@@ -218,7 +224,7 @@ To update your overcloud with the changes, do the following:
 		      "iscsi_ip_address": "10.1.0.200"
 		    },
 
-	<!---**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
+<!---**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
 
 	
 		"3par": {
@@ -240,20 +246,25 @@ To update your overcloud with the changes, do the following:
 		        "san_ip": "15.214.241.21",
 		        "hp3par_iscsi_ips":"10.1.0.200,10.1.0.201:3030"
 		    }
-		  }
--->
+		  }--->
 		    
-5. Apply the configuration.
+<!---5.Apply the configuration.
 
-     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /<environment variables file name>
 
-6. Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+	For example
 
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
 
-		# source /root/kvm-custom-ips.json 
+4.Source the environment variables from the environment variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
+	 # source /root/<environment variables file name> 
+		
+   For example
 
-7. Launch install script to update the overcloud.
+	 # source /root/kvm-custom-ips.json 
+
+5. Launch install script to update the overcloud.
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 

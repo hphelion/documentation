@@ -161,12 +161,17 @@ To update your overcloud with the changes, do the following:
 
 		# ls
 		
-3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
+<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
   
 	    # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
 
-4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:
+5. Apply the configuration.
+
+        # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
+
+<!---4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:-->
  
+3.Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
 
 		{
 		  "cloud_type": "KVM",
@@ -197,23 +202,23 @@ To update your overcloud with the changes, do the following:
 		      "hplefthand_username": "test"
 		    }
 
-5. Apply the configuration.
 
-        # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+3.Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
-6. Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+	# source /root/<environment variables file name> 
+		
+For example
 
+	# source /root/kvm-custom-ips.json
 
-		# source /root/kvm-custom-ips.json
-
-7. Launch install script to update the overcloud.
+5.Launch install script to update the overcloud.
 
 	    # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this back end using Horizon overcloud dashboard or Cinder CLI.
+To use the newly added Cinder backend, create volume type and associate it with this backend using [Horizon overcloud dashboard](http:///helion/openstack/map/volumetype/) or Cinder CLI.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
