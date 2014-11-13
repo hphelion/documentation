@@ -259,7 +259,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 4.  Extract the HP Helion OpenStack installation package to the `root` directory:
 
-		tar zxvf /root/HPHelionOpenStack_1.0.1.tgz
+		tar zxvf /root/HP_Helion_OpenStack_1.0.1.tgz
 
 	This creates and populates a `tripleo/` directory within the `root' directory.
 
