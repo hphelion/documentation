@@ -46,7 +46,9 @@ Before you begin the update:
 
 * Backup a copy of the undercloud to restore in case of catastrophic failures.  For information, see [Back Up and Restore](/helion/openstack/backup.restore/).  
 
-* Make sure that you have a least 7GB of space available on the seed node. Converting to the raw mode will take space on the seed. If you are low on space and you updated the seed previously please refer to the [Cleanup section](/helion/openstack/update/seed/101/) in *Updating the Seed Cloud Host* for information on removing post-update files. The backup/restore process should remove these files. You can check to make sure the files have been removed.
+* Make sure that you have a least 7GB of space available on the seed node. Converting to the raw mode will take space on the seed. 
+	<!-- 
+	If you are low on space and you updated the seed previously please refer to the [Cleanup section](/helion/openstack/update/seed/101/) in *Updating the Seed Cloud Host* for information on removing post-update files. The backup/restore process should remove these files. You can check to make sure the files have been removed. -->
 
 * Point the install script to the overcloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
 
@@ -96,7 +98,7 @@ Before you begin the update:
 
 There are two methods to update the undercloud: 
 
-* [Automatic upgrade using the helper script](#upgradescript)
+* [Upgrade using the helper script](#upgradescript)
 * [Manual upgrade](#upgrademanual)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
@@ -135,26 +137,23 @@ To update a node, the patch image needs to be loaded into the seed VM Image Oper
 
 Use the following steps to load upload an image and its dependencies:  
 
-1.	Run the steps in [Setup the update environment](/helion/openstack/update/prereqs/101/#setup) in *Update Prerequisites* to point to the cloud to be updated for the Undercloud.  
 
-	At the end of this step you should have an SSH session with (ansible) in the prompt.  Run all undercloud operations from this session (Verification steps may be run from a different session unless noted).
-
-2. Copy the new undercloud images into the seed glance repo.  
+1. Copy the new undercloud images into the seed glance repo.  
 
 	* `undercloud.qcow2` 
 	* `undercloud.initrd` 
 	* `undercloud.vmlinuz`
 
-3. SSH to the seed VM as `root`:
+2. SSH to the seed VM as `root`:
 
  		ssh <IP Address>
 
-4. Run the update do the following:
+3. Run the update do the following:
 
 		scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/undercloud.tar /tmp.  
 		tar xvf undercloud.tar 
 
-5. Run the following commands:
+4. Run the following commands:
 
 		glance image-create --is-public True --is-protected False --name undercloud.vmlinuz --file undercloud.vmlinuz --disk-format aki --container-format aki
 

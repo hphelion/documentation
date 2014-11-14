@@ -36,7 +36,7 @@ The installer requires the following packages. If they are not found, it will pr
 * python-pip
 
     
-## <a name="installing-the-hp-helion-development-platform">Installing the HP Helion Development Platform</a>
+## <a name="installing-the-hp-helion-development-platform"></a>Installing the HP Helion Development Platform
 
 ### Downloading and unpacking the installation file
 
