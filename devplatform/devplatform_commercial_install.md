@@ -1,13 +1,13 @@
 ---
 layout: default-devplatform
 title: "HP Helion OpenStack Development Platform Installation"
-permalink: /helion/devplatform/install/commercial/
+permalink: /helion/devplatform/install/
 product: devplatform
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform Commercial Installation and Configuration NEW
+# HP Helion Development Platform Commercial Installation and Configuration NEW 
 
 The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.
 
