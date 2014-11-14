@@ -39,7 +39,7 @@ This document describes known issues that you might encounter while updating. To
 * [Instance reported as powering on but the instance is in shutoff state](#shutoff)
 * [State drive /mnt is not mounted](#mnt)
 * [Ironic intermittently set maintenance mode to True during installation](#ironic)
-* [During ansible execution to update undercloud was observer a lock problem in ironic](#ansible)
+* [A lock problem occurred in Ironic during update of the undercloud using the Ansible script](#ansible)
 
 ## Retrying failed actions ## {#retry}
 
@@ -496,7 +496,7 @@ If the update fails, from undercloud node:
 		
 		ironic node-update <id> replace maintenance=False
 
-##Ironic service cannot be restarted on the undercloud {#ansible}
+## Ironic service cannot be restarted on the undercloud {#ansible}
 
 When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. 
 
@@ -526,6 +526,39 @@ Workaround when this happens is:
 		nova stop/nova start
 
 4. Execute the update process again.
+
+## A lock problem occurred in Ironic during update of the undercloud using the Ansible script {#ansible}
+
+When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 -->
+
+
+**Symptom**
+
+* A message similar to the following appears in the `ironic-api.log` file:
+
+		2014-10-23 23:03:51.302 31612 WARNING wsme.api [-] Client-side error: Node c241b0d5-abe1-4219-883c-e8dbaf1c5b35 is locked by host hLinux, please retry after the current operation is completed.
+		Traceback (most recent call last):
+	
+	The file is located at: `/var/log/upstart/ironic-api.log`. Search for `locked by host hLinux`.
+
+** Solution **
+
+Workaround when happen is:
+
+1. Execute the following command in the undercloud:
+
+		mysql --defaults-file=/mnt/state/root/metadata.my.cnf --socket /var/run/mysqld/mysqld.sock ironic -e 'update nodes set reservation=NULL where reservation="hLinux";'
+
+2. Change the **Instance** status from `Error` to `Active`.
+
+		nova reset-state --active <instance ID>
+
+3. Start the server manually or use the following command: 
+
+		nova stop/nova start
+
+4. Execute the update process again.
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

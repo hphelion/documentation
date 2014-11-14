@@ -20,7 +20,9 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&#174;: Configuring your network securely
+# HP Helion OpenStack&#174;: Configuring Your Network Securely
+
+This document provides guidance on configuring your HP Helion OpenStack network securely
 
 HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment.  This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrative errors).
 
@@ -65,8 +67,11 @@ When securing the perimeter, consider the following:
 When configuring the VLAN, consider the following:
 
 * External VLAN - Used for binding a routable address to a Compute (Nova) VM launched in Helion. Compute VMs are hosted in a Compute Node.  
+
 * Management VLAN - Every baremetal host has an address on this network for in-band management purposes.
+
 * Service VLAN - Provides a path from Development Platform services (such as Database as a Service) running in the Compute VMs to the Centralized Logging Service running in the undercloud.
+
 * Intelligent Platform Management Interface (IPMI) VLAN - Provides a way to manage a computer that may be powered off or otherwise unresponsive by using a network connection to the hardware rather than to an operating system or login shell.
 
 #### IP addressing recommendations #### {#ipaddressing}
@@ -74,7 +79,9 @@ When configuring the VLAN, consider the following:
 When configuring IP addressed, consider the following:
 
 * External VLAN - Usually public IP subnet, size according to max desired VM count that needs to be external facing.
+
 * Management VLAN - Private IP subnet, size according to max physical servers in deployment.
+
 * Service VLAN - Private IP subnet, size accordingly with Management VLAN.
 
 #### VLAN routing interface recommendations #### {#vlanrouting}
@@ -88,6 +95,7 @@ When configuring the VLAN routing interfaces, consider the following:
 When controlling inbound and outbound traffic access, consider the following:
 
 * Outbound and Inbound access to External VLAN is controlled at both the border and aggregation router(s).
+
 * Outbound and Inbound access to the Management and Service VLANs is controlled at the aggregation router(s).
 
 #### Server connectivity recommendations #### {#serverconnect}
@@ -125,7 +133,7 @@ All traffic encryption/decryption between the client and server is handled by th
 
 #### IP mapping recommendations #### {#ipmapping}
 
-A typical deployment would have `public to mgmt` IP mapping as follows:
+A typical deployment would have public to mgmt IP mapping as follows:
 
 * Overcloud Horizon Dashboard access
 * External url - `https://horizon.fqdn.com/`
@@ -133,7 +141,7 @@ A typical deployment would have `public to mgmt` IP mapping as follows:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
-<th>API</th><th>Public Endpoint</th><th>Management Endpoint</th><th>
+<th>API</th><th>Public Endpoint</th><th>Management Endpoint</th>
 </tr>
 <tr>
 <td>Identity (Keystone)</td><td>https://keystone.fqdn.com/v2.0</td><td>
@@ -169,10 +177,15 @@ To protect against external attacks on Helion services, your firewall should be 
 <th>Description</th><th>Initiating node (from)</th><th>Receiving node (to)</th><th>Port</th>
 </tr>
 <tr>
-<td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>443, 80, 5000, 9292, 9696, 8774, 8776, 8004</td>
+<td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>443</td>
 </tr>
-<td>Administrator access via SSH</td><td>Your enterprise intranet / VPN</td><td>All Helion nodes</td><td>22</td>
+<tr>
+<td>Cloud Administrator access for Administrator/Operations activities</td><td>Your enterprise intranet/VPN</td><td>All Helion nodes</td><td>22, 80, 81,8080, 6080</td>
 </tr>
+<tr>
+<td>Integration with end user portals/application</td><td>Your enterprise intranet/VPN</td><td>All Helion nodes</td><td>5000, 9292, 9696, 8774, 8776, 8004</td>
+</tr>
+
 </table>
 
 
@@ -290,11 +303,13 @@ The following table describes the data flow between Helion nodes and StoreVirtua
 <td>4</td><td>StoreVirtual CLiQ interface via SSH (mgmt. interface)</td><td>Undercloud Controller</td><td>VIP for StoreVirtual cluster</td><td>16022</td>
 </tr>
 <tr>
-<td>5</td><td>StoreVirtual inter-cluster traffic</td><td>StoreVirtual</td><td>StoreVirtual</td><td>[See Ref 2](#additional)</td>
+<td>5</td><td>StoreVirtual inter-cluster traffic</td><td>StoreVirtual</td><td>StoreVirtual</td><td>See Reference 2 below</td>
 </tr>
 <tr>
-<td>6</td><td>CMC to StoreVirtual <br>Recommended to install on the seed cloud host</td><td>CMC</td><td>StoreVirtual</td><td>[See Ref 2](#additional)</td>
+<td>6</td><td>CMC to StoreVirtual <br>Recommended to install on the seed cloud host</td><td>CMC</td><td>StoreVirtual</td><td>See Reference 2 below</td>
 </table>
+
+Jump to [Reference 2: HP4000 SAN - SANiQ TCP and UDP Port Usage](#ref2).
 
 [Figure 6](#fig6) depicts a logical deployment after applying ACLs for flows in table:
 
@@ -317,6 +332,8 @@ The following diagram depicts a StoreServ network deployed as a flat network, as
 <img src = "/content/documentation/media/Helion_Security7.png">
 
 The following table describes the data flow between the Helion nodes and StoreServ systems:
+
+**Note:** In the following table, the Volume Operation host refers to the overcloud controller that hosts the Volume Operations (Cinder) service.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
@@ -342,12 +359,15 @@ The following table describes the data flow between the Helion nodes and StoreSe
 <td>5</td><td>StoreServ REST API (mgmt. interface) via HTTPS</td><td>UnderCloud Controller</td><td>StoreServ</td><td>8080</td>
 </tr>
 <tr>
-<td>6</td><td>SSMC to StoreServ	SSMC</td><td>StoreServ</td><td>StoreServ</td><td>[See Ref 6](#additional)</td>
+<td>6</td><td>SSMC to StoreServ</td><td>SSMC</td><td>StoreServ</td><td>
+See Reference 6 below </td>
 </tr>
 <tr>
-<td>7</td><td>Service Processor</td><td>Service Processor</td><td>StoreServ</td><td>[See Ref 6](#additional)</td>
+<td>7</td><td>Service Processor</td><td>Service Processor</td><td>StoreServ</td><td>See Reference 6 below</td>
 </tr>
-</table>
+</table>Jump to [Reference 6: HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](#ref6).
+
+
 
 When deploying StoreServ with Fiberchannel, interfaces 1 and 2 run over Fiberchannel network instead of iSCSI.
 
@@ -369,11 +389,11 @@ StoreServ port usage is described on page 65 of the [HP 3PAR StoreServ 10000 Sto
 Use the following resources when securing the network:
 
 1. <a href="http://h20195.www2.hp.com/v2/GetDocument.aspx?docname=4AA2-5615ENW&doctype=white%20paper&doclang=EN_US&searchquery=keywords=(AND)%20storevirtual%20&cc=us&lc=en,en-us)">HP StoreVirtual 4000 Storage - Network design considerations and best practices</a> (PDF)<!-- note this link is deliberately in html formatting to prevent the nested parens from breaking the MDP formatting and thus the link -->
-2. [HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf) (PDF)
+2. <a name="ref2">[HP4000 SAN - SANiQ TCP and UDP Port Usage](http://h10032.www1.hp.com/ctg/Manual/c01750064.pdf) (PDF)
 3. [StoreVirtual information](http://hp.com/go/storevirtual)
 4. [StoreServ information](http://hp.com/go/storeserv)
 5. [HP 3PAR StoreServ Storage Concepts Guide](http://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/manualsResults/?sp4ts.oid=5157544&spf_p.tpst=psiContentResults&spf_p.prp_psiContentResults=wsrp-navigationalState%3Daction%253Dmanualslist%257Ccontentid%253DGeneral-Reference%257Clang%253Den&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken)
-6. [HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf) (PDF)
+6. <a name="ref6">[HP 3PAR StoreServ 10000 Storage Physical Planning Manual Port assignments on page 65](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03101890-9.pdf) (PDF) </a> 
 7. [RFC3723 - Securing Block Storage](http://tools.ietf.org/html/rfc3723#page-28)
 8. [RFC7143 - Internet Small Computer System Interface (iSCSI) Protocol](http://tools.ietf.org/html/rfc7143)
 

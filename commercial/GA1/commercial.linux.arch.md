@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Cloud OS Host Linux Architecture
+# HP Helion OpenStack&reg; Host Linux Architecture
 
 HP Helion OpenStack Host Linux (Debian-based) project standardizes and controls our operating system environment for OpenStack services by combining Linux elements from `Debian.org`, `Kernel.org`, and foreign sources, to support our CI/CD processes.  
 

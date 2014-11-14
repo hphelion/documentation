@@ -167,24 +167,19 @@ To generate configuration file, do the following:
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to Seed as root from KVM host.
+1. SSH to the Seed as root from KVM host using the IP address of seed VM as defined in the environment variables file:
 
-		# ssh root@<IP address> 
+		# ssh root@<seed_VM_IP_address> 
 
 2. View the list of files.
 
 		# ls
 
-<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
-
-3. Source the cloud configuration file to `/root/<environment variable file>` if it is absent.
+	<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.	3. Source the cloud configuration file to `/root/<environment variable file>` if it is absent.
   
-	 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+ 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json	4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:-->
 
-# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:-->
-
-3.Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
+3. Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
 
 
 		},
@@ -224,7 +219,7 @@ To update your overcloud with the changes, do the following:
 		      "iscsi_ip_address": "10.1.0.200"
 		    },
 
-<!---**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
+	<!---**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
 
 	
 		"3par": {
@@ -247,31 +242,112 @@ To update your overcloud with the changes, do the following:
 		        "hp3par_iscsi_ips":"10.1.0.200,10.1.0.201:3030"
 		    }
 		  }--->
-		    
+	
 <!---5.Apply the configuration.
 
      	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /<environment variables file name>
-
 	For example
-
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
-
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+2. Edit and update the `tripleo/configs/kvm-custom-ips.json` and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
+			{
+				"cloud_type": "KVM",
+				"vsa_scale": 0,
+				"vsa_ao_scale": 0,
+				"so_swift_storage_scale": 0,
+				"so_swift_proxy_scale": 0,
+				"compute_scale": 4,
+				"bridge_interface": "em2",
+				"virtual_interface": "eth1",
+				"fixed_range_cidr": "172.0.100.0/24",
+				"control_virtual_router_id": "202",
+				"baremetal": {
+					"network_seed_ip": "192.168.130.3",
+					"network_cidr": "192.168.130.0/24",
+					"network_gateway": "192.168.130.1",
+					"network_seed_range_start": "192.168.130.4",
+					"network_seed_range_end": "192.168.130.22",
+					"network_undercloud_range_start": "192.168.130.23",
+					"network_undercloud_range_end": "192.168.130.126"
+				},
+				"neutron": {
+					"public_interface_raw_device": "eth1",
+					"overcloud_public_interface": "vlan331",
+					"undercloud_public_interface": "eth1"
+				},
+				"ntp": {
+					"overcloud_server": "16.110.135.123",
+					"undercloud_server": "16.110.135.123"
+				},
+				"floating_ip": {
+					"start": "192.168.131.2",
+					"end": "192.168.131.245",
+					"cidr": "192.168.131.0/24"
+				},
+				"svc": {
+					"interface": "vlan332",
+					"interface_default_route": "192.168.132.1",
+					"allocate_start": "192.168.132.2",
+					"allocate_end": "192.168.132.250",
+					"allocate_cidr": "192.168.132.0/24",
+					"overcloud_bridge_mappings": "svcnet1:br-svc",
+					"overcloud_flat_networks": "svcnet1",
+					"customer_router_ip": "192.168.130.1"
+				},
+				"codn": {
+					"undercloud_http_proxy": "http://16.85.175.150:8080",
+					"undercloud_https_proxy": "http://16.85.175.150:8080",
+					"overcloud_http_proxy": "http://16.85.175.150:8080",
+					"overcloud_https_proxy": "http://16.85.175.150:8080"
+				},
+	 		"3par": {
+				"DEFAULT": {
+					"enabled_backends": [
+						"CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
+						"CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
+					]
+				},
+				"CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
+					"san_password": "3pardata",
+					"hp3par_username": "3paradm",
+					"volume_backend_name": "3pariscsi",
+					"san_login": "3paradm",
+					"hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+					"volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+					"hp3par_password": "3pardata",
+					"hp3par_cpg": "3par_iscsi",
+					"hp3par_iscsi_chap_enabled": "true",
+					"san_ip": "15.214.241.21",
+					"iscsi_ip_address": "10.1.0.200"
+				},
+				"CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
+					"san_password": "3pardata",
+					"hp3par_username": "3paradm",
+					"volume_backend_name": "3par_FC",
+					"san_login": "3paradm",
+					"hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+					"volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
+					"hp3par_password": "3pardata",
+					"hp3par_cpg": "3par_FC",
+					"hp3par_iscsi_chap_enabled": "true",
+					"san_ip": "15.214.241.21"
+				}
+			}
+		}-->		
 4.Source the environment variables from the environment variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
-	 # source /root/<environment variables file name> 
+    # source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
 		
-   For example
+  For example
 
-	 # source /root/kvm-custom-ips.json 
+	# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
-5. Launch install script to update the overcloud.
+5.Launch install script to update the overcloud.
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this backend using the Horizon overcloud dashboard or Cinder CLI. 
-
+To use the newly added Cinder backend, create volume type and associate it with this backend using the [Horizon Overcloud Dashboard](http:///helion/openstack/map/volumetype/) or Cinder CLI. 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -60,7 +60,7 @@ Review the following topics before you start the installation:
 - [Support matrix](/helion/openstack/support-matrix/)
 - [Technical Overview](/helion/openstack/technical-overview/)
 - [Prerequisites](/helion/openstack/install/prereqs/)
-- [Creating an Environment Variables File for Installation](/helion/openstack/install/envars/)
+- [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/)
 - [Installing an NTP Server](/helion/openstack/install/ntp/)
 
 
@@ -89,6 +89,7 @@ Review the following topics related to optional and required post-installation s
 
 - [Integrating LDAP](/helion/openstack/install/ldap/)
 - [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/)
+- [Configuring Your Network Securely](/helion/openstack/install/security/)
 - [Back Up and Restore](/helion/openstack/backup.restore/)
 - [High Availability (HA)](/helion/openstack/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
@@ -146,8 +147,6 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [DNS Service Overview](/helion/openstack/services/dns/overview/)
 - [DVR Service Overview](/helion/openstack/services/dvr/overview/)
 - [EON Service Overview](/helion/openstack/services/eon/overview/)
-- [Eve Service Overview](/helion/openstack/services/eve/overview/)
-- [Focus Service Overview](/helion/openstack/services/focus/overview/)
 - [Horizon Service Overview](/helion/openstack/services/horizon/overview/)
 - [Identity Operations Service Overview](/helion/openstack/services/identity/overview/)
 - [Image Operations Service Overview](/helion/openstack/services/imaging/overview/)
@@ -155,13 +154,18 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Networking Operations Service Overview](/helion/openstack/services/networking/overview/)
 - [Object Operations Service Overview](/helion/openstack/services/object/overview/)
 - [Orchestration Service Overview](/helion/openstack/services/orchestration/overview/)
-- [Reporting Service Overview](/helion/openstack/services/reporting/overview/)
 - [Sherpa Service Overview](/helion/openstack/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/services/sirius/overview/)
 	- [Sirius CLI Workflow](/helion/openstack/sirius/cli/workflow)
 	- [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
 - [Tripleo Service Overview](/helion/openstack/services/tripleo/overview/)
 - [Volume Operations Service Overview](/helion/openstack/services/volume/overview/)
+
+<!-- Not in 1.0.1
+- [Eve Service Overview](/helion/openstack/services/eve/overview/)
+- [Focus Service Overview](/helion/openstack/services/focus/overview/)
+- [Reporting Service Overview](/helion/openstack/services/reporting/overview/) -->
+
 
 
 ## Swift Deployment ## {#swift}
@@ -183,10 +187,11 @@ Review the following topics related to Swift deployment:
 
 - Shrink or scale down
 
-	- [Remove a disk from an Object Node](/helion/openstack/services/swift/deployment/remove-existing-disk/)
-	- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
-	- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
-
+	- [Shrink Swift Cluster](/helion/openstack/services/object/swift/shrink-cluster/) 
+		- [Remove a disk from an Object Node](/helion/openstack/services/swift/deployment/remove-existing-disk/)
+		- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
+		- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
+	
 - Monitor
 	- [Monitor Swift Cluster](/helion/openstack/services/object/swift/Monitor-cluster/)
 	- [Disk usage](/helion/openstack/services/object/swift/Monitor-disk/)

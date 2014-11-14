@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Updating the Development-Platform Services"
+title: "HP Helion OpenStack&#174;: Installation and Configuration"
 permalink: /helion/openstack/update/devplat/101/
 product: commercial.ga
 
@@ -18,82 +18,107 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&reg; Stopping and Starting the Development-Platform Services During the Upgrade Process
+# HP Helion OpenStack&reg;: Development Platform Commercial 1.0.1 Update
 
-If you have installed [HP Helion Development Platform service](/helion/devplatform/), you need to take service control plane down before performing update on the overcloud. 
+The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
 
-Since Dev-Platform services run the control plane in a clustered setup, we need to make sure that cluster is stopped in the correct order before updating the overcloud compute nodes. After the update is complete, you need to start the control plane using a command, which ensures the order for starting the cluster.
+The following sections explain how to update the HP Helion Development Platform.
 
-## Prerequisites
+* [Prerequisites](#prerequisites)
+* [Update the Messaging Service](#update-messaging)
+* [Update the Application Lifecycle Service](#update-als)
+* [Update the Database Service](#update-database)
+* [Update the Marketplace Service](#update-marketplace)
+* [Troubleshooting](#troubleshooting)
 
-Before you begin, you can run a script to make sure all clusters are in healthy state. 
+## Prerequisites {#prerequisites}
 
-If this check fails, you must fix the cluster by manually logging into the target machines before running any of the update commands. If you run any of the update commands on a failed cluster, the cluster might enter a non-functional or non recoverable state of the corresponding Development Platform service at the end of the overcloud update. 
+This update guide assumes that you have updated HP Helion OpenStack 1.0 to 1.0.1 and that you have one or more HP Helion OpenStack Development Platform Services is installed in your cloud. 
 
-Before running pre-check command, set the correct value for Development Platform service, depending upon the service that you are targeting. Also set `ha_check=True` if you have installed corresponding service control plane in HA mode. 
+**Note:** If you created a new installation of 1.0.1, bypassing 1.0, you need to install HP Helion OpenStack Development Platform Services, and not update. See [Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/).
 
-**Note:** For Marketplace always set `ha_check=False`, as the Marketplace does not support HA mode.
+## Update the Messaging Service {#update-messaging} 
 
-To check the health of your clusters, on the server where the Development Platform service is installed, enter the following command:
+This section provides details on updating the Messaging Service for Helion OpenStack Development Platform. This assumes that the Messaging Service is installed in your cloud. 
 
-		ansible-playbook -vvvv --extra-vars dev_plat_service=trove --private-key <path to SSH private key> --ha_check=True -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_pre_check.yml
+**Note:** If the Message Service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-messaging).
 
-## Stopping Services ##
+### Download the Messaging Service {#download}
 
-Use following command to stop the clusters. This command stops individual nodes in the cluster in a correct order. 
+1. Log into the Horizon Dashboard.
 
-**Note:** By stopping the services, corresponding Development Platform service API will be unavailable until you start the services again after completing update on the overcloud.
+2. Click on the **Admin** panel and select **Development Platform**. Then, click **Configure Services**.
 
-To stop each Development Platform service, run the following command:
+4. Locate the **Messaging Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
-	ansible-playbook -vvvv --extra-vars dev_plat_service=trove --private-key <path to SSH private key> -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_stop.yml
+5. Once the download is complete, the new image for Messaging clusters will be available. All clusters created from this point forward will be using the Messaging Service 1.0.1 version.
 
-Where:
+## Update the Application Lifecycle Service (ALS) {#update-als}
 
-	dev_plat_service is the service that you are targeting.
+This section provides details on updating the Application Lifestyle service (ALS) for Helion OpenStack Development Platform. This assumes that (ALS) is installed in your cloud. 
 
-<table>
-	<tr>
-	<th>Service</th><th>Value of dev_plat_service</th>
-	</tr>
-	<tr>
-	<td>DBaaS</td><td>trove</td>
-	<tr>
-	<td>Marketplace</td><td>marketplace</td></tr>
-	<tr>
-	<td>DNSaaS</td><td>dnsaas</td></tr>
-	</table>
+**Note:** If the Message Service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-als).
 
-	private-key is the full path to SSH private key
+The process for updating ALS requires you to remove then have asked that you remove the current version then installing ALS 1.0.1. 
 
-## Starting Services ##
+### Remove Application Lifecycle Service 1.0 {#remove-als}
 
-After the overcloud update is complete, restart the services. 
+To remove ALS:
 
-Use following command to start each service in the cluster in a correct order. By successfully starting the clusters, you will be able to bring the corresponding Dev-Platform service into a functional state and the API can be used after this. 
-Before running following command, set the correct value for dev_plat_service, depending upon the service that you are targeting.
+1. Log into the Horizon Dashboard.
 
-		ansible-playbook -vvvv --extra-vars dev_plat_service=trove --private-key <path to SSH private key> -u heat-admin -i plugins/inventory/dev_platform_heat.py playbooks/dev-platform/dev_platform_start.yml
+2. In the **Projects** Images panel locate the Application Lifecycle Service images.
 
-Where:
+3. Select the two (2) ALS images.
 
-	dev_plat_service is the service that you are targeting.
+3. Click **Delete Images** and confirm.
 
-<table>
-	<tr>
-	<th>Service</th><th>Value of dev_plat_service</th>
-	</tr>
-	<tr>
-	<td>DBaaS</td><td>trove</td>
-	<tr>
-	<td>Marketplace</td><td>marketplace</td></tr>
-	<tr>
-	<td>DNSaaS</td><td>dnsaas</td></tr>
-	</table>
+The ALS images are deleted and the service has been removed.
 
-	`private-key` is the full path to SSH private key
+### Download the Application Lifecycle Service 1.0.1 {#dowload-als}
+
+To download the latest version of ALS:
+
+1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, the new image for Application Lifecycle Service clusters will be available. All clusters created from this point forward will be using the Application Lifecycle Service 1.0.1 version.
+
+## Update the Database Service {#update-database}
+
+This section provides details on updating the Database Service for Helion OpenStack Development Platform. This assumes that the Database service is installed in your cloud. 
+
+**Note:** If the Database service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-database).
+
+### Download the Database Service {#download-db}
+
+To download the latest version of the Database service:
+
+1. In the **Configure Services** panel locate the **Database Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, the new images for Database Service will be available. If at any point, you choose to rebuild the Database Service control plane, it will use the latest images.
+
+## Update the Marketplace Service {#update-marketplace}
+
+This section provides details on updating the Marketplace service for the Helion OpenStack Development Platform. This assumes that the Marketplace service is installed in your cloud. 
+
+**Note:** If the Marketplace service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-marketplace).
+
+### Download the Marketplace Service {#update-marketplace}
+
+1. In the **Configure Services** panel locate the **Marketplace Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+2. Once the download is complete, the new images for Marketplace Service will be available. If at any point, you choose to rebuild the Marketplace Service control plane, it will use the latest images.
+	
+## Troubleshooting {#troubleshooting}
+
+### Service is stuck in download 
+
+There are several situations in which a download will not complete.  One cause which is documented, is because the `tmp` directory ran out of space. There is a prerequisite to mount the `tmp` directory to a larger partition.  If you have completed this and it is still failing to download then we will need to reset the download. In the current release, this requires a manual process.
+
+As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the `wscatalog.<id>` folder which contains the cached download. The service should now be available to download again.
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
@@ -101,5 +126,3 @@ Where:
 ----
 ####OpenStack trademark attribution
 *The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
-
-

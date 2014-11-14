@@ -152,26 +152,20 @@ To generate a configuration file, do the following:
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to the Seed as root from KVM host.
+1. SSH to the Seed as root from KVM host using the IP address of seed VM as defined in the environment variables file:
 
-
-		# ssh root@ <IP address> 
+		# ssh root@<seed_VM_IP_address>
 
 2. View the list of files.
 
 		# ls
-		
-<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.
-  
+	<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.  
 	    # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
-
-5. Apply the configuration.
-
-        # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json-->
-
-<!---4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:-->
- 
-3.Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
+	5. Apply the configuration.
+        # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+	4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:
+	2. Edit and update the `tripleo/configs/kvm-custom-ips.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:--> 
+3. Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
 
 		{
 		  "cloud_type": "KVM",
@@ -202,18 +196,18 @@ To update your overcloud with the changes, do the following:
 		      "hplefthand_username": "test"
 		    }
 
+4. Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
-3.Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
-
-	# source /root/<environment variables file name> 
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>  
 		
-For example
+	For example
 
-	# source /root/kvm-custom-ips.json
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
-5.Launch install script to update the overcloud.
 
-	    # bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
+5. Launch install script to update the overcloud.
+
+		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 
 ## Next Steps {#next-steps}

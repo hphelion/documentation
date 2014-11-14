@@ -77,7 +77,7 @@ To map a volume type to a backend, do the following:
 
 	<a href="javascript:window.open('/content/documentation/media/view-extra-specs1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"> Create Volume Type Extra Specs Dialog Box (opens in a new window)</a>
 
-4. In the **Key** box, enter the name of the key of the backend to which you want to associate the volume type. For example:volume_backend_name.
+4. In the **Key** box, enter the name of the key of the backend to which you want to associate the volume type. For example:volume&#095;backend_name.
 
 5. In the **Value** box, enter the name of the backend to which you want to associate the volume type.For example:FC_backend01.
 

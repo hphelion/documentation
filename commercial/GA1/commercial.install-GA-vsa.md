@@ -212,30 +212,27 @@ To deploy HP StoreVirtual VSA, perform the following:
 
 5. Log out from the undercloud to go back to the seed.
 
-6. Edit the `/root/baremetal.csv file` in seed cloud with the details of the newly added node.
-<!---7. Edit the `/root/tripleo/configs/kvm-custom-ips.json` and update the value for `vsa_scale` or `vsa_ao_scale` appropriately.-->
-7.Edit the environment variables file used during initial installation and update the value for `vsa_scale` or `vsa_ao_scale` appropriately
+6. Edit the `/root/baremetal.csv file` in seed cloud with the details of the newly added node. <!---7. Edit the `/root/tripleo/configs/kvm-custom-ips.json` and update the value for `vsa_scale` or `vsa_ao_scale` appropriately.-->
+
+7. Edit the environment variables file used during initial installation and update the value for `vsa_scale` or `vsa_ao_scale` appropriately
 
        	vsa_scale: <no of StoreVirtual systems>
 
 		vsa_ao_scale: <no of StoreVirtual systems with AO enabled>
 
+	
 	**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
 
-8.Execute the environment variables <!---`kvm-custom-ips.json`--> file using the source command
+8. Execute the environment variables <!---`kvm-custom-ips.json`--> file using the source command
 
 		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name> 
 
-	
-for example 
+	for example 
 
-		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
-	<!---**Note**: Source the same file (`kvm-default.json` or `kvm-custom-ips.json`) that is used during the initial installation for specifying the environment IPs.-->
-
-<!---9. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed. 
- 	 	# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log-->
-9.Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the environment variables file are deployed. 
+	<!---**Note**: Source the same file (`kvm-default.json` or `kvm-custom-ips.json`) that is used during the initial installation for specifying the environment IPs.9. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the `overcloud-config.json`, are deployed.-->
+9. Run the installer script to update the overcloud. During the installation, the number of StoreVirtual storage systems that you specified in the environment variables file are deployed. 
 
  	 	# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update.log
 
