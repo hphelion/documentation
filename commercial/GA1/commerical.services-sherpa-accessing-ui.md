@@ -37,7 +37,7 @@ To access the Sherpa UI:
 
 3.	Click **Configure** to authenticate to the Cloud OS Distribution Network.
 
-	<img src="media/SherpaConfigure.jpg">
+	<img src="media/SherpaConfigure.png">
 
 4.	Provide the credentials if you have already signed up, if not, sign up by clicking the **Sign up now** link.
  
