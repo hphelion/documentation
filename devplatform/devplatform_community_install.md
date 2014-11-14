@@ -115,11 +115,7 @@ This section provides details on installing the HP Helion Development Platform M
 
 ### Download and Configure the Messaging Service {#messaging-download}
 
-1. Open Horizon and login as the *Admin* user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click **Configure Services**.
-
-2. In the **Configure Services** panel locate the **Messaging (Beta)** item in the **Configure Services** table and select **Download Service**. 
-
-	It might take several minutes for the download to complete.
+1. As the *Admin* user, in the **Configure Services** panel locate the **Messaging (Beta)** item in the **Configure Services** table and select **Download Service** and wait for the download to complete.
 
 2. After the download is complete, click the **Configure Service** button to configure the Messaging service and wait for the configuration step to complete.
 
@@ -136,9 +132,9 @@ This section provides details on installing the HP Helion Development Platform A
 
 ### Prerequisites {#als-pre}
 
-For the Application Lifecycle service to install dependencies for deployed applications, you must provide Application Lifecycle Service with outbound Internet connectivity. 
+For the Application Lifecycle service to install dependencies for deployed applications, you must provide Application Lifecycle service with outbound Internet connectivity. 
 
-This process is documented in Step 7 of ["Starting the seed and building your cloud"](http://docs.hpcloud.com/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](http://docs.hpcloud.com/als/v1/admin/server/configuration/#http-proxy).
+This process is documented in Step 7 of ["Starting the seed and building your cloud"](/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](/als/v1/admin/server/configuration/#http-proxy). 
 
 ### Connect to the Download Service {#als-connect}
 
@@ -150,15 +146,17 @@ This process is documented in Step 7 of ["Starting the seed and building your cl
 
 ### Download and Configure the Application Lifecycle Service {#als-download}
 
-1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+1. In the **Configure Services** panel locate the Application Lifecycle Service item in the **Configure Services** table and select **Download Service** and wait for the download to complete.
 
-2. Once the download is complete, click **Configure Service** to configure the Application Lifecycle Service and wait for the configuration step to complete.
+2. After the download is complete, click **Configure Service** to configure the Application Lifecycle service and wait for the configuration step to complete.
 
-3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click the **Application Lifecycle Service** panel under the current project to being using Application Lifecycle Services.
+3. Log out from the Horizon dashboard. 
+
+4. Log back into the Horizon dashboard as a non-admin user and click the **Application Lifecycle Service** panel under the current project to being using Application Lifecycle services.
 
 ## Install the Database Service {#databse-install}
 
-This section provides details on installing the Database Service from the Development Platform.
+This section provides details on installing the HP Helion Development Platform Database service.
 
 * [Prerequisites](#database-pre)
 * [Connect to the Download Service](#database-connect)
@@ -174,7 +172,7 @@ Before installing, make sure the following prerequisites are met:
 
 #### Configure the Service Network {#databse-service}
 
-To configure the Database Service it needs an additional network for administrative purposes. This network is currently not used in Community Edition but must exist in order for Database Service to properly install.
+The Database service needs an additional network for administrative purposes. This network is currently not used in Community edition but must exist in order for Database Service to properly install.
 
 1. Open Horizon and login as the *Admin* user.
 
@@ -188,7 +186,7 @@ To configure the Database Service it needs an additional network for administrat
 
 6. Click **Next**.
 
-7. In the **Network Address** field, enter a CIDR that does not conflict with other services (e.g. 172.10.0.0/24).
+7. In the **Network Address** field, enter a CIDR that does not conflict with other services (such as: 172.10.0.0/24).
 
 6. Click **Next**.
 
@@ -196,9 +194,9 @@ To configure the Database Service it needs an additional network for administrat
 
 #### Check Project Quotas {#database-quota}
 
-The Database Service will be installed into the **Admin**project of the Helion OpenStack overcloud. The **Admin** project must have sufficient quota available and unused resources for the service to use. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
+The Database service will be installed into the **Admin**project of the Helion OpenStack overcloud. The **Admin** project must have sufficient quotas available for the service to use. To check existing quota availability, log in to Horizon as the **Admin** user and open the **Overview** panel under the **Compute** tab.
 
-For Community Edition, the Database service requires that the Admin project have the following quota available:
+For the Community edition, the Database service requires that the Admin project have the following quotas available:
 
 <table>
   <thead>
@@ -234,7 +232,7 @@ For Community Edition, the Database service requires that the Admin project have
   </tbody>
 </table>
 	
-In addition to the quotas mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin project quota. The users Database service quota will also be affected.
+In addition to the quotas mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the Admin project quota. The users Database service quota will also be affected.
 
 ### Connect to the Download Service {#database-connect}
 
@@ -247,8 +245,6 @@ In addition to the quotas mentioned above, for every database instance that is c
 ### Download and Configure the Database Service {#database-connect}
 
 In the **Configure Services** panel locate the **Database Service** item in the **Configure Services** table and select **Download Service** and wait for the download to complete.
-
-#### Configuring the Database Service {#database-configure}
 
 1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 
@@ -270,9 +266,9 @@ In the **Configure Services** panel locate the **Database Service** item in the 
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
 
-3. Attach a Floating IP to API Service
+3. Attach a Floating IP to API Service:
 
-	a. Open Horizon and login as the *Admin* user. Then click on **Compute**.
+	a. As the *Admin* user, in Horizon click **Compute**.
 
 	b. Click **Instances**.
 
@@ -299,7 +295,7 @@ In the **Configure Services** panel locate the **Database Service** item in the 
 This section provides details on installing the HP Helion Development Platform Marketplace service.
 
 * [Prerequisites](#marketplace-install)
-* [Connect to the Download Service](#marketplace-download-c)
+* [Connect to the Marketplace Service](#marketplace-download-c)
 * [Configuring the Marketplace Service](#marketplace-config)
 
 ### Prerequisites {#marketplace-install}
@@ -345,7 +341,7 @@ To check existing quota availability:
   </tbody>
 </table>
 
-### Connect to the Download Service {#marketplace-download-c}
+### Connect to the Marketplace Service {#marketplace-download-c}
 
 1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under **Admin**. Then click on the **Configure Services** sub-panel.
 
@@ -354,8 +350,6 @@ To check existing quota availability:
 ### Download and Configure the Marketplace Service {#marketplace-download}
 
 In the **Configure Services** panel locate the Marketplace item in the Configure Services table and select **Download Service** and wait for the download to complete.
-
-#### Configuring the Marketplace Service {#marketplace-config}
 
 1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 
@@ -376,7 +370,7 @@ Refer to the following topics if you experience problems with the installation.
 
 ### Service is stuck in download {#troubleshooting-service}
 
-There are situations in which a download will not complete.  One cause which is documented, is because the `tmp` directory ran out of space. There is a prerequisite to mount the `tmp` directory to a larger partition.  If you have completed this and it is still failing to download then we will need to reset the download. In the current release, this requires a manual process.
+There are situations in which a download will not complete.  One cause which is documented, is because the `tmp` directory ran out of space. There is a prerequisite to mount the `tmp` directory to a larger partition.  If you have completed this step and the download is still failing, then we will need to reset the download. In the current release, this requires a manual process.
 
 As the *admin* user, in the Admin project, click on **Project**, then **Object Store**. Open the `sherpa-cache` folder and delete the `wscatalog.<id>` folder which contains the cached download. The service should now be available to download again.
 

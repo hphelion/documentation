@@ -35,7 +35,7 @@ The following sections explain how to update the HP Helion Development Platform.
 
 ## Prerequisites {#prerequisites}
 
-This update guide assumes that you have updated HP Helion OpenStack 1.0 to 1.0.1 and that you have one or more HP Helion OpenStack Development Platform Services is installed in your cloud. 
+The following guide outlines the steps to upgrade Helion Development Platform from version 1.0 to 1.0.1. Before executing these steps, ensure you have upgraded HP Helion OpenStack to 1.0.1 as described in the [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
 **Note:** If you created a new installation of 1.0.1, bypassing 1.0, you need to install HP Helion OpenStack Development Platform Services, and not update. See [Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/).
 
