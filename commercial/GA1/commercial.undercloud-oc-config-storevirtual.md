@@ -152,94 +152,67 @@ To generate a configuration file, do the following:
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to the Seed as root from KVM host using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file:
+1. SSH to the Seed as root from KVM host using the IP address of seed VM as defined in the environment variables file:
 
-		ssh root@<seed_VM_IP_address>
+		# ssh root@<seed_VM_IP_address>
 
-2. Edit and update the `tripleo/configs/kvm-custom-ips.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:
- 
+2. View the list of files.
+
+		# ls
+	<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.  
+	    # cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json
+	5. Apply the configuration.
+        # source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
+	4. Edit and update the `/root/overcloud-config.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:
+	2. Edit and update the `tripleo/configs/kvm-custom-ips.json` and add the JSON snippet obtained from [generating the configuration file](#generate-config).Ensure the JSON file format is unbroken. A sample of the file is given below:--> 
+3. Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
 
 		{
-			"cloud_type": "KVM",
-			"vsa_scale": 0,
-			"vsa_ao_scale": 0,
-			"so_swift_storage_scale": 0,
-			"so_swift_proxy_scale": 0,
-			"compute_scale": 4,
-			"bridge_interface": "em2",
-			"virtual_interface": "eth1",
-			"fixed_range_cidr": "172.0.100.0/24",
-			"control_virtual_router_id": "202",
-			"baremetal": {
-				"network_seed_ip": "192.168.130.3",
-				"network_cidr": "192.168.130.0/24",
-				"network_gateway": "192.168.130.1",
-				"network_seed_range_start": "192.168.130.4",
-				"network_seed_range_end": "192.168.130.22",
-				"network_undercloud_range_start": "192.168.130.23",
-				"network_undercloud_range_end": "192.168.130.126"
-			},
-			"neutron": {
-				"public_interface_raw_device": "eth1",
-				"overcloud_public_interface": "vlan331",
-				"undercloud_public_interface": "eth1"
-			},
-			"ntp": {
-				"overcloud_server": "16.110.135.123",
-				"undercloud_server": "16.110.135.123"
-			},
-			"floating_ip": {
-				"start": "192.168.131.2",
-				"end": "192.168.131.245",
-				"cidr": "192.168.131.0/24"
-			},
-			"svc": {
-				"interface": "vlan332",
-				"interface_default_route": "192.168.132.1",
-				"allocate_start": "192.168.132.2",
-				"allocate_end": "192.168.132.250",
-				"allocate_cidr": "192.168.132.0/24",
-				"overcloud_bridge_mappings": "svcnet1:br-svc",
-				"overcloud_flat_networks": "svcnet1",
-				"customer_router_ip": "192.168.130.1"
-			},
-			"codn": {
-				"undercloud_http_proxy": "http://16.85.175.150:8080",
-				"undercloud_https_proxy": "http://16.85.175.150:8080",
-				"overcloud_http_proxy": "http://16.85.175.150:8080",
-				"overcloud_https_proxy": "http://16.85.175.150:8080"
-			},
-				"vsa": {
-				"DEFAULT": {
-					"enabled_backends": [
-						"cluster_a6487f02-447e-11e4-a128-80c16e21d1f0"
-					]
-				},
-				"cluster_a6487f02-447e-11e4-a128-80c16e21d1f0": {
-					"hplefthand_iscsi_chap_enabled": "true",
-					"hplefthand_password": "password",
-					"hplefthand_clustername": "cluster1",
-					"volume_backend_name": "LHN_backend",
-					"volume_driver": "cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver",
-					"hplefthand_api_url": "https://192.0.2.40:8081/lhos",
-					"hplefthand_debug": "false",
-					"hplefthand_username": "test"
-		}
+		  "cloud_type": "KVM",
+		  "compute_scale": 1,
+		  "vsa_scale": 0,
+		  "vsa_ao_scale": 0,
+		  "so_swift_storage_scale": 0,
+		  "so_swift_proxy_scale": 0,
+		  "bridge_interface": "eth0",
+		  "ntp": {
+		    "overcloud_server": "",
+		    "undercloud_server": ""
+		  },
+		  "vsa": {
+		    "DEFAULT": {
+		      "enabled_backends": [
+		        "cluster_a6487f02-447e-11e4-a128-80c16e21d1f0"
+		      ]
+		    },
+		    "cluster_a6487f02-447e-11e4-a128-80c16e21d1f0": {
+		      "hplefthand_iscsi_chap_enabled": "true",
+		      "hplefthand_password": "password",
+		      "hplefthand_clustername": "cluster1",
+		      "volume_backend_name": "LHN_backend",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_lefthand_iscsi.HPLeftHandISCSIDriver",
+		      "hplefthand_api_url": "https://192.0.2.40:8081/lhos",
+		      "hplefthand_debug": "false",
+		      "hplefthand_username": "test"
+		    }
+
+4. Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>  
+		
+	For example
+
+		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
 
-6. Source the environment variables from the JSON Environment Variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
+5. Launch install script to update the overcloud.
 
-
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-
-7. Launch install script to update the overcloud.
-
-	    bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
+		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this back end using Horizon overcloud dashboard or Cinder CLI.
+To use the newly added Cinder backend, create volume type and associate it with this backend using [Horizon overcloud dashboard](http:///helion/openstack/map/volumetype/) or Cinder CLI.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

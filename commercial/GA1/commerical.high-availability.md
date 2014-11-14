@@ -46,7 +46,7 @@ This page covers the following topics:
     * [Object Storage with Swift](#object-storage)
     * [Cinder Availability Zones](#cinder-avail)
 * [Highly Available Cloud Applications and Workloads](#ha-workloads)
-* [What is not Highly Available](#not-ha)
+* [What is not Highly Available?](#not-ha)
 * [More information](#more-info)
 
 ##High Availability concepts overview<a name="concepts-overview"></a>
@@ -346,7 +346,7 @@ Some of guidelines for consideration:
     *    DNS as a Service(DNSaaS)
     *    Messaging as a Service (MSGaaS)
 
-## What's not Highly Available {#not-ha}
+## What is not Highly Available? {#not-ha}
 
 The following section defines the different services in Seed and Undercloud that are not HA supported:
 
