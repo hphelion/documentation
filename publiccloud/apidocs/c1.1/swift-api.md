@@ -1490,8 +1490,6 @@ To respond with StaticWeb content, the container must:
 
 * Be accessed without an [authentication token](#using_tokens). In practice, this means that you also need to set the [X-Container-Read](#general_acls) metadata so the container is public.
 
-* Be using either path-style or directory object pseudo-directories. If you choose to use directory-object pseudo directories ensure that the Content-Type is set to "application/directory".
-
 #### 2.21.2 Content Delivery Network ####
 
 The StaticWeb feature is best used in conjunction with the Content Delivery Network (CDN). In fact, when you CDN-enable a container, the container is also automatically given StaticWeb metadata and assigned an [ACL](#general_acls) that makes it public.
@@ -1508,6 +1506,8 @@ The following table describes the metadata that controls the StaticWeb features.
 |X-Container-Meta-Web-Error|Sets the suffix of the name of an error page. The system will prefix either "401" or "404" to this name, depending on the error. For example, if X-Container-Meta-Web-Error is set to "error.htm" and a user attempts to access an object that does not exist, the system will respond with the contents in "404error.htm".|
 |X-Container-Meta-Web-Listings|If "true", the system will respond with a HTML page listing the contents of the container or pseudo-directory.|
 |X-Container-Meta-Web-Listings-CSS|Specifies a style sheet to use with X-Container-Meta-Web-Listings. This allows you to customize the appearance of directory listings.|
+|X-Container-Meta-Web-Directory-Type|When X-Container-Meta-Web-Listings is set to true and you access a pseudo-directory, the system will respond with a listing. This always
+works for path-style pseudo-directories. However, if you use directory-objects, the listing only works if the Content-Type of the object is "application/directory". If you use a different content type (for example, "folder") for pseudo-directories, you must set X-Container-Meta-Web-Directory-Type. StaticWeb will then recognize this as a pseudo-directory.|
 
 ### 2.22 Notable Differences from OpenStack ###
 
