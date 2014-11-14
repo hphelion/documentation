@@ -43,7 +43,16 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 	<img src="media/SherpaConfigure.png">
 
-5. Select patch update file and click **Download**. You should have received and email with the patch update file name and location
+5. Select patch update file and click **Download** from from [HP Helion OpenStack product installation](https://helion.hpwsportal.com/catalog.html#/Home/Show)
+
+	<table style="text-align:left; vertical-align:top; width:650px;">
+	
+		<tr style="background-color: lightgrey; color: black;">
+		<td><b> Installation package </b></td><td><b>File name</b></td></tr>
+
+		<tr>
+		<td>HP Helion OpenStack Upgrade</td><td>HP_Helion_OpenStack_1.0_to_1.0.1_Update.csu</td></tr>
+		</table>
 
 	The patch update file might take a long time to download, depending upon your connection speed.  
 	

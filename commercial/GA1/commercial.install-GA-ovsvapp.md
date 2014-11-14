@@ -138,7 +138,7 @@ The first step in deploying the OVSvApp is to create a VM template that will mak
 
 To deploy the OVSvApp:
 
-1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp.tgz`. Extract the `ovsvapp.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvApp appliance.
+1. Create a directory `/ovsvapp` on any server in the Helion environment and upload `ovsvapp-1.0.1.tgz`. Extract the `ovsvapp_1.0.1.tgz` and locate the `hp-ovsvapp` directory. In the directory, locate  `overcloud_esx_ovsvapp.ova`. This is the OVSvApp appliance.
 
 2. Use the vSphere client to upload the `overcloud_esx_ovsvapp.ova` file to one of the ESX hosts in your data center: 
 
@@ -221,13 +221,13 @@ To deploy the OVSvApp:
 
 ### Install the prerequisite python libraries ### {#python}
 
-On the server where you extracted the `ovsvapp.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
+On the server where you extracted the `ovsvapp_1.0.1.tgz` file, install the pyvmomi [pyvmomi package](https://pypi.python.org/pypi/pyvmomi).
 
 pyVmomi is the Python SDK for the VMware vSphere API that allows you to manage ESX, ESXi, and vCenter.
 
 ### Modify and execute the installer {#modify}
 
-On the server where you extracted the `ovsvapp.tgz` file, locate the `ovs_vapp.ini` file.
+On the server where you extracted the `ovsvapp_1.0.1.tgz` file, locate the `ovs_vapp.ini` file.
 
 1. Modify the `ovs_vapp.ini` file by adding settings for cloning and configuring OVSvApp VMs: 
 
@@ -442,7 +442,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 To clean up or delete the OVSvAPP setup:
 
-1. On the server where you extracted the `ovsvapp.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
+1. On the server where you extracted the `ovsvapp_1.0.1.tgz` file, locate the `hp-ovsvapp/conf/ovs_vapp.ini` file.
 
 2. Modify the `ovs_vapp.ini` file by entering only the connection details in the [vmware] section.
 
@@ -486,17 +486,31 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	**Note:** DRS safeguards tenant VM traffic from being black-holed.
 
-2. Place the ESX host on which the 1.0.1 version of OVSvApp will be installed into maintenance mode :
+2. Disable vMotion from vSwitch properties. This will prevent DRS from bringing back VMs on the host when the host is brought back from maintenance mode as in Step 4. 
+
+	a. In the vSphere client, select the host in the vSphere Client inventory.
+
+	b. On the **Configuration** tab, select **Networking**.  
+
+	c. Click V**irtual Switch** to display the virtual switches for the host.
+	
+	d. Locate the virtual switch that has a VMkernel port group configured for VMotion, and click the **Properties** link.
+
+	e. On the **Ports** tab, select the port group that is configured for VMotion and click **Edit**.
+
+	f. On the **General** tab, clear the **Enabled** option for VMotion.
+
+	g. Click **OK** to close the port group **Properties** dialog, and click **Close** to close the vSwitch **Properties** dialog. 
+
+3. Place the ESX host on which the 1.0.1 version of OVSvApp will be installed into maintenance mode :
 
 	In the vSphere Client, right click on the ESX host and select **Enter Maintenance mode**.
 
 	All virtual machines on the host are migrated to different hosts when the host enters maintenance mode.
 
-3. Exit maintenance mode.
+4. Exit maintenance mode.
 
 	In the vSphere Client, right click on the ESX host and select **Exit Maintenance mode**.
-
-	Having the host in Maintenance Mode prevents virtual machine from migrating back to the ESX host. See Step 1.
 
 5. Delete the OVSvApp appliance:
 
@@ -510,7 +524,7 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	Note the ID.
 
-9. On the controller, execute the following command to remove the entry from `neutron agent-list`.
+7. On the controller, execute the following command to remove the entry from `neutron agent-list`.
 
 		neutron agent-delete <ovsvapp_agent_id>
 
@@ -518,9 +532,17 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	`<ovsvapp_agent_id>` is the OVSvApp ID obtained.
 
-10. Install 1.0.1 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
+9. Install 1.0.1 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
 
 		add_new_hosts=True
+
+10. Invoke the installer using the following commands:
+
+		sudo su
+		cd /hp-ovsvapp/src/installer/
+		python invoke_vapp_installer.py
+
+	The installation log file will be located at `/hp-ovsvapp/log/ovs_vapp.log`.
 
 11. Re-enable vMotion on vSwitch properties of that ESX host.
 

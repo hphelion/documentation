@@ -20,8 +20,6 @@ navigation:
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
     url: /automation/
-  - text: HP Cloud OS for Moonshot
-    url: /cloudos/moonshot/
   - text: HP CloudSystem
     url: http://www.hp.com/go/cloudsystem/docs
   - text: HP Cloud OS (Deprecated)
@@ -208,25 +206,6 @@ navigation:
     url: /cloudos/openstack/	
   - text: Site Index
     url: /cloudos/siteindex/
-  moonshot:
-  - text: HP Helion Documentation
-    url: /
-  - text: HP Cloud OS for Moonshot Home
-    url: /cloudos/moonshot/
-  - text: Prepare
-    url: /cloudos/moonshot/prepare/  	
-  - text: Install
-    url: /cloudos/moonshot/install/
-  - text: Manage
-    url: /cloudos/moonshot/manage/
-  - text: Develop
-    url: /cloudos/moonshot/develop/
-  - text: Community Forum
-    url: /cloudos/moonshot/community/		
-  - text: Related Topics
-    url: /cloudos/moonshot/related-topics/	
-  - text: Site Index
-    url: /cloudos/moonshot/siteindex/
   community: 
   - text: HP Helion Documentation
     url: /
@@ -327,6 +306,10 @@ navigation:
     url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/install/
+  - text: Development Platform Community Edition Installation & Configuration
+    url: /helion/devplatform/install/community/
+  - text: Development Platform Commercial 1.0.1 Update
+    url: /helion/openstack/update/devplat/101/
   - text: Application Developer Resources
     url: /helion/devplatform/appdev/
   - text: IT Ops Resources

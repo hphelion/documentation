@@ -64,9 +64,11 @@ The following are the known issues for HP Helion OpenStack:
 
 You might experience the following issues when performing the upgrade to HP Helion OpenStack 1.0.1:
 
-* If you need to restore the overcloud controllers and overcloud database after running the patch upgrade, the registered vCenter clusters might have gotten powered off during the upgrade process. 
+* It is recommended that you perform a [back-up](/helion/openstack/backup.restore/) before running the patch upgrade. If there is a problem with the upgrade, you can use the [restore process](/helion/openstack/backup.restore/) to return the controllers and database to their pre-update state. 
 
-	You will need to restart the clusters. It is recommended that you perform a [back-up](/helion/openstack/backup.restore/) before running the patch upgrade. If there is a problem with the upgrade, you can use the [restore process](/helion/openstack/backup.restore/) to return the controllers and database to their pre-update state. 
+* If you need to restore the overcloud controllers and overcloud database after running the patch upgrade, the registered vCenter clusters might have gotten powered off during the upgrade process. <! -- ALM 11335 -->
+
+	You will need to restart the clusters.
 
 * If using the Ansible-based helper script to update, the Ironic service might not restart because of a lock situation in Ironic. If you experience this issue, refer to [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/#ansible). <!-- CORE 2043 -->
 

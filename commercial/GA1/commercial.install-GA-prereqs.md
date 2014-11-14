@@ -69,7 +69,7 @@ Make sure the following required tasks are completed before you begin the instal
 
 ### Preparing the network {#network_prepare}
 
-Before installing HP Helion OpenStack, you are responsible for [preparing the network](#network) for all installations. You must also prepare the network based on the type of hypervisor you are installing, [KVM](#network_KVM) or [ESX](#network_ESX). 
+Before installing HP Helion OpenStack, you are responsible for preparing the network for all installations. You must also prepare the network based on the type of hypervisor you are installing, KVM or ESX. 
 
 The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
 
@@ -88,6 +88,8 @@ To ensure a successful installation, you must satisfy these network configuratio
 * If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 
 * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
+
+In addition to preparing all HP Helion OpenStack cloud networks, you need perform additional  tasks based on which hypervisor you are using: [KVM](#network_KVM) or [ESX](#network_ESX).
 
 #### Preparing the network for a KVM installation {#network_KVM}
 
@@ -154,7 +156,7 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 ### Preparing the seed cloud host {#installer}
 
-The following tasks need to be performed on the seed cloud host, known as the installer system.
+The following tasks need to be performed on the seed cloud host, where the seed VM will be installed. The seed cloud host is alternatively known as the installer system.
 
 - [Install Ubuntu 14.04 LTS](#ubuntu)
 - [Configure SSH](#ssh)
@@ -232,7 +234,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 		<td><b> Installation package </b></td><td><b>File name</b></td></tr>
 
 		<tr>
-		<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+		<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.1.tgz</td></tr>
 		</table>
 
 	* **For ESX installs**
@@ -241,12 +243,12 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<tr style="background-color: lightgrey; color: black;">
 	<td><b> Installation package </b></td><td><b>File name</b></td>
 	<tr>
- 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+ 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.1.tgz</td></tr>
 	<tr>
 	<td>HP Helion OpenStack vCenter Proxy Appliance</td>
-	<td>overcloud_vcenter_compute_proxy.ova</td></tr>
+	<td>overcloud_vcenter_compute_proxy_1.0.1.ova</td></tr>
  	<td>HP Helion OpenStack VCN Agent Appliance</td>
-	<td>ovsvapp.tgz</td></tr>
+	<td>ovsvapp_1.0.1.tgz</td></tr>
 	</table>
 
 2. Log in to your seed cloud host as root:
@@ -257,9 +259,9 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 4.  Extract the HP Helion OpenStack installation package to the `root` directory:
 
-		tar zxvf /root/HPHelionOpenStack_1.0.tgz
+		tar zxvf /root/HP_Helion_OpenStack_1.0.1.tgz
 
-	This creates and populates a `tripleo/` directory within the `work' directory.
+	This creates and populates a `tripleo/` directory within the `root' directory.
 
 
 #### Editing the JSON Environment Variables File for Installation #### {#envars}

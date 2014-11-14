@@ -179,8 +179,13 @@ To protect against external attacks on Helion services, your firewall should be 
 <tr>
 <td>User requests to API endpoints and Horizon console</td><td>External network</td><td>Cloud Controller Nodes</td><td>443</td>
 </tr>
-<td>Administrator access via SSH</td><td>Your enterprise intranet/VPN</td><td>All Helion nodes</td><td>22, 80, 81,8080, 5000, 9292, 9696, 8774, 8776, 8004, 6080</td>
+<tr>
+<td>Cloud Administrator access for Administrator/Operations activities</td><td>Your enterprise intranet/VPN</td><td>All Helion nodes</td><td>22, 80, 81,8080, 6080</td>
 </tr>
+<tr>
+<td>Integration with end user portals/application</td><td>Your enterprise intranet/VPN</td><td>All Helion nodes</td><td>5000, 9292, 9696, 8774, 8776, 8004</td>
+</tr>
+
 </table>
 
 

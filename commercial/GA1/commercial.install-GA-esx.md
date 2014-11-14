@@ -33,7 +33,7 @@ The installation and configuration process for ESX consists of the following gen
 	* [Review the ESX deployment architecture](#deploy-arch)
 	* [Edit the JSON environment variables file](#envvars)
 	* [Prepare baremetal.csv file](#csv)
-	* [Set DNS servers by default](#name-resolution)
+	* [Set DNS servers](#name-resolution)
 	* [Preparing seed cloud host to run seed VM](#prepseed)
 * [Download and extracting the installation packages](#getinstall)
 * [Installing HP Helion OpenStack](#install)
@@ -59,7 +59,7 @@ To ensure a successful installation, please read through the following topics be
 
 ### Review the ESX deployment architecture {#deploy-arch}
 
-The following diagram depicts the required network topology for a KVM installation.
+The following diagram depicts the required network topology for a ESX installation.
 
 <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
 
@@ -77,7 +77,7 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
-### Set DNS servers by default {#name-resolution}
+### Set DNS servers {#name-resolution}
 
 To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
 
@@ -129,7 +129,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/esx-custom-ips.json
 
-5. Start the seed VM installation by entering the following command:
+3. Start the seed VM installation by entering the following command:
 
 		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 
@@ -141,7 +141,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** If `hp_ced_host_manager.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
-3. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file:
+3. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `esx-custom_ips.json` environment variables file:
 
 		ssh root@<seed_VM_IP_address>
 
@@ -169,9 +169,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
     
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shut down rather than automatically restarting.
 
-14. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+14. Execute the `esx-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
 
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/esx-custom-ips.json 
 
 9. Install and configure the undercloud and overcloud by running the following command from /root. 
 
@@ -244,7 +244,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 		http://<overcloud_IP>/
 
-6. Log in to the overcloud as user `admin` with the password you obtained from the `/root/tripleo/tripleo-overcloud-passwords` file in step 4.
+6. Log in to the overcloud as user `admin` with the password you obtained in step 4.
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
