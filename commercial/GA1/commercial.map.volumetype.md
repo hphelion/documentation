@@ -36,7 +36,7 @@ The page covers the following tasks:
 * [Associate the volume type to a backend](#associate-the-volume-type)
 
 
-##Before you begin{#before-you-begin}
+##Before you begin {#before-you-begin}
 
 Before you start working with volume types, ensure that the following prerequisites have been fulfilled:
 
