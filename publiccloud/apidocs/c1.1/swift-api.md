@@ -1490,7 +1490,7 @@ To respond with StaticWeb content, the container must:
 
 * Be accessed without an [authentication token](#using_tokens). In practice, this means that you also need to set the [X-Container-Read](#general_acls) metadata so the container is public.
 
-> Note: At this time, you must use path-style pseudo-directories. If you create directory objects in the container, the StaticWeb features do not work correctly. See [Pseudo-Hierarchical Folders/Directories](#pseudo_hierarchies) for the difference between path-style and prefix/delimiter-style pseudo-directories.
+* Be using either path-style or directory object pseudo-directories. If you choose to use directory-object pseudo directories ensure that the Content-Type is set to "application/directory".
 
 #### 2.21.2 Content Delivery Network ####
 
