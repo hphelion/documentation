@@ -23,9 +23,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; Services Overview #
 
-OpenStack comprises of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.
+OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.
 
-HP Helion OpenStack includes a number of additional services to work with your cloud. This section lists the services available for you to work with your cloud.
+HP Helion OpenStack includes a number of additional services to work with your cloud. 
 
 - [Service User Accounts](#service)
 - [OpenStack Services](#OpenStack)
@@ -35,12 +35,10 @@ HP Helion OpenStack includes a number of additional services to work with your c
 
 In addition to the APIs, you can interact with the most services through a graphic user interface (dashboard or console) and a command line interface (CLI).
 
-
-##Service User Accounts<a name="service"></a>
-The HP Helion OpenStack installation process creates a **service** **user** account for each installed service. Service user accounts require elevated privileges to validate end user tokens. It is therefore strongly recommended that you do ***not*** add these service user accounts to any project because this could allow **project** **users** to access services they should not have permission to access. 
+##Service User Accounts {#service}
+The HP Helion OpenStack installation process creates a **service** **user** account for each installed service. Service user accounts require elevated privileges to validate end user tokens. It is therefore strongly recommended that you do ***not*** add these service user accounts to any project because this could allow project users to access services they should not have permission to access. 
 
 The service user accounts include, but are not limited to, the following:
-
 
 - Swift
 - Nova
@@ -50,9 +48,8 @@ The service user accounts include, but are not limited to, the following:
 - Cinder
 - Heat
 - Keystone
-- Ceilometer
 
-## OpenStack Services <a name="OpenStack"></a>
+## OpenStack Services {#OpenStack}
 
 The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).
 
@@ -89,7 +86,7 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
 
-## Dashboard Services <a name="Dashboard"></a>
+## Dashboard Services {#Dashboard}
 
 **Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/). The dashboards are the web-based user interface for creating and managing HP Helion OpenStack resources.
 
@@ -101,7 +98,7 @@ See [Overview of the Horizon Service](/helion/openstack/services/horizon/overvie
 
 See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 -->
-## Other Services<a name="Other"></a>
+## Other Services {#Other}
 
 **Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment. 
 
@@ -132,7 +129,7 @@ See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/
 
 See [Overview of DVR Service](/helion/openstack/services/dvr/overview/).
 
-## For more information<a name="info"></a>
+## For more information {#info}
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The **Architecture** section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The **Operations** section contains information on how to manage the system.
 
 For more information on installing the command-line interface for interacting with services, see [installing the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
