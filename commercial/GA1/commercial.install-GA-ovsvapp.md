@@ -435,7 +435,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - When `cert_check` is **False**, `cert_path` should be a blank field.
 
-- For Helion ESX type install, do not attempt to restore the Overcloud nodes. Restoring will power down the ESX hosts associated with the registered vCenter cluster.
+- For Helion ESX type install, do not attempt to revert the Overcloud nodes to 1.0 through the restore process. Restoring will power down the ESX hosts associated with the registered vCenter cluster. <! -- ALM 11335 --> 
 
 
 ## Clean up or deleting the OVSvApp {#clean}
