@@ -154,29 +154,76 @@ The **Database Service** will be installed into the admin tenant of the Helion O
 
 If you are not configuring the Database Service to be highly available you must have the following quota available:
 	
-|Resource | Usage |
-|--------------|-------------:|
-|Floating IPs|            6|
-|Instances|               6|         
-|Networks|              2|
-|RAM (GB)|               24|
-|Routers|                  2|
-|Security Groups|    6|
-|Volumes|                 4|
-|Volume Storage (GB)| 160|
+<table>
+  <thead>
+    <tr><th>Resource</th>
+  <th align="right">Usage</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr><td>Floating IPs</td>
+  <td align="right">6</td>
+</tr>
+    <tr><td>Instances</td>
+  <td align="right">6</td>
+</tr>
+    <tr><td>Networks</td>
+  <td align="right">2</td>
+</tr>
+    <tr><td>RAM (GB)</td>
+  <td align="right">24</td>
+</tr>
+    <tr><td>Routers</td>
+  <td align="right">2</td>
+</tr>
+    <tr><td>Security Groups</td>
+  <td align="right">6</td>
+</tr>
+    <tr><td>Volumes</td>
+  <td align="right">4</td>
+</tr>
+    <tr><td>Volume Storage (GB)</td>
+  <td align="right">160</td>
+</tr>
+  </tbody>
+</table>
+
 	
 If you have setup Availability Zones and plan to install the Database Service in a highly available configuration you must have the following quota available:
 
-|Resource | Usage |
-|--------------|-------------:|
-|Floating IPs|            16|
-|Instances|               16|         
-|Networks|                  2|
-|RAM (GB)|               64|
-|Routers|                   2|
-|Security Groups|    6|
-|Volumes|                 4|
-|Volume Storage (GB)| 160|
+<table>
+  <thead>
+    <tr><th>Resource</th>
+  <th align="right">Usage</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr><td>Floating IPs</td>
+  <td align="right">16</td>
+</tr>
+    <tr><td>Instances</td>
+  <td align="right">16</td>
+</tr>
+    <tr><td>Networks</td>
+  <td align="right">2</td>
+</tr>
+    <tr><td>RAM (GB)</td>
+  <td align="right">64</td>
+</tr>
+    <tr><td>Routers</td>
+  <td align="right">2</td>
+</tr>
+    <tr><td>Security Groups</td>
+  <td align="right">6</td>
+</tr>
+    <tr><td>Volumes</td>
+  <td align="right">4</td>
+</tr>
+    <tr><td>Volume Storage (GB)</td>
+  <td align="right">160</td>
+</tr>
+  </tbody>
+</table>
 
 In addition to the quota mentioned above, for every database instance that is created by a user, the necessary resources to create that instance will be deducted from the admin tenant quota. The users database service quota will also be affected.
 
