@@ -234,7 +234,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 		<td><b> Installation package </b></td><td><b>File name</b></td></tr>
 
 		<tr>
-		<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+		<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.1.tgz</td></tr>
 		</table>
 
 	* **For ESX installs**
@@ -243,12 +243,12 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<tr style="background-color: lightgrey; color: black;">
 	<td><b> Installation package </b></td><td><b>File name</b></td>
 	<tr>
- 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.tgz</td></tr>
+ 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.1.tgz</td></tr>
 	<tr>
 	<td>HP Helion OpenStack vCenter Proxy Appliance</td>
-	<td>overcloud_vcenter_compute_proxy.ova</td></tr>
+	<td>overcloud_vcenter_compute_proxy_1.0.1.ova</td></tr>
  	<td>HP Helion OpenStack VCN Agent Appliance</td>
-	<td>ovsvapp.tgz</td></tr>
+	<td>ovsvapp_1.0.1.tgz</td></tr>
 	</table>
 
 2. Log in to your seed cloud host as root:
@@ -259,7 +259,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 4.  Extract the HP Helion OpenStack installation package to the `root` directory:
 
-		tar zxvf /root/HPHelionOpenStack_1.0.tgz
+		tar zxvf /root/HP_Helion_OpenStack_1.0.1.tgz
 
 	This creates and populates a `tripleo/` directory within the `root' directory.
 
