@@ -33,7 +33,7 @@ To access the Sherpa UI:
 
 	Password can be found by in a seed ssh session cat tripleo/tripleo-undercloud-passwords
 
-2.	Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**.
+2.	Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**. 
 
 3.	Click **Configure** to authenticate to the Cloud OS Distribution Network.
 
