@@ -28,7 +28,7 @@ To use the Messaging Service ALS, you need to:
 	2. The new environment variable can then be inserted into a block within your *manifest.yml* file like so:
 
 			env: 
-			  MQ_URL: amqps:/username:password@ipaddress:5671/%2f
+			  MQ_URL: amqps://username:password@ipaddress:5671/%2f
 
 4.	You can then connect your application to the cluster by choosing from a long list of [available AMQP client libraries](http://www.rabbitmq.com/devtools.html). Your app will reference and parse the **MQ\_URL** variable to connect to the cluster.
 
