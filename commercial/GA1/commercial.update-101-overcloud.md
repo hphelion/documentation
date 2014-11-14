@@ -131,6 +131,10 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 
 4. When the node update is done, validate the updated node. 
 
+5. Manually reboot the compute nodes that were updated or using `nova stop` and `nova start` in the undercloud.
+
+	If after the instances are started it is not possible to ping/ssh to an instance, reboot the instance.
+
 **Note:**  If your cloud has ESX host and the update includes new images for ESX Proxy and ESX OVSvAPP, refer to [Redeploy Compute Proxy and OVSvAPP on ESX Host](#redeploy) after updating Controller Management node and before proceeding to controller nodes.
 
 ### Update the undercloud manually ### {#upgrademanual}
@@ -273,7 +277,7 @@ To do this, migrate the workloads to nodes that will not be down during a partic
 
 4.	If this update affects several maintenance cycles, you can run the progress script to see where they are in the update process.  
 
-	**One at a time:**
+	**One at a time:** 
 
 	This command will update only one compute node, you will have to repeat it for every compute IP address.
 
@@ -284,6 +288,11 @@ To do this, migrate the workloads to nodes that will not be down during a partic
 	This command may update only update a subset of compute nodes, you are responsibe to update all the nodes with multiple commands if necessary.
 
 		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
+
+5. Manually reboot the compute nodes that were updated or using `nova stop` and `nova start` in the undercloud.
+
+	If after the instances are started it is not possible to ping/ssh to an instance, reboot the instance.
+
 
 
 ### Swift (n-scale):  
