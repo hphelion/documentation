@@ -1502,11 +1502,11 @@ The following table describes the metadata that controls the StaticWeb features.
 
 | Metadata Name | Description |
 | :-------     | :------   |
-| X-Container-Meta-Web-Index |Sets the name of a default page. This name applies to the container root and all pseudo-directories in the container.|
-| X-Container-Meta-Web-Error |Sets the suffix of the name of an error page. The system will prefix either "401" or "404" to this name, depending on the error. For example, if X-Container-Meta-Web-Error is set to "error.htm" and a user attempts to access an object that does not exist, the system will respond with the contents in "404error.htm".|
-| X-Container-Meta-Web-Listings |If "true", the system will respond with a HTML page listing the contents of the container or pseudo-directory.|
-| X-Container-Meta-Web-Listings-CSS |Specifies a style sheet to use with X-Container-Meta-Web-Listings. This allows you to customize the appearance of directory listings.|
-| X-Container-Meta-Web-Directory-Type |When X-Container-Meta-Web-Listings is set to true and you access a pseudo-directory, the system will respond with a listing. This always works for path-style pseudo-directories. However, if you use directory-objects, the listing only works if the Content-Type of the object is "application/directory". If you use a different content type (for example, "folder") for pseudo-directories, you must set X-Container-Meta-Web-Directory-Type. StaticWeb will then recognize this as a pseudo-directory.|
+| X-Container-Meta-Web-Index | Sets the name of a default page. This name applies to the container root and all pseudo-directories in the container. |
+| X-Container-Meta-Web-Error | Sets the suffix of the name of an error page. The system will prefix either "401" or "404" to this name, depending on the error. For example, if X-Container-Meta-Web-Error is set to "error.htm" and a user attempts to access an object that does not exist, the system will respond with the contents in "404error.htm". |
+| X-Container-Meta-Web-Listings | If "true", the system will respond with a HTML page listing the contents of the container or pseudo-directory.|
+| X-Container-Meta-Web-Listings-CSS |Specifies a style sheet to use with X-Container-Meta-Web-Listings. This allows you to customize the appearance of directory listings. |
+| X-Container-Meta-Web-Directory-Type | When X-Container-Meta-Web-Listings is set to true and you access a pseudo-directory, the system will respond with a listing. This always works for path-style pseudo-directories. However, if you use directory-objects, the listing only works if the Content-Type of the object is "application/directory". If you use a different content type (for example, "folder") for pseudo-directories, you must set X-Container-Meta-Web-Directory-Type. StaticWeb will then recognize this as a pseudo-directory. |
 
 ### 2.22 Notable Differences from OpenStack ###
 
