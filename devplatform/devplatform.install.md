@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion OpenStack Development Platform Installation"
-permalink: /helion/devplatform/install/old/
+permalink: /helion/devplatform/install/removed/
 product: devplatform
 
 ---
