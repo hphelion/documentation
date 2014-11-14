@@ -65,7 +65,7 @@ Make sure the following required tasks are completed before you begin the instal
 	- [Download the installation packages](#getinstall)
 	- [Editing the JSON Environment Variables File for Installation](#envars)
 	- [Create the baremetal.csv file](#csv)
-	- [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap)
+	- **Optional:** [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap) 
 
 ### Preparing the network {#network_prepare}
 
