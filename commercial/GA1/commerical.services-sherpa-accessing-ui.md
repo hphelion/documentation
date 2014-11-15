@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/sherpa/accessing/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
