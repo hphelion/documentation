@@ -106,7 +106,8 @@ Review the following topics before you start an update:
 * [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/)
 * [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
 * [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
-* [Starting and Stopping the Development-Platform Services for the Upgrade](/helion/openstack/update/devplat/101/)
+* [Starting and Stopping the Development-Platform Services for the Upgrade](/helion/openstack/update/devplatstop/101/)
+* [Development Platform Commercial 1.0.1 Update](/helion/openstack/update/devplat/101/)
 * [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
 
 
