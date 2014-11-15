@@ -63,7 +63,7 @@ To use the Helion Distribution Network (HDN) to download the patch update from t
 
 If you have no internet access on the undercloud or you prefer not to use the internet, you can download directly from the download site using a browser. Then move or copy the patch update file to the undercloud node. 
 
-1. Use a browser on a separate system that has internet access and navigate to: [https://helion.hpwsportal.com/](http://docs.qa1-stackato.cx.hpcloud.net/helion/openstack/services/sherpa/accessing/).
+1. Use a browser on a separate system that has internet access and navigate to: [HP Helion OpenStack product installation](https://helion.hpwsportal.com/catalog.html#/Home/Show).
 
 2. Log in using your HP Web ID.
 
