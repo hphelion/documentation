@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Updating the Seed VM
 
-The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will include seed updates, please check the [HP Helion OpenStack Release Notes](/helion/openstack/release-notes/) to determine if there is a seed update.
+The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will include seed updates, please check the [HP Helion OpenStack Release Notes](/helion/openstack/release-notes/101/) to determine if there is a seed update.
 
 Updating the seed node involves saving current environment and configuration settings and restoring them after the update.
 

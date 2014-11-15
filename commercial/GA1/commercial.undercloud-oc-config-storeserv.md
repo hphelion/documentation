@@ -347,7 +347,7 @@ To update your overcloud with the changes, do the following:
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this backend using the [Horizon Overcloud Dashboard](http:///helion/openstack/map/volumetype/) or Cinder CLI. 
+To use the newly added Cinder backend, create volume type and associate it with this backend using the [Horizon Overcloud Dashboard](/helion/openstack/map/volumetype/) or Cinder CLI. 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

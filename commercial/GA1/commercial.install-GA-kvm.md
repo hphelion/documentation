@@ -30,8 +30,7 @@ HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hy
 
 The installation and configuration process for KVM consists of the following general steps: 
 
-* [Preparing for installation](#prepare)
-	* [Verify Prerequisites](#pre)
+* [Verify Prerequisites](#pre)
 	* [Review the KVM deployment architecture](#deploy-arch)
 	* [KVM deployment architecture](#deploy-arch)
 	* [Edit the JSON environment variables file](#envvars)
@@ -51,11 +50,7 @@ The installation and configuration process for KVM consists of the following gen
 * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps)
 
-## Preparing for installation {#prepare}
-
-Before starting the installation, review the following sections.
-
-### Verify Prerequisites {#pre}
+## Verify Prerequisites {#pre}
 
 To ensure successful installation, please read through the following topics before you start.
 
