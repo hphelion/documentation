@@ -39,7 +39,7 @@ Before you begin the installation process, take a few minutes to read this page 
 		- [Download the installation packages](#getinstall)
 		- [Editing the JSON Environment Variables File for Installation](#envars)
 		- [Create the baremetal.csv file](#csv)
-		- [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap)
+		- **OPTIONAL:** [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap)
 * [Next Steps](#nextstep)
 * [For more information](#moreinfo)
 <!--[Downloading installation packages](#install-pkg)-->
@@ -65,7 +65,7 @@ Make sure the following required tasks are completed before you begin the instal
 	- [Download the installation packages](#getinstall)
 	- [Editing the JSON Environment Variables File for Installation](#envars)
 	- [Create the baremetal.csv file](#csv)
-	- **Optional:** [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap) 
+	- **OPTIONAL:** [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap) 
 
 ### Preparing the network {#network_prepare}
 
@@ -316,7 +316,7 @@ When creating this file, keep in mind the following:
 
 #### Integrating LDAP (Lightweight Directory Access Protocol) {#ldap}
 	
-The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
+**OPTIONAL** The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
 For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/install/ldap/).
 

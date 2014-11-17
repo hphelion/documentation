@@ -346,7 +346,7 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 
 ## Restart the HP Helion Development Platform {#devplatstart}
 
-After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development Platform Services](/helion/openstack/update/devplat/101/). 
+After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development Platform Services](/helion/openstack/update/devplatstop/101/). 
 
 
 ## Next Steps {#next-steps}
