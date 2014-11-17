@@ -33,7 +33,7 @@ HP Helion OpenStack includes a number of additional services to work with your c
 - [Other Services](#Other)
 - [More information](#info)
 
-In addition to the APIs, you can interact with the most services through a graphic user interface (dashboard or console) and a command line interface (CLI).
+In addition to the APIs, you can interact with the most services through a graphic user interface (dashboard or console) or a command line interface (CLI).
 
 ##Service User Accounts {#service}
 The HP Helion OpenStack installation process creates a **service** **user** account for each installed service. Service user accounts require elevated privileges to validate end user tokens. It is therefore strongly recommended that you do ***not*** add these service user accounts to any project because this could allow project users to access services they should not have permission to access. 
