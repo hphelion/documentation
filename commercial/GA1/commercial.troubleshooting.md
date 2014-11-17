@@ -357,7 +357,7 @@ Restart the Rabbitmq service.
 
 This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
 
-**Symptoms:**
+**System Behavior/Message:**
 
 If the update fails, from undercloud node:
 
@@ -522,7 +522,7 @@ To resolve this issue, perform the following steps:
 <br>
 <hr>
 
-###Installation script detects more than 7 available drive {install-script-detect}
+###Installation script detects more than 7 available drive {#install-script-detect}
 
 **System Behavior/Message**
 
