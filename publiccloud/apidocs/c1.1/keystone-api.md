@@ -10,6 +10,8 @@ product: identity
 <!--PUBLISHED-->
 #HP Helion Public Cloud Identity Services API
 
+*If you are using the v2 Identity Services API, click [here for those API references](/publiccloud/api/v2identity/).*
+
 Date: May 2014
 
 Document Revision: 1.9
