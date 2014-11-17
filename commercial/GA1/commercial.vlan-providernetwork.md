@@ -55,9 +55,9 @@ The following prerequisites should be fulfilled to setup the Overcloud Neutron i
 
 The following assumptions are considered while deployment:
 
-* Port 2 of all the Baremetal nodes are wired and used as bm_network – referred in the document as em2 or eth1
+* Port 2 of all the Baremetal nodes are wired and used as bm_network - referred in the document as em2 or eth1
 
-* 1 Untagged network for Mangemenet – subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
+* 1 Untagged network for Mangemenet - subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
 
 * 90 tagged networks used for tenant VLANs as provider network
 
