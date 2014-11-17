@@ -33,7 +33,7 @@ The page covers the following tasks:
 
 * [Create a volume type](#create-volume-type)
 
-* [Associate the volume type to a backend](#associate-the-volume-type)
+* [Associate the volume type to a backend](#associate-the-volume-type-backend)
 
 
 ##Before you begin {#before-you-begin}
@@ -63,7 +63,7 @@ To create a volume type using Overcloud dashboard, do the following:
 5. Click **Create Volume Type**.<br>The newly created volue displays in the Volumes page.
 
 
-## Associate the volume type to a backend {#associate-the-volume-type}
+## Associate the volume type to a backend {#associate-the-volume-type-backend}
 
 To map a volume type to a backend, do the following:
 
