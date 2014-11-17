@@ -322,6 +322,13 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
     <td> </td>
     <td> </td>
+<tr style="background-color: white; color: black;">
+    <td><b>External</b></td>
+	<td>This network connects compute nodes and controller nodes to the Internet or Intranet. External network access is required for DVR routing from compute nodes. 
+
+	<br>Floating IPs on the external network can be attached only to VMs that require a public IP address.
+    <td>tagged</td>
+    <td>eth0</td>
   </tr>
 </table>
 

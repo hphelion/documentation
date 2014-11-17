@@ -44,8 +44,8 @@ It is important to read through this page before starting your installation as i
 ##Prerequisites {#preq}
 <p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
 
-* HP Helion OpenStack Installation
-* DNSaaS Installer Image <br /> 
+* HP Helion OpenStack is successfully installed
+* Download [DNSaaS Installer Image](#publication) <br /> 
 * Obtain [Target Credentials](#target-cred): credentials of the user+tenant where the service is to be deployed.
 	* This user should have the **admin** and  **\_member_** roles.
 	* Username

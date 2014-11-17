@@ -36,7 +36,7 @@ The page covers the following tasks:
 * [Associate the volume type to a backend](#associate-the-volume-type)
 
 
-##Before you begin{#before-you-begin}
+##Before you begin {#before-you-begin}
 
 Before you start working with volume types, ensure that the following prerequisites have been fulfilled:
 
@@ -79,7 +79,7 @@ To map a volume type to a backend, do the following:
 
 4. In the **Key** box, enter the name of the key of the backend to which you want to associate the volume type. For example:volume&#095;backend_name.
 
-5. In the **Value** box, enter the name of the backend to which you want to associate the volume type.For example:FC_backend01.
+5. In the **Value** box, enter the name of the backend to which you want to associate the volume type.For example:*FC_backend01*.
 
 6. Click **Create** to create the extra volume type specs.
 
