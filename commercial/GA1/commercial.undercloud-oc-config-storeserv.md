@@ -167,13 +167,88 @@ To generate configuration file, do the following:
 
 To update your overcloud with the changes, do the following:
 
-1. SSH to Seed as root from KVM host.
+1. SSH to the Seed as root from KVM host using the IP address of seed VM as defined in the environment variables file:
 
-		# ssh root@<IP address> 
+		# ssh root@<seed_VM_IP_address> 
+
+2. View the list of files.
+
+		# ls
+
+	<!---3. Copy the overcloud template configuration file to `/root/overcloud-config.json` if `/root/overcloud-config.json` is absent.	3. Source the cloud configuration file to `/root/<environment variable file>` if it is absent.
+  
+ 	# cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json	4. Edit and update the /root/overcloud-config.json and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:-->
+
+3. Append the environment variables file with the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
 
 
+		},
+		  "3par": {
+		    "DEFAULT": {
+		      "enabled_backends": [
+		        "CPG_db8b945c-b4f1-464d-9790-554d9b8c321e",
+		        "CPG_f3740765-119f-4d0d-9bc5-c254cd0209f4",
+		        "CPG_9531635c-d5a1-47d7-91e2-1e2a56b3d094",
+		        "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
+		      ]
+		    },
+		    "CPG_db8b945c-b4f1-464d-9790-554d9b8c321e": {
+		      "san_password": "3pardata",
+		      "hp3par_username": "3paradm",
+		      "volume_backend_name": "3par_backend",
+		      "san_login": "3paradm",
+		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+		      "hp3par_password": "3pardata",
+		      "hp3par_cpg": "FC_r1",
+		      "hp3par_iscsi_chap_enabled": "true",
+		      "san_ip": "15.214.241.21",
+		      "iscsi_ip_address": "10.1.0.200"
+		    },
+		    "CPG_f3740765-119f-4d0d-9bc5-c254cd0209f4": {
+		      "san_password": "3pardata",
+		      "hp3par_username": "3paradm",
+		      "volume_backend_name": "3par_backend",
+		      "san_login": "3paradm",
+		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+		      "hp3par_password": "3pardata",
+		      "hp3par_cpg": "FC_r61",
+		      "hp3par_iscsi_chap_enabled": "true",
+		      "san_ip": "15.214.241.21",
+		      "iscsi_ip_address": "10.1.0.200"
+		    },
+
+	<!---**Note:** HP 3PAR iSCSI OpenStack driver provides the ability to select the best-fit target iSCSI port from a list of candidate ports. However, Sirius currently does not support this option. If you want to configure 3PAR iSCSI backend with more than one IP addresses, add the *hp3par&#095;iscsi_ips* with a comma-separated list of IP addresses in `/root/overcloud-config.json` instead of *iscsi&#095;ip&#095;address*. The addresses may define an IP port by using a colon (:) to separate the address from the port. Refer to the following example:
+
+	
+		"3par": {
+		    "DEFAULT": {
+		        "enabled_backends": [
+		            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df"
+		        ]
+		    },
+		    "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
+		        "san_password": "3pardata",
+		        "hp3par_username": "3paradm",
+		        "volume_backend_name": "3par_backend",
+		        "san_login": "3paradm",
+		        "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+		        "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+		        "hp3par_password": "3pardata",
+		        "hp3par_cpg": "3par_iscsi",
+		        "hp3par_iscsi_chap_enabled": "true",
+		        "san_ip": "15.214.241.21",
+		        "hp3par_iscsi_ips":"10.1.0.200,10.1.0.201:3030"
+		    }
+		  }--->
+	
+<!---5.Apply the configuration.
+
+     	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /<environment variables file name>
+	For example
+		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/overcloud-config.json
 2. Edit and update the `tripleo/configs/kvm-custom-ips.json` and add the JSON snippet(obtained from [Generate Config](#generate-config)). Ensure the JSON file format is unbroken. A sample of the file is given below:
-
 			{
 				"cloud_type": "KVM",
 				"vsa_scale": 0,
@@ -257,25 +332,22 @@ To update your overcloud with the changes, do the following:
 					"san_ip": "15.214.241.21"
 				}
 			}
-		}
+		}-->		
+4.Source the environment variables from the environment variables file created during initial installation.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
 
+    # source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
+		
+  For example
 
-		    
+	# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
-3. Source the environment variables JSON file.<!--- based on your configuration and the details of the StoreVirtual scale specified in the `/root/overcloud-config.json`-->
-
-
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
-
-
-4. Launch install script to update the overcloud.
+5.Launch install script to update the overcloud.
 
 		# bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update-bv1.log
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this backend using the Horizon overcloud dashboard or Cinder CLI. 
-
+To use the newly added Cinder backend, create volume type and associate it with this backend using the [Horizon Overcloud Dashboard](/helion/openstack/map/volumetype/) or Cinder CLI. 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

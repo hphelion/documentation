@@ -53,7 +53,7 @@ This section describes what you need to know at a high level to perform an updat
 
 	* Which additional services and software you have installed, such as the HP Development Platform for Helion.  If you know the recommended update plans for these services, that can help you plan your overall Helion update.
 
-	* Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the [Compute (n-scale, not ESX)](/helion/openstack/update/overcloud/101/) section of *Updating the Overcloud*. 
+	* Any special layouts such as availability zones may affect your decision on the sequence of nodes you wish to update.  There are additional details of this in the [Compute (n-scale, not ESX)](/helion/openstack/update/overcloud/101/#compute) section of *Updating the Overcloud*. 
 
 3. Each patch update package will be unique, containing only the images of the node types that need to be updated.  
 

@@ -131,6 +131,8 @@ Additional requirements are as follows:
 
 - The BIOS configured: 
 	- to the correct date and time
+	- all networks with the same date and time
+	- seed cloud host configured in UTC (Coordinated Universal Time)
 	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.

@@ -28,11 +28,10 @@ If the Readme.txt does not list any overcloud nodes, the update is complete. -->
 
 Use the this document when updating the overcloud nodes.
 
-* [Prerequisites](#prereqs)
+* [Prerequisites](#pre)
 	* [Stop the HP Helion Development Platform](#devplatstop)
 * [Update the overcloud](#update)
 * [Validate the update](#validate)
-* [Backup the updated overcloud](#backup)
 * [Restart the HP Helion Development Platform](#devplatstart)
 * [Next Steps](#next-steps)
 
@@ -42,7 +41,7 @@ You can monitor the update process, see [Monitoring the Update](/helion/openstac
 
 Before you begin the update:
 
-* If the undercloud needed updating, perform this update before updating the overcloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/undercloud/101/)
+* If the undercloud needed updating, perform this update before updating the overcloud, as described in [Updating the Undercloud Host](/helion/openstack/update/undercloud/101/)
 
 * Make sure a current backup of the management controller, controller0, and controller1 nodes exists, as described in [Back Up and Restore](/helion/openstack/backup.restore/#overcloud).
 
@@ -93,7 +92,7 @@ Before you begin the update:
 
 ### Stop the HP Helion Development Platform {#devplatstop}
 
-Before you run the patch update on the overcloud, you must stop the HP Helion Development Platform service using a script. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplatstop/101/). After the update is complete, you can execute another script to [restart the service](#devplatstart).
+Before you run the patch update on the overcloud, you must stop the HP Helion Development Platform service using a script. See [Stopping and Starting the Development Platform Services](/helion/openstack/update/devplatstop/101/). After the update is complete, you can execute another script to [restart the service](#devplatstart).
 
 ## Update the overcloud ## {#update}
 
@@ -131,6 +130,10 @@ To upgrade the overcloud using the `HelionUpdate.sh` script included in the patc
 	**Note:** The script will detect if a node fails to update. If such a failure is detected the script will exit.  When this happens you should refer to the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) document for known workarounds.
 
 4. When the node update is done, validate the updated node. 
+
+5. Manually reboot the compute nodes that were updated or using `nova stop` and `nova start` in the undercloud.
+
+	If after the instances are started it is not possible to ping/ssh to an instance, reboot the instance.
 
 **Note:**  If your cloud has ESX host and the update includes new images for ESX Proxy and ESX OVSvAPP, refer to [Redeploy Compute Proxy and OVSvAPP on ESX Host](#redeploy) after updating Controller Management node and before proceeding to controller nodes.
 
@@ -270,11 +273,11 @@ To do this, migrate the workloads to nodes that will not be down during a partic
 
 		nova host-list [--zone <zone>]
 
-3.	Migrating hosts is outside the scope of this document, however using the list and availability zone info a user can use techniques. See [Migrate instances](http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html) and [Configure migrations](http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html) to migrate workloads to a specific node.
+3.	Migrating hosts is outside the scope of this document, however using the list and availability zone info a user can use techniques. See OpenStack documentation for [Migrate instances](http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html) and [Configure migrations](http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html) to migrate workloads to a specific node.
 
 4.	If this update affects several maintenance cycles, you can run the progress script to see where they are in the update process.  
 
-	**One at a time:**
+	**One at a time:** 
 
 	This command will update only one compute node, you will have to repeat it for every compute IP address.
 
@@ -285,6 +288,11 @@ To do this, migrate the workloads to nodes that will not be down during a partic
 	This command may update only update a subset of compute nodes, you are responsibe to update all the nodes with multiple commands if necessary.
 
 		ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py  -e force_rebuild=True -l IP_Compute_1:IP_Compute_2:IP_Compute_3...:IP_Compute_n -e nova_compute_rebuild_image_id=<glance Image_ID of overcloud-compute > playbooks/update_cloud.yml
+
+5. Manually reboot the compute nodes that were updated or using `nova stop` and `nova start` in the undercloud.
+
+	If after the instances are started it is not possible to ping/ssh to an instance, reboot the instance.
+
 
 
 ### Swift (n-scale):  
@@ -301,7 +309,7 @@ This command updates only one VSA node; you will have to repeat it for every VSA
 
 	ansible-playbook -vvvv -u heat-admin -i plugins/inventory/heat.py -e force_rebuild=True -l <IP of vsa overcloud node> -e vsa_rebuild_image_id =<glance Image_ID of vsa overcloud node > playbooks/update_cloud.yml
 
-### Back up the updated overcloud ### {#backup}
+## Back up the updated overcloud ### {#backup}
 
 Once the update of overcloud node is complete, you should back up the node in case of failures.  See [Back Up and Restore](/helion/openstack/backup.restore/).
 
@@ -338,7 +346,7 @@ To manage the VMs launched using the older Compute proxy, use the same hostname 
 
 ## Restart the HP Helion Development Platform {#devplatstart}
 
-After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development-Platform Services](/helion/openstack/update/devplat/101/). 
+After the update is complete, you can execute a script to restart the service. See [Stopping and Starting the Development Platform Services](/helion/openstack/update/devplatstop/101/). 
 
 
 ## Next Steps {#next-steps}

@@ -541,7 +541,7 @@ When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based
 	
 	The file is located at: `/var/log/upstart/ironic-api.log`. Search for `locked by host hLinux`.
 
-** Solution **
+**Solution **
 
 Workaround when happen is:
 

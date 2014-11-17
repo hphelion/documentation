@@ -31,6 +31,8 @@ For easy reference, we categorized the known issues and solutions as follows:
 	* [KVM](#kvm)
 	* [ESX and OVSvAPP](#esx-ovsvapp)
 * [VSA](#vsa)
+* [Failure of newly added compute or VSA node during Scale-out](#failnew)
+* [Scale-out nodes : os-refresh-configuration fails on Controller Node](#refreshfails)
 * [Configuring the dnsmasq_dns_servers list for the undercloud and overcloud](#config_dnas)
 * [Logging](#logging)
 
@@ -692,8 +694,113 @@ Perform the following:
 <br><hr>
 
 
+
 <!---
 ##Configuring the dnsmasq_dns_servers list for the undercloud and overcloud {#config_dnas}
+=======
+## Failure of newly added compute or VSA node during Scale-out {#failnew}
+
+**System Behavior/Message**
+
+The newly added compute node or VSA node fails during scale-out.
+
+**Resolution**
+
+You must remove a failed compute or VSA node before adding a new compute node.
+
+Perform the following steps to remove a failed compute node:
+
+1. Run `heat stacklist`on the undercloud node and search for the failed stack.
+
+2. Delete the failed stack using the following command:
+
+		# heat stackdelete <stackname or uuid>
+
+3. List the newly added nova node which is created during scale-out.
+
+		# novalist
+
+4. Execute the following command to delete nova node. Node name and the Node ID can be obtained from the above steps.
+
+		# nova delete <node name or node id>
+
+5. View a newly added node using the following command:
+
+		# ironic nodelist
+
+6. If newly added node is in ERROR state or if the maintenance mode is True then remove those node(s) using the following command.
+
+		# ironic nodedelete <uuid>
+
+	where uuid is the ID of the node
+
+<HR>
+
+## Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
+
+**System Behavior/Message**
+
+The os-refresh-config on the controller Nodes fail during scale-out.
+
+**Probable Cause**
+
+The controller nodes can fail due to following reasons:
+
+* RabbitMQ clustering
+* MySQL clustering
+
+**Resolution**
+
+To resolve RabbitMQ cluster issue:
+
+* Use the following command and verify the running status of RabbitMQ.
+
+	status rabbitmqserver
+
+If RabbitMQ is not running, start RabbitMQ using the `start rabbitmqserver` command.
+
+* Verify that the `rabbitmqctl cluster_status` displays all 3 nodes in `running_nodes` and disc. If it does not display one or more nodes in running nodes then restart RabbitMQ and run the following command on the missing nodes:
+
+	rabbitmqctl join_cluster <clusternode>
+
+* If rabbitmqctl cluster_status displays expected output but there is an issue with one or more node(s) for joining RabbitMQ cluster, do the following:
+
+	1. Execute the following commands on all controller nodes:
+
+			pkill u rabbitmq
+
+	2. Run `osrefreshconfig` command first on the `cluster_name` (`rabbitmqctl cluster_status` output) and then on the remaining controller nodes.
+
+**To resolve MySQL cluster issue**
+
+1. Use the following command and verify the running status of MySQL on the node.
+
+		/etc/init.d/mysql status
+
+	If mysql has stopped, restart it.
+
+2. If MySQL fails to restart, perform the following instructions:
+
+* Run mysqld_safe wsreprecover on all the controller nodes.
+* Compare the output from all controller nodes for last committed transaction sequence number. For example:
+
+		root@overcloudcecontrollercontroller0defen5afl75f:~#
+		mysqld_safe wsreprecover
+		sed: -e expression #1, char 25: unknown option to `s'
+		sed: -e expression #1, char 24: unknown option to `s'
+		141113 01:00:36 mysqld_safe Logging to '/mnt/state/var/log/mysql/error.log'.
+		141113 01:00:36 mysqld_safe Starting mysqld daemon with databases from /mnt/state/var
+		141113 01:00:36 mysqld_safe Skipping wsreprecover for 1e9d939a6a0711e49c28aa3122
+		141113 01:00:36 mysqld_safe Assigning 1e9d939a6a0711e49c28aa31223485e0:220764 to 141113 01:00:38 mysqld_safe mysqld from pid file /var/run/mysqld/mysqld.pid ended 
+
+	So the last committed transaction sequence number on this node is 220764.
+
+* Compare the last committed transaction sequence number across all 3 nodes and bootstrap from the latest node using `/etc/init.d/mysql bootstrappxc` or `/etc/init.d/mysql restart` and start MySQL on the remaining nodes.
+
+<HR>
+
+##Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud {#config_dnas}
+>>>>>>> b9d57eb337ad163596659fb19b8dbd01770325a1
 
 To enable name resolution from tenant VMs in the overcloud, it is necessary
 to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To
@@ -831,6 +938,7 @@ The controller nodes can fail due to following reasons:
  	So the last committed transaction sequence number on this node is 220764. 
 
 	* Compare the last committed transaction sequence number across all 3 nodes and bootstrap from the latest node using `/etc/init.d/mysql bootstrap-pxc` or `/etc/init.d/mysql restart` and start mysql on the remaining nodes.
+
 
 
 ##Logging  {#logging}
