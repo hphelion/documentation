@@ -42,7 +42,8 @@ To jump right in and start using the service yourself, go to the [HP Helion Publ
 ## API
 Do you need low level, raw REST API access to HP Identity Services?  Take a look at our Compute API page for the version of HP Helion Public Cloud you are using: 
 
-* [**Identity Service API page for v13.5**](/publiccloud/api/identity)
+* [**Identity Service v2 API page**](/publiccloud/api/v2identity/)
+* [**Identity Service v3 API page**](/publiccloud/api/identity/)
 
 ## Bindings
 If you are looking for an easier to use, language-specific way of using HP Identity Services, check out our [Bindings section](/publiccloud/bindings).
