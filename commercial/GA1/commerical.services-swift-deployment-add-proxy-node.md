@@ -51,7 +51,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 		# cd /root/ring-building 
 
-3. Copy account, container, object-0 , and generated `object-1.ring.gz` files to proxy nodes and press **yes** when asked to authenticate the node. 
+3. Copy account, container, object, and generated `object-1.ring.gz` files to proxy nodes and press **yes** when asked to authenticate the node. 
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <proxy node IP address> 
 

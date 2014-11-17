@@ -62,11 +62,11 @@ Perform the following steps to add Swift disk to a ring:
 	**Note**: You can format all the disks with the single command (-d --all).
 
 
-6. List the file in ring directory and identify the `object.builder` file for object-0.
+6. List the file in ring directory and identify the `object.builder` file for object.
 
-7. Add the formatted disk to object-0 ring.
+7. Add the formatted disk to object ring.
 
-		# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
+		# ringos add-disk-to-ring -f /root/ring-building/object.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 	**Note**: Choose the zone and region information appropriately.
 
