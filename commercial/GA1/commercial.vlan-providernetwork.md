@@ -26,7 +26,7 @@ PageRefresh();
 HP Helion &#174;OpenStack can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.
 
 
-HP Helion OpenStack defaults to VxLan to support tenant network isolation. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack&#174; enables  tenant’s virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).-->
+HP Helion OpenStack defaults to VxLan to support tenant network isolation. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack&#174; enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).-->
 
 # Deployment Diagram
 The following deployment diagrams are based on the assumption that the network infrastructure is carved out in such a way that it allows a range of tagged VLANs through the switches and their subnets are routed to the right destination. 
@@ -55,13 +55,13 @@ The following prerequisites should be fulfilled to setup the Overcloud Neutron i
 
 The following assumptions are considered while deployment:
 
-•	Port 2 of all the Baremetal nodes are wired and used as bm_network – referred in the document as em2 or eth1
+* Port 2 of all the Baremetal nodes are wired and used as bm_network – referred in the document as em2 or eth1
 
-•	1 Untagged network for Mangemenet – subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
+* 1 Untagged network for Mangemenet – subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
 
-•	90 tagged networks used for tenant VLANs as provider network
+* 90 tagged networks used for tenant VLANs as provider network
 
-<!---•	For test purpose VLAN 300 (192.168.1-->
+<!---* For test purpose VLAN 300 (192.168.1-->
 
 ##Process
 
