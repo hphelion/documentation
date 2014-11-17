@@ -206,7 +206,7 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
 1. SSH to install VM.
 
-		$ ssh --i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
+		$ ssh -i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
 
 
 	<!--
