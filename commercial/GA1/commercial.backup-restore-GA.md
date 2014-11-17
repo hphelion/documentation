@@ -5,7 +5,7 @@ permalink: /helion/openstack/backup.restore/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 	
 
 <script>
@@ -49,12 +49,9 @@ The following instructions describe how to back up and restore the seed, undercl
 - [Restore command options](#roptions)
 - [Undercloud password issues](#underpass)
 
-You execute scripts in the seed cloud host server, where:
+Note that the seed cloud host server is where the seed VM is installed and the installation files are located.
 
-- the seed VM is installed
-- the installation files are located
-
-If you need help, see [Back up and restore script Help](#help).
+If you need help, see [Back up and Restore Script Help](#help).
 
 ## Create a configuration file for restoring the seed VM and undercloud {#config}
 
@@ -62,7 +59,7 @@ During restore process for the seed VM and undercloud, a configuration file is r
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the seed cloud host. 
+1. Log in to the KVM host. 
 
 2. Create a configuration file that contains all of the following information:
 
@@ -98,7 +95,7 @@ You should create a backup from the seed VM when any of the following events hap
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the seed cloud host. 
+1. Log in to the KVM host. 
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
