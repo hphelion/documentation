@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&reg; Services Overview #
+# HP Helion OpenStack&reg; Services Overview
 
 OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.
 
@@ -100,7 +100,7 @@ See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 -->
 ## Other Services {#Other}
 
-**Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment. 
+**Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment.  
 
 See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
 
