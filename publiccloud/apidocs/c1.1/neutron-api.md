@@ -4024,19 +4024,20 @@ If an error occurs, the response body contains a description of the error.
 
 ## 5. Glossary
 
-  Term              Description
-  ---------------   ------------------------------------- 
-  CIDR        Classless Inter-Domain Routing (or supernetting)
-  CRUD              In computer programming, create, read, update, and delete (CRUD) functions are the basic functions of persistent storage.
-  Entity            Any piece of hardware or software that wants to connect to the network services. An entity can use Networking services by implementing a VIF.
-  IPAM              Internet Protocol Address Management (IPAM) is a means of planning, tracking, and managing the Internet Protocol (IP) address space that is used in a network.
-  L2 Network      A virtual Ethernet network that is managed by the Networking service. Currently, only Ethernet networks are managed.
-  Network           An isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it unless the network is configured to be shared. Tenants can create multiple networks until they reach the thresholds specified by per-tenant quotas.
-  Plugin            A software component that implements API v2.
-  Port              A virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP addresses to be assigned to the interfaces plugged into them. When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet.
-  Subnet            An IP address block that can be used to assign IP addresses to virtual instances. Each subnet must have a CIDR and must be associated with a network. IPs can be either selected from the whole subnet CIDR or from allocation pools that can be specified by the user.
-  URI         Uniform Resource Identifier
-  VIF         Virtual Network Interface also known as a Virtual Interface
-  VIP         Virtual IP
-  VM                Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system.
-  VPC         Virtual Private Cloud 
+| Term | Description |
+| :----------- | :----------- |
+| CIDR | Classless Inter-Domain Routing (or supernetting) |
+| CIDR | Classless Inter-Domain Routing (or supernetting) |
+| CRUD | In computer programming, create, read, update, and delete (CRUD) functions are the basic functions of persistent storage. |
+| Entity | Any piece of hardware or software that wants to connect to the network services. An entity can use Networking services by implementing a VIF. |
+| IPAM | Internet Protocol Address Management (IPAM) is a means of planning, tracking, and managing the Internet Protocol (IP) address space that is used in a network. |
+| L2 Network | A virtual Ethernet network that is managed by the Networking service. Currently, only Ethernet networks are managed. |
+| Network | An isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it unless the network is configured to be shared. Tenants can create multiple networks until they reach the thresholds specified by per-tenant quotas. |
+| Plugin | A software component that implements API v2. |
+| Port | A virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP addresses to be assigned to the interfaces plugged into them. When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet. |
+| Subnet | An IP address block that can be used to assign IP addresses to virtual instances. Each subnet must have a CIDR and must be associated with a network. IPs can be either selected from the whole subnet CIDR or from allocation pools that can be specified by the user. |
+| URI | Uniform Resource Identifier |
+| VIF | Virtual Network Interface also known as a Virtual Interface |
+| VIP | Virtual IP |
+| VM | Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system. |
+| VPC | Virtual Private Cloud |
