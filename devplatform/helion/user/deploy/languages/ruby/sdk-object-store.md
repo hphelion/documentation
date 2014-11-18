@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/objectstore/
 published: false
+title: "Examples for working with HP Helion Object Storage Service"
 ---
 <!--PUBLISHED-->
 

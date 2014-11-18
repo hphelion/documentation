@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/catalyst/
 published: false
+title: "Catalyst"
 ---
 <!--PUBLISHED-->
 

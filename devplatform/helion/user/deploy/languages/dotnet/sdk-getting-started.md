@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/dotnet/getstarted/
 published: false
+title: "Getting Started With The .NET SDK"
 ---
 <!--PUBLISHED-->
 

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/compute/
 published: false
+title: "Examples for working with HP Helion Compute Service"
 ---
 <!--PUBLISHED-->
 #Examples for working with HP Helion Compute Service

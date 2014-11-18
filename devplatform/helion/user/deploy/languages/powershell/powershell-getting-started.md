@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/powershell/
 published: false
-
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell"
 ---
 <!--PUBLISHED-->
 #HP Helion Public Cloud CLI Software for Windows PowerShell
