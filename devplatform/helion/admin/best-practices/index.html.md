@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/best-practices/
 product: devplatform
+title: Best Practices
 ---
 <!--PUBLISHED-->
 

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/app-logs/
 product: devplatform
+title: Application Logs
 ---
 <!--PUBLISHED-->
 

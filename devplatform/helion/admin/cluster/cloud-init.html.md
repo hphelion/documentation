@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/cloud-init/
 product: devplatform
+title: cloud-init
 ---
 <!--PUBLISHED-->
 

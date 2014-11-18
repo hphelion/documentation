@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/python/
+published: false
+title: "Developing In Python"
 ---
 <!--PUBLISHED-->
 

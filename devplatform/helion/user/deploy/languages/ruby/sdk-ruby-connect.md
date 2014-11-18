@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/connect/
+published: false
+title: "Connecting to HP Helion using Ruby Fog Bindings"
 ---
 <!--PUBLISHED-->
 

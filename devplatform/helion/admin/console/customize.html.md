@@ -2,6 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/customize/
 product: devplatform
+title: Customization
+
 ---
 <!--PUBLISHED-->
 

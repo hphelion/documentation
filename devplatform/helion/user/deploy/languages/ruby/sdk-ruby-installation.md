@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/install/
+published: false
+title: "Installing Ruby Fog Bindings for HP Helion"
 ---
 <!--PUBLISHED-->
 

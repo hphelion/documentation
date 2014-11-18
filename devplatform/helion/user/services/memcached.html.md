@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/services/memcached/
 product: devplatform
+title: Memcached Service
 ---
 <!--PUBLISHED-->
 

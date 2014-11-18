@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/perlcgi/
+published: false
+title: "Perl CGI"
 ---
 <!--PUBLISHED-->
 
