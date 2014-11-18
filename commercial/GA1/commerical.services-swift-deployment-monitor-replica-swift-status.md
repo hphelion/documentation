@@ -38,7 +38,7 @@ Perform the following steps to monitor the replication status:
 	* Username: *icingaadmin*
 	* Password: *icingaadmin* 
 
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Details</b></i><!--- (opens in a new window)---></a>.
+2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</b></i><!--- (opens in a new window)---></a>.
 
 3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon</b><!--- (opens in a new window)----></a>  next to the host IP when the tooltip displays as "View Service Details For This Host". 
 <br> The page navigates to  Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-replication-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>replication status</b> <!---(opens in a new window)---></a> of the selected Swift node.
