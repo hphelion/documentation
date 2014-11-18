@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/dotnet/objectstore/
+published: false
 ---
 <!--PUBLISHED-->
 #Working with Object Storage in .NET
