@@ -2,13 +2,16 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/stackatoyml/
 product: devplatform
-title: HP Options
+title: "HP Options"
+
 ---
 <!--PUBLISHED-->
 <!--note that all this content has been merged into the manifest.yml file and is retained here in this orphaned article for reference only-->
 
-HP Options[](#yml-options "Permalink to this headline")
-===========================================================================
+#HP Options {#yml-options}
+Configuration options for Application Lifecycle Service applications can be stored in a
+*manifest.yml* file in the top-level application directory
+
 [name:](#name)
     -   [buildpack:](#buildpack)
     -   [framework:](#framework)
@@ -43,11 +46,6 @@ HP Options[](#yml-options "Permalink to this headline")
         -   [client:](#client)
         -   [server:](#server)
     -   [Key Substitution](#key-substitution)
-
-
-
-Configuration options for Application Lifecycle Service applications can be stored in a
-*manifest.yml* file in the top-level application directory.
 
 The *manifest.yml* file defines **keys** and associated **values** which
 the `helion` client uses to set options that are
@@ -326,8 +324,7 @@ Example:
 ### Language Modules[](#language-modules "Permalink to this headline")
 
 For the installation of language modules, replacing the
-*requirements.txt* file. For
-[*Python*](/als/v1/user/deploy/languages/python/#python-index), `pypm:` and `pip:` can be specified:
+*requirements.txt* file. For Python, `pypm:` and `pip:` can be specified:
 
     requirements:
       pypm:
