@@ -21,12 +21,14 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
 
-# HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack
+# HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack 
+
+This page provides a detailed description of enabling VLAN Provider Network in KVM Cloud Type.
 
 HP Helion &#174;OpenStack can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.
 
 
-HP Helion OpenStack defaults to VxLan to support tenant network isolation. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLan, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack&#174; enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).-->
+HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLAN, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack&#174; enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).-->
 
 # Deployment Diagram
 The following deployment diagrams are based on the assumption that the network infrastructure is carved out in such a way that it allows a range of tagged VLANs through the switches and their subnets are routed to the right destination. 
@@ -57,7 +59,7 @@ The following assumptions are considered while deployment:
 
 * Port 2 of all the Baremetal nodes are wired and used as bm_network - referred in the document as em2 or eth1
 
-* 1 Untagged network for Mangemenet - subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
+* 1 Untagged network for Management - subnet range 192.168.200.0/24 w/ gateway 192.168.200.1
 
 * 90 tagged networks used for tenant VLANs as provider network
 
@@ -101,17 +103,9 @@ The following assumptions are considered while deployment:
 		export OVERCLOUD_CODN_HTTPS_PROXY=http://16.85.88.10:8080
 		export OVERCLOUD_FIXED_RANGE_CIDR=172.0.100.0/24
 
-3. Create the baremetal.csv with the required number of nodes and specify the  
-mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&#095;cpus,memory&#095;MB,diskspace&#095;GB 
+3. Modify the `dhcp_agent.ini` configuration. 
 
-	For example
-
-    	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048
-    	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,900
-
-4. Modify the `dhcp_agent.ini` configuration. 
-
- 	* **Overcloud** - Edit the `tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json` file to add the parameter settings as defined in the following example and change the dns servers specific to your environment.  
+ 	* **Overcloud** - Edit the `tripleo/hp_passthrough/overcloud_neutron_dhcp_agent.json` file to add the parameter settings as defined in the following example and change the DNS servers specific to your environment.  
  
 			{"dhcp_agent":
 			  {"config":
@@ -128,7 +122,7 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
 			  }
 			}
 
-	* **Undercloud** - Edit the `tripleo/hp_passthrough/undercloud_neutron_dhcp_agent.json` file to add the parameter settings as defined in the following example and change the dns servers specific to your environment.  
+	* **Undercloud** - Edit the `tripleo/hp_passthrough/undercloud_neutron_dhcp_agent.json` file to add the parameter settings as defined in the following example and change the DNS servers specific to your environment.  
 
 			{"dhcp_agent":
 			  {"config":
@@ -143,34 +137,36 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
 			    ]
 			  }
 			}
+
 			
-			5. To update ml2.conf edit - tripleo/hp_passthrough/overcloud_neutron_ml2_conf.json and add tenant_network_type and network_vlan_ranges
-			    {
-			       "ml2": {
-			            "config": [
-			                {
-			                    "section": "ovs",
-			                    "values": [
-			                        {
-			                            "option": "enable_tunneling",
-			                            "value": "True"
-			                        }
-			                    ]
-			    			    "section": "ml2",
-			                    "values": [
-			                        {
-			                            "option": "tenant_network_types",
-			                            "value": "vlan"
-			                        }
-			    				]
-			    				"section": "ml2_type_vlan",
-			                    "values": [	
-			                        {
-			                            "option": "network_vlan_ranges",
-			                            "value": "physnet1:300:398"
-			                        }
-			                    ]
-			                },
+4. To update ml2.conf edit - tripleo/hp&#095;passthrough/overcloud&#095;neutron&#095;ml2&#095;conf.json and add tenant&#095;network&#095;type and network&#095;vlan_ranges specific to your environment. An example is given below:
+
+	    {
+	       "ml2": {
+	            "config": [
+	                {
+	                    "section": "ovs",
+	                    "values": [
+	                        {
+	                            "option": "enable_tunneling",
+	                            "value": "True"
+	                        }
+	                    ]
+	    			    "section": "ml2",
+	                    "values": [
+	                        {
+	                            "option": "tenant_network_types",
+	                            "value": "vlan"
+	                        }
+	    				]
+	    				"section": "ml2_type_vlan",
+	                    "values": [	
+	                        {
+	                            "option": "network_vlan_ranges",
+	                            "value": "physnet1:300:398"
+	                        }
+	                    ]
+	                },
 				
 6. To create seed do the following: 
 
@@ -179,10 +175,24 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
 
 7. Copy environment file (created in step 2) to seed and do the following from within seed:
 
-		# ssh into the seed vm ( 192.168.200.2)
-		# source envfile
-		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-demo | tee installer.log
+		# ssh into the seed vm <IP Address>  
 
+	For example <192.168.200.2>
+		
+
+		# source envfile
+		
+8. Create the baremetal.csv with the required number of nodes and specify the  
+mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&#095;cpus,memory&#095;MB,diskspace&#095;GB 
+
+	For example
+
+    	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048
+    	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,16384,900
+
+9. To install and configure the Undercloud and Overcloud, run the following command from /root. 
+
+		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --skip-demo | tee installer.log
 
 ##Verifying the installation
 
