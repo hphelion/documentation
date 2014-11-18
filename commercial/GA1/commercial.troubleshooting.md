@@ -39,7 +39,6 @@ For easy reference, we categorized the known issues and solutions as follows:
 		*  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
 		*  [Failure of Hp_ced_installer.sh](#failure-installer)
 		*  [Failure of Seed Installation](#seed-install-failure)
-		* [Ironic intermitently set maintenance mode to True during update](#ironic)
 
 	* [ESX and OVSvAPP](#esx-ovsvapp)
 		* [nova-manage service list does not list the compute service as running](#nova-compute)
@@ -85,7 +84,6 @@ For troubleshooting tips for the HP Helion OpenStack update process, see [Update
 *  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
 *  [Failure of Hp_ced_installer.sh](#failure-installer)
 *  [Failure of Seed Installation](#seed-install-failure)
-* [Ironic intermitently set maintenance mode to True during update](#ironic)
 
 ###Fatal PCI Express Device Error {#fatal-pci}
 
@@ -384,61 +382,6 @@ Restart the Rabbitmq service.
 
 <br><br>
 <hr>
-
-## Ironic intermitently set maintenance mode to True during installation {#ironic}
-
-This issue can happen during the update of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
-
-**System Behavior/Message:**
-
-If the update fails, from undercloud node:
-
-1. Source the stackrc file:
- 
-		source stackrc 
-
-2. Execute the `nova list` command to determine which Compute node(s) is in an error state. The node will have a status of ERROR.
-
-		nova list
-
-3. Execute the `heat stack-list` command to determine which Heat stack is in an error state. The stack will have a status of `CREATE_FAILED`.
-
-		heat stack-list
-
-3. Execute the `ironic node-list` command to determine which node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
-
-		ironic node-list
-
-3. Execute the `ironic node-show` command for the node that is node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
-
-		ironic node-show <UUID>
-
-	In the output, check the `last_error` field for an error similar to the following:
-
-		During sync_power_state, max retries exceeded for node 81baacd5-657e-476f-b7ef, node state None does not match expected state
-
-		'None'. Updating DB state to 'None' Switching node to maintenance mode. 
-
-
-**Solution**
-
-1. Remove the node in maintenance mode using the following command:
-
-		nova node-delete <ID of error node>
-
-2. List the stacks using the following command:
-
-		heat stack-list
-
-
-3. Delete the stack with the failed Nova node.
-
-		heat stack-delete <ID of failed node>
-
-4. Change the node(s) to false for the maintenance option, using the following command:
-		
-		`ironic node-update <id> replace maintenance=False`
-
 
 ## ESX and OVSvAPP {#esx-ovsvapp}
 
@@ -772,7 +715,7 @@ Other issues {#other}
 * [Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud](#config_dnas)
 * [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
 * [Scale-out nodes : os-refresh-config on Controller Nodes Fail](#refresh)
-* [Ironic intermittently set maintenance mode to True during installation](#ironic)
+* * [Ironic intermitently set maintenance mode to True during update](#ironic)
 
 ### Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
 
@@ -974,11 +917,13 @@ The controller nodes can fail due to following reasons:
 
 	* Compare the last committed transaction sequence number across all 3 nodes and bootstrap from the latest node using `/etc/init.d/mysql bootstrap-pxc` or `/etc/init.d/mysql restart` and start mysql on the remaining nodes.
 
-### Ironic intermittently set maintenance mode to True during installation {#ironic}
+<hr>
 
-This issue can happen during the scale-out of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
+## Ironic intermittently set maintenance mode to True during scale-out {#ironic}
 
-**Symptoms:**
+This issue can happen during the scale-out of the overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
+
+**System Behavior/Message:**
 
 If the update fails, from undercloud node:
 
@@ -1015,19 +960,23 @@ If the update fails, from undercloud node:
 
 		heat stack-list
 
+
 2. Delete the stack with the failed Nova node.
 
 		heat stack-delete <ID of failed node>
 
 3. Change the node(s) to false for the maintenance option, using the following command:
 		
-		ironic node-update <id> replace maintenance=False
+		`ironic node-update <id> replace maintenance=False`
 
-4. Remove the "Failed" node in maintenance mode using the following command :
+4. Remove the failed node in maintenance mode using the following command:
 
 		nova node-delete <ID of error node>
 
 	You can re-use the node, if needed.
+
+
+
 
 ##Logging  {#logging}
 
@@ -1058,4 +1007,4 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 
 ----
 ####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
+*The OpenStack Word Mark and OpenStack Logo are either registered trad	emarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
