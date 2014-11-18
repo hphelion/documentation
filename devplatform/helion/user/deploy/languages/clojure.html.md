@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/clojure/
 product: devplatform
-title: Clojure
+title: "Clojure"
 ---
 <!--PUBLISHED-->
 
