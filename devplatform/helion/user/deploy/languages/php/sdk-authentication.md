@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/authentication/
+title: "Identity Service, Authentication, and the Service Catalog"
 ---
 <!--PUBLISHED-->
 #Identity Service, Authentication, and the Service Catalog

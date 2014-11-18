@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/manifestyml/
 product: devplatform
+title: "Manifest.yml Options"
 ---
 <!--PUBLISHED-->
 

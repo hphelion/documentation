@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/objectstore/
+title: "Working With Object Storage in PHP"
 ---
 <!--PUBLISHED-->
 

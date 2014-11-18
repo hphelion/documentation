@@ -1,6 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/javascript/objectstore/
+title: "Working With Object Storage in Javascript"
 ---
 <!--PUBLISHED-->
 #Working With Object Storage in Javascript

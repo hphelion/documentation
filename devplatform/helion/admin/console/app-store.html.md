@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/app-store/
 product: devplatform
+title: "Sample Applications"
 ---
 <!--PUBLISHED-->
 

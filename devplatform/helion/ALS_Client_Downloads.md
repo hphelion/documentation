@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/client/download
 product: devplatform
-
+title: "HP Application Lifecyle Service (ALS) Client"
 ---
 <!--PUBLISHED-->
 # HP Application Lifecycle Service (ALS) Client
