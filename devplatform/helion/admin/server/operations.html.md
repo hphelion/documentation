@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/operations/
 product: devplatform
+title: Common Server Operations
 ---
 <!--PUBLISHED-->
 

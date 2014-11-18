@@ -2,6 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/admin/reference/known-issues/
 product: devplatform
+title: Known Issues
+
 ---
 <!--PUBLISHED-->
 

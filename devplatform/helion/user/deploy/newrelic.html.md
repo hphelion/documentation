@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/newrelic/
 product: devplatform
+title: New Relic Monitoring
 ---
 <!--PUBLISHED-->
 <!-- file deliberately orphaned, functionality not implemented 
