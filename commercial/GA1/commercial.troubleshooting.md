@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/troubleshooting/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -29,31 +29,63 @@ For easy reference, we categorized the known issues and solutions as follows:
 
 * [Baremetal installation](#baremetal-install)
 	* [KVM](#kvm)
+		* [Fatal PCI Express Device Error](#fatal-pci)
+		* [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
+		* [Failure of Update overcloud](#failure-update-overcloud)
+		*  [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
+		*  [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
+		*  [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
+		*  [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
+		*  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
+		*  [Failure of Hp_ced_installer.sh](#failure-installer)
+		*  [Failure of Seed Installation](#seed-install-failure)
+		* [Ironic intermitently set maintenance mode to True during update](#ironic)
+
 	* [ESX and OVSvAPP](#esx-ovsvapp)
-* [VSA](#vsa)
-* [Failure of newly added compute or VSA node during Scale-out](#failnew)
-* [Scale-out nodes : os-refresh-configuration fails on Controller Node](#refreshfails)
-* [Configuring the dnsmasq_dns_servers list for the undercloud and overcloud](#config_dnas)
-* [Logging](#logging)
+		* [nova-manage service list does not list the compute service as running](#nova-compute)
+		* [Unable to login to vCenter proxy agent](#unable-login-vcenter)
+		* [Unable to backup volumes using Cinder backup](#unable-cinder-backup)
+		* [Failure of OVSvAPP deployment](#fails-ovsvapp)
+
+* [VSA Issues](#vsa)
+	* [Failure to retrieve netmask from vsa-bridge](#fails-retrieve-netmask)
+	* [Installation script detects more than 7 available drive](install-script-detect)
+	* [Failure of script due to less than two drives](#failure-script)
+	*  [Cannot enable AO as only one disk is available](#cannot-enable-ao)
+	* [Unable to update the default input json file ](#unable-update-json)
+	* [Virtual bridge creation failed for interface <NIC>](#fail-virtual-bridge)
+	* [Creation of storage pool failed](#storage-pool-fail)
+	* [Failed during post VSA deployment](#post-vsa-fail)
+	*  [vsa&#95;network cannot be destroyed](#vsa-network)
+	* [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+	* [Failure of newly added compute or VSA node during Scale-out](#failnew)
+* [Other Issues](#other)
+	* [Scale-out nodes : os-refresh-configuration fails on Controller Node](#refreshfails)
+	* [Configuring the dnsmasq_dns_servers list for the undercloud and overcloud](#config_dnas)
+	* [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
+	* [Ironic intermittently set maintenance mode to True during installation](#ironic)
+* [Logging issues](#logging)
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
+
+For troubleshooting tips for the HP Helion OpenStack update process, see [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/).
 
 
 ## Baremetal installation {#baremetal-install}
 
-###KVM {#kvm}
+###KVM baremetal issues{#kvm}
 
-1. [Fatal PCI Express Device Error](#fatal-pci)
-2. [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
-3. [Failure of Update overcloud](#failure-update-overcloud)
-4. [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
-5. [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
-6. [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
-7. [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
-8. [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
-9. [Failure of Hp_ced_installer.sh](#failure-installer)
-10. [Failure of Seed Installation](#seed-install-failure)
-11. [Ironic intermitently set maintenance mode to True during update](#ironic)
+* [Fatal PCI Express Device Error](#fatal-pci)
+* [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
+* [Failure of Update overcloud](#failure-update-overcloud)
+*  [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
+*  [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
+*  [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
+*  [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
+*  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
+*  [Failure of Hp_ced_installer.sh](#failure-installer)
+*  [Failure of Seed Installation](#seed-install-failure)
+* [Ironic intermitently set maintenance mode to True during update](#ironic)
 
 ###Fatal PCI Express Device Error {#fatal-pci}
 
@@ -410,10 +442,10 @@ If the update fails, from undercloud node:
 
 ## ESX and OVSvAPP {#esx-ovsvapp}
 
-1. [nova-manage service list does not list the compute service as running](#nova-compute)
-2. [Unable to login to vCenter proxy agent](#unable-login-vcenter)
-3. [Unable to backup volumes using Cinder backup](#unable-cinder-backup)
-4. [Failure of OVSvAPP deployment](#fails-ovsvapp)
+* [nova-manage service list does not list the compute service as running](#nova-compute)
+* [Unable to login to vCenter proxy agent](#unable-login-vcenter)
+* [Unable to backup volumes using Cinder backup](#unable-cinder-backup)
+* [Failure of OVSvAPP deployment](#fails-ovsvapp)
 
 
 ###nova-manage service list does not list the compute service as running {#nova-compute}
@@ -486,17 +518,19 @@ After reboot of Controller that has the VIP assigned, the hpvcn agent, nova-comp
 <hr>
 ##VSA {#vsa}
 
-1. [Failure to retrieve netmask from vsa-bridge](#fails-retrieve-netmask)
-2. [Installation script detects more than 7 available drive](install-script-detect)
-3. [Failure of script due to less than two drives](#failure-script)
-4. [Cannot enable AO as only one disk is available](#cannot-enable-ao)
-5. [Unable to update the default input json file ](#unable-update-json)
-6. [Virtual bridge creation failed for interface <NIC>](#fail-virtual-bridge)
-7. [Creation of storage pool failed](#storage-pool-fail)
-8. [Failed during post VSA deployment](#post-vsa-fail)
-9. [vsa&#95;network cannot be destroyed](#vsa-network)
-10. [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+Troubleshooting issues related to HP StoreVirtual VSA environments.
 
+* [Failure to retrieve netmask from vsa-bridge](#fails-retrieve-netmask)
+* [Installation script detects more than 7 available drive](install-script-detect)
+* [Failure of script due to less than two drives](#failure-script)
+*  [Cannot enable AO as only one disk is available](#cannot-enable-ao)
+* [Unable to update the default input json file ](#unable-update-json)
+* [Virtual bridge creation failed for interface <NIC>](#fail-virtual-bridge)
+* [Creation of storage pool failed](#storage-pool-fail)
+* [Failed during post VSA deployment](#post-vsa-fail)
+*  [vsa&#95;network cannot be destroyed](#vsa-network)
+* [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+* [Failure of newly added compute or VSA node during Scale-out](#failnew)
 
 
 ###Failure to retrieve netmask from vsa-bridge {#fails-retrieve-netmask}
@@ -694,11 +728,7 @@ Perform the following:
 <br><hr>
 
 
-
-<!---
-##Configuring the dnsmasq_dns_servers list for the undercloud and overcloud {#config_dnas}
-=======
-## Failure of newly added compute or VSA node during Scale-out {#failnew}
+### Failure of newly added compute or VSA node during Scale-out {#failnew}
 
 **System Behavior/Message**
 
@@ -736,7 +766,15 @@ Perform the following steps to remove a failed compute node:
 
 <HR>
 
-## Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
+Other issues {#other}
+
+* [Scale-out nodes : os-refresh-configuration fails on Controller Nodes](#refreshfails)
+* [Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud](#config_dnas)
+* [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
+* [Scale-out nodes : os-refresh-config on Controller Nodes Fail](#refresh)
+* [Ironic intermittently set maintenance mode to True during installation](#ironic)
+
+### Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
 
 **System Behavior/Message**
 
@@ -799,12 +837,9 @@ If RabbitMQ is not running, start RabbitMQ using the `start rabbitmqserver` comm
 
 <HR>
 
-##Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud {#config_dnas}
->>>>>>> b9d57eb337ad163596659fb19b8dbd01770325a1
+### Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud {#config_dnas}
 
-To enable name resolution from tenant VMs in the overcloud, it is necessary
-to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To
-perform this:
+To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To perform this:
 
 1. Edit the `overcloud_neutron_dhcp_agent.json` file in the
 `ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
@@ -833,9 +868,9 @@ forwarders for the undercloud.
 		}
 
 <hr>
----->
 
-##Recovery when Scale-out nodes of newly added compute node or VSA
+
+### Recovery when Scale-out nodes of newly added compute node or VSA {#recovery}
 
 ***System Behavior/Message***
 
@@ -871,7 +906,7 @@ Perform the following steps to remove a failed compute node:
 
 <hr>
 
-##Scale-out nodes : os-refresh-config on Controller Nodes Fail
+### Scale-out nodes : os-refresh-config on Controller Nodes Fail {#refresh}
 
 ***System Behavior/Message***
 
@@ -939,7 +974,60 @@ The controller nodes can fail due to following reasons:
 
 	* Compare the last committed transaction sequence number across all 3 nodes and bootstrap from the latest node using `/etc/init.d/mysql bootstrap-pxc` or `/etc/init.d/mysql restart` and start mysql on the remaining nodes.
 
+### Ironic intermittently set maintenance mode to True during installation {#ironic}
 
+This issue can happen during the scale-out of undercloud or overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
+
+**Symptoms:**
+
+If the update fails, from undercloud node:
+
+1. Source the stackrc file:
+ 
+		source stackrc 
+
+2. Execute the `nova list` command to determine which Compute node(s) is in an error state. The node will have a status of ERROR.
+
+		nova list
+
+3. Execute the `heat stack-list` command to determine which Heat stack is in an error state. The stack will have a status of `CREATE_FAILED`.
+
+		heat stack-list
+
+3. Execute the `ironic node-list` command to determine which node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
+
+		ironic node-list
+
+3. Execute the `ironic node-show` command for the node that is node(s) is in maintenance mode. The stack will have a maintenance of `TRUE`.
+
+		ironic node-show <UUID>
+
+	In the output, check the `last_error` field for an error similar to the following:
+
+		During sync_power_state, max retries exceeded for node 81baacd5-657e-476f-b7ef, node state None does not match expected state
+
+		'None'. Updating DB state to 'None' Switching node to maintenance mode. 
+
+
+**Solution**
+
+1. List the stacks using the following command:
+
+		heat stack-list
+
+2. Delete the stack with the failed Nova node.
+
+		heat stack-delete <ID of failed node>
+
+3. Change the node(s) to false for the maintenance option, using the following command:
+		
+		ironic node-update <id> replace maintenance=False
+
+4, Remove the "Failed" node in maintenance mode using the following command :
+
+		nova node-delete <ID of error node>
+
+	You can re-use the node, if needed.
 
 ##Logging  {#logging}
 
