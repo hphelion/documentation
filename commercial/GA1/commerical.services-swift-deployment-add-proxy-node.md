@@ -17,9 +17,9 @@ PageRefresh();
 
 </script>
 
-
+<!--
 <p style="font-size: small;"> <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p>
-
+--->
 
 # HP Helion OpenStack&#174;: Add New Scale-out Proxy Node
 
