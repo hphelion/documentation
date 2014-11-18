@@ -38,7 +38,7 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 	* Username: *icingaadmin*
 	* Password: *icingaadmin*  
 
-2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Details</i> </b><!---(opens in a new window)---></a>.
+2. Click **Status** on the left panel and then click <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</i> </b><!---(opens in a new window)---></a>.
 
 
 3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon<!-- </b> (opens in a new window)--></b></a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br> 
