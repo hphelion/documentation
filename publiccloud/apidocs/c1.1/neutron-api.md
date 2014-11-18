@@ -1476,13 +1476,13 @@ If an error occurs, the response body contains a description of the error.
 
 Manage port resources.
 
-| Verb    | URI        |      Description |
-| :------------ | :---------- | :-------- |
-| GET    |  /v2.0/ports            | Lists all ports |
-| GET     | /v2.0/ports/{id}   |Shows information for the specified port |
-| POST    | /v2.0/ports             |Creates a new port|
-| PUT     | /v2.0/ports/{id}   |Updates the specified port|
-| DELETE  | /v2.0/ports/{id}   |Removes the specified port|
+| Verb    | URI                | Description |
+| :------------ | :----------  | :-------- |
+| GET     | /v2.0/ports        | Lists all ports |
+| GET     | /v2.0/ports/{id}   | Shows information for the specified port |
+| POST    | /v2.0/ports        | Creates a new port |
+| PUT     | /v2.0/ports/{id}   | Updates the specified port |
+| DELETE  | /v2.0/ports/{id}   | Removes the specified port |
 
 The following table describes the attributes for port objects: 
 
@@ -1491,14 +1491,14 @@ The following table describes the attributes for port objects:
 | id  | uuid-str  | N/A | R | generated | N/A | UUID of the port. |
 | network_id | uuid-str | Yes | CR  | N/A | Network this port is associated with. | 
 | name  | string  | No  | CRU | None  | N/A | Human-readable name for the port. Not required to be unique. |
-|admin_state_up | bool  | No  | CRU | true  | true, false |Administrative state of the port. If false (down), port will not forward packets.|
-| status | string | N/A | R | N/A | N/A |Indicates if network is currently operational. Possible values include:  ACTIVE, DOWN, BUILD, ERROR |
-|mac_address |  string  | No  |CR |generated  |Valid MAC in 6-octet form separated by colons| MAC address to use on this port. |
-|fixed_ips |  list(dict)  | No |  CRU | automatically allocated from pool|  Valid IP address and existing subnet identifier | Specifies IP addresses for the port thus associating the port itself with the subnets where the IP addresses are picked from |
-| device_id | string |  No  | CRUD  | None  | No constraint |Identifies the device (e.g., virtual server) using this port. |
-|device_owner | string  | No  | CRUD  | None  | No constraint | Identifies the entity (e.g., dhcp agent) using this port. |
-|tenant_id  | uuid-str  | No | CR | N/A | No constraint | Owner of network. Only admin users can specify a tenant_id other than their own. |
-|port_security_enabled | bool | N | CR | same value as network |  | If set to True, the rules of the default security group will be applied on the port.  If False, no security group rules will be applied. |
+| admin_state_up | bool  | No  | CRU | true  | true, false | Administrative state of the port. If false (down), port will not forward packets. |
+| status | string | N/A | R | N/A | N/A | Indicates if network is currently operational. Possible values include:  ACTIVE, DOWN, BUILD, ERROR |
+| mac_address | string  | No | CR | generated  | Valid MAC in 6-octet form separated by colons | MAC address to use on this port. |
+| fixed_ips | list(dict) | No | CRU | automatically allocated from pool |  Valid IP address and existing subnet identifier | Specifies IP addresses for the port thus associating the port itself with the subnets where the IP addresses are picked from |
+| device_id | string | No | CRUD | None | No constraint | Identifies the device (e.g., virtual server) using this port. |
+| device_owner | string | No | CRUD | None | No constraint | Identifies the entity (e.g., dhcp agent) using this port. |
+| tenant_id | uuid-str | No | CR | N/A | No constraint | Owner of network. Only admin users can specify a tenant_id other than their own. |
+| port_security_enabled | bool | N | CR | same value as network |  | If set to True, the rules of the default security group will be applied on the port.  If False, no security group rules will be applied. |
 
 **Unsupported API calls**   
 Bulk Create Ports
@@ -1943,7 +1943,7 @@ If an error occurs, the response body contains a description of the error.
 
 **Curl Example**
 
-    curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"port": {"admin_state_up":"true", "name":"{name}", "fixed_ips":[ {"ip_address": "{fixed_ip}", "subnet_id": "{id}"}]}}' {BaseURI}/v2.0/ports/{id}
+    curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"port": {"admin_state_up":"true", "name":"{name}", "fixed_ips":[ {"ip_address": "{fixed_ip}", "subnet_id": "{id}"}]}}' {BaseURI}/v2.0/ports/{id}
 
 ##### 4.5.4.5 Delete Port ##### {#delete_port}
 ##### DELETE /v2.0/ports/{id}
