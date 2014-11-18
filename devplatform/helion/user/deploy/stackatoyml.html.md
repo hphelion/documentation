@@ -2,7 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/stackatoyml/
 product: devplatform
-title: HP Options
+title: "HP Options"
+
 ---
 <!--PUBLISHED-->
 <!--note that all this content has been merged into the manifest.yml file and is retained here in this orphaned article for reference only-->
