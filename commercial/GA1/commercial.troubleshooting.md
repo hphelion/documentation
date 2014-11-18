@@ -1023,7 +1023,7 @@ If the update fails, from undercloud node:
 		
 		ironic node-update <id> replace maintenance=False
 
-4, Remove the "Failed" node in maintenance mode using the following command :
+4. Remove the "Failed" node in maintenance mode using the following command :
 
 		nova node-delete <ID of error node>
 
