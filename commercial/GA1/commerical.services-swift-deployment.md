@@ -43,7 +43,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 
 ##Define the Ring Attributes of Object Ring-1 {#define-object-ring:1}
 
-**Caution**:Plan the following ring attributes before deployment of object-ring:1 because many attributes, such as **part power** and **replica count**, cannot be changed after the ring has been deployed.
+**Caution**:Plan the following ring attributes before deployment of object-ring:1 because many attributes, such as **part power**, cannot be changed after the ring has been deployed.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
