@@ -162,7 +162,7 @@ Security groups and security group rules allows administrators and tenants the a
 When a port is created in Networking it is associated with a security group. If a security group is not specified the port will be associated with a *default* security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behavior.
 
 ### 2.3 Entity Relationship Diagram
-![Networking Object Relationships](media/networking_overview.jpg "Networking Object Relationships")
+![Networking Object Relationships](/networking_overview.jpg)
 
 ### 2.4 Service Quotas
 Quotas are established for the following resources on a per-project basis. Quotas may be increased by contacting Public Cloud Support.
@@ -1476,13 +1476,13 @@ If an error occurs, the response body contains a description of the error.
 
 Manage port resources.
 
-| Verb    | URI        |      Description |
-| :------------ | :---------- | :-------- |
-| GET    |  /v2.0/ports            | Lists all ports |
-| GET     | /v2.0/ports/{id}   |Shows information for the specified port |
-| POST    | /v2.0/ports             |Creates a new port|
-| PUT     | /v2.0/ports/{id}   |Updates the specified port|
-| DELETE  | /v2.0/ports/{id}   |Removes the specified port|
+| Verb    | URI                | Description |
+| :------------ | :----------  | :-------- |
+| GET     | /v2.0/ports        | Lists all ports |
+| GET     | /v2.0/ports/{id}   | Shows information for the specified port |
+| POST    | /v2.0/ports        | Creates a new port |
+| PUT     | /v2.0/ports/{id}   | Updates the specified port |
+| DELETE  | /v2.0/ports/{id}   | Removes the specified port |
 
 The following table describes the attributes for port objects: 
 
@@ -1491,14 +1491,14 @@ The following table describes the attributes for port objects:
 | id  | uuid-str  | N/A | R | generated | N/A | UUID of the port. |
 | network_id | uuid-str | Yes | CR  | N/A | Network this port is associated with. | 
 | name  | string  | No  | CRU | None  | N/A | Human-readable name for the port. Not required to be unique. |
-|admin_state_up | bool  | No  | CRU | true  | true, false |Administrative state of the port. If false (down), port will not forward packets.|
-| status | string | N/A | R | N/A | N/A |Indicates if network is currently operational. Possible values include:  ACTIVE, DOWN, BUILD, ERROR |
-|mac_address |  string  | No  |CR |generated  |Valid MAC in 6-octet form separated by colons| MAC address to use on this port. |
-|fixed_ips |  list(dict)  | No |  CRU | automatically allocated from pool|  Valid IP address and existing subnet identifier | Specifies IP addresses for the port thus associating the port itself with the subnets where the IP addresses are picked from |
-| device_id | string |  No  | CRUD  | None  | No constraint |Identifies the device (e.g., virtual server) using this port. |
-|device_owner | string  | No  | CRUD  | None  | No constraint | Identifies the entity (e.g., dhcp agent) using this port. |
-|tenant_id  | uuid-str  | No | CR | N/A | No constraint | Owner of network. Only admin users can specify a tenant_id other than their own. |
-|port_security_enabled | bool | N | CR | same value as network |  | If set to True, the rules of the default security group will be applied on the port.  If False, no security group rules will be applied. |
+| admin_state_up | bool  | No  | CRU | true  | true, false | Administrative state of the port. If false (down), port will not forward packets. |
+| status | string | N/A | R | N/A | N/A | Indicates if network is currently operational. Possible values include:  ACTIVE, DOWN, BUILD, ERROR |
+| mac_address | string  | No | CR | generated  | Valid MAC in 6-octet form separated by colons | MAC address to use on this port. |
+| fixed_ips | list(dict) | No | CRU | automatically allocated from pool |  Valid IP address and existing subnet identifier | Specifies IP addresses for the port thus associating the port itself with the subnets where the IP addresses are picked from |
+| device_id | string | No | CRUD | None | No constraint | Identifies the device (e.g., virtual server) using this port. |
+| device_owner | string | No | CRUD | None | No constraint | Identifies the entity (e.g., dhcp agent) using this port. |
+| tenant_id | uuid-str | No | CR | N/A | No constraint | Owner of network. Only admin users can specify a tenant_id other than their own. |
+| port_security_enabled | bool | N | CR | same value as network |  | If set to True, the rules of the default security group will be applied on the port.  If False, no security group rules will be applied. |
 
 **Unsupported API calls**   
 Bulk Create Ports
@@ -1943,7 +1943,7 @@ If an error occurs, the response body contains a description of the error.
 
 **Curl Example**
 
-    curl -i -k -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"port": {"admin_state_up":"true", "name":"{name}", "fixed_ips":[ {"ip_address": "{fixed_ip}", "subnet_id": "{id}"}]}}' {BaseURI}/v2.0/ports/{id}
+    curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"port": {"admin_state_up":"true", "name":"{name}", "fixed_ips":[ {"ip_address": "{fixed_ip}", "subnet_id": "{id}"}]}}' {BaseURI}/v2.0/ports/{id}
 
 ##### 4.5.4.5 Delete Port ##### {#delete_port}
 ##### DELETE /v2.0/ports/{id}
@@ -4024,19 +4024,20 @@ If an error occurs, the response body contains a description of the error.
 
 ## 5. Glossary
 
-  Term              Description
-  ---------------   ------------------------------------- 
-  CIDR        Classless Inter-Domain Routing (or supernetting)
-  CRUD              In computer programming, create, read, update, and delete (CRUD) functions are the basic functions of persistent storage.
-  Entity            Any piece of hardware or software that wants to connect to the network services. An entity can use Networking services by implementing a VIF.
-  IPAM              Internet Protocol Address Management (IPAM) is a means of planning, tracking, and managing the Internet Protocol (IP) address space that is used in a network.
-  L2 Network      A virtual Ethernet network that is managed by the Networking service. Currently, only Ethernet networks are managed.
-  Network           An isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it unless the network is configured to be shared. Tenants can create multiple networks until they reach the thresholds specified by per-tenant quotas.
-  Plugin            A software component that implements API v2.
-  Port              A virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP addresses to be assigned to the interfaces plugged into them. When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet.
-  Subnet            An IP address block that can be used to assign IP addresses to virtual instances. Each subnet must have a CIDR and must be associated with a network. IPs can be either selected from the whole subnet CIDR or from allocation pools that can be specified by the user.
-  URI         Uniform Resource Identifier
-  VIF         Virtual Network Interface also known as a Virtual Interface
-  VIP         Virtual IP
-  VM                Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system.
-  VPC         Virtual Private Cloud 
+| Term | Description |
+| :----------- | :----------- |
+| CIDR | Classless Inter-Domain Routing (or supernetting) |
+| CIDR | Classless Inter-Domain Routing (or supernetting) |
+| CRUD | In computer programming, create, read, update, and delete (CRUD) functions are the basic functions of persistent storage. |
+| Entity | Any piece of hardware or software that wants to connect to the network services. An entity can use Networking services by implementing a VIF. |
+| IPAM | Internet Protocol Address Management (IPAM) is a means of planning, tracking, and managing the Internet Protocol (IP) address space that is used in a network. |
+| L2 Network | A virtual Ethernet network that is managed by the Networking service. Currently, only Ethernet networks are managed. |
+| Network | An isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it unless the network is configured to be shared. Tenants can create multiple networks until they reach the thresholds specified by per-tenant quotas. |
+| Plugin | A software component that implements API v2. |
+| Port | A virtual switch port on a logical network switch. Virtual instances attach their interfaces into ports. The logical port also defines the MAC address and the IP addresses to be assigned to the interfaces plugged into them. When IP addresses are associated to a port, this also implies the port is associated with a subnet, as the IP address was taken from the allocation pool for a specific subnet. |
+| Subnet | An IP address block that can be used to assign IP addresses to virtual instances. Each subnet must have a CIDR and must be associated with a network. IPs can be either selected from the whole subnet CIDR or from allocation pools that can be specified by the user. |
+| URI | Uniform Resource Identifier |
+| VIF | Virtual Network Interface also known as a Virtual Interface |
+| VIP | Virtual IP |
+| VM | Virtual Machine (VM).  A completely isolated guest operating system installation within a normal host operating system. |
+| VPC | Virtual Private Cloud |

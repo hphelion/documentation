@@ -2,6 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/other-frameworks/
 product: devplatform
+title: "Generic & Standalone Frameworks"
+
 ---
 <!--PUBLISHED-->
 

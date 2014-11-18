@@ -2,6 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/external-db/
 product: devplatform
+title: External Data Services
+
 ---
 <!--PUBLISHED-->
 

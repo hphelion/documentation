@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/aok/
 product: devplatform
+title: AOK Authentication Server
 ---
 <!--PUBLISHED-->
 

@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/logging/
 product: devplatform
+title: Log Streams
 ---
 <!--PUBLISHED-->
 

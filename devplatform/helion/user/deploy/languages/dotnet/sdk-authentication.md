@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/dotnet/authentication/
+published: false
+title: "Identity Service, Authentication, and the Service Catalog in .NET"
 ---
 <!--PUBLISHED-->
 

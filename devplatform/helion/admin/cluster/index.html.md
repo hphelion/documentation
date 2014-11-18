@@ -2,6 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/
 product: devplatform
+title: Cluster Setup
+
 ---
 <!--PUBLISHED-->
 

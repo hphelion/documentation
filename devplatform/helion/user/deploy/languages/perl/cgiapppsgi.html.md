@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/cgiapppsgi/
+published: false
+title: "CGI::Application::PSGI"
 ---
 <!--PUBLISHED-->
 

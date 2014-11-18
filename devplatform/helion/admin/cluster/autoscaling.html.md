@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/autoscaling/
 product: devplatform
+title: DEA Auto Scaling
 ---
 <!--PUBLISHED-->
 

@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/ruby/getstarted/
+published: false
+title: "Ruby Fog Bindings Examples for use with HP Helion"
 ---
 <!--PUBLISHED-->
 Ruby Fog Bindings Examples for use with HP Helion

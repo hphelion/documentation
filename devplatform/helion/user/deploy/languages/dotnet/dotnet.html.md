@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/dotnet/
+published: false
+title: "Developing In .NET"
 ---
 <!--PUBLISHED-->
 

@@ -50,10 +50,30 @@ Perform the following steps to add Swift disk to a ring:
 3. List the starter Swift nodes.
 
 		# ringos list-swift-nodes -t starter
+		
+	The following sample displays starter Swift nodes:
+
+		+---------------+
+		| starter-nodes |
+		+---------------+
+		| 192.0.2.22    |
+		| 192.0.2.24    |
+		+---------------+
 
 4. List the disks on the starter nodes.
 
 		# ringos list-disks -n <starter Swift nodes IP address> 
+
+	The following sample displays the lists of disk available on the starter Swift node **192.0.2.22**.
+
+		+----------+------------+
+		| disk     | size       |
+		+----------+------------+
+		| /dev/sdb | 1073741824 |
+		|          |            |
+		| /dev/sdc | 1073741824 |
+		|          |            |
+		+----------+------------+
 
 5. Format the given disk.
 
@@ -61,12 +81,19 @@ Perform the following steps to add Swift disk to a ring:
 
 	**Note**: You can format all the disks with the single command (-d --all).
 
+	The following sample displays the output of formatted disk of 192.0.2.22.
 
-6. List the file in ring directory and identify the `object.builder` file for object-0.
+		+----------+-----------+---------+---------------------------------+-------------+------------+
+		| disk     | formatted | mounted | mount_point                     | label       | size       |
+		+----------+-----------+---------+---------------------------------+-------------+------------+
+		| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |
+		+----------+-----------+---------+---------------------------------+-------------+------------+
 
-7. Add the formatted disk to object-0 ring.
+6. List the file in ring directory and identify the `object.builder` file for object.
 
-		# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
+7. Add the formatted disk to object ring.
+
+		# ringos add-disk-to-ring -f /root/ring-building/object.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
 	**Note**: Choose the zone and region information appropriately.
 
