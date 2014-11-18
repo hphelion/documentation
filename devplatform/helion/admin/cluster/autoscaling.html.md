@@ -2,12 +2,11 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/autoscaling/
 product: devplatform
-title: DEA Auto Scaling
+title: "DEA Auto Scaling"
 ---
 <!--PUBLISHED-->
 
-DEA Auto Scaling[](#dea-auto-scaling "Permalink to this headline")
-===================================================================
+#DEA Auto Scaling {#dea-auto-scaling}
    [DEA Template](#dea-template)
     -   [DEA Scaling configuration](#dea-scaling-configuration)
     -   [Enabling Auto-Scaling](#enabling-auto-scaling)

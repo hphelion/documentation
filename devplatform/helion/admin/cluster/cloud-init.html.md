@@ -2,12 +2,11 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/cloud-init/
 product: devplatform
-title: cloud-init
+title: "cloud-init"
 ---
 <!--PUBLISHED-->
 
-cloud-init[](#cloud-init "Permalink to this headline")
-=======================================================
+#Using the cloud-init Package {#cloud-init}
 
 [cloud-init](https://help.ubuntu.com/community/CloudInit) (the Ubuntu
 package for handling early initialization of cloud instances) can be

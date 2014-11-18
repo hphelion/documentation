@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/
 product: devplatform
-title: Server Configuration
+title: "Server Configuration"
 
 ---
 <!--PUBLISHED-->

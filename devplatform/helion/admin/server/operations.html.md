@@ -2,12 +2,11 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/operations/
 product: devplatform
-title: Common Server Operations
+title: "Common Server Operations"
 ---
 <!--PUBLISHED-->
 
-Common Server Operations[](#common-server-operations "Permalink to this headline")
-===================================================================================
+#Common Server Operations {#common-server-operations}
 [Server Status](#server-status)
         -   [Starting and Stopping Roles](#starting-and-stopping-roles)
         -   [System Shutdown](#system-shutdown)
