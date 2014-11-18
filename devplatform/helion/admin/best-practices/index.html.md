@@ -2,15 +2,14 @@
 layout: default-devplatform
 permalink: /als/v1/admin/best-practices/
 product: devplatform
-title: Best Practices
+title: "Best Practices"
 ---
 <!--PUBLISHED-->
 
-Best Practices[](#index-0 "Permalink to this headline")
-========================================================
+#Best Practices {#index-0}
 
-Applying Updates {#applying-updates}
--------------------------------------------------------------------
+##Applying Updates {#applying-updates}
+
 [Applying Updates](#applying-updates)
     -   [Backup & Migration](#backup-migration)
         -   [Limitations](#limitations)

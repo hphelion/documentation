@@ -430,9 +430,8 @@ Example:
 
 ### Language Modules[](#language-modules "Permalink to this headline")
 
-For the installation of language modules, replacing the
-*requirements.txt* file. For
-[*Python*](/als/v1/user/deploy/languages/python/#python-index), `pypm:` and `pip:` can be specified:
+For the installation of language modules, replace the
+*requirements.txt* file. For Python, `pypm:` and `pip:` can be specified:
 
     requirements:
       pypm:
@@ -441,7 +440,7 @@ For the installation of language modules, replacing the
       pip:
         - pycurl
 
-For [*Perl*](/als/v1/user/deploy/languages/perl/#perl-index), `ppm:` or `cpan:` can be specified:
+For Perl, `ppm:` or `cpan:` can be specified:
 
     requirements:
       ppm:

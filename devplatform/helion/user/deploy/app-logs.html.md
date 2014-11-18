@@ -2,12 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/app-logs/
 product: devplatform
-title: Application Logs
+title: "Application Logs"
+
 ---
 <!--PUBLISHED-->
 
-Application Logs[](#application-logs "Permalink to this headline")
-===================================================================
+#Application Logs {#application-logs}
 
 Logs for applications running on Application Lifecycle Service are aggregated into streams
 so that data from multiple instances can be viewed together and

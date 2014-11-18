@@ -2,13 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/harbor/
 product: devplatform
-title: Harbor: TCP/UDP Port Service
+title: "Harbor: TCP/UDP Port Service"
 
 ---
 <!--PUBLISHED-->
 
-Harbor: TCP/UDP Port Service[](#harbor-tcp-udp-port-service "Permalink to this headline")
-==========================================================================================
+#Harbor: TCP/UDP Port Service {#harbor-tcp-udp-port-service} 
    [Architecture](#architecture)
     -   [Requirements & Setup](#requirements-setup)
     -   [Troubleshooting](#troubleshooting)

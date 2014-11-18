@@ -2,13 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/
 product: devplatform
-title: Cluster Setup
+title: "Cluster Setup"
 
 ---
 <!--PUBLISHED-->
 
-Cluster Setup[](#index-0 "Permalink to this headline")
-=======================================================
+#Cluster Setup {#index-0}
  [Roles](#roles)
     -   [Preparing the Core Node](#preparing-the-core-node)
         -   [CORE\_IP](#core-ip)

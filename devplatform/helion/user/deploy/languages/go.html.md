@@ -2,12 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/go/
 product: devplatform
-title: Go
+title: "Go"
+
 ---
 <!--PUBLISHED-->
 
-Go[](#go "Permalink to this headline")
-=======================================
+#Go {#go}
 
 Go applications ([golang](http://golang.org/)) are supported through a
 BuildPack framework, and can be pushed to Application Lifecycle Service with a basic setup.

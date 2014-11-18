@@ -2,13 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/user/quick-start/
 product: devplatform
-title: Prerequisites
+title: "Prerequisites"
 
 ---
 <!--PUBLISHED-->
 
-Prerequisites[](#index-0 "Permalink to this headline")
-=====================================================
+#Prerequisites {#index-0}
 
 This guide covers the basics of using an Application Lifecycle Service (ALS) PaaS.
 

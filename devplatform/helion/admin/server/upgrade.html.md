@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/upgrade/
 product: devplatform
-title: Upgrading Application Lifecycle Service
+title: "Upgrading Application Lifecycle Service"
 ---
 <!--PUBLISHED-->
 

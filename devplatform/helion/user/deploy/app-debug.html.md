@@ -2,12 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/app-debug/
 product: devplatform
-title: Remote Debugging
+title: "Remote Debugging"
+
 ---
 <!--PUBLISHED-->
 
-Remote Debugging[](#remote-debugging "Permalink to this headline")
-===================================================================
+#Remote Debugging {#remote-debugging}
 
 Different languages have different tools an protocols for remote
 debugging, but most require a connection between the running application

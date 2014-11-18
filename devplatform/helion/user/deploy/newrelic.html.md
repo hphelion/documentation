@@ -2,12 +2,15 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/newrelic/
 product: devplatform
-title: New Relic Monitoring
+title: "New Relic Monitoring"
+
 ---
 <!--PUBLISHED-->
-<!-- file deliberately orphaned, functionality not implemented 
-New Relic Monitoring {#new-relic-monitoring}-->
-===========================================================================
+<!-- file deliberately orphaned, functionality not  currently supported although it may work 
+-->
+
+#New Relic Monitoring {#new-relic-monitoring}
+
    [New Relic for Ruby](#new-relic-for-ruby)
         -   [The Ruby Gem](#the-ruby-gem)
         -   [Installing the Ruby agent with the Bundler

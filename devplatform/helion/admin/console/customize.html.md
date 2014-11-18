@@ -2,13 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/customize/
 product: devplatform
-title: Customization
+title: "Customization"
 
 ---
 <!--PUBLISHED-->
 
-Customization[](#customization "Permalink to this headline")
-=============================================================
+#Customization {#customization}
 
 An Application Lifecycle Service PaaS can be extensively customized and themed. PaaS
 administrators can add or remove runtimes, frameworks and services from

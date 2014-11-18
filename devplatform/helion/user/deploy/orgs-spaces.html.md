@@ -2,12 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/orgs-spaces/
 product: devplatform
-title: Organizations & Spaces
+title: "Organizations & Spaces"
+
 ---
 <!--PUBLISHED-->
 
-Organizations & Spaces[](#organizations-spaces "Permalink to this headline")
-=============================================================================
+#Organizations & Spaces {#organizations-spaces}
 
 Organizations and Spaces are the main organizational units in Application Lifecycle Service.
 

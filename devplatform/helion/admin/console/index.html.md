@@ -2,13 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/
 product: devplatform
-title: Management Console (Admin View)
+title: "Management Console (Admin View)"
 
 ---
 <!--PUBLISHED-->
 
-Management Console (Admin View)[](#management-console-admin-view "Permalink to this headline")
-===============================================================================================
+#Management Console (Admin View) {#management-console-admin-view}
 
 Application Lifecycle Service's web interface is called the Management Console. The interface
 displays more options and settings for Admin users than it does for

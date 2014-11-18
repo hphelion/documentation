@@ -2,12 +2,11 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/clojure/
 product: devplatform
-title: Clojure
+title: "Clojure"
 ---
 <!--PUBLISHED-->
 
-Clojure[](#clojure "Permalink to this headline")
-=================================================
+#Clojure {#clojure}
 
 Application Lifecycle Service supports deploying Clojure applications using
 [leiningen](https://github.com/technomancy/leiningen).
