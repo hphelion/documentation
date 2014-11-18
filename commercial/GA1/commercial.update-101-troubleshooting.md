@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/troubleshooting/101/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -479,14 +479,9 @@ If the update fails, from undercloud node:
 
 **Solution**
 
-1. Remove the node in maintenance mode using the following command:
-
-		nova node-delete <ID of error node>
-
-2. List the stacks using the following command:
+1. List the stacks using the following command:
 
 		heat stack-list
-
 
 3. Delete the stack with the failed Nova node.
 
