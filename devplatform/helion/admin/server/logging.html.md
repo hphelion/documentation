@@ -2,12 +2,11 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/logging/
 product: devplatform
-title: Log Streams
+title: "Log Streams"
 ---
 <!--PUBLISHED-->
 
-Log Streams[](#log-streams "Permalink to this headline")
-=========================================================
+#Log Streams {#log-streams}
    [Logyard](#logyard)
     -   [Drains](#drains)
         -   [System Drains](#system-drains)

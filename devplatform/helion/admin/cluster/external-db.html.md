@@ -2,13 +2,12 @@
 layout: default-devplatform
 permalink: /als/v1/admin/cluster/external-db/
 product: devplatform
-title: External Data Services
+title: "External Data Services"
 
 ---
 <!--PUBLISHED-->
 
-External Data Services[](#external-data-services "Permalink to this headline")
-===============================================================================
+#External Data Services {#external-data-services}
 [General Principles](#general-principles)
     -   [MySQL](#mysql)
     -   [PostgreSQL](#postgresql)

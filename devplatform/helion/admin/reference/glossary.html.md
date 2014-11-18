@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/reference/glossary/
 product: devplatform
-title: Glossary
+title: "Glossary"
 ---
 <!--PUBLISHED-->
 

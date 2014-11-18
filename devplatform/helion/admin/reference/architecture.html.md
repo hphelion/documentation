@@ -2,8 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/admin/reference/architecture/
 product: devplatform
-title: Architectural Design
-
+title: "Architectural Design"
 ---
 <!--PUBLISHED-->
 
