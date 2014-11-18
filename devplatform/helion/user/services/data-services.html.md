@@ -563,12 +563,8 @@ Update the application code to use the DATABASE\_URL environment
 variable. See [*Using Database Services*](#database-accessing) for
 general information and the following language-specific documentation:
 
--   [*Perl Data
-    Services*](/als/v1/user/deploy/languages/perl/#perl-data-services)
--   [*PHP Data
-    Services*](/als/v1/user/deploy/languages/php/#php-data-services)
--   [*Python Data
-    Services*](/als/v1/user/deploy/languages/python/#python-data-services)
+-   [PHP Data Services](/als/v1/user/deploy/languages/php/#php-data-services)
+
 
 The following changes to sample applications show this modification:
 

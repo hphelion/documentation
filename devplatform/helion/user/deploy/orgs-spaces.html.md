@@ -7,8 +7,7 @@ title: "Organizations & Spaces"
 ---
 <!--PUBLISHED-->
 
-Organizations & Spaces[](#organizations-spaces "Permalink to this headline")
-=============================================================================
+#Organizations & Spaces {#organizations-spaces}
 
 Organizations and Spaces are the main organizational units in Application Lifecycle Service.
 

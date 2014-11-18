@@ -6,8 +6,8 @@ title: Developing in Node
 ---
 <!--PUBLISHED-->
 
-Developing in Node[](#node-js "Permalink to this headline")
-=================================================
+#Developing in Node {#node-js}
+
 
 Application Lifecycle Service has a built in Node framework with multiple versions of the
 [Node.js](http://nodejs.org/) runtime. [NPM](https://npmjs.org/) is used

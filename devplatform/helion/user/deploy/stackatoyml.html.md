@@ -333,7 +333,7 @@ For the installation of language modules, replacing the
       pip:
         - pycurl
 
-For [*Perl*](/als/v1/user/deploy/languages/perl/#perl-index), `ppm:` or `cpan:` can be specified:
+For Perl, `ppm:` or `cpan:` can be specified:
 
     requirements:
       ppm:

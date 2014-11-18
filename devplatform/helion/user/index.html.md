@@ -50,14 +50,10 @@ Deploying Applications[](#deploying-applications "Permalink to this headline")
 	    -   [Buildpacks](/als/v1/user/deploy/buildpack/)
 	    -   [Generic & Standalone Frameworks](/als/v1/user/deploy/other-frameworks/)    
     -   Languages
-	    -   [Clojure](/als/v1/user/deploy/languages/clojure/)
-	    -   [Go](/als/v1/user/deploy/languages/go/)
 	    -   [Java](/als/v1/user/deploy/languages/java/)
 	    -   [Node.js](/als/v1/user/deploy/languages/node/)
-	    -   [Perl](/als/v1/user/deploy/languages/perl/)
 	    -   [PHP](/als/v1/user/deploy/languages/php/)
-	    -   [Python](/als/v1/user/deploy/languages/python/)
-	    -   [Ruby](/als/v1/user/deploy/languages/ruby/)
+	 
 
 Services[](#services "Permalink to this headline")
 ---------------------------------------------------

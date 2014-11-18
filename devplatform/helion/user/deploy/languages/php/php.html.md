@@ -1,11 +1,13 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/
-title: Developing In PHP
+title: Developing in PHP
+
 ---
 <!--PUBLISHED-->
 
 #Developing In PHP
+
 Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools

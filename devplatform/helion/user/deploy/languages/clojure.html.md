@@ -6,8 +6,7 @@ title: Clojure
 ---
 <!--PUBLISHED-->
 
-Clojure[](#clojure "Permalink to this headline")
-=================================================
+#Clojure {#clojure}
 
 Application Lifecycle Service supports deploying Clojure applications using
 [leiningen](https://github.com/technomancy/leiningen).
