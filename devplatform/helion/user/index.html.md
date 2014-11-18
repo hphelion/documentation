@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/
 product: devplatform
-title: Application Lifecycle Service User Guide
+title: "Application Lifecycle Service User Guide"
 ---
 <!--PUBLISHED-->
 
