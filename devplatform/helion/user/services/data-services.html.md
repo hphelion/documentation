@@ -6,8 +6,7 @@ title: "Data Services"
 ---
 <!--PUBLISHED-->
 
-Data Services[](#index-0 "Permalink to this headline")
-=======================================================
+#Data Services {#index-0}
 
 Intro[](#intro "Permalink to this headline")
 ---------------------------------------------

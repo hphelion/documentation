@@ -483,11 +483,11 @@ If the update fails, from undercloud node:
 
 		heat stack-list
 
-3. Delete the stack with the failed Nova node.
+2. Delete the stack with the failed Nova node.
 
 		heat stack-delete <ID of failed node>
 
-4. Change the node(s) to false for the maintenance option, using the following command:
+3. Change the node(s) to false for the maintenance option, using the following command:
 		
 		ironic node-update <id> replace maintenance=False
 

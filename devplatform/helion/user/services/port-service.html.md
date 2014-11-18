@@ -6,8 +6,7 @@ title: "Port Service (Harbor)"
 ---
 <!--PUBLISHED-->
 
-Port Service (Harbor)[](#port-service-harbor "Permalink to this headline")
-===========================================================================
+#Port Service (Harbor) {#port-service-harbor}
 
 HTTP and HTTPS ports and routing are provided automatically for all web
 applications deployed to Application Lifecycle Service (unless [processes:
