@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/reference/glossary/
-title: Glossary
+title: "Glossary"
 ---
 <!--PUBLISHED-->
 
