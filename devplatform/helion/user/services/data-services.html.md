@@ -2,12 +2,11 @@
 layout: default-devplatform
 permalink: /als/v1/user/services/data-services/
 product: devplatform
-title: Data Services
+title: "Data Services"
 ---
 <!--PUBLISHED-->
 
-Data Services[](#index-0 "Permalink to this headline")
-=======================================================
+#Data Services {#index-0}
 
 Intro[](#intro "Permalink to this headline")
 ---------------------------------------------
