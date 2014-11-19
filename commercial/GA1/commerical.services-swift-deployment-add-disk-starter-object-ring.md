@@ -95,7 +95,9 @@ Perform the following steps to add Swift disk to a ring:
 
 		# ringos add-disk-to-ring -f /root/ring-building/object.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-	**Note**: Choose the zone and region information appropriately.
+	**Note**: 
+       * Choose the zone and region information appropriately.
+       * The disk label is derived from step 5. 
 
 	**Recommendation**: 
               
