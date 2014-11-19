@@ -64,10 +64,9 @@ For easy reference, we categorized the known issues and solutions as follows:
 	* [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
 	* [Ironic intermittently set maintenance mode to True during scale-out](#ironic)
 
-* [DNSaaS issues]{#dnsaas}
+* [DNSaaS issues](#dnsaas)
 
-* [Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud](#config_dnas)
-
+	* [Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud](#config_dnas)
 
 * [Logging issues](#logging)
 
