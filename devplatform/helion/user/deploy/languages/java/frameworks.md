@@ -1,6 +1,8 @@
 ---
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/java/frameworks
+title: "Java Frameworks"
+
 ---
 <!--PUBLISHED-->
 #Java Frameworks

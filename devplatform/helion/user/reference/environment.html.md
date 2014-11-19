@@ -2,6 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/reference/environment/
 product: devplatform
+title: "Environment Variables"
 ---
 <!--PUBLISHED-->
 
