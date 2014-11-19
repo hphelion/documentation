@@ -26,9 +26,9 @@ PageRefresh();
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack Community edition and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.
 
 * [Supported hardware](#supportedhw)
-* [Hardware configuration](#hardware)
-	* [Hardware configuration for baremetal installation](#baremetal)
-	* [Hardware configuration for virtual installation](#virtual)
+* [Hardware and Software Requirements](#hardware)
+	* [For baremetal installation](#baremetal)
+	* [For virtual installation](#virtual)
 * [Software configuration](#software)
 * [Usable capacity](#usable-capacity)
 
@@ -78,7 +78,7 @@ The following hardware is supported for Helion OpenStack Community edition for b
 
 ## Hardware configuration {#hardware}
 
-Make sure your server(s) meet the following requirements, depending on the installation type:
+Make sure your server(s) meet the requirements appropriate for the installation type:
 
 * [Baremetal installations](#baremetal)
 * [Virtual installations](#virtual)
