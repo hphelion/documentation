@@ -7,29 +7,26 @@ title: "Server Configuration"
 ---
 <!--PUBLISHED-->
 
-Server Configuration[](#server-configuration "Permalink to this headline")
-===========================================================================
+#Server Configuration {#server-configuration}
 
 This page covers the initial setup and configuration of the Application Lifecycle Service
 Server in a virtual machine under control of a hypervisor running on a
 virtualization host.
 
-Accessing Server via the Command Line[](#accessing-server-via-the-command-line "Permalink to this headline")
--------------------------------------------------------------------------------------------------------------
+##Accessing Server via the Command Line {#accessing-server-via-the-command-line}
 
-The Application Lifecycle Service server has one user account initially:
+The Application Lifecycle Service server initially has one user account. The default login information is:
 
-	Username: helion
-	Password: helion
+* Username: helion
+* Password: helion
 
-If the Application Lifecycle Service server is running on a publicly routable network, the
-password should be changed as soon as possible.
+Unless you've already created a primary admin user in the Management Console. If so, the password of the default Helion account is changed to match that of the first user created in the Management Console, and you'll need to use that password instead. 
+
+**Security Note**: If the Application Lifecycle Service server is running on a publicly routable network, the password should be changed as soon as possible.
 
 **Note**
 
-The password of the `helion` account is changed to
-match the first user created in the Management Console. If you've
-created this "primary admin" user, use that password instead.  If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must login with your SSH key you selected during cluster creation.
+ If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must login with your SSH key you selected during cluster creation.
 
 Command access to the Application Lifecycle Service server is available in several ways:
 
