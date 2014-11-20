@@ -77,12 +77,13 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 			
 	* The number of "server" lines equals the number of Swift Proxies you have set up.
 	* For virtual IP: 
+
 		* Login to the controller node
 	
 		  		# ssh heat-admin@<Controller Node IP address>
 				# sudo -i
 
-		*  Run the following command to view the virtual IP of the controller nodes:
+		*  Run the following command to view the virtual IP of the controller nodes
 
 				/etc/keepalived/keepalived.conf
 
