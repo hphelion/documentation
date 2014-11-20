@@ -23,9 +23,9 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack 
 
-This page provides a detailed description of enabling VLAN Provider Network in KVM Cloud Type.
+This page provides a detailed description to enable VLAN Provider Network in KVM Cloud Type.
 
-HP Helion &#174;OpenStack can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.
+<!---HP Helion &#174;OpenStack can be deployed in multiple ways to fulfill certain requirements using an installer. Installers depend on Virtual Extensible Local Area Network (VxLAN) or Generic Routing Encapsulation (GRE) to isolate tenants which is an important requirement.  These two latest networking technologies have become de-facto standards for installers because they ease infrastructure readiness requirements while providing tenant isolation, independent of any hardware (Switch/Router) configuration.-->
 
 
 HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLAN, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack&#174; enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).-->
@@ -40,7 +40,7 @@ The following deployment diagrams are based on the assumption that the network i
 
 #Install Steps
 
-This section describes the solution to set up Overcloud Neutron Network to provide tenant network isolation by means of VLAN, instead of the default VxLAN. 
+This section describes the solution to set up the Overcloud Neutron Network to provide tenant network isolation by means of VLAN, instead of the default VxLAN. 
 
 The following prerequisites should be fulfilled to setup the Overcloud Neutron in VLAN:
 
@@ -48,14 +48,14 @@ The following prerequisites should be fulfilled to setup the Overcloud Neutron i
 
  * `/etc/neutron/plugins/ml2/ml2_conf.ini`- sets up the tenant network type, provides the VLAN ranges and maps to the physical bridge.
 
- * `/etc/neutron/dhcp-agent.ini`- enables Metadata Server access through DHCP Namespace
+ * `/etc/neutron/dhcp-agent.ini`- enables Metadata Server access through DHCP Namespace.
 
-2.	Pass the right export variables pertinent to VLAN Provider Network 
+2.	Pass the right export variables pertinent to the VLAN Provider Network. 
 
 
 # Detailed installation steps
 
-The following assumptions are considered while deployment:
+The following assumptions are considered during deployment:
 
 * Port 2 of all the Baremetal nodes are wired and used as bm_network - referred in the document as em2 or eth1
 
@@ -67,9 +67,9 @@ The following assumptions are considered while deployment:
 
 ##Process
 
-1. Login to SeedHost
+1. Login to Seed VM Host
 
-2. Create file with following export variables. Change the IPs based on your specifications. 
+2. Create a file `envfile` with the following export variables. Modify the IPs based on your specifications. 
 	
 		export BRIDGE_INTERFACE=em2
 		export BM_NETWORK_SEED_IP=192.168.200.2
@@ -92,10 +92,9 @@ The following assumptions are considered while deployment:
 		export NeutronNetworkType=vlan
 		export NeutronNetworkVLANRanges=physnet1:300:398
 		export OVERCLOUD_CONTROL_VIRTUAL_ROUTER_ID=37
-		export OVERCLOUD_VIRTUAL_INTERFACE=eth1
+		export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
 		export OVERCLOUD_NEUTRON_DVR=False
 		export OVERCLOUD_COMPUTESCALE=1
-		export NODE_MIN_DISK=90
 		#######################################
 		export UNDERCLOUD_CODN_HTTP_PROXY=http://16.85.88.10:8080
 		export UNDERCLOUD_CODN_HTTPS_PROXY=http://16.85.88.10:8080
@@ -139,7 +138,7 @@ The following assumptions are considered while deployment:
 			}
 
 			
-4. To update ml2.conf edit - tripleo/hp&#095;passthrough/overcloud&#095;neutron&#095;ml2&#095;conf.json and add tenant&#095;network&#095;type and network&#095;vlan_ranges specific to your environment. An example is given below:
+4. To update ml2.conf, edit `tripleo/hp_passthrough/overcloud_neutron_ml2_conf.json` and add tenant&#095;network&#095;type and network&#095;vlan_ranges specific to your environment. An example is given below:
 
 	    {
 	       "ml2": {
@@ -168,14 +167,14 @@ The following assumptions are considered while deployment:
 	                    ]
 	                },
 				
-6. To create seed do the following: 
+6. To create the Seed VM, do the following: 
 
 		# source envfile
 		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed | tee  create-seed.log
 
-7. Copy environment file (created in step 2) to seed and do the following from within seed:
+7. Copy environment file (created in step 2) to Seed and do the following from within the Seed:
 
-		# ssh into the seed vm <IP Address>  
+		# ssh into the Seed VM <IP Address>  
 
 	For example <192.168.200.2>
 		
@@ -196,11 +195,11 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
 
 ##Verifying the installation
 
-1. Login to Horizon dashboard and create two projects (Tenant A and Tenant B) and users for the projects. 
+1. Login to Horizon dashboard and create two projects (Tenant A and Tenant B) and also the users for the projects. 
 
 2. SSH into the controller node. 
  
-		# ssh heat-admin@controller.ip)
+		# ssh heat-admin@controller.ip
 
    * Create a VLAN provider network(s) and subnets for tenant A. 
 
@@ -218,7 +217,7 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
  
 4. Validate if you can ping the VMs from the KVM Host.
  
-5. Validate if the VMs are able to ping each other in the same network and are unable  to ping other instances in the other network.
+5. Validate if the VMs are able to ping one another in the same network and are unable to ping other instances in the other network.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
