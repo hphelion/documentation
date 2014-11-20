@@ -201,7 +201,7 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
  
 		# ssh heat-admin@controller.ip
 
-   	* Create a VLAN provider network(s) and subnets for tenant A. 
+	* Create a VLAN provider network(s) and subnets for tenant A. 
 
 			# neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=300 vlan300
 
@@ -213,11 +213,11 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
 
 	* Using Horizon UI, create a Subnet for the network of tenant B network: Subnet: **192.168.101.0/24** gateway **192.168.101.1**
  
-3.  Launch two instances in vlan300 network and two in vlan301 network. 
+3. Launch two instances in vlan300 network and two in vlan301 network. 
  
-4.  Validate if you can ping the VMs from the KVM Host.
+4. Validate if you can ping the VMs from the KVM Host.
  
-5.  Validate if the VMs are able to ping one another in the same network and are unable to ping other instances in the other network.
+5. Validate if the VMs are able to ping one another in the same network and are unable to ping other instances in the other network.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
