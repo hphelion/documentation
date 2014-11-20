@@ -97,8 +97,8 @@ Perform the following steps to add Swift disk to a ring:
 
 	**Note**: 
        * Choose the zone and region information appropriately.
-       * The disk label is derived from step 5. 
-
+       * The disk label is derived from step 5.
+      
 	**Recommendation**: 
               
 	* Add drives gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
