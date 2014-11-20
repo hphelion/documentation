@@ -57,12 +57,17 @@ For easy reference, we categorized the known issues and solutions as follows:
 	* [Failed during post VSA deployment](#post-vsa-fail)
 	*  [vsa&#95;network cannot be destroyed](#vsa-network)
 	* [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
+
+* [Scale-Out issues](#scale)
 	* [Failure of newly added compute or VSA node during Scale-out](#failnew)
-* [Other Issues](#other)
 	* [Scale-out nodes : os-refresh-configuration fails on Controller Node](#refreshfails)
-	* [Configuring the dnsmasq_dns_servers list for the undercloud and overcloud](#config_dnas)
 	* [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
-	* [Ironic intermittently set maintenance mode to True during installation](#ironic)
+	* [Ironic intermittently set maintenance mode to True during scale-out](#ironic)
+
+* [DNSaaS issues](#dnsaas)
+
+	* [Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud](#config_dnas)
+
 * [Logging issues](#logging)
 
 If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
@@ -709,13 +714,12 @@ Perform the following steps to remove a failed compute node:
 
 <HR>
 
-Other issues {#other}
+## Scale-Out issues ## {#scale}
 
 * [Scale-out nodes : os-refresh-configuration fails on Controller Nodes](#refreshfails)
-* [Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud](#config_dnas)
 * [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
 * [Scale-out nodes : os-refresh-config on Controller Nodes Fail](#refresh)
-* * [Ironic intermitently set maintenance mode to True during update](#ironic)
+* * [Ironic intermitently set maintenance mode to True during scale-out](#ironic)
 
 ### Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
 
@@ -779,39 +783,6 @@ If RabbitMQ is not running, start RabbitMQ using the `start rabbitmqserver` comm
 * Compare the last committed transaction sequence number across all 3 nodes and bootstrap from the latest node using `/etc/init.d/mysql bootstrappxc` or `/etc/init.d/mysql restart` and start MySQL on the remaining nodes.
 
 <HR>
-
-### Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud {#config_dnas}
-
-To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To perform this:
-
-1. Edit the `overcloud_neutron_dhcp_agent.json` file in the
-`ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
-items. 
-2. Copy the `overcloud_neutron_dhcp_agent.json` file to a
-new file named `undercloud_neutron_dhcp_agent.json` and configure the same
-forwarders for the undercloud.
-
-	
-		{"dhcp_agent":
-		  {"config":
-		    [
-		      {"section":"DEFAULT",
-		        "values":
-		          [
-		            {"option":"dhcp_delete_namespaces","value":"True"},
-		            {"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}  <----set the value to the ip
-		                                                                      address of the DNS server
-		                                                                      to use.  Multiple DNS
-		                                                                      servers can be specified
-		                                                                      as a comma separated list.
-		          ]
-		      }
-		    ]
-		  }
-		}
-
-<hr>
-
 
 ### Recovery when Scale-out nodes of newly added compute node or VSA {#recovery}
 
@@ -975,6 +946,41 @@ If the update fails, from undercloud node:
 
 	You can re-use the node, if needed.
 
+
+## DNSaaS
+
+
+### Configuring the `dnsmasq_dns_servers` list for the undercloud and overcloud {#config_dnas}
+
+To enable name resolution from tenant VMs in the overcloud, it is necessary to configure the DNS servers which will be used by `dnsmasq` as forwarders.  To perform this:
+
+1. Edit the `overcloud_neutron_dhcp_agent.json` file in the
+`ce-installer/tripleo/hp_passthrough` directory to add the desired `dnsmasq_dns_servers`
+items. 
+2. Copy the `overcloud_neutron_dhcp_agent.json` file to a
+new file named `undercloud_neutron_dhcp_agent.json` and configure the same
+forwarders for the undercloud.
+
+	
+		{"dhcp_agent":
+		  {"config":
+		    [
+		      {"section":"DEFAULT",
+		        "values":
+		          [
+		            {"option":"dhcp_delete_namespaces","value":"True"},
+		            {"option":"dnsmasq_dns_servers", "value":"0.0.0.0"}  <----set the value to the ip
+		                                                                      address of the DNS server
+		                                                                      to use.  Multiple DNS
+		                                                                      servers can be specified
+		                                                                      as a comma separated list.
+		          ]
+		      }
+		    ]
+		  }
+		}
+
+<hr>
 
 
 

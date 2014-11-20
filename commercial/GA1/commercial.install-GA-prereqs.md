@@ -276,6 +276,8 @@ During the installation process after the seed VM is installed, the installer sc
 
 The baremetal.csv file informs the installer of the size of the Computer that each node will be installed into.
 
+Specify the MAC address, CPU, memory, local disk size, IPMI address, and IPMI password values for each baremetal system you intend to install.
+
 There must be one entry in this file for each baremetal system you intend to install. 
 
 **Notes:** 
