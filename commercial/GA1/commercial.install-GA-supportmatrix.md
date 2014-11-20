@@ -57,7 +57,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - BL490c Gen7 
 - SL390s Gen7
 
-### HP Proliant Rack Servers
+### HP Proliant Rack Servers 
 
 - [DL310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
 - [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
