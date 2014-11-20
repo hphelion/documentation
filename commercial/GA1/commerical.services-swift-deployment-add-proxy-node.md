@@ -55,8 +55,6 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <proxy node IP address> 
 
-
-
 4. After creation of the Proxy node, list the Proxy IP addresses.
 
 		# ringos list-swift-nodes -t proxy
@@ -72,10 +70,22 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 7. Add the following content in the `swift-proxy.cfg` file.
 
 		  listen scale_swift_proxy
-		  bind 192.0.2.21:8080
-		  server <Proxy node hostname> <proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
+		  bind <Virtual IP (running on the controller nodes)>:8080
+		  server <proxy node hostname> <proxy nodes IP address>:8080 check inter 2000 rise 2 fall 5 
 
-	**Note**:The number of "server" lines will equal the number of Swift Proxies you have set up.
+	**Note**:
+			
+	* The number of "server" lines equals the number of Swift Proxies you have set up.
+	* For virtual IP: 
+		* Login to the controller node
+	
+		  		# ssh heat-admin@<Controller Node IP address>
+				# sudo -i
+
+		*  Run the following command to view the virtual IP of the controller nodes:
+
+				/etc/keepalived/keepalived.conf
+
 
 8. Restart the HA Proxy service on all these nodes.
 
