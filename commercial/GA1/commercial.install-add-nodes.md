@@ -81,7 +81,7 @@ To add new compute nodes that were not present during the initial installation p
 
 		source stackrc
 
-3. Register the new baremetal server in the Ironic database. Replace the CPU, memory, local memory, IPMI address, and IPMI password variable values with your baremetal settings: 
+3. Register the new baremetal server in the Ironic database. Replace the CPU, memory, local disk size, IPMI address, and IPMI password values with your baremetal settings: 
 
 		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
 
