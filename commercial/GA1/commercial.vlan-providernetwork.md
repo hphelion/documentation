@@ -5,7 +5,7 @@ permalink: /helion/openstack/vlan/provider/network/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
