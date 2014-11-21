@@ -382,7 +382,7 @@ JSON
     Content-Type: application/json
     
     {
-      "name": "domainnamex.com",
+      "name": "domainnamex.com.",
       "ttl": 7200,
       "email": "nsadmin@example.org",
       "description": "testdomain"
@@ -439,7 +439,7 @@ JSON
 
 **Curl Example**
 
-    curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"name": "domainnamex.com","ttl": 7200,"email": "nsadmin@example.org","description": "testdomain"}' {BaseURI}/v1/domains/{domainID}
+    curl -i -k -X PUT -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' -d '{"name": "domainnamex.com.","ttl": 7200,"email": "nsadmin@example.org","description": "testdomain"}' {BaseURI}/v1/domains/{domainID}
 
 ##### 4.4.2.4 Delete Domain #### {#delete_domain}
 ##### DELETE /domains/{domainId}
