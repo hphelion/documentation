@@ -46,11 +46,11 @@ The following prerequisites should be fulfilled to setup the Overcloud Neutron i
 
 1. Pass the right configuration parameters to the installer and templates for setting up the neutron configuration files: 
 
- * `/etc/neutron/plugins/ml2/ml2_conf.ini`- sets up the tenant network type, provides the VLAN ranges and maps to the physical bridge.
+	* `/etc/neutron/plugins/ml2/ml2_conf.ini`- sets up the tenant network type, provides the VLAN ranges and maps to the physical bridge.
 
- * `/etc/neutron/dhcp-agent.ini`- enables Metadata Server access through DHCP Namespace.
+	* `/etc/neutron/dhcp-agent.ini`- enables Metadata Server access through DHCP Namespace.
 
-2.	Pass the right export variables pertinent to the VLAN Provider Network. 
+2. Pass the right export variables pertinent to the VLAN Provider Network. 
 
 
 # Detailed installation steps
@@ -201,7 +201,7 @@ mac&#095;address,ipmi&#095;user,ipmi&#095;password,ipmi&#095;address,no&#095;of&
  
 		# ssh heat-admin@controller.ip
 
-   * Create a VLAN provider network(s) and subnets for tenant A. 
+	* Create a VLAN provider network(s) and subnets for tenant A. 
 
 			# neutron net-create --provider:physical_network=physnet1 --provider:network_type=vlan --provider:segmentation_id=300 vlan300
 
