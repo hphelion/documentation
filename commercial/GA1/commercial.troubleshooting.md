@@ -719,7 +719,7 @@ Perform the following steps to remove a failed compute node:
 * [Scale-out nodes : os-refresh-configuration fails on Controller Nodes](#refreshfails)
 * [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
 * [Scale-out nodes : os-refresh-config on Controller Nodes Fail](#refresh)
-* * [Ironic intermitently set maintenance mode to True during scale-out](#ironic)
+* [Ironic intermitently set maintenance mode to True during scale-out](#ironic)
 
 ### Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
 
@@ -890,7 +890,7 @@ The controller nodes can fail due to following reasons:
 
 <hr>
 
-## Ironic intermittently set maintenance mode to True during scale-out {#ironic}
+### Ironic intermittently set maintenance mode to True during scale-out {#ironic}
 
 This issue can happen during the scale-out of the overcloud nodes. The update will fail for one or more nodes. <!-- CORE-2082 -->
 
