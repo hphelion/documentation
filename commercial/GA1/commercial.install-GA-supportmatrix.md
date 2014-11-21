@@ -346,12 +346,12 @@ A **Certified** Guest OS has been officially certified with the appropriate vend
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
-<td>Debian 8
+<td>Debian 8 (Jessie Beta 2)
 </td>
 <td>Yes</td>
 <td>N/A</td>
 </tr><tr>
-<td>Debian 7
+<td>Debian 7.6
 </td>
 <td>Yes</td>
 <td>N/A</td>
