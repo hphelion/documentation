@@ -98,7 +98,7 @@ When using HP Helion OpenStack you might experience the following issues:
 
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 
-* If, for some reason, the overcloud controller is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
+* If, for some reason, the overcloud compute service is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
 		$ sudo service nova-compute restart
 		$ sudo service nova-scheduler restart

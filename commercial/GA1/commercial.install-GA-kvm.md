@@ -295,6 +295,12 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 Configure Block Storage by either deploying VSA or using HP 3Par Array
 
+- Configure HP Helion OpenStack tenant networks to use VLAN Provider Network. 
+
+	HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.
+
+	For instructions, see [Enabling VLAN Provider Network in HP Helion OpenStack]{/helion/openstack/vlan/provider/network/}.
+
 - Configure HP StoreVirtual VSA
 
 	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
