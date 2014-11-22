@@ -231,7 +231,7 @@ navigation:
   - text: HP Helion OpenStack Documentation Home
     url: /helion/openstack/
   - text: Release Notes
-    url: /helion/openstack/release-notes/ 
+    url: /helion/openstack/release-notes/101 
   - text: FAQ
     url: /helion/openstack/faq/  
   - text: Technical Overview
