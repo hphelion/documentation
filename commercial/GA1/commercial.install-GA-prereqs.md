@@ -311,7 +311,7 @@ When creating this file, keep in mind the following:
 
 * The IPMI user and password **must have** ADMINISTRATOR privilege; it is not sufficient to have OPERATOR privilege
 * Memory must be at least 32 GB
-* Disk size must be minimum 512GB/477GiB
+* Disk size must be greater than 512GiB
 * The disk size specified should never exceed the physical disk size
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.
