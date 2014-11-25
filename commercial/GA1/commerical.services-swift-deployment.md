@@ -266,7 +266,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
     	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <object node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-	**Note:** You can use the labels and disks which obtained in the output of section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes). For more information on the ring attributes refer to [Defining ring attributes of object-ring:1](#define-object-ring:1).
+	**Note:** You can use the labels and disks which are obtained in the output of the section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes). For more information on the ring attributes refer to [Defining ring attributes of object-ring:1](#define-object-ring:1).
 
 	The following sample displays the addition of disk to **192.0.2.29** and its output.
 
@@ -341,15 +341,15 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
 
-In the following example account, container, object, and generated `object-1.ring.gz` are copied to all the nodes:
+	In the following example account, container, object, and generated `object-1.ring.gz` are copied to all the nodes:
 
-	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.22
-	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.29
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.22
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.29
 		
-	The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
-	ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
-	Are you sure you want to continue connecting (yes/no)? yes
-	Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
+		The authenticity of host '192.0.2.29 (192.0.2.29)' can't be established.
+		ECDSA key fingerprint is 8a:eb:b7:66:3b:5f:fa:d6:d1:49:80:1a:a7:90:79:20.
+		Are you sure you want to continue connecting (yes/no)? yes
+		Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 
 <!--**Note**: The system may escape the authentication of node sometimes. --->
 
