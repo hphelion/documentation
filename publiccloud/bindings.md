@@ -16,7 +16,7 @@ We created this set of bindings and have them available as open source.  While n
 ###Java/Clojure
 Java access to HP Helion Public Cloud Compute and HP Helion Public Cloud Objects is accomplished using the [jclouds multi-cloud library](https://jclouds.apache.org).  This easy to use library abstracts common cloud functionality into a simple interface.  HP has contributed a provider for both HP Helion Public Cloud Compute and Object Storage back to the jclouds community to make our services accessible to Java programmers.
 
-To get started, take a look at the [Openstack: Getting Started Guide](https://jclouds.apache.org/guides/openstack), which walks you through the installation process and some sample code.
+To get started, take a look at the [Openstack - Getting Started Guide](https://jclouds.apache.org/guides/openstack) which walks you through the installation process and some sample code.
 
 For more elaborate examples, take a look at the [jclouds-examples repository over at GitHub](https://github.com/jclouds/jclouds-examples).
 
