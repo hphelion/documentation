@@ -45,6 +45,8 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 
 **Caution**:Plan the following ring attributes before deployment of object-ring:1 because many attributes, such as **part power**, cannot be changed after the ring has been deployed.
 
+###Table A
+
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 	<th>Attributes</th>
@@ -56,6 +58,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 	<td>Defines single point of failure within your cluster. </td>
     <td>It is recommended to use a single zone with multiple servers. Having multiple servers (at least three) ensures that the replicas are distributed across servers, not all on one.</td>
 </tr>
+</tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Replica Count</b></td>
 	<td>Defines the number of copies of objects created.</td>
@@ -64,13 +67,44 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 <tr style="background-color: white; color: black;">
 	<td><b>Part Power</b></td>
 	<td>Defines the storage cluster capacity. Set the <i>partition power</i> value based on the total amount of storage you expect your entire ring to use.</td>
-    <td>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer <a href=" /helion/openstack/services/swift/deployment/ring-power/">Ring Power and Number of Partitions</a>.
+    <td>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <a href=" /helion/openstack/services/swift/deployment/ring-power/">Ring Power and Number of Partitions</a>.
 </td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Min part hour</b></td>
 	<td>This should be set to however long a full replication/update cycle takes. No partition is moved twice during the specified amount of time.</td>
     <td> The recommended value is 24 hours. Note that this restriction is ignored in the case of device failure when there is no option other than reassignment.</td>
+</tr>
+</table>
+
+###Table B - Other Attributes
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+	<th>Attributes</th>
+	<th><center>Definition</center></th>
+    </tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Disk Label</b></td>
+	<td>Defines disk label of the disk. For more information refer to <a href=" #preparing-disks-on-swift-nodes">Preparing disks on Swift nodes</a></td>
+     
+</tr>
+</tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Port</b></td>
+	<td>Port specifies the port number of the node. It is recommended to use the following port number:
+	<br>
+	<ul>
+	<li>
+	Object ring - 6000</li><li>
+	Container ring - 6001 </li><li>
+  	Account ring - 6002</li></ul>
+	</td>
+    </tr>
+<tr style="background-color: white; color: black;">
+	<td><b>Weight</b></td>
+	<td>Weight helps the cluster to calculate the partition that must be assigned to the drive. The higher the weight, the greater number of partitions Swift must assign to the drive.  It is recommended to add or remove drives gradually using a weighted approach to avoid degraded performance of the Swift cluster. The weight will gradually increase or decrease by 25% until it becomes 100% or 0.</td>
+
 </tr>
 </table>
 
@@ -113,7 +147,7 @@ Perform the following steps to deploy scale-out Object nodes:
 	<!---	
 	2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.--->
  
- 	 For more details, refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/)
+ 	Refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/) for   details of adding physical server for scale-out Swift in `baremetal.csv` file.
 
 3.Enter the following command to source the environment variables file  for the new values.
 
@@ -232,7 +266,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
     	# ringos add-disk-to-ring -f /root/ring-building/object-1.builder -i  <object node IP address> -p  <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
-	**Note:** Use labels and disks obtained in output of section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes).
+	**Note:** You can use the labels and disks which obtained in the output of section [Preparing disks on Swift nodes](#preparing-disks-on-swift-nodes). For more information on the ring attributes refer to [Defining ring attributes of object-ring:1](#define-object-ring:1).
 
 	The following sample displays the addition of disk to **192.0.2.29** and its output.
 

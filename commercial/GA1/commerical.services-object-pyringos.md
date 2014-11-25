@@ -110,9 +110,10 @@ In the following example, you can view the content of the ring
 --->
  
 ###Re-balance a ring<a name="rebalance-ring"></a>
+
 Re-balances a given ring after adding disk to the ring.
 
-	# ringos view-ring -f <BUILDER>
+	# ringos rebalance-ring -f <BUILDER>
 
 ###Copy a ring <a name="copy-ring"></a>
 Copies ring to the available nodes.
