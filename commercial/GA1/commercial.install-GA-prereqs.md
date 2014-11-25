@@ -287,7 +287,7 @@ There must be one entry in this file for each baremetal system you intend to ins
 
 Use the following format in the `baremetal.csv` file.
 
-`<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiGB>`
+`<mac_address>,<ipmi_user>,<ipmi_password>,<ipmi_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>`
 
 Where `<mac_address>` is the MAC address of the network interface from which to boot. Do not use the iLO NIC interface.
 
@@ -311,7 +311,7 @@ When creating this file, keep in mind the following:
 
 * The IPMI user and password **must have** ADMINISTRATOR privilege; it is not sufficient to have OPERATOR privilege
 * Memory must be at least 32 GB
-* Disk size must be minimum 512GB/477GiB
+* Disk size must be greater than 512GiB
 * The disk size specified should never exceed the physical disk size
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.
