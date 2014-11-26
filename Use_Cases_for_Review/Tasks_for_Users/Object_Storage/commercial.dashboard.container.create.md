@@ -33,7 +33,7 @@ A container is a storage compartment for your data and provides a way for you to
 
 3. In the <strong>Object Store</strong> panel, click <strong>Containers</strong>.</p>
 
-4. In the <strong>Create Container</strong> dialog box, enter a name for the container, set the access level and and then click <strong>Create Container</strong>.</p>
+4. In the <strong>Create Container</strong> dialog box, enter a name for the container, set the access level and then click <strong>Create Container</strong>.</p>
 
 	**Note:** A Public Container will allow anyone with the Public URL to gain access to your objects in the container.</p>
 

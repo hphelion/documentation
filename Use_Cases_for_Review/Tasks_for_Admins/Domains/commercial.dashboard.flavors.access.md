@@ -37,8 +37,9 @@ As an admin, you can <a href="#add">allow specific projects to have access</a> t
 
 3. For the flavor you want to modify, click <strong>More &gt; Modify Access</strong>.</p>
 
-4. Click the <strong>+</strong> icon next to a project in the <strong>All Projects</strong> column to allow the project to access the the flavor.</p>
-	By default, no project is specified as having access the the flavor. If none is specified, all projects can access the flavor.</p>
+4. Click the <strong>+</strong> icon next to a project in the <strong>All Projects</strong> column to allow the project to access the flavor.</p>
+
+	By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.</p>
 
 5. Click <strong>Save</strong> to create a new the flavor.<br></p>
 
@@ -56,7 +57,7 @@ As an admin, you can <a href="#add">allow specific projects to have access</a> t
 
 4. Click the <strong>-</strong> icon next to a project in the <strong>Selected projects</strong> column to remove the flavor from the project.</p>
 
-	By default, no project is specified as having access the the flavor. If none is specified, all projects can access the flavor.</p>
+	By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.</p>
 
 5. Click <strong>Save</strong> to create a new the flavor.<br></p>
 <p>A message is displayed on successful change.</p>

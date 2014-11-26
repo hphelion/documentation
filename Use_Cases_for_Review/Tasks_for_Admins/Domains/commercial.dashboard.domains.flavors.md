@@ -56,7 +56,7 @@ To create a flavor:</p>
 
 7. Add the flavor to a project by clicking the <strong>+</strong> icon next to each project in the <strong>All Projects</strong> column.</p>
 
-	By default, no project is specified as having access the the flavor. If none is specified, all projects can access the flavor.</p>
+	By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.</p>
 
 8. Click <strong>Create Flavor</strong> to create a new the flavor.<br></p>
 A message is displayed on successful creation.</p>
