@@ -29,7 +29,7 @@ To create an image, you upload an ISO image file. After you upload an image, it 
 
 You can use the dashboards to create and configure private virtual machine images, which can be used to create instances.</p>
 
-**Note:** You can also [create an image based on an instance](/helion/community/snapshots/create/), which is called a <em>snapshot</em>.</p>
+**Note:** You can also [create an image based on an instance](/helion/commercial/dashboard/managing/images/public/), which is called a <em>snapshot</em>.</p>
 
 How you interact with these images depends upon your user type, either an administrative user (admin) or a non-administrative user (user). </p>
 
