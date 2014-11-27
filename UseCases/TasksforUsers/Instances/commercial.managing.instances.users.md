@@ -33,7 +33,7 @@ Use the <strong>Compute</strong> panel on the <strong>Project</strong> dashboard
 * <a href="/helion/community/instances/rebuild/">Rebuild an instance</a></li>
 * <a href="/helion/community/instances/suspend/">Suspend and resume an instance</a></li>
 * <a href="/helion/community/instances/pause/">Pause and resume an instance</a></li>
-* <a href="/helion/community/snapshots/create/">Create an instance snapshot</a></li>
+* <a href="/helion/commercial/dashboard/managing/images/public/">Create an instance snapshot</a></li>
 
 You can also <a href="/helion/community/managing/ipaddresses/">associate, or assign, a floating IP address</a> to an instance. A floating IP address makes the instance available on the external network.</p>
 

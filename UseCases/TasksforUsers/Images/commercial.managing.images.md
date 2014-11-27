@@ -29,7 +29,7 @@ To create an image, you upload an ISO image file. After you upload an image, it 
 
 You can use the dashboards to create and configure private virtual machine images, which can be used to create instances.</p>
 
-**Note:** You can also [create an image based on an instance]((/helion/community/snapshots/create/), which is called a <em>snapshot</em>.</p>
+**Note:** You can also [create an image based on an instance](/helion/community/snapshots/create/), which is called a <em>snapshot</em>.</p>
 
 How you interact with these images depends upon your user type, either an administrative user (admin) or a non-administrative user (user). </p>
 
@@ -58,7 +58,7 @@ Access the admin image commands using the System Panel  on the Admin dashboard.<
 
 As an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
 
-* <a href="/helion/community/snapshots/public/">Make an image or snapshot public</a></li>
+* <a href="/helion/commercial/dashboard/managing/images/public/">Make an image or snapshot public</a></li>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
