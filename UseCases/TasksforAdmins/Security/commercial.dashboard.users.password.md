@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Changing a User Password"
-permalink: /helion/commercial/dashboard/managing/users/password/
+permalink: /helion/commercial/dashboard/managing/users/password/change/
 product: commercial.ga
 
 ---

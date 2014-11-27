@@ -84,7 +84,7 @@ For more information, see [Making an Image Public](/helion/commercial/dashboard/
 
 You can use the dashboards to change the password for a user, as needed. 
 
-For more information, see [Changing a User Password](/helion/commercial/dashboard/managing/users/password/).
+For more information, see [Changing a User Password](/helion/commercial/dashboard/managing/users/password/change/).
 
 <!-- Not  in UI yet
 ### Managing roles ###

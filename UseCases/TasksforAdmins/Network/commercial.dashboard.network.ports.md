@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Adding or Removing Ports"
-permalink: /helion/commercial/dashboard/network/ports/
+permalink: /helion/commercial/dashboard/managing/network/ports/
 product: commercial.ga
 
 ---

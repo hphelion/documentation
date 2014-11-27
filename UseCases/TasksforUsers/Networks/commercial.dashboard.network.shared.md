@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating a Shared Network"
-permalink: /helion/commercial/dashboard/managing/network/shared/
+permalink: /helion/commercial/dashboard/managing/network/shared/users/
 product: commercial.ga
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Networks"
-permalink: /helion/commercial/dashboard/managing/networks/
+permalink: /helion/commercial/dashboard/manage/networks/
 product: commercial.ga
 
 ---
@@ -51,9 +51,9 @@ In addition to all of the user tasks, you can also make a network a shared netwo
 
 Access the networking commands using the <strong>System</strong> panel on the <strong>Admin</strong> dashboard. </p>
 
-* <a href="/helion/community/network/admin/create/">Creating externally available networks</a> </li>
-* <a href="/helion/community/network/subnet/">Add or remove a subnet to/from a Network</a></li>
-* <a href="/helion/community/network/ports/">Create, Modify, or Delete a port on a Network</a></li>
+* <a href="/helion/commercial/dashboard/manage/network/external/create/">Creating externally available networks</a> </li>
+* <a href="/helion/community/dashboard/manage/network/subnet/">Add or remove a subnet to/from a Network</a></li>
+* <a href="/helion/community/dashboard/manage/network/ports/">Create, Modify, or Delete a port on a Network</a></li>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; HP Helion OpenStack Commercial Manage Your Cloud"
-permalink: /helion/commercial/dashboard/aggregate/managing/
+permalink: /helion/commercial/dashboard/managing/aggregates/
 product: commercial.ga
 
 ---

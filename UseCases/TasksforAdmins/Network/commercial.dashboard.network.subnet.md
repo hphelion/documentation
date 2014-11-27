@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Adding and Removing Subnets"
-permalink: /helion/commercial/dashboard/network/subnet/
+permalink: /helion/commercial/dashboard/managing/network/subnet/
 product: commercial.ga
 
 ---

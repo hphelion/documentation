@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Making an Image Public
 
-When you [create an image](/helion/community/images/create/) or an [image snapshot](/helion/community/snapshots/create/), as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
+When you [create an image](/helion/commercial/dashboard/managing/images/create/) or an [image snapshot](/helion/commercial/dashboard/managing/images/protect/), as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
 
 ### Make an image public</h3>
 

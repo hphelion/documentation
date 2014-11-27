@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating Externally Available Networks"
-permalink: /helion/commercial/dashboard/network/external/create/
+permalink: /helion/commercial/dashboard/managing/network/external/create/
 product: commercial.ga
 
 ---
@@ -59,8 +59,8 @@ A non-admin user or admin user can [create](#createnet) and [delete](#deletenet)
 
 To configure a subnet and ports for the network, see:</p>
 
-* [Add, Remove, or Modify a subnet](/helion/community/network/subnet/)
-* [Create, Modify, or Delete a port](/helion/community/network/ports/)
+* [Add, Remove, or Modify a subnet](/helion/commercial/dashboard/managing/network/subnet/)
+* [Create, Modify, or Delete a port](/helion/commercial/dashboard/managing/ports/)
 </ul>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>

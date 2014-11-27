@@ -51,7 +51,7 @@ Host aggregates are a mechanism to further partition an availability zone. Host 
 
 Use the <strong>System</strong> panel in the <strong>Admin</strong> dashboard to modify the availability zones and aggregates for your domain.</p>
 
-* [Create, modify, delete host aggregates](/helion/commercial/dashboard/aggregate/managing/)
+* [Create, modify, delete host aggregates](/helion/commercial/dashboard/managing/aggregates/)
 
 <!-- not in Community
 ### Enabling and disabling services ###

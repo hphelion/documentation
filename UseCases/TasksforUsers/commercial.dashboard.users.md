@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Using the Dashboard as a Non-Admin User"
-permalink: /helion/commercial/dashboard/managing/users/
+permalink: /helion/commercial/dashboard/managing/nonadmin/
 product: commercial.ga
 
 ---
