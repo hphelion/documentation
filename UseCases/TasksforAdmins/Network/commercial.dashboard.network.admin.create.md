@@ -60,7 +60,7 @@ A non-admin user or admin user can [create](#createnet) and [delete](#deletenet)
 To configure a subnet and ports for the network, see:</p>
 
 * [Add, Remove, or Modify a subnet](/helion/commercial/dashboard/managing/network/subnet/)
-* [Create, Modify, or Delete a port](/helion/commercial/dashboard/managing/ports/)
+* [Create, Modify, or Delete a port](/helion/commercial/dashboard/managing/network/ports/)
 </ul>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>

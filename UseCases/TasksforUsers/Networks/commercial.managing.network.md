@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Networks"
-permalink: /helion/commercial/dashboard/manage/networks/
+permalink: /helion/commercial/dashboard/managing/networks/
 product: commercial.ga
 
 ---
