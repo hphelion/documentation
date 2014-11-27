@@ -23,12 +23,9 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;  Managing the Domain with HP Helion OpenStack&reg; Community</h1>
 
-
 A domain is a high-level container for the projects, users, and groups that define administrative boundaries for management of those entities. A domain can represent an individual, company, or operator-owned space.</p>
 
-
 The admin user can use the dashboard to configure the domain by creating building blocks such as flavors and quotas, and managing availability zones and host aggregates.	</p>
-
 
 ### Managing flavors for a domain</h3>
 
@@ -36,8 +33,8 @@ A flavor defines the compute, memory, and storage capacity of a virtual server t
 
 Use the System panel on the Admin dashboard to:</p>
 
-* <a href="/helion/community/flavors/managing/">Create, modify, and delete flavors</a></li>
-* <a href="/helion/community/flavors/access/">Modify access to a flavor</a></li>
+* [Create, modify, and delete flavors](/helion/commercial/dashboard/managing/flavors/)
+* [Modify access to a flavor](/helion/commercial/dashboard/managing/flavors/access/)
 </ul>
 
 ### Managing images for a domain ###
@@ -46,7 +43,7 @@ A virtual machine image is a single file which contains a virtual disk that has 
 
 As an admin, you can determine if an image is available only in the current project or to all projects in the domain (public).</p>
 
-* <a href="/helion/community/snapshots/public/">Make an instance snapshot public</a>
+* [Make an instance snapshot public](/helion/commercial/dashboard/managing/snapshots/public/)
 
 ### Managing Availability Zone and Host Aggregates for a domain</h3>
 
@@ -54,7 +51,7 @@ Host aggregates are a mechanism to further partition an availability zone. Host 
 
 Use the <strong>System</strong> panel in the <strong>Admin</strong> dashboard to modify the availability zones and aggregates for your domain.</p>
 
-* <a href="/helion/community/aggregate/managing/">Create, modify, delete host aggregates</a></li>
+* [Create, modify, delete host aggregates](/helion/commercial/dashboard/aggregate/managing/)
 
 <!-- not in Community
 ### Enabling and disabling services ###

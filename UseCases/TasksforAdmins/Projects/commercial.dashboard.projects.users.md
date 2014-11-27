@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Adding Users to Projects"
-permalink: /helion/commercial/dashboard/projects/users/
+permalink: /helion/commercial/dashboard/managing/projects/users/
 product: commercial.ga
 
 ---
@@ -23,11 +23,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Adding and removing users to a project
 
-As an admin, you can specify which users have access to each project. </p>
+As an admin, you can [add](#useradd) and [remove](#userdel) user access to each project. </p>
 
-### Add a user to a project
+### Add a user to a project ### {#useradd}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 
@@ -42,9 +42,9 @@ As an admin, you can specify which users have access to each project. </p>
 5. Click <strong>Save</strong>.</p>
 
 
-### Remove a user from a project ###
+### Remove a user from a project ### {#userdel}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 

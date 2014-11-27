@@ -41,7 +41,7 @@ You can manage:</p>
 * host aggregates</li>
 * services</li>
 
-For more information, see <a href="/helion/commercial/dashboard/managing/domains/">Managing Domains with HP Helion OpenStack Community</a>.</p>
+For more information, see [Managing Domains](/helion/commercial/dashboard/managing/domains/).</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -50,7 +50,7 @@ For more information, see <a href="/helion/commercial/dashboard/managing/domains
 
 You can create new projects and manage existing projects, such as controlling access to projects by assigning roles to users and groups.</p>
 
-For more information, see <a href="/helion/commercial/dashboard/managing/projects/">Managing Projects with HP Helion OpenStack Community</a>.</p>
+For more information, see [Managing Projects](/helion/commercial/dashboard/managing/projects/).</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -61,7 +61,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 
 You can use the dashboards to create, delete, and configure your HP Helion OpenStack Community subnet(s) and ports.</p>
 
-For more information, see <a href="/helion/commercial/dashboard/managing/networks/">Managing Networks with HP Helion OpenStack Community</a>.</p>
+For more information, see [Managing Networks](/helion/commercial/dashboard/managing/networks/).</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -70,10 +70,21 @@ For more information, see <a href="/helion/commercial/dashboard/managing/network
 
 You can use the dashboard to create new users, assign users to projects, and change a user password as needed.</p>
 
-For more information, see <a href="/helion/commercial/dashboard/managing/users/">Managing Users with HP Helion OpenStack Community</a>.</p>
+For more information, see [Managing Users](/helion/commercial/dashboard/managing/users/).</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
+### Managing images ###
+
+You can use the dashboards to determine if an image snapshot is available only in the current project or to all projects in the domain.</p> 
+
+For more information, see [Making an Image Public](/helion/commercial/dashboard/managing/images/public/).
+
+### Managing security ###
+
+You can use the dashboards to change the password for a user, as needed. 
+
+For more information, see [Changing a User Password](/helion/commercial/dashboard/managing/users/password/).
 
 <!-- Not  in UI yet
 ### Managing roles ###

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Viewing Projects"
-permalink: /helion/commercial/dashboard/projects/viewing/
+permalink: /helion/commercial/dashboard/managing/projects/viewing/
 product: commercial.ga
 
 ---
@@ -27,7 +27,7 @@ As an admin, you can view a list of all projects in a domain and view informatio
 
 ### View projects ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 

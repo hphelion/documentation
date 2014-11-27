@@ -25,11 +25,11 @@ PageRefresh();
 
 A network is a pluggable, scalable and API-driven system for managing networks and IP addresses.</p>
 
-A non-admin user or admin user can <a href="#createnet">create</a> and <a href="#deletenet">delete</a> networks as needed. </p>
+A non-admin user or admin user can [create](#createnet) and [delete](#deletenet) networks as needed. </p>
 
 ### Create an externally available network ### {#createnet}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Project</strong> dashboard <strong>Network</strong> panel.</p>
 
@@ -59,8 +59,8 @@ A non-admin user or admin user can <a href="#createnet">create</a> and <a href="
 
 To configure a subnet and ports for the network, see:</p>
 
-* <a href="/helion/community/network/subnet/">Add, Remove, or Modify a subnet to/from a Network</a></li>
-* <a href="/helion/community/network/ports/">Create, Modify, or Delete a port on a Network</a></li>
+* [Add, Remove, or Modify a subnet](/helion/community/network/subnet/)
+* [Create, Modify, or Delete a port](/helion/community/network/ports/)
 </ul>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>

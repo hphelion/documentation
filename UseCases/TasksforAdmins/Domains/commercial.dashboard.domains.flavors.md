@@ -27,15 +27,15 @@ Compute flavors are machine configurations that describe the amount of memory, n
 
 An admin user can create, edit, and delete instances as needed. </p>
 
-*<a href="#createflavor">Create a flavor</a></li>
-*<a href="#editflavor">Edit a flavor</a></li>
-*<a href="#deleteflavor">Delete a flavor</a></li>
+* [Create a flavor](#createflavor)
+* [Edit a flavor](#editflavor")
+* [Delete a flavor](#deleteflavor)
 
 ### Create a flavor ### {#createflavor}
 
 To create a flavor:</p>
 
-1 <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2 Click the <strong>Flavors</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 	The flavors in the domain are listed. </p>
@@ -65,7 +65,7 @@ A message is displayed on successful creation.</p>
 
 To edit a flavor:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Flavors</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 
@@ -87,7 +87,7 @@ Instances that use the flavor are not affected when a flavor is deleted.</p>
 
 To delete a flavor:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Flavors</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 

@@ -25,13 +25,13 @@ PageRefresh();
 
 Users can be disabled in the domain. After you disable a user, the user account remains in the domain, but cannot be used to log in. </p>
 
-As an admin, you can <a href="#disableuser">disable</a> and <a href="#enableuser">enable</a> users, as needed.</p>
+As an admin, you can [disable](#disableuser) and [enable](#enableuser) users, as needed.</p>
 
 ### Disable a user ### {#disableuser}
 
 To disable a user:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 
@@ -43,7 +43,7 @@ To disable a user:</p>
 
 To enable a user:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 

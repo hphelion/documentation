@@ -33,7 +33,7 @@ An admin user can create and delete subnets as needed. </p>
 
 ### Add a subnet</h3>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 
@@ -73,7 +73,7 @@ An admin user can create and delete subnets as needed. </p>
 
 Before you delete a subnet, you must first <a href="/helion/community/network/ports/">delete all ports</a> associated with the subnet.</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 

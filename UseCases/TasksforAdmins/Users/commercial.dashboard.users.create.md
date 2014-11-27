@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Creating and Deleting Users
 
-As an admin, you can create and delete users. </p>
+As an admin, you can [create](#createuser) and [delete](#deleteuser) users. </p>
 
 ### Create a user ### {#createuser}
 
@@ -31,7 +31,7 @@ To create a user:</p>
 
 **Note:** At least <a href="/helion/community/managing/projects/">one project must exist</a> before you can create users.</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 
@@ -39,12 +39,12 @@ To create a user:</p>
 
 4. In the <strong>Create User</strong> screen, enter the following:</p>
 
-* User Name - Enter a name for the user. The user will need this name to log in.</li>
-* Email - Enter an email associated with this user.</li>
-* Password - Enter a password for the user. The user will need the password to log in.</li>
-* Confirm Password - Re-enter the password to confirm.</li>
-* Primary Project - Select a primary project for the user. The primary project is simply the first project the user is associated with.</li>
-* Role - Select a role for the user. The role determines many of the tasks that the user can perform.</li>
+	* User Name - Enter a name for the user. The user will need this name to log in.</li>
+	* Email - Enter an email associated with this user.</li>
+	* Password - Enter a password for the user. The user will need the password to log in.</li>
+	* Confirm Password - Re-enter the password to confirm.</li>
+	* Primary Project - Select a primary project for the user. The primary project is simply the first project the user is associated with.</li>
+	* Role - Select a role for the user. The role determines many of the tasks that the user can perform.</li>
 
 5. Click <strong>Create User</strong>.</p>
 
@@ -54,7 +54,7 @@ To create a user:</p>
 
 To delete a user:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 

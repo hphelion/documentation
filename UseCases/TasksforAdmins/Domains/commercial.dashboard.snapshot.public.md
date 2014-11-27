@@ -23,17 +23,18 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Making an Image Public with HP Helion OpenStack&reg;
 
-When you <a href="/helion/community/images/create/">create a image</a> or a <a href="/helion/community/snapshots/create/">snapshot image</a>, as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
+When you [create a image](/helion/community/images/create/) or a [snapshot image](/helion/community/snapshots/create/), as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.
 
 ### Make an image public ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
 3. In the <strong>Images</strong> screen, for the image you want to protect, click <strong>More &gt; Edit</strong>.</p>
 
 4. In the <strong>Update Image</strong> screen, select <strong>Public</strong>.</p>
+
 5. Click <strong>Update Image</strong>.</p>
 
 	The image is public and available to all projects in the domain.</p>

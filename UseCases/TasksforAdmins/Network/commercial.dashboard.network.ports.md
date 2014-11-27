@@ -31,14 +31,14 @@ You can edit the device associated with a port and change the admin state, as ne
 
 As an admin, you can: </p>
 
-* <a href="#createport">create a port</a></li>
-* <a href="#editport">change the device associated with the port</a></li>
-* <a href="#editport">change the admin state between Up or Down</a></li>
-* <a href="#deleteport">delete a port</a> </li>
+* [create a port](#createport)
+* [change the device associated with the port](#editport)
+* [change the admin state between Up or Down](#editport)
+* [delete a port](#deleteport)
 
 ### Create a port ### {#createport}</h3>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 
@@ -66,7 +66,7 @@ As an admin, you can: </p>
 
 <h3>Edit a port ### {#editport}</h3>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 
@@ -90,7 +90,7 @@ As an admin, you can: </p>
 
 <h3>Delete a port ### {#deleteport}</h3>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 

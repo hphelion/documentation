@@ -29,13 +29,13 @@ Host aggregates can be regarded as a mechanism to further partition an availabil
 
 As an administrator you can manage the host aggregates in your domain:</p>
 
-* <a href="#createagg">Create a host aggregate</a></li>
-* <a href="#editagg">Modify a host aggregate</a></li>
-* <a href="#deleteagg">Delete a host aggregate</a></li>
+* [Create a host aggregate](#createagg)
+* [Modify a host aggregate](#editagg)
+* [Delete a host aggregate](#deleteagg)
 
 ### Create a host aggregate ### {#createagg}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Host Aggregates</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.
 
@@ -55,7 +55,7 @@ As an administrator you can manage the host aggregates in your domain:</p>
 
 ### Modify a Host Aggregate ### {#editagg}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Host Aggregates</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 
@@ -81,7 +81,7 @@ As an administrator you can manage the host aggregates in your domain:</p>
 
 ### Delete a host aggregate ### {#deleteagg}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Host Aggregates</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating and Deleting Projects"
-permalink: /helion/commercial/dashboard/projects/creating/
+permalink: /helion/commercial/dashboard/managing/projects/creating/
 product: commercial.ga
 
 ---
@@ -23,11 +23,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Creating and Deleting Projects
 
-As an admin, you can create and delete projects. </p>
+As an admin, you can [create](#projectcreate) and [delete](#projectsdel) projects. </p>
 
-### Create a project ###
+### Create a project ### {#projectcreate}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 
@@ -55,11 +55,11 @@ As an admin, you can create and delete projects. </p>
 
 9. Click <strong>Create Project</strong>.</p>
 
-### Delete a project ###
+### Delete a project ### {#projectdel}
 
 As an admin, you can delete projects. Compute instances associated with a project will not be deleted.</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 

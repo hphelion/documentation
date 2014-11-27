@@ -25,9 +25,9 @@ PageRefresh();
 <p>As an admin, you can change the password for a user, as needed. You do not need to know the current password in order to assign a new password.</p>
 ### Change a Password
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the **Users** link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 
 3. In the <strong>Users</strong> screen, for the user you want to modify, click <strong>Edit</strong>.</p>
 

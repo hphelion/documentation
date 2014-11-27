@@ -27,10 +27,10 @@ You can use HP Helion OpenStack Community edition to manage users.</p>
 
 As an admin, you can use the dashboards to:</p>
 
-* <a href="/helion/community/users/create/">Create and delete users</a></li>
-* <a href="/helion/community/users/enable/">Disable and enable a user</a></li>
-* <a href="/helion/community/users/password/">Change a user password</a></li>
-* <a href="/helion/community/projects/primary/">Specify a primary project for a user</a></li>
+* [Create and delete users](/helion/commercial/dashboard/managing/users/create/)
+* [Disable and enable a user](/helion/commercial/dashboard/managing/users/enable/)
+* [Change a user password](/helion/commercial/dashboard/managing/users/password/)
+* [Specify a primary project for a user](/helion/commercial/dashboard/managing/projects/primary/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

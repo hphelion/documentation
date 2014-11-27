@@ -25,11 +25,11 @@ PageRefresh();
 
 Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. </p>
 
-As an admin, you can <a href="#add">allow specific projects to have access</a> to a <a href="#remove">prevent a project from accessing</a> a flavor.</p>
+As an admin, you can [allow specific projects to have access to a flavor](#add) or [prevent a project from accessing a flavor](#remove).
 
 ### Allowing a project to access a flavor ### {#add}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Flavors</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 
@@ -47,7 +47,7 @@ As an admin, you can <a href="#add">allow specific projects to have access</a> t
 
 ### Preventing a project from accessing a flavor ### {#remove}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Flavors</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
 

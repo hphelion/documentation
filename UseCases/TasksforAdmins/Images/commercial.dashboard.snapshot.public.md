@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Making Image Public"
-permalink: /helion/commercial/dashboard/managing/snapshots/public/
+permalink: /helion/commercial/dashboard/managing/images/public/
 product: commercial.ga
 
 ---
@@ -21,13 +21,13 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Making an Image Public with HP Helion OpenStack&reg; Community
+# HP Helion OpenStack&#174; Making an Image Public
 
-When you <a href="/helion/community/images/create/">create a image</a> or a <a href="/helion/community/snapshots/create/">snapshot image</a>, as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
+When you [create an image](/helion/community/images/create/) or an [image snapshot](/helion/community/snapshots/create/), as an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
 
 ### Make an image public</h3>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -37,7 +37,7 @@ When you <a href="/helion/community/images/create/">create a image</a> or a <a h
 
 The image is public and available to all projects in the domain.</p>
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
 
 ----

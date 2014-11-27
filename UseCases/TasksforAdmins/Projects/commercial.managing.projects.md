@@ -29,9 +29,9 @@ You can manage access to projects by assigning users and setting primary project
 
 As an admin, you can use create projects and allow specific users to access each project:</p>
 
-* <a href="/helion/community/projects/creating/">Create and delete projects</a></li>
-* <a href="/helion/community/projects/viewing/">View details on a project</a></li>
-* <a href="/helion/community/projects/users/">Add and remove users to a project</a></li>
+* [Create and delete projects](/helion/commercial/dashboard/managing/projects/creating/)
+* [View details on a project](/helion/commercial/dashboard/managing/projects/viewing/)
+* [Add and remove users to a project](/helion/commercial/dashboard/managing/projects/users/)
 
 ### Managing quotas 
 
@@ -39,9 +39,7 @@ Quotas are operational limits that you can configure to prevent system capacitie
 
 Use the <strong>Identity</strong> panel on the <strong>Admin</strong> dashboard to set maximum limits for metadata, instances, CPUs, memory, and other settings for each project.</p>
 
-* <a href="/helion/community/quotas/managing/">Modify the quota of a project</a></li>
-* Modify the quota of a user within a project</li>
-
+* [Modify the quota of a project](/helion/commercial/dashboard/managing/projects/quotas/)
 
 ----
 ####OpenStack trademark attribution

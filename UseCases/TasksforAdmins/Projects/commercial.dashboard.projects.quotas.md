@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing project quotas"
-permalink: /helion/commercial/dashboard/projects/quotas/managing/
+permalink: /helion/commercial/dashboard/managing/projects/quotas/
 product: commercial.ga
 
 ---
@@ -29,9 +29,9 @@ To prevent system capacities from being exhausted without notification, you can 
 
 For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space. </p>
 
-### Modify a quotas
+### Modify a quotas ### {#quotamod}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
 
