@@ -41,7 +41,7 @@ You can manage:</p>
 * host aggregates</li>
 * services</li>
 
-For more information, see <a href="/helion/community/managing/domains/">Managing Domains with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/domains/">Managing Domains with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -50,7 +50,7 @@ For more information, see <a href="/helion/community/managing/domains/">Managing
 
 You can create new projects and manage existing projects, such as controlling access to projects by assigning roles to users and groups.</p>
 
-For more information, see <a href="/helion/community/managing/projects/">Managing Projects with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/projects/">Managing Projects with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -61,7 +61,7 @@ A network is a pluggable, scalable system for managing networks and IP addresses
 
 You can use the dashboards to create, delete, and configure your HP Helion OpenStack Community subnet(s) and ports.</p>
 
-For more information, see <a href="/helion/community/managing/networks/">Managing Networks with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/networks/">Managing Networks with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -70,7 +70,7 @@ For more information, see <a href="/helion/community/managing/networks/">Managin
 
 You can use the dashboard to create new users, assign users to projects, and change a user password as needed.</p>
 
-For more information, see <a href="/helion/community/managing/users/">Managing Users with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/users/">Managing Users with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -80,7 +80,7 @@ For more information, see <a href="/helion/community/managing/users/">Managing U
 
 You can use the dashboard to define user roles that can be used to control access to projects and domains. 
 
-For more information, see [Managing Roles with HP Helion OpenStack Community](/helion/community/managing/roles/).
+For more information, see [Managing Roles with HP Helion OpenStack Community](/helion/commercial/dashboard/managing/roles/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -90,7 +90,7 @@ For more information, see [Managing Roles with HP Helion OpenStack Community](/h
 You can use the dashboards to manage instances created by other users. You can lock, pause, suspend a particular instance and you can also migrate an instance to a different host system. 
 with minimal downtime (live migrate).
 
-For more information, see [Managing Instances with HP Helion OpenStack Community](/helion/community/managing/instances/).
+For more information, see [Managing Instances with HP Helion OpenStack Community](/helion/commercial/dashboard/instances/).
 -->
 
 
