@@ -23,11 +23,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Enabling and Disabling Networks
 
-A network is a pluggable, scalable and API-driven system for managing networks and IP addresses. You can <a href="#enablenet">enable</a> or <a href="#disablenet">disable</a> networks, as needed.</p>
+A network is a pluggable, scalable and API-driven system for managing networks and IP addresses. You can [enable](#enablenet) or [disable](#disablenet) networks, as needed.</p>
 
 ### Enable a network ### {#enablenet}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Project</strong> dashboard <strong>Network</strong> panel.</p>
 
@@ -41,7 +41,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 ### Disable a network ### {#disablenet}
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Networks</strong> link on the <strong>Project</strong> dashboard <strong>Network</strong> panel.</p>
 

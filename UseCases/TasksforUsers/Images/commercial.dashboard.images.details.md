@@ -24,7 +24,8 @@ PageRefresh();
 # HP Helion OpenStack&#174; Viewing Image Details
 
 To view image details:</p>
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+
 2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
 3. Click the name of the image.</p>

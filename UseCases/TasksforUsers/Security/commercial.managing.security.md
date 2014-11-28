@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Managing Security
 
-HP Helion OpenStack Community uses security groups and security rules to control access to instances in your cloud.</p>
+HP Helion OpenStack uses security groups and security rules to control access to instances in your cloud.</p>
 
 You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance</p>
 
@@ -39,9 +39,9 @@ Access the security commands using the Compute panel on the Project dashboard. <
 
 Click Access &amp; Security to work with security groups and rules to perform the following tasks:</p>
 
-* <a href="/helion/community/security/groups/">Create a security group</a></li>
-* <a href="/helion/community/security/groups/">Create security group rules</a></li>
-* <a href="/helion/community/security/keypairs/">Managing Key Pairs</a></li>
+* [Create a security group](/helion/commercial/dashboard/managing/security/groups/)
+* [Create security group rules](/helion/commercial/dashboard/managing/security/groups/)
+* [Managing Key Pairs](/helion/commercial/dashboard/managing/security/keypairs/)
 
 ## Managing security as an admin ##
 
@@ -52,7 +52,7 @@ As an admin user, you can work on all of the security groups in your domain, reg
 
 As an admin, you can use role assignments to control access to projects and domains.
 
-Use the Identity panel in the Admin dashboard to [allow users to access groups](/helion/community/projects/users/). 
+Use the Identity panel in the Admin dashboard to [allow users to access groups](/helion/commercial/dashboard/managing/projects/users/). 
 
 * Manage role assignment for Users to Domains
 * Manage role assignment for Users to Projects
@@ -63,6 +63,8 @@ Use the Identity panel in the Admin dashboard to [allow users to access groups](
 ### Changing a user password ###
 
 As an admin, you can use the Identity panel in the Admin dashboard to change a user's password.</p>
+
+See: [Changing a User Password](/helion/commercial/dashboard/managing/users/password/change/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

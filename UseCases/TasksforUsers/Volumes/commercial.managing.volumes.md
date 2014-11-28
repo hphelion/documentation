@@ -33,10 +33,10 @@ How you interact with these images depends upon your user type, either an admini
 
 As a user, you can work with any volume associated with the active project. </p>
 
-	* <a href="/helion/community/volume/create/">Create, edit and delete a volume</a></li>
-	* <a href="/helion/community/volume/edit/">Create and delete a snapshot from a volume</a></li>
-	* <a href="/helion/community/volume/extend/">Extend the size of a volume</a></li>
-	* <a href="/helion/community/volume/attach/">Attach a volume to a VM instance and detach a volume from VM instance</a></li>
+	* [Create, edit and delete a volume](/helion/commercial/dashboard/managing/volume/create/)
+	* [Create and delete a snapshot from a volume](/helion/commercial/dashboard/managing/volume/edit/)
+	* [Extend the size of a volume](/helion/commercial/dashboard/managing/volume/extend/)
+	* [Attach a volume to a VM instance and detach a volume from VM instance](/helion/commercial/dashboard/managing/volume/attach/)
 
 ## <h2>Managing volumes as an admin ##
 

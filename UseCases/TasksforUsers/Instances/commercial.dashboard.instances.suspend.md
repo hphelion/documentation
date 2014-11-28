@@ -27,14 +27,14 @@ When a user <em>suspends</em> an instance, the contents of the instance are stor
 
 Users can suspend an instance, for example, to free up the resources used by an instance that is used infrequently or to perform system maintenance. </p>
 
-**Note:** Suspending is different from <a href="/helion/community/instances/pause/">pausing an instance</a>. Pausing keeps the instance running, (in a &quot;frozen&quot; state) and stores the content of the instance in memory (RAM).  
+**Note:** Suspending is different from <a href="/helion/commercial/dashboard/managing/instances/pause/">pausing an instance</a>. Pausing keeps the instance running, (in a &quot;frozen&quot; state) and stores the content of the instance in memory (RAM).  
 </p>
 
 ### Suspend an instance ###
 
 To suspend an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -46,7 +46,7 @@ To suspend an instance:</p>
 
 To resume an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 

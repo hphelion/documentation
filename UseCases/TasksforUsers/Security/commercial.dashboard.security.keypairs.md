@@ -29,19 +29,20 @@ Keypairs are SSH security keys that are used to launch secure, provisioned cloud
 
 The following tasks can be performed by a user:</p>
 
-* <a href="#createKeypairs">Create Keypairs</a></li>
-* <a href="#deleteKeypairs">Delete Keypairs</a></li>
-* <a href="#importKeypairs">Import Keypairs</a></li>
+* [Create Keypairs](#createKeypairs)
+* [Delete Keypairs](#deleteKeypairs)
+* [Import Keypairs](#importKeypairs)
 
 ### Create Keypairs ### {#createKeypairs}
 
 To create a keypair, do the following:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Access &amp; Security</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
 	The Access &amp; Security page is displayed with four tabs, <strong>Security Groups</strong>, <strong>Key Pairs</strong>, <strong>Floating IPs</strong>, and <strong>API Access</strong>. By default, <strong>Security Groups</strong> is the active tab. </p>
+
 3. Click the <strong>Key Pairs</strong> tab to activate it.</p>
 
 	The list of Keypairs is displayed in a table.</p>
@@ -60,7 +61,7 @@ To create a keypair, do the following:</p>
 
 To delete a keypair, do the following:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Access &amp; Security</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -76,7 +77,7 @@ To delete a keypair, do the following:</p>
 
 To import a keypair, do the following:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Access &amp; Security</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 

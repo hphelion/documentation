@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Managing Users
 
-You can use HP Helion OpenStack Community edition to manage users.</p>
+You can use HP Helion OpenStack to manage users.</p>
 
 As an admin, you can use the dashboards to:</p>
 

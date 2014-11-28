@@ -27,7 +27,7 @@ You can extend the size of a volume, as needed.</p>
 
 ### Extend a volume ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
 

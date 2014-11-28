@@ -34,7 +34,7 @@ You can launch an instance from the following sources:</p>
 
 To create an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -58,7 +58,7 @@ To create an instance:</p>
 
 	* Select the volume, snapshot, or image from the list that appears.</p>
 
-		Additonal fields appear for the boot source option that create a new volume. For more information, refer to <a href="/helion/community/managing/volumes/">Managing Block Storage Volumes</a>.</p>
+		Additonal fields appear for the boot source option that create a new volume. For more information, refer to [Managing Block Storage Volumes](/helion/commercial/dashboard/managing/volumes/).</p>
 5. On the <strong>Access &amp; Security</strong> tab, perform the following tasks:.</p>
 
 	* From the <strong>Keypair</strong> list, select the <strong>keypair</strong> to use with the instance.</li>

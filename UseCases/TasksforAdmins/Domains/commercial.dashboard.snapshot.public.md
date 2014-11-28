@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack Community Making Image Public"
+title: "HP Helion OpenStack&#174; Making Image Public"
 permalink: /helion/commercial/dashboard/managing/snapshots/public/
 product: commercial.ga
 

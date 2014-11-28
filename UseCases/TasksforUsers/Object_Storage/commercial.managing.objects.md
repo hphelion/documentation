@@ -28,15 +28,15 @@ With object store, objects and files are written to multiple disk drives spread 
 You can use the dashboards to create and configure container store instances and move files in and out of store. </p>
 <p>How you interact with these store instance depends upon your user type, either an administrative user (admin) or a non-administrative user (user). </p>
 
-**Note:** The administrative user can perform all of the user tasks in addition to the admin tasks, such as <a href="#/helion/community/managing/projects/">setting a quota for volumes</a>. </p>
+**Note:** The administrative user can perform all of the user tasks in addition to the admin tasks, such as [setting a quota for volumes](/helion/commercial/dashboard/managing/projects/).
 
 ### Managing object storage as a user ###
 
 As a user, you can work with any object storage container associated with the active project. </p>
 
-* <a href="/helion/community/container/create/">Create and delete a container</a></li>
-* <a href="/helion/community/container/upload/">Upload an object into or download an object from a container</a></li>
-* <a href="/helion/community/container/edit/">Edit and delete an object in a container</a> </li>
+* [Create and delete a container](/helion/commercial/dashboard/managing/container/create/)
+* [Upload an object into or download an object from a container](/helion/commercial/dashboard/managing/container/upload/)
+* [Edit and delete an object in a container](/helion/commercial/dashboard/managing/container/edit/)
 
 ### Managing object storage as an admin ###
 

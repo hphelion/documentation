@@ -25,7 +25,7 @@ PageRefresh();
 
 The Admin dashboard enables you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.</p>
 
-As an administrator (admin), you can perform all of the <a href="/helion/community/dashboard/users/">user tasks</a> in addition to the admin tasks.</p>
+As an administrator (admin), you can perform all of the [user tasks](/helion/commercial/dashboard/managing/nonadmin/) in addition to the admin tasks.</p>
 <img src="media/HorizonUI_Admin_beta.png" alt="" width="500" />
 
 
@@ -59,7 +59,7 @@ For more information, see [Managing Projects](/helion/commercial/dashboard/manag
 
 A network is a pluggable, scalable system for managing networks and IP addresses.</p>
 
-You can use the dashboards to create, delete, and configure your HP Helion OpenStack Community subnet(s) and ports.</p>
+You can use the dashboards to create, delete, and configure your HP Helion OpenStack subnet(s) and ports.</p>
 
 For more information, see [Managing Networks](/helion/commercial/dashboard/managing/networks/).</p>
 
@@ -91,7 +91,7 @@ For more information, see [Changing a User Password](/helion/commercial/dashboar
 
 You can use the dashboard to define user roles that can be used to control access to projects and domains. 
 
-For more information, see [Managing Roles with HP Helion OpenStack Community](/helion/commercial/dashboard/managing/roles/).
+For more information, see [Managing Roles](/helion/commercial/dashboard/managing/roles/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -101,7 +101,7 @@ For more information, see [Managing Roles with HP Helion OpenStack Community](/h
 You can use the dashboards to manage instances created by other users. You can lock, pause, suspend a particular instance and you can also migrate an instance to a different host system. 
 with minimal downtime (live migrate).
 
-For more information, see [Managing Instances with HP Helion OpenStack Community](/helion/commercial/dashboard/instances/).
+For more information, see [Managing Instances](/helion/commercial/dashboard/instances/).
 -->
 
 

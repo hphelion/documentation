@@ -23,13 +23,13 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Adding and Removing Subnets
 
-When a <a href="#/helion/community/network/create/">network is created</a>, a subnet (short for <em>subnetwork</em>) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.</p>
+When a [network is created](/helion/commercial/dashboard/managing/network/create/), a subnet (short for *subnetwork*) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.</p>
 
 A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.</p>
 
 An admin user can create and delete subnets as needed. </p>
 
-	**Note:** Before you delete a subnet, you must first <a href="/helion/community/network/ports/">delete all ports</a> associated with the subnet.</p>
+	**Note:** Before you delete a subnet, you must first [delete all ports](/helion/commercial/dashboard/managing/network/ports/) associated with the subnet.
 
 ### Add a subnet</h3>
 
@@ -71,7 +71,7 @@ An admin user can create and delete subnets as needed. </p>
 
 ### Delete a subnet ### {#deleteport}</h3>
 
-Before you delete a subnet, you must first <a href="/helion/community/network/ports/">delete all ports</a> associated with the subnet.</p>
+Before you delete a subnet, you must first [delete all ports](/helion/commercial/dashboard/managing/network/ports/) associated with the subnet.</p>
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 

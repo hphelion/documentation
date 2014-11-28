@@ -27,15 +27,15 @@ You can use the dashboards to manage instances created by other users. </p>
 
 Use the <strong>Compute</strong> panel on the <strong>Project</strong> dashboard to:</p>
 
-* <a href="/helion/community/instances/create/">Create a new instance</a></li>
-* <a href="/helion/community/instances/terminate/">Terminate an instance</a></li>
-* <a href="/helion/community/instances/reboot/">Reboot an instance</a></li>
-* <a href="/helion/community/instances/rebuild/">Rebuild an instance</a></li>
-* <a href="/helion/community/instances/suspend/">Suspend and resume an instance</a></li>
-* <a href="/helion/community/instances/pause/">Pause and resume an instance</a></li>
-* <a href="/helion/commercial/dashboard/managing/images/public/">Create an instance snapshot</a></li>
+* [Create a new instance](/helion/commercial/dashboard/managing/instances/create/)
+* [Terminate an instance](/helion/commercial/dashboard/managing/instances/terminate/)
+* [Reboot an instance](/helion/commercial/dashboard/managing/instances/reboot/)
+* [Rebuild an instance](/helion/commercial/dashboard/managing/instances/rebuild/)
+* [Suspend and resume an instance](/helion/commercial/dashboard/managing/instances/suspend/)
+* [Pause and resume an instance](/helion/commercial/dashboard/managing/instances/pause/)
+* [Create an instance snapshot](/helion/commercial/dashboard/managing/images/public/)
 
-You can also <a href="/helion/community/managing/ipaddresses/">associate, or assign, a floating IP address</a> to an instance. A floating IP address makes the instance available on the external network.</p>
+You can also [associate, or assign, a floating IP address](/helion/commercial/dashboard/managing/ipaddresses/) to an instance. A floating IP address makes the instance available on the external network.</p>
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

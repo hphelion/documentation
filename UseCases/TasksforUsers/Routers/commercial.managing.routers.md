@@ -25,7 +25,7 @@ PageRefresh();
 
 Each network can be assigned a router, which provides a gateway to external networks.</p>
 
-You can use the dashboards to create, delete, and configure your HP Helion OpenStack Community network and subnet(s). You can also manage the ports in your network.</p>
+You can use the dashboards to create, delete, and configure your HP Helion OpenStack network and subnet(s). You can also manage the ports in your network.</p>
 
 How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user). </p>
 
@@ -39,9 +39,9 @@ Access the router commands using the Networks panel on the Project dashboard. </
 
 The Network panel contains commands to view a visual representation of your network and to enable you to work with your router.</p>
 
-* <a href="/helion/community/router/create/">Create a Router</a></li>
-* <a href="/helion/community/router/delete/">Delete a Router</a></li>
-* <a href="/helion/community/router/connect/">Connect a network to a router</a></li>
+* [Create a Router](/helion/commercial/dashboard/managing/router/create/)
+* [Delete a Router](/helion/commercial/dashboard/managing/router/delete/)
+* [Connect a network to a router](/helion/commercial/dashboard/managing/router/connect/)
 * Add / Remove an external network to/from a Router</li>
 </ul>
 
@@ -51,8 +51,8 @@ As an admin user, you can work on all of the network(s) in your domain, regardle
 
 An admin can create a shared network, which can be seen in every project in the domain. You can also create an external network.</p>
 
-* <a href="/helion/community/network/shared/">Create a shared network</a></li>
-* <a href="/helion/community/network/external/">Create an external network</a></li>
+* [Create a shared network](/helion/commercial/dashboard/managing/network/shared/)
+* [Create an external network](/helion/commercial/dashboard/managing/network/external/)
 
 Access the router commands using the System panel on the Admin dashboard. </p>
 

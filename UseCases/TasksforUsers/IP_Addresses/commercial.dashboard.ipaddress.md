@@ -25,9 +25,9 @@ PageRefresh();
 
 Floating IP addresses allow external access to the instances in your network. </p>
 
-* <a href="#associate">Associate a floating IP address</a></li>
-* <a href="#allocate">Allocate floating IP addresses</a></li>
-* <a href="#disassociate">Disassociate a floating IP address</a></li>
+* [Associate a floating IP address](#associate)
+* [Allocate floating IP addresses](#allocate)
+* [Disassociate a floating IP address](#disassociate)
 
 **Note:** You must have an external network configured for the project. Without an external network, a floating IP address is not available. When you create an external network, a pool of IP addresses is created, which you can associate to the instances on a network.</p>
 
@@ -35,7 +35,7 @@ Floating IP addresses allow external access to the instances in your network. </
 
 To assign a floating IP address to an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -45,7 +45,7 @@ To assign a floating IP address to an instance:</p>
 
 4. In the <strong>Manage Floating IP Associations</strong> screen, select an address from the <strong>IP Address</strong>. This list contains the currently allocated IP addresses. </p>
 
-**Note:** If the list is empty, you will need to <a href="#allocate">allocate an IP address</a> before you can associate an address to a network. Click <strong>Cancel</strong> and see </p>
+**Note:** If the list is empty, you will need to [allocate an IP address](#allocate) before you can associate an address to a network. Click <strong>Cancel</strong> and see </p>
 
 5. In the <strong>Port to be Associated</strong> list, select the instance and port that you want to associate with the floating IP address.</p>
 
@@ -57,7 +57,7 @@ Before associating a floating IP address to an instance, the floating IP address
 
 To allocate a floating IP address:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -71,13 +71,13 @@ To allocate a floating IP address:</p>
 
 A floating IP address is added to the <strong>IP Address</strong> list in the <strong>Manage Floating IP Associations</strong> screen.</p>
 
-The floating address can be <a href="#associate">associated to an instance</a>.</p>
+The floating address can be [associated](#associate) to an instance</a>.</p>
 
 ### Disassociate a floating IP address from a network. ### {#disassociate}
 
 To remove a floating IP address from an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 

@@ -29,7 +29,7 @@ As an admin, you can [create](#createuser) and [delete](#deleteuser) users. </p>
 
 To create a user:</p>
 
-**Note:** At least <a href="/helion/community/managing/projects/">one project must exist</a> before you can create users.</p>
+**Note:** At least [one project must exist](/helion/commercial/dashboard/managing/projects/) before you can create users.</p>
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 

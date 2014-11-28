@@ -27,7 +27,7 @@ Volumes are block devices that can be attached to instances.</p>
 
 ### Create a volume ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
 
@@ -54,7 +54,7 @@ Volumes are block devices that can be attached to instances.</p>
 
 ### Edit a volume ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
 
@@ -66,11 +66,11 @@ Volumes are block devices that can be attached to instances.</p>
 
 6. Click <strong>Edit Volume</strong> to confirm. </p>
 
-	<strong>Note:</strong> You can <a href="/helion/community/volume/extend/">extend a volume</a> by using the <strong>Extend Volume</strong> option available in the <strong>More</strong> drop-down list and entering the new value for volume size.</p>
+	<strong>Note:</strong> You can [extend a volume](/helion/commercial/dashboard/managing/volume/extend/) by using the <strong>Extend Volume</strong> option available in the <strong>More</strong> drop-down list and entering the new value for volume size.</p>
 
 ### Delete a volume ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
 

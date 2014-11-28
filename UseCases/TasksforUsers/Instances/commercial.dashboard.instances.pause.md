@@ -28,14 +28,14 @@ When a user <em>pauses</em> an instance, the instance  remains running, but, in 
 Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.</p>
 
 
-**Note:** Pausing is different from <a href="/helion/community/instances/suspend/">suspending an instance</a>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.  
+**Note:** Pausing is different from <a href="/helion/commercial/dashboard/managing/instances/suspend/">suspending an instance</a>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.  
 </p>
 
 ### Pause an instance ###
 
 To pause an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -48,7 +48,7 @@ To pause an instance:</p>
 
 To unpause an instance:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 

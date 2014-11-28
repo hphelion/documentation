@@ -25,7 +25,7 @@ PageRefresh();
 
 As a non-admin user, you can use the dashboards to manage your cloud environment.</p>
 
-**Note:** Administrators can perform all of the user tasks in addition to the <a href="/helion/community/dashboard/admin/">admin tasks</a>.</p>
+**Note:** Administrators can perform all of the user tasks in addition to the <a href="/helion/commercial/dashboard/managing/admin/">admin tasks</a>.</p>
 
 ### Managing instances ###
 
@@ -33,18 +33,18 @@ You can use the dashboards to manage instances to which you have access. </p>
 
 You can create new instances. You can reboot, rebuild, pause, suspend any existing instance that you can access.</p>
 
-For more information, see <a href="/helion/community/managing/instances/users/">Managing Instances with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/instances/users/">Managing Instances with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
 
 ### Managing networks ###
-
+/
 A network is a pluggable, scalable system for managing networks and IP addresses.</p>
 
 You can use the dashboards to create, delete, and configure your HP Helion OpenStack Community network. </p>
 
-For more information, see <a href="/helion/community/managing/networks/">Managing Networks with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/networks/">Managing Networks with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -55,7 +55,7 @@ Each network can be assigned a router, which provides a gateway to external netw
 
 You can use the dashboard to create, delete, and configure your HP Helion OpenStack Community router, determine which networks connect to each router, and connect the router to an externally-available network, as needed.</p>
 
-For more information, see <a href="/helion/community/managing/routers/">Managing Routers with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/routers/">Managing Routers with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -66,7 +66,7 @@ Floating IP addresses allow external access to the instances in your network. Wh
 
 You can use the dashboards to allocate and associate floating IP addresses to the instances on a network.</p>
 
-For more information, see <a href="/helion/community/managing/ipaddresses/">Managing Floating IP Addresses with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/ipaddresses/">Managing Floating IP Addresses with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -77,7 +77,7 @@ HP Helion OpenStack Community uses security groups and key pairs to control acce
 
 You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance. You can also generate and import key pairs.</p>
 
-For more information, see <a href="/helion/community/managing/security/">Managing Security with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/security/">Managing Security with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -88,7 +88,7 @@ A virtual machine image is a single file which contains a virtual disk that has 
 
 You can use the dashboards to create and configure private virtual machine images.</p>
 
-For more information, see <a href="/helion/community/managing/images/">Managing Virtual Machine Images with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/images/">Managing Virtual Machine Images with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -98,7 +98,7 @@ With object storage, objects and files are written to multiple disk drives sprea
 
 You can use the dashboards to create and configure container storage instances and move files in and out of storage.</p>
 
-For more information, see <a href="/helion/community/managing/objects/">Managing Object Storage with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/objects/">Managing Object Storage with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
@@ -109,7 +109,7 @@ Volumes are block storage devices that allow you to expand the storage capacity 
 
 You can create and configure volumes; create snapshots of volumes; update the metadata associated with a volume, extend the size of volumes, and attach and detach volumes from instances.</p>
 
-For more information, see <a href="/helion/community/managing/volumes/">Managing Block Storage Volumes with HP Helion OpenStack Community</a>.</p>
+For more information, see <a href="/helion/commercial/dashboard/managing/volumes/">Managing Block Storage Volumes with HP Helion OpenStack Community</a>.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

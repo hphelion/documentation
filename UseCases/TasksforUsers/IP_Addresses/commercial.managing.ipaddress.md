@@ -31,8 +31,8 @@ You can use the dashboards to create a floating IP address pool that contains IP
 
 As a user, you can:</p>
 
-* <a href="/helion/community/ipaddresses/associate/">Associate a floating IP address with an instance</a></li>
-* <a href="/helion/community/ipaddresses/associate/">Allocate (create) new floating IP addresses</a> </li>
+* [Associate a floating IP address with an instance](/helion/commercial/dashboard/managing/ipaddresses/associate/)
+* [Allocate (create) new floating IP addresses](/helion/commercial/dashboard/managing/ipaddresses/associate/)
 
 ### Managing your floating IP addresses as an admin ###
 

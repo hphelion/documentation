@@ -29,7 +29,7 @@ When you create a new router, the router is not associated to any subnet. You ca
 
 ### Connect a network to the router ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Routers</strong> link on the <strong>Project</strong> dashboard <strong>Network</strong> panel.</p>
 

@@ -43,11 +43,11 @@ Access the image commands using the Compute panel on the Project dashboard. </p>
 
 Click <strong>Images</strong> to perform the following tasks:</p>
 
-* <a href="/helion/community/images/create/">Create an image</a></li>
-* <a href="/helion/community/images/modify/">Modify an image</a></li>
-* <a href="/helion/community/images/delete/">Delete an image</a></li>
-* <a href="/helion/community/images/details/">View image details</a></li>
-* <a href="/helion/community/snapshots/protect/">Protect an image or snapshot from being edited</a> </li>
+* [Create an image](/helion/commercial/dashboard/managing/images/create/)
+* [Modify an image](/helion/commercial/dashboard/managing/images/modify/)
+* [Delete an image](/helion/commercial/dashboard/managing/images/delete/)
+* [View image details](/helion/commercial/dashboard/managing/images/details/)
+* [Protect an image or snapshot from being edited](/helion/commercial/dashboard/managing/snapshots/protect/)
 
 
 ## Managing images as an admin ##
@@ -58,7 +58,7 @@ Access the admin image commands using the System Panel  on the Admin dashboard.<
 
 As an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.</p>
 
-* <a href="/helion/commercial/dashboard/managing/images/public/">Make an image or snapshot public</a></li>
+* [Make an image or snapshot public](/helion/commercial/dashboard/managing/images/public/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

@@ -37,7 +37,7 @@ As an admin, you can view a list of all projects in a domain and view informatio
 
 	The project name and details; users associated with the project, and project quotas are displayed.</p>
 
-	For information on modifying these settings, see <a href="/helion/community/managing/projects/">Managing Projects with HP Helion OpenStack&reg; Community</a>.</p>
+	For information on modifying these settings, see [Managing Projects](/helion/commercial/dashboard/managing/managing/projects/).</p>
 
 4. Click <strong>Cancel</strong> to exit the screen. </p>
 

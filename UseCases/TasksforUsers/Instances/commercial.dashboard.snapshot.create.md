@@ -29,7 +29,7 @@ A snapshot is a new image based on a running instance. That snapshot can be used
 
 To create a snapshot:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -43,7 +43,7 @@ To create a snapshot:</p>
 
 When you create a snapshot, by default the snapshot image can be used only with the current project and it can be deleted.</p>
 
-You can <a href="/helion/community/snapshots/public/">make the snapshot public</a> for use in all projects in the domain and you can <a href="/helion/community/snapshots/protect/">protect the image</a> from being deleted. </p>
+You can [make the snapshot public](/helion/commercial/dashboard/managing/images/public/) for use in all projects in the domain and you can [protect the image](/helion/commercial/dashboard/managing/images/protect/) from being deleted. </p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

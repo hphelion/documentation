@@ -27,7 +27,7 @@ After you've created one or more volumes, you can attach them to instances, one 
 
 ### Attach a volume to an instance ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
 
@@ -45,7 +45,7 @@ The dashboard shows the instance to which the volume is now attached and the dev
 
 ### Detach a volume from a VM instance ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
 

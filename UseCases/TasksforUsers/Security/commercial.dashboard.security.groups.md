@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Managing Security Groups
 
-You can <a href="#creategroups">create your own security groups</a> or you can <a href="#editgroups">edit the rules in an existing group</a> to suit your needs. </p>
+You can [create your own security groups](#creategroups) or you can [edit the rules in an existing group](#editgroups) to suit your needs. </p>
 
 ### About Security Groups and Rules ###
 
@@ -55,7 +55,7 @@ Understanding how the CIDR field works is important to understanding how to cont
 
 To create a security group, do the following:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Access &amp; Security</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -79,7 +79,7 @@ To create a security group, do the following:</p>
 
 To create security group rules, do the following:</p>
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Access &amp; Security</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 

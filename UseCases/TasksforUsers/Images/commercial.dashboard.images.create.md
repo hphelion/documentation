@@ -23,17 +23,17 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Creating Images
 
-Creating a new image for use in HP Helion OpenStack Community requires two general steps.</p>
+Creating a new image for use in HP Helion OpenStack requires two general steps.</p>
 
-The first step is to create an ISO image file outside of your HP Helion OpenStack Community. </p>
+The first step is to create an ISO image file outside of your HP Helion OpenStack. </p>
 
-When the ISO image file is complete and ready for use, you use HP Helion OpenStack Community to upload the image to your cloud.</p>
+When the ISO image file is complete and ready for use, you use HP Helion OpenStack to upload the image to your cloud.</p>
 
 <strong>Note:</strong> After you upload an image, it is considered *golden* and you cannot change it.</p>
 
 ### Create an image ###
 
-1. <a href="/helion/community/dashboard/login/">Launch the HP Helion OpenStack Community web interface.</a></p>
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
 2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
 
@@ -55,7 +55,7 @@ When the ISO image file is complete and ready for use, you use HP Helion OpenSta
 
 5. Click <strong>Create Image</strong> to launch the image.	</p>
 
-6. Optionally, you can click <strong>Launch</strong> to <a href="/helion/community/instances/create/">create a running instance</a> based on this image.</p>
+6. Optionally, you can click <strong>Launch</strong> to [create a running instance](/helion/commercial/dashboard/managing/instances/create/) based on this image.</p>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
