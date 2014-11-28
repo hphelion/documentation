@@ -51,9 +51,9 @@ In addition to all of the user tasks, you can also make a network a shared netwo
 
 Access the networking commands using the <strong>System</strong> panel on the <strong>Admin</strong> dashboard. </p>
 
-* [Creating externally available networks](/helion/commercial/dashboard/managing/dashboard/manage/network/external/create/)
-* [Add or remove a subnet to/from a Network](/helion/commercial/dashboard/managing/dashboard/manage/network/subnet/)
-* [Create, Modify, or Delete a port on a Network](/helion/commercial/dashboard/managing/dashboard/manage/network/ports/)
+* [Creating externally available networks](/helion/commercial/dashboard/managing/network/external/create/)
+* [Add or remove a subnet to/from a Network](/helion/commercial/dashboard/managing/network/subnet/)
+* [Create, Modify, or Delete a port on a Network](/helion/commercial/dashboard/managing/network/ports/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
