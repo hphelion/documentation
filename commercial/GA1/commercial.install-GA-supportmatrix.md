@@ -63,11 +63,11 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
 - [DL360 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570)
 - [DL380 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
-- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241) Using legacy BIOS boot mode. 
+- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241) Legacy boot support only, no uEFI 
 - [DL385 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584)
 - [DL560 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290)
 - [DL580 G7](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916)
-- [DL580 Gen8 Legacy boot support only, no uEFI](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
+- [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957) Legacy boot support only, no uEFI
 
 ### HP Proliant Tower Servers
 
