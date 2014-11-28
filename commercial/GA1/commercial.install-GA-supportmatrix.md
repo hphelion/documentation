@@ -34,7 +34,7 @@ This page provides an overview of the hardware and software that is supported fo
 	* [Guest OS Support Matrix](#guestOS)
 	* [seed cloud host requirements and recommendations](#otherseed)
 
-##Deployment Architecture<a name="deploy-arch"></a>
+##Deployment Architecture {#deploy-arch}
 
 The following diagrams depict simplified deployment scenarios:
 
@@ -63,11 +63,11 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
 - [DL360 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570)
 - [DL380 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
-- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241)
+- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241) Legacy boot support only, no uEFI 
 - [DL385 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584)
 - [DL560 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290)
 - [DL580 G7](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916)
-- [DL580 Gen8 Legacy boot support only, no uEFI](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
+- [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957) Legacy boot support only, no uEFI
 
 ### HP Proliant Tower Servers
 
@@ -93,7 +93,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 
 
 
-## Supported Configurations<a name="supportedconfigurations"></a>
+## Supported Configurations {#supportedconfigurations}
 
 HP supports the following configurations for HP Helion OpenStack deployment:
 
@@ -116,7 +116,7 @@ HP supports the following configurations for HP Helion OpenStack deployment:
       * HP StoreVirtual 4000 Storage
    
      
-## Hardware Requirements<a name="baremetal"></a>
+## Hardware Requirements {#baremetal}
 
 You must have the following hardware configuration:
 
@@ -262,7 +262,7 @@ The following table lists the minimum requirements required for installation of 
 
 
 <!--
-## Usable Capacity<a name="usable_capacity"></a>
+## Usable Capacity {#usable_capacity}
 
 The following table maps the minimum server configuration into usable capacity of the overcloud.
 
@@ -403,7 +403,7 @@ Other requirements and recommendations for the seed cloud host are as follows:
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 
-## Next Steps<a name="next"></a>
+## Next Steps {#next}
 
 Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/technical-overview/).
 
