@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Protecting Images"
-permalink: /helion/commercial/dashboard/managing/image/protect/
+permalink: /helion/commercial/dashboard/managing/images/protect/
 product: commercial.ga
 
 ---

@@ -47,7 +47,7 @@ Click <strong>Images</strong> to perform the following tasks:</p>
 * [Modify an image](/helion/commercial/dashboard/managing/images/modify/)
 * [Delete an image](/helion/commercial/dashboard/managing/images/delete/)
 * [View image details](/helion/commercial/dashboard/managing/images/details/)
-* [Protect an image or snapshot from being edited](/helion/commercial/dashboard/managing/image/protect/)
+* [Protect an image or snapshot from being edited](/helion/commercial/dashboard/managing/images/protect/)
 
 
 ## Managing images as an admin ##
