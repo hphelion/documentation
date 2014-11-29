@@ -18,16 +18,16 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Projects #
 
-You can manage access to projects by assigning users and setting primary projects. You can also control resources by managing operational quotas.</p>
+You can manage access to projects by assigning users and setting primary projects. You can also control resources by managing operational quotas.
 
 ### Creating projects
 
-As an admin, you can use create projects and allow specific users to access each project:</p>
+As an admin, you can use create projects and allow specific users to access each project:
 
 * [Create and delete projects](/helion/commercial/dashboard/managing/projects/creating/)
 * [View details on a project](/helion/commercial/dashboard/managing/projects/viewing/)
@@ -35,9 +35,9 @@ As an admin, you can use create projects and allow specific users to access each
 
 ### Managing quotas 
 
-Quotas are operational limits that you can configure to prevent system capacities from being exhausted without notification. </p>
+Quotas are operational limits that you can configure to prevent system capacities from being exhausted without notification. 
 
-Use the <strong>Identity</strong> panel on the <strong>Admin</strong> dashboard to set maximum limits for metadata, instances, CPUs, memory, and other settings for each project.</p>
+Use the **Identity** panel on the **Admin** dashboard to set maximum limits for metadata, instances, CPUs, memory, and other settings for each project.
 
 * [Modify the quota of a project](/helion/commercial/dashboard/managing/projects/quotas/)
 

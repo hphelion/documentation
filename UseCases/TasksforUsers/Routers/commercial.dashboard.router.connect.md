@@ -18,36 +18,36 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Connecting a Network to a Router
 
-A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.</p>
+A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.
 
-When you create a new router, the router is not associated to any subnet. You can optionally connect the router to an internal network. </p>
+When you create a new router, the router is not associated to any subnet. You can optionally connect the router to an internal network. 
 
 ### Connect a network to the router ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Routers</strong> link on the <strong>Project</strong> dashboard <strong>Network</strong> panel.</p>
+2. Click the **Routers** link on the **Project** dashboard **Network** panel.
 
-	The routers for the selected project appear. </p>
+	The routers for the selected project appear. 
 
-3. Click the name of the router you want to connect to the network.</p>
+3. Click the name of the router you want to connect to the network.
 
-4. On the <strong>Router Details</strong> tab, click <strong>Add interface</strong>.</p>
+4. On the **Router Details** tab, click **Add interface**.
 
-5. On the <strong>Add Interface</strong> screen:</p>
+5. On the **Add Interface** screen:
 
 	* Select a subnet associated with the network you 
-want to connect with from the <strong>Select</strong> list.</li>
+want to connect with from the **Select** list.</li>
 	* Optionally, specify an IP address for the interface that is in the IP range.</li>
 
-6. Click <strong>Add Interface</strong> </p>
+6. Click **Add Interface** 
 
-	The network is connected to the router.</p>
+	The network is connected to the router.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

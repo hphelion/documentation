@@ -18,28 +18,28 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing project quotas
 
-Quotas are operational limits enforced on each project. </p>
+Quotas are operational limits enforced on each project. 
 
-To prevent system capacities from being exhausted without notification, you can set up quotas. </p>
+To prevent system capacities from being exhausted without notification, you can set up quotas. 
 
-For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space. </p>
+For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space. 
 
 ### Modify a quotas ### {#quotamod}
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 
-3. For the project you want to modify, click <strong>More &gt; Modify Quotas</strong>. </p>
+3. For the project you want to modify, click **More &gt; Modify Quotas**. 
 
-4. In the <strong>Edit Project</strong> screen, click the <strong>Quota</strong> tab (should be active).</p>
+4. In the **Edit Project** screen, click the **Quota** tab (should be active).
 
-5. Edit and of the following fields:</p>
+5. Edit and of the following fields:
 
 	* Metadata Items - Enter the maximum number of metadata items allowed for the project.</li>
 	* VCPUs - Enter the maximum number of instance cores allowed for the project.</li>
@@ -51,11 +51,11 @@ For example, the number of gigabytes allowed per project can be controlled to ma
 	* Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.</li>
 	* RAM - Enter the maximum megabytes of instance RAM allowed  for the project.</li>
 
-6. Click <strong>Save</strong>.<br></p>
+6. Click **Save**.<br>
 
-	A message is displayed on successful modification.</p>
+	A message is displayed on successful modification.
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

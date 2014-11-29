@@ -18,18 +18,18 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Adding or Removing Ports</h1>
 
-A port is a connection point for attaching a single device, such as the NIC of a virtual server, to a virtual network. You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other OpenStack services like Compute to attach virtual devices to ports on these networks.	</p>
+A port is a connection point for attaching a single device, such as the NIC of a virtual server, to a virtual network. You can configure rich network topologies by creating and configuring networks and subnets, and then instructing other OpenStack services like Compute to attach virtual devices to ports on these networks.	
 
-As an admin you can add ports to an existing subnet. Non-admin users can create subnets, but cannot create ports.</p>
+As an admin you can add ports to an existing subnet. Non-admin users can create subnets, but cannot create ports.
 
-You can edit the device associated with a port and change the admin state, as needed.</p>
+You can edit the device associated with a port and change the admin state, as needed.
 
-As an admin, you can: </p>
+As an admin, you can: 
 
 * [create a port](#createport)
 * [change the device associated with the port](#editport)
@@ -40,72 +40,72 @@ As an admin, you can: </p>
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
+2. Click the **Networks** link on the **Admin** dashboard **System** panel.
 
-	The network(s) for the selected project appear. </p>
+	The network(s) for the selected project appear. 
 
-3. Click the name of the network you want to work with.</p>
+3. Click the name of the network you want to work with.
 
-4. On the <strong>Network Detail</strong> page, click <strong>Create Port</strong>.</p>
+4. On the **Network Detail** page, click **Create Port**.
 
-5. On the <strong>Create Port</strong> screen:</p>
+5. On the **Create Port** screen:
 
 	a. Enter a descriptive name for the port.</li>
 
-	b. Leave the <strong>Admin State</strong> field selected to create a port in the active state. Or, clear the field to create a non-active port.</li>
+	b. Leave the **Admin State** field selected to create a port in the active state. Or, clear the field to create a non-active port.</li>
 
 	c. Optionally, specify a device ID to assign the port to that device.</li>
 	
-	d. Optionally, specify a device name to assign the port to that device.</p>
+	d. Optionally, specify a device name to assign the port to that device.
 
-	**Note:**If you do not know the device ID and name, you can create the port and later edit the port to add the ID and name.</p>
+	**Note:**If you do not know the device ID and name, you can create the port and later edit the port to add the ID and name.
 
-6. Click <strong>Create Port</strong>.  
+6. Click **Create Port**.  
 
-	A message appears indicating if the port was successfully created. When the port is created, an available fixed IP address out of one the designated subnets is associated with the port.</p>
+	A message appears indicating if the port was successfully created. When the port is created, an available fixed IP address out of one the designated subnets is associated with the port.
 
 <h3>Edit a port ### {#editport}</h3>
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
+2. Click the **Networks** link on the **Admin** dashboard **System** panel.
 
-	The network(s) for the selected project appear. </p>
+	The network(s) for the selected project appear. 
 
-3. Click the name of the network you want to work with.</p>
+3. Click the name of the network you want to work with.
 
-4. On the <strong>Network Detail</strong> page, for the port you want to delete, click <strong>Edit Port</strong>.</p>
+4. On the **Network Detail** page, for the port you want to delete, click **Edit Port**.
 
-5. On the <strong>Edit Port</strong> screen:</p>
+5. On the **Edit Port** screen:
 
-	a. Leave the <strong>Admin State</strong> field selected to create a port in the active state. Or, clear the field to create a non-active port.</li>
+	a. Leave the **Admin State** field selected to create a port in the active state. Or, clear the field to create a non-active port.</li>
 
 	b. Specify a device ID to assign the port to that device.</li>
 
 	c. Specify a device name to assign the port to that device.</li>
 
-6. Click <strong>Save Changes</strong>.  
+6. Click **Save Changes**.  
 
-	A message appears indicating if the port was successfully modified.</p>
+	A message appears indicating if the port was successfully modified.
 
 <h3>Delete a port ### {#deleteport}</h3>
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Networks</strong> link on the <strong>Admin</strong> dashboard <strong>System</strong> panel.</p>
+2. Click the **Networks** link on the **Admin** dashboard **System** panel.
 
-	The network(s) for the selected project appear. </p>
+	The network(s) for the selected project appear. 
 
-3. Click the name of the network you want to work with.</p>
+3. Click the name of the network you want to work with.
 
-4. On the <strong>Network Detail</strong> page, for the port you want to delete, click <strong>More &gt; Delete Port</strong>.</p>
+4. On the **Network Detail** page, for the port you want to delete, click **More &gt; Delete Port**.
 
-5. In the confirmation screen, click <strong>Delete Port</strong>.  
+5. In the confirmation screen, click **Delete Port**.  
 
-	A message appears indicating if the port was deleted successfully.</p>
+	A message appears indicating if the port was deleted successfully.
 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

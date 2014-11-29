@@ -18,42 +18,42 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating and Deleting a Volume Types
 
-A volume type defines the characteristics of a volume. It usually maps to a set of capabilities of the storage back-end driver that is used for this volume. For example: &quot;Backup&quot;,&quot;SSD&quot;,  etc.</p>
+A volume type defines the characteristics of a volume. It usually maps to a set of capabilities of the storage back-end driver that is used for this volume. For example: &quot;Backup&quot;,&quot;SSD&quot;,  etc.
 
 ### Create a volume type ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>System Panel</strong> tab on the dashboard <strong>Admin</strong> panel.</p>
+2. Click the **System Panel** tab on the dashboard **Admin** panel.
 
-3. In the <strong>System Panel</strong> panel, click <strong>Volumes</strong>.</p>
+3. In the **System Panel** panel, click **Volumes**.
 
-4. In the Volume Types section of the page, click <strong>Create Volume Type</strong>.</p>
+4. In the Volume Types section of the page, click **Create Volume Type**.
 
-5. In the <strong>Create Volume Type</strong> dialog box, enter a name for the volume type.</p>
+5. In the **Create Volume Type** dialog box, enter a name for the volume type.
 
-6. Click <strong>Create Volume Type</strong> to confirm.</p>
+6. Click **Create Volume Type** to confirm.
 
 ### Delete a volume type ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>System Panel</strong> tab on the dashboard <strong>Admin</strong> panel.</p>
+2. Click the **System Panel** tab on the dashboard **Admin** panel.
 
-3. In the <strong>System Panel</strong> panel, click <strong>Volumes</strong>.</p>
+3. In the **System Panel** panel, click **Volumes**.
 
-4. In the Volume Types section of the page, select the volume type or types that you want to delete.</p>
+4. In the Volume Types section of the page, select the volume type or types that you want to delete.
 
-5. Click <strong>Delete Volume Types</strong>.</p>
+5. Click **Delete Volume Types**.
 
-6. In the <strong>Confirm Delete Volume Types</strong> dialog box, click <strong>Delete Volume Types</strong>. </p>
+6. In the **Confirm Delete Volume Types** dialog box, click **Delete Volume Types**. 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution

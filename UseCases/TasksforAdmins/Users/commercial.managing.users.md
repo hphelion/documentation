@@ -18,14 +18,14 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Users
 
-You can use HP Helion OpenStack to manage users.</p>
+You can use HP Helion OpenStack to manage users.
 
-As an admin, you can use the dashboards to:</p>
+As an admin, you can use the dashboards to:
 
 * [Create and delete users](/helion/commercial/dashboard/managing/users/create/)
 * [Disable and enable a user](/helion/commercial/dashboard/managing/users/enable/)

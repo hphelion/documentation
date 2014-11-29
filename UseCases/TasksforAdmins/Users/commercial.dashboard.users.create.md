@@ -18,26 +18,26 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating and Deleting Users
 
-As an admin, you can [create](#createuser) and [delete](#deleteuser) users. </p>
+As an admin, you can [create](#createuser) and [delete](#deleteuser) users. 
 
 ### Create a user ### {#createuser}
 
-To create a user:</p>
+To create a user:
 
-**Note:** At least [one project must exist](/helion/commercial/dashboard/managing/projects/) before you can create users.</p>
+**Note:** At least [one project must exist](/helion/commercial/dashboard/managing/projects/) before you can create users.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the Users link on the Admin dashboard Identity panel.
 
-3. In the <strong>Users</strong> screen, click <strong>Create User</strong>.</p>
+3. In the Users screen, click Create User.
 
-4. In the <strong>Create User</strong> screen, enter the following:</p>
+4. In the Create User screen, enter the following:
 
 	* User Name - Enter a name for the user. The user will need this name to log in.</li>
 	* Email - Enter an email associated with this user.</li>
@@ -46,23 +46,23 @@ To create a user:</p>
 	* Primary Project - Select a primary project for the user. The primary project is simply the first project the user is associated with.</li>
 	* Role - Select a role for the user. The role determines many of the tasks that the user can perform.</li>
 
-5. Click <strong>Create User</strong>.</p>
+5. Click Create User.
 
-	The user is created and appears in the user list.</p>
+	The user is created and appears in the user list.
 
 ### Delete a user ### {#deleteuser}
 
-To delete a user:</p>
+To delete a user:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Users</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the Users link on the Admin dashboard Identity panel.
 
-3. In the <strong>Users</strong> screen, for the user you want to deleite, click <strong>More &gt; Delete User</strong>.</p>
+3. In the Users screen, for the user you want to deleite, click More &gt; Delete User.
 
-4. In the confirmation dialog that appears, click <strong>Delete User</strong>.</p>
+4. In the confirmation dialog that appears, click Delete User.
 
-	The user is removed and no longer available in the domain.</p>
+	The user is removed and no longer available in the domain.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -18,28 +18,28 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating a Router
 
-A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.</p>
+A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.
 
-When you create a new router, the router does not have any internal interface and it is not associated to any subnet. You can optionally specify an external gateway after creating the router. </p>
+When you create a new router, the router does not have any internal interface and it is not associated to any subnet. You can optionally specify an external gateway after creating the router. 
 
 ### Create a router ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Routers</strong> link on the <strong>Project</strong> dashboard <strong>Network</strong> panel.</p>
+2. Click the **Routers** link on the **Project** dashboard **Network** panel.
 
-	The routers for the selected project appear. </p>
+	The routers for the selected project appear. 
 
-3. Click <strong>Create Router</strong>.</p>
+3. Click **Create Router**.
 
-4. On the <strong>Create router</strong> tab enter a name for the network.</p>
+4. On the **Create router** tab enter a name for the network.
 
-5. Click <strong>Create Router</strong>.  
+5. Click **Create Router**.  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

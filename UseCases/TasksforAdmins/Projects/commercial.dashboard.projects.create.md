@@ -18,34 +18,34 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating and Deleting Projects
 
-As an admin, you can [create](#projectcreate) and [delete](#projectsdel) projects. </p>
+As an admin, you can [create](#projectcreate) and [delete](#projectsdel) projects. 
 
 ### Create a project ### {#projectcreate}
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 
-3. In the <strong>Projects</strong> panel, click <strong>Create Project</strong>.</p>
+3. In the **Projects** panel, click **Create Project**.
 
-4. On the <strong>Project Info</strong> tab of the <strong>Create Project</strong> screen:</p>
+4. On the **Project Info** tab of the **Create Project** screen:
 
 	a. Enter a unique name for the project.</li>
 	b, Enter an identifying description for the project.</li>
-	c. Leave <strong>Enabled</strong> selected to create an active project or clear the option to create a </li>
+	c. Leave **Enabled** selected to create an active project or clear the option to create a </li>
 
-5. Click the <strong>Project Members</strong> tab. </p>
+5. Click the **Project Members** tab. 
 
-6. On the <strong>Project Members</strong> tab select the users who can access the project by clicking the <strong>+</strong> icon for each user.</p>
+6. On the **Project Members** tab select the users who can access the project by clicking the **+** icon for each user.
 
-7. Click the <strong>Quotas</strong> tab. </p>
+7. Click the **Quotas** tab. 
 
-8. Optionally, specify operational quotas for the project.     Metadata Items - Enter the maximum number of metadata items allowed per instance.</p>
+8. Optionally, specify operational quotas for the project.     Metadata Items - Enter the maximum number of metadata items allowed per instance.
 
 	* VCPUs Enter the maximum number of instance cores allowed for the project.</li>
 	* Instances Enter the maximum number of instances allowed for the project.</li>
@@ -53,22 +53,22 @@ As an admin, you can [create](#projectcreate) and [delete](#projectsdel) project
 	* Injected File Content Bytes Enter the maximum number of content bytes allowed per injected file.</li>
 	* RAM Enter the maximum megabytes of instance RAM allowed for the project.</li>
 
-9. Click <strong>Create Project</strong>.</p>
+9. Click **Create Project**.
 
 ### Delete a project ### {#projectdel}
 
-As an admin, you can delete projects. Compute instances associated with a project will not be deleted.</p>
+As an admin, you can delete projects. Compute instances associated with a project will not be deleted.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 
-3. For the project you want to delete, click <strong>More &gt; Delete Project</strong>.</p>
+3. For the project you want to delete, click **More &gt; Delete Project**.
 
-4. In the confirmation screen, click <strong>Delete Project</strong>.</p>
-<p>The project is no longer available.</p>
+4. In the confirmation screen, click **Delete Project**.
+<p>The project is no longer available.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution

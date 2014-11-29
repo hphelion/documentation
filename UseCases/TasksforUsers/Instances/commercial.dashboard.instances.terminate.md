@@ -18,26 +18,26 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Terminating Instances
 
-You can terminate an instance, as needed. </p>
+You can terminate an instance, as needed. 
 
 ### Terminate an instance ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
+2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the <strong>Instances</strong> screen, for the instance you want to terminate, click <strong>More &gt; Terminate Instance</strong>.</p>
+3. In the **Instances** screen, for the instance you want to terminate, click **More &gt; Terminate Instance**.
 
-3. In the confirmation screen that appears, click <strong>Terminate Instance</strong>.</p>
+3. In the confirmation screen that appears, click **Terminate Instance**.
 
-	The instance is terminated and no longer appears in the instance list.</p>
+	The instance is terminated and no longer appears in the instance list.
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

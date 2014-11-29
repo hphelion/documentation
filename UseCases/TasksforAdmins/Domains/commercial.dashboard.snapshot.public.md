@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Making an Image Public with HP Helion OpenStack&reg;
@@ -29,17 +29,17 @@ When you [create a image](/helion/commercial/dashboard/managing/images/create/) 
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
+2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 
-3. In the <strong>Images</strong> screen, for the image you want to protect, click <strong>More &gt; Edit</strong>.</p>
+3. In the **Images** screen, for the image you want to protect, click **More &gt; Edit**.
 
-4. In the <strong>Update Image</strong> screen, select <strong>Public</strong>.</p>
+4. In the **Update Image** screen, select **Public**.
 
-5. Click <strong>Update Image</strong>.</p>
+5. Click **Update Image**.
 
-	The image is public and available to all projects in the domain.</p>
+	The image is public and available to all projects in the domain.
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

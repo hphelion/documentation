@@ -18,69 +18,69 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174;Creating, Editing, and Deleting Volumes
 
-Volumes are block devices that can be attached to instances.</p>
+Volumes are block devices that can be attached to instances.
 
 ### Create a volume ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
+2. Click the **Compute** tab on the dashboard **Project** panel.
 
-3. In the <strong>Compute</strong> panel, click <strong>Volumes</strong>.</p>
+3. In the **Compute** panel, click **Volumes**.
 
-4. Click <strong>Create Volume</strong>.</p>
+4. Click **Create Volume**.
 
-5. In the <strong>Create Volume</strong> dialog box, enter the relevant information for the volume: </p>
+5. In the **Create Volume** dialog box, enter the relevant information for the volume: 
 
-	* <strong>Volume Name:</strong> Enter a name for the volume  
+	* **Volume Name:** Enter a name for the volume  
 </li>
-	* <strong>Description:</strong> Provide a brief description (optional).  
+	* **Description:** Provide a brief description (optional).  
 </li>
-	* <strong>Type:</strong> Leave this field blank</li>
-	* <strong>Size:</strong> Enter the size of the volume in gigabytes  
+	* **Type:** Leave this field blank</li>
+	* **Size:** Enter the size of the volume in gigabytes  
 </li>
 	* 
-<strong>Volume Source:</strong> Select one of the following options: 
+**Volume Source:** Select one of the following options: 
 		* No source, empty volume - creates an empty volume and does not contain a file system or a partition table  
 		* Image - a new field for Use image as a source displays. You can select the image from the list.  </li>
-	* <strong>Availability Zone:</strong> Select the availability zone. By default, this value is set to 'any availability zone'.  </li>
+	* **Availability Zone:** Select the availability zone. By default, this value is set to 'any availability zone'.  </li>
 
-6. Click <strong>Create Volume</strong> to confirm.  
+6. Click **Create Volume** to confirm.  
 
 ### Edit a volume ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
+2. Click the **Compute** tab on the dashboard **Project** panel.
 
-3. In the <strong>Compute</strong> panel, click <strong>Volumes</strong>.</p>
+3. In the **Compute** panel, click **Volumes**.
 
-4. Under the <strong>Actions</strong> column, click <strong>Edit Volume</strong>, next to the volume you want to edit.  	.</p>
+4. Under the **Actions** column, click **Edit Volume**, next to the volume you want to edit.  	.
 
-5. In the <strong>Edit Volume</strong> dialog box, modify the name and description.</p>
+5. In the **Edit Volume** dialog box, modify the name and description.
 
-6. Click <strong>Edit Volume</strong> to confirm. </p>
+6. Click **Edit Volume** to confirm. 
 
-	<strong>Note:</strong> You can [extend a volume](/helion/commercial/dashboard/managing/volume/extend/) by using the <strong>Extend Volume</strong> option available in the <strong>More</strong> drop-down list and entering the new value for volume size.</p>
+	**Note:** You can [extend a volume](/helion/commercial/dashboard/managing/volume/extend/) by using the **Extend Volume** option available in the **More** drop-down list and entering the new value for volume size.
 
 ### Delete a volume ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Compute</strong> tab on the dashboard <strong>Project</strong> panel.</p>
+2. Click the **Compute** tab on the dashboard **Project** panel.
 
-3. In the <strong>Compute</strong> panel, click <strong>Volumes</strong>.</p>
+3. In the **Compute** panel, click **Volumes**.
 
-4. Select the volume(s) that you want to delete.</p>
+4. Select the volume(s) that you want to delete.
 
-5. Click <strong>Delete Volume</strong> to confirm.</p>
+5. Click **Delete Volume** to confirm.
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

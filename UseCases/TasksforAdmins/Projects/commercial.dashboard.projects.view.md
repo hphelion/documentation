@@ -18,36 +18,36 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Viewing all projects in the domain
 
-As an admin, you can view a list of all projects in a domain and view information on each project. </p>
+As an admin, you can view a list of all projects in a domain and view information on each project. 
 
 ### View projects ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Projects</strong> link on the <strong>Admin</strong> dashboard <strong>Identity</strong> panel.</p>
+2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 
-	A list of all projects in the current domain is displayed. You can see the name, ID and status (enabled or disabled).</p>
+	A list of all projects in the current domain is displayed. You can see the name, ID and status (enabled or disabled).
 
-3. To view information on a project, click <strong>More &gt; Edit Project</strong>.</p>
+3. To view information on a project, click **More &gt; Edit Project**.
 
-	The project name and details; users associated with the project, and project quotas are displayed.</p>
+	The project name and details; users associated with the project, and project quotas are displayed.
 
-	For information on modifying these settings, see [Managing Projects](/helion/commercial/dashboard/managing/projects/).</p>
+	For information on modifying these settings, see [Managing Projects](/helion/commercial/dashboard/managing/projects/).
 
-4. Click <strong>Cancel</strong> to exit the screen. </p>
+4. Click **Cancel** to exit the screen. 
 
-5. To view usage information on a project, click <strong>More &gt; View Usage</strong>.</p>
+5. To view usage information on a project, click **More &gt; View Usage**.
 
-	The instances associated with the project are listed, with memory and uptime information.</p>
+	The instances associated with the project are listed, with memory and uptime information.
 
-6. Click <strong>Cancel</strong> to exit the screen. </p>
+6. Click **Cancel** to exit the screen. 
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

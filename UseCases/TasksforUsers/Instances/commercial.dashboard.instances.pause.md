@@ -18,45 +18,45 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Pausing and Un-pausing Instances
 
-When a user <em>pauses</em> an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.</p>
+When a user <em>pauses</em> an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.
 
-Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.</p>
+Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.
 
 
 **Note:** Pausing is different from <a href="/helion/commercial/dashboard/managing/instances/suspend/">suspending an instance</a>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.  
-</p>
+
 
 ### Pause an instance ###
 
-To pause an instance:</p>
+To pause an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
+2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the <strong>Instances</strong> screen, for the instance you want to modify, click <strong>More &gt; Pause Instance</strong>.</p>
-<p>The status of the instance reports <em>Paused</em>. </p>
+3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Pause Instance**.
+<p>The status of the instance reports <em>Paused</em>. 
 
-4. Note that many of the commands on the <strong>More</strong> menu are not available for a paused instance.</p>
+4. Note that many of the commands on the **More** menu are not available for a paused instance.
 
 ### Un-pause an instance ###
 
-To unpause an instance:</p>
+To unpause an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Instances</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
+2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the <strong>Instances</strong> screen, for the instance you want to modify, click <strong>More &gt; Resume Instance</strong>.</p>
+3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Resume Instance**.
 
-	Note that all of the commands on the <strong>More</strong> menu are available.</p>
+	Note that all of the commands on the **More** menu are available.
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

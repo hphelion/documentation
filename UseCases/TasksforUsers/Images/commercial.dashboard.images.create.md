@@ -18,34 +18,34 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating Images
 
-Creating a new image for use in HP Helion OpenStack requires two general steps.</p>
+Creating a new image for use in HP Helion OpenStack requires two general steps.
 
-The first step is to create an ISO image file outside of your HP Helion OpenStack. </p>
+The first step is to create an ISO image file outside of your HP Helion OpenStack. 
 
-When the ISO image file is complete and ready for use, you use HP Helion OpenStack to upload the image to your cloud.</p>
+When the ISO image file is complete and ready for use, you use HP Helion OpenStack to upload the image to your cloud.
 
-<strong>Note:</strong> After you upload an image, it is considered *golden* and you cannot change it.</p>
+**Note:** After you upload an image, it is considered *golden* and you cannot change it.
 
 ### Create an image ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
+2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 
-3. In the <strong>Images</strong> screen, click <strong>Create Image</strong>.</p>
+3. In the **Images** screen, click **Create Image**.
 
-4. In the <strong>Create an Image</strong> screen, provide the image information:</p>
+4. In the **Create an Image** screen, provide the image information:
 
 	* Name - Enter a name for the image.</li>
 	* Description - Optionally, enter a brief description of the image.</li>
 	* Image Source - Choose the image source from the list. Your choices are Image Location and Image File.</li>
-	* Image File or Image Location - Based on your selection for Image Source, you either enter the location URL of the image in the Image Location field. or browse to the image file on your system and add it.</p>
-		**Note:** The Image Location field must be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.</p>
+	* Image File or Image Location - Based on your selection for Image Source, you either enter the location URL of the image in the Image Location field. or browse to the image file on your system and add it.
+		**Note:** The Image Location field must be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
 	* Format - Select the correct format (for example, QCOW2) for the image.</li>
 	* Architecture - Specify the architecture. For example, i386 for a 32-bit architecture or x86-64 for a 64-bit architecture.</li>
 	* Minimum Disk - Enter the minimum disk size required to boot the image. Leave the field blank to specify no minimum. </li>
@@ -53,11 +53,11 @@ When the ISO image file is complete and ready for use, you use HP Helion OpenSta
 	* Public - Select this option to make the image public to all users with access to the current project. Leave the option clear to allow the image to be used in all projects in the domain.</li>
 	* Protected - Select this option to prevent the image from being deleted.  Leave the option clear to allow the image to be deleted.</li>
 
-5. Click <strong>Create Image</strong> to launch the image.	</p>
+5. Click **Create Image** to launch the image.	
 
-6. Optionally, you can click <strong>Launch</strong> to [create a running instance](/helion/commercial/dashboard/managing/instances/create/) based on this image.</p>
+6. Optionally, you can click **Launch** to [create a running instance](/helion/commercial/dashboard/managing/instances/create/) based on this image.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

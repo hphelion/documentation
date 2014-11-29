@@ -18,20 +18,20 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Viewing Image Details
 
-To view image details:</p>
+To view image details:
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
 
-2. Click the <strong>Images</strong> link on the <strong>Project</strong> dashboard <strong>Compute</strong> panel.</p>
+2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 
-3. Click the name of the image.</p>
-<p><strong>Note:</strong> When your cursor is on the image name, the name is underlined.</p>
+3. Click the name of the image.
+<p>**Note:** When your cursor is on the image name, the name is underlined.
 
-4. The Image Details screen shows detailed information about the image, including:</p>
+4. The Image Details screen shows detailed information about the image, including:
 
 	* name and ID</li>
 	* status</li>
@@ -40,7 +40,7 @@ To view image details:</p>
 	* formats</li>
 	* size</li>
 
-<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
+<p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 ----

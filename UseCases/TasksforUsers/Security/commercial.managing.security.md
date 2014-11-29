@@ -18,26 +18,26 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Security
 
-HP Helion OpenStack uses security groups and security rules to control access to instances in your cloud.</p>
+HP Helion OpenStack uses security groups and security rules to control access to instances in your cloud.
 
-You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance</p>
+You can use the dashboards to create, delete and configure security groups and security group rules to control access to your instance
 
-How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user). </p>
+How you interact with your network environment depends upon your user type, either an administrative user (admin) or a non-administrative user (user). 
 
-**Note:** The admin can perform all of the user tasks in addition to the admin tasks.</p>
+**Note:** The admin can perform all of the user tasks in addition to the admin tasks.
 
 ## Managing security as a user ##
 
-As a user, you can work with the security groups and rules in the active project.</p>
+As a user, you can work with the security groups and rules in the active project.
 
-Access the security commands using the Compute panel on the Project dashboard. </p>
+Access the security commands using the Compute panel on the Project dashboard. 
 
-Click Access &amp; Security to work with security groups and rules to perform the following tasks:</p>
+Click Access &amp; Security to work with security groups and rules to perform the following tasks:
 
 * [Create a security group](/helion/commercial/dashboard/managing/security/groups/)
 * [Create security group rules](/helion/commercial/dashboard/managing/security/groups/)
@@ -45,7 +45,7 @@ Click Access &amp; Security to work with security groups and rules to perform th
 
 ## Managing security as an admin ##
 
-As an admin user, you can work on all of the security groups in your domain, regardless of which project the group is associated with. </p>
+As an admin user, you can work on all of the security groups in your domain, regardless of which project the group is associated with. 
 
 <!-- Remove this? Covered under Manage Roles. Not yet in beta
 ### Managing Users in Domain ###
@@ -62,7 +62,7 @@ Use the Identity panel in the Admin dashboard to [allow users to access groups](
 
 ### Changing a user password ###
 
-As an admin, you can use the Identity panel in the Admin dashboard to change a user's password.</p>
+As an admin, you can use the Identity panel in the Admin dashboard to change a user's password.
 
 See: [Changing a User Password](/helion/commercial/dashboard/managing/users/password/change/).
 
