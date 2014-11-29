@@ -71,7 +71,7 @@ As an administrator you can manage the host aggregates in your domain:
 
 	**To change the hosts associated with the aggregate:**
 
-	a. For the aggregate you want to edit click *<em>More &gt; Manage Hosts</em></li>
+	a. For the aggregate you want to edit click **More &gt; Manage Hosts*</li>
 
 	b. Add a host to the aggregate by clicking the **+** icon next to each project in the **All Available Hosts** column.</li>
 

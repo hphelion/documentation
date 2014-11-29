@@ -65,7 +65,7 @@ A non-admin user or admin user can <a href="#createnet">create</a> and <a href="
 8. On the Subnet Details tab:
 
 	* Clear the **Enable DHCP** option, as needed, to not use the network as a DCHP. DHCP is enabled by default. If enabled, the subnet will serve as your DHCP server. Instances associated with the subnet will be assigned an IP address from this pool. .</li>
-	* Optionally, enter the starting and ending IP addresses you want for your DHCP allocation pool in the **Allocation Pools** field, in the format IP<em>ADDR,IP</em>ADDR. For example: 192.168.1.10,192.168.1.120. By deafult, the server has an application pool starting with 10.0.0.0/24.	</li>
+	* Optionally, enter the starting and ending IP addresses you want for your DHCP allocation pool in the **Allocation Pools** field, in the format IP*ADDR,IP*ADDR. For example: 192.168.1.10,192.168.1.120. By deafult, the server has an application pool starting with 10.0.0.0/24.	</li>
 	* Optionally, enter the IP Address of your subnet in the **DNS Name Servers** field. If blank, your subnet will default to using HP's internal DNS which uses DNSMASQ.</li>
 	* Optionally, enter the Destination CIDR and Next Hop for your subnet in the Host Routes field to create host routes.</li>
 

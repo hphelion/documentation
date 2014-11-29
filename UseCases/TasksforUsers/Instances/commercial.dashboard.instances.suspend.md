@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Suspending and Resuming Instances
 
-When a user <em>suspends</em> an instance, the contents of the instance are stored on disk and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available to create other instances.
+When a user *suspends* an instance, the contents of the instance are stored on disk and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available to create other instances.
 
 Users can suspend an instance, for example, to free up the resources used by an instance that is used infrequently or to perform system maintenance. 
 

@@ -31,7 +31,7 @@ Your network looks similar to the following diagram.
 
 <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
 
-A router (here, labeled <em>Router 1</em>) is attached to the external network (labeled <em>Ext-Net</em>) so the internal network (labeled <em>Network1</em>) can be reached from the Internet. A <em>Network1</em> is attached to the router.
+A router (here, labeled *Router 1*) is attached to the external network (labeled *Ext-Net*) so the internal network (labeled *Network1*) can be reached from the Internet. A *Network1* is attached to the router.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

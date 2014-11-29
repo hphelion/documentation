@@ -25,7 +25,7 @@ PageRefresh();
 
 A virtual machine image is a single file that contains a virtual disk with a bootable operating system installed on it. You can use images to create virtual machine instances within the cloud. 
 
-If you want to prevent an image from being deleted, you can make that image <em>protected</em>. 
+If you want to prevent an image from being deleted, you can make that image *protected*. 
 
 ### Protect an image ###
 

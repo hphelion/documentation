@@ -23,11 +23,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Specifying a Primary Project for a User
 
-When you create a user account, you must assign the account to a <em>primary</em> project. The primary project is simply the first project the user is associated with and must exist prior to creating the user.
+When you create a user account, you must assign the account to a *primary* project. The primary project is simply the first project the user is associated with and must exist prior to creating the user.
 
 Optionally, you can assign the account to additional projects. Before you can delete a user account, you must remove the user account from its primary project.
 
-As an admin, you can specify a <em>primary</em> project for each user. 
+As an admin, you can specify a *primary* project for each user. 
 
 ### Specify a primary project ###
 

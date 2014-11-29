@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Pausing and Un-pausing Instances
 
-When a user <em>pauses</em> an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.
+When a user *pauses* an instance, the instance  remains running, but, in a frozen state. The contents of the instance are stored in memory (RAM). Memory and vCPUs are not released.
 
 Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.
 
@@ -40,7 +40,7 @@ To pause an instance:
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
 3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Pause Instance**.
-<p>The status of the instance reports <em>Paused</em>. 
+<p>The status of the instance reports *Paused*. 
 
 4. Note that many of the commands on the **More** menu are not available for a paused instance.
 
