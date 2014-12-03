@@ -47,17 +47,17 @@ Before you begin the update:
 
 * Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
-* Point the install script to the overcloud. The patch update scripts are based on the Ansible platform. When patching the overcloud, because the script is launched from the seed VM, you need to point the script to the overcloud node.
+* Point the install script to the overcloud. The patch update scripts are based on the Ansible platform. When patching the overcloud, because the script is launched from the seed cloud host, you need to point the script to the overcloud node.
 
 	To point the script to update the overcloud, use the following steps:
 
-	a. Copy the `stackrc` file from the undercloud and rename the file for the undercloud:
+	a. Copy the `stackrc` file to the undercloud and rename the file for the undercloud:
 
 		ssh heat-admin@<Undercloud IP>
 		sudo -i
 		cp stackrc /home/heat-admin/uc_stackrc
 
-	b. On the seed cloud host, copy the file to the undercloud.
+	b. On the seed cloud host, copy the file to the seed host.
 
 		scp heat-admin@<Undercloud ip>:uc_stackrc ~/
 
