@@ -321,6 +321,13 @@ Ubuntu 14.04 with the following packages.
 - chromium-browser
 
 ### Guest OS Support Matrix {#guestOS}
+
+Our Guest OS support is based on the hypervisor vendor. 
+
+For ESX, refer to the [VMware Compatibility Guide](http://www.vmware.com/resources/compatibility/search.php?action=search&deviceCategory=software&advancedORbasic=advanced&maxDisplayRows=50&key=&productId=4&gos_vmw_product_release%5B%5D=90&datePosted=-1&partnerId%5B%5D=-1&os_bits=-1&os_use%5B%5D=-1&os_family%5B%5D=-1&os_type%5B%5D=-1&rorre=0).
+
+For KVM refer to the following table:
+
 A **Qualified** Guest OS has been tested and will support the Guest OS running on HP Helion OpenStack.
 
 A **Certified** Guest OS has been officially certified with the appropriate vendor of the OS.
