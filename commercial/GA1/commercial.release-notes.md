@@ -129,6 +129,9 @@ When using HP Helion OpenStack you might experience the following issues:
 
 Other issues you might experience when using HP Helion OpenStack:
 
+* If a project and user has been deleted, there is no way in the Helion Dashboard delete the networks associated with the project and user. To clean up artifacts created by a user account that has been deleted, use the CLI tools rather than the Horizon console. <!--(DOCS-733) -->
+
+
 * When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->. 
 * After updating the undercloud to HP Helion OpenStack 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
 
