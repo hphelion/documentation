@@ -77,7 +77,7 @@ For more information, see [Editing the JSON Environment Variables File for Insta
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 ### Set DNS servers {#name-resolution}
 
