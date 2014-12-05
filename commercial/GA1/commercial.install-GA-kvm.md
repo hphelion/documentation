@@ -299,7 +299,7 @@ Configure Block Storage by either deploying VSA or using HP 3Par Array
 
 	HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.
 
-	For instructions, see [Enabling VLAN Provider Network in HP Helion OpenStack]{/helion/openstack/vlan/provider/network/}.
+	For instructions, see [Enabling VLAN Provider Network in HP Helion OpenStack](/helion/openstack/vlan/provider/network/).
 
 - Configure HP StoreVirtual VSA
 
