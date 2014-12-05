@@ -29,6 +29,7 @@ For HP Helion OpenStack 1.0.1, you do not need to update the seed. However, you 
 <!-- Not needed for 1.0.1
 Updating the seed node involves saving current environment and configuration settings and restoring them after the update.
 -->
+
 * [Backup the seed cloud host](#backup)
 * [Backup the original seed settings](#backupsettings)
 * [Update the seed cloud host](#updateseed)
