@@ -36,7 +36,7 @@ Prior to getting a system ready for update and performing the update, there migh
 
 	If you have not changed your undercloud admin password you can skip this task.
 
-	a. Edit the seed root directory. In the `/root/tripleo/tripleo-undercloud-passwords` file, modify the `UNDER_CLOUD_ADMIN_PASSWORD` value.
+	a. Edit the seed cloud host root directory. In the `/root/tripleo/tripleo-undercloud-passwords` file, modify the `UNDER_CLOUD_ADMIN_PASSWORD` value.
 
 	b. Edit file environment variables JSON file. In the `/root/tripleo/ce_env.json` file, update the undercloud `"password":` line with the new password. for example:
 
@@ -48,7 +48,7 @@ Prior to getting a system ready for update and performing the update, there migh
 		ssh heat-admin@<undercloudIP>
 		sudo -i
 
-2.	Prior to starting update you need to verify you are running Ubuntu that is greater than 3.13.0-36 on your seed host machine. 
+2.	Prior to starting update you need to verify you are running Ubuntu that is greater than 3.13.0-36 on your seed cloud host machine. 
 
 	Verifying and obtaining the correct kernel may vary depending on distribution.  From a command prompt seed cloud host run the following command to verify the operating system and current version:
 
@@ -71,7 +71,7 @@ To extract the files:
 		ssh heat-admin@<seed_cloud_host_IP>
 		sudo -i
 
-2. Copy the TAR file to seed node and extract contents from the seed node. From an SSH session to the seed do the following:
+2. Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
 
 		ssh heat-admin@<undercloudIP>
 		sudo -i
@@ -121,7 +121,7 @@ The administrator should know the IP address of the seed cloud host node.  Other
 
 To obtain the IP addresses of the undercloud nodes, run the following commands:
 
-1. Log in the seed VM host.
+1. Log in the seed cloud host.
 
 		sudo su -
 
@@ -146,7 +146,7 @@ The IP addresses of the Undercloud will be listed in the `nova list` results.
 
 To determine image ID of the undercloud nodes:
 
-1. Log in the seed VM host.
+1. Log in the seed cloud host.
 
 		sudo su -
 
@@ -175,7 +175,7 @@ To determine image ID of the undercloud nodes:
 
 To obtain the IP addresses of the overcloud nodes, perform the following:
 
-1. Log in the seed VM host.
+1. Log in the seed cloud host.
 
 		sudo su -
 
@@ -199,7 +199,7 @@ To obtain the IP addresses of the overcloud nodes, perform the following:
 
 **Overcloud Image ID**
 
-1. Log in the seed VM host:
+1. Log in the seed cloud host:
 
 		sudo su -
 

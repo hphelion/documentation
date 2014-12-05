@@ -25,7 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack Neutron service to provide network connectivity to HP Compute devices and helps in addressing them.
+HP Helion OpenStack Networking is a virtual networking service that leverages the OpenStack Neutron service to provide network connectivity and addressing to HP Helion OpenStack Compute service devices.
 
 The Networking service also provides an API to configure and manage a variety of network services.
 

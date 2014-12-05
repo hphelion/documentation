@@ -50,7 +50,7 @@ Before you begin the update:
 	<!-- 
 	If you are low on space and you updated the seed previously please refer to the [Cleanup section](/helion/openstack/update/seed/101/) in *Updating the Seed Cloud Host* for information on removing post-update files. The backup/restore process should remove these files. You can check to make sure the files have been removed. -->
 
-* Point the install script to the overcloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the undercloud node.
+* Point the install script to the undercloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the seed cloud host.
 
 	To point the script to update the undercloud, use the following steps:
 

@@ -23,8 +23,7 @@ Welcome[](#welcome "Permalink to this headline")
 The top-level page of the Management Console displays quick links to the
 most commonly used resources:
 
--   **Read the Documentation**: By default,this links to
-    [*docs.helion.com*](../../..)
+-   **Read the Documentation**: By default, this links to the ALS documentation at [docs.hpcloud.com](/als/v1/)
 -   **Contact Support**: Link to the [*Support*](#user-console-support)
     page.
 -   **Download the Client**: Link to the locally hosted [*CLI
