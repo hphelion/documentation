@@ -13,7 +13,7 @@ The HP Helion Development Platform currently contains four products: Application
 
 The following topics explain how to install and configure the HP Helion Development Platform.
 
-If you are installing the HP Helion Development Platform Community, see [HP Helion Development Community Installation and Configuration]{
+If you are installing the HP Helion Development Platform Community, see [HP Helion Development Community Installation and Configuration](/helion/devplatform/install/community/).
 
 * [Prerequisites](#prerequisites)
 
