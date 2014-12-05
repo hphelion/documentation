@@ -5,7 +5,7 @@ permalink: /helion/openstack/release-notes/101/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -123,6 +123,11 @@ When using HP Helion OpenStack you might experience the following issues:
 * Changing the user settings in a non-admin role affects all users across all projects. Changes to a user role should not affect other roles. There is no workaround. <!-- (HORI-2934) -->
 
 * An admin is unable to retrieve object details in an Object Store. The admin might see a blank dialog box or receive the *Error: Unable to retrieve details.* error. Access object details as a non-admin user. <!-- (HORI-2930) -->
+
+* An admin user in default domain is not able to  Modify Users or perform any functionality from drop down list. The admin will receive the *Unable to retrieve user list* message. <--DOCS-723, 
+
+* An admin user in default domain is not able to retrieve the Project list. The admin will receive the *Unable to retrieve project list* message. <--DOCS-731, 
+
 
 
 **Other Issues**
