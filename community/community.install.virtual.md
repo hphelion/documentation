@@ -82,7 +82,7 @@ Before you begin the installation process, the root user must have private and p
 
 3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
 
-		ssh-keygen -t rsa -N
+		ssh-keygen -t rsa
 
 ### Set DNS servers by default {#name-resolution}
 
