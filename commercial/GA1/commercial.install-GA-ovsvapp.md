@@ -435,7 +435,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - When `cert_check` is **False**, `cert_path` should be a blank field.
 
-- For Helion ESX type install, do not attempt to revert the Overcloud nodes from 1.0.1 to 1.0 through the restore process. Restoring will power down the ESX hosts associated with the registered vCenter cluster. <! -- ALM 11335 --> 
+- For Helion ESX type install, do not attempt to revert the Overcloud nodes from 1.0.1 to 1.0 through the restore process. Restoring will power down the ESX hosts associated with the registered vCenter cluster. <!-- ALM 11335 --> 
 
 
 ## Clean up or deleting the OVSvApp {#clean}
@@ -492,13 +492,13 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	b. On the **Configuration** tab, select **Networking**.  
 
-	c. Click V**irtual Switch** to display the virtual switches for the host.
+	c. Click **Virtual Switch** to display the virtual switches for the host.
 	
-	d. Locate the virtual switch that has a VMkernel port group configured for VMotion, and click the **Properties** link.
+	d. Locate the virtual switch that has a VMkernel port group configured for vMotion, and click the **Properties** link.
 
-	e. On the **Ports** tab, select the port group that is configured for VMotion and click **Edit**.
+	e. On the **Ports** tab, select the port group that is configured for vMotion and click **Edit**.
 
-	f. On the **General** tab, clear the **Enabled** option for VMotion.
+	f. On the **General** tab, clear the **Enabled** option for vMotion.
 
 	g. Click **OK** to close the port group **Properties** dialog, and click **Close** to close the vSwitch **Properties** dialog. 
 

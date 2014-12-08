@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/undercloud/101/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -153,7 +153,17 @@ Use the following steps to load upload an image and its dependencies:
 		scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/undercloud.tar /tmp.  
 		tar xvf undercloud.tar 
 
-4. Run the following commands:
+4. Rename the old undercloud image using the following commands
+
+		export IMAGE_ID='glance image-list | grep undercloud | grep qcow2 | awk '{print $2}''
+		export RAMDISK_ID='glance image-list | grep undercloud-initrd | awk '{print $2}''
+		export KERNEL_ID='glance image-list | grep undercloud-vmlinuz | awk '{print $2}''
+
+		glance image-update --name undercloud-old $IMAGE_ID
+		glance image-update --name undercloud-initrd-old $RAMDISK_ID
+		glance image-update --name undercloud-vmlinuz-old $KERNEL_ID
+
+5. Upload new undercloud images to glance
 
 		glance image-create --is-public True --is-protected False --name undercloud.vmlinuz --file undercloud.vmlinuz --disk-format aki --container-format aki
 

@@ -144,7 +144,7 @@ There are a few things you should be aware of before you begin your HP Helion Op
 * These files contain credentials for the undercloud and the overcloud; you should make sure that they are securely stored separately from the seed.
 
 		/root/stackrc
-		/root/tripleo/tripleo_passwords
+		/root/work/tripleo/tripleo_passwords
 
 
 * Filesystem checking on reboot is disabled by default for the seed, undercloud and overcloud nodes. We recommend periodically manually running fsck to verify filesystem integrity.
@@ -184,7 +184,7 @@ The HP Helion OpenStack Community baremetal installation is provided as a compre
 		`cd /root/work`
 		`tar zxvf /root/Helion_Openstack_Community_V1.4.tar.gz`
 
-	This creates and populates a `tripleo/` directory within root's home directory.
+	This creates and populates a `tripleo/` directory within **root/work/** directory.
 
 5. **Optional:** To use an interface other than 'eth0' on the HOST as the bridge interface, for example eth3, use the following command:
 
