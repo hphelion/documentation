@@ -35,7 +35,3 @@ Each counter contains the following *fields*:
 [Alarms](/helion/openstack/services/reporting/alarms/) can be configured to trigger notifications or other actions when a specific metering threshold value has been reached or exceeded.
 
 **Note**: The metering service shares the same High-availability proxy, messaging, and database clusters with the other Information services. To avoid unnecessarily high loads, [non-essential meters can be disabled](/helion/openstack/services/reporting/bestpractices/#meterlist). 
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

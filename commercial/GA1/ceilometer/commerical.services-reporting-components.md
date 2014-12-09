@@ -27,24 +27,24 @@ The TripleO installation creates several management nodes running different Ceil
 <img src="media/ceil_overallarchi.png"/>
 
 ##Components in TripleO Overcloud Controller0
+This controller node is the first of the High Available (HA) cluster. In this node there is an instance of the Ceilometer API running under the HA Proxy Virtual IP address.
 
-This controller node is the first of the High Available (HA) cluster and in this node there is an instance of the Ceilometer API running under the HA Proxy Virtual IP address.
- 
-The ceilometer-api are now running as part of the Apache2 service together with Horizon and Keystone. In order to verify that these are running, remove them from the active list and re-instate them.
+**Note**: When a configuration change is made to an API running under the HA Proxy, that change needs to be replicated in **all** controllers.
 
-1. Disable the ceilometer-api from the active sites.
+The ceilometer-api are now running as part of the Apache2 service together with Horizon and Keystone. To remove them from the active list so that changes can be made and then re-instate them, use the following commands.
+
+1. Disable the Ceilometer API on the active sites.
  
 		sudo a2dissite ceilometer.conf
  
-2. Perform all necessary configuration changes and then re-enable the ceilometer-api.
+3. Perform all necessary changes. The Ceilometer API will not be served until it is re-enabled.
+4. Re-enable the Ceilometer API on the active sites.
  
 		sudo a2ensite ceilometer.conf
  
-3. In order for the changes to take effect, force the Web server to reload. A reload is preferable to a re-start since it waits for the active sessions to gracefully terminate or complete.
+6. The new changes need to be picked up by Apache2. If possible, force a reload rather than a restart. Unlike a restart, the reload waits for currently active sessions to gracefully terminate or complete.
  
 		sudo  /etc/init.d/apache2 force-reload
-
-**Note**: Changes need to be performed on **all** the controllers where the API are running under the HA Proxy.
  
 ##Ceilometer Components in TripleO Overcloud Controller1
 

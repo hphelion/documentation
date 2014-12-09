@@ -296,7 +296,3 @@ Every time polling interval elapses, it collects at least five messages per **ea
 
 Even a very, very small Swift storage with only 10 containers and 100 files will store 120,000 samples a day. File size doesn't matter; it's the sheer number of samples that risks a severe performance impact on the database.
 
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

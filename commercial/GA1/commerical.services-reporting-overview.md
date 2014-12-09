@@ -37,16 +37,9 @@ Access to Ceilometer is through the command-line interface [(CLI)](http://docs.o
 * [Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
 	* [Logging](/helion/openstack/services/reporting/troubleshooting/#logging)
 	* [Messaging and Queuing Errors](/helion/openstack/services/reporting/troubleshooting/#qerrors)
-* [Manually Stopping and Starting Services](/helion/openstack/services/reporting/stopstart/#stopstart)
 * [API Extensions: HP Health Check API](/helion/openstack/services/reporting/APIextensions/)
 * [Enabling Notifications from the Nova Service](/helion/openstack/services/reporting/bestpractices/#ceilandnova)
 * [Best Practices and Performance Optimization](/helion/openstack/services/reporting/bestpractices/)
 	- [Configuring the Web Server for API Performance](/helion/openstack/services/reporting/bestpractices/#webserverapi)
 	- [Modifying the List of Active Meters](/helion/openstack/services/reporting/bestpractices/#meterlist)
 	- [Modifying Polling Intervals](/helion/openstack/services/reporting/bestpractices/#pollinterval)
-
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
-

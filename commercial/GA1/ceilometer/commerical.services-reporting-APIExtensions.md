@@ -45,8 +45,3 @@ Currently the HA Proxy (Load Balancer) can validate that there is IP/HTTP connec
 <tr><td>GET /v2/health</td><td>500 Internal Server Error</td><td>The API has been reached but it failed to perform its operation. The service is highly compromised. </td></tr>
 <tr><td>GET /v2/health</td><td>503 Service Unavailable</td><td>The API has been reached but the back-end connectivity is unavailable or compromised. The service cannot successfully perform its operations. </td></tr>
 </table>
-
-
-----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
