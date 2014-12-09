@@ -64,40 +64,35 @@ This section describes how to download and install the HP Helion Development Pla
 
 The installation of the HP Helion Development Platform for the HP Helion OpenStack Community Edition is provided as a small compressed TAR file.  The images for the actual services will be downloaded by the installer.
 
-You can register and download the package from the following URL:
+1. Register and download the package from the following URL: [HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
 
-[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
+1. Before you begin the installation, unpack the tar file.
+ 
+		tar -zxvf hp_helion_devplatform_community.tar.gz.csu
+ 
+3. Run this command to create and populate a *dev-platform-installer* directory.
+ 
+		# cd dev-platform-installer
+ 
+5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-To begin the installation, unpack the TAR file:
+		# export https_proxy=<ip address or url of http proxy>
+ 
+7. Run this command to prepare the installer and ensure prerequisites are met. 
 
-	tar -zxvf hp_helion_devplatform_community.tar.gz.csu
+		# ./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
+ 
+9. Optionally, you can specify the Username, Tenant and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+ 
+		# ./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
+ 
+11. Should you need more assistance during installation, the install script also has a help feature.
 
-This creates and populates a `dev-platform-installer` directory.
-
-	cd dev-platform-installer
-
-### Preparing to run the installer {#prepare}
-
-If your network uses a proxy, it might be necessary to set the proxy shell variable.
-
-	export https_proxy=<ip address or url of http proxy> 
-
-Run this command to prepare the installer and verify the prerequisites are met. 
-
-	./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
-
-Optionally, you can run the command using the user name, tenant (project) and region. By default, the user name is `admin`, the tenant name is `admin`, and the region is `regionOne`.
-    
-	./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
-
-If you need help with this script, use the help feature:
-
-	./DevelopmentPlatform_Setup.sh -h
-
-After the install command completes, the following output is displayed:
-
-	2014-06-17 16:53:19.765       INFO Install Complete
-
+		# ./DevelopmentPlatform_Setup.sh -h
+ 
+13. Once the installation is complete, you should see output similar to the following:
+ 
+		2014-06-17 16:53:19.765       INFO Install Complete
 ## Install the Messaging Service {#messaging-install}
 
 This section provides details on installing the HP Helion Development Platform Messaging service.
