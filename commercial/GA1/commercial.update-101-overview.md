@@ -37,7 +37,7 @@ There are multiple ways to update your cloud. This HP Helion OpenStack documenta
 * [Update Troubleshooting](#trouble)
 * [Next Steps](#next-steps)
 
-The HP Helion OpenStack 1.0.1 update with apply to all of the nodes: seed, undercloud, overcloud controllers, overcloud Swift, overcloud VSA, and overcloud compute nodes. There is also an update for the optional HP Helion OpenStack DNSaaS. 
+The HP Helion OpenStack 1.01 update with apply to all of the nodes: seed, undercloud, overcloud controllers, overcloud Swift, overcloud VSA, and overcloud compute nodes. There is also an update for the optional HP Helion OpenStack DNSaaS. 
 
 ## Overview of the Update Process {#overview}
 
@@ -73,9 +73,9 @@ This section describes what you need to know at a high level to perform an updat
 
 5. After the update is complete:
 	
-	* If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), install HP Helion OpenStack DNSaaS 1.0.1. For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
+	* If your cloud uses the optional HP Helion OpenStack DNSaaS (Domain Name Server as a Service), install HP Helion OpenStack DNSaaS 1.01. For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
-		**Note:** The process for moving from DNSaaS 1.0 to DNSaaS 1.0.1 is to uninstall DNSaaS version 1.0, then install DNSaaS version 1.0.1. Do not attempt to install version 1.0.1 over the previous version. 
+		**Note:** The process for moving from DNSaaS 1.0 to DNSaaS 1.01 is to uninstall DNSaaS version 1.0, then install DNSaaS version 1.01. Do not attempt to install version 1.01 over the previous version. 
 
 	* Review [Configuring Your Network Securely](/helion/openstack/install/security/) for information on configuring your HP Helion OpenStack deployment to protect against external abuse and insider abuse or administrative errors.
 

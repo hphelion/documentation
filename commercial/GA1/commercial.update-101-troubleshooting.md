@@ -493,7 +493,7 @@ If the update fails, from undercloud node:
 
 ## Ironic service cannot be restarted on the undercloud {#ansible}
 
-When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. 
+When performing the upgrade to HP Helion OpenStack 1.01 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. 
 
 **Symptom**
 
@@ -524,7 +524,7 @@ Workaround when this happens is:
 
 ## A lock problem occurred in Ironic during update of the undercloud using the Ansible script {#ansible}
 
-When performing the upgrade to HP Helion OpenStack 1.0.1 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 -->
+When performing the upgrade to HP Helion OpenStack 1.01 using the Ansible-based helper script, the Ironic service cannot be restarted because of a lock situation in Ironic. The update process fails with no specific error message. <!-- CORE 2043 -->
 
 
 **Symptom**

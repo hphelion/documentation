@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&reg;: Development Platform Commercial 1.0.1 Update
+# HP Helion OpenStack&reg;: Development Platform Commercial 1.01 Update
 
 The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
 
@@ -35,9 +35,9 @@ The following sections explain how to update the HP Helion Development Platform.
 
 ## Prerequisites {#prerequisites}
 
-The following guide outlines the steps to update Helion Development Platform from version 1.0 to 1.0.1. Before executing these steps, ensure you have upgraded HP Helion OpenStack to 1.0.1 as described in the [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
+The following guide outlines the steps to update Helion Development Platform from version 1.0 to 1.01. Before executing these steps, ensure you have upgraded HP Helion OpenStack to 1.01 as described in the [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
-**Note:** If you created a new installation of 1.0.1, bypassing 1.0, you need to install HP Helion OpenStack Development Platform Services, and not update. See [Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/).
+**Note:** If you created a new installation of 1.01, bypassing 1.0, you need to install HP Helion OpenStack Development Platform Services, and not update. See [Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/).
 
 ## Update the Messaging Service {#update-messaging} 
 
@@ -53,7 +53,7 @@ This section provides details on updating the Messaging Service for Helion OpenS
 
 4. Locate the **Messaging Service** item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
-5. Once the download is complete, the new image for Messaging clusters will be available. All clusters created from this point forward will be using the Messaging Service 1.0.1 version.
+5. Once the download is complete, the new image for Messaging clusters will be available. All clusters created from this point forward will be using the Messaging Service 1.01 version.
 
 ## Update the Application Lifecycle Service (ALS) {#update-als}
 
@@ -61,7 +61,7 @@ This section provides details on updating the Application Lifestyle service (ALS
 
 **Note:** If the Message Service is not installed, see the [Helion OpenStack Development Platform Install Guide](http://docs.hpcloud.com/helion/devplatform/install/#install-als).
 
-The process for updating ALS requires you to remove then have asked that you remove the current version then installing ALS 1.0.1. 
+The process for updating ALS requires you to remove then have asked that you remove the current version then installing ALS 1.01. 
 
 ### Remove Application Lifecycle Service 1.0 {#remove-als}
 
@@ -77,13 +77,13 @@ To remove ALS:
 
 The ALS images are deleted and the service has been removed.
 
-### Download the Application Lifecycle Service 1.0.1 {#dowload-als}
+### Download the Application Lifecycle Service 1.01 {#dowload-als}
 
 To download the latest version of ALS:
 
 1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
-2. Once the download is complete, the new image for Application Lifecycle Service clusters will be available. All clusters created from this point forward will be using the Application Lifecycle Service 1.0.1 version.
+2. Once the download is complete, the new image for Application Lifecycle Service clusters will be available. All clusters created from this point forward will be using the Application Lifecycle Service 1.01 version.
 
 ## Update the Database Service {#update-database}
 

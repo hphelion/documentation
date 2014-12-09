@@ -107,7 +107,7 @@ Review the following topics before you start an update:
 * [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
 * [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
 * [Starting and Stopping the Development-Platform Services for the Upgrade](/helion/openstack/update/devplatstop/101/)
-* [Development Platform Commercial 1.0.1 Update](/helion/openstack/update/devplat/101/)
+* [Development Platform Commercial 1.01 Update](/helion/openstack/update/devplat/101/)
 * [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
 
 
@@ -162,7 +162,7 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Tripleo Service Overview](/helion/openstack/services/tripleo/overview/)
 - [Volume Operations Service Overview](/helion/openstack/services/volume/overview/)
 
-<!-- Not in 1.0.1
+<!-- Not in 1.01
 - [Eve Service Overview](/helion/openstack/services/eve/overview/)
 - [Focus Service Overview](/helion/openstack/services/focus/overview/)
 - [Reporting Service Overview](/helion/openstack/services/reporting/overview/) -->

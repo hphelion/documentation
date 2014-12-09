@@ -20,9 +20,9 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; 1.0.1 Release Notes
+# HP Helion OpenStack&reg; 1.01 Release Notes
 
-Thank you for your interest in HP Helion OpenStack. This document provides an overview of the features contained within HP Helion OpenStack version 1.0.1, including known issues and workarounds, and where to find further information on the product release:
+Thank you for your interest in HP Helion OpenStack. This document provides an overview of the features contained within HP Helion OpenStack version 1.01, including known issues and workarounds, and where to find further information on the product release:
 
 * [Features in HP Helion OpenStack](#features) 
 * [Known Issues in this Release](#known-issues)
@@ -32,13 +32,13 @@ Thank you for your interest in HP Helion OpenStack. This document provides an ov
 
 The following features have been added to HP Helion OpenStack, by release.
 
-### Features in HP Helion OpenStack 1.0.1 ###
+### Features in HP Helion OpenStack 1.01 ###
 
 **Defect fixes** - A number of defects were addressed and fixed in this release.
 
 **Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
 
-**Patch update functionality** -- The HP Helion OpenStack 1.0.1 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
+**Patch update functionality** -- The HP Helion OpenStack 1.01 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
 ### Features in HP Helion OpenStack 1.0 ### 
 
@@ -62,7 +62,7 @@ The following are the known issues for HP Helion OpenStack:
 
 **Patch Update Issues**
 
-You might experience the following issues when performing the upgrade to HP Helion OpenStack 1.0.1:
+You might experience the following issues when performing the upgrade to HP Helion OpenStack 1.01:
 
 * It is recommended that you perform a [back-up](/helion/openstack/backup.restore/) before running the patch upgrade. If there is a problem with the upgrade, you can use the [restore process](/helion/openstack/backup.restore/) to return the controllers and database to their pre-update state. 
 
@@ -138,7 +138,7 @@ Other issues you might experience when using HP Helion OpenStack:
 
 
 * When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->. 
-* After updating the undercloud to HP Helion OpenStack 1.0.1, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
+* After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
 
 * A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack. <!-- (EE-21) -->
 

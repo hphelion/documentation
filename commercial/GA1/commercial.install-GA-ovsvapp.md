@@ -435,7 +435,7 @@ If you are having issues with the installation or operation of the OVSvApp, revi
 
 - When `cert_check` is **False**, `cert_path` should be a blank field.
 
-- For Helion ESX type install, do not attempt to revert the Overcloud nodes from 1.0.1 to 1.0 through the restore process. Restoring will power down the ESX hosts associated with the registered vCenter cluster. <!-- ALM 11335 --> 
+- For Helion ESX type install, do not attempt to revert the Overcloud nodes from 1.01 to 1.0 through the restore process. Restoring will power down the ESX hosts associated with the registered vCenter cluster. <!-- ALM 11335 --> 
 
 
 ## Clean up or deleting the OVSvApp {#clean}
@@ -472,9 +472,9 @@ To uninstall VCN on ESX hosts, access the ESX hosts from vSphere Client, and del
 
 ## Update OVSvApp {#update}
 
-To update the OVSvApp from version 1.0 to version 1.0.1:
+To update the OVSvApp from version 1.0 to version 1.01:
 
-1. Make sure that DRS is enabled on the cluster on which 1.0.1 version of OVSvApp will be installed:
+1. Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:
 
 	a. In the vSphere client, select the cluster in the vSphere Client inventory.
 
@@ -502,7 +502,7 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	g. Click **OK** to close the port group **Properties** dialog, and click **Close** to close the vSwitch **Properties** dialog. 
 
-3. Place the ESX host on which the 1.0.1 version of OVSvApp will be installed into maintenance mode :
+3. Place the ESX host on which the 1.01 version of OVSvApp will be installed into maintenance mode :
 
 	In the vSphere Client, right click on the ESX host and select **Enter Maintenance mode**.
 
@@ -532,7 +532,7 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	`<ovsvapp_agent_id>` is the OVSvApp ID obtained.
 
-9. Install 1.0.1 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
+9. Install 1.01 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
 
 		add_new_hosts=True
 
