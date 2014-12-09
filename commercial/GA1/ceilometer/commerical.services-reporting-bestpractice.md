@@ -170,7 +170,7 @@ Ceilometer data collection is configured by modifying the *pipeline.yaml* file. 
 
 The configuration file is comprised of two major elements: **sources** and **sinks**. **Sources** are data harvested from notifications posted by services or collected through polling. **Sinks** represent how that data is modified before it is published to the internal queue for collection and storage.
 
-In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased editing the pipeline.yaml and subsequently restarting the central-agent (please see: Helion Ceilometer Runbook - Ceilometer Central Agent) and the Collector (please see: Helion Ceilometer Runbook - Ceilometer Collector). If more meters are desired, please refer to the [OpenStack Ceilometer documentation](http://docs.openstack.org/developer/ceilometer/measurements.html#measurements). 
+In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased by editing the *pipeline.yaml* configuration file and then restarting the [Ceilometer Central Agent](/helion/openstack/services/reporting/components/#centralagent) and the [Ceilometer Collector](/helion/openstack/services/reporting/components/#collector). If more meters are desired, please refer to the [OpenStack Ceilometer documentation](http://docs.openstack.org/developer/ceilometer/measurements.html#measurements). 
 
 	---
 	sources:
