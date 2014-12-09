@@ -22,9 +22,9 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg;: Updating OVSvApp on ESX hosts  
 
-To update the OVSvApp from version 1.0 to version 1.0.1:
+To update the OVSvApp from version 1.0 to version 1.01:
 
-1. Make sure that DRS is enabled on the cluster on which 1.0.1 version of OVSvApp will be installed:
+1. Make sure that DRS is enabled on the cluster on which 1.01 version of OVSvApp will be installed:
 
 	a. In the vSphere client, select the cluster in the vSphere Client inventory.
 
@@ -44,15 +44,15 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	c. Click V**irtual Switch** to display the virtual switches for the host.
 	
-	d. Locate the virtual switch that has a VMkernel port group configured for VMotion, and click the **Properties** link.
+	d. Locate the virtual switch that has a VMkernel port group configured for vMotion, and click the **Properties** link.
 
-	e. On the **Ports** tab, select the port group that is configured for VMotion and click **Edit**.
+	e. On the **Ports** tab, select the port group that is configured for vMotion and click **Edit**.
 
-	f. On the **General** tab, clear the **Enabled** option for VMotion.
+	f. On the **General** tab, clear the **Enabled** option for vMotion.
 
 	g. Click **OK** to close the port group **Properties** dialog, and click **Close** to close the vSwitch **Properties** dialog. 
 
-3. Place the ESX host on which the 1.0.1 version of OVSvApp will be installed into maintenance mode :
+3. Place the ESX host on which the 1.01 version of OVSvApp will be installed into maintenance mode :
 
 	In the vSphere Client, right click on the ESX host and select **Enter Maintenance mode**.
 
@@ -82,7 +82,7 @@ To update the OVSvApp from version 1.0 to version 1.0.1:
 
 	`<ovsvapp_agent_id>` is the OVSvApp ID obtained.
 
-9. Install 1.0.1 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
+9. Install 1.01 version of OVSvApp VM on that ESX host using the `add_new_hosts` variable under the `new-host-addition` section in `ovs_vapp.ini` file
 
 		add_new_hosts=True
 
