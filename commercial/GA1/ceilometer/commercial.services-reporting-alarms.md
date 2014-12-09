@@ -31,8 +31,7 @@ Tasks that can be performed via the [CLI](http://docs.openstack.org/cli-referenc
 - **Viewing the state of an alarm** -- Get details on the state of a specific alarm.
 - **Viewing the history of a specific alarm** -- Obtain a historical list of a specific alarm usage.
 
-
-<img src="ceilometer_alarming.png"
+<!--<img src="ceilometer_alarming.png" -->
 
 ##Manually Stopping and Starting Processes {#stopstart}
 

@@ -31,7 +31,6 @@ All the Ceilometer processes have a unified configuration file that can be found
 
 Access to Ceilometer is through the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html), or the low-level [REST API](http://developer.openstack.org/api-ref-telemetry-v2.html). A Ceilometer Horizon dashboard panel is not available at this time. 
 
-* [Configuration and Architecture Overview](/helion/openstack/services/reporting/components/)
 * [Available Meter Types](/helion/openstack/services/reporting/metertypes/)
 * [Alarms and Thresholds](/helion/openstack/services/reporting/alarms/)
 * [Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
