@@ -17,96 +17,34 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/orchestration/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/volume/overview/"> NEXT &#9654</a> </p>
--->
 
 # HP Helion OpenStack&#174; Telemetry and Reporting Service Overview#
+The HP Helion OpenStack Telemetry and Reporting service leverages the OpenStack Ceilometer metering service. A metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. No matter what purpose the data is used for, this service provides a reliable, consistent method for data collection.
 
-The HP Helion OpenStack Telemetry and Reporting service leverages the OpenStack Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls. 
+##Installation
+The Ceilometer service is automatically installed as part of the Helion OpenStack installation process. It may be necessary to install the [CLI](http://docs.openstack.org/user-guide/content/install_clients.html) separately to perform various administrative tasks. 
 
-The Telemetry and Reporting service allows you to collect measurements using only one agent; it collects usage data from every component throughout your environment and stores the data in a single location. 
+The initial default configuration enables a very limited subset of all potential meters, collecting a few essential measurements from the Nova, Cinder, Glance, and Neutron services only. 
 
-The Telemetry and Reporting service contains three types of monitors:
+##Working with Ceilometer
+All the Ceilometer processes have a unified configuration file that can be found at */etc/ceilometer/ceilometer.conf* on the specific overcloud controller you are logged in to.
 
-- **Cumulative** - A cumulative meter measures date over time (for example, instance hours).
-- **Gauge** - A gauge measures discrete items.(for example, floating IPs or image uploads) and fluctuating values (such as disk input or output).
-- **Delta** - A delta measures change over time, for example, monitoring bandwidth.
+Access to Ceilometer is through the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html), or the low-level [REST API](http://developer.openstack.org/api-ref-telemetry-v2.html). A Ceilometer Horizon dashboard panel is not available at this time. 
 
-Each meter is populated from one or more *samples*, which are gathered from the messaging queue or polled by agents. Samples are represented by counter objects. Each counter has the following fields:
+* [Configuration and Architecture Overview](/helion/openstack/services/reporting/components/)
+* [Available Meter Types](/helion/openstack/services/reporting/metertypes/)
+* [Alarms and Thresholds](/helion/openstack/services/reporting/alarms/)
+* [Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
+	* [Logging](/helion/openstack/services/reporting/troubleshooting/#logging)
+	* [Messaging and Queuing Errors](/helion/openstack/services/reporting/troubleshooting/#qerrors)
+* [Manually Stopping and Starting Services](/helion/openstack/services/reporting/stopstart/#stopstart)
+* [API Extensions: HP Health Check API](/helion/openstack/services/reporting/APIextensions/)
+* [Enabling Notifications from the Nova Service](/helion/openstack/services/reporting/bestpractices/#ceilandnova)
+* [Best Practices and Performance Optimization](/helion/openstack/services/reporting/bestpractices/)
+	- [Configuring the Web Server for API Performance](/helion/openstack/services/reporting/bestpractices/#webserverapi)
+	- [Modifying the List of Active Meters](/helion/openstack/services/reporting/bestpractices/#meterlist)
+	- [Modifying Polling Intervals](/helion/openstack/services/reporting/bestpractices/#pollinterval)
 
-- the name of the meter
-- the type of meter (cumulative, gauge, or delta)
-- the amount of data measured
-- the unit of measure
-- the resource being measured
-- the project ID and user the resource belongs to
-
-Alarms can be configured to trigger notifications if a specific threshold value has been reached. 
-
-## Working with the Telemetry and Reporting Service ##
-
-To perform tasks using the Telemetry and Reporting service, you can use the dashboard, API, or CLI.
-
-### Using the dashboards {#UI}
-
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Telemetry and Reporting service.
-
-### Using the API<a name="API"></a>
- 
-You can use a low-level, raw REST API for access to HP Telemetry and Reporting. See the [OpenStack Telemetry API v2.0 Reference](http://developer.openstack.org/api-ref-telemetry-v2.html).
-
-###Using the CLI<a name="cli"></a>
-
-You can use any of several command-line interfaces to access HP Telemetry and Reporting. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html).
-
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
-
-## How To's with the HP Helion Telemetry and Reporting Service<a name="howto"></a>
-
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
-
-### Working with the Telemetry and Reporting service collection actions ###
-
-The Telemetry and Reporting service collects metrics across multiple projects in your domain. 
-
-- **Recording metering data** -- Track metering data.
-- **Recording metering events** -- Record a metering event.
-- **Viewing a list of meters** -- Display a list of available meters based on the types of measurements.
-- **Clearing expired metering data** -- Remove expired metering data using the CLI.
-
-### Working with resource data ###
-
-The Telemetry and Reporting service monitors *resources* in your environment. A resource is any object that is being monitored by the Telemetry and Reporting service (for example, an instance, a network, or an image). 
-
-- **Viewing information on metered resources** -- Obtain a list of available resources.
-- **Viewing details about a specific resource** -- Obtain information on a specific resource.
-
-### Working with the Ceilometer service reporting actions ###
-
-The HP Telemetry and Reporting actions are accessible using a REST API.
-
-- **Viewing a list of usage data for a specific meter** -- List usage data for your meters.
-- **Viewing a list of computed statistics across a time range** -- Obtain statistical data.
-- **Viewing a list of API capabilities supported by current driver** -- Obtain information on the API capabilities supported.
-
-## Working with Alarms ##
-
-The Telemetry and Reporting contains threshold alarms that you can configure to issue notifications for specific behaviors.
-
-- **Creating, updating and deleting alarms** -- Create, modify, and delete alarms using the API.
-- **Recording alarm changes** -- Track changes to Ceilometer alarms using the API.
-- **Viewing a list of alarms, based on filter criteria** -- Obtain a list of alarms based on specified criteria.
-- **Viewing details on a specific alarm** -- Obtain information on a specific alarm.
-- **Viewing the state of an alarm** -- Get details on the state of a specific alarm.
-- **Viewing the history of a specific alarm** -- Obtain a historical list of a specific alarm usage.
- 
-## For more information ##
-
-For information on how to operate your cloud, we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
-
- <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
 ####OpenStack trademark attribution

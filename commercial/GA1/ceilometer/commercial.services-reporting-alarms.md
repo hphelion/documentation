@@ -1,0 +1,68 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174; Telemetry and Reporting Service: Alarms"
+permalink: /helion/openstack/services/reporting/alarms/
+product: commercial.ga
+
+---
+<!--UNDER REVISION-->
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+#HP Helion OpenStack&#174; Telemetry and Reporting Service: Alarms
+
+The Telemetry and Reporting contains threshold alarms that you can configure to issue notifications for specific conditions. When the threshold condition is met or exceeded, an alarm is triggered. The action to be taken is defined within the alarm; a typical alarm response would be a log entry or an e-mail, but other options can be implemented.
+
+Access to Ceilometer is through the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html), or the low-level [REST API](http://developer.openstack.org/api-ref-telemetry-v2.html).
+
+Tasks that can be performed via the [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html):
+
+- **Creating, updating and deleting alarms** -- Create, modify, and delete alarms
+- **Recording alarm changes** -- Track changes to alarms
+- **Viewing a list of alarms, based on filter criteria** -- Obtain a list of alarms based on specified criteria.
+- **Viewing details on a specific alarm** -- Obtain information on a specific alarm.
+- **Viewing the state of an alarm** -- Get details on the state of a specific alarm.
+- **Viewing the history of a specific alarm** -- Obtain a historical list of a specific alarm usage.
+
+
+<img src="ceilometer_alarming.png"
+
+##Manually Stopping and Starting Processes {#stopstart}
+
+Metering processes should normally be operating at all times. Upstart will continually attempt to restart stopped processes even if the process was deliberately stopped manually. In order to avoid this conflict, stop or start processes using the following commands.
+
+###The Alarm Notifier Agent
+1. Determine whether the process is running:
+ 
+		$ sudo service ceilometer-alarm-notifier status
+		ceilometer-alarm-evaluator start/running, process 34567
+4. start or stop the process as needed:
+ 
+		sudo service ceilometer-alarm-notifier stop
+or
+
+		sudo service ceilometer-alarm-notifier start
+
+###The Alarm Evaluator
+
+1. Determine whether the process is running:
+ 
+		$ sudo service ceilometer-alarm-evaluator status
+		ceilometer-alarm-evaluator start/running, process 35567
+4. start or stop the process as needed:
+ 
+		sudo service ceilometer-alarm-evaluator stop
+or
+
+		sudo service ceilometer-alarm-evaluator start
+
+----
+####OpenStack trademark attribution
+*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
