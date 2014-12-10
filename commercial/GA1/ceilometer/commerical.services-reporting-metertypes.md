@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Telemetry and Reporting: Meter Types"
+title: "HP Helion OpenStack&#174; Metering Service: Meter Types"
 permalink: /helion/openstack/services/reporting/metertypes/
 product: commercial.ga
 ---
@@ -13,7 +13,7 @@ onLoad="window.refresh"
 PageRefresh();
 </script>
 
-#HP Helion OpenStack&#174; Telemetry and Reporting Service: Available Meter Types
+#HP Helion OpenStack&#174; Metering Service: Available Meter Types
 The Telemetry and Reporting service contains three types of meters:
 
 - **Cumulative** - A cumulative meter measures date over time (for example, instance hours).
