@@ -45,5 +45,3 @@ You need to have [installed](/helion/devplatform/install/) the Helion Developmen
 1. The [Application Lifecycle Service Documentation ](/als/v1/) provides an overview of how to administer and use the configured cluster, which opens up in a separate tab and requires the admin credentials set in step 3 to access and provision.
 
 ----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
