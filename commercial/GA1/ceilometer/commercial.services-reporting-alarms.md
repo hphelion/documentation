@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Telemetry and Reporting Service: Alarms"
+title: "HP Helion OpenStack&#174; Metering Service: Alarms"
 permalink: /helion/openstack/services/reporting/alarms/
 product: commercial.ga
 
@@ -16,9 +16,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-#HP Helion OpenStack&#174; Telemetry and Reporting Service: Alarms
+#HP Helion OpenStack&#174; Metering Service: Alarms
 
-The Telemetry and Reporting contains threshold alarms that you can configure to issue notifications for specific conditions. When the threshold condition is met or exceeded, an alarm is triggered. The action to be taken is defined within the alarm; a typical alarm response would be a log entry or an e-mail, but other options can be implemented.
+The Metering service contains threshold alarms that you can configure to issue notifications for specific conditions. When the threshold condition is met or exceeded, an alarm is triggered. The action to be taken is defined within the alarm; a typical alarm response would be a log entry or an e-mail, but other options can be implemented.
 
 Access to Ceilometer is through the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html), or the low-level [REST API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
