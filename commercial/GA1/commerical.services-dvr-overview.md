@@ -72,8 +72,6 @@ This is disabled by default.
 **Note**: Only Cloud Administrators can deploy or set the default router types (**Legacy**, **Centralized** or **Distributed**). User cannot control the type of routers that are created.-->
 
 ----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
 
 

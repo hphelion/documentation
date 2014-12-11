@@ -96,7 +96,6 @@ For additional information about HP Helion OpenStack, OpenStack Cloud Software, 
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
-The OpenStack Word Mark is either a registered trademark/service mark or trademark/service mark of the OpenStack Foundation, in the United States and other countries and is used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
 
 **HP Helion OpenStack Warranty**: 
 The programs included with the Debian Host Linux system are free software. The exact license terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian Host Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
@@ -105,4 +104,3 @@ The programs included with the Debian Host Linux system are free software. The e
 
 ----
 ####OpenStack Trademark Attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

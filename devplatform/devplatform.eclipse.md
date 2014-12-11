@@ -57,5 +57,3 @@ Now that our Sample app is set up, let's deploy it using the Helion Development 
 Once your app is deployed, you can use the plugin to interact with it directly from Eclipse.  You can select Show Console to bring up the ALS console.  You can view the app in the browser by selecting Open Home Page and you can also stop/restart/remove it.<br><img src="media/eclipse19.png"/>
 
 ----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*

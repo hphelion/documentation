@@ -36,8 +36,6 @@ The way in which you deploy applications does not change between the managed and
 The benefits of the unmanaged service include a lighter footprint (fewer virtual machines) and no dependency on the Database Service being configured and available. The managed service provides full lifecycle management and scalability, capabilities not found in the unmanaged service.
 
 ----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
 
 
  
