@@ -51,6 +51,17 @@ Before you begin the update:
 
 	To point the script to update the overcloud, use the following steps:
 
+	a. Login to seed VM
+
+		ssh <Seed VM>
+
+	b. Execute the following commands
+
+		source /root/tripleo/tripleo-undercloud-passwords
+		
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/seedrc
+
+	<!--- Removed as per JIRA
 	a. Copy the `stackrc` file to the undercloud and rename the file for the undercloud:
 
 		ssh heat-admin@<Undercloud IP>
@@ -69,7 +80,8 @@ Before you begin the update:
 	
 		source ~/uc_stackrc
 	
-	e. Execute the following commands:
+	--->
+	c. Execute the following commands:
 
 		source /opt/stack/venvs/ansible/bin/activate
 		cd /opt/stack/tripleo-ansible
@@ -79,7 +91,7 @@ Before you begin the update:
 
 	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
 
-	f. To test that the ansible environment is correctly set up, use the following command to ping all the nodes that ansible can find via its inventory: 
+	d. To test that the ansible environment is correctly set up, use the following command to ping all the nodes that ansible can find via its inventory: 
 
 		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
 
