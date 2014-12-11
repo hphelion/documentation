@@ -1012,5 +1012,3 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 
 
 ----
-####OpenStack trademark attribution
-*The OpenStack Word Mark and OpenStack Logo are either registered trad	emarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.*
