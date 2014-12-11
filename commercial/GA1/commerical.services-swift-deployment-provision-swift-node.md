@@ -99,7 +99,7 @@ Perform the following steps to add a physical server:
 		+--------------+-----------------------------------------------------------------------+
 7. Create the port, and enter the MAC address and node ID  using the following ironic command: 
  	
-		# ironic create-port -a $MAC -n $NODE_ID
+		# ironic port-create -a $MAC -n $NODE_ID
 
 
 	The following sample displays the output of the above command: 

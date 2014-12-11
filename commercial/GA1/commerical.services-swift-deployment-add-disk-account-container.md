@@ -92,7 +92,15 @@ Perform the following steps to add Swift disk to a ring:
 
 	**Note**: You can format all the disks with a single command (-d --all).
 
-6. List the file in the ring building directory. Identify `account.builder` and `container.builder` files.
+6. List the file in the ring building directory. Identify `account.builder` and `container.builder` files. 
+
+
+8. (Optional)If the builder file does not exit in the undercloud, copy the builder files using the following command.
+
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.builder /root/ring-building/
+
+
 
 7. Add the formatted disk to account and container ring(s).
 
