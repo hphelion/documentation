@@ -26,12 +26,12 @@ The *Readme.txt* that comes with a patch update will tell you what nodes need to
 
 If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/). -->
 
-Use the this document when updating the overcloud nodes.
+Use the this document when updating the undercloud nodes.
 
 * [Prerequisites](#prereqs)
 * [Update the undercloud](#update)
 * [Validate the update](#validate)
-* [Backup the updated overcloud](#backup)
+* [Backup the updated undercloud](#backup)
 * [Next Steps](#next-steps)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
@@ -41,6 +41,32 @@ You can monitor the update process, see [Monitoring the Update](/helion/openstac
 Before you begin the update:
 
 * If the seed VM needed updating, perform this update before updating the undercloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
+
+* Copy the TAR file to the seed node and extract contents from the seed node.
+
+	1. Log in the seed VM host.
+
+			sudo su -
+
+	2. SSH to seed cloud host
+
+			ssh <seed cloud host>
+
+	2. Use the following command 
+
+			scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/* /tmp
+
+	3. Untar `xvf tripleo-ansible<version>.tar`
+
+			tar xvf tripleo-ansible<version>.tar 
+
+	4. Move `tripleo-ansible` to  `/opt/stack/` and rename the file as`tripleo-ansible-orig`
+
+			mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
+	
+	5. Move `tripleo-ansible` from the `tmp` directory to `/opt/stack/`
+
+			mv /tmp/tripleo-ansible /opt/stack/
 
 * Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
@@ -52,7 +78,18 @@ Before you begin the update:
 
 * Point the install script to the undercloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the seed cloud host.
 
+
 	To point the script to update the undercloud, use the following steps:
+
+	a. Login to seed VM
+
+		ssh <Seed VM>
+
+	b. Run the following command
+
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/seedrc
+	
+	<!---Removed as per JIRA
 
 	a. Copy the `stackrc` file it from the undercloud and rename the file for the undercloud:
 
@@ -63,7 +100,7 @@ Before you begin the update:
 	b. On the seed cloud host, copy the `undercloud stackrc` file:
 
 		scp heat-admin@<Undercloud ip>:uc_stackrc ~/
-
+		
 	c. Edit the `uc_stackrc` file to replace the localhost in the `OS_AUTH_URL` variable with the IP address of the undercloud.  
 
 		export OS_AUTH_URL=http://<Undercloud>:5000/v2.0
@@ -71,8 +108,9 @@ Before you begin the update:
 	d. Source the file:
 	
 		source ~/uc_stackrc
+		--->
 	
-	e. Execute the following commands:
+	c. Execute the following commands:
 
 		source /opt/stack/venvs/ansible/bin/activate
 		cd /opt/stack/tripleo-ansible
@@ -80,9 +118,9 @@ Before you begin the update:
 		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
 		mkdir -p /var/log/ansible
 
-	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
+	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing manual update operations.
 
-	f. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+	d. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
 
 		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
 

@@ -43,9 +43,101 @@ Back up the seed node to restore in case of catastrophic failures.  For informat
 
 ## Back up the original seed settings ## {#backupsettings}
 
-Before you proceed with seed node update, you should have [extracted the update scripts](/helion/openstack/update/prereqs/101/#extract) delivered as part of the patch.  
+Before you proceed with seed node update, you should extract the updated scripts that is delivered as part of the patch.  
 
-Execute the `seed_update.sh` script to backup and copy the seed settings to host system:
+### Extract the required scripts and libraries ### {#extract}
+
+As mentioned in the [Update Overview](/helion/openstack/update/overview/101/), a HP Helion OpenStack patch update is composed of multiple major components.  
+
+The Overcloud node images can be one of the components. If you have [downloaded the patch update using Sherpa](/helion/openstack/update/download/101/), at this stage the overcloud node images are located in the undercloud image repository. 
+
+The other files come as TAR files and are delivered to the undercloud local filesystem, by default, the `/tmp/heat_templates` folder.  It is possible to change the location of the undercloud patch update tarballs, during or after deployment. See [Change the default](#default) below. 
+
+To extract the files:
+
+
+1. Use SSH to access the seed cloud host:
+
+		ssh heat-admin@<seed_cloud_host_IP>
+		sudo -i
+
+2. Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
+
+		ssh heat-admin@<undercloudIP>
+		sudo -i
+
+		scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/* /tmp
+		tar xvf tripleo-ansible<version>.tar 
+		mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
+		mv /tmp/tripleo-ansible /opt/stack/
+
+	Where:
+
+	* <Insert undercloudIP> is the IP of the undercloud node
+	* /tmp/heat_templates/ is the default location of the TAR files; enter the appropriate location, if you [changed the location](#default).
+
+	The files will now be extracted in the seed tmp node.  If desired, you can delete the files in the `/tmp/heat_templates` directory.
+
+#### Change the default #### {#default}
+
+It is possible to change the location of the undercloud patch update TAR files, during or after deployment. The default location is the `/tmp/heat_templates` folder.   
+
+If you have done so you can recall where you have changed the directory to by viewing the Sherpa configuration file.  
+
+The Sherpa configuration file for the undercloud can be found at `/etc/sherpa/sherpa.conf`. 
+
+The directory where the files where stored can be found by looking in the `RepositoryMgr` portion of `/etc/sherpa/sherpa.conf`. Search for the directory attribute as seen below:
+
+	'file': {
+	'classname': 'sherpa.handlers.repository.file.FileSystemHandler',
+	'destinations': [
+	{
+	'directory': '/tmp/heat_templates',
+
+When locating the update files, use the directory set in `/etc/sherpa/sherpa.conf`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Log in the seed VM host.
+
+		sudo su -
+
+2. SSH to seed VM.
+
+		ssh root @<Seed VM>
+
+2. Login to undercloud
+
+		ssh heat-admin@<undercloud_IP>
+
+3. Copy the `heat_templates` to /tmp
+
+		scp <username>@<kvmhost_ip>>:/tmp/heat_templates/* /tmp
+
+4. Untar `xvf tripleo-ansible<version>.tar` 
+		
+		tar xvf tripleo-ansible<version>.tar 
+
+5. Move `tripleo-ansible` to `tripleo-ansible-orig`
+
+		mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
+
+6. Move tripleo-ansible to `/opt/stack/`
+
+		mv /tmp/tripleo-ansible /opt/stack/
+
+7. Execute the `seed_update.sh` script to backup and copy the seed settings to host system:
 
 		./seed_update.sh --backup-seed <IP Address of Seed> <Backup Destination Folder>
 

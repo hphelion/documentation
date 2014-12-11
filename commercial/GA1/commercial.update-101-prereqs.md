@@ -25,7 +25,6 @@ PageRefresh();
 Prior to getting a system ready for update and performing the update, there might be a few tasks that you need to complete that could affect the update outcome.  Read this document for information about:
 
 * [Performing a System check](#check)
-* [Extracting the required scripts and libraries](#extract)
 * [Gathering information needed for update](#info)
 
 ### Perform a system check ### {#check}
@@ -56,6 +55,7 @@ Prior to getting a system ready for update and performing the update, there migh
 
 	Follow instructions for your Linux distribution to update.
 
+<!---removing as per JIRA 
 ### Extract the required scripts and libraries ### {#extract}
 
 As mentioned in the [Update Overview](/helion/openstack/update/overview/101/), a HP Helion OpenStack patch update is composed of multiple major components.  
@@ -106,6 +106,7 @@ The directory where the files where stored can be found by looking in the `Repos
 
 When locating the update files, use the directory set in `/etc/sherpa/sherpa.conf`.
 
+---->
 
 ## Gather information needed for update {#info}
 
@@ -137,7 +138,7 @@ To obtain the IP addresses of the undercloud nodes, run the following commands:
 
 4. Run the following command:
 
-	nova list
+		nova list
 
 The IP addresses of the Undercloud will be listed in the `nova list` results.
 
