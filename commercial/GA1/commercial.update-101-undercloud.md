@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/undercloud/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -42,33 +42,41 @@ Before you begin the update:
 
 * If the seed VM needed updating, perform this update before updating the undercloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
 
-* Copy the TAR file to the seed node and extract contents from the seed node.
+* Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
 
-	1. Log in the seed VM host.
+		ssh root@<seed_cloud_host_IP>
+		scp heat-admin@<undercloud_IP>:/tmp/heat_templates/* /tmp
+		
+		tar xvf tripleo-ansible<version>.tar 
+		mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
+		mv /tmp/tripleo-ansible /opt/stack/
 
-			sudo su -
+	Where:
 
-	2. SSH to seed cloud host
+	* <Insert undercloudIP> is the IP of the undercloud node
+	* /tmp/heat_templates/ is the default location of the TAR files; enter the appropriate location, if you [changed the location](#default).
 
-			ssh <seed cloud host>
+The files extracted in the seed tmp node.  If desired, you can delete the files in the `/tmp/heat_templates` directory.
 
-	2. Use the following command 
+#### Change the default #### {#default}
 
-			scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/* /tmp
+It is possible to change the location of the undercloud patch update TAR files, during or after deployment. The default location is the `/tmp/heat_templates` folder.   
 
-	3. Untar `xvf tripleo-ansible<version>.tar`
+If you have done so you can recall where you have changed the directory to by viewing the Sherpa configuration file.  
 
-			tar xvf tripleo-ansible<version>.tar 
+The Sherpa configuration file for the undercloud can be found at `/etc/sherpa/sherpa.conf`. 
 
-	4. Move `tripleo-ansible` to  `/opt/stack/` and rename the file as`tripleo-ansible-orig`
+The directory where the files where stored can be found by looking in the `RepositoryMgr` portion of `/etc/sherpa/sherpa.conf`. Search for the directory attribute as seen below:
 
-			mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
-	
-	5. Move `tripleo-ansible` from the `tmp` directory to `/opt/stack/`
+	'file': {
+	'classname': 'sherpa.handlers.repository.file.FileSystemHandler',
+	'destinations': [
+	{
+	'directory': '/tmp/heat_templates',
 
-			mv /tmp/tripleo-ansible /opt/stack/
+When locating the update files, use the directory set in `/etc/sherpa/sherpa.conf`.
 
-* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
+* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed. <!--- including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract)---->.
 
 * Backup a copy of the undercloud to restore in case of catastrophic failures.  For information, see [Back Up and Restore](/helion/openstack/backup.restore/).  
 
@@ -81,9 +89,9 @@ Before you begin the update:
 
 	To point the script to update the undercloud, use the following steps:
 
-	a. Login to seed VM
+	a. Login to seed
 
-		ssh <Seed VM>
+		ssh root@<seed_cloud_host_IP>
 
 	b. Run the following command
 
@@ -118,7 +126,7 @@ Before you begin the update:
 		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
 		mkdir -p /var/log/ansible
 
-	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing manual update operations.
+	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing all the update operations manually.
 
 	d. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
 
