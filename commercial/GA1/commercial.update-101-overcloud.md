@@ -51,9 +51,9 @@ Before you begin the update:
 
 	To point the script to update the overcloud, use the following steps:
 
-	a. Login to seed VM
+	a. Login to seed
 
-		ssh <Seed VM>
+		ssh root@<seed_cloud_host_IP>
 
 	b. Execute the following commands
 
@@ -163,7 +163,7 @@ The recommended update order is
 4. Object Operations (Swift) service 
 5. HP StoreVirtual VSA (for KVM only)
 
-All Ansible commands must be run in the SSH session setup that has `ansible` in the command prompt.  Validation techniques may be run from any seed SSH session.
+All ansible commands must be run in the SSH session setup that has `ansible` in the command prompt.  Validation techniques may be run from any seed SSH session.
 
 Run through the appropriate commands below for this order.
 

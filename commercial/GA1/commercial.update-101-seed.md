@@ -32,7 +32,9 @@ Updating the seed node involves saving current environment and configuration set
 
 * [Backup the seed cloud host](#backup)
 * [Backup the original seed settings](#backupsettings)
-* [Update the seed cloud host](#updateseed)
+* [Extract the required scripts and libraries](#extract)
+* [Update the seed](#updateseed)
+* [Download and extract the patch update](#extractpatch)
 <!-- Not needed for 1.01
 * [Restore the original seed settings](#restoreseed)
 * [Verify the update](#verify)
@@ -58,13 +60,13 @@ To extract the files:
 <!---
 1. Use SSH to access the seed cloud host:
 
-		ssh@<seed_cloud_host_IP>
+		ssh root@<seed_cloud_host_IP>
 		sudo -i
 -->
 
 1. Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
 
-		ssh <seed_cloud_host_IP>
+		ssh root@<seed_cloud_host_IP>
 		scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/* /tmp
 		
 		tar xvf tripleo-ansible<version>.tar 
@@ -80,7 +82,7 @@ To extract the files:
 
 2. Copy the TAR file to the KVM Host and extract contents. From an SSH session to the seed cloud host do the following:
 
-		ssh <seed_cloud_host_IP>
+		ssh root@<seed_cloud_host_IP>
 		ssh heat-admin@<Insert undercloudIP>
 		sudo -i
 		scp /tmp/heat_templates/seed_update_1.0.0-1.01.tar <username>@<KVMHOST_IP>:/tmp/
@@ -114,7 +116,7 @@ When locating the update files, use the directory set in `/etc/sherpa/sherpa.con
 
 
 
-###Update the seed
+###Update the seed (#updateseed)
 
 * Execute the `seed_update.sh` script to backup and copy the seed settings to host system:
 
@@ -122,7 +124,7 @@ When locating the update files, use the directory set in `/etc/sherpa/sherpa.con
 
 
 
-## Download and extract the patch update ## {#updateseed}
+## Download and extract the patch update ## {#extractpatch}
 
 For HP Helion OpenStack 1.01, you do not need to update the seed. 
 

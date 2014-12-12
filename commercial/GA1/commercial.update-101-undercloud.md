@@ -44,7 +44,7 @@ Before you begin the update:
 
 * Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
 
-		ssh <seed_cloud_host_IP>
+		ssh root@<seed_cloud_host_IP>
 		scp heat-admin@<undercloud_IP>:/tmp/heat_templates/* /tmp
 		
 		tar xvf tripleo-ansible<version>.tar 
@@ -91,7 +91,7 @@ When locating the update files, use the directory set in `/etc/sherpa/sherpa.con
 
 	a. Login to seed
 
-		ssh <seed_cloud_host_IP>
+		ssh root@<seed_cloud_host_IP>
 
 	b. Run the following command
 
