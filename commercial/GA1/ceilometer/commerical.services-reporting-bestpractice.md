@@ -29,7 +29,7 @@ Configuration changes that improve reporting API and database responsiveness by 
 - [Swift](#swift)
 
 ##Nova {#ceilandnova}
-By default, Nova does not send notifications. [Modify Nova's configuration file](#novaconfigfile) to enable sending notifications regarding Nova's usage and VM status. 
+The Nova service is configured by default to send certain notifications regarding usage and VM status information collected by Ceilometer. To increase, decrease, or stop these notifications  from the Nova service, modify [Nova's Ceilometer configuration file](#novaconfigfile).
 
 ###Data Collected by Ceilometer {#novadata}
 Once the *openstack.common.rpc* notifications are enabled in the configuration file, Nova will send the following data to Ceilometer:
@@ -73,26 +73,25 @@ Once the *openstack.common.rpc* notifications are enabled in the configuration f
 </table>
 
 ###Enable Nova Notifications {#novaconfigfile}
-This example is an excerpt of the configuration file including only the changes necessary to enable notifications. To enable Nova to publish notifications, change the *nova.conf* file as follows.
+This example is an excerpt of the configuration file including only the changes necessary to enable notifications. When notification publishing has been enabled, the *nova.conf* file will appear as follows. 
 	
 	notification_driver=nova.openstack.common.notifier.rpc_notifier
-	 
 	notification_topics=notifications
-	 
 	notify_on_state_change=vm_and_task_state
-	 
 	instance_usage_audit=True
-	 
 	instance_usage_audit_period=hour
 
+The *instance\_usage\_audit_period* interval can be set to check the instance's status every hour, once a day, once a week or once a month. Every time the audit period elapses, Nova sends a notification to Ceilometer to record whether or not the instance is live and running. Metering this statistic is critical if billing depends on usage. 
+
+###Restart the Nova Service
 Note that the Nova service must be restarted to pick up the changes to the configuration file. Log in to the controller node and execute the following to restart the Compute services:
 
-	# service nova-api restart
-	# service nova-cert restart
-	# service nova-consoleauth restart
-	# service nova-scheduler restart
-	# service nova-conductor restart
-	# service nova-novncproxy restart
+	service nova-api restart
+	service nova-cert restart
+	service nova-consoleauth restart
+	service nova-scheduler restart
+	service nova-conductor restart
+	service nova-novncproxy restart
 
 For a more in-depth look at how information is sent over *openstack.common.rpc*, refer to the [OpenStack Ceilometer documentation](http://docs.openstack.org/developer/ceilometer/measurements.html).
  
@@ -164,13 +163,13 @@ Reporting API provide the main access point for data stored in Ceilometer. An ex
 
 ##Modifying the List of Meters {#meterlist}
 Reducing the amount of unnecessary data sent to the storage reduces the load on the SQL-based cluster, which increases performance.
-Ceilometer data collection is configured by modifying the *pipeline.yaml* file. This configuration file is located in the */etc/ceilometer* folder on all of the controller nodes.
+Ceilometer data collection is configured by modifying the *pipeline.yml* file. This configuration file is located in the */etc/ceilometer* folder on all of the controller nodes.
 
-**Note**: The *pipeline.yaml* configuration file needs to be changed on **all** the controller nodes to actually affect the white-listing and or polling strategy.
+**Note**: The *pipeline.yml* configuration file needs to be changed on **all** the controller nodes to actually affect the white-listing and or polling strategy.
 
 The configuration file is comprised of two major elements: **sources** and **sinks**. **Sources** are data harvested from notifications posted by services or collected through polling. **Sinks** represent how that data is modified before it is published to the internal queue for collection and storage.
 
-In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased by editing the *pipeline.yaml* configuration file and then restarting the [Ceilometer Central Agent](/helion/openstack/services/reporting/components/#centralagent) and the [Ceilometer Collector](/helion/openstack/services/reporting/components/#collector). If more meters are desired, please refer to the [OpenStack Ceilometer documentation](http://docs.openstack.org/developer/ceilometer/measurements.html#measurements). 
+In the Sources section there is a list of default meters. These meters are the data that is going to be collected. The list of meters can be easily reduced or increased by editing the *pipeline.yml* configuration file and then restarting the [Ceilometer Central Agent](/helion/openstack/services/reporting/components/#centralagent) and the [Ceilometer Collector](/helion/openstack/services/reporting/components/#collector). If more meters are desired, please refer to the [OpenStack Ceilometer documentation](http://docs.openstack.org/developer/ceilometer/measurements.html#measurements). 
 
 	---
 	sources:
@@ -206,7 +205,7 @@ This option does not apply to meters that are notification-only because those me
 The **interval attribute** is the time between polls when a meter can be polled. 
 Meters that are available as both notification **and** polling are going to be polled at the specified interval. To rely on notifications rather than polling, set the interval attribute to 604800 seconds, or once a week.
 
-Here it is an example of a compute-only *pipeline.yaml* file where the poll interval has been increased to once daily. 
+Here it is an example of a compute-only *pipeline.yml* file where the poll interval has been increased to once daily. 
 
 **Note**: These changes will also completely STOP reception of data from all the non-listed meters.
 
@@ -244,7 +243,7 @@ The Swift service has five separate polling meters:
 - storage.containers.objects
 - storage.containers.objects.size
 
-Here is an example of the *pipeline.yaml* configuration file updating the Swift meters to poll only once an hour.
+Here is an example of the *pipeline.yml* configuration file updating the Swift meters to poll only once an hour.
 
 	---
 	sources:

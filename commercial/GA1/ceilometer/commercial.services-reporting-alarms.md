@@ -20,6 +20,8 @@ PageRefresh();
 
 The Metering service contains threshold alarms that you can configure to issue notifications for specific conditions. When the threshold condition is met or exceeded, an alarm is triggered. The action to be taken is defined within the alarm; a typical alarm response would be a log entry or an e-mail, but other options can be implemented.
 
+The Alarm services run on Overcloud Controller0.
+
 Access to Ceilometer is through the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html), or the low-level [REST API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
 Tasks that can be performed via the [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html):

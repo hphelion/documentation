@@ -20,9 +20,9 @@ There are three ways to pass configuration values into ALS:
 ##Configuration Files
 ALS maintains two separate configuration files; one for local and one for global variables. Values must be included in the appropriate file for their applicable scope.
 
-The global configuration file is located in the home <!--root?--> directory and is named *alsconfig.yml*. Global level commands create, delete, and add clusters. Global level configurations manage tenant, user, version, and other OpenStack information. 
+The global configuration file is located in the home directory and is named *alsconfig.yml*. Global level commands create, delete, and add clusters. Global level configurations manage tenant, user, version, and other OpenStack information. 
 
-The command-specific configuration file is located at the file specified by the --load argument. s named ??. This file records values that should be passed to arguments used in specific commands.
+The command-specific configuration file is located at the file specified by the --load argument.  This file records values that should be passed to arguments used in specific commands.
 
 ##Global Commands
 These variables affect the entire cluster; they are global in scope.

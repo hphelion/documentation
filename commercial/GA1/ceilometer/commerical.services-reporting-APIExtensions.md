@@ -29,6 +29,8 @@ HP has created and added a Health-Check API for the Ceilometer Reporting API. Th
 Currently the HA Proxy (Load Balancer) can validate that there is IP/HTTP connectivity with the service. If connected, it is safe to assume that it is alive; however, this assumption is not a guarantee that the service is actually functional. It could be alive but completely unable to retrieve data or perform write operations. This API extension further assesses the health of the service beyond the basic connectivity check.
 
 **Operations**
+
+The usual **HEAD** request only checks for basic IP/HTTP connectivity. The **GET** request performs a full round-trip connectivity check all the way to the database and back.
 <table>
 <tr><td width="120"></td><td>Successful Response</td><td>Error Response</td><td>Take Action</td></tr>
 <tr><td>HEAD /v2/health</td><td>204 No Content</td><td>404 Not Found, 500 Internal Server Error</td><td>Verify that the Ceilometer Reporting API are up and running.</td></tr>

@@ -40,7 +40,7 @@ Access to Ceilometer is through the command-line interface [(CLI)](http://docs.o
 	* [Logging](/helion/openstack/services/reporting/troubleshooting/#logging)
 	* [Messaging and Queuing Errors](/helion/openstack/services/reporting/troubleshooting/#qerrors)
 * [API Extensions: HP Health Check API](/helion/openstack/services/reporting/APIextensions/)
-* [Enabling Notifications from the Nova Service](/helion/openstack/services/reporting/bestpractices/#ceilandnova)
+* [Managing Notifications from the Nova Service](/helion/openstack/services/reporting/bestpractices/#ceilandnova)
 * [Best Practices and Performance Optimization](/helion/openstack/services/reporting/bestpractices/)
 	- [Configuring the Web Server for API Performance](/helion/openstack/services/reporting/bestpractices/#webserverapi)
 	- [Modifying the List of Active Meters](/helion/openstack/services/reporting/bestpractices/#meterlist)
