@@ -24,7 +24,9 @@ The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer serv
 ##Installation
 The metering service is automatically installed as part of the Helion OpenStack installation process. It may be necessary to install the [CLI](http://docs.openstack.org/user-guide/content/install_clients.html) separately to perform various administrative tasks. 
 
-The initial default configuration enables a very limited subset of all potential meters, collecting a few essential measurements from the Nova, Cinder, Glance, and Neutron services only. 
+The initial default configuration enables a limited subset of all potential meters, collecting a few essential measurements from the Nova, Cinder, Glance, and Neutron services only. With these measurements, the Ceilometer API can begin collecting basic Helion OpenStack usage and status information.  
+
+Additional metrics collection for all of the Helion OpenStack infrastructure services, as well as other application and platform services, are targeted for future Helion OpenStack releases.  
 
 ##Working with Ceilometer
 All the Ceilometer processes have a unified configuration file that can be found at */etc/ceilometer/ceilometer.conf* on the specific overcloud controller you are logged in to.
