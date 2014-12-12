@@ -5,7 +5,7 @@ permalink: /helion/openstack/update/undercloud/101/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -42,31 +42,19 @@ Before you begin the update:
 
 * If the seed VM needed updating, perform this update before updating the undercloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
 
-* Copy the TAR file to the seed node and extract contents from the seed node.
+* Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
 
-	1. Log in the seed VM host.
+		ssh <seed_cloud_host_IP>
+		scp heat-admin@<undercloud_IP>:/tmp/heat_templates/* /tmp
+		
+		tar xvf tripleo-ansible<version>.tar 
+		mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
+		mv /tmp/tripleo-ansible /opt/stack/
 
-			sudo su -
+	Where:
 
-	2. SSH to seed cloud host
-
-			ssh <seed cloud host>
-
-	2. Use the following command 
-
-			scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/* /tmp
-
-	3. Untar `xvf tripleo-ansible<version>.tar`
-
-			tar xvf tripleo-ansible<version>.tar 
-
-	4. Move `tripleo-ansible` to  `/opt/stack/` and rename the file as`tripleo-ansible-orig`
-
-			mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
-	
-	5. Move `tripleo-ansible` from the `tmp` directory to `/opt/stack/`
-
-			mv /tmp/tripleo-ansible /opt/stack/
+	* <Insert undercloudIP> is the IP of the undercloud node
+	* /tmp/heat_templates/ is the default location of the TAR files; enter the appropriate location, if you [changed the location](#default).
 
 * Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
 
