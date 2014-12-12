@@ -92,13 +92,8 @@ To extract the files:
 		tar xvf seed_update_1.0.0-1.01.tar
 
 
-###Update the seed
 
-* Execute the `seed_update.sh` script to backup and copy the seed settings to host system:
-
-		./seed_update.sh --backup-seed <IP Address of Seed> <Backup Destination Folder>
-
-#### Change the default #### {#default}
+##### Change the default ##### {#default}
 
 It is possible to change the location of the undercloud patch update TAR files, during or after deployment. The default location is the `/tmp/heat_templates` folder.   
 
@@ -119,13 +114,11 @@ When locating the update files, use the directory set in `/etc/sherpa/sherpa.con
 
 
 
+###Update the seed
 
+* Execute the `seed_update.sh` script to backup and copy the seed settings to host system:
 
-
-
-
-
-
+		./seed_update.sh --backup-seed <IP Address of Seed> <Backup Destination Folder>
 
 
 

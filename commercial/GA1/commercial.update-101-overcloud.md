@@ -89,7 +89,7 @@ Before you begin the update:
 		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
 		mkdir -p /var/log/ansible
 
-	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
+	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing all the update operations manually.
 
 	d. To test that the ansible environment is correctly set up, use the following command to ping all the nodes that ansible can find via its inventory: 
 

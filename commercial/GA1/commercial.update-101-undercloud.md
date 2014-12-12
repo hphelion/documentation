@@ -56,7 +56,27 @@ Before you begin the update:
 	* <Insert undercloudIP> is the IP of the undercloud node
 	* /tmp/heat_templates/ is the default location of the TAR files; enter the appropriate location, if you [changed the location](#default).
 
-* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
+The files extracted in the seed tmp node.  If desired, you can delete the files in the `/tmp/heat_templates` directory.
+
+#### Change the default #### {#default}
+
+It is possible to change the location of the undercloud patch update TAR files, during or after deployment. The default location is the `/tmp/heat_templates` folder.   
+
+If you have done so you can recall where you have changed the directory to by viewing the Sherpa configuration file.  
+
+The Sherpa configuration file for the undercloud can be found at `/etc/sherpa/sherpa.conf`. 
+
+The directory where the files where stored can be found by looking in the `RepositoryMgr` portion of `/etc/sherpa/sherpa.conf`. Search for the directory attribute as seen below:
+
+	'file': {
+	'classname': 'sherpa.handlers.repository.file.FileSystemHandler',
+	'destinations': [
+	{
+	'directory': '/tmp/heat_templates',
+
+When locating the update files, use the directory set in `/etc/sherpa/sherpa.conf`.
+
+* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed. <!--- including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract)---->.
 
 * Backup a copy of the undercloud to restore in case of catastrophic failures.  For information, see [Back Up and Restore](/helion/openstack/backup.restore/).  
 
@@ -69,9 +89,9 @@ Before you begin the update:
 
 	To point the script to update the undercloud, use the following steps:
 
-	a. Login to seed VM
+	a. Login to seed
 
-		ssh <Seed VM>
+		ssh <seed_cloud_host_IP>
 
 	b. Run the following command
 
@@ -106,7 +126,7 @@ Before you begin the update:
 		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
 		mkdir -p /var/log/ansible
 
-	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing manual update operations.
+	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing all the update operations manually.
 
 	d. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
 
