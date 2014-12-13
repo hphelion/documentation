@@ -45,3 +45,4 @@ Access to Ceilometer is through the command-line interface [(CLI)](http://docs.o
 	- [Configuring the Web Server for API Performance](/helion/openstack/services/reporting/bestpractices/#webserverapi)
 	- [Modifying the List of Active Meters](/helion/openstack/services/reporting/bestpractices/#meterlist)
 	- [Modifying Polling Intervals](/helion/openstack/services/reporting/bestpractices/#pollinterval)
+	- [Swift Service Considerations](/helion/openstack/services/reporting/bestpractices/#swift)

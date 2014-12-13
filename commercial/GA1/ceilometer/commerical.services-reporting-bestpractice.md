@@ -202,8 +202,8 @@ In the Sources section there is a list of default meters. These meters are the d
 ##Modifying the Polling Intervals {#pollinterval}
 This option does not apply to meters that are notification-only because those meters are not polled.
 
-The **interval attribute** is the time between polls when a meter can be polled. 
-Meters that are available as both notification **and** polling are going to be polled at the specified interval. To rely on notifications rather than polling, set the interval attribute to 604800 seconds, or once a week.
+The **interval attribute** is the time between polls. 
+Meters that are available as both notification *and* polling are going to be polled at the specified interval. To rely on notifications rather than polling, set the interval attribute to 604800 seconds, or once a week.
 
 Here it is an example of a compute-only *pipeline.yml* file where the poll interval has been increased to once daily. 
 
