@@ -16,17 +16,11 @@ The following topics explain how to install and configure the HP Helion Developm
 If you are installing the HP Helion Development Platform Community, see [HP Helion Development Community Installation and Configuration](/helion/devplatform/install/community/).
 
 * [Prerequisites](#prerequisites)
-
 * [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
-
 * [Install the Messaging Service](#install-messaging)
-
 * [Install the Application Lifecycle Service](#install-als)
-
 * [Install the Database Service](#install-database)
-
 * [Install the Marketplace Service](#install-marketplace)
-
 * [Troubleshooting](#troubleshooting)
 
 ## Prerequisites<a name="prerequisites"></a>
@@ -48,43 +42,37 @@ The installer requires the following packages. If they are not found, it will pr
 
 ### Downloading and unpacking the installation file
 
-The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installers request.
+The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.
 
-You can register and download the package from the following URL:
+1. Register and download the package from the following URL: [HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
 
-[HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
-
-To begin the installation, unpack the tar file:
-
-    # tar -zxvf hp_helion_devplatform_commercial.tar.gz.csu
-    
-This creates and populates a `dev-platform-installer` directory.
-
-    # cd dev-platform-installer
-    
-### Preparing to run the installer
-
-If your network uses a proxy, it may be necessary to set the proxy shell variable.
-
-	# export https_proxy=<ip address or url of http proxy> 
-
-Run this command to prepare the installer and ensure prerequisites are met. By default the Username is "admin", the Tenant Name is "admin" and the Region is "regionOne":
-
-    # ./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
-    
- Optionally, you can specify the Username, Tenant and Region
-    
-    # ./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
-    
- The install script also has a help feature
+1. Before you begin the installation, unpack the tar file.
  
- 	# ./DevelopmentPlatform_Setup.sh -h
- 	
-After the install command completes, you should see the following output from the command:
+		tar -zxvf hp_helion_devplatform_commercial.tar.gz.csu
+ 
+3. Run this command to create and populate a *dev-platform-installer* directory.
+ 
+		cd dev-platform-installer
+ 
+5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-Once the installation is complete, you should see the following output:
+		export https_proxy=<ip address or url of http proxy>
+ 
+7. Run this command to prepare the installer and ensure prerequisites are met. 
 
-    2014-06-17 16:53:19.765       INFO Install Complete
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
+ 
+9. Optionally, you can specify the Username, Tenant and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+ 
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
+ 
+11. Should you need more assistance during installation, the install script also has a help feature.
+
+		./DevelopmentPlatform_Setup.sh -h
+ 
+13. Once the installation is complete, you should see output similar to the following:
+ 
+		2014-06-17 16:53:19.765       INFO Install Complete
 
 ## Install the Messaging Service<a name="install-messaging"></a>
 This section provides details on installing the Messaging service from the Development Platform.

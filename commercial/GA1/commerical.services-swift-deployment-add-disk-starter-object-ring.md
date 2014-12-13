@@ -91,6 +91,11 @@ Perform the following steps to add Swift disk to a ring:
 
 6. List the file in ring directory and identify the `object.builder` file for object.
 
+7. (Optional)If the builder file does not exit in the undercloud, copy the builder files using the following command.
+ 
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
+		
+
 7. Add the formatted disk to object ring.
 
 		# ringos add-disk-to-ring -f /root/ring-building/object.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>

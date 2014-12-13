@@ -26,7 +26,7 @@ Our managed DNS service, based on the OpenStack Designate project, is engineered
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 
 
 - [Prerequisites](#preq)
@@ -42,7 +42,7 @@ It is important to read through this page before starting your installation as i
 
 
 ##Prerequisites {#preq}
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.0.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.0.1 over the previous version. </p>
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
 
 * HP Helion OpenStack is successfully installed
 * Download [DNSaaS Installer Image](#publication) <br /> 
@@ -206,7 +206,7 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
 1. SSH to install VM.
 
-		$ ssh --i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
+		$ ssh -i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
 
 
 	<!--

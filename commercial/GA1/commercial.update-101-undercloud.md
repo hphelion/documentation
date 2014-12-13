@@ -21,17 +21,17 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Updating the Undercloud
-<!-- No readme in 1.0.1 per Jon Lowe
+<!-- No readme in 1.01 per Jon Lowe
 The *Readme.txt* that comes with a patch update will tell you what nodes need to be updated as a result of this patch. It will be located in the directory described in the [Extract the required scripts and libraries](/helion/openstack/update/prereqs/101/#extract).  
 
 If the Readme.txt does not list undercloud nodes, skip this document and proceed to [Updating the Undercloud](/helion/openstack/update/overcloud/101/). -->
 
-Use the this document when updating the overcloud nodes.
+Use the this document when updating the undercloud nodes.
 
 * [Prerequisites](#prereqs)
 * [Update the undercloud](#update)
 * [Validate the update](#validate)
-* [Backup the updated overcloud](#backup)
+* [Backup the updated undercloud](#backup)
 * [Next Steps](#next-steps)
 
 You can monitor the update process, see [Monitoring the Update](/helion/openstack/update/monitor/101/).
@@ -42,7 +42,41 @@ Before you begin the update:
 
 * If the seed VM needed updating, perform this update before updating the undercloud, as described in [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/).
 
-* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed, including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract).
+* Copy the TAR file to the seed cloud host and extract contents. From an SSH session to the seed cloud host do the following:
+
+		ssh root@<seed_cloud_host_IP>
+		scp heat-admin@<undercloud_IP>:/tmp/heat_templates/* /tmp
+		
+		tar xvf tripleo-ansible<version>.tar 
+		mv /opt/stack/tripleo-ansible /opt/stack/tripleo-ansible-orig
+		mv /tmp/tripleo-ansible /opt/stack/
+
+	Where:
+
+	* <Insert undercloudIP> is the IP of the undercloud node
+	* /tmp/heat_templates/ is the default location of the TAR files; enter the appropriate location, if you [changed the location](#default).
+
+The files extracted in the seed tmp node.  If desired, you can delete the files in the `/tmp/heat_templates` directory.
+
+#### Change the default #### {#default}
+
+It is possible to change the location of the undercloud patch update TAR files, during or after deployment. The default location is the `/tmp/heat_templates` folder.   
+
+If you have done so you can recall where you have changed the directory to by viewing the Sherpa configuration file.  
+
+The Sherpa configuration file for the undercloud can be found at `/etc/sherpa/sherpa.conf`. 
+
+The directory where the files where stored can be found by looking in the `RepositoryMgr` portion of `/etc/sherpa/sherpa.conf`. Search for the directory attribute as seen below:
+
+	'file': {
+	'classname': 'sherpa.handlers.repository.file.FileSystemHandler',
+	'destinations': [
+	{
+	'directory': '/tmp/heat_templates',
+
+When locating the update files, use the directory set in `/etc/sherpa/sherpa.conf`.
+
+* Review the [update prerequisites](/helion/openstack/update/prereqs/101/) and make sure all necessary tasks have been performed. <!--- including [extracting the update scripts](/helion/openstack/update/prereqs/101/#extract)---->.
 
 * Backup a copy of the undercloud to restore in case of catastrophic failures.  For information, see [Back Up and Restore](/helion/openstack/backup.restore/).  
 
@@ -52,7 +86,18 @@ Before you begin the update:
 
 * Point the install script to the undercloud. The patch update script is based on the Ansible platform. For the undercloud, because the script is launched from the seed cloud host, you need to point the script to the seed cloud host.
 
+
 	To point the script to update the undercloud, use the following steps:
+
+	a. Login to seed
+
+		ssh root@<seed_cloud_host_IP>
+
+	b. Run the following command
+
+		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/seedrc
+	
+	<!---Removed as per JIRA
 
 	a. Copy the `stackrc` file it from the undercloud and rename the file for the undercloud:
 
@@ -63,7 +108,7 @@ Before you begin the update:
 	b. On the seed cloud host, copy the `undercloud stackrc` file:
 
 		scp heat-admin@<Undercloud ip>:uc_stackrc ~/
-
+		
 	c. Edit the `uc_stackrc` file to replace the localhost in the `OS_AUTH_URL` variable with the IP address of the undercloud.  
 
 		export OS_AUTH_URL=http://<Undercloud>:5000/v2.0
@@ -71,8 +116,9 @@ Before you begin the update:
 	d. Source the file:
 	
 		source ~/uc_stackrc
+		--->
 	
-	e. Execute the following commands:
+	c. Execute the following commands:
 
 		source /opt/stack/venvs/ansible/bin/activate
 		cd /opt/stack/tripleo-ansible
@@ -80,9 +126,9 @@ Before you begin the update:
 		export ANSIBLE_LOG_PATH=/var/log/ansible/ansible.log
 		mkdir -p /var/log/ansible
 
-	The command prompt should change to `(ansible)`. You will need to use this `(ansible)` session to perform all the update operations.
+	The command prompt should change to `(ansible)`. You must use  `(ansible)` session for executing all the update operations manually.
 
-	f. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
+	d. To test that the ansible environment is correctly setup, use the following command to ping all the nodes that ansible can find via its inventory: 
 
 		ansible all -u heat-admin -i plugins/inventory/heat.py -m ping  
 
@@ -153,7 +199,17 @@ Use the following steps to load upload an image and its dependencies:
 		scp heat-admin@<Insert undercloudIP>:/tmp/heat_templates/undercloud.tar /tmp.  
 		tar xvf undercloud.tar 
 
-4. Run the following commands:
+4. Rename the old undercloud image using the following commands
+
+		export IMAGE_ID='glance image-list | grep undercloud | grep qcow2 | awk '{print $2}''
+		export RAMDISK_ID='glance image-list | grep undercloud-initrd | awk '{print $2}''
+		export KERNEL_ID='glance image-list | grep undercloud-vmlinuz | awk '{print $2}''
+
+		glance image-update --name undercloud-old $IMAGE_ID
+		glance image-update --name undercloud-initrd-old $RAMDISK_ID
+		glance image-update --name undercloud-vmlinuz-old $KERNEL_ID
+
+5. Upload new undercloud images to glance
 
 		glance image-create --is-public True --is-protected False --name undercloud.vmlinuz --file undercloud.vmlinuz --disk-format aki --container-format aki
 

@@ -85,7 +85,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 		*  Run the following command to view the virtual IP of the controller nodes
 
-				/etc/keepalived/keepalived.conf
+				vi /etc/keepalived/keepalived.conf
 
 
 8. Restart the HA Proxy service on all these nodes.

@@ -59,7 +59,7 @@ Perform the following steps to identify the disks of the node to be removed:
 
 		# cd /root/ring-building
 
-3. Identify the builder file for account and container rings. It will be `account.builder` and `container.ring`.
+3. Identify the builder file for account and container rings. It will be `account.builder` and `container.builder`.
 
 4. List the disks in the current `account.builder` and `container.builder` files.
 
@@ -95,7 +95,7 @@ Perform the following steps to identify the disks of the node to be removed:
 
 9. Repeat steps from **5-8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
-10. Verify the `account.ring.gz`  and `container.builder` files.
+10. Verify the `account.rbuilder`  and `container.builder` files.
     	
 		# ringos view-ring -f /root/ring-building/account.builder
     	# ringos view-ring -f /root/ring-building/container.builder

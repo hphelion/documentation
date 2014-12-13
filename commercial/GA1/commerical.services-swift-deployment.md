@@ -322,6 +322,9 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.builder /root/ring-building/
 		
 
 	The following sample displays all the rings and builder files from **19.0.2.22**
@@ -329,6 +332,9 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/object.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/account.ring.gz /root/ring-building/
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/container.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/object.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/container.builder /root/ring-building/
 	
 	**Note**: The ring files are identical on both the starter swift nodes. You can copy **.gz** files  in either of the starter nodes as they are identical.
 
