@@ -6,7 +6,7 @@ title: "HP Application Lifecyle Service (ALS) Client"
 
 ---
 
-<!--UNDER REVIEW-->
+<!--UNDER REVISION-->
 # HP Application Lifecycle Service (ALS) Client Configuration Reference
 
 The ALS command-line interface (CLI) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the CLI when the Horizon management console is unavailable or when direct access is preferred. 
