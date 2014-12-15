@@ -67,6 +67,10 @@ Options that can be passed to the command that creates a cluster.
 
 <pre>als [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
 
+For help with this command in the application, enter
+
+<pre>als help cluster-create</pre>
+
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th>
 </tr>
