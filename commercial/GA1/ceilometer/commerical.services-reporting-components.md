@@ -27,7 +27,7 @@ The TripleO installation creates several management nodes running different mete
 <img src="media/ceil_overallarchi.png"/>
 
 ##Components in TripleO Overcloud Controller0
-This controller node is the first of the High Available (HA) cluster. In this node there is an instance of the Ceilometer API running under the HA Proxy Virtual IP address.
+This controller node is the first of the High Available (HA) cluster. In this node there is an instance of the Ceilometer API running under the HA Proxy Virtual IP address. The Alarm services run on Overcloud Controller0.
 
 **Note**: When a configuration change is made to an API running under the HA Proxy, that change needs to be replicated in **all** controllers.
 
@@ -50,7 +50,7 @@ The ceilometer-api are now running as part of the Apache2 service together with 
 
 Just like Controller0, Controller1 has an instance of the Ceilometer API running under the HA Proxy.
 
-##Ceilometer Components in TripleO Overcloud ManagementController
+##Ceilometer Components in TripleO Overcloud Controller2
 
 This node is where all other Ceilometer components are running.
 
@@ -61,7 +61,7 @@ The Sample Polling is part of the Central Agent. Once sent to the RabbitMQ servi
 <img src="media/ceil_collectorandagents.png"/>
 
 ###Ceilometer Central Agent {#centralagent}
-The Central Agent is responsible for coordinating the polling activity. It parses the *pipeline.YAML* configuration file and identifies all the sources that need to be polled from. The sources are then evaluated using a discovery mechanism and all the sources are translated to resources where a dedicated pollster can retrieve and publish data. At each identified interval the discovery mechanism is triggered, the resource list is composed, and the data is polled and sent to the queue.
+The Central Agent is responsible for coordinating the polling activity. It parses the *pipeline.yml* configuration file and identifies all the sources that need to be polled from. The sources are then evaluated using a discovery mechanism and all the sources are translated to resources where a dedicated pollster can retrieve and publish data. At each identified interval the discovery mechanism is triggered, the resource list is composed, and the data is polled and sent to the queue.
 
 Metering processes should normally be operating at all times. Upstart will continually attempt to restart stopped processes even if the process was deliberately stopped manually. In order to avoid this conflict, stop or start processes using the following commands.
 

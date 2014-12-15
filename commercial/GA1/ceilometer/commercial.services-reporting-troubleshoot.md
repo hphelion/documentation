@@ -55,8 +55,14 @@ Example error:
     
     Error: unable to connect to node 'rabbit@xxxx-rabbitmq0000': nodedown
  
-Use the RabbitMQ CLI to re-start the instances and the host.
+Use the RabbitMQ CLI to re-start the instances and then the host.
 
-	sudo invoke-rc.d rabbitmq-server start   <- Restarts the downed cluster node if error 
-	sudo rabbitmqctl start_app     <- Starts the RabbitMQ host
+1. Restart the downed cluster node.
+ 
+		sudo invoke-rc.d rabbitmq-server start
+ 
+3. Restart the RabbitMQ host
+
+		sudo rabbitmqctl start_app
+
 

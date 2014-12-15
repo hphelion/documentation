@@ -14,7 +14,7 @@ PageRefresh();
 </script>
 
 #HP Helion OpenStack&#174; Metering Service: Available Meter Types
-The Telemetry and Reporting service contains three types of meters:
+The Metering service contains three types of meters:
 
 - **Cumulative** - A cumulative meter measures date over time (for example, instance hours).
 - **Gauge** - A gauge measures discrete items (for example, floating IPs or image uploads) or fluctuating values (such as disk input or output).
