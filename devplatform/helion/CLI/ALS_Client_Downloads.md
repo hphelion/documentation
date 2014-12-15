@@ -7,7 +7,7 @@ title: "HP Application Lifecyle Service (ALS) Client"
 <!--PUBLISHED-->
 # HP Application Lifecycle Service (ALS) Client
 
-Click the link that is appropriate for your operating system.
+Click the download link that is appropriate for your operating system.
 
 * [Windows](http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/helion-1.0.1-win32-ix86.zip)
 * [Linux x86](http://g7743e0143085e2793a5aef95989b09ea.cdn.hpcloudsvc.com/helion-1.0.1-linux-glibc2.3-ix86.zip)
