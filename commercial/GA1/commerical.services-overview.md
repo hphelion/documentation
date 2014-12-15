@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/overview/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -48,6 +48,7 @@ The service user accounts include, but are not limited to, the following:
 - Cinder
 - Heat
 - Keystone
+- Ceilometer
 
 ## OpenStack Services {#OpenStack}
 
@@ -85,6 +86,9 @@ See [Overview of the Telemetry and Reporting service](/helion/openstack/services
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
+**Metering Operations**. The Metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data for use by other services, trigger specific action when a pre-defined condition is met, or both. Also known as **Ceilometer**.
+
+See [Overview of the Volume Operations Service](/helion/openstack/services/reporting/overview/).
 
 ## Dashboard Services {#Dashboard}
 

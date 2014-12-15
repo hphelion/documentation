@@ -11,7 +11,7 @@ title: "HP Application Lifecyle Service (ALS) Client"
 
 The ALS command-line interface (CLI) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the CLI when the Horizon management console is unavailable or when direct access is preferred. 
 
-- [Global Options](#global})
+- [Global Options](#global)
 - [Available Commands](#commands)
 	- [Create a Cluster](#create)
 	- [Delete a Cluster](#delete)
@@ -67,7 +67,6 @@ Options that can be passed to the command that creates a cluster.
 
 <pre>als [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
 
-<table>
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th>
 </tr>
@@ -161,7 +160,6 @@ Options that can be passed to the command that deletes a cluster.
 ###Use Syntax
 <pre>als [global options] <b>command cluster-delete [command options] [arguments...] </pre>
 ###Options
-<table>
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th>
 </tr>
