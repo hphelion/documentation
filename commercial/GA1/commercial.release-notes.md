@@ -44,6 +44,18 @@ The following features have been added to HP Helion OpenStack, by release.
 
 **OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
 
+**Note:** In Helion 1.0, the Compute service is configured to provide only a subset of measurements listed at http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the origin is listed as notification. This includes: 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;"><th>Name</th><th>Type</th><th>Unit</th><th>Resource</th><th>Note</th></tr>
+<tr><td>instance</td><td>g</td><td>instance</td><td>inst ID</td><td>Existence of instance</td></tr>
+<tr><td>instance:<type></td><td>g</td><td>instance</td><td>inst ID</td><td>Existence of instance <type> (openstack types)</td></tr>
+<tr><td>memory</td><td>g</td><td>MB</td><td>inst ID</td><td>Volume of RAM allocated in MB</td></tr>
+<tr><td>vcpus</td><td>g</td><td>vcpu</td><td>inst ID</td><td>Number of VCPUs</td></tr>
+<tr><td>disk.root.size</td><td>g</td><td>GB</td><td>inst ID</td><td>Size of root disk in GB</td></tr>
+<tr><td>disk.ephemeral.size</td><td>g</td><td>GB</td><td>inst ID</td><td>Size of ephemeral disk in GB</td></tr>
+</table>
+
 **Other Services** [Other services](/helion/openstack/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
 
 **LogStash/ElasticSearch** - This service provides enhanced security and supportability of the cloud by offering centralized logging.
