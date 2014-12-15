@@ -53,7 +53,7 @@ Close the Powershell window and reopen as administrator for the policy changes t
  
 ##Run the installer package## {#RuntheInstallerPackage}
 
-Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the [Release Notes](/cli/windows/release-notes) for details on the current release.) 
+Download the latest HP Helion Public Cloud CLI software package for Windows PowerShell.  (See the [Release Notes](/publiccloud/cli/windows/release-notes) for details on the current release.) 
 
 Launching the Windows installer package loads the following wizard.
 
