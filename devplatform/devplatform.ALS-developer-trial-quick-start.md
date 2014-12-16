@@ -80,11 +80,7 @@ Before you start the installation and configuration process, ensure that you hav
 ##After you install {#after}
 
 Once the installation completes, you can load the ALS Console at the URL obtained in step 15 using the first username and first password you specified in step 13. After you log into the Console, you can access the [ALS User Documentation](/als/v1/user/) for instructions to create users and deploy applications.
-You may be presented with text that warns or notes that the site has a self-signed certificate. When loaded in a browser, you may get a display indicating that this sight is not *trusted*.
+You may be presented with text that warns or notes that the site has a self-signed certificate or, when loaded in a browser, you may get a display indicating that the site is not trusted. These can be safely ignored.
 
 
-Your infrastructure is now ready for development. You can find some simple sample development tasks in our [workbook](/helion/devplatform/appdev/) section. This area will be updated continuously with more languages and samples, so please stop by often to see the newest content.
- 
-----
-
-
+Your infrastructure is now ready for development. You can find some simple sample development tasks in our [Application Developer](/helion/devplatform/appdev/) section. This area will be updated continuously with more languages and samples, so please stop by often to see the newest content.

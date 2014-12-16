@@ -5,7 +5,7 @@ permalink: /helion/openstack/technical-overview/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <!---
 <p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p> -->
@@ -137,6 +137,11 @@ The following table outlines the functionality of HP Helion OpenStack services b
 	 <br><br> <a href =" /helion/openstack/services/dvr/overview/">Learn more</a> HP Helion OpenStack DVR service.</td> 
 	<td> Administrators can  create centralized router (legacy router).</td>
 </tr> 
+<tr style="background-color: white; color: black;">
+	<td><b>Ceilometer</b></td>
+ 	<td>HP Helion OpenStack Metering, based on Ceilometer, takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. <br><br> <a href =" /helion/openstack/services/dvr/overview/">Learn more</a> about HP Helion OpenStack Metering service.</td> 
+	<td> Administrators can create and configure information collection from various HP Helion services.</td>
+</tr>
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
@@ -158,7 +163,8 @@ The following diagram depicts a simplified deployment scenario using KVM.
 ###ESX environment {#esx-env}
 
 The following diagram depicts a simplified deployment scenario using ESX.
-<img src="media/topology_esx.png"/)>
+
+<img src="media/topology_esxnew.png"/)>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
