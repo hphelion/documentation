@@ -25,7 +25,7 @@ If your datacenter had a power outage and the HP Helion OpenStack cloud systems 
 
 ### Start the seed cloud host
 
-1. Re-create the bridge configuration – I do not know if someone already have this documented. waiting for Tom Hancock information
+1. Re-create the bridge configuration -- I do not know if someone already have this documented. waiting for Tom Hancock information
 
 2. SSH to the KVM Host and start the Seed VM (virsh start seed)
 
