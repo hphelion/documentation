@@ -78,17 +78,13 @@ See [Overview of the Object Operations service](/helion/openstack/services/objec
 
 See [Overview of the Orchestration service](/helion/openstack/services/orchestration/overview).
 
-<!---**Telemetry and Reporting**. The Telemetry and Reporting service enables a single infrastructure to collect measurements within your cloud environment.  Also known as **Ceilometer**.
-
-See [Overview of the Telemetry and Reporting service](/helion/openstack/services/reporting/overview).-->
-
 **Volume Operations**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. Also known as **Cinder**.
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
-**Metering Operations**. The Metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data for use by other services, trigger specific action when a pre-defined condition is met, or both. Also known as **Ceilometer**.
+**Metering**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. Also known as **Ceilometer**.
 
-See [Overview of the Volume Operations Service](/helion/openstack/services/reporting/overview/).
+See [Overview of the Metering Service](/helion/openstack/services/reporting/overview/).
 
 ## Dashboard Services {#Dashboard}
 
