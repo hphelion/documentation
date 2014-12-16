@@ -163,7 +163,8 @@ The following diagram depicts a simplified deployment scenario using KVM.
 ###ESX environment {#esx-env}
 
 The following diagram depicts a simplified deployment scenario using ESX.
-<img src="media/topology_esx.png"/)>
+
+<img src="media/topology_esxnew.png"/)>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
