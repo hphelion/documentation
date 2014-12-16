@@ -82,7 +82,7 @@ See [Overview of the Orchestration service](/helion/openstack/services/orchestra
 
 See [Overview of the Volume Operations Service](/helion/openstack/services/volume/overview).
 
-**Metering Operations**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. Also known as **Ceilometer**.
+**Metering**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. Also known as **Ceilometer**.
 
 See [Overview of the Metering Service](/helion/openstack/services/reporting/overview/).
 
