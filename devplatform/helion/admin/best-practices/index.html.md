@@ -4,38 +4,61 @@ permalink: /als/v1/admin/best-practices/
 product: devplatform
 title: "Best Practices"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Best Practices {#index-0}
 
 ##Applying Updates {#applying-updates}
 
-[Applying Updates](#applying-updates)
-    -   [Backup & Migration](#backup-migration)
-        -   [Limitations](#limitations)
-            -   [Custom Services](#custom-services)
-            -   [Hard-coded Database Connection
-                Info](#hard-coded-database-connection-info)
-            -   [DEAs](#deas)
-        -   [Exporting the server data](#exporting-the-server-data)
-        -   [Scheduled backups](#scheduled-backups)
-        -   [Importing the server data](#importing-the-server-data)
-    -   [Upgrading (v1.0 and later)](#upgrade)
-    -   [Server Monitoring with New
-        Relic](#server-monitoring-with-new-relic)
-    -   [System Monitoring with Nagios](#system-monitoring-with-nagios)
-    -   [Persistent Storage](#storage)
-        -   [Relocating Services, Droplets, and
-            Containers](#relocating-services-droplets-and-containers)
-        -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
+- [Passwordless SSH Authentication](#passwordless)
+- [Applying Updates](#applying-updates)
+- [Security Patches](#security)
+-   [Backup & Migration](#backup-migration)
+-   [Limitations](#limitations)
+	-   [Custom Services](#custom-services)
+    -   [Hard-coded Database Connection Info](#hard-coded-database-connection-info)
+    -   [DEAs](#deas)
+	-   [Exporting the server data](#exporting-the-server-data)
+	-   [Scheduled backups](#scheduled-backups)
+-   [Importing the server data](#importing-the-server-data)
+-   [Upgrading (v1.0 and later)](#upgrade)
+-   [Persistent Storage](#storage)
+    -   [Relocating Services, Droplets, and
+        Containers](#relocating-services-droplets-and-containers)
+    -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
+<!--   [Server Monitoring with New Relic](#server-monitoring-with-new-relic)
+-   [System Monitoring with Nagios](#system-monitoring-with-nagios) -->
 
+##Passwordless SSH Authentication {#passwordless}
 
+Routine cluster configuration and maintenance operations such as cluster
+upgrades are simpler if the cluster nodes are configured with
+[key-based passwordless SSH login](https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Key-Based_SSH_Logins).
+
+This can be done either prior to cluster setup and role assignment or
+afterwards.
+
+The Constructor VM automatically generates a new 2048 bit RSA key pair on
+first boot which can be used for this purpose. If you wish to use a
+stronger key, or one with a passphrase, follow the Ubuntu documentation
+on [Generating RSA Keys](https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Generating_RSA_Keys).
+
+To transfer the public key from the Core node to all non-Core nodes execute:
+
+    $ ssh-copy-id stackato@<node hostname or IP>
+
+With the Core node’s public key in place on all cluster nodes, you can
+[disable password authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication) if desired.
+
+##Applying Updates {#applying-updates}
 Major version upgrades of Application Lifecycle Service can be done using [*kato node
 upgrade*](/als/v1/admin/server/upgrade/#upgrade) or a [*migration to a new VM
 or cluster*](#bestpractices-migration), but patch releases (normally
 minor fixes to particular components) can be applied in place using the
 [*kato patch*](/als/v1/admin/reference/kato-ref/#kato-command-ref-patch)
 command.
+
+**Note**: If there is a web proxy on your network between the ASL systems and the ActiveState servers, first configure all nodes as per the Proxy Settings \<server-config-http-proxy\> documentation.
 
 To see a list of patches available from HP, run the following
 command on any Application Lifecycle Service VM:
@@ -67,10 +90,67 @@ Applying patches will automatically restart all patched roles. To
 prevent this, use the `--no-restart` option.
 
 To apply a patch only to the local Application Lifecycle Service VM (not the whole cluster),
-use the `--only-this-node` option.
+use the **--only-this-node** option.
 
-Backup & Migration {#backup-migration}
----------------------------------------------------------------------
+##Security Patches {#security}
+Both the ALS VM and the Docker base image used for application
+containers run Ubuntu. To maintain an up-to-date system with all known
+security patches in place, the VM and Docker base images should be
+updated with the following process whenever an important security update
+becomes available in the Ubuntu repositories.
+
+###Upgrade the VM
+To upgrade the VM, run the following command on all cluster nodes, one node at a time:
+
+    sudo unattended-upgrades -d
+
+If you are using a proxy you may need to export http\_proxy and
+https\_proxy environment variables. For example:
+
+    sudo sh -c "http_proxy=http://myproxy.example.com:3128 \
+    https_proxy=http://myproxy.example.com:3128 unattended-upgrades -d"
+
+This will run the [unattended-upgrades](http://manpages.ubuntu.com/manpages/lucid/man8/unattended-upgrade.8.html) script to install all upgrades
+from the *-security* stream.
+
+Each node should be rebooted after *unattended-upgrades* completes to
+ensure that all new kernels, modules, and libraries are loaded.
+
+###Upgrade the Docker image
+The base Docker image used for application containers should also be
+upgraded once the VM is up-to-date. Perform the following steps on each
+DEA node in the cluster, one node at a time:
+
+1.  Create a new working directory:
+
+        $ mkdir ~/upgrade-alsek && cd $_
+
+2.  Create a *Dockerfile*. In this new directory, create a file named
+    **Dockerfile** and add the following:
+
+        FROM stackato/stack-alsek
+        RUN apt-get update
+        RUN unattended-upgrades -d
+        RUN apt-get clean && apt-get autoremove
+
+3.  Build the Docker image. Give the image a tag relevant to this particular upgrade (e.g. “upgrade-2014-09-19”):
+
+        $ sudo docker build -rm -t stackato/stack-alsek:upgrade-2014-09-19 .
+
+    The **.** (dot) at the end is important! It specifies that the *Dockerfile* to use is the one in the current directory.
+
+4.  Tag the Docker image as the *latest* stack-alsek image:
+
+        $ sudo docker tag stackato/stack-alsek:upgrade-2014-09-19 stackato/stack-alsek:latest
+
+5.  All running applications will need to be restarted by their owners or admins (using the Helion management console or the ALS client) in order for security upgrades to take effect within their application containers. You can check which image running apps are using by running *docker ps* on your DEAs (but **do not** use *docker restart*).
+
+	**DEA Notes**
+	
+	If you have DEA autoscaling enabled, the DEA template must be upgraded as well when you upgrade the Docker image. To avoid extra work managing a cluster with several DEA nodes, you may wish to share the Docker base image from a Docker Registry on your network instead of generating an updated image on each individual node.
+
+##Backup & Migration {#backup-migration}
+
 
 This section describes backing up Application Lifecycle Service data and importing it into a
 new Application Lifecycle Service system. The export/import cycle is required for:
@@ -78,33 +158,23 @@ new Application Lifecycle Service system. The export/import cycle is required fo
 -   backups of system data
 -   moving an Application Lifecycle Service cluster to a new location
 
-### Limitations[](#limitations "Permalink to this headline")
+### Limitations {#limitations}
 
 Before deciding on a backup, upgrade or migration strategy, it's
 important to understand what data the Application Lifecycle Service system can save, and what
 may have to be reset, redeployed, or reconfigured. This is especially
 important when migrating to a new cluster.
 
-#### Custom Services[](#custom-services "Permalink to this headline")
+#### Custom Services {#custom-services}
 
-Application Lifecycle Service can export and import data from built-in data services running
-on Application Lifecycle Service nodes, but it has no mechanism to handle data in [*external
-databases*](/als/v1/admin/cluster/external-db/#external-db) (unless
-`kato export|import` has also been modified to
-recognize the custom service).
+Application Lifecycle Service can export and import data from built-in data services running on Application Lifecycle Service nodes, but it has no mechanism to handle data in [external databases](/als/v1/admin/cluster/external-db/#external-db) unless
+*kato export|import* has also been modified to recognize the custom service.
 
-Backing up or moving such databases should be handled separately, and
-user applications should be reconfigured and/or redeployed to connect
-properly to the new database host if the database is not implemented as
-an Application Lifecycle Service data service.
+Backing up or moving such databases should be handled separately from databases implemented as an Application Lifecycle Service data service. User applications should be reconfigured and/or redeployed after the update to ensure they connect properly to the new database host.
 
-#### Hard-coded Database Connection Info[](#hard-coded-database-connection-info "Permalink to this headline")
+#### Hard-coded Database Connection Info {#hard-coded-database-connection-info}
 
-Applications which write database connection details during staging
-rather than taking them from environment variables at run time, must be
-re-staged (e.g. redeployed or updated) to pick up the new service
-location and credentials. Restarting the application will not
-automatically force restaging.
+Applications which write database connection details during staging rather than taking them from environment variables at run time must be re-staged (redeployed or updated) to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
 
 #### DEAs[](#deas "Permalink to this headline")
 
@@ -203,14 +273,56 @@ hostname of the old Core node:
 
     $ kato data import --cluster helion-host.example.com
 
-##Upgrading (v1.0 and later) {#upgrade}
-
-
-The `kato node upgrade` command was added in
+##Upgrading {#upgrade}
+The *kato node upgrade* command was added in
 Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
 [*Upgrading Application Lifecycle Service*](/als/v1/admin/server/upgrade/#upgrade) for full
 instructions.
 
+The *kato data import* command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:
+
+-   Users will be imported, and each user will be added to their own Organization.
+-   Existing admin users will have corresponding (global) admin privileges in the new system.
+-   Groups (deprecated) will be converted into Organizations. 
+-   All apps and users will be placed within a "default" Space within each organization.
+-   Services will be imported.
+-   Apps will be automatically redeployed. Any apps which fail to do so will be listed, and must be redeployed manually by their owners. Some apps are [known to be incompatible](#incompatible) with automatic redeployment.
+-   AOK (LDAP) configuration will be imported.
+
+Other than these notes, the migration will follow the same Export and Import steps outlined below.
+
+###Incompatible Apps {#incompatible}
+Applications that use the following techniques will not import successfully from version 2.10 to newer systems and will need to be modified or manually redeployed.
+
+-   Hard-coded references to port 3000 for HTTP within the application container. Use the **$PORT** environment variable instead to get the value dynamically.
+-   Use of <b>$VMC\_</b> environment variables. Use the <b>$VCAP_</b> equivalents. 
+-   Hard-coded paths using */app* or */app/app*. Use paths relative to *\$HELION\_APP\_ROOT* instead.
+
+###Exporting the server data
+Data export is done with the *kato data export* command. The command can export:
+
+-   Internal data (users, groups, quotas, settings, etc.)
+-   Application droplets
+-   Data services
+
+You can save the .tgz output file directly to a mounted external filesystem by specifying the full path and filename during export (see backup example below). Alternately, wait until after the export and move the .tgz file to another system using [scp](http://manpages.ubuntu.com/manpages/lucid/man1/scp.1.html) or another utility (sftp, rsync). 
+
+Start by logging into the VM via SSH:
+
+    ssh stackato@stackato-xxxx.local
+
+A single-node micro cloud VM can be backed up with a single command:
+
+    $ kato data export --only-this-node
+
+A clustered setup can be backed up with a single command:
+
+    $ kato data export –cluster
+
+**Note**: Exporting data can take several minutes. For clusters with constant usage or large numbers of users, apps, and databases, put the exporting system in Maintenance Mode, ideally during a scheduled maintenance window, before beginning the export. 
+
+
+<!-- not sure we're supporting this
 Server Monitoring with New Relic[](#server-monitoring-with-new-relic "Permalink to this headline")
 ---------------------------------------------------------------------------------------------------
 
@@ -225,15 +337,13 @@ instructions.
 System Monitoring with Nagios[](#system-monitoring-with-nagios "Permalink to this headline")
 ---------------------------------------------------------------------------------------------
 
-Though Application Lifecycle Service has an internal mechanism for supervising processes on a
-server or cluster ([Supervisor](http://supervisord.org/)), it is
-advisable to add some external monitoring for production systems.
-[Nagios](http://www.nagios.org/) is a free, open source system
-monitoring tool that can provide this external monitoring.
+Though Application Lifecycle Service has an internal mechanism for supervising processes on a server or cluster ([Supervisor](http://supervisord.org/)), it is
+advisable to add some external monitoring for production systems. [Nagios](http://www.nagios.org/) is a free, open source system monitoring tool that can provide this external monitoring.
 
 Detailed instructions on installing and configuring Nagios can be found
 in the [Nagios Core
 Documentation](http://nagios.sourceforge.net/docs/3_0/toc)
+--->
 
 ##Persistent Storage {#storage}
 
