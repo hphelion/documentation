@@ -126,12 +126,12 @@ NOTE: The *dea_count* value is the number of DEAs to be **added** in this growth
 <pre>
 [OpenStack]
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
-username = ????????
-password = ????????
-tenant_id = ????????
+username = 
+password = 
+tenant_id = 
 region = region-b.geo-1
-image_id = ????????
-image_password = ????????
+image_id = 
+image_password = 
 dea_size = standard.medium
 service_size = standard.medium
 
@@ -151,12 +151,12 @@ NOTE: The comma-separated values in the list of services contain only the servic
 <pre>
 [OpenStack]
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
-username = ????????
-password = ????????
-tenant_id = ????????
+username = 
+password = 
+tenant_id = 
 region = region-b.geo-1
-image_id = ????????
-image_password = ????????
+image_id = 
+image_password = 
 dea_size = standard.medium
 service_size = standard.medium
 
@@ -180,15 +180,15 @@ This is an example of the ConfigParser file format options for trial:
 <pre>
 [OpenStack]
 auth_url = https://region-b.geo-1.identity.hpcloudsvc.com:35357/v2.0
-username = ????????
-password = ????????
-tenant_id = ????????
+username = 
+password = 
+tenant_id = 
 region = region-b.geo-1
 az = az1
-keypair_name = ????????
-network_id = ????????
-image_id = ????????
-image_password = ????????
+keypair_name = 
+network_id = 
+image_id = 
+image_password = 
 core_size = standard.medium
 router_size = standard.medium
 dea_size = standard.medium
@@ -198,13 +198,13 @@ service_volume_size = 0
 block_mount = /block_storage
 
 [ALS]
-cluster_title = ????????
-cluster_prefix = ????????
+cluster_title = 
+cluster_prefix = 
 router_count = 0
 dea_count = 0
 services = mysql
 admin_email = admin@example.com
-admin_password = ????????
+admin_password = 
 admin_org = als
 services_on_core = True
 </pre>
