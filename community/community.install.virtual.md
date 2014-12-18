@@ -75,10 +75,7 @@ Before you begin the installation process, the root user must have private and p
 
 	NOTE: The output should look like the example below:
 
-     	drwxr-x--- . 4096 May 11 09:23
-    	-rwxr-x--- ..4096 May 11 09:23
-    	-rwxr-x--- id_rsa1455 May 11 09:24
-    	-rwxr-x--- id_rsa.pub 1455 May 11 09:24
+		-rw------- 1 root root 1679 Oct 23 09:24 /root/.ssh/id_rsa
 
 3. If the key does not exist, create one, omitting a passphrase and accepting the defaults by pressing Enter:
 
@@ -86,7 +83,9 @@ Before you begin the installation process, the root user must have private and p
 
 ### Set DNS servers by default {#name-resolution}
 
-To set a default DNS name server for your HP Helion OpenStack Community cloud, refer to [Enabling name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/) before installation.
+After the installation, you can specify DNS servers on a per-subnet basis using the neutron subnet-create --dns-nameserver command.
+
+Before installing, it is necessary to configure the DNS servers that will be used by dnsmasq as forwarders. Refer to [Enabling name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)for instructions.
 
 ## About the installation process ### {#install-notes}
 
@@ -158,19 +157,23 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 2. Set the following environment variables:
 
-	`OVERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for overcloud hosts.
+	`OVERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for overcloud hosts. Determine the time server that works best based on your environment. The NTP server can be on the local system, if needed.
 
 	**Example:**
+
+	The following example sets the NTP server address. Do not copy this adddress. 
 
 		export OVERCLOUD_NTP_SERVER=192.0.1.128
 
-	`UNDERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for undercloud hosts.
+	`UNDERCLOUD_NTP_SERVER` - Use this variable to set the IP address of an NTP server accessible on the public interface for undercloud hosts. Determine the time server that works best based on your environment. The NTP server can be on the local system, if needed.
 
 	**Example:**
 
+	The following example sets the NTP server address. Do not copy this adddress. 
+
 		export UNDERCLOUD_NTP_SERVER=192.0.1.128
 
-	`OVERCLOUD_NEUTRON_DVR` - Use this variable to disable Distributed Virtual Routers (DVR). By default, the overcloud is configured for Distributed Virtual Routers. You can disable DVR by setting the value to 'False'.
+	`OVERCLOUD_NEUTRON_DVR` - Use this variable to disable Distributed Virtual Routers (DVR). By default, the overcloud is configured for Distributed Virtual Routers. If your network requires DVR disabled, you can disable DVR by setting the value to 'False'.
 
 	**Example:**
 
@@ -178,17 +181,18 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 	**Note:** The environment variable `NeutronPublicInterfaceIP` is no longer supported. The install will exit with an error message if this variable is set.
 
-3. Start the deployment of the undercloud and overcloud:
+3. Start the deployment of the undercloud and overcloud from the root directory using the following command:
 
-		cd /root
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
 
-	This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 10 minutes and includes pauses while services and VMs are set up in the background.
+	This script waits, if necessary, for the seed to complete its initialization. Then, it creates, images, and starts the VMs for the undercloud and overcloud, as well as create a test guest VM in the overcloud. This takes approximately 60 minutes and includes pauses while services and VMs are set up in the background.
 
-	When the deployment completes, a message similar to the following is displayed:
+4. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter `Y` to submit or any other key to not submit.
 
-		HP - completed -Wed Oct 23 16:20:02 UTC 2014
+5. The installer lists several IP addresses of various HP Helion OpenStack components. Make note of the following IP addresses for use when verifying the install:
 
+		OVERCLOUD_IP_ADDRESS
+		UNDERCLOUD_IP_ADDRESS
 
 
 ## Next Step

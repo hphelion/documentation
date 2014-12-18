@@ -124,6 +124,7 @@ For the [virtual installation](/helion/community/install-virtual/) you must use 
 * At least 200GB of available disk space
 * Virtualization support **enabled** in the BIOS
 * The Ubuntu 13.10 operating system installed
+* A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
 
 **Note:** At this time, the installer has been verified to work on Ubuntu 13.10 **only**. It does not work on Ubuntu
  12.04, 14.04; Debian (stable or testing); CentOS (any version) or hLinux (any version).
