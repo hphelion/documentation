@@ -313,11 +313,11 @@ Start by logging into the VM via SSH:
 
 A single-node micro cloud VM can be backed up with a single command:
 
-    $ kato data export --only-this-node
+    kato data export --only-this-node
 
 A clustered setup can be backed up with a single command:
 
-    $ kato data export –cluster
+    kato data export -cluster
 
 **Note**: Exporting data can take several minutes. For clusters with constant usage or large numbers of users, apps, and databases, put the exporting system in Maintenance Mode, ideally during a scheduled maintenance window, before beginning the export. 
 
