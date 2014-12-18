@@ -32,15 +32,17 @@ Thank you for your interest in HP Helion OpenStack. This document provides an ov
 
 The following features have been added to HP Helion OpenStack, by release.
 
-* [HP Helion OpenStack 1.10](#110)
+* [HP Helion OpenStack 1.1](#110)
 * [HP Helion OpenStack 1.01](#101)
 * [HP Helion OpenStack 1.0](#10)
 
-### ### Features in HP Helion OpenStack 1.01 ### {#110}
+### Features in HP Helion OpenStack 1.1 ### {#110}
 
 The following features have been added to HP Helion OpenStack 1.1:
 
-**HP Helion OpenStack Telemetry and Reporting service** The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. A metering service takes specified measurements of both physical and virtual resources. 
+**OpenStack Juno support** All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to OpenStack Juno.
+
+**HP Helion OpenStack Metering services** The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.
 
 **AppArmor profiles enabled for Compute nodes** AppArmor proactively protects the operating system and applications from external or internal threats, even zero-day attacks, by enforcing good behavior and preventing even unknown application flaws from being exploited. <!--HPM27-->
 
@@ -70,7 +72,6 @@ The following features have been added to HP Helion OpenStack 1.1:
 **Fiber Channel Zone Manager support** The OpenStack Fiber Channel Zone Manager creates the necessary fiber channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fiber Channel Zone Manager](/helion/openstack/services/volume/fibre/).<!--HMP32-->
 
 **Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
-
 
 ### Features in HP Helion OpenStack 1.01 ### {#101}
 
