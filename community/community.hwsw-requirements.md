@@ -152,6 +152,8 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 `sudo /etc/init.d/libvirt-bin restart`
 
+Install a desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+
 
 ## Usable capacity
 
