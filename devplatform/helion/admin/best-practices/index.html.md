@@ -47,7 +47,7 @@ To transfer the public key from the Core node to all non-Core nodes execute:
 
     $ ssh-copy-id stackato@<node hostname or IP>
 
-With the Core node’s public key in place on all cluster nodes, you can
+With the Core node's public key in place on all cluster nodes, you can
 [disable password authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication) if desired.
 
 ##Applying Updates {#applying-updates}
@@ -123,7 +123,7 @@ DEA node in the cluster, one node at a time:
 
 1.  Create a new working directory:
 
-        $ mkdir ~/upgrade-alsek && cd $_
+        mkdir ~/upgrade-alsek && cd $_
 
 2.  Create a *Dockerfile*. In this new directory, create a file named
     **Dockerfile** and add the following:
@@ -133,15 +133,15 @@ DEA node in the cluster, one node at a time:
         RUN unattended-upgrades -d
         RUN apt-get clean && apt-get autoremove
 
-3.  Build the Docker image. Give the image a tag relevant to this particular upgrade (e.g. “upgrade-2014-09-19”):
+3.  Build the Docker image. Give the image a tag relevant to this particular upgrade (e.g. *upgrade-2014-09-19*):
 
-        $ sudo docker build -rm -t stackato/stack-alsek:upgrade-2014-09-19 .
+        sudo docker build -rm -t stackato/stack-alsek:upgrade-2014-09-19 .
 
     The **.** (dot) at the end is important! It specifies that the *Dockerfile* to use is the one in the current directory.
 
 4.  Tag the Docker image as the *latest* stack-alsek image:
 
-        $ sudo docker tag stackato/stack-alsek:upgrade-2014-09-19 stackato/stack-alsek:latest
+        sudo docker tag stackato/stack-alsek:upgrade-2014-09-19 stackato/stack-alsek:latest
 
 5.  All running applications will need to be restarted by their owners or admins (using the Helion management console or the ALS client) in order for security upgrades to take effect within their application containers. You can check which image running apps are using by running *docker ps* on your DEAs (but **do not** use *docker restart*).
 
@@ -203,7 +203,7 @@ A single-node micro cloud VM can be backed up with a single command:
 
 A clustered setup can be backed up with a single command:
 
-    $ kato data export --cluster
+    kato data export --cluster
 
 Once the export completes, you can use
 [scp](http://manpages.ubuntu.com/manpages/lucid/man1/scp.1) or
