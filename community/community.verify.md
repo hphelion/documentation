@@ -112,11 +112,11 @@ You can access these services with the following steps:
 	a. From the seed cloud host log in to the undercloud as super user:
 
 		ssh heat-admin@<undercloud IP> 
-		sudo su –
+		sudo su - 
 
 	b. Enter the following command to display the password:
 
-		cat  /opt/kibana/htpasswd.cfg
+		cat  /opt/kibana/htpasswd.cfg 
 
 	Make note of the password.
 
