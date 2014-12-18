@@ -219,7 +219,7 @@ Use the undercloud to start each of the compute nodes.
 2. Verify that it is possible to create and reach new VMs.
 
 
-After the system is running again, the output of ‘nova list’ on the undercloud might appear similar to the following image:
+After the system is running again, the output of the `nova list` command on the undercloud might appear similar to the following image:
 
 <img src="media/Restore-Nova-List.png">
 
