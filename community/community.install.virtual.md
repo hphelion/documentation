@@ -161,7 +161,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 	**Example:**
 
-	The following example sets the NTP server address. Do not copy this adddress. 
+	The following example sets the NTP server address. Do not copy this address. 
 
 		export OVERCLOUD_NTP_SERVER=192.0.1.128
 
@@ -169,7 +169,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 	**Example:**
 
-	The following example sets the NTP server address. Do not copy this adddress. 
+	The following example sets the NTP server address. Do not copy this address. 
 
 		export UNDERCLOUD_NTP_SERVER=192.0.1.128
 
