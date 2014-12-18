@@ -93,7 +93,7 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * The install will run until the demo completes loading the demo VM.
 
-* There are stalls loading images (1-2 mins) and building the undercloud (12 or more mins) and overcloud (at least that again).
+* There are stalls loading images (1-2 mins) and building the undercloud (12 or more mins) and overcloud (at least that again). You can use a tool such as [Virtual Machine Manager](http://virt-manager.org/) to monitor the installation of the nodes.
 
 * There are no restrictions imposed on external device name on the host system in virtual mode as the external interface is not used.
 
@@ -116,7 +116,7 @@ To begin the installation:
 
 1. Log in to your system as root. 
 
-    	$ sudo su -
+    	sudo su -
 
 2. Register and then log in to download the HP Helion OpenStack Community virtual package from this site:
 

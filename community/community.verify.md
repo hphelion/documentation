@@ -35,7 +35,7 @@ From the seed cloud host, connect to the overcloud Horizon console.
 
 1. Obtain the passwords for the `demo` and `admin` users 
 
-	`cat /root/tripleo/tripleo-overcloud-passwords`.
+	`cat /root/tripleo/tripleo-overcloud-passwords`
 
 2. Point your web browser on the seed cloud host to the overcloud Horizon console using the `OVERCLOUD_IP_ADDRESS` obtained after the instal.
 
@@ -84,11 +84,14 @@ From the seed cloud host, you can connect to the demo VM using the following ste
 
 6. Before proceeding, enter `exit` to disconnect from the demo VM.
 
-### Connecting to the monitoring interface ### {#connectmonitor}
+### Connecting to the monitoring and logging interfaces ### {#connectmonitor}
 
-HP Helion OpenStack Community includes a monitoring interface. You can access this with the following steps:
+HP Helion OpenStack Community includes monitoring logging. The monitoring service uses [Icinga](/helion/community/services/icinga/) interface and the logging service uses the Kibana interface. 
 
-1. Point your web browser on the seed cloud host to the undercloud monitoring console, using the undercloud IP address from the end of the install:
+
+You can access these services with the following steps:
+
+1. To access the undercloud monitoring console, launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
 
 		http://<undercloud IP>/icinga/
 
@@ -102,16 +105,35 @@ HP Helion OpenStack Community includes a monitoring interface. You can access th
 		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
 		echo $UNDERCLOUD_IP
 
-2. Login as user `icingaadmin` with password `icingaadmin`.
+2. Log in with the user name `icingaadmin` and password `icingaadmin`.
 
+3. To access the undercloud logging console, first obtain the Kibana password.
+
+	a. From the seed cloud host log in to the undercloud as super user:
+
+		ssh heat-admin@<undercloud IP> 
+		sudo su –
+
+	b. Enter the following command to display the password:
+
+		cat  /opt/kibana/htpasswd.cfg
+
+	Make note of the password.
+
+4. Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
+
+		http://<undercloud IP>:81 
+
+	**Example:**
+
+		http://192.0.2.2:81
+
+5. Log in with the user name `kibana` and the password you obtained above.
 
 ## Next Step
 
 * Review [OpenStack documentation](/helion/community/related-links/) 
-
-* See how to [log in to and use the Horizon dashboard](/helion/community/dashboard/login/).
-
-
+* See how to [use the Horizon dashboard](/helion/community/dashboard/how-works/).
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
