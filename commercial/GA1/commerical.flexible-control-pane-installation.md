@@ -5,7 +5,7 @@ permalink: /helion/openstack/flexiblecontrol/install
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
