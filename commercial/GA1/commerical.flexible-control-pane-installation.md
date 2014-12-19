@@ -446,12 +446,11 @@ Issue 2
 Issue 1: Manual Steps to recover
 
 	lsmod | grep kvm
-
    If there is no output, issue the following commands:
 
-		#modprobe -v kvm 
-		#modprobe -v kvm_intel
-		#service libvirt-bin restart
+	modprobe -v kvm 
+	modprobe -v kvm_intel
+	service libvirt-bin restart
 
 Issue 2: Manual Steps to recover
 

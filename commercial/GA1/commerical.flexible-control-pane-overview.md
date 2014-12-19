@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Flexible Control Plane
+# HP Helion OpenStack&#174; Flexible Control Plane Overview
 The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
 This topic covers:
@@ -29,7 +29,7 @@ This topic covers:
 	- [Configurable Variables](#variables)
 	- [Configuration Files](#configfiles)
 
-[Step-by-step installation instructions](/helion/openstack/flexiblecontrol/install) are available separately.
+Due to length, the [step-by-step installation instructions](/helion/openstack/flexiblecontrol/install) are available separately.
 
 ##Overview
 The Flexible Control Plane addresses the following concerns with the existing deployment model:
@@ -107,7 +107,7 @@ The following configuration is used for the overcloud compute node.
 - CPU Core: 40
 - HDD: 2TB
 
-##Prerequisites {prereq}
+##Prerequisites {#prereq}
 The Flexible Control Plane configuration has the same prerequisites as HP Helion OpenStack 1.01. Please be sure the environment satisfies the prerequisites before beginning installation.
 
 - [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/install/prereqs/)
