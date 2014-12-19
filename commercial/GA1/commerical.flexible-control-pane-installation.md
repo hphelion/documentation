@@ -59,13 +59,13 @@ Before you can install the Flexible Control Plane, you will need to:
 1. Log in to KVM Host A.
 2. Create an SSH key by executing:
 3. 
-		ssh-keygen –t rsa –N
+		ssh-keygen -t rsa -N
 
 
 1. Copy the private and public key to KVM Hosts B and C.
 2. Test and ensure that you can connect to Hosts B and C from A without having to provide a password.
 3. 
-		ssh-copy-id –i /root/.ssh/id_rsa.pub root@192.168.124.3
+		ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.124.3
 		scp /root/.ssh/id_rsa 192.168.124.3:/root/.ssh/
 5. Download and extract the installer to the */root* folder on KVM Host A.
 6. 
@@ -101,7 +101,7 @@ Before you can install the Flexible Control Plane, you will need to:
 
 1. Wait for the message
 
-		–completed setup seed
+		-completed setup seed
 
 2. Once the seed VM installation completes, you will observe that the process has created shell VMs on the 3 KVM hosts provided in the kvms.csv file.
 3. This process also creates a virtual power public key on the KVM Host A. Copy this file to remaining KVM hosts B and C.
@@ -121,9 +121,13 @@ Before you can install the Flexible Control Plane, you will need to:
 		00:5d:ff:f4:80:a2,root,undefined,192.168.124.3,12,16384,512,vm,all
 		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
 		00:65:cc:54:b1:0f,root,undefined,192.168.124.2,12,16384,512,vm,all
-		•	After modification, the baremetal.csv will look like the one given below. Note the last two columns. The modifications are in two parts:
-		A – Mapping the original set of VMs with "node_type"
-		B – Adding baremetal nodes that will be used as Compute nodes and/or VSA nodes optionally.
+	
+	After modification, the baremetal.csv will look like the one given below. Note the last two columns. The modifications are in two parts:
+
+	A: Mapping the original set of VMs with "node_type"
+
+	B: Adding baremetal nodes that will be used as Compute nodes and/or VSA nodes optionally.
+
 		00:17:00:3a:7d:25,root,undefined,192.168.124.2,12,16384,512,vm,all
 		00:7e:d1:97:ca:b6,root,undefined,192.168.124.2,12,16384,512,vm,occm
 		00:e8:3f:a9:7e:a2,root,undefined,192.168.124.3,12,16384,512,vm,occ1
@@ -451,8 +455,8 @@ Issue 1: Manual Steps to recover
 
 Issue 2: Manual Steps to recover
 
-	#pkill –ulibvirt-qemu
-	#reboot
+	pkill -ulibvirt-qemu
+	reboot
 <hr>
 ###Few VMs with two interfaces (pvt and svc) lost its network plumbing on its compute node (post update)
 **System Behavior**

@@ -76,7 +76,7 @@ If your datacenter had a power outage and the HP Helion OpenStack cloud systems 
 		nova start <UUID>
 
 11. Once the undercloud is up, check that the undercloud is configured correctly by verifying the hostname is not `hlinux`.
-??What should the host name be??
+?What should the host name be?
 
 ### Recover the overcloud {#oc}
 
@@ -100,7 +100,7 @@ If your datacenter had a power outage and the HP Helion OpenStack cloud systems 
 
 		nova stop <UUID>
 
-	??Run nova list again to get this status?  Virtual Machine Manager?
+	?Run nova list again to get this status?  Virtual Machine Manager?
 
 6. When all Overcloud nodes have a status of `SHUTOFF`, run the following command for each overcloud node, using the UUID you obtained for each:  
  
@@ -109,7 +109,7 @@ If your datacenter had a power outage and the HP Helion OpenStack cloud systems 
 	If any of the nova commands used to start the nodes fail, wait and try again later.
 	
 7. Make sure all three overcloud controllers are up and running and are configured correctly by verifying the hostname is not `hlinux`.
-??What should host names be??
+?What should host names be?
 
 ### Recover the HP Helion OpenStack components {#comp}
 
