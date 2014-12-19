@@ -84,7 +84,7 @@ Perform the following steps to remove and replace the failed management controll
 		sed -i 's/-lt 3/-lt 2/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
 
 
-### Update the stack with the removed management controller node {updatedremovemgt}
+### Update the stack with the removed management controller node {#updatedremovemgt}
 
 1. Edit `~/no-mgmt.env.json` and generate the required heat parameters.
 
@@ -120,7 +120,7 @@ Perform the following steps to remove and replace the failed management controll
 	
 	It takes several minutes to complete the update. Once the update is completed the management controller is removed from the heat configuration.
 
-###Update the heat stack with a new management controller {updatednewmgt}
+###Update the heat stack with a new management controller {#updatednewmgt}
 
 1. Edit `~/with-mgmt.env.json` to generate the required heat parameters.
 
