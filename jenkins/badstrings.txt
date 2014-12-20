@@ -52,6 +52,7 @@ beginnging
 Servce
 \<\<\!\-\-
 OpenStack®
+[^#\/][Ss]tackatoREMOVED
  it it 
  can can 
    ,
