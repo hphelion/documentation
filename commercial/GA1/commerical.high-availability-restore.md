@@ -34,7 +34,7 @@ The following sections provide detailed instructions on how to recover a HP Heli
 **Note:** Several of the procedures in this document use the `nova start` command. If `nova start` fails with a message such as *ERROR (Conflict): Instance 9769893e in task_state powering-off. Cannot start while the instance is in this state. (HTTP 409)*, power on the node manually using the iLO console.
 
 
-### Recover the seed {#seed}
+### Recover the seed {#seed} 
 
 1. Power on the head node. Ensure that the networking is operating, by logging into the head node remotely. If the network is not working, run the following commands:
 
@@ -84,12 +84,7 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 		nova start <UUID>
 
-<<<<<<< HEAD
 8. Once the undercloud is up, check that the undercloud is configured correctly by verifying the hostname is not `hlinux`.
-=======
-11. Once the undercloud is up, check that the undercloud is configured correctly by verifying the hostname is not `hlinux`.
-?What should the host name be?
->>>>>>> 73eccb37f4b00e48483e3c455fef49980160f7ef
 
 ### Recover the overcloud {#oc}
 
@@ -113,11 +108,6 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 		nova stop <UUID>
 
-<<<<<<< HEAD
-=======
-	?Run nova list again to get this status?  Virtual Machine Manager?
-
->>>>>>> 73eccb37f4b00e48483e3c455fef49980160f7ef
 6. When all Overcloud nodes have a status of `SHUTOFF`, run the following command for each overcloud node, using the UUID you obtained for each:  
  
 		nova start <UUID>
@@ -125,10 +115,6 @@ The following sections provide detailed instructions on how to recover a HP Heli
 	If any of the nova commands used to start the nodes fail, wait and try again later.
 	
 7. Make sure all three overcloud controllers are up and running and are configured correctly by verifying the hostname is not `hlinux`.
-<<<<<<< HEAD
-=======
-?What should host names be?
->>>>>>> 73eccb37f4b00e48483e3c455fef49980160f7ef
 
 ### Recover the HP Helion OpenStack components {#comp}
 
