@@ -19,7 +19,7 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion OpenStack&#174;: Recovering After Power Outage
+# HP Helion OpenStack&#174;: Recovering After Power Outage 
 
 If your datacenter had a power outage and the HP Helion OpenStack cloud system experienced a non-graceful shutdown, you must restart the servers in a specific order and execute some specific manual commands to bring back the overcloud controller cluster.
 
@@ -36,12 +36,14 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 ### Recover the seed {#seed} 
 
-1. Power on the head node. Ensure that the networking is operating, by logging into the head node remotely. If the network is not working, run the following commands:
+1. Power on the seed cloud host. Ensure that the networking is operating, by logging into the seed cloud host remotely. 
+
+	If the network is not working, run the following commands to remove the Ethernet drivers from the kernel and add the module back to the kernel:
 
 		rmmod mlx_*
 		modprobe mlx4_core
 
-	If you need to get the brbm device to appear, run:
+	If you cannot access the seed cloud host through the external interface, run the following command to restart the Open vSwitch (OVS) service:
 
 		service openvswitch-force-reload-kmod restart
 
@@ -84,7 +86,11 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 		nova start <UUID>
 
-8. Once the undercloud is up, check that the undercloud is configured correctly by verifying the hostname is not `hlinux`.
+8. Once the undercloud is up, use the following command to verify the host name. 
+
+		hostname
+
+	When the undercloud is properly configured, the host name is similar to `undercloud-undercloud-rweuuzkaj4` and not `hlinux`.
 
 ### Recover the overcloud {#oc}
 
@@ -114,7 +120,11 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 	If any of the nova commands used to start the nodes fail, wait and try again later.
 	
-7. Make sure all three overcloud controllers are up and running and are configured correctly by verifying the hostname is not `hlinux`.
+8. Once the overcloud is up, use the following command to verify the host name. 
+
+		hostname
+
+	When the overcloud is properly configured, the host name is similar to `overcloud-ce-controller-rweuuzkaj4` and not `hlinux`.
 
 ### Recover the HP Helion OpenStack components {#comp}
 
