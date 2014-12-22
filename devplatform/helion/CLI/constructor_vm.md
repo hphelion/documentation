@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/client/constructor
 product: devplatform
-title: "HP Application Lifecyle Service (ALS) Client Constructor Virtual Machine"
+title: "HP Application Lifecycle Service (ALS) Client Constructor Virtual Machine"
 
 ---
 
@@ -19,10 +19,7 @@ The Constructor VM can also function in a destructor mode, to simplify the tear-
 ##Downloading the VM Image
 The Constructor VM image is available in **US East** only and is labeled:
 
-```
-HP Helion Development Platform CE - Application Lifecycle Service Installer A.B.C.D
-```
-where A.B.C.D is the release designation.
+*HP Helion Development Platform CE - Application Lifecycle Service Installer A.B.C.D* where A.B.C.D is the release designation.
 
 The default username is *debian*. The image does not include a password; the virtual machine is booted with an associated SSH key. 
 

@@ -94,6 +94,7 @@ Review the following topics related to optional and required post-installation s
 - [High Availability (HA)](/helion/openstack/high-availability/)
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
 - [Configuring your network securely](/helion/openstack/install/security/)
+- [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/removing/failedovercloud/)
 
 ## Updating HP Helion OpenStack ## {#update}
 

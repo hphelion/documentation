@@ -84,7 +84,12 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 		nova start <UUID>
 
+<<<<<<< HEAD
 8. Once the undercloud is up, check that the undercloud is configured correctly by verifying the hostname is not `hlinux`.
+=======
+11. Once the undercloud is up, check that the undercloud is configured correctly by verifying the hostname is not `hlinux`.
+?What should the host name be?
+>>>>>>> 73eccb37f4b00e48483e3c455fef49980160f7ef
 
 ### Recover the overcloud {#oc}
 
@@ -108,6 +113,11 @@ The following sections provide detailed instructions on how to recover a HP Heli
 
 		nova stop <UUID>
 
+<<<<<<< HEAD
+=======
+	?Run nova list again to get this status?  Virtual Machine Manager?
+
+>>>>>>> 73eccb37f4b00e48483e3c455fef49980160f7ef
 6. When all Overcloud nodes have a status of `SHUTOFF`, run the following command for each overcloud node, using the UUID you obtained for each:  
  
 		nova start <UUID>
@@ -115,6 +125,10 @@ The following sections provide detailed instructions on how to recover a HP Heli
 	If any of the nova commands used to start the nodes fail, wait and try again later.
 	
 7. Make sure all three overcloud controllers are up and running and are configured correctly by verifying the hostname is not `hlinux`.
+<<<<<<< HEAD
+=======
+?What should host names be?
+>>>>>>> 73eccb37f4b00e48483e3c455fef49980160f7ef
 
 ### Recover the HP Helion OpenStack components {#comp}
 
