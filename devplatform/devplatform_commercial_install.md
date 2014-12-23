@@ -330,4 +330,22 @@ There are several situations in which a download will not complete.  One cause w
 
 As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the wscatalog.<id> folder which contains the cached download. The service should now be available to download again.
 
+<!--- 
 
+###Image download terminated
+
+The image download is terminated. Retries to download again but the status of service remains unchanged. The status still remains staged.
+
+need to get the answer before publishing
+**Resolution**
+Perform the following steps:
+  
+1. Delete the images for that Development Platform service. (where should we delete the image from? any location?
+2. Delete the heat-tempates for the service from Object store -> Containers.( Is this all performed in Horizon and as a user or admin)
+c) Delete the wscatalog for the service under container -> Sherpa-cache in Object store.
+Even after that , you do not see status changed to Available for the service in configure services page. Then it means Sherpa is looking at file cache .
+     a) Connect to controller mgmt node  delete the directory  /var/cache/sherpa/ws.xxxx, in order to reset the state
+    b) service apache2 restart for this change to take effect .
+
+
+---->
