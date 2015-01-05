@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Identity Service Overview"
-permalink: /helion/openstack/services/identity/overview/
+permalink: /helion/openstack/ga/services/identity/overview/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
@@ -25,11 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. 
-
-provides Identity, Token, Catalog and Policy services
-
-It performs the following functions:
+Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. It performs the following functions:
 
 * **User Management**- It tracks users and their permissions.The main components are:
 
@@ -40,25 +36,13 @@ It performs the following functions:
 * **Service catalog**- It provides a catalog of available services with their API endpoints. The main components are:
 
 	* Services
+
 	* Endpoints
 
 The Identity service primarily works on the following key concepts: 
 
-### Domain ### {#domain}
-
-A domain is a high-level container for [projects](#project), [users](#user) and [groups](#group).
-
-### Project ### {#project}
-
-A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).
-
-### Users ### {#user}
-
-A user is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project.
-
-### Group ### {#group}
-
-A group is a collection of [users](#user) that is associated with one or more [projects](#project) or [domains](#domain).
+### User ###
+ It is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project.
 
 ### Credentials ###
 
@@ -74,6 +58,8 @@ It is the act of confirming the identity of a user. The Identity service confirm
 ###Token###
 A random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.
 
+### Project ###
+A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).
 
 ### Service ###
 An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.
@@ -118,6 +104,8 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 
 - **Credentials** -- Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are.
 
+
+
 - **Authentication** -- The act of confirming the identity of a user. The Identity service confirms that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. 
 
 - **Token** -- An arbitrary bit of text that is used to access resources. Each token has a scope that describes which resources are accessible with it. 
@@ -130,13 +118,11 @@ Users can belong to specific role(s), which is a set of rights and privileges.
 
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](#howto), you can use the API or CLI.
+To [perform tasks using the Identity service](#howto), you can use the dashboard, API or CLI.
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Identity service.
-
-Note: Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/) to work with the Identity service.
 
 ###Using the API<a name="API"></a>
  
@@ -152,7 +138,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 <!---
 ## How To's with the HP Helion OpenStack Identity Service<a name="howto"></a>
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
@@ -228,5 +214,3 @@ Use the Identity service to reset a password for a user.
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). <!-- The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.-->
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-----
