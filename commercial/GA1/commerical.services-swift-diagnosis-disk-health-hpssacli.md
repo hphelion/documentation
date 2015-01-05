@@ -146,17 +146,17 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 6. Open the `ADUReport.htm` file in the browser. The html page displays complete details of the controller and the health status of the physical disks available in the machine.
 
-<!-- <image = utility_ADUR-report> -->
+	<!-- <image = utility_ADUR-report> -->
 
-7.Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
+7. Generate SmartSSD Wear Gauge Report from either the local server or from the seed:
 
-* From the local server
+	* From the local server
 
-	`	# hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on`
+		`	# hpssacli ctrl slot=<slot number> diag file=<filename.zip> ssdrpt=on`
 	
-* From the seed
+	* From the seed
 
-	`	# ssh heat-admin@<machine IP address> "sudo hpssacli ctrl slot=<slot number> diag file=<filename.zip>`
+		`	# ssh heat-admin@<machine IP address> "sudo hpssacli ctrl slot=<slot number> diag file=<filename.zip>`
 
 <!-- **Now retrieve the ssd_report.zip to kvm host using scp from server to analyse.??? is this applicable for seed only??** --> 
 
