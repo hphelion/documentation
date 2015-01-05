@@ -341,7 +341,7 @@ need to get the answer before publishing
 Perform the following steps:
   
 1. Delete the images for that Development Platform service. (where should we delete the image from? any location?
-2. Delete the heat-tempates for the service from Object store -> Containers.( Is this all performed in Horizon and as a user or admin)
+2. Delete the heat-templates for the service from Object store -> Containers.( Is this all performed in Horizon and as a user or admin)
 c) Delete the wscatalog for the service under container -> Sherpa-cache in Object store.
 Even after that , you do not see status changed to Available for the service in configure services page. Then it means Sherpa is looking at file cache .
      a) Connect to controller mgmt node  delete the directory  /var/cache/sherpa/ws.xxxx, in order to reset the state
