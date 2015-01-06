@@ -299,7 +299,7 @@ To create a cluster, do the following:
 
 3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the same subnet as that of CMC. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual system.
 
-	**Note:**To get the details of the HP StoreVirtual VSA IP, log in to StoreVirual system and check `/etc/vsa/vsa_network_config.json` file.
+	**Note:**To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check `/etc/vsa/vsa_network_config.json` file.
 
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Add option (opens in a new window)</a>
