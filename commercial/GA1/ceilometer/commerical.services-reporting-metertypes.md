@@ -83,7 +83,7 @@ These meters are installed and enabled by default during an HP Helion OpenStack 
 </tr>
 <tr><td>volume.size</td><td>Gauge</td><td>GB</td><td>vol ID</td><td>notification</td><td>Size of volume</td></tr>
 <tr><td>snapshot</td><td>Gauge</td><td>Snapshot</td><td>snap ID</td><td>notification</td><td>Existence of snapshot</td></tr>
-<tr><td>snapshot.size</td><td>Gauge</td><td>GB</td><td>snap ID</td><td>notification</td><td>Size of snapshot’s volume</td></tr>
+<tr><td>snapshot.size</td><td>Gauge</td><td>GB</td><td>snap ID</td><td>notification</td><td>Size of snapshot's volume</td></tr>
 </table>
 
 
