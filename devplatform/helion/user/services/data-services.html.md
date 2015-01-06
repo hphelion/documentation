@@ -6,40 +6,36 @@ title: "Data Services"
 ---
 <!--PUBLISHED-->
 
-#Data Services {#index-0}
+#Application Lifecycle Service Data Services {#index-0}
 
-Intro[](#intro "Permalink to this headline")
----------------------------------------------
-
-Application Lifecycle Service includes a number of data services which can be bound to the
+The Application Lifecycle Service includes a number of data services which can be bound to the
 applications you deploy. These include several databases (PostgreSQL,
-MySQL, Redis), the RabbitMQ messaging service, a [*persistent
-file system*](/als/v1/user/services/filesystem/#persistent-file-system) service and
-[*Memcached*](/als/v1/user/services/memcached/#memcached).
+MySQL, Redis), the RabbitMQ messaging service, a [persistent
+file system](/als/v1/user/services/filesystem/#persistent-file-system) service and
+[Memcached](/als/v1/user/services/memcached/#memcached).
 
-Configuring Application Lifecycle Service Data Services[](#configuring-helion-data-services "Permalink to this headline")
--------------------------------------------------------------------------------------------------------
+If you would like to use an **external** database system, see [Using
+External Database Services](#database-external).
 
-The data services your application requires need to be specified at the
-time your app is pushed to the Application Lifecycle Service server. This can be done in a
+##Configuring Application Lifecycle Service Data Services {#configuring-helion-data-services}
+
+The data services your application requires need to be specified when your app is pushed to the Application Lifecycle Service server. This can be done in a
 number of ways:
 
 1.  Specifying the required services in the *manifest.yml* file.
-2.  Configuring services during the `push` process.
+2.  Configuring services during the push process.
 3.  Configuring services manually.
 
-If you would like to use an external database system, see [*Using
-External Database Services*](#database-external).
+###Defining Services in the *manifest.yml* File {#using-manifest-yml}
 
-###Using manifest.yml {#using-manifest-yml}
-
-The manifest.yml file can hold a lot of application specific details
+The manifest.yml file can define a lot of application-specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
 when you run `helion push`. For complete details
-for the manifest.yml file, please see [*Configuration With
-manifest.yml*](/als/v1/user/deploy/manifestyml/).
+for using the *manifest.yml* file, please see [Configuration With
+*manifest.yml*](/als/v1/user/deploy/manifestyml/).
 
-A simple example:
+A simple example telling the Application Lifecycle Service Client to request a MySQL database named
+**cirrusdb**:
 
     name: cirrus
     mem: 256M
@@ -47,24 +43,25 @@ A simple example:
     services:
         cirrusdb: mysql
 
-This tells the Application Lifecycle Service Client to request a MySQL database called
-`cirrusdb`. Possible service types are:
+Possible service types are:
 
--   [*filesystem*](/als/v1/user/reference/glossary/#term-filesystem)
--   [*memcached*](/als/v1/user/reference/glossary/#term-memcached)
--   [*mysql*](/als/v1/user/reference/glossary/#term-mysql)
--   [*postgresql*](/als/v1/user/reference/glossary/#term-postgresql)
--   [*rabbitmq*](/als/v1/user/reference/glossary/#term-rabbitmq)
--   [*redis*](/als/v1/user/reference/glossary/#term-redis)
+-   [filesystem](/als/v1/user/reference/glossary/#term-filesystem)
+-   [memcached](/als/v1/user/reference/glossary/#term-memcached)
+-   [mysql](/als/v1/user/reference/glossary/#term-mysql)
+-   [postgresql](/als/v1/user/reference/glossary/#term-postgresql)
+-   [rabbitmq](/als/v1/user/reference/glossary/#term-rabbitmq)
+-   [redis](/als/v1/user/reference/glossary/#term-redis)
 
-To access the data services once they've been created, see [*Accessing
-Configured Database Services*](#database-accessing).
+To access the database services after they've been created, see [Accessing
+Configured Database Services](#database-accessing).
 
-### Using helion push[](#using-helion-push "Permalink to this headline")
+### Creating Services During Push[](#using-helion-push "Permalink to this headline")
 
-If you do not specify services in the manifest.yml file, you will be
-prompted to create one during the push process. Should you want to set
-up a database service, enter "y" when asked, and follow the prompts:
+In order to ensure that the correct services are configured each time the app is pushed, list the services in the *manifest.yml* file.
+
+However, if you do not specify any services in the *manifest.yml* file, you will be prompted to create them during the push process. 
+
+To set up a database service, for example, enter "y" when asked and follow the prompts:
 
     $ helion push
 
@@ -82,47 +79,48 @@ up a database service, enter "y" when asked, and follow the prompts:
     Binding Service: OK
     ...
 
-In order to ensure the correct services are configured each time the app
-is pushed, your services should be listed in the manifest.yml file.
-
-### Creating and Binding Services[](#creating-and-binding-services "Permalink to this headline")
-
-It is possible to create services and bind them to an app after they are
-pushed to the Application Lifecycle Service server. There are two ways to do this:
-
-**helion create-service \<service\> \<name\> \<app\>**
-:   This combines all parameters into a single command.
-    `service` is the type of service you want to
-    create (mysql, redis, postgresql). `name` is the name you want to assign to the service.
-    `app` is the name of the application the service
-    is to be bound to.
-
-        $ helion create-service mysql ordersdb myapp
-        Creating Service: OK
-        Binding Service: OK
-        Stopping Application [myapp]: OK
-        Staging Application [myapp]: OK
-        Starting Application [myapp]: OK
-
-        $ helion apps
-
-        +-------------+---+-------------+---------------------------+----------------+
-        | Application | # | Health      | URLS                      | Services       |
-        +-------------+---+-------------+---------------------------+----------------+
-        | myapp       | 1 | RUNNING     | myapp.helion-xxxx.local | ordersdb       |
-        +-------------+---+-------------+---------------------------+----------------+
-
-**create-service \<service\> \<name\>**
-
-**bind-service \<servicename\> \<app\>**
-These two commands do the same thing as if all three parameters were passed using `create-service`, but it allows the flexibility of creating and perhaps configuring the service before binding it.
+### Creating and Binding Services After Pushing {#creating-and-binding-services}
 
 
+It is possible to create services and bind them to an app after they are pushed to the Application Lifecycle Service server. 
 
-- `service` is the type of service you want to create (mysql, redis, postgresql, mongodb).
-- `name` is the name you want to assign to the service.
-- `servicename` is the name assigned during the `create-service` command. 
-- `app` is the name of the application the service is to be bound to.
+There are two ways to do this:
+
+1. Combine all parameters into a single command.
+
+		helion create-service \<service\> \<name\> \<app\>**
+
+	**service** is the *type* of service you want to create (mysql, redis, postgresql). </br>
+**name** is the name you want to assign to the service.</br>
+**app** is the name of the application the service is to be bound to.
+
+	    $ helion create-service mysql ordersdb myapp
+	    Creating Service: OK
+	    Binding Service: OK
+	    Stopping Application [myapp]: OK
+	    Staging Application [myapp]: OK
+	    Starting Application [myapp]: OK
+	
+	    $ helion apps
+	
+	    +-------------+---+-------------+---------------------------+----------------+
+	    | Application | # | Health      | URLS                      | Services       |
+	    +-------------+---+-------------+---------------------------+----------------+
+	    | myapp       | 1 | RUNNING     | myapp.helion-xxxx.local | ordersdb       |
+	    +-------------+---+-------------+---------------------------+----------------+
+
+2. Pass all parameters in separate commands.
+	
+	These two commands do the same thing as if all three parameters were passed using `create-service`, but provide additional flexibility to create and configure the service before binding it to an app.
+
+		create-service \<service\> \<name\>
+
+		bind-service \<servicename\> \<app\>
+
+	**service** is the *type* of service to be created (mysql, redis, postgresql, mongodb). </br>
+	**name** is the name you want to assign to the service.</br>
+	**servicename** is the name assigned to this service during the `create-service` command. </br>
+	**app** is the name of the application the service is to be bound to.</br>
 
         $ helion create-service mysql customerdb
         Creating Service: OK
@@ -141,29 +139,21 @@ These two commands do the same thing as if all three parameters were passed usin
         | myapp       | 1 | RUNNING | myapp.helion-xxxx.local | ordersdb, customerdb  |
         +-------------+---+---------+---------------------------+-----------------------+
 
-For further information on the commands for managing services, please see
-the [*helion services*](/als/v1/user/reference/client-ref/#command-services)
-command reference.
+For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
+the [Helion services](/als/v1/user/reference/client-ref/#command-services) command reference.
 
-**Note**
+##Using Database Services {#using-database-services}
 
-To remotely check the settings and credentials of any Application Lifecycle Service service,
-use the [*helion
-service*](/als/v1/user/reference/client-ref/#command-services) command.
-
-Using Database Services[](#using-database-services "Permalink to this headline")
----------------------------------------------------------------------------------
-
-When you bind a database service to an application running in Application Lifecycle Service,
-[*environment
-variables*](/als/v1/user/reference/environment/#environment-variables)
+When you bind a database service to an application running as an Application Lifecycle Service,
+[environment
+variables](/als/v1/user/reference/environment/#environment-variables)
 containing that service's host, port, and credentials are added to the
 application container. You can use these environment variables in your
-code to connect to the service, rather than hard coding the details.
+code to connect to the service, rather than having to discover and then hard-code in such details.
 
 Examples of how to parse and use these variables can be found in the
-[*Language Specific
-Deployment*](/als/v1/user/deploy/#language-specific-deploy) section.
+[Language Specific
+Deployment](/als/v1/user/deploy/#language-specific-deploy) section.
 
 ### DATABASE\_URL<a name="database-url"></a>
 
@@ -178,18 +168,16 @@ this:
 
     postgres://u65b0afbc8f8f4a1192b73e8d0eb38a24:p9eb83c11c59c4bcabfa475a4871e9242@192.168.69.117:5432/da17e48ddc82848499cb387bc65f5d4f9
 
-The "protocol" portion specifies the type of database. For example:
+The **protocol** portion specifies the type of database. For example:
 
 -   mysql://
 -   postgresql://
 
-**Note**
-
-The "database name" portion of the URL is the *actual* database name
+The **database name** portion of the URL is the *actual* database name
 (e.g. "da17e48ddc82848499cb387bc65f5d4f9"), not the user-specific
 service name set during deployment/service creation (e.g. "myapp-db").
 
-### Database-Specific URLs[](#database-specific-urls "Permalink to this headline")
+### Database-Specific URLs {#database-specific-urls}
 
 **If a non-relational data service type** is bound to the application,
 use the corresponding named environment variable:
@@ -217,37 +205,33 @@ VCAP\_SERVICES instead.
 Contains a JSON string listing the credentials for all bound services,
 grouped by service type. For example:
 
-    {
-            "mysql": [
-                    {
-                            "name": "mydb",
-                            "label": "mysql-5.5",
-                            "plan": "free",
-                            "tags": [
-                                    "mysql",
-                                    "mysql-5.5",
-                                    "relational"
-                            ],
-                            "credentials": {
-                                    "name": "d0a60c0be931f4982bbef153f993237bc",
-                                    "hostname": "192.168.0.112",
-                                    "host": "192.168.0.112",
-                                    "port": 3306,
-                                    "user": "u93Mm8XmGXQ9R",
-                                    "username": "u93Mm8XmGXQ9R",
-                                    "password": "p8LwNeQXMrNzi"
-                            }
-                    }
-            ]
-    }
+	{
+	        "postdb": {
+	                "name": "d4854a20e5854464891dbd56c08c440d9",
+	                "host": "192.168.0.112",
+	                "hostname": "192.168.0.112",
+	                "port": 5432,
+	                "user": "u74499595373c4bea84be2a87c2089101",
+	                "username": "u74499595373c4bea84be2a87c2089101",
+	                "password": "pdbbe19398c5a4463bba0644f7798f1f1"
+	        },
+	        "mydb": {
+	                "name": "d0a60c0be931f4982bbef153f993237bc",
+	                "hostname": "192.168.0.112",
+	                "host": "192.168.0.112",
+	                "port": 3306,
+	                "user": "u93Mm8XmGXQ9R",
+	                "username": "u93Mm8XmGXQ9R",
+	                "password": "p8LwNeQXMrNzi"
+	        }
+	}
 
-This variable contains some additional meta-information, and can be used
-for compatibility with Cloud Foundry.
+
+This variable contains some additional meta-information and can be used for compatibility with Cloud Foundry.
 
 **Note**
 
-VCAP\_SERVICES variables use non-versioned
-service names The version number remains in 'label' key.
+VCAP\_SERVICES variables use non-versioned service names The version number remains in 'label' key.
 
 Using External Databases[](#using-external-databases "Permalink to this headline")
 -----------------------------------------------------------------------------------
