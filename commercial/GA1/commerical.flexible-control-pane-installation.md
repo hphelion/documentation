@@ -20,7 +20,7 @@ PageRefresh();
 # HP Helion OpenStack&#174; Flexible Control Plane Installation
 The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
-Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview) before you begin these installation steps.
+Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview/) before you begin these installation steps.
 
 This topic contains:
 
@@ -30,7 +30,7 @@ This topic contains:
 - [Known Issues and Resolutions](#knownissues)
 
 ##Before You Begin
-Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview) before you begin these installation steps.
+Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview/) before you begin these installation steps.
 
 Before you can install the Flexible Control Plane, you will need to:
 
@@ -284,7 +284,7 @@ Before you can install the Flexible Control Plane, you will need to:
 ##Post-Installation Steps {#postinstall}
 - [Verify the installation](http://docs.hpcloud.com/helion/openstack/install/kvm/#verifying-your-installation-jumplink-span)
 - Configure Block Storage
-	- [For VSA](http://docs.hpcloud.com/helion/openstack/install/vsa/overview)
+	- [For VSA](http://docs.hpcloud.com/helion/openstack/install/vsa/overview/)
 	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/install/3par/)
 
 ##Adding the Overcloud Nodes {#addnodes}
