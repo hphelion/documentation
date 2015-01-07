@@ -14,8 +14,28 @@ MySQL, Redis), the RabbitMQ messaging service, a [persistent
 file system](/als/v1/user/services/filesystem/#persistent-file-system) service and
 [Memcached](/als/v1/user/services/memcached/#memcached).
 
-If you would like to use an **external** database system, see [Using
-External Database Services](#database-external).
+For detailed information on using an **external** database system, see [Using External Database Services](#database-external).
+
+- [Configuring Application Lifecycle Service Data Services](#configuring-helion-data-services)
+	- [Defining Services in the *manifest.yml* File (before push)](#using-manifest-yml)
+	- [Creating Services During Push](#using-helion-push)
+	- [Creating and Binding Services After Push](#creating-and-binding-services)
+- [Using Database Service Environment Variables](#using-database-services)
+	- [VCAP\_SERVICES](#vcap-services)
+	- [Connecting to External Databases](#using-external-databases)
+	- [Directly Accessing Database Services](#accessing-database-services)
+		- [Using *dbshell*](#using-dbshell)
+		- [Using Tunnel](#using-tunnel)
+- [Pre-populating a database while pushing an app](#pre-populating-a-database-while-pushing-an-app)
+- [Backing up a MySQL database](#backing-up-a-mysql-database)
+	- [Using *helion run*](#using-helion-run)
+	- [Using *helion tunnel*](#using-helion-tunnel)
+- [Importing a MySQL database](#importing-a-mysql-database)
+	- [Using *dbshell*](#id2)
+	- [Using *helion tunnel*](#id3)
+- [Changing Database Versions](#database-version-changes)
+- [Using SQLite](#sqlite "Permalink to this headline")
+
 
 ##Configuring Application Lifecycle Service Data Services {#configuring-helion-data-services}
 
@@ -79,8 +99,7 @@ To set up a database service, for example, enter "y" when asked and follow the p
     Binding Service: OK
     ...
 
-### Creating and Binding Services After Pushing {#creating-and-binding-services}
-
+### Creating and Binding Services After Push {#creating-and-binding-services}
 
 It is possible to create services and bind them to an app after they are pushed to the Application Lifecycle Service server. 
 
@@ -142,7 +161,7 @@ There are two ways to do this:
 For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
 the [Helion services](/als/v1/user/reference/client-ref/#command-services) command reference.
 
-##Using Database Services {#using-database-services}
+##Using Database Service Environment Variables {#using-database-services}
 
 When you bind a database service to an application running as an Application Lifecycle Service,
 [environment
@@ -152,8 +171,7 @@ application container. You can use these environment variables in your
 code to connect to the service, rather than having to discover and then hard-code in such details.
 
 Examples of how to parse and use these variables can be found in the
-[Language Specific
-Deployment](/als/v1/user/deploy/#language-specific-deploy) section.
+[Language-Specific Deployment](/als/v1/user/deploy/#language-specific-deploy) section.
 
 ### DATABASE\_URL<a name="database-url"></a>
 
@@ -200,75 +218,67 @@ application (e.g. two MongoDB services), none of the URL formatted
 environment variables will be available. Use
 VCAP\_SERVICES instead.
 
-### VCAP\_SERVICES <a name="vcap-services"></a>
+### VCAP\_SERVICES {#vcap-services}
 
 Contains a JSON string listing the credentials for all bound services,
-grouped by service type. For example:
+grouped by service type. VCAP\_SERVICES variables use non-versioned service names, and the version number remains in the **label** key.
+
+For example:
 
 	{
-	        "postdb": {
-	                "name": "d4854a20e5854464891dbd56c08c440d9",
-	                "host": "192.168.0.112",
-	                "hostname": "192.168.0.112",
-	                "port": 5432,
-	                "user": "u74499595373c4bea84be2a87c2089101",
-	                "username": "u74499595373c4bea84be2a87c2089101",
-	                "password": "pdbbe19398c5a4463bba0644f7798f1f1"
-	        },
-	        "mydb": {
-	                "name": "d0a60c0be931f4982bbef153f993237bc",
-	                "hostname": "192.168.0.112",
-	                "host": "192.168.0.112",
-	                "port": 3306,
-	                "user": "u93Mm8XmGXQ9R",
-	                "username": "u93Mm8XmGXQ9R",
-	                "password": "p8LwNeQXMrNzi"
-	        }
+	        "mysql": [
+	                {
+	                        "name": "mydb",
+	                        "label": "mysql-5.5",
+	                        "plan": "free",
+	                        "tags": [
+	                                "mysql",
+	                                "mysql-5.5",
+	                                "relational"
+	                        ],
+	                        "credentials": {
+	                                "name": "d0a60c0be931f4982bbef153f993237bc",
+	                                "hostname": "192.168.0.112",
+	                                "host": "192.168.0.112",
+	                                "port": 3306,
+	                                "user": "u93Mm8XmGXQ9R",
+	                                "username": "u93Mm8XmGXQ9R",
+	                                "password": "p8LwNeQXMrNzi"
+	                        }
+	                }
+	        ]
 	}
+
 
 
 This variable contains some additional meta-information and can be used for compatibility with Cloud Foundry.
 
-**Note**
+###Connecting External Databases {#using-external-databases}
+Applications running in Application Lifecycle Service can use external databases as long as the host and credentials are provided. There are two ways to pass this data:
 
-VCAP\_SERVICES variables use non-versioned service names The version number remains in 'label' key.
+1. hard-coding: writing them during staging rather than taking them from environment variable at run time
+2. specifying the data in a custom environment variable.
 
-Using External Databases[](#using-external-databases "Permalink to this headline")
------------------------------------------------------------------------------------
+Note that hard-coded applications **must** be conmpletely re-staged (e.g. redeployed or updated) to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
 
-Applications running in Application Lifecycle Service can use external databases by
-hard-coding the host and credentials, or by specifying the them in a
-custom environment variable.
-
-Hard-coded Database Connections[](#hard-coded-database-connections "Permalink to this headline")
--------------------------------------------------------------------------------------------------
-
-Applications which write database connection details during staging
-rather than taking them from environment variables at run time, must be
-re-staged (e.g. redeployed or updated) to pick up the new service
-location and credentials. Restarting the application will not
-automatically force restaging.
-
-Accessing Database Services[](#accessing-database-services "Permalink to this headline")
------------------------------------------------------------------------------------------
+## Directly Accessing Database Services {#accessing-database-services}
 
 You may need to connect to a database service directly for purposes of
 initial database setup, modifying fields, running queries, or doing
 backups. These operations can be done using the `dbshell` (preferred) or `tunnel` commands.
 
-### Using dbshell[](#using-dbshell "Permalink to this headline")
+### Via *dbshell* {#using-dbshell}
 
-The `helion dbshell` command creates an SSH tunnel
-to database services. To open an interactive shell to a service:
+The *helion dbshell* command creates an SSH tunnel to database services. To open an interactive shell to a service:
 
     $ helion dbshell <application_name> <service_name>
 
-The command will automatically open the appropriate database client for
+The command automatically opens the appropriate database client for
 the database you're connecting to, provided that client is installed on
 the local system.
 
 It is also available inside application containers, providing a quick
-way to import data from dump files, or setting up schemas. For example,
+way to import data from dump files or set up schemas. For example,
 to import data from file in an application directory, you could use a
 hook in *manifest.yml* such as:
 
@@ -278,20 +288,20 @@ hook in *manifest.yml* such as:
 
 ### Using Tunnel[](#using-tunnel "Permalink to this headline")
 
-The `helion tunnel` command is an alternative
+The *helion tunnel* command is an alternative
 method for accessing database services. The command creates a small Ruby
 application which proxies database requests over HTTP. This is the
 standard method for database access in Cloud Foundry, but tends to be
-slower than using `dbshell`:
+slower than using *dbshell*.
 
-To create or use a tunnel:
+To create or use a tunnel, execute the command:
 
-    $ helion tunnel <servicename>
+    helion tunnel <servicename>
 
 Depending on the service you are connecting to, a list of options will
-be provided. Here is an example of connecting to a MySQL service:
+be provided. Here is an example of a connection to a MySQL service:
 
-    $ helion tunnel mydb
+    helion tunnel mydb
 
     Getting tunnel url: OK, at https://tunnel-xxxxx.helion-xxxx.local
     Getting tunnel connection info: OK
@@ -310,14 +320,18 @@ be provided. Here is an example of connecting to a MySQL service:
     3. mysqldump
     Which client would you like to start?
 
+You now have all the information you need to access the data. Note the
+**Service connection info** box that displays your username,
+password, and the actual database name.
+
 For simple command line access, select option **2. mysql**.
 
 To get a dump of the entire database, select option **3. mysqldump**.
 You will be prompted to enter a path to where the dump will be saved to.
 
 If you want to connect with a database viewer, or run multiple commands
-from the command line, passing in SQL files, select option **1. none**.
-This will set up a port for you to connect with locally:
+from the command line, or pass in SQL files, select option **1. none**.
+This will set up a port for you to connect with locally.
 
     1. none
     2. mysql
@@ -330,20 +344,16 @@ This will set up a port for you to connect with locally:
     use a UI tool to connect using the displayed information.
     Press Ctrl-C to exit...
 
-You how have all the information you need to access the data. Notice the
-"Service connection info" box above that tells you your username,
-password, and the database name.
-
 Open a new command line window. You can connect to the MySQL database
 directly with:
 
     $ mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<password> <name>
 
-    example:
+  For example:
 
     $ mysql --protocol=TCP --host=localhost --port=10000 --user=uT9efVVFCk --password=pHFitpIU1z d5eb2468f70ef4997b1514da1972
 
-To import an SQL file, call the same command, and pipe in the file:
+To import an SQL file, call the same command and pipe in the file:
 
     $ mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
 
@@ -351,7 +361,7 @@ To pull a dump of all databases:
 
     $ mysqldump -A --protocol=TCP --port=10000 --host=localhost --user=<user> --password=<pass>
 
-### Pre-populating a database while pushing an app[](#pre-populating-a-database-while-pushing-an-app "Permalink to this headline")
+## Pre-populating a database while pushing an app[](#pre-populating-a-database-while-pushing-an-app "Permalink to this headline")
 
 When a database needs to be populated with data the first time it is
 run, it can be done by the use of a hook during the staging process.
@@ -409,11 +419,11 @@ run the script:
 With those changes, the data from your script will be executed after the
 staging process is complete but before the app starts to run.
 
-### Backing up a MySQL database[](#backing-up-a-mysql-database "Permalink to this headline")
+## Backing up a MySQL database[](#backing-up-a-mysql-database "Permalink to this headline")
 
-#### Using helion run[](#using-helion-run "Permalink to this headline")
+### Using helion run[](#using-helion-run "Permalink to this headline")
 
-To export a MySQL database, use the `helion run`
+To export a MySQL database, use the *helion run*
 command to remotely execute the dbexport tool:
 
 	$ helion run [application-name] dbexport service-name > dumpfile.sql
@@ -422,14 +432,11 @@ This will run a `dbexport` of the named data service
 remotely and direct the output to a local file. If run from a directory
 containing the manifest.yml file, the application name may be omitted.
 
-#### Using helion tunnel[](#using-helion-tunnel "Permalink to this headline")
+### Using helion tunnel[](#using-helion-tunnel "Permalink to this headline")
 
-**Note**
+This method of database backup is provided for compatibility with Cloud Foundry. It tends to be slower than using `helion run ...`.
 
-This method of database backup is available for compatibility with Cloud
-Foundry. It tends to be slower than using `helion run ...`.
-
-To back up a MySQL database, use the [*tunnel*](#database-tunnel)
+To back up a MySQL database, use the [tunnel](#database-tunnel)
 command to make a connection to the server and export the data using
 `mysqldump`.
 
@@ -459,14 +466,13 @@ this example a MySQL database named `customerdb`):
 Select option **3. mysqldump**. You will be prompted to enter a path to
 where the dump will be saved.
 
-See the [*tunnel*](#database-tunnel) command documentation for other
-ways of accessing a MySQL database. See [*Importing a MySQL
-database*](#bestpractices-importing-mysql) for details on importing a
+See the [tunnel](#database-tunnel) command documentation for other
+ways of accessing a MySQL database. See [Importing a MySQL database](#bestpractices-importing-mysql) for details on importing a
 file created by mysqldump into an existing MySQL database service.
 
-### Importing a MySQL database[](#importing-a-mysql-database "Permalink to this headline")
+## Importing a MySQL database[](#importing-a-mysql-database "Permalink to this headline")
 
-#### Using helion run[](#id2 "Permalink to this headline")
+### Using dbshell[](#id2 "Permalink to this headline")
 
 To import a MySQL database, use the `helion dbshell` command:
 
@@ -478,17 +484,13 @@ equivalent to `helion run dbshell ...`). If run
 from a directory containing the *manifest.yml* file, the application and
 service names may be omitted.
 
-#### Using helion tunnel[](#id3 "Permalink to this headline")
+### Using helion tunnel[](#id3 "Permalink to this headline")
+This method of database import is provided for compatibility with Cloud Foundry. It tends to be slower than using `helion run ...`.
 
-**Note**
-
-This method of database import is available for compatibility with Cloud
-Foundry. It tends to be slower than using `helion run ...`.
-
-To import data from a `mysqldump` into an existing
+To import data from a *mysqldump* file into an existing
 MySQL database service, use the `tunnel` command:
 
-    $ helion tunnel <servicename>
+    helion tunnel <servicename>
 
     Password: ********
     Getting tunnel url: OK, at https://tunnel-xxxxx.helion-xxxx.local
@@ -510,19 +512,18 @@ MySQL database service, use the `tunnel` command:
 
 Choose option **1. none** which will allow for command line access to
 the database. A MySQL service is configured on Port 10000, so open a new
-Terminal window to enter commands with.
+terminal window to enter commands through.
 
 Then, import an SQL file with the following command:
 
     $ mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
 
-See the [*tunnel*](#database-tunnel) command documentation for other
-ways of accessing a MySQL database. See [*Backing up a MySQL
-database*](#bestpractices-backing-up-mysql) for details on how to create
+See the [tunnel](#database-tunnel) command documentation for other
+ways of accessing a MySQL database. See [Backing up a MySQL database](#bestpractices-backing-up-mysql) for details on how to create
 a `mysqldump` backup that can then be imported into
 another database service.
 
-### Database Version Changes[](#database-version-changes "Permalink to this headline")
+## Changing Database Versions[](#database-version-changes "Permalink to this headline")
 
 The VCAP\_SERVICES environment variable in Application Lifecycle Service does not include
 version numbers in the service name string. This can cause problems when
@@ -531,7 +532,7 @@ versioned database names in VCAP\_SERVICES.
 
 There are two application level fixes for this issue:
 
-#### Method 1[](#method-1 "Permalink to this headline")
+### Method 1[](#method-1 "Permalink to this headline")
 
 Update references to VCAP\_SERVICES in the application code to exclude
 version numbers. For example:
@@ -540,7 +541,7 @@ version numbers. For example:
     PostgreSQL:    'postgresql-x.x' -> 'postgresql'
     Redis:         'redis-2.x' -> 'redis'
 
-#### Method 2[](#method-2 "Permalink to this headline")
+### Method 2[](#method-2 "Permalink to this headline")
 
 Update the application code to use the DATABASE\_URL environment
 variable. See [*Using Database Services*](#database-accessing) for
@@ -558,13 +559,6 @@ The following changes to sample applications show this modification:
 -   PHP:
     <https://github.com/Stackato-Apps/owncloud-core/commit/3bd87948f48910f27fa1e059e863bcf312cce5f3>
 
-SQLite[](#sqlite "Permalink to this headline")
------------------------------------------------
+##SQLite {#sqlite}
 
-Applications can use an [SQLite database](http://www.sqlite.org/) as an
-alternative to Application Lifecycle Service database services. However, as the filesystem of
-an application container is ephemeral (i.e. it is destroyed when an
-application is stopped, restarted, or updated), you should always store
-the SQLite file on a [*Persistent File
-System*](/als/v1/user/services/filesystem/#persistent-file-system) mount point to avoid
-losing data.
+Applications can use an [SQLite database](http://www.sqlite.org/) as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- **always** store the SQLite file on a [Persistent File System](/als/v1/user/services/filesystem/#persistent-file-system) mount point to avoid losing data.
