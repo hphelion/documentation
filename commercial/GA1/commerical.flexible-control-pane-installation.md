@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Flexible Control Plane"
-permalink: /helion/openstack/flexiblecontrol/install
+permalink: /helion/openstack/flexiblecontrol/install/
 product: commercial.ga
 
 ---
@@ -34,8 +34,8 @@ Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontr
 
 Before you can install the Flexible Control Plane, you will need to:
 
-- [Review prerequisites and configure the infrastructure](/helion/openstack/flexiblecontrol/overview/#prereq-jumplink-span) accordingly
-- [Create configuration files](/helion/openstack/flexiblecontrol/overview/#configfiles/)
+- [Review prerequisites and configure the infrastructure](/helion/openstack/flexiblecontrol/overview/#prereq) accordingly
+- [Create configuration files](/helion/openstack/flexiblecontrol/overview/#configfiles)
 - [Set up KMV hosts](/helion/openstack/flexiblecontrol/overview/#kvmsetup)
 - Deploy an HP Helion cloud
 

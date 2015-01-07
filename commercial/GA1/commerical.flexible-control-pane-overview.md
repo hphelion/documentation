@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Flexible Control Plane Overview"
-permalink: /helion/openstack/flexiblecontrol/overview
+permalink: /helion/openstack/flexiblecontrol/overview/
 product: commercial.ga
 
 ---
