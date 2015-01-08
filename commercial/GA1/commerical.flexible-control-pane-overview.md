@@ -84,9 +84,9 @@ Connects trusted VMs in the overcloud to communicate with the cloud infrastructu
 ###External
 This network is connected to the Internet or intranet and provides floating IPs. In this example the External Network CIDR is 172.32.100.0/24.            
 
-###Hardware Details {#hardware}
+##Hardware Details {#hardware}
 
-####KVMHost
+###KVMHost
 The following configuration is used for the KVM host.
  
 - RAM: 256 GB
@@ -94,14 +94,14 @@ The following configuration is used for the KVM host.
 - HDD: 2TB
 - OS Installed: Ubuntu 14.04 LTS
 
-####VSA Nodes
+###VSA Nodes
 Three (3) physical servers are used as VSA nodes.
 
 - RAM: 12 GB
 - CPU Cores: 8
 - HDD: 8*1 TB
 
-####Physical Compute
+###Physical Compute
 The following configuration is used for the overcloud compute node.
 - RAM: 96GB
 - CPU Core: 40
@@ -134,15 +134,17 @@ Set up KVM hosts and ensure all the hardware requirements are met and the requir
 	- Set up password-less login for the root user of the same KVM host. This enables the root user of the KVM host to be able to log in to the same KVM host without a password.
 
 ##Configurable Options for Flexible Control Plane {#options}
-The following section describes the environment variables involved in configuring the Flexible Control Plane. These variables are required in addition to those required for [baremetal installation](http://docs.hpcloud.com/helion/openstack/install/envars/). You may either create an environment variables file or enter the additional values one at a time during installation:
+The following section describes the environment variables involved in configuring the Flexible Control Plane. These variables are new with Flexible Control Plane, so you won't have seen them before if you are familiar with the HP Helion OpenStack installation process.  You will set them during the installation process outlined in the [installation instructions](/helion/openstack/flexiblecontrol/install). Here, just take note of what is configurable in this release, and what the settings mean.
 
-##Configurable Variables {#variables}
+###Configurable Variables {#variables}
+
+Below are descriptions of available configuration variables. Again, you will set these later, during the installation step-by-step process.
 
 **HP\_VM\_MODE** Set this variable to specify the mode of deployment as single or hybrid. Currently, the options supported are: "Y", "HYBRID" and "Not Set".  To enable this feature, set the value to "HYBRID".
 
 	export HP_VM_MODE=HYBRID
 
-**HP_ MULTI_ KVM**  This variable enables the heterogeneous environment to support the multiple hypervisors to host HP Helion OpenStack Control Plane. Best practice is to set it to three (3).
+**HP_ MULTI_ KVM**  This variable enables the heterogeneous environment to support the multiple hypervisors to host HP Helion OpenStack Control Plane. The best practice is to set it to three (3).
  
 	export HP_MULTI_ KVM=3
 
@@ -156,7 +158,7 @@ All of the remaining variable values you set here will match the flavor specifie
  
 	export OvercloudComputeFlavor=computeflavor
 
-**OvercloudControlFlavor **Set this variable to specify the flavor for the overcloud management controller to be used at the time of deployment. 
+**OvercloudControlFlavor** Set this variable to specify the flavor for the overcloud management controller to be used at the time of deployment. 
 
 	export OvercloudControlFlavor=controllerMgmtFlavor
  
@@ -184,55 +186,28 @@ All of the remaining variable values you set here will match the flavor specifie
 
 	export OvercloudSwiftScaleoutObjectFlavor=SwiftScaleoutObjectFlavor
 
-##Configuration Files {#configfiles}
-You will need to create the following configuration files in the root directory: **uc\_custom\_flavors.json** and **kvms.csv**
+###Configuration Files {#configfiles}
+The Flexible Control Plane will also require the following configuration files in the root directory: **uc\_custom\_flavors.json** and **kvms.csv**. Note the following explanations of what these files will contain. They will be created later in the installation process ([installation instructions](/helion/openstack/flexiblecontrol/install)).
 
-###Creating uc\_custom\_flavors.json
+####uc\_custom\_flavors.json
 
-The *uc\_custom\_flavors.json* file is required to define the flavors that will be used during the deployment. This flavor information is added to the undercloud and used when deploying the control plane nodes as VMs on target KVM host. 
+The *uc\_custom\_flavors.json* file, which you will create later, during the installation process defined in the [installation instructions](/helion/openstack/flexiblecontrol/install) is required to define the flavors that will be used during the deployment. This flavor information is added to the undercloud and used when deploying the control plane nodes as VMs on target KVM host. 
 
 A flavor node in *uc\_custom\_flavors.json* consists of the following values:
-- name: Name of the node
-- memory:  Memory consumed by the node
-- Disk:   Disk consumed by the node 
-- cpu: Number of CPUs used 
-- arch: Architecture type of the node
-- hw_type: Hardware type. It can be Baremetal or Virtual machine
-- node_type:  Role of the node. For example: compute, VSA, Swift etc.
 
-The following *uc\_custom\_flavors.json* example will give you an idea of what should be in this configuration file:
+- **name**: Name of the node
+- **memory**:  Memory consumed by the node
+- **Disk**:   Disk consumed by the node 
+- **cpu**: Number of CPUs used 
+- **arch**: Architecture type of the node
+- **hw_type**: Hardware type. It can be Baremetal or Virtual machine
+- **node_type**:  Role of the node. For example: compute, VSA, Swift etc.
 
-	{
-	"flavors  ": [
-	{
-	"name": "computeFlavor",
-	"memory": 32768,
-	"disk": 2048,
-	"cpu": 1,
-	"arch": "amd64",
-	"hw_type": "bm",
-	"node_type": "compute"
-	},
-	{
-	"name": "swiftFlavor",
-	"memory": 32768,
-	"disk": 2048,
-	"cpu": 1,
-	"arch": "amd64",
-	"hw_type": "bm",
-	"node_type": "swift"
-	}
-	]
-	}
 
-###Creating kvms.csv
-A kvms.csv file is required to define the KVM hosts being used for Flexible Control Plane deployment. This file contains the IP of the KVM host and an account with administrative or root privileges.
 
-For example:
+####kvms.csv
+A kvms.csv file will also be created later via the [installation instructions](/helion/openstack/flexiblecontrol/install). It is required to define the KVM hosts being used for Flexible Control Plane deployment. This file contains the IP of the KVM host and an account with administrator or root privileges.
 
-	<ip_of_KVM_A>,root
-	<ip_of_KVM_B>,root
-	<ip_of_KVM_C>,root
 
 <hr>
 Continue to [step-by-step installation instructions and known issues](/helion/openstack/flexiblecontrol/install).
