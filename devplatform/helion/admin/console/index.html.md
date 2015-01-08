@@ -9,34 +9,32 @@ title: "Management Console (Admin View)"
 
 #Management Console (Admin View) {#management-console-admin-view}
 
-Application Lifecycle Service's web interface is called the Management Console. The interface
-displays more options and settings for Admin users than it does for
-regular end users. Some of the features described below are only
-available in the Admin view.
+Application Lifecycle Service's web interface is called the Management Console. 
 
-### [Table Of Contents](/als/v1/index-2/)
+Note that users with Admin-level privileges have access to more options and settings than regular end-users. Some features documented here are available only from the Admin view.
+
 
 -   [About the Admin Console](#about)
-    -   [Welcome](#welcome)
-        -   [System Information](#system-information)
-    -   [Cluster Nodes](#cluster-nodes)
-    -   [Organizations](#organizations)
-    -   [Users](#users)
-    -   [Applications](#applications)
-    -   [Cloud Events](#cloud-events)
-    -   [Dashboard](#dashboard)
-        -   [Router](#router)
-        -   [Primary Node Status Graphs](#primary-node-status-graphs)
-    -   [Settings](#settings)
-        -   [Console](#console)
-        -   [Quota Definitions](#quota-definitions)
-        -   [Cloud Controller](#cloud-controller)
-        -   [Applications](#console-settings-applications)
-        -   [DEA](#dea)
-        -   [Logyard](#logyard)
-        -   [Harbor](#harbor)
-        -   [Data Services](#data-services)
-        -   [File System](#file-system)
+-   [Welcome](#welcome)
+-   [System Information](#system-information)
+-   [Cluster Nodes](#cluster-nodes)
+-   [Organizations](#organizations)
+-   [Users](#users)
+-   [Applications](#applications)
+-   [Cloud Events](#cloud-events)
+-   [Dashboard](#dashboard)
+    -   [Router](#router)
+    -   [Primary Node Status Graphs](#primary-node-status-graphs)
+-   [Settings](#settings)
+    -   [Console](#console)
+    -   [Quota Definitions](#quota-definitions)
+    -   [Cloud Controller](#cloud-controller)
+    -   [Applications](#console-settings-applications)
+    -   [DEA](#dea)
+    -   [Logyard](#logyard)
+    -   [Harbor](#harbor)
+    -   [Data Services](#data-services)
+    -   [File System](#file-system)
 
 About the Admin Console[](#about "Permalink to this headline")
 -------------------------------------------------

@@ -23,16 +23,16 @@ PageRefresh();
 
 #Removing and Replacing a Failed Overcloud Controller
 
-The 3 nodes overcloud controller cluster provide the highly available cloud control plane. For  a single point of failure, you can recover any one of the overcloud controller node. 
+The three node overcloud controller cluster provides the highly available cloud control plane. For a single point of failure, you can recover any one of the overcloud controller node. 
 
 If your deployed operating cloud incurs an irrecoverable hardware failure in one of the controller servers, you must do the following:
 
 * de-commission the failed server
 * add a new server into your cloud and redeploy the replacement controller on it
-* re-connect the replaced controller into the 3 nodes controller cluster
+* re-connect the replaced controller into the three nodes controller cluster
 
 
-The following section provides the detailed instructions to replace a failed controller nodes. They are divided into three sections. These sections describe a failure of different type of controller node(s).
+The following sections provide the detailed instructions to replace a failed controller node. They are divided into three sections. These sections describe a failure of the different type of controller node(s).
 
 * [Removing and replacing a failed management controller node](#removemgt)
 
@@ -51,7 +51,7 @@ Perform the following steps to remove and replace the failed management controll
 4. [Remove the failed nodes from ironic](#removeironic)
 
 
-**Note**: The following instructions are based on the default install and alteration of any of the commands or variables is not required, unless stated otherwise.
+**Note**: The following instructions are based on the default installation and alteration of any of the commands or variables is not required, unless stated otherwise.
 
 ### Prepare to remove the node {#prepremovenode}
 
@@ -218,7 +218,7 @@ Perform the following steps to remove and replace a failed controller1 node.
 
 4.  Execute the following command to set the required parameters and environment variables. You can replace the `OVERCCLOUD_NTP_SERVER` with an NTP server of your choice.
 
-		export OVERCLOUD_NTP_SERVER=16.110.135.123 # Use an NTP server appropriate for your environment
+		export OVERCLOUD_NTP_SERVER=19.110.135.123 # Use an NTP server appropriate for your environment
 		export TRIPLEO_ROOT=~root/tripleo
 		export TE_DATAFILE=$TRIPLEO_ROOT/ce_env.json
 		export PATH=$PATH:$TRIPLEO_ROOT/bin:$TRIPLEO_ROOT/tripleo-incubator/scripts
@@ -257,7 +257,7 @@ Perform the following steps to remove and replace a failed controller1 node.
 		sed -i 's/${TOTAL_NODES} -lt 2/${TOTAL_NODES} -lt 3/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
 
 
-##Removing and replacing a failed controller0  {#removecontroller0}
+##Removing and replacing a failed controller0 node {#removecontroller0}
 
 Perform the following steps to remove and replace a failed controller1 node.
 
@@ -292,7 +292,7 @@ Perform the following steps to remove and replace a failed controller1 node.
 
 5. Execute the following command to set the required parameters and environment variables. You can replace the `OVERCCLOUD_NTP_SERVER` with an NTP server of your choice.
 
-		export OVERCLOUD_NTP_SERVER=16.110.135.123 # Use an NTP server appropriate for your environment
+		export OVERCLOUD_NTP_SERVER=19.110.135.123 # Use an NTP server appropriate for your environment
 		export TRIPLEO_ROOT=~root/tripleo
 		export TE_DATAFILE=$TRIPLEO_ROOT/ce_env.json
 		export PATH=$PATH:$TRIPLEO_ROOT/bin:$TRIPLEO_ROOT/tripleo-incubator/scripts
@@ -324,7 +324,7 @@ When the stack reaches UPDATE_COMPLETE status, the replacement of the failed nod
 		cd ~root 
 		tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud --skip-demo
 
-When the stack reaches UPDATE_COMPLETE status, the replacement of the failed node is complete. 
+	When the stack reaches UPDATE_COMPLETE status, the replacement of the failed node is complete. 
 
 
 2. Once stack update is completed, execute the following command on controller1 and management controller nodes:

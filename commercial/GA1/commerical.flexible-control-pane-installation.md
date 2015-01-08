@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Flexible Control Plane"
-permalink: /helion/openstack/flexiblecontrol/install
+permalink: /helion/openstack/flexiblecontrol/install/
 product: commercial.ga
 
 ---
@@ -19,6 +19,8 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Flexible Control Plane Installation
 The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+
+Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview) before you begin these installation steps.
 
 This topic contains:
 
@@ -58,24 +60,22 @@ Before you can install the Flexible Control Plane, you will need to:
 		ifconfig brbm 192.168.124.4
 1. Log in to KVM Host A.
 2. Create an SSH key by executing:
-3. 
+ 
 		ssh-keygen -t rsa -N
 
 
 1. Copy the private and public key to KVM Hosts B and C.
 2. Test and ensure that you can connect to Hosts B and C from A without having to provide a password.
-3. 
+ 
 		ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.124.3
 		scp /root/.ssh/id_rsa 192.168.124.3:/root/.ssh/
 5. Download and extract the installer to the */root* folder on KVM Host A.
-6. 
+ 
 		cd /root
 		tar zxvf ee_installer.tgz
 8. Enable the Flexible Control Plane feature.
 
 		bash /root/tripleo/tripleo-incubator/scripts/hp_ced_enable_hybrid.sh
-
-
 
 1. Create a kvms.csv file with the details of the three KVM hosts:
  
@@ -285,7 +285,7 @@ Before you can install the Flexible Control Plane, you will need to:
 - [Verify the installation](http://docs.hpcloud.com/helion/openstack/install/kvm/#verifying-your-installation-jumplink-span)
 - Configure Block Storage
 	- [For VSA](http://docs.hpcloud.com/helion/openstack/install/vsa/overview)
-	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/install/3par/)
+	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/install/3par)
 
 ##Adding the Overcloud Nodes {#addnodes}
 This section describes the process of adding baremetal nodes to an existing cloud deployed using the Flexible Control Plane option. This process differs from the process documented for the baremetal install.

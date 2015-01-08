@@ -221,7 +221,7 @@ Any one of the controller servers can be shut down for a short duration for main
 
 **Note**: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.
 
-In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes](/helion/openstack/backup.restore/).
+In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes]( /helion/openstack/removing/failedovercloud/).
 
 ##Highly Available Cloud Infrastructure<a name="ha-cloud-infra"></a>
 
