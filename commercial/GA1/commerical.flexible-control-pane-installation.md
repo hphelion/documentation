@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Flexible Control Plane"
+title: "HP Helion OpenStack&#174; Flexible Control Plane Installation"
 permalink: /helion/openstack/flexiblecontrol/install/
 product: commercial.ga
 
@@ -20,7 +20,7 @@ PageRefresh();
 # HP Helion OpenStack&#174; Flexible Control Plane Installation
 The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
-Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview) before you begin these installation steps.
+Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview/) before you begin these installation steps.
 
 This topic contains:
 
@@ -30,7 +30,7 @@ This topic contains:
 - [Known Issues and Resolutions](#knownissues)
 
 ##Before You Begin
-Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview) before you begin these installation steps.
+Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview/) before you begin these installation steps.
 
 Before you can install the Flexible Control Plane, you will need to:
 
@@ -282,7 +282,7 @@ Before you can install the Flexible Control Plane, you will need to:
 		HP - completed - Tue Oct 23 16:20:20 UTC 2014
 
 ##Post-Installation Steps {#postinstall}
-- [Verify the installation](http://docs.hpcloud.com/helion/openstack/install/kvm/#verifying-your-installation-jumplink-span)
+- [Verify the installation](http://docs.hpcloud.com/helion/openstack/install/kvm/#verifying-your-installation)
 - Configure Block Storage
 	- [For VSA](http://docs.hpcloud.com/helion/openstack/install/vsa/overview)
 	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/install/3par)
@@ -490,4 +490,4 @@ Hard reboot the spawned instance from the Horizon dashboard to make it reachable
 
 
 <hr>
-Return to the [architectural and configuration files overview](/helion/openstack/flexiblecontrol/overview) information.
+Return to the [architectural and configuration files overview](/helion/openstack/flexiblecontrol/overview/) information.
