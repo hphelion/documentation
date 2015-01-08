@@ -18,9 +18,9 @@ PageRefresh();
 </script>
 
 # HP Helion OpenStack&#174; Flexible Control Plane Installation
-The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+As you read in the [overview](/helion/openstack/flexiblecontrol/overview/), HP Helion OpenStack Flexible Control Plane allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP Helion OpenStack features.
 
-Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview/) before you begin these installation steps.
+The overview covered the [prerequisites](/helion/openstack/flexiblecontrol/overview/). Now we will walk through the installation.
 
 This topic contains:
 
@@ -30,7 +30,7 @@ This topic contains:
 - [Known Issues and Resolutions](#knownissues)
 
 ##Before You Begin
-Make sure you have satisfied the [prerequisites](/helion/openstack/flexiblecontrol/overview/) before you begin these installation steps.
+
 
 Before you can install the Flexible Control Plane, you will need to:
 
@@ -40,8 +40,8 @@ Before you can install the Flexible Control Plane, you will need to:
 - Deploy an HP Helion cloud
 
 ##Step-by-step Installation Instructions {#instruct}
-1. On each of the three [KVM hosts](/helion/openstack/flexiblecontrol/overview/#kvmsetup) prepared earlier, create a *brbm* bridge and add the physical NIC which connects to the Management and other networks.
-2. For example, on KVM Host (A), the NIC is **eth1**:
+1. On each of the three [KVM hosts](/helion/openstack/flexiblecontrol/overview/#kvmsetup) prepared earlier, create a *brbm* bridge and add the physical NIC which connects to the Helion Management network (that carries the PXE/DHCP, message queue, and other API-related traffic) along with other networks.
+2. For example, on KVM Host A, the NIC is **eth1**:
 
 		ovs-vsctl add-br brbm
 		ovs-vsctl add-port brbm eth1
@@ -64,7 +64,7 @@ Before you can install the Flexible Control Plane, you will need to:
 		ssh-keygen -t rsa -N
 
 
-1. Copy the private and public key to KVM Hosts B and C.
+1. Copy the private and public keys to KVM Hosts B and C.
 2. Test and ensure that you can connect to Hosts B and C from A without having to provide a password.
  
 		ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.124.3
@@ -87,7 +87,7 @@ Before you can install the Flexible Control Plane, you will need to:
 
 
 
-1. Set the required environment variables. Note that by default, 8 VMs are created with the configuration: 8GB RAM, 1 CPU and 512GB HDD. We recommend increasing the CPU and RAM for this feature to a minimum of 12 CPU cores and 16384MB RAM.
+1. Set the required environment variables. Note that by default, 8 VMs are created with the configuration: 8GB RAM, 1 CPU and 512GB HDD. We recommend increasing the CPU and RAM for this feature to a minimum of 12 CPU cores and 16384MB RAM, as we have done here.
 
 		export NODE_CPU=12
 		export NODE_MEM=16384
@@ -104,12 +104,12 @@ Before you can install the Flexible Control Plane, you will need to:
 		-completed setup seed
 
 2. Once the seed VM installation completes, you will observe that the process has created shell VMs on the 3 KVM hosts provided in the kvms.csv file.
-3. This process also creates a virtual power public key on the KVM Host A. Copy this file to remaining KVM hosts B and C.
+3. This process also creates a virtual power public key on KVM Host A. Copy this file to KVM hosts B and C.
  
 		ssh-copy-id -i/root/.ssh/id_rsa_virt_power.pub root@192.168.124.3
 		ssh-copy-id -i/root/.ssh/id_rsa_virt_power.pub root@192.168.124.4
  
-7. Log in to the seed VM and switch to the */root* directory.
+7. Log in to the seed VM and change to the */root* directory.
 8. Modify the *baremetal.csv* file so that all records in the file now map to undercloud or overcloud control plane node types.
  
 	Before modification, the baremetal.csv file will appear as shown below. Note the last 2 columns.
@@ -122,11 +122,11 @@ Before you can install the Flexible Control Plane, you will need to:
 		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
 		00:65:cc:54:b1:0f,root,undefined,192.168.124.2,12,16384,512,vm,all
 	
-	After modification, the baremetal.csv will look like the one given below. Note the last two columns. The modifications are in two parts:
+	After modification, the baremetal.csv will look like the one given below. Note the last two columns. There are two modifications to be made:
 
-	A: Mapping the original set of VMs with "node_type"
+	First: Map the original set of VMs to the node_types (see occm, occ1, occ2, and so forth).
 
-	B: Adding baremetal nodes that will be used as Compute nodes and/or VSA nodes optionally.
+	Second: Add baremetal nodes that will be used as compute nodes and/or VSA nodes.
 
 		00:17:00:3a:7d:25,root,undefined,192.168.124.2,12,16384,512,vm,all
 		00:7e:d1:97:ca:b6,root,undefined,192.168.124.2,12,16384,512,vm,occm
@@ -144,7 +144,7 @@ Before you can install the Flexible Control Plane, you will need to:
 
 
 
-1. Create the user-defined *uc\_custom\_flavors.json* file which specifies the values and contains mapping of the node_type. The format is shown below. Note that while the overcloud controllers have different flavor names, they must all be of the same configuration.
+1. Create the user-defined *uc\_custom\_flavors.json* file, which specifies the values and contains mapping of the node_type. The format is shown below. Note that while the overcloud controllers have different flavor names (controllerMgmtFlavor, controller0Flavor, controller1Flavor) they must all be of the same configuration.
 
 		{
 		"flavors": [
@@ -363,23 +363,23 @@ The installer suddenly exits at the following stage:
 
 **Probable Cause**
 The installer can stop abruptly at this point for the following reasons:
-- Undercloud ironic service is unable to reach the KVM hosts
-- Undercloud ironic service is unable to reach the IPMI network of the Overcloud nodes
+- Undercloud Ironic service is unable to reach the KVM hosts
+- Undercloud Ironic service is unable to reach the IPMI network of the overcloud nodes
 - Duplicate MAC addresses seen
 
 **Possible Resolution**
-Ensure that you are able to connect to the KVM hosts and IPMI network from the Undercloud node.
+Ensure that you are able to connect to the KVM hosts and IPMI network from the undercloud node.
 
 <hr>
-###Flexible Control Plane Controller nodes fail due to "No bootable device found" during installation
+###Flexible Control Plane Controller nodes fail with "No bootable device found" during installation
 
 **System Behavior**
 
-In some cases during installation the message: <pre>No bootable device found</pre> is displayed on the console of the VM that is getting deployed and the node deployment results in a failure.
+In some cases during installation, the message: <pre>No bootable device found</pre> is displayed on the console of the VM that is getting deployed and the node deployment results in a failure.
 
 **Probable Cause**
 
-The values exported for Neutron Public interface are incorrect.
+The values exported for Neutron public interface are incorrect.
 
 **Possible Resolution**
 
@@ -400,18 +400,18 @@ The folder was not automatically copied onto the seed node from the KVM host.
 
 Manually copy the contents of the **tripleo/config** folder from the KVM host onto the seed node.
 <hr>
-###In Flexible Control Plane, one of the swift nodes (BM) goes into error state during first deployment.
+###In Flexible Control Plane, one of the Swift nodes (BM) goes into an error state during first deployment.
 **System Behavior**
 
-Sometimes while installing the controllers on the virtual and starter swift nodes on the Baremetal, the PXE deployment of Swift nodes fails and the node status shows as **ERROR**.
+Sometimes while installing the controllers on the virtual and starter Swift nodes on the Baremetal, the PXE deployment of Swift nodes fails and the node status shows as **ERROR**.
 
 **Probable Cause**
 
-Apparently a bug in ironic.
+Apparently a bug in Ironic.
 
 **Possible Resolution**
 
-Delete the overcloud stack and re-create it.
+Delete the overcloud stack and recreate it.
 <hr>
 ###After the reboot of the compute node, new FIPs associated to the instance are not accessible
 
@@ -443,7 +443,7 @@ Issue 2
 
 **Possible Resolution**
 
-Issue 1: Manual Steps to recover
+Issue 1: Manual steps to recover
 
 	lsmod | grep kvm
    If there is no output, issue the following commands:
@@ -452,37 +452,37 @@ Issue 1: Manual Steps to recover
 	modprobe -v kvm_intel
 	service libvirt-bin restart
 
-Issue 2: Manual Steps to recover
+Issue 2: Manual steps to recover
 
 	pkill -ulibvirt-qemu
 	reboot
 <hr>
-###Few VMs with two interfaces (pvt and svc) lost its network plumbing on its compute node (post update)
+###A few VMs with two interfaces (pvt and svc) lost network plumbing on compute node (post update)
 **System Behavior**
 
-After the update compute node, the VM guest is not accessible on its SVC interface.
+After updating, the VM guest is not accessible on its SVC interface.
 
 **Possible Resolution**
 
 No Resolution 
 <hr>
-###Environment may be unstable on rebooting of overcloud controllers
+###Environment may be unstable upon rebooting of overcloud controllers
 **System Behavior**
 
-Environment may be unstable for some time when overcloud controllers are rebooted
+Environment may be unstable for some time when overcloud controllers are rebooted.
 
 **Probable Cause**
 
-On the  overcloud controller reboot scenario the cloud takes some time to stabilize.
+On the overcloud controller reboot scenario the cloud takes some time to stabilize.
 
 **Possible Resolution**
 
-If overcloud controllers are rebooted the user must wait for some time for the cloud to become stable. Verify basic cloud functionality before proceeding further.
+If overcloud controllers are rebooted, you must wait for some time for the cloud to become stable. Verify basic cloud functionality before proceeding further.
 <hr>
-###If the KVM environment is rebooted, the  instances in the  spawned state are not pingable
+###If the KVM environment is rebooted, the  instances in the  spawned state cannot be reached via ping
 **System Behavior**
 
-In case of the entire KVM environment being rebooted, previously spawned instances may not be pingable.
+In the case of an entire KVM environment reboot, previously spawned instances may not be reachable via the ping command.
 
 **Possible Resolution**
 
