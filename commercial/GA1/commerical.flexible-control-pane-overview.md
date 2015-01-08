@@ -29,7 +29,7 @@ This topic covers:
 	- [Configurable Variables](#variables)
 	- [Configuration Files](#configfiles)
 
-Due to length, the [step-by-step installation instructions](/helion/openstack/flexiblecontrol/install) are available separately.
+Due to length, the [step-by-step installation instructions](/helion/openstack/flexiblecontrol/install/) are available separately.
 
 ##Overview
 The Flexible Control Plane addresses the following concerns with the existing deployment model:
