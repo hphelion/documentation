@@ -2042,7 +2042,6 @@ Configure, create, push, map, and start a new application.
     <td>The OS foundation the application will run on. This is an Application Lifecycle Service
     3 specific option.</td>
     </tr>    <tr><td>--helion-debug</td>
-
     <td>host:port of the Komodo debugger listener to inject into the
     application as environment variables.</td>
     </tr>    <tr><td>--tail</td>
@@ -2371,7 +2370,6 @@ Update the number of instances, memory and/or disk reservation for a deployed ap
     <td>Alias of --mem.</td>
     </tr><tr>
     <td>-n</td>
-    
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>-o</td>
