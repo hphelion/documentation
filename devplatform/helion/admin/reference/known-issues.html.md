@@ -12,7 +12,9 @@ Known Issues[](#known-issues "Permalink to this headline")
 
 Buildpack config\_vars Deprecated[](#buildpack-config-vars-deprecated "Permalink to this headline")
 ----------------------------------------------------------------------------------------------------
- [Buildpack config\_vars Deprecated](#buildpack-config-vars-deprecated)
+ 
+
+- [Buildpack config\_vars Deprecated](#buildpack-config-vars-deprecated)
     -   [Legacy Buildpack and Environment
         Variables](#legacy-buildpack-and-environment-variables)
     -   [Service Gateway Log Errors in Maintenance

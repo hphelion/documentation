@@ -64,11 +64,12 @@ Before you can install the Flexible Control Plane, you will need to:
 		ssh-keygen -t rsa -N
 
 
-1. Copy the private and public keys to KVM Hosts B and C.
-2. Test and ensure that you can connect to Hosts B and C from A without having to provide a password.
+3. Copy the private and public keys to KVM Hosts B and C.
+
  
 		ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.124.3
 		scp /root/.ssh/id_rsa 192.168.124.3:/root/.ssh/
+4. Test and ensure that you can connect to Hosts B and C from A without having to provide any password.
 5. Download and extract the installer to the */root* folder on KVM Host A.
  
 		cd /root
