@@ -254,12 +254,18 @@ For example:
 This variable contains some additional meta-information and can be used for compatibility with Cloud Foundry.
 
 ###Connecting External Databases {#using-external-databases}
-Applications running in Application Lifecycle Service can use external databases as long as the host and credentials are provided. There are two ways to pass this data:
+Applications running as ALS apps can use external databases by:
+ 
+- hard-coding the host and credentials in the code (not recommended), 
+- setting a URL or credential array in an environment variable 
+- setting the connection details in a User-Provided Service Instance 
+ 
+	Note that apps which write database connection details during staging rather than taking them from environment variables at run time (hard-coded applications) **must** be completely re-staged to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
 
-1. hard-coding: writing them during staging rather than taking them from environment variable at run time
-2. specifying the data in a custom environment variable.
+Container security prevents apps from connecting to arbitrary servers and ports on the local subnet for security reasons. To allow your application to connect to a database server you must either: 
 
-Note that hard-coded applications **must** be conmpletely re-staged (e.g. redeployed or updated) to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
+- create a User Provided Service Instance with a *host* and a *port* value for the database server 
+- add the IP address of the database server to the list of allowed hosts (requires Admin privileges) 
 
 ## Directly Accessing Database Services {#accessing-database-services}
 
