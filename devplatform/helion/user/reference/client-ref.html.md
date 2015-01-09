@@ -1214,7 +1214,6 @@ Display the resource usage for a deployed application.</td>
     
 <table>
     <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-
     <tr><td>--group</td>
     <td>The once-off group to use for the current operation. This is a
     Application Lifecycle Service 2 option.</td>
@@ -1413,7 +1412,6 @@ Create an empty application with the specified configuration.
     <td>The OS foundation the application will run on. This is an Application Lifecycle Service
     3 specific option.</td>
     </tr>    <tr><td>--helion-debug</td>
-
     <td>host:port of the Komodo debugger listener to inject into the
     application as environment variables.</td>
     </tr>    <tr><td>--tail</td>
@@ -1436,7 +1434,7 @@ Create an empty application with the specified configuration.
     times.</td>
     </tr><tr>
     <td>-d</td>
-<td>Set up debugging through an application-specific harbor (port)
+	<td>Set up debugging through an application-specific harbor (port)
     service. Target version 2.8+ only.</td>
     </tr><tr>
     <td>-n</td>
@@ -1965,7 +1963,6 @@ Configure, create, push, map, and start a new application.
     <td>The application's start command. Defaults to a framework-specific
     value if required and not specified by manifest.yml.</td>
     </tr>    <tr><td>--copy-unsafe-links</td>
-
     <td>Links pointing outside of the application directory are copied
     into the application.</td>
     </tr>    <tr><td>--disk</td>
@@ -5614,7 +5611,6 @@ command.
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--paid-services-allowed</td>
-
     <td>Applications can use non-free services.</td>
     </tr>    <tr><td>--services</td>
     <td>Limit for the number of services in the quota.</td>
@@ -5632,7 +5628,6 @@ command.
     command to print the saved trace to stdout.</td>
     </tr><tr>
     </tr>    <tr><td>--trial-db-allowed</td>
-
     <td>Applications can use trial databases.</td>
     </tr><tr>
     <td>-n</td>
