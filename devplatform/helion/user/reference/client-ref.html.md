@@ -28,13 +28,11 @@ Usage[](#usage "Permalink to this headline")
 
 **helion** [*options*] *command* [*arguments*] [*command-options*]
 
-For more information., use the `helion help`,
-`helion help [command]`, and
-`helion options` commands.
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
 
-Many of the informational commands take a `--json`
+Many of the informational commands take a **--json**
 option if you wish to generate machine-parseable output. In some cases
-the `--json` option reveals additional details.
+the **--json** option reveals additional details.
 
 Note that Administrative user privileges are required for some commands.
 
@@ -699,7 +697,8 @@ Show the list of drains attached to the application.</td>
 List the application's environment variables.</td>
     
 <table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr>
+	<td><b>Option</b></td><td><b>Description</b></td></tr>
     <tr><td>--group</td>
     <td>The once-off group to use for the current operation. This is a
     Application Lifecycle Service 2 option.</td>
@@ -714,9 +713,7 @@ List the application's environment variables.</td>
     <td>Complementary alias of --tail.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-
-    <td>Alias of --no-prompt.</td>
+    </tr>    <tr><td>--non-interactive</td><td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
     <td>Alias of --no-prompt.</td>
@@ -781,7 +778,6 @@ Show recorded application events, for application or space.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -849,7 +845,6 @@ Display directory listing or file.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -923,7 +918,6 @@ Display directory listing or file.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -988,7 +982,6 @@ Report the health of the specified application(s).</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1028,7 +1021,6 @@ List application instances for a deployed application.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1100,7 +1092,6 @@ Display the application log stream.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1177,7 +1168,6 @@ Show the memory reservation for a deployed application.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1240,7 +1230,6 @@ Display the resource usage for a deployed application.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1303,7 +1292,6 @@ Monitor file for changes and stream them.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1398,7 +1386,6 @@ Create an empty application with the specified configuration.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1484,7 +1471,6 @@ Invoke interactive db shell for a bound service.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1547,7 +1533,6 @@ Delete the specified application(s).
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1610,7 +1595,6 @@ Attach a new named drain to the application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1670,7 +1654,6 @@ Remove the named drain from the application.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1729,7 +1712,6 @@ Add the specified environment variable to the named application.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1800,7 +1782,6 @@ application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1871,7 +1852,6 @@ consisting of host and domain)
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -1930,7 +1910,6 @@ Open the url of the specified application in the default web browser. If 'api' i
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2035,7 +2014,6 @@ Configure, create, push, map, and start a new application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2132,7 +2110,6 @@ command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2193,7 +2170,6 @@ Stop and restart a deployed application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2279,7 +2255,6 @@ Run an arbitrary command on a running instance.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2349,7 +2324,6 @@ Update the number of instances, memory and/or disk reservation for a deployed ap
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2432,7 +2406,6 @@ Copy source files and directories to the destination.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2496,7 +2469,6 @@ Add the specified environment variable to the named application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2583,7 +2555,6 @@ SSH to a running instance (or target), or run an arbitrary command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2646,7 +2617,6 @@ Start a deployed application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2716,7 +2686,6 @@ Stop a deployed application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2777,7 +2746,6 @@ Unregister the application from a URL.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2838,7 +2806,6 @@ Remove the specified environment variable from the named application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2902,7 +2869,6 @@ Application Lifecycle Service 3 specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2942,7 +2908,6 @@ List the supported and provisioned services of the target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -2995,7 +2960,6 @@ Show the information about the named service.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3051,7 +3015,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3102,7 +3065,6 @@ Delete the specified service authentication token. This is an Application Lifecy
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3155,7 +3117,6 @@ Show all service authentication tokens knowns to the target. This is an Applicat
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3209,7 +3170,6 @@ Update the specified service authentication token. This is a
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3263,7 +3223,6 @@ Make the named service broker known. This is an Application Lifecycle Service 3 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3317,7 +3276,6 @@ Remove the named service broker from the target. This is an Application Lifecycl
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3368,7 +3326,6 @@ Remove the named service broker from the target. This is an Application Lifecycl
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3422,7 +3379,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3475,7 +3431,6 @@ Update the target's knowledge of the named service broker. This is an Applicatio
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3535,7 +3490,6 @@ Bind the named service to the specified application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3602,7 +3556,6 @@ Copy the service bindings of the source application to the destination applicati
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3671,7 +3624,6 @@ Create a new provisioned service, and optionally bind it to an application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3746,7 +3698,6 @@ Delete the named provisioned service.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3803,7 +3754,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3858,7 +3808,6 @@ Create a local tunnel to a service, optionally start a local client as well.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3923,7 +3872,6 @@ Disconnect the named service from the specified application.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -3996,7 +3944,6 @@ Create a new organization. This is an Application Lifecycle Service 3 specific c
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4036,7 +3983,6 @@ command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4083,7 +4029,6 @@ Add the specified user to the named organization, in various roles. This is an A
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4124,7 +4069,6 @@ command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4165,7 +4109,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4201,7 +4144,6 @@ Set the quotas for the current or named organization. This is an Application Lif
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4238,7 +4180,6 @@ command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4274,7 +4215,6 @@ Switch the current organization to the named organization. This invalidates the 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4316,7 +4256,6 @@ Remove the specified user from the named organization, in various roles. This is
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4369,7 +4308,6 @@ Create a new space. This is an Application Lifecycle Service 3 specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4414,7 +4352,6 @@ Delete the named space. This is an Application Lifecycle Service 3 specific comm
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4470,7 +4407,6 @@ Add the specified user to the named space, in various roles. This is an Applicat
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4515,7 +4451,6 @@ Rename the named space. This is an Application Lifecycle Service 3 specific comm
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4564,7 +4499,6 @@ List the available spaces in the specified organization. See --organization for 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4613,7 +4547,6 @@ Show the named space's information. This is an Application Lifecycle Service 3 s
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4658,7 +4591,6 @@ Switch from the current space to the named space. This may switch the organizati
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4709,7 +4641,6 @@ Remove the specified user from the named space, in various roles. This is an App
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4756,7 +4687,6 @@ Delete the named route. This is an Application Lifecycle Service 3 specific comm
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4809,7 +4739,6 @@ List all available routes. This is an Application Lifecycle Service 3 specific c
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4850,7 +4779,6 @@ List the available domains in the specified space, or all. This is an Applicatio
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4868,7 +4796,6 @@ List the available domains in the specified space, or all. This is an Applicatio
     A current space is automatically set if there is none, either by
     taking the one space the user has, or asking the user to choose
     among the possibilities. Cannot be used together with --all.</td> 
-
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -4902,7 +4829,6 @@ Add the named domain to an organization or space. This is a Application Lifecycl
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -4953,7 +4879,6 @@ Remove the named domain from an organization or space. This is an Application Li
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5006,7 +4931,6 @@ Grant the named user administrator privileges for the current or specified targe
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5036,7 +4960,6 @@ Show a list of the administrators for the current or specified target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5076,7 +4999,6 @@ Apply a patch to the current or specified target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5112,7 +5034,6 @@ Retrieve a report containing the logs of the current or specified target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5148,7 +5069,6 @@ Revoke administrator privileges for the named user at the current or specified t
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5178,7 +5098,6 @@ List the supported frameworks of the target. This is an Application Lifecycle Se
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5215,7 +5134,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5252,7 +5170,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5288,7 +5205,6 @@ Remove the named user from the specified group. This is an Application Lifecycle
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5324,7 +5240,6 @@ Delete the named group. This is an Application Lifecycle Service 2 specific comm
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5372,7 +5287,6 @@ Show and/or modify the limits applying to applications in the named group. This 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5414,7 +5328,6 @@ Show the list of groups known to the target. This is an Application Lifecycle Se
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5453,7 +5366,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5492,7 +5404,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5536,7 +5447,6 @@ Show the basic system and account information.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5596,7 +5506,6 @@ Show and/or modify the limits applying to applications in the named group. This 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5637,27 +5546,22 @@ specific command.
     </tr>    <tr><td>--mem</td>
     <td>Amount of memory applications can use.</td>
     </tr>    <tr><td>--no-allow-sudo</td>
-
     <td>Complementary alias of --allow-sudo.</td>
     </tr>    <tr><td>--no-paid-services-allowed</td>
-
     <td>Complementary alias of --paid-services-allowed.</td>
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--no-trial-db-allowed</td>
-
     <td>Complementary alias of --trial-db-allowed.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--paid-services-allowed</td>
-
     <td>Applications can use non-free services.</td>
     </tr>    <tr><td>--services</td>
     <td>Limit for the number of services in the quota.</td>
@@ -5675,7 +5579,6 @@ specific command.
     command to print the saved trace to stdout.</td>
     </tr><tr>
     </tr>    <tr><td>--trial-db-allowed</td>
-
     <td>Applications can use trial databases.</td> </tr><tr>
     <td>-n</td>
     <td>Alias of --no-prompt.</td>
@@ -5695,20 +5598,16 @@ command.
     </tr>    <tr><td>--mem</td>
     <td>Amount of memory applications can use.</td>
     </tr>    <tr><td>--no-allow-sudo</td>
-
     <td>Complementary alias of --allow-sudo.</td>
     </tr>    <tr><td>--no-paid-services-allowed</td>
-
     <td>Complementary alias of --paid-services-allowed.</td>
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--no-trial-db-allowed</td>
-
     <td>Complementary alias of --trial-db-allowed.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5754,7 +5653,6 @@ command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5793,7 +5691,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5830,7 +5727,6 @@ command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5868,7 +5764,6 @@ Show the details of the named quota definition. If not specified it will be aske
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5907,7 +5802,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5946,7 +5840,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -5985,7 +5878,6 @@ specific command.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6021,7 +5913,6 @@ List the available targets, and their authorization tokens, if any.
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6045,7 +5936,6 @@ List the available targets, and their authorization tokens, if any.
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6077,7 +5967,6 @@ Show the current memory allocation and usage of the active or specified user/gro
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6127,7 +6016,6 @@ Shows the information of a user in the current or specified target. Defaults to 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6165,7 +6053,6 @@ Show the name of the current user in the current or specified target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6199,7 +6086,6 @@ Print the version number of the client.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6239,7 +6125,6 @@ Register a new user in the current or specified target. This operation requires 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6289,7 +6174,6 @@ Delete the named user, and the user's applications and services from the current
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6327,7 +6211,6 @@ Show the names of the credential fields needed for a login. This is an Applicati
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6363,7 +6246,6 @@ Change the password of the current user in the current or specified target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6422,7 +6304,6 @@ Register a new user in the current or specified target. This operation requires 
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6470,7 +6351,6 @@ Interactively set authentication token.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6496,7 +6376,6 @@ Delete the named user, and the user's applications and services from the current
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6534,7 +6413,6 @@ Show the list of users known to the current or specified target.
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6571,7 +6449,6 @@ List the known aliases (shortcuts).
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6589,7 +6466,6 @@ Create a shortcut for a command (prefix).
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6607,7 +6483,6 @@ Remove a shortcut by name.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6627,7 +6502,6 @@ Exit the shell. No-op if not in a shell.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6653,7 +6527,6 @@ Retrieve help for a command or command set. Without arguments help for all comma
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6682,7 +6555,6 @@ Run a raw rest request against the chosen target
     </tr>    <tr><td>--no-trace</td>
     <td>Complementary alias of --trace.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6718,7 +6590,6 @@ Show the packages used the client, and their versions.
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6736,7 +6607,6 @@ Exit the shell. No-op if not in a shell.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6762,7 +6632,6 @@ Retrieve help for a command or command set. Without arguments help for all comma
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6789,7 +6658,6 @@ Exit the shell. No-op if not in a shell.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6807,7 +6675,6 @@ Exit the shell. No-op if not in a shell.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6833,7 +6700,6 @@ Retrieve help for a command or command set. Without arguments help for all comma
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6862,7 +6728,6 @@ Map the specified name into a uuid, given the type. This is an Application Lifec
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6888,7 +6753,6 @@ Retrieve help for a command or command set. Without arguments help for all comma
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6914,7 +6778,6 @@ List the entity types usable for 'guid'. I.e. the types of the
     </tr>    <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
@@ -6932,7 +6795,6 @@ Exit the shell. No-op if not in a shell.
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--non-interactive</td>
-
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--noprompt</td>
