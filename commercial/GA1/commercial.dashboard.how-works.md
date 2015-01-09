@@ -40,6 +40,8 @@ How you interact with your network environment depends upon your user type, eith
 -->
 To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/dashboard/login/). 
 
+At the bottom of this page, you can see some of the services you can manage right from the dashboard.
+
 ## Project dashboard<a name="DashProject"></a>
 
 Use the **Project** dashboard to implement and build out your cloud. This dashboard contains tools to create virtual server instances, create and configure your network, configure access tools (such as key pairs and security groups) and cloud resource templates (stacks).
@@ -55,6 +57,13 @@ The Admin dashboard allows you to manage instances, define flavors, create and c
 Use the **Settings** dashboard to change your display language and settings, your time zone, and your password.
  
 Click **Settings** in the user menu to display the Settings dashboard. 
+
+The figures below show many of the services you can manage from the dashboards.
+
+<img src="media/HelionDashboardMenus.png"/>
+<br>
+
+<img src="media/HelionDashboardDetail.png"/>
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
