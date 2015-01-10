@@ -4,7 +4,7 @@ permalink: /als/v1/admin/server/logging/
 product: devplatform
 title: "Log Streams"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Log Streams {#log-streams}
    [Logyard](#logyard)

@@ -5,7 +5,7 @@ product: devplatform
 title: "Management Console (Admin View)"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Management Console (Admin View) {#management-console-admin-view}
 

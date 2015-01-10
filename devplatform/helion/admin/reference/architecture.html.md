@@ -4,7 +4,7 @@ permalink: /als/v1/admin/reference/architecture/
 product: devplatform
 title: "Architectural Design"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 Architectural Design[](#architectural-design "Permalink to this headline")
 ===========================================================================

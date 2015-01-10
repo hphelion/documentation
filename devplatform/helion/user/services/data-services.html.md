@@ -4,7 +4,7 @@ permalink: /als/v1/user/services/data-services/
 product: devplatform
 title: "Data Services"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Application Lifecycle Service Data Services {#index-0}
 

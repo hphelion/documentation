@@ -5,7 +5,7 @@ product: devplatform
 title: "Application Logs"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Application Logs {#application-logs}
 

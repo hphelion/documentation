@@ -5,7 +5,7 @@ product: devplatform
 title: "HP Options"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 <!--note that all this content has been merged into the manifest.yml file and is retained here in this orphaned article for reference only-->
 
 #HP Options {#yml-options}
