@@ -88,37 +88,25 @@ the other nodes and assign roles.
 
 ### CORE\_IP[](#core-ip "Permalink to this headline")
 
-A [static IP
-address](/als/v1/admin/server/configuration/#server-config-static-ip) is
-necessary to provide a consistent network interface for other nodes to
-connect to. If your IaaS or cloud orchestration software provide IP
-addresses which persist indefinitely and are not reset on reboot you may
-not have to set this explicitly.
+A [static IP address](/als/v1/admin/server/configuration/#server-config-static-ip) is
+necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.
 
-Take note of the IP address of the Core node. It will be required when
-configuring additional nodes in the following steps, so that they can
-attach to the Core node.
+Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node. 
 
-Make sure that the IP address of its `eth0`
-interface is registering the correct address, which may not be the case
-if you have set a static IP and not yet rebooted or restarted
+
+Make sure that the IP address of its `eth0` interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
 networking. To check the IP address, run:
-
 
     $ ifconfig eth0
 
-If necessary, set the [static IP
-address](/als/v1/admin/server/configuration/#server-config-static-ip):
+If necessary, set the [static IP address](/als/v1/admin/server/configuration/#server-config-static-ip):
 
 
     $ kato op static_ip
 
 **Note**
 
-If the IP address of the Core node changes, the [kato node
-migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
-command must be run on all nodes in the cluster (starting with the Core
-node) to set the new CORE\_IP.
+ If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run *[kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)* on the Core node, then *[kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)* on all other cluster nodes. 
 
 ### Hostname[](#hostname "Permalink to this headline")
 
@@ -138,10 +126,7 @@ used by clients (e.g. "https://api.hostname.example.com").
 
 **Note**
 
-If you are building a cluster with multiple Routers separate from the
-Core node, the load balancer or gateway router must take on the API
-endpoint address. Consult the [Load Balancer and Multiple
-Routers](#cluster-load-balancer) section below.
+If you are building a cluster with multiple Routers separate from the Core node, the load balancer or gateway router must take on the API endpoint address. Consult the [Load Balancer and Multiple Routers](#cluster-load-balancer) section below.
 
 ### Wildcard DNS[](#wildcard-dns "Permalink to this headline")
 
@@ -164,7 +149,7 @@ This sets up the Core node with just the implicit **controller**,
 If you intend to set up the rest of the cluster immediately, you would
 carry on to enable those roles you ultimately intend to run on the Core
 node. For example, to set up a Core node with the **controller**,
-**primary** **router**, and **dea** roles:
+**primary**, **router**, and **dea** roles:
 
     $ kato node setup core api.hostname.example.com
     $ kato role add dea
@@ -191,7 +176,7 @@ command, but it is generally preferable to enable roles during the
 In smaller clusters, the Router role enabled on a Core node should be sufficient for the Core node to function as the gateway. To attach a node enabling just the router role: 
 
 
-    $ kato node attach -e router CORE_IP
+    kato node attach -e router CORE_IP
 
 
 If a Router-only node is functioning as the gateway, the public DNS entry for the API endpoint must point to that node. For larger clusters requiring multiple gateway Routers, see the [Load Balancer and Multiple Routers](#cluster-load-balancer) section below.
@@ -204,25 +189,17 @@ available data services on a single node and attach it to the Core node,
 run the following command on the data services node:
 
 
-    $ kato node attach -e data-services CORE_IP
+    kato node attach -e data-services CORE_IP
 
 
 **Note**
 
 The [Harbor](/als/v1/admin/cluster/harbor/#harbor) port service needs a publicly
-routable IP and exposed port range if you want to provide externally
-accessible TCP and UDP ports for user applications. See the [Harbor
-Requirements & Setup](/als/v1/admin/cluster/harbor/#harbor-setup) documentation for
-details.
+routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the [Harbor Requirements & Setup](/als/v1/admin/cluster/harbor/#harbor-setup) documentation for details.
 
 ### DEA Nodes[](#dea-nodes "Permalink to this headline")
 
-Nodes which stage application code and run application containers are
-called Droplet Execution Agents (DEAs). Once the controller node is
-running, you can begin to add some of these nodes with the [kato node
-attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
-command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the
-Core node:
+Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:
 
 
     $ kato node attach -e dea CORE_IP
@@ -352,14 +329,9 @@ Though Memcache and Redis are in-memory data stores, system service info
 data is stored on disk, so backing them with a persistent filesystem is
 recommended.
 
-In clusters with multiple Cloud Controllers, the nodes **must** share a
-common */home/helion/helion/data* mount point as described
-[below](#cluster-multi-controllers) in order to work together
-properly.
+In clusters with multiple Cloud Controllers, the nodes **must** share a common */home/helion/helion/data* mount point as described [below](#cluster-multi-controllers) in order to work together properly.
 
-See the [Persistent
-Storage](/als/v1/admin/best-practices/#bestpractices-persistent-storage)
-documentation for instructions on relocating service data, application
+See the [Persistent Storage](/als/v1/admin/best-practices/#bestpractices-persistent-storage) documentation for instructions on relocating service data, application
 droplets, and containers.
 
 Port Configuration[](#port-configuration "Permalink to this headline")
@@ -446,10 +418,11 @@ Multiple Controllers[](#multiple-controllers "Permalink to this headline")
 ---------------------------------------------------------------------------
 
 An Application Lifecycle Service cluster can have multiple controller nodes running on
-separate VMs to improve redundancy. The key element in designing this
-redundancy is to have all controller nodes share a
-`/home/helion/helion/data` directory stored on a
-high-availability filesystem server. For example:
+separate VMs to improve performance. To do this, all controller nodes must share the following two important data directories on a high-availability filesystem server: 
+
+	/home/stackato/stackato/data
+	/var/stackato/data/cloud_controller_ng/tmp/staged_droplet_uploads  
+
 
 -   Create a shared filesystem on a Network Attached Storage device.
     [[1]](#id4)
@@ -538,8 +511,7 @@ ultimately have unique hostnames. After setup, rename the Core node
 
 ### Set up Supplemental Routers[](#set-up-supplemental-routers "Permalink to this headline")
 
-As with the Core node, you will need to run `kato node rename`on each router with the same API endpoint hostname. Run the
-following on each Router:
+As with the Core node, you will need to run `kato node rename`on each router with the same API endpoint hostname. Run the following on each Router:
 
     $ kato node rename *hostname.example.com*
 

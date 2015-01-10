@@ -176,29 +176,29 @@ get*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config):
 These default log formats are used when the corresponding prefix is used
 and no format options ("-f") are specified. For example
 `kato drain add -p systail.dea ...` would format the
-drain using the 'systail' drain format.
+drain using the *systail* drain format.
 
 ### Saving Custom Log Formats[](#saving-custom-log-formats "Permalink to this headline")
 
 Custom formats for drains can be saved as a named type in the Logyard
 configuration. To do this, add the formatting string to a new key in
 logyard/drainformats. For example, to save the log format used in the
-'all-apps' drain example above:
+**all-apps **drain example above:
 
-    $ kato config set logyard drainformats/simplefmt "{{.human_time}} - {{.app_name}}: {{.text}}"
+    kato config set logyard drainformats/simplefmt "{{.human_time}} - {{.app_name}}: {{.text}}"
 
 You can use this named format when setting up new drains. For example, a
-shorter command for creating the 'all-apps' drain would be:
+shorter command for creating the **all-apps** drain would be:
 
-    $ kato log drain add -p apptail -f simplefmt all-apps file:///s/logs/apptail-short.log
+    kato log drain add -p apptail -f simplefmt all-apps file:///s/logs/apptail-short.log
 
-A custom "systail" log stream might look like this:
+A custom *systail* log stream might look like this:
 
-    $ kato config set logyard drainformats/systail-papertrail '<13>1 - {{.human_time}} - {{.name}}@{{.node_id}} -- {{.text}}'
+    kato config set logyard drainformats/systail-papertrail '{{.HumanTime}} - {{.Name}}@{{.NodeID}} -- {{.Text}}'
 
 This could be forwarded to the Papertrail log analysis service:
 
-    $ kato log drain add papertrail udp://logs.papertrailapp.com:45678 -f systail-papertrail
+    kato log drain add papertrail udp://logs.papertrailapp.com:45678 -f systail-papertrail
 
 You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
@@ -230,7 +230,7 @@ User Guide for an example.
 You can check the status of all drains on Application Lifecycle Service with the
 `kato log drain status` subcommand. For example:
 
-    $ kato log drain status
+    kato log drain status
     appdrain.1.mine         192.168.68.5    RUNNING[53]
     appdrain.1.mydrain      192.168.68.5    RETRYING[75]  invalid port 3424252
     builtin.apptail         192.168.68.5    RUNNING[3]

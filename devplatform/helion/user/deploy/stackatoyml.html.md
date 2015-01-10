@@ -697,7 +697,7 @@ To enable JSON logging, specify the URL separately along with a
 For example:
 
     drain:
-      mytestdrain: udp://logs.loggly.com:12346/
+      mytestdrain: udp://logs.papertrailapp.com:12346/
       otherdrain:
         url: tcp://logs.papertrailapp.com:12345/
         json: true

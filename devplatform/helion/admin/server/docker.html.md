@@ -19,58 +19,51 @@ containers on demand.
 Typically, admins will not have to work directly Docker, but it is
 available if needed to customize or create new container images.
 
-Modifying or Updating the Container Image[](#modifying-or-updating-the-container-image "Permalink to this headline")
----------------------------------------------------------------------------------------------------------------------
+##Modifying or Updating the Container Image {#modifying-or-updating-the-container-image}
 
-Application containers are created from a base Docker image (a template
-used to create Linux containers). Admins can create new images to add
-specific software required by applications or update operating system
-packages.
+Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.
 
-To create a new base image for Application Lifecycle Service to use for application
-containers, perform the following steps **on all nodes running the DEA
-role**:
+See also the [Upgrade the Docker Image](/als/v1/admin/best-practices/#upgrade-docker) section in the [Best Practices](/als/v1/admin/best-practices/) reference, which shows how to modify the 
+Docker base image **without** changing *kato config*. 
+
+To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps **on all nodes running the DEA role**:
 
 1.  Start with an empty working directory:
 
-        $ mkdir ~/newimg
-        $ cd ~/newimg
+        mkdir ~/newimg
+        cd ~/newimg
 
 2.  Check which image Application Lifecycle Service is currently using as an app container
     template:
 
-        $ kato config get fence docker/image
+        kato config get fence docker/image
         helion/stack/alsek
 
-3.  Create a [Dockerfile](http://docs.docker.io/en/latest/use/builder/)
-    which inherits the current Docker image, then runs an update or
-    installation command. For example:
+3.  Create a [Dockerfile](http://docs.docker.io/en/latest/use/builder/) which inherits the current Docker image, then runs an update or installation command. For example:
 
-        FROM helion/stack/alsek
+        FROM helion/stack-alsek:kato-patched
         RUN apt-get -y install libgraphite2-dev
 
     -   [FROM](http://docs.docker.io/en/latest/use/builder/#from):
-        inherits the environment and installed software from Application Lifecycle Service's
-        app image.
+        inherits the environment and installed software from the latest patched version of the app image.
     -   [RUN](http://docs.docker.io/en/latest/use/builder/#run):
         specifies arbitrary commands to run before saving the image.
     -   [ADD](http://docs.docker.io/en/latest/use/builder/#add): could
         be used to copy files into the image.
+</br>
+</br>
+4.  Build the image. Set the maintainer's name and an image name:
 
-4.  Build the image, setting the maintainer's name, and an image name:
-
-        $ sudo docker build -rm -t exampleco/newimg .
+        sudo docker build -rm -t exampleco/newimg .
 
 5.  Configure Application Lifecycle Service to use the new image:
 
-**Note**
-
-This step only needs to be done once, as the configuration change is
+	**Note**: This step only needs to be done once, as the configuration change is
 shared with all nodes:
 
-    $ kato config set fence docker/image exampleco/newimg
-    WARNING: Assumed type string
-    exampleco/newimg
+	    $ kato config set fence docker/image exampleco/newimg
+	    WARNING: Assumed type string
+	    exampleco/newimg
 
 Admin Hooks[](#admin-hooks "Permalink to this headline")
 ---------------------------------------------------------

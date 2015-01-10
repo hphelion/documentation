@@ -13,6 +13,8 @@ title: "Best Practices"
 - [Passwordless SSH Authentication](#passwordless)
 - [Applying Updates](#applying-updates)
 - [Security Patches](#security)
+	- [Upgrade the Docker image](#upgrade-docker)
+	- [Upgrade the VM](#upgrade-vm)
 -   [Backup & Migration](#backup-migration)
 -   [Limitations](#limitations)
 	-   [Custom Services](#custom-services)
@@ -38,10 +40,7 @@ upgrades are simpler if the cluster nodes are configured with
 This can be done either prior to cluster setup and role assignment or
 afterwards.
 
-The Constructor VM automatically generates a new 2048 bit RSA key pair on
-first boot which can be used for this purpose. If you wish to use a
-stronger key, or one with a passphrase, follow the Ubuntu documentation
-on [Generating RSA Keys](https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Generating_RSA_Keys).
+The Constructor VM automatically generates a new 2048 bit RSA keypair on first boot which can be used for this purpose. If you wish to use a stronger key, or one with a passphrase, follow the Ubuntu documentation on [Generating RSA Keys](https://help.ubuntu.com/community/SSH/OpenSSH/Keys#Generating_RSA_Keys).
 
 To transfer the public key from the Core node to all non-Core nodes execute:
 
@@ -90,16 +89,12 @@ Applying patches will automatically restart all patched roles. To
 prevent this, use the `--no-restart` option.
 
 To apply a patch only to the local Application Lifecycle Service VM (not the whole cluster),
-use the **--only-this-node** option.
+use the **--local** option.
 
 ##Security Patches {#security}
-Both the ALS VM and the Docker base image used for application
-containers run Ubuntu. To maintain an up-to-date system with all known
-security patches in place, the VM and Docker base images should be
-updated with the following process whenever an important security update
-becomes available in the Ubuntu repositories.
+Both the ALS VM and the Docker base image used for application containers run Ubuntu. To maintain an up-to-date system with all known security patches in place, the VM and Docker base images should be updated with the following process whenever an important security update becomes available in the Ubuntu repositories.
 
-###Upgrade the VM
+###Upgrade the VM {#upgrade-vm}
 To upgrade the VM, run the following command on all cluster nodes, one node at a time:
 
     sudo unattended-upgrades -d
@@ -116,26 +111,27 @@ from the *-security* stream.
 Each node should be rebooted after *unattended-upgrades* completes to
 ensure that all new kernels, modules, and libraries are loaded.
 
-###Upgrade the Docker image
-The base Docker image used for application containers should also be
-upgraded once the VM is up-to-date. Perform the following steps on each
-DEA node in the cluster, one node at a time:
+###Upgrade the Docker image {#upgrade-docker}
+The base Docker image used for application containers should also be upgraded once the VM is up-to-date. Perform the following steps on each DEA node in the cluster, one node at a time:
 
 1.  Create a new working directory:
 
         mkdir ~/upgrade-alsek && cd $_
 
-2.  Create a *Dockerfile*. In this new directory, create a file named
-    **Dockerfile** and add the following:
+2.  Create a *Dockerfile*. In this new directory, create a file named **Dockerfile** and add the following:
 
-        FROM stackato/stack-alsek
-        RUN apt-get update
-        RUN unattended-upgrades -d
-        RUN apt-get clean && apt-get autoremove
+		FROM stackato/stack-alsek:kato-patched
+		RUN apt-get update
+		RUN unattended-upgrades -d
+		RUN apt-get clean && apt-get autoremove 
 
-3.  Build the Docker image. Give the image a tag relevant to this particular upgrade (e.g. *upgrade-2014-09-19*):
+The **kato-patched** tag is attached to the image most recently updated by *kato patch*. Use this as a starting point rather than *latest* to prevent the accumulation of too many AUFS filesystem layers. 
 
-        sudo docker build -rm -t stackato/stack-alsek:upgrade-2014-09-19 .
+
+3.  Build the docker image with the **--no-cache=true** option. Give the image a tag relevant to this particular upgrade (e.g. upgrade-2014-09-19) 
+
+
+        sudo docker build --no-cache=true -rm -t stackato/stack-alsek:upgrade-2014-09-19 .
 
     The **.** (dot) at the end is important! It specifies that the *Dockerfile* to use is the one in the current directory.
 
@@ -347,17 +343,13 @@ Documentation](http://nagios.sourceforge.net/docs/3_0/toc)
 
 ##Persistent Storage {#storage}
 
-Cloud hosting providers have different default partition sizes and
-configurations. The default root volumes on some cloud hosted VM
-instances are often fairly small and are usually ephemeral. Data service
-and filesystem nodes should always be backed by some kind of persistent
-storage, with enough free filesystem space to accommodate the projected
-use of the services.
+Cloud hosting providers have different default partition sizes and configurations. The default root volumes on some cloud hosted VM instances are often fairly small and are usually ephemeral. Data service and filesystem nodes should always be backed by some kind of persistent storage that has enough free filesystem space to accommodate the projected use of the services.
+
+Do not relocate the filesystem service to an NFS mount. Use the block storage mechanism native to your hypervisor or SSHFS. 
 
 ### Relocating Services, Droplets, and Containers[](#relocating-services-droplets-and-containers "Permalink to this headline")
 
-To move database services, application droplets, and application
-containers to larger partitions:
+To move database services, application droplets, and application containers to larger partitions:
 
 -   mount the filesystem and/or block storage service on the instance
     (with [*quotas enabled*](#bestpractices-filesystem-quotas)),
@@ -379,8 +371,7 @@ For example:
 
 **Note**
 
-For performance reasons, Application Lifecycle Service containers should not be relocated to
-block volumes.
+For performance reasons, containers should not be relocated to EBS volumes. 
 
 ### Enabling Filesystem Quotas[](#enabling-filesystem-quotas "Permalink to this headline")
 
