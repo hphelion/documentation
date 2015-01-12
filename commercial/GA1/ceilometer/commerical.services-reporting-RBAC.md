@@ -35,9 +35,9 @@ To discover the list of users available in the system, an administrator can run 
 	keystone user-list
 The output should resemble this response, which is a list of all the users currently available in this system.
 
-	+----------------------------------+-----------------------------------------+----+-+
-	|                id                |     name     | enabled |       email        |
-	+----------------------------------+-----------------------------------------+----+-+
+	+----------------------------------+-----------------------------------------+----+
+	|                id                |    name      | enabled |       email        |
+	+----------------------------------+-----------------------------------------+----+
 	| 1c20d327c92a4ea8bb513894ce26f1f1 |   admin      |   True  | admin.example.com  |
 	| 0f48f3cc093c44b4ad969898713a0d65 | ceilometer   |   True  | nobody@example.com |
 	| 85ba98d27b1c4c8f97993e34fcd14f48 |   cinder     |   True  | nobody@example.com |
@@ -57,14 +57,15 @@ The output should resemble this response, which is a list of all the users curre
 	| 5cda1a541dee4555aab88f36e5759268 |    nova      |   True  | nobody@example.com |
 	| 6ae85dff35e14c3d878c202b6277362f |   sherpa     |   True  | nobody@example.com |
 	| 1cefd1361be8437d9684eb2add8bdbfa |   swift      |   True  | nobody@example.com |
-	| f05bac3532c44414a26c0086797dab23 | user20141203213957 | True | nobody@example.com |
-	| 3db0588e140d4f88b0d4cc8b5ca86a0b | user20141205232231 | True | nobody@example.com |
-	+----------------------------------+-----------------------------------------+-------+-+
+	| f05bac3532c44414a26c0086797dab23 | user20141203213957|True| nobody@example.com |
+	| 3db0588e140d4f88b0d4cc8b5ca86a0b | user20141205232231|True| nobody@example.com |
+	+----------------------------------+-----------------------------------------+----+
 
 ##Displaying All Roles {#display_roles}
 To see all the roles that are currently available in the deployment, an administrator can run the following command:
-
+	
 	keystone role-list
+	
 The output should resemble the following response:
 
 	+----------------------------------+-------------------------------------+
@@ -78,7 +79,6 @@ The output should resemble the following response:
 	| 8f11f6761534407585feecb5e896922f |            swiftoperator            |
 	+----------------------------------+-------------------------------------+
 
-
 ##Assigning a Role to a User {#assign_role}
 
 In this example, we want to add the role **ResellerAdmin** to the demo user who has the ID **d2ff982a0b6547d0921b94957db714d6**.
@@ -88,7 +88,7 @@ In this example, we want to add the role **ResellerAdmin** to the demo user who 
 		keystone user-get d2ff982a0b6547d0921b94957db714d6
 
 	The response should resemble the following output:
-5. 
+ 
 		+----------+----------------------------------+
 		| Property |              Value               |
 		+----------+----------------------------------+
@@ -270,7 +270,6 @@ In the policy language, each check is specified the same way as in the list-of-l
 	
 		project_id:%(target.project.id)s
 
-
 - Strings 
 
 		<variable>:'xpto2035abc'
@@ -286,10 +285,13 @@ In the policy language, each check is specified the same way as in the list-of-l
 Conjunction operators are also available, allowing for more flexibility in crafting policies. So, in the policy language, the previous check in list-of-lists becomes:
 
 	role:admin or (project_id:%(project_id)s and role:projectadmin)
+
 The policy language also has the NOT operator, allowing for richer policy rules:
 
 	project_id:%(project_id)s and not role:dunce
+
 Attributes sent along with API calls can be used by the policy engine (on the right side of the expression), by using the following syntax:
 
 	<some_value>:%(user.id)s
+
 **Note**: two special policy checks should be mentioned; the policy check **@** will **always accept** an access, and the policy check **!** will **always reject** an access.
