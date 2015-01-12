@@ -47,7 +47,9 @@ Before you start the installation and configuration process, ensure that you hav
 		ssh -i cloud.key debian@15.126.234.185
 
 
+1. Run this command to change the permissions on your keypair file to protect it:
 
+		sudo chmod 400 KEYPAIR
 
 1.  Run the configuration script to create your cluster.conf configuration file using the following command:
 
