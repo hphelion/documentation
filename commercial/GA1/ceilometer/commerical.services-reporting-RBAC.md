@@ -24,49 +24,47 @@ Keystone has a set of users that are associated with each project. Each user has
 - [Assigning a Role to a User](#assign_role)
 - [Creating a New Role](#create_role)
 - [Ceilometer Access Policies](#access_policies)
-	- New RBAC Policy File {#newfile}
-	- Applying Policies to Roles {#apply_policy}
-	- Writing a Policy {#write_policy}
+	- [New RBAC Policy File](#newfile)
+	- [Applying Policies to Roles](#apply_policy)
+	- [Writing a Policy](#write_policy)
 
 ##Displaying All Users {#display_users}
 
 To discover the list of users available in the system, an administrator can run the following command using the Keystone command-line interface:
 
 	keystone user-list
-
 The output should resemble this response, which is a list of all the users currently available in this system.
 
-	+----------------------------------+-----------------------------------------+---------+--------------------+
-	|                id                |                   name                  | enabled |       email        |
-	+----------------------------------+-----------------------------------------+---------+--------------------+
-	| 1c20d327c92a4ea8bb513894ce26f1f1 |                  admin                  |   True  | admin.example.com  |
-	| 0f48f3cc093c44b4ad969898713a0d65 |                ceilometer               |   True  | nobody@example.com |
-	| 85ba98d27b1c4c8f97993e34fcd14f48 |                  cinder                 |   True  | nobody@example.com |
-	| d2ff982a0b6547d0921b94957db714d6 |                   demo                  |   True  |  demo@example.com  |
-	| b2d597e83664489ebd1d3c4742a04b7c |                   ec2                   |   True  | nobody@example.com |
-	| 99afb00e498a487eb83c96c9bd209586 |                   gf1                   |   True  |   gf@helion.com    |
-	| 42d13c0df38a47989639b5fe99976f26 |                   gf2                   |   True  |   gf@helion.com    |
-	| 2b95b2600dc741958eae15057ff7e89b |                   gf3                   |   True  |   gf@helion.com    |
-	| 2bd85070ceec4b608d9f1b06c6be22cb |                  glance                 |   True  | nobody@example.com |
-	| 0e9e2daebbd3464097557b87af4afa4c |                   heat                  |   True  | nobody@example.com |
-	| 9f7fd03c90904d83ae73ef1b40a6baf0 |                   jaq1                  |   True  |   jaq@helion.com   |
-	| 7a73e59a100342099c59278a392f582a |                   jaq2                  |   True  |   jaq@helion.com   |
-	| 72e404eab90f41c6a181b9602e0fa777 |                   jaq3                  |   True  |   jaq@helion.com   |
-	| b149fe9c5f0e421e8349efc52f4b0451 |                   jaq4                  |   True  |   jaq@helion.com   |
-	| 0e54dab3c76349c5ab50f196a979b4c0 |                   jaq5                  |   True  |   jaq@helion.com   |
-	| 0b466ddc2c0f478aa139d2a0be314467 |                 neutron                 |   True  | nobody@example.com |
-	| 5cda1a541dee4555aab88f36e5759268 |                   nova                  |   True  | nobody@example.com |
-	| 6ae85dff35e14c3d878c202b6277362f |                  sherpa                 |   True  | nobody@example.com |
-	| 1cefd1361be8437d9684eb2add8bdbfa |                  swift                  |   True  | nobody@example.com |
-	| f05bac3532c44414a26c0086797dab23 |            user20141203213957           |   True  | nobody@example.com |
-	| 3db0588e140d4f88b0d4cc8b5ca86a0b |            user20141205232231           |   True  | nobody@example.com |
-	+----------------------------------+-----------------------------------------+---------+--------------------+
+	+----------------------------------+-----------------------------------------+---------+-----+
+	|                id                |              name      | enabled |       email        |
+	+----------------------------------+-----------------------------------------+---------+-----+
+	| 1c20d327c92a4ea8bb513894ce26f1f1 |             admin      |   True  | admin.example.com  |
+	| 0f48f3cc093c44b4ad969898713a0d65 |           ceilometer   |   True  | nobody@example.com |
+	| 85ba98d27b1c4c8f97993e34fcd14f48 |             cinder     |   True  | nobody@example.com |
+	| d2ff982a0b6547d0921b94957db714d6 |              demo      |   True  |  demo@example.com  |
+	| b2d597e83664489ebd1d3c4742a04b7c |              ec2       |   True  | nobody@example.com |
+	| 99afb00e498a487eb83c96c9bd209586 |              gf1       |   True  |   gf@helion.com    |
+	| 42d13c0df38a47989639b5fe99976f26 |              gf2       |   True  |   gf@helion.com    |
+	| 2b95b2600dc741958eae15057ff7e89b |              gf3       |   True  |   gf@helion.com    |
+	| 2bd85070ceec4b608d9f1b06c6be22cb |             glance     |   True  | nobody@example.com |
+	| 0e9e2daebbd3464097557b87af4afa4c |              heat      |   True  | nobody@example.com |
+	| 9f7fd03c90904d83ae73ef1b40a6baf0 |              jaq1      |   True  |   jaq@helion.com   |
+	| 7a73e59a100342099c59278a392f582a |              jaq2      |   True  |   jaq@helion.com   |
+	| 72e404eab90f41c6a181b9602e0fa777 |              jaq3      |   True  |   jaq@helion.com   |
+	| b149fe9c5f0e421e8349efc52f4b0451 |              jaq4      |   True  |   jaq@helion.com   |
+	| 0e54dab3c76349c5ab50f196a979b4c0 |              jaq5      |   True  |   jaq@helion.com   |
+	| 0b466ddc2c0f478aa139d2a0be314467 |            neutron     |   True  | nobody@example.com |
+	| 5cda1a541dee4555aab88f36e5759268 |              nova      |   True  | nobody@example.com |
+	| 6ae85dff35e14c3d878c202b6277362f |             sherpa     |   True  | nobody@example.com |
+	| 1cefd1361be8437d9684eb2add8bdbfa |             swift      |   True  | nobody@example.com |
+	| f05bac3532c44414a26c0086797dab23 |   user20141203213957   |   True  | nobody@example.com |
+	| 3db0588e140d4f88b0d4cc8b5ca86a0b |   user20141205232231   |   True  | nobody@example.com |
+	+----------------------------------+-----------------------------------------+---------+-----+
 
 ##Displaying All Roles {#display_roles}
 To see all the roles that are currently available in the deployment, an administrator can run the following command:
 
 	keystone role-list
-
 The output should resemble the following response:
 
 	+----------------------------------+-------------------------------------+
@@ -86,8 +84,9 @@ The output should resemble the following response:
 In this example, we want to add the role **ResellerAdmin** to the demo user who has the ID **d2ff982a0b6547d0921b94957db714d6**.
 
 1. Determine which Project/Tenant the user belongs to.
-2. 
+ 
 		keystone user-get d2ff982a0b6547d0921b94957db714d6
+
 	The response should resemble the following output:
 5. 
 		+----------+----------------------------------+
@@ -98,40 +97,41 @@ In this example, we want to add the role **ResellerAdmin** to the demo user who 
 		|    id    | d2ff982a0b6547d0921b94957db714d6 |
 		|   name   |               demo               |
 		| username |               demo               |
-		+----------+----------------------------------+ 	 
+		+----------+----------------------------------+ 	
+ 
 1. We need to link the ResellerAdmin Role to a Project/Tenant. Determine which tenants are available on this deployment.
-2. 
+
 		keystone tenant-list
 
 	The response should resemble the following output:
-5. 
-		+----------------------------------+--------------------------------------+---------+
-		|                id                |                 name                 | enabled |
-		+----------------------------------+--------------------------------------+---------+
-		| 4a8f4207a13444089a18dc524f41b2cf |                admin                 |   True  |
-		| 00cbaf647bf24627b01b1a314e796138 |                 demo                 |   True  |
-		| 8374761f28df43b09b20fcd3148c4a08 |                 gf1                  |   True  |
-		| 0f8a9eef727f4011a7c709e3fbe435fa |                 gf2                  |   True  |
-		| 6eff7b888f8e470a89a113acfcca87db |                 gf3                  |   True  |
-		| f0b5d86c7769478da82cdeb180aba1b0 |                 jaq1                 |   True  |
-		| a46f1127e78744e88d6bba20d2fc6e23 |                 jaq2                 |   True  |
-		| 977b9b7f9a6b4f59aaa70e5a1f4ebf0b |                 jaq3                 |   True  |
-		| 4055962ba9e44561ab495e8d4fafa41d |                 jaq4                 |   True  |
-		| 33ec7f15476545d1980cf90b05e1b5a8 |                 jaq5                 |   True  |
-		| 9550570f8bf147b3b9451a635a1024a1 |               service                |   True  |
-		+----------------------------------+--------------------------------------+---------+
+
+		+----------------------------------+-------------------------------+--+
+		|                id                |        name       | enabled |
+		+----------------------------------+-------------------------------+--+
+		| 4a8f4207a13444089a18dc524f41b2cf |       admin       |   True  |
+		| 00cbaf647bf24627b01b1a314e796138 |        demo       |   True  |
+		| 8374761f28df43b09b20fcd3148c4a08 |        gf1        |   True  |
+		| 0f8a9eef727f4011a7c709e3fbe435fa |        gf2        |   True  |
+		| 6eff7b888f8e470a89a113acfcca87db |        gf3        |   True  |
+		| f0b5d86c7769478da82cdeb180aba1b0 |        jaq1       |   True  |
+		| a46f1127e78744e88d6bba20d2fc6e23 |        jaq2       |   True  |
+		| 977b9b7f9a6b4f59aaa70e5a1f4ebf0b |        jaq3       |   True  |
+		| 4055962ba9e44561ab495e8d4fafa41d |        jaq4       |   True  |
+		| 33ec7f15476545d1980cf90b05e1b5a8 |        jaq5       |   True  |
+		| 9550570f8bf147b3b9451a635a1024a1 |      service      |   True  |
+		+----------------------------------+-------------------------------+--+
 
 1. Now that we have all the pieces, we can assign the ResellerAdmin role to this User on the Demo project. 
-2. 
+
 		keystone user-role-add --user-id d2ff982a0b6547d0921b94957db714d6 --role-id 507bface531e4ac2b7019a1684df3370 --tenant-id 00cbaf647bf24627b01b1a314e796138
 
 	This will produce no response if everything is correct.
 1. Validate that the role has been assigned correctly. Pass in the user and tenant ID and request a list of roles assigned. 
-2. 
+ 
 		keystone user-role-list --user-id d2ff982a0b6547d0921b94957db714d6 --tenant-id 00cbaf647bf24627b01b1a314e796138
 
 	Note that all members have the *\_member_* role as a default role in addition to any other roles that have been assigned. 
-1. 
+ 
 		+----------------------------------+---------------+----------------------------------+----------------------------------+
 		|                id                |      name     |             user_id              |            tenant_id             |
 		+----------------------------------+---------------+----------------------------------+----------------------------------+
@@ -144,11 +144,11 @@ In this example, we want to add the role **ResellerAdmin** to the demo user who 
 In this example, we will create a Level 3 Support role called **L3Support**.
 
 1. Add the new role to the list of roles.
-2. 
+ 
 		keystone role-create --name L3Support
 
 	The response should resemble the following output:
-5. 
+ 
 		+----------+----------------------------------+
 		| Property |              Value               |
 		+----------+----------------------------------+
@@ -156,16 +156,16 @@ In this example, we will create a Level 3 Support role called **L3Support**.
 		|   name   |            L3Support             |
 		+----------+----------------------------------+
 2. Now that we have the new Role's ID, we can add that role to the Demo user from the previous example.
-3. 
+ 
 		keystone user-role-add --user-id d2ff982a0b6547d0921b94957db714d6 --role-id 7e77946db05645c4ba56c6c82bf3f8d2 --tenant-id 00cbaf647bf24627b01b1a314e796138
 
 
 	This will produce no response if everything is correct.
 1. Verify that the user Demo has both the ResellerAdmin and L3Support roles.
-2. 
+ 
 		keystone user-role-list --user-id d2ff982a0b6547d0921b94957db714d6 --tenant-id 00cbaf647bf24627b01b1a314e796138
 4. 	The response should resemble the following output. Note that this user has the L3Support role, the ResellerAdmin role, and the default member role.
-5. 
+
 		+----------------------------------+---------------+----------------------------------+----------------------------------+
 		|                id                |      name     |             user_id              |            tenant_id             |
 		+----------------------------------+---------------+----------------------------------+----------------------------------+
@@ -247,11 +247,12 @@ Another example: assign the L3Support role to the **get\_meters** API and exclud
 	}
 
 ##Writing a Policy {#write_policy}
-The Policy Engine capabilities are as expressible using this set of rules and guidelines.
+The Policy Engine capabilities are as expressible using a set of rules and guidelines.
+For a complete reference, please see the [OSLO policy documentation](https://github.com/openstack/oslo-incubator/blob/master/openstack/common/policy.py).
 
 Policies can be expressed in one of two forms: A list of lists, or a string written in the new policy language.
 
-In the list-of-lists representation, each check inside the innermost list is combined as with an **and** conjunction - for that check to pass, **all** the specified checks must pass. These innermost lists are then combined as with an **or** conjunction. 
+In the list-of-lists representation, each check inside the innermost list is combined with an **and** conjunction - for that check to pass, **all** the specified checks must pass. These innermost lists are then combined as with an **or** conjunction. 
 
 As an example, take the following rule, expressed in the list-of-lists representation:
  
