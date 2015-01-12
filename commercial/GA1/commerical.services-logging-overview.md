@@ -72,7 +72,7 @@ pre-designed dashboards or update these dashboards in real-time for on-the-fly d
 
 ## Logging interface ## {#interface}
 
-The User would log into this Kibana dashboard and use it to search logs for events he wants to know. Logging system is separate service to Horizon, so there is separate authentication – data is stored on undercloud node in file /opt/kibana/htpasswd.cfg. Kibana dash board is client side software, so to operate properly browser must be able to access port 81 on undercloud. 
+The User would log into this Kibana dashboard and use it to search logs for events he wants to know. Logging system is separate service to Horizon, so there is separate authentication; data is stored on undercloud node in file /opt/kibana/htpasswd.cfg. Kibana dash board is client side software, so to operate properly browser must be able to access port 81 on undercloud. 
 
 I think customer need to know about how to authenticate, that extra port must be open and of course that interface runs on undercloud. In future some logs will be removed from database, so this info should be documented as well.
 
