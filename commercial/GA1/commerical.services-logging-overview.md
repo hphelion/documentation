@@ -40,7 +40,7 @@ Centralized logging consists of several components, based on Logstash, Elasticse
 
 At a high level, Beaver forwards JSON messages to RabbitMQ on the management controller node, where they will be received by Logstash, possibly filtered and saved into Elasticsearch. Users can use the Kibana interface to view and analyze the information, as described in the following figure:
 
-<img src="media/centrallogging.png" size="75%">
+<img src="media/centrallogging.png">
 
 
 **Note:** Logging requires 4GB of disk space to make sure that all logging messages are retained. 
@@ -53,7 +53,7 @@ In addition to each of the [HP Helion services](/helion/openstack/services/overv
 
 The following table lists the types of logs collected by Centralized Logging and provides information on how the logs are maintained.
 
-<table style="text-align: left; vertical-align: top;">
+<table style="text-align: left; vertical-align: top; width:1000px;">
 <tr style="background-color: #C8C8C8;">
 <th>Data name</th><th>Confidentiality</th><th>Integrity</th><th>
 Availability</th><th>Backup?</th><th>Description</th></tr>
