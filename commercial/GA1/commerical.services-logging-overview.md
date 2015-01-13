@@ -22,11 +22,34 @@ PageRefresh();
 
 Because a typical HP Helion OpenStack cloud consists of multiple servers, locating a specific log from a specific server can be difficult.
 
-The HP Helion OpenStack centralized logging feature collects logs on a central system, rather than leaving them scattered across the network. The administrator can use a single graphic interface to view log information.
+The HP Helion OpenStack Centralized Logging feature collects logs on a central system, rather than leaving them scattered across the network. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms.
 
-Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The admin is not required to access the several remote servers (SSH) to view the individual log files.
+Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion OpenStack cloud deployment from a single location. The admin is not required to access the several remote servers (SSH) to view the individual log files.
 
-Centralized logging consists of several components, based on Logstash, Elasticsearch, RabbitMQ, and Kibana.
+In addition to each of the [HP Helion services](/helion/openstack/services/overview/), Centralized Logging also processed logs for the following HP Helion OpenStack features:
+
+- HAProxy
+- syslog
+- keepalived 
+
+This document describes the Centralized Logging feature and contains the following sections:
+
+* [Installation](install)
+* [Centralized Logging components](components)
+* [Centralized Logging log types](types)
+* [Kibana configuration](kibana)
+	* [Logging into Kibana](interface)
+* [For more information](info)
+
+## Installation ## {#install}
+
+Centralized Logging is automatically installed in the undercloud as part of the Helion OpenStack installation process. 
+
+No specific configuration is required to use Centralized Logging. However, you can tune or configure the individual components as needed for your environment. Tuning and configuring these components is outside the scope of this document. 
+
+## Centralized Logging components ## {#components}
+
+Centralized logging consists of several components, including on Logstash, Elasticsearch, RabbitMQ, and Kibana. 
 
 * **Beaver** is a python daemon that takes information in log files and sends the content to logstash.
 
@@ -38,18 +61,17 @@ Centralized logging consists of several components, based on Logstash, Elasticse
 
 * **Kibana** is a client-side JavaScript application to visualize the data in Elasticsearch through a web browser. Kibana enables you to create charts and graphs using the log data. 
 
-At a high level, Beaver forwards JSON messages to RabbitMQ on the management controller node, where they will be received by Logstash, possibly filtered and saved into Elasticsearch. Users can use the Kibana interface to view and analyze the information, as described in the following figure:
+These components are configured to work out-of-the-box and the admin should be able to view log data using the default configurations.
+
+At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON messages to RabbitMQ on the management controller node, where they will be received by Logstash, possibly filtered and saved into Elasticsearch. Users can use the Kibana interface to view and analyze the information, as described in the following figure:
 
 <img src="media/centrallogging75.png">
 
 
 **Note:** Logging requires 4GB of disk space to make sure that all logging messages are retained. 
 
-In addition to each of the [HP Helion services](/helion/openstack/services/overview/), Centralized Logging also processed logs for the following components:
 
-- HAProxy
-- syslog
-- keepalived 
+## Centralized Logging log types ## {#types}
 
 The following table lists the types of logs collected by Centralized Logging and provides information on how the logs are maintained.
 
@@ -68,16 +90,10 @@ Availability</th><th>Backup?</th><th>Description</th></tr>
 Log rotation will happen daily or when the current logfile reaches 2GB, whichever happens sooner. The number of rotations held will be balanced to attempt to cap logs from all services at 200GB. Few rotations of the JSON log will be retained.
 
 
-## Installation ## {#install}
 
-Centralized Logging is automatically installed in the undercloud as part of the Helion OpenStack installation process. 
+## Kibana configuration ## {#kibana}
 
-No specific configuration is required to use Centralized Logging. However, you can tune or configure the individual components as needed for your environment. Tuning and configuring these components is outside the scope of this document. 
-
-
-### Kibana configuration ### {#kibana}
-
-You can use the Kibana dashboards to view log data. Kibana is a tool developed to create tables, histograms, pie charts based on logs send to Elasticsearch by logstash. 
+You can use the Kibana dashboards to view log data. Kibana is a tool developed to create charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash. 
 
 Kibana works directly to Elasticsearch from the browser, not through an intermediary. 
 
@@ -87,11 +103,13 @@ While creating Kibana dashboards is beyond the scope of this document, it is imp
 
 ### Logging into Kibana ## {#interface}
 
+******WHAT IS THE URL******
+
 Because centralized logging is separate service from the Horizon dashboards, there is separate username/password authentication. By default, the HP Horizon dashboard username and password will not work with Kibana.
 
 After installation, the Kibana username and password are stored on the undercloud in the `/opt/kibana/htpasswd.cfg` file. 
 
-## For more information ##
+## For more information ## {#info}
 
 For information the centralized logging components, use the following links: 
 
