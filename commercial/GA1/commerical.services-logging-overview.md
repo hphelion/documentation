@@ -22,7 +22,7 @@ PageRefresh();
 
 Because a typical HP Helion OpenStack cloud consists of multiple servers, locating a specific log from a specific server can be difficult.
 
-The HP Helion OpenStack Centralized Logging feature collects logs on a central system, rather than leaving them scattered across the network. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms.
+The HP Helion OpenStack Centralized Logging feature collects logs on a central system, rather than leaving the logs scattered across the network. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms.
 
 Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion OpenStack cloud deployment from a single location. The admin is not required to access the several remote servers (SSH) to view the individual log files.
 
@@ -43,7 +43,7 @@ This document describes the Centralized Logging feature and contains the followi
 
 ## Installation ## {#install}
 
-Centralized Logging is automatically installed in the undercloud as part of the Helion OpenStack installation process. 
+The Centralized Logging feature is automatically installed in the undercloud as part of the HP Helion OpenStack installation. 
 
 No specific configuration is required to use Centralized Logging. However, you can tune or configure the individual components as needed for your environment. Tuning and configuring these components is outside the scope of this document. 
 
@@ -51,11 +51,11 @@ No specific configuration is required to use Centralized Logging. However, you c
 
 Centralized logging consists of several components, including on Logstash, Elasticsearch, RabbitMQ, and Kibana. 
 
-* **Beaver** is a python daemon that takes information in log files and sends the content to logstash.
+* **Beaver** is a python daemon that takes information in log files and sends the content to RabbitMQ.
 
 * **RabbitMQ** is a message broker for collection of logging data across nodes. 
 
-* **logstash** is a log processing system for receiving, processing and outputting logs. logstash receives from Beaver, processes and enriches the data, then stores the data in Elasticsearch.  
+* **logstash** is a log processing system for receiving, processing and outputting logs. logstash retrieves logs from RabbitMQ, processes and enriches the data, then stores the data in Elasticsearch.  
 
 * **Elasticsearch** is data store offering fast indexing and querying.  
 
@@ -63,7 +63,7 @@ Centralized logging consists of several components, including on Logstash, Elast
 
 These components are configured to work out-of-the-box and the admin should be able to view log data using the default configurations.
 
-At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON messages to RabbitMQ on the management controller node, where they will be received by Logstash, possibly filtered and saved into Elasticsearch. Users can use the Kibana interface to view and analyze the information, as described in the following figure:
+At a high level, the Helion services forward logs to Beaver. Then, Beaver forwards JSON messages to RabbitMQ on the management controller node. Logstash connects to RabbitMQ to read queued messages and process the messages according to the Logstash configuration file. Logstash then forwards the processed log files in Elasticsearch. Users can use the Kibana interface to view and analyze the information, as shown in the following figure:
 
 <img src="media/centrallogging75.png">
 
@@ -87,15 +87,13 @@ Availability</th><th>Backup?</th><th>Description</th></tr>
 <td>Credentials</td><td>Confidential</td><td>High</td><td>Medium</td><td>No</td><td>Credentials for access to Elasticsearch and RabbitMQ are stored in configuration files owned by root with mode 0600.</td></tr>
 </table>
 
-Log rotation will happen daily or when the current logfile reaches 2GB, whichever happens sooner. The number of rotations held will be balanced to attempt to cap logs from all services at 200GB. Few rotations of the JSON log will be retained.
+Log rotation will happen daily or when the current logfile reaches 2GB, whichever happens sooner. The number of rotations held will be balanced to attempt to cap logs from all services at 200GB. 
 
 
 
 ## Kibana configuration ## {#kibana}
 
 You can use the Kibana dashboards to view log data. Kibana is a tool developed to create charts, graphs, tables, and histograms based on logs send to Elasticsearch by logstash. 
-
-Kibana works directly to Elasticsearch from the browser, not through an intermediary. 
 
 While creating Kibana dashboards is beyond the scope of this document, it is important to know that you can use the default Kibana dashboards or create custom dashboards. The dashboards are JSON files that you can modify or create new dashboards based on existing dashboards.
 
