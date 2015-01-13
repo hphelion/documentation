@@ -40,7 +40,7 @@ Centralized logging consists of several components, based on Logstash, Elasticse
 
 At a high level, Beaver forwards JSON messages to RabbitMQ on the management controller node, where they will be received by Logstash, possibly filtered and saved into Elasticsearch. Users can use the Kibana interface to view and analyze the information, as described in the following figure:
 
-<img src="media/centrallogging.png">
+<img src="media/centrallogging75.png">
 
 
 **Note:** Logging requires 4GB of disk space to make sure that all logging messages are retained. 
