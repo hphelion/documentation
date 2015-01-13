@@ -53,11 +53,11 @@ In addition to each of the [HP Helion services](/helion/openstack/services/overv
 
 The following table lists the types of logs collected by Centralized Logging and provides information on how the logs are maintained.
 
-<table style="text-align: left; vertical-align: top; width:650px;">
+<table style="text-align: left; vertical-align: top;">
 <tr style="background-color: #C8C8C8;">
 <th>Data name</th><th>Confidentiality</th><th>Integrity</th><th>
 Availability</th><th>Backup?</th><th>Description</th></tr>
-<tr style="background-color: white; color: black;">
+<tr>
 <td>Log records</td><td>Restricted</td><td>High</td><td>Medium</td><td>No</td><td>Log records have a limited life, and are not archived. The log file on the local filesystem provides a fallback source of logging data (up to 20GB or 45 days) if the logging system fails.</td></tr>
 <tr>
 <td>Log metadata</td><td>Restricted</td><td>High</td><td>Medium</td><td>No</td><td>Elasticsearch indexes logged data to allow flexible searching.</td></tr>
