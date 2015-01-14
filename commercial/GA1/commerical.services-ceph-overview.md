@@ -33,7 +33,7 @@ Ceph can fulfill all storage requirements in an OpenStack deployment; it is inte
 
 Ceph is an Open Source, scalable, software defined storage system running on HP Servers which provides block and object storage with unified management.
 
-The main Use Case and integration point between HP Helion OpenStack Enterprise Edition and Ceph is block consumption of Ceph’s RADOS Block Device, here within described as RBD. The secondary Use Case and integration point between User Application Archive and Backup Workloads running externally or in Virtual Machines in HP Helion OpenStack is object consumption of Ceph RADOS Gateway. The Ceph radosgw presents a REST interface with extensions offering compatibility with Swift API – hence existing Applications with integrations to the HP Helion OpenStack Swift API may port seamlessly from a OpenStack Swift backend storage platform and the Ceph Solution.
+The main Use Case and integration point between HP Helion OpenStack Enterprise Edition and Ceph is block consumption of Ceph's RADOS Block Device, here within described as RBD. The secondary Use Case and integration point between User Application Archive and Backup Workloads running externally or in Virtual Machines in HP Helion OpenStack is object consumption of Ceph RADOS Gateway. The Ceph radosgw presents a REST interface with extensions offering compatibility with Swift API – hence existing Applications with integrations to the HP Helion OpenStack Swift API may port seamlessly from a OpenStack Swift backend storage platform and the Ceph Solution.
 
 Other supported HP Storage options to consider are HP Helion OpenStack Swift for Object Storage, and HP VSA and HP 3PAR for Block Storage solutions.
 
@@ -63,7 +63,7 @@ Helion OpenStack Virtual Machine Access to Ceph Storage Diagram
 
 ## Hardware Recommendations for the Ceph Cluster {#hardware}
 
-For a Production Environment, the following is HP’s current Hardware Recommendations in a production environment.
+For a Production Environment, the following is HP's current Hardware Recommendations in a production environment.
 
 <table style="text-align: left; vertical-align: top; width:1000px;">
 <tr style="background-color: #C8C8C8;">
