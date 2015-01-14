@@ -4,7 +4,7 @@ permalink: /als/v1/admin/console/app-store/
 product: devplatform
 title: "Sample Applications"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Sample Applications {#index-0}
 
