@@ -297,5 +297,6 @@ To download the Marketplace Service:
 	- **Service User Password** (Required) -- The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
 	- **Subnet Range** -- The subnet to use for the Marketplace Service.
 
-----
+Note that you must log out of the Horizon dashboard and then log back in at least once after Marketplace installation before installing any Marketplace packages. This will ensure that Horizon has properly loaded all Marketplace services prior to package installation. 
+
 

@@ -322,11 +322,15 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 	**Subnet Range** - The subnet to use for Marketplace
 	
+6. Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard. 
+
+7. Log back into the Horizon dashboard and click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
+
 ## Troubleshooting<a name="troubleshooting"></a>
 
 ### Service is stuck in download
 
-There are several situations in which a download will not complete.  One cause which is documented, is because the `tmp` directory ran out of space. There is a prerequisite to mount the `tmp` directory to a larger partition.  If you have completed this and it is still failing to download then we will need to reset the download. In the current release, this requires a manual process.
+There are several situations in which a download will not complete.  One cause which is documented, is because the *tmp* directory ran out of space. There is a prerequisite to mount the *tmp* directory to a larger partition.  If you have completed this and it is still failing to download then we will need to reset the download. In the current release, this requires a manual process.
 
 As the "admin" user, in the "admin" tenant, click on **Project**, then **Object Store**. Open the "sherpa-cache" folder and delete the wscatalog.<id> folder which contains the cached download. The service should now be available to download again.
 

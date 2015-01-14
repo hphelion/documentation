@@ -5,28 +5,23 @@ product: devplatform
 title: "Customization"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Customization {#customization}
 
-An Application Lifecycle Service PaaS can be extensively customized and themed. PaaS
-administrators can add or remove runtimes, frameworks and services from
-the system, and change the look and content of the [*Management
-Console*](/als/v1/user/console/#management-console) interface.
+A  can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the [Management Console](/als/v1/user/console/#management-console) interface.
 
-### [Table Of Contents](/als/v1/index-2/)
-
--   [Customization](#)
-    -   [Console Settings](#console-settings)
-        -   [Product](#product)
-        -   [Look and Feel](#look-and-feel)
-        -   [Welcome Page](#welcome-page)
-        -   [Support Page](#support-page)
-        -   [Eula Content](#eula-content)
-        -   [Custom Stylesheet](#custom-stylesheet)
-        -   [Settings Variables](#settings-variables)
-        -   [Restoring values](#restoring-values)
-    -   [Renaming the Client](#renaming-the-client)
+-   [Console Settings](#console-settings)
+	-   [Product](#product)
+    -   [Look and Feel](#look-and-feel)
+    -   [Welcome Page](#welcome-page)
+    -   [Support Page](#support-page)
+    -   [Eula Content](#eula-content)
+    -   [Error Pages](#custom_error)
+    -   [Custom Stylesheet](#custom-stylesheet)
+    -   [Settings Variables](#settings-variables)
+    -   [Restoring values](#restoring-values)
+-   [Renaming the Client](#renaming-the-client)
 
 Console Settings[](#console-settings "Permalink to this headline")
 -------------------------------------------------------------------
@@ -76,6 +71,18 @@ The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-
 
 The HTML/EJS to show in the EULA overlay. The [*settings-variables*](#customize-settings-vars) are available.
 
+### Custom Error Pages {#custom_error}
+To expose customized error pages, create the following HTML files in */home/stackato/stackato/static/vendor/errors/* on each Router node:
+
+- 404.html
+- 422.html
+- 500.html
+- 502.html
+- app-not-available.html
+
+When present, these files will be used to display the corresponding HTTP errors.
+The default error page files (located at */home/stackato/stackato/code/console/errors/*) can be used as a reference, but should not be modified directly as changes may be lost during upgrades or patches.
+
 ### Custom Stylesheet[](#custom-stylesheet "Permalink to this headline")
 
 CSS defined here will be applied to the page after the default CSS has
@@ -88,7 +95,7 @@ and find the relevant styles.
 
 The following variables (with their default values) are available in the
 EJS templates on the settings object (e.g.
-`settings.product_name`):
+*settings.product_name*):
 
 -   product\_name: null,
 -   company\_name: 'HP Software',
@@ -121,13 +128,12 @@ format:
 
     https://<helion-url>/#settings/console/reset/setting_name
 
-Replace `setting_name` with one of the variables
-above and that value will be reset to the default.
+Replace **setting_name** with one of the variables above and that value will be reset to the default.
 
 Renaming the Client[](#renaming-the-client "Permalink to this headline")
 -------------------------------------------------------------------------
 
-The `helion` client is distributed as a single
+The Helion client is distributed as a single
 file executable for Windows, OS X and Linux (x86 and x86\_64). Zip files
 containing executables for each platform can be found in the
 `~/helion/static` directory.
