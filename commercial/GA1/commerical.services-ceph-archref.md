@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/object/ceph/archref/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -41,8 +41,7 @@ Helion OpenStack with Ceph Cluster Deployment Example
 
 ## For more information
 
-[Ceph Architecture Reference](/helion/openstack/services/object/ceph/archref/)
-[Ceph Integration Overview](/helion/openstack/services/object/ceph/overview/)
+[Ceph Integration Overview](/helion/openstack/services/ceph/overview/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
