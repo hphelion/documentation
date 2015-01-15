@@ -66,7 +66,6 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [DL360 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836)*
 - [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241)*
 - [DL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5211699)
-- [DL310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
 - [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
 - [DL360 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570)
 - [DL380 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
@@ -82,7 +81,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379531)
 - [ML350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177961)
 <br>
-### HP Proliant Scalable Systems
+### HP ProLiant Scalable Systems
 
 - [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
 - [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
