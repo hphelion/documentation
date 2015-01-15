@@ -60,9 +60,9 @@ To enable name resolution from tenant VMs in the overcloud, it is necessary to c
 
 ## Next Step
 
-* [Return to the baremetal install](/helion/community/install/)
+* [Return to the baremetal install](/helion/community/install/#name-resolution/)
 
-* [Return to the virtual install](/helion/community/install-virtual/)
+* [Return to the virtual install](/helion/community/install-virtual/#name-resolution)
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
