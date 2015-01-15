@@ -46,6 +46,16 @@ be used in HTML pages via the [Embedded JavaScript
     docs.hpcloud.com. Ticking 'Use local docs' will cause this URL to
     be ignored and the docs from the VM will be served instead.
 
+<!-- added in 3.4.2 but makes no sense
+### Client {#client} 
+
+The CLI client version number and the paths or URLs to the downloadable archives for each platform. 
+ 
+Local paths are relative to the */home/stackato/stackato/* directory (Router node, see :ref:`Renaming the Client <customize-rename-client>` below), but HTTP URLs can also be used for externally hosted files.  
+ 
+The client executables served from the VM are the latest version available at the time of the Stackato VM release, but updated clients may become available between releases. The current release of the Stackato CLI client is always available from the `ActiveState Downloads site <http://downloads.activestate.com/stackato/client/>`_. 
+-->
+
 ### Look and Feel[](#look-and-feel "Permalink to this headline")
 
 -   **Favicon Logo URL**: The favicon to use. Recommended to be 32x32px
@@ -72,7 +82,7 @@ The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-
 The HTML/EJS to show in the EULA overlay. The [*settings-variables*](#customize-settings-vars) are available.
 
 ### Custom Error Pages {#custom_error}
-To expose customized error pages, create the following HTML files in */home/stackato/stackato/static/vendor/errors/* on each Router node:
+To expose customized error pages, create the following HTML files in */home/stackato/stackato/static/vendor/errors/* on **each** Router node:
 
 - 404.html
 - 422.html
@@ -138,10 +148,11 @@ file executable for Windows, OS X and Linux (x86 and x86\_64). Zip files
 containing executables for each platform can be found in the
 `~/helion/static` directory.
 
-After renaming the executable, you can re-package them in .zip files and
-modify the
-*\~/helion/code/console/js/views/client/templates/client.html*
-template to point to the renamed files. 
-
-
+Some customers may wish to repackage and rename these CLI executables to match their own branding. To do so: 
+ 
+1. Unzip each archive
+2. Change the name of the executable
+3. Re-zip the contents with the desired filename
+4. Save the archives to the */s/static/* directory **of each Router node**
+5. Change the filenames in **Console Settings > Client** 
 

@@ -149,12 +149,13 @@ button (cog icon) to see the **Node Settings**, showing a list of all
 available roles and checkboxes to enable or disable each one. Click
 **Save** to apply changes.
 
-See also the [*kato
-role*](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add) and [*kato
-info*](/als/v1/admin/reference/kato-ref/#kato-command-ref-info) command
-documentation for the CLI equivalents, and the [*Cluster
-Setup*](/als/v1/admin/cluster/#cluster-setup) section for information on
-adding nodes to the cluster.
+See also the [*kato role*](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add) and [*kato info*](/als/v1/admin/reference/kato-ref/#kato-command-ref-info) command
+documentation for the CLI equivalents, and the [*Cluster Setup*](/als/v1/admin/cluster/#cluster-setup) section for information on adding nodes to the cluster.
+
+##Available Patches {#patches}
+
+Displays a list of available patches for the current cluster.
+
 
 Organizations[](#organizations "Permalink to this headline")
 -------------------------------------------------------------
@@ -241,7 +242,7 @@ Lists the Quota Definitions available to apply to Organizations on the
 system.
 
 -   To edit a definition, click the edit button on the right.
--   To create a new definition use the [*helion quota
+-   To create a new definition, use the [*helion quota
     create*](/als/v1/user/reference/client-ref/#command-quota-create)
     command.
 
@@ -262,7 +263,8 @@ system.
     must be accessible from the controller node.
 -   **Allowed Repos**: Debian package repositories allowed in
     application containers. End users can install additional packages
-    (e.g. with `apt-get` or `aptitude`) only from these repositories.
+    (e.g. with *apt-get* or *aptitude*) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container. See [Allowed Repositories](/als/v1/admin/server/configuration/#allowed-repositories). 
+
 
 ### Applications[](#console-settings-applications "Permalink to this headline")
 
