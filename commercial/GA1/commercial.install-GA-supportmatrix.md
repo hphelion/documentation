@@ -53,12 +53,12 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 
 ### HP ProLiant BladeSystem
 
-- [BL420c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562)
+- [BL420c Gen8](http://shopping1.hp.com/is-bin/INTERSHOP.enfinity/WFS/WW-USSMBPublicStore-Site/en_US/-/USD/ViewStandardCatalog-Browse?CatalogCategoryID=Vt4Q7habZVsAAAE3bqp1vE0Q)
 - [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
 - [BL465c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137)
 - [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
-- BL460 Gen7 
-- BL490c Gen7 
+- [BL460 Gen7](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/home?sp4ts.oid=4194735&ac.admitted=1421337157737.876444892.199480143)
+- [BL490c Gen7](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/home?sp4ts.oid=4268682&ac.admitted=1421337252142.876444892.199480143)
 
 
 ### HP ProLiant Rack Servers 
@@ -83,10 +83,10 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 <br>
 ### HP ProLiant Scalable Systems
 
-- [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
+- [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937)
 - [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
 - [SL270s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945)
-- [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871)
+- [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044)
 - [SL390s Gen7](http://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c03287404-3&sp4ts.oid=4198401)
 
 ### IBM systems ###
