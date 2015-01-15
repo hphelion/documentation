@@ -20,6 +20,11 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/overview/">NEXT &#9654;</a> </p>
 -->
+<!-- IMPORTANT!!! The HW support Matrix should be approved by:
+* Gavin Brebner for Helion QA support
+* Lynne Christofanelli  for HW Support qualified with hLinux
+* Marty Duey for third party HW support (IHV Support)
+-->
 
 # HP Helion OpenStack&#174; Support Matrix
  
@@ -46,34 +51,36 @@ The following diagrams depict simplified deployment scenarios:
 The following hardware has been tested and verified to work with HP Helion OpenStack:
 
 
-### HP Proliant BladeSystem
+### HP ProLiant BladeSystem
 
-- [BL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
 - [BL420c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562)
 - [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
 - [BL465c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137)
 - [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
 - BL460 Gen7 
 - BL490c Gen7 
-- SL390s Gen7
 
-### HP Proliant Rack Servers 
 
+### HP ProLiant Rack Servers 
+
+- [DL360 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836)*
+- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241)*
+- [DL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5211699)
 - [DL310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
 - [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
 - [DL360 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570)
-- [DL360 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836) Legacy boot support only, no uEFI 
 - [DL380 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
-- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241) Legacy boot support only, no uEFI 
 - [DL385 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584)
 - [DL560 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290)
+- [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)*
 - [DL580 G7](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916)
-- [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957) Legacy boot support only, no uEFI
 
-### HP Proliant Tower Servers
+	*Legacy boot support only, no uEFI
 
-- [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594)
-- [DL350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584)
+### HP ProLiant Tower Servers
+
+- [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379531)
+- [ML350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177961)
 <br>
 ### HP Proliant Scalable Systems
 
@@ -81,6 +88,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
 - [SL270s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945)
 - [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871)
+- [SL390s Gen7](http://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c03287404-3&sp4ts.oid=4198401)
 
 ### IBM systems ###
 
