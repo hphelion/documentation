@@ -78,6 +78,9 @@ Each domain defines a namespace where certain API-visible name attributes exist,
     Group Name. Unique within the owning domain.
 
 
+**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the [API](#API) or [CLI](#CLI) for domain management instead. Also, any user and associated with a Domain will not be able to login to Horizon.
+
+
 ### Project ### {#project}
 
 A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc). Also called *tenant*. Each project name must be unique in the associated domain.
@@ -122,11 +125,11 @@ A network-accessible address, usually described by a URL, where a service may be
 
 ## Keystone with LDAP {#LDAP}
 
-Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of authority authentication. 
+Keystone can also use an external Lightweight Directory Access Protocol (LDAP) or Microsoft Active Directory as source of authority authentication. Either of these authentication sources are the preferred way to configure Keystone user authentication. The native Keystone authentication function is intended only for proof of concept deployments.
 
 LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.
 
-The requests to Identity service are delegated to the LDAP service which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
+The requests to Identity service are delegated to the external LDAP or Microsoft AD service, which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
 
 The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes, including: users, roles, credentials, and security tokens.
 
@@ -262,11 +265,12 @@ LDAP Account Status
 
 To [perform tasks using the Identity service](#howto), you can use the API or CLI.
 
+
 ### Using the dashboards {#UI}
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Identity service.
 
-Note: Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
 
 ###Using the API {#API}
  
