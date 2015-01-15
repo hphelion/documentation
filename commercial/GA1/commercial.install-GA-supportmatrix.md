@@ -145,12 +145,15 @@ Additional requirements are as follows:
 	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
-- For Compute nodes, Intel or AMD hardware virtualization 
-- support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
+- For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
 	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
+
+- The [HP Dynamic Smart Array (B120i and B320i) controllers](http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001) use a proprietary driver that is not included in Helion OpenStack. HP recommends the use of the full featured [Smart Array adapters](http://www8.hp.com/us/en/products/iss-controllers/index.html) (such as p220, p440, etc.) in order to achive the best set of features and performance.
+
+	To use the Dynamic Smart Array adapter, enter the system ROM-Based Setup Utility (RBSU) and set the adapter to `Enable SATA AHCI Support` to allow the use of the adapter in non-RAID mode. However, for reliability this is not recommended.
 
 The following table lists the minimum requirements required for installation of each type of node. 
 
