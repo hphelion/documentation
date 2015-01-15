@@ -30,6 +30,7 @@ title: "Detailed Configuration"
 		-   [Using your own SSL certificate](#using-your-own-ssl-certificate)
 		-   [Adding Custom SSL Certs (SNI)](#adding-custom-ssl-certs-sni)
 		-   [CA Certificate Chaining](#ca-certificate-chaining)
+		-   [Customizing the Cipher Suites](#cipher)
 		-   [Generating a self-signed SSL certificate](#generating-a-self-signed-ssl-certificate)
 	-   [Quota Definitions](#quota-definitions)
 		-   [sudo](#sudo)
@@ -39,60 +40,43 @@ title: "Detailed Configuration"
 
 **Note**
 
-After booting the VM, run `kato process ready all`
-before starting the following configuration steps. This command returns
-`READY` when all configured system processes have
-started, and is particularly important when using `kato` commands in automated configuration scripts which run
-immediately after boot (the
+After booting the VM, run *kato process ready all* before starting the following configuration steps. This command returns **READY** when all configured system processes have started, and is particularly important when using *kato* commands in automated configuration scripts which run immediately after boot (the
 [*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
 option is useful in this scenario).
 
+**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
+
+
 ### Changing the Password {#changing-the-password}
 
-The default password for the Helion system user
-is **helion**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
+The default password for the Helion system user is **helion**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
 
-This password is changed to match the one set for the first
-administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when
-logging in to the VM at the command line. 
+This password is changed to match the one set for the first administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when logging in to the VM at the command line. 
 
-In an Application Lifecycle Service cluster, this change only happens on the node serving the
-Management Console pages (which could be one of [*multiple Controller
-nodes*](/als/v1/admin/cluster/#cluster-multi-controllers)). In this case,
-it's best to log in to each node in the cluster to change the password
-manually with the `passwd` command.
+In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of [multiple Controller nodes](/als/v1/admin/cluster/#cluster-multi-controllers)). In this case, it's best to log in to each node in the cluster to change the password
+manually with the *passwd* command.
 
 ##Network Setup {#network-setup}
 
 ### Changing the Hostname {#changing-the-hostname}
 You may want or need to change the hostname of the Application Lifecycle Service system,
-either to match a DNS record you've created or just to make the system
-URLs more convenient. This can be done using the [*kato node
-rename*](/als/v1/admin/reference/kato-ref/#kato-command-ref) command:
+either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the [kato node rename](/als/v1/admin/reference/kato-ref/#kato-command-ref) command:
 
-    $ kato node rename mynewname.example.com
+    kato node rename mynewname.example.com
 
-This command will change the system hostname in
-`/etc/hostname` and `/etc/hosts`, as well as performing some internal configuration for
-Application Lifecycle Service such as generating a new server certificate for the
-[*Management
-Console*](/als/v1/user/console/#management-console).
+This command will change the system hostname in */etc/hostname* and */etc/hosts,* as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the [Management
+Console](/als/v1/user/console/#management-console).
 
 mDNS is only supported with ".local" hostnames. If you want to give the
-VM a canonical hostname on an existing network, [*configure
-DNS*](#server-config-dns) and disable the 'mdns' role:
+VM a canonical hostname on an existing network, [configure DNS](#server-config-dns) and disable the **mdns** role:
 
-    $ kato role remove mdns
+    kato role remove mdns
 
-**Note**
+**Note**: Application Lifecycle Service takes a while to configure itself at boot (longer at first boot). Check *kato status* to see that core services are running before
+executing *kato node rename*.
 
-Application Lifecycle Service takes a while to configure itself at boot (longer at first
-boot). Check `kato status` to see that core services are running before
-executing `kato node rename`.
-
-In a [*cluster*](/als/v1/user/reference/glossary/#term-cluster), you
-may also need to manually [*modify the /etc/hosts
-file*](#server-config-etc-hosts).
+In a [cluster](/als/v1/user/reference/glossary/#term-cluster), you
+may also need to manually [modify the */etc/hosts file*](#server-config-etc-hosts).
 
 ### Changing IP Addresses {#changing-ip-addresses}
 
@@ -556,7 +540,7 @@ Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
 
 Application Lifecycle Service caches all application dependencies that are downloaded by
 module managers that support the
-[*HTTP\_PROXY*](/als/v1/user/reference/environment/#term-http-proxy)
+[HTTP\_PROXY](/als/v1/user/reference/environment/#term-http-proxy)
 environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to
 100MB of in-memory cache.
 
@@ -571,12 +555,10 @@ To remove the proxy setting:
 
     $ kato op upstream_proxy delete <proxy_addr>
 
-To set an HTTP proxy exclusively for apps, add an
-`environment/app_http_proxy` setting in the dea\_ng
-config using [*kato config
-set*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example:
+To set an HTTP proxy exclusively for apps, add an **environment\app\_http\_proxy** setting in the dea\_ng
+config using [kato config set](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example:
 
-    $ kato config set dea_ng environment/app_http_proxy 10.0.0.47:3000
+    kato config set dea_ng environment/app_http_proxy 10.0.0.47:3000
 
 Adding this configuration sets the 'http\_proxy' environment variable
 within all subsequently created application containers.
@@ -681,17 +663,17 @@ chain must be concatenated in a specific order:
 For example, to create the final certificate for the chain in Nginx
 format:
 
-    $ sudo su -c "cat /etc/ssl/certs/site.crt /path/to/intermediate.crt /path/to/rootCA.crt > /etc/ssl/certs/helion.crt"
+    sudo su -c "cat /etc/ssl/certs/site.crt /path/to/intermediate.crt /path/to/rootCA.crt > /etc/ssl/certs/helion.crt"
 
 Once the cert is chained, restart the router processes:
 
-    $ kato restart router
+    kato restart router
 
 Verify that the full chain is being sent by Nginx using
 `openssl`. You should see more than one number in
 the list. For example:
 
-    $ openssl s_client -connect api.stacka.to:443
+    openssl s_client -connect api.stacka.to:443
     ---
     Certificate chain
      0 s:/C=CA/ST=British Columbia/L=Vancouver/O=HP Software Inc./OU=Application Lifecycle Service/CN=*.stacka.to
@@ -735,22 +717,29 @@ messages. The certificate will need to be added to the browser exception
 rules, which you will be prompted to do so when visiting one of your
 apps via HTTPS for the first time.
 
+##Customizing the Cipher Suites {#cipher}
+
+The router's TLS cipher suite can be modified using *kato config*. For example:
+
+	kato config set router2g ssl/cipher_suite 'ALL:!ADH:!EXP:!LOW:!RC2:!3DES:!SEED:RC4+RSA:+HIGH:+MED'
+
+The setting above is the default for the Helion router. See [OpenSSL's Cipher List Format and Cipher Strings](https://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT) documentation for other valid values.
+
 ##Quota Definitions {#quota-definitions}
 
 Quota definitions define limits for:
 
 -   physical memory (RAM) in MB
 -   number of services
--   `sudo` privilege within application containers
+-   *sudo* privilege within application containers
 
 Each organization is assigned a quota definition, and all users of an
 organization share the defined limits.
 
-Use the `helion quota ...` commands to modify
+Use the *helion quota ...* commands to modify
 quota definitions:
 
--   [*helion quota
-    configure*](/als/v1/user/reference/client-ref/#command-quota-configure)
+-   [*helion quota configure*](/als/v1/user/reference/client-ref/#command-quota-configure)
 -   [*helion quota
     create*](/als/v1/user/reference/client-ref/#command-quota-create)
 -   [*helion quota
@@ -759,29 +748,34 @@ quota definitions:
     list*](/als/v1/user/reference/client-ref/#command-quota-list)
 
 Existing quota definitions can also be viewed and edited in the
-Management Console [*Quota Definitions
-settings*](/als/v1/admin/console/customize/#console-settings-quota-definitions)
+Management Console [Quota Definitions settings](/als/v1/admin/console/customize/#console-settings-quota-definitions)
 
 ### sudo {#sudo}
 
-Quota Definitions can give all users in an Organization the use of the
-`sudo` command within application containers. This
-option is disabled by default as a security precaution, and should only
-be enabled for Organizations where all users are trusted.
+Quota Definitions can give all users in an Organization the use of the **sudo** command within application containers. This option is disabled by default as a security precaution, and should only be enabled for Organizations where all users are trusted.
 
 ### Allowed Repositories {#allowed-repositories}
 
-Even if `sudo` is restricted, special access can be
-given to specific repositories for modules and resources needed during
-the staging process.
+Users (with our without *sudo* permissions) can install Ubuntu packages in application containers by requesting them in the requirements section of an application's *manifest.yml* file. The system allows package installation only from those repositories specified in the **Allowed Repos** list in the Management Console. 
+  
+ This list can also be viewed and modified at the command line using [kato config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example, to view the 
+ current list: 
+  
+	   kato config get cloud_controller_ng allowed_repos 
+	   	- deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted universe multiverse 
+		- deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse 
+	  	- deb http://security.ubuntu.com/ubuntu precise-security main universe 
+ 
+To add a repository: 
+ 
+	kato config push cloud_controller_ng allowed_repos 'deb http://apt.newrelic.com/debian/ newrelic non-free' 
+		- deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted universe multiverse 
+		- deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse 
+		- deb http://security.ubuntu.com/ubuntu precise-security main universe 
+		- deb http://apt.newrelic.com/debian/ newrelic non-free 
 
-To configure these, modify the `allowed_repos:`
-parameter of the `cloud_controller.yml` file:
++Once a repository has been added to the list, **the GPG key must also be added** to the [Docker base image](/als/v1/admin/server/docker/#modifying-or-updating-the-container-image) on each DEA (or the [Docker registry](/als/v1/admin/server/docker/#creating-a-docker-registry) server if configured). 
 
-        allowed_repos:
-    - "deb mirror://mirrors.ubuntu.com/mirrors.txt natty main restricted universe multiverse"
-    - "deb mirror://mirrors.ubuntu.com/mirrors.txt natty-updates main restricted universe multiverse"
-    - "deb http://security.ubuntu.com/ubuntu natty-security main universe"
+For example, to trust the GPG for the New Relic repository, add the following line to the *Dockerfile* for the base image:
 
-The file is located on the Application Lifecycle Service server at
-`~/helion/vcap/cloud_controller/config/cloud_controller.yml`
+	RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
