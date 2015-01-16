@@ -77,7 +77,7 @@ To integrate Cephx authentication into Helion nodes, perform following steps on 
 
 7. Copy the generated keyrings to the respective Helion nodes. 
 
-(**command required??)**
+(**command required?)**
 
 	For example -
 

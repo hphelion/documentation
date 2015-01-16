@@ -25,7 +25,7 @@ PageRefresh();
 
 ##Ceph Manual Installation
 
-Ceph cluster require at least one monitor, and (**minimum number??**)at least as many OSDs as copies of an object stored on the cluster. For more details, refer to http://docs.ceph.com/docs/master/install/manual-deployment/
+Ceph cluster require at least one monitor, and (**minimum number?**)at least as many OSDs as copies of an object stored on the cluster. For more details, refer to http://docs.ceph.com/docs/master/install/manual-deployment/
 
 ###Assumptions and Dependencies
 
@@ -195,7 +195,7 @@ To create an OSD and add it to cluster and CRUSH map, perform the following step
 		mkdir /var/lib/ceph/osd/ceph-11
 		mkdir /var/lib/ceph/osd/ceph-12
 
-If you have SSD on your OSD node, you can use them for Journal partitioning. You can have Raid1 with 2 SSD drives. (**What is SSD and Journal partitioning??)**
+If you have SSD on your OSD node, you can use them for Journal partitioning. You can have Raid1 with 2 SSD drives. (**What is SSD and Journal partitioning?)**
 
 Follow the server specific specification to see details on how to configure RAIDs.
 
@@ -594,7 +594,7 @@ Ceph configuration file below:
 	[osd.3]
 	host = ceph-osd1
 	
-	…osd.4-37…
+	...osd.4-37...
 	[osd.38]
 	host = ceph-osd3
 
