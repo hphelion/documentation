@@ -257,7 +257,7 @@ Each Ceph related files has the following description:
  
 ## Next Steps
 
-[HP  Helion OpenStack Installation](/helion/openstack/install/overview//).
+[HP  Helion OpenStack Installation](/helion/openstack/install/overview/).
  
 
 <!---
