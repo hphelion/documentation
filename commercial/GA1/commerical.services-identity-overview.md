@@ -123,7 +123,7 @@ An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image S
 A network-accessible address, usually described by a URL, where a service may be accessed.
 
 
-## Keystone with LDAP {#LDAP}
+## Keystone Integration with LDAP/AD {#LDAP}
 
 Keystone can also use an external Lightweight Directory Access Protocol (LDAP) or Microsoft Active Directory as source of authority authentication. Either of these authentication sources are the preferred way to configure Keystone user authentication. The native Keystone authentication function is intended only for proof of concept deployments.
 
