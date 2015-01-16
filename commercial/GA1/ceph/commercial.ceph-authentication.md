@@ -79,7 +79,7 @@ To integrate Cephx authentication into Helion nodes, perform following steps on 
 
 (**command required??)**
 
-	For example –
+	For example -
 
 		ceph.client.glance.keyring to all controller nodes
 		ceph.client.cinder.keyring to all controller nodes
@@ -93,7 +93,7 @@ To integrate Cephx authentication into Helion nodes, perform following steps on 
 
 At this point, if glance user attempts to access cinder or nova pool, Ceph cluster would reject the attempt with a **Permission Denied** error message. Therefore, it is necessary to change `glance-api.conf`, `cinder.conf` on controller nodes and `nova-api.conf` on controller and compute nodes to include appropriate user-pool mapping. Also, on compute nodes, secret key to `libvirt` must be added. For more details, refer [http://ceph.com/docs/master/rbd/rbd-openstack/#setup-ceph-client-authentication](http://ceph.com/docs/master/rbd/rbd-openstack/#setup-ceph-client-authentication)
 
-Perform following steps on HP Helion Openstack nodes –
+Perform following steps on HP Helion Openstack nodes -
 
 1. On first compute node, add secret key to `libvirt` and remove temporary copy of key. Execute `uuidgen`. 
 

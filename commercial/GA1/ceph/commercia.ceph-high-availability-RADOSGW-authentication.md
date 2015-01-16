@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##High Availability- RADOSGW – Keystone Authentication
+##High Availability- RADOSGW - Keystone Authentication
 
 Helion OpenStack HAProxy can be used to enable high availability and load balancing for Rados Gateway nodes. Using HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by live node. Once dead node recovers, load balancing is enabled again . Load balancing algorithm used is round robin so that each node is used in turns and that load balancing is fair.
 
@@ -154,7 +154,7 @@ Following are the steps to achieve integration of Helion OpenStack HAProxy, Keys
 
 		swift -V 1.0 -A http://192.0.2.21:10080/auth/v1.0 -U s3User:swiftUser -K abc list
 
-* From Management node, make Swift v2 request using keystone. Ceph Object Gateway’s user:subuser tuple maps to the tenant:user tuple expected by Swift. Here, admin credentials are considered. Output should container if any.
+* From Management node, make Swift v2 request using keystone. Ceph Object Gateway's user:subuser tuple maps to the tenant:user tuple expected by Swift. Here, admin credentials are considered. Output should container if any.
 
 		swift -V 2.0 -A http://192.0.2.21:5000/v2.0 -U admin:admin -K abc list
 

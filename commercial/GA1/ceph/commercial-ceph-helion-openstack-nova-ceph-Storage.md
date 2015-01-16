@@ -75,13 +75,13 @@ In order to boot all the virtual machines directly into Ceph, Nova must be confi
 
 	* From over cloud controller node0, running the below commands.
 
-			“source /root/stackrc” file
+			"source /root/stackrc" file
 
 <list of screenshot need to be added. page number 87-91>
 
 ###Attaching the Cinder volume to the Nova instance
 
-You can attach the cinder volume to the the nova instance in two ways:
+You can attach the cinder volume to the nova instance in two ways:
 
 * Horizon
 * Command LIne interfae

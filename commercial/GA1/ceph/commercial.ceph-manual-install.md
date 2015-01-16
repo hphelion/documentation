@@ -31,7 +31,7 @@ Ceph cluster require at least one monitor, and (**minimum number??**)at least as
 
 * Manual installation and deployment of Ceph Firefly 0.80.7
 
-* Operating system on Ceph nodes – hlinux 3.14.6-2-amd64-hlinux
+* Operating system on Ceph nodes - hlinux 3.14.6-2-amd64-hlinux
 
 ####Setting up the Monitor Node
 
@@ -96,7 +96,7 @@ Perform the following steps:
 10. Populate monitor daemon with monitor map and keyring
 
 		ceph-mon --mkfs -i {hostname} --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
-		ceph-mon --mkfs –i mon1 --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
+		ceph-mon --mkfs -i mon1 --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
 
 11. Touch the completed file
 
@@ -133,7 +133,7 @@ Perform the following steps:
 
 * Execute the following command to verify monitor is running
 
-		ceph –s
+		ceph -s
 
 		root@ceph-mon1gw1:/var/lib/ceph/mon# ceph -s
 		cluster e0f2ad6b-588f-432c-99c1-d81f0f71cb77
@@ -151,7 +151,7 @@ Once you have your initial monitor(s) running, you must add OSDs. To make a clus
 
 ####Pre-requisites
 
-* Ceph cluster OS – hlinux 3.14.6-2 kernel version
+* Ceph cluster OS - hlinux 3.14.6-2 kernel version
 
 * Ceph cluster and client nodes - Ceph version 0.80.7
 
@@ -169,7 +169,7 @@ To create an OSD and add it to cluster and CRUSH map, perform the following step
 
 		ceph osd create
 
- 	For multiple physical drives, execute  `ceph OSD create` command the required number of time to match the number of OSD’s.
+ 	For multiple physical drives, execute  `ceph OSD create` command the required number of time to match the number of OSD's.
 
 3. Consider the output of the OSD number from the above step and create a default directory by executing the following command:
 
@@ -199,7 +199,7 @@ If you have SSD on your OSD node, you can use them for Journal partitioning. You
 
 Follow the server specific specification to see details on how to configure RAIDs.
 
-**Creating journal partitions on SSD drive. You can follow this for any non-ssd drive if you don’t have SSD drives in your setup**
+**Creating journal partitions on SSD drive. You can follow this for any non-ssd drive if you don't have SSD drives in your setup**
 	
 The following example explains the creation of journal partitions on a 200G SSD drive to match the OSD deamon counts.
 
@@ -345,7 +345,7 @@ The following  example mounts 13 drives to journal partitions.
 
 4.Initialize the OSD data directory.
 
-	ceph-osd -i {osd-num} --mkfs –mkkey
+	ceph-osd -i {osd-num} --mkfs -mkkey
 	
 Example -Initialize 13 data directories
 	
@@ -368,7 +368,7 @@ Example -Initialize 13 data directories
 
 	ceph auth add osd.{osd-num} osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-{osd-num}/keyring
 	
-	Example –Register 13 OSD authentication key
+	Example -Register 13 OSD authentication key
 	
 	#!/bin/bash
 	
@@ -490,7 +490,7 @@ For long running Ceph Clusters, XFS fragmentation is useful to monitor and corre
 
 	Fragmentation on /dev/sdb1 - osd3
 	actual 22722, ideal 22557, fragmentation factor 0.73%
-	Example – checks the fragmentation on 13 osd deamons
+	Example - checks the fragmentation on 13 osd deamons
 	
 	#!/bin/sh
 	echo "Fragmentation on /dev/sdb1 - osd1"
@@ -631,7 +631,7 @@ By default Cephx authentication is enabled. The following flags are present in t
 
 ###Users, Keyrings, Pool permissions
 
-Each user has a keyring file on Ceph hosts. But keyring file does not contain the Ceph references to verify user authorizations; instead the MON server have their own internal keyrings. When a user is added to a Ceph installation, create create a keyring file on the Ceph hosts in `/etc/ceph` and integrate a key into a cluster using `ceph auth add` command.
+Each user has a keyring file on Ceph hosts. But keyring file does not contain the Ceph references to verify user authorizations; instead the MON server have their own internal keyrings. When a user is added to a Ceph installation, create a keyring file on the Ceph hosts in `/etc/ceph` and integrate a key into a cluster using `ceph auth add` command.
 
 
 ## Next Steps

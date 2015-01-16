@@ -56,13 +56,13 @@ The Ceph RADOS Gateway is a REST API which supports Swift API. HP Helion OpenSta
 
 ###File System {#file-system} (aren't we supporting this?)
 
-Ceph provides a POSIX-compliant network file system that aims for high performance, large data storage and so on. **However file system interface is still not production ready as of this writing (December 2014)**. In this release we are not supporting the File Interface. There is an alternative way suggested, that is, either leveraging Ceph’s RBD Block storage, Ceph’s radosgw Object Storage through Swift API, or for user archive and backup type workloads, Open Source Swift API compatible File System interfaces such as Duplicity.
+Ceph provides a POSIX-compliant network file system that aims for high performance, large data storage and so on. **However file system interface is still not production ready as of this writing (December 2014)**. In this release we are not supporting the File Interface. There is an alternative way suggested, that is, either leveraging Ceph's RBD Block storage, Ceph's radosgw Object Storage through Swift API, or for user archive and backup type workloads, Open Source Swift API compatible File System interfaces such as Duplicity.
 
 ###Ceph Cluster
 
 The Ceph Object Storage Daemon (OSD) stores data, handles data replication, recovery, rebalancing, and provides information to Ceph monitors by verifying other Ceph OSD Daemons for a heartbeat. It is best to maintain in a Product 3 OSD Servers to take into account the default 3 replicas. The number of OSD Daemons per Server is a part of the sizing exercise unique to each Customer. For an example, a stable configuration is 9 OSD servers with 12 2TB disks each server. Others can range to 9 OSD servers with 25 4TB disks each server such as the HP SL4540.
 
-The Ceph Monitor maintains a master copy of the Ceph Cluster Map including the OSD map, monitor map, placement group (PG) map, and the CRUSH map. Ceph maintains a history called an “epoch” of each state change in the Ceph monitors, Ceph OSD daemons, and placement groups. It is best to maintain in Production 3 Ceph Monitors (if 1 Monitor fails and the System will still be operational). If additional monitors are required, upgrade in a manner such that the number of Monitors results in odd numbers, such as to 5 Ceph Monitors. Server types range from HP SL230s to HP DL360s.
+The Ceph Monitor maintains a master copy of the Ceph Cluster Map including the OSD map, monitor map, placement group (PG) map, and the CRUSH map. Ceph maintains a history called an "epoch" of each state change in the Ceph monitors, Ceph OSD daemons, and placement groups. It is best to maintain in Production 3 Ceph Monitors (if 1 Monitor fails and the System will still be operational). If additional monitors are required, upgrade in a manner such that the number of Monitors results in odd numbers, such as to 5 Ceph Monitors. Server types range from HP SL230s to HP DL360s.
 
 
 

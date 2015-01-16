@@ -30,7 +30,7 @@ The Configuration service installs the correct dependencies for the Ceph Client 
 
 ###Helion Ceph Heartbeat Service
 
-Once the Ceph client has been successfully integrated into the Glance, Nova and Cinder services running on the HP Helion OpenStack OverCloud systems periodic health checks of the system are monitored on a scheduled basis that triggers Ceph and HP Helion OpenStack commands to verify the system is fully functional on an ongoing basis. For example, the “ceph health”command can trigger false negatives due to state of the Ceph Cluster, the status of the OSDs and placement groups are checked as well. The various Glance, Nova, and Cinder commands that were used during each stage of the install are also referenced where appropriate to insure the HP Helion OpenStack side of things is functional as well with respect to the Ceph storage services.
+Once the Ceph client has been successfully integrated into the Glance, Nova and Cinder services running on the HP Helion OpenStack OverCloud systems periodic health checks of the system are monitored on a scheduled basis that triggers Ceph and HP Helion OpenStack commands to verify the system is fully functional on an ongoing basis. For example, the "ceph health" command can trigger false negatives due to state of the Ceph Cluster, the status of the OSDs and placement groups are checked as well. The various Glance, Nova, and Cinder commands that were used during each stage of the install are also referenced where appropriate to insure the HP Helion OpenStack side of things is functional as well with respect to the Ceph storage services.
 
 ###Helion OpenStack Ceph Validation Service
 
@@ -82,7 +82,7 @@ The Use Cases for leveraging Ceph as an Object Store range from User driven arch
 
 **Installing Duplicity**
 
-Install Duplicity on any of the client User VM’s as below.
+Install Duplicity on any of the client User VM's as below.
 
 * apt-get install bzr
 
@@ -96,7 +96,7 @@ Install Duplicity on any of the client User VM’s as below.
 
 * pip install python-keystoneclient
 
-* install duplicity: “cd swiftbackend && sudo python dist/setup.py install”
+* install duplicity: "cd swiftbackend && sudo python dist/setup.py install"
 
 * You can now use duplicity to backup your files to Rados Gateway using Swift. As defined in the previous Rados section define the env variables.
 
@@ -222,7 +222,7 @@ For example:
 
 **RESIZING A BLOCK DEVICE IMAGE**
 
-Ceph Block Device images are thin provisioned. They don’t actually use any physical storage until you begin saving data to them. However, they do have a maximum capacity that you set with the --size option. If you want to increase (or decrease) the maximum size of a Ceph Block Device image, execute the following:
+Ceph Block Device images are thin provisioned. They don't actually use any physical storage until you begin saving data to them. However, they do have a maximum capacity that you set with the --size option. If you want to increase (or decrease) the maximum size of a Ceph Block Device image, execute the following:
 
 	rbd resize --image image1 --size 2048
 
@@ -257,7 +257,7 @@ To mount a block device image, first return a list of the images.
 
 **MAP A BLOCK DEVICE**
 
-Use rbd to map an image name to a kernel module. You must specify the image name, the pool name, and the user name. rbd will load RBD kernel module on your behalf if it’s not already loaded.
+Use rbd to map an image name to a kernel module. You must specify the image name, the pool name, and the user name. rbd will load RBD kernel module on your behalf if it's not already loaded.
 
 	sudo rbd map {image-name} --pool {pool-name} --id {user-name}
 
@@ -323,7 +323,7 @@ To add a keyring for an OSD, execute the following:
 
 	ceph auth add {osd} {--in-file|-i} {path-to-osd-keyring}
 
-To list the cluster’s keys and their capabilities, execute the following:
+To list the cluster's keys and their capabilities, execute the following:
 
 	ceph auth list
 
@@ -341,7 +341,7 @@ To display the statistics for all placement groups stuck in a specified state, e
 
 	--format may be plain (default) or json
 
-	--threshold defines how many seconds “stuck” is (default: 300)
+	--threshold defines how many seconds "stuck" is (default: 300)
 
 Inactive Placement groups cannot process reads or writes because they are waiting for an OSD with the most up-to-date data to come back.
 
@@ -349,7 +349,7 @@ Unclean Placement groups contain objects that are not replicated the desired num
 
 Stale Placement groups are in an unknown state - the OSDs that host them have not reported to the monitor cluster in a while (configured by mon_osd_report_timeout).
 
-Revert “lost” objects to their prior state, either a previous version or delete them if they were just created.
+Revert "lost" objects to their prior state, either a previous version or delete them if they were just created.
 
 ceph pg {pgid} mark_unfound_lost revert
 
@@ -421,7 +421,7 @@ Query the current max_osd parameter in the OSD map.
 
 	ceph osd getmaxosd
 
-Import the given OSD map. Note that this can be a bit dangerous, since the OSD map includes dynamic state about which OSDs are current on or offline; only do this if you’ve just modified a (very) recent copy of the map.
+Import the given OSD map. Note that this can be a bit dangerous, since the OSD map includes dynamic state about which OSDs are current on or offline; only do this if you've just modified a (very) recent copy of the map.
 
 	ceph osd setmap -i file
 
@@ -466,7 +466,7 @@ Reweights all the OSDs by reducing the weight of OSDs which are heavily overused
 Adds/removes the address to/from the blacklist. When adding an address, you can specify how long it should be blacklisted in seconds; otherwise, it will default to 1 hour. A blacklisted 
 address is prevented from connecting to any OSD. Blacklisting is most often used to prevent a lagging metadata server from making bad changes to data on the OSDs.
 
-These commands are mostly only useful for failure testing, as blacklists are normally maintained automatically and shouldn’t need manual intervention.
+These commands are mostly only useful for failure testing, as blacklists are normally maintained automatically and shouldn't need manual intervention.
 
 	ceph osd blacklist add ADDRESS[:source_port] [TIME]
 	
@@ -553,7 +553,7 @@ A dump of the monitor state:
 
 * Firefly version of Ceph packages has default replication set to 3x. Therefore have a minimum of 3 OSDs.
 
-* If you see “Decrypt error” from any of helion node with glance, cinder, nova, make sure all the ceph cluster nodes are in same time zone. If needed have a NTP server specified in /etc/ntp.conf file on all the ceph cluster nodes. After making changes restart ntp [/etc/init.d/ntp restart]. Install ntp package if it is not there already.
+* If you see "Decrypt error" from any of helion node with glance, cinder, nova, make sure all the ceph cluster nodes are in same time zone. If needed have a NTP server specified in /etc/ntp.conf file on all the ceph cluster nodes. After making changes restart ntp [/etc/init.d/ntp restart]. Install ntp package if it is not there already.
 
 * Ensure Ceph cluster to be on same IP range as Helion OpenStack Overcloud nodes. Ensure IP range for Ceph cluster does not conflict with those used Helion setup
 
@@ -561,7 +561,7 @@ A dump of the monitor state:
 
 * Any changes to Ceph configuration file should be followed by restarting Ceph services for changes to take affect
 
-* You cannot change the default Cephx Authentication to “None” once the cluster is up and running. You will have to purge and reinstall the ceph packages again and build the cluster.
+* You cannot change the default Cephx Authentication to "None" once the cluster is up and running. You will have to purge and reinstall the ceph packages again and build the cluster.
 
 * Enable logging if problem is encountered in any of the steps
 
@@ -611,17 +611,17 @@ As an example, for a cluster with 200 OSDs and a pool size of 3 replicas, you wo
 
 1. Run ceph_client_setup script[Available in CODN] on each of the controller/compute node. Go through the README file on how to run the script and what files to be copied from ceph cluster node to the respective directory.
 
-2. Ensure ceph health is ok - “ceph health”
+2. Ensure ceph health is ok - "ceph health"
 
 3. If you happen to reboot your controller and compute node after running the ceph_client_setup script, the patch update on glance-api.conf, nova.conf, cinder.conf might be defaulted to original state. In that case do the below.
 
 From each of the controller and compute node, go to
 
-	“/home/ceph_client_setup/setup_scripts”
+	"/home/ceph_client_setup/setup_scripts"
 
-1. Run “sh patch_config_files.sh”
+1. Run "sh patch_config_files.sh"
 
-2. Run “sh helion_service_restarts.sh”
+2. Run "sh helion_service_restarts.sh"
 
 Sample files:
 

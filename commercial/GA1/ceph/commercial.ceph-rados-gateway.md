@@ -47,7 +47,7 @@ Following steps are performed from Ceph admin node. Assumption here is that host
 
 		ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway --gen-key
 
-	**Note**: For HA, create additional user – gateway1 like below
+	**Note**: For HA, create additional user - gateway1 like below
 
 		ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway1 --gen-key
 
@@ -181,7 +181,7 @@ Note: SSL is currently not being considered in working environment
 
 		listen-address=127.0.0.1
 
-	For example –
+	For example -
 
 		address=/.gateway.ex.com/192.x.x.x
 		
@@ -371,7 +371,7 @@ User reflects user of S3 interface and Subuser reflects a user of Swift interfac
 
 <screenshot>
 
-* Ensure user – s3User and subuser – s3User:swiftUser are stored in respective .users.uid and .users.swift pool
+* Ensure user - s3User and subuser - s3User:swiftUser are stored in respective .users.uid and .users.swift pool
 
 **Access and Secret keys**
 
@@ -396,7 +396,7 @@ S3 client is not supported by HP for User Data, other than as a validation step 
 
 * Access and secret key generated for s3 user can be collected like below
 
-		radosgw-admin user info –uid=s3User
+		radosgw-admin user info -uid=s3User
 
 * List buckets using radosgw-admin command or s3cmd or by listing .rgw.buckets pool like below. To begin with, list is empty.
 
@@ -437,7 +437,7 @@ Gateway instance, swift users can be verified using Swift client on gateway node
 		#Swift user
 
 		export ST_USER=s3User:swiftUser
-		#Swift user – secret key
+		#Swift user - secret key
 
 		export ST_KEY= Pp3YqVoyqOpFF28kby03e55j3akd0wEE3NYGjXsK
 
@@ -463,7 +463,7 @@ Gateway instance, swift users can be verified using Swift client on gateway node
 
 * Verify uploaded image is residing in rgw pool
 
-		rados –p .rgw.buckets ls
+		rados -p .rgw.buckets ls
 		
 **Ceph Radosgw Client**
 
@@ -487,7 +487,7 @@ Assuming that Ceph client packages are already installed, perform following step
 
 * Exercise S3 or Swift API calls as described in previous sections
 
-**RADOS GATEWAY – KEYSTONE AUTHENTICATION**
+**RADOS GATEWAY - KEYSTONE AUTHENTICATION**
 
 Integration of Rados Gateway with Helion OpenStack identity service sets up the Gateway to authorize and accept Keystone users automatically. Users are created in rados pools provided they have valid keystone token. For more details refer, http://ceph.com/docs/master/radosgw/keystone/
 
@@ -505,7 +505,7 @@ Following are the steps to achieve this integration.
 
 		rgw keystone url = {keystone server url:keystone server admin port}
 		
-		rgw keystone admin token = [keystone admin token – Available in /etc/keystone/keystone.conf]
+		rgw keystone admin token = [keystone admin token - Available in /etc/keystone/keystone.conf]
 		
 		rgw keystone accepted roles = {accepted user roles}
 		
@@ -517,7 +517,7 @@ Following are the steps to achieve this integration.
 		
 		nss db path = {path to nss db}
 
-	For example – rgw keystone url = http://192.0.2.21:5000
+	For example - rgw keystone url = http://192.0.2.21:5000
 
 		rgw keystone admin token = aa4edaa3aa219a8b8e78f937083c61d68728b654
 		rgw keystone accepted roles = Member, admin, swiftoperator
@@ -623,11 +623,11 @@ Following are the steps to achieve this integration.
 
 * From Management node, make Swift v1 request like below. Assumption here is that s3User is already created using radosgw-admin command and that correct credentials for s3User is used in making the request. Output should list container if present.
 
-		swift -V 1.0 -A http://gateway.ex.com/auth/v1.0 -U s3User:swiftUser -K “abc” list
+		swift -V 1.0 -A http://gateway.ex.com/auth/v1.0 -U s3User:swiftUser -K "abc" list
 
-* From Management node, make Swift v2 request using keystone. Ceph Object Gateway’s user:subuser tuple maps to the tenant:user tuple expected by Swift. Here, admin credentials are considered. Output should list container if present.
+* From Management node, make Swift v2 request using keystone. Ceph Object Gateway's user:subuser tuple maps to the tenant:user tuple expected by Swift. Here, admin credentials are considered. Output should list container if present.
 
-		swift -V 2.0 -A http://192.0.2.21:5000/v2.0 -U admin:admin -K “abc” list
+		swift -V 2.0 -A http://192.0.2.21:5000/v2.0 -U admin:admin -K "abc" list
 
 * From Management node, execute the following to get the admin tenant ID
 
