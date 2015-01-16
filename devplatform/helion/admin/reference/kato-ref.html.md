@@ -8,16 +8,11 @@ title: "Kato Command Reference"
 
 #Kato Command Reference {#kato-command-reference}
 
-[Commands](#commands)
-    -   [Command Usage Details](#command-usage-details)
+Kato is the Application Lifecycle Service command line administration utility.
 
+##Syntax {#usage}
 
-Application Lifecycle Service administration utility
-
-##Usage {#usage}
-
-**kato** *command* [**-h**] [**--help**] [*arguments*]
-[*command-options*]
+**kato** *command* [--help] [arguments] [command-options]
 
 ##List of Commands {#commands}
 

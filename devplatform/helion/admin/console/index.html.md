@@ -5,38 +5,36 @@ product: devplatform
 title: "Management Console (Admin View)"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Management Console (Admin View) {#management-console-admin-view}
 
-Application Lifecycle Service's web interface is called the Management Console. The interface
-displays more options and settings for Admin users than it does for
-regular end users. Some of the features described below are only
-available in the Admin view.
+Application Lifecycle Service's web interface is called the Management Console. 
 
-### [Table Of Contents](/als/v1/index-2/)
+Note that users with Admin-level privileges have access to more options and settings than regular end-users. Some features documented here are available only from the Admin view.
+
 
 -   [About the Admin Console](#about)
-    -   [Welcome](#welcome)
-        -   [System Information](#system-information)
-    -   [Cluster Nodes](#cluster-nodes)
-    -   [Organizations](#organizations)
-    -   [Users](#users)
-    -   [Applications](#applications)
-    -   [Cloud Events](#cloud-events)
-    -   [Dashboard](#dashboard)
-        -   [Router](#router)
-        -   [Primary Node Status Graphs](#primary-node-status-graphs)
-    -   [Settings](#settings)
-        -   [Console](#console)
-        -   [Quota Definitions](#quota-definitions)
-        -   [Cloud Controller](#cloud-controller)
-        -   [Applications](#console-settings-applications)
-        -   [DEA](#dea)
-        -   [Logyard](#logyard)
-        -   [Harbor](#harbor)
-        -   [Data Services](#data-services)
-        -   [File System](#file-system)
+-   [Welcome](#welcome)
+-   [System Information](#system-information)
+-   [Cluster Nodes](#cluster-nodes)
+-   [Organizations](#organizations)
+-   [Users](#users)
+-   [Applications](#applications)
+-   [Cloud Events](#cloud-events)
+-   [Dashboard](#dashboard)
+    -   [Router](#router)
+    -   [Primary Node Status Graphs](#primary-node-status-graphs)
+-   [Settings](#settings)
+    -   [Console](#console)
+    -   [Quota Definitions](#quota-definitions)
+    -   [Cloud Controller](#cloud-controller)
+    -   [Applications](#console-settings-applications)
+    -   [DEA](#dea)
+    -   [Logyard](#logyard)
+    -   [Harbor](#harbor)
+    -   [Data Services](#data-services)
+    -   [File System](#file-system)
 
 About the Admin Console[](#about "Permalink to this headline")
 -------------------------------------------------
@@ -151,12 +149,13 @@ button (cog icon) to see the **Node Settings**, showing a list of all
 available roles and checkboxes to enable or disable each one. Click
 **Save** to apply changes.
 
-See also the [*kato
-role*](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add) and [*kato
-info*](/als/v1/admin/reference/kato-ref/#kato-command-ref-info) command
-documentation for the CLI equivalents, and the [*Cluster
-Setup*](/als/v1/admin/cluster/#cluster-setup) section for information on
-adding nodes to the cluster.
+See also the [*kato role*](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add) and [*kato info*](/als/v1/admin/reference/kato-ref/#kato-command-ref-info) command
+documentation for the CLI equivalents, and the [*Cluster Setup*](/als/v1/admin/cluster/#cluster-setup) section for information on adding nodes to the cluster.
+
+##Available Patches {#patches}
+
+Displays a list of available patches for the current cluster.
+
 
 Organizations[](#organizations "Permalink to this headline")
 -------------------------------------------------------------
@@ -243,7 +242,7 @@ Lists the Quota Definitions available to apply to Organizations on the
 system.
 
 -   To edit a definition, click the edit button on the right.
--   To create a new definition use the [*helion quota
+-   To create a new definition, use the [*helion quota
     create*](/als/v1/user/reference/client-ref/#command-quota-create)
     command.
 
@@ -264,7 +263,8 @@ system.
     must be accessible from the controller node.
 -   **Allowed Repos**: Debian package repositories allowed in
     application containers. End users can install additional packages
-    (e.g. with `apt-get` or `aptitude`) only from these repositories.
+    (e.g. with *apt-get* or *aptitude*) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container. See [Allowed Repositories](/als/v1/admin/server/configuration/#allowed-repositories). 
+
 
 ### Applications[](#console-settings-applications "Permalink to this headline")
 

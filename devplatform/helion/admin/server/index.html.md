@@ -53,8 +53,7 @@ For ssh access on Windows, we recommend
 On the server, the control command for Application Lifecycle Service is called
 `kato`. It is used for configuration and node
 management procedures such as start, stop, role specialization, and
-status checks. For a complete list of options, see [*Kato Command
-Reference*](/als/v1/admin/reference/kato-ref/#kato-command-ref).
+status checks. For a complete list of options, see the [Kato Command Reference](/als/v1/admin/reference/kato-ref/#kato-command-ref).
 
 Common Operations[](#common-operations "Permalink to this headline")
 ---------------------------------------------------------------------
@@ -72,23 +71,12 @@ Instructions for common operations on the Application Lifecycle Service VM can b
         Server](/als/v1/admin/server/operations/#monitoring-the-helion-server)
         -   [Management Console](/als/v1/admin/server/operations/#management-console)
         -   [New Relic](/als/v1/admin/server/operations/#new-relic)
-        -   [Creating an Admin
-            User](/als/v1/admin/server/operations/#creating-an-admin-user)
-        -   [System Monitoring with
-            Nagios](/als/v1/admin/server/operations/#system-monitoring-with-nagios)
-    -   [Server Backup, Import, and
-        Export](/als/v1/admin/server/operations/#server-backup-import-and-export)
+        -   [Creating an Admin User](/als/v1/admin/server/operations/#creating-an-admin-user)
+        -   [System Monitoring with Nagios](/als/v1/admin/server/operations/#system-monitoring-with-nagios)
+    -   [Server Backup, Import, and Export](/als/v1/admin/server/operations/#server-backup-import-and-export)
 -   [Upgrading Application Lifecycle Service](/als/v1/admin/server/upgrade/)
     -   [Before an upgrade](/als/v1/admin/server/upgrade/#before-an-upgrade)
-        -   [Maintenance Mode](/als/v1/admin/server/upgrade/#maintenance-mode)
-        -   [Proxy settings](/als/v1/admin/server/upgrade/#proxy-settings)
-        -   [RSA keys](/als/v1/admin/server/upgrade/#rsa-keys)
     -   [Executing the upgrade](/als/v1/admin/server/upgrade/#executing-the-upgrade)
-        -   [Upgrading an individual
-            node](/als/v1/admin/server/upgrade/#upgrading-an-individual-node)
-        -   [Upgrading a cluster](/als/v1/admin/server/upgrade/#upgrading-a-cluster)
-        -   [Node upgrade ordering](/als/v1/admin/server/upgrade/#node-upgrade-ordering)
-        -   [Node Upgrade Process](/als/v1/admin/server/upgrade/#node-upgrade-process)
 
 Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 -------------------------------------------------------------------------------
@@ -97,8 +85,7 @@ To continue configuring the Application Lifecycle Service server, see:
 
 -   [Detailed Configuration](/als/v1/admin/server/configuration/)
     -   [General](/als/v1/admin/server/configuration/#general)
-        -   [Changing the
-            Password](/als/v1/admin/server/configuration/#changing-the-password)
+        -   [Changing the Password](/als/v1/admin/server/configuration/#changing-the-password)
     -   [Network Setup](/als/v1/admin/server/configuration/#network-setup)
         -   [Changing the
             Hostname](/als/v1/admin/server/configuration/#changing-the-hostname)

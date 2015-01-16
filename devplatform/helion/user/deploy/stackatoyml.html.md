@@ -5,7 +5,7 @@ product: devplatform
 title: "HP Options"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 <!--note that all this content has been merged into the manifest.yml file and is retained here in this orphaned article for reference only-->
 
 #HP Options {#yml-options}
@@ -72,10 +72,7 @@ Example:
 
     name: currency-converter
 
-**Note**
-
-The application name must be a valid [hostname
-label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names)
+**Note**: The application name must be a valid [hostname label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names)
 (i.e. containing only alphanumeric characters and hyphens).
 
 buildpack:[](#buildpack "Permalink to this headline")
@@ -90,24 +87,15 @@ For example:
     buildpack: https://github.com/heroku/heroku-buildpack-java.git
 
 If unset, Application Lifecycle Service will check to see if the application triggers the
-`detect` scripts in any of its [*built-in
-buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
+*detect* scripts in any of its [built-in buildpacks](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
 
 framework:[](#framework "Permalink to this headline")
 ------------------------------------------------------
 
-Allows the app to specify a framework and runtime to be used. Specifying
-a value for the `framework` key triggers the use of
-the [*Legacy Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy).
+Allows the app to specify a framework and runtime to be used. Specifying a value for the **framework** key triggers the use of the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy).
 
-**Note**
-
-The keys in the `framework` section are used with
-the [*Legacy Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks-legacy) only.
-Applications using language or framework-specific buildpacks do not
-require these values, and should instead specify the
-[*buildpack*](#yml-buildpack) or rely on the detection scripts
-of the [*built-in buildpacks*](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
+**Note**:  The keys in the **framework** section are used with the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy) only. Applications using language or framework-specific buildpacks do not require these values, and should instead specify the
+[buildpack](#yml-buildpack) or rely on the detection scripts of the [built-in buildpacks](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
 
 ### type:[](#type "Permalink to this headline")
 
@@ -697,7 +685,7 @@ To enable JSON logging, specify the URL separately along with a
 For example:
 
     drain:
-      mytestdrain: udp://logs.loggly.com:12346/
+      mytestdrain: udp://logs.papertrailapp.com:12346/
       otherdrain:
         url: tcp://logs.papertrailapp.com:12345/
         json: true

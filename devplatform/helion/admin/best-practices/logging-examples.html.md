@@ -4,29 +4,23 @@ permalink: /als/v1/admin/best-practices/logging-examples/
 product: devplatform
 title: "Log Drain Examples"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 Log Drain Examples[](#log-drain-examples "Permalink to this headline")
 =======================================================================
-  [Papertrail](#papertrail)
-    -   [Loggly](#loggly)
-    -   [Splunk](#splunk)
-    -   [Hello World Custom Drain](#hello-world-custom-drain)
-
 Detailed instructions on how to use drains with third party log analysis
-software or services:
+software or services.
 
--   [*Papertrail*](#logging-examples-papertrail)
--   [*Loggly*](#logging-examples-loggly)
--   [*Splunk*](#logging-examples-splunk)
+-   [Papertrail](#logging-examples-papertrail)
+-   [Splunk](#logging-examples-splunk)
+-   [Logstash](#logging-examples-logstash)
+-   [Hello World Custom Drain Example](#hello-world-custom-drain)
+<!--   [*Loggly*](#logging-examples-loggly)-->
 
-**Note**
-
-Do not forward both application and system logs to the same destination.
+**Note**: Do not forward both application and system logs to the same destination.
 
 Papertrail[](#papertrail "Permalink to this headline")
 -------------------------------------------------------
-
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
 2.  In the Dashboard screen, click *Add Systems*.
 	<img src="content/documentation/devplatform/helion/imagesppt1.png" />
@@ -47,11 +41,9 @@ Papertrail[](#papertrail "Permalink to this headline")
 
 **Note**
 
-Papertrail requires systail log lines to have `<13>l` at the beginning of each line. Make sure the drain you are
-forwarding is formatted this way (see example in [*Saving Custom Log
-Formats*](/als/v1/admin/server/logging/#logging-drains-save-format)).
+Papertrail requires systail log lines to have `<13>l` at the beginning of each line. Make sure the drain you are forwarding is formatted this way (see example in [*Saving Custom Log Formats*](/als/v1/admin/server/logging/#logging-drains-save-format)).
 
-Loggly[](#loggly "Permalink to this headline")
+<!-- Loggly[](#loggly "Permalink to this headline")
 -----------------------------------------------
 
 1.  [Create an account for Loggly](https://app.loggly.com/pricing)
@@ -80,14 +72,13 @@ Loggly supports JSON format with minor configuration changes shown above. Enable
 
     kato log drain add --format json drain-name tcp://logs.loggly.com:port#
 
+-->
+## Splunk {#splunk}
 
-Splunk[](#splunk "Permalink to this headline")
------------------------------------------------
-
-1.  [Set up Splunk Server](http://www.splunk.com/download).
-2.  In the welcome screen, click *Add data*
+1.  Set up [Splunk Server](http://www.splunk.com/download).
+2.  In the Welcome screen, click **Add data**.
 	<img src="/content/documentation/devplatform/helion/images/splunk1.png" />
-3.  Under *Choose a Data Source*, click **From a TCP port** (or UDP)<br><img src="/content/documentation/devplatform/helion/images/splunk2.png"/>
+3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP)<br><img src="/content/documentation/devplatform/helion/images/splunk2.png"/>
 
 1. In the **Add New Source** screen:
 	-   Select a TCP/UDP port greater than **9999**
@@ -105,8 +96,23 @@ Splunk supports JSON format without further configuration. Enable system JSON lo
 
     kato log drain add --format json drain-name tcp://splunk-server-address:port#
 
-Hello World Custom Drain[](#hello-world-custom-drain "Permalink to this headline")
------------------------------------------------------------------------------------
+## Logstash {#logging-examples-logstash}
+ 
+1. Download and install [Logstash](http://www.elasticsearch.org/overview/logstash/download/).
+ 
+2. Configure Logstash to add a UDP or TCP listener on the port of your choosing.  For example, for a UDP listener on port 10000, add the following to the *logstash.conf* file: 
+ 
+	    input { 
+	       udp { 
+	          port => '10000' 
+	       } 
+	    } 
+ 
+3. Enable system logging (via udp) by executing the following kato command: 
+ 
+    	kato log drain add *drain-name* udp://logstash-server-address:*port#* 
+ 
+## Hello World Custom Drain  {#hello-world-custom-drain}
 
 The command below starts a drain target server on a node and pipes it to a local file:
 

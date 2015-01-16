@@ -29,7 +29,9 @@ The Marketplace deploys packages of services and applications to specified envir
 Install the Marketplace component of the [HP Helion Development Platform](/helion/devplatform/install/) during the Development Platform install process.
 
 ##<a name="install"></a>Installing a Package
-In this example, the package being installed is the Vertica 7 Community Edition package. 
+In this example, the package being installed is the Vertica 7 Community Edition package.
+
+Note that you must log out of the Horizon dashboard and then log back in at least once after Marketplace installation before installing any Marketplace packages. This will ensure that Horizon has properly loaded all Marketplace services prior to package installation.  
 
 ###<a name="create"></a>Create a Target Environment
 1. Log into Horizon and open the **Marketplace** panel under your Project. Click on **Application Catalog**, and then click on the Environments tab. 

@@ -5,7 +5,7 @@ product: devplatform
 title: "Application Logs"
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Application Logs {#application-logs}
 
@@ -44,7 +44,7 @@ To limit the number of lines displayed, use the `--num` option:
 
     $ helion logs myapp --num 50
 
-To view log stream as it is updated, use the `--follow` option:
+To view a log stream as it is updated, use the `--follow` option:
 
     $ helion logs myapp --follow
 
@@ -78,9 +78,8 @@ By default, `helion logs` streams log data from
 (while running).
 
 You can add up to five additional files to the log stream by modifying
-the **HELION\_LOG\_FILES** environment variable (in
-[*manifest.yml*](/als/v1/user/deploy/manifestyml/#env) or using [*helion
-set-env*](/als/v1/user/reference/client-ref/#command-set-env).
+the **HELION\_LOG\_FILES** environment variable in the
+[*manifest.yml*](/als/v1/user/deploy/manifestyml/#env) file or using [*helion set-env*](/als/v1/user/reference/client-ref/#command-set-env).
 
 The variable should contain a list of named files separated with ":" in
 the following format:
@@ -90,29 +89,21 @@ the following format:
 The *name* used in the value or individual variable name becomes part of
 each log line, and can be used for filtering the stream.
 
-For example, to add a specific Tomcat log file to the default
-\$HELION\_LOG\_FILES variable, you might set the following in
-*manifest.yml*:
+For example, to add a specific Tomcat log file to the default \$HELION\_LOG\_FILES variable, you could add the following lines to *manifest.yml*:
 
     env:
       HELION_LOG_FILES: tomcat=/home/helion/tomcat/logs/catalina.2013-11-04.log:$HELION_LOG_FILES
 
-Paths can be specified fully or specified relative to \$HELION\_APP\_ROOT.
+Paths can be fully specified or specified relative to \$HELION\_APP\_ROOT.
 
 helion drain[](#helion-drain "Permalink to this headline")
 ---------------------------------------------------------------
 
-The [*helion drain
-add*](/als/v1/user/reference/client-ref/#command-drain-add) command is used to
-create a log drain which forwards application logs to external log
-aggregation services, log analysis tools, or Redis databases. For
-example:
+The [*helion drain add*](/als/v1/user/reference/client-ref/#command-drain-add) command is used to create a log drain which forwards application logs to external log aggregation services, log analysis tools, or Redis databases. For example:
 
-    $ helion drain add myapp appdrain udp://logs.loggly.com:12345
+    helion drain add myapp appdrain udp://logs.papertrailapp.com:12345
 
-This creates a UDP drain called "appdrain" for the application "myapp"
-which forwards all log messages and events for that application to
-[Loggly](http://loggly.com/) on port 12345.
+This creates a UDP drain called **appdrain** for the application **myapp** which forwards all log messages and events for that application to [Papertrail](http://papertrailapp.com/) on port 12345. 
 
 The log drain URL can contain only:
 
@@ -124,119 +115,20 @@ Any additional parameters are discarded.
 
 To delete the drain:
 
-    $ helion drain delete appdrain
+    helion drain delete appdrain
 
 Use the --json option send the log lines in JSON format:
 
-    $ helion drain add myapp jsondrain --json udp://logs.loggly.com:12346
+    helion drain add myapp jsondrain --json udp://logs.papertrailapp.com:12346
 
-To check the status of your application drains, use the
-`helion drain list` command.
+To check the status of your application drains, use the *helion drain list* command.
 
 **Note**
 
 If the service at the receiving end of the drain goes offline or becomes
 disconnected, Application Lifecycle Service will retry the connection at increasing
 intervals.
-<!--
-Log Drain Examples[](#log-drain-examples "Permalink to this headline")
------------------------------------------------------------------------
 
-Detailed instructions on how to use drains with third party log analysis
-software or services:
-
--   [*Papertrail*](#app-logging-examples-papertrail)
--   [*Loggly*](#app-logging-examples-loggly)
--   [*Splunk*](#app-logging-examples-splunk)
-
-### Papertrail[](#papertrail "Permalink to this headline")
-
-1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
-2.  In the Dashboard screen, click **Add Systems**.
-    <img src="/als/v1/images/ppt11.png">
-    <img src="/als/v1/images/logo.png">
- 
-3.  In the Setup Systems screen under *Other log methods*, click
-    *Alternatives*.
-    <img src="/als/v1/images/ppt21w.png" />
- 
-4.  Choose option C: *My system's hostname changes* and give it a
-    suitable name.
-    <img src="/content/documentation/devplatform/stackat0/images/ppt31.png" />
-
-5.  Note the **port number**.
-    <img src="/content/documentation/devplatform/stackat0/images/ppt41.png" />
-
-6.  Enable application logging (via udp) by executing the following client command:
-
-    `helion drain add drain-name udp://logs.papertrailapp.com:port#`
-
-### Loggly[](#app-logging-examples-loggly "Permalink to this headline")
-Loggly supports JSON format with minor configuration changes as shown below.
-
-1. [Create an account for Loggly](https://app.loggly.com/pricing)
-1. Under *Incoming Data* tab, click *Add Input*.
-<image src="..\..\images\loggly11.png">
-1. In the Add Input screen:
- 	- Choose *Syslog UDP or TCP*
- 	- Choose *Combination Log Type*
- 	- [Optional] For JSON Logging, Choose UDP or TCP **with Stripe** and enable **JSON Logging**. (for system logs)
- 	<img src="..\..\images\loggly21.png">
-1.  If we want to accept logs from any Application Lifecycle Service nodes or applications, modify the Allowed Devices section:
- 	- Click *Add device*
-	<img src="..\..\images\loggly31.png">
- 	-   Add IP Address 0.0.0.0/0 when prompted
- 	<img src="..\..\images\loggly41.png" />
-1.  Turn off discovery since we allowed all devices. Also note down the **port number**.
- 	<img src="..\..\images\loggly51.png" />
-1. Run **one** of the following client commands to create the log drain:
-
-
-    `helion drain add drain-name udp://logs.loggly.com:port#`
-
-    `helion drain add drain-name tcp://logs.loggly.com:port#`
-
-### Splunk[](#splunk "Permalink to this headline")
-Splunk supports JSON format without further configuration.
-
-1.  [Set up Splunk Server](http://www.splunk.com/download).
-2.  In the welcome screen, click *Add data*
-	<img src="/content/documentation/devplatform/stackat0/images/splunk11.png" />
-3.  Under **Choose a Data Source**, click **From a TCP port** (or UDP).
-	<img src="/content/documentation/devplatform/stackat0/images/splunk21.png" />
-4.  In the Add new Source screen:
-	-   Select a TCP/UDP port greater than **9999**
-	-   Give it a suitable **Source name**.
-	-   Set sourcetype to **Manual**
-	-   Leave Source Type **empty**
-	<img src="/content/documentation/devplatform/stackat0/images/splunk31.png" />
-
-5.  Run the following client command to create the log drain: 
-`helion drain add drain-name udp://splunk-server-address:port#`
-OR
-helion drain add drain-name tcp://splunk-server-address:port#
-
-
-
-### Hello World Custom Drain[](#hello-world-custom-drain "Permalink to this headline")
-
-The command below starts a drain target server on a node, piping to a
-local file:
-
-    nc -lk 0.0.0.0 10000 > log-output.txt
-
-As long as that nc command runs, this will funnel logs from all drains
-targeting it into the file *log-output.txt*
-
-Run one of the following client commands to create the log drain:
-
-
-    helion drain add drain-name udp://server-address:port#
-
-OR
-
-    helion drain add drain-name tcp://server-address:port#
--->
 Rotating Application Log Files[](#rotating-application-log-files "Permalink to this headline")
 -----------------------------------------------------------------------------------------------
 
