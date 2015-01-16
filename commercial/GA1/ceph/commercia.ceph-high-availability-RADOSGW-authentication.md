@@ -96,37 +96,37 @@ Following are the steps to achieve integration of Helion OpenStack HAProxy, Keys
 
 		<VirtualHost *:35357>
 		
-		……….
+		......
 		
 		<Directory /etc/keystone>
 		
-		……..
+		......
 		
 		WSGIChunkedRequest On
 		
-		…………
+		......
 		
 		</Directory>
 		
-		……………
+		......
 		
 		</VirtualHost>
 		
 		<VirtualHost *:5000>
 		
-		……….
+		......
 		
 		<Directory /etc/keystone>
 		
-		……..
+		......
 		
 		WSGIChunkedRequest On
 		
-		…………
+		......
 		
 		</Directory>
 		
-		……….....
+		......
 		
 		</VirtualHost>
 

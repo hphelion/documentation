@@ -569,37 +569,37 @@ Following are the steps to achieve this integration.
 
 		<VirtualHost *:35357>
 		
-		……….
+		......
 
 		<Directory /etc/keystone>
 		
-		……..
+		......
 		
 		WSGIChunkedRequest On
 		
-		…………
+		......
 		
 		</Directory>
 		
-		……………
+		......
 		
 		</VirtualHost>
 		
 		<VirtualHost *:5000>
 		
-		……….
+		......
 		
 		<Directory /etc/keystone>
 		
-		……..
+		......
 		
 		WSGIChunkedRequest On
 		
-		…………
+		......
 		
 		</Directory>
 		
-		……….....
+		......
 		
 		</VirtualHost>
 

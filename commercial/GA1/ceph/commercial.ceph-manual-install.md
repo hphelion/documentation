@@ -51,9 +51,9 @@ Perform the following steps:
 		
 		fsid = 498afec5-57f0-4e48-9cf7-c8a5b89c1c80
 		
-		mon_initial_members = ceph-mon1 à monitor host name
+		mon_initial_members = ceph-mon1 - monitor host name
 		
-		mon_host = 192.x.x.x à monitor IP
+		mon_host = 192.x.x.x - monitor IP
 		
 		auth_cluster_required = cephx
 		
