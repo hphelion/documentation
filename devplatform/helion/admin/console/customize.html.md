@@ -2,14 +2,14 @@
 layout: default-devplatform
 permalink: /als/v1/admin/console/customize/
 product: devplatform
-title: "Customization"
+title: "Management Console Customization"
 
 ---
 <!--UNDER REVISION-->
 
-#Customization {#customization}
+#Management Console Customization {#customization}
 
-A  can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the [Management Console](/als/v1/user/console/#management-console) interface.
+The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the [Management Console](/als/v1/user/console/#management-console) interface.
 
 -   [Console Settings](#console-settings)
 	-   [Product](#product)
