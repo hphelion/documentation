@@ -338,18 +338,51 @@ As the "admin" user, in the "admin" tenant, click on **Project**, then **Object 
 
 ###Image download terminated
 
-The image download is terminated. Retries to download again but the status of service remains unchanged. The status still remains staged.
+The image download is terminated for some reason and even after retrying to download the image  the status of service remains unchanged, i.e, the status still remains *staged*.
 
-need to get the answer before publishing
 **Resolution**
+
 Perform the following steps:
   
-1. Delete the images for that Development Platform service. (where should we delete the image from? any location?
-2. Delete the heat-templates for the service from Object store -> Containers.( Is this all performed in Horizon and as a user or admin)
+1. Delete the images for that Development Platform service. (do we need to login to Horizon and delete the image or are there any command line used to delete the image for that development platform? If any please specify how should a user delete it?)
+2. Login to Horizon as "admin" user and click Object Store Delete the heat-templates for the service from Object store -> Containers.( Is this all performed in Horizon and as a user or admin)
 c) Delete the wscatalog for the service under container -> Sherpa-cache in Object store.
 Even after that , you do not see status changed to Available for the service in configure services page. Then it means Sherpa is looking at file cache .
      a) Connect to controller mgmt node  delete the directory  /var/cache/sherpa/ws.xxxx, in order to reset the state
     b) service apache2 restart for this change to take effect .
 
 
+---->
+<!----
+###Image download terminated
+
+The image download is terminated for some reason and even after retrying to download the image  the status of service remains unchanged, i.e, the status still remains *staged*.
+
+
+1. Delete the images for that Development Platform service. (Do we need to login to Horizon and delete the image or are there any command executed to delete the image? If any please specify how should a user delete it?)
+2.  Delete the heat-templates for the service.
+ 		
+	Perform the following steps:
+
+	1. Login to Horizon as "admin" user.
+	2.  Click Object Store  and then select Containers to open the Containers page. 
+	3. Delete the heat-templates for the service.
+
+3.  Delete the wscatalog for the service. 
+	
+	Perform the following steps:
+
+	1.	Login to Horizon as "admin" user.
+	2.	Click Project. 
+	3.	Click Object Store. Open the "sherpa-cache" folder and delete the wscatalog. folder which contains the cached download. 
+
+The service should now be available to download again.
+
+If  the status still remains unchanged in the Configure Service page then Sherpa is referring to the file cache. To delete the file cache, perform the following:
+    	
+* Connect to the controller management node  and delete the directory  `/var/cache/sherpa/ws.xxxx`, to reset the state. ( What is the exact file name for ws.xxxx)
+   	 
+* Delete the contents of the `/var/lib/Sherpa/data` folder. 
+
+* Restart the service apache2 for this change to take effect . 
 ---->
