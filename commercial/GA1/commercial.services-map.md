@@ -17,6 +17,58 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
+
+
+
+<script type="text/javascript">
+
+function showTutorial(name, img, top, left, hpcolor){
+document.getElementById("box").style.top=top;
+document.getElementById("box").style.left=left;
+document.getElementById("box").style.visibility="visible";
+document.getElementById("box").style.backgroundColor=hpcolor;
+document.getElementById("box").innerHTML=name;
+//document.getElementById("icons").style.visibility="visible";
+//document.getElementById("box").style.backgroundImage = "url('" + img + "')";
+  //document.myform.stage.value = name;
+}
+
+function hideTutorial(){
+document.getElementById("box").style.visibility="hidden";
+//document.getElementById("box").style.top='';
+//document.getElementById("box").style.left='';
+//document.getElementById("icons").style.visibility="hidden";
+
+  //document.myform.stage.value = name;
+}
+</script>
+
+
+<style>
+
+#box {
+position: absolute;
+top: 300px;
+left: 700px;
+z-index: 8;
+width: 350px;
+//height: 40px;
+//padding-left: 120px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 20px;
+padding-bottom: 20px;
+//color: #0489B1;
+color: white;
+//font-weight: bold;
+background-color: white;
+//background-image: url(''); 
+//background-repeat: no-repeat;
+box-shadow: 10px 10px 5px  #888888;
+visibility: hidden;
+opacity: .95;
+}
+</style>
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
