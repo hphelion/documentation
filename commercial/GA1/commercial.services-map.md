@@ -59,8 +59,8 @@ onMouseOver="showTutorial('The HP Helion OpenStack Sherpa Service provides a lin
 <area  alt="" title="" href="horizon.html" shape="rect" coords="929,59,1058,103"  style="outline:none;" target="_self"      onMouseOver="showTutorial('Horizon is the dashboard behind OpenStack. It is the only graphical interface to OpenStack, so this may be the only component to actually see.', 'horizon.png', '125px', '1000px', 'black')" onMouseOut="hideTutorial('')"/>
 
 
-<area  alt="" title="" href="keystone.html" shape="rect" coords="691,204,1073,229"  style="outline:none;"target="_self"  
-onMouseOver="showTutorial('Keystone is the OpenStack component that provides Identity, Token, Catalog<br /> and Policy services for use specifically by components in the OpenStack family. It implements OpenStack’s Identity API.', 'keystone.png', '210px', 
+<area  alt="" title="" href="keystone.html" shape="rect" coords="691,204,1073,229"  style="outline:none;"target="_self" 
+onMouseOver="showTutorial('Keystone is the OpenStack component that provides Identity, Token, Catalog and Policy services for use specifically by components in the OpenStack family. It implements the OpenStack Identity API.', 'keystone.png', '210px', 
 '1000px', 'black')" onMouseOut="hideTutorial('')"/>
 
 
