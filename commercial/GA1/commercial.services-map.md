@@ -68,15 +68,16 @@ box-shadow: 10px 10px 5px  #888888;
 visibility: hidden;
 opacity: .95;
 }
-</style>
 -->
+</style>
+
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Services Map
 <br>
 
-<img  src="/media/mainHOS.png" border="0"  usemap="#mainHOS" alt=""  />
+<img src="media/mainHOS.png" border="0"  usemap="#mainHOS" alt="">
 <map name="mainHOS"> 
 
 <area  alt="" title="" href="eon.html" shape="rect" coords="138,138,189,158"  style="outline:none;" target="_self" onMouseOver="showTutorial('EON is a new service sub component that captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node.', 'no.png', '250px', '550px', '#0E2DB8')"    onMouseOut="hideTutorial('')"/>
