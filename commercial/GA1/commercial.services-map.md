@@ -76,7 +76,7 @@ opacity: .95;
 -->
 # HP Helion OpenStack&reg; Services Map
 <br>
-
+<div id="box"></div>
 <img src="media/mainHOS.png" border="0"  usemap="#mainHOS" alt="">
 <map name="mainHOS"> 
 <area  alt="" title="" href="eon.html" shape="rect" coords="138,138,189,158"  style="outline:none;" target="_self" onMouseOver="showTutorial('EON is a new service sub component that captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node.', 'no.png', '250px', '550px', '#0E2DB8')"    onMouseOut="hideTutorial('')">
