@@ -10,7 +10,7 @@ title: "Management Console: User View"
 
 The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.
 
-The interface differs for Admin and non-Admin users. The features described below are available and visible to to end users. For information on the Management Console view for Admins, see the [Console Admin Guide](/als/v1/admin/console/). 
+The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the [Console Admin Guide](/als/v1/admin/console/). 
 
 - [Welcome Page](#welcome)
 - [Applications List](#app-list)
