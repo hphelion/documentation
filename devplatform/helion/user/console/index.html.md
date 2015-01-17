@@ -68,9 +68,10 @@ This view also includes the following **Tabs**:
 	- **Down**: successfully staged as a droplet and application instances have been created, but all instances are down. This state will typically not be seen as any one instance will only be down for a short period of time before starting or being removed.
 	- **Offline**: successfully staged the application droplet, but no application instances have been created and started.
 - **Timeline**: A real-time stream of events and discussions relevant to the Application. Events in the application's history appear here as notifications which can be commented on by members of the Space.
--  **App Versions**: A rolling list of code and setting changes to an application. Clicking Rollback to this version for any listed version reverts the application to the selected version's state and creates a new version. See :ref:`App Versions <app-versions>` for details. **Instances**: List of application instances showing the status and host DEA IP address of each.
+-  **App Versions**: A rolling list of code and setting changes to an application. Clicking Rollback to this version for any listed version reverts the application to the selected version's state and creates a new version. See :ref:`App Versions <app-versions>` for details.
 -   **Environment Variables**: Environment variables that have been explicitly set in the application container (via application config, client commands, or this interface). Default variables, those set by the application framework, or those added by the system for data services are excluded from this view.
 -   **Settings**: The number of application instances, disk space, and memory allotment used by the application. This usage counts against the organization's quota.
+-   -  **Instances**: List of application instances showing the status and host DEA IP address of each.
 
 ## Organizations List {#organization-list}
 
@@ -81,53 +82,58 @@ Clicking on any Organization name opens the Organization view.
 ### Organization View {#organization-view}
 The Organizations page shows a list of all [Organizations](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.
 
-Clicking on the Organization's name opens a view of that organization, including:
+Clicking on the Organization's name opens a view of that organization, including the following tabs:
 
+-   **Spaces**: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a [view of that Space](#user-console-space).
+-   **Users**: A list of Users who are members of the Organization, showing the Email address and Organization [Roles](/als/v1/user/deploy/orgs-spaces/#orgs-spaces-roles) of each.
+    -   **Users**: can view organization quotas, domains, spaces and users.
+    -   **Manager**: can add domains and spaces to the organization, but not users.
+-   **Space Quota Plans**: A filterable list of space quota plans.
 -   **Quota Usage**:
-    -   Memory: The amount of RAM (in GB) available to the Organization, and how much of it is currently used by applications.
-    -   Services: The number of deployed / allotted services.
--   **Domains**: Domains belonging to the Organization that can be used by applications deployed to [*Spaces*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called *acme* on a PaaS with the address *api.example.org* might have the domain *\*.acme.example.org*.
-
-**Tabs**:
-
--   **Spaces**: A list of Spaces that belong to the Organization, showing
-    the current number of applications and services deployed to that
-    space. Clicking on a Space in the list opens a [*view of that
-    Space*](#user-console-space).
--   Users: A list of Users who are members of the Organization, showing
-    the Email address and Organization
-    [*Roles*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces-roles) of each.
-    -   Users: can view organization quotas, domains, spaces and users.
-    -   Manager: can add domains and spaces to the organization, but not
-        users.
+    -   **Memory**: The amount of RAM (in GB) available to the Organization, and how much of it is currently used by applications.
+    -   **Services**: The number of deployed / allotted services.
+-   **Domains**: Domains belonging to the Organization that can be used by applications deployed to [Spaces](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called *acme* on a PaaS with the address *api.example.org* might have the domain *\*.acme.example.org*.
 
 **Note**: There is currently no interface in the Management Console for Managers, Auditors, or Billing Managers to view or adjust billing/payment info and spending limits.
 
-### Spaces View {#space-view}
+### Space View {#space-view}
 
 -   **Apps**: A filterable list of applications in the Space. Clicking an app name opens an [administrative view of that application](#user-console-app).
--   **Services**: A list of services bound to applications in the Space. Clicking a service name opens an [administrative view of that service](#user-console-service).
--   **Domains**: A filterable list of Domains attached to the space. Domains can be added and removed by Space or Organization Managers, but must first be mapped to the parent Organization (by an Application Lifecycle Service Admin).
-
-**Tabs**:
-
 -   **Timeline**: A real-time stream of events and discussions relevant to the Space. The creation, update, and deletion of apps and services appear here as notifications which can be commented on by members of the Space. Discussions can be started by any member, tagged, and assigned to an application (which makes the item visible in the Application view).
+-   **Quota Usage**:
+    -   **Memory**: The amount of RAM (in GB) available to the Organization, and how much of it is currently used by applications.
+    -   **Services**: The number of deployed / allotted services.
+    -   **Routes**: The number of created / allotted routes.
+-   **Services**: A list of services bound to applications in the Space. Clicking a service name in either section opens an [administrative view of that service](#user-console-service).
+	-   **Managed**: A list of managed services bound to applications in the Space.
+	-   **User Provided**: A list of user provided services bound to applications in the Space. New user provided services can be created by clicking the **Create User Provided Service** button.
 -   **Managers**: Managers can invite/manage users, enable features for a given space.
 -   **Developers**: Developers can create, delete, manage applications and services, full access to all usage reports and logs.
 -   **Auditors**: Auditors have view-only access to all space information, settings, reports, and logs.
 
 ### Service Instance View {#service-instance-view}
+Clicking a service instance's name anywhere in the interface brings up a view of that service instance showing the summary.
 
-Clicking a service instance's name anywhere in the interface brings up a view of that service instance showing:
+The summary of a service displays:
 
--   when it was created
--   when it was last modified
--   which host it is running on
--   which port it is exposed on
--   the service instance name (not the canonical database name)
--   its current state
+- a description of the service instance type
+- when it was created
+- when it was last modified
+- which host it is running on
+- which port it is exposed on
+- the service instance name (not the canonical database name)
+- its current state
 
 For more information on a service instance, such as its credentials, use the [*helion service*](/als/v1/user/reference/client-ref/#command-service) command.
+
+**Credentials**
+
+Lists the credentials for the service instance.
+If a the service is a User Provided Service, new credentials can be added and existing credentials may be edited.
+
+**App Bindings**
+
+A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application] <user-console-app>`.
 
 ##Sample Applications {#sample-apps}
 
