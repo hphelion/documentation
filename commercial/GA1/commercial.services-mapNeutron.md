@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Services"
-permalink: /helion/openstack/services/mapHeat
+permalink: /helion/openstack/services/mapNeutron
 product: commercial.ga
 
 ---
