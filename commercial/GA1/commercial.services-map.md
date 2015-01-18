@@ -28,9 +28,6 @@ PageRefresh();
 
 <img src="media/serviceflow.png" border="0"  usemap="#mainHOS" alt="">
 <map name="mainHOS"> 
-
-
-
 <area  alt="" title="Heat is the orchestration component of OpenStack. It implements an orchestration engine to launch multiple composite cloud applications based on templates in the form of text files that can be treated like code" href="/helion/openstack/services/mapHeat" shape="rect" coords="314,27,364,77" style="outline:none;" target="_self">
 <area  alt="" title="Horizon is the dashboard behind OpenStack. It is the only graphical interface to OpenStack, so this may be the only component to actually see." href="/helion/openstack/services/mapHorizon" shape="rect" coords="137,120,200,171" style="outline:none;" target="_self">
 <area  alt="" title="Neutron provides the networking capability for OpenStack, providing networking as a service between interface devices  managed by other OpenStack services, such as Nova." href="/helion/openstack/services/mapNeutron" shape="rect" coords="132,189,195,240" style="outline:none;" target="_self">
