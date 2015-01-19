@@ -4,14 +4,12 @@ permalink: /als/v1/admin/console/app-store/
 product: devplatform
 title: "Sample Applications"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Sample Applications {#index-0}
 
 The Sample Applications are a collection of ready-to-run applications which can be
-deployed to Application Lifecycle Service with a couple of clicks. This interface uses the
-same API as the CLI client and pulls the source code from a Git
-repository rather than pushing an archive from the user's local
+deployed with a couple of clicks. This interface uses the same API as the CLI client to pul the source code from a Git repository rather than push an archive from the user's local
 filesystem.
 
 - [Creating Sample Applications](#creating-an-app-store)
@@ -20,8 +18,7 @@ filesystem.
 - [Adding the Sample Applications to the Application Lifecycle Service](#adding-the-app-store-to-helion)
 
 
-Users have access to the main Sample Applications interface (see the [Application Lifecycle Service User
-Guide](/als/v1/user/), but do not have access to add new applications or add/modify the definition file.
+Users have access to the main Sample Applications interface (see the [Application Lifecycle Service User Guide](/als/v1/user/), but do not have access to add new applications or add/modify the definition file.
 
 ##Creating Sample Applications {#creating-an-app-store}
 
@@ -106,14 +103,10 @@ This is an array of items (see YAML format above), one for each app in the conta
 :   URL of the Git repository where the app code resides.
 
 **commit**
-:   Branch name, tag name, or exact commit hash to use. If
-    unspecified, the HEAD commit of `master`
-    branch is used.
+:   Branch name, tag name, or exact commit hash to use. If unspecified, the HEAD commit of *master* branch is used.
 
 **framework**
-:   The framework, if the app is deployed using the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
-    (e.g. `perl`, `python`,
-    `node`, `rails3`).
+:   The framework the app uses, if the app is deployed using the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)(e.g. perl, python, node, rails3).
 
 **icon**
 :   An image used for the app icon specified either as a full URL, a file relative to the **store** key **icon-url**
@@ -131,11 +124,7 @@ This is an array of items (see YAML format above), one for each app in the conta
 :   Memory requirements of the app (integer, in MB).
 
 **runtime**
-:   The runtime, if the app is deployed using the [Legacy
-    Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
-    (e.g. `java`, `python32`,
-    `ruby19`, `php`,
-    `perl518`).
+:   The runtime, if the app is deployed using the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy) (e.g. java, python32, ruby19, php, perl518).
 **services**
 :   Data services required by the app.
 
@@ -157,13 +146,10 @@ any web server at a URL accessible from the Cloud Controller.
 3.  In the **Sample Applications URLs** section, enter a name and content URL for
     your store definition YAML file then click **Add Sample Applications URL**.
 
-To confirm the Sample Applications are loading correctly, select **Sample Applications** in the
-menu and view the list of applications displayed. A **CC Catalog Manager**
-error appears in the Event Log if a Sample Applications URL fails to load.
+To confirm the Sample Applications are loading correctly, select **Sample Applications** in the menu and view the list of applications displayed. A **CC Catalog Manager** error appears in the Event Log if a Sample Applications URL fails to load.
 
 Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
-with [kato
-config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
+with [kato config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
 example:
 
     $ kato config get cloud_controller_ng app_store

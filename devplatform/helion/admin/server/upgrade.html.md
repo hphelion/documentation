@@ -2,44 +2,60 @@
 layout: default-devplatform
 permalink: /als/v1/admin/server/upgrade/
 product: devplatform
-title: "Upgrading Application Lifecycle Service"
+title: "Upgrading Application Lifecycle Service Nodes and Clusters"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-Upgrading Application Lifecycle Service[](#upgrading-helion "Permalink to this headline")
-=======================================================================
- [Before an upgrade](#before-an-upgrade)
-        -   [Maintenance Mode](#maintenance-mode)
-        -   [Proxy settings](#proxy-settings)
-        -   [RSA keys](#rsa-keys)
-    -   [Executing the upgrade](#executing-the-upgrade)
-        -   [Upgrading an individual
-            node](#upgrading-an-individual-node)
-        -   [Upgrading a cluster](#upgrading-a-cluster)
-        -   [Node upgrade ordering](#node-upgrade-ordering)
-        -   [Node Upgrade Process](#node-upgrade-process)
+#In-Place Upgrades of ALS Nodes and Clusters {#upgrading-helion}
 
-Application Lifecycle Service 1.0 provides the ability to upgrade a node or cluster in place
-via [*kato node
-upgrade*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
-without the need to rebuild the entire cluster. This section covers how
+Application Lifecycle Service provides the ability to upgrade a node or cluster in place via [kato node upgrade](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade) without the need to rebuild the entire cluster. This section covers how
 the upgrade process works.
 
-Before an upgrade[](#before-an-upgrade "Permalink to this headline")
----------------------------------------------------------------------
+-  [Before an upgrade](#before-an-upgrade)
+	-  [Maintenance Mode](#maintenance-mode)
+    -  [Proxy settings](#proxy-settings)
+    -  [Passwordless SSH](#rsa-keys)
+    -  [Passwordless sudo](#pwless-sudo)
+    -  [Extra DEA Nodes](#extraDEA)
+-   [Executing the upgrade](#executing-the-upgrade)
+    -  [Upgrading an individual node](#upgrading-an-individual-node)
+    -  [Upgrading a cluster](#upgrading-a-cluster)
+    -  [Download Only Option](#download-only)
+    -  [Node upgrade ordering](#node-upgrade-ordering)
+    -  [Node Upgrade Process](#node-upgrade-process)
+	-  [Zero-downtime Upgrades](#zero)
+-  [Troubleshooting](#troubleshooting)
+
+##Before an upgrade {#before-an-upgrade}
+Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.
+
+If [kato patch](/als/v1/admin/reference/kato-ref/#kato-command-ref-patch) has not been applied consistently, [kato node upgrade](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.
+
+
+###Free Disk Space
+Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.
+
+If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and [migrating the data](/als/v1/admin/best-practices/#backup-migration) rather than upgrading in place.
+
+To add additional space on the cache node specifically for the upgrade:
+
+- mount an external filesystem on the cache node
+- create a temporary directory on the drive (e.g. */mnt/sda2/tmp*)
+- change the  cache_dir  setting in */s/code/sentinel/daemon/config/config.yml* to point to the new temporary directory
+- on the cache node, run
+
+		sudo service sentinel-d restart 
 
 ### Maintenance Mode[](#maintenance-mode "Permalink to this headline")
 
 Before beginning an upgrade, put Application Lifecycle Service in maintenance mode in the
-[*Cloud Controller
-Settings*](/als/v1/admin/console/customize/#console-settings-maintenance-mode) or
-the following `kato` command:
+[Cloud Controller Settings](/als/v1/admin/console/customize/#console-settings-maintenance-mode) or the following *kato* command:
 
-    $ kato config set cloud_controller_ng maintenance_mode true
+    kato config set cloud_controller_ng maintenance_mode true
 
 This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.
 
-### Proxy settings[](#proxy-settings "Permalink to this headline")
+### Proxy settings for Upgrades [](#proxy-settings "Permalink to this headline")
 
 The systems being upgraded will need to be able to access the following
 public URIs:
@@ -50,22 +66,34 @@ public URIs:
 This may require setting the HTTPS\_PROXY environment variable on each
 node if a proxy is in use on your network.
 
-### RSA keys[](#rsa-keys "Permalink to this headline")
+### Passwordless SSH {#rsa-keys}
 
-For cluster upgrades, you should [set up SSH keys for password-less
-authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
-between the Core node and all other cluster nodes. Without this, you
-will be prompted for the 'helion' system user password multiple times
-for each node.
+For cluster upgrades, you should [set up SSH keys for passwordless authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
+between the Core node and all other cluster nodes. Without this, you will be prompted for the Helion system user password multiple times for each node.
 
-Executing the upgrade[](#executing-the-upgrade "Permalink to this headline")
------------------------------------------------------------------------------
+###Passwordless sudo {#pwless-sudo}
+
+Without passwordless sudo, kato will prompt for the sudo password (the helion user password) during the upgrade of each node even if SSH key authentication is enabled.
+
+For a completely unattended upgrade, you can configure passwordless sudo in addition to configuring SSH keys as described above. For example, you could run the following commands on all nodes in the cluster:
+
+	echo 'helion ALL = (root) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/nopasswd
+	sudo chmod 0440 /etc/sudoers.d/nopasswd
+
+With passwordless sudo in effect on all nodes, *kato node upgrade* should run without intervention. Obviously, this change has security implications, and is left to the discretion of the admin. Enable it only for the duration of the upgrade.
+
+###Extra DEA Nodes {#extraDEA}
+
+While the upgrade is in progress, DEAs will be [retired](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one [DEA node](/als/v1/admin/cluster/#dea-nodes) to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.
+
+
+##Executing the upgrade {#executing-the-upgrade}
 
 ### Upgrading an individual node[](#upgrading-an-individual-node "Permalink to this headline")
 
 To upgrade an individual node, log into the node and run:
 
-    $ kato node upgrade
+    kato node upgrade
 
 This will start the **Node Upgrade Process** as described below.
 
@@ -73,32 +101,48 @@ This will start the **Node Upgrade Process** as described below.
 
 To upgrade a cluster, log into the Core node in the cluster and run:
 
-    $ kato node upgrade --cluster
+    kato node upgrade --cluster
 
-This will automatically arrange the nodes in the cluster into a
-preferred upgrade order (see below) before upgrading the nodes one at a
-time.
+This will automatically arrange the nodes in the cluster into a preferred upgrade order (see below) before upgrading the nodes one at a time.
+
+On production systems, it's advisable to download the upgrade files first.
+
+###Download Only Option {#download-only}
+
+The *--download-only* option causes *kato node upgrade* to download the files required for a subsequent upgrade to a specified cache location, but not execute the actual upgrade.
+
+This step can be done while the system is operating normally (not in Maintenance Mode). The subsequent upgrade should be faster, requiring a shorter maintenance window, as files are fetched from a cache within the cluster.
+
+First, update kato itself:
+
+	kato node upgrade --update-kato
+
+This ensures that the *--download-only* option is available for the next command.
+
+To start the download:
+	
+	kato node upgrade --download-only --cache-ip <Core node IP>
+
+Once the download has completed, the upgrade portion can be run (with or without public network connectivity) by executing:
+
+	kato node upgrade --cache-ip <Core node IP>
 
 ### Node upgrade ordering[](#node-upgrade-ordering "Permalink to this headline")
 
-When performing a cluster upgrade, the nodes in the cluster are
-automatically arranged into an upgrade order based on the roles they
-have enabled. This order is then followed when upgrading nodes.
+When performing a cluster upgrade, the nodes in the cluster are automatically arranged into an upgrade order based on the roles they have enabled. This order is then followed when upgrading nodes.
 
 The default role order is:
 
--   DEA
--   controller
--   router
--   base
--   primary
+1. DEA
+2. controller
+3. router
+4. base
+5. primary
+6. other
 
-Nodes are matched to this ordering by the roles they have enabled. Any
-nodes that don't match (e.g. data service nodes) are added to the end to
-be upgraded last.
+Nodes are matched to this ordering by the roles they have enabled. Any nodes that don't match (e.g. data service nodes) are added to the end to be upgraded last.
 
-The order can be overridden with the
-[*--role-order*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
+The order can be overridden with the [--role-order](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
 option.
 
 ### Node Upgrade Process[](#node-upgrade-process "Permalink to this headline")
@@ -114,44 +158,77 @@ Each node goes through the following process during an upgrade.
 7.  Post-upgrade validation
 8.  Node restart
 
-Before any upgrade actions are performed, `kato node upgrade` performs a self-update check to make sure it is running the
-latest code available. After this base check, the version of Application Lifecycle Service
-running on the node is checked against the latest version available. If
-a newer version of Application Lifecycle Service is available (or if the `--force` option was used) the upgrade process begins.
+Before any upgrade actions are performed, *kato node upgrade* performs a self-update check to make sure it is running the latest code available. After this base check, the version of Application Lifecycle Service running on the node is checked against the latest version available. If a newer version of Application Lifecycle Service is available (or if the `--force` option was used) the upgrade process begins.
 
-**Note**
+**Note**: Using the `--force` option is not recommended unless you have been directed to do so by HP Application Lifecycle Service Support.
 
-Using the `--force` option is not recommended unless
-you have been directed to do so by HP Application Lifecycle Service Support.
+A pre-upgrade validation check is performed on the node to check that it is in working order before any upgrade actions are performed. If this validation fails then the upgrade process is stopped. These validation steps can be displayed to the user as errors while still continuing the upgrade process by using the *--ignore-inspect-failures* option.
 
-A pre-upgrade validation check is performed on the node to check that it
-is in working order before any upgrade actions are performed. If this
-validation fails then the upgrade process is stopped. These validation
-steps can be displayed to the user as errors while still continuing the
-upgrade process by using the `--ignore-inspect-failures` option.
+**Warning**: Use this option only if you get failures running *kato node inspect* that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.
 
-**Warning**
+Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then [retired](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-retire) to ensure any applications running on the node are evacuated before the upgrade takes place.
 
-Use this option is only if you get failures running
-`kato node inspect` that are known to be caused by
-systems outside of the control of Application Lifecycle Service, or if directed by
-HP Application Lifecycle Service Support.
+After the components have been upgraded, the node is restarted and then post-upgrade validation takes place. If any failures occur, the upgrade process is stopped and you will be given the option to roll back the upgrade. As with the pre-upgrade validation, this can be skipped using the *--ignore-inspect-failures* option (see warning above).
 
-Next, the upgrade packages are downloaded and a validation check is
-performed on the files to make sure everything required for an upgrade
-is available. If the node is a DEA it is then
-[*retired*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-retire) to
-make sure any applications running on the node are evacuated before the
-upgrade takes place.
-
-After the components have been upgraded, the node is restarted and then
-post-upgrade validation takes place. If any failures occur, the upgrade
-process is stopped and you will be given the option to roll back
-the upgrade. As with the pre-upgrade validation, this can be skipped
-using the `--ignore-inspect-failures` option (see
-warning above).
-
-When `kato node upgrade` completes successfully, the
-node is restarted running the latest version of Application Lifecycle Service.
+When *kato node upgrade* completes successfully, the node is restarted running the latest version of Application Lifecycle Service.
 
 Remember to take the node out of maintenance mode after the upgrade.
+
+###Zero-downtime Upgrades {#zero}
+
+On clusters with redundant components, the upgrade will result in no down time for user applications which:
+
+- Use an external data services (Service Broker)
+- And are running at least two instances
+
+The cluster must have the following redundant roles:
+
+- At least two Routers (behind a Load Balancer) <cluster-load-balancer>` 
+- At least two DEA nodes
+
+## Troubleshooting {#troubleshooting}
+Potential difficulties and how to resolve them.
+
+###Network Connectivity
+
+Network connectivity errors during the upgrade process can cause it to fail. In such cases, it is possible to resume the upgrade once connectivity to the upstream resources is restored.
+
+**Note**:  If network connectivity is a concern, use the [--download-only](#download-only) option described above to limit the possibility of a network error during an upgrade.
+
+###App Store Proxy Settings
+
+Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, [reset the proxy information](/als/v1/admin/server/configuration/#http-proxy) for your network.
+
+###Upgrading with Customizations
+
+Many files and directories in the ALS VM are overwritten during an upgrade. The [Customization instructions](/als/v1/admin/console/customize/) document best practices which are safe for upgrades, but some customers may have modified the system further.
+
+Customizations made within the following directories **will** be deleted or undone during an upgrade:
+
+- */s/code/aok*
+- */s/code/console*
+- */s/code*
+
+Customizations made in the following directories **may** also be lost:
+
+- */s/etc/*
+	
+	Modifications to existing files will be lost; new files will not be touched (unless the filename conflicts with a new one)
+
+- */s/static/*
+
+	New files will survive, but modifications to existing clients will be lost.
+
+If you have made customizations in these places or in other areas not described in the customization instructions, save the new or modified files elsewhere, run upgrade on a non-production system, then copy or merge the files into the upgraded test system.
+
+###Custom Buildpacks
+
+**Warning**: Any custom buildpacks added to the system prior to the upgrade will be lost.
+Custom buildpacks must be [restored](/als/v1/user/deploy/buildpack/#custom-buildpacks) to the system after an upgrade.
+
+###Clearing Browser Cache
+After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:
+
+	sconsole.cf_api.settings is undefined
+
+Performing a cache clear using whichever key combination is appropriate for the browser (ex: CTRL+SHIFT+F5) will resolve such errors. When scheduling an upgrade, notify the system users that they should not merely refresh (F5) but perform a cache clear after the upgrade is completed.

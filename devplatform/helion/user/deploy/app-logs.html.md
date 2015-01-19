@@ -44,7 +44,7 @@ To limit the number of lines displayed, use the `--num` option:
 
     $ helion logs myapp --num 50
 
-To view log stream as it is updated, use the `--follow` option:
+To view a log stream as it is updated, use the `--follow` option:
 
     $ helion logs myapp --follow
 

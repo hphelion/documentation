@@ -23,8 +23,7 @@ available if needed to customize or create new container images.
 
 Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.
 
-See also the [Upgrade the Docker Image](/als/v1/admin/best-practices/#upgrade-docker) section in the [Best Practices](/als/v1/admin/best-practices/) reference, which shows how to modify the 
-Docker base image **without** changing *kato config*. 
+See also the [Upgrade the Docker Image](/als/v1/admin/best-practices/#upgrade-docker) section in the [Best Practices](/als/v1/admin/best-practices/) reference, which shows how to modify the Docker base image **without** changing *kato config*. 
 
 To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps **on all nodes running the DEA role**:
 

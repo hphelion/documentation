@@ -21,10 +21,10 @@ To get started, take a look at the [OpenStack - Getting Started Guide](http://jc
 For more elaborate examples, take a look at the [jclouds-examples repository over at GitHub](https://github.com/jclouds/jclouds-examples).
 
 ###PHP Bindings for HP Helion Public Cloud
-The [PHP Bindings for HP Helion Public Cloud](http://hpcloud.github.com/HPCloud-PHP) on our GitHub account supports Object Storage and CDN.  We use this on our own Drupal-based sites, like the one you're reading right now.
+HP Cloud has contributed our PHP bindings extensions to [OpenStack](http://hpcloud.github.com/HPCloud-PHP). We use this on our own Drupal-based sites, like the one you're reading right now.
 
 ###Drupal Module
-OK, so technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our [HPCloud drupal module](http://drupal.org/project/hpcloud), which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.
+Technically this isn't a binding but it's some open source that we use ourselves that we're making available to the public.  Take a look at our [HPCloud drupal module](http://drupal.org/project/hpcloud), which lets you use Object Storage and CDN to offload files (typically images) from your Drupal site to our services.
 
 ###.NET
 For our friends on the Microsoft platform, [we have a .NET open source binding over at CodePlex](http://hpcloud.codeplex.com/) that supports Object Storage, CDN, and Compute.  As you might guess, our own [Windows CLI](/publiccloud/cli/windows/) is built on this codebase.

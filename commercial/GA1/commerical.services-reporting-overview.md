@@ -36,6 +36,7 @@ Access to Ceilometer is through the command-line interface [(CLI)](http://docs.o
 * [Configuration and Architecture Overview](/helion/openstack/services/reporting/components/)
 * [Available Meter Types](/helion/openstack/services/reporting/metertypes/)
 * [Alarms and Thresholds](/helion/openstack/services/reporting/alarms/)
+* [Role Based Access Control (RBAC) Policies](/helion/openstack/services/reporting/RBAC/)
 * [Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
 	* [Logging](/helion/openstack/services/reporting/troubleshooting/#logging)
 	* [Messaging and Queuing Errors](/helion/openstack/services/reporting/troubleshooting/#qerrors)
@@ -46,3 +47,4 @@ Access to Ceilometer is through the command-line interface [(CLI)](http://docs.o
 	- [Modifying the List of Active Meters](/helion/openstack/services/reporting/bestpractices/#meterlist)
 	- [Modifying Polling Intervals](/helion/openstack/services/reporting/bestpractices/#pollinterval)
 	- [Swift Service Considerations](/helion/openstack/services/reporting/bestpractices/#swift)
+

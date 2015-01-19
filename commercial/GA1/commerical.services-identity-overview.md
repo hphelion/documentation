@@ -27,84 +27,9 @@ PageRefresh();
 
 Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. 
 
-provides Identity, Token, Catalog and Policy services
-
-It performs the following functions:
-
-* **User Management**- It tracks users and their permissions.The main components are:
-
-	* Users
-	* Projects
-	* Roles
-
-* **Service catalog**- It provides a catalog of available services with their API endpoints. The main components are:
-
-	* Services
-	* Endpoints
-
-The Identity service primarily works on the following key concepts: 
-
-### Domain ### {#domain}
-
-A domain is a high-level container for [projects](#project), [users](#user) and [groups](#group).
-
-### Project ### {#project}
-
-A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc).
-
-### Users ### {#user}
-
-A user is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project.
-
-### Group ### {#group}
-
-A group is a collection of [users](#user) that is associated with one or more [projects](#project) or [domains](#domain).
-
-### Credentials ###
-
-Credentials are data that belongs to, is owned by and is generally only known to a user. This data is used by the user to prove his/her identity. For example:
-
-* Username and password
-* An authentication token provided by the Identity Service
-
-### Authentication
-
-It is the act of confirming the identity of a user. The Identity service confirms that the incoming request is being made by the user  by validating a set of claims that the user is making. 
-
-###Token###
-A random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.
-
-
-### Service ###
-An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.
-
-### Endpoint ###
-A network-accessible address, usually described by a URL, where a service may be accessed.
-
-### Role ###
-A role defines set of rights and privileges that can be assigned to a user. A role is also called a *personality*.
-
-## Keystone with LDAP
-
-Keystone can also use Lightweight Directory Access Protocol (LDAP) as source of authority authentication. <!---LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.-->
-
-The requests to Identity service are delegated to the LDAP service which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
-
-<!---The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes-->
-
-<!---
-
-- **Token** -- An arbitrary bit of text that is used to access resources. Each token has a scope that describes which resources are accessible with it. 
-
-- **Project** -- A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc). Also known as *tenant*.
-
-- **Endpoint** -- A network-accessible address, usually described by URL, where a service may be accessed.
-
-- **Role** -- A set of rights and privileges that can be assigned to a user.  A user assuming that role inherits those rights and privileges. A role is also called a *personality*.
+The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens.
 
 The Identity service validates that incoming requests are being made by the user who claims to be making the call. 
-
-The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens. 
 
 Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. Users are assigned roles that can be used to control access to projects.
 
@@ -112,116 +37,251 @@ The Identity service will confirm that incoming request are being made by the us
 
 Users can belong to specific role(s), which is a set of rights and privileges.
 
-## Key Terms ##
 
-- **User** -- A digital representation of a person, system, or service who uses the cloud. Users are associated with tenants based on roles assigned to them with that tenant.
+The Identity service provides Identity, Token, Catalog and Policy services:
 
-- **Credentials** -- Data that belongs to, is owned by, and generally only known by a user that the user can present to prove they are who they are.
+**User Management** - The HP Helion OpenStack Identity Service tracks users and their permissions. The main components of user management include:
 
-- **Authentication** -- The act of confirming the identity of a user. The Identity service confirms that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. 
+* Users
+* Projects
+* Roles
 
-- **Token** -- An arbitrary bit of text that is used to access resources. Each token has a scope that describes which resources are accessible with it. 
+**Service management** - The HP Helion OpenStack Identity Service provides a catalog of available services with their API endpoints. The main components of service management are:
 
-- **Project** -- A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc). Also known as *tenant*.
+* Services
+* Endpoints
 
-- **Endpoint** -- A network-accessible address, usually described by URL, where a service may be accessed.
+**Group management** -  The HP Helion OpenStack Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, assign a role to the group. Every group is in a domain. 
 
-- **Role** -- A set of rights and privileges that can be assigned to a user.  A user assuming that role inherits those rights and privileges. A role is also called a *personality*. -->
+**Domain management** - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a domain and assign roles to users and groups.
+
+## Key Components
+
+The Identity service primarily works on the following key concepts: 
+
+### Domain ### {#domain}
+
+A domain is a high-level container for [projects](#project), [users](#user) and [groups](#group).
+
+Each is owned by exactly one domain. Users, however, can be associated with multiple projects by granting roles to the user on a project, including projects owned by other domains.
+
+Each domain defines a namespace where certain API-visible name attributes exist, which affects whether those names must be globally unique or unique within that domain. In the Identity API, the uniqueness of the following attributes is as follows:
+
+    Domain Name. 
+
+    Role Name. Globally unique across all domains.
+
+    User Name. Unique within the owning domain.
+
+    Project Name. Unique within the owning domain.
+
+    Group Name. Unique within the owning domain.
+
+
+**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the [API](#API) or [CLI](#CLI) for domain management instead. Also, any user and associated with a Domain will not be able to login to Horizon.
+
+
+### Project ### {#project}
+
+A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc). Also called *tenant*. Each project name must be unique in the associated domain.
+
+### Users ### {#user}
+
+A user is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project. Each user name must be unique in the associated domain.
+
+### Group ### {#group}
+
+A group is a collection of [users](#user) that is associated with one or more [projects](#project) or [domains](#domain). Each group name must be unique in the associated domain.
+
+### Role ### {#role}
+
+A role defines set of rights and privileges that can be assigned to a user. A user assuming that role inherits those rights and privileges. A role is also called a *personality*. Each user name must be unique across all of your domains.
+
+
+### Credentials ### {#creds}
+
+Credentials are data that belongs to, is owned by and is generally only known to a user. This data is used by the user to prove his/her identity. For example:
+
+* Username and password
+* An authentication token provided by the Identity Service
+
+### Authentication {#auth}
+
+It is the act of confirming the identity of a user. The Identity service confirms that the incoming request is being made by the user  by validating a set of claims that the user is making. 
+
+###Token### {#token}
+
+A random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.
+
+
+### Service ### {#service}
+
+An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image Service (Glance). Provides one or more endpoints through which users can access resources and perform operations.
+
+### Endpoint ### {#endpoint}
+
+A network-accessible address, usually described by a URL, where a service may be accessed.
+
+
+## Keystone Integration with LDAP/AD {#LDAP}
+
+Keystone can also use an external Lightweight Directory Access Protocol (LDAP) or Microsoft Active Directory as source of authority authentication. Either of these authentication sources are the preferred way to configure Keystone user authentication. The native Keystone authentication function is intended only for proof of concept deployments.
+
+LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.
+
+The requests to Identity service are delegated to the external LDAP or Microsoft AD service, which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
+
+The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes, including: users, roles, credentials, and security tokens.
+
+To configure Identity, set options in the /etc/keystone/keystone.conf file. Modify these examples as needed.
+ 
+
+To integrate Identity with LDAP
+
+    Enable the LDAP driver in the keystone.conf file:
+    Select Text
+    1
+    2
+    3
+    	
+    [identity]
+    #driver = keystone.identity.backends.sql.Identity
+    driver = keystone.identity.backends.ldap.Identity
+
+    Define the destination LDAP server in the keystone.conf file:
+    Select Text
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    	
+    [ldap]
+    url = ldap://localhost
+    user = dc=Manager,dc=example,dc=org
+    password = samplepassword
+    suffix = dc=example,dc=org
+    use_dumb_member = False
+    allow_subtree_delete = False
+
+    Create the organizational units (OU) in the LDAP directory, and define their corresponding location in the keystone.conf file:
+    Select Text
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    	
+    [ldap]
+    user_tree_dn = ou=Users,dc=example,dc=org
+    user_objectclass = inetOrgPerson
+    tenant_tree_dn = ou=Groups,dc=example,dc=org
+    tenant_objectclass = groupOfNames
+    role_tree_dn = ou=Roles,dc=example,dc=org
+    role_objectclass = organizationalRole
+    [Note]	Note
+
+    These schema attributes are extensible for compatibility with various schemas. For example, this entry maps to the person attribute in Active Directory:
+    Select Text
+    1
+    	
+    user_objectclass = person
+
+    A read-only implementation is recommended for LDAP integration. These permissions are applied to object types in the keystone.conf file:
+    Select Text
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    	
+    [ldap]
+    user_allow_create = False
+    user_allow_update = False
+    user_allow_delete = False
+    tenant_allow_create = False
+    tenant_allow_update = False
+    tenant_allow_delete = False
+    role_allow_create = False
+    role_allow_update = False
+    role_allow_delete = False
+
+    Restart the Identity service:
+
+    # service keystone restart
+
+    [Warning]	Warning
+
+    During service restart, authentication and authorization are unavailable.
+
+Additional LDAP integration settings. Set these options in the keystone.conf file.
+
+Filters
+
+    Use filters to control the scope of data presented through LDAP.
+    Select Text
+    1
+    2
+    3
+    4
+    	
+    [ldap]
+    user_filter = (memberof=cn=openstack-users,ou=workgroups,dc=example,dc=org)
+    tenant_filter =
+    role_filter =
+LDAP Account Status
+
+    Mask account status values for compatibility with various directory services. Superfluous accounts are filtered with user_filter.
+
+    For example, you can mask Active Directory account status attributes in the keystone.conf file:
+    Select Text
+    1
+    2
+    3
+    4
+    	
+    [ldap]
+    user_enabled_attribute = userAccountControl
+    user_enabled_mask = 2
+    user_enabled_default = 512
+
+
+
 
 ## Working with the Identity Service
 
 To [perform tasks using the Identity service](#howto), you can use the API or CLI.
 
-### Using the dashboards<a name="UI"></a>
+
+### Using the dashboards {#UI}
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Identity service.
 
-Note: Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
 
-###Using the API<a name="API"></a>
+###Using the API {#API}
  
 You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
 
-###Using the CLI<a name="cli"></a>
+###Using the CLI {#CLI}
 
 You can use the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
-
-<!---
-## How To's with the HP Helion OpenStack Identity Service<a name="howto"></a>
-
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
-
-
-Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
-
-### Tasks performed by users<a name="user"></a>
-
-The following Identity service tasks are usually performed by someone with the *user* role.
-
-#### Managing default Project associations ####
-
-Use the Identity service to configure project associations.
-
-#### Listing Projects ####
-
-Use the Identity service to view a list of projects in your cloud environment.
-
-### Tasks performed by an Administrator<a name="admin"></a>
-
-The following Identity service tasks are usually performed by someone with the *administrator* role.
-
-#### Working with domains ###
-
-Use the Identity service to configure user access to your cloud domains.
-
-- Managing users. Configure user access to your cloud domains.
-- Managing projects. Configure user access to your projects. 
-- Managing user groups. Configure user group access to your domain.
-
-### Working with roles ###
-
-Use the Identity service to configure user roles within your cloud environment.
-
-- Managing role definitions. Configure the roles that you can assign.
-- Managing role assignments. Assign users to roles.
-- Managing inherited role assignments. Configure roles inherited from other projects.
-
-### Manage Credentials
-
-Create EC2-compatible credentials for user per tenant. 
-
-### Manage Endpoints
-
-Create and delete endpoints associated with a service. 
-
-### Manage Endpoint Filtering
-
-Find endpoint filtered by a specific attribute or service type. 
-
-### Manage Service Policies 
-
-Manage the policy service, a rule-based authorization engine and the associated rule management interface.
-
-### Issue Token
-
-Issue a new UUID or PKI token for a user.
-
-### Signature Validation 
-
-Manage EC2 and S3 signature validation.
-
-### Manage Federated Access 
-
-Configure federated access for use in HP Helion OpenStack.
-
-### Resetting a user password ###
-
-Use the Identity service to reset a password for a user.
-
---->
 
 ## For more information ##
 

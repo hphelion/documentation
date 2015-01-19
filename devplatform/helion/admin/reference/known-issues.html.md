@@ -29,7 +29,7 @@ Buildpacks used to rely on the `config_vars` feature
 of *bin/release* to set environment variables, but this has been
 deprecated by Heroku.
 
-The replacement mechanism is to [create a shell script in
+The replacement mechanism is to [crea= e a shell script in
 \$HOME/.profile.d](https://devcenter.heroku.com/articles/profiled) to
 set environment variables. This mechanism is fully supported in Application Lifecycle Service
 / Cloud Foundry v2, and is used by all of the built-in buildpacks.
@@ -37,16 +37,10 @@ set environment variables. This mechanism is fully supported in Application Life
 Legacy Buildpack and Environment Variables[](#legacy-buildpack-and-environment-variables "Permalink to this headline")
 -----------------------------------------------------------------------------------------------------------------------
 
-When using the [*Legacy
-Buildpack*](/als/v1/user/deploy/buildpack/#buildpacks), environment
-variable values defined in *manifest.yml* (`env:`
-block) cannot be updated without re-pushing the application with new
-settings. Changes to variables made in the Management Console will be
-overwritten by the original ones defined at push when the application is
-restarted.
+When using the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks), environment variable values defined in *manifest.yml* cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
+overwritten by the original ones defined at push when the application is restarted.
 
-To modify custom environment variables, re-push the application after
-changing the values in *manifest.yml*.
+To modify custom environment variables, re-push the application after changing the values in *manifest.yml*.
 
 Service Gateway Log Errors in Maintenance Mode[](#service-gateway-log-errors-in-maintenance-mode "Permalink to this headline")
 -------------------------------------------------------------------------------------------------------------------------------

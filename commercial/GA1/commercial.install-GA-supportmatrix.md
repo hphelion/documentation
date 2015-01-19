@@ -5,7 +5,7 @@ permalink: /helion/openstack/support-matrix/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -19,6 +19,11 @@ PageRefresh();
 
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/overview/">NEXT &#9654;</a> </p>
+-->
+<!-- IMPORTANT!!! The HW support Matrix should be approved by:
+* Gavin Brebner for Helion QA support
+* Lynne Christofanelli  for HW Support qualified with hLinux
+* Marty Duey for third party HW support (IHV Support)
 -->
 
 # HP Helion OpenStack&#174; Support Matrix
@@ -46,41 +51,43 @@ The following diagrams depict simplified deployment scenarios:
 The following hardware has been tested and verified to work with HP Helion OpenStack:
 
 
-### HP Proliant BladeSystem
+### HP ProLiant BladeSystem
 
-- [BL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
-- [BL420c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249562)
+- [BL420c Gen8](http://shopping1.hp.com/is-bin/INTERSHOP.enfinity/WFS/WW-USSMBPublicStore-Site/en_US/-/USD/ViewStandardCatalog-Browse?CatalogCategoryID=Vt4Q7habZVsAAAE3bqp1vE0Q)
 - [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
 - [BL465c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5193137)
 - [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
-- BL460 Gen7 
-- BL490c Gen7 
-- SL390s Gen7
+- [BL460 Gen7](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/home?sp4ts.oid=4194735&ac.admitted=1421337157737.876444892.199480143)
+- [BL490c Gen7](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/home?sp4ts.oid=4268682&ac.admitted=1421337252142.876444892.199480143)
 
-### HP Proliant Rack Servers 
 
-- [DL310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
+### HP ProLiant Rack Servers 
+
+- [DL360 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836)*
+- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241)*
+- [DL160 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5211699)
 - [DL320 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379527)
 - [DL360 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249570)
-- [DL360 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836) Legacy boot support only, no uEFI 
 - [DL380 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
-- [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241) Legacy boot support only, no uEFI 
 - [DL385 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249584)
 - [DL560 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268290)
+- [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)*
 - [DL580 G7](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916)
-- [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957) Legacy boot support only, no uEFI
 
-### HP Proliant Tower Servers
+	*Legacy boot support only, no uEFI
 
-- [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594)
-- [DL350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584)
+### HP ProLiant Tower Servers
+
+- [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379531)
+- [ML350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177961)
 <br>
-### HP Proliant Scalable Systems
+### HP ProLiant Scalable Systems
 
-- [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)
+- [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937)
 - [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
 - [SL270s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945)
-- [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5287871)
+- [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044)
+- [SL390s Gen7](http://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c03287404-3&sp4ts.oid=4198401)
 
 ### IBM systems ###
 
@@ -138,12 +145,15 @@ Additional requirements are as follows:
 	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
-- For Compute nodes, Intel or AMD hardware virtualization 
-- support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
+- For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
 	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
+
+- The [HP Dynamic Smart Array (B120i and B320i) controllers](http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001) use a proprietary driver that is not included in Helion OpenStack. HP recommends the use of the full featured [Smart Array adapters](http://www8.hp.com/us/en/products/iss-controllers/index.html) (such as p220, p440, etc.) in order to achive the best set of features and performance.
+
+	To use the Dynamic Smart Array adapter, enter the system ROM-Based Setup Utility (RBSU) and set the adapter to `Enable SATA AHCI Support` to allow the use of the adapter in non-RAID mode. However, for reliability this is not recommended.
 
 The following table lists the minimum requirements required for installation of each type of node. 
 

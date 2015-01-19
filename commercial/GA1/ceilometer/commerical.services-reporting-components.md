@@ -67,7 +67,7 @@ Metering processes should normally be operating at all times. Upstart will conti
 
 1. Determine whether the process is running:
  
-		$ sudo service ceilometer-agent-central status 
+		sudo service ceilometer-agent-central status 
 		ceilometer-agent-central start/running, process 27989
 
 
