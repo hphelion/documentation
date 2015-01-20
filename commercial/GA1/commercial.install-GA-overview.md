@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/prereqs/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Installation Overview
+# HP Helion OpenStack&#174; Installation Overview 
 
 The HP Helion OpenStack installation follows the standard [TripleO deployment model](/helion/openstack/services/tripleo/overview/), creating a seed, an undercloud and an overcloud.
 

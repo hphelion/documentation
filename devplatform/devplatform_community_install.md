@@ -360,6 +360,10 @@ In the **Configure Services** panel locate the Marketplace item in the Configure
 
 	**Subnet Range** - Enter the subnet to use for Marketplace.
 	
+6. Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard. 
+
+7. Log back into the Horizon dashboard and click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
+
 ## Troubleshooting {#troubleshooting}
 
 Refer to the following topics if you experience problems with the installation.

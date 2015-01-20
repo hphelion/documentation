@@ -249,6 +249,38 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
 
+### Connect to the demo VM ### {#connectvm}
+
+From the seed cloud host, you can connect to the demo VM using the following steps:
+
+<!-- Maybe not needed per Chris Cannon
+1. Export the overcloud passwords:
+
+	`. /root/tripleo/tripleo-overcloud-passwords`
+
+2. Export the overcloud users:
+
+	`TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user`
+
+3. Verify you can view the nova instances:
+
+	`nova list`
+
+4. Assign the demo VM IP address to a variable:
+
+	`DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
+-->
+5. Connect to the demo VM using the IP address you obtained from the Horizon console:
+
+	`ssh debian@${DEMO_IP}`
+
+	**Note:** It might take a few minutes for the demo vm to become available using ssh after finishing the installation.
+
+	If the prompt changes to `debian@demo`, you have successfully connected to the demo VM.
+
+6. Before proceeding, enter `exit` to disconnect from the demo VM.
+
+
 ### Connect to the monitoring interface {#connectmonitor}
 
 1. Retrieve the undercloud IP by entering the following commands on the seed VM: 

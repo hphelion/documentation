@@ -9,7 +9,7 @@ title: "Remote Debugging"
 
 #Remote Debugging {#remote-debugging}
 
-Different languages have different tools an protocols for remote
+Different languages have different tools and protocols for remote
 debugging, but most require a connection between the running application
 code and the debugging tool or IDE on a port and protocol other than
 standard HTTP(S).

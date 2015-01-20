@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Edition: VSA Support"
+title: "HP Helion OpenStack&#174; Edition: Back Up and Restore"
 permalink: /helion/openstack/backup.restore/
 product: commercial.ga
 
@@ -27,19 +27,19 @@ The default HP Helion OpenStack environment consists of a three-node cluster for
 
 However, as part of your maintenance of the environment, you should create a back up of each component and be prepared to restore any component, should it become necessary.
 
-**Undercloud.** The undercloud is a critical component that runs the centralized Logging, Monitoring, and Orchestration engines for deployment and automated configuration of the overcloud. It also provides a DHCP Server for all nodes of the overcloud. 
+* **Undercloud.** The undercloud is a critical component that runs the centralized Logging, Monitoring, and Orchestration engines for deployment and automated configuration of the overcloud. It also provides a DHCP Server for all nodes of the overcloud. 
 
-If the undercloud server fails, it must be rebuilt and restored as soon as possible.
+	If the undercloud server fails, it must be rebuilt and restored as soon as possible.
 
-**Overcloud.** The overcloud includes two overcloud controllers and one overcloud management controller. 
+* **Overcloud.** The overcloud includes two overcloud controllers and one overcloud management controller. 
 
-If either of the servers that host the two overcloud controllers fails, the overcloud controller must be rebuilt and reconnected into the cluster as soon as possible.
+	If either of the servers that host the two overcloud controllers fails, the overcloud controller must be rebuilt and reconnected into the cluster as soon as possible.
 
-The management controller is similar to the overcloud controller nodes, but it also executes various additional services, including Compute, Sherpa, Telemetry, Reporting, and Block Storage services. If the server that hosts the overcloud management controller fails, the management controller must be rebuilt and restored as soon as possible.
+	The management controller is similar to the overcloud controller nodes, but it also executes various additional services, including Compute, Sherpa, Telemetry, Reporting, and Block Storage services. If the server that hosts the overcloud management controller fails, the management controller must be rebuilt and restored as soon as possible.
 
-**Overcloud database** The MySQL database or entire cluster on the overcloud Controllers may become corrupted. To prevent data loss, you will need back up and restore capability for the databases. 
+* **Overcloud database** The MySQL database or entire cluster on the overcloud Controllers may become corrupted. To prevent data loss, you will need back up and restore capability for the databases. 
 
-The following instructions describe how to back up and restore the seed, undercloud, and overcloud:
+The following instructions describe how to back up and restore the seed VM, undercloud, and overcloud:
 
 - [Create a configuration file for restoring the seed VM and undercloud](#config)
 - [Back up and restore the seed VM](#seed)
@@ -49,12 +49,9 @@ The following instructions describe how to back up and restore the seed, undercl
 - [Restore command options](#roptions)
 - [Undercloud password issues](#underpass)
 
-You execute scripts in the seed cloud host server, where:
+Note that the seed cloud host server is where the seed VM is installed and the installation files are located.
 
-- the seed VM is installed
-- the installation files are located
-
-If you need help, see [Back up and restore script Help](#help).
+If you need help, see [Back up and Restore Script Help](#help).
 
 ## Create a configuration file for restoring the seed VM and undercloud {#config}
 
@@ -62,7 +59,7 @@ During restore process for the seed VM and undercloud, a configuration file is r
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the seed cloud host. 
+1. Log in to the KVM host. 
 
 2. Create a configuration file that contains all of the following information:
 
@@ -93,12 +90,12 @@ The following sections describe how and when to [back up](#backseed) and [restor
 You should create a backup from the seed VM when any of the following events happen:
 
 - When the installation process is complete.
-- When any change is make in the undercloud from the seed server
-- When the undercloud restore process is performed (a new seed will be created)
+- When any change is make in the undercloud from the seed cloud host
+- When the undercloud restore process is performed (a new seed VM is created)
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the seed cloud host. 
+1. Log in to the KVM host. 
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
@@ -126,7 +123,7 @@ All required files are backed-up to the specified folder:
 
 ### Restoring the seed VM {#seedrest}
 
-You should restore the seed node when there is any problem with the node, for example:
+You should restore the seed VM when there is any problem with the node, for example:
 
 - If the server where the VM is located fails (from a hardware or software issue).
 - If there is any problem with the VM.
@@ -139,7 +136,7 @@ Use the following steps to restore the seed VM:
 
 1.	Log in to the seed cloud host. 
 
-2. Create a [configuration file](#config) with all the parameters exported during the installation of the Seed VM (for example: /root/export.prop).
+2. Create a [configuration file](#config) with all the parameters exported during the installation of the seed VM (for example: /root/export.prop).
 
 3. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
@@ -231,7 +228,7 @@ All required files are backed up to the specified folder:
  
 ### Restoring the undercloud {#underrest}
 
-You should restore the seed node when there is any problem with the node, for example:
+You should restore the undercloud when there is any problem with the node, for example:
 
 - If the server where the node was located fails (from a hardware or software issue)
 - If there is any problem in the OS level
