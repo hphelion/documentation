@@ -212,7 +212,7 @@ For help with this command within the application, enter
 </tr><tr>
 <td>--seed-node-image-name</td><td>The seed node image name</td>
 </tr><tr>
-<td>--seed-node-image-password 'stackato'</td><td>The seed node image password</td>
+<td>--seed-node-image-password 'password'</td><td>The seed node image password</td>
 </tr><tr>
 <td>--keypair-name</td><td>The name of the key pair on instances</td>
 </tr>
