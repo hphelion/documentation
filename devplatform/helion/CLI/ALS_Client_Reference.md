@@ -12,7 +12,7 @@ title: "HP Application Lifecyle Service (ALS) Client"
 The ALS command-line interface (CLI) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the CLI when the Horizon management console is unavailable or when direct access is preferred. 
 
 - [Global Options](#global)
-- [Available Commands](#commands)
+- [Cluster Commands](#commands)
 	- [Create a Cluster](#create)
 	- [Delete a Cluster](#delete)
 	- [Add DEA Nodes to Existing Clusters](#addnode)
@@ -26,7 +26,8 @@ There are three ways to pass configuration values into ALS:
  
 ALS maintains separate configuration files. One configuration file contains the values for the global variables. The other configuration files, specified by the **--load** option, includes the values that should be passed to arguments for that specific command. Values must be included in the appropriate file for their applicable scope.
 
-The global configuration file is located in the home directory and is named *alsconfig.yml*. Global level commands create, delete, and add clusters. Global level configurations manage tenant, user, version, and other OpenStack information. 
+The global configuration file is located in the home directory and is named *alsconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
+ Global level **configurations** manage tenants, users, versions, and other system information. 
 
 ##Global Options {#global}
 These variables affect the entire cluster; they are **global** in scope.
@@ -34,7 +35,7 @@ These variables affect the entire cluster; they are **global** in scope.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
-<th>Option</th><th>Description</th><th>Environment Variable</th>
+<th width="150">Option</th><th>Description</th><th>Environment Variable</th>
 <tr><td>--config 'path\path\path' <td>Enter a new file path to change the current location of the configuration file.</td><td>n/a</td></tr>
 <tr><td>--debug<td>Enables additional debug information.</td><td>$ALS_DEBUG</td></tr>
 <tr><td>--os-username</td><td>OpenStack user name</td><td>$OS_USERNAME</td></tr>
@@ -44,10 +45,10 @@ These variables affect the entire cluster; they are **global** in scope.
 <tr><td>--os-tenant-name</td><td>OpenStack tenant name</td><td>$OS_TENANT_NAME</td></tr>
 <tr><td>--os-region-name</td><td>OpenStack region</td><td>$OS_REGION_NAME</td></tr>
 <tr><td>--help, -h</td><td>Displays help.</td><td>n/a</td></tr>
-<tr><td>--version, -v</td><td>Print the version.</td><td>n/a</td></tr>
+<tr><td>--version, -v</td><td>Displays the version of the client.</td><td>n/a</td></tr>
 </table>
 
-##Commands {#commands}
+##Cluster Commands {#commands}
 These commands are available from the command line interface.
 
 ###Use Syntax
@@ -58,21 +59,22 @@ These commands are available from the command line interface.
 <tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th></tr>
 <tr><td>cluster-create,	cc<td>Creates a cluster</td></tr>
 <tr><td>cluster-delete, cd<td>Deletes a cluster</td></tr>
-<tr><td>dea-add,da<td>Adds DEA nodes to an existing cluster</td></tr>
-<tr><td>help, h</td><td>Displays help.</td></tr>
+<tr><td>dea-add, da<td>Adds DEA nodes to an existing cluster</td></tr>
+<tr><td>help, h</td><td>Displays a list of available commands or help for a command.</td></tr>
 </table>
 
 ##Create a Cluster {#create}
-Options that can be passed to the command that creates a cluster.
+Options that can be passed to the command that creates a cluster 
+(*cluster-create*).
 
 <pre>als [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
 
-For help with this command in the application, enter
+For help with this command within the application, enter
 
 <pre>als help cluster-create</pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th>
+<tr style="background-color: #C8C8C8;"><th>Command (with example input)</th><th>Description</th>
 </tr>
 <tr>
 <td>--load </td><td>Load flag values from the specified file</td>
@@ -85,7 +87,7 @@ For help with this command in the application, enter
 <td>--admin-password</td><td>Password for the ALS admin user</td>
 </tr>
 <tr>
-<td>--admin-org 'org1'</td><td>Organization for the ALS admin user</td>
+<td>--admin-org 'org1'</td><td>Organization the ALS admin user is part of</td>
 </tr><tr>
 <td>--cluster-title 'stack1'</td><td>Title of the ALS cluster</td>
 </tr><tr>
@@ -116,7 +118,7 @@ For help with this command in the application, enter
 <td>--seed-node-image-name</td><td>The seed node image name</td>
 </tr>
 <tr>
-<td>--seed-node-image-password 'stackato'</td><td>The seed node image password</td>
+<td>--seed-node-image-password 'password'</td><td>The seed node image password</td>
 </tr>
 <tr>
 <td>--database-instance-id</td><td>Database instance id</td>
@@ -128,7 +130,7 @@ For help with this command in the application, enter
 <td>--database-volume-size </td><td>Database volume size</td>
 </tr>
 <tr>
-<td>--max-cluster-wait-duration '15'</td><td>Number of minutes to wait for the cluster creation to occur, defaults to 1</td>
+<td>--max-cluster-wait-duration '15'</td><td>Number of minutes to wait for the cluster creation to occur, defaults to 15</td>
 </tr>
 <tr>
 <td>--max-corenode-wait-duration '3'</td><td>Number of minutes to wait for the core node to come up on cluster creation; defaults to 3</td>
@@ -160,12 +162,17 @@ For help with this command in the application, enter
 </table>
 
 ##Delete a Cluster {#delete}
-Options that can be passed to the command that deletes a cluster.
+Options that can be passed to the command that deletes a cluster (*cluster-delete*).
 ###Use Syntax
-<pre>als [global options] <b>command cluster-delete [command options] [arguments...] </pre>
+<pre>als [global options] <b>command cluster-delete</b> [command options] [arguments...] </pre>
+
+For help with this command within the application, enter
+
+<pre>als help cluster-delete</pre>
+
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th>
+<tr style="background-color: #C8C8C8;"><th>Command (with example input)</th><th>Description</th>
 </tr>
 <tr>
 <td>--load</td><td>Load flag values from the specified file</td>
@@ -187,19 +194,24 @@ Options that can be passed to the command that deletes a cluster.
 </tr><tr>
 <td>--constructor-flavor-ref '101'</td><td>Flavor ref to use when creating a constructor server</td>
 </tr><tr>
-<td>--subnet-name 'Test Network Subnet'</td><td>Subnet name.</td>
+<td>--subnet-name 'Test Network Subnet'</td><td>The name of the subnet</td>
 </tr>
 </table>
  
 ##Add DEA Nodes to an Existing Cluster {#addnode}
-Options that can be passed as part of creating a new cluster. 
+Options that can be passed when adding nodes to an existing cluster (*dea-add*).
 
 ###Use Syntax
+
 <pre>als [global options] <b>dea-add</b> [command options] [arguments...]</pre>
+
+For help with this command within the application, enter
+
+<pre>als help dea-add</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th></tr>
+<tr style="background-color: #C8C8C8;"><th>Command (with example input)</th><th>Description</th></tr>
 <tr>
 <td>--load</td><td>Load flag values from the specified file</td>
 </tr>
@@ -224,6 +236,6 @@ Options that can be passed as part of creating a new cluster.
 </tr><tr>
 <td>--constructor-image-id</td><td>ID of the image of the constructor server</td>
 </tr><tr>
-<td>--constructor-flavor-ref '101'</td><td>Flavor ref to use when creating a constructor server</td>
+<td>--constructor-flavor-ref '101'</td><td>Flavor reference to use when creating a constructor server</td>
 </tr>
 </table>

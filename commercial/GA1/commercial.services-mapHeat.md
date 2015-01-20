@@ -1,0 +1,42 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174; Services"
+permalink: /helion/openstack/services/mapHeat
+product: commercial.ga
+
+---
+<!--UNDER REVISION-->
+
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+
+
+<!--
+<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+-->
+# HP Helion OpenStack&reg; Services Map
+<br>
+
+<img src="media/heat_diagram.png" alt=""><br>
+<a href="/helion/openstack/services/map"><img src="media/back.png" alt=""></a>
+
+##Heat orchestration service
+
+The HP Helion OpenStack Orchestration service leverages OpenStack Heat to provide template-based orchestration for describing a cloud application. It executes OpenStack API calls to generate running cloud applications.
+
+Heat is a service to orchestrate multiple composite cloud applications using the AWS CloudFormation template format, through both an OpenStack-native ReST API and a CloudFormation-compatible Query API.
+
+- Heat provides a template based orchestration for describing a cloud application by executing appropriate OpenStack API calls to generate running cloud applications.
+
+- The software integrates other core components of OpenStack into a one-file template system. The templates allow creation of most OpenStack resource types (such as instances, floating ips, volumes, security groups, users, etc), as well as some more advanced functionality such as instance high availability, instance autoscaling, and nested stacks. By providing very tight integration with other OpenStack core projects, all OpenStack core projects could receive a larger user base.
+
+- Allows deployers to integrate with Heat directly or by adding custom plugins.
