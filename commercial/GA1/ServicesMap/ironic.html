@@ -19,7 +19,7 @@
 	<script src="/js/metrics.js"></script> 
 <style type="text/css">
 .faded {
-opacity: 0.6;
+opacity: 0.9;
 }
 .faded:hover {
 opacity: 1;
@@ -78,33 +78,33 @@ opacity: 1;
  <link rel="stylesheet" type="text/css" href="http://docs.hpcloud.com/css/combined.css"> 
  
  <div id="container" style="width: 900px; margin-left: 200px">
-<img src="title.png"><br>
-
-
-
-
-
-
-
-
- <br>
- <img src="eon_diagram.png">
-
-
+<img src="title.png">
 <br>
-<div class="faded">
+
+
+
+
+
+ <img src="ironic_diagram.png">
+
+
+<div class="faded" style="clear: all"=;">
 <a href="index.html"><img class="faded" src="back.png"></a>
 </div>
-<h3>EON </h3>
-ESX integration in HP Helion OpenStack enables administrators to connect their cloud to an existing VMware vCenter installation. The VMware vCenter driver connects to ESXi clusters in a vCenter through Compute proxy nodes. The Nova scheduler sees the ESXi clusters as compute nodes and uses that information for scheduling a new instance.
+<h3>Ironic</h3>
+HP Helion OpenStack leverages the OpenStack Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.<br>
 
-The ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. This information is used for deployment and configuration of ESX Proxy Compute nodes. The EON service is deployed in the undercloud controller node.
+Ironic is an incubated OpenStack project to provision baremetal, not virtual, machines by leveraging common technologies such as PXE boot and IPMI to cover a wide range of hardware. Supporting pluggable drivers allows vendor-specific functionality to be added.
+<br>
 
-EON, a new service sub component, captures details of the vCenter server in a Cloud Controller and provides the details of the clusters for configuring the list of clusters managed by ESX Proxy Compute node. The ESX Proxy Compute driver communicates to VMware vCenter server through VI SDK.
 
-</article>
-</div></div>
 
+If traditional hypervisor functionality consists of creating a VM, enumerating virtual devices, managing the power state, loading an OS onto the VM, and so on, then you can think of Ironic  as a hypervisor API gluing together multiple drivers, each of which implement some portion of that functionality with respect to physical hardware.
+
+
+
+
+</article></div></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
