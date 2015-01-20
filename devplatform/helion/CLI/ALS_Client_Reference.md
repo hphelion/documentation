@@ -30,7 +30,7 @@ The global configuration file is located in the home directory and is named *als
  Global level **configurations** manage tenants, users, versions, and other system information. 
 
 ##Global Options {#global}
-These variables affect the entire cluster; they are **global** in scope.
+These variables affect the entire cluster; they are **global** in scope. These environment variables are configured to work with the OpenStack Python tools to enable faster integration.
 <pre>als <b>[global options]</b> command [command options] [arguments...] </pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -147,14 +147,6 @@ For help with this command within the application, enter
 <td>--https-proxy</td><td>HTTPS proxy</td>
 </tr>
 <tr>
-<td>--constructor-instance-name 'constructor-server'</td><td>Name of the instance of the constructor server</td>
-</tr><tr>
-<td>--constructor-ip-address </td><td>IP Address of the constructor server</td>
-</tr>
-<tr>
-<td>--constructor-image-name</td><td>Name of the image of the constructor server</td>
-</tr>
-<tr>
 <td>--constructor-image-id </td><td>ID of the image of the constructor server</td>
 </tr><tr>
 <td>--constructor-flavor-ref '101' </td><td>Flavor ref to use when creating a constructor server</td>
@@ -183,10 +175,6 @@ For help with this command within the application, enter
 <td>--cluster-prefix 'als'</td><td>Prefix of the ALS cluster</td>
 </tr><tr>
 <td>--keypair-name</td><td>The name of the key pair on instances</td>
-</tr><tr>
-<td>--constructor-instance-name 'constructor-server'</td><td>Name of the instance of the constructor server</td>
-</tr><tr>
-<td>--constructor-ip-address</td><td>IP Address of the constructor server</td>
 </tr><tr>
 <td>--constructor-image-name</td><td>Name of the image of the constructor server</td>
 </tr><tr>
@@ -224,14 +212,10 @@ For help with this command within the application, enter
 </tr><tr>
 <td>--seed-node-image-name</td><td>The seed node image name</td>
 </tr><tr>
-<td>--seed-node-image-password 'stackato'</td><td>The seed node image password</td>
+<td>--seed-node-image-password 'password'</td><td>The seed node image password</td>
 </tr><tr>
 <td>--keypair-name</td><td>The name of the key pair on instances</td>
-</tr><tr>
-<td>--constructor-instance-name 'constructor-server'</td><td>Name of the instance of the constructor server</td>
-</tr><tr>
-<td>--constructor-ip-address</td><td>IP Address of the constructor server</td>
-</tr><tr>
+</tr>
 <td>--constructor-image-name</td><td>Name of the image of the constructor server</td>
 </tr><tr>
 <td>--constructor-image-id</td><td>ID of the image of the constructor server</td>
