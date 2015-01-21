@@ -10,10 +10,8 @@ title: "DEA Auto Scaling"
    [DEA Template](#dea-template)
     -   [DEA Scaling configuration](#dea-scaling-configuration)
     -   [Enabling Auto-Scaling](#enabling-auto-scaling)
-    -   [Configuration and Tuning
-        (Advanced)](#configuration-and-tuning-advanced)
-    -   [Writing custom scaling plugins
-        (Advanced)](#writing-custom-scaling-plugins-advanced)
+    -   [Configuration and Tuning (Advanced)](#configuration-and-tuning-advanced)
+    -   [Writing custom scaling plugins (Advanced)](#writing-custom-scaling-plugins-advanced)
     -   [Troubleshooting](#troubleshooting)
     -   [Testing](#testing)
 
@@ -21,10 +19,7 @@ title: "DEA Auto Scaling"
 Application Lifecycle Service can automatically add DEA nodes to a cluster to handle
 increasing numbers of user application instances.
 
-When auto scaling is enabled, the Application Lifecycle Service will automatically grow the pool
-of DEA nodes to accommodate new app deployments. Scaling events are
-triggered the available memory in the pool falls below a certain
-threshold.
+When auto scaling is enabled, the Application Lifecycle Service will automatically grow the pool of DEA nodes to accommodate new app deployments. Scaling events are triggered when the available memory in the pool falls below a certain threshold.
 
 DEA Template[](#dea-template "Permalink to this headline")
 -----------------------------------------------------------
@@ -33,7 +28,7 @@ Before enabling auto scaling, you will need to create a DEA template
 from the standard Application Lifecycle Service VM. Typically you would do this by running
 the following commands on a fresh Application Lifecycle Service VM:
 
-    $ kato op defer "node attach -e dea CORE_IP" --run-as-root
+    kato op defer "node attach -e dea CORE_IP" --run-as-root
 
 This defers the `attach` command and enables the DEA
 role on the next boot. Shut down the VM once this is done.

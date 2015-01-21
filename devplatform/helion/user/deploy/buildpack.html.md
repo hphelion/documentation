@@ -22,7 +22,7 @@ Application Lifecycle Service. Buildpacks replace the built-in frameworks used i
 ### Built-In Buildpacks[](#built-in-buildpacks "Permalink to this headline")
 
 Application Lifecycle Service will cycle through the *detect* scripts of the built-in buildpacks prior to staging to match the code you are pushing. For most applications using the built-in buildpacks, no additional ALS configuration is required.
-
+pro
 ### Legacy Buildpack[](#legacy-buildpack "Permalink to this headline")
 
 The legacy buildpack is a special meta-buildpack for deploying applications configured for Cloud Foundry v1 without the need for extensive reconfiguration.
@@ -61,7 +61,7 @@ There are hundreds of buildpacks available on Github. Searching Github for the t
 
 Buildpacks will usually contain a **default\_process\_type** setting with the command used to start the application process. If your application needs a custom command to start the process, create a Procfile in the base directory of your application.
 
-The  Procfile  should contain a single line defining the **web:** ***process*** for the application defined. For example:
+The Procfile should contain a single line defining the **web:** ***process*** for the application defined. For example:
 
 	web: bundle exec rails server -p $PORT
 

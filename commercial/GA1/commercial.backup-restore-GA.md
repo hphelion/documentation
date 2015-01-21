@@ -59,7 +59,7 @@ During restore process for the seed VM and undercloud, a configuration file is r
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the KVM host. 
+1. Log in to the seed cloud host. 
 
 2. Create a configuration file that contains all of the following information:
 
@@ -95,7 +95,7 @@ You should create a backup from the seed VM when any of the following events hap
 
 Use the following steps to back up the seed VM:
 
-1. Log in to the KVM host. 
+1. Log in to the seed VM host. 
 
 2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
 
@@ -246,21 +246,23 @@ Use the following steps to restore the undercloud:
 
 2. Create a [configuration file](#config) with all the parameters that was exported during before the installation of the undercloud node.
 
-3. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
+3. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory:
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 4. Create a file called `baremetal.csv` and save to the same location where the backup and restore scripts are located.
 
 	**Example**
 
-		/root/work/tripleo/tripleo-incubator/scripts
+		/root/tripleo/tripleo-incubator/scripts
 
 5. Edit the `baremental.csv` file to include only the line from your initial baremetal installation for your undercloud node. This is the first line in the initial `baremetal.csv` file.
 
 	**Example**
 
 		 78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
+
+	For more information on the `baremetal.csv` file, see the [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/install/prereqs#csv).
 
 6. Execute the following script:
 
