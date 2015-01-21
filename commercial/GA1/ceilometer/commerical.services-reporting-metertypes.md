@@ -37,7 +37,7 @@ Each counter contains the following *fields*:
 **Note**: The metering service shares the same High-availability proxy, messaging, and database clusters with the other Information services. To avoid unnecessarily high loads, [non-essential meters can be disabled](/helion/openstack/services/reporting/bestpractices/#meterlist). 
 
 ##Helion OpenStack Default Meters
-These meters are installed and enabled by default during an HP Helion OpenStack cloud installation. 
+These meters are installed and enabled by default during an HP Helion OpenStack installation. 
 
 ###Compute (Nova)
 <table style="text-align: left; vertical-align: top; width:650px;">
