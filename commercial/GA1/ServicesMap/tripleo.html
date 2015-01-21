@@ -85,31 +85,18 @@ opacity: 1;
 
 
 
- <img src="neutron_diagram.png">
-
+ <img src="tripleo_diagram.png">
 
 <br>
 <div class="faded">
 <a href="index.html"><img class="faded" src="back.png"></a>
 </div>
-<h3>Neutron</h3>
+<h3>TripleO</h3>
 
-Neutron is an OpenStack project to provide "networking as a service" between interface devices (e.g., vNICs) managed by other Openstack services (e.g., nova). <br>
-Neutron is a core and supported part of the OpenStack platform (for Essex, we were an "incubated" project, which means use is suggested only for those who really know what they're doing with Neutron). 
-<ul>
+TripleO (OpenStack-On-OpenStack) is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack cloud facilities as the foundation. TripleO builds on the Compute, Networking and Orchestration services to automate fleet management for as few as two machines or a full data center.<br>
 
-<li>Give cloud tenants an API to build rich networking topologies, and configure advanced network policies in the cloud. 
-o	Example: create multi-tier web application topology
-</li><li>Enable innovation plugins (open and closed source) that introduce advanced network capabilities 
-o	Example: use L2-in-L3 tunneling to avoid VLAN limits, provide end-to-end QoS guarantees, used monitoring protocols like NetFlow. 
-</li><li>Let anyone build advanced network services (open and closed source) that plug into Openstack tenant networks. 
-o	Examples: LB-aaS, VPN-aaS, firewall-aaS, IDS-aaS, data-center-interconnect-aaS.
-</li><li>Horizon GUI support for: 
-o	Neutron L2 and L3 network and subnet creation/deletion
-o	Booting VMs on specific Neutron networks. 
-</li><li>API Extensibility Framework, including extensions for: 
-o	"provider network", which maps Neutron L2 networks to a specific VLAN in the physical data center
-</li></ul>
+The HP Helion OpenStack installation follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.
+
 
 
 </article></div></div>

@@ -21,11 +21,7 @@ Architectural Design[](#architectural-design "Permalink to this headline")
  -   [Other data services:](#other-data-services)
  -   [Role Groups](#role-groups)
 
-The Application Lifecycle Service VM is a stand-alone [micro
-cloud](/als/v1/user/reference/glossary/#term-micro-cloud) virtual
-machine with all the components necessary for running a test environment
-in one instance. For use on a larger scale, the VM can be cloned and
-assigned specific roles: Router, Cloud Controller, Droplet Execution
+The Application Lifecycle Service VM is a stand-alone [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud) virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.
 
 <img src="/content/documentation/devplatform/helion/images/helion-architecture-diagram.png" />
@@ -41,33 +37,19 @@ This role cannot be disabled on any node.
 
 ### Primary[](#primary)
 
-The Primary role is a mandatory part of a Core node (or micro cloud) and
-runs a number of critical system processes, including the Cloud 
- Controller, Health Manager, and Router.
+The Primary role is a mandatory part of a Core node (or micro cloud) and runs a number of critical system processes, including the Cloud Controller, Health Manager, and Router.
 
-The Health Manager keeps track of the apps on each DEA and provides
-feedback on the number currently running. It works in conjunction with
-the Cloud Controller and must be run on the same VM.
+The Health Manager keeps track of the apps on each DEA and provides feedback on the number currently running. It works in conjunction with the Cloud Controller and must be run on the same VM.
 
-In a cluster setup, all nodes performing other roles are attached to the
-MBUS IP of the Core node. Every cluster must include exactly one Primary
-role. Note that the Router role must be run along with the Primary even if there are other Routers in the cluster and even if the node is not exposed to the internet.  
+In a cluster setup, all nodes performing other roles are attached to the MBUS IP of the Core node. Every cluster must include exactly one Primary role. Note that the Router role must be run along with the Primary even if there are other Routers in the cluster and even if the node is not exposed to the internet.  
 
 ### Cloud Controller[](#cloud-controller)
 
-The Controller manages most of the operations of an Application Lifecycle Service system. It hosts the Management Console, provides the API endpoint for client
-access, manages the cloud\_controller\_ng process, provisions services,
-dispatches applications for staging and deployment, and (with the Health
-Manager) tracks the availability of DEA nodes.
+The Controller manages most of the operations of an Application Lifecycle Service system. It hosts the Management Console, provides the API endpoint for client access, manages the cloud\_controller\_ng process, provisions services, dispatches applications for staging and deployment, and (with the Health Manager) tracks the availability of DEA nodes. The Cloud Controller allocates instances of an application across available DEA nodes, prioritizing eligible nodes that are running the fewest instances of that app already. This maintains an even distribution of instances of an app across the pool. 
 
-In a cluster setup, the Controller role must run on the [Core
-node](/als/v1/admin/cluster/#server-cluster-core-node) that all other
-VM's in the cluster connect to.
+In a cluster setup, the Controller role must run on the [Core node](/als/v1/admin/cluster/#server-cluster-core-node) that all other VM's in the cluster connect to.
 
-A single Controller is sufficient for small and mid-sized clusters, but
-[multiple
-Controllers](/als/v1/admin/cluster/#cluster-multi-controllers) can be
-configured if necessary for larger implementations.
+A single Controller is sufficient for small and mid-sized clusters, but [multiple Controllers](/als/v1/admin/cluster/#cluster-multi-controllers) can be configured if necessary for larger implementations.
 
 ### Router[](#router)
 

@@ -64,11 +64,7 @@ port from this range. This range can be set in the Management Console's
 [*Settings*](/als/v1/admin/console/customize/#console-settings) section, or by
 using the `kato config set ...` command.
 
-A Harbor node can run standalone, or on the same node as your router.
-This may be the preferred option if wish to use the same DNS name for
-Harbor and Router services. Otherwise, create new DNS entry for the
-harbor node, so that consumers of the port do not have to address it by
-its external IP.
+A Harbor node can run standalone, or on the same node as your router. This may be the preferred option if you wish to use the same DNS name for Harbor and Router services. Otherwise, create a new DNS entry for the Harbor node so that consumers of the port do not have to address it by its external IP.
 
 If you are setting a different IP / DNS name for this port you should
 update the node config so that it provides these external connection
