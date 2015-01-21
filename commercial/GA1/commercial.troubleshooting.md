@@ -59,6 +59,7 @@ For easy reference, we categorized the known issues and solutions as follows:
 	* [vsa&#95;storage&#95;pool pool cannot be destroyed](#vsa-pool-cannot-destroy)
 
 * [Scale-Out issues](#scale)
+	* [Cannot create storage containers using Amazon S3 API](#S3)
 	* [Failure of newly added compute or VSA node during Scale-out](#failnew)
 	* [Scale-out nodes : os-refresh-configuration fails on Controller Node](#refreshfails)
 	* [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
@@ -717,10 +718,26 @@ Perform the following steps to remove a failed compute node:
 
 ## Scale-Out issues ## {#scale}
 
+* [Cannot create bucket using Amazon S3 API](#S3)
 * [Scale-out nodes : os-refresh-configuration fails on Controller Nodes](#refreshfails)
 * [Recovery when Scale-out nodes of newly added compute node or VSA](#recovery)
 * [Scale-out nodes : os-refresh-config on Controller Nodes Fail](#refresh)
 * [Ironic intermitently set maintenance mode to True during scale-out](#ironic)
+
+### Cannot create storage containers using Amazon S3 API {#S3}
+<!-- DOCS-698 -->
+
+**System Behavior/Message**
+
+An attempt to create a bucket fails with "The remote server returned an error: (404) Not Found.". 
+
+**Probable Cause**
+
+HP Helion OpenStack does not support Amazon S3 API.
+
+**Resolution**
+
+Create containers using the [Helion OpenStack Object Storage Service](http://15.184.32.138/helion/openstack/services/object/overview/) through the Swift APIs or the Horizon dashboard. 
 
 ### Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
 
