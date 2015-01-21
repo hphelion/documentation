@@ -40,9 +40,7 @@ The installation and configuration process for ESX consists of the following gen
    * [Configure proxy information](#proxy)
    * [Install the seed VM and building your cloud](#startseed)
 * [Verifying the installation](#verifying-your-installation)
-   * [Connect to the Overcloud Horizon console](#connectconsole)
-   * [Connect to the Undercloud Horizon console](#monitoring)
-   * [Create projects for LDAP users](#ldap)
+* [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps) 
 
 ## Preparing for installation {#prepare}
@@ -185,8 +183,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 ## Verify your installation {#verifying-your-installation}
 
-To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as follows.
+To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in [Verifying your installation](/helion/openstack/install/verify/).
 
+<!-- Hiding until I determine if linked doc will work
 ### Connect to the undercloud Horizon console {#monitoring}
 
 Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
@@ -229,12 +228,12 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json)
 
-	<!-- Remove per Divaker
+	Remove per Divaker this sub-step
 	4. With the IP address and root password, log in as the main user, root using the following command 
 
 		ssh root@${DEMO_IP}
 
-	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`. -->
+	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`.
 
 4.	Obtain the overcloud admin password using the following command:
 
@@ -247,8 +246,8 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 6. Log in to the overcloud as user `admin` with the password you obtained in step 4.
 
 	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
-
-### Create projects for LDAP users {#ldap}
+-->
+## Create projects for LDAP users {#ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/install/ldap/#horizon).
 
