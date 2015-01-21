@@ -2625,10 +2625,10 @@ Start a deployed application.
     Defaults to the current working directory.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid. Cannot be used together with --space.</td>
     </tr>    <tr><td>--tail</td>
     <td>Request target to stream the log.</td>
     </tr>    <tr><td>--target</td>
@@ -2694,10 +2694,10 @@ Stop a deployed application.
     Defaults to the current working directory.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--tail</td>
     <td>Request target to stream the log.</td>
     </tr>    <tr><td>--target</td>
@@ -2754,10 +2754,10 @@ Unregister the application from a URL.
     Defaults to the current working directory.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--tail</td>
     <td>Request target to stream the log.</td>
     </tr>    <tr><td>--target</td>
@@ -2814,10 +2814,10 @@ Remove the specified environment variable from the named application.
     Defaults to the current working directory.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--tail</td>
     <td>Request target to stream the log.</td>
     </tr>    <tr><td>--target</td>
@@ -2854,8 +2854,7 @@ Remove the specified environment variable from the named application.
 </table>
 ## Services[](#services "Permalink to this headline")##
 ###helion service-plans###
-List all available plans of the supported services. This is an
-Application Lifecycle Service 3 specific command.
+List all available plans of the supported services. 
 
 <table>
     <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
@@ -2913,10 +2912,10 @@ List the supported and provisioned services of the target.
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -2965,10 +2964,10 @@ Show the information about the named service.
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3020,10 +3019,10 @@ specific command.
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3070,10 +3069,10 @@ Delete the specified service authentication token. This is an Application Lifecy
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3122,10 +3121,10 @@ Show all service authentication tokens knowns to the target. This is an Applicat
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3175,10 +3174,10 @@ Update the specified service authentication token. This is a
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3203,8 +3202,8 @@ Update the specified service authentication token. This is a
     </tr>
 </table>
 ##**Brokers**##
-### helion add-service-broker *\<name\*###
-Make the named service broker known. This is an Application Lifecycle Service 3 specific command.
+### helion add-service-broker *\<name\* {#command-add-service-broker}
+Make the named service broker known to the system.
 
 <table>
     <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
@@ -3228,10 +3227,10 @@ Make the named service broker known. This is an Application Lifecycle Service 3 
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3281,10 +3280,10 @@ Remove the named service broker from the target. This is an Application Lifecycl
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3331,10 +3330,10 @@ Remove the named service broker from the target. This is an Application Lifecycl
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3384,10 +3383,10 @@ specific command.
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -3436,10 +3435,10 @@ Update the target's knowledge of the named service broker. This is an Applicatio
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with --space-guid.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+    guid.  Cannot be used together with --space.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
