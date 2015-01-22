@@ -39,6 +39,7 @@ AppArmor is an effective and easy-to-use Linux application security system. AppA
 
 AppArmor confinement is provided through profiles loaded into the kernel, typically on boot. AppArmor profiles can be in one of two modes: enforcement and complain. Profiles loaded in enforcement mode will result in enforcement of the policy defined in the profile as well as reporting policy violation attempts (either through syslog or auditd). Profiles in complain mode will not enforce policy but instead report policy violation attempts. 
 
+<!-- info taken variously from the links below -->
 
 ## For more information {#info}
 
