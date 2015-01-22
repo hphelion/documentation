@@ -44,7 +44,7 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 **HP Helion OpenStack Metering services** The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.
 
-**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
 **AppArmor profiles enabled for Compute nodes** AppArmor proactively protects the operating system and applications from external or internal threats, even zero-day attacks, by enforcing good behavior and preventing even unknown application flaws from being exploited. <!--HPM27-->
 
