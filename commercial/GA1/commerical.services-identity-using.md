@@ -44,7 +44,6 @@ You can use the command-line interface software to access HP Identity. See the [
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
 
-
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
 
 ## Tasks performed by users {#user}
@@ -56,7 +55,6 @@ The following Identity service tasks are usually performed by someone with the *
 
 Use the Identity service to configure user access to your cloud domains.
 
-
 * View information on all your domains, including names, enabled status, ID, and policy links.
 * View information on a specified domain, including the description, enabled status, ID, and policy links.
 * Delete a domain.
@@ -66,10 +64,13 @@ Use the Identity service to configure user access to your cloud domains.
 * Validate that a group has a specified role on a domain.
 * Revoke a role from a group on a domain.
 
+### Listing Projects ####
+
+Use the Identity service to view a list of projects in your cloud environment.
+
 ### Working with projects ### {#userprojects}
 
 All project-level tasks must be performed by an administrator.
-
 
 ## Tasks performed by an Administrator<a name="admin"></a>
 
@@ -143,6 +144,34 @@ Use the Identity service to configure policies.
 * View information on the policies associated with a domain, including names, IDs, and the user that owns the policy.
 * Update a specified policy, including names, IDs, and the user that owns the policy. 
 * Delete a policy.
+
+**REVIEWERS: ARE ADMINS ABLE TO PERFORM THESE TASKS? THEY CAME FROM AN EARLIER DRAFT OF THE IDENTITY DOCS.** 
+
+### Manage Endpoints
+
+Create and delete endpoints associated with a service. 
+
+### Manage Endpoint Filtering
+
+Find endpoint filtered by a specific attribute or service type. 
+
+### Issue Token
+
+Issue a new UUID or PKI token for a user.
+
+### Signature Validation 
+
+Manage EC2 and S3 signature validation.
+
+### Manage Federated Access 
+
+Configure federated access for use in HP Helion OpenStack.
+
+### Resetting a user password ###
+
+Use the Identity service to reset a password for a user.
+
+
 
 
 ## For more information ##

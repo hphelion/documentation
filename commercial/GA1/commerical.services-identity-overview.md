@@ -107,11 +107,11 @@ Credentials are data that belongs to, is owned by and is generally only known to
 
 ### Authentication {#auth}
 
-It is the act of confirming the identity of a user. The Identity service confirms that the incoming request is being made by the user  by validating a set of claims that the user is making. 
+Authentication is the act of confirming the identity of a user. The Identity service confirms that the incoming request is being made by the user  by validating a set of claims that the user is making. 
 
 ###Token### {#token}
 
-A random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.
+A token is a random string that is used to access resources. Each token has a scope that describes which resources are accessible with it.
 
 
 ### Service ### {#service}
@@ -263,24 +263,7 @@ LDAP Account Status
 
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](#howto), you can use the API or CLI.
-
-
-### Using the dashboards {#UI}
-
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Identity service.
-
-**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
-
-###Using the API {#API}
- 
-You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
-
-###Using the CLI {#CLI}
-
-You can use the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
-
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
+To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the API or CLI.
 
 
 ## For more information ##
