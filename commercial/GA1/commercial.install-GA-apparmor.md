@@ -27,7 +27,7 @@ The HP Helion OpenStack default installation includes AppArmor profiles as a too
 
 AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP Helion OpenStack. 
 
-HP Helion OpenStack follows the [svirt model](http://wiki.apparmor.net/index.php/Libvirt ) to provide guest isolation. Every guest VM is locked down to be able to access only its own configuration, disk files and volume devices.
+HP Helion OpenStack follows the [svirt model](http://wiki.apparmor.net/index.php/Libvirt ) to provide guest isolation. Every guest VM is locked down to be able to access only its own configuration files, disk files and volume devices.
 
 You should not need to interact with these profiles. Modification instructions are beyond the scope of this document.
 
@@ -37,7 +37,7 @@ For more information on AppArmor and managing profiles, review the information i
 
 AppArmor is an effective and easy-to-use Linux application security system. AppArmor proactively protects the operating system and applications from external or internal threats, even zero-day attacks, by enforcing good behavior and preventing even unknown application flaws from being exploited. AppArmor security policies completely define what system resources individual applications can access, and with what privileges. 
 
-AppArmor confinement is provided via profiles loaded into the kernel, typically on boot. AppArmor profiles can be in one of two modes: enforcement and complain. Profiles loaded in enforcement mode will result in enforcement of the policy defined in the profile as well as reporting policy violation attempts (either via syslog or auditd). Profiles in complain mode will not enforce policy but instead report policy violation attempts. 
+AppArmor confinement is provided through profiles loaded into the kernel, typically on boot. AppArmor profiles can be in one of two modes: enforcement and complain. Profiles loaded in enforcement mode will result in enforcement of the policy defined in the profile as well as reporting policy violation attempts (either through syslog or auditd). Profiles in complain mode will not enforce policy but instead report policy violation attempts. 
 
 
 ## For more information {#info}
