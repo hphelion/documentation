@@ -710,20 +710,214 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 
 		ls -ltr
 
+7. Execute the following command to view the disk usage.
 
-	
+		df -h
+
+	Output:
+
+		Filesystem               Size  Used Avail Use% Mounted on
+		rootfs                   7.3G  6.7G  248M  97% /
+		udev                      10M     0   10M   0% /dev
+		tmpfs                    397M  208K  397M   1% /run
+		/dev/mapper/debian-root  7.3G  6.7G  248M  97% /
+		tmpfs                    5.0M     0  5.0M   0% /run/lock
+		tmpfs                    794M     0  794M   0% /run/shm
+		/dev/vda1                228M   18M  199M   9% /boot
+		/dev/vdj                  15G  847M   14G   6% /mnt/vol1
+
+8. Execute the following command to mount.
+
+		mount
+
+	Output:
+
+		sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+		proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+		udev on /dev type devtmpfs (rw,relatime,size=10240k,nr_inodes=506385,mode=755)
+		devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+		tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=406364k,mode=755)
+		/dev/mapper/debian-root on / type ext4 (rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered)
+		tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+		tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
+		/dev/vda1 on /boot type ext2 (rw,relatime,errors=continue)
+		/dev/vdj on /mnt/vol1 type ext4 (rw,relatime,user_xattr,barrier=1,data=ordered)
+
+
+	Now cinder volume has additional file system changes within the volume.	
+
+9. To list the additional file system changes
+
+		ls-ltr
+
+	Output:
+
+		total 6328752
+		drwx------ 2 root root      16384 Oct  1 05:22 lost+found
+		-rwxr-x--- 1 root root  702939136 Oct  1 05:23 CentOS_65.qcow2
+		-rw-r--r-- 1 root root   10870593 Oct  1 05:24 initrd.img-3.2.0-4-amd64
+		-rw-r--r-- 1 root root 5766807552 Oct  2 00:34 Debian_7.raw
+
+
+10. Execute the following command to view the disk usage
+
+		df -h
+
+	Output:
+
+		Filesystem               Size  Used Avail Use% Mounted on
+		rootfs                   7.3G  6.7G  248M  97% /
+		udev                      10M     0   10M   0% /dev
+		tmpfs                    397M  208K  397M   1% /run
+		/dev/mapper/debian-root  7.3G  6.7G  248M  97% /
+		tmpfs                    5.0M     0  5.0M   0% /run/lock
+		tmpfs                    794M     0  794M   0% /run/shm
+		/dev/vda1                228M   18M  199M   9% /boot
+		/dev/vdj                  15G  6.2G  8.6G  42% /mnt/vol1
+
+
+11. Execute the following command to unmount the volume:
+
+		umount /dev/vdj
+
+12. Execute the following command:
+
+		mount
+
+	Output:
+
+		sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+		proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+		udev on /dev type devtmpfs (rw,relatime,size=10240k,nr_inodes=506385,mode=755)
+		devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+		tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=406364k,mode=755)
+		/dev/mapper/debian-root on / type ext4 (rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered)
+		tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+		tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
+		/dev/vda1 on /boot type ext2 (rw,relatime,errors=continue)
+		
+
+#####Restore of data from Cinder backup
+
+You can restore the volume to a new volume or an existing volume.
+
+In the following example a new volume is created and then the data is restored.
+
+Perform the following steps to create a new volume and to restore data backup.
+
+1. Execute the following command to create a volume.
+
+		 cinder create --display-name restore_volume1 15 
+
+	Output:
+
+			+---------------------+--------------------------------------+
+			|       Property      |                Value                 |
+			+---------------------+--------------------------------------+
+			|     attachments     |                  []                  |
+			|  availability_zone  |                 nova                 |
+			|       bootable      |                false                 |
+			|      created_at     |      2014-10-01T21:48:42.727440      |
+			| display_description |                 None                 |
+			|     display_name    |           restore_volume1            |
+			|      encrypted      |                False                 |
+			|          id         | 1b4614f8-8069-4211-8a3e-797be5641964 |
+			|       metadata      |                  {}                  |
+			|         size        |                  15                  |
+			|     snapshot_id     |                 None                 |
+			|     source_volid    |                 None                 |
+			|        status       |               creating               |
+			|     volume_type     |                 None                 |
+			+---------------------+--------------------------------------+
+
+
+2. Execute the following command to cinder backup restore
+
+
+		cinder backup-restore --volume-id restore_volume1 60764712-c456-465a-828b-5f45d3a14ff5
+
+
+3. View Cinder backup
+
+		cinder backup-list
+
+	Output:
+
+		+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
+		|                  ID                  |              Volume ID               |   Status  |        Name       | Size | Object Count |      Container      |
+		+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
+		| 02c6df2c-d03a-44ad-847a-ce03b580ee23 | 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7 | available |   deb7rawbackup   |  10  |     None     | helion-ceph-backups |
+		| 244aa3a1-b291-4cfe-9999-438f7611da2b | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available |    Rvol6backup    |  15  |     None     | helion-ceph-backups |
+		| 32ea7668-9179-433c-8fe3-44b98cd9d85b | 8aefafcc-4171-4c11-b900-362fbda40015 | available | ubuntu1404-backup |  10  |     None     | helion-ceph-backups |
+		| 60764712-c456-465a-828b-5f45d3a14ff5 | ff8d13a5-3083-424b-a626-0b75cbe8cf66 | restoring |  cindervol_backup |  15  |     None     | helion-ceph-backups |
+		| beeccb71-81e7-4860-8d38-add05a2e610d | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available |    Rvol6backup    |  15  |     None     | helion-ceph-backups |
+		| c9c20a09-403e-4011-a3f8-2fea11a560ee | 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7 | available |  RDebian7_backup  |  10  |     None     | helion-ceph-backups |
+		| cdd27130-1791-45f6-8b6e-cc284922b02e | 3adf1c83-2efa-4a1e-bef6-cdaffd13b489 | available |      Rbackup1     |  3   |     None     | helion-ceph-backups |
+		+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
 
 
 
+4. View Cinder list
+
+		cinder list
+
+	Output:
+
+		+--------------------------------------+------------------+-----------------------+------+-------------+----------+--------------------------------------+
+		|                  ID                  |      Status      |      Display Name     | Size | Volume Type | Bootable |             Attached to              |
+		+--------------------------------------+------------------+-----------------------+------+-------------+----------+--------------------------------------+
+		| 0219d66e-d69d-4e28-bf4f-cb5f096696e3 |    available     |       Rsmallvol4      |  1   |     None    |  false   |                                      |
+		| 0285ee63-4ebd-4cd1-915c-933c48503d00 |      in-use      |         Rvol1         |  10  |     None    |  false   | 54938de0-49dd-4b01-931e-dafcddc41518 |
+		| 054bfa98-1d69-4cb8-b195-9b9481f5b8c7 |      in-use      |   Rwin2012Cowrawvol1  |  26  |     None    |   true   | 0bf98387-b0c9-4814-a2ef-f81c1ef1322e |
+		| 1b4614f8-8069-4211-8a3e-797be5641964 | restoring-backup |    restore_volume1    |  15  |     None    |  false   |                                      |
+		+--------------------------------------+------------------+-----------------------+------+-------------+----------+--------------------------------------+
+		
+	Once the backup is created the volume name remains the same as the cinder-backup name.
+
+
+5. Verify the volume name
+
+		cinder list
+
+	Output:
+
+		+--------------------------------------+-----------+-------------------------------------+------+-------------+----------+--------------------------------------+
+		|                  ID                  |   Status  |             Display Name            | Size | Volume Type | Bootable |             Attached to              |
+		+--------------------------------------+-----------+-------------------------------------+------+-------------+----------+--------------------------------------+
+		| 0219d66e-d69d-4e28-bf4f-cb5f096696e3 | available |              Rsmallvol4             |  1   |     None    |  false   |                                      |
+		| 0285ee63-4ebd-4cd1-915c-933c48503d00 |   in-use  |                Rvol1                |  10  |     None    |  false   | 54938de0-49dd-4b01-931e-dafcddc41518 |
+		| 1b4614f8-8069-4211-8a3e-797be5641964 | available |         cindervol_forbackup         |  15  |     None    |  false   |                                      |
+		+--------------------------------------+-----------+-------------------------------------+------+-------------+----------+--------------------------------------+
 
 
 
+####Volume Snapshots
 
+Volume snapshots are saved in Cinder pool.
 
+######Creating a Volume Snapshot for Backup
 
+You can create a new and identical volumes by taking snapshot of the volume.  
 
+**Notes**
 
+Ensure the following things while taking snapshot:
 
+a) The volume must be detached and must be in available status to take a snapshot of it. An error occurs if you try to snapshot a used volume.
+
+b) Keep the original volume, whose snapshot is taken, to function properly. If the original volume is deleted then the snapshot becomes unusable.
+
+Perform the following steps to create a snapshot:
+
+1. Execute the following command to create a snapshot
+
+		nova volume-snapshot-create --force [TRUE or FALSE] --display_name [DISPLAY_NAME] --display_description [DISPLAY_DESCRIPTION] [VOLUME_ID]
+
+2. Execute the following command to view the snapshot
+
+		nova volume-snapshot-list
+
+3. From Horizon, you can create snapshot of instances and can view the snapshot as below. (**need to update this section?**)
 
 
 
