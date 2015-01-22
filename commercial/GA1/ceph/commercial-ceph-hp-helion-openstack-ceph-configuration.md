@@ -135,7 +135,7 @@ HP Helion OpenStack commercial build</td>
 </tr>
   <table>
 
-As a sanity-check, cross check with the attached “dpkg –l” output after ceph package install:
+As a sanity-check, cross check with the attached "dpkg -l" output after ceph package install:
 
 <table>
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -146,7 +146,7 @@ As a sanity-check, cross check with the attached “dpkg –l” output after ce
 </tr>
 	<tr>
 <td>Controller node</td>
-<td>DPKG –l output after ceph package install</td>
+<td>DPKG -l output after ceph package install</td>
 <td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files. File Name:<tdt>
 </tr>
 <tr>
@@ -238,7 +238,7 @@ On the Helion controller and compute nodes, once the Ceph client script is insta
 	Raw data format is used with RBD for instant image snapshots and protection. For more details, refer [http://ceph.com/docs/master/rbd/qemu-rbd/?highlight=raw](http://ceph.com/docs/master/rbd/qemu-rbd/?highlight=raw)
 
 	Conversion tool like qemu-img is used to convert one image format to another. 
-	For example –
+	For example:
 
 		qemu-img convert -f {source-format} -O {output-format} {source-filename} {output-filename}
 		
@@ -248,7 +248,7 @@ On the Helion controller and compute nodes, once the Ceph client script is insta
 
 7. Ensure that the uploaded glance image is available in the Horizon UI and is correctly stored in the appropriate pool in Ceph.
 
-		rbd ls –l <glance pool name>
+		rbd ls -l <glance pool name>
 		
 		glance image-list
 
@@ -290,11 +290,11 @@ If the Ceph client script is successfully installed and ran on the Helion contro
 
 4. Create cinder volume from glance image created on step 1 on any of the controller node
 
-		cinder create –image-id <glance image id> --display-name RVol 2
+		cinder create -image-id <glance image id> --display-name RVol 2
 
 5. Ensure that Cinder volume which is created is available at `rbd` pool
 
-		rbd ls –l <cinder pool name>
+		rbd ls -l <cinder pool name>
 		
 		cinder list
 
@@ -400,7 +400,7 @@ Container Name - If no container name is provided, a default container named vol
 
 To create a volume using command-line interface (CLI) execute the following command from the overcloud controller node running the ceph client
 
-	Cinder create –display-name <name of the volume> <volume size>
+	Cinder create -display-name <name of the volume> <volume size>
 
 For example:
 
