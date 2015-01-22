@@ -21,11 +21,15 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&reg;: About AppArmor
+# HP Helion OpenStack&reg;: AppArmor Overview
 
-The HP Helion OpenStack default installation now includes AppArmor profiles as a tool for enhanced security. 
+The HP Helion OpenStack default installation includes AppArmor profiles as a tool for enhanced security. 
 
-AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP Helion OpenStack. You should not need to interact with these profiles. Modification instructions are beyond the scope of this document.
+AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP Helion OpenStack. 
+
+HP Helion OpenStack follows the [svirt model](http://wiki.apparmor.net/index.php/Libvirt ) to provide guest isolation. Every guest VM is locked down to be able to access only its own configuration, disk files and volume devices.
+
+You should not need to interact with these profiles. Modification instructions are beyond the scope of this document.
 
 For more information on AppArmor and managing profiles, review the information in the [Ubuntu AppArmor Documentation](https://help.ubuntu.com/community/AppArmor) and the other [below](#info). 
 
