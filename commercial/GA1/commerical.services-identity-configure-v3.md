@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Identity Service Overview"
-permalink: /helion/openstack/services/identity/overview/
+permalink: /helion/openstack/services/identity/configure/
 product: commercial.ga
 
 ---
