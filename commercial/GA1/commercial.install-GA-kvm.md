@@ -43,10 +43,6 @@ The installation and configuration process for KVM consists of the following gen
 	* [Unpack the installation file](#unpackinstall)
 	* [Install the seed VM and building your cloud](#startseed)
 * [Verifying your installation](#verifying-your-installation)
-	* [Connect to Horizon undercloud console](#connectconsoleunder)
-	* [Connect to Horizon overcloud console](#connectconsoleover)
-	* [Connect to the monitoring interface](#connectmonitor)
-	* [Connect to the logging interface](#connectlogging)
 * [Create projects for LDAP users](#ldap)
 * [Next steps](#next-steps)
 
@@ -185,8 +181,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 ## Verify your installation {#verifying-your-installation}
 
-Once your installation is complete, you should ensure you can connect to your HP Helion OpenStack baremetal cloud.
+To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in [Verifying your installation](/helion/openstack/install/verify/).
 
+<!-- Hiding until I determine if linked doc will work
 
 ### Connect to the undercloud Horizon console {#connectconsoleunder}
 
@@ -230,12 +227,12 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json); echo ${OVERCLOUD_IP}
 
-	<!-- Remove per Divaker
+	Remove per Divaker
 	4. With the IP address and root password, log in as the main user, root using the following command 
 
 		ssh root@${DEMO_IP}
 
-	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`. -->
+	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`. 
 
 4.	Obtain the overcloud admin password using the following command:
 
@@ -253,7 +250,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 From the seed cloud host, you can connect to the demo VM using the following steps:
 
-<!-- Maybe not needed per Chris Cannon
+Steps 1-5 Maybe not needed per Chris Cannon
 1. Export the overcloud passwords:
 
 	`. /root/tripleo/tripleo-overcloud-passwords`
@@ -269,7 +266,7 @@ From the seed cloud host, you can connect to the demo VM using the following ste
 4. Assign the demo VM IP address to a variable:
 
 	`DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
--->
+
 5. Connect to the demo VM using the IP address you obtained from the Horizon console:
 
 	`ssh debian@${DEMO_IP}`
@@ -317,7 +314,7 @@ From the seed cloud host, you can connect to the demo VM using the following ste
  
 
 4. Log in as user `kibana` and the password from Step 4.
-
+-->
 ## Create projects for LDAP users {#ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/install/ldap/#horizon).

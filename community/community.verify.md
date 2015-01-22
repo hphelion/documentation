@@ -25,24 +25,51 @@ PageRefresh();
 
 Once your installation is complete, you should make sure you can connect to your HP Helion OpenStack Community cloud. You can accomplish this in any of the following ways:
 
-* [Connecting to Horizon console](#connectconsole)
+* [Connecting to the undercloud Horizon console](#connectunder)
+* [Connecting to the overcloud Horizon console](#connectover)
 * [Connecting to demo VM](#connectvm)
 * [Connecting to Monitoring UI](#connectmonitor)
 
-### Connecting to the Horizon console ### {#connectconsole}
+### Connecting to the undercloud Horizon console ### {#connectunder}
 
-From the seed cloud host, connect to the overcloud Horizon console.
+From the seed cloud host, connect to the undercloud Horizon console.
 
 1. Obtain the passwords for the `demo` and `admin` users 
 
 	`cat /root/tripleo/tripleo-overcloud-passwords`
 
-2. Point your web browser on the seed cloud host to the overcloud Horizon console using the `OVERCLOUD_IP_ADDRESS` obtained after the instal.
+2. Point your web browser on the seed cloud host to the undercloud Horizon console using the `UNDERCLOUD_IP_ADDRESS` obtained after the install.
 
 	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
 
 		. /root/tripleo/tripleo-undercloud-passwords
 		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
+		OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
+		echo $UNDERCLOUD_IP
+
+4. Log in as `demo` or `admin` using the corresponding passwords obtained in step 1.
+
+5. In the Horizon console, you can obtain the IP address of the demo VM:
+
+		a. Click Project > Compute > Instance.
+		b. Note the public IP address of the **demo** instance, starting with `192`.
+
+### Connecting to the overcloud Horizon console ### {#connectover}
+
+
+
+From the seed cloud host, connect to the overcloud Horizon console.
+
+1. Obtain the passwords for the `demo` and `admin` users 
+
+	`cat /root/work/tripleo/tripleo-overcloud-passwords`
+
+2. Point your web browser on the seed cloud host to the overcloud Horizon console using the `OVERCLOUD_IP_ADDRESS` obtained after the instal.
+
+	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
+
+		. /root/work/tripleo/tripleo-undercloud-passwords
+		TE_DATAFILE=/root/work/tripleo/ce_env.json . /root/work/tripleo/tripleo-incubator/undercloudrc
 		OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
 		echo $OVERCLOUD_IP
 
@@ -60,11 +87,11 @@ From the seed cloud host, you can connect to the demo VM using the following ste
 <!-- Maybe not needed per Chris Cannon
 1. Export the overcloud passwords:
 
-	`. /root/tripleo/tripleo-overcloud-passwords`
+	`. /root/work/tripleo/tripleo-overcloud-passwords`
 
 2. Export the overcloud users:
 
-	`TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc-user`
+	`TE_DATAFILE=/root/work/tripleo/ce_env.json . /root/work/tripleo/tripleo-incubator/overcloudrc-user`
 
 3. Verify you can view the nova instances:
 
@@ -74,6 +101,7 @@ From the seed cloud host, you can connect to the demo VM using the following ste
 
 	`DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
 -->
+
 5. Connect to the demo VM using the IP address you obtained from the Horizon console:
 
 	`ssh debian@${DEMO_IP}`

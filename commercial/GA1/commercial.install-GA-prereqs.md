@@ -168,7 +168,7 @@ The following tasks need to be performed on the seed cloud host, where the seed 
 - [Create the baremetal.csv file](#csv)
 - [Integrating LDAP (Lightweight Directory Access Protocol)](#ldap)
 
-#### Install Ubuntu 14.04 LTS {#ubuntuLTS}
+#### Install Ubuntu 14.04 LTS {#ubuntu}
 
 The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
 
