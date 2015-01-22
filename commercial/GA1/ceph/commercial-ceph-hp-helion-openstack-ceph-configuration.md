@@ -486,7 +486,7 @@ Perform the following steps to enable Ceph backup driver:
 		backup_ceph_stripe_count=0
 		restore_discard_excess_bytes=true
 
-	The following table provides the description of the the parameters.
+	The following table provides the description of the parameters.
 
 	<table>
 	<table style="text-align: left; vertical-align: top; width:650px;">
