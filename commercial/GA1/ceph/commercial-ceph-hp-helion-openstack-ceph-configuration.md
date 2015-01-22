@@ -26,9 +26,7 @@ PageRefresh();
 
 This section describes the integration of HP Helion OpenStack Enterprise Edition 1.1 and Ceph Firefly 80.7 on hlinux3.14.6-2 kernel.
 
-###Prerequisite
-
-* HP Helion OpenStack Enterprise Edition 1.1 must be successfully installed.
+Before configuring Helion OpenStack Ceph ensure that HP Helion OpenStack Enterprise Edition 1.1 is installed successfully. 
 
 ###Ceph Client Install <**not clear what exactly trying to convey**>
 
@@ -55,13 +53,13 @@ For more details about the Ceph storage cluster with Glance integration, refer t
 	A directory named `ceph_client_setup` is created. There are six or seven other sub directories under `ceph_client_setup` directory. (name of all the directories are required?)
 
 
-2. Copy ceph.conf file and keyring from admin node to install directories (**name of the directory??**)
+2. Copy ceph.conf file and keyring from admin node to install directories (***name of the directory?***)
 
-		command is required??
+		command is required?
 
 3. Copy Ceph cluster config files  from the ceph admin node in the ceph_cluster_config_files directory.
 
-		command required??
+		command required?
 
 4. In the setup_scripts directory there is a script (`fixuuid.sh`) which modifies the Helion configuration file patches with the new UUID from the cephx authentication process. Execute the 
 `fixuuid.sh` as follows:
@@ -79,7 +77,7 @@ For more details about the Ceph storage cluster with Glance integration, refer t
 The installation script verifies the following:
 
 1. It checks whether the file is untarred in the correct location ( /home/ceph_client_setup) and exits if the script is not available. 
-2. Its check whether ceph cluster ceph.conf and the keyring files are copied in the correct location (/home/ceph_client_setup/ceph_cluster_config_files/) and exit if they are not present. If they are present in the correct location, the `/etc/ceph` directory is created and the `ceph.conf` and the keyring files are copied in `/etc/ceph` directory.
+2. It checks whether ceph cluster ceph.conf and the keyring files are copied in the correct location (/home/ceph_client_setup/ceph_cluster_config_files/) and exit if they are not present. If they are present in the correct location, the `/etc/ceph` directory is created and the `ceph.conf` and the keyring files are copied in `/etc/ceph` directory.
 3. The script will search the following files in `/home/ceph_client_setup/ceph_cluster_config_files/`
 
 	a. ceph.conf - main ceph configuration file
@@ -133,7 +131,7 @@ The following sub-scripts runs on the successful completion of the above steps:
 	<tr>
 <td>Ceph client package file to be installed on the running Controller and Compute nodes in 
 HP Helion OpenStack commercial build</td>
-<td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files.<br> Filename: ???</td>
+<td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files.<br> Filename: ?</td>
 </tr>
   <table>
 
@@ -378,16 +376,29 @@ Now, restart the Cinder service
 
 Once the cinder service is restarted you can create a volume. There are two ways to create a volume:
 
-* Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume??if so we can give a link,else we need steps?**)
+* Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
 * Using CLI from the overcloud controller node running the ceph client
 
 **Using the Horizon UI Dashboard**
 
 You can use the HP Helion OpenStack Dashboard to work with the Cinder service.
+<need to rewrite>
+
+To back up the volume from Horizon, perform the following steps:
+
+1. Click on the More menu next to your volume and choose Create Backup:
+2. Enter in the required information in the next screen and click Create Backup:
+3. Required Fields: Backup Name - choose a name for your backup
+
+Optional Fields: 
+
+Description - you can enter in a description here 
+
+Container Name - If no container name is provided, a default container named volumebackups will be provisioned for you. Backups will be the same size as the volume they originate from.
 
 **Using the CLI**
 
-To create a volume using command-line interface (CLI) execute the following command from the the overcloud controller node running the ceph client
+To create a volume using command-line interface (CLI) execute the following command from the overcloud controller node running the ceph client
 
 	Cinder create –display-name <name of the volume> <volume size>
 
@@ -417,7 +428,7 @@ Output:
 			+--------------+------------------------------------------------------------------------+
 
 
-##Helion OpenStack Cinder Back up Ceph Storage
+##Helion OpenStack Cinder Backup Ceph Storage
 
 The Ceph backup driver performs the data backup operation on the volume to a Ceph RDB. Backups can be performed between different ceph pools and ceph clusters. This section explains the backup and restore procedure of cinder volume.
 
@@ -456,547 +467,277 @@ If the Ceph client software's are installed and the ceph configuration and keyri
 		
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 
-###Configure Cinder Backup
+###Configure Cinder backup
 
-To enable the Ceph backup driver edit `/etc/cinder/cinder.conf` and add the following options in all the 3 controller nodes [OCC mgmt, OCC0, OCC1].
+Perform the following steps to enable Ceph backup driver:
+
+1. Edit `/etc/cinder/cinder.conf` and add the following options in all the 3 controller nodes [OCC mgmt, OCC0, OCC1].
 
 
-	[DEFAULT]
-	
-	# For cinder backup
-	
-	backup_driver=cinder.backup.drivers.ceph
-	backup_ceph_conf=/etc/ceph/ceph.conf
-	backup_ceph_user=cinder-backup
-	backup_ceph_chunk_size=134217728
-	backup_ceph_pool=helion-ceph-backups
-	backup_ceph_stripe_unit=0
-	backup_ceph_stripe_count=0
-	restore_discard_excess_bytes=true
+		[DEFAULT]
+		
+		# For cinder backup
+			backup_driver=cinder.backup.drivers.ceph
+		backup_ceph_conf=/etc/ceph/ceph.conf
+		backup_ceph_user=cinder-backup
+		backup_ceph_chunk_size=134217728
+		backup_ceph_pool=helion-ceph-backups
+		backup_ceph_stripe_unit=0
+		backup_ceph_stripe_count=0
+		restore_discard_excess_bytes=true
 
-The following table provides the description of the the parameters.
+	The following table provides the description of the the parameters.
 
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th> Parameters</th>
-<th>Descriptions </th>
+	<table>
+	<table style="text-align: left; vertical-align: top; width:650px;">
+	<tr style="background-color: #C8C8C8;">
+		<th> Parameters</th>
+	<th>Descriptions </th>
+		</tr>
+		<tr>
+	<td>backup_ceph_chunk_size = 134217728</td>
+	<td>The chunk size, in bytes, that a backup is broken into before transfer to the Ceph object store.</td>
 	</tr>
 	<tr>
-<td>backup_ceph_chunk_size = 134217728</td>
-<td>The chunk size, in bytes, that a backup is broken into before transfer to the Ceph object store.</td>
-</tr>
-<tr>
-<td>backup_ceph_conf = 
-/etc/ceph/ceph.conf</td>
-<td>Ceph configuration file to use.</td>
-</tr>
-<tr>
-<td>backup_ceph_pool = helion-ceph-backups</td>
-<td>The Ceph pool where volume backups are stored.</td>
-</tr>
-<tr>
-<td>backup_ceph_stripe_count = 0</td>
-<td>RBD stripe count to use when creating a backup image.</td>
-</tr>
-<tr>
-<td>backup_ceph_stripe_unit = 0</td>
-<td>RBD stripe unit to use when creating a backup image.</td>
-</tr>
-<tr>
-<td>backup_ceph_user = cinder</td>
-<td>The Ceph user to connect with. Default here is to use the same user as for Cinder volumes. If not using cephx this should be set to None.</td>
-</tr>
-<tr>
-<td>restore_discard_excess_bytes = True</td>
-<td>If True, always discard excess bytes when restoring volumes i.e. pad with zeroes.</td>
-</tr>
-  </table>
+	<td>backup_ceph_conf = 
+	/etc/ceph/ceph.conf</td>
+	<td>Ceph configuration file to use.</td>
+	</tr>
+	<tr>
+	<td>backup_ceph_pool = helion-ceph-backups</td>
+	<td>The Ceph pool where volume backups are stored.</td>
+	</tr>
+	<tr>
+	<td>backup_ceph_stripe_count = 0</td>
+	<td>RBD stripe count to use when creating a backup image.</td>
+	</tr>
+	<tr>
+	<td>backup_ceph_stripe_unit = 0</td>
+	<td>RBD stripe unit to use when creating a backup image.</td>
+	</tr>
+	<tr>
+	<td>backup_ceph_user = cinder</td>
+	<td>The Ceph user to connect with. Default here is to use the same user as for Cinder volumes. If not using cephx this should be set to None.</td>
+	</tr>
+	<tr>
+	<td>restore_discard_excess_bytes = True</td>
+	<td>If True, always discard excess bytes when restoring volumes i.e. pad with zeroes.</td>
+	</tr>
+	  </table>
 
 
-Now, restart the Cinder service
+2. Restart the Cinder service
 
 		service cinder-backup restart
 
-**<need to validate once again**>
-	
-1. cinder backup-create command
+	**Note**: For Cinder backup, the Cinder volume whose backup is required must be in a detached state. The volume should not be attached to any of the instances or virtual machines.
 
-			usage: cinder backup-create [--container <container>] [--display-name <display-name>] [--display-description <display-description>] <volume>
-			Creates a backup.
-			Positional arguments
-			<volume>
-			Name or ID of the volume to backup.
-			
-			Optional arguments
-			--container <container>
-			Optional Backup container name. (Default=None)
-			--display-name <display-name>
-			Optional backup name. (Default=None)
-			--display-description <display-description>
-			Optional backup description. (Default=None)
+	Once the cinder service is restarted you can create a backup of a Cinder volume. There are two ways to create a backup:
 
-		To create a backup with the name of “deb7rawbackup” for an existing Cinder Volume with the ID “0a2c6c62-627f-42d3-9b66-e4ba56db0ba7”, run:
+	* Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
+	* Using CLI from the overcloud controller node running the ceph client
 
-			# cinder backup-create --display-name deb7rawbackup 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7
+	**Using the Horizon UI Dashboard**
 
-	2. cinder backup-delete command
+	To create a volume back from the Horizon UI, do the following.
 
-			usage: cinder backup-delete <backup>
-			Remove a backup.
-			Positional arguments
-			<backup>
-			Name or ID of the backup to delete.
+	1. Log in to the overcloud Horizon dashboard.
+	2. From the left panel, click the **Projects** and then select Compute.
+	3. Click **Volumes**. 
+	3. Click More drop down list and select Create Backup. Create Volume Backup page is displayed.
+	4. In the **Backup Name** box, enter the name for the backup.
+	5. In the **Description** box, enter the description.
+	6. In the **Container Name** box, enter the name of the container. If no name is entered, a default container named *volumebackups*  is  provisioned. The volume backup remains the same size of the volume.
+	7. Click **Volume Backup**. A volume backup is created.
 
-3. cinder backup-list command
 
-		usage: cinder backup-list
-		List all the backups.
+	To attach volume to an instance: <need verification?>
 
-4. cinder backup-restore command
+	* Select the instance and provide a device a name 
 
-		usage: cinder backup-restore [--volume-id <volume>] <backup>
-		Restore a backup.
+
+	**Using the CLI**
+
+	Execute the following command to create a backup.
+	 
+		cinder backup-create [--container <container>] [--display-name <display-name>] [--display-description <display-description>] <volume>
+
+	The following example shows how to create a backup with the name of **deb7rawbackup** for an existing Cinder volume with the ID **0a2c6c62-627f-42d3-9b66-e4ba56db0ba7**, run:
+
+			# cinder backup-create --display-name deb7rawbackup 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.
+
+	**Detailed procedure to create a backup using CLI**
+
+	1. Login to overcloud controllermanagement and execute the following command:
+
+			cinder list
+
+		Output:
+
+			+--------------------------------------+-----------+-----------------------+------+-------------+----------+--------------------------------------+
+			|                  ID                  |   Status  |      Display Name     | Size | Volume Type | Bootable |             Attached to              |
+			+--------------------------------------+-----------+-----------------------+------+-------------+----------+--------------------------------------+
+			| 0219d66e-d69d-4e28-bf4f-cb5f096696e3 | available |       Rsmallvol4      |  1   |     None    |  false   |                                      |
+			| 0285ee63-4ebd-4cd1-915c-933c48503d00 |   in-use  |         Rvol1         |  10  |     None    |  false   | 54938de0-49dd-4b01-931e-dafcddc41518 |
+			| 054bfa98-1d69-4cb8-b195-9b9481f5b8c7 |   in-use  |   Rwin2012Cowrawvol1  |  26  |     None    |   true   | 0bf98387-b0c9-4814-a2ef-f81c1ef1322e |
+			| f628002a-6cc4-4e70-a98f-d575e36fca75 |   in-use  |    Rdeb7Cowrawvol3    |  10  |     None    |   true   | 54938de0-49dd-4b01-931e-dafcddc41518 |
+			| ff8d13a5-3083-424b-a626-0b75cbe8cf66 | available |  cindervol_forbackup  |  15  |     None    |  false   |                                      |
+			+--------------------------------------+-----------+-----------------------+------+-------------+----------+--------------------------------------+
+
 		
-		Positional arguments
-		
-		<backup>
-		
-		ID of the backup to restore.
-		
-		Optional arguments
-		
-		--volume-id <volume>
-		
-		Optional ID(or name) of the volume to restore to.
+	2. Create cinder backup
 
-5. cinder backup-show command
+			cinder backup-create --display-name cindervol_backup ff8d13a5-3083-424b-a626-0b75cbe8cf66
 
-		usage: cinder backup-show <backup>
-		
-		Show details about a backup.
-		
-		Positional arguments
-		
-		<backup>
-		
-		Name or ID of the backup.
+		Output:
 
-If you want to do a cinder backup, the cinder volume that needs to be backed up should be in detached state. That volume should not be attached to any of the instances or VM’s.
+				+-----------+--------------------------------------+
+				|  Property |                Value                 |
+				+-----------+--------------------------------------+
+				|     id    | 60764712-c456-465a-828b-5f45d3a14ff5 |
+				|    name   |           cindervol_backup           |
+				| volume_id | ff8d13a5-3083-424b-a626-0b75cbe8cf66 |
+				+-----------+--------------------------------------+
+				
 
+	3. View a list of Cinder backup 
 
+			cinder backup-list
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder list
+		Output:
 
-example:
+			+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
+			|                  ID                  |              Volume ID               |   Status  |        Name       | Size | Object Count |      Container      |
+			+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
+			| 244aa3a1-b291-4cfe-9999-438f7611da2b | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available |    Rvol6backup    |  15  |     None     | helion-ceph-backups |
+			| 32ea7668-9179-433c-8fe3-44b98cd9d85b | 8aefafcc-4171-4c11-b900-362fbda40015 | available | ubuntu1404-backup |  10  |     None     | helion-ceph-backups |
+			| 60764712-c456-465a-828b-5f45d3a14ff5 | ff8d13a5-3083-424b-a626-0b75cbe8cf66 |  creating |  cindervol_backup |  15  |     None     |         None        |
+			| beeccb71-81e7-4860-8d38-add05a2e610d | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available |    Rvol6backup    |  15  |     None     | helion-ceph-backups |
+			+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder backup-list
+	4. Execute the following command to view a details of a selected volume.
 
-example:
+	 		cinder backup-show 60764712-c456-465a-828b-5f45d3a14ff5
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder backup-create --display-name cindervol_backup ff8d13a5-3083-424b-a626-0b75cbe8cf66
+		Output:
 
-example:
+			+-------------------+--------------------------------------+
+			|      Property     |                Value                 |
+			+-------------------+--------------------------------------+
+			| availability_zone |                 None                 |
+			|     container     |                 None                 |
+			|     created_at    |      2014-10-01T18:14:50.000000      |
+			|    description    |                 None                 |
+			|    fail_reason    |                 None                 |
+			|         id        | 60764712-c456-465a-828b-5f45d3a14ff5 |
+			|        name       |           cindervol_backup           |
+			|    object_count   |                 None                 |
+			|        size       |                  15                  |
+			|       status      |               creating               |
+			|     volume_id     | ff8d13a5-3083-424b-a626-0b75cbe8cf66 |
+			+-------------------+--------------------------------------+
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder backup-list
+	5. Execute the following command:
 
-example:
+			rbd ls -l helion-ceph-backups
 
-To back up the volume from Horizon, perform the following steps:
+		Output:
 
-1. Click on the More menu next to your volume and choose Create Backup:
-2. Enter in the required information in the next screen and click Create Backup:
-3. Required Fields: Backup Name - choose a name for your backup
+				NAME                                                                                                                     SIZE PARENT FMT PROT LOCK
+				volume-0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.backup.base                                                                10240M          2
+				volume-0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.backup.base@backup.02c6df2c-d03a-44ad-847a-ce03b580ee23.snap.1412106395.75 10240M          2
+				volume-0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.backup.base@backup.c9c20a09-403e-4011-a3f8-2fea11a560ee.snap.1412042130.16 10240M          2
+				volume-3adf1c83-2efa-4a1e-bef6-cdaffd13b489.backup.base                                                                 3072M          2
+				volume-3adf1c83-2efa-4a1e-bef6-cdaffd13b489.backup.base@backup.cdd27130-1791-45f6-8b6e-cc284922b02e.snap.1412041965.31  3072M          2 
 
-Optional Fields: 
 
-Description - you can enter in a description here 
+	6. To view cluster utilization
 
-Container Name - If no container name is provided, a default container named volumebackups will be provisioned for you. Backups will be the same size as the volume they originate from.
+			rados df
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder backup-show 60764712-c456-465a-828b-5f45d3a14ff5
+		Output:
 
+			pool name       category                 KB      objects       clones     degraded      unfound           rd        rd KB           wr        wr KB
+			.rgw            -                       9411        51459            0            0           0       110460        85700       130906        51952
+			.rgw.buckets    -                      20004       188711            0            0           0      6466145      4329147      8000069      1563078
+			helion-ceph-backups -                   54343272        13300         2190            0           0        16295     40106569        38157     70071922
 
-		+---------------------+-----------------------------------------------------------------+
-		| Property			  | Value                                                           |      
-		+---------------------+-----------------------------------------------------------------+
-		| availability_zone   | None                     										|
-		| container			  | nova														    |
-		| created_at          | 2014-10-01T18:14:50.000000                                    	| 
-		| description 		  | None                                                      		|
-		| fail_reason         | None 														    |
-		|  id    		      |60764712-c456-465a-828b-5f45d3a14ff5  							|
-		| name                | cindervol_backup 												|
-		|object_count		  |	None														    |	
-		| size     	          | 15 															    |
-		| status              | creating                                     					|  
-		|volume_id      	  | ff8d13a5-3083-424b-a626-0b75cbe8cf66                            |
-		+--------------+------------------------------------------------------------------------+
 
+####Mount the volume and copy new image
 
-
-
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# rbd ls -l helion-ceph-backups
-
-	NAME SIZE PARENT FMT PROT LOCK
+Now, mount the volume and copy the new image file from VM. To do so, perform the following steps:
 	
-	volume-0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.backup.base 10240M 2
+1. Login as a root user.
+2. List the block devices.
 	
-	volume-0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.backup.base@backup.02c6df2c-d03a-44ad-847a-ce03b580ee23.snap.1412106395.75 10240M 2
+		lsblk
 	
-	volume-0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.backup.base@backup.c9c20a09-403e-4011-a3f8-2fea11a560ee.snap.1412042130.16 10240M 2
-	
-	volume-3adf1c83-2efa-4a1e-bef6-cdaffd13b489.backup.base 3072M 2
+	Output:
 
-	volume-3adf1c83-2efa-4a1e-bef6-cdaffd13b489.backup.base@backup.cdd27130-1791-45f6-8b6e-cc284922b02e.snap.1412041965.31 3072M 2
+		NAME                     MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+		vda                      254:0    0    10G  0 disk
+		aavda1                   254:1    0   243M  0 part /boot
+		aavda2                   254:2    0     1K  0 part
+		aavda5                   254:5    0   7.8G  0 part
+		  aadebian-root (dm-0)   253:0    0   7.4G  0 lvm  /
+		  aadebian-swap_1 (dm-1) 253:1    0   376M  0 lvm  [SWAP]
+		vdb                      254:16   0    26G  0 disk
+		vdc                      254:32   0    10G  0 disk
+		vdd                      254:48   0    10G  0 disk
+		vde                      254:64   0    10G  0 disk
+		vdf                      254:80   0    10G  0 disk
+		vdg                      254:96   0    10G  0 disk
+		vdi                      254:128  0    15G  0 disk
+		vdj                      254:144  0    15G  0 disk
 
-	volume-8aefafcc-4171-4c11-b900-362fbda40015.backup.base 10240M 2
-	
-	volume-8aefafcc-4171-4c11-b900-362fbda40015.backup.base@backup.32ea7668-9179-433c-8fe3-44b98cd9d85b.snap.1412105715.03 10240M 2
-	
-	volume-eb170c5e-d227-40ef-b515-b84b82c38eb0.backup.base 15360M 2
-	
-	volume-eb170c5e-d227-40ef-b515-b84b82c38eb0.backup.base@backup.244aa3a1-b291-4cfe-9999-438f7611da2b.snap.1412125091.79 15360M 2
-	
-	volume-eb170c5e-d227-40ef-b515-b84b82c38eb0.backup.base@backup.beeccb71-81e7-4860-8d38-add05a2e610d.snap.1412121387.71 15360M 2
-	
-	volume-ff8d13a5-3083-424b-a626-0b75cbe8cf66.backup.base 15360M 2
+3. Execute the following command to mount `dev` to `vol`:
 
+		mount /dev/vdj /mnt/vol
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# rados df
+	Output:
 
-	pool name category KB objects clones degraded unfound rd rd KB wr wr KB
-	
-	.rgw - 9411 51459 0 0 0 110460 85700 130906 51952
-	
-	.rgw.buckets - 20004 188711 0 0 0 6466145 4329147 8000069 1563078
-	
-	.rgw.buckets.index - 0 25947 0 0 0 247034366 249406624 8965863 0
-	
-	.rgw.control - 0 8 0 0 0 0 0 0 0
-	
-	.rgw.gc - 0 32 0 0 0 2222125 2311557 4211629 0
-	
-	.rgw.root - 1 3 0 0 0 579 384 3 3
-	
-	.users - 1 1 0 0 0 68 41 3 2
-	
-	.users.email - 0 0 0 0 0 0 0 0 0
-	
-	.users.swift - 1 1 0 0 0 95 57 5 3
-	
-	.users.uid - 1 2 0 0 0 230049 25001974 87812 6
-	
-	data - 0 0 0 0 0 0 0 0 0
+		mount: mount point /mnt/vol does not exist
 
-	helion-ceph-backups - 54343272 13300 2190 0 0 16295 40106569 38157 70071922
+4. Execute the following command to mount `dev` to `vol1`
 
-	helion-ceph-cinder - 68025200 15511 3496 0 0 279244 68298910 306692 130572155
-	
-	helion-ceph-glance - 1177226640 150468 0 0 0 576290 90525813 328609 1210690885
-	
-	helion-ceph-nova - 50812629 12462 0 0 0 478099 8138503 774547 120555138
-	
-	metadata - 0 0 0 0 0 0 0 0 0
-	
-	nova-test - 0 1 0 0 0 66 50 36 32769
-	
-	rbd - 0 0 0 0 0 0 0 0 0
-	
-	total used 4082660584 457906
-	
-	total avail 19105677116
-	
-	total space 23188337700
+		mount /dev/vdj /mnt/vol1 
 
-Select the instance and provide the device name.
-<**screenshot**>
+5. Change the directory 
+ 
+		cd /mnt/vol1
 
-From the VM, trying to mount the volume and copying new image file
+6. List all the sub-directories
 
-root@debian:/# lsblk
+		ls -ltr
 
-NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 
-	vda 254:0 0 10G 0 disk
-	
-	ââvda1 254:1 0 243M 0 part /boot
-	
-	ââvda2 254:2 0 1K 0 part
-	
-	ââvda5 254:5 0 7.8G 0 part
-	
-	ââdebian-root (dm-0) 253:0 0 7.4G 0 lvm /
-	
-	ââdebian-swap_1 (dm-1) 253:1 0 376M 0 lvm [SWAP]
 	
-	vdb 254:16 0 26G 0 disk
-	
-	vdc 254:32 0 10G 0 disk
-	
-	vdd 254:48 0 10G 0 disk
-	
-	vde 254:64 0 10G 0 disk
-	
-	vdf 254:80 0 10G 0 disk
-	
-	vdg 254:96 0 10G 0 disk
-	
-	vdi 254:128 0 15G 0 disk
-	
-	vdj 254:144 0 15G 0 disk
-
-root@debian:/# mount /dev/vdj /mnt/vol
-
-	mount: mount point /mnt/vol does not exist
-
-	root@debian:/# mount /dev/vdj /mnt/vol1
-
-	root@debian:/# cd /mnt/vol1
-
-	root@debian:/mnt/vol1# ls -ltr
 
-	total 697100
 
-	drwx------ 2 root root 16384 Oct 1 05:22 lost+found
 
-	-rwxr-x--- 1 root root 702939136 Oct 1 05:23 CentOS_65.qcow2
 
-	-rw-r--r-- 1 root root 10870593 Oct 1 05:24 initrd.img-3.2.0-4-amd64
 
-root@debian:/mnt/vol1# df -h
 
-	Filesystem Size Used Avail Use% Mounted on
 
-	rootfs 7.3G 6.7G 248M 97% /
 
-	udev 10M 0 10M 0% /dev
 
-	tmpfs 397M 208K 397M 1% /run
 
-	/dev/mapper/debian-root 7.3G 6.7G 248M 97% /
 
-	tmpfs 5.0M 0 5.0M 0% /run/lock
-
-	tmpfs 794M 0 794M 0% /run/shm
-
-	/dev/vda1 228M 18M 199M 9% /boot
-
-	/dev/vdj 15G 847M 14G 6% /mnt/vol1
-
-root@debian:/mnt/vol1# mount
-
-	sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
-
-	proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
-	
-	udev on /dev type devtmpfs (rw,relatime,size=10240k,nr_inodes=506385,mode=755)
-	
-	devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
-	
-	tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=406364k,mode=755)
-	
-	/dev/mapper/debian-root on / type ext4 (rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered)
-	
-	tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
-	
-	tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
-	
-	/dev/vda1 on /boot type ext2 (rw,relatime,errors=continue)
-	
-	/dev/vdj on /mnt/vol1 type ext4 (rw,relatime,user_xattr,barrier=1,data=ordered)
-
-Now cinder volume has additional file system changes within the volume.
-
-root@debian:/mnt/vol1# ls -ltr
-
-	total 6328752
-	
-	drwx------ 2 root root 16384 Oct 1 05:22 lost+found
-	
-	-rwxr-x--- 1 root root 702939136 Oct 1 05:23 CentOS_65.qcow2
-	
-	-rw-r--r-- 1 root root 10870593 Oct 1 05:24 initrd.img-3.2.0-4-amd64
-	
-	-rw-r--r-- 1 root root 5766807552 Oct 2 00:34 Debian_7.raw
-
-root@debian:/mnt/vol1# df -h
-
-	Filesystem Size Used Avail Use% Mounted on
-	
-	rootfs 7.3G 6.7G 248M 97% /
-	
-	udev 10M 0 10M 0% /dev
-	
-	tmpfs 397M 208K 397M 1% /run
-	
-	/dev/mapper/debian-root 7.3G 6.7G 248M 97% /
-	
-	tmpfs 5.0M 0 5.0M 0% /run/lock
-	
-	tmpfs 794M 0 794M 0% /run/shm
-	
-	/dev/vda1 228M 18M 199M 9% /boot
-	
-	/dev/vdj 15G 6.2G 8.6G 42% /mnt/vol1
-	
-	Umount the volume from the VM
-
-root@debian:/# umount /dev/vdj
-
-	root@debian:/# mount
-	
-	sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
-	
-	proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
-	
-	udev on /dev type devtmpfs (rw,relatime,size=10240k,nr_inodes=506385,mode=755)
-	
-	devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
-	
-	tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=406364k,mode=755)
-	
-	/dev/mapper/debian-root on / type ext4 (rw,relatime,errors=remount-ro,user_xattr,barrier=1,data=ordered)
-	
-	tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
-	
-	tmpfs on /run/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=812720k)
-	
-	/dev/vda1 on /boot type ext2 (rw,relatime,errors=continue)
-
-####Restore of data from cinder backup
-
-You can restore the volume to a new volume or to an existing volume.
-
-In the below example a new volume is created and then restoring the backup to it.
-
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder create --display-name restore_volume1 15
-
-
-		+---------------------+-----------------------------------------------------------------+
-		| Property			  | Value                                                           |     
-		+---------------------+-----------------------------------------------------------------+
-		| attachments  	      | []                     											|
-		| availability_zone   | nova														    |
-		| bootable            | false                                         					|
-		| created_at          |  2014-10-01T21:48:42.727440                                     |
-		| display_description |  None                                                      		|
-		| display_name        | restore_volume1 												|
-		| encrypted     	  | False 															|
-		| id    		      |1b4614f8-8069-4211-8a3e-797be5641964   							|
-		| metadata            | {}  															|
-		| size				  |	15																|									
-		| snapshot_id    	  | None 															|
-		| source_volid 	      | None 															|
-		| status              | creating                                     					|  
-		|volume_type      	  | None                                                     		|
-		+--------------+------------------------------------------------------------------------+
-
-
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder backup-restore --volume-id restore_volume1 60764712-c456-465a-828b-5f45d3a14ff5
-
-		+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
-		| ID 								   | Volume ID 							  | Status    | Name 			  | Size | Object Count | Container 		  |
-		+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
-		| 02c6df2c-d03a-44ad-847a-ce03b580ee23 | 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7 | available | deb7rawbackup 	  | 10 	 | None 		| helion-ceph-backups |
-		| 244aa3a1-b291-4cfe-9999-438f7611da2b | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available | Rvol6backup 	  | 15 	 | None 		| helion-ceph-backups |
-		| 32ea7668-9179-433c-8fe3-44b98cd9d85b | 8aefafcc-4171-4c11-b900-362fbda40015 | available | ubuntu1404-backup | 10 	 | None 		| helion-ceph-backups |	
-		| 60764712-c456-465a-828b-5f45d3a14ff5 | ff8d13a5-3083-424b-a626-0b75cbe8cf66 | restoring | cindervol_backup  | 15 	 | None 		| helion-ceph-backups |		
-		| beeccb71-81e7-4860-8d38-add05a2e610d | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available | Rvol6backup 	  | 15   | None 		| helion-ceph-backups |	
-		| c9c20a09-403e-4011-a3f8-2fea11a560ee | 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7 | available | RDebian7_backup   | 10   | None 		| helion-ceph-backups |		
-		| cdd27130-1791-45f6-8b6e-cc284922b02e | 3adf1c83-2efa-4a1e-bef6-cdaffd13b489 | available | Rbackup1 	      | 3    | None 		| helion-ceph-backups |
-		+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
-
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder list
-
-		+--------------------------------------+------------------+-----------------------+------+-------------+----------+--------------------------------------+
-		| ID 								   | Status 		  | Display Name 		  | Size | Volume Type | Bootable | Attached to 						 |
-		+--------------------------------------+------------------+-----------------------+------+-------------+----------+--------------------------------------+
-		| 0219d66e-d69d-4e28-bf4f-cb5f096696e3 | available 		  | Rsmallvol4 			  | 1 	 | None 	   | false 	  | 									 |		
-		| 0285ee63-4ebd-4cd1-915c-933c48503d00 | in-use 		  | Rvol1 				  | 10   | None 	   | false    | 54938de0-49dd-4b01-931e-dafcddc41518 |		
-		| 054bfa98-1d69-4cb8-b195-9b9481f5b8c7 | in-use 		  | Rwin2012Cowrawvol1    | 26   | None 	   | true     | 0bf98387-b0c9-4814-a2ef-f81c1ef1322e |		
-		| 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7 | available 		  | Rdeb7Cowrawvol4       | 10   | None        | true     | 									 |		
-		| 0cdfaf09-009f-4d49-93fd-b37aaebf0741 | available 		  | Rdeb7Cowrawvol4 	  | 10   | None        | true     | 									 |		
-		| 0db02f6d-7807-4c37-b094-45087f1ebf2f | in-use 		  | Rvol2 				  | 10   | None        | false    | 54938de0-49dd-4b01-931e-dafcddc41518 |		
-		| 0db3c8ce-9e13-47d2-9589-acd842fedd00 | available 		  | testq 				  | 10   | None        | true     | 	                                 |		
-		| 0e0aa3b7-1f25-4713-8c3f-4c1141e18d8a | in-use 		  | Rvol7 				  | 26   | None        | false    | 54938de0-49dd-4b01-931e-dafcddc41518 |		
-		| 1b4614f8-8069-4211-8a3e-797be5641964 | restoring-backup | restore_volume1 	  | 15   | None        | false    | 									 |		
-		| 365d3abd-a4e7-4bc8-a581-fcedaa87eb30 | in-use 		  | Rcentos65Cowrawvol1   | 10   | None        | true     | 909a004d-6883-4b68-8516-25009878e680 |
-		+--------------------------------------+------------------+-----------------------+------+-------------+----------+--------------------------------------+
-		
-
-
-Once backup is done, the volume name will be same as your cinder-backup name.
-
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# cinder list
-
-		+--------------------------------------+-----------+---------------------------------------+------+-------------+-----------+--------------------------------------+
-		| ID 								   | Status    | Display Name 						   | Size | Volume Type | Bootable  | Attached to 						   |
-		+--------------------------------------+-----------+---------------------------------------+------+-------------+-----------+--------------------------------------+	
-		| 0219d66e-d69d-4e28-bf4f-cb5f096696e3 | available | Rsmallvol4 						   | 1 	  | None 		| false 	| 									   |		
-		| 0285ee63-4ebd-4cd1-915c-933c48503d00 | in-use    | Rvol1 								   | 10   | None 		| false 	| 54938de0-49dd-4b01-931e-dafcddc41518 |		
-		| 054bfa98-1d69-4cb8-b195-9b9481f5b8c7 | in-use    | Rwin2012Cowrawvol1 				   | 26   | None 		| true 		| 0bf98387-b0c9-4814-a2ef-f81c1ef1322e |		
-		| 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7 | available | Rdeb7Cowrawvol4 					   | 10   | None 		| true 		| 									   |		
-		| 0cdfaf09-009f-4d49-93fd-b37aaebf0741 | available | Rdeb7Cowrawvol4 					   | 10   | None 		| true 		| 									   |
-		| 0db02f6d-7807-4c37-b094-45087f1ebf2f | in-use    | Rvol2 							       | 10   | None 		| false 	| 54938de0-49dd-4b01-931e-dafcddc41518 |		
-		| 0db3c8ce-9e13-47d2-9589-acd842fedd00 | available | testq 							       | 10   | None 		| true 		| 									   |		
-		| 0e0aa3b7-1f25-4713-8c3f-4c1141e18d8a | in-use    | Rvol7 							       | 26   | None 		| false 	| 54938de0-49dd-4b01-931e-dafcddc41518 |		
-		| 15f21c5a-e8f7-4b30-988b-7e11db145114 | available | snapshot for Rdeb8cowinst7_snapshot   | 10   | None 		| true 		| 									   |		
-		| 1b4614f8-8069-4211-8a3e-797be5641964 | available | cindervol_forbackup 				   | 15   | None 		| false 	| 									   |		
-		| 365d3abd-a4e7-4bc8-a581-fcedaa87eb30 | in-use    | Rcentos65Cowrawvol1 				   | 10   | None 		| true 		| 909a004d-6883-4b68-8516-25009878e680 |		
-		| 386ed069-71c4-428b-9ecc-f21d572d74b2 | in-use    | Rdeb8Cowrawvol1 					   | 10   | None 		| true		|									   |
-		+--------------------------------------+-----------+-------------------------------------+------+-------------+----------+-----------------------------------------+
-
-Volume is attached to VM and the contents are checked.
-
-root@debian:/# cd /mnt/vol1
-
-root@debian:/mnt/vol1# ls -ls
-
-	total 697100
-	
-	686468 -rwxr-x--- 1 root root 702939136 Oct 1 05:23 CentOS_65.qcow2
-	
-	10616 -rw-r--r-- 1 root root 10870593 Oct 1 05:24 initrd.img-3.2.0-4-amd64
-	
-	16 drwx------ 2 root root 16384 Oct 1 05:22 lost+found
 
 
-##Volume Snapshots
 
 
-Volume snapshots are saved in cinder pool.
 
-Creating a Volume Snapshot for Backup
 
-These steps will show you how to take a snapshot of your volume so that you can create new, identical, volumes.
 
-Notes
 
-Two things to keep in mind when doing snapshots: a) Your volume has to be detached and in available status in order for you to take a snapshot of it. You will receive an error if you try to snapshot a volume that's in-use. b) You must keep the original volume that you take the snapshot of in order for the snapshot to function properly. If you delete the original volume then the snapshot will become unusable.
 
-Walk-through Steps
 
-1. This is the base command without the variables set:
 
-		nova volume-snapshot-create --force [TRUE or FALSE] --display_name [DISPLAY_NAME] --display_description [DISPLAY_DESCRIPTION] [VOLUME_ID]
 
-2. Now you can view your snapshots using this command:
 
-		nova volume-snapshot-list
 
-root@overcloud-ce-controller-controllermgmt0-mlvpkhjsm3mm:/mnt# nova volume-snapshot-list
 
-		+--------------------------------------+--------------------------------------+-----------+-------------------------------------+------+
-		| ID 								   | Volume ID                            | Status    | Display Name                        | Size |
-		+--------------------------------------+--------------------------------------+-----------+-------------------------------------+------+
-		| 1f9cae44-e3c9-4326-a1f9-68aeea34d672 | 0285ee63-4ebd-4cd1-915c-933c48503d00 | available | snapshot for Rinstgeneral_snapshot 	| 10   |
-		| 2758b62c-8f2a-482c-bf2c-9183c8304227 | f628002a-6cc4-4e70-a98f-d575e36fca75 | available | snapshot for Rinstgeneral_snapshot  | 10   |
-		| 32267733-bf04-4180-a1ea-bc133726bb7b | 525bd6a2-05cc-4bba-9a6a-f8e8a3f6ce68 | available | snapshot for Rinstgeneral_snapshot  | 10   |
-		| 4b1e37f6-04f6-41c4-a80c-34ce8d8c743a | 386ed069-71c4-428b-9ecc-f21d572d74b2 | available | snapshot for Rdeb8cowinst7_snapshot | 10   |
-		+--------------------------------------+--------------------------------------+-----------+-------------------------------------+------+
 
-From Horizon, you can create snapshot of instances and can view the snapshot as below.
 
-<screenshot>
 
