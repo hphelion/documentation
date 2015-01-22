@@ -25,7 +25,7 @@ PageRefresh();
 
 The HP Helion OpenStack default installation includes AppArmor profiles as a tool for enhanced security for VMs running on KVM compute nodes. 
 
-AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP Helion OpenStack. All profiles are configured for enforce mode (for more information, see [AppArmor profile modes](#modes) below).
+AppArmor profiles can modified, as needed, for your organization. However, the default profiles, as installed, have been configured to provide optimal protection for HP Helion OpenStack. All profiles are configured for enforce mode (for more information, see [AppArmor profile modes](#modes) below) and designed to mitigate hostile VMs exploiting hypervisor breakout attacks.
 
 HP Helion OpenStack follows the [svirt model](http://wiki.apparmor.net/index.php/Libvirt ) to provide guest isolation. Every guest VM is locked down to be able to access only its own configuration files, disk files and volume devices.
 
