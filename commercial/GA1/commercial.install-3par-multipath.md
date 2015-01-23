@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&reg; Configuring Multipath for 3PAR
 
-
+<!-- Copied overview information from http://www.vmware.com/files/pdf/partners/hp/vmware-vsphere-hp-3par-storeserv-so.pdf -->
 
 Multi-pathing considerations
 To maintain a constant connection between an ESXi host and its storage, ESXi supports multi-pathing. To take advantage of this support, virtual volumes should be exported to multiple paths to the host server. To do this, create a host definition on the HP 3PAR StoreServ Storage system that includes the World Wide Names (WWNs) of multiple HBA ports on the host server and then export the VLUNs to that host definition. For an ESXi cluster, the VLUNs must be exported to all of the host definitions for the cluster nodes, or a host set may be created containing all of the servers and the VLUNs can be exported to the host set.
@@ -30,6 +30,9 @@ To maintain a constant connection between an ESXi host and its storage, ESXi sup
 VMware ESXi 5 includes active/active multipath support to maintain a constant connection between the ESXi host and the HP 3PAR StoreServ Storage array. Three path policies are available: **Fixed**, **Most Recently Used** and **Round Robin**. For HP 3PAR StoreServ storage, Round Robin is the recommended policy for best performance and load balancing; however, it may not be enabled by default.
 
 The path policies can be viewed and modified from the vSphere Web Client on a per datastore basis as follows:
+
+<!-- Copied steps from http://www.vmware.com/files/pdf/partners/hp/vmware-vsphere-hp-3par-storeserv-so.pdf -->
+
 
 1. In the vSphere Web Client, select the datastore.
 2. Select the Manage tab, then the Settings tab, and then click on

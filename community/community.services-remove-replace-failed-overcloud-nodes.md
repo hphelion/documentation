@@ -1,0 +1,396 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174; Removing and replacing a failed Overcloud Controller"
+permalink: /helion/openstack/removing/failedovercloud/
+product: commercial.ga
+
+---
+<!--PUBLISHED-->
+
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+<!--
+<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+-->
+
+# HP Helion OpenStack&reg;: Removing and Replacing a Failed Overcloud Controller
+
+The three node overcloud controller cluster provides the highly available cloud control plane. For a single point of failure, you can recover any one of the overcloud controller node. 
+
+If your deployed operating cloud incurs an irrecoverable hardware failure in one of the controller servers, you must do the following:
+
+* de-commission the failed server
+* add a new server into your cloud and redeploy the replacement controller on it
+* re-connect the replaced controller into the three nodes controller cluster
+
+
+The following sections provide the detailed instructions to replace a failed controller node. They are divided into three sections. These sections describe a failure of the different type of controller node(s).
+
+* [Removing and replacing a failed management controller node](#removemgt)
+
+* [Removing and replacing a failed controller1 node](#removecontroller1)
+
+* [Removing and replacing a failed controller0 node](#removecontroller0)
+
+
+## Removing and replacing a failed management controller node {#removemgt}
+
+Perform the following steps to remove and replace the failed management controller node.
+
+1. [Prepare to remove the node](#prepremovenode)
+2. [Update the stack with the removed management controller node](#updatedremovemgt)
+3. [Update the heat stack with a new management controller](#updatednewmgt)
+4. [Remove the failed nodes from ironic](#removeironic)
+
+
+**Note**: The following instructions are based on the default installation and alteration of any of the commands or variables is not required, unless stated otherwise.
+
+### Prepare to remove the node {#prepremovenode}
+
+1. Login to seed.
+
+		ssh root@<seed_cloud_host_IP>
+
+2. Execute the following command to set the required parameters and environment variables.
+ 
+		export TRIPLEO_ROOT=~root/tripleo
+		export TE_DATAFILE=$TRIPLEO_ROOT/ce_env.json
+		export PATH=$PATH:$TRIPLEO_ROOT/bin:$TRIPLEO_ROOT/tripleo-incubator/scripts
+		source $TRIPLEO_ROOT/tripleo-incubator/undercloudrc
+		OVERCLOUD_EXTRA_CONFIG=$(hp_ced_load_passthrough.sh -v -p overcloud -x overcloud-compute)
+
+3. Remove the failed node from the rabbit cluster.
+
+		rabbitmqctl cluster_status # show the name of the failed controller
+		rabbitmqctl forget_cluster_node <node> # the full rabbit name of the failed node as it appeared in the above output (including 'rabbit@..')
+
+4. Execute the following command.
+
+		source ~root/tripleo/tripleo-incubator/undercloudrc
+		# set the nova node id for use later
+		failed_node_id=$(nova list --minimal | grep Mgmt | cut -d '|' -f 2)
+		ironic_failed_node_id=$(ironic node-show --instance $failed_node_id | grep " uuid" | cut -f3 -d"|" | sed 's/\s//')
+
+5. Execute the following command on controller0 and controller1 to shutdown or restart the cluster by reducing the minimum size.
+
+		sed -i 's/-lt 3/-lt 2/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+
+
+### Update the stack with the removed management controller node {#updatedremovemgt}
+
+1. Edit `~/no-mgmt.env.json` and generate the required heat parameters.
+
+		outfile=~/no-mgmt.env.json
+		yaml=~root/tripleo/tripleo-heat-templates/overcloud-ce-no-mgmt.yaml
+		env_in=~root/tripleo/overcloud-env.json
+		params=$(sed -r -f - -n $yaml <<EOF
+		/^Parameters/,/^Resources/ {
+		    /^\s\s\w/ {
+		        s/\s\s(.*):/\1/
+		        /ExtraConfig/d
+		        p
+		    }
+		}
+		EOF
+		)
+		json_in=$(jq . $env_in)
+		json_out='{"parameters":{}}'
+		for p in $params; do
+		    val=$(jq .parameters.${p} <<< $json_in)
+		    json_out=$(jq ".parameters = .parameters + {\"${p}\": $val}" <<< $json_out )
+		done
+		jq . <<<$json_out > $outfile
+
+2. Update the heat stack with the removed management controller node.
+
+		heat stack-update -e ~/no-mgmt.env.json \
+		-t 360 \
+		-f $TRIPLEO_ROOT/tripleo-heat-templates/overcloud-ce-no-mgmt.yaml \
+		-P "ExtraConfig=${OVERCLOUD_EXTRA_CONFIG}" \
+		overcloud-ce-controller
+		watch -d heat stack-list
+	
+	It takes several minutes to complete the update. Once the update is completed the management controller is removed from the heat configuration.
+
+###Update the heat stack with a new management controller {#updatednewmgt}
+
+1. Edit `~/with-mgmt.env.json` to generate the required heat parameters.
+
+		outfile=~/with-mgmt.env.json
+		yaml=~root/tripleo/tripleo-heat-templates/trickle/overcloud-ce-controller
+		env_in=~root/tripleo/overcloud-env.json
+		params=$(sed -r -f - -n $yaml <<EOF
+		/^Parameters/,/^Resources/ {
+		    /^\s\s\w/ {
+		        s/\s\s(.*):/\1/
+		        /ExtraConfig/d
+		        p
+		    }
+		}
+		EOF
+		)
+		json_in=$(jq . $env_in)
+		json_out='{"parameters":{}}'
+		for p in $params; do
+		    val=$(jq .parameters.${p} <<< $json_in)
+		    json_out=$(jq ".parameters = .parameters + {\"${p}\": $val}" <<< $json_out )
+		done
+			jq . <<<$json_out > $outfile
+
+2. Update the heat stack to provision a new management controller.
+
+		heat stack-update -e ~/with-mgmt.env.json \
+		-t 360 \
+		-f $TRIPLEO_ROOT/tripleo-heat-templates/trickle/overcloud-ce-controller \
+		-P "ExtraConfig=${OVERCLOUD_EXTRA_CONFIG}" \
+		overcloud-ce-controller
+		watch -d heat stack-list
+
+	It takes several minutes to complete the update. When the overcloud-ce-controller stack status reaches UPDATE_COMPLETE, the stack is ready for use, with the replaced management controller node.
+
+### Remove the failed nodes from ironic {#removeironic}
+
+1. Execute the following command to remove the failed nodes from ironic.
+
+		# show the failed node in ironic (using the failed_node_id variable from above)
+		ironic node-show --instance $failed_node_id
+		# remove the failed node from ironic, using the uuid
+		ironic node-delete $ironic_failed_node_id
+
+2.   Remove the nova service entries for the failed controller node. Execute the following command on a new management controller node.
+
+		# display service list for management controllers, including only the failed ones
+		nova-manage service list | grep mgmt | grep XXX
+		# set a variable to the failed host name from above
+		failed_host=<name>
+		# remove the failed node
+		nova-manage service disable --service=nova-conductor --host=$failed_host
+		nova-manage service disable --service=nova-cert --host=$failed_host
+		nova-manage service disable --service=nova-scheduler --host=$failed_host
+		nova-manage service disable --service=nova-consoleauth --host=$failed_host
+
+3. Login to undercloud.
+
+		 ssh heat-admin@<undercloud IP>
+		
+4. Execute the following command to remove the failed node from Icinga monitoring.
+
+		cd /etc/check_mk/conf.d
+		# when running the command below, replace <ip of failed controller> with the ip address
+		rm <ip of failed controller>.mk
+		# show the monitored hosts
+		check_mk --list-hosts  
+
+5. Restore minimum cluster size on the controller0 and controller1 nodes.
+
+		sed -i 's/${TOTAL_NODES} -lt 2/${TOTAL_NODES} -lt 3/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+
+ 
+##Removing and replacing a failed controller1 node {#removecontroller1}
+
+Perform the following steps to remove and replace a failed controller1 node.
+
+1. [Remove the failed controller1 node](#removecontroller1)
+2. [Provision the stack with a new controller1](#provnewcontroller1)
+
+
+###Remove the failed controller1 node {#removecontroller1}
+
+1. Login to seed as root.
+
+		sudo su -
+
+2. Execute the following command on the management node.
+
+		sed -i 's/-lt 3/-lt 2/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+
+3. Execute the following command on the controller0 node.
+
+		sed -i 's/-lt 3/-lt 2/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+
+4.  Execute the following command to set the required parameters and environment variables. You can replace the `OVERCCLOUD_NTP_SERVER` with an NTP server of your choice.
+
+		export OVERCLOUD_NTP_SERVER=19.110.135.123 # Use an NTP server appropriate for your environment
+		export TRIPLEO_ROOT=~root/tripleo
+		export TE_DATAFILE=$TRIPLEO_ROOT/ce_env.json
+		export PATH=$PATH:$TRIPLEO_ROOT/bin:$TRIPLEO_ROOT/tripleo-incubator/scripts
+		source $TRIPLEO_ROOT/tripleo-incubator/undercloudrc
+		OVERCLOUD_EXTRA_CONFIG=$(hp_ced_load_passthrough.sh -v -p overcloud -x overcloud-compute)
+		COMPUTESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.computescale' | sed  -e "s/\"//g"`
+		SOSWIFTPROXYSCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.soswiftproxyscale' | sed  -e "s/\"//g"`
+		SOSWIFTSTORAGESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.soswiftstoragescale' | sed  -e "s/\"//g"`
+		SWIFTSTORAGESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.swiftstoragescale' | sed  -e "s/\"//g"`
+		VSASTORAGESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.vsastoragescale' | sed  -e "s/\"//g"`
+
+5. Generate a template with a removed controller0 and update the stack.
+
+		make -f Makefile-trickle -C /root/tripleo/tripleo-heat-templates overcloud-ce.yaml SWIFTSTORAGESCALE=$SWIFTSTORAGESCALE COMPUTESCALE=$COMPUTESCALE CONTROLSCALE=1 VSASTORAGESCALE=$VSASTORAGESCALE SOSWIFTSTORAGESCALE=$SOSWIFTSTORAGESCALE SOSWIFTPROXYSCALE=$SOSWIFTPROXYSCALE
+		prep-for-trickle -z /root/tripleo/tripleo-heat-templates/trickle/overcloud-ce-controller stack-update -e /root/tripleo/overcloud-env.json -t 360 -f /root/tripleo/tripleo-heat-templates/overcloud-ce.yaml -P "ExtraConfig=${OVERCLOUD_EXTRA_CONFIG}" overcloud-ce-controller
+		 
+6. Verify the update completion.
+
+		watch -d heat stack-list
+
+	When the `overcloud-ce-controller` stack status reaches `UPDATE_COMPLETE`, the stack is ready for use, with the replaced management controller node.
+
+
+### Provision the stack with a new controller1 {#provnewcontroller1}
+
+1. Execute the following command to increase the number of controllers and run a stack-update.
+
+		export OVERCLOUD_CONTROLSCALE=2
+		cd ~root  
+		bash tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud --skip-demo
+
+	When the stack reaches UPDATE_COMPLETE status, the failed node is replaced. 
+
+2. After stack update is completed, execute the following command on controller0 and management controller nodes. 
+
+		sed -i 's/${TOTAL_NODES} -lt 2/${TOTAL_NODES} -lt 3/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+
+
+##Removing and replacing a failed controller0 node {#removecontroller0}
+
+Perform the following steps to remove and replace a failed controller1 node.
+
+1. [Remove the failed controller0 node](#removefailedcontroller0)
+2. [Provision the stack with a new controller0](#provnewcontroller0)
+
+
+###Remove the failed controller0 node {#removefailedcontroller0}
+
+1. Login to seed as root.
+
+		sudo su -
+
+2. Execute the following command on the controller0 node.
+
+		service rabbitmq-server stop
+
+
+3. Execute the following command on the management controller node. Check for controller0 name (for example: rabbit@... ) with cluster_status.
+
+		sed -i 's/-lt 3/-lt 2/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+		rabbitmqctl cluster_status
+		rabbitmqctl forget_cluster_node <rabbit@..>'
+
+
+4. Execute the following command on the controller0 node.
+
+		sed -i 's/-lt 3/-lt 2/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+		mkdir -p /mnt/state/var/lib/boot-stack/
+		touch /mnt/state/var/lib/boot-stack/init-openstack.ok
+
+
+5. Execute the following command to set the required parameters and environment variables. You can replace the `OVERCCLOUD_NTP_SERVER` with an NTP server of your choice.
+
+		export OVERCLOUD_NTP_SERVER=19.110.135.123 # Use an NTP server appropriate for your environment
+		export TRIPLEO_ROOT=~root/tripleo
+		export TE_DATAFILE=$TRIPLEO_ROOT/ce_env.json
+		export PATH=$PATH:$TRIPLEO_ROOT/bin:$TRIPLEO_ROOT/tripleo-incubator/scripts
+		source $TRIPLEO_ROOT/tripleo-incubator/undercloudrc
+		OVERCLOUD_EXTRA_CONFIG=$(hp_ced_load_passthrough.sh -v -p overcloud -x overcloud-compute)
+		COMPUTESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.computescale' | sed  -e "s/\"//g"`
+		SOSWIFTPROXYSCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.soswiftproxyscale' | sed  -e "s/\"//g"`
+		SOSWIFTSTORAGESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.soswiftstoragescale' | sed  -e "s/\"//g"`
+		SWIFTSTORAGESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.swiftstoragescale' | sed  -e "s/\"//g"`
+		VSASTORAGESCALE=`cat ~/tripleo/ce_env.json | jq '.overcloud.vsastoragescale' | sed  -e "s/\"//g"`
+
+
+6. Generate a template with the removed controller0 and update the heat stack.
+
+		make -f Makefile-trickle -C /root/tripleo/tripleo-heat-templates overcloud-ce.yaml SWIFTSTORAGESCALE=$SWIFTSTORAGESCALE COMPUTESCALE=$COMPUTESCALE CONTROLSCALE=1 VSASTORAGESCALE=$VSASTORAGESCALE SOSWIFTSTORAGESCALE=$SOSWIFTSTORAGESCALE SOSWIFTPROXYSCALE=$SOSWIFTPROXYSCALE
+		cd /root/tripleo/tripleo-heat-templates/trickle
+		sed -i 's/controller0/controller1/g' overcloud-ce-controller
+		prep-for-trickle -z /root/tripleo/tripleo-heat-templates/trickle/overcloud-ce-controller stack-update -e /root/tripleo/overcloud-env.json -t 360 -f /root/tripleo/tripleo-heat-templates/overcloud-ce.yaml -P "ExtraConfig=${OVERCLOUD_EXTRA_CONFIG}" overcloud-ce-controller
+		watch -d heat stack-list
+
+When the stack reaches UPDATE_COMPLETE status, the replacement of the failed node is complete.
+
+
+###Provision the stack with a new controller0 {#provnewcontroller0}
+
+1. Set the number of controllers to two and update the stack.
+
+		export OVERCLOUD_CONTROLSCALE=2
+		cd ~root 
+		tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud --skip-demo
+
+	When the stack reaches UPDATE_COMPLETE status, the replacement of the failed node is complete. 
+
+
+2. Once stack update is completed, execute the following command on controller1 and management controller nodes:
+
+		sed -i 's/${TOTAL_NODES} -lt 2/${TOTAL_NODES} -lt 3/' /opt/stack/os-config-refresh/post-configure.d/51-rabbitmq
+
+
+3. Execute the following command on the controller0 node.
+
+		/etc/init.d/mysql stop
+		/etc/init.d/mysql start
+
+ 
+
+##Troubleshooting Tips:
+
+###Controller Nodes : Heat stack updates 
+
+A heat stack-update takes longer time, that is, 30 minutes or longer. 
+
+**Solution**
+
+1. Login to seed.
+
+		ssh root@<seed IP>
+
+2. Execute the following command to identify which resource is updating.
+
+		heat resource-list overcloud-ce-controller | grep -v -i complete
+
+**View Logs**
+
+1. On the controller node, execute the following command to view the log errors, especially those running `os-refresh-config`.
+
+		sudo tail -f /var/log/upstart/os-collect-config
+
+ 	If  `os-svc-restart -n rabbitmq-server` message appears in the log then execute the following command:
+
+
+		sudo pkill -u rabbitmq
+		sudo rm -rf /mnt/state/var/lib/rabbitmq
+		sudo rm -rf /mnt/state/var/log/rabbitmq
+		sudo os-refresh-config
+
+
+	 If the following error occurs while executing os-refresh-config then skip executing `os-refresh-config` or `rm /var/run/os-refresh-config.lock` and `re-run os-refresh-config`.
+
+
+ 		"ERROR: os-refresh-config:Could not lock /var/run/os-refresh-config.lock. [Errno 11] Resource temporarily unavailable."
+
+
+ 	If the controller1 or management controller is the only node in its cluster and waiting for other node to join for a longer time after adding controller0 then execute the following command on the controllers to view cluster status:
+
+		sudo rabbitmqctl cluster_status
+
+	Execute the following command to join the controller cluster, if the cluster name is not controller0.
+
+		sudo rabbitmqctl stop_app
+		sudo rabbitmqctl forget_cluster_node <cluster node name>
+		sudo rabbitmqctl start_app
+		sudo rabbitmqctl join_cluster_node <controller0 clustername>
+		sudo os-refresh-config
+
+
+2.  On the seed node, verify the logs in `/var/log/upstart`, especially those from heat, nova, and ironic.
+
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
