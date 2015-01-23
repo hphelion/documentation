@@ -888,13 +888,10 @@ Reset the ALS VM to its default configuration.
 	node reset services
 	
 	node reset --help
-
   
-  
-  * factory: returns the VM to its state prior to first boot.
-  * docker: removes all docker containers, and deletes all but the ALS
-    release images; not meant for general use.
-  * services: removes all service data; not meant for general use.
+  * *factory*: returns the VM to its state prior to first boot.
+  * *docker*: removes all Docker containers and deletes all but the ALS release images; not meant for general use.
+  * *services*: removes all service data; not meant for general use.
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -920,9 +917,8 @@ Gracefully retires a DEA node from the cluster. New instances of the apps are st
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table> 
-
-  -n --node *<node-id>*           Retire the specified DEA node, local node is used if not specified
+<tr><td>-n --node <<i>node-id</i>></td><td>Retire the specified DEA node; if unspecified, the local node is used.</td></tr>
+</table>         
 
 <hr>
 
@@ -942,9 +938,8 @@ Configure the core node of your ALS cluster.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
 </table>
-
-  -v --verbose                    Show process information
 
 <hr>
 
@@ -966,13 +961,10 @@ First user setup.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-p --password <<i>password</i>></td><td>First user's password. If your UNIX password has not been updated, then your UNIX password will be updated to this. Will be prompted for if not given.</td></tr>
+<tr><td>-u --username <<i>username</i>></td><td>First user's username. If not specified, defaults to the first user's email address.</td></tr>
+<tr><td>-s --space <<i>space</i>></td><td>First user's initial space. If not specified, user will NOT initially be assigned to a space.</td></tr>
 </table>  
-
-  -p --password *<password>*      First user's password. If your unix password has not been updated, then your unix password will be updated to this. Will be prompted for if not given.
-
-  -u --username *<username>*      First user's username. Will be the provided email if not given.
-
-  -s --space *<space>*            First user's initial space. If not specified, user will not initially be in a space.
 
 <hr>
 
@@ -1014,13 +1006,10 @@ Configure this instance as a micro cloud.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-d --delete </td><td>Delete old configuration and re-initialize everything.</td></tr>
+<tr><td>-s --no-start</td><td>Do not auto start processes.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
 </table>  
-
-  -d --delete                     Delete old configuration and re-initialize everything
-
-  -s --no-start                   Do not auto start processes
-
-  -v --verbose                    Show process information
 
 <hr>
 
@@ -1062,37 +1051,22 @@ Will operate on current node by default; upgrade can be done for the entire clus
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  -j --json                       Shows the status in json format.
-
-  -n --node *<node>*              Targets the provided node.
-
-  -u --update-kato                Updates kato node upgrade to the latest codebase.
-
-  -v --version *<version>*        The version to upgrade to. The latest version is used if this isn't supplied.
-
-  --force                             Forces an upgrade to run.
-
-  --prepare                           Prepare the core node for an upgrade.
-
-  --resume                            Resumes an upgrade process, used internally by Kato and should only be called manually when requested.
-
-  --role-order *<role-order>*         Comma separated list of roles defining the order that roles should be upgraded in a cluster.
-
-  --skip-confirmation                 Skips initial confirmation of upgrade.
-
-  --status                            Shows the status of upgrades on a node.
-
-  --development                       Run a development upgrade (internal use only).
-
-  --cache-ip *<cache-ip>*             The ip of the node to act as a cache for all nodes in the cluster during upgrade.
-
-  --download-only                     Downloads the files required to perform an upgrade without starting an upgrade, must specify --cache-ip when using this option.
-
-  --cluster                           Unused parameter for backwards compatibility.
-
-  --offline                           Upgrade offline; requires the upgrade content to be previously downloaded.
+<tr><td> -j --json</td><td>Display output in JSON.</td></tr>
+<tr><td>-n --node <<i>node</i>></td><td>Targets the provided node.</td></tr>
+<tr><td>-u --update-kato</td><td>Updates kato node upgrade to the latest codebase.</td></tr>
+<tr><td>-v --version <<i>version</i>></td><td>The version to upgrade to. If unspecified, the latest version is used.</td></tr>
+<tr><td>--force</td><td>Forces an upgrade to run.</td></tr>
+<tr><td>--prepare</td><td>Prepare the core node for an upgrade.</td></tr>
+<tr><td>--resume</td><td>Resumes an upgrade process, used internally by Kato and should only be called manually when requested.</td></tr>
+<tr><td>--role-order <<i>role-order</i>></td><td>Comma separated list of roles defining the order that roles should be upgraded in a cluster.</td></tr>
+<tr><td>--skip-confirmation</td><td>Skips initial confirmation of upgrade.</td></tr>
+<tr><td>--status</td><td>Shows the status of upgrades on a node.</td></tr>
+<tr><td>--development</td><td>Run a development upgrade (internal use only).</td></tr>
+<tr><td>--cache-ip <<i>cache-ip</i>></td><td>The IP of the node to act as a cache for all nodes in the cluster during upgrade.</td></tr>
+<tr><td>--download-only</td><td>Downloads the files required to perform an upgrade without starting an upgrade. When using this option, --cache-ip must be specified.</td></tr>
+<tr><td>--cluster</td><td>Unused parameter for backwards compatibility.</td></tr>
+<tr><td>--offline</td><td>Upgrade while offline. This option requires that the upgrade content was downloaded previously.</td></tr>
+</table>            
 
 <hr>
 
@@ -1121,9 +1095,9 @@ Configuration of custom SSL certificates to be used in conjunction with router2g
 
 **Syntax**
 
-	op custom_ssl_cert install [options] *<key-path>* *<cert-path>* *<domain>*
+	op custom_ssl_cert install [options] <key-path> <cert-path> <domain>
 	
-	op custom_ssl_cert remove *<domain>*
+	op custom_ssl_cert remove <domain>
 	
 	op custom_ssl_cert list
 
@@ -1133,17 +1107,15 @@ Configuration of custom SSL certificates to be used in conjunction with router2g
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--wildcard-subdomains</td><td>Wildcard SSL certificate.</td></tr>
+<tr><td>--update</td><td>Update an existing SSL certificate.</td></tr>
 </table>  
-
-  --wildcard-subdomains               Wildcard SSL certificate
-
-  --update                            Update an existing SSL certificate
 
 <hr>
 
 ###OP Defer {#kato-command-ref-op-defer}
 
-Defer a kato command to be run (by 'op run_deferred') when the system is rebooted and supervisord has started. Commands are saved to a /home/helion/.kato-deferred YAML file.
+Defer a kato command to be run by *op run_deferred* when the system is rebooted and supervisor has started. Commands are saved to the */home/helion/.kato-deferred* YAML file.
 
 **Syntax**
 
@@ -1155,13 +1127,10 @@ Defer a kato command to be run (by 'op run_deferred') when the system is reboote
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--run-as-root</td><td>Run deferred command as root</td></tr>
+<tr><td>--reset</td><td>Clear list of deferred commands</td></tr>
+<tr><td>--post-start</td><td>Run the deferred command after all processes managed by kato have started.</td></tr>
 </table> 
-
-  --run-as-root                       Run deferred command as root
-
-  --reset                             Clear list of deferred commands
-
-  --post-start                        Run the deferred command after all processes managed by kato have started
 
 <hr>
 
@@ -1213,11 +1182,9 @@ Import the YAML configuration for a single process, deleting and replacing all p
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--new-key-file=<file></td><td>Override config with a specific YAML file.</td></tr>
+<tr><td>--upgrade</td><td>Merge the new configuration rather than deleting and replacing.</td></tr>
 </table> 
-
-  --new-key-file=<file>               Override config with a specific YAML file
-
-  --upgrade                           Merge the new configuration rather than deleting and replacing
 
 <hr>
 ###OP Import from YAML Files {#kato-command-ref-op-import_from_yaml_files}
@@ -1234,11 +1201,9 @@ Import configuration from YAML files for all processes, deleting and replacing p
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--new-key-file=<file></td><td>Override config with a specific YAML file.</td></tr>
+<tr><td>--upgrade</td><td>Merge the new configuration rather than deleting and replacing.</td></tr>
 </table> 
-
-  --new-key-file=<file>               Override config with a specific YAML file
-
-  --upgrade                           Merge the new configuration rather than deleting and replacing
 
 <hr>
 ### OP Max Client Upload {#kato-command-ref-op-max_client_upload}
@@ -1295,11 +1260,9 @@ Regenerate the configuration for various processes and components.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-y --no-prompt</td><td>Regenerate all with no user prompting</td></tr>
+<tr><td>-r --no-restart</td><td>Do not restart processes after regeneration.</td></tr>
 </table> 
-
-  -n --no-prompt                  Show help information
-
-  -r --no-restart                 Do not restart processes.
 
 <hr>
 
