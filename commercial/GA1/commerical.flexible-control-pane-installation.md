@@ -401,19 +401,7 @@ The folder was not automatically copied onto the seed node from the KVM host.
 
 Manually copy the contents of the **tripleo/config** folder from the KVM host onto the seed node.
 <hr>
-###In Flexible Control Plane, one of the Swift nodes (BM) goes into an error state during first deployment.
-**System Behavior**
 
-Sometimes while installing the controllers on the virtual and starter Swift nodes on the Baremetal, the PXE deployment of Swift nodes fails and the node status shows as **ERROR**.
-
-**Probable Cause**
-
-Apparently a bug in Ironic.
-
-**Possible Resolution**
-
-Delete the overcloud stack and recreate it.
-<hr>
 ###After the reboot of the compute node, new FIPs associated to the instance are not accessible
 
 **System Behavior**
