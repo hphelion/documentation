@@ -89,7 +89,7 @@ No. The 2014 release is English only.
 
 ####Will HP Helion OpenStack Community edition work with hybrid or public cloud projects? #### {#hybridorpubliccloud}
 
-HP Helion OpenStack Community edition is API-compatible with HP Helion Public Cloud, allowing workloads developed on one to be deployed on the other.  Compatibility with other Public Clouds will depend on which OpenStack platform features they chose to support. It is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments. Workloads are upgradeable to [HP Helion OpenStack](/helion/openstack/), with features and capabilities needed for the enterprise, government, and service provider markets, to be launched later this calendar year.
+HP Helion OpenStack Community edition is API-compatible with HP Helion Public Cloud, allowing workloads developed on one to be deployed on the other.  Compatibility with other Public Clouds will depend on which OpenStack platform features they chose to support. It is tested and supported by HP for enterprise-grade, small-scale, private cloud deployments. Workloads are upgradeable to [HP Helion OpenStack](/helion/community/), with features and capabilities needed for the enterprise, government, and service provider markets, to be launched later this calendar year.
 
 ####How many nodes does it support? #### {#nodes}
 

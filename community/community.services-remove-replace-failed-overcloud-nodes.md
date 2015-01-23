@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Removing and replacing a failed Overcloud Controller"
-permalink: /helion/openstack/removing/failedovercloud/
-product: commercial.ga
+permalink: /helion/community/removing/failedovercloud/
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/faq/">NEXT &#9654; </a></p>
 -->
 
 # HP Helion OpenStack&reg;: Removing and Replacing a Failed Overcloud Controller

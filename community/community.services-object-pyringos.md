@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Pyringos"
-permalink: /helion/openstack/GA1/services/object/pyringos/
-product: commercial.ga
+permalink: /helion/community/services/object/pyringos/
+product: community
 
 ---
 <!--PUBLISHED-->

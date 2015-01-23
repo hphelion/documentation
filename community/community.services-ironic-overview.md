@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Ironic Service Overview"
-permalink: /helion/openstack/services/ironic/overview/
-product: commercial.ga
+permalink: /helion/community/services/ironic/overview/
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/compute/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/compute/overview/"> NEXT &#9654</a> </p>
 -->
 # HP Helion OpenStack&reg; Ironic Service Overview#
 
@@ -30,7 +30,7 @@ Ironic is an incubated OpenStack project to provision baremetal, not virtual, ma
 
 For information on Ironic, see OpenStack [Ironic's developer documentation](http://docs.openstack.org/developer/ironic/).
 
-For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/technical-overview/).
+For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/community/technical-overview/).
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

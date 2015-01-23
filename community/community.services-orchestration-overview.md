@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration Service Overview"
-permalink: /helion/openstack/services/orchestration/overview/
-product: commercial.ga
+permalink: /helion/community/services/orchestration/overview/
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/object/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/reporting/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Orchestration Service Overview#
@@ -33,7 +33,7 @@ To [perform tasks using the Orchestration service](#howto), you can use the dash
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Orchestration service.
+You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with the Orchestration service.
 
 ###Using the API<a name="API"></a>
  
@@ -50,7 +50,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 Taken from http://docs.openstack.org/user-guide/content/heatclient_commands.html 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/heatclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-orchestration-v1.html).
 
 ### Working with stacks ###
 

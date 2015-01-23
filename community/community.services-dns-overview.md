@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; DNS as a Service Overview"
-permalink: /helion/openstack/services/dns/overview/
-product: commercial.ga
+permalink: /helion/community/services/dns/overview/
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/horizon/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/tripleo/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/horizon/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/tripleo/overview/"> NEXT &#9654</a> </p>
 <!--
 # HP Helion OpenStack&#174; DNS as a Service (DNSaaS) Overview#
 
@@ -38,7 +38,7 @@ For example, if a user wants to access *mytestdomain.com* in a web browser, DNS 
 
 **Note:** Installing HP Helion OpenStack DNSaaS is optional. Before you attempt the DNSaaS installation, you must have already installed HP Helion OpenStack and verified that it is  correctly configured and operational.
 
-Learn how to [install DNS as a service](/helion/openstack/install/dnsaas/).
+Learn how to [install DNS as a service](/helion/community/install/dnsaas/).
 
 ##Key Terms
 

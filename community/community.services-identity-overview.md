@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Identity Service Overview"
-permalink: /helion/openstack/services/identity/overview/
-product: commercial.ga
+permalink: /helion/community/services/identity/overview/
+product: community
 
 ---
 <!--UNDER REVISION-->
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/imaging/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/imaging/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Identity Service Overview #
@@ -263,7 +263,7 @@ LDAP Account Status
 
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the API or CLI.
+To [perform tasks using the Identity service](/helion/community/services/identity/using/), you can use the API or CLI.
 
 
 ## For more information ##

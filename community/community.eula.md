@@ -8,7 +8,7 @@ product: community
 <!--PUBLISHED-->
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/glossary/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/3rd-party-license-agreements/"> NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/glossary/">&#9664; PREV | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/3rd-party-license-agreements/"> NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Community Software License Terms
@@ -21,7 +21,7 @@ product: community
 
 **1. Applicability.** This end user license agreement (the "Agreement") governs the use of accompanying HP Helion OpenStack Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement. 
 
-**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: [HP Helion OpenStack&#174; Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/).
+**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at: [HP Helion OpenStack&#174; Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/community/3rd-party-license-agreements/).
 
 **3. Authorization**. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.
 
@@ -145,7 +145,7 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 
 ## Part 3: Ancillary and Open Source Software for Software ## {#ancilliary}
 
-Additional license authorizations related to ancillary, third party and open source software components are available at: [HP Helion OpenStack&#174; Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/openstack/3rd-party-license-agreements/). 
+Additional license authorizations related to ancillary, third party and open source software components are available at: [HP Helion OpenStack&#174; Open Source and Third-Party Software License Agreements](http://docs.hpcloud.com/helion/community/3rd-party-license-agreements/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

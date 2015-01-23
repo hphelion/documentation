@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Metering Service Overview"
-permalink: /helion/openstack/services/reporting/overview/
-product: commercial.ga
+permalink: /helion/community/services/reporting/overview/
+product: community
 
 ---
 <!--UNDER REVISION-->
@@ -33,18 +33,18 @@ All the Ceilometer processes have a unified configuration file that can be found
 
 Access to Ceilometer is through the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html), or the low-level [REST API](http://developer.openstack.org/api-ref-telemetry-v2.html). A Ceilometer Horizon dashboard panel is not available at this time. 
 
-* [Configuration and Architecture Overview](/helion/openstack/services/reporting/components/)
-* [Available Meter Types](/helion/openstack/services/reporting/metertypes/)
-* [Alarms and Thresholds](/helion/openstack/services/reporting/alarms/)
-* [Role Based Access Control (RBAC) Policies](/helion/openstack/services/reporting/RBAC/)
-* [Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
-	* [Logging](/helion/openstack/services/reporting/troubleshooting/#logging)
-	* [Messaging and Queuing Errors](/helion/openstack/services/reporting/troubleshooting/#qerrors)
-* [API Extensions: HP Health Check API](/helion/openstack/services/reporting/APIextensions/)
-* [Managing Notifications from the Nova Service](/helion/openstack/services/reporting/bestpractices/#ceilandnova)
-* [Best Practices and Performance Optimization](/helion/openstack/services/reporting/bestpractices/)
-	- [Configuring the Web Server for API Performance](/helion/openstack/services/reporting/bestpractices/#webserverapi)
-	- [Modifying the List of Active Meters](/helion/openstack/services/reporting/bestpractices/#meterlist)
-	- [Modifying Polling Intervals](/helion/openstack/services/reporting/bestpractices/#pollinterval)
-	- [Swift Service Considerations](/helion/openstack/services/reporting/bestpractices/#swift)
+* [Configuration and Architecture Overview](/helion/community/services/reporting/components/)
+* [Available Meter Types](/helion/community/services/reporting/metertypes/)
+* [Alarms and Thresholds](/helion/community/services/reporting/alarms/)
+* [Role Based Access Control (RBAC) Policies](/helion/community/services/reporting/RBAC/)
+* [Troubleshooting](/helion/community/services/reporting/troubleshooting/)
+	* [Logging](/helion/community/services/reporting/troubleshooting/#logging)
+	* [Messaging and Queuing Errors](/helion/community/services/reporting/troubleshooting/#qerrors)
+* [API Extensions: HP Health Check API](/helion/community/services/reporting/APIextensions/)
+* [Managing Notifications from the Nova Service](/helion/community/services/reporting/bestpractices/#ceilandnova)
+* [Best Practices and Performance Optimization](/helion/community/services/reporting/bestpractices/)
+	- [Configuring the Web Server for API Performance](/helion/community/services/reporting/bestpractices/#webserverapi)
+	- [Modifying the List of Active Meters](/helion/community/services/reporting/bestpractices/#meterlist)
+	- [Modifying Polling Intervals](/helion/community/services/reporting/bestpractices/#pollinterval)
+	- [Swift Service Considerations](/helion/community/services/reporting/bestpractices/#swift)
 

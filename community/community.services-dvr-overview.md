@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Orchestration High Availability Service Overview"
-permalink: /helion/openstack/services/dvr/overview/
-product: commercial.ga
+permalink: /helion/community/services/dvr/overview/
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/object/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/reporting/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Distributed Virtual Routing (DVR) Overview

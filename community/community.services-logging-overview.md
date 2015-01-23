@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Centralized Logging Overview"
-permalink: /helion/openstack/services/logging/overview/
-product: commercial.ga
+permalink: /helion/community/services/logging/overview/
+product: community
 
 ---
 <!--UNDER REVISION-->
@@ -26,7 +26,7 @@ The HP Helion OpenStack Centralized Logging feature collects logs on a central s
 
 Centralized logging helps the administrator triage and troubleshoot the distributed HP Helion OpenStack cloud deployment from a single location. The admin is not required to access the several remote servers (SSH) to view the individual log files.
 
-In addition to each of the [HP Helion services](/helion/openstack/services/overview/), Centralized Logging also processed logs for the following HP Helion OpenStack features:
+In addition to each of the [HP Helion services](/helion/community/services/overview/), Centralized Logging also processed logs for the following HP Helion OpenStack features:
 
 - HAProxy
 - syslog

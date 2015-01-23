@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Image Operation Service Overview"
-permalink: /helion/openstack/services/imaging/overview/
-product: commercial.ga
+permalink: /helion/community/services/imaging/overview/
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -18,14 +18,14 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/identity/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/networking/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/identity/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/networking/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Image Operations Service Overview #
 
 Based on OpenStack Glance, the HP Helion OpenStack Image Operations service is a web service for managing virtual machine images. It provides a set of RESTful APIs that enables querying/updating of image metadata as well as retrieval of the actual image data.
 
-With the Image Operations service you can work with image files, which are virtual disk image files that the [HP Helion Compute](/helion/openstack/services/compute/overview) service can use to create a virtual machine.
+With the Image Operations service you can work with image files, which are virtual disk image files that the [HP Helion Compute](/helion/community/services/compute/overview) service can use to create a virtual machine.
 
 Each image has a name, an unique identifier (UUIDs in hexadecimal string notation) and a specific disc and container format.
 
@@ -69,7 +69,7 @@ To [perform tasks using the Image Operations service](#howto), you can use the d
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Image Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with the Image Operations service.
 
 ###Using the API<a name="API"></a>
  
@@ -85,7 +85,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
  Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/), the OpenStack [CLI](
 http://docs.openstack.org/cli-reference/content/glanceclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-image-v2.html).
 
 ### Tasks performed by users<a name="user"></a>
@@ -119,8 +119,8 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP Helion OpenStack Operational Dashboard Help](/helion/community/manage/operational-dashboard/)
+* [HP Helion OpenStack Administration Dashboard Help](/helion/community/manage/administration-dashboard/) -->
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

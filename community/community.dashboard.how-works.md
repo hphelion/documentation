@@ -2,7 +2,7 @@
 layout: default
 title: "How to use the HP Helion OpenStack&#174; Dashboards"
 permalink: /helion/community/dashboard/how-works/
-product: commercial.ga
+product: community
 
 ---
 <!--PUBLISHED-->
@@ -21,7 +21,7 @@ PageRefresh();
 
 
 <!-- Hide until use cases are official
-<p style="font-size: small;"> <a href="/helion/openstack/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/manage/">&#9650; UP</a> | <a href="/helion/openstack/dashboard/users/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/community/manage/">&#9650; UP</a> | <a href="/helion/community/dashboard/users/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&#174; Community: How to use the Helion Dashboards
 
@@ -36,7 +36,7 @@ The interface, based on OpenStack Horizon, is grouped into dashboards, including
 Across the top are menus to switch between projects and menus where you can access user settings.
 
 <!--
-How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/dashboard/users/).
+How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/community/dashboard/admin/) or a [non-administrative user (user)](/helion/community/dashboard/users/).
 -->
 To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/community/dashboard/login/). 
 
