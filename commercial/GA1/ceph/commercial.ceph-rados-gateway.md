@@ -304,20 +304,20 @@ Once all the services are up and running, make an anonymous GET request to gatew
 
 		curl http://gateway.ex.com
 
-* GET Response
+4. GET Response
 
 		<?xml version="1.0" encoding="UTF-8"?><ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Owner><ID>anonymous</ID><DisplayName></DisplayName></Owner><Buckets></Buckets></ListAllMyBucketsResult>
 
 
-This response indicates that gateway instance is working as expected
+	This response indicates that gateway instance is working as expected.
 
-* If there is an error, ensure radosgw is executed in debug mode and watch out for errors
+5. For any error, execute `radosgw` in debug mode and look for an error(s).
 
-* If there is permission issue on /var/run/ceph/ceph-client.radosgw.gateway.asok, change file permission accordingly
+6. For any permission issue on `/var/run/ceph/ceph-client.radosgw.gateway.asok`, change file permission accordingly.
 
 		chmod 777 /var/run/ceph/ceph-client.radosgw.gateway.asok
 
-* If there is error with Apache2 or FastCGI, look for debug logs in /var/log/apache2/error.log. Changing permission on /var/www directory or /var/www/s3gw.fcgi file may fix the problem
+7. For an error with Apache2 or FastCGI, look for debug logs in `/var/log/apache2/error.log`. Change the  permission on `/var/www directory` or `/var/www/s3gw.fcgi file` to rectify the problem.
 
 		chmod 777 /var/www
 
@@ -325,32 +325,50 @@ This response indicates that gateway instance is working as expected
 
 ##Gateway Pools, Users and Sub-users, Access and Secret keys
 
-**Pools**
+###Pools
 
-Ceph Object Gateways require Ceph Storage Cluster pools to store specific gateway data. If user created has permissions, gateway will create pools automatically. Executing rados lspools lists the available pools. Check if .rgw.buckets and .rgw.buckets.index pools are already created by default. If not, create these pools using ceph osd pool create command. For more details refer https://ceph.com/docs/master/radosgw/config-ref/#pools
+Ceph Object Gateways require Ceph Storage Cluster pools to store a specific gateway data.  Gateway automatically creates a pools, if a user created has a permission. 
 
-<screenshot>
+Execute the following command to lists the available pools:
 
-**User and Sub-User**
+	rados lspools
 
-User reflects user of S3 interface and Subuser reflects a user of Swift interface. Subuser is always associated to a user. For more details, refer https://ceph.com/docs/master/radosgw/admin/. Using radosgw-admin commands, user and subuser are created like below
+Verify if .`rgw.buckets` and `.rgw.buckets.index` pools are already created by default. If not, create these pools using `ceph osd pool create` command. For more details, refer  to [http://https://ceph.com/docs/master/radosgw/config-ref/#pools](http://https://ceph.com/docs/master/radosgw/config-ref/#pools)
 
-* radosgw-admin user create --subuser=s3User:swiftUser --display-name="First User " --key-type=swift --access=full
 
-<screenshot>
+<img src="media/helion-ceph-rados-lspools.png"/)>
 
-* Ensure user - s3User and subuser - s3User:swiftUser are stored in respective .users.uid and .users.swift pool
+###User and Sub-User
 
-**Access and Secret keys**
+User reflects user of S3 interface and Subuser reflects a user of Swift interface. Subuser is always associated to a user. For more details, refer https://ceph.com/docs/master/radosgw/admin/. 
 
-S3 users and swifts users need to have access and secret keys to enable end users to interact with gateway instance. Access and secret key for s3User are created like below
+* Execute the following command to create a User and a subsuer:
 
-* radosgw-admin key create --uid=s3User --key-type=s3 --gen-access-key --gen-secret
-* Ensure keys generated are free of JSON escape (\) characters
-* If the User or Application will write more than 1k Containers, then modification of the max_buckets variable is required. Also, right-sizing of Placement Groups per Pool may be required. Ensure max_buckets is set to unlimited size by setting it to 0. This is important in order to write unlimited containers into .rgw.buckets default pool during workload testing.
-**radosgw-admin user modify --uid=s3User --max-buckets=0**
+	radosgw-admin user create --subuser=s3User:swiftUser --display-name="First User " --key-type=swift --access=full
 
-**S3 Client**
+	<img src="media/helion-ceph-create-user-subuser.png"/)>
+
+
+* Ensure that the user (**s3User**) and subuser (**s3User:swiftUser**) are stored in  a respective `.users.uid` and `.users.swift` pool
+
+	<img src="media/helion-ceph-user-uid-user-swift.png"/)>
+
+
+###Access and Secret keys
+
+S3 users and swifts users must have access and secret keys to enable end users and  to interact with a gateway instance. Access and secret key for s3User are created using the following command.
+
+	radosgw-admin key create --uid=s3User --key-type=s3 --gen-access-key --gen-secret
+
+	<img src="media/helion-ceph-generate-secrete-key.png"/)>
+
+The key generated must be free of JSON escape (\) characters.
+
+If the User or Application writes more than 1k containers then modify the `max_buckets` variable. Also, right-sizing of Placement Groups per Pool is required. Ensure `max_buckets` is set to unlimited size by setting the value to 0. <!---It is important in order to write unlimited containers in `.rgw.buckets` default pool during workload testing---->.
+
+	radosgw-admin user modify --uid=s3User --max-buckets=0
+
+###S3 Client
 
 S3 client is not supported by HP for User Data, other than as a validation step during installation and configuration. Gateway instance, S3 users created can be verified using s3cmd tool on gateway node or Ceph client. For more details on s3cmd tool, refer http://s3tools.org/s3cmd.
 
@@ -388,7 +406,7 @@ S3 client is not supported by HP for User Data, other than as a validation step 
 
 		md5sum <image uploaded> <image downloaded>
 
-**Swift Client**
+###Swift Client
 
 Gateway instance, swift users can be verified using Swift client on gateway node or Ceph client. For more details on swift client, refer https://www.swiftstack.com/docs/integration/python-swiftclient.html
 
@@ -455,7 +473,7 @@ Assuming that Ceph client packages are already installed, perform following step
 
 * Exercise S3 or Swift API calls as described in previous sections
 
-**RADOS GATEWAY - KEYSTONE AUTHENTICATION**
+###RADOS Gateway - Keystone Authentication
 
 Integration of Rados Gateway with Helion OpenStack identity service sets up the Gateway to authorize and accept Keystone users automatically. Users are created in rados pools provided they have valid keystone token. For more details refer, http://ceph.com/docs/master/radosgw/keystone/
 
