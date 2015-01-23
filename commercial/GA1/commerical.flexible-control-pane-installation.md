@@ -110,10 +110,9 @@ Before you can install the Flexible Control Plane, you will need to:
 		ssh-copy-id -i/root/.ssh/id_rsa_virt_power.pub root@192.168.124.3
 		ssh-copy-id -i/root/.ssh/id_rsa_virt_power.pub root@192.168.124.4
  
-7. Log in to the seed VM and change to the */root* directory.
-8. Modify the *baremetal.csv* file so that all records in the file now map to undercloud or overcloud control plane node types.
+7. Log in to the seed VM and change to the /root directory. A baremetal.csv file should exist in this location. This file contains information about the virtual machines that will be created when step 22 is executed. 
+The baremetal.csv file will appear as shown below. Note the last 2 columns. Without any change, the undercloud and overcloud controllers would be distributed randomly, which could result in a non high-availability (HA) configuration.
  
-	Before modification, the baremetal.csv file will appear as shown below. Note the last 2 columns.
 
 		00:17:00:3a:7d:25,root,undefined,192.168.124.2,12,16384,512,vm,all
 		00:7e:d1:97:ca:b6,root,undefined,192.168.124.3,12,16384,512,vm,all
@@ -122,12 +121,9 @@ Before you can install the Flexible Control Plane, you will need to:
 		00:5d:ff:f4:80:a2,root,undefined,192.168.124.3,12,16384,512,vm,all
 		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
 		00:65:cc:54:b1:0f,root,undefined,192.168.124.2,12,16384,512,vm,all
-	
-	After modification, the baremetal.csv will look like the one given below. Note the last two columns. There are two modifications to be made:
+In order to ensure that the overcloud control plane nodes land on different KVM hosts to maintain HA, modify the baremetal.csv file and update the last column as shown below such that the overcloud controller nodes represented by the 2nd, 3rd and 4th row land on different KVM hosts.
+After modification, the baremetal.csv will look like the one given below. 
 
-	First: Map the original set of VMs to the node_types (see occm, occ1, occ2, and so forth).
-
-	Second: Add baremetal nodes that will be used as compute nodes and/or VSA nodes.
 
 		00:17:00:3a:7d:25,root,undefined,192.168.124.2,12,16384,512,vm,all
 		00:7e:d1:97:ca:b6,root,undefined,192.168.124.2,12,16384,512,vm,occm
@@ -135,6 +131,9 @@ Before you can install the Flexible Control Plane, you will need to:
 		00:43:e3:33:9e:7f,root,undefined,192.168.124.4,12,16384,512,vm,occ2
 		00:5d:ff:f4:80:a2,root,undefined,192.168.124.3,12,16384,512,vm,all
 		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
+
+	Now, in order to add baremetal nodes that will be used as compute nodes and/or VSA nodes, modify the baremetal.csv file and add the required information about the physical nodes, as shown below. The final baremetal.csv will look like the following.
+
 		00:65:cc:54:b1:af,iloAdmin,iloPassword,192.168.1.51,12,12288,1000,bm,vsa
 		00:65:cc:54:b1:bf,iloAdmin,iloPassword,192.168.1.52,12,12288,1000,bm,vsa
 		00:65:cc:54:b1:ca,iloAdmin,iloPassword,192.168.1.53,12,12288,1000,bm,vsa
@@ -401,19 +400,7 @@ The folder was not automatically copied onto the seed node from the KVM host.
 
 Manually copy the contents of the **tripleo/config** folder from the KVM host onto the seed node.
 <hr>
-###In Flexible Control Plane, one of the Swift nodes (BM) goes into an error state during first deployment.
-**System Behavior**
 
-Sometimes while installing the controllers on the virtual and starter Swift nodes on the Baremetal, the PXE deployment of Swift nodes fails and the node status shows as **ERROR**.
-
-**Probable Cause**
-
-Apparently a bug in Ironic.
-
-**Possible Resolution**
-
-Delete the overcloud stack and recreate it.
-<hr>
 ###After the reboot of the compute node, new FIPs associated to the instance are not accessible
 
 **System Behavior**

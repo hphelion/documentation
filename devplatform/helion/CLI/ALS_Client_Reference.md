@@ -2,14 +2,14 @@
 layout: default-devplatform
 permalink: /als/v1/client/reference
 product: devplatform
-title: "HP Application Lifecyle Service (ALS) Client"
+title: "HP Application Lifecyle Service (ALS) Command Line Client Reference"
 
 ---
 
 <!--UNDER REVISION-->
-# HP Application Lifecycle Service (ALS) Client Configuration Reference
+# HP Application Lifecycle Service (ALS) Command Line Client Reference
 
-The ALS command-line interface (CLI) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the CLI when the Horizon management console is unavailable or when direct access is preferred. 
+The ALS command-line interface (CLI) client provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the CLI when the Horizon management console is unavailable or when direct access is preferred. 
 
 - [Global Options](#global)
 - [Cluster Commands](#commands)
@@ -17,17 +17,19 @@ The ALS command-line interface (CLI) provides an option for executing commands t
 	- [Delete a Cluster](#delete)
 	- [Add DEA Nodes to Existing Clusters](#addnode)
 
-##Configuration Files
+##Configuration Values
 There are three ways to pass configuration values into ALS:
 
 - Direct entry into the CLI
 - Defined in an environment variable
 - Recorded in a configuration file
  
-ALS maintains separate configuration files. One configuration file contains the values for the global variables. The other configuration files, specified by the **--load** option, includes the values that should be passed to arguments for that specific command. Values must be included in the appropriate file for their applicable scope.
+ALS maintains separate configuration files.
 
-The global configuration file is located in the home directory and is named *alsconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
+One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named *alsconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
  Global level **configurations** manage tenants, users, versions, and other system information. 
+
+The other configuration files, specified by the **--load** option, includes the values that should be passed to arguments for a specific command. Values must be included in the appropriate file for correct scoping; putting a command-specific value in the global file, for example, will not function as desired.
 
 ##Global Options {#global}
 These variables affect the entire cluster; they are **global** in scope. These environment variables are configured to work with the OpenStack Python tools to enable faster integration.
@@ -36,8 +38,9 @@ These variables affect the entire cluster; they are **global** in scope. These e
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <th width="150">Option</th><th>Description</th><th>Environment Variable</th>
-<tr><td>--config 'path\path\path' <td>Enter a new file path to change the current location of the configuration file.</td><td>n/a</td></tr>
-<tr><td>--debug<td>Enables additional debug information.</td><td>$ALS_DEBUG</td></tr>
+<tr><td>--config 'C:\Users\<i>username</i>\.alsconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
+<tr><td>--debug<td>Enables additional debug information.</td><td>n/a</td></tr>
+<tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$ALS_DEBUG</td></tr>
 <tr><td>--os-username</td><td>OpenStack user name</td><td>$OS_USERNAME</td></tr>
 <tr><td>--os-password</td><td>OpenStack password</td><td>$OS_PASSWORD</td></tr>
 <tr><td>--os-auth-url</td><td>OpenStack authentication URL</td><td>$OS_AUTH_URL</td></tr>
@@ -69,19 +72,19 @@ Options that can be passed to the command that creates a cluster
 
 <pre>als [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
 
-For help with this command within the application, enter
+For help with this command within the command-line interface, enter
 
 <pre>als help cluster-create</pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;"><th>Command (with example input)</th><th>Description</th>
+<tr style="background-color: #C8C8C8;"><th style="width:250px;">Command (with example input)</th><th>Description</th>
 </tr>
 <tr>
-<td>--load </td><td>Load flag values from the specified file</td>
+<td>--load </td><td>Load flags from the specified file</td>
 </tr><tr>
-<td>--save</td><td>Save flag values to the specified file</td>
+<td>--save</td><td>Save flags to the specified file</td>
 </tr><tr>
-<td>--admin-email</td><td>Email address for the ALS admin</td>
+<td>--admin-email</td><td>Email address for the ALS admin user</td>
 </tr>
 <tr>
 <td>--admin-password</td><td>Password for the ALS admin user</td>
@@ -91,54 +94,51 @@ For help with this command within the application, enter
 </tr><tr>
 <td>--cluster-title 'stack1'</td><td>Title of the ALS cluster</td>
 </tr><tr>
-<td>--cluster-prefix 'als'</td><td>Prefix of the ALS cluster</td>
+<td>--cluster-prefix 'als'</td><td>Prefix to affix to cluster instance names.</td>
 </tr><tr>
-<td>--dea-count '1'</td><td>Number of DEAs nodes in the cluster</td>
+<td>--dea-count '1'</td><td>Number of DEAs nodes in the cluster.</td>
 </tr><tr>
-<td>--services 'mysql,rabbitmq' </td><td>The list of services to be enabled for the cluster</td>
+<td>--services 'mysql,rabbitmq' </td><td>The list of services enabled for the cluster</td>
 </tr><tr>
 <td>--services-on-core 'false'</td><td>Should services be enabled on core nodes? True/False</td>
 </tr>
 <tr>
-<td>--az 'az1'</td><td>Availability zone for the cluster</td>
+<td>--az</td><td>Availability zone for the cluster</td>
 </tr>
 <tr>
-<td>--core-size 'standard.medium' </td><td>Flavor of core nodes in the cluster</td>
+<td>--core-flavor</td><td>Flavor of core nodes in the cluster</td>
 </tr><tr>
-<td>--dea-size 'standard.medium'</td><td>Flavor for DEA nodes</td>
+<td>--dea-flavor</td><td>Flavor for DEA nodes</td>
 </tr><tr>
-<td>--service-size 'standard.medium'</td><td>Flavor for service nodes in the cluster</td>
+<td>--service-flavor</td><td>Flavor for service nodes in the cluster</td>
 </tr><tr>
 <td>--keypair-name</td><td>The name of the key pair on instances</td>
 </tr>
 <tr>
-<td>--seed-node-image-id</td><td>The seed node image id</td>
+<td>--seed-node-image-id</td><td>ID of the seed node image.</td>
 </tr>
 <tr>
-<td>--seed-node-image-name</td><td>The seed node image name</td>
-</tr>
-<tr>
-<td>--seed-node-image-password 'password'</td><td>The seed node image password</td>
+<td>--seed-node-image-name</td><td>Name of the seed node image.</td>
 </tr>
 <tr>
 <td>--database-instance-id</td><td>Database instance id</td>
 </tr>
 <tr>
-<td>--database-flavor-id</td><td>Database flavor id</td>
+<td>--database-flavor</td><td>Flavor of database</td>
 </tr>
 <tr>
 <td>--database-volume-size </td><td>Database volume size</td>
 </tr>
 <tr>
-<td>--max-cluster-wait-duration '15'</td><td>Number of minutes to wait for the cluster creation to occur, defaults to 15</td>
+<td>--max-cluster-wait-duration '15m'</td><td>Maximum time to wait for the cluster creation to occur; defaults to 15 minutes.</td>
 </tr>
 <tr>
-<td>--max-corenode-wait-duration '3'</td><td>Number of minutes to wait for the core node to come up on cluster creation; defaults to 3</td>
+<td>--max-corenode-wait-duration '3m'</td><td>Maximum time to wait for the core node to come up on cluster creation; defaults to 3 minutes.</td>
 </tr>
 <tr>
-<td>--network-id</td><td>Network ID</td>
+<td>--subnet-id</td><td>ID of the network subnet to create the cluster on.</td>
 </tr><tr>
-<td>--subnet-name 'Test Network Subnet'</td><td>Subnet name.</td>
+<td>--subnet-name</td><td>Name of the network subnet to create the cluster on.</td>
 </tr><tr>
 <td>--upstream-proxy </td><td>Upstream proxy</td>
 </tr><tr>
@@ -146,10 +146,12 @@ For help with this command within the application, enter
 </tr><tr>
 <td>--https-proxy</td><td>HTTPS proxy</td>
 </tr>
+<td>--constructor-image-name </td><td>Name of the image of the constructor server</td>
+</tr>
 <tr>
 <td>--constructor-image-id </td><td>ID of the image of the constructor server</td>
 </tr><tr>
-<td>--constructor-flavor-ref '101' </td><td>Flavor ref to use when creating a constructor server</td>
+<td>--constructor-flavor</td><td>Flavor for the constructor server</td>
 </tr>
 </table>
 
@@ -158,21 +160,21 @@ Options that can be passed to the command that deletes a cluster (*cluster-delet
 ###Use Syntax
 <pre>als [global options] <b>command cluster-delete</b> [command options] [arguments...] </pre>
 
-For help with this command within the application, enter
+For help with this command within the command-line interface, enter
 
 <pre>als help cluster-delete</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;"><th>Command (with example input)</th><th>Description</th>
+<tr style="background-color: #C8C8C8;"><th style="width:250px;">Command (with example input)</th><th>Description</th>
 </tr>
 <tr>
-<td>--load</td><td>Load flag values from the specified file</td>
+<td>--load</td><td>Load flags from the specified file</td>
 </tr>
 <tr>
-<td>--save </td><td>Save flag values to the specified file</td>
+<td>--save </td><td>Save flags to the specified file</td>
 </tr><tr>
-<td>--cluster-prefix 'als'</td><td>Prefix of the ALS cluster</td>
+<td>--cluster-prefix 'als'</td><td>Prefix to affix to cluster instance names.</td>
 </tr><tr>
 <td>--keypair-name</td><td>The name of the key pair on instances</td>
 </tr><tr>
@@ -180,10 +182,12 @@ For help with this command within the application, enter
 </tr><tr>
 <td>--constructor-image-id</td><td>ID of the image of the constructor server</td>
 </tr><tr>
-<td>--constructor-flavor-ref '101'</td><td>Flavor ref to use when creating a constructor server</td>
+<td>--constructor-flavor</td><td>Flavor of the constructor server</td>
 </tr><tr>
-<td>--subnet-name 'Test Network Subnet'</td><td>The name of the subnet</td>
+<td>--max-cluster-wait-duration '4m'</td><td>Maximum time to wait for cluster deletion to occur; defaults to 4 minutes.</td>
 </tr>
+<tr><td>--subnet-name</td><td>The name of the subnet to create the cluster on</td></tr>
+<tr><td>--subnet-id</td><td>ID of the network subnet to create the cluster on</td></tr>
 </table>
  
 ##Add DEA Nodes to an Existing Cluster {#addnode}
@@ -193,15 +197,15 @@ Options that can be passed when adding nodes to an existing cluster (*dea-add*).
 
 <pre>als [global options] <b>dea-add</b> [command options] [arguments...]</pre>
 
-For help with this command within the application, enter
+For help with this command within the command-line interface, enter
 
 <pre>als help dea-add</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;"><th>Command (with example input)</th><th>Description</th></tr>
+<tr style="background-color: #C8C8C8;"><th style="width:250px;">Command (with example input)</th><th>Description</th></tr>
 <tr>
-<td>--load</td><td>Load flag values from the specified file</td>
+<td>--load</td><td>Load flags from the specified file</td>
 </tr>
 <tr>
 <td>--save</td><td>Save flag values to the specified file</td>
@@ -212,14 +216,19 @@ For help with this command within the application, enter
 </tr><tr>
 <td>--seed-node-image-name</td><td>The seed node image name</td>
 </tr><tr>
-<td>--seed-node-image-password 'password'</td><td>The seed node image password</td>
+<td>--dea-flavor</td><td>Flavor for DEA nodes</td>
 </tr><tr>
 <td>--keypair-name</td><td>The name of the key pair on instances</td>
 </tr>
 <td>--constructor-image-name</td><td>Name of the image of the constructor server</td>
 </tr><tr>
 <td>--constructor-image-id</td><td>ID of the image of the constructor server</td>
-</tr><tr>
-<td>--constructor-flavor-ref '101'</td><td>Flavor reference to use when creating a constructor server</td>
 </tr>
+<tr>
+<td>--max-cluster-wait-duration '6m'</td><td>Maximum time to wait for DEA addition to occur; defaults to 6 minutes.</td>
+</tr><tr>
+<td>--constructor-flavor '101'</td><td>Flavor reference to use when creating a constructor server</td>
+</tr>
+<tr><td>--subnet-id</td><td>ID of the network subnet to create the cluster on</td></tr>
+<tr><td>--subnet-name</td><td>The name of the subnet to create the cluster on</td></tr>
 </table>

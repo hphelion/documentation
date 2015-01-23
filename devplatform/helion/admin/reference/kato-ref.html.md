@@ -135,7 +135,7 @@ Kato is the Application Lifecycle Service command line administration utility.
 
 - [stop](#kato-command-ref-stop) 
 
-**Version**: Display the version of Helion currently in use.
+**Version**: Display the version of ALS currently in use.
 
 - [version](#kato-command-ref-version) 
 
@@ -557,11 +557,14 @@ Pass custom parameters to a drain
 <hr>
 
 ### Log Drain Delete {#kato-command-ref-log-drain-delete}
+Delete a specified drain.
 
-**log** **drain** **delete** [**options**] *<name>*
+**Syntax**
 
-  Delete a drain
+	log drain delete [options] <name>
 
+  
+**Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
@@ -572,360 +575,410 @@ Pass custom parameters to a drain
 <hr>
 
 ###Log Drain List {#kato-command-ref-log-drain-list}
+List all log drains.
 
-**log** **drain** **list** [**options**]
+**Syntax**
 
-  List all log drains
+	log drain list [options]
 
-  **-h** **--help**                       Show help information
+**Options**
 
-  **-y** **--yaml**                       Output at YAML
-
-  **-j** **--json**                       Output at JSON
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-y  --yaml</td><td>Output as YAML</td></tr>
+<tr><td>-j  --json</td><td>Output as JSON</td></tr>
+</table> 
 
 <hr>
 
 ### Log Drain Status {#kato-command-ref-log-drain-status}
+Show the status of all or specified log drains. If no options are passed, all drains are shown all.
 
-**log** **drain** **status** [**options**] [*<drain>...*]
+	log drain status [options] [<drain1>...]
 
-  Show the status of all or specified log drains
+**Options**
 
-  **-h** **--help**                       Show help information
-
-  **-n** **--not-running**                Show only drains not running
-
-  **-y** **--yaml**                       Output at YAML
-
-  **-j** **--json**                       Output at JSON
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n  --not-running</td><td>Show only drains that are not running</td></tr>
+<tr><td>-y  --yaml</td><td>Output as YAML</td></tr>
+<tr><td>-j  --json</td><td>Output as JSON</td></tr>
+</table>  
 
 <hr>
 
 ###Log Stream {#kato-command-ref-log-stream}
+Define a log stream.
 
-**log** **stream** [**options**] *<key>...*
+	log stream [options] <key>...
 
-  Examples:
+-   <*key*>: Logyard stream key prefix (ex: *systail.dea*)
+
+**Examples**
   
-    # stream cloud events
+Stream cloud events
     
     kato log stream event
   
-    # stream DEA and app log stream
+Stream DEA and app log stream
     
     kato log stream systail.dea systail.stager apptail
   
-    # stream system logs (equivalent to 'kato log tail')
+Stream system logs (Note this is equivalent to *kato log tail*.)
     
     kato log stream systail
 
-  *<key>*                                 Logyard stream key prefix (eg: systail.dea)
 
+**Options**
 
-  **-h** **--help**                       Show help information
-
-  **--no-color**                          Turn off color
-
-  **--raw**                               Show unformatted logs, including logyard INFO records (skipped by default)
-
-  **--json**                              Show the original JSON
-
-  **--time**                              Show timestamp
-
-  **-n** **--node** *<node-IP>*           Only show logs from a specific cluster node
-
-  **-l** **--local**                      Only show logs from the current node
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--no-color</td><td>Turn off color</td></tr>
+<tr><td>--raw</td><td>Show unformatted logs, including logyard INFO records (which are skipped by default)</td></tr>
+<tr><td>--json</td><td>Display the original JSON</td></tr>
+<tr><td>--time</td><td>Show timestamp</td></tr>
+<tr><td>-n  --node <<i>node-IP</i>></td><td>Only show logs from the specified cluster node</td></tr>
+<tr><td>-l  --local</td><td>Only show logs from the current node</td></tr>
+</table>
 
 <hr>
 
 ###Log Tail {#kato-command-ref-log-tail}
 
-**log** **tail** [**options**] [*<component>...*]
 
-  *<component>*                           Can be a process name, role name or role group name
+**Syntax**
+Create a stream that displays changes to the specified component in real time.
 
+	log tail [options] [<component>...]
 
-  **-h** **--help**                       Show help information
+-   <*component*>: A process name, role name or role group name.
 
-  **--no-color**                          Turn off color
+**Options**
 
-  **--raw**                               Show unformatted logs, including logyard INFO records (skipped by default)
-
-  **--time**                              Show timestamp
-
-  **-n** **--node** *<node-IP>*           Only show logs from a specific cluster node
-
-  **-l** **--local**                      Only show logs from the current node
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--no-color</td><td>Turn off color</td></tr>
+<tr><td>--raw</td><td>Show unformatted logs, including logyard INFO records (which are skipped by default)</td></tr>
+<tr><td>--json</td><td>Display the original JSON</td></tr>
+<tr><td>--time</td><td>Show timestamp</td></tr>
+<tr><td>-n  --node <<i>node-IP</i>></td><td>Only show logs from the specified cluster node</td></tr>
+<tr><td>-l  --local</td><td>Only show logs from the current node</td></tr>
+</table>
 
 <hr>
 
 ### Node Attach {#kato-command-ref-node-attach}
 
-**node** **attach** [**options**] *<core-ip>*
+Attach a node to a specified ALS core node.
 
-  Attach this node to an ALS core node
+**Syntax**
+
+	node attach [options] <core-ip>
+
+**Options**  
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-e** **--enable** *<roles>*           Enable the specified roles (comma-separated, no spaces)
-
-  **-s** **--no-start**                   Do not auto start processes
-
-  **-v** **--verbose**                    Show process information when starting/stopping roles
-
-  **-f** **--force**                      Forces this node to attach to a core node, ignoring any version mismatches
+<tr><td>-e  --enable <<i>roles</i>></td><td>Enable the specified roles (comma-separated list, no spaces)</td></tr>
+<tr><td>-s  --no-start</td><td>Do not auto start processes</td></tr>
+<tr><td>-v  --verbose</td><td>Show process information when starting/stopping roles</td></tr>
+<tr><td>-f  --force</td><td>Forces this node to attach to a core node, ignoring any version mismatches</td></tr>
+</table>            
 
 <hr>
 
 ###Node Availability Zone {#kato-command-ref-node-availabilityzone}
+Gets/sets the availability zone on a node.
 
-**node** **availabilityzone** [**options**] [*<zone>*]
+	node availabilityzone [options] [<zone>]
 
-  Gets/sets the availability zone on a node.
+**Syntax**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n --node <<i>node-id</i>> </td><td>Sets the availability zone on the specified DEA node. If unspecified, local node is used.</td></tr>
 </table>  
-
-  **-n** **--node** *<node-id>*           Sets the availability zone on the specified DEA node, local node is used if not specified
 
 <hr>
 
 ### Node Detach {#kato-command-ref-node-detach}
+Detaches this node from an ALS core node.
 
-**node** **detach** [**options**]
+**Syntax**
 
-  Detach this node from an ALS core node
+	node detach [options]
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-s --start</td><td>Automatically start processes after detaching</td></tr>
+<tr><td>-v --verbose</td><td>Show process information when starting/stopping roles</td></tr>
 </table>  
-
-  **-s** **--start**                      Automatically start processes after detaching
-
-  **-v** **--verbose**                    Show process information when starting/stopping roles
 
 <hr>
 
 ###Node List {#kato-command-ref-node-list}
 
-**node** **list** [**options**]
+List all nodes known to this cluster.
 
-  List all nodes known to this cluster
+**Syntax**
 
-  **-h** **--help**                       Show help information
+	node list [options]
 
-  **-j** **--json**                       Use JSON format for displaying output
-
-  **-y** **--yaml**                       Use YAML format for displaying output
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-y  --yaml</td><td>Display output as YAML</td></tr>
+<tr><td>-j  --json</td><td>Display output as JSON</td></tr>
+</table>  
 
 <hr>
 
 ###Node Migrate {#kato-command-ref-node-migrate}
 
-**node** **migrate** *<old-node-IP>* *<new-node-IP>*
+Migrate the node configuration from old node to a new node.
 
-  Migrate the node configuration from old node to a new node
+**Syntax**
 
-  **-h** **--help**                       Show help information
+	node migrate <old-node-IP> <new-node-IP>
 
-  **-r** **--no-restart**                 Do not restart roles after migration
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-r --no-restart</td><td>Do not restart roles after migration</td></tr>
+</table>        
 
 <hr>
 
 
 ###Node Placement Zones {#kato-command-ref-node-placementzones-add}
 
-**node** **placementzones** **add** [**options**] *<zone>*
+Adds a DEA zone to the current node.
 
-  Adds a DEA zone to the current node.
+**Syntax**
+
+	node placementzones add [options] <zone>
+
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-n** **--node** *<node-id>*           Add a zone on the specified DEA node, local node is used if not specified
+<tr><td>-n --node <<i>node-id</i>> </td><td>Add a zone on the specified DEA node. If unspecified, local node is used.</td></tr>
+</table>       
 
 <hr>
 
 ###Node Placement Zones List {#kato-command-ref-node-placementzones-list}
 
-**node** **placementzones** **list** [**options**]
+Lists the DEA zones on the specified node.
 
-  Lists the DEA zones on the current node.
+**Syntax**
+
+	node placementzones list [options]
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n --node <<i>node-id</i>> </td><td>Add a zone on the specified DEA node. If unspecified, local node is used.</td></tr>
 </table>  
-
-  **-n** **--node** *<node-id>*           Add a zone on the specified DEA node, local node is used if not specified
 
 <hr>
 
 ###Node Placement Zones Remove {#kato-command-ref-node-placementzones-remove}
 
-**node** **placementzones** **remove** [**options**] *<zone>*
+Removes a DEA zone from the specified node.
 
-  Removes a DEA zone from the current node.
+**Syntax**
 
+	node placementzones remove [options] *<zone>*
+
+**Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-n** **--node** *<node-id>*           Remove a zone on the specified DEA node, local node is used if not specified
+<tr><td>-n --node <<i>node-id</i>> </td><td>Removes the placement zone from the specified DEA node. If unspecified, the local node is used.</td></tr>
+</table>
 
 <hr>
 
 ###Node Remove {#kato-command-ref-node-remove}
 
-**node** **remove** [**--skip-detach**] *<node-IP>...*
+Remove the node(s) from the cluster
 
-  Remove the node(s) from the cluster
+**Syntax**
 
-  **-h** **--help**                       Show help information
+	node remove [--skip-detach] <node-IP>...
 
-  **-s** **--skip-detach**                Skips updating the removed nodes config via detaching the node, only use this if the node has already been destroyed
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-s --skip-detach</td><td>Skips updating the removed nodes config via detaching the node. Use this option ONLY if the node has already been destroyed.</td></tr>
+</table>              
  
 <hr>
 
 ###Node Rename {#kato-command-ref-node-rename}
 
-**node** **rename** [**options**] *<hostname>*
+Rename a node.
 
+**Syntax**
+
+	node rename [options] <hostname>
+
+**Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-s** **--skip-remap-hosts**           Skip the remapping of existing app URLS to the new domain.
-
-  **-l** **--skip-ssl-regeneration**      Skip regenerating the SSL keys
-
-  **-r** **--no-restart**                 Do not restart roles.
-
-  **-v** **--verbose**                    Show process information when restarting roles.
+<tr><td>-s --skip-remap-hosts</td><td>Skip the remapping of existing app URLS to the new domain.</td></tr>
+<tr><td>-l --skip-ssl-regeneration</td><td>Skip regenerating the SSL keys.</td></tr>
+<tr><td>--no-restart</td><td>Do not restart roles.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information when restarting roles.</td></tr>
+</table>                   
 
 <hr>
 
 ###Node Reset {#kato-command-ref-node-reset}
 
-**node** **reset** **factory**
+Reset the ALS VM to its default configuration.
 
-**node** **reset** **docker**
+**Syntax**
 
-**node** **reset** **services**
-
-**node** **reset** **--help**
-
-  Reset the ALS VM to its default configuration.
+	node reset factory
+	
+	node reset docker
+	
+	node reset services
+	
+	node reset --help
   
-  * factory: returns the VM to its state prior to first boot.
-  * docker: removes all docker containers, and deletes all but the ALS
-    release images; not meant for general use.
-  * services: removes all service data; not meant for general use.
+  * *factory*: returns the VM to its state prior to first boot.
+  * *docker*: removes all Docker containers and deletes all but the ALS release images; not meant for general use.
+  * *services*: removes all service data; not meant for general use.
 
+**Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
+</table> 
 
 <hr>
 
 ###Node Retire {#kato-command-ref-node-retire}
 
-**node** **retire** [**options**]
+Gracefully retires a DEA node from the cluster. New instances of the apps are started on other available DEAs before the retiring DEA is shut down.
 
-  Gracefully retires a DEA node from the cluster. New instances of the
-  apps are started on other available DEAs before the retiring DEA is shut
-  down. 
+**Syntax**
 
+	node retire [options]
+
+**Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-n** **--node** *<node-id>*           Retire the specified DEA node, local node is used if not specified
+<tr><td>-n --node <<i>node-id</i>></td><td>Retire the specified DEA node; if unspecified, the local node is used.</td></tr>
+</table>         
 
 <hr>
 
 ###Node Setup Core {#kato-command-ref-node-setup-core}
 
-**node** **setup** **core** [*<endpoint>*]
+Configure the core node of your ALS cluster.
 
-**node** **setup** **core** **--help**
+**Syntax**
 
-  Configure the core node of your ALS cluster
+	node setup core [<endpoint>]
+	
+	node setup core --help
 
+**Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
-<tr style="background-color: #C8C8C8;">
+<tr style="888888888888udee7background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-v** **--verbose**                    Show process information
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
+</table>
 
 <hr>
 
 ###Node Setup Firstuser {#kato-command-ref-node-setup-firstuser}
 
-**node** **setup** **firstuser** [**options**] *<email>* *<org>*
+First user setup.
 
-  First user setup.
+**Syntax**
 
-  *<email>*                               First user's email.
+	node setup firstuser [options] <email> <org>
 
-  *<org>*                                 First user's organization.
+- *<email>*: First user's email address.
+- *<org>*: First user's Organization.
 
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-p --password <<i>password</i>></td><td>First user's password. If your UNIX password has not been updated, then your UNIX password will be updated to this. Will be prompted for if not given.</td></tr>
+<tr><td>-u --username <<i>username</i>></td><td>First user's username. If not specified, defaults to the first user's email address.</td></tr>
+<tr><td>-s --space <<i>space</i>></td><td>First user's initial space. If not specified, user will NOT initially be assigned to a space.</td></tr>
 </table>  
-
-  **-p** **--password** *<password>*      First user's password. If your unix password has not been updated, then your unix password will be updated to this. Will be prompted for if not given.
-
-  **-u** **--username** *<username>*      First user's username. Will be the provided email if not given.
-
-  **-s** **--space** *<space>*            First user's initial space. If not specified, user will not initially be in a space.
 
 <hr>
 
 ###Node Setup Load Balancer {#kato-command-ref-node-setup-load_balancer}
 
-**node** **setup** **load_balancer** [*<IP>...*] [**--force**]
+Configure this node as a HTTP/S load balancer.
 
-**node** **setup** **load_balancer** **--help**
+**Syntax**
 
-  Configure this node as a HTTP/S load balancer
+	node setup load_balancer [<IP>...] [--force]
+	
+	node setup load_balancer --help
+
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
@@ -938,32 +991,37 @@ Pass custom parameters to a drain
 
 ###Node Setup Micro {#kato-command-ref-node-setup-micro}
 
-**node** **setup** **micro** [**options**] [*<role>...*]
+Configure this instance as a micro cloud.
 
-**node** **setup** **micro** **--help**
+**Syntax**
 
-  Configure this instance as a micro cloud
+	node setup micro [options] [<role>...]
+	
+	node setup micro --help
+
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-d --delete </td><td>Delete old configuration and re-initialize everything.</td></tr>
+<tr><td>-s --no-start</td><td>Do not auto start processes.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
 </table>  
-
-  **-d** **--delete**                     Delete old configuration and re-initialize everything
-
-  **-s** **--no-start**                   Do not auto start processes
-
-  **-v** **--verbose**                    Show process information
 
 <hr>
 
 ###Node Update {#kato-command-ref-node-update}
 
-**node** **update** [**options**]
+Update IP references in config.
 
-  Update IP references in config.
+**Syntax**
+
+	node update [options]
+
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
@@ -976,59 +1034,51 @@ Pass custom parameters to a drain
 
 ###Node Upgrade {#kato-command-ref-node-upgrade}
 
-**node** **upgrade** [**options**]
-
-**node** **upgrade** **--run-command** *<command>*
-
-  Upgrade the installation to the latest available version, preserving
-  deployed applications, config, services, and other state.
+Upgrade the installation to the latest available version, preserving deployed applications, config, services, and other state.
   
-  Will operate on current node by default; upgrade can be done for the
-  entire cluster at once (with --cluster) or for a specific node (with
-  --node).
+Will operate on current node by default; upgrade can be done for the entire cluster at once (with --cluster) or for a specific node (with --node).
+
+**Syntax**
+
+	node upgrade [options]
+	
+	node upgrade --run-command <command>
+ 
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table>  
-
-  **-j** **--json**                       Shows the status in json format.
-
-  **-n** **--node** *<node>*              Targets the provided node.
-
-  **-u** **--update-kato**                Updates kato node upgrade to the latest codebase.
-
-  **-v** **--version** *<version>*        The version to upgrade to. The latest version is used if this isn't supplied.
-
-  **--force**                             Forces an upgrade to run.
-
-  **--prepare**                           Prepare the core node for an upgrade.
-
-  **--resume**                            Resumes an upgrade process, used internally by Kato and should only be called manually when requested.
-
-  **--role-order** *<role-order>*         Comma separated list of roles defining the order that roles should be upgraded in a cluster.
-
-  **--skip-confirmation**                 Skips initial confirmation of upgrade.
-
-  **--status**                            Shows the status of upgrades on a node.
-
-  **--development**                       Run a development upgrade (internal use only).
-
-  **--cache-ip** *<cache-ip>*             The ip of the node to act as a cache for all nodes in the cluster during upgrade.
-
-  **--download-only**                     Downloads the files required to perform an upgrade without starting an upgrade, must specify --cache-ip when using this option.
-
-  **--cluster**                           Unused parameter for backwards compatibility.
-
-  **--offline**                           Upgrade offline; requires the upgrade content to be previously downloaded.
+<tr><td> -j --json</td><td>Display output in JSON.</td></tr>
+<tr><td>-n --node <<i>node</i>></td><td>Targets the provided node.</td></tr>
+<tr><td>-u --update-kato</td><td>Updates kato node upgrade to the latest codebase.</td></tr>
+<tr><td>-v --version <<i>version</i>></td><td>The version to upgrade to. If unspecified, the latest version is used.</td></tr>
+<tr><td>--force</td><td>Forces an upgrade to run.</td></tr>
+<tr><td>--prepare</td><td>Prepare the core node for an upgrade.</td></tr>
+<tr><td>--resume</td><td>Resumes an upgrade process, used internally by Kato and should only be called manually when requested.</td></tr>
+<tr><td>--role-order <<i>role-order</i>></td><td>Comma separated list of roles defining the order that roles should be upgraded in a cluster.</td></tr>
+<tr><td>--skip-confirmation</td><td>Skips initial confirmation of upgrade.</td></tr>
+<tr><td>--status</td><td>Shows the status of upgrades on a node.</td></tr>
+<tr><td>--development</td><td>Run a development upgrade (internal use only).</td></tr>
+<tr><td>--cache-ip <<i>cache-ip</i>></td><td>The IP of the node to act as a cache for all nodes in the cluster during upgrade.</td></tr>
+<tr><td>--download-only</td><td>Downloads the files required to perform an upgrade without starting an upgrade. When using this option, --cache-ip must be specified.</td></tr>
+<tr><td>--cluster</td><td>Unused parameter for backwards compatibility.</td></tr>
+<tr><td>--offline</td><td>Upgrade while offline. This option requires that the upgrade content was downloaded previously.</td></tr>
+</table>            
 
 <hr>
 
 ###Node Version {#kato-command-ref-node-version}
 
-**node** **version** [**options**] [*<node-IP>*]
+Retrieves the version number from the specified node.
+
+**Syntax**
+
+	node version [options] [<node-IP>]
+
+**Options**
 
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
@@ -1041,14 +1091,15 @@ Pass custom parameters to a drain
 
 ###OP Custom SSL Cert (#kato-command-ref-op-custom_ssl_cert}
 
-**op** **custom_ssl_cert** **install** [**options**] *<key-path>* *<cert-path>* *<domain>*
+Configuration of custom SSL certificates to be used in conjunction with router2g and deployed applications.
 
-**op** **custom_ssl_cert** **remove** *<domain>*
+**Syntax**
 
-**op** **custom_ssl_cert** **list**
-
-  Configuration of custom SSL certificates to be used in conjunction with
-  router2g and deployed applications.
+	op custom_ssl_cert install [options] <key-path> <cert-path> <domain>
+	
+	op custom_ssl_cert remove <domain>
+	
+	op custom_ssl_cert list
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1056,21 +1107,19 @@ Pass custom parameters to a drain
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--wildcard-subdomains</td><td>Wildcard SSL certificate.</td></tr>
+<tr><td>--update</td><td>Update an existing SSL certificate.</td></tr>
 </table>  
-
-  **--wildcard-subdomains**               Wildcard SSL certificate
-
-  **--update**                            Update an existing SSL certificate
 
 <hr>
 
 ###OP Defer {#kato-command-ref-op-defer}
 
-**op** **defer** (*<command>* | **--reset**) [**--run-as-root**] [**--post-start**]
+Defer a kato command to be run by *op run_deferred* when the system is rebooted and supervisor has started. Commands are saved to the */home/helion/.kato-deferred* YAML file.
 
-  Defer a kato command to be run (by 'op run_deferred') when the system is
-  rebooted and supervisord has started. Commands are saved to a
-  /home/helion/.kato-deferred YAML file.
+**Syntax**
+
+	op defer (<command> | --reset) [--run-as-root] [--post-start]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1078,21 +1127,20 @@ Pass custom parameters to a drain
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--run-as-root</td><td>Run deferred command as root</td></tr>
+<tr><td>--reset</td><td>Clear list of deferred commands</td></tr>
+<tr><td>--post-start</td><td>Run the deferred command after all processes managed by kato have started.</td></tr>
 </table> 
-
-  **--run-as-root**                       Run deferred command as root
-
-  **--reset**                             Clear list of deferred commands
-
-  **--post-start**                        Run the deferred command after all processes managed by kato have started
 
 <hr>
 
 ###OP DHCP {#kato-command-ref-op-dhcp}
 
-**op** **dhcp**
+Configure this node's networking to use DHCP.
 
-  Configure this node's networking to use DHCP
+**Syntax**
+
+	op dhcp
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1102,12 +1150,13 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-
 ###OP Generate Service Tokens {#kato-command-ref-op-generate_service_tokens}
 
-**op** **generate_service_tokens**
+Generates auth tokens for services.
 
-  Generates auth tokens for services.
+**Syntax**
+
+	op generate_service_tokens
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1121,10 +1170,11 @@ Pass custom parameters to a drain
 
 ###OP Import from YAML File {#kato-command-ref-op-import_from_yaml_file}
 
-**op** **import_from_yaml_file** [**--upgrade**] [**--new-key-file=<file>**] *<process>*
+Import the YAML configuration for a single process, deleting and replacing all prior configuration for that process.
 
-  Import the YAML configuration for a single process, deleting and
-  replacing all prior configuration for that process.
+**Syntax**
+
+	op import_from_yaml_file [--upgrade] [--new-key-file=<file>] <process>
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1132,19 +1182,18 @@ Pass custom parameters to a drain
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--new-key-file=<file></td><td>Override config with a specific YAML file.</td></tr>
+<tr><td>--upgrade</td><td>Merge the new configuration rather than deleting and replacing.</td></tr>
 </table> 
-
-  **--new-key-file=<file>**               Override config with a specific YAML file
-
-  **--upgrade**                           Merge the new configuration rather than deleting and replacing
 
 <hr>
 ###OP Import from YAML Files {#kato-command-ref-op-import_from_yaml_files}
 
-**op** **import_from_yaml_files** [**--upgrade**] [**--new-key-file=<file>**]
+Import configuration from YAML files for all processes, deleting and replacing prior configuration.
 
-  Import configuration from YAML files for all processes, deleting and
-  replacing prior configuration.
+**Syntax**
+
+	op import_from_yaml_files [--upgrade] [--new-key-file=<file>]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1152,18 +1201,18 @@ Pass custom parameters to a drain
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--new-key-file=<file></td><td>Override config with a specific YAML file.</td></tr>
+<tr><td>--upgrade</td><td>Merge the new configuration rather than deleting and replacing.</td></tr>
 </table> 
-
-  **--new-key-file=<file>**               Override config with a specific YAML file
-
-  **--upgrade**                           Merge the new configuration rather than deleting and replacing
 
 <hr>
 ### OP Max Client Upload {#kato-command-ref-op-max_client_upload}
 
-**op** **max_client_upload** *<max-size>*
+Set the maximum upload size in MB from ALS clients.
 
-  Set the maximum upload size in MB from ALS clients
+**Syntax**
+
+	op max_client_upload <max-size>
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1177,31 +1226,33 @@ Pass custom parameters to a drain
 
 ###OP Regenerate {#kato-command-ref-op-regenerate}
 
-**op** **regenerate** **all** [**--no-restart**] [**--no-prompt**]
+Regenerate the configuration for various processes and components.
 
-**op** **regenerate** **cloud-controller-bulk-api-auth** [**--no-prompt**]
+**Syntax**
 
-**op** **regenerate** **cloud-controller-client-auth** [**--no-prompt**]
-
-**op** **regenerate** **cloud-controller-db-encryption-key** [**--no-prompt**]
-
-**op** **regenerate** **cloud-controller-staging-auth** [**--no-prompt**]
-
-**op** **regenerate** **mysql** [**--no-prompt**]
-
-**op** **regenerate** **postgresql** [**--no-restart**] [**--no-prompt**]
-
-**op** **regenerate** **ssh_keys** [**--no-prompt**]
-
-**op** **regenerate** **ssl_cert** [**--no-prompt**]
-
-**op** **regenerate** **helion-rest-auth** [**--no-prompt**]
-
-**op** **regenerate** **helion-router-auth** [**--no-prompt**]
-
-**op** **regenerate** **token-signing-secret** [**--no-prompt**]
-
-  Regenerate the configuration for various processes and components
+	op regenerate all [--no-restart] [--no-prompt]
+	
+	op regenerate cloud-controller-bulk-api-auth [--no-prompt]
+	
+	op regenerate cloud-controller-client-auth [--no-prompt]
+	
+	op regenerate cloud-controller-db-encryption-key [--no-prompt]
+	
+	op regenerate cloud-controller-staging-auth [--no-prompt]
+	
+	op regenerate mysql [--no-prompt]
+	
+	op regenerate postgresql [--no-restart] [--no-prompt]
+	
+	op regenerate ssh_keys [--no-prompt]
+	
+	op regenerate ssl_cert [--no-prompt]
+	
+	op regenerate helion-rest-auth [--no-prompt]
+	
+	op regenerate helion-router-auth [--no-prompt]
+	
+	op regenerate token-signing-secret [--no-prompt]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1209,21 +1260,19 @@ Pass custom parameters to a drain
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-y --no-prompt</td><td>Regenerate all with no user prompting</td></tr>
+<tr><td>-r --no-restart</td><td>Do not restart processes after regeneration.</td></tr>
 </table> 
-
-  **-n** **--no-prompt**                  Show help information
-
-  **-r** **--no-restart**                 Do not restart processes.
 
 <hr>
 
 ### OP Remap Hosts {#kato-command-ref-op-remap_hosts}
 
-**op** **remap_hosts** *<old-hostname>* *<new-hostname>*
+Change the fully qualified basename (i.e. the default shared domain) in the URLs of hosted applications. Used when renaming the system or migrating user applications to a new system.
 
-  Change the fully qualified basename (i.e. the default shared domain) in
-  the URLs of hosted applications. Used when renaming the system or
-  migrating user applications to a new system.
+**Syntax**
+
+	op remap_hosts <old-hostname> <new-hostname>
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1237,21 +1286,31 @@ Pass custom parameters to a drain
 
 ###OP Run Deferred {#kato-command-ref-op-run_deferred}
 
-**op** **run_deferred** [**--post-start**]
+Runs deferred commands saved with 'kato defer'.
 
-  Runs deferred commands saved with 'kato defer'
+**Syntax**
 
-  **-h** **--help**                       Show help information
+	op run_deferred [--post-start]
 
-  **--post-start**                        Run the deferred command after all processes managed by kato have started
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+</table>   
+
+  --post-start                        Run the deferred command after all processes managed by kato have started
 
 <hr>
 
 ###OP Set Timezone {#kato-command-ref-op-set_timezone}
 
-**op** **set_timezone** [**--timezone** *<TZ>*]
+Change the default system timezone for the host machine.
 
-  Change the default system timezone for the host machine
+**Syntax**
+
+	op set_timezone [--timezone <TZ>]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1265,10 +1324,11 @@ Pass custom parameters to a drain
 
 ### OP Static IP {#kato-command-ref-op-static_ip}
 
-**op** **static_ip** [**--interface=<if>**] [**--ip=<ip>**] [**--netmask=<netmask>**] [**--gateway=<gateway>**] [**--dns-nameservers=<dnsname>**] [**--dns-search-domains=<dnssearch>**] [**--restart-network**] [**--no-restart**]
+Configures this node to use a static IP. Interactively prompts for inputs if they are not specified as options.
 
-  Configures this node to use a static IP. Interactively prompts for
-  inputs if they are not specified as options.
+**Syntax**
+
+	op static_ip [--interface=<if>] [--ip=<ip>] [--netmask=<netmask>] [--gateway=<gateway>] [--dns-nameservers=<dnsname>] [--dns-search-domains=<dnssearch>] [--restart-network] [--no-restart]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1277,30 +1337,31 @@ Pass custom parameters to a drain
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
-  **--interface=<if>**                    Network interface to configure (e.g. eth0)
+  --interface=<if>                    Network interface to configure (e.g. eth0)
 
-  **--ip=<ip>**                           Host IP address
+  --ip=<ip>                           Host IP address
 
-  **--netmask=<netmask>**                 Network netmask (e.g. 255.255.255.0)
+  --netmask=<netmask>                 Network netmask (e.g. 255.255.255.0)
 
-  **--gateway=<gateway>**                 Network gateway (IP address)
+  --gateway=<gateway>                 Network gateway (IP address)
 
-  **--dns-nameservers=<ips>**             Optional list of DNS names servers (e.g. 10.0.0.252, 10.0.0.253)
+  --dns-nameservers=<ips>             Optional list of DNS names servers (e.g. 10.0.0.252, 10.0.0.253)
 
-  **--dns-search-domains=<domains>**      Optional list of DNS search domains (e.g. example.com, example.org)
+  --dns-search-domains=<domains>      Optional list of DNS search domains (e.g. example.com, example.org)
 
-  **--restart-network**                   Restart networking
+  --restart-network                   Restart networking
 
-  **--no-restart**                        Do not restart processes.
+  --no-restart                        Do not restart processes.
 
 <hr>
 
 ###OP Update Hostsfile {#kato-command-ref-op-update_hostsfile}
 
-**op** **update_hostsfile**
+Updates the /etc/hosts file with the endpoint URI mapped to the cloud controller's internal IP.
 
-  Updates the /etc/hosts file with the endpoint URI mapped to the cloud
-  controller's internal IP.
+**Syntax**
+
+	op update_hostsfile
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1314,12 +1375,13 @@ Pass custom parameters to a drain
 
 ###OP Upstream Proxy {#kato-command-ref-op-upstream_proxy}
 
-**op** **upstream_proxy** **set** *<proxy-address>* [**options**]
+Configure ALS to use an external or upstream proxy server for staging and deployed apps.
 
-**op** **upstream_proxy** **delete**
+**Syntax**
 
-  Configure ALS to use an external or upstream proxy server for
-  staging and deployed apps.
+	op upstream_proxy set <proxy-address> [options]
+	
+	op upstream_proxy delete
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1329,35 +1391,39 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-u** **--user** *<user>*              Proxy username
+  -u --user *<user>*              Proxy username
 
-  **-p** **--pass** *<pass>*              Proxy password
+  -p --pass *<pass>*              Proxy password
 
-  **--no-proxy** *<no_proxy>*             Comma separated list of domain names that should bypass the proxy
+  --no-proxy *<no_proxy>*             Comma separated list of domain names that should bypass the proxy
 
 <hr>
 
 ###Patch {#kato-command-ref-patch}
 
-**patch** **status** [**options**]
+Update an ALS cluster with post-release fixes.
 
-**patch** **install** [**--node** *<nodeip>*] [**options**]
+**Syntax**
 
-**patch** **install** [**--node** *<nodeip>*] [**options**] *<patchname>*
+patch status [options]
 
-**patch** **reset** [**--node** *<nodeip>*] [**options**]
+patch install [--node *<nodeip>*] [options]
 
-**patch** **update** [--node <nodeip> | --local]
+patch install [--node *<nodeip>*] [options] *<patchname>*
 
-**patch** **mark** [**--node** *<nodeip>*] [**options**] *<patchname>*
+patch reset [--node *<nodeip>*] [options]
 
-**patch** **reinstall** [**--node** *<nodeip>*] [**options**] *<patchname>*
+patch update [--node <nodeip> | --local]
 
-**patch** **revert** [**--node** *<nodeip>*] [**options**]
+patch mark [--node *<nodeip>*] [options] *<patchname>*
 
-**patch** **revert** [**--node** *<nodeip>*] [**options**] *<patchname>*
+patch reinstall [--node *<nodeip>*] [options] *<patchname>*
 
-  Update an ALS cluster with post-release fixes.
+patch revert [--node *<nodeip>*] [options]
+
+patch revert [--node *<nodeip>*] [options] *<patchname>*
+
+  
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1367,37 +1433,39 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-a** **--all**                        Show status for all patches
+  -a --all                        Show status for all patches
 
-  **-l** **--local**                      Only affect this node (otherwise operates on entire cluster)
+  -l --local                      Only affect this node (otherwise operates on entire cluster)
 
-  **-n** **--node** *<nodeip>*            Only affect specified node
+  -n --node *<nodeip>*            Only affect specified node
 
-  **-r** **--no-restart**                 Don't restart any roles during patching
+  -r --no-restart                 Don't restart any roles during patching
 
-  **-q** **--quiet**                      Be quieter
+  -q --quiet                      Be quieter
 
-  **-j** **--json**                       Return JSON (for 'status')
+  -j --json                       Return JSON (for 'status')
 
-  **-i** **--installed**                  Manually mark patch as installed
+  -i --installed                  Manually mark patch as installed
 
-  **-d** **--notinstalled**               Manually mark patch as not installed
+  -d --notinstalled               Manually mark patch as not installed
 
-  **-m** **--manifest** *<manifest>*      Specify a custom manifest file
+  -m --manifest *<manifest>*      Specify a custom manifest file
 
-  **-u** **--force-update**               Force a new manifest to be downloaded
+  -u --force-update               Force a new manifest to be downloaded
 
-  **-s** **--single**                     Remotely install single patch (internal use only)
+  -s --single                     Remotely install single patch (internal use only)
 
-  **--to-patch-id** *<patch-id>*          Specify the id of the patch to patch the cluster up to. Patches above this ID will not be applied
+  --to-patch-id *<patch-id>*          Specify the id of the patch to patch the cluster up to. Patches above this ID will not be applied
 
 <hr>
 
 ###Process List {#kato-command-ref-process-list}
 
-**process** **list** [**options**] [*<process>...*]
+Lists configured processes and their current running status.
 
-  Lists configured processes and their current running status.
+**Syntax**
+
+process list [options] [*<process>...*]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1407,19 +1475,23 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-n** **--node** *<node-IP>*           Get status for a specific cluster node (defaults to local node)
+  -n --node *<node-IP>*           Get status for a specific cluster node (defaults to local node)
 
-  **-c** **--cluster**                    Includes process status over all cluster nodes
+  -c --cluster                    Includes process status over all cluster nodes
 
-  **-j** **--json**                       Use JSON format for displaying output
+  -j --json                       Use JSON format for displaying output
 
-  **-y** **--yaml**                       Use YAML format for displaying output
+  -y --yaml                       Use YAML format for displaying output
 
 <hr>
 
 ###Process Ready {#kato-command-ref-process-ready}
 
-**process** **ready** [**options**] *<process>*
+Check the status of a process.
+
+**Syntax**
+
+process ready [options] *<process>*
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1429,14 +1501,18 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-b** **--block** *<seconds>*          Block until ready, for max <seconds> seconds. If <seconds> is 0, then block forever
+  -b --block *<seconds>*          Block until ready, for max <seconds> seconds. If <seconds> is 0, then block forever
 
-  **-n** **--node** *<node-IP>*           Check process on a specific cluster node
+  -n --node *<node-IP>*           Check process on a specific cluster node
 <hr>
 
 ###Process Restart {#kato-command-ref-process-restart}
 
-**process** **restart** [**options**] [*<process>...*]
+Restart a process.
+
+**Syntax**
+
+process restart [options] [*<process>...*]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1446,14 +1522,18 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-n** **--node** *<node-IP>*           Restart process on a specific cluster node
+  -n --node *<node-IP>*           Restart process on a specific cluster node
 
-  **-c** **--cluster**                    Restarts process on all nodes in the cluster
+  -c --cluster                    Restarts process on all nodes in the cluster
 <hr>
 
 ###Process Start {#kato-command-ref-process-start}
 
-**process** **start** [**options**] [*<process>...*]
+Start a process.
+
+**Syntax**
+
+process start [options] [*<process>...*]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1463,30 +1543,37 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-n** **--node** *<node-IP>*           Start process on a specific cluster node
+  -n --node *<node-IP>*           Start process on a specific cluster node
 
 <hr>
 
 ###Process Stop {#kato-command-ref-process-stop}
 
-**process** **stop** [**options**] [*<process>...*]
+Stop a process.
 
-  **-h** **--help**                       Show help information
+**Syntax**
 
-  **-n** **--node** *<node-IP>*           Stop process on a specific cluster node
+process stop [options] [*<process>...*]
+
+  -h --help                       Show help information
+
+  -n --node *<node-IP>*           Stop process on a specific cluster node
 
 <hr>
 
 ###Relocate {#kato-command-ref-relocate}
 
-**relocate** [**options**] **containers** *<new_location>*
+Move containers, application droplets, or services to a new mount point or filesystem location.
 
-**relocate** [**options**] **droplets** *<new_location>*
+**Syntax**
 
-**relocate** [**options**] **services** *<new_location>*
+relocate [options] containers *<new_location>*
 
-  Move containers, application droplets, or services to a new mount point
-  or filesystem location.
+relocate [options] droplets *<new_location>*
+
+relocate [options] services *<new_location>*
+
+  
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1496,41 +1583,49 @@ Pass custom parameters to a drain
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-v** **--verbose**                    Verbose output
+  -v --verbose                    Verbose output
 
 <hr>
 
 ###Report {#kato-command-ref-report}
 
-**report**
+Generate a report that can be sent to technical support.
 
-**report** **--node** *<node-IP>*
+**Syntax**
 
-**report** **--cluster**
+report
 
-**report** **--help**
+report --node *<node-IP>*
 
-  Generate a report that can be sent to technical support.
+report --cluster
 
-  **-h** **--help**                       Show help information
+report --help
 
-  **-c** **--cluster**                    Gather reports from entire cluster into one tarball
+  
 
-  **-n** **--node** *<node-IP>*           Gather report from a specific cluster node
+  -h --help                       Show help information
+
+  -c --cluster                    Gather reports from entire cluster into one tarball
+
+  -n --node *<node-IP>*           Gather report from a specific cluster node
 
 <hr>
 
 ###Restart {#kato-command-ref-restart}
 
-**restart** [**options**] [*<role>...*]
+Restart a node or individual roles.
 
-**restart** **--help**
+**Syntax**
 
-  Restart service or individual roles.
+	restart [options] [*<role>...*]
+	
+	restart --help
 
-  **-n** **--node** *<node-IP>*           Restart a specific cluster node
+  
 
-  **-v** **--verbose**                    Show process information
+  -n --node *<node-IP>*           Restart a specific cluster node
+
+  -v --verbose                    Show process information
 
 <hr>
 
@@ -1538,15 +1633,17 @@ Pass custom parameters to a drain
 
 Enable roles on a node.
 
-**role** **add** **--help**
+**Syntax**
 
-**role** **add** [**-v**] [**--node** *<node-IP>*] [**--no-start**] *<role>...*
-
-**role** **add** [**-v**] [**--node** *<node-IP>*] [**--no-start**] **--all**
-
-**role** **add** [**-v**] [**--node** *<node-IP>*] [**--no-start**] **--all-but** *<role>...*
-
-**role** **add** [**-v**] [**--node** *<node-IP>*] **--only** *<role>...*
+	role add --help
+	
+	role add [-v] [--node <node-IP>] [--no-start] *<role>...*
+	
+	role add [-v] [--node <node-IP>*] [--no-start] --all
+	
+	role add [-v] [--node <node-IP>*] [--no-start] --all-but *<role>...*
+	
+	role add [-v] [--node <node-IP>*] --only *<role>...*
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1556,43 +1653,29 @@ Enable roles on a node.
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-a** **--all**                        Enable all available roles
+  -a --all                        Enable all available roles
 
-  **-b** **--all-but**                    Enable all available roles except these
+  -b --all-but                    Enable all available roles except these
 
-  **-o** **--only**                       Enable only these roles, while disabling others
+  -o --only                       Enable only these roles, while disabling others
 
-  **-n** **--node** *<node-IP>*           Add a role on a specific cluster node
+  -n --node *<node-IP>*           Add a role on a specific cluster node
 
-  **-s** **--no-start**                   Do not start processes
+  -s --no-start                   Do not start processes
 
-  **-v** **--verbose**                    Show process information
+  -v --verbose                    Show process information
 
 <hr>
 
 ###Role Info {#kato-command-ref-role-info}
 
-**role** **info** **--help**
+Display info on roles.
 
-**role** **info** [*<role>...*]
+**Syntax**
 
-  Display info on roles
-
-  **-h** **--help**                       Show help information
-
-<hr>
-
-###Role Remove {#kato-command-ref-role-remove}
-
-**role** **remove** **--help**
-
-**role** **remove** [**-v**] [**--node** *<node-IP>*] *<role>...*
-
-**role** **remove** [**-v**] [**--node** *<node-IP>*] **--all**
-
-**role** **remove** [**-v**] [**--node** *<node-IP>*] **--all-but** *<role>...*
-
-  Disable roles for a node
+	role info --help
+	
+	role info [<role>...]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1602,22 +1685,50 @@ Enable roles on a node.
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-a** **--all**                        Disable all available roles
+<hr>
 
-  **-b** **--all-but**                    Disable all available roles except these
+###Role Remove {#kato-command-ref-role-remove}
 
-  **-n** **--node** *<node-IP>*           Remove a role on a specific cluster node
+Disable roles on a node.
 
-  **-v** **--verbose**                    Show process information
+**Syntax**
+
+	role remove --help
+	
+	role remove [-v] [--node *<node-IP>*] *<role>...*
+	
+	role remove [-v] [--node *<node-IP>*] --all
+	
+	role remove [-v] [--node *<node-IP>*] --all-but *<role>...*
+
+  
+
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+</table> 
+
+  -a --all                        Disable all available roles
+
+  -b --all-but                    Disable all available roles except these
+
+  -n --node *<node-IP>*           Remove a role on a specific cluster node
+
+  -v --verbose                    Show process information
 
 
 <hr>
 
 ###Shell {#kato-command-ref-shell}
 
-**shell** [**--help**]
+Interactive shell for kato.
 
-  Interactive shell for kato
+**Syntax**
+
+	shell [options]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1631,25 +1742,12 @@ Enable roles on a node.
 
 ###Start {#kato-command-ref-start}
 
-**start** [**options**] [*<role>...*]
+Start nodes or individual roles.
 
-**start** **--help**
+**Syntax**
 
-  Start service or individual roles.
+start [options] [*<role>...*]
 
-  **-n** **--node** *<node-IP>*           Start a specific cluster node
-
-  **-e** **--ephemeral**                  Try not to regenerate/modify any config items
-
-  **-v** **--verbose**                    Show process information
-
-<hr>
-
-###Status {#kato-command-ref-status}
-
-**status** [**options**]
-
-  List configured roles and their current status across the cluster.
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
@@ -1658,15 +1756,37 @@ Enable roles on a node.
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 </table> 
 
-  **-a** **--all**                        Show all roles, including roles not configured on cluster
+  -n --node *<node-IP>*           Start a specific cluster node
 
-  **-j** **--json**                       Use JSON format for displaying output.
+  -e --ephemeral                  Try not to regenerate/modify any config items
 
-  **-y** **--yaml**                       Use YAML format for displaying output.
+  -v --verbose                    Show process information
+
+<hr>
+
+###Status {#kato-command-ref-status}
+
+List configured roles and their current status across the cluster.
+
+**Syntax**
+
+	status [options]
+  
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-a  --all</td><td>Show all roles, including roles not currently configured on this cluster.</td></tr>
+<tr><td>-y  --yaml</td><td>Display output as YAML</td></tr>
+<tr><td>-j  --json</td><td>Display output as JSON</td></tr>
+</table> 
 
 <hr>
 
 ###Stop {#kato-command-ref-stop}
+
 Stop service or individual roles.
 
 **Syntax**
@@ -1687,11 +1807,11 @@ Stop service or individual roles.
 
 ###Version {#kato-command-ref-version}
 
+Display the version of ALS currently in use.
+
 **Syntax**
 
 	version [-h]
-
-Display the version of ALS currently in use.
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">

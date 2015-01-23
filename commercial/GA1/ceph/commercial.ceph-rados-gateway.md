@@ -22,280 +22,255 @@ PageRefresh();
 
 ##Ceph Rados Gateway
 
-Ceph Rados Gateway offers Swift API access to objects stored in Ceph. It is object storage interface that uses Ceph Object Gateway daemon - radosgw. radosgw is FastCGI module for interacting with Ceph storage cluster. For more details, refer to http://ceph.com/docs/master/radosgw/
+Ceph Rados Gateway offers Swift API access to objects stored in Ceph. It is object storage interface that uses Ceph Object Gateway daemon - `radosgw`. `radosgw` is FastCGI module for interacting with Ceph storage cluster. For more details, refer to [http://http://ceph.com/docs/master/radosgw/](http://http://ceph.com/docs/master/radosgw/)
 
-Setting up of RADOS gateway is done on a discrete node that eventually becomes an integral part of Ceph cluster. Existing Ceph cluster can be easily extended by adding gateway node. For more details, refer http://ceph.com/docs/master/install/install-ceph-gateway/
 
-For High availability Rados Gateway, a load balancer is required. HA Proxy is an example of a load balancer that has been used successfully with rados gateway endpoints. For implementing HA Rados Gateway, second gateway node is setup similar to first one. The only thing needed is to use an unique client for second node. Following section has explicit callouts for HA.
+RADOS gateway is setup on a discrete node which eventually becomes an integral part of Ceph cluster. The existing Ceph cluster is easily extended by adding gateway node. For more details, refer [http://http://ceph.com/docs/master/install/install-ceph-gateway/](http://http://ceph.com/docs/master/install/install-ceph-gateway/)
+
+A load balance is required for a high availability (HA) Rados Gateway. HA Proxy is an example of a load balancer that is used successfully with Rados Gateway endpoints. For implementing HA Rados Gateway, second gateway node is setup similar to first one but a  unique client is required for a second node. The following section explains the HA Rados Gateway.
+
 
 ###Administration node
 
-Following steps are performed from Ceph admin node. Assumption here is that hostname for gateway node is gateway. If HA is considered, hostname of second node is gateway1.
+The following steps are performed from Ceph admin node. In the following steps it is assumed that the hostname for a gateway node is gateway, and the host name of the second node is gateway1, if HA is enabled. 
 
-* Log in to admin node as root user and ensure Ceph packages are already installed. If not, perform the following
+
+1. Log in to admin node as root user and ensure that the Ceph packages are successfully installed. If not, execute the following command:
 
 		apt-get install ceph
 
-* Change directory to /etc/ceph
+2. Change the directory 
+	
+	cd  /etc/ceph`
 
-* Create keyring for gateway and associate required permission
+3. Create a keyring for a gateway and associate required permission
 
 		ceph-authtool --create-keyring /etc/ceph/ceph.client.radosgw.keyring
 		chmod +r /etc/ceph/ceph.client.radosgw.keyring
 
-* Generate gateway username and key. Default user is gateway
+4. Generate a gateway username and key. The default user is gateway.
+
 
 		ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway --gen-key
 
-	**Note**: For HA, create additional user - gateway1 like below
+5. For HA, create additional user - gateway1 as shown below:
 
 		ceph-authtool /etc/ceph/ceph.client.radosgw.keyring -n client.radosgw.gateway1 --gen-key
 
-* Add key capabilities
+6.  Add a key capabilities
 
 		ceph-authtool -n client.radosgw.gateway --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
 
-Note: For HA, add key capabilities to gateway1 user
+7. For HA, add a key capabilities to gateway1 user.
 
-	ceph-authtool -n client.radosgw.gateway1 --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
+		ceph-authtool -n client.radosgw.gateway1 --cap osd 'allow rwx' --cap mon 'allow rwx' /etc/ceph/ceph.client.radosgw.keyring
 
-* Add key to Ceph cluster
+8. Add a key to Ceph cluster.
 
 		ceph -k /etc/ceph/ceph.client.admin.keyring auth add client.radosgw.gateway -i /etc/ceph/ceph.client.radosgw.keyring
 
-	Note: For HA, add key for gateway1 user
+9.  For HA, add a key for gateway1 user.
 
 		ceph -k /etc/ceph/ceph.client.admin.keyring auth add client.radosgw.gateway1 -i /etc/ceph/ceph.client.radosgw.keyring
 
-* Copy keyring to gateway node(s)
+10. Copy a keyring to gateway node(s).
 
 		scp /etc/ceph/ceph.client.radosgw.keyring root@gateway:/etc/ceph
 
-* Add gateway configuration by updating ceph.conf file like below.
+11.  Add a gateway configuration by updating `ceph.conf` file.
 
 		[client.admin]
-		
 		keyring = /etc/ceph/ceph.client.admin.keyring
-		
 		[client.radosgw.gateway]
-		
 		host = gateway
-		
 		keyring = /etc/ceph/ceph.client.radosgw.keyring
-		
 		rgw socket path = /var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
-		
 		log file = /var/log/ceph/client.radosgw.gateway.log
-		
 		rgw dns name = gateway
-		
 		rgw print continue = false
 
 		# Added for HA
-		
 		[client.radosgw.gateway1]
-		
 		host = gateway1
-		
 		keyring = /etc/ceph/ceph.client.radosgw.keyring
-		
 		rgw socket path = /var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
-		
 		log file = /var/log/ceph/client.radosgw.gateway.log
-		
 		rgw dns name = gateway1
-		
 		rgw print continue = false
 
-* Re-deploy Ceph configuration on all cluster nodes and client nodes
+* Re-deploy Ceph configuration on all cluster nodes and client nodes.
 
 ###Gateway Node
 
-Following steps are performed on gateway node. For HA, same steps are repeated on second node.
+Following steps are performed on gateway node. For HA implementation, similar steps are repeated on the second node.
 
-* Log in to gateway node as root user and install Ceph packages
+1. Log in to gateway node as root user and install Ceph packages.
 
 		apt-get install ceph
 
-* Install Apache2 and Fastcgi packages
+2. Install Apache2 and Fastcgi packages.
 
 		apt-get install apache2 libapache2-mod-fastcgi
 
-* Configure Apache2/FastCGI
+3. Configure Apache2 and/or FastCGI
 
-Edit `/etc/apache2/apache2.conf` to include server name of gateway node(s) 
-    ServerName gateway.ex.com
+	**Command required**
 
-**Note**: For HA, second node will have the following
+4. Edit `/etc/apache2/apache2.conf` to include server name of a gateway node(s) 
+    
+		ServerName gateway.ex.com
 
-ServerName gateway1.ex.com
+5. For HA, second node has the following
 
-* Enable URL rewrite modules for Apache2 and FastCGI
+		ServerName gateway1.ex.com
+
+6. Enable URL rewrite modules for Apache2 and FastCGI
 
 		a2enmod rewrite
 		a2enmod fastcgi
 
-* Restart Apache2 for changes to take effect
+7. Restart Apache2 for changes to take effect
 
 		/etc/init.d/apache2 restart
 
-* Enable SSL
+8. Enable SSL
 
-* Install SSL module
+	1. Install SSL module
 
-		apt-get install openssl ssl-cert
+			apt-get install openssl ssl-cert
 
-* Enable SSL
+	2. Enable SSL
 
-		a2enmod ssl
+			a2enmod ssl
 
-* Generate certificate
+	3. Generate certificate
 
-		mkdir /etc/apache2/ssl
+			mkdir /etc/apache2/ssl
+	
+			openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
 
-		openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+	4. Restart Apache2
 
-* Restart Apache2
+			/etc/init.d/apache2 restart
 
-		/etc/init.d/apache2 restart
-
-Note: SSL is currently not being considered in working environment
-
-* Edit /etc/hosts file to include fqdn of gateway node	
+9. Edit `/etc/hosts` file to include `fqdn` of a gateway node	
 
 		192.x.x.x gateway.ex.com gateway
 
-	Note: For HA, second node will have the following
+10. For HA, second node will have the following
 	
 		192.x.x.x gateway1.ex.com gateway1
 
-* Add wildcard to DNS
+11. Add wildcard to DNS
 
-* Install dnsmasq
+	1. Install dnsmasq
 
-		apt-get install dnsmasq
+			apt-get install dnsmasq
 
-* Edit /etc/dnsmasq.conf as follows
+	2. Edit /etc/dnsmasq.conf as follows
 
-		address=/.{fqdn}/{host ip}
+			address=/.{fqdn}/{host ip}
+			listen-address=127.0.0.1
 
-		listen-address=127.0.0.1
+		For example -
 
-	For example -
+			address=/.gateway.ex.com/192.x.x.x
+			listen-address=127.0.0.1
 
-		address=/.gateway.ex.com/192.x.x.x
-		
-		listen-address=127.0.0.1
-
-	**Note**: For HA, second node will have the following
+	3. For HA, second node will have the following
 
 		address=/.gateway1.ex.com/192.x.x.x
-		
 		listen-address=127.0.0.1
 
-* Restart dsnmasq
+	4. Restart dsnmasq
 
-		/etc/init.d/dnsmasq restart
+			/etc/init.d/dnsmasq restart
 
-* Ping server with subdomain to ensure radosgw can process subdomain requests
+	5. Ping server with subdomain to ensure radosgw can process subdomain requests
 
-		ping mybucket.{fqdn}
+			ping mybucket.{fqdn}
+			ping mybucket.gateway.ex.com
 
-		ping mybucket.gateway.ex.com
+		[**NOTE: This did not work in hlinux**? does this problem still exit?]
 
-		[NOTE: This did not work in hlinux]
-
-* Install Ceph Object Gateway on node(s)
+12. Install Ceph Object Gateway on node(s)
 
 		apt-get install radosgw
 
-* Install Gateway agent on node(s) 
-	* wget -q -O- 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc' | apt-key add -
+13.  Install Gateway agent on node(s) 
 
-	[Note: If key cannot be downloaded, then perform above step on Ubuntu host and copy it to gateway node]
+ 	* wget -q -O- 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc' | apt-key add -
+
+	**Note**: If key cannot be downloaded, then perform above step on Ubuntu host and copy it to gateway node.
 
 	* echo deb http://ceph.com/debian-firefly/ wheezy main | tee /etc/apt/sources.list.d/ceph.list
 
 	* apt-get install radosgw-agent
 
-* Add Ceph Object Gateway script s3gw.fcgi in /var/www directory with file contents like below
+14. Add Ceph Object Gateway script `s3gw.fcgi in /var/www` directory with file contents as shown below:
 
 		#!/bin/sh
 		exec /usr/bin/radosgw -c /etc/ceph/ceph.conf -n client.radosgw.gateway
 
-* Ensure proper file permission
+15. Ensure to provide proper file permission
 
 		chmod +x s3gw.fcgi
 
-		Note: For HA, second node will have the following
+16. For HA, second node will have the following
 
 		#!/bin/sh
-		
 		exec /usr/bin/radosgw -c /etc/ceph/ceph.conf -n client.radosgw.gateway1
 
-* Create data directory
+17. Create a data directory
 
 		mkdir -p /var/lib/ceph/radosgw/ceph-radosgw.gateway
 
-* Add gateway configuration file rgw.conf in /etc/apache2/sites-available directory with file contents like below
+18. Add gateway configuration file `rgw.conf in /etc/apache2/sites-available` directory with file contents as shown below:
 
 		FastCgiExternalServer /var/www/s3gw.fcgi -socket /var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
 		
 		<VirtualHost *:80>
 		
-		ServerName gateway.ex.com
-		
-		ServerAlias *.gateway.ex.com
-		
-		ServerAdmin gateway@hp.com
-		
-		DocumentRoot /var/www
-		
-		RewriteEngine On
-		
-		RewriteRule ^/(.*) /s3gw.fcgi?%{QUERY_STRING} [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
-		
-		<IfModule mod_fastcgi.c>
-		
-		<Directory /var/www>
-		
-		Options +ExecCGI
-		
-		AllowOverride All
-		
-		SetHandler fastcgi-script
-		
-		Order allow,deny
-		
-		Allow from all
-		
-		AuthBasicAuthoritative Off
-		
-		</Directory>
-		
-		</IfModule>
-		
-		AllowEncodedSlashes On
-		
-		ErrorLog /var/log/apache2/error.log
-		
-		CustomLog /var/log/apache2/access.log combined
-		
-		ServerSignature Off
-		
+			ServerName gateway.ex.com
+			ServerAlias *.gateway.ex.com
+			ServerAdmin gateway@hp.com
+			DocumentRoot /var/www
+			RewriteEngine On
+			RewriteRule ^/(.*) /s3gw.fcgi?%{QUERY_STRING} [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+			
+			<IfModule mod_fastcgi.c>
+				<Directory /var/www>
+					Options +ExecCGI
+					AllowOverride All
+					SetHandler fastcgi-script
+					Order allow,deny
+					Allow from all
+					AuthBasicAuthoritative Off
+				</Directory>
+			</IfModule>
+			
+			AllowEncodedSlashes On
+			ErrorLog /var/log/apache2/error.log
+			CustomLog /var/log/apache2/access.log combined
+			ServerSignature Off
+			
+			SSLEngine on
+	        SSLCertificateFile /etc/apache2/ssl/apache.crt
+	        SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+	        SetEnv SERVER_PORT_SECURE 443
 		</VirtualHost>
 
-	Note: For HA, second node will have changes for ServerName, ServerAlias and ServerAdmin accordingly.
+	**Note**: For HA, second node will have changes for `ServerName`, `ServerAlias` and `ServerAdmin` accordingly.
 
-* Enable site for rgw.conf
+19. Enable a site for `rgw.conf`
 
 		a2ensite rgw.conf
 
-* Disable default site
+20. Disable a default site
 
 		a2dissite 000-default
 
-* Restart all services and start gateway
+21. Restart all services and start a gateway
 
 	*  Apache2
 
@@ -305,7 +280,7 @@ Note: SSL is currently not being considered in working environment
 
 			/etc/init.d/radosgw start
 
-	* Radosgw in debug mode for troubleshooting
+	* Radosgw in a debug mode for troubleshooting
 
 			/usr/bin/radosgw -d -c /etc/ceph/ceph.conf --debug-rgw 20 --rgw-socket-path=/var/run/ceph/ceph.radosgw.gateway.fastcgi.sock
 
@@ -315,41 +290,34 @@ Note: SSL is currently not being considered in working environment
 
 ###Validation
 
-Once all services are up and running, make an anonymous GET request to gateway instance to receive valid response.
+Once all the services are up and running, make an anonymous GET request to gateway instance to receive valid response.
 
-* Ensure proxy is not set on gateway node(s)
+1. Ensure that the proxy is not set on a gateway node(s)
 
-* Edit /etc/environment to add the following and source the same
+	**command? if any?**
+
+2. Edit `/etc/environment` to add the following and source the same (i**s this source command to the following information?).**
 
 		export no_proxy=localhost,127.0.0.1,192.x.x.x,gateway.ex.com,gateway
 
-* GET Request curl http://gateway.ex.com
+3. GET Request 
 
-* GET Response
+		curl http://gateway.ex.com
 
-		<ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-		
-		<Owner>
-		
-		<ID>anonymous</ID>
-		
-		<DisplayName/>
-		
-		</Owner>
-		
-		<Buckets/>
-		
-		</ListAllMyBucketsResult>
+4. GET Response
 
-This response indicates that gateway instance is working as expected
+		<?xml version="1.0" encoding="UTF-8"?><ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Owner><ID>anonymous</ID><DisplayName></DisplayName></Owner><Buckets></Buckets></ListAllMyBucketsResult>
 
-* If there is an error, ensure radosgw is executed in debug mode and watch out for errors
 
-* If there is permission issue on /var/run/ceph/ceph-client.radosgw.gateway.asok, change file permission accordingly
+	This response indicates that gateway instance is working as expected.
+
+5. For any error, execute `radosgw` in debug mode and look for an error(s).
+
+6. For any permission issue on `/var/run/ceph/ceph-client.radosgw.gateway.asok`, change file permission accordingly.
 
 		chmod 777 /var/run/ceph/ceph-client.radosgw.gateway.asok
 
-* If there is error with Apache2 or FastCGI, look for debug logs in /var/log/apache2/error.log. Changing permission on /var/www directory or /var/www/s3gw.fcgi file may fix the problem
+7. For an error with Apache2 or FastCGI, look for debug logs in `/var/log/apache2/error.log`. Change the  permission on `/var/www directory` or `/var/www/s3gw.fcgi file` to rectify the problem.
 
 		chmod 777 /var/www
 
@@ -357,32 +325,50 @@ This response indicates that gateway instance is working as expected
 
 ##Gateway Pools, Users and Sub-users, Access and Secret keys
 
-**Pools**
+###Pools
 
-Ceph Object Gateways require Ceph Storage Cluster pools to store specific gateway data. If user created has permissions, gateway will create pools automatically. Executing rados lspools lists the available pools. Check if .rgw.buckets and .rgw.buckets.index pools are already created by default. If not, create these pools using ceph osd pool create command. For more details refer https://ceph.com/docs/master/radosgw/config-ref/#pools
+Ceph Object Gateways require Ceph Storage Cluster pools to store a specific gateway data.  Gateway automatically creates a pools, if a user created has a permission. 
 
-<screenshot>
+Execute the following command to lists the available pools:
 
-**User and Sub-User**
+	rados lspools
 
-User reflects user of S3 interface and Subuser reflects a user of Swift interface. Subuser is always associated to a user. For more details, refer https://ceph.com/docs/master/radosgw/admin/. Using radosgw-admin commands, user and subuser are created like below
+Verify if .`rgw.buckets` and `.rgw.buckets.index` pools are already created by default. If not, create these pools using `ceph osd pool create` command. For more details, refer  to [http://https://ceph.com/docs/master/radosgw/config-ref/#pools](http://https://ceph.com/docs/master/radosgw/config-ref/#pools)
 
-* radosgw-admin user create --subuser=s3User:swiftUser --display-name="First User " --key-type=swift --access=full
 
-<screenshot>
+<img src="media/helion-ceph-rados-lspools.png"/)>
 
-* Ensure user - s3User and subuser - s3User:swiftUser are stored in respective .users.uid and .users.swift pool
+###User and Sub-User
 
-**Access and Secret keys**
+User reflects user of S3 interface and Subuser reflects a user of Swift interface. Subuser is always associated to a user. For more details, refer https://ceph.com/docs/master/radosgw/admin/. 
 
-S3 users and swifts users need to have access and secret keys to enable end users to interact with gateway instance. Access and secret key for s3User are created like below
+* Execute the following command to create a User and a subsuer:
 
-* radosgw-admin key create --uid=s3User --key-type=s3 --gen-access-key --gen-secret
-* Ensure keys generated are free of JSON escape (\) characters
-* If the User or Application will write more than 1k Containers, then modification of the max_buckets variable is required. Also, right-sizing of Placement Groups per Pool may be required. Ensure max_buckets is set to unlimited size by setting it to 0. This is important in order to write unlimited containers into .rgw.buckets default pool during workload testing.
-**radosgw-admin user modify --uid=s3User --max-buckets=0**
+	radosgw-admin user create --subuser=s3User:swiftUser --display-name="First User " --key-type=swift --access=full
 
-**S3 Client**
+	<img src="media/helion-ceph-create-user-subuser.png"/)>
+
+
+* Ensure that the user (**s3User**) and subuser (**s3User:swiftUser**) are stored in  a respective `.users.uid` and `.users.swift` pool
+
+	<img src="media/helion-ceph-user-uid-user-swift.png"/)>
+
+
+###Access and Secret keys
+
+S3 users and swifts users must have access and secret keys to enable end users and  to interact with a gateway instance. Access and secret key for s3User are created using the following command.
+
+	radosgw-admin key create --uid=s3User --key-type=s3 --gen-access-key --gen-secret
+
+	<img src="media/helion-ceph-generate-secrete-key.png"/)>
+
+The key generated must be free of JSON escape (\) characters.
+
+If the User or Application writes more than 1k containers then modify the `max_buckets` variable. Also, right-sizing of Placement Groups per Pool is required. Ensure `max_buckets` is set to unlimited size by setting the value to 0. <!---It is important in order to write unlimited containers in `.rgw.buckets` default pool during workload testing---->.
+
+	radosgw-admin user modify --uid=s3User --max-buckets=0
+
+###S3 Client
 
 S3 client is not supported by HP for User Data, other than as a validation step during installation and configuration. Gateway instance, S3 users created can be verified using s3cmd tool on gateway node or Ceph client. For more details on s3cmd tool, refer http://s3tools.org/s3cmd.
 
@@ -420,7 +406,7 @@ S3 client is not supported by HP for User Data, other than as a validation step 
 
 		md5sum <image uploaded> <image downloaded>
 
-**Swift Client**
+###Swift Client
 
 Gateway instance, swift users can be verified using Swift client on gateway node or Ceph client. For more details on swift client, refer https://www.swiftstack.com/docs/integration/python-swiftclient.html
 
@@ -487,7 +473,7 @@ Assuming that Ceph client packages are already installed, perform following step
 
 * Exercise S3 or Swift API calls as described in previous sections
 
-**RADOS GATEWAY - KEYSTONE AUTHENTICATION**
+###RADOS Gateway - Keystone Authentication
 
 Integration of Rados Gateway with Helion OpenStack identity service sets up the Gateway to authorize and accept Keystone users automatically. Users are created in rados pools provided they have valid keystone token. For more details refer, http://ceph.com/docs/master/radosgw/keystone/
 

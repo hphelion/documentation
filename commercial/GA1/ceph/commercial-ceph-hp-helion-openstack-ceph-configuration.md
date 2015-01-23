@@ -41,6 +41,8 @@ Use the tar file to install the Ceph client bits on the Helion cluster. Once the
 
 #####Procedure to run an automated script
 
+
+
 Perform the following steps to run the automated scripts on the Helion overcloud controller nodes and the compute nodes.
 
 For more details about the Ceph storage cluster with Glance integration, refer to [http://ceph.com/docs/master/rbd/rbd-openstack/?highlight=openstack%20glance ](http://ceph.com/docs/master/rbd/rbd-openstack/?highlight=openstack%20glance )
@@ -187,7 +189,7 @@ Glance images along with Cinder and Nova are stored on Ceph RADOS Block Device (
 
 For Glance-Ceph integration, the Helion OpenStack Ceph Configuration service performs the following steps.
 
-On the Helion controller and compute nodes, once the Ceph client script is installed and run the following steps.
+Install and run the Ceph client script  on the Helion controller and compute nodes. After successfully installation the following steps are automatically performed.
 
 1. Create a new Ceph pool to store Glance images
 
@@ -315,7 +317,7 @@ If the Ceph client script is successfully installed and ran on the Helion contro
 
 ##Helion OpneStack Cinder Ceph Storage
 
-If the Ceph client script is successfully installed and ran on the Helion controller and compute nodes then the following steps are automatically performed.
+Install and run the Ceph client script on the Helion controller and compute nodes. After successfully installation the following steps are automatically performed.
 
 1.  Verify the Ceph health
 
@@ -333,7 +335,7 @@ If the Ceph client script is successfully installed and ran on the Helion contro
 		
 		ceph osd pool create helion-ceph-cinder 100
 
-4.  Execute the following command to verify a new pool creation
+3.  Execute the following command to verify a new pool creation
 
 		rados lspools
 		
@@ -348,7 +350,11 @@ If the Ceph client script is successfully installed and ran on the Helion contro
 
 ###Configure Cinder
 
-HP Helion OpenStack requires the `rbd` driver to interact with Ceph block devices. The pool name must be specified for the block device. To specify the pool name on the overcloud controller nodes edit `/etc/cinder/cinder.conf` and add the following:
+HP Helion OpenStack requires the `rbd` driver to interact with Ceph block devices. The pool name must be specified for the block device. To specify the pool name on the overcloud controller nodes edit `cinder.conf`.
+
+Perform the following steps:
+
+1. Edit `/etc/cinder/cinder.conf` and add the following:
 
 	[DEFAULT]
 	
@@ -360,21 +366,25 @@ HP Helion OpenStack requires the `rbd` driver to interact with Ceph block device
 	rbd_flatten_volume_from_snapshot=false
 	rbd_max_clone_depth=5
 	
-You can also insert a comment on the `lvm` backend in the `cinder.conf` file for your reference.
+	You can also insert a comment on the `lvm` backend in the `cinder.conf` file for your reference.
 
-	# LVM thin provision. This way we don't dd the disk
+		# LVM thin provision. This way we don't dd the disk
 	
-	#enabled_backends = lvm-1
+		#enabled_backends = lvm-1
 
 
-Now, restart the Cinder service
+2. Restart the Cinder service
 
 		service cinder-volume restart
 		service cinder-scheduler restart
 		service cinder-api restart
 
 
-Once the cinder service is restarted you can create a volume. There are two ways to create a volume:
+Once the cinder service is restarted you can create a volume. 
+
+#####Create a volume
+
+There are two ways to create a volume:
 
 * Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
 * Using CLI from the overcloud controller node running the ceph client
@@ -532,6 +542,8 @@ Perform the following steps to enable Ceph backup driver:
 
 	**Note**: For Cinder backup, the Cinder volume whose backup is required must be in a detached state. The volume should not be attached to any of the instances or virtual machines.
 
+#####Create a Cinder backup
+
 	Once the cinder service is restarted you can create a backup of a Cinder volume. There are two ways to create a backup:
 
 	* Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
@@ -567,6 +579,8 @@ Perform the following steps to enable Ceph backup driver:
 			# cinder backup-create --display-name deb7rawbackup 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.
 
 	**Detailed procedure to create a backup using CLI**
+
+The following example provides a detailed procedure to create a backup uisng CLI.
 
 	1. Login to overcloud controllermanagement and execute the following command:
 
