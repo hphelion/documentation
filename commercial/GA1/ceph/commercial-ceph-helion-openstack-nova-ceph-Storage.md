@@ -23,45 +23,65 @@ PageRefresh();
 
 ##Helion OpenStack Nova Ceph Storage
 
-On the Helion controller and compute nodes, once the Ceph client scipt is installed and run the below steps are automatically performed.
+Install and run the Ceph client script  on the Helion controller and compute node. After successfully installation the following steps are automatically performed.
 
-* Check Ceph health
+1. Verify the Ceph health
 
 		ceph health
+	
+	Output:	
+	
 		HEALTH_OK
 
-* Create a new pool for cinder volume
 
+2.  Create a new pool for Cinder volume
+
+		ceph osd pool create <cinder pool name> <pg-num>
+
+	For example:
+		
 		ceph osd pool create helion-ceph-nova 100
 
-* Check if the pool is created
+4.  Execute the following command to verify a new pool creation
 
 		rados lspools
+		
+	Output:
+		
 		rbd ls helion-ceph-nova
 
-* Create Symbolic or Soft links to the relevant files as below on Overcloud Controller nodes
+4. Create symbolic or softlinks to the relevant files on overcloud controller nodes.
 
 		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/nova/lib/python2.7/site-packages
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/nova/lib/python2.7/site-packages
 
-In order to boot all the virtual machines directly into Ceph, Nova must be configured. On each Overcloud Controller and Compute node, `edit /etc/nova/nova.conf` and add the below options in the respective section::
 
-	# For ceph integration
-	[DEFAULT]
-	libvirt_inject_password=false
-	libvirt_inject_key=false
-	libvirt_inject_partition=-2
-	The last libvirt section in the conf file
-	[libvirt]
 
-	#CEPH Related Changes
-	images_type=rbd
-	images_rbd_pool=helion-ceph-nova
-	images_rbd_ceph_conf=/etc/ceph/ceph.conf
+###Configure Nova
 
-* Restart nova services
+Configure Nova to boot all the virtual machined directly to Ceph. On each overcloud controller and compute node edit `nova.conf`.
+
+Perform the following steps:
+
+1. Edit `/etc/nova/nova.conf` and add the following options in the respective sections:
+
+
+		# For ceph integration
+		[DEFAULT]
+		libvirt_inject_password=false
+		libvirt_inject_key=false
+		libvirt_inject_partition=-2
+		The last libvirt section in the conf file
+		[libvirt]
+	
+		#CEPH Related Changes
+		images_type=rbd
+		images_rbd_pool=helion-ceph-nova
+		images_rbd_ceph_conf=/etc/ceph/ceph.conf
+
+2. Restart the Nova services
 
 	* From compute node
 
@@ -73,51 +93,119 @@ In order to boot all the virtual machines directly into Ceph, Nova must be confi
 			service nova-scheduler restart
 			service nova-conductor restart
 
-	* From over cloud controller node0, running the below commands.
-
-			"source /root/stackrc" file
-
+	
 <list of screenshot need to be added. page number 87-91>
 
 ###Attaching the Cinder volume to the Nova instance
 
-You can attach the cinder volume to the nova instance in two ways:
+There are two ways to attach a cinder volume to a nova instance.
 
-* Horizon
-* Command LIne interfae
-
-
-1. In the Horizon dashboard, click the **Project** Tab.
-The tab displays with options in the left panel.
-
-2. Click **Compute** and then select Volume to open Volume page.
-3. Click More Action tab and select Edit Attachments. Manage Volume Attachments page displays.
-4. Click Attach to Instance drop-down list and select the instance. 
-5. In the Device Name box, enter the name of the name for the selected instance.
-6. Click Attach Volume to attach the cinder volume to the nova instance, else click Cancel.
+* Using the Horizon UI Dashboard
+* Using Command Line Interface (CLI)
 
 
-For Command Line Interface:
+**Using the Horizon UI Dashboard**
+
+To attach a cinder volume to a nova instance, do the following:
+
+1. In the Horizon dashboard, click the **Project** Tab. The tab displays with options in the left panel.
+
+2. Click **Compute** and then select **Volume** to open Volume page.
+3. Click **More Action** tab and select** Edit Attachments**. Manage Volume Attachments page displays.
+4. Click **Attach** to **Instance** drop-down list and select the instance. 
+5. In the **Device Name** box, enter the name of the name for the selected instance.
+6. Click **Attach Volume** to attach the cinder volume to the nova instance, else click Cancel.
+
+
+**Listing instance from Horizon**:
+
+1. In the Horizon dashboard, click the **Project** Tab. The tab displays with options in the left panel.
+
+2. Click **Compute** and then select **Instance** to open Volume page. Instance page is displayed. You can view the all the instances and the console log in Horizon UI.
+
+
+
+**Using Command Line Interface (CLI)**
+
+To attach a cinder volume to a nova instance, do the following:
 
 1. Login to seed
-2. Login to Overcloud Horizon.
-3. Execute the following command:
 
-		cinder list
+		ssh <seed IP address>
+
+
+2. Login to Overcloud Horizon.
+
+		ssh heat-admin@<overcloud IP address> 
+
+3. Execute the following command from overcloud controller node0:
+
+		source /root/stackrc 
+
+4. List the existing VM
+
 		nova list
+
+5. List the existing glance image
+
+		glance index
+
+
+6. List nova list
+
+		rados lapools
+
+7. List the ceph resource
+
+		ceoh df
+8. **What does the following command do?**
+
+		ceph -w
+
+9. Execute the following command to create an instance with RDB backend
+
+**command required?**
+
+
+10. List all nova instances
+		
+		nova list
+
+
+11. **What does the following command do?**
+
+		ceph -w
+
+
+12. Logging in the instance from KVM host 
+
+**commands required?**
+
 
 	It displays the instances where the cinder volume is attached.
 
-screen shot
-4. To view the details of the attached volume, execute the following command
+#####Verify Cinder volume attachment to a nova instance
 
-		# cinder show <ID>
+Now the Cinder volume is attached to a nova instance. Perform the following steps to verify the attachment. 
 
-For example:
- 
-	# cinder show 580d3e95-970f-4a9c-92ea-284799dcbc82
+1. Execute the following command to view all the volumes
 
-Output:
+		# cinder list
+
+
+2. Execute the following command to view the Nova instance
+
+		nova list 
+
+3. To view the details of the attached volume, execute the following command
+
+		# cinder show  <volume ID>
+
+	For example:
+
+		cinder show 580d3e95-970f-4a9c-92ea-284799dcbc82
+
+	Output:
 
 		+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 		| Property 							   | Value                           															   									 |
@@ -144,15 +232,15 @@ Output:
 
 
 
-5. to view the details of the nova list, execute the following commands:
+5. To view the details of the nova instance, execute the following commands:
 
-		nova show <ID> 
+		nova show < nova instance ID> 
 
-For example:
+	For example:
  
-	# cinder show 580d3e95-970f-4a9c-92ea-284799dcbc82
+	# nova show d6c98de0-b65e-4e43-bd5e-04c81ad26cd1
 
-Output:
+	Output:
 
 
 		+--------------------------------------+--------------------------------------------------------------------------------+
@@ -186,6 +274,7 @@ Output:
 		+--------------------------------------+--------------------------------------------------------------------------------+
 
 
+#####Verify 
 
 From VM, cross checking if the cinder that uses RBD backend is seen.
 
