@@ -121,9 +121,7 @@ The baremetal.csv file will appear as shown below. Note the last 2 columns. With
 		00:5d:ff:f4:80:a2,root,undefined,192.168.124.3,12,16384,512,vm,all
 		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
 		00:65:cc:54:b1:0f,root,undefined,192.168.124.2,12,16384,512,vm,all
-
-	
-- In order to ensure that the overcloud control plane nodes land on different KVM hosts to maintain HA, modify the baremetal.csv file and update the last column as shown below such that the overcloud controller nodes represented by the 2nd, 3rd and 4th row land on different KVM hosts.
+In order to ensure that the overcloud control plane nodes land on different KVM hosts to maintain HA, modify the baremetal.csv file and update the last column as shown below such that the overcloud controller nodes represented by the 2nd, 3rd and 4th row land on different KVM hosts.
 After modification, the baremetal.csv will look like the one given below. 
 
 
