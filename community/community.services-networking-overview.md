@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/object/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Networking Service Overview #
+# HP Helion OpenStack&#174;  Community Networking Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
@@ -52,7 +52,7 @@ You can use a low-level, raw REST API access to Networking. See the [OpenStack C
 You can use any of several command-line interface software to access Networking. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
+ 
 <!---
 
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}

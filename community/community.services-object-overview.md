@@ -20,59 +20,58 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/community/services/networking/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/orchestration/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion OpenStack&#174; Object Storage Service Overview #
+# HP Helion OpenStack&#174; Object Operations Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-HP Helion OpenStack&#174; introduces integral, built-in support for [Scale-out Swift](/helion/community/services/object/overview/scale-out-swift/) to the cloud.
-The HP Helion OpenStack&#174; cloud deployment includes automatic creation of a Swift cluster and starter nodes.
+Based on OpenStack Swift, HP Helion OpenStack Object Operations is a redundant, scalable, and dynamic storage service. The core storage system is designed to provide a safe, secure, network accessible way to store data. You can store an unlimited number of files and each file can be as large as 5GB. With segmented objects, you can upload and store objects of almost unlimited size.
 
-Based on OpenStack&reg; Swift, the HP Helion OpenStack object storage service provides a highly available, resilient, and scalable storage pool for unstructured data.  
+Object Operations allows you to store and retrieve files and content through a simple RESTful API interface.
 
-##Architecture Overview
-At its core, Swift is built from a set of software services and data constructs hosted on a cluster of servers. 
+A cloud storage container provides a way for you to organize your objects. The object can be any arbitrary data, including a document, image, video, backup file or anything else required by your application. 
 
-<!---
-A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. --->
+Objects have a size limit of 5 gigabytes. However, objects larger than 5GB can be segmented and then concatenated together so that you can upload 5GB segments and download a single concatenated object of any size. You can work with the segments and manifests directly with API requests.
+
+## Working with the Object Operations Service
+
+To [perform tasks using the Object Operations service](#howto), you can use the dashboard, API or CLI.
+
+### Using the dashboards {#UI}
+
+You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with the Object Operations service.
+
+###Using the API to access Object Operations### {#API}
+
+You can use a low-level, raw REST API access to HP Object Operations service. See the [OpenStack Object Storage API v2.0 Reference](http://developer.openstack.org/api-ref-objectstorage-v1.html).
+
+###Using the CLI### {#cli}
+
+You can use any of several command-line interface software to access HP Object Operations service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html).
+
+For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
+
+## How To's with the HP Helion OpenStack Object Operations Service ## {#howto}
+
+<!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
+
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-objectstorage-v1.html).
+
+Depending upon your user type, you can perform the following tasks.
 
 
-A Swift cluster is Software Defined Storage (SDS) architecture, layered on top of industry standard servers, using native storage devices which are typically disk drives. 
+### Working with containers ##
 
-**Note**: It is not recommended to run Swift on top of other systems (hardware or software) that hide the failure domains or native storage devices like using RAID group on top of drives.
+The Object Operations service allows users to create a storage container, move files to and from that storage container, and delete containers that are no longer needed.
 
-The services in the Swift cluster are either ***access*** services or ***storage*** services.
+- **Creating, modifying and deleting containers** -- Create, configure, and delete storage containers as needed.
+- **Uploading files to a container** -- Upload files from a local system to your storage container.
+- **Downloading files from a container** -- Download files from your container to a local system.
+- **Deleting files from a container** -- Delete any of the files in your storage container.
 
-- The *access* services group is made up of the Swift Proxy Servers, which run Swift-Proxy, Account and Container Services, HTTP/HTTPS load balancers, and OpenStack Keystone authentication service.
-- The *storage* services group is composed of Swift Object Servers and various background services such as replicators.  
- 
-Each service group can be scaled ***independently*** to meet workload and redundancy requirements. The storage service can be scaled up as necessary ([scale-out Swift](/helion/community/services/object/overview/scale-out-swift/)). It can also be horizontally scalable to handle an increased number of simultaneous connections as well as large number of objects. 
+## For more information ##
 
-##Expanding the Swift Deployment
+For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
-Note that the initial installation of Helion OpenStack cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.
-
-For more information and in-depth diagrams, see [About Scale-Out Swift](/helion/community/services/object/overview/scale-out-swift/).
-
-1. Deploy Starter Swift<br>*(completed as part of the HP Helion OpenStack cloud deployment)*
-3. Scale up or expand 
-	- [Deploy New Swift Object Storage](/helion/community/services/swift/deployment-scale-out/)
-	-  [Add New Storage Servers](/helion/community/services/swift/provision-nodes)
-	-  [Extend a Swift Cluster](/helion/community/services/object/swift/expand-cluster/)
-	-  [Add a New Scale-out Object Node](/helion/community/services/swift/deployment/add-disk-object-node/)
-	-  [Add a New Scale-out Proxy Node](/helion/community/services/swift/deployment/add-proxy-node/)
-	-  [Add a Disk to a Scale-out Object Ring](/helion/community/services/swift/deployment/add-disk-scale-out/)
-	-  [Add a Disk to an Account and Container Ring](/helion/community/services/swift/deployment/add-disk-account-container/)
-	-  [Add a Disk to the Starter Object Ring](/helion/community/services/swift/deployment/add-disk-starter/)
-5. Shrink or scale down
-	- [Remove a disk from an Object Node](/helion/community/services/swift/deployment/remove-existing-disk/)
-	- [Remove a Proxy Node](/helion/community/services/swift/deployment/remove-proxy-node/)
-	- [Removing a scale-out Object Storage Node](/helion/community/services/swift/deployment/remove-scale-out-object-node/)
-6. Monitor
-	- [Monitor Swift Cluster](/helion/community/services/object/swift/Monitor-cluster/)
-	- [Disk usage](/helion/community/services/object/swift/Monitor-disk/)
-	- [Replication status](/helion/community/services/object/swift/replica-status/)
-	- [Service health](/helion/community/services/object/swift/health-check/)
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+ <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
