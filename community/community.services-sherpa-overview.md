@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Compute Sherpa Overview"
-permalink: /helion/openstack/services/sherpa/overview/
-product: commercial.ga
+permalink: /helion/community/services/sherpa/overview/
+product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -21,9 +21,9 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Sherpa Service Overview #
+# HP Helion OpenStack&#174; Community Sherpa Service Overview #
 
-The HP Helion OpenStack Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment. 
+The HP Helion OpenStack Community Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment. 
 
 You can make purchases using a self-service account on the public web server. Once a purchase is made, you can use the Sherpa UI and back-end service to download the content from the web catalog using your self-service account. The content is then published into the various cloud repositories within HP Helion so that the end users can deploy virtual machines and other content from within the cloud.  
 
@@ -52,7 +52,7 @@ To perform tasks using the Sherpa service, you can use the Horizon dashboards.
 ### Using the dashboards<a name="UI"></a>
 
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/undercloud/admin/updates-and-extension/) to work with the Sherpa service.
+You can use the HP Helion OpenStack Dashboard to work with the Sherpa service.
 
 <!---###Using the API ### {#API}
  
