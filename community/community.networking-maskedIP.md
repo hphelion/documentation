@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Tracking masked IP addresses"
 permalink: /helion/community/maskedIP/
-product: commercial.ga
+product: community
 
 ---
 <!--UNDER REVISION-->

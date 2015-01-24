@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Volume Operations Service Overview"
 permalink: /helion/community/services/volume/overview/
-product: commercial.ga
+product: community
 
 ---
 <!--PUBLISHED-->
