@@ -4,7 +4,10 @@ title: "Management console: Networks screen"
 permalink: /greg/test1
 product: mc-compute
 product-version: HP Helion 1.1
-role: hardware-engineer 
+role1: Hardware Engineer
+role2: ISV Developer
+role3: Network Administrator
+role4: NOC Engineer
 ---
 <!--UNDER REVISION-->
 # Horizon console: Routers screen
