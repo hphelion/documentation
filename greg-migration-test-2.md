@@ -3,7 +3,7 @@ layout: default
 title: "Management console: Networks screen"
 permalink: /greg/test2
 product: mc-compute
-published: false
+published: true
 product-version: HP Helion 1.1
 role: hardware-engineer 
 ---
