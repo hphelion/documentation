@@ -4,8 +4,8 @@ title: "Management console: Networks screen"
 permalink: /greg/test2
 product: mc-compute
 published: true
-product-version: HP Helion 1.1
-role: hardware-engineer 
+product-version1: HP Helion 1.1
+role1: Hardware Engineer  
 ---
 <!--UNDER REVISION-->
 # Horizon console: Routers screen
