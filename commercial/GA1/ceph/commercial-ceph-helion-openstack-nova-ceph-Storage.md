@@ -238,7 +238,7 @@ Now the Cinder volume is attached to a nova instance. Perform the following step
 
 	For example:
  
-	# nova show d6c98de0-b65e-4e43-bd5e-04c81ad26cd1
+		# nova show d6c98de0-b65e-4e43-bd5e-04c81ad26cd1
 
 	Output:
 
