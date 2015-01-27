@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Tracking masked IP addresses"
-permalink: /helion/openstack/maskedIP/
-product: commercial.ga
+permalink: /helion/community/maskedIP/
+product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -17,7 +17,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-# HP Helion OpenStack&#174;: Tracking masked IP addresses when using network address translation (NAT)
+# HP Helion OpenStack&#174; Community: Tracking masked IP addresses when using network address translation (NAT)
 
 Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion OpenStack cloud.  
 
@@ -27,7 +27,7 @@ Once you have detected such malicious activity, and if you can determine the use
 
 ## Method 1
 
-1. Log in to the HP Helion OpenStack Commercial dashboard as cloud admin.
+1. Log in to the HP Helion OpenStack Community dashboard as cloud admin.
 
 2. Select the project you want to work with.
 
