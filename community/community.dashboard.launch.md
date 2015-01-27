@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/managing/volumes/">&#9664; PREV</a> | <a href="/helion/openstack/dashboard/users/">&#9650; UP</a> | <a href="/helion/openstack/managing/routers/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/managing/volumes/">&#9664; PREV</a> | <a href="/helion/community/dashboard/users/">&#9650; UP</a> | <a href="/helion/community/managing/routers/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&reg; Community: Logging into the Dashboards

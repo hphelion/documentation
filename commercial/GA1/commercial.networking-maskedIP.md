@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Documentation Home"
+title: "HP Helion OpenStack&#174; Tracking masked IP addresses"
 permalink: /helion/openstack/maskedIP/
 product: commercial.ga
 
@@ -48,7 +48,7 @@ Once you have detected such malicious activity, and if you can determine the use
 
         neutron floatingip-list | grep "16.103.148.249" 
 
-which produces output similar to the following:
+	which produces output similar to the following:
 
         | dc56c9ce-b126-4553-85f4-9a92fd7e8c43 | 192.168.4.4      | 16.103.148.249      | 262e4206-9713-4088-a6e9-928de30afa82 |
 
