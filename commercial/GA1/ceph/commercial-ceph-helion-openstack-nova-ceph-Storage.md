@@ -274,7 +274,7 @@ Now the Cinder volume is attached to a nova instance. Perform the following step
 		+--------------------------------------+--------------------------------------------------------------------------------+
 
 
-#####Verify Cinder to check the usage of RBD backend
+#####Verify Cinder to check the usage of RBD backend (this section needs to be re-written)
 
 From VM, verify if the cinder which uses RBD backend is seen.
 
@@ -297,3 +297,5 @@ Mounting vdc
 vdc volume size after copying cirros img 1
 
 <screen shot>
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

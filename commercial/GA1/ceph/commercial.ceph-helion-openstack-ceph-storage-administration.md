@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/ceph-helion-openstack-ceph-storage-administration servicesadministration/
+permalink: /helion/openstack/ceph-helion-openstack-ceph-storage-administration-services/
 product: commercial
 
 ---
@@ -592,50 +592,7 @@ The following commands shows the status of the monitor.
 		ceph mon dump
 
 
-#####Choosing the number of placement groups
 
-If you have more than 50 OSDs, we recommend approximately 50-100 placement groups per OSD to balance out resource usage, data durability and distribution. For a single pool of objects, you can use the following formula to get a baseline:
-
- (OSDs * 100)
-
-Total PGs = ------------
-
-pool size
-
-Where pool size is either the number of replicas for replicated pools or the K+M sum for erasure coded pools (as returned by ceph osd erasure-code-profile get).
-
-The result should be rounded up to the nearest power of two. Rounding up is optional, but recommended for CRUSH to evenly balance the number of objects among placement groups.
-
-As an example, for a cluster with 200 OSDs and a pool size of 3 replicas, you would estimate your number of PGs as follows:
-
-(200 * 100)
-
------------ = 6667. Nearest power of 2: 8192
-
-3
-**[is this '3' supposed to be on its own?]**
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
-
-
-##REFERENCES
-**[are these numbers cross referenced to source? or are they just numbered?]**
-
-1. With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. To learn more visit: hp.com/servers/sl4540.
-
-2. HP Integrated Lights-Out simplifies server setup, promotes remote administration, engages health monitoring, and maintains power and thermal control. For more information see: hp.com/go/ilo.
-
-3. HP Server Ceph on SL4540 Technical White Paper: http://h20195.www2.hp.com/V2/GetDocument.aspx?docname=4AA5-2799ENW&cc=us&lc=en
-
-4. Ceph has good documentation available at its website. http://ceph.com/docs/master/
-
-5. Introduction to OpenStack Block Storage using Cinder and Nova
-
-6. HP ProLiant DL360p Generation 8 (Gen8) QuickSpec Sheet
-
-7. HP ProLiant DL380p Generation8 (Gen8) QuickSpec Sheet
-
-8. HP Proliant 3XSL4540 Gen8 1G Mezz HBA Server
-
-9. http://h17007.www1.hp.com/us/en/networking/products/switches/HP_5900_Switch_Series/index.aspx#.VAeNxGXn9Co 
-10. http://duplicity.nongnu.org/

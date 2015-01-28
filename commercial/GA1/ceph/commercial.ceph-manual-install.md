@@ -18,9 +18,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
-
-
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
 ##Ceph Manual Installation
@@ -615,26 +613,14 @@ Following are the relevant tuning parameters:
 
 ##Setting up additional Monitor nodes
 
-<<**TBD**>>
+<<**TBD**The content is not available>>
 
-##CEPHX Authentication
-
-Ceph authentication ensure the access control of the Ceph storage cluster, that is, Ceph client users do not have access to each other storage. 
-
-By default Cephx authentication is enabled. The following flags are present in the Ceph configuration file by default.
-
-* auth cluster required = cephx
-* auth service required = cephx
-* auth client required = cephx
-
-
-
-###Users, Keyrings, Pool permissions
-
-Each user has a keyring file on Ceph hosts. But keyring file does not contain the Ceph references to verify user authorizations; instead the MON server have their own internal keyrings. When a user is added to a Ceph installation, create a keyring file on the Ceph hosts in `/etc/ceph` and integrate a key into a cluster using `ceph auth add` command.
 
 
 ## Next Steps
 
 [Integration of ]( /helion/openstack/ceph-integration-to-Helion-nodes/).
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

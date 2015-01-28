@@ -41,7 +41,7 @@ The following steps are performed from Ceph admin node. In the following steps i
 
 2. Change the directory 
 	
-	cd  /etc/ceph`
+		cd  /etc/ceph
 
 3. Create a keyring for a gateway and associate required permission
 
@@ -635,3 +635,6 @@ Output:
 		s3User.buckets
 		627770d0c17c4423b8c27a2607e60798
 		627770d0c17c4423b8c27a2607e60798.buckets
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

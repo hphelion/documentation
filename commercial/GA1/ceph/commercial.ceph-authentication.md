@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/ceph-integration-to-Helion-nodes/
+permalink: /helion/openstack/ceph-authentications/
 product: commercial
 
 ---
@@ -22,8 +22,21 @@ PageRefresh();
 --->
 
 
+##CEPHX Authentication
 
-####Integration of Cephx authentication to Helion nodes
+Ceph authentication ensure the access control of the Ceph storage cluster, that is, Ceph client users do not have access to each other storage. 
+
+By default Cephx authentication is enabled. The following flags are present in the Ceph configuration file by default.
+
+* auth cluster required = cephx
+* auth service required = cephx
+* auth client required = cephx
+
+
+
+###Users, Keyrings, Pool permissions
+
+Each user has a keyring file on Ceph hosts. But keyring file does not contain the Ceph references to verify user authorizations; instead the MON server have their own internal keyrings. When a user is added to a Ceph installation, create a keyring file on the Ceph hosts in `/etc/ceph` and integrate a key into a cluster using `ceph auth add` command.
 
 To integrate Cephx authentication into Helion nodes, perform following steps on Ceph admin node as shown below:
 
@@ -160,11 +173,14 @@ Perform following steps on HP Helion Openstack nodes -
 
 		ceph health
 
+
+
+
 ## Next Steps
 
-[Ceph Manual Installation]( /helion/openstack/ceph-manual-install/).
+<>
 
-
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
 

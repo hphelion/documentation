@@ -95,164 +95,34 @@ Ceph cluster includes one admin node, one monitor node (MON) and 3 object storag
 <img src="media/logical-referrence-architecture-for-ceph-cluster.png"/)>
 
 
+##Integration of Ceph Block Storage with HP Helion OpenStack
 
-## Pre-requisite
-
-###Hardware Recommendation for Ceph Cluster 
-
-####Virtual Environment
-
-Ceph can run on commodity hardware, that makes building and maintaining petabyte-scale data clusters economically viable. When planning for the Performance, Capacity and Resiliency of the Ceph Cluster, review sizing with HP to make sure the Solution will fit the SLA. Ceph can run on HP SL230s, HP SL4540s and HP DL580s- sizing is completely driven the SLAs. Small Proof of Concept clusters and development clusters can run successfully on Virtual Machines with minimal system requirements.  For example, 1VM running Admin, 1 VM running radosgw, 3 VMs running Ceph OSD, 1VM running Monitor.
- 
-
-<**need** to fix the table as per the document>
-
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th rowspa="4"> Process</th>
-<th>Criteria </th>
-	<th>Minimum Recommended </th>
-</tr>
-	<tr>
-<td>ceph-osd</td>
-<td>Processor</td>
-<td>4vCPU</td>
-</tr>
-<tr>
-<td>ceph-mon</td>
-<td>RAM</td>
-<td>4G </td>
-</tr>
-<tr>
-<td>ceph rados gateway</td>
-<td>Disk Space</td>
-<td>100 GB</td>
-</tr>
-<tr>
-<td>ceph admin</td>
-<td>Network</td>
-<td>2x 1GB Ethernet vNICs</td>
-</tr>
-  </table>
-
-##Production Environment
-
-The hardware recommendation for the production environment are follows:
-
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th> Process</th>
-	<th>Criteria </th>
-	<th>Minimum Recommended Server Quantity</th>
-</tr>
-	<tr>
-<td>Ceph-OSD</td>
-<td>3 x 15 HP ProLiant SL4540 Gen8 Servers</td>
-<td>5</td>
-</tr>
-<tr>
-<td>Ceph-Mon</td>
-<td>HP ProLiant DL360p Gen8 Servers</td>
-<td>3 </td>
-</tr>
-<tr>
-<td>Ceph-Admin</td>
-<td>HP ProLiant DL360p Gen8 Servers</td>
-<td>1&#42;</td>
-</tr>
-<tr>
-<td>Ceph-RADOSGW</td>
-<td>HP ProLiant DL360p Gen8 Servers</td>
-<td>1&#42;</td>
-</tr>
-<tr>
-<td>**need infor**</td>
-<td>10 GbE Networking running on HP 5900AF switches</td>
-<td>1</td>
-</tr>
-<tr>
-<td>**need info**</td>
-<td>1 GbE Networking running on an HP 2920 switch</td>
-<td>1</td>
-</tr>
-</table>
-
-**Note**: If the resiliency SLA for the User Archive or Backup use cases cannot tolerate downtime of the Ceph RADOS Gateway, then consider adding additional servers with an external Load Balancer.
+The following sections provides the details on the integration of Ceph Block Storage with HP Helion OpenStack:
 
 
-The following table shows an example of detailed deployment scenario:
-
- <table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th> HP Helion Openstack</th>
-	<th>CEPH Monitor/GateWays </th>
-	<th>OSDs (6x15 SL4540)</th>
-</tr>
-	<tr>
-<td>12 ProLiant DL360p Gen8 with 12 cores each</td>
-<td>4x HP ProLiant DL360p Gen8 with 12 cores</td>
-<td>6 x HP 3xSL4540 Gen8 with 16 cores each</td>
-</tr>
-<tr>
-<td>2 x E5-2667 (Intel Xeon 2.9GHz 15M Cache)</td>
-<td>2 x E5-2667 (Intel Xeon 2.9GHz 15M Cache)</td>
-<td>2 x E5-2470 (Intel Xeon 2.3GHz 20M Cache) </td>
-</tr>
-<tr>
-<td>64 GB - 8 x HP 8GB 1Rx4 PC3-12800R</td>
-<td>64 GB - 8 x HP 8GB 1Rx4 PC3-12800R</td>
-<td>96 GB - 12 x HP 8GB 2Rx4 PC3L-10600R</td>
-</tr>
-<tr>
-<td>3.6 TB - 4 x HP 900GB 6G SAS 10K 2.5in SC ENT HDD</td>
-<td>1 TB - 2 x HP 500GB 6G SAS 10K 2.5in SC ENT HDD</td>
-<td>45 TB - 15 x HP 3TB 6G SAS 7.2K 3.5in SC MDL HDD</td>
-</tr>
-<tr>
-<td>1 x HP 512MB FBWC for P-Series Smart Array</td>
-<td>1 x HP 512MB FBWC for P-Series Smart Array</td>
-<td>1TB - 2 x HP 500GB 6G SATA 7.2K 2.5in SC MDL HDD</td>
-</tr>
-<tr>
-<td>2 x HP dual port 10GbE</td>
-<td>2 x HP dual port 10GbE</td>
-<td>2 x HP 2GB P-seris Smart Array FBWC</td>
-<tr><td>
-<td></td>
-<td>2 x HP Smart Array P420i Mez Ctrllr FIO Kit</td>
-</tr>
-<tr><td>
-<td></td>
-<td>1 x HP 10G IO Module (2x1GbE 2x10GbE)</td>
-</tr>
-<table>
+1. [HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution: Prerequisites]( /helion/openstack/ceph/prerequisite/)
+2. [HP  Helion OpenStack Installation](/helion/openstack/install/overview/)
+3. [Ceph Manual Installation](/helion/openstack/ceph-manual-install/)
+4. [CEPHX Authentication]( /helion/openstack/ceph-authentications/)
+5. [Integration of Cephx authentication to Helion nodes]( /helion/openstack/ceph-integration-to-Helion-nodes/)
+6. [HP Helion OpenStack Ceph Configuration]( /helion/openstack/ceph-hp-helion-openstack-ceph-configuration/)
+7. [Helion OpenStack Glance-Ceph Interoperability]( /helion/openstack/ceph-hp-helion-openstack-glance-ceph-interoperability/)
+8. [Helion OpenStack Cinder Ceph Storage]( /helion/openstack/ceph-hp-helion-openstack-cinder-ceph-storage)
+9. [Helion OpenStack Nova Ceph Storage]( /helion/openstack/ceph-helion-openstack-nova-ceph-storage/)
+10. [Ceph Rados Gateway]( /helion/openstack/ceph-rados-gateway/)
+11. [Ceph RADOS Gateway- Keystone Authentication](/helion/openstack/ceph-rados-gateway-keystone-authentication/)
+12. [Ceph RADOS Gateway - DMZ HAProxy](/helion/openstack/ceph-rados-gateway-dmz-ha-proxy/)
+12. [HP Helion OpenStack Ceph Storage Administration services](/helion/openstack/ceph-helion-openstack-ceph-storage-administration-services/)
+13. [Ceph Configuration Recovery and Backup Procedure HP Helion Nodes](/helion/openstack/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/)
+14. [Related Topics](/helion/openstack/ceph-related-topics/)
 
 
-For more example on Ceph Production Cluster, refer to [http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf](http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf)
 
 
-The following diagram depicts an example for the deployment of Helion OpenStack with Ceph Cluster 
 
 
-<img src="media/helion-openstack-ceph-cluster-deployment-example"/)>
 
 
-##Download and Access to the Solution Files and Documents
-
-[CODN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software available for purchase and download of HP OpenStack Enterprise Customers.
-
-First register yourself to the CODN portal and then log in to download the required Helion OpenStack Ceph Storage Solution packages.
-
-Please contact HP sales team if there is any issue with the CODN access permission and login details. 
-
-Once permission has been granted, log in with the supplied credentials. Select the Category Workloads, and the Sub-Category Storage to find the HP Helion OpenStack Ceph Storage Solution.
-
-Each Ceph related files has the following description:
-
-* Helion OpenStack Commercial integration with InkTank Ceph for Glance, Nova, and Cinder storage.
 
  
 ## Next Steps
@@ -260,163 +130,4 @@ Each Ceph related files has the following description:
 [HP  Helion OpenStack Installation](/helion/openstack/install/overview/).
  
 
-<!---
-
-1. Installation Prerequisite
-
-2. Installation and Configuration for KVM Hypervisor
-
-3. Seed Installation
-
-5. UnderCloud and OverCloud installation
-
-6. Post Installation
- ---->
-
-<!----
-
-###Hardware Requirement
-
-Hardware used for the Helion OpenStack installation:
-
-####Control and Gateway Services
-
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th> Server Model</th>
-<th>CPUs </th>
-	<th>Memory</th>
-<th>OS Boot Volume</th>
-</tr>
-	<tr>
-<td>C7000 BL460C</td>
-<td>12</td>
-<td>96 GB</td>
-<td>250</td>
-</tr>
-<tr>
-<td>SL230</td>
-<td>12</td>
-<td>96 GB </td>
-<td>300</td>
-</tr>
-</table>
-
-
-####Suitable for Storage Services
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th> Server Model</th>
-<th>CPUs </th>
-	<th>Memory</th>
-<th>OS Boot Volume</th>
-<th>Storage Volume </th>
-</tr>
-<tr>
-<td>c3x15 SL4540</td>
-<td>12</td>
-<td>96 GB</td>
-<td>300</td>
-<td>13 7.2k rpm, 2 SSD</td>
-</tr>
-<tr>
-<td>2x25 SL4540</td>
-<td>12</td>
-<td>96 GB</td>
-<td>300</td>
-<td>21 7.2k rpm, 4 SSD</td>
-</tr>
-<tr>
-<td>1x60 SL4540</td>
-<td>12</td>
-<td>96 GB</td>
-<td>300</td>
-<td>50 7.2k rpm, 10 SSD</td>
-</tr>
-  <table>
-
-
-####Suitable for Control, Compute, Gateway and Storage Services
-
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th> Server Model</th>
-<th>CPUs </th>
-	<th>Memory</th>
-<th>OS Boot Volume</th>
-<th>Storage Volume  (External Disk Array)</th>
-</tr>
-<tr>
-<td>DL 360</td>
-<td>16</td>
-<td>96 GB</td>
-<td>500, SSD</td>
-<td>24 7.2k rpm</td>
-</tr>
-<tr>
-<td>DL 380</td>
-<td>16</td>
-<td>96 GB</td>
-<td>500, SSD</td>
-<td>24 7.2k rpm</td>
-</tr>
- <table>
-
-Note: Most Compute configurations are 256 to 1TB of memory.
-
-
-###Validation of Firmware
-
-DL 360 Firmware version P71 02/10/214
-
-Screeenshot
-
-
-SL 4540 Firmware version P7402/10/2014
-
-
-Screenshot
-
-###Validation of CPU
-
-DL 360 Gen8 2 CPUs/8 cores each
-
-screenshot
-
-SL 4540 Gen8 2 CPUs/8 cores each
-screenshot
-
-###Validation of Memory
-
-DL 360 12 SlotsX8GB= 96 GB
-
-screenshot
-
-SL 4540 12 SlotsX8 GB=96 GB
-
-screenshot
-
-###Validation of Network
-
-DL360 4 ports
-
-screenshot
-
-SL4540 4 Ports
-
-screenshot
-
-
-C7000 4Ports
-
-screenshot
-
-###Validation of Storage
-
-screenshot
-
-
------>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

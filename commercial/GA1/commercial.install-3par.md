@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/3par/
 product: commercial
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -52,7 +52,7 @@ To enable multipathing edit the contents of the `/etc/multipath.conf` file to bl
 
 		cat /etc/multipath.conf
 		blacklist
-		{ devnode "%sda^" }
+		{ devnode ".*" }
 
 Restart the multipath daemon `service multipath-tools restart`.	The "multipath -ll" command  lists the devices and path.
 

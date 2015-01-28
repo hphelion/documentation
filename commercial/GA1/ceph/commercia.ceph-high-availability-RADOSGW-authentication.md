@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/ceph-high-availability-RADOSGW-authentication
+permalink: /helion/openstack/ceph-rados-gateway-keystone-authentication/
 product: commercial
 
 ---
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##High Availability- RADOSGW - Keystone Authentication
+##Ceph RADOS Gateway- Keystone Authentication
 
 Helion OpenStack HAProxy can be used to enable high availability and load balancing for Rados Gateway nodes. Using HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by a live (**What is a live node?**) node. Once the failed node recovers, load balancing is enabled again . Load balancing algorithm used is round robin so that each node is used in turns and that load balancing is fair. (**I am not clear what this sentence mean?**)
 
@@ -221,5 +221,5 @@ Output:
 
 
 
-##CEPH RADOS GATEWAY – DMZ HAPROXY
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
