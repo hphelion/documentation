@@ -617,7 +617,8 @@ Following are the steps to achieve this integration.
 
 * From Management node, execute the following to get the admin tenant ID
 
-	Keystone tenant-list
+		Keystone tenant-list
+Output:
 
 		+----------------------------------+---------+---------+
 		| id 							   | name 	 | enabled |
@@ -627,7 +628,7 @@ Following are the steps to achieve this integration.
 		| 250bf66045814455a5b3c3e6c7fb7c19 | service | True    |
 		+----------------------------------+---------+---------+
 
-* Verify if admin user is created in rados pool like below
+* Verify if admin user is created in rados pool as shown below
 		
 		rados --pool .users.uid ls
 		s3User

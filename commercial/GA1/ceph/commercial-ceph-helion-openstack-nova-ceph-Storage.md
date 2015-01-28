@@ -111,7 +111,7 @@ To attach a cinder volume to a nova instance, do the following:
 1. In the Horizon dashboard, click the **Project** Tab. The tab displays with options in the left panel.
 
 2. Click **Compute** and then select **Volume** to open Volume page.
-3. Click **More Action** tab and select** Edit Attachments**. Manage Volume Attachments page displays.
+3. Click **More Action** tab and select **Edit Attachments**. Manage Volume Attachments page displays.
 4. Click **Attach** to **Instance** drop-down list and select the instance. 
 5. In the **Device Name** box, enter the name of the name for the selected instance.
 6. Click **Attach Volume** to attach the cinder volume to the nova instance, else click Cancel.
@@ -129,7 +129,7 @@ To attach a cinder volume to a nova instance, do the following:
 
 To attach a cinder volume to a nova instance, do the following:
 
-1. Login to seed
+1. Login to seed.
 
 		ssh <seed IP address>
 
@@ -274,7 +274,9 @@ Now the Cinder volume is attached to a nova instance. Perform the following step
 		+--------------------------------------+--------------------------------------------------------------------------------+
 
 
-#####Verify 
+#####Verify Cinder to check the usage of RBD backend
+
+From VM, verify if the cinder which uses RBD backend is seen.
 
 From VM, cross checking if the cinder that uses RBD backend is seen.
 
