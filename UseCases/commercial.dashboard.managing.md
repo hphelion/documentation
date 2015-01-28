@@ -40,9 +40,9 @@ Refer to these documentation resources:</p>
 * <a href="/helion/commercial/ga1/dashboard/admin/">Using HP Helion OpenStack for Administrators</a> &mdash; Describes the Operational Dashboard user interface dialogs and options.</p>
 
 <!--
-* [HP Helion OpenStack: Building Images](/helion/commercial/ga1/manage/image-builder/) &mdash; Shows you how to use Disk Image Builder to create images for the HP Helion OpenStack.
+* [HP Helion OpenStack: Building Images](/helion/commercial/manage/image-builder/) &mdash; Shows you how to use Disk Image Builder to create images for the HP Helion OpenStack.
 
-* [HP Helion OpenStack: Backup and Restore](/helion/commercial/ga1/manage/backup-process/) &mdash; Explains how to backup and restore the components of the HP Helion OpenStack Management Host. -->
+* [HP Helion OpenStack: Backup and Restore](/helion/commercial/manage/backup-process/) &mdash; Explains how to backup and restore the components of the HP Helion OpenStack Management Host. -->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
