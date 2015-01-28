@@ -22,30 +22,6 @@ PageRefresh();
 -->
 
 
----
-layout: default
-title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/ceph/
-product: commercial
-
----
-<!--UNDER REVISION-->
-
-
-<script>
-
-function PageRefresh {
-onLoad="window.refresh"
-}
-
-PageRefresh();
-
-</script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
--->
-
-
 ##HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution: Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page for information about:
@@ -92,7 +68,7 @@ Ceph can run on commodity hardware, that makes building and maintaining petabyte
 </tr>
   </table>
 
-##Production Environment
+####Production Environment
 
 The hardware recommendation for the production environment are follows:
 

@@ -25,23 +25,28 @@ PageRefresh();
 
 Ceph cluster require at least one monitor, and (**minimum number?**)at least as many OSDs as copies of an object stored on the cluster. For more details, refer to http://docs.ceph.com/docs/master/install/manual-deployment/
 
+* [Setting up the Monitor Node](#setting-up-monitor-nodes)
+* [Adding OSDs](#adding-osd)
+* [File System Tuning](#file-system-tunning)
+* [Setting up additional Monitor nodes](#setting-up-additional-nodes)
+
 ###Assumptions and Dependencies
 
 * Manual installation and deployment of Ceph Firefly 0.80.7
 
 * Operating system on Ceph nodes - hlinux 3.14.6-2-amd64-hlinux
 
-####Setting up the Monitor Node
+####Setting up the Monitor Node {#setting-up-monitor-nodes}
 
-Firstly bootstrapping the initial monitor(s) to deploying a Ceph Storage Cluster. 
+Firstly bootstrap the initial monitor(s) to deploying a Ceph Storage Cluster. 
 
 Perform the following steps:
 
 1. Log in to monitor node as a root user.
 
-2. Execute `apt-get install ceph`
+2. Execute `apt-get install ceph`.
 
-3. Execute `uuidgen` command to generate an unique **fsid**
+3. Execute `uuidgen` command to generate an unique **fsid**.
 
 4. Create `ceph.conf` file in `/etc/ceph` directory as shown in the example below:
 
@@ -63,50 +68,50 @@ Perform the following steps:
 		
 		osd journal size = 1024
 
-5. Create a keyring for cluster and generate a monitor secret key
+5. Create a keyring for cluster and generate a monitor secret key.
 
 		ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *'
 		
 		ceph-authtool --create-keyring /tmp/ceph.mon.keyring --gen-key -n mon. --cap mon 'allow *'
 
-6. Create an admin keyring, admin user, and add the user to keyring
+6. Create an admin keyring, admin user, and add the user to keyring.
 
 		ceph-authtool --create-keyring /etc/ceph/ceph.client.admin.keyring --gen-key -n client.admin --set-uid=0 --cap mon 'allow *' --cap osd 'allow *' --cap mds 'allow'
 		
 		ceph-authtool --create-keyring /etc/ceph/ceph.client.admin.keyring --gen-key -n client.admin --set-uid=0 --cap mon 'allow *' --cap osd 'allow *' --cap mds 'allow'
 
-7.  Add `cleint.admin` key to `ceph.mon.keyring`
+7.  Add `cleint.admin` key to `ceph.mon.keyring`.
 
 		ceph-authtool /tmp/ceph.mon.keyring --import-keyring /etc/ceph/ceph.client.admin.keyring
 		
 		ceph-authtool /tmp/ceph.mon.keyring --import-keyring /etc/ceph/ceph.client.admin.keyring
 		
-8. Generate a monitor map using monitor hostname, IP and fsid and save it as `/tmp/monmap`
+8. Generate a monitor map using monitor hostname, IP and fsid and save it as `/tmp/monmap`.
 		
 		monmaptool --create --add {hostname} {ip-address} --fsid {uuid} /tmp/monmap
 		monmaptool --create --add ceph-mon1 192.x.x.x --fsid 498afec5-57f0-4e48-9cf7-c8a5b89c1c80 /tmp/monmap
 
-9.  Create a default data directory
+9.  Create a default data directory.
 
 		sudo mkdir /var/lib/ceph/mon/{cluster-name}-{hostname}
 		mkdir /var/lib/ceph/mon/ceph-ceph-mon1
 
-10. Populate monitor daemon with monitor map and keyring
+10. Populate monitor daemon with monitor map and keyring.
 
 		ceph-mon --mkfs -i {hostname} --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
 		ceph-mon --mkfs -i mon1 --monmap /tmp/monmap --keyring /tmp/ceph.mon.keyring
 
-11. Touch the completed file
+11. Touch the completed file.
 
 		sudo touch /var/lib/ceph/mon/{cluster-name}-{hostname}/upstart
 		
 		touch /var/lib/ceph/mon/ceph-ceph-mon1/done
 
-12. Ensure monitor daemon is running. Execute the following command to verifying output 
+12. Ensure monitor daemon is running. Execute the following command to verifying output. 
 
 		ps aux | grep ceph
 
-13. Update `ceph.conf` file as shown below
+13. Update `ceph.conf` file as shown below.
 
 		[mon.ceph-mon1]
 		
@@ -114,22 +119,22 @@ Perform the following steps:
 		
 		mon addr = 192.x.x.x
 
-14. Execute the following command to start monitor daemon
+14. Execute the following command to start monitor daemon.
 
 		sudo /etc/init.d/ceph start mon.node1
 		
 		/etc/init.d/ceph start mon.ceph-mon1
 
-15. Restart monitor daemon
+15. Restart monitor daemon.
 
 		/etc/init.d/ceph restart mon.ceph-mon1
 
-16. Verify that Ceph default pools are create as shown below
+16. Verify that Ceph default pools are create as shown below.
 
 		ceph osd lspools
 		0 data, 1 metadata, 2rbd,
 
-* Execute the following command to verify monitor is running
+17. Execute the following command to verify monitor is running.
 
 		ceph -s
 
@@ -143,9 +148,9 @@ Perform the following steps:
 			0 kB used, 0 kB / 0 kB avail
 			192 creating
 
-###Adding OSDs
+###Adding OSDs {#adding-osd}
 
-Once you have your initial monitor(s) running, you must add OSDs. To make a cluster reach an active and clean state, you must have enough OSDs to handle the number of copies of an object (e.g., osd pool default size = 2 requires at least two OSDs).  It is recommend to have minimum 3 OSD nodes in a production environment. After bootstrapping your monitor, your cluster has a default CRUSH map; however, the CRUSH map does not have any Ceph OSD Daemons mapped to a Ceph Node. For more details, refer to [http://ceph.com/docs/master/install/manual-deployment/](http://ceph.com/docs/master/install/manual-deployment/)
+Once you have your initial monitor(s) running, you must add OSDs. To make a cluster reach anr active and clean state, you must have enough OSDs to handle the number of copies of an object (for example, osd pool default size = 2 requires at least two OSDs).  It is recommend to have  a minimum 3 OSD nodes in a production environment. After bootstrapping your monitor, your cluster has a default CRUSH map. However, the CRUSH map does not have any Ceph OSD Daemons mapped to a Ceph Node. For more details, refer to [http://ceph.com/docs/maste/install/manual-deployment/](http://ceph.com/docs/master/install/manual-deployment/)
 
 ####Pre-requisites
 
@@ -157,7 +162,7 @@ Once you have your initial monitor(s) running, you must add OSDs. To make a clus
 
 ####Setting up the OSD Node
 
-To create an OSD and add it to cluster and CRUSH map, perform the following steps:
+Perform the following steps to create an OSD and add it to cluster and CRUSH map:
 
 1. Log in to OSD host as root user. Connect to the OSD node.
 
@@ -167,7 +172,7 @@ To create an OSD and add it to cluster and CRUSH map, perform the following step
 
 		ceph osd create
 
- 	For multiple physical drives, execute  `ceph OSD create` command the required number of time to match the number of OSD's.
+ 	For multiple physical drives, execute  `ceph OSD create` command the as many times as the  number of OSD's.
 
 3. Consider the output of the OSD number from the above step and create a default directory by executing the following command:
 
@@ -175,7 +180,7 @@ To create an OSD and add it to cluster and CRUSH map, perform the following step
 
 	For example: `mkdir /var/lib/ceph/osd/ceph-0`
 
-	The following example displays the commands ran in the script to create 13 directory matching the `osd` deamon
+	The following example displays the commands ran in the script to create 13 directories matching the `osd` deamon
 
 		#!/bin/bash
 		
@@ -201,7 +206,7 @@ Follow the server specific specification to see details on how to configure RAID
 	
 The following example explains the creation of journal partitions on a 200G SSD drive to match the OSD deamon counts.
 
-Login to OSD and execute the following command
+1. Login to OSD and execute the following command
 
 	/etc/ceph# fdisk /dev/sda
 	Command (m for help): p
@@ -238,7 +243,7 @@ Login to OSD and execute the following command
 	/dev/sda1 	  2048 390611039 195304496 5 Extended
 	
 
-Execute the following command for the second partition on the same disk:
+2. Execute the following command for the second partition on the same disk:
 	
 	Command (m for help): n
 	Partition type:
@@ -265,7 +270,7 @@ Execute the following command for the second partition on the same disk:
 	
 	/dev/sda5      4096 32260095 16128000 83 Linux
 	
-Execute the following command for the third partition on the same disk:
+3. Execute the following command for the third partition on the same disk:
 	
 	Command (m for help): n
 	Partition type:
@@ -293,7 +298,7 @@ Execute the following command for the third partition on the same disk:
 	
 	/dev/sda6      32262144 64518143 16128000 83 Linux
 
-Similarly execute the same command for rest of the partition.
+4. Repeat this command for rest of the partition.
 
 **If the OSD is for a drive other than the OS drive, prepare it for use with Ceph, and mount it to the directory you just created**:
 	
@@ -341,11 +346,11 @@ The following  example mounts 13 drives to journal partitions.
 	mount -t xfs -o logdev=/dev/sda16 /dev/sdm1 /var/lib/ceph/osd/ceph-11/
 	mount -t xfs -o logdev=/dev/sda17 /dev/sdn1 /var/lib/ceph/osd/ceph-12/
 
-4.Initialize the OSD data directory.
+5.Initialize the OSD data directory.
 
 	ceph-osd -i {osd-num} --mkfs -mkkey
 	
-Example -Initialize 13 data directories
+Example -Initialize 13 data directories.
 	
 	#!/bin/bash
 	ceph-osd -i 0 --mkfs --mkkey
@@ -362,11 +367,11 @@ Example -Initialize 13 data directories
 	ceph-osd -i 11 --mkfs --mkkey
 	ceph-osd -i 12 --mkfs --mkkey
 
-5.Register OSD authentication key
+6.Register OSD authentication key.
 
 	ceph auth add osd.{osd-num} osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-{osd-num}/keyring
 	
-	Example -Register 13 OSD authentication key
+Example -Register 13 OSD authentication key.
 	
 	#!/bin/bash
 	
@@ -384,20 +389,20 @@ Example -Initialize 13 data directories
 	ceph auth add osd.11 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-11/keyring
 	ceph auth add osd.12 osd 'allow *' mon 'allow profile osd' -i /var/lib/ceph/osd/ceph-12/keyring
 
-6.Add OSD node to CRUSH map
+7.Add OSD node to CRUSH map.
 
 	ceph osd crush add-bucket {hostname} host
 
-7.Place OSD node under root default
+8.Place OSD node under root default.
 
 	ceph osd crush move {hostname} root=default
 
-8.Add OSD node to CRUSH map for receiving data
+9.Add OSD node to CRUSH map for receiving data.
 
 	ceph osd crush add {id-or-name} {weight} [{bucket-type}={bucket-name} ...]
 	ceph osd crush add osd.0 1.0 host=ceph-osd1
 
-Example: Add 13 osd to crush map
+Example: Add 13 osd to crush map.
 
 	#!/bin/bash
 	
@@ -415,7 +420,7 @@ Example: Add 13 osd to crush map
 	ceph osd crush add osd.11 1.0 host=ceph-osd1
 	ceph osd crush add osd.12 1.0 host=ceph-osd1
 
-9.Update the ceph.conf file as shown below for each of the OSD nodes. Also add the [global] section in ceph.conf files with file parameter tunable as listed in the [tunable](#ceph-tunning).
+10.Update the ceph.conf file as shown below for each of the OSD nodes. Also add the [global] section in ceph.conf files with file parameter tunable as listed in the [tunable](#ceph-tunning).
 
 	[osd.0]
 	host = ceph-osd1
@@ -426,7 +431,7 @@ Example: Add 13 osd to crush map
 	[osd.2]
 	host = ceph-osd1
 
-11.Start OSD daemon
+11.Start OSD daemon.
 
 	/etc/init.d/ceph start osd.0
 	
@@ -434,9 +439,10 @@ Example: Add 13 osd to crush map
 	
 	ceph -w
 
-12.Setting up additional OSD nodes
 
-Follow the above steps for each OSD node
+#####Setting up additional OSD nodes
+
+Follow the above steps for each OSD node:
 
 	Healthy Ceph cluster needs at least 3 OSD nodes. Follow steps similar to previous section to add additional nodes to form the quorum.
 	
@@ -480,7 +486,7 @@ Follow the above steps for each OSD node
 	
 	11456 active+clean
 
-##File System Tuning
+##File System Tuning {#file-system-tunning}
 
 XFS Journal Partitions best reside on SSDs, with discrete path and Controller Cache. One partition per data, and JBOD for the SSDs, with a ratio of 1 SSD to every 4 Data Partitions. Each XFS Data partition ought to be configured with rw, noatime, attr2, inode64, noquota. Additional XFS File System configurations to consider: nobarrier, logbsize=256k, logbufs=8, allocsize=4m.
 
@@ -611,7 +617,7 @@ Following are the relevant tuning parameters:
 	filestore queue committing max bytes = 536870912
 
 
-##Setting up additional Monitor nodes
+##Setting up additional Monitor Nodes {#setting-up-additional-nodes}
 
 <<**TBD**The content is not available>>
 
@@ -619,7 +625,7 @@ Following are the relevant tuning parameters:
 
 ## Next Steps
 
-[Integration of ]( /helion/openstack/ceph-integration-to-Helion-nodes/).
+[Ceph Authentication]( /helion/openstack/ceph-authentications/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
