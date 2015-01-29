@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/swift/deployment/add-disk-scale-out/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -84,7 +84,10 @@ Perform the following steps to add disk to a Swift ring:
 9. Copy `object-1.ring.gz` file to all the nodes.
     
     	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
-	
+
+10. Copy `object-1.builder` file to all the nodes.
+    
+    	# ringos copy-ring -s /root/ring-building/object-1.builder -n <Swift nodes IP address>	
 
 10. Set the weight of the disks using the following command:
 

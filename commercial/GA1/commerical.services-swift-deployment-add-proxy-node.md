@@ -55,19 +55,24 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <proxy node IP address> 
 
-4. After creation of the Proxy node, list the Proxy IP addresses.
+4. Copy account, container, object, and generated `object-1.builder` files to proxy nodes. 
+ 
+		# ringos copy-ring -s /root/ring-building/\object-1.builder -n <proxy node IP address>
+
+
+5. After creation of the Proxy node, list the Proxy IP addresses.
 
 		# ringos list-swift-nodes -t proxy
 
-5. List all the controller nodes
+6. List all the controller nodes
 
  		# nova list
 
-6. Edit `swift-proxy.cfg` on each of the controller nodes. 
+7. Edit `swift-proxy.cfg` on each of the controller nodes. 
 
 	 	/etc/haproxy/manual/swift-proxy.cfg
 
-7. Add the following content in the `swift-proxy.cfg` file.
+8. Add the following content in the `swift-proxy.cfg` file.
 
 		  listen scale_swift_proxy
 		  bind <Virtual IP (running on the controller nodes)>:8080
@@ -88,7 +93,7 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 				vi /etc/keepalived/keepalived.conf
 
 
-8. Restart the HA Proxy service on all these nodes.
+9. Restart the HA Proxy service on all these nodes.
 
 		# service haproxy restart
 

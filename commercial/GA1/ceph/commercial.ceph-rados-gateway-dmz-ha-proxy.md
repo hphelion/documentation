@@ -24,19 +24,19 @@ PageRefresh();
 
 ##Ceph RADOS Gateway - DMZ HAProxy
 
-As discussed in the previous sections, Ceph storage system is successfully integrated with HP Helion OpenStack. Ceph has Rados gateway that is a public facing interface and is vulnerable. Hence, any end user gains access into Helion system with this integration. In order to minimize risks, external HAProxy is built in a DMZ environment behind a firewall. HAProxy is a commonly used as a load balancer for TCP and HTTP based applications. It works as a reverse-proxy, which means it maintains two connections when allowing a client to cross it – connection between HAProxy and the client and the another between HAProxy and the server. 
+As discussed in the previous sections, Ceph storage system is successfully integrated with HP Helion OpenStack. Ceph has Rados gateway that is a public facing interface and is vulnerable. Hence, any end user gains access into Helion system with this integration. In order to minimize risks, external HAProxy is built in a DMZ environment behind a firewall. HAProxy is a commonly used as a load balancer for TCP and HTTP based applications. It works as a reverse-proxy, which means it maintains two connections when allowing a client to cross it- connection between HAProxy and the client and the another between HAProxy and the server. 
  
 To ensure secured connectivity, the connections should be HTTPS (SSL over HTTP). Stunnel is used as an intermediate between client with an HTTPs request and the haproxy.  During normal operation, stunnel receives the HTTPs request from client and hands off the request to a haproxy instance that is bound to the loopback address (127.0.0.1) on that same box. HAProxy now forwards the HTTPs request to gateway nodes listening on port 443.
 
-Below diagram illustrates communication flow between Helion-Ceph-DMZ HAProxy – Ceph Gateway
+Below diagram illustrates communication flow between Helion-Ceph-DMZ HAProxy-Ceph Gateway
 
 <img src="media/commercial-ceph-communication-flow-between-helion-Ceph-DMZ-HAProxy-Ceph Gateway.png"/)>
 
 ####Assumptions
 
 1.	Dual homed Proxy server in DMZ. Public facing address for internet clients and private address to connect to gateway nodes.
-2.	Gateway nodes in private network – 192.0.2.x
-3.	Client node in public network – 192.168.122.x
+2.	Gateway nodes in private network-192.0.2.x
+3.	Client node in public network-192.168.122.x
 
 ###Install General Packages
 

@@ -81,11 +81,11 @@ The ceph client installer script installs the ceph health monitoring scripts int
  
 #####User File System access to Swift API <**refer again**>
 
-The use cases for leveraging Ceph as an Object Store range from user-driven archives of a small MySQL instance to a well-orchestrated LOB scripted backup consistency group spanning multiple VMs and external machines.**[scripted backup consistency group?? how about saying that in common venacular?]** For applications and customers who do not have existing integrations to the Swift API and do not wish to leverage the existing Swift Client, often a watched **[monitored?]** mount point that auto-archives is required. For that use case, the Open Source Project Duplicity is recommended.**[in general, this is overly passive. Use active voice. Talk directly to the user. You can say: For that use case, HP recommends Duplicity.]** Duplicity is an Open Source, bandwidth efficient, encrypted incremental backup tool that can be used with Swift API to archive, backup, and restore files. It archives directories by producing encrypted tar-format volumes and uploading them to the Swift API. Duplicity uses `librsync` and consequently the incremental archives are space efficient: only recording the parts of files that have changed since the last write. Duplicity uses GnuPG to encrypt and sign these archive files.
+The use cases for leveraging Ceph as an Object Store range from user-driven archives of a small MySQL instance to a well-orchestrated LOB scripted backup consistency group spanning multiple VMs and external machines.**[scripted backup consistency group? how about saying that in common venacular?]** For applications and customers who do not have existing integrations to the Swift API and do not wish to leverage the existing Swift Client, often a watched **[monitored?]** mount point that auto-archives is required. For that use case, the Open Source Project Duplicity is recommended.**[in general, this is overly passive. Use active voice. Talk directly to the user. You can say: For that use case, HP recommends Duplicity.]** Duplicity is an Open Source, bandwidth efficient, encrypted incremental backup tool that can be used with Swift API to archive, backup, and restore files. It archives directories by producing encrypted tar-format volumes and uploading them to the Swift API. Duplicity uses `librsync` and consequently the incremental archives are space efficient: only recording the parts of files that have changed since the last write. Duplicity uses GnuPG to encrypt and sign these archive files.
 
 #####Installing Duplicity
 
-Install Duplicity on any of the client user VM’s as below. (**Please provide command and steps for this?**)
+Install Duplicity on any of the client user VMs as below. (**Please provide command and steps for this?**)
 
 * `apt-get install bzr`
 
@@ -329,7 +329,7 @@ The command is usually (though not always) of the form:
 
 		ceph auth add {osd} {--in-file|-i} {path-to-osd-keyring}
 
-* To list the cluster’s keys and their capabilities, execute the following command::
+* To list the cluster's keys and their capabilities, execute the following command::
 
 		ceph auth list
 

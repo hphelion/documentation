@@ -5,7 +5,7 @@ permalink: /helion/openstack/services/swift/deployment/add-disk-object-node/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -89,9 +89,12 @@ Once the Swift nodes are deployed, the required disks must be formatted and moun
 10. Copy `object-1.ring.gz` file to all the nodes.
     
     	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
-	
 
-11. Set the weight of the disks using the following command:
+11. Copy `object-1.builder` file to all the nodes.
+    
+    	# ringos copy-ring -s /root/ring-building/object-1.builder -n <Swift nodes IP address>
+
+12. Set the weight of the disks using the following command:
 
     	# ringos set-weight -f /root/ring-building/object-1.builder -s <object node IP address> -w <weight>
  
