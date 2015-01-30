@@ -30,7 +30,7 @@ This page provides a detailed description to enable VLAN Provider Network in KVM
 
 HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. <!---However, we need to deploy Helion Cloud to customers desiring to migrate gradually from legacy VLAN to VxLAN, a non-default install feature. This whitepaper walks through a way to configure Helion OpenStack tenant networks to use VLAN Provider Network.--> The deployment of HP Helion OpenStack&#174; enables  tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX to communicate to a virtual machine running in HP Helion OpenStack. <!---Typically, a Hybrid Application Deployment across two or more Infrastructure Providers (one being Helion OpenStack).-->
 
-# Deployment Diagram
+## Deployment Diagram
 The following deployment diagrams are based on the assumption that the network infrastructure is carved out in such a way that it allows a range of tagged VLANs through the switches and their subnets are routed to the right destination. 
 
 <a href="javascript:window.open('/content/documentation/media/vlan.provider.network.logical.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Deployment diagram depicting VLAN Provider Network with VSA nodes as Block storage backend. (Opens in a new window)</a>
@@ -38,7 +38,7 @@ The following deployment diagrams are based on the assumption that the network i
 
 <a href="javascript:window.open('/content/documentation/media/vlan.network.layout.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Network Layout. (Opens in a new window)</a>
 
-#Install Steps
+## Install Steps
 
 This section describes the solution to set up the Overcloud Neutron Network to provide tenant network isolation by means of VLAN, instead of the default VxLAN. 
 
@@ -53,7 +53,7 @@ The following prerequisites should be fulfilled to setup the Overcloud Neutron i
 2. Pass the right export variables pertinent to the VLAN Provider Network. 
 
 
-# Detailed installation steps
+## Detailed installation steps
 
 The following assumptions are considered during deployment:
 
@@ -65,7 +65,7 @@ The following assumptions are considered during deployment:
 
 <!---* For test purpose VLAN 300 (192.168.1-->
 
-##Process
+## Process
 
 1. Login to Seed VM Host
 
