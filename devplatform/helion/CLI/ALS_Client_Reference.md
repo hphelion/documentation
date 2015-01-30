@@ -2,14 +2,14 @@
 layout: default-devplatform
 permalink: /als/v1/client/reference
 product: devplatform
-title: "HP Application Lifecyle Service (ALS) Command Line Client Reference"
+title: "HP Application Lifecyle Service (ALS) Command-Line Client Reference for cfmgmt"
 
 ---
 
 <!--UNDER REVISION-->
-# HP Application Lifecycle Service (ALS) Command Line Client Reference
+# HP Helion Application Lifecycle Service Command-Line Client Reference Tool (cfmgmt)
 
-The ALS command-line interface (CLI) client provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the CLI when the Horizon management console is unavailable or when direct access is preferred. 
+The ALS command-line interface client (cfmgmt.exe) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the command line when the Horizon management console is unavailable or when direct access is preferred. 
 
 - [Global Options](#global)
 - [Cluster Commands](#commands)
@@ -20,7 +20,7 @@ The ALS command-line interface (CLI) client provides an option for executing com
 ##Configuration Values
 There are three ways to pass configuration values into ALS:
 
-- Direct entry into the CLI
+- Direct entry into the command-line interface
 - Defined in an environment variable
 - Recorded in a configuration file
  
@@ -33,12 +33,12 @@ The other configuration files, specified by the **--load** option, includes the 
 
 ##Global Options {#global}
 These variables affect the entire cluster; they are **global** in scope. These environment variables are configured to work with the OpenStack Python tools to enable faster integration.
-<pre>als <b>[global options]</b> command [command options] [arguments...] </pre>
+<pre>cfmgmt <b>[global options]</b> command [command options] [arguments...] </pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <th width="150">Option</th><th>Description</th><th>Environment Variable</th>
-<tr><td>--config 'C:\Users\<i>username</i>\.alsconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
+<tr><td>--config 'C:\Users\<i>username</i>\.cfmgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
 <tr><td>--debug<td>Enables additional debug information.</td><td>n/a</td></tr>
 <tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$ALS_DEBUG</td></tr>
 <tr><td>--os-username</td><td>OpenStack user name</td><td>$OS_USERNAME</td></tr>
@@ -55,7 +55,7 @@ These variables affect the entire cluster; they are **global** in scope. These e
 These commands are available from the command line interface.
 
 ###Use Syntax
-<pre>als [global options] <b>command</b> [command options] [arguments...] </pre>
+<pre>cfmgmt [global options] <b>command</b> [command options] [arguments...] </pre>
 
 ###Command Options
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -70,11 +70,11 @@ These commands are available from the command line interface.
 Options that can be passed to the command that creates a cluster 
 (*cluster-create*).
 
-<pre>als [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
+<pre>cfmgmt [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
 
 For help with this command within the command-line interface, enter
 
-<pre>als help cluster-create</pre>
+<pre>cfmgmt help cluster-create</pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;"><th style="width:250px;">Command (with example input)</th><th>Description</th>
@@ -136,9 +136,9 @@ For help with this command within the command-line interface, enter
 <td>--max-corenode-wait-duration '3m'</td><td>Maximum time to wait for the core node to come up on cluster creation; defaults to 3 minutes.</td>
 </tr>
 <tr>
-<td>--subnet-id</td><td>ID of the network subnet to create the cluster on.</td>
+<td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by cluster-create, and the DEA nodes added by dea-add.</td>
 </tr><tr>
-<td>--subnet-name</td><td>Name of the network subnet to create the cluster on.</td>
+<td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by cluster-create and the DEA nodes added by dea-add.</td>
 </tr><tr>
 <td>--upstream-proxy </td><td>Upstream proxy</td>
 </tr><tr>
@@ -158,11 +158,11 @@ For help with this command within the command-line interface, enter
 ##Delete a Cluster {#delete}
 Options that can be passed to the command that deletes a cluster (*cluster-delete*).
 ###Use Syntax
-<pre>als [global options] <b>command cluster-delete</b> [command options] [arguments...] </pre>
+<pre>cfmgmt [global options] <b>command cluster-delete</b> [command options] [arguments...] </pre>
 
 For help with this command within the command-line interface, enter
 
-<pre>als help cluster-delete</pre>
+<pre>cfmgmt help cluster-delete</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -186,8 +186,8 @@ For help with this command within the command-line interface, enter
 </tr><tr>
 <td>--max-cluster-wait-duration '4m'</td><td>Maximum time to wait for cluster deletion to occur; defaults to 4 minutes.</td>
 </tr>
-<tr><td>--subnet-name</td><td>The name of the subnet to create the cluster on</td></tr>
-<tr><td>--subnet-id</td><td>ID of the network subnet to create the cluster on</td></tr>
+<tr><td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by cluster-create and the DEA nodes added by dea-add.</td></tr>
+<tr><td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by cluster-create, and the DEA nodes added by dea-add.</td></tr>
 </table>
  
 ##Add DEA Nodes to an Existing Cluster {#addnode}
@@ -195,11 +195,11 @@ Options that can be passed when adding nodes to an existing cluster (*dea-add*).
 
 ###Use Syntax
 
-<pre>als [global options] <b>dea-add</b> [command options] [arguments...]</pre>
+<pre>cfmgmt [global options] <b>dea-add</b> [command options] [arguments...]</pre>
 
 For help with this command within the command-line interface, enter
 
-<pre>als help dea-add</pre>
+<pre>cfmgmt help dea-add</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -229,6 +229,6 @@ For help with this command within the command-line interface, enter
 </tr><tr>
 <td>--constructor-flavor '101'</td><td>Flavor reference to use when creating a constructor server</td>
 </tr>
-<tr><td>--subnet-id</td><td>ID of the network subnet to create the cluster on</td></tr>
-<tr><td>--subnet-name</td><td>The name of the subnet to create the cluster on</td></tr>
+<tr><td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by cluster-create, and the DEA nodes added by dea-add</td></tr>
+<tr><td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by cluster-create and the DEA nodes added by dea-add.</td></tr>
 </table>
