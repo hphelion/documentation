@@ -52,7 +52,7 @@ You can configure a 3PAR device by using the undercloud Horizon dashboard (*reco
 * [Next Steps](#next-steps)
 
 
-# Before you begin {#before-you-begin}
+## Before you begin {#before-you-begin}
 
 Before you start working with 3PAR StoreServ, ensure that the following prerequisites have been fulfilled:
 

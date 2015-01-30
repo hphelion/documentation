@@ -118,9 +118,17 @@ Then the `start`, `end`, and `cidr` cannot be anything in the form of 10.x.y.z. 
 
 `overcloud_server` - Use this variable to set the IP address of an NTP server accessible on the public interface for overcloud hosts. This is required.
 
+	**Example:**
+
+	The following example sets the NTP server address. Do not copy this address.
+
 	"overcloud_server": "19.111.135.123",
 
 `undercloud_server` - Use this variable to set the IP address of an NTP server accessible on the public interface for undercloud hosts. This is required.
+
+	**Example:**
+
+	The following example sets the NTP server address. Do not copy this address.
 
 	"undercloud_server": "19.111.135.123"
 
