@@ -1298,9 +1298,8 @@ Runs deferred commands saved with 'kato defer'.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--post-start</td><td>Run the deferred command after all processes managed by kato have started.</td></tr>
 </table>   
-
-  --post-start                        Run the deferred command after all processes managed by kato have started
 
 <hr>
 
@@ -1336,22 +1335,15 @@ Configures this node to use a static IP. Interactively prompts for inputs if the
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>--interface=<if></td><td>Network interface to configure (e.g. eth0)</td></tr>
+<tr><td>--ip=<ip></td><td>Host IP address</td></tr>
+<tr><td>--netmask=<netmask></td><td>Network netmask (e.g. 255.255.255.0)</td></tr>
+<tr><td>--gateway=<gateway></td><td>Network gateway (IP address)</td></tr>
+<tr><td>--dns-nameservers=<ips></td><td>Optional list of DNS names servers (e.g. 10.0.0.252, 10.0.0.253)</td></tr>
+<tr><td>--dns-search-domains=<domains></td><td>Optional list of DNS search domains (e.g. example.com, example.org)</td></tr>
+<tr><td>--restart-network</td><td>Restart networking.</td></tr>
+<tr><td>--no-restart</td><td>Do not restart processes.</td></tr>
 </table> 
-  --interface=<if>                    Network interface to configure (e.g. eth0)
-
-  --ip=<ip>                           Host IP address
-
-  --netmask=<netmask>                 Network netmask (e.g. 255.255.255.0)
-
-  --gateway=<gateway>                 Network gateway (IP address)
-
-  --dns-nameservers=<ips>             Optional list of DNS names servers (e.g. 10.0.0.252, 10.0.0.253)
-
-  --dns-search-domains=<domains>      Optional list of DNS search domains (e.g. example.com, example.org)
-
-  --restart-network                   Restart networking
-
-  --no-restart                        Do not restart processes.
 
 <hr>
 
@@ -1389,13 +1381,10 @@ Configure ALS to use an external or upstream proxy server for staging and deploy
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table> 
-
-  -u --user *<user>*              Proxy username
-
-  -p --pass *<pass>*              Proxy password
-
-  --no-proxy *<no_proxy>*             Comma separated list of domain names that should bypass the proxy
+<tr><td>--no-proxy <<i>no_proxy</i>> </td><td>Comma-separated list of domain names that should bypass the proxy.</td></tr>
+<tr><td>-p --pass <<i>pass</i>></i>></td><td>Proxy password.</td></tr>
+<tr><td>-u --user <<i>user</i>></td><td>Proxy username.</td></tr>
+</table>             
 
 <hr>
 
@@ -1405,23 +1394,23 @@ Update an ALS cluster with post-release fixes.
 
 **Syntax**
 
-patch status [options]
-
-patch install [--node *<nodeip>*] [options]
-
-patch install [--node *<nodeip>*] [options] *<patchname>*
-
-patch reset [--node *<nodeip>*] [options]
-
-patch update [--node <nodeip> | --local]
-
-patch mark [--node *<nodeip>*] [options] *<patchname>*
-
-patch reinstall [--node *<nodeip>*] [options] *<patchname>*
-
-patch revert [--node *<nodeip>*] [options]
-
-patch revert [--node *<nodeip>*] [options] *<patchname>*
+	patch status [options]
+	
+	patch install [--node <nodeip>] [options]
+	
+	patch install [--node <nodeip>] [options] <patchname>
+	
+	patch reset [--node <nodeip>] [options]
+	
+	patch update [--node <nodeip> | --local]
+	
+	patch mark [--node <nodeip>] [options] <patchname>
+	
+	patch reinstall [--node <nodeip>] [options] <patchname>
+	
+	patch revert [--node <nodeip>] [options]
+	
+	patch revert [--node <nodeip>] [options] <patchname>
 
   
 
@@ -1431,31 +1420,20 @@ patch revert [--node *<nodeip>*] [options] *<patchname>*
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-a --all</td><td>Show status for all patches.</td></tr>
+<tr><td>-d --notinstalled</td><td>Manually mark patch as not installed.</td></tr>
+<tr><td>-i --installed</td><td>Manually mark patch as installed.</td></tr>
+<tr><td>-j  --json</td><td>Return JSON (for 'status').</td></tr>
+<tr><td>-l --local</td><td>Affect this node only. If not specified, command operates on entire cluster.</td></tr>
+<tr><td>-m --manifest <<i>manifest</i>></td><td>Specify a custom manifest file.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Only affect the specified cluster node.</td></tr>
+<tr><td>-q --quiet</td><td>Be quieter (output less information).</td></tr>
+<tr><td>-r --no-restart</td><td>Don't restart any roles during patching.</td></tr>
+<tr><td>-s --single</td><td>Remotely install single patch (internal use only).</td></tr>
+<tr><td>--to-patch-id <<i>patch-id</i>></td><td>Specify the id of the patch to patch the cluster up to. Patches above this ID will not be applied.</td></tr>
+<tr><td>-u --force-update</td><td>Force a new manifest to be downloaded.</td></tr>
+
 </table> 
-
-  -a --all                        Show status for all patches
-
-  -l --local                      Only affect this node (otherwise operates on entire cluster)
-
-  -n --node *<nodeip>*            Only affect specified node
-
-  -r --no-restart                 Don't restart any roles during patching
-
-  -q --quiet                      Be quieter
-
-  -j --json                       Return JSON (for 'status')
-
-  -i --installed                  Manually mark patch as installed
-
-  -d --notinstalled               Manually mark patch as not installed
-
-  -m --manifest *<manifest>*      Specify a custom manifest file
-
-  -u --force-update               Force a new manifest to be downloaded
-
-  -s --single                     Remotely install single patch (internal use only)
-
-  --to-patch-id *<patch-id>*          Specify the id of the patch to patch the cluster up to. Patches above this ID will not be applied
 
 <hr>
 
@@ -1465,7 +1443,7 @@ Lists configured processes and their current running status.
 
 **Syntax**
 
-process list [options] [*<process>...*]
+	process list [options] [<process>...]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1473,15 +1451,11 @@ process list [options] [*<process>...*]
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-c --cluster</td><td> Include process status for all cluster nodes.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Get status for a specific cluster node only. Defaults to local node.</td></tr>
+<tr><td>-y  --yaml</td><td>Display output as YAML</td></tr>
+<tr><td>-j  --json</td><td>Display output as JSON</td></tr>
 </table> 
-
-  -n --node *<node-IP>*           Get status for a specific cluster node (defaults to local node)
-
-  -c --cluster                    Includes process status over all cluster nodes
-
-  -j --json                       Use JSON format for displaying output
-
-  -y --yaml                       Use YAML format for displaying output
 
 <hr>
 
@@ -1491,19 +1465,20 @@ Check the status of a process.
 
 **Syntax**
 
-process ready [options] *<process>*
+	process ready [options] <process>
 
-**Options**
+ **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table> 
+<tr><td>-b --block <<i>seconds</i>></td><td>Block until ready. The maximum block time is set in <i>seconds</i>. If <i>seconds</i> is set to 0, then it will be blocked forever.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Check the process on a specific cluster node only.</td></tr>
+</table>  
 
-  -b --block *<seconds>*          Block until ready, for max <seconds> seconds. If <seconds> is 0, then block forever
+            
 
-  -n --node *<node-IP>*           Check process on a specific cluster node
 <hr>
 
 ###Process Restart {#kato-command-ref-process-restart}
@@ -1512,19 +1487,18 @@ Restart a process.
 
 **Syntax**
 
-process restart [options] [*<process>...*]
+	process restart [options] [<process>...]
 
-**Options**
+ **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-c --cluster</td><td>Restarts process on all nodes in the cluster.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Restart process on a specific cluster node only.</td></tr>
 </table> 
-
-  -n --node *<node-IP>*           Restart process on a specific cluster node
-
-  -c --cluster                    Restarts process on all nodes in the cluster
+                  
 <hr>
 
 ###Process Start {#kato-command-ref-process-start}
@@ -1533,7 +1507,7 @@ Start a process.
 
 **Syntax**
 
-process start [options] [*<process>...*]
+	process start [options] [<process>...]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1541,9 +1515,8 @@ process start [options] [*<process>...*]
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Start the process on a specific cluster node only.</td></tr>
 </table> 
-
-  -n --node *<node-IP>*           Start process on a specific cluster node
 
 <hr>
 
@@ -1553,11 +1526,17 @@ Stop a process.
 
 **Syntax**
 
-process stop [options] [*<process>...*]
+	process stop [options] [<process>...]
 
-  -h --help                       Show help information
-
-  -n --node *<node-IP>*           Stop process on a specific cluster node
+ **Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Stop the process on a specific cluster node only.</td></tr>
+</table> 
+        
 
 <hr>
 
@@ -1567,23 +1546,20 @@ Move containers, application droplets, or services to a new mount point or files
 
 **Syntax**
 
-relocate [options] containers *<new_location>*
-
-relocate [options] droplets *<new_location>*
-
-relocate [options] services *<new_location>*
-
-  
-
+	relocate [options] containers <new_location>
+	
+	relocate [options] droplets <new_location>
+	
+	relocate [options] services <new_location>
+	
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
 </table> 
-
-  -v --verbose                    Verbose output
 
 <hr>
 
@@ -1593,21 +1569,24 @@ Generate a report that can be sent to technical support.
 
 **Syntax**
 
-report
+	report
+	
+	report --node <node-IP>
+	
+	report --cluster
+	
+	report --help
 
-report --node *<node-IP>*
-
-report --cluster
-
-report --help
-
-  
-
-  -h --help                       Show help information
-
-  -c --cluster                    Gather reports from entire cluster into one tarball
-
-  -n --node *<node-IP>*           Gather report from a specific cluster node
+ **Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-c --cluster</td><td>Gather report information from the entire cluster into one tarball.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Gather report information from a specific cluster node only.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
+</table> 
 
 <hr>
 
@@ -1617,15 +1596,19 @@ Restart a node or individual roles.
 
 **Syntax**
 
-	restart [options] [*<role>...*]
+	restart [options] [<role>...]
 	
 	restart --help
 
-  
-
-  -n --node *<node-IP>*           Restart a specific cluster node
-
-  -v --verbose                    Show process information
+**Options**
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Restart a specific cluster node.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
+</table>
 
 <hr>
 
@@ -1637,13 +1620,13 @@ Enable roles on a node.
 
 	role add --help
 	
-	role add [-v] [--node <node-IP>] [--no-start] *<role>...*
+	role add [-v] [--node <node-IP>] [--no-start] <role>...
 	
 	role add [-v] [--node <node-IP>*] [--no-start] --all
 	
-	role add [-v] [--node <node-IP>*] [--no-start] --all-but *<role>...*
+	role add [-v] [--node <node-IP>*] [--no-start] --all-but <role>...
 	
-	role add [-v] [--node <node-IP>*] --only *<role>...*
+	role add [-v] [--node <node-IP>*] --only <role>...
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1651,19 +1634,13 @@ Enable roles on a node.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-</table> 
-
-  -a --all                        Enable all available roles
-
-  -b --all-but                    Enable all available roles except these
-
-  -o --only                       Enable only these roles, while disabling others
-
-  -n --node *<node-IP>*           Add a role on a specific cluster node
-
-  -s --no-start                   Do not start processes
-
-  -v --verbose                    Show process information
+<tr><td>-a --all</td><td>Enable all available roles.</td></tr>
+<tr><td>-b --all-but</td><td>Enable all available roles except those listed.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Add a role on a specific cluster node.</td></tr>
+<tr><td>-o --only</td><td>Enable only these roles; disable all others.</td></tr>
+<tr><td>-s --no-start</td><td>Do not start processes.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
+</table>                    
 
 <hr>
 
@@ -1695,13 +1672,11 @@ Disable roles on a node.
 
 	role remove --help
 	
-	role remove [-v] [--node *<node-IP>*] *<role>...*
+	role remove [-v] [--node <node-IP>] <role>...
 	
-	role remove [-v] [--node *<node-IP>*] --all
+	role remove [-v] [--node <node-IP>] --all
 	
-	role remove [-v] [--node *<node-IP>*] --all-but *<role>...*
-
-  
+	role remove [-v] [--node <node-IP>] --all-but <role>...
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1709,16 +1684,11 @@ Disable roles on a node.
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-a --all</td><td>Disable all available roles.</td></tr>
+<tr><td>-b --all-but</td><td>Disable all available roles except those listed.</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Remove a role on a specific cluster node.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
 </table> 
-
-  -a --all                        Disable all available roles
-
-  -b --all-but                    Disable all available roles except these
-
-  -n --node *<node-IP>*           Remove a role on a specific cluster node
-
-  -v --verbose                    Show process information
-
 
 <hr>
 
@@ -1746,7 +1716,7 @@ Start nodes or individual roles.
 
 **Syntax**
 
-start [options] [*<role>...*]
+	start [options] [<role>...]
 
 **Options**
 <table style="text-align: left; vertical-align: top; width:600px;">
@@ -1754,13 +1724,10 @@ start [options] [*<role>...*]
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
+<tr><td>-n --node <<i>node-IP</i>></td><td>Start a specific cluster node.</td></tr>
+<tr><td>-e --ephemeral</td><td>Try not to regenerate/modify any config items.</td></tr>
+<tr><td>-v --verbose</td><td>Show process information.</td></tr>
 </table> 
-
-  -n --node *<node-IP>*           Start a specific cluster node
-
-  -e --ephemeral                  Try not to regenerate/modify any config items
-
-  -v --verbose                    Show process information
 
 <hr>
 
