@@ -4,12 +4,17 @@ permalink: /als/v1/admin/server/configuration/
 product: devplatform
 title: "Detailed Configuration"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 #Detailed Configuration {#detailed-configuration} 
 
-   [Changing the Password](#changing-the-password)
+After booting the VM, run *kato process ready all* before starting the following configuration steps. This command returns **READY** when all configured system processes have started, and is particularly important when using *kato* commands in automated configuration scripts which run immediately after boot (the
+[*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
+option is useful in this scenario).
 
+**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
+
+- [Changing the Password](#changing-the-password)
 -   [Network Setup](#network-setup)
 	-   [Changing the Hostname](#changing-the-hostname)
 	-   [Changing IP Addresses](#changing-ip-addresses)
@@ -28,26 +33,16 @@ title: "Detailed Configuration"
 	-   [Application Lifecycle Service Data Services vs. High Availability Databases](#helion-data-services-vs-high-availability-databases)
 	-   [HTTPS & SSL](#https-ssl)
 		-   [Using your own SSL certificate](#using-your-own-ssl-certificate)
-		-   [Adding Custom SSL Certs (SNI)](#adding-custom-ssl-certs-sni)
+		-   [Adding More SSL Certificates (SNI)](#adding-custom-ssl-certs-sni)
 		-   [CA Certificate Chaining](#ca-certificate-chaining)
 		-   [Customizing the Cipher Suites](#cipher)
 		-   [Generating a self-signed SSL certificate](#generating-a-self-signed-ssl-certificate)
+		-   [Replacing the Default SSL Certificate](#using-your-own-ssl-certificate)
 	-   [Quota Definitions](#quota-definitions)
 		-   [sudo](#sudo)
 		-   [Allowed Repositories](#allowed-repositories)
 
-##General {#general}
-
-**Note**
-
-After booting the VM, run *kato process ready all* before starting the following configuration steps. This command returns **READY** when all configured system processes have started, and is particularly important when using *kato* commands in automated configuration scripts which run immediately after boot (the
-[*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
-option is useful in this scenario).
-
-**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
-
-
-### Changing the Password {#changing-the-password}
+## Changing the Password {#changing-the-password}
 
 The default password for the Helion system user is **helion**.  In clusters created by Helion Orchestration tools (the Horizon Management Console and Installer CLI VM), access after cluster setup is only available by SSH key pair.
 
@@ -59,13 +54,11 @@ manually with the *passwd* command.
 ##Network Setup {#network-setup}
 
 ### Changing the Hostname {#changing-the-hostname}
-You may want or need to change the hostname of the Application Lifecycle Service system,
-either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the [kato node rename](/als/v1/admin/reference/kato-ref/#kato-command-ref) command:
+You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the [kato node rename](/als/v1/admin/reference/kato-ref/#kato-command-ref) command:
 
     kato node rename mynewname.example.com
 
-This command will change the system hostname in */etc/hostname* and */etc/hosts,* as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the [Management
-Console](/als/v1/user/console/#management-console).
+This command will change the system hostname in */etc/hostname* and */etc/hosts,* as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the [Management Console](/als/v1/user/console/#management-console).
 
 mDNS is only supported with ".local" hostnames. If you want to give the
 VM a canonical hostname on an existing network, [configure DNS](#server-config-dns) and disable the **mdns** role:
@@ -80,18 +73,15 @@ may also need to manually [modify the */etc/hosts file*](#server-config-etc-host
 
 ### Changing IP Addresses {#changing-ip-addresses}
 
-The Application Lifecycle Service *micro cloud* server is initially set up for
-[*DHCP*](/als/v1/user/reference/glossary/#term-dhcp) and [*multicast
-DNS*](/als/v1/user/reference/glossary/#term-multicast-dns). This is
-often sufficient for local testing, but in this configuration is only a
+The Application Lifecycle Service *micro cloud* server is initially set up for [DHCP](/als/v1/user/reference/glossary/#term-dhcp) and [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns). This is
+often sufficient for local testing, but in this configuration has only a
 single node and can only be privately routed.
 
 As you move toward production use of the server, further configuration
 of IP addresses and hostnames will therefore be required. A production
 Application Lifecycle Service server will most likely be a
-[*cluster*](/als/v1/user/reference/glossary/#term-cluster) consisting
-of several nodes, some of them requiring IP addresses and corresponding
-hostnames.
+[cluster](/als/v1/user/reference/glossary/#term-cluster) consisting
+of several nodes and some of them will require IP addresses and corresponding hostnames.
 
 If your server is to be exposed to the Internet, these addresses must be
 routable and the hostnames must appear in the global DNS. Even if your
@@ -99,27 +89,14 @@ server is to be part of a [*private
 PaaS*](/als/v1/user/reference/glossary/#term-private-paas) for
 organizational use only, it must still integrate fully with your network
 services, DHCP and DNS in particular. Finally, in the rare case that
-such services are not available, the Application Lifecycle Service server can be configured
-with static IP addresses and hostnames.
+such services are not available, the Application Lifecycle Service can be configured with static IP addresses and hostnames.
 
 Before we examine these scenarios in detail, let's review the separation
-of roles in a [*cluster*](/als/v1/admin/cluster/#cluster-setup):
+of roles in a [cluster](/als/v1/admin/cluster/#cluster-setup):
 
--   The **core** node which we conventionally call
-    `api.helion-xxxx.local` in a micro cloud will
-    be given its own hostname and IP address in a cluster so that you
-    can reach it from both the [*Management
-    Console*](/als/v1/user/console/#management-console) and the
-    command line.
--   At the same time, the other nodes in the cluster will also need to
-    reach the core node, so whatever address is configured on its
-    network interface will have to be known to the network, the primary
-    node, and all the other nodes. This can be the same as the primary
-    address assigned to the core, or a secondary address used purely
-    within the cluster.
--   The **router** nodes, if separate from the primary, will each
-    require IP addresses of their own, reachable from any load balancer
-    and through any firewall that you put in front of them.
+-   The **core** node which we conventionally call `api.helion-xxxx.local` in a micro cloud will be given its own hostname and IP address in a cluster so that you can reach it from both the [Management Console](/als/v1/user/console/#management-console) and the command line.
+-   At the same time, the other nodes in the cluster will also need to reach the core node, so whatever address is configured on its network interface will have to be known to the network, the primary node, and all the other nodes. This can be the same as the primary address assigned to the core, or a secondary address used purely within the cluster.
+-   The **router** nodes, if separate from the primary, will each require IP addresses of their own, reachable from any load balancer and through any firewall that you put in front of them.
 
 Where you configure these hostnames and IP addresses will depend on how
 you operate your data center network. You will want to confer with your
@@ -144,7 +121,7 @@ address is on interface `eth0`, a secondary address
 `10.0.0.1/24` could be set up temporarily as
 follows:
 
-    $ ipcalc -nb 10.0.0.1/24
+    ipcalc -nb 10.0.0.1/24
     Address:   10.0.0.1
     Netmask:   255.255.255.0 = 24
     Wildcard:  0.0.0.255
@@ -154,7 +131,7 @@ follows:
     HostMax:   10.0.0.254
     Broadcast: 10.0.0.255
     Hosts/Net: 254                   Class A, Private Internet
-    $ sudo ifconfig eth0:1 10.0.0.1 netmask 255.255.255.0 broadcast 10.0.0.255 up
+    sudo ifconfig eth0:1 10.0.0.1 netmask 255.255.255.0 broadcast 10.0.0.255 up
 
 Configure another cluster node using a different address on the same
 subnet, and be sure that `ping` works correctly on
@@ -164,9 +141,7 @@ administrator for their addresses.
 
 ### Setting a Static IP {#setting-a-static-ip}
 
-The easiest way to configure an Application Lifecycle Service VM with a static IP address is
-to use the [*kato op
-static\_ip*](/als/v1/admin/reference/kato-ref/#kato-command-ref-op) command.
+The easiest way to configure an Application Lifecycle Service VM with a static IP address is to use the [kato op static\_ip](/als/v1/admin/reference/kato-ref/#kato-command-ref-op) command.
 
 This command will prompt for the following inputs:
 
@@ -182,22 +157,30 @@ This command will prompt for the following inputs:
 automatically calculate the network / broadcast addresses for you, and
 prompt for the *sudo* password to write the changes.
 
+The command can be run non-interactively with the following arguments:
+
+- --interface
+- --ip
+- --netmask
+- --gateway
+- --dns-nameservers (set empty "" to skip)
+- --dns-search-domains (set empty "" to skip)
+- --restart-network
+
+If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, [kato node migrate](/als/v1/admin/reference/kato-ref/kato-command-ref-node-migrate) is run automatically.
+
 As a precaution, the command does not automatically restart networking
 services. To do so, run the following commands:
 
-    $ sudo /etc/init.d/networking restart
+    sudo /etc/init.d/networking restart
 
 You will see a deprecation warning about the `restart` option, which can safely be ignored in this context.
 
 **Note**
+If you are setting a new static IP *after* having configured a cluster, you must reconfigure all other nodes in the cluster to use the new MBUS IP address. Run [kato node attach](/als/v1/admin/reference/kato-ref/kato-command-ref-node-attach) on all non-Core nodes. 
 
-If you are setting a new static IP *after* having configured the VM as a
-Core node in a cluster, you must run the [*kato node
-migrate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
-command on each Application Lifecycle Service node to reset the MBUS\_IP for the cluster.
 
-Alternatively, these changes could be made by editing the
-*/etc/network/interfaces* file manually. For example:
+Alternatively, these changes could be made by editing the */etc/network/interfaces* file manually. For example:
 
     auto eth0
     iface eth0 inet static
@@ -217,8 +200,8 @@ above. Multiple DNS servers can be specified in a comma separated list.
 reinitialize on `SIGHUP`. Therefore, perform the
 following to reinitialize:
 
-    $ sudo /etc/init.d/dnsmasq restart
-    $ sudo /etc/init.d/networking restart
+    sudo /etc/init.d/dnsmasq restart
+    sudo /etc/init.d/networking restart
 
 Or use `sudo shutdown -r` to exercise a complete
 restart. Then use `ifconfig` to check that the
@@ -234,8 +217,7 @@ being used by dnsmasq by checking the file
 **Note**
 
 There may be a performance advantage in locally defining a private
-secondary IP address ([**RFC
-1918**](http://tools.ietf.org/html/rfc1918)) for the controller so
+secondary IP address ([RFC 1918](http://tools.ietf.org/html/rfc1918)) for the controller so
 that the other nodes can be assured of routing directly to it. See your
 network administrator for advice on which addresses and subnets are
 permissible. Once you have this secondary address set up, see the
@@ -246,31 +228,29 @@ of the server.
  
 The `/etc/hosts` file is used to resolve certain
 essential or local hostnames without calling upon the DNS. Unless you
-need to [*change the local hostname*](#server-config-hostname), you will
+need to [change the local hostname](#server-config-hostname), you will
 in general *not* have to edit `/etc/hosts` manually,
 but when troubleshooting network issues it never hurts to verify that
 the file is configured correctly.
 
 As well, various components in a
-[*Cluster*](/als/v1/admin/cluster/#cluster-setup) rely on finding the
+[Cluster](/als/v1/admin/cluster/#cluster-setup) rely on finding the
 cluster nodes in `/etc/hosts`: the Cloud Controller
 and the RabbitMQ service in particular.
 
 Application Lifecycle Service will automatically configure `/etc/hosts`
-on the virtual machine with one entry for the `localhost` loopback address and another for the [**RFC
-1918**](http://tools.ietf.org/html/rfc1918) private IP address of
+on the virtual machine with one entry for the `localhost` loopback address and another for the [RFC 1918](http://tools.ietf.org/html/rfc1918) private IP address of
 the cluster's Primary node, for example "10.0.0.1" or "192.168.0.1". All
 communication between cluster nodes should be strictly through their
 private IP addresses and not on routable addresses provided by the DNS.
 
 Remember that `/etc/hosts` does not support
-wildcards. You must use some form of [*DNS*](#server-config-dns) for
+wildcards. You must use some form of [DNS](#server-config-dns) for
 that.
 
 Consider an Application Lifecycle Service instance called `helion-test`
 in domain `example.com`. The following example is
-what you should expect to see on a [*micro
-cloud*](/als/v1/user/reference/glossary/#term-micro-cloud)
+what you should expect to see on a [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud)
 installation, where all roles are running on the same node:
 
     $ hostname
@@ -288,12 +268,12 @@ installation, where all roles are running on the same node:
     127.0.0.1       localhost helion-test
     10.0.0.1        helion-test.example.com api.helion-test.example.com
 
-On a [*cluster*](/als/v1/user/reference/glossary/#term-cluster)
+On a [cluster](/als/v1/user/reference/glossary/#term-cluster)
 installation, the IP address in /etc/hosts will identify the node
 hosting the MBUS, usually the same as the Cloud Controller. On this
 node, you will see a correspondence between the network interface
 `eth0` address and `/etc/hosts`
-as in the above example. On each of the *other nodes* in the cluster,
+as in the above example. On each of the **other** nodes in the cluster,
 for example DEA nodes, `eth0` will be configured
 with its own address on the same subnet, but `/etc/hosts` will remain the same..
 
@@ -305,8 +285,7 @@ example:
 
 ### DNS {#dns}
 
-The Application Lifecycle Service micro cloud uses [*multicast
-DNS*](/als/v1/user/reference/glossary/#term-multicast-dns). to
+The Application Lifecycle Service micro cloud uses [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns). to
 broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local
 machine or subnet.
 
@@ -332,7 +311,7 @@ application pushed to Application Lifecycle Service as well as the following two
     aok.helion.example.com)
 
 If you intend to expose your applications at URLs on other domains (e.g.
-using [*helion map*](/als/v1/user/reference/client-ref/#command-map) add these names
+using [helion map](/als/v1/user/reference/client-ref/#command-map) add these names
 to the DNS zone file as well. For example:
 
     app.domain.com              IN    CNAME    helion.example.com
@@ -382,8 +361,8 @@ but which do not merit the effort of manually configuring a DNS record
 The quickest way to get wildcard DNS resolution is to use the
 [xip.io](http://xip.io/) service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.
 
-[*Change your hostname*](#server-config-hostname) using [*kato node
-rename*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
+[Change your hostname](#server-config-hostname) using [kato node
+rename](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
 match the external IP address with the 'xip.io' domain appended. For
 example:
 
@@ -397,7 +376,7 @@ private subnets as well as public IP addresses.
 ####dnsmasq {#dnsmasq}
 
 Locally, you can run
-[*dnsmasq*](/als/v1/user/reference/glossary/#term-dnsmasq) as a simple
+[dnsmasq](/als/v1/user/reference/glossary/#term-dnsmasq) as a simple
 DNS proxy which resolves wildcards for
 `*.helion-test.example.com` to
 `10.9.8.7` when line such as the following is
@@ -425,11 +404,11 @@ Reboot to apply the changes.
 
 For Application Lifecycle Service VMs with a static IP, add the nameservers when prompted
 when running the `kato op static_ip` command (see
-[*Setting a Static IP*](#server-config-static-ip) above).
+[Setting a Static IP](#server-config-static-ip) above).
 
 ###TCP/UDP Port Configuration {#tcp-udp-port-configuration}
 
-The Application Lifecycle Service [*micro cloud*](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
+The Application Lifecycle Service [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
 the following ports exposed:
 
 <table>
@@ -463,7 +442,7 @@ port.
 <tr><td>5454</td><td>tcp</td><td>all nodes</td><td>controller</td><td>redis</td></tr>
 </table>
    
-More on  [*NATS*](/als/v1/user/reference/glossary/#term-nats) communication
+More on  [NATS](/als/v1/user/reference/glossary/#term-nats) communication
     with the MBUS IP (core Cloud Controller)10 is available in the glossary.
 
 Each node can be internally firewalled using
@@ -474,7 +453,7 @@ Comments:
 
 -   Ports 80 and 443 need only be open to the world on router nodes.
 -   Port 4222 should be open on all nodes for
-    [*NATS*](/als/v1/user/reference/glossary/#term-nats) communication
+    [NATS](/als/v1/user/reference/glossary/#term-nats) communication
     with the MBUS IP (core Cloud Controller)
 -   Port 9022 should be open to allow transfer of droplets to and from
     the DEAs, and Cloud Controllers.
@@ -509,9 +488,7 @@ In some cases, it may be a requirement that any HTTP request is first
 handled through an upstream or parent proxy (HTTP requests may not be
 directly routable otherwise).
 
-In this case it is necessary to tell
-[*Polipo*](/als/v1/user/reference/glossary/#term-polipo) about the
-proxy so it knows how to handle this correctly.
+In this case it is necessary to tell [Polipo](/als/v1/user/reference/glossary/#term-polipo) about the proxy so it knows how to handle this correctly.
 
 Open the Polipo config file `/etc/polipo/config` and
 add the lines:
@@ -538,22 +515,18 @@ Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
 
 ###Staging Cache & App HTTP Proxy {#staging-cache-app-http-proxy}
 
-Application Lifecycle Service caches all application dependencies that are downloaded by
-module managers that support the
-[HTTP\_PROXY](/als/v1/user/reference/environment/#term-http-proxy)
-environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to
-100MB of in-memory cache.
+Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the [HTTP\_PROXY](/als/v1/user/reference/environment/#term-http-proxy) environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.
 
 If you have an upstream HTTP proxy that deployed applications and the
 staging system need to traverse to access the internet, use the
 `kato op upstream_proxy ...` command on all DEA
 nodes:
 
-    $ kato op upstream_proxy set 192.168.0.99:3128
+    kato op upstream_proxy set 192.168.0.99:3128
 
 To remove the proxy setting:
 
-    $ kato op upstream_proxy delete <proxy_addr>
+    kato op upstream_proxy delete <proxy_addr>
 
 To set an HTTP proxy exclusively for apps, add an **environment\app\_http\_proxy** setting in the dea\_ng
 config using [kato config set](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example:
@@ -583,8 +556,7 @@ on external block storage for:
 -   containers (DEA and Stager nodes)
 
 Suggestions for mounting block storage and instructions for relocating
-data can be found in the [*Persistent
-Storage*](/als/v1/admin/best-practices/#bestpractices-persistent-storage)
+data can be found in the [Persistent Storage](/als/v1/admin/best-practices/#bestpractices-persistent-storage)
 section.
 
 ##Application Lifecycle Service Data Services vs. High Availability Databases {#helion-data-services-vs-high-availability-databases}
@@ -596,32 +568,32 @@ is recommended.
 To use an external database instead of the data services provided by
 Application Lifecycle Service, specify the database credentials directly in your application
 code instead of using the credentials from the
-[*VCAP\_SERVICES*](/als/v1/user/reference/environment/#term-vcap-services)
+[VCAP\_SERVICES](/als/v1/user/reference/environment/#term-vcap-services)
 environment variable.
 
 To tie external databases to Application Lifecycle Service as a data service, see the
-examples in the [*Adding System
-Services*](/als/v1/admin/reference/add-service/#add-service) section.
+examples in the [Adding System
+Services](/als/v1/admin/reference/add-service/#add-service) section.
 
 ###HTTPS & SSL {#https-ssl}
 
 HTTPS mode provides access to the provisioned apps using wild card SSL
 certificates through the router or
-[*Nginx*](/als/v1/user/reference/glossary/#term-nginx) web server.
+[Nginx](/als/v1/user/reference/glossary/#term-nginx) web server.
 
-There are self-signed certificates on the VM to match the default
-hostname `helion-xxxx.local`. These certificates
-can be found in:
+The ALS VM generates self-signed wildcard SSL certificates to match the unique ``.local`` hostname it assigns itself at first boot. These certificates can be found in: 
 
--   `/etc/ssl/certs/helion.crt` (Public
-    Certificate)
--   `/etc/ssl/private/helion.key` (Used to
-    generate the signed certificates)
+-   `/etc/ssl/certs/helion.crt` (Public Certificate)
+-   `/etc/ssl/private/helion.key` (Used to generate the signed certificates)
 
-If you change the hostname, you will need to regenerate the certificates
-or use your own (signed or self-signed) certificate.
+Since these certificates are self-signed, rather than issued by a certificate authority (CA), web browsers will warn that the certificate cannot be verified and prompt the user to add a manual exception. 
+  
+To avoid this, the generated certificate for the base URL of the PaaS can be replaced with a signed certificate issued by a CA. 
+  
+For additional Org-owned and Shared domains, SSL certificates can be added using the SNI method described further below.  
 
-### Using your own SSL certificate {#using-your-own-ssl-certificate}
+
+### Replacing the Default SSL Certificate {#using-your-own-ssl-certificate}
 
 On all router nodes, upload your *.key* file to the */etc/ssl/private/*
 directory and your *.crt* file to */etc/ssl/certs/*. Change the
@@ -631,13 +603,13 @@ point to the new files:
     "sslKeyFile": "/etc/ssl/private/example.key",
     "sslCertFile": "/etc/ssl/certs/example.crt",
 
-### Adding Custom SSL Certs (SNI) {#adding-custom-ssl-certs-sni}
+### Adding More SSL Certs (SNI) {#adding-custom-ssl-certs-sni}
 
 The Application Lifecycle Service router supports
 [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication), and custom
 SSL certificates for domains resolving to the system can be added using
-the [*kato op custom\_ssl\_cert
-install*](/als/v1/admin/reference/kato-ref/#kato-command-ref-op) command.
+the [kato op custom\_ssl\_cert
+install](/als/v1/admin/reference/kato-ref/#kato-command-ref-op) command.
 Usage:
 
     kato op custom_ssl_cert install <key-path> <cert-path> <domain> [--wildcard-subdomains]
@@ -688,16 +660,16 @@ the list. For example:
 You can re-generate Application Lifecycle Service's self-signed SSL certificate by running
 the following command on the VM:
 
-    $ kato op regenerate ssl_cert
+    kato op regenerate ssl_cert
 
 To do essentially the same operation manually (substituting
 "hostname.mydomain.com" with your own details):
 
-    $ mkdir ~/hostname.mydomain.com
-    $ cd ~/hostname.mydomain.com
-    $ (umask 077 && touch host.key host.cert host.info)
-    $ openssl genrsa 2048 > host.key
-    $ openssl req -new -x509 -nodes -sha1 -days 365 -key host.key -multivalue-rdn \
+    mkdir ~/hostname.mydomain.com
+    cd ~/hostname.mydomain.com
+    (umask 077 && touch host.key host.cert host.info)
+    openssl genrsa 2048 > host.key
+    openssl req -new -x509 -nodes -sha1 -days 365 -key host.key -multivalue-rdn \
             -subj "/C=CA/emailAddress=email@mydomain.com/O=company_name/CN=*.mydomain.com/CN=mydomain.com" \
             >host.crt
 
@@ -721,9 +693,9 @@ apps via HTTPS for the first time.
 
 The router's TLS cipher suite can be modified using *kato config*. For example:
 
-	kato config set router2g ssl/cipher_suite 'ALL:!ADH:!EXP:!LOW:!RC2:!3DES:!SEED:RC4+RSA:+HIGH:+MED'
+	kato config set router2g ssl/cipher_suite 'ALL:!ADH:!EXP:!LOW:!RC2:!3DES:!SEED:!SSLv3:RC4+RSA:+HIGH:+MED'
 
-The setting above is the default for the Helion router. See [OpenSSL's Cipher List Format and Cipher Strings](https://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT) documentation for other valid values.
+The setting above is the default for the Helion router minus SSLv3. See OpenSSL's [Cipher List Format](https://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT) and [Cipher Strings](https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS) documentation for other valid values.
 
 ##Quota Definitions {#quota-definitions}
 

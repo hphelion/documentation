@@ -225,7 +225,7 @@ The Settings menu provides access to the following Console and system settings:
 - **Logging Level**: Changes the verbosity of logs from 'debug2' (most verbose) through 'off' (silent).
 - **Support Email**: The email address displayed to end users when errors are encountered. Use an address which is monitored by administrators.
 - **Sample App URLs**: URIs for URIs for JSON files which populate the [Sample Applications](app-store.html#app-store) The URIs need not be public, but must be accessible from the controller node.
-- **Allowed Repos**: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude ) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See [Allowed Repositories](/als/v1/admin/server/configuration/#allowed-repositories).
+- **Allowed Repos**: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See [Allowed Repositories](/als/v1/admin/server/configuration/#allowed-repositories).
 
 ### Applications {#console-settings-applications}
 
