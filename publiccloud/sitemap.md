@@ -38,7 +38,6 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DNS API](/publiccloud/api/dns)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Monitoring as a Service (MaaS) Overview](/publiccloud/maas)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MaaS API](/publiccloud/api/monitoring)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Application Platform as a Service (aPaaS) Overview](/apaas)<br>
 [HP Helion Public Cloud Bindings](/publiccloud/bindings)<br>
 [HP Helion Public Cloud CLI Documentation](/publiccloud/cli)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[Windows Powershell CLI Overview](/publiccloud/cli/windows/)<br>
