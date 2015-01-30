@@ -167,7 +167,7 @@ The command can be run non-interactively with the following arguments:
 - --dns-search-domains (set empty "" to skip)
 - --restart-network
 
-If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, [kato node migrate](/als/v1/admin/reference/kato-ref/kato-command-ref-node-migrate) is run automatically.
+If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, [kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-migrate) is run automatically.
 
 As a precaution, the command does not automatically restart networking
 services. To do so, run the following commands:
@@ -177,7 +177,7 @@ services. To do so, run the following commands:
 You will see a deprecation warning about the `restart` option, which can safely be ignored in this context.
 
 **Note**
-If you are setting a new static IP *after* having configured a cluster, you must reconfigure all other nodes in the cluster to use the new MBUS IP address. Run [kato node attach](/als/v1/admin/reference/kato-ref/kato-command-ref-node-attach) on all non-Core nodes. 
+If you are setting a new static IP *after* having configured a cluster, you must reconfigure all other nodes in the cluster to use the new MBUS IP address. Run [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all non-Core nodes. 
 
 
 Alternatively, these changes could be made by editing the */etc/network/interfaces* file manually. For example:
@@ -673,12 +673,12 @@ To do essentially the same operation manually (substituting
             -subj "/C=CA/emailAddress=email@mydomain.com/O=company_name/CN=*.mydomain.com/CN=mydomain.com" \
             >host.crt
 
-For specific configurations that can be used in the `-subj` option, see <http://www.openssl.org/docs/apps/req.html>.
+For specific configurations that can be used in the `-subj` option, see  the [Open SSL](http://www.openssl.org/docs/apps/req.html) documentation.
 
 Following that, run:
 
-    $ openssl x509 -noout -fingerprint -text < host.crt > host.info
-    $ chmod 400 host.key host.crt
+    openssl x509 -noout -fingerprint -text < host.crt > host.info
+    chmod 400 host.key host.crt
 
 To get the router to use the new certificate and key files, follow the
 steps in the [*Using your own SSL
