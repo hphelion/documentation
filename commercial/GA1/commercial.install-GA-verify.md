@@ -51,8 +51,8 @@ From the seed cloud host, connect to the undercloud Horizon console.
 
 5. In the Horizon console, you can obtain the IP address of the demo VM:
 
-		a. Click Project > Compute > Instance.
-		b. Note the public IP address of the **demo** instance, starting with `192`.
+	a. Click Project > Compute > Instance.
+	b. Note the public IP address of the **demo** instance, starting with `192`.
 
 ### Connecting to the overcloud Horizon console ### {#connectover}
 
@@ -75,8 +75,8 @@ From the seed cloud host, connect to the overcloud Horizon console.
 
 5. In the Horizon console, you can obtain the IP address of the demo VM:
 
-		a. Click Project > Compute > Instance.
-		b. Note the public IP address of the **demo** instance, starting with `192`.
+	a. Click Project > Compute > Instance.
+	b. Note the public IP address of the **demo** instance, starting with `192`.
 
 
 ### Connecting to the demo VM ### {#connectvm}
@@ -101,7 +101,7 @@ From the seed cloud host, you can connect to the demo VM using the following ste
 	`DEMO_IP=$(nova list | grep " demo " | awk ' { print $13 } ')`
 -->
 
-5. Connect to the demo VM using the IP address you obtained from the Horizon console:
+1. Connect to the demo VM using the IP address you obtained from the Horizon console:
 
 	`ssh debian@${DEMO_IP}`
 
@@ -109,7 +109,7 @@ From the seed cloud host, you can connect to the demo VM using the following ste
 
 	If the prompt changes to `debian@demo`, you have successfully connected to the demo VM.
 
-6. Before proceeding, enter `exit` to disconnect from the demo VM.
+2. Before proceeding, enter `exit` to disconnect from the demo VM.
 
 ### Connecting to the monitoring and logging interfaces ### {#connectmonitor}
 
@@ -132,9 +132,11 @@ You can access these services with the following steps:
 		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
 		echo $UNDERCLOUD_IP
 
-2. Log in with the user name `icingaadmin` and password `icingaadmin`.
+2. Log in with the user name `icingaadmin` and password.
 
-3. To access the undercloud logging console, first obtain the Kibana password.
+
+	<!-- Not needed; password is in install output
+	3. To access the undercloud logging console, first obtain the Kibana password.
 
 	a. From the seed cloud host log in to the undercloud as super user:
 
@@ -146,7 +148,7 @@ You can access these services with the following steps:
 		cat  /opt/kibana/htpasswd.cfg 
 
 	Make note of the password.
-
+	-->
 4. Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
 
 		http://<undercloud IP>:81 
@@ -155,7 +157,13 @@ You can access these services with the following steps:
 
 		http://192.0.2.2:81
 
-5. Log in with the user name `kibana` and the password you obtained above.
+	If you did not retrieve the undercloud IP from the end of the install, enter the following command:
+
+		. /root/stackrc
+		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		echo $UNDERCLOUD_IP
+
+5. Log in with the user name `kibana` and the password.
 
 ## Next Step
 
