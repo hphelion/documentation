@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/client/reference
 product: devplatform
-title: "HP Application Lifecyle Service (ALS) Command-Line Client Reference for cfmgmt"
+title: "HP Application Lifecycle Service (ALS) Command-Line Client Reference"
 
 ---
 
@@ -26,7 +26,7 @@ There are three ways to pass configuration values into ALS:
  
 ALS maintains separate configuration files.
 
-One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named *alsconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
+One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named *cfmgmtconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
  Global level **configurations** manage tenants, users, versions, and other system information. 
 
 The other configuration files, specified by the **--load** option, includes the values that should be passed to arguments for a specific command. Values must be included in the appropriate file for correct scoping; putting a command-specific value in the global file, for example, will not function as desired.
@@ -38,9 +38,9 @@ These variables affect the entire cluster; they are **global** in scope. These e
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <th width="150">Option</th><th>Description</th><th>Environment Variable</th>
-<tr><td>--config 'C:\Users&#92;<i>username</i>\.cfmgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
+<tr><td>--config 'C:\Users&#92;<i>username</i>&#92;.cfmgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
 <tr><td>--debug<td>Enables additional debug information.</td><td>n/a</td></tr>
-<tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$ALS_DEBUG</td></tr>
+<tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$CFMGMT_DEBUG</td></tr>
 <tr><td>--os-username</td><td>OpenStack user name</td><td>$OS_USERNAME</td></tr>
 <tr><td>--os-password</td><td>OpenStack password</td><td>$OS_PASSWORD</td></tr>
 <tr><td>--os-auth-url</td><td>OpenStack authentication URL</td><td>$OS_AUTH_URL</td></tr>
@@ -84,15 +84,15 @@ For help with this command within the command-line interface, enter
 </tr><tr>
 <td>--save</td><td>Save flags to the specified file</td>
 </tr><tr>
-<td>--admin-email</td><td>Email address for the ALS admin user</td>
+<td>--admin-email</td><td>Email address for the Cloud Foundry admin user</td>
 </tr>
 <tr>
-<td>--admin-password</td><td>Password for the ALS admin user</td>
+<td>--admin-password</td><td>Password for the Cloud Foundry admin user</td>
 </tr>
 <tr>
-<td>--admin-org 'org1'</td><td>Organization the ALS admin user is part of</td>
+<td>--admin-org 'org1'</td><td>Organization the Cloud Foundry admin user is part of</td>
 </tr><tr>
-<td>--cluster-title 'stack1'</td><td>Title of the ALS cluster</td>
+<td>--cluster-title 'stack1'</td><td>Title of the Cloud Foundry cluster</td>
 </tr><tr>
 <td>--cluster-prefix 'als'</td><td>Prefix to affix to cluster instance names.</td>
 </tr><tr>
@@ -210,7 +210,7 @@ For help with this command within the command-line interface, enter
 <tr>
 <td>--save</td><td>Save flag values to the specified file</td>
 </tr><tr>
-<td>--cluster-prefix 'als'</td><td>Prefix of the ALS cluster</td>
+<td>--cluster-prefix 'als'</td><td>Prefix to affix to cluster instance names.</td>
 </tr><tr>
 <td>--dea-count '1'</td><td>Number of DEAs nodes in the cluster</td>
 </tr><tr>
