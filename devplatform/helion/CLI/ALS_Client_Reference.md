@@ -38,7 +38,7 @@ These variables affect the entire cluster; they are **global** in scope. These e
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <th width="150">Option</th><th>Description</th><th>Environment Variable</th>
-<tr><td>--config 'C:\Users\<i>username</i>\.cfmgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
+<tr><td>--config 'C:\Users&#92;<i>username</i>\.cfmgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
 <tr><td>--debug<td>Enables additional debug information.</td><td>n/a</td></tr>
 <tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$ALS_DEBUG</td></tr>
 <tr><td>--os-username</td><td>OpenStack user name</td><td>$OS_USERNAME</td></tr>
