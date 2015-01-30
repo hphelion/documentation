@@ -7,7 +7,7 @@ title: "HP Application Lifecyle Service (ALS) Command-Line Client Reference for 
 ---
 
 <!--UNDER REVISION-->
-# HP Helion Application Lifecycle Service Command-Line Client Reference Tool (cfmgmt)
+#HP Helion ALS Command-Line Client Reference 
 
 The ALS command-line interface client (cfmgmt.exe) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the command line when the Horizon management console is unavailable or when direct access is preferred. 
 
