@@ -37,8 +37,6 @@ There are a number of HP Helion Public Cloud APIs available for your programming
 
 You can also avail yourself of one of the following APIs now in private beta; follow the links to sign up and begin trying them out!
 
-* [Application Platform as a Service (aPaaS)](/apaas/) - An application platform for development, deployment, and management of cloud applications hosted by HP.
-  **Note**: This service requires activation while in private beta; please [request access on our sign-up page](http://go.hpcloud.com/PaaS-private-beta-signup). Service use is free of charge during the private beta period.
 
 * [Load Balancer as a Service (LBaaS)](/publiccloud/api/lbaas/): API for the HP Helion Public Cloud Load Balancer service; facilitates creation and management of load balancers.
   **Note**: This service requires activation while in private beta; please [request access on our sign-up page](https://horizon.hpcloud.com/landing/pbr/hpext:lbaas).  Service use is free of charge during the private beta period.	
