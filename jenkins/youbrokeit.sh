@@ -91,7 +91,7 @@ done
  
 
 
-for i in `find . -name "*.md" | grep "\./devplatform/"`
+for i in `find . -name "*.md" | grep "\./devplatform/" | grep -v ALS-developer-trial-quick-start`
 	do
 	if [[ -n $(grep layout: $i | grep -v default-devplatform) ]];
 	then
@@ -271,7 +271,7 @@ do
 
 
   #Do a recursive grep for all yml files for the badstring and assign result to RESULT
-     RESULT=`grep -r --include="*.yml" --exclude-dir=jenkins "${BAD}" ./`
+     RESULT=`grep -r --include=\"*.yml\" --exclude-dir=jenkins "${BAD}" ./`
 
 
 
