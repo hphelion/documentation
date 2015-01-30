@@ -1,5 +1,5 @@
 ---
-layout: default-devplatform
+layout: trial-quick-start-devplatform
 title: "Quick Start Developer Trial"
 permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
