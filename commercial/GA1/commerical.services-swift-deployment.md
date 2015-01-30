@@ -275,7 +275,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 4. Verify the content of `object-1.builder` file to ensure that it meets your required configuration.
 
-	`# ringos view-ring -f /root/ring-building/object-1.builder`
+		`# ringos view-ring -f /root/ring-building/object-1.builder`
 	
 	The following sample displays the content of `object-1.builder` file:
 

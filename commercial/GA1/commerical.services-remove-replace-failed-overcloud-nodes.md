@@ -27,9 +27,9 @@ The three node overcloud controller cluster provides the highly available cloud 
 
 If your deployed operating cloud incurs an irrecoverable hardware failure in one of the controller servers, you must do the following:
 
-* de-commission the failed server
+* decommission the failed server
 * add a new server into your cloud and redeploy the replacement controller on it
-* re-connect the replaced controller into the three nodes controller cluster
+* reconnect the replaced controller into the three nodes controller cluster
 
 
 The following sections provide the detailed instructions to replace a failed controller node. They are divided into three sections. These sections describe a failure of the different type of controller node(s).

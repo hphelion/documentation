@@ -509,6 +509,12 @@ For more details on HA configuration, refer to [HP Helion OpenStack High Availab
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+##Ceph Firefly 80.7 Storage Solution
+
+The HP Helion OpenStack 1.1 Ceph Storage Solution provides an unified scalable and stable Storage Solution for the management of Helion OpenStack Glance Images, Nova Boot Volumes, Cinder persistent Volumes. The Solution also supports User backup and archive workloads to the Swift API writing to the same unified Ceph storage platform. This Solution is supported by HP.
+
+For more details on Ceph integration, refer to [HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution](/helion/openstack/ceph/)
+
 ## Updates and extensions {#updates-and-extensions}
 
 Updates and extensions provides a mechanism to download and install the content and updates for the overcloud.
