@@ -6,7 +6,7 @@ title: "AOK Authentication Server"
 ---
 <!--UNDER REVISION-->
 
-#AOK Authentication Server {#aok-authentication-server}
+# HP Helion Development Platform: AOK Authentication Server {#aok-authentication-server}
 
 AOK is Application Lifecycle Service's authentication management service (replacing Cloud Foundry's UAA Server). It issues tokens via OAuth2 for client applications such as the **helion** client and the Horizon Console. AOK can connect to other back-end SSO services such as LDAP by using different [*Strategies*](#aok-strategies).
 

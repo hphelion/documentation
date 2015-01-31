@@ -7,7 +7,8 @@ title: "Developing In Ruby"
 ---
 <!--PUBLISHED-->
 
-#Developing In Ruby
+# HP Helion Development Platform: Developing In Ruby
+
 <p>Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools

@@ -6,7 +6,7 @@ title: "Getting Started With The .NET SDK"
 ---
 <!--PUBLISHED-->
 
-#Getting Started With The .NET SDK
+# HP Helion Development Platform: Getting Started With The .NET SDK
 
 The .NET SDK library is built on top of HP Helion OpenStack&reg; APIs, which removes many of the
 complexities of working with the APIs so that developers can focus on writing applications.

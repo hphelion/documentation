@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-#HP Helion Development Platform: Quick Start Developer Trial {#top}
+# HP Helion Development Platform: Quick Start Developer Trial {#top}
 This document explains the process to install and configure Helion Development Platform Application Lifecycle Service (ALS) in the public cloud. This is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform.
 
 ALS Cluster creation is enabled by using an ALS Constructor, a Virtual Machine (VM) image pre-loaded with configuration and orchestration software.  This image is available in every public cloud account.

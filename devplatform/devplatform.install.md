@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-# This Page Has Been Removed
+#  HP Helion Development Platform: This Page Has Been Removed
 
 
 This page has been removed.  Please see [HP Helion Development Platform Commercial Installation and Configuration](/helion/devplatform/install/).

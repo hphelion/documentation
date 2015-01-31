@@ -7,7 +7,7 @@ title: "Management Console (Admin View)"
 ---
 <!--UNDER REVISION-->
 
-#Management Console (Admin View) {#management-console-admin-view}
+# HP Helion Development Platform: Management Console (Admin View) {#management-console-admin-view}
 The Application Lifecycle Service Management Console is a web interface that allows the
 administration and management of the Application Lifecycle Service Server. Many of the features described below are only available to Administrator users from the Admin view.
 

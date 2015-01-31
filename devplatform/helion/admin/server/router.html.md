@@ -6,7 +6,7 @@ title: "Router"
 ---
 <!--PUBLISHED-->
 
-Router[](#index-1 "Permalink to this headline")
+# HP Helion Development Platform: Router[](#index-1 "Permalink to this headline")
 ================================================
 [Settings](#settings)
     -   [WebSockets](#websockets)

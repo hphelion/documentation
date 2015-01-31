@@ -7,7 +7,7 @@ title: "Remote Debugging"
 ---
 <!--PUBLISHED-->
 
-#Remote Debugging {#remote-debugging}
+# HP Helion Development Platform: Remote Debugging {#remote-debugging}
 
 Different languages have different tools and protocols for remote
 debugging, but most require a connection between the running application

@@ -6,7 +6,7 @@ title: "Log Streams"
 ---
 <!--UNDER REVISION-->
 
-#Log Streams {#log-streams}
+# HP Helion Development Platform: Log Streams {#log-streams}
    [Logyard](#logyard)
     -   [Drains](#drains)
         -   [System Drains](#system-drains)

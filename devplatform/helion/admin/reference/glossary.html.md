@@ -6,7 +6,7 @@ title: "Glossary"
 ---
 <!--PUBLISHED-->
 
-Glossary[](#index-0 "Permalink to this headline")
+#  HP Helion Development Platform: Glossary[](#index-0 "Permalink to this headline")
 ==================================================
 
 AMQP

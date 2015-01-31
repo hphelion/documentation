@@ -7,7 +7,7 @@ title: "Management Console Customization"
 ---
 <!--UNDER REVISION-->
 
-#Management Console Customization {#customization}
+# HP Helion Development Platform: Management Console Customization {#customization}
 
 The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the [Management Console](/als/v1/user/console/#management-console) interface.
 

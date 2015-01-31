@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 <!--PUBLISHED-->
-#Eclipse Deployment Plugin
+# HP Helion Development Platform: Eclipse Deployment Plugin
 If you're building apps in Eclipse, use this plugin to configure, package, and deploy your app directly to HP Helion Development Platform.
 
 Follow the steps outlined in this document to get the plugin up and running and to deploy one of the sample apps.

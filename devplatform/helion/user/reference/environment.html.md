@@ -6,7 +6,7 @@ title: "Environment Variables"
 ---
 <!--PUBLISHED-->
 
-Environment Variables[](#environment-variables "Permalink to this headline")
+# HP Helion Development Platform: Environment Variables[](#environment-variables "Permalink to this headline")
 =============================================================================
 
 Application Lifecycle Service exposes a number of predefined [environment

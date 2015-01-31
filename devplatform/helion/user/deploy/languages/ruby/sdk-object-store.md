@@ -6,7 +6,7 @@ title: "Examples for working with HP Helion Object Storage Service"
 ---
 <!--PUBLISHED-->
 
-#Examples for working with HP Helion Object Storage Service
+# HP Helion Development Platform: Examples for working with HP Helion Object Storage Service
 
 
 The HP Helion Extensions to Ruby Fog library provides Object Storage

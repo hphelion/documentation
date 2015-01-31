@@ -6,7 +6,7 @@ title: "User-Provided Services"
 ---
 <!--PUBLISHED-->
 
-User-Provided Services[](#user-provided-services "Permalink to this headline")
+# HP Helion Development Platform: User-Provided Services[](#user-provided-services "Permalink to this headline")
 ===============================================================================
 
 User-provided service instances allow you connect applications running

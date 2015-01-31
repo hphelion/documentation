@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-Application Lifecycle Service Client Command Reference[](#helion-client-command-reference "Permalink to this headline")
+ # HP Helion Development Platform: Application Lifecycle Service Client Command Reference[](#helion-client-command-reference "Permalink to this headline")
 =====================================================================================================
 
 - [Usage](#usage)   

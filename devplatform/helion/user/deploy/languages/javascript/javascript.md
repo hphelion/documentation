@@ -5,7 +5,8 @@ title: "Developing in Javascript"
 
 ---
 <!--PUBLISHED-->
-Developing in Javascript[](#java "Permalink to this headline")
+
+# HP Helion Development Platform: Developing in Javascript[](#java "Permalink to this headline")
 ===========================================
 
 Whether you&#8217;re deploying an application to the HP Helion Development Platform, a

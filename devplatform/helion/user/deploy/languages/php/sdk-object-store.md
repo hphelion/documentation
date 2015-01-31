@@ -5,7 +5,7 @@ title: "Working With Object Storage in PHP"
 ---
 <!--PUBLISHED-->
 
-#Working With Object Storage in PHP
+# HP Helion Development Platform: Working With Object Storage in PHP
 
 `Object Storage <http://docs.hpcloud.com/object-storage>`_ is a web scale storage system.
 It provides private and public access and is accessible through a simple API. Within

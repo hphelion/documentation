@@ -7,7 +7,7 @@ title: "Cluster Setup"
 ---
 <!--UNDER REVISION-->
 
-#Cluster Setup {#index-0}
+# HP Helion Development Platform: Cluster Setup {#index-0}
 This process begins with an installed [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud), which must then be cloned across several [nodes](/als/v1/user/reference/glossary/#term-node). You connect to each node in turn and tell it which [role](/als/v1/user/reference/glossary/#term-role)s it is to serve, thereby distributing the processing load for maximum performance. In HP Helion, the Clusters Panel in the Horizon dashboard makes this much easier to accomplish.
 
 - [Node Roles](#roles)

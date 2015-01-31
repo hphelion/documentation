@@ -6,7 +6,7 @@ title: "Connecting to HP Helion using Ruby Fog Bindings"
 ---
 <!--PUBLISHED-->
 
-#Connecting to HP Helion using Ruby Fog Bindings
+# HP Helion Development Platform: Connecting to HP Helion using Ruby Fog Bindings
 The HP Helion uses OpenStack as the platform and you can connect and set
 up your HP Helion Cloud using Ruby Fog. To begin, connect using the following
 instructions:

@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-#HP Helion Development Platform Installation and Configuration
+# HP Helion Development Platform: Installation and Configuration
 
 The HP Helion Development Platform installs four services:
 

@@ -6,7 +6,7 @@ title: "Developing In .NET"
 ---
 <!--PUBLISHED-->
 
-#Developing In .NET
+# HP Helion Development Platform: Developing In .NET
 
 .NET applications can be built to communicate directly with the <a class="reference external" href="http://docs.hpcloud.com/api">Helion APIs</a> through a REST client
 or through the SDK. The SDK simplifies working with the REST services by providing easy to use APIs.</p>

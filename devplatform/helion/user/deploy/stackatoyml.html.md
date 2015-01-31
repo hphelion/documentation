@@ -8,7 +8,7 @@ title: "HP Options"
 <!--UNDER REVISION-->
 <!--note that all this content has been merged into the manifest.yml file and is retained here in this orphaned article for reference only-->
 
-#HP Options {#yml-options}
+# HP Helion Development Platform: HP Options {#yml-options}
 Configuration options for Application Lifecycle Service applications can be stored in a
 *manifest.yml* file in the top-level application directory
 

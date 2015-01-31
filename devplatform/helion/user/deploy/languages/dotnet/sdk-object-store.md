@@ -5,7 +5,7 @@ published: false
 title: "Working with Object Storage in .NET"
 ---
 <!--PUBLISHED-->
-#Working with Object Storage in .NET
+# HP Helion Development Platform: Working with Object Storage in .NET
 
 [Object Storage](http://docs.hpcloud.com/object-storage) is a web scale storage system.
 It provides private and public access and is accessible through a simple but robust API. Within

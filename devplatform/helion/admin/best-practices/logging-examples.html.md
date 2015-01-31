@@ -6,7 +6,7 @@ title: "Log Drain Examples"
 ---
 <!--UNDER REVISION-->
 
-Log Drain Examples[](#log-drain-examples "Permalink to this headline")
+ # HP Helion Development Platform: Log Drain Examples[](#log-drain-examples "Permalink to this headline")
 =======================================================================
 Detailed instructions on how to use drains with third party log analysis
 software or services.

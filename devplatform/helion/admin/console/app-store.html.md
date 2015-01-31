@@ -6,7 +6,7 @@ title: "Sample Applications"
 ---
 <!--UNDER REVISION-->
 
-#Sample Applications {#index-0}
+# HP Helion Development Platform: Sample Applications {#index-0}
 
 The Sample Applications are a collection of ready-to-run applications which can be
 deployed with a couple of clicks. This interface uses the same API as the CLI client to pul the source code from a Git repository rather than push an archive from the user's local

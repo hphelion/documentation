@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 <!--PUBLISHED-->
-#Resources for Application Developers
+# HP Helion Development Platform: Resources for Application Developers
 
 HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.
 

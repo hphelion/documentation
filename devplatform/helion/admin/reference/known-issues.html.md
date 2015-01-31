@@ -7,7 +7,7 @@ title: "Known Issues"
 ---
 <!--UNDER REVISION-->
 
-#Known Issues[](#known-issues "Permalink to this headline")
+# HP Helion Development Platform: Known Issues[](#known-issues "Permalink to this headline")
 
 Please keep up to date with the latest Known Issues, FAQs and announcements in our [online Application Lifecycle Service forums](https://community.dev.hp.com/t5/Forum/bd-p/cloud_board).
 

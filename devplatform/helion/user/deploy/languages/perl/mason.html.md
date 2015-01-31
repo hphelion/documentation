@@ -6,7 +6,7 @@ title: "Mason"
 ---
 <!--PUBLISHED-->
 
-Mason[](#mason "Permalink to this headline")
+# HP Helion Development Platform: Mason[](#mason "Permalink to this headline")
 =============================================
 
 Mason is a templating system that can handle web requests directly via

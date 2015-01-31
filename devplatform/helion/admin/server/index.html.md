@@ -7,7 +7,7 @@ title: "Server Configuration"
 ---
 <!--PUBLISHED-->
 
-#Server Configuration {#server-configuration}
+# HP Helion Development Platform: Server Configuration {#server-configuration}
 
 This page covers the initial setup and configuration of the Application Lifecycle Service
 Server in a virtual machine under control of a hypervisor running on a

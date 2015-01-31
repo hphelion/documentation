@@ -6,7 +6,7 @@ title: "Management Console: User View"
 ---
 <!--UNDER REVISION-->
 
-#Management Console: User View {#index-1}
+# HP Helion Development Platform: Management Console: User View {#index-1}
 
 The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.
 

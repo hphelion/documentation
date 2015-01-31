@@ -6,7 +6,7 @@ title: "Application Lifecycle Service Client API"
 ---
 <!--PUBLISHED-->
 
-Application Lifecycle Service Client API[](#helion-client-api "Permalink to this headline")
+# HP Helion Development Platform: Application Lifecycle Service Client API[](#helion-client-api "Permalink to this headline")
 =========================================================================
 
 Application Lifecycle Service is fully compatible with the [Cloud Foundry v2

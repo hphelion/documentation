@@ -6,7 +6,7 @@ title: "Eclipse Plugin for HP Helion Development Platform (APaaS)"
 ---
 <!--PUBLISHED-->
 
-##Eclipse Plugin for HP Helion Development Platform (APaaS)
+# HP Helion Development Platform: Eclipse Plugin for HP Helion Development Platform (APaaS)
 
 ##Installation
 

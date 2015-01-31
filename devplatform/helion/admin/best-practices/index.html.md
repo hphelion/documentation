@@ -6,7 +6,7 @@ title: "Best Practices"
 ---
 <!--UNDER REVISION-->
 
-#Best Practices {#index-0}
+# HP Helion Development Platform: Best Practices {#index-0}
 
 ##Applying Updates {#applying-updates}
 
