@@ -31,14 +31,16 @@ The Identity service enables you to create and configure users, specify user rol
 
 The Identity service validates that incoming requests are being made by the user who claims to be making the call. 
 
-Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. Users are assigned roles that can be used to control access to projects.
+Users have a login and may be assigned tokens to access resources. Users can scope their authentication to a project (or, tenant) which then limits where and how their tokens can be used to interact with services. User roles, which are sets of rights and privileges, can be assigned to control access to projects.
+
+**NOTE:** Users can have different roles per project. Actual user role functionality is defined by each separate OpenStack service outside of the Identity service. Refer to the policy.json file for each service in the `/etc/<SERVICENAME>/policy.json` file.
 
 The Identity service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username & password, or user access keys). After initial confirmation, the Identity service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.
 
-Users can belong to specific role(s), which is a set of rights and privileges.
+Users can belong to specific role(s), which .
 
 
-The Identity service provides Identity, Token, Catalog and Policy services:
+**User Authentication** - The Identity service can be configured during initial installation to use either a local, Keystone user authentication system (users and passwords are all created and managed by Keystone) or via an external user management system like LDAP or Microsoft Active Directory system. It is recommended that an external user management system be used for production deployments. The local Keystone user management system is intended to support only limited trials and proof of concept deployments and does not offer the advanced user management functions often required for production deployments.
 
 **User Management** - The HP Helion OpenStack Identity Service tracks users and their permissions. The main components of user management include:
 
@@ -78,16 +80,17 @@ Each domain defines a namespace where certain API-visible name attributes exist,
     Group Name. Unique within the owning domain.
 
 
-**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the [API](#API) or [CLI](#CLI) for domain management instead. Also, any user and associated with a Domain will not be able to login to Horizon.
+**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v2.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
 
 ### Project ### {#project}
 
-A collection of HP service subscriptions and/or resources (Compute, Object Storage, etc). Also called *tenant*. Each project name must be unique in the associated domain.
+A collection of users, groups, and/or resources (Compute, Object Storage, etc). Also known as a 'tenant'. Each project name must be unique in an associated domain.
 
 ### Users ### {#user}
 
-A user is a digital representation of a person, system, or service who uses the cloud. The Identity authentication services validates incoming requests made by users. Users have a login and assigned tokens to access resources. Users are associated with projects based on roles assigned to them within that project. Each user name must be unique in the associated domain.
+A user is a person, system, or service who requests access to Helion OpenStack. The Identity authentication service validates incoming requests made by users using the login information provided by the user either through a local Keystone login or an external authentication system. Users are provided tokens to access resources through a service catalog. Users are associated with projects and are assigned roles a project. Each user name must be unique in the associated domain.
+
 
 ### Group ### {#group}
 
@@ -259,9 +262,11 @@ LDAP Account Status
     user_enabled_default = 512
 
 
+
+
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html), or a low-level, raw REST [API](http://api.openstack.org/api-ref-identity-v2.html) to work with the Identity service.
+To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 ## For more information ##
 
