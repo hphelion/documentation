@@ -12,7 +12,7 @@ After booting the VM, run *kato process ready all* before starting the following
 [*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
 option is useful in this scenario).
 
-**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
+**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. Kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
 
 - [Changing the Password](#changing-the-password)
 -   [Network Setup](#network-setup)
@@ -761,3 +761,25 @@ Once a repository has been added to the list, **the GPG key must also be added**
 For example, to trust the GPG for the New Relic repository, add the following line to the *Dockerfile* for the base image:
 
 	RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
+
+## Container NFS Mounts {#container_NFS}
+
+**Warning**: Reconfiguring ALS to allow user applications to mount NFS partitions has serious security implications. See the [Privileged Containers](/als/v1/admin/server/docker/#docker-privileged-containers) section for details.
+
+By default, application containers are unable to mount external filesystems (other than the built-in [Filesystem Service](/als/v1/user/services/filesystem/) via network protocols such as NFS.
+
+If the system has been configured to use ref:privileged containers <docker-privileged-containers> and *sudo* permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
+requirements:
+
+	  ubuntu:
+	      - nfs-common
+	hooks:
+	  pre-running:
+	    - mkdir /mount/point
+	    - sudo mount nfs.server:/path/to/export /mount/point
+
+
+The IP address of the NFS server must also be added to the  docker/allowed_supnet_ips  list. For example:
+
+	kato config push fence docker/allowed_subnet_ips 10.0.0.110
+

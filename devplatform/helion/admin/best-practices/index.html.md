@@ -12,7 +12,7 @@ title: "Best Practices"
 
 - [Passwordless SSH Authentication](#passwordless)
 - [Applying Updates](#applying-updates)
-- [Security Patches](#security)
+- [Security Patches](#bestpractices-ubuntu-security)
 	- [Upgrade the Docker image](#upgrade-docker)
 	- [Upgrade the VM](#upgrade-vm)
 -   [Backup & Migration](#backup-migration)
@@ -44,7 +44,7 @@ The Constructor VM automatically generates a new 2048 bit RSA keypair on first b
 
 To transfer the public key from the Core node to all non-Core nodes execute:
 
-    $ ssh-copy-id stackato@<node hostname or IP>
+    ssh-copy-id stackato@<node hostname or IP>
 
 With the Core node's public key in place on all cluster nodes, you can
 [disable password authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#Disable_Password_Authentication) if desired.
@@ -62,7 +62,7 @@ command.
 To see a list of patches available from HP, run the following
 command on any Application Lifecycle Service VM:
 
-    $ kato patch status
+    kato patch status
 
 The command will list the updates available. For example:
 
@@ -83,7 +83,7 @@ To apply all patches to all relevant cluster nodes:
 
 To apply a particular patch, specify it by name:
 
-    $ kato patch install dea-memory-usage-reporting
+    kato patch install dea-memory-usage-reporting
 
 Applying patches will automatically restart all patched roles. To
 prevent this, use the `--no-restart` option.
@@ -91,7 +91,7 @@ prevent this, use the `--no-restart` option.
 To apply a patch only to the local Application Lifecycle Service VM (not the whole cluster),
 use the **--local** option.
 
-##Security Patches {#security}
+##Security Patches {#bestpractices-ubuntu-security}
 Both the ALS VM and the Docker base image used for application containers run Ubuntu. To maintain an up-to-date system with all known security patches in place, the VM and Docker base images should be updated with the following process whenever an important security update becomes available in the Ubuntu repositories.
 
 ###Upgrade the VM {#upgrade-vm}
@@ -105,8 +105,7 @@ https\_proxy environment variables. For example:
     sudo sh -c "http_proxy=http://myproxy.example.com:3128 \
     https_proxy=http://myproxy.example.com:3128 unattended-upgrades -d"
 
-This will run the [unattended-upgrades](http://manpages.ubuntu.com/manpages/lucid/man8/unattended-upgrade.8.html) script to install all upgrades
-from the *-security* stream.
+This will run the [unattended-upgrades](http://manpages.ubuntu.com/manpages/lucid/man8/unattended-upgrade.8.html) script to install all upgrades from the *-security* stream.
 
 Each node should be rebooted after *unattended-upgrades* completes to
 ensure that all new kernels, modules, and libraries are loaded.

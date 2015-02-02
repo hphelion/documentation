@@ -18,6 +18,7 @@ accessible if needed to customize or create new container images.
 -   [Modifying or Updating the Container Image](#modifying-or-updating-the-container-image)
 -   [Admin Hooks](#admin-hooks)
 -   [Creating a Docker Registry](#creating-a-docker-registry)
+-   [Privileged Containers](#docker-privileged-containers)
 
 ##Modifying or Updating the Container Image {#modifying-or-updating-the-container-image}
 
@@ -97,19 +98,19 @@ needed to expose the specified variables in `helion ssh` sessions, the applicati
 applications using the Legacy buildpack. This requirement may change in
 subsequent releases.
 
-The Dockerfile for creating the image (see [*Modifying or Updating the
-Container Image*](#docker-modify-container) ) would use the ADD
+The Dockerfile for creating the image (see [Modifying or Updating the
+Container Image](#docker-modify-container) ) would use the ADD
 directive to put a local *hooks* directory in the Docker image's
 */etc/helion/* directory:
 
-    FROM helion/stack/alsek
+    FROM helion/stack-alsek
     ADD hooks /etc/helion/hooks
 
 The pre-running hook example above would require the addition of
 `newrelic-sysmond` to the Docker image. A Dockerfile
 enabling that might look like this:
 
-    FROM helion/stack/alsek
+    FROM helion/stack-alsek
 
     RUN echo deb http://apt.newrelic.com/debian/ newrelic non-free >> /etc/apt/sources.list.d/newrelic.list
     RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
@@ -166,6 +167,9 @@ as a central repository for your container templates.
 
         sudo docker build -rm -t api.paas.example.com:49156/exampleco/newimg .
 
+	If the new image is simply an updated version of the default base image, you can tag the image **helion/stack-alsek:latest** (as described in the [Ubuntu Security Updates](/als/v1/admin/best-practices/#bestpractices-ubuntu-security) and skip the following step. 
+
+
 5.  Push the newly built Docker image to the registry:
 
         sudo docker push api.paas.example.com:49156/exampleco/newimg
@@ -183,4 +187,22 @@ as a central repository for your container templates.
         api.paas.example.com:49156/exampleco/newimg
 
     This step only needs to be done once, as the configuration change is
-    shared with all nodes
+    shared with all nodes.
+
+The [Upgrade the Docker Image](/als/v1/admin/best-practices/#upgrade-docker) section in the [Best Practices](/als/v1/admin/best-practices) documentation explains how to modify the Docker base image without changing *kato config*. 
+
+
+## Privileged Containers {#docker-privileged-containers} 
+ALS runs "unprivileged" Docker containers by default. The containers do not have access to any devices on the (virtual) host. 
+
+This is a barrier to certain operations such as mounting disk partitions 
+via NFS, so an option exists to change Docker container creation to "privileged": 
+ 
+	kato config set dea_ng docker/privileged true 
+   
+This [container privilege elevation](https://docs.docker.com/reference/run/#runtime-privilege-and-lxc-configuration) would normally be used in conjunction with *sudo* container access in the quota: 
+ 
+	helion quota configure --allow-sudo 
+  
+ **Warning:**  **Every application running under this configuration has the potential to become root on the host.** These changes should only be made when all users of the system are completely trusted (i.e. with admin privileges) as they compromise the isolation between application containers and host.
+
