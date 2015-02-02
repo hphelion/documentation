@@ -64,6 +64,9 @@ Use the Identity service to configure user access to your cloud domains.
 * Validate that a group has a specified role on a domain.
 * Revoke a role from a group on a domain.
 
+**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](#CLI) and [API](#API). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
+
+
 ### Listing Projects ####
 
 Use the Identity service to view a list of projects in your cloud environment.
@@ -82,6 +85,9 @@ Use the Identity service to configure user access to your cloud domains.
 
 * Add a domain to your cloud.
 * Update information for a specified domain, including the description, enabled status, ID, and policy links. 
+
+**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](#CLI) and [API](#API). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
+
 
 ### Working with projects ### {#adminprojects}
 
@@ -117,7 +123,7 @@ Use the Identity service to configure user access to your cloud domains.
 
 ### Working with credentials ### {#admincreds}
 
-Use the Identity service to create and manage EC2-compatible credentials for user per tenant. 
+Use the Identity service to create and manage credentials for user per tenant. 
 
 * Add a credential to a domain.
 * View information on the credentials associated with a domain, including IDs, policy links, associated projects, type, and associated users.
@@ -161,7 +167,7 @@ Issue a new UUID or PKI token for a user.
 
 ### Signature Validation 
 
-Manage EC2 and S3 signature validation.
+Manage S3 signature validation.
 
 ### Manage Federated Access 
 
