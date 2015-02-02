@@ -25,6 +25,8 @@ PageRefresh();
 
 The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
 
+**NOTE**: If you are installing the HP Helion Development Platform **Commercial** edition, follow the [HP Helion Development Commercial Installation and Configuration](/helion/devplatform/install/commercial/) instructions instead.
+
 The following topics explain how to install and configure the HP Helion Development Platform.
 
 * [Prerequisites](#prerequisites)
@@ -37,7 +39,7 @@ The following topics explain how to install and configure the HP Helion Developm
 
 ## Prerequisites {#prerequisites}
 
-The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack Community Edition.  The HP Helion Development Platform has the same [prerequisites as HP Helion OpenStack Community Edition](/helion/community/hwsw-requirements/).
+The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&reg;.
 
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements used in this document.
  
