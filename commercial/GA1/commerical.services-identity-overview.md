@@ -259,12 +259,9 @@ LDAP Account Status
     user_enabled_default = 512
 
 
-
-
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the API or CLI.
-
+To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html), or a low-level, raw REST [API](http://api.openstack.org/api-ref-identity-v2.html) to work with the Identity service.
 
 ## For more information ##
 
