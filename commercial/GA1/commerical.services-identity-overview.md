@@ -37,9 +37,6 @@ Users have a login and may be assigned tokens to access resources. Users can sco
 
 The Identity service will confirm that incoming request are being made by the user who claims to be making the call by validating a set of claims that the user is making. These claims are initially in the form of a set of credentials (username & password, or user access keys). After initial confirmation, the Identity service will issue the user a token which the user can then provide to demonstrate that their identity has been authenticated when making subsequent requests.
 
-Users can belong to specific role(s), which .
-
-
 **User Authentication** - The Identity service can be configured during initial installation to use either a local, Keystone user authentication system (users and passwords are all created and managed by Keystone) or via an external user management system like LDAP or Microsoft Active Directory system. It is recommended that an external user management system be used for production deployments. The local Keystone user management system is intended to support only limited trials and proof of concept deployments and does not offer the advanced user management functions often required for production deployments.
 
 **User Management** - The HP Helion OpenStack Identity Service tracks users and their permissions. The main components of user management include:
