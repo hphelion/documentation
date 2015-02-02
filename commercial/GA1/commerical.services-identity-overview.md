@@ -80,7 +80,7 @@ Each domain defines a namespace where certain API-visible name attributes exist,
     Group Name. Unique within the owning domain.
 
 
-**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](#CLI) and [API](#API). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
+**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v2.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
 
 ### Project ### {#project}
@@ -262,9 +262,11 @@ LDAP Account Status
     user_enabled_default = 512
 
 
+
+
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the command-line interface [(CLI)](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html), or a low-level, raw REST [API](http://api.openstack.org/api-ref-identity-v2.html) to work with the Identity service.
+To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 ## For more information ##
 
