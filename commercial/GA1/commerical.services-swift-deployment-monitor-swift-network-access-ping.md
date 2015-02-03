@@ -51,7 +51,7 @@ Perform the following steps to monitor the network access of the host:
 
 
 3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon<!-- </b> (opens in a new window)--></b></a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br> 
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">the status of  host for network connectivity.<!---(opens in a new window)---></a>
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">the status of  host for network connectivity.<!---(opens in a new window)---></a>
 <!--
 4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address </b> <!---(opens in a new window)---></a><!-- to view the health status of the selected Swift node.--->
 
