@@ -9,9 +9,7 @@ title: "Application Logs"
 
 # HP Helion Development Platform: Application Logs {#application-logs}
 
-Logs for applications running on Application Lifecycle Service are aggregated into streams
-so that data from multiple instances can be viewed together and
-filtered. Application log streams can be accessed via:
+Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:
 
 -   the [*Management Console*](/als/v1/admin/console/customize/#management-console)
     using the **View Logs** button on the application Details page, or
@@ -38,15 +36,15 @@ helion logs[](#helion-logs "Permalink to this headline")
 To view an application log stream, use the [*helion
 logs*](/als/v1/user/reference/client-ref/#command-logs) command:
 
-    $ helion logs myapp
+    helion logs myapp
 
 To limit the number of lines displayed, use the `--num` option:
 
-    $ helion logs myapp --num 50
+    helion logs myapp --num 50
 
 To view a log stream as it is updated, use the `--follow` option:
 
-    $ helion logs myapp --follow
+    helion logs myapp --follow
 
 Log streams can be filtered on a number of parameters:
 

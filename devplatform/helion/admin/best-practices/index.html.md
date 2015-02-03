@@ -24,6 +24,7 @@ title: "Best Practices"
 	-   [Scheduled backups](#scheduled-backups)
 -   [Importing the server data](#importing-the-server-data)
 -   [Upgrading (v1.0 and later)](#upgrade)
+-   [Snapshots](#bestpractices-snapshots)
 -   [Persistent Storage](#storage)
     -   [Relocating Services, Droplets, and
         Containers](#relocating-services-droplets-and-containers)
@@ -190,11 +191,11 @@ command. The command can export:
 
 Start by logging into the VM via `ssh`:
 
-    $ ssh helion@helion-xxxx.local
+    ssh helion@helion-xxxx.local
 
 A single-node micro cloud VM can be backed up with a single command:
 
-    $ kato data export --only-this-node
+    kato data export --only-this-node
 
 A clustered setup can be backed up with a single command:
 
@@ -269,8 +270,7 @@ hostname of the old Core node:
     $ kato data import --cluster helion-host.example.com
 
 ##Upgrading {#upgrade}
-The *kato node upgrade* command was added in
-Application Lifecycle Service 1.0 to allow upgrading Application Lifecycle Service systems in place. See
+The *kato node upgrade* command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
 [*Upgrading Application Lifecycle Service*](/als/v1/admin/server/upgrade/#upgrade) for full
 instructions.
 
@@ -316,6 +316,19 @@ A clustered setup can be backed up with a single command:
 
 **Note**: Exporting data can take several minutes. For clusters with constant usage or large numbers of users, apps, and databases, put the exporting system in Maintenance Mode, ideally during a scheduled maintenance window, before beginning the export. 
 
+## Snapshots {#bestpractices-snapshots}
+
+Snapshots can be an effective way to save the state of a running virtual machine for backup, but caution is required when taking snapshots of a multi-node cluster.
+
+The system state of cluster nodes is highly interdependent. A snapshot rollback of multiple nodes which is not perfectly in sync may not return the cluster to a fully functional state. For example, a service node restored from a snapshot may be missing database instances which the Cloud Controller has created. Applications bound to existing services may be missing records.
+
+If snapshots are a part of your backup or disaster recovery strategy, the following techniques can minimize potential problems:
+
+
+- snapshot VMs in a stopped state during scheduled maintenance (if possible)
+- run *kato stop* on all roles prior to snapshotting (if possible)
+- put the cluster in Maintenance Mode
+- snapshot all nodes simultaneously
 
 <!-- not sure we're supporting this
 Server Monitoring with New Relic[](#server-monitoring-with-new-relic "Permalink to this headline")
