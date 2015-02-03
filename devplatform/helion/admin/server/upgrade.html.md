@@ -62,7 +62,7 @@ This shuts down API requests but continues to serve web requests. The Management
 ### Backups or Snapshots {#backup-snapshot}
  
 Back up all system and user data in Stackato by performing a [data 
-export](/als/v1/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/als/v1/admin/best-practices/bestpractices-snapshots) of all nodes in your hypervisor.  
+export](/als/v1/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/als/v1/admin/best-practices/#bestpractices-snapshots) of all nodes in your hypervisor.  
 
 ### Proxy settings for Upgrades [](#proxy-settings "Permalink to this headline")
 
