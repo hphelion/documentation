@@ -7,7 +7,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-# Known Issues and Workarounds with the Networking Service
+# HP Helion Public Cloud Compute Known Issues and Workarounds with the Networking Service
 
 <!-- Taken from the doc known as the Network Guide ("HP Helion Public Cloud Networking overview) /compute.network-guide.md -->
 

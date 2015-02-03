@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Monitor Disk Usage"
-permalink: /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/
+permalink: /helion/openstack/services/object/swift/monitor-swift-drive-audit/
 product: commercial.ga
 
 ---

@@ -8,11 +8,11 @@ title: "Upgrading Application Lifecycle Service Nodes and Clusters"
 
 # HP Helion Development Platform: In-Place Upgrades of ALS Nodes and Clusters {#upgrading-helion}
 
-Application Lifecycle Service provides the ability to upgrade a node or cluster in place via [kato node upgrade](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade) without the need to rebuild the entire cluster. This section covers how
-the upgrade process works.
+Application Lifecycle Service provides the ability to upgrade a node or cluster in place via [kato node upgrade](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade) without the need to rebuild the entire cluster. This section covers how the upgrade process works.
 
 -  [Before an upgrade](#before-an-upgrade)
 	-  [Maintenance Mode](#maintenance-mode)
+	-  [Backups or Snapshots](#backup-snapshot)
     -  [Proxy settings](#proxy-settings)
     -  [Passwordless SSH](#rsa-keys)
     -  [Passwordless sudo](#pwless-sudo)
@@ -21,11 +21,11 @@ the upgrade process works.
     -  [Upgrading an individual node](#upgrading-an-individual-node)
     -  [Upgrading a cluster](#upgrading-a-cluster)
     -  [Download Only Option](#download-only)
-    -  [Node upgrade ordering](#node-upgrade-ordering)
+    -  [Node Upgrade Order](#node-upgrade-ordering)
     -  [Node Upgrade Process](#node-upgrade-process)
 	-  [Zero-downtime Upgrades](#zero)
 -  [Troubleshooting](#troubleshooting)
-
+-  [Offline Upgrade Process](#upgrade-node-upgrade-offline)
 ##Before an upgrade {#before-an-upgrade}
 Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.
 
@@ -46,14 +46,23 @@ To add additional space on the cache node specifically for the upgrade:
 
 		sudo service sentinel-d restart 
 
+### Free Memory {#free-memory} 
+Core/cache nodes require at least 1GB of free memory for upgrades to run successfully. Other nodes require at least 512MB.
+ 
+Use the **free** or **vmstat** commands to determine how much memory is available on each VM and use **kato stop** to temporarily stop roles if more memory is required.  
+
 ### Maintenance Mode[](#maintenance-mode "Permalink to this headline")
 
-Before beginning an upgrade, put Application Lifecycle Service in maintenance mode in the
-[Cloud Controller Settings](/als/v1/admin/console/customize/#console-settings-maintenance-mode) or the following *kato* command:
+Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the [Cloud Controller Settings](/als/v1/admin/console/customize/#console-settings-maintenance-mode) or the following *kato* command:
 
     kato config set cloud_controller_ng maintenance_mode true
 
 This shuts down API requests but continues to serve web requests. The Management Console becomes "read only" with the exception of this toggle so that it can be brought back online. Remember to disable maintenance mode once the upgrade has been completed.
+
+### Backups or Snapshots {#backup-snapshot}
+ 
+Back up all system and user data in Stackato by performing a [data 
+export](/als/v1/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/als/v1/admin/best-practices/#bestpractices-snapshots) of all nodes in your hypervisor.  
 
 ### Proxy settings for Upgrades [](#proxy-settings "Permalink to this headline")
 
@@ -64,7 +73,10 @@ public URIs:
 -   [https://pkg.helion.com](https://pkg.helion.com/)
 
 This may require setting the HTTPS\_PROXY environment variable on each
-node if a proxy is in use on your network.
+node if a proxy is in use on your network. See [Proxy Settings ](/als/v1/admin/server/configuration/http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
+	
+	export http_proxy=http://intproxy.example.com: 
+
 
 ### Passwordless SSH {#rsa-keys}
 
@@ -226,9 +238,67 @@ If you have made customizations in these places or in other areas not described 
 **Warning**: Any custom buildpacks added to the system prior to the upgrade will be lost.
 Custom buildpacks must be [restored](/als/v1/user/deploy/buildpack/#custom-buildpacks) to the system after an upgrade.
 
-###Clearing Browser Cache
+##Clearing Browser Cache
 After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:
 
 	sconsole.cf_api.settings is undefined
 
 Performing a cache clear using whichever key combination is appropriate for the browser (ex: CTRL+SHIFT+F5) will resolve such errors. When scheduling an upgrade, notify the system users that they should not merely refresh (F5) but perform a cache clear after the upgrade is completed.
+
+### Restaging Apps Behind a Proxy {#restaging-apps} 
+ 
+When migrating applications from Helion OpenStack&reg; 1.0 to 1.1, applications with broken 
+support for ``https_proxy`` may fail during staging (or pre-running 
+hooks) because ``https_proxy`` is now always defined during these 
+stages, even when there is no upstream proxy behind the [builtin 
+proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). 
+
+### Missing Kato Utility {#missing-kato}
+
+If the **kato upgrade** command exits during the installation of the kato package, it is possible that *kato* itself can "go missing". It is removed before the upgraded package is fully installed. 
+ 
+To recover from this state: 
+
+1. Find the command and options that *kato* used to initiate the upgrade. 
+For example:
+
+		tac /s/logs/sentinel-cli.log | grep -m1 'Running with command' 
+ 		INFO  Sentinel::CLI : Running with command: bin/sentinel upgrade 3.4.1 127.0.0.1 192.168.20.11 --skip-download
+		
+
+
+1. Execute
+ 
+		cd /s/code/sentinel/cli 
+
+1. Copy the output after 'Running with command:' and run it. In this example:
+
+ 	bin/sentinel upgrade 3.4.1 127.0.0.1 192.168.20.11 --skip-download 
+
+
+## Offline Upgrades (update from .tgz Archive) 
+
+For clusters without direct access to the internet for upgrades, a  single .tgz archive will contain all of the packages
+necessary to upgrade. 
+ 
+Download the archive and transfer it to a node with at least 7GB of free disk space to allow for the extraction of all the bundled packages (14GB if you are upgrading from the previous version). 
+ 
+To upgrade: 
+ 
+
+1. Unpack the .tgz file in a convenient directory (e.g. */tmp*):: 
+ 
+   		stackato@demo:/tmp$ tar xzvf stackato-upgrade-3.4.1-3.5.0.tgz 
+ 
+1. Change to the newly created directory:: 
+ 
+	    stackato@demo:/tmp$ cd stackato-upgrade-3.4.1-3.5.0/ 
+	    stackato@demo:/tmp/stackato-upgrade-3.4.1-3.5.0$ 
+	 
+1. Run the upgrade script:: 
+ 
+    	stackato@demo:/tmp/stackato-upgrade-3.4.1-3.5.0$ ruby stackato-upgrade-3.4.1-3.5.0.rb 
+   
+1. Enter the *sudo* password when prompted, and then follow the prompts. 
+ 
+ 

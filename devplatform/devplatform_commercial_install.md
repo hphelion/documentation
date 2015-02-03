@@ -13,7 +13,7 @@ The HP Helion Development Platform currently contains four products: Application
 
 The following topics explain how to install and configure the HP Helion Development Platform.
 
-If you are installing the HP Helion Development Platform Community, see [HP Helion Development Community Installation and Configuration](/helion/devplatform/install/community/).
+**NOTE**: If you are installing the HP Helion Development Platform **Community** edition, follow the [HP Helion Development Community Installation and Configuration](/helion/devplatform/install/community/) instructions instead.
 
 * [Prerequisites](#prerequisites)
 * [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
@@ -25,7 +25,7 @@ If you are installing the HP Helion Development Platform Community, see [HP Heli
 
 ## Prerequisites<a name="prerequisites"></a>
 
-The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack Community Edition - Baremetal.  The HP Helion Development Platform has the same prerequisites as HP Helion OpenStack Community Edition - Baremetal.
+The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&reg;. 
 
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
  

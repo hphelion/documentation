@@ -8,7 +8,7 @@ product:
 
 ---
 <!--PUBLISHED-->
-# An Introduction To Using CDN With Object Storage
+# HP Helion Public Cloud Compute An Introduction To Using CDN With Object Storage
 The HP Helion Public Cloud CDN enables objects in HP Helion Public Cloud Object Storage to be available over a [Content Delivery Network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network "Wikipedia: Content delivery network"). CDNs allow objects to be fetched from locations close to users enabling users to download the objects more quickly. This article provides an introduction into how the CDN works with object storage and some basic ways you can use it.
 
 ## Making Objects Available To The CDN

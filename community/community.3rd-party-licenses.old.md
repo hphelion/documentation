@@ -3983,22 +3983,22 @@ For the srclib\apr-util\test\testmd4.c component:
 
 For the srclib\apr-util\xml\expat\conftools\install-sh component:
 
-#
-# install - install a program, script, or datafile
-# This comes from X11R5 (mit/util/scripts/install.sh).
-#
-# Copyright 1991 by the Massachusetts Institute of Technology
-#
-# Permission to use, copy, modify, distribute, and sell this software and its
-# documentation for any purpose is hereby granted without fee, provided that
-# the above copyright notice appear in all copies and that both that
-# copyright notice and this permission notice appear in supporting
-# documentation, and that the name of M.I.T. not be used in advertising or
-# publicity pertaining to distribution of the software without specific,
-# written prior permission.  M.I.T. makes no representations about the
-# suitability of this software for any purpose.  It is provided "as is"
-# without express or implied warranty.
-#
+*
+* install - install a program, script, or datafile
+* This comes from X11R5 (mit/util/scripts/install.sh).
+*
+* Copyright 1991 by the Massachusetts Institute of Technology
+*
+* Permission to use, copy, modify, distribute, and sell this software and its
+* documentation for any purpose is hereby granted without fee, provided that
+* the above copyright notice appear in all copies and that both that
+* copyright notice and this permission notice appear in supporting
+* documentation, and that the name of M.I.T. not be used in advertising or
+* publicity pertaining to distribution of the software without specific,
+* written prior permission.  M.I.T. makes no representations about the
+* suitability of this software for any purpose.  It is provided "as is"
+* without express or implied warranty.
+*
 
 For the test\zb.c component:
 
@@ -4950,22 +4950,22 @@ For the test\testmd4.c component:
 
 For the xml\expat\conftools\install-sh component:
 
-#
-# install - install a program, script, or datafile
-# This comes from X11R5 (mit/util/scripts/install.sh).
-#
-# Copyright 1991 by the Massachusetts Institute of Technology
-#
-# Permission to use, copy, modify, distribute, and sell this software and its
-# documentation for any purpose is hereby granted without fee, provided that
-# the above copyright notice appear in all copies and that both that
-# copyright notice and this permission notice appear in supporting
-# documentation, and that the name of M.I.T. not be used in advertising or
-# publicity pertaining to distribution of the software without specific,
-# written prior permission.  M.I.T. makes no representations about the
-# suitability of this software for any purpose.  It is provided "as is"
-# without express or implied warranty.
-#
+*
+* install - install a program, script, or datafile
+* This comes from X11R5 (mit/util/scripts/install.sh).
+*
+* Copyright 1991 by the Massachusetts Institute of Technology
+*
+* Permission to use, copy, modify, distribute, and sell this software and its
+* documentation for any purpose is hereby granted without fee, provided that
+* the above copyright notice appear in all copies and that both that
+* copyright notice and this permission notice appear in supporting
+* documentation, and that the name of M.I.T. not be used in advertising or
+* publicity pertaining to distribution of the software without specific,
+* written prior permission.  M.I.T. makes no representations about the
+* suitability of this software for any purpose.  It is provided "as is"
+* without express or implied warranty.
+*
 
 For the expat xml parser component:
 

@@ -63,7 +63,7 @@ application-specific events from the **logyard\_sieve** stream.
 Drains[](#drains "Permalink to this headline")
 -----------------------------------------------
 
-A "drain" is a receiver for a log stream. Logyard has three kinds:
+A "drain" is a receiver for a log stream. Logyard has four kinds:
 
 -   TCP (e.g. <tcp://10.0.11.101:12345>)
 -   UDP (e.g. udp://logs.papertrailapp.com:12345)
@@ -73,11 +73,11 @@ A "drain" is a receiver for a log stream. Logyard has three kinds:
 ### System Drains[](#system-drains "Permalink to this headline")
 
 Drains for system log and cloud event streams can be added by admins
-with the [*kato log
-drain*](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-drain-add)
+with the [kato log
+drain](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-drain-add)
 command. For example:
 
-    $ kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345
+    kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345
 
 This creates a UDP drain that receives messages from **kato.log** (on
 all nodes in the cluster) and forwards them to
@@ -88,7 +88,7 @@ prefix as its argument.
 
 To delete the drain:
 
-    $ kato log drain delete mydrain
+    kato log drain delete mydrain
 
 The [*kato
 history*](/als/v1/admin/reference/kato-ref/#kato-command-ref-history) command
@@ -98,7 +98,7 @@ node.
 The 'file' drain type will append to a local file. To overwrite the file
 instead, add the 'overwrite=1' option:
 
-    $ kato log drain add debug file:///s/logs/debug-1.log overwrite=1
+    kato log drain add debug file:///s/logs/debug-1.log overwrite=1
 
 ### Log Format[](#log-format "Permalink to this headline")
 
@@ -114,7 +114,7 @@ Log drains can emit entries in a variety of formats:
 For example, to add a drain with just the timestamp, application name
 and message:
 
-    $ kato log drain add -p apptail -f '{{.human_time}} - {{.app_name}}: {{.text}}' \
+    kato log drain add -p apptail -f '{{.human_time}} - {{.app_name}}: {{.text}}' \
     > all-apps file:///s/logs/apptail-short.log
 
 JSON keys are enclosed in double curly braces and prefixed with a
@@ -167,7 +167,7 @@ streams*](#logging-keys):
 You can see a list of the default drain formats using [*kato config
 get*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config):
 
-    $ kato config get logyard drainformats
+    kato config get logyard drainformats
     apptail: ! '{{.human_time}} {{.source}}.{{.instance_index}}: {{.text}}'
     event: ! '{{.type}}@{{.node_id}}: {{.desc}} -- via {{.process}}'
     systail: ! '{{.name}}@{{.node_id}}: {{.text}}'
@@ -202,10 +202,8 @@ This could be forwarded to the Papertrail log analysis service:
 
 You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
-[*helion
-drain*](/als/v1/user/reference/client-ref/#command-drain-add), Cloud
-Events in the Management Console, and [*kato log
-tail*](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-tail)
+[helion drain](/als/v1/user/reference/client-ref/#command-drain-add), Cloud
+Events in the Management Console, and [kato log tail](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-tail)
 respectively).
 
 ### Custom Drains[](#custom-drains "Permalink to this headline")
@@ -219,11 +217,7 @@ Guide](https://github.com/HP/logyard-devguide#readme)
 ### Application Drains[](#application-drains "Permalink to this headline")
 
 Drains for application log streams can be added by end users with the
-[*helion log drain
-add*](/als/v1/user/reference/client-ref/#command-drain-add) command.
-See the [*Application
-Logs*](/als/v1/user/deploy/app-logs/#application-logs) section of the
-User Guide for an example.
+[*helion drain add*](/als/v1/user/reference/client-ref/#command-drain-add) command. See the [Application Logs](/als/v1/user/deploy/app-logs/#application-logs) section of the documentation for an example.
 
 ### Drain Status[](#drain-status "Permalink to this headline")
 
@@ -252,7 +246,7 @@ Systail keys are [*configurable*](#logging-systail-manage).
 
 #### apptail[](#apptail "Permalink to this headline")
 
-> apptail.\<app.id\>
+	apptail.\<app.id\>
 
 #### event[](#event "Permalink to this headline")
 
@@ -330,20 +324,20 @@ source for an existing key.
 
 -   To retrieve the current list of log files being streamed:
 
-        $ kato config get systail log_files
+        kato config get systail log_files
 
 -   To remove a log file from the stream:
 
-        $ kato config del systail log_files/dpkg
+        kato config del systail log_files/dpkg
 
 -   To add a new log file to the stream:
 
-        $ kato config set systail log_files/dpkg /var/log/dpkg.log
+        kato config set systail log_files/dpkg /var/log/dpkg.log
 
 Restart the `systail` process after adding or
 removing log files:
 
-    $ kato process restart systail
+    kato process restart systail
 
 **Note**
 
@@ -383,7 +377,7 @@ described below:
     get*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
     example:
 
-        $ kato config get logyard retrylimits
+        kato config get logyard retrylimits
         appdrain.: 24h
         tmp.: 25m
 
@@ -392,7 +386,7 @@ described below:
     example, to set the timeout limit to 10 hours on all drains named
     with the prefix "papertrail":
 
-        $ kato config set logyard retrylimits/papertrail 10h
+        kato config set logyard retrylimits/papertrail 10h
 
     These limits will take effect on new drains, deleted/re-created
     drains, or for all matching drains after
@@ -412,7 +406,7 @@ described below:
     the cloud\_controller\_ng configuration. For example, to change this
     limit to 5 drains:
 
-        $ kato config set cloud_controller_ng max_drains_per_app 5
+        kato config set cloud_controller_ng max_drains_per_app 5
 
 ### Apptail Limits[](#apptail-limits "Permalink to this headline")
 
@@ -430,7 +424,7 @@ described below:
 
     To change the read\_limit to 100MB:
 
-        $ kato config set apptail read_limit 100
+       kato config set apptail read_limit 100
 
 -   **apptail** **rate\_limit** (default 400): limits the number of log
     lines per second that can be read from an application log file. The
@@ -441,7 +435,7 @@ described below:
 
     To change the rate\_limit to 300 lines:
 
-        $ kato config set apptail rate_limit 300
+        kato config set apptail rate_limit 300
 
 Debugging Logyard[](#debugging-logyard "Permalink to this headline")
 ---------------------------------------------------------------------

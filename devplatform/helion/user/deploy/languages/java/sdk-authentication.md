@@ -17,7 +17,7 @@ Object Storage, and everything else is available.
 Apache jclouds provides functionality to interact with identity service and authentication
 to simply authenticate commonly and use it everywhere.
 -->
-#Authenticating with access key and token
+## Authenticating with access key and token
 
 By default, the authentication mechanism for all OpenStack&reg; Keystone based APIs will use your
 password as the credential to log in.
