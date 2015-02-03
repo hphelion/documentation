@@ -8,23 +8,19 @@ title: "Port Service (Harbor)"
 
 # HP Helion Development Platform: Port Service (Harbor) {#port-service-harbor}
 
-HTTP and HTTPS ports and routing are provided automatically for all web
-applications deployed to Application Lifecycle Service (unless [processes:
+HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless [processes:
 web:](/als/v1/user/deploy/manifestyml/#web) is set to
 "\~").
 
 If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.
 
-Requesting a Port[](#requesting-a-port "Permalink to this headline")
----------------------------------------------------------------------
+##Requesting a Port {#requesting-a-port}
 
-Additional ports are provisioned like any other data service. To request
-a port with the Helion command-line client:
+Additional ports are provisioned like any other data service. To request a port with the Helion command-line client:
 
-    $ helion create-service harbor debug-port
+    helion create-service harbor debug-port
 
-To request a port from Harbor in the **manifest.yml** file, add it in the
-[**services**](/als/v1/user/deploy/manifestyml/#services) block.
+To request a port from Harbor in the **manifest.yml** file, add it in the [**services**](/als/v1/user/deploy/manifestyml/#services) block.
 For example:
 
     name: port-test
@@ -125,28 +121,23 @@ To use declarations like these in
 [*hooks*](/als/v1/user/deploy/manifestyml/#hooks), put them in a
 separate bash script. Brace expansion and grouping cannot be used directly in YAML files.
 
-Setting the Port Protocols[](#setting-the-port-protocols "Permalink to this headline")
----------------------------------------------------------------------------------------
+##Setting the Port Protocols {#setting-the-port-protocols}
 
 Harbor supports both the TCP and UDP protocols. When you provision a service with Harbor it will create a TCP enabled port by default. If you want to have a UDP port provisioned instead, you simply prefix your
 service name with udp, for example:
 
-    $ helion create-service harbor udp-debug-port
+    helion create-service harbor udp-debug-port
 
-If you have an application that requires both TCP & UDP, you can prefix
-your service name with both, for example:
+If you have an application that requires both TCP **and** UDP, you can prefix your service name with either *multi-* or *both-* .
+For example:
 
-    $ helion create-service harbor both-debug-port
+    helion create-service harbor both-debug-port
 
-Harbor will then create UDP and TCP proxies for your application, so
-applications like DNS can use both protocols on the same provisioned
-port.
+Harbor will then create UDP and TCP proxies for your application so that applications like DNS can use both protocols on the same provisioned port.
 
-Multiple Application Instances[](#multiple-application-instances "Permalink to this headline")
------------------------------------------------------------------------------------------------
+##Multiple Application Instances {#multiple-application-instances}
 
-Harbor recognizes when you have multiple instances of your app running,
-and will update the available app backends accordingly.
+Harbor recognizes when you have multiple instances of your app running and will update the available app backends accordingly.
 
 -   For TCP connections it will round-robin between your available
     backends on each new connection, in a similar fashion to the router

@@ -9,10 +9,7 @@ title: "Data Services"
 # HP Helion Development Platform: Application Lifecycle Service Data Services {#index-0}
 
 The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL,
-MySQL, Redis), the RabbitMQ messaging service, a [persistent
-file system](/als/v1/user/services/filesystem/#persistent-file-system) service and
-[Memcached](/als/v1/user/services/memcached/#memcached).
+applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a [persistent file system](/als/v1/user/services/filesystem/#persistent-file-system) service and [Memcached](/als/v1/user/services/memcached/#memcached).
 
 For detailed information on using an **external** database system, see [Using External Database Services](#database-external).
 
@@ -83,7 +80,7 @@ However, if you do not specify any services in the *manifest.yml* file, you will
 
 To set up a database service, for example, enter "y" when asked and follow the prompts:
 
-    $ helion push
+    helion push
 
     ...
     Would you like to bind any services to 'cirrus' ?  [yN]: y
@@ -113,14 +110,14 @@ There are two ways to do this:
 **name** is the name you want to assign to the service.</br>
 **app** is the name of the application the service is to be bound to.
 
-	    $ helion create-service mysql ordersdb myapp
+	    helion create-service mysql ordersdb myapp
 	    Creating Service: OK
 	    Binding Service: OK
 	    Stopping Application [myapp]: OK
 	    Staging Application [myapp]: OK
 	    Starting Application [myapp]: OK
 	
-	    $ helion apps
+	    helion apps
 	
 	    +-------------+---+-------------+---------------------------+----------------+
 	    | Application | # | Health      | URLS                      | Services       |
@@ -141,10 +138,10 @@ There are two ways to do this:
 	**servicename** is the name assigned to this service during the `create-service` command. </br>
 	**app** is the name of the application the service is to be bound to.</br>
 
-        $ helion create-service mysql customerdb
+        helion create-service mysql customerdb
         Creating Service: OK
 
-        $ helion bind-service customerdb myapp
+        helion bind-service customerdb myapp
         Binding Service: OK
         Stopping Application [myapp]: OK
         Staging Application [myapp]: OK
@@ -163,15 +160,9 @@ the [Helion services](/als/v1/user/reference/client-ref/#command-services) comma
 
 ##Using Database Service Environment Variables {#using-database-services}
 
-When you bind a database service to an application running as an Application Lifecycle Service,
-[environment
-variables](/als/v1/user/reference/environment/#environment-variables)
-containing that service's host, port, and credentials are added to the
-application container. You can use these environment variables in your
-code to connect to the service, rather than having to discover and then hard-code in such details.
+When you bind a database service to an application, [environment variables](/als/v1/user/reference/environment/#environment-variables) containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.
 
-Examples of how to parse and use these variables can be found in the
-[Language-Specific Deployment](/als/v1/user/deploy/#language-specific-deploy) section.
+Examples of how to parse and use these variables can be found in the [Language-Specific Deployment](/als/v1/user/deploy/#language-specific-deploy) section.
 
 ### DATABASE\_URL<a name="database-url"></a>
 
@@ -260,7 +251,7 @@ Applications running as ALS apps can use external databases by:
 - setting a URL or credential array in an environment variable 
 - setting the connection details in a User-Provided Service Instance 
  
-	Note that apps which write database connection details during staging rather than taking them from environment variables at run time (hard-coded applications) **must** be completely re-staged to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
+	**Note**: Apps which write database connection details during staging rather than taking them from environment variables at run time ("hard-coded applications") **must** be completely re-staged to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
 
 Container security prevents apps from connecting to arbitrary servers and ports on the local subnet for security reasons. To allow your application to connect to a database server you must either: 
 
@@ -269,15 +260,13 @@ Container security prevents apps from connecting to arbitrary servers and ports 
 
 ## Directly Accessing Database Services {#accessing-database-services}
 
-You may need to connect to a database service directly for purposes of
-initial database setup, modifying fields, running queries, or doing
-backups. These operations can be done using the `dbshell` (preferred) or `tunnel` commands.
+You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the `dbshell` (preferred) or `tunnel` commands.
 
 ### Via *dbshell* {#using-dbshell}
 
 The *helion dbshell* command creates an SSH tunnel to database services. To open an interactive shell to a service:
 
-    $ helion dbshell <application_name> <service_name>
+    helion dbshell <application_name> <service_name>
 
 The command automatically opens the appropriate database client for
 the database you're connecting to, provided that client is installed on
@@ -353,19 +342,19 @@ This will set up a port for you to connect with locally.
 Open a new command line window. You can connect to the MySQL database
 directly with:
 
-    $ mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<password> <name>
+    mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<password> <name>
 
   For example:
 
-    $ mysql --protocol=TCP --host=localhost --port=10000 --user=uT9efVVFCk --password=pHFitpIU1z d5eb2468f70ef4997b1514da1972
+    mysql --protocol=TCP --host=localhost --port=10000 --user=uT9efVVFCk --password=pHFitpIU1z d5eb2468f70ef4997b1514da1972
 
 To import an SQL file, call the same command and pipe in the file:
 
-    $ mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
+    mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
 
 To pull a dump of all databases:
 
-    $ mysqldump -A --protocol=TCP --port=10000 --host=localhost --user=<user> --password=<pass>
+    mysqldump -A --protocol=TCP --port=10000 --host=localhost --user=<user> --password=<pass>
 
 ## Pre-populating a database while pushing an app[](#pre-populating-a-database-while-pushing-an-app "Permalink to this headline")
 
