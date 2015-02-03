@@ -138,9 +138,9 @@ The following environment variables are available during application staging and
 <tr><td>HELION_APP_NAME</td><td>Contains the application name as specified during application push (or in manifest.yml).</td></tr>
 <tr><td>HELION_APP_NAME_UPCASE</td><td>Contains the same value as HELION_APP_NAME but transformed to uppercase. Dashes are replaced by underscores.</td></tr>
 <tr><td>HELION_APP_ROOT</td><td>This is the "root" directory from the ALS point of view. It contains the app-specific HOME directory (app/), the log file directory (logs/) and various scripts.</td></tr>
-<tr><td>HELION_LOG_FILES</td><td>A colon-separated list of log files to be included in the the application log stream. You can add up to five additional files to the default list by modifying this variable.</td></tr>
+<tr><td>HELION_LOG_FILES</td><td>A colon-separated list of log files to be included in the application log stream. You can add up to five additional files to the default list by modifying this variable.</td></tr>
 <tr><td>HELION_SERVICES</td><td>Contains connection details and credentials for services bound to the application. For filesystem services, it contains the local mount point.</td></tr>
-<tr><td>VCAP_APPLICATION</td><td>This variable contails all relevant application details: Instance ID, App Name, App Uris, Users/Groups, etc.</td></tr>
+<tr><td>VCAP_APPLICATION</td><td>This variable contains all relevant application details: Instance ID, App Name, App Uris, Users/Groups, etc.</td></tr>
 <tr><td>VCAP_SERVICES</td><td>Contains connection details, credentials, and meta data for services bound to the application.</td></tr>
 </table>
  
