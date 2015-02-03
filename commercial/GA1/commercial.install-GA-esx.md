@@ -104,7 +104,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		sudo su -
 
-2. Add the following lines to `/etc/environment`:
+2. Edit the `/etc/environment` file to add the following lines:
 
 		export http_proxy=http://<web_proxy_IP>/
 		export https_proxy=<http://web_proxy_IP>/
