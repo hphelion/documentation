@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Monitor Disk Usage"
 permalink: /helion/openstack/services/object/swift/monitor-swift-drive-audit/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Karthik P, Keshava HP, Binamra S
 
 ---
 <!--UNDER REVISION-->
