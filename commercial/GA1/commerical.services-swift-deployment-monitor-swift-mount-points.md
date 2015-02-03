@@ -47,11 +47,7 @@ Perform the following steps to monitor the mount points of Swift disk:
 <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</i></b><!---(opens in a new window)----></a>.
 
 3. In the **Host** column, <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon</b><!--- (opens in a new window)---> </a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br>
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-disk-usage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>mount points</b><!--- (opens in a new window)---></a>   of the selected Swift node.
-
-
-<!--
-4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host &lt;Swift node IP address &gt;</i></b><!--- (opens in a new window)---></a><!-- to view the disk usage of the selected Swift node.--->
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>mount points</b><!--- (opens in a new window)---></a>   of the selected Swift node.
 
 
 ##Status Messages
@@ -61,15 +57,10 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 	<th>Status</th>
 	<th><center>Message</center></th>
     <th><center>Cause/Resolution</center></th>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>OK</td>
-	<td>No devices to report</td>
-    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
+</tr>
 <tr style="background-color: white; color: black;">
 	<td>OK </td>
-	<td></td>
+	<td>No device found in database.</td>
     <td></td>
 </tr>
 <tr style="background-color: white; color: black;">

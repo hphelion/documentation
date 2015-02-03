@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the File Ownership using Icinga
+# HP Helion OpenStack&#174;: Monitor File Ownership 
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  correct ownership of ring files stored at `/etc/swift`.
 
@@ -32,7 +32,7 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring the File Ownership 
+##Monitoring the File Ownership of Swift
 
 The `/etc/swift/` has Swift user permission and the files inside the `/etc/swift/` has root permission. So, the Swift user has read permission on the files present inside the `/etc/swift/`. The script verifies the `/etc/swift/ -parent` folder for swift:swift ownership.
 
@@ -62,12 +62,6 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 	<th>Status</th>
 	<th><center>Message</center></th>
     <th><center>Cause/Resolution</center></th>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>OK</td>
-	<td>No devices to report</td>
-    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
 <tr style="background-color: white; color: black;">
 	<td>OK </td>
 	<td>File ownership check completed. Files are with Swift monitoring.
@@ -80,16 +74,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 </td>
     <td>Check for the ownership of <b>etc/swift</b> folder.
 </td>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Not mounted</td>
-    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
-</tr>---><!---
-<tr style="background-color: white; color: black;">
-	<td>UNKNOWN</td>
-	<td>No devices to report</td>
-    <td></td></tr>---->
+</tr>
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

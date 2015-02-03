@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Configuring Fiber Channel Zone Manager"
 permalink: /helion/openstack/services/volume/fibre/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Sunitha K, Binamra S
 
 ---
 <!--UNDER REVISION-->
