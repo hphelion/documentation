@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 <!--PUBLISHED-->
-#Resources for IT Ops {#sysadmin}
+# HP Helion Development Platform: Resources for IT Ops {#sysadmin}
 
 ##Installation
 

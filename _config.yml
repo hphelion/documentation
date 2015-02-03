@@ -299,6 +299,41 @@ navigation:
     url: /helion/openstack/3rd-party-license-agreements/	
   - text: Site Index
     url: /helion/openstack/siteindex/
+  11commercial.ga: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack 1.1 Documentation Home
+    url: /11helion/openstack/
+  - text: Release Notes
+    url: /11helion/openstack/release-notes/101/ 
+  - text: FAQ
+    url: /11helion/openstack/faq/  
+  - text: Technical Overview
+    url: /11helion/openstack/technical-overview/ 
+  - text: Services Overview
+    url: /11helion/openstack/services/overview/
+  - text: Support Matrix
+    url: /11helion/openstack/support-matrix/ 		
+  - text: Installation Overview
+    url: /11helion/openstack/install/overview/	
+  - text: Update Overview
+    url: /11helion/openstack/update/overview/101/
+  - text: Network Security
+    url: /11helion/openstack/install/security/
+  - text: Back Up and Restore
+    url: /11helion/openstack/backup.restore/
+  - text: Troubleshooting
+    url: /11helion/openstack/services/troubleshooting/
+  - text: Related Documentation
+    url: /11helion/openstack/related-links/	
+  - text: Glossary
+    url: /11helion/openstack/glossary/ 	
+  - text: End User License Agreement
+    url: /11helion/openstack/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /11helion/openstack/3rd-party-license-agreements/	
+  - text: Site Index
+    url: /11helion/openstack/siteindex/
   devplatform: 
   - text: HP Helion Documentation
     url: /

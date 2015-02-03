@@ -6,14 +6,15 @@ title: "DEA Auto Scaling"
 ---
 <!--PUBLISHED-->
 
-#DEA Auto Scaling {#dea-auto-scaling}
-   [DEA Template](#dea-template)
-    -   [DEA Scaling configuration](#dea-scaling-configuration)
-    -   [Enabling Auto-Scaling](#enabling-auto-scaling)
-    -   [Configuration and Tuning (Advanced)](#configuration-and-tuning-advanced)
-    -   [Writing custom scaling plugins (Advanced)](#writing-custom-scaling-plugins-advanced)
-    -   [Troubleshooting](#troubleshooting)
-    -   [Testing](#testing)
+# HP Helion Development Platform: DEA Auto Scaling {#dea-auto-scaling}
+
+-    [DEA Template](#dea-template)
+-   [DEA Scaling configuration](#dea-scaling-configuration)
+-   [Enabling Auto-Scaling](#enabling-auto-scaling)
+-   [Configuration and Tuning (Advanced)](#configuration-and-tuning-advanced)
+-   [Writing custom scaling plugins (Advanced)](#writing-custom-scaling-plugins-advanced)
+-   [Troubleshooting](#troubleshooting)
+-   [Testing](#testing)
 
 
 Application Lifecycle Service can automatically add DEA nodes to a cluster to handle
@@ -21,12 +22,10 @@ increasing numbers of user application instances.
 
 When auto scaling is enabled, the Application Lifecycle Service will automatically grow the pool of DEA nodes to accommodate new app deployments. Scaling events are triggered when the available memory in the pool falls below a certain threshold.
 
-DEA Template[](#dea-template "Permalink to this headline")
------------------------------------------------------------
+##DEA Template {#dea-template}
 
 Before enabling auto scaling, you will need to create a DEA template
-from the standard Application Lifecycle Service VM. Typically you would do this by running
-the following commands on a fresh Application Lifecycle Service VM:
+from the standard Application Lifecycle Service VM. Typically you would do this by running the following commands on a fresh Application Lifecycle Service VM:
 
     kato op defer "node attach -e dea CORE_IP" --run-as-root
 
@@ -34,8 +33,7 @@ This defers the `attach` command and enables the DEA
 role on the next boot. Shut down the VM once this is done.
 
 
-DEA Scaling configuration[](#dea-scaling-configuration "Permalink to this headline")
--------------------------------------------------------------------------------------
+##DEA Scaling configuration {#dea-scaling-configuration}
 
 The DEA auto scaling configuration file is:
 
@@ -48,18 +46,16 @@ and what information is required for each infrastructure platform.
 
 The `enabled_plugins` key must be set to OpenStack.
 
-Each platform has specific tunable settings under the
-`platform` key in *autoscaling.yaml* for setting
-authorization credentials, DEA template IDs and so forth. Configure the
-settings for your platform in this file before proceeding.
+Each platform has specific tunable settings under the `platform` key in *autoscaling.yaml* for setting authorization credentials, DEA template IDs and so forth. Configure the settings for your platform in this file before proceeding.
 
-Enabling Auto-Scaling[](#enabling-auto-scaling "Permalink to this headline")
------------------------------------------------------------------------------
+It is possible to enable multiple plugins, but this is generally **not** recommended. You could use this feature to implement a "ping" plugin that doesn't provision a DEA, but sends a notification email instead or pings a remote API.
+
+##Enabling Auto-Scaling[](#enabling-auto-scaling "Permalink to this headline")
 
 Run the following command on the Primary node:
 
-    $ kato config set cloud_controller_ng autoscaling/enabled true
-    $ kato config set health_manager autoscaling/enabled true
+	kato config set cloud_controller_ng autoscaling/enabled true
+	kato config set health_manager autoscaling/enabled true
 
 **Note**
 
@@ -69,18 +65,16 @@ otherwise each one will provision a separate DEA on every scaling event.
 
 After saving this change, restart the following processes:
 
-    $ kato process restart health_manager cloud_controller_ng
+    kato process restart health_manager cloud_controller_ng
 
 You should then start seeing some scaling information in the Health
 Manager's log file:
 
-    $ kato log tail health_manager
+    kato log tail health_manager
 
-Configuration and Tuning (Advanced)[](#configuration-and-tuning-advanced "Permalink to this headline")
--------------------------------------------------------------------------------------------------------
+##Configuration and Tuning (Advanced) {#configuration-and-tuning-advanced}
 
-A number of configuration options in the autoscaling file can be
-customized to fit your particular requirements.
+A number of configuration options in the autoscaling file can be customized to fit your particular requirements.
 
 The options in */s/etc/autoscaling/autoscaling.yaml* are:
 
@@ -105,8 +99,7 @@ Further settings are found in the health\_manager configuration (see `kato confi
 - `dea_staleness`
 	- Maximum time to wait for DEAs to report their status via NATS. If a DEA fails to report in during this period (e.g. it becomes unresponsive) it will be removed from the pool, which may lead to a new scaling event being triggered. (Default: 180, Unit: seconds)
 
-Writing custom scaling plugins (Advanced)[](#writing-custom-scaling-plugins-advanced "Permalink to this headline")
--------------------------------------------------------------------------------------------------------------------
+##Writing custom scaling plugins (Advanced) {#writing-custom-scaling-plugins-advanced}
 
 Autoscaling plugins are written in Ruby. You can see the built-in
 plugins in the */s/etc/autoscaling/plugins/* directory. A simpler
@@ -141,24 +134,21 @@ Once you have written a plugin, install the file in
 to the plugin name (in this case above: `skeleton`).
 Enable the plugin by adding it to the `enabled_plugins` list.
 
-Troubleshooting[](#troubleshooting "Permalink to this headline")
------------------------------------------------------------------
+##Troubleshooting {#troubleshooting}
 
 Most of the output from the scaling triggers comes from the health
 manager:
 
-    $ kato log tail health_manager
+    kato log tail health_manager
 
 Once scaling has been triggered by the health manager, you can check for
 the relevant platform API output in the controller:
 
-    $ kato log tail cloud_controller
+    kato log tail cloud_controller
 
 
-Testing[](#testing "Permalink to this headline")
--------------------------------------------------
+##Testing {#testing}
 
-If you want to emulate a scaling trigger, you can force a scale-up
-operation by issuing the following on the cloud controller node:
+If you want to emulate a scaling trigger, you can force a scale-up operation by issuing the following on the cloud controller node:
 
-    $ nats-pub health.scale '{"op": "up"}'
+    nats-pub health.scale '{"op": "up"}'

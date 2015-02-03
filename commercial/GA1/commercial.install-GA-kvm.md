@@ -101,8 +101,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		sudo su -
 
-2. Add the following lines to `/etc/environment`:
-
+2. Edit the `/etc/environment` file to add the following lines:
 		export http_proxy=http://<web_proxy_IP>/
 		export https_proxy=<http://web_proxy_IP>/
 		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
@@ -126,7 +125,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee seedinstall.log
 
-		**Note**:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named *seedinstall.log*.
+	**Note**:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named *seedinstall.log*.
 
 	**Note**:The installation process takes approximately 10 minutes to complete.
 
@@ -136,7 +135,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** If `hp_ced_host_manager.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
-6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file:
+6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file. The IP address should be listed in the output, such as `to login ssh root@192.0.2.1.`:
 
 		ssh root@<seed_VM_IP_address>
 
@@ -144,9 +143,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
-10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
+	The prompt will change to `root@hLinux`.
 
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
+10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#csv) file is correct and upload the file to `/root`.
+
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv) on the *Prerequisites* page.
 
 11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed VM host.
 
@@ -158,9 +159,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json 
 
-12. [Optional] Use the ipmitool to verify that network connectivity from the seed VM to each of the baremetal servers in your `baremetal.csv` is working.
+12. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to each of the baremetal servers in your `baremetal.csv` is working.
 
-13. Manually power off each baremetal system specified in your `baremetal.csv` file before proceeding with the installation. 
+13. Use the IPMItool to manually power off each baremetal system specified in your `baremetal.csv` file before proceeding with the installation. 
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
@@ -171,6 +172,10 @@ Before you begin your installation on the seed VM host, if necessary configure t
 14. Install and configure the undercloud and overcloud by running the following command from `/root`. This step creates a log file for the installation process which could be useful for debugging.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee cloud_install.log
+
+	Output messages will indicate when the undercloud and overcloud controllers become active, services are created and configured, and other aspects of the installation are executed. 
+
+10. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.
 
 	If your installation is successful, a message similar to the following is displayed:
 

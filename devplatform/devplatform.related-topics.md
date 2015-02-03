@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-#HP Helion Development Platform Related Documentation
+# HP Helion Development Platform: Related Documentation
 
 The HP Helion Development Platform is based on Cloud Foundry&trade; and OpenStack&reg; technology along with an HP-configured Linux operating system.
 

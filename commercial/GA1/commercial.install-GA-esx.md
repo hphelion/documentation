@@ -104,7 +104,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		sudo su -
 
-2. Add the following lines to `/etc/environment`:
+2. Edit the `/etc/environment` file to add the following lines:
 
 		export http_proxy=http://<web_proxy_IP>/
 		export https_proxy=<http://web_proxy_IP>/
@@ -147,6 +147,8 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 4. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
 
+	The prompt will change to `root@hLinux`.
+
 5. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
@@ -161,9 +163,9 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json 
 
-7. [Optional] Use **ipmitool** to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
+7. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
-8. Manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
+8. Use the IPMItool to manually power off each baremetal system specified in your `baremetal.csv` before proceeding with the installation. 
     
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shut down rather than automatically restarting.
 
@@ -175,11 +177,17 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee cloud_install.log 
 
+	Output messages will indicate when the undercloud and overcloud controllers become active, services are created and configured, and other aspects of the installation are executed. 
+
+10. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.
+
 	If your installation is successful, a message similar to the following is displayed:
  
 		"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
 
 	**Note:** If the installation does not complete properly, refer to the [Troubleshooting](/helion/openstack/services/troubleshooting/) document.
+
+If possible, leave this console display open as you will need the passwords to verify the installation. 
 
 ## Verify your installation {#verifying-your-installation}
 

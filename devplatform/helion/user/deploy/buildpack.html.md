@@ -6,7 +6,7 @@ title: "Buildpacks"
 ---
 <!--PUBLISHED-->
 
-Buildpacks[](#buildpacks "Permalink to this headline")
+# HP Helion Development Platform: Buildpacks[](#buildpacks "Permalink to this headline")
 =======================================================
 
 [Buildpacks](https://devcenter.heroku.com/articles/buildpacks) are
@@ -16,13 +16,12 @@ to run applications. For a short introduction to writing buildpacks, see
 
 Application deployment is done primarily using buildpacks, and the syntax for specifying which buildpack to use has changed. Instead of using a BUILDPACK_URL environment variable, set the buildpack's Git URL in a  **buildpack**  key at the top level of *manifest.yml*.
 
-Buildpacks are the recommended method for deploying applications to
-Application Lifecycle Service. Buildpacks replace the built-in frameworks used in previous versions.
+Buildpacks are the recommended method for deploying applications to Application Lifecycle Service. Buildpacks replace the built-in frameworks used in previous versions.
 
 ### Built-In Buildpacks[](#built-in-buildpacks "Permalink to this headline")
 
 Application Lifecycle Service will cycle through the *detect* scripts of the built-in buildpacks prior to staging to match the code you are pushing. For most applications using the built-in buildpacks, no additional ALS configuration is required.
-pro
+
 ### Legacy Buildpack[](#legacy-buildpack "Permalink to this headline")
 
 The legacy buildpack is a special meta-buildpack for deploying applications configured for Cloud Foundry v1 without the need for extensive reconfiguration.

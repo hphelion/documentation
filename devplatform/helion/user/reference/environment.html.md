@@ -6,34 +6,29 @@ title: "Environment Variables"
 ---
 <!--PUBLISHED-->
 
-Environment Variables[](#environment-variables "Permalink to this headline")
-=============================================================================
+# HP Helion Development Platform: Environment Variables {#environment-variables}
 
-Application Lifecycle Service exposes a number of predefined [environment
-variables](http://manpages.ubuntu.com/manpages/man7/environ.7)
-during runtime (including hook processing, cron jobs and ssh commands).
+Application Lifecycle Service exposes a number of predefined [environment variables](http://manpages.ubuntu.com/manpages/man7/environ.7) during runtime, including hook processing, cron jobs and ssh commands.
+
+Some environment variables are also available during application [staging](#staging).
 
 You can set your own environment variables:
 
--   in an `env:` block in
-    [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env),
--   via the application's Details page in the [*Management
-    Console*](/als/v1/admin/console/customize/#management-console), or
--   using the [*helion env-add*](/als/v1/user/reference/client-ref/#command-env-add)
+-   in an `env:` block in [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env),
+-   via the application's Details page in the [Management
+    Console](/als/v1/admin/console/customize/#management-console), or
+-   using the [*env-add*](/als/v1/user/reference/client-ref/#command-env-add)
     command.
 
 **Note**
 
-To see a complete list of environment variables in an Application Lifecycle Service
-application container, deploy the
-[node-env](https://github.com/Stackato-Apps/node-env) sample.
+To see a complete list of environment variables in an Application Lifecycle Service application container, deploy the [node-env](https://github.com/Stackato-Apps/node-env) sample.
 
 DATABASE\_URL
 :   Contains an access URL for a database service. If more than one type
     of database is present, `DATABASE_URL` will not
-    be available. Instead, use the [*Database Specific URL
-    variables*](/als/v1/user/services/data-services/#database-specific-url)
-    below.
+    be available. Instead, use the [Database-Specific URL
+    variables](/als/v1/user/services/data-services/#database-specific-url).
 
     Example:
 
@@ -53,31 +48,29 @@ HOME: Identifies the working directory assigned to a particular user on login. I
 
 HTTP\_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.
 
+MEMORY\_LIMIT: The amount of memory allocated to the application container. 
+
+
 PATH: A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.
 
 PIP\_OPTS: Custom/alternate [*PIP*](/als/v1/user/reference/glossary/#term-pip) repo location. See [running your own package index](http://guide.python-distribute.org/pip.html#running-your-own-package-index) for more info.
 
-    Example:
+ Example:
 
         env:
           PIP_OPTS: "--extra-index-url=http://company.com/inhouse-pypi-mirror"
 
 PORT: Application Lifecycle Service alternative for VCAP\_APP\_PORT.
 
-PROCESSES\_WEB: This variable contains the default start command that would be used
-    when [*manifest.yml*](/als/v1/user/deploy/manifestyml/)
-    doesn't override it. It is provided so that users can specify a
-    wrapper around the default command, e.g.
+PROCESSES\_WEB: This variable contains the default start command that would be used when [*manifest.yml*](/als/v1/user/deploy/manifestyml/) doesn't override it. It is provided so that users can specify a wrapper around the default command.
+For example:
 
     > processes:
     > :   web: newrelic\_wrapper \$PROCESSES\_WEB
 
-    Note that `PROCESSES_WEB` may be undefined when
-    Application Lifecycle Service can't determine the default command (e.g. because the app
-    uses a non-standard main application file).
+Note that `PROCESSES_WEB` may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.
 
-PYPM\_OPTS: Custom/alternate [*PyPM*](/als/v1/user/reference/glossary/#term-pypm) repo location.
-    Repo mirroring is sort of undocumented feature. Example:
+PYPM\_OPTS: Custom/alternate [*PyPM*](/als/v1/user/reference/glossary/#term-pypm) repo location. Repo mirroring is sort of undocumented feature. Example:
 
         env:
             PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"
@@ -86,9 +79,7 @@ HELION\_APP\_ENV: Note
 
     Internal use, subject to change.
 
-    Contains a list of all environment variables set with [*helion
-    env-add*](/als/v1/user/reference/client-ref/#command-ref-client) or
-    [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env).
+    Contains a list of all environment variables set with [*env-add*](/als/v1/user/reference/client-ref/#command-ref-client) or through the [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env) file.
 
 HELION\_APP\_NAME: Contains the application name as specified during application push
     (or in *manifest.yml*). Available during staging
@@ -130,3 +121,27 @@ VCAP\_APP\_PORT: This variable contains the port that the application will be ex
 VCAP\_APPLICATION: This variable contains all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)
 
 VCAP\_SERVICES: Contains connection details, credentials, and meta data for services bound to the application. See [*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services).
+
+## Staging Variables {#staging}
+The following environment variables are available during application staging and can be used in buildpacks or staging hooks: 
+ 
+<table style="text-align: left; vertical-align: top; width:600px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 100px;"><b>Name</b></td><td><b>Purpose</b></td>
+</tr>
+<tr><td>BUILDPACK_CACHE</td><td>Filesystem location the buildpack uses to store assets during the build.</td></tr>
+<tr><td>http_proxy and https_proxy</td><td>The proxy host:port of the DEA running the staging container.</td></tr>
+<tr><td>HOME</td><td>As above, but containing a different filesystem path during staging</td></tr>
+<tr><td>STAGING_TIMEOUT</td><td>Time limit for staging to complete.</td></tr>
+<tr><td>USER</td><td>Will always be <i>helion</i>.</td></tr>
+<tr><td>MEMORY_LIMIT</td><td>The amount of memory allocated to the application container.</td></tr>
+<tr><td>HELION_APP_NAME</td><td>Contains the application name as specified during application push (or in manifest.yml).</td></tr>
+<tr><td>HELION_APP_NAME_UPCASE</td><td>Contains the same value as HELION_APP_NAME but transformed to uppercase. Dashes are replaced by underscores.</td></tr>
+<tr><td>HELION_APP_ROOT</td><td>This is the "root" directory from the ALS point of view. It contains the app-specific HOME directory (app/), the log file directory (logs/) and various scripts.</td></tr>
+<tr><td>HELION_LOG_FILES</td><td>A colon-separated list of log files to be included in the application log stream. You can add up to five additional files to the default list by modifying this variable.</td></tr>
+<tr><td>HELION_SERVICES</td><td>Contains connection details and credentials for services bound to the application. For filesystem services, it contains the local mount point.</td></tr>
+<tr><td>VCAP_APPLICATION</td><td>This variable contains all relevant application details: Instance ID, App Name, App Uris, Users/Groups, etc.</td></tr>
+<tr><td>VCAP_SERVICES</td><td>Contains connection details, credentials, and meta data for services bound to the application.</td></tr>
+</table>
+ 
+**Note**: Service instance variables (VCAP_SERVICES) can change between staging and running. Do not save values from these variables to config files during staging as the hard-coded values may no longer be applicable after staging. 

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the Health of Services using Icinga 
+# HP Helion OpenStack&#174;: Monitor Health of Services using Icinga 
 Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the health status of Account, Container, Proxy, and Object services. 
 
 ##Prerequisites
@@ -33,6 +33,7 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 
  You can monitor the health status of the swift-proxy, swift-account, swift-container and swift-object services by following these steps:
 
+
 1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
 		
 	* Username: *icingaadmin*
@@ -42,7 +43,7 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 
 
 3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon<!-- </b> (opens in a new window)--></b></a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br> 
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">health status <!---(opens in a new window)---></a> and displays  of the selected Swift node.
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt;and displays the </b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">health status <!---(opens in a new window)---></a> of the selected Swift node.
 
 <!--
 4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address </b> <!---(opens in a new window)---></a><!-- to view the health status of the selected Swift node.--->

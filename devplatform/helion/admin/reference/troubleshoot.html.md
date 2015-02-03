@@ -6,19 +6,15 @@ title: "Troubleshooting"
 ---
 <!--PUBLISHED-->
 
-Troubleshooting[](#troubleshooting "Permalink to this headline")
-=================================================================
- [Server Log Files](#server-log-files)
-        -   [health\_manager.log](#health-manager-log)
-    -   [Inspecting User Apps as an
-        Admin](#inspecting-user-apps-as-an-admin)
-    -   [System Diagnosis](#system-diagnosis)
-    -   [Specific Cases](#specific-cases)
+# HP Helion Development Platform: Troubleshooting {#troubleshooting}
 
-Server Log Files[](#server-log-files "Permalink to this headline")
--------------------------------------------------------------------
+- [Server Log Files](#server-log-files)
+-   [health\_manager.log](#health-manager-log)
+-   [Inspecting User Apps as an Admin](#inspecting-user-apps-as-an-admin)
+-   [System Diagnosis](#system-diagnosis)
+-   [Specific Error Cases](#specific-cases)
 
-
+##Server Log Files {#server-log-files}
 If you need to troubleshoot or monitor Application Lifecycle Service logs with a third party,
 they can be found in the \~/helion/logs/\* directory on the Application Lifecycle Service
 server.
@@ -32,7 +28,7 @@ To modify the log rotation, edit the */etc/logrotate.d/helion* file as
 needed. To disable Application Lifecycle Service log rotation, delete the file or move it to
 another folder.
 
-### health\_manager.log[](#health-manager-log "Permalink to this headline")
+## health\_manager.log {#health-manager-log}
 
 The `health_manager` process is responsible for
 monitoring containers and making sure they are relaunched if there's a
@@ -55,8 +51,7 @@ find the application name, then check the logs for the application (e.g.
 a lack of memory, allocating more memory to an app is a good first step
 to see if this fixes the problem.
 
-Inspecting User Apps as an Admin[](#inspecting-user-apps-as-an-admin "Permalink to this headline")
----------------------------------------------------------------------------------------------------
+##Inspecting User Apps as an Admin {#inspecting-user-apps-as-an-admin}
 
 Application Lifecycle Service Admin accounts have root-like privileges. They can inspect all
 user applications and service instances running on the system.
@@ -65,14 +60,13 @@ The helion group \<command-users-groups-limits\> command can be used
 by admin accounts to inspect applications and service instances for any
 group or user. For example:
 
-    $ helion group jane.doe@example.com
+    helion group jane.doe@example.com
 
 This sets the scope of subsequent operations to the specified user. Use
 `helion group --reset` to return to the scope of
 the logged-in admin user.
 
-System Diagnosis[](#system-diagnosis "Permalink to this headline")
--------------------------------------------------------------------
+##System Diagnosis {#system-diagnosis}
 
 There may be cases where resolving an issue requires a complete view of
 the system metrics. This functionality is provided by the
@@ -80,17 +74,15 @@ the system metrics. This functionality is provided by the
 single file (by default named *\<target\>-report.tgz*) that can be
 provided to the Application Lifecycle Service support team for analysis:
 
-    $ helion admin report
+    helion admin report
 
 The file is several megabytes in size and will take a few seconds to
 generate. Send it, along with a detailed description of your problem, to
 HP at: [als-support@hp.com](mailto:als-support@hp.com)
 
-Specific Cases[](#specific-cases "Permalink to this headline")
----------------------------------------------------------------
+## Specific Error Cases {#specific-cases}
 
-**When pushing an app, the Application Lifecycle Service Client reports OK but app isn't
-running**
+**When pushing an app, the Application Lifecycle Service Client reports OK but app isn't running**
 
 The final output from pushing an app should look like:
 
@@ -109,23 +101,17 @@ the Application Lifecycle Service client reported incorrectly.
 This error is reported when the Application Lifecycle Service server does not have an IP
 Address. To investigate and resolve, try the following:
 
--   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service
-    server through its [*tty
-    console*](/als/v1/user/reference/glossary/#term-tty-console):
+-   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [tty console](/als/v1/user/reference/glossary/#term-tty-console):
 
-        $ arp -n
+        arp -n
 
 -   Check that the DHCP client is running:
 
-        $ pgrep dhclient
-        $ grep dhclient /var/log/syslog
+        pgrep dhclient
+        grep dhclient /var/log/syslog
 
--   Connect to the DHCP server and verify that it is receiving client
-    requests from the Application Lifecycle Service server.
+-   Connect to the DHCP server and verify that it is receiving client requests from the Application Lifecycle Service server.
 
--   If your network is statically configured, assign an IP address on
-    the Application Lifecycle Service server by editing the
-    [interfaces](http://manpages.ubuntu.com/manpages/man5/interfaces.5)
-    file:
+-   If your network is statically configured, assign an IP address on the Application Lifecycle Service server by editing the [interfaces](http://manpages.ubuntu.com/manpages/man5/interfaces.5) file:
 
         /etc/network/interfaces

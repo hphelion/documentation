@@ -9,7 +9,7 @@ title: "New Relic Monitoring"
 <!-- file deliberately orphaned, functionality not  currently supported although it may work 
 -->
 
-#New Relic Monitoring {#new-relic-monitoring}
+# HP Helion Development Platform: New Relic Monitoring {#new-relic-monitoring}
 
    [New Relic for Ruby](#new-relic-for-ruby)
         -   [The Ruby Gem](#the-ruby-gem)
