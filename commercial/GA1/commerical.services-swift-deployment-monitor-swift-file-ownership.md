@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the File Ownership using Icinga
+# HP Helion OpenStack&#174;: Monitor File Ownership 
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  correct ownership of ring files stored at `/etc/swift`.
 
@@ -32,7 +32,7 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring the File Ownership 
+##Monitoring the File Ownership of Swift
 
 The `/etc/swift/` has Swift user permission and the files inside the `/etc/swift/` has root permission. So, the Swift user has read permission on the files present inside the `/etc/swift/`. The script verifies the `/etc/swift/ -parent` folder for swift:swift ownership.
 
@@ -55,11 +55,6 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host &lt;Swift node IP address &gt;</i></b><!--- (opens in a new window)---></a><!-- to view the disk usage of the selected Swift node.--->
 
 
-
-<Need the information ?>
-
-
-
 ##Status Messages
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -67,36 +62,19 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 	<th>Status</th>
 	<th><center>Message</center></th>
     <th><center>Cause/Resolution</center></th>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>OK</td>
-	<td>No devices to report</td>
-    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
 <tr style="background-color: white; color: black;">
 	<td>OK </td>
-	<td>Percent used</td>
-    <td> Percent disk usage for devices used by Swift (/srv/node)</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>WARNING </td>
-	<td>Disk space low</td>
-    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+	<td>File ownership check completed. Files are with Swift monitoring.
+</td>
+    <td> </td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>Disk space critically low</td>
-    <td>The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value is given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Not mounted</td>
-    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
-</tr>---><!---
-<tr style="background-color: white; color: black;">
-	<td>UNKNOWN</td>
-	<td>No devices to report</td>
-    <td></td></tr>---->
+	<td>Error files with zero size and error files without Swift ownership.
+</td>
+    <td>Check for the ownership of <b>etc/swift</b> folder.
+</td>
+</tr>
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
 permalink: /helion/openstack/services/object/swift/monitor-network-access-ping/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Karthik P, Binamra S
 
 ---
 <!--UNDER REVISION-->
@@ -21,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the Network Access
+# HP Helion OpenStack&#174;: Monitor the Network Access (Ping)
  
 Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the network access of all the Swift nodes. The host that are part of ring can be determined using swift-ring-builder and only those nodes are verified for connectivity.	
 
@@ -46,7 +51,7 @@ Perform the following steps to monitor the network access of the host:
 
 
 3. In the **Host** column,  <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon<!-- </b> (opens in a new window)--></b></a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br> 
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-health-status.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">the status of  host for network connectivity.<!---(opens in a new window)---></a>
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the</b>  <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">the status of  host for network connectivity.<!---(opens in a new window)---></a>
 <!--
 4. Click the Swift node IP address to open the <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-ping-host.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>Service Status Details For Host &lt;Swift node IP address </b> <!---(opens in a new window)---></a><!-- to view the health status of the selected Swift node.--->
 
@@ -56,25 +61,18 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <tr style="background-color: #C8C8C8;">
 	<th>Status</th>
 	<th><center>Message</center></th>
-    <th><center>Cause/Resolution</center></th>
-</tr>
+   </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>OK</td>
-    <td></td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>WARNING </td>
-	<td>Disabled : proxy-server</td>
-    <td>Service is temporarily disabled.<br><br>
-	The proxy-server is disabled by the creation of a file in the disable_path configuration parameter. This is often used to temporarily disable a proxy server by removing it from the
-	load balancer or high availability system. Delete the file indicated in the disable_path configuration parameter to resolve it.</td>
+	<td>All nodes are reachable. Tested OK.
+</td>
+    
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>No response</td>
-    <td> The named server is not responding. The process may not be running or may be stuck in some way. Start or restart the server to resolve it.</td>
-</tr>
+	<td>Unreachable nodes - &lt;node_IP&gt;
+</td>
+    </tr>
 </table>
 
 

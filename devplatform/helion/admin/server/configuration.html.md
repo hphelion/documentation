@@ -12,7 +12,7 @@ After booting the VM, run *kato process ready all* before starting the following
 [*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
 option is useful in this scenario).
 
-**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
+**Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. Kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
 
 - [Changing the Password](#changing-the-password)
 -   [Network Setup](#network-setup)
@@ -253,9 +253,9 @@ in domain `example.com`. The following example is
 what you should expect to see on a [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud)
 installation, where all roles are running on the same node:
 
-    $ hostname
+    hostname
     helion-test
-    $ ifconfig eth0
+    ifconfig eth0
     eth0      Link encap:Ethernet  HWaddr 08:00:27:fc:1c:f6
       inet addr:10.0.0.1  Bcast:10.0.0.255  Mask:255.255.255.0
       inet6 addr: fe80::a00:27ff:fefc:1cf6/64 Scope:Link
@@ -264,7 +264,7 @@ installation, where all roles are running on the same node:
       TX packets:106777 errors:0 dropped:0 overruns:0 carrier:0
       collisions:0 txqueuelen:1000
       RX bytes:191340039 (191.3 MB)  TX bytes:23737389 (23.7 MB)
-    $ cat /etc/hosts
+    cat /etc/hosts
     127.0.0.1       localhost helion-test
     10.0.0.1        helion-test.example.com api.helion-test.example.com
 
@@ -281,7 +281,7 @@ If modifying `/etc/hosts` becomes necessary because
 of a hostname change, you can simply edit it as in the following
 example:
 
-    $ sudo vi /etc/hosts
+    sudo vi /etc/hosts
 
 ### DNS {#dns}
 
@@ -329,7 +329,7 @@ Floating IP on OpenStack).
 With DNS records in place, the multicast DNS broadcast is no longer
 necessary. To turn it off on the Application Lifecycle Service server, use the command:
 
-    $ kato role remove mdns
+    kato role remove mdns
 
 ###Dynamic DNS {#dynamic-dns}
 
@@ -366,7 +366,7 @@ rename](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
 match the external IP address with the 'xip.io' domain appended. For
 example:
 
-    $ kato node rename 10.9.8.7.xip.io
+    kato node rename 10.9.8.7.xip.io
 
 This will change the system hostname and reconfigure some internal
 Application Lifecycle Service settings. The xip.io DNS servers will resolve the domain
@@ -386,7 +386,7 @@ present in any of its configuration files:
 
 You must restart the service to pick up the changed configuration:
 
-    $ /etc/init.d/dnsmasq restart
+    /etc/init.d/dnsmasq restart
 
 ###Adding DNS Nameservers {#adding-dns-nameservers}
 
@@ -477,7 +477,7 @@ Comments:
 
 **Note**
 
-If your network has an HTTP proxy, the helion client may attempt to
+If your network has an HTTP proxy, the Helion client may attempt to
 use this when connecting to api.helion-xxxx.local and fail because the
 changes in `/etc/hosts` file are not reflected in
 the proxy. To work around this problem in Windows, enable
@@ -498,7 +498,7 @@ add the lines:
 
 Then restart Polipo:
 
-    $ sudo /etc/init.d/polipo restart
+    sudo /etc/init.d/polipo restart
 
 If you are using a SOCKS proxy, edit the file in the same way but with
 the lines:
@@ -506,9 +506,9 @@ the lines:
     socksParentProxy=<IP>:<PORT>
     socksProxyType=socks4a | OR | socks5;
 
-Then restart Polipo:
+Then restart Polipo on each DEA:
 
-    $ sudo /etc/init.d/polipo restart
+    sudo /etc/init.d/polipo restart
 
 For log info, any errors reported by Polipo are available on the
 Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
@@ -526,7 +526,7 @@ nodes:
 
 To remove the proxy setting:
 
-    kato op upstream_proxy delete <proxy_addr>
+    kato op upstream_proxy delete
 
 To set an HTTP proxy exclusively for apps, add an **environment\app\_http\_proxy** setting in the dea\_ng
 config using [kato config set](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example:
@@ -535,6 +535,11 @@ config using [kato config set](/als/v1/admin/reference/kato-ref/#kato-command-re
 
 Adding this configuration sets the 'http\_proxy' environment variable
 within all subsequently created application containers.
+
+Add the *--no-proxy* option to bypass the proxy when accessing certain (normally internal) domains. For example:
+
+ 	kato op upstream_proxy set 192.168.0.99:3128 --no-proxy internal.example.net 
+
 
 ##VM Filesystem Setup {#vm-filesystem-setup)
 
@@ -595,13 +600,18 @@ For additional Org-owned and Shared domains, SSL certificates can be added using
 
 ### Replacing the Default SSL Certificate {#using-your-own-ssl-certificate}
 
-On all router nodes, upload your *.key* file to the */etc/ssl/private/*
-directory and your *.crt* file to */etc/ssl/certs/*. Change the
-following settings in */s/code/helion-router/config/local.json* to
-point to the new files:
+On all router and controller nodes, upload your *.key* file to the */etc/ssl/private/* directory and your *.crt* file to */etc/ssl/certs/*. 
+
+Change the following settings with *kato config* to point to the new files: 
+
 
     "sslKeyFile": "/etc/ssl/private/example.key",
     "sslCertFile": "/etc/ssl/certs/example.crt",
+
+If you are using a signed certificate and wish to enable strict SSL checking on the internal REST interface (used for communication between the web console and controller), run the following additional command:
+		
+	kato config set stackato_rest ssl/strict_ssl true 
+
 
 ### Adding More SSL Certs (SNI) {#adding-custom-ssl-certs-sni}
 
@@ -746,8 +756,30 @@ To add a repository:
 		- deb http://security.ubuntu.com/ubuntu precise-security main universe 
 		- deb http://apt.newrelic.com/debian/ newrelic non-free 
 
-+Once a repository has been added to the list, **the GPG key must also be added** to the [Docker base image](/als/v1/admin/server/docker/#modifying-or-updating-the-container-image) on each DEA (or the [Docker registry](/als/v1/admin/server/docker/#creating-a-docker-registry) server if configured). 
+Once a repository has been added to the list, **the GPG key must also be added** to the [Docker base image](/als/v1/admin/server/docker/#modifying-or-updating-the-container-image) on each DEA (or the [Docker registry](/als/v1/admin/server/docker/#creating-a-docker-registry) server if configured). 
 
 For example, to trust the GPG for the New Relic repository, add the following line to the *Dockerfile* for the base image:
 
 	RUN wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
+
+## Container NFS Mounts {#container_NFS}
+
+**Warning**: Reconfiguring ALS to allow user applications to mount NFS partitions has serious security implications. See the [Privileged Containers](/als/v1/admin/server/docker/#docker-privileged-containers) section for details.
+
+By default, application containers are unable to mount external filesystems (other than the built-in [Filesystem Service](/als/v1/user/services/filesystem/) via network protocols such as NFS.
+
+If the system has been configured to use ref:privileged containers <docker-privileged-containers> and *sudo* permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
+requirements:
+
+	  ubuntu:
+	      - nfs-common
+	hooks:
+	  pre-running:
+	    - mkdir /mount/point
+	    - sudo mount nfs.server:/path/to/export /mount/point
+
+
+The IP address of the NFS server must also be added to the  docker/allowed_supnet_ips  list. For example:
+
+	kato config push fence docker/allowed_subnet_ips 10.0.0.110
+

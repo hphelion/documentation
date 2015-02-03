@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Monitor Disk Usage"
 permalink: /helion/openstack/services/object/swift/monitor-swift-drive-audit/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Karthik P, Keshava HP, Binamra S
 
 ---
 <!--UNDER REVISION-->
@@ -27,15 +32,17 @@ PageRefresh();
 
 On seeing the disk errors, the operator must perform the maintenance on the disk by [removing the disk](http://docs.hpcloud.com/helion/openstack/services/swift/deployment/remove-existing-disk/) from the Swift cluster or [replacing the disk](http://docs.hpcloud.com/helion/openstack/services/swift/deployment/add-disk-scale-out/) with a new one. 
 
+The **Icinga** check needs to be run once in every 30 minutes for drive audit to complete one run on large systems.
+
 ##Prerequisites
 
 * HP Helion OpenStack&#174; cloud is successfully deployed. <br> (*Starter Swift nodes are functional by default as they are part of cloud deployment*)
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring the Health of the Swift Proxy
+##Monitor Drive Audit
 
-Perform the following steps to monitor the health status of Swift proxy: 
+Perform the following steps to monitor the drive audit: 
 
 1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
 		
@@ -46,15 +53,11 @@ Perform the following steps to monitor the health status of Swift proxy:
 <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</i></b><!---(opens in a new window)----></a>.
 
 3. In the **Host** column, <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon</b><!--- (opens in a new window)---> </a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br>
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-proxy-healthcheck.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>health status of the Swift proxy</b><!--- (opens in a new window)---></a>   of the selected Swift node.
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-proxy-healthcheck.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b> status of the audit drive</b><!--- (opens in a new window)---></a>   of the selected Swift node.
 
 
 <!--
 4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host &lt;Swift node IP address &gt;</i></b><!--- (opens in a new window)---></a><!-- to view the disk usage of the selected Swift node.--->
-
-
-
-<Need the information ?>
 
 
 
@@ -64,38 +67,17 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <tr style="background-color: #C8C8C8;">
 	<th>Status</th>
 	<th><center>Message</center></th>
-    <th><center>Cause/Resolution</center></th>
-</tr><!---
+  </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>No devices to report</td>
-    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
-<tr style="background-color: white; color: black;">
-	<td>OK </td>
-	<td>Percent used</td>
-    <td> Percent disk usage for devices used by Swift (/srv/node)</td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>WARNING </td>
-	<td>Disk space low</td>
-    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+	<td>Drive audit found no error.</td>
+</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>Disk space critically low</td>
-    <td>The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value is given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Not mounted</td>
-    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
-</tr>---><!---
-<tr style="background-color: white; color: black;">
-	<td>UNKNOWN</td>
-	<td>No devices to report</td>
-    <td></td></tr>---->
-</table>
+	<td>The following drives have errors: &lt;drives&gt;
+</td>
+    </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

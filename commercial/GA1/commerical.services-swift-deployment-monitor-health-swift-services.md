@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
 permalink: /helion/openstack/services/object/swift/health-swift-services/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Karthik P, Binamra S
 
 ---
 <!--UNDER REVISION-->
@@ -21,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the Health of the Swfit Services using Icinga 
+# HP Helion OpenStack&#174;: Monitor Health of Services using Icinga 
 Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the health status of the Swift services. 
 
 ##Prerequisites
@@ -74,20 +79,14 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>OK</td>
+	<td>Services are running</td>
     <td></td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>WARNING </td>
-	<td>Disabled : proxy-server</td>
-    <td>Service is temporarily disabled.<br><br>
-	The proxy-server is disabled by the creation of a file in the disable_path configuration parameter. This is often used to temporarily disable a proxy server by removing it from the
-	load balancer or high availability system. Delete the file indicated in the disable_path configuration parameter to resolve it.</td>
-</tr>
-<tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>No response</td>
-    <td> The named server is not responding. The process may not be running or may be stuck in some way. Start or restart the server to resolve it.</td>
+	<td>List of services &lt;%&gt; are dead.
+</td>
+    <td> Check whether all the Swift services are running.</td>
 </tr>
 </table>
 
