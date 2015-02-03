@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the Disk Drive(s) Health
+# HP Helion OpenStack&#174;: Monitoring the Disk Drive(s) 
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor health of the disk drive(s) of the Swift storage node(s).
 
@@ -32,7 +32,7 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring the Health of Disk Drive(s)
+##Monitoring the Disk Drive(s)
 
 It is important to check the health of the disk drive of Swift cluster on timely basis. To verify the health of the Disk Drive, [hpssacli utility](http://docs.hpcloud.com/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/) is leveraged.
 
@@ -73,26 +73,21 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 	<th>Status</th>
 	<th><center>Message</center></th>
     <th><center>Cause/Resolution</center></th>
-</tr><!---
+</tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>No devices to report</td>
+	<td>Drive diagnostic completed: No errors found.</td>
     <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
-<tr style="background-color: white; color: black;">
-	<td>OK </td>
-	<td>Percent used</td>
-    <td> Percent disk usage for devices used by Swift (/srv/node)</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
-	<td>Disk space low</td>
-    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+	<td>Drive status in a warning state. </td>
+    <td>Drive errors.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>Disk space critically low</td>
-    <td>The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value is given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
+	<td>&lt;Failed Drive&gt; drive(s)  may be missing or in a failed state. <br>                         Found error in drive(s): <drive slot and location> </td>
+    <td>Verify a failure of drives and missing drives.</td>
 </tr><!---
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>

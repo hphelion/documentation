@@ -74,20 +74,14 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>OK</td>
+	<td>Services are running</td>
     <td></td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>WARNING </td>
-	<td>Disabled : proxy-server</td>
-    <td>Service is temporarily disabled.<br><br>
-	The proxy-server is disabled by the creation of a file in the disable_path configuration parameter. This is often used to temporarily disable a proxy server by removing it from the
-	load balancer or high availability system. Delete the file indicated in the disable_path configuration parameter to resolve it.</td>
-</tr>
-<tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>No response</td>
-    <td> The named server is not responding. The process may not be running or may be stuck in some way. Start or restart the server to resolve it.</td>
+	<td>List of services &lt;%&gt; are dead.
+</td>
+    <td> Check whether all the Swift services are running.</td>
 </tr>
 </table>
 

@@ -66,36 +66,25 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 	<th>Status</th>
 	<th><center>Message</center></th>
     <th><center>Cause/Resolution</center></th>
-</tr><!---
+</tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>No devices to report</td>
-    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
-<tr style="background-color: white; color: black;">
-	<td>OK </td>
-	<td>Percent used</td>
-    <td> Percent disk usage for devices used by Swift (/srv/node)</td>
+	<td>Network interface check completed:OK
+</td>
+    <td> </td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
-	<td>Disk space low</td>
-    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+	<td>WARNS- Network Interface check completed: Rx Over runs warning -15 
+</td>
+    <td>Verify for the errors in <b>/proc/net/dev</b>.  
+</td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Disk space critically low</td>
-    <td>The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value is given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Not mounted</td>
-    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
-</tr>---><!---
-<tr style="background-color: white; color: black;">
-	<td>UNKNOWN</td>
-	<td>No devices to report</td>
-    <td></td></tr>---->
+	<td>CRITICAL </td>
+	<td>CRIT - Network interface check completed: The network speed is 1000Mb/s and not matching.</td>
+    <td>Check for the network speed using ethtool.
+</td>
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

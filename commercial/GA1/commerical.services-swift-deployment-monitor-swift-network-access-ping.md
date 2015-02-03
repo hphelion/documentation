@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the Network Access
+# HP Helion OpenStack&#174;: Monitoring the Network Access (Ping)
  
 Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the network access of all the Swift nodes. The host that are part of ring can be determined using swift-ring-builder and only those nodes are verified for connectivity.	
 
@@ -56,25 +56,18 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <tr style="background-color: #C8C8C8;">
 	<th>Status</th>
 	<th><center>Message</center></th>
-    <th><center>Cause/Resolution</center></th>
-</tr>
+   </tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>OK</td>
-    <td></td>
-</tr>
-<tr style="background-color: white; color: black;">
-	<td>WARNING </td>
-	<td>Disabled : proxy-server</td>
-    <td>Service is temporarily disabled.<br><br>
-	The proxy-server is disabled by the creation of a file in the disable_path configuration parameter. This is often used to temporarily disable a proxy server by removing it from the
-	load balancer or high availability system. Delete the file indicated in the disable_path configuration parameter to resolve it.</td>
+	<td>All nodes are reachable. Tested OK.
+</td>
+    
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>No response</td>
-    <td> The named server is not responding. The process may not be running or may be stuck in some way. Start or restart the server to resolve it.</td>
-</tr>
+	<td>Unreachable nodes - &lt;node_IP&gt;
+</td>
+    </tr>
 </table>
 
 
