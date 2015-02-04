@@ -5,325 +5,487 @@ permalink: /als/v1/user/reference/client-ref/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
- # HP Helion Development Platform: Application Lifecycle Service Client Command Reference[](#helion-client-command-reference "Permalink to this headline")
-=====================================================================================================
-
-- [Usage](#usage)   
-- [Getting Started](#getting-started)
-- [Applications](#applications)
-- [Services](#services)
-- [Organizations](#organizations)
-- [Spaces](#spaces)
-- [Routes](#routes)
-- [Domains](#domains)
-- [Administration](#administration)
-- [Convenience](#convenience)
-- [Miscellaneous](#miscellaneous)
-
-
-Usage[](#usage "Permalink to this headline")
----------------------------------------------
-
-**helion** [*options*] *command* [*arguments*] [*command-options*]
-
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
-
+# HP Helion Development Platform: Application Lifecycle Service Client Command Reference {#helion-client-command-reference}
+ 
 Many of the informational commands take a **--json**
 option if you wish to generate machine-parseable output. In some cases
 the **--json** option reveals additional details.
 
 Note that Administrative user privileges are required for some commands.
 
-## Getting Started[](#getting-started "Permalink to this headline")
+-  [Syntax](#usage)
+- [Getting Started](#getting-started)
+	- [helion login](#command-login)
+	- [helion logout](#command-logout)
+	- [helion target](#command-target)
+- [Applications](#applications)
+	- [helion app](#command-app)
+	- [helion apps](#command-apps)
+	- [helion list](#command-list)
+- [Control](#command-Applications-Control)
+	- [helion migrate](#command-migrate)
+	- [helion restage](#command-restage)
+- [Information](#command-Applications-Information)
+	- [helion crashes](#command-crashes)
+	- [helion crashlogs](#command-crashlogs)
+	- [helion disk](#command-disk)
+	- [helion drain list](#command-drain-list)
+	- [helion drains](#command-drains)
+	- [helion env](#command-env)
+	- [helion events](#command-events)
+	- [helion file](#command-file)
+	- [helion files](#command-files)
+	- [helion health](#command-health)
+	- [helion instances](#command-instances)
+	- [helion logs](#command-logs)
+	- [helion mem](#command-mem)
+	- [helion stats](#command-stats)
+	- [helion tail](#command-tail)
+- [Feature Flags](#feature-flags) 
+	- [helion disable-feature-flag](#command-disable-feature-flag)
+	- [helion enable-feature-flag](#command-enable-feature-flag)
+	- [helion feature-flag](#command-feature-flag)	
+	- [helion feature-flags](#command-feature-flags)
+- [Management](#command-Applications-Management)
+	- [helion create-app](#command-create-app)
+	- [helion dbshell](#command-dbshell)
+	- [helion delete](#command-delete)
+	- [helion drain add](#command-drain-add)
+	- [helion drain delete](#command-drain-delete )
+	- [helion env-add](#command-env-add)
+	- [helion env-del](#command-env-del)
+	- [helion map ](#command-map)
+	- [helion open](#command-open)
+	- [helion push](#command-push)
+	- [helion rename](#command-rename)
+	- [helion restart](#command-restart)
+	- [helion rollback](#command-rollback)
+	- [helion run](#command-run)
+	- [helion scale](#command-scale)
+	- [helion scp](#command-scp)
+	- [helion set-env](#command-set-env)
+	- [helion ssh](#command-ssh)
+	- [helion start](#command-start)
+	- [helion stop](#command-stop)
+	- [helion switch-version](#command-switch-version)
+	- [helion unmap](#command-unmap)
+	- [helion unset-env](#command-unset-env)
+- [Placement](#command-Applications-Placement) 
+	- [helion placement-zone](#command-placement-zone)
+	- [helion placement-zones](#command-placement-zones)
+	- [helion set-placement-zone](#command-set-placement-zone)
+	- [helion unset-placement-zone](#command-unset-placement-zone)
+- [Services](#services)
+	- [helion marketplace](#command-marketplace)
+	- [helion purge-service-offerings](#command-purge-service-offerings)
+	- [helion service](#command-service)
+	- [helion services](#command-services)
+- Authentication Tokens  
+	- [helion create-service-auth-token](#command-create-service-auth-token)
+	- [helion delete-service-auth-token](#command-delete-service-auth-token)
+	- [helion service-auth-tokens](#command-service-auth-tokens)
+	- [helion update-service-auth-token](#command-update-service-auth-token)
+- Brokers 
+	- [helion add-service-broker](#command-add-service-broker)
+	- [helion create-service-broker](#command-create-service-broker)
+	- [helion delete-service-broker](#command-delete-service-broker)
+	- [helion remove-service-broker](#command-remove-service-broker)
+	- [helion service-brokers](#command-service-brokers)
+	- [helion update-service-broker](#command-update-service-broker)
+- [Management](#command-Services-Management) 
+	- [helion bind-service](#command-bind-service)
+	- [helion clone-services](#command-clone-services)
+	- [helion create-service](#command-create-service)
+	- [helion delete-service](#command-delete-service)
+	- [helion rename-service](#command-rename-service)
+	- [helion tunnel](#command-tunnel)
+	- [helion unbind-service](#command-unbind-service)
+	- [helion update-user-provided-service](#command-update-user-provided-service)
+- [Plans](#command-Services-Plans)
+ 	- [helion hide-service-plan](#command-hide-service-plan)
+	- [helion service-plans](#command-service-plans)
+ 	- [helion service-plans](#command-service-plans)
+	- [helion show-service-plan](#command-show-service-plan)
+	- [helion update-service-plan](#command-update-service-plan)
+- [Command history](#Command-history)
+	- [helion history clear](#command-history-clear)
+	- [helion history limit](#command-history-limit)
+	- [helion history list](#command-history-list)
+- [Organizations](#organizations)
+	- [helion create-org](#command-create-org)
+	- [helion command-delete-org](#delete-org)
+	- [helion link-user-org](#command-link-user-org)
+	- [helion org-users](#command-org-users)
+	- [helion orgs](#command-orgs)	
+	- [helion orgs](#command-orgs)
+	- [helion quota-org](#command-quota-org)
+	- [helion rename-org](#command-rename-org)
+	- [helion switch-org](#command-switch-org)
+	- [helion unlink-user-org](#command-unlink-user-org)
+	- [helion update-org](#command-update-org)
+- Security Groups 
+	- [helion bind-security-group](#command-bind-security-group)
+	- [helion create-security-group](#command-create-security-group)
+	- [helion delete-security-group](#command-delete-security-group)
+	- [helion security-group](#command-security-group)
+	- [helion security-groups](#command-security-groups)
+	- [helion unbind-security-group](#command-unbind-security-group)
+	- [helion update-security-group](#command-update-security-group)
+- [Spaces](#spaces)
+	- [helion create-space](#command-create-space)
+	- [helion delete-space](#command-delete-space)
+	- [helion link-user-space](#command-link-user-space)
+	- [helion rename-space](#command-rename-space)
+	- [helion space-users](#command-space-users)
+	- [helion space](#command-space)	
+	- [helion spaces](#command-spaces)
+	- [helion switch-space](#command-switch-space)
+	- [helion unlink-user-space](#command-unlink-user-space)
+	- [helion update-space ](#command-update-space)
+- [Routes](#routes)
+ 	- [helion delete-route](#command-delete-route)
+	- [helion routes](#command-routes)
+- [Domains](#domains)
+	- [helion create-domain](#command-create-domain)
+	- [helion delete-domain](#command-delete-domain)
+	- [helion domains](#command-domains)
+	- [helion map-domain](#command-map-domain)
+	- [helion unmap-domain](#command-unmap-domain)
+- [Administration](#administration)
+ 	- [helion admin grant](#command-admin-grant)
+	- [helion admin list](#command-admin-list)
+	- [helion admin report](#command-admin-report)
+	- [helion admin revoke](#command-admin-revoke)
+	- [helion info](#command-info)
+	- [helion show-token](#command-show-token)
+	- [helion stacks](#command-stacks)
+	- [helion targets](#command-targets)
+	- [helion tokens](#command-tokens)
+	- [helion usage](#command-usage)
+	- [helion user](#command-user)
+	- [helion user-info](#command-user-info)
+	- [helion version](#command-version)
+-[Buildpacks](#command-Administration-Buildpacks) 
+	- [helion buildpacks](#command-buildpacks)
+	- [helion create-buildpack](#command-create-buildpack)
+	- [helion delete-buildpack](#command-delete-buildpack)
+	- [helion rename-buildpack](#command-rename-buildpack)
+	- [helion update-buildpack](#command-update-buildpack)
+- [Quotas](#command-Administration-Quotas)
+	- [helion quota configure](#command-quota-configure)
+	- [helion quota create](#command-quota-create)
+	- [helion quota delete](#command-quota-delete)
+	- [helion quota list](#command-quota-list)
+	- [helion quota rename](#command-quota rename)
+	- [helion quota show](#command-quota-show)
+	- [helion quotas](#command-quotas)
+- [Space Quotas](#command-Administration-Space Quotas)
+	- [helion create-space-quota](#command-create-space-quota)
+	- [helion delete-space-quota](#command-delete-space-quota)
+	- [helion rename-space-quota](#command-rename-space-quota)
+	- [helion set-space-quota](#command-set-space-quota)
+	- [helion space-quota](#command-space-quota)
+	- [helion space-quotas](#command-space-quotas )
+	- [helion unset-space-quota](#command-unset-space-quota)
+	- [helion update-space-quota](#command-update-space-quota)
+- [User Management](#command-Administration-User Management) 
+ 	- [helion add-user](#command-add-user)
+	- [helion delete-user](#command-delete-user)
+	- [helion login-fields](#command-login-fields)
+	- [helion passwd](#command-passwd)
+	- [helion register](#command-register)
+	- [helion token](#command-token)
+	- [helion unregister](#command-unregister)
+	- [helion users](#command-users)
+- [Miscellaneous](#miscellaneous)
+	- [helion admin](#command-admin)
+	- [helion alias](#command-alias)	
+	- [helion aliases](#command-aliases)
+	- [colors](#command-Administration-Colors)
+	- [helion curl](#command-curl)
+	- [helion drain](#command-drain)
+	- [helion guid](#command-guid)
+	- [helion named-entities](#command-named-entities )
+	- [helion trace](#command-trace )
+	- [helion ](# )
+	- [helion ](# )
+	- [helion ](# )
+	- [helion unalias](#command-unalias)
 
-### helion login ###
+## Syntax {#usage}
+
+	helion [options] command [arguments] [command-options]
+
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+## Getting Started {#getting-started}
+
+### helion login <email> {#command-login}
 
 Logs in to the current or specified target with the named user.
 
-<table>
-    <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
     <tr>
     <td>--credentials</td>
-    <td>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument. This is an ALS 3-specific option</td>
+    <td>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument.</td>
     </tr><tr>
     <td>--group</td>
-    <td>The group to use for the login. This is an ALS 2-specific option.</td>
+    <td>Deprecated. Do not use.</td>
     </tr><tr>
     <td>--ignore-missing</td>
     <td>Disable errors generated for missing organization and/or space.</td>
     </tr>
     <tr>
-    <td>--no-prompt, --noprompt,<br> 
-		--n</td>
-    <td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
-    </tr><tr>
-    <td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr><tr>
-    <td>--non-interactive</td>
-    <td>Same as no-prompt.</td>
-    </tr><tr>
-    <td>--organization,<br> --o</td>
-    <td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    <td>--organization,  --o</td>
+    <td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
     </tr><tr>
     <td>--password, --passwd</td>
-    <td>The password to use. For ALS 3, this is a shorthand for <i>--credentials 'password:</i></td>
+    <td>The password to use. This is a shorthand for <i>--credentials 'password:</i></td>
     </tr><tr>
     <td>--space</td>
-    <td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible s in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
+    <td>The space (in the organization) to use. If not specified, the user is prompted to choose among the possible spaces in either the specified organization or all organizations that the user belongs to.</td>
     </tr><tr>
     <td>--target</td>
-    <td>The one-off target to use for the current operation only.</td>
+    <td>The once-off target to use for the current operation only.</td>
     </tr><tr>
     <td>--token</td>
-    <td>The one-off authentication token to use for the current operation only.</td>
+    <td>The once-off authentication token to use for the current operation only.</td>
     </tr><tr>
     <td>--token-file</td>
     <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
-    </tr><tr>
-    <td>--trace, --t</td>
-    <td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td>
     </tr>
 </table>
 
 
-###helion logout *\<target\>*###
+###helion logout *\<target\>* {#command-logout}
 Logs out of the current, specified, or all targets.
 
-<table>
-    <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
-    <tr>
-    <td>--all</td>
-    <td>log out of all targets we know. Cannot be used together with a target.</td>
-    </tr>
-    <tr>
-    <td>--no-prompt, --non-interactive, --noprompt, --n</td>
-    <td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
-    </tr><tr>
-    <td>--no-trace</td>
-    <td>Complementary alias of <i>--trace</i>.</td>
-    </tr><tr>
-    <td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
-    </tr><tr>
-    <td>--trace, --t</td>
-    <td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr>
+<td>--all</td>
+<td>When present, log out of all targets we know. Cannot be used together with a target.</td>
+</tr>
+<td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+</tr>
 </table>
 
-### helion target *\<url\>*###
+### helion target *\<url\>* {#command-target}
 Set the target API endpoint for the client or report the current target.
 
-<table>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
     <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
-    <tr>
-    <td width=200>--allow-http</td>
+    <td>--allow-http</td>
     <td>Required to prevent the client from rejecting http URLs.</td>
     </tr>
     <tr>
     <td>--json</td>
     <td>Print raw json as output, not human-formatted data.</td>
     </tr>
-    <tr>
-    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
-    <td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
-    </tr><tr>
-    <td>--no-trace</td>
-    <td>Complementary alias of <i>--trace</i>.</td>
-    </tr><tr>
-    <td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
-    </tr><tr>
+<tr>
     <td>--organization, -o</td>
-    <td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    <td>The organization to set as current for this target.</td>
     </tr><tr>
     <td>--space, -s</td>
-    <td>The space (in the organization) to use. This is an ALS 3-specific option. If not specified the user is prompted to choose among the possible spaces in the organization if specified. If the organization is not specified, the user is prompted to choose from all spaces in all organizations the user belongs to.</td>
-    </tr><tr>
-    <td>--trace, -t</td>
-    <td>Originally used to activate tracing of the issued REST requests and responses; tracing is always active now. See the <i>trace</i> command to print the saved trace to <i>stdout</i>.</td></tr>
+    <td>The space to set as current for this target.</td>
+    </tr>
     <tr><td>--verbose</td>
     <td>More verbose operation.</td>
     </tr>
 </table>
 
-## Applications[](#applications "Permalink to this headline")##
-###helion apps###
+## Applications  {#applications}
+
+###helion apps {#command-apps}
 Lists the applications deployed to the target.
-<table>
-    <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr>
+<td>--all</td>
+<td>Show all applications instead of just those associated with the current space.</td>
+</tr>
+<tr>
+<td>--group</td>
+<td>Deprecated. Do not use.</td>
+</tr>
+<tr>
+<td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>
+<tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr><tr>
+<td>--space, -s</td>
+<td>The once-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
+</tr><tr>
+<td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by GUID. Cannot be used together with `--space`.</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation only.</td>
+</tr><tr>
+<td>--token</td>
+<td>The once-off authentication token to use for the current operation only.</td>
+</tr><tr>
+<td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+</tr>
+</table>
+
+###helion app *\<application\>* {#command-app}
+Shows the information of the specified application.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr>
+<td>--group</td>
+<td>The once-off group to use for the current operation. Deprecated. Do not use.</td>
+</tr>
+<tr>
+<td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>
+<tr>
+<td>--manifest</td>
+<td>Path of the manifest file to use. If not specified, a search is performed.</td>
+</tr>
+<tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation..</td>
+</tr><tr>
+<td>--path</td>
+<td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
+</tr><tr>
+<td>--space, -s</td>
+<td>The once-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
+</tr><tr>
+<td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by GUID. Cannot be used together with `--space`.</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation only.</td>
+</tr><tr>
+<td>--token</td>
+<td>The once-off authentication token to use for the current operation only.</td>
+</tr><tr>
+<td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+</tr>
+</table>
+
+### helion list {#command-list}
+
+List the applications deployed to the target.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
     <tr>
     <td>--all</td>
     <td>Show all applications instead of just those associated with the current space.</td>
     </tr>
     <tr>
     <td>--group</td>
-    <td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    <td>The once-off group to use for the current operation. Deprecated. Do not use.</td>
     </tr>
     <tr>
     <td>--json</td>
     <td>Print raw json as output, not human-formatted data.</td>
     </tr>
     <tr>
-    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
-    <td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
-    </tr><tr>
-    <td>--no-trace</td>
-    <td>Complementary alias of <i>--trace</i>.</td>
-    </tr><tr>
     <td>--organization, -o</td>
-    <td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    <td>The once-off organization to use for the current operation.</td>
     </tr><tr>
     <td>--space, -s</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    <td>The once-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    <td>The once-off space to use for the current operation, specified by GUID. Cannot be used together with `--space`.</td>
     </tr><tr>
     <td>--target</td>
-    <td>The one-off target to use for the current operation only.</td>
+    <td>The once-off target to use for the current operation only.</td>
     </tr><tr>
     <td>--token</td>
-    <td>The one-off authentication token to use for the current operation only.</td>
+    <td>The once-off authentication token to use for the current operation only.</td>
     </tr><tr>
     <td>--token-file</td>
     <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
-    </tr><tr>
-    <td>--trace, -t</td>
-    <td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
-    </tr><tr>
-    <td>--verbose</td>
-    <td>More verbose operation.</td>
     </tr>
 </table>
 
-###helion app *\<application\>*###
-Shows the information of the specified application.
+### helion releases {#command-releases}
 
-<table>
-    <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
+Show the list of versions for the specified application. <br />
+This command was added in Helion OpenStack&reg; Development Platform 1.1.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
     <tr>
     <td>--group</td>
-    <td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
+    <td>The once-off group to use for the current operation. Deprecated. Do not use.</td>
     </tr>
     <tr>
     <td>--json</td>
     <td>Print raw json as output, not human-formatted data.</td>
     </tr>
-    <tr>
+ <tr>
     <td>--manifest</td>
     <td>Path of the manifest file to use. If not specified, a search is performed.</td>
     </tr>
     <tr>
-    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
-    <td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
-    </tr><tr>
-    <td>--no-trace</td>
-    <td>Complementary alias of <i>--trace</i>.</td>
-    </tr><tr>
     <td>--organization, -o</td>
-    <td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
+    <td>The once-off organization to use for the current operation.</td>
     </tr><tr>
     <td>--path</td>
     <td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
     </tr><tr>
     <td>--space, -s</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    <td>The once-off space to use for the current operation, specified by name. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    <td>The once-off space to use for the current operation, specified by GUID. Cannot be used together with `--space`.</td>
     </tr><tr>
     <td>--target</td>
-    <td>The one-off target to use for the current operation only.</td>
+    <td>The once-off target to use for the current operation only.</td>
     </tr><tr>
     <td>--token</td>
-    <td>The one-off authentication token to use for the current operation only.</td>
+    <td>The once-off authentication token to use for the current operation only.</td>
     </tr><tr>
     <td>--token-file</td>
     <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
-    </tr><tr>
-    <td>--trace, -t</td>
-    <td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
-    </tr><tr>
-    <td>--verbose</td>
-    <td>More verbose operation.</td>
     </tr>
 </table>
 
-### helion list###
-List the applications deployed to the target.
-<table>
-    <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
-    <tr>
-    <td>--all</td>
-    <td>Show all applications instead of just those associated with the current space.</td>
-    </tr>
-    <tr>
-    <td>--group</td>
-    <td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
-    </tr>
-    <tr>
-    <td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>
-    <tr>
-    <td>--no-prompt, --non-interactive, --noprompt, -n</td>
-    <td>Disable all prompts (interactive queries) that would normally be seen by the user.</td>
-    </tr><tr>
-    <td>--no-trace</td>
-    <td>Complementary alias of <i>--trace</i>.</td>
-    </tr><tr>
-    <td>--organization, -o</td>
-    <td>The organization to use. This is an ALS 3-specific option. If not specified programmatically, the user is prompted to choose an organization.</td>
-    </tr><tr>
-    <td>--space, -s</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
-    </tr><tr>
-    <td>--space-guid</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The one-off target to use for the current operation only.</td>
-    </tr><tr>
-    <td>--token</td>
-    <td>The one-off authentication token to use for the current operation only.</td>
-    </tr><tr>
-    <td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
-    </tr><tr>
-    <td>--trace, -t</td>
-    <td>The once-off space to use for the current operation, specified by guid. This is an ALS 3-specific option. Cannot be used together with `--space`.</td>
-    </tr>
-</table>
+    
+## Control {#command-Applications-Control}
 
-##Information##
+
+##Information 
 ###helion crashes *\<application\>*###
 List recent application crashes.
-<table>
-    <tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
     <tr>
     <td>--group</td>
     <td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
@@ -352,19 +514,19 @@ List recent application crashes.
     <td>Path of the directory holding the application files to push. Defaults to the current working directory.</td>
     </tr><tr>
     <td>--space, -s</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    <td>The once-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--space-guid</td>
-    <td>The one-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
+    <td>The once-off space to use for the current operation, specified by name. This is an ALS 3-specific option. Cannot be used together with `--space-guid`.</td>
     </tr><tr>
     <td>--tail</td>
     <td>Request target to stream the log.</td>
     </tr><tr>
     <td>--target</td>
-    <td>The one-off target to use for the current operation only.</td>
+    <td>The once-off target to use for the current operation only.</td>
     </tr><tr>
     <td>--token</td>
-    <td>The one-off authentication token to use for the current operation only.</td>
+    <td>The once-off authentication token to use for the current operation only.</td>
     </tr><tr>
     <td>--token-file</td>
     <td>Path to an existing and readable file containing the targets and authorization tokens.</td>
