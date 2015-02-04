@@ -12,8 +12,6 @@ Whether you're deploying an application to the HP Helion Development Platform, a
 For more information on working with object storage, 
 see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/openstack/services/object/overview/).
 
-For information about authentication, see [Authenticating with Access Key and Token](/als/v1/user/deploy/languages/java/authentication/).
-
 ## Using JDBC[](#using-jdbc "Permalink to this headline")
 
 It is possible to access the database services using the standard JDBC

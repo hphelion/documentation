@@ -5,12 +5,12 @@ product: devplatform
 title: "General Deployment"
 
 ---
-<!--UNDEER REVISION-->
+<!--UNDER REVISION-->
 
 # HP Helion Development Platform: General Deployment {#general-deployment}
 
 Applications are typically deployed to Application Lifecycle Service by pushing source code
-and configuration to the system's API endpoint using the [*CFMGMT client*](/als/v1/user/client/#client) or other clients that use the Application Lifecycle Service or Cloud Foundry API.
+and configuration to the system's API endpoint using the [CFMGMT client](/als/v1/user/client/#client) or other clients that use the Application Lifecycle Service or Cloud Foundry API.
 
 The steps for deploying applications will be slightly different
 depending on the application and its requirements. 
@@ -60,7 +60,7 @@ If you need to target two or more instances at the same time, use one of the fol
 
 ## Selecting Org & Space {#selecting-org-space}
 
-If your account is a member of multiple [*organizations*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces), choose which one you
+If your account is a member of multiple [organizations](/als/v1/user/deploy/orgs-spaces/#orgs-spaces), choose which one you
 want to operate under:
 
     helion switch-org exampleco
@@ -113,11 +113,14 @@ See each of these sections for language-specific deployment details.
 -   [Java](/als/v1/user/deploy/languages/java/)
 -   [Node](/als/v1/user/deploy/languages/node/)
 -   [PHP](/als/v1/user/deploy/languages/php/)
--   [Clojure](/als/v1/user/deploy/languages/clojure/)
--   [Go](/als/v1/user/deploy/languages/go/)
--   [Perl](/als/v1/user/deploy/languages/perl/)
--   [Python](/als/v1/user/deploy/languages/python/)
--   [Ruby](/als/v1/user/deploy/languages/ruby/)
+    
+<!--
+[Ruby](/als/v1/user/deploy/languages/ruby/
+[Python](/als/v1/user/deploy/languages/python/
+[Perl](/als/v1/user/deploy/languages/perl/ 
+[Clojure](/als/v1/user/deploy/languages/clojure/
+[Go](/als/v1/user/deploy/languages/go/
+-->
 
 ## Configuring Your Application For Application Lifecycle Service {#configuring-your-application-for-helion}
 
