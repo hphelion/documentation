@@ -5,14 +5,12 @@ product: devplatform
 title: "General Deployment"
 
 ---
-<!--PUBLISHED-->
+<!--UNDEER REVISION-->
 
-# HP Helion Development Platform: General Deployment[](#general-deployment "Permalink to this headline")
-=======================================================================
+# HP Helion Development Platform: General Deployment {#general-deployment}
 
 Applications are typically deployed to Application Lifecycle Service by pushing source code
-and configuration to the system's API endpoint using the [*helion client*](/als/v1/user/client/#client) or other clients that use the
-Application Lifecycle Service or Cloud Foundry API.
+and configuration to the system's API endpoint using the [*CFMGMT client*](/als/v1/user/client/#client) or other clients that use the Application Lifecycle Service or Cloud Foundry API.
 
 The steps for deploying applications will be slightly different
 depending on the application and its requirements. 
@@ -20,59 +18,70 @@ depending on the application and its requirements.
 **Note**
 
 In Application Lifecycle Service 1.0 and later (Cloud Foundry v2 API), application deployment
-is done primarily using [Buildpacks](/als/v1/user/deploy/buildpack/). A
-special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for
-existing application configurations.
+is done primarily using [Buildpacks](/als/v1/user/deploy/buildpack/). A special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for existing application configurations.
 
-Targeting & Authenticating[](#targeting-authenticating "Permalink to this headline")
--------------------------------------------------------------------------------------
+##Targeting & Authenticating {#targeting-authenticating}
 
-Before deploying an app, the client must first target Application Lifecycle Service's API
-endpoint URL. This will generally be the same URL that exposes the
+Before deploying an app, the client must first target Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the
 Management Console. For example:
 
-    $ helion target api.example.com
+    helion target api.example.com
     Successfully targeted to [https://api.example.hphelion.com]
     ...
 
 Use the `helion login` command to authenticate
 with your username and password:
 
-    $ helion login <username>
+    helion login <username>
     Attempting login to [https://api.example.hphelion.com]
     Password: ******
     Successfully logged into [https://api.example.hphelion.com]
 
-Selecting Org & Space[](#selecting-org-space "Permalink to this headline")
----------------------------------------------------------------------------
+### Managing Multiple Targets[](#managing-multiple-targets "Permalink to this headline")
 
-If your account is a member of multiple
-[*organizations*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces), choose which one you
+The Application Lifecycle Service client targets a single location with the command `helion target`.
+
+If you need to target two or more instances at the same time, use one of the following methods:
+
+1.  Use the `--target <target>` option. This sets
+    the specified target for the current command only, and does not set
+    it as the default:
+
+        helion apps --target api.helion-xxx1.local
+
+2.  Use two or more terminals to access multiple targets. Within each terminal, set the `HELION_TARGET` environment variable for the API endpoint URL you want to work with in that terminal. The client will use this URL, overriding any target set with the `helion target` command:
+
+        export HELION_TARGET='api.helion-xxx2.local'
+
+ This target is used until the variable is unset or the terminal is closed. To unset it:
+
+	unset HELION_TARGET
+
+
+## Selecting Org & Space {#selecting-org-space}
+
+If your account is a member of multiple [*organizations*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces), choose which one you
 want to operate under:
 
-    $ helion switch-org exampleco
+    helion switch-org exampleco
 
 Likewise, if you are a member of more than one space, choose a default
 space:
 
-    $ helion switch-space devel-example
+    helion switch-space devel-example
 
-Pushing Application Code[](#pushing-application-code "Permalink to this headline")
------------------------------------------------------------------------------------
+## Pushing Application Code {#pushing-application-code}
 
-Change to the root directory of your source code project, and use the
-`helion push` command to deploy your application.
-If you have a [*manifest.yml*](/als/v1/user/deploy/manifestyml/) config file in this
-directory, you can use just:
+Change to the root directory of your source code project, and use the `helion push` command to deploy your application. If you have a [*manifest.yml*](/als/v1/user/deploy/manifestyml/) config file in this directory, you can use just:
 
-    $ helion push -n
+    helion push -n
 
 The "-n" option is an alias for "--no-prompt", which takes options from
 the config YAML file instead of prompting for them.
 
 The output of the push command will be something like:
 
-    $ helion push -n
+    helion push -n
     Using manifest file "manifest.yml"
     Application Url: env.example.hphelion.com
     Creating Application [env] as [https://api.example.hphelion.com -> exampleco -> devel-example -> env] ... OK
@@ -95,38 +104,29 @@ The output of the push command will be something like:
     http://env.heli.on/ deployed
 
 The Helion client will show staging and running
-logs for the deployment process. To inspect these logs after deployment
-has finished, use the [*helion
-logs*](/als/v1/user/reference/client-ref/#command-logs) command.
+logs for the deployment process. To inspect these logs after deployment has finished, use the [*helion logs*](/als/v1/user/reference/client-ref/#command-logs) command.
 
-Language Specific Deployment[](#language-specific-deployment "Permalink to this headline")
--------------------------------------------------------------------------------------------
+##Language-Specific Deployment {#language-specific-deployment}
 
-See each of these sections for language specific deployment details and
-examples:
+See each of these sections for language-specific deployment details.
 
 -   [Java](/als/v1/user/deploy/languages/java/)
 -   [Node](/als/v1/user/deploy/languages/node/)
 -   [PHP](/als/v1/user/deploy/languages/php/)
-<!---   [Clojure](/als/v1/user/deploy/languages/clojure/)
+-   [Clojure](/als/v1/user/deploy/languages/clojure/)
 -   [Go](/als/v1/user/deploy/languages/go/)
 -   [Perl](/als/v1/user/deploy/languages/perl/)
 -   [Python](/als/v1/user/deploy/languages/python/)
 -   [Ruby](/als/v1/user/deploy/languages/ruby/)
--->
-Configuring Your Application For Application Lifecycle Service[](#configuring-your-application-for-helion "Permalink to this headline")
----------------------------------------------------------------------------------------------------------------------
+
+## Configuring Your Application For Application Lifecycle Service {#configuring-your-application-for-helion}
 
 Most applications should be able to run under Application Lifecycle Service with only a few
 changes.
 
 **manifest.yml**
-:   A manifest.yml file should be added to the root of
-    your application to hold installation details as well as setup
-    configuration instructions for your app.
-
-
-    [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml)
+:   A [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) file should be added to the root of your application to hold installation details as well as setup configuration instructions for your app.
+ 
 
 **Data Services**
 :   If you want to use Application Lifecycle Service's data services, your code will need to
@@ -164,26 +164,16 @@ The command will prompt for options or use those specified in a [*manifest.yml*]
 
 **Note**
 
-The application name must be a valid [hostname
-label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names)
-(i.e. containing only alphanumeric characters and hyphens).
+The application name must be a valid [hostname label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names) meaning that it contains only alphanumeric characters and hyphens.
 
-The `push` command implicitly stages and starts the
-application unless the `--no-start` option is used.
-With this option, applications are pushed in a pre-staged, stopped state
-where variables can be added (e.g. for use in staging hooks). The
-application can then be staged and started with the [*helion
-start*](/als/v1/user/reference/client-ref/#command-start) command or the Start
-button in the [*Management
-Console*](/als/v1/admin/console/customize/#user-console-welcome).
+The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the [*helion start*](/als/v1/user/reference/client-ref/#command-start) command or the Start
+button in the [Management Console](/als/v1/admin/console/customize/#user-console-welcome).
 
 The client will display staging logs while pushing the application but
 will generally exit before any application logs are visible. To view the
-application logs, use the [*helion
-logs*](/als/v1/user/reference/client-ref/#command-logs) command.
+application logs, use the [*helion logs*](/als/v1/user/reference/client-ref/#command-logs) command.
 
-Allowed File Types[](#allowed-file-types "Permalink to this headline")
------------------------------------------------------------------------
+## Allowed File Types {#allowed-file-types}
 
 During the push process, Application Lifecycle Service includes only three file types:
 
@@ -193,8 +183,7 @@ During the push process, Application Lifecycle Service includes only three file 
 
 All other special file types are ignored.
 
-Naming and URLs[](#naming-and-urls "Permalink to this headline")
------------------------------------------------------------------
+## Naming and URLs {#naming-and-urls}
 
 To prevent confusion or collisions, Application Lifecycle Service enforces uniqueness for
 URLs, application names, and service names:
@@ -213,12 +202,56 @@ URLs, application names, and service names:
     VCAP\_SERVICES), so there is no possibility of naming conflicts
     with services created in other orgs and spaces.
 
-Crontab Support[](#crontab-support "Permalink to this headline")
------------------------------------------------------------------
+### URL Assignment
 
-**Note**
+The ALS client assigns URLs for applications as follows during [push](/als/v1/user/reference/client-ref/)
 
-Cron commands are only executed on instance \#0 of the app.
+1. URLs set with the  --url  option take precedence.
+2. If none is set with  --url option, URLs specified in manifest.yml file are used.
+3. If neither of the above are set, a default URL is generated and assigned using the "target-base" domain of the system or the domain of the Organization (if it has only one domain).
+
+## Availability & Placement Zones
+There are two mechanisms for allocating application instances on particular Droplet Execution Agent (DEA) nodes or groups of nodes:
+
+### Availability Zones
+
+Availability zones are cluster configuration options that help distribute instances of an application across different physical locations, network segments, or racks. This is done to provide high availability in the event of server or network problems.
+
+These zones are configured by administrators and take effect automatically when multiple app instances are requested. There are no user-facing options.
+
+### Placement Zones
+
+Placement zones are groups of DEA nodes which allow for segregation of application instances into different parts of a cluster, possibly with different physical hardware characteristics or network policies.
+
+DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the *--placement-zone* option for the [push](/als/v1/user/reference/client-ref) command, or by changing the Placement Zone in the application's Settings view in the Management Console.
+
+The other relevant  client commands are:
+
+- placement-zones: Show the available placement zones.
+- placement-zone [name]: Show the list of DEAs associated with the specified placement zone.
+- set-placement-zone: Associate the application with a specific placement zone.
+- unset-placement-zone: Remove the association between application and its current placement zone.
+
+## Application Containers
+
+ALS stages and runs applications within Linux containers on one or more "DEA" (Droplet Execution Agent) hosts. These containers (managed by Docker) are all copies of a single base image which are modified during staging to add application dependencies.
+
+To inspect this base image to determine what software is pre-installed, or otherwise experiment with the application container, [deploy the Null application](https://github.com/Stackato-Apps/null).
+
+Once the app has been deployed, use the client to open an SSH session to the container:
+
+	stackato ssh -a null
+	null:~$
+
+
+From within the SSH session, you can run standard Linux commands. For example, to list the installed packages:
+
+	null:~$ dpkg -l
+	...
+
+## Crontab Support {#crontab-support}
+
+**Note**: Cron commands are only executed on instance \#0 of the app.
 
 Cron commands can be provided either in a regular crontab file in the
 root directory of the app, or via the `cron:`
@@ -269,7 +302,7 @@ been set up resolving to Application Lifecycle Service's external IP or hostname
 
 For example, to map a URL to an existing application on Application Lifecycle Service:
 
-    $ helion apps
+    helion apps
 
     +--------------+---+--------+----------------------------------+------------+
     | Application  | # | Health | URLS                             | Services   |
@@ -277,7 +310,7 @@ For example, to map a URL to an existing application on Application Lifecycle Se
     | myapp        | 1 | 100%   | myapp.example.com                  |            |
     +--------------+---+--------+----------------------------------+------------+
 
-    $ helion map myapp example.com
+    helion map myapp example.com
 
     +--------------+---+--------+----------------------------------+------------+
     | Application  | # | Health | URLS                             | Services   |
@@ -319,8 +352,7 @@ production rather than cutting over) and eventually
 [*unmap*](/als/v1/user/reference/client-ref/#command-unmap) 'example.com'
 from the original 'myapp'.
 
-Best Practices[](#best-practices "Permalink to this headline")
----------------------------------------------------------------
+##Best Practices {#best-practices}
 
 ### Reducing downtime during app updates[](#reducing-downtime-during-app-updates "Permalink to this headline")
 
@@ -332,30 +364,30 @@ For example, we have an application called "customertracker". The pushed
 application name will include a version or build number, but it is
 mapped to a "production" URL as well:
 
-    $ helion apps
+    helion apps
 
-    +--------------------+---+---------+------------------------------+------------+
-    | Application        | # | Health  | URLS                         | Services   |
-    +--------------------+---+---------+------------------------------+------------+
+    +--------------------+---+---------+--------------------------------+------------+
+    | Application        | # | Health  | URLS                           | Services   |
+    +--------------------+---+---------+--------------------------------+------------+
     | customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com | customerdb |
-    |                    |   |         | customertracker.example.com  |            |
-    +--------------------+---+---------+------------------------------+------------+
+    |                    |   |         | customertracker.example.com    |            |
+    +--------------------+---+---------+--------------------------------+------------+
 
 Push the updated code with a new application name:
 
-    $ helion push --as customertracker-v2
+    helion push --as customertracker-v2
 
     ...
 
-    $ helion apps
+    helion apps
 
-    +--------------------+---+---------+------------------------------+------------+
-    | Application        | # | Health  | URLS                         | Services   |
-    +--------------------+---+---------+------------------------------+------------+
-    | customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com | customerdb |
-    |                    |   |         | customertracker.example.com  |            |
-    | customertracker-v2 | 1 | RUNNING | customertracker-v2.example.com | customerdb |
-    +--------------------+---+---------+------------------------------+------------+
+    +--------------------+---+---------+---------------------------------+------------+
+    | Application        | # | Health  | URLS                            | Services   |
+    +--------------------+---+---------+---------------------------------+------------+
+    | customertracker-v1 | 1 | RUNNING | customertracker-v1.example.com  | customerdb |
+    |                    |   |         | customertracker.example.com     |            |
+    | customertracker-v2 | 1 | RUNNING | customertracker-v2.example.com  | customerdb |
+    +--------------------+---+---------+---------------------------------+------------+
 
 **Note**
 
@@ -367,9 +399,9 @@ distinct data services for the new version.
 
 Map the "production" URL to the new app:
 
-    $ helion map customertracker-v2 customertracker.example.com
+    helion map customertracker-v2 customertracker.example.com
 
-    $ helion apps
+    helion apps
 
     +--------------------+---+---------+------------------------------+------------+
     | Application        | # | Health  | URLS                         | Services   |
@@ -386,14 +418,14 @@ between both versions.
 
 Next, unmap the production URL from the first app:
 
-    $ helion unmap customertracker-v1 customertracker.example.com
+    helion unmap customertracker-v1 customertracker.example.com
 
 The old version is still available in case it's needed for rollback. If
 everything works as expected with the newer code, delete the old app:
 
-    $ helion delete customertracker-v1
+    helion delete customertracker-v1
 
-    $ helion apps
+    helion apps
 
     +--------------------+---+---------+------------------------------+------------+
     | Application        | # | Health  | URLS                         | Services   |
@@ -402,35 +434,7 @@ everything works as expected with the newer code, delete the old app:
     |                    |   |         | customertracker.example.com  |            |
     +--------------------+---+---------+------------------------------+------------+
 
-### Managing Multiple Targets[](#managing-multiple-targets "Permalink to this headline")
-
-The Application Lifecycle Service client targets a single location with the command
-`helion target`.
-
-If you need to target two or more instances at the same time, use one of
-the following methods:
-
-1.  Use the `--target <target>` option. This sets
-    the specified target for the current command only, and does not set
-    it as the default:
-
-        $ helion apps --target api.helion-xxx1.local
-
-2.  Use two or more terminals to access multiple targets. Within each
-    terminal, set the `HELION_TARGET` environment
-    variable for the API endpoint URL you want to work with in that
-    terminal. The client will use this URL, overriding any target set
-    with the `helion target` command:
-
-        $ export HELION_TARGET='api.helion-xxx2.local'
-
- This target is used until the variable is unset or the terminal is
- closed. To unset it:
-
-	$ unset HELION_TARGET
-
-Persistent Sessions[](#persistent-sessions "Permalink to this headline")
--------------------------------------------------------------------------
+## Persistent Sessions {#persistent-sessions}
 
 With multi-instance applications on Application Lifecycle Service, the Router will distribute
 requests among all instances. Without session management, the end user
@@ -449,12 +453,12 @@ management. Some examples of this approach are:
     -   [memcached-session-manager](http://code.google.com/p/memcached-session-manager/)
     -   [tomcat-redis-session-manager](https://github.com/jcoleman/tomcat-redis-session-manager)
 -   Node.js:
-    [connect-memcached](https://github.com/balor/connect-memcached#connect-memcached),
-    a session store that uses Memcached
+	-   [connect-memcached](https://github.com/balor/connect-memcached#connect-memcached), a session store that uses Memcached
 -   PHP:
     -   [Persistent Sessions](/als/v1/user/deploy/languages/php/#php-persistent-sessions-filesystem)
     -   [Memcached session support](http://php.net/manual/en/memcached.sessions.php)
--   Python: [Django "How to use
+-   Python: 
+	-   [Django "How to use
     sessions"](https://docs.djangoproject.com/en/dev/topics/http/sessions/)
 
 

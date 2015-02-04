@@ -14,9 +14,6 @@ see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/opens
 
 For information about authentication, see [Authenticating with Access Key and Token](/als/v1/user/deploy/languages/java/authentication/).
 
-For more help with building applications, see the Java [Framework](/als/v1/user/deploy/languages/java/frameworks) or [Buildpack](/als/v1/user/deploy/buildpack/#buildpacks) reference.  Supported frameworks include Java Web, Spring, and
-Java EE (via TomEE or JBoss)<!--, Grails, and Lift-->.
-
 ## Using JDBC[](#using-jdbc "Permalink to this headline")
 
 It is possible to access the database services using the standard JDBC

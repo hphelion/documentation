@@ -4,20 +4,17 @@ permalink: /als/v1/user/deploy/manifestyml/
 product: devplatform
 title: "Manifest.yml Options"
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 # HP Helion Development Platform: Manifest.yml Options {#manifest-yml-options}
 
-Using a *manifest.yml* file is the standard configuration file format for all
-Cloud Foundry systems, allowing for portability from those systems to
-Application Lifecycle Service without configuration changes.
+The *manifest.yml* file sets application configuration options which are then passed to ALS during the [push](/als/v1/user/reference/client-ref/) command.
+ 
+This file is the standard application configuration file format for all Cloud Foundry systems, allowing for portability from those systems to Application Lifecycle Service without configuration changes. See [Application Manifests](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) for the complete canonical documentation. 
 
-The client uses the keys to determine values
-that are otherwise passed by the user as arguments or as answers to
-prompts.
+The client uses the keys to determine values that are otherwise passed by the user as arguments or as answers to prompts.
 
-[name:](#name)
-
+- [name:](#name)
 - [applications](#applications)
 	- [depends-on](#depends-on)
 	- [helion](#helion)
@@ -136,9 +133,7 @@ For example:
     applications:
       .:
         name: celery-demo
-        framework:
-          name: python
-          runtime: python27
+		buildpack: https://github.com/ActiveState/stackato-buildpack-python.git
         mem: 128
         helion:
           env:
@@ -819,7 +814,7 @@ The minimum version of the Application Lifecycle Service client needed to manage
 
 To determine the client version, use:
 
-    $ helion version
+    helion version
 
     helion 0.3.13.0.18
 
@@ -861,6 +856,18 @@ A small number of keys are predefined for your use within
 	  ------------------------------------------------------------------------
 
 **Note**
+See the [services](#services) section for an example of variable key substitution for *yaml* key names.
 
-See the [*services*](#services) section for an example of
-variable key substitution for yaml key names.
+
+<!-- ##stackato {#manifest-yml-stackato} 
+
+The following Stackato-specific options, if necessary, need to be placed in a **stackato** block within the **Application** block. They are indented as sub-keys. 
+
+processes <stackato_yml-processes>`: 
+min_version <stackato_yml-version>`: 
+ignores <stackato_yml-ignores>`: 
+hooks <stackato_yml-hooks>`: 
+cron <stackato_yml-cron>`: 
+requirements <stackato_yml-requirements>`:
+
+-->    
