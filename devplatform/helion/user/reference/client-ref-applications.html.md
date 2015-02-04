@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/information
+permalink: /als/v1/user/reference/client-ref/applications
 product: devplatform
 
 ---
@@ -9,23 +9,10 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Information
 
-- [Information](#command-Applications-Information)
-	- [helion crashes](#command-crashes)
-	- [helion crashlogs](#command-crashlogs)
-	- [helion disk](#command-disk)
-	- [helion drain list](#command-drain-list)
-	- [helion drains](#command-drains)
-	- [helion env](#command-env)
-	- [helion events](#command-events)
-	- [helion file](#command-file)
-	- [helion files](#command-files)
-	- [helion health](#command-health)
-	- [helion instances](#command-instances)
-	- [helion logs](#command-logs)
-	- [helion mem](#command-mem)
-	- [helion stats](#command-stats)
-	- [helion tail](#command-tail)
-
+- [Applications](/als/v1/user/reference/client-ref/applications)
+	- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
+	- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
+	- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
 
 ## Applications  {#applications}
 

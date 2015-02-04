@@ -16,8 +16,8 @@ product: devplatform
 	- [helion remove-service-broker](#command-remove-service-broker)
 	- [helion service-brokers](#command-service-brokers)
 	- [helion update-service-broker](#command-update-service-broker)
-	- 
-	- ##**Brokers**##
+
+
 ### helion add-service-broker *\<name\* {#command-add-service-broker}
 Make the named service broker known to the system.
 

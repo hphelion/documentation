@@ -13,9 +13,8 @@ product: devplatform
 	- [helion marketplace](#command-marketplace)
 	- [helion purge-service-offerings](#command-purge-service-offerings)
 	- [helion service](#command-service)
-	- [helion services](#command-services
-	- 
-	- ## Services[](#services "Permalink to this headline")##
+	- [helion services](#command-services)
+
 ###helion service-plans###
 List all available plans of the supported services. 
 

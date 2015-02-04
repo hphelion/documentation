@@ -14,8 +14,7 @@ product: devplatform
 	- [helion delete-service-auth-token](#command-delete-service-auth-token)
 	- [helion service-auth-tokens](#command-service-auth-tokens)
 	- [helion update-service-auth-token](#command-update-service-auth-token)
-	- 
-	- **Authentication Tokens**
+
 ### helion create-service-auth-token *\<label\* *\<provider\*###
 Create a new service authentication token. This is an Application Lifecycle Service 3
 specific command.

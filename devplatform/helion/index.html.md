@@ -16,7 +16,7 @@ hosting provider, it provides the backbone for your private or public PaaS.
 Documentation intended for system operators in charge of setting up, configuring, and maintaining the platform.
 
 -   [Application Lifecycle Service Admin Guide](/als/v1/admin/)
-    -   [Wizard Based Cluster Creation](/als/v1/admin/#wizard-based-cluster-creation)
+    -   [Wizard-Based Cluster Creation](/als/v1/admin/#wizard-based-cluster-creation)
     -   [Management Console](/als/v1/admin/#management-console)
     -   [Server Configuration](/als/v1/admin/#server-configuration)
     -   [Cluster Configuration](/als/v1/admin/#cluster-configuration)
