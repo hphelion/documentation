@@ -48,7 +48,7 @@ Current Known Limitations:
 
 - The Flexible Control Plane is not supported for production use.
 - Backup and Restore of a FCP Cloud is not supported.
-- Virtual Storage Appliance Adaptive Optimization (VSA-AO) is not supported  
+- Virtual Storage Appliance Adaptive Optimization (VSA-AO) is not supported.  
 
 ##Deployment Architecture {#deploy}
 Currently, the Flexible Control Plane requires deployment on three KVM hosts.
@@ -154,15 +154,15 @@ The Flexible Control Plane will also require the following configuration files i
 ###Create a VM-plan file {#Create vm-plan file}
    
 Create a VM-plan file to represent the distribution of virtual machines over
-   their hosts. This is an example vm-plan file - its format mirrors that of
-   the baremetal.csv file.
+   their hosts. This is an example vm-plan file and its format mirrors that of
+   the baremetal.csv file:
 
-    ,user,,192.168.11.112,2,32768,,Undercloud,
-    ,user,,192.168.11.112,2,32768,,OvercloudControl,
-    ,user,,192.168.11.113,2,32768,,OvercloudControl,
-    ,user,,192.168.11.114,2,32768,,OvercloudControl,
-    ,user,,192.168.11.113,2,32768,,OvercloudSwift,
-    ,user,,192.168.11.114,2,32768,,OvercloudSwift,
+	,user,,192.168.11.112,2,32768,,Undercloud,
+	,user,,192.168.11.112,2,32768,,OvercloudControl,
+	,user,,192.168.11.113,2,32768,,OvercloudControl,
+ 	,user,,192.168.11.114,2,32768,,OvercloudControl,
+ 	,user,,192.168.11.113,2,32768,,OvercloudSwift,
+ 	,user,,192.168.11.114,2,32768,,OvercloudSwift,
 
    Field 1 is ignored
 
@@ -171,11 +171,11 @@ Create a VM-plan file to represent the distribution of virtual machines over
 
    Field 3 is ignored
 
-   Field 4 is the ip address of the remote kvm host
-        (If empty, this will be the local host - do not use 'localhost')
+   Field 4 is the IP address of the remote kvm host
+        (If empty, this will be the local host do not use 'localhost')
 
    Field 5 is the number of CPUs to give the virtual machine
-        (You must specify this value; the minimum value is one cpu)
+        (You must specify this value; the minimum value is one CPU)
 
    Field 6 is the amount of memory in GiB the virtual machine will have
         (You must specify this value; the minimum value is 16GiB)
@@ -183,7 +183,7 @@ Create a VM-plan file to represent the distribution of virtual machines over
    Field 7 is ignored
 
    Field 8 is the role the virtual machine will have
-        (You must specify this value - see README-baremetal for valid roles)
+        (You must specify this value see README-baremetal for valid roles)
 
 
    Note: physical baremetal nodes are added later, do NOT add them to this file
