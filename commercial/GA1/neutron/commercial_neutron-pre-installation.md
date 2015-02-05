@@ -26,7 +26,7 @@ Before the Helion OpenStack network can be installed, the Helion Network Adminis
 
 * [Select your hypervisor](#select-hypervior)
 * [Hardware configuration and software requirements](/helion/openstack/services/neutron/pre/installation/hardware-software/)
-* [Plan your High Availability needs](/helion/openstack/services/neutron/pre/installation/high-availability-cloud-networking/)
+* [Plan your High Availability needs](/helion/openstack/services/neutron/pre/installation/high-availability/)
 
 ##Select your hypervisor {#select-hypervior}
 
