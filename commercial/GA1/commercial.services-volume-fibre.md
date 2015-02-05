@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Configuring Fibre Channel Zone Manager"
-permalink: /helion/openstack/services/volume/fibre/
+permalink: /helion/openstack/services/volume/Fibre/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
