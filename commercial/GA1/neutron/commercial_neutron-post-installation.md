@@ -35,7 +35,7 @@ The following are typical post-installation configuration options.
 * [HA / NIC bonding features](#ha-nic)
 * [Tracking masked IP addresses](#tracking-masked-ip)
 * [Configuring Your Network Securely](/helion/openstack/services/neutron/post/installation/configure-network-securely/)
-* 
+* [Configure DNSaaS]( /helion/openstack/services/neutron/post/installation/configure-dnsaas/)
 
 ##Configuring plug-ins {#configure-plug-ins}
 
