@@ -11,7 +11,7 @@ role4: Cloud Administrator
 
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 #HP Helion CloudSystem#
@@ -25,7 +25,7 @@ Use the following link to begin working with [HP CloudSystem: HP CloudSystem 8.1
 	
 ##HP CloudSystem Technical Information##
 
-CloudSystem documents and white papers in PDF format.  
+CloudSystem documents and white papers in PDF format
 
 * [HP CloudSystem 8.1 Update 2 Release Notes](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04517074)
 
