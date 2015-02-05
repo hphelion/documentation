@@ -7,7 +7,7 @@ product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
-authors: Sunitha K, Binamra S
+authors: Sunitha K, Deeplai V, Binamra S
 
 ---
 <!--UNDER REVISION-->
@@ -36,7 +36,7 @@ FC zone manager automates the zone access management at attach/detach entry poin
 <img src="media/commercial_cinder-fc-zone.png"/)>
 
 
-##Configuration of Brocade Zone Manager
+##Configuration of Brocade FC Zone Manager
 
 If Block Storage is configured to use a Fibre Channel volume driver that supports Zone Manager, update `kvm-default.json` to enable Fibre Channel Zone Manager.
 
@@ -51,17 +51,141 @@ If Block Storage is configured to use a Fibre Channel volume driver that support
 8. HP 3PAR web services API server must be enabled and running and HTTPS is enabled
 
 
+###Steps for configuration
+
+Perform the following steps to configure Brocade Zone Manager.
+
+1. SSH to seed VM as root
+
+		ssh root@<seed IP address>
+
+2. Change the directory
+
+		cd tripleo/configs/
+
+3. List the files in the directory
+
+		ls
+
+4. Edit `kvm-default.json`
+
+		vi kvm-default.json
+
+5.  Edit and update the `tripleo/configs/kvm-default.json` 
+
+	a.   Add the JSON snippet obtained in "Generate Config" from Sirius .
+		
+	   1. Refer Add HP 3PAR StoreServ CPG as Cinder backend to generate Config.json.
+	   2. As of now manually add "zoning_mode": "fabric" parameter under 3PAR FC backend.
+
+6. Manually add FC Brocade Zone Manager configurations under the "**3par**" section as shown in the sample below.
+
+
+		{
+		  "cloud_type": "KVM",
+		  "compute_scale": 1,
+		  "vsa_scale": 0,
+		  "vsa_ao_scale": 0,
+		  "so_swift_storage_scale": 0,
+		  "so_swift_proxy_scale": 0,
+		  "bridge_interface": "eth0",
+		  "ntp": {
+		    "overcloud_server": "16.110.135.123",
+		    "undercloud_server": "16.110.135.123"
+		  },
+		 
+		  "3par": {
+		    "DEFAULT": {
+		      "enabled_backends": [
+		        "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
+		        "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
+		      ]
+		    },
+		      "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
+		      "san_password": "3pardata",
+		      "hp3par_username": "3paradm",
+		      "volume_backend_name": "3pariscsi",
+		      "san_login": "3paradm",
+		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+		      "hp3par_password": "3pardata",
+		      "hp3par_cpg": "3par_iscsi",
+		      "hp3par_iscsi_chap_enabled": "true",
+		      "san_ip": "15.214.241.21",
+		      "iscsi_ip_address": "10.1.0.200"
+		    },
+		 
+		    "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
+		      "san_password": "3pardata",
+		      "hp3par_username": "3paradm",
+		      "volume_backend_name": "3par_FC",
+		      "san_login": "3paradm",
+		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
+		      "hp3par_password": "3pardata",
+		      "hp3par_cpg": "3par_FC",
+		      "hp3par_iscsi_chap_enabled": "true",
+		      "san_ip": "15.214.41.21",
+		      "zoning_mode": "fabric"
+		    },
+		 
+		    "fc-zone-manager": {
+		      "brcd_sb_connector": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI",
+		      "fc_fabric_names": "BRCD_FAB_A,BRCD_FAB_B",
+		      "zone_name_prefix": "helion",
+		      "fc_san_lookup_service": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService",
+		      "zone_driver": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver",
+		      "zoning_policy": "initiator-target"
+		    },
+		 
+		    "BRCD_FAB_A": {
+		      "fc_fabric_address": "15.214.242.160",
+		      "fc_fabric_user": "admin",
+		      "fc_fabric_password": "admblabla",
+		      "zoning_policy": "initiator-target",
+		      "zone_activate": "true"
+		    },
+		 
+		    "BRCD_FAB_B": {
+		      "fc_fabric_address": "15.214.242.161",
+		      "fc_fabric_user": "admin",
+		      "fc_fabric_password": "admblabla",
+		      "zoning_policy": "initiator-target",
+		      "zone_activate": "true"
+		    }
+		  }
+		} 
+
+
+
+7. Ensure the JSON file format is intact.
+
+
+####Update overcloud
+
+After configuration of Brocade FC zone manager for 3PAR device perform the following steps:
+
+1. Apply the configuration
+ 
+**command?**
+
+2. Source the environment variables.
+
+		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh  tripleo/configs/<environment variables file name>
+
+	For example:
+
+		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh  tripleo/configs/<kvm-default.json>
+
+
+3. Run the installer script to update the overcloud.
+
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
 
 
 
 
-
-
-
-
-
-
-
+###More information
 
 Please refer the Openstack Cinder configuration guide available at the below URLs for the specific configuration required for enabling auto-zoning.
 http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html - For Zone Manager specific configuration
