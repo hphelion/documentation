@@ -3,6 +3,13 @@ layout: default
 title: "HP Helion OpenStack&#174;: Technical Overview"
 permalink: /helion/openstack/technical-overview/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Sameer V, Pranoy R, Binamra S
 
 ---
 <!--UNDER REVISION-->

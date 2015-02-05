@@ -212,8 +212,9 @@ To meet these hardware configuration requirements, select from the following opt
 * [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937)
 * [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
 * [SL270s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945)
-* [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044) 
-- 
+* [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044)
+
+
 ###IBM systems
 
 * [IBM System x3550 M4 Server](http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/)
@@ -336,7 +337,7 @@ The source for this information is:[Support Matrix]( /helion/openstack/support-m
 
 ##Match supported configurations {#support-config}
 
-Support Matrix – either KVM or ESX
+Support Matrix - either KVM or ESX
 
 ###Configure ports
 
@@ -353,7 +354,7 @@ Recommend that you allow for 25% expansion.
 
 ###Next Steps {#next-step}
 
-[HP Helion OpenStack&reg; High Availability for Cloud Networking]( /helion/openstack/services/neutron/pre/installation/high-availability-cloud-networking/)
+[HP Helion OpenStack&reg; High Availability for Cloud Networking](/helion/openstack/services/neutron/pre/installation/high-availability/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
