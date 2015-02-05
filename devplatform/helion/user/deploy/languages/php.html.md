@@ -16,8 +16,6 @@ to enable successful development are available in PHP.
 For more information on working with object storage, 
 see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/openstack/services/object/overview/).
 
-For more information on authentication, see [Identity Service, Authentication, and the Service Catalog](/als/v1/user/deploy/languages/php/authentication/).
-
 ##Application Lifecycle Services
 Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
