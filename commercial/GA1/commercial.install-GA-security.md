@@ -102,7 +102,7 @@ When controlling inbound and outbound traffic access, consider the following:
 
 When configuring server connectivity, consider the following:
 
-As shown in [Figure 1](#fig1), all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.
+As shown in figure [Typical HP Helion OpenStack network topology](#fig1), all of the Cloud Controller servers are members of all three VLANs. However, these servers have IP addresses configured only for the management VLAN.
 
 #### Public endpoint recommendations #### {#publicend}
 

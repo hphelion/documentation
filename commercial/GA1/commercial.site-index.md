@@ -36,6 +36,7 @@ The documentation for HP Helion OpenStack includes the following:
 * [Swift Deployment](#swift)
 * [License files](#license)
 * [Related documentation](#related)
+* [HP Helion OpenStack&reg; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/services/neutron/installation/intro/)
 
 
 ## Release Notes {#release}
