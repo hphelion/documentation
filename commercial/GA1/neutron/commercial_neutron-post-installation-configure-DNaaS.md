@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174;: DNSaaS Installation and Configuration"
-permalink: /helion/openstack/install/dnsaas/
+title: "HP Helion OpenStack&#174; DNSaaS Configuration"
+permalink: /helion/openstack/services/neutron/post/installation/configure-dnsaas/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -20,13 +20,17 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/related-links/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
+# HP Helion OpenStack&#174;: DNSaaS Configuration
+
+Configuring Domain Name System as a service (DNSaaS) is optional.
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. 
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
 <p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
+
+To configure DNSaaS review:
 
 
 - [Prerequisites](#preq)
