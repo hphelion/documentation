@@ -80,7 +80,18 @@ Perform the following steps to configure Brocade Zone Manager.
 
 6. Manually add FC Brocade Zone Manager configurations under the "**3par**" section as shown in the sample below.
 
-
+		{
+					  "cloud_type": "KVM",
+					  "compute_scale": 1,
+					  "vsa_scale": 0,
+					  "vsa_ao_scale": 0,
+					  "so_swift_storage_scale": 0,
+					  "so_swift_proxy_scale": 0,
+					  "bridge_interface": "eth0",
+					  "ntp": {
+					    "overcloud_server": "16.110.135.123",
+					    "undercloud_server": "16.110.135.123"
+					  },
 		
 7. Ensure the JSON file format is intact.
 
