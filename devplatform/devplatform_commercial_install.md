@@ -264,21 +264,21 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 		a. Edit the /etc/haproxy/manual/paas.cfg file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
 	
-				listen trove_api
- 				bind <Virtual IP from step 2>:8779
- 				server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt
+			listen trove_api
+ 			bind <Virtual IP from step 2>:8779
+ 			server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt
 
 		b. Edit the /etc/iptables/iptables file and add to the end of it:
 
-				-I INPUT -p tcp --dport 8779 -j ACCEPT
+			-I INPUT -p tcp --dport 8779 -j ACCEPT
 
 		c. Run the following command as root:
 
-				sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
+			sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
 				
 		d. Reload the haproxy service configuration
 		
-				sudo service haproxy reload
+			sudo service haproxy reload
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Database** panel under the current Project to being using Database Service.
 
