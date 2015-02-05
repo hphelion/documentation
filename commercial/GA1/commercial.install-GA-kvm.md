@@ -95,15 +95,16 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ### Configure proxy information {#proxy}
 
-Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:
+Before you begin your installation on the seed VM host, if your environment uses a proxy server to access the Internet, configure the proxy information using the following steps:
 
 1. Launch a terminal and log in to your seed VM host as root:
 
 		sudo su -
 
 2. Edit the `/etc/environment` file to add the following lines:
+
 		export http_proxy=http://<web_proxy_IP>/
-		export https_proxy=<http://web_proxy_IP>/
+		export https_proxy=http://<web_proxy_IP>/
 		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
 	
 	Where `web_proxy_IP` is your web proxy IP address.

@@ -6,15 +6,14 @@ title: "New Relic Monitoring"
 
 ---
 <!--PUBLISHED-->
-<!-- file deliberately orphaned, functionality not  currently supported although it may work 
+<!-- file deliberately orphaned, functionality not currently supported although it may work 
 -->
 
 # HP Helion Development Platform: New Relic Monitoring {#new-relic-monitoring}
 
    [New Relic for Ruby](#new-relic-for-ruby)
         -   [The Ruby Gem](#the-ruby-gem)
-        -   [Installing the Ruby agent with the Bundler
-            Gem](#installing-the-ruby-agent-with-the-bundler-gem)
+        -   [Installing the Ruby agent with the Bundler Gem](#installing-the-ruby-agent-with-the-bundler-gem)
         -   [Configuration File](#configuration-file)
     -   [New Relic for Python](#new-relic-for-python)
         -   [Bottle Currency Example](#bottle-currency-example)
@@ -34,10 +33,10 @@ New Relic can be used to track your application analytics running in
 Application Lifecycle Service as well as for server monitoring. The languages it can
 currently be used with are:
 
-1.  [*Ruby*](#newrelic-ruby)
-2.  [*Python*](#newrelic-python)
-3.  [*Java*](#newrelic-java)
-4.  [*PHP*](#newrelic-php)
+1.  [Ruby](#newrelic-ruby)
+2.  [Python](#newrelic-python)
+3.  [Java](#newrelic-java)
+4.  [PHP](#newrelic-php)
 
 In order to use New Relic, you need a [New Relic
 account](http://newrelic.com/).

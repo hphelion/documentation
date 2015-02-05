@@ -393,7 +393,7 @@ To uninstall the DNaaS:
 
 **Note**: Installer VM can also be deleted, if it is not deleted already.
 
-The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the Keystone documentation (here we point to OpenStack documentation).
+The Keystone service and endpoints will not be deleted, if you want to remove these services, please refer to the [Keystone documentation](http://docs.openstack.org/developer/keystone/).
 
 ##More Information {#moreinfo}
 For more information, see:
