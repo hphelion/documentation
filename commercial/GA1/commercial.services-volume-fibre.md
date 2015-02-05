@@ -129,8 +129,10 @@ After configuration of Brocade FC zone manager for 3PAR device perform the follo
 ###More information
 
 Please refer the Openstack Cinder configuration guide available at the below URLs for the specific configuration required for enabling auto-zoning.
-http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html - For Zone Manager specific configuration
-http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html - Zone Driver configuration
+
+* For Zone Manager specific configuration refer to  [http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html](http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html)
+* For Zone Driver configuration refer to [http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html](http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html)
+ 
  
 
 
