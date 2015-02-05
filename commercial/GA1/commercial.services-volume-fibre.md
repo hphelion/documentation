@@ -95,10 +95,10 @@ Perform the following steps to configure Brocade Zone Manager.
 			 "overcloud_server": "16.110.135.123",
 		     "undercloud_server": "16.110.135.123"
 		 },
-				 
-		  
 
-			
+
+
+
 7. Ensure the JSON file format is intact.
 
 
