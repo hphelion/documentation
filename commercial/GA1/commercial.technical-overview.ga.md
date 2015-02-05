@@ -324,8 +324,8 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td>eth0</td>
   </tr>
 </td>  <tr style="background-color: white; color: black;">
-    <td><b>Fiber Channel</b></td>
-    <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
+    <td><b>Fibre Channel</b></td>
+    <td> Fibre Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
     <td> </td>
     <td> </td>
 <tr style="background-color: white; color: black;">

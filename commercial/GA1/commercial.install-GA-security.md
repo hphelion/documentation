@@ -37,7 +37,7 @@ HP Helion OpenStack has many built-in security controls, but the customer must t
 
 ## Network Topology ## {#network}
 
-HP Helion OpenStack is deployed on three physical networks: IPMI, Fiber Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in [Figure 1](#fig1).  
+HP Helion OpenStack is deployed on three physical networks: IPMI, Fibre Channel, and the Cloud LAN which is subdivided into VLANs to produce the External, Management, and Service LANs as depicted in [Figure 1](#fig1).  
 
 ##### Figure 1: Typical HP Helion OpenStack network topology {#fig1}
 <img src="media/Helion_Security1_50.png"/>
@@ -324,7 +324,7 @@ StoreVirtual port usage is described in [HP4000 SAN - SANiQ TCP and UDP Port Usa
 
 ### Securing 3Par StoreServ network connections {#storeserv}
 
-HP Helion Openstack supports iSCSI or Fiberchannel connectivity with 3PAR StoreServ. If using Fiberchannel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fiberchannel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
+HP Helion Openstack supports iSCSI or Fibre Channel connectivity with 3PAR StoreServ. If using Fibre Channel, then the Compute nodes and the overcloud controller hosting Block Storage (Cinder) will require Fibre Channel connectivity with the 3PAR array. For iSCSI, connectivity will be through the management VLAN. The StoreServ REST API and SSH command line interfaces must be accessible from the management VLAN as well.
 
 The following diagram depicts a StoreServ network deployed as a flat network, as shown in [Figure 7](#fig7):
 
@@ -369,7 +369,7 @@ See Reference 6 below </td>
 
 
 
-When deploying StoreServ with Fiberchannel, interfaces 1 and 2 run over Fiberchannel network instead of iSCSI.
+When deploying StoreServ with Fibre Channel, interfaces 1 and 2 run over Fibre Channel network instead of iSCSI.
 
 [Figure 8](#fig8) depicts a logical deployment after applying ACLs for flows in table:
 

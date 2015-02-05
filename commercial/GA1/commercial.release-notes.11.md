@@ -40,7 +40,7 @@ The following features have been added to HP Helion OpenStack, by release.
 
 The following features have been added to HP Helion OpenStack 1.1:
 
-**OpenStack Juno support** All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to OpenStack Juno.
+**OpenStack Juno support** All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
 **HP Helion OpenStack Metering services** The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.
 
@@ -69,7 +69,7 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 **HP Helion OpenStack Identity service** The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See [Identity Service Overview](/helion/openstack/services/identity/overview/).
 
-**Fiber Channel Zone Manager support** The OpenStack Fiber Channel Zone Manager creates the necessary fiber channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fiber Channel Zone Manager](/helion/openstack/services/volume/fibre/).<!--HMP32-->
+**Fibre Channel Zone Manager support** The OpenStack Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fibre Channel Zone Manager](/helion/openstack/services/volume/fibre/).<!--HMP32-->
 
 **Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
 

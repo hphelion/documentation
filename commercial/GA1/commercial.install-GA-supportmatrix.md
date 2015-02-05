@@ -32,6 +32,8 @@ To ensure the performance and stability of the HP Helion OpenStack environment, 
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
+* [OpenStack version information](#os)
+* [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
 * [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
@@ -39,7 +41,11 @@ This page provides an overview of the hardware and software that is supported fo
 	* [Guest OS Support Matrix](#guestOS)
 	* [seed cloud host requirements and recommendations](#otherseed)
 
-##Deployment Architecture {#deploy-arch}
+## OpenStack version information {#os}
+
+All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+
+## Deployment Architecture {#deploy-arch}
 
 The following diagrams depict simplified deployment scenarios:
 

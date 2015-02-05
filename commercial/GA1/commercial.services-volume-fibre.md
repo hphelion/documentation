@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Configuring Fiber Channel Zone Manager"
+title: "HP Helion OpenStack&#174; Configuring Fibre Channel Zone Manager"
 permalink: /helion/openstack/services/volume/fibre/
 product: commercial.ga
 product-version1: HP Helion OpenStack
@@ -25,7 +25,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Configuring Fiber Channel Zone Manager
+# HP Helion OpenStack&reg; Configuring Fibre Channel Zone Manager
 
 If Block Storage is configured to use a Fibre Channel volume driver that supports Zone Manager, update cinder.conf to add the following configuration options to enable Fibre Channel Zone Manager.
 
