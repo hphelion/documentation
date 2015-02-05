@@ -1,0 +1,106 @@
+---
+layout: default-devplatform
+title: "Application Lifecycle Service Client Command Reference"
+permalink: /als/v1/user/reference/client-ref/gettingstarted
+product: devplatform
+
+---
+<!--UNDER REVISION-->
+
+# HP Helion Development Platform: ALS Command Reference: Getting Started
+
+- [helion login](#command-login)
+- [helion logout](#command-logout)
+- [helion target](#command-target)
+
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+## helion login <email> {#command-login}
+
+Logs in to the current or specified target with the named user.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr>
+<td>--credentials</td>
+<td>The credentials to use. Each use of the option declares a single element, using the form "key: value" for the argument.</td>
+</tr><tr>
+<td>--group</td>
+<td>Deprecated. Do not use.</td>
+</tr><tr>
+<td>--ignore-missing</td>
+<td>Disable errors generated for missing organization and/or space.</td>
+</tr>
+<tr>
+<td>--organization,  --o</td>
+<td>The organization to use. If not specified programmatically, the user is prompted to choose an organization.</td>
+</tr><tr>
+<td>--password, --passwd</td>
+<td>The password to use. This is a shorthand for <i>--credentials 'password:</i></td>
+</tr><tr>
+<td>--space</td>
+<td>The space (in the organization) to use. If not specified, the user is prompted to choose among the possible spaces in either the specified organization or all organizations that the user belongs to.</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation only.</td>
+</tr><tr>
+<td>--token</td>
+<td>The once-off authentication token to use for the current operation only.</td>
+</tr><tr>
+<td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+</tr>
+</table>
+
+
+###helion logout *\<target\>* {#command-logout}
+Logs out of the current, specified, or all targets.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr>
+<td>--all</td>
+<td>When present, log out of all targets we know. Cannot be used together with a target.</td>
+</tr>
+<td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and authorization tokens.</td>
+</tr>
+</table>
+
+### helion target *\<url\>* {#command-target}
+Set the target API endpoint for the client or report the current target.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+    <tr>
+    <td>--allow-http</td>
+    <td>Required to prevent the client from rejecting http URLs.</td>
+    </tr>
+    <tr>
+    <td>--json</td>
+    <td>Print raw json as output, not human-formatted data.</td>
+    </tr>
+<tr>
+    <td>--organization, -o</td>
+    <td>The organization to set as current for this target.</td>
+    </tr><tr>
+    <td>--space, -s</td>
+    <td>The space to set as current for this target.</td>
+    </tr>
+    <tr><td>--verbose</td>
+    <td>More verbose operation.</td>
+    </tr>
+</table>
+

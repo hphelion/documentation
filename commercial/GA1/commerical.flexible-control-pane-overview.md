@@ -5,7 +5,7 @@ permalink: /helion/openstack/flexiblecontrol/overview/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -48,7 +48,7 @@ Current Known Limitations:
 
 - The Flexible Control Plane is not supported for production use.
 - Backup and Restore of a FCP Cloud is not supported.
-- VSA-AO is not supported.
+- Virtual Storage Appliance Adaptive Optimization (VSA-AO) is not supported.  
 
 ##Deployment Architecture {#deploy}
 Currently, the Flexible Control Plane requires deployment on three KVM hosts.
@@ -105,6 +105,7 @@ Three (3) physical servers are used as VSA nodes.
 - HDD: 8*1 TB
 
 ###Physical Compute
+PC nodes have the same minimum requirements in Flexible Control Plane as in normal installations.
 The following configuration is used for the overcloud compute node.
 - RAM: 96GB
 - CPU Core: 40
@@ -143,69 +144,49 @@ The following section describes the environment variables involved in configurin
 
 Below are descriptions of available configuration variables. Again, you will set these later, during the installation step-by-step process.
 
-**HP\_VM\_MODE** Set this variable to specify the mode of deployment as single or hybrid. Currently, the options supported are: "Y", "HYBRID" and "Not Set".  To enable this feature, set the value to "HYBRID".
+**HP\_VM\_MODE** Set this variable to specify the mode of deployment as single or hybrid. Currently, the options supported are: "y" and "hybrid".  To enable this feature, set the value to "hybrid".
 
 	export HP_VM_MODE=HYBRID
 
-**HP_ MULTI_ KVM**  This variable enables the heterogeneous environment to support the multiple hypervisors to host HP Helion OpenStack Control Plane. The best practice is to set it to three (3).
- 
-	export HP_MULTI_ KVM=3
-
-All of the remaining variable values you set here will match the flavor specified in the [uc_custom.flavors.json](#configfiles) file. (A *flavor* is a description of a hardware resource in terms of CPU, RAM, and memory. If all of these three are the same, the resources are the same flavor.)
-
-**OvercloudBlockStorageFlavor** Set this variable to specify the overcloud block storage flavors to be used at the time of deployment. 
-
-	export OvercloudBlockStorageFlavor=BlockStorageFlavor	
-
-**OvercloudComputeFlavor** Set this variable to specify the overcloud compute flavor to be used at the time of deployment. 
- 
-	export OvercloudComputeFlavor=computeflavor
-
-**OvercloudControlFlavor** Set this variable to specify the flavor for the overcloud management controller to be used at the time of deployment. 
-
-	export OvercloudControlFlavor=controllerMgmtFlavor
- 
-**controller0Flavor** Set this variable to specify the overcloud controller0 flavor to be used at the time of deployment. 
-
-	export controller0Flavor= controller0Flavor
-
-**controller1Flavor** Set this variable to specify the overcloud controller1 flavor to be used at the time of deployment.  
-
-	export controller1Flavor= controller1Flavor
-
-**OvercloudSwiftScaleoutProxyFlavor** Set this variable to specify the overcloud Swift Scale-out Proxy flavor to be used at the time of deployment. 
-
-	export OvercloudSwiftScaleoutProxyFlavor= SwiftScaleoutProxyFlavor
-
-**OvercloudVsaFlavor** Set this variable to specify the overcloud VSA flavor to be used at the time of deployment. 
-
-	export OvercloudVsaFlavor= VsaFlavor
-
-**OvercloudSwiftStorageFlavor** Set this variable to specify the overcloud Swift Storage flavor to be used at the time of deployment. 
-
-	export OvercloudSwiftStorageFlavor=SwiftStorageFlavor
- 
-**OvercloudSwiftScaleoutObjectFlavor** Set this variable to specify the overcloud Swift Scale-out object flavor to be used at the time of deployment. 
-
-	export OvercloudSwiftScaleoutObjectFlavor=SwiftScaleoutObjectFlavor
-
 ###Configuration Files {#configfiles}
-The Flexible Control Plane will also require the following configuration files in the root directory: **uc\_custom\_flavors.json** and **kvms.csv**. Note the following explanations of what these files will contain. They will be created later in the installation process ([installation instructions](/helion/openstack/flexiblecontrol/install)).
+The Flexible Control Plane will also require the following configuration files in the root directory: **uc\_custom\_flavors.json** and **kvms.csv**. 
 
-####uc\_custom\_flavors.json
+###Create a VM-plan file {#Create vm-plan file}
+   
+Create a VM-plan file to represent the distribution of virtual machines over
+   their hosts. This is an example vm-plan file and its format mirrors that of
+   the baremetal.csv file:
 
-The *uc\_custom\_flavors.json* file, which you will create later, during the installation process defined in the [installation instructions](/helion/openstack/flexiblecontrol/install) is required to define the flavors that will be used during the deployment. This flavor information is added to the undercloud and used when deploying the control plane nodes as VMs on target KVM host. 
+	,user,,192.168.11.112,2,32768,,Undercloud,
+	,user,,192.168.11.112,2,32768,,OvercloudControl,
+	,user,,192.168.11.113,2,32768,,OvercloudControl,
+ 	,user,,192.168.11.114,2,32768,,OvercloudControl,
+ 	,user,,192.168.11.113,2,32768,,OvercloudSwift,
+ 	,user,,192.168.11.114,2,32768,,OvercloudSwift,
 
-A flavor node in *uc\_custom\_flavors.json* consists of the following values:
+   Field 1 is ignored
 
-- **name**: Name of the node
-- **memory**:  Memory consumed by the node
-- **Disk**:   Disk consumed by the node 
-- **cpu**: Number of CPUs used 
-- **arch**: Architecture type of the node
-- **hw_type**: Hardware type. It can be Baremetal or Virtual machine
-- **node_type**:  Role of the node. For example: compute, VSA, Swift etc.
+   Field 2 is the kvm user under which the VM will run
+        (This user does not have to be root)
 
+   Field 3 is ignored
+
+   Field 4 is the IP address of the remote kvm host
+        (If empty, this will be the local host do not use 'localhost')
+
+   Field 5 is the number of CPUs to give the virtual machine
+        (You must specify this value; the minimum value is one CPU)
+
+   Field 6 is the amount of memory in GiB the virtual machine will have
+        (You must specify this value; the minimum value is 16GiB)
+
+   Field 7 is ignored
+
+   Field 8 is the role the virtual machine will have
+        (You must specify this value see README-baremetal for valid roles)
+
+
+   Note: physical baremetal nodes are added later, do NOT add them to this file
 
 
 ####kvms.csv
