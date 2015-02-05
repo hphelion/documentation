@@ -29,7 +29,7 @@ Helion Network Administrators are responsible for planning for the Neutron netwo
 To accomplish these tasks in the most efficient order, this guide organizes the tasks that the network administrator must complete (or verify that are complete) before installing Helion OpenStack, and those tasks that must be accounted for after the Helion OpenStack installation. 
 
 
-* [Preinstallation Requirement]()
-* [Post installation Requirement]
+* [Preinstallation Requirement](/helion/openstack/services/neutron/pre/installation/)
+* [Post installation Requirement](/helion/openstack/services/neutron/post/installation/)
 
  

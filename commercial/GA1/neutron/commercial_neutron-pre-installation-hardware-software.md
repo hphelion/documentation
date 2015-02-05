@@ -336,7 +336,7 @@ The source for this information is:[Support Matrix]( /helion/openstack/support-m
 
 ##Match supported configurations {#support-config}
 
-Support Matrix – either KVM or ESX
+Support Matrix - either KVM or ESX
 
 ###Configure ports
 
@@ -353,7 +353,7 @@ Recommend that you allow for 25% expansion.
 
 ###Next Steps {#next-step}
 
-[HP Helion OpenStack&reg; High Availability for Cloud Networking]( /helion/openstack/services/neutron/pre/installation/high-availability-cloud-networking/)
+[HP Helion OpenStack&reg; High Availability for Cloud Networking](/helion/openstack/services/neutron/pre/installation/high-availability/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
