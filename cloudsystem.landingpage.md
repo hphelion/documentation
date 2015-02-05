@@ -18,21 +18,21 @@ HP CloudSystem software is built on a foundation of enterprise-grade OpenStack t
 Use the following link to begin working with HP CloudSystem:  HP CloudSystem 8.1 Update 2 Installation and Configuration Guide (HTML)
 	
 ##HP CloudSystem Technical Information##
-* CloudSystem documents and white papers in PDF format.  
+CloudSystem documents and white papers in PDF format.  
 
-* [HP CloudSystem 8.1 Update 2 Release Notes ](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04517074)
+* [HP CloudSystem 8.1 Update 2 Release Notes](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04517074)
 
-* [HP CloudSystem 8.1 and 8.1 Update 1 Release Notes ](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04498999)
+* [HP CloudSystem 8.1 and 8.1 Update 1 Release Notes](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04498999)
 
-* [HP CloudSystem 8.1 Update 2 Installation and Configuration Guide ](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04517071)
+* [HP CloudSystem 8.1 Update 2 Installation and Configuration Guide](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04517071)
 
-* [HP CloudSystem 8.1 Installation and Configuration Guide ](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04376921)
+* [HP CloudSystem 8.1 Installation and Configuration Guide](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04376921)
 
-* [HP CloudSystem 8.1 Help ](http://h17007.www1.hp.com/docs/enterprise/servers/cloudsystem/8.1/webhelp/content/index.html)
+* [HP CloudSystem 8.1 Help](http://h17007.www1.hp.com/docs/enterprise/servers/cloudsystem/8.1/webhelp/content/index.html)
 
-* [HP CloudSystem 8.1 Administrator Guide ](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04376928)
+* [HP CloudSystem 8.1 Administrator Guide](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04376928)
 
-* [HP CloudSystem 8.1 Networking Configuration and Troubleshooting ](http://h20195.www2.hp.com/V2/GetDocument.aspx?docname=4AA5-6655ENW&cc=us&lc=en)
+* [HP CloudSystem 8.1 Networking Configuration and Troubleshooting](http://h20195.www2.hp.com/V2/GetDocument.aspx?docname=4AA5-6655ENW&cc=us&lc=en)
 
 * [HP CloudSystem: Using OpenStack CLIs](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04525353)
 
