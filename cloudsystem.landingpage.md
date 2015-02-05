@@ -51,5 +51,5 @@ Use the following link to begin working with HP CloudSystem:  HP CloudSystem 8.1
 * [HP CloudSystem Foundation Technical White Paper](http://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=c04273697)
 
 See [HP Cloud Service Automation](https://docs.hpcloud.com/automation/) for full list of HP CSA documents.
-See the [CloudSystem Enterprise Information Library](http://www.hp.com/go/cloudsystem/docs)for full list of CloudSystem and related documents.
+See the [CloudSystem Enterprise Information Library](http://www.hp.com/go/cloudsystem/docs) for a full list of CloudSystem and related documents.
 
