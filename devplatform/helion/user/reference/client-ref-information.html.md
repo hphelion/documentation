@@ -26,9 +26,7 @@ product: devplatform
 	- [helion stats](#command-stats)
 	- [helion tail](#command-tail)
 
-##Information {#command-Applications-Information}
-
-###helion crashes *\<application\>*###
+##helion crashes *\<application\>* {#command-crashes}
 List recent application crashes.
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -84,28 +82,24 @@ List recent application crashes.
 </tr>
 </table>
 
-### helion crashlogs *\<application\>*###
+## helion crashlogs *\<application\>* {#command-crashlogs}
 Display log information for the application. An alias of 'logs'.
-<table><tr>
-<td><b>Option</b></td>
-<td><b>Description</b></td>
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr><tr>
 <td>--all</td>
 <td>Retrieve the logs from all instances. Before 2.3 only.</td>
 </tr><tr>
 <td>--filename</td>
-<td>Filter the log stream by origin file (glob pattern). Target version 2.4+ only.</td>
+<td>Filter the log stream by origin file (glob pattern).</td>
 </tr><tr>
 <td>--follow</td>
-<td>Tail -f the log stream. Target version 2.4+ only.</td>
+<td>Tail -f the log stream.</td>
 </tr><td>--group</td>
 <td>The once-off group to use for the current operation. This is an ALS 2-specific option.</td>
 </tr>
-<tr>
-<td>
-</td>
-<td>The once-off group to use for the current operation. This is a
-Application Lifecycle Service 2 option. </td></tr>
 <td>--instance</td>
 <td> The id of the instance to filter the log stream for, or (before 2.3), to retrieve the logs of. </td></tr>
 <tr><td>--json</td>
@@ -125,8 +119,7 @@ done. </td></tr>
 <tr><td> --noprompt </td>
 <td> Alias of --no-prompt. </td></tr>
 <tr><td>     --num </td>
-<td>  Show the last num entries of the log stream. Target version 2.4+
-only. </td></tr>
+<td>  Show the last num entries of the log stream.</td></tr>
 <tr><td>--organization</td>
 <td> The once-off organization to use for the current operation. This
 is an Application Lifecycle Service 3 option.</td></tr>
@@ -141,8 +134,7 @@ Before 2.3 only.</td></tr>
 <tr><td>  --prefixlogs </td>
 <td>     Alias of --prefix.</td></tr>
 <tr><td>  --source </td>
-<td> Filter the log stream by origin stage (glob pattern). Target
-version 2.4+ only.</td></tr>
+<td> Filter the log stream by origin stage (glob pattern).</td></tr>
 <tr><td>  --space </td>
 <td>The once-off space to use for the current operation, specified by
 name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td></tr>
@@ -154,8 +146,7 @@ guid. This is an Application Lifecycle Service 3 option. Cannot be used together
 <tr><td>--target</td>
 <td>The once-off target to use for the current operation.</td></tr>
 <tr><td>--text</td>
-<td> Filter the log stream by log entry text (glob pattern).</td></tr> Target
-version 2.</td></tr>4+ only.</td></tr>
+<td> Filter the log stream by log entry text (glob pattern).</td></tr>
 <tr><td>--token</td>
 <td>The once-off authentication token to use for the current
 operation.</td></tr>
@@ -163,8 +154,8 @@ operation.</td></tr>
 <td>Path to an existing and readable file containing the targets and
 authorization tokens.</td></tr>
 <tr><td>--trace</td>
-<td>Activate tracing of the issued REST requests and responses.</td></tr> This
-option is a no-op now.</td></tr> Tracing is always active.</td></tr> See the 'trace'
+<td>Activate tracing of the issued REST requests and responses.This
+option is a no-op now. Tracing is always active. See the 'trace'
 command to print the saved trace to stdout.</td></tr>
 <tr><td> -n</td>
 <td>  Alias of --no-prompt.</td></tr>
@@ -177,11 +168,10 @@ command to print the saved trace to stdout.</td></tr>
 ### helion disk *\<application\>*###
 Show the disk reservation for a deployed application.
 
-
-<table><tr>
-    <td><b>Option</b></td>
-    <td><b>Description</b></td>
-    </tr><tr> <td> --group</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr> <td> --group</td>
     <td>  The once-off group to use for the current operation. This is a
     Application Lifecycle Service 2 option.</td></tr>
 
@@ -750,10 +740,9 @@ Display the application log stream.</td>
     <tr><td>--all</td>
     <td>Retrieve the logs from all instances. Before 2.3 only.</td>
     </tr>    <tr><td>--filename</td>
-    <td>Filter the log stream by origin file (glob pattern). Target
-    version 2.4+ only.</td>
+    <td>Filter the log stream by origin file (glob pattern).</td>
     </tr>    <tr><td>--follow</td>
-    <td>Tail -f the log stream. Target version 2.4+ only.</td>
+    <td>Tail -f the log stream.</td>
     </tr>    <tr><td>--group</td>
     <td>The once-off group to use for the current operation. This is a
     Application Lifecycle Service 2 option.</td>
@@ -778,8 +767,7 @@ Display the application log stream.</td>
     <td>Alias of --no-prompt.</td>
     </tr><tr>
     <td>--num</td>
-    <td>Show the last num entries of the log stream. Target version 2.4+
-    only.</td>
+    <td>Show the last num entries of the log stream.</td>
     </tr>    <tr><td>--organization</td>
     <td>The once-off organization to use for the current operation. This
     is an Application Lifecycle Service 3 option.</td>
@@ -794,8 +782,7 @@ Display the application log stream.</td>
     </tr>    <tr><td>--prefixlogs</td>
     <td>Alias of --prefix.</td>
     </tr>    <tr><td>--source</td>
-    <td>Filter the log stream by origin stage (glob pattern). Target
-    version 2.4+ only.</td>
+    <td>Filter the log stream by origin stage (glob pattern).</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
     name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
@@ -807,8 +794,7 @@ Display the application log stream.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--text</td>
-    <td>Filter the log stream by log entry text (glob pattern). Target
-    version 2.4+ only.</td>
+    <td>Filter the log stream by log entry text (glob pattern). </td>
     </tr>    <tr><td>--token</td>
     <td>The once-off authentication token to use for the current
     operation.</td>

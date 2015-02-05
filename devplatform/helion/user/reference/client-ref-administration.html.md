@@ -9,26 +9,26 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Administration
 
-- [Administration](#administration)
- 	- [helion admin grant](#command-admin-grant)
-	- [helion admin list](#command-admin-list)
-	- [helion admin report](#command-admin-report)
-	- [helion admin revoke](#command-admin-revoke)
-	- [helion info](#command-info)
-	- [helion show-token](#command-show-token)
-	- [helion stacks](#command-stacks)
-	- [helion targets](#command-targets)
-	- [helion tokens](#command-tokens)
-	- [helion usage](#command-usage)
-	- [helion user](#command-user)
-	- [helion user-info](#command-user-info)
-	- [helion version](#command-version)
+- [helion admin grant](#command-admin-grant)
+- [helion admin list](#command-admin-list)
+- [helion admin report](#command-admin-report)
+- [helion admin revoke](#command-admin-revoke)
+- [helion info](#command-info)
+- [helion show-token](#command-show-token)
+- [helion stacks](#command-stacks)
+- [helion targets](#command-targets)
+- [helion tokens](#command-tokens)
+- [helion usage](#command-usage)
+- [helion user](#command-user)
+- [helion user-info](#command-user-info)
+- [helion version](#command-version)
 
-### helion admin grant *\<email\*
+## helion admin grant *\<email\*
 Grant the named user administrator privileges for the current or specified target.
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
     <tr><td>--no-prompt</td>
     <td>Disable interactive queries.</td>
     </tr>    <tr><td>--no-trace</td>

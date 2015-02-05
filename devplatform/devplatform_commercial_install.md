@@ -180,7 +180,7 @@ If you are not configuring the Database Service to be highly available you must 
 </table>
 
 	
-If you have setup Availability Zones and plan to install the Database Service in a highly available configuration you must have the following quota available:
+If you have set up Availability Zones and plan to install the Database Service in a highly-available configuration you must have the following quota available:
 
 <table>
   <thead>
@@ -249,24 +249,24 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	**RabbitMQ IP Address (Required)** - Specify the IP address of the central Helion OpenStack Logstash server.
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
-3. The following steps will configure the load balancer to take advantage of the highly available database service. Only execute these steps if you have configured Availability Zones and selected the "Enable HA" option when configuring the **Database Service**. To perform the following steps you must be connected to the undercloud node.
-	
-	1. Identify the API server IPs on the SVC network:
 
-			$ nova list | awk '/trove[0-9]*_api/{ print $12 }' | cut -d "=" -f 2
-		You should have as many API servers (and IPs) as you have AZs in your Helion OpenStack install.
+3. The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
+	
+	1. Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
+
+			nova list | awk '/trove[0-9]*_api/{ print $12 }' | cut -d "=" -f 2
 
 	2. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion 	OpenStack services:
 			
-			$ keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+			keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
 
 	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
 
-		a. Edit the /etc/haproxy/manual/paas.cfg and add the following lines. The last line should be repeated once for each API server identified in step 1. 
+		a. Edit the /etc/haproxy/manual/paas.cfg file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
 	
 				listen trove_api
-				bind <Virtual IP from step 2>:8779
-				server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5
+ 				bind <Virtual IP from step 2>:8779
+ 				server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt
 
 		b. Edit the /etc/iptables/iptables file and add to the end of it:
 
@@ -274,11 +274,11 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 		c. Run the following command as root:
 
-				$ sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
+				sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
 				
 		d. Reload the haproxy service configuration
 		
-				$ sudo service haproxy reload
+				sudo service haproxy reload
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Database** panel under the current Project to being using Database Service.
 
