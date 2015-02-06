@@ -3,6 +3,14 @@ layout: default
 title: "HP Helion OpenStack&#174; Neutron Configuring Your Network Securely"
 permalink: /helion/openstack/services/neutron/post/installation/configure-network-securely/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Network Administrator
+role2: Network Architect
+authors: Vikas Deolaliker, Paul Kevin
+
 
 ---
 <!--UNDER REVISION-->
@@ -21,7 +29,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
 
 
-# HP Helion OpenStack&reg; Neutron: Configuring Your Network Securely
+# HP Helion OpenStack&reg; 1.1 Neutron: Configuring Your Network Securely
 
 This document provides guidance on configuring your HP Helion OpenStack network securely
 HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment. This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrative errors).

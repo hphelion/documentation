@@ -3,6 +3,13 @@ layout: default
 title: "HP Helion OpenStack&#174; Neutron Post Installation"
 permalink: /helion/openstack/services/neutron/post/installation/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Network Administrator
+role2: Network Architect
+authors: Vikas Deolaliker, Paul Kevin
 
 ---
 <!--UNDER REVISION-->
@@ -20,7 +27,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
 
-# HP Helion OpenStack&reg; Neutron: Post Installation Tasks
+# HP Helion OpenStack&reg; 1.1 Neutron: Post Installation Tasks
 
 Once the Helion OpenStack virtual network plan has been deployed, the Network Administrator has tasks that must be completed before the network is ready for users. Other tasks are optional. Finally, there are tasks which require configuring services other than Neutron but which Neutron depends. The Network Administrator is responsible for either configuring these tasks or confirming that they have been properly completed.
 

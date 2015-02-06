@@ -3,6 +3,13 @@ layout: default
 title: "HP Helion OpenStack&#174; Neutron Administrator Pre and Post Installation"
 permalink: /helion/openstack/services/neutron/installation/intro/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Network Administrator
+role2: Network Architect
+authors: Vikas Deolaliker, Paul Kevin
 
 ---
 <!--UNDER REVISION-->
@@ -20,7 +27,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>--->
 
-# HP Helion OpenStack&reg; Neutron Administrator Pre and Post Installation Tasks
+# HP Helion OpenStack&reg; 1.1 Neutron Administrator Pre and Post Installation Tasks
 
 Helion Network Administrators are responsible for planning for the Neutron networking service, and once installed, to configure the service to meet the needs of their cloud network users. This guide explains the tasks that the Helion OpenStack network administrator must complete to have a properly functioning cloud network that integrates all the OpenStack services. This integration is illustrated in the figure below:
 

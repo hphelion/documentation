@@ -3,6 +3,14 @@ layout: default
 title: "HP Helion OpenStack&#174; Neutron Administrator: Preinstallation Requirement"
 permalink: /helion/openstack/services/neutron/pre/installation/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Network Administrator
+role2: Network Architect
+authors: Vikas Deolaliker, Paul Kevin
+
 
 ---
 <!--UNDER REVISION-->
@@ -20,7 +28,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
 
-# HP Helion OpenStack&reg; Neutron Administrator: Preinstallation Requirement
+# HP Helion OpenStack&reg; 1.1  Neutron Administrator: Preinstallation Requirement
 
 Before the Helion OpenStack network can be installed, the Helion Network Administrator must complete, or verify have been completed, the tasks described in this section. 
 
