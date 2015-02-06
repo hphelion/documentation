@@ -72,7 +72,7 @@ For easy reference, we categorized the known issues and solutions as follows:
 * [Logging issues](#logging)
 * [Controller Nodes](#controllernodes)
 
-If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
+If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact).
 
 For troubleshooting tips for the HP Helion OpenStack update process, see [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/).
 
