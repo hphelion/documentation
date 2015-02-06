@@ -2,6 +2,7 @@
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/services/
+title: "Application Lifecycle Service Command Line Client Reference: Services"
 product: devplatform
 
 ---
@@ -14,6 +15,189 @@ product: devplatform
 	- [helion purge-service-offerings](#command-purge-service-offerings)
 	- [helion service](#command-service)
 	- [helion services](#command-services)
+	
+
+
+    
+.. _command-marketplace:
+  
+  stackato marketplace 
+    List the supported service plans of the target, for the current or specified space. This is a Stackato 3.4+ specific command.
+
+    --group
+      
+	    The once-off group to use for the current operation.
+	    This is a Stackato 2 option.
+	
+    --json
+      
+	    Print raw json as output, not human-formatted data.
+	
+    --organization
+      
+	    The once-off organization to use for the current operation.
+	    This is a Stackato 3 option.
+	
+    --space
+      
+	    The once-off space to use for the current operation, specified
+	    by name. This is a Stackato 3 option.
+	    Cannot be used together with --space-guid.
+	
+    --space-guid
+      
+	    The once-off space to use for the current operation, specified
+	    by guid. This is a Stackato 3 option.
+	    Cannot be used together with --space.
+	
+    --target
+      
+	    The once-off target to use for the current operation.
+	
+    --token
+      
+	    The once-off authentication token to use for the
+	    current operation.
+	
+    --token-file
+      
+	    Path to an existing and readable file containing
+	    the targets and authorization tokens.
+	
+    -o
+      Alias of --organization.
+    
+.. _command-purge-service-offerings:
+  
+  stackato purge-service-offerings  *<service>* 
+    Purge all offerings of the service type from the system. Danger. Do this only for services we know to have their brokers killed, leaving behind orphans. This is a Stackato 3.4+ specific command.
+
+    --provider
+      
+		The service provider. Use this to disambiguate
+		between multiple providers of the same vendor/type.
+	    
+    --target
+      
+	    The once-off target to use for the current operation.
+	
+    --token
+      
+	    The once-off authentication token to use for the
+	    current operation.
+	
+    --token-file
+      
+	    Path to an existing and readable file containing
+	    the targets and authorization tokens.
+	
+    --version
+      
+		The service version. Use this to disambiguate
+		between multiple versions of the same vendor/type.
+	    
+    
+.. _command-services:
+  
+  stackato services 
+    List the supported and provisioned services of the target.
+
+    
+    
+
+    --group
+      
+	    The once-off group to use for the current operation.
+	    This is a Stackato 2 option.
+	
+    --json
+      
+	    Print raw json as output, not human-formatted data.
+	
+    --organization
+      
+	    The once-off organization to use for the current operation.
+	    This is a Stackato 3 option.
+	
+    --space
+      
+	    The once-off space to use for the current operation, specified
+	    by name. This is a Stackato 3 option.
+	    Cannot be used together with --space-guid.
+	
+    --space-guid
+      
+	    The once-off space to use for the current operation, specified
+	    by guid. This is a Stackato 3 option.
+	    Cannot be used together with --space.
+	
+    --target
+      
+	    The once-off target to use for the current operation.
+	
+    --token
+      
+	    The once-off authentication token to use for the
+	    current operation.
+	
+    --token-file
+      
+	    Path to an existing and readable file containing
+	    the targets and authorization tokens.
+	
+    -o
+      Alias of --organization.
+    
+.. _command-service:
+  
+  stackato service  *<name>* 
+    Show the information about the named service.
+
+   --group
+      
+	    The once-off group to use for the current operation.
+	    This is a Stackato 2 option.
+	
+    --json
+      
+	    Print raw json as output, not human-formatted data.
+	
+    --organization
+      
+	    The once-off organization to use for the current operation.
+	    This is a Stackato 3 option.
+	
+    --space
+      
+	    The once-off space to use for the current operation, specified
+	    by name. This is a Stackato 3 option.
+	    Cannot be used together with --space-guid.
+	
+    --space-guid
+      
+	    The once-off space to use for the current operation, specified
+	    by guid. This is a Stackato 3 option.
+	    Cannot be used together with --space.
+	
+    --target
+      
+	    The once-off target to use for the current operation.
+	
+    --token
+      
+	    The once-off authentication token to use for the
+	    current operation.
+	
+    --token-file
+      
+	    Path to an existing and readable file containing
+	    the targets and authorization tokens.
+	
+    -o
+      Alias of --organization.
+
+
+
 
 ###helion service-plans###
 List all available plans of the supported services. 

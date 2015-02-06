@@ -3,11 +3,12 @@ layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/brokers/
 product: devplatform
+title: "Application Lifecycle Service Command Line Client Reference: Brokers"
 
 ---
 <!--UNDER REVISION-->
 
-# HP Helion Development Platform: ALS Command Reference: brokers
+# HP Helion Development Platform: ALS Command Reference: Brokers
 
 - [Brokers](/als/v1/user/reference/client-ref/brokers)
 	- [helion add-service-broker](#command-add-service-broker)
