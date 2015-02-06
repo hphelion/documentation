@@ -197,7 +197,7 @@ When installing on HP ProLiant BL490c systems, the following error has occasiona
 If you get this error, perform the following steps:
 
 1. Ensure that the iLO user has administrator privileges, which is required by the IPMITOOL.
-2. To check from the iLO remote console, reboot the server and press **F8** to get to ILO Management screen.
+2. To check from the iLO remote console, reboot the server and press **F8** to get to iLO Management screen.
 3. Click **User** in the menu-bar and select **Edit**. Edit User pop-up box displays .
 4. If you are using a BL server in the QA C7000 enclosure, select the **cdl** user to edit.
 5. Use &darr;(down arrow key) to select **Administer User Accounts**. 

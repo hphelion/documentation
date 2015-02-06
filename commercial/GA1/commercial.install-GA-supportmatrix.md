@@ -17,9 +17,8 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/overview/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/technical-overview/"> Technical Overview</a> &#9654</p>
+
 <!-- IMPORTANT!!! The HW support Matrix should be approved by:
 * Gavin Brebner for Helion QA support
 * Lynne Christofanelli  for HW Support qualified with hLinux
@@ -429,7 +428,7 @@ Other requirements and recommendations for the seed cloud host are as follows:
 
 ## Next Step {#next}
 
-Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/technical-overview/).
+Review the [Technical Overview](/helion/openstack/technical-overview/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

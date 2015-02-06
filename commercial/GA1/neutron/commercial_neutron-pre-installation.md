@@ -49,8 +49,8 @@ The network is not installed or managed by the cloud. You must install and manag
 To ensure a successful installation, you must satisfy these network configuration requirements:
 
 * The machine hosting the seed VM, and all baremetal systems have to be connected to a management network.
-* Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.
-* The Helion OpenStack architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.
+* Nodes on this management network must be able to reach the iLO subsystem ([HP Integreated Lights-Out](http://www8.hp.com/us/en/products/servers/ilo/index.html)) of each baremetal systems to enable host reboots as part of the install process.
+* The Helion OpenStack architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for iLO access as explained above.
 * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 * If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.
 * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.

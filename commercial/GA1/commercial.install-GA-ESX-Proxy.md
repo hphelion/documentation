@@ -17,9 +17,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/"> &#9650; Deploy vCenter ESX compute proxy</a> | <a href="/helion/openstack/install/kvm/">&#9650; Installation for ESX Hypervisor | <a href="/helion/openstack/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 
@@ -244,19 +242,13 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 -->
 
 
-## Next Steps
+## Next Step
 
 - Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
 	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions.
 
 	OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
-
-- Install DNS as a service (DNSaaS) (Optional).
-
-	If you have not installed DNSaaS, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
-
-	DNSaaS is HP's managed DNS service based on the OpenStack Designate project. It is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently on either a public or private DNS server network.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

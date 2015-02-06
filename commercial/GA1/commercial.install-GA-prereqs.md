@@ -17,9 +17,10 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/technical-overview/">Technical Overview | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm"></p> 
+<p style="font-size: small;">Installing on a KVM hypervisor</a> &#9654; OR
+<p style="font-size: small;"><a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor</a> &#9654</p>
+
 # HP Helion OpenStack&#174; Installation: Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page for information about: 
@@ -59,9 +60,9 @@ To ensure a successful installation, you must satisfy these network configuratio
 
 * The machine hosting the seed VM, and all baremetal systems have to be connected to a management network. 
 
-* Nodes on this management network must be able to reach the ILOS of the baremetal systems to enable host reboots as part of the install process.
+* Nodes on this management network must be able to reach the iLO subsystem ([HP Integreated Lights-Out](http://www8.hp.com/us/en/products/servers/ilo/index.html)) of each baremetal systems to enable host reboots as part of the install process.
 
-* The Helion OpenStack architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for ILO access as explained above.
+* The Helion OpenStack architecture required that the IPMI network is a separate network and a route exists from management network to the IPMI network for iLO access as explained above.
 
 * Ensure network interfaces that are not used for PXE boot are disabled from BIOS to prevent PXE boot attempts from those devices.
 
@@ -170,13 +171,15 @@ If user `root` does not have a public key, you can create one using the `ssh-key
 
 Before starting the installation, you must first install Ubuntu 14.04 and the following required Debian/Ubuntu packages on the system running the installer:
 
-- xrdp 
-- xfce4 
 - qemu-kvm 
 - libvirt-bin 
 - openvswitch-switch 
 - openvswitch-common 
 - python-libvirt 
+
+Optionally, you can install the following packages, as needed:
+- xrdp 
+- xfce4 
 - libssl-dev 
 - libffi-dev 
 - virt-manager 
@@ -195,7 +198,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
-Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
+You must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
 For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
 
@@ -214,7 +217,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 		<td><b> Installation package </b></td><td><b>File name</b></td></tr>
 
 		<tr>
-		<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.1.tgz</td></tr>
+		<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.1.tgz</td></tr>
 		</table>
 
 	* **For ESX installs**
@@ -223,12 +226,12 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 	<tr style="background-color: lightgrey; color: black;">
 	<td><b> Installation package </b></td><td><b>File name</b></td>
 	<tr>
- 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.0.1.tgz</td></tr>
+ 	<td>HP Helion OpenStack</td><td>HP_Helion_OpenStack_1.1.tgz</td></tr>
 	<tr>
 	<td>HP Helion OpenStack vCenter Proxy Appliance</td>
-	<td>overcloud_vcenter_compute_proxy_1.0.1.ova</td></tr>
+	<td>overcloud_vcenter_compute_proxy_1.1.ova</td></tr>
  	<td>HP Helion OpenStack VCN Agent Appliance</td>
-	<td>ovsvapp_1.0.1.tgz</td></tr>
+	<td>ovsvapp_1.1.tgz</td></tr>
 	</table>
 
 2. Log in to your seed cloud host as root:
@@ -239,7 +242,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 4.  Extract the HP Helion OpenStack installation package to the `root` directory:
 
-		tar zxvf /root/HP_Helion_OpenStack_1.0.1.tgz
+		tar zxvf /root/HP_Helion_OpenStack_1.1.tgz
 
 	This creates and populates a `tripleo/` directory within the `root' directory.
 

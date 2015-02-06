@@ -17,9 +17,8 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/esx/proxy/">Deploy the Open vSwitch vApp | <a href="/helion/openstack/install/kvm/">&#9650; Installation for ESX Hypervisor | <a href="/helion/openstack/install/dnsaas/">Install DNS as a service (DNSaaS) &#9654</a></p> 
+
 # HP Helion OpenStack&reg;: Deploying and Configuring OVSvApp on ESX hosts  
 HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
 
@@ -562,11 +561,7 @@ To update the OVSvApp from version 1.0 to version 1.01:
 
 
 
-## Next Steps {#next}
-
-- Deploy vCenter ESX Compute proxy manually **(REQUIRED)**
-
-	If you have not deployed the vCenter ESX compute proxy, see [HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/).
+## Next Step {#next}
 
 - Install DNS as a service (DNSaaS) (Optional).
 
