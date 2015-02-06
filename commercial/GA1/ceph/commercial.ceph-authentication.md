@@ -22,30 +22,30 @@ PageRefresh();
 --->
 
 
-##CEPHX Authentication
+##CEPHX Authentication for HP Helion OpenStack 1.1
 
-Ceph authentication ensure the access control of the Ceph storage cluster, that is, Ceph client users do not have access to each other storage. 
+Ceph authentication ensures access control of the Ceph storage cluster, that is, Ceph client users do not have access to each other storage. 
 
-By default Cephx authentication is enabled. The following flags are present in the Ceph configuration file by default.
+By default Cephx authentication is enabled. The following default flags are present in the Ceph configuration file:
 
 * auth cluster required = cephx
 * auth service required = cephx
 * auth client required = cephx
 
 
-###Users, Keyrings, Pool Permissions
+###Understanding Users, Keyrings, and Pool Permissions
 
-Each user has a keyring file on Ceph hosts. But keyring file does not contain the Ceph references to verify user authorizations; instead the MON server have their own internal keyrings. When a user is added to a Ceph installation, create a keyring file on the Ceph hosts in `/etc/ceph` and integrate a key into a cluster using `ceph auth add` command.
+Each user has a keyring file on Ceph hosts. But the keyring file does not contain the Ceph references to verify user authorizations; instead the Monitor servers have their own internal keyrings. When you add a user to a Ceph installation, you create a keyring file on the Ceph hosts in `/etc/ceph` and integrate a key into a cluster using the `ceph auth add` command.
 
-To integrate Cephx authentication into Helion nodes, perform following steps on Ceph admin node as shown below:
+To integrate Cephx authentication into Helion nodes, perform following steps on the Ceph admin node as is shown below.
 
-1. Log in to admin node as root user.
+1. Log into the admin node as root.
 
-2. Execute the following command to create a discrete pools for glance, nova and cinder users.
+2. Execute the following command to create a discrete pool for Glance, Nova and Cinder users.
 
 		ceph osd pool create
 
-3. Create new users for glance, cinder, cinder-backup, and nova operating on respective pools.
+3. Create new users for Glance, Cinder, Cinder-backup, and Nova operating on their respective pools by entering:
 
 		ceph auth get-or-create client.glance mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=helion-ceph-glance'
 
@@ -55,14 +55,14 @@ To integrate Cephx authentication into Helion nodes, perform following steps on 
 
 		ceph auth get-or-create client.cinder-backup mon 'allow r' osd 'allow class-read object_prefix rbd_children, allow rwx pool=helion-ceph-backups'
 
-4. Add keyrings and change ownership.
+4. Add keyrings and change ownership by entering:
 
 		ceph auth get-or-create client.glance | tee /etc/ceph/ceph.client.glance.keyring
 		ceph auth get-or-create client.cinder | tee /etc/ceph/ceph.client.cinder.keyring
 		ceph auth get-or-create client.nova | tee /etc/ceph/ceph.client.nova.keyring
 		ceph auth get-or-create client.cinder-backup | tee /etc/ceph/ceph.client.cinder- backup.keyring
 
-5. Edit Ceph configuration file as follows
+5. Edit Ceph configuration file as follows:
 
 		[global]
 		auth cluster required = cephx
@@ -81,17 +81,17 @@ To integrate Cephx authentication into Helion nodes, perform following steps on 
 		[client.nova]
 		keyring = /etc/ceph/ceph.client.nova.keyring
 
-6. Re-deploy Ceph configuration file to respective nodes.
+6. Re-deploy Ceph the configuration file to respective nodes by entering:
 
 		ceph-deploy install {ceph-node}[{ceph-node} ...]
 
-7. Nodes running nova-compute need keyring files for nova-compute process. For this a secret key of `client.cinder` user is stored in `libvirt`. Create a temporary key as shown below in the Ceph admin node.
+7. Nodes running nova-compute need keyring files for the nova-compute process. For this a secret key of `client.cinder` user is stored in `libvirt`. Create a temporary key as shown below in the Ceph admin node:
 
 		ceph auth get-key client.cinder | tee /etc/ceph/client.cinder.key
 
-8. Copy the generated keyrings to the respective Helion nodes. 
+8. Copy the generated keyrings to their respective Helion nodes.
 
-	(**command required?)**
+
 
 	For example -
 
@@ -101,15 +101,16 @@ To integrate Cephx authentication into Helion nodes, perform following steps on 
 		client.cinder.key to all compute nodes
 		ceph.client.cinder-backup.keyring to all controller, compute and to all ceph nodes.
 
-9. Restart Ceph services
+9. Restart the Ceph service by entering:
 
 		/etc/init.d/ceph restart
 
-At this point, if glance user attempts to access cinder or nova pool, Ceph cluster would reject the attempt with a **Permission Denied** error message. Therefore, it is necessary to change `glance-api.conf`, `cinder.conf` on controller nodes and `nova-api.conf` on controller and compute nodes to include appropriate user-pool mapping. Also, on compute nodes, secret key to `libvirt` must be added. For more details, refer [http://ceph.com/docs/master/rbd/rbd-openstack/#setup-ceph-client-authentication](http://ceph.com/docs/master/rbd/rbd-openstack/#setup-ceph-client-authentication)
+At this point, if a Glance user attempts to access a Cinder or a Nova pool, the Ceph cluster would reject the attempt with a **Permission Denied** error message. Therefore, you have to change  the`glance-api.conf`, `cinder.conf` on controller nodes and `nova-api.conf` on controller and compute nodes to include appropriate user-pool mapping. Also, on compute nodes, the secret key to `libvirt` must be added. For details, refer [http://ceph.com/docs/master/rbd/rbd-openstack/#setup-ceph-client-authentication](http://ceph.com/docs/master/rbd/rbd-openstack/#setup-ceph-client-authentication)
 
-Perform following steps on HP Helion Openstack nodes -
-**[is this a new procedure or continuation of previous?**
-1. On first compute node, add secret key to `libvirt` and remove temporary copy of key. Execute `uuidgen`. 
+Perform following steps on HP Helion OpenStack nodes.
+
+
+1. On first compute node, add the secret key to `libvirt` and remove the temporary copy of the key. Execute `uuidgen`. 
 
 	For example:
 
@@ -131,28 +132,28 @@ Perform following steps on HP Helion Openstack nodes -
 		sudo virsh secret-set-value --secret 457eb676-33da-42ec-9a8c-9293d545c337 --base64 $(cat client.cinder.key) && rm client.cinder.key secret.xml
 
 
-  **Note**: Save this UUID to be used on all compute nodes
+  **Note**: Save this UUID to be used on all compute nodes.
 
-2. Repeat above step on all compute nodes. Ensure same UUID is used in this process.
+2. Repeat the above step on all compute nodes. Use the same UUID in this process.
 
-3. Edit `glance-api.conf` on all controller nodes to include glance user and respective pool.
+3. Edit `glance-api.conf` on all controller nodes to include the Glance user and respective pool:
 
 		rbd_store_user=glance
 		rbd_store_pool=helion-ceph-glance
 
-4. Edit `cinder.conf` on all controller nodes to include cinder user and respective pool.
+4. Edit `cinder.conf` on all controller nodes to include the Cinder user and respective pool:
 
 		rbd_store_user=cinder
 		rbd_store_pool=helion-ceph-cinder
 		rbd_secret_uuid=457eb676-33da-42ec-9a8c-9293d545c337
 		
-5. Edit `nova.conf on` all controller nodes to include cinder user and respective pool
+5. Edit `nova.conf on` all controller nodes to include the Cinder user and respective pool:
 
 		rbd_store_user=cinder
 		rbd_store_pool=helion-ceph-nova
 		rbd_secret_uuid=457eb676-33da-42ec-9a8c-9293d545c337
 		
-6. Restart glance, cinder and nova services on controller nodes.
+6. Restart Glance, Cinder and Nova services on the controller nodes by entering:
 
 		service glance-api restart
 		service glance-reg restart
@@ -167,11 +168,11 @@ Perform following steps on HP Helion Openstack nodes -
 		service nova-scheduler restart
 		service nova-conductor restart
 
-7. Restart glance, cinder and nova services on compute nodes.
+7. Restart Glance, Cinder and Nova services on compute nodes by entering:
 
 		service nova-compute restart
 
-8. Execute the following command to ensure that Ceph Health is OK at this point.
+8. To verify  that Ceph Health is OK at this point enter:
 
 		ceph health
 

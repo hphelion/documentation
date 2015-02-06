@@ -22,21 +22,21 @@ PageRefresh();
 -->
 
 
-##HP Helion OpenStack Ceph Configuration
+##HP Helion OpenStack 1.1 Ceph Configuration
 
-This section describes the integration of HP Helion OpenStack Enterprise Edition 1.1 and Ceph Firefly 80.7 on hlinux3.14.6-2 kernel.
+This section describes the integration of HP Helion OpenStack Enterprise Edition 1.1 and Ceph Firefly 80.7 on a hlinux3.14.6-2 kernel.
 
 Before configuring Helion OpenStack Ceph ensure that HP Helion OpenStack Enterprise Edition 1.1 is installed successfully. 
 
-###Ceph Client Install <**not clear what exactly trying to convey**>
+###Ceph Client Install
 
-The Helion Overcloud Controller and compute nodes are consumers of the storage services provided by the Ceph cluster. In order for it to act as a Ceph client, perform the following steps (either the automated or manual process):
+The Helion Overcloud Controller and compute nodes are consumers of the storage services provided by the Ceph cluster. To enable them to act as Ceph clients, perform the following steps (either the automated or manual process):
 
 ####Automated Install
 
-The `ceph_client_setup.tar` contains Debian packages, Helion OpenStack Ceph configuration scripts, and the patch file to make required alteration to the Nova, Glance, and Cinder configuration file. These debian packages must be installed while installing the Ceph firefly 80.7 client packages on the HP Helion overcloud controller and compute nodes. The script present in the tar files helps to automate the install process.
+The `ceph_client_setup.tar` contains Debian packages, Helion OpenStack Ceph configuration scripts, and the patch file to make the required alterations to the Nova, Glance, and Cinder configuration files. These Debian packages must be installed while installing the Ceph firefly 80.7 client packages on the HP Helion overcloud controller and compute nodes. The script present in the tar file helps to automate the installaion process.
 
-Use the tar file to install the Ceph client bits on the Helion cluster. Once the Ceph cluster is fully operational, run the tar file on the Helion controller nodes ((occ0, occ1, and oc mgmt nodes) and the compute node. And at the final stage of installation process Ceph client extends to the Ceph cluster to confirm the connectivity.
+Once the Ceph cluster is fully operational, run the tar file on the Helion controller nodes (occ0, occ1, and oc mgmt nodes) and the compute node. At the final stage of the installation process, the Ceph client confirms connectivity to the Ceph cluster.
 
 
 #####Procedure to run an automated script
@@ -46,38 +46,38 @@ Perform the following steps to run the automated scripts on the Helion overcloud
 For more details about the Ceph storage cluster with Glance integration, refer to [http://ceph.com/docs/master/rbd/rbd-openstack/?highlight=openstack%20glance ](http://ceph.com/docs/master/rbd/rbd-openstack/?highlight=openstack%20glance )
 
 
-1. Untar `ceph_client_setup.tar` in root home on each of the Helion overcloud controller and compute nodes where Ceph client must be installed.
+1. Untar `ceph_client_setup.tar` in root home on each of the Helion overcloud controller and compute nodes where the Ceph client must be installed.
 
 		/home
 
-	A directory named `ceph_client_setup` is created. There are six or seven other sub directories under `ceph_client_setup` directory. (name of all the directories are required?)
+	A directory named `ceph_client_setup` is created. There are several sub directories created under the `ceph_client_setup` directory.
 
 
-2. Copy `ceph.conf` file and keyring from admin node to install directories (***name of the directory?***)
+2. Copy `ceph.conf` file and the keyring from the admin node to install directories (***name of the directory?***)
 
-		command is required?
+		[[command is required?
 
 3. Copy Ceph cluster config files  from the ceph admin node in the ceph_cluster_config_files directory.
 
-		command required?
+		[[command required?
 
-4. In the setup_scripts directory there is a script (`fixuuid.sh`) which modifies the Helion configuration file patches with the new UUID from the cephx authentication process. Execute the 
-`fixuuid.sh` as follows:
+4. The script `fixuuid.sh` in the `setup_scripts` directory modifies the Helion configuration file patches with the new UUID from the cephx authentication process. To execute  
+`fixuuid.sh`, enter:
 
 		fixuuid.sh THE-NEW-UUID-TO-BE-USED
 
 
-	The new Cephx UUID is passed as an argument to the `fixuuid.sh` script. This will patch the new UUID into the patch files that will be used to modify the helion config files (**exact name of the configuration files**).
+	The new Cephx UUID is passed as an argument to the `fixuuid.sh` script. This will patch the new UUID into the patch files that will be used to modify the Helion config files.
 
-5. Execute `ceph_client_install.sh` on the controller nodes or compute nodes.
+5. Run `ceph_client_install.sh` on the controller nodes or compute nodes.
 
-	**Note**: The installer script is present at `/home/ceph_client_setup/setup_scripts/ceph_client_install.sh`
+	**Note**: The installer script is located at `/home/ceph_client_setup/setup_scripts/ceph_client_install.sh`
 
 
-The installation script verifies the following:
+The installation script:
 
-1. It checks whether the file is untarred in the correct location ( /home/ceph_client_setup) and exits if the script is not available. 
-2. It checks whether ceph cluster ceph.conf and the keyring files are copied in the correct location (/home/ceph_client_setup/ceph_cluster_config_files/) and exit if they are not present. If they are present in the correct location, the `/etc/ceph` directory is created and the `ceph.conf` and the keyring files are copied in `/etc/ceph` directory.
+1. Checks if the file is untarred in the correct location (`/home/ceph_client_setup`) and exits if the script is not available. 
+2. Verifies that the ceph cluster `ceph.conf` and the keyring files are copied in the correct location (`/home/ceph_client_setup/ceph_cluster_config_files`/) and exits if they are not present. If they are present in the correct location, the `/etc/ceph` directory is created and the `ceph.conf` and the keyring files are copied into the `/etc/ceph` directory.
 3. The script will search the following files in `/home/ceph_client_setup/ceph_cluster_config_files/`
 
 	a. ceph.conf - main ceph configuration file
@@ -96,31 +96,31 @@ The installation script verifies the following:
 
 
  
-	**NOTE**: if a Rados gateway is not going to be used for this installation, just touch an empty file with this name in the /home/ceph_client_setup/ceph_cluster_config_files/ directory so the script will still find a file with the expected name. (**need to re-word**)
+	**NOTE**: if a Rados gateway is not going to be used for this installation, create an empty file with this name in the `/home/ceph_client_setup/ceph_cluster_config_files/` directory so the script will still find a file with the expected name. 
 
-4. It checks the availability of the Ceph client Debian packages in `/ceph_client_setup/ceph_client_debs/` and exits the script if it is unavailable.
+4. Checks the availability of the Ceph client Debian packages in `/ceph_client_setup/ceph_client_debs/` and exits the script if it is unavailable.
 
-6. It checks whether the system is a hLinux system and the existence of `/etc/apt/sources.list` file. If it meets all this requirement then a backup copy of the original `sources.list` file is created in `/home/ceph_client_setup/orig_backup/` and then the local ceph packages location is added to the file as a valid local repository.
+5. Checks whether the system is a hLinux system and verifies the existence of the `/etc/apt/sources.list` file. If it meets these requirements, then a backup copy of the original `sources.list` file is created in `/home/ceph_client_setup/orig_backup/` directory and then the local Ceph packages location is added to the file as a valid local repository.
 
-7. Once the repository is added to the `apt sources.list` file, the system does an `apt-get update` and `apt-get install` of the Ceph client packages. If `apt-get update` and `apt-get install` of the Ceph client packages is successful without errors then `dpkg` is executed to verify installation of correct packages.
+6. Does an `apt-get update` and `apt-get install` of the Ceph client packages once the repository is added to the `apt sources.list` file. If `apt-get update` and `apt-get install` of the Ceph client packages executes without errors,  `dpkg` is executed to verify the installation of the correct packages.
 
-8. The Ceph command is checked to verify whether it is available and executable. If the Ceph command is available and executable then it is executed to verify whether the health of the Ceph clusterit can be determined. If the ceph cluster health shows as HEALTH_OK, the script displays the status and continues. 
+7. Checks the Ceph command to verify if it is available and executable. If the Ceph command is available and executable then it is executed to verify whether the health of the Ceph cluster can be determined. If the Ceph cluster health shows as `HEALTH_OK`, the script displays the status and continues. 
 
-The following sub-scripts runs on the successful completion of the above steps:
+The following sub-scripts run upon successful completion of the above steps:
 
-**`copy_icinga_monscripts.sh`**- copies the Ceph cluster monitoring scripts in the icinga script directory on the Helion overcloud controller nodes only.
+**`copy_icinga_monscripts.sh`**- copies the Ceph cluster monitoring scripts in the iCinga script directory on the Helion overcloud controller nodes only.
 
-**`patch_config_files.sh`** - patches the Helion configuration files with the changes required for the Ceph communication.
+**`patch_config_files.sh`** - patches the Helion configuration files with the changes required for  Ceph communication.
 
-**`ceph_pythonlinks_create.sh`** - creates softlinks to the necessary Ceph python library files in the Helion python directories.
+**`ceph_pythonlinks_create.sh`** - creates softlinks to the necessary Ceph Python library files in the Helion Python directories.
 
-**`create_helion_pools.sh`** - creates the required Helion pools in the Ceph storage (only runs on overcloud controller node and management node)
+**`create_helion_pools.sh`** - creates the required Helion pools in the Ceph storage (only runs on  the overcloud controller node and management node)
 
 **`helion_service_restarts.sh`** - restarts the Helion services.
 
 
 
-####Availability of Ceph Client script
+####Availability of Ceph Client Script
 
 <table>
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -129,13 +129,13 @@ The following sub-scripts runs on the successful completion of the above steps:
 	<th>File Location </th>
 </tr>
 	<tr>
-<td>Ceph client package file to be installed on the running Controller and Compute nodes in 
+<td>Ceph client package file to be installed on the running Controller and Compute nodes in the
 HP Helion OpenStack commercial build</td>
-<td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files.<br> Filename: ?</td>
+<td>`https://helion.hpwsportal.com` Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files.<br> Filename: [[?</td>
 </tr>
   <table>
 
-As a sanity-check, cross check with the attached "dpkg -l" output after ceph package install:
+As a sanity-check, cross check with the attached "dpkg -l" output after Ceph package installation:
 
 <table>
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -146,17 +146,17 @@ As a sanity-check, cross check with the attached "dpkg -l" output after ceph pac
 </tr>
 	<tr>
 <td>Controller node</td>
-<td>DPKG -l output after ceph package install</td>
-<td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files. File Name:<tdt>
+<td>DPKG -l output after Ceph package install</td>
+<td>`https://helion.hpwsportal.com` Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files. File Name: [[?<tdt>
 </tr>
 <tr>
 <td>Compute node</td>
 <td>DPKG -l output after Ceph package install</td>
-<td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files. File Name:<tdt>
+<td>https://helion.hpwsportal.com Click on the workloads category on the left side and then you click on the storage subcategory to find all the Ceph related files. File Name: [[?<tdt>
 </tr>
   </table>
 
-####Verify Ceph version
+####Verify the Ceph Version
 
 * Execute the following command to verify the Ceph version on the overcloud nova compute node:
 

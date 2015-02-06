@@ -24,7 +24,7 @@ PageRefresh();
 
 ##Helion OpenStack Glance-Ceph Interoperability
 
-Glance images along with Cinder and Nova are stored on Ceph RADOS Block Device (RBD). The benefit of storing Glance image, Cinder volume, and Nova nodes on RDB are as follows:
+Image Operations (Glance), Volume Storage (Cinder) and Compute (Nova)  files are stored on Ceph RADOS Block Device (RBD). The benefit of storing Glance images, Cinder volume, and Nova nodes on RDB are:
 
 * Snapshots
 * Live migration
@@ -32,11 +32,9 @@ Glance images along with Cinder and Nova are stored on Ceph RADOS Block Device (
 * Copy-on-write Clones from Glance images to Cinder volumes
 
 
-For Glance-Ceph integration, the Helion OpenStack Ceph Configuration service performs the following steps.
+For Glance-Ceph integration, install and run the Ceph client script  on the Helion controller and compute nodes. After successful installation the following steps are automatically performed.
 
-Install and run the Ceph client script  on the Helion controller and compute nodes. After successfully installation the following steps are automatically performed.
-
-1. Create a new Ceph pool to store Glance images
+1. Create a new Ceph pool to store Glance images.
 
 		ceph osd pool create <glance pool name> <pg-num>
 
@@ -60,7 +58,7 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 		#debug = True
 		#verbose = True
 
-3. Create symbolic or softlinks to the relevant files on overcloud controller nodes.
+3. Create symbolic (softlinks) to the relevant files on overcloud controller nodes.
 
 		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
@@ -77,14 +75,14 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 		service glance-reg restart
 		glance-manage db_sync
 
-6. Create a sample glance RAW image on any of the controller node. 
+6. Create a sample glance RAW image on any controller node. 
 
 		glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
 
 
 	Raw data format is used with RBD for instant image snapshots and protection. For more details, refer [http://ceph.com/docs/master/rbd/qemu-rbd/?highlight=raw](http://ceph.com/docs/master/rbd/qemu-rbd/?highlight=raw)
 
-	Conversion tool like qemu-img is used to convert one image format to another. 
+	Use a conversion tool like qemu-img to convert one image format to another. 
 	For example:
 
 		qemu-img convert -f {source-format} -O {output-format} {source-filename} {output-filename}
@@ -93,40 +91,40 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 		
 		glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
 
-7. Ensure that the uploaded glance image is available in the Horizon UI and is correctly stored in the appropriate pool in Ceph.
+7. Ensure that the uploaded glance image is available in the Dashboard (Horizon) UI and is correctly stored in the appropriate pool in Ceph.
 
 		rbd ls -l <glance pool name>
 		
 		glance image-list
 
-8. If problem occurs in any of the above steps, do the following:
+8. If problem occur in any of the above steps, do the following:
 	* Enable logging in `glance-api.conf`  
-	* Restart glance services and re-run problem step. 
-	* Collect g.lance debug logs in `/var/log/glance` directory 
+	* Restart Glance services and re-run the problem step. 
+	* Collect glance debug logs in the  `/var/log/glance` directory 
 	* Contact HP support team for inputs. 
 
 
 ###Ceph Glance Clone Copy On Write
 
-Ceph implements Clone Copy on Write built off the Protected Snapshot to clone an image quickly and easily. During the image import in glance, images are snapshotted and protected, clones are quickly created from the snapshot and a volume is created from an image. For more details, [refer http://ceph.com/docs/master/dev/rbd-layering/?highlight=rbd%20layering](refer http://ceph.com/docs/master/dev/rbd-layering/?highlight=rbd%20layering)
+To clone an image quickly and easily, Ceph implements Clone Copy on Write from the Protected Snapshot. During the image import in Glance, images are snapshotted and protected, clones are quickly created from the snapshot and a volume is created from an image. For more details, see http://ceph.com/docs/master/dev/rbd-layering/?highlight=rbd%20layering](refer http://ceph.com/docs/master/dev/rbd-layering/?highlight=rbd%20layering.
 
-If the Ceph client script is successfully installed and ran on the Helion controller and compute nodes then the following steps are automatically performed.
+If the Ceph client script is successfully installed and ran on the Helion controller and compute nodes then the following steps are automatically performed:
 
-1. Edit `cinder.conf` file on all overcloud controller nodes.
+1. Edit the `cinder.conf` file on all overcloud controller nodes.
 
 		glance_api_version=2
 
-2. Restart Cinder services on all overcloud controller nodes.
+2. Restart the Cinder services on all overcloud controller nodes.
 
 		service cinder-volume restart
 		service cinder-scheduler restart
 		service cinder-api restart
 
-3. Execute the command to create glance image.
+3. To create Glance image, enter:
 
 		glance image-create
 
-	Note that Clone COW is achieved when image is in RAW format. Conversion tool like qemu-img is used to convert from one format to another. 
+	Note that Clone COW is achieved when the image is in RAW format. To convert from one format to another, use a onversion tool like qemu-img. 
 
 	For example:
 
@@ -134,17 +132,17 @@ If the Ceph client script is successfully installed and ran on the Helion contro
 		qemu-img convert -f qcow2 -O raw cirros-0.3.2-x86_64-disk.img cirros-0.3.2-x86_64-disk.raw
 		glance image-create --name RImg --is-public=true --disk-format=raw --container-format=bare --file cirros-0.3.2-x86_64-disk.raw
 
-4. Create cinder volume from glance image created on step 1 on any of the controller node
+4. Create the Cinder volume from the Glance image created on step 1 on any controller node.
 
 		cinder create -image-id <glance image id> --display-name RVol 2
 
-5. Ensure that Cinder volume which is created is available at `rbd` pool
+5. Ensure that the Cinder volume created is available at `rbd` pool
 
 		rbd ls -l <cinder pool name>
 		
 		cinder list
 
-6. Track clones to demonstrate copy-on-write feature by first listing snapshots of glance image  and then listing the children of the snapshot
+6. Track clones to demonstrate the copy-on-write feature by first listing snapshots of Glance images and then listing the children of the snapshot
 
 		rbd --pool <glance pool name> snap ls <glance image id>
 		
@@ -152,7 +150,7 @@ If the Ceph client script is successfully installed and ran on the Helion contro
 		
 		rbd children <glance pool name>/<glance-image id>@<snap name>
 
-7.  If the problem occurs in any of the above steps, do the following:
+7.  If you have any problems in any of the above steps, do:
 
 	* Enable logging in `glance-api.conf` and `cinder.conf`. 
 	* Restart Glance and Cinder services and re-run problem step. 

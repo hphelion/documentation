@@ -22,11 +22,11 @@ PageRefresh();
 -->
 
 
-##Helion OpenStack Cinder Ceph Storage
+##Installing Ceph Storage in the HP Helion OpenStack 1.1 Cinder Environment
 
-Install and run the Ceph client script on the Helion controller and compute nodes. After successfully installation the following steps are automatically performed.
+Install and run the Ceph client script on the Helion controller and compute nodes. After successfully installing, the following steps are automatically performed.
 
-1.  Verify the Ceph health
+1.  Verify the Ceph health by entering:
 
 		ceph health
 	
@@ -34,7 +34,7 @@ Install and run the Ceph client script on the Helion controller and compute node
 	
 		HEALTH_OK
 
-2. Create a new pool for Cinder volume
+2. Create a new pool for the Cinder volume by entering:
 
 		ceph osd pool create <cinder pool name> <pg-num>
 
@@ -42,7 +42,7 @@ Install and run the Ceph client script on the Helion controller and compute node
 		
 		ceph osd pool create helion-ceph-cinder 100
 
-3.  Execute the following command to verify a new pool creation
+3.  To verify a new pool creation, enter:
 
 		rados lspools
 		
@@ -50,16 +50,16 @@ Install and run the Ceph client script on the Helion controller and compute node
 		
 		rbd ls helion-ceph-cinder
 
-4. Create symbolic or softlinks to the relevant files on overcloud controller nodes.
+4. Create symbolic (softlinks) to the relevant files on overcloud controller nodes by entering:
 
 		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 
-###Configure Cinder
+###Configuring Cinder
 
 HP Helion OpenStack requires the `rbd` driver to interact with Ceph block devices. The pool name must be specified for the block device. To specify the pool name on the overcloud controller nodes edit `cinder.conf`.
 
-Perform the following steps:
+Perform the following steps to configure Cinder.
 
 1. Edit `/etc/cinder/cinder.conf` and add the following:
 
@@ -79,7 +79,7 @@ Perform the following steps:
 		#enabled_backends = lvm-1
 
 
-2. Restart the Cinder service
+2. Restart the Cinder service by entering:
 
 		service cinder-volume restart
 		service cinder-scheduler restart
@@ -88,33 +88,36 @@ Perform the following steps:
 
 Once the cinder service is restarted you can create a volume. 
 
-#####Create a volume
+####Creating a Volume
 
 There are two ways to create a volume:
 
-* Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
-* Using CLI from the overcloud controller node running the ceph client
+1. * Horizon UI Dashboard 
+1. * Using the CLI from the overcloud controller node running the Ceph client
 
 **Using the Horizon UI Dashboard**
 
 You can use the HP Helion OpenStack Dashboard to work with the Cinder service.
-<**need to rewrite as per horizon? Need access**>
+<**[[need to rewrite as per horizon? Need access**>
 
-To back up the volume from Horizon, perform the following steps:
+To backup the volume from Horizon, perform the following steps:
 
 1. Click on the **More** menu next to your volume and choose **Create Backup**.
 2. Enter in the required information in the next screen and click **Create Backup**.
-3. Required Fields: Backup Name - choose a name for your backup
+
+Required Fields:
+ 
+Backup Name - choose a name for your backup
 
 Optional Fields: 
 
-Description - you can enter in a description here 
+Description - enter a description here. 
 
-Container Name - If no container name is provided, a default container named volumebackups will be provisioned for you. Backups will be the same size as the volume they originate from.
+Container Name - If no container name is provided, a default container named `volumebackups` will be provisioned for you. Backups will be the same size as the source volume.
 
 **Using the CLI**
 
-To create a volume using command-line interface (CLI) execute the following command from the overcloud controller node running the ceph client
+To create a volume using the command-line interface (CLI) run the following command from the overcloud controller node running the Ceph client:
 
 	Cinder create -display-name <name of the volume> <volume size>
 
@@ -144,14 +147,14 @@ Output:
 			+--------------+------------------------------------------------------------------------+
 
 
-##Helion OpenStack Cinder Backup Ceph Storage
+##Configuring Helion OpenStack Cinder Backup and Restore with Ceph Storage
 
-The Ceph backup driver performs the data backup operation on the volume to a Ceph RDB. Backups can be performed between different ceph pools and ceph clusters. This section explains the backup and restore procedure of cinder volume.
+The Ceph backup driver performs the data backup operation on the volume to a Ceph RADOS Block Device (RBD). Backups can be performed between different Ceph pools and Ceph clusters. This section explains the backup and restore procedure for Cinder volumes.
 
-If the Ceph client software's are installed and the ceph configuration and keyring files are copied on the Helion controller and compute nodes then Helion OpenStack Ceph Configuration service performs the following steps:
+If the Ceph client softwares are installed and the Ceph configuration and keyring files are copied onto the Helion controller and compute nodes, then the Helion OpenStack Ceph Configuration service performs the following steps:
 
 
-1. Verify Ceph health status
+1. Verify Ceph health status by entering:
 
 		ceph health
 		
@@ -159,7 +162,7 @@ If the Ceph client software's are installed and the ceph configuration and keyri
 
 		HEALTH_OK
 
-2. Create a new pool for cinder backup
+2. Create a new pool for Cinder backup by entering:
 
 		ceph osd pool create <cinder backup pool name> <pg-num>
 
@@ -169,7 +172,7 @@ If the Ceph client software's are installed and the ceph configuration and keyri
 
 
 
-3. Execute the following command to verify a new backup pool is created
+3. To verify that a new backup pool is created, enter:
 
 		rados lspools
 	
@@ -177,17 +180,17 @@ If the Ceph client software's are installed and the ceph configuration and keyri
 
 		rbd ls helion-ceph-backups
 
-4. Create symbolic or softlinks to the relevant files on overcloud controller nodes. If the following links are already created for other services then ignore it.
+4. Create symbolic (softlinks) to the relevant files on overcloud controller nodes (if the following links are already created for other services, then ignore them) by entering:
 
 		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 		
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 
-###Configure Cinder backup
+###Backing up Cinder
 
-Perform the following steps to enable Ceph backup driver:
+Perform the following steps to enable the Ceph backup driver:
 
-1. Edit `/etc/cinder/cinder.conf` and add the following options in all the 3 controller nodes [OCC mgmt, OCC0, OCC1].
+1. Edit `/etc/cinder/cinder.conf` and add the following options in all three controller nodes [OCC mgmt, OCC0, OCC1].
 
 
 		[DEFAULT]
@@ -237,46 +240,46 @@ Perform the following steps to enable Ceph backup driver:
 	</tr>
 	<tr>
 	<td>restore_discard_excess_bytes = True</td>
-	<td>If True, always discard excess bytes when restoring volumes i.e. pad with zeroes.</td>
+	<td>If True, always discard excess bytes when restoring volumes (that is, pad with zeroes).</td>
 	</tr>
 	  </table>
 
 
-2. Restart the Cinder service
+2. Restart the Cinder service by entering:
 
 		service cinder-backup restart
 
-	**Note**: For Cinder backup, the Cinder volume whose backup is required must be in a detached state. The volume should not be attached to any of the instances or virtual machines.
+	**Note**: For Cinder backup, the Cinder volume whose backup is required must be in a detached state. The volume should not be attached to any of the instances or Virtual Machines.
 
-#####Create a Cinder backup
+#####Creating a Cinder Backup
 
-Once the cinder service is restarted you can create a backup of a Cinder volume. There are two ways to create a backup:
+Once the Cinder service is restarted, you can create a backup of a Cinder volume. There are two ways to create a backup:
 
-* Horizon UI dashboard (**how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
-* Using CLI from the overcloud controller node running the ceph client
+1. Horizon UI dashboard (**[[how to create from volume in horizon UI is similar to the one which we create for normal volume?if so we can give a link,else we need steps?**)
+2. The CLI from the overcloud controller node running the Ceph client
 
 	**Using the Horizon UI Dashboard**
 
 	To create a volume back from the Horizon UI, do the following.
 
-	1. Log in to the overcloud Horizon dashboard.
-	2. From the left panel, click the **Projects** and then select Compute.
+	1. Log into the overcloud Horizon dashboard.
+	2. From the left panel, click **Projects** and then select **Compute**.
 	3. Click **Volumes**. 
-	3. Click More drop down list and select Create Backup. Create Volume Backup page is displayed.
+	3. Click the **More** drop down list and select **Create Backup**. The **Create Volume Backup** page displays.
 	4. In the **Backup Name** box, enter the name for the backup.
 	5. In the **Description** box, enter the description.
-	6. In the **Container Name** box, enter the name of the container. If no name is entered, a default container named *volumebackups*  is  provisioned. The volume backup remains the same size of the volume.
+	6. In the **Container Name** box, enter the name of the container. If no name is entered, a default container named *volumebackups*  is  provisioned. The volume backup remains the same size as the source volume.
 	7. Click **Volume Backup**. A volume backup is created.
 
 
-	To attach volume to an instance: <need verification?>
+	To attach a volume to an instance: **<[[need verification?>**
 
 	* Select the instance and provide a device a name 
 
 
 	**Using the CLI**
 
-	Execute the following command to create a backup.
+	To create a backup, enter:
 	 
 		cinder backup-create [--container <container>] [--display-name <display-name>] [--display-description <display-description>] <volume>
 
@@ -284,11 +287,11 @@ Once the cinder service is restarted you can create a backup of a Cinder volume.
 
 			# cinder backup-create --display-name deb7rawbackup 0a2c6c62-627f-42d3-9b66-e4ba56db0ba7.
 
-	**Detailed procedure to create a backup using CLI**
+	**Detailed procedure to create a backup using the CLI**
 
 The following example provides a detailed procedure to create a backup uisng CLI.
 
-1. Login to overcloud controllermanagement and execute the following command:
+1. Login to overcloud `controllermanagement` and enter:
 
 		cinder list
 
@@ -305,7 +308,7 @@ The following example provides a detailed procedure to create a backup uisng CLI
 			+--------------------------------------+-----------+-----------------------+------+-------------+----------+--------------------------------------+
 
 		
-	2. Create cinder backup
+	2. Create the Cinder backup by entering:
 
 			cinder backup-create --display-name cindervol_backup ff8d13a5-3083-424b-a626-0b75cbe8cf66
 
@@ -320,7 +323,7 @@ The following example provides a detailed procedure to create a backup uisng CLI
 				+-----------+--------------------------------------+
 				
 
-	3. View a list of Cinder backup 
+	3. View a list of Cinder backups, enter: 
 
 			cinder backup-list
 
@@ -335,7 +338,7 @@ The following example provides a detailed procedure to create a backup uisng CLI
 			| beeccb71-81e7-4860-8d38-add05a2e610d | eb170c5e-d227-40ef-b515-b84b82c38eb0 | available |    Rvol6backup    |  15  |     None     | helion-ceph-backups |
 			+--------------------------------------+--------------------------------------+-----------+-------------------+------+--------------+---------------------+
 
-	4. Execute the following command to view a details of a selected volume.
+	4. To view details of a selected volume, enter:
 
 	 		cinder backup-show 60764712-c456-465a-828b-5f45d3a14ff5
 
@@ -357,7 +360,7 @@ The following example provides a detailed procedure to create a backup uisng CLI
 			|     volume_id     | ff8d13a5-3083-424b-a626-0b75cbe8cf66 |
 			+-------------------+--------------------------------------+
 
-	5. Execute the following command:
+	5. Enter:
 
 			rbd ls -l helion-ceph-backups
 
@@ -371,7 +374,7 @@ The following example provides a detailed procedure to create a backup uisng CLI
 				volume-3adf1c83-2efa-4a1e-bef6-cdaffd13b489.backup.base@backup.cdd27130-1791-45f6-8b6e-cc284922b02e.snap.1412041965.31  3072M          2 
 
 
-	6. To view cluster utilization
+	6. To view cluster utilization, enter:
 
 			rados df
 
@@ -383,12 +386,12 @@ The following example provides a detailed procedure to create a backup uisng CLI
 			helion-ceph-backups -                   54343272        13300         2190            0           0        16295     40106569        38157     70071922
 
 
-####Mount the volume and copy new image
+####Mount the Volume and Copy a new Image
 
-Now, mount the volume and copy the new image file from VM. To do so, perform the following steps:
+Now, mount the volume and copy the new image file from the VM. To do so, perform the following steps.
 	
-1. Login as a root user.
-2. List the block devices.
+1. Log in as root.
+2. List the block devices by entering:
 	
 		lsblk
 	
@@ -410,7 +413,7 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 		vdi                      254:128  0    15G  0 disk
 		vdj                      254:144  0    15G  0 disk
 
-3. Execute the following command to mount `dev` to `vol`:
+3. To mount `dev` to `vol` enter:
 
 		mount /dev/vdj /mnt/vol
 
@@ -418,19 +421,19 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 
 		mount: mount point /mnt/vol does not exist
 
-4. Execute the following command to mount `dev` to `vol1`
+4. To mount `dev` to `vol1` enter:
 
 		mount /dev/vdj /mnt/vol1 
 
-5. Change the directory 
+5. Change the directory by entering: 
  
 		cd /mnt/vol1
 
-6. List all the sub-directories
+6. List all the sub-directories by entering:
 
 		ls -ltr
 
-7. Execute the following command to view the disk usage.
+7. To view disk usage enter:
 
 		df -h
 
@@ -446,7 +449,7 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 		/dev/vda1                228M   18M  199M   9% /boot
 		/dev/vdj                  15G  847M   14G   6% /mnt/vol1
 
-8. Execute the following command to mount.
+8. To mount enter:
 
 		mount
 
@@ -466,7 +469,7 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 
 	Now cinder volume has additional file system changes within the volume.	
 
-9. To list the additional file system changes
+9. To list the additional file system changes enter:
 
 		ls-ltr
 
@@ -479,7 +482,7 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 		-rw-r--r-- 1 root root 5766807552 Oct  2 00:34 Debian_7.raw
 
 
-10. Execute the following command to view the disk usage
+10. To view disk usage enter:
 
 		df -h
 
@@ -496,11 +499,11 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 		/dev/vdj                  15G  6.2G  8.6G  42% /mnt/vol1
 
 
-11. Execute the following command to unmount the volume:
+11. To unmount the volume enter:
 
 		umount /dev/vdj
 
-12. Execute the following command:
+12. Enter:
 
 		mount
 
@@ -517,15 +520,15 @@ Now, mount the volume and copy the new image file from VM. To do so, perform the
 		/dev/vda1 on /boot type ext2 (rw,relatime,errors=continue)
 		
 
-#####Restore of data from Cinder backup
+###Restoring Data from a Cinder Backup
 
-You can restore the volume to a new volume or an existing volume.
+You can restore the backed up volume to a new volume or an existing volume.
 
-In the following example a new volume is created and then the data is restored.
+In the following example, the data is restored to a new volume.
 
-Perform the following steps to create a new volume and to restore data backup.
+To create a new volume and to restore data backup perform the following steps.
 
-1. Execute the following command to create a volume.
+1. To create a volume enter:
 
 		 cinder create --display-name restore_volume1 15 
 
@@ -551,13 +554,13 @@ Perform the following steps to create a new volume and to restore data backup.
 			+---------------------+--------------------------------------+
 
 
-2. Execute the following command to cinder backup restore
+2. Execute the following command to the cinder backup restore:
 
 
 		cinder backup-restore --volume-id restore_volume1 60764712-c456-465a-828b-5f45d3a14ff5
 
 
-3. View Cinder backup
+3. View the Cinder backup by entering:
 
 		cinder backup-list
 
@@ -577,7 +580,7 @@ Perform the following steps to create a new volume and to restore data backup.
 
 
 
-4. View Cinder list
+4. View the Cinder list by entering:
 
 		cinder list
 
@@ -595,7 +598,7 @@ Perform the following steps to create a new volume and to restore data backup.
 	Once the backup is created the volume name remains the same as the cinder-backup name.
 
 
-5. Verify the volume name
+5. Verify the volume name by entering:
 
 		cinder list
 
@@ -611,33 +614,32 @@ Perform the following steps to create a new volume and to restore data backup.
 
 
 
-####Volume Snapshots
+####Understanding Volume Snapshots
 
-Volume snapshots are saved in Cinder pool.
+Volume snapshots are saved in a Cinder pool.
 
 ######Creating a Volume Snapshot for Backup
 
-You can create a new and identical volumes by taking snapshot of the volume.  
+You can create identical volumes by taking snapshot of the volume.  
 
 **Notes**
 
-Ensure the following things while taking snapshot:
+Mind the following things while taking snapshots:
 
-a) The volume must be detached and must be in available status to take a snapshot of it. An error occurs if you try to snapshot a used volume.
+- The volume must be detached and must be in an available status to take a snapshot of it. An error occurs if you try to snapshot a used volume.
+- To function properly, keep the original volume, whose snapshot was taken. If the original volume is deleted then the snapshot becomes unusable.
 
-b) Keep the original volume, whose snapshot is taken, to function properly. If the original volume is deleted then the snapshot becomes unusable.
+The following steps show how to create a snapshot.
 
-Perform the following steps to create a snapshot:
-
-1. Execute the following command to create a snapshot
+1. To create a snapshot, enter:
 
 		nova volume-snapshot-create --force [TRUE or FALSE] --display_name [DISPLAY_NAME] --display_description [DISPLAY_DESCRIPTION] [VOLUME_ID]
 
-2. Execute the following command to view the snapshot
+2. To view the snapshot, enter:
 
 		nova volume-snapshot-list
 
-3. From Horizon, you can create snapshot of instances and can view the snapshot as below. (**need to update this section?**)
+3. From Horizon, you can create snapshot of instances and can view the snapshot as below. (**[[need to update this section?**)
 
 
 

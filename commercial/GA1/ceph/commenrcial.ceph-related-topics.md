@@ -22,7 +22,7 @@ PageRefresh();
 
 ##Related Topics
 
-This topic provides you links to related documentation that you might find helpful when working with HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution. 
+This topic provides you links to related documentation that you might find helpful when working with HP Helion OpenStack Enterprise Edition 1.1, Ceph Firefly 80.7 Storage Solution. 
 
 
 1. With increased density, efficiency, serviceability, and flexibility, the HP ProLiant SL4540 Gen8 Server, DL360/380 Gen8, BL460/660 Gen8 servers will be the perfect solution for scale-out storage needs. For more information, refer to [hp.com/servers/sl4540](hp.com/servers/sl4540)

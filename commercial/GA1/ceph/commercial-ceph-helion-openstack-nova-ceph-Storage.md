@@ -21,11 +21,12 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##Helion OpenStack Nova Ceph Storage
+##Helion OpenStack 1.1 Nova Ceph Storage
 
-Install and run the Ceph client script  on the Helion controller and compute node. After successfully installation the following steps are automatically performed.
+Install and run the Ceph client script  on the Helion controller and compute node. After a successful install, the following steps are automatically performed:
+**[[so the user is not doing this,right?]**
 
-1. Verify the Ceph health
+1. Verify Ceph health.
 
 		ceph health
 	
@@ -34,7 +35,7 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 		HEALTH_OK
 
 
-2.  Create a new pool for Cinder volume
+2.  Create a new pool for the Cinder volume.
 
 		ceph osd pool create <cinder pool name> <pg-num>
 
@@ -42,7 +43,7 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 		
 		ceph osd pool create helion-ceph-nova 100
 
-4.  Execute the following command to verify a new pool creation
+4.  Verify that a new pool was created.
 
 		rados lspools
 		
@@ -50,7 +51,7 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 		
 		rbd ls helion-ceph-nova
 
-4. Create symbolic or softlinks to the relevant files on overcloud controller nodes.
+4. Create symbolic (softlinks) to the relevant files on the overcloud controller nodes.
 
 		ln -s /usr/lib/python2.7/dist-packages/rados* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
 		ln -s /usr/lib/python2.7/dist-packages/rbd* /opt/stack/venvs/openstack/lib/python2.7/site-packages/.
@@ -61,14 +62,15 @@ Install and run the Ceph client script  on the Helion controller and compute nod
 
 ###Configure Nova
 
-Configure Nova to boot all the virtual machined directly to Ceph. On each overcloud controller and compute node edit `nova.conf`.
+Configure Nova to boot all Virtual Machines directly to Ceph. Edit `nova.conf` on each overcloud controller and compute node.
+**[[edit to do what?**
 
 Perform the following steps:
 
 1. Edit `/etc/nova/nova.conf` and add the following options in the respective sections:
 
 
-		# For ceph integration
+		# For Ceph integration
 		[DEFAULT]
 		libvirt_inject_password=false
 		libvirt_inject_key=false
@@ -76,18 +78,18 @@ Perform the following steps:
 		The last libvirt section in the conf file
 		[libvirt]
 	
-		#CEPH Related Changes
+		#Ceph Related Changes
 		images_type=rbd
 		images_rbd_pool=helion-ceph-nova
 		images_rbd_ceph_conf=/etc/ceph/ceph.conf
 
-2. Restart the Nova services
+2. Restart the Nova services:
 
-	* From compute node
+	* From the compute node
 
 			service nova-compute restart
 
-	* From all the controller nodes
+	* From all controller nodes:
 
 			service nova-api restart
 			service nova-scheduler restart
@@ -95,109 +97,106 @@ Perform the following steps:
 
 	
 <list of screenshot need to be added. page number 87-91>
+**[[add screenshot**
 
 ###Attaching the Cinder volume to the Nova instance
 
-There are two ways to attach a cinder volume to a nova instance.
+There are two ways to attach a cinder volume to a Nova instance.
 
-* Using the Horizon UI Dashboard
-* Using Command Line Interface (CLI)
-
-
-**Using the Horizon UI Dashboard**
-
-To attach a cinder volume to a nova instance, do the following:
-
-1. In the Horizon dashboard, click the **Project** Tab. The tab displays with options in the left panel.
-
-2. Click **Compute** and then select **Volume** to open Volume page.
-3. Click **More Action** tab and select **Edit Attachments**. Manage Volume Attachments page displays.
-4. Click **Attach** to **Instance** drop-down list and select the instance. 
-5. In the **Device Name** box, enter the name of the name for the selected instance.
-6. Click **Attach Volume** to attach the cinder volume to the nova instance, else click Cancel.
+* Use the Horizon UI Dashboard
+* Use the Command Line Interface (CLI)
 
 
-**Listing instance from Horizon**:
+**Attaching a Cinder volume using the Horizon UI Dashboard**
 
-1. In the Horizon dashboard, click the **Project** Tab. The tab displays with options in the left panel.
+To attach a Cinder volume to a Nova instance:
 
-2. Click **Compute** and then select **Instance** to open Volume page. Instance page is displayed. You can view the all the instances and the console log in Horizon UI.
+1. In the Horizon Dashboard, click the **Project** Tab.  
+2. Click **Compute** and then **Volume** to open the Volume page.
+3. Click the **More Action** tab, and select **Edit Attachments**.  
+4. Click the **Attach to Instance** drop-down list and select the instance. 
+5. In the **Device Name** box, enter the name of the selected instance.
+6. Click **Attach Volume** to attach the Cinder volume to the Nova instance. To undo these changes, click **Cancel**.
+
+
+**Listing the instance using Horizon**:
+
+1. From the Horizon Dashboard, click the **Project** Tab. 
+2. Click **Compute** and then select **Instance** to open Volume page. You can view the all the instances and the console log from the Horizon UI.
 
 
 
-**Using Command Line Interface (CLI)**
+**Attaching a Cinder volume using the Command Line Interface (CLI)**
 
-To attach a cinder volume to a nova instance, do the following:
+To attach a Cinder volume to a Nova instance:
 
-1. Login to seed.
+1. SSH into the seed VM.
 
 		ssh <seed IP address>
 
 
-2. Login to Overcloud Horizon.
+2. Log in to the Horizon overcloud.
 
 		ssh heat-admin@<overcloud IP address> 
 
-3. Execute the following command from overcloud controller node0:
+3. From overcloud controller node0, enter:
 
 		source /root/stackrc 
 
-4. List the existing VM
+4. List the existing VMs:
 
 		nova list
 
-5. List the existing glance image
+5. List the Glance image:
 
 		glance index
 
 
-6. List nova list
+6. List Nova:
 
 		rados lapools
 
-7. List the ceph resource
+7. List the Ceph resource:
 
 		ceoh df
-8. **What does the following command do?**
-
 		ceph -w
 
-9. Execute the following command to create an instance with RDB backend
+9. To create an instance with the RADOS block device (RDB) back end, enter:
 
-**command required?**
+**[[command required?**
 
 
-10. List all nova instances
+10. To list all Nova instances, enter:
 		
 		nova list
 
 
-11. **What does the following command do?**
+11. **[[What does the following command do? not finding it in google -write yes, -w no**
 
 		ceph -w
 
 
-12. Logging in the instance from KVM host 
+12. From the KVM host, Log into the instance:
 
 **commands required?**
 
 
-	It displays the instances where the cinder volume is attached.
+	The output displays the instances where the Cinder volume is attached.
 
-#####Verify Cinder volume attachment to a nova instance
+#####Verifying the Cinder volume attachment to a Nova instance
 
-Now the Cinder volume is attached to a nova instance. Perform the following steps to verify the attachment. 
+The Cinder volume is now attached to a Nova instance. Verify the attachment by performing the following steps: 
 
-1. Execute the following command to view all the volumes
+1. To view all the volumes, enter:
 
 		# cinder list
 
 
-2. Execute the following command to view the Nova instance
+2. To view the Nova instance, enter:
 
 		nova list 
 
-3. To view the details of the attached volume, execute the following command
+3. To view the details of the attached volume, enter:
 
 		# cinder show  <volume ID>
 
@@ -232,7 +231,7 @@ Now the Cinder volume is attached to a nova instance. Perform the following step
 
 
 
-5. To view the details of the nova instance, execute the following commands:
+5. To view the details of the Nova instance, enter:
 
 		nova show < nova instance ID> 
 
@@ -275,27 +274,31 @@ Now the Cinder volume is attached to a nova instance. Perform the following step
 
 
 #####Verify Cinder to check the usage of RBD backend (this section needs to be re-written)
+**[[needs work**
 
-From VM, verify if the cinder which uses RBD backend is seen.
+From a VM, verify that the Cinder which uses the RBD backend is visible.
+**[[command**
 
-From VM, cross checking if the cinder that uses RBD backend is seen.
+From a VM, cross check that the Cinder which uses the RBD backend is visible.
+**[[command**
 
-Listing device file after attaching volume to instance - vdc is the block device from RBD
+To list a device file after attaching a volume to an instance - vdc is the block device from RBD
+**[[command**
 
 Listing pools
-<screen shot>
+**<screen shot>**
 
 Debian version on the instance
 <screen shot>
 
 Creating ext4 file system on vdc 1
-<screen shot>
+**<screen shot>**
 
 Mounting vdc
-<screen shot>
+**<screen shot>**
 
 vdc volume size after copying cirros img 1
 
-<screen shot>
+**<screen shot>**
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
