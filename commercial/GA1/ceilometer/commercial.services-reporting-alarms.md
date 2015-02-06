@@ -42,7 +42,7 @@ Metering processes should normally be operating at all times. Upstart will conti
 ###The Alarm Notifier Agent
 1. Determine whether the process is running:
  
-		$ sudo service ceilometer-alarm-notifier status
+		sudo service ceilometer-alarm-notifier status
 		ceilometer-alarm-evaluator start/running, process 34567
 4. start or stop the process as needed:
  
@@ -55,7 +55,7 @@ or
 
 1. Determine whether the process is running:
  
-		$ sudo service ceilometer-alarm-evaluator status
+		sudo service ceilometer-alarm-evaluator status
 		ceilometer-alarm-evaluator start/running, process 35567
 4. start or stop the process as needed:
  
