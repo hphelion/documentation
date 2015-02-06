@@ -684,7 +684,7 @@ The following steps create a `ceph-mon` data directory, retrieves the monitor ke
 		got monmap epoch 1
 
 
-5.	Prepare the monitor’s data directory created earlier. 
+5.	Prepare the monitor's data directory created earlier. 
 
 
 		sudo ceph-mon -i {mon-id} --mkfs --monmap {tmp}/{map-filename} --keyring {tmp}/{key-filename}
