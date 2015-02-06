@@ -427,13 +427,9 @@ Other requirements and recommendations for the seed cloud host are as follows:
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 
-## Next Steps {#next}
+## Next Step {#next}
 
 Review the [HP Helion OpenStack&#174; Technical Overview](/helion/openstack/technical-overview/).
-
-Prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/install/prereqs/).
-
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
