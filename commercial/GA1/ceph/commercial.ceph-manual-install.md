@@ -641,6 +641,182 @@ For more details refer to [http://docs.ceph.com/docs/master/rados/operations/add
 The following steps create a `ceph-mon` data directory, retrieves the monitor keyring and monmap, and adds a `ceph-mon` daemon to your cluster. You can add more monitors by repeating these steps to achieve a quorum.
 
 
+1. Create a default directory on the second monitor machine
+
+		ssh {new-mon-host}
+		sudo mkdir /var/lib/ceph/mon/ceph-{mon-id}
+
+	For example:
+
+		# mkdir /var/lib/ceph/mon/ceph-ftcceph1-mon2
+
+2. Create a temporary directory {temp} to keep files need during the process. This directory is different from the monitor's default directory.
+
+		mkdir {tmp}
+
+	For example:
+
+		mkdir tmp
+
+3. Retrieve the keyring for your monitor.
+
+		ceph auth get mon. -o {tmp}/{key-filename}
+		{tmp} ->is the path to the keyring
+		{key-filename} is the name of the file that has monitor key.
+
+	For example:
+
+		ceph auth get mon. -o tmp/mon2keyring
+
+	Expected output
+
+		exported keyring for mon.
+
+4.	Retrieve the monitor map. 
+		ceph mon getmap -o {tmp}/{map-filename}
+		{tmp} is the path to the monitor map
+		{map-filename} is the name of the file containing the monitor map
+	For example: 
+		ceph mon getmap -o tmp/mon2monmap
+
+	Expected output
+
+		got monmap epoch 1
+
+
+5.	Prepare the monitor’s data directory created earlier. 
+
+
+		sudo ceph-mon -i {mon-id} --mkfs --monmap {tmp}/{map-filename} --keyring {tmp}/{key-filename}
+	For example:
+
+		ceph-mon -i ftcceph1-mon2 --mkfs --monmap tmp/mon2monmap --keyring tmp/mon2keyring
+
+	Expected output
+
+		ceph-mon: set fsid to 328d1702-67e7-4dfa-a0a9-77f0b96be57f
+		ceph-mon: created monfs at /var/lib/ceph/mon/ceph-ftcceph1-mon2 for mon.ftcceph1-mon2
+
+6.	Update /etc/ceph/ceph.conf file with the new monitor node details and push the updated ceph.conf file to all the nodes in the ceph cluster.
+		[mon.mon-id]
+		host = new-mon-host
+		addr = ip-addr:6789
+
+	Sample
+
+		[mon.ftcceph1-mon2]
+		host = ftcceph1-mon2
+		mon addr = 192.168.51.52:6789
+
+7.	Add the new monitor to the list of monitors and this will enable other nodes to use this monitor during startup. This command is run from the new added monitor.
+
+		ceph mon add <mon-id> <ip>[:<port>]
+
+	sample
+	
+		ceph mon add ftcceph1-mon2 192.168.51.52:6789
+		added mon.ftcceph1-mon2 at 192.168.51.52:6789/0
+
+8.	Start the new monitor so it will automatically join the cluster. 
+
+		ceph-mon -i {mon-id} --public-addr {ip:port}
+	
+	sample
+
+		 ceph-mon -i ftcceph1-mon2 --public-addr 192.168.51.52:6789
+
+
+Follow the above steps for the 3rd monitor. Once the 3rd monitor is added to the cluster, run `ceph-w` and check the status of health state as "OK". A `HEALTH_WARN` clock skew message appears if the time is not in sync across all the Ceph cluster. It is always good to set NTP setup on all the ceph nodes so that the time is in sync.
+
+The following is the sample output of `HEALTH_WARN` clock skew warns
+
+	root@ftcceph1-mon3:/home/ceph# ceph -w
+	cluster 328d1702-67e7-4dfa-a0a9-77f0b96be57f
+	health HEALTH_WARN clock skew detected on mon.ftcceph1-mon2, mon.ftcceph1-mon3
+	monmap e3: 3 mons at {ftcceph1-mon1=192.168.51.51:6789/0,ftcceph1-mon2=192.168.51.52:6789/0,ftcceph1-mon3=192.168.51.53:6789/0}, election epoch 6, quorum 0,1,2 ftcceph1-mon1,ftcceph1-mon2,ftcceph1-mon3
+	osdmap e122: 21 osds: 21 up, 21 in
+	pgmap v2845: 3256 pgs, 17 pools, 3783 bytes data, 69 objects
+	22389 MB used, 5844 GB / 5866 GB avail
+	3256 active+clean
+
+
+####Steps to setup NTP server
+
+1. Install NTP package. This package is a part of the image deployment.
+2. Update `/etc/ntp.conf` file with your local NTP server across all the nodes in the Ceph cluster.
+3. Once `ntp.conf` file is updated, restart ntp service by running `/etc/init.d/ntp restart6`
+4. Run `ntpq -p` to see the ntp server is listed.
+
+
+		ntpq -p
+		remote refid st t when poll reach delay offset jitter
+		=================================================
+		192.168.51.21 .INIT. 16 u - 64 0 0.000 0.000 0.000
+
+
+
+
+Sample `ntp.conf` file
+
+[commented out server and added local ntp server and restrict under cryptographically authenticated section]
+
+	==========================================
+	# /etc/ntp.conf, configuration for ntpd; see ntp.conf(5) for help
+	driftfile /var/lib/ntp/ntp.drift
+	# Enable this if you want statistics to be logged.
+	#statsdir /var/log/ntpstats/
+	statistics loopstats peerstats clockstats
+	filegen loopstats file loopstats type day enable
+	filegen peerstats file peerstats type day enable
+	filegen clockstats file clockstats type day enable
+	# You do need to talk to an NTP server or two (or three).
+	#server ntp.your-provider.example
+	# pool.ntp.org maps to about 1000 low-stratum NTP servers. Your server will
+	# pick a different set every time it starts up. Please consider joining the
+	# pool: <http://www.pool.ntp.org/join.html>
+	#server 0.debian.pool.ntp.org iburst
+	#server 1.debian.pool.ntp.org iburst
+	#server 2.debian.pool.ntp.org iburst
+	#server 3.debian.pool.ntp.org iburst
+	server 192.168.51.21
+	# Access control configuration; see /usr/share/doc/ntp-doc/html/accopt.html for
+	# details. The web page <http://support.ntp.org/bin/view/Support/AccessRestrictions>
+	67
+	# might also be helpful.
+	#
+	# Note that "restrict" applies to both servers and clients, so a configuration
+	# that might be intended to block requests from certain clients could also end
+	# up blocking replies from your own upstream servers.
+	# By default, exchange time with everybody, but don't allow configuration.
+	restrict -4 default kod notrap nomodify nopeer noquery
+	restrict -6 default kod notrap nomodify nopeer noquery
+	# Local users may interrogate the ntp server more closely.
+	restrict 127.0.0.1
+	restrict ::1
+	# Clients from this (example!) subnet have unlimited access, but only if
+	# cryptographically authenticated.
+	#restrict 192.168.123.0 mask 255.255.255.0 notrust
+	restrict 192.168.51.0 mask 255.255.255.0 notrust
+	# If you want to provide time to your local subnet, change the next line.
+	# (Again, the address is an example only.)
+	#broadcast 192.168.123.255
+	# If you want to listen to time broadcasts on your local subnet, de-comment the
+	# next lines. Please do this only if you trust everybody on the network!
+	==========================================================
+	
+
+Once the ntp server is configured and after the time is in sync across all the servers, the Ceph health will be in "OK" state.
+
+
+	ceph -w
+	cluster 328d1702-67e7-4dfa-a0a9-77f0b96be57f
+	health HEALTH_OK
+	monmap e3: 3 mons at {ftcceph1-mon1=192.168.51.51:6789/0,ftcceph1-mon2=192.168.51.52:6789/0,ftcceph1-mon3=192.168.51.53:6789/0}, election epoch 12, quorum 0,1,2 ftcceph1-mon1,ftcceph1-mon2,ftcceph1-mon3
+	osdmap e122: 21 osds: 21 up, 21 in
+	pgmap v3238: 3256 pgs, 17 pools, 3783 bytes data, 69 objects
+	22384 MB used, 5844 GB / 5866 GB avail
+	3256 active+clean
+
 
 
 ## Next Steps
