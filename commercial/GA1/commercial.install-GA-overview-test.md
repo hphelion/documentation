@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install/overview/test
+permalink: /helion/openstack/install/overview/test/
 product: commercial.ga
 
 ---
