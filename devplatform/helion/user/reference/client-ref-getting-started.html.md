@@ -21,7 +21,7 @@ For more information, use the **helion help**, **helion help [*option*]**, or **
 
 <hr>
 
-## helion login <*email*> {#command-login}
+##helion login <*email*> {#command-login}
 
 Logs in to the current or specified target with the named user.
 
@@ -61,7 +61,7 @@ Logs in to the current or specified target with the named user.
 </table>
 
 
-###helion logout <*target*> {#command-logout}
+##helion logout <*target*> {#command-logout}
 Logs the current user out of the current, specified, or all targets.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -77,7 +77,7 @@ Logs the current user out of the current, specified, or all targets.
 </tr>
 </table>
 
-### helion target <*url*> {#command-target}
+##helion target <*url*> {#command-target}
 Set the target API endpoint for the client or report the current target.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
