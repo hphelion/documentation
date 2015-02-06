@@ -161,6 +161,8 @@ Once you have your initial monitor(s) running, you must add OSDs. To make a clus
 
 * 3 OSD nodes with individual drives other than OS drive on each of the nodes.
 
+* For performance reasons it is recommended to have **SSD** drive for Journal partition on the OSD nodes. 
+
 ####Setting up the OSD Node
 
 To create an OSD and add it to cluster and CRUSH map perform the following steps.
@@ -211,95 +213,95 @@ The following example explains the creation of journal partitions on a 200G SSD 
 
 1. Log into OSD and enter:
 
-	/etc/ceph# fdisk /dev/sda
-	Command (m for help): p
-	Disk /dev/sda: 200.0 GB, 199992852480 bytes
-	255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
-	Units = sectors of 1 * 512 = 512 bytes
-	Sector size (logical/physical): 512 bytes / 512 bytes
-	I/O size (minimum/optimal): 262144 bytes / 524288 bytes
-	Disk identifier: 0x000007d0
-	
-	Device Boot 	Start 	End Blocks 	Id 	System
-	Command (m for help): n
-	
-	Partition type:
-	p primary (0 primary, 0 extended, 4 free)
-	e extended
-	Select (default p): e
-	Partition number (1-4, default 1): 1
-	First sector (2048-390611039, default 2048):
-	Using default value 2048
-	Last sector, +sectors or +size{K,M,G} (2048-390611039, default 390611039):
-	Using default value 390611039
-	
-	Command (m for help): p
-	Disk /dev/sda: 200.0 GB, 199992852480 bytes
-	255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
-	Units = sectors of 1 * 512 = 512 bytes
-	Sector size (logical/physical): 512 bytes / 512 bytes
-	I/O size (minimum/optimal): 262144 bytes / 524288 bytes
-	Disk identifier: 0x000007d0
-	
-	Device Boot   Start   End    Blocks 	Id 	System
-	
-	/dev/sda1 	  2048 390611039 195304496 5 Extended
+		/etc/ceph# fdisk /dev/sda
+		Command (m for help): p
+		Disk /dev/sda: 200.0 GB, 199992852480 bytes
+		255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
+		Units = sectors of 1 * 512 = 512 bytes
+		Sector size (logical/physical): 512 bytes / 512 bytes
+		I/O size (minimum/optimal): 262144 bytes / 524288 bytes
+		Disk identifier: 0x000007d0
+		
+		Device Boot 	Start 	End Blocks 	Id 	System
+		Command (m for help): n
+		
+		Partition type:
+		p primary (0 primary, 0 extended, 4 free)
+		e extended
+		Select (default p): e
+		Partition number (1-4, default 1): 1
+		First sector (2048-390611039, default 2048):
+		Using default value 2048
+		Last sector, +sectors or +size{K,M,G} (2048-390611039, default 390611039):
+		Using default value 390611039
+		
+		Command (m for help): p
+		Disk /dev/sda: 200.0 GB, 199992852480 bytes
+		255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
+		Units = sectors of 1 * 512 = 512 bytes
+		Sector size (logical/physical): 512 bytes / 512 bytes
+		I/O size (minimum/optimal): 262144 bytes / 524288 bytes
+		Disk identifier: 0x000007d0
+		
+		Device Boot   Start   End    Blocks 	Id 	System
+		
+		/dev/sda1 	  2048 390611039 195304496 5 Extended
 	
 
 2. To create the second partition on the same disk, enter:
 	
-	Command (m for help): n
-	Partition type:
-	p primary (0 primary, 1 extended, 3 free)
-	l logical (numbered from 5)
-	Select (default p): l
-	Adding logical partition 5
-	First sector (4096-390611039, default 4096):
-	Using default value 4096
-	Last sector, +sectors or +size{K,M,G} (4096-390611039, default 390611039): +15750M
-	
-	Command (m for help): p
-	
-	Disk /dev/sda: 200.0 GB, 199992852480 bytes
-	255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
-	Units = sectors of 1 * 512 = 512 bytes
-	Sector size (logical/physical): 512 bytes / 512 bytes
-	I/O size (minimum/optimal): 262144 bytes / 524288 bytes
-	Disk identifier: 0x000007d0
-	
-	Device Boot    Start    End   Blocks Id   System
-	
-	/dev/sda1      2048 390611039 195304496 5 Extended
-	
-	/dev/sda5      4096 32260095 16128000 83 Linux
+		Command (m for help): n
+		Partition type:
+		p primary (0 primary, 1 extended, 3 free)
+		l logical (numbered from 5)
+		Select (default p): l
+		Adding logical partition 5
+		First sector (4096-390611039, default 4096):
+		Using default value 4096
+		Last sector, +sectors or +size{K,M,G} (4096-390611039, default 390611039): +15750M
+		
+		Command (m for help): p
+		
+		Disk /dev/sda: 200.0 GB, 199992852480 bytes
+		255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
+		Units = sectors of 1 * 512 = 512 bytes
+		Sector size (logical/physical): 512 bytes / 512 bytes
+		I/O size (minimum/optimal): 262144 bytes / 524288 bytes
+		Disk identifier: 0x000007d0
+		
+		Device Boot    Start    End   Blocks Id   System
+		
+		/dev/sda1      2048 390611039 195304496 5 Extended
+		
+		/dev/sda5      4096 32260095 16128000 83 Linux
 	
 3. To create the third partition on the same disk, enter:
 	
-	Command (m for help): n
-	Partition type:
-	p primary (0 primary, 1 extended, 3 free)
-	l logical (numbered from 5)
-	Select (default p): l
-	Adding logical partition 6
-	First sector (32262144-390611039, default 32262144):
-	Using default value 32262144
-	Last sector, +sectors or +size{K,M,G} (32262144-390611039, default 390611039): +15750M
-	
-	Command (m for help): p
-	Disk /dev/sda: 200.0 GB, 199992852480 bytes
-	255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
-	Units = sectors of 1 * 512 = 512 bytes
-	Sector size (logical/physical): 512 bytes / 512 bytes
-	I/O size (minimum/optimal): 262144 bytes / 524288 bytes
-	Disk identifier: 0x000007d0
-	
-	Device Boot    Start   End   Blocks  Id  System
-	
-	/dev/sda1      2048390611039 195304496 5 Extended
-	
-	/dev/sda5      409632260095 16128000 83 Linux
-	
-	/dev/sda6      32262144 64518143 16128000 83 Linux
+		Command (m for help): n
+		Partition type:
+		p primary (0 primary, 1 extended, 3 free)
+		l logical (numbered from 5)
+		Select (default p): l
+		Adding logical partition 6
+		First sector (32262144-390611039, default 32262144):
+		Using default value 32262144
+		Last sector, +sectors or +size{K,M,G} (32262144-390611039, default 390611039): +15750M
+		
+		Command (m for help): p
+		Disk /dev/sda: 200.0 GB, 199992852480 bytes
+		255 heads, 63 sectors/track, 24314 cylinders, total 390611040 sectors
+		Units = sectors of 1 * 512 = 512 bytes
+		Sector size (logical/physical): 512 bytes / 512 bytes
+		I/O size (minimum/optimal): 262144 bytes / 524288 bytes
+		Disk identifier: 0x000007d0
+		
+		Device Boot    Start   End   Blocks  Id  System
+		
+		/dev/sda1      2048390611039 195304496 5 Extended
+		
+		/dev/sda5      409632260095 16128000 83 Linux
+		
+		/dev/sda6      32262144 64518143 16128000 83 Linux
 
 4. Repeat this command for rest of the partition.
 
