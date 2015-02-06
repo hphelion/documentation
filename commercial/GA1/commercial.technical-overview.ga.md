@@ -576,11 +576,9 @@ Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## Next Steps {#next}
+## Next Step {#next}
 
-Review the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
-
-To prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/install/prereqs/).
+Prepare your environment for the installation. See [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

@@ -82,4 +82,13 @@ Review the information in [Installation Prerequisites](/helion/openstack/install
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+## For more information {#moreinfo}
+
+Before you start, if you want more information on HP Helion OpenStack, see the following:
+
+* [FAQ](/helion/openstack/faq/) 
+* [Release notes](/helion/openstack/release-notes/) 
+
+
+
 ----

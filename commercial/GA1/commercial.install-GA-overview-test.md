@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install/overview/
+permalink: /helion/openstack/install/overview/test
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -22,6 +22,10 @@ PageRefresh();
 -->
 
 # HP Helion OpenStack&#174; Installation Overview 
+
+This document describes the installation process for HP Helion OpenStack 1.1. 
+
+**What you will install**
 
 The HP Helion OpenStack installation follows the standard [TripleO deployment model](/helion/openstack/services/tripleo/overview/), creating a seed, an undercloud and an overcloud.
 
@@ -43,21 +47,29 @@ HP Helion OpenStack is designed to deliver an open source OpenStack solution at 
 * 2 overcloud Swift nodes
 * At least 1 overcloud Compute node 
 
-After the installation, you can add additional block storage nodes (not required if 3Par is being used for block storage) and [configure your network securely](/helion/openstack/install/security/).
+After the installation, you can add additional block storage nodes (not required if 3Par is being used for block storage) and configure your network securely.
 
 The high-level process for installing HP Helion OpenStack involves the following:
 
-1. Review the information in the [Support Matrix](/helion/openstack/support-matrix/) and [Technical Overview](/helion/openstack/technical-overview/) for details about hardware and software requirements.
+**Before You Start**
 
-2. Verify that the necessary [Prerequisites](/helion/openstack/install/prereqs) have been performed.
+1. Review the information in the Support Matrix and Technical Overview documents for details about hardware and software requirements.
 
-3. Install with either KVM or ESX hypervisor support:
+2. Verify that the necessary prerequisites have been performed.
+
+**Perform the Installation**
+
+You can install with either KVM or ESX hypervisor support.
 	
-	- [Install with KVM hypervisor support](/helion/openstack/install/kvm/) and then [configure HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/) or [configure HP 3PAR StoreServ Storage](/helion/openstack/install/3par/). 
+* For KVM hypervisor support, after installing you will configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage. 
 
-	- [Install with ESX hypervisor support](/helion/openstack/install/esx/) and then [deploy the compute proxy on the ESX hosts](/helion/openstack/install/esx/proxy/) and [deploy OVSvApp for HP Virtual Cloud Networking](/helion/openstack/install/ovsvapp/).
+* For ESX hypervisor support, after installing you will deploy the compute proxy on the ESX hosts and deploy OVSvApp for HP Virtual Cloud Networking.
 
-4. Optionally, [install and configure DNSaaS support](/helion/openstack/install/dnsaas/).
+Optionally, you can install and configure DNSaaS support.
+
+Make sure you are aware of the environment you are installing into and use the correct install path.
+
+## Keep in mind ##
 
 There are a few things you should be aware of before you begin your HP Helion OpenStack baremetal installation.
 
@@ -76,10 +88,11 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 **Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
-## Next Step ##
+## First Step ##
 
-Review the information in [Installation Prerequisites](/helion/openstack/install/prereqs/).
+Before you start, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ----
