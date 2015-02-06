@@ -55,9 +55,9 @@ The Ceph RADOSGW is a REST API which supports the Swift API. HP Helion OpenStack
 
 
 ###File System {#file-system} 
-**[[supported???**
+**[supported?]**
 
-Ceph provides a POSIX-compliant network file system that aims for high performance, large data storage and so on. **[[However file system interface is still not production ready as of this writing (December 2014)**. In this release we are not supporting the File Interface. There is an alternative way suggested, that is, either leveraging Ceph's RBD Block storage, Ceph's RADOSGW Object Storage through Swift API, or, for user archive and backup type workloads, Open Source Swift API-compatible File System interfaces such as Duplicity.
+Ceph provides a POSIX-compliant network file system that aims for high performance, large data storage and so on. **[However file system interface is still not production ready as of this writing (December 2014)**. In this release we are not supporting the File Interface. There is an alternative way suggested, that is, either leveraging Ceph's RBD Block storage, Ceph's RADOSGW Object Storage through Swift API, or, for user archive and backup type workloads, Open Source Swift API-compatible File System interfaces such as Duplicity.
 
 ###Understanding the Ceph Cluster
 

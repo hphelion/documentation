@@ -1,7 +1,7 @@
  ---
 layout: default
 title: "HP Helion OpenStack&#174; Ceph Integration"
-permalink: /helion/openstack/services/ceph/overview/
+permalink: /helion/openstack/services/ceph/overview-1.1/
 product: commercial.ga
 
 ---

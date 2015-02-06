@@ -38,7 +38,7 @@ This page provides an overview of the hardware configuration and software requir
 * [Next Steps](#next-step)
 
 
-##Meet hardware configuration requirements{#hardware-req} 
+##Meet hardware configuration requirements {#hardware-req} 
 
 You must have the following hardware configuration:
 
@@ -360,7 +360,7 @@ HP recommends configuring two or more tagged VLANs
 Recommend that you allow for 25% expansion.
 
 
-###Next Steps {#next-step}
+##Next Steps {#next-step}
 
 [HP Helion OpenStack&reg; High Availability for Cloud Networking](/helion/openstack/services/neutron/pre/installation/high-availability/)
 

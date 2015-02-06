@@ -36,8 +36,8 @@ The following diagram illustrates the communication flow between Helion-Ceph-DMZ
 This illustration relies on the following assumptions:
 
 1.	Dual-homed Proxy server in the DMZ. The public facing address for Internet clients and a private address to connect to gateway nodes.
-2.	Gateway nodes are in a private network – 192.0.2.x
-3.	The client node is in a public network – 192.168.122.x
+2.	Gateway nodes are in a private network - 192.0.2.x
+3.	The client node is in a public network - 192.168.122.x
 
 ###Install General Packages
 

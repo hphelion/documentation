@@ -44,7 +44,7 @@ The following are typical post-installation configuration options.
 * [Configuring Your Network Securely](/helion/openstack/services/neutron/post/installation/configure-network-securely/)
 * [Configure DNSaaS]( /helion/openstack/services/neutron/post/installation/configure-dnsaas/)
 * [Backing up and restoring your Helion OpenStack configuration]( /helion/openstack/backup.restore/)
-* [Updating Helion]()
+* [Neutron Integration](/helion/openstack/services/neutron/post/installation/neutron-integration/)
 
 ##Configuring plug-ins {#configure-plug-ins}
 

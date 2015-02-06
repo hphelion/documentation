@@ -456,6 +456,14 @@ The Service Network (SVC) is created by the Network Operation service.  SVC prov
 
 Refer to the ***OpenStack Administrator Guide***, Networking, Authentication and authorization for information on configuring the authentication and authorization protocol for your network.
 
+
+
+##Next Step
+
+* (Optional) [Configure DNSaaS]( /helion/openstack/services/neutron/post/installation/configure-dnsaas/)
+* [Backing up and restoring your Helion OpenStack configuration]( /helion/openstack/backup.restore/)
+* [Neutron Integration](/helion/openstack/services/neutron/post/installation/neutron-integration/)
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ---

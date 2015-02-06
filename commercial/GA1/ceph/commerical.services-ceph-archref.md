@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Ceph Architecture Reference"
-permalink: /helion/openstack/services/object/ceph/archref/
+permalink: /helion/openstack/services/object/ceph/archref-1.1/
 product: commercial.ga
 
 ---

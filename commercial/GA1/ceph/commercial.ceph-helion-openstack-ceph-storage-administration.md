@@ -328,7 +328,7 @@ The command is usually (though not always) of the form:
 
 		ceph auth add {osd} {--in-file|-i} {path-to-osd-keyring}
 
-* To list the cluster’s keys and their capabilities, enter:
+* To list the cluster's keys and their capabilities, enter:
 
 		ceph auth list
 

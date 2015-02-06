@@ -157,18 +157,18 @@ With the above overcloud HA set up, loss of a controller node is handled as foll
 
 Assume that the Controller0, which is currently in control of the VIP, is lost, as shown in the diagram below:
 
-<a href="javascript:window.open('/content/documentation/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Node Failure- Fig 1(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/ha-nodefailure-1.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Node Failure- (opens in a new window)</a>
 
 
 When this occurs, keepalived immediately moves the VIP on to the Controller1 and can now receive API requests, which is load-balanced by HA proxy, as stated earlier. 
 
 **Note:** Although MySQL and RabbitMQ clusters have lost a node, they still continue to be operational:
 
-<a href="javascript:window.open('/content/documentation/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Node Failure- Fig 2(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/ha-nodefailure-2.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Node Failure- (opens in a new window)</a>
 
 Finally, when Controller0 comes back online, keepalived and HA proxy will resume in standby/slave mode and be ready to take over, should there be a failure of Controller1. The Controller0 rejoins the MySQL and RabbitMQ clusters as shown in the figure below:
 
-<a href="javascript:window.open('/content/documentation/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Node Failure- Fig 3(opens in a new window)</a>
+<a href="javascript:window.open('/content/documentation/media/ha-nodefailure-3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Node Failure- (opens in a new window)</a>
 
 
 ####Handling Network Partitions {#handling-network-partition}
@@ -409,9 +409,16 @@ In US 1 855 61CLOUD
 
 Worldwide +1 678 745 9010
 
+##Next Steps {#next-step}
+
+[Post Installation Tasks]( /helion/openstack/services/neutron/post/installation/)
+
+
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 
 ----
