@@ -5,7 +5,7 @@ permalink: /helion/devplatform/install/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 # HP Helion Development Platform: Commercial Installation and Configuration 
 
