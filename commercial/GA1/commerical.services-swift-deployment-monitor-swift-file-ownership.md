@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitor File Ownership 
+# HP Helion OpenStack&#174; 1.1: Monitor File Ownership 
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  correct ownership of ring files stored at `/etc/swift`.
 

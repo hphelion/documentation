@@ -26,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitoring the Drive Audit
+# HP Helion OpenStack&#174; 1.1 : Monitoring the Drive Audit
 
  Drive audit runs swift-drive-audit which finds an errors in `kern.log`. Then it reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted so as to allow for the disk to self-heal, if possible.
 

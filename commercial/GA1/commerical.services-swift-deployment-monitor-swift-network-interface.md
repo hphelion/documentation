@@ -26,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitor the Speed of Network Interface Card
+# HP Helion OpenStack&#174; 1.1: Monitor the Speed of Network Interface Card
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the speed of  Network Interface Card (NIC) of the Swift storage node(s).
 
