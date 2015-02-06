@@ -37,8 +37,6 @@ The HP Helion OpenStack installation follows the standard [TripleO deployment mo
 
 For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/technical-overview/#install-configure) in the Technical Overview.
 
-## The Installation Process
-
 HP Helion OpenStack is designed to deliver an open source OpenStack solution at the modest scale. A baremetal multi-node deployment consists of a minimum of 8 baremetal servers, to which you can add up to 100 Compute nodes:
 
 * 1 seed cloud host (installer system)
@@ -49,7 +47,9 @@ HP Helion OpenStack is designed to deliver an open source OpenStack solution at 
 
 After the installation, you can add additional block storage nodes (not required if 3Par is being used for block storage) and configure your network securely.
 
-The high-level process for installing HP Helion OpenStack involves the following:
+## The Installation Process
+
+This section introduces the overall process you will follow to install HP Helion OpenStack. Information or links to information will be provided at the time it is needed.
 
 **Before You Start**
 
