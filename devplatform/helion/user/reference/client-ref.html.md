@@ -14,11 +14,13 @@ Many of the informational commands take a **--json** option if you wish to gener
 Note that Administrative user privileges are required for some commands.
 
 ###[Getting Started](/als/v1/user/reference/client-ref/gettingstarted)
-[helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login/)
 
-[helion logout](/als/v1/user/reference/client-ref/gettingstarted/#command-logout/)
+- [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login/): Logs in to the current or specified target with the named user.
+- [helion logout](/als/v1/user/reference/client-ref/gettingstarted/#command-logout): Logs the current user out of the current, specified, or all targets.
 
-[helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target/)
+[helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target): Set the target API endpoint for the client or report the current target.
+
+[helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target/): Set the target API endpoint for the client or report the current target.
 
 ###[Applications](/als/v1/user/reference/client-ref/applications)
 	- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
