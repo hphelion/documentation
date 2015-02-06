@@ -2,6 +2,7 @@
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/servicemanagement/
+title: "Application Lifecycle Service Command Line Client Reference: Service Management"
 product: devplatform
 
 ---

@@ -3,16 +3,16 @@ layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/applications/
 product: devplatform
+title: "Application Lifecycle Service Command Line Client Reference: Applications"
 
 ---
 <!--UNDER REVISION-->
 
-# HP Helion Development Platform: ALS Command Reference: Information
+# HP Helion Development Platform: ALS Command Reference: Applications
 
-- [Applications](/als/v1/user/reference/client-ref/applications)
-	- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
-	- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
-	- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
+- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
+- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
+- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
 
 ## Applications  {#applications}
 

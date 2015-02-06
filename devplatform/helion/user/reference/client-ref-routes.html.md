@@ -2,6 +2,7 @@
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/routes/
+title: "Application Lifecycle Service Command Line Client Reference: Routes"
 product: devplatform
 
 ---
