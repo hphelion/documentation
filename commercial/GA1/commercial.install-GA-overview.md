@@ -31,7 +31,7 @@ The HP Helion OpenStack installation follows the standard [TripleO deployment mo
 
 * **Overcloud**: The overcloud is the end-user OpenStack cloud. In a typical HP Helion OpenStack deployment, the overcloud comprises several baremetal servers.
 
-For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/technical-overview/#install-configure/) in the Technical Overview.
+For more details on the seed, an undercloud and an overcloud, see the [Installation Planning section](/helion/openstack/technical-overview/#install-configure) in the Technical Overview.
 
 ## The Installation Process
 
