@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Configuring Fiber Channel Zone Manager"
-permalink: /helion/openstack/services/volume/fibre/
+title: "HP Helion OpenStack&#174; Configuring Fibre Channel Zone Manager"
+permalink: /helion/openstack/services/volume/Fibre/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -150,7 +150,7 @@ Table 1.39. Description of zoning configuration options Configuration option = D
 [DEFAULT]
 zoning_mode = none 	(StrOpt) FC Zoning mode configured
 [fc-zone-manager]
-fc_fabric_names = None 	(StrOpt) Comma separated list of fibre channel fabric names. This list of names is used to retrieve other SAN credentials for connecting to each SAN fabric
+fc_fabric_names = None 	(StrOpt) Comma separated list of Fibre Channel fabric names. This list of names is used to retrieve other SAN credentials for connecting to each SAN fabric
 zoning_policy = initiator-target 	(StrOpt) Zoning policy configured by user
 
 To use different Fibre Channel Zone Drivers, use the parameters described in this section.

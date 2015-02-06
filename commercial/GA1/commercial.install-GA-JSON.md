@@ -44,6 +44,9 @@ Edit the JSON file based on the applicable scenario:
 
 The following section describes the environmental variables that affect your installation.
 
+`cloud_type` - Use this variable to specify whether the HP Helion OpenStack will be installed with KVM or ESX hypervisor support. 
+
+**Note:** If set to `ESX`, the `compute_scale` variable and DVR variables are not required.
 
 `bridge_interface` - Use this variable to specify the interface on the seed cloud host to use as the bridge interface, for example `em2` or `eth2`. This interface connects to the untagged management network and will be used to PXE boot undercloud and overcloud servers:
 
