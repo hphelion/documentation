@@ -25,9 +25,9 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Cinder (Volume) - Auto-zoning using Brocade FC Zone Manager 
+# HP Helion OpenStack&reg; 1.1 Cinder (Volume) - Auto-zoning using Brocade FC Zone Manager 
 
-Fibre Channel (FC) Zone Management automates the zone lifecycle management. It is a new functionality available in Cinder - Icehouse. <!--Zoning groups host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are member of a same zone.--->Zoning groups host and storage nodes so that nodes can communicate with each other if they are the member of the same zone. 
+Fibre Channel (FC) Zone Management automates the zone lifecycle management. It is a new functionality available in Cinder - Icehouse. <!--Zoning groups host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are member of a same zone.--->Zoning groups host and storage nodes so that nodes can communicate with each other, if they are the member of the same zone. 
 
 FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone Manager interacts with the (appropriate vendor**?** specific Zone driver based on the properties specified in the `kvm-default.json` file. Brocade Zone Driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
 
@@ -82,79 +82,79 @@ Perform the following steps to configure Brocade Zone Manager.
 	
 	
 		{
-		  "cloud_type": "KVM",
-		  "compute_scale": 1,
-		  "vsa_scale": 0,
-		  "vsa_ao_scale": 0,
-		  "so_swift_storage_scale": 0,
-		  "so_swift_proxy_scale": 0,
-		  "bridge_interface": "eth0",
-		  "ntp": {
-		    "overcloud_server": "16.110.135.123",
-		    "undercloud_server": "16.110.135.123"
-		  },
+		  "cloud_type": "KVM",
+		  "compute_scale": 1,
+		  "vsa_scale": 0,
+		  "vsa_ao_scale": 0,
+	      "so_swift_storage_scale": 0,
+		  "so_swift_proxy_scale": 0,
+		  "bridge_interface": "eth0",
+	      "ntp": {
+	        "overcloud_server": "16.110.135.123",
+	        "undercloud_server": "16.110.135.123"
+	      },
 		 
 		  "3par": {
-		    "DEFAULT": {
-		      "enabled_backends": [
-		        "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
-		        "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
-		      ]
-		    },
-		      "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
-		      "san_password": "3pardata",
-		      "hp3par_username": "3paradm",
-		      "volume_backend_name": "3pariscsi",
-		      "san_login": "3paradm",
-		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
-		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
-		      "hp3par_password": "3pardata",
-		      "hp3par_cpg": "3par_iscsi",
-		      "hp3par_iscsi_chap_enabled": "true",
-		      "san_ip": "15.214.241.21",
-		      "iscsi_ip_address": "10.1.0.200"
-		    },
+		    "DEFAULT": {
+		     "enabled_backends": [
+		       "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
+		        "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
+		      ]
+		   },
+		     "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
+		      "san_password": "3pardata",
+		      "hp3par_username": "3paradm",
+		      "volume_backend_name": "3pariscsi",
+		      "san_login": "3paradm",
+		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+		      "hp3par_password": "3pardata",
+		      "hp3par_cpg": "3par_iscsi",
+		      "hp3par_iscsi_chap_enabled": "true",
+		      "san_ip": "15.214.241.21",
+		      "iscsi_ip_address": "10.1.0.200"
+		    },
+
+	         "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
+	           "san_password": "3pardata",
+               "hp3par_username": "3paradm",
+               "volume_backend_name": "3par_FC",
+               "san_login": "3paradm",
+               "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+               "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
+               "hp3par_password": "3pardata",
+               "hp3par_cpg": "3par_FC",
+               "hp3par_iscsi_chap_enabled": "true",
+               "san_ip": "15.214.41.21",
+               "zoning_mode": "fabric"
+	       },
 		 
-		    "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
-		      "san_password": "3pardata",
-		      "hp3par_username": "3paradm",
-		      "volume_backend_name": "3par_FC",
-		      "san_login": "3paradm",
-		      "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
-		      "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
-		      "hp3par_password": "3pardata",
-		      "hp3par_cpg": "3par_FC",
-		      "hp3par_iscsi_chap_enabled": "true",
-		      "san_ip": "15.214.41.21",
-		      "zoning_mode": "fabric"
-		    },
+            "fc-zone-manager": {
+		      "brcd_sb_connector": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI",
+              "fc_fabric_names": "BRCD_FAB_A,BRCD_FAB_B",
+              "zone_name_prefix": "helion",
+              "fc_san_lookup_service": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService",
+              "zone_driver": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver",
+              "zoning_policy": "initiator-target"
+	     },
 		 
-		    "fc-zone-manager": {
-		      "brcd_sb_connector": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI",
-		      "fc_fabric_names": "BRCD_FAB_A,BRCD_FAB_B",
-		      "zone_name_prefix": "helion",
-		      "fc_san_lookup_service": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService",
-		      "zone_driver": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver",
-		      "zoning_policy": "initiator-target"
-		    },
-		 
-		    "BRCD_FAB_A": {
-		      "fc_fabric_address": "15.214.242.160",
-		      "fc_fabric_user": "admin",
-		      "fc_fabric_password": "admblabla",
-		      "zoning_policy": "initiator-target",
-		      "zone_activate": "true"
-		    },
-		 
-		    "BRCD_FAB_B": {
-		      "fc_fabric_address": "15.214.242.161",
-		      "fc_fabric_user": "admin",
-		      "fc_fabric_password": "admblabla",
-		      "zoning_policy": "initiator-target",
-		      "zone_activate": "true"
-		    }
-		  }
-		}
+		    "BRCD_FAB_A": {
+		      "fc_fabric_address": "15.214.242.160",
+		      "fc_fabric_user": "admin",
+		      "fc_fabric_password": "admblabla",
+		      "zoning_policy": "initiator-target",
+		      "zone_activate": "true"
+		    },
+	
+		    "BRCD_FAB_B": {
+		      "fc_fabric_address": "15.214.242.161",
+		      "fc_fabric_user": "admin",
+		      "fc_fabric_password": "admblabla",
+		      "zoning_policy": "initiator-target",
+		      "zone_activate": "true"
+           }
+         }
+      }
 
 7. Ensure the JSON file format is intact.
 
