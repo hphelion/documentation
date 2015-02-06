@@ -629,7 +629,17 @@ Following are the relevant tuning parameters:
 
 ##Setting up additional Monitor Nodes {#setting-up-additional-nodes}
 
-<<**[[TBD**The content is not available>>
+Ceph monitors are light-weight processes that maintains a master copy of the cluster map. For production clusters, we recommend at least 3 monitors and always advisable to run with odd number of monitors. And odd-number of monitors has a higher resiliency to failures than the even number monitors.
+
+On a 2 monitor deployment, no failures can be tolerated to maintain a quirum but with 3 monitors, one failure  can be tolerated and with 5 monitors, two failures can be tolerated. Since, monitors are light-weight, it is possible to run on same host but it is recommended to run them on separate hosts because fsync issues with kernel may impair performance. Deploy your hardware and install all the required software. Follow the similar steps as how other Ceph cluster nodes are deployed.
+
+For more details refer to [http://docs.ceph.com/docs/master/rados/operations/add-or-rm-mons/](http://docs.ceph.com/docs/master/rados/operations/add-or-rm-mons/)
+
+
+###Adding a monitor (manual)
+
+The following steps create a `ceph-mon` data directory, retrieves the monitor keyring and monmap, and adds a `ceph-mon` daemon to your cluster. You can add more monitors by repeating these steps to achieve a quorum.
+
 
 
 
