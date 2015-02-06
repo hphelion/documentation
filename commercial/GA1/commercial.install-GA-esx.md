@@ -28,20 +28,20 @@ HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware v
 
 The installation and configuration process for ESX consists of the following general steps:
 
-* [Preparing for installation](#prepare)
-	* [Verify Prerequisites](#pre)
-	* [Review the ESX deployment architecture](#deploy-arch)
-	* [Edit the JSON environment variables file](#envvars)
-	* [Prepare baremetal.csv file](#csv)
-	* [Set DNS servers](#name-resolution)
-	* [Preparing seed cloud host to run seed VM](#prepseed)
-* [Download and extracting the installation packages](#getinstall)
-* [Installing HP Helion OpenStack](#install)
-   * [Configure proxy information](#proxy)
-   * [Install the seed VM and building your cloud](#startseed)
-* [Verifying the installation](#verifying-your-installation)
-* [Create projects for LDAP users](#ldap)
-* [Next steps](#next-steps) 
+* Preparing for installation
+	* Verify Prerequisites
+	* Review the ESX deployment architecture
+	* Edit the JSON environment variables file
+	* Prepare baremetal.csv file
+	* Set DNS servers
+	* Preparing seed cloud host to run seed VM
+* Download and extracting the installation packages
+* Installing HP Helion OpenStack
+   * Configure proxy information
+   * Install the seed VM and building your cloud
+* Verifying the installation
+* Create projects for LDAP users
+* Next steps
 
 ## Preparing for installation {#prepare}
 
@@ -49,11 +49,7 @@ Before starting the installation, review the following sections.
 
 ### Verify Prerequisites {#pre}
 
-To ensure a successful installation, please read through the following topics before you start.
-
-* Review the [support matrix](/helion/openstack/support-matrix/) for information on the supported hardware and software.
-* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
+To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/install/prereqs/) before you start.
 
 ### Review the ESX deployment architecture {#deploy-arch}
 

@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/kvm/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -30,30 +30,30 @@ HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hy
 
 The installation and configuration process for KVM consists of the following general steps: 
 
-* [Verify Prerequisites](#pre)
-	* [Review the KVM deployment architecture](#deploy-arch)
-	* [KVM deployment architecture](#deploy-arch)
-	* [Edit the JSON environment variables file](#envvars)
-	* [Prepare baremetal.csv file](#csv)
-	* [Set DNS servers](#name-resolution)
-	* [Preparing seed cloud host to create the seed VM](#prepseed)
-* [Downloading and extracting the installation packages](#getinstall)
-* [Installing HP Helion OpenStack](#install)
-	* [Configure proxy information](#proxy)
-	* [Unpack the installation file](#unpackinstall)
-	* [Install the seed VM and building your cloud](#startseed)
-* [Verifying your installation](#verifying-your-installation)
-* [Create projects for LDAP users](#ldap)
-* [Next steps](#next-steps)
+* Preparing for installation](#prepare)
+	* Verify Prerequisites
+	* Review the KVM deployment architecture
+	* KVM deployment architecture
+	* Edit the JSON environment variables file
+	* Prepare baremetal.csv file
+	* Set DNS servers
+	* Preparing seed cloud host to create the seed VM
+* Downloading and extracting the installation packages
+* Installing HP Helion OpenStack
+	* Configure proxy information
+	* Unpack the installation file
+	* Install the seed VM and building your cloud
+* Verifying your installation
+* Create projects for LDAP users
+* Next steps
 
-## Verify Prerequisites {#pre}
+## Preparing for installation {#prepare}
 
-To ensure successful installation, please read through the following topics before you start.
+Before starting the installation, review the following sections.
 
-* Review the [support matrix](/helion/openstack/support-matrix/) for information on the supported hardware and software.
-* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
+### Verify Prerequisites {#pre}
 
+To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/install/prereqs/) before you start.
 
 ### Review the KVM deployment architecture {#deploy-arch}
 

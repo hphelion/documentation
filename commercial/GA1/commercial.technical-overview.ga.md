@@ -331,8 +331,8 @@ The logical networks listed in the following table are implemented as VLANs on t
     <td>eth0</td>
   </tr>
 </td>  <tr style="background-color: white; color: black;">
-    <td><b>Fiber Channel</b></td>
-    <td> Fiber Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
+    <td><b>Fibre Channel</b></td>
+    <td> Fibre Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
     <td> </td>
     <td> </td>
 <tr style="background-color: white; color: black;">
@@ -576,11 +576,9 @@ Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
-## Next Steps {#next}
+## Next Step {#next}
 
-Review the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
-
-To prepare your environment for the installation, see [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/install/prereqs/).
+Prepare your environment for the installation. See [HP Helion OpenStack&#174; Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
