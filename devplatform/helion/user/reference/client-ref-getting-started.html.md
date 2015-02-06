@@ -9,18 +9,19 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Getting Started
 
-- [helion login](#command-login)
-- [helion logout](#command-logout)
-- [helion target](#command-target)
+- [helion login](#command-login) Logs in to the current or specified target with the named user.
+- [helion logout](#command-logout) Logs the current user out of the current, specified, or all targets.
+- [helion target](#command-target) Set the target API endpoint for the client or report the current target.
 
 ## Syntax
 
-	helion [options] command [arguments] [command-options]
+<pre>helion [options] command [arguments] [command-options]</pre>
+
 For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
 
 <hr>
 
-## helion login <email> {#command-login}
+## helion login <*email*> {#command-login}
 
 Logs in to the current or specified target with the named user.
 
@@ -60,8 +61,8 @@ Logs in to the current or specified target with the named user.
 </table>
 
 
-###helion logout *\<target\>* {#command-logout}
-Logs out of the current, specified, or all targets.
+###helion logout <*target*> {#command-logout}
+Logs the current user out of the current, specified, or all targets.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -76,30 +77,30 @@ Logs out of the current, specified, or all targets.
 </tr>
 </table>
 
-### helion target *\<url\>* {#command-target}
+### helion target <*url*> {#command-target}
 Set the target API endpoint for the client or report the current target.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
-    <tr>
-    <td>--allow-http</td>
-    <td>Required to prevent the client from rejecting http URLs.</td>
-    </tr>
-    <tr>
-    <td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>
 <tr>
-    <td>--organization, -o</td>
-    <td>The organization to set as current for this target.</td>
-    </tr><tr>
-    <td>--space, -s</td>
-    <td>The space to set as current for this target.</td>
-    </tr>
-    <tr><td>--verbose</td>
-    <td>More verbose operation.</td>
-    </tr>
+<td>--allow-http</td>
+<td>Required to prevent the client from rejecting http URLs.</td>
+</tr>
+<tr>
+<td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>
+<tr>
+<td>--organization, -o</td>
+<td>The organization to set as current for this target.</td>
+</tr><tr>
+<td>--space, -s</td>
+<td>The space to set as current for this target.</td>
+</tr>
+<tr><td>--verbose</td>
+<td>More verbose operation.</td>
+</tr>
 </table>
 
