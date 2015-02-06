@@ -13,11 +13,14 @@ Many of the informational commands take a **--json** option if you wish to gener
 
 Note that Administrative user privileges are required for some commands.
 
-- [Getting Started](/als/v1/user/reference/client-ref/gettingstarted)
-	- [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login/)
-	- [helion logout](/als/v1/user/reference/client-ref/gettingstarted/#command-logout/)
-	- [helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target/)
-- [Applications](/als/v1/user/reference/client-ref/applications)
+###[Getting Started](/als/v1/user/reference/client-ref/gettingstarted)
+[helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login/)
+
+[helion logout](/als/v1/user/reference/client-ref/gettingstarted/#command-logout/)
+
+[helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target/)
+
+###[Applications](/als/v1/user/reference/client-ref/applications)
 	- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
 	- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
 	- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
