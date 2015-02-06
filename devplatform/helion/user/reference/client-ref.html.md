@@ -21,19 +21,19 @@ Note that Administrative user privileges are required for some commands.
 - [helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target): Set the target API endpoint for the client or report the current target.
 
 ###[Administration](/als/v1/user/reference/client-ref/administration)
-- [helion admin grant](/als/v1/user/reference/client-ref/administration/#command-admin-grant)
-- [helion admin list](/als/v1/user/reference/client-ref/administration/#command-admin-list)
-- [helion admin report](/als/v1/user/reference/client-ref/administration/#command-admin-report)
-- [helion admin revoke](/als/v1/user/reference/client-ref/administration/#command-admin-revoke)
-- [helion info](/als/v1/user/reference/client-ref/administration/#command-info)
-- [helion show-token](/als/v1/user/reference/client-ref/administration/#command-show-token)
-- [helion stacks](/als/v1/user/reference/client-ref/administration/#command-stacks)
-- [helion targets](/als/v1/user/reference/client-ref/administration/#command-targets)
-- [helion tokens](/als/v1/user/reference/client-ref/administration/#command-tokens)
-- [helion usage](/als/v1/user/reference/client-ref/administration/#command-usage)
-- [helion user](/als/v1/user/reference/client-ref/administration/#command-user)
-- [helion user-info](/als/v1/user/reference/client-ref/administration/#command-user-info)
-- [helion version](/als/v1/user/reference/client-ref/administration/#command-version)
+- [helion admin grant](/als/v1/user/reference/client-ref/administration/#command-admin-grant): Grant the named user administrator privileges for the current or specified target.
+- [helion admin list](/als/v1/user/reference/client-ref/administration/#command-admin-list): Show a list of the administrators for the current or specified target.
+- [helion admin patch](/als/v1/user/reference/client-ref/administration/#command-admin-patch): Apply a patch to the current or specified target.
+- [helion admin report](/als/v1/user/reference/client-ref/administration/#command-admin-report): Retrieve a report containing the logs of the current or specified target.
+- [helion admin revoke](/als/v1/user/reference/client-ref/administration/#command-admin-revoke): Revoke administrator privileges for the named user at the current or specified target.
+- [helion info](/als/v1/user/reference/client-ref/administration/#command-info): Show the basic system and account information
+- [helion show-token](/als/v1/user/reference/client-ref/administration/#command-show-token): Print the current target's authorization token.
+- [helion stacks](/als/v1/user/reference/client-ref/administration/#command-stacks): List the supported stacks of the target.
+- [helion targets](/als/v1/user/reference/client-ref/administration/#command-targets), [helion tokens](/als/v1/user/reference/client-ref/administration/#command-tokens): List the available targets and their authorization tokens, if any.
+- [helion usage](/als/v1/user/reference/client-ref/administration/#command-usage): Show the current memory allocation and usage of the specified or current space.
+- [helion user](/als/v1/user/reference/client-ref/administration/#command-user): Show the name of the current user in the current or specified target.
+- [helion user-info](/als/v1/user/reference/client-ref/administration/#command-user-info): Shows the information of a user in the current or specified target.
+- [helion version](/als/v1/user/reference/client-ref/administration/#command-version): Print the version number of the client.
 
 ###[Applications](/als/v1/user/reference/client-ref/applications)
 - [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
@@ -52,7 +52,7 @@ Note that Administrative user privileges are required for some commands.
 - [helion delete-service-broker](/als/v1/user/reference/client-ref/brokers/#command-delete-service-broker)
 - [helion remove-service-broker](/als/v1/user/reference/client-ref/brokers/#command-remove-service-broker)
 - [helion service-brokers](/als/v1/user/reference/client-ref/brokers/#command-service-brokers)
-- [helion update-service-broker]/als/v1/user/reference/client-ref/brokers/(#command-update-service-broker)
+- [helion update-service-broker](/als/v1/user/reference/client-ref/brokers/#command-update-service-broker)
 
 ###[Buildpacks](/als/v1/user/reference/client-ref/buildpacks) 
 - [helion buildpacks](/als/v1/user/reference/client-ref/buildpacks/#command-buildpacks)
@@ -101,29 +101,29 @@ Note that Administrative user privileges are required for some commands.
 - [helion tail](/als/v1/user/reference/client-ref/information/#command-tail)
 
 ### [Management](/als/v1/user/reference/client-ref/management)
-- [helion create-app](/als/v1/user/reference/client-ref/management/#command-create-app)
-- [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell)
-- [helion delete](/als/v1/user/reference/client-ref/management/#command-delete)
-- [helion drain add](/als/v1/user/reference/client-ref/management/#command-drain-add)
-- [helion drain delete](/als/v1/user/reference/client-ref/management/#command-drain-delete )
-- [helion env-add](/als/v1/user/reference/client-ref/management/#command-env-add)
-- [helion env-del](/als/v1/user/reference/client-ref/management/#command-env-del)
-- [helion map ](/als/v1/user/reference/client-ref/management/#command-map)
-- [helion open](/als/v1/user/reference/client-ref/management/#command-open)
-- [helion push](/als/v1/user/reference/client-ref/management/#command-push)
-- [helion rename](/als/v1/user/reference/client-ref/management/#command-rename)
-- [helion restart](/als/v1/user/reference/client-ref/management/#command-restart)
-- [helion rollback](/als/v1/user/reference/client-ref/management/#command-rollback)
-- [helion run](/als/v1/user/reference/client-ref/management/#command-run)
-- [helion scale](/als/v1/user/reference/client-ref/management/#command-scale)
-- [helion scp](/als/v1/user/reference/client-ref/management/#command-scp)
-- [helion set-env](/als/v1/user/reference/client-ref/management/#command-set-env)
-- [helion ssh](/als/v1/user/reference/client-ref/management/#command-ssh)
-- [helion start](/als/v1/user/reference/client-ref/management/#command-start)
-- [helion stop](/als/v1/user/reference/client-ref/management/#command-stop)
-- [helion switch-version](/als/v1/user/reference/client-ref/management/#command-switch-version)
-- [helion unmap](/als/v1/user/reference/client-ref/management/#command-unmap)
-- [helion unset-env](/als/v1/user/reference/client-ref/management/#command-unset-env)
+- [helion create-app](/als/v1/user/reference/client-ref/management/#command-create-app): Create an empty application with the specified configuration.
+- [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell): Invoke interactive db shell for a bound service.
+- [helion delete](/als/v1/user/reference/client-ref/management/#command-delete): Delete the specified application(s).
+- [helion drain add](/als/v1/user/reference/client-ref/management/#command-drain-add): Attach a new named drain to the application.
+- [helion drain delete](/als/v1/user/reference/client-ref/management/#command-drain-delete): Remove the named drain from the application.
+- [helion env-add](/als/v1/user/reference/client-ref/management/#command-env-add): Add the specified environment variable to the named application.
+- [helion env-del](/als/v1/user/reference/client-ref/management/#command-env-del): Remove the specified environment variable from the named application.
+- [helion map ](/als/v1/user/reference/client-ref/management/#command-map): Make the application accessible through the specified URL (a route consisting of host and domain).
+- [helion open](/als/v1/user/reference/client-ref/management/#command-open): Open the url of the specified application in the default web browser.
+- [helion push](/als/v1/user/reference/client-ref/management/#command-push): Configure, create, push, map, and start a new application
+- [helion rename](/als/v1/user/reference/client-ref/management/#command-rename): Rename the specified application.
+- [helion restart](/als/v1/user/reference/client-ref/management/#command-restart): Stop and restart a deployed application.
+- [helion rollback](/als/v1/user/reference/client-ref/management/#command-rollback): Switch to a different version of the application.
+- [helion run](/als/v1/user/reference/client-ref/management/#command-run): Run a specified command on a running instance.
+- [helion scale](/als/v1/user/reference/client-ref/management/#command-scale): Update the number of instances, memory and/or disk reservation for a deployed application.
+- [helion scp](/als/v1/user/reference/client-ref/management/#command-scp): Copy source files and directories to the destination.
+- [helion set-env](/als/v1/user/reference/client-ref/management/#command-set-env): Add the specified environment variable to the named application.
+- [helion ssh](/als/v1/user/reference/client-ref/management/#command-ssh): SSH to a running instance (or target), or run a specific command.
+- [helion start](/als/v1/user/reference/client-ref/management/#command-start): Start a deployed application.
+- [helion stop](/als/v1/user/reference/client-ref/management/#command-stop): Stop a deployed application.
+- [helion switch-version](/als/v1/user/reference/client-ref/management/#command-switch-version): Switch to a different version of the application.
+- [helion unmap](/als/v1/user/reference/client-ref/management/#command-unmap): Unregister the application from a URL.
+- [helion unset-env](/als/v1/user/reference/client-ref/management/#command-unset-env): Remove the specified environment variable from the named application.
 
 ###[Miscellaneous](/als/v1/user/reference/client-ref/miscellaneous)
 - [helion admin](/als/v1/user/reference/client-ref/miscellaneous/#command-admin)
