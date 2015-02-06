@@ -24,8 +24,14 @@ product: devplatform
 - [helion tail](#command-tail) Monitor file for changes and stream the changes.
 
 <hr>
+## Syntax
 
-##helion crashes *\<application\>* {#command-crashes}
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+##helion crashes *<application\>* {#command-crashes}
 List recent application crashes.
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
