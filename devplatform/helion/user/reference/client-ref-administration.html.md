@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/administration
+permalink: /als/v1/user/reference/client-ref/administration/
 product: devplatform
 
 ---

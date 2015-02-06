@@ -15,18 +15,17 @@ Note that Administrative user privileges are required for some commands.
 
 ###[Getting Started](/als/v1/user/reference/client-ref/gettingstarted)
 
-- [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login/): Logs in to the current or specified target with the named user.
+- [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login): Logs in to the current or specified target with the named user.
 - [helion logout](/als/v1/user/reference/client-ref/gettingstarted/#command-logout): Logs the current user out of the current, specified, or all targets.
+- [helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target): Set the target API endpoint for the client or report the current target.
 
-[helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target): Set the target API endpoint for the client or report the current target.
-
-[helion target](/als/v1/user/reference/client-ref/gettingstarted/#command-target/): Set the target API endpoint for the client or report the current target.
 
 ###[Applications](/als/v1/user/reference/client-ref/applications)
-	- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
-	- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
-	- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
-- [Control](/als/v1/user/reference/client-ref/control)
+- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
+- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
+- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
+
+###[Control](/als/v1/user/reference/client-ref/control)
 	- [helion migrate](/als/v1/user/reference/client-ref/control/#command-migrate)
 	- [helion restage](/als/v1/user/reference/client-ref/control/#command-restage)
 - [Information](/als/v1/user/reference/client-ref/information)
