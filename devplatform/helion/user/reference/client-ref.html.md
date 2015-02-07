@@ -168,8 +168,8 @@ Note that Administrative user privileges are required for some commands.
 - [helion quotas](/als/v1/user/reference/client-ref/quotas/#command-quotas): List the available quota plans.
 
 ###[Routes](/als/v1/user/reference/client-ref/routes)
-- [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route)
-- [helion routes](/als/v1/user/reference/client-ref/routes/#command-routes)
+- [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route): Delete the named route.
+- [helion routes](/als/v1/user/reference/client-ref/routes/#command-routes): List all routes or routes available in the specified space. 
 
 ###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) (new in HP Helion OpenStack&reg;  Development Platform 1.1) 
 - [helion bind-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-bind-security-group): Bind the named security group to the current space, the specified space, or the running and staging phases. 

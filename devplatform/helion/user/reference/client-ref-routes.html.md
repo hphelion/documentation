@@ -10,8 +10,8 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Routes
 
-- [helion delete-route](#command-delete-route)
-- [helion routes](#command-routes)
+- [helion delete-route](#command-delete-route): Delete the named route.
+- [helion routes](#command-routes): List all routes or routes available in the specified space. 
 
 ##Syntax
 
@@ -20,90 +20,53 @@ For more information, use the **helion help**, **helion help [*command*]**, or *
 
 <hr>
 
-## helion delete-route *\<name\*###
+## helion delete-route <*name*> {#command-delete-route}
 Delete the named route.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The name of the space to use as context.
-    Defaults to the current space.
-    A current space is automatically set if there is none, either by
-    taking the one space the user has, or asking the user to choose
-    among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--all</td><td>Delete all routes which are not used by any application (--unused) across all domains. Cannot be used together with route names.</td></tr>
+<tr>
+<td>--organization</td>
+<td>The name of the organization to use as context. Defaults to the current organization. A current organization is automatically set if there is none, either by taking the one organization the user has, or asking the user to choose among the possibilities.
+Cannot be used together with --all.</td>
+</tr>    <tr><td>--space</td>
+<td>The name of the space to use as context. Defaults to the current space. A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--unused</td><td>Delete all routes which are not used by any application. Cannot be used together with route names.</td></tr>
 </table>
-###helion routes###
-List all available routes. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+##helion routes {#command-routes}
+List all available routes or all routes in the specified space.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--all</td><td>Query information about all domains. Cannot be used together with a space.</td></tr>
+<tr>
+<td>--organization</td>
+<td>The name of the organization to use as context. Defaults to the current organization. A current organization is automatically set if there is none, either by taking the one organization the user has, or asking the user to choose among the possibilities.
+Cannot be used together with --all.
+</td>
+</tr>    <tr><td>--space</td>
+<td>The name of the space to use as context. Defaults to the current space. A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--unused</td><td>Filter output to show only the routes which are not used by any application.</td></tr>
 </table>
