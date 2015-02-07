@@ -126,16 +126,17 @@ Note that Administrative user privileges are required for some commands.
 - [helion unset-env](/als/v1/user/reference/client-ref/management/#command-unset-env): Remove the specified environment variable from the named application.
 
 ###[Miscellaneous](/als/v1/user/reference/client-ref/miscellaneous)
-- [helion admin](/als/v1/user/reference/client-ref/miscellaneous/#command-admin)
-- [helion alias](/als/v1/user/reference/client-ref/miscellaneous/#command-alias)	
-- [helion aliases](/als/v1/user/reference/client-ref/miscellaneous/#command-aliases)
-- [colors](/als/v1/user/reference/client-ref/miscellaneous/#command-Administration-Colors)
-- [helion curl](/als/v1/user/reference/client-ref/miscellaneous/#command-curl)
-- [helion drain](/als/v1/user/reference/client-ref/miscellaneous/#command-drain)
-- [helion guid](/als/v1/user/reference/client-ref/miscellaneous/#command-guid)
-- [helion named-entities](/als/v1/user/reference/client-ref/miscellaneous/#command-named-entities )
-- [helion trace](/als/v1/user/reference/client-ref/miscellaneous/#command-trace )
-- [helion unalias](/als/v1/user/reference/client-ref/miscellaneous/#command-unalias)
+- [helion admin](/als/v1/user/reference/client-ref/miscellaneous/#command-admin): A set of administrative tasks.
+- [helion alias](/als/v1/user/reference/client-ref/miscellaneous/#command-alias): Create a shortcut for a command.	
+- [helion aliases](/als/v1/user/reference/client-ref/miscellaneous/#command-aliases): List the known aliases (shortcuts).
+- [helion color](/als/v1/user/reference/client-ref/miscellaneous/#command-color): Management of terminal colors.
+- [helion curl](/als/v1/user/reference/client-ref/miscellaneous/#command-curl): Run a raw REST request against the chosen target.
+- [helion drain](/als/v1/user/reference/client-ref/miscellaneous/#command-drain): Commands for the management of drains attached to applications.
+- [helion guid](/als/v1/user/reference/client-ref/miscellaneous/#command-guid): Map the specified name into a GUID given the type.
+- [helion help](/als/v1/user/reference/client-ref/miscellaneous/#command-help): Retrieve help for a command or command set.
+- [helion named-entities](/als/v1/user/reference/client-ref/miscellaneous/#command-named-entities): List the entity types usable for GUID.
+- [helion trace](/als/v1/user/reference/client-ref/miscellaneous/#command-trace): Print the saved REST trace for the last client command to stdout.
+- [helion unalias](/als/v1/user/reference/client-ref/miscellaneous/#command-unalias): Remove a shortcut by name.
 
 ###[Organizations](/als/v1/user/reference/client-ref/organizations)
 - [helion create-org](/als/v1/user/reference/client-ref/organizations/#command-create-org)
