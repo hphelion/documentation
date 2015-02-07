@@ -214,15 +214,15 @@ Note that Administrative user privileges are required for some commands.
 - [helion unlink-user-space](/als/v1/user/reference/client-ref/spaces/#command-unlink-user-space): Remove the specified user from the named space in various roles.
 - [helion update-space ](/als/v1/user/reference/client-ref/spaces/#command-update-space): Change one or more attributes of a space in a single call.
 
-###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas)
-- [helion create-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-create-space-quota)
-- [helion delete-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-delete-space-quota)
-- [helion rename-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-rename-space-quota)
-- [helion set-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-set-space-quota)
-- [helion space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-space-quota)
-- [helion space-quotas](/als/v1/user/reference/client-ref/spacequotas/#command-space-quotas )
-- [helion unset-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-unset-space-quota)
-- [helion update-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-update-space-quota)
+###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas) (new in HP Helion OpenStack&reg; 1.1)
+- [helion create-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-create-space-quota): Create a new space quota. 
+- [helion delete-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-delete-space-quota): Delete the named space quota. 
+- [helion rename-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-rename-space-quota): Rename the named space quota.
+- [helion set-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-set-space-quota): Assign the specified space quota to the current or specified space
+- [helion space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-space-quota): Show the details of the named space quota. 
+- [helion space-quotas](/als/v1/user/reference/client-ref/spacequotas/#command-space-quotas): List the space quotas owned by the current, specified, or all organizations.
+- [helion unset-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-unset-space-quota): Drop the space quota from the current or specified space.
+- [helion update-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-update-space-quota): Modify the named space quota.
 
 ###[User Management](/als/v1/user/reference/client-ref/usermanagement) 
 - [helion add-user](/als/v1/user/reference/client-ref/usermanagement/#command-add-user): Register a new user in the current or specified target. Requires admin privileges.

@@ -10,14 +10,14 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Space Quotas
 
-- [helion create-space-quota](#command-create-space-quota)
-- [helion delete-space-quota](#command-delete-space-quota)
-- [helion rename-space-quota](#command-rename-space-quota)
-- [helion set-space-quota](#command-set-space-quota)
-- [helion space-quota](#command-space-quota)
-- [helion space-quotas](#command-space-quotas )
-- [helion unset-space-quota](#command-unset-space-quota)
-- [helion update-space-quota](#command-update-space-quota)
+- [helion create-space-quota](#command-create-space-quota): Create a new space quota. 
+- [helion delete-space-quota](#command-delete-space-quota): Delete the named space quota. 
+- [helion rename-space-quota](#command-rename-space-quota): Rename the named space quota.
+- [helion set-space-quota](#command-set-space-quota): Assign the specified space quota to the current or specified space
+- [helion space-quota](#command-space-quota): Show the details of the named space quota. 
+- [helion space-quotas](#command-space-quotas): List the space quotas owned by the current, specified, or all organizations.
+- [helion unset-space-quota](#command-unset-space-quota): Drop the space quota from the current or specified space.
+- [helion update-space-quota](#command-update-space-quota): Modify the named space quota.
 
 ## Syntax
 
@@ -26,352 +26,204 @@ For more information, use the **helion help**, **helion help [*command*]**, or *
 
 <hr>
       
-.. _command-create-space-quota:
+## helion create-space-quota  *<name>* {#command-create-space-quota}  
+Create a new space quota. It will be owned by the current or specified organization. 
 
-      stackato create-space-quota  *<name>*       
-        Create a new space quota. It will be owned by the current or specified organization. This is a Stackato 3.4.2 command.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+   <tr><td>--instance-mem, -i</td>
+<td>Amount of memory application instances can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.
+Also accepts -1 and "unlimited" for unlimited memory.
+</td>
+   <tr><td>--mem, -m</td>
+<td>Amount of memory applications can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.</td>
+</tr><tr><td>--no-paid-services-allowed</td><td>Complementary alias of --paid-services-allowed.</td></tr><tr><td>--organization, -o</td><td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</td></tr>
+<td>--paid-services-allowed</td>
+<td>Applications can use non-free services.</td>
+</tr>    <tr><td>--routes, -r</td><td>Limit for the number of routes in the quota.</td></tr><tr><td>--services, -s</td>
+<td>Limit for the number of services in the quota.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
-        --instance-mem
-          
-		    Amount of memory application instances can use.
+##helion delete-space-quota  *<name>* {#command-delete-space-quota} 
+Delete the named space quota.
 
-		    Use the suffices 'M' and 'G' for the convenient specification
-		    of mega- and gigabytes. Without a unit-suffix mega-bytes are
-		    assumed. As the base-unit megabytes must specified as integers.
-		    Gigabytes can be specified as fractions.
-
-		    Also accepts -1 and "unlimited" for unlimited memory.
-		
-        --mem
-          
-		    Amount of memory applications can use.
-
-		    Use the suffices 'M' and 'G' for the convenient specification
-		    of mega- and gigabytes. Without a unit-suffix mega-bytes are
-		    assumed. As the base-unit megabytes must specified as integers.
-		    Gigabytes can be specified as fractions.
-
-		    Also accepts -1 and "unlimited" for unlimited memory.
-		
-        --no-paid-services-allowed
-          Complementary alias of --paid-services-allowed.
-        --organization
-          
-	    The name of the parent organization to use as context.
-
-	    Defaults to the current organization.
-
-	    A current organization is automatically set if there is none,
-	    either by taking the one organization the user belongs to, or
-	    asking the user to choose among the possibilities.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 	
-        --paid-services-allowed
-          
-		    Applications can use non-free services.
-		
-        --routes
-          
-		    Limit for the number of routes in the quota.
-		
-        --services
-          
-		    Limit for the number of services in the quota.
-		
-        --target
-          
-	    The once-off target to use for the current operation.
+
+
+## helion rename-space-quota  *<name>*  *<newname>* {#command-rename-space-quota}      
+Rename the named space quota. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        -i
-          Alias of --instance-mem.
-        -m
-          Alias of --mem.
-        -o
-          Alias of --organization.
-        -r
-          Alias of --routes.
-        -s
-          Alias of --services.
 
 
-.. _command-delete-space-quota:
+## helion set-space-quota  *<name>* {#command-set-space-quota}    
+Assign the specified space quota to the current or specified space. 
 
-      stackato delete-space-quota  *<name>*       
-        Delete the named space quota. This is a Stackato 3.4.2 command.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--organization, -o</td><td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</td></tr><tr><td>--space</td>
+<td>The name of the space to use as context.
+Defaults to the current space.
+A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.
+</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
+## helion space-quota  *<name>* {#command-space-quota}
+Show the details of the named space quota. If not specified it will be asked for interactively (menu). 
         
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr> 
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
+## helion space-quotas {#command-space-quotas}      
+List the space quotas owned by the current, specified, or all organizations.   
 
-.. _command-rename-space-quota:
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--all</td><td>Show all space quotas instead.</td></tr>
+<tr><td>--full</td><td>Show all information about the space-quota.</td></tr>
+<td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr> <tr><td>--organization, -o</td><td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+ 
+## helion unset-space-quota {#command-unset-space-quota}    
+Drop the space quota from the current or specified space.  
 
-      stackato rename-space-quota  *<name>*  *<newname>*       
-        Rename the named space quota. This is a Stackato 3.4.2 command.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--organization, -o</td><td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none, either by taking the one organization the user belongs to, or asking the user to choose among the possibilities.
+</td></tr>
+<tr><td>--space</td>
+<td>The name of the space to use as context.
+Defaults to the current space.
+A current space is automatically set if there is none, either by taking the one space the user has, or asking the user to choose among the possibilities.
+</td>
+</tr>  
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
+## helion update-space-quota  *<name>* {#command-update-space-quota}     
+Modify the named space quota. 
 
-
-.. _command-set-space-quota:
-
-      stackato set-space-quota  *<name>*       
-        Assign the specified space quota to the current or specified space. This is a Stackato 3.4.2 command.
-
-                --organization
-          
-	    The name of the parent organization to use as context.
-
-	    Defaults to the current organization.
-
-	    A current organization is automatically set if there is none,
-	    either by taking the one organization the user belongs to, or
-	    asking the user to choose among the possibilities.
-	
-        --space
-          
-	    The name of the space to use as context.
-
-	    Defaults to the current space.
-
-	    A current space is automatically set if there is none,
-	    either by taking the one space the user has, or
-	    asking the user to choose among the possibilities.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        -o
-          Alias of --organization.
-
-
-.. _command-space-quotas:
-
-      stackato space-quotas       
-        List the space quotas owned by the current or specified organization, or all. This is a Stackato 3.4.2 command.
-
-        
-
-          
-          
-          
-
-        --all
-          
-		    Show all space quotas instead
-		
-        --full
-          
-		    Show all information about the space-quota.
-		
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --organization
-          
-	    The name of the parent organization to use as context.
-
-	    Defaults to the current organization.
-
-	    A current organization is automatically set if there is none,
-	    either by taking the one organization the user belongs to, or
-	    asking the user to choose among the possibilities.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        -o
-          Alias of --organization.
-
-
-.. _command-space-quota:
-
-      stackato space-quota  *<name>*       
-        Show the details of the named space quota. If not specified it will be asked for interactively (menu). This is a Stackato 3.4.2 command.
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-unset-space-quota:
-
-      stackato unset-space-quota       
-        Drop the space quota from the current or specified space. This is a Stackato 3.4.2 command.
-        --organization
-          
-	    The name of the parent organization to use as context.
-
-	    Defaults to the current organization.
-
-	    A current organization is automatically set if there is none,
-	    either by taking the one organization the user belongs to, or
-	    asking the user to choose among the possibilities.
-	
-        --space
-          
-	    The name of the space to use as context.
-
-	    Defaults to the current space.
-
-	    A current space is automatically set if there is none,
-	    either by taking the one space the user has, or
-	    asking the user to choose among the possibilities.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        -o
-          Alias of --organization.
-
-
-.. _command-update-space-quota:
-
-      stackato update-space-quota  *<name>*       
-        Modify the named space quota. This is a Stackato 3.4.2 command.
-
-        
-
-          
-          
-
-        --instance-mem
-          
-		    Amount of memory application instances can use.
-
-		    Use the suffices 'M' and 'G' for the convenient specification
-		    of mega- and gigabytes. Without a unit-suffix mega-bytes are
-		    assumed. As the base-unit megabytes must specified as integers.
-		    Gigabytes can be specified as fractions.
-
-		    Also accepts -1 and "unlimited" for unlimited memory.
-		
-        --mem
-          
-		    Amount of memory applications can use.
-
-		    Use the suffices 'M' and 'G' for the convenient specification
-		    of mega- and gigabytes. Without a unit-suffix mega-bytes are
-		    assumed. As the base-unit megabytes must specified as integers.
-		    Gigabytes can be specified as fractions.
-
-		    Also accepts -1 and "unlimited" for unlimited memory.
-		
-        --no-paid-services-allowed
-          Complementary alias of --paid-services-allowed.
-        --paid-services-allowed
-          
-		    Applications can use non-free services.
-		
-        --routes
-          
-		    Limit for the number of routes in the quota.
-		
-        --services
-          
-		    Limit for the number of services in the quota.
-		
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        -i
-          Alias of --instance-mem.
-        -m
-          Alias of --mem.
-        -r
-          Alias of --routes.
-        -s
-          Alias of --services.
-
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+   <tr><td>--instance-mem, -i</td>
+<td>Amount of memory application instances can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.
+Also accepts -1 and "unlimited" for unlimited memory.
+</td>
+   <tr><td>--mem, -m</td>
+<td>Amount of memory applications can use. Use the suffices 'M' and 'G' for the convenient specification of mega- and gigabytes. Without a unit-suffix mega-bytes are assumed. As the base-unit megabytes must specified as integers. Gigabytes can be specified as fractions.</td>
+</tr><tr><td>--no-paid-services-allowed</td><td>Complementary alias of --paid-services-allowed.</td></tr>
+<td>--paid-services-allowed</td>
+<td>Applications can use non-free services.</td>
+</tr>    <tr><td>--routes, -r</td><td>Limit for the number of routes in the quota.</td></tr><tr><td>--services, -s</td>
+<td>Limit for the number of services in the quota.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
