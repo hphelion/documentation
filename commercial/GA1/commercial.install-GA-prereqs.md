@@ -18,11 +18,11 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; Technical Overview | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor &#9654;</a>  OR | <a href="/helion/openstack/install/overview/test/"> <a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/technical-overview/">&#9664; Technical Overview | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | 
+<p style="font-size: small;"><a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor &#9654;</a>  OR | 
+<p style="font-size: small;"><a href="/helion/openstack/install/overview/test/"> <a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
 
 
-<p style="font-size: small;">
-<p style="font-size: small;"></p>
 
 
 # HP Helion OpenStack&#174; Installation: Prerequisites
