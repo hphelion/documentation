@@ -224,12 +224,11 @@ Note that Administrative user privileges are required for some commands.
 - [helion update-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-update-space-quota)
 
 ###[User Management](/als/v1/user/reference/client-ref/usermanagement) 
-- [helion add-user](/als/v1/user/reference/client-ref/usermanagement/#command-add-user)
-- [helion delete-user](/als/v1/user/reference/client-ref/usermanagement/#command-delete-user)
-- [helion login-fields](/als/v1/user/reference/client-ref/usermanagement/#command-login-fields)
-- [helion passwd](/als/v1/user/reference/client-ref/usermanagement/#command-passwd)
-- [helion register](/als/v1/user/reference/client-ref/usermanagement/#command-register)
-- [helion token](/als/v1/user/reference/client-ref/usermanagement/#command-token)
-- [helion unregister](/als/v1/user/reference/client-ref/usermanagement/#command-unregister)
-- [helion users](/als/v1/user/reference/client-ref/usermanagement/#command-users)
-
+- [helion add-user](/als/v1/user/reference/client-ref/usermanagement/#command-add-user): Register a new user in the current or specified target. Requires admin privileges.
+- [helion delete-user](/als/v1/user/reference/client-ref/usermanagement/#command-delete-user):Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.
+- [helion login-fields](/als/v1/user/reference/client-ref/usermanagement/#command-login-fields): Show the names of the credential fields needed for a login. 
+- [helion passwd](/als/v1/user/reference/client-ref/usermanagement/#command-passwd): Change the password of the current user in the current or specified target.
+- [helion register](/als/v1/user/reference/client-ref/usermanagement/#command-register): Register a new user in the current or specified target. Requires admin privileges.
+- [helion token](/als/v1/user/reference/client-ref/usermanagement/#command-token): Interactively set authentication token.
+- [helion unregister](/als/v1/user/reference/client-ref/usermanagement/#command-unregister): Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.
+- [helion users](/als/v1/user/reference/client-ref/usermanagement/#command-users): Show the list of users known to the current or specified target.
