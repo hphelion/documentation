@@ -168,14 +168,14 @@ Note that Administrative user privileges are required for some commands.
 - [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route)
 - [helion routes](/als/v1/user/reference/client-ref/routes/#command-routes)
 
-###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) 
-- [helion bind-security-group](#command-bind-security-group)
-- [helion create-security-group](#command-create-security-group)
-- [helion delete-security-group](#command-delete-security-group)
-- [helion security-group](#command-security-group)
-- [helion security-groups](#command-security-groups)
-- [helion unbind-security-group](#command-unbind-security-group)
-- [helion update-security-group](#command-update-security-group)
+###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) (new in HP Helion OpenStack&reg; 1.1) 
+- [helion bind-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-bind-security-group): Bind the named security group to the current space, the specified space, or the running and staging phases. 
+- [helion create-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-create-security-group): Create a new security group.
+- [helion delete-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-delete-security-group): Delete the named security group.
+- [helion security-group](/als/v1/user/reference/client-ref/securitygroups/#command-security-group): Show the details of the named security group.
+- [helion security-groups](/als/v1/user/reference/client-ref/securitygroups/#command-security-groups): Show all known security groups or just those assigned to the running and staging phases.
+- [helion unbind-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-unbind-security-group): Drop the named security group from the current space, the specified space, or the running and staging phases.
+- [helion update-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-update-security-group): Modify the named security group.
 
 ###[Service Management](/als/v1/user/reference/client-ref/servicemanagement) 
 - [helion bind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-bind-service): Bind the named service to the specified application.
