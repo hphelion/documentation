@@ -36,9 +36,12 @@ Note that Administrative user privileges are required for some commands.
 - [helion version](/als/v1/user/reference/client-ref/administration/#command-version): Print the version number of the client.
 
 ###[Applications](/als/v1/user/reference/client-ref/applications)
-- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
-- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
-- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
+- [helion app](/als/v1/user/reference/client-ref/applications/#command-app): Show the information of the specified application.
+- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps): List the applications deployed to the target.
+- [helion list](/als/v1/user/reference/client-ref/applications/#command-list): List the applications deployed to the target.
+- [helion releases](/als/v1/user/reference/client-ref/applications/#command-releases): Show the list of versions for the specified application.
+- [helion versions](/als/v1/user/reference/client-ref/applications/#command-versions): Show the list of versions for the specified application.
+
 
 ###[Authentication Tokens](/als/v1/user/reference/client-ref/tokens)  
 - [helion create-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-create-service-auth-token): Create a new service authentication token.
