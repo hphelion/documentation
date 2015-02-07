@@ -10,7 +10,7 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Security Groups
 
-These commands are new in in HP Helion OpenStack&reg; 1.1.
+These commands are new in in HP Helion OpenStack&reg; Development Platform 1.1.
 
 - [helion bind-security-group](#command-bind-security-group): Bind the named security group to the current space, the specified space, or the running and staging phases. 
 - [helion create-security-group](#command-create-security-group): Create a new security group.

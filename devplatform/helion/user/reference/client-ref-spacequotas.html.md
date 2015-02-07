@@ -10,7 +10,7 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Space Quotas
 
-These commands are new in in HP Helion OpenStack&reg; 1.1.
+These commands are new in in HP Helion OpenStack&reg; Development Platform 1.1.
 
 - [helion create-space-quota](#command-create-space-quota): Create a new space quota. 
 - [helion delete-space-quota](#command-delete-space-quota): Delete the named space quota. 

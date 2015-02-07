@@ -64,9 +64,9 @@ Note that Administrative user privileges are required for some commands.
 - [helion rename-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-rename-buildpack): Change the name of the specified buildpack.
 - [helion update-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-update-buildpack): Change the information known about the specified buildpack.
 
-###[Control](/als/v1/user/reference/client-ref/control)
-- [helion migrate](/als/v1/user/reference/client-ref/control/#command-migrate)
-- [helion restage](/als/v1/user/reference/client-ref/control/#command-restage)
+###[Control](/als/v1/user/reference/client-ref/control) (new in HP Helion OpenStack&reg;  Development Platform 1.1)
+- [helion migrate](/als/v1/user/reference/client-ref/control/#command-migrate): Move the application to a different space. 
+- [helion restage](/als/v1/user/reference/client-ref/control/#command-restage): Restage an application and regenerate its droplet.
 
 ###[Domains](/als/v1/user/reference/client-ref/domains)
 - [helion create-domain](/als/v1/user/reference/client-ref/domains/#command-create-domain): Create a new domain.
@@ -171,7 +171,7 @@ Note that Administrative user privileges are required for some commands.
 - [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route)
 - [helion routes](/als/v1/user/reference/client-ref/routes/#command-routes)
 
-###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) (new in HP Helion OpenStack&reg; 1.1) 
+###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) (new in HP Helion OpenStack&reg;  Development Platform 1.1) 
 - [helion bind-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-bind-security-group): Bind the named security group to the current space, the specified space, or the running and staging phases. 
 - [helion create-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-create-security-group): Create a new security group.
 - [helion delete-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-delete-security-group): Delete the named security group.
@@ -215,7 +215,7 @@ Note that Administrative user privileges are required for some commands.
 - [helion unlink-user-space](/als/v1/user/reference/client-ref/spaces/#command-unlink-user-space): Remove the specified user from the named space in various roles.
 - [helion update-space ](/als/v1/user/reference/client-ref/spaces/#command-update-space): Change one or more attributes of a space in a single call.
 
-###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas) (new in HP Helion OpenStack&reg; 1.1)
+###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas) (new in HP Helion OpenStack&reg; Development Platform 1.1)
 - [helion create-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-create-space-quota): Create a new space quota. 
 - [helion delete-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-delete-space-quota): Delete the named space quota. 
 - [helion rename-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-rename-space-quota): Rename the named space quota.
