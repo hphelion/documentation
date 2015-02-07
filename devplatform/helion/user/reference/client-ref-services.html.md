@@ -40,12 +40,12 @@ For more information, use the **helion help**, **helion help [*option*]**, or **
       
 	    The once-off space to use for the current operation, specified
 	    by name. 
-	    Cannot be used together with --space-guid.
+	    Cannot be used together with <i>--space-guid</i>.
 	
     --space-guid
       
 	    The once-off space to use for the current operation, specified
-	    by guid. 	    Cannot be used together with --space.
+	    by guid. 	    Cannot be used together with <i>--space-guid</i>.
 	
     --target
       
@@ -112,13 +112,13 @@ For more information, use the **helion help**, **helion help [*option*]**, or **
       
 	    The once-off space to use for the current operation, specified
 	    by name. 
-	    Cannot be used together with --space-guid.
+	    Cannot be used together with <i>--space-guid</i>.
 	
     --space-guid
       
 	    The once-off space to use for the current operation, specified
 	    by guid. 
-	    Cannot be used together with --space.
+	    Cannot be used together with <i>--space-guid</i>.
 	
     --target
       
@@ -155,13 +155,13 @@ For more information, use the **helion help**, **helion help [*option*]**, or **
       
 	    The once-off space to use for the current operation, specified
 	    by name. 
-	    Cannot be used together with --space-guid.
+	    Cannot be used together with <i>--space-guid</i>.
 	
     --space-guid
       
 	    The once-off space to use for the current operation, specified
 	    by guid. 
-	    Cannot be used together with --space.
+	    Cannot be used together with <i>--space-guid</i>.
 	
     --target
       
@@ -242,10 +242,10 @@ List the supported and provisioned services of the target.
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name.  Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with <i>--space-guid</i>.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid.  Cannot be used together with --space.</td>
+    guid.  Cannot be used together with <i>--space-guid</i>.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -294,10 +294,10 @@ Show the information about the named service.
     is an Application Lifecycle Service 3 option.</td>
     </tr>    <tr><td>--space</td>
     <td>The once-off space to use for the current operation, specified by
-    name.  Cannot be used together with --space-guid.</td>
+    name.  Cannot be used together with <i>--space-guid</i>.</td>
     </tr>    <tr><td>--space-guid</td>
     <td>The once-off space to use for the current operation, specified by
-    guid.  Cannot be used together with --space.</td>
+    guid.  Cannot be used together with <i>--space-guid</i>.</td>
     </tr>    <tr><td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
