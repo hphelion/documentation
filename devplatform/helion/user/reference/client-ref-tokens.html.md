@@ -10,13 +10,19 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Authentication Tokens
 
-- [Authentication Tokens]()  
-	- [helion create-service-auth-token](#command-create-service-auth-token)
-	- [helion delete-service-auth-token](#command-delete-service-auth-token)
-	- [helion service-auth-tokens](#command-service-auth-tokens)
-	- [helion update-service-auth-token](#command-update-service-auth-token)
+- [helion create-service-auth-token](#command-create-service-auth-token)
+- [helion delete-service-auth-token](#command-delete-service-auth-token)
+- [helion service-auth-tokens](#command-service-auth-tokens)
+- [helion update-service-auth-token](#command-update-service-auth-token)
 
-### helion create-service-auth-token *\<label\* *\<provider\*###
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+## helion create-service-auth-token *\<label\* *\<provider\*###
 Create a new service authentication token. This is an Application Lifecycle Service 3
 specific command.
 

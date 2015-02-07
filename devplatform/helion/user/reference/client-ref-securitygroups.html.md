@@ -19,13 +19,17 @@ product: devplatform
 - [helion update-security-group](#command-update-security-group)
 
 
-Security Groups
-------------------------
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
 
     
 .. _command-bind-security-group:
   
-  stackato bind-security-group  *<security_group>* 
+  helion bind-security-group  *<security_group>* 
     Bind the named security group to either the current or specified space, or the running and staging phases. This is a Stackato 3.4.2 command.
 
     --organization

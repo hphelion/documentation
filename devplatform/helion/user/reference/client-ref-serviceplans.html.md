@@ -10,17 +10,18 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Service Plans
 
-- [Plans](#command-Services-Plans)
- 	- [helion hide-service-plan](#command-hide-service-plan)
-	- [helion service-plans](#command-service-plans)
- 	- [helion service-plans](#command-service-plans)
-	- [helion show-service-plan](#command-show-service-plan)
-	- [helion update-service-plan](#command-update-service-plan)
+- [helion hide-service-plan](#command-hide-service-plan)
+- [helion service-plans](#command-service-plans)
+- [helion service-plans](#command-service-plans)
+- [helion show-service-plan](#command-show-service-plan)
+- [helion update-service-plan](#command-update-service-plan)
 
-.. _command-Services-Plans:
-    
-Plans
-^^^^^^^^^^^^^^^^^^^^^^^^
+##Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
       
 .. _command-hide-service-plan:
 

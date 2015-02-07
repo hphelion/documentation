@@ -10,14 +10,18 @@ title: "Application Lifecycle Service Command Line Client Reference: Domains"
 
 # HP Helion Development Platform: ALS Command Reference: Domains
 
-- [Domains](#domains)
-	- [helion create-domain](#command-create-domain)
-	- [helion delete-domain](#command-delete-domain)
-	- [helion domains](#command-domains)
-	- [helion map-domain](#command-map-domain)
-	- [helion unmap-domain](#command-unmap-domain)
+- [helion create-domain](#command-create-domain)
+- [helion delete-domain](#command-delete-domain)
+- [helion domains](#command-domains)
+- [helion map-domain](#command-map-domain)
+- [helion unmap-domain](#command-unmap-domain)
 
-### Domains[](#domains "Permalink to this headline")###
+##Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
 ### helion domains###
 List the available domains in the specified space, or all. This is an Application Lifecycle Service 3 specific command.
 

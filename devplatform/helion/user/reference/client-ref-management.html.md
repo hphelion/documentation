@@ -34,6 +34,13 @@ product: devplatform
 - [helion unmap](#command-unmap): Unregister the application from a URL.
 - [helion unset-env](#command-unset-env): Remove the specified environment variable from the named application.
 
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
 ## helion create-app <*application*> {#command-create-app}
 Create an empty application with the specified configuration.
 

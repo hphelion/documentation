@@ -10,11 +10,10 @@ title: "Application Lifecycle Service Command Line Client Reference: Control"
 
 # HP Helion Development Platform: ALS Command Reference: Control
 
-- [Control](#command-Applications-Control)
-	- [helion migrate](#command-migrate)
-	- [helion restage](#command-restage)
+- [helion migrate](#command-migrate)
+- [helion restage](#command-restage)
 	
-## stackato migrate \<*application*\>  \<*destination*\>
+## helion migrate \<*application*\>  \<*destination*\>
  Move the application to a different space. This command is new in Helion OpenStack&reg; 1.1
  
 <table style="text-align: left; vertical-align: top; width: 650px;">
@@ -52,7 +51,7 @@ title: "Application Lifecycle Service Command Line Client Reference: Control"
 </tr>
 </table>
 
-## stackato restage \<*application*\> 
+## helion restage \<*application*\> 
 Restages an application and regenerates its droplet. This command is new in Helion OpenStack&reg; 1.1
        
 <table style="text-align: left; vertical-align: top; width:650px;">

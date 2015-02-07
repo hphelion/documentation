@@ -14,9 +14,14 @@ title: "Application Lifecycle Service Command Line Client Reference: Application
 - [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
 - [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
 
-## Applications  {#applications}
+##Syntax
 
-###helion apps {#command-apps}
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+##helion apps {#command-apps}
 Lists the applications deployed to the target.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -56,7 +61,7 @@ Lists the applications deployed to the target.
 </tr>
 </table>
 
-###helion app *\<application\>* {#command-app}
+##helion app *\<application\>* {#command-app}
 Shows the information of the specified application.
 
 <table style="text-align: left; vertical-align: top; width:650px;">

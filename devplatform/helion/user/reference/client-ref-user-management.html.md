@@ -10,15 +10,21 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: User Management
 
-- [User Management](#command-Administration-User-Management) 
- 	- [helion add-user](#command-add-user)
-	- [helion delete-user](#command-delete-user)
-	- [helion login-fields](#command-login-fields)
-	- [helion passwd](#command-passwd)
-	- [helion register](#command-register)
-	- [helion token](#command-token)
-	- [helion unregister](#command-unregister)
-	- [helion users](#command-users)
+- [helion add-user](#command-add-user)
+- [helion delete-user](#command-delete-user)
+- [helion login-fields](#command-login-fields)
+- [helion passwd](#command-passwd)
+- [helion register](#command-register)
+- [helion token](#command-token)
+- [helion unregister](#command-unregister)
+- [helion users](#command-users)
+
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
 
 ### helion add-user *\<name\*
 Register a new user in the current or specified target. This operation requires administrator privileges, except if "allow\_registration" is set server-side.

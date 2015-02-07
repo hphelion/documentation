@@ -24,6 +24,13 @@ title: "Application Lifecycle Service Command Line Client Reference: Administrat
 - [helion user-info](#command-user-info): Shows the information of a user in the current or specified target.
 - [helion version](#command-version): Print the version number of the client.
 
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
 ## helion admin grant <*email*> {#command-admin-grant}
 Grant the named user administrator privileges for the current or specified target.
 

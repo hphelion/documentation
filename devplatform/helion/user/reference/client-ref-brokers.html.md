@@ -10,16 +10,21 @@ title: "Application Lifecycle Service Command Line Client Reference: Brokers"
 
 # HP Helion Development Platform: ALS Command Reference: Brokers
 
-- [Brokers](/als/v1/user/reference/client-ref/brokers)
-	- [helion add-service-broker](#command-add-service-broker)
-	- [helion create-service-broker](#command-create-service-broker)
-	- [helion delete-service-broker](#command-delete-service-broker)
-	- [helion remove-service-broker](#command-remove-service-broker)
-	- [helion service-brokers](#command-service-brokers)
-	- [helion update-service-broker](#command-update-service-broker)
+- [helion add-service-broker](#command-add-service-broker)
+- [helion create-service-broker](#command-create-service-broker)
+- [helion delete-service-broker](#command-delete-service-broker)
+- [helion remove-service-broker](#command-remove-service-broker)
+- [helion service-brokers](#command-service-brokers)
+- [helion update-service-broker](#command-update-service-broker)
 
+##Syntax
 
-### helion add-service-broker *\<name\* {#command-add-service-broker}
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+## helion add-service-broker *\<name\* {#command-add-service-broker}
 Make the named service broker known to the system.
 
 <table>

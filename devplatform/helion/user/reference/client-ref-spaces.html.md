@@ -10,20 +10,23 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Spaces
 
-- [Spaces](#spaces)
-	- [helion create-space](#command-create-space)
-	- [helion delete-space](#command-delete-space)
-	- [helion link-user-space](#command-link-user-space)
-	- [helion rename-space](#command-rename-space)
-	- [helion space-users](#command-space-users)
-	- [helion space](#command-space)	
-	- [helion spaces](#command-spaces)
-	- [helion switch-space](#command-switch-space)
-	- [helion unlink-user-space](#command-unlink-user-space)
-	- [helion update-space ](#command-update-space)
+- [helion create-space](#command-create-space)
+- [helion delete-space](#command-delete-space)
+- [helion link-user-space](#command-link-user-space)
+- [helion rename-space](#command-rename-space)
+- [helion space-users](#command-space-users)
+- [helion space](#command-space)	
+- [helion spaces](#command-spaces)
+- [helion switch-space](#command-switch-space)
+- [helion unlink-user-space](#command-unlink-user-space)
+- [helion update-space ](#command-update-space)
 
+## Syntax
 
-## Spaces<a name="spaces"></a>
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
 ### helion create-space *\<name\*###
 Create a new space. This is an Application Lifecycle Service 3 specific command.
 

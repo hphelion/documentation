@@ -10,16 +10,17 @@ title: "Application Lifecycle Service Command Line Client Reference: Placement Z
 
 # HP Helion Development Platform: ALS Command Reference: Placement Zones
 
-- [Placement](/als/v1/user/reference/client-ref/placement) 
-	- [helion placement-zone](#command-placement-zone)
-	- [helion placement-zones](#command-placement-zones)
-	- [helion set-placement-zone](#command-set-placement-zone)
-	- [helion unset-placement-zone](#command-unset-placement-zone)
-	- 
-	- .. _command-Applications-Placement:
-    
-Placement
-^^^^^^^^^^^^^^^^^^^^^^^^
+- [helion placement-zone](#command-placement-zone)
+- [helion placement-zones](#command-placement-zones)
+- [helion set-placement-zone](#command-set-placement-zone)
+- [helion unset-placement-zone](#command-unset-placement-zone)
+
+##Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
       
 .. _command-placement-zones:
 

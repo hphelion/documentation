@@ -9,18 +9,17 @@ title: "Application Lifecycle Service Command Line Client Reference: Feature Fla
 
 # HP Helion Development Platform: ALS Command Reference: Feature Flags
 
+- [helion disable-feature-flag](#command-disable-feature-flag)
+- [helion enable-feature-flag](#command-enable-feature-flag)
+- [helion feature-flag](#command-feature-flag)	
+- [helion feature-flags](#command-feature-flags)
 
-- [Feature Flags](#feature-flags) 
-	- [helion disable-feature-flag](#command-disable-feature-flag)
-	- [helion enable-feature-flag](#command-enable-feature-flag)
-	- [helion feature-flag](#command-feature-flag)	
-	- [helion feature-flags](#command-feature-flags)
+##Syntax
 
-    
-  
-Feature Flags
-------------------------
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
 
+<hr>
     
 .. _command-disable-feature-flag:
   

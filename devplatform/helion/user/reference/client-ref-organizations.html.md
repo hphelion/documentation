@@ -9,21 +9,24 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Organizations
 
-- [Organizations](#organizations)
-	- [helion create-org](#command-create-org)
-	- [helion command-delete-org](#delete-org)
-	- [helion link-user-org](#command-link-user-org)
-	- [helion org-users](#command-org-users)
-	- [helion orgs](#command-orgs)	
-	- [helion orgs](#command-orgs)
-	- [helion quota-org](#command-quota-org)
-	- [helion rename-org](#command-rename-org)
-	- [helion switch-org](#command-switch-org)
-	- [helion unlink-user-org](#command-unlink-user-org)
-	- [helion update-org](#command-update-org)
+- [helion create-org](#command-create-org)
+- [helion command-delete-org](#delete-org)
+- [helion link-user-org](#command-link-user-org)
+- [helion org-users](#command-org-users)
+- [helion orgs](#command-orgs)	
+- [helion orgs](#command-orgs)
+- [helion quota-org](#command-quota-org)
+- [helion rename-org](#command-rename-org)
+- [helion switch-org](#command-switch-org)
+- [helion unlink-user-org](#command-unlink-user-org)
+- [helion update-org](#command-update-org)
 
+## Syntax
 
-## Organizations<a name="organizations"></a>
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
 ### helion create-org *\<name\*###
 Create a new organization. This is an Application Lifecycle Service 3 specific command.
 

@@ -10,12 +10,17 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Routes
 
-- [Routes](#routes)
- 	- [helion delete-route](#command-delete-route)
-	- [helion routes](#command-routes)
+- [helion delete-route](#command-delete-route)
+- [helion routes](#command-routes)
 
-### Routes[](#routes "Permalink to this headline")###
-### helion delete-route *\<name\*###
+##Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+## helion delete-route *\<name\*###
 Delete the named route. This is an Application Lifecycle Service 3 specific command.
 
 <table>

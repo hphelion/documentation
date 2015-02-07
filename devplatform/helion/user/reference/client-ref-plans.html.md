@@ -9,11 +9,18 @@ title: "Application Lifecycle Service Command Line Client Reference: Service Pla
 
 # HP Helion Development Platform: ALS Command Reference: Service Plans
 
- 	- [helion hide-service-plan](#command-hide-service-plan)
-	- [helion service-plans](#command-service-plans)
- 	- [helion service-plans](#command-service-plans)
-	- [helion show-service-plan](#command-show-service-plan)
-	- [helion update-service-plan](#command-update-service-plan)
+- [helion hide-service-plan](#command-hide-service-plan)
+- [helion service-plans](#command-service-plans)
+- [helion service-plans](#command-service-plans)
+- [helion show-service-plan](#command-show-service-plan)
+- [helion update-service-plan](#command-update-service-plan)
+	
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
 
 stackato service-plan  *<name>*       
         Show the details of the specified service plan. This is a Stackato 3 specific command.

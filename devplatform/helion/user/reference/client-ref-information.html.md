@@ -24,7 +24,7 @@ title: "Application Lifecycle Service Command Line Client Reference: Information
 - [helion stats](#command-stats) Display the resource usage for a deployed application.
 - [helion tail](#command-tail) Monitor file for changes and stream the changes.
 
-<hr>
+
 ## Syntax
 
 	helion [options] command [arguments] [command-options]
