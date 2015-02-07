@@ -10,7 +10,7 @@ product: devplatform
 
 # HP Helion Development Platform: Application Lifecycle Service Client Command Reference {#helion-client-command-reference}
  
-Many of the informational commands take a **--json** option if you wish to generate machine-parseable output. In some cases the **--json** option reveals additional details.
+Many of the informational commands take a **--json** option if you wish to generate machine-parseable output. In some cases the json output reveals additional details.
 
 Note that Administrative user privileges are required for some commands.
 
@@ -73,16 +73,16 @@ Note that Administrative user privileges are required for some commands.
 - [helion delete-domain](/als/v1/user/reference/client-ref/domains/#command-delete-domain): Delete the named domain.
 - [helion domains](/als/v1/user/reference/client-ref/domains/#command-domains): List the available domains in the specified space or all domains.
 
-###[Feature Flags](/als/v1/user/reference/client-ref/flags) 
-- [helion disable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-disable-feature-flag)
-- [helion enable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-enable-feature-flag)
-- [helion feature-flag](/als/v1/user/reference/client-ref/flags/#command-feature-flag)	
-- [helion feature-flags](/als/v1/user/reference/client-ref/flags/#command-feature-flags)
+###[Feature Flags](/als/v1/user/reference/client-ref/flags) (new in HP Helion OpenStack&reg;  Development Platform 1.1)
+- [helion disable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-disable-feature-flag): Deactivate the specified feature. 
+- [helion enable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-enable-feature-flag): Activate the specified feature.
+- [helion feature-flag](/als/v1/user/reference/client-ref/flags/#command-feature-flag): Show the details of the specified feature flag. 	
+- [helion feature-flags](/als/v1/user/reference/client-ref/flags/#command-feature-flags):  Show all known feature flags and the status of each one.
 
 ###[History](/als/v1/user/reference/client-ref/history)
-- [helion history clear](/als/v1/user/reference/client-ref/history/#command-history-clear)
-- [helion history limit](/als/v1/user/reference/client-ref/history/#command-history-limit)
-- [helion history list](/als/v1/user/reference/client-ref/history/#command-history-list)
+- [helion history clear](/als/v1/user/reference/client-ref/history/#command-history-clear): Clear the saved history.
+- [helion history limit](/als/v1/user/reference/client-ref/history/#command-history-limit): Limit the size of the history or display the current limit.
+- [helion history list](/als/v1/user/reference/client-ref/history/#command-history-list): Show the saved history of commands.
 
 ###[Information](/als/v1/user/reference/client-ref/information)
 - [helion crashes](/als/v1/user/reference/client-ref/information/#command-crashes): List recent application crashes.
