@@ -17,11 +17,12 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
+
 <p style="font-size: small;"> &#9664; <a href="/helion/openstack/technical-overview/">Technical Overview | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | 
 <p style="font-size: small;"><a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor</a> &#9654; OR
 <p style="font-size: small;"><a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor</a> &#9654</p>
 
-# HP Helion OpenStack&#174; Installation: Bob Prerequisites
+# HP Helion OpenStack&#174; Installation: Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page for information about: 
 
