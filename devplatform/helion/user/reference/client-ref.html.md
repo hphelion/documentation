@@ -47,12 +47,12 @@ Note that Administrative user privileges are required for some commands.
 - [helion update-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-update-service-auth-token): Update the specified service authentication token.
 	
 ###[Brokers](/als/v1/user/reference/client-ref/brokers)
-- [helion add-service-broker](/als/v1/user/reference/client-ref/brokers/#command-add-service-broker)
-- [helion create-service-broker](/als/v1/user/reference/client-ref/brokers/#command-create-service-broker)
-- [helion delete-service-broker](/als/v1/user/reference/client-ref/brokers/#command-delete-service-broker)
-- [helion remove-service-broker](/als/v1/user/reference/client-ref/brokers/#command-remove-service-broker)
-- [helion service-brokers](/als/v1/user/reference/client-ref/brokers/#command-service-brokers)
-- [helion update-service-broker](/als/v1/user/reference/client-ref/brokers/#command-update-service-broker)
+- [helion add-service-broker](/als/v1/user/reference/client-ref/brokers/#command-add-service-broker): Make the named service broker known.
+- [helion create-service-broker](/als/v1/user/reference/client-ref/brokers/#command-create-service-broker): Make the named service broker known. 
+- [helion delete-service-broker](/als/v1/user/reference/client-ref/brokers/#command-delete-service-broker): Remove the named service broker from the target
+- [helion remove-service-broker](/als/v1/user/reference/client-ref/brokers/#command-remove-service-broker): Remove the named service broker from the target.
+- [helion service-brokers](/als/v1/user/reference/client-ref/brokers/#command-service-brokers): Show the list of known service brokers.
+- [helion update-service-broker](/als/v1/user/reference/client-ref/brokers/#command-update-service-broker): Update the target's knowledge of the named service broker.
 
 ###[Buildpacks](/als/v1/user/reference/client-ref/buildpacks) 
 - [helion buildpacks](/als/v1/user/reference/client-ref/buildpacks/#command-buildpacks)
