@@ -12,6 +12,13 @@ title: "Application Lifecycle Service Command Line Client Reference: Control"
 
 - [helion migrate](#command-migrate)
 - [helion restage](#command-restage)
+
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
+
+<hr>
 	
 ## helion migrate \<*application*\>  \<*destination*\>
  Move the application to a different space. This command is new in Helion OpenStack&reg; 1.1

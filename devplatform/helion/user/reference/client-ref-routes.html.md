@@ -16,12 +16,12 @@ product: devplatform
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
 
 ## helion delete-route *\<name\*###
-Delete the named route. This is an Application Lifecycle Service 3 specific command.
+Delete the named route.
 
 <table>
     <tr><td><b>Option</b></td><td><b>Description</b></td></tr>

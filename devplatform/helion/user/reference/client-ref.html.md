@@ -139,17 +139,17 @@ Note that Administrative user privileges are required for some commands.
 - [helion unalias](/als/v1/user/reference/client-ref/miscellaneous/#command-unalias): Remove a shortcut by name.
 
 ###[Organizations](/als/v1/user/reference/client-ref/organizations)
-- [helion create-org](/als/v1/user/reference/client-ref/organizations/#command-create-org)
-- [helion command-delete-org](/als/v1/user/reference/client-ref/organizations/#delete-org)
-- [helion link-user-org](/als/v1/user/reference/client-ref/organizations/#command-link-user-org)
-- [helion org-users](/als/v1/user/reference/client-ref/organizations/#command-org-users)
-- [helion org](/als/v1/user/reference/client-ref/organizations/#command-org)	
-- [helion orgs](/als/v1/user/reference/client-ref/organizations/#command-orgs)
-- [helion quota-org](/als/v1/user/reference/client-ref/organizations/#command-quota-org)
-- [helion rename-org](/als/v1/user/reference/client-ref/organizations/#command-rename-org)
-- [helion switch-org](/als/v1/user/reference/client-ref/organizations/#command-switch-org)
-- [helion unlink-user-org](/als/v1/user/reference/client-ref/organizations/#command-unlink-user-org)
-- [helion update-org](/als/v1/user/reference/client-ref/organizations/#command-update-org)
+- [helion create-org](/als/v1/user/reference/client-ref/organizations/#command-create-org): Create a new organization.
+- [helion command-delete-org](/als/v1/user/reference/client-ref/organizations/#delete-org): Delete the named organization
+- [helion link-user-org](/als/v1/user/reference/client-ref/organizations/#command-link-user-org): Add the specified user to the named organization in various roles.
+- [helion org](/als/v1/user/reference/client-ref/organizations/#command-org): Show the named organization's information.	
+- [helion orgs](/als/v1/user/reference/client-ref/organizations/#command-orgs): List the available organizations.
+- [helion org-users](/als/v1/user/reference/client-ref/organizations/#command-org-users): Show the users for the organization by role. 
+- [helion quota-org](/als/v1/user/reference/client-ref/organizations/#command-quota-org): Set the quotas for the current or named organization.
+- [helion rename-org](/als/v1/user/reference/client-ref/organizations/#command-rename-org): Rename the named organization.
+- [helion switch-org](/als/v1/user/reference/client-ref/organizations/#command-switch-org): Switch the current organization to the named organization.
+- [helion unlink-user-org](/als/v1/user/reference/client-ref/organizations/#command-unlink-user-org): Remove the specified user from the named organization in various roles. 
+- [helion update-org](/als/v1/user/reference/client-ref/organizations/#command-update-org): Change one or more attributes of an organization in a single call.
 
 ### [Placement Zones](/als/v1/user/reference/client-ref/placement) 
 - [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone)

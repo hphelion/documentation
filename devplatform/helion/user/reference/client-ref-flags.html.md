@@ -17,7 +17,7 @@ title: "Application Lifecycle Service Command Line Client Reference: Feature Fla
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
     
