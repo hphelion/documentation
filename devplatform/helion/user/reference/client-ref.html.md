@@ -158,13 +158,13 @@ Note that Administrative user privileges are required for some commands.
 - [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone)
 
 ###[Quotas](/als/v1/user/reference/client-ref/quotas)
-- [helion quota configure](/als/v1/user/reference/client-ref/quotas/#command-quota-configure)
-- [helion quota create](/als/v1/user/reference/client-ref/quotas/#command-quota-create)
-- [helion quota delete](/als/v1/user/reference/client-ref/quotas/#command-quota-delete)
-- [helion quota list](/als/v1/user/reference/client-ref/quotas/#command-quota-list)
-- [helion quota rename](/als/v1/user/reference/client-ref/quotas/#command-quota-rename)
-- [helion quota show](/als/v1/user/reference/client-ref/quotas/#command-quota-show)
-- [helion quotas](/als/v1/user/reference/client-ref/quotas/#command-quotas)
+- [helion quota configure](/als/v1/user/reference/client-ref/quotas/#command-quota-configure): Reconfigure the named quota plan.
+- [helion quota create](/als/v1/user/reference/client-ref/quotas/#command-quota-create): Create a new quota plan.
+- [helion quota delete](/als/v1/user/reference/client-ref/quotas/#command-quota-delete): Delete the named quota plan.
+- [helion quota list](/als/v1/user/reference/client-ref/quotas/#command-quota-list): List the available quota plans. 
+- [helion quota rename](/als/v1/user/reference/client-ref/quotas/#command-quota-rename): Rename the named quota plan.
+- [helion quota show](/als/v1/user/reference/client-ref/quotas/#command-quota-show): Show the details of the named quota plan
+- [helion quotas](/als/v1/user/reference/client-ref/quotas/#command-quotas): List the available quota plans.
 
 ###[Routes](/als/v1/user/reference/client-ref/routes)
 - [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route)
