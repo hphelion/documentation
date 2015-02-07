@@ -10,18 +10,23 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Service Management
 
-- [Service Management](#command-Services-Management) 
-	- [helion bind-service](#command-bind-service)
-	- [helion clone-services](#command-clone-services)
-	- [helion create-service](#command-create-service)
-	- [helion delete-service](#command-delete-service)
-	- [helion rename-service](#command-rename-service)
-	- [helion tunnel](#command-tunnel)
-	- [helion unbind-service](#command-unbind-service)
-	- [helion update-user-provided-service](#command-update-user-provided-service)
+- [helion bind-service](#command-bind-service)
+- [helion clone-services](#command-clone-services)
+- [helion create-service](#command-create-service)
+- [helion delete-service](#command-delete-service)
+- [helion rename-service](#command-rename-service)
+- [helion tunnel](#command-tunnel)
+- [helion unbind-service](#command-unbind-service)
+- [helion update-user-provided-service](#command-update-user-provided-service)
 
 
-##**Management**##
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
 ### helion bind-service *\<service\* *\<application\*###
 Bind the named service to the specified application.
 

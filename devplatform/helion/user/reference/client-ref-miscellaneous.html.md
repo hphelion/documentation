@@ -10,19 +10,25 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Miscellaneous
 
-- [Miscellaneous](#miscellaneous)
-	- [helion admin](#command-admin)
-	- [helion alias](#command-alias)	
-	- [helion aliases](#command-aliases)
-	- [colors](#command-Administration-Colors)
-	- [helion curl](#command-curl)
-	- [helion drain](#command-drain)
-	- [helion guid](#command-guid)
-	- [helion named-entities](#command-named-entities )
-	- [helion trace](#command-trace )
-	- [helion unalias](#command-unalias)
+- [helion admin](#command-admin)
+- [helion alias](#command-alias)	
+- [helion aliases](#command-aliases)
+- [colors](#command-Administration-Colors)
+- [helion curl](#command-curl)
+- [helion drain](#command-drain)
+- [helion guid](#command-guid)
+- [helion named-entities](#command-named-entities )
+- [helion trace](#command-trace )
+- [helion unalias](#command-unalias)
 
-### helion aliases###
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+## helion aliases###
 List the known aliases (shortcuts).
 
 <table>

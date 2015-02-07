@@ -16,18 +16,17 @@ product: devplatform
 	- [helion service](#command-service)
 	- [helion services](#command-services)
 	
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
+
+  helion marketplace 
+    List the supported service plans of the target, for the current or specified space. This command is new in Helion OpenStack&reg; 1.1.
 
 
-    
-.. _command-marketplace:
-  
-  stackato marketplace 
-    List the supported service plans of the target, for the current or specified space. This is a Stackato 3.4+ specific command.
-
-    --group
-      
-	    The once-off group to use for the current operation.
-	    This is a Stackato 2 option.
 	
     --json
       
@@ -36,19 +35,17 @@ product: devplatform
     --organization
       
 	    The once-off organization to use for the current operation.
-	    This is a Stackato 3 option.
-	
+	    	
     --space
       
 	    The once-off space to use for the current operation, specified
-	    by name. This is a Stackato 3 option.
+	    by name. 
 	    Cannot be used together with --space-guid.
 	
     --space-guid
       
 	    The once-off space to use for the current operation, specified
-	    by guid. This is a Stackato 3 option.
-	    Cannot be used together with --space.
+	    by guid. 	    Cannot be used together with --space.
 	
     --target
       
@@ -69,8 +66,8 @@ product: devplatform
     
 .. _command-purge-service-offerings:
   
-  stackato purge-service-offerings  *<service>* 
-    Purge all offerings of the service type from the system. Danger. Do this only for services we know to have their brokers killed, leaving behind orphans. This is a Stackato 3.4+ specific command.
+  helion purge-service-offerings  *<service>* 
+    Purge all offerings of the service type from the system. Danger. Do this only for services we know to have their brokers killed, leaving behind orphans. This command is new in Helion OpenStack&reg; 1.1.
 
     --provider
       
@@ -99,17 +96,9 @@ product: devplatform
     
 .. _command-services:
   
-  stackato services 
+  helion services 
     List the supported and provisioned services of the target.
 
-    
-    
-
-    --group
-      
-	    The once-off group to use for the current operation.
-	    This is a Stackato 2 option.
-	
     --json
       
 	    Print raw json as output, not human-formatted data.
@@ -117,18 +106,18 @@ product: devplatform
     --organization
       
 	    The once-off organization to use for the current operation.
-	    This is a Stackato 3 option.
+	    
 	
     --space
       
 	    The once-off space to use for the current operation, specified
-	    by name. This is a Stackato 3 option.
+	    by name. 
 	    Cannot be used together with --space-guid.
 	
     --space-guid
       
 	    The once-off space to use for the current operation, specified
-	    by guid. This is a Stackato 3 option.
+	    by guid. 
 	    Cannot be used together with --space.
 	
     --target
@@ -150,14 +139,9 @@ product: devplatform
     
 .. _command-service:
   
-  stackato service  *<name>* 
+  helion service  *<name>* 
     Show the information about the named service.
 
-   --group
-      
-	    The once-off group to use for the current operation.
-	    This is a Stackato 2 option.
-	
     --json
       
 	    Print raw json as output, not human-formatted data.
@@ -165,18 +149,18 @@ product: devplatform
     --organization
       
 	    The once-off organization to use for the current operation.
-	    This is a Stackato 3 option.
+	    
 	
     --space
       
 	    The once-off space to use for the current operation, specified
-	    by name. This is a Stackato 3 option.
+	    by name. 
 	    Cannot be used together with --space-guid.
 	
     --space-guid
       
 	    The once-off space to use for the current operation, specified
-	    by guid. This is a Stackato 3 option.
+	    by guid. 
 	    Cannot be used together with --space.
 	
     --target

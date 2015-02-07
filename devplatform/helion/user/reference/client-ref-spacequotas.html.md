@@ -10,18 +10,21 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Space Quotas
 
-- [Space Quotas](#command-Administration-Space-Quotas)
-	- [helion create-space-quota](#command-create-space-quota)
-	- [helion delete-space-quota](#command-delete-space-quota)
-	- [helion rename-space-quota](#command-rename-space-quota)
-	- [helion set-space-quota](#command-set-space-quota)
-	- [helion space-quota](#command-space-quota)
-	- [helion space-quotas](#command-space-quotas )
-	- [helion unset-space-quota](#command-unset-space-quota)
-	- [helion update-space-quota](#command-update-space-quota)
+- [helion create-space-quota](#command-create-space-quota)
+- [helion delete-space-quota](#command-delete-space-quota)
+- [helion rename-space-quota](#command-rename-space-quota)
+- [helion set-space-quota](#command-set-space-quota)
+- [helion space-quota](#command-space-quota)
+- [helion space-quotas](#command-space-quotas )
+- [helion unset-space-quota](#command-unset-space-quota)
+- [helion update-space-quota](#command-update-space-quota)
 
-Space Quotas
-^^^^^^^^^^^^^^^^^^^^^^^^
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+
+<hr>
       
 .. _command-create-space-quota:
 

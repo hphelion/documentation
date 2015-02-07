@@ -9,25 +9,27 @@ product: devplatform
 <!--UNDER REVISION-->
 
 # HP Helion Development Platform: ALS Command Reference: History
-- [Command history](#Command-history)
-	- [helion history clear](#command-history-clear)
-	- [helion history limit](#command-history-limit)
-	- [helion history list](#command-history-list)
 
-      
-.. _command-history clear:
+- [helion history clear](#command-history-clear)
+- [helion history limit](#command-history-limit)
+- [helion history list](#command-history-list)
 
-      stackato history clear       
-        Clear the saved history.
+ 
+##Syntax
 
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
 
-.. _command-history limit:
+<hr>    
 
-      stackato history limit  *<n>*       
-        Limit the size of the history. If no limit is specified the current limit is shown.
+## helion history clear {#command-history-clear}
+    
+Clear the saved history.
 
-.. _command-history list:
+## helion history limit <*n*> {#command-history-limit}
+    
+Limit the size of the history. If no limit is specified the current limit is shown.
 
-      stackato history list  *<n>*       
-        Show the saved history of commands.
-
+## helion history list {#command-history-list}
+   
+Show the saved history of commands.

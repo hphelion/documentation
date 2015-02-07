@@ -9,269 +9,307 @@ title: "Application Lifecycle Service Command Line Client Reference: Quotas"
 
 # HP Helion Development Platform: ALS Command Reference: Quotas
 
-- [Quotas](#command-Administration-Quotas)
-	- [helion quota configure](#command-quota-configure)
-	- [helion quota create](#command-quota-create)
-	- [helion quota delete](#command-quota-delete)
-	- [helion quota list](#command-quota-list)
-	- [helion quota rename](#command-quota-rename)
-	- [helion quota show](#command-quota-show)
-	- [helion quotas](#command-quotas)
+- [helion quota configure](#command-quota-configure)
+- [helion quota create](#command-quota-create)
+- [helion quota delete](#command-quota-delete)
+- [helion quota list](#command-quota-list)
+- [helion quota rename](#command-quota-rename)
+- [helion quota show](#command-quota-show)
+- [helion quotas](#command-quotas)
 
-.. _command-Administration-Quotas:
-    
-Quotas
-^^^^^^^^^^^^^^^^^^^^^^^^
-      
-.. _command-quota configure:
+## Syntax
 
-      stackato quota configure  *<name>*       
-        Reconfigure the named quota plan. This is a Stackato 3 specific command.
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
 
-        --allow-sudo
-          
-		Applications can use sudo in their container.
-	    
-        --droplets
-          
-		Limit for the number of droplets per application
-		that are stored (older droplets that exceed this
-		quota are removed and their associated versions
-		can no longer be restored).
-		This is a Stackato 3.4+ specific setting.
-	    
-        --mem
-          
-		Amount of memory applications can use.
+<hr>
 
-		Use the suffices 'M' and 'G' for the convenient specification
-		of mega- and gigabytes. Without a unit-suffix mega-bytes are
-		assumed. As the base-unit megabytes must specified as integers.
-		Gigabytes can be specified as fractions.
-	    
-        --no-allow-sudo
-          Complementary alias of --allow-sudo.
-        --no-paid-services-allowed
-          Complementary alias of --paid-services-allowed.
-        --no-trial-db-allowed
-          Complementary alias of --trial-db-allowed.
-        --paid-services-allowed
-          
-		Applications can use non-free services.
-	    
-        --routes
-          
-		Limit for the number of routes in the quota.
-		This is a Stackato 3.2+ specific setting.
-	    
-        --services
-          
-		Limit for the number of services in the quota.
-	    
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --trial-db-allowed
-          
-		Applications can use trial databases.
-		Before Stackato 3.4 only    
+## helion quota configure <*name*> {#quota-configure}
+Reconfigure the named quota definition. 
 
+<table>
+<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+<tr><td>--allow-sudo</td>
+<td>Applications can use sudo in their container.</td>
+</tr>    <tr><td>--mem</td>
+<td>Amount of memory applications can use.</td>
+</tr>    <tr><td>--no-allow-sudo</td>
+<td>Complementary alias of --allow-sudo.</td>
+</tr>    <tr><td>--no-paid-services-allowed</td>
+<td>Complementary alias of --paid-services-allowed.</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--no-trial-db-allowed</td>
+<td>Complementary alias of --trial-db-allowed.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--paid-services-allowed</td>
+<td>Applications can use non-free services.</td>
+</tr>    <tr><td>--services</td>
+<td>Limit for the number of services in the quota.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>    <tr><td>--trace</td>
+<td>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</td>
+</tr><tr>
+</tr>    <tr><td>--trial-db-allowed</td>
+<td>Applications can use trial databases.</td> </tr><tr>
+<td>-n</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>-t</td>
+<td>Alias of --trace.</td>
+</tr>
+</table>
 
-.. _command-quota create:
+## helion quota create <*name*> {#quota-create}
+Create a new quota definition. 
 
-      stackato quota create  *<name>*       
-        Create a new quota plan. This is a Stackato 3 specific command.
+<table>
+    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr><td>--allow-sudo</td>
+    <td>Applications can use sudo in their container.</td>
+    </tr>    <tr><td>--mem</td>
+    <td>Amount of memory applications can use.</td>
+    </tr>    <tr><td>--no-allow-sudo</td>
+    <td>Complementary alias of --allow-sudo.</td>
+    </tr>    <tr><td>--no-paid-services-allowed</td>
+    <td>Complementary alias of --paid-services-allowed.</td>
+    </tr>    <tr><td>--no-prompt</td>
+    <td>Disable interactive queries.</td>
+    </tr>    <tr><td>--no-trace</td>
+    <td>Complementary alias of --trace.</td>
+    </tr>    <tr><td>--no-trial-db-allowed</td>
+    <td>Complementary alias of --trial-db-allowed.</td>
+    </tr>    <tr><td>--non-interactive</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--noprompt</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--paid-services-allowed</td>
+    <td>Applications can use non-free services.</td>
+    </tr>    <tr><td>--services</td>
+    <td>Limit for the number of services in the quota.</td>
+    </tr>    <tr><td>--target</td>
+    <td>The once-off target to use for the current operation.</td>
+    </tr>    <tr><td>--token</td>
+    <td>The once-off authentication token to use for the current
+    operation.</td>
+    </tr>    <tr><td>--token-file</td>
+    <td>Path to an existing and readable file containing the targets and
+    authorization tokens.</td>
+    </tr>    <tr><td>--trace</td>
+    <td>Activate tracing of the issued REST requests and responses. This
+    option is a no-op now. Tracing is always active. See the 'trace'
+    command to print the saved trace to stdout.</td>
+    </tr><tr>
+    </tr>    <tr><td>--trial-db-allowed</td>
+    <td>Applications can use trial databases.</td>
+    </tr><tr>
+    <td>-n</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>-t</td>
+    <td>Alias of --trace.</td>
+    </tr>
+</table>
+### helion quota delete *\<name\*###
+Delete the named quota definition. This is an Application Lifecycle Service 3 specific
+command.
 
-        --allow-sudo
-          
-		Applications can use sudo in their container.
-	    
-        --droplets
-          
-		Limit for the number of droplets per application
-		that are stored (older droplets that exceed this
-		quota are removed and their associated versions
-		can no longer be restored).
-		This is a Stackato 3.4+ specific setting.
-	    
-        --mem
-          
-		Amount of memory applications can use.
+<table>
+    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr><td>--no-prompt</td>
+    <td>Disable interactive queries.</td>
+    </tr>    <tr><td>--no-trace</td>
+    <td>Complementary alias of --trace.</td>
+    </tr>    <tr><td>--non-interactive</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--noprompt</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--target</td>
+    <td>The once-off target to use for the current operation.</td>
+    </tr>    <tr><td>--token</td>
+    <td>The once-off authentication token to use for the current
+    operation.</td>
+    </tr>    <tr><td>--token-file</td>
+    <td>Path to an existing and readable file containing the targets and
+    authorization tokens.</td>
+    </tr>    <tr><td>--trace</td>
+    <td>Activate tracing of the issued REST requests and responses. This
+    option is a no-op now. Tracing is always active. See the 'trace'
+    command to print the saved trace to stdout.</td>
+    </tr><tr>
+    <td>-n</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>-t</td>
+    <td>Alias of --trace.</td>
+    </tr>
+</table>
+### helion quota list###
+List the available quota definitions. This is an Application Lifecycle Service 3
+specific command.
 
-		Use the suffices 'M' and 'G' for the convenient specification
-		of mega- and gigabytes. Without a unit-suffix mega-bytes are
-		assumed. As the base-unit megabytes must specified as integers.
-		Gigabytes can be specified as fractions.
-	    
-        --no-allow-sudo
-          Complementary alias of --allow-sudo.
-        --no-paid-services-allowed
-          Complementary alias of --paid-services-allowed.
-        --no-trial-db-allowed
-          Complementary alias of --trial-db-allowed.
-        --paid-services-allowed
-          
-		Applications can use non-free services.
-	    
-        --routes
-          
-		Limit for the number of routes in the quota.
-		This is a Stackato 3.2+ specific setting.
-	    
-        --services
-          
-		Limit for the number of services in the quota.
-	    
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --trial-db-allowed
-          
-		Applications can use trial databases.
-		Before Stackato 3.4 only.
-	    
+<table>
+    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr><td>--json</td>
+    <td>Print raw json as output, not human-formatted data.</td>
+    </tr>    <tr><td>--no-prompt</td>
+    <td>Disable interactive queries.</td>
+    </tr>    <tr><td>--no-trace</td>
+    <td>Complementary alias of --trace.</td>
+    </tr>    <tr><td>--non-interactive</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--noprompt</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--target</td>
+    <td>The once-off target to use for the current operation.</td>
+    </tr>    <tr><td>--token</td>
+    <td>The once-off authentication token to use for the current
+    operation.</td>
+    </tr>    <tr><td>--token-file</td>
+    <td>Path to an existing and readable file containing the targets and
+    authorization tokens.</td>
+    </tr>    <tr><td>--trace</td>
+    <td>Activate tracing of the issued REST requests and responses. This
+    option is a no-op now. Tracing is always active. See the 'trace'
+    command to print the saved trace to stdout.</td>
+    </tr><tr>
+    <td>-n</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>-t</td>
+    <td>Alias of --trace.</td>
+    </tr>
+</table>
+### helion quota rename *\<name\* *\<newname\*###
+Rename the named quota definition. This is an Application Lifecycle Service 3 specific
+command.
 
+<table>
+    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr><td>--no-prompt</td>
+    <td>Disable interactive queries.</td>
+    </tr>    <tr><td>--no-trace</td>
+    <td>Complementary alias of --trace.</td>
+    </tr>    <tr><td>--non-interactive</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--noprompt</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--target</td>
+    <td>The once-off target to use for the current operation.</td>
+    </tr>    <tr><td>--token</td>
+    <td>The once-off authentication token to use for the current
+    operation.</td>
+    </tr>    <tr><td>--token-file</td>
+    <td>Path to an existing and readable file containing the targets and
+    authorization tokens.</td>
+    </tr>    <tr><td>--trace</td>
+    <td>Activate tracing of the issued REST requests and responses. This
+    option is a no-op now. Tracing is always active. See the 'trace'
+    command to print the saved trace to stdout.</td>
+    </tr><tr>
+    <td>-n</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>-t</td>
+    <td>Alias of --trace.</td>
+    </tr>
+</table>
+### helion quota show *\<name\*###
+Show the details of the named quota definition. If not specified it will be asked for interactively (menu). This is an Application Lifecycle Service 3 specific command.
 
-.. _command-quota delete:
+<table>
+    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr><td>--json</td>
+    <td>Print raw json as output, not human-formatted data.</td>
+    </tr>    <tr><td>--no-prompt</td>
+    <td>Disable interactive queries.</td>
+    </tr>    <tr><td>--no-trace</td>
+    <td>Complementary alias of --trace.</td>
+    </tr>    <tr><td>--non-interactive</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--noprompt</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--target</td>
+    <td>The once-off target to use for the current operation.</td>
+    </tr>    <tr><td>--token</td>
+    <td>The once-off authentication token to use for the current
+    operation.</td>
+    </tr>    <tr><td>--token-file</td>
+    <td>Path to an existing and readable file containing the targets and
+    authorization tokens.</td>
+    </tr>    <tr><td>--trace</td>
+    <td>Activate tracing of the issued REST requests and responses. This
+    option is a no-op now. Tracing is always active. See the 'trace'
+    command to print the saved trace to stdout.</td>
+    </tr><tr>
+    <td>-n</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>-t</td>
+    <td>Alias of --trace.</td>
+    </tr>
+</table>
+### helion quotas###
+List the available quota definitions. This is an Application Lifecycle Service 3
+specific command.
 
-      stackato quota delete  *<name>*       
-        Delete the named quota plan. This is a Stackato 3 specific command.
-
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-quota list:
-
-      stackato quota list       
-        List the available quota plans. This is a Stackato 3 specific command.
-
-        
-
-          
-          
-          
-
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-quota rename:
-
-      stackato quota rename  *<name>*  *<newname>*       
-        Rename the named quota plan. This is a Stackato 3 specific command.
-
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-
-
-.. _command-quota show:
-
-      stackato quota show  *<name>*       
-        Show the details of the named quota plan. If not specified it will be asked for interactively (menu). This is a Stackato 3 specific command.
-
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-quotas:
-
-      stackato quotas       
-        List the available quota plans. This is a Stackato 3 specific command.
-
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
+<table>
+    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
+    <tr><td>--json</td>
+    <td>Print raw json as output, not human-formatted data.</td>
+    </tr>    <tr><td>--no-prompt</td>
+    <td>Disable interactive queries.</td>
+    </tr>    <tr><td>--no-trace</td>
+    <td>Complementary alias of --trace.</td>
+    </tr>    <tr><td>--non-interactive</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--noprompt</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>--target</td>
+    <td>The once-off target to use for the current operation.</td>
+    </tr>    <tr><td>--token</td>
+    <td>The once-off authentication token to use for the current
+    operation.</td>
+    </tr>    <tr><td>--token-file</td>
+    <td>Path to an existing and readable file containing the targets and
+    authorization tokens.</td>
+    </tr>    <tr><td>--trace</td>
+    <td>Activate tracing of the issued REST requests and responses. This
+    option is a no-op now. Tracing is always active. See the 'trace'
+    command to print the saved trace to stdout.</td>
+    </tr><tr>
+    <td>-n</td>
+    <td>Alias of --no-prompt.</td>
+    </tr><tr>
+    <td>-t</td>
+    <td>Alias of --trace.</td>
+    </tr>
+</table>
