@@ -10,401 +10,109 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Miscellaneous
 
-- [helion admin](#command-admin)
-- [helion alias](#command-alias)	
-- [helion aliases](#command-aliases)
-- [colors](#command-Administration-Colors)
-- [helion curl](#command-curl)
-- [helion drain](#command-drain)
-- [helion guid](#command-guid)
-- [helion named-entities](#command-named-entities )
-- [helion trace](#command-trace )
-- [helion unalias](#command-unalias)
+- [helion admin](#command-admin): A set of administrative tasks.
+- [helion alias](#command-alias): Create a shortcut for a command.	
+- [helion aliases](#command-aliases): List the known aliases (shortcuts).
+- [helion color](#command-color): Management of terminal colors.
+- [helion curl](#command-curl): Run a raw REST request against the chosen target.
+- [helion drain](#command-drain): Commands for the management of drains attached to applications.
+- [helion guid](#command-guid): Map the specified name into a GUID given the type.
+- [helion help](#command-help): Retrieve help for a command or command set.
+- [helion named-entities](#command-named-entities): List the entity types usable for GUID.
+- [helion trace](#command-trace): Print the saved REST trace for the last client command to stdout.
+- [helion unalias](#command-unalias): Remove a shortcut by name.
 
 ## Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
 
-## helion aliases###
+## helion admin {#command-admin}
+A set of administrative tasks.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td>
+</tr><td>None</td>
+</tr>
+</table>
+
+## helion alias <*name*> <*command*> {#command-alias}
+Create a shortcut (alias) for a command.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td>
+</tr><td>None</td>
+</tr>
+</table>
+## helion aliases {#command-aliases}
 List the known aliases (shortcuts).
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion alias *\<name\* *\<command\*###
-Create a shortcut for a command (prefix).
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion unalias *\<name\*###
-Remove a shortcut by name.
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>
 </table>
 
-### helion admin exit###
-Exit the shell. No-op if not in a shell.
+## helion color {#command-color}
+Management of terminal colors
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td>
+</tr><td>None</td>
+</tr>
 </table>
-###helion admin help *\<cmdname\*###
-Retrieve help for a command or command set. Without arguments help for all commands is given. The default format is --full.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--by-category</td>
-    <td>Activate by-category form of the help.</td>
-    </tr>    <tr><td>--full</td>
-    <td>Activate full form of the help.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Activate json form of the help.</td>
-    </tr>    <tr><td>--list</td>
-    <td>Activate list form of the help.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--short</td>
-    <td>Activate short form of the help.</td>
-    </tr>    <tr><td>--width</td>
-    <td>The line width to format the help for. Defaults to the terminal
-    width, or 80 when no terminal is available.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-w</td>
-    <td>Alias of --width.</td>
-    </tr>
-</table>
-###helion curl *\<operation\* *\<path\* *\<header\*###
-Run a raw rest request against the chosen target
+##helion curl <*operation*> <*path*> <*header*> {#command-curl}
+Run a raw REST request against the chosen target.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--data, -d</td><td>Payload to use for PUT and POST. Cannot be used with neither GET nor DELETE. A value of "-" or "stdin" causes the client to read the data from stdin.</td></tr>
+<tr><td>--form</td><td>Zero or more form fields to be added to the base url. Data is in the form of "key: value".</td></tr>
+<tr><td>--output, -o</td><td>Path to the file to write the returned payload to. A value of "-" or "stdin" causes the client to write the data to stdout.</td></tr>
+<tr><td>--port</td><td>The port to use for the request. Only relevant to websocket operation.</td></tr>
+<tr><td>--reconnect</td><td>Automatically reconnect when the websocket server closes the connection. Only relevant to websocket operation.</td></tr>
+<tr><td>--show-extended</td><td>Show additional information about the request; for example, response headers.</td></tr>
+<tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+<tr><td>--web-socket, -ws</td><td>Switch to WebSocket mode for GET. Cannot be used with any other operation.</td></tr>
+</tr>
 </table>
-### helion debug-packages###
-Show the packages used the client, and their versions.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion drain exit###
-Exit the shell. No-op if not in a shell.
+## helion drain {command-drain}
+Commands for the management of drains attached to applications.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td>
+</tr><td>None</td>
+</tr>
 </table>
-### helion drain help *\<cmdname\*###
-Retrieve help for a command or command set. Without arguments help for all commands is given. The default format is --full.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--by-category</td>
-    <td>Activate by-category form of the help.</td>
-    </tr>    <tr><td>--full</td>
-    <td>Activate full form of the help.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Activate json form of the help.</td>
-    </tr>    <tr><td>--list</td>
-    <td>Activate list form of the help.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--short</td>
-    <td>Activate short form of the help.</td>
-    </tr>    <tr><td>--width</td>
-    <td>The line width to format the help for. Defaults to the terminal
-    width, or 80 when no terminal is available.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-w</td>
-    <td>Alias of --width.</td>
-    </tr>
-</table>
-### helion exit###
-Exit the shell. No-op if not in a shell.
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion groups exit###
-Exit the shell. No-op if not in a shell.
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion groups help *\<cmdname\*###
-Retrieve help for a command or command set. Without arguments help for all commands is given. The default format is --full.
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--by-category</td>
-    <td>Activate by-category form of the help.</td>
-    </tr>    <tr><td>--full</td>
-    <td>Activate full form of the help.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Activate json form of the help.</td>
-    </tr>    <tr><td>--list</td>
-    <td>Activate list form of the help.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--short</td>
-    <td>Activate short form of the help.</td>
-    </tr>    <tr><td>--width</td>
-    <td>The line width to format the help for. Defaults to the terminal
-    width, or 80 when no terminal is available.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-w</td>
-    <td>Alias of --width.</td>
-    </tr>
-</table>
-###helion guid *\<type\* *\<name\*###
-Map the specified name into a uuid, given the type. This is an Application Lifecycle Service 3 specific command.
+##helion guid <*type*> <*name*> {#command-guid}
+Map the specified name into a uuid, given the type. 
     
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion help *\<cmdname\*###
-Retrieve help for a command or command set. Without arguments help for all commands is given. The default format is --full.
-
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--by-category</td>
-    <td>Activate by-category form of the help.</td>
-    </tr>    <tr><td>--full</td>
-    <td>Activate full form of the help.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Activate json form of the help.</td>
-    </tr>    <tr><td>--list</td>
-    <td>Activate list form of the help.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--short</td>
-    <td>Activate short form of the help.</td>
-    </tr>    <tr><td>--width</td>
-    <td>The line width to format the help for. Defaults to the terminal
-    width, or 80 when no terminal is available. </tr><tr>td></tr><tr>
-    <td>-w</td>
-    <td>Alias of --width.</td>
-    </tr>
-</table>
-### helion named-entities###
-List the entity types usable for 'guid'. I.e. the types of the
-    named entities known to the client.
-    
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion quota exit###
-Exit the shell. No-op if not in a shell.
-    
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr>
-</table>
-### helion quota help *\<cmdname\>*###
-Retrieve help for a command or command set. Without arguments, help for all commands is given. The default format is --full.
-    
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--by-category</td>
-<td>Activate by-category form of the help.</td>
-</tr>    <tr><td>--full</td>
-<td>Activate full form of the help.</td>
-</tr>    <tr><td>--json</td>
-<td>Activate json form of the help.</td>
-</tr>    <tr><td>--list</td>
-<td>Activate list form of the help.</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
 </tr>    <tr><td>--no-prompt</td>
 <td>Disable interactive queries.</td>
 </tr>    <tr><td>--non-interactive</td>
@@ -413,31 +121,63 @@ Retrieve help for a command or command set. Without arguments, help for all comm
 <td>--noprompt</td>
 <td>Alias of --no-prompt.</td>
 </tr><tr>
-<td>--short</td>
-<td>Activate short form of the help.</td>
-</tr>    <tr><td>--width</td>
-<td>The line width to format the help for. Defaults to the terminal
-width, or 80 when no terminal is available.</td> </tr><tr>
 <td>-n</td>
 <td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>-w</td>
-<td>Alias of --width.</td>
 </tr>
 </table>
-### helion trace###
+
+## helion help <*CommandName*> {#command-help}
+Retrieve help for a command or command set. Without an argument, help for all commands is given. The default format is *--full*.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--by-category</td>
+<td>Activate by-category form of the help.</td>
+</tr>    <tr><td>--full</td>
+<td>Activate full form of the help.</td>
+</tr>    <tr><td>--json</td>
+<td>Activate json form of the help.</td>
+</tr>    <tr><td>--list</td>
+<td>Activate list form of the help.</td>
+</tr><tr>
+<td>--short</td>
+<td>Activate short form of the help.</td>
+</tr>    <tr><td>--width, -w</td>
+<td>The line width to format the help for. Defaults to the terminal
+width, or 80 when no terminal is available. </tr>
+</table>
+
+## helion named-entities {#command-named-entities}
+List the entity types usable for 'guid'. I.e. the types of the
+    named entities known to the client.
+    
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr> 
+</table>
+
+## helion trace {#command-trace}
 Print the saved REST trace for the last client command to stdout.
     
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>-n</td>
-<td>Alias of --no-prompt.</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--short</td>
+<td>Shows only the short list of requests without details like headers and responses.</td>
+</tr>
 </tr></table>
+
+## helion unalias <*name*> {#command-unalias}
+Remove a shortcut (alias) by name.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td>
+</tr><td>None</td>
+</tr>
+</table>

@@ -18,7 +18,7 @@ product: devplatform
 
 <pre>helion [options] command [arguments] [command-options]</pre>
 
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
 

@@ -10,17 +10,17 @@ title: "Application Lifecycle Service Command Line Client Reference: Brokers"
 
 # HP Helion Development Platform: ALS Command Reference: Brokers
 
-- [helion add-service-broker](#command-add-service-broker): Make the named service broker known to the system.
-- [helion create-service-broker](#command-create-service-broker)
-- [helion delete-service-broker](#command-delete-service-broker)
-- [helion remove-service-broker](#command-remove-service-broker)
-- [helion service-brokers](#command-service-brokers)
-- [helion update-service-broker](#command-update-service-broker)
+- [helion add-service-broker](#command-add-service-broker): Make the named service broker known.
+- [helion create-service-broker](#command-create-service-broker): Make the named service broker known. 
+- [helion delete-service-broker](#command-delete-service-broker): Remove the named service broker from the target
+- [helion remove-service-broker](#command-remove-service-broker): Remove the named service broker from the target.
+- [helion service-brokers](#command-service-brokers): Show the list of known service brokers.
+- [helion update-service-broker](#command-update-service-broker): Update the target's knowledge of the named service broker.
 
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
 
@@ -32,22 +32,9 @@ Make the named service broker known to the system.
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr><td>--broker-token</td>
 <td>Value of the broker's token.</td>
-</tr>    <tr><td>--group</td>
-<td>The once-off group to use for the current operation. This is a
-Application Lifecycle Service 2 option.</td>
-</tr>    <tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--no-trace</td>
-<td>Complementary alias of --trace.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+</tr> <tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name.  Cannot be used together with <i>--space-guid</i>.</td>
@@ -63,26 +50,50 @@ operation.</td>
 <td>Path to an existing and readable file containing the targets and
 authorization tokens.</td>
 </tr>
+<tr><td>--url</td><td>Location of the broker.</td></tr> 
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr 
 </table>
-### helion delete-service-broker *\<name\*###
+
+
+## helion create-service-broker <*name*> {#command-create-service-broker}
+Make the named service broker known to the system.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--broker-token</td>
+<td>Value of the broker's token.</td>
+</tr> <tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--url</td><td>Location of the broker.</td></tr>
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr> 
+</table>
+
+## helion delete-service-broker <*name*> {#command-delete-service-broker}
 Remove the named service broker from the target.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
-</tr><tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--no-trace</td>
-<td>Complementary alias of --trace.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
 </tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name.  Cannot be used together with <i>--space-guid</i>.</td>
@@ -100,25 +111,15 @@ authorization tokens.</td>
 </tr>
 </table>
 
-### helion remove-service-broker *\<name\*###
+## helion remove-service-broker <*name*> {#command-remove-service-broker}
 Remove the named service broker from the target. 
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
-</tr><tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--no-trace</td>
-<td>Complementary alias of --trace.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+</tr<tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name.  Cannot be used together with <i>--space-guid</i>.</td>
@@ -136,7 +137,7 @@ authorization tokens.</td>
 </tr>
 </table>
 
-## helion service-broker
+## helion service-brokers {#command-service-brokers}
 Show the list of known service brokers. 
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -144,19 +145,9 @@ Show the list of known service brokers.
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr><tr><td>--json</td>
 <td>Print raw json as output, not human-formatted data.</td>
-</tr>    <tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--no-trace</td>
-<td>Complementary alias of --trace.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
 </tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name.  Cannot be used together with <i>--space-guid</i>.</td>
@@ -174,7 +165,7 @@ authorization tokens.</td>
 </tr>
 </table>
 
-## helion update-service-broker *\<name\* *\<newname\*###
+## helion update-service-broker <*name*> <*NewName*> {#command-update-service-broker}
 Update the target's knowledge of the named service broker. 
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -183,23 +174,12 @@ Update the target's knowledge of the named service broker.
 </tr>
 <tr><td>--broker-token</td>
 <td>New value of the broker's token.</td>
-</tr>    <tr><td>--group</td>
-<td>The once-off group to use for the current operation. This is a
-Application Lifecycle Service 2 option.</td>
-</tr>    <tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--no-trace</td>
-<td>Complementary alias of --trace.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
 </tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
-</tr>    <tr><td>--space</td>
+<td>--organization. -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    
+<tr><td>--password</td><td>The password to use for access to the broker.</td></tr>
+<tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name.  Cannot be used together with <i>--space-guid</i>.</td>
 </tr>    <tr><td>--space-guid</td>
@@ -214,4 +194,6 @@ operation.</td>
 <td>Path to an existing and readable file containing the targets and
 authorization tokens.</td>
 </tr> 
-</table> 
+<tr><td>--url</td><td>Location of the broker.</td></tr>
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr>
+</table>

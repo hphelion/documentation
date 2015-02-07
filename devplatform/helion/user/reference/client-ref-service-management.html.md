@@ -22,7 +22,7 @@ product: devplatform
 ## Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
 
@@ -39,8 +39,7 @@ done.</td>
 <td>Request target to stop streaming the log.</td>
 </tr><tr>
 <td>--organization, -o</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>The once-off organization to use for the current operation. </td>
 </tr>    <tr><td>--path</td>
 <td>Path of the directory holding the application files to push.
 Defaults to the current working directory.</td>
@@ -174,8 +173,7 @@ Delete the named provisioned service.
 instances.</td>
 </tr><tr>
 <td>--organization, -o</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name. Cannot be used together with <i>--space-guid</i>.</td>
@@ -204,8 +202,7 @@ Rename the specified service instance.
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr><tr>
 <td>--organization, -o</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
 name. Cannot be used together with <i>--space-guid</i>.</td>
@@ -282,8 +279,7 @@ done.</td>
 <td>Alias of --no-prompt.</td>
 </tr><tr>
 <td>--organization, -o</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--path</td>
 <td>Path of the directory holding the application files to push.
 Defaults to the current working directory.</td>

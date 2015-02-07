@@ -10,202 +10,120 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Service Plans
 
-- [helion hide-service-plan](#command-hide-service-plan)
-- [helion service-plans](#command-service-plans)
-- [helion service-plans](#command-service-plans)
-- [helion show-service-plan](#command-show-service-plan)
-- [helion update-service-plan](#command-update-service-plan)
+- [helion hide-service-plan](#command-hide-service-plan): Hide the specified service-plan from the named organization.
+- [helion service-plan](#command-service-plan): Show the details of the specified service plan
+- [helion service-plans](#command-service-plans): List all available plans of the supported services
+- [helion show-service-plan](#command-show-service-plan): Make the specified service plan visible to the named organization.
+- [helion update-service-plan](#command-update-service-plan): Update the target's knowledge of the named service plan.
 
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
       
-.. _command-hide-service-plan:
-
-      stackato hide-service-plan  *<name>*  *<organization>*       
-        Hide the specified service-plan from the named organization. This is a Stackato 3 specific command.
-
-        --provider
-          
-		The service provider. Use this to disambiguate
-		between multiple providers of the same vendor/type.
+## helion hide-service-plan  <*name*> <*organization*> {#command-hide-service-plan}      
+Hide the specified service-plan from the named organization.
 	    
-        --target
-          
-	    The once-off target to use for the current operation.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--provider</td><td>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+<tr><td>--vendor</td><td>Name of the service type the specified plan belongs to.</td></tr>
+<tr><td>--version</td><td>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</td></tr>
+</tr>
+</table>
+
+## helion service-plan <*name*> {#command-service-plan}       
+Show the details of the specified service plan.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--json</td><td>Print raw json as output, not human-formatted data.</td></tr>
+<tr><td>--provider</td><td>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</td></tr><tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--vendor</td><td>Name of the service type the specified plan belongs to.</td></tr>
+<tr><td>--version</td><td>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</td></tr>
+</table>
+
+## helion service-plans {#command-service-plans}     
+List all available plans of the supported services.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--json</td><td>Print raw json as output, not human-formatted data.</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+
+## helion show-service-plan <*name*> <*organization*> {#command-show-service-plan}       
+Make the specified service plan visible to the named organization.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--provider</td><td>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--vendor</td><td>Name of the service type the specified plan belongs to.</td></tr>
+<tr><td>--version</td><td>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</td></tr>
+</table>
+
+## helion update-service-plan <*name*> <*NewName*> {#command-update-service-plan}     
+Update the target's knowledge of the named service plan.
 	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --vendor
-          
-		    Name of the service type the specified plan belongs to.
-		
-        --version
-          
-		The service version. Use this to disambiguate
-		between multiple versions of the same vendor/type.
-	    
-
-
-.. _command-service-plans:
-
-      stackato service-plans       
-        List all available plans of the supported services. This is a Stackato 3 specific command.
-
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-service-plan:
-
-      stackato service-plan  *<name>*       
-        Show the details of the specified service plan. This is a Stackato 3 specific command.
-
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --provider
-          
-		The service provider. Use this to disambiguate
-		between multiple providers of the same vendor/type.
-	    
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --vendor
-          
-		    Name of the service type the specified plan belongs to.
-		
-        --version
-          
-		The service version. Use this to disambiguate
-		between multiple versions of the same vendor/type.
-	    
-
-
-.. _command-show-service-plan:
-
-      stackato show-service-plan  *<name>*  *<organization>*       
-        Make the specified service-plan visible to the named organization. This is a Stackato 3 specific command.
-
-        --provider
-          
-		The service provider. Use this to disambiguate
-		between multiple providers of the same vendor/type.
-	    
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --vendor
-          
-		    Name of the service type the specified plan belongs to.
-		
-        --version
-          
-		The service version. Use this to disambiguate
-		between multiple versions of the same vendor/type.
-	    
-
-
-.. _command-update-service-plan:
-
-      stackato update-service-plan  *<name>*  *<newname>*       
-        Update the target's knowledge of the named service plan. This is a Stackato 3 specific command.
-
-        --description
-          
-		    Change the plan's description.
-		
-        --free
-          
-		    Mark the plan as free.
-		
-        --no-free
-          Complementary alias of --free.
-        --no-public
-          Complementary alias of --public.
-        --provider
-          
-		The service provider. Use this to disambiguate
-		between multiple providers of the same vendor/type.
-	    
-        --public
-          
-		    Mark the plan as globally public.
-		
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --vendor
-          
-		    Name of the service type the specified plan belongs to.
-		
-        --version
-          
-		The service version. Use this to disambiguate
-		between multiple versions of the same vendor/type.
-	    
-
-
-  
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--description</td><td>Change the plan's description.</td></tr>
+<tr><td>--free</td><td>Mark the plan as free.</td></tr>
+<tr><td>--no-free</td><td>Complementary alias of --free.</td></tr>
+<tr><td>--no-public</td><td>Complementary alias of --public.</td></tr>
+<tr><td>--public</td><td>Mark the plan as globally public.</td></tr>
+<tr><td>--provider</td><td>The service provider. Use this to disambiguate between multiple providers of the same vendor/type.</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--vendor</td><td>Name of the service type the specified plan belongs to.</td></tr>
+<tr><td>--version</td><td>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</td></tr>
+</table>

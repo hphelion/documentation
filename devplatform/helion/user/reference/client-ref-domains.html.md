@@ -10,168 +10,80 @@ title: "Application Lifecycle Service Command Line Client Reference: Domains"
 
 # HP Helion Development Platform: ALS Command Reference: Domains
 
-- [helion create-domain](#command-create-domain)
-- [helion delete-domain](#command-delete-domain)
-- [helion domains](#command-domains)
-- [helion map-domain](#command-map-domain)
-- [helion unmap-domain](#command-unmap-domain)
+- [helion create-domain](#command-create-domain): Create a new domain.
+- [helion delete-domain](#command-delete-domain): Delete the named domain.
+- [helion domains](#command-domains): List the available domains in the specified space or all domains.
 
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*option*]**, or **helion options** commands.
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
-### helion domains###
-List the available domains in the specified space, or all. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--all</td>
-    <td>Query information about all domains. Cannot be used together with
-    a space.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The name of the space to use as context.
-    Defaults to the current space.
-    A current space is automatically set if there is none, either by
-    taking the one space the user has, or asking the user to choose
-    among the possibilities. Cannot be used together with --all.</td> 
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion create-domain <*name*> {#command-create-domain}
+Create a new domain.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    
+<tr><td>--shared</td><td>Mark the new domain as shared by all organizations. If not present, the new domain will be owned by and private to the current or specified organization.</td></tr>
+<tr><tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion map-domain *\<name\*###
-Add the named domain to an organization or space. This is a Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The name of the space to use as context.
-    Defaults to the current space.
-    A current space is automatically set if there is none, either by
-    taking the one space the user has, or asking the user to choose
-    among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+
+## helion delete-domain <*name*> {#command-delete-domain}
+Delete the named domain.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion unmap-domain *\<name\*###
-Remove the named domain from an organization or space. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The name of the space to use as context.
-    Defaults to the current space. 
-    A current space is automatically set if there is none, either by
-    taking the one space the user has, or asking the user to choose
-    among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+
+## helion domains {#command-domains}
+List the available domains in the specified space or all domains.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--all</td>
+<td>Query information about all domains. Cannot be used together with a space.</td>
+</tr> <tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr><tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <i>--space-guid</i>.</td>
+</tr><tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>

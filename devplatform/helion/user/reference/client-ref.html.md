@@ -10,7 +10,7 @@ product: devplatform
 
 # HP Helion Development Platform: Application Lifecycle Service Client Command Reference {#helion-client-command-reference}
  
-Many of the informational commands take a **--json** option if you wish to generate machine-parseable output. In some cases the **--json** option reveals additional details.
+Many of the informational commands take a **--json** option if you wish to generate machine-parseable output. In some cases the json output reveals additional details.
 
 Note that Administrative user privileges are required for some commands.
 
@@ -36,52 +36,53 @@ Note that Administrative user privileges are required for some commands.
 - [helion version](/als/v1/user/reference/client-ref/administration/#command-version): Print the version number of the client.
 
 ###[Applications](/als/v1/user/reference/client-ref/applications)
-- [helion app](/als/v1/user/reference/client-ref/applications/#command-app)
-- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps)
-- [helion list](/als/v1/user/reference/client-ref/applications/#command-list)
+- [helion app](/als/v1/user/reference/client-ref/applications/#command-app): Show the information of the specified application.
+- [helion apps](/als/v1/user/reference/client-ref/applications/#command-apps): List the applications deployed to the target.
+- [helion list](/als/v1/user/reference/client-ref/applications/#command-list): List the applications deployed to the target.
+- [helion releases](/als/v1/user/reference/client-ref/applications/#command-releases): Show the list of versions for the specified application.
+- [helion versions](/als/v1/user/reference/client-ref/applications/#command-versions): Show the list of versions for the specified application.
+
 
 ###[Authentication Tokens](/als/v1/user/reference/client-ref/tokens)  
-- [helion create-service-auth-token](#command-create-service-auth-token)
-- [helion delete-service-auth-token](#command-delete-service-auth-token)
-- [helion service-auth-tokens](#command-service-auth-tokens)
-- [helion update-service-auth-token](#command-update-service-auth-token)
+- [helion create-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-create-service-auth-token): Create a new service authentication token.
+- [helion delete-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-delete-service-auth-token): Delete the specified service authentication token
+- [helion service-auth-tokens](/als/v1/user/reference/client-ref/tokens/#command-service-auth-tokens):Show all service authentication tokens knowns to the target. 
+- [helion update-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-update-service-auth-token): Update the specified service authentication token.
 	
 ###[Brokers](/als/v1/user/reference/client-ref/brokers)
-- [helion add-service-broker](/als/v1/user/reference/client-ref/brokers/#command-add-service-broker)
-- [helion create-service-broker](/als/v1/user/reference/client-ref/brokers/#command-create-service-broker)
-- [helion delete-service-broker](/als/v1/user/reference/client-ref/brokers/#command-delete-service-broker)
-- [helion remove-service-broker](/als/v1/user/reference/client-ref/brokers/#command-remove-service-broker)
-- [helion service-brokers](/als/v1/user/reference/client-ref/brokers/#command-service-brokers)
-- [helion update-service-broker](/als/v1/user/reference/client-ref/brokers/#command-update-service-broker)
+- [helion add-service-broker](/als/v1/user/reference/client-ref/brokers/#command-add-service-broker): Make the named service broker known.
+- [helion create-service-broker](/als/v1/user/reference/client-ref/brokers/#command-create-service-broker): Make the named service broker known. 
+- [helion delete-service-broker](/als/v1/user/reference/client-ref/brokers/#command-delete-service-broker): Remove the named service broker from the target
+- [helion remove-service-broker](/als/v1/user/reference/client-ref/brokers/#command-remove-service-broker): Remove the named service broker from the target.
+- [helion service-brokers](/als/v1/user/reference/client-ref/brokers/#command-service-brokers): Show the list of known service brokers.
+- [helion update-service-broker](/als/v1/user/reference/client-ref/brokers/#command-update-service-broker): Update the target's knowledge of the named service broker.
 
 ###[Buildpacks](/als/v1/user/reference/client-ref/buildpacks) 
-- [helion buildpacks](/als/v1/user/reference/client-ref/buildpacks/#command-buildpacks)
-- [helion create-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-create-buildpack)
-- [helion delete-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-delete-buildpack)
-- [helion rename-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-rename-buildpack)
-- [helion update-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-update-buildpack)
+- [helion buildpacks](/als/v1/user/reference/client-ref/buildpacks/#command-buildpacks): Show all buildpacks known to the target in the order they are checked in during auto-detection.
+- [helion create-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-create-buildpack): Add a buildpack to the target.
+- [helion delete-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-delete-buildpack): Remove the specified buildpack from the target.
+- [helion rename-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-rename-buildpack): Change the name of the specified buildpack.
+- [helion update-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-update-buildpack): Change the information known about the specified buildpack.
 
-###[Control](/als/v1/user/reference/client-ref/control)
-- [helion migrate](/als/v1/user/reference/client-ref/control/#command-migrate)
-- [helion restage](/als/v1/user/reference/client-ref/control/#command-restage)
+###[Control](/als/v1/user/reference/client-ref/control) (new in HP Helion OpenStack&reg;  Development Platform 1.1)
+- [helion migrate](/als/v1/user/reference/client-ref/control/#command-migrate): Move the application to a different space. 
+- [helion restage](/als/v1/user/reference/client-ref/control/#command-restage): Restage an application and regenerate its droplet.
 
 ###[Domains](/als/v1/user/reference/client-ref/domains)
-- [helion create-domain](/als/v1/user/reference/client-ref/domains/#command-create-domain)
-- [helion delete-domain](/als/v1/user/reference/client-ref/domains/#command-delete-domain)
-- [helion domains](/als/v1/user/reference/client-ref/domains/#command-domains)
-- [helion map-domain](/als/v1/user/reference/client-ref/domains/#command-map-domain)
-- [helion unmap-domain](/als/v1/user/reference/client-ref/domains/#command-unmap-domain)
+- [helion create-domain](/als/v1/user/reference/client-ref/domains/#command-create-domain): Create a new domain.
+- [helion delete-domain](/als/v1/user/reference/client-ref/domains/#command-delete-domain): Delete the named domain.
+- [helion domains](/als/v1/user/reference/client-ref/domains/#command-domains): List the available domains in the specified space or all domains.
 
-###[Feature Flags](/als/v1/user/reference/client-ref/flags) 
-- [helion disable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-disable-feature-flag)
-- [helion enable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-enable-feature-flag)
-- [helion feature-flag](/als/v1/user/reference/client-ref/flags/#command-feature-flag)	
-- [helion feature-flags](/als/v1/user/reference/client-ref/flags/#command-feature-flags)
+###[Feature Flags](/als/v1/user/reference/client-ref/flags) (new in HP Helion OpenStack&reg;  Development Platform 1.1)
+- [helion disable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-disable-feature-flag): Deactivate the specified feature. 
+- [helion enable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-enable-feature-flag): Activate the specified feature.
+- [helion feature-flag](/als/v1/user/reference/client-ref/flags/#command-feature-flag): Show the details of the specified feature flag. 	
+- [helion feature-flags](/als/v1/user/reference/client-ref/flags/#command-feature-flags):  Show all known feature flags and the status of each one.
 
 ###[History](/als/v1/user/reference/client-ref/history)
-- [helion history clear](/als/v1/user/reference/client-ref/history/#command-history-clear)
-- [helion history limit](/als/v1/user/reference/client-ref/history/#command-history-limit)
-- [helion history list](/als/v1/user/reference/client-ref/history/#command-history-list)
+- [helion history clear](/als/v1/user/reference/client-ref/history/#command-history-clear): Clear the saved history.
+- [helion history limit](/als/v1/user/reference/client-ref/history/#command-history-limit): Limit the size of the history or display the current limit.
+- [helion history list](/als/v1/user/reference/client-ref/history/#command-history-list): Show the saved history of commands.
 
 ###[Information](/als/v1/user/reference/client-ref/information)
 - [helion crashes](/als/v1/user/reference/client-ref/information/#command-crashes): List recent application crashes.
@@ -126,57 +127,58 @@ Note that Administrative user privileges are required for some commands.
 - [helion unset-env](/als/v1/user/reference/client-ref/management/#command-unset-env): Remove the specified environment variable from the named application.
 
 ###[Miscellaneous](/als/v1/user/reference/client-ref/miscellaneous)
-- [helion admin](/als/v1/user/reference/client-ref/miscellaneous/#command-admin)
-- [helion alias](/als/v1/user/reference/client-ref/miscellaneous/#command-alias)	
-- [helion aliases](/als/v1/user/reference/client-ref/miscellaneous/#command-aliases)
-- [colors](/als/v1/user/reference/client-ref/miscellaneous/#command-Administration-Colors)
-- [helion curl](/als/v1/user/reference/client-ref/miscellaneous/#command-curl)
-- [helion drain](/als/v1/user/reference/client-ref/miscellaneous/#command-drain)
-- [helion guid](/als/v1/user/reference/client-ref/miscellaneous/#command-guid)
-- [helion named-entities](/als/v1/user/reference/client-ref/miscellaneous/#command-named-entities )
-- [helion trace](/als/v1/user/reference/client-ref/miscellaneous/#command-trace )
-- [helion unalias](/als/v1/user/reference/client-ref/miscellaneous/#command-unalias)
+- [helion admin](/als/v1/user/reference/client-ref/miscellaneous/#command-admin): A set of administrative tasks.
+- [helion alias](/als/v1/user/reference/client-ref/miscellaneous/#command-alias): Create a shortcut for a command.	
+- [helion aliases](/als/v1/user/reference/client-ref/miscellaneous/#command-aliases): List the known aliases (shortcuts).
+- [helion color](/als/v1/user/reference/client-ref/miscellaneous/#command-color): Management of terminal colors.
+- [helion curl](/als/v1/user/reference/client-ref/miscellaneous/#command-curl): Run a raw REST request against the chosen target.
+- [helion drain](/als/v1/user/reference/client-ref/miscellaneous/#command-drain): Commands for the management of drains attached to applications.
+- [helion guid](/als/v1/user/reference/client-ref/miscellaneous/#command-guid): Map the specified name into a GUID given the type.
+- [helion help](/als/v1/user/reference/client-ref/miscellaneous/#command-help): Retrieve help for a command or command set.
+- [helion named-entities](/als/v1/user/reference/client-ref/miscellaneous/#command-named-entities): List the entity types usable for GUID.
+- [helion trace](/als/v1/user/reference/client-ref/miscellaneous/#command-trace): Print the saved REST trace for the last client command to stdout.
+- [helion unalias](/als/v1/user/reference/client-ref/miscellaneous/#command-unalias): Remove a shortcut by name.
 
 ###[Organizations](/als/v1/user/reference/client-ref/organizations)
-- [helion create-org](/als/v1/user/reference/client-ref/organizations/#command-create-org)
-- [helion command-delete-org](/als/v1/user/reference/client-ref/organizations/#delete-org)
-- [helion link-user-org](/als/v1/user/reference/client-ref/organizations/#command-link-user-org)
-- [helion org-users](/als/v1/user/reference/client-ref/organizations/#command-org-users)
-- [helion org](/als/v1/user/reference/client-ref/organizations/#command-org)	
-- [helion orgs](/als/v1/user/reference/client-ref/organizations/#command-orgs)
-- [helion quota-org](/als/v1/user/reference/client-ref/organizations/#command-quota-org)
-- [helion rename-org](/als/v1/user/reference/client-ref/organizations/#command-rename-org)
-- [helion switch-org](/als/v1/user/reference/client-ref/organizations/#command-switch-org)
-- [helion unlink-user-org](/als/v1/user/reference/client-ref/organizations/#command-unlink-user-org)
-- [helion update-org](/als/v1/user/reference/client-ref/organizations/#command-update-org)
+- [helion create-org](/als/v1/user/reference/client-ref/organizations/#command-create-org): Create a new organization.
+- [helion command-delete-org](/als/v1/user/reference/client-ref/organizations/#delete-org): Delete the named organization
+- [helion link-user-org](/als/v1/user/reference/client-ref/organizations/#command-link-user-org): Add the specified user to the named organization in various roles.
+- [helion org](/als/v1/user/reference/client-ref/organizations/#command-org): Show the named organization's information.	
+- [helion orgs](/als/v1/user/reference/client-ref/organizations/#command-orgs): List the available organizations.
+- [helion org-users](/als/v1/user/reference/client-ref/organizations/#command-org-users): Show the users for the organization by role. 
+- [helion quota-org](/als/v1/user/reference/client-ref/organizations/#command-quota-org): Set the quotas for the current or named organization.
+- [helion rename-org](/als/v1/user/reference/client-ref/organizations/#command-rename-org): Rename the named organization.
+- [helion switch-org](/als/v1/user/reference/client-ref/organizations/#command-switch-org): Switch the current organization to the named organization.
+- [helion unlink-user-org](/als/v1/user/reference/client-ref/organizations/#command-unlink-user-org): Remove the specified user from the named organization in various roles. 
+- [helion update-org](/als/v1/user/reference/client-ref/organizations/#command-update-org): Change one or more attributes of an organization in a single call.
 
 ### [Placement Zones](/als/v1/user/reference/client-ref/placement) 
-- [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone)
-- [helion placement-zones](/als/v1/user/reference/client-ref/placement/#command-placement-zones)
-- [helion set-placement-zone](/als/v1/user/reference/client-ref/placement/#command-set-placement-zone)
-- [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone)
+- [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone): Show the list of DEAs associated with the specified placement zone.
+- [helion placement-zones](/als/v1/user/reference/client-ref/placement/#command-placement-zones): Show the available placement zones.
+- [helion set-placement-zone](/als/v1/user/reference/client-ref/placement/#command-set-placement-zone): Associate the application with a specific placement zone.
+- [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone): Remove the association between an application and its current placement zone.
 
 ###[Quotas](/als/v1/user/reference/client-ref/quotas)
-- [helion quota configure](/als/v1/user/reference/client-ref/quotas/#command-quota-configure)
-- [helion quota create](/als/v1/user/reference/client-ref/quotas/#command-quota-create)
-- [helion quota delete](/als/v1/user/reference/client-ref/quotas/#command-quota-delete)
-- [helion quota list](/als/v1/user/reference/client-ref/quotas/#command-quota-list)
-- [helion quota rename](/als/v1/user/reference/client-ref/quotas/#command-quota-rename)
-- [helion quota show](/als/v1/user/reference/client-ref/quotas/#command-quota-show)
-- [helion quotas](/als/v1/user/reference/client-ref/quotas/#command-quotas)
+- [helion quota configure](/als/v1/user/reference/client-ref/quotas/#command-quota-configure): Reconfigure the named quota plan.
+- [helion quota create](/als/v1/user/reference/client-ref/quotas/#command-quota-create): Create a new quota plan.
+- [helion quota delete](/als/v1/user/reference/client-ref/quotas/#command-quota-delete): Delete the named quota plan.
+- [helion quota list](/als/v1/user/reference/client-ref/quotas/#command-quota-list): List the available quota plans. 
+- [helion quota rename](/als/v1/user/reference/client-ref/quotas/#command-quota-rename): Rename the named quota plan.
+- [helion quota show](/als/v1/user/reference/client-ref/quotas/#command-quota-show): Show the details of the named quota plan
+- [helion quotas](/als/v1/user/reference/client-ref/quotas/#command-quotas): List the available quota plans.
 
 ###[Routes](/als/v1/user/reference/client-ref/routes)
-- [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route)
-- [helion routes](/als/v1/user/reference/client-ref/routes/#command-routes)
+- [helion delete-route](/als/v1/user/reference/client-ref/routes/#command-delete-route): Delete the named route.
+- [helion routes](/als/v1/user/reference/client-ref/routes/#command-routes): List all routes or routes available in the specified space. 
 
-###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) 
-- [helion bind-security-group](#command-bind-security-group)
-- [helion create-security-group](#command-create-security-group)
-- [helion delete-security-group](#command-delete-security-group)
-- [helion security-group](#command-security-group)
-- [helion security-groups](#command-security-groups)
-- [helion unbind-security-group](#command-unbind-security-group)
-- [helion update-security-group](#command-update-security-group)
+###[Security Groups](/als/v1/user/reference/client-ref/securitygroups) (new in HP Helion OpenStack&reg;  Development Platform 1.1) 
+- [helion bind-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-bind-security-group): Bind the named security group to the current space, the specified space, or the running and staging phases. 
+- [helion create-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-create-security-group): Create a new security group.
+- [helion delete-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-delete-security-group): Delete the named security group.
+- [helion security-group](/als/v1/user/reference/client-ref/securitygroups/#command-security-group): Show the details of the named security group.
+- [helion security-groups](/als/v1/user/reference/client-ref/securitygroups/#command-security-groups): Show all known security groups or just those assigned to the running and staging phases.
+- [helion unbind-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-unbind-security-group): Drop the named security group from the current space, the specified space, or the running and staging phases.
+- [helion update-security-group](/als/v1/user/reference/client-ref/securitygroups/#command-update-security-group): Modify the named security group.
 
 ###[Service Management](/als/v1/user/reference/client-ref/servicemanagement) 
 - [helion bind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-bind-service): Bind the named service to the specified application.
@@ -188,48 +190,47 @@ Note that Administrative user privileges are required for some commands.
 - [helion unbind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-unbind-service): Disconnect the named service from the specified application.
 - [helion update-user-provided-service](/als/v1/user/reference/client-ref/servicemanagement/#command-update-user-provided-service): Update the credentials of a user provided service.
 
-###[Service Plans](/als/v1/user/reference/client-ref/plans)
-- [helion hide-service-plan](/als/v1/user/reference/client-ref/plans/#command-hide-service-plan)
-- [helion service-plans](/als/v1/user/reference/client-ref/plans/#command-service-plans)
-- [helion service-plans](/als/v1/user/reference/client-ref/plans/#command-service-plans)
-- [helion show-service-plan](/als/v1/user/reference/client-ref/plans/#command-show-service-plan)
-- [helion update-service-plan](/als/v1/user/reference/client-ref/plans/#command-update-service-plan)
+###[Service Plans](/als/v1/user/reference/client-ref/serviceplans)
+- [helion hide-service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-hide-service-plan): Hide the specified service-plan from the named organization.
+- [helion service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-service-plan): Show the details of the specified service plan
+- [helion service-plans](/als/v1/user/reference/client-ref/serviceplans/#command-service-plans): List all available plans of the supported services
+- [helion show-service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-show-service-plan): Make the specified service plan visible to the named organization.
+- [helion update-service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-update-service-plan): Update the target's knowledge of the named service plan.
 
 ###[Services](/als/v1/user/reference/client-ref/services)
-- [helion marketplace](/als/v1/user/reference/client-ref/services/#command-marketplace)
-- [helion purge-service-offerings](/als/v1/user/reference/client-ref/services/#command-purge-service-offerings)
-- [helion service](/als/v1/user/reference/client-ref/services/#command-service)
-- [helion services](/als/v1/user/reference/client-ref/services/#command-services)
+- [helion marketplace](/als/v1/user/reference/client-ref/services/#command-marketplace): List the supported service plans of the target for the current or specified space. This command is new in HP Helion OpenStack&reg; 1.1. 
+- [helion purge-service-offerings](/als/v1/user/reference/client-ref/services/#command-purge-service-offerings): Purge all offerings of the service type from the system. **Warning** use with caution.  This command is new in HP Helion OpenStack&reg; 1.1. 
+- [helion service](/als/v1/user/reference/client-ref/services/#command-service): Show information about the named service.
+- [helion services](/als/v1/user/reference/client-ref/services/#command-services): List the supported and provisioned services of the target.
 
 ###[Spaces](/als/v1/user/reference/client-ref/spaces)
-- [helion create-space](/als/v1/user/reference/client-ref/spaces/#command-create-space)
-- [helion delete-space](/als/v1/user/reference/client-ref/spaces/#command-delete-space)
-- [helion link-user-space](/als/v1/user/reference/client-ref/spaces/#command-link-user-space)
-- [helion rename-space](/als/v1/user/reference/client-ref/spaces/#command-rename-space)
-- [helion space-users](/als/v1/user/reference/client-ref/spaces/#command-space-users)
-- [helion space](/als/v1/user/reference/client-ref/spaces/#command-space)	
-- [helion spaces](/als/v1/user/reference/client-ref/spaces/#command-spaces)
-- [helion switch-space](/als/v1/user/reference/client-ref/spaces/#command-switch-space)
-- [helion unlink-user-space](/als/v1/user/reference/client-ref/spaces/#command-unlink-user-space)
-- [helion update-space ](/als/v1/user/reference/client-ref/spaces/#command-update-space)
+- [helion create-space](/als/v1/user/reference/client-ref/spaces/#command-create-space): Create a new space.
+- [helion delete-space](/als/v1/user/reference/client-ref/spaces/#command-delete-space): Delete the named space.
+- [helion link-user-space](/als/v1/user/reference/client-ref/spaces/#command-link-user-space): Add the specified user to the named space in various roles. 
+- [helion rename-space](/als/v1/user/reference/client-ref/spaces/#command-rename-space): Rename the named space.
+- [helion space-users](/als/v1/user/reference/client-ref/spaces/#command-space-users): Show the users for the space, by role.
+- [helion space](/als/v1/user/reference/client-ref/spaces/#command-space): Show the named space's information. 	
+- [helion spaces](/als/v1/user/reference/client-ref/spaces/#command-spaces): List the available spaces in the specified organization.
+- [helion switch-space](/als/v1/user/reference/client-ref/spaces/#command-switch-space): Switch from the current space to the named space. 
+- [helion unlink-user-space](/als/v1/user/reference/client-ref/spaces/#command-unlink-user-space): Remove the specified user from the named space in various roles.
+- [helion update-space ](/als/v1/user/reference/client-ref/spaces/#command-update-space): Change one or more attributes of a space in a single call.
 
-###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas)
-- [helion create-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-create-space-quota)
-- [helion delete-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-delete-space-quota)
-- [helion rename-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-rename-space-quota)
-- [helion set-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-set-space-quota)
-- [helion space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-space-quota)
-- [helion space-quotas](/als/v1/user/reference/client-ref/spacequotas/#command-space-quotas )
-- [helion unset-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-unset-space-quota)
-- [helion update-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-update-space-quota)
+###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas) (new in HP Helion OpenStack&reg; Development Platform 1.1)
+- [helion create-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-create-space-quota): Create a new space quota. 
+- [helion delete-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-delete-space-quota): Delete the named space quota. 
+- [helion rename-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-rename-space-quota): Rename the named space quota.
+- [helion set-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-set-space-quota): Assign the specified space quota to the current or specified space
+- [helion space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-space-quota): Show the details of the named space quota. 
+- [helion space-quotas](/als/v1/user/reference/client-ref/spacequotas/#command-space-quotas): List the space quotas owned by the current, specified, or all organizations.
+- [helion unset-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-unset-space-quota): Drop the space quota from the current or specified space.
+- [helion update-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-update-space-quota): Modify the named space quota.
 
 ###[User Management](/als/v1/user/reference/client-ref/usermanagement) 
-- [helion add-user](/als/v1/user/reference/client-ref/usermanagement/#command-add-user)
-- [helion delete-user](/als/v1/user/reference/client-ref/usermanagement/#command-delete-user)
-- [helion login-fields](/als/v1/user/reference/client-ref/usermanagement/#command-login-fields)
-- [helion passwd](/als/v1/user/reference/client-ref/usermanagement/#command-passwd)
-- [helion register](/als/v1/user/reference/client-ref/usermanagement/#command-register)
-- [helion token](/als/v1/user/reference/client-ref/usermanagement/#command-token)
-- [helion unregister](/als/v1/user/reference/client-ref/usermanagement/#command-unregister)
-- [helion users](/als/v1/user/reference/client-ref/usermanagement/#command-users)
-
+- [helion add-user](/als/v1/user/reference/client-ref/usermanagement/#command-add-user): Register a new user in the current or specified target. Requires admin privileges.
+- [helion delete-user](/als/v1/user/reference/client-ref/usermanagement/#command-delete-user):Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.
+- [helion login-fields](/als/v1/user/reference/client-ref/usermanagement/#command-login-fields): Show the names of the credential fields needed for a login. 
+- [helion passwd](/als/v1/user/reference/client-ref/usermanagement/#command-passwd): Change the password of the current user in the current or specified target.
+- [helion register](/als/v1/user/reference/client-ref/usermanagement/#command-register): Register a new user in the current or specified target. Requires admin privileges.
+- [helion token](/als/v1/user/reference/client-ref/usermanagement/#command-token): Interactively set authentication token.
+- [helion unregister](/als/v1/user/reference/client-ref/usermanagement/#command-unregister): Delete the named user and the user's applications and services from the current or specified target. Requires admin privileges.
+- [helion users](/als/v1/user/reference/client-ref/usermanagement/#command-users): Show the list of users known to the current or specified target.
