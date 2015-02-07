@@ -82,7 +82,7 @@ operation.</td>
 authorization tokens.</td>
 </tr>
 <tr><td>--url</td><td>Location of the broker.</td></tr>
-<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr 
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr> 
 </table>
 
 ## helion delete-service-broker <*name*> {#command-delete-service-broker}
@@ -117,17 +117,8 @@ Remove the named service broker from the target.
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
-</tr><tr><td>--no-prompt</td>
-<td>Disable interactive queries.</td>
-</tr>    <tr><td>--no-trace</td>
-<td>Complementary alias of --trace.</td>
-</tr>    <tr><td>--non-interactive</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--noprompt</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>--organization, -o/td>
+</tr<tr>
+<td>--organization, -o</td>
 <td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
@@ -204,5 +195,5 @@ operation.</td>
 authorization tokens.</td>
 </tr> 
 <tr><td>--url</td><td>Location of the broker.</td></tr>
-<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr 
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr>
 </table>

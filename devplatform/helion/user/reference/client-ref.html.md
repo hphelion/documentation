@@ -66,11 +66,9 @@ Note that Administrative user privileges are required for some commands.
 - [helion restage](/als/v1/user/reference/client-ref/control/#command-restage)
 
 ###[Domains](/als/v1/user/reference/client-ref/domains)
-- [helion create-domain](/als/v1/user/reference/client-ref/domains/#command-create-domain)
-- [helion delete-domain](/als/v1/user/reference/client-ref/domains/#command-delete-domain)
-- [helion domains](/als/v1/user/reference/client-ref/domains/#command-domains)
-- [helion map-domain](/als/v1/user/reference/client-ref/domains/#command-map-domain)
-- [helion unmap-domain](/als/v1/user/reference/client-ref/domains/#command-unmap-domain)
+- [helion create-domain](/als/v1/user/reference/client-ref/domains/#command-create-domain): Create a new domain.
+- [helion delete-domain](/als/v1/user/reference/client-ref/domains/#command-delete-domain): Delete the named domain.
+- [helion domains](/als/v1/user/reference/client-ref/domains/#command-domains): List the available domains in the specified space or all domains.
 
 ###[Feature Flags](/als/v1/user/reference/client-ref/flags) 
 - [helion disable-feature-flag](/als/v1/user/reference/client-ref/flags/#command-disable-feature-flag)
