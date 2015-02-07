@@ -58,11 +58,11 @@ Note that Administrative user privileges are required for some commands.
 - [helion update-service-broker](/als/v1/user/reference/client-ref/brokers/#command-update-service-broker): Update the target's knowledge of the named service broker.
 
 ###[Buildpacks](/als/v1/user/reference/client-ref/buildpacks) 
-- [helion buildpacks](/als/v1/user/reference/client-ref/buildpacks/#command-buildpacks)
-- [helion create-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-create-buildpack)
-- [helion delete-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-delete-buildpack)
-- [helion rename-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-rename-buildpack)
-- [helion update-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-update-buildpack)
+- [helion buildpacks](/als/v1/user/reference/client-ref/buildpacks/#command-buildpacks): Show all buildpacks known to the target in the order they are checked in during auto-detection.
+- [helion create-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-create-buildpack): Add a buildpack to the target.
+- [helion delete-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-delete-buildpack): Remove the specified buildpack from the target.
+- [helion rename-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-rename-buildpack): Change the name of the specified buildpack.
+- [helion update-buildpack](/als/v1/user/reference/client-ref/buildpacks/#command-update-buildpack): Change the information known about the specified buildpack.
 
 ###[Control](/als/v1/user/reference/client-ref/control)
 - [helion migrate](/als/v1/user/reference/client-ref/control/#command-migrate)

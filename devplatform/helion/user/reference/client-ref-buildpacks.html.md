@@ -10,11 +10,11 @@ title: "Application Lifecycle Service Command Line Client Reference: Buildpacks"
 
 # HP Helion Development Platform: ALS Command Reference: Buildpacks
 
-- [helion buildpacks](#command-buildpacks)
-- [helion create-buildpack](#command-create-buildpack)
-- [helion delete-buildpack](#command-delete-buildpack)
-- [helion rename-buildpack](#command-rename-buildpack)
-- [helion update-buildpack](#command-update-buildpack)
+- [helion buildpacks](#command-buildpacks): Show all buildpacks known to the target in the order they are checked in during auto-detection.
+- [helion create-buildpack](#command-create-buildpack): Add a buildpack to the target.
+- [helion delete-buildpack](#command-delete-buildpack): Remove the specified buildpack from the target.
+- [helion rename-buildpack](#command-rename-buildpack): Change the name of the specified buildpack.
+- [helion update-buildpack](#command-update-buildpack): Change the information known about the specified buildpack.
 
 ##Syntax
 
@@ -23,161 +23,98 @@ For more information, use the **helion help**, **helion help [*command*]**, or *
 
 <hr>
       
-.. _command-buildpacks:
+## helion buildpacks {#command-buildpacks}   
+Show all buildpacks known to the target in the order they are checked in during auto-detection.
 
-      stackato buildpacks       
-        Show all build-packs known to the target, in the order they are checked in during auto-detection.
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--json</td><td>Print raw json as output, not human-formatted data.</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
-        --json
-          
-	    Print raw json as output, not human-formatted data.
-	
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
+## helion create-buildpack <*name*> <*zip*> {#command-create-buildpack}     
+Add a buildpack to the target.
+    
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+<tr><td>--disable</td><td>Disable the buildpack, preventing its use.</td></tr>
+<tr><td>--enable</td><td>Enable use of the buildpack.</td></tr>
+<tr><td>--lock</td><td>Lock the buildpack against modification.</td></tr>
+<tr><td>--position, -p</td><td>Location of the buildpack in the sequence used to check them during auto-detection.</td></tr>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--unlock</td><td>Unlock the buildpack, allow changes again.</td></tr>
+</table>
 
+## helion delete-buildpack <*name*> {#command-delete-buildpack}    
+Remove the specified buildpack from the target.
 
-.. _command-create-buildpack:
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
-      stackato create-buildpack  *<name>*  *<zip>*       
-        Add a build-pack to the target.
-        --disable
-          
-		Disable the buildpack, prevent its use.
-	    
-        --enable
-          
-		Enable use of the buildback.
-	    
-        --lock
-          
-		Lock the buildpack against modification.
-	    
-        --position
-          
-		Location of the buildpack in the sequence used
-		to check them during auto-detection.
-	    
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --unlock
-          
-		Unlock the buildpack, allow changes again.
-	    
-        -P
-          Alias of --position.
+## helion rename-buildpack <*name*> <*newname*> {#command-rename-buildpack}     
+Change the name of the specified buildpack.
 
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+<tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
 
-.. _command-delete-buildpack:
+## helion update-buildpack <*name*> {#command-update-buildpack}     
+Change the information known about the specified buildpack.
 
-      stackato delete-buildpack  *<name>*       
-        Remove the specified buildpack from the target.
-
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-rename-buildpack:
-
-      stackato rename-buildpack  *<name>*  *<newname>*       
-        Change the name of the specified build-pack.
-
-       --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-
-
-.. _command-update-buildpack:
-
-      stackato update-buildpack  *<name>*       
-        Change the information known about the specified build-pack.
-
-        --disable
-          
-		Disable the buildpack, prevent its use.
-	    
-        --enable
-          
-		Enable use of the buildback.
-	    
-        --lock
-          
-		Lock the buildpack against modification.
-	    
-        --position
-          
-		Location of the buildpack in the sequence used
-		to check them during auto-detection.
-	    
-        --target
-          
-	    The once-off target to use for the current operation.
-	
-        --token
-          
-	    The once-off authentication token to use for the
-	    current operation.
-	
-        --token-file
-          
-	    Path to an existing and readable file containing
-	    the targets and authorization tokens.
-	
-        --unlock
-          
-		Unlock the buildpack, allow changes again.
-	    
-        --zip
-          
-		Path or url of the new zip file containing the implementation of the buildpack.
-		Accepts the path to a local directory as well, which will become the zip file to upload.
-	    
-        -P
-          Alias of --position.
-
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+<tr><td>--disable</td><td>Disable the buildpack, preventing its use.</td></tr>
+<tr><td>--enable</td><td>Enable use of the buildpack.</td></tr>
+<tr><td>--lock</td><td>Lock the buildpack against modification.</td></tr>
+<tr><td>--position, -p</td><td>Location of the buildpack in the sequence used to check them during auto-detection.</td></tr><tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--unlock</td><td>Unlock the buildpack, allow changes again.</td></tr>
+<tr><td>--zip</td><td>Path or url of the new zip file containing the implementation of the buildpack. Accepts the path to a local directory as well, which will become the zip file to upload.</td></tr>
+</table>
