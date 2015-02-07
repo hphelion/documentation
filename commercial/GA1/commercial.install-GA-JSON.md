@@ -18,9 +18,8 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
+
 # HP Helion OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
 
 The HP Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables. 
@@ -394,7 +393,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 			"customer_router_ip": "10.23.69.129"
 		}
 
-[Return to HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/).
+[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
 
 
 

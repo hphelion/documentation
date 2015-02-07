@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/esx/proxy/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -17,7 +17,8 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/"> &#9650; Deploy vCenter ESX compute proxy</a> | <a href="/helion/openstack/install/kvm/">&#9650; Installation for ESX Hypervisor | <a href="/helion/openstack/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
+
+<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9650; Installation for ESX Hypervisor | <a href="/helion/openstack/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 

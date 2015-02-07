@@ -19,7 +19,8 @@ PageRefresh();
 </script>
 
 
-<!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/install/kvm/">&#9650; Installation for KVM Hypervisor </p> 
+
 
 # HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA  
 

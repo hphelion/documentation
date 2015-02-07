@@ -353,12 +353,6 @@ Configure Block Storage by either deploying VSA or using HP 3Par Array
 
 	For instructions, see the [Scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/) document. 
 
-- Install DNS as a service (DNSaaS) (Optional).
-
-	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
-	For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 
