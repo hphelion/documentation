@@ -202,16 +202,16 @@ Note that Administrative user privileges are required for some commands.
 - [helion services](/als/v1/user/reference/client-ref/services/#command-services)
 
 ###[Spaces](/als/v1/user/reference/client-ref/spaces)
-- [helion create-space](/als/v1/user/reference/client-ref/spaces/#command-create-space)
-- [helion delete-space](/als/v1/user/reference/client-ref/spaces/#command-delete-space)
-- [helion link-user-space](/als/v1/user/reference/client-ref/spaces/#command-link-user-space)
-- [helion rename-space](/als/v1/user/reference/client-ref/spaces/#command-rename-space)
-- [helion space-users](/als/v1/user/reference/client-ref/spaces/#command-space-users)
-- [helion space](/als/v1/user/reference/client-ref/spaces/#command-space)	
-- [helion spaces](/als/v1/user/reference/client-ref/spaces/#command-spaces)
-- [helion switch-space](/als/v1/user/reference/client-ref/spaces/#command-switch-space)
-- [helion unlink-user-space](/als/v1/user/reference/client-ref/spaces/#command-unlink-user-space)
-- [helion update-space ](/als/v1/user/reference/client-ref/spaces/#command-update-space)
+- [helion create-space](/als/v1/user/reference/client-ref/spaces/#command-create-space): Create a new space.
+- [helion delete-space](/als/v1/user/reference/client-ref/spaces/#command-delete-space): Delete the named space.
+- [helion link-user-space](/als/v1/user/reference/client-ref/spaces/#command-link-user-space): Add the specified user to the named space in various roles. 
+- [helion rename-space](/als/v1/user/reference/client-ref/spaces/#command-rename-space): Rename the named space.
+- [helion space-users](/als/v1/user/reference/client-ref/spaces/#command-space-users): Show the users for the space, by role.
+- [helion space](/als/v1/user/reference/client-ref/spaces/#command-space): Show the named space's information. 	
+- [helion spaces](/als/v1/user/reference/client-ref/spaces/#command-spaces): List the available spaces in the specified organization.
+- [helion switch-space](/als/v1/user/reference/client-ref/spaces/#command-switch-space): Switch from the current space to the named space. 
+- [helion unlink-user-space](/als/v1/user/reference/client-ref/spaces/#command-unlink-user-space): Remove the specified user from the named space in various roles.
+- [helion update-space ](/als/v1/user/reference/client-ref/spaces/#command-update-space): Change one or more attributes of a space in a single call.
 
 ###[Space Quotas](/als/v1/user/reference/client-ref/spacequotas)
 - [helion create-space-quota](/als/v1/user/reference/client-ref/spacequotas/#command-create-space-quota)
