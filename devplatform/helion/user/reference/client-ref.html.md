@@ -190,12 +190,12 @@ Note that Administrative user privileges are required for some commands.
 - [helion unbind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-unbind-service): Disconnect the named service from the specified application.
 - [helion update-user-provided-service](/als/v1/user/reference/client-ref/servicemanagement/#command-update-user-provided-service): Update the credentials of a user provided service.
 
-###[Service Plans](/als/v1/user/reference/client-ref/plans)
-- [helion hide-service-plan](/als/v1/user/reference/client-ref/plans/#command-hide-service-plan)
-- [helion service-plans](/als/v1/user/reference/client-ref/plans/#command-service-plans)
-- [helion service-plans](/als/v1/user/reference/client-ref/plans/#command-service-plans)
-- [helion show-service-plan](/als/v1/user/reference/client-ref/plans/#command-show-service-plan)
-- [helion update-service-plan](/als/v1/user/reference/client-ref/plans/#command-update-service-plan)
+###[Service Plans](/als/v1/user/reference/client-ref/serviceplans)
+- [helion hide-service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-hide-service-plan): Hide the specified service-plan from the named organization.
+- [helion service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-service-plan): Show the details of the specified service plan
+- [helion service-plans](/als/v1/user/reference/client-ref/serviceplans/#command-service-plans): List all available plans of the supported services
+- [helion show-service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-show-service-plan): Make the specified service plan visible to the named organization.
+- [helion update-service-plan](/als/v1/user/reference/client-ref/serviceplans/#command-update-service-plan): Update the target's knowledge of the named service plan.
 
 ###[Services](/als/v1/user/reference/client-ref/services)
 - [helion marketplace](/als/v1/user/reference/client-ref/services/#command-marketplace): List the supported service plans of the target for the current or specified space. This command is new in HP Helion OpenStack&reg; 1.1. 

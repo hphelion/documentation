@@ -77,8 +77,6 @@ operation.</td>
 authorization tokens.</td>
 </tr>
 </table>
-	
-
 
 ## helion rename-space-quota  *<name>*  *<newname>* {#command-rename-space-quota}      
 Rename the named space quota. 
@@ -133,9 +131,7 @@ Show the details of the named space quota. If not specified it will be asked for
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
-<td>--json</td>
-<td>Print raw json as output, not human-formatted data.</td>
-</tr> 
+<tr><td>--json</td><td>Print raw json as output, not human-formatted data.</td></tr> 
 <tr><td>--target</td>
 <td>The once-off target to use for the current operation.</td>
 </tr>    <tr><td>--token</td>
