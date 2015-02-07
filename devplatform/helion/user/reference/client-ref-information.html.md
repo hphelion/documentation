@@ -32,7 +32,7 @@ For more information, use the **helion help**, **helion help [*option*]**, or **
 
 <hr>
 
-##helion crashes *<application\>* {#command-crashes}
+##helion crashes <*application*> {#command-crashes}
 List recent application crashes.
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -70,7 +70,7 @@ List recent application crashes.
 </tr>
 </table>
 
-## helion crashlogs *\<application\>* {#command-crashlogs}
+## helion crashlogs <*application*> {#command-crashlogs}
 Display log information for the application. An alias of 'logs'.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -125,7 +125,7 @@ option is a no-op now. Tracing is always active. See the 'trace'
 command to print the saved trace to stdout.</td></tr>
 </table>
 
-## helion disk *\<application\>* {#command-disk}
+## helion disk <*application*> {#command-disk}
 Show the disk reservation for a deployed application.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -153,7 +153,7 @@ Defaults to the current working directory.</td></tr>
 </table>
 
 
-## helion drain list *\<application\>* {#command-drain-list}
+## helion drain list <*application*> {#command-drain-list}
 Show the list of drains attached to the application.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -191,7 +191,7 @@ Show the list of drains attached to the application.
 </tr>
 </table>
 
-## helion drains *\<application\>*  {#command-drains}
+## helion drains <*application*>  {#command-drains}
 Show the list of drains attached to the application.
    
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -229,7 +229,7 @@ authorization tokens.</td>
 </table>
 
 
-## helion env *\<application\>* {#command-env}
+## helion env <*application*> {#command-env}
 List the application's environment variables.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -262,7 +262,7 @@ operation.</td>
 authorization tokens.</td>
 </tr></table>
 
-## helion events *\<application\>*  {#command-events}
+## helion events <*application*>  {#command-events}
 Show recorded application events for an application or space. Without an application given, the current or specified space is used, otherwise the specified application is used.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -297,7 +297,7 @@ operation.</td>
 authorization tokens.</td>
 </tr></table>
 
-## helion files *\<application\>* *\<apath\>* {#command-files}
+## helion files <*application*> <*path*> {#command-files}
 Display directory listing or files. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without apath it defaults to $HELION_APP_ROOT on the target.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -342,8 +342,8 @@ operation.</td>
  authorization tokens.</td>
  </tr></table>
 
-## helion file *\<application\>* *\<apath\>*  {#command-file}
-Display directory listing or file. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without apath it defaults to $HELION_APP_ROOT on the target.
+## helion file <*application*> <*path*> {#command-file}
+Display directory listing or file. Relative paths are interpreted relative to $HELION_APP_ROOT on the target. Without a path it defaults to $HELION_APP_ROOT on the target.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
@@ -385,7 +385,7 @@ operation.</td>
 authorization tokens.</td>
 </tr></table>
 
-## helion health *\<application\>* {#command-health}
+## helion health <*application*> {#command-health}
 Report the health of the specified application(s).
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -422,7 +422,7 @@ authorization tokens.</td>
 </tr>   
 </table>
 
-## helion instances *\<application\>* {#command-instances}
+## helion instances <*application*> {#command-instances}
 List application instances for a deployed application.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -457,7 +457,7 @@ authorization tokens.</td>
 </tr> 
 </table>
 
-## helion logs *\<application\>* {#command-logs}
+## helion logs <*application*> {#command-logs}
 Display the application log stream.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -506,7 +506,7 @@ authorization tokens.</td>
 </tr>
 </table>
 
-## helion mem *\<application\>* {#command-mem}
+## helion mem <*application*> {#command-mem}
 Show the memory reservation for a deployed application.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -539,7 +539,7 @@ authorization tokens.</td>
 </tr>
 </table>
 
-## helion stats *\<application\>* {#command-stats}
+## helion stats <*application*> {#command-stats}
 Display the resource usage for a deployed application.
     
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -574,7 +574,7 @@ authorization tokens.</td>
 </tr>
 </table>
 
-## helion tail *\<application\>* *\<apath\>* {#command-tail}
+## helion tail <*application*> <*path*> {#command-tail}
 Monitor file for changes and stream the changes.
     
 <table style="text-align: left; vertical-align: top; width:650px;">

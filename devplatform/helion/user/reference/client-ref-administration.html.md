@@ -224,14 +224,13 @@ Application Lifecycle Service 2 option.</td>
 <td>Alias of --no-prompt.</td>
 </tr><tr>
 <td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
-name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+name.  Cannot be used together with <i>--space-guid</i>.</td>
 </tr>    <tr><td>--space-guid</td>
 <td>The once-off space to use for the current operation, specified by
-guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+guid. Cannot be used together with <i>--space</i>.</td>
 </tr>    <tr><td>--target</td>
 <td>The once-off target to use for the current operation.</td>
 </tr>    <tr><td>--token</td>
@@ -240,27 +239,17 @@ operation.</td>
 </tr>    <tr><td>--token-file</td>
 <td>Path to an existing and readable file containing the targets and
 authorization tokens.</td>
-</tr>    <tr><td>--trace</td>
-<td>Activate tracing of the issued REST requests and responses. This
-option is a no-op now. Tracing is always active. See the 'trace'
-command to print the saved trace to stdout.</td>
-</tr><tr>
-<td>-n</td>
-<td>Alias of --no-prompt.</td>
-</tr><tr>
-<td>-o</td>
-<td>Alias of --organization.</td>
-</tr><tr>
-<td>-t</td>
-<td>Alias of --trace.</td>
 </tr>
 </table>
 
 ## helion show-token {#command-show-token}
 Print the current target's authorization token.
 
-<table>
-</tr>    <tr><td>--token-file</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+   <tr><td>--token-file</td>
 <td>Path to an existing and readable file containing the targets and
 authorization tokens.</td>
 </tr>  </table> 
@@ -269,9 +258,10 @@ authorization tokens.</td>
 ## helion stacks {#command-stacks}
 List the supported stacks of the target.
 
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--json</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
 <td>Print raw json as output, not human-formatted data.</td>
 </tr>    <tr><td>--no-prompt</td>
 <td>Disable interactive queries.</td>
@@ -307,9 +297,10 @@ command to print the saved trace to stdout.</td>
 ## helion targets {#command-targets}
 List the available targets and their authorization tokens, if any.
 
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--json</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
 <td>Print raw json as output, not human-formatted data.</td>
 </tr>    <tr><td>--no-prompt</td>
 <td>Disable interactive queries.</td>
@@ -331,9 +322,10 @@ authorization tokens.</td>
 ##helion tokens {#command-tokens}
 List the available targets and their authorization tokens, if any.
 
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--json</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
 <td>Print raw json as output, not human-formatted data.</td>
 </tr>    <tr><td>--no-prompt</td>
 <td>Disable interactive queries.</td>
@@ -355,9 +347,10 @@ authorization tokens.</td>
 ## helion usage <*UserOrGroup*> {#command-usage}
 Show the current memory allocation and usage of the specified or current space.
 
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--all</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--all</td>
 <td>Query information about everything. Cannot be used together with
 userOrGroup.</td>
 </tr>    <tr><td>--group</td>
@@ -376,14 +369,13 @@ Application Lifecycle Service 2 option.</td>
 <td>Alias of --no-prompt.</td>
 </tr><tr>
 <td>--organization</td>
-<td>The once-off organization to use for the current operation. This
-is an Application Lifecycle Service 3 option.</td>
+<td>The once-off organization to use for the current operation.</td>
 </tr>    <tr><td>--space</td>
 <td>The once-off space to use for the current operation, specified by
-name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
+name. Cannot be used together with <i>--space-guid</i>.</td>
 </tr>    <tr><td>--space-guid</td>
 <td>The once-off space to use for the current operation, specified by
-guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
+guid. Cannot be used together with <i>--space</i>.</td>
 </tr>    <tr><td>--target</td>
 <td>The once-off target to use for the current operation.</td>
 </tr>    <tr><td>--token</td>
@@ -411,9 +403,10 @@ command to print the saved trace to stdout.</td>
 ## helion user {#command-user}
 Show the name of the current user in the current or specified target.
 
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--json</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
 <td>Print raw json as output, not human-formatted data.</td>
 </tr>    <tr><td>--no-prompt</td>
 <td>Disable interactive queries.</td>
@@ -450,46 +443,49 @@ command to print the saved trace to stdout.</td>
 Shows the information of a user in the current or specified target. Defaults to the current user.
 
 <table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>    <tr><td>--trace</td>
+<td>Activate tracing of the issued REST requests and responses. This
+option is a no-op now. Tracing is always active. See the 'trace'
+command to print the saved trace to stdout.</td>
+</tr><tr>
+<td>-n</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>-t</td>
+<td>Alias of --trace.</td>
+</tr>
 </table>
 
 ### helion version {#command-version}
 Print the version number of the client.
 
-<table>
-<tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-<tr><td>--no-prompt</td>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--no-prompt</td>
 <td>Disable interactive queries.</td>
 </tr>    <tr><td>--non-interactive</td>
 <td>Alias of --no-prompt.</td>

@@ -84,21 +84,21 @@ Note that Administrative user privileges are required for some commands.
 - [helion history list](/als/v1/user/reference/client-ref/history/#command-history-list)
 
 ###[Information](/als/v1/user/reference/client-ref/information)
-- [helion crashes](/als/v1/user/reference/client-ref/information/#command-crashes)
-- [helion crashlogs](/als/v1/user/reference/client-ref/information/#command-crashlogs)
-- [helion disk](/als/v1/user/reference/client-ref/information/#command-disk)
-- [helion drain list](/als/v1/user/reference/client-ref/information/#command-drain-list)
-- [helion drains](/als/v1/user/reference/client-ref/information/#command-drains)
-- [helion env](/als/v1/user/reference/client-ref/information/#command-env)
-- [helion events](/als/v1/user/reference/client-ref/information/#command-events)
-- [helion file](/als/v1/user/reference/client-ref/information/#command-file)
-- [helion files](/als/v1/user/reference/client-ref/information/#command-files)
-- [helion health](/als/v1/user/reference/client-ref/information/#command-health)
-- [helion instances](/als/v1/user/reference/client-ref/information/#command-instances)
-- [helion logs](/als/v1/user/reference/client-ref/information/#command-logs)
-- [helion mem](/als/v1/user/reference/client-ref/information/#command-mem)
-- [helion stats](/als/v1/user/reference/client-ref/information/#command-stats)
-- [helion tail](/als/v1/user/reference/client-ref/information/#command-tail)
+- [helion crashes](/als/v1/user/reference/client-ref/information/#command-crashes): List recent application crashes.
+- [helion crashlogs](/als/v1/user/reference/client-ref/information/#command-crashlogs): Display log information for the application.
+- [helion disk](/als/v1/user/reference/client-ref/information/#command-disk): Show the disk reservation for a deployed application.
+- [helion drain list](/als/v1/user/reference/client-ref/information/#command-drain-list): Show the list of drains attached to the application. 
+- [helion drains](/als/v1/user/reference/client-ref/information/#command-drains): Show the list of drains attached to the application. 
+- [helion env](/als/v1/user/reference/client-ref/information/#command-env): List the application's environment variables.
+- [helion events](/als/v1/user/reference/client-ref/information/#command-events): Show recorded application events for an application or space.
+- [helion file](/als/v1/user/reference/client-ref/information/#command-file): Display directory listing or file.
+- [helion files](/als/v1/user/reference/client-ref/information/#command-files): Display directory listing or files.
+- [helion health](/als/v1/user/reference/client-ref/information/#command-health): Report the health of the specified application(s).
+- [helion instances](/als/v1/user/reference/client-ref/information/#command-instances): List application instances for a deployed application.
+- [helion logs](/als/v1/user/reference/client-ref/information/#command-logs): Display the application log stream.
+- [helion mem](/als/v1/user/reference/client-ref/information/#command-mem): Show the memory reservation for a deployed application.
+- [helion stats](/als/v1/user/reference/client-ref/information/#command-stats): Display the resource usage for a deployed application.
+- [helion tail](/als/v1/user/reference/client-ref/information/#command-tail): Monitor file for changes and stream the changes.
 
 ### [Management](/als/v1/user/reference/client-ref/management)
 - [helion create-app](/als/v1/user/reference/client-ref/management/#command-create-app): Create an empty application with the specified configuration.
@@ -179,14 +179,14 @@ Note that Administrative user privileges are required for some commands.
 - [helion update-security-group](#command-update-security-group)
 
 ###[Service Management](/als/v1/user/reference/client-ref/servicemanagement) 
-- [helion bind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-bind-service)
-- [helion clone-services](/als/v1/user/reference/client-ref/servicemanagement/#command-clone-services)
-- [helion create-service](/als/v1/user/reference/client-ref/servicemanagement/#command-create-service)
-- [helion delete-service](/als/v1/user/reference/client-ref/servicemanagement/#command-delete-service)
-- [helion rename-service](/als/v1/user/reference/client-ref/servicemanagement/#command-rename-service)
-- [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel)
-- [helion unbind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-unbind-service)
-- [helion update-user-provided-service](/als/v1/user/reference/client-ref/servicemanagement/#command-update-user-provided-service)
+- [helion bind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-bind-service): Bind the named service to the specified application.
+- [helion clone-services](/als/v1/user/reference/client-ref/servicemanagement/#command-clone-services): Copy the service bindings of the source application to the destination application.
+- [helion create-service](/als/v1/user/reference/client-ref/servicemanagement/#command-create-service): Create a new provisioned service and optionally bind it to an application.
+- [helion delete-service](/als/v1/user/reference/client-ref/servicemanagement/#command-delete-service): Delete the named provisioned service.
+- [helion rename-service](/als/v1/user/reference/client-ref/servicemanagement/#command-rename-service): Rename the specified service instance.
+- [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel): Create a local tunnel to a service and optionally start a local client as well.
+- [helion unbind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-unbind-service): Disconnect the named service from the specified application.
+- [helion update-user-provided-service](/als/v1/user/reference/client-ref/servicemanagement/#command-update-user-provided-service): Update the credentials of a user provided service.
 
 ###[Service Plans](/als/v1/user/reference/client-ref/plans)
 - [helion hide-service-plan](/als/v1/user/reference/client-ref/plans/#command-hide-service-plan)

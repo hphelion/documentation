@@ -10,15 +10,14 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Service Management
 
-- [helion bind-service](#command-bind-service)
-- [helion clone-services](#command-clone-services)
-- [helion create-service](#command-create-service)
-- [helion delete-service](#command-delete-service)
-- [helion rename-service](#command-rename-service)
-- [helion tunnel](#command-tunnel)
-- [helion unbind-service](#command-unbind-service)
-- [helion update-user-provided-service](#command-update-user-provided-service)
-
+- [helion bind-service](#command-bind-service): Bind the named service to the specified application.
+- [helion clone-services](#command-clone-services): Copy the service bindings of the source application to the destination application.
+- [helion create-service](#command-create-service): Create a new provisioned service and optionally bind it to an application.
+- [helion delete-service](#command-delete-service): Delete the named provisioned service.
+- [helion rename-service](#command-rename-service):  Rename the specified service instance.
+- [helion tunnel](#command-tunnel): Create a local tunnel to a service and optionally start a local client as well.
+- [helion unbind-service](#command-unbind-service): Disconnect the named service from the specified application.
+- [helion update-user-provided-service](#command-update-user-provided-service): Update the credentials of a user provided service.
 
 ## Syntax
 
@@ -27,454 +26,317 @@ For more information, use the **helion help**, **helion help [*option*]**, or **
 
 <hr>
 
-### helion bind-service *\<service\* *\<application\*###
+### helion bind-service <*service*> <*application*> {#command-bind-service}
 Bind the named service to the specified application.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td>
-    </tr>    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--manifest</td>
-    <td>Path of the manifest file to use. If not specified a search is
-    done.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-tail</td>
-    <td>Complementary alias of --tail.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--path</td>
-    <td>Path of the directory holding the application files to push.
-    Defaults to the current working directory.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--tail</td>
-    <td>Request target to stream the log.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--timeout</td>
-    <td>The time the client waits for an application to start before
-    giving up and returning, in seconds. Note that this is measured
-    from the last entry seen in the log stream. While there is
-    activity in the log the timeout is reset.
-    The default is 2 minutes. 
-    Use the suffixes 'm', 'h', and 'd' for the convenient
-    specification of minutes, hours, and days. The optional suffix 's'
-    stands for seconds.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--manifest</td>
+<td>Path of the manifest file to use. If not specified a search is
+done.</td>
+</tr><tr><td>--no-tail</td>
+<td>Request target to stop streaming the log.</td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation. This
+is an Application Lifecycle Service 3 option.</td>
+</tr>    <tr><td>--path</td>
+<td>Path of the directory holding the application files to push.
+Defaults to the current working directory.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--tail</td>
+<td>Request target to stream the log.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--timeout</td>
+<td>The time the client waits for an application to start before
+giving up and returning, in seconds. Note that this is measured
+from the last entry seen in the log stream. While there is
+activity in the log the timeout is reset.
+The default is 2 minutes. 
+Use the suffixes 'm', 'h', and 'd' for the convenient
+specification of minutes, hours, and days. The optional suffix 's'
+stands for seconds.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion clone-services *\<source\* *\<application\*###
+
+## helion clone-services <*source*> <*application*> {#command-clone-services}
 Copy the service bindings of the source application to the destination application.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-tail</td>
-    <td>Complementary alias of --tail.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--tail</td>
-    <td>Request target to stream the log.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--timeout</td>
-    <td>The time the client waits for an application to start before
-    giving up and returning, in seconds. Note that this is measured
-    from the last entry seen in the log stream. While there is
-    activity in the log the timeout is reset.
-    The default is 2 minutes.
-    Use the suffixes 'm', 'h', and 'd' for the convenient
-    specification of minutes, hours, and days. The optional suffix 's'
-    stands for seconds.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--no-tail</td>
+<td>Request target to stop streaming the log.</td>
+</tr><tr>
+<td>--organization. -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>
+<tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--tail</td>
+<td>Request target to stream the log.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--timeout</td>
+<td>The time the client waits for an application to start before
+giving up and returning, in seconds. Note that this is measured
+from the last entry seen in the log stream. While there is
+activity in the log the timeout is reset.
+The default is 2 minutes.
+Use the suffixes 'm', 'h', and 'd' for the convenient
+specification of minutes, hours, and days. The optional suffix 's'
+stands for seconds.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion create-service *\<vendor\* *\<name\* *\<application\*###
-Create a new provisioned service, and optionally bind it to an application.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--credentials</td>
-    <td>The credentials to use. Each use of the option declares a single
-    element, using the form "key: value" for the argument. This is a
-    Application Lifecycle Service 3 specific option. This is restricted to user-provided
-    services.</td>
-    </tr>    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-tail</td>
-    <td>Complementary alias of --tail.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--plan</td>
-    <td>The service plan to use. This is an Application Lifecycle Service 3 specific option.</td>
-    </tr>    <tr><td>--provider</td>
-    <td>The service provider. Use this to disambiguate between multiple
-    providers of the same vendor/type. This is an Application Lifecycle Service 3 specific
-    option.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--tail</td>
-    <td>Request target to stream the log.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--timeout</td>
-    <td>The time the client waits for an application to start before
-    giving up and returning, in seconds. Note that this is measured
-    from the last entry seen in the log stream. While there is
-    activity in the log the timeout is reset.
-    The default is 2 minutes.
-    Use the suffixes 'm', 'h', and 'd' for the convenient
-    specification of minutes, hours, and days. The optional suffix 's'
-    stands for seconds.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    </tr>    <tr><td>--version</td>
-    <td>The service version. Use this to disambiguate between multiple
-    versions of the same vendor/type. This is an Application Lifecycle Service 3 specific
-    option.</td> </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion create-service <*vendor*> <*name*> <*application*> {#command-create-service}
+Create a new provisioned service and optionally bind it to an application.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--credentials</td>
+<td>The credentials to use. Each use of the option declares a single
+element, using the form "key: value" for the argument. This is restricted to user-provided
+services.</td>
+</tr><tr><td>--no-tail</td>
+<td>Request target to stop streaming the log.</td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    <tr><td>--plan</td>
+<td>The service plan to use.</td>
+</tr>    <tr><td>--provider</td>
+<td>The service provider. Use this to disambiguate between multiple
+providers of the same vendor/type.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--tail</td>
+<td>Request target to stream the log.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--timeout</td>
+<td>The time the client waits for an application to start before
+giving up and returning, in seconds. Note that this is measured
+from the last entry seen in the log stream. While there is
+activity in the log the timeout is reset.
+The default is 2 minutes.
+Use the suffixes 'm', 'h', and 'd' for the convenient
+specification of minutes, hours, and days. The optional suffix 's'
+stands for seconds.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+   <tr><td>--version</td>
+<td>The service version. Use this to disambiguate between multiple versions of the same vendor/type.</td>
+</tr>
 </table>
-### helion delete-service *\<service\*###
+
+## helion delete-service <*service*> {#command-delete-service}
 Delete the named provisioned service.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td>
-    </tr>    <tr><td>--all</td>
-    <td>Delete all services. Cannot be used together with named service
-    instances.</td>
-    </tr>    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    </tr>    <tr><td>--unbind</td>
-    <td>Unbind service from applications before deleting. By default bound
-    services are skipped and not deleted. This is an Application Lifecycle Service 3
-    specific option.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--all</td>
+<td>Delete all services. Cannot be used together with named service
+instances.</td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation. This
+is an Application Lifecycle Service 3 option.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>   <tr><td>--unbind</td>
+<td>Unbind service from applications before deleting. By default bound
+services are skipped and not deleted.</td>
+</tr>
 </table>
-### helion rename-service *\<service\* *\<name\*###
-Rename the specified service instance. This is an Application Lifecycle Service 3
-specific command.
+
+## helion rename-service <*service*> <*name*> {#command-rename-service}
+Rename the specified service instance.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation. This
+is an Application Lifecycle Service 3 option.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+
+## helion tunnel <*service*> <*TunnelClient*> {#command-tunnel}
+Create a local tunnel to a service and optionally start a local client as well.
 
 <table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--allow-http</td>
+<td>Required to prevent the client from rejecting http urls.</td>
+</tr> <tr><td>--no-tail</td>
+<td>Request target to stop streaming the log.</td>
+</tr> <tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    <tr><td>--port</td>
+<td>Port used for the tunnel.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--tail</td>
+<td>Request target to stream the log.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr><tr><td>--url</td>
+<td>Url the tunnel helper application is mapped to and listens on.
+Relevant if and only if the helper has to be pushed; for example, on first
+use of the <i>tunnel</i> command.</td>
+</tr>
 </table>
-### helion tunnel *\<service\* *\<tunnelclient\*###
-Create a local tunnel to a service, optionally start a local client as well.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--allow-http</td>
-    <td>Required to prevent the client from rejecting http urls.</td>
-    </tr>    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-tail</td>
-    <td>Complementary alias of --tail.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--port</td>
-    <td>Port used for the tunnel.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--tail</td>
-    <td>Request target to stream the log.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    </tr>    <tr><td>--url</td>
-    <td>Url the tunnel helper application is mapped to and listens on.
-    Relevant if and only if the helper has to be pushed,i.e. on first
-    use of the tunnel command.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
-</table>
-### helion unbind-service *\<service\* *\<application\*###
+## helion unbind-service <*service*> <*application*> {#command-unbind-service}
 Disconnect the named service from the specified application.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--group</td>
-    <td>The once-off group to use for the current operation. This is a
-    Application Lifecycle Service 2 option.</td>
-    </tr>    <tr><td>--manifest</td>
-    <td>Path of the manifest file to use. If not specified a search is
-    done.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-tail</td>
-    <td>Complementary alias of --tail.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The once-off organization to use for the current operation. This
-    is an Application Lifecycle Service 3 option.</td>
-    </tr>    <tr><td>--path</td>
-    <td>Path of the directory holding the application files to push.
-    Defaults to the current working directory.</td>
-    </tr>    <tr><td>--space</td>
-    <td>The once-off space to use for the current operation, specified by
-    name. This is an Application Lifecycle Service 3 option. Cannot be used together with --space-guid.</td>
-    </tr>    <tr><td>--space-guid</td>
-    <td>The once-off space to use for the current operation, specified by
-    guid. This is an Application Lifecycle Service 3 option. Cannot be used together with --space.</td>
-    </tr>    <tr><td>--tail</td>
-    <td>Request target to stream the log.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--timeout</td>
-    <td>The time the client waits for an application to start before
-    giving up and returning, in seconds. Note that this is measured
-    from the last entry seen in the log stream. While there is
-    activity in the log the timeout is reset.
-    The default is 2 minutes.
-    Use the suffixes 'm', 'h', and 'd' for the convenient
-    specification of minutes, hours, and days. The optional suffix 's'
-    stands for seconds.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--manifest</td>
+<td>Path of the manifest file to use. If not specified a search is
+done.</td>
+</tr><tr><td>--no-tail</td>
+<td>Request target to stop streaming the log.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation. This
+is an Application Lifecycle Service 3 option.</td>
+</tr>    <tr><td>--path</td>
+<td>Path of the directory holding the application files to push.
+Defaults to the current working directory.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid. Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--tail</td>
+<td>Request target to stream the log.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--timeout</td>
+<td>The time the client waits for an application to start before
+giving up and returning, in seconds. Note that this is measured
+from the last entry seen in the log stream. While there is
+activity in the log the timeout is reset.
+The default is 2 minutes.
+Use the suffixes 'm', 'h', and 'd' for the convenient
+specification of minutes, hours, and days. The optional suffix 's'
+stands for seconds.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+
+## helion update-user-provided-service <*service*> {#command-update-user-provided-service}       
+Update the credentials of a user provided service.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr><td>--credentials</td><td>The new credentials to use. They entirely replace the old credentials. Each use of the option declares a single element, using the form "key: value" for the argument.</td></tr>
+<tr><td>--notail</td>
+<td>Request target to stop streaming the log.</td>
+</tr><tr><td>--tail</td>
+<td>Request target to stream the log.</td>
+</tr>     <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    
+<tr><td>--timeout</td><td>The time the client waits for an application to start before    giving up and returning, in seconds. Note that this is measured from the last entry seen in the log stream. While there is activity in the log the timeout is reset. The default is 2 minutes. Use the suffixes 'm', 'h', and 'd' for the convenient specification of minutes, hours, and days. The optional suffix 's' stands for seconds.</td>
+</tr>    
+<tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>    
 </table>
