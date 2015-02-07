@@ -197,10 +197,10 @@ Note that Administrative user privileges are required for some commands.
 - [helion update-service-plan](/als/v1/user/reference/client-ref/plans/#command-update-service-plan)
 
 ###[Services](/als/v1/user/reference/client-ref/services)
-- [helion marketplace](/als/v1/user/reference/client-ref/services/#command-marketplace)
-- [helion purge-service-offerings](/als/v1/user/reference/client-ref/services/#command-purge-service-offerings)
-- [helion service](/als/v1/user/reference/client-ref/services/#command-service)
-- [helion services](/als/v1/user/reference/client-ref/services/#command-services)
+- [helion marketplace](/als/v1/user/reference/client-ref/services/#command-marketplace): List the supported service plans of the target for the current or specified space. This command is new in HP Helion OpenStack&reg; 1.1. 
+- [helion purge-service-offerings](/als/v1/user/reference/client-ref/services/#command-purge-service-offerings): Purge all offerings of the service type from the system. **Warning** use with caution.  This command is new in HP Helion OpenStack&reg; 1.1. 
+- [helion service](/als/v1/user/reference/client-ref/services/#command-service): Show information about the named service.
+- [helion services](/als/v1/user/reference/client-ref/services/#command-services): List the supported and provisioned services of the target.
 
 ###[Spaces](/als/v1/user/reference/client-ref/spaces)
 - [helion create-space](/als/v1/user/reference/client-ref/spaces/#command-create-space): Create a new space.
