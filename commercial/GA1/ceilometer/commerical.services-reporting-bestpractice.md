@@ -59,7 +59,7 @@ Once the *openstack.common.rpc* notifications are enabled in the configuration f
 <td>g</td> 
 <td>vcpu</td>
 <td> inst ID</td>
-<td>Volume of allocated RAM. Measured in MB.</td></tr>
+<td>Number of VCPUs</td></tr>
 <tr><td>disk.root.size</td>
 <td>g</td> 
 <td>GB</td>
