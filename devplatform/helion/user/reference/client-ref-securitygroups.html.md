@@ -58,7 +58,6 @@ Create a new security group.
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
-
 <tr>
 <td>--target</td>
 <td>The once-off target to use for the current operation.</td>
@@ -77,7 +76,6 @@ Delete the named security group.
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
-
 <tr>
 <td>--target</td>
 <td>The once-off target to use for the current operation.</td>
@@ -158,7 +156,6 @@ Modify the named security group by replacing the old set of rules with a new set
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
-
 <tr>
 <td>--target</td>
 <td>The once-off target to use for the current operation.</td>

@@ -31,8 +31,6 @@ Shows the information of the specified application.
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
 <tr>
-
-<tr>
 <td>--json</td>
 <td>Print raw json as output, not human-formatted data.</td>
 </tr>
@@ -199,7 +197,6 @@ Show the list of versions for the specified application. <br />
 <td>--manifest</td>
 <td>Path of the manifest file to use. If not specified, a search is performed.</td>
 </tr>
-
 <tr>
 <td>--organization, -o</td>
 <td>The once-off organization to use for the current operation.</td>

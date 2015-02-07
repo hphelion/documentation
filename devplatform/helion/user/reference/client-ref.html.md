@@ -153,10 +153,10 @@ Note that Administrative user privileges are required for some commands.
 - [helion update-org](/als/v1/user/reference/client-ref/organizations/#command-update-org): Change one or more attributes of an organization in a single call.
 
 ### [Placement Zones](/als/v1/user/reference/client-ref/placement) 
-- [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone)
-- [helion placement-zones](/als/v1/user/reference/client-ref/placement/#command-placement-zones)
-- [helion set-placement-zone](/als/v1/user/reference/client-ref/placement/#command-set-placement-zone)
-- [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone)
+- [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone): Show the list of DEAs associated with the specified placement zone.
+- [helion placement-zones](/als/v1/user/reference/client-ref/placement/#command-placement-zones): Show the available placement zones.
+- [helion set-placement-zone](/als/v1/user/reference/client-ref/placement/#command-set-placement-zone): Associate the application with a specific placement zone.
+- [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone): Remove the association between an application and its current placement zone.
 
 ###[Quotas](/als/v1/user/reference/client-ref/quotas)
 - [helion quota configure](/als/v1/user/reference/client-ref/quotas/#command-quota-configure): Reconfigure the named quota plan.
