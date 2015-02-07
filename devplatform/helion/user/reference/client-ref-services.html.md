@@ -51,7 +51,7 @@ authorization tokens.</td>
 </table>
 
     
-## helion purge-service-offerings  *<service>* {#command-purge-service-offerings}
+## helion purge-service-offerings <*service*>  {#command-purge-service-offerings}
 Purge all offerings of the service type from the system. **Warning**: Do this **only** for services that have already had their brokers killed, leaving behind orphans. This command is new in Helion OpenStack&reg; 1.1.
 
 
@@ -76,7 +76,7 @@ authorization tokens.</td>
 </table>
 
 	    
-## helion service  *<name>* {#command-service} 
+## helion service <*name*> {#command-service} 
 Show the information about the named service.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
