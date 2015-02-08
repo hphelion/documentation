@@ -14,8 +14,7 @@ authors: Sameer V, Pranoy R, Binamra S
 ---
 <!--UNDER REVISION-->
 
-<!---
-<p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p> -->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/support-matrix/">Support Matrix | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/prereqs/"> Prerequisites</a> &#9654</p>
 
 # HP Helion OpenStack&#174; Technical Overview
 

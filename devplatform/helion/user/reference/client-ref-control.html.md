@@ -1,31 +1,37 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/control
+permalink: /als/v1/user/reference/client-ref/control/
 product: devplatform
+title: "Application Lifecycle Service Command Line Client Reference: Control"
 
 ---
 <!--UNDER REVISION-->
 
 # HP Helion Development Platform: ALS Command Reference: Control
 
-- [Control](#command-Applications-Control)
-	- [helion migrate](#command-migrate)
-	- [helion restage](#command-restage)
+ These commands are new in Helion OpenStack&reg; Development Platform 1.1
+
+- [helion migrate](#command-migrate): Move the application to a different space.
+- [helion restage](#command-restage): Restage an application and regenerate its droplet.
+
+## Syntax
+
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
+
+<hr>
 	
-## stackato migrate \<*application*\>  \<*destination*\>
- Move the application to a different space. This command is new in Helion OpenStack&reg; 1.1
+## helion migrate <*application*> <*destination*> {#command-migrate}
+ Move the application to a different space.
  
-<table style="text-align: left; vertical-align: top; width: 650px;">
+<table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
-<td style="width: 250px;"><b>Option</b></td><td><b>Description</b></td>
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 </tr>
 <tr>
 <td>--destination-organization, --dest-org, -D</td>
 <td>The organization of the destination space, if not the current org.</td>
-</tr><tr>
-<td>--group</td>
-<td>Deprecated. Do not use.</td>
 </tr><tr>
 <td>--manifest</td>
 <td>Path of the manifest file to use. If not specified, a search is performed.</td>
@@ -37,8 +43,11 @@ product: devplatform
 <td>--path</td>
 <td>Path of the directory or file holding the application files to push. Defaults to the current working directory.</td>
 </tr><tr>
-<td>--space</td>
-<td>The space (in the organization) to use. If not specified, the user is prompted to choose among the possible spaces in either the specified organization or all organizations that the user belongs to.</td>
+<td>--space, -s</td>
+<td>The once-off space to use for the current operation, specified by name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr><tr>
+<td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by GUID. Cannot be used together with <i>--space</i>.</td>
 </tr><tr>
 <td>--target</td>
 <td>The once-off target to use for the current operation only.</td>
@@ -51,16 +60,13 @@ product: devplatform
 </tr>
 </table>
 
-## stackato restage \<*application*\> 
+## helion restage <*application*> {#command-restage}
 Restages an application and regenerates its droplet. This command is new in Helion OpenStack&reg; 1.1
        
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
 <tr>
-<td>--group</td>
-<td>Deprecated. Do not use.</td>
-</tr><tr>
 <td>--manifest</td>
 <td>Path of the manifest file to use. If not specified, a search is performed.</td>
 </tr><tr>
@@ -75,8 +81,12 @@ Restages an application and regenerates its droplet. This command is new in Heli
 <td>--path</td>
 <td>Path of the directory or file holding the application files to push. Defaults to the current working directory.</td>
 </tr><tr>
-<td>--space</td>
-<td>The space (in the organization) to use. If not specified, the user is prompted to choose among the possible spaces in either the specified organization or all organizations that the user belongs to.</td>
+<tr>
+<td>--space, -s</td>
+<td>The once-off space to use for the current operation, specified by name. Cannot be used together with <i>--space-guid</i>.</td>
+</tr><tr>
+<td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by GUID. Cannot be used together with <i>--space</i>.</td>
 </tr><tr>
 <td>--tail</td><td>Request the target to start streaming the log.</td></tr>
 <r><td>--target</td><td>The once-off target to use for the current operation.</td></tr>

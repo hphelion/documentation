@@ -1,7 +1,8 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/spaces
+permalink: /als/v1/user/reference/client-ref/spaces/
+title: "Application Lifecycle Service Command Line Client Reference: Spaces"
 product: devplatform
 
 ---
@@ -9,411 +10,379 @@ product: devplatform
 
 # HP Helion Development Platform: ALS Command Reference: Spaces
 
-- [Spaces](#spaces)
-	- [helion create-space](#command-create-space)
-	- [helion delete-space](#command-delete-space)
-	- [helion link-user-space](#command-link-user-space)
-	- [helion rename-space](#command-rename-space)
-	- [helion space-users](#command-space-users)
-	- [helion space](#command-space)	
-	- [helion spaces](#command-spaces)
-	- [helion switch-space](#command-switch-space)
-	- [helion unlink-user-space](#command-unlink-user-space)
-	- [helion update-space ](#command-update-space)
+- [helion create-space](#command-create-space): Create a new space.
+- [helion delete-space](#command-delete-space): Delete the named space.
+- [helion link-user-space](#command-link-user-space): Add the specified user to the named space in various roles. 
+- [helion rename-space](#command-rename-space): Rename the named space.
+- [helion space](#command-space): Show the named space's information. 	
+- [helion spaces](#command-spaces): List the available spaces in the specified organization.
+- [helion space-users](#command-space-users): Show the users for the space by role.
+- [helion switch-space](#command-switch-space): Switch from the current space to the named space. This may switch the [organization](/als/v1/user/reference/client-ref/organizations/) as well. 
+- [helion unlink-user-space](#command-unlink-user-space): Remove the specified user from the named space in various roles.
+- [helion update-space](#command-update-space): Change one or more attributes of a space in a single call.
 
+## Syntax
 
-## Spaces<a name="spaces"></a>
-### helion create-space *\<name\*###
-Create a new space. This is an Application Lifecycle Service 3 specific command.
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--activate</td>
-    <td>Switch the current space to the newly created one. Done by
-    default.</td>
-    </tr>    <tr><td>--auditor</td>
-    <td>Add yourself to the new space, as auditor. By request.</td>
-    </tr>    <tr><td>--developer</td>
-    <td>Add yourself to the new space, as developer. Done by default.</td>
-    </tr>    <tr><td>--manager</td>
-    <td>Add yourself to the new space, as manager. Done by default.</td>
-    </tr>    <tr><td>--no-activate</td>
-    <td>Complementary alias of --activate.</td>
-    </tr>    <tr><td>--no-auditor</td>
-    <td>Complementary alias of --auditor.</td>
-    </tr>    <tr><td>--no-developer</td>
-    <td>Complementary alias of --developer.</td>
-    </tr>    <tr><td>--no-manager</td>
-    <td>Complementary alias of --manager.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<hr>
+
+## helion create-space <*name*> {#command-create-space}
+Create a new space.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--activate</td>
+<td>Switch the current space to the newly created one. Done by
+default.</td>
+</tr>    <tr><td>--auditor</td>
+<td>Add yourself to the new space, as auditor. By request.</td>
+</tr>    <tr><td>--developer</td>
+<td>Add yourself to the new space, as developer. Done by default.</td>
+</tr>    <tr><td>--manager</td>
+<td>Add yourself to the new space, as manager. Done by default.</td>
+</tr>    <tr><td>--no-activate</td>
+<td>Complementary alias of --activate.</td>
+</tr>    <tr><td>--no-auditor</td>
+<td>Complementary alias of --auditor.</td>
+</tr>    <tr><td>--no-developer</td>
+<td>Complementary alias of --developer.</td>
+</tr>    <tr><td>--no-manager</td>
+<td>Complementary alias of --manager.</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion delete-space *\<name\*###
-Delete the named space. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--recursive</td>
-    <td>Remove all sub-ordinate parts, and relations.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-r</td>
-    <td>Alias of --recursive.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion delete-space <*name*> {#command-delete-space}
+Delete the named space. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--recursive</td>
+<td>Remove all sub-ordinate parts, and relations.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-###helion link-user-space *\<user\* *\<space\*###
-Add the specified user to the named space, in various roles. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--auditor</td>
-    <td>Affect the auditor role</td>
-    </tr>    <tr><td>--developer</td>
-    <td>Affect the developer role</td>
-    </tr>    <tr><td>--manager</td>
-    <td>Affect the manager role</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+##helion link-user-space <*user*> <*space*> {#command-link-user-space}
+Add the specified user to the named space in various roles.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--auditor</td>
+<td>Affect the auditor role</td>
+</tr>    <tr><td>--developer</td>
+<td>Affect the developer role</td>
+</tr>    <tr><td>--manager</td>
+<td>Affect the manager role</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr> 
 </table>
-### helion rename-space *\<name\* *\<newname\*###
-Rename the named space. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion rename-space <*name*> <*NewName*> {#command-rename-space}
+Rename the named space. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion spaces###
-List the available spaces in the specified organization. See --organization for details This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--full</td>
-    <td>Show more details.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion space <*name*> {#command-space}
+Show the named space's information.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--full</td>
+<td>Show more details.</td>
+</tr>    <tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion space *\<name\*###
-Show the named space's information. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--full</td>
-    <td>Show more details.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion spaces {#command-spaces}
+List the available spaces in the specified organization.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--full</td>
+<td>Show more details.</td>
+</tr>    <tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion switch-space *\<name\*###
-Switch from the current space to the named space. This may switch the organization as well. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion space-users {#command-space-users}
+Show the users for the space by role.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr><tr>
+<td>--organization, -o</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion unlink-user-space *\<user\* *\<space\*###
-Remove the specified user from the named space, in various roles. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--auditor</td>
-    <td>Affect the auditor role</td>
-    </tr>    <tr><td>--developer</td>
-    <td>Affect the developer role</td>
-    </tr>    <tr><td>--manager</td>
-    <td>Affect the manager role</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--organization</td>
-    <td>The name of the parent organization to use as context.
-    Defaults to the current organization.
-    A current organization is automatically set if there is none,
-    either by taking the one organization the user belongs to, or
-    asking the user to choose among the possibilities.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-o</td>
-    <td>Alias of --organization.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion switch-space <*NewName*> {#command-switch-space}
+Switch from the current space to the named space. If the new space is in a different [organization](/als/v1/user/reference/client-ref/organizations/), this command may switch the organization as well.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+
+## helion unlink-user-space <*user*> <*space*> {#command-unlink-user-space}
+Remove the specified user from the named space in various roles.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--auditor</td>
+<td>Affect the auditor role</td>
+</tr>    <tr><td>--developer</td>
+<td>Affect the developer role</td>
+</tr>    <tr><td>--manager</td>
+<td>Affect the manager role</td>
+</tr>    <tr><td>--no-prompt</td>
+<td>Disable interactive queries.</td>
+</tr>    <tr><td>--no-trace</td>
+<td>Complementary alias of --trace.</td>
+</tr>    <tr><td>--non-interactive</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--noprompt</td>
+<td>Alias of --no-prompt.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+
+## helion update-space {#command-update-space}
+Change one or more attributes of a space in a single call.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--default</td>
+<td>Make the space the default for users without explicit space. The previous default space is automatically reset. The spaces' organization is implicitly made the default as well.</td>
+</tr>    <tr><td>--newname</td>
+<td>A new name to give to the space.</td>
+</tr>    <tr><td>--no-default</td>
+<td>Make the current space no longer the default for users without explicit spaces.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>

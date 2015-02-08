@@ -18,9 +18,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm/#next-steps">Next Steps for KVM Installation &#9660; </p> 
 
 # HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
@@ -80,14 +78,14 @@ For more information, see [Creating the baremetal.csv file](/helion/openstack/in
 To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
 
 ### Prepare the cloud seed host to create the seed VM {#prepseed}
-On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, called the seed cloud host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
 ## Downloading and extracting the installation packages {#getinstall}
 Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See [Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 ## Installing HP Helion OpenStack {#install}
 
-Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:
 
 * [Configure proxy information](#proxy)
 * [Install the seed VM and building your cloud](#startseed)
@@ -95,9 +93,9 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ### Configure proxy information {#proxy}
 
-Before you begin your installation on the seed VM host, if your environment uses a proxy server to access the Internet, configure the proxy information using the following steps:
+Before you begin your installation on the seed cloud host, if your environment uses a proxy server to access the Internet, configure the proxy information using the following steps:
 
-1. Launch a terminal and log in to your seed VM host as root:
+1. Launch a terminal and log in to your seed cloud host as root:
 
 		sudo su -
 
@@ -109,12 +107,12 @@ Before you begin your installation on the seed VM host, if your environment uses
 	
 	Where `web_proxy_IP` is your web proxy IP address.
 
-3. Log out and re-login to the seed VM host to activate the proxy configuration.
+3. Log out and re-login to the seed cloud host to activate the proxy configuration.
 
 
 ### Install the seed VM and build your cloud {#startseed}
 
-1. Make sure you are logged into the seed VM host as root. If not:
+1. Make sure you are logged into the seed cloud host as root. If not:
  
 		sudo su -
 
@@ -150,7 +148,7 @@ Before you begin your installation on the seed VM host, if your environment uses
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv) on the *Prerequisites* page.
 
-11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed VM host.
+11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed cloud host.
 
 	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
 
@@ -354,12 +352,6 @@ Configure Block Storage by either deploying VSA or using HP 3Par Array
 	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
 
 	For instructions, see the [Scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/) document. 
-
-- Install DNS as a service (DNSaaS) (Optional).
-
-	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
-	For installation instructions, see [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

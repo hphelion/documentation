@@ -82,16 +82,6 @@ opacity: 1;
 <br>
 
 
-
-
-
- <img src="keystone_diagram.png">
-
-
-<br>
-<div class="faded">
-<a href="index.html"><img class="faded" src="back.png"></a>
-</div>
 <h3>Keystone</h3>
 
 Keystone is organized as a group of internal services exposed on one or many endpoints. Many of these services are used in a combined fashion by the frontend, for example an authenticate call will validate user/project credentials with the Identity service and, upon success, create and return a token with the Token service.<br>
@@ -101,6 +91,13 @@ In other cases, this data is pulled, by varying degrees, from an authoritative b
 <strong>Token</strong> The Token service validates and manages Tokens used for authenticating requests once a user’s credentials have already been verified.<br>
 <strong>Catalog </strong>The Catalog service provides an endpoint registry used for endpoint discovery.<br>
 <strong>Policy</strong> The Policy service provides a rule-based authorization engine and the associated rule management interface.
+<br>
+<div class="faded">
+<a href="index.html"><img class="faded" src="back.png"></a>
+</div>
+<br>
+<img src="keystone_diagram.png">
+
 
 
 

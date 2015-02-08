@@ -2,7 +2,7 @@
 layout: default-devplatform
 permalink: /als/v1/user/client/
 product: devplatform
-title: "Application Lifecycle Service Client"
+title: "Application Lifecycle Service Command Line Client"
 ---
 <!--PUBLISHED-->
 

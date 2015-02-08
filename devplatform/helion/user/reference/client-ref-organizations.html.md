@@ -1,139 +1,98 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/organizations
+permalink: /als/v1/user/reference/client-ref/organizations/
+title: "Application Lifecycle Service Command Line Client Reference: Organizations"
 product: devplatform
-
 ---
 <!--UNDER REVISION-->
 
 # HP Helion Development Platform: ALS Command Reference: Organizations
 
-- [Organizations](#organizations)
-	- [helion create-org](#command-create-org)
-	- [helion command-delete-org](#delete-org)
-	- [helion link-user-org](#command-link-user-org)
-	- [helion org-users](#command-org-users)
-	- [helion orgs](#command-orgs)	
-	- [helion orgs](#command-orgs)
-	- [helion quota-org](#command-quota-org)
-	- [helion rename-org](#command-rename-org)
-	- [helion switch-org](#command-switch-org)
-	- [helion unlink-user-org](#command-unlink-user-org)
-	- [helion update-org](#command-update-org)
+- [helion create-org](#command-create-org): Create a new organization.
+- [helion command-delete-org](#delete-org): Delete the named organization
+- [helion link-user-org](#command-link-user-org): Add the specified user to the named organization in various roles.
+- [helion org](#command-org): Show the named organization's information.
+- [helion orgs](#command-orgs): List the available organizations.
+- [helion org-users](#command-org-users): Show the users for the organization by role. 
+- [helion quota-org](#command-quota-org): Set the quotas for the current or named organization.
+- [helion rename-org](#command-rename-org): Rename the named organization.
+- [helion switch-org](#command-switch-org): Switch the current organization to the named organization.
+- [helion unlink-user-org](#command-unlink-user-org): Remove the specified user from the named organization, in various roles.
+- [helion update-org](#command-update-org): Change one or more attributes of an organization in a single call.
 
+## Syntax
 
-## Organizations<a name="organizations"></a>
-### helion create-org *\<name\*###
-Create a new organization. This is an Application Lifecycle Service 3 specific command.
+	helion [options] command [arguments] [command-options]
+For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--activate</td>
-    <td>Switch the current organization to the newly created one. Done by
-    default.</td>
-    </tr>    <tr><td>--add-self</td>
-    <td>Add yourself to the new organization, as developer. Done by
-    default.</td>
-    </tr>    <tr><td>--no-activate</td>
-    <td>Complementary alias of --activate.</td>
-    </tr>    <tr><td>--no-add-self</td>
-    <td>Complementary alias of --add-self.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--quota</td>
-    <td>The named quota of the new organization. Default is the target's
-    choice.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+<hr>
+## helion create-org <*name*> {#command-create-org}
+Create a new organization. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--activate</td>
+<td>Switch the current organization to the newly created one. Done by
+default.</td>
+</tr>    <tr><td>--add-self</td>
+<td>Add yourself to the new organization, as developer. Done by
+default.</td>
+</tr> <tr><td>--default</td><td>Make the organization the default for users without explicit organization. The previous default organization is automatically reset.</td></tr>   <tr>   <tr><td>--no-activate</td>
+<td>Complementary alias of --activate.</td>
+</tr> 
+<td>--no-add-self</td>
+<td>Complementary alias of --add-self.</td>
+</tr>   <tr>
+<td>--quota</td>
+<td>The named quota of the new organization. Default is the target's
+choice.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion delete-org *\<name\*###
-Delete the named organization. This is an Application Lifecycle Service 3 specific
-command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--recursive</td>
-    <td>Remove all sub-ordinate parts, and relations.</td>
-    </tr>    <tr><td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-r</td>
-    <td>Alias of --recursive.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion delete-org <*name*> {#delete-org}
+Delete the named organization. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr>
+<tr>
+<td>--recursive, -r</td>
+<td>Remove all subordinate parts and relations.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion link-user-org *\<user\* *\<org\*###
-Add the specified user to the named organization, in various roles. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--auditor</td>
+## helion link-user-org <*user*> <*organization*> {#command-link-user-org}
+Add the specified user to the named organization in various roles. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--auditor</td>
     <td>Affect the auditor role</td>
     </tr>    <tr><td>--billing</td>
     <td>Affect the billing manager role</td>
     </tr>    <tr><td>--manager</td>
     <td>Affect the manager role</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
+    </tr> <tr>
     <td>--target</td>
     <td>The once-off target to use for the current operation.</td>
     </tr>    <tr><td>--token</td>
@@ -142,241 +101,176 @@ Add the specified user to the named organization, in various roles. This is an A
     </tr>    <tr><td>--token-file</td>
     <td>Path to an existing and readable file containing the targets and
     authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
     </tr>
 </table>
-### helion orgs###
-List the available organizations. This is an Application Lifecycle Service 3 specific
-command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td>
-    </tr>    <tr><td>--full</td>
-    <td>Show more details.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion org <*name*> {#command-org}
+Show the named organization's information.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--full</td>
+<td>Show more details.</td>
+</tr>    <tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion org *\<name\*###
-Show the named organization's information. This is an Application Lifecycle Service 3
-specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--full</td>
-    <td>Show more details.</td>
-    </tr>    <tr><td>--json</td>
-    <td>Print raw json as output, not human-formatted data.</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+
+## helion orgs {#command-orgs}
+List the available organizations.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--full</td>
+<td>Show more details.</td>
+</tr>    <tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion quota-org *\<name\* *\<quota\*###
-Set the quotas for the current or named organization. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion org-users {#command-org-users}
+Show the users for the organization by role.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr><td>--json</td>
+<td>Print raw json as output, not human-formatted data.</td>
+</tr><tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-###helion rename-org *\<name\* *\<newname\*###
-Rename the named organization. This is an Application Lifecycle Service 3 specific
-command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+## helion quota-org <*name*> <*quota*> {#command-quota-org}
+Set the quotas for the current or named organization. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion switch-org *\<name\*###
-Switch the current organization to the named organization. This invalidates the current space. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr>
+##helion rename-org <*name*> <*NewName*> {#command-rename-org}
+Rename the named organization.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
 </table>
-### helion unlink-user-org *\<user\* *\<org\*###
-Remove the specified user from the named organization, in various roles. This is an Application Lifecycle Service 3 specific command.
 
-<table>
-    <tr><td><b>Option</b></td><td><b>Description</b></td></tr>
-    <tr><td>--auditor</td>
-    <td>Affect the auditor role</td>
-    </tr>    <tr><td>--billing</td>
-    <td>Affect the billing manager role</td>
-    </tr>    <tr><td>--manager</td>
-    <td>Affect the manager role</td>
-    </tr>    <tr><td>--no-prompt</td>
-    <td>Disable interactive queries.</td>
-    </tr>    <tr><td>--no-trace</td>
-    <td>Complementary alias of --trace.</td>
-    </tr>    <tr><td>--non-interactive</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--noprompt</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>--target</td>
-    <td>The once-off target to use for the current operation.</td>
-    </tr>    <tr><td>--token</td>
-    <td>The once-off authentication token to use for the current
-    operation.</td>
-    </tr>    <tr><td>--token-file</td>
-    <td>Path to an existing and readable file containing the targets and
-    authorization tokens.</td>
-    </tr>    <tr><td>--trace</td>
-    <td>Activate tracing of the issued REST requests and responses. This
-    option is a no-op now. Tracing is always active. See the 'trace'
-    command to print the saved trace to stdout.</td>
-    </tr><tr>
-    <td>-n</td>
-    <td>Alias of --no-prompt.</td>
-    </tr><tr>
-    <td>-t</td>
-    <td>Alias of --trace.</td>
-    </tr></table>
+## helion switch-org <*name*> {command-switch-org}
+Switch the current organization to the named organization. This invalidates the current space. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
+
+## helion unlink-user-org <*user*> <*organization*> {#command-unlink-user-org}
+Remove the specified user from the named organization in various roles. 
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--auditor</td>
+<td>Affect the auditor role</td>
+</tr>    <tr><td>--billing</td>
+<td>Affect the billing manager role</td>
+</tr>    <tr><td>--manager</td>
+<td>Affect the manager role</td>
+</tr><tr>
+<td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr></table>
+
+## helion update-org {#command-update-org}
+Change one or more attributes of an organization in a single call.
+
+<table style="text-align: left; vertical-align: top; width:650px;">
+<tr style="background-color: #C8C8C8;">
+<td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
+</tr><td>--default</td>
+<td>Make the space the default for users without explicit space. The previous default space is automatically reset. The spaces' organization is implicitly made the default as well.</td>
+</tr>    <tr><td>--newname</td>
+<td>A new name to give to the space.</td>
+</tr>    <tr><td>--no-default</td>
+<td>Make the current space no longer the default for users without explicit spaces.</td>
+</tr><tr>
+<td>--organization</td>
+<td>The name of the parent organization to use as context.
+Defaults to the current organization.
+A current organization is automatically set if there is none,
+either by taking the one organization the user belongs to, or
+asking the user to choose among the possibilities.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+</table>
