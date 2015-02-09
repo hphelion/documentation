@@ -34,9 +34,9 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 1. Create a new **Project** in the US East Region.
 2. Click the **Compute** sub-panel.<br><img src="media/quickstartB.png"/><br><br>
 6. Click on the **Download OpenStack RC file** button. This configuration file contains the service settings and environment variables specific to this project.<br><img src="media/quickstartC.png"/><br><br>
-9. You will need to provide a key pair for this VM in the **Access & Security** section. If a key pair has already been created and imported, skip to the next step. If a key pair has not been created and imported, create one:
+9. You will need to provide a key pair for this VM in the **Access & Security** section. </br> If a key pair has already been created, skip to the next step. Otherwise, create a key pair:
 	- By clicking on the **+** (plus) button and following the instructions in the resulting dialog (pictured below).<br><img src="media/quickstartF.png"/>
-	- By using a tool such as PuTTY (on a PC) and following the [instructions here](http://kb.siteground.com/how_to_generate_an_ssh_key_on_windows_using_putty/).
+	- By using a tool such as PuTTY (on a PC) or the *ssh-keygen* command (Linux).</br></br>
 1. Click **Import Key Pair** and then the **Launch**   button. <br>For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).<br><img src="media/quickstartG.png"/><br><br>
 7. On the resulting dialog, fill out the details and select **Boot from image** to enable selection of the Constructor VM.  The selections shown below are good defaults.<br><img src="media/quickstartD.png"/><br><br>
 8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
@@ -57,7 +57,7 @@ The cluster will be running on a single virtual machine in your account that wil
 ##After Installation {#after}
 Once the installation completes, you can load the ALS management console at the URL  provided by the *cfmgmt* tool. using the first username and first password you specified in step 11. After you log into the Console, you can access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
 
-You may be presented with text that warns or notes that the site has a self-signed certificate or, when loaded in a browser, you may get a display indicating that the site is not trusted. These can be safely ignored.
+**Note**: When launching the web-based management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
 
 ## Explore Tiny Sample Applications {#samples}
 Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
