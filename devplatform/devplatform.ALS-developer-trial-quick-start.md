@@ -20,13 +20,13 @@ PageRefresh();
 # HP Helion Development Platform: Quick Start Developer Trial {#top}
 The Quick Start Developer Trial is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform. At the end of the Helion Development Platform Application Lifecycle Service (ALS) installation and configuration process, you will have an endpoint URL that you can use to deploy your apps.
 
-1. [Before you Begin](#pre)
+1. [Before You Begin](#pre)
 2. [Step-by-Step Installation Instructions](#install)
 3. [After Installation](#after)
 4. [Explore Tiny Sample Applications](#samples)
 5. [Troubleshooting and Termination](#terminate)
 
-##Before you Begin {#pre}
+##Before You Begin {#pre}
 Before you can begin your Quick Start Developer Trial, you will need to do three things.
 
 1. Register for your free  <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
@@ -51,18 +51,18 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 
 	B. **If a key pair has already been created**, use the Horizon console to import it.
 
-	1. Click the **Access & Security** sub-panel.
-	2. Click the **Key Pairs** tab and then click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPair11.png"/><br /><br /> 
-	3. Enter a name for this key pair in the **Key Pair Name** field.
-	4. Copy and paste the RSA public key into the **Public Key** field.
-	5. Click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPairName11.png"/><br /><br />  
+	i. Click the **Access & Security** sub-panel.
+	ii. Click the **Key Pairs** tab and then click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPair11.png"/><br /><br /> 
+	iii. Enter a name for this key pair in the **Key Pair Name** field.
+	iv. Copy and paste the RSA public key into the **Public Key** field.
+	v. Click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPairName11.png"/><br /><br />  
 
 	C. **If a key pair has not been created**, create a key pair using the Horizon console:
 	
-	1. Click on the **Compute** sub-panel and then click **Access & Security**.
-	2. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
-	3. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
-	4. When prompted, save the *keyPairName.pem* file. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.</br></br>
+	i. Click on the **Compute** sub-panel and then click **Access & Security**.
+	ii. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
+	iii. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
+	iv. When prompted, save the *keyPairName.pem* file. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.</br>
 
 8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
 9. Run the following commands:
@@ -74,15 +74,12 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 		admin-password <password for admin user>
 		load trial.yml
 
-After the *cfmgmt* tool creates the cluster, it presents you with the ALS Console URL. Use this URL in your web browser to log in to the web-based ALS management console. <br /> **Note**: This URL will have the form *api.<*ipaddress*>.xip.io*  For example: *api.255.255.255.255.xip.io*  
-
+##After Installation {#after}
 The cluster will be running on a single virtual machine in your account that will have the name ending in *cluster1-core*
 
+After the *cfmgmt* tool creates the cluster, it presents you with the ALS Console URL. This URL will have the form *api.<*ipaddress*>.xip.io*  For example: *api.255.255.255.255.xip.io* <br /> Use this URL in your web browser to navigate to the web-based ALS management console and then log in using the first username and first password you specified in step 9. <br />**Note**: When launching the web-based ALS management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
 
-##After Installation {#after}
-Once the installation completes, you can load the ALS management console at the URL  provided by the *cfmgmt* tool. using the first username and first password you specified in step 11. After you log into the Console, you can access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
-
-**Note**: When launching the web-based management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
+After you log into the Console, you may wish to access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
 
 ## Explore Tiny Sample Applications {#samples}
 Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
@@ -92,7 +89,7 @@ If an error occurs during installation, the easiest response is simply to termin
 
 These commands delete your VMs, release the floating IP addresses, and remove the cluster security groups.
 		
-	source <openstackrc path>
+	source <path to openstackrc file>
     ./cfmgmt delete-cluster
 	keypair-name <name of keypair created earlier>
 	load trial.yml
