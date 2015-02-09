@@ -32,7 +32,7 @@ Thank you for your interest in HP Helion OpenStack! This document provides an ov
 
 **OpenStack Juno Services** - The full set of standard OpenStack services is available for you to use: Nova, Swift, Cinder, Neutron, Glance, Keystone, Horizon, Heat, and TripleO (Ironic) for deployment.
 
-**TripleO (Ironic)** - Using OpenStack technology for deploying OpenStack services in a fully automated manner resulting in a bare-metal control plane deployed in a highly available configuration.
+**TripleO (Ironic)** - Using OpenStack technology for deploying OpenStack services in a fully automated manner resulting in a baremetal control plane deployed in a highly available configuration.
 
 **LogStash/ElasticSearch** - Enhancing security and supportability of the product by offering centralized logging.
 
