@@ -5,7 +5,7 @@ permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 # HP Helion Development Platform: Quick Start Developer Trial {#top}
 The Quick Start Developer Trial is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform. At the end of the Helion Development Platform Application Lifecycle Service (ALS) installation and configuration process, you will have an endpoint URL that you can use to deploy your apps.
