@@ -29,20 +29,18 @@ Make sure the following required tasks are completed before you begin the instal
 
 - Review the hardware and software requirements
 - Preparing your network
-	- Preparing all networks
-	- Preparing the network for a KVM installation
-	- Preparing the network for an ESX installation
-- Preparing the seed cloud host
+- Preparing the seed cloud host:
 	- Install Ubuntu 14.04 LTS
 	- Configure SSH
 	- Obtain a public key
 	- Install Debian/Ubuntu packages
 	- Install and configure NTP
+	- Configure proxy information 
 	- Download the installation packages
-	- Editing the JSON Environment Variables File for Installation
+	- Create the JSON environment variables file
 	- Create the baremetal.csv file
-	- Set a default DNS name server
-	- **OPTIONAL:** Integrating LDAP (Lightweight Directory Access Protocol) 
+	- Set DNS servers name-resolution
+	- Integrating LDAP (Lightweight Directory Access Protocol)
 
 ## Hardware and software requirements {#hardware}
 
@@ -58,7 +56,7 @@ The network is not installed or managed by the cloud. You must install and manag
 See [Preparing the Networkp](/helion/openstack/install/prereqs/network/).
 
 
-## Preparing the seed cloud host {#installer}
+## Preparing the seed cloud host {#seed}
 
 The following tasks need to be performed on the seed cloud host, where the seed VM will be installed. The seed cloud host is alternatively known as the installer system.
 
@@ -207,7 +205,7 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
 
 ### Set a default DNS name server {#name-resolution}
 

@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9650; Prerequisites </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/#ldap">&#9650; Prerequisites </p> 
 
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 
