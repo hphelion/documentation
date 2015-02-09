@@ -25,11 +25,16 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; 1.1 Cinder (Volume) - Auto-zoning using Brocade FC Zone Manager 
 
-Fibre Channel (FC) Zone Management automates the zone lifecycle management. It is a new functionality available in Cinder - Icehouse. <!--Zoning groups host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are member of a same zone.--->Zoning groups host and storage nodes so that nodes can communicate with each other, if they are the member of the same zone. 
 
-FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone Manager interacts with the (appropriate vendor**?** specific Zone driver based on the properties specified in the `kvm-default.json` file. Brocade Zone Driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
+# HP Helion OpenStack&reg; 1.1 Cinder (Volume) - Auto-zoning using Brocade FC Zone Manager
+
+
+Fibre Channel (FC) Zone Management, a new functionality available in Cinder- Icehouse, automates the zone lifecycle management. 
+
+Zoning is a fabric-based service in a storage area network, which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone.
+
+FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone Manager interacts with the appropriate vendor (**what vendor is it referred?**) specific Zone driver based on the properties specified in the `kvm-default.json` file. Brocade Zone Driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
 
 **Volume Operations: High-level component interactions with the FC Zone Manager**
 
@@ -42,14 +47,13 @@ If Block Storage is configured to use a Fibre Channel volume driver that support
 
 ###Prerequisite
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed
-2. Sirius service is up and running in the undercloud
-3. HP 3PAR device is accessible from the undercloud
+1. HP Helion OpenStack&#174; cloud is successfully deployed.
+2. Sirius service is running in the undercloud.
+3. HP StoreServ (3PAR) device is accessible from the undercloud.
 4. FC Brocade switches are accessible from nova compute and node where cinder services are running. 
-5. HP 3PAR device(running operating system v 3.1.3 or later) is accessible by 6. 6. Cinder and Compute nodes are running in the overcloud
-7. Common Provisioning Groups (CPGs) are created for HP 3PAR
-8. HP 3PAR web services API server must be enabled and running and HTTPS is enabled
-
+5. HP StoreServ (3PAR) device(running operating system v 3.1.3 or later) is accessible by 6. 6. Cinder and compute nodes are running in the overcloud.
+7. Common Provisioning Groups (CPGs) are created for HP StoreServ (3PAR)
+8. HP StoreServ (3PAR) web services API server must be enabled and running. Also, HTTPS is enabled.
 
 ###Steps for configuration
 
@@ -71,103 +75,149 @@ Perform the following steps to configure Brocade Zone Manager.
 
 		vi kvm-default.json
 
-5.  Edit and update the `tripleo/configs/kvm-default.json` 
 
-	a.   Add the JSON snippet obtained in "Generate Config" from Sirius .
+5. Enter the following configuration and updated the `tripleo/configs/kvm-default.json`:
+
+	1. Generate `Config.json` from Sirius. Refer [Add HP 3PAR StoreServ CPG as Cinder backend](/helion/openstack/sirius/cli/workflow/) to generate `Config.json`.
+	2. Add `"zoning_mode": "fabric"` parameters under **Default** section in `cinder.conf`.
+	3. Add the updated JSON snippet in `kvm-default.json` as shown below:
+
+	
+			{
+	          "cloud_type": "KVM",
+	          "compute_scale": 1,
+			  "vsa_scale": 0,
+			  "vsa_ao_scale": 0,
+		      "so_swift_storage_scale": 0,
+	          "so_swift_proxy_scale": 0,
+	          "bridge_interface": "eth0",
+		      "ntp": {
+		        "overcloud_server": "16.110.135.123",
+		        "undercloud_server": "16.110.135.123"
+		      },
+	
+	           "3par": {
+	            "DEFAULT": {
+			     "enabled_backends": [
+		            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
+	                "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
+	             ]
+	          },
+	            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
+	              "san_password": "3pardata",
+	              "hp3par_username": "3paradm",
+	              "volume_backend_name": "3pariscsi",
+	              "san_login": "3paradm",
+	              "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+	              "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+	              "hp3par_password": "3pardata",
+	              "hp3par_cpg": "3par_iscsi",
+	              "hp3par_iscsi_chap_enabled": "true",
+	              "san_ip": "15.214.241.21",
+	              "iscsi_ip_address": "10.1.0.200"
+	            },
+	
+		         "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
+		           "san_password": "3pardata",
+	               "hp3par_username": "3paradm",
+	               "volume_backend_name": "3par_FC",
+	               "san_login": "3paradm",
+	               "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+	               "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
+	               "hp3par_password": "3pardata",
+	               "hp3par_cpg": "3par_FC",
+	               "hp3par_iscsi_chap_enabled": "true",
+	               "san_ip": "15.214.41.21",
+	               "zoning_mode": "fabric"
+		       }
+
+	4. Add the brocade zone manager configuration under 3PAR section as shown in the sample below.
+	
+	
+			{
+	          "cloud_type": "KVM",
+	          "compute_scale": 1,
+			  "vsa_scale": 0,
+			  "vsa_ao_scale": 0,
+		      "so_swift_storage_scale": 0,
+	          "so_swift_proxy_scale": 0,
+	          "bridge_interface": "eth0",
+		      "ntp": {
+		        "overcloud_server": "16.110.135.123",
+		        "undercloud_server": "16.110.135.123"
+		      },
+	
+	           "3par": {
+	            "DEFAULT": {
+			     "enabled_backends": [
+		            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
+	                "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
+	             ]
+	          },
+	            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
+	              "san_password": "3pardata",
+	              "hp3par_username": "3paradm",
+	              "volume_backend_name": "3pariscsi",
+	              "san_login": "3paradm",
+	              "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+	              "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
+	              "hp3par_password": "3pardata",
+	              "hp3par_cpg": "3par_iscsi",
+	              "hp3par_iscsi_chap_enabled": "true",
+	              "san_ip": "15.214.241.21",
+	              "iscsi_ip_address": "10.1.0.200"
+	            },
+	
+		         "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
+		           "san_password": "3pardata",
+	               "hp3par_username": "3paradm",
+	               "volume_backend_name": "3par_FC",
+	               "san_login": "3paradm",
+	               "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
+	               "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
+	               "hp3par_password": "3pardata",
+	               "hp3par_cpg": "3par_FC",
+	               "hp3par_iscsi_chap_enabled": "true",
+	               "san_ip": "15.214.41.21",
+	               "zoning_mode": "fabric"
+		       },
+	
+	            "fc-zone-manager": {
+	              "brcd_sb_connector": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI",
+	              "fc_fabric_names": "BRCD_FAB_A,BRCD_FAB_B",
+	              "zone_name_prefix": "helion",
+	              "fc_san_lookup_service": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService",
+	              "zone_driver": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver",
+	              "zoning_policy": "initiator-target"
+		     },
+	
+	            "BRCD_FAB_A": {
+			      "fc_fabric_address": "15.214.242.160",
+			      "fc_fabric_user": "admin",
+			      "fc_fabric_password": "admblabla",
+			      "zoning_policy": "initiator-target",
+			      "zone_activate": "true"
+			    },
 		
-	   1.  Refer [Add HP 3PAR StoreServ CPG as Cinder backend](/helion/openstack/sirius/cli/workflow/) to generate `Config.json`
-	   2. As of now manually add "zoning_mode": "fabric" parameter under 3PAR FC backend.
+	            "BRCD_FAB_B": {
+	              "fc_fabric_address": "15.214.242.161",
+	              "fc_fabric_user": "admin",
+	              "fc_fabric_password": "admblabla",
+	              "zoning_policy": "initiator-target",
+	              "zone_activate": "true"
+	             }
+	           }
+	     	 }
 
-6. Manually add FC Brocade Zone Manager configurations under the "**3par**" section as shown in the sample below.
-	
-	
-		{
-          "cloud_type": "KVM",
-          "compute_scale": 1,
-		  "vsa_scale": 0,
-		  "vsa_ao_scale": 0,
-	      "so_swift_storage_scale": 0,
-          "so_swift_proxy_scale": 0,
-          "bridge_interface": "eth0",
-	      "ntp": {
-	        "overcloud_server": "16.110.135.123",
-	        "undercloud_server": "16.110.135.123"
-	      },
-
-           "3par": {
-            "DEFAULT": {
-		     "enabled_backends": [
-	            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df",
-                "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd"
-             ]
-          },
-            "CPG_6287cd1a-f8fb-4e10-93b0-88152db3b5df": {
-              "san_password": "3pardata",
-              "hp3par_username": "3paradm",
-              "volume_backend_name": "3pariscsi",
-              "san_login": "3paradm",
-              "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
-              "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_iscsi.HP3PARISCSIDriver",
-              "hp3par_password": "3pardata",
-              "hp3par_cpg": "3par_iscsi",
-              "hp3par_iscsi_chap_enabled": "true",
-              "san_ip": "15.214.241.21",
-              "iscsi_ip_address": "10.1.0.200"
-            },
-
-	         "CPG_b86f8f87-d546-40b6-9ac5-3fa5169958dd": {
-	           "san_password": "3pardata",
-               "hp3par_username": "3paradm",
-               "volume_backend_name": "3par_FC",
-               "san_login": "3paradm",
-               "hp3par_api_url": "https://15.214.241.21:8080/api/v1",
-               "volume_driver": "cinder.volume.drivers.san.hp.hp_3par_fc.HP3PARFCDriver",
-               "hp3par_password": "3pardata",
-               "hp3par_cpg": "3par_FC",
-               "hp3par_iscsi_chap_enabled": "true",
-               "san_ip": "15.214.41.21",
-               "zoning_mode": "fabric"
-	       },
-
-            "fc-zone-manager": {
-              "brcd_sb_connector": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI",
-              "fc_fabric_names": "BRCD_FAB_A,BRCD_FAB_B",
-              "zone_name_prefix": "helion",
-              "fc_san_lookup_service": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService",
-              "zone_driver": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver",
-              "zoning_policy": "initiator-target"
-	     },
-
-            "BRCD_FAB_A": {
-		      "fc_fabric_address": "15.214.242.160",
-		      "fc_fabric_user": "admin",
-		      "fc_fabric_password": "admblabla",
-		      "zoning_policy": "initiator-target",
-		      "zone_activate": "true"
-		    },
-	
-            "BRCD_FAB_B": {
-              "fc_fabric_address": "15.214.242.161",
-              "fc_fabric_user": "admin",
-              "fc_fabric_password": "admblabla",
-              "zoning_policy": "initiator-target",
-              "zone_activate": "true"
-           }
-         }
-      }
-
-7. Ensure the JSON file format is intact.
+6. Ensure the format of the JSON file remains the same.
 
 
 ####Update overcloud
 
 After configuration of Brocade FC zone manager for 3PAR device perform the following steps:
 
-1. Apply the configuration
- 
-**command?**
 
-2. Source the environment variables.
+1. Source the environment variables.
 
 		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh  tripleo/configs/<environment variables file name>
 
@@ -176,7 +226,7 @@ After configuration of Brocade FC zone manager for 3PAR device perform the follo
 		source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh  tripleo/configs/<kvm-default.json>
 
 
-3. Run the installer script to update the overcloud.
+2. Run the installer script to update the overcloud.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
 
@@ -187,8 +237,8 @@ After configuration of Brocade FC zone manager for 3PAR device perform the follo
 
 Please refer the Openstack Cinder configuration guide available at the below URLs for the specific configuration required for enabling auto-zoning.
 
-* For Zone Manager specific configuration refer to  [http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html](http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html)
-* For Zone Driver configuration refer to [http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html](http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html)
+* For Zone Manager specific configuration, refer to  [http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html](http://docs.openstack.org/trunk/config-reference/content/enable-fc-zone-manager.html)
+* For Zone Driver configuration, refer to [http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html](http://docs.openstack.org/trunk/config-reference/content/brcd-fc-zone-driver.html)
  
  
 
