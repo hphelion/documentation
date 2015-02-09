@@ -73,6 +73,8 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 **Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
 
+**Ruby CLI No Longer Supported** The Ruby CLI (unix_cli) is no longer be supported. Users are advised to consider the Python CLIs as an alternative.
+
 ### Features in HP Helion OpenStack 1.01 ### {#101}
 
 The following features have been added to HP Helion OpenStack 1.01:

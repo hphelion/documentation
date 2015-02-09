@@ -19,12 +19,15 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9664; Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor&#9654;</a></p> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9650; Prerequisites </p> 
 
-# HP Helion OpenStack&reg;: Integrating LDAP 
+<!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 
+# HP Helion OpenStack&reg;: Integrate the Identity Service (Keystone) with LDAP/AD 
 
 The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion OpenStack installation process.
+
+Multiple authentication backends are supported, using Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
 
 The process for integrating LDAP involves the following steps:
 
@@ -38,52 +41,22 @@ Before starting the integration, review the following prerequisites:
 
 - LDAP server is up and running in a network accessible from the overcloud.
 
-- The following users need to be created on the LDAP server and their passwords must be set in accordance with the current LDAP server policy.
-	
-	- admin
-	- ceilometer
-	- cinder
-	- demo
-	- ec2
-	- glance
-	- heat
-	- neutron
-	- nova
-	- sherpa
-	- swift
 
 ## Generate configuration files {#config}
 
 The LDAP integration process requires two configuration files:
 
-- [TripleO overcloud password file](#tripleo)
 - [LDAP server connection settings](#connect)
+- Keystone CA storage and signing key/certificate file
 
-### TripleO overcloud password file {#tripleo}
 
-This file contains the password for all the service users created on the LDAP server. The password for each user should be the password that was specified when creating the user on the LDAP server.
+### LDAP connection settings {#connect}
 
-**tripleo-overcloud-passwords file**
+Create overlcoud_keystone_ldap.json file which contains the LDAP server connection settings. 
 
-	OVERCLOUD_ADMIN_PASSWORD=<password>
-	OVERCLOUD_CEILOMETER_PASSWORD=<password>
-	OVERCLOUD_CINDER_PASSWORD=<password>
-	OVERCLOUD_DEMO_PASSWORD=<password>
-	OVERCLOUD_EC2_PASSWORD=<password>
-	OVERCLOUD_GLANCE_PASSWORD=<password>
-	OVERCLOUD_HEAT_PASSWORD=<password>
-	OVERCLOUD_NEUTRON_PASSWORD=<password>
-	OVERCLOUD_NOVA_PASSWORD=<password>
-	OVERCLOUD_SHERPA_PASSWORD=<password>
-	OVERCLOUD_SWIFT_PASSWORD=<password>
-	
-The file must end with a carriage return. TripleO will add lines to the end of the file so if the carriage return is missing, new content will be added to the end of the last line and will be ignored.
+It must be a well-formed, syntax-error free json file.
 
-### LDAP server connection settings {#connect}
-
-This file contains the LDAP server connection settings.  The content of the file will be transparently propagated in `/etc/keystone/keystone.conf` on each of the overcloud controller nodes. Therefore, it must be a well-formed, syntax-error free json file.
-
-The following options must be set with proper values to provide integration with the LDAP server:
+Section names, supported options and possible values are described in Openstack Identity Service documentation. Here are some most important:
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
@@ -181,29 +154,43 @@ The following options must be set with proper values to provide integration with
 	</tr>
 	</table>
 
-## Include the configuration files in the installation {#install}
+See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overlcoud_keystone_ldap.json` file.
 
-You need to copy the configuration files to the seed VM host during the installation, after the seed VM is installed and before launching the installation of the overcloud and undercloud.
+## Keystone CA storage and signing key/certificate files
 
-On the seed VM host, perform the following:
+LDAP server might require all connections to be secured though the TLS protocol. Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
 
-1. Copy the `tripleo-overcloud-passwords` file to the `/root/tripleo folder`:
+To turn this feature on:
 
-		scp tripleo-overcloud-passwords root@<seed_VM_IP_address>:/root/tripleo/tripleo-overcloud-passwords
+1. Set options use_tls, tls_req_cert and tls_cacertfile appropriately in overcloud_keystone_ldap.json file described above.
 
-2. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
+2. Create overcloud-env.json file with the following content:
 
-		scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json
+		{
+	        "parameters": {
+	            "KeystoneCACertificate": "<CA Root Certificates converted to a single line>",
+	            "KeystoneSigningCertificate": "<Keystone Signing Certificate converted to a single line>",
+	            "KeystoneSigningKey": "<Keystone Signing Key converted to a single line>"
+	        }
+	    }
+
+	The set of CA Root Certificates set mentioned above should contain root certificates for all LDAP servers, for which certificate validation set to "demand" or "allow".
+
+3. Change `overcloud-env.json` file access permissions to `0600`:
+
+		chmod 600 overcloud-env.json
 
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
-[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
+[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/#startseed)
 
-[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
+[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/#startseed)
 
 ## Configure Horizon {#horizon}
 
-1. Enable LDAP user login.
+After the installation is complete, perform the following tasks:
+
+1. Use the use the Horizon dashboard to enable LDAP users to log in.
 
 	Before a user can successfully login, the user must be assigned to a project. A user with admin privileges must create one or more projects and associate each user to a project.
 
@@ -231,141 +218,10 @@ Follow the steps described in the installation instructions to deploy the overcl
 			'can_edit_domain': True,
 			'can_edit_role': True
 
-
 	c. Restart apache.
 
 		service apache2 restart
 
-The following is an example of a typical `overcloud_keystone_ldap.json` configuration file for openLDAP server. Use values appropriate for your environment.
-
-	{
-	    "keystone": {
-	        "config": [
-	            {
-	                "section": "identity",
-	                "values": [
-	                    {
-	                        "option": "driver",
-	                        "value": "keystone.identity.backends.ldap.Identity"
-	                    }
-	                ]
-	            },
-	            {
-	                "section": "assignment",
-	                "values": [
-	                    {
-	                        "option": "driver",
-	                        "value": "keystone.assignment.backends.sql.Assignment"
-	                    }
-	                ]
-	            },
-	            {
-	                "section": "ldap",
-	                "values": [
-	                    {
-	                        "option": "url",
-	                        "value": "ldap://localhost"
-	                    },
-	                    {
-	                        "option": "suffix",
-	                        "value": "DC=example,DC=com"
-	                    },                    
-	                    {
-	                        "option": "user_tree_dn",
-	                        "value": "CN=Users,DC=example,DC=com"
-	                    },
-	                    {
-	                        "option": "user",
-	                        "value": "CN=SomeLDAPUser,CN=Users,DC=example,DC=com"
-	                    },
-	                    {
-	                        "option": "password",
-	                        "value": "password"
-	                    },
-	                    {
-	                        "option": "user_objectclass",
-	                        "value": "user"
-	                    },
-	                    {
-	                        "option": "user_id_attribute",
-	                        "value": "cn"
-	                    },
-	                    {
-	                        "option": "user_name_attribute",
-	                        "value": "cn"
-	                    },                    
-	                    {
-	                        "option": "user_allow_create",
-	                        "value": "False"
-	                    },
-	                    {
-	                        "option": "user_allow_update",
-	                        "value": "False"
-	                    },
-	                    {
-	                        "option": "user_allow_delete",
-	                        "value": "False"
-	                    },                                        
-	                    {
-	                        "option": "group_tree_dn",
-	                        "value": "CN=Users,DC=example,DC=com"
-	                    },
-	                    {
-	                        "option": "group_objectclass",
-	                        "value": "group"
-	                    },
-	                    {
-	                        "option": "group_id_attribute",
-	                        "value": "cn"
-	                    },
-	                    {
-	                        "option": "group_name_attribute",
-	                        "value": "cn"
-	                    },  
-	                    {
-	                        "option": "group_allow_create",
-	                        "value": "False"
-	                    },
-	                    {
-	                        "option": "group_allow_delete",
-	                        "value": "False"
-	                    },
-	                    {
-	                        "option": "group_allow_update",
-	                        "value": "False"
-	                    },                  
-	                    {
-	                        "option": "use_tls",
-	                        "value": "False"
-	                    },
-	                    {
-	                        "option": "tls_req_cert",
-	                        "value": "never"
-	                    },
-	                    {
-	                        "option": "user_enabled_attribute",
-	                        "value": "userAccountControl"
-	                    },
-	                    {
-	                        "option": "user_enabled_mask",
-	                        "value": "2"
-	                    },
-	                    {
-	                        "option": "user_enabled_default",
-	                        "value": "512"
-	                    },
-	                    {
-	                        "option": "user_mail_attribute",
-	                        "value": "userPrincipalName"
-	                    }
-	                ]
-	            }
-	        ]
-	    }
-	}
-
-Return to the [KVM installation](/helion/openstack/install/kvm/#startseed/).
-
-Return to the [ESX installation](/helion/openstack/install/esx/#startseed/).
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 ----

@@ -28,9 +28,7 @@ HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware v
 
 The installation and configuration process for ESX consists of the following general steps:
 
-* Preparing for installation
-	* Verify Prerequisites
-	* Review the ESX deployment architecture
+* Verify Prerequisites
 	* Edit the JSON environment variables file
 	* Prepare baremetal.csv file
 	* Set DNS servers
@@ -51,38 +49,6 @@ Before starting the installation, review the following sections.
 
 To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/install/prereqs/) before you start.
 
-### Review the ESX deployment architecture {#deploy-arch}
-
-The following diagram depicts the required network topology for a ESX installation.
-
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX (opens in a new window)</a>
-
-For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
-
-### Edit the JSON environment variables file ### {#envvars}
-
-Before installing, make sure you have edited the JSON environment variables file that is required for installation.
-
-For more information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
-
-### Prepare baremetal.csv file ### {#csv}
-
-Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
-
-For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
-
-### Set DNS servers {#name-resolution}
-
-To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
-
-
-### Prepare the seed cloud host to create the seed VM {#prepseed}
-
-On the server identified to run the seed VM, called the seed cloud host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
-
-
-## Downloading and extracting the installation packages {#getinstall}
-Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See [Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 ## Installing HP Helion OpenStack {#install}
 
@@ -92,26 +58,6 @@ Make sure you have met all the hardware requirements and have completed the requ
 * [Installing the seed VM and building your cloud](#startseed)
 
 
-### Configure proxy information {#proxy}
-
-Before you begin your installation on the seed cloud host, if necessary configure the proxy information for your environment using the following steps:
-
-1. Launch a terminal and log in to your seed cloud host as root:
-
-		sudo su -
-
-2. Edit the `/etc/environment` file to add the following lines:
-
-		export http_proxy=http://<web_proxy_IP>/
-		export https_proxy=http://<web_proxy_IP>/
-		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>,<provider_network>
-	
-	Where:
-
-		web_proxy_IP is your web proxy IP address.
-		provider_Network is your ESX management network
-
-3. Log out and re-login to the seed cloud host to activate the proxy configuration.
 
 ### Install the seed VM and build your cloud {#startseed}
 
@@ -151,13 +97,14 @@ Before you begin your installation on the seed cloud host, if necessary configur
 
 6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed cloud host.
 
-	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
+	a. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
 
-		scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords
+		scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json
 
-	b. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder.
+	b. Place overcloud-env.json file (if created) into `/root/tripleo` folder.
 
-		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json 
+		scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json
+
 
 7. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to the baremetal servers in your `baremetal.csv` is working.
 
