@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Troubleshooting VSA"
-permalink: /helion/openstack/services/troubleshooting/VSA/
+permalink: /helion/openstack/services/troubleshooting/vsa/
 product: commercial.ga
 
 ---

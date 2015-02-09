@@ -37,9 +37,9 @@ For easy reference, we categorized the known issues and solutions as follows:
 
 * [Scale-Out Swift Troubleshooting](/helion/openstack/services/troubleshooting/swift/)
 
-* [DNSaaS issues](/helion/openstack/services/troubleshooting/dnsaas)
+* [DNSaaS issues](/helion/openstack/services/troubleshooting/dns)
 
-* [Reporting Service Troubleshooting](/helion/openstack/services/reporting/)
+* [Reporting Service Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
 
 * [Logging issues](/helion/openstack/services/troubleshooting/logging)
 
@@ -48,18 +48,6 @@ For easy reference, we categorized the known issues and solutions as follows:
 If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact).
 
 For troubleshooting tips for the HP Helion OpenStack update process, see [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/).
-
-
-
-
-
-##Logging  {#logging}
-
-
-
-
-##Controller Nodes {#controllernodes}
-
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
