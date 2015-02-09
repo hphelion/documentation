@@ -27,6 +27,8 @@ HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of L
 
 For easy reference, we categorized the known issues and solutions as follows:
 
+* [Reporting Service](/helion/openstack/services/reporting/)
+
 * [Baremetal installation](#baremetal-install)
 	* [KVM](#kvm)
 		* [Fatal PCI Express Device Error](#fatal-pci)
