@@ -697,7 +697,7 @@ The following steps create a `ceph-mon` data directory, retrieves the monitor ke
 		ceph-mon: set fsid to 328d1702-67e7-4dfa-a0a9-77f0b96be57f
 		ceph-mon: created monfs at /var/lib/ceph/mon/ceph-ftcceph1-mon2 for mon.ftcceph1-mon2
 
-6.	Update /etc/ceph/ceph.conf file with the new monitor node details and push the updated ceph.conf file to all the nodes in the ceph cluster.
+6.	Update `/etc/ceph/ceph.conf` file with the new monitor node details and push the updated ceph.conf file to all the nodes in the ceph cluster.
 		[mon.mon-id]
 		host = new-mon-host
 		addr = ip-addr:6789
