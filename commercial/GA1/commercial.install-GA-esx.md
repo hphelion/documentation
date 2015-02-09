@@ -17,9 +17,8 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/ovsvapp/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/esx/proxy/">Deploy vCenter ESX Compute Proxy &#9654 </a></p> 
+
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
 HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
@@ -28,20 +27,20 @@ HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware v
 
 The installation and configuration process for ESX consists of the following general steps:
 
-* [Preparing for installation](#prepare)
-	* [Verify Prerequisites](#pre)
-	* [Review the ESX deployment architecture](#deploy-arch)
-	* [Edit the JSON environment variables file](#envvars)
-	* [Prepare baremetal.csv file](#csv)
-	* [Set DNS servers](#name-resolution)
-	* [Preparing seed cloud host to run seed VM](#prepseed)
-* [Download and extracting the installation packages](#getinstall)
-* [Installing HP Helion OpenStack](#install)
-   * [Configure proxy information](#proxy)
-   * [Install the seed VM and building your cloud](#startseed)
-* [Verifying the installation](#verifying-your-installation)
-* [Create projects for LDAP users](#ldap)
-* [Next steps](#next-steps) 
+* Preparing for installation
+	* Verify Prerequisites
+	* Review the ESX deployment architecture
+	* Edit the JSON environment variables file
+	* Prepare baremetal.csv file
+	* Set DNS servers
+	* Preparing seed cloud host to run seed VM
+* Download and extracting the installation packages
+* Installing HP Helion OpenStack
+   * Configure proxy information
+   * Install the seed VM and building your cloud
+* Verifying the installation
+* Create projects for LDAP users
+* Next steps
 
 ## Preparing for installation {#prepare}
 
@@ -49,11 +48,7 @@ Before starting the installation, review the following sections.
 
 ### Verify Prerequisites {#pre}
 
-To ensure a successful installation, please read through the following topics before you start.
-
-* Review the [support matrix](/helion/openstack/support-matrix/) for information on the supported hardware and software.
-* Make sure your environment meets the [hardware and network configuration requirements](/helion/openstack/install/prereqs/). 
-* [Perform required pre-installation tasks](/helion/openstack/install/prereqs/).
+To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/install/prereqs/) before you start.
 
 ### Review the ESX deployment architecture {#deploy-arch}
 
@@ -82,7 +77,7 @@ To set a default DNS name server for your HP Helion OpenStack Commercial cloud, 
 
 ### Prepare the seed cloud host to create the seed VM {#prepseed}
 
-On the server identified to run the seed VM, called the seed VM host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
+On the server identified to run the seed VM, called the seed cloud host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
 
 
 ## Downloading and extracting the installation packages {#getinstall}
@@ -90,7 +85,7 @@ Before you begin, you must have downloaded and extracted the required HP Helion 
 
 ## Installing HP Helion OpenStack {#install}
 
-Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed VM host:
+Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:
 
 * [Configure proxy information](#proxy)
 * [Installing the seed VM and building your cloud](#startseed)
@@ -98,9 +93,9 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 ### Configure proxy information {#proxy}
 
-Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:
+Before you begin your installation on the seed cloud host, if necessary configure the proxy information for your environment using the following steps:
 
-1. Launch a terminal and log in to your seed VM host as root:
+1. Launch a terminal and log in to your seed cloud host as root:
 
 		sudo su -
 
@@ -115,11 +110,11 @@ Before you begin your installation on the seed VM host, if necessary configure t
 		web_proxy_IP is your web proxy IP address.
 		provider_Network is your ESX management network
 
-3. Log out and re-login to the seed VM host to activate the proxy configuration.
+3. Log out and re-login to the seed cloud host to activate the proxy configuration.
 
 ### Install the seed VM and build your cloud {#startseed}
 
-1. Make sure you are logged into the seed VM host as root. If not:
+1. Make sure you are logged into the seed cloud host as root. If not:
  
 		sudo su -
 
@@ -153,7 +148,7 @@ Before you begin your installation on the seed VM host, if necessary configure t
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
 
-6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed VM host.
+6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed cloud host.
 
 	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
 
@@ -259,28 +254,13 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/install/ldap/#horizon).
 
-## Next Steps {#next-steps}
-
+## Next Step {#next-steps}
 
 - Deploy vCenter ESX Compute Proxy **(REQUIRED)**
 
 	The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
 
 	See [Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/).
-
-- Deploy the Open vSwitch vApp **(REQUIRED)**. 
-
-	HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp) must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
-
-	For installation intructions, see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions. 
-
-- Install DNS as a Service (DNSaaS) (Optional).
-
-	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
-	<!---For installation intructions, see [DNSaaS Beta Installation and Configuration]( /helion/openstack/install/dnsaas/).--->
-
-	See [HP Helion OpenStack&#174;: DNSaaS Installation and Configuration]( /helion/openstack/install/dnsaas/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

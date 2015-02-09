@@ -19,8 +19,7 @@ PageRefresh();
 </script>
 
 
-<!---<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>-->
-
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9650; Installation for KVM Hypervisor | <a href="/helion/openstack/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654</a></p> 
 
 # HP Helion OpenStack&reg; Cinder Block Storage Using HP StoreVirtual VSA 
 
@@ -155,7 +154,7 @@ The following diagram displays a reference design that is used as a starting poi
 The sizing of the StoreVirtual VSA Management Groups, Clusters and Instances is an intricate exercise used in balancing various parameters and preferences and should be done to optimize configurations for your specific deployment. 
 
 
-## Next Steps {#next-steps}
+## Next Step {#next-steps}
 
 - [Deploy and Configure HP StoreVirtual VSA](/helion/openstack/install/vsa/)
 

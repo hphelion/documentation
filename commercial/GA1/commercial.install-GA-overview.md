@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Installation Overview 
 
-The HP Helion OpenStack installation follows the standard [TripleO deployment model](/helion/openstack/services/tripleo/overview/), creating a seed, an undercloud and an overcloud.
+The HP Helion OpenStack installation follows the standard [TripleO deployment model](https://wiki.openstack.org/wiki/TripleO), creating a seed, an undercloud and an overcloud.
 
 * **Seed**: The seed VM is started as a VM from a specific seed VM image. It contains a number of self-contained OpenStack components that are used to deploy the undercloud. The seed deploys the undercloud by using Ironic baremetal driver to deploy a specific undercloud machine image.
 
@@ -73,6 +73,7 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * The installation will create two initial Object Storage nodes. If you need additional Object Storage nodes, you must create them manually after installation. 
 
+* All the Helion servers use UTC as a time zone.
 
 **Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
@@ -81,5 +82,14 @@ There are a few things you should be aware of before you begin your HP Helion Op
 Review the information in [Installation Prerequisites](/helion/openstack/install/prereqs/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+## For more information {#moreinfo}
+
+Before you start, if you want more information on HP Helion OpenStack, see the following:
+
+* [FAQ](/helion/openstack/faq/) 
+* [Release notes](/helion/openstack/release-notes/) 
+
+
 
 ----
