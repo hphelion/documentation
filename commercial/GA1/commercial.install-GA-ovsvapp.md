@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/ovsvapp/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -17,6 +17,8 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
+
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/esx/proxy/">Deploy the Open vSwitch vApp | <a href="/helion/openstack/install/kvm/">&#9650; Installation for ESX Hypervisor | <a href="/helion/openstack/install/dnsaas/">Install DNS as a service (DNSaaS) &#9654</a></p> 
 
 # HP Helion OpenStack&reg;: Deploying and Configuring OVSvApp on ESX hosts  
 HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.

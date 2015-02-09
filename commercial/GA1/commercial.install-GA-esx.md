@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/esx/
 product: commercial.ga
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -17,6 +17,8 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
+
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/esx/proxy/">Deploy vCenter ESX Compute Proxy &#9654 </a></p> 
 
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
