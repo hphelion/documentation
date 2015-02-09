@@ -111,7 +111,7 @@ Before you install the OVSvApp, ensure the following:
 
 
 
-##Deploy the OVSvApp {deploytemplate}
+## Deploy the OVSvApp ## {#deploytemplate}
 
 You must upload the OVSvApp appliance to one of the ESX hosts that is hosting VMs provisioned from HP Helion OpenStack environment. You must then configure the settings in the configuration file. The file can be used to clone and deploy OVSvApp on each host being managed by the controller.
 
