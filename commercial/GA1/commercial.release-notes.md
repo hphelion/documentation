@@ -38,7 +38,7 @@ The following features have been added to HP Helion OpenStack, by release.
 
 **Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
 
-**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
 **Patch update functionality** -- The HP Helion OpenStack 1.01 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
@@ -66,7 +66,7 @@ The following features have been added to HP Helion OpenStack, by release.
 
 **HP StoreVirtual VSA** -  [HP StoreVirtual VSA](http://www8.hp.com/us/en/products/storage-software/product-detail.html?oid=5306917) is storage virtualization software used as the default fault-tolerant, software-defined storage backend for the Volume Operations service, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.
 
-**Support for VMWare ESX** - [VMWare ESX](bare-metal hypervisor) is a bare-metal hypervisor. HP Helion OpenStack makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
+**Support for VMWare ESX** - VMWare ESX is a baremetal hypervisor. HP Helion OpenStack makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
 
 **HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
 
