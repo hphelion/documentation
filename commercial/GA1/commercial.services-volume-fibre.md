@@ -34,16 +34,18 @@ Fibre Channel (FC) Zone Management, a new functionality available in Cinder- Ice
 
 Zoning is a fabric-based service in a storage area network, which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone.
 
-FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone Manager interacts with the appropriate vendor (**what vendor is it referred?**) specific Zone driver based on the properties specified in the `kvm-default.json` file. Brocade Zone Driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
+FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. Brocade zone driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
 
 **Volume Operations: High-level component interactions with the FC Zone Manager**
 
-<img src="media/commercial_cinder-fc-zone.png"/)>
+<img src="media/commercial_cinder-fc-zone-50.png"/)>
+
+<a href="javascript:window.open('/content/documentation/media/commercial_cinder-fc-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
 
 
 ##Configuration of Brocade FC Zone Manager
 
-If Block Storage is configured to use a Fibre Channel volume driver that supports Zone Manager, update `kvm-default.json` to enable Fibre Channel Zone Manager.
+If block storage is configured to use a Fibre Channel volume driver that supports zone manager, update `kvm-default.json` to enable Fibre Channel Zone Manager.
 
 ###Prerequisite
 
@@ -131,7 +133,7 @@ Perform the following steps to configure Brocade Zone Manager.
 	               "zoning_mode": "fabric"
 		       }
 
-	4. Add the brocade zone manager configuration under 3PAR section as shown in the sample below.
+	4. Add the brocade zone manager configuration below **3PAR** section as shown in the sample below.
 	
 	
 			{
@@ -214,7 +216,7 @@ Perform the following steps to configure Brocade Zone Manager.
 
 ####Update overcloud
 
-After configuration of Brocade FC zone manager for 3PAR device perform the following steps:
+Perform the following steps after the configuration of Brocade FC zone manager for 3PAR device:
 
 
 1. Source the environment variables.
@@ -243,6 +245,9 @@ Please refer the Openstack Cinder configuration guide available at the below URL
  
 
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
 
 
 
