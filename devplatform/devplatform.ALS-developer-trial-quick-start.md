@@ -7,6 +7,16 @@ product: devplatform
 ---
 <!--UNDER REVISION-->
 
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
 # HP Helion Development Platform: Quick Start Developer Trial {#top}
 The Quick Start Developer Trial is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform. At the end of the Helion Development Platform Application Lifecycle Service (ALS) installation and configuration process, you will have an endpoint URL that you can use to deploy your apps.
 
@@ -28,17 +38,30 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 ##Step-by-Step Installation Instructions {#install}
 1. Log into the [Horizon Console](https://horizon.hpcloud.com/) using the HP Helion Public Cloud username and password that you created during registration.
 2. [Create a network with public internet access](https://community.hpcloud.com/article/how-create-or-delete-network#create) inside of your account. You may have done this already as part of the initial public cloud account configuration.
-4. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/><br><br>
+4. Change to the **US East Region** in the Horizon Console.<br /><img src="media/quickstartA11.png"/><br /><br />
+5. If necessary, in the **US East section**, in the **Compute** row, click **Activate** to activate the Compute service.<br /><img src="media/quickstartB11.png"/><br /><br />
+3. Click the **Project** panel and then the **Compute** sub-panel.<br /><img src="media/quickstartC11.png"/><br><br>
+6. Click on the **Download OpenStack RC file** button. This configuration file contains the service settings and environment variables specific to this project.<br><img src="media/quickstartD11.png"/><br /><br />
 
- 
-1. Create a new **Project** in the US East Region.
-2. Click the **Compute** sub-panel.<br><img src="media/quickstartB.png"/><br><br>
-6. Click on the **Download OpenStack RC file** button. This configuration file contains the service settings and environment variables specific to this project.<br><img src="media/quickstartC.png"/><br><br>
-9. You will need to provide a key pair for this VM in the **Access & Security** section. </br> If a key pair has already been created, skip to the next step. Otherwise, create a key pair:
-	- By clicking on the **+** (plus) button and following the instructions in the resulting dialog (pictured below).<br><img src="media/quickstartF.png"/>
-	- By using a tool such as PuTTY (on a PC) or the *ssh-keygen* command (Linux).</br></br>
-1. Click **Import Key Pair** and then the **Launch**   button. <br>For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).<br><img src="media/quickstartG.png"/><br><br>
-7. On the resulting dialog, fill out the details and select **Boot from image** to enable selection of the Constructor VM.  The selections shown below are good defaults.<br><img src="media/quickstartD.png"/><br><br>
+10. You will need to provide a key pair for this VM. For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).
+	
+	A.  **If you are using a tool** such as PuTTY (on a PC) or the *ssh-keygen* command (Linux), skip to step 8.
+
+	B. **If a key pair has already been created**, use the Horizon console to import it.
+
+	1. Click the **Access & Security** sub-panel.
+	2. Click the **Key Pairs** tab and then click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPair11.png"/><br /><br /> 
+	3. Enter a name for this key pair in the **Key Pair Name** field.
+	4. Copy and paste the RSA public key into the **Public Key** field.
+	5. Click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPairName11.png"/><br /><br />  
+
+	C. **If a key pair has not been created**, create a key pair using the Horizon console:
+	
+	1. Click on the **Compute** sub-panel and then click **Access & Security**.
+	2. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
+	3. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
+	4. When prompted, save the *keyPairName.pem* file. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.</br></br>
+
 8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
 9. Run the following commands:
  
