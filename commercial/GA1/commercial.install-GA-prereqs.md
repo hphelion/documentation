@@ -102,7 +102,7 @@ Before starting the installation, you must first install Ubuntu 14.04 and the fo
 - openvswitch-common 
 - python-libvirt 
 
-Optionally, you can install the following packages, as needed:
+Optionally, we recommend that you can install the following packages, which will enable to you interact with the installed nodes:
 - xrdp 
 - xfce4 
 - libssl-dev 
