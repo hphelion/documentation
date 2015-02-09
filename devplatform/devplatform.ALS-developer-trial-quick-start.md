@@ -5,85 +5,94 @@ permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
 
 # HP Helion Development Platform: Quick Start Developer Trial {#top}
-This document explains the process to install and configure Helion Development Platform Application Lifecycle Service (ALS) in the public cloud. This is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform.
+The Quick Start Developer Trial is the fastest way to create a sandbox environment to evaluate the HP Helion Development Platform. At the end of the Helion Development Platform Application Lifecycle Service (ALS) installation and configuration process, you will have an endpoint URL that you can use to deploy your apps.
 
-ALS Cluster creation is enabled by using an ALS Constructor, a Virtual Machine (VM) image pre-loaded with configuration and orchestration software.  This image is available in every public cloud account.
+1. [Before you Begin](#pre)
+2. [Step-by-Step Installation Instructions](#install)
+3. [After Installation](#after)
+4. [Explore Tiny Sample Applications](#samples)
+5. [Troubleshooting and Termination](#terminate)
 
-After you create your public cloud account, you will use the ALS Constructor to configure and create your cluster.  At the end of the process, you will have an endpoint URL that you can use to deploy your apps.
-The document covers the following sections:
+##Before you Begin {#pre}
+Before you can begin your Quick Start Developer Trial, you will need to do three things.
 
-- [Prerequisites](#pre)
-- [Installing your Quick Start Developer Trial](#install)
-- [After you Install](#after)
+1. Register for your free  <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
+2. Download a copy of the ALS Constructor virtual machine image from your public cloud account.
+3. [Download and install](/als/v1/client/download) the *cfmgmt* command-line tool appropriate for your operating system.
 
-##Prerequisites {#pre}
-Before you start the installation and configuration process, ensure that you have a user account on an <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>. Take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">trial offer</a> to get started at no cost. You will be asked to provide a phone number for verification and a credit card to keep on file. Please keep your username and password handy as you will be entering them in the steps below.
+If you don't already have a user account on the <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>, take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">free trial offer</a> to sign up now. You will be asked to provide a phone number for verification and a credit card during registration, but there is no charge. Please keep your username and password handy as you will be asked for them during installation.
 
-##Installing your Quick Start Developer Trial {#install}
-1. Log into the Horizon Console using the HP Helion Public Cloud username and password that you created during signup.
-2. Create a new project, if you don't already have one.
-3. If you have not already created a network with public internet access inside of your account, then you will need to do so as your ALS cluster will need such a network. This step only needs to be performed one time as part of the initial configuration of your HP Helion Public Cloud account.  To create a network, please follow [these directions](https://community.hpcloud.com/article/how-create-or-delete-network#create).
-4. Change to the **US East Region** in the Horizon Console. <br><img src="media/quickstartA.png"/><br><br>
+##Step-by-Step Installation Instructions {#install}
+1. Log into the [Horizon Console](https://horizon.hpcloud.com/) using the HP Helion Public Cloud username and password that you created during registration.
+2. [Create a network with public internet access](https://community.hpcloud.com/article/how-create-or-delete-network#create) inside of your account. You may have done this already as part of the initial public cloud account configuration.
+4. Change to the **US East Region** in the Horizon Console.<br /><img src="media/quickstartA11.png"/><br /><br />
+5. If necessary, in the **US East section**, in the **Compute** row, click **Activate** to activate the Compute service.<br /><img src="media/quickstartB11.png"/><br /><br />
+3. Click the **Project** panel and then the **Compute** sub-panel.<br /><img src="media/quickstartC11.png"/><br><br>
+6. Download the configuration file that contains the service settings and environment variables specific to this project.
+	1. Click on **Project** > **Compute** > **Access & Security**
+	2. Click the **API Access** tab and then click **Download OpenStack RC file**.<br><img src="media/quickstartDownloadRCFile.png"/><br /><br />
 
+10. You will need to provide a key pair for this VM. For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).
+	
+	A.  **If you are using a tool** such as PuTTY (on a PC) or the *ssh-keygen* command (Linux), skip to step 8.
+
+	B. **If a key pair has already been created**, use the Horizon console to import it.
+
+	1. Click the **Access & Security** sub-panel.
+	2. Click the **Key Pairs** tab and then click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPair11.png"/><br /><br /> 
+	3. Enter a name for this key pair in the **Key Pair Name** field.
+	4. Copy and paste the RSA public key into the **Public Key** field.
+	5. Click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPairName11.png"/><br /><br />  
+
+	C. **If a key pair has not been created**, create a key pair using the Horizon console:
+	
+	1. Click on the **Compute** sub-panel and then click **Access & Security**.
+	2. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
+	3. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
+	4. When prompted, save the *keyPairName.pem* file. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.</br></br>
+
+8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
+9. Run the following commands:
  
-5. Create a new **Compute** instance in the US East region.<br><img src="media/quickstartB.png"/><br><br>
-6. Click on the  **+ Launch Instance** button to open the launch instance dialog.<br><img src="media/quickstartC.png"/><br><br>
+		source <path to openstackrc file>
+		./cfmgmt create-cluster
+		keypair-name <name of keypair created earlier>
+		admin-email <emailaddress for admin user>
+		admin-password <password for admin user>
+		load trial.yml
 
-7. On the resulting dialog, fill out the details and select **Boot from image** to enable selection of the Constructor VM.  The selections shown below are good defaults.<br><img src="media/quickstartD.png"/><br><br>
- 
-8. Select the **HP Helion Development Platform Application Lifecycle Service Installer** option from the images list. Note that the version number at the end of the image name may vary as newer versions are released.<br><img src="media/quickstartE.png"/><br><br>
+After the *cfmgmt* tool creates the cluster, it presents you with the ALS Console URL. Use this URL in your web browser to log in to the web-based ALS management console. <br /> **Note**: This URL will have the form *api.<*ipaddress*>.xip.io*  For example: *api.255.255.255.255.xip.io*  
 
-9. Next, you will need to provide a key pair for this VM in the **Access & Security** section. If a key pair has already been created and imported, skip to step 10. If a key pair has not been created and imported, create one:
-	- By clicking on the **+** (plus) button and following the instructions in the resulting dialog (pictured below).<br><img src="media/quickstartF.png"/>
-	- By using a tool such as PuTTY (on a PC) and following the [instructions here](http://kb.siteground.com/how_to_generate_an_ssh_key_on_windows_using_putty/).
-1. Click **Import Key Pair** and then the **Launch**   button. <br>For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).<br><img src="media/quickstartG.png"/><br><br>
-2. Now we can assign a floating IP address to the installer VM that you just created.  You can do that from the **More** button under **Actions**.  Choose any available IP address in the resulting dialog and make note of it for the next step. When you're done, click the **Associate** button.<br><img src="media/quickstartH.png"/><br><br>
- 
-3. SSH into the installer VM with the user **debian** and the SSH key you selected when you started the virtual machine. You can do that on a Mac/UNIX machine with the ssh command. In this example, you named your private key *cloud.key* and you chose an IP address of 15.126.234.185
-
-		ssh -i cloud.key debian@15.126.234.185
+The cluster will be running on a single virtual machine in your account that will have the name ending in *cluster1-core*
 
 
-1. Run this command to change the permissions on your keypair file to protect it:
+##After Installation {#after}
+Once the installation completes, you can load the ALS management console at the URL  provided by the *cfmgmt* tool. using the first username and first password you specified in step 11. After you log into the Console, you can access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
 
-		sudo chmod 400 KEYPAIR
+**Note**: When launching the web-based management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
 
-1.  Run the configuration script to create your cluster.conf configuration file using the following command:
+## Explore Tiny Sample Applications {#samples}
+Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
 
-		python ./trial_configure.py
+## Troubleshooting and Termination {#terminate}
+If an error occurs during installation, the easiest response is simply to terminate the cluster and start over. You can also terminate the cluster when you are done exploring your Developer Quick Start Trial.
 
-1.  You'll be prompted for configuration information that will be used to build your developer trial.
-	- **OpenStack&reg; Username** This is the username for your HP Public Cloud account.
-	- **OpenStack Password** This is the password for your HP Public Cloud account.
-	- **Tenant ID** If you have multiple values, select one.
-	- **Network ID** If you have multiple values, select one.
-	- **Image ID** If you have multiple values, select one.
-	- **Cluster Prefix** Give your developer trial a prefix.
-	- **Services** Enter a comma-separated list of services (e.g. mysql, redis, rabbit).
-	- **First user's admin email** The login account for your new developer trial.
-	- **First user's password** The password for your new developer trial.
-
-1. After you have answered the script's question, the values are saved to the *cluster.conf* configuration file on the local filesystem. The script will then ask if you want to proceed with the creation of your trial cluster.<br><img src="media/quickstartH.png"/>
-	- If you specify **Y**, the cluster creation process will begin.
-	- If you specify **N**, you will be returned to the OS prompt. You can subsequently run the cluster creation by using the following command:
-
-			python ./assemble.py
-
-3. After the assemble script creates the cluster, it presents you with the ALS Console URL with which you can login to your browser. This URL will have the form *api.<IPAddress>.xip.io*  For example, *api.255.255.255.255.xip.io* <BR> The cluster will be running on a single virtual machine in your account that will have a name ending in "-core" prefixed with 5 random characters.  For example: **acxpq-core**. 
-4. If an error occurs or you want to terminate the cluster, run the following command. This command deletes your VMs, releases the floating IP addresses, and removes the cluster security groups: 
-
-		python ./assemble.py -D 
-
-5. Once your install is complete, and if you do not want to use the automated tear-down capabilities of the Constructor, you can terminate the Constructor VM.
-
-##After you install {#after}
-Once the installation completes, you can load the ALS Console at the URL obtained in step 15 using the first username and first password you specified in step 13. After you log into the Console, you can access the [ALS User Documentation](/als/v1/user/) for instructions on how to create users and deploy applications.
-
-To keep the quick-start image size as small as possible, the Helion command-line interface (CLI) is available as a separate download. [Download and install](/als/v1/client/download) the version appropriate for your operating system.
-
-You may be presented with text that warns or notes that the site has a self-signed certificate or, when loaded in a browser, you may get a display indicating that the site is not trusted. These can be safely ignored.
-
-Your infrastructure is now ready for development. You can find some simple sample development tasks in our [Application Developer](/helion/devplatform/appdev/) section. This area will be updated continuously with more languages and samples, so please stop by often to see the newest content.
+These commands delete your VMs, release the floating IP addresses, and remove the cluster security groups.
+		
+	source <openstackrc path>
+    ./cfmgmt delete-cluster
+	keypair-name <name of keypair created earlier>
+	load trial.yml
