@@ -50,18 +50,6 @@ If you need further assistance, contact [HP Customer Support](http://www.hpcloud
 For troubleshooting tips for the HP Helion OpenStack update process, see [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/).
 
 
-
-
-
-##Logging  {#logging}
-
-
-
-
-##Controller Nodes {#controllernodes}
-
-
-
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 
