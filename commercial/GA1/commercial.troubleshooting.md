@@ -37,9 +37,9 @@ For easy reference, we categorized the known issues and solutions as follows:
 
 * [Scale-Out Swift Troubleshooting](/helion/openstack/services/troubleshooting/swift/)
 
-* [DNSaaS issues](/helion/openstack/services/troubleshooting/dnsaas)
+* [DNSaaS issues](/helion/openstack/services/troubleshooting/dns)
 
-* [Reporting Service Troubleshooting](/helion/openstack/services/reporting/)
+* [Reporting Service Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
 
 * [Logging issues](/helion/openstack/services/troubleshooting/logging)
 
