@@ -41,7 +41,9 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 4. Change to the **US East Region** in the Horizon Console.<br /><img src="media/quickstartA11.png"/><br /><br />
 5. If necessary, in the **US East section**, in the **Compute** row, click **Activate** to activate the Compute service.<br /><img src="media/quickstartB11.png"/><br /><br />
 3. Click the **Project** panel and then the **Compute** sub-panel.<br /><img src="media/quickstartC11.png"/><br><br>
-6. Click on the **Download OpenStack RC file** button. This configuration file contains the service settings and environment variables specific to this project.<br><img src="media/quickstartD11.png"/><br /><br />
+6. Download the configuration file that contains the service settings and environment variables specific to this project.
+	1. Click on **Project** > **Compute** > **Access & Security**
+	2. Click the **API Access** tab and then click **Download OpenStack RC file**.<br><img src="media/quickstartDownloadRCFile.png"/><br /><br />
 
 10. You will need to provide a key pair for this VM. For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).
 	
@@ -65,7 +67,7 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
 9. Run the following commands:
  
-		source <openstackrc path>
+		source <path to openstackrc file>
 		./cfmgmt create-cluster
 		keypair-name <name of keypair created earlier>
 		admin-email <emailaddress for admin user>
