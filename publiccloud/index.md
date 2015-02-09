@@ -63,7 +63,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 </td>
 </tr>
 
-<a href="/cloudsystem/">HP CloudSystem Enterprise</a>
+ 
 
 </table>
 </div>
