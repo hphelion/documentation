@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Troubleshooting"
+title: "HP Helion OpenStack&#174; Troubleshooting the Installation"
 permalink: /helion/openstack/services/troubleshooting/install/
 product: commercial.ga
 
