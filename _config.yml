@@ -21,7 +21,7 @@ navigation:
   - text: HP Cloud Service Automation
     url: /automation/
   - text: HP CloudSystem
-    url: http://www.hp.com/go/cloudsystem/docs
+    url: /cloudsystem/
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   public-cloud:
