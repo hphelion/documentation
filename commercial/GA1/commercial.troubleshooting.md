@@ -36,7 +36,7 @@ For easy reference, we categorized the known issues and solutions as follows:
 * [Configuring the dnsmasq_dns_servers list for the undercloud and overcloud](#config_dnas)
 * [Logging](#logging)
 
-If you need further assistance, contact [HP Customer Support]([http://www.hpcloud.com/about/contact](http://www.hpcloud.com/about/contact)).
+If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact).
 
 
 ## Baremetal installation {#baremetal-install}
