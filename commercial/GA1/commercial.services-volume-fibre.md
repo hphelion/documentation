@@ -32,9 +32,19 @@ PageRefresh();
 
 Fibre Channel (FC) Zone Management, a new functionality available in Cinder- Icehouse, automates the zone lifecycle management. 
 
-Zoning is a fabric-based service in a storage area network, which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone.
+Zoning is a fabric-based service in a storage area network, which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. 
+
+Brocade zone driver manages access control using FC zoning for Braocade FC fabrics. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
+
+
+
+
+
+<!----
 
 FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. Brocade zone driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
+
+--->
 
 **Volume Operations: High-level component interactions with the FC Zone Manager**
 
@@ -216,7 +226,7 @@ Perform the following steps to configure Brocade Zone Manager.
 
 ####Update overcloud
 
-Perform the following steps after the configuration of Brocade FC zone manager for 3PAR device:
+After the configuration of Brocade FC zone manager for 3PAR device, perform the following steps:
 
 
 1. Source the environment variables.
