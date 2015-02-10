@@ -39,7 +39,7 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 
 ##Monitoring the Speed of NIC
 
-The Icinga monitors the minimum NIC speed requirement of the host. The performance of Swift cluster is dependent on the Ethernet speed and on the NIC of the machine.  It is recommended to have a minimum ? HZ for NIC speed. If the host does not meet the required NIC speed then an error occurs.
+The Icinga monitors the minimum NIC speed requirement of the host. The performance of Swift cluster is dependent on the Ethernet speed and on the NIC of the machine.  It is recommended to have a minimum (**What is the minimum HZ ?**) HZ for NIC speed. If the host does not meet the required NIC speed then an error occurs.
 
 Perform the following steps to monitor minimum NIC speed:
 
