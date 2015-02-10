@@ -38,8 +38,6 @@ Brocade zone driver manages access control using FC zoning for Braocade FC fabri
 
 
 
-
-
 <!----
 
 FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. Brocade zone driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.

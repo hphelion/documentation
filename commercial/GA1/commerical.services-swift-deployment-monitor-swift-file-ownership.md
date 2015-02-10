@@ -41,10 +41,10 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 
 ##Monitoring the File Ownership of Swift
 
-The `/etc/swift/` has Swift user permission and the files inside the `/etc/swift/` has root permission. So, the Swift user has read permission on the files present inside the `/etc/swift/`. The script verifies the `/etc/swift/ -parent` folder for swift:swift ownership.
+The `/etc/swift/` has Swift user permission and the files inside the `/etc/swift/` has root permission. So, the Swift user has read permission on the files present inside the `/etc/swift/`. The script verifies the `/etc/swift/ -parent` folder for **swift:swift** ownership.
 
 
-Perform the following steps to monitor the file ownership points of Swift disk:
+Perform the following steps to monitor the file ownership of Swift disk:
 
 1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
 		
