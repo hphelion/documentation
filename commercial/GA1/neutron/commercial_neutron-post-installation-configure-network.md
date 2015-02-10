@@ -31,7 +31,10 @@ PageRefresh();
 
 # HP Helion OpenStack&reg; 1.1 Neutron: Configuring Your Network Securely
 
-This document provides guidance on configuring your HP Helion OpenStack network securely
+This document provides guidance on configuring your HP Helion OpenStack network securely.
+
+**Note**: All netowrk-related quota changes - including security groups and security group rules - must be made through the Neutron API (that is, using the neutron CLI). Do not use other services (such as Nova) to make network quota changes.
+
 HP Helion OpenStack has many built-in security controls, but the customer must take responsibility for configuring the network devices that integrate Helion services into an existing data center environment. This includes defining firewall rules at the edge of the HP Helion OpenStack deployment (to protect against external abuse) as well as defining router rules within the HP Helion OpenStack deployment (to protect against insider abuse or administrative errors).
 
 The concepts you should consider when implementing network security are:
