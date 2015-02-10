@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Update Troubleshooting
+# HP Helion 1.0 OpenStack&reg; Update Troubleshooting
 
 <!-- taken from https://git.gozer.hpcloud.net/cgit/hp/tripleo-ansible/tree/Troubleshooting.rst -->
 

@@ -22,7 +22,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/install/kvm/">&#9650; Installation for KVM Hypervisor </p> 
 
 
-# HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA  
+# HP Helion 1.0 OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA  
 
 This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.It covers the following topics:
 

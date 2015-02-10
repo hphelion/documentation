@@ -20,7 +20,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/devplatform/community/install-dev-platform/">&#9664; PREV</a> | <a href="/helion/devplatform/">&#9650; UP</a> | NEXT &#9654;</a> </p>
 
 
-# HP Helion Development Platform Site Index
+# HP Helion 1.0 Development Platform Site Index
 
 <!-- #### [HP Helion OpenStack Community Edition Open Source and Third-Party Software License Agreements](/helion/community/community-3rd-party-license-agreements/) -->
 

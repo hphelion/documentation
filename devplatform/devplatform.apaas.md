@@ -6,7 +6,7 @@ product: devplatform
 
 ---
 <!--PUBLISHED-->
-# HP Helion Development Platform Documentation
+# HP Helion 1.0 Development Platform Documentation
 
 Welcome! Whitewashed ActiveState and Stackato docs intro blurb.  
 

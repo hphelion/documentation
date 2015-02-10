@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
 
-# HP Helion OpenStack&reg; Accessing the Sherpa UI
+# HP Helion 1.0 OpenStack&reg; Accessing the Sherpa UI
 
 The [HP Helion OpenStack Sherpa Service](/helion/openstack/services/sherpa/overview/) provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment.
 

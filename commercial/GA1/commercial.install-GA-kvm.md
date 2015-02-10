@@ -22,7 +22,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
+# HP Helion 1.0 OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
 HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hypervisor and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 

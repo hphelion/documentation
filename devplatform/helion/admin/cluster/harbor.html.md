@@ -7,7 +7,7 @@ title: "Harbor: TCP/UDP Port Service"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform:  Harbor TCP/UDP Port Service {#harbor-tcp-udp-port-service} 
+# HP Helion 1.0 Development Platform:  Harbor TCP/UDP Port Service {#harbor-tcp-udp-port-service} 
    [Architecture](#architecture)
     -   [Requirements & Setup](#requirements-setup)
     -   [Troubleshooting](#troubleshooting)

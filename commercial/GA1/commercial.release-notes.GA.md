@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion OpenStack&reg; Release Notes
+# HP Helion 1.0 OpenStack&reg; Release Notes
 
 Thank you for your interest in HP Helion OpenStack! This document provides an overview of the features contained within HP Helion OpenStack version 1.0, including known issues and workarounds, and where to find further information on the product release:
 

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Icinga Service
+# HP Helion 1.0 OpenStack&#174;: Icinga Service
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).
 

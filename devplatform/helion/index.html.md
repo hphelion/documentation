@@ -6,7 +6,7 @@ title: "Application Lifecycle Service Documentation"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Application Lifecycle Service Documentation {#helion-documentation}
+# HP Helion 1.0 Development Platform: Application Lifecycle Service Documentation {#helion-documentation}
  The **Application Lifecycle Service (ALS)** is a Cloud Foundry&trade;-based, managed runtime environment for applications. It is polyglot
 Platform-as-a-Service (PaaS) software. Whether you run it in your own data
 center using the hypervisor of your choice or on your favorite cloud

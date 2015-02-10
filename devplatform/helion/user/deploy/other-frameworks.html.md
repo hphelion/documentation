@@ -7,7 +7,7 @@ title: "Generic & Standalone Frameworks"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Generic & Standalone Frameworks[](#generic-standalone-frameworks "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Generic & Standalone Frameworks[](#generic-standalone-frameworks "Permalink to this headline")
 ===============================================================================================
 
 The Generic and Standalone frameworks are for applications that might

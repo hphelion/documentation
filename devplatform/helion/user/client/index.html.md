@@ -6,7 +6,7 @@ title: "Application Lifecycle Service Command Line Client"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: HP Helion Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
+# HP Helion Development Platform: HP Helion 1.0 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
 
 
 The Helion client is the command-line interface

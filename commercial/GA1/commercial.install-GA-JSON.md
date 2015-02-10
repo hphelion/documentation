@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
+# HP Helion 1.0 OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
 
 The HP Helion OpenStack Installation process requires various configuration parameters to be specified. This is achieved through environment variables. 
 

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p> --->
 
 
-# HP Helion OpenStack&#174;  Troubleshooting
+# HP Helion 1.0 OpenStack&#174;  Troubleshooting
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 

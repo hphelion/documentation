@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/compute/overview/"> NEXT &#9654</a> </p>
 -->
-# HP Helion OpenStack&reg; Ironic Service Overview#
+# HP Helion 1.0 OpenStack&reg; Ironic Service Overview#
 
 HP Helion OpenStack leverages the OpenStack Ironic service during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.
 

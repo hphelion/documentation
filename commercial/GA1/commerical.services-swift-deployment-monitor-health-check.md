@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitor Health of Services using Icinga 
+# HP Helion 1.0 OpenStack&#174;: Monitor Health of Services using Icinga 
 Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the health status of Account, Container, Proxy, and Object services. 
 
 ##Prerequisites

@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Flexible Control Plane Overview
+# HP Helion 1.0 OpenStack&#174; Flexible Control Plane Overview
 The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven servers.
 
 This topic covers:

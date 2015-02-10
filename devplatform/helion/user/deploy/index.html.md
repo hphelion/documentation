@@ -7,7 +7,7 @@ title: "General Deployment"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: General Deployment[](#general-deployment "Permalink to this headline")
+# HP Helion 1.0 Development Platform: General Deployment[](#general-deployment "Permalink to this headline")
 =======================================================================
 
 Applications are typically deployed to Application Lifecycle Service by pushing source code

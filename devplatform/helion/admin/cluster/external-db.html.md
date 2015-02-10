@@ -7,7 +7,7 @@ title: "External Data Services"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: External Data Services {#external-data-services}
+# HP Helion 1.0 Development Platform: External Data Services {#external-data-services}
 [General Principles](#general-principles)
     -   [MySQL](#mysql)
     -   [PostgreSQL](#postgresql)

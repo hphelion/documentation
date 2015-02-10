@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
+# HP Helion 1.0 OpenStack&#174; Deploy vCenter ESX compute proxy
 
 The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server managing one or more ESX hosts. The HP Helion OpenStack Compute Service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
 

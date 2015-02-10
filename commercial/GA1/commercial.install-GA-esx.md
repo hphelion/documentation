@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
+# HP Helion 1.0 OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
 HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. This document provides installation instructions for HP Helion OpenStack on a suitably specified and prepared system.
 
