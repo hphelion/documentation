@@ -103,7 +103,7 @@ Perform the following steps to add Swift disk to a ring:
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
 		
 
-7. Add the formatted disk to object ring.
+8. Add the formatted disk to object ring.
 
 		# ringos add-disk-to-ring -f /root/ring-building/object.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
@@ -115,28 +115,35 @@ Perform the following steps to add Swift disk to a ring:
               
 	* Add drives gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 
-8. Re-balance the ring.
+9. Re-balance the ring.
 
 		# ringos rebalance-ring -f /root/ring-building/object.builder
 	
 	**Note**: You must wait for the time specified by `min_part_hours` before another re-balance succeeds.	
 	
-9. List all the Swift nodes. 
+10. List all the Swift nodes. 
 
 		# ringos list-swift-nodes -t all
 		
-10. Copy the object file to all the nodes.
+11. Copy the object file to all the nodes.
     
     	# ringos copy-ring -s /root/ring-building/object.ring.gz -n <Swift nodes IP address>
 
 
-11. Set the weight of the disks using the following command:
+12. Copy the builder file to all the nodes.
+    
+    	# ringos copy-ring -s /root/ring-building/object.builder -n <Swift nodes IP address>
+
+	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
+
+
+13. Set the weight of the disks using the following command:
 
 
     	# ringos set-weight -f /root/ring-building/object.builder -s <disk id> -w <weight>
 
  
-12. Repeat steps from **8-11** gradually increasing the disk weight by 25: set the weight to 50, 75, and finally 100 (w= 50, 75, 100) .
+14. Repeat steps from **8-13** gradually increasing the disk weight by 25: set the weight to 50, 75, and finally 100 (w= 50, 75, 100) .
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

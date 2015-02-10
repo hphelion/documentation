@@ -39,9 +39,6 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 
 Perform the following steps to monitor the network access of the host:
 
-
- You can monitor the health status of the swift-proxy, swift-account, swift-container and swift-object services by following these steps:
-
 1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
 		
 	* Username: *icingaadmin*
