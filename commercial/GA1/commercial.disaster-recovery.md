@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Configuring Fibre Channel Zone Manager"
-permalink: /helion/openstack/services/volume/Fibre/
+title: "HP Helion OpenStack&#174; 1.1 Disaster Recovery"
+permalink: /helion/openstack/disaster/recovery/
 product: commercial.ga
 
 ---

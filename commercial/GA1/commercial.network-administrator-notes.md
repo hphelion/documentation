@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; 1.1 Network Administrator Notes
-permalink: /helion/openstack/services/volume/Fibre/
+permalink: /helion/openstack/network/administrator/notes/
 product: commercial.ga
 
 ---
