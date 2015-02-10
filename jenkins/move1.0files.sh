@@ -29,13 +29,11 @@ git checkout rename-test
  
 for i in `echo $changed_files`
 do
+touch $i
 git checkout master -- $i
 done
 
 git add .
 git commit -m "merging 1.0 doc back to dev" . 
 
-	
-
-			
 	
