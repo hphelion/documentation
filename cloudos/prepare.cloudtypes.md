@@ -48,12 +48,12 @@ A private cloud is very similar in functionality to a public cloud, except the i
 
 ### Private Cloud
 
-This type of cloud environment entails deploying a private cloud on your own bare-metal servers (blades, rack-mounted servers, and so on) that you 
+This type of cloud environment entails deploying a private cloud on your own baremetal servers (blades, rack-mounted servers, and so on) that you 
 have available in and control of in your IT environment. This is the most advanced of the cloud environment deployment options, as setting up the Admin Node for this type of cloud requires gathering information about the servers that will be nodes in your cloud, their networking configuration, and the overall network configuration of your IT environment. Gathering such information may require consultation with your IT administrator.
  
-Typically, deploying a private cloud requires a bare-metal server for what is called a Cloud Controller and at least one bare-metal 
+Typically, deploying a private cloud requires a baremetal server for what is called a Cloud Controller and at least one baremetal 
 server for a Compute Region Controller that offers virtualized compute, network, and storage. After they are installed, Compute Region 
-Controllers are elastic, and can be expanded (or reduced) to many more bare-metal servers to offer various scales of virtualized resources to your cloud self-service users. 
+Controllers are elastic, and can be expanded (or reduced) to many more baremetal servers to offer various scales of virtualized resources to your cloud self-service users. 
 
 A private cloud also supports hybrid Compute Region Controllers. This means you can use Compute Region Controllers from other OpenStack-compatible clouds as if they were part of your private cloud to expand the amount of resources available to your self-service users. 
 
@@ -62,9 +62,9 @@ If you want to install a private cloud, go to the Environment tab and follow the
 
 ### Hybrid Cloud
 
-A hybrid-only cloud is deployed on your own bare-metal server. Setting up the Admin Node for this type of cloud requires less information about the servers and IT environment; however, you may still need to consult your IT administrator.
+A hybrid-only cloud is deployed on your own baremetal server. Setting up the Admin Node for this type of cloud requires less information about the servers and IT environment; however, you may still need to consult your IT administrator.
 
-Typically, deploying this kind of cloud requires a single bare-metal server for what is called a Cloud Controller. Because of the 
+Typically, deploying this kind of cloud requires a single baremetal server for what is called a Cloud Controller. Because of the 
 hybrid nature of this cloud, Compute Region Controllers (virtualized compute, network, and storage) are utilized from other 
 OpenStack-compatible clouds. HP Cloud is a great example of an OpenStack-compatible public cloud that 
 can serve as the Compute Region Controller to a hybrid-only cloud. After a hybrid cloud is set up, it can be converted to a private cloud at a later time. 

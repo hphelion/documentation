@@ -36,7 +36,7 @@ If you want to make changes, you need to start over by re-installing the Admin N
 
 ## Introduction
 
-The Server Types panel allows you to capture new or use existing server definitions about the networking ports for various servers in your bare-metal cloud environment. If all servers in your
+The Server Types panel allows you to capture new or use existing server definitions about the networking ports for various servers in your baremetal cloud environment. If all servers in your
 cloud are the same machine type (homogeneous nodes), you are not required to configure anything in this view. HP recommends that you keep and accept the default settings.
 
 However, if the servers in your cloud are different types of machines, you may be required to use a Linux utility such as dmidecode to get the pattern and CLI commands to determine the bus
