@@ -185,9 +185,9 @@ The following hardware requirements are required to install HP Helion OpenStack.
 	* Capable of hosting VMs
 	* Boot order configured with Network/PXE boot as the first option
 	* BIOS configured: 
-	* To the correct date and time
-	* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-	* To stay powered off in the event of being shutdown rather than automatically restarting
+		* To the correct date and time
+		* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+		* To stay powered off in the event of being shutdown rather than automatically restarting
 	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
 
 <!-- Need maximum disk space; 2TB requirement no longer applicable (10/29/14 -->
