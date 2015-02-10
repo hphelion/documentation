@@ -28,11 +28,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1 : Monitoring the Drive Audit
 
- Drive audit runs `swift-drive-audit` which finds an errors in `kern.log`. It reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted so as to allow for the disk to self-heal?(we can use "recover"), if possible.
+ Drive audit runs `swift-drive-audit` <which finds>to find an errors in `kern.log`. It reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted so as to allow for the disk to self-heal?(we can use "recover"), if possible.
 
 If the disk errors occur the operator must perform the maintenance on the disk by [removing the disk](http://docs.hpcloud.c,om/helion/openstack/services/swift/deployment/remove-existing-disk/) from the Swift cluster or [replacing the disk](http://docs.hpcloud.com/helion/openstack/services/swift/deployment/add-disk-scale-out/) with a new one. 
 
-Note: The **Icinga** check needs to be run once in every 30 minutes for drive audit to complete one run on large systems.
+Note: Run **Icinga** check once in every 30 minutes for drive audit to complete one run on  a large system.
 
 ##Prerequisites
 
@@ -57,7 +57,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 
 
 <!--
-4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host &lt;Swift node IP address &gt;</i></b><!--- (opens in a new window)---></a><!-- to view the disk usage of the selected Swift node.--->
+4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-drive-audit.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host &lt;Swift node IP address &gt;</i></b><!--- (opens in a new window)---></a><!-- to view the disk usage of the selected Swift node.--->
 
 
 
