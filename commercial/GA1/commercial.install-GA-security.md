@@ -5,7 +5,7 @@ permalink: /helion/openstack/install/security/
 product: commercial.ga
 
 ---
-<!--PUBLISHED--> 
+<!--UNDER REVISION--> 
 
 
 <script>
@@ -137,33 +137,33 @@ A typical deployment would have public to mgmt IP mapping as follows:
 
 * Overcloud Horizon Dashboard access
 * External url - `https://horizon.fqdn.com/`
-* Internal url (VIP) - `http://<HelionOpenStackInternalVirtualIP>/`
-
+* Internal url (VIP) - `https://<HelionOpenStackInternalVirtualIP>/`
+Note: all access to overcloud services now happens over a TLS connection. Read more about this change in [HP Helion OpenStack TLS Support](/helion/openstack/tls/) HP Helion OpenStack TLS Support
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
 <th>API</th><th>Public Endpoint</th><th>Management Endpoint</th>
 </tr>
 <tr>
 <td>Identity (Keystone)</td><td>https://keystone.fqdn.com/v2.0</td><td>
-http://&lt;internalVIP>:5000/v2.0</td></tr>
+https://&lt;internalVIP>:5000/v2.0</td></tr>
 
 <tr>
-<td>Image (Glance)</td><td>https://glance.fqdn.com/</td><td>http://&lt;internalVIP>:9292/</td></tr>
+<td>Image (Glance)</td><td>https://glance.fqdn.com/</td><td>https://&lt;internalVIP>:9292/</td></tr>
 
 <tr>
-<td>Network (Neutron)</td><td>https://neutron.fqdn.com/</td><td>http://&lt;internalVIP>:9696/</td></tr>
+<td>Network (Neutron)</td><td>https://neutron.fqdn.com/</td><td>https://&lt;internalVIP>:9696/</td></tr>
 
 <tr>
-<td>Compute (Nova)</td><td>https://nova.fqdn.com/v2/$(tenant_id)s</td><td>http://&lt;internalVIP>:8774/v2/$(tenant_id)s</td></tr>
+<td>Compute (Nova)</td><td>https://nova.fqdn.com/v2/$(tenant_id)s</td><td>https://&lt;internalVIP>:8774/v2/$(tenant_id)s</td></tr>
 
 <tr>
-<td>Volume (Cinder)</td><td>https://cinder.fqdn.com/v1/%(tenant_id)s</td><td>http://&lt;internalVIP>:8776/v1/%(tenant_id)s</td></tr>
+<td>Volume (Cinder)</td><td>https://cinder.fqdn.com/v1/%(tenant_id)s</td><td>https://&lt;internalVIP>:8776/v1/%(tenant_id)s</td></tr>
 
 <tr>
-<td>Orchestration (Heat)</td><td>https://heat.fqdn.com/v1/%(tenant_id)s</td><td>http://&lt;internalVIP>:8004/v1/%(tenant_id)s</td></tr>
+<td>Orchestration (Heat)</td><td>https://heat.fqdn.com/v1/%(tenant_id)s</td><td>https://&lt;internalVIP>:8004/v1/%(tenant_id)s</td></tr>
 
 <tr>
-<td>Object Store (Swift)</td><td>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</td><td>http://&lt;internalVIP>:8080/v1/AUTH_%(tenant_id)s</td></tr>
+<td>Object Store (Swift)</td><td>https://swift.fqdn.com/v1/AUTH_%(tenant_id)s</td><td>https://&lt;internalVIP>:8080/v1/AUTH_%(tenant_id)s</td></tr>
 
 </table>
 

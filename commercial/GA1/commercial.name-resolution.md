@@ -5,7 +5,7 @@ permalink: /helion/openstack/name-resolution/
 product: community
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
--->
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#name-resolution">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;: Enable Name Resolution from Tenant VMs in the Overcloud
 

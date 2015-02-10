@@ -67,7 +67,7 @@ ID gives more information about that node, including its role in a cloud deploym
 
 Before you begin:
 
-* You have console access to all the virtual and bare-metal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor 
+* You have console access to all the virtual and baremetal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor 
 operating system installation and if need be provide additional firmware drivers when prompted.
     
 * Network and storage infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure 
@@ -84,7 +84,7 @@ For procedural instructions on setting up and configuring your nodes, see [Insta
 
 To access: Select the Cloud tab > Manage Nodes.
 
-<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Tip:</b> Access the virtual and bare-metal server's consoles 
+<p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Tip:</b> Access the virtual and baremetal server's consoles 
 to monitor operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, 
 such as a USB stick or CD/DVD.</p>
 
@@ -596,7 +596,7 @@ and act as the virtualization host.</p>
 <td> <b>Attributes</b> tab </td>
 <td> Use to specify property values required to create a Compute Region. For the Hypervisor attribute:
 <ul>
-<li>Use <code>kvm</code> (the default) if the compute nodes are bare-metal servers.
+<li>Use <code>kvm</code> (the default) if the compute nodes are baremetal servers.
 <li>Use <code>qemu</code> if the compute nodes are VMs.
 </ul>
 </td>

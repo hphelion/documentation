@@ -76,7 +76,7 @@ Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Li
 
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-Your HP Helion OpenStack installation can be configured [to use 3Par for block storage](/helion/openstack/install/3par/).
+Your HP Helion OpenStack installation can be configured to use 3Par for block storage
 
 ### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {#esx-hypervisor}
 
@@ -85,11 +85,6 @@ HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, yo
 The ESX integration uses the OVSvApp application to connect the vCenter networking to the Network Operations controller to manage workload networks.  
 
 The HP Virtual Cloud Networking (VCN) application is an enhanced Networking Operations (Neutron) module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
-
-### DNS as a service (DNSaaS) {#DNSaaS}
-
-After installing HP Helion OpenStack, you have the option to install HP Helion OpenStack DNS as a service (DNSaaS) support. The HP Helion OpenStack DNS (Domain Name System) service, based on the OpenStack Designate project, is a managed DNS service engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
 
 ## The Installation Process
 
@@ -101,9 +96,13 @@ After installing the seed, launch a console session to the seed cloud host and e
 
 You configure the undercloud and overcloud before installing using a series of text files that contain environment variables and size definition for the servers you are using for installation.
 
-**Important!** Proper planning is essential for a smooth and successful installation. Make sure you review all of the suggested documentation before beginning the installation. 
-
 **Before You Start**
+
+The key to a smooth installation of HP Helion OpenStack is planning. 
+
+Before you start, there are a number of prerequisite steps you must perform. 
+
+These requirements are detailed in the next step of the installation.
 
 1. Review the information in the Support Matrix and Technical Overview documents for details about hardware and software requirements.
 
@@ -113,13 +112,20 @@ You configure the undercloud and overcloud before installing using a series of t
 
 You can install with either KVM or ESX hypervisor support.
 	
+Make sure you are aware of the environment you are installing into and use the correct install path.
+
+**Perform post installation configuration**
+
+After HP Helion OpenStack is installed and you have verified that the undercloud and overcloud nodes are up and running, there are a number of configurations that you need to consider, including incorporating DNS as a Service (DNSaas), storage methods, and other considerations based on your environment.
+
 * For KVM hypervisor support, after installing you will configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage. 
 
 * For ESX hypervisor support, after installing you will deploy the compute proxy on the ESX hosts and deploy OVSvApp for HP Virtual Cloud Networking.
 
-Optionally, you can install and configure DNSaaS support.
+* Optionally, you can install and configure DNSaaS support.
 
-Make sure you are aware of the environment you are installing into and use the correct install path.
+These options are detailed after you finish the installation.
+
 
 ## Keep in mind ##
 

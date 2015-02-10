@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9650; Installation for ESX Hypervisor | <a href="/helion/openstack/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/post-esx/">&#9650; Post-Installation for ESX Hypervisor | <a href="/helion/openstack/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 

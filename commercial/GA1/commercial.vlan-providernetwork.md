@@ -18,9 +18,9 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9650; Installation for KVM Hypervisor  </p> 
- 
 
+<p style="font-size: small;"> <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a></p> 
+ 
 # HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack 
 
 This page provides a detailed description to enable VLAN Provider Network in KVM Cloud Type.

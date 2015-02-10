@@ -51,7 +51,7 @@ The following features have been added to HP Helion OpenStack 1.1:
 - syslog
 - keepalived 
 
-**Windows certification as a guest O/S on KVM** Microsoft Windows Server 2008 and 2012 have received Windows Server Virtualization Verification Program (SVVP) status. Windows Server can operate as a *guest* operating system in a virtual environment as if it were installed on bare metal (with certain exceptions allowed by MS). <!--HPM-29--> 
+**Windows certification as a guest O/S on KVM** Microsoft Windows Server 2008 and 2012 have received Windows Server Virtualization Verification Program (SVVP) status. Windows Server can operate as a *guest* operating system in a virtual environment as if it were installed on baremetal (with certain exceptions allowed by MS). <!--HPM-29--> 
 
 	For information on the SVVP program, see Windows Server Catalog [Server Virtualization Validation Program](http://www.windowsservercatalog.com/svvp/).
 
@@ -73,6 +73,8 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 **Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
 
+**Ruby CLI No Longer Supported** The Ruby CLI (unix_cli) is no longer be supported. Users are advised to consider the Python CLIs as an alternative.
+
 ### Features in HP Helion OpenStack 1.01 ### {#101}
 
 The following features have been added to HP Helion OpenStack 1.01:
@@ -81,7 +83,7 @@ The following features have been added to HP Helion OpenStack 1.01:
 
 **Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
 
-**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current bare-metal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
 **Patch update functionality** -- The HP Helion OpenStack 1.01 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
 
@@ -99,7 +101,7 @@ The following features have been added to HP Helion OpenStack 1.0:
 
 **HP StoreVirtual VSA** -  [HP StoreVirtual VSA](http://www8.hp.com/us/en/products/storage-software/product-detail.html?oid=5306917) is storage virtualization software used as the default fault-tolerant, software-defined storage backend for the Volume Operations service, and provides easy deployment on KVM nodes meeting on-demand scale-out requirements of cloud storage without sacrificing performance.
 
-**Support for VMWare ESX** - [VMWare ESX](bare-metal hypervisor) is a bare-metal hypervisor. HP Helion OpenStack makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
+**Support for VMWare ESX** - VMWare ESX is a baremetal hypervisor. HP Helion OpenStack makes ESX host onboarding and management easier and lets you setup the ESX proxy node during installation of the overcloud. 
 
 **HP Virtual Cloud Networking (VCN) Application** - Enables you to create networks, subnets and ports, as well as security groups and security group rules for your ESX clusters using OVSvApp.
 

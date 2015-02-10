@@ -43,7 +43,7 @@ The Ceph Block Device is a network attached device that may be presented to the 
 
 ### Object Storage
 
-The Ceph RADOS Gateway is a REST API that supports Swift API. HP is supporting Object Storage primarily for User workloads: ranging from COTS Applications running in virtual machines such as MySQL frequently needing to archive tar files to a reliable and resilient archive, to custom LOB Solutions that require frequent and aggressive snapshots orchestrated in a consistency group across many VM and external Bare Metal systems.
+The Ceph RADOS Gateway is a REST API that supports Swift API. HP is supporting Object Storage primarily for User workloads: ranging from COTS Applications running in virtual machines such as MySQL frequently needing to archive tar files to a reliable and resilient archive, to custom LOB Solutions that require frequent and aggressive snapshots orchestrated in a consistency group across many VM and external baremetal systems.
 
 ### Ceph Cluster
 The Ceph Object Storage Daemon, here within described as OSD,

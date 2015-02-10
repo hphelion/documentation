@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm/#next-steps">Next Steps for KVM Installation &#9660; </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor &#9654 </a></p> 
 
 # HP Helion OpenStack&reg;:  Installation and Configuration for KVM Hypervisor 
 
@@ -28,14 +28,8 @@ HP Helion OpenStack allows you to manage a Kernel-based Virtual Machine (KVM) hy
 
 The installation and configuration process for KVM consists of the following general steps: 
 
-* Preparing for installation](#prepare)
-	* Verify Prerequisites
-	* Review the KVM deployment architecture
-	* KVM deployment architecture
-	* Edit the JSON environment variables file
-	* Prepare baremetal.csv file
-	* Set DNS servers
-	* Preparing seed cloud host to create the seed VM
+
+* Verify Prerequisites
 * Downloading and extracting the installation packages
 * Installing HP Helion OpenStack
 	* Configure proxy information
@@ -45,43 +39,10 @@ The installation and configuration process for KVM consists of the following gen
 * Create projects for LDAP users
 * Next steps
 
-## Preparing for installation {#prepare}
-
-Before starting the installation, review the following sections.
-
-### Verify Prerequisites {#pre}
+## Verify Prerequisites {#pre}
 
 To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/install/prereqs/) before you start.
 
-### Review the KVM deployment architecture {#deploy-arch}
-
-The following diagram depicts the required network topology for a KVM installation.
-
-<a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack (opens in a new window)</a>
-
-For detailed network requirements, see [Installation: Prerequisites](/helion/openstack/install/prereqs/#network_prepare).
-
-### Edit the JSON environment variables file ### {#envvars}
-
-Before installing, make sure you have edited the JSON environment variables file that is required for installation.
-
-For more information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
-
-### Prepare baremetal.csv file {#csv}
-
-Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
-
-For more information, see [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
-
-### Set DNS servers {#name-resolution}
-
-To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
-
-### Prepare the cloud seed host to create the seed VM {#prepseed}
-On the server identified to run the seed VM, called the seed cloud host (or installation system), make sure that Ubuntu 14.04 LTS Server edition is installed and operating, as listed in [Installation: Prerequisites](/helion/openstack/install/prereqs/#ubuntu).
-
-## Downloading and extracting the installation packages {#getinstall}
-Before you begin, you must have downloaded and extracted the required HP Helion OpenStack installation packages. See [Installation: Prerequisites](/helion/openstack/install/prereqs/).
 
 ## Installing HP Helion OpenStack {#install}
 
@@ -89,25 +50,6 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 * [Configure proxy information](#proxy)
 * [Install the seed VM and building your cloud](#startseed)
-
-
-### Configure proxy information {#proxy}
-
-Before you begin your installation on the seed cloud host, if your environment uses a proxy server to access the Internet, configure the proxy information using the following steps:
-
-1. Launch a terminal and log in to your seed cloud host as root:
-
-		sudo su -
-
-2. Edit the `/etc/environment` file to add the following lines:
-
-		export http_proxy=http://<web_proxy_IP>/
-		export https_proxy=http://<web_proxy_IP>/
-		export no_proxy=localhost,127.0.0.1,<your 10.x IP address>
-	
-	Where `web_proxy_IP` is your web proxy IP address.
-
-3. Log out and re-login to the seed cloud host to activate the proxy configuration.
 
 
 ### Install the seed VM and build your cloud {#startseed}
@@ -150,13 +92,14 @@ Before you begin your installation on the seed cloud host, if your environment u
 
 11. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed cloud host.
 
-	a. Copy the `tripleo-overcloud-password` file to the `/root/tripleo` folder.
+	a. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
 
-		scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords
+		scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json
 
-	b. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder.
+	b. Place overcloud-env.json file (if created) into `/root/tripleo` folder.
 
-		scp overcloud_keystone_ldap.json root@192.0.2.1:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json 
+		scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json
+
 
 12. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to each of the baremetal servers in your `baremetal.csv` is working.
 
@@ -326,32 +269,7 @@ If you are integrating LDAP into your environment, you need to configure the Hor
 
 ## Next Steps {#next-steps}
 
-Configure Block Storage by either deploying VSA or using HP 3Par Array
-
-- Configure HP Helion OpenStack tenant networks to use VLAN Provider Network. 
-
-	HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.
-
-	For instructions, see [Enabling VLAN Provider Network in HP Helion OpenStack](/helion/openstack/vlan/provider/network/).
-
-- Configure HP StoreVirtual VSA
-
-	HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
-
-	For instructions, see the [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/overview) document. 
-
-- Configure an HP 3Par storage array
-
-	An optional HP 3Par storage array that can be used to provide high performance Cinder block storage 
-
-	For instructions, see the [HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/) document.
-
-
-- Configure a Swift Scale-Out cluster (Optional)
-
-	An optional Swift Scale-Out cluster instance of between two and twelve servers that is used for production cloud Object storage use (Scale-Out Swift extends the Starter Swift Cluster enabling greater capacity while maintaining any initial data present in Starter Swift).
-
-	For instructions, see the [Scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/) document. 
+See [Post-Installation for KVM Hypervisor](/helion/openstack/install/post-kvm/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
