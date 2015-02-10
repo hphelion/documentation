@@ -138,6 +138,7 @@ Perform the following steps to add Swift disk to a ring:
     	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
     	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 
+12. Copy `account.builder`  and  `container.builder` files to all the nodes.
 
 11. Set the weight of the disks using the following command:
     

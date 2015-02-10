@@ -58,11 +58,6 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 4. Click the target Swift node IP address to open the  <a href="javascript:window.open('/content/documentation/media/swift_icinga-mount-points.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Service Status Details For Host &lt;Swift node IP address &gt;</i></b><!--- (opens in a new window)---></a><!-- to view the disk usage of the selected Swift node.--->
 
 
-
-<Need the information ?>
-
-
-
 ##Status Messages
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -70,26 +65,21 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 	<th>Status</th>
 	<th><center>Message</center></th>
     <th><center>Cause/Resolution</center></th>
-</tr><!---
+</tr>
 <tr style="background-color: white; color: black;">
 	<td>OK</td>
-	<td>No devices to report</td>
-    <td> This message appears on Proxy servers where there are no account, container or object servers configured. This is a normal status.</td>
-</tr>---->
-<tr style="background-color: white; color: black;">
-	<td>OK </td>
-	<td>Percent used</td>
-    <td> Percent disk usage for devices used by Swift (/srv/node)</td>
+	<td>OK</td>
+    <td> </td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>WARNING </td>
-	<td>Disk space low</td>
-    <td>The percentage used space of one of the disk drives exceeds the user defined threshold(Default set to 85% for HP Helion OpenStack 1.0). It is important to prevent Swift devices becoming full because it is difficult to recover if this happens. To resolve, add more devices to the rings or ask your users to delete objects.</td>
+	<td>Disabled by file</td>
+    <td>Status code 503.</td>
 </tr>
 <tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Disk space critically low</td>
-    <td>The available space on one of the disk drives has dropped below the "fallocate_reserve" given in <object-server-configuration>. If no value is given in the object server configuration file, this is defaulted to zero. Swift cannot store more data on the drive, if the available space drops below this defined limit.</td>
+	<td>CRITICAL </td>
+	<td>Unexpected response &lt;status and HTTP response></td>
+    <td>Based on the status code.</td>
 </tr><!---
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>

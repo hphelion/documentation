@@ -46,7 +46,7 @@ The `/etc/swift` folder on each of the Swift nodes must have both the `*.builder
 
 The node address is retrieved from `/var/lib/os-collect-config/`. 
 
-With the list of disk labels of a Swift node, mount command (**what is the command?**) allows you to check whether the disk is physical or a file-system. For example: d1, d2 disks must be avoided as they are file-systems.
+With the list of disk labels of a Swift node, `mount` command allows you to check whether the disk is physical or a file-system. For example: d1, d2 disks must be avoided as they are file-systems.
 
 Perform the following steps to monitor the status of the disk drive:
 

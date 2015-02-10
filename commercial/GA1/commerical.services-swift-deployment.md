@@ -364,6 +364,10 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 		Are you sure you want to continue connecting (yes/no)? yes
 		Copied ring /root/ring-building/object-1.ring.gz onto 192.0.2.29
 
+5. Copy `object-1.builder` files to all Swift nodes and press **yes** when asked to authenticate node.
+
+**Note**: The Swift nodes must have both `.buldier` and `.ring.gz` files.
+
 <!--**Note**: The system may escape the authentication of node sometimes. --->
 
 ##Update the Storage Policy {#update-storage-scaleout-swift}
