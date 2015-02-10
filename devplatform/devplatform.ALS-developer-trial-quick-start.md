@@ -47,13 +47,13 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 
 10. You will need to provide a key pair for this VM. <br /> For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0)
 	- **If you are using a tool** such as PuTTY (on a PC) or the *ssh-keygen* command (Linux), skip to step 8.
-	12. **If a key pair has already been created**, use the Horizon console to import it.
+	- **If a key pair has already been created**, use the Horizon console to import it.
 		12. Click the **Access & Security** sub-panel.
 		13. Click the **Key Pairs** tab and then click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPair11.png"/><br /><br /> 
 		14. Enter a name for this key pair in the **Key Pair Name** field.
 		15. Copy and paste the RSA public key into the **Public Key** field.
 		16. Click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPairName11.png"/><br /><br />
-	17. **If a key pair has not been created**, create a key pair using the Horizon console.
+	- **If a key pair has not been created**, create a key pair using the Horizon console.
 		18. Click on the **Compute** sub-panel and then click **Access & Security**.
 		19. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
 		20. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
