@@ -62,10 +62,11 @@ Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/s
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <proxy node IP address> 
 
-4. Copy account, container, object, and generated `object-1.builder` files to proxy nodes. 
+4. Copy `object-1.builder` files to proxy nodes. 
  
 		# ringos copy-ring -s /root/ring-building/\object-1.builder -n <proxy node IP address>
 
+	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
 
 5. After creation of the Proxy node, list the Proxy IP addresses.
 

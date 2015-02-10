@@ -366,7 +366,9 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 5. Copy `object-1.builder` files to all Swift nodes and press **yes** when asked to authenticate node.
 
-**Note**: The Swift nodes must have both `.buldier` and `.ring.gz` files.
+		# ringos copy-ring -s /root/ring-building/\*.builder -n <Swift node IP address>
+
+**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
 
 <!--**Note**: The system may escape the authentication of node sometimes. --->
 

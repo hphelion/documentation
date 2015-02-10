@@ -102,6 +102,8 @@ Once the Swift nodes are deployed, the required disks must be formatted and moun
     
     	# ringos copy-ring -s /root/ring-building/object-1.builder -n <Swift nodes IP address>
 
+	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
+
 12. Set the weight of the disks using the following command:
 
     	# ringos set-weight -f /root/ring-building/object-1.builder -s <object node IP address> -w <weight>
