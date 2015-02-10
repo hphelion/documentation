@@ -138,7 +138,7 @@ The system locks any write to the disk if it detects an I/O error. This configur
 * Do not add the entry for the SAN's disks to the `cinder-volume fstab` file.
 Some systems hang on this step, which means you could lose access to your cloud-controller. To re-run the session manually, before performing the mount, enter:
 
-		# iscsiadm -m discovery -t st -p $SAN_IP $ iscsiadm -m node --target-name $IQN -p $SAN_IP –l
+		# iscsiadm -m discovery -t st -p $SAN_IP $ iscsiadm -m node --target-name $IQN -p $SAN_IP -l
 
 * For your instances, if you have the whole `/home/` directory on the disk, leave a user's directory with the user's bash files and the `authorized_keys` file (instead of emptying the `/home` directory and mapping the disk on it).
 
@@ -283,7 +283,7 @@ In an active/passive configuration, systems are set up to bring additional resou
 Typically, an active/passive installation for a stateless service would maintain a redundant instance that can be brought online when required. Requests may be handled using a virtual IP address to facilitate return to service with minimal reconfiguration required.
 
 A typical active/passive installation for a stateful service maintains a replacement resource that can be brought online when required. A separate application (such as Pacemaker or Corosync) monitors these services, bringing the backup online as necessary.
- 
+
 ##Recovering overcloud clusters
 
 The following procedures for recovering overcloud clusters address these concerns:
@@ -334,11 +334,11 @@ During the time the Seed VM will also be shut down, the undercloud servers will 
 
 ####Shutdown
 
-Normally shut down the server, using the “nova stop” option in seed or manually access the OS and shut down the machine.
+Normally shut down the server, using the `nova stop` option in seed or manually access the OS and shut down the machine.
 
 ####Power On
 
-Normally power on the server using “nova start” option in the seed or manually start the server using iLO.
+Normally power on the server using `nova start` option in the seed or manually start the server using iLO.
 
 ####Considerations
 
@@ -376,11 +376,11 @@ To reduce the down time of the instances located in the compute node HP suggests
 
 ####Shutdown
 
-Normally shut down the server, using the “nova stop” option in seed/undercloud or manually access the OS and shut down the machine.
+Normally shut down the server, using the `nova stop` option in seed/undercloud or manually access the OS and shut down the machine.
 
 ####Power On
 
-Normally power on the server using “nova start” option in the seed/undercloud or manually start the server using iLO.
+Normally power on the server using `nova start` option in the seed/undercloud or manually start the server using iLO.
 
 ####Considerations
 
@@ -487,7 +487,7 @@ In the case of a graceful shutdown of the entire environment, the administrator 
 
 	c.	Start the undercloud node using `nova start` from the Seed VM.
 
-	d. Start the overcloud Controller 0 node using “nova start” from the Seed VM or undercloud node.
+	d. Start the overcloud Controller 0 node using `nova start` from the Seed VM or undercloud node.
 
 	e. When the node starts, manually start MySQL with the bootstrap options (`/etc/init.d/mysql bootstrap-pxc`)
 
