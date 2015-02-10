@@ -23,7 +23,7 @@ The Quick Start Developer Trial is the fastest way to create a sandbox environme
 1. [Before You Begin](#pre)
 2. [Step-by-Step Installation Instructions](#install)
 3. [After Installation](#after)
-4. [Explore Tiny Sample Applications](#samples)
+4. [Explore Sample Applications](#samples)
 5. [Troubleshooting and Termination](#terminate)
 
 ##Before You Begin {#pre}
@@ -76,7 +76,7 @@ After the *cfmgmt* tool creates the cluster, it presents you with the ALS Consol
 
 After you log into the Console, you may wish to access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
 
-## Explore Tiny Sample Applications {#samples}
+## Explore Sample Applications {#samples}
 Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
 
 ## Troubleshooting and Termination {#terminate}

@@ -130,7 +130,7 @@ During the boot process the CVM will detect that a configuration file is not pre
 8. The CVM terminates. (Unless the termination is [overridden](#disable).)
 
 ### Boot Without a Configuration File (for public beta) {#publiccloud}
-During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta.  
+This is the process used for the [Developer Quick-Start trial](/helion/devplatform/ALS-developer-trial-quick-start/). During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta. 
 
 1. Create an instance of the ALS Installer and boot it manually, or perform a Nova boot of the image without providing a config file.
 2. The CVM boots.
