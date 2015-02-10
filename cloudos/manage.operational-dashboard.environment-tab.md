@@ -389,7 +389,7 @@ For procedural instructions, see <a href="/cloudos/install/">Install and Configu
 </p>
 
 The Server Types panel allows you to capture new or use existing server definitions about the networking ports for various servers in 
-your bare-metal cloud environment. If all servers in your cloud are the same server type (homogeneous nodes), you are not required to 
+your baremetal cloud environment. If all servers in your cloud are the same server type (homogeneous nodes), you are not required to 
 configure anything in this view. HP recommends that you keep and accept the default settings.
 
 However, if the servers in your cloud are different types of servers, you may be required to use a Linux utility such as dmidecode to 
@@ -674,7 +674,7 @@ In Team mode, configure virtual connections to use both trunks. For example:
 * Map eth1, eth3, and eth5 to trunk 2.
 
 Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. 
-When the HP Cloud OS Administration node allocates the bare-metal server, Cloud OS should create a teaming NIC using the NIC pairs.
+When the HP Cloud OS Administration node allocates the baremetal server, Cloud OS should create a teaming NIC using the NIC pairs.
 
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 

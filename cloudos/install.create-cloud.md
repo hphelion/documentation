@@ -52,7 +52,7 @@ If you elected to use the wizard-based steps described in this topic (recommende
 
 Before you begin, make sure:
 
-* You have remote console access to all the virtual and bare-metal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor operating system installation, and if need be provide additional firmware drivers when prompted.
+* You have remote console access to all the virtual and baremetal servers. This is required to power on the servers to trigger Network (PXE) boot, monitor operating system installation, and if need be provide additional firmware drivers when prompted.
 
 * The Network and Storage Infrastructures are set up correctly. For the post-install of the operating system, a few steps are required to configure and mount the folder on an additional storage resource.
 
@@ -82,7 +82,7 @@ As the Controller and Compute Nodes are being allocated, they progress through t
  
 When the nodes are ready for cloud deployment, their status ends with Allocated. 
 
-**Tip:** Access the bare-metal node's remote console to monitor the operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
+**Tip:** Access the baremetal node's remote console to monitor the operating system installation. Some of your hardware requires non-free firmware files to operate. The firmware can be loaded from removable media, such as a USB stick or CD/DVD. 
 If a dialog box displays prompting you to load missing firmware, provide the appropriate drive.
 
 **Tip:** In the case where a node results in status = Off, select the More > Reboot Node action for the node.

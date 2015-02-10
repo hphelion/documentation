@@ -44,7 +44,7 @@ Host Linux is instantiated as a binary and source code repository, which is avai
 
 Host Linux is the host operating system for HP Helion OpenStack Community edition and HP Helion OpenStack. 
 
-Host Linux runs on physical servers (bare metal) to support the Helion stack, and is used to build images executing virtual OpenStack and Helion services, Host Linux also supports TripleO (OpenStack-on-OpenStack) install, start-up, and operations. 
+Host Linux runs on physical servers (baremetal) to support the Helion stack, and is used to build images executing virtual OpenStack and Helion services, Host Linux also supports TripleO (OpenStack-on-OpenStack) install, start-up, and operations. 
 
 Host Linux is internal and HP-use-only at this time, delivered to customers as a component of HP Helion OpenStack and HP Helion OpenStack Community.
 

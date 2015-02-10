@@ -445,7 +445,7 @@ In the Installation Dashboard:
 <td> Hypervisor </td>
 <td> qemu </td>
 <td> Indicates the hypervisor that Nova should use when launching virtual machines. May be either qemu or kvm. Select qemu if nova-compute
-nodes are on virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
+nodes are on virtual machines. Select kvm if nova-compute nodes are baremetal. </td>
 </tr>
 
 </table> 
