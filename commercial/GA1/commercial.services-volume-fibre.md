@@ -32,7 +32,7 @@ PageRefresh();
 
 Fibre Channel (FC) Zone Management, a new functionality available in Cinder- Icehouse, automates the zone lifecycle management. 
 
-Zoning is a fabric-based service in a storage area network, which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. 
+Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. 
 
 Brocade zone driver manages access control using FC zoning for Braocade FC fabrics. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
 
