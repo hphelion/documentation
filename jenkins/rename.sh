@@ -15,7 +15,7 @@ do
 			#echo "Rename: $i"
 			#echo "To:     $newname"
 			git mv $i $newname
-			sed -i  's/\(^#[^#]*HP Helion\)/\1 1.1/' $i
+			sed -i  's/\(^#[^#]*HP Helion\)/\1 1.1/' $newname
 		fi
 	else
 		    echo " " 
