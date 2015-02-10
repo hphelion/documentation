@@ -10,14 +10,14 @@ title: "HP Application Lifecycle Service (ALS) Client Constructor Virtual Machin
 
 # HP Helion Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine
 
-The Constructor VM is a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. it can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
+The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. it can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
 
 Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. 
 Horizon performs a call to Nova with *cloud-init* configuration data to trigger the Helion ALS PaaS construction. The OpenStack&reg; metadata service is used to communicate ALS construction status back to the Horizon UI.
 
-There are a few features and [troubleshooting](#troubleshooting) options, however, that cannot be managed from within Horizon. For example, it currently does not support [adding Service or DEA nodes](#growthnodes) to a system that is already in place. The CVM is also self-terminating by default, but this can be [overridden](#disable) from the command line to ensure that [log files](#logfile) are not lost.
+There are a few features and [troubleshooting](#troubleshooting) options, however, that cannot be managed from within Horizon. For example, it currently does not support [adding Service or DEA nodes](#growthnodes) to a system that is already in place. The CVM is also self-terminating by default, but this can be [overridden](#disable) from the command line for troubleshooting to ensure that [log files](#logfile) are not lost.
 
-1. [Download](#download) the Constructor Virtual Machine image.
+1. [Launch](#launch) an instance of the Constructor Virtual Machine.
 2. [Generate a key pair](#keypair).
 1. Choose the appropriate boot option:
 	- [Use the Horizon wizard](#consoleboot) to pass in configuration values.
@@ -25,29 +25,26 @@ There are a few features and [troubleshooting](#troubleshooting) options, howeve
 	- Manual boot without a configuration file for Helion [private cloud](#privatecloud).
 	- Manual boot without a configuration file for Helion [public beta](#publiccloud).
 
-##Download the Image {#download}
-The Constructor VM image is available for download with a free HP Helion OpenStack&reg; account. The default username is *debian*.
+##Launch an Instance of the CVM Image {#launch}
+The Constructor VM image is available from your HP Helion OpenStack&reg; account. The default username is *debian*.
 
-1. Log into your account and select Region: US East. You will need to [create an account](https://helion.hpwsportal.com/catalog.html#/Home/Show) if you do not already have one.
-2. Log into **Horizon**.
-3. Use the central pulldown menu to select the **US East** region.
-3. Select the **Manage Services** panel and then **Activate Services**.
-4. In the **US East** section, in the **Compute** row, use the pulldown to select **Image Management**.
+1. If you don't already have a user account on the <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>, take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">free trial offer</a> to sign up now. You will be asked to provide a phone number for verification and a credit card during registration, but there is no charge.
+2. Log in to the [Horizon Console](https://horizon.hpcloud.com/) <br /> 
+3. Change to the **US East Region**.<br /><img src="media/quickstartA11.png"/><br /><br />
+3. Select the **Manage Services** panel and then click the **Activate Services** sub-panel.
+4. In the **US East** section, click **Activate Services**. <br /><img src="media/constructor_activateServices.png"/><br /><br />
+5. In the **Compute** row, use the pulldown to select **Image Management**. <br /><img src="media/constructor_imagemanagement.png"/><br /><br />
 5. In the list of available images, select **Public** images.
-7. Find the image named *HP Helion Development Platform CE - Application Lifecycle Service Installer A.B.C.D* where A.B.C.D is the most recent version number. Do not select any version marked as "Deprecated".
-8. Click the checkbox and then click **Launch** to download the most recent version.
+7. Find the **Image Name** *HP Helion Development Platform CE - Application Lifecycle Service Installer A.B.C.D* where A.B.C.D is the most recent version number. Do not select any version marked as "Deprecated".
+8. Click the checkbox next to the image name and then, under **Actions**, click **Launch**.
 
 ## Generate a Key Pair {#keypair}
 The image does not include a password; the virtual machine is booted with an associated SSH key. 
 
-1. Log into your account and select Region: US East. You will need to [create an account](https://helion.hpwsportal.com/catalog.html#/Home/Show) if you do not already have one.
-2. Log into **Horizon**.
-3. Use the central pulldown menu to select the **US East** region.
-4. Select the **Project** panel and then select the **Compute** sub-panel.
-5. Select **Access & Security**.
-6. Select **Key Pairs** tab and click **Create Key Pair**.
-7. Provide a name and for the key pair and click **Create**.
-8. When the key has been created, a download option will appear. Save the *keyPairName.pem* file in the Home directory or anywhere you can easily find it again. 
+1. Click on the **Compute** sub-panel and then click **Access & Security**.
+2. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
+3. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
+4. When prompted, save the *keyPairName.pem* file somewhere you can easily find it again. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.
 
 ## Boot Options
 
