@@ -1,7 +1,7 @@
 #!/bin/bash -li
 
 
-for i in `find . -name "*.md"`
+for i in `find . -path ./redirects -prune -o -name "*.md"`
 
 do
 
@@ -26,7 +26,7 @@ done
 
 echo "changing permalinks... "
 
-for a in `find . -name "*.md"`
+for a in `find . -path ./redirects -prune -o -name "*.md"`
 
 
 
