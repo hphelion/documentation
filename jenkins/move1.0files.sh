@@ -24,7 +24,7 @@ do
 done
 
 git add .
-git commit -m "adding 1.0 version string to doc titles"
+git commit -m "adding 1.0 version string to doc titles" .
 git checkout rename-test
  
 for i in `echo $changed_files`
