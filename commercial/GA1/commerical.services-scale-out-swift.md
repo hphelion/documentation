@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
--->
+<a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
 
 # HP Helion OpenStack&reg;: About Scale-out Swift #
 
