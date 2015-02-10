@@ -121,9 +121,9 @@ on the VM instances hosted by the compute node.
 
 The diagrams in this section illustrate the deployment scenarios supported in HP Cloud OS 1.20.
 
-##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is bare metal.
+##### Diagram 1: Single Region. All controllers in a single virtual machine. Compute node is baremetal.
 
-<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is bare metal." />
+<img src="media/cloudos-single-region1.jpg" title="HP Cloud OS Single Region. All controllers in a single virtual machine. Compute node is baremetal." />
 
 ##### Diagram 2: Multi-region. All controllers in virtual machines.
 
@@ -133,9 +133,9 @@ The diagrams in this section illustrate the deployment scenarios supported in HP
 
 <img src="media/cloudos-single-region-controllers-vm3.jpg" title="HP Cloud OS Single region. Controllers are in separate virtual machines." />
 
-##### Diagram 4: Single region. All controllers in a single bare metal server. 
+##### Diagram 4: Single region. All controllers in a single baremetal server. 
 
-<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single bare metal server." />
+<img src="media/cloudos-single-region-controllers-baremetal4.jpg" title="HP Cloud OS Single region. All controllers in a single baremetal server." />
 
 ##### Diagram 5: Supported Swift (Object Store) deployment scenario  
 

@@ -178,7 +178,7 @@ To report issues with HP Helion OpenStack, please visit the [HP Support Center](
 
 No. HP Helion OpenStack is a pure distribution that leverages OpenStack standards coupled with HP Virtual Cloud Networking (VCN) application and ESX support.
 
-[When can I expect support for bare metal deployment?](#baremetal)
+[When can I expect support for baremetal deployment?](#baremetal)
 
 ####Is HP Helion OpenStack integrated with other HP Helion products and solutions? #### {#integrated}
 
