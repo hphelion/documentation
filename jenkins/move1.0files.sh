@@ -2,7 +2,7 @@
 
 changed_files=""
 
-for i in `find . -name "*.md"`
+for i in `find . -path ./redirects -prune -o -name "*.md"`
 
 do
 
@@ -35,8 +35,5 @@ done
 
 git add .
 git commit -m "merging 1.0 doc back to dev" . 
-
-	
-
 
 	
