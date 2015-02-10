@@ -29,7 +29,7 @@ The Quick Start Developer Trial is the fastest way to create a sandbox environme
 ##Before You Begin {#pre}
 Before you can begin your Quick Start Developer Trial, you will need to do three things.
 
-1. Register for your free  <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
+1. Register for your free <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
 2. Download a copy of the ALS Constructor virtual machine image from your public cloud account.
 3. [Download and install](/als/v1/client/download) the *cfmgmt* command-line tool appropriate for your operating system.
 
