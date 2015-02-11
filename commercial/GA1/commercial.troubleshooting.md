@@ -25,7 +25,7 @@ PageRefresh();
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
-You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Troubleshooting_Installation_Final.pdf">*HP Helion OpenStack® 1.1 Installation Troubleshooting Guide*</a> or review the following topics on line:
+You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Troubleshooting_Installation_Final.pdf">*HP Helion OpenStack 1.1 Installation Troubleshooting Guide*</a> or review the following topics on line:
 
 * [Installation Troubleshooting](/helion/openstack/services/troubleshooting/install/)
 
