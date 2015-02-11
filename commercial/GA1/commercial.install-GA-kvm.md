@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack: Installation and Configuration"
 permalink: /helion/openstack/install/kvm/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION-->
@@ -67,8 +71,6 @@ Make sure you have met all the hardware requirements and have completed the requ
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee seedinstall.log
 
 	**Note**:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named *seedinstall.log*.
-
-	**Note**:The installation process takes approximately 10 minutes to complete.
 
 	When the seed VM startup is complete, you should see a message similar to the following:
 

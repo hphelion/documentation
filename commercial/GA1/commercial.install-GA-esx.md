@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack: Installing and Configuring the ESX Hypervisor"
 permalink: /helion/openstack/install/esx/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION-->
@@ -73,7 +77,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed
 
-	**Note**:The installation process takes approximately 10 minutes to complete.
+	**Note**:The installation process takes approximately 10 minutes to complete. The output will be recorded in a file named *seedinstall.log*.
 
 	When the seed VM startup is complete, you should see a message similar to the following:
 

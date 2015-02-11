@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack: Add and Remove Nodes"
 permalink: /helion/openstack/install/add/nodes/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Binamra S, 
 
 ---
 <!--PUBLISHED-->
