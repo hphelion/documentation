@@ -35,12 +35,12 @@ The Fibre Channel Zone Manager allows FC SAN Zone/Access control management in c
 
 HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to add Brocade Zone Manager configuration to` cinder.config`
 
-Caution:
+###Caution:
 
-Please do follow recommended steps to configure HP 3PAR and HP Storevirtual as storage backend. Please do not modify any other file directly under hp_passthrough for HP 3PAR and HP Storevirtual integration. For more details refer step 5.
-Please strongly adhere to json format depicted in section . Otherwise, it might cause failure of update cloud.
-Please do not touch any other files in /tripleo/hp_passthrough/ folder.
-Please create file with prefix  as "overcloud" .
+* Do not modify any other files in `/tripleo/hp_passthrough/`.
+* Create a new file with a prefix "overcloud"
+* Adhere to the JSON format (mentioned in Step 4). Otherwise, it might cause failure of update cloud.
+
 
 <!----
 
@@ -67,7 +67,7 @@ FC zone manager automates the zone access management at attach/detach entry poin
 
 
 
-## Add Brocade Zone Manager configuration to `cinder.config`
+## Add Brocade Zone Manager configuration to `cinder.config` {#brocade-zone}
 
 If block storage is configured to use a Fibre Channel volume driver that supports zone manager, update `cinder.config` to enable Fibre Channel Zone Manager.
 
@@ -101,17 +101,17 @@ Perform the following steps to configure Brocade Zone Manager.
               "section": "<SECTION_NAME>",
               "values": [
                   {
-                      "option": "KEY_1",
-                      "value": "VALUE_1"
+                      "option": "KEY_1",
+                      "value": "VALUE_1"
                   },
                   {
-                       "option": "KEY_2",
-                       "value": "VALUE_2"
+                       "option": "KEY_2",
+                       "value": "VALUE_2"
                   }
                     .
                     .
                     .
-                 ]
+                ]
         }
       
         
@@ -218,7 +218,65 @@ Perform the following steps to configure Brocade Zone Manager.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
 
-You can also configure HP 3PAR Storeserv  as storage backend with Brocade Zone Manager.
+You can also configure HP 3PAR Storeserv or HP Storevirtual as storage backend with Brocade Zone Manager.
+
+##Configure HP 3PAR Storeserv or HP Storevirtual as storage backend with Brocade Zone Manager
+
+This section explains the configuration of HP 3PAR Storeserv or HP Storevirtual as storage backend with Brocade Zone Manager.
+
+
+1. HP Helion OpenStack&#174; cloud is successfully deployed.
+2. Sirius service is running in the undercloud.
+3. HP StoreServ (3PAR) device is accessible from the undercloud.
+4. FC Brocade switches are accessible from nova compute and node where cinder services are running. 
+5. HP StoreServ (3PAR) device(running operating system v 3.1.3 or later) is accessible by 6. 6. Block Storage (Cinder) and compute nodes are running in the overcloud.
+7. Common Provisioning Groups (CPGs) are created for HP StoreServ (3PAR)
+8. HP StoreServ (3PAR) web services API server must be enabled and running. Also, HTTPS is enabled.
+ 
+
+**Caution**
+
+1. Ensure to follow the recommended steps to configure HP 3PAR and HP Storevirtual as storage backend. Do not modify any other file directly under `hp_passthrough` for HP 3PAR and HP Storevirtual integration. 
+
+2. Adhere to JSON format. The JSON format should remain intact, otherwise it might cause failure of update cloud.
+
+3. Do not touch any other files in `/tripleo/hp_passthrough/ folder.`
+
+4. Create a file with the prefix as **overcloud**.
+
+
+###Steps for configuration
+
+* To configure HP 3PAR as storage backend with Brocade Zone Manager.
+
+* To configure HP Storevirtual as storage backend with Brocade Zone Manager.
+
+
+
+### To configure HP 3PAR as storage backend with Brocade Zone Manager.
+
+To configure HP 3PAR as storage backend with Brocade Zone Manager perform the following steps.
+
+1. [Add StoreVirtual clusters as a backend for the cloud](#add-configure-storevirtual)
+2. Perform the steps 1 - 4 mentioned in [Reconfigure and update cloud](#reconfigure-update)
+3. [Configure Brocade Zone Manager](#brocade-zone)
+3. Update overcloud.
+
+### To configure HP Storevirtual as storage backend with Brocade Zone Manager
+
+To configure HP Storevirtual as storage backend with Brocade Zone Manager perform the following steps.
+
+1. [Add StoreVirtual clusters as a backend for the cloud](#add-configure-storevirtual)
+2. Perform the steps 1 - 4 mentioned in [Reconfigure and update cloud](#reconfigure-update)
+3. [Configure Brocade Zone Manager](#brocade-zone)
+3. Update overcloud.
+
+
+<!----
+
+Follow guidelines to configure HP 3PAR Storeserv or HP Storevirtual as storage backend in association with Brocade Zone Manager
+
+
 
 Configure HP Storevirtual as storage backend with Brocade Zone Manager.
 

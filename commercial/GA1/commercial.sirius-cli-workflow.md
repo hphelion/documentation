@@ -291,11 +291,11 @@ The sample output of the above command is given below:
 
 ##Reconfigure and update cloud {#reconfigure-update}
 
-* [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
-* [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
-* [Update Overcloud configuration JSON](#update-overcloud-json)
-* [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
-* [Update Overcloud](#update-overcloud) 
+1. [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
+2. [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
+3. [Update Overcloud configuration JSON](#update-overcloud-json)
+4. [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
+5. [Update Overcloud](#update-overcloud) 
 
 The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.
 
