@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 
-##HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution: Prerequisites
+# HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution: Prerequisites
 
 Before you begin the Ceph installation process, take a few minutes to read this page for information about:
 

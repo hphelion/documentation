@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##Helion OpenStack 1.1 Nova Ceph Storage
+# Helion OpenStack 1.1 Nova Ceph Storage
 
 Install and run the Ceph client script  on the Helion controller and compute node. After a successful install, the following steps are automatically performed:
 **[[so the user is not doing this,right?]**
