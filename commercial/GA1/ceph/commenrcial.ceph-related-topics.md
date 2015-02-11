@@ -20,7 +20,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##Related Topics
+# Related Topics
 
 This topic provides you links to related documentation that you might find helpful when working with HP Helion OpenStack Enterprise Edition 1.1, Ceph Firefly 80.7 Storage Solution. 
 

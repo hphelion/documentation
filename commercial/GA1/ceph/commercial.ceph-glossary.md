@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-#Glossary
+# Glossary
 The following terms are common to Ceph. Ceph is a technology that integrates object, block, and file storage. It is integrated into Helion OpenStack 1.1 cloud environments. 
 
 * Cephx - The Ceph authentication protocol. Cephx operates like Kerberos, and it has no single point of failure.

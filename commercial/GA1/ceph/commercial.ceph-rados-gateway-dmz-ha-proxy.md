@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 
-##Ceph RADOS Gateway - DMZ HAProxy
+# Ceph RADOS Gateway - DMZ HAProxy
 
 As discussed in previous sections, the Ceph storage system is successfully integrated with HP Helion OpenStack. Ceph has a RADOS gateway that is a public facing interface and is vulnerable. Hence, any end user can gain access into a Helion system with this integration. To minimize risks, an external HAProxy is built in a DMZ environment behind a firewall. HAProxy is commonly used as a load balancer for TCP- and HTTP-based applications. It works as a reverse-proxy, which means it maintains two connections when allowing a client to cross it: a connection between HAProxy and the client, and  another between HAProxy and the server. 
  
