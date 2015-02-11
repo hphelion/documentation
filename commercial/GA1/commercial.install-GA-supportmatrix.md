@@ -297,7 +297,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4">Confirm with Gerry Fahy</td>
-<td rowspan="4">???</td>
+<td rowspan="4">?</td>
 <td>Disk </td>
 <td> 512GB
 </td>

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##Ceph RADOS Gateway- Keystone Authentication in the HP Helion OpenStack 1.1 Environment
+# Ceph RADOS Gateway- Keystone Authentication in the HP Helion OpenStack 1.1 Environment
 
 The Helion OpenStack 1.1 HAProxy can be used to enable high availability and load balancing for RADOS Gateway nodes. With HAProxy, Swift requests are load balanced between two gateway nodes. If one of them goes down, then all requests are processed by the remaining live node. Once the failed node recovers, load balancing is re-enabled. Load balancing is done using the round robin algorithm so that each node is used in turn, and load balancing is fair. 
 

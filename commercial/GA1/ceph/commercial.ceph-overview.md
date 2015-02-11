@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 
-#HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution 
+# HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution 
 
 
 The HP Helion OpenStack Enterprise Edition 1.1 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. The solution also supports user backup and archive workloads to the Object (Swift) API service writing to the same unified Ceph storage platform. 

@@ -11,7 +11,7 @@ role1: Storage Administrator
 role2: Storage Architect
 authors: Karthik P, Binamra S
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -35,11 +35,13 @@ The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*
 
 The HP Smart Storage Administrator CLI (HPSSACLI) is a command line disk configuration program for Smart Array Controllers.
 
-##Deployment
+The ***hpssacli*** utility is deployed onto the servers wherever the disks are to be monitored, usually all Object Storage(Swift), VSA, and Compute nodes. <!---This page explains the collection of diagnostic reports from disks in the servers where the utility has been loaded.--->
 
-The ***hpssacli*** utility is deployed onto the servers wherever the disks are to be monitored, usually all Swift, VSA, and Compute nodes. This page explains the collection of diagnostic reports from disks in the servers where the utility has been loaded.
+This page explains the downloading and installation of **hpssacli** utility.
 
-###Download the hpssacli debian package into the KVM host
+* [Download the hpssacli debian package into the KVM host](#download)
+
+###Download the hpssacli debian package into the KVM host {#download}
 
 [http://downloads.linux.hp.com/SDR/repo/mcp/pool/non-free/hpssacli-2.0-16.0_amd64.deb](http://downloads.linux.hp.com/SDR/repo/mcp/pool/non-free/hpssacli-2.0-16.0_amd64.deb)
 
@@ -50,11 +52,11 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 1. Copy the package from KVM host to SEED.
 
-		# scp scp "hpssacli-2.0-16.0_amd64.deb" root@<IP address of Seed>
+		# scp "hpssacli-2.0-16.0_amd64.deb" root@<IP address of Seed>
 
 2. Copy the package from SEED to machine where the disks to be monitored.
 
-		# scp scp "hpssacli-2.0-16.0_amd64.deb" heat-admin@<IP address of machine>
+		# scp "hpssacli-2.0-16.0_amd64.deb" heat-admin@<IP address of machine>
 
 
 3. Log in to the server where the debian is copied and install the package.
@@ -64,23 +66,30 @@ Use `scp` to copy the utility package on to the servers and install it.
 4. Change the directory.
 
 		# cd /home/heat-admin/
-		
-5. List the files.
+
+	<!---		
+	5. List the files.
 
 		# ls
 	All the files present in that directory will be displayed.
-
-6. Install the following package.
+	--->
+5. Install the following package.
 
 		# dpkg -i hpssacli-2.0-16.0_amd64.deb
 
 
 	**Note**: The diagnostics can be done in the server or from SEED through ssh.
 
-9. You can collect the diagnostic report of the controller either in server or through Seed using ssh.
+The hpssacli program is now installed. Refer the following section for the collection of the diagnostic report.
 
+This utility is used to monitor the usage of [Object Storage(Swift) disk drive(s)]( /helion/openstack/services/object/swift/disk-drive/). 
 
-###Collect the diagnostic report
+You can also  manually collect the diagnostic reports from disks in the servers as explained in the following sections.
+
+###Manual procedure to collect the diagnostic report
+
+Perform the following steps to manually collect the diagnostic report.
+
 **Using the server controller:**
 <!---
 1. Log in to the server
@@ -93,7 +102,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 1. Enter the following command to determine the controller slot.
 		
-		# hpssacli ctrl all show status
+		# sudo hpssacli ctrl all show status
  
 	The following sample displays slot details:
 
@@ -107,11 +116,11 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 2. Generate the diagnostic report for a particular slot.
 
-		# hpssacli ctrl slot=(slot number) diag file=<filename.zip>
+		# sudo hpssacli ctrl slot=(slot number) diag file=<filename.zip>
 	Or <BR>
 		Generate the report for all the slots 
 
-		# hpssacli ctrl all diag file=<filename.zip>
+		# sudo hpssacli ctrl all diag file=<filename.zip>
 
 
 	The file will be stored in the selected location.

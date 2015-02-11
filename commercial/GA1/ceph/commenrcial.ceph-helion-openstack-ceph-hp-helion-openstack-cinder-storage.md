@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 
-##Installing Ceph Storage in the HP Helion OpenStack 1.1 Cinder Environment
+# Installing Ceph Storage in the HP Helion OpenStack 1.1 Cinder Environment
 
 Install and run the Ceph client script on the Helion controller and compute nodes. After successfully installing, the following steps are automatically performed.
 

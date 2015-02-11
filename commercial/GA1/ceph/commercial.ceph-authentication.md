@@ -22,7 +22,7 @@ PageRefresh();
 --->
 
 
-##CEPHX Authentication for HP Helion OpenStack 1.1
+# CEPHX Authentication for HP Helion OpenStack 1.1
 
 Ceph authentication ensures access control of the Ceph storage cluster, that is, Ceph client users do not have access to each other storage. 
 

@@ -22,7 +22,7 @@ PageRefresh();
 -->
 
 
-##HP Helion OpenStack 1.1 Ceph Configuration
+# HP Helion OpenStack 1.1 Ceph Configuration
 
 This section describes the integration of HP Helion OpenStack Enterprise Edition 1.1 and Ceph Firefly 80.7 on a hlinux3.14.6-2 kernel.
 
