@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##Manually Installing Ceph in a HP Helion OpenStack 1.1 Environment
+# Manually Installing Ceph in a HP Helion OpenStack 1.1 Environment
 
 The Ceph cluster requires at least one monitor, and at least three, or as many OSDs as there are copies of an object stored on the cluster - whichever is greater. For more details, refer to http://docs.ceph.com/docs/master/install/manual-deployment/.
 
