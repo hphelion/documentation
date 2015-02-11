@@ -120,99 +120,99 @@ Perform the following steps to configure Brocade Zone Manager.
 
 
 		{
-		    "cinder": {
-		        "config": [
-		            {
-		                "section": "DEFAULT",
-		                "values": [
-		                    {
-		                        "option": "zoning_mode",
-		                        "value": "fabric"
-		                    }
-		                ]
-		            },
-		            {
-		                "section": "fc-zone-manager",
-		                "values": [
-		                    {
-		                        "option": "brcd_sb_connector",
-		                        "value": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI"
-		                    },
-		                    {
-		                        "option": "fc_fabric_names",
-		                        "value": "BRCD_FAB_A,BRCD_FAB_B"
-		                    },
-		                    {
-		                        "option": "zone_name_prefix",
-		                        "value": "helion-BZM"
-		                    },
-		                    {
-		                        "option": "fc_san_lookup_service",
-		                        "value": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService"
-		                    },
-		                    {
-		                        "option": "zone_driver",
-		                        "value": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver"
-		                    },
-		                    {
-		                        "option": "zoning_policy",
-		                        "value": "initiator-target"
-		                    }
-		                ]
-		            },
-		            {
-		                "section": "BRCD_FAB_A",
-		                "values": [
-		                    {
-		                        "option": "fc_fabric_address",
-		                        "value": "10.10.20.28"
-		                    },
-		                    {
-		                        "option": "fc_fabric_user",
-		                        "value": "admin"
-		                    },
-		                    {
-		                        "option": "fc_fabric_password",
-		                        "value": "password"
-		                    },
-		                    {
-		                        "option": "zoning_policy",
-		                        "value": "initiator-target"
-		                    },
-		                    {
-		                        "option": "zone_active",
-		                        "value": "true"
-		                    }
-		                ]
-		            },
-		            {
-		                "section": "BRCD_FAB_B",
-		                "values": [
-		                    {
-		                        "option": "fc_fabric_address",
-		                        "value": "10.10.20.29"
-		                    },
-		                    {
-		                        "option": "fc_fabric_user",
-		                        "value": "admin"
-		                    },
-		                    {
-		                        "option": "fc_fabric_password",
-		                        "value": "password"
-		                    },
-		                    {
-		                        "option": "zoning_policy",
-		                        "value": "initiator-target"
-		                    },
-		                    {
-		                        "option": "zone_active",
-		                        "value": "true"
-		                    }
-		                ]
-		            }
-		        ]
-		    }
-		}
+            "cinder": {
+            "config": [
+                    {
+                        "section": "DEFAULT",
+                        "values": [
+                             {
+                                "option": "zoning_mode",
+                                "value": "fabric"
+                             }
+                         ]
+                     },
+                     {
+                        "section": "fc-zone-manager",
+                        "values": [
+                             {
+                                "option": "brcd_sb_connector",
+                                "value": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI"
+                            },
+                            {
+                                "option": "fc_fabric_names",
+                                "value": "BRCD_FAB_A,BRCD_FAB_B"
+                            },
+                            {
+                                "option": "zone_name_prefix",
+                                "value": "helion-BZM"
+                            },
+                            {
+                                "option": "fc_san_lookup_service",
+                                "value": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService"
+                            },
+                            {
+                                "option": "zone_driver",
+                                "value": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver"
+                            },
+                            {
+                                "option": "zoning_policy",
+                                "value": "initiator-target"
+                            }
+                        ]
+                    },
+                    {
+                        "section": "BRCD_FAB_A",
+                        "values": [
+                            {
+                                "option": "fc_fabric_address",
+                                "value": "10.10.20.28"
+                            },
+                            {
+                                "option": "fc_fabric_user",
+                                "value": "admin"
+                            },
+                            {
+                                "option": "fc_fabric_password",
+                                "value": "password"
+                            },
+                            {
+                                "option": "zoning_policy",
+                                "value": "initiator-target"
+                            },
+                            {
+                                "option": "zone_active",
+                                "value": "true"
+                            }
+                         ]
+                    },
+                    {
+                        "section": "BRCD_FAB_B",
+                        "values": [
+                            {
+                                "option": "fc_fabric_address",
+                                "value": "10.10.20.29"
+                            },
+                            {
+                                "option": "fc_fabric_user",
+                                "value": "admin"
+                            },
+                            {
+                                "option": "fc_fabric_password",
+                                "value": "password"
+                            },
+                            {
+                                "option": "zoning_policy",
+                                "value": "initiator-target"
+                            },
+                            {
+                                "option": "zone_active",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                 ]
+             }
+        }
 
 3. Run the installer script to update the overcloud.
 
