@@ -25,7 +25,7 @@ PageRefresh();
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
-For easy reference, we categorized the known issues and solutions as follows:
+You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Troubleshooting_Installation_Final.pdf">*HP Helion OpenStack® 1.1 Installation Troubleshooting Guide*</a> or review the following topics on line:
 
 * [Installation Troubleshooting](/helion/openstack/services/troubleshooting/install/)
 
@@ -45,7 +45,7 @@ For easy reference, we categorized the known issues and solutions as follows:
 
 * [Controller Nodes](/helion/openstack/services/troubleshooting/controller/)
 
-If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact).
+If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). It will be helpful if you run the `run-sosreport` command on the affected nodes before contacting HP Customer Support. The `run-sosreport` command will gather specific reports that will help diagnose your issue.
 
 For troubleshooting tips for the HP Helion OpenStack update process, see [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/).
 
