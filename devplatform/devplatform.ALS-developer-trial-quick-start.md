@@ -44,19 +44,21 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 	1. Click **Access & Security** and then click the **API Access** tab.
 	2. Click **Download OpenStack RC file**.<br><img src="media/quickstartDownloadRCFile.png"/><br /><br />
 
-10. You will need to provide a key pair for this VM. <br /> For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0)
-	- **If you are using a tool** such as PuTTY (on a PC) or the *ssh-keygen* command (Linux), skip to step 8.
-	- **If a key pair has already been created**, use the Horizon console to import it.
+10. You will need to provide a key pair for this VM. There are three ways to do this. 
+	- **Create a key pair** using the Horizon console.
+		18. Click on the **Compute** sub-panel and then click **Access & Security**.
+		19. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
+		20. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
+		21. When prompted, save the *keyPairName.pem* file. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.</br></br>
+	- **Create a key pair outside of Horizon** by using a tool like [PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html) or the [*ssh-keygen*](http://linux.die.net/man/1/ssh-keygen) command. If you do this, skip to step 8.
+	- **Import an existing key pair** with the Horizon console.
 		12. Click the **Access & Security** sub-panel.
 		13. Click the **Key Pairs** tab and then click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPair11.png"/><br /><br /> 
 		14. Enter a name for this key pair in the **Key Pair Name** field.
 		15. Copy and paste the RSA public key into the **Public Key** field.
 		16. Click **Import Key Pair**. <br /><img src="media/quickstartImportKeyPairName11.png"/><br /><br />
-	- **If a key pair has not been created**, create a key pair using the Horizon console.
-		18. Click on the **Compute** sub-panel and then click **Access & Security**.
-		19. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
-		20. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
-		21. When prompted, save the *keyPairName.pem* file. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.</br></br>
+		
+	<br />**Note**: For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).	<br />
 
 8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
 9. Run the following commands:
