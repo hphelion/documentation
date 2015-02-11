@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/orchestration/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/volume/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Telemetry and Reporting Service Overview#
+# HP Helion 1.0 1.0 OpenStack&#174; Telemetry and Reporting Service Overview#
 
 The HP Helion OpenStack Telemetry and Reporting service leverages the OpenStack Ceilometer service to monitor the physical devices in your environment, including physical servers and network devices such as switches and firewalls. 
 

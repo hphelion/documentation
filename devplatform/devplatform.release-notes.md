@@ -7,7 +7,7 @@ product: devplatform
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Release Notes
+# HP Helion 1.0 1.0 Development Platform: Release Notes
 
 
 The following release notes are for the HP Helion Development Platform 1.0 released on 10/14/2014. We hope you enjoy the release!

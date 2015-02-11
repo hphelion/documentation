@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
 
-# HP Helion 1.0 OpenStack&reg;: Removing and Replacing a Failed Overcloud Controller
+# HP Helion 1.0 1.0 OpenStack&reg;: Removing and Replacing a Failed Overcloud Controller
 
 The three node overcloud controller cluster provides the highly available cloud control plane. For a single point of failure, you can recover any one of the overcloud controller node. 
 

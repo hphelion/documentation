@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion 1.0 OpenStack&reg; Updating the Seed VM
+# HP Helion 1.0 1.0 OpenStack&reg; Updating the Seed VM
 
 The seed update instructions are different from the instructions for the undercloud and overcloud updates.  Not all updates will include seed updates, please check the [HP Helion OpenStack Release Notes](/helion/openstack/release-notes/101/) to determine if there is a seed update.
 

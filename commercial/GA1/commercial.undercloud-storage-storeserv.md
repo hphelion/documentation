@@ -23,7 +23,7 @@ PageRefresh();
 
 <!--what is HP Helion CLoud referring to in bullet 1??-->
 
-# HP Helion 1.0 OpenStack&#174; Working with HP 3PAR StoreServ
+# HP Helion 1.0 1.0 OpenStack&#174; Working with HP 3PAR StoreServ
 
 The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.
 

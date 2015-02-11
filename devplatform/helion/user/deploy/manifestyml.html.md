@@ -6,7 +6,7 @@ title: "Manifest.yml Options"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Manifest.yml Options {#manifest-yml-options}
+# HP Helion 1.0 1.0 Development Platform: Manifest.yml Options {#manifest-yml-options}
 
 Using a *manifest.yml* file is the standard configuration file format for all
 Cloud Foundry systems, allowing for portability from those systems to

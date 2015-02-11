@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/managing/volumes/">&#9664; PREV</a> | <a href="/helion/community/dashboard/users/">&#9650; UP</a> | <a href="/helion/community/managing/routers/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&reg; Community: Logging into the Dashboards
+# HP Helion 1.0 1.0 OpenStack&reg; Community: Logging into the Dashboards
 
 The [HP Helion OpenStack Community dashboards](/helion/community/dashboard/how-works/) are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud.
 

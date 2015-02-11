@@ -6,7 +6,7 @@ title: "cloud-init"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Using the cloud-init Package {#cloud-init}
+# HP Helion 1.0 1.0 Development Platform: Using the cloud-init Package {#cloud-init}
 
 [cloud-init](https://help.ubuntu.com/community/CloudInit) (the Ubuntu
 package for handling early initialization of cloud instances) can be

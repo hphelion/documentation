@@ -6,7 +6,7 @@ title: "Buildpacks"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Buildpacks[](#buildpacks "Permalink to this headline")
+# HP Helion 1.0 1.0 Development Platform: Buildpacks[](#buildpacks "Permalink to this headline")
 =======================================================
 
 [Buildpacks](https://devcenter.heroku.com/articles/buildpacks) are

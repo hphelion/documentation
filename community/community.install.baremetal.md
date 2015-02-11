@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
 -->
-# HP Helion 1.0 OpenStack&#174; Community Baremetal Installation and Configuration
+# HP Helion 1.0 1.0 OpenStack&#174; Community Baremetal Installation and Configuration
 
 This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. 
 

@@ -6,7 +6,7 @@ title: "Common Server Operations"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Common Server Operations {#common-server-operations}
+# HP Helion 1.0 1.0 Development Platform: Common Server Operations {#common-server-operations}
 [Server Status](#server-status)
         -   [Starting and Stopping Roles](#starting-and-stopping-roles)
         -   [System Shutdown](#system-shutdown)

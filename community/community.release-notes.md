@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion 1.0 OpenStack&reg; Community 1.4 Release Notes
+# HP Helion 1.0 1.0 OpenStack&reg; Community 1.4 Release Notes
 
 <!--**Product Name:** HP Helion OpenStack&reg; Community
 **OpenStack&reg; release name:** Icehouse-->

@@ -6,7 +6,7 @@ title: "Troubleshooting"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Troubleshooting {#troubleshooting}
+# HP Helion 1.0 1.0 Development Platform: Troubleshooting {#troubleshooting}
 
 - [Server Log Files](#server-log-files)
 -   [health\_manager.log](#health-manager-log)

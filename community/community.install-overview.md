@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/hwsw-requirements/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Community Installation Overview
+# HP Helion 1.0 1.0 OpenStack&#174; Community Installation Overview
 
 HP Helion OpenStack Community is installed using <a href ="https://wiki.openstack.org/wiki/TripleO">TripleO</a> which uses three linked installation phases to deploy a complete OpenStack cloud.  
 

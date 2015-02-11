@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&reg;: About Scale-out Swift #
+# HP Helion 1.0 1.0 OpenStack&reg;: About Scale-out Swift #
 
 HP Helion OpenStack includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).
 

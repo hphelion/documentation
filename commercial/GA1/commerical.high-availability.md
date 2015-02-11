@@ -25,7 +25,7 @@ PageRefresh();
 
 <!---<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion 1.0 OpenStack&#174; 1.1: High Availability(HA)
+# HP Helion 1.0 1.0 OpenStack&#174; 1.1: High Availability(HA)
 
 This page covers the following topics:
 

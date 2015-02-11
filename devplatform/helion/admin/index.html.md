@@ -7,7 +7,7 @@ title: "Application Lifecycle Service Admin Guide"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Application Lifecycle Service Admin Guide {#helion-admin-guide}
+# HP Helion 1.0 1.0 Development Platform: Application Lifecycle Service Admin Guide {#helion-admin-guide}
 
 Application Lifecycle Service is HP's cloud application framework for creating a
 multi-language, secure and private Platform-as-a-Service (PaaS). This

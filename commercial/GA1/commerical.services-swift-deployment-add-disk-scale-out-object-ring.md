@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-disk-starter/"> NEXT &#9654</a> </p> --->
 
 
-#HP Helion 1.0 OpenStack&#174;: Add a Disk to a Scale-out Object Ring
+#HP Helion 1.0 1.0 OpenStack&#174;: Add a Disk to a Scale-out Object Ring
 
 Perform the following procedure to add a disk to a scale-out object ring. 
 

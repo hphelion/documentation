@@ -17,7 +17,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-# HP Helion 1.0 OpenStack&#174;: Tracking masked IP addresses when using network address translation (NAT)
+# HP Helion 1.0 1.0 OpenStack&#174;: Tracking masked IP addresses when using network address translation (NAT)
 
 Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion OpenStack cloud.  
 

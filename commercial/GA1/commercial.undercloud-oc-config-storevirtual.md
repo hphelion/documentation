@@ -21,7 +21,7 @@ PageRefresh();
 <!---<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
-# HP Helion 1.0 OpenStack&#174;: Working With StoreVirtual Backends
+# HP Helion 1.0 1.0 OpenStack&#174;: Working With StoreVirtual Backends
 
 Once you register the StoreVirtual clusters as per your requirements, you can use the overcloud option in the Horizon undercloud dashboard for the following tasks:
 

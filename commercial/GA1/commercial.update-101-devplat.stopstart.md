@@ -16,7 +16,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-# HP Helion 1.0 OpenStack&reg; Stopping and Starting the Development Platform Services During the Upgrade Process
+# HP Helion 1.0 1.0 OpenStack&reg; Stopping and Starting the Development Platform Services During the Upgrade Process
 
 If you have installed the [HP Helion Development Platform](/helion/devplatform/), you need to take the service control plane down before performing updates on the overcloud. 
 

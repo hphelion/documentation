@@ -7,7 +7,7 @@ title: "Organizations & Spaces"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Organizations & Spaces {#organizations-spaces}
+# HP Helion 1.0 1.0 Development Platform: Organizations & Spaces {#organizations-spaces}
 
 Organizations and Spaces are the main organizational units in Application Lifecycle Service.
 
