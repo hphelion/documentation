@@ -33,15 +33,14 @@ Zoning is a fabric-based service in a Storage Area Network (SAN), which enables 
 
 The Fibre Channel Zone Manager allows FC SAN Zone/Access control management in conjunction with Fibre Channel block storage. OpenStack Cinder supports the auto-zoning functionality from Icehouse release. 
 
-HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the type of configuration:
+HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to add Brocade Zone Manager configuration to` cinder.config`
 
-1. Add Brocade Zone Manager configuration to` cinder.config`
-2. Configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager.
-3. Configure HP Storevirtual as storage backend with Brocade Zone Manager.
+Caution:
 
-
-
-
+Please do follow recommended steps to configure HP 3PAR and HP Storevirtual as storage backend. Please do not modify any other file directly under hp_passthrough for HP 3PAR and HP Storevirtual integration. For more details refer step 5.
+Please strongly adhere to json format depicted in section . Otherwise, it might cause failure of update cloud.
+Please do not touch any other files in /tripleo/hp_passthrough/ folder.
+Please create file with prefix  as "overcloud" .
 
 <!----
 
@@ -98,24 +97,24 @@ Perform the following steps to configure Brocade Zone Manager.
 
 	b.  Add the following parameters in the brocade cinder configuration for each section.
 
-		{
-		     "section": "<SECTION_NAME>",
-		      "values": [
-		          {
-		              "option": "KEY_1",
-		              "value": "VALUE_1"
-		          },
-		          {
-		               "option": "KEY_2",
-		               "value": "VALUE_2"
-		          }
-		            .
-		            .
-		            .
-		        ]
-		 }
-	
-	
+        {
+              "section": "<SECTION_NAME>",
+              "values": [
+                  {
+                      "option": "KEY_1",
+                      "value": "VALUE_1"
+                  },
+                  {
+                       "option": "KEY_2",
+                       "value": "VALUE_2"
+                  }
+                    .
+                    .
+                    .
+                 ]
+        }
+      
+        
 	The sample cloud configuration file for Brocade Zone Manager integration is shown as follows:
 
 
@@ -219,6 +218,10 @@ Perform the following steps to configure Brocade Zone Manager.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
 
+You can also configure HP 3PAR Storeserv  as storage backend with Brocade Zone Manager.
+
+Configure HP Storevirtual as storage backend with Brocade Zone Manager.
+
 ##Configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager
 
 This section describes the procedure to configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager.
@@ -246,7 +249,6 @@ Perform the following steps to configure Brocade Zone Manager.
 4. Enter the following configuration and updated the `tripleo/configs/kvm-default.json`:
 
 	1. Generate `Config.json` from Sirius. Refer [Add HP 3PAR StoreServ CPG as Cinder backend](/helion/openstack/sirius/cli/workflow/) to generate `Config.json`.
-	2. Add `"zoning_mode": "fabric"` parameters under **Default** section in `Config.json`.
 	3. Add the updated JSON snippet in `kvm-default.json` as shown below:
 
 	
