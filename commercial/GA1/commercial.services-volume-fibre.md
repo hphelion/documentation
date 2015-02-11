@@ -27,13 +27,19 @@ PageRefresh();
 -->
 
 
-# HP Helion OpenStack&reg; 1.1 Cinder (Volume): Auto-zoning - Brocade Fibre Channel Zone Manager
+# HP Helion OpenStack&reg; 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager
 
 Zoning is a fabric-based service in a Storage Area Network (SAN), which enables you to group host and storage nodes that need to communicate. Zoning allows nodes to communicates with each other if they are the member of a same zone.
 
 The Fibre Channel Zone Manager allows FC SAN Zone/Access control management in conjunction with Fibre Channel block storage. OpenStack Cinder supports the auto-zoning functionality from Icehouse release. 
 
-HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Cinder needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to enable auto-zoning in Cinder using Brocade FC Zone Manager.
+HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the type of configuration:
+
+1. Add Brocade Zone Manager configuration to` cinder.config`
+2. Configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager.
+3. Configure HP Storevirtual as storage backend with Brocade Zone Manager.
+
+
 
 
 
@@ -49,20 +55,173 @@ FC zone manager automates the zone access management at attach/detach entry poin
 
 <a href="javascript:window.open('/content/documentation/media/commercial_cinder-fc-zone.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
 
-
-##Configuration of Brocade FC Zone Manager
-
-If block storage is configured to use a Fibre Channel volume driver that supports zone manager, update `kvm-default.json` to enable Fibre Channel Zone Manager.
-
-###Prerequisite
+##Prerequisite
 
 1. HP Helion OpenStack&#174; cloud is successfully deployed.
 2. Sirius service is running in the undercloud.
 3. HP StoreServ (3PAR) device is accessible from the undercloud.
 4. FC Brocade switches are accessible from nova compute and node where cinder services are running. 
-5. HP StoreServ (3PAR) device(running operating system v 3.1.3 or later) is accessible by 6. 6. Cinder and compute nodes are running in the overcloud.
+5. HP StoreServ (3PAR) device(running operating system v 3.1.3 or later) is accessible by 6. 6. Block Storage (Cinder) and compute nodes are running in the overcloud.
 7. Common Provisioning Groups (CPGs) are created for HP StoreServ (3PAR)
 8. HP StoreServ (3PAR) web services API server must be enabled and running. Also, HTTPS is enabled.
+
+
+
+
+## Add Brocade Zone Manager configuration to `cinder.config`
+
+If block storage is configured to use a Fibre Channel volume driver that supports zone manager, update `cinder.config` to enable Fibre Channel Zone Manager.
+
+###Steps for configuration
+
+Perform the following steps to configure Brocade Zone Manager.
+
+1. SSH to seed VM as root
+
+		ssh root@<seed IP address>
+
+2. Change the directory
+
+		cd /tripleo/hp_passthrough/
+
+3. Create a JSON file with prefix **overcloud**.  For example: `overcloud_brocade_config.json`
+
+4. Edit the JSON file with the following details:
+    
+	a.   Create the initial structure as follows:
+
+        {
+             "cinder": {
+                 "config": [
+                ]
+        }
+
+	b.  Add the following parameters in the brocade cinder configuration for each section.
+
+		{
+		     "section": "<SECTION_NAME>",
+		      "values": [
+		          {
+		              "option": "KEY_1",
+		              "value": "VALUE_1"
+		          },
+		          {
+		               "option": "KEY_2",
+		               "value": "VALUE_2"
+		          }
+		            .
+		            .
+		            .
+		        ]
+		 }
+	
+	
+	The sample cloud configuration file for Brocade Zone Manager integration is shown as follows:
+
+
+
+		{
+		    "cinder": {
+		        "config": [
+		            {
+		                "section": "DEFAULT",
+		                "values": [
+		                    {
+		                        "option": "zoning_mode",
+		                        "value": "fabric"
+		                    }
+		                ]
+		            },
+		            {
+		                "section": "fc-zone-manager",
+		                "values": [
+		                    {
+		                        "option": "brcd_sb_connector",
+		                        "value": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_client_cli.BrcdFCZoneClientCLI"
+		                    },
+		                    {
+		                        "option": "fc_fabric_names",
+		                        "value": "BRCD_FAB_A,BRCD_FAB_B"
+		                    },
+		                    {
+		                        "option": "zone_name_prefix",
+		                        "value": "helion-BZM"
+		                    },
+		                    {
+		                        "option": "fc_san_lookup_service",
+		                        "value": "cinder.zonemanager.drivers.brocade.brcd_fc_san_lookup_service.BrcdFCSanLookupService"
+		                    },
+		                    {
+		                        "option": "zone_driver",
+		                        "value": "cinder.zonemanager.drivers.brocade.brcd_fc_zone_driver.BrcdFCZoneDriver"
+		                    },
+		                    {
+		                        "option": "zoning_policy",
+		                        "value": "initiator-target"
+		                    }
+		                ]
+		            },
+		            {
+		                "section": "BRCD_FAB_A",
+		                "values": [
+		                    {
+		                        "option": "fc_fabric_address",
+		                        "value": "10.10.20.28"
+		                    },
+		                    {
+		                        "option": "fc_fabric_user",
+		                        "value": "admin"
+		                    },
+		                    {
+		                        "option": "fc_fabric_password",
+		                        "value": "password"
+		                    },
+		                    {
+		                        "option": "zoning_policy",
+		                        "value": "initiator-target"
+		                    },
+		                    {
+		                        "option": "zone_active",
+		                        "value": "true"
+		                    }
+		                ]
+		            },
+		            {
+		                "section": "BRCD_FAB_B",
+		                "values": [
+		                    {
+		                        "option": "fc_fabric_address",
+		                        "value": "10.10.20.29"
+		                    },
+		                    {
+		                        "option": "fc_fabric_user",
+		                        "value": "admin"
+		                    },
+		                    {
+		                        "option": "fc_fabric_password",
+		                        "value": "password"
+		                    },
+		                    {
+		                        "option": "zoning_policy",
+		                        "value": "initiator-target"
+		                    },
+		                    {
+		                        "option": "zone_active",
+		                        "value": "true"
+		                    }
+		                ]
+		            }
+		        ]
+		    }
+		}
+
+3. Run the installer script to update the overcloud.
+
+		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
+
+##Configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager
+
+This section describes the procedure to configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager.
 
 ###Steps for configuration
 
@@ -80,15 +239,14 @@ Perform the following steps to configure Brocade Zone Manager.
 
 		ls
 
-4. Edit `kvm-default.json`
+3. Edit `kvm-default.json`
 
 		vi kvm-default.json
 
-
-5. Enter the following configuration and updated the `tripleo/configs/kvm-default.json`:
+4. Enter the following configuration and updated the `tripleo/configs/kvm-default.json`:
 
 	1. Generate `Config.json` from Sirius. Refer [Add HP 3PAR StoreServ CPG as Cinder backend](/helion/openstack/sirius/cli/workflow/) to generate `Config.json`.
-	2. Add `"zoning_mode": "fabric"` parameters under **Default** section in `cinder.conf`.
+	2. Add `"zoning_mode": "fabric"` parameters under **Default** section in `Config.json`.
 	3. Add the updated JSON snippet in `kvm-default.json` as shown below:
 
 	
