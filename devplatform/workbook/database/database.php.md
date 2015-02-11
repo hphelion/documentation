@@ -3,6 +3,10 @@ layout: default-devplatform
 title: "HP Helion Development Platform PHP Database Sample"
 permalink: /helion/devplatform/workbook/database/php/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.0
+product-version3: HP Helion Development Platform 1.01
+product-version4: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->

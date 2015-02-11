@@ -3,6 +3,10 @@ layout: default-devplatform
 permalink: /als/v1/admin/
 product: devplatform
 title: "Application Lifecycle Service Admin Guide" 
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.0
+product-version3: HP Helion Development Platform 1.01
+product-version4: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
@@ -116,6 +120,7 @@ This section provides information on how to set up a standalone cluster and modi
 
 ##Reference {#reference}
 -   [Kato Command Reference](/als/v1/admin/reference/kato-ref/)
+-   [Client Command Reference](/als/v1/user/reference/client-ref)
 -   [Managing Groups, Users & Limits](/als/v1/user/deploy/orgs-spaces/#orgs-spaces)
 -   [Architectural Design](/als/v1/admin/reference/architecture/)
 -   [Glossary](reference/glossary)

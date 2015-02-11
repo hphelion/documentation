@@ -3,18 +3,17 @@ layout: trial-quick-start-devplatform
 title: "Quick Start Developer Trial"
 permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->
 
 <script>
-
 function PageRefresh {
 onLoad="window.refresh"
 }
-
 PageRefresh();
-
 </script>
 
 # HP Helion Development Platform: Quick Start Developer Trial {#top}

@@ -4,8 +4,7 @@ title: "HP Helion OpenStack Development Platform Installation"
 permalink: /helion/devplatform/install/
 product: devplatform
 product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.0
-product-version3: HP Helion Development Platform 1.01
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->

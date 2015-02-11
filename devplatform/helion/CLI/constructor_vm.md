@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/client/constructor
 product: devplatform
 title: "HP Application Lifecycle Service (ALS) Client Constructor Virtual Machine"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 

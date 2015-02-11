@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/admin/best-practices/logging-examples/
 product: devplatform
 title: "Log Drain Examples"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--UNDER REVISION-->
 

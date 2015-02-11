@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/admin/best-practices/
 product: devplatform
 title: "Best Practices"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--UNDER REVISION-->
 
@@ -26,8 +28,7 @@ title: "Best Practices"
 -   [Upgrading (v1.0 and later)](#upgrade)
 -   [Snapshots](#bestpractices-snapshots)
 -   [Persistent Storage](#storage)
-    -   [Relocating Services, Droplets, and
-        Containers](#relocating-services-droplets-and-containers)
+    -   [Relocating Services, Droplets, and Containers](#relocating-services-droplets-and-containers)
     -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
 <!--   [Server Monitoring with New Relic](#server-monitoring-with-new-relic)
 -   [System Monitoring with Nagios](#system-monitoring-with-nagios) -->

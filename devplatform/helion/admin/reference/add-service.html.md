@@ -3,11 +3,14 @@ layout: default-devplatform
 permalink: /als/v1/admin/reference/add-service/
 product: devplatform
 title: "Adding System Services"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.0
+product-version3: HP Helion Development Platform 1.01
+product-version4: HP Helion Development Platform 1.1
 ---
 <!--UNDER REVISION-->
 
 # HP Helion Development Platform: Adding System Services[](#adding-system-services "Permalink to this headline")
-===============================================================================
 
 The Application Lifecycle Service has three Service definitions:
 
