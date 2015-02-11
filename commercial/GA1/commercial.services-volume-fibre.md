@@ -7,7 +7,7 @@ product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
-authors: Sunitha K, Deeplai V, Binamra S
+authors: Sunitha K, Binamra S
 
 ---
 <!--UNDER REVISION-->
