@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/client/reference
 product: devplatform
 title: "HP Application Lifecycle Service (ALS) Command-Line Client Reference"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 

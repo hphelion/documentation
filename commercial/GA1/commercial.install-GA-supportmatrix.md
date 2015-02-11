@@ -79,7 +79,11 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)*
 - [DL580 G7](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=4142916)
 
-	*Legacy boot support only, no uEFI
+	*Legacy boot and uEFI support
+
+### HP Moonshot Servers
+- Anders
+- Scott
 
 ### HP ProLiant Tower Servers
 
@@ -145,7 +149,6 @@ Additional requirements are as follows:
 
 - The BIOS configured: 
 	- to the correct date and time
-	- all networks with the same date and time
 	- seed cloud host configured in UTC (Coordinated Universal Time)
 	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
 
@@ -154,7 +157,7 @@ Additional requirements are as follows:
 
 	**Important:** Since the installer currently uses only the first available disk, all servers must have RAID controllers pre-configured to present their storage as a single, logical disk. RAID across multiple physical discs is strongly recommended for both  performance and resilience.
 
-	On the controller and compute nodes, make sure the RAID array is congifured to reflect a total size of less than 4TB.
+	On the controller and compute nodes, make sure the RAID array is configured to reflect a total size of less than 4TB.
 
 - The [HP Dynamic Smart Array (B120i and B320i) controllers](http://h18013.www1.hp.com/products/servers/proliantstorage/arraycontrollers/dynamicsmartarray/index.html?jumpid=reg_r1002_usen_c-001_title_r0001) use a proprietary driver that is not included in Helion OpenStack. HP recommends the use of the full featured [Smart Array adapters](http://www8.hp.com/us/en/products/iss-controllers/index.html) (such as p220, p440, etc.) in order to achive the best set of features and performance.
 
@@ -234,7 +237,8 @@ The following table lists the minimum requirements required for installation of 
 <td rowspan="4"> Overcloud Compute Server </td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td> 512GB</td>
+<td> 512GB. 100GB is required for HP Moonshot Servers.</td>
+
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>Memory </td>
@@ -250,8 +254,87 @@ The following table lists the minimum requirements required for installation of 
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud Swift server </td>
+<td rowspan="4"> Overcloud Swift Server </td>
 <td rowspan="4">2</td>
+<td>Disk </td>
+<td> 512GB
+</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Memory </td>
+<td>32GB </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Network </td>
+<td> 1 x 10 GB NIC with PXE support</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>CPU </td>
+<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
+</tr>
+
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td rowspan="4"> Confirm with Gerry Fahy </td>
+<td rowspan="4">1</td>
+<td>Disk </td>
+<td> 512GB
+</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Memory </td>
+<td>32GB </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Network </td>
+<td> 1 x 10 GB NIC with PXE support</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>CPU </td>
+<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
+
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td rowspan="4">Confirm with Gerry Fahy</td>
+<td rowspan="4">???</td>
+<td>Disk </td>
+<td> 512GB
+</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Memory </td>
+<td>32GB </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Network </td>
+<td> 1 x 10 GB NIC with PXE support</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>CPU </td>
+<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
+</tr>
+
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td rowspan="4">Scaleout Swift Storage</td>
+<td rowspan="4">N</td>
+<td>Disk </td>
+<td> 512GB
+</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Memory </td>
+<td>32GB </td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Network </td>
+<td> 1 x 10 GB NIC with PXE support</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>CPU </td>
+<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
+</tr>
+
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td rowspan="4">Scaleout Swift Proxy</td>
+<td rowspan="4">N</td>
 <td>Disk </td>
 <td> 512GB
 </td>
@@ -272,6 +355,7 @@ The following table lists the minimum requirements required for installation of 
 
 **Notes:** 
 
+- Additional storage on the Swift server can be used as object storage.
 - For installations with KVM hypervisor support, one or more additional nodes are required for VSA block storage.
 
 - After the installation is complete, you can use the Block Storage and Object Operation services to add further storage capacity as allowed by your hardware.

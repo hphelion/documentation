@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/admin/cluster/
 product: devplatform
 title: "Cluster Setup"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->

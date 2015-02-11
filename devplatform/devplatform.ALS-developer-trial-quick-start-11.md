@@ -3,18 +3,17 @@ layout: trial-quick-start-devplatform
 title: "Quick Start Developer Trial"
 permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->
 
 <script>
-
 function PageRefresh {
 onLoad="window.refresh"
 }
-
 PageRefresh();
-
 </script>
 
 # HP Helion Development Platform: Quick Start Developer Trial {#top}
@@ -23,13 +22,13 @@ The Quick Start Developer Trial is the fastest way to create a sandbox environme
 1. [Before You Begin](#pre)
 2. [Step-by-Step Installation Instructions](#install)
 3. [After Installation](#after)
-4. [Explore Tiny Sample Applications](#samples)
+4. [Explore Sample Applications](#samples)
 5. [Troubleshooting and Termination](#terminate)
 
 ##Before You Begin {#pre}
 Before you can begin your Quick Start Developer Trial, you will need to do three things.
 
-1. Register for your free  <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
+1. Register for your free <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
 2. Download a copy of the ALS Constructor virtual machine image from your public cloud account.
 3. [Download and install](/als/v1/client/download) the *cfmgmt* command-line tool appropriate for your operating system.
 
@@ -76,7 +75,7 @@ After the *cfmgmt* tool creates the cluster, it presents you with the ALS Consol
 
 After you log into the Console, you may wish to access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
 
-## Explore Tiny Sample Applications {#samples}
+## Explore Sample Applications {#samples}
 Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
 
 ## Troubleshooting and Termination {#terminate}

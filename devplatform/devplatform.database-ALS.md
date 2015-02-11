@@ -3,6 +3,10 @@ layout: default-devplatform
 title: "Connecting the Database Service with ALS"
 permalink: /helion/devplatform/connectdatabase/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.01
+product-version3: HP Helion Development Platform 1.0
+product-version4: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->

@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/admin/cluster/harbor/
 product: devplatform
 title: "Harbor: TCP/UDP Port Service"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->

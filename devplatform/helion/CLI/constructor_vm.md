@@ -3,6 +3,8 @@ layout: default-devplatform
 permalink: /als/v1/client/constructor
 product: devplatform
 title: "HP Application Lifecycle Service (ALS) Client Constructor Virtual Machine"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 
@@ -10,52 +12,65 @@ title: "HP Application Lifecycle Service (ALS) Client Constructor Virtual Machin
 
 # HP Helion Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine
 
-The Constructor VM is a short-lived virtual machine that handles the provisioning of the Helion ALS services in a Helion public or private cloud. it can also function in a destructor mode to simplify the tear-down of the Helion ALS PaaS system.
+The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. it can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
 
-Nearly all management tasks for the Constructor VM (CVM) are easily performed from a panel within the Horizon web-based management console. 
-Horizon performs a call to Nova with *cloud-init* configuration data for the Helion ALS PaaS construction. The OpenStack&reg; metadata service is used to communicate ALS construction status back to the Horizon UI.
+Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. 
+Horizon performs a call to Nova with *cloud-init* configuration data to trigger the Helion ALS PaaS construction. The OpenStack&reg; metadata service is used to communicate ALS construction status back to the Horizon UI.
 
-There are a few features and [troubleshooting](#troubleshooting) options, however, that cannot be managed from within Horizon. For example, the Horizon UI currently does not support adding Service or DEA nodes to a system that is already in place. The CVM is also self-terminating by default, but this can be [overridden](#disable) to ensure that [log files](#logfile) are not lost.
+There are a few features and [troubleshooting](#troubleshooting) options, however, that cannot be managed from within Horizon. For example, it currently does not support [adding Service or DEA nodes](#growthnodes) to a system that is already in place. The CVM is also self-terminating by default, but this can be [overridden](#disable) from the command line for troubleshooting to ensure that [log files](#logfile) are not lost.
 
-There are two options for interacting with the CVM beyond Horizon: 
+1. [Launch](#launch) an instance of the Constructor Virtual Machine.
+2. [Generate a key pair](#keypair).
+1. Choose the appropriate boot option:
+	- [Use the Horizon wizard](#consoleboot).
+	- Use a [configuration file](#configfile).
+	- Manual boot without a configuration file for Helion [private cloud](#privatecloud).
+	- Manual boot without a configuration file for Helion [public beta](#publiccloud).
 
-- Create a *json* configuration file and perform a Nova call that boots the CVM using the values provided by the configuration file. 
+##Launch an Instance of the CVM Image {#launch}
+The Constructor VM image is available from your HP Helion OpenStack&reg; account. The default username is *debian*.
 
-- Perform a Nova call that boots the CVM with no configuration information. SSH into the CVM and then follow the prompts to run the configuration script. 
-
-##Download the Constructor Virtual Machine Image and Generate an SSH Key
-There are two parts to the Constructor Virtual Machine download. The first part is the CVM image itself. The second part is the SSH key, as the image does not contain a default password.
-
-###Download the Image
-The Constructor VM image is available for download with a free HP Helion OpenStack&reg; account. The default username is *debian*.
-
-1. Log into your account and select Region: US East. You will need to [create an account](https://helion.hpwsportal.com/catalog.html#/Home/Show) if you do not already have one.
-2. Log into **Horizon**.
-3. Use the central pulldown menu to select the **US East** region.
-3. Select the **Manage Services** panel and then **Activate Services**.
-4. In the **US East** section, in the **Compute** row, use the pulldown to select **Image Management**.
+1. If you don't already have a user account on the <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>, take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">free trial offer</a> to sign up now. You will be asked to provide a phone number for verification and a credit card during registration, but there is no charge.
+2. Log in to the [Horizon Console](https://horizon.hpcloud.com/) <br /> 
+3. Change to the **US East Region**.<br /><img src="media/quickstartA11.png"/><br /><br />
+3. Select the **Manage Services** panel and then click the **Activate Services** sub-panel.
+4. In the **US East** section, click **Activate Services**. <br /><img src="media/constructor_activateServices.png"/><br /><br />
+5. In the **Compute** row, use the pulldown to select **Image Management**. <br /><img src="media/constructor_imagemanagement.png"/><br /><br />
 5. In the list of available images, select **Public** images.
-7. Find the image named *HP Helion Development Platform CE - Application Lifecycle Service Installer A.B.C.D* where A.B.C.D is the most recent version number. Do not select any version marked as "Deprecated".
-8. Click the checkbox and then click **Launch** to download the most recent version.
+7. Find the **Image Name** *HP Helion Development Platform CE - Application Lifecycle Service Installer A.B.C.D* where A.B.C.D is the most recent version number. Do not select any version marked as "Deprecated".
+8. Click the checkbox next to the image name and then, under **Actions**, click **Launch**.
 
-### Generate an SSH Key
+## Generate a Key Pair {#keypair}
 The image does not include a password; the virtual machine is booted with an associated SSH key. 
 
-1. Log into your account and select Region: US East. You will need to [create an account](https://helion.hpwsportal.com/catalog.html#/Home/Show) if you do not already have one.
-2. Log into **Horizon**.
-3. Use the central pulldown menu to select the **US East** region.
-4. Select the **Project** panel and then select **Compute**.
-5. Select **Access & Security**.
-6. Select **Key Pairs**.
-7. Provide a name and click **Create**.
-8. When the key has been created, a download option will appear. Save the *.pem* file in the Home directory or anywhere you can easily find it again. 
+1. Click on the **Compute** sub-panel and then click **Access & Security**.
+2. Click on the **Key Pairs** tab and then click **+ Create Key Pair**.<br /><img src="media/quickstartE11.png"/></br></br>
+3. Enter a name in the **Key Pair Name** field and then click **Create Key Pair**.<br /><img src="media/quickstartkeypair"/></br></br>
+4. When prompted, save the *keyPairName.pem* file somewhere you can easily find it again. (If you are not automatically prompted to save the file, click the link to download it.) This file contains the RSA private key that you will need to SSH into your VM instance.
 
-##Boot the Constructor VM With a Configuration File
+## Boot Options
 
-The configuration file holds *cloud-init* data and provides it to the Constructor VM during the Nova boot process, 
+### Using the Helion Console {#consoleboot}
+Creating a cluster via the Horizon wizard is by far the simplest option, when possible. This method passes the configuration and environment variable values via a wizard that prompts the user to enter options.
 
-### Create the cloud-init Configuration File
-Here is an example of the *cloud-init* file in JSON format used for Helion ALS PaaS construction. There are three sections of key-value pairs related to ALS (PaaS), Openstack (IaaS), and Control.
+1. The user creates a cluster using the ALS Horizon wizard.
+2. Upon completion of the ALS Horizon wizard, the CVM boots.
+3. The */etc/rc.local* script runs and detects the *cloud-init* file (JSON) generated by the input that was provided to the Horizon wizard.
+4. The *cloud-init* JSON file is converted to *cluster.conf*, which is a ConfigFile file.
+5. The assemble.py script runs using the values in *cluster.conf*
+6. The CVM terminates. (Unless the termination is [overridden](#disable).)
+
+### Boot the VM using the Configuration File {#configfile}
+This method passes the configuration and environment variable values via a *cloud-init* data file created prior to booting the CVM.
+
+1. Perform a Nova call and pass in the path to a *cloud-init* data file. 
+2. The CVM boots.
+3. The */etc/rc.local* script runs and detects the *cloud-init* file.
+5. The *cloud-init* file is converted from JSON to ConfigFile format and renamed *cluster.conf*.
+6. The *assemble.py* script runs using the values contained in *cluster.conf*
+4. A Message of the Day is displayed, providing additional instructions to the user.
+
+Here is an example of the *cloud-init* file in JSON format used for Helion ALS PaaS construction. There are three sections of key-value pairs related to ALS (PaaS), OpenStack (IaaS), and Control. The configuration file provides these values to the Constructor VM during the Nova boot process. 
 
 <pre>
 {
@@ -104,18 +119,27 @@ Here is an example of the *cloud-init* file in JSON format used for Helion ALS P
 }
 </pre>
 
-###Boot the VM using the Configuration File
+### Boot Without a Configuration File (Helion private cloud) {#privatecloud}
+During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file. 
 
-1. Perform a Nova call with cloud-init data. 
+1. Create an instance of the ALS Installer and boot it manually, or perform a Nova boot of the image. Do not provide a path to a configuration file.
 2. The CVM boots.
-3. The */etc/rc.local* script runs and detects the cloud-init file.
-5. The cloud-init JSON file is converted to ConfigFile format.
-6. The *assemble.py* script runs using *cluster.conf*
-4. A Message of the Day is displayed, providing additional instructions to the user.
+3. The */etc/rc.local* script runs and does not detect a configuration file.
+4. The user logs into the CVM via SSH.
+5. A message prompts the user to run *configure.py* to produce a *cluster.conf* configuration file (ConfigFile format).
+6. The user has the option to manually edit the *cluster.conf* file.
+7. The *assemble.py* script runs automatically and applies the values contained in the *cluster.conf* file.
+8. The CVM terminates. (Unless the termination is [overridden](#disable).)
 
-##Boot the Constructor VM Without a Configuration File (Helion private cloud or public beta)
+### Boot Without a Configuration File (for public beta) {#publiccloud}
+This is the process used for the [Developer Quick-Start trial](/helion/devplatform/ALS-developer-trial-quick-start/). During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta. 
 
-If no *cloud-init* data is provided to the Constructor VM during the Nova boot process, the Constructor VM will boot and display a message of the day (MOTD) that instructs the user to run a configuration script.
+1. Create an instance of the ALS Installer and boot it manually, or perform a Nova boot of the image without providing a config file.
+2. The CVM boots.
+3. During the boot process the CVM will detect that a configuration file is not present.
+4. When the user logs in, the CVM will prompt the user to run the *trial_configure.py* script which will create a *cluster.conf* configuration file (ConfigFile format).
+5. The *assemble.py* script runs automatically and applies the values contained in the *cluster.conf* file.
+8. The CVM terminates. (Unless the termination is [overridden](#disable).)
 
 <pre>
 ##############################################################################
@@ -132,13 +156,10 @@ python ./trial_configure.py
 ##############################################################################
 </pre>
 
-Note that the actual script command line may change depending on the user's environment (public cloud / helion / beta / etc.)
 
+##Creating Growth Configuration Files {#growthfiles}
 
-
-##Creating Growth Configuration Files
-
-Examples of options that can be added to the configuration file. The first example adds DEA nodes to the cluster. The second example adds more services.
+Examples of options that can be added to the configuration file. The first example adds more DEA nodes to an existing cluster. The second example adds more services to the cluster.
 
 ###DEA growth configuration file example
 

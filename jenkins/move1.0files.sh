@@ -6,7 +6,7 @@ for i in `find . -path ./redirects -prune -o -name "*.md"`
 
 do
 
-	if [[ -n $(head -30 $i | grep -E '(^#[^#]|^ *#[^#])' | grep "HP Helion" | grep -v "Public Cloud") ]]; then
+	if [[ -n $(head -50 $i | grep -E '(^#[^#]|^ *#[^#])' | grep "HP Helion" | grep -v "Public Cloud") ]]; then
 
 		if [[ -n $(grep  "published: false" $i) ]]; then
 		   echo "Skipping $i"
