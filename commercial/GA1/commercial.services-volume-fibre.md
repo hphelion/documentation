@@ -249,11 +249,11 @@ This section explains the configuration of HP 3PAR Storeserv or HP Storevirtual 
 
 * To configure HP 3PAR as storage backend with Brocade Zone Manager.
 
-* To configure HP Storevirtual as storage backend with Brocade Zone Manager.
+* To configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 
 
-### To configure HP 3PAR as storage backend with Brocade Zone Manager.
+### To configure HP 3PAR as storage backend with Brocade Zone Manager
 
 To configure HP 3PAR as storage backend with Brocade Zone Manager perform the following steps.
 
@@ -262,14 +262,20 @@ To configure HP 3PAR as storage backend with Brocade Zone Manager perform the fo
 3. [Configure Brocade Zone Manager](#brocade-zone)
 3. Update overcloud.
 
-### To configure HP Storevirtual as storage backend with Brocade Zone Manager
-
-To configure HP Storevirtual as storage backend with Brocade Zone Manager perform the following steps.
-
-1. [Add StoreVirtual clusters as a backend for the cloud](#add-configure-storevirtual)
-2. Perform the steps 1 - 4 mentioned in [Reconfigure and update cloud](#reconfigure-update)
+1. [Add Backend](#add-backend)
+2. [Generate Configuration](#generate-config)
 3. [Configure Brocade Zone Manager](#brocade-zone)
-3. Update overcloud.
+4. [Update Overcloud](#update-overcloud) 
+
+
+### To configure HP StoreVirtual as storage backend with Brocade Zone Manager
+
+To configure HP StoreVirtual as storage backend with Brocade Zone Manager perform the following steps.
+
+1. [Add StoreVirtual clusters as a backend for the cloud](#add-backend) 
+2. [Generate configuration](#generate-config)
+3. [Configure Brocade Zone Manager](#brocade-zone)
+4. [Update Overcloud](#update-overcloud)
 
 
 <!----
