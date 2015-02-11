@@ -68,7 +68,7 @@ Perform the following steps to add and configure Storevirtual.
 * [Preview the cinder configuration for the StoreVirtual cluster](#preview-cluster)
 * [View the list of configured StoreVirtual backends](#view-configured-list) 
 
-### Register StoreVirtual clusters to the cloud inventory{#register-storevirtual}
+### Register StoreVirtual clusters to the cloud inventory {#register-storevirtual}
 
 Ensure that the cluster details entered in the command correspond with the actual cluster details from the Centralized Management Console (CMC) tool.
 
