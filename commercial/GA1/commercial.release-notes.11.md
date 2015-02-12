@@ -65,8 +65,6 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 **Transport Layer Security (TLS) support** HP Helion OpenStack now supports TLS protocols to protect internal traffic for Overcloud OpenStack API and endpoints. <!--HPM16-->
 
-**Ceph storage support** Ceph is an open source storage platform designed to present object, block, and file storage from a single distributed computer cluster. <!--HPM-30-->
-
 **HP Helion OpenStack Identity service** The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See [Identity Service Overview](/helion/openstack/services/identity/overview/).
 
 **Fibre Channel Zone Manager support** The OpenStack Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fibre Channel Zone Manager](/helion/openstack/services/volume/Fibre/).<!--HMP32-->
