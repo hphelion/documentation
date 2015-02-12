@@ -40,8 +40,6 @@ The following features have been added to HP Helion OpenStack, by release.
 
 **HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
-**Patch update functionality** -- The HP Helion OpenStack 1.01 release contains an Ansible-based helper script to facilitate the upgrade process. See [HP Helion OpenStack Update Overview](/helion/openstack/update/overview/101/).
-
 ### Features in HP Helion OpenStack 1.0 ### 
 
 **OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
