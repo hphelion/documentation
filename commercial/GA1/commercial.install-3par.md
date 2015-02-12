@@ -53,7 +53,7 @@ The following prerequisites need to be performed before configuring 3PAR StoreSe
 
    Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the overcloud controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
 
-To enable multipathing move the `/etc/multipath.conf` to  `/tmp`. An example to blacklist the local boot disk `/dev/sda` is shown below:
+To enable multipathing move the `/etc/multipath.conf` to  `/tmp`. 
 
 		mv /etc/multipath.conf /tmp
 		
