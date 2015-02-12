@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Metering Service Best Practices"
+title: "HP Helion OpenStack&#174; Metering Service (Ceilometer) Best Practices"
 permalink: /helion/openstack/services/reporting/bestpractices/
 product: commercial.ga
 
@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-#HP Helion OpenStack&#174; Metering Service: Best Practices and Optimization
+#HP Helion OpenStack&#174; Metering Service (Ceilometer): Best Practices and Optimization
 Configuration changes that improve reporting API and database responsiveness by keeping data storage to a reasonable level.
 
 - [Nova](#ceilandnova)

@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion OpenStack&#174; Metering Service Overview
+# HP Helion OpenStack&#174; Metering Service (Ceilometer) Overview
 The HP Helion OpenStack Metering service leverages the OpenStack Ceilometer service. A metering service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. No matter what purpose the data is used for, this service provides a reliable, consistent method for data collection.
 
 ##Installation

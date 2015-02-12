@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Identity Service Overview"
+title: "HP Helion OpenStack&#174; Configuring Horizon for Keystone v3"
 permalink: /helion/openstack/services/identity/configure/
 product: commercial.ga
 

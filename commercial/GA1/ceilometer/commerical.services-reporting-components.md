@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Metering Service Installation"
+title: "HP Helion OpenStack&#174; Metering Service (Ceilometer) Installation"
 permalink: /helion/openstack/services/reporting/components/
 
 product: commercial.ga
@@ -16,7 +16,7 @@ onLoad="window.refresh"
 
 PageRefresh();
 </script>
-#HP Helion OpenStack&#174; Metering Service Components
+#HP Helion OpenStack&#174; Metering Service (Ceilometer) Components
 
 The Metering service is included by the TripleO installer as part of the HP Helion OpenStack installation. During installation, the Metering service is automatically configured to collect data from the Nova, Cinder, Glance and Neutron services. 
 
