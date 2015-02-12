@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/ga/undercloud/oc/config/storevirtual/">Working With StoreVirtual Backends &#9654;</a>
+<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/undercloud/oc/config/storevirtual/">Working With StoreVirtual Backends &#9654;</a>
 </p> 
 
 
@@ -95,7 +95,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
 4d- **Get Cinder configuration for VSA backend**
 
-   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system.
+   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/undercloud/oc/config/storevirtual/) system.
 	
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
@@ -107,7 +107,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
    * The cinder.conf in the overcloud should be updated after updating the overcloud-config.json file in the seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from seed cloud. -->
+   * Execute [update cloud script](/helion/openstack/undercloud/oc/config/storevirtual/) from seed cloud. -->
 
 
 ##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
@@ -391,7 +391,7 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 ## Next Step {#next-steps}
 
-- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
+- [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)-  REQUIRED
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
