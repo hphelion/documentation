@@ -45,8 +45,6 @@ You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpclo
 
 If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). It will be helpful if you run the `run-sosreport` command on the affected nodes before contacting HP Customer Support. The `run-sosreport` command will gather specific reports that will help diagnose your issue.
 
-For troubleshooting tips for the HP Helion OpenStack update process, see [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/).
-
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
