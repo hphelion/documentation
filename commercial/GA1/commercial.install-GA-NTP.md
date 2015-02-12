@@ -32,17 +32,17 @@ All the Helion servers use UTC as a time zone.
 
 		sudo apt-get install ntp
 
-2. Verify that there are broadcasting ntp servers:
+2. Verify that there are broadcasting NTP servers:
 
 		ntpq -pd
 
 	**Note:** The NTP stratum must be 10 or higher in order to use as a source. If one is not available, you may be able to [fudge one](#fudge).
 
-3. Add NTP servers to /etc/ntp.conf
+3. Add NTP servers to `/etc/ntp.conf`.
 
 4. Configure system time zone in the `/usr/bin/tzselect` directory.
 
-	The output should be placed in /etc/profile and executed on the command line
+	The output should be placed in `/etc/profile` and executed on the command line
 
 	Note: if your NTP source is less than a stratum 10 you will not be able to properly sync the clients with the server. You can use the `fudge` command as described in [Stratum lower than 10](#fudge) in Troubleshooting.
 
@@ -50,21 +50,21 @@ All the Helion servers use UTC as a time zone.
 
 		"*LOCAL(0)") ntpq -pd
 
-	You can now point clients to your ntp server
+	You can now point clients to your NTP server
 
-6. Add your ntp server ip to the clinets "/etc/ntp.conf" file
+6. Add your NTP server ip to the clients `/etc/ntp.conf` file
 
 7. Configure system timezone
 
 		/usr/bin/tzselect
 
-	The output should be placed in /etc/profile and executed on the command line
+	The output should be placed in `/etc/profile` and executed on the command line
 
-8. Restart ntp service
+8. Restart NTP service
 
 		service ntp restart
 
-9. Verify that you have a connection to the ntp server
+9. Verify that you have a connection to the NTP server
 
 		ntpq -pd
 
@@ -111,7 +111,7 @@ HP Helion OpenStack uses stratum 10. If your NTP stratum is lower than 10, set u
 		server 127.127.1.0
 		fudge 127.127.1.0 stratum 10
 
-3. Restart ntp service
+3. Restart NTP service
 
 		service ntp restart
 
