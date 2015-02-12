@@ -107,25 +107,6 @@ The following features have been added to HP Helion OpenStack 1.0:
 
 The following are the known issues for HP Helion OpenStack:
 
-**Patch Update Issues**
-
-You might experience the following issues when performing the upgrade to HP Helion OpenStack 1.01:
-
-* It is recommended that you perform a [back-up](/helion/openstack/backup.restore/) before running the patch upgrade. If there is a problem with the upgrade, you can use the [restore process](/helion/openstack/backup.restore/) to return the controllers and database to their pre-update state. 
-
-* If you need to restore the overcloud controllers and overcloud database after running the patch upgrade, the registered vCenter clusters might have gotten powered off during the upgrade process. <!-- ALM 11335 -->
-
-	You will need to restart the clusters.
-
-* If using the Ansible-based helper script to update, the Ironic service might not restart because of a lock situation in Ironic. If you experience this issue, refer to [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/#ansible). <!-- CORE 2043 -->
-
-* The update overcloud process fails intermittently because of build number settings in the `ce_env.json` file. <!-- (CORE-1697) -->
-
-	If the update fails with the following error:
-	 `Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES) `
-
-	Ensure that tripleo/ce_env.json on seed node has right build number for the `build_number` and `installed_build_number`. See [Troublshooting](/helion/openstack/services/troubleshooting/#failure-update-overcloud).
-
 **Installation Issues**
 
 When installing HP Helion OpenStack you might experience the following issues:
