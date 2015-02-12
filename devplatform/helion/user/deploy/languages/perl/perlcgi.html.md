@@ -6,7 +6,7 @@ title: "Perl CGI"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Perl CGI[](#perl-cgi "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Perl CGI[](#perl-cgi "Permalink to this headline")
 ===================================================
 
 The 'perlcgi' framework can be used to run *any* CGI script, but (like

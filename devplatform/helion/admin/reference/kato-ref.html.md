@@ -6,7 +6,7 @@ title: "Kato Command Reference"
 ---
 <!--PUBLISHED-->
 
-#Kato Command Reference {#kato-command-reference}
+# HP Helion 1.0 Development Platform: Kato Command Reference {#kato-command-reference}
 
 Kato is the Application Lifecycle Service command line administration utility.
 

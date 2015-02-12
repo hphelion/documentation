@@ -5,7 +5,7 @@ published: false
 test: "Deploying Django applications"
 ---
 <!--PUBLISHED-->
-# HP Helion Development Platform: Deploying Django applications
+# HP Helion 1.0 Development Platform: Deploying Django applications
 
 
 Your app needs a top-level *wsgi.py* file with a global variable named

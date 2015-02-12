@@ -5,7 +5,7 @@ title: "Authentication"
 
 ---
 <!--PUBLISHED-->
-Authentication
+# HP Helion 1.0 Development Platform: Authentication
 ==========================================================
 The `Identity Service API <https://docs.hpcloud.com/identity>`_ is central to using the
 APIs for the services by HP Helion. Identity Service not only deals with authentication

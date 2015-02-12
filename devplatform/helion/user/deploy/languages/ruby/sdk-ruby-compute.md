@@ -5,7 +5,7 @@ published: false
 title: "Examples for working with HP Helion Compute Service"
 ---
 <!--PUBLISHED-->
-#Examples for working with HP Helion Compute Service
+# HP Helion 1.0 Development Platform: Examples for working with HP Helion Compute Service
 The HP Cloud services provides compute support using two abstractions: [a model layer](#ModelLayer) and [a request layer](#RequestLayer). Both layers are detailed below.  The code samples on this page can be executed from within a Ruby console (IRB):
 
         irb

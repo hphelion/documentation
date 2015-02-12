@@ -6,7 +6,7 @@ title: "Upgrading Application Lifecycle Service"
 ---
 <!--PUBLISHED-->
 
-Upgrading Application Lifecycle Service[](#upgrading-helion "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Upgrading Application Lifecycle Service[](#upgrading-helion "Permalink to this headline")
 =======================================================================
  [Before an upgrade](#before-an-upgrade)
         -   [Maintenance Mode](#maintenance-mode)

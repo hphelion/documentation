@@ -6,7 +6,7 @@ title: "Adding System Services"
 ---
 <!--PUBLISHED-->
 
-Adding System Services[](#adding-system-services "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Adding System Services[](#adding-system-services "Permalink to this headline")
 ===============================================================================
 
 Application Lifecycle Service has two Service definitions:

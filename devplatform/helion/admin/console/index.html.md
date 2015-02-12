@@ -7,7 +7,7 @@ title: "Management Console (Admin View)"
 ---
 <!--PUBLISHED-->
 
-#Management Console (Admin View) {#management-console-admin-view}
+# HP Helion 1.0 Development Platform: Management Console (Admin View) {#management-console-admin-view}
 
 Application Lifecycle Service's web interface is called the Management Console. 
 

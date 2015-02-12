@@ -4,7 +4,7 @@ permalink: /als/v1/user/deploy/languages/php/authentication/
 title: "Identity Service, Authentication, and the Service Catalog"
 ---
 <!--PUBLISHED-->
-#Identity Service, Authentication, and the Service Catalog
+# HP Helion 1.0 Development Platform: Identity Service, Authentication, and the Service Catalog
 
 The [Identity Service API](https://docs.hpcloud.com/identity) is central to using the
 APIs for the services by HP Helion. Identity Service not only deals with authentication

@@ -6,7 +6,7 @@ title: "Log Drain Examples"
 ---
 <!--PUBLISHED-->
 
-Log Drain Examples[](#log-drain-examples "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Log Drain Examples[](#log-drain-examples "Permalink to this headline")
 =======================================================================
   [Papertrail](#papertrail)
     -   [Loggly](#loggly)

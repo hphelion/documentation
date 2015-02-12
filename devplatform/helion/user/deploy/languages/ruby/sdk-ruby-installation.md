@@ -6,7 +6,7 @@ title: "Installing Ruby Fog Bindings for HP Helion"
 ---
 <!--PUBLISHED-->
 
-#Installing Ruby Fog Bindings for HP Helion
+# HP Helion 1.0 Development Platform: Installing Ruby Fog Bindings for HP Helion
 Before you can begin working with the Ruby Fog bindings, you have to
 install them (of course!). This page provides you with the installation
 information for the following operating systems:

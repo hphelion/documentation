@@ -7,7 +7,7 @@ title: "Customization"
 ---
 <!--PUBLISHED-->
 
-#Customization {#customization}
+# HP Helion 1.0 Development Platform: Customization {#customization}
 
 An Application Lifecycle Service PaaS can be extensively customized and themed. PaaS
 administrators can add or remove runtimes, frameworks and services from

@@ -7,7 +7,7 @@ title: "Known Issues"
 ---
 <!--PUBLISHED-->
 
-Known Issues[](#known-issues "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Known Issues[](#known-issues "Permalink to this headline")
 ===========================================================
 
 Buildpack config\_vars Deprecated[](#buildpack-config-vars-deprecated "Permalink to this headline")

@@ -6,7 +6,7 @@ title: "Detailed Configuration"
 ---
 <!--PUBLISHED-->
 
-#Detailed Configuration {#detailed-configuration} 
+# HP Helion 1.0 Development Platform: Detailed Configuration {#detailed-configuration} 
 
    [Changing the Password](#changing-the-password)
 

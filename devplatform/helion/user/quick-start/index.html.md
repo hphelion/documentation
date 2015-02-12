@@ -7,7 +7,7 @@ title: "Prerequisites"
 ---
 <!--PUBLISHED-->
 
-#Prerequisites {#index-0}
+# HP Helion 1.0 Development Platform: Prerequisites {#index-0}
 
 This guide covers the basics of using an Application Lifecycle Service (ALS) PaaS.
 

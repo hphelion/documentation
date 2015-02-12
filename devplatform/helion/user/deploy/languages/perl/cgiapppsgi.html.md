@@ -6,7 +6,7 @@ title: "CGI::Application::PSGI"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: CGI Application::PSGI[](#cgi-application-psgi "Permalink to this headline")
+# HP Helion 1.0 Development Platform: CGI Application::PSGI[](#cgi-application-psgi "Permalink to this headline")
 =============================================================================
 
 An app using the CGI::Application::PSGI framework needs an *app.psgi*

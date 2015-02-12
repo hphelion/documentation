@@ -6,7 +6,7 @@ title: "Management Console"
 ---
 <!--PUBLISHED-->
 
-Management Console[](#index-1 "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Management Console[](#index-1 "Permalink to this headline")
 ============================================================
 
 The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same

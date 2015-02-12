@@ -6,7 +6,7 @@ title: "Getting Started with the Javascript SDK"
 <!--PUBLISHED-->
 .. _get-started-javascript-sdk:
 
-#Getting Started with the Javascript SDK
+# HP Helion 1.0 Development Platform: Getting Started with the Javascript SDK
 
 The HP Cloud Javascript library is built on top of HP Helion APIs; taking away many of the
 complexities of working with the APIs to instead focus on writing applications in Nodejs.

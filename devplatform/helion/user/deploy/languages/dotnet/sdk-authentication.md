@@ -6,7 +6,7 @@ title: "Identity Service, Authentication, and the Service Catalog in .NET"
 ---
 <!--PUBLISHED-->
 
-Identity Service, Authentication, and the Service Catalog in .NET
+# HP Helion 1.0 Development Platform: Identity Service, Authentication, and the Service Catalog in .NET
 =================================================================
 The [Identity Service API](https://docs.hpcloud.com/identity) is central to using the
 APIs for the HP Helion OpenStack&reg; services. The Identity Service not only addresses authentication

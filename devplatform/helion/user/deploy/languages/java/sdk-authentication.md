@@ -6,7 +6,7 @@ title: "Authentication With Apache jclouds and HP Helion"
 <!--PUBLISHED-->
  
 <!--
-#Authentication With Apache jclouds and HP Helion 1.0
+# HP Helion 1.0 Development Platform: Authentication With Apache jclouds and HP Helion 1.0
 
 The `Identity Service API <https://docs.hpcloud.com/identity>`_ is central to using the
 APIs for the services by HP Helion. Identity Service not only deals with authentication

@@ -6,7 +6,7 @@ title: "Architectural Design"
 ---
 <!--PUBLISHED-->
 
-Architectural Design[](#architectural-design "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Architectural Design[](#architectural-design "Permalink to this headline")
 ===========================================================================
  [Roles](#roles)
         -   [Base](#base)

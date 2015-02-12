@@ -7,7 +7,7 @@ title: "Cluster Setup"
 ---
 <!--PUBLISHED-->
 
-#Cluster Setup {#index-0}
+# HP Helion 1.0 Development Platform: Cluster Setup {#index-0}
  [Roles](#roles)
     -   [Preparing the Core Node](#preparing-the-core-node)
         -   [CORE\_IP](#core-ip)

@@ -6,7 +6,7 @@ title: "Sample Applications"
 ---
 <!--PUBLISHED-->
 
-#Sample Applications {#index-0}
+# HP Helion 1.0 Development Platform: Sample Applications {#index-0}
 
 The Sample Applications are a collection of ready-to-run applications which can be
 deployed to Application Lifecycle Service with a couple of clicks. This interface uses the

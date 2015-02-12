@@ -6,7 +6,7 @@ title: "Dancer"
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Dancer[](#dancer "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Dancer[](#dancer "Permalink to this headline")
 ===============================================
 
 An app using the Dancer framework needs an *app.psgi* and

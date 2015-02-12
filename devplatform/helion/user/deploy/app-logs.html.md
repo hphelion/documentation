@@ -7,7 +7,7 @@ title: "Application Logs"
 ---
 <!--PUBLISHED-->
 
-#Application Logs {#application-logs}
+# HP Helion 1.0 Development Platform: Application Logs {#application-logs}
 
 Logs for applications running on Application Lifecycle Service are aggregated into streams
 so that data from multiple instances can be viewed together and

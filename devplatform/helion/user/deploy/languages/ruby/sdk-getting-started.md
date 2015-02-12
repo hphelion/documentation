@@ -5,7 +5,7 @@ published: false
 title: "Ruby Fog Bindings Examples for use with HP Helion"
 ---
 <!--PUBLISHED-->
-Ruby Fog Bindings Examples for use with HP Helion
+# HP Helion 1.0 Development Platform: Ruby Fog Bindings Examples for use with HP Helion
 =================================================
 
 This section includes code examples for working with Ruby Fog bindings
