@@ -27,7 +27,7 @@ As a user who is installing HP Helion OpenStack, can enter all required environm
 
 The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
 
-You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable text-based file to store information that can be used to transfer data between servers.
+You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable format contained in a text file for storing information that can be used to transfer data between servers.
 
 This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
 
