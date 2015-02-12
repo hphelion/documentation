@@ -27,9 +27,9 @@ PageRefresh();
 
 <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
 
-# HP Helion OpenStack&reg;: About Scale-out Swift #
+# HP Helion OpenStack&reg;: About Scale-out Object Storage (Swift) 
 
-HP Helion OpenStack includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).
+HP Helion OpenStack Object Storage includes two starter Swift All-in-One servers that are deployed by the initial installation. The installer auto-configures a portion of the first device recognized by the operating system and assigns it to the Swift entities (account, container and object rings).
 
 It is recommended to use these Starter servers as host for the following Swift services for scaled out Swift cluster:
 
@@ -42,11 +42,11 @@ You can also use the ringos utility to add additional drives to Swift Account an
 <!---
 We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *ringos* utility to add additional drives on that server to the Swift Account and Container rings. 
 ---->
-- [Step by step instructions for deploying additional Scale-out Swift Nodes with HP Helion OpenStack](/helion/openstack/services/swift/deployment-scale-out/)
+- [Step by step instructions for deploying additional Scale-out Object Storage (Swift) Nodes with HP Helion OpenStack](/helion/openstack/services/swift/deployment-scale-out/)
 
 ##Diagrams 
 
-The HP Helion OpenStack scale-out Swift architecture.
+The HP Helion OpenStack scale-out Object Storage (Swift) architecture.
 
 <a href="javascript:window.open('/content/documentation/media/swift_deployment-architecture-different-object-without-overcloud-controller-nodes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack Scale-out (opens in a new window)</a>
 

@@ -28,9 +28,9 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/swift/deployment-scale-out/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-disk-account-container/"> NEXT &#9654</a> </p> --->
 
 
-#HP Helion OpenStack&#174;: Extend a Swift Cluster
+#HP Helion OpenStack&#174;: Extend a Object Storage (Swift) Cluster
 
-HP Helion OpenStack&#174; allows you to extend Swift cluster sin any of the followings ways:
+HP Helion OpenStack&#174; allows you to extend Object Storage (Swift) cluster sin any of the followings ways:
 
 * [Add a New Scale-out Object Node]( /helion/openstack/services/swift/deployment/add-disk-object-node/) 
 * [Add a New Scale-out Proxy Node](/helion/openstack/services/swift/deployment/add-proxy-node/)

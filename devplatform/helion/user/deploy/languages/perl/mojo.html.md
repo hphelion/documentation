@@ -3,6 +3,9 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/mojo/
 published: false
 title: "Mojolicious"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 

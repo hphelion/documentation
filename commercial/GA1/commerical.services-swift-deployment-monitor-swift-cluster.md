@@ -29,16 +29,16 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Monitor Swift Cluster
+# HP Helion OpenStack&#174;: Monitor Object Storage (Swift) Cluster
 
-HP Helion OpenStack&reg; allows you to monitor Swift cluster in any of the followings ways:
+HP Helion OpenStack&reg; allows you to monitor Object Storage (Swift) cluster in any of the followings ways:
 
 
 * [Monitor Disk Usage]( /helion/openstack/services/object/swift/Monitor-disk/)
 * [Replication Status using Icinga](/helion/openstack/services/object/swift/replica-status/)
 * [Service Health Check](/helion/openstack/services/object/swift/health-check/)
 * [Check Health Services](/helion/openstack/services/object/swift/health-swift-services/)
-* [Swift Proxy Health Check]( /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/)
+* [Object Storage (Swift) Proxy Health Check]( /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/)
 * [Network Interface Card](/helion/openstack/services/object/swift/monitor-speed-of-NIC/)
 * [Mount Points](/helion/openstack/services/object/swift/mount-points/)
 * [Disk Drives](/helion/openstack/services/object/swift/disk-drive/)

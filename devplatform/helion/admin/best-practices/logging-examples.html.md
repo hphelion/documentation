@@ -5,11 +5,12 @@ product: devplatform
 title: "Log Drain Examples"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--UNDER REVISION-->
 
- # HP Helion Development Platform: Log Drain Examples[](#log-drain-examples "Permalink to this headline")
-=======================================================================
+# HP Helion Development Platform: Log Drain Examples[](#log-drain-examples "Permalink to this headline")
+
 Detailed instructions on how to use drains with third party log analysis
 software or services.
 

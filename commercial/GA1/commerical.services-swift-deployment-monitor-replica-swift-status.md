@@ -30,15 +30,15 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Monitor Node Replication Status using Icinga
 
-Cloud admins can use the ***icinga*** service running in the undercloud to monitor the replication status of nodes within the Swift deployment. 
+Cloud admins can use the ***icinga*** service running in the undercloud to monitor the replication status of nodes within the Object Storage (Swift) deployment. 
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment.)*
 * The Icinga service is active and running in the undercloud.
 
 
-##Monitoring Swift Replication Status
+##Monitoring Object Storage (Swift) Replication Status
 Perform the following steps to monitor the replication status:
 
 1. In the undercloud, log in to the **Icinga Dashboard** (http://&lt;<i>undercloud_IP</i>&gt;/icinga/). The default login credentials are as follows:

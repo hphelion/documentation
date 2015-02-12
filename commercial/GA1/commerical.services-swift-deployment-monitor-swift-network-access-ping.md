@@ -32,7 +32,7 @@ Cloud admins can use the ***Icinga*** service running in the undercloud to monit
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * The Icinga service is active and running in the undercloud.
 
 ##Monitoring the Network Access of the Host

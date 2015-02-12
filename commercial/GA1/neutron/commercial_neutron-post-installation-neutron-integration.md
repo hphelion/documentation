@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
 
 
-# HP Helion OpenStack&reg; 1.1 Neutron Integration
+# HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron) Integration
 
 This pages describes about the neutron integration:
 

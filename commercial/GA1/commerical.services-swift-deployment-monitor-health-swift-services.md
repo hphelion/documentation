@@ -27,14 +27,14 @@ PageRefresh();
 
 
 # HP Helion OpenStack&#174;1.1 : Monitor Health of Services using Icinga 
-Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the health status of the Swift services. 
+Cloud admins can use the ***Icinga*** service running in the undercloud to monitor the health status of the Object Storage (Swift) services. 
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment.)*
 * The Icinga service is active and running in the undercloud.
 
-##Monitoring the Health of Swift Services
+##Monitoring the Health of Object Storage (Swift) Services
 
 You can monitor the health status of the following Swift services:
 

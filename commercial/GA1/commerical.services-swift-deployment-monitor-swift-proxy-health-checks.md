@@ -27,18 +27,18 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174; 1.1: Monitor the Swift Proxy Health
+# HP Helion OpenStack&#174; 1.1: Monitor the Object Storage (Swift) Proxy Health
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  status of the Swift proxy.
 
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. <br> (*Starter Swift nodes are functional by default as they are part of cloud deployment*)
+* HP Helion OpenStack&#174; cloud is successfully deployed. <br> *(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring the Health of the Swift Proxy
+##Monitoring the Health of the Object Storage (Swift) Proxy
 
 Perform the following steps to monitor the health status of Swift proxy: 
 

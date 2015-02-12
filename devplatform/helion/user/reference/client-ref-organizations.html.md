@@ -4,6 +4,9 @@ title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/organizations/
 title: "Application Lifecycle Service Command Line Client Reference: Organizations"
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--UNDER REVISION-->
 
