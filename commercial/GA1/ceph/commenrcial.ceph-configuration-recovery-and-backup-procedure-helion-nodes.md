@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
-##Ceph Configuration Recovery and Backup Procedure HP Helion Nodes
+# Ceph Configuration Recovery and Backup Procedure HP Helion Nodes
 
 The following steps ensure the recovering of the lost configuration.
 

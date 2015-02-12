@@ -3,6 +3,9 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/python/
 published: false
 title: "Developing In Python"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 

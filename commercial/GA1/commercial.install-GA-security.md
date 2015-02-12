@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Configuring your Helion network securely"
 permalink: /helion/openstack/install/security/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION--> 

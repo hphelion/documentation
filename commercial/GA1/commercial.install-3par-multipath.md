@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Configuring Multipath for 3PAR"
 permalink: /helion/openstack/install/3par/multipath/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION-->

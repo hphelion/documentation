@@ -4,9 +4,7 @@ permalink: /als/v1/admin/cluster/autoscaling/
 product: devplatform
 title: "DEA Auto Scaling"
 product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.0
-product-version3: HP Helion Development Platform 1.01
-product-version4: HP Helion Development Platform 1.1
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 

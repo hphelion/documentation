@@ -3,6 +3,9 @@ layout: default-devplatform
 permalink: /als/v1/user/services/user-provided/
 product: devplatform
 title: "User-Provided Services"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 

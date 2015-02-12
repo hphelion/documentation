@@ -4,6 +4,8 @@ title: "Application Lifecycle Service Client Command Reference"
 permalink: /als/v1/user/reference/client-ref/placement/
 product: devplatform
 title: "Application Lifecycle Service Command Line Client Reference: Placement Zones"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->

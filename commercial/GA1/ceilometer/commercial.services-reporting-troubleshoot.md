@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Metering Service Troubleshooting"
+title: "HP Helion OpenStack&#174; Metering Service (Ceilometer) Troubleshooting"
 permalink: /helion/openstack/services/reporting/troubleshooting/
 product: commercial.ga
 
@@ -16,7 +16,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-#HP Helion OpenStack&#174; Metering Service: Troubleshooting
+#HP Helion OpenStack&#174; Metering Service (Ceilometer): Troubleshooting
 
 - [Logging](#logging)
 - [Messaging/Queuing Errors](#qerrors)

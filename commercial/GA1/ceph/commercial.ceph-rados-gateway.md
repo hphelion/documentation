@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> --->
 
-##Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW) for Helion OpenStack 1.1 Installations
+# Ceph Reliable Autonomic Distributed Object Store Gateway (RADOSGW) for Helion OpenStack 1.1 Installations
 
 The Ceph RADOS Gateway offers Swift API access to objects stored in Ceph. It is this object storage interface that uses the Ceph Object Gateway daemon - `radosgw`. `radosgw` FastCGI module for interacting with the Ceph storage cluster. For more details, refer to [http://http://ceph.com/docs/master/radosgw/](http://http://ceph.com/docs/master/radosgw/)
 

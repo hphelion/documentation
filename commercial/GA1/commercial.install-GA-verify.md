@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&reg; Verifying your installation"
 permalink: /helion/openstack/install/verify/
 product: community
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--PUBLISHED-->

@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack: Editing the JSON Environment Variables File for Installation"
 permalink: /helion/openstack/install/envars/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
+
 
 ---
 <!--UNDER REVISION-->
@@ -29,7 +34,7 @@ As a user who is installing HP Helion OpenStack, can enter all required environm
 
 The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
 
-You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable text-based file to store information that can be used to transfer data between servers.
+You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable format contained in a text file for storing information that can be used to transfer data between servers.
 
 This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
 
@@ -66,14 +71,14 @@ The following section describes the environmental variables that affect your ins
 	"network_seed_range_start": "192.168.130.4",
 	"network_seed_range_end": "192.168.130.22",
 
-**Note:** You must choose the `network_seed_range_end_xxx` and to be consistent with any values already chosen for `network_seed_range_end` and `network_seed_range_end`. All addresses must be on a common subnet.
+**Note:** The `network_seed_range`  addresses must be on the subnet defined by the `network_seed_ip` and `network_cidr` values. All addresses must be on a common subnet.
 
 `network_undercloud_range_start`, `network_undercloud_range_end` - Use the variables to specify an IP address range for the undercloud to administrate/manage the overcloud node(s). The IPs assigned by this variable are for the undercloud to distribute among the overcloud nodes. Make sure you assign at least one IP address for each baremetal server in your environment and an additional IP used as a virtual IP for HA.
 
 	"network_undercloud_range_start": "192.168.130.23",
 	"network_undercloud_range_end": "192.168.130.126"
 
-**Note:** You must choose the `network_undercloud_range_xxx` to be consistent with any values already chosen for `network_seed_ip` and `network_cidr`. All addresses must be on a common subnet.
+**Note:** The `network_undercloud_range` addresses must be on the subnet defined by the `network_seed_ip` and `network_cidr` values. All addresses must be on a common subnet.
 
 `customer_router_ip` - Use this value to set the interface IP on the external customer router needed for SVC network to function. The `customer_router_ip` will reside on the `bm_network`, facing undercloud server. In most of the cases it will be equal to `network_gateway`
 
@@ -98,14 +103,13 @@ Then the `start`, `end`, and `cidr` cannot be anything in the form of 10.x.y.z. 
 
 	"virtual_interface": "eth1",
 
-`undercloud_http_proxy` and `undercloud_https_proxy` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the undercloud.
+`undercloud_http_proxy` and `undercloud_https_proxy` - Use these variables to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the undercloud.
 
 	"codn": {
 		"undercloud_http_proxy": "http://19.65.175.150:8080",
 		"undercloud_https_proxy": "http://19.65.175.150:8080",
 
-
-`overcloud_http_proxy` and `overcloud_https_proxy` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the overcloud.
+`overcloud_http_proxy` and `overcloud_https_proxy` - Use these variables to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the overcloud.
 
 	"codn": {
 		"overcloud_http_proxy": "http://19.65.175.150:8080",

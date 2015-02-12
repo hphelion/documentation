@@ -4,8 +4,7 @@ title: "HP Helion OpenStack Development Platform Installation"
 permalink: /helion/devplatform/install/
 product: devplatform
 product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.0
-product-version3: HP Helion Development Platform 1.01
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->
@@ -227,7 +226,7 @@ In addition to the quota mentioned above, for every database instance that is cr
 
 2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
 
-### Download and Configure the Database Service
+### Download the Database Service
 
 In the **Configure Services** panel locate the Database Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
@@ -303,7 +302,7 @@ The **Marketplace Service** will be installed into the admin tenant of the Helio
 
 ### Connect to the Download Service
 
-1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under Admin. Then click on the **Configure Services** sub-panel.
+1. Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under Admin. Then click on the **Configure Services** sub-panel.
 
 2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
 
@@ -325,9 +324,45 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 	**Subnet Range** - The subnet to use for Marketplace
 	
-6. Do not attempt to install any Marketplace packages yet. Log out from the Horizon dashboard. 
+2. Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.
 
-7. Log back into the Horizon dashboard and click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
+3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
+	1. Identify the API server IPs on the SVC network:
+		 
+			nova list | awk '/marketplace-api/
+			{ print $14 }
+			' | cut -d "=" -f 2
+		
+		Note that you should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
+	1. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion OpenStack services:
+	 
+			keystone endpoint-list | awk '/8082/
+			{ print $6}
+			' | egrep -o "[0-9].[0-9].[0-9].[0-9]"
+
+	1. Update configuration on each of the Helion OpenStack controller nodes. <br /> For EACH node:
+		1. Connect to the controller.
+		2. Open the */etc/haproxy/manual/paas.cfg* file and add the following lines. <br /> **Note**: The last line should be repeated once for each API server identified in step 1.
+		 
+				listen marketplace_api
+				bind <Virtual IP from step 2>:8082
+				server marketplace_api0 <API server n's IP Address> check inter 2000 rise 2 fall 5
+
+		3. Open the */etc/iptables/iptables* file and add to the end of it:
+		 
+				-I INPUT -p tcp --dport 8082 -j ACCEPT
+
+		4.  Run the following command as root:
+		  
+				sudo iptables -I INPUT -p tcp --dport 8082 -j ACCEPT
+
+		5.  Reload the haproxy service configuration.
+		  
+				sudo service haproxy reload
+
+
+4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
+
 
 ## Troubleshooting<a name="troubleshooting"></a>
 

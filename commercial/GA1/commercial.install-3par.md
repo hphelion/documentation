@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Edition: HP StoreServ (3PAR) Support"
 permalink: /helion/openstack/install/3par/
 product: commercial
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION-->

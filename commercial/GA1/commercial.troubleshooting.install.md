@@ -32,7 +32,7 @@ HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of L
 * [Failure of Update overcloud](#failure-update-overcloud)
 *  [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
 *  [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
-*  [BIOS blocks are not set to correct date and time across all nodes](#BIOS-blocks-are-not-set-to-correct-date)
+*  [BIOS clocks are not set to correct date and time across all nodes](#BIOS-clocks-are-not-set-to-correct-date)
 *  [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
 *  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
 *  [Failure of Hp_ced_installer.sh](#failure-installer)
@@ -228,7 +228,7 @@ When node boots up on iLO console it shows node waiting for PXE boot on multiple
 <br><br>
 <hr>
 
-### BIOS blocks are not set to correct date and time across all nodes {#bios-blocks-are-not-set-to-correct-date}
+### BIOS clocks are not set to correct date and time across all nodes {#bios-clocks-are-not-set-to-correct-date}
 
 
 **System Behavior/Message**

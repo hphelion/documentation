@@ -4,12 +4,10 @@ title: "Working with the Marketplace"
 permalink: /helion/devplatform/marketplace/
 product: devplatform
 product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.01
-product-version3: HP Helion Development Platform 1.0
-product-version4: HP Helion Development Platform 1.1
+product-version2: HP Helion Development Platform 1.1
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 # HP Helion Development Platform: The Marketplace (Beta)
 The Marketplace, currently in beta, is a repository where teams can download the latest services they need to accelerate development of their applications. In its beta incarnation, the Marketplace has a single application: the Vertica 7 Community Edition. 
 
@@ -60,7 +58,7 @@ The following section will show how to create an instance of Vertica 7 Community
 	<img src="media/marketplace4.png"/>
 
 
-1. Click the Add to Env button from within the Vertica 7 Community Edition section. You will see an **Add Application to &lt;selected environment name&gt;** dialog. Agree to the Terms and Conditions, then scroll down to the bottom of the dialog and click on the Next button.
+1. Click the Add to Env button from within the Vertica 7 Community Edition section. You will see an **Add Application to &lt;selected environment name&gt;** dialog. For this example, set the Environment Name to **Test1**. Agree to the Terms and Conditions, then scroll down to the bottom of the dialog and click **Next**.
 
 
 	<img src="media/marketplace5.png"/>
@@ -98,26 +96,9 @@ The following section will show how to create an instance of Vertica 7 Community
 1. When this process has completed, you will see that the Vertica 7 Community Edition is available for consumption. Connection information is given in the **last operation** column.
 
 	<img src="media/marketplace11.png"/>
-1. Take the following steps to ensure that your newly deployed instance of Vertica is secure by modifying its default key pair:
-	1. Log into the instance using the private key you used during database creation.
-	
-			ssh dbadmin@<ip> -i <path to private key>
-	3. Remove the existing default key from the keys file.
-	 
-			cd ~/.ssh
-			grep -v "`cat id_rsa.pub`" authorized_keys > authorized_keys.tmp
-			mv authorized_keys.tmp authorized_keys
-			chmod 0600 authorized_keys
-			rm authorized_keys.tmp
-	9. Remove the existing default key:
-			
-			rm ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
 
-	11. Generate a new, unique default key pair:
 
-			ssh-keygen -b 2048 -t rsa -f /home/dbadmin/.ssh/id_rsa -q -N ""
-
-10.	You can also implement additional security by modifying the access rules for the security group associated with the environment that the Vertica instance was deployed into. In the example above, the environment name is **Test1**. The associated security group can be accessed from the Horizon panel as follows:
+10.	You can also implement additional security by modifying the access rules for the security group associated with the environment that the Vertica instance was deployed into. In the example, the environment name is **Test1**. The associated security group can be accessed from the Horizon panel as follows:
 	1.	In the Horizon console under **Compute** -> **Access & Security**, go to the **Security Groups** tab.
 	2.	Search for a group with the **Test1** string in the group name. Group names are auto-generated to ensure that they are unique.
 	3.	Click **Manage Rules**.

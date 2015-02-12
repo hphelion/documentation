@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Identity Service Overview"
+title: "HP Helion OpenStack&#174; Identity Service (Keystone) Overview"
 permalink: /helion/openstack/services/identity/using/
 product: commercial.ga
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/imaging/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Using the Identity Service #
+# HP Helion OpenStack&#174; Using the Identity Service (Keystone) #
 
 Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. 
 

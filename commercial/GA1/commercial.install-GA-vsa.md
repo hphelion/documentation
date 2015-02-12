@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
 permalink: /helion/openstack/install/vsa/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION-->
@@ -19,13 +23,13 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/undercloud/oc/config/storevirtual/">Working With StoreVirtual Backends &#9654;</a>
 </p> 
 
 
 # HP Helion OpenStack&#174; Installation: Deploy and Configure HP StoreVirtual VSA  
 
-This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.It covers the following topics:
+This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:
 
 * [Deployment and Configuration Procedure Overview](#high-level-view)
 * [Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux](#install-hp-storevirtual-cmc)
@@ -91,7 +95,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
 4d- **Get Cinder configuration for VSA backend**
 
-   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/ga/undercloud/oc/config/storevirtual/) system.
+   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/undercloud/oc/config/storevirtual/) system.
 	
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
@@ -103,7 +107,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
    * The cinder.conf in the overcloud should be updated after updating the overcloud-config.json file in the seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/ga/undercloud/oc/config/storevirtual/) from seed cloud. -->
+   * Execute [update cloud script](/helion/openstack/undercloud/oc/config/storevirtual/) from seed cloud. -->
 
 
 ##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
@@ -301,7 +305,7 @@ To create a cluster, do the following:
 
 3. You can choose **Add** or **Find** option to search the system. <br>Find option  starts searching for the nodes in the same subnet as that of CMC. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual system.
 
-	**Note:**To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check `/etc/vsa/vsa_network_config.json` file.
+	**Note:**To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check `/mnt/state/vsa/vsa_network_config.json` file.
 
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc3.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Add option (opens in a new window)</a>
@@ -385,28 +389,9 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 11. Click **Add** to add the node to the group that you specified.<br> The node is added to the management group.
 
-## Next Steps {#next-steps}
+## Next Step {#next-steps}
 
-- [Working with HP Helion OpenStack&#174; Undercloud Horizon Dashboard](/helion/openstack/undercloud/manage/resources/overview/)-(Recommended)
-
-- [Sirius CLI](/helion/openstack/sirius/cli/workflow/)
-
-<!--- [Working with HP StoreVirtual VSA](/helion/openstack/ga/undercloud/storage/storevirtual/)-  REQUIRED
-
-
-
-	<!---  Configure HP StoreVirtual **(REQUIRED)** HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without an external array hardware. It eliminates the need for external shared storage required to implement block storage features. It uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management.
-
-	For detailed intructions, see the  document. 
-- [Working With StoreVirtual Backends](/helion/openstack/ga/undercloud/oc/config/storevirtual/)-  REQUIRED
-
-	Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
-
-	For detailed installation intructions, see [DNSaaS Installation and Configuration](/helion/openstack/ga/install/dnsaas/).-->
-
-<!---## Next step
-
-Configure HP 3PAR StoreServ, see [HP Helion OpenStack Commercial: HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).-->
+- [Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)-  REQUIRED
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

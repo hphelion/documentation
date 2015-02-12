@@ -3,7 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Support Matrix"
 permalink: /helion/openstack/support-matrix/
 product: commercial.ga
-
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 ---
 <!--UNDER REVISION-->
 
