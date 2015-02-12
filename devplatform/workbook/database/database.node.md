@@ -4,9 +4,11 @@ title: "HP Helion Development Platform Node Database Sample"
 permalink: /helion/devplatform/workbook/database/node/
 product: devplatform
 product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.0
-product-version3: HP Helion Development Platform 1.01
-product-version4: HP Helion Development Platform 1.1
+product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: Security Engineer
+role3: ISV Developer 
+role4: Service Developer
 
 ---
 <!--PUBLISHED-->

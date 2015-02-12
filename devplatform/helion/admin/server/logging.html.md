@@ -5,29 +5,39 @@ product: devplatform
 title: "Log Streams"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: ISV Developer 
+role3: Service Developer
+role4: Network Administrator
+role5: Systems Administrator 
+role6: Security Engineer
 
 ---
 <!--UNDER REVISION-->
 
 # HP Helion Development Platform: Log Streams {#log-streams}
-   [Logyard](#logyard)
-    -   [Drains](#drains)
-        -   [System Drains](#system-drains)
-        -   [Log Format](#log-format)
-        -   [Saving Custom Log Formats](#saving-custom-log-formats)
-        -   [Custom Drains](#custom-drains)
-        -   [Application Drains](#application-drains)
-        -   [Drain Status](#drain-status)
-        -   [Keys](#keys)
-            -   [apptail](#apptail)
-            -   [event](#event)
-            -   [systail](#systail)
-        -   [Managing the systail stream](#managing-the-systail-stream)
-    -   [Configuration](#configuration)
-        -   [Drain Timeouts](#drain-timeouts)
-        -   [User Drain Limit](#user-drain-limit)
-        -   [Apptail Limits](#apptail-limits)
-    -   [Debugging Logyard](#debugging-logyard)
+
+
+- [Logyard](#logyard)
+- [Debugging Logyard](#debugging-logyard)
+-   [Drains](#drains)
+      -   [System Drains](#system-drains)
+      -   [Log Format](#log-format)
+      -   [Saving Custom Log Formats](#saving-custom-log-formats)
+      -   [Custom Drains](#custom-drains)
+      -   [Application Drains](#application-drains)
+      -   [Drain Status](#drain-status)
+-   [Keys](#keys)
+   	-   [apptail](#apptail)
+   	-   [event](#event)
+   	-   [systail](#systail)
+   -   [Managing the systail stream](#managing-the-systail-stream)
+-   [Configuration](#configuration)
+    -   [Drain Timeouts](#drain-timeouts)
+   -   [User Drain Limit](#user-drain-limit)
+   -   [Apptail Limits](#apptail-limits)
+
+
 
 Application and system logs in Application Lifecycle Service are aggregated into streams
 which can be viewed, tailed, filtered, and/or sent via drains to other

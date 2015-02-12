@@ -5,6 +5,10 @@ permalink: /helion/devplatform/msgaas/als/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer 
+role2: ISV Developer
+role3: Service Developer
+role4: Systems Administrator
 
 ---
 <!--PUBLISHED-->

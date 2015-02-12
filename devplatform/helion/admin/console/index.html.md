@@ -5,6 +5,14 @@ product: devplatform
 title: "Management Console (Admin View)"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: Security Engineer
+role3: ISV Developer 
+role4: Service Developer
+role5: Network Administrator
+role6: Systems Administrator 
+role7: Net Ops Engineer 
+role8: NOC Engineer 
 
 ---
 <!--UNDER REVISION-->
