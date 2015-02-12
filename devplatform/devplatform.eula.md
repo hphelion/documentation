@@ -3,6 +3,8 @@ layout: default-devplatform
 title: "HP Helion Development Platform Software License Terms" 
 permalink: /helion/devplatform/eula/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->

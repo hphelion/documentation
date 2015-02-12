@@ -14,6 +14,9 @@ Role6: Security Engineer
 role7: Application Developer 
 role8: ISV Developer
 role9: Service Developer
+Writer: Jayme P
+SME1: Ankur R
+SME2: Steven M
 
 ---
 <!--UNDER REVISION-->

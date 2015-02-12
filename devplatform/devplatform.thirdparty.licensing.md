@@ -5,6 +5,7 @@ permalink: /helion/devplatform/3rd-party-license-agreements/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+writer: Jayme P
 
 ---
 <!--PUBLISHED-->
