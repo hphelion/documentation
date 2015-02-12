@@ -56,18 +56,7 @@ do
 done
 
 git add .
-git commit -m "test" .
-
-git checkout master
-
-for i in `echo $original_files`
-do
-	sed -i  's/\(^#[^#]*HP Helion\)/\1 1.0/' $i
-done
-
-git add .
-git commit -m "adding 1.0 version string to doc titles" .
-git checkout rename-test
+git commit -m "Name and permalink changes for 1.1 versioning" .
 
 for i in `echo $original_files`
 do
