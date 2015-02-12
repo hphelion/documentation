@@ -35,11 +35,11 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. <br> (*Starter Swift nodes are functional by default as they are part of cloud deployment*)
+* HP Helion OpenStack&#174; cloud is successfully deployed. <br> *(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring the File Ownership of Swift
+##Monitoring the File Ownership of Object Storage (Swift)
 
 The `/etc/swift/` has Swift user permission and the files inside the `/etc/swift/` has root permission. So, the Swift user has read permission on the files present inside the `/etc/swift/`. The script verifies the `/etc/swift/ -parent` folder for **swift:swift** ownership.
 

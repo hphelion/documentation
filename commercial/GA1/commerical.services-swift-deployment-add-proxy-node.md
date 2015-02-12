@@ -12,7 +12,7 @@ role2: Storage Architect
 authors: Keshava HP, Binamra S
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -38,7 +38,7 @@ This topic shows how to add a proxy node to the store account and container ring
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br> *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br> *(Starter Object Sotrage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 
 

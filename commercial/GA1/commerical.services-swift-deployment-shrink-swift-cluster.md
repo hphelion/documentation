@@ -10,6 +10,7 @@ product-version4: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
 authors: Binamra S
+
 ---
 <!--PUBLISHED-->
 
@@ -26,7 +27,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
-#  HP Helion OpenStack&#174;: Shrink Swift Cluster
+#  HP Helion OpenStack&#174;: Shrink Object Storage (Swift) Cluster
 
 HP Helion OpenStack&reg; allows you to remove Swift cluster in any of the followings ways:
 

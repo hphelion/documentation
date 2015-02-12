@@ -41,7 +41,7 @@ Perform the following procedure to add new scale-out object node.
 
 ##Prerequisite {#preq}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br> *(Starter Swift nodes are functional by default as they are part of cloud deployment)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br> *(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 
 ##Deploying new object nodes {#deploy-new-object-node}
@@ -50,7 +50,7 @@ Perform the following procedure to add new scale-out object node.
 
 ## Adding nodes and disks to object-ring:1 {#add-disk-node} 
 
-Once the Swift nodes are deployed, the required disks must be formatted and mounted them before adding them to the Swift cluster. 
+Once the Object Storage (Swift) nodes are deployed, the required disks must be formatted and mounted them before adding them to the Swift cluster. 
 
 1. Log in to the undercloud from the seed.
     

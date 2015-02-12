@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Provisioning Swift Node(s) 
+# HP Helion OpenStack&#174;: Provisioning Object Storage (Swift) Node(s) 
 
 This page describes the procedure to provision scale-out Swift nodes. 
 <!---
@@ -47,7 +47,7 @@ You can check the health of the starter nodes using the following command. All n
 
 	# nova list
 
-##Adding physical server for scale-out Swift {#adding-physical-server-for-scale-out-Swift}
+##Adding physical server to scale-out Object Storage (Swift) {#adding-physical-server-for-scale-out-Swift}
 
 You must add a server to the cloud inventory to handle the increased number of nodes. 
 
@@ -127,7 +127,7 @@ Perform the following steps to add a physical server:
 
  	The newly created server should appear in the list.
 
-##Provision Swift node {#provision-swift-node}
+##Provision Object Storage (Swift) node {#provision-swift-node}
 
 **Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes. 
 
@@ -163,7 +163,8 @@ For example:
 
 	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
-## Verify Swift node deployment {#verify-swift-node-deployment}
+## Verify Object Storage (Swift) node deployment {#verify-swift-node-deployment}
+
 Verify that the new nodes were created and are functioning properly using the following commands:
 
 1. Log in to the undercloud from the seed cloud.

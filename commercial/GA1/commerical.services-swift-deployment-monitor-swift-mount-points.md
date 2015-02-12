@@ -31,20 +31,20 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1: Monitoring the Mount Points using Icinga
 
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  mount point of the Swift storage node(s).
+The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  mount point of the Object Storage (Swift) node(s).
 
 
 ##Prerequisites
 
-* HP Helion OpenStack&#174; cloud is successfully deployed. <br> (*Starter Swift nodes are functional by default as they are part of cloud deployment*)
+* HP Helion OpenStack&#174; cloud is successfully deployed. <br> (*Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment*)
 * The Icinga service is active and running in the undercloud
 
 
-##Monitoring Mount Points of Swift 
+##Monitoring Mount Points of Object Storage (Swift) 
 
 Ensure the correctness of mount points using Icinga.
 
-Perform the following steps to monitor the mount points of Swift disk:
+Perform the following steps to monitor the mount points of Object Storage (Swift) disk:
 
 1. In the undercloud Horizon dashboard, log in to the **Icinga Dashboard** (http://&lt;Undercloud_IP&gt;/icinga/). The default login credentials are as follows:
 		

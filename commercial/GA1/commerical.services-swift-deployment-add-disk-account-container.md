@@ -37,7 +37,7 @@ Proxy nodes store account and container objects. When new disks are added to a p
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)*
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment.)*
 * Scale-out object-ring:1 has been deployed.
 * At least one Scale-out Proxy node has been deployed.
 * All of the rings generated **must** be preserved, preferably at more than one location. Swift requires these rings to be consistent across all nodes. 

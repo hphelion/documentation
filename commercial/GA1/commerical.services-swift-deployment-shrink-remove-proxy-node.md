@@ -186,25 +186,27 @@ Once the disks are removed from the ring, remove the scale-out proxy node by rem
 
 ##Verify the node removal {#verify-node-removal}
 
-	# nova list
+1. Execute the following command:
+	
+		# nova list
 
-The following sample displays the removal of  **89581cb1-9c2e-46d6-8e0b-aa4518e796dc**
+	The following sample displays the removal of  **89581cb1-9c2e-46d6-8e0b-aa4518e796dc**
 
-	+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
-	| ID                                   | Name                                                  | Status | Task State | Power State | Networks            |
-	+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
-	| b58c1e9e-e0ad-444b-9f1c-75ada39686c9 | ov--soswiftstorage1-SwiftScaleoutObject1-57jwgsqsr7bf | ACTIVE | -          | Running     | ctlplane=192.0.2.39 |
-	| d65bdf2f-7152-4ab5-956a-b3732921d2e8 | ov--soswiftstorage2-SwiftScaleoutObject2-j4zr4dqbrk2r | ACTIVE | -          | Running     | ctlplane=192.0.2.40 |
-	| da0d0ccc-f230-435e-b06f-6d33e0bccbb9 | overcloud-ce-controller-SwiftStorage0-y2dnvniiil3x    | ACTIVE | -          | Running     | ctlplane=192.0.2.25 |
-	| 858e43e5-f165-4eec-9204-f2d446e7b92b | overcloud-ce-controller-SwiftStorage1-chc74b6u5oug    | ACTIVE | -          | Running     | ctlplane=192.0.2.26 |
-	| f637ef36-7df3-474b-ac58-984e87c91719 | overcloud-ce-controller-controller0-22tyyitx66hl      | ACTIVE | -          | Running     | ctlplane=192.0.2.24 |
-	| ca9aa23d-aa7a-4e3f-9549-94c0fd4fb8d1 | overcloud-ce-controller-controller1-lvw4ihhm2emf      | ACTIVE | -          | Running     | ctlplane=192.0.2.27 |
-	| dfecd038-1771-49d4-942c-c4601b2f62e3 | overcloud-ce-controller-controllerMgmt0-i752ehzde534  | ACTIVE | -          | Running     | ctlplane=192.0.2.23 |
-	| a8f60488-d257-4e71-b42d-72c1d5aee7d2 | overcloud-ce-novacompute1-NovaCompute1-5zry7wzanhhs   | ACTIVE | -          | Running     | ctlplane=192.0.2.28 |
-	+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
+		+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
+		| ID                                   | Name                                                  | Status | Task State | Power State | Networks            |
+		+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
+		| b58c1e9e-e0ad-444b-9f1c-75ada39686c9 | ov--soswiftstorage1-SwiftScaleoutObject1-57jwgsqsr7bf | ACTIVE | -          | Running     | ctlplane=192.0.2.39 |
+		| d65bdf2f-7152-4ab5-956a-b3732921d2e8 | ov--soswiftstorage2-SwiftScaleoutObject2-j4zr4dqbrk2r | ACTIVE | -          | Running     | ctlplane=192.0.2.40 |
+		| da0d0ccc-f230-435e-b06f-6d33e0bccbb9 | overcloud-ce-controller-SwiftStorage0-y2dnvniiil3x    | ACTIVE | -          | Running     | ctlplane=192.0.2.25 |
+		| 858e43e5-f165-4eec-9204-f2d446e7b92b | overcloud-ce-controller-SwiftStorage1-chc74b6u5oug    | ACTIVE | -          | Running     | ctlplane=192.0.2.26 |
+		| f637ef36-7df3-474b-ac58-984e87c91719 | overcloud-ce-controller-controller0-22tyyitx66hl      | ACTIVE | -          | Running     | ctlplane=192.0.2.24 |
+		| ca9aa23d-aa7a-4e3f-9549-94c0fd4fb8d1 | overcloud-ce-controller-controller1-lvw4ihhm2emf      | ACTIVE | -          | Running     | ctlplane=192.0.2.27 |
+		| dfecd038-1771-49d4-942c-c4601b2f62e3 | overcloud-ce-controller-controllerMgmt0-i752ehzde534  | ACTIVE | -          | Running     | ctlplane=192.0.2.23 |
+		| a8f60488-d257-4e71-b42d-72c1d5aee7d2 | overcloud-ce-novacompute1-NovaCompute1-5zry7wzanhhs   | ACTIVE | -          | Running     | ctlplane=192.0.2.28 |
+		+--------------------------------------+-------------------------------------------------------+--------+------------+-------------+---------------------+
 
 
-4.	On the seed VM, update the `/root/tripleo/configs/kvm-custom-ips.json` file to reflect new scale number of swift scale-out proxy node. 
+2.	On the seed VM, update the `/root/tripleo/configs/kvm-custom-ips.json` file to reflect new scale number of swift scale-out proxy node. 
 
 		"so_swift_proxy_scale": 2, 
 
