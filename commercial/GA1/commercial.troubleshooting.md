@@ -21,15 +21,13 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p> --->
 
 
-# HP Helion OpenStack&#174;  Troubleshooting
+# HP Helion OpenStack&#174;  Troubleshooting 
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
 You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Troubleshooting_Installation_Final.pdf">*HP Helion OpenStack 1.1 Installation Troubleshooting Guide*</a> or review the following topics on line:
 
 * [Installation Troubleshooting](/helion/openstack/services/troubleshooting/install/)
-
-* [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
 
 * [ESX and OVSvAPP Troubleshooting](/helion/openstack/services/troubleshooting/esx/)
 
