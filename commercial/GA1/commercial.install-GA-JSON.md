@@ -96,14 +96,14 @@ Then the `start`, `end`, and `cidr` cannot be anything in the form of 10.x.y.z. 
 
 	"virtual_interface": "eth1",
 
-`undercloud_http_proxy` and `undercloud_https_proxy` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the undercloud.
+`undercloud_http_proxy` and `undercloud_https_proxy` - Use these variables to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the undercloud.
 
 	"codn": {
 		"undercloud_http_proxy": "http://19.65.175.150:8080",
 		"undercloud_https_proxy": "http://19.65.175.150:8080",
 
 
-`overcloud_http_proxy` and `overcloud_https_proxy` - Use these variables to variable to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the overcloud.
+`overcloud_http_proxy` and `overcloud_https_proxy` - Use these variables to set the IP address for the CODN (Sherpa) service to download images for patches or other software packages available for purchase and download into the overcloud.
 
 	"codn": {
 		"overcloud_http_proxy": "http://19.65.175.150:8080",
