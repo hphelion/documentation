@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion 1.0 OpenStack&reg; Monitoring the Update
+# HP Helion OpenStack&reg; Monitoring the Update
 
 To assess the progress of HP Helion Cloud update, the progress utility provides an overview of the update status.    
 

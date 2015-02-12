@@ -3,11 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/other-frameworks/
 product: devplatform
 title: "Generic & Standalone Frameworks"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Generic & Standalone Frameworks[](#generic-standalone-frameworks "Permalink to this headline")
+# HP Helion Development Platform: Generic & Standalone Frameworks[](#generic-standalone-frameworks "Permalink to this headline")
 ===============================================================================================
 
 The Generic and Standalone frameworks are for applications that might

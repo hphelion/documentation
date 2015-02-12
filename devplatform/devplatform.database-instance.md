@@ -3,11 +3,13 @@ layout: default-devplatform
 title: "Working with the Database Service"
 permalink: /helion/devplatform/databaseservice/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Using the Database Service 
+# HP Helion Development Platform: Using the Database Service 
 The database service provides lifecycle services for MySQL database instances. Lifecycle services include provisioning, configuration, patching, backups, restores, and monitoring that can be administered from either a CLI interface, RESTful APIs or the Horizon dashboard. 
 
 These instances can then be utilized by your applications to provide standard datastore/back-end functionality.  

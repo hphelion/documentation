@@ -3,10 +3,12 @@ layout: default-devplatform
 title: "Deploying the Application Lifecycle Service"
 permalink: /helion/devplatform/deploy/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster
+# HP Helion Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster
 This document explains the process to configure and deploy an Application Lifecycle Service (ALS) cluster from the Horizon user interface.
 
 The document covers the following sections:

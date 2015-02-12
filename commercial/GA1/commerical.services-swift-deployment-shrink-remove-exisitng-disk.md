@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion 1.0 OpenStack&#174;: Remove an existing Disk from Object Nodes
+# HP Helion OpenStack&#174;: Remove an existing Disk from Object Nodes
 
 Perform the following steps to remove a disk from object nodes.
 
@@ -37,7 +37,7 @@ Perform the following steps to remove a disk from object nodes.
 
 ##Prerequisite {#prer}
 
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br>(*Starter Swift nodes are functional by default as they are part of the cloud deployment*).
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 *  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Take a backup of the rings before any operation.
@@ -138,6 +138,6 @@ The following sample displays the output of the above command:
 
 **Related topics**
 
-* [Shrink Swift Cluster]( /helion/openstack/services/object/swift/shrink-cluster/)
+* [Shrink Object Storage (Swift) Cluster]( /helion/openstack/services/object/swift/shrink-cluster/)
 
 

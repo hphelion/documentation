@@ -3,10 +3,12 @@ layout: default-devplatform
 permalink: /als/v1/admin/cluster/cloud-init/
 product: devplatform
 title: "cloud-init"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Using the cloud-init Package {#cloud-init}
+# HP Helion Development Platform: Using the cloud-init Package {#cloud-init}
 
 [cloud-init](https://help.ubuntu.com/community/CloudInit) (the Ubuntu
 package for handling early initialization of cloud instances) can be

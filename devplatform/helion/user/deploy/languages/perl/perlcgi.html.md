@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/perlcgi/
 published: false
 title: "Perl CGI"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Perl CGI[](#perl-cgi "Permalink to this headline")
+# HP Helion Development Platform: Perl CGI[](#perl-cgi "Permalink to this headline")
 ===================================================
 
 The 'perlcgi' framework can be used to run *any* CGI script, but (like

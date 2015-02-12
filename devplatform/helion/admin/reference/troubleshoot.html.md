@@ -3,10 +3,12 @@ layout: default-devplatform
 permalink: /als/v1/admin/reference/troubleshoot/
 product: devplatform
 title: "Troubleshooting"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Troubleshooting {#troubleshooting}
+# HP Helion Development Platform: Troubleshooting {#troubleshooting}
 
 - [Server Log Files](#server-log-files)
 -   [health\_manager.log](#health-manager-log)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Volume Operations Service Overview"
+title: "HP Helion OpenStack&#174; Volume Operations Service (Cinder) Overview"
 permalink: /helion/openstack/services/volume/overview/
 product: commercial.ga
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/reporting/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/horizon/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Block Storage Volume Operations Overview #
+# HP Helion OpenStack&#174; Block Storage Volume Operations (Cinder) Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 

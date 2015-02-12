@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&reg; Verifying your installation"
 permalink: /helion/openstack/install/verify/
 product: community
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--PUBLISHED-->
@@ -21,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&reg; Verifying your installation
+# HP Helion OpenStack&reg; Verifying your installation
 
 Once your installation is complete, you should make sure you can connect to your HP Helion OpenStack cloud. You can accomplish this in any of the following ways:
 

@@ -3,6 +3,13 @@ layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
 permalink: /helion/openstack/sirius/cli/workflow/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Sunitha K, Deepali V, Vandana S
 
 ---
 <!--PUBLISHED-->
@@ -22,7 +29,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
 
 
-# HP Helion 1.0 OpenStack&#174;: Sirius CLI Workflow
+# HP Helion OpenStack&#174;: Sirius CLI Workflow
 
 This page describes the workflow for adding HP StoreVirtual and HP 3PAR StoreServ integration to your cloud using the Sirius CLI.
 
@@ -61,7 +68,7 @@ Perform the following steps to add and configure Storevirtual.
 * [Preview the cinder configuration for the StoreVirtual cluster](#preview-cluster)
 * [View the list of configured StoreVirtual backends](#view-configured-list) 
 
-### Register StoreVirtual clusters to the cloud inventory{#register-storevirtual}
+### Register StoreVirtual clusters to the cloud inventory {#register-storevirtual}
 
 Ensure that the cluster details entered in the command correspond with the actual cluster details from the Centralized Management Console (CMC) tool.
 
@@ -284,11 +291,11 @@ The sample output of the above command is given below:
 
 ##Reconfigure and update cloud {#reconfigure-update}
 
-* [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
-* [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
-* [Update Overcloud configuration JSON](#update-overcloud-json)
-* [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
-* [Update Overcloud](#update-overcloud) 
+1. [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
+2. [Generate StoreServ backend configuration JSON](#generate-storeserv-config)
+3. [Update Overcloud configuration JSON](#update-overcloud-json)
+4. [Load the configuration and export required environment variables to prepare for updating cloud](#load-config-export)
+5. [Update Overcloud](#update-overcloud) 
 
 The backends configured in the undercloud Sirius database will not be effective until the overcloud Cinder configuration is updated.
 

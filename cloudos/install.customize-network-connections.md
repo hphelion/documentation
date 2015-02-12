@@ -113,7 +113,7 @@ In Team mode, configure the virtual connections to use both trunks. For example:
 * Map eth0, eth2, and eth4 to trunk 1.
 * Map eth1, eth3, and eth5 to trunk 2.
 
-Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. When the Admin Node allocates the bare-metal node, Cloud OS should create a teaming NIC using the NIC pairs.
+Note that in this example, the eth0 and eth1 interfaces belongs to same VLAN; the same is true for the eth2 and eth3 pair, and the eth4 and eth5 pair. When the Admin Node allocates the baremetal node, Cloud OS should create a teaming NIC using the NIC pairs.
 
 Here's a partial example of how the Team mode configuration could look on this Connections dialog:
 

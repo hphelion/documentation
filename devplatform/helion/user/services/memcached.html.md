@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/services/memcached/
 product: devplatform
 title: "Memcached Service"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Memcached Service[](#memcached-service "Permalink to this headline")
+# HP Helion Development Platform: Memcached Service[](#memcached-service "Permalink to this headline")
 =====================================================================
 
 Memcached is an in-memory key-value store used for caching by many web

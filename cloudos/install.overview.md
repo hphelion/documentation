@@ -82,10 +82,10 @@ The following diagram illustrates the HP Cloud OS environment.
 ### HP Cloud OS Administration Node
 
 The HP Cloud OS Administration Node (Admin Node) hosts the Operational Dashboard that deploys
-private and hybrid-only cloud infrastructure environments by network booting the managed bare-metal
+private and hybrid-only cloud infrastructure environments by network booting the managed baremetal
 servers, which are the Controller and Compute nodes. Using Chef Server and recipes,
-the services are installed on the managed bare-metal servers. **Note:** In this and subsequent HP Cloud OS topics, 
-we refer to these managed bare-metal servers more simply as "managed nodes."
+the services are installed on the managed baremetal servers. **Note:** In this and subsequent HP Cloud OS topics, 
+we refer to these managed baremetal servers more simply as "managed nodes."
 
 ### Services
 

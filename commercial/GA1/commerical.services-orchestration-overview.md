@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Orchestration Service Overview"
+title: "HP Helion OpenStack&#174; Orchestration Service (Heat) Overview"
 permalink: /helion/openstack/services/orchestration/overview/
 product: commercial.ga
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Orchestration Service Overview#
+# HP Helion OpenStack&#174; Orchestration Service (Heat) Overview#
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 

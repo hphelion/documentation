@@ -3,78 +3,69 @@ layout: default-devplatform
 permalink: /als/v1/admin/server/operations/
 product: devplatform
 title: "Common Server Operations"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Common Server Operations {#common-server-operations}
-[Server Status](#server-status)
-        -   [Starting and Stopping Roles](#starting-and-stopping-roles)
-        -   [System Shutdown](#system-shutdown)
-    -   [Setting the Time Zone](#setting-the-time-zone)
-    -   [Resetting the VM](#resetting-the-vm)
-    -   [Monitoring The Application Lifecycle Service
-        Server](#monitoring-the-helion-server)
-        -   [Management Console](#management-console)
-        -   [New Relic](#new-relic)
-        -   [Creating an Admin User](#creating-an-admin-user)
-        -   [System Monitoring with
-            Nagios](#system-monitoring-with-nagios)
-    -   [Server Backup, Import, and
-        Export](#server-backup-import-and-export)
+# HP Helion Development Platform: Common Server Operations {#common-server-operations}
+
+
+- [Server Status](#server-status)
+- [Starting and Stopping Roles](#starting-and-stopping-roles)
+-   [System Shutdown](#system-shutdown)
+-   [Setting the Time Zone](#setting-the-time-zone)
+-   [Resetting the VM](#resetting-the-vm)
+-   [Monitoring The Application Lifecycle Service Server](#monitoring-the-helion-server)        -   [Management Console](#management-console)
+-   [New Relic](#new-relic)
+-   [Creating an Admin User](#creating-an-admin-user)
+-   [System Monitoring with Nagios](#system-monitoring-with-nagios)
+-   [Server Backup, Import, and Export](#server-backup-import-and-export)
 
 Server Status[](#server-status "Permalink to this headline")
 -------------------------------------------------------------
 
 To check the status of Application Lifecycle Service:
 
-    $ kato status
+    kato status
 
 This will list all the roles configured to run on the VM, and whether
 they are running, stopped, or starting.
 
-Roles are logical groups of processes (see [*kato role
-info*](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-info)) which can
-be inspected individually with [*kato process
-...*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-list)
-commands.
+Roles are logical groups of processes (see [kato role info](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-info)) which can be inspected individually with [kato process
+...](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-list) commands.
 
-In particular, the [*kato process
-ready*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
-command is useful for determining if the system is in a state to receive
-[*configuration commands*](/als/v1/admin/server/configuration/#server-configuration). For
-example, to check that all processes for the configured roles are ready:
+In particular, the [kato process ready](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready) command is useful for determining if the system is in a state to receive [configuration commands](/als/v1/admin/server/configuration/#server-configuration). For example, to check that all processes for the configured roles are ready:
 
-    $ kato process ready all
+    kato process ready all
 
 ### Starting and Stopping Roles[](#starting-and-stopping-roles "Permalink to this headline")
 
-To control the Application Lifecycle Service roles, use `kato` start,
+To control the Application Lifecycle Service roles, use the *kato* start,
 stop and restart commands:
 
-    $ kato stop
+    kato stop
 
 Without any further options the operation applies to all Application Lifecycle Service roles.
 To start, stop or restart individual roles, specify them after the
 desired command:
 
-    $ kato stop mysql
+    kato stop mysql
 
 ### System Shutdown[](#system-shutdown "Permalink to this headline")
 
-To safely shutdown the VM, run the `shutdown`
-command as root:
+To safely shut down the VM, run the *shutdown* command as root:
 
-    $ sudo shutdown -h now
+    sudo shutdown -h now
 
 Setting the Time Zone[](#setting-the-time-zone "Permalink to this headline")
 -----------------------------------------------------------------------------
 
-At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set
-this to your local time zone, use the `kato op set_timezone` command. When run without arguments, the command will prompt
+At first boot, the time zone of the Application Lifecycle Service VM is set to UTC. To set this to your local time zone, use the `kato op set_timezone` command. When run without arguments, the command will prompt
 for time zone selection, but the time zone can be set non-interactively
 with the `--timezone` option. For example:
 
-    $ kato op set_timezone --timezone America/Chicago
+    kato op set_timezone --timezone America/Chicago
 
 You can also use the `tzselect` command to find the
 appropriate time zone string for your location.
@@ -83,9 +74,7 @@ Resetting the VM[](#resetting-the-vm "Permalink to this headline")
 -------------------------------------------------------------------
 
 If you would like to return an Application Lifecycle Service VM to its original
-"out-of-the-box" configuration, use the [*kato node
-reset*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
-command. This command has two options:
+"out-of-the-box" configuration, use the [*kato node reset*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) command. This command has two options:
 
 -   `kato node reset factory`: Resets everything.
     The host will behave as it did on first boot (creating a new
@@ -109,60 +98,36 @@ Monitoring The Application Lifecycle Service Server[](#monitoring-the-helion-ser
 
 ### Management Console[](#management-console "Permalink to this headline")
 
-The [*Management
-Console*](/als/v1/user/console/#management-console) has a
-Settings page that allows an administrator to monitor the server
-component and services, and restart or stop services as necessary.
+The [*Management Console*](/als/v1/user/console/#management-console) has a Settings page that allows an administrator to monitor the server component and services, and restart or stop services as necessary.
 
 ### New Relic[](#new-relic "Permalink to this headline")
 
-Please see [*New Relic Server
-Monitoring*](/als/v1/admin/best-practices/#bestpractices-nrsysmond). New
-Relic can also be used to [*monitor
-apps*](/als/v1/user/deploy/newrelic/#newrelic).
+Please see [*New Relic Server Monitoring*](/als/v1/admin/best-practices/#bestpractices-nrsysmond). New Relic can also be used to [monitor apps](/als/v1/user/deploy/newrelic/#newrelic).
 
 ### Creating an Admin User[](#creating-an-admin-user "Permalink to this headline")
 
 The easiest way to add admin users to Application Lifecycle Service is via the Management
-Console under [*Users*](/als/v1/admin/console/customize/#console-users). The
-Management Console will prompt to create the initial admin user the
-first time you use it.
+Console under [Users](/als/v1/admin/console/customize/#console-users). The Management Console will prompt to create the initial admin user the first time you use it.
 
-If you do not have access to the Management Console, create a user by
-logging in to the micro cloud or Core node controller via
-`ssh` or through the VM [*tty
-console*](/als/v1/user/reference/glossary/#term-tty-console) (as the
-`helion` user) and run
-`helion register`:
+If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM [tty console](/als/v1/user/reference/glossary/#term-tty-console) as the *helion* user and run *helion register*:
 
-    $ helion target api.helion-xxxx.local
-    $ helion register superuser@example.net
+    helion target api.helion-xxxx.local
+    helion register superuser@example.net
 
-Grant administrative privileges using `kato config`:
+Grant administrative privileges using *kato config*:
 
-    $ kato config push cloud_controller_ng admins superuser@example.net
+    kato config push cloud_controller_ng admins superuser@example.net
 
 Subsequent new users can be added remotely with the Helion client by an admin user.
 
 ### System Monitoring with Nagios[](#system-monitoring-with-nagios "Permalink to this headline")
 
 If Nagios is installed on your server nodes, you can use it to monitor
-and report resource utilization. See the [*Best Practices
-Guide*](/als/v1/admin/best-practices/#bestpractices-nagios) for details.
+and report resource utilization. See the [Best Practices](/als/v1/admin/best-practices/#bestpractices-nagios) documentation for details.
 
-Server Backup, Import, and Export[](#server-backup-import-and-export "Permalink to this headline")
----------------------------------------------------------------------------------------------------
+## Server Backup, Import, and Export[](#server-backup-import-and-export "Permalink to this headline")
 
 The import and export functionality can be used to do regular backups,
-or to move the Application Lifecycle Service configuration from one server to another. It is
-also a means of upgrading the Application Lifecycle Service VM without having to install
-everything from the ground up.
+or to move the Application Lifecycle Service configuration from one server to another. It is also a means of upgrading the Application Lifecycle Service VM without having to install everything from the ground up.
 
-Please see our [*Best
-Practices*](/als/v1/admin/best-practices/#bestpractices-controller-migration)
-for details on how to
-[*export*](/als/v1/admin/best-practices/#bestpractices-migration-export)
-and
-[*import*](/als/v1/admin/best-practices/#bestpractices-migration-import)
-your data.
-
+Please see the [Best Practices](/als/v1/admin/best-practices/#bestpractices-controller-migration) documentation for details on how to [export](/als/v1/admin/best-practices/#bestpractices-migration-export) and [import](/als/v1/admin/best-practices/#bestpractices-migration-import) your data.

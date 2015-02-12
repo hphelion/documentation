@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
 permalink: /helion/openstack/install/overview/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--PUBLISHED-->
@@ -21,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/prereqs/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Installation Overview 
+# HP Helion OpenStack&#174; Installation Overview 
 
 The HP Helion OpenStack installation follows the standard [TripleO deployment model](https://wiki.openstack.org/wiki/TripleO), creating a seed, an undercloud and an overcloud.
 

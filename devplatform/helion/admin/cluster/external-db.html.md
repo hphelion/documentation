@@ -3,11 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/admin/cluster/external-db/
 product: devplatform
 title: "External Data Services"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: External Data Services {#external-data-services}
+# HP Helion Development Platform: External Data Services {#external-data-services}
 [General Principles](#general-principles)
     -   [MySQL](#mysql)
     -   [PostgreSQL](#postgresql)

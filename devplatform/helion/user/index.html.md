@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/
 product: devplatform
 title: "Application Lifecycle Service User Guide"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Application Lifecycle Service User Guide {#helion-user-guide}
+# HP Helion Development Platform: Application Lifecycle Service User Guide {#helion-user-guide}
 
 Application Lifecycle Service is a polyglot Platform-as-a-Service (PaaS). You can easily
 deploy applications written in a wide range of languages and web

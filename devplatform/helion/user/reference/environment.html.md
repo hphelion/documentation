@@ -3,10 +3,12 @@ layout: default-devplatform
 permalink: /als/v1/user/reference/environment/
 product: devplatform
 title: "Environment Variables"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Environment Variables {#environment-variables}
+# HP Helion Development Platform: Environment Variables {#environment-variables}
 
 Application Lifecycle Service exposes a number of predefined [environment variables](http://manpages.ubuntu.com/manpages/man7/environ.7) during runtime, including hook processing, cron jobs and ssh commands.
 

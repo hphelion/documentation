@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/services/port-service/
 product: devplatform
 title: "Port Service (Harbor)"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Port Service (Harbor) {#port-service-harbor}
+# HP Helion Development Platform: Port Service (Harbor) {#port-service-harbor}
 
 HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless [processes:
 web:](/als/v1/user/deploy/manifestyml/#web) is set to

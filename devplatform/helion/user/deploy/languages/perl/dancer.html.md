@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/dancer/
 published: false
 title: "Dancer"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Dancer[](#dancer "Permalink to this headline")
+# HP Helion Development Platform: Dancer[](#dancer "Permalink to this headline")
 ===============================================
 
 An app using the Dancer framework needs an *app.psgi* and

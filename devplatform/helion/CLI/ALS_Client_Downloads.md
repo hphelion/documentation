@@ -3,9 +3,12 @@ layout: default-devplatform
 permalink: /als/v1/client/download
 product: devplatform
 title: "HP Application Lifecyle Service (ALS) Client"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: HP Application Lifecycle Service (ALS) Client
+# HP Helion Development Platform: HP Application Lifecycle Service (ALS) Client
 
 Click the download link that is appropriate for your operating system.
 

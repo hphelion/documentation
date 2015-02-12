@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/mason/
 published: false
 title: "Mason"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Mason[](#mason "Permalink to this headline")
+# HP Helion Development Platform: Mason[](#mason "Permalink to this headline")
 =============================================
 
 Mason is a templating system that can handle web requests directly via

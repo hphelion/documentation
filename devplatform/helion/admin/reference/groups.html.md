@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/admin/reference/groups/
 product: devplatform
 title: "Managing Groups, Users & Limits (DEPRECATED)"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Managing Groups, Users & Limits (DEPRECATED)[](#managing-groups-users-limits-deprecated "Permalink to this headline")
+# HP Helion Development Platform: Managing Groups, Users & Limits (DEPRECATED)[](#managing-groups-users-limits-deprecated "Permalink to this headline")
 ===================================================================================================================
 
 ##* Warning *

@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/
 published: false
 title: "Perl"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Perl {#perl}
+# HP Helion Development Platform: Perl {#perl}
 ===========================================
 
 Perl applications deployed to Application Lifecycle Service using the default 'perl'

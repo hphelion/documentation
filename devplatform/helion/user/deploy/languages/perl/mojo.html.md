@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/mojo/
 published: false
 title: "Mojolicious"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Mojolicious[](#mojolicious "Permalink to this headline")
+# HP Helion Development Platform: Mojolicious[](#mojolicious "Permalink to this headline")
 =========================================================
 
 Mojolicious is a web framework with a native PSGI interface which is

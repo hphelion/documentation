@@ -3,10 +3,14 @@ layout: default-devplatform
 title: "HP Helion Development Platform Node Messaging Sample"
 permalink: /helion/devplatform/workbook/messaging/node/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.0
+product-version3: HP Helion Development Platform 1.01
+product-version4: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Node RabbitMQ Messaging Sample
+# HP Helion Development Platform: Node RabbitMQ Messaging Sample
 This  very simple Node.js web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to, and working with RabbitMQ on the Helion Development Platform.
 
 ##Prerequisites

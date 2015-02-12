@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/clojure/
 product: devplatform
 title: "Clojure"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Clojure {#clojure}
+# HP Helion Development Platform: Clojure {#clojure}
 
 Application Lifecycle Service supports deploying Clojure applications using
 [leiningen](https://github.com/technomancy/leiningen).

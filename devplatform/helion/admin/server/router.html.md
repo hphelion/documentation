@@ -3,10 +3,12 @@ layout: default-devplatform
 permalink: /als/v1/admin/server/router/
 product: devplatform
 title: "Router"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: ALS Router[](#index-1 "Permalink to this headline")
+# HP Helion Development Platform: ALS Router[](#index-1 "Permalink to this headline")
 
 - [Settings](#settings)
 - [WebSockets](#websockets)

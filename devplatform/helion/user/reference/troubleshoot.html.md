@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/reference/troubleshoot/
 product: devplatform
 title: "Troubleshooting"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Troubleshooting[](#troubleshooting "Permalink to this headline")
+# HP Helion Development Platform: Troubleshooting[](#troubleshooting "Permalink to this headline")
 =================================================================
 
 SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")

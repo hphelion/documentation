@@ -3,11 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/admin/server/
 product: devplatform
 title: "Server Configuration"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Server Configuration {#server-configuration}
+# HP Helion Development Platform: Server Configuration {#server-configuration}
 
 This page covers the initial setup and configuration of the Application Lifecycle Service
 Server in a virtual machine under control of a hypervisor running on a

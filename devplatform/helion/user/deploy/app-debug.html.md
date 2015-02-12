@@ -3,11 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/app-debug/
 product: devplatform
 title: "Remote Debugging"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Remote Debugging {#remote-debugging}
+# HP Helion Development Platform: Remote Debugging {#remote-debugging}
 
 Different languages have different tools and protocols for remote
 debugging, but most require a connection between the running application

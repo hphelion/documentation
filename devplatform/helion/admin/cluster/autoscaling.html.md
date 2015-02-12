@@ -3,12 +3,14 @@ layout: default-devplatform
 permalink: /als/v1/admin/cluster/autoscaling/
 product: devplatform
 title: "DEA Auto Scaling"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: DEA Auto Scaling {#dea-auto-scaling}
+# HP Helion Development Platform: DEA Auto Scaling {#dea-auto-scaling}
 
--    [DEA Template](#dea-template)
+-   [DEA Template](#dea-template)
 -   [DEA Scaling configuration](#dea-scaling-configuration)
 -   [Enabling Auto-Scaling](#enabling-auto-scaling)
 -   [Configuration and Tuning (Advanced)](#configuration-and-tuning-advanced)

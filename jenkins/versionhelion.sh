@@ -1,5 +1,10 @@
 #!/bin/bash -li
 
+date
+
+git checkout rename-test
+git pull
+ 
 original_files=""
 renamed_files=""
 
@@ -56,14 +61,21 @@ do
 done
 
 git add .
-git commit -m "Create copy of existing Helion documentation and add 1.1 version string" .
+git commit -m "Name and permalink changes for 1.1 versioning" .
 
 
 for i in `echo $original_files`
 do
 	touch $i
-	git checkout master -- $i
+	git checkout origin/master -- $i
 done
 
+echo add
+
 git add .
-git commit -m "Merge 1.0 doc back to dev" . 
+echo commit
+git commit -m "merging 1.0 doc back to dev" . 
+echo push
+git push --verbose
+
+date

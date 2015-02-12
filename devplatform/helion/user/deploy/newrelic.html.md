@@ -3,13 +3,15 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/newrelic/
 product: devplatform
 title: "New Relic Monitoring"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 <!-- file deliberately orphaned, functionality not currently supported although it may work 
 -->
 
-# HP Helion 1.0 Development Platform: New Relic Monitoring {#new-relic-monitoring}
+# HP Helion Development Platform: New Relic Monitoring {#new-relic-monitoring}
 
    [New Relic for Ruby](#new-relic-for-ruby)
         -   [The Ruby Gem](#the-ruby-gem)

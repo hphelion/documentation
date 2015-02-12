@@ -2,10 +2,14 @@
 layout: default-devplatform
 permalink: /als/v1/user/reference/glossary/
 title: "Glossary"
+product: devplatform
+product-version1: HP Helion Development Platform
+product-version3: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Glossary[](#index-0 "Permalink to this headline")
+# HP Helion Development Platform: Glossary[](#index-0 "Permalink to this headline")
 ==================================================
 
 AMQP

@@ -35,4 +35,3 @@ done
 
 git add .
 git commit -m "merging 1.0 doc back to dev" . 
-

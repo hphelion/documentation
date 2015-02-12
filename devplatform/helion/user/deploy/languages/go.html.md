@@ -3,11 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/go/
 product: devplatform
 title: "Go"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Go {#go}
+# HP Helion Development Platform: Go {#go}
 
 Go applications ([golang](http://golang.org/)) are supported through a
 BuildPack framework, and can be pushed to Application Lifecycle Service with a basic setup.

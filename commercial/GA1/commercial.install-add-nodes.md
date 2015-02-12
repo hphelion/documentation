@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack: Add and Remove Nodes"
 permalink: /helion/openstack/install/add/nodes/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Binamra S, 
 
 ---
 <!--PUBLISHED-->
@@ -22,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&reg;: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors
+# HP Helion OpenStack&reg;: Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors
 
 <!---This document describes the steps to add and remove nodes (scale in or scale out the VSA and Compute nodes) on an already installed overcloud-->
 By default, HP Helion Openstack cloud deploys a two node (termed as start-up swift nodes) Swift cluster as part of its deployment.

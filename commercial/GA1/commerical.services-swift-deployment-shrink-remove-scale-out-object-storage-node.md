@@ -28,7 +28,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion 1.0 OpenStack&#174;: Remove Scale-out Object Storage Node
+# HP Helion OpenStack&#174;: Remove Scale-out Object Storage Node
 
 It is recommended that you gradually reduce the weight in the ring when removing disks from the Swift cluster to avoid poor performance. 
 
@@ -40,7 +40,7 @@ Object nodes can only be removed once all disks have been removed from the node.
 4. [Verify the node removal](#node-removal)
 
 ##Prerequisite {#prer}
-* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Swift nodes are functional by default as they are part of cloud deployment.)* 
+* HP Helion OpenStack&#174; cloud is successfully deployed.<br>*(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * Scale-out object-ring:1 is deployed.
 * All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Take a backup of the rings before any operation.
@@ -143,7 +143,7 @@ The following sample displays the output of the stack list:
 
 1. Use the nova list command to view a list of nodes.
 
-	# nova list
+		# nova list
 
 	The removed node will not be available.
 

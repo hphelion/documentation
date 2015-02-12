@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Back Up and Restore
+# HP Helion OpenStack&#174; Back Up and Restore
 
 The default HP Helion OpenStack environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.
 
@@ -97,9 +97,9 @@ Use the following steps to back up the seed VM:
 
 1. Log in to the seed VM host. 
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+2. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory.
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3.	Execute the following script:
 
@@ -138,9 +138,9 @@ Use the following steps to restore the seed VM:
 
 2. Create a [configuration file](#config) with all the parameters exported during the installation of the seed VM (for example: /root/export.prop).
 
-3. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+3. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory.
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3.	Execute the following script:
 
@@ -153,7 +153,7 @@ Use the following steps to restore the seed VM:
 
 	**Example**
 
-		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --seed -f /root/backup/backup_14-09-02-12-32 -c /root/export.prop
+		root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --seed -f /root/backup/backup_14-09-02-12-32 -c /root/export.prop
 
 		HP Helion Community Edition Version Restore Procedure
 
@@ -190,9 +190,9 @@ Use the following steps to back up the undercloud:
 
 1.Log in to the seed cloud host.
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
+2. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory:
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3. Execute the following script: 
 
@@ -206,7 +206,7 @@ Use the following steps to back up the undercloud:
 **Example**
 
 
-		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --undercloud -f /root/backup/
+		root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --undercloud -f /root/backup/
 
 		HP Helion Community Edition Version (unknown) Backup Procedure
  
@@ -289,9 +289,9 @@ Use the following steps to back up the overcloud:
 
 1. Log in to the seed cloud host.
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
+2. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory:
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3. Execute the following script: 
 
@@ -327,9 +327,9 @@ Use the following steps to restore the Sherpa overcloud:
 
 1. Log in to the seed cloud host.
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
+2. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory:
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3. Execute the following script: 
 
@@ -366,9 +366,9 @@ Use the following steps to back up the overcloud database:
 
 1. Log in to the seed cloud host.
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory:
+2. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory:
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3. Execute the following script: 
 
@@ -418,9 +418,9 @@ Use the following steps to restore the overcloud database:
 
 1. Log in to the seed cloud host.
 
-2. Change to the `/root/work/tripleo/tripleo-incubator/scripts/` directory.
+2. Change to the `/root/tripleo/tripleo-incubator/scripts/` directory.
 
-		cd /root/work/tripleo/tripleo-incubator/scripts/
+		cd /root/tripleo/tripleo-incubator/scripts/
 
 3. Execute the following script: 
 
@@ -481,7 +481,7 @@ Use the following sections as needed.
 
 The following lists all of the command options for the backup script, `hp_ced_backup.sh`.
 
-		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --help
+		root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_backup.sh --help
 		HP Helion Community Edition Version Backup Procedure
 		Usage: hp_ced_backup.sh [options]
 		The Backup tool can back up the following:
@@ -506,7 +506,7 @@ The following lists all of the command options for the backup script, `hp_ced_ba
 
 The following lists all of the command options for the backup script, `hp_ced_restore.sh`.
 
-		root@kvmhost:~/work/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --help
+		root@kvmhost:~/tripleo/tripleo-incubator/scripts# ./hp_ced_restore.sh --help
  
 		HP Helion Community Edition Version Restore Procedure
  

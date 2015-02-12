@@ -72,7 +72,7 @@ This topic describes known problems and solutions for the following areas:
  * [Problem: Cloud Controller node or Compute Region node displays the "not ready" (gray) state](#problem-cloud-controller-node-or-compute-region-node-displays-the-not-ready-gray-state)
  * [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#problem-stopping-services-before-cloud-os-completes-processing-jobs-can-cause-a-job-failure)
  * [Problem: How to configure Cinder to use RAW multipath devices](#problem-how-to-configure-cinder-to-use-raw-multipath-devices)
- * [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
+ * [Problem: Red screen when installing OS on baremetal nodes](#problem-red-screen-when-installing-os-on-baremetal-nodes)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a> 
@@ -1335,7 +1335,7 @@ This section describes the following known problems and solutions for the Instal
 * [Problem: Cloud Controller node or Compute Region node displays the "not ready" (gray) state](#problem-cloud-controller-node-or-compute-region-node-displays-the-not-ready-gray-state)
 * [Problem: Stopping services before Cloud OS completes processing jobs can cause a job failure](#problem-stopping-services-before-cloud-os-completes-processing-jobs-can-cause-a-job-failure)
 * [Problem: How to configure Cinder to use RAW multipath devices](#problem-how-to-configure-cinder-to-use-raw-multipath-devices)
-* [Problem: Red screen when installing OS on bare metal nodes](#problem-red-screen-when-installing-os-on-bare-metal-nodes)
+* [Problem: Red screen when installing OS on baremetal nodes](#problem-red-screen-when-installing-os-on-baremetal-nodes)
 
 
 ### Problem: Cloud Infrastructure install module proposal fails
@@ -1500,7 +1500,7 @@ vgreduce cinder-volumes  /dev/loop0
 
 
 
-### Problem: Red screen when installing OS on bare metal nodes
+### Problem: Red screen when installing OS on baremetal nodes {#problem-red-screen-when-installing-os-on-baremetal-nodes}
 
 <table style="text-align: left; vertical-align: top; width:700px;">
 

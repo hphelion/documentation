@@ -21,7 +21,7 @@ PageRefresh();
 
  
 
-#  HP Helion 1.0 OpenStack&#174; Undercloud Horizon Dashboard: Settings Tab
+#  HP Helion OpenStack&#174; Undercloud Horizon Dashboard: Settings Tab
 
 The options on the Settings tab allow changes to the following:
 

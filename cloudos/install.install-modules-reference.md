@@ -1015,7 +1015,7 @@ Note: The Nova install module has two roles: the <b>hp_cos_nova_100-multi-contro
 <td> Hypervisor </td> 
 <td> qemu </td>
 <td> Indicates the hypervisor Nova should use when launching virtual machines. May be either qemu or kvm. Select qemu if nova-compute nodes are on
-virtual machines. Select kvm if nova-compute nodes are bare-metal. </td>
+virtual machines. Select kvm if nova-compute nodes are baremetal. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

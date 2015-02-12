@@ -3,10 +3,12 @@ layout: default-devplatform
 title: "HP Helion Development Platform Documentation for Application Developers"
 permalink: /helion/devplatform/appdev/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Resources for Application Developers
+# HP Helion Development Platform: Resources for Application Developers
 
 HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.
 

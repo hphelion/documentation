@@ -253,7 +253,7 @@ You are recommended to only install the Admin Node on a virtual machine.
 Here are general guidelines for creating a virtual machine in an existing or new hypervisor infrastructure:
 
 1. Configure the hypervisor host's network. The host must provide connectivity to the virtual machine Admin Node on an isolated private network 
-to all the bare-metal nodes' port eth0. And the virtual machine Admin Node must also have connectivity to a routable network for Internet access.
+to all the baremetal nodes' port eth0. And the virtual machine Admin Node must also have connectivity to a routable network for Internet access.
 
 2. Create a virtual machine Admin Node with the hardware configuration suggested in the previous section, [Plan the Infrastructure for a Cloud](#plan-the-infrastructure-for-a-cloud). 
 The following configuration must be reviewed during this step:

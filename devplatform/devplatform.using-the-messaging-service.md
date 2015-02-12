@@ -3,11 +3,13 @@ layout: default-devplatform
 title: "Using the Messaging Service"
 permalink: /helion/devplatform/messageservice/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Using the RabbitMQ Messaging Service#
+# HP Helion Development Platform: Using the RabbitMQ Messaging Service#
 
 The Messaging service is a key aspect of applications architected for the cloud as it helps to create scalable and distributed applications. This is achieved by enabling your software applications and services to communicate with each other as sub-components of a larger-scale application while allowing you to incorporate data from users, devices, and data streams. 
 

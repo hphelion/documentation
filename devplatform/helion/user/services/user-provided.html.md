@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/services/user-provided/
 product: devplatform
 title: "User-Provided Services"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: User-Provided Services {#user-provided-services}
+# HP Helion Development Platform: User-Provided Services {#user-provided-services}
 
 User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the

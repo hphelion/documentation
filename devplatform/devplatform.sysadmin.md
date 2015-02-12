@@ -3,10 +3,12 @@ layout: default-devplatform
 title: "HP Helion Development Platform Documentation for  IT Ops"
 permalink: /helion/devplatform/sysadmin/
 product: devplatform
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Resources for IT Ops {#sysadmin}
+# HP Helion Development Platform: Resources for IT Ops {#sysadmin}
 
 ##Installation
 

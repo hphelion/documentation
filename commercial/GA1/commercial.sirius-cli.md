@@ -3,6 +3,15 @@ layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
 permalink: /helion/openstack/sirius-cli/
 product: commercial.ga
+product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.0
+product-version3: HP Helion OpenStack 1.0.1
+product-version4: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Sunitha K, Deepali V, Vandana S
+
 
 ---
 <!--PUBLISHED-->
@@ -21,7 +30,7 @@ PageRefresh();
 <!---
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
-# HP Helion 1.0 OpenStack&#174;: Configuring Your Storage Using Sirius
+# HP Helion OpenStack&#174;: Configuring Your Storage Using Sirius
 Once you complete the undercloud and overcloud installation, you can use the Sirius client CLI package to configure your storage. 
 
 The python-Siriusclient CLI package provides a http-client coupled command line tool for managing the Sirius service. The client works with Keystone through the python-keystoneclient and thus requires OpenStack Keystone credentials to be sourced or augmented along with the command. This requirement is in line with other OpenStack clients. This service helps with configuring the storage devices such as StoreVirtual and StoreServ, which function as the backend for Cinder.

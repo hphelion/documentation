@@ -3,10 +3,13 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/cgiapppsgi/
 published: false
 title: "CGI::Application::PSGI"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: CGI Application::PSGI[](#cgi-application-psgi "Permalink to this headline")
+# HP Helion Development Platform: CGI Application::PSGI[](#cgi-application-psgi "Permalink to this headline")
 =============================================================================
 
 An app using the CGI::Application::PSGI framework needs an *app.psgi*
