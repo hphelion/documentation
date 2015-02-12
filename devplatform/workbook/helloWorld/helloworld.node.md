@@ -9,6 +9,8 @@ role1: Application Developer
 role2: Security Engineer
 role3: ISV Developer 
 role4: Service Developer
+writer: Jayme P
+SME1: Sam C
 
 ---
 <!--PUBLISHED-->
