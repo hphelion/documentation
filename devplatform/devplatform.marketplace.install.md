@@ -4,7 +4,7 @@ title: "Working with the Marketplace"
 permalink: /helion/devplatform/marketplace/
 product: devplatform
 product-version1: HP Helion Development Platform
-product-version4: HP Helion Development Platform 1.1
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--UNDER REVISION-->

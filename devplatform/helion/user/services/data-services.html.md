@@ -3,6 +3,9 @@ layout: default-devplatform
 permalink: /als/v1/user/services/data-services/
 product: devplatform
 title: "Data Services"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--UNDER REVISION-->
 

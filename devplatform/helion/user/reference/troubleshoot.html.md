@@ -3,6 +3,9 @@ layout: default-devplatform
 permalink: /als/v1/user/reference/troubleshoot/
 product: devplatform
 title: "Troubleshooting"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 

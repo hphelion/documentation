@@ -3,6 +3,9 @@ layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/perl/catalyst/
 published: false
 title: "Catalyst"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 

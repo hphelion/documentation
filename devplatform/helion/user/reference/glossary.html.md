@@ -2,6 +2,10 @@
 layout: default-devplatform
 permalink: /als/v1/user/reference/glossary/
 title: "Glossary"
+product: devplatform
+product-version1: HP Helion Development Platform
+product-version3: HP Helion Development Platform 1.1
+
 ---
 <!--PUBLISHED-->
 

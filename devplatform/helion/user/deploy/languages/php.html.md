@@ -2,6 +2,8 @@
 layout: default-devplatform
 permalink: /als/v1/user/deploy/languages/php/
 title: "Developing in PHP"
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
 
 ---
 <!--PUBLISHED-->
