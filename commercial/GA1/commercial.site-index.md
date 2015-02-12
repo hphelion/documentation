@@ -97,22 +97,6 @@ Review the following topics related to optional and required post-installation s
 - [Configuring your network securely](/helion/openstack/install/security/)
 - [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/removing/failedovercloud/)
 
-## Updating HP Helion OpenStack ## {#update}
-
-Review the following topics before you start an update:
-
-* [Update Overview](/helion/openstack/update/overview/101/)
-* [Obtaining the Patch Update](/helion/openstack/update/download/101/)
-* [Update Prerequisites](/helion/openstack/update/prereqs/101/)
-* [Monitoring the Update](/helion/openstack/update/monitor/101/)
-* [Updating the Seed Cloud Host](/helion/openstack/update/seed/101/)
-* [Updating the Undercloud](/helion/openstack/update/undercloud/101/)
-* [Updating the Overcloud](/helion/openstack/update/overcloud/101/)
-* [Starting and Stopping the Development-Platform Services for the Upgrade](/helion/openstack/update/devplatstop/101/)
-* [Development Platform Commercial 1.01 Update](/helion/openstack/update/devplat/101/)
-* [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/)
-
-
 ## Undercloud Horizon Dashboard {#underdash}
 
 Review the following topics related to the undercloud Horizon dashboard:
