@@ -7,7 +7,7 @@ product: public-cloud
 ---
 <!--PUBLISHED-->
 
-HP TeamCity Plugin for HP Helion Public Cloud
+# HP TeamCity Plugin for HP Helion Public Cloud
 =============================
 
 HP has developed an HP Helion Public Cloud plugin for TeamCity CI/CD server. The plugin provides implementation of TeamCity's Cloud API and allows creation of virtual build agent on-demand in HP Helion Public Cloud. 
