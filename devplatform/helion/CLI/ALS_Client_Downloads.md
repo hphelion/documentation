@@ -5,6 +5,7 @@ product: devplatform
 title: "HP Application Lifecyle Service (ALS) Client"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+writer: Jayme P
 
 ---
 <!--PUBLISHED-->
