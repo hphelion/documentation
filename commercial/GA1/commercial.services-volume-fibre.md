@@ -280,11 +280,11 @@ To configure HP StoreVirtual as storage backend with Brocade Zone Manager perfor
 
 <!----
 
-Follow guidelines to configure HP 3PAR Storeserv or HP Storevirtual as storage backend in association with Brocade Zone Manager
+Follow guidelines to configure HP 3PAR Storeserv or HP StoreVirtual as storage backend in association with Brocade Zone Manager
 
 
 
-Configure HP Storevirtual as storage backend with Brocade Zone Manager.
+Configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 ##Configure HP 3PAR Storeserv as storage backend with Brocade Zone Manager
 
