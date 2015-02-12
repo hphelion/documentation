@@ -7,7 +7,7 @@ product: commercial.ga
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 OpenStack&#174; Eve Service Overview #
+# HP Helion 1.0 OpenStack&#174; Eve Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 

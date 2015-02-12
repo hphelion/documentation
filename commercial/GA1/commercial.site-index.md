@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
 -->
 
-# HP Helion 1.0 1.0 OpenStack&#174; Site Index
+# HP Helion 1.0 OpenStack&#174; Site Index
 
 The documentation for HP Helion OpenStack includes the following:
 

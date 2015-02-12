@@ -6,7 +6,7 @@ title: "Persistent File System"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: Persistent File System {#persistent-file-system}
+# HP Helion 1.0 Development Platform: Persistent File System {#persistent-file-system}
 The file system of application containers are ephemeral. Any application
 data or files stored locally within these containers is lost when the
 instance is stopped or restarted. To solve this, Application Lifecycle Service provides a filesystem type of service that can be shared between application instances,

@@ -9,7 +9,7 @@ permalink: /
 <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
 
-# Welcome to HP Helion 1.0 1.0 Documentation
+# Welcome to HP Helion 1.0 Documentation
 
 HP Helion provides public, private, and managed cloud solutions to get you moving on your cloud journey. Whichever HP Helion product you are using, we have all the documentation resources and references for you. 
 

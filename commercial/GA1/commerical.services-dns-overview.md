@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/horizon/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/tripleo/overview/"> NEXT &#9654</a> </p>
 <!--
-# HP Helion 1.0 1.0 OpenStack&#174; DNS as a Service (DNSaaS) Overview#
+# HP Helion 1.0 OpenStack&#174; DNS as a Service (DNSaaS) Overview#
 
 Based on the OpenStack Designate project, the HP Helion OpenStack DNS-as-a-service feature (DNSaaS) provides a Domain Name System (DNS) service for use by HP Helion OpenStack users.
 

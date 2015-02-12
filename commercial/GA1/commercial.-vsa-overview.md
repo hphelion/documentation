@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion 1.0 1.0 OpenStack&reg; Cinder Block Storage Using HP StoreVirtual VSA 
+# HP Helion 1.0 OpenStack&reg; Cinder Block Storage Using HP StoreVirtual VSA 
 
 HP Helion OpenStack bundles and facilitates deployment of HP StoreVirtual VSA which can be configured as backend for OpenStack Cinder Block Storage.
 

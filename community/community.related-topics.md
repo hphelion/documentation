@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/dashboard/how-works/">&#9664; PREV</a> | <a href="/helion/community/dashboard/">&#9650; UP</a> | <a href="/helion/community/dashboard/admin/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 1.0 OpenStack&reg; Community Related Documentation
+# HP Helion 1.0 OpenStack&reg; Community Related Documentation
 
 
 HP Helion OpenStack Community edition is based on OpenStack technology and an HP configured Linux&#174; operating system.  

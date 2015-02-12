@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion 1.0 1.0 OpenStack&reg; Updating the Overcloud
+# HP Helion 1.0 OpenStack&reg; Updating the Overcloud
 <!-- No README in 1.01
 The *Readme.txt* that comes with a patch update lists the nodes that need to be updated as a result of this patch. This file is located in the directory described in the [Update Troubleshooting](/helion/openstack/update/troubleshooting/101/) of the Update Prerequisites.  
 

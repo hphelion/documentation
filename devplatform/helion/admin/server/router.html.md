@@ -6,7 +6,7 @@ title: "Router"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: ALS Router[](#index-1 "Permalink to this headline")
+# HP Helion 1.0 Development Platform: ALS Router[](#index-1 "Permalink to this headline")
 
 - [Settings](#settings)
 - [WebSockets](#websockets)

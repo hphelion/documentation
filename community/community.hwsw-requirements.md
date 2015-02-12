@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 1.0 OpenStack&reg; Community Hardware and Software Requirements
+# HP Helion 1.0 OpenStack&reg; Community Hardware and Software Requirements
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack Community edition and includes setup and configuration information. For the performance and stability of the HP Helion OpenStack Community edition environment, it is very important to meet the requirements and conform to the minimum recommendations.
 

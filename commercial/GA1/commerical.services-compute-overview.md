@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 1.0 OpenStack&#174; Compute Service Overview #
+# HP Helion 1.0 OpenStack&#174; Compute Service Overview #
 
 The HP Helion OpenStack Compute Service leverages the  OpenStack compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 

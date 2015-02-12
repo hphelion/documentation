@@ -6,7 +6,7 @@ title: "Troubleshooting"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: Troubleshooting[](#troubleshooting "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Troubleshooting[](#troubleshooting "Permalink to this headline")
 =================================================================
 
 SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")

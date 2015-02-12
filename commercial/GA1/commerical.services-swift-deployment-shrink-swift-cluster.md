@@ -26,7 +26,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
-#  HP Helion 1.0 1.0 OpenStack&#174;: Shrink Swift Cluster
+#  HP Helion 1.0 OpenStack&#174;: Shrink Swift Cluster
 
 HP Helion OpenStack&reg; allows you to remove Swift cluster in any of the followings ways:
 

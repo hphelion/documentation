@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 1.0 OpenStack&reg; Community Network Architecture and Configuration -- Baremetal Installations Only
+# HP Helion 1.0 OpenStack&reg; Community Network Architecture and Configuration -- Baremetal Installations Only
 
 This page provides an overview of important information on the network configuration required for a baremetal HP Helion OpenCloud Community edition installation.
 

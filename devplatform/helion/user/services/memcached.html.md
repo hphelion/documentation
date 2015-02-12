@@ -6,7 +6,7 @@ title: "Memcached Service"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: Memcached Service[](#memcached-service "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Memcached Service[](#memcached-service "Permalink to this headline")
 =====================================================================
 
 Memcached is an in-memory key-value store used for caching by many web

@@ -6,7 +6,7 @@ title: "Managing Groups, Users & Limits (DEPRECATED)"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: Managing Groups, Users & Limits (DEPRECATED)[](#managing-groups-users-limits-deprecated "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Managing Groups, Users & Limits (DEPRECATED)[](#managing-groups-users-limits-deprecated "Permalink to this headline")
 ===================================================================================================================
 
 ##* Warning *

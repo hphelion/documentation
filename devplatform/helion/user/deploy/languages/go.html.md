@@ -7,7 +7,7 @@ title: "Go"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: Go {#go}
+# HP Helion 1.0 Development Platform: Go {#go}
 
 Go applications ([golang](http://golang.org/)) are supported through a
 BuildPack framework, and can be pushed to Application Lifecycle Service with a basic setup.

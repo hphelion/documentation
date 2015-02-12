@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/related-links/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/eula/"> NEXT &#9654; </a></p>
 -->
-# HP Helion 1.0 1.0 OpenStack&#174; Glossary
+# HP Helion 1.0 OpenStack&#174; Glossary
 
 Use this glossary to get definitions of terms used throughout the HP Helion OpenStack-documentation.
 

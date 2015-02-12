@@ -6,7 +6,7 @@ title: "Port Service (Harbor)"
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 1.0 Development Platform: Port Service (Harbor) {#port-service-harbor}
+# HP Helion 1.0 Development Platform: Port Service (Harbor) {#port-service-harbor}
 
 HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless [processes:
 web:](/als/v1/user/deploy/manifestyml/#web) is set to

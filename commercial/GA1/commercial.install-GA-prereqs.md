@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-overview/">&#9664; PREV</a> | <a href="/helion//"openstack>&#9650; UP</a> | <a href="/helion/openstack/install/kvm/">NEXT &#9654;</a> </p>
 -->
-# HP Helion 1.0 1.0 OpenStack&#174; Installation: Prerequisites
+# HP Helion 1.0 OpenStack&#174; Installation: Prerequisites
 
 Before you begin the installation process, take a few minutes to read this page for information about: 
 
