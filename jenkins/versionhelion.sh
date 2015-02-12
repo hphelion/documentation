@@ -56,18 +56,8 @@ do
 done
 
 git add .
-git commit -m "test" .
+git commit -m "Create copy of existing Helion documentation and add 1.1 version string" .
 
-git checkout master
-
-for i in `echo $original_files`
-do
-	sed -i  's/\(^#[^#]*HP Helion\)/\1 1.0/' $i
-done
-
-git add .
-git commit -m "adding 1.0 version string to doc titles" .
-git checkout rename-test
 
 for i in `echo $original_files`
 do
@@ -76,4 +66,4 @@ do
 done
 
 git add .
-git commit -m "merging 1.0 doc back to dev" . 
+git commit -m "Merge 1.0 doc back to dev" . 
