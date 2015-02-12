@@ -27,7 +27,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
 
-# HP Helion OpenStack&reg; 1.1 Neutron: Post Installation Tasks
+# HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron): Post Installation Tasks
 
 Once the Helion OpenStack virtual network plan has been deployed, the Network Administrator has tasks that must be completed before the network is ready for users. Other tasks are optional. Finally, there are tasks which require configuring services other than Neutron but which Neutron depends. The Network Administrator is responsible for either configuring these tasks or confirming that they have been properly completed.
 
@@ -88,7 +88,7 @@ Once you have detected such malicious activity, and if you can determine the use
      	 | dc56c9ce-b126-4553-85f4-9a92fd7e8c43 | 192.168.4.4      | 16.103.148.249      | 262e4206-9713-4088-a6e9-928de30afa82 |
 
 3.	Capture the **fixed-IP** (in the second column) (for example, 192.168.4.4) and **tenant id**.
-4.	Log in to the Compute node.
+4.	Log in to the Compute node
 5.	Run **nova list** for the captured tenant id and fixed-IP address using the command:
 
 		nova --os-tenant-id=<tenant-id> list | grep "192.168.4.4"

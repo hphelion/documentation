@@ -29,7 +29,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
 
 
-# HP Helion OpenStack&reg; 1.1 Neutron: Configuring Your Network Securely
+# HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron): Configuring Your Network Securely
 
 This document provides guidance on configuring your HP Helion OpenStack network securely.
 
