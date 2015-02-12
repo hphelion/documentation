@@ -24,6 +24,25 @@ writer: Jayme P
 
 The following release notes are for the HP Helion Development Platform 1.1 released on February 20, 2015. We hope you enjoy the release!
 
+## Release Notes
+
+The following features have been changed in the HP Helion Development Platform:
+
+**OpenStack&reg; Juno support** <br />All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+
+**Updated Command Line Client** <br />
+The [ALS command line client](/als/v1/client/reference) (cfmgmt.exe) has been updated to provide more options.
+
+**Additional ALS Client Commands**<br />
+More [commands](/als/v1/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
+
+- [Control](/als/v1/user/reference/client-ref/control)
+- [Feature Flags](/als/v1/user/reference/client-ref/flags)
+- [Security Groups](/als/v1/user/reference/client-ref/securitygroups)
+- [Space Quotas](/als/v1/user/reference/client-ref/spacequotas) 
+
+**Ruby CLI No Longer Supported** <br />The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
+
 ## Known Issues:
 
 2.  Running the Helion Development Platform from multiple projects may cause issues. Please run the install only from the "Admin" project.
