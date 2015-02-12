@@ -3,6 +3,15 @@ layout: default
 title: "HP Helion OpenStack&#174; Metering Service (Ceilometer): Alarms"
 permalink: /helion/openstack/services/reporting/alarms/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+Role1: Systems Administrator 
+Role2: Data Center Architect 
+Role3: Cloud Administrator 
+Role4: Net Ops Engineer 
+Role5: NOC Engineer 
+Role6: Network Administrator
+Writer: Jayme P
 
 ---
 <!--UNDER REVISION-->

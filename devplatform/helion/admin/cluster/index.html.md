@@ -5,6 +5,16 @@ product: devplatform
 title: "Cluster Setup"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Systems Administrator 
+role2: System Engineer
+role3: Cloud Administrator
+role4: Network Administrator
+role5: Application Developer
+Role6: Security Engineer
+role7: ISV Developer 
+role8: Service Developer
+role9: Systems Administrator
+writer: Jayme P
 
 ---
 <!--UNDER REVISION-->

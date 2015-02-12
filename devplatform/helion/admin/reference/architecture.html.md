@@ -5,6 +5,18 @@ product: devplatform
 title: "Architectural Design"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: Security Engineer
+role3: ISV Developer 
+role4: Service Developer
+role5: Network Administrator
+role6: Systems Administrator 
+role7: Net Ops Engineer 
+role8: NOC Engineer 
+role9: Network Architect 
+role10: Application Architect 
+writer: Jayme P
+
 ---
 <!--UNDER REVISION-->
 
@@ -18,10 +30,10 @@ product-version2: HP Helion Development Platform 1.1
  -   [Cloud Controller](#cloud-controller)
  -   [Router](#router)
  -   [Droplet Execution Agents](#droplet-execution-agents)
- -   [Service Roles](#service-roles)
- -   [Databases:](#databases)
- -   [Other data services:](#other-data-services)
- -   [Role Groups](#role-groups)
+-   [Service Roles](#service-roles)
+ -   [Databases](#databases)
+ -   [Other data services](#other-data-services)
+-   [Role Groups](#role-groups)
 
 The Application Lifecycle Service VM is a stand-alone [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud) virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.

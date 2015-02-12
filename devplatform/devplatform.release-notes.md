@@ -5,6 +5,16 @@ permalink: /helion/devplatform/release-notes/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version3: HP Helion Development Platform 1.1
+role1: Systems Administrator 
+role2: System Engineer
+role3: Cloud Administrator
+role4: Network Administrator
+role5: Application Developer
+Role6: Security Engineer
+role7: Application Developer 
+role8: ISV Developer
+role9: Service Developer
+writer: Jayme P
 
 ---
 <!--UNDER REVISION-->
@@ -12,26 +22,37 @@ product-version3: HP Helion Development Platform 1.1
 # HP Helion Development Platform: Release Notes for HP Helion Development Platform 1.1
 
 
-The following release notes are for the HP Helion Development Platform 1.0 released on 10/14/2014. We hope you enjoy the release!
+The following release notes are for the HP Helion Development Platform 1.1 released on February 20, 2015. We hope you enjoy the release!
+
+## Release Notes
+
+The following features have been changed in the HP Helion Development Platform:
+
+**OpenStack&reg; Juno support** <br />All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+
+**Updated Command Line Client** <br />
+The [ALS command line client](/als/v1/client/reference) (cfmgmt.exe) has been updated to provide more options.
+
+**Additional ALS Client Commands**<br />
+More [commands](/als/v1/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
+
+- [Control](/als/v1/user/reference/client-ref/control)
+- [Feature Flags](/als/v1/user/reference/client-ref/flags)
+- [Security Groups](/als/v1/user/reference/client-ref/securitygroups)
+- [Space Quotas](/als/v1/user/reference/client-ref/spacequotas) 
+
+**Ruby CLI No Longer Supported** <br />The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
 
 ## Known Issues:
 
-1. **Intermittent Authentication Errors from Keystone**. Some requests to keystone will intermittently fail to authenticate. Retrying the request will generally succeed. This is a known issue and will be fixed in the next release.
+2.  Running the Helion Development Platform from multiple projects may cause issues. Please run the install only from the "Admin" project.
 
-1. **Database Service will not install if there are more than three availability zones**. You need to have only three availability zones to install the database service.
+3. **Password Field is not used when creating a RabbitMQ cluster**. The password field in the Horizon panel is not necessary when creating a RabbitMQ cluster and will be ignored. This is a known issue and will be fixed in the next release.
 
-1. **Database Instance and backup deletion not available from the Horizon UI**. The Horizon UI is not able to delete database instances and backups. This is a known issue and will be fixed in the next release.
-
-2. **Password Field is not used when creating a RabbitMQ cluster**. The password field in the Horizon panel is not necessary when creating a RabbitMQ cluster, and will be ignored. This is a known issue and will be fixed in the next release.
-
-3. **Download PEM not working in the RabbitMQ Panel for the Messaging Service**. In Safari browsers the download PEM button results in an error. 
+3. **Download PEM not working in the RabbitMQ Panel for the Messaging Service**. In Safari browsers only, clicking the button to download a PEM file results in an error. 
 
 4. **RabbitMQ cluster creation fails when a floating IP pool has not been selected**. You must select a floating IP pool when creating a RabbitMQ cluster in the messaging service.
 
-5. **Using the correct network to connect to an ALS cluster**. When pushing applications to ALS, you will be presented with two domains for the new application (unless additional domains have been added by the ALS cluster administrator): a xip.io address such as 10.0.0.1.xip.io, and a local domain such as hphelion-xyz.local. When connecting to the ALS Cluster over a network only the xip.io domain will allow clients to connect to the deployed application, choose this option you they have assigned custom domains to you cluster.
-
-7. **Small DEAs can run out of disk space**. The ALS Seed Node Images in 1.0 are shipped in a frozen 10 gigabyte size, resulting in a limited amount of disk space available for applications and services. This can result in highly active clusters failing over time due to a lack of disk space. It is recommended to allocate more 4 gigabyte DEAs rather than fewer larger DEAs.
-
-
+5. **Use the correct network to connect to an ALS cluster**. This note applies only if your ALS cluster administrator has not created additional, custom domains for your use. <br />By default, when pushing applications to ALS, you will be presented with two domains for the new application: a xip.io address (example: *10.0.0.1.xip.io*) and a local domain (example: *hphelion-xyz.local*). When connecting to the ALS Cluster over a network, select the xip.io domain to allow clients to connect to the deployed application. Do not select the local network. 
 
 ----

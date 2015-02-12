@@ -4,9 +4,13 @@ title: "HP Helion Development Platform Java Hello World Sample"
 permalink: /helion/devplatform/workbook/helloworld/java/
 product: devplatform
 product-version1: HP Helion Development Platform
-product-version2: HP Helion Development Platform 1.0
-product-version3: HP Helion Development Platform 1.01
-product-version4: HP Helion Development Platform 1.1
+product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: Security Engineer
+role3: ISV Developer 
+role4: Service Developer
+writer: Jayme P
+SME1: Sam C
 
 ---
 <!--PUBLISHED-->

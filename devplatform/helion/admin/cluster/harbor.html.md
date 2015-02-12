@@ -5,14 +5,25 @@ product: devplatform
 title: "Harbor: TCP/UDP Port Service"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: Security Engineer
+role3: ISV Developer 
+role4: Service Developer
+role5: Network Administrator
+role6: Systems Administrator 
+role7: Net Ops Engineer 
+role8: NOC Engineer 
+writer: Jayme P
 
 ---
 <!--PUBLISHED-->
 
 # HP Helion Development Platform:  Harbor TCP/UDP Port Service {#harbor-tcp-udp-port-service} 
-   [Architecture](#architecture)
-    -   [Requirements & Setup](#requirements-setup)
-    -   [Troubleshooting](#troubleshooting)
+
+
+- [Architecture](#architecture)
+- [Requirements & Setup](#requirements-setup)
+- [Troubleshooting](#troubleshooting)
 
 The Harbor service provisions ports to user applications. The standard
 router in Application Lifecycle Service is designed for HTTP(S) traffic only, if user

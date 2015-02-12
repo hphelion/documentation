@@ -5,15 +5,25 @@ product: devplatform
 title: "External Data Services"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: Security Engineer
+role3: ISV Developer 
+role4: Service Developer
+role5: Network Administrator
+role6: Systems Administrator 
+role7: Net Ops Engineer 
+role8: NOC Engineer 
+writer: Jayme P
 
 ---
 <!--PUBLISHED-->
 
 # HP Helion Development Platform: External Data Services {#external-data-services}
-[General Principles](#general-principles)
-    -   [MySQL](#mysql)
-    -   [PostgreSQL](#postgresql)
-    -   [Troubleshooting](#troubleshooting)
+
+- [General Principles](#general-principles)
+- [MySQL](#mysql)
+- [PostgreSQL](#postgresql)
+- [Troubleshooting](#troubleshooting)
 
 Application Lifecycle Service comes with several data services that can be enabled on an Application Lifecycle Service cluster. However, for implementations where high
 availability or high performance databases are required, it's advisable
