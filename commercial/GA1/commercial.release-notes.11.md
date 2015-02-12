@@ -106,7 +106,7 @@ The following features have been added to HP Helion OpenStack 1.0:
 ## Known Issues in this Release ## {#known-issues}
 
 The following are the known issues for HP Helion OpenStack:
-
+	
 **Installation Issues**
 
 When installing HP Helion OpenStack you might experience the following issues:
