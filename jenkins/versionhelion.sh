@@ -1,5 +1,10 @@
 #!/bin/bash -li
 
+date
+
+git checkout rename-test
+git pull
+ 
 original_files=""
 renamed_files=""
 
@@ -58,11 +63,19 @@ done
 git add .
 git commit -m "Name and permalink changes for 1.1 versioning" .
 
+
 for i in `echo $original_files`
 do
 	touch $i
-	git checkout master -- $i
+	git checkout origin/master -- $i
 done
 
+echo add
+
 git add .
+echo commit
 git commit -m "merging 1.0 doc back to dev" . 
+echo push
+git push --verbose
+
+date
