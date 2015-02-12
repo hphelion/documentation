@@ -44,7 +44,7 @@ The Transport Layer Security (TLS) protocol, successor of SSL, provides the mech
 
 OpenStack endpoints are HTTP services providing APIs to both end users on public networks and to other OpenStack services on the management network. All traffic to OpenStack services, both internal and external, are secured using  TLS connections.
 
-The TLS connections are facilitated by providing each node with a signed certificate from an internal certificate authority server (referred to as an Ephemeral CA server)  that is built into HP Helion OpenStack and installed on the control plane nodes. These certificates are replaced frequently, typically at least every 12 hours. The CA server uses a key to sign these certificates provided to the OpenStack services and an associated certificate can be used to validate these newly signed certs. This key/cert pair can either be generated at deploy time or be provided by the deployer.
+The TLS connections are facilitated by providing each node with a signed certificate from an internal certificate authority server (Ephemeral CA server)  that is built into HP Helion OpenStack and installed on the control plane nodes. These certificates are replaced frequently, typically at least every 12 hours. The CA server uses a key to sign these certificates provided to the OpenStack services and an associated certificate can be used to validate these newly signed certs. This key/cert pair can either be generated at deploy time or be provided by the deployer.
 
 If the deployer does not wish to generate the key/cert pair, the installer software will generate this pair and place the generated key and certificate at /root/eca.key and /root/eca.crt, respectively, on the seed.
 If the deployer does wish to provide a key and cert, then these should be placed on the seed before deployment at /root/eca.key and /root/eca.crt by running the following copy commands.
@@ -85,6 +85,9 @@ Another option is for the clients not to authenticate TLS connections. This is n
 
 	nova --insecure list
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+----
 <!-- Sources:
 http://docs.openstack.org/security-guide/content/introduction-to-ssl-tls.html
 http://docs.openstack.org/security-guide/content/tls-proxies-and-http-services.html-->
