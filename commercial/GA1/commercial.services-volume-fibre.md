@@ -33,16 +33,8 @@ Zoning is a fabric-based service in a Storage Area Network (SAN), which enables 
 
 The Fibre Channel Zone Manager allows FC SAN Zone/Access control management in conjunction with Fibre Channel block storage. OpenStack Cinder supports the auto-zoning functionality from Icehouse release. 
 
-HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to add Brocade Zone Manager configuration to` cinder.conf`
+HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. Block Storage (Cinder) needs to be configured to enable auto-zoning using Brocade FC Zone Manager. The following section describes the procedure to add Brocade Zone Manager configuration to `cinder.conf`
 
-
-
-
-<!----
-
-FC zone manager automates the zone access management at attach/detach entry points of volume operations. The cinder volume manager invokes the `FCZoneManager` at the attach/detach entry points based on zoning mode (if set to **fabric**) and the volume drive type. Zone manager interacts with the appropriate vendor (**what vendor is it referred?**) specific zone driver based on the properties specified in the `kvm-default.json` file. Brocade zone driver manages access control using FC zoning for Braocade FC fabrics. This is a concrete implementation of `FCZoneDriver` interface implementing `add_connection` and `delete_connection` interfaces. Brocade Fibre Channel Zone Driver performs zoning operations through SSH.
-
---->
 
 **Volume Operations: High-level component interactions with the FC Zone Manager**
 
@@ -52,8 +44,8 @@ FC zone manager automates the zone access management at attach/detach entry poin
 
 ##Prerequisite
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed.
-2. FC Brocade switches are accessible from nova compute and node where cinder services are running. 
+* HP Helion OpenStack&#174; cloud is successfully deployed.
+* FC Brocade switches are accessible from nova compute and node where cinder services are running. 
 
 
 ## Add Brocade Zone Manager configuration to cinder.conf {#brocade-zone}
@@ -64,7 +56,7 @@ If block storage is configured to use a Fibre Channel volume driver that support
 
 * Do not modify any other files in `/tripleo/hp_passthrough/`. Modification may led to failover of overcloud.
 * Do not modify any other file directly under `hp_passthrough` for HP 3PAR and HP Storevirtual integration. 
-* Create a new file with a prefix "overcloud"
+* Create a new file with a prefix **overcloud**
 * Adhere to the JSON format (mentioned in Step 4). Otherwise, it might cause failure of update cloud.
 
 ###Steps for configuration
@@ -227,13 +219,13 @@ This section explains the configuration of HP 3PAR Storeserv or HP Storevirtual 
 
 **Caution**
 
-1. Ensure to follow the recommended steps to configure HP 3PAR and HP Storevirtual as storage backend. Do not modify any other file directly under `hp_passthrough` for HP 3PAR and HP Storevirtual integration. 
+* Ensure to follow the recommended steps to configure HP 3PAR and HP Storevirtual as storage backend. Do not modify any other file directly under `hp_passthrough` for HP 3PAR and HP Storevirtual integration. 
 
-2. Adhere to JSON format. The JSON format should remain intact, otherwise it might cause failure of update cloud.
+* Adhere to JSON format. The JSON format should remain intact, otherwise it might cause failure of update cloud.
 
-3. Do not touch any other files in `/tripleo/hp_passthrough/ folder.`
+* Do not touch any other files in `/tripleo/hp_passthrough/ folder.`
 
-4. Create a file with the prefix as **overcloud**.
+* Create a file with the prefix as **overcloud**.
 
 
 ### To configure HP 3PAR as storage backend with Brocade Zone Manager {#configure-hp-3par-brocade}
@@ -242,20 +234,20 @@ You can configure HP 3PAR as storage backend with Brocade Zone Manager.
 
 ###Prerequisite
 
-1. HP Helion OpenStack&#174; cloud is successfully deployed.
-2. Sirius service is running in the undercloud.
-3. HP StoreServ (3PAR) device is accessible from the undercloud.
-4. FC Brocade switches are accessible from nova compute and node where cinder services are running. 
-5. HP StoreServ (3PAR) device(running operating system v 3.1.3 or later) is accessible by 6. 6. Block Storage (Cinder) and compute nodes are running in the overcloud.
-7. Common Provisioning Groups (CPGs) are created for HP StoreServ (3PAR)
-8. HP StoreServ (3PAR) web services API server must be enabled and running. Also, HTTPS is enabled.
-9. 
+* HP Helion OpenStack&#174; cloud is successfully deployed.
+* Sirius service is running in the undercloud.
+* HP StoreServ (3PAR) device is accessible from the undercloud.
+* FC Brocade switches are accessible from nova compute and node where cinder services are running. 
+* HP StoreServ (3PAR) device(running operating system v 3.1.3 or later) is accessible by Block Storage (Cinder) and compute nodes are running in the overcloud.
+* Common Provisioning Groups (CPGs) are created for HP StoreServ (3PAR)
+* HP StoreServ (3PAR) web services API server must be enabled and running. Also, HTTPS is enabled.
+ 
 
 ###Steps
 
 Perform the following steps to configure HP 3PAR as storage backend with Brocade Zone Manager.
 
-Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
+1. Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
 2. Add and configure HP StoreVirtual and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/) for detailed procedure.
 
 
@@ -266,8 +258,9 @@ You can  configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 ###Prerequisite
 
+* HP Helion OpenStack&#174; cloud is successfully deployed.
+* FC Brocade switches are accessible from nova compute and node where cinder services are running. 
 * You must be running the X Windows System to install the CMC.
-
 * We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.
 
 **Note**: These changes are required for 64-bit operating system only.
