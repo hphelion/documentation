@@ -76,7 +76,7 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 9. Optionally, you can specify the Username, Tenant and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} –I {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -I {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
@@ -244,21 +244,19 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 
-	**Key Pair (Required)** - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
+	- **Service User Password** (Required) - The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
+	- **Key Pair** (Required) - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
+	- **External Network** (Required) - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named **ext-net** .
+	- **Provider Network** (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named **SVC**.
+	- **NTP Server IP**: IP Address to an NTP server to use if instances will not have outbound access to the internet.
+	- **Logstash RabbitMQ IP Address** (Required): Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.
+	- **Logstash RabbitMQ Password** (Required): Specify the password for the RabbitMQ Server publishing to the central Logstash server.
+	- **Ephemeral CA Password** (Required): Specify the password for the Ephemeral CA server. 
+	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
+	- **Volume Type** (Required): The volume type to use when creating database instances.
+	- **Enable HA**: Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
+<br /><br />
 
-	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
-
-	**NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet. 
-
-	**Service User Password (Required)** - The password for the Admin user that is currently logged in. This password **MUST** match the password used to login to Horizon.
-
-	**Icinga User Password (Required)** - Specify a password for the Icinga service that is created as part of the install. Keep this password for future use.
-
-	**Volume Type (Required)** - The volume type to use when creating database instances.
-
-	**Enable HA** - Specify if the database service is to be setup in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
-
-	**RabbitMQ IP Address (Required)** - Specify the IP address of the central Helion OpenStack Logstash server.
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
 
@@ -324,16 +322,16 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 
-	**Key Pair (Required)** - Key Pair to install on all instances created as part of the marketplace service. The public key can be used by an admin to get SSH access to all instances.
-
-	**External Network (Required)** - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
-
-	**NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet. 
-
-	**Service User Password (Required)** - The password for the Admin user that is currently logged in. This password **MUST** match the password used to login to Horizon.
-
-	**Subnet Range** - The subnet to use for Marketplace
-	
+	- **Service User Password** (Required): The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
+	- **Key Pair** (Required): Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
+	- **External Network** (Required): Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
+	- **Provider Network** (Required): Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named 'SVC'
+	- **NTP Server IP**: IP Address to an NTP server to use if instances will not have outbound access to the internet.
+	- **Logstash RabbitMQ IP Address** (Required): Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.
+	- **Logstash RabbitMQ Password** (Required): Specify the password for the RabbitMQ Server publishing to the central Logstash server.
+	- **Ephemeral CA Password** (Required): Specify the password for the Ephemeral CA server.
+	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
+	- **Subnet range** (Required): The subnet to use for Marketplace <br /><br />
 2. Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.
 
 3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
