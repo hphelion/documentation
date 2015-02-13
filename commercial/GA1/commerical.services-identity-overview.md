@@ -82,6 +82,8 @@ Each domain can point to its own identity source. For example, LDAP, MySQL, can 
 
 **Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v2.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
+To use Keystone v3 in Horizon, for example to use LDAP, you can manually change the settings. See [Configuring Horizon for Keystone v3](/helion/openstack/services/identity/configure/) for instructions and important restrictions. 
+
 ### Administrators ### {#admins}
 
 The HP Helion OpenStack Identity service features three types of administrator users:

@@ -27,8 +27,8 @@ Horizon does not support Keystone v3 or domains by default.
 
 As a result: 
 
-* the admin cannot perform domain management using the Horizon dashboard
-* if the admin creates a user though the CLI using a Keystone v3 token, the user will not be able to log in to the Horizon dashboard.  Any user created from within Horizon is able to log into Horizon, but the user will be in the default domain.  
+* The admin cannot perform domain management using the Horizon dashboard.
+* If an admin creates a user though the CLI using a Keystone v3 token, the user will not be able to log in to the Horizon dashboard.  Any user created from within Horizon is able to log into Horizon, but the user will be in the default domain.  
 
 To use Keystone v3 in Horizon (perhaps to use LDAP), they can manually change the settings (see below).  When Keystone v3 is enabled, all User, Project, and Domain management must be done via the CLI.  The Identity panel will not be visible in Horizon.
 
