@@ -40,6 +40,7 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 
 There's a lot of information out there to help you get going with your services. We recommend you browse through the [site index](/helion/openstack/siteindex/) for a full list of the technical content pages available on the site.
 
+**Note:** HP OpenStack Helion does not support an update utility to update from Helion 1.0 or Helion 1.01 to Helion 1.1. For help with updating from your current release to a newer release, contact Customer Support. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
