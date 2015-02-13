@@ -54,9 +54,7 @@ Refer to the ***OpenStack Administrator Guide***, Advanced configuration options
 
 Refer to the ***OpenStack Administrator Guide***, Configure Neutron agents for information on configuring the appropriate network agents for your network.
 
-##HA / NIC bonding features {#ha-nic}
 
-**See Michael Duncan**?
 
 ##Tracking masked IP addresses {#tracking-masked-ip}
 
