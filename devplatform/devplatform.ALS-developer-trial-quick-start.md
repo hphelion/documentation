@@ -40,7 +40,7 @@ Before you can begin your Quick Start Developer Trial, you will need to do three
 If you don't already have a user account on the <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>, take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">free trial offer</a> to sign up now. You will be asked to provide a phone number for verification and a credit card during registration, but there is no charge. Please keep your username and password handy as you will be asked for them during installation.
 
 ##Step-by-Step Installation Instructions {#install}
-1. Log into the [Horizon Console](https://horizon.hpcloud.com/) using the HP Helion Public Cloud username and password that you created during registration.
+1. Log into the [Horizon console](https://horizon.hpcloud.com/) using the HP Helion Public Cloud username and password that you created during registration. <br /> **Note**: If you are accessing the Horizon console from an installation of HP Helion OpenStack&reg; instead, the Horizon console will look slightly different from the following screenshots, but the installation procedure is the same.
 2. [Create a network with public internet access](https://community.hpcloud.com/article/how-create-or-delete-network#create) inside of your account. You may have done this already as part of the initial public cloud account configuration.
 4. Change to the **US East Region** in the Horizon Console.<br /><img src="media/quickstartA11.png"/><br /><br />
 5. If necessary, in the **US East section**, in the **Compute** row, click **Activate** to activate the Compute service.<br /><img src="media/quickstartB11.png"/><br /><br />
