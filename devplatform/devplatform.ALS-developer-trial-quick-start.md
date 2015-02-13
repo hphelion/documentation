@@ -69,10 +69,10 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 9. Run the following commands:
  
 		source <path to openstackrc file>
-		./cfmgmt create-cluster
-		keypair-name <name of keypair created earlier>
-		admin-email <emailaddress for admin user>
-		admin-password <password for admin user>
+		./cfmgmt create-cluster \
+		keypair-name <name of keypair created earlier> \
+		admin-email <emailaddress for admin user> \
+		admin-password <password for admin user> \
 		load trial.yml
 
 ##After Installation {#after}
@@ -91,6 +91,6 @@ If an error occurs during installation, the easiest response is simply to termin
 These commands delete your VMs, release the floating IP addresses, and remove the cluster security groups.
 		
 	source <path to openstackrc file>
-    ./cfmgmt delete-cluster
-	keypair-name <name of keypair created earlier>
+    ./cfmgmt delete-cluster \
+	keypair-name <name of keypair created earlier> \
 	load trial.yml
