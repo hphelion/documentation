@@ -144,6 +144,7 @@ You must have the following hardware configuration:
 
 Additional requirements are as follows:
 
+- For the server where the undercloud will be installed, SR-IOV must be disabled to avoid issues with vswitches. 
 - For systems with multiple NICs, only one NIC may be active or connected.
 - Capable of hosting VMs
 - The boot order configured with Network/PXE boot as the first option:
