@@ -28,7 +28,8 @@ HP Helion OpenStack offers many services based on the different OpenStack projec
 
 Use the following links and tools to begin working with HP Helion OpenStack:
 
-* [Installation and configuration](/helion/openstack/install/overview/)
+* [Installation](/helion/openstack/install/overview/)
+* [Installation Prerequisites](/helion/openstack/install/prereqs/)
 * [FAQ](/helion/openstack/faq/)
 * [Technical overview](/helion/openstack/technical-overview/)
 * [Services overview](/helion/openstack/services/overview/)
