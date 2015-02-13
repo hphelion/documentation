@@ -1,11 +1,16 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Identity Service (Keystone) Overview"
-permalink: /helion/openstack/services/identity/integrate/ldap/
+title: "HP Helion OpenStack: Intergrating LDAP"
+permalink: /helion/openstack/services/identity/integrate-ldap/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
 
 ---
 <!--UNDER REVISION-->
+
 
 <script>
 
@@ -17,112 +22,175 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/imaging/overview/"> NEXT &#9654</a> </p>
--->
 
-# HP Helion OpenStack&#174; Integrate the Identity Service (Keystone) with LDAP/AD
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/#ldap">&#9650; Prerequisites</a> </p> 
 
-This page provides instructions for integrating the Identity service with with an existing LDAP directory for authentication and authorization services.
+<!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 
-LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.
+# HP Helion OpenStack&reg;: Integrate the Identity Service (Keystone) with LDAP/AD 
+
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion OpenStack installation process.
+
+Multiple authentication backends are supported, using Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
+
+The process for integrating LDAP involves the following steps:
+
+- [Verify prerequisites](#pre)
+- [Generate configuration files](#config)
+- [Include the configuration files in the installation](#install)
+- [Configure Horizon](#horizon)
+
+## Prerequisites {#pre}
+Before starting the integration, review the following prerequisites:
+
+- LDAP server is up and running in a network accessible from the overcloud.
 
 
-HP Helion OpenStack supports Domain-Specific Configuration (aka multi-domain). 
+## Generate configuration files {#config}
 
-Domain-specific configuration enables you to specify identity driver configurations on a domain-by-domain basis. This allows a specific domain to have its own LDAP or SQL server. 
+The LDAP integration process requires two configuration files:
 
-To enable domain-specific drivers, you will set options in `identity` section in the keystone.conf file during the integration procedure that follows.
-
-**Note:** You do not need to create users for other OpenStack-based services such as Compute (Nova), Networking (Neutron) on an LDAP server. The HP Helion OpenStack installation process uses MySQL as a primary backend during installation. These users are created in MySQL database and new random passwords generated.
-
+- [LDAP server connection settings](#connect)
+- Keystone CA storage and signing key/certificate file
 
 
-## Intergrate the Identity service with LDAP
+### LDAP connection settings {#connect}
 
+Create overlcoud_keystone_ldap.json file which contains the LDAP server connection settings. 
 
-1. Log in to your install system as root:
+It must be a well-formed, syntax-error free json file.
 
-	`sudo su -`
+Section names, supported options and possible values are described in Openstack Identity Service documentation. Here are some most important:
 
-2. Locate the ldap.json file.
+<table style="text-align: left; vertical-align: top; width:650px;">
+	<tr style="background-color: lightgrey; color: black;">
+	<td><b> Username </b></td><td><b>Password</b></td><td><b> AD/LDAP Default values </b></td><td><b>OpenLDAP default values</b></td>
+	</tr>
+	<tr>
+	<td>[identity]</td><td> </td><td> </td><td> </td>
+	</tr>
+	<tr>
+	<td>driver</td><td>(StrOpt) Identity backend driver</td><td>keystone.identity.backends.ldap.Identity</td><td>keystone.identity.backends.ldap.Identity
+	</tr>
+	<tr>
+	<td>[assignment]</td><td> </td><td> </td><td> </td>
+	</tr>
+	<tr>
+	<td>driver</td><td>(StrOpt) Assignment backend driver</td><td>	keystone.assignment.backends.sql.Assignment</td><td>keystone.assignment.backends.sql.Assignment</td>
+	</tr>
+	<tr>
+	<td>[ldap]</td><td> </td><td> </td><td> </td>
+	</tr>
+	<tr>
+	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>Cn</td>
+	</tr>
+	<tr>
+	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>Cn</td>
+	</tr>
+	<tr>
+	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
+	</tr>
+	<tr>
+	<td>group_tree_dn</td><td>(StrOpt) Search base for groups.</td><td>CN=Users,DC=example,DC=com</td><td>ou=groups,dc=hpswlabs,dc=apps,dc=hp,dc=com</td>
+	</tr>
+	<tr>
+	<td>group_allow_create</td><td>(BoolOpt) Allow group creation in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>group_allow_delete</td><td>(BoolOpt) Allow group deletion in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>group_allow_update</td><td>(BoolOpt) Allow group update in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>suffix</td><td>(StrOpt) LDAP server suffix</td><td>DC=example,DC=com</td><td>dc=example,dc=com</td>
+	</tr>
+	<tr>
+	<td>url</td><td>(StrOpt) URL for connecting to the LDAP server.</td><td>ldap://localhost</td><td>ldap://localhost</td>
+	</tr>
+	<tr>
+	<td>user_allow_create</td><td>(BoolOpt) Allow user creation in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>user_allow_delete</td><td>(BoolOpt) Allow user deletion in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>user_allow_update</td><td>(BoolOpt) Allow user updates in LDAP backend.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>Cn</td>
+	</tr>
+	<tr>
+	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>Cn</td>
+	</tr>
+	<tr>
+	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>Person</td>
+	</tr>
+	<tr> 
+	<td>user_tree_dn</td><td>(StrOpt) Search base for users.</td><td>CN=Users,DC=example,DC=com</td><td>ou=people,dc=example,dc=com</td>
+	</tr>
+	<tr>
+	<td>user</td><td>(StrOpt) User BindDN to query the LDAP server.</td><td>CN=SomeLDAPUser,CN=Users,DC=example,DC=com</td><td>Not Required</td>
+	</tr>
+	<tr>
+	<td>password</td><td>(StrOpt) Password for the BindDN to query the LDAP server.</td><td>password</td><td>Not Required</td>
+	</tr>
+	<tr>
+	<td>use_tls</td><td>(BoolOpt) Enable TLS for communicating with LDAP servers.</td><td>False</td><td>False</td>
+	</tr>
+	<tr>
+	<td>tls_req_cert</td><td>(StrOpt) Valid options for tls_req_cert are demand, never, and allow.</td><td>never</td><td>Never</td>
+	</tr>
+	<tr>
+	<td>use_pool</td><td>(BoolOpt) Enable LDAP connection pooling.</td><td>True</td><td>True</td>
+	</tr>
+	<tr>
+	<td>user_enabled_attribute</td><td>(StrOpt) LDAP attribute mapped to user enabled flag.</td><td>userAccountControl</td><td>Not required</td>
+	</tr>
+	<tr>
+	<td>user_enabled_mask</td><td>(IntOpt) Bitmask integer indicating which bit represents the enabled value.  This is used when the LDAP server represents the variable `enabled` as a bit in an integer rather than as a Boolean.  A value of "0" indicates the mask is not used. When not set to "0", the typical value is "2".  This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>2</td><td>Not required</td>
+	</tr>
+	<tr>
+	<td>user_enabled_default</td><td>(StrOpt) Default value to enable users. This should match an appropriate int value if the LDAP server uses non-boolean (bitmask) values to indicate if a user is enabled or disabled. If this is not set to "True" the typical value is "512". This is typically used when `user_enabled_attribute = userAccountControl`.</td><td>512</td><td>Not required</td>
+	</tr>
+	<tr>
+	<td>user_mail_attribute</td><td>(StrOpt) LDAP attribute mapped to user email.</td><td>userPrincipalName</td><td>Not required</td>
+	</tr>
+	</table>
 
-	This file contains LDAP server connection settings. The content of the file will be transparently propagated into /etc/keystone/keystone.conf and /etc/keystone/domains/keystone.ldap.conf.
+See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overlcoud_keystone_ldap.json` file.
+
+## Keystone CA storage and signing key/certificate files
+
+LDAP server might require all connections to be secured though the TLS protocol. Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
+
+To turn this feature on:
+
+1. Set options use_tls, tls_req_cert and tls_cacertfile appropriately in overcloud_keystone_ldap.json file described above.
+
+2. Create overcloud-env.json file with the following content:
 
 		{
-		    "keystone": {
-		        "config": [
-		            {
-		                "section": "<section1>",
-		                "values": [
-		                    { "option": "<option1>", "value": "<value1>" },
-		                    { "option": "<option2>", "value": "<value2>" },
-		                    ...
-		                ]
-		            },
-		            ....
-		        ]
-		    },
-		    "keystone_ldap": {
-		        "config": [
-		            {
-		                "section": "<section2>",
-		                "values": [
-		                    { "option": "<option1>", "value": "<value1>" },
-		                    { "option": "<option2>", "value": "<value2>" },
-		                    ...
-		                ]
-		            },
-		            ...
-		        ]
-		    }
-		}
+	        "parameters": {
+	            "KeystoneCACertificate": "<CA Root Certificates converted to a single line>",
+	            "KeystoneSigningCertificate": "<Keystone Signing Certificate converted to a single line>",
+	            "KeystoneSigningKey": "<Keystone Signing Key converted to a single line>"
+	        }
+	    }
 
-    Content of "keystone_ldap" section above is similar to the content of "keystone" section for "LDAP as Primary backend" installation.
-    Content of "keystone" section above should turn on Domain Specific Configuration. As per http://docs.openstack.org/trunk/config-reference/content/section_keystone-domain-configs.html, it should only propagate the following 2 settings:
+	The set of CA Root Certificates set mentioned above should contain root certificates for all LDAP servers, for which certificate validation set to "demand" or "allow".
 
-[identity]
-domain_specific_drivers_enabled = True
-domain_config_dir = /etc/keystone/domains
+3. Change `overcloud-env.json` file access permissions to `0600`:
 
- 
+		chmod 600 overcloud-env.json
 
-Sample file for OpenLDAP server running on 16.103.150.200, with TLS enabled:
+Follow the steps described in the installation instructions to deploy the overcloud nodes.
+
+[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/#startseed)
+
+[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/#startseed)
 
 
-expand source
-
-
-Sample file for Microsoft AD server running on 16.103.150.204:
-
- 
-expand source
-
- 
-overcloud-env.json (optional)
-
-This file is only needed if Keystone is set to verify a SSL certificate presented by LDAP server against list of CA certificates known by Keystone. To enable this, option tls_req_cert above must be set to  value other then "never" (i.e. "allow" or "demand"). In this case, a corresponding CA certificate must be added to /mnt/state/etc/keystone/ssl/certs/ca.pem file used by Keystone. To do this, create the file with the following content:
-{
-   "parameters" : {
-      "KeystoneCACertificate" : "<content of CA certificate(s) converted to a single line>",
-      "KeystoneSigningKey" : "<content of Signing Key converted to a single line>",
-      "KeystoneSigningCertificate" : "<content of Signing Certificate converted to a single line>"
-    }
-}
-
-Example:
-{
-   "parameters" : {
-      "KeystoneCACertificate" : "<content of CA certificate(s) converted to a single line>",
-      "KeystoneSigningKey" : "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDfDahcllgNW2/U\ne0DBr+PCtRA0yTUr6n9+nZG1jQ3Pz3luYf5H3IMJXD93czXCWhwTrbOU0Gl75NFx\nOIuCpeKCh5+FrRo8FvdSq9h9c3ixw+t8+NHCTnu8YcDGQP0e0JEdxCIbwNa5+iJt\nQdCrLO3Ws3X9nhR6FV4qxXZ57nl2hN7eoBbyilRQc9C8BUOrE/7X/RHcKQWSln0i\n+6QSwDh454gRdSKmIyJXruynnsbQZlhLwHQLOHyHgPvSarbdkeWAgV0EZOC+xpXq\n1YwDWrBP/exYlWBu5PUeBAw9dIeLdpw5eI3GO97pTmma8EfnPAt4jJi0gVuCs6Zw\nwyW7PLolAgMBAAECggEAGsyHR+iAV8p+mybb1umNEd2zPsRV8RrRiqLf2NJDsI4a\n5to7NOMXk05UCcP714gAC5U5GE4Z/lq1l0bV7DKGDmzBC8yKdGHGAVbIQfpXq/QA\nHRnACfpn/3A3Oxqfzs38QXlJJ9B5fArDjCD2MzrIsJ0LNheCGlDq6XSkEW5Hhaej\nskfFVksM8DHcOthprbW9bX3fF0qWRgIwtWBhFnPua41FLBkQjedQWWNiAhN9FaDv\njfjyRE+/EHIOcwObdVi4ESyW8DFhjLfH68qq6SOkvW1fhHXEXdqD1ZIVb4PveALP\n5uvPrpiWc+fnr0OAD4nxkU44Pa/ZcYGH0fJNAkYiAQKBgQD3ntn+fWGn9iDDuIOr\n1JT2cxzt+eGTuBRbbecDyJVYmCQ5O8kcNZfkv+54CVCjM668xmlIzvAvJcnzqAAy\n3Iq/3khRopN5cS84K2ALsZVQTKJV3O2ywOqhZnTxJCJzvg+CzJwjWdCHm2+czr1u\nAdVofNFhCncXG8S2yAw0QajOQQKBgQDmmfrHC5yzh69vsofA3TZtyqk9qSIikdx9\n7PdJABJlpkBTaCnkAqhMVJcvUfu3PuMBUbHvTq8PiZp1C9pXfxqbuJHdH9+FqohT\nKbB0jmulS0VRoL30cC0e+svvi7fwK75dUbCzLBoG2nDbhSddJWJwa0EukFpGcFSG\nmNhFAyG65QKBgE/Jepp60gWp1ALcqGisldcXXmH720iazsxrDD322tByLXHXpsSV\nLD1D7tX0wmvj0lD3aaNRMqkudvUw0+ePkpGiUREk3noKE1n49/isnt0B5GjgSCMJ\n8FBTUCkHKKa8vgi6XzEw1nVrizouj3Er3BTP6zNmiNsEUo1Gxk/sPDVBAoGAJImh\nQoiEe620Dm6rM9PZG+xQhISX9AJIfWtegyKPx6tf5ddLS+Vf5ThB/C1xRMeiEENx\nfglpk3yqDIGkRtjMzn+gHPk/4V3z27lvTAiE5dvXT+e4MVLU02PJjFsG+fb0YrTe\n2oTSWuOhniaq5gdWYZmc6lPU+fQycGEnY0frwEECgYEAoyqSw/h6KQG17D1qj/30\nC4V8hx24y+tZ0jceKY+SS2SSO6tVQmwn2eNV6RqBHVk5ilmNTbxpzkr/PFGHvfj+\nCAovVYLk38ALirUPfSd6KhYHNcjtQSHN0VPcKCnXW2p/lKSv6cQqQXVV0TtqXoAH\nu7qGPsC+w733oD8z4JFnELE=\n-----END PRIVATE KEY-----\n",
-      "KeystoneSigningCertificate" : "-----BEGIN CERTIFICATE-----\nMIIDJDCCAgygAwIBAgIBAjANBgkqhkiG9w0BAQUFADBTMQswCQYDVQQGEwJYWDEO\nMAwGA1UECAwFVW5zZXQxDjAMBgNVBAcMBVVuc2V0MQ4wDAYDVQQKDAVVbnNldDEU\nMBIGA1UEAwwLS2V5c3RvbmUgQ0EwHhcNMTQwODE4MjE1NjE2WhcNMjQwODE1MjE1\nNjE2WjBYMQswCQYDVQQGEwJYWDEOMAwGA1UECAwFVW5zZXQxDjAMBgNVBAcMBVVu\nc2V0MQ4wDAYDVQQKDAVVbnNldDEZMBcGA1UEAwwQS2V5c3RvbmUgU2lnbmluZzCC\nASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN8NqFyWWA1bb9R7QMGv48K1\nEDTJNSvqf36dkbWNDc/PeW5h/kfcgwlcP3dzNcJaHBOts5TQaXvk0XE4i4Kl4oKH\nn4WtGjwW91Kr2H1zeLHD63z40cJOe7xhwMZA/R7QkR3EIhvA1rn6Im1B0Kss7daz\ndf2eFHoVXirFdnnueXaE3t6gFvKKVFBz0LwFQ6sT/tf9EdwpBZKWfSL7pBLAOHjn\niBF1IqYjIleu7KeextBmWEvAdAs4fIeA+9Jqtt2R5YCBXQRk4L7GlerVjANasE/9\n7FiVYG7k9R4EDD10h4t2nDl4jcY73ulOaZrwR+c8C3iMmLSBW4KzpnDDJbs8uiUC\nAwEAATANBgkqhkiG9w0BAQUFAAOCAQEAbcEqCkQn9N6lCBQ3W+lHiqYanQUypCQc\nMoycDEPjjNx3FE6XtVEs8SsIKfl0UpQhZiJsCbJp1nU+po6dtqiqRn5/rPPAPTnj\n8hnB/0oK0LWhOIFS7RFOb3XJlX7soRQU+Zz+mSpd3cg++xT2WqTM/EWSqFOb1nET\nGsDnJm6bIjdG7rXBgRQmr7nrivwrMZsl+vx3Ytf+AraNjEdne8XXKVJ9l0d6jZIV\njA1K2iMtsLDEZgQkKNiCynEQ81EkBcB0P+fswZ9qHD1htj1aUfFtVmIqY/cxpVKX\nyuEml01VKQQ/FVk+SvucqOR8awiVBKw3krcq79DJMFRZ2D30PysHqA==\n-----END CERTIFICATE-----\n"
-    }
-}
-
- 
-
-For OpenLDAP server running on 16.103.150.200, the overcloud_env.json file can be found in attachment.
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 ----

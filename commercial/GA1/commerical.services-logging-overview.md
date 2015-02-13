@@ -101,11 +101,25 @@ While creating Kibana dashboards is beyond the scope of this document, it is imp
 
 ### Logging into Kibana ## {#interface}
 
-******WHAT IS THE URL******
+Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
 
-Because centralized logging is separate service from the Horizon dashboards, there is separate username/password authentication. By default, the HP Horizon dashboard username and password will not work with Kibana.
+		http://<undercloud IP>:81 
+
+	**Example:**
+
+		http://192.0.2.2:81
+
+Log in with the user name `kibana` and the password.
 
 After installation, the Kibana username and password are stored on the undercloud in the `/opt/kibana/htpasswd.cfg` file. 
+
+	If you did not retrieve the undercloud IP from the end of the install, enter the following command:
+
+		. /root/stackrc
+		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
+		echo $UNDERCLOUD_IP
+
+Because centralized logging is separate service from the Horizon dashboards, there is separate username/password authentication. By default, the HP Horizon dashboard username and password will not work with Kibana.
 
 ## For more information ## {#info}
 

@@ -114,7 +114,7 @@ NTP uses a hierarchical, semi-layered system of time sources. Each level of this
 
 
 HP Helion OpenStack uses stratum 10. Using a numerically high stratum so this is only used if all external clocks fail.
-> # This will mitigate skew until external clocks return to service.
+This will mitigate skew until external clocks return to service.
 
 
 

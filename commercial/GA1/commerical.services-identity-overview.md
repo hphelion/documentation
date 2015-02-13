@@ -54,6 +54,8 @@ The Identity service will confirm that incoming request are being made by the us
 
 **Domain management** - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a domain and assign roles to users and groups.
 
+**Multi-Domain Support** The HP Helion OpenStack identity service allows administrators to create multiple [domains](#domain), which allow for the isolation of projects and users. Users, groups, and projects can be assigned to a specific domain, but might not have rights in other domains. Domain admins manage resources in their own domains. 
+
 ## Key Components
 
 The Identity service primarily works on the following key concepts: 
@@ -66,19 +68,27 @@ Each is owned by exactly one domain. Users, however, can be associated with mult
 
 Each domain defines a namespace where certain API-visible name attributes exist, which affects whether those names must be globally unique or unique within that domain. In the Identity API, the uniqueness of the following attributes is as follows:
 
-    Domain Name. 
+* Domain Name. Globally unique across all domains.
 
-    Role Name. Globally unique across all domains.
+* Role Name. Globally unique across all domains.
 
-    User Name. Unique within the owning domain.
+* User Name. Unique within the owning domain.
 
-    Project Name. Unique within the owning domain.
+* Project Name. Unique within the owning domain.
 
-    Group Name. Unique within the owning domain.
+* Group Name. Unique within the owning domain.
 
+Each domain can point to its own identity source. For example, LDAP, MySQL, can be identity sources.
 
 **Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v2.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
+### Administrators ### {#admins}
+
+The HP Helion OpenStack Identity service features three types of administrator users:
+
+* Cloud Admins are super admins. This role needs a domain-scope token.
+* Domain admins manage users, user groups, and projects in their own domain.
+* Project admin can assign roles to users in their project. Requires a project token.
 
 ### Project ### {#project}
 
@@ -95,7 +105,11 @@ A group is a collection of [users](#user) that is associated with one or more [p
 
 ### Role ### {#role}
 
-A role defines set of rights and privileges that can be assigned to a user. A user assuming that role inherits those rights and privileges. A role is also called a *personality*. Each user name must be unique across all of your domains.
+A role defines set of rights and privileges that can be assigned to a user at the domain or project level. A user assuming that role inherits those rights and privileges. A role is also called a *personality*. Each user name must be unique across all of your domains.
+
+### Policies ### {#policy}
+
+A policy is a centralized repository for policy engine rule sets.
 
 
 ### Credentials ### {#creds}
@@ -123,143 +137,11 @@ An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image S
 A network-accessible address, usually described by a URL, where a service may be accessed.
 
 
-## Keystone Integration with LDAP/AD {#LDAP}
+## Next Steps ## #next}
 
-Keystone can also use an external Lightweight Directory Access Protocol (LDAP) or Microsoft Active Directory as source of authority authentication. Either of these authentication sources are the preferred way to configure Keystone user authentication. The native Keystone authentication function is intended only for proof of concept deployments.
+### Integrate the Identity Service (Keystone) with LDAP/AD
 
-LDAP simplifies integration of Identity authentication into an organization's existing directory service and user account management processes.
-
-The requests to Identity service are delegated to the external LDAP or Microsoft AD service, which authorizes or rejects requests based on the policies that have been defined locally. A token is generated on successful authentication.
-
-The `/etc/keystone/keystone.conf` file maps LDAP attributes to Identity attributes, including: users, roles, credentials, and security tokens.
-
-To configure Identity, set options in the /etc/keystone/keystone.conf file. Modify these examples as needed.
- 
-
-To integrate Identity with LDAP
-
-    Enable the LDAP driver in the keystone.conf file:
-    Select Text
-    1
-    2
-    3
-    	
-    [identity]
-    #driver = keystone.identity.backends.sql.Identity
-    driver = keystone.identity.backends.ldap.Identity
-
-    Define the destination LDAP server in the keystone.conf file:
-    Select Text
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    	
-    [ldap]
-    url = ldap://localhost
-    user = dc=Manager,dc=example,dc=org
-    password = samplepassword
-    suffix = dc=example,dc=org
-    use_dumb_member = False
-    allow_subtree_delete = False
-
-    Create the organizational units (OU) in the LDAP directory, and define their corresponding location in the keystone.conf file:
-    Select Text
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    	
-    [ldap]
-    user_tree_dn = ou=Users,dc=example,dc=org
-    user_objectclass = inetOrgPerson
-    tenant_tree_dn = ou=Groups,dc=example,dc=org
-    tenant_objectclass = groupOfNames
-    role_tree_dn = ou=Roles,dc=example,dc=org
-    role_objectclass = organizationalRole
-    [Note]	Note
-
-    These schema attributes are extensible for compatibility with various schemas. For example, this entry maps to the person attribute in Active Directory:
-    Select Text
-    1
-    	
-    user_objectclass = person
-
-    A read-only implementation is recommended for LDAP integration. These permissions are applied to object types in the keystone.conf file:
-    Select Text
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    	
-    [ldap]
-    user_allow_create = False
-    user_allow_update = False
-    user_allow_delete = False
-    tenant_allow_create = False
-    tenant_allow_update = False
-    tenant_allow_delete = False
-    role_allow_create = False
-    role_allow_update = False
-    role_allow_delete = False
-
-    Restart the Identity service:
-
-    # service keystone restart
-
-    [Warning]	Warning
-
-    During service restart, authentication and authorization are unavailable.
-
-Additional LDAP integration settings. Set these options in the keystone.conf file.
-
-Filters
-
-    Use filters to control the scope of data presented through LDAP.
-    Select Text
-    1
-    2
-    3
-    4
-    	
-    [ldap]
-    user_filter = (memberof=cn=openstack-users,ou=workgroups,dc=example,dc=org)
-    tenant_filter =
-    role_filter =
-LDAP Account Status
-
-    Mask account status values for compatibility with various directory services. Superfluous accounts are filtered with user_filter.
-
-    For example, you can mask Active Directory account status attributes in the keystone.conf file:
-    Select Text
-    1
-    2
-    3
-    4
-    	
-    [ldap]
-    user_enabled_attribute = userAccountControl
-    user_enabled_mask = 2
-    user_enabled_default = 512
-
-
-
+You can optionally [integrate the Identity service with with an existing LDAP directory](/helion/openstack/services/identity/integrate-ldap/) for authentication and authorization services.
 
 ## Working with the Identity Service
 
