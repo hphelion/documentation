@@ -21,9 +21,8 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
--->
+
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9650; Installation and Configuration for KVM Hypervisor</a> or  <a href="/helion/openstack/install/esx/">&#9650; Installation and Configuration for ESX Hypervisor</a></p> 
 
 # HP Helion OpenStack&reg; Verifying your installation
 
@@ -44,7 +43,7 @@ From the seed cloud host, connect to the undercloud Horizon console.
 
 2. Point your web browser on the seed cloud host to the undercloud Horizon console using the `UNDERCLOUD_IP_ADDRESS` obtained after the install.
 
-	If you did not retrieve the overcloud IP from the end of the install, enter the following command:
+	If you did not retrieve the undercloud IP from the end of the install, enter the following command:
 
 		. /root/tripleo/tripleo-undercloud-passwords
 		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
@@ -122,7 +121,7 @@ HP Helion OpenStack includes monitoring logging. The monitoring service uses [Ic
 
 You can access these services with the following steps:
 
-1. To access the undercloud monitoring console, launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
+1. To access the Icinga monitoring console, launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
 
 		http://<undercloud IP>/icinga/
 
@@ -130,17 +129,19 @@ You can access these services with the following steps:
 
 		http://192.0.2.2/icinga
 
-	If you did not retrieve the undercloud IP from the end of the install, enter the following command:
+2. Log in with the user name `icingaadmin` and password `icingaadmin`.
 
-		. /root/stackrc
-		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
-		echo $UNDERCLOUD_IP
+4. To access the Kibana logging console, launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
 
-2. Log in with the user name `icingaadmin` and password.
+		http://<undercloud IP>:81 
 
+	**Example:**
 
-	<!-- Not needed; password is in install output
-	3. To access the undercloud logging console, first obtain the Kibana password.
+		http://192.0.2.2:81
+
+5. Log in with the user name `kibana` and the password you obtained from the end of the install.
+
+	If you did not retrieve the password:
 
 	a. From the seed cloud host log in to the undercloud as super user:
 
@@ -149,25 +150,9 @@ You can access these services with the following steps:
 
 	b. Enter the following command to display the password:
 
-		cat  /opt/kibana/htpasswd.cfg 
+		cat  /root/work/tripleo/tripleo-undercloud-passwords
 
 	Make note of the password.
-	-->
-4. Launch a web browser on the seed cloud host to the following IP address, using the undercloud IP address from the end of the install:
-
-		http://<undercloud IP>:81 
-
-	**Example:**
-
-		http://192.0.2.2:81
-
-	If you did not retrieve the undercloud IP from the end of the install, enter the following command:
-
-		. /root/stackrc
-		UNDERCLOUD_IP=$(nova list | grep "undercloud" | awk ' { print $12 } ' | sed s/ctlplane=// )
-		echo $UNDERCLOUD_IP
-
-5. Log in with the user name `kibana` and the password.
 
 ## Next Step
 
