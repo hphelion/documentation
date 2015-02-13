@@ -105,8 +105,7 @@ Perform the following steps to configure Brocade Zone Manager.
         }
       
         
-	The sample cloud configuration file for Brocade Zone Manager is shown as follows:
-
+	After creating initial structure and adding parameters under **config** section, the JSON file should appears as shown in the sample below:
 
 
 		{
