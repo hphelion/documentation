@@ -99,7 +99,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
 
-6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/install/ldap/), to the seed cloud host.
+6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/), to the seed cloud host.
 
 	a. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
 
@@ -204,7 +204,7 @@ Make sure you can access the overcloud Horizon dashboard. To do this, follow the
 -->
 ## Create projects for LDAP users {#ldap}
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/install/ldap/#horizon).
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/services/identity/integrate-ldap/#horizon).
 
 ## Next Step {#next-steps}
 

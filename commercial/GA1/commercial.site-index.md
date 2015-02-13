@@ -88,7 +88,7 @@ Review the following topics related to installing on ESX:
 
 Review the following topics related to optional and required post-installation steps:
 
-- [Integrating LDAP](/helion/openstack/install/ldap/)
+- [Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/)
 - [DNSaaS Installation and Configuration](/helion/openstack/install/dnsaas/)
 - [Configuring Your Network Securely](/helion/openstack/install/security/)
 - [Back Up and Restore](/helion/openstack/backup.restore/)

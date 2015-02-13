@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/ldap/"> &#9650; Integrate the Identity Service (Keystone) with LDAP/AD</a></p> 
+<p style="font-size: small;"> <a href="/helion/openstack/services/identity/integrate-ldap/"> &#9650; Integrate the Identity Service (Keystone) with LDAP/AD</a></p> 
 
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 

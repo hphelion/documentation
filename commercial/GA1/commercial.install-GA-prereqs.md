@@ -220,7 +220,7 @@ To set a default DNS name server for your HP Helion OpenStack Commercial cloud, 
 	
 **OPTIONAL** The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
-For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/install/ldap/).
+For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/).
 
 ## Next step {#nextstep}
 
