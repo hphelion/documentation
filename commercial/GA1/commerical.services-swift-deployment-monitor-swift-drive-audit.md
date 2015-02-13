@@ -53,7 +53,7 @@ Perform the following steps to monitor the drive audit:
 <a href="javascript:window.open('/content/documentation/media/icinga_host-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b><i>Host Detail</i></b><!---(opens in a new window)----></a>.
 
 3. In the **Host** column, <a href="javascript:window.open('/content/documentation/media/swift_icinga_view-details.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b>click the icon</b><!--- (opens in a new window)---> </a> next to the host IP when the tooltip displays as "View Service Details For This Host". <br>
-The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-swift-proxy-healthcheck.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b> status of the audit drive</b><!--- (opens in a new window)---></a>   of the selected Swift node.
+The page navigates to Service Status Details For Host &lt;Swift node IP address &gt; and displays the <a href="javascript:window.open('/content/documentation/media/swift_icinga-drive-audit.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><b> status of the audit drive</b><!--- (opens in a new window)---></a>   of the selected Swift node.
 
 
 <!--
