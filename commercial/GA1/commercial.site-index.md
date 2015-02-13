@@ -72,7 +72,7 @@ Review the following topics related to installing on KVM:
 - [Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
 - [Configuring HP StoreVirtual VSA for Block Storage](/helion/openstack/install/vsa/)
 - [HP StoreServ (3PAR) Support](/helion/openstack/install/3par/)
-- [Integrating LDAP](/helion/openstack/install/ldap/)
+- [Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/)
 - [Add (Scale-Out) and Remove (Scale-In) Nodes on KVM Hypervisors](/helion/openstack/install/add/nodes/)
 
 ### Installing with ESX Hypervisor Support
