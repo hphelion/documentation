@@ -33,9 +33,13 @@ You can use the Networking service to connect guest servers or you can define an
 
 You can also use the Networking service to [identify the actual IP address of a malicious user](#nat), if you know the user's NAT address.
 
+## Installing the Networking service ##
 
+Helion Network Administrators are responsible for planning for the Neutron networking service, and once installed, to configure the service to meet the needs of their cloud network users. 
 
-## Working with the Networking Service
+For information, see [Networking Operation (Neutron) Administrator Pre and Post Installation Tasks](/helion/openstack/services/neutron/installation/intro/).
+
+## Working with the Networking service
 
 To perform tasks using the Networking service, you can use the dashboard, API or CLI.
 
@@ -55,7 +59,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 <!---
 
-## How To's with the HP Helion OpenStack Networking Service ## {#howto}
+## How To's with the HP Helion OpenStack Networking service ## {#howto}
 
 The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
