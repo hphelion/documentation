@@ -7,6 +7,7 @@ product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
 authors: Michael B, 
+
 ---
 <!--UNDER REVISION-->
 
@@ -508,7 +509,7 @@ Other requirements and recommendations for the seed cloud host are as follows:
 
 - The Ubuntu 14.04 operating system must be installed
 - A browser to access the undercloud or overcloud
-- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes
+<!--- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes-->
 - A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
