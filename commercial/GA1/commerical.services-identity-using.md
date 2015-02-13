@@ -25,7 +25,7 @@ PageRefresh();
 
 Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v3.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 ### Using the dashboards {#UI}
 
@@ -35,7 +35,7 @@ Note: Domain management is not available using the Helion OpenStack Dashboard. Y
 
 ###Using the API {#API}
  
-You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
+You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v3.0 Reference](http://api.openstack.org/api-ref-identity-v3.html).
 
 ###Using the CLI {#cli}
 

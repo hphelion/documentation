@@ -1,4 +1,4 @@
----
+	---
 layout: default
 title: "HP Helion OpenStack&#174; Identity Service (Keystone) Overview"
 permalink: /helion/openstack/services/identity/overview/
@@ -25,7 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. 
+Based on OpenStack Keystone v3 API, the HP Helion OpenStack Identity service provides one-stop authentication. 
 
 The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens.
 
@@ -80,7 +80,7 @@ Each domain defines a namespace where certain API-visible name attributes exist,
 
 Each domain can point to its own identity source. For example, LDAP, MySQL, can be identity sources.
 
-**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v2.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
+**Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v3.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
 To use Keystone v3 in Horizon, for example to use LDAP, you can manually change the settings. See [Configuring Horizon for Keystone v3](/helion/openstack/services/identity/configure/) for instructions and important restrictions. 
 
@@ -139,7 +139,7 @@ An OpenStack service, such as Compute (Nova), Object Storage (Swift), or Image S
 A network-accessible address, usually described by a URL, where a service may be accessed.
 
 
-## Next Steps ## #next}
+## Next Steps ## {#next}
 
 ### Integrate the Identity Service (Keystone) with LDAP/AD
 
@@ -147,7 +147,7 @@ You can optionally [integrate the Identity service with with an existing LDAP di
 
 ## Working with the Identity Service
 
-To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [API](http://api.openstack.org/api-ref-identity-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+To [perform tasks using the Identity service](/helion/openstack/services/identity/using/), you can use the [API](http://api.openstack.org/api-ref-identity-v3.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 ## For more information ##
 
