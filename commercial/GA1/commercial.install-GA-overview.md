@@ -40,7 +40,7 @@ After the installation, you can add additional block storage nodes and configure
 
 ## Installation planning {#install-configure}
 
-HP Helion OpenStack uses three linked installation phases, called [OpenStack-on-OpenStack (TripleO) deployment model](https://wiki.openstack.org/wiki/TripleO) to deploy a complete OpenStack cloud. TripleO simulates the deployment of OpenStack by creating and configuring baremetal servers to successfully run a cloud deployment.
+HP Helion OpenStack uses three linked installation phases, called [OpenStack-on-OpenStack (TripleO) deployment model](https://wiki.openstack.org/wiki/TripleO) to deploy a complete OpenStack cloud. 
 
 TripleO is OpenStack's official project for deployment, configuration, and life cycle management of OpenStack clouds. A TripleO installation includes a seed, undercloud and overcloud:
 
@@ -77,9 +77,15 @@ You can find more information on the hypervisor options in the Technical Overvie
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
+You can use your KVM cloud with either HP Storevirtual or HP StoreServ (3PAR) storage:
+
+####  With HP StoreVirtual VSA storage 
+
 HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
 
-Your HP Helion OpenStack installation can be configured to use 3Par for block storage
+####  With HP StoreServ (3PAR) storage 
+
+HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. 
 
 ### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {#esx-hypervisor}
 

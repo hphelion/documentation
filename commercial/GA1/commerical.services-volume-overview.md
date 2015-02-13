@@ -32,7 +32,7 @@ Once created, you can easily disconnect block storage volumes from one instance 
 HP Helion OpenStack uses StoreVirtual as a backend to Cinder to realize horizontally scalable block storage. StoreVirtual is unique in the sense that the storage controller runs as a virtual appliance and helps realize Software Defined Block Storage. To use StoreVirtual you must use the KVM hypervisor. 
 
 
-HP Helion OpenStack also supports HP StoreServ 3PAR as Cinder backend.
+HP Helion OpenStack also supports HP StoreServ 3PAR as a Cinder backend.
 
 
 
