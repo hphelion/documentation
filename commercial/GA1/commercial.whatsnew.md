@@ -1,0 +1,70 @@
+---
+layout: default
+title: "What's New in HP Helion OpenStack and Development Platform"
+product: commercial.ga
+permalink: /helion/openstack/whatsnew
+product-version1: HP Helion OpenStack 1.1
+product-version2: HP Helion OpenStack 
+role1: none
+authors: Jayme P
+
+---
+<!--UNDER REVISION-->
+
+# What's New in HP Helion OpenStack&reg; and Development Platform in 1.1
+
+## HP Helion OpenStack 
+
+The following features have been added to HP Helion OpenStack 1.1:
+
+**OpenStack Juno support** <br />All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+
+**HP Helion OpenStack Metering services** <br />The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service employs filters to avoid high loads of inessential data on shared resources. <!--HPM24-->
+
+**AppArmor profiles enabled for Compute nodes** <br />AppArmor proactively protects the operating system and applications from external or internal threats, including zero-day attacks, by enforcing good behavior and preventing even unknown application flaws from being exploited. <!--HPM27-->
+
+**Additional Components in Centralized Logging** <br />[Centralized logging support](/helion/openstack/services/logging/overview/) has now been added for the following additional components: <!--HPM28-->
+
+- HAProxy
+- syslog
+- keepalived 
+
+**Windows certification as a guest O/S on KVM** <br />Microsoft Windows Server 2008 and 2012 have received Windows Server Virtualization Verification Program (SVVP) status. Windows Server can operate as a *guest* operating system in a virtual environment as if it were installed on baremetal (with certain exceptions allowed by MS). <!--HPM-29--> For information on the SVVP program, see Windows Server Catalog [Server Virtualization Validation Program](http://www.windowsservercatalog.com/svvp/).
+
+**Swift diagnostic checks** <br />New diagnostics checks have been implemented for [Swift clusters](/helion/openstack/services/object/overview/). Diagnostic messages are sent to the [Icinga](/helion/openstack/services/object/swift/replica-status/) service. <!--HPM15-->
+
+**Improved recovery time**<br /> When a virtual IP is moved to another overcloud controller the system, the controller will become available in approximately one minute. <!--HPM121-->
+
+**Ceph Firefly Storage Solution Integration** <br /> Ceph provides a unified, scalable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. It also supports user backup and archive workloads to the Object (Swift) API service writing to the same unified Ceph storage platform. <!--hpm30-->
+
+**Multipath suppport for 3PAR**<br /> HP Helion OpenStack now supports multipathing for network redundancy. Multipathing helps maintain a constant connection between an ESXi host and its storage. See [Configuring Multipath for 3PAR](/helion/openstack/install/3par/multipath/).<!--HPM121-->
+
+**Transport Layer Security (TLS) support** <br />HP Helion OpenStack now supports TLS protocols to protect internal traffic for Overcloud OpenStack API and endpoints. <!--HPM16-->
+
+**HP Helion OpenStack Identity service** <br />The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See [Identity Service Overview](/helion/openstack/services/identity/overview/).
+
+**Fibre Channel Zone Manager support** <br />The OpenStack Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fibre Channel Zone Manager](/helion/openstack/services/volume/Fibre/).<!--HMP32-->
+
+**Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** <br />UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
+
+**Keystone elements upgraded to v3** <br /><!--hpm31-->
+
+**Flexible control plane implemented** <br />
+Allows an HP Helion OpenStack installation on a mix of VMs and physical nodes, support for multiple KVM hosts, and a mechanism for specifying which host a VMs is created on. All HA scenarios are still supported. <!hpm441-->
+
+**Ruby CLI No Longer Supported** <br />The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
+
+## HP Helion Development Platform
+
+**Updated Command Line Client** <br />
+The [ALS command line client](/als/v1/client/reference) (cfmgmt.exe) has been updated to provide more options.
+
+**Additional ALS Client Commands**<br />
+More [commands](/als/v1/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
+
+- [Control](/als/v1/user/reference/client-ref/control)
+- [Feature Flags](/als/v1/user/reference/client-ref/flags)
+- [Security Groups](/als/v1/user/reference/client-ref/securitygroups)
+- [Space Quotas](/als/v1/user/reference/client-ref/spacequotas) 
+
+**Ruby CLI No Longer Supported** <br />The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
