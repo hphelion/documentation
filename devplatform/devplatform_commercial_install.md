@@ -76,7 +76,7 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 9. Optionally, you can specify the Username, Tenant and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -r {region_name}
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} –I {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
@@ -355,8 +355,8 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 		2. Open the */etc/haproxy/manual/paas.cfg* file and add the following lines. <br /> **Note**: The last line should be repeated once for each API server identified in step 1.
 		 
 				listen marketplace_api
-				bind <Virtual IP from step 2>:8082
-				server marketplace_api0 <API server n's IP Address> check inter 2000 rise 2 fall 5
+				bind <Virtual IP from step 2>:8779
+				server marketplace<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt 
 
 		3. Open the */etc/iptables/iptables* file and add to the end of it:
 		 
@@ -373,6 +373,40 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
 
+The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
+	
+	
+3. The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
+	
+	1. Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
+
+			nova list | awk '/trove[0-9]*_api/{ print $12 }' | cut -d "=" -f 2
+
+	2. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion 	OpenStack services:
+			
+			keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+
+	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
+
+		a. Edit the /etc/haproxy/manual/paas.cfg file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
+	
+			listen trove_api
+ 			bind <Virtual IP from step 2>:8779
+ 			server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt
+
+		b. Edit the /etc/iptables/iptables file and add to the end of it:
+
+			-I INPUT -p tcp --dport 8779 -j ACCEPT
+
+		c. Run the following command as root:
+
+			sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
+				
+		d. Reload the haproxy service configuration
+		
+			sudo service haproxy reload
+
+Your installation is now complete.
 
 ## Troubleshooting<a name="troubleshooting"></a>
 
