@@ -85,7 +85,7 @@ HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the co
 
 ####  With HP StoreServ (3PAR) storage 
 
-HP 3PAR StoreServ is a storage array that supports Fiber Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. 
+HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. 
 
 ### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {#esx-hypervisor}
 
