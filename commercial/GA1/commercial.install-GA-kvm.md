@@ -136,10 +136,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in [Verifying your installation](/helion/openstack/install/verify/).
 
+<!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/services/identity/integrate-ldap/#horizon).
-
+-->
 
 ## Next Steps {#next-steps}
 

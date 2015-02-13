@@ -140,71 +140,11 @@ If possible, leave this console display open as you will need the passwords to v
 
 To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in [Verifying your installation](/helion/openstack/install/verify/).
 
-<!-- Hiding until I determine if linked doc will work
-### Connect to the undercloud Horizon console {#monitoring}
-
-Make sure you can access the undercloud Horizon dashboard. To do this, follow the steps below:
-
-1. From the seed, run the following command.
-
-		. /root/stackrc
-
-2. Assign the undercloud IP address to a variable.
-
-		UNDERCLOUD_IP=$(nova list | awk '/\| undercloud/{print $12}' | sed 's/ctlplane=//'); echo $UNDERCLOUD_IP
-
-3. Determine the undercloud IP from the output of step 2 using the following command. It is in the last line returned.
-  
-		echo ${UNDERCLOUD_IP}
-
-4. Obtain the undercloud admin password using the following command:
-
-		UNDERCLOUD_ADMIN_PASSWORD=$(grep UNDERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-undercloud-passwords | sed 's/UNDERCLOUD_ADMIN_PASSWORD=//'); echo $UNDERCLOUD_ADMIN_PASSWORD
-
-5. From your install system, open a web browser and point to:
-
-		http://<undercloud_IP>
-
-6. Log in as user 'admin' with the admin password from step 4.
-
-### Connect to the overcloud Horizon console {#connectconsole}
-
-Make sure you can access the overcloud Horizon dashboard. To do this, follow the steps below:
-
-1. From the seed, export the overcloud passwords.
-
-		. /root/tripleo/tripleo-overcloud-passwords
-
-2. Export the overcloud users.
-
-		TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc
-
-3. Assign the overcloud IP address to a variable.
-
-		OVERCLOUD_IP=$(jq '.overcloud.endpointhost' /root/tripleo/ce_env.json)
-
-	Remove per Divaker this sub-step
-	4. With the IP address and root password, log in as the main user, root using the following command 
-
-		ssh root@${DEMO_IP}
-
-	If the optional second network was configured, the overcloud controller IP is the value set for `NeutronPublicInterfaceIP`.
-
-4.	Obtain the overcloud admin password using the following command:
-
-		OVERCLOUD_ADMIN_PASSWORD=$(grep OVERCLOUD_ADMIN_PASSWORD /root/tripleo/tripleo-overcloud-passwords | sed 's/OVERCLOUD_ADMIN_PASSWORD=//'); echo $OVERCLOUD_ADMIN_PASSWORD
-
-5. From your install system, open a web browser and point to:
-
-		http://<overcloud_IP>/
-
-6. Log in to the overcloud as user `admin` with the password you obtained in step 4.
-
-	**Note:** If you are unable to connect to the Horizon console, check your proxy settings to ensure that access to the controller VM is successfully redirected through a proxy.
--->
+<!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 
 If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/services/identity/integrate-ldap/#horizon).
+-->
 
 ## Next Step {#next-steps}
 

@@ -38,7 +38,6 @@ The process for integrating LDAP involves the following steps:
 - [Verify prerequisites](#pre)
 - [Generate configuration files](#config)
 - [Include the configuration files in the installation](#install)
-- [Configure Horizon](#horizon)
 
 ## Prerequisites {#pre}
 Before starting the integration, review the following prerequisites:
