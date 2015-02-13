@@ -45,36 +45,16 @@ Perform the following procedure to add disk to a starter object ring.
 
 Perform the following steps to add Swift disk to a ring:
 
-1. Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to the undercloud. 
-
-2. Log in to the seed. 
-
-		# ssh root@<seed IP address>
- 
-3. Copy the SSH key from the seed cloud to undercloud.
-
-		# scp ~/.ssh/id_rsa heat-admin@<\undercloud IP address>:/home/heat-admin
-
-4. Log in to the undercloud.
-
-		# ssh heat-admin@<undercloud IP address>
-		# sudo -i
-		# mv ~heat-admin/id_rsa ~/.ssh/ 
-
-	<!-- not required
-	1. Log in to the undercloud from seed. 
+1. Log in to the undercloud from seed. 
 
 		# ssh heat-admin@<undercloud IP address> 
 		# sudo -i
 
-	--->
+2. Change the directory to ring builder.
 
-5. Create a directory named `ring-building`.
-
-		# mkdir -p /root/ring-building
 		# cd /root/ring-building
 
-6. List the starter Swift nodes.
+3. List the starter Swift nodes.
 
 		# ringos list-swift-nodes -t starter
 		
@@ -87,7 +67,7 @@ Perform the following steps to add Swift disk to a ring:
 		| 192.0.2.24    |
 		+---------------+
 
-7. List the disks on the starter nodes.
+4. List the disks on the starter nodes.
 
 		# ringos list-disks -n <starter Swift nodes IP address> 
 
@@ -102,7 +82,7 @@ Perform the following steps to add Swift disk to a ring:
 		|          |            |
 		+----------+------------+
 
-8. Format the given disk.
+5. Format the given disk.
 
 		# ringos format-disks -n <starter Swift nodes IP address> -d <disk>
 
@@ -116,14 +96,14 @@ Perform the following steps to add Swift disk to a ring:
 		| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |
 		+----------+-----------+---------+---------------------------------+-------------+------------+
 
-9. List the file in ring directory and identify the `object.builder` file for object.
+6. List the file in ring directory and identify the `object.builder` file for object.
 
-10. (Optional)If the builder file does not exit in the undercloud, copy the builder files using the following command.
+7. (Optional)If the builder file does not exit in the undercloud, copy the builder files using the following command.
  
 		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
 		
 
-11. Add the formatted disk to object ring.
+8. Add the formatted disk to object ring.
 
 		# ringos add-disk-to-ring -f /root/ring-building/object.builder -i <Starter Swift nodes IP address> -p <port> -d <disk label> -w <weight> -r <region> -z <zone>
 
@@ -135,35 +115,35 @@ Perform the following steps to add Swift disk to a ring:
               
 	* Add drives gradually using a weighted approach to avoid degraded performance of Swift cluster. The weight will gradually increase by 25% until it becomes 100%. The initial weight is 25.
 
-12. Re-balance the ring.
+9. Re-balance the ring.
 
 		# ringos rebalance-ring -f /root/ring-building/object.builder
 	
 	**Note**: You must wait for the time specified by `min_part_hours` before another re-balance succeeds.	
 	
-13. List all the Swift nodes. 
+10. List all the Swift nodes. 
 
 		# ringos list-swift-nodes -t all
 		
-14. Copy the object file to all the nodes.
+11. Copy the object file to all the nodes.
     
     	# ringos copy-ring -s /root/ring-building/object.ring.gz -n <Swift nodes IP address>
 
 
-15. Copy the builder file to all the nodes.
+12. Copy the builder file to all the nodes.
     
     	# ringos copy-ring -s /root/ring-building/object.builder -n <Swift nodes IP address>
 
 	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
 
 
-16. Set the weight of the disks using the following command:
+13. Set the weight of the disks using the following command:
 
 
     	# ringos set-weight -f /root/ring-building/object.builder -s <disk id> -w <weight>
 
  
-17. Repeat steps from **11-16** gradually increasing the disk weight by 25: set the weight to 50, 75, and finally 100 (w= 50, 75, 100) .
+14. Repeat steps from **8-13** gradually increasing the disk weight by 25: set the weight to 50, 75, and finally 100 (w= 50, 75, 100) .
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
