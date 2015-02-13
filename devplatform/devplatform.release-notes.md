@@ -45,7 +45,7 @@ More [commands](/als/v1/user/reference/client-ref/) are now available for managi
 
 ## Known Issues:
 
-2.  Running the Helion Development Platform from multiple projects may cause issues. Please run the install only from the "Admin" project.
+2. **Install supported from within Admin project only**: When using the Horizon console, select only the **Admin** tenant before running the installer. Do not run the installer from any other projects.
 
 3. **Password Field is not used when creating a RabbitMQ cluster**. The password field in the Horizon panel is not necessary when creating a RabbitMQ cluster and will be ignored. This is a known issue and will be fixed in the next release.
 
