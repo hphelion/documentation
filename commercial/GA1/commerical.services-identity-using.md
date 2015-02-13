@@ -151,8 +151,6 @@ Use the Identity service to configure policies.
 * Update a specified policy, including names, IDs, and the user that owns the policy. 
 * Delete a policy.
 
-**REVIEWERS: ARE ADMINS ABLE TO PERFORM THESE TASKS? THEY CAME FROM AN EARLIER DRAFT OF THE IDENTITY DOCS.** 
-
 ### Manage Endpoints
 
 Create and delete endpoints associated with a service. 
