@@ -10,7 +10,7 @@ role1: Application Developer
 role2: ISV Developer
 role3: Service Developer
 role4: Systems Administrator
-writer: Jayme P
+authors: Jayme P
 
 ---
 <!--UNDER REVISION-->

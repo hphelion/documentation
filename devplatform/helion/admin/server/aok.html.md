@@ -13,7 +13,7 @@ role5: Application Developer
 Role6: Security Engineer
 role7: ISV Developer
 role8: Service Developer
-writer: Jayme P
+authors: Jayme P
 
 ---
 <!--UNDER REVISION-->
