@@ -30,8 +30,6 @@ This page provides detailed information on configuring the seed VM as a Network 
 
 HP Helion OpenStack does not require using the seed VM as the NTP server. You can use an external NTP server, as needed.
 
- "higher stratum" and "lower stratum" needs to be clarified, i.e. “higher stratum” means higher in the hierarchy (closer to zero) rather than meaning numerically higher (farther from zero).
-
 **Notes:** 
 
 * NTP clients should use only stratum 2 and higher servers.
