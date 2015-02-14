@@ -65,7 +65,9 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 </tr>
 </table>
 
-You can find more information on the seed, undercloud and overcloud in the Technical Overview.
+You can find more information on the seed, undercloud and overcloud in the [Technical Overview](/helion/openstack/technical-overview/).
+
+You can find more information on available services in the [Services Overview](/helion/openstack/services/overview/).
 
 ## Installation options {#install-option}
 

@@ -28,7 +28,9 @@ PageRefresh();
 
 This page provides detailed information on configuring the seed VM as a Network Time Protocol (NTP) server. NTP is a networking protocol for clock synchronization between computer systems. The undercloud and overcloud systems are configured as NTP clients during the installation process.
 
-HP Helion OpenStack does not requrie using the seed VM as the NTP server.You can use an external NTP server, as needed.
+HP Helion OpenStack does not require using the seed VM as the NTP server. You can use an external NTP server, as needed.
+
+ "higher stratum" and "lower stratum" needs to be clarified, i.e. “higher stratum” means higher in the hierarchy (closer to zero) rather than meaning numerically higher (farther from zero).
 
 **Notes:** 
 
@@ -111,12 +113,7 @@ If your client (including your NTP server) has trouble syncing time you can try 
 
 NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a *stratum* and is assigned a number starting with zero at the top. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy. 
 
-
-
-HP Helion OpenStack uses stratum 10. Using a numerically high stratum so this is only used if all external clocks fail.
-This will mitigate skew until external clocks return to service.
-
-
+HP Helion OpenStack uses stratum 10. Using a numerically high stratum so this is only used if all external clocks fail. This will mitigate skew until external clocks return to service.
 
 If your NTP stratum is lower than 10, set up your host as the time source by fudging a stratum 10.
 
