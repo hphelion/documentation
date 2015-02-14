@@ -62,7 +62,7 @@ Make sure you have met all the hardware requirements and have completed the requ
  
 		sudo su -
 
-2. Execute the `kvm-custom-ips.json` file using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+2. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command sets the environment variables in the JSON file within the current shell.
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
@@ -113,7 +113,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-14. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command executes the content of the file passed as argument, in the current shell.
+14. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command sets the environment variables in the JSON file within the current shell.
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
