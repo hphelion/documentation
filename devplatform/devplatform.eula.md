@@ -6,7 +6,7 @@ product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
 role1: none
-writer: Jayme P
+authors: Jayme P
 
 ---
 <!--PUBLISHED-->
