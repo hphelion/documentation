@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Edition: VSA Support"
+title: "HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack"
 permalink: /helion/openstack/vlan/provider/network/
 product: commercial.ga
 
