@@ -12,7 +12,7 @@ role4: Service Developer
 role5: System Engineer
 role6: Cloud Architect
 role7: Application Architect
-writer: Jayme P
+authors: Jayme P
 
 ---
 <!--UNDER REVISION-->

@@ -9,12 +9,10 @@ role1: Application Developer
 role2: ISV Developer
 role3: Service Developer
 role4: Systems Administrator
-writer: Jayme P
+authors: Jayme P
 
 ---
 <!--PUBLISHED-->
-<!-- file deliberately orphaned, functionality not currently supported although it may work 
--->
 
 # HP Helion Development Platform: New Relic Monitoring {#new-relic-monitoring}
 

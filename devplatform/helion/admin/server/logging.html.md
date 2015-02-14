@@ -11,7 +11,8 @@ role3: Service Developer
 role4: Network Administrator
 role5: Systems Administrator 
 role6: Security Engineer
-writer: Jayme P
+authors: Jayme P
+
 ---
 <!--UNDER REVISION-->
 

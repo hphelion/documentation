@@ -9,7 +9,7 @@ role1: Application Developer
 role2: Security Engineer
 role3: ISV Developer 
 role4: Service Developer
-Writer: Jayme P
+authors: Jayme P
 
 ---
 <!--UNDER REVISION-->

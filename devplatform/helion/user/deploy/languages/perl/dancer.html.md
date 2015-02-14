@@ -8,7 +8,7 @@ product-version2: HP Helion Development Platform 1.1
 role1: Application Developer 
 role2: ISV Developer
 role3: Service Developer
-writer: Jayme P
+authors: Jayme P
 
 ---
 <!--PUBLISHED-->
