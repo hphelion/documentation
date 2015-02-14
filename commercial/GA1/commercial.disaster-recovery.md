@@ -500,5 +500,6 @@ In the case of a graceful shutdown of the entire environment, the administrator 
 	i. Start the VSA node(s) using `nova start` from the Seed VM or undercloud node.
 
 	j. Start the overcloud Compute Node(s) using `nova start` from the Seed VM or undercloud node.
-# Restoring a Flexible Control Plane cloud
-Helion OpenStack 1.1 does not support backing up and restoring FCP clouds. 
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
