@@ -39,7 +39,7 @@ You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpclo
 
 * [Reporting Service Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
 
-* [Logging issues](/helion/openstack/services/troubleshooting/logging)
+* [Logging issues](/helion/openstack/services/troubleshooting/logging/)
 
 * [Controller Nodes](/helion/openstack/services/troubleshooting/controller/)
 
