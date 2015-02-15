@@ -40,6 +40,8 @@ The following topics explain how to install and configure the HP Helion Developm
 The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&reg;. 
 
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
+
+**NOTE**: The Helion Development Platform expects the cloud management service to communicate with both service and external networks.
  
 The installer requires the following packages. If they are not found, it will prompt you to install them.
 
