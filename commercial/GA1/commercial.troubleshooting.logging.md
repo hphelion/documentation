@@ -40,7 +40,7 @@ The user needs to manually follow the below steps to re-configure Kibana for log
 
 **EDIT**: Added `sudo -u logstash` at beginning of commands. 
 
-## Logs can fill undercloud node.
+## Logs can fill undercloud node
 
 Logs are stored in one index per day in the Elasticsearch database but are not rotated.
 
