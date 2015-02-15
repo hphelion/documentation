@@ -24,6 +24,8 @@ HP Helion OpenStack is a commercial-grade distribution of OpenStack, the leading
 
 HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/services/overview/) for a complete list of services. 
 
+If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion OpenStack on the [Under the Hood](/content/documentation/commercial/GA1/ServicesFlow/index.html) page.
+
 ##Get Started with HP Helion OpenStack 
 
 Use the following links and tools to begin working with HP Helion OpenStack:
