@@ -101,7 +101,7 @@ To add new compute nodes that were not present during the initial installation p
 
 		ironic node-list -->
 
-6. Log out from undercloud to go back to the seed VM:
+6. Log in to the seed VM:
 
 		ssh root@<IP Address>
 
