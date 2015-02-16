@@ -19,7 +19,7 @@ authors: Jayme P
 ---
 <!--UNDER REVISION-->
 
-# HP Helion OpenStack 1.1 Development Platform: Commercial Installation and Configuration 
+# HP Helion 1.1 Development Platform: Commercial Installation and Configuration 
 
 The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.
 
@@ -101,6 +101,8 @@ This section provides details on installing the Messaging service from the Devel
 
 1. In the **Configure Services** panel locate the Messaging (Beta) item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
+[[Messaging screenshot here]
+
 2. Once the download is complete, click the **Configure Service** button to configure the Messaging Service and wait for the configuration step to complete.
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Messaging (Beta)** panel under the current Project to begin using the Messaging Service.
@@ -123,6 +125,8 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
 2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
+
+[[Appl Lifecycle screen shot here]]
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
 
@@ -259,6 +263,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	- **Enable HA**: Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
 <br /><br />
 
+[[insert config database service here]]
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
 
@@ -334,6 +339,9 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 	- **Ephemeral CA Password** (Required): Specify the password for the Ephemeral CA server.
 	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
 	- **Subnet range** (Required): The subnet to use for Marketplace <br /><br />
+
+[[insert Marketplace config screenshot here]]
+
 2. Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.
 
 3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
