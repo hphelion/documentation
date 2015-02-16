@@ -31,7 +31,9 @@ The following lists of tasks can be performed by a user or administrator through
 
 You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Identity service.
 
-Note: Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+
+To use Keystone v3 in Horizon, for example to use LDAP, you can manually change the settings. See [Configuring Horizon for Keystone v3](http://15.184.32.138/helion/openstack/services/identity/configure/) for instructions and important restrictions.
 
 ###Using the API {#API}
  

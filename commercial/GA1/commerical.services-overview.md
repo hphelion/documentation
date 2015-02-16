@@ -59,7 +59,7 @@ The following services are foundation technologies used by the HP Helion OpenSta
 
 See [Overview of the Compute service](/helion/openstack/services/compute/overview/).
 
-**Identity Management**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
+**Identity**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
 
 See [Overview of the Identity Management service](/helion/openstack/services/identity/overview).
 
@@ -95,6 +95,8 @@ See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 
 ## HP Services ## {#hp}
 
+The following services have been developed by HP for use with the HP Helion OpenStack.
+
 **Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder and Swift) which run in the Overcloud on various storage devices.
 
 See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
@@ -109,18 +111,18 @@ See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
 
 ## Dashboard services ## {#dash}
 
-HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack:
+HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack.
 
-**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/). The dashboards are the web-based user interface for creating and managing HP Helion OpenStack resources.
+**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/) for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack. 
 
 You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
 See [Overview of the Horizon Service](/helion/openstack/services/horizon/overview/).
 
-**Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).
+**Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.
 
 See [Overview of the Icinga Service](/helion/commercial/services/icinga/).
 
-**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud.
+**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
 
 See [Overview of the Icinga Service](/helion/commercial/services/kibana/).
 
@@ -137,6 +139,8 @@ See [Overview of the TripleO Service](/helion/openstack/services/tripleo/overvie
 See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/).
 
 ## Other services and features {#Other}
+
+The following services and features can be used with HP Helion OpenStack.
 
 **Centralized Logging**. The HP Helion OpenStack Centralized Logging uses a number of services and systems to collect logs throughout the cloud into a central system. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms. 
 
