@@ -76,7 +76,7 @@ You can enroll (add) nodes that that are present in baremetal.csv but have not b
 
 To add new compute nodes that were not present during the initial installation process, first enroll the baremetal node and then configure the new node.
 
-1. SSH to undercloud VM as the heat-admin user from the seed VM:
+<!--1. SSH to undercloud VM as the heat-admin user from the seed VM:
 
 		ssh heat-admin@<IP Address>
 		sudo -i
@@ -99,17 +99,32 @@ To add new compute nodes that were not present during the initial installation p
 
 5. List the baremetal nodes. This command also lists the newly added nodes:
 
-		ironic node-list
+		ironic node-list -->
 
-6. Log out from undercloud to go back to the seed VM:
+6. Log in to the seed VM:
 
 		ssh root@<IP Address>
 
 7. Make the respective Baremetal entry in `/root/baremetal.csv`.   
 	<!---If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`: 
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
+Add the node to baremetal.csv at the end.
+    The full syntax is documented above. Make sure it is at the end of the file as it is a new node.
+2.  Set all enviromental variables you would have set for the initial install.
+3.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it
+    by one, otherwise the new value will be computed.
 
-8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
+4.  Run 
+5.  
+		hp_ced_installer --update-overcloud
+
+    	$ bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
+
+    This will register a new ironic node and create a new nova instance
+    (and a new heat stack if using trickle - applies by default to Commercial Edition).
+
+
+<!--8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
 
 		"compute_scale":<number of compute nodes>,
 
@@ -119,7 +134,7 @@ To add new compute nodes that were not present during the initial installation p
 
 10. Run the installer script:
 
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log-->
 
 
 ## Remove nodes {#remove}
