@@ -125,6 +125,8 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
+The HP Helion OpenStack cloud nodes must be configured as NTP clients and point to the same NTP server.
+
 You can install NTP on the seed VM and configure it as a NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
 For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).

@@ -111,18 +111,18 @@ See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
 
 ## Dashboard services ## {#dash}
 
-HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack:
+HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack.
 
-**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/). The dashboards are the web-based user interface for creating and managing HP Helion OpenStack resources.
+**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/) for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack. 
 
 You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
 See [Overview of the Horizon Service](/helion/openstack/services/horizon/overview/).
 
-**Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).
+**Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.
 
 See [Overview of the Icinga Service](/helion/commercial/services/icinga/).
 
-**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud.
+**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
 
 See [Overview of the Icinga Service](/helion/commercial/services/kibana/).
 
