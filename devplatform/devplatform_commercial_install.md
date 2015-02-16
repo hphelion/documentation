@@ -77,9 +77,10 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 
 		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
  
-9. Optionally, you can specify the Username, Tenant and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+9. Optionally, you can specify the Username, 
+10.  and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -I {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
@@ -387,7 +388,7 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
 
-#### Configuring the Load Bala ####
+#### Configuring the Load Balancer ####
 
 The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
 	
