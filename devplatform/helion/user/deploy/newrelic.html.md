@@ -5,11 +5,14 @@ product: devplatform
 title: "New Relic Monitoring"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer 
+role2: ISV Developer
+role3: Service Developer
+role4: Systems Administrator
+authors: Jayme P
 
 ---
 <!--PUBLISHED-->
-<!-- file deliberately orphaned, functionality not currently supported although it may work 
--->
 
 # HP Helion Development Platform: New Relic Monitoring {#new-relic-monitoring}
 

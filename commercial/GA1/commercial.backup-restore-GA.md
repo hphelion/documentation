@@ -3,6 +3,12 @@ layout: default
 title: "HP Helion OpenStack&#174; Edition: Back Up and Restore"
 permalink: /helion/openstack/backup.restore/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+product-version2: HP Helion OpenStack 1.0
+product-version2: HP Helion OpenStack 1.01
+role1: System Engineer
+role2: Systems Administrator
 
 ---
 <!--PUBLISHED-->

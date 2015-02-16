@@ -24,11 +24,13 @@ HP Helion OpenStack is a commercial-grade distribution of OpenStack, the leading
 
 HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/services/overview/) for a complete list of services. 
 
+If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion OpenStack on the [Under the Hood](http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html) page.
+
 ##Get Started with HP Helion OpenStack 
 
 Use the following links and tools to begin working with HP Helion OpenStack:
 
-* [Installation and configuration](/helion/openstack/install/overview/)
+* [Installation](/helion/openstack/install/overview/)
 * [Installation Prerequisites](/helion/openstack/install/prereqs/)
 * [FAQ](/helion/openstack/faq/)
 * [Technical overview](/helion/openstack/technical-overview/)
@@ -40,6 +42,7 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 
 There's a lot of information out there to help you get going with your services. We recommend you browse through the [site index](/helion/openstack/siteindex/) for a full list of the technical content pages available on the site.
 
+**Note:** HP OpenStack Helion does not support an update utility to update from Helion 1.0 or Helion 1.01 to Helion 1.1. For help with updating from your current release to a newer release, contact [HP Customer Support](http://www.hpcloud.com/about/contact). 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

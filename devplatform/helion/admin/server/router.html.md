@@ -5,6 +5,14 @@ product: devplatform
 title: "Router"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer
+role2: ISV Developer 
+role3: Service Developer
+role4: Network Administrator
+role5: Systems Administrator 
+role6: Security Engineer
+authors: Jayme P
+
 ---
 <!--PUBLISHED-->
 

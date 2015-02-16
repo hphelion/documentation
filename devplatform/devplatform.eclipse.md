@@ -5,6 +5,11 @@ permalink: /helion/devplatform/eclipse/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
+role1: Application Developer 
+role2: Security Engineer
+role3: ISV Developer
+role4: Service Developer
+authors: Jayme P
 
 ---
 <!--PUBLISHED-->
