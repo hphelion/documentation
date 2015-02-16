@@ -83,21 +83,11 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <tr style="background-color: white; color: black;">
 	<td>CRITICAL </td>
 	<td>System Error. Check for hpssacli utility. </td>
-    <td></td></tr>
+    <td>Verify whether the hpssacli debian package is installer</td></tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
 	<td>&lt;Failed Drive&gt; drive(s)  may be missing or in a failed state. <br>                         Found error in drive(s): <drive slot and location> </td>
     <td>Verify a failure of drives and missing drives.</td>
-</tr><!---
-<tr style="background-color: white; color: black;">
-	<td>FAIL </td>
-	<td>Not mounted</td>
-    <td> The named device is not mounted. The device may have failed to mount or was unmounted due to an error. To resolve, stop all Swift processes, mount all devices and restart Swift.</td>
-</tr>---><!---
-<tr style="background-color: white; color: black;">
-	<td>UNKNOWN</td>
-	<td>No devices to report</td>
-    <td></td></tr>---->
 </table>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -53,12 +53,16 @@ The following prerequisites need to be performed before configuring 3PAR StoreSe
 
    Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the overcloud controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
 
+**Note**: With HP Helion OpenStack&#174; 1.1 release, 3PAR multipath is enabled by default.
+
 To enable multipathing move the `/etc/multipath.conf` to  `/tmp`. 
 
 		mv /etc/multipath.conf /tmp
 		
 Restart the multipath daemon `service multipath-tools restart` on all compute and controller nodes. The `multipath -ll` command  lists the devices and path.
 
+
+ 
 2 - **Install IMC**
 
   * Download and install the HP 3PAR Inform Management Console(IMC) if it is not installed as part of the HP 3PAR installation. Refer to the URL provided in the undercloud Horizon Dashboard of HP Helion OpenStack. <!---Download the HP 3PAR Inform Management Console(IMC) from the URL provided in the undercloud Horizon Dashboard.-->

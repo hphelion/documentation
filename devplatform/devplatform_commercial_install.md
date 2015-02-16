@@ -19,7 +19,7 @@ authors: Jayme P
 ---
 <!--UNDER REVISION-->
 
-# HP Helion OpenStack 1.1 Development Platform: Commercial Installation and Configuration 
+# HP Helion 1.1 Development Platform: Commercial Installation and Configuration 
 
 The HP Helion Development Platform currently contains four products: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.
 
@@ -62,23 +62,24 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 
 1. Before you begin the installation, unpack the tar file.
  
-		tar -zxvf hp_helion_devplatform_commercial.tar.gz.csu
+		tar -zxvf hp_helion_devplatform_commercial.tar.gz
  
-3. Run this command to create and populate a *dev-platform-installer* directory.
+3. Create, navigate to, and populate a *dev-platform-installer* directory inside the dev-platform-installer.
  
-		cd dev-platform-installer
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
 		export https_proxy=<ip address or url of http proxy>
+
+	[[no_proxy DOCS-868 what is the syntax]]
  
 7. Run this command to prepare the installer and ensure prerequisites are met. 
 
 		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
  
-9. Optionally, you can specify the Username, Tenant and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+9. Optionally, you can specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -u {username} -t {tenant_name} -I {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
@@ -100,6 +101,9 @@ This section provides details on installing the Messaging service from the Devel
 ### Download and Configure the Messaging Service
 
 1. In the **Configure Services** panel locate the Messaging (Beta) item in the Configure Services table and select **Download Service** and wait for the download to complete.
+
+	<img src="media/dev_install_messaging.png"/)>
+
 
 2. Once the download is complete, click the **Configure Service** button to configure the Messaging Service and wait for the configuration step to complete.
 
@@ -123,6 +127,8 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
 2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
+
+	<img src="media/dev_install_application-life-cycle.png"/)>
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
 
@@ -259,10 +265,14 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	- **Enable HA**: Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
 <br /><br />
 
+		<img src="media/dev_install_database.png"/)>
+
+[[DOCS- says this list is wrong but it matches the screen shot]]
+
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
 
-3. The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
+3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
 	
 	1. Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
 
@@ -280,7 +290,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
  			bind <Virtual IP from step 2>:8779
  			server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt
 
-		b. Edit the /etc/iptables/iptables file and add to the end of it:
+		b. Edit the /etc/iptables/rules.v4 file and add to the end of it:
 
 			-I INPUT -p tcp --dport 8779 -j ACCEPT
 
@@ -334,20 +344,24 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 	- **Ephemeral CA Password** (Required): Specify the password for the Ephemeral CA server.
 	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
 	- **Subnet range** (Required): The subnet to use for Marketplace <br /><br />
+
+[[bug filed that this list is wrong - email to ravi.]]
+
+	<img src="media/dev_install_marketplace.png"/)>
+
 2. Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.
 
 3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
 	1. Identify the API server IPs on the SVC network:
 		 
-			nova list | awk '/marketplace-api/
-			{ print $14 }
+			nova list | awk'/marketplace-api/{ print $14 }
+			
 			' | cut -d "=" -f 2
 		
 		Note that you should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
 	1. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion OpenStack services:
 	 
-			keystone endpoint-list | awk '/8082/
-			{ print $6}
+			keystone endpoint-list | awk '/8082/{ print $6}
 			' | egrep -o "[0-9].[0-9].[0-9].[0-9]"
 
 	1. Update configuration on each of the Helion OpenStack controller nodes. <br /> For EACH node:
@@ -355,7 +369,7 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 		2. Open the */etc/haproxy/manual/paas.cfg* file and add the following lines. <br /> **Note**: The last line should be repeated once for each API server identified in step 1.
 		 
 				listen marketplace_api
-				bind <Virtual IP from step 2>:8779
+				bind <Virtual IP from step 2>:8082
 				server marketplace<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt 
 
 		3. Open the */etc/iptables/iptables* file and add to the end of it:
@@ -373,9 +387,11 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
 
+#### Configuring the Load Balancer ####
+
 The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
 	
-	
+
 3. The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
 	
 	1. Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.

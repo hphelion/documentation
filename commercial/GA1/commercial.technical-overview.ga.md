@@ -294,7 +294,7 @@ For detailed information, see the [Preparing the network](/helion/openstack/inst
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Swift </td>
+<td> Object Storage (Swift) </td>
 <td> Communication between Object Operations servers (includes user data)  </td>
 <td> Untagged </td>
 <td> eth0</td>
