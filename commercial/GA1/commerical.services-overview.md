@@ -59,7 +59,7 @@ The following services are foundation technologies used by the HP Helion OpenSta
 
 See [Overview of the Compute service](/helion/openstack/services/compute/overview/).
 
-**Identity Management**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
+**Identity**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
 
 See [Overview of the Identity Management service](/helion/openstack/services/identity/overview).
 
