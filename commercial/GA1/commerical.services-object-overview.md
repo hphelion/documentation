@@ -54,17 +54,17 @@ The services in the Swift cluster are either ***access*** services or ***storage
  
 Each service group can be scaled ***independently*** to meet workload and redundancy requirements. The storage service can be scaled up as necessary ([scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/)). It can also be horizontally scalable to handle an increased number of simultaneous connections as well as large number of objects. 
 
-##Expanding the Swift Deployment
+##Expanding the Object Storage (Swift) Deployment
 
 Note that the initial installation of Helion OpenStack cloud includes the creation and configuration of a basic two-node Starter All-in-one Swift deployment. Any additional rings, nodes or servers are expansions of this basic installation.
 
-For more information and in-depth diagrams, see [About Scale-Out Swift](/helion/openstack/services/object/overview/scale-out-swift/).
+For more information and in-depth diagrams, see [About Scale-Out Object Storage (Swift)](/helion/openstack/services/object/overview/scale-out-swift/).
 
-1. Deploy Starter Swift<br>*(completed as part of the HP Helion OpenStack cloud deployment)*
+1. Deploy Object Storage (Swift) starter nodes<br>*(completed as part of the HP Helion OpenStack cloud deployment)*
 3. Scale up or expand 
-	- [Deploy New Swift Object Storage](/helion/openstack/services/swift/deployment-scale-out/)
+	- [Deploy New Object Storage (Swift)](/helion/openstack/services/swift/deployment-scale-out/)
 	-  [Add New Storage Servers](/helion/openstack/services/swift/provision-nodes)
-	-  [Extend a Swift Cluster](/helion/openstack/services/object/swift/expand-cluster/)
+	-  [Extend a Object Storage (Swift) Cluster](/helion/openstack/services/object/swift/expand-cluster/)
 	-  [Add a New Scale-out Object Node](/helion/openstack/services/swift/deployment/add-disk-object-node/)
 	-  [Add a New Scale-out Proxy Node](/helion/openstack/services/swift/deployment/add-proxy-node/)
 	-  [Add a Disk to a Scale-out Object Ring](/helion/openstack/services/swift/deployment/add-disk-scale-out/)
@@ -75,10 +75,18 @@ For more information and in-depth diagrams, see [About Scale-Out Swift](/helion/
 	- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
 	- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
 6. Monitor
-	- [Monitor Swift Cluster](/helion/openstack/services/object/swift/Monitor-cluster/)
-	- [Disk usage](/helion/openstack/services/object/swift/Monitor-disk/)
-	- [Replication status](/helion/openstack/services/object/swift/replica-status/)
-	- [Service health](/helion/openstack/services/object/swift/health-check/)
+
+ * [Monitor Disk Usage]( /helion/openstack/services/object/swift/Monitor-disk/)
+ * [Replication Status using Icinga](/helion/openstack/services/object/swift/replica-status/)
+ * [Service Health Check](/helion/openstack/services/object/swift/health-check/)
+ * [Check Health Services](/helion/openstack/services/object/swift/health-swift-services/)
+ * [Object Storage (Swift) Proxy Health Check]( /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/)
+ * [Network Interface Card](/helion/openstack/services/object/swift/monitor-speed-of-NIC/)
+ * [Mount Points](/helion/openstack/services/object/swift/mount-points/)
+ * [Disk Drives](/helion/openstack/services/object/swift/disk-drive/)
+ * [Network Access (Ping)](/helion/openstack/services/object/swift/monitor-network-access-ping/)
+ * [Drive Audit]( /helion/openstack/services/object/swift/monitor-swift-drive-audit/)
+ * [File Ownership](/helion/openstack/services/object/swift/file-ownership/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

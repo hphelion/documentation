@@ -33,7 +33,7 @@ The documentation for HP Helion OpenStack includes the following:
 * [Undercloud Horizon Dashboard](#underdash)
 * [Horizon Dashboard](#dash)
 * [HP Helion OpenStack Services](#services)
-* [Swift Deployment](#swift)
+* [Object Storage (Swift) Deployment](#swift)
 * [License files](#license)
 * [Related documentation](#related)
 * [HP Helion OpenStack&reg; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/services/neutron/installation/intro/)
@@ -155,17 +155,17 @@ Review the following topics related to the HP Horizon OpenStack services:
 
 
 
-## Swift Deployment ## {#swift}
+## Object Storage (Swift) Deployment ## {#swift}
 
-Review the following topics related to Swift deployment:
+Review the following topics related to Object Storage (Swift) deployment:
 
-- [Swift overview](/helion/openstack/services/object/overview/)
-- [Scaling up or Expanding the Swift Deployment overview](/helion/openstack/services/object/overview/scale-out-swift/)
+- [Object Storage (Swift) overview](/helion/openstack/services/object/overview/)
+- [Scaling up or Expanding the Object Storage (Swift) Deployment overview](/helion/openstack/services/object/overview/scale-out-swift/)
 
 	- Scale up or expand 
-		- [Deploy New Swift Object Storage](/helion/openstack/services/swift/deployment-scale-out/)
+		- [Deploy New  Object Storage (Swift)](/helion/openstack/services/swift/deployment-scale-out/)
 		- [Add New Storage Servers](/helion/openstack/services/swift/provision-nodes)
-		- [Extend a Swift Cluster](/helion/openstack/services/object/swift/expand-cluster/)
+		- [Extend a Object Storage (Swift) Cluster](/helion/openstack/services/object/swift/expand-cluster/)
 		- [Add a New Scale-out Object Node](/helion/openstack/services/swift/deployment/add-disk-object-node/)
 		- [Add a New Scale-out Proxy Node](/helion/openstack/services/swift/deployment/add-proxy-node/)
 		- [Add a Disk to a Scale-out Object Ring](/helion/openstack/services/swift/deployment/add-disk-scale-out/)
@@ -174,17 +174,24 @@ Review the following topics related to Swift deployment:
 
 - Shrink or scale down
 
-	- [Shrink Swift Cluster](/helion/openstack/services/object/swift/shrink-cluster/) 
+	- [Shrink Object Storage (Swift) Cluster](/helion/openstack/services/object/swift/shrink-cluster/) 
 		- [Remove a disk from an Object Node](/helion/openstack/services/swift/deployment/remove-existing-disk/)
 		- [Remove a Proxy Node](/helion/openstack/services/swift/deployment/remove-proxy-node/)
 		- [Removing a scale-out Object Storage Node](/helion/openstack/services/swift/deployment/remove-scale-out-object-node/)
 	
 - Monitor
-	- [Monitor Swift Cluster](/helion/openstack/services/object/swift/Monitor-cluster/)
-	- [Disk usage](/helion/openstack/services/object/swift/Monitor-disk/)
-	- [Replication status](/helion/openstack/services/object/swift/replica-status/)
-	- [Service health](/helion/openstack/services/object/swift/health-check/)
-	- [Diagnosis of disk health using hpssacli utility for HP servers](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/)
+
+	* [Monitor Disk Usage]( /helion/openstack/services/object/swift/Monitor-disk/)
+	* [Replication Status using Icinga](/helion/openstack/services/object/swift/replica-status/)
+	* [Service Health Check](/helion/openstack/services/object/swift/health-check/)
+	* [Check Health Services](/helion/openstack/services/object/swift/health-swift-services/)
+	* [Object Storage (Swift) Proxy Health Check]( /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/)
+	* [Network Interface Card](/helion/openstack/services/object/swift/monitor-speed-of-NIC/)
+	* [Mount Points](/helion/openstack/services/object/swift/mount-points/)
+	* [Disk Drives](/helion/openstack/services/object/swift/disk-drive/)
+	* [Network Access (Ping)](/helion/openstack/services/object/swift/monitor-network-access-ping/)
+	* [Drive Audit]( /helion/openstack/services/object/swift/monitor-swift-drive-audit/)
+	* [File Ownership](/helion/openstack/services/object/swift/file-ownership/)
 
 - [Ringo Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
 
