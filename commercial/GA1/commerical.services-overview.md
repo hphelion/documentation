@@ -95,6 +95,8 @@ See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 
 ## HP Services ## {#hp}
 
+The following services have been developed by HP for use with the HP Helion OpenStack.
+
 **Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder and Swift) which run in the Overcloud on various storage devices.
 
 See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
@@ -137,6 +139,8 @@ See [Overview of the TripleO Service](/helion/openstack/services/tripleo/overvie
 See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/).
 
 ## Other services and features {#Other}
+
+The following services and features can be used with HP Helion OpenStack.
 
 **Centralized Logging**. The HP Helion OpenStack Centralized Logging uses a number of services and systems to collect logs throughout the cloud into a central system. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms. 
 
