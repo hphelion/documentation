@@ -34,7 +34,7 @@ Make sure the following required tasks are completed before you begin the instal
 - Review the hardware and software requirements
 - Preparing your network
 - Preparing the seed cloud host:
-	- Install Ubuntu 14.04 LTS
+	- Install Ubuntu 
 	- Configure SSH
 	- Obtain a public key
 	- Install Debian/Ubuntu packages
@@ -64,7 +64,7 @@ See [Preparing the Networkp](/helion/openstack/install/prereqs/network/).
 
 The following tasks need to be performed on the seed cloud host, where the seed VM will be installed. The seed cloud host is alternatively known as the installer system.
 
-- Install Ubuntu 14.04 LTS
+- Install Ubuntu 
 - Configure SSH
 - Obtain a public key
 - Install Debian/Ubuntu packages
@@ -76,7 +76,7 @@ The following tasks need to be performed on the seed cloud host, where the seed 
 - Set DNS servers name-resolution
 - Integrating LDAP (Lightweight Directory Access Protocol)
 
-### Install Ubuntu 14.04 LTS {#ubuntu}
+### Install Ubuntu {#ubuntu}
 
 The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
 
@@ -125,7 +125,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 
 NTP is a networking protocol for clock synchronization between computer systems. 
 
-You can install NTP on the seed VM and configure it as a NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will configure the undercloud and overcloud systems as NTP clients during the installation process.
+You can install NTP on the seed VM and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients  pointing to the NTP server you have chosen to use during the installation process.
 
 For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
 
