@@ -77,7 +77,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 </tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
-	<td>Error files with zero size and error files without Swift ownership.
+	<td> <ul><li>Error files with zero size. </li> <li>Error files without Swift ownership.</li></ul>
 </td>
     <td>Check for the ownership of <b>etc/swift</b> folder.
 </td>

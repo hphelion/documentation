@@ -71,14 +71,13 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 
 		export https_proxy=<ip address or url of http proxy>
 
-[[no_proxy DOCS-868 what is the syntax]]
+	[[no_proxy DOCS-868 what is the syntax]]
  
 7. Run this command to prepare the installer and ensure prerequisites are met. 
 
 		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
  
-9. Optionally, you can specify the Username, 
-10.  and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+9. Optionally, you can specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
 		./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
