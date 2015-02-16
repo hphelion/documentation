@@ -101,7 +101,8 @@ This section provides details on installing the Messaging service from the Devel
 
 1. In the **Configure Services** panel locate the Messaging (Beta) item in the Configure Services table and select **Download Service** and wait for the download to complete.
 
-[[Messaging screenshot here]
+	<img src="media/dev_install_messaging.png"/)>
+
 
 2. Once the download is complete, click the **Configure Service** button to configure the Messaging Service and wait for the configuration step to complete.
 
@@ -126,7 +127,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
 
-[[Appl Lifecycle screen shot here]]
+	<img src="media/dev_install_application-life-cycle.png"/)>
 
 3. Log out from the Horizon dashboard. Log back into the Horizon dashboard as a non-admin user and click on the **Application Lifecycle Service** panel under the current Project to being using Application Lifecycle Services.
 
@@ -263,7 +264,8 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	- **Enable HA**: Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
 <br /><br />
 
-[[insert config database service here]]
+		<img src="media/dev_install_database.png"/)>
+
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
 
@@ -340,7 +342,7 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
 	- **Subnet range** (Required): The subnet to use for Marketplace <br /><br />
 
-[[insert Marketplace config screenshot here]]
+	<img src="media/dev_install_marketplace.png"/)>
 
 2. Do not attempt to install any Marketplace packages yet. Log out from the Horizon console.
 
