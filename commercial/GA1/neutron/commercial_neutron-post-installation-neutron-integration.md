@@ -442,6 +442,10 @@ The details for configuring this feature are available from the OpenStack websit
 
 Refer to the ***OpenStack Administrator Guide***, Advanced operational features.
 
+## Emulex NIC support ##
+
+In the HP Helion OpenStack 1.1 release, there is a performance issue with SR-IOV on Emulex NICs  HP recommends disabling SR-IOV.
+
 ##Logging {#logging}
 
 The details for configuring this feature are available from the OpenStack website at: 

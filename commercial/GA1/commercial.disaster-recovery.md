@@ -501,5 +501,11 @@ In the case of a graceful shutdown of the entire environment, the administrator 
 
 	j. Start the overcloud Compute Node(s) using `nova start` from the Seed VM or undercloud node.
 
+## Recovering from failed controllers ##
+In the event that you need to recover a controller, or inadvertently delete a controller, refer to the following link for recovery details.
+
+[http://docs.hpcloud.com//helion/openstack/removing/failedovercloud/#removecontroller1](http://docs.hpcloud.com//helion/openstack/removing/failedovercloud/#removecontroller1 "Recovering a failed or deleted controller")
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
