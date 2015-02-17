@@ -145,7 +145,9 @@ To remove a node:
 
 6. Wait for stack to be deleted
 
-- Delete node
+
+
+1. Delete node
 
 		ironic node-delete <ironic_nodeid>
 
