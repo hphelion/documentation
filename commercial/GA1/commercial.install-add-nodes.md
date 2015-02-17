@@ -76,50 +76,32 @@ You can enroll (add) nodes that that are present in baremetal.csv but have not b
 
 To add new compute nodes that were not present during the initial installation process, first enroll the baremetal node and then configure the new node.
 
-6. Log in to the seed VM:
+1. Log in to the seed VM:
 
 		ssh root@<IP Address>
 
-7. Make the respective Baremetal entry in `/root/baremetal.csv`.   
+2. Make the respective Baremetal entry in `/root/baremetal.csv`.   
 	<!---If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`: 
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
-Add the node to baremetal.csv at the end.
+**Add the node to baremetal.csv at the end.**
+
     The full syntax is documented above. Make sure it is at the end of the file as it is a new node.
-2.  Set all enviroment variables you would have set for the initial install.
-3.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it by one, otherwise the new value will be computed. Then run 
-  
-		hp_ced_installer --update-overcloud
-
-    	$ bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
-
-    This will register a new ironic node and create a new nova instance (and a new heat stack if using trickle.
-
-
-<!--8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
+3. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
 
 		"compute_scale":<number of compute nodes>,
 
-4. Source the environment variables file that  you updated:  
-
-		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
-
-5. Run the installer script:
-
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log-->
-
-
-
-6. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
-
-		"compute_scale":<number of compute nodes>,
-
-3. Source the environment variables file that you updated:  
+4. Source the environment variables file that you updated:  
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
 
-4. Run the installer script:
+5. Run the installer script:
 
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
+
+
+   This will register a new ironic node and create a new nova instance and a new heat stack.
+
+
 ## Remove nodes {#remove}
 
 To remove a node:

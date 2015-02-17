@@ -110,8 +110,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 <!---
 <tr style="background-color: white; color: black;">
 	<td><b>Telemetry and Reporting (Ceilometer)</b></td>
- 	<td><a href="/helion/openstack/services/reporting/overview/">Learn more</a> OpenStack Ceilometer based HP Telemetry and Reporting services.
-	</td> 
+ 	<td><a href ="/helion/openstack/services/reporting/overview/">Learn more</a> about the HP Helion OpenStack Metering service.</td> </td> 
 	<td>The Telemetry service provides access to metering data collected from the compute, network, and storage services. This information can be stored in the default MySQL database or in an optional HP Vertica system for advanced analytics. Information from Telemetry and Reporting service can be used for both operational and user monitoring and external billing use cases.</td>
 </tr> --->
 <tr style="background-color: white; color: black;">
@@ -145,7 +144,7 @@ The following table outlines the functionality of HP Helion OpenStack services b
 </tr> 
 <tr style="background-color: white; color: black;">
 	<td><b>Ceilometer</b></td>
- 	<td>HP Helion OpenStack Metering, based on Ceilometer, takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. <br><br> <a href =" /helion/openstack/services/dvr/overview/">Learn more</a> about HP Helion OpenStack Metering service.</td> 
+ 	<td>HP Helion OpenStack Metering, based on Ceilometer, takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls. The service can be configured to record data, trigger specific action when a pre-defined condition is met, or both. <br><br> <a href ="/helion/openstack/services/reporting/overview/">Learn more</a> about the HP Helion OpenStack Metering service.</td> 
 	<td> Administrators can create and configure information collection from various HP Helion services.</td>
 </tr>
 </table>

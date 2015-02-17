@@ -34,7 +34,7 @@ Make sure the following required tasks are completed before you begin the instal
 - Review the hardware and software requirements
 - Preparing your network
 - Preparing the seed cloud host:
-	- Install Ubuntu 
+	- Install Ubuntu 14.04 LTS 
 	- Configure SSH
 	- Obtain a public key
 	- Install Debian/Ubuntu packages
@@ -57,14 +57,14 @@ Before installing HP Helion OpenStack, you are responsible for preparing the net
 
 The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
 
-See [Preparing the Networkp](/helion/openstack/install/prereqs/network/).
+See the [Preparing the Network](/helion/openstack/install/prereqs/network/) page.
 
 
 ## Preparing the seed cloud host {#seed}
 
 The following tasks need to be performed on the seed cloud host, where the seed VM will be installed. The seed cloud host is alternatively known as the installer system.
 
-- Install Ubuntu 
+- Install Ubuntu 14.04 LTS 
 - Configure SSH
 - Obtain a public key
 - Install Debian/Ubuntu packages
@@ -76,7 +76,7 @@ The following tasks need to be performed on the seed cloud host, where the seed 
 - Set DNS servers name-resolution
 - Integrating LDAP (Lightweight Directory Access Protocol)
 
-### Install Ubuntu {#ubuntu}
+### Install Ubuntu 14.04 LTS  {#ubuntu}
 
 The seed cloud host must have Ubuntu 14.04 LTS installed before performing the HP Helion OpenStack installation.
 
@@ -96,7 +96,7 @@ If user `root` does not have a public key, you can create one using the `ssh-key
 
 ### Install Debian/Ubuntu packages {#packages}
 
-Before starting the installation, you must first install Ubuntu 14.04 and the following required Debian/Ubuntu packages on the system running the installer:
+Before starting the installation, you must first install Ubuntu 14.04 LTS  and the following required Debian/Ubuntu packages on the system running the installer:
 
 - qemu-kvm 
 - libvirt-bin 
@@ -104,7 +104,8 @@ Before starting the installation, you must first install Ubuntu 14.04 and the fo
 - openvswitch-common 
 - python-libvirt 
 
-Optionally, we recommend that you can install the following packages, which will enable to you interact with the installed nodes:
+Optionally, we recommend that you install the following packages, which will enable to you interact with the installed nodes:
+
 - xrdp 
 - xfce4 
 - libssl-dev 
@@ -127,7 +128,7 @@ NTP is a networking protocol for clock synchronization between computer systems.
 
 The HP Helion OpenStack cloud nodes must be configured as NTP clients and point to the same NTP server.
 
-You can install NTP on the seed VM and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.
+You can install NTP on the seed cloud host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.
 
 For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
 
@@ -148,7 +149,7 @@ Before you begin your installation on the seed cloud host, if necessary configur
 	Where:
 
 		web_proxy_IP is your web proxy IP address.
-		provider_Network is your ESX management network
+		provider_network is your ESX management network
 
 3. Log out and re-login to the seed cloud host to activate the proxy configuration.
 

@@ -69,11 +69,11 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-		    export https_proxy=<ip address or url of http proxy>  
+		export https_proxy=<ip address or url of http proxy>  
 
 5. Set the `no_proxy` variable.
 
-		    export no_proxy=localhost,127.0.0.1,<identity url>  
+		export no_proxy=localhost,127.0.0.1,<identity IP address>  
 
 	Set the identity URL if necessary.
 	 
@@ -84,7 +84,7 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 9. Optionally, you can specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		sudo ./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
@@ -289,7 +289,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
 
-		a. Edit the /etc/haproxy/manual/paas.cfg file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
+		a. Edit the `/etc/haproxy/manual/paas.cfg` file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
 	
 			listen trove_api
  			bind <Virtual IP from step 2>:8779
@@ -316,14 +316,33 @@ This section provides details on installing the Marketplace service from the Dev
 
 The **Marketplace Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
 
-|Resource | Usage      | 
-|--------------|-------------:|
-|Floating IPs|           16|
-|Instances|                4|         
-|Networks|                1|
-|RAM (GB)|               8|
-|Routers|                   2|
-|Security Groups|   4|
+<table>
+  <thead>
+    <tr><th>Resource</th>
+  <th align="right">Usage</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr><td>Floating IPs</td>
+  <td align="right">16</td>
+</tr>
+    <tr><td>Instances</td>
+  <td align="right">4</td>
+</tr>
+    <tr><td>Networks</td>
+  <td align="right">1</td>
+</tr>
+    <tr><td>RAM (GB)</td>
+  <td align="right">8</td>
+</tr>
+    <tr><td>Routers</td>
+  <td align="right">2</td>
+</tr>
+    <tr><td>Security Groups</td>
+  <td align="right">4</td>
+</tr>
+  </tbody>
+</table>
 
 ### Connect to the Download Service
 
