@@ -46,13 +46,13 @@ The following terms are common to Ceph. Ceph is a technology that integrates obj
 
 * Ceph Client Libraries - The collection of libraries that can be used to interact with components of the Ceph System.
 
-* CODN - Cloud OS Distribution Network
-
 * CRUSH - Controlled Replication Under Scalable Hashing. The algorithm Ceph uses to compute object storage locations.
 
 * Epoch - Ceph maintains a history of each state change in the Ceph Monitors, Ceph OSD Daemons, and PGs. Each version of cluster element state is called an "epoch."
 
 * Federated storage - A collection of autonomous storage resources with centralized management that provides rules about how data is stored, managed, and moved through the cluster. Multiple storage systems are combined and managed as a single storage pool.
+
+* HDN - [Helion Developer Network](https://helion.hpwsportal.com); a location where additional files or products can be downloaded.
 
 * Object storage - A storage model focusing on data objects instead of file systems or disk blocks; objects have key/value pairs of metadata associated with them to give the data context. Typically accessed by a REST API, designed for massive scale, and using a wide, flat namespace.
 
