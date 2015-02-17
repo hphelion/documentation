@@ -96,14 +96,9 @@ Add the node to baremetal.csv at the end.
 5. Run the installer script:
 
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
-6.  Set all enviroment variables you would have set for the initial install.
-7.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it by one, otherwise the new value will be computed. Then run 
-  
-		hp_ced_installer --update-overcloud
 
-    	$ bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
 
-    This will register a new ironic node and create a new nova instance (and a new heat stack if using trickle.
+   This will register a new ironic node and create a new nova instance and a new heat stack.
 
 
 ## Remove nodes {#remove}
