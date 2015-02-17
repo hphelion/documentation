@@ -25,7 +25,7 @@ PageRefresh();
 
 The following steps ensure the recovering of the lost configuration.
 
-1. Run the  `ceph_client_setup` script (available at [CODN](https://helion.hpwsportal.com)) on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
+1. Run the  `ceph_client_setup` script (available at [HDN](https://helion.hpwsportal.com)) on each of the controller/compute nodes. (For information on what files need to be copied from  the Ceph cluster node to their respective directories, refer to the script's README file.)
 2. To confirm ceph health, run:
 
 	 `ceph health`
@@ -52,13 +52,13 @@ The following steps ensure the recovering of the lost configuration.
 	<tr>
 <td>Controller node</td>
 <td>/etc/glance/glance-api.conf /etc/cinder/cinder.conf /etc/nova/nova.conf</td>
-<td>1. Login to <a href =" https://helion.hpwsportal.com"> CODN</a>. <br> 2. Click the workloads category on the left side. <br> 3. Click the storage subcategory to find all the Ceph related files. <br> <b>Filename</b>  **need ?**
+<td>1. Log in to the <a href =" https://helion.hpwsportal.com"> HDN</a>. <br> 2. Click the workloads category on the left side. <br> 3. Click the storage subcategory to find all the Ceph related files. <!--<br> <b>Filename</b>  need ?-->
 </td>
 </tr>
 <tr>
 <td>Compute node</td>
 <td>/etc/nova/nova.conf</td>
-<td>1. Login to <a href =" https://helion.hpwsportal.com"> CODN</a>. <br> 2. Click the workloads category on the left side. <br> 3. Click the storage subcategory to find all the Ceph related files. <br> <b>Filename</b>  **need ?**
+<td>1. Log in to the <a href =" https://helion.hpwsportal.com"> HDN</a>. <br> 2. Click the workloads category on the left side. <br> 3. Click the storage subcategory to find all the Ceph related files. <!-- <br> <b>Filename</b> need ?-->
 </tr>
   </table>
 

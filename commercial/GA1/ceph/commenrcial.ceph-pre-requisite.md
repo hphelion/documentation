@@ -175,11 +175,11 @@ The following diagram depicts an example for the deployment of Helion OpenStack 
 
 ###Download and Access to the Solution Files and Documents {#Download-and-access}
 
-[CODN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software that HP OpenStack Enterprise Customers can purchase.
+[HDN](https://helion.hpwsportal.com) is a remote web catalog containing a repository of software that HP OpenStack Enterprise Customers can purchase.
 
-To purchase software, register yourself (if this is your first time) to the CODN portal and then log in to download the required Helion OpenStack Ceph Storage Solution packages.
+To purchase software, register yourself (if this is your first time) to the HDN portal and then log in to download the required Helion OpenStack Ceph Storage Solution packages.
 
-If you have any access issues with CODN, contact the HP sales team. 
+If you have any access issues with HDN, contact the HP sales team. 
 
 Once you have the necessary permissions, log in with your credentials. Select the Category **Workloads**, and the Sub-Category **Storage** to find the HP Helion OpenStack Ceph Storage solution.
 
