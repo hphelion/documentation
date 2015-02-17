@@ -52,7 +52,7 @@ To ensure successful installation, [perform required pre-installation tasks](/he
 
 Make sure you have met all the hardware requirements and have completed the required tasks before you begin your installation. The following sections walk you through the steps to be executed on the seed cloud host:
 
-* [Configure proxy information](#proxy)
+* [Configure proxy information](/helion/openstack/install/prereqs/#proxy)
 * [Install the seed VM and building your cloud](#startseed)
 
 
