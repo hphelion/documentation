@@ -111,17 +111,13 @@ To add new compute nodes that were not present during the initial installation p
 Add the node to baremetal.csv at the end.
     The full syntax is documented above. Make sure it is at the end of the file as it is a new node.
 2.  Set all enviromental variables you would have set for the initial install.
-3.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it
-    by one, otherwise the new value will be computed.
-
-4.  Run 
+3.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it by one, otherwise the new value will be computed. Then run 
 5.  
 		hp_ced_installer --update-overcloud
 
     	$ bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
 
-    This will register a new ironic node and create a new nova instance
-    (and a new heat stack if using trickle - applies by default to Commercial Edition).
+    This will register a new ironic node and create a new nova instance (and a new heat stack if using trickle.
 
 
 <!--8. Edit the `kvm-custom-ips.json` file as follows to define the appropriate scale number:
@@ -145,51 +141,52 @@ To remove a node:
 
 		ssh root@<IP Address>
 
-2. Verify the ID of the node you want to delete:
+2. If using trickle (default):
+   Identify the the MAC address of the node to be deleted
 
-		nova list
+		
 
-3. Obtain the Ironic node UUID:
+3. identify the ironic 'Node UUID'
 
-		ironic node-list | grep <node ID from the previous step>
+		ironic port-list --detail
 
-4. Obtain the MAC address:
+4. identify the nova instance 'Instance UUID' associated with the ironic Node UUID and, from that, identify the heat stack associated with the nova instance
 
-		ironic node-port-list <Ironic Node UUID>
 
-5. Obtain the heat stack to be deleted for the particular node:
- 
+		ironic node-list
+
+5. the instance name will be something like:
+
+		overcloud-ce-novacompute0-NovaCompute0-aztnviyoamsc
+   so the stack name will be:
+
+		overcloud-ce-novacompute0
+
+- Run
+
 		heat stack-list
 
-6. Delete the particular stack:
+6. Wait for stack to be deleted
 
-		heat stack-delete <Stack to be Deleted>
+- Delete node
 
-7. If the deleted node is in a failed state and needs to be removed from Ironic, use the following command with the UUID from the previous step:
+		ironic node-delete <ironic_nodeid>
 
-		ironic node-delete <UUID>
+8. 	Mark the node as 'deleted' in baremetal.csv
+9. 	Change the 'role' from 'OvercloudCompute' to 'OvercloudCompute:deleted'.
+    For example:
 
-8. 	SSH to `Controller0` and disable the compute node:
+		78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute,IPMI
 
-		nova-manage service disable --service=nova-compute --host=<hostName of Compute Node>
+    becomes:
 
-9. SSH to seed VM:
+		78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute:deleted,IPMI
+Note: Do NOT delete the line
+When hp_ced_installer --update-overcloud is run again, the node will be skipped in all operations.
 
-		ssh <IP Addresss>
 
-10. Remove the entry with the MAC Address that you retrieved in step 4 from from the `/root/baremetal.csv` file:
 
-<!---11. Reduce the `OVERCLOUD_COMPUTESCALE` in `/root/kvm-custom-ips.json` (environment variables file) on the seed VM, so that next time a node is added, the installer does not try to add the deleted node:
-
-		export OVERCLOUD_COMPUTESCALE=<number>
-
-12. Source the environment variables file that  you updated:  
-
-		source /root/kvm-custom-ips.json
-
-13. Run the installer script:
-
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log-->
+		
 
 
 ----
