@@ -142,7 +142,7 @@ To remove a node:
 		ssh root@<IP Address>
 
 2. If using trickle (default):
-   Identify the the MAC address of the node to be deleted
+   Identify the MAC address of the node to be deleted
 
 		
 
