@@ -85,27 +85,26 @@ When creating this file, keep the following in mind :
 
 
 - **If role is not specified then these rules apply.**
-<div style="margin-right: 250px;">
 
-If no Undercloud node is specified then the first node without a role is assigned as an Undercloud
-<br>
-else 
-<br>
-if there are not enough OvercloudControl nodes, the next nodes without a role are assigned as OvercloudControl until there are enough nodes
-<br>
-else if
-<br>
-there are not enough OvercloudSwiftStorage, nodes the next nodes without a role are assigned as OvercloudSwiftStorage, until there are enough nodes
-<br>
-else if
-<br>
-Similar logic is applied for VSA and Scale-Out Swift node assignments
-<br>
-else
-<br>
-The node will be assigned a role of OvercloudCompute
+	If no Undercloud node is specified then the first node without a role is assigned as an Undercloud
+	<br>
+	else 
+	<br>
+	if there are not enough OvercloudControl nodes, the next nodes without a role are assigned as OvercloudControl until there are enough nodes
+	<br>
+	else if
+	<br>
+	there are not enough OvercloudSwiftStorage, nodes the next nodes without a role are assigned as OvercloudSwiftStorage, until there are enough nodes
+	<br>
+	else if
+	<br>
+	Similar logic is applied for VSA and Scale-Out Swift node assignments
+	<br>
+	else
+	<br>
+	The node will be assigned a role of OvercloudCompute
 
-</div>
+
 
 **Note also:**
 
