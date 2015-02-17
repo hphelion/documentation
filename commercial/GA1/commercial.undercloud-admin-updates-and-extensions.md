@@ -26,16 +26,16 @@ PageRefresh();
 
 HP provides a simple mechanism for downloading and publishing the content and updates for the Undercloud node.
 
-* [Register on the Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
+* [Register on the Helion Distribution Network (HDN)](#Signup-for-Helion-Distribution-Network)
 * [Configure credentials](#configcre)
 * [Import and install](#import-and-install)
 * [Download a package](#download-a-package)
 
-##Register for Cloud OS Distribution Network Access<a name="Signup-for-Cloud-Distribution-Network"></a>
+##Register for Helion Distribution Network Access<a name="Signup-for-Helion-Distribution-Network"></a>
 
 You cannot access the updates from the HP Helion Horizon undercloud dashboard unless you are a registered user.
 
-To register on the Cloud Distribution Network:
+To register on the Helion Distribution Network:
 
 1.  On the HP Helion Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
 
