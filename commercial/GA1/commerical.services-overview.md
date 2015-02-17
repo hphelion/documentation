@@ -150,9 +150,6 @@ See [Centralized Logging Overview](/helion/openstack/services/logging/overview/)
 
 See [Overview of the DNS as a Service](/helion/openstack/install/dnsaas/).
 
-**DVR**. Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users. 
-
-See [Overview of DVR Service](/helion/openstack/services/dvr/overview/).
 
 
 
