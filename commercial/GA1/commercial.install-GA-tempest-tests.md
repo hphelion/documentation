@@ -28,8 +28,9 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Verifying the Install Using Embedded Tests
 
-A vanilla version of the upstream integration tests (Tempest) is pre-deployed in the undercloud. 
-Embedded tests may be used to verify if the deployed overcloud is functional.
+A version of the upstream [Tempest](http://docs.openstack.org/developer/tempest/) integration tests  is pre-deployed in the undercloud. 
+
+You can use these embedded tests to verify if the deployed overcloud is functional.
 
 * [Running the tests](#running)
 * [Disclaimer](#disclaimer)
