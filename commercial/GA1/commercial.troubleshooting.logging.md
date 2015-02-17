@@ -25,20 +25,30 @@ PageRefresh();
 
 HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
 
+<!-- Removed per DOCS-851
 ## Issue in Logging {#issue-in-logging}
 
 The user needs to manually follow the below steps to re-configure Kibana for logging.
 
 1. Log in to the undercloud and start screen session.
-2. In the screen, start following command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
+2. In the screen, start following command 
+
+	`sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
+
 3. Press Control **&** '**a**', then '**c**' to create another shell.
-4. In a new shell execute command `sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
+
+4. In a new shell execute command 
+
+	`sudo -u logstash /usr/bin/java -Xmx1g -Djava.io.tmpdir=/var/lib/logstash/ -jar /opt/logstash/logstash.jar agent -f /etc/logstash/conf.d -w 10 --log /var/log/logstash/logstash.log`
+
 5. Repeat steps from **3-4** two times
+
 6. Press Control **&** '**a**' then '**d**' to detach.
  
 **Note**: If node reboots repeat the step from **1-6**.
 
 **EDIT**: Added `sudo -u logstash` at beginning of commands. 
+-->
 
 ## Logs can fill undercloud node
 
