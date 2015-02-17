@@ -73,7 +73,7 @@ The above environment contains the following networks:
 - External
 
 ###Management Network
-This network is used for most cloud traffic including: PXE boot nodes, tenant access to service APIs, internal API traffic between services (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for between tenant VMs, VM access to block and object storage, object storage replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, CODN access to catalog, logging traffic to centralized logging, monitoring checks to Icinga. 
+This network is used for most cloud traffic including: PXE boot nodes, tenant access to service APIs, internal API traffic between services (one service to another), HA heartbeats, tenant access to services, VxLAN traffic for between tenant VMs, VM access to block and object storage, object storage replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, [HDN](https://helion.hpwsportal.com) access to the product catalog, logging traffic to centralized logging, monitoring checks to Icinga. 
 
 In this example, the Management Network CIDR is 192.168.124.0/24.
 

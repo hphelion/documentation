@@ -110,10 +110,11 @@ HP recommends the following best practices for this software version.
 	- Uninstall any packages that you no longer require.
 
 * For optimum VM operation and to avoid generating inaccurate error codes, we recommend you not reboot the overcloud controller but rather restart the applicable services by executing the following commands:
-	- sudo service nova-compute restart
-	- sudo service nova-scheduler restart
-	- sudo service nova-conductor restart
-	- sudo service neutron-openvswitch-agent restart
+
+		sudo service nova-compute restart
+		sudo service nova-scheduler restart
+		sudo service nova-conductor restart
+		sudo service neutron-openvswitch-agent restart
 
 * It is possible in busier systems that Kibana logging system might not cope with amount of logs collected. You can correct this issue by increasing the heap size specified in the `/etc/default/elasticsearch` file from the default 2G to a higher value and restarting elasticsearch service.
 
@@ -125,15 +126,16 @@ The following are the known issues for HP Helion OpenStack Community edition:
 
 **Operations**
 
+* When a significant update operation is performed, such as adding or removing nodes, connectivity to the VM will drop until the operation is completed. This may last for up to 15 minutes.
 * When accessing Horizon in a virtual environment, use the public network address, not the management network address. In a default configuration, the URL is http://192.0.8.2.
 * If you determine that your VM seed has not started correctly when you executed the `hp_ced_host_manager.sh` script, run the script a second time to ensure you start the seed.
 * VM installations do not currently persist across reboots.  When you reboot your system, be sure to start a new VM installation.
 * If after an overcloud controller reboot you determine the VMs are in an ERROR state, execute the following commands to restart the services and remove the error:
   
-		$ sudo service nova-compute restart
-		$ sudo service nova-scheduler restart
-		$ sudo service nova-conductor restart
-		$ sudo service neutron-openvswitch-agent restart
+		sudo service nova-compute restart
+		sudo service nova-scheduler restart
+		sudo service nova-conductor restart
+		sudo service neutron-openvswitch-agent restart
 
 
 ##For further information## {#for-further-information}
