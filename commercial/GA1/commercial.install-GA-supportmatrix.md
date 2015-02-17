@@ -319,7 +319,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4">Scaleout Swift Storage</td>
-<td rowspan="4">N</td>
+<td rowspan="4">0</td>
 <td>Disk </td>
 <td> 512GB
 </td>
@@ -339,7 +339,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4">Scaleout Swift Proxy</td>
-<td rowspan="4">N</td>
+<td rowspan="4">0</td>
 <td>Disk </td>
 <td> 512GB
 </td>
