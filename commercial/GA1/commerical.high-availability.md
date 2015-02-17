@@ -299,7 +299,7 @@ Cinder availability zones are not supported for general consumption in the curre
 
 ### Object Storage with Swift {#object-storage}
 
-You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Pyringos tool here. Please refer to the [Ringos](/helion/openstack/GA1/services/object/pyringos/) document.
+You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Ringos tool here. Please refer to the [Ringos](/helion/openstack/GA1/services/object/pyringos/) document.
 
 <a href="javascript:window.open('/content/documentation/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA Swift  (opens in a new window)</a>
 
