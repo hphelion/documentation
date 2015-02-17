@@ -133,8 +133,6 @@ When working with the Compute service, you can perform a number of tasks with yo
 - **Pausing and un-pausing instances** -- Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
 - **Suspending and resuming virtual machines** -- Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
 
-For more general information on how to operate your cloud, refer to the [OpenStack Operations Guide](http://docs.openstack.org/ops/). 
-
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
