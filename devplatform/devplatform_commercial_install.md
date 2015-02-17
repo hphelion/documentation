@@ -69,11 +69,11 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-		    export https_proxy=<ip address or url of http proxy>  
+		export https_proxy=<ip address or url of http proxy>  
 
 5. Set the `no_proxy` variable.
 
-		    export no_proxy=localhost,127.0.0.1,<identity IP address>  
+		export no_proxy=localhost,127.0.0.1,<identity IP address>  
 
 	Set the identity URL if necessary.
 	 
