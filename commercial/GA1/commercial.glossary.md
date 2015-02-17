@@ -399,9 +399,6 @@ An architecture that includes multiple hosts and provides shared datastores that
 
 ## W
 
-###Wired for Management (WfM)<a name="WFM"></a>
-A technology allowing a [baremetal](#Baremetal) node to be controlled by a master computer. The master computer can install and update software and monitor computer status remotely. Intel developed the technology in the 1990s.
-
 ## X
 
 ## Y
