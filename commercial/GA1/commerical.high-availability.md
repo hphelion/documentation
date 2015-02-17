@@ -71,11 +71,11 @@ Once the Compute, Storage, Network resources are deployed, users expect these re
 
     * If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
 
-* Data stored in Block Storage service volumes is always available and volumes are never lost by the service provider.
+* Data stored in Block Storage service volumes is always available and volumes are rarely lost by the service provider.
 
-* Data stored by the Object Operation service is always available and is never lost by the cloud service provider.
+* Data stored by the Object Operation service is always available and is rarely lost by the cloud service provider.
 
-* Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are never lost by the cloud service provider and will continue to provide a network path to the Compute VMs. 
+* Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are rarely lost by the cloud service provider and will continue to provide a network path to the Compute VMs. 
 
 The infrastructure that provides these features is called a Highly Available Cloud Infrastructure.
 
