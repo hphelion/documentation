@@ -90,7 +90,7 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-		export https_proxy=<ip address or url of http proxy>
+		export https_proxy=<ip address or url of https proxy>
  
 7. Run this command to prepare the installer and ensure prerequisites are met. 
 
