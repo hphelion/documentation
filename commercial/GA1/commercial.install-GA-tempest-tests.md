@@ -47,7 +47,7 @@ Embedded tests may be used to verify if the deployed overcloud is functional.
 2. SSH into the undercloud node:
 
 		ssh heat-admin@${UNDERCLOUD_IP}
-		sudo –i
+		sudo -i
 
 3. Source the overcloud admin credentials, activate the virtual environment and start the tests:
 
@@ -68,7 +68,7 @@ To access the results after the run:
 2. SSH into the undercloud node:
 
 		ssh heat-admin@${UNDERCLOUD_IP}
-		sudo –i
+		sudo -i
 
 3. Change to the `tempest` directory and list test results:
 
@@ -88,7 +88,7 @@ There are several ways available to customize which tests will be executed.
 2. SSH into the undercloud node:
 
 		ssh heat-admin@${UNDERCLOUD_IP}
-		sudo –i
+		sudo -i
 
 3. Execute the following command:
 
