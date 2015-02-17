@@ -76,31 +76,6 @@ You can enroll (add) nodes that that are present in baremetal.csv but have not b
 
 To add new compute nodes that were not present during the initial installation process, first enroll the baremetal node and then configure the new node.
 
-<!--1. SSH to undercloud VM as the heat-admin user from the seed VM:
-
-		ssh heat-admin@<IP Address>
-		sudo -i
-
-2. Source the `stackrc` configuration file created during the installation process:
-
-		source stackrc
-
-3. Register the new baremetal server in the Ironic database. Replace the CPU, memory, local disk size, IPMI address, and IPMI password values with your baremetal settings: 
-
-		ironic node-create -d pxe_ipmitool -p cpus=<value> -p memory_mb=<value> -p local_gb=<value> -p cpu_arch=<value> -i ipmi_address=<IP Address> -i ipmi_username=<username> -i ipmi_password=<password>
-
-	The following example for reference:
-
-		ironic node-create -d pxe_ipmitool -p cpus=12 -p memory_mb=98304 -p local_gb=1800 -p cpu_arch=amd64 -i ipmi_address=10.12.22.70 -i ipmi_username=admin -i ipmi_password=password
-
-4. Create the Ironic port for the Ironic node created in the previous step:
-
-		ironic port-create --address $MAC_ADDR --node_uuid $NODE_UUID
-
-5. List the baremetal nodes. This command also lists the newly added nodes:
-
-		ironic node-list -->
-
 6. Log in to the seed VM:
 
 		ssh root@<IP Address>
@@ -112,7 +87,7 @@ Add the node to baremetal.csv at the end.
     The full syntax is documented above. Make sure it is at the end of the file as it is a new node.
 2.  Set all enviromental variables you would have set for the initial install.
 3.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it by one, otherwise the new value will be computed. Then run 
-5.  
+  
 		hp_ced_installer --update-overcloud
 
     	$ bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud
@@ -162,7 +137,9 @@ To remove a node:
 
 		overcloud-ce-novacompute0
 
-- Run
+
+
+1. Run
 
 		heat stack-list
 
