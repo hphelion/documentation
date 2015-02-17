@@ -161,6 +161,6 @@ See [tempest-lib 0.2.0](https://pypi.python.org/pypi/tempest-lib/0.2.0) for info
 
 Running the tests requires access the overcloud identity admin credentials; it will create and delete test accounts and test resources for test purposes. 
 
-In certain cases tempest may fail to clean-up some of test resources after a test is complete – typically in case of failed tests.
+In certain cases tempest may fail to clean-up some of test resources after a test is complete, for example in case of failed tests.
 
 ----
