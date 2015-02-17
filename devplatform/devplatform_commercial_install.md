@@ -84,7 +84,7 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 9. Optionally, you can specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		sudo ./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
