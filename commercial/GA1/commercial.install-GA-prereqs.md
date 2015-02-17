@@ -96,7 +96,7 @@ If user `root` does not have a public key, you can create one using the `ssh-key
 
 ### Install Debian/Ubuntu packages {#packages}
 
-Before starting the installation, you must first install Ubuntu 14.04 LTS  and the following required Debian/Ubuntu packages on the system running the installer:
+Before starting the installation, you must first install Ubuntu 14.04 LTS  and the following required Debian/Ubuntu packages on the seed cloud host:
 
 - qemu-kvm 
 - libvirt-bin 
