@@ -83,7 +83,8 @@ To add new compute nodes that were not present during the initial installation p
 2. Make the respective Baremetal entry in `/root/baremetal.csv`.   
 	<!---If the `/root/overcloud-config.json` is not present, copy the overcloud template config file to `/root/overcloud-config.json`: 
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
-Add the node to baremetal.csv at the end.
+**Add the node to baremetal.csv at the end.**
+
     The full syntax is documented above. Make sure it is at the end of the file as it is a new node.
 3. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
 
