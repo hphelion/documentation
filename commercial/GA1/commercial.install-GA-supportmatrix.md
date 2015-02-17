@@ -362,7 +362,6 @@ The following table lists the minimum requirements required for installation of 
 
 - Additional storage on the Swift server can be used as object storage.
 - For installations with KVM hypervisor support, one or more additional nodes are required for VSA block storage.
-
 - After the installation is complete, you can use the Block Storage and Object Operation services to add further storage capacity as allowed by your hardware.
 
 
@@ -532,7 +531,7 @@ Other requirements and recommendations for the seed cloud host are as follows:
 <!--- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes-->
 - A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
-	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
+	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualization configuration.
 
 
 ## Next Step {#next}
