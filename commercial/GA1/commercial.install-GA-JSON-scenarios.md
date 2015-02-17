@@ -28,7 +28,7 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: JSON Environment File Deployment Scenarios
 
-Edit the [JSON file based on the applicable scenario:
+Edit the [JSON file](/helion/openstack/install/envars/) based on the applicable scenario:
 
 - [Environment variables file for a KVM install](#kvm)
 - [Environment variables file for a ESX install](#esx)

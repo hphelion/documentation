@@ -25,7 +25,7 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-Based on OpenStack Keystone v3 API, the HP Helion OpenStack Identity service provides one-stop authentication. 
+Based on Openstack Keystone, the HP Helion Openstack Identify services provides one-stop authentication using the Keystone V2 or V3 API.
 
 The Identity service enables you to create and configure users, specify user roles and credentials, and issue security tokens.
 

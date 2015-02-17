@@ -115,11 +115,11 @@ The following table outlines the functionality of HP Helion OpenStack services b
 </tr> --->
 <tr style="background-color: white; color: black;">
 	<td><b>Sherpa</b></td>
- 	<td>The HP Helion Sherpa service is a content distribution catalog service provides a mechanism to download the content such as Image Operation images, Orchestration templates, and so forth, from the HP Helion CODN and install the content in the appropriate service such as the Identity service etc.
+ 	<td>The HP Helion Sherpa service is a content distribution catalog service provides a mechanism to download the content such as Image Operation images, Orchestration templates, and so forth, from the HP Helion [HDN](https://helion.hpwsportal.com) and install the content in the appropriate service such as the Identity service etc.
 
 	<br><br><a href =" /helion/openstack/services/sherpa/overview/">Learn more </a> about the HP Helion Sherpa Service.
 	</td> 
-	<td>Administrators can download content such as software patches and updates from the HP Helion CODN and apply the downloaded content to their Helion OpenStack installation. </td>
+	<td>Administrators can download content such as software patches and updates from the HP Helion [HDN](https://helion.hpwsportal.com) and apply the downloaded content to their Helion OpenStack installation. </td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>EON services</b></td>
@@ -318,7 +318,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td> <b>Management</b></td>
-    <td>This network is used for most cloud traffic including PXE boot nodes, tenant access to service APIs, internal API traffic between (one services to another), HA heartbeats, tenant access to services, VxLAN traffic for between tenant VMs, VM access to block and object storage, object storage replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, CODN access to catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
+    <td>This network is used for most cloud traffic including PXE boot nodes, tenant access to service APIs, internal API traffic between (one services to another), HA heartbeats, tenant access to services, VxLAN traffic for between tenant VMs, VM access to block and object storage, object storage replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, [HDN](https://helion.hpwsportal.com) access to the product catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
     <td>untagged</td>
     <td>eth0</td>
   </tr>
@@ -357,7 +357,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td><b>Management</b></td>
-    <td>This network is used for most cloud traffic including, tenant access to service APIs, internal traffic between services, VxLAN traffic between tenant VMs, VM access to block and object storage, replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, CODN access to catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
+    <td>This network is used for most cloud traffic including, tenant access to service APIs, internal traffic between services, VxLAN traffic between tenant VMs, VM access to block and object storage, replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, [HDN](https://helion.hpwsportal.com) access to the product catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
     <td>untagged</td>
     <td>eth0<br>(PXE boot for overcloud servers)</br></td>
   </tr>
