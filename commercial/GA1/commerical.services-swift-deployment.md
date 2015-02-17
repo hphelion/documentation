@@ -156,29 +156,29 @@ Perform the following steps to deploy scale-out Object nodes:
  
  	Refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/) for   details of adding physical server for scale-out Swift in `baremetal.csv` file.
 
-3.Enter the following command to source the environment variables file  for the new values.
+3. Enter the following command to source the environment variables file  for the new values.
 
 		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/<environment variables file name>
 
-For example: 
+	For example: 
  
-		# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
+			# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-custom-ips.json
 
-<!---
-3. Enter the following command to source the `kvm-default.json`  for the new values.
-    
-    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
-
-3. Source the environment variables file created during initial installation. 
-
-		# source /root/kvm-custom-ips.json 
-<!---
-
-	 	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-
---->
+	<!---
+	3. Enter the following command to source the `kvm-default.json`  for the new values.
+	    
+	    	# source /root/tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh /root/tripleo/configs/kvm-default.json
+	
+	3. Source the environment variables file created during initial installation. 
+	
+			# source /root/kvm-custom-ips.json 
+	<!---
+	
+		 	source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+	
+	--->
 		
-4.Run the installer script to update the cloud.
+4. Run the installer script to update the cloud.
 
     	# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 

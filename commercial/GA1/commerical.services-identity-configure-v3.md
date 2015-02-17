@@ -30,15 +30,15 @@ As a result:
 * The admin cannot perform domain management using the Horizon dashboard.
 * If an admin creates a user though the CLI using a Keystone v3 token, the user will not be able to log in to the Horizon dashboard.  Any user created from within Horizon is able to log into Horizon, but the user will be in the default domain.  
 
-To use Keystone v3 in Horizon (perhaps to use LDAP), they can manually change the settings (see below).  When Keystone v3 is enabled, all User, Project, and Domain management must be done via the CLI.  The Identity panel will not be visible in Horizon.
+To use Keystone v3 in Horizon, you can manually change the following settings. When Keystone v3 is enabled, all User, Project, and Domain management must be done via the CLI.  The Identity panel will not be visible in Horizon.
 
-Steps to switch Horizon from Keystone v2 to Keystone v3:
+To switch Horizon from Keystone v2 to Keystone v3:
 
 1.	In each controller node, navigate to the `local_settings.py` file located in `/opt/stack/venvs/openstack/lib/python2.7/site-packages/openstack_dashboard/local/local_settings.py` 
 
 2. Edit the file as follows:
 
-	a. Set keystone version to V3:
+	a. Set OPENSTACK_API_VERSIONS to V3:
 
 		OPENSTACK_API_VERSIONS = {
 		"identity": 3,

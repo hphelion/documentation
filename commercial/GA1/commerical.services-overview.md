@@ -29,7 +29,8 @@ HP Helion OpenStack includes a number of additional services to work with your c
 
 - [Service User Accounts](#service)
 - [OpenStack Services](#OpenStack)
-- [Dashboard Services](#Dashboard)
+- [HP Services](#hp)
+- [Installation services](#install)
 - [Other Services](#Other)
 - [More information](#info)
 
@@ -58,7 +59,7 @@ The following services are foundation technologies used by the HP Helion OpenSta
 
 See [Overview of the Compute service](/helion/openstack/services/compute/overview/).
 
-**Identity Management**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
+**Identity**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
 
 See [Overview of the Identity Management service](/helion/openstack/services/identity/overview).
 
@@ -86,23 +87,15 @@ See [Overview of the Volume Operations Service](/helion/openstack/services/volum
 
 See [Overview of the Metering Service](/helion/openstack/services/reporting/overview/).
 
-## Dashboard Services {#Dashboard}
-
-**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/). The dashboards are the web-based user interface for creating and managing HP Helion OpenStack resources.
-
-You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
-
-See [Overview of the Horizon Service](/helion/openstack/services/horizon/overview/).
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.
 
 See [Overview of the Loom Service](/helion/openstack/services/loom/overview/).
 -->
-## Other Services {#Other}
 
-**Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment.  
+## HP Services ## {#hp}
 
-See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
+The following services have been developed by HP for use with the HP Helion OpenStack.
 
 **Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder and Swift) which run in the Overcloud on various storage devices.
 
@@ -112,10 +105,30 @@ See [Overview of Sirius Service](/helion/openstack/services/sirius/overview/)
 
 See [Overview of EON Service](/helion/openstack/services/eon/overview/)
 
+**Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment.  
 
-**DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
+See [Overview of Sherpa Service](/helion/openstack/services/sherpa/overview).
 
-See [Overview of the DNS as a Service](/helion/openstack/install/dnsaas/).
+## Dashboard services ## {#dash}
+
+HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack.
+
+**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/dashboard/how-works/) for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack. 
+
+You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
+See [Overview of the Horizon Service](/helion/openstack/services/horizon/overview/).
+
+**Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.
+
+See [Overview of the Icinga Service](/helion/commercial/services/icinga/).
+
+**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
+
+See [Overview of the Icinga Service](/helion/commercial/services/kibana/).
+
+## Installation services ## {#install}
+
+The following services are used only during the HP Helion OpenStack installation:
 
 **TripleO**. TripleO (which stands for OpenStack-on-OpenStack) is a program designed to facilitate the installation of an OpenStack cloud. The HP Helion OpenStack installation process uses TripleO.
 
@@ -125,9 +138,23 @@ See [Overview of the TripleO Service](/helion/openstack/services/tripleo/overvie
 
 See [Overview of the Ironic Service](/helion/openstack/services/ironic/overview/).
 
+## Other services and features {#Other}
+
+The following services and features can be used with HP Helion OpenStack.
+
+**Centralized Logging**. The HP Helion OpenStack Centralized Logging uses a number of services and systems to collect logs throughout the cloud into a central system. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms. 
+
+See [Centralized Logging Overview](/helion/openstack/services/logging/overview/).
+
+**DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
+
+See [Overview of the DNS as a Service](/helion/openstack/install/dnsaas/).
+
 **DVR**. Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users. 
 
 See [Overview of DVR Service](/helion/openstack/services/dvr/overview/).
+
+
 
 ## For more information {#info}
 For information on how to operate your cloud we suggest you read the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The **Architecture** section contains useful information about how an OpenStack Cloud is put together. However, HP Helion OpenStack takes care of these details for you. The **Operations** section contains information on how to manage the system.

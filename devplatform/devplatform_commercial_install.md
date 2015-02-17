@@ -69,9 +69,14 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
-		export https_proxy=<ip address or url of http proxy>
+		    export https_proxy=<ip address or url of http proxy>  
 
-	[[no_proxy DOCS-868 what is the syntax]]
+5. Set the `no_proxy` variable.
+
+		    export no_proxy=localhost,127.0.0.1,<identity IP address>  
+
+	Set the identity URL if necessary.
+	 
  
 7. Run this command to prepare the installer and ensure prerequisites are met. 
 
@@ -256,21 +261,21 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	- **Key Pair** (Required) - Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
 	- **External Network** (Required) - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named **ext-net** .
 	- **Provider Network** (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named **SVC**.
-	- **NTP Server IP**: IP Address to an NTP server to use if instances will not have outbound access to the internet.
-	- **Logstash RabbitMQ IP Address** (Required): Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.
-	- **Logstash RabbitMQ Password** (Required): Specify the password for the RabbitMQ Server publishing to the central Logstash server.
-	- **Ephemeral CA Password** (Required): Specify the password for the Ephemeral CA server. 
-	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
-	- **Volume Type** (Required): The volume type to use when creating database instances.
-	- **Enable HA**: Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times.
+	- **NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet.
+	- **Logstash RabbitMQ IP Address** (Required) - Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.
+	- **Logstash RabbitMQ Password** (Required) - Specify the password for the RabbitMQ Server publishing to the central Logstash server.
+	- **Ephemeral CA Password** (Required) - Specify the password for the Ephemeral CA server. 
+	- **Ephemeral CA IP Address** (Required) - Specify the IP address of Ephemeral CA server.
+	- **Volume Type** (Required) -  The volume type to use when creating database instances.
+	- **Enable HA** - Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times. 
 <br /><br />
 
 		<img src="media/dev_install_database.png"/)>
 
-[[DOCS- says this list is wrong but it matches the screen shot]]
-
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
+
+----------
 
 3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
 	
@@ -284,7 +289,7 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 
 	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
 
-		a. Edit the /etc/haproxy/manual/paas.cfg file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
+		a. Edit the `/etc/haproxy/manual/paas.cfg` file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
 	
 			listen trove_api
  			bind <Virtual IP from step 2>:8779
@@ -311,14 +316,33 @@ This section provides details on installing the Marketplace service from the Dev
 
 The **Marketplace Service** will be installed into the admin tenant of the Helion OpenStack overcloud and the admin tenant must have sufficient quota available and unused for the resources the service uses. To check existing quota availability, log-in to Horizon as the **admin** user and open the **Overview** panel under the **Compute** tab.
 
-|Resource | Usage      | 
-|--------------|-------------:|
-|Floating IPs|           16|
-|Instances|                4|         
-|Networks|                1|
-|RAM (GB)|               8|
-|Routers|                   2|
-|Security Groups|   4|
+<table>
+  <thead>
+    <tr><th>Resource</th>
+  <th align="right">Usage</th>
+</tr>
+  </thead>
+  <tbody>
+    <tr><td>Floating IPs</td>
+  <td align="right">16</td>
+</tr>
+    <tr><td>Instances</td>
+  <td align="right">4</td>
+</tr>
+    <tr><td>Networks</td>
+  <td align="right">1</td>
+</tr>
+    <tr><td>RAM (GB)</td>
+  <td align="right">8</td>
+</tr>
+    <tr><td>Routers</td>
+  <td align="right">2</td>
+</tr>
+    <tr><td>Security Groups</td>
+  <td align="right">4</td>
+</tr>
+  </tbody>
+</table>
 
 ### Connect to the Download Service
 
@@ -334,18 +358,16 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 1. Once the download is complete, click the **Configure Service** button to begin configuration of the service. In the configuration dialog, specify the following configuration options:
 
-	- **Service User Password** (Required): The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
-	- **Key Pair** (Required): Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
-	- **External Network** (Required): Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
-	- **Provider Network** (Required): Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named 'SVC'
-	- **NTP Server IP**: IP Address to an NTP server to use if instances will not have outbound access to the internet.
-	- **Logstash RabbitMQ IP Address** (Required): Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.
-	- **Logstash RabbitMQ Password** (Required): Specify the password for the RabbitMQ Server publishing to the central Logstash server.
-	- **Ephemeral CA Password** (Required): Specify the password for the Ephemeral CA server.
-	- **Ephemeral CA IP Address** (Required): Specify the IP address of Ephemeral CA server.
-	- **Subnet range** (Required): The subnet to use for Marketplace <br /><br />
-
-[[bug filed that this list is wrong - email to ravi.]]
+	- **Service User Password** (Required) -  The password for the Admin user that is currently logged in. This password MUST match the password used to log in to Horizon.
+	- **Key Pair** (Required) -  Key Pair to install on all instances created as part of the database service. The public key can be used by an admin to get SSH access to all instances.
+	- **External Network** (Required) - Network Name for the network that has external network access. For HP Helion OpenStack Commercial Edition this network is named 'ext-net'
+	- **Provider Network** (Required) - Network Name for the network that has network access to cloud infrastructure services. For HP Helion OpenStack Commercial Edition this network is named 'SVC'
+	- **NTP Server IP** - IP Address to an NTP server to use if instances will not have outbound access to the internet.
+	- **Logstash RabbitMQ IP Address** (Required) - Specify the IP address of the RabbitMQ Server publishing to the central Logstash server.
+	- **Logstash RabbitMQ Password** (Required) -  Specify the password for the RabbitMQ Server publishing to the central Logstash server.
+	- **Ephemeral CA Password** (Required) - Specify the password for the Ephemeral CA server.
+	- **Ephemeral CA IP Address** (Required) - Specify the IP address of Ephemeral CA server.
+	- **Subnet range** (Required) - The subnet to use for Marketplace. <br /><br />
 
 	<img src="media/dev_install_marketplace.png"/)>
 
@@ -354,15 +376,13 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 3. The following steps will configure HAProxy to receive and forward HTTP requests to the VM that hosts the REST API endpoint for Marketplace. To perform these steps you must be connected to the undercloud node.
 	1. Identify the API server IPs on the SVC network:
 		 
-			nova list | awk'/marketplace-api/{ print $14 }
-			
-			' | cut -d "=" -f 2
+			nova list | awk'/marketplace-api/{ print $14 }' | cut -d "=" -f 2
+					
 		
 		Note that you should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
 	1. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion OpenStack services:
 	 
-			keystone endpoint-list | awk '/8082/{ print $6}
-			' | egrep -o "[0-9].[0-9].[0-9].[0-9]"
+			keystone endpoint-list | awk '/8082/{ print $6}' | egrep -o "[0-9].[0-9].[0-9].[0-9]"
 
 	1. Update configuration on each of the Helion OpenStack controller nodes. <br /> For EACH node:
 		1. Connect to the controller.
@@ -387,42 +407,8 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 
 4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
 
-#### Configuring the Load Balancer ####
 
-The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
-	
-
-3. The following steps will configure the load balancer. To perform the following steps you must be connected to the undercloud node.
-	
-	1. Identify the API server IPs on the SVC network. You should have as many API servers (and IPs) as you have Availability Zones in your Helion OpenStack install.
-
-			nova list | awk '/trove[0-9]*_api/{ print $12 }' | cut -d "=" -f 2
-
-	2. Identify the Virtual IP used by the controller nodes to be able to load balance the Helion 	OpenStack services:
-			
-			keystone endpoint-list | awk '/8779/{ print $6}' | egrep -o "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
-
-	3. Update configuration on each of the Helion OpenStack controller nodes by connecting to the controller and doing the following:
-
-		a. Edit the /etc/haproxy/manual/paas.cfg file and add the following lines. The last line should be repeated once for each API server identified in step 1. 
-	
-			listen trove_api
- 			bind <Virtual IP from step 2>:8779
- 			server trove-trove<n>_api-<uniqueid> <API server n's IP Address> check inter 2000 rise 2 fall 5 check-ssl ca-file /etc/ssl/certs/ca-certificates.crt
-
-		b. Edit the /etc/iptables/iptables file and add to the end of it:
-
-			-I INPUT -p tcp --dport 8779 -j ACCEPT
-
-		c. Run the following command as root:
-
-			sudo iptables -I INPUT -p tcp --dport 8779 -j ACCEPT
-				
-		d. Reload the haproxy service configuration
-		
-			sudo service haproxy reload
-
-Your installation is now complete.
+Your installation is now complete. If you have problems, refer to the following Troubleshooting section
 
 ## Troubleshooting<a name="troubleshooting"></a>
 
@@ -482,5 +468,5 @@ If  the status still remains unchanged in the Configure Service page then Sherpa
    	 
 * Delete the contents of the `/var/lib/Sherpa/data` folder. 
 
-* Restart the service apache2 for this change to take effect . 
+* Restart the service apache2 for this change to take effect. 
 ---->

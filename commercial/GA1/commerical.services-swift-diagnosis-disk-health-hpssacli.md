@@ -88,7 +88,11 @@ The hpssacli program is now installed. Refer the following section for the colle
 
 This utility is used to monitor the usage of [Object Storage(Swift) disk drive(s)]( /helion/openstack/services/object/swift/disk-drive/). 
 
-You can also  manually collect the diagnostic reports from disks in the servers as explained in the following sections.
+
+Once the hpssacli package is installed, swift monitoring (ICINGA) scripts monitor the drives. 
+
+
+(**Optional**) You can also  manually collect the diagnostic reports from disks in the servers as explained in the following sections.
 
 ###Manual procedure to collect the diagnostic report
 
