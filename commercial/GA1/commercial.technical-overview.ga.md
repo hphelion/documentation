@@ -540,7 +540,7 @@ The following systems help you manage your cloud services.
 
 Centralized logging is based on <a href="http://logstash.net/">Logstash</a>, <a href="http://www.elasticsearch.org/">Elasticsearch</a>, and <a href="http://www.elasticsearch.org/guide/en/kibana/current/_dashboard_schema.html">Kibana Dashboard</a> which is deployed in the undercloud server. 
 
-Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The user is not required to access the  several remote server (SSH) to view the individual log files.
+Centralized logging helps the administrator triage and troubleshoot the distributed cloud deployment from the undercloud. The user is not required to access the several remote servers to view the individual log files.
 
 **Note:** Logging requires 4GB of disk space to make sure that all logging messages are retained. <!-- CORE-1964 -->
 
