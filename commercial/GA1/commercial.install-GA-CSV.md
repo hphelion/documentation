@@ -44,7 +44,7 @@ Use the following format in the `baremetal.csv` file.
 
 `<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_management>`
 
-Where `<mac_address>` is the MAC address of the network interface from which to boot. Do not use the iLO NIC interface.
+Where `<mac_address>` is the MAC address of the network interface from which to boot. **Do not use the iLO NIC interface.**
 
 **Important** The diskspace size value must be specified in Gibibytes, not Gigabytes.  For example:<br>
 - 900GB = 838 GiB<br>
@@ -72,31 +72,40 @@ When creating this file, keep the following in mind :
 * The systems specified in this file must meet the Hardware Requirements detailed above.
 * The IPMI user and password must have ADMINISTRATOR privilege (it is not sufficient to have OPERATOR privilege.
 * The <diskspace_GiB> specified should never exceed the physical disk size and is in units of GiB (2^30)
-* The <role> can have these values:
+* The <role> can have these values: 
 
-	- Undercloud, OvercloudControl, OvercloudSwiftStorage, OvercloudCompute
-OvercloudVSAStorage, OvercloudVSAAOStorage, OvercloudSOSwiftProxy,
-OvercloudSOSwiftStorage
+	- Undercloud, 
+	- OvercloudControl, 
+	- OvercloudSwiftStorage, 
+	- OvercloudCompute
+	- OvercloudVSAStorage, 
+	- OvercloudVSAAOStorage, 
+	- OvercloudSOSwiftProxy,
+	- OvercloudSOSwiftStorage
 
 
 - **If role is not specified then these rules apply.**
-- If no Undercloud node is specified then the first node without a role is assigned as an Undercloud,
+<div style="margin-right: 250px;">
 
-Otherwise,
- 
-- if there are not enough OvercloudControl nodes, the next nodes without a role are assigned as OvercloudControl until there are enough nodes,
+If no Undercloud node is specified then the first node without a role is assigned as an Undercloud
+<br>
+else 
+<br>
+if there are not enough OvercloudControl nodes, the next nodes without a role are assigned as OvercloudControl until there are enough nodes
+<br>
+else if
+<br>
+there are not enough OvercloudSwiftStorage, nodes the next nodes without a role are assigned as OvercloudSwiftStorage, until there are enough nodes
+<br>
+else if
+<br>
+Similar logic is applied for VSA and Scale-Out Swift node assignments
+<br>
+else
+<br>
+The node will be assigned a role of OvercloudCompute
 
-Otherwise,
-
-- If there are not enough OvercloudSwiftStorage, nodes the next nodes without a role are assigned as OvercloudSwiftStorage, until there are enough nodes,
-
-Otherwise,
-
-- Similar logic is applied for VSA and Scale-Out Swift node assignments,
-
-Otherwise,
-
-- The node will be assigned a role of OvercloudCompute.
+</div>
 
 **Note also:**
 
@@ -107,22 +116,32 @@ nodes default to 3 and 2 respectively.
 - &lt;power_management&gt; can have these values:
 	- VM, IPMI, HP_Moonshot, HP_iLO4
 
-	- VM - this is for virtual machines and is set automatically for a
- virtual install.
-	- IPMI - this is for all systems that can be accessed using IPMI
- Currently this is ALL supported physical hardware.
-	- If no power_management is specified, a default of IPMI is assumed.
-	- HP_Moonshot - this is for HP Moonshot hardware only. If thisis specified it *requires* two colon-separated extra arguments
- as follows: &lt;transit_address&gt;:&lt;target_address&gt;
- &lt;transit_address&gt; is also known as 'Cartridge Address'
- &lt;target_address&gt; is also known as 'Node Address'
- For example: HP_Moonshot:0x84:0x72
- - HP Moonshot hardware will use ipmitool as its power manager.
- See the additional notes at the top of this document.
-- HP_iLO4 - boot HP iLO4 Gen9 systems in UEFI mode.
- Specify IPMI to boot such nodes in BIOS mode (you must manually
- set the pending boot mode to BIOS mode).
-
+	<table>
+<thead>
+<tr>
+<td>Value</td>  <td>Description</td> </tr>
+</thead>
+<tbody>
+<tr>
+          <td>VM</td>   <td>this is for virtual machines and is set automatically for a
+                 virtual install.</td> </tr><tr>
+          <td>IPMI</td>  <td>this is for all systems that can be accessed using IPMI
+                 Currently this is ALL supported physical hardware.</td> </tr><tr>
+          If no power_management is specified, a default of IPMI is assumed.
+          <td>HP_Moonshot</td>  <td>this is for HP Moonshot hardware only. If this
+                 is specified it *requires* two colon-separated extra arguments
+                 as follows: <transit_address>:<target_address>
+                     <transit_address> is also known as 'Cartridge Address'
+                     <target_address> is also known as 'Node Address'
+                 For example: HP_Moonshot:0x84:0x72
+                 HP Moonshot hardware will use ipmitool as its power manager.
+                 See the additional notes at the top of this document.</td> </tr><tr>
+          <td>HP_iLO4</td>  <td>boot HP iLO4 Gen9 systems in UEFI mode.
+                 Specify IPMI to boot such nodes in BIOS mode (you must manually
+                 set the pending boot mode to BIOS mode).
+</td> </tr>
+</tbody>
+</table>
 - power_management maps to Openstack Ironic power drivers as
 follows:
 
