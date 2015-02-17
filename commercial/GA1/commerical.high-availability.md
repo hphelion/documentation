@@ -178,16 +178,6 @@ The handling of network partitions is illustrated in the diagram below. Galera h
 
 When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.
 
-###Singleton Services on Management Controller {#singleton-services}
-
-The following three services run as singletons in the control plane for the current release 
-
-* [Cinder Volume](#cinder-volume)
-* [Sherpa](#sherpa) 
-* [nova-consoleauth](#nova-console-auth) 
- 
-The above services are deployed and activated on the third controller called **Management Controller**. Automated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the [Backup and Restore](/helion/openstack/backup.restore/) document. 
-
 ####Cinder-Volume {#cinder-volume}
 
 Due to the single threading required in both cinder-volume and the drivers, the Cinder volume service is run as a singleton in the control plane.
