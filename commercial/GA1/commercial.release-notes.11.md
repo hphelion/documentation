@@ -117,6 +117,8 @@ When installing HP Helion OpenStack you might experience the following issues:
 
 When using HP Helion OpenStack you might experience the following issues:
 
+* When a significant update operation is performed, such as adding or removing nodes, connectivity to the VM will drop until the operation is completed. This may last for up to 15 minutes.
+
 * A snapshot of an instance that was launched from a bootable volume might not boot. In addition, the Glance CLI and Horizon Dashboard might not report the snapshot properly. The snapshot will be listed as an image (not a snapshot) with a size of 0 and a blank disk format.
 
 	Even though with Horizon and CLI report the snapshot incorrectly,  the snapshot launches properly. <!-- (GLAN-1706) -->
@@ -127,10 +129,10 @@ When using HP Helion OpenStack you might experience the following issues:
 
 * If, for some reason, the overcloud compute service is rebooted, the VMs might be in an ERROR state. Execute the following commands to restart the services and remove the error(s):
   
-		$ sudo service nova-compute restart
-		$ sudo service nova-scheduler restart
-		$ sudo service nova-conductor restart
-		$ sudo service neutron-openvswitch-agent restart
+		sudo service nova-compute restart
+		sudo service nova-scheduler restart
+		sudo service nova-conductor restart
+		sudo service neutron-openvswitch-agent restart
 
 * In some instances, the centralized logging feature does not function after the  product installation. If this occurs, perform the following steps on the overcloud controller and all compute nodes:
 

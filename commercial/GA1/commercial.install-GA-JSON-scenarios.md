@@ -167,7 +167,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 		    "bridge_mappings": "physnet:br-ex", 
 		    "vcenter": { 
 		        "vlan_range": "1:4094", 
-		        "provider_network": "?????" 
+		        "provider_network": "<insert provider network here>" 
 		    }, 
 		    "ssl": { 
 		        "ca_certs": "<string-encoded certificate data>", 
