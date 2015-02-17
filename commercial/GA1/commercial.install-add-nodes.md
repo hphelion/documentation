@@ -85,7 +85,7 @@ To add new compute nodes that were not present during the initial installation p
 		cp /root/tripleo/tripleo-incubator/scripts/ee-config.json /root/overcloud-config.json-->
 Add the node to baremetal.csv at the end.
     The full syntax is documented above. Make sure it is at the end of the file as it is a new node.
-2.  Set all enviromental variables you would have set for the initial install.
+2.  Set all enviroment variables you would have set for the initial install.
 3.  If you are explicitly specifying OVERCLOUD_COMPUTESCALE then increase it by one, otherwise the new value will be computed. Then run 
   
 		hp_ced_installer --update-overcloud
@@ -99,15 +99,27 @@ Add the node to baremetal.csv at the end.
 
 		"compute_scale":<number of compute nodes>,
 
-9. Source the environment variables file that  you updated:  
+4. Source the environment variables file that  you updated:  
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
-10. Run the installer script:
+5. Run the installer script:
 
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log-->
 
 
+
+6. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
+
+		"compute_scale":<number of compute nodes>,
+
+3. Source the environment variables file that you updated:  
+
+		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
+
+4. Run the installer script:
+
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
 ## Remove nodes {#remove}
 
 To remove a node:
@@ -141,18 +153,17 @@ To remove a node:
 
 1. Run
 
-		heat stack-list
+		heat stack-delete <stackname>
 
-6. Wait for stack to be deleted
+6. Wait for stack to be deleted, running the following command until it is gone:
 
-
+		heat stack-list 
 
 1. Delete node
 
 		ironic node-delete <ironic_nodeid>
 
-8. 	Mark the node as 'deleted' in baremetal.csv
-9. 	Change the 'role' from 'OvercloudCompute' to 'OvercloudCompute:deleted'.
+8. 	Mark the node as 'deleted' in baremetal.csv. Change the 'role' from 'OvercloudCompute' to 'OvercloudCompute:deleted'.
     For example:
 
 		78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute,IPMI
@@ -160,8 +171,9 @@ To remove a node:
     becomes:
 
 		78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute:deleted,IPMI
-Note: Do NOT delete the line
-When hp_ced_installer --update-overcloud is run again, the node will be skipped in all operations.
+**Note: DO NOT DELETE THIS LINE**
+
+When hp&#95;ced&#95;installer --update-overcloud is run again, the node will be skipped in all operations.
 
 
 
