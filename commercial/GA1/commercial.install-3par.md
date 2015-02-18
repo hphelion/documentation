@@ -28,9 +28,10 @@ PageRefresh();
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports [Fibre Channel (FC)]( /helion/openstack/services/volume/Fibre/) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
 
 HP Helion OpenStack provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud. 
+
 
 **Note:** 3PAR support applies only to HP Helion OpenStack with KVM hypervisor support.
 
@@ -53,15 +54,6 @@ The following prerequisites need to be performed before configuring 3PAR StoreSe
 
    Install and configure the 3PAR StoreServ device and create Common Provisioning Groups (CPGs) which you are planning to use for the cloud as Cinder backend. The StoreServ device should be accessible from the management network of the cloud. If you are using Fibre Channel, ensure SAN connectivity between the compute host(s), the overcloud controller where the Volume Operations service is running, and the HP 3PAR StoreServ array.
 
-**Note**: With HP Helion OpenStack&#174; 1.1 release, 3PAR multipath is enabled by default.
-
-To enable multipathing move the `/etc/multipath.conf` to  `/tmp`. 
-
-		mv /etc/multipath.conf /tmp
-		
-Restart the multipath daemon `service multipath-tools restart` on all compute and controller nodes. The `multipath -ll` command  lists the devices and path.
-
-
  
 2 - **Install IMC**
 
@@ -70,6 +62,18 @@ Restart the multipath daemon `service multipath-tools restart` on all compute an
   * Create CPGs in StoreServ using IMC. Refer to the online user guide  for managing the StoreServ using IMC.
 
 The subsequent sections provide the detailed instructions on  the integration workflow.
+
+###Multipath Support
+
+HP Helion OpenStack&#174; 1.1 release supports mutipath for 3PAR. 
+
+To enable multipathing move the `/etc/multipath.conf` to  `/tmp`. 
+
+		mv /etc/multipath.conf /tmp
+		
+Restart the multipath daemon `service multipath-tools restart` on all compute and controller nodes. The `multipath -ll` command  lists the devices and path.
+
+**Note**: With HP Helion OpenStack&#174; 1.1 release, 3PAR native multipath is enabled by default.
 
 ## Working with HP StoreServ
 
