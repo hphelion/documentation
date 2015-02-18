@@ -141,6 +141,8 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Networking Operations Service Overview](/helion/openstack/services/networking/overview/)
 - [Object Operations Service Overview](/helion/openstack/services/object/overview/)
 - [Orchestration Service Overview](/helion/openstack/services/orchestration/overview/)
+- [Metering Service Overview](/helion/openstack/services/reporting/overview/)
+- [Ceph Service Overview]( /helion/openstack/services/ceph/)
 - [Sherpa Service Overview](/helion/openstack/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/services/sirius/overview/)
 	- [Sirius CLI Workflow](/helion/openstack/sirius/cli/workflow)
@@ -181,19 +183,21 @@ Review the following topics related to Object Storage (Swift) deployment:
 	
 - Monitor
 
-	* [Monitor Disk Usage]( /helion/openstack/services/object/swift/Monitor-disk/)
-	* [Replication Status using Icinga](/helion/openstack/services/object/swift/replica-status/)
-	* [Service Health Check](/helion/openstack/services/object/swift/health-check/)
-	* [Check Health Services](/helion/openstack/services/object/swift/health-swift-services/)
-	* [Object Storage (Swift) Proxy Health Check]( /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/)
-	* [Network Interface Card](/helion/openstack/services/object/swift/monitor-speed-of-NIC/)
-	* [Mount Points](/helion/openstack/services/object/swift/mount-points/)
-	* [Disk Drives](/helion/openstack/services/object/swift/disk-drive/)
-	* [Network Access (Ping)](/helion/openstack/services/object/swift/monitor-network-access-ping/)
-	* [Drive Audit]( /helion/openstack/services/object/swift/monitor-swift-drive-audit/)
-	* [File Ownership](/helion/openstack/services/object/swift/file-ownership/)
+	- [Monitor Object Storage (Swift) cluster]( /helion/openstack/services/object/swift/Monitor-cluster/)
 
-- [Ringo Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
+		* [Monitor Disk Usage]( /helion/openstack/services/object/swift/Monitor-disk/)
+		* [Replication Status using Icinga](/helion/openstack/services/object/swift/replica-status/)
+		* [Service Health Check](/helion/openstack/services/object/swift/health-check/)
+		* [Check Health Services](/helion/openstack/services/object/swift/health-swift-services/)
+		* [Object Storage (Swift) Proxy Health Check]( /helion/openstack/services/object/swift/monitor-swift-proxy-health-checks/)
+		* [Network Interface Card](/helion/openstack/services/object/swift/monitor-speed-of-NIC/)
+		* [Mount Points](/helion/openstack/services/object/swift/mount-points/)
+		* [Disk Drives](/helion/openstack/services/object/swift/disk-drive/)
+		* [Network Access (Ping)](/helion/openstack/services/object/swift/monitor-network-access-ping/)
+		* [Drive Audit]( /helion/openstack/services/object/swift/monitor-swift-drive-audit/)
+		* [File Ownership](/helion/openstack/services/object/swift/file-ownership/)
+
+- [Ringos Tool Overview](/helion/openstack/GA1/services/object/pyringos/)
 
 ## License files {#license}
 

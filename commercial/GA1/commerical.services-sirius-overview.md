@@ -49,11 +49,6 @@ You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-
 
 You can use the command-line interface to access HP Sirius service. See [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
 
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
-## For more information ##
-
-For more general information on how to operate your cloud, reference the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

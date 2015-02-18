@@ -3218,14 +3218,14 @@ To access your authentication token:
 
 **Concepts:**
 
-The Updates and Extensions window provides a convenient place for users who have permission to access the HP Cloud OS Distribution Network (CODN). 
+The Updates and Extensions window provides a convenient place for users who have permission to access the HP Helion Distribution Network (HDN). 
 Use the Updates and Extensions window to access catalog updates and content. Updates include software versions and security patches. 
 Content includes material such as images and topology templates.
 
-You can update and upgrade the Administration Dashboard while your system continues to run. CODN contains all the products and services 
+You can update and upgrade the Administration Dashboard while your system continues to run. HDN contains all the products and services 
 HP offers to help maintain your cloud.
 
-To learn whether you have permission to use CODN, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
+To learn whether you have permission to use HDN, see [Administration Dashboard Tasks by Role](/cloudos/manage/administration-dashboard/tasks-by-role/).
 
 You must configure the HP Cloud OS Administration Dashboard to access an HP Cloud OS Distribution Network account before you can use the 
 Updates and Extensions window. See the Tasks sections, below.
@@ -3273,12 +3273,12 @@ To see details of an update:
 
 #### How to Configure an Updates and Extensions Account
 
-If you want to use CODN, you must configure the Administration Dashboard to access it. If you do not have access, the Administration Dashboard displays 
+If you want to use HDN, you must configure the Administration Dashboard to access it. If you do not have access, the Administration Dashboard displays 
 a warning when you open the Updates and Extensions window.
 
 To configure:
 
-1. Create a CODN account.
+1. Create a HDN account.
 
 2. Configure the Administration Dashboard to access that account.
 
@@ -3289,17 +3289,17 @@ To create an account:
 2. Click <b>Updates and Extensions</b> > <b>Updates and Extensions</b> to open the Updates and Extensions window. You see a warning that your credentials are not configured to access the catalog.
 
 3. Click <b>Configure</b> to open the Configure window. 
- * If you already have a CODN account, you can skip to Step 5.
+ * If you already have a HDN account, you can skip to Step 5.
  * If you need to create an HP catalog account, continue.
 
-4. Click <b>Sign up now</b> to open the CODN Create Account window, where you:
+4. Click <b>Sign up now</b> to open the HDN Create Account window, where you:
  * Enter your <b>Name</b>, <b>Email</b>, and <b>Password</b>.
  * Agree to the terms.
- * Click <b>Submit</b>. You can close the CODN window.
+ * Click <b>Submit</b>. You can close the HDN window.
 
 5. On the Administration Dashboard Configure window:
- * Enter your CODN account email address for your <b>User Name</b>.
- * Enter your CODN account password for your <b>Password</b>.
+ * Enter your HDN account email address for your <b>User Name</b>.
+ * Enter your HDN account password for your <b>Password</b>.
  * Click <b>OK</b>.
 
 6. If you configure successfully, you can use the Updates and Extensions window.
@@ -3318,7 +3318,7 @@ time you access the Updates and Extensions window, so you need to enter username
 
 If your browser blocks cookies, you cannot configure an account.
 
-If you clear cookies on your computer, you must configure your account again. You do not have access to CODN until you configure. However, if you downloaded 
+If you clear cookies on your computer, you must configure your account again. You do not have access to HDN until you configure. However, if you downloaded 
 updates and they exist in your cache, you still see them on your Updates and Extensions window. 
 
 #### How to Download an Update or Extension

@@ -50,6 +50,8 @@ A single management group can contain up to 32 StoreVirtual nodes &#45; grouped 
 
 HP Helion OpenStack supports multiple clusters. For minimal deployment, you can create a management group with one cluster and with a single StoreVirtual node on it.
 
+**Note**: SSL is automatically enabled in VSA nodes to secure the data transmission.
+
 HP StoreVirtual VSA enables the following features in HP Helion OpenStack: 
 
 * **Storage clustering**: It allows you to consolidate multiple storage nodes into pools of storage. The available capacity and performance is aggregated and made available to every volume in the cluster. As storage needs increase, StoreVirtual can scale performance and capacity online.

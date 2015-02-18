@@ -31,19 +31,19 @@ PageRefresh();
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
-HP Helion OpenStack&#174; introduces integral, built-in support for [Scale-out Swift](/helion/openstack/services/object/overview/scale-out-swift/) to the cloud.
+HP Helion OpenStack&#174; introduces integral, built-in support for [Scale-out Object Sotrage (Swift)](/helion/openstack/services/object/overview/scale-out-swift/) to the cloud.
 The HP Helion OpenStack&#174; cloud deployment includes automatic creation of a Swift cluster and starter nodes. It also enables SSL automatically to secure the data transmission.
 
 Based on OpenStack&reg; Swift, the HP Helion OpenStack object storage service provides a highly available, resilient, and scalable storage pool for unstructured data.  
 
 ##Architecture Overview
-At its core, Swift is built from a set of software services and data constructs hosted on a cluster of servers. 
+At its core, Object Storage (Swift) is built from a set of software services and data constructs hosted on a cluster of servers. 
 
 <!---
 A Swift cluster is software defined storage (SDS) architecture layered on top of industry standard servers using standard storage drives. --->
 
 
-A Swift cluster is Software Defined Storage (SDS) architecture, layered on top of industry standard servers, using native storage devices which are typically disk drives. 
+A Object Storage (Swift) cluster is Software Defined Storage (SDS) architecture, layered on top of industry standard servers, using native storage devices which are typically disk drives. 
 
 **Note**: It is not recommended to run Swift on top of other systems (hardware or software) that hide the failure domains or native storage devices like using RAID group on top of drives.
 

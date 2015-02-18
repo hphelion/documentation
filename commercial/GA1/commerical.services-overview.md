@@ -50,6 +50,7 @@ The service user accounts include, but are not limited to, the following:
 - Heat
 - Keystone
 - Ceilometer
+- Ceph
 
 ## OpenStack Services {#OpenStack}
 
@@ -86,6 +87,11 @@ See [Overview of the Volume Operations Service](/helion/openstack/services/volum
 **Metering**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. Also known as **Ceilometer**.
 
 See [Overview of the Metering Service](/helion/openstack/services/reporting/overview/).
+
+
+**Ceph**. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management. 
+
+See [Overview of the Ceph Service]( /helion/openstack/services/ceph/)
 
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.
@@ -150,9 +156,6 @@ See [Centralized Logging Overview](/helion/openstack/services/logging/overview/)
 
 See [Overview of the DNS as a Service](/helion/openstack/install/dnsaas/).
 
-**DVR**. Distributed Virtual Routing (DVR) allows you to define connectivity among different VNSs as well as connectivity between VNS hosts and the external network. HP Helion OpenStack provides Distributed Virtual Routing to cloud users. 
-
-See [Overview of DVR Service](/helion/openstack/services/dvr/overview/).
 
 
 

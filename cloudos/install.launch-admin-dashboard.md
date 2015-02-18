@@ -34,7 +34,7 @@ To access the Administration Dashboard:
 When you return to the Administration Dashboard, at http://&lt;public-IP-of-your-cloud-controller>, you will need to login. 
 
 In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
 ## Next Step
 

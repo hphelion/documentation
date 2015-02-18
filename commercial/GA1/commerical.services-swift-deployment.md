@@ -250,7 +250,7 @@ Repeat the above steps for all of the object nodes.
 
 ## Create a New Scale-out Object Ring {#creating-scale-out-object-ring}
 
-Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP Helion CloudStack&reg; cloud deployment.
+Once the disk is formatted you can create a scale-out object ring. This ring is created for the scale-out Swift which is an extension of the Starter Swift nodes which are installed by default during HP Helion OpenStack&reg; cloud deployment.
 
 1. Create a directory named `ring-building`. 
 
@@ -336,12 +336,12 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 	The following sample displays all the rings and builder files from **19.0.2.22**
 
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/object.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/account.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/container.ring.gz /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/object.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/account.builder /root/ring-building/
-		rsync -qzp --rsync-path="sudo rsync" heat-admin@<19.0.2.22>:/etc/swift/container.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/object.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/account.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/container.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/object.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@19.0.2.22:/etc/swift/container.builder /root/ring-building/
 	
 	**Note**: The ring files are identical on both the starter swift nodes. You can copy **.gz** files  in either of the starter nodes as they are identical.
 

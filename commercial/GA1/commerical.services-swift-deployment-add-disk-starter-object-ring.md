@@ -41,6 +41,25 @@ Perform the following procedure to add disk to a starter object ring.
 *  All of the rings generated **must** be preserved, preferably at more than one location. Swift needs these rings to be consistent across all nodes.
 * Make a backup of the rings before any operation.
 
+----------------------------------------------
+**Note**: If the scale out swift nodes are not deployed, you need to perform the following:
+
+1. Create a directory named ring-building.
+
+		# mkdir -p /root/ring-building
+		# cd /root/ring-building
+
+2. Get all the rings and builder files from either of the starter nodes.
+
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/container.ring.gz /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/object.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:/etc/swift/account.builder /root/ring-building/
+		rsync -qzp --rsync-path="sudo rsync" heat-admin@<starter Swift nodes IP address>:
+
+-------------------------------------------------
+
 ## Add disks to a Starter Object Ring {#adding-Swift-disks-to-a-ring}
 
 Perform the following steps to add Swift disk to a ring:

@@ -444,7 +444,9 @@ Refer to the ***OpenStack Administrator Guide***, Advanced operational features.
 
 ## Emulex NIC support ##
 
-In the HP Helion OpenStack 1.1 release, there is a performance issue with SR-IOV on Emulex NICs  HP recommends disabling SR-IOV.
+In the HP Helion OpenStack 1.1 release, there is a performance issue with Emulex NICs that are configured to support Single Root I/O Virtualization (SR-IOV). 
+
+The problem appears as overcloud performance delays for certain operations, like attempting to SSH into a compute node. The problem is related to DNS performance. The DNS service for the overcloud is the `dnsmasq` process. Occasionally the openvswitch on the undercloud drops packets which are destined for the `dnsmasq` tap device. The reason the openvswitch occasionally has problems is due to it seeing the tap device MAC address as a source MAC address on eth0. This source MAC address can flap between the tap device and eth0. Properly, the source address should only be the tap device. Because SR-IOV is enabled, a broadcast from the tap device MAC address as source is being sent back by the NIC through eth0. To fix this problem, HP recommends that you disable SR-IOV in the NIC BIOS (not just in the kernel.
 
 ##Logging {#logging}
 

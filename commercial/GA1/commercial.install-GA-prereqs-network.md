@@ -67,7 +67,7 @@ You are responsible for providing the internal and external customer router and 
 
 If you are installing HP Helion OpenStack for ESX hypervisor support, you must configure your network as shown in the following diagram.
 
-<a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
+<a href="javascript:window.open('media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
 #### Installing networks for ESX ##### {#install_network_ESX}
 

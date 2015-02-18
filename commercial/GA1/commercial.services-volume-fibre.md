@@ -129,7 +129,7 @@ Perform the following steps to configure Brocade Zone Manager.
                             },
                             {
                                 "option": "fc_fabric_names",
-                                "value": "BRCD_FAB_A , BRCD_FAB_B"
+                                "value": "BRCD_FAB_A,BRCD_FAB_B"
                             },
                             {
                                 "option": "zone_name_prefix",
