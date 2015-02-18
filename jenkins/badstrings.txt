@@ -1,5 +1,5 @@
 [^_\.]CODN
-[^_\.]cdn
+[^_\.]codn
 [bB]are [mM]etal
 [bB]are-[mM]etal
 Fiber Channel
