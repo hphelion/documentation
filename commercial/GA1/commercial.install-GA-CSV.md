@@ -47,26 +47,26 @@ Where `<mac_address>` is the MAC address of the network interface from which to 
 
 **Example:** 
 
-Here is an sample file:
+The following is a sample file:
 
-     78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048,Undercloud,IPMI
-     78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048,OvercloudControl,IPMI
-     78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048,OvercloudControl,IPMI
-     78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048,OvercloudControl,IPMI
-     78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048,OvercloudSwiftStorage,IPMI
-     78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048,OvercloudSwiftStorage,IPMI
-     78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute,IPMI
+	78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,2048,Undercloud,IPMI
+	78:e7:d1:22:5d:10,administrator,password,192.168.11.5,12,32768,2048,OvercloudControl,IPMI
+	78:e7:d1:22:52:90,administrator,password,192.168.11.3,12,32768,2048,OvercloudControl,IPMI
+	78:e7:d1:22:5d:c0,administrator,password,192.168.11.2,12,32768,2048,OvercloudControl,IPMI
+	78:e7:d1:22:5d:a8,administrator,password,192.168.11.4,12,32768,2048,OvercloudSwiftStorage,IPMI
+	78:e7:d1:22:52:9b,administrator,password,192.168.11.6,12,32768,2048,OvercloudSwiftStorage,IPMI
+	78:e7:d1:22:52:9e,administrator,password,192.168.11.7,12,32768,2048,OvercloudCompute,IPMI
 
 
 When creating this file, keep the following in mind :
 
 - This file must contain from 7 to 100 lines. (100 being the maximum number of nodes suported in an HP Helion install.)
 - There must be one entry in this file for each baremetal system you intend to install.
-- The &lt;mac&#95;address&gt; should be the MAC address of the network interface enabled for PXE/network boot on each baremetal system (*not* the MAC address of the BMC/IPMI controller).
+- The `mac_address` should be the MAC address of the network interface enabled for PXE/network boot on each baremetal system (*not* the MAC address of the BMC/IPMI controller).
 - The systems specified in this file must meet the Hardware Requirements detailed above.
 - The IPMI user and password must have ADMINISTRATOR privilege (it is not sufficient to have OPERATOR privilege).
-- The &lt;diskspace&#95;GiB&gt; specified should never exceed the physical disk size and is in units of GiB (2^30)
-- The &lt;role&gt; can have these values (roles are case-insensitive):
+- The `diskspace_GiB` specified should never exceed the physical disk size and is in units of GiB (2^30)
+- The `role` can have these values (roles are case-insensitive):
 	- Undercloud, 
 	- OvercloudControl, 
 	- OvercloudSwiftStorage, 
@@ -92,7 +92,7 @@ When creating this file, keep the following in mind :
 
 - The required numbers of OvercloudControl and OvercloudSwiftStorage
 nodes default to 3 and 2 respectively.
-- &lt;power&#95;management&gt; can have these values:
+- `power_management` can have these values:
 	- VM
 	- IPMI 
 	- HP&#95;Moonshot 

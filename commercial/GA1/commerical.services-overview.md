@@ -56,6 +56,8 @@ The service user accounts include, but are not limited to, the following:
 
 The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).
 
+For information on enabling and maintaining each of these OpenStack services, see [Network Administrator Notes](/helion/openstack/network/administrator/notes/).
+
 **Compute Operations**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as **Nova**. 
 
 See [Overview of the Compute service](/helion/openstack/services/compute/overview/).
