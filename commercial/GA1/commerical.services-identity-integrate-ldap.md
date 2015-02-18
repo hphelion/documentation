@@ -61,7 +61,7 @@ It must be a well-formed, syntax-error free json file.
 
 Section names, supported options and possible values are described in [OpenStack Identity Service documentation](/helion/openstack/services/identity/overview/). The following table lists several important values:
 
-See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overlcoud_keystone_ldap.json` file.
+See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overcloud_keystone_ldap.json` file.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
