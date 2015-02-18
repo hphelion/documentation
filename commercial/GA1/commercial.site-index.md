@@ -141,6 +141,8 @@ Review the following topics related to the HP Horizon OpenStack services:
 - [Networking Operations Service Overview](/helion/openstack/services/networking/overview/)
 - [Object Operations Service Overview](/helion/openstack/services/object/overview/)
 - [Orchestration Service Overview](/helion/openstack/services/orchestration/overview/)
+- [Metering Service Overview](/helion/openstack/services/reporting/overview/)
+- [Ceph Service Overview]( /helion/openstack/services/ceph/)
 - [Sherpa Service Overview](/helion/openstack/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/services/sirius/overview/)
 	- [Sirius CLI Workflow](/helion/openstack/sirius/cli/workflow)
