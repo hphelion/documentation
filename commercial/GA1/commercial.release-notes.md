@@ -87,7 +87,7 @@ When using HP Helion OpenStack you might experience the following issues:
 
 	Even though with Horizon and CLI report the snapshot incorrectly,  the snapshot launches properly. <!-- (GLAN-1706) -->
 
-* If you use the Updates and Extensions tab of the Helion Dashboard for the overcloud (known as the *Sherpa UI*) to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). Avoid using images that use the same name. <!-- (CODN-24) -->
+* If you use the Updates and Extensions tab of the Helion Dashboard for the overcloud (known as the *Sherpa UI*) to download two images that use the same name in two different projects, the second image will fail to upload to the Image Operations service (Glance). Avoid using images that use the same name. <!-- (C O D N-24) -->
 
 * If you determine that your VM seed has not started correctly when you execute the `hp_ced_start_seed` script, run the script a second time to ensure you start the seed.
 

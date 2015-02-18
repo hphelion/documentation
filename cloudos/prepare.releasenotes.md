@@ -145,7 +145,7 @@ you can ensure the deletion of the volume with the following process:
         `restart eve-requestworker`   
 
 **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS Sandbox ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 		
 ###Resolved Issues in Version 1.20## {#v120resolved}
 
@@ -203,7 +203,7 @@ For additional related information on HP Cloud OS:
 * HP Cloud OS Release Notes (this topic): Information about the release's new features, recommendations, known issues, and resolved limitations.
 
 **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS Sandbox ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
 ###Installation Notes### {#installation-notes}
 

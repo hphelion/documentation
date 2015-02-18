@@ -175,30 +175,6 @@ The following diagram depicts a simplified deployment scenario using ESX.
 
 ## Hardware requirement {#hardware-req}
 
-The following hardware requirements are required to install HP Helion OpenStack.
-
-* At least 8 and up to 100 baremetal systems with the following configuration:
-	* A minimum of 32 GB of physical memory
-	* A minimum 512GB of disk space, required for installation. 
-	* A minimum of 1 x 10 GB NIC with PXE support
-	* Capable of hosting VMs
-	* Boot order configured with Network/PXE boot as the first option
-	* BIOS configured: 
-		* To the correct date and time
-		* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-		* To stay powered off in the event of being shutdown rather than automatically restarting
-	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-
-<!-- Need maximum disk space; 2TB requirement no longer applicable (10/29/14 -->
-
-
-* A seed VM host, also called the installer system, to run the baremetal install and host the Seed VM with the following configuration:
-
-	* A minimum of 16 GB of physical memory
-	* A minimum of 1 TB of disk space
-	* Virtualization enabled 
-	* Ubuntu 14.04 installed
-
 For more information of Hardware configuration see [Hardware configuration](/helion/openstack/install/prereqs/) and [Support Matrix](/helion/openstack/support-matrix/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

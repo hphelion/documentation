@@ -57,7 +57,7 @@ To perform these tasks, you'll use a separate UI: the HP Cloud OS Installation D
 http://192.168.124.10:3000
 
 You should open the Installation Dashboard in Mozilla Firefox or Google Chrome. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
 ## Install Module Overview
 
@@ -136,7 +136,7 @@ Mozilla Firefox or Google Chrome:
 http://192.168.124.10:3000
 
 **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. 
-If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
  
 ### Apply Cloud Controller Install Modules
@@ -275,7 +275,7 @@ To apply the install modules in Mozilla Firefox or Google Chrome:
 
 After creating the cloud and defining your compute region(s), you can deploy Swift in your cloud (if you elected to setup Swift) by following these steps:
 
-1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
 2. The Swift install module is pre-installed with a default proposal created (without assigned nodes).
 
