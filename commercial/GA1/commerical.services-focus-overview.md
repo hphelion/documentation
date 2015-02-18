@@ -7,7 +7,7 @@ product: commercial.ga
 ---
 <!--PUBLISHED-->
 
-# HP Helion OpenStack&#174; Focus Service Overview #
+# HP Helion 1.0 OpenStack&#174; Focus Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/helion/openstack/prepare/overview/ -->
 

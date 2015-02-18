@@ -27,7 +27,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Back Up and Restore
+# HP Helion 1.0 OpenStack&#174; Back Up and Restore
 
 The default HP Helion OpenStack environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.
 

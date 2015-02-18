@@ -22,7 +22,7 @@ PageRefresh();
 
 -->
 
-# HP Helion OpenStack&#174;: Command Line Interface- EON 
+# HP Helion 1.0 OpenStack&#174;: Command Line Interface- EON 
 
 
 The EON client CLI package provides an http-client coupled command-line tool for managing Eon (ESX management) services.

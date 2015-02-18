@@ -13,7 +13,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Mojolicious[](#mojolicious "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Mojolicious[](#mojolicious "Permalink to this headline")
 =========================================================
 
 Mojolicious is a web framework with a native PSGI interface which is

@@ -13,7 +13,7 @@ authors: Jayme P
 
 ---
 <!--PUBLISHED-->
-# HP Helion Development Platform: HP Application Lifecycle Service (ALS) Client
+# HP Helion 1.0 Development Platform: HP Application Lifecycle Service (ALS) Client
 
 Click the download link that is appropriate for your operating system.
 

@@ -20,7 +20,7 @@ PageRefresh();
 <!---
 <p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
-# HP Helion OpenStack&#174;: Manage Resources
+# HP Helion 1.0 OpenStack&#174;: Manage Resources
 The **Resources** Tab in the undercloud Horizon  dashboard allows you to define resources for your cloud. This tab displays two main options: **Compute** and **Storage**. You can define the configurations for the compute as well as the storage based on your requirements using this tab. 
 
 ## Working with the Resources Tab

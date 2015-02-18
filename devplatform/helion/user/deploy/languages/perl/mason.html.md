@@ -13,7 +13,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Mason[](#mason "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Mason[](#mason "Permalink to this headline")
 =============================================
 
 Mason is a templating system that can handle web requests directly via

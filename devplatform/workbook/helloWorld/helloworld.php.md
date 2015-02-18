@@ -14,7 +14,7 @@ SME1: Sam C
 
 ---
 <!--PUBLISHED-->
-# HP Helion Development Platform: PHP Hello World Sample
+# HP Helion 1.0 Development Platform: PHP Hello World Sample
 
 This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 

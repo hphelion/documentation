@@ -12,7 +12,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Developing in Java[](#java "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Developing in Java[](#java "Permalink to this headline")
 
 Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools to enable successful development are available in Java.
 

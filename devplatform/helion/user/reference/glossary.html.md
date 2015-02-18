@@ -14,7 +14,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Glossary[](#index-0 "Permalink to this headline")
+# HP Helion 1.0 Development Platform: Glossary[](#index-0 "Permalink to this headline")
 ==================================================
 
 AMQP

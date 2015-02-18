@@ -12,7 +12,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Developing In PHP
+# HP Helion 1.0 Development Platform: Developing In PHP
 
 Whether you're deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take

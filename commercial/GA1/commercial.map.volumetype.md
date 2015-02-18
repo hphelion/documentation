@@ -22,7 +22,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
 
 
-# HP Helion OpenStack&#174;: Mapping Backend to Volume Type
+# HP Helion 1.0 OpenStack&#174;: Mapping Backend to Volume Type
 
 You can use the newly added Cinder backend, create volume type and associate it with this backend using the Horizon Overcloud dashboard or Cinder CLI. The following sections explains how to create Volume Type and map to a given backend for Cinder using Overcloud Horizon dashboard.
 

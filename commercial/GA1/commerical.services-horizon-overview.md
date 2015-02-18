@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/services/volume/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/dns/overview/"> NEXT &#9654</a> </p>
 -->
-# HP Helion OpenStack&#174; Horizon Service Overview#
+# HP Helion 1.0 OpenStack&#174; Horizon Service Overview#
 
 Horizon is the OpenStack service that serves as the basis for the HP Helion OpenStack web interface or **dashboards**.
 
