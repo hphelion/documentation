@@ -71,11 +71,11 @@ Once the Compute, Storage, Network resources are deployed, users expect these re
 
     * If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
 
-* Data stored in Block Storage service volumes is always available and volumes are never lost by the service provider.
+* Data stored in Block Storage service volumes is always available and volumes are rarely lost by the service provider.
 
-* Data stored by the Object Operation service is always available and is never lost by the cloud service provider.
+* Data stored by the Object Operation service is always available and is rarely lost by the cloud service provider.
 
-* Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are never lost by the cloud service provider and will continue to provide a network path to the Compute VMs. 
+* Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are rarely lost by the cloud service provider and will continue to provide a network path to the Compute VMs. 
 
 The infrastructure that provides these features is called a Highly Available Cloud Infrastructure.
 
@@ -177,16 +177,6 @@ The handling of network partitions is illustrated in the diagram below. Galera h
 <a href="javascript:window.open('/content/documentation/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">MySQL Galera Cluster Diagram(opens in a new window)</a>
 
 When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.
-
-###Singleton Services on Management Controller {#singleton-services}
-
-The following three services run as singletons in the control plane for the current release 
-
-* [Cinder Volume](#cinder-volume)
-* [Sherpa](#sherpa) 
-* [nova-consoleauth](#nova-console-auth) 
- 
-The above services are deployed and activated on the third controller called **Management Controller**. Automated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the [Backup and Restore](/helion/openstack/backup.restore/) document. 
 
 ####Cinder-Volume {#cinder-volume}
 
@@ -299,7 +289,7 @@ Cinder availability zones are not supported for general consumption in the curre
 
 ### Object Storage with Swift {#object-storage}
 
-You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Pyringos tool here. Please refer to the [Ringos](/helion/openstack/GA1/services/object/pyringos/) document.
+You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Ringos tool here. Please refer to the [Ringos](/helion/openstack/GA1/services/object/pyringos/) document.
 
 <a href="javascript:window.open('/content/documentation/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA Swift  (opens in a new window)</a>
 

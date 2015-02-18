@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/identity/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/networking/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Image Operations (Glance) Service Overview #
+# HP Helion OpenStack&#174; Image Operations (Glance) Service Overview #
 
 Based on OpenStack Glance, the HP Helion OpenStack Image Operations service is a web service for managing virtual machine images. It provides a set of RESTful APIs that enables querying/updating of image metadata as well as retrieval of the actual image data.
 

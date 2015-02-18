@@ -17,7 +17,7 @@ authors: Jayme P
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Resources for IT Ops {#sysadmin}
+# HP Helion Development Platform: Resources for IT Ops {#sysadmin}
 
 ##Installation
 

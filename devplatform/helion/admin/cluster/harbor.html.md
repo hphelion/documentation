@@ -18,7 +18,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform:  Harbor TCP/UDP Port Service {#harbor-tcp-udp-port-service} 
+# HP Helion Development Platform:  Harbor TCP/UDP Port Service {#harbor-tcp-udp-port-service} 
 
 
 - [Architecture](#architecture)

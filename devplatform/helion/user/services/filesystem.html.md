@@ -14,7 +14,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Persistent File System {#persistent-file-system}
+# HP Helion Development Platform: Persistent File System {#persistent-file-system}
 
 The file system of application containers are ephemeral. Any application
 data or files stored locally within these containers is lost when the

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Sherpa Service Overview #
+# HP Helion OpenStack&#174; Sherpa Service Overview #
 
 The HP Helion OpenStack Sherpa Service provides a link to the remote web catalog containing a repository of software available for purchase and download into the HP Helion environment. 
 
@@ -132,8 +132,6 @@ When working with the Compute service, you can perform a number of tasks with yo
 - **Locking and unlocking instances** -- Lock or unlock an instance, as needed.
 - **Pausing and un-pausing instances** -- Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
 - **Suspending and resuming virtual machines** -- Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
-
-For more general information on how to operate your cloud, refer to the [OpenStack Operations Guide](http://docs.openstack.org/ops/). 
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

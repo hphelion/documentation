@@ -14,7 +14,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: New Relic Monitoring {#new-relic-monitoring}
+# HP Helion Development Platform: New Relic Monitoring {#new-relic-monitoring}
 
    [New Relic for Ruby](#new-relic-for-ruby)
         -   [The Ruby Gem](#the-ruby-gem)

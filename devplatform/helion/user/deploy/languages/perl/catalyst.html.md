@@ -13,7 +13,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Catalyst[](#catalyst "Permalink to this headline")
+# HP Helion Development Platform: Catalyst[](#catalyst "Permalink to this headline")
 ===================================================
 
 Catalyst is a framework for building web applications, which will run on

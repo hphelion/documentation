@@ -14,7 +14,7 @@ SME1: Sam C
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Node Hello World Sample
+# HP Helion Development Platform: Node Hello World Sample
 
 This very simple Node.js web app displays the text "Hello World!". This sample is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 

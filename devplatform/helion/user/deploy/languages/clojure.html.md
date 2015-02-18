@@ -13,7 +13,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Clojure {#clojure}
+# HP Helion Development Platform: Clojure {#clojure}
 
 Application Lifecycle Service supports deploying Clojure applications using
 [leiningen](https://github.com/technomancy/leiningen).

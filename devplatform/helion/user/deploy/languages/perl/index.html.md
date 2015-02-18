@@ -13,7 +13,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Perl {#perl}
+# HP Helion Development Platform: Perl {#perl}
 ===========================================
 
 Perl applications deployed to Application Lifecycle Service using the default 'perl'

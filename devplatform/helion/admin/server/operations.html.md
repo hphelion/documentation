@@ -16,7 +16,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Common Server Operations {#common-server-operations}
+# HP Helion Development Platform: Common Server Operations {#common-server-operations}
 
 
 - [Server Status](#server-status)

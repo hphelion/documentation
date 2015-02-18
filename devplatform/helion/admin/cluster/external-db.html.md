@@ -18,7 +18,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: External Data Services {#external-data-services}
+# HP Helion Development Platform: External Data Services {#external-data-services}
 
 - [General Principles](#general-principles)
 - [MySQL](#mysql)

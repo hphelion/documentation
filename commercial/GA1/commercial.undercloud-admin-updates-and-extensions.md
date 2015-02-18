@@ -22,20 +22,20 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p> --->
 
-# HP Helion 1.0 OpenStack&#174;: Updates and Extensions
+# HP Helion OpenStack&#174;: Updates and Extensions
 
 HP provides a simple mechanism for downloading and publishing the content and updates for the Undercloud node.
 
-* [Register on the Cloud Distribution Network](#Signup-for-Cloud-Distribution-Network)
+* [Register on the Helion Distribution Network (HDN)](#Signup-for-Helion-Distribution-Network)
 * [Configure credentials](#configcre)
 * [Import and install](#import-and-install)
 * [Download a package](#download-a-package)
 
-##Register for Cloud OS Distribution Network Access<a name="Signup-for-Cloud-Distribution-Network"></a>
+##Register for Helion Distribution Network Access<a name="Signup-for-Helion-Distribution-Network"></a>
 
 You cannot access the updates from the HP Helion Horizon undercloud dashboard unless you are a registered user.
 
-To register on the Cloud Distribution Network:
+To register on the Helion Distribution Network:
 
 1.  On the HP Helion Horizon undercloud dashboard, click  the **Admin** tab in the left panel.
 

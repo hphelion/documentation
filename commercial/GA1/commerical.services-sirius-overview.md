@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174; Sirius Service Overview #
+# HP Helion OpenStack&#174; Sirius Service Overview #
 
 The HP Helion OpenStack Sirius Service is a REST-based web service for storage device  management. It is used to configure of storage services such as Cinder and Swift that run in the overcloud and manage various storage devices. It also provides REST-based automated deployment and management of certain sets of storage devices such as HP StoreServ FC, HP StoreServ iSCSI, and HP StoreVirtual. 
 
@@ -49,11 +49,6 @@ You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-
 
 You can use the command-line interface to access HP Sirius service. See [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
 
-For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
-## For more information ##
-
-For more general information on how to operate your cloud, reference the [OpenStack Operations Guide](http://docs.openstack.org/ops/). The *Architecture* section contains useful information about how an OpenStack Cloud is put together. However, the HP Helion OpenStack takes care of these details for you. The *Operations* section contains information on how to manage the system.
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

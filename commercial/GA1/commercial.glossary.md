@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/related-links/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/eula/"> NEXT &#9654; </a></p>
 -->
-# HP Helion 1.0 OpenStack&#174; Glossary
+# HP Helion OpenStack&#174; Glossary
 
 Use this glossary to get definitions of terms used throughout the HP Helion OpenStack-documentation.
 
@@ -40,11 +40,7 @@ A list of permissions attached to an object.
 
  
 ###Admin Network###
-Used for administrative functions such as Crowbar node installation, TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring. 
-
-###Admin Node###
-The Admin Node is a virtual machine that helps in the creation of your cloud and the installation of all associated software components. The Admin Node 
-manages all other nodes. It assigns IP addresses to the nodes; PXE boots the nodes; configures the nodes; and provides the nodes the necessary software for their roles.
+Used for administrative functions such as TFTP booting, DHCP assignments, KVM, system logs, backups, and other monitoring. 
 
 <!-- JS: Not in Core and probably not in Enterprise edition:
 ###Administration Dashboard###
@@ -76,12 +72,6 @@ A string that an authenticated user must present for subsequent requests to othe
 Also known as an install module, defines the capability of a service or role to apply to individual hosts or a set of hosts. To deploy a barclamp, a proposal is created.
 --> 
 
-###Baremetal Host###
-The machine that runs the Nova-compute and Nova-baremetal-deploy-helper services. The baremetal host functions like a [hypervisor](#Hyper) by providing power management and imaging services.
-
-###Baremetal Node<a name="Baremetal"></a>
-A baremetal node is a computer in which a virtual machine is installed directly on hardware rather than within the host operating system (OS). The baremetal nodes are controlled by the baremetal host.
-
 ###Block storage###
 Information stored in raw form, with no consideration as to the type of information. See also [Volume Operations](#Volume).
 
@@ -108,21 +98,12 @@ See [Volume Operations](#Volume)
 
 One advantage of cloud computing is that the resources can be provisioned or released rapidly, with minimal management effort or service provider interaction.
 
-###Cloud Controller###
-A node that hosts the software that controls an Infrastructure as Service (IaaS) cloud computing platform. A cloud controller contains those services that are considered single services for a cloud environment, such as [Networking](#Networking) and [Imaging](#Image),<!-- not in beta Graffiti, Eve, and Focus, --> and define the boundaries of the cloud environment from an identity standpoint. 
-*See also* [Compute Region Controller](#Compute-Region-Controller), [Network Controller](#Network-Controller), and [Storage Controller](#Storage-Controller). 
-
-###Cloud OS Distribution Network (CODN)###
-A catalog-based HP Helion OpenStack service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access CODN, see the Updates & Extensions panel in the  HP Helion OpenStack user interface. You can import content from the CODN portal or from a local folder.
 
 ###Compute<a name="Compute"></a>
 The HP OpenStack service that manages the hypervisors and virtual machines in your environment. Compute provides a cloud computing fabric controller, the main part of an Infrastructure as a Service (IaaS) platform. Also known as [Nova](#Nova).
 
 ###Compute Node###
 The machine that hosts cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release,  HP Helion OpenStack supports KVM (qemu-kvm) and VMware (ESXi) as hypervisors. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple compute nodes can be created to expand cloud capacity.
-
-###Compute Region Controller<a name="Compute-Region-Controller"></a>
-A controller responsible for scheduling a launch of instances across compute nodes. You can have multiple compute regions in your cloud.  A compute region is a pool of compute resources that can be consumed through a service API by consumers of the cloud, such as [Networking service](#Networking). The scheduling is based on varied flavors of instances and available resources on the compute nodes. In a single compute region deployment model, this can coexist with cloud controller services.
 
 ###Credentials###
 Data that belongs to, is owned by, and generally only known by a user. A user can present this information to verify identity. Associated with the [Identity service](#Identity).
@@ -169,18 +150,21 @@ The combination of the compute, memory, and storage capacity of a baremetal node
  The  HP Helion OpenStack Topology Document Repository Service, which is used to discover, register, version, and retrieve the document types needed to describe TOSCA-based infrastructure topologies while provisioning a cloud. See [TOSCA](#TOSCA). -->
 
 ###Fully Qualified Domain Name (FQDN)###
-The complete domain name for a specific computer, or host, on the Internet. The FQDN consists of two parts: the hostname and the domain name. . 
+The complete domain name for a specific computer, or host, on the Internet. The FQDN consists of two parts: the hostname and the domain name.
 
 ## G
 
 ###Glance<a name="Glance"></a>
-*See* [Telemetry and Reporting](#Reporting)
+Glance is the Helion OpenStack imaging service and includes discovery, registering, and the retrieval of virtual machine images. 
 
 <!-- Not in Commercial beta
 ###Graffiti###
 The HP Helion OpenStack Resource Pool Registry and Capability Tagging Service, providing a dictionary of the "capabilities" of all the resources in a cloud environment; a searchable directory to find cloud resources based on their capabilities; the mechanism for dynamic binding, allowing you to describe requirements rather than concrete bindings; and the base concepts of requirements and capabilities within TOSCA. -->
 
 ## H
+
+###Helion Distribution Network (HDN)###
+A catalog-based HP Helion OpenStack service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access HDN, see the Updates & Extensions panel in the  HP Helion OpenStack user interface. You can import content from the HDN portal or from a local folder.
 
 ###Heat###
 See [Orchestration](#Orchestration).
@@ -254,18 +238,6 @@ The machine which runs the [Kernel-based Virtual Machine or KVM](#KVM).  This is
 
 ## M
 
-###Measured service###
-A service where a cloud provider automatically controls and optimizes resource usage by leveraging a metering capability.  
-
-Resource allocation in a measured service environment include [rapid elasticity](#RapidE) and [resource pooling](#Pooling). 
-
-This metering may occur at some level of abstraction that's appropriate to the type of service, such as storage, processing power, bandwidth, and the number of active users.  Resource usage may be monitored, controlled, and reported.  Measured service provides transparency for the provider and the consumer of the utilized service. 
-
-###Model abstraction###
-A **coding** layer that provides a more functional and user-friendly abstraction for the [REST](#Rest) API programming calls. For example, instead of a direct call to GET containers, via the model abstraction layer the programming call for GET container **container-name** is `directories.get("container-name")` . 
-
-A **model** layer can also include particular kinds of objects and expose those object characteristics using simple properties or attributes. For example, *Server* is a model that represents the concept of a virtual [instance](#Instance), with the *Server* model including properties and attributes such as name, [flavor](#Flavor), [image](#Image), addresses, and so on. See also [Abstraction layer](#AbstractionLayer).
-
 ## N
 
 ###Networking<a name="Networking"></a>
@@ -335,9 +307,6 @@ Used for connecting devices that are external to the cloud infrastructure.
 *See* [Preboot Execution Environment](#pxe).
 
 ## Q
-
-###Quantum###
-See [Networking](#Networking).
 
 ## R
 
@@ -426,12 +395,9 @@ A [baremetal](#Baremetal) [hypervisor](#Hyper) that installs directly on top of 
 The HP OpenStack service that provides volume management in cloud environments. Also known as [Cinder](#Cinder).
 
 ###VSA cluster<a name="VSAcluster"></a>
-An architecture that includes multiple ESXi hosts and provides shared datastores that are connected to all hosts in the datacenter. See also [Virtual Storage Appliance](#VSA).
+An architecture that includes multiple hosts and provides shared datastores that are connected to all hosts in the datacenter. See also [Virtual Storage Appliance](#VSA).
 
 ## W
-
-###Wired for Management (WfM)<a name="WFM"></a>
-A technology allowing a [baremetal](#Baremetal) node to be controlled by a master computer. The master computer can install and update software and monitor computer status remotely. Intel developed the technology in the 1990s.
 
 ## X
 

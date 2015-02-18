@@ -105,9 +105,9 @@ management effort or service provider interaction.
 :    A node that hosts software which controls your Infrastructure as Service (IaaS) cloud computing platform. Contains those services that are considered single services for a cloud environment, such as Keystone, Glance, Graffiti, Eve, and Focus, and define the boundaries of the cloud environment from an identity standpoint. 
 *See also* [Compute Region Controller](#Compute-Region-Controller), [Network Controller](#Network-Controller), and [Storage Controller](#Storage-Controller). 
 
-###Cloud OS Distribution Network (CODN)###
-:    A catalog-based Cloud OS service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access CODN, see the 
-Updates & Extensions panel in the HP Cloud OS Operational Dashboard or HP Cloud OS Administration Dashboard. You can import content from the CODN portal or from a local folder.
+###HP Helion Distribution Network (HDN)###
+:    A catalog-based Cloud OS service that allows off-the-shelf content (like workloads, images, and patches) to be imported into your deployed cloud. To access HDN, see the 
+Updates & Extensions panel in the HP Cloud OS Operational Dashboard or HP Cloud OS Administration Dashboard. You can import content from the HDN portal or from a local folder.
 
 ###Compute Node###
 :     Hosts the Cloud virtual machine instances using any supported hypervisor with OpenStack. In the current release, HP Cloud OS supports KVM as hypervisor. The compute node hosts OpenStack services called Nova-compute and Neutron l2 agent. Multiple Compute Region Nodes can be created to expand cloud capacity.

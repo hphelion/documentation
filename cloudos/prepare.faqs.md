@@ -142,7 +142,7 @@ HP Cloud OS is already powering or compatible with several existing HP cloud sol
 ## Where can I get the HP Cloud OS technology preview ISO?
 
 To get the HP Cloud OS technology preview ISO, register for an account on the 
-<a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>.  Once logged in, look for the 
+<a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>.  Once logged in, look for the 
 Technology Preview section, provide your information, and download the ZIP package containing the HP Cloud OS 1.20 ISO. 
 
 ## Where can I get login credentials for the HP Cloud OS dashboards?

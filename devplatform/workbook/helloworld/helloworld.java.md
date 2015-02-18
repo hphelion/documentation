@@ -14,7 +14,7 @@ SME1: Sam C
 
 ---
 <!--PUBLISHED-->
-# HP Helion 1.0 Development Platform: Java Hello World Sample
+# HP Helion Development Platform: Java Hello World Sample
 This Servlet-based Java web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
 ##Prerequisites

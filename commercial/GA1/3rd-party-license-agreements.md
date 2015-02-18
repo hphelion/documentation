@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/eula/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/siteindex/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&reg; Open Source and Third-Party Software License Agreements #
+# HP Helion OpenStack&reg; Open Source and Third-Party Software License Agreements #
 
 The Open Source and Third-Party Software License Agreements for HP Helion OpenStack are available as a PDF download.
 

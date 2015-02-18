@@ -23,7 +23,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
-# HP Helion 1.0 OpenStack&#174;: Working with HP StoreVirtual VSA 
+# HP Helion OpenStack&#174;: Working with HP StoreVirtual VSA 
 
 The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). 
 

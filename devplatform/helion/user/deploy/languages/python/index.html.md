@@ -13,7 +13,7 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion 1.0 Development Platform: Developing In Python<a class="headerlink" href="#developing-in-python" title="Permalink to this headline"></a></h1>
+# HP Helion Development Platform: Developing In Python<a class="headerlink" href="#developing-in-python" title="Permalink to this headline"></a></h1>
 <p>Whether you&#8217;re deploying an application to the HP Helion Development Platform, a
 Cloud Foundry based Platform as a Service (PaaS), or writing applications that take
 advantage of HP Helion OpenStack&reg; to manage infrastructure or software services, tools
