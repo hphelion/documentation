@@ -19,11 +19,9 @@ PageRefresh();
 </script>
 # HP Helion OpenStack&#174;: Tracking masked IP addresses when using network address translation (NAT)
 
-Network Address Translation (NAT), also known as floating IP addresses, is a technique malicious users employ to mask their originating IP address.  Using NAT, a malicious user can attempt a masked attack on resources in your HP Helion OpenStack cloud.  
+Network Address Translation (NAT) is used to mask an originating IP address. As a result, you may receive notification of abuse that appears to originate from an IP address which is part of your own IP address range. 
 
-As a result of this IP address masking, you may receive notification of abuse that appears to originate at an IP address which is part of your own IP address range. 
-
-Once you have detected such malicious activity, and if you can determine the user's NAT address, you may be able to identify the actual IP address using one of the following methods. These methods allow lookup of the Nova VM associated with the source of the abusive network traffic. 
+You can identify the source IP address by using one of the following methods. These methods allow lookup of the Nova VM associated with the masked IP address. 
 
 ## Method 1
 

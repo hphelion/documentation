@@ -175,7 +175,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Node Type</th>
-<th>Minimum Number</th>
+<th>Required Number</th>
 <th>Server Hardware</th>
 <th>Minimum Requirements and Recommendations</th>
 </tr>
@@ -241,7 +241,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Compute Server </td>
-<td rowspan="4">1</td>
+<td rowspan="4">1-100</td>
 <td>Disk </td>
 <td> 512GB. 100GB is required for HP Moonshot Servers.</td>
 
