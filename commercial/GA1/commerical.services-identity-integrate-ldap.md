@@ -33,7 +33,7 @@ The HP Helion OpenStack Identity service can use Lightweight Directory Access Pr
 
 Multiple authentication backends are supported, using Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
 
-The process for integrating LDAP involves the following steps:
+The process for integrating LDAP during installation involves the following steps:
 
 - [Verify prerequisites](#pre)
 - [Generate configuration files](#config)
@@ -84,10 +84,10 @@ See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install
 	<td>[ldap]</td><td> </td><td> </td><td> </td>
 	</tr>
 	<tr>
-	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>Cn</td>
+	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
-	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>Cn</td>
+	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
 	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
@@ -120,10 +120,10 @@ See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install
 	<td>user_allow_update</td><td>(BoolOpt) Allow user updates in LDAP backend.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>Cn</td>
+	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
-	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>Cn</td>
+	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
 	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>Person</td>
