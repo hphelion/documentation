@@ -70,10 +70,10 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
  
 		source <path to openstackrc file>
 		./cfmgmt create-cluster \
-		keypair-name <name of keypair created earlier> \
-		admin-email <emailaddress for admin user> \
-		admin-password <password for admin user> \
-		load trial.yml
+		--keypair-name <name of keypair created earlier> \
+		--admin-email <emailaddress for admin user> \
+		--admin-password <password for admin user> \
+		--load trial.yml
 
 ##After Installation {#after}
 The cluster will be running on a single virtual machine in your account that will have the name ending in *cluster1-core*
@@ -92,5 +92,5 @@ These commands delete your VMs, release the floating IP addresses, and remove th
 		
 	source <path to openstackrc file>
     ./cfmgmt delete-cluster \
-	keypair-name <name of keypair created earlier> \
-	load trial.yml
+	--keypair-name <name of keypair created earlier> \
+	--load trial.yml
