@@ -224,7 +224,7 @@ grow_cluster = True
 ##Troubleshooting {#troubleshooting}
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
-<th>Failure Condition</th><th>Description</th><th>Resolution</th></tr>
+<td><b>Failure Condition</b></td><td><b>Description</b></td><td><b>Resolution</b></td></tr>
 <tr><td>Error message when clicking the Create Cluster button in the Horizon dashboard.</td><td>Danger: An error occurred. Please try again later.</td><td>
 The Database service is installed, but the API is not responding. Try loading the Database Instances tab in Horizon. If the Database Instances tab fails to load, repair the Database Service.</td></tr>
 <tr><td>Error message when clicking the final button in the Create Cluster Wizard in the Horizon UI.</td><td>Danger: An error occurred. (or similar message)</td><td>1.  Try to boot an ALS Installer image (make sure you open up port 22 in the default security group first) in the Nova Instances tab. </br></br>
