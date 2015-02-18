@@ -38,7 +38,7 @@ The installation and configuration process for KVM consists of the following gen
 * Installing HP Helion OpenStack
 	* Configure proxy information
 	* Unpack the installation file
-	* Install the seed VM and building your cloud
+	* Install the seed VM and build your cloud
 * Verifying your installation
 * Create projects for LDAP users
 * Next steps
@@ -62,7 +62,7 @@ Make sure you have met all the hardware requirements and have completed the requ
  
 		sudo su -
 
-2. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command sets the environment variables in the JSON file within the current shell.
+2. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command sets the environment variables in the JSON file within the current shell. 
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
@@ -113,7 +113,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
-14. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command sets the environment variables in the JSON file within the current shell.
+14. Set the environment variables for the undercloud and overcloud nodes listed in the `kvm-custom-ips.json` file by executing the `source` command. The `source` command parses the json file and sets the environment variables listed there within the current shell.
 
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
