@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
 -->
-# HP Helion 1.0 OpenStack&reg; Update Prerequisites
+# HP Helion OpenStack&reg; 1.0 Update Prerequisites
 
 Prior to getting a system ready for update and performing the update, there might be a few tasks that you need to complete that could affect the update outcome.  Read this document for information about:
 

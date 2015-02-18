@@ -17,7 +17,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion 1.0 OpenStack&#174;: Measuring Performance of HP Helion OpenStack&reg;
+# HP Helion OpenStack&#174; 1.0: Measuring Performance of HP Helion OpenStack&reg;
 
 Performance of HP Helion OpenStack is determined in terms of responsiveness and stability under various workloads. Scalability, reliability, and resource usage are the quality attributes of the system which are measured during performance testing. 
 

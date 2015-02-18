@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion 1.0 OpenStack&reg;: Integrating LDAP 
+# HP Helion OpenStack&reg; 1.0: Integrating LDAP 
 
 The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion OpenStack installation process.
 

@@ -10,7 +10,7 @@ product: commercial.ga
 <!---
 <p style="font-size: small;"> <a href="/helion/openstack/faq/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/">NEXT &#9654;</a> </p> -->
 
-# HP Helion 1.0 OpenStack&#174; Technical Overview
+# HP Helion OpenStack&#174; 1.0 Technical Overview
 
 This page introduces you to HP Helion OpenStack, an enterprise-grade distribution of the OpenStack cloud operating system.
 

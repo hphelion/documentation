@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion 1.0 OpenStack&reg;: Create the baremetal.csv File for Installation #
+# HP Helion OpenStack&reg; 1.0: Create the baremetal.csv File for Installation #
 
 During the installation process after the seed VM is installed, the installer script looks for information about the baremetal systems. Specifically, it looks for this information in a file called `baremetal.csv`. Before you begin the installation process, you must create this file and upload the file to the installer system (called the seed cloud host) at the appropriate installation step. 
 

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion 1.0 OpenStack&#174;: HP StoreServ (3PAR) Support
+# HP Helion OpenStack&#174; 1.0: HP StoreServ (3PAR) Support
 
 [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports Fiber Channel (FC) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
 

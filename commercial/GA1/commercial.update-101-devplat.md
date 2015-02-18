@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
 -->
-# HP Helion 1.0 OpenStack&reg;: Development Platform Commercial 1.01 Update
+# HP Helion OpenStack&reg; 1.0: Development Platform Commercial 1.01 Update
 
 The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
 
