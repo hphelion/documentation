@@ -22,15 +22,15 @@ PageRefresh();
 -->
 
 
-# HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution 
+# HP Helion OpenStack&#174; Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution 
 
 
-The HP Helion OpenStack Enterprise Edition 1.1 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. The solution also supports user backup and archive workloads to the Object (Swift) API service writing to the same unified Ceph storage platform. 
+The HP Helion OpenStack Enterprise Edition 1.1 Ceph Storage Solution provides an unified scaleable and stable storage solution for the management of Helion OpenStack Image service (Glance), Compute (Nova Boot Volumes) service, and Volume Storage (Cinder persistent Volumes) service. The solution also supports user backup and archive workloads to the Object Storage (Swift) API service writing to the same unified Ceph storage platform. 
 
-This guide is focuses on post installation, configuration and integration between HP Helion OpenStack Enterprise Edition 1.1 and Ceph Firefly 80.7 running on the hlinux kernel 3.14-6.2.
+This guide is focuses on post installation, configuration and integration between HP Helion OpenStack &#174;: Enterprise Edition 1.1 and Ceph Firefly 80.7 running on the hlinux kernel 3.14-6.2.
 
 
-This guide assumes that you are familiar with the concepts of OpenStack and Ceph. The main purpose of this guide is describe the integration of Ceph Block Storage with HP Helion OpenStack 1.1, detail steps to install dependencies, configure HP Helion OpenStack and Ceph Firefly, and provide  troubleshooting guidance.
+This guide assumes that you are familiar with the concepts of OpenStack and Ceph. The main purpose of this guide is describe the integration of Ceph Block Storage with HP Helion OpenStack&#174;: 1.1, detail steps to install dependencies, configure HP Helion OpenStack and Ceph Firefly, and provide  troubleshooting guidance.
 
 <!---Although installation steps are outlined, these are mostly as validity checks for dependencies. Most Enterprise Customers should have HP size and assist with the installation of HP Helion OpenStack Enterprise Edition 1.1, and Inktank size and assist with the installation of Ceph Firefly 80.7. --->
 
@@ -39,7 +39,7 @@ This guide assumes that you are familiar with the concepts of OpenStack and Ceph
 
 Ceph is an Open Source, scalable, software-defined storage system running on HP servers comprised of a  [block storage](#block-storage), [object storage](#object-storage) and [file system](#file-system) with a unified management. <!---HP is committed to contribute to OpenStack integration with  management and extensions to Ceph Open Source Storage as a Solution.--->
 
-Ceph is designed to deliver different types of storage interfaces to the end use in the same storage platform. The integration  of HP Helion OpenStack Enterprise Edition and Ceph is the usage of [block storage](#block-storage) of Ceph's RADOS Block Device (RDB). Also, the integration between User Application Archive and Backup Workloads running externally or in Virtual Machines in HP Helion OpenStack is the usage of [object storage](#object-storage) of the Ceph RADOS Gateway (RADOSGW).
+Ceph is designed to deliver different types of storage interfaces to the end user in the same storage platform. The integration  of HP Helion OpenStack&#174; Enterprise Edition and Ceph is the usage of [block storage](#block-storage) of Ceph's RADOS Block Device (RDB). Also, the integration between User Application Archive and Backup Workloads running externally or in Virtual Machines in HP Helion OpenStack is the usage of [object storage](#object-storage) of the Ceph RADOS Gateway (RADOSGW).
 
 The Ceph RADOSGW provides a REST interface with extensions which offers compatibility with the Swift API. Therefore the existing applications with the integration to the HP Helion OpenStack Swift API can port seamlessly from a OpenStack Swift backend storage platform to the Ceph Solution.
 
