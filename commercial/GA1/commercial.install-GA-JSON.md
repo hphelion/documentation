@@ -274,7 +274,7 @@ The following values appear under `ssl`. These parameters are optional, but must
 
 **HDN**
 
-The following values appear under `codn` and configure access to the Helion Download Network (Sherpa).
+The following values appear under `codn` and configure access to the Helion Download Network (Sherpa) service.
 
 `undercloud_http_proxy` and `undercloud_https_proxy` - Use these variables to set the IP address for the HDN service to download images for patches or other software packages available for purchase and download into the undercloud.
 
