@@ -60,7 +60,7 @@ The LDAP server connection settings are contained in the `overlcoud_keystone_lda
 
 It must be a well-formed, syntax-error free json file.
 
-Section names, supported options and possible values are described in [Openstack Identity Service documentation](/helion/openstack/services/identity/overview/). The following table lists several important values:
+Section names, supported options and possible values are described in [OpenStack Identity Service documentation](/helion/openstack/services/identity/overview/). The following table lists several important values:
 
 See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overlcoud_keystone_ldap.json` file.
 
@@ -167,7 +167,7 @@ LDAP server might require all connections to be secured though the [TLS protocol
 
 To activate this feature:
 
-1. Set options `use_tls`, `tls_req_cert` and `tls_cacertfile` appropriately in the `overcloud_keystone_ldap.jso`n file described above.
+1. Set options `use_tls`, `tls_req_cert` and `tls_cacertfile` appropriately in the `overcloud_keystone_ldap.json` file described above.
 
 2. Create the `overcloud-env.json` file with the following content:
 
