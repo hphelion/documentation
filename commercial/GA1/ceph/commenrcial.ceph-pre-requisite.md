@@ -41,7 +41,6 @@ Ceph can run on commodity hardware, that makes building and maintaining petabyte
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Node Type</th>
-
 <th>Server Hardware</th>
 <th>Minimum Requirements and Recommendations</th>
 </tr>
