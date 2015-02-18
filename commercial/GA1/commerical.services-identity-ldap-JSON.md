@@ -110,7 +110,7 @@ See [Integrate the Identity Service (Keystone) with LDAP/AD](/helion/openstack/s
 		                            },
 		                            {
 		                                "option": "group_id_attribute",
-		                                "value": "gid"
+		                                "value": "cn"
 		                            },
 		                            {
 		                                "option": "group_name_attribute",
@@ -222,7 +222,7 @@ See [Integrate the Identity Service (Keystone) with LDAP/AD](/helion/openstack/s
 		                            },
 		                            {
 		                                "option": "group_id_attribute",
-		                                "value": "gid"
+		                                "value": "cn"
 		                            },
 		                            {
 		                                "option": "group_name_attribute",
