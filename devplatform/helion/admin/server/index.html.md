@@ -26,7 +26,7 @@ virtualization host.
 
 The Application Lifecycle Service server initially has one user account. The default login information is:
 
-* Username: helion
+* Username: stackato
 * Password: helion
 
 Unless you've already created a primary admin user in the Management Console. If so, the password of the default Helion account is changed to match that of the first user created in the Management Console, and you'll need to use that password instead. 
@@ -39,30 +39,24 @@ Unless you've already created a primary admin user in the Management Console. If
 
 Command access to the Application Lifecycle Service server is available in several ways:
 
--   Over the hypervisor's [*tty
-    console*](/als/v1/user/reference/glossary/#term-tty-console).
+-   Over the hypervisor's [tty console](/als/v1/user/reference/glossary/#term-tty-console).
 
--   The [*Application Lifecycle Service
-    Client*](/als/v1/user/reference/client-ref/#command-ref-client)
-    command, which in addition to specialized functions can provide
-    remote shell access to the server:
+-   The [Application Lifecycle Service Client](/als/v1/user/reference/client-ref/#command-ref-client) command, which in addition to specialized functions can provide remote shell access to the server:
 
-        $ helion target helion@helion-xxxx.local
-        $ helion ssh api
+        helion target helion@helion-xxxx.local
+        helion ssh api
 
 -   The familiar `ssh` command:
 
-        $ ssh helion@helion-xxxx.local
+        ssh helion@helion-xxxx.local
 
 **Note**
-
-For ssh access on Windows, we recommend
-[MSYS](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS).
+<!-- For ssh access on Windows, we recommend [MSYS](http://sourceforge.net/apps/trac/mingw-w64/wiki/MSYS).-->
 
 On the server, the control command for Application Lifecycle Service is called
 `kato`. It is used for configuration and node
 management procedures such as start, stop, role specialization, and
-status checks. For a complete list of options, see the [Kato Command Reference](/als/v1/admin/reference/kato-ref/#kato-command-ref).
+status checks. For a complete list of options, see the [Kato Command Reference](/als/v1/admin/reference/kato-ref/).
 
 Common Operations[](#common-operations "Permalink to this headline")
 ---------------------------------------------------------------------
