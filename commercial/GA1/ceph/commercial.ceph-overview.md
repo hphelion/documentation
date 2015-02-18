@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/ceph/
+permalink: /helion/openstack/services/ceph/
 product: commercial
 
 ---
