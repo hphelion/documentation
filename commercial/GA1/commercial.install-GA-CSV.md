@@ -35,11 +35,6 @@ Specify the MAC address, CPU, memory, local disk size, IPMI address, and IPMI pa
 
 There must be one entry in this file for each baremetal system you intend to install. 
 
-**Notes:** 
-
-- The first line of the baremetal.csv file is the undercloud node. 
-- The second line is what TripleO uses to construct the flavor for baremetal deployment. If your servers are not all the same size, specify the smallest sized server in the second position so it uses that size as the flavor for all of the overcloud nodes being deployed.The second entry must be the smallest sized disc.
-
 Use the following format in the `baremetal.csv` file.
 
 `<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_management>`
@@ -47,8 +42,8 @@ Use the following format in the `baremetal.csv` file.
 Where `<mac_address>` is the MAC address of the network interface from which to boot. **Do not use the iLO NIC interface.**
 
 **Important** The diskspace size value must be specified in Gibibytes, not Gigabytes.  For example:<br>
-- 900GB = 838 GiB<br>
-- 1TB = 1000GB = 931 GiB
+ 900GB = 838 GiB<br>
+ 1TB = 1000GB = 931 GiB
 
 **Example:** 
 
@@ -65,15 +60,13 @@ Here is an sample file:
 
 When creating this file, keep the following in mind :
 
-- This file must contain from 7 to 34 lines.
-
-* There must be one entry in this file for each baremetal system you intend to install.
-* The <mac_address> should be the MAC address of the network interface enabled for PXE/network boot on each baremetal system (*not* the MAC address of the BMC/IPMI controller).
-* The systems specified in this file must meet the Hardware Requirements detailed above.
-* The IPMI user and password must have ADMINISTRATOR privilege (it is not sufficient to have OPERATOR privilege.
-* The <diskspace_GiB> specified should never exceed the physical disk size and is in units of GiB (2^30)
-* The <role> can have these values: 
-
+- This file must contain from 7 to 100 lines. (100 being the maximum number of nodes suported in an HP Helion install.)
+- There must be one entry in this file for each baremetal system you intend to install.
+- The &lt;mac&#95;address&gt; should be the MAC address of the network interface enabled for PXE/network boot on each baremetal system (*not* the MAC address of the BMC/IPMI controller).
+- The systems specified in this file must meet the Hardware Requirements detailed above.
+- The IPMI user and password must have ADMINISTRATOR privilege (it is not sufficient to have OPERATOR privilege).
+- The &lt;diskspace&#95;GiB&gt; specified should never exceed the physical disk size and is in units of GiB (2^30)
+- The &lt;role&gt; can have these values (roles are case-insensitive):
 	- Undercloud, 
 	- OvercloudControl, 
 	- OvercloudSwiftStorage, 
@@ -83,19 +76,14 @@ When creating this file, keep the following in mind :
 	- OvercloudSOSwiftProxy,
 	- OvercloudSOSwiftStorage
 
+<p></p>
+- **If role is not specified, then these rules apply, in this priority order:**
 
-- **If role is not specified then these rules apply.**
-
-	If no Undercloud node is specified then the first node without a role is assigned as an Undercloud
-	
-	
-	If there are not enough OvercloudControl nodes, the next nodes without a role are assigned as OvercloudControl until there are enough nodes
-
-	If there are not enough OvercloudSwiftStorage nodes the next nodes without a role are assigned as OvercloudSwiftStorage, until there are enough nodes
-
-	Similar logic is applied for VSA and Scale-Out Swift node assignments
-
-	The node will be assigned a role of OvercloudCompute
+	- If no Undercloud node is specified then the first node without a role is assigned as an Undercloud
+	- If there are not enough OvercloudControl nodes, the next nodes without a role are assigned as OvercloudControl until there are enough nodes
+	- If there are not enough OvercloudSwiftStorage nodes the next nodes without a role are assigned as OvercloudSwiftStorage, until there are enough nodes
+	- Similar logic is applied for VSA and Scale-Out Swift node assignments
+	- The remaining nodes without a role will be assigned a role of OvercloudCompute
 
 
 
@@ -104,9 +92,11 @@ When creating this file, keep the following in mind :
 
 - The required numbers of OvercloudControl and OvercloudSwiftStorage
 nodes default to 3 and 2 respectively.
-- Roles are case-insensitive.
-- &lt;power_management&gt; can have these values:
-	- VM, IPMI, HP_Moonshot, HP_iLO4
+- &lt;power&#95;management&gt; can have these values:
+	- VM
+	- IPMI 
+	- HP&#95;Moonshot 
+	- HP&#95;iLO4
 
 	<table>
 <thead>
@@ -115,34 +105,38 @@ nodes default to 3 and 2 respectively.
 </thead>
 <tbody>
 <tr>
-          <td>VM</td>   <td>this is for virtual machines and is set automatically for a
+          <td>VM</td>   <td>This is for virtual machines and is set automatically for a
                  virtual install.</td> </tr><tr>
-          <td>IPMI</td>  <td>this is for all systems that can be accessed using IPMI
-                 Currently this is ALL supported physical hardware.</td> </tr><tr>
-          If no power_management is specified, a default of IPMI is assumed.
-          <td>HP_Moonshot</td>  <td>this is for HP Moonshot hardware only. If this
+          <td>IPMI</td>  <td>This is for all systems that can be accessed using IPMI. If no power&#95;management is specified, a default of IPMI is assumed.</td> </tr><tr>
+          
+          <td>HP&#95;Moonshot</td>  <td>This is for HP Moonshot hardware only. If this
                  is specified it *requires* two colon-separated extra arguments
-                 as follows: <transit_address>:<target_address>
-                     <transit_address> is also known as 'Cartridge Address'
-                     <target_address> is also known as 'Node Address'
-                 For example: HP_Moonshot:0x84:0x72
+                 as follows: 
+<b>&lt;transit&#95;address&gt;:&lt;target&#95;address&gt;</b><br><br>
+                     &lt;transit&#95;address&gt; is also known as 'Cartridge Address'
+
+                     &lt;target&#95;address&gt; is also known as 'Node Address'
+                 For example: HP&#95;Moonshot:0x84:0x72<br><br>
+
                  HP Moonshot hardware will use ipmitool as its power manager.
-                 See the additional notes at the top of this document.</td> </tr><tr>
-          <td>HP_iLO4</td>  <td>boot HP iLO4 Gen9 systems in UEFI mode.
+                 See the additional notes in the <a href="/helion/openstack/install/moonshot/">HP Moonshot document</a>.</td> </tr><tr>
+          <td>HP&#95;iLO4</td>  <td>Boot HP iLO4 Gen9 systems in UEFI mode.
                  Specify IPMI to boot such nodes in BIOS mode (you must manually
                  set the pending boot mode to BIOS mode).
 </td> </tr>
 </tbody>
 </table>
-- power_management maps to Openstack Ironic power drivers as
+- power&#95;management maps to OpenStack Ironic power drivers as
 follows:
 
-	- VM: pxe_ssh, 
-	- (IPMI, HP_Moonshot): pxe_ipmitool, 
-	- HP_iLO4: pxe_ilo
+	- VM: pxe&#95;ssh, 
+	- (IPMI, HP&#95;Moonshot): pxe&#95;ipmitool, 
+	- HP&#95;iLO4: pxe&#95;ilo
 
 
 **Important**: Make sure that the information specified is correct. If any node fails to install, you must restart the installation from the beginning.
+
+
 
 [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
 
