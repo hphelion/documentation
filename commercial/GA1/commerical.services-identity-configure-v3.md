@@ -3,6 +3,10 @@ layout: default
 title: "HP Helion OpenStack&#174; Configuring Horizon for Keystone v3"
 permalink: /helion/openstack/services/identity/configure/
 product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, Emily W, Dan N,
 
 ---
 <!--UNDER REVISION-->
