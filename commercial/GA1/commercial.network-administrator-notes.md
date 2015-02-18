@@ -24,7 +24,7 @@ PageRefresh();
 
 ## HP Helion OpenStack&reg; 1.1 Network Administrator Notes
 
-Helion OpenStack cloud networking platform is based on the OpenStack standard. OpenStack defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these OpenStack implementations. 
+The HP Helion OpenStack cloud networking platform is based on the OpenStack standard. OpenStack defines an architecture and compliant vendors (of which HP is one) create the implementations. HP Helion is one of these OpenStack implementations. 
 
 The OpenStack Cloud Administrator Notes describe the common administrator tasks required to enable and maintain the primary OpenStack services. These primary services are shown below.
 
