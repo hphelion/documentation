@@ -51,21 +51,21 @@ Perform the following steps to remove the disks from ring:
 
 1. Log in to undercloud from seed. 
 
-		# ssh heat-admin@<undercloud IP address> 
-		# sudo -i
+		ssh heat-admin@<undercloud IP address> 
+		sudo -i
 
 2. Change the directory to ring builder.
 
-		# cd /root/ring-building
+		cd /root/ring-building
 
 3. List the file in the directory.
 
-		# ls
+		ls
 	The file with the name `object-1.builder` will be listed in the list.
 
 4. List the disks in the current `object-1.builder` file.
 
-		# ringos view-ring -f /root/ring-building/object-1.builder 
+		ringos view-ring -f /root/ring-building/object-1.builder 
 
 5. Identify the nodes that need to be removed from the list.
 
@@ -75,46 +75,46 @@ Perform the following steps to remove the disks from ring:
 
 6. Set the weight of the disks on the node. 
 
-		# ringos set-weight -f object-1.builder -s d<device> -w <weight>
+		ringos set-weight -f object-1.builder -s d<device> -w <weight>
 
 
 7. Re-balance the ring.
 
-		# ringos rebalance-ring -f /root/ring-building/object-1.builder
+		ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 	**Note**: You must wait for the time specified by `min_part_hours` before another re-balance succeeds.
 
 8. List all the Swift nodes.
 
-		# ringos list-swift-nodes -t all
+		ringos list-swift-nodes -t all
 		
 		
 9. Copy the `object-1.ring.gz` file to all nodes.
 
-		# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+		ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 10. Repeat steps from **6 - 9** and decrease the weight each time until the weight becomes 0 for each disk.[Set the weight to 50, then 25, and then 0 (w= 50, 25, 0).]
 
 11. Once weight has been set to 0, remove the disk from the ring.
 
-    	# ringos remove-disk-from-ring -f object-1.builder -s <Object Node IP address>
+    	ringos remove-disk-from-ring -f object-1.builder -s <Object Node IP address>
 
 	Repeat this step for each disk of the specific node.
 
 12. Re-balance the ring.
 
-    	# ringos rebalance-ring -f /root/ring-building/object-1.builder
+    	ringos rebalance-ring -f /root/ring-building/object-1.builder
 
 	**Note**: You must wait for the time specified by `min_part_hours` before another re-balance succeeds.
 
 13. List all the Swift nodes.
 
-		# ringos list-swift-nodes -t all
+		ringos list-swift-nodes -t all
 		
 		
 14.Copy the `object-1.ring.gz` file to all nodes.
 
-    	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+    	ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 ## Removing scale-out object node {#remove-scale-out-object-node}
 
@@ -122,7 +122,7 @@ Once the disks are removed from the ring, remove the scale-out object node by re
 
 1. List the scale-out object nodes.
 
-		# heat stack-list
+		heat stack-list
 
 2. Identify the stack of the target scale-out object node.
 
@@ -137,13 +137,13 @@ The following sample displays the output of the stack list:
 
 3.Remove the stack. 
 
-	# heat stack-delete <id>
+	heat stack-delete <id>
 
 ##Verify the node removal {#node-removal}
 
 1. Use the nova list command to view a list of nodes.
 
-		# nova list
+		nova list
 
 	The removed node will not be available.
 

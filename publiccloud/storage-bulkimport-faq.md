@@ -5,6 +5,7 @@ permalink: /publiccloud/object-storage/bulk-importFAQ/
 product:
   - block-storage
   - object-storage
+published: false
 
 ---
 <!--PUBLISHED-->
