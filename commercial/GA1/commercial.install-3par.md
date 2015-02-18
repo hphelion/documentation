@@ -67,7 +67,7 @@ The subsequent sections provide the detailed instructions on  the integration wo
 
 HP Helion OpenStack&#174; 1.1 release supports mutipath for 3PAR. 
 
-To enable multipathing move the `/etc/multipath.conf` to  `/tmp`. 
+To enable multipath move the `/etc/multipath.conf` to  `/tmp`. 
 
 		mv /etc/multipath.conf /tmp
 		
