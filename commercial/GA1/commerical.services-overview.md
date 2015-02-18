@@ -87,6 +87,11 @@ See [Overview of the Volume Operations Service](/helion/openstack/services/volum
 
 See [Overview of the Metering Service](/helion/openstack/services/reporting/overview/).
 
+<!-- keep when the content is ready
+**Ceph**. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management. 
+
+See [Overview of the Ceph Service]( /helion/openstack/ceph/)
+--->
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.
 

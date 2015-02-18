@@ -37,36 +37,34 @@ Before you begin the Ceph installation process, take a few minutes to read this 
 Ceph can run on commodity hardware, that makes building and maintaining petabyte-scale data clusters economically viable. When planning for the performance, capacity and resiliency of the Ceph cluster, review sizing with HP to make sure the solution will fit the SLA. Ceph can run on HP SL230s, HP SL4540s and HP DL580s - sizing is completely driven the SLAs. Small proof-of-concept clusters and development clusters can run successfully on Virtual Machines with minimal system requirements.  For example, you can configure 1 VM running Admin, 1 VM running radosgw, 3 VMs running Ceph OSD, and 1 VM running Monitor.
  
 
-<**need** **to fix the table as per the document>**
+<table style="text-align: left; vertical-align: top;">
 
-<table>
-<table style="text-align: left; vertical-align: top; width:650px;">
-<tr style="background-color: #C8C8C8;">
-	<th rowspa="4"> Process</th>
-<th>Criteria </th>
-	<th>Minimum Recommended </th>
+<tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
+<th>Node Type</th>
+
+<th>Server Hardware</th>
+<th>Minimum Requirements and Recommendations</th>
 </tr>
-	<tr>
-<td>ceph-osd</td>
-<td>Processor</td>
-<td>4vCPU</td>
+
+
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td rowspan="4"> ceph-osd <br><br> ceph-mon <br><br> ceph rados gateway <br><br>ceph admin</td>
+<td>Processor  </td>
+<td> 4vCPU</td>
 </tr>
-<tr>
-<td>ceph-mon</td>
-<td>RAM</td>
-<td>4G </td>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>RAM </td>
+<td colspan=2>4G RAM</td>
 </tr>
-<tr>
-<td>ceph rados gateway</td>
-<td>Disk Space</td>
-<td>100 GB</td>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Disk Space </td>
+<td> 100 GB</td>
 </tr>
-<tr>
-<td>ceph admin</td>
-<td>Network</td>
-<td>2x 1GB Ethernet vNICs</td>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Network </td>
+<td> 2x 1GB Ethernet vNICs</td>
 </tr>
-  </table>
+</table>
 
 ####Production Environment
 
@@ -160,7 +158,7 @@ The following table shows an example of a detailed deployment scenario:
 <td></td>
 <td>1 x HP 10G IO Module (2x1GbE 2x10GbE)</td>
 </tr>
-<table>
+</table>
 
 
 For more examples on Ceph Production Clusters, refer to: [http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf](http://www8.hp.com/h20195/v2/GetPDF.aspx/4AA5-2799ENW.pdf)
