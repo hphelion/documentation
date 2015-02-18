@@ -55,9 +55,9 @@ This page covers the following topics:
 * [What is not Highly Available?](#not-ha)
 * [More information](#more-info)
 
-##High Availability concepts overview {#concepts-overview}
+##High Availability Concepts Overview {#concepts-overview}
 
-Highly Available Cloud Services ensures that cloud resources are always available on request, resulting in uninterrupted operations for users. 
+Highly Available Cloud Services ensures that cloud resources are always available on request, which results in uninterrupted operations for users. 
 
 Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be able to fulfill user requests. 
 
@@ -69,7 +69,7 @@ Once the Compute, Storage, Network resources are deployed, users expect these re
 
 * If the Nova-Compute KVM Hypervisors/servers hosting the project compute virtual machine(VM) dies and the compute VM is lost along with its local ephemeral storage, the re-launching of the dead compute VM succeeds because it launches on another Nova-Compute KVM Hypervisor/server.
 
-    * If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
+* If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
 
 * Data stored in Block Storage service volumes is always available and volumes are rarely lost by the service provider.
 
