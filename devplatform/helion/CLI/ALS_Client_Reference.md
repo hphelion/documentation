@@ -16,7 +16,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 # HP Helion Development Platform: HP Helion ALS Command-Line Client Reference 
 
-The ALS command-line interface client (cfmgmt.exe) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the command line when the Horizon management console is unavailable or when direct access is preferred. 
+The ALS command-line interface client (cf-mgmt.exe) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the command line when the Horizon management console is unavailable or when direct access is preferred. 
 
 - [Global Options](#global)
 - [Cluster Commands](#commands)
@@ -33,21 +33,21 @@ There are three ways to pass configuration values into ALS:
  
 ALS maintains separate configuration files.
 
-One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named *cfmgmtconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
+One configuration file contains the values for the global variables. The global configuration file is located in the home directory and is named *cf-mgmtconfig.yml*. </br>Global level **commands** create, delete, and add clusters. </br>
  Global level **configurations** manage tenants, users, versions, and other system information. 
 
 The other configuration files, specified by the **--load** option, includes the values that should be passed to arguments for a specific command. Values must be included in the appropriate file for correct scoping; putting a command-specific value in the global file, for example, will not function as desired.
 
 ##Global Options {#global}
 These variables affect the entire cluster; they are **global** in scope. These environment variables are configured to work with the OpenStack Python tools to enable faster integration.
-<pre>cfmgmt <b>[global options]</b> command [command options] [arguments...] </pre>
+<pre>cf-mgmt <b>[global options]</b> command [command options] [arguments...] </pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <th width="150">Option</th><th>Description</th><th>Environment Variable</th>
-<tr><td>--config 'C:\Users\&#60;username&#62;\.cfmgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
+<tr><td>--config 'C:\Users\&#60;username&#62;\.cf-mgmtconfig.yml' <td>Default location for configuration file for global options. Enter a new file path to change the location of the configuration file.</td><td>n/a</td></tr>
 <tr><td>--debug<td>Enables additional debug information.</td><td>n/a</td></tr>
-<tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$CFMGMT_DEBUG</td></tr>
+<tr><td>--dry-run<td>Simulate the command with provided flags.</td><td>$CF-MGMT_DEBUG</td></tr>
 <tr><td>--os-username</td><td>OpenStack user name</td><td>$OS_USERNAME</td></tr>
 <tr><td>--os-password</td><td>OpenStack password</td><td>$OS_PASSWORD</td></tr>
 <tr><td>--os-auth-url</td><td>OpenStack authentication URL</td><td>$OS_AUTH_URL</td></tr>
@@ -62,26 +62,26 @@ These variables affect the entire cluster; they are **global** in scope. These e
 These commands are available from the command line interface.
 
 ###Use Syntax
-<pre>cfmgmt [global options] <b>command</b> [command options] [arguments...] </pre>
+<pre>cf-mgmt [global options] <b>command</b> [command options] [arguments...] </pre>
 
 ###Command Options
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;"><th>Command</th><th>Description</th></tr>
-<tr><td>cluster-create,	cc<td>Creates a cluster</td></tr>
-<tr><td>cluster-delete, cd<td>Deletes a cluster</td></tr>
-<tr><td>dea-add, da<td>Adds DEA nodes to an existing cluster</td></tr>
+<tr><td>create-cluster,	cc<td>Creates a cluster</td></tr>
+<tr><td>delete-cluster, dc<td>Deletes a cluster</td></tr>
+<tr><td>add-role dea, ar<td>Adds DEA nodes to an existing cluster</td></tr>
 <tr><td>help, h</td><td>Displays a list of available commands or help for a command.</td></tr>
 </table>
 
 ##Create a Cluster {#create}
 Options that can be passed to the command that creates a cluster 
-(*cluster-create*).
+(*create-cluster*).
 
-<pre>cfmgmt [global options] <b>cluster-create</b> [command options] [arguments...] </pre>
+<pre>cf-mgmt [global options] <b>create-cluster</b> [command options] [arguments...] </pre>
 
 For help with this command within the command-line interface, enter
 
-<pre>cfmgmt help cluster-create</pre>
+<pre>cf-mgmt help create-cluster</pre>
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;"><th style="width:250px;">Command (with example input)</th><th>Description</th>
@@ -143,9 +143,9 @@ For help with this command within the command-line interface, enter
 <td>--max-corenode-wait-duration '3m'</td><td>Maximum time to wait for the core node to come up on cluster creation; defaults to 3 minutes.</td>
 </tr>
 <tr>
-<td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by cluster-create, and the DEA nodes added by dea-add.</td>
+<td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by create-cluster, and the DEA nodes added by add-role dea.</td>
 </tr><tr>
-<td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by cluster-create and the DEA nodes added by dea-add.</td>
+<td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by create-cluster and the DEA nodes added by add-role dea.</td>
 </tr><tr>
 <td>--upstream-proxy </td><td>Upstream proxy</td>
 </tr><tr>
@@ -163,13 +163,13 @@ For help with this command within the command-line interface, enter
 </table>
 
 ##Delete a Cluster {#delete}
-Options that can be passed to the command that deletes a cluster (*cluster-delete*).
+Options that can be passed to the command that deletes a cluster (*delete-cluster*).
 ###Use Syntax
-<pre>cfmgmt [global options] <b>command cluster-delete</b> [command options] [arguments...] </pre>
+<pre>cf-mgmt [global options] <b>command delete-cluster</b> [command options] [arguments...] </pre>
 
 For help with this command within the command-line interface, enter
 
-<pre>cfmgmt help cluster-delete</pre>
+<pre>cf-mgmt help delete-cluster</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -193,20 +193,20 @@ For help with this command within the command-line interface, enter
 </tr><tr>
 <td>--max-cluster-wait-duration '4m'</td><td>Maximum time to wait for cluster deletion to occur; defaults to 4 minutes.</td>
 </tr>
-<tr><td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by cluster-create and the DEA nodes added by dea-add.</td></tr>
-<tr><td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by cluster-create, and the DEA nodes added by dea-add.</td></tr>
+<tr><td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by create-cluster and the DEA nodes added by add-role dea.</td></tr>
+<tr><td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by create-cluster, and the DEA nodes added by add-role dea.</td></tr>
 </table>
  
 ##Add DEA Nodes to an Existing Cluster {#addnode}
-Options that can be passed when adding nodes to an existing cluster (*dea-add*).
+Options that can be passed when adding nodes to an existing cluster (*add-role dea*).
 
 ###Use Syntax
 
-<pre>cfmgmt [global options] <b>dea-add</b> [command options] [arguments...]</pre>
+<pre>cf-mgmt [global options] <b>add-role dea</b> [command options] [arguments...]</pre>
 
 For help with this command within the command-line interface, enter
 
-<pre>cfmgmt help dea-add</pre>
+<pre>cf-mgmt help add-role dea</pre>
 
 ###Options
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -236,6 +236,6 @@ For help with this command within the command-line interface, enter
 </tr><tr>
 <td>--constructor-flavor '101'</td><td>Flavor reference to use when creating a constructor server</td>
 </tr>
-<tr><td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by cluster-create, and the DEA nodes added by dea-add</td></tr>
-<tr><td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by cluster-create and the DEA nodes added by dea-add.</td></tr>
+<tr><td>--subnet-id</td><td>ID of the subnet for the Constructor VM, the cluster created by create-cluster, and the DEA nodes added by add-role dea</td></tr>
+<tr><td>--subnet-name</td><td>Name of the subnet for the Constructor VM, the cluster created by create-cluster and the DEA nodes added by add-role dea.</td></tr>
 </table>
