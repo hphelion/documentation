@@ -21,7 +21,7 @@ authors: Jayme P
 
 # HP Helion Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine
 
-The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. it can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
+The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
 
 Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a *[nova*](http://docs.openstack.org/cli-reference/content/novaclient_commands.html) call with [cloud-init](http://cloudinit.readthedocs.org/en/latest/) [configuration data](http://docs.openstack.org/user-guide/content/inserting_userdata.html) to trigger the Helion ALS construction.  The OpenStack&reg; metadata service is used to communicate ALS construction status back to the Horizon UI.
 
@@ -56,9 +56,9 @@ This method passes the configuration and environment variable values via a [*clo
 
   1. Perform a *nova* call with a *cloud-init* JSON file.
   1. The CVM boots.
-3. The */etc/rc.local* script runs and detects the *cloud-init* file.
-5. The *cloud-init* file is automatically converted from JSON to ConfigParser format and renamed *cluster.conf*.
-6. The *assemble.py* script runs, using the values contained in *cluster.conf* to build the Helion ALS system.
+  2. The */etc/rc.local* script runs and detects the *cloud-init* file.
+  3. The *cloud-init* file is automatically converted from JSON to ConfigParser format and renamed *cluster.conf*.
+  4. The *assemble.py* script runs, using the values contained in *cluster.conf* to build the Helion ALS system.
 
 Here is an example of the *cloud-init* JSON file used for Helion ALS construction. There are three sections of key-value pairs related to ALS (PaaS), OpenStack (IaaS), and Control of the construction process. This configuration file is passed to the CVM during the boot process.
 
@@ -112,7 +112,7 @@ Here is an example of the *cloud-init* JSON file used for Helion ALS constructio
 ## Method #3: Boot Without a *cloud-init* Configuration File (Helion private cloud) {#privatecloud}
 During the boot process the CVM will detect that a [*cloud-init*](http://cloudinit.readthedocs.org/en/latest/) configuration file is not present. When the user logs in via SSH, the CVM will prompt the user to run a script which will create a configuration file. This prompt is provided by the system's Message of the Day (motd). 
 
-**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessable IP addresses, and so on.
+**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.
 
 1. Create an instance of the ALS Installer and boot it manually, or perform a *nova* boot without providing a *cloud-init* configuration file.
 2. The CVM boots.
@@ -126,7 +126,7 @@ During the boot process the CVM will detect that a [*cloud-init*](http://cloudin
 ## Method #4: Boot Without a Configuration File (for public beta) {#publiccloud}
 This is the process used for the [Developer Quick-Start trial](/helion/devplatform/ALS-developer-trial-quick-start/). During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta. 
 
-**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessable IP addresses, and so on.
+**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.
 
 1. Create an VM instance using the ALS Installer image and boot it manually, or perform a *nova* boot without providing a *cloud-init* configuration file.
 2. The CVM boots.
