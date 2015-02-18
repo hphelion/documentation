@@ -48,7 +48,9 @@ Current Known Limitations:
 
 - The Flexible Control Plane is not supported for production use.
 - Backup and Restore of a FCP Cloud is not supported.
-- Virtual Storage Appliance Adaptive Optimization (VSA-AO) is not supported.  
+- Virtual Storage Appliance Adaptive Optimization (VSA-AO) is not supported.
+- Upgrade of an FCP system is not tested for HP Helion OpenStack 1.1.
+  
 
 ##Deployment Architecture {#deploy}
 Currently, the Flexible Control Plane requires deployment on three KVM hosts.
