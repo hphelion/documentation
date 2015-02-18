@@ -22,8 +22,6 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9650; Installation and Configuration for KVM Hypervisor</a> or  <a href="/helion/openstack/install/esx/">&#9650; Installation and Configuration for ESX Hypervisor</a></p> 
-
 # HP Helion OpenStack&reg; Verifying your installation
 
 Once your installation is complete, you should make sure you can connect to your HP Helion OpenStack cloud. You can accomplish this in any of the following ways:
