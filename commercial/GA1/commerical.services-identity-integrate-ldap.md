@@ -50,7 +50,7 @@ Before starting the integration, review the following prerequisites:
 The LDAP integration process requires two configuration files:
 
 - [LDAP server connection settings](#connect)
-- Keystone CA storage and signing key/certificate file
+- [Keystone CA storage and signing key/certificate file](#keystone)
 
 
 ### LDAP connection settings {#connect}
@@ -159,7 +159,7 @@ Section names, supported options and possible values are described in Openstack 
 
 See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overlcoud_keystone_ldap.json` file.
 
-## Keystone CA storage and signing key/certificate files
+## Keystone CA storage and signing key/certificate files {#keystone}
 
 LDAP server might require all connections to be secured though the TLS protocol. Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
 
