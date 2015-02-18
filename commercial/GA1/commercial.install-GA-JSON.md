@@ -272,7 +272,7 @@ The following values appear under `ssl`. These parameters are optional, but must
 	},
 
 
-**CODN**
+**HDN**
 
 The following values appear under `codn`.
 

@@ -259,7 +259,7 @@ Based on the information provided, Keystone will verify the roles and, if valid,
 
 </pre>
 
-> **Note:** In the current release, the Admin account uses a pre-defined password. However the password is not published in the web-hosted documentation. To get the credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+> **Note:** In the current release, the Admin account uses a pre-defined password. However the password is not published in the web-hosted documentation. To get the credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
 You can include the returned token's value on the <code> ?/token=&lt;value> </code> query parameter with each REST call. 
 
