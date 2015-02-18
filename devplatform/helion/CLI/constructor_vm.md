@@ -224,16 +224,11 @@ grow_cluster = True
 ##Troubleshooting {#troubleshooting}
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
-<th>Failure Condition</th><th>Description</th><th>Resolution</th></tr>
+<td><b>Failure Condition</b></td><td><b>Description</b></td><td><b>Resolution</b></td></tr>
 <tr><td>Error message when clicking the Create Cluster button in the Horizon dashboard.</td><td>Danger: An error occurred. Please try again later.</td><td>
 The Database service is installed, but the API is not responding. Try loading the Database Instances tab in Horizon. If the Database Instances tab fails to load, repair the Database Service.</td></tr>
-<tr><td>Error message when clicking the final button in the Create Cluster Wizard in the Horizon UI.</td><td>Danger: An error occurred. (or similar message)</td><td>1.  Try to boot an ALS Installer image (make sure you open up port 22 in the default security group first) in the Nova Instances tab. </br></br>
-2. If the image doesn't boot, the image is broken (check the size) or Nova is broken.</br></br>
-3. If the image boots and says it's running, try to SSH into it.  If you can't SSH, check the instance's console log in the Horizon Instances UI.  If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</br></br>
-4. If you can SSH in successfully, re-try cluster setup; the cause may be intermittent failures in Horizon/Nova.</td></tr>
-<tr><td>Failure in building cluster step</td><td>Cluster stays in BUILDING state for an extremely long time, or drops to ERROR state.</br></br>OR</br></br>The ALS installer log on  the Installer VM reports 'No route to host'.</td><td>1. Assign a floating IP to the constructor instance and try SSHing to it. </br></br>
-2. If you can't SSH, check the instance's console log in the Horizon Instances UI. If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</br></br>
-3. Boot a couple of other installer images or Debian images in the same network and try to ssh between them.  If you get the "No route to host" error message, Neutron networking is broken.</td></tr>
+<tr><td>Error message when clicking the final button in the Create Cluster Wizard in the Horizon UI.</td><td>Danger: An error occurred. (or similar message)</td><td>1.  Try to boot an ALS Installer image (make sure you open up port 22 in the default security group first) in the Nova Instances tab. </br></br>2. If the image doesn't boot, the image is broken (check the size) or Nova is broken.</br></br>3. If the image boots and says it's running, try to SSH into it.  If you can't SSH, check the instance's console log in the Horizon Instances UI.  If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</br></br>4. If you can SSH in successfully, re-try cluster setup; the cause may be intermittent failures in Horizon/Nova.</td></tr>
+<tr><td>Failure in building cluster step</td><td>Cluster stays in BUILDING state for an extremely long time, or drops to ERROR state.</br></br>OR</br></br>The ALS installer log on  the Installer VM reports 'No route to host'.</td><td>1. Assign a floating IP to the constructor instance and try SSHing to it. </br></br>2. If you can't SSH, check the instance's console log in the Horizon Instances UI. If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</br></br>3. Boot a couple of other installer images or Debian images in the same network and try to ssh between them.  If you get the "No route to host" error message, Neutron networking is broken.</td></tr>
 </table>
 
 ### Disable Self-destruction {#disable}
