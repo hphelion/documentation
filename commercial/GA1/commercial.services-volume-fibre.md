@@ -212,7 +212,7 @@ Perform the following steps to configure Brocade Zone Manager.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
 
-You can also configure [HP 3PAR Storeserv](#configure-hp-3par-brocade) or [HP Storevirtual](#configure-hp-storevirtual-brocade) as storage backend with Brocade Zone Manager.
+You can also configure [HP 3PAR Storeserv](#configure-hp-3par-brocade) as storage backend with Brocade Zone Manager.
 
 ##Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager
 
