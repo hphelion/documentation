@@ -86,7 +86,7 @@ Here is an example of the *cloud-init* JSON file used for Helion ALS constructio
         "core_volume_size": "0",
         "dea_size": "standard.medium",
         "image_id": "d782c03d-9666-4639-a62f-53b376880120",
-        "image_password":
+        "image_password":"",
         "keypair_name": "keypair1",
         "network_id": "0ec616d0-872d-424b-ac27-3b5db55d7fa0",
         "region": "region-a.geo-1",
