@@ -28,7 +28,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1: Monitor Disk Drive(s) 
 
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the health of the disk drive(s) of the Swift storage node(s).
+The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the health of the disk drive(s) of all the swift node(s).
 
 
 ##Prerequisites

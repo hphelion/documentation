@@ -99,10 +99,16 @@ Perform the following steps to identify the disks of the node to be removed:
     
     	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
     	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
+	
+	You can also copy the the account and container ring files  to all the swift nodes using the following commands:
+
+		# ringos copy-ring -s /root/ring-building/account.ring.gz -n all
+    	# ringos copy-ring -s /root/ring-building/container.ring.gz -n all
+
 
 9. Repeat steps from **5-8** decreasing the weight by 25 each time; set the weight to 50, 25, and finally 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
-10. Verify the `account.rbuilder`  and `container.builder` files.
+10. Verify the `account.builder`  and `container.builder` files.
     	
 		# ringos view-ring -f /root/ring-building/account.builder
     	# ringos view-ring -f /root/ring-building/container.builder

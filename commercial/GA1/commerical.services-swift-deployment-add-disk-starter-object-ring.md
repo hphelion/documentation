@@ -155,6 +155,12 @@ Perform the following steps to add Swift disk to a ring:
 
 	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
 
+	You can also copy the the ring files and the builder files to all the swift nodes using the following commands:
+
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
+
+		# ringos copy-ring -s /root/ring-building/object-1.builder -n all
+
 
 13. Set the weight of the disks using the following command:
 
