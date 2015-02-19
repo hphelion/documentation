@@ -1,5 +1,5 @@
 ---
-permalink: /openstack/services/
+permalink: /helion/openstack/services/
 redirect: /helion/openstack/services/overview/
 layout: redirect
 
