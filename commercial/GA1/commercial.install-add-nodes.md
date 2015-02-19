@@ -57,7 +57,7 @@ You can enroll (add) nodes that that are present in baremetal.csv but have not b
 
 1. SSH to the seed VM as `root`:
 
- 		ssh <IP Address>
+ 		ssh root@<IP Address>
 
 2. Edit the scale counts in JSON environment variables file (`kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
 
