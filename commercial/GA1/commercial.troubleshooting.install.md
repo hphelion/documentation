@@ -139,7 +139,7 @@ If you have a set of Baremetal servers which differ in specifications (e.g. memo
 
 **Resolution**
 
-Edit the **baremetal.csv** file to define the lowest specification server in the second row.
+Edit the *baremetal.csv* file to define the lowest specification server in the second row.
 <br><br>
 <hr>
 
@@ -206,7 +206,7 @@ Node does not have enough disk space
 **Resolution**
 
 * Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp_ced_functions.sh`.
-* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
+* If disk space is less than Node&#95;min&#95;disk, change Node&#095;min&#095;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
 * Re-run the installation script.
 <br>
 <hr>
@@ -223,7 +223,7 @@ Node does not have enough disk space. SAN boot is enabled for node or local disk
 
 **Resolution**
 
-Installer expects that SAN boot option is disabled for nodes. Verify whether SAN boot is disabled for BL 490c.
+Installer expects that SAN boot option is disabled for nodes. Verify that SAN boot is disabled for BL 490c.
 
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
@@ -239,7 +239,7 @@ Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what 
 
 **Resolution**
 
-Verify `baremetal.csv` for empty lines or special characters.
+Verify `baremetal.csv` does not contain any empty lines or special/corrupt characters.
 <br><br>
 <hr>
 ## Failure of Seed Installation {#seed-install-failure}
@@ -252,20 +252,22 @@ Seed installation fails with no space left on device.
 
 **Resolution**
 
-Verify the tripleo directory- user owner and group. It must be **root:root**. Incase it is not set as **root:root** then edit it to root using- `chown root:root tripleo`
+Verify the tripleo directory user owner and group. It must be **root:root**. 
+In case it is not set as **root:root** then change it to root using: 
+
+	chown root:root tripleo
 
 <hr>
 ## Inconsistent Failures in RabbitMQ {#rabbit-failure}
 **System Behavior/Message**
 
-Inconsistent Rabbitmq failure seen on controller nodes while listing queues 
+Inconsistent RabbitMQ failure seen on controller nodes while listing queues 
 
 	rabbitmqctl list_queues
 
-
 **Resolution**
 
-Restart the Rabbitmq service.
+Restart the RabbitMQ service.
 
 
 <hr>
@@ -277,32 +279,32 @@ To restore the overcloud to an operational state, follow the steps below:
  
   1. As user `root` on the overcloud controller you must:
   
-        A. Run the `os-refresh-config` scripts:
+     A. Run the `os-refresh-config` scripts:
 
-            os-refresh-config
+        os-refresh-config
 
-        B. Restart the `mysql` service:
+       B. Restart the `mysql` service:
 
-            service mysql restart
+        service mysql restart
 
-        C. Re-run the `os-refresh-config` scripts:
+       C. Re-run the `os-refresh-config` scripts:
 
-            os-refresh-config
+        os-refresh-config
 
-        D. Restart all Networking Operations (Neutron) services:
+       D. Restart all Networking Operations (Neutron) services:
 
-            service neutron-dhcp-agent restart
-            service neutron-l3-agent restart
-            service neutron-metadata-agent restart
-            service neutron-openvswitch-agent restart
-            service neutron-server restart
+        service neutron-dhcp-agent restart
+        service neutron-l3-agent restart
+        service neutron-metadata-agent restart
+        service neutron-openvswitch-agent restart
+        service neutron-server restart
 
   2. On each overcloud node, restart the Neutron and Nova services:
   
-            sudo service neutron-openvswitch-agent restart
-            sudo service nova-compute restart
-            sudo service nova-scheduler restart
-            sudo service nova-conductor restart
+        sudo service neutron-openvswitch-agent restart
+        sudo service nova-compute restart
+        sudo service nova-scheduler restart
+        sudo service nova-conductor restart
 
 
 <hr>
@@ -313,12 +315,11 @@ The installer uses IPMI commands to reset nodes and change their power status. S
 ## Network Bridge Persists After Uninstall {#bridge-persists}
 On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists.
 
-To revert the network configuration to its pre-installation state, run the following commands as user root: 
+To revert the network configuration to its pre-installation state, run the following commands as user `root`: 
 
-        ip addr add 192.168.185.131/16 dev eth0 scope global
-        ip addr del 192.168.185.131/16 dev brbm
-        ovs-vsctl del-port NIC
-
+	ip addr add 192.168.185.131/16 dev eth0 scope global
+	ip addr del 192.168.185.131/16 dev brbm
+	ovs-vsctl del-port NIC
 where
 
 * eth0 is the external interface     
@@ -329,7 +330,7 @@ where
 ## Modify the Heat Configuration File Before HP Helion OpenStack Installation {#heat-config}
 Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
 
-**Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
+<span style="color:red">**Important**:</span> The installation of the HP Helion OpenStack DNSaaS **fails** if you do not make these modifications.
 
 **Note**: You must have admin ssh access to the overcloud controller.
 
