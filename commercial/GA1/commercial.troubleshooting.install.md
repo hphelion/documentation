@@ -34,7 +34,7 @@ This topic provides possible solutions to known issues.
 * [BIOS clocks are not set to correct date and time across all nodes](#BIOS-clocks-are-not-set-to-correct-date)
 * [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
 * [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
-* [Failure of hp&#95;ced&#95;installer.sh](#failure-installer)
+* [Failure of hp_ced_installer.sh](#failure-installer)
 * [Failure of Seed Installation](#seed-install-failure)
 - [Inconsistent Failures in RabbitMQ](#rabbit-failure)
 - [Server Power Stuck at Reset](#reset-stuck)
@@ -228,11 +228,11 @@ Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what 
 <br>
 <hr>
 
-## Failure of Hp&#95;ced_installer.sh {#failure-installer}
+## Failure of hp_ced_installer.sh {#failure-installer}
 
 **System Behavior/Message**
 
-`Hp_ced_installer.sh` fails because of `baremetal.csv /sda`.
+`hp_ced_installer.sh` fails because of bad characters in the `baremetal.csv`.
 
 
 **Resolution**
