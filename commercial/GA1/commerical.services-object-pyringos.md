@@ -116,7 +116,8 @@ Re-balances a given ring after adding disk to the ring.
 	# ringos rebalance-ring -f <BUILDER>
 
 ###Copy a ring <a name="copy-ring"></a>
-Copies ring to the available nodes.
+
+* Copies ring to the available nodes.
 
 	 # ringos copy-ring -s <RING> -n <NODE> 
 
@@ -124,6 +125,9 @@ For example:
 
 	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <IP address of Swift nodes>
 
+* Copies rings to all nodes
+
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
 
 ### Remove a disk from the ring<a name="remove-disk-from-ring"></a>
  

@@ -31,7 +31,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1: Monitoring the Mount Points using Icinga
 
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  mount point of the Object Storage (Swift) node(s).
+The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  mount point of all the swift nodes.
 
 
 ##Prerequisites

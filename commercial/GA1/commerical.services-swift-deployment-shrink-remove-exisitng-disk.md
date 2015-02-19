@@ -87,11 +87,11 @@ Perform the following steps to remove disks from ring:
 
 6.Set the weight of the disk.
 
-		# ringos set-weight -f object-1.builder -s d<device> -w <weight>
+	# ringos set-weight -f object-1.builder -s d<device> -w <weight>
 
 The following sample displays the output of the above command:
 
-	d7r1z3-192.0.2.31:6000R192.0.2.31:6000/b1410063386_"" weight set to 75.0
+		d7r1z3-192.0.2.31:6000R192.0.2.31:6000/b1410063386_"" weight set to 75.0
 
 7.Re-balance the ring.
 
@@ -108,7 +108,7 @@ The following sample displays the output of the above command:
 
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
-
+	
 10.Repeat steps from **6 - 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 11.Once the weight is set to 0, remove the disk from the ring.

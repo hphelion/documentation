@@ -109,12 +109,12 @@ Perform the following steps to remove the disks from ring:
 
 13. List all the Swift nodes.
 
-		ringos list-swift-nodes -t all
+		# ringos list-swift-nodes -t all
 		
 		
-14.Copy the `object-1.ring.gz` file to all nodes.
+14. Copy the `object-1.ring.gz` file to all nodes.
 
-    	ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+    	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 ## Removing scale-out object node {#remove-scale-out-object-node}
 
@@ -122,7 +122,7 @@ Once the disks are removed from the ring, remove the scale-out object node by re
 
 1. List the scale-out object nodes.
 
-		heat stack-list
+		# heat stack-list
 
 2. Identify the stack of the target scale-out object node.
 
@@ -137,13 +137,13 @@ The following sample displays the output of the stack list:
 
 3.Remove the stack. 
 
-	heat stack-delete <id>
+	# heat stack-delete <id>
 
 ##Verify the node removal {#node-removal}
 
 1. Use the nova list command to view a list of nodes.
 
-		nova list
+		# nova list
 
 	The removed node will not be available.
 

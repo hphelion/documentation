@@ -13,7 +13,7 @@ authors: Sunitha K, Binamra S
 <!--UNDER REVISION-->
 
 
-<script>
+<script
 
 function PageRefresh {
 onLoad="window.refresh"
@@ -55,9 +55,12 @@ If block storage is configured to use a Fibre Channel volume driver that support
 ###Caution:
 
 * Do not modify any other files in `/tripleo/hp_passthrough/`. Modification may led to failover of overcloud.
-* Do not modify any other file directly under `hp_passthrough` for HP 3PAR and HP Storevirtual integration. 
+* Do not modify any other file directly under `hp_passthrough` for HP 3PAR integration. 
 * Create a new file with a prefix **overcloud**
 * Adhere to the JSON format (mentioned in Step 4). Otherwise, it might cause failure of update cloud.
+* Ensure to follow the recommended steps to configure HP 3PAR as a storage backend. 
+
+* Create a file with the prefix as **overcloud**.
 
 ###Steps for configuration
 
@@ -209,25 +212,11 @@ Perform the following steps to configure Brocade Zone Manager.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh  --update-overcloud |& tee install_update.log
 
-You can also configure [HP 3PAR Storeserv](#configure-hp-3par-brocade) or [HP Storevirtual](#configure-hp-storevirtual-brocade) as storage backend with Brocade Zone Manager.
+You can also configure [HP 3PAR Storeserv](#configure-hp-3par-brocade) as storage backend with Brocade Zone Manager.
 
-##Configure HP 3PAR Storeserv or HP Storevirtual as storage backend with Brocade Zone Manager
+##Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager
 
-This section explains the configuration of HP 3PAR Storeserv or HP Storevirtual as a storage backend with Brocade Zone Manager.
-
-
-**Caution**
-
-* Ensure to follow the recommended steps to configure HP 3PAR and HP Storevirtual as storage backend. Do not modify any other file directly under `hp_passthrough` for HP 3PAR and HP Storevirtual integration. 
-
-* Adhere to JSON format. The JSON format should remain intact, otherwise it might cause failure of update cloud.
-
-* Do not touch any other files in `/tripleo/hp_passthrough/ folder.`
-
-* Create a file with the prefix as **overcloud**.
-
-
-### To configure HP 3PAR as storage backend with Brocade Zone Manager {#configure-hp-3par-brocade}
+This section explains the configuration of HP 3PAR Storeserv as a storage backend with Brocade Zone Manager.
 
 You can configure HP 3PAR as storage backend with Brocade Zone Manager. 
 
@@ -247,9 +236,10 @@ You can configure HP 3PAR as storage backend with Brocade Zone Manager.
 Perform the following steps to configure HP 3PAR as storage backend with Brocade Zone Manager.
 
 1. Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
-2. Add and configure HP StoreVirtual and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/) for detailed procedure.
+2.Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreServ Backends]( /helion/openstack/undercloud/oc/config/storeserv/) for detailed procedure..
 
 
+<!----
 
 ### To configure HP StoreVirtual as storage backend with Brocade Zone Manager {#configure-hp-storevirtual-brocade}
 
@@ -266,12 +256,12 @@ You can  configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 ###Steps
 
-Perform the following steps to configure HP 3PAR as storage backend with Brocade Zone Manager.
+Perform the following steps to configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 1. Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
-2. Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreServ Backends]( /helion/openstack/undercloud/oc/config/storeserv/) for detailed procedure.
+2. Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreVirtual Backends]( /helion/openstack/undercloud/oc/config/storevirtual/) for detailed procedure.
 
-
+---->
 
 ###More information
 

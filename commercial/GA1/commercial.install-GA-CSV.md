@@ -60,7 +60,7 @@ The following is a sample file:
 
 When creating this file, keep the following in mind :
 
-- This file must contain from 7 to 100 lines. (100 being the maximum number of nodes suported in an HP Helion install.)
+- This file must contain from 7 to 100 lines. (100 being the maximum number of nodes supported in an HP Helion install.)
 - There must be one entry in this file for each baremetal system you intend to install.
 - The `mac_address` should be the MAC address of the network interface enabled for PXE/network boot on each baremetal system (*not* the MAC address of the BMC/IPMI controller).
 - The systems specified in this file must meet the Hardware Requirements detailed above.

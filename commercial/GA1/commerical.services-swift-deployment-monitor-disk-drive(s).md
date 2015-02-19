@@ -28,7 +28,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1: Monitor Disk Drive(s) 
 
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the health of the disk drive(s) of the Swift storage node(s).
+The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the health of the disk drive(s) of all the swift node(s).
 
 
 ##Prerequisites
@@ -39,10 +39,10 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 
 ##Monitoring the Disk Drive(s) of Swift
 
-It is important to check the health of the disk drive of Swift cluster on timely basis. To verify the health of the disk drive, [hpssacli utility](http://docs.hpcloud.com/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/) is leveraged.
+It is important to check the health of the disk drive of Swift cluster on timely basis. To monitor the disk drives on Swift nodes using **Icinga**, [hpssacli utility](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/) is leveraged.
 
 The `/etc/swift` folder on each of the Swift nodes must have both the `*.builder` and the 
-`*.ring.gz` files. The Swift nodes and disks that are present in rings are determined using `swift-ring-builder` cmd.
+`*.ring.gz` files. The builder files are required to determine the list of hosts and disk drives that needs to be monitored. `swift-ring-builder` command is used in monitoring scripts to get the host and disk details from the builder files. 
 
 The node address is retrieved from `/var/lib/os-collect-config/`. 
 
@@ -83,7 +83,7 @@ The page navigates to Service Status Details For Host &lt;Swift node IP address 
 <tr style="background-color: white; color: black;">
 	<td>CRITICAL </td>
 	<td>System Error. Check for hpssacli utility. </td>
-    <td>Verify whether the hpssacli debian package is installer</td></tr>
+    <td>Verify whether the hpssacli debian package is installed</td></tr>
 <tr style="background-color: white; color: black;">
 	<td>FAIL </td>
 	<td>&lt;Failed Drive&gt; drive(s)  may be missing or in a failed state. <br>                         Found error in drive(s): <drive slot and location> </td>

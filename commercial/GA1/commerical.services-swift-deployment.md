@@ -243,6 +243,20 @@ The following sample displays the output of formatted disk of **192.0.2.29**.
 	| /dev/sdb | y         | y       | /mnt/state/srv/node/b1410063336 | b1410063336 | 1073741824 |               
 	+----------+-----------+---------+---------------------------------+-------------+------------+
 
+If the disks are already mounted and you want to format the disk then execute the following command:
+
+	# ringos format-disks -n <object node IP address> -d /dev/sdb -f
+
+The following sample displays the output of forceful formatted disk.
+
+	+----------+-----------+---------+-------------+-------+------+
+	| disk     | formatted | mounted | mount_point | label | size |
+	+----------+-----------+---------+-------------+-------+------+
+	| /dev/sdb | -         | -       | -           | -     | -    |
+	|          |           |         |             |       |      |
+	+----------+-----------+---------+-------------+-------+------+
+
+
 **Note**: You can also format disks individually by using `-d <device-name>`.
 For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
 
@@ -354,6 +368,7 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n <Swift node IP address>
 
+	
 	In the following example account, container, object, and generated `object-1.ring.gz` are copied to all the nodes:
 
 		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n 192.0.2.22
@@ -368,7 +383,13 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 		# ringos copy-ring -s /root/ring-building/\*.builder -n <Swift node IP address>
 
-**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
+	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
+
+You can also copy the ring or builder files to all the swift nodes:
+
+	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
+
+	# ringos copy-ring -s /root/ring-building/\*.builder -n all 
 
 <!--**Note**: The system may escape the authentication of node sometimes. --->
 

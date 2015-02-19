@@ -104,6 +104,13 @@ Once the Object Storage (Swift) nodes are deployed, the required disks must be f
 
 	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
 
+	You can also copy the ring files and the builder files to all the swift nodes using the following commands:
+
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
+
+		# ringos copy-ring -s /root/ring-building/object-1.builder -n all
+
+
 12. Set the weight of the disks using the following command:
 
     	# ringos set-weight -f /root/ring-building/object-1.builder -s <object node IP address> -w <weight>
