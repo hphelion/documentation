@@ -387,9 +387,9 @@ Once the disk is formatted you can create a scale-out object ring. This ring is 
 
 You can also copy the ring or builder files to all the swift nodes:
 
-		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
+	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
 
-		# ringos copy-ring -s /root/ring-building/\*.builder -n all 
+	# ringos copy-ring -s /root/ring-building/\*.builder -n all 
 
 <!--**Note**: The system may escape the authentication of node sometimes. --->
 

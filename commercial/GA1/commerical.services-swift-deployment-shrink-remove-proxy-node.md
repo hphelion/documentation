@@ -81,8 +81,8 @@ Perform the following steps to identify the disks of the node to be removed:
 
 5. Set the weight of the disk for `account.builder` and `container.builder`files.
 
-    		# ringos set-weight -f account.builder -s d<device> -w <weight>
-    		# ringos set-weight -f container.builder -s d<device> -w <weight>
+    	# ringos set-weight -f account.builder -s d<device> -w <weight>
+    	# ringos set-weight -f container.builder -s d<device> -w <weight>
 
 6. Re-balance the ring.
 

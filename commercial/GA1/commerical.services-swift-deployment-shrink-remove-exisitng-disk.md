@@ -97,7 +97,7 @@ The following sample displays the output of the above command:
 
 	# ringos rebalance-ring -f /root/ring-building/object-1.builder
 
-	**Note**: You must wait for `min_part_hours` before another re-balance succeeds.
+**Note**: You must wait for `min_part_hours` before another re-balance succeeds.
 
 8.List all the Swift nodes.
 
@@ -108,20 +108,7 @@ The following sample displays the output of the above command:
 
 	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 	
-
-10.Copy `object-1.builder` file to all the nodes.
-    
-    	ringos copy-ring -s /root/ring-building/object-1.builder -n <Swift nodes IP address>	
-
-**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
-
-You can also copy the the ring files and the builder files to all the swift nodes using the following commands:
-
-	# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
-
-	# ringos copy-ring -s /root/ring-building/object-1.builder -n all
-
-
+	
 10.Repeat steps from **6 - 9** with the weights set to 50, 25, and 0 (w= 50, 25, 0). These steps should be repeated until the weight becomes 0 for each disk.
 
 11.Once the weight is set to 0, remove the disk from the ring.

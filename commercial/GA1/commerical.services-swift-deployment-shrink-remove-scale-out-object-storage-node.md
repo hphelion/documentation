@@ -93,19 +93,6 @@ Perform the following steps to remove the disks from ring:
 
 		ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
-10. Copy `object-1.builder` file to all the nodes.
-    
-    	ringos copy-ring -s /root/ring-building/object-1.builder -n <Swift nodes IP address>	
-
-	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
-
-	You can also copy the the ring files and the builder files to all the swift nodes using the following commands:
-
-		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
-
-		# ringos copy-ring -s /root/ring-building/object-1.builder -n all
-
-
 10. Repeat steps from **6 - 9** and decrease the weight each time until the weight becomes 0 for each disk.[Set the weight to 50, then 25, and then 0 (w= 50, 25, 0).]
 
 11. Once weight has been set to 0, remove the disk from the ring.
@@ -122,12 +109,12 @@ Perform the following steps to remove the disks from ring:
 
 13. List all the Swift nodes.
 
-		ringos list-swift-nodes -t all
+		# ringos list-swift-nodes -t all
 		
 		
-14.Copy the `object-1.ring.gz` file to all nodes.
+14. Copy the `object-1.ring.gz` file to all nodes.
 
-    	ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
+    	# ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
 ## Removing scale-out object node {#remove-scale-out-object-node}
 
@@ -135,7 +122,7 @@ Once the disks are removed from the ring, remove the scale-out object node by re
 
 1. List the scale-out object nodes.
 
-		heat stack-list
+		# heat stack-list
 
 2. Identify the stack of the target scale-out object node.
 
@@ -150,13 +137,13 @@ The following sample displays the output of the stack list:
 
 3.Remove the stack. 
 
-	heat stack-delete <id>
+	# heat stack-delete <id>
 
 ##Verify the node removal {#node-removal}
 
 1. Use the nova list command to view a list of nodes.
 
-		nova list
+		# nova list
 
 	The removed node will not be available.
 
