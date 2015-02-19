@@ -105,7 +105,7 @@ This section provides details on installing the Messaging service from the Devel
 
 1. Open Horizon and login as the "admin" user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click **Configure Services**.
 
-2. Click the **Connect** button on the **Configure Services** screen and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** screen and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Messaging Service
 
@@ -129,7 +129,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 1. Open Horizon and login as the "Admin" user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click on **Configure Services**.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Application Lifecycle Service
 
@@ -251,7 +251,7 @@ In addition to the quota mentioned above, for every database instance that is cr
 
 1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** panel under Admin. Then click on the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download the Database Service
 
@@ -352,7 +352,7 @@ The **Marketplace Service** will be installed into the admin tenant of the Helio
 
 1. Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under Admin. Then click on the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Marketplace Service
 
