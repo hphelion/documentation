@@ -236,7 +236,7 @@ You can configure HP 3PAR as storage backend with Brocade Zone Manager.
 Perform the following steps to configure HP 3PAR as storage backend with Brocade Zone Manager.
 
 1. Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
-2. Add and configure HP StoreVirtual and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/) for detailed procedure.
+2.Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreServ Backends]( /helion/openstack/undercloud/oc/config/storeserv/) for detailed procedure..
 
 
 <!----
@@ -256,10 +256,10 @@ You can  configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 ###Steps
 
-Perform the following steps to configure HP 3PAR as storage backend with Brocade Zone Manager.
+Perform the following steps to configure HP StoreVirtual as storage backend with Brocade Zone Manager.
 
 1. Perform the steps [1- 4](#brocade-zone) to add brocade zone manager configuration.
-2. Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreServ Backends]( /helion/openstack/undercloud/oc/config/storeserv/) for detailed procedure.
+2. Add and configure  HP StoreServ (3PAR) and update overcloud. See [HP Helion OpenStack&reg; : Working With StoreVirtual Backends]( /helion/openstack/undercloud/oc/config/storevirtual/) for detailed procedure.
 
 ---->
 
