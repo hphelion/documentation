@@ -32,11 +32,13 @@ The HP Helion OpenStack Installation process requires various configuration para
 
 A user who is installing HP Helion OpenStack can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.
 
-The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
+This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
 
 You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable format contained in a text file for storing information that can be used to transfer data between servers.
 
-This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
+The installation package contains a number of JSON template files. You need to be concerned with only one or two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json` `esx-custom-ips-vlan.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
+
+Refer to [JSON Environment File Deployment Scenarios](/helion/openstack/install/envars/deploy/) to determine which template file is best for your environment.
 
 ## Editing the JSON file
 
@@ -52,12 +54,15 @@ To edit the JSON environment variables file:
 
 2. Locate the appropriate file in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
-	* `esx-custom-ips-vlan.json` - Use this file for installing HP Helion OpenStack with ESX hypervisor support.
+	* `esx-custom-ips.json` - Use this file for installing HP Helion OpenStack with ESX hypervisor support.
+	* `esx-custom-ips-vlan.json` - Use this file for installing HP Helion OpenStack with ESX hypervisor support with a VLAN provider network.
 	* `kvm-custom-ips.json` - Use this file for installing HP Helion OpenStack with KVM hypervisor support.
 
 3. Optionally, make a backup copy of the JSON file in case it is needed.
 
-		cp kvm-custom-ips.json kvm-custom-ips.json-backup
+	**Example:**
+
+		cp esx-custom-ips.json esx-custom-ips.json-backup
 
 4. Open the JSON file and edit the environment variable listed below.  
 
