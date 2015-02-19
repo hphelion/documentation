@@ -80,15 +80,6 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	**Note:** If `hp_ced_host_manager.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
-6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file. The IP address should be listed in the output, such as `to login ssh root@192.0.2.1.`:
-
-		ssh root@<seed_VM_IP_address>
-
-	**Note**: It might take a few moments for the seed VM to become reachable. 
-
-7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
-
-	The prompt will change to `root@hLinux`.
 
 10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#csv) file is correct and upload the file to `/root`.
 
@@ -108,6 +99,16 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 		scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json
 		chmod 0600 $/root/tripleo/overcloud-env.json
+
+6. To build the cloud, start by logging in to the seed VM. Run the following command from `/root` using the IP address of seed VM as defined in the `kvm_custom_ips.json` environment variables file. The IP address should be listed in the output, such as `to login ssh root@192.0.2.1.`:
+
+		ssh root@<seed_VM_IP_address>
+
+	**Note**: It might take a few moments for the seed VM to become reachable. 
+
+7. When prompted for host authentication, type `yes` to allow the SSH connection to proceed.
+
+	The prompt will change to `root@hLinux`.
 
 12. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to each of the baremetal servers in your `baremetal.csv` is working.
 
@@ -142,11 +143,11 @@ During this step, several important activities automatically occur:
 
 	* NTP servers are validated
 
-	b. The seed is customized and its OpenStack services are configured and started.The undercloud node is registered with the seed’s ironic service.
+	b. The seed is customized and its OpenStack services are configured and started. The undercloud node is registered with the seed's ironic service
 	
 	c. The undercloud is deployed, booted, and its heat stack is configured.
 	The undercloud OpenStack services are then configured and started.
-	The overcloud nodes are registered with the undercloud’s ironic service.
+	The overcloud nodes are registered with the undercloud's ironic service.
 
 	d. The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.
 
