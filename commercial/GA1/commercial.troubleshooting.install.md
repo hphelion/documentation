@@ -101,7 +101,8 @@ Update overcloud fails with the following error:
 <pre>Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)</pre>
 
 **Resolution**
-If you get this error, perform the below steps:
+
+If you get this error, perform the following steps:
 
 1. Log in to Seed.
  
