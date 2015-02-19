@@ -1,6 +1,6 @@
 ---
 permalink: /openstack/services/
-redirect: /openstack/services/overview/
+redirect: /helion//openstack/services/overview/
 layout: redirect
 
 ---
