@@ -74,7 +74,7 @@ Users can create a bootable volume and use that to boot a VM.
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Object Operations (Swift)</b></td>
-	<td>The HP Helion OpenStack Object and Operations service helps manage the storage and retrieval of objects in publicly accessible physical machines. 
+	<td>The HP Helion OpenStack Object and Operations service helps manage the storage and retrieval of objects in publicly accessible machines. 
 	<br><br>Users can configure storage containers, upload and download container files, and delete container files.<br><br>
 	<a href="/helion/openstack/services/object/overview/">Learn more</a> about the Object Operations service and Ringos.</td>
 	
@@ -366,7 +366,7 @@ The logical networks listed in the following table are implemented as VLANs on t
 
 You must manage and prepare the network based on the type of hypervisor.
  
-For more details information on network planning see [Preparing your network](/helion/openstack/install/prereqs/).  
+For more details information on network planning see [Preparing your network](http://15.184.32.138/helion/openstack/install/prereqs/network/).  
 
 ### Network security {#networksecurity}
 
