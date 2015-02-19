@@ -12,7 +12,7 @@ role2: Storage Architect
 authors: Sunitha K, Deepali V, Vandana S
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -36,7 +36,8 @@ This page describes the workflow for adding HP StoreVirtual and HP 3PAR StoreSer
 * [Before you begin](#before-you-begin)
 * [Process flow](#process-flow)
 * [Add and configure HP StoreVirtual to your cloud inventory](#add-configure-storevirtual)
-* [Add and configure HP 3PAR StoreServ](#add-configure-storeserv) 
+* [Add and configure HP 3PAR StoreServ](#add-configure-storeserv)
+* [Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager](#config-brocade) 
 * [Reconfigure and update cloud](#reconfigure-update)
 
 ## Before you begin {#before-you-begin}
@@ -289,6 +290,13 @@ The sample output of the above command is given below:
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
+##Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager {#config-brocade}
+
+HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to cinder.conf to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.
+
+For more information, see  [HP Helion OpenStack&reg; 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager]( /helion/openstack/services/volume/Fibre/)
+
+
 ##Reconfigure and update cloud {#reconfigure-update}
 
 1. [Generate StoreVirtual backend configuration JSON](#generate-storevirtual-config)
@@ -476,7 +484,7 @@ A sample of the file is before and after the update is give below:
 		  }
 		}
 
-### Load the configuration and export required environment variables to prepare for updating cloud{#load-config-export}
+### Load the configuration and export required environment variables to prepare for updating cloud {#load-config-export}
 	
 Enter the following command
 
