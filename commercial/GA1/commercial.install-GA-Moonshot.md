@@ -58,6 +58,11 @@ This command gives the Cartridge address:
 
 	ipmitool -I lanplus -H xx.xx.xx.xx -U Administrator -P xxxxx sdr list mcloc
 
+
+Using these values
+ 
+**ipmitool -I lanplus -H &lt;hostname&gt;[-U &lt;username&gt;][-P &lt;password&gt;]&lt;command&gt;**
+
 Consult [HP Moonshot iLO documentation](http://h50146.www5.hp.com/products/software/oe/linux/mainstream/support/whitepaper/pdfs/c03933550-1.pdf) to determine the values needed.
 
 
