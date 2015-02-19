@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm"> &#9664; Installing on a KVM hypervisor </a> | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/kvm"> &#9664; Installing on a KVM hypervisor </a> | <a href="/helion/openstack/install/overview/">&#9650; Installation Overview</a> | </p> 
 
 
 # HP Helion OpenStack&#174;: Post-Installation for KVM Hypervisor
