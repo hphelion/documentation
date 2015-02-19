@@ -112,10 +112,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 12. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to each of the baremetal servers in your `baremetal.csv` is working.
 
-	/usr/bin/ipmitool -U <ipmi_user> -P <ipmi_password> -H <ipmi_address> -I lanplus power status
+		/usr/bin/ipmitool -U <ipmi_user> -P <ipmi_password> -H <ipmi_address> -I lanplus power status
 
-	For example: root@hLinux:# /usr/bin/ipmitool -U admin -P password -H 10.20.50.25 -I lanplus power status
-Chassis Power is on.
+		For example: root@hLinux:# /usr/bin/ipmitool -U admin -P password -H 10.20.50.25 -I lanplus power status
+
+		Chassis Power is on.
 
 
 13. The system will power off your computers. If you wish, you can optionally use the IPMI tool to manually power off each baremetal system specified in your `baremetal.csv` file before proceeding with the installation.
