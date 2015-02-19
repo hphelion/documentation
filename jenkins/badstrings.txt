@@ -1,5 +1,3 @@
-CODN
-codn
 CloudStack
 cloudstack
 [bB]are [mM]etal
