@@ -112,10 +112,10 @@ HP supports the following configurations for HP Helion OpenStack deployment:
       * 10Gb iSCSI CNA/NIC
       
 
-- 3PAR InForm OS Version: 3.1.3 MU1 
+- 3PAR InForm OS Version: 3.1.3 MU1 to 3.2.1 MU1
 
-      * HP StoreVirtual 4000 Storage
-   
+	* HP StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)
+
      
 ## Hardware Requirements {#baremetal}
 
