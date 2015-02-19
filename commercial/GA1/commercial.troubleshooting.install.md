@@ -28,7 +28,7 @@ This topic provides possible solutions to known issues.
 - [Modify the Heat Configuration File Before DNSaaS Installation](#heat-config)
 * [Fatal PCI Express Device Error](#fatal-pci)
 * [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
-* [Failure of Update overcloud](#failure-update-overcloud)
+* [Failure of Update on the Overcloud](#failure-update-overcloud)
 * [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
 * [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
 * [BIOS clocks are not set to correct date and time across all nodes](#BIOS-clocks-are-not-set-to-correct-date)
@@ -98,27 +98,25 @@ If you get this error, perform the following steps:
 
 Update overcloud fails with the following error:
 
- `Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)`
+<pre>Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)</pre>
 
 **Resolution**
 If you get this error, perform the below steps:
 
- 1. Log in to Seed.
+1. Log in to Seed.
  
 		ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json` and update the variables **build&#95;number** and **installed&#95;build&#95;number** to the correct value. <!-- (CORE-1697) -->
+2. Edit the */root/tripleo/ce_env.json* file and update the variables **build&#95;number** and **installed&#95;build&#95;number** to the correct value. <!-- (CORE-1697) --> They may or may not match but the value cannot be NULL.
 
-	A sample section of the ce&#95;env&#95;json file showing that the **build&#95;number** is changed from NULL to the correct value.
+3. A sample section of the *ce&#95;env&#95;json* file showing that the **build&#95;number** is changed from NULL to a valid value.
 
 		"host-ip": "192.168.122.1", 
 		"hp": { 
 		     "build_number": 11, 
 		     "installed_build_number": 11 
 		...
-
-  
-3. Run the installer script to update the overcloud. During the installation, the build specified by build&#95;number is installed.
+4. Run the installer script again to update the overcloud. During the installation, the build specified by build&#95;number is installed.
  
 		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
