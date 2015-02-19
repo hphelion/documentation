@@ -4,6 +4,7 @@ exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins, "unu
 include: [devplatform/stackato/images]
 relative_permalinks: false
 
+#UNDER REVISION
 
 navigation: 
   main:
