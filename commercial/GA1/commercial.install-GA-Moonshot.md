@@ -25,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
 
 # Managing Moonshot Servers
-####
+
 
 To manage HP Moonshot servers you must know the cartridge address and the node
 address (these are also known as the **transit&#95;address** and the **target&#95;address**
