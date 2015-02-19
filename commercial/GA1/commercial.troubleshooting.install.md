@@ -35,7 +35,7 @@ HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of L
 *  [BIOS clocks are not set to correct date and time across all nodes](#BIOS-clocks-are-not-set-to-correct-date)
 *  [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
 *  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
-*  [Failure of Hp_ced_installer.sh](#failure-installer)
+*  [Failure of hp_ced_installer.sh](#failure-installer)
 *  [Failure of Seed Installation](#seed-install-failure)
 
 ##Fatal PCI Express Device Error {#fatal-pci}
@@ -179,7 +179,7 @@ The ce&#95;env&#95;json will be displayed as the sample below.
 		     "build_number": 11, 
 		     "installed_build_number": 11 
 
-  Note that  the build&#95;number is changed from null to the right variable.
+  Note that the `build_number` is changed from null to the right value.
  
 3.Run the installer script to update the overcloud. 
  
@@ -297,7 +297,7 @@ Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what 
 
 **System Behavior/Message**
 
-`Hp_ced_installer.sh` fails because of `baremetal.csv /sda`.
+`hp_ced_installer.sh` fails because of `baremetal.csv /sda`.
 
 
 **Resolution**
