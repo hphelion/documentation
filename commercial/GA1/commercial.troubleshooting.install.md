@@ -92,37 +92,36 @@ If you get this error, perform the following steps:
 <hr>
 
 
-## Failure of Update overcloud {#failure-update-overcloud}
+## Failure of Update on the Overcloud {#failure-update-overcloud}
 
 **System Behavior/Message**
 
 Update overcloud fails with the following error:
 
- `  Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)`
+ `Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)`
 
 **Resolution**
-
 If you get this error, perform the below steps:
 
  1. Log in to Seed.
  
 		ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number. <!-- (CORE-1697) -->
+2. Edit `/root/tripleo/ce_env.json` and update the variables **build&#95;number** and **installed&#95;build&#95;number** to the correct value. <!-- (CORE-1697) -->
 
-	The ce&#95;env&#95;json will be displayed as the sample below. Note that  the build&#95;number is changed from null to the right variable.
+	A sample section of the ce&#95;env&#95;json file showing that the **build&#95;number** is changed from NULL to the correct value.
 
-		  "host-ip": "192.168.122.1", 
-		   "hp": { 
+		"host-ip": "192.168.122.1", 
+		"hp": { 
 		     "build_number": 11, 
 		     "installed_build_number": 11 
+		...
 
   
-3. Run the installer script to update the overcloud. 
+3. Run the installer script to update the overcloud. During the installation, the build specified by build&#95;number is installed.
  
-		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
-During the installation, the number of build&#95;number and installed&#95;build&#95;number that you specified are installed.
 <br>
 <hr>
 
