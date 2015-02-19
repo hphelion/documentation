@@ -64,6 +64,8 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 2. Execute the `kvm-custom-ips.json` file for the undercloud and overcloud nodes using the `source` command. The `source` command sets the environment variables in the JSON file within the current shell. 
 
+	**Note**: You must use the source command to add variables to your existing deployment.
+
 		source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json 
 
 5. Start the seed VM installation by entering the following command:
@@ -109,7 +111,8 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 12. **[Optional]** Use IPMItool to verify that network connectivity from the seed VM to each of the baremetal servers in your `baremetal.csv` is working.
 
-13. Use the IPMItool to manually power off each baremetal system specified in your `baremetal.csv` file before proceeding with the installation. 
+13. The system will power off your computers. If you wish, you can optionally use the IPMI tool to manually power off each baremetal system specified in your `baremetal.csv` file before proceeding with the installation.
+
 
 	**IMPORTANT:** Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.
 
@@ -120,6 +123,33 @@ Make sure you have met all the hardware requirements and have completed the requ
 14. Install and configure the undercloud and overcloud by running the following command from `/root`. This step creates a log file for the installation process which could be useful for debugging.
 
 		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee cloud_install.log
+During this step, several important activities automatically occur:
+
+	a. The input data is processed and validated. 
+	For example:
+
+	* Hardware details in baremetal.csv are validated, where possible
+
+	* Node assignments are checked
+
+	* IP address ranges are checked for validity
+
+	* NTP servers are validated
+
+	b. The seed is customized and its OpenStack services are configured and started.The undercloud node is registered with the seed’s ironic service.
+	
+	c. The undercloud is deployed, booted, and its heat stack is configured.
+	The undercloud OpenStack services are then configured and started.
+	The overcloud nodes are registered with the undercloud’s ironic service.
+
+	d. The overcloud controller heat stack is configured, booting and deploying images to the Overcloud Controller nodes and the SwiftStorage nodes.
+
+	e. Booting and images are deployed to the individual stacks for the Overcloud compute and other nodes.
+
+	f. Once all the overcloud heat stacks are configured, the overcloud is configured.
+
+	g. Finally a demo VM is launched in the overcloud as a verification step.
+
 
 	Output messages will indicate when the undercloud and overcloud controllers become active, services are created and configured, and other aspects of the installation are executed. 
 
