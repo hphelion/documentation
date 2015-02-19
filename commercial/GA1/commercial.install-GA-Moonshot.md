@@ -60,7 +60,7 @@ This command gives the Cartridge address:
 
 Consult [HP Moonshot iLO documentation](http://h50146.www5.hp.com/products/software/oe/linux/mainstream/support/whitepaper/pdfs/c03933550-1.pdf) to determine the values needed.
 
-...
+
 [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
 
 <!--Tom hancock-->
