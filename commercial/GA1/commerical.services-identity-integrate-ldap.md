@@ -31,7 +31,7 @@ PageRefresh();
 
 The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes.	 LDAP integration can be performed during the HP Helion OpenStack installation process.
 
-Multiple authentication backends are supported, using Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
+Multiple authentication backends are supported, using the Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
 
 The process for integrating LDAP during installation involves the following steps:
 
@@ -42,7 +42,7 @@ The process for integrating LDAP during installation involves the following step
 ## Prerequisites {#pre}
 Before starting the integration, make sure your environment meets the following prerequisite:
 
-- LDAP server is up and running in a network accessible from the overcloud.
+- LDAP server is up and running and is network accessible from the overcloud.
 
 
 ## Generate configuration files {#config}
@@ -55,7 +55,7 @@ The LDAP integration process uses two configuration files:
 
 ### LDAP connection settings {#connect}
 
-The LDAP server connection settings are contained in the `overcloud_keystone_ldap.json` file, which is a well-formed JSON file. 
+The LDAP server connection settings are contained in the `overcloud_keystone_ldap.json` file, which is a well-formed JSON file.
 
 It must be a well-formed, syntax-error free json file.
 

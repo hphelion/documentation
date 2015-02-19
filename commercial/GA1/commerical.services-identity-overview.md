@@ -74,7 +74,7 @@ Each domain defines a namespace where certain API-visible name attributes exist,
 * Project Name. Unique within the owning domain.
 * Group Name. Unique within the owning domain.
 
-Each domain can point to its own identity source. For example, LDAP, MySQL, can be identity sources.
+Each domain can point to its own identity source.  For example, LDAP, Active Directory or the local Keystone MySQL can be configured as identity sources on a per domain basis.
 
 **Important:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [OpenStack CLI](http://docs.openstack.org/cli-reference/content/openstackclient_commands.html) and [API](http://api.openstack.org/api-ref-identity-v3.html). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
