@@ -5,7 +5,6 @@ include: [devplatform/stackato/images]
 relative_permalinks: false
 
 
-
 navigation: 
   main:
   - text: HP Helion Documentation
