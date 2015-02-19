@@ -67,7 +67,7 @@ YMLFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.yml" `
 do 
 
-	if [[ -n $(grep -vL "#PUBLISH|#UNDER REVISION" $i) ]]; 
+	if [[ -n $(grep -vl "#PUBLISH|#UNDER REVISION" $i) ]]; 
  
 	then
 		 
