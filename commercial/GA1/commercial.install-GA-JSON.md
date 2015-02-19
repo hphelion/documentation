@@ -336,7 +336,7 @@ The following values appear under `floatingip` for configuring floating IPs:
 Then the `start`, `end`, and `cidr` cannot be anything in the form of 10.x.y.z.  The address range of the default private network is defined by the variable `fixed_range_cidr`.
 
 
-**Configure a second network** 
+## Configure a second network 
 
 A second network can be configured for the floating ip pool by setting `overcloud_public_interface` to a physically configured VLAN. The vlan name used as the `overcloud_public_interface` is expected to be of the form "vlan" followed by the vlan id ( ex. vlan101 ).
 

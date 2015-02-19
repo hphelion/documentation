@@ -32,6 +32,7 @@ Edit the [JSON file](/helion/openstack/install/envars/) based on the applicable 
 
 - [Environment variables file for a KVM install](#kvm)
 - [Environment variables file for a ESX install](#esx)
+- [Example JSON file](#example)
 
 ## Environment variables file for a KVM install ## {#kvm}
 
@@ -237,7 +238,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
 
-## Example JSON file
+## Example JSON file {#example}
 
 The following is an example of a richly configured JSON environment file for a KVM environment.
 
