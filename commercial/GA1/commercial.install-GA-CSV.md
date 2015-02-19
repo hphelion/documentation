@@ -37,7 +37,7 @@ There must be one entry in this file for each baremetal system you intend to ins
 
 Use the following format in the `baremetal.csv` file.
 
-`<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_management>`
+&lt;mac&#95;address&gt;,&lt;user&gt;,&lt;password&gt;,&lt;ip&#95;address&gt;,&lt;no&#95;of&#95;cpus&gt;,&lt;memory&#95;MB&gt;,&lt;diskspace&#95;GiB&gt;,&lt;role&gt;,&lt;power&#95;management&gt;
 
 Where `<mac_address>` is the MAC address of the network interface from which to boot. **Do not use the iLO NIC interface.**
 
