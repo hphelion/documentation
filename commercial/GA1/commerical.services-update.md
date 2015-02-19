@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Update"
-permalink: /helion/openstack/update/overview/101/
+permalink: /helion/openstack/update/overview/11/
 product: commercial.ga
 
 ---
