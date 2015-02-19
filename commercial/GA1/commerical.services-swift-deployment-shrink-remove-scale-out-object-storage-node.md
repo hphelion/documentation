@@ -93,6 +93,19 @@ Perform the following steps to remove the disks from ring:
 
 		ringos copy-ring -s /root/ring-building/object-1.ring.gz -n <Swift nodes IP address>
 
+10. Copy `object-1.builder` file to all the nodes.
+    
+    	ringos copy-ring -s /root/ring-building/object-1.builder -n <Swift nodes IP address>	
+
+	**Note**: The `.buldier` and `.ring.gz` files **must** be present in the Swift nodes.
+
+	You can also copy the the ring files and the builder files to all the swift nodes using the following commands:
+
+		# ringos copy-ring -s /root/ring-building/\*.ring.gz -n all
+
+		# ringos copy-ring -s /root/ring-building/object-1.builder -n all
+
+
 10. Repeat steps from **6 - 9** and decrease the weight each time until the weight becomes 0 for each disk.[Set the weight to 50, then 25, and then 0 (w= 50, 25, 0).]
 
 11. Once weight has been set to 0, remove the disk from the ring.

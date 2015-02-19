@@ -64,8 +64,14 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
  
 		tar -zxvf hp_helion_devplatform_commercial.tar.gz
  
-3. Create, navigate to, and populate a *dev-platform-installer* directory inside the dev-platform-installer.
- 
+3. Navigate to the *dev-platform-installer* directory inside the dev-platform-installer.
+
+		cd dev-platform-installer  
+
+5. Populate the `dev-platform-installer.conf` file. For example:
+
+		testa@cloudosqa:~/dev-platform-installer$ cat dev-platform-installer.conf [DEFAULT] region=regionOne username=admin password=<password> tenant_name=admin tenant_id=<tenant ID> auth_url=https://<identity IP>:5000/v2.0 codn_username=<CODN username> codn_password=<CODN passsword> ca_cert=/usr/local/share/ca-certificates/ephemeralca-cacert.crt testa@cloudosqa:~/dev-platform-installer$
+  
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 

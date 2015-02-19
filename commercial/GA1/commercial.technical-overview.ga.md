@@ -59,12 +59,14 @@ The following table outlines the functionality of HP Helion OpenStack services b
 <tr style="background-color: white; color: black;">
 	<td><b>Compute Operations (Nova)</b></td>
 	<td>The HP Helion OpenStack Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <br><br> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <br><br>
+Users can also boot a VM using a Cinder volume as the root partition.<br><br>
 	<a href="/helion/openstack/services/compute/overview/">Learn more</a> about the Compute Operations service.</td>
     <td> Administrators can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Block Storage<br>Volume (Cinder)</b></td>
-	<td>The HP Helion OpenStack Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <br><br>User can create volumes, attach them to VMs, and take snapshots and backups.
+	<td>The HP Helion OpenStack Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <br><br>User can create volumes, attach them to VMs, and take snapshots and backups.<br><br>
+Users can create a bootable volume and use that to boot a VM.
 	<br><br><a href="/helion/openstack/services/volume/overview/">Learn more </a> about the Volume Operations service.
 	</td>
 	<td>Administrators can deploy StoreVirtual VSA Software Defined Storage, and configure drivers for StoreVirtual and StoreServ 3PAR using the Sirius service. <br><br>

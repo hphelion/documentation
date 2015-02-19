@@ -21,9 +21,9 @@ authors: Jayme P
 
 # HP Helion Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine
 
-The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. it can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
+The Constructor VM is normally a short-lived virtual machine that handles the provisioning of the Application Lifecycle Service (ALS) in an HP Helion OpenStack&reg; public or private cloud. It can also function in a destructor mode to simplify the tear-down of the ALS platform-as-a-system.
 
-Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a *[nova*](http://docs.openstack.org/cli-reference/content/novaclient_commands.html) call with [cloud-init](http://cloudinit.readthedocs.org/en/latest/) [configuration data](http://docs.openstack.org/user-guide/content/inserting_userdata.html) to trigger the Helion ALS construction.  The OpenStack&reg; metadata service is used to communicate ALS construction status back to the Horizon UI.
+Nearly all management tasks for the Constructor VM (CVM) are easily performed from the Horizon web-based management console. Horizon performs a [Nova](http://docs.openstack.org/cli-reference/content/novaclient_commands.html) call with [cloud-init](http://cloudinit.readthedocs.org/en/latest/) [configuration data](http://docs.openstack.org/user-guide/content/inserting_userdata.html) to trigger the Helion ALS construction.  The OpenStack metadata service is used to communicate ALS construction status back to the Horizon UI.
 
 There are a few features and [troubleshooting](#troubleshooting) options, however, that cannot be managed from within the Horizon UI. Currently, it does not support:
 
@@ -36,7 +36,7 @@ The CVM self-terminates by default. This final self-termination action can be [o
 The CVM may be launched using several different methods. This flexibility allows you to choose the best method for initial ALS Helion system construction. The methods are as follows:
 
   1. Use the [Horizon wizard](#consoleboot). This is the simplest method.
-  1. Use a *nova* CLI and a *cloud-init* configuration file (JSON).  This allows for reproducible configuration, growth options, and troubleshooting. 
+  1. Use a *Nova* CLI and a *cloud-init* configuration file (JSON).  This allows for reproducible configuration, growth options, and troubleshooting. 
   1. Boot the CVM without a *cloud-init* configuration file in a Helion [private cloud](#privatecloud).  After SSH login to the CVM the user will be prompted to run a command line script to create (and possibly edit) an .ini style configuration file.
   1. Boot the CVM without a *cloud-init* configuration file in Helion  [public cloud](#publiccloud). After SSH login to the CVM the user will be prompted to run a command line script that will in turn launch the ALS Helion construction.  This allows a user to produce a Helion ALS system that consumes minimal resources in the public cloud. 
 
@@ -56,9 +56,9 @@ This method passes the configuration and environment variable values via a [*clo
 
   1. Perform a *nova* call with a *cloud-init* JSON file.
   1. The CVM boots.
-3. The */etc/rc.local* script runs and detects the *cloud-init* file.
-5. The *cloud-init* file is automatically converted from JSON to ConfigParser format and renamed *cluster.conf*.
-6. The *assemble.py* script runs, using the values contained in *cluster.conf* to build the Helion ALS system.
+  2. The */etc/rc.local* script runs and detects the *cloud-init* file.
+  3. The *cloud-init* file is automatically converted from JSON to ConfigParser format and renamed *cluster.conf*.
+  4. The *assemble.py* script runs, using the values contained in *cluster.conf* to build the Helion ALS system.
 
 Here is an example of the *cloud-init* JSON file used for Helion ALS construction. There are three sections of key-value pairs related to ALS (PaaS), OpenStack (IaaS), and Control of the construction process. This configuration file is passed to the CVM during the boot process.
 
@@ -86,7 +86,7 @@ Here is an example of the *cloud-init* JSON file used for Helion ALS constructio
         "core_volume_size": "0",
         "dea_size": "standard.medium",
         "image_id": "d782c03d-9666-4639-a62f-53b376880120",
-        "image_password": "stackato",
+        "image_password":"",
         "keypair_name": "keypair1",
         "network_id": "0ec616d0-872d-424b-ac27-3b5db55d7fa0",
         "region": "region-a.geo-1",
@@ -112,9 +112,9 @@ Here is an example of the *cloud-init* JSON file used for Helion ALS constructio
 ## Method #3: Boot Without a *cloud-init* Configuration File (Helion private cloud) {#privatecloud}
 During the boot process the CVM will detect that a [*cloud-init*](http://cloudinit.readthedocs.org/en/latest/) configuration file is not present. When the user logs in via SSH, the CVM will prompt the user to run a script which will create a configuration file. This prompt is provided by the system's Message of the Day (motd). 
 
-**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessable IP addresses, and so on.
+**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.
 
-1. Create an instance of the ALS Installer and boot it manually, or perform a *nova* boot without providing a *cloud-init* configuration file.
+1. Create an instance of the ALS Installer and boot it manually, or perform a *Nova* boot without providing a *cloud-init* configuration file.
 2. The CVM boots.
 3. The */etc/rc.local* script runs and does not detect a *cloud-init* configuration file.
 4. The user logs into the CVM via SSH.
@@ -123,12 +123,12 @@ During the boot process the CVM will detect that a [*cloud-init*](http://cloudin
 7. The *assemble.py* script runs automatically, using the values contained in the *cluster.conf* file to build the Helion ALS system.
 8. The CVM terminates. (Unless the termination is [overridden](#disable).)
 
-## Method #4: Boot Without a Configuration File (for public beta) {#publiccloud}
+## Method #4: Boot Without a Configuration File (Helion public cloud) {#publiccloud}
 This is the process used for the [Developer Quick-Start trial](/helion/devplatform/ALS-developer-trial-quick-start/). During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta. 
 
-**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessable IP addresses, and so on.
+**Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.
 
-1. Create an VM instance using the ALS Installer image and boot it manually, or perform a *nova* boot without providing a *cloud-init* configuration file.
+1. Create an VM instance using the ALS Installer image and boot it manually, or perform a *Nova* boot without providing a *cloud-init* configuration file.
 2. The CVM boots.
 3. During the boot process, the */etc/rc.local* script runs and does not detect a *cloud-init* configuration file.
 4. When the user logs in via SSH, the Message of the Day (MOTD) prompts the user to run *trial_configure.py* to produce a *cluster.conf* .ini style configuration file in ConfigParser format.
@@ -224,16 +224,11 @@ grow_cluster = True
 ##Troubleshooting {#troubleshooting}
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
-<th>Failure Condition</th><th>Description</th><th>Resolution</th></tr>
+<td><b>Failure Condition</b></td><td><b>Description</b></td><td><b>Resolution</b></td></tr>
 <tr><td>Error message when clicking the Create Cluster button in the Horizon dashboard.</td><td>Danger: An error occurred. Please try again later.</td><td>
 The Database service is installed, but the API is not responding. Try loading the Database Instances tab in Horizon. If the Database Instances tab fails to load, repair the Database Service.</td></tr>
-<tr><td>Error message when clicking the final button in the Create Cluster Wizard in the Horizon UI.</td><td>Danger: An error occurred. (or similar message)</td><td>1.  Try to boot an ALS Installer image (make sure you open up port 22 in the default security group first) in the Nova Instances tab. </br></br>
-2. If the image doesn't boot, the image is broken (check the size) or Nova is broken.</br></br>
-3. If the image boots and says it's running, try to SSH into it.  If you can't SSH, check the instance's console log in the Horizon Instances UI.  If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</br></br>
-4. If you can SSH in successfully, re-try cluster setup; the cause may be intermittent failures in Horizon/Nova.</td></tr>
-<tr><td>Failure in building cluster step</td><td>Cluster stays in BUILDING state for an extremely long time, or drops to ERROR state.</br></br>OR</br></br>The ALS installer log on  the Installer VM reports 'No route to host'.</td><td>1. Assign a floating IP to the constructor instance and try SSHing to it. </br></br>
-2. If you can't SSH, check the instance's console log in the Horizon Instances UI. If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</br></br>
-3. Boot a couple of other installer images or Debian images in the same network and try to ssh between them.  If you get the "No route to host" error message, Neutron networking is broken.</td></tr>
+<tr><td>Error message when clicking the final button in the Create Cluster Wizard in the Horizon UI.</td><td>Danger: An error occurred. (or similar message)</td><td><p>1.  Try to boot an ALS Installer image (make sure you open up port 22 in the default security group first) in the Nova Instances tab.</p><p>2. If the image doesn't boot, the image is broken (check the size) or Nova is broken.</p><p>3. If the image boots and says it's running, try to SSH into it. If you can't SSH, check the instance's console log in the Horizon Instances UI.  If you see a message about "unable to contact metadata server, falling back", the Nova Metadata service is broken.</p><p>4. If you can SSH in successfully, re-try cluster setup; the cause may be intermittent failures in Horizon/Nova.</td></tr>
+<tr><td>Failure in building cluster step</td><td>Cluster stays in BUILDING state for an extremely long time, or drops to ERROR state.</p><p>OR<p></p>The ALS installer log on  the Installer VM reports 'No route to host'.</td><td><p>1. Assign a floating IP to the constructor instance and try SSHing to it. </p><p>2. If you can't SSH, check the instance's console log in the Horizon Instances UI. If you see a message about "unable to contact metadata server, falling back", the Nova metadata service is broken.</p><p>3. Boot a couple of other installer images or Debian images in the same network and try to ssh between them.  If you get the "No route to host" error message, Neutron networking is broken.</td></tr>
 </table>
 
 ### Disable Self-destruction {#disable}

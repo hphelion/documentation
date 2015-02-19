@@ -28,7 +28,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1: Monitor the Speed of Network Interface Card
 
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the speed of  Network Interface Card (NIC) of the Swift storage node(s).
+The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the speed of  Network Interface Card (NIC) of the all the swift nodes.
 
 
 ##Prerequisites

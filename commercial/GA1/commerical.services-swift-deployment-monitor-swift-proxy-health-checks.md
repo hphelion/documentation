@@ -29,7 +29,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; 1.1: Monitor the Object Storage (Swift) Proxy Health
 
-The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  status of the Swift proxy.
+The ***Icinga*** service, which runs in the undercloud, helps cloud admin monitor the  status of the Swift proxy of all swift nodes.
 
 
 ##Prerequisites
