@@ -37,22 +37,26 @@ The Upstart for the services also logs data at */var/log/upstart*
 
 ###Modifying
 
-Change the level of debugging in Ceilometer by editing the *ceilometer.conf* file located at **/etc/ceilometer/ceilometer.conf**. To log the maximum amount of information, change the **debug** and **verbose** entries to *True*.
+Change the level of debugging in Ceilometer by editing the *ceilometer.conf* file located at */etc/ceilometer/ceilometer.conf*. To log the maximum amount of information, change the **level** entry to **DEBUG**.
 
-**Note**: When the logging level for a service is changed, that service must be re-started before the changes will take effect.
+**Note**: When the logging level for a service is changed, that service must be re-started before the change will take effect.
 
 This is an excerpt of the *ceilometer.conf* configuration file showing where to make changes:
 
-	[DEFAULT]
-	policy_file = /etc/ceilometer/policy.json
-	debug = False
-	verbose = False
-	notification_topics = notifications
-	 
-	...
-	 
-	[database]
-	connection = mysql://root:nova@127.0.0.1/ceilometer?charset=utf8
+	[loggers]
+	 keys: root
+	
+	[handlers]
+	 keys: watchedfile, logstash
+	
+	[formatters]
+	 keys: context, logstash
+	
+	[logger_root]
+	 qualname: root
+	 handlers: watchedfile, logstash
+	 level: NOTSET
+
 	
 ##Messaging/Queuing Errors {#qerrors}
 

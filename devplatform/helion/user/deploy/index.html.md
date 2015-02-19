@@ -29,15 +29,13 @@ is done primarily using [Buildpacks](/als/v1/user/deploy/buildpack/). A special 
 
 ##Targeting & Authenticating {#targeting-authenticating}
 
-Before deploying an app, the client must first target Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the
-Management Console. For example:
+Before deploying an app, the client must first [target](/als/v1/user/reference/client-ref/gettingstarted/#command-target) Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the Management Console. For example:
 
     helion target api.example.com
     Successfully targeted to [https://api.example.hphelion.com]
     ...
 
-Use the `helion login` command to authenticate
-with your username and password:
+Use the [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login) command to authenticate with your username and password:
 
     helion login <username>
     Attempting login to [https://api.example.hphelion.com]
@@ -110,8 +108,7 @@ The output of the push command will be something like:
     OK
     http://env.heli.on/ deployed
 
-The Helion client will show staging and running
-logs for the deployment process. To inspect these logs after deployment has finished, use the [*helion logs*](/als/v1/user/reference/client-ref/#command-logs) command.
+The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the [logs](/als/v1/user/reference/client-ref/information/#command-logs) command.
 
 ##Language-Specific Deployment {#language-specific-deployment}
 
@@ -164,7 +161,7 @@ changes.
 Application Lifecycle Service push[](#helion-push "Permalink to this headline")
 -------------------------------------------------------------
 
-The [*helion push*](/als/v1/user/reference/client-ref/#command-push) command
+The [helion push](/als/v1/user/reference/client-ref/management/#command-push) command
 creates (or updates) applications on Application Lifecycle Service. It negotiates with the
 API endpoint to reserve application URLs, allocate application
 instances, provision data services, upload application code, and
@@ -176,12 +173,11 @@ The command will prompt for options or use those specified in a [*manifest.yml*]
 
 The application name must be a valid [hostname label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names) meaning that it contains only alphanumeric characters and hyphens.
 
-The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the [*helion start*](/als/v1/user/reference/client-ref/#command-start) command or the Start
-button in the [Management Console](/als/v1/admin/console/customize/#user-console-welcome).
+The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the [helion start](/als/v1/user/reference/client-ref/management/#command-start) command or the Start button in the [Management Console](/als/v1/admin/console/customize/#user-console-welcome).
 
 The client will display staging logs while pushing the application but
 will generally exit before any application logs are visible. To view the
-application logs, use the [*helion logs*](/als/v1/user/reference/client-ref/#command-logs) command.
+application logs, use the [helion logs](/als/v1/user/reference/client-ref/information/#command-logs) command.
 
 ## Allowed File Types {#allowed-file-types}
 
@@ -358,9 +354,7 @@ round robin between available instances of both versions:
 
 As you gain confidence with the new revision, you can increase the
 number of instances of 'myapp-v2' (i.e. phasing that version into
-production rather than cutting over) and eventually
-[*unmap*](/als/v1/user/reference/client-ref/#command-unmap) 'example.com'
-from the original 'myapp'.
+production rather than cutting over) and eventually [unmap](/als/v1/user/reference/client-ref/management/#command-unmap) 'example.com' from the original 'myapp'.
 
 ##Best Practices {#best-practices}
 
@@ -426,7 +420,7 @@ While both versions of the application are live and mapped to the same
 production URL, the router will round-robin web requests to this URL
 between both versions.
 
-Next, unmap the production URL from the first app:
+Next, [unmap](/als/v1/user/reference/client-ref/management/#command-unmap) the production URL from the first app:
 
     helion unmap customertracker-v1 customertracker.example.com
 
