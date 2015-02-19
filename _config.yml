@@ -280,7 +280,9 @@ navigation:
   - text: Support Matrix
     url: /helion/openstack/support-matrix/ 		
   - text: Installation Overview
-    url: /helion/openstack/install/overview/	
+    url: /helion/openstack/install/overview/
+  - text: Update Overview
+    url: /11helion/openstack/update/overview/101/
   - text: Network Security
     url: /helion/openstack/install/security/
   - text: Back Up and Restore
