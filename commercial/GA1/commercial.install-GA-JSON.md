@@ -24,7 +24,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
 
@@ -375,7 +375,7 @@ For example:
 			},
 
 
-[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#envars).
 
 
 
