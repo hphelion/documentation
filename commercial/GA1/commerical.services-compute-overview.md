@@ -3,9 +3,18 @@ layout: default
 title: "HP Helion OpenStack&#174; Compute Service Overview"
 permalink: /helion/openstack/services/compute/overview/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Systems Administrator 
+role2: System Engineer
+role3: Cloud Administrator
+role4: Network Administrator
+role5: Storage Engineer
+Role6: Security Engineer
+authors: Jayme P
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 <script>
 
@@ -23,23 +32,24 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Compute Service Overview #
 
-The HP Helion OpenStack Compute Service leverages the  OpenStack compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
+The HP Helion OpenStack Compute Service leverages the OpenStack Nova compute service to instantiate virtual machine instances on publicly accessible physical machines hosted in your cloud environment.
 
 Compute allows you to work with **flavors**, which are unique combinations of disk space, memory capacity, and CPU; **images**, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and **servers**, which are virtual instances created by combining a flavor and an image.
 
 A variety of flavors and images are provided by the HP Helion OpenStack Compute Service to create a wide mix of servers.
 
-##Key Terms
+## Storing Metadata on a Configuration Drive {#configdrive}
 
-Key terms include:
+The HP Helion OpenStack compute service can be configured to write metadata to a special configuration drive. This configuration drive automatically attaches to the instance when it boots. When the instance boots, it mounts the drive and reads files from it to get information that is normally available through the metadata service. This metadata is different from the user data.
 
-- **Flavor** - A unique combination of disk space, memory capacity, and CPU.
+One reason to use a configuration drive is to pass networking configuration information. For example, if you do not want to use DHCP, you could pass the IP address for the instance through the configuration drive, which the instance would mount and access before you configure the network settings for the instance.
 
-- **Image** - A collection of files used as a base installation, typically an operating system such as Ubuntu 10.10 or something similar.
+Any modern guest operating system that is capable of mounting an ISO 9660 or VFAT file system can use a configuration drive. However, by default, ESX and KVM deployments do not have **force&#095;config_drive** set to true(or always) in the Compute (Nova) service configuration.
 
-- **Server** - An instance created out of a flavor and an Image.
+The process is the same whether you are using the KVM or ESX hypervisor.
+To use a configuration drive, set the **config_drive** option to TRUE in the Horizon console and then boot an instance of the image.
 
-## Working with the Compute Service ##
+##Working with the Compute Service ##
 
 To [perform tasks using the Compute service](#howto), you can use the dashboard, API or CLI.
 
@@ -55,7 +65,6 @@ You can use a low-level, raw REST API access to the HP Compute service. See the 
 You can use the command-line interface software to access HP Compute. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
-
 
 <!---
 ## How To's with the HP Helion OpenStack Compute Service<a name="howto"></a>
