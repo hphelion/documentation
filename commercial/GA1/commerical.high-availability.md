@@ -37,7 +37,7 @@ This page covers the following topics:
         * [Handling Node Failure](#handling-node-failure)
         * [Handling Network Partitions](#handling-network-partition)
             * [MySQL Galera Cluster](#mysql-galera)
-    * [Singleton Services on Management Controller](#singleton-services)
+    * [Singleton Services](#singleton-services)
         * [Cinder Volume](#cinder-volume)
         * [Sherpa](#sherpa) 
         * [nova-consoleauth](#nova-console-auth) 
@@ -55,35 +55,34 @@ This page covers the following topics:
 * [What is not Highly Available?](#not-ha)
 * [More information](#more-info)
 
-##High Availability concepts overview {#concepts-overview}
+##High Availability Concepts Overview {#concepts-overview}
 
-Highly Available Cloud Services ensures that cloud resources are always available on request, resulting in uninterrupted operations for users. 
+Highly Available Cloud Services ensures that at least a minimum of cloud resources are always available on request, which results in uninterrupted operations for users. 
 
 Cloud users are able to provision and manage the compute, storage, and network infrastructure resources at any given point in time and the Horizon Dashboard and the OpenStack APIs must be reachable and be able to fulfill user requests. 
 
 <a href="javascript:window.open('/content/documentation/media/Ha-resilient-cloud-infrastructure.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Resilient Cloud Infrastructure (opens in a new window)</a> 
 
-The infrastructure that provides these features is called a **Highly Available Cloud Infrastructure**.
 
-Once the Compute, Storage, Network resources are deployed, users expect these resources to be reliable in the following ways:  
+Once the Compute, Storage, and Network resources are deployed, users expect these resources to be reliable in the following ways:  
 
 * If the Nova-Compute KVM Hypervisors/servers hosting the project compute virtual machine(VM) dies and the compute VM is lost along with its local ephemeral storage, the re-launching of the dead compute VM succeeds because it launches on another Nova-Compute KVM Hypervisor/server.
 
-    * If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
+* If ephemeral storage loss is undesirable, the compute VM can be booted from the Cinder volume.
 
 * Data stored in Block Storage service volumes is always available and volumes are rarely lost by the service provider.
 
-* Data stored by the Object Operation service is always available and is rarely lost by the cloud service provider.
+* Data stored by the Object service is always available and is rarely lost by the cloud service provider.
 
 * Network resources such as routers, subnets, and floating IP addresses provisioned by the Networking Operation service are rarely lost by the cloud service provider and will continue to provide a network path to the Compute VMs. 
 
-The infrastructure that provides these features is called a Highly Available Cloud Infrastructure.
+The infrastructure that provides these features is called a **Highly Available Cloud Infrastructure**.
 
-**Highly Available Cloud-Aware Tenant Workloads**
+### Highly Available Cloud-Aware Tenant Workloads ###
 
 HP Helion OpenStack Compute hypervisors do not support transparent high availability for user applications; as such, the project application provider is responsible for deploying their applications in a redundant and highly available manner, using multiple VMs spread appropriately across availability zones, routed through the load balancers and made highly available through clustering. 
 
-These are known as Highly Available Cloud-Aware Tenant Workloads.
+These are known as **Highly Available Cloud-Aware Tenant Workloads**.
 
 ### Scope of High Availability: Protection against Single Points of Failure(SPOF) {#scope-ha}
 
@@ -172,11 +171,19 @@ It is important for the overcloud HA setup to tolerate network failures, specifi
 
 #####MySQL Galera Cluster {#mysql-galera}
 
-The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is a partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the control plane. As a result, requests can only be satisfied on Controller1 or management controller. Controller0 will continue to attempt to rejoin the cluster:
+The handling of network partitions is illustrated in the diagram below. Galera has a quorum mechanism so when there is a partition in the cluster, the primary or quorate partition can continue to operate as normal, whereas the non-primary/minority partition cannot commit any requests. In the example below, Controller0 is partitioned from the rest of the control plane. As a result, requests can only be satisfied on Controller1 or Controller2. Controller0 will continue to attempt to rejoin the cluster:
 
 <a href="javascript:window.open('/content/documentation/media/mysql-galera-cluster.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">MySQL Galera Cluster Diagram(opens in a new window)</a>
 
 When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.
+
+### Singleton Services###
+There are three Controllers:
+
+1. OvercloudController0 
+1. OvercloudController1
+1. OvercloudController2
+
 
 ####Cinder-Volume {#cinder-volume}
 
@@ -185,7 +192,7 @@ Due to the single threading required in both cinder-volume and the drivers, the 
 
 <a href="javascript:window.open('/content/documentation/media/ha-cinder-volume.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Cinder Volume Diagram(opens in a new window)</a>
 
-Cinder-volume is deployed on all three controller nodes, but kept active on only one node at a time. By default, cinder-volume is kept active on the overcloud management controller. If the management controller fails, you must enable and start the cinder-volume service on one of the other overcloud controller nodes, until it is restored. Once the management controller is restored, you must shut down the Cinder volume service from all other nodes and start it on the management controller to ensure it runs as a singleton.
+Cinder-volume is deployed on all three controller nodes, but kept active on only one node at a time. By default, cinder-volume is kept active on the overcloud controller. If the controller fails, you must enable and start the cinder-volume service on one of the other overcloud controller nodes, until it is restored. Once the  controller is restored, you must shut down the Cinder volume service from all other nodes and start it on the controller to ensure it runs as a singleton.
  
 Since cinder.conf is kept synchronized across all the 3 nodes, Cinder volume can be run on any of the nodes at any given time. Ensure that it is run on only one node at a time.
 
@@ -205,17 +212,17 @@ Since cinder.conf is kept synchronized across all the 3 nodes, Cinder volume can
 
 ####Sherpa {#sherpa}
 
-You must take periodic backups of the Sherpa service since it does maintain some state information on local disk storage on the management controller. 
-If the management controller fails, Sherpa becomes unavailable until you rebuild or restore the Management Controller. After restoring the management controller, you should restore the Sherpa state from its latest backup.
+You must take periodic backups of the Sherpa service since it does maintain some state information on local disk storage on the controller. 
+If the controller fails, Sherpa becomes unavailable until you rebuild or restore the controller. After restoring the controller, you should restore the Sherpa state from its latest backup.
 
-####Nova console-auth {#nova-console-auth}
+####Nova consoleauth {#nova-consoleauth}
 
-If the management controller fails, the Nova console-auth service will become unavailable and users will not be able to connect to their VM consoles via VNC. The service will be restored once you restore the management controller.
+If the controller fails, the Nova consoleauth service will become unavailable and users will not be able to connect to their VM consoles via VNC. The service will be restored once you restore the  controller.
 
 ###Rebuilding or Replacing failed Controller Nodes {#replace-rebuild}
 
 As described above, the three node controller cluster provides a robust, highly available control plane of OpenStack services. 
-Any one of the controller servers can be shut down for a short duration for maintenance activities without impacting cloud service availability. 
+Either OvercloudController1 or OvercloudController2 servers can be shut down for a short duration for maintenance activities without impacting cloud service availability. (OvercloudController0 cannot be shut down without affecting cloud service availability.)
 
 **Note**: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.
 
@@ -298,7 +305,8 @@ You can configure your Swift Rings by specifying a target zone for each drive th
  
 Neutron Netwoking in HA covers the following:
 
-1. Neutron Server (API) and its underlying MySQL and RabbitMQ are HA using HAproxy, Galera and Mirrored queue technologies for clustering.
+1. Neutron Ser
+2. ver (API) and its underlying MySQL and RabbitMQ are HA using HAproxy, Galera and Mirrored queue technologies for clustering.
 
 2. With the advent of DVR, the Neutron L3 agent no longer lives on central controller nodes, but is distributed and runs on each Compute node, such that, if it fails, its impact is only limited to VMs within that compute node. (do you have some pointer we could refer the user for further info on DVR concepts)
 
@@ -310,7 +318,7 @@ Neutron Netwoking in HA covers the following:
 ##Highly Available Cloud Applications and Workloads {#ha-workloads}
 Projects writing applications to be deployed in the cloud must be aware of the cloud architecture and potential points of failure and architect their applications accordingly for high availability.
 
-Some of guidelines for consideration:
+Some guidelines for consideration:
 
 1.    Assume intermittent failures and plan for retries 
 
@@ -324,19 +332,19 @@ Some of guidelines for consideration:
 
 2.    Build redundancy into your application tiers
 
-       * Servers running your VM instances can die 
+       * Servers running your VM instances can die. 
 
-      *    Replicate VMs containing stateless services such as Web application tier or Web service API tier and put them behind load balancers (you must implement your own HA Proxy type load balancer in your application VMs until HP Helion OpenStack delivers the LBaaS service)
+      *    Replicate VMs containing stateless services such as Web application tier or Web service API tier and put them behind load balancers (you must implement your own HA Proxy type load balancer in your application VMs until HP Helion OpenStack delivers the LBaaS service).
   
-      *     Boot the replicated VMs into different Nova availability zones 
+      *     Boot the replicated VMs into different Nova availability zones.
 
       *    If your VM stores state information on its local disk (Ephemeral Storage), and you cannot afford to lose it, then boot the VM off a Cinder volume.
  
       *    Take periodic snapshots of the VM which will back it up to Swift through Glance.
 
-      * Your data can get corrupted
+      * Your data on ephemeral may get corrupted (but not your backup data in Swift and not your data on Cinder volumes).
 
-      * Take regular snapshots of Cinder volumes and also back up Cinder volumes or your data exports into Swift
+      * Take regular snapshots of Cinder volumes and also back up Cinder volumes or your data exports into Swift.
 
 3. Instead of rolling your own highly available stateful services, use readily available HP Helion OpenStack platform services such as:
 

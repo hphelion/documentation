@@ -1195,7 +1195,7 @@ The following information provides details about the Updates and Extensions pane
 
 ### Updates and Extensions Overview
 
-The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Cloud OS Distribution Network (CODN) 
+The updates and extensions feature allows you to connect to, list, and retrieve hot fixes and updates from the HP Helion Distribution Network (HDN) 
 and apply them to your HP Cloud OS environment. In this topic, such hot fixes and updates are referred to as *content packages*.
 
 ### Updates and Extensions Page
@@ -1294,7 +1294,7 @@ The following table describes the Configure dialog UI elements:
 
 <tr style="background-color: white; color: black;">
 <td style="min-width:150px;"> <b>User Name</b>  </td>
-<td> Enter the email address that you entered when you set up your account to access the HP Cloud OS Distribution Network (CODN). </td>
+<td> Enter the email address that you entered when you set up your account to access the HP Helion Distribution Network (HDN). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">

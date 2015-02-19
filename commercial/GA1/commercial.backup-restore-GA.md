@@ -556,6 +556,11 @@ If the admin user password was changed from the original password created during
 8. Open the `/root/stackrc` file.
 9. Update the `OS_PASSWORD=` line with the new password and save the file.
 
+
+## For more information ##
+
+For information on Disaster Recovery (DR) and Business Continuity Planning (BCP) plans, see [Disaster Recovery](/helion/openstack/disaster/recovery/).
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 

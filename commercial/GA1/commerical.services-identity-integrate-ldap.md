@@ -6,7 +6,7 @@ product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
-authors: Michael B, 
+authors: Michael B, Meera B,
 
 ---
 <!--UNDER REVISION-->
@@ -29,37 +29,39 @@ PageRefresh();
 
 # HP Helion OpenStack&reg;: Integrate the Identity Service (Keystone) with LDAP/AD 
 
-The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP integration must be performed during the HP Helion OpenStack installation process.
+The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes.	 LDAP integration can be performed during the HP Helion OpenStack installation process.
 
-Multiple authentication backends are supported, using Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
+Multiple authentication backends are supported, using the Keystone Domain-Specific Configuration feature. Separate authentication domains can be created to authenticate users on single LDAP server with different filters, or on different LDAP servers.
 
-The process for integrating LDAP involves the following steps:
+The process for integrating LDAP during installation involves the following steps:
 
 - [Verify prerequisites](#pre)
 - [Generate configuration files](#config)
 - [Include the configuration files in the installation](#install)
 
 ## Prerequisites {#pre}
-Before starting the integration, review the following prerequisites:
+Before starting the integration, make sure your environment meets the following prerequisite:
 
-- LDAP server is up and running in a network accessible from the overcloud.
+- LDAP server is up and running and is network accessible from the overcloud.
 
 
 ## Generate configuration files {#config}
 
-The LDAP integration process requires two configuration files:
+The LDAP integration process uses two configuration files:
 
 - [LDAP server connection settings](#connect)
-- Keystone CA storage and signing key/certificate file
+- [Keystone CA storage and signing key/certificate file (Optional)](#keystone)
 
 
 ### LDAP connection settings {#connect}
 
-Create overlcoud_keystone_ldap.json file which contains the LDAP server connection settings. 
+The LDAP server connection settings are contained in the `overcloud_keystone_ldap.json` file, which is a well-formed JSON file.
 
 It must be a well-formed, syntax-error free json file.
 
-Section names, supported options and possible values are described in Openstack Identity Service documentation. Here are some most important:
+Section names, supported options and possible values are described in [OpenStack Identity Service documentation](/helion/openstack/services/identity/overview/). The following table lists several important values:
+
+See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overcloud_keystone_ldap.json` file.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
@@ -81,10 +83,10 @@ Section names, supported options and possible values are described in Openstack 
 	<td>[ldap]</td><td> </td><td> </td><td> </td>
 	</tr>
 	<tr>
-	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>Cn</td>
+	<td>group_id_attribute</td><td>(StrOpt) LDAP attribute mapped to group id.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
-	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>Cn</td>
+	<td>group_name_attribute</td><td>(StrOpt) LDAP attribute mapped to group name.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
 	<td>group_objectclass</td><td>(StrOpt) LDAP objectclass for groups.</td><td>group</td><td>posixGroup</td>
@@ -117,10 +119,10 @@ Section names, supported options and possible values are described in Openstack 
 	<td>user_allow_update</td><td>(BoolOpt) Allow user updates in LDAP backend.</td><td>False</td><td>False</td>
 	</tr>
 	<tr>
-	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>Cn</td>
+	<td>user_id_attribute</td><td>(StrOpt) LDAP attribute mapped to user id.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
-	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>Cn</td>
+	<td>user_name_attribute</td><td>(StrOpt) LDAP attribute mapped to user name.</td><td>cn</td><td>cn</td>
 	</tr>
 	<tr>
 	<td>user_objectclass</td><td>(StrOpt) LDAP objectclass for users.</td><td>user</td><td>Person</td>
@@ -157,17 +159,16 @@ Section names, supported options and possible values are described in Openstack 
 	</tr>
 	</table>
 
-See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overlcoud_keystone_ldap.json` file.
 
-## Keystone CA storage and signing key/certificate files
+## Keystone CA storage and signing key/certificate files {#keystone}
 
-LDAP server might require all connections to be secured though the TLS protocol. Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
+LDAP server might require all connections to be secured though the [TLS protocol](/helion/openstack/tls/). Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
 
-To turn this feature on:
+To activate this feature:
 
-1. Set options use_tls, tls_req_cert and tls_cacertfile appropriately in overcloud_keystone_ldap.json file described above.
+1. Set options `use_tls`, `tls_req_cert` and `tls_cacertfile` appropriately in the `overcloud_keystone_ldap.json` file described above.
 
-2. Create overcloud-env.json file with the following content:
+2. Create the `overcloud-env.json` file with the following content:
 
 		{
 	        "parameters": {
@@ -177,7 +178,7 @@ To turn this feature on:
 	        }
 	    }
 
-	The set of CA Root Certificates set mentioned above should contain root certificates for all LDAP servers, for which certificate validation set to "demand" or "allow".
+	The set of CA Root Certificates set mentioned above should contain root certificates for all LDAP servers, for which certificate validation set to `demand` or `allow`.
 
 3. Change `overcloud-env.json` file access permissions to `0600`:
 

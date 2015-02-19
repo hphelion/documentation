@@ -35,7 +35,7 @@ Before you can begin your Quick Start Developer Trial, you will need to do three
 
 1. Register for your free <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account.
 2. Download a copy of the ALS Constructor virtual machine image from your public cloud account.
-3. [Download and install](/als/v1/client/download) the *cfmgmt* command-line tool appropriate for your operating system.
+3. [Download and install](/als/v1/client/download) the *cf-mgmt* command-line tool appropriate for your operating system.
 
 If you don't already have a user account on the <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>, take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">free trial offer</a> to sign up now. You will be asked to provide a phone number for verification and a credit card during registration, but there is no charge. Please keep your username and password handy as you will be asked for them during installation.
 
@@ -65,20 +65,20 @@ If you don't already have a user account on the <a href="https://horizon.hpcloud
 		
 	<br />**Note**: For more details on key pairs in the public cloud, please read [the HPCloud Community article](http://community.hpcloud.com/article/managing-your-key-pairs-0).	<br />
 
-8. Open a terminal window and change directory to the location where you installed the *cfmgmt* command-line tool.
+8. Open a terminal window and change directory to the location where you installed the *cf-mgmt* command-line tool.
 9. Run the following commands:
  
 		source <path to openstackrc file>
-		./cfmgmt create-cluster \
-		keypair-name <name of keypair created earlier> \
-		admin-email <emailaddress for admin user> \
-		admin-password <password for admin user> \
-		load trial.yml
+		./cf-mgmt create-cluster \
+		--keypair-name <name of keypair created earlier> \
+		--admin-email <emailaddress for admin user> \
+		--admin-password <password for admin user> \
+		--load trial.yml
 
 ##After Installation {#after}
 The cluster will be running on a single virtual machine in your account that will have the name ending in *cluster1-core*
 
-After the *cfmgmt* tool creates the cluster, it presents you with the ALS Console URL. This URL will have the form *api.<*ipaddress*>.xip.io*  For example: *api.255.255.255.255.xip.io* <br /> Use this URL in your web browser to navigate to the web-based ALS management console and then log in using the first username and first password you specified in step 9. <br />**Note**: When launching the web-based ALS management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
+After the *cf-mgmt* tool creates the cluster, it presents you with the ALS Console URL. This URL will have the form *api.<*ipaddress*>.xip.io*  For example: *api.255.255.255.255.xip.io* <br /> Use this URL in your web browser to navigate to the web-based ALS management console and then log in using the first username and first password you specified in step 9. <br />**Note**: When launching the web-based ALS management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
 
 After you log into the Console, you may wish to access the [ALS User Documentation](/als/v1/user/) for further instructions for creating users and deploying applications.
 
@@ -91,6 +91,6 @@ If an error occurs during installation, the easiest response is simply to termin
 These commands delete your VMs, release the floating IP addresses, and remove the cluster security groups.
 		
 	source <path to openstackrc file>
-    ./cfmgmt delete-cluster \
-	keypair-name <name of keypair created earlier> \
-	load trial.yml
+    ./cf-mgmt delete-cluster \
+	--keypair-name <name of keypair created earlier> \
+	--load trial.yml

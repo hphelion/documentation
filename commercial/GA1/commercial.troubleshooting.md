@@ -43,8 +43,15 @@ You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpclo
 
 * [Controller Nodes](/helion/openstack/services/troubleshooting/controller/)
 
-If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). It will be helpful if you run the `run-sosreport` command on the affected nodes before contacting HP Customer Support. The `run-sosreport` command will gather specific reports that will help diagnose your issue.
+### Contacting Customer Service ### {#sos}
 
+If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). 
+
+Before contacting HP Customer Support, run the `run-sosreport` command on the affected system. 
+
+The command gathers specific information into a file that will help diagnose your issue. The file is located in the `/tmp` directory under a name in the format `sosreport-<system hostname>-<timestamp>.tar.xz`. For example: `/tmp/sosreport-hLinux-20150218083619.tar.xz`. 
+
+Customer Support will help determine the best way to relay the information in the file to them.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

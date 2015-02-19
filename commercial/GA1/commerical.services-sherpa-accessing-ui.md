@@ -35,7 +35,7 @@ To access the Sherpa UI:
 
 2.	Navigate to **Admin -> Updates and Extensions -> Updates and Extensions**. 
 
-3.	Click **Configure** to authenticate to the Cloud OS Distribution Network.
+3.	Click **Configure** to authenticate to the Helion Download Network (HDN).
 
 	<img src="media/SherpaConfigure.png">
 

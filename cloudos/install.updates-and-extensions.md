@@ -22,32 +22,32 @@ PageRefresh();
 
 # Updates and Extensions
 
-This topic explains how to obtain patches and other relevant functionality from the HP Cloud OS Distribution Network (CODN).
+This topic explains how to obtain patches and other relevant functionality from the HP Helion Distribution Network (HDN).
 
 * [Configure and Download Steps](#configure-and-download-steps)
 * [Next Step](#next-step)
 
 <!--
-* [Modify the CODN Runtime Configuration](#modify-the-codn-runtime-configuration) 
+* [Modify the HDN Runtime Configuration](#modify-the-codn-runtime-configuration) 
   * [Server Host and Port](#server-host-and-port)
   * [Proxy Configuration](#proxy-configuration)
   * [Logging](#logging)
-* [CODN Service Commands](#codn-service-commands)
+* [HDN Service Commands](#codn-service-commands)
 -->
 
 ## Configure and Download Steps
 
-1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, there is no data to display in the table.  **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not configured or there is no active session with the CODN. A session may timeout after 20 minutes.
+1. From the Cloud tab in the Operational Dashboard, click the **Updates and Extensions** panel. If you are accessing this page for the first time, there is no data to display in the table.  **Note:** The Operational Dashboard displays a warning message indicating that your credentials are not configured or there is no active session with the HDN. A session may timeout after 20 minutes.
 
 2. Click the **Configure** button.
 
-3. On the Configure dialog, if you are using it for the first time, sign up for the CODN.
+3. On the Configure dialog, if you are using it for the first time, sign up for the HDN.
 
 4. After registering or logging in, you are returned to the Updates and Extensions panel. The Operational Dashboard presents the available downloads that are relevant to your HP Cloud OS environment.
 
 5. Click the **Download** button that is located next to an item you want to acquire.  
 
-6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Cloud OS Distribution Network</a>. 
+6. Before installing an install module's hot fix, such as one labeled (for example) "Keystone Token Expiration Hotfix", verify that the install module you're about to update does exist for your cloud. To do this, access the HP Cloud OS Installation Dashboard. In Mozilla Firefox or Google Chrome, open http://192.168.124.10:3000. **Note:** In the current release, the dashboards use pre-defined login credentials. These are not published in the web-hosted documentation. To get the pre-defined login credentials, refer to the readme file included in the same ZIP that contained the HP Cloud OS ISO. If you have not already done so, see the ZIP on the <a href="https://cloudos.hpwsportal.com" target="codn">HP Helion Distribution Network</a>. 
 
 7. In the Installation Dashboard, open the proposal for the hot fix by clicking the **Edit** button next to the listed item.   
 
@@ -61,18 +61,18 @@ This topic explains how to obtain patches and other relevant functionality from 
 New patches may be available periodically. Be sure to revisit the Updates and Extensions panel on a regular basis. 
 
 <!--
-## Modify the CODN Runtime Configuration
+## Modify the HDN Runtime Configuration
 
-CODN is a web service that provides catalog integration and content download services for the HP Cloud OS Operational Dashboard and 
+HDN is a web service that provides catalog integration and content download services for the HP Cloud OS Operational Dashboard and 
 HP Cloud OS Administration Dashboard. 
 
-On your cloud controller node, the CODN configuration file is here:
+On your cloud controller node, the HDN configuration file is here:
 
 <pre>
 /etc/codn/codn.conf
 </pre>
 
-It contains parameters that set the runtime behavior of the CODN server. You can modify some, but not all, of the parameters. 
+It contains parameters that set the runtime behavior of the HDN server. You can modify some, but not all, of the parameters. 
 
 **Note:** Do not modify these sections of codn.conf:
 
@@ -93,7 +93,7 @@ server =
 	
 ### Proxy Configuration
 
-In /etc/codn/codn.conf, you can configure the proxy for connecting to the CODN Web catalog. For example:
+In /etc/codn/codn.conf, you can configure the proxy for connecting to the HDN Web catalog. For example:
 
 <pre>
 http_proxy = 'http://myproxy.myco.com:8080'
@@ -129,20 +129,20 @@ logging = {
 
 The **INFO** level logging will look like following examples. The formats shown below were modified to avoid long line breaks.
 
-The following shows the CODN start time:
+The following shows the HDN start time:
 
 <pre>
-2013-12-13 13:45:09,755 INFO  [codn.api.app][MainThread] *** CODN service started ***
+2013-12-13 13:45:09,755 INFO  [codn.api.app][MainThread] *** HDN service started ***
 </pre>
 
-The following shows CODN getting all the catalog entries:
+The following shows HDN getting all the catalog entries:
 
 <pre>
 2013-12-13 13:45:18,283 INFO  [codn.api.controllers.hooks][MainThread]  
 Response  to: 10.1.34.33 "GET /v1/catalog" 200 3485
 </pre>
 
-Here CODN gets catalog entry 470:
+Here HDN gets catalog entry 470:
 
 <pre>
 2013-12-13 13:45:53,846 INFO  [codn.api.controllers.hooks][MainThread]  
@@ -152,7 +152,7 @@ Request from: 10.1.34.33 "GET /v1/catalog/470"
 Response  to: 10.1.34.33 "GET /v1/catalog/470" 200 414
 </pre>
 
-CODN requests download of catalog entry 470:
+HDN requests download of catalog entry 470:
 
 <pre>
 2013-12-13 13:45:58,263 INFO  [codn.api.controllers.hooks][MainThread]  
@@ -204,10 +204,10 @@ Install job(id=50020722-6440-11e3-969d-0050569f1ba4) for catalog entry(id=470)
 changed status from PROCESSING to COMPLETED
 </pre>
 
-The CODN service should always be running, but if it is ever 'stopped' or restarted then you will see that also in the log:
+The HDN service should always be running, but if it is ever 'stopped' or restarted then you will see that also in the log:
 
 <pre>
-2013-12-13 14:00:56,921 INFO  [codn.api.app]  *** CODN service stopping ***
+2013-12-13 14:00:56,921 INFO  [codn.api.app]  *** HDN service stopping ***
 </pre>
 
 ### Setting Verbose Logging with DEBUG
@@ -219,9 +219,9 @@ If you need more detailed logging information, change 'codn' level logging from 
 </pre>
 
 
-## CODN Service Commands
+## HDN Service Commands
 
-You can start, monitor, and stop the CODN service with the following commands:
+You can start, monitor, and stop the HDN service with the following commands:
 
 <pre>
 service codn start  

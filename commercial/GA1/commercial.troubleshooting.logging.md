@@ -98,6 +98,12 @@ To increase logstash processes:
 
 In approximately 15 minutes logstash starts processing. Re-check the queue size to make sure the queue size is reducing. 
 
+## Contacting Customer Service ## {#sos}
+
+If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). 
+
+Before contacting HP Customer Support, [run the `run-sosreport` command](/helion/openstack/services/troubleshooting/#sos) on the affected system. 
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 

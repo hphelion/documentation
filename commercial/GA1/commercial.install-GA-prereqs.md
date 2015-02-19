@@ -212,7 +212,7 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 
 The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into.
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/) in *HP Helion OpenStack&reg; Installation: Prerequisites*.
+For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/).
 
 ### Set a default DNS name server {#name-resolution}
 

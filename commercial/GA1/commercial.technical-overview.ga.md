@@ -59,12 +59,14 @@ The following table outlines the functionality of HP Helion OpenStack services b
 <tr style="background-color: white; color: black;">
 	<td><b>Compute Operations (Nova)</b></td>
 	<td>The HP Helion OpenStack Compute supports an API to instantiate and manage virtual servers on KVM  and VMware ESX hypervisors. <br><br> Users can create and manage the life cycle of virtual machines (suspend, resume, snapshot, and so forth), attach block storage volumes, work with security groups and key pairs, and associate floating IP addresses. <br><br>
+Users can also boot a VM using a Cinder volume as the root partition.<br><br>
 	<a href="/helion/openstack/services/compute/overview/">Learn more</a> about the Compute Operations service.</td>
     <td> Administrators can also configure server flavors, modify project quotas, configure availability zones, enable and disable services, and work with virtual machines.</td>
 </tr>
 <tr style="background-color: white; color: black;">
 	<td><b>Block Storage<br>Volume (Cinder)</b></td>
-	<td>The HP Helion OpenStack Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <br><br>User can create volumes, attach them to VMs, and take snapshots and backups.
+	<td>The HP Helion OpenStack Block Storage supports an API to instantiate and manage block storage volumes on HP StoreServ 3PAR devices and StoreVirtual Software Defined Storage. <br><br>User can create volumes, attach them to VMs, and take snapshots and backups.<br><br>
+Users can create a bootable volume and use that to boot a VM.
 	<br><br><a href="/helion/openstack/services/volume/overview/">Learn more </a> about the Volume Operations service.
 	</td>
 	<td>Administrators can deploy StoreVirtual VSA Software Defined Storage, and configure drivers for StoreVirtual and StoreServ 3PAR using the Sirius service. <br><br>
@@ -174,30 +176,6 @@ The following diagram depicts a simplified deployment scenario using ESX.
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Hardware requirement {#hardware-req}
-
-The following hardware requirements are required to install HP Helion OpenStack.
-
-* At least 8 and up to 100 baremetal systems with the following configuration:
-	* A minimum of 32 GB of physical memory
-	* A minimum 512GB of disk space, required for installation. 
-	* A minimum of 1 x 10 GB NIC with PXE support
-	* Capable of hosting VMs
-	* Boot order configured with Network/PXE boot as the first option
-	* BIOS configured: 
-		* To the correct date and time
-		* With only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
-		* To stay powered off in the event of being shutdown rather than automatically restarting
-	* Running the latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on
-
-<!-- Need maximum disk space; 2TB requirement no longer applicable (10/29/14 -->
-
-
-* A seed VM host, also called the installer system, to run the baremetal install and host the Seed VM with the following configuration:
-
-	* A minimum of 16 GB of physical memory
-	* A minimum of 1 TB of disk space
-	* Virtualization enabled 
-	* Ubuntu 14.04 installed
 
 For more information of Hardware configuration see [Hardware configuration](/helion/openstack/install/prereqs/) and [Support Matrix](/helion/openstack/support-matrix/).
 

@@ -85,7 +85,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 
 	*Legacy boot and uEFI support
 
-### HP Moonshot Servers
+### HP_Moonshot Servers
 - [Anders](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
 - [Scott](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
 
@@ -132,11 +132,10 @@ HP supports the following configurations for HP Helion OpenStack deployment:
       * 10Gb iSCSI CNA/NIC
       
 
-- 3PAR InForm OS Version: 3.1.3 MU1 
+- 3PAR InForm OS Version: 3.1.3 MU1 to 3.2.1 MU1
 
-      * HP StoreVirtual 4000 Storage
-   
-     
+	* HP StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)
+
 ## Hardware Requirements {#baremetal}
 
 You must have the following hardware configuration:
@@ -156,6 +155,7 @@ Additional requirements are as follows:
 	- to the correct date and time
 	- seed cloud host configured in UTC (Coordinated Universal Time)
 	- with only one network interface enabled for PXE/network boot and any additional interfaces should have PXE/network boot disabled
+	- to stay powered off in the event of being shutdown rather than automatically restarting
 
 - The latest firmware recommended by the system vendor for all system components, including the BIOS, BMC firmware, disk controller firmware, drive firmware, network adapter firmware, and so on.
 - For Compute nodes, Intel or AMD hardware virtualization support required. The CPU cores and memory requirements must be sized based on the VM instances hosted by the Compute node.
@@ -174,7 +174,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Node Type</th>
-<th>Minimum Number</th>
+<th>Required Number</th>
 <th>Server Hardware</th>
 <th>Minimum Requirements and Recommendations</th>
 </tr>
@@ -240,7 +240,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4"> Overcloud Compute Server </td>
-<td rowspan="4">1</td>
+<td rowspan="4">1-100</td>
 <td>Disk </td>
 <td> 512GB. 100GB is required for HP Moonshot Servers.</td>
 
@@ -501,7 +501,7 @@ A **Certified** Guest OS has been officially certified with the appropriate vend
 <td>No</td>
 </tr><tr>
 <td> 
- RHEL 6.5
+ RHEL 6.6
  </td>
 <td>Yes</td>
 <td>No</td>
@@ -526,7 +526,7 @@ There are no software requirements for the undercloud and overcloud controllers 
 
 Other requirements and recommendations for the seed cloud host are as follows:
 
-- The Ubuntu 14.04 operating system must be installed
+- The appropriate operating system must be installed
 - A browser to access the undercloud or overcloud
 <!--- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes-->
 - A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.

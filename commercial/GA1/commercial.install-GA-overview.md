@@ -156,6 +156,7 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * All the Helion servers use UTC as a time zone.
 
+* For some known issues that you might encounter during the installation, see [Troubleshooting the Installation](/helion/openstack/services/troubleshooting/install/).
 
 **Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
