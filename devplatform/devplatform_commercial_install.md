@@ -68,7 +68,7 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 
 		cd dev-platform-installer  
 
-5. Edit the `dev-platform-installer.conf`.
+5. Edit `dev-platform-installer.conf`.
 
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
