@@ -40,7 +40,7 @@ MDFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.md" `
 do 
 
-	if [[ -n $(grep -L "\-\-UNDER REVISION" $i) ]] && [[ -n $(grep -L "\-\-PUBLISH" $i) ]]; 
+	if [[ -n $(ack -L "\-\-UNDER REVISION" $i) ]] && [[ -n $(ack -L "\-\-PUBLISH" $i) ]]; 
 	then
 	MDFILES_NOT_DESIGNATED=$MDFILES_NOT_DESIGNATED$s`echo $i`
 	fi
@@ -67,7 +67,7 @@ YMLFILES_NOT_DESIGNATED=""
 for i in `find . -name "*.yml" `
 do 
 
-	if [[ -n $(grep -L "PUBLISH" $i) ]] && [[ -n $(grep -L "UNDER REVISION" $i) ]]; 
+	if [[ -n $(ack -L "PUBLISH" $i) ]] && [[ -n $(ack -L "UNDER REVISION" $i) ]]; 
  
 	then
 		 
