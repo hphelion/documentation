@@ -9,7 +9,7 @@ role2: Storage Architect
 authors: Michael B, 
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 <script>
@@ -81,7 +81,7 @@ Make sure you have met all the hardware requirements and have completed the requ
 	**Note:** If `hp_ced_host_manager.sh` fails to start the seed, restart the installation (step 1) and then follow the rest of the steps.
 
 
-10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#csv) file is correct and upload the file to `/root`.
+10. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/csv/) file is correct and upload the file to `/root`.
 
 	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#csv) on the *Prerequisites* page.
 
