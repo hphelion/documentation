@@ -40,14 +40,7 @@ A variety of flavors and images are provided by the HP Helion OpenStack Compute 
 
 ## Storing Metadata on a Configuration Drive {#configdrive}
 
-The HP Helion OpenStack compute service can be configured to write metadata to a special configuration drive. This configuration drive automatically attaches to the instance when it boots. When the instance boots, it mounts the drive and reads files from it to get information that is normally available through the metadata service. This metadata is different from the user data.
-
-One reason to use a configuration drive is to pass networking configuration information. For example, if you do not want to use DHCP, you could pass the IP address for the instance through the configuration drive, which the instance would mount and access before you configure the network settings for the instance.
-
-Any modern guest operating system that is capable of mounting an ISO 9660 or VFAT file system can use a configuration drive. However, by default, ESX and KVM deployments do not have **force&#095;config_drive** set to true(or always) in the Compute (Nova) service configuration.
-
-The process is the same whether you are using the KVM or ESX hypervisor.
-To use a configuration drive, set the **config_drive** option to TRUE in the Horizon console and then boot an instance of the image.
+The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/services/compute/overview/configdrive) that contains information normally available through the metadata service. 
 
 ##Working with the Compute Service ##
 
