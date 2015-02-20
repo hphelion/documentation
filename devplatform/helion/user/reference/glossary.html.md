@@ -12,10 +12,9 @@ role4: Systems Administrator
 authors: Jayme P
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
-# HP Helion Development Platform: Glossary[](#index-0 "Permalink to this headline")
-==================================================
+# HP Helion Development Platform: Glossary
 
 #### AMQP {#term-AMQP}
 Acronym for [Advanced Message Queuing Protocol](http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol).
@@ -31,22 +30,13 @@ A build automation tool typically used for Java projects. See
 Any application software intended for instantiation in Application Lifecycle Service. At minimum it consists of the application, expressed in a dynamic language, plus a configuration file named *manifest.yml*.
 
 #### Avahi {#term-Avahi}
-An implementation of [*multicast DNS*](#term-multicast-dns) and related protocols.
+An implementation of [multicast DNS](#term-multicast-dns) and related protocols.
 
 #### cluster {#term-cluster}
-A set of interconnected physical processors or virtual machines,
-    managed at least conceptually as a single entity but otherwise
-    operating autonomously. Historically the term carried a variety of
-    proprietary meanings, but came into general use with the rapid
-    development of supercomputing based upon [Beowulf
-    Clusters](http://en.wikipedia.org/wiki/Beowulf_cluster). An Application Lifecycle Service
-    cluster is one in which [*role*](#term-role)s are assigned or
-    replicated to multiple cluster [*node*](#term-node)s.
+A set of interconnected physical processors or virtual machines, managed at least conceptually as a single entity but otherwise operating autonomously. Historically the term carried a variety of proprietary meanings, but came into general use with the rapid development of supercomputing based upon [Beowulf    Clusters](http://en.wikipedia.org/wiki/Beowulf_cluster). An Application Lifecycle Service cluster is one in which [role](#term-role) are assigned or replicated to multiple cluster [nodes](#term-node).
 
 #### component {#term-component}
-Within Application Lifecycle Service, the term **component** is used when naming a
-    discrete part of the Application Lifecycle Service server. For example, a
-    [*role*](#term-role) is made up of one or more components.
+Within Application Lifecycle Service, the term **component** is used when naming a discrete part of the Application Lifecycle Service server. For example, a    [role](#term-role) is made up of one or more components.
 
 #### container {#term-container}
 A lightweight form of virtualization which provides resource
@@ -80,19 +70,13 @@ A [lightweight server](http://en.wikipedia.org/wiki/Dnsmasq) for
 A means of rapidly updating the Domain Name System, possibly making use of [RFC 2136](http://tools.ietf.org/html/rfc2136) Dynamic Updates.
 
 #### filesystem {#term-filesystem}
-In Application Lifecycle Service, **filesystem** refers to persistent storage accessed by
-    an application [service](#service) specified in *manifest.yml* through
-    a server which has been assigned the filesystem
-    [*role*](#term-role).
+In Application Lifecycle Service, **filesystem** refers to persistent storage accessed by an application [service](#term-service) specified in *manifest.yml* through a server which has been assigned the filesystem [role](#term-role).
 
 #### JSON {#term-JSON}
-A notation for structured text data, acronym for [JavaScript Object
-    Notation](http://en.wikipedia.org/wiki/JSON).
+A notation for structured text data, acronym for [JavaScript Object Notation](http://en.wikipedia.org/wiki/JSON).
 
 #### MBUS {#term-MBUS}
-Application Lifecycle Service's implementation of an [**RFC
-    3259**](http://tools.ietf.org/html/rfc3259) message queue used
-    for interprocess communication. *See also:* [*NATS*](#term-nats).
+Application Lifecycle Service's implementation of an [RFC 3259](http://tools.ietf.org/html/rfc3259) message queue used  for interprocess communication. See also: [NATS](#term-nats).
 
 #### memcached {#term-memcached}
 Free & open source, high-performance, distributed memory object
@@ -101,16 +85,12 @@ Free & open source, high-performance, distributed memory object
     [Memcached project page](http://memcached.org/))
 
 #### micro cloud {#term-microcloud}
-A preconfigured Application Lifecycle Service virtual machine image consisting of a
-    single generic [*node*](#term-node) enabled for all the
-    [*role*](#term-role)s necessary for basic operation, but with no
-    preinstalled [*app*](#term-app)s or [*service*](#term-service)s.
+A preconfigured Application Lifecycle Service virtual machine image consisting of a single generic [node](#term-node) enabled for all the [roles](#term-role) necessary for basic operation, but with no pre-installed [apps](#term-app) or [services](#term-service)s.
 
 #### mongodb {#term-mongodb}
-A popular [noSQL](http://en.wikipedia.org/wiki/NoSQL) database
-    management system.
+A popular [noSQL](http://en.wikipedia.org/wiki/NoSQL) database management system.
 
-#### multicast DNS {#term-multiDNS}
+#### multicast DNS {#term-multicast-dns}
 A distributed means of configuring DNS by [multicast discovery](http://en.wikipedia.org/wiki/Multicast_DNS). It is supported on Application Lifecycle Service [micro cloud](#term-microcloud) servers using [Avahi](#term-avahi).
 
 #### mysql {#term-mysql}
@@ -120,11 +100,7 @@ A relational database management system.
 Acronym for [Network Address Translation](http://en.wikipedia.org/wiki/Network_address_translation).
 
 #### NATS {#term-NATS}
-In Application Lifecycle Service, a publish-subscribe message system implemented as a  process called `nats-server` which listens on a
-    network interface, normally on port 4222/tcp. Messages published
-    across the network to a particular [*MBUS*](#term-mbus) queue
-    managed by the nats-server are communicated to clients which are
-    subscribed to that queue.
+In Application Lifecycle Service, a publish-subscribe message system implemented as a  process called `nats-server` which listens on a network interface, normally on port 4222/tcp. Messages published across the network to a particular [MBUS](#term-mbus) queue managed by the nats-server are communicated to clients which are subscribed to that queue.
 
 Nginx {#term-Nginx}
 [Nginx](http://wiki.nginx.org/) is a high-performance, event-driven web server.
@@ -160,36 +136,22 @@ A lightweight caching web proxy intended for small applications.
 A relational database management system.
 
 #### private PaaS {#term-privatePaaS}
-A private [*PaaS*](#term-paas) is one which is hosted on your
-    private cloud, behind your firewall.
+A private [PaaS](#term-paas) is one which is hosted on your private cloud, behind your firewall.
 
 #### RabbitMQ {#term-RabbitMQ}
-A [message broker](http://en.wikipedia.org/wiki/Message_broker)
-    subsystem which implements [*AMQP*](#term-amqp).
+A [message broker](http://en.wikipedia.org/wiki/Message_broker) subsystem which implements [AMQP](#term-amqp).
 
 #### Redis {#term-Redis}
 An implementation of memory resident key-value store.
 
 #### resolvconf {#term-resolvconf}
-A system configuration tool typically used by hook scripts at boot
-    time. See the [resolvconf man
-    page](http://manpages.ubuntu.com/manpages/man8/resolvconf.8)
-    for details.
+A system configuration tool typically used by hook scripts at boot time. See the [resolvconf man page](http://manpages.ubuntu.com/manpages/man8/resolvconf.8) for details.
 
 #### role {#term-role}
-Each [*node*](#term-node) in an Application Lifecycle Service [*cluster*](#term-cluster)
-    may be assigned certain selectable capabilities within the Application Lifecycle Service
-    architecture. These capabilities are called **roles**, and are
-    usually denoted in lowercase. Examples of essential roles are
-    **router**, **primary**, **controller**, and **dea**. In addition,
-    there are **role groups** (for convenience) such as
-    **data-services** that represent all data-services. (postgresql
-    mysql rabbit mongodb redis filesystem memcached)
+Each [node](#term-node) in an Application Lifecycle Service [*cluster*](#term-cluster) may be assigned certain selectable capabilities within the Application Lifecycle Service architecture. These capabilities are called **roles**, and are usually denoted in lowercase. Examples of essential roles are **router**, **primary**, **controller**, and **dea**. In addition, there are **role groups** (for convenience) such as **data-services** that represent all data-services. (postgresql mysql rabbit mongodb redis filesystem memcached)
 
 #### service {#term-service}
-In Application Lifecycle Service, a **service** is a type of [*role*](#term-role) that
-    may be provisioned on a server and accessed by an application as
-    specified in *manifest.yml*.
+In Application Lifecycle Service, a **service** is a type of [role](#term-role) that may be provisioned on a server and accessed by an application as specified in *manifest.yml*.
 
 #### supervisord {#term-supervisord}
 A process control system used by Application Lifecycle Service internally. (see
