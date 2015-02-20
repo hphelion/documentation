@@ -12,13 +12,13 @@ role4: Systems Administrator
 authors: Jayme P
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 # HP Helion Development Platform: Troubleshooting[](#troubleshooting "Permalink to this headline")
 
 ## SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")
 
-For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [*container*](/als/v1/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [Command Reference](/als/v1/user/reference/client-ref/) for details on the `helion ssh` command.
+For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [container](/als/v1/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [Command Reference](/als/v1/user/reference/client-ref/) for details on the `helion ssh` command.
 
 ## Checking the Logs[](#checking-the-logs "Permalink to this headline")
 
