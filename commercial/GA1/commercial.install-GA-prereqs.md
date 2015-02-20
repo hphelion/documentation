@@ -214,30 +214,6 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into. In this file you can also specify the role (or node type) for each server so you use the right hardware for different tasks such as storage or compute.  
 
 
-Use the following format in the `baremetal.csv` file:
-
-    <mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power>
-
-Where ` <role>`can have these values (roles are not case-sensitive):
-
-- Undercloud
-- OvercloudControl
-- OvercloudSwiftStorage
-- OvercloudCompute
-- OvercloudVSAStorage
-- OvercloudVSAAOStorage
-- OvercloudSOSwiftProxy
-- OvercloudSOSwiftStorage
-
-
-If you do not specify a role, the following defaults apply in this order:
-
-1. If no Undercloud node is specified, then the first node without a role is assigned as an **Undercloud**.
-1. If there are not enough OvercloudControl nodes, the next nodes without a role are assigned as **OvercloudControl** until there are enough nodes.
-1. If there are not enough OvercloudSwiftStorage nodes, the next nodes without a role are assigned as **OvercloudSwiftStorage**, until there are enough nodes.
-1. This logic continues with VSA and Scale-Out Swift node assignments.
-1. The remaining nodes without a role will be assigned a role of **OvercloudCompute**.
-
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/).
 
 ### Set a default DNS name server {#name-resolution}
