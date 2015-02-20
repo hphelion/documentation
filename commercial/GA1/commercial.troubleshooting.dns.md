@@ -61,7 +61,7 @@ forwarders for the undercloud.
 <hr>
 
 
-### Increasing Quotas {#increase-quotas}
+### Increasing Quotas {#increasequotas}
 
 If the associated project already has existing instances (VMs), the DNSaaS installation will not have sufficient room to complete. An admin must increase the quota levels to allow sufficient room before installation.
 
