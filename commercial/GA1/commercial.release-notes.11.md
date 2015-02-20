@@ -185,6 +185,12 @@ Other issues you might experience when using HP Helion OpenStack:
 
 * A user can register but cannot update a vCenter through the UI. 
 
+- Heat templates and updating Helion: If you  are using a modified heat template, you should update the new templates that are provided with the installer to reflect what you had modified in your previous deployment. If you have not made any changes to the original template, then you can execute
+ `./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud` 
+and
+ `./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud` 
+to update the HEAT templates.
+
 
 ##For Further Information## {#For-Further-Information}
 
