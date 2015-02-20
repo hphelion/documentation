@@ -149,7 +149,7 @@ This process is documented in Step 7 of ["Starting the seed and building your cl
 
 ### Connect to the Download Service {#als-connect}
 
-1. Open Horizon and login as the *Admin* user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click the **Configure Services** sub-panel.
+1. Open Horizon and log in as the *Admin* user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click the **Configure Services** sub-panel.
 
 2. Click the **Connect** button on the **Configure Services** panel and enter your user name and password for the HP Download Network (HDN). 
 
