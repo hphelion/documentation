@@ -23,10 +23,7 @@ PageRefresh();
 
 
 # How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack 
-
-This page describes the procedure to create and deploy Microsoft Windows 2012 Server on HP Helion OpenStack.
-
-**Note** This document only describes the procedure to create a windows qcow2 image that is SVVP (Server Virtualization Validation Program) compliant.
+The following section describes the procedure to create and deploy Microsoft Windows 2012 Server that is SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack.
 
 ## HP Helion OpenStack with Microsoft Windows Server Reference Architecture 
 
