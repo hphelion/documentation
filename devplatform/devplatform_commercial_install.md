@@ -58,7 +58,7 @@ The installer requires the following packages. If they are not found, it will pr
 
 The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.
 
-1. Register and download the package from the following URL: [HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
+1. Register at and download the package from the [HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show) (HDN). Make sure you record your HDN username and password, as they are part of the installation process.
 
 1. Before you begin the installation, unpack the tar file.
  
@@ -82,13 +82,14 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 	Set the identity URL if necessary.
 	 
  
-7. Run this command to prepare the installer and ensure prerequisites are met. 
+7. Run this command to prepare the installer and ensure the prerequisites are met. You will need your HDN username and password.
 
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -c {HDN user name} -o {HDN password} -e {cacert file} install
+
  
-9. Optionally, you can specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+9. Optionally, you can also specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		sudo ./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		sudo ./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -c {HDN user name} -o {HDN password} -e {location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
