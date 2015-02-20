@@ -39,7 +39,7 @@ This topic provides possible solutions to known issues.
 - [Inconsistent Failures in RabbitMQ](#rabbit-failure)
 - [Server Power Stuck at Reset](#reset-stuck)
 - [Network Bridge Persists After Uninstall](#bridge-persists)
-- [Node in error cannot be controlled by Ironic or Nova](#ironic-error)
+- [Node in Error Cannot be Controlled by Ironic or Nova](#ironic-error)
 
 
 <hr>
@@ -334,7 +334,7 @@ Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat wit
 <hr>
 
 <br>
-## Node in error cannot be controlled by Ironic or Nova {#ironic-error}
+## Node in Error Cannot be Controlled by Ironic or Nova {#ironic-error}
 
 **System Behavior/Message**
 
