@@ -8,7 +8,7 @@ product: Networking
 
 ---
 <!--PUBLISHED-->
-#HP Helion Public Cloud Networking API Specifications
+# HP Helion Public Cloud Networking API Specifications
 
 **Date:** May 2014
 

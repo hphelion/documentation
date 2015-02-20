@@ -23,7 +23,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
 
 
-#HP Helion OpenStack&#174; Enterprise Edition 1.1 : Installation on a laptop with i7/32GB/512GB
+# HP Helion OpenStack&#174; Enterprise Edition 1.1 : Installation on a laptop with i7/32GB/512GB
 
 The purpose of this document is to provide a quick guide on how to setup Helion OpenStack Enterprise Edition 1.1 into a virtual environment running on a laptop suitable to demonstrate the basic usage of product.
 

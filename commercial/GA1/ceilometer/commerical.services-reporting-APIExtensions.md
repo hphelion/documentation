@@ -27,7 +27,7 @@ PageRefresh();
 </script>
 
 
-#HP Helion OpenStack&#174; Metering Service (Ceilometer): API Extensions
+# HP Helion OpenStack&#174; Metering Service (Ceilometer): API Extensions
 APIs can be extended to provide additional functionality.
 
 HP has created and added a Health-Check API for the Ceilometer Reporting API. This Health-Check provides more response options when assessing the availability and healthiness of the Ceilometer service.

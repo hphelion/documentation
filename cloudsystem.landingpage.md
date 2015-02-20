@@ -14,7 +14,7 @@ role4: Cloud Administrator
 <!--PUBLISHED-->
 
 
-#HP Helion CloudSystem#
+# HP Helion CloudSystem#
  
 HP Helion CloudSystem lets you automate end-to-end service lifecycle management for any cloud service, from infrastructure to application. As part of the HP Helion portfolio of hybrid cloud products and delivered as an HP ConvergedSystem, HP CloudSystem integrates all of the hardware, software, and services you need to realize a fully configured, enterprise-grade solution. 
 
