@@ -21,8 +21,6 @@ authors: Jayme P
 
 # HP Helion Development Platform: Best Practices {#index-0}
 
-##Applying Updates {#applying-updates}
-
 - [Passwordless SSH Authentication](#passwordless)
 - [Applying Updates](#applying-updates)
 - [Security Patches](#bestpractices-ubuntu-security)
