@@ -85,10 +85,11 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 
 	*Legacy boot and uEFI support
 
-### HP_Moonshot Servers
-- [Anders](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
-- [Scott](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
+### HP Moonshot Servers
+- [m710 Server Cartridge](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
+- [m300 Server Cartridge](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
 
+For more information, see [Managing Moonshot Servers](/helion/openstack/install/moonshot/).
 ### HP ProLiant Tower Servers
 
 - [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379531)
@@ -299,7 +300,7 @@ The following table lists the minimum requirements required for installation of 
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td rowspan="4">Overcloud StoreVirtual VSA Server</td>
-<td rowspan="4">1</td>
+<td rowspan="4">3</td>
 <td>Disk </td>
 <td> 512GB
 </td>
@@ -410,7 +411,7 @@ or
 
 Software requirements for the Seed Cloud Host:
 
-Ubuntu 14.04 with the following packages.
+Ubuntu 14.04 LTS with the following packages.
 <table><tr style="background-color: #808080; color: white; text-align: left; vertical-align: top;">
 <td>Required</td>
 <td>Optional</td>
@@ -467,12 +468,12 @@ A **Certified** Guest OS has been officially certified with the appropriate vend
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
-<td> Ubuntu 14.10
+<td> Ubuntu 14.10 
 </td>
 <td>Yes</td>
 <td>No</td>
 </tr><tr>
-<td> Ubuntu 14.04
+<td> Ubuntu 14.04 LTS
  </td>
 <td>Yes</td>
 <td>No</td>
@@ -519,19 +520,20 @@ A **Certified** Guest OS has been officially certified with the appropriate vend
 </tr>
 </table>
 
-
-### Other seed cloud host requirements and recommendations {#otherseed}
-
-There are no software requirements for the undercloud and overcloud controllers because all required software is contained within the images deployed on the system.
-
 Other requirements and recommendations for the seed cloud host are as follows:
 
 - The appropriate operating system must be installed
 - A browser to access the undercloud or overcloud
+- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes
 <!--- A desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes-->
-- A simple command line tool installed, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes.
 
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualization configuration.
+
+
+### Other requirements and recommendations {#otherseed}
+
+There are no software requirements for the undercloud and overcloud controllers because all required software is contained within the images deployed on the system.
+
 
 
 ## Next Step {#next}
