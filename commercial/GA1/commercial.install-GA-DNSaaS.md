@@ -9,7 +9,7 @@ role2: Storage Architect
 authors: Michael B, Gerladine K, Graham H,
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor</a></p> 
 
 # HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
 
@@ -30,7 +30,7 @@ Our managed DNS service, based on the OpenStack Designate project, is engineered
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.1 over the previous version. </p>
+<span style="color: red"><b>Caution</b></span>: Before migrating to DNSaaS 1.1, you ***must*** first [uninstall](#uninstall) DNSaaS 1.0. Do **not** attempt to install version 1.1 over the previous version.
 
 
 - [Prerequisites](#preq)
@@ -46,7 +46,9 @@ It is important to read through this page before starting your installation as i
 
 
 ##Prerequisites {#preq}
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.1 over the previous version. </p>
+<span style="color: red"><b>Caution</b></span>: Before migrating to DNSaaS 1.1, you ***must*** first [uninstall](#uninstall) DNSaaS 1.0. Do **not** attempt to install version 1.1 over the previous version.
+
+**Important**: If the associated project already has existing instances (VMs), the DNS installation will not have sufficient room to complete. An admin must first [increase the quota amounts](/helion/openstack/services/troubleshooting/dns/#increase-quotas/) to allow sufficient room before beginning the installation.
 
 * HP Helion OpenStack is successfully installed
 * Download [DNSaaS Installer Image](#publication) <br /> 

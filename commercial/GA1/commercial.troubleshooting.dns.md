@@ -61,6 +61,21 @@ forwarders for the undercloud.
 <hr>
 
 
+### Increasing Quotas {#increase-quotas}
+
+If the associated project already has existing instances (VMs), the DNSaaS installation will not have sufficient room to complete. An admin must increase the quota levels to allow sufficient room before installation.
+
+1. Log in to the Horizon console.
+2. In the **Project** panel, click **Identity** and then click **Projects**.
+3. Find the project in the list and click **Modify Users**.
+4. Click **Edit Project** and then click the **Quota** tab.
+5. Increase the following quotas to create sufficient room:
+	- Instances: Add 16
+	- RAM: Add 44 GB 
+	- Volumes: Add 6
+	- Storage: Add 240
+6. Click **Save**.
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 

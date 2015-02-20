@@ -79,11 +79,11 @@ This view also includes the following **Tabs**:
 -  **App Versions**: A rolling list of code and setting changes to an application. Clicking Rollback to this version for any listed version reverts the application to the selected version's state and creates a new version. See :ref:`App Versions <app-versions>` for details.
 -   **Environment Variables**: Environment variables that have been explicitly set in the application container (via application config, client commands, or this interface). Default variables, those set by the application framework, or those added by the system for data services are excluded from this view.
 -   **Settings**: The number of application instances, disk space, and memory allotment used by the application. This usage counts against the organization's quota.
--   -  **Instances**: List of application instances showing the status and host DEA IP address of each.
+-  **Instances**: List of application instances showing the status and host DEA IP address of each.
 
 ## Organizations List {#organization-list}
 
-The Organizations list is accessible from the top menu. It shows all :ref:`Organizations <orgs-spaces-organizations>` which the current user is a member of. The list is searchable by name.
+The Organizations list is accessible from the top menu. It shows all [Organizations](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) which the current user is a member of. The list is searchable by name.
 
 Clicking on any Organization name opens the Organization view.
 
@@ -132,7 +132,7 @@ The summary of a service displays:
 - the service instance name (not the canonical database name)
 - its current state
 
-For more information on a service instance, such as its credentials, use the [*helion service*](/als/v1/user/reference/client-ref/#command-service) command.
+For more information on a service instance, such as its credentials, use the [helion service](/als/v1/user/reference/client-ref/services/#command-service) command.
 
 **Credentials**
 

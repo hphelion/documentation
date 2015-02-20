@@ -53,7 +53,7 @@ Note that Administrative user privileges are required for some commands.
 ###[Authentication Tokens](/als/v1/user/reference/client-ref/tokens)  
 - [helion create-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-create-service-auth-token): Create a new service authentication token.
 - [helion delete-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-delete-service-auth-token): Delete the specified service authentication token
-- [helion service-auth-tokens](/als/v1/user/reference/client-ref/tokens/#command-service-auth-tokens):Show all service authentication tokens knowns to the target. 
+- [helion service-auth-tokens](/als/v1/user/reference/client-ref/tokens/#command-service-auth-tokens):Show all service authentication tokens known to the target. 
 - [helion update-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-update-service-auth-token): Update the specified service authentication token.
 	
 ###[Brokers](/als/v1/user/reference/client-ref/brokers)
