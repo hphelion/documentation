@@ -41,9 +41,7 @@ The virtual environment allows you to register and unregister vCenter and import
 *  [Register a vCenter](#register-vcenter)
 * [View Registered ESX vCenters](#view-registered-vCenter)
 * [Edit a vCenter](#edit-vCenter)
-* [Unregistering vCenters](#unregister-vCenter)
-	* [Unregister a Single vCenter](#unregister-a-vCenter)
-	* [Unregister Multiple vCenters](#unregister-multiple-vCenter)
+* [Unregister vCenter](#unregister-vCenter)
 * [Import a Cluster](#import-cluster)
 * [View Cluster Details](#view-cluster)
 * [Unimporting Clusters](#unimport-cluster)
@@ -52,11 +50,9 @@ The virtual environment allows you to register and unregister vCenter and import
 
 * [Next Steps](#next-steps)
 
-
-
 ##Register vCenter<a name="register-vcenter"></a>
 
-You can register vCenter using the Horizon dashboard in the undercloud.
+You can register vCenter by using the Horizon dashboard in the undercloud.
 
 vCenter provides centralized management of virtual host and virtual machines from a single console. You can register only three vCenters in the compute service, although a single administrator can manage multiple workloads.
 
@@ -67,32 +63,37 @@ The tab displays with options in the left panel.
 
 2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page.
 
-3.  Click **Register vCenter** displayed at the top right corner of the page. Register vCenter dialog box is displayed with two different tabs: **vCenter Details** and **Proxy Details**. By default, vCenter Details is the active tab.
+3.  Click **Register vCenter** displayed at the top right corner of the page. The Register vCenter dialog box is displayed.
 
-4.  In the vCenter Details tab, do the following
+4.  Enter the following information:
   
-  * In the **vCenter Server Name** box, enter the name for the vCenter Server.
-  * In the **vCenter Server Address** box, enter the IP address of the vCenter Server.
-  * In the **vCenter Administrator** box, enter the vCenter administrator username. This is the vCenter credentails of the administrator.
-  * In the **vCenter Server Password** box, enter the password.
-  * In the **vCenter Server Port** box, enter the vCenter Server Port.
-  * (Optional) In the **vCenter SSL CA-certificate** box, do not enter any value as we are not supporting it in this release.
+  * In the **Name** box, enter a name for the vCenter server connection.
+  * In the **IP Address** box, enter the IP address of the vCenter server.
+  * In the **Username** box, enter an account name that has administrative permissions.
+  * In the **Password** box, enter the password.
+  * In the **Port** box, enter the vCenter server port value.
+5. Click **Done**. A message is displayed after the successful registration of vCenter.
 <br>
-5. In the Proxy Details Tab, do the following:
+ After successful registration the vCenter server is displayed in the ESX vCenter table on the Manage Virtual Environments page
+<br>
+## Compute Proxy Information ##
+To configure the compute proxy information, follow these steps:
 
-  * In the **vCenter Management Clusters** box, enter the name for the vCenter Management Cluster.
-  * In the **Clusters Datacenter** box, enter the name of the vCenter Server.
-  * In the **Cluster's shared Datastore** box, enter the name of the shared datastore.
-  * In the **vCenter Port Group** box, enter the management port group.
-  * In the **Compute Proxy Hostname** box, enter the name of the host name of the compute proxy.
-  * DHCP is provided with two options: True and False.
- 	 * If you want the automatically configuration the compute proxy details of the vCenter, in the **DHCP enabled** drop-down list, select **True**. 
- 	 * If you want to manually enter the compute proxy details of vCenter, in the **DHCP enabled** drop-down list, select **False** and enter the values for the following fields.
-  			* In the **Compute Proxy IP** box, enter the compute proxy IP of the vCenter.
-  			* In the **Compute Proxy Netmask** box, enter the compute proxy netmask.
-  			* In the **Compute Proxy Gateway** box, enter the compute proxy gateway.
-  * Click **Register**. A message is displayed on successful registration of vCenter. <br> After successful registration the registered vCenter is displayed in the ESX vCenter table in Manage Virtual Environments page.
-  
+1. Click the vCenter server connection name on the Manage Virtual Environment page.
+2. On the vCenter details page, On the top right corner of the page click **Configure Compute Proxy**. The Configure Compute proxy dialog box is displayed.
+3. In the Configure Compute proxy dialog box, enter the following information:
+   * In the **Datacenter** drop down box, select the vCenter datacenter where you want to deploy the proxy.
+   * In the **Port group** box, enter the management port group.
+   * In the **Hostname** box, enter the hostname of the compute proxy.
+   * DHCP includes two options: **True** and **False**:
+     * If you want automatic IP address assignment for the proxy appliance, select **True**.
+     * If you want to provide a static IP address for the appliance, select **False**, and then enter the following information:
+       * In the **IP address** box, enter the compute proxy IP address.
+       * In the **Netmask** box, enter the network mask.
+       * In **Gateway** box, enter the network gateway IP address.
+   * Click **Done**. A message is displayed when the update is successful.   
+**Note**: The above information can be modified when no cluster exists in an activate state.
+      
 
 ##View Registered ESX vCenters<a name="view-registered-vCenter"></a>
 
@@ -108,8 +109,8 @@ The tab displays with options in the left panel.
   The following information is displayed:
    * **Name**: name of the vCenter.
    * **IP Address**: IP Address of the registered vCenter.
-<!--   * **Switch Definition Status**: (???).-->
    * **Actions**: tasks you can perform on the ESX vCenter. 
+<!--   * **Switch Definition Status**: (???).-->
 
 All the registered vCenter will be listed in the Manage Virtual Environment page.
 
@@ -134,7 +135,7 @@ To edit the vCenter, do the following:
 
 ## Unregistering vCenters<a name="unregister-vCenter"></a>
 
-With a help of single command you can unregister a single or multiple vCenter(s).
+With a help of single command you can unregister vCenter.
 
 * [Unregister a Single vCenter](#unregister-a-vCenter)
 
@@ -151,24 +152,6 @@ To unregister a single vCenter, do the following:
 3.	Click **More** drop-down list against the vCenter and select unregister vCenter. **Confirm Unregister vCenter** dialog box is displayed.
 
 4.	Click **Unregister vCenter** to unregister the selected vCenter, else click **Cancel**.
-
-
-
-**Unregister Multiple vCenters**<a name="unregister-multiple-vCenter"></a> 
-
-To unregister multiple vCenters with a single command, do the following:
-
-1. Click the **Resource** Tab in the left panel.<br> The tab displays an option in the left panel.
-
-2. Click **Compute** and then select **ESX** to open Manage Virtual Environments page. 
- 
-3. Select **Name** check box against the name of the vCenter. Unregister vCenter is enabled.
-4. Click **Unregister vCenter** on the top right corner of the page. Confirm Unregister vCenter dialog box is displayed.
-
-4.	Click **Unregister vCenter** to unregister a vCenter, else click **Cancel**.
-
-
-
 
 ##Import Cluster<a name="import-cluster"></a>
 
