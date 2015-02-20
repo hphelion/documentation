@@ -8,7 +8,7 @@ product: image
 
 ---
 <!--PUBLISHED-->
-#HP Helion Public Cloud Image Service API Specifications
+# HP Helion Public Cloud Image Service API Specifications
 
 **Date:** May 2014
 

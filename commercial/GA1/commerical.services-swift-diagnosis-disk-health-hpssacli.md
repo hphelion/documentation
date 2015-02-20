@@ -32,7 +32,12 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Diagnosis of disk health using hpssacli utility for HP servers
 
-The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*** utility.
+HP Helion Object Storage (Swift) provides native monitoring of swift services and hardware resources like disk. Disk is a crucial part of swift cluster therefore we have added extended monitoring check for HP hardwares. The monitoring solution depends on hpasscli application to fetch various details of hardware to determine its health and publish to Icinga. By default, hpasscli is not bundled with Object Storage (Swift) images because of licensing reason. Also, it does not get installed implicitly as part of swift node deployment. 
+
+You are advised to download and install utility as per procedure mentioned below. If utility is not installed then Icinga dashboard will reflect the various disk parameters as critical.
+
+<!---
+The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*** utility. --->
 
 
 ##HP Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)
@@ -58,14 +63,14 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 		# scp "hpssacli-2.0-16.0_amd64.deb" root@<IP address of Seed>
 
-2. Copy the package from SEED to machine where the disks to be monitored.
+2. Copy the package from SEED to Swift node(s) where the disks to be monitored.
 
-		# scp "hpssacli-2.0-16.0_amd64.deb" heat-admin@<IP address of machine>
+		# scp "hpssacli-2.0-16.0_amd64.deb" heat-admin@<IP address of Swift node(s)>
 
 
 3. Log in to the server where the debian is copied and install the package.
 
-		# ssh heat-admin@<IP address of machine>
+		# ssh heat-admin@<IP address of Swift node(s)>
 
 4. Change the directory.
 

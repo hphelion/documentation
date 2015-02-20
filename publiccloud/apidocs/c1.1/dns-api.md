@@ -9,7 +9,7 @@ product: dnsaas
 
 ---
 <!--PUBLISHED-->
-#HP Helion Public Cloud DNS API Specifications
+# HP Helion Public Cloud DNS API Specifications
 
 **Date**: May 2014
 

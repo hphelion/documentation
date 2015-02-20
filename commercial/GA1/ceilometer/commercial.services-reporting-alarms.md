@@ -25,7 +25,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-#HP Helion OpenStack&#174; Metering Service (Ceilometer): Alarms
+# HP Helion OpenStack&#174; Metering Service (Ceilometer): Alarms
 
 The Metering service contains threshold alarms that you can configure to issue notifications for specific conditions. When the threshold condition is met or exceeded, an alarm is triggered. The action to be taken is defined within the alarm; a typical alarm response would be a log entry or an e-mail, but other options can be implemented.
 

@@ -45,6 +45,8 @@ More [commands](/als/v1/user/reference/client-ref/) are now available for managi
 
 ## Known Issues:
 
+1. **ALS Cluster Create via UI does not provide a way to input proxy settings.** Either use [the workaround](/als/v1/admin/server/configuration/#http-proxy) to input proxy settings or create the cluster with the [ALS Cluster Management Tool](/als/v1/client/reference).
+
 2. **Install supported from within Admin project only**: When using the Horizon console, select only the **Admin** tenant before running the installer. Do not run the installer from any other projects.
 
 3. **Password Field is not used when creating a RabbitMQ cluster**. The password field in the Horizon panel is not necessary when creating a RabbitMQ cluster and will be ignored. This is a known issue and will be fixed in the next release.

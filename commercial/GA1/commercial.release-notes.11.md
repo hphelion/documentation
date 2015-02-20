@@ -48,8 +48,8 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 **Additional Components in Centralized Logging** [Centralized logging support](/helion/openstack/services/logging/overview/) has now been added for the following additional components: <!--HPM-28-->
 - HAProxy
-- syslog
-- keepalived 
+- Syslog
+- Keepalived 
 
 **Windows certification as a guest O/S on KVM** Microsoft Windows Server 2008 and 2012 have received Windows Server Virtualization Verification Program (SVVP) status. Windows Server can operate as a *guest* operating system in a virtual environment as if it were installed on baremetal (with certain exceptions allowed by MS). <!--HPM-29--> 
 
@@ -72,6 +72,9 @@ The following features have been added to HP Helion OpenStack 1.1:
 **Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
 
 **Ruby CLI No Longer Supported** The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
+
+**Compute Service Configuration Drive**
+The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/services/compute/overview/configdrive) that contains information normally available through the metadata service. 
 
 ### Features in HP Helion OpenStack 1.01 ### {#101}
 

@@ -8,7 +8,7 @@ product: object-storage
 
 ---
 <!--PUBLISHED-->
-#HP Helion Public Cloud Object Storage API Specification
+# HP Helion Public Cloud Object Storage API Specification
 
 **Date:** May 2014 
 

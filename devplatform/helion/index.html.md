@@ -49,8 +49,9 @@ Documentation intended for developers and other end users who will be using a pl
 
 ## Reference
 
+- [ALS Cluster Management Tool](/als/v1/client/reference)
 - [*kato* Command Reference](/als/v1/admin/reference/kato-ref)
-- [Client Command Reference](/als/v1/user/reference/client-ref)
-- [*manifest.yml*](/als/v1/user/deploy/manifestyml)
+- [ALS Command-Line Client Reference](/als/v1/user/reference/client-ref)
+- [*manifest.yml* Reference](/als/v1/user/deploy/manifestyml)
 - [Environment Variables](/als/v1/user/reference/environment)
 - [Known Issues](/als/v1/admin/reference/known-issues)
