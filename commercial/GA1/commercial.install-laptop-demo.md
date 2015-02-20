@@ -236,7 +236,7 @@ To connect to the Horizon dashboard from a remote computer, follow these steps:
 
 5. Create a tunnel from the Horizon console to the laptop: 
 
-		ssh 192.0.2.1 -R 443:<OVERCLOUD Endpoint IP>:443 -L <laptop IP>:443:127.0.0.1:443
+		ssh 192.0.2.1 -R 443:192.0.2.21:443 -L 172.16.1.9:443:127.0.0.1:443
 
 6.	Open the browser on another machine that reach your demo laptop and enter: <br>
 
