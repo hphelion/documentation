@@ -221,7 +221,7 @@ below).
 
 Exporting data can take several minutes. For clusters with constant
 usage or large numbers of users, apps, and databases, put the exporting
-system in [*Maintenance Mode*](/als/v1/admin/console/customize/#console-settings)
+system in [Maintenance Mode](/als/v1/admin/console/customize/#console-settings)
 (e.g. during a scheduled maintenance window) before exporting.
 
 ### Scheduled backups[](#scheduled-backups "Permalink to this headline")
