@@ -45,14 +45,14 @@ You can issue the following command using the EON client CLI package in the unde
 
 You can display help for this program or one of its sub-programs.
 
-   	`eon --help `
+   	# eon --help
 
 
 ###Help Subcommand
 
 You get two sets of arguments: Positional (mandatory) and Optional arguments (all mandatory fields are marked within *[Required]*).
 
-   ` eon help <sub-command> `
+   `# eon help <sub-command> ` 
 
 
 You can use the following commands to view the help.
@@ -88,22 +88,20 @@ You can view the details of the specific vCenter.
 
 You can add the vCenter to the EON database. You must enter all the arguments to add the vCenter; otherwise you will be prompted to enter them. 
 
-	# eon vcenter-add --name <VCENTER_NAME> --ip-address <VCENTER_IP> --username <VCENTER_USERNAME> --password <VCENTER_PASSWORD> --port <VCENTER_PORT> --proxy-config-file <VCENTER_PROXY_CONFIG_FILE>
+	# eon vcenter-add --name <VCENTER_NAME> --ip-address <VCENTER_IP> --username <VCENTER_USERNAME> --password <VCENTER_PASSWORD> --port <VCENTER_PORT>
 
 
 **Note**: HP Helion OpenStack&#174; supports three vCenters.
 
- * &lt;VCENTER_NAME>: Name of the vCenter 
+ * --name &lt;VCENTER_NAME>: Name of the vCenter [Required].
                         
- * &lt;VCENTER_IP>: IP address of the vCenter.
+ * --ip-address &lt;VCENTER_IP>: IP address of the vCenter [Required].
                          
- * &lt;VCENTER_USERNAME>: Username of the vCenter administrator. 
+ * --username &lt;VCENTER_USERNAME>: Username of the vCenter administrator [Required]. 
                        
- *  &lt;VCENTER_PASSWORD>: Password of the vCenter administrator.
+ * --password &lt;VCENTER_PASSWORD>: Password of the vCenter administrator [Required].
 
- *  &lt;VCENTER_PORT>: Port of the vCenter. 
-
- * &lt;VCENTER&#095;PROXY&#095;CONFIG&#095;FILE>:  File location of the proxy configuration.
+ * --port &lt;VCENTER_PORT>: Port of the vCenter [Required].
 
 
 ### Update vCenter<a name="update-vcenter"></a>
@@ -166,7 +164,13 @@ You can view of the details of the specific cluster.
 
 You can import the clusters in the EON database under the give vCenter. 
 
-	# eon import-cluster --vcenter-id <VCENTER_ID> --cluster-name <CLUSTER_NAME> --cluster-moid <CLUSTER_MOID>
+	# eon cluster-import --vcenter-id <VCENTER_ID> --cluster-name <CLUSTER_NAME> --cluster-moid <CLUSTER_MOID>
+
+Options:
+
+- --vcenter-id &lt;VCENTER_ID>: ID of the vcenter containing the cluster [Required].
+-  --cluster-name &lt;CLUSTER_NAME>: name of the cluster to be imported [Required].
+-  --cluster-moid &lt;CLUSTER_MOID>: MOID of the cluster to be imported [Required].
 
 In the vCenter you can import the cluster(s). One vCenter can have multiple clusters.
 
@@ -182,19 +186,31 @@ You can un-import the cluster(s) from the EON database under the give vCenter.
 
 	# eon unimport-cluster --vcenter-id <VCENTER_ID> --cluster-moid <CLUSTER_MOID>
 
+Options:
+
+ - --vcenter-id &lt;VCENTER_ID>: ID of the vCenter containing the cluster [Required].
+-  --cluster-moid &lt;CLUSTER_MOID>: MOID of the cluster to unregister [Required].
 
 ###Activate clusters<a name="activate-clusters"></a>
 You can activate the clusters using the following:
 
-	# eon activate-clusters --vcenter-id <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]
+	# eon cluster-activate --vcenter-id <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]
+
+Options:
+
+ - --vcenter-id &lt;VCENTER_ID>: vCenter ID to activate clusters [Required].
+-  --clusters &lt;CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]: MOIDs of the cluster to be activated [Required].
 
 
 ### Deactivate clusters<a name="deactivate-clusters"></a>
 You can deactivate clusters.   
 
- 	# eon deactivate-clusters --vcenter-id <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]
+ 	# eon cluster-deactivate --vcenter-id <VCENTER_ID> --clusters <CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]
 
-            
+Options:
+
+ - --vcenter-id &lt;VCENTER_ID>: vCenter ID to deactivate clusters [Required].
+-  --clusters &lt;CLUSTER_MOIDS> [<CLUSTER_MOIDS> ...]: MOIDs of the cluster to be deactivated [Required].            
 
 ##Compute Proxy Commands<a name="proxy-command"></a>
 
@@ -203,6 +219,25 @@ You can deactivate clusters.
 View the list of compute proxies.
 
 	# eon compute-proxy-list
+
+List the vCenter computer proxy information
+
+
+    # eon get-proxy-info --vcenter-id <VCENTER_ID>
+
+Options:
+
+--vcenter-id &lt;VCENTER_ID>: vCenter ID required to deactivate clusters [Required].
+
+Set vCenter compute proxy vm info
+
+
+    # eon set-proxy-info --vcenter-id <VCENTER_ID> --config-file <VCENTER_PROXY_CONFIG_FILE>
+
+Options:
+
+ - --vcenter-id &lt;VCENTER_ID>: vCenter ID to deactivate clusters [Required].
+-  --config-file &lt;VCENTER_PROXY_CONFIG_FILE>: Proxy configuration file location [Required].
 
 
 ### Restore proxy<a name="restore-proxy"></a>       
