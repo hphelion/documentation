@@ -92,7 +92,7 @@ This network is connected to the Internet or intranet and provides floating IPs.
 ##Hardware Details {#hardware}
 
 ###KVMHost
-The following configuration is used for the KVM host.
+The following configuration is used for the KVM host:
  
 - RAM: 256 GB
 - CPU Cores: 20
@@ -108,10 +108,18 @@ Three (3) physical servers are used as VSA nodes.
 
 ###Physical Compute
 PC nodes have the same minimum requirements in Flexible Control Plane as in normal installations.
-The following configuration is used for the overcloud compute node.
+The following configuration is used for the overcloud compute node:
+
 - RAM: 96GB
 - CPU Core: 40
 - HDD: 2TB
+
+###Underseed (seed host) 
+The following configuration is used for the underseed (seed host):
+
+* RAM: 16GB
+* CPU Core: 12
+* HDD: 512GB
 
 ##Prerequisites {#prereq}
 The Flexible Control Plane configuration has the same prerequisites as HP Helion OpenStack 1.01. Please be sure the environment satisfies the prerequisites before beginning installation.
