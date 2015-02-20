@@ -52,7 +52,7 @@ REDIS\_URL: Location of and credentials for the bound **Redis** service, if ther
 
 RABBITMQ\_URL: Location of and credentials for the bound **RabbitMQ** service, if there is (only) one.
 
-HOME: <a name="home"></a> Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
+<a name="home"></a>HOME: Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
 
 HTTP\_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.
 
