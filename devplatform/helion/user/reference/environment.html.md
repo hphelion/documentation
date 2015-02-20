@@ -25,7 +25,7 @@ You can set your own environment variables:
 -   in an `env:` block in [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env),
 -   via the application's Details page in the [Management
     Console](/als/v1/admin/console/customize/#management-console), or
--   using the [*env-add*](/als/v1/user/reference/client-ref/#command-env-add)
+-   using the [env-add](/als/v1/user/reference/client-ref/management/#command-env-add)
     command.
 
 **Note**
@@ -52,7 +52,7 @@ REDIS\_URL: Location of and credentials for the bound **Redis** service, if ther
 
 RABBITMQ\_URL: Location of and credentials for the bound **RabbitMQ** service, if there is (only) one.
 
-HOME: Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
+HOME: {#home} Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
 
 HTTP\_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.
 
@@ -61,7 +61,7 @@ MEMORY\_LIMIT: The amount of memory allocated to the application container.
 
 PATH: A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.
 
-PIP\_OPTS: Custom/alternate [*PIP*](/als/v1/user/reference/glossary/#term-pip) repo location. See [running your own package index](http://guide.python-distribute.org/pip.html#running-your-own-package-index) for more info.
+PIP\_OPTS: Custom/alternate [PIP](/als/v1/user/reference/glossary/#term-pip) repo location. See [running your own package index](http://guide.python-distribute.org/pip.html#running-your-own-package-index) for more info.
 
  Example:
 
@@ -73,12 +73,12 @@ PORT: Application Lifecycle Service alternative for VCAP\_APP\_PORT.
 PROCESSES\_WEB: This variable contains the default start command that would be used when [*manifest.yml*](/als/v1/user/deploy/manifestyml/) doesn't override it. It is provided so that users can specify a wrapper around the default command.
 For example:
 
-    > processes:
-    > :   web: newrelic\_wrapper \$PROCESSES\_WEB
+    processes:
+    :   web: newrelic\_wrapper \$PROCESSES\_WEB
 
 Note that `PROCESSES_WEB` may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.
 
-PYPM\_OPTS: Custom/alternate [*PyPM*](/als/v1/user/reference/glossary/#term-pypm) repo location. Repo mirroring is sort of undocumented feature. Example:
+PYPM\_OPTS: Custom/alternate [PyPM](/als/v1/user/reference/glossary/#term-pypm) repo location. Repo mirroring is an undocumented feature. Example:
 
         env:
             PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"
@@ -87,7 +87,7 @@ HELION\_APP\_ENV: Note
 
     Internal use, subject to change.
 
-    Contains a list of all environment variables set with [*env-add*](/als/v1/user/reference/client-ref/#command-ref-client) or through the [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env) file.
+    Contains a list of all environment variables set with [env-add](/als/v1/user/reference/client-ref/management/#command-env-add) or through the [manifest.yml](/als/v1/user/deploy/manifestyml/#env) file.
 
 HELION\_APP\_NAME: Contains the application name as specified during application push
     (or in *manifest.yml*). Available during staging
@@ -98,20 +98,19 @@ This makes it possible to access the environment variables for [*harbor*](/als/v
 
 HELION\_APP\_ROOT: This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.
 
-The [*HOME*](#term-home) environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *manifest.yml* and all the application files live.
+The [HOME](#home) environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *manifest.yml* and all the application files live.
 
 HELION\_DOCUMENT\_ROOT: This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/helion/app).
 
 HELION\_FILESYSTEM: If the app uses a single `filesystem` service, then the local mount point is stored in this variable. If there is more than one `filesystem` service, `HELION_FILESYSTEM` is not available. Instead, a custom environment variable `HELION_FILESYSTEM_*` will be created based on the name of each filesystem service (with hyphens replaced by underscores).
 
-    For example, if your *manifest.yml* file configures the following
-    services:
+For example, if your *manifest.yml* file configures the following services:
 
         services:
           my-data: filesystem
           plugins: filesystem
 
-    Two environment variables would be created:
+Two environment variables would be created:
     `HELION_FILESYSTEM_MY_DATA` and
     `HELION_FILESYSTEM_PLUGINS`.
 

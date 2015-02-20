@@ -160,15 +160,15 @@ PaaS
 :   Acronym for [Platform as a
     Service](http://en.wikipedia.org/wiki/Platform_as_a_service).
 
-pip
-:   A tool for installing and managing Python packages, such as those
+#### pip {#term-pip}
+A tool for installing and managing Python packages, such as those
     found in the Python Package Index. It's a replacement for
     easy\_install. See
     [pip-installer](http://www.pip-installer.org/en/latest/) for more
     information.
 
-PyPM
-:   PyPM is the *binary* package manager for ActivePython. It is usually
+#### PyPM {#term-pypm}
+PyPM is the *binary* package manager for ActivePython. It is usually
     the fastest and most reliable way of installing PyPI packages for
     your Application Lifecycle Service applications. The PyPM repository hosts almost all of
     the Python packages registered in PyPI and includes their latest
