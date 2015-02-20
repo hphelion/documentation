@@ -216,16 +216,6 @@ do
 	fi
  done 
 
-
-
-
- 
-
-
-
-
-
-
 for i in `find . -name "*.md"`
 do 
 	a=`head -1 $i`
