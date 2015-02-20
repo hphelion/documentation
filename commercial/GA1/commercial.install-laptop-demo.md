@@ -82,7 +82,7 @@ The following sections describe the basic steps required to install Ubuntu on a 
 	
 	e. Verify the NTP status:
 
- 		ntpq –p
+		ntpq -p
 
 	The output of the command for a working NTP connection should resemble the example in Figure-1.
 
@@ -92,7 +92,7 @@ The following sections describe the basic steps required to install Ubuntu on a 
 
 	
 
-	f. If you run `ntpq -p` and you receive a ‘No association ID's returned’ message, then you may have to reinstall the `ntp` package, To do this, enter the following commands pressing enter after each command: 
+	f. If you run `ntpq -p` and you receive a 'No association ID's returned' message, then you may have to reinstall the `ntp` package, To do this, enter the following commands pressing enter after each command: 
 
 	i. `dpkg-reconfigure ntp`
 
@@ -106,7 +106,7 @@ The following sections describe the basic steps required to install Ubuntu on a 
 
 1.	Login to the laptop, and then elevate to root:
 
-		sudo –i 
+		sudo -i 
 	
 2.	Create a folder named work:
 	
@@ -115,9 +115,9 @@ The following sections describe the basic steps required to install Ubuntu on a 
 3.	Download the Helion OpenStack Enterprise Edition from the official site.
 4.	Extract the bits to `/root/work` folder: 
 
-		tar -xzvf ee_installer-VER.tgz –C /root/work
+		tar -xzvf ee_installer-VER.tgz -C /root/work
 
-5.	Create a file named `vm_plan.csv` to specify to the seed creation procedure, the number of vCPU’s and the amount of RAM for the virtual machine. The process used to reduce the number of virtual machines is described in the second stage procedure. 
+5.	Create a file named `vm_plan.csv` to specify to the seed creation procedure, the number of vCPU's and the amount of RAM for the virtual machine. The process used to reduce the number of virtual machines is described in the second stage procedure. 
 6.	After you create the `vm_plan.csv` file, you must add the following information to the `vm_plan.csv` file:
 
 		
@@ -143,7 +143,7 @@ export `HP_VM_MODE=y`
 
 8.	Run the following script to create the seed VM: 
 
-		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed –vm-plan /root/vm_plan.csv 2>&1|tee seedvminstall.log
+		bash -x /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed -vm-plan /root/vm_plan.csv 2>&1|tee seedvminstall.log
 
 	Successful seed creation will resemble the following example:
 
@@ -218,7 +218,7 @@ To connect to the Horizon dashboard from a remote computer, follow these steps:
 1.	Connect the Ubuntu laptop to the network.
 2.	Login to the laptop, and then elevate to root:
 
-		sudo –i
+		sudo -i
 
 3.	Verify the IP address of the laptop NIC: 
 
@@ -250,7 +250,7 @@ When you successfully login to the Horizon dashboard, you will see a web page th
 
 ##Shutdown and recovery {#shutdown-recovery}
 
-The following content describes how to to shut down the laptop and recover HP OpenStack installation when the laptop restarts.
+The following content describes how to to shutdown the laptop and recover HP OpenStack installation when the laptop restarts.
 
 ###Shutdown sequence for the Helion control plane
 
@@ -273,7 +273,7 @@ To recover the HP Helion OpenStack setup after the laptop is powered up, follow 
 
 1.	Log on to the laptop and elevate to root: 
 
-		sudo –i
+		sudo -i
 
 2.	Issue the following command to restore the cloud:
 
