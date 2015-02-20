@@ -106,6 +106,8 @@ Three (3) physical servers are used as VSA nodes.
 - CPU Cores: 8
 - HDD: 8*1 TB
 
+For more information, see [VSA overview](http://15.184.32.138/helion/openstack/install/vsa/overview/#StoreVirtual-overview-jumplink-span).
+
 ###Physical Compute
 PC nodes have the same minimum requirements in Flexible Control Plane as in normal installations.
 The following configuration is used for the overcloud compute node:
