@@ -197,9 +197,9 @@ for i in `find . -name "*.md" `
 do 
 
 
-	if [[ -n $(grep -L "<--PUBLISH-->" $i) ]]; 
+	if [[ -n $(grep -L "<\!--PUBLISH-->" $i) ]]; 
 	then
-	if  [[ -n $(grep -L "<--UNDER REVISION-->" $i) ]]; 
+	if  [[ -n $(grep -L "<\!--UNDER REVISION-->" $i) ]]; 
 	then
 	
 	echo ""
