@@ -7,7 +7,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#HP Helion Public Cloud: Fog Bindings Object Storage Examples
+# HP Helion Public Cloud: Fog Bindings Object Storage Examples
 
 
 ##Important Notice##

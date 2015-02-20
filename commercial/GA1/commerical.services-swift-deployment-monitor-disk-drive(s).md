@@ -35,11 +35,12 @@ The ***Icinga*** service, which runs in the undercloud, helps cloud admins monit
 
 * HP Helion OpenStack&#174; cloud is successfully deployed. <br> *(Starter Object Storage (Swift) nodes are functional by default as they are part of cloud deployment)*
 * The Icinga service is active and running in the undercloud
+* hpssacli utility must be downloaded and installed. To download and install, refer [hpssacli utility](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/).
 
 
 ##Monitoring the Disk Drive(s) of Swift
 
-It is important to check the health of the disk drive of Swift cluster on timely basis. To monitor the disk drives on Swift nodes using **Icinga**, [hpssacli utility](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/) is leveraged.
+It is important to check the health of the disk drive of Swift cluster on timely basis. To monitor the disk drives on Swift nodes using **Icinga**, [hpssacli utility](/helion/openstack/services/swift/diagnosis-disk-health/hpssacli/) must be installed in all Swift node(s).
 
 The `/etc/swift` folder on each of the Swift nodes must have both the `*.builder` and the 
 `*.ring.gz` files. The builder files are required to determine the list of hosts and disk drives that needs to be monitored. `swift-ring-builder` command is used in monitoring scripts to get the host and disk details from the builder files. 
