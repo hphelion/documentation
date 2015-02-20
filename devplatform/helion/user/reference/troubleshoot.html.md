@@ -15,19 +15,16 @@ authors: Jayme P
 <!--PUBLISHED-->
 
 # HP Helion Development Platform: Troubleshooting[](#troubleshooting "Permalink to this headline")
-=================================================================
 
-SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")
------------------------------------------------------------------------------------
+## SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")
 
-For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [*container*](/als/v1/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [*Command Reference*](/als/v1/user/reference/client-ref/#command-ref-client) for details on the `helion ssh` command.
+For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [*container*](/als/v1/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [Command Reference](/als/v1/user/reference/client-ref/) for details on the `helion ssh` command.
 
-Checking the Logs[](#checking-the-logs "Permalink to this headline")
----------------------------------------------------------------------
+## Checking the Logs[](#checking-the-logs "Permalink to this headline")
 
 Most Application Lifecycle Service users will not have administrative access to the server. If you need to troubleshoot an application deployment or runtime failure, you can use the helion client to view the `stderr` and `stdout` log files. For example, if an application called `myapp` did not deploy correctly, run the command:
 
-    $ helion logs myapp --all
+    helion logs myapp --all
 
 This will generally show all errors encountered during deployment.
 
@@ -35,22 +32,21 @@ If you need to view another log file (e.g. one specific to your
 application), use the files command to explore the remote filesystem and
 return the contents of the files:
 
-    $ helion files myapp logs
+    helion files myapp logs
     stderr.log                                 44B
     stdout.log                                101B
     myapp-err.log                             189B
 
-    $ helion files myapp logs/myapp-err.log
+    helion files myapp logs/myapp-err.log
 
 If that command should fail, try using the run command in combination
 with ls or cat:
 
-    $ helion run myapp cat ../logs/myapp-err.log
+    helion run myapp cat ../logs/myapp-err.log
 
-Specific Cases[](#specific-cases "Permalink to this headline")
----------------------------------------------------------------
-**When pushing an app, the Application Lifecycle Service Client reports OK but app isn't
-running**
+## Specific Cases[](#specific-cases "Permalink to this headline")
+
+**When pushing an app, the Application Lifecycle Service Client reports OK but app isn't running.**
 
 The final output from pushing an app should look like:
 
@@ -65,16 +61,16 @@ This error is reported when the Application Lifecycle Service server does not ha
 
 
 
-- Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [*tty console*](/als/v1/user/reference/glossary/#term-tty-console):
+- Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [tty console](/als/v1/user/reference/glossary/#term-tty-console):
 
-         $ arp -n
+        arp -n
 
 
 
 - Check that the DHCP client is running:
 
-        $ pgrep dhclient
-        $ grep dhclient /var/log/syslog
+        pgrep dhclient
+        grep dhclient /var/log/syslog
 
 
 

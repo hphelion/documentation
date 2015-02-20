@@ -148,7 +148,7 @@ An implementation of memory resident key-value store.
 A system configuration tool typically used by hook scripts at boot time. See the [resolvconf man page](http://manpages.ubuntu.com/manpages/man8/resolvconf.8) for details.
 
 #### role {#term-role}
-Each [node](#term-node) in an Application Lifecycle Service [*cluster*](#term-cluster) may be assigned certain selectable capabilities within the Application Lifecycle Service architecture. These capabilities are called **roles**, and are usually denoted in lowercase. Examples of essential roles are **router**, **primary**, **controller**, and **dea**. In addition, there are **role groups** (for convenience) such as **data-services** that represent all data-services. (postgresql mysql rabbit mongodb redis filesystem memcached)
+Each [node](#term-node) in an Application Lifecycle Service [cluster](#term-cluster) may be assigned certain selectable capabilities within the Application Lifecycle Service architecture. These capabilities are called **roles**, and are usually denoted in lowercase. Examples of essential roles are **router**, **primary**, **controller**, and **dea**. In addition, there are **role groups** (for convenience) such as **data-services** that represent all data-services. (postgresql mysql rabbit mongodb redis filesystem memcached)
 
 #### service {#term-service}
 In Application Lifecycle Service, a **service** is a type of [role](#term-role) that may be provisioned on a server and accessed by an application as specified in *manifest.yml*.
@@ -157,7 +157,7 @@ In Application Lifecycle Service, a **service** is a type of [role](#term-role) 
 A process control system used by Application Lifecycle Service internally. (see
     [Supervisor project page](http://supervisord.org/))
 
-#### tty console {#term-tty}
+#### tty console {#term-tty-console}
 The hypervisor window which provides serial console access to one of
     its virtual machines.
 
