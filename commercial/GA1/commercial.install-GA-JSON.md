@@ -24,7 +24,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
 
@@ -32,11 +32,13 @@ The HP Helion OpenStack Installation process requires various configuration para
 
 A user who is installing HP Helion OpenStack can enter all required environment variables using a JSON (JavaScript Object Notation) file that comes with the installation package.
 
-The installation package contains a number of JSON files. You need to be concerned with only one of two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
+This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
 
 You do not need to be able to create JSON files or need to understand how it functions. JSON is human-readable format contained in a text file for storing information that can be used to transfer data between servers.
 
-This file will be used to conduct operations such as adding or removing a node and integrating block storage. Make sure this file is preserved for future use.
+The installation package contains a number of JSON template files. You need to be concerned with only one or two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json` `esx-custom-ips-vlan.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
+
+Refer to [JSON Environment File Deployment Scenarios](/helion/openstack/install/envars/deploy/) to determine which template file is best for your environment.
 
 ## Editing the JSON file
 
@@ -52,12 +54,15 @@ To edit the JSON environment variables file:
 
 2. Locate the appropriate file in the `/tripleo/config` directory. This directory is created when the installation package is extracted.
 
-	* `esx-custom-ips-vlan.json` - Use this file for installing HP Helion OpenStack with ESX hypervisor support.
+	* `esx-custom-ips.json` - Use this file for installing HP Helion OpenStack with ESX hypervisor support.
+	* `esx-custom-ips-vlan.json` - Use this file for installing HP Helion OpenStack with ESX hypervisor support with a VLAN provider network.
 	* `kvm-custom-ips.json` - Use this file for installing HP Helion OpenStack with KVM hypervisor support.
 
 3. Optionally, make a backup copy of the JSON file in case it is needed.
 
-		cp kvm-custom-ips.json kvm-custom-ips.json-backup
+	**Example:**
+
+		cp esx-custom-ips.json esx-custom-ips.json-backup
 
 4. Open the JSON file and edit the environment variable listed below.  
 
@@ -72,7 +77,7 @@ The following is a list of the values that can be specified in the JSON environm
 
 `node_min_disk` - 
 
-`controller_scale` - (optional) Specift the number of overcloud controllers.
+`controller_scale` - (optional) Specify the number of overcloud controllers.
 
 `bridge_interface` - Use this variable to specify the interface on the seed cloud host to use as the bridge interface, for example `em2` or `eth2`. This interface connects to the untagged management network and will be used to PXE boot undercloud and overcloud servers:
 
@@ -140,11 +145,13 @@ The following values appear under `dns`  for configuring you DNS servers:
 `undercloud_server` - Use this variable to specify the DNS server for the undercloud.
 
 `overcloud_server` - Use this variable to specify the DNS server for the overcloud.
+		
+	Do not copy these addresses they are only examples
 
 	"dns": {
-		"seed_server": "http://19.65.175.150:8080",
-		"undercloud_server": "http://19.65.175.150:8080",
-		"overcloud_server": "http://19.65.175.150:8080",
+		"seed_server": "19.65.175.150:8080",
+		"undercloud_server": "19.65.175.150:8080",
+		"overcloud_server": "19.65.175.150:8080",
 	}
 
 **NTP**
@@ -331,7 +338,7 @@ The following values appear under `floatingip` for configuring floating IPs:
 Then the `start`, `end`, and `cidr` cannot be anything in the form of 10.x.y.z.  The address range of the default private network is defined by the variable `fixed_range_cidr`.
 
 
-**Configure a second network** 
+## Configure a second network 
 
 A second network can be configured for the floating ip pool by setting `overcloud_public_interface` to a physically configured VLAN. The vlan name used as the `overcloud_public_interface` is expected to be of the form "vlan" followed by the vlan id ( ex. vlan101 ).
 
@@ -375,7 +382,7 @@ For example:
 			},
 
 
-[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#envars).
 
 
 

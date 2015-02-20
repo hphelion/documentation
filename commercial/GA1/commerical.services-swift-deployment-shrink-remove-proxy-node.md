@@ -100,7 +100,7 @@ Perform the following steps to identify the disks of the node to be removed:
     	# ringos copy-ring -s /root/ring-building/account.ring.gz -n <Swift nodes IP address>
     	# ringos copy-ring -s /root/ring-building/container.ring.gz -n <Swift nodes IP address>
 	
-	You can also copy the the account and container ring files  to all the swift nodes using the following commands:
+	You can also copy the account and container ring files  to all the swift nodes using the following commands:
 
 		# ringos copy-ring -s /root/ring-building/account.ring.gz -n all
     	# ringos copy-ring -s /root/ring-building/container.ring.gz -n all

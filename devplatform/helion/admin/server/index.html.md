@@ -35,7 +35,7 @@ Unless you've already created a primary admin user in the Management Console. If
 
 **Note**
 
- If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must login with your SSH key you selected during cluster creation.
+ If the cluster was created using the Horizon Management Console Panel or Application Lifecycle Service Installer CLI, you must log in with your SSH key you selected during cluster creation.
 
 Command access to the Application Lifecycle Service server is available in several ways:
 

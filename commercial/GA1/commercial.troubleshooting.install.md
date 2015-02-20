@@ -21,31 +21,34 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p> --->
 
 
-# HP Helion OpenStack&#174;  Troubleshooting the Installation
+# HP Helion OpenStack&#174; Installation Troubleshooting
 
-HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of Linux&reg; provided by HP. This topic describes all the known issues that you might encounter. To help you resolve these issues, we have provided possible solutions.
+This topic provides possible solutions to known issues.
 
-##KVM baremetal issues{#kvm}
-
+- [Modify the Heat Configuration File Before DNSaaS Installation](#heat-config)
 * [Fatal PCI Express Device Error](#fatal-pci)
 * [IPMI fails with error- unable to establish IPMI v2 / RMCP+ session](#IPMI-fails)
-* [Failure of Update overcloud](#failure-update-overcloud)
-*  [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
-*  [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
-*  [BIOS clocks are not set to correct date and time across all nodes](#BIOS-clocks-are-not-set-to-correct-date)
-*  [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
-*  [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
-*  [Failure of Hp_ced_installer.sh](#failure-installer)
-*  [Failure of Seed Installation](#seed-install-failure)
+* [Failure of Update on the Overcloud](#failure-update-overcloud)
+* [Installation failure as the flavor to be used for overcloud nodes does not match](#installation-failure)
+* [PXE boot on target node keeps switching between interfaces](#PXE-boot-on-target)
+* [BIOS clocks are not set to correct date and time across all nodes](#BIOS-clocks-are-not-set-to-correct-date)
+* [iLO console shows hLinux daemon.err tgtd while PXE booting](#ilo-console)
+* [iLO console shows null waiting for notice of completion while PXE booting](#ilo-show-null)
+* [Failure of hp_ced_installer.sh](#failure-installer)
+* [Failure of Seed Installation](#seed-install-failure)
+- [Inconsistent Failures in RabbitMQ](#rabbit-failure)
+- [Server Power Stuck at Reset](#reset-stuck)
+- [Network Bridge Persists After Uninstall](#bridge-persists)
 
+
+<hr>
 ##Fatal PCI Express Device Error {#fatal-pci}
 
 **System Behavior/Message**
 
 When installing on HP ProLiant SL390s and HP ProLiant BL490d systems, the following error has occasionally occurred:
 
-    `Fatal PCI Express Device Error PCI Slot ?
-     B00/D00/F00`
+    `Fatal PCI Express Device Error PCI Slot ? B00/D00/F00`
 
 
 **Resolution**
@@ -63,71 +66,6 @@ If you get this error, reset the system that experienced the error:
    8. Click Power switch / Momentary Press, and wait for the system to restart.
 
    The system should now boot normally.
-
-* If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. To restore the overcloud to an operational state, follow the steps below:
- 
-  1. As user `root` on the overcloud controller you must:
-  
-        A. Run the `os-refresh-config` scripts:
-
-            # os-refresh-config
-
-        B. Restart the `mysql` service:
-
-            # service mysql restart
-
-        C. Re-run the `os-refresh-config` scripts:
-
-            # os-refresh-config
-
-        D. Restart all Networking Operations (Neutron) services:
-
-            # service neutron-dhcp-agent restart
-            # service neutron-l3-agent restart
-            # service neutron-metadata-agent restart
-            # service neutron-openvswitch-agent restart
-            # service neutron-server restart
-
-  2. On each overcloud node, restart the Neutron and Nova services:
-  
-            $ sudo service neutron-openvswitch-agent restart
-            $ sudo service nova-compute restart
-            $ sudo service nova-scheduler restart
-            $ sudo service nova-conductor restart
-
-
-* The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state in which the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
-
-* On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists. To revert the network configuration to its pre-installation state, run the following commands as user root: 
-
-        # ip addr add 192.168.185.131/16 dev eth0 scope global
-        # ip addr del 192.168.185.131/16 dev brbm
-        # ovs-vsctl del-port NIC
-
-     where
-       * eth0 is the external interface     
-       * 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
-       * The baremetal bridge is always called 'brbm'
-
-* Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
-
-    **Important**: The installation of the HP Helion OpenStack DNSaaS fails if you do not make these modifications.
-
-    1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
-    
-            heat_metadata_server_url = http://192.0.202.2:8000
-            heat_waitcondition_server_url = http://192.0.202.2:8000/v1/waitcondition
-            heat_watch_server_url = http://192.0.202.2:8003
-
-        **Note**: You must have admin ssh access to the overcloud controller.
-
-    2. Save the file.
-    3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
-
-    4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
-<br><br>
-<hr>
-
 
 ##IPMI fails with an error- unable to establish IPMI v2 / RMCP+ session {#IPMI-fails}
 
@@ -154,38 +92,35 @@ If you get this error, perform the following steps:
 <hr>
 
 
-## Failure of Update overcloud {#failure-update-overcloud}
+## Failure of Update on the Overcloud {#failure-update-overcloud}
 
 **System Behavior/Message**
 
 Update overcloud fails with the following error:
 
- `  Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)`
+<pre>Inconsistency between heat description ($OVERCLOUD_NODES) and overcloud configuration ($OVERCLOUD_INSTANCES)</pre>
 
 **Resolution**
 
-If you get this error, perform the below steps:
+If you get this error, perform the following steps:
 
- 1. Log in to Seed.
+1. Log in to Seed.
  
-		# ssh root@<Seed IP address>
+		ssh root@<Seed IP address>
 
-2. Edit `/root/tripleo/ce_env.json `and update the right variable for build&#95;number and installed&#95;build&#95;number. <!-- (CORE-1697) -->
+2. Edit the */root/tripleo/ce_env.json* file and update the variables **build&#95;number** and **installed&#95;build&#95;number** to the correct value. <!-- (CORE-1697) --> They may or may not match but the value cannot be NULL.
 
-The ce&#95;env&#95;json will be displayed as the sample below.
+3. A sample section of the *ce&#95;env&#95;json* file showing that the **build&#95;number** is changed from NULL to a valid value.
 
-		  "host-ip": "192.168.122.1", 
-		   "hp": { 
+		"host-ip": "192.168.122.1", 
+		"hp": { 
 		     "build_number": 11, 
 		     "installed_build_number": 11 
-
-  Note that  the build&#95;number is changed from null to the right variable.
+		...
+4. Run the installer script again to update the overcloud. During the installation, the build specified by build&#95;number is installed.
  
-3.Run the installer script to update the overcloud. 
- 
-		# bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
+		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud |& tee update_cloud.log
 
-During the installation, the number of build&#95;number and installed&#95;build&#95;number that you specified are installed.
 <br>
 <hr>
 
@@ -202,11 +137,11 @@ If you have a set of Baremetal servers which differ in specifications (e.g. memo
 
 **Resolution**
 
-Edit the **baremetal.csv** file to define the lowest specification server in the second row.
+Edit the *baremetal.csv* file to define the lowest specification server in the second row.
 <br><br>
 <hr>
 
-###PXE boot on target node keeps switching between interfaces {#PXE-boot-on-target}
+## PXE boot on target node keeps switching between interfaces {#PXE-boot-on-target}
 
 **System Behavior/Message**
 
@@ -228,7 +163,7 @@ When node boots up on iLO console it shows node waiting for PXE boot on multiple
 <br><br>
 <hr>
 
-### BIOS clocks are not set to correct date and time across all nodes {#bios-clocks-are-not-set-to-correct-date}
+## BIOS clocks are not set to correct date and time across all nodes {#bios-clocks-are-not-set-to-correct-date}
 
 
 **System Behavior/Message**
@@ -254,7 +189,7 @@ Reboot the node, using **F9** to get to the BIOS configuration. BIOS date and ti
 <br><br>
 <hr>
 
-### iLO console shows hLinux daemon.err tgtd while PXE booting {#ilo-console}
+## iLO console shows hLinux daemon.err tgtd while PXE booting {#ilo-console}
 
 **System Behavior/Message**
 
@@ -269,12 +204,12 @@ Node does not have enough disk space
 **Resolution**
 
 * Check if target node has disk space mentioned in `baremetal.csv` and is greater than Node_min_disk mentioned in `tripleo/tripleo-incubator/scripts/hp_ced_functions.sh`.
-* If disk space is less than Node&#95;min&#95;disk, change Node&#95;min&#95;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
+* If disk space is less than Node&#95;min&#95;disk, change Node&#095;min&#095;disk along with DISK&#95;SIZE in `tripleo/tripleo-incubator/scripts/hp_ced_list_nodes.sh` on Seed.
 * Re-run the installation script.
 <br>
 <hr>
 
-### iLO console shows null waiting for notice of completion while PXE booting {#ilo-show-null}
+## iLO console shows null waiting for notice of completion while PXE booting {#ilo-show-null}
 
 **System Behavior/Message**
 
@@ -286,26 +221,26 @@ Node does not have enough disk space. SAN boot is enabled for node or local disk
 
 **Resolution**
 
-Installer expects that SAN boot option is disabled for nodes. Verify whether SAN boot is disabled for BL 490c.
+Installer expects that SAN boot option is disabled for nodes. Verify that SAN boot is disabled for BL 490c.
 
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
 <br>
 <hr>
 
-### Failure of Hp&#95;ced_installer.sh {#failure-installer}
+## Failure of hp_ced_installer.sh {#failure-installer}
 
 **System Behavior/Message**
 
-`Hp_ced_installer.sh` fails because of `baremetal.csv /sda`.
+`hp_ced_installer.sh` fails because of bad characters in the `baremetal.csv`.
 
 
 **Resolution**
 
-Verify `baremetal.csv` for empty lines or special characters.
+Verify `baremetal.csv` does not contain any empty lines or special/corrupt characters.
 <br><br>
 <hr>
-### Failure of Seed Installation {#seed-install-failure}
+## Failure of Seed Installation {#seed-install-failure}
 
 
 **System Behavior/Message**
@@ -315,25 +250,99 @@ Seed installation fails with no space left on device.
 
 **Resolution**
 
-Verify the tripleo directory- user owner and group. It must be **root:root**. Incase it is not set as **root:root** then edit it to root using- `chown root:root tripleo`
+Verify the tripleo directory user owner and group. It must be **root:root**. 
+In case it is not set as **root:root** then change it to root using: 
 
-<br><br>
+	chown root:root tripleo
+
 <hr>
-
+## Inconsistent Failures in RabbitMQ {#rabbit-failure}
 **System Behavior/Message**
 
-Inconsistent Rabbitmq failure seen on controller nodes while listing queues 
+Inconsistent RabbitMQ failure seen on controller nodes while listing queues 
 
 	rabbitmqctl list_queues
 
-
 **Resolution**
 
-Restart the Rabbitmq service.
+Restart the RabbitMQ service.
 
-<br><br>
+
 <hr>
+## Accidental Reboot of Overcloud Controller {#reboot-accident}
 
+If the overcloud controller is rebooted (due to a power issue, hardware upgrade, or similar event), OpenStack compute tools such as `nova-list` might report that the VMs are in an ERROR state, rendering the overcloud unusable. 
+
+To restore the overcloud to an operational state, follow the steps below:
+ 
+  1. As user `root` on the overcloud controller you must:
+  
+     A. Run the `os-refresh-config` scripts:
+
+        os-refresh-config
+
+       B. Restart the `mysql` service:
+
+        service mysql restart
+
+       C. Re-run the `os-refresh-config` scripts:
+
+        os-refresh-config
+
+       D. Restart all Networking Operations (Neutron) services:
+
+        service neutron-dhcp-agent restart
+        service neutron-l3-agent restart
+        service neutron-metadata-agent restart
+        service neutron-openvswitch-agent restart
+        service neutron-server restart
+
+  2. On each overcloud node, restart the Neutron and Nova services:
+  
+        sudo service neutron-openvswitch-agent restart
+        sudo service nova-compute restart
+        sudo service nova-scheduler restart
+        sudo service nova-conductor restart
+
+
+<hr>
+## Server Power Stuck at Reset {#reset-stuck}
+The installer uses IPMI commands to reset nodes and change their power status. Some systems change to a state in which the `Server Power` status as reported by the iLO is stuck in `RESET`. If this occurs, you must physically disconnect the power from the server for 10 seconds. If the problem persists after that, contact HP Support as there might be a defective component in the system.
+
+<hr>
+## Network Bridge Persists After Uninstall {#bridge-persists}
+On the system on which the installer is run, the seed VM's networking is bridged onto the external LAN. If you remove HP Helion OpenStack, the network bridge persists.
+
+To revert the network configuration to its pre-installation state, run the following commands as user `root`: 
+
+	ip addr add 192.168.185.131/16 dev eth0 scope global
+	ip addr del 192.168.185.131/16 dev brbm
+	ovs-vsctl del-port NIC
+where
+
+* eth0 is the external interface     
+* 192.168.185.131 is the IP address on the external interface - you should replace this with your own IP address.
+* The baremetal bridge is always called 'brbm'
+
+<hr>
+## Modify the Heat Configuration File Before HP Helion OpenStack Installation {#heat-config}
+Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat with HP Helion OpenStack, you **must** modify the /etc/heat/heat.conf file on the overcloud controller as follows.
+
+<span style="color:red">**Important**:</span> The installation of the HP Helion OpenStack DNSaaS **fails** if you do not make these modifications.
+
+**Note**: You must have admin ssh access to the overcloud controller.
+
+1. Make sure the IP address in the following settings reflects the IP address of the overcloud controller, for example:
+    
+        heat_metadata_server_url = http://192.0.202.2:8000
+        heat_waitcondition_server_url = http://192.0.202.2:8000/v1/waitcondition
+        heat_watch_server_url = http://192.0.202.2:8003
+2. Save the file.
+3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
+4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
+<br>
+
+<hr>
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
 

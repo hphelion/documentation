@@ -22,10 +22,10 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # Managing Moonshot Servers
-####
+
 
 To manage HP Moonshot servers you must know the cartridge address and the node
 address (these are also known as the **transit&#95;address** and the **target&#95;address**
@@ -57,6 +57,11 @@ The address increases by 2  as the cartridge number increases
 This command gives the Cartridge address:
 
 	ipmitool -I lanplus -H xx.xx.xx.xx -U Administrator -P xxxxx sdr list mcloc
+
+
+Using these values
+ 
+**ipmitool -I lanplus -H &lt;hostname&gt;[-U &lt;username&gt;][-P &lt;password&gt;]&lt;command&gt;**
 
 Consult [HP Moonshot iLO documentation](http://h50146.www5.hp.com/products/software/oe/linux/mainstream/support/whitepaper/pdfs/c03933550-1.pdf) to determine the values needed.
 

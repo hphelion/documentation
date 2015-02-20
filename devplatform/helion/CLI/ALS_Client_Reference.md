@@ -14,7 +14,7 @@ authors: Jayme P
 ---
 
 <!--UNDER REVISION-->
-# HP Helion Development Platform: HP Helion ALS Command-Line Client Reference 
+# HP Helion Development Platform: HP Helion ALS Cluster Management Tool Reference 
 
 The ALS command-line interface client (cf-mgmt.exe) provides an option for executing commands that construct, manage, update, or delete ALS clusters. Use the command line when the Horizon management console is unavailable or when direct access is preferred. 
 

@@ -47,7 +47,7 @@ You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpclo
 
 If you need further assistance, contact [HP Customer Support](http://www.hpcloud.com/about/contact). 
 
-Before contacting HP Customer Support, run the `run-sosreport` command on the affected system. 
+Before contacting HP Customer Support, run the `run-sosreport` command as `root` on the affected system. 
 
 The command gathers specific information into a file that will help diagnose your issue. The file is located in the `/tmp` directory under a name in the format `sosreport-<system hostname>-<timestamp>.tar.xz`. For example: `/tmp/sosreport-hLinux-20150218083619.tar.xz`. 
 

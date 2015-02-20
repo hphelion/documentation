@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/technical-overview/">&#9664; Technical Overview | <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/technical-overview/">&#9664; Technical Overview | <a href="/helion/openstack/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
 
 
 # HP Helion OpenStack&#174;: Installation Prerequisites
@@ -45,6 +45,7 @@ Make sure the following required tasks are completed before you begin the instal
 	- Create the baremetal.csv file
 	- Set DNS servers name-resolution
 	- Integrating LDAP (Lightweight Directory Access Protocol)
+	- Disabling SR-IOV
 
 ## Hardware and software requirements {#hardware}
 
@@ -224,6 +225,12 @@ To set a default DNS name server for your HP Helion OpenStack Commercial cloud, 
 **OPTIONAL** The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
 For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/).
+
+### Disabling SR-IOV ###
+
+In the HP Helion OpenStack 1.1 release, there is a performance issue with hardware that is configured to support Single Root I/O Virtualization (SR-IOV). 
+
+The problem appears as overcloud performance delays for certain operations, like attempting to SSH into a compute node. The problem is related to DNS performance. The DNS service for the overcloud is the `dnsmasq` process. Occasionally the openvswitch on the undercloud drops packets which are destined for the `dnsmasq` tap device. The reason the openvswitch occasionally has problems is due to it seeing the tap device MAC address as a source MAC address on eth0. This source MAC address can flap between the tap device and eth0. Properly, the source address should only be the tap device. Because SR-IOV is enabled, a broadcast from the tap device MAC address as source is being sent back by the NIC through eth0. To fix this problem, HP recommends that you disable SR-IOV in the NIC BIOS (not just in the kernel).
 
 ## Next step {#nextstep}
 

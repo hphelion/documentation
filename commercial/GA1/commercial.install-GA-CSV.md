@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;: Create the baremetal.csv File for Installation #
 
@@ -37,7 +37,7 @@ There must be one entry in this file for each baremetal system you intend to ins
 
 Use the following format in the `baremetal.csv` file.
 
-`<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_management>`
+&lt;mac&#95;address&gt;, &lt;user&gt;, &lt;password&gt;, &lt;ip&#95;address&gt;, &lt;no&#95;of&#95;cpus&gt;, &lt;memory&#95;MB&gt;, &lt;diskspace&#95;GiB&gt;, &lt;role&gt;, &lt;power&#95;management&gt;
 
 Where `<mac_address>` is the MAC address of the network interface from which to boot. **Do not use the iLO NIC interface.**
 
@@ -60,7 +60,7 @@ The following is a sample file:
 
 When creating this file, keep the following in mind :
 
-- This file must contain from 7 to 100 lines. (100 being the maximum number of nodes suported in an HP Helion install.)
+- This file must contain from 7 to 100 lines. (100 being the maximum number of nodes supported in an HP Helion install.)
 - There must be one entry in this file for each baremetal system you intend to install.
 - The `mac_address` should be the MAC address of the network interface enabled for PXE/network boot on each baremetal system (*not* the MAC address of the BMC/IPMI controller).
 - The systems specified in this file must meet the Hardware Requirements detailed above.

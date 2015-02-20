@@ -120,7 +120,7 @@ This section provides details on installing the HP Helion Development Platform M
 
 1. Open Horizon and login as the *Admin* user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click **Configure Services**.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. 
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HDN). 
 
 	If you do not have an account, click the **Sign-up** button.
 
@@ -151,7 +151,7 @@ This process is documented in Step 7 of ["Starting the seed and building your cl
 
 1. Open Horizon and login as the *Admin* user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your user name and password for the HP Cloud OS Content Delivery Network. 
+2. Click the **Connect** button on the **Configure Services** panel and enter your user name and password for the HP Download Network (HDN). 
 
 	If you do not have an account, click the **Sign-up** button.
 
@@ -249,7 +249,7 @@ In addition to the quotas mentioned above, for every database instance that is c
 
 1. Open Horizon and login as the *Admin* user. Then click on the **Admin** panel in Horizon and select the **Development Platform** panel under Admin. Then click the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. 
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HDN). 
 
 	If you do not have an account, click **Sign-up**.
 
@@ -356,7 +356,7 @@ To check existing quota availability:
 
 1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under **Admin**. Then click on the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HDN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Marketplace Service {#marketplace-download}
 
@@ -428,6 +428,3 @@ As the *admin* user, in the Admin project, click on **Project**, then **Object S
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-
-----

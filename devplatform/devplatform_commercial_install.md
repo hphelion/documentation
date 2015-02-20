@@ -58,7 +58,7 @@ The installer requires the following packages. If they are not found, it will pr
 
 The installation of the HP Helion Development Platform for the HP Helion OpenStack Commercial Edition is provided as a small compressed tar file.  The images for the actual services will be downloaded at the installer's request.
 
-1. Register and download the package from the following URL: [HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show)
+1. Register at and download the package from the [HP Helion Development Platform](https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221245%22%7D/Show) (HDN). Make sure you record your HDN username and password, as they are part of the installation process.
 
 1. Before you begin the installation, unpack the tar file.
  
@@ -68,10 +68,8 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 
 		cd dev-platform-installer  
 
-5. Populate the `dev-platform-installer.conf` file. For example:
+5. Edit `dev-platform-installer.conf`.
 
-		testa@cloudosqa:~/dev-platform-installer$ cat dev-platform-installer.conf [DEFAULT] region=regionOne username=admin password=<password> tenant_name=admin tenant_id=<tenant ID> auth_url=https://<identity IP>:5000/v2.0 codn_username=<CODN username> codn_password=<CODN passsword> ca_cert=/usr/local/share/ca-certificates/ephemeralca-cacert.crt testa@cloudosqa:~/dev-platform-installer$
-  
  
 5. If your network uses a proxy, it may be necessary to set the proxy shell variable.
 
@@ -84,13 +82,14 @@ The installation of the HP Helion Development Platform for the HP Helion OpenSta
 	Set the identity URL if necessary.
 	 
  
-7. Run this command to prepare the installer and ensure prerequisites are met. 
+7. Run this command to prepare the installer and ensure the prerequisites are met. You will need your HDN username and password.
 
-		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address}
+		./DevelopmentPlatform_Setup.sh -p {admin_user_password} -a {auth_host_ip_address} -c {HDN user name} -o {HDN password} -e {cacert file} install
+
  
-9. Optionally, you can specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
+9. Optionally, you can also specify the Username, and Region at this time.</br> By default the Username is *admin*, the Tenant Name is *admin* and the Region is *regionOne*. 
  
-		sudo ./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -e {(location/ephemeralca-cacert.crt} install
+		sudo ./DevelopmentPlatform_Setup.sh -p {admin_user_password} {auth_host_ip_address} -u {username} -t {tenant_name} -i {tenant_id} -r {region_name} -c {HDN user name} -o {HDN password} -e {location/ephemeralca-cacert.crt} install
  
 11. Should you need more assistance during installation, the install script also has a help feature.
 
@@ -107,7 +106,7 @@ This section provides details on installing the Messaging service from the Devel
 
 1. Open Horizon and login as the "admin" user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click **Configure Services**.
 
-2. Click the **Connect** button on the **Configure Services** screen and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** screen and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Messaging Service
 
@@ -131,7 +130,7 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 1. Open Horizon and login as the "Admin" user. Then click on the **Admin** panel in Horizon and select **Development Platform**. Finally, click on **Configure Services**.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Application Lifecycle Service
 
@@ -253,7 +252,7 @@ In addition to the quota mentioned above, for every database instance that is cr
 
 1. Open Horizon and login as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** panel under Admin. Then click on the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download the Database Service
 
@@ -354,7 +353,7 @@ The **Marketplace Service** will be installed into the admin tenant of the Helio
 
 1. Open Horizon and log in as the "admin" user. Then click on the admin panel in Horizon and select the **Development Platform** Panel under Admin. Then click on the **Configure Services** sub-panel.
 
-2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Cloud OS Content Delivery Network. Select the Sign-up button if you do not have an account.
+2. Click the **Connect** button on the **Configure Services** panel and enter your username and password for the HP Download Network (HPN). Select the Sign-up button if you do not have an account.
 
 ### Download and Configure the Marketplace Service
 
