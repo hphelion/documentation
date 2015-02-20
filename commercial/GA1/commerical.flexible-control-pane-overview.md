@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 # HP Helion OpenStack&#174; Flexible Control Plane Overview
-The HP Helion OpenStack Flexible Control Plane introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment.  This new configuration reduces the control plane footprint to just three servers from the current seven servers.
+The HP Helion OpenStack Flexible Control Plane architectural configuration enables you to deploy the control plane in a virtual environment. This new configuration reduces the control plane footprint to just three servers from the current seven servers.
 
 This topic covers:
 
@@ -165,7 +165,7 @@ The Flexible Control Plane will also require the following configuration files i
 
 ###Create a VM-plan file {#Create vm-plan file}
    
-Create a VM-plan file to represent the distribution of virtual machines over
+Create a VM-plan file (vm-plan) to represent the distribution of virtual machines over
    their hosts. This is an example vm-plan file and its format mirrors that of
    the baremetal.csv file:
 

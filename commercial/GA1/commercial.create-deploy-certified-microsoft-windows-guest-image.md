@@ -23,10 +23,9 @@ PageRefresh();
 
 
 # How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack 
+The following section describes the procedure to create and deploy Microsoft Windows 2012 Server that is SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack.
 
-This page describes the procedure to create and deploy Microsoft Windows 2012 Server on HP Helion OpenStack.
-
-## HP Helion OpenStack with Microsoft Windows Server Reference Architecture (RA)
+## HP Helion OpenStack with Microsoft Windows Server Reference Architecture 
 
 
 HP Helion OpenStack is HPs hardened, tested, enterprise-grade distribution of OpenStack cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance OpenStack technologies.
