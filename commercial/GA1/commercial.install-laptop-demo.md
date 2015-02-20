@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Enterprise Edition 1.1 : Installation on a laptop with i7/32GB/512GB"
- "
 permalink: /helion/openstack/install/laptop/demo/
 product: commercial.ga
 
@@ -250,7 +249,7 @@ When you successfully login to the Horizon dashboard, you will see a web page th
 
 ##Shutdown and recovery {#shutdown-recovery}
 
-The following content describes how to to shutdown the laptop and recover HP OpenStack installation when the laptop restarts.
+The following content describes how to shutdown the laptop and recover HP OpenStack installation when the laptop restarts.
 
 ###Shutdown sequence for the Helion control plane
 
