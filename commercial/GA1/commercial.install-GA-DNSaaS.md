@@ -30,7 +30,7 @@ Our managed DNS service, based on the OpenStack Designate project, is engineered
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.1 over the previous version. </p>
 
 
 - [Prerequisites](#preq)
@@ -46,7 +46,7 @@ It is important to read through this page before starting your installation as i
 
 
 ##Prerequisites {#preq}
-<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.01, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.01 over the previous version. </p>
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.1 over the previous version. </p>
 
 * HP Helion OpenStack is successfully installed
 * Download [DNSaaS Installer Image](#publication) <br /> 
@@ -89,10 +89,13 @@ It is important to read through this page before starting your installation as i
 		* API credentials for Akamai
 			* Username
 			* Password
-* 	 
+
+**Important:** The DNS install will not work if the associated project has existing instances (VMs). If the project has existing VMs, the admin must increase the quota levels to allow more instances for that project before attempting to install DNS.
+
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
+
 ## Creating Prerequisite Credentials {#credentials}
 
 You must create both **target** and **service** credentials.
@@ -182,7 +185,24 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 8. Click **Launch** to launch the Instance. You are taken to the Instances page with the progress bar displaying the completion progress.
 
 9. Select the launched instance in the Instance table.
-10. Click **More** against the instance to display the drop-down list and select **Associate Floating IP**. Manage Floating IP Associations box is displayed.
+
+
+	<!-- Remove or hide per Graham HORI-3315
+	10. Click **More** against the instance to display the drop-down list and select **Associate Floating IP**. Manage Floating IP Associations box is displayed.
+	-->
+
+10. Generate a floating IP address to use:
+
+	a. Open a shell.
+
+	b. Make sure you have the nova command line client installed.
+
+	c. Source the dnsaas projects credentials.
+
+	d. Run the `nova floating-ip-create` command to  return a floating IP address.
+
+	e. Run the `nova floating-ip-associate dnsaas-installer <floating-ip>` command using the IP address you obtained in the previouis step.
+
 
 11. Perform the following steps in the Manage Floating IP Associations:
 
@@ -193,6 +213,7 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
   	c. Click **Associate**.
 
 12. Click **Access and Security**. Access & Security page is displayed.
+
 13. Select the appropriate security group from the list and click **Manage Rules**. For example: select **default** as a security group. The page navigates to Manage Security Group Rules: <name of security> page.
 
 14. Click **Add Rule**. Add Rule dialog box is displayed.
