@@ -47,6 +47,9 @@ Before you can install the Flexible Control Plane, you will need to:
 		ovs-vsctl add-port brbm eth1
 		export BRIDGE_INTERFACE=brbm
 		ifconfig brbm 192.168.124.2
+		ifconfig eth1 0.0.0.0
+		route add default gw 192.168.124.1
+
 
 1. Similarly, for KVM Hosts B and C
 
