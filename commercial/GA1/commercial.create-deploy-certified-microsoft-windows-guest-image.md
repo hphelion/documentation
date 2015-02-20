@@ -26,7 +26,9 @@ PageRefresh();
 
 This page describes the procedure to create and deploy Microsoft Windows 2012 Server on HP Helion OpenStack.
 
-## HP Helion OpenStack with Microsoft Windows Server Reference Architecture (RA)
+**Note** This document only describes the procedure to create a windows qcow2 image that is SVVP (Server Virtualization Validation Program) compliant.
+
+## HP Helion OpenStack with Microsoft Windows Server Reference Architecture 
 
 
 HP Helion OpenStack is HPs hardened, tested, enterprise-grade distribution of OpenStack cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance OpenStack technologies.
