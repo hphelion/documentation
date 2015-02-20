@@ -32,7 +32,12 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Diagnosis of disk health using hpssacli utility for HP servers
 
-The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*** utility.
+HP Helion Object Storage (Swift) provides native monitoring of swift services and hardware resources like disk. Disk is a crucial part of swift cluster therefore we have added extended monitoring check for HP hardwares. The monitoring solution depends on hpasscli application to fetch various details of hardware to determine its health and publish to Icinga. By default, hpasscli is not bundled with Object Storage (Swift) images because of licensing reason. Also, it does not get installed implicitly as part of swift node deployment. 
+
+You are advised to download and install utility as per procedure mentioned below. If utility is not installed then Icinga dashboard will reflect the various disk parameters as critical.
+
+<!---
+The health of the disk  of the HP servers can be diagnosed using the ***hpsacli*** utility. --->
 
 
 ##HP Smart Storage Administrator CLI 2.0.22.0 (HPSSACLI)
