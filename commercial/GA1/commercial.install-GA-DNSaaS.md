@@ -89,6 +89,7 @@ It is important to read through this page before starting your installation as i
 		* API credentials for Akamai
 			* Username
 			* Password
+* Currently the DNS Install will work only if the project does not have any existing VM;s created due to quota issues. If the project has existing VMs, manually increase the quota levels for the DNS vm. 
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
@@ -237,44 +238,52 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 		
    	A. DEFAULT section:
 
-	   * auth&#095;url &mdash; Keystone auth URL
-	   * target&#095;project&#095;name &mdash; Project name where the service is installed
-	   * target&#095;username &mdash; Username used to deploy and run the service
-	   * target&#095;region&#095;name &mdash; Region name to deploy the service in
-	    
+
+	   * `target_project_name` - Project name where the service is installed
+	   * `target_username` - Username used to deploy and run the service
+	   * `target_region_name` - Region name to deploy the service in
+	   * `undercloud_vip`	This is the IP used to connect to the undercloud. This should be output by the Helion EE installer
+	   * `overcloud_vip` - This is the IP used to connect to the undercloud. This should be output by the Helion EE installer
+
    	B. Designate section:
 
-	   * ssh&#095;public&#095;key &mdash; The SSH public key to be installed on the instances for management access
-	   * ntp&#095;server &mdash; An IP or DNS name for an NTP server to sync time with
-	   * database&#095;root&#095;password &mdash; Password for the database root user
-	   * database&#095;designate&#095;password &mdash; Password for the database designate user
-	   * database&#095;powerdns&#095;password &mdash; Password for the database powerdns user
-	   * messaging&#095;root&#095;password &mdash; Password for the messaging root user
-	   * messaging&#095;designate&#095;password &mdash; Password for the messaging designate user
-	   * keystone&#095;host &mdash; Hostname or IP address of Keystone endpoint.
-	  * service&#095;project &mdash; Project name for a user with permission to validate Keystone tokens
-	  * service&#095;user &mdash; Username for a user with permission to validate Keystone tokens
-	  * service&#095;password &mdash; Password for a user with permission to validate Keystone tokens
-	  * backend&#095;driver &mdash; Backend driver to use (powerdns, dynect, akamai)
+	   * `ntp_servers` -List of NTP servers to use in the DNSaaS VMs.
+	   * `ssh_public_key` - The SSH public key to be installed on the instances for management access
+	   * `ca_certificate` - The CA Certificate used by the Overcloud API endpoints. This is available on the overcloud control nodes This should point to a CA cert file on disk.
+	   * `database_root_password` - Password for the database root user. This should be over 16 characters.
+	   * `database_designate_password` - Password for the database designate user. This should be over 16 characters.
+	   * `database_powerdns_password` - Password for the database powerdns user. This should be over 16 characters.
+	   * `messaging_root_password` - Password for the messaging root user. This should be over 16 characters.
+	   * `messaging_designate_password` - Password for the messaging designate user. This should be over 16 characters.
+	  * `service_project` - Project name for a user with permission to validate Keystone tokens
+	  * `service_user` - Username for a user with permission to validate Keystone tokens
+	  * `service_password` - Password for a user with permission to validate Keystone tokens
+	  * `ephemeralca_password` - EphemeralCA Password. This must match the eCA password value from the overcloud passwords file. This should be output by the Helion EE installer
+	  * `backend_driver` - Backend driver to use (powerdns, dynect, akamai)
+	  * `enable_beaver` - Enable Central Logging Support
+	  * `beaver_rabbit_password` - Beaver RabbitMQ Connection Password This must match the RabbitMQ password value from the undercloud passwords file. This should be output by the Helion EE installer
+ 
+   	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
 
- 	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
+	 * `msdns_servers` - A comma separated list of the Microsoft DNS servers short hostnames.
+	 * `msdns_also_notify` - List of IP addresses for name servers to notify when a zone is changed (Comma separated). These should be the IP addresses of the Microsoft DNS Servers. 
+	 * `messaging_access_cidr` - A CIDR to allow inbound access from the Microsoft DNS servers.
+	 * `nameserver_allow_axfr_ips` - CIDRs that are allow do zone transfers from the PowerDNS servers (Required for use with akamai, DynECT and Microsoft) - list of IPs and / or CIDRs. (Comma separated). This should be set to allow connections from the Microsoft DNS Servers  
 
-	 * msdns&#095;servers: A comma separated list of the Microsoft DNS servers short hostnames
-	 * messaging&#095;access&#095;cidr: A CIDR to allow inbound access from the Microsoft DNS servers
-
-
-	D. If you select DynECT you must set the following options in the designate section:
-
-	   * dynect&#095;customer&#095;name &mdash; Customer name provided by Dyn
-	   *  dynect&#095;username &mdash; Username provided by Dyn
-	   * dynect&#095;password &mdash; Password provided by Dyn
-
-
-	E. If you select Akamai you must set the following options in the designate section:
+	D. If you select Akamai you must set the following options in the designate section:
 	
-	   * akamai_username: The username that was set up as part of your Akamai signup
-	* akamai_password: The password that was set up as part of your Akamai signup
-	
+	   * `akamai_username`: The username that was set up as part of your Akamai signup.
+	   * `akamai_password`: The password that was set up as part of your Akamai signup.
+	   * `akamai_also_notify` - List of IP addresses for name servers to notify when a zone is changed (Comma separated). These should be the IP addresses provided by Akamai during signup
+	   * `nameserver_allow_axfr_ips` - CIDRs that are allow do zone transfers from the PowerDNS servers (Required for use with akamai, DynECT and Microsoft) - list of IPs and / or CIDRs. (Comma separated). This should be set to allow connections from the Akamai Zone Transfer Agents (provided during Akamai sign up)
+
+	E. If you select DynECT you must set the following options in the designate section:
+
+	   * `dynect_customer_name` - Customer name provided by DynECT signup.
+	   * `dynect_username` - Username provided by DynECT signup.
+	   * `dynect_password` - Password provided by DynECT signup.
+	   * `dynect_also_notify` - List of hostnames for name servers to notify when a zone is changed (Comma separated). These should be the IP addresses provided by DynECT during signup.
+	   * `nameserver_allow_axfr_ips` - CIDRs that are allow do zone transfers from the PowerDNS servers (Required for use with akamai, DynECT and Microsoft) - list of IPs and / or CIDRs. (Comma separated). This should be set to allow connections from the Akamai Zone Transfer Agents (provided during Akamai sign up). 
 
 6. Run the installer validation command to verify the configuration file
 
@@ -284,11 +293,9 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
       	 $ dnsaas-installer --target-password <Target User Password> install
 
-
-
 ##Configure the Overcloud Load Balancer for DNSaaS {#configovercloud}
 
- You must configure HAProxy before you configure the overcloud Load Balance for DNaaS.
+You must configure HAProxy before you configure the overcloud Load Balance for DNaaS.
 
 To configure HAProxy use the following command: 
 
@@ -315,13 +322,14 @@ After the configuration of HAProxy, SSH to all three overcloud controllers.
 
 Perform the following steps on each controller node:
 
-1. SSH overcloud as root
+1. SSH overcloud and sudo:
 
 		ssh heat-admin@<IP address of overcloud>
+		sudo -i
 
 2. nano  `paas.cfg` to edit the configuration file 
 
- 		/etc/haproxy/manual/paas.cfg
+ 		nano /etc/haproxy/manual/paas.cfg
 
 3. Paste the HA Proxy configuration file, which is generated in step 1, at the end of the `pass.cfg` file
 
@@ -343,6 +351,24 @@ Perform the following steps on each controller node:
 
 		iptables-save > /etc/iptables/iptables 
 
+7. If you are using MSDNS (Microsoft DNS Server) you must install an agent on each the Microsoft DNS server. These steps must be performed on each Microsoft DNS server to install the agent:
+
+The installer for the agent is in `/opt/stack/designate-msdnsagent/OpenStack.Designate.MicrosoftDNS.Installer.exe` on the seed cloud host. Download this file, and distribute it to all the target Microsoft DNS Servers.
+
+	a. Run the install.
+	b. Open the DNS Configuration (in **Start > Programs > HP > DNS Configuration**) and select **Run as Administrator**.
+	c. In the window that displays:
+		* **RabbitMQ Hosts** - Enter the IP address for the Messaging Outputs, each entry on a line, with no commas. 
+		* **RabbitMQ Port** - Leave the default.
+		* **RabbitMQ User** - Leave as the default (`designate`)
+		* `RabbitMQ Password / Confirm Password` - Enter the value of the `messaging_designate_password` value in the `dnsaas-installer.conf`.
+		* **Master DNS Servers** - Enter the IP addresses of the Nameserver Outputs, each entry on a line, with no commas.
+		* **Agent Name** - Enter one of the values set in `msdns_servers` config value, and unique per MS DNS server
+		* `CA Cert` - Enter the value of the `ephemeral-ca.crt` file on the seed cloud host.
+	d. Click **Validate**. 
+	e. Click **Save**.
+	f. Go to **Start > Programs > Administrative Tools > Services**.
+	g. Restart the **OpenStack.Designate.MicrosoftDNS' Service**.
 
 ## Registering the service with Keystone {#keyreg}
 
