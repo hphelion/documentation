@@ -21,14 +21,12 @@ authors: Jayme P
 
 # HP Helion Development Platform: Best Practices {#index-0}
 
-##Applying Updates {#applying-updates}
-
 - [Passwordless SSH Authentication](#passwordless)
 - [Applying Updates](#applying-updates)
 - [Security Patches](#bestpractices-ubuntu-security)
 	- [Upgrade the Docker image](#upgrade-docker)
 	- [Upgrade the VM](#upgrade-vm)
--   [Backup & Migration](#backup-migration)
+-   [Backup & Migration](#bestpractices-migration)
 -   [Limitations](#limitations)
 	-   [Custom Services](#custom-services)
     -   [Hard-coded Database Connection Info](#hard-coded-database-connection-info)
@@ -157,8 +155,7 @@ The **kato-patched** tag is attached to the image most recently updated by *kato
 	
 	If you have DEA autoscaling enabled, the DEA template must be upgraded as well when you upgrade the Docker image. To avoid extra work managing a cluster with several DEA nodes, you may wish to share the Docker base image from a Docker Registry on your network instead of generating an updated image on each individual node.
 
-##Backup & Migration {#backup-migration}
-
+##Backup & Migration {#bestpractices-migration}
 
 This section describes backing up Application Lifecycle Service data and importing it into a
 new Application Lifecycle Service system. The export/import cycle is required for:

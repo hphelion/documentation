@@ -77,7 +77,7 @@ The following is a list of the values that can be specified in the JSON environm
 
 `node_min_disk` - 
 
-`controller_scale` - (optional) Specift the number of overcloud controllers.
+`controller_scale` - (optional) Specify the number of overcloud controllers.
 
 `bridge_interface` - Use this variable to specify the interface on the seed cloud host to use as the bridge interface, for example `em2` or `eth2`. This interface connects to the untagged management network and will be used to PXE boot undercloud and overcloud servers:
 
@@ -145,11 +145,13 @@ The following values appear under `dns`  for configuring you DNS servers:
 `undercloud_server` - Use this variable to specify the DNS server for the undercloud.
 
 `overcloud_server` - Use this variable to specify the DNS server for the overcloud.
+		
+	Do not copy these addresses they are only examples
 
 	"dns": {
-		"seed_server": "http://19.65.175.150:8080",
-		"undercloud_server": "http://19.65.175.150:8080",
-		"overcloud_server": "http://19.65.175.150:8080",
+		"seed_server": "19.65.175.150:8080",
+		"undercloud_server": "19.65.175.150:8080",
+		"overcloud_server": "19.65.175.150:8080",
 	}
 
 **NTP**

@@ -26,8 +26,8 @@ The following features have been added to HP Helion OpenStack 1.1:
 **Additional Components in Centralized Logging** <br />[Centralized logging support](/helion/openstack/services/logging/overview/) has now been added for the following additional components: <!--HPM28-->
 
 - HAProxy
-- syslog
-- keepalived 
+- Syslog
+- Keepalived 
 
 **Windows certification as a guest O/S on KVM** <br />Microsoft Windows Server 2008 and 2012 have received Windows Server Virtualization Verification Program (SVVP) status. Windows Server can operate as a *guest* operating system in a virtual environment as if it were installed on baremetal (with certain exceptions allowed by MS). <!--HPM-29--> For information on the SVVP program, see Windows Server Catalog [Server Virtualization Validation Program](http://www.windowsservercatalog.com/svvp/).
 

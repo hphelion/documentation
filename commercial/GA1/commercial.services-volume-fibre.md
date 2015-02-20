@@ -13,7 +13,8 @@ authors: Sunitha K, Binamra S
 <!--UNDER REVISION-->
 
 
-<script
+
+<script>
 
 function PageRefresh {
 onLoad="window.refresh"
@@ -22,9 +23,10 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
--->
+
+<!---
+<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
+
 
 
 # HP Helion OpenStack&reg; 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager

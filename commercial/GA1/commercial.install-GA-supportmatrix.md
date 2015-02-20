@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/overview/test/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/technical-overview/"> Technical Overview</a> &#9654</p>
+<p style="font-size: small;"> <a href="/helion/openstack/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/technical-overview/"> Technical Overview</a> &#9654</p>
 
 <!-- IMPORTANT!!! The HW support Matrix should be approved by:
 * Gavin Brebner for Helion QA support
