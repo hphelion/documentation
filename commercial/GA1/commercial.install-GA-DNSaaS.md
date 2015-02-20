@@ -6,7 +6,7 @@ product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
-authors: Michael B, 
+authors: Michael B, Gerladine K, Graham H,
 
 ---
 <!--PUBLISHED-->
@@ -89,7 +89,7 @@ It is important to read through this page before starting your installation as i
 		* API credentials for Akamai
 			* Username
 			* Password
-* Currently the DNS Install will work only if the project does not have any existing VM;s created due to quota issues. If the project has existing VMs, manually increase the quota levels for the DNS vm. 
+* 	 
 <!--
 ## Uploading script to Sherpa (do we need to upload the DNaaS script to sherpa) ??
 -->
@@ -255,13 +255,13 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 	   * `database_powerdns_password` - Password for the database powerdns user. This should be over 16 characters.
 	   * `messaging_root_password` - Password for the messaging root user. This should be over 16 characters.
 	   * `messaging_designate_password` - Password for the messaging designate user. This should be over 16 characters.
-	  * `service_project` - Project name for a user with permission to validate Keystone tokens
-	  * `service_user` - Username for a user with permission to validate Keystone tokens
-	  * `service_password` - Password for a user with permission to validate Keystone tokens
-	  * `ephemeralca_password` - EphemeralCA Password. This must match the eCA password value from the overcloud passwords file. This should be output by the Helion EE installer
-	  * `backend_driver` - Backend driver to use (powerdns, dynect, akamai)
-	  * `enable_beaver` - Enable Central Logging Support
-	  * `beaver_rabbit_password` - Beaver RabbitMQ Connection Password This must match the RabbitMQ password value from the undercloud passwords file. This should be output by the Helion EE installer
+	   * `service_project` - Project name for a user with permission to validate Keystone tokens
+	   * `service_user` - Username for a user with permission to validate Keystone tokens
+	   * `service_password` - Password for a user with permission to validate Keystone tokens
+	   * `ephemeralca_password` - EphemeralCA Password. This must match the eCA password value from the overcloud passwords file. This should be output by the Helion EE installer
+	   * `backend_driver` - Backend driver to use (powerdns, dynect, akamai)
+	   * `enable_beaver` - Enable Central Logging Support
+	   * `beaver_rabbit_password` - Beaver RabbitMQ Connection Password This must match the RabbitMQ password value from the undercloud passwords file. This should be output by the Helion EE installer
  
    	C. If you select MSDNS (Microsoft DNS Server) you must set the following options in the designate section:
 
@@ -353,21 +353,27 @@ Perform the following steps on each controller node:
 
 7. If you are using MSDNS (Microsoft DNS Server) you must install an agent on each the Microsoft DNS server. These steps must be performed on each Microsoft DNS server to install the agent:
 
-The installer for the agent is in `/opt/stack/designate-msdnsagent/OpenStack.Designate.MicrosoftDNS.Installer.exe` on the seed cloud host. Download this file, and distribute it to all the target Microsoft DNS Servers.
+	The installer for the agent is in `/opt/stack/designate-msdnsagent/OpenStack.Designate.MicrosoftDNS.Installer.exe` on the seed cloud host. Download this file, and distribute it to all the target Microsoft DNS Servers.
 
 	a. Run the install.
+
 	b. Open the DNS Configuration (in **Start > Programs > HP > DNS Configuration**) and select **Run as Administrator**.
+
 	c. In the window that displays:
-		* **RabbitMQ Hosts** - Enter the IP address for the Messaging Outputs, each entry on a line, with no commas. 
-		* **RabbitMQ Port** - Leave the default.
-		* **RabbitMQ User** - Leave as the default (`designate`)
-		* `RabbitMQ Password / Confirm Password` - Enter the value of the `messaging_designate_password` value in the `dnsaas-installer.conf`.
-		* **Master DNS Servers** - Enter the IP addresses of the Nameserver Outputs, each entry on a line, with no commas.
-		* **Agent Name** - Enter one of the values set in `msdns_servers` config value, and unique per MS DNS server
-		* `CA Cert` - Enter the value of the `ephemeral-ca.crt` file on the seed cloud host.
+	* **RabbitMQ Hosts** - Enter the IP address for the Messaging Outputs, each entry on a line, with no commas. 
+	* **RabbitMQ Port** - Leave the default.
+	* **RabbitMQ User** - Leave as the default (`designate`)
+	* `RabbitMQ Password / Confirm Password` - Enter the value of the `messaging_designate_password` value in the `dnsaas-installer.conf`.
+	* **Master DNS Servers** - Enter the IP addresses of the Nameserver Outputs, each entry on a line, with no commas.
+	* **Agent Name** - Enter one of the values set in `msdns_servers` config value, and unique per MS DNS server
+	* `CA Cert` - Enter the value of the `ephemeral-ca.crt` file on the seed cloud host.
+
 	d. Click **Validate**. 
+
 	e. Click **Save**.
+
 	f. Go to **Start > Programs > Administrative Tools > Services**.
+
 	g. Restart the **OpenStack.Designate.MicrosoftDNS' Service**.
 
 ## Registering the service with Keystone {#keyreg}
@@ -392,17 +398,6 @@ For example :
 
 	designate server-create --name ns1.p13.dynect.net.
 
-##Additional backend install
-
-If you are using Microsoft DNS Server you should perform the following additional steps:
-
-1. Download Designate Microsoft DNS Agent installer.
-2. Execute the installer on each of the Microsoft DNS servers.
-3. Edit `msdnsagent.conf` files 
-
-		C:\Program Files (x86)\Designate\designate-msdnsagent.conf
-
-4. Restart the `designate-msdnsagent` service using the windows Services GUI. 
 
 ##Post-install cleanup
 
