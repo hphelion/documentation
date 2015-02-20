@@ -3,10 +3,6 @@ layout: default
 title: "HP Helion OpenStack&#174;: DNSaaS Installation and Configuration"
 permalink: /helion/openstack/install/dnsaas/
 product: commercial.ga
-product-version1: HP Helion OpenStack 1.1
-role1: Storage Administrator
-role2: Storage Architect
-authors: Michael B, 
 
 ---
 <!--PUBLISHED-->
@@ -21,10 +17,10 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor </p> 
-
-# HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
+<!--
+<p style="font-size: small;"> <a href="/helion/openstack/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/related-links/">NEXT &#9654;</a> </p>
+-->
+# HP Helion 1.0 OpenStack&#174;: DNSaaS Installation and Configuration
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. 
 
@@ -410,5 +406,4 @@ For more information, see:
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
-
 
