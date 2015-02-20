@@ -52,7 +52,7 @@ REDIS\_URL: Location of and credentials for the bound **Redis** service, if ther
 
 RABBITMQ\_URL: Location of and credentials for the bound **RabbitMQ** service, if there is (only) one.
 
-HOME: {#home} Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
+HOME: <a name="home"></a> Identifies the working directory assigned to a particular user on login. In an Application Lifecycle Service application container, this is generally set to */home/helion/app/* by default.
 
 HTTP\_PROXY:   A variable recognized by many web applications to direct them to a proxy HTTP server.
 
@@ -98,7 +98,7 @@ This makes it possible to access the environment variables for [*harbor*](/als/v
 
 HELION\_APP\_ROOT: This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.
 
-The [HOME](#home) environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *manifest.yml* and all the application files live.
+The <a href="#home">HOME</a> environment variable will actually point to the app directory, which looks mostly like the directory uploaded by the client. This is where *manifest.yml* and all the application files live.
 
 HELION\_DOCUMENT\_ROOT: This contains the root directory where the user can access. The document-root must always be specified relative to \$HOME (/home/helion/app).
 
