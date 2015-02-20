@@ -38,7 +38,7 @@ The documentation for HP Helion OpenStack includes the following:
 * [Related documentation](#related)
 * [HP Helion OpenStack&reg; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/services/neutron/installation/intro/)
 *  [How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack]( /helion/openstack/create-deploy/certified-microsoft-windows/guest-image/)
-*  [HP Helion OpenStack Enterprise Edition 1.1 : Installation on a laptop with i7/32GB/512GB](/helion/openstack/install/laptop/demo/)
+*  [HP Helion OpenStack Enterprise Edition 1.1 : Installation on a laptop with i7/32GB/512GB]( /helion/openstack/install/laptop/demo/)
 
 ## Release Notes {#release}
 

@@ -211,7 +211,8 @@ For information on editing the JSON environment variables file, see [Editing the
 
 Before installing, make sure you have created the `baremetal.csv` file that is required for installation.
 
-The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into.
+The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into. In this file you can also specify the role (or node type) for each server so you use the right hardware for different tasks such as storage or compute.  
+
 
 For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/).
 

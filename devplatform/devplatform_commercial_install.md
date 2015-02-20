@@ -149,7 +149,9 @@ This section provides details on installing the Database Service from the Develo
 
 #### Availability Zones
 
-To configure the **Database Service** in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.
+To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.
+
+The following steps show how to create three availability zones and assign a compute host to the zone.
 
 1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3". 
 	
