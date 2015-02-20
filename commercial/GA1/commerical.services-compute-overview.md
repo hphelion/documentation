@@ -38,9 +38,9 @@ Compute allows you to work with **flavors**, which are unique combinations of di
 
 A variety of flavors and images are provided by the HP Helion OpenStack Compute Service to create a wide mix of servers.
 
-## Storing Metadata on a Configuration Drive {#configdrive}
+<!-- ## Storing Metadata on a Configuration Drive {#configdrive}
 
-The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/services/compute/overview/configdrive) that contains information normally available through the metadata service. 
+The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/services/compute/overview/configdrive) that contains information normally available through the metadata service. --> 
 
 ##Working with the Compute Service ##
 
