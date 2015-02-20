@@ -85,7 +85,7 @@ You can add useful metadata information to the image, such as operating system i
 
 ##More information
 
-HP Helion Professional Services are available to assist you along each step of your cloud journey, from helping you define your business needs to deploying Microsoft Windows Server compute nodes within your HP Helion OpenStack cloud. As your trusted advisor, we will show you how to get started, the steps you will take to achieve your desired business outcomes, and - once it's up and running - we will show you how to support and scale your cloud based on best practices gained in operating one of the world’s largest OpenStack clouds and thousands of customer cloud deployments.
+HP Helion Professional Services are available to assist you along each step of your cloud journey, from helping you define your business needs to deploying Microsoft Windows Server compute nodes within your HP Helion OpenStack cloud. As your trusted advisor, we will show you how to get started, the steps you will take to achieve your desired business outcomes, and once it's up and running we will show you how to support and scale your cloud based on best practices gained in operating one of the world's largest OpenStack clouds and thousands of customer cloud deployments.
 
 ###Learn more at:
 
