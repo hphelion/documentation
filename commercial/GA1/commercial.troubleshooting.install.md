@@ -290,7 +290,6 @@ Installer expects that SAN boot option is disabled for nodes. Verify whether SAN
 
 Also, you can boot the targeted BL490c with Ubuntu or any Linux ISO to see what device is shown as the local disk. For the installer it should be `/sda`.
 
-<br>
 <hr>
 
 ### Failure of Hp&#95;ced_installer.sh {#failure-installer}
@@ -331,8 +330,45 @@ Inconsistent Rabbitmq failure seen on controller nodes while listing queues
 
 Restart the Rabbitmq service.
 
-<br><br>
 <hr>
+
+**System Behavior/Message**
+
+Node goes into ERROR state and/or Ironic commands may result in a 400 or a 403 error code.
+A a node being controlled bye the seed or undercloud may not be able to control either through Ironic or Nova.
+
+**Resolution**
+
+Check to be made:
+Run the following command:
+
+	$mysql --defaults-file=/mnt/state/root/metadata.my.cnf   
+	--socket /var/run/mysqld/mysqld.sock ironic -e 
+	"select reservation from nodes;"
+
+
+If the return form the command was not Null repeat the command to see if ironic is legitimately holding the lock.
+
+If on the second attempt the Lock was was still not NULL run the following:
+
+	mysql --defaults-file=/mnt/state/root/metadata.my.cnf \
+    --socket /var/run/mysqld/mysqld.sock ironic \
+     -e 'update nodes set reservation=NULL where reservation is not null;'
+
+Repeat the tests on the ironic reservation:
+
+	$mysql --defaults-file=/mnt/state/root/metadata.my.cnf   
+	--socket /var/run/mysqld/mysqld.sock ironic -e "select reservation from nodes;"
+
+You should now be able to once again use ironic commands for the node.
+
+If you were using Nova and the node when to ERROR use 
+
+	nova reset-state 
+
+to clear the error and rerun the original Nova command.
+
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
