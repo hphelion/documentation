@@ -197,12 +197,15 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
 	b. Make sure you have the nova command line client installed.
 
-	c. Source the dnsaas projects credentials.
+	c. Download the [target credentials](#target-cred) in an RC file, for example using Horizon.
 
-	d. Run the `nova floating-ip-create` command to  return a floating IP address.
+	d. Source the credentials.
 
-	e. Run the `nova floating-ip-associate dnsaas-installer <floating-ip>` command using the IP address you obtained in the previouis step.
+		source <filename>openrc.sh
 
+	e. Run the `nova floating-ip-create` command to  return a floating IP address.
+
+	f. Run the `nova floating-ip-associate dnsaas-installer <floating-ip>` command using the IP address you obtained in the previouis step.
 
 11. Perform the following steps in the Manage Floating IP Associations:
 
