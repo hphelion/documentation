@@ -134,7 +134,7 @@ To update your overcloud:
 	        glance image-download --file ./$image $image;
 	    done
 
-7. Remove old images from Glance once saved locally. [[can’t you rm these first, then download and then proceed?
+7. Remove old images from Glance once saved locally. [[can't you rm these first, then download and then proceed?
 
 	    for image in $(glance image-list | awk '{print $4}' | grep -);do
 	        glance image-delete  $image;done

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack "
-permalink: /helion/openstack/create-deploy/certified-Microsoft-Windows/guest-image/
+permalink: /helion/openstack/create-deploy/certified-microsoft-windows/guest-image/
 product: commercial.ga
 
 ---
@@ -29,7 +29,7 @@ This page describes the procedure to create and deploy Microsoft Windows 2012 Se
 ## HP Helion OpenStack with Microsoft Windows Server Reference Architecture (RA)
 
 
-HP Helion OpenStack is HP’s hardened, tested, enterprise-grade distribution of OpenStack cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance OpenStack technologies.
+HP Helion OpenStack is HPs hardened, tested, enterprise-grade distribution of OpenStack cloud software, designed to deliver the best open source cloud computing technology in a stable, maintainable and manageable package. It offers a number of value-added services that complement and enhance OpenStack technologies.
 This document describes how to create a Microsoft Windows Server 2012 or 2012 R2 image for deployment within HP Helion OpenStack. This paper also introduces you to the software architecture of HP Helion OpenStack.
 The Microsoft Windows Server images can be created on a 64-bit workstation running Ubuntu 13.10 or higher on physical hardware that supports KVM.
 
@@ -70,13 +70,13 @@ The `virt-install` command can be used to install a new guest operating system o
 	--os-type: Operating system type. <br>
 	--os-variant: (Optional) Used to specify an operating system variant. <br>
 
-	You can use `virt-manager` or `virt-viewer` to connect to the VM’s console and start the windows installation. Make sure that you shut down the windows guest image after the installation is complete.
+	You can use `virt-manager` or `virt-viewer` to connect to the VMs console and start the windows installation. Make sure that you shut down the windows guest image after the installation is complete.
 
 
 4.	**Upload the qcow2 image to glance**<br>
 You can use the glance `image-create` command to upload the Windows Server 2012 image to glance, for example:
 
-		glance image-create --name WS2012 --disk-format qcow2 --container-format bare –is-public true --file ws2012.qcow2
+		glance image-create --name WS2012 --disk-format qcow2 --container-format bare -is-public true --file ws2012.qcow2
 
 5.	**Set metadata properties to the glance image**<br>
 You can add useful metadata information to the image, such as operating system information or hardware details by using the glance image-update command, for example:
@@ -86,7 +86,7 @@ You can add useful metadata information to the image, such as operating system i
 
 ##More information
 
-HP Helion Professional Services are available to assist you along each step of your cloud journey, from helping you define your business needs to deploying Microsoft Windows Server compute nodes within your HP Helion OpenStack cloud. As your trusted advisor, we’ll show you how to get started, the steps you’ll take to achieve your desired business outcomes, and - once it’s up and running - we’ll show you how to support and scale your cloud based on best practices gained in operating one of the world’s largest OpenStack clouds and thousands of customer cloud deployments.
+HP Helion Professional Services are available to assist you along each step of your cloud journey, from helping you define your business needs to deploying Microsoft Windows Server compute nodes within your HP Helion OpenStack cloud. As your trusted advisor, we will show you how to get started, the steps you will take to achieve your desired business outcomes, and - once it's up and running - we will show you how to support and scale your cloud based on best practices gained in operating one of the world’s largest OpenStack clouds and thousands of customer cloud deployments.
 
 ###Learn more at:
 
