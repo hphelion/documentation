@@ -39,6 +39,7 @@ This topic provides possible solutions to known issues.
 - [Inconsistent Failures in RabbitMQ](#rabbit-failure)
 - [Server Power Stuck at Reset](#reset-stuck)
 - [Network Bridge Persists After Uninstall](#bridge-persists)
+- [Node in error cannot be controlled by Ironic or Nova](#ironic-error)
 
 
 <hr>
@@ -330,6 +331,61 @@ Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat wit
 <span style="color:red">**Important**:</span> The installation of the HP Helion OpenStack DNSaaS **fails** if you do not make these modifications.
 
 **Note**: You must have admin ssh access to the overcloud controller.
+<hr>
+
+<br>
+## Node in error cannot be controlled by Ironic or Nova {#ironic-error}
+
+**System Behavior/Message**
+
+Node goes into ERROR state and/or Ironic commands may result in a 400 or a 403 error code.
+A a node being controlled by the seed or undercloud cannot be controlled either through Ironic or Nova.
+
+**Resolution**
+
+Run the following command:
+
+	$mysql --defaults-file=/mnt/state/root/metadata.my.cnf   
+	--socket /var/run/mysqld/mysqld.sock ironic -e 
+	"select reservation from nodes;"
+
+
+If the return form the command was not Null, repeat the command to see if Ironic is legitimately holding a lock.
+
+If on the second attempt the lock was was still not NULL, run the following:
+
+	$mysql --defaults-file=/mnt/state/root/metadata.my.cnf \
+    --socket /var/run/mysqld/mysqld.sock ironic \
+     -e 'update nodes set reservation=NULL where reservation is not null;'
+
+Repeat the tests on the Ironic reservation:
+
+	$mysql --defaults-file=/mnt/state/root/metadata.my.cnf   
+	--socket /var/run/mysqld/mysqld.sock ironic -e "select reservation from nodes;"
+
+You should now once again be able to use Ironic commands for the node.
+
+If you were using Nova and the node when into ERROR, run 
+
+	nova reset-state 
+
+to clear the error and rerun the original Nova command.
+
+
+
+1. Make sure the IP addresses in the following settings reflect the IP address of the overcloud controller, for example:
+    
+        heat_metadata_server_url = http://192.0.202.2:8000
+        heat_waitcondition_server_url = http://192.0.202.2:8000/v1/waitcondition
+        heat_watch_server_url = http://192.0.202.2:8003
+2. Save the file.
+3. Restart the Heat-related services &ndash; heat-api, heat-api-cfn, heat-api-cloudwatch, and heat-engine.
+4. Ensure there are no Heat resources in an error state, and then delete any stale or corrupted Heat-related stacks.
+<br>
+
+<hr>
+
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
