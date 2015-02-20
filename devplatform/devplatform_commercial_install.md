@@ -134,7 +134,9 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 ### Download and Configure the Application Lifecycle Service
 
-1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+1. In the **Configure Services** panel, locate the Application Lifecycle Service item in the Configure Services table.
+
+2. Select **Download Service** and wait for the download to complete.
 
 2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
 
