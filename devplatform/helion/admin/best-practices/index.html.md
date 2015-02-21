@@ -237,7 +237,7 @@ at 3AM as `root` using the `helion` user's login environment (required) and save
 mounted external filesystem.
 
 Scheduled (non-interactive) backups using the `kato export` command will need to be run by `root` as
-some shell operations performed in the export require `sudo` when run interactively. For clusters, password authentication will have to be [disabled](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication) between the Core node and all other nodes. The command should be run on the node hosting the 'filesystem' role, as some shell commands need to be run locally for that service.
+some shell operations performed in the export require `sudo` when run interactively. For clusters, password authentication will have to be [disabled](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication) between the Core node and all other nodes. The command should be run on the node hosting the *filesystem* role, as some shell commands need to be run locally for that service.
 
 ### Importing the server data[](#importing-the-server-data "Permalink to this headline")
 
@@ -262,16 +262,16 @@ Login to the Application Lifecycle Service VM (or Core node) and run
 `kato data import` with the relevant options. For
 example, to import all data into a new cluster from a .tgz file:
 
-    $ kato data import --cluster helion-export-xxxxxxxxxx.tgz
+    kato data import --cluster helion-export-xxxxxxxxxx.tgz
 
 To import data from a running Application Lifecycle Service system instead, specify the
 hostname of the old Core node:
 
-    $ kato data import --cluster helion-host.example.com
+    kato data import --cluster helion-host.example.com
 
 ##Upgrading {#upgrade}
 The *kato node upgrade* command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
-[*Upgrading Application Lifecycle Service*](/als/v1/admin/server/upgrade/#upgrade) for full
+[Upgrading Application Lifecycle Service](/als/v1/admin/server/upgrade/#upgrade) for full
 instructions.
 
 The *kato data import* command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:

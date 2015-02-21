@@ -34,40 +34,22 @@ The Management Console can be extensively customized and themed. Administrators 
     -   [Restoring values](#restoring-values)
 -   [Renaming the Client](#renaming-the-client)
 
-Console Settings[](#console-settings "Permalink to this headline")
--------------------------------------------------------------------
+## Console Settings {#console-settings}
 
-The Management Console is modified mainly through the **Settings \>
-Console** pages. Settings are saved as variables which can subsequently
-be used in HTML pages via the [Embedded JavaScript
-(EJS)](http://embeddedjs.com/) templating engine.
+The Management Console is modified mainly through the **Settings \> Console** pages. Settings are saved as variables which can subsequently be used in HTML pages via the [Embedded JavaScript (EJS)](http://embeddedjs.com/) templating engine.
 
-### Product[](#product "Permalink to this headline")
+### Product {#product}
 
 -   **Product Name**: Overrides all occurrences of 'Application Lifecycle Service'
--   **Company Name**: Overrides all occurrences of 'HP
-    Software'
+-   **Company Name**: Overrides all occurrences of 'HP Software'
 -   **Vendor Version**: Overrides all occurrences of the Application Lifecycle Service
     version number.
 -   **Default Locale**: Sets the default locale of the console if the
     users current locale isn't recognized. Currently, only the 'en'
     localization is complete.
--   **External Docs URL**: The link that directs users to documentation.
-    Defaults to the current documentation published to
-    docs.hpcloud.com. Ticking 'Use local docs' will cause this URL to
-    be ignored and the docs from the VM will be served instead.
+-   **External Docs URL**: The link that directs users to documentation. Defaults to the current documentation published to docs.hpcloud.com. Ticking 'Use local docs' will cause this URL to be ignored and the docs from the VM will be served instead.
 
-<!-- added in 3.4.2 but makes no sense
-### Client {#client} 
-
-The CLI client version number and the paths or URLs to the downloadable archives for each platform. 
- 
-Local paths are relative to the */home/stackato/stackato/* directory (Router node, see :ref:`Renaming the Client <customize-rename-client>` below), but HTTP URLs can also be used for externally hosted files.  
- 
-The client executables served from the VM are the latest version available at the time of the Stackato VM release, but updated clients may become available between releases. The current release of the Stackato CLI client is always available from the `ActiveState Downloads site <http://downloads.activestate.com/stackato/client/>`_. 
--->
-
-### Look and Feel[](#look-and-feel "Permalink to this headline")
+### Look and Feel {#look-and-feel}
 
 -   **Favicon Logo URL**: The favicon to use. Recommended to be 32x32px
     image/png.
@@ -78,17 +60,17 @@ The client executables served from the VM are the latest version available at th
     above but height is about 40px before distortion occurs.
 -   **Background Color**: Sets the background color of the console.
 
-### Welcome Page[](#welcome-page "Permalink to this headline")
+### Welcome Page {#welcome-page}
 
 The HTML/EJS to show on the Welcome page. The [*settings-variables*](#customize-settings-vars) and `username`
 variable (current user) are available via EJS, but plain HTML will work
 for simple use cases.
 
-### Support Page[](#support-page "Permalink to this headline")
+### Support Page {#support-page}
 
 The HTML/EJS to show on the Support page. The [*settings-variables*](#customize-settings-vars) and `support_email` variable (see Settings \> Controller) are available.
 
-### Eula Content[](#eula-content "Permalink to this headline")
+### Eula Content {#eula-content}
 
 The HTML/EJS to show in the EULA overlay. The [*settings-variables*](#customize-settings-vars) are available.
 
@@ -104,7 +86,7 @@ To expose customized error pages, create the following HTML files in */home/stac
 When present, these files will be used to display the corresponding HTTP errors.
 The default error page files (located at */home/stackato/stackato/code/console/errors/*) can be used as a reference, but should not be modified directly as changes may be lost during upgrades or patches.
 
-### Custom Stylesheet[](#custom-stylesheet "Permalink to this headline")
+### Custom Stylesheet {#custom-stylesheet}
 
 CSS defined here will be applied to the page after the default CSS has
 been loaded, and override/replace any style. Use this to change the
@@ -112,7 +94,7 @@ layout and color of any element in the Management Console. Use web
 development tools like Firebug or Chrome DevTools to inspect elements
 and find the relevant styles.
 
-### Settings Variables[](#settings-variables "Permalink to this headline")
+### Settings Variables {#settings-variables}
 
 The following variables (with their default values) are available in the
 EJS templates on the settings object (e.g.
@@ -134,7 +116,7 @@ EJS templates on the settings object (e.g.
     '[http://docs.helion.com/3.0/](../..)',
 -   use\_local\_docs: "false"
 
-### Restoring values[](#restoring-values "Permalink to this headline")
+### Restoring values {#restoring-values}
 
 Each setting has an individual **Load Default** button (refresh icon to
 the left of the value field) which will replace the customized value
@@ -151,8 +133,7 @@ format:
 
 Replace **setting_name** with one of the variables above and that value will be reset to the default.
 
-Renaming the Client[](#renaming-the-client "Permalink to this headline")
--------------------------------------------------------------------------
+## Renaming the Client {#renaming-the-client}
 
 The Helion client is distributed as a single
 file executable for Windows, OS X and Linux (x86 and x86\_64). Zip files
