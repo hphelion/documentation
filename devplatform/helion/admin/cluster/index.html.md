@@ -109,12 +109,12 @@ Take note of the internal IP address of the Core node. It will be required in th
 Make sure that the IP address of its `eth0` interface is registering the correct address, which may not be the case if you have set a static IP and not yet rebooted or restarted
 networking. To check the IP address, run:
 
-    $ ifconfig eth0
+    ifconfig eth0
 
 If necessary, set the [static IP address](/als/v1/admin/server/configuration/#server-config-static-ip):
 
 
-    $ kato op static_ip
+    kato op static_ip
 
 **Note**
 
@@ -122,15 +122,13 @@ If necessary, set the [static IP address](/als/v1/admin/server/configuration/#se
 
 ### Hostname[](#hostname "Permalink to this headline")
 
-Next, set the **fully qualified hostname** of the Core node. This is
-required so that Application Lifecycle Service's internal configuration matches the [DNS
-record](/als/v1/admin/server/configuration/#server-config-dns) created for
+Next, set the **fully qualified hostname** of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the [DNS record](/als/v1/admin/server/configuration/#server-config-dns) created for
 this system.
 
 To set the hostname, run:
 
 
-    $ kato node rename hostname.example.com --no-restart
+    kato node rename hostname.example.com --no-restart
 
 
 This hostname will become the basename of the "API endpoint" address
@@ -153,7 +151,7 @@ node (or [Load Balancer/Router](#cluster-load-balancer)).
 On the Core node, execute the following command:
 
 
-    $ kato node setup core api.hostname.example.com
+    kato node setup core api.hostname.example.com
 
 This sets up the Core node with just the implicit **controller**,
 **primary**, and **router** roles. The **router** role is **required** on this node even if there are other routers in the cluster and even if the node is not exposed to the Internet. 
@@ -163,8 +161,8 @@ carry on to enable those roles you ultimately intend to run on the Core
 node. For example, to set up a Core node with the **controller**,
 **primary**, **router**, and **dea** roles:
 
-    $ kato node setup core api.hostname.example.com
-    $ kato role add dea
+    kato node setup core api.hostname.example.com
+    kato role add dea
 
 
 Then proceed to configure the other VMs by attaching them to the Core
@@ -214,7 +212,7 @@ routable IP and exposed port range if you want to provide externally accessible 
 Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:
 
 
-    $ kato node attach -e dea CORE_IP
+    kato node attach -e dea CORE_IP
 
 
 Continue this process until you have added all the desired DEA nodes.
@@ -225,7 +223,7 @@ To verify that all the cluster nodes are configured as expected, run the
 following command on the Core node:
 
 
-    $ kato status --all
+    kato status --all
 
 ### Removing Nodes[](#removing-nodes "Permalink to this headline")
 
@@ -235,7 +233,7 @@ remove a node from the cluster. Run the following command on the core
 node.
 
 
-    $ kato node remove NODE_IP
+    kato node remove NODE_IP
 
 ### Role Configuration using the Management Console[](#role-configuration-using-the-management-console "Permalink to this headline")
 
@@ -259,8 +257,8 @@ building a cluster later.
 All that is required here is to enable all roles except for **mdns**
 (not used in a clustered or cloud-hosted environment):
 
-    $ kato node setup core api.hostname.example.com
-    $ kato role add --all-but mdns
+    kato node setup core api.hostname.example.com
+    kato role add --all-but mdns
 
 
 ### Three-Node[](#three-node "Permalink to this headline")
@@ -442,27 +440,27 @@ separate VMs to improve performance. To do this, all controller nodes must share
 -   Stop the controller process on the Core node before proceeding
     further:
 
-        $ kato stop controller
+        kato stop controller
 
 -   On the Core node *and each additional controller node*:
 
     -   Create a mount point:
 
-            $ sudo mkdir /mnt/controller
+            sudo mkdir /mnt/controller
 
     -   Mount the shared filesystem on the mount point. [[1]](#id4)
 
     -   Set aside the original `/home/helion/helion/data`:
 
-            $ mv /home/helion/helion/data /home/helion/helion/data.old
+            mv /home/helion/helion/data /home/helion/helion/data.old
 
     -   Create a symlink from `/home/helion/helion/data` to the mount point:
 
-            $ ln -s /mnt/controller /home/helion/helion/data
+            ln -s /mnt/controller /home/helion/helion/data
 
 -   On the Core node, start the controller process:
 
-        $ kato start controller
+        kato start controller
 
 -   Run the following command on the additional Controller nodes to
     enable *only* the controller process:
@@ -501,7 +499,7 @@ system as [configured in
 DNS](/als/v1/admin/server/configuration/#server-config-dns). Run the following
 on Load Balancer node:
 
-    $ kato node rename *hostname.example.com*
+    kato node rename *hostname.example.com*
 
 ### Set up the Core Node[](#set-up-the-core-node "Permalink to this headline")
 
@@ -509,11 +507,11 @@ The Core node will need to temporarily take on the API endpoint hostname
 of the Application Lifecycle Service system (i.e. the same name as the Load Balancer above).
 Run the following on the Core node:
 
-    $ kato node rename *hostname.example.com*
+    kato node rename *hostname.example.com*
 
 If it is not already configured as the Core node, do so now:
 
-    $ kato node setup core api.\ *hostname.example.com*
+    kato node setup core api.\ *hostname.example.com*
 
 The `kato node rename` command above is being used
 to set internal Application Lifecycle Service parameters, but all hosts on a network should
@@ -525,11 +523,11 @@ ultimately have unique hostnames. After setup, rename the Core node
 
 As with the Core node, you will need to run `kato node rename`on each router with the same API endpoint hostname. Run the following on each Router:
 
-    $ kato node rename *hostname.example.com*
+    kato node rename *hostname.example.com*
 
 Then enable the 'router' role and attach the node to the cluster:
 
-    $ kato node attach -e router <MBUS_IP>
+    kato node attach -e router <MBUS_IP>
 
 As above, rename each host manually after configuration to give them
 unique hostnames. The MBUS\_IP is the network interface of the Core node
@@ -537,18 +535,15 @@ unique hostnames. The MBUS\_IP is the network interface of the Core node
 
 ### Configure the Application Lifecycle Service Load Balancer[](#configure-the-helion-load-balancer "Permalink to this headline")
 
-**Note**
-
-An Application Lifecycle Service node configured as a Load Balancer cannot have any other
-roles enabled.
+**Note**: An Application Lifecycle Service node configured as a Load Balancer cannot have any other roles enabled.
 
 Attach the Application Lifecycle Service VM to the Core node:
 
-    $ kato node attach <MBUS_IP>
+    kato node attach <MBUS_IP>
 
 To set up the node as a Load Balancer automatically:
 
-    $ kato node setup load_balancer --force
+    kato node setup load_balancer --force
 
 This command fetches the IP addresses of all configured routers in the
 cluster.
@@ -556,7 +551,7 @@ cluster.
 To set up the Load Balancer manually, specify the IP addresses of the
 Router nodes. For example:
 
-    $ kato node setup load_balancer 10.5.31.140 10.5.31.145
+    kato node setup load_balancer 10.5.31.140 10.5.31.145
 
 ### Load Balancer SSL Certificates[](#load-balancer-ssl-certificates "Permalink to this headline")
 
