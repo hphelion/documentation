@@ -90,7 +90,7 @@ The following section will show how to create an instance of Vertica 7 Community
  
 4. Supply a database name and a password, complying with the on-page instructions and then click the **Next** button.
 
-	<img src="media/marketplace7.png"/>
+	<img src="media/marketplace7new.png"/>
 
 1. You will be prompted to add the Application you have created to the environment you selected. Click **Create** to continue. 
  

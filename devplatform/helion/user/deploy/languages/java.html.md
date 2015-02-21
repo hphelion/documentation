@@ -59,16 +59,13 @@ API:
 
 ### Example[](#example "Permalink to this headline")
 
-The [Java database sample](/helion/devplatform/workbook/messaging/java/) sample
+The [Java database sample](/helion/devplatform/workbook/database/java/) sample
 demonstrates a simple Java application using a MySQL service.
 
-
-
-CATALINA\_OPTS[](#catalina-opts "Permalink to this headline")
---------------------------------------------------------------
+## CATALINA\_OPTS {#catalina-opts}
 
 The CATALINA\_OPTS environment variable can be set in the
-`env:` block of manifest.yml (or set in the
+`env:` block of manifest.yml (or set via the
 Management Console) to override Application Lifecycle Service defaults.
 
 **Note**

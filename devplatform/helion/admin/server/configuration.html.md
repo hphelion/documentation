@@ -30,14 +30,14 @@ option is useful in this scenario).
 	-   [Changing IP Addresses](#changing-ip-addresses)
 	-   [Setting a Static IP](#setting-a-static-ip)
 	-   [Modifying the hosts file](#modifying-etc-hosts)
-	-   [DNS](#dns)
+	-   [DNS](#server-config-dns)
 	-   [Dynamic DNS](#dynamic-dns)
 	-   [Alternate DNS Techniques](#alternate-dns-techniques)
 		-   [xip.io](#xip-io)
 		-   [dnsmasq](#dnsmasq)
 		-   [Adding DNS Nameservers](#adding-dns-nameservers)
 		-   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
-		-   [HTTP Proxy](#http-proxy)
+		-   [Upstream HTTP Proxy Settings](#http-proxy)
 		-   [Staging Cache & App HTTP Proxy](#staging-cache-app-http-proxy)
 	-   [VM Filesystem Setup](#vm-filesystem-setup)
 	-   [Application Lifecycle Service Data Services vs. High Availability Databases](#helion-data-services-vs-high-availability-databases)
@@ -293,11 +293,9 @@ example:
 
     sudo vi /etc/hosts
 
-### DNS {#dns}
+### DNS {#server-config-dns}
 
-The Application Lifecycle Service micro cloud uses [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns). to
-broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local
-machine or subnet.
+The Application Lifecycle Service micro cloud uses [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns) to broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local machine or subnet.
 
 For production use, the server will need:
 

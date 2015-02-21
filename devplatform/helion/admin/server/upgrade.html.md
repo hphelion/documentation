@@ -34,8 +34,8 @@ Application Lifecycle Service provides the ability to upgrade a node or cluster 
     -  [Node Upgrade Order](#node-upgrade-ordering)
     -  [Node Upgrade Process](#node-upgrade-process)
 	-  [Zero-downtime Upgrades](#zero)
--  [Troubleshooting](#troubleshooting)
 -  [Offline Upgrade Process](#upgrade-node-upgrade-offline)
+-  [Troubleshooting](#troubleshooting)
 ##Before an upgrade {#before-an-upgrade}
 Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.
 
@@ -61,7 +61,7 @@ Core/cache nodes require at least 1GB of free memory for upgrades to run success
  
 Use the **free** or **vmstat** commands to determine how much memory is available on each VM and use **kato stop** to temporarily stop roles if more memory is required.  
 
-### Maintenance Mode[](#maintenance-mode "Permalink to this headline")
+### Maintenance Mode {#maintenance-mode}
 
 Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the [Cloud Controller Settings](/als/v1/admin/console/customize/#console-settings-maintenance-mode) or the following *kato* command:
 
@@ -71,10 +71,9 @@ This shuts down API requests but continues to serve web requests. The Management
 
 ### Backups or Snapshots {#backup-snapshot}
  
-Back up all system and user data in Stackato by performing a [data 
-export](/als/v1/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/als/v1/admin/best-practices/#bestpractices-snapshots) of all nodes in your hypervisor.  
+Back up all system and user data by performing a [data export](/als/v1/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/als/v1/admin/best-practices/#bestpractices-snapshots) of all nodes in your hypervisor.  
 
-### Proxy settings for Upgrades [](#proxy-settings "Permalink to this headline")
+### Proxy settings for Upgrades {#proxy-settings}
 
 The systems being upgraded will need to be able to access the following
 public URIs:
@@ -83,21 +82,20 @@ public URIs:
 -   [https://pkg.helion.com](https://pkg.helion.com/)
 
 This may require setting the HTTPS\_PROXY environment variable on each
-node if a proxy is in use on your network. See [Proxy Settings ](/als/v1/admin/server/configuration/http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
+node if a proxy is in use on your network. See [Upstream Proxy Settings](/als/v1/admin/server/configuration/#http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
 	
 	export http_proxy=http://intproxy.example.com: 
 
-
 ### Passwordless SSH {#rsa-keys}
 
-For cluster upgrades, you should [set up SSH keys for passwordless authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
-between the Core node and all other cluster nodes. Without this, you will be prompted for the Helion system user password multiple times for each node.
+For cluster upgrades, you should set up SSH keys [and disable password authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
+between the Core node and all other cluster nodes. Without this configuration, you will be prompted for the system user password multiple times for each node.
 
 ###Passwordless sudo {#pwless-sudo}
 
-Without passwordless sudo, kato will prompt for the sudo password (the helion user password) during the upgrade of each node even if SSH key authentication is enabled.
+Unless passwordless sudo is enabled, kato will prompt for the sudo password during the upgrade of each node even if passwordless SSH key authentication is enabled.
 
-For a completely unattended upgrade, you can configure passwordless sudo in addition to configuring SSH keys as described above. For example, you could run the following commands on all nodes in the cluster:
+For a completely unattended upgrade, configure passwordless sudo in addition to configuring SSH keys as described above. For example, you could run the following commands on all nodes in the cluster:
 
 	echo 'helion ALL = (root) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/nopasswd
 	sudo chmod 0440 /etc/sudoers.d/nopasswd
@@ -111,7 +109,7 @@ While the upgrade is in progress, DEAs will be [retired](/als/v1/admin/reference
 
 ##Executing the upgrade {#executing-the-upgrade}
 
-### Upgrading an individual node[](#upgrading-an-individual-node "Permalink to this headline")
+### Upgrading an individual node {#upgrading-an-individual-node}
 
 To upgrade an individual node, log into the node and run:
 
@@ -119,7 +117,7 @@ To upgrade an individual node, log into the node and run:
 
 This will start the **Node Upgrade Process** as described below.
 
-### Upgrading a cluster[](#upgrading-a-cluster "Permalink to this headline")
+### Upgrading a cluster {#upgrading-a-cluster}
 
 To upgrade a cluster, log into the Core node in the cluster and run:
 
@@ -149,7 +147,7 @@ Once the download has completed, the upgrade portion can be run (with or without
 
 	kato node upgrade --cache-ip <Core node IP>
 
-### Node upgrade ordering[](#node-upgrade-ordering "Permalink to this headline")
+### Node upgrade ordering {#node-upgrade-ordering}
 
 When performing a cluster upgrade, the nodes in the cluster are automatically arranged into an upgrade order based on the roles they have enabled. This order is then followed when upgrading nodes.
 
@@ -167,7 +165,7 @@ Nodes are matched to this ordering by the roles they have enabled. Any nodes tha
 The order can be overridden with the [--role-order](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
 option.
 
-### Node Upgrade Process[](#node-upgrade-process "Permalink to this headline")
+### Node Upgrade Process {#node-upgrade-process}
 
 Each node goes through the following process during an upgrade.
 
@@ -207,6 +205,32 @@ The cluster must have the following redundant roles:
 
 - At least two Routers (behind a Load Balancer) <cluster-load-balancer>` 
 - At least two DEA nodes
+
+
+## Offline Upgrades (update from .tgz Archive) {#upgrade-node-upgrade-offline}
+
+For clusters without direct access to the internet for upgrades, a  single .tgz archive will contain all of the packages
+necessary to upgrade. 
+ 
+Download the archive and transfer it to a node with at least 7GB of free disk space to allow for the extraction of all the bundled packages (14GB if you are upgrading from the previous version). 
+ 
+To upgrade: 
+ 
+
+1. Unpack the .tgz file in a convenient directory (in this example, */tmp*). 
+ 
+   		stackato@demo:/tmp$ tar xzvf als-upgrade-x.x.x-x.x.x.tgz 
+ 
+1. Change to the newly created directory:: 
+ 
+	    stackato@demo:/tmp$ cd als-upgrade-x.x.x-x.x.x/ 
+	    stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ 
+	 
+1. Run the upgrade script:: 
+ 
+    	stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ ruby als-upgrade-x.x.x-x.x.x.rb 
+   
+1. Enter the *sudo* password when prompted, and then follow the prompts. 
 
 ## Troubleshooting {#troubleshooting}
 Potential difficulties and how to resolve them.
@@ -248,7 +272,7 @@ If you have made customizations in these places or in other areas not described 
 **Warning**: Any custom buildpacks added to the system prior to the upgrade will be lost.
 Custom buildpacks must be [restored](/als/v1/user/deploy/buildpack/#custom-buildpacks) to the system after an upgrade.
 
-##Clearing Browser Cache
+### Clearing the Browser Cache
 After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:
 
 	sconsole.cf_api.settings is undefined
@@ -274,8 +298,6 @@ For example:
 
 		tac /s/logs/sentinel-cli.log | grep -m1 'Running with command' 
  		INFO  Sentinel::CLI : Running with command: bin/sentinel upgrade 3.4.1 127.0.0.1 192.168.20.11 --skip-download
-		
-
 
 1. Execute
  
@@ -283,32 +305,4 @@ For example:
 
 1. Copy the output after 'Running with command:' and run it. In this example:
 
- 	bin/sentinel upgrade 3.4.1 127.0.0.1 192.168.20.11 --skip-download 
-
-
-## Offline Upgrades (update from .tgz Archive) 
-
-For clusters without direct access to the internet for upgrades, a  single .tgz archive will contain all of the packages
-necessary to upgrade. 
- 
-Download the archive and transfer it to a node with at least 7GB of free disk space to allow for the extraction of all the bundled packages (14GB if you are upgrading from the previous version). 
- 
-To upgrade: 
- 
-
-1. Unpack the .tgz file in a convenient directory (e.g. */tmp*):: 
- 
-   		stackato@demo:/tmp$ tar xzvf stackato-upgrade-3.4.1-3.5.0.tgz 
- 
-1. Change to the newly created directory:: 
- 
-	    stackato@demo:/tmp$ cd stackato-upgrade-3.4.1-3.5.0/ 
-	    stackato@demo:/tmp/stackato-upgrade-3.4.1-3.5.0$ 
-	 
-1. Run the upgrade script:: 
- 
-    	stackato@demo:/tmp/stackato-upgrade-3.4.1-3.5.0$ ruby stackato-upgrade-3.4.1-3.5.0.rb 
-   
-1. Enter the *sudo* password when prompted, and then follow the prompts. 
- 
- 
+ 		bin/sentinel upgrade 3.4.1 127.0.0.1 192.168.20.11 --skip-download 

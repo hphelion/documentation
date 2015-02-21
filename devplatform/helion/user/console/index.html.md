@@ -44,13 +44,14 @@ The top-level page of the Management Console displays quick links to the most co
 The Applications list is accessible from the top menu. It shows all applications deployed under the current user's Organizations.
 
 The list shows:
+
 - the application name
 - the Organization it belongs to
 - the Space it was deployed to
 - the Description field
 - its current state (STARTED or STOPPED)
 - its staging state (STAGED or FAILED)
-- Application Access (i.e. if :ref:`Application SSO <application-sso>` is enabled)
+- Application Access (whether Application SSO is enabled)
 
 The list can be sorted by name or state, and filtered by:
 
@@ -92,7 +93,7 @@ The Organizations page shows a list of all [Organizations](/als/v1/user/deploy/o
 
 Clicking on the Organization's name opens a view of that organization, including the following tabs:
 
--   **Spaces**: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a [view of that Space](#user-console-space).
+-   **Spaces**: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a [view of that Space](#space-view).
 -   **Users**: A list of Users who are members of the Organization, showing the Email address and Organization [Roles](/als/v1/user/deploy/orgs-spaces/#orgs-spaces-roles) of each.
     -   **Users**: can view organization quotas, domains, spaces and users.
     -   **Manager**: can add domains and spaces to the organization, but not users.
@@ -107,7 +108,7 @@ Clicking on the Organization's name opens a view of that organization, including
 ### Space View {#space-view}
 
 -   **Apps**: A filterable list of applications in the Space. Clicking an app name opens an [administrative view of that application](#user-console-app).
--   **Timeline**: A real-time stream of events and discussions relevant to the Space. The creation, update, and deletion of apps and services appear here as notifications which can be commented on by members of the Space. Discussions can be started by any member, tagged, and assigned to an application (which makes the item visible in the Application view).
+-   **Timeline**: A real-time stream of events and discussions relevant to the Space. The creation, update, and deletion of apps and services appear here as notifications which can be commented on by members of the service-instance-viewSpace. Discussions can be started by any member, tagged, and assigned to an application (which makes the item visible in the Application view).
 -   **Quota Usage**:
     -   **Memory**: The amount of RAM (in GB) available to the Organization, and how much of it is currently used by applications.
     -   **Services**: The number of deployed / allotted services.
@@ -141,7 +142,7 @@ If a the service is a User Provided Service, new credentials can be added and ex
 
 **App Bindings**
 
-A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application] <user-console-app>`.
+A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application](/als/v1/admin/console/#applications).
 
 ##Sample Applications {#sample-apps}
 

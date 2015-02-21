@@ -21,12 +21,13 @@ authors: Jayme P
 - [helion apps](#command-apps): List the applications deployed to the target.
 - [helion list](#command-list): List the applications deployed to the target.
 - [helion releases](#command-releases): Show the list of versions for the specified application.
-- [helion versions](#command-versions): Show the list of versions for the specified application.)
+- [helion versions](#command-versions): Show the list of versions for the specified application.
 
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
+
+For more information, use the **helion help** or **helion help [*command*]** commands.
 
 <hr>
 

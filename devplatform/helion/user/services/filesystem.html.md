@@ -23,13 +23,11 @@ and even between applications deployed to the same space.
 
 A persistent file system service allows apps to do the following:
 
-1.  Share files across multiple instances of an app
-2.  Store files that persist if an app is removed (providing the service
-    is not deleted) or if the server is restarted.
-3.  Conserve space on filesystems allocated within the VM instance by referencing the persistent filesystem instead.
+- Share files across multiple instances of an app
+- Store files that persist if an app is removed (providing the service is not deleted) or if the server is restarted.
+- Conserve space on filesystems allocated within the VM instance by referencing the persistent filesystem instead.
 
-Creating A Persistent File System[](#creating-a-persistent-file-system "Permalink to this headline")
------------------------------------------------------------------------------------------------------
+###Creating A Persistent File System {#creating-a-persistent-file-system}
 
 A filesystem service can be configured in your *manifest.yml* file:
 
@@ -39,10 +37,10 @@ A filesystem service can be configured in your *manifest.yml* file:
 You can also use the `helion create-service`
 command:
 
-    $ helion create-service filesystem mydata
+    helion create-service filesystem mydata
         Creating Service: OK
 
-        $ helion services
+        helion services
 
         =========== Provisioned Services ============
 
@@ -52,12 +50,9 @@ command:
         | mydata         | filesystem |
         +----------------+------------+
 
-Using A Persistent File System[](#using-a-persistent-file-system "Permalink to this headline")
------------------------------------------------------------------------------------------------
+### Using A Persistent File System {#using-a-persistent-file-system}
 
-**Note**
-
-File system service is available during pre-staging and shouldn't need
+**Note**: File system service is available during pre-staging and shouldn't need
 to be reconfigured when the application starts.
 
 The filesystem service creates a path which your app can use to store
@@ -134,12 +129,9 @@ in the [*manifest.yml*](/als/v1/user/deploy/manifestyml/) file to
 configure a filesystem service and create a symlink to it for use by the
 app. (see example below)
 
-Example of Using A Persistent File System[](#example-of-using-a-persistent-file-system "Permalink to this headline")
----------------------------------------------------------------------------------------------------------------------
+###Example of Using A Persistent File System {#example-of-using-a-persistent-file-system}
 
-**Note**
-
-When linking the file system service to the application, using symlinks
+**Note**: When linking the file system service to the application, using *symlinks*
 is strongly recommended.
 
 We will go through how we customized our WordPress installation to use
@@ -167,11 +159,8 @@ We need to add the following to our manifest.yml:
         # link to wp-content folder in the shared filesystem
         - ln -s "$HELION_FILESYSTEM"/wp-content wp-content
 
-**Note**
-
-When moving files onto the mounted filesystem with a `mv` hook, you may see an error message similar to:
+**Note**: When moving files onto the mounted filesystem with a `mv` hook, you may see an error message similar to:
 
     mv: failed to preserve ownership for... Permission denied
 
-This is a misleading warning, as the files **will** actually be moved with
-the correct permissions and ownership.
+This is a misleading warning, as the files **will** actually be moved with the correct permissions and ownership.

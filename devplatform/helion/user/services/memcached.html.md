@@ -14,17 +14,15 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Memcached Service[](#memcached-service "Permalink to this headline")
-=====================================================================
+# HP Helion Development Platform: Memcached Service {#memcached-service}
 
 Memcached is an in-memory key-value store used for caching by many web
 applications and frameworks. It is available in Application Lifecycle Service as a service
 which can be shared by application instances.
 
-Using the Service[](#using-the-service "Permalink to this headline")
----------------------------------------------------------------------
+## Using the Service {#using-the-service}
 
-As with other [*data services*](/als/v1/user/services/data-services/#data-services), the
+As with other [data services](/als/v1/user/services/data-services/#data-services), the
 location and port of the memcached service is exposed to the application
 via environment variables: MEMCACHE\_URL or VCAP\_SERVICES.
 
@@ -39,8 +37,8 @@ is set to `False` in the memcached\_node
 configuration (default). To enable SASL for Memcached, an Application Lifecycle Service
 administrator can run the following commands on the Cloud Controller:
 
-    $ kato config set memcached_node sasl_enabled true
-    $ kato restart memcached_node
+    kato config set memcached_node sasl_enabled true
+    kato restart memcached_node
 
 With SASL enabled, applications must parse the[*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
 environment variables to extract the `name`, `user`, and `password`
@@ -50,8 +48,7 @@ authentication via SASL.
 
 **Warning:** Running Memcached **without** SASL enabled is insecure and should only be done if all system users are trusted. Any Application Lifecycle Service user can connect to the provisioned service instance if the IP address and port is discovered.
 
-Django Example using Memcached[](#django-example-using-memcached "Permalink to this headline")
------------------------------------------------------------------------------------------------
+## Django Example using Memcached {#django-example-using-memcached}
 
 The [Django GTD](https://github.com/Stackato-Apps/django-gtd) sample
 application uses the simpler VCAP\_SERVICES method for connecting to the

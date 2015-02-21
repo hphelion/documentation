@@ -19,7 +19,7 @@ authors: Jayme P
 The Application Lifecycle Service includes a number of data services which can be bound to the
 applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a [persistent file system](/als/v1/user/services/filesystem/#persistent-file-system) service and [Memcached](/als/v1/user/services/memcached/#memcached).
 
-For detailed information on using an **external** database system, see [Using External Database Services](#database-external).
+For detailed information on using an **external** database system, see [Using External Database Services](#using-external-databases).
 
 - [Configuring Application Lifecycle Service Data Services](#configuring-helion-data-services)
 	- [Defining Services in the *manifest.yml* File (before push)](#using-manifest-yml)
@@ -36,8 +36,8 @@ For detailed information on using an **external** database system, see [Using Ex
 	- [Using *helion run*](#using-helion-run)
 	- [Using *helion tunnel*](#using-helion-tunnel)
 - [Importing a MySQL database](#importing-a-mysql-database)
-	- [Using *dbshell*](#id2)
-	- [Using *helion tunnel*](#id3)
+	- [Using *dbshell*](#sqldbshell)
+	- [Using *helion tunnel*](#sqltunnel)
 - [Changing Database Versions](#database-version-changes)
 - [Using SQLite](#sqlite "Permalink to this headline")
 
@@ -77,10 +77,9 @@ Possible service types are:
 -   [rabbitmq](/als/v1/user/reference/glossary/#term-rabbitmq)
 -   [redis](/als/v1/user/reference/glossary/#term-redis)
 
-To access the database services after they've been created, see [Accessing
-Configured Database Services](#database-accessing).
+To access the database services after they've been created, see [Accessing Database Services](#accessing-database-services).
 
-### Creating Services During Push[](#using-helion-push "Permalink to this headline")
+### Creating Services During Push {#using-helion-push}
 
 In order to ensure that the correct services are configured each time the app is pushed, list the services in the *manifest.yml* file.
 
@@ -135,7 +134,7 @@ There are two ways to do this:
 
 2. Pass all parameters in separate commands.
 	
-	These two commands do the same thing as if all three parameters were passed using `create-service`, but provide additional flexibility to create and configure the service before binding it to an app.
+	These two commands ([helion create-service](/als/v1/user/reference/client-ref/servicemanagement/#command-create-service) and [helion bind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-bind-service)) do the same thing as if all three parameters were passed using `create-service`, but provide additional flexibility to create and configure the service before binding it to an app.
 
 		create-service \<service\> \<name\>
 
@@ -164,13 +163,13 @@ There are two ways to do this:
         +-------------+---+---------+---------------------------+-----------------------+
 
 For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
-the [Helion services](/als/v1/user/reference/client-ref/#command-services) command reference.
+the [ALS Service Management](/als/v1/user/reference/client-ref/servicemanagement) command reference.
 
 ##Using Database Service Environment Variables {#using-database-services}
 
 When you bind a database service to an application, [environment variables](/als/v1/user/reference/environment/#environment-variables) containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.
 
-Examples of how to parse and use these variables can be found in the [Language-Specific Deployment](/als/v1/user/deploy/#language-specific-deploy) section.
+Examples of how to parse and use these variables can be found in the [Language-Specific Deployment](/als/v1/user/deploy/#language-specific-deployment) section.
 
 ### DATABASE\_URL<a name="database-url"></a>
 
@@ -268,11 +267,11 @@ Container security prevents apps from connecting to arbitrary servers and ports 
 
 ## Directly Accessing Database Services {#accessing-database-services}
 
-You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the `dbshell` (preferred) or `tunnel` commands.
+You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell) (preferred) or [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) commands.
 
 ### Via *dbshell* {#using-dbshell}
 
-The *helion dbshell* command creates an SSH tunnel to database services. To open an interactive shell to a service:
+The [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell) command creates an SSH tunnel to database services. To open an interactive shell to a service:
 
     helion dbshell <application_name> <service_name>
 
@@ -289,9 +288,9 @@ hook in *manifest.yml* such as:
       post-staging:
         - dbshell < setup/sample-data.sql
 
-### Using Tunnel[](#using-tunnel "Permalink to this headline")
+### Using Tunnel {#using-tunnel}
 
-The *helion tunnel* command is an alternative
+The [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command is an alternative
 method for accessing database services. The command creates a small Ruby
 application which proxies database requests over HTTP. This is the
 standard method for database access in Cloud Foundry, but tends to be
@@ -364,7 +363,7 @@ To pull a dump of all databases:
 
     mysqldump -A --protocol=TCP --port=10000 --host=localhost --user=<user> --password=<pass>
 
-## Pre-populating a database while pushing an app[](#pre-populating-a-database-while-pushing-an-app "Permalink to this headline")
+## Pre-populating a database while pushing an app {#pre-populating-a-database-while-pushing-an-app}
 
 When a database needs to be populated with data the first time it is
 run, it can be done by the use of a hook during the staging process.
@@ -422,31 +421,30 @@ run the script:
 With those changes, the data from your script will be executed after the
 staging process is complete but before the app starts to run.
 
-## Backing up a MySQL database[](#backing-up-a-mysql-database "Permalink to this headline")
+## Backing up a MySQL database {#backing-up-a-mysql-database}
 
-### Using helion run[](#using-helion-run "Permalink to this headline")
+### Using helion run {#using-helion-run}
 
-To export a MySQL database, use the *helion run*
-command to remotely execute the dbexport tool:
+To export a MySQL database, use the [helion run](/als/v1/user/reference/client-ref/management/#command-run) command to remotely execute the dbexport tool:
 
-	$ helion run [application-name] dbexport service-name > dumpfile.sql
+	helion run [application-name] dbexport service-name > dumpfile.sql
 
 This will run a `dbexport` of the named data service
 remotely and direct the output to a local file. If run from a directory
 containing the manifest.yml file, the application name may be omitted.
 
-### Using helion tunnel[](#using-helion-tunnel "Permalink to this headline")
+### Using helion tunnel {#using-helion-tunnel}
 
 This method of database backup is provided for compatibility with Cloud Foundry. It tends to be slower than using `helion run ...`.
 
-To back up a MySQL database, use the [tunnel](#database-tunnel)
+To back up a MySQL database, use the [tunnel](#sqltunnel)
 command to make a connection to the server and export the data using
 `mysqldump`.
 
-Use the `tunnel` command to access the service (in
+Use the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command to access the service (in
 this example a MySQL database named `customerdb`):
 
-    $ helion tunnel customerdb
+    helion tunnel customerdb
 
     Password: ********
     Getting tunnel url: OK, at https://tunnel-xxxxx.helion-xxxx.local
@@ -469,29 +467,29 @@ this example a MySQL database named `customerdb`):
 Select option **3. mysqldump**. You will be prompted to enter a path to
 where the dump will be saved.
 
-See the [tunnel](#database-tunnel) command documentation for other
-ways of accessing a MySQL database. See [Importing a MySQL database](#bestpractices-importing-mysql) for details on importing a
+See the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
+ways of accessing a MySQL database. See [Importing a MySQL database](#importing-a-mysql-database) for details on importing a
 file created by mysqldump into an existing MySQL database service.
 
-## Importing a MySQL database[](#importing-a-mysql-database "Permalink to this headline")
+## Importing a MySQL database {#importing-a-mysql-database}
 
-### Using dbshell[](#id2 "Permalink to this headline")
+### Using dbshell {#sqldbshell}
 
 To import a MySQL database, use the `helion dbshell` command:
 
-    $ helion dbshell [application name] [service name] < dumpfile.sql
+    helion dbshell [application name] [service name] < dumpfile.sql
 
-This command redirects the contents of a local database dump file to the
+The [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell) command redirects the contents of a local database dump file to the
 appropriate database client running in the application instance (i.e.
 equivalent to `helion run dbshell ...`). If run
 from a directory containing the *manifest.yml* file, the application and
 service names may be omitted.
 
-### Using helion tunnel[](#id3 "Permalink to this headline")
+### Using helion tunnel {#sqltunnel}
 This method of database import is provided for compatibility with Cloud Foundry. It tends to be slower than using `helion run ...`.
 
 To import data from a *mysqldump* file into an existing
-MySQL database service, use the `tunnel` command:
+MySQL database service, use the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command:
 
     helion tunnel <servicename>
 
@@ -519,23 +517,23 @@ terminal window to enter commands through.
 
 Then, import an SQL file with the following command:
 
-    $ mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
+    mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
 
-See the [tunnel](#database-tunnel) command documentation for other
-ways of accessing a MySQL database. See [Backing up a MySQL database](#bestpractices-backing-up-mysql) for details on how to create
+See the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
+ways of accessing a MySQL database. See [Backing up a MySQL database](#backing-up-a-mysql-database) for details on how to create
 a `mysqldump` backup that can then be imported into
 another database service.
 
-## Changing Database Versions[](#database-version-changes "Permalink to this headline")
+## Changing Database Versions {#database-version-changes}
 
 The VCAP\_SERVICES environment variable in Application Lifecycle Service does not include
 version numbers in the service name string. This can cause problems when
 migrating applications from Cloud Foundry v1 systems which reference
 versioned database names in VCAP\_SERVICES.
 
-There are two application level fixes for this issue:
+There are two application-level fixes for this issue:
 
-### Method 1[](#method-1 "Permalink to this headline")
+### Method 1 {#method-1}
 
 Update references to VCAP\_SERVICES in the application code to exclude
 version numbers. For example:
@@ -544,11 +542,10 @@ version numbers. For example:
     PostgreSQL:    'postgresql-x.x' -> 'postgresql'
     Redis:         'redis-2.x' -> 'redis'
 
-### Method 2[](#method-2 "Permalink to this headline")
+### Method 2 {#method-2}
 
 Update the application code to use the DATABASE\_URL environment
-variable. See [*Using Database Services*](#database-accessing) for
-general information and the following language-specific documentation:
+variable. See the following language-specific documentation:
 
 -   [PHP Data Services](/als/v1/user/deploy/languages/php/#php-data-services)
 

@@ -116,7 +116,7 @@ Note that Administrative user privileges are required for some commands.
 - [helion drain delete](/als/v1/user/reference/client-ref/management/#command-drain-delete): Remove the named drain from the application.
 - [helion env-add](/als/v1/user/reference/client-ref/management/#command-env-add): Add the specified environment variable to the named application.
 - [helion env-del](/als/v1/user/reference/client-ref/management/#command-env-del): Remove the specified environment variable from the named application.
-- [helion map ](/als/v1/user/reference/client-ref/management/#command-map): Make the application accessible through the specified URL (a route consisting of host and domain).
+- [helion map](/als/v1/user/reference/client-ref/management/#command-map): Make the application accessible through the specified URL (a route consisting of host and domain).
 - [helion open](/als/v1/user/reference/client-ref/management/#command-open): Open the url of the specified application in the default web browser.
 - [helion push](/als/v1/user/reference/client-ref/management/#command-push): Configure, create, push, map, and start a new application
 - [helion rename](/als/v1/user/reference/client-ref/management/#command-rename): Rename the specified application.

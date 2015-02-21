@@ -22,55 +22,46 @@ Organizations and Spaces are the main organizational units in Application Lifecy
 -   Spaces have Users, Applications, and Service Instances
 -   Applications have Routes (which are derived from Domains)
 
-Organizations[](#organizations "Permalink to this headline")
--------------------------------------------------------------
+## Organizations {#organizations}
 
 An organization is a top-level group of users, spaces, and domains. Only
 Application Lifecycle Service admins (accounts with global superuser privileges) can manage
 Organizations.
 
-Each organization is assigned a [*Quota
-Definition*](/als/v1/admin/server/configuration/#server-config-quota-definitions),
-a set of limits on memory, applications, and service instances which is
-share between all members of the organization.
+Each organization is assigned a [Quota Definition](/als/v1/admin/server/configuration/#server-config-quota-definitions), a set of limits on memory, applications, and service instances which is shares between all members of the organization.
 
-Spaces[](#spaces "Permalink to this headline")
------------------------------------------------
+## Spaces {#spaces}
 
 An organization can contain multiple spaces (e.g. **development**,
 **test**, and **production**). A domain can be mapped to multiple spaces
 but a route can be mapped to only one space.
 
-Domains[](#domains "Permalink to this headline")
--------------------------------------------------
+## Domains {#domains}
 
 A domain in Application Lifecycle Service is a fully-qualified, second-level or lower domain name (e.g. "example.com" or "helion.example.com").
 
 Organizations and spaces can have custom domains, but are often able to use a system domain by default as well (e.g. "myorg.net" and "helion.example.com"). Domains belong to an organization. They are associated with one or more spaces within that organization, but are not directly bound to apps. Apps are assigned a "hostname + domain" combination called a Route.
 
-Routes[](#routes "Permalink to this headline")
------------------------------------------------
+## Routes {#routes}
 
 A route is a virtual hostname followed by a domain name or
 fully-qualified sub-domain (e.g. "myapp.myorg.example.com").
 
-Management[](#management "Permalink to this headline")
--------------------------------------------------------
+## Management {#management}
 
-You can manage spaces and organizations with the [helion client](/als/v1/user/client) or the [Management Console](/als/v1/admin/console/customize/#user-console-organizations).
+You can manage spaces and organizations with the [helion client](/als/v1/user/client) or the [Management Console](/als/v1/user/console).
 
-Users & Roles[](#users-roles "Permalink to this headline")
------------------------------------------------------------
+## Users & Roles {#users-roles}
 
 Application Lifecycle Service users can take on one or more roles within Orgs and Spaces. These roles can be assigned by a Manager of the relevant scope or an Application Lifecycle Service Admin:
 
-### Org Roles[](#org-roles "Permalink to this headline")
+### Org Roles {#org-roles}
 
 -   Manager: Can add/remove Spaces and Domains, edit the roles of Org members, and change the name of the Org 
 -   Billing Manager: Can edit/change the billing account info, payment info
 -   Auditor: View-only access to all org and space info, settings, and reports
 
-### Space Roles[](#space-roles "Permalink to this headline")
+### Space Roles {#space-roles}
 
 -   Space Manager: Manager: Can add/remove Org members to the space (as managers, developers or auditors) and rename the space. The role does not automatically inherit Space Developer permissions, but Managers have permission to add that role to their own account. 
 -   Space Developer: Can create, delete, manage applications and services, full access to all usage reports and logs

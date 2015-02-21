@@ -20,10 +20,7 @@ authors: Jayme P
 
 # HP Helion Development Platform: Using the cloud-init Package {#cloud-init}
 
-[cloud-init](https://help.ubuntu.com/community/CloudInit) (the Ubuntu
-package for handling early initialization of cloud instances) can be
-used to provide additional flexibility when configuring Application Lifecycle Service cluster
-nodes, and can simplify joining a cluster and assigning roles.
+[cloud-init](https://help.ubuntu.com/community/CloudInit) (the Ubuntu package for handling early initialization of cloud instances) can be used to provide additional flexibility when configuring Application Lifecycle Service cluster nodes, and can simplify joining a cluster and assigning roles.
 
 cloud-init can be configured at instance launch time by pasting YAML
 directly into the OpenStack Horizon interface.
@@ -45,12 +42,9 @@ cloud-config would add a new DEA node to the cluster:
 -   `extname` when supplied with a fully qualified
     domain name will run `kato rename <extname>` on
     the instance first boot.
--   Roles takes a list of roles to configure the node with. For guidance
-    on how to work with roles see
-    [*Roles*](index.html#server-cluster-roles).
+-   Roles takes a list of [roles](/als/v1/admin/cluster/#roles) to configure the node with.
 
-Securing the new node[](#securing-the-new-node "Permalink to this headline")
------------------------------------------------------------------------------
+## Securing the new node {#securing-the-new-node}
 
 To lock down and secure this new node, you could use standard cloud-config directives for adding any SSH keys, randomizing passwords, and/or disabling password based authentication entirely. An example that creates a data services node, enables passwordless sudo for the admin group, and disables password based authentication:
 
@@ -78,11 +72,9 @@ To lock down and secure this new node, you could use standard cloud-config direc
       - s|^%admin .*|%admin ALL=\(ALL\) NOPASSWD:ALL|
       - /etc/sudoers
 
-Custom System Configuration[](#custom-system-configuration "Permalink to this headline")
------------------------------------------------------------------------------------------
+## Custom System Configuration {#custom-system-configuration}
 
-In addition to the Application Lifecycle Service node configuration tasks described above,
-cloud-init can be used for a variety of system setup tasks:
+In addition to the Application Lifecycle Service node configuration tasks described above, cloud-init can be used for a variety of system setup tasks:
 
 -   adding custom apt sources
 -   setting apt mirrors
@@ -94,5 +86,4 @@ cloud-init can be used for a variety of system setup tasks:
 -   set passwords
 -   configure ssh keys
 
-For more information on cloud-init, refer to the [official CloudInit
-documentation](https://help.ubuntu.com/community/CloudInit).
+For more information on cloud-init, refer to the [official CloudInit documentation](https://help.ubuntu.com/community/CloudInit).

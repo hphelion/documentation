@@ -84,7 +84,7 @@ Free & open source, high-performance, distributed memory object
     up dynamic web applications by alleviating database load. (see
     [Memcached project page](http://memcached.org/))
 
-#### micro cloud {#term-microcloud}
+#### micro cloud {#term-micro-cloud}
 A preconfigured Application Lifecycle Service virtual machine image consisting of a single generic [node](#term-node) enabled for all the [roles](#term-role) necessary for basic operation, but with no pre-installed [apps](#term-app) or [services](#term-service)s.
 
 #### mongodb {#term-mongodb}

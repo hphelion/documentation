@@ -29,8 +29,7 @@ web server, application dependencies, databases, and other services.
 -   [Quick Start](/als/v1/user/quick-start/)
     -   [Management Console](/als/v1/user/quick-start/#management-console)
     -   [Application Lifecycle Service Client](/als/v1/user/quick-start/#helion-client)
-    -   [Setting Organization and
-        Space](/als/v1/user/quick-start/#setting-organization-and-space)
+    -   [Setting Organization and Space](/als/v1/user/quick-start/#setting-organization-and-space)
     -   [Deploying Apps](/als/v1/user/quick-start/#deploying-apps)
 
 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")

@@ -27,11 +27,11 @@ authors: Jayme P
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
+For more information, use the **helion help** or **helion help [*command*]** commands.
 
 <hr>
 
-## helion add-service-broker *\<name\* {#command-add-service-broker}
+## helion add-service-broker <*name*> {#command-add-service-broker}
 Make the named service broker known to the system.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -57,8 +57,8 @@ operation.</td>
 <td>Path to an existing and readable file containing the targets and
 authorization tokens.</td>
 </tr>
-<tr><td>--url</td><td>Location of the broker.</td></tr> 
-<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr 
+<tr><td>--url</td><td>Location of the broker.</td></tr>
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr> 
 </table>
 
 
