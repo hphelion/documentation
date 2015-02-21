@@ -33,7 +33,7 @@ For more information, use the **helion help**, **helion help [*command*]**, or *
 
 <hr>
 
-### helion bind-service <*service*> <*application*> {#command-bind-service}
+## helion bind-service <*service*> <*application*> {#command-bind-service}
 Bind the named service to the specified application.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
@@ -230,7 +230,6 @@ authorization tokens.</td>
 ## helion tunnel <*service*> <*TunnelClient*> {#command-tunnel}
 Create a local tunnel to a service and optionally start a local client as well.
 
-<table>
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>

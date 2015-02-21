@@ -468,7 +468,7 @@ Select option **3. mysqldump**. You will be prompted to enter a path to
 where the dump will be saved.
 
 See the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
-ways of accessing a MySQL database. See [Importing a MySQL database](#bestpractices-importing-mysql) for details on importing a
+ways of accessing a MySQL database. See [Importing a MySQL database](#importing-a-mysql-database) for details on importing a
 file created by mysqldump into an existing MySQL database service.
 
 ## Importing a MySQL database {#importing-a-mysql-database}
