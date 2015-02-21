@@ -128,7 +128,7 @@ This section provides information on how to set up a standalone cluster and modi
 -   [Client Command Reference](/als/v1/user/reference/client-ref)
 -   [Managing Groups, Users & Limits](/als/v1/user/deploy/orgs-spaces/#orgs-spaces)
 -   [Architectural Design](/als/v1/admin/reference/architecture/)
--   [Glossary](reference/glossary)
--   [Troubleshooting](reference/troubleshoot)
+-   [Glossary](/als/v1/user/reference/glossary/)
+-   [Troubleshooting](/als/v1/admin/reference/troubleshoot/)
 -   [Adding System Services](/als/v1/admin/reference/add-service/)
 
