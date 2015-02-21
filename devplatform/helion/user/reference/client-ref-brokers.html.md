@@ -37,15 +37,28 @@ Make the named service broker known to the system.
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
-<tr><td>--broker-token</td><td>Value of the broker's token.</td></tr>
-<tr><td>--organization, -o</td><td>The once-off organization to use for the current operation.</td></tr>
-<tr><td>--space</td><td>The once-off space to use for the current operation, specified by name.  Cannot be used together with <i>--space-guid</i>.</td></tr>
-<tr><td>--space-guid</td><td>The once-off space to use for the current operation, specified by guid.  Cannot be used together with <i>--space</i>.</td></tr>    <tr><td>--target</td><td>The once-off target to use for the current operation.</td></tr>    
-<tr><td>--token</td><td>The once-off authentication token to use for the current
-operation.</td></tr>
-<tr><td>--token-file</td><td>Path to an existing and readable file containing the targets and authorization tokens.</td></tr>
-<tr><td>--url</td><td>Location of the broker.</td></tr> 
-<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr 
+</tr><td>--broker-token</td>
+<td>Value of the broker's token.</td>
+</tr> <tr>
+<td>--organization, -o</td>
+<td>The once-off organization to use for the current operation.</td>
+</tr>    <tr><td>--space</td>
+<td>The once-off space to use for the current operation, specified by
+name.  Cannot be used together with <i>--space-guid</i>.</td>
+</tr>    <tr><td>--space-guid</td>
+<td>The once-off space to use for the current operation, specified by
+guid.  Cannot be used together with <i>--space</i>.</td>
+</tr>    <tr><td>--target</td>
+<td>The once-off target to use for the current operation.</td>
+</tr>    <tr><td>--token</td>
+<td>The once-off authentication token to use for the current
+operation.</td>
+</tr>    <tr><td>--token-file</td>
+<td>Path to an existing and readable file containing the targets and
+authorization tokens.</td>
+</tr>
+<tr><td>--url</td><td>Location of the broker.</td></tr>
+<tr><td>--username</td><td>Name of the user to use for access to the broker.</td></tr> 
 </table>
 
 
