@@ -141,7 +141,7 @@ If a the service is a User Provided Service, new credentials can be added and ex
 
 **App Bindings**
 
-A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application] <user-console-app>`.
+A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application](/als/v1/admin/console/#applications).
 
 ##Sample Applications {#sample-apps}
 
