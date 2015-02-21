@@ -82,7 +82,7 @@ public URIs:
 -   [https://pkg.helion.com](https://pkg.helion.com/)
 
 This may require setting the HTTPS\_PROXY environment variable on each
-node if a proxy is in use on your network. See [Proxy Settings](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
+node if a proxy is in use on your network. See [Upstream Proxy Settings](/als/v1/admin/server/configuration/#http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
 	
 	export http_proxy=http://intproxy.example.com: 
 

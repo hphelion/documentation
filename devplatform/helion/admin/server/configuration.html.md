@@ -37,7 +37,7 @@ option is useful in this scenario).
 		-   [dnsmasq](#dnsmasq)
 		-   [Adding DNS Nameservers](#adding-dns-nameservers)
 		-   [TCP/UDP Port Configuration](#tcp-udp-port-configuration)
-		-   [HTTP Proxy](#http-proxy)
+		-   [Upstream HTTP Proxy Settings](#http-proxy)
 		-   [Staging Cache & App HTTP Proxy](#staging-cache-app-http-proxy)
 	-   [VM Filesystem Setup](#vm-filesystem-setup)
 	-   [Application Lifecycle Service Data Services vs. High Availability Databases](#helion-data-services-vs-high-availability-databases)
