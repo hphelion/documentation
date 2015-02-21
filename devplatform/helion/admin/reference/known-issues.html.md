@@ -23,7 +23,7 @@ Please keep up to date with the latest Known Issues, FAQs and announcements in o
 ##1.1
 ###Changing the MBUS IP (Core node)
 
-If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref#kato-command-ref-node-migrate) or [kato op static_ip](/als/v1/admin/reference/kato-ref/#kato-command-ref-op-static_ip) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes to set the new MBUS IP.
+If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref#kato-command-ref-node-migrate) or [kato op static ip](/als/v1/admin/reference/kato-ref/#kato-command-ref-op-static_ip) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes to set the new MBUS IP.
 
 ###Adding New Relic Repositories
 
@@ -45,8 +45,8 @@ To get updates for PHP 5.5 or add additional modules (globally or as user-define
 
 Administrators can add the [PPA for PHP 5.5](https://launchpad.net/~ondrej/+archive/php5) or import from a  repository supporting compatible packages via kato:
 
-		kato config push cloud_controller_ng allowed_repos \
-		"deb http://ppa.launchpad.net/ondrej/php5/ubuntu precise main"
+	kato config push cloud_controller_ng allowed_repos \
+	"deb http://ppa.launchpad.net/ondrej/php5/ubuntu precise main"
 
 ###Kato data users export/import broken
 
