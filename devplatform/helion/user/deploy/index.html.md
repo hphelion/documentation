@@ -136,25 +136,22 @@ changes.
  
 
 **Data Services**
-:   If you want to use Application Lifecycle Service's data services, your code will need to
-    use the connection details provided by special environment variables
+If you want to use Application Lifecycle Service's data services, your code will need to use the connection details provided by special environment variables
     (e.g. DATABASE\_URL). The code should generally check for the
     existence of these environment variables, use them if they exist,
     and otherwise fall back to some default setting.
 
-    See the [*Data
-    Services*](/als/v1/user/services/data-services/#data-services) section for
-    further details.
+See the [*Data Services*](/als/v1/user/services/data-services/#data-services) section for further details.
 
 **Environment Variables**
-:   A number of special environment variables are available during
+A number of special environment variables are available during
     staging and runtime. These can be used in
     [*hooks*](/als/v1/user/deploy/manifestyml/#hooks) or application code
     (for setting up databases, filesystem services, web server options,
     and cron jobs) in places where you would normally use hard-coded
     paths, credentials, or host-specific values.
 
-    See the [*Environment
+See the [*Environment
     Variables*](/als/v1/user/reference/environment/#environment-variables)
     section for a complete list.
 
