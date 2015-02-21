@@ -99,7 +99,7 @@ the other nodes and assign roles.
 
 ### CORE\_IP[](#core-ip "Permalink to this headline")
 
-A [static IP address](/als/v1/admin/server/configuration/#server-config-static-ip) is
+A [static IP address](/als/v1/admin/server/configuration/#setting-a-static-ip) is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.
 
 Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node. 
@@ -110,7 +110,7 @@ networking. To check the IP address, run:
 
     ifconfig eth0
 
-If necessary, set the [static IP address](/als/v1/admin/server/configuration/#server-config-static-ip):
+If necessary, use the kato [*op static_ip*](/als/v1/admin/reference/kato-ref/#kato-command-ref-op-static_ip) command to set the static IP address:
 
 
     kato op static_ip
