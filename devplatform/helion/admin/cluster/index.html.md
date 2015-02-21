@@ -117,7 +117,7 @@ If necessary, use the kato [*op static_ip*](/als/v1/admin/reference/kato-ref/#ka
 
 **Note**
 
- If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes. 
+ If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-migrate) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes. 
 
 ### Hostname {#hostname}
 
@@ -450,7 +450,7 @@ Routers. Though most users will prefer to use a hardware load balancer
 or elastic load balancing service provided by the cloud hosting
 provider, an Application Lifecycle Service VM can be configured to take on this role.
 
-The [kato node setup load\_balancer](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
+The [kato node setup load\_balancer](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-setup-load_balancer)
 command retrieves IP addresses of every router in the cluster and
 configures an nginx process to distribute load (via round-robin) among a
 pool of Routers and handle SSL termination.
