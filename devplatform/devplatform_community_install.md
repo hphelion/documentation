@@ -53,6 +53,14 @@ The following topics explain how to install and configure the HP Helion Developm
 
 The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&reg;.
 
+
+If you haven't taken the following steps during your HP Helion OpenStack installation, before installing HP Helion Development Platform:
+
+- If you installed HP Helion OpenStack with KVM hypervisor support, you should configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.
+
+- If you installed with ESX hypervisor support, then deploy the compute proxy on the ESX hosts and deploy OVSvApp for HP Virtual Cloud Networking.
+
+
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements used in this document.
  
 The installer requires the following packages. If they are not found, it will prompt you to install them.
