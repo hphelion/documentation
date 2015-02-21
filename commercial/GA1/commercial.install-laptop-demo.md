@@ -61,7 +61,7 @@ The following sections describe the basic steps required to install Ubuntu on a 
 2.	After the Ubuntu installation is successful, login to the laptop.
 3.	Run the following all in one command to install the KVM pre requisites:
 
-		# sudo su -l -c "apt-get install -y ntp qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev"
+		sudo su -l -c "apt-get install -y ntp qemu-kvm libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-system-x86 libssl-dev libffi-dev git python-virtualenv python-dev"
 
 4.	After the pre requisites are installed, you must configure a local NTP server on the laptop. The NTP server is required for the under and overcloud installation. To configure the NTP server, follow these steps:
 
