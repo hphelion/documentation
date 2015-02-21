@@ -35,6 +35,7 @@ authors: Jayme P
 ## Syntax
 
 	helion [options] command [arguments] [command-options]
+
 For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
 
 <hr>
@@ -450,7 +451,6 @@ command to print the saved trace to stdout.</td>
 ## helion user-info <*name*> {#command-user-info}
 Shows the information of a user in the current or specified target. Defaults to the current user.
 
-<table>
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
@@ -487,7 +487,7 @@ command to print the saved trace to stdout.</td>
 </tr>
 </table>
 
-### helion version {#command-version}
+## helion version {#command-version}
 Print the version number of the client.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
