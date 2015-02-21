@@ -1060,17 +1060,17 @@ Will operate on current node by default; upgrade can be done for the entire clus
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
 <tr><td> -j --json</td><td>Display output in JSON.</td></tr>
-<tr><td>-n --node <<i>node</i>></td><td>Targets the provided node.</td></tr>
+<tr><td>-n --node <i><node></i></td><td>Targets the provided node.</td></tr>
 <tr><td>-u --update-kato</td><td>Updates kato node upgrade to the latest codebase.</td></tr>
-<tr><td>-v --version <<i>version</i>></td><td>The version to upgrade to. If unspecified, the latest version is used.</td></tr>
+<tr><td>-v --version &lt;<i>version</i>&gt;</td><td>The version to upgrade to. If unspecified, the latest version is used.</td></tr>
 <tr><td>--force</td><td>Forces an upgrade to run.</td></tr>
 <tr><td>--prepare</td><td>Prepare the core node for an upgrade.</td></tr>
 <tr><td>--resume</td><td>Resumes an upgrade process, used internally by Kato and should only be called manually when requested.</td></tr>
-<tr><td>--role-order <<i>role-order</i>></td><td>Comma separated list of roles defining the order that roles should be upgraded in a cluster.</td></tr>
+<tr><td>--role-order &lt;<i>role-order</i>&gt;</td><td>Comma separated list of roles defining the order that roles should be upgraded in a cluster.</td></tr>
 <tr><td>--skip-confirmation</td><td>Skips initial confirmation of upgrade.</td></tr>
 <tr><td>--status</td><td>Shows the status of upgrades on a node.</td></tr>
 <tr><td>--development</td><td>Run a development upgrade (internal use only).</td></tr>
-<tr><td>--cache-ip <<i>cache-ip</i>></td><td>The IP of the node to act as a cache for all nodes in the cluster during upgrade.</td></tr>
+<tr><td>--cache-ip &lt;<i>cache-ip</i>&gt;</td><td>The IP of the node to act as a cache for all nodes in the cluster during upgrade.</td></tr>
 <tr><td>--download-only</td><td>Downloads the files required to perform an upgrade without starting an upgrade. When using this option, --cache-ip must be specified.</td></tr>
 <tr><td>--cluster</td><td>Unused parameter for backwards compatibility.</td></tr>
 <tr><td>--offline</td><td>Upgrade while offline. This option requires that the upgrade content was downloaded previously.</td></tr>
