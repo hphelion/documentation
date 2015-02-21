@@ -19,7 +19,7 @@ authors: Jayme P
 ---
 <!--UNDER REVISION-->
 
-# HP Helion Development Platform: Cluster Setup {#index-0}
+# HP Helion Development Platform: Cluster Setup 
 This process begins with an installed [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud), which must then be cloned across several [nodes](/als/v1/user/reference/glossary/#term-node). You connect to each node in turn and tell it which [role](/als/v1/user/reference/glossary/#term-role)s it is to serve, thereby distributing the processing load for maximum performance. In HP Helion, the Clusters Panel in the Horizon dashboard makes this much easier to accomplish.
 
 - [Node Roles](#roles)
@@ -55,7 +55,7 @@ This process begins with an installed [micro cloud](/als/v1/user/reference/gloss
 An Application Lifecycle Service [node](/als/v1/user/reference/glossary/#term-node) can
 take on one or more of the following roles:
 
--   [primary](/als/v1/admin/reference/architecture/#architecture-primary)
+-   [primary](/als/v1/admin/reference/architecture/#architecture-primary/)
 -   [controller](/als/v1/admin/reference/architecture/#architecture-controller)
 -   [router](/als/v1/admin/reference/architecture/#architecture-router)
 -   [dea](/als/v1/admin/reference/architecture/#architecture-dea)
@@ -63,10 +63,10 @@ take on one or more of the following roles:
 -   [filesystem](/als/v1/user/services/filesystem/#persistent-file-system)
 -   [mysql](/als/v1/user/reference/glossary/#term-mysql)
 -   [postgresql](/als/v1/user/reference/glossary/#term-postgresql)
--   rabbit
--   redis
--   [memcached](/als/v1/user/services/memcached/#memcached)
--   [Harbor](/als/v1/admin/cluster/harbor/#harbor) (TCP/UDP port service)
+-   [rabbit](/als/v1/user/reference/glossary/#term-RabbitMQ)
+-   [redis](/als/v1/user/reference/glossary/#term-Redis)
+-   [memcached](/als/v1/user/services/memcached/)
+-   [Harbor](/als/v1/admin/cluster/harbor/) (TCP/UDP port service)
 
 The command line tool used to configure Application Lifecycle Service servers is called
 [kato](/als/v1/admin/reference/kato-ref/#kato-command-ref). You can see a
@@ -84,8 +84,7 @@ command will show:
 -   **available roles**: roles which can be added with
     `kato role add`
 
-Preparing the Core Node[](#preparing-the-core-node "Permalink to this headline")
----------------------------------------------------------------------------------
+## Preparing the Core Node {#preparing-the-core-node}
 
 In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
@@ -120,7 +119,7 @@ If necessary, set the [static IP address](/als/v1/admin/server/configuration/#se
 
  If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run *[kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)* on the Core node, then *[kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)* on all other cluster nodes. 
 
-### Hostname[](#hostname "Permalink to this headline")
+### Hostname {#hostname}
 
 Next, set the **fully qualified hostname** of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the [DNS record](/als/v1/admin/server/configuration/#server-config-dns) created for
 this system.
@@ -138,7 +137,7 @@ used by clients (e.g. "https://api.hostname.example.com").
 
 If you are building a cluster with multiple Routers separate from the Core node, the load balancer or gateway router must take on the API endpoint address. Consult the [Load Balancer and Multiple Routers](#cluster-load-balancer) section below.
 
-### Wildcard DNS[](#wildcard-dns "Permalink to this headline")
+### Wildcard DNS {#wildcard-dns}
 
 A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
@@ -146,10 +145,9 @@ but all applications which will subsequently be deployed on the PaaS.
 record](/als/v1/admin/server/configuration/#server-config-dns) for the Core
 node (or [Load Balancer/Router](#cluster-load-balancer)).
 
-### Core Node[](#core-node "Permalink to this headline")
+### Core Node {#core-node}
 
 On the Core node, execute the following command:
-
 
     kato node setup core api.hostname.example.com
 
@@ -164,11 +162,10 @@ node. For example, to set up a Core node with the **controller**,
     kato node setup core api.hostname.example.com
     kato role add dea
 
-
 Then proceed to configure the other VMs by attaching them to the Core
 node and assigning their particular roles.
 
-##Attaching Nodes and Enabling Roles {#attaching-nodes-and-enabling-roles}
+## Attaching Nodes and Enabling Roles {#attaching-nodes-and-enabling-roles}
 
 Adding nodes to the cluster involves attaching the new VMs to the Core
 node's IP address using the [kato node
@@ -181,61 +178,53 @@ the [kato role](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add)
 command, but it is generally preferable to enable roles during the
 `kato attach` step using the `-e` (enable) option as described below for each of the node types.
 
-### Router Nodes[](#router-nodes "Permalink to this headline")
+### Router Nodes {#router-nodes}
 
 In smaller clusters, the Router role enabled on a Core node should be sufficient for the Core node to function as the gateway. To attach a node enabling just the router role: 
 
-
     kato node attach -e router CORE_IP
-
 
 If a Router-only node is functioning as the gateway, the public DNS entry for the API endpoint must point to that node. For larger clusters requiring multiple gateway Routers, see the [Load Balancer and Multiple Routers](#cluster-load-balancer) section below.
 
-### Data Services Nodes[](#data-services-nodes "Permalink to this headline")
+### Data Services Nodes {#data-services-nodes}
 
 Data services can share a single node (small clusters) or run on
 separate nodes (recommended for production clusters). To set up all
 available data services on a single node and attach it to the Core node,
 run the following command on the data services node:
 
-
     kato node attach -e data-services CORE_IP
-
 
 **Note**
 
 The [Harbor](/als/v1/admin/cluster/harbor/#harbor) port service needs a publicly
 routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the [Harbor Requirements & Setup](/als/v1/admin/cluster/harbor/#harbor-setup) documentation for details.
 
-### DEA Nodes[](#dea-nodes "Permalink to this headline")
+### DEA Nodes {#dea-nodes}
 
 Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:
 
-
     kato node attach -e dea CORE_IP
-
 
 Continue this process until you have added all the desired DEA nodes.
 
-### Verification[](#verification "Permalink to this headline")
+### Verification {#verification}
 
 To verify that all the cluster nodes are configured as expected, run the
 following command on the Core node:
 
-
     kato status --all
 
-### Removing Nodes[](#removing-nodes "Permalink to this headline")
+### Removing Nodes {#removing-nodes}
 
 Use the [kato node
 remove](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
 remove a node from the cluster. Run the following command on the core
 node.
 
-
     kato node remove NODE_IP
 
-### Role Configuration using the Management Console[](#role-configuration-using-the-management-console "Permalink to this headline")
+### Role Configuration using the Management Console {#role-configuration-using-the-management-console}
 
 Once cluster nodes are connected to the Core node, roles can be enabled
 or disabled using the [Cluster
@@ -243,8 +232,7 @@ Admin](/als/v1/admin/console/customize/#console-cluster-nodes) interface in the
 [Management
 Console](/als/v1/user/console/#management-console).
 
-Example Clusters[](#example-clusters "Permalink to this headline")
--------------------------------------------------------------------
+## Example Clusters {#example-clusters}
 
 ### Single-Node[](#single-node "Permalink to this headline")
 
@@ -260,8 +248,7 @@ All that is required here is to enable all roles except for **mdns**
     kato node setup core api.hostname.example.com
     kato role add --all-but mdns
 
-
-### Three-Node[](#three-node "Permalink to this headline")
+### Three-Node {#three-node}
 
 This is the smallest viable cluster deployment, but it lacks the fault
 tolerance of larger configurations:
@@ -276,7 +263,7 @@ This configuration can support more users and applications than a single
 node, but the failure of any single node will impact hosted
 applications.
 
-### Five-Node[](#five-node "Permalink to this headline")
+### Five-Node {#five-node}
 
 A typical small Application Lifecycle Service cluster deployment might look like this:
 
@@ -291,7 +278,7 @@ introduced in the pool of DEA nodes. If any single DEA node fails,
 application instances will be automatically redeployed to the remaining
 DEA nodes with little or no application down time.
 
-### 20-Node[](#node "Permalink to this headline")
+### 20-Node {#node}
 
 A larger cluster requires more separation and duplication of roles for
 scalability and fault tolerance. For example:
@@ -318,8 +305,7 @@ In this configuration:
 -   the auxiliary controller balances the load on the Management Console
     and system management tasks
 
-Roles Requiring Persistent or Shared Storage[](#roles-requiring-persistent-or-shared-storage "Permalink to this headline")
----------------------------------------------------------------------------------------------------------------------------
+## Roles Requiring Persistent or Shared Storage {#roles-requiring-persistent-or-shared-storage}
 
 Though all roles can run using the VM's default filesystem, in
 production clusters some roles should be backed by a persistent
@@ -344,12 +330,9 @@ In clusters with multiple Cloud Controllers, the nodes **must** share a common *
 See the [Persistent Storage](/als/v1/admin/best-practices/#bestpractices-persistent-storage) documentation for instructions on relocating service data, application
 droplets, and containers.
 
-Port Configuration[](#port-configuration "Permalink to this headline")
------------------------------------------------------------------------
+## Port Configuration {#port-configuration}
 
-The Application Lifecycle Service [micro
-cloud](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
-the following ports exposed:
+The Application Lifecycle Service [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud) runs with the following ports exposed:
 
 <table>
 <tr>
@@ -413,9 +396,7 @@ apply the above rules.
 -   The optional Harbor port service has a configurable port range
     (default 41000 - 61000) which can be exposed externally if required.
 
-**Note**
-
-**Harbor (Port Service) Node Configuration**
+**Note**: Harbor (Port Service) Node Configuration
 
 The optional [Harbor](/als/v1/admin/cluster/harbor/#harbor) TCP/UDP port service must be
 set up on a node with a public network interface if you wish to enable
@@ -424,57 +405,46 @@ settings for this node should make the configured port range accessible
 publicly. See [Harbor Setup](/als/v1/admin/cluster/harbor/#harbor-setup) for full
 configuration instructions.
 
-Multiple Controllers[](#multiple-controllers "Permalink to this headline")
----------------------------------------------------------------------------
+## Multiple Controllers {#multiple-controllers}
 
-An Application Lifecycle Service cluster can have multiple controller nodes running on
-separate VMs to improve performance. To do this, all controller nodes must share the following two important data directories on a high-availability filesystem server: 
+An Application Lifecycle Service cluster can have multiple controller nodes running on separate VMs to improve performance. To do this, all controller nodes must share the following two important data directories on a high-availability filesystem server: 
 
 	/home/stackato/stackato/data
 	/var/stackato/data/cloud_controller_ng/tmp/staged_droplet_uploads  
 
+**Note**: Although the *router* role must be enabled on the Core node, it is not required for additional Controller nodes. The type of filesystem, storage server, and network mount method are left to the discretion of the Application Lifecycle Service administrator. 
 
--   Create a shared filesystem on a Network Attached Storage device.
-    [[1]](#id4)
-
--   Stop the controller process on the Core node before proceeding
+1. Create a shared filesystem on a Network Attached Storage device.
+2. Stop the controller process on the Core node before proceeding
     further:
 
         kato stop controller
 
--   On the Core node *and each additional controller node*:
+1. On the Core node *and on each additional controller node*:
 
-    -   Create a mount point:
+    A.   Create a mount point:
 
             sudo mkdir /mnt/controller
 
-    -   Mount the shared filesystem on the mount point. [[1]](#id4)
+    B.   Mount the shared filesystem on the mount point. 
 
-    -   Set aside the original `/home/helion/helion/data`:
+    C.   Set aside the original `/home/helion/helion/data`:
 
             mv /home/helion/helion/data /home/helion/helion/data.old
 
-    -   Create a symlink from `/home/helion/helion/data` to the mount point:
+    D.   Create a symlink from `/home/helion/helion/data` to the mount point:
 
             ln -s /mnt/controller /home/helion/helion/data
 
--   On the Core node, start the controller process:
+1.    On the Core node, start the controller process:
 
         kato start controller
 
--   Run the following command on the additional Controller nodes to
-    enable *only* the controller process:
+1. Run the following command on the additional Controller nodes to  enable *only* the controller process:
 
         kato node attach -e controller *CORE_IP*
 
-Note that although the **router** role must be enabled on the Core node, it is not required for additional Controller nodes. 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------
-  [1]
-  *([1](#id2), [2](#id3))* The type of filesystem, storage server, and network mount method are left to the discretion of the Application Lifecycle Service administrator.
-  -----------------------------------------------------------------------------------------------------------------------------------------------------
-
-Load Balancer and Multiple Routers[](#load-balancer-and-multiple-routers "Permalink to this headline")
--------------------------------------------------------------------------------------------------------
+## Load Balancer and Multiple Routers {#load-balancer-and-multiple-routers}
 
 For large scale deployments requiring multiple Router nodes, a load
 balancer must be configured to distribute connections between the
@@ -482,8 +452,7 @@ Routers. Though most users will prefer to use a hardware load balancer
 or elastic load balancing service provided by the cloud hosting
 provider, an Application Lifecycle Service VM can be configured to take on this role.
 
-The [kato node setup
-load\_balancer](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
+The [kato node setup load\_balancer](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
 command retrieves IP addresses of every router in the cluster and
 configures an nginx process to distribute load (via round-robin) among a
 pool of Routers and handle SSL termination.
@@ -491,18 +460,15 @@ pool of Routers and handle SSL termination.
 For example, to setup a cluster with an Application Lifecycle Service Load Balancer and
 multiple Routers:
 
-### Rename the Load Balancer[](#rename-the-load-balancer "Permalink to this headline")
+### Rename the Load Balancer {#rename-the-load-balancer}
 
 The Load Balancer is the primary point of entry to the cluster. It must
 have a public-facing IP address and take on the primary hostname for the
-system as [configured in
-DNS](/als/v1/admin/server/configuration/#server-config-dns). Run the following
-on Load Balancer node:
+system as [configured in DNS](/als/v1/admin/server/configuration/#server-config-dns). Run the following on Load Balancer node:
 
     kato node rename *hostname.example.com*
 
-### Set up the Core Node[](#set-up-the-core-node "Permalink to this headline")
-
+### Set up the Core Node {#set-up-the-core-node}
 The Core node will need to temporarily take on the API endpoint hostname
 of the Application Lifecycle Service system (i.e. the same name as the Load Balancer above).
 Run the following on the Core node:
@@ -519,7 +485,7 @@ ultimately have unique hostnames. After setup, rename the Core node
 **manually** by editing */etc/hostname* and */etc/hosts*, then
 `sudo service hostname restart`.
 
-### Set up Supplemental Routers[](#set-up-supplemental-routers "Permalink to this headline")
+### Set up Supplemental Routers {#set-up-supplemental-routers}
 
 As with the Core node, you will need to run `kato node rename`on each router with the same API endpoint hostname. Run the following on each Router:
 
@@ -533,7 +499,7 @@ As above, rename each host manually after configuration to give them
 unique hostnames. The MBUS\_IP is the network interface of the Core node
 (usually eth0).
 
-### Configure the Application Lifecycle Service Load Balancer[](#configure-the-helion-load-balancer "Permalink to this headline")
+### Configure the Application Lifecycle Service Load Balancer {#configure-the-helion-load-balancer}
 
 **Note**: An Application Lifecycle Service node configured as a Load Balancer cannot have any other roles enabled.
 
@@ -553,16 +519,11 @@ Router nodes. For example:
 
     kato node setup load_balancer 10.5.31.140 10.5.31.145
 
-### Load Balancer SSL Certificates[](#load-balancer-ssl-certificates "Permalink to this headline")
+### Load Balancer SSL Certificates {#load-balancer-ssl-certificates}
 
 The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.
 
-See the [Using your own SSL
-certificate](/als/v1/admin/server/configuration/#server-config-ssl-cert-own-use)
-and [CA Certificate
-Chaining](/als/v1/admin/server/configuration/#server-config-ssl-cert-chain)
-sections for Application Lifecycle Service Load Balancer instructions.
+See the [Using your own SSL certificate](/als/v1/admin/server/configuration/#server-config-ssl-cert-own-use) and [CA Certificate Chaining](/als/v1/admin/server/configuration/#server-config-ssl-cert-chain) sections for Application Lifecycle Service Load Balancer instructions.
 
-For other load balancers, consult the documentation for your device or
-service on uploading/updating server certificates.
+For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.
