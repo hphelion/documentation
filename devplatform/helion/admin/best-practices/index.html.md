@@ -221,19 +221,14 @@ below).
 
 Exporting data can take several minutes. For clusters with constant
 usage or large numbers of users, apps, and databases, put the exporting
-system in [*Maintenance Mode*](/als/v1/admin/console/customize/#console-settings)
+system in [Maintenance Mode](/als/v1/admin/console/#cloud-controller)
 (e.g. during a scheduled maintenance window) before exporting.
 
 ### Scheduled backups[](#scheduled-backups "Permalink to this headline")
 
 Regular backup of controller data, apps, droplets, and service data is
 recommended for any production system. Implementation of a regular
-backup routine is left to the discretion of the Application Lifecycle Service administrator,
-but using
-[cron/crontab](http://manpages.ubuntu.com/manpages/oneiric/man1/crontab.1)
-is one simple way is to automate this. For example, you could create an
-entry like the following in the root user's crontab on the filesystem
-node:
+backup routine is left to the discretion of the Application Lifecycle Service administrator, but using [cron/crontab](http://manpages.ubuntu.com/manpages/oneiric/man1/crontab.1) is one simple way is to automate this. For example, you could create an entry like the following in the root user's crontab on the filesystem node:
 
     0 3 * * * su - helion /bin/bash -c '/home/helion/bin/kato data export --cluster /mnt/nas/helion-backup.tgz'
 
@@ -242,11 +237,7 @@ at 3AM as `root` using the `helion` user's login environment (required) and save
 mounted external filesystem.
 
 Scheduled (non-interactive) backups using the `kato export` command will need to be run by `root` as
-some shell operations performed in the export require `sudo` when run interactively. For clusters, passwordless [SSH key
-authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication)
-between the Core node and all other nodes will also need to be set up.
-The command should be run on the node hosting the 'filesystem' role, as
-some shell commands need to be run locally for that service.
+some shell operations performed in the export require `sudo` when run interactively. For clusters, password authentication will have to be [disabled](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication) between the Core node and all other nodes. The command should be run on the node hosting the 'filesystem' role, as some shell commands need to be run locally for that service.
 
 ### Importing the server data[](#importing-the-server-data "Permalink to this headline")
 

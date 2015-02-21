@@ -232,7 +232,7 @@ The Cloud Events section displays a list of events (including errors and warning
 The Settings menu provides access to the following Console and system settings:
 
 ### Cloud Controller {#cloud-controller}
--   **Maintenance Mode**: Shuts down API requests but continues to serve web requests, useful when performing system operations such as importing and exporting data for upgrades. When the primary node enters maintenance mode, the Management Console becomes "read only"    with the exception of this toggle (so that it can be brought back online).
+-   **Maintenance Mode**: Shuts down API requests but continues to serve web requests, useful when performing system operations such as importing and exporting data for upgrades. When the primary node enters maintenance mode, the Management Console becomes "read only" with the exception of this toggle (so that it can be brought back online).
 - **Logging Level**: Changes the verbosity of logs from 'debug2' (most verbose) through 'off' (silent).
 - **Support Email**: The email address displayed to end users when errors are encountered. Use an address which is monitored by administrators.
 - **Sample App URLs**: URIs for URIs for JSON files which populate the [Sample Applications](app-store.html#app-store) The URIs need not be public, but must be accessible from the controller node.
