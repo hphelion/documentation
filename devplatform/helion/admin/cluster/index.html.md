@@ -166,8 +166,7 @@ node and assigning their particular roles.
 ## Attaching Nodes and Enabling Roles {#attaching-nodes-and-enabling-roles}
 
 Adding nodes to the cluster involves attaching the new VMs to the Core
-node's IP address using the [kato node
-attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
+node's IP address using the [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
 command. This command will check that the new node has a version number
 compatible with the Core node before attaching it.
 
@@ -215,8 +214,7 @@ following command on the Core node:
 
 ### Removing Nodes {#removing-nodes}
 
-Use the [kato node
-remove](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
+Use the [kato node remove](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-detach) to
 remove a node from the cluster. Run the following command on the core
 node.
 
@@ -225,10 +223,8 @@ node.
 ### Role Configuration using the Management Console {#role-configuration-using-the-management-console}
 
 Once cluster nodes are connected to the Core node, roles can be enabled
-or disabled using the [Cluster
-Admin](/als/v1/admin/console/customize/#console-cluster-nodes) interface in the
-[Management
-Console](/als/v1/user/console/#management-console).
+or disabled using the [manual cluster configuration](/als/v1/admin/#cluster-configuration) options in the Management
+Console.
 
 ## Example Clusters {#example-clusters}
 
