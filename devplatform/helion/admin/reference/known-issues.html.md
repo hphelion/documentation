@@ -23,13 +23,13 @@ Please keep up to date with the latest Known Issues, FAQs and announcements in o
 ##1.1
 ###Changing the MBUS IP (Core node)
 
-If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref#kato-command-ref-node-migrate) or [kato op static_ip](/als/v1/admin/server/configuration#server-config-static-ip) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)) on all other cluster nodes to set the new MBUS IP.
+If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref#kato-command-ref-node-migrate) or [kato op static_ip](/als/v1/admin/reference/kato-ref/#kato-command-ref-op-static_ip) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes to set the new MBUS IP.
 
 ###Adding New Relic Repositories
 
 The New Relic system monitoring (**newrelic-sysmond**) and PHP application monitoring (**newrelic-php5**) packages are no longer pre-installed in the ALS default Docker base container.
 
-To allow end users to install these packages in the [requirements](/als/v1/user/deploy/manifestyml/#requirements) section of their application config, admins should [add New Relic repository URLS and keys](als/v1/admin/server/configuration#server-config-allowed-repositories) to the system configuration.
+To allow end users to install these packages in the [requirements](/als/v1/user/deploy/manifestyml/#requirements) section of their application config, admins should [add New Relic repository URLS and keys](als/v1/admin/server/configuration/#allowed-repositories) to the system configuration.
 
 ###security&#95;groups_ids in autoscaling.yaml
 
