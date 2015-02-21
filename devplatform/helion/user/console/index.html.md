@@ -44,13 +44,14 @@ The top-level page of the Management Console displays quick links to the most co
 The Applications list is accessible from the top menu. It shows all applications deployed under the current user's Organizations.
 
 The list shows:
+
 - the application name
 - the Organization it belongs to
 - the Space it was deployed to
 - the Description field
 - its current state (STARTED or STOPPED)
 - its staging state (STAGED or FAILED)
-- Application Access (i.e. if :ref:`Application SSO <application-sso>` is enabled)
+- Application Access (whether Application SSO is enabled)
 
 The list can be sorted by name or state, and filtered by:
 
