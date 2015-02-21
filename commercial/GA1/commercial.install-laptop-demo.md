@@ -93,9 +93,9 @@ The following sections describe the basic steps required to install Ubuntu on a 
 
 	f. If you run `ntpq -p` and you receive a 'No association ID's returned' message, then you may have to reinstall the `ntp` package, To do this, enter the following commands pressing enter after each command: 
 
-	i. `# dpkg-reconfigure ntp`
+	i. ` dpkg-reconfigure ntp`
 
-	ii. `# ntpq –p` 
+	ii. ` ntpq –p` 
 
 
 
