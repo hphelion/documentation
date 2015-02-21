@@ -55,8 +55,8 @@ This process begins with an installed [micro cloud](/als/v1/user/reference/gloss
 An Application Lifecycle Service [node](/als/v1/user/reference/glossary/#term-node) can
 take on one or more of the following roles:
 
--   [primary](/als/v1/admin/reference/architecture/#architecture-primary/)
--   [controller](/als/v1/admin/reference/architecture/#architecture-controller)
+-   [primary](/als/v1/admin/reference/architecture/#architecture-primary)
+-   [controller](/als/v1/admin/reference/architecture/#architecture-cloud-controller)
 -   [router](/als/v1/admin/reference/architecture/#architecture-router)
 -   [dea](/als/v1/admin/reference/architecture/#architecture-dea)
 -   mdns (intended for micro clouds)
