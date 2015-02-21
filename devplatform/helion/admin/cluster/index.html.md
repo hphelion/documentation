@@ -58,9 +58,9 @@ take on one or more of the following roles:
 -   [primary](/als/v1/admin/reference/architecture/#architecture-primary)
 -   [controller](/als/v1/admin/reference/architecture/#architecture-cloud-controller)
 -   [router](/als/v1/admin/reference/architecture/#architecture-router)
--   [dea](/als/v1/admin/reference/architecture/#architecture-dea)
+-   [dea](/als/v1/admin/reference/architecture/#architecture-droplet-execution-agents)
 -   mdns (intended for micro clouds)
--   [filesystem](/als/v1/user/services/filesystem/#persistent-file-system)
+-   [filesystem](/als/v1/user/services/filesystem/#creating-a-persistent-file-system)
 -   [mysql](/als/v1/user/reference/glossary/#term-mysql)
 -   [postgresql](/als/v1/user/reference/glossary/#term-postgresql)
 -   [rabbit](/als/v1/user/reference/glossary/#term-RabbitMQ)
@@ -88,7 +88,7 @@ command will show:
 
 In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
-[controller](/als/v1/admin/reference/architecture/#architecture-controller),
+[controller](/als/v1/admin/reference/architecture/#architecture-cloud-controller),
 [primary](/als/v1/admin/reference/architecture/#architecture-primary),
 [base](/als/v1/admin/reference/architecture/#architecture-base), and
 [router](/als/v1/admin/reference/architecture/#architecture-router) role but

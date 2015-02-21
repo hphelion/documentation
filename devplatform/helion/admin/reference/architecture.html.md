@@ -27,7 +27,7 @@ authors: Jayme P
  -   [Primary](#architecture-primary)
  -   [Cloud Controller](#architecture-cloud-controller)
  -   [Router](#architecture-router)
- -   [Droplet Execution Agents](#architecture-droplet-execution-agents)
+ -   [Droplet Execution Agents](router)
 -   [Service Roles](#architecture-service-roles)
  -   [Databases](#architecture-databases)
  -   [Other data services](#architecture-other-data-services)
