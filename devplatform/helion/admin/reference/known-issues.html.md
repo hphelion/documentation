@@ -29,7 +29,7 @@ If the IP address of the Core node changes, you must reconfigure the cluster to 
 
 The New Relic system monitoring (**newrelic-sysmond**) and PHP application monitoring (**newrelic-php5**) packages are no longer pre-installed in the ALS default Docker base container.
 
-To allow end users to install these packages in the [requirements](/als/v1/user/deploy/manifestyml/#requirements) section of their application config, admins should [add New Relic repository URLS and keys](als/v1/admin/server/configuration/#allowed-repositories) to the system configuration.
+To allow end users to install these packages in the [requirements](/als/v1/user/deploy/manifestyml/#requirements) section of their application config, admins should [add New Relic repository URLS and keys](/als/v1/admin/server/configuration/#allowed-repositories) to the system configuration.
 
 ###security&#95;groups_ids in autoscaling.yaml
 
@@ -48,9 +48,9 @@ Administrators can add the [PPA for PHP 5.5](https://launchpad.net/~ondrej/+arch
 		kato config push cloud_controller_ng allowed_repos \
 		"deb http://ppa.launchpad.net/ondrej/php5/ubuntu precise main"
 
-###Kato data users export|import broken
+###Kato data users export/import broken
 
-The** kato data users export** and **kato data users import** commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The [kato data import]((/als/v1/admin/reference/kato-ref#kato-command-ref-data-import) and [kato data export](/als/v1/admin/reference/kato-ref#kato-command-ref-data-export) commands are still available for migrating users from one ALS installation to another.
+The **kato data users export** and **kato data users import** commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The [kato data import](/als/v1/admin/reference/kato-ref#kato-command-ref-data-import) and [kato data export](/als/v1/admin/reference/kato-ref#kato-command-ref-data-export) commands are still available for migrating users from one ALS installation to another.
 
 ###Kato node reset factory with NOPASSWD
 
@@ -68,7 +68,7 @@ Certain processes noted below use non-standard logging formats and are therefore
 <tr><td>stackato\_rest</td><td>(ALS-specific web service); manually inspect /s/logs/stackato_rest.log on Controller nodes.</td></tr>
 <tr><td>harbor_proxy_connector</td><td>(Harbor); manually inspect /s/logs/harbor_proxy_connector.log on Harbor nodes.</td></tr>
 <tr><td>cc_upload_server</td><td>(CC upload server); manually inspect /s/logs/cloud_controller_upload_server.log on Controller nodes.</td></tr>
-<tr><td>stackato-tty.log</td><td>(Stackato TTY console); manually inspect /s/logs/stackato-tty.log on all nodes.</td></tr>
+<tr><td>stackato-tty.log</td><td>(ALS TTY console); manually inspect /s/logs/stackato-tty.log on all nodes.</td></tr>
 </table> 
  
 ##1.01 and previous
