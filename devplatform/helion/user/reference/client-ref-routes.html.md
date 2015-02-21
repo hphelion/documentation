@@ -23,7 +23,8 @@ authors: Jayme P
 ##Syntax
 
 	helion [options] command [arguments] [command-options]
-For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
+
+For more information, use the **helion help** or **helion help [*command*]** commands.
 
 <hr>
 

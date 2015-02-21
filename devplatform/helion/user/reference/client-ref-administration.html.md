@@ -17,6 +17,7 @@ authors: Jayme P
 
 # HP Helion Development Platform: ALS Command Reference: Administration
 
+
 - [helion admin grant](#command-admin-grant): Grant the named user administrator privileges for the current or specified target.
 - [helion admin list](#command-admin-list): Show a list of the administrators for the current or specified target.
 - [helion admin patch](#command-admin-patch): Apply a patch to the current or specified target.
@@ -36,7 +37,7 @@ authors: Jayme P
 
 	helion [options] command [arguments] [command-options]
 
-For more information, use the **helion help**, **helion help [*command*]**, or **helion options** commands.
+For more information, use the **helion help** or **helion help [*command*]** commands.
 
 <hr>
 
