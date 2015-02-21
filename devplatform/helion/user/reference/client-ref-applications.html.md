@@ -21,7 +21,7 @@ authors: Jayme P
 - [helion apps](#command-apps): List the applications deployed to the target.
 - [helion list](#command-list): List the applications deployed to the target.
 - [helion releases](#command-releases): Show the list of versions for the specified application.
-- [helion versions](#command-versions): Show the list of versions for the specified application.)
+- [helion versions](#command-versions): Show the list of versions for the specified application.
 
 ##Syntax
 
