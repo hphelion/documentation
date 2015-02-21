@@ -99,13 +99,14 @@ startup:
 Check the log files for errors and warnings. Four Harbor log files can
 be found in the */s/logs/* directory:
 
-    * harbor_gateway.log
-    * harbor_node.log
-    * harbor_proxy_connector.log
-    * harbor_redis.log
 
-No Application Lifecycle Service processes should conflict with the default Harbor port
-range. However, in systems with additional custom processes running,
+
+- harbor_gateway.log
+- harbor_node.log
+- harbor&#095;proxy_connector.log
+- harbor_redis.log
+
+No Application Lifecycle Service processes should conflict with the default Harbor port range. However, in systems with additional custom processes running,
 other processes may assume control of a port within Harbor's port range.
 This condition which will show up in *harbor\_proxy\_connector.log*.
 
