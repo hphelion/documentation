@@ -34,8 +34,8 @@ Application Lifecycle Service provides the ability to upgrade a node or cluster 
     -  [Node Upgrade Order](#node-upgrade-ordering)
     -  [Node Upgrade Process](#node-upgrade-process)
 	-  [Zero-downtime Upgrades](#zero)
--  [Troubleshooting](#troubleshooting)
 -  [Offline Upgrade Process](#upgrade-node-upgrade-offline)
+-  [Troubleshooting](#troubleshooting)
 ##Before an upgrade {#before-an-upgrade}
 Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.
 
@@ -206,6 +206,32 @@ The cluster must have the following redundant roles:
 - At least two Routers (behind a Load Balancer) <cluster-load-balancer>` 
 - At least two DEA nodes
 
+
+## Offline Upgrades (update from .tgz Archive) {#upgrade-node-upgrade-offline}
+
+For clusters without direct access to the internet for upgrades, a  single .tgz archive will contain all of the packages
+necessary to upgrade. 
+ 
+Download the archive and transfer it to a node with at least 7GB of free disk space to allow for the extraction of all the bundled packages (14GB if you are upgrading from the previous version). 
+ 
+To upgrade: 
+ 
+
+1. Unpack the .tgz file in a convenient directory (in this example, */tmp*). 
+ 
+   		stackato@demo:/tmp$ tar xzvf als-upgrade-x.x.x-x.x.x.tgz 
+ 
+1. Change to the newly created directory:: 
+ 
+	    stackato@demo:/tmp$ cd als-upgrade-x.x.x-x.x.x/ 
+	    stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ 
+	 
+1. Run the upgrade script:: 
+ 
+    	stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ ruby als-upgrade-x.x.x-x.x.x.rb 
+   
+1. Enter the *sudo* password when prompted, and then follow the prompts. 
+
 ## Troubleshooting {#troubleshooting}
 Potential difficulties and how to resolve them.
 
@@ -246,7 +272,7 @@ If you have made customizations in these places or in other areas not described 
 **Warning**: Any custom buildpacks added to the system prior to the upgrade will be lost.
 Custom buildpacks must be [restored](/als/v1/user/deploy/buildpack/#custom-buildpacks) to the system after an upgrade.
 
-##Clearing Browser Cache
+### Clearing the Browser Cache
 After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:
 
 	sconsole.cf_api.settings is undefined
@@ -280,31 +306,3 @@ For example:
 1. Copy the output after 'Running with command:' and run it. In this example:
 
  		bin/sentinel upgrade 3.4.1 127.0.0.1 192.168.20.11 --skip-download 
-
-
-## Offline Upgrades (update from .tgz Archive) 
-
-For clusters without direct access to the internet for upgrades, a  single .tgz archive will contain all of the packages
-necessary to upgrade. 
- 
-Download the archive and transfer it to a node with at least 7GB of free disk space to allow for the extraction of all the bundled packages (14GB if you are upgrading from the previous version). 
- 
-To upgrade: 
- 
-
-1. Unpack the .tgz file in a convenient directory (in this example, */tmp*). 
- 
-   		stackato@demo:/tmp$ tar xzvf als-upgrade-x.x.x-x.x.x.tgz 
- 
-1. Change to the newly created directory:: 
- 
-	    stackato@demo:/tmp$ cd als-upgrade-x.x.x-x.x.x/ 
-	    stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ 
-	 
-1. Run the upgrade script:: 
- 
-    	stackato@demo:/tmp/als-upgrade-x.x.x-x.x.x$ ruby als-upgrade-x.x.x-x.x.x.rb 
-   
-1. Enter the *sudo* password when prompted, and then follow the prompts. 
- 
- 
