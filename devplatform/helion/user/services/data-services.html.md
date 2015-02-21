@@ -520,7 +520,7 @@ Then, import an SQL file with the following command:
     mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
 
 See the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
-ways of accessing a MySQL database. See [Backing up a MySQL database](#bestpractices-backing-up-mysql) for details on how to create
+ways of accessing a MySQL database. See [Backing up a MySQL database](#backing-up-a-mysql-database) for details on how to create
 a `mysqldump` backup that can then be imported into
 another database service.
 
