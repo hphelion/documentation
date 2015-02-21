@@ -39,8 +39,8 @@ authors: Jayme P
 -   [Persistent Storage](#bestpractices-persistent-storage)
     -   [Relocating Services, Droplets, and Containers](#relocating-services-droplets-and-containers)
     -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
-<!--   [Server Monitoring with New Relic](#server-monitoring-with-new-relic)
--   [System Monitoring with Nagios](#system-monitoring-with-nagios) -->
+- [Server Monitoring with New Relic](#server-monitoring-with-new-relic)
+- [System Monitoring with Nagios](#system-monitoring-with-nagios)
 
 ##Passwordless SSH Authentication {#passwordless}
 
@@ -354,8 +354,7 @@ Do not relocate the filesystem service to an NFS mount. Use the block storage me
 
 To move database services, application droplets, and application containers to larger partitions:
 
--   mount the filesystem and/or block storage service on the instance
-    (with [quotas enabled](#bestpractices-filesystem-quotas)),
+-   mount the filesystem and/or block storage service on the instance (with [quotas enabled](#enabling-filesystem-quotas))
 -   create directories for the items you wish to move,
 -   run the [*kato
     relocate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-relocate)
