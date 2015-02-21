@@ -197,8 +197,8 @@ run the following command on the data services node:
 
 **Note**
 
-The [Harbor](/als/v1/admin/cluster/harbor/#harbor) port service needs a publicly
-routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the [Harbor Requirements & Setup](/als/v1/admin/cluster/harbor/#harbor-setup) documentation for details.
+The [Harbor](/als/v1/admin/cluster/harbor) port service needs a publicly
+routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the [Harbor Requirements & Setup](/als/v1/admin/cluster/harbor/#requirements-setup) documentation for details.
 
 ### DEA Nodes {#dea-nodes}
 

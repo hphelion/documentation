@@ -51,7 +51,7 @@ externally facing port.
 
 ## Requirements & Setup {#requirements-setup}
 
-An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other [data service roles](index.html#server-cluster-data-services).
+An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other [data service roles](/als/v1/admin/cluster/#data-services-nodes).
 For example:
 
     kato node attach -e harbor CORE_IP
