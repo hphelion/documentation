@@ -1097,7 +1097,7 @@ Retrieves the version number from the specified node.
 
 <hr>
 
-###OP Custom SSL Cert (#kato-command-ref-op-custom_ssl_cert}
+###OP Custom SSL Cert {#kato-command-ref-op-custom_ssl_cert}
 
 Configuration of custom SSL certificates to be used in conjunction with router2g and deployed applications.
 
@@ -1190,7 +1190,7 @@ Import the YAML configuration for a single process, deleting and replacing all p
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-<tr><td>--new-key-file=<file></td><td>Override config with a specific YAML file.</td></tr>
+<tr><td>--new-key-file=&lt;file&gt;</td><td>Override config with a specific YAML file.</td></tr>
 <tr><td>--upgrade</td><td>Merge the new configuration rather than deleting and replacing.</td></tr>
 </table> 
 
@@ -1209,7 +1209,7 @@ Import configuration from YAML files for all processes, deleting and replacing p
 <td style="width:150px;"><b>Name</b></td><td><b>Purpose</b></td>
 </tr>
 <tr><td>-h  --help</td><td>Show help information</td></tr>
-<tr><td>--new-key-file=<file></td><td>Override config with a specific YAML file.</td></tr>
+<tr><td>--new-key-file=&lt;file&gt;</td><td>Override config with a specific YAML file.</td></tr>
 <tr><td>--upgrade</td><td>Merge the new configuration rather than deleting and replacing.</td></tr>
 </table> 
 
