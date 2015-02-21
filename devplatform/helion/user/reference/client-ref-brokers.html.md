@@ -31,7 +31,7 @@ For more information, use the **helion help**, **helion help [*command*]**, or *
 
 <hr>
 
-## helion add-service-broker *\<name\* {#command-add-service-broker}
+## helion add-service-broker *\<name\>* {#command-add-service-broker}
 Make the named service broker known to the system.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
