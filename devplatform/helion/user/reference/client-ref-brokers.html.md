@@ -37,7 +37,6 @@ Make the named service broker known to the system.
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">
 <td style="width: 200px;"><b>Option</b></td><td><b>Description</b></td>
-</tr>
 <tr><td>--broker-token</td><td>Value of the broker's token.</td></tr>
 <tr><td>--organization, -o</td><td>The once-off organization to use for the current operation.</td></tr>
 <tr><td>--space</td><td>The once-off space to use for the current operation, specified by name.  Cannot be used together with <i>--space-guid</i>.</td></tr>
