@@ -135,15 +135,13 @@ used by clients (e.g. "https://api.hostname.example.com").
 
 **Note**
 
-If you are building a cluster with multiple Routers separate from the Core node, the load balancer or gateway router must take on the API endpoint address. Consult the [Load Balancer and Multiple Routers](#cluster-load-balancer) section below.
+If you are building a cluster with multiple Routers separate from the Core node, the load balancer or gateway router must take on the API endpoint address. Consult the [Load Balancer and Multiple Routers](#load-balancer-and-multiple-routers) section below.
 
 ### Wildcard DNS {#wildcard-dns}
 
 A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
-[Create a wildcard DNS
-record](/als/v1/admin/server/configuration/#server-config-dns) for the Core
-node (or [Load Balancer/Router](#cluster-load-balancer)).
+[Create a wildcard DNS record](/als/v1/admin/server/configuration/#server-config-dns) for the [Core node](#core-node) or [Load Balancer/Router](#load-balancer-and-multiple-routers).
 
 ### Core Node {#core-node}
 
