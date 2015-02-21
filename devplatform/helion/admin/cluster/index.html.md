@@ -117,7 +117,7 @@ If necessary, use the kato [*op static_ip*](/als/v1/admin/reference/kato-ref/#ka
 
 **Note**
 
- If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run *[kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)* on the Core node, then *[kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)* on all other cluster nodes. 
+ If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on the Core node, then [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes. 
 
 ### Hostname {#hostname}
 
