@@ -524,6 +524,6 @@ Router nodes. For example:
 The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.
 
-See the [Using your own SSL certificate](/als/v1/admin/server/configuration/#server-config-ssl-cert-own-use) and [CA Certificate Chaining](/als/v1/admin/server/configuration/#server-config-ssl-cert-chain) sections for Application Lifecycle Service Load Balancer instructions.
+See the [Using your own SSL certificate](/als/v1/admin/server/configuration/#using-your-own-ssl-certificate) and [CA Certificate Chaining](/als/v1/admin/server/configuration/#ca-certificate-chaining) sections for Application Lifecycle Service Load Balancer instructions.
 
 For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.

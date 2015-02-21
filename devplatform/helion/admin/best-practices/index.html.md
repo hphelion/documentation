@@ -36,7 +36,7 @@ authors: Jayme P
 -   [Importing the server data](#importing-the-server-data)
 -   [Upgrading (v1.0 and later)](#upgrade)
 -   [Snapshots](#bestpractices-snapshots)
--   [Persistent Storage](#storage)
+-   [Persistent Storage](#bestpractices-persistent-storage)
     -   [Relocating Services, Droplets, and Containers](#relocating-services-droplets-and-containers)
     -   [Enabling Filesystem Quotas](#enabling-filesystem-quotas)
 <!--   [Server Monitoring with New Relic](#server-monitoring-with-new-relic)
@@ -90,7 +90,7 @@ The command will list the updates available. For example:
 
 To apply all patches to all relevant cluster nodes:
 
-    $ kato patch install
+    kato patch install
 
 To apply a particular patch, specify it by name:
 
@@ -181,14 +181,14 @@ Backing up or moving such databases should be handled separately from databases 
 
 Applications which write database connection details during staging rather than taking them from environment variables at run time must be re-staged (redeployed or updated) to pick up the new service location and credentials. Restarting the application will not automatically force restaging.
 
-#### DEAs[](#deas "Permalink to this headline")
+#### DEAs {#deas}
 
 Droplet Execution Agent (DEA) nodes are not migrated directly from old
 nodes to new nodes. Instead, the application droplets (zip files
 containing staged applications) are re-deployed to new DEA nodes from
 the Controller.
 
-### Exporting the server data[](#exporting-the-server-data "Permalink to this headline")
+### Exporting the server data {#exporting-the-server-data}
 
 Data export is done with the [*kato data
 export*](/als/v1/admin/reference/kato-ref/#kato-command-ref-data-export)
@@ -224,7 +224,7 @@ usage or large numbers of users, apps, and databases, put the exporting
 system in [Maintenance Mode](/als/v1/admin/console/#cloud-controller)
 (e.g. during a scheduled maintenance window) before exporting.
 
-### Scheduled backups[](#scheduled-backups "Permalink to this headline")
+### Scheduled backups {#scheduled-backups}
 
 Regular backup of controller data, apps, droplets, and service data is
 recommended for any production system. Implementation of a regular
@@ -239,7 +239,7 @@ mounted external filesystem.
 Scheduled (non-interactive) backups using the `kato export` command will need to be run by `root` as
 some shell operations performed in the export require `sudo` when run interactively. For clusters, password authentication will have to be [disabled](https://help.ubuntu.com/community/SSH/OpenSSH/Configuring#disable-password-authentication) between the Core node and all other nodes. The command should be run on the node hosting the *filesystem* role, as some shell commands need to be run locally for that service.
 
-### Importing the server data[](#importing-the-server-data "Permalink to this headline")
+### Importing the server data {#importing-the-server-data}
 
 To import Application Lifecycle Service data, transfer the exported .tgz file to the target
 VM or note the hostname of the old VM / Core node.
@@ -330,20 +330,11 @@ If snapshots are a part of your backup or disaster recovery strategy, the follow
 - put the cluster in Maintenance Mode
 - snapshot all nodes simultaneously
 
-<!-- not sure we're supporting this
-Server Monitoring with New Relic[](#server-monitoring-with-new-relic "Permalink to this headline")
----------------------------------------------------------------------------------------------------
+## Server Monitoring with New Relic {#server-monitoring-with-new-relic}
 
-To use New Relic for server monitoring, you'll need a [New Relic
-account](http://newrelic.com/) and a License Key. Install the
-`newrelic-sysmond` package and start the monitoring
-daemon on each Application Lifecycle Service VM as per the [New Relic Server Monitor
-installation
-(Ubuntu)](http://docs.newrelic.com/docs/server/server-monitor-installation-ubuntu-and-debian)
-instructions.
+To use New Relic for server monitoring, you'll need a [New Relic account](http://newrelic.com/) and a License Key. Install the `newrelic-sysmond` package and start the monitoring daemon on each Application Lifecycle Service VM as per the [New Relic Server Monitor installation (Ubuntu)](http://docs.newrelic.com/docs/server/server-monitor-installation-ubuntu-and-debian) instructions.
 
-System Monitoring with Nagios[](#system-monitoring-with-nagios "Permalink to this headline")
----------------------------------------------------------------------------------------------
+## System Monitoring with Nagios {#system-monitoring-with-nagios}
 
 Though Application Lifecycle Service has an internal mechanism for supervising processes on a server or cluster ([Supervisor](http://supervisord.org/)), it is
 advisable to add some external monitoring for production systems. [Nagios](http://www.nagios.org/) is a free, open source system monitoring tool that can provide this external monitoring.
@@ -351,20 +342,20 @@ advisable to add some external monitoring for production systems. [Nagios](http:
 Detailed instructions on installing and configuring Nagios can be found
 in the [Nagios Core
 Documentation](http://nagios.sourceforge.net/docs/3_0/toc)
---->
 
-##Persistent Storage {#storage}
+
+##Persistent Storage {#bestpractices-persistent-storage}
 
 Cloud hosting providers have different default partition sizes and configurations. The default root volumes on some cloud hosted VM instances are often fairly small and are usually ephemeral. Data service and filesystem nodes should always be backed by some kind of persistent storage that has enough free filesystem space to accommodate the projected use of the services.
 
 Do not relocate the filesystem service to an NFS mount. Use the block storage mechanism native to your hypervisor or SSHFS. 
 
-### Relocating Services, Droplets, and Containers[](#relocating-services-droplets-and-containers "Permalink to this headline")
+### Relocating Services, Droplets, and Containers {#relocating-services-droplets-and-containers
 
 To move database services, application droplets, and application containers to larger partitions:
 
 -   mount the filesystem and/or block storage service on the instance
-    (with [*quotas enabled*](#bestpractices-filesystem-quotas)),
+    (with [quotas enabled](#bestpractices-filesystem-quotas)),
 -   create directories for the items you wish to move,
 -   run the [*kato
     relocate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-relocate)
@@ -372,34 +363,33 @@ To move database services, application droplets, and application containers to l
 
 For example:
 
-    $ kato stop
+    kato stop
     ...
-    $ kato relocate services /mnt/ebs/services
+    kato relocate services /mnt/ebs/services
     ...
-    $ kato relocate droplets /mnt/ebs/droplets
+    kato relocate droplets /mnt/ebs/droplets
     ...
-    $ kato relocate containers /mnt/containers
+    kato relocate containers /mnt/containers
     ...
 
 **Note**
 
 For performance reasons, containers should not be relocated to EBS volumes. 
 
-### Enabling Filesystem Quotas[](#enabling-filesystem-quotas "Permalink to this headline")
+### Enabling Filesystem Quotas {#enabling-filesystem-quotas}
 
 The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
 they are mounted on partitions which support Linux quotas. This may need
 to be specified explicitly when running the `mount`
-command. The [*kato
-relocate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-relocate) command
+command. The [*kato relocate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-relocate) command
 will warn if this is necessary.
 
 For the example above, the `mount` step might look
 like this:
 
-    $ sudo mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
-    $ sudo quotacheck -vgumb /mnt/containers
-    $ sudo quotaon -v /mnt/containers
+    sudo mount -o remount,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 /mnt/containers
+    sudo quotacheck -vgumb /mnt/containers
+    sudo quotaon -v /mnt/containers
 
 To ensure the quotas are preserved after reboot, edit
 */etc/init.d/setup\_helion\_lxc* to include mount commands for each
