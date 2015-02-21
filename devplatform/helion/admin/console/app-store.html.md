@@ -17,7 +17,7 @@ authors: Jayme P
 # HP Helion Development Platform: Sample Applications {#index-0}
 
 The Sample Applications are a collection of ready-to-run applications which can be
-deployed with a couple of clicks. This interface uses the same API as the CLI client to pul the source code from a Git repository rather than push an archive from the user's local
+deployed with a couple of clicks. This interface uses the same API as the CLI client to pull the source code from a Git repository rather than push an archive from the user's local
 filesystem.
 
 - [Creating Sample Applications](#creating-an-app-store)
@@ -160,4 +160,4 @@ Sample Applications URLs can also be viewed, added, deleted, enabled, and disabl
 with [kato config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
 example:
 
-    $ kato config get cloud_controller_ng app_store
+    kato config get cloud_controller_ng app_store
