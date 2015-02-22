@@ -385,25 +385,25 @@ navigation:
   - text: ALS Admin Guide
     url: https://apaas-docs.hpcloud.com
   commercial.test:
-  - text:All
-    url:/helion/openstack/siteindex/
-  - text:Version 1.1
-    url:/helion/openstack/
-  - text:Version 1.0
-    url:http://docs.hpcloud.com/helion/openstack/
-  - Getting started
-    url:/helion/openstack/#getstart
-  - Installation 
-    url:/helion/openstack/install/overview/
-  - Using HP Helion OpenStack
-    url:/helion/openstack/using-hos/
-  - Services
-    url:/helion/openstack/services/overview/
-  - Storage
-    url:/helion/openstack/storage/
-  - Networking
-    url:/helion/openstack/services/neutron/installation/intro/
-  - Security
-    url:/helion/openstack/install/security/
-  - Identity Management
-    url:/helion/openstack/services/identity/overview/
+  - text: All
+    url: /helion/openstack/siteindex/
+  - text: Version 1.1
+    url: /helion/openstack/
+  - text: Version 1.0
+    url: http://docs.hpcloud.com/helion/openstack/
+  - text: Getting started
+    url: /helion/openstack/#getstart
+  - text: Installation 
+    url: /helion/openstack/install/overview/
+  - text: Using HP Helion OpenStack
+    url: /helion/openstack/using-hos/
+  - text: Services
+    url: /helion/openstack/services/overview/
+  - text: Storage
+    url: /helion/openstack/storage/
+  - text: Networking
+    url: /helion/openstack/services/neutron/installation/intro/
+  - text: Security
+    url: /helion/openstack/install/security/
+  - text: Identity Management
+    url: /helion/openstack/services/identity/overview/
