@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Site Index"
 permalink: /helion/openstack/siteindex/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: All
+
+authors: Paul F
 
 ---
 <!--UNDER REVISION-->
