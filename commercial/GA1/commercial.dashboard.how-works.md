@@ -3,6 +3,17 @@ layout: default
 title: "How to use the HP Helion OpenStack&#174; Dashboards"
 permalink: /helion/openstack/dashboard/how-works/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Systems Administrator 
+role2: Cloud Architect 
+role3: Storage Administrator 
+role4: Network Administrator 
+role5: Service Developer 
+role6: Cloud Administrator 
+role7: Application Developer 
+role8: Network Engineer 
+authors: Michael B
 
 ---
 <!--PUBLISHED-->

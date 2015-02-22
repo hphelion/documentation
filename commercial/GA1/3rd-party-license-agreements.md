@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&reg; Open Source and Third-Party Software License Agreements"
 permalink: /helion/openstack/3rd-party-license-agreements/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: All
+
+authors: Amanda F
 
 ---
 <!--PUBLISHED-->
