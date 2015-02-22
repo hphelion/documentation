@@ -30,6 +30,7 @@ PageRefresh();
 
 The documentation for HP Helion OpenStack includes the following:
 
+<!-- Trying something
 * [Release Notes](#release)
 * [Getting started with HP Helion OpenStack](#getstart)
 * [Related documentation](#related)
@@ -41,18 +42,14 @@ The documentation for HP Helion OpenStack includes the following:
 * [Object Storage (Swift) Deployment](#swift)
 * [License files](#license)
 * [Related documentation](#related)
-* [HP Helion OpenStack&reg; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/services/neutron/installation/intro/)
-*  [How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack]( /helion/openstack/create-deploy/certified-microsoft-windows/guest-image/)
-*  [HP Helion OpenStack Enterprise Edition 1.1 : Installation on a laptop with i7/32GB/512GB]( /helion/openstack/install/laptop/demo/)
+-->
 
-## Release Notes {#release}
-
-[Release Notes](/helion/openstack/release-notes/) 
 
 ## Getting started with HP Helion OpenStack {#getstart}
 
 The following topics as needed contain information about HP Helion OpenStack:
 
+- [Release Notes](/helion/openstack/release-notes/) 
 - [FAQs](/helion/openstack/faq/)  
 - [Technical overview](/helion/openstack/technical-overview/)
 - [Troubleshooting](/helion/openstack/services/troubleshooting/)
@@ -89,6 +86,9 @@ Review the following topics related to installing on ESX:
 - [Deploy vCenter ESX compute proxy](/helion/openstack/install/esx/proxy/)
 - [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/)
 
+### Installing on a laptop
+
+*  [Installation on a laptop with i7/32GB/512GB]( /helion/openstack/install/laptop/demo/)
 
 ### Post-Installation Steps
 
@@ -102,6 +102,9 @@ Review the following topics related to optional and required post-installation s
 - [Tracking masked IP addresses when using network address translation](/helion/openstack/maskedIP/)
 - [Configuring your network securely](/helion/openstack/install/security/)
 - [Removing and Replacing a Failed Overcloud Controller]( /helion/openstack/removing/failedovercloud/)
+* [HP Helion OpenStack&reg; Neutron Administrator Pre and Post Installation Tasks]( /helion/openstack/services/neutron/installation/intro/)
+*  [How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack]( /helion/openstack/create-deploy/certified-microsoft-windows/guest-image/)
+
 
 ## Undercloud Horizon Dashboard {#underdash}
 
