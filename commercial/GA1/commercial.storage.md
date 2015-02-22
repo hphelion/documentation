@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Using HP Helion OpenStack"
-permalink: /helion/openstack/using-hos/
+permalink: /helion/openstack/storage/
 product: commercial.test
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
