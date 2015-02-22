@@ -42,7 +42,7 @@ Use the [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command
     Password: ******
     Successfully logged into [https://api.example.hphelion.com]
 
-### Managing Multiple Targets[](#managing-multiple-targets "Permalink to this headline")
+### Managing Multiple Targets {#managing-multiple-targets}
 
 The Application Lifecycle Service client targets a single location with the command `helion target`.
 
@@ -108,7 +108,7 @@ The output of the push command will be something like:
     OK
     http://env.heli.on/ deployed
 
-The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the [logs](/als/v1/user/reference/client-ref/information/#command-logs) command.
+The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the [helion logs](/als/v1/user/reference/client-ref/information/#command-logs) command.
 
 ##Language-Specific Deployment {#language-specific-deployment}
 
@@ -136,30 +136,26 @@ changes.
  
 
 **Data Services**
-:   If you want to use Application Lifecycle Service's data services, your code will need to
-    use the connection details provided by special environment variables
+If you want to use Application Lifecycle Service's data services, your code will need to use the connection details provided by special environment variables
     (e.g. DATABASE\_URL). The code should generally check for the
     existence of these environment variables, use them if they exist,
     and otherwise fall back to some default setting.
 
-    See the [*Data
-    Services*](/als/v1/user/services/data-services/#data-services) section for
-    further details.
+See the [*Data Services*](/als/v1/user/services/data-services/#data-services) section for further details.
 
 **Environment Variables**
-:   A number of special environment variables are available during
+A number of special environment variables are available during
     staging and runtime. These can be used in
     [*hooks*](/als/v1/user/deploy/manifestyml/#hooks) or application code
     (for setting up databases, filesystem services, web server options,
     and cron jobs) in places where you would normally use hard-coded
     paths, credentials, or host-specific values.
 
-    See the [*Environment
+See the [*Environment
     Variables*](/als/v1/user/reference/environment/#environment-variables)
     section for a complete list.
 
-Application Lifecycle Service push[](#helion-push "Permalink to this headline")
--------------------------------------------------------------
+### Application Lifecycle Service push {#helion-push} 
 
 The [helion push](/als/v1/user/reference/client-ref/management/#command-push) command
 creates (or updates) applications on Application Lifecycle Service. It negotiates with the
@@ -173,7 +169,7 @@ The command will prompt for options or use those specified in a [*manifest.yml*]
 
 The application name must be a valid [hostname label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names) meaning that it contains only alphanumeric characters and hyphens.
 
-The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the [helion start](/als/v1/user/reference/client-ref/management/#command-start) command or the Start button in the [Management Console](/als/v1/admin/console/customize/#user-console-welcome).
+The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the  [helion start](/als/v1/user/reference/client-ref/management/#command-start) command or the Start button in the [Management Console](/als/v1/admin/console/customize/#user-console-welcome).
 
 The client will display staging logs while pushing the application but
 will generally exit before any application logs are visible. To view the
@@ -194,7 +190,7 @@ All other special file types are ignored.
 To prevent confusion or collisions, Application Lifecycle Service enforces uniqueness for
 URLs, application names, and service names:
 
--   **URLs** (auto-generated or [*manually mapped*](#deploy-map-url))
+-   **URLs** (auto-generated or [manually mapped](#mapping-app-urls)
     must be globally unique, and are allocated on a "first come, first
     serve" basis.
 -   **Application names** must be unique within the scope of the
@@ -210,7 +206,7 @@ URLs, application names, and service names:
 
 ### URL Assignment
 
-The ALS client assigns URLs for applications as follows during [push](/als/v1/user/reference/client-ref/)
+The ALS client assigns URLs for applications as follows during [helion push](/als/v1/user/reference/client-ref/management/#command-push).
 
 1. URLs set with the  --url  option take precedence.
 2. If none is set with  --url option, URLs specified in manifest.yml file are used.
@@ -229,14 +225,14 @@ These zones are configured by administrators and take effect automatically when 
 
 Placement zones are groups of DEA nodes which allow for segregation of application instances into different parts of a cluster, possibly with different physical hardware characteristics or network policies.
 
-DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the *--placement-zone* option for the [push](/als/v1/user/reference/client-ref) command, or by changing the Placement Zone in the application's Settings view in the Management Console.
+DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the *--placement-zone* option for the [helion push](/als/v1/user/reference/client-ref/management/#command-push), or by changing the Placement Zone in the application's Settings view in the Management Console.
 
 The other relevant  client commands are:
 
-- placement-zones: Show the available placement zones.
-- placement-zone [name]: Show the list of DEAs associated with the specified placement zone.
-- set-placement-zone: Associate the application with a specific placement zone.
-- unset-placement-zone: Remove the association between application and its current placement zone.
+- [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone): Show the list of DEAs associated with the specified placement zone.
+- [helion placement-zones](/als/v1/user/reference/client-ref/placement/#command-placement-zones): Show the available placement zones.
+- [helion set-placement-zone](/als/v1/user/reference/client-ref/placement/#command-set-placement-zone): Associate the application with a specific placement zone.
+- [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone): Remove the association between an application and its current placement zone.
 
 ## Application Containers
 
@@ -261,8 +257,7 @@ From within the SSH session, you can run standard Linux commands. For example, t
 
 Cron commands can be provided either in a regular crontab file in the
 root directory of the app, or via the `cron:`
-section in *manifest.yml* (See [*manifest.yml
-Options*](/als/v1/user/deploy/manifestyml/).
+section in *manifest.yml* (See [*manifest.yml options*](/als/v1/user/deploy/manifestyml/).
 
 The `HOME` and `PATH`
 environment variables, as well as all variables that start with
@@ -285,15 +280,14 @@ file, and finally the commands from the `cron:`
 section in *manifest.yml*. The resulting file is stored at
 *\$HELION\_APP\_ROOT/crontab*.
 
-### Whitespace & Newlines in Environment Variables[](#whitespace-newlines-in-environment-variables "Permalink to this headline")
+### Whitespace & Newlines in Environment Variables {#whitespace-newlines-in-environment-variables}
 
 To prevent breakage in cron, embedded newlines ("\\n") in environment
 variable values will be replaced with "\\\\n" when generating the
 crontab. Any leading and trailing spaces in environment variable values
 are also stripped.
 
-Mapping App URLs[](#mapping-app-urls "Permalink to this headline")
--------------------------------------------------------------------
+## Mapping App URLs {#mapping-app-urls}
 
 Application Lifecycle Service automatically assigns to each application a URL made up of the
 application's name and the base URL for the system. An application named
@@ -301,8 +295,7 @@ application's name and the base URL for the system. An application named
 the URL "myblog.example.com".
 
 In addition to this default URL, additional URLs can be set for an
-application using the [*helion
-map*](/als/v1/user/reference/client-ref/#command-map) command. The application
+application using the [helion map](/als/v1/user/reference/client-ref/management/#command-map). The application
 will respond to requests on the mapped URL, provided a DNS record has
 been set up resolving to Application Lifecycle Service's external IP or hostname.
 
@@ -358,7 +351,7 @@ production rather than cutting over) and eventually [unmap](/als/v1/user/referen
 
 ##Best Practices {#best-practices}
 
-### Reducing downtime during app updates[](#reducing-downtime-during-app-updates "Permalink to this headline")
+### Reducing downtime during app updates {#reducing-downtime-during-app-updates}
 
 Updating an app can create downtime while the new code is being staged.
 URL mapping can be used to reduce this downtime by switching between two

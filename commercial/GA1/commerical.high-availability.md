@@ -138,11 +138,12 @@ The flow of a sample API request is explained below:
 
 1.    keepalived has currently configured the VIP on the Controller0 node; client sends Nova request to VIP:8774
 
-2.    HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1). The request is forwarded to the Controller0IP:8774
+2.    HA proxy (listening on VIP:8774) receives the request and selects Controller0 from the list of available nodes (Controller0, Controller1, Controller2). The request is forwarded to the Controller0IP:8774
 
-3.    nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:3306.
+3.    nova-api on Controller0 receives the request and determines that a database change is required. It connects to the database using VIP:
+4.    .
 
-4.    HA proxy (listening on VIP:3306) receives the database connection request and selects Controller1 from the list of available nodes (Controller0, Controller1, mgmt-controller). The connection request is forwarded to Controller1IP:3306
+4.    HA proxy (listening on VIP:3306) receives the database connection request and selects Controller1 from the list of available nodes (Controller0, Controller1, Controller2). The connection request is forwarded to Controller1IP:3306
 
 
 #### Handling Node Failure {#handling-node-failure}
@@ -178,7 +179,7 @@ The handling of network partitions is illustrated in the diagram below. Galera h
 When HA proxy detects the errors against the mysql instance on Controller0, it removes that node from its pool for future database requests.
 
 ### Singleton Services###
-There are three Controllers:
+HP Helion OpenStack defines three Controllers:
 
 1. OvercloudController0 
 1. OvercloudController1

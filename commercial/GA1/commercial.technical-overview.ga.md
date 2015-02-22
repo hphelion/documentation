@@ -335,7 +335,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td><b>Management</b></td>
-    <td>This network is used for most cloud traffic including, tenant access to service APIs, internal traffic between services, VxLAN traffic between tenant VMs, VM access to block and object storage, replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, [HDN](https://helion.hpwsportal.com) access to the product catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
+    <td>This network is used for most cloud traffic including: tenant access to service APIs; internal traffic between services; Object Operations service nodes; MySQL clusters; RabbitMQ clusters; Keepalived; <a href="https://helion.hpwsportal.com">HDN</a> access to the product catalog; logging traffic to centralized logging; and monitoring checks to Icinga.</td>
     <td>untagged</td>
     <td>eth0<br>(PXE boot for overcloud servers)</br></td>
   </tr>
@@ -354,7 +354,7 @@ The logical networks listed in the following table are implemented as VLANs on t
   </tr>
 <tr style="background-color: white; color: black;">
     <td><b>ESX Tenant</b></td>
-    <td>This network is a tenant network for ESX virtual machines. The Network Operations service assigns IP addresses for virtual machines on these networks. </td>
+    <td>This consists of a range of trunked vlans that will be allocated for tenant networks. </td>
     <td>tagged</td>
     <td>eth0</td>
   </tr>

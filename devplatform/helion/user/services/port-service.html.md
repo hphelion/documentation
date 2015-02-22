@@ -22,6 +22,14 @@ web:](/als/v1/user/deploy/manifestyml/#web) is set to
 
 If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.
 
+- [Requesting a Port](#requesting-a-port)
+- [Harbor Environment Variables](#port-service-env-vars)
+- [Setting the Port Protocols](#setting-the-port-protocols)
+- [Multiple Application Instances](#multiple-application-instances)
+- [HTTPS via Harbor](#https-via-harbor)
+- [HTTPS Container Proxy](#https-container-proxy)
+- [Multiple SSL Certificates](#multiple-ssl-certificates)
+
 ##Requesting a Port {#requesting-a-port}
 
 Additional ports are provisioned like any other data service. To request a port with the Helion command-line client:
@@ -69,8 +77,7 @@ This provides the following information:
 -   **name**: The service instance ID (Application Lifecycle Service internal refer).
 -   **node\_id**: The Harbor node ID (Application Lifecycle Service internal).
 -   **int\_port**: The port on the application container which forwards
-    to Harbor (see also [Harbor Environment
-    Variables](#port-service-env-vars)). Application(s) bound to the
+    to Harbor (see also [Harbor Environment Variables](#port-service-env-vars)). Application(s) bound to the
     service should connect to this port.
 
 Access to the port from outside of the Application Lifecycle Service system/cluster may or
@@ -88,7 +95,7 @@ To remotely check the settings and credentials of any Application Lifecycle Serv
 use the [**helion
 service**](/als/v1/user/reference/client-ref/#command-services) command.
 
-### Harbor Environment Variables[](#harbor-environment-variables "Permalink to this headline")
+## Harbor Environment Variables {#port-service-env-vars}
 
 If there is only one Harbor service, the **HELION_HARBOR** environment variable can be used to get the internal port
 number.
@@ -155,8 +162,7 @@ Harbor recognizes when you have multiple instances of your app running and will 
     first app instance available becomes the primary backend, and any
     added later are queued.
 
-HTTPS via Harbor[](#https-via-harbor "Permalink to this headline")
--------------------------------------------------------------------
+## HTTPS via Harbor {#https-via-harbor}
 
 SSL termination of HTTPS to applications hosted on Application Lifecycle Service normally
 happens at the Router.
@@ -170,14 +176,13 @@ For example, an application running through the port service might have a URL su
 You can set up aliases to this URL using DNS, but the explicit port
 specification must always be added.
 
-**Notes:** 
-
+**Notes:**
 
 - When using this approach, the hostname / IP address of the app will be the one provided by the Harbor node the client will connect using the Harbor-assigned port number, **not** 443.
 - Using Harbor in this way does **not** take advantage of any load balancing set up for regular web traffic through the Routers and Load Balancer.
 - If you have multiple instances of your app routing through a Harbor TCP port, connections will be distributed via round-robin.
 
-### HTTPS Container Proxy[](#https-container-proxy "Permalink to this headline")
+## HTTPS Container Proxy {#https-container-proxy}
 
 If you are using a framework such as Python or Perl which sets up uWSGI
 (or any other framework that provides its own intermediate web server)
@@ -203,7 +208,7 @@ directory. For example:
 Alternatively, use a standalone or buildpack setup which provisions its
 own intermediate web server instead.
 
-### Multiple SSL Certificates[](#multiple-ssl-certificates "Permalink to this headline")
+## Multiple SSL Certificates {#multiple-ssl-certificates}
 
 If your application uses multiple SSL certificates, use the following
 naming scheme:

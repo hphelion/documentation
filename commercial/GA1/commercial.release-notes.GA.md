@@ -62,6 +62,14 @@ The following are the known issues for HP Helion OpenStack:
 
         service rsyslog restart
         
+* Updating the overcloud fails because a node is in 
+maintenance state. Do NOT proceed with your installation/update if any of the undercloud/overcloud nodes are down, or in a maintenance state. To check if nodes are in maintenance state, source the undercloud credentials:
+
+        ~# ironic node-list
+        
+
+	Look in the Maintenance column of your output, and verify all  Ironic nodes report `False`.
+
 **Other Issues**
 
 * When you resize an instance of Nova, it produces an error.
@@ -79,7 +87,6 @@ The following are the known issues for HP Helion OpenStack:
 * The keepalived processes do not restart automatically when they are killed.
 * The HAProxy does not automatically restart when it is killed.
 * A user can register but cannot update a vCenter through the UI. 
-
 
 ##For Further Information## {#For-Further-Information}
 

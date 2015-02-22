@@ -53,7 +53,7 @@ Note that Administrative user privileges are required for some commands.
 ###[Authentication Tokens](/als/v1/user/reference/client-ref/tokens)  
 - [helion create-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-create-service-auth-token): Create a new service authentication token.
 - [helion delete-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-delete-service-auth-token): Delete the specified service authentication token
-- [helion service-auth-tokens](/als/v1/user/reference/client-ref/tokens/#command-service-auth-tokens):Show all service authentication tokens knowns to the target. 
+- [helion service-auth-tokens](/als/v1/user/reference/client-ref/tokens/#command-service-auth-tokens):Show all service authentication tokens known to the target. 
 - [helion update-service-auth-token](/als/v1/user/reference/client-ref/tokens/#command-update-service-auth-token): Update the specified service authentication token.
 	
 ###[Brokers](/als/v1/user/reference/client-ref/brokers)
@@ -116,7 +116,7 @@ Note that Administrative user privileges are required for some commands.
 - [helion drain delete](/als/v1/user/reference/client-ref/management/#command-drain-delete): Remove the named drain from the application.
 - [helion env-add](/als/v1/user/reference/client-ref/management/#command-env-add): Add the specified environment variable to the named application.
 - [helion env-del](/als/v1/user/reference/client-ref/management/#command-env-del): Remove the specified environment variable from the named application.
-- [helion map ](/als/v1/user/reference/client-ref/management/#command-map): Make the application accessible through the specified URL (a route consisting of host and domain).
+- [helion map](/als/v1/user/reference/client-ref/management/#command-map): Make the application accessible through the specified URL (a route consisting of host and domain).
 - [helion open](/als/v1/user/reference/client-ref/management/#command-open): Open the url of the specified application in the default web browser.
 - [helion push](/als/v1/user/reference/client-ref/management/#command-push): Configure, create, push, map, and start a new application
 - [helion rename](/als/v1/user/reference/client-ref/management/#command-rename): Rename the specified application.

@@ -22,7 +22,7 @@ to enable successful development are available in PHP.
 For more information on working with object storage, 
 see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/openstack/services/object/overview/).
 
-##Application Lifecycle Services
+## Application Lifecycle Services
 Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying
 applications to this platform is as easy as adding details to a YAML configuration file and using
 a console application to push the application to ALS.
@@ -45,11 +45,10 @@ the command to <strong>run</strong>. For example:
 </pre></div>
 </div>
 Management of the deployed application and its services happens through a web application or
-a console application. To learn more see the [manifest.yml](als/v1/user/deploy/manifestyml/) reference</a>.
+a console application. To learn more see the [manifest.yml](/als/v1/user/deploy/manifestyml/) reference</a>.
 
 
-Deployment[](#deployment "Permalink to this headline")
--------------------------------------------------------
+## Deployment {#deployment}
 
 You will need at least two files to deploy a PHP app on Application Lifecycle Service:
 *index.php*, and *manifest.yml*.
@@ -59,10 +58,9 @@ The *manifest.yml* must specify **php** as the framework type:
     framework:
             type: php
 
-For more information, see the [manifest.yml](als/v1/user/deploy/manifestyml/) reference.
+For more information, see the [manifest.yml](/als/v1/user/deploy/manifestyml/) reference.
 
-Application URL[](#application-url "Permalink to this headline")
------------------------------------------------------------------
+## Application URL {#application-url}
 
 Some applications require the user to specify the APP\_URL. Below is an
 example on how to obtain the correct urls:
@@ -71,18 +69,17 @@ example on how to obtain the correct urls:
     $appinfo_json = json_decode($appinfo,true);
     $admin = $appinfo_json['uris'][0];
 
-Worker Applications[](#worker-applications "Permalink to this headline")
--------------------------------------------------------------------------
+## Worker Applications {#worker-applications}
 
 Non-HTTP apps that run as an Application Lifecycle Service application under the control of
 the Health Manager.
 
 To deploy worker applications, you need to use the
 [*command*](/als/v1/user/deploy/manifestyml/#command) key and set the
-[*processes: web*](als/v1/user/deploy/manifestyml/#web)
+[*processes: web*](/als/v1/user/deploy/manifestyml/#web)
 key to Null ("\~").
 
-### Example[](#example "Permalink to this headline")
+### Example {#example}
 
     name: php-app
     framework: php
@@ -90,8 +87,7 @@ key to Null ("\~").
     processes:
       web: ~
 
-Database Services[](#database-services "Permalink to this headline")
----------------------------------------------------------------------
+## Database Services {#database-services}
 
 ### [DATABASE\_URL](/als/v1/user/services/data-services/#database-url/)
 
@@ -128,15 +124,11 @@ found in the **$\_SERVER** variable, under
         );
     ?>
 
-PHP.ini[](#php-ini "Permalink to this headline")
--------------------------------------------------
+## PHP.ini {#php-ini}
 
-Additional PHP ini files will be loaded from the
-`$HELION_APP_ROOT/apache/php/` directory. Refer to
-the example below for more information.
+Additional PHP ini files will be loaded from the `$HELION_APP_ROOT/apache/php/` directory. 
 
-Document Root Access[](#document-root-access "Permalink to this headline")
----------------------------------------------------------------------------
+## Document Root Access {#document-root-access}
 
 If your document root (the location of the main *index.php* file) is the
 main application directory, the information stored in 
@@ -164,8 +156,7 @@ will generate an "HTTP 404 Not Found" error instead.
 These techniques can be use to hide other files in your application
 source tree which you do not want exposed to end users.
 
-SERVER\_NAME & SERVER\_PORT[](#server-name-server-port "Permalink to this headline")
--------------------------------------------------------------------------------------
+## SERVER\_NAME & SERVER\_PORT {#server-name-server-port}
 
 Application Lifecycle Service serves web applications port 80 and/or 443 at the router, but
 within the application container Apache will be running on a different
@@ -179,8 +170,7 @@ one or more
 [RewriteRule](http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewriterule)
 directives to correct the server name or port in URLs.
 
-Persistent Sessions (PHP)[](#persistent-sessions-php "Permalink to this headline")
------------------------------------------------------------------------------------
+## Persistent Sessions (PHP) {#persistent-sessions-php}
 
 One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.
@@ -199,8 +189,7 @@ directory:
       - mkdir -p "$HELION_FILESYSTEM"/sessions
       - echo "session.save_path = $HELION_FILESYSTEM/sessions" > "$HELION_APP_ROOT"/apache/php/sessions.ini
 
-For better performance, use a
-[*Memcached*](/als/v1/user/services/memcached/#memcached) service for
+For better performance, use a [*Memcached*](/als/v1/user/services/memcached/#memcached) service for
 session storage instead:
 
     services:

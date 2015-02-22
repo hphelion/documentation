@@ -39,6 +39,13 @@ The following topics explain how to install and configure the HP Helion Developm
 
 The HP Helion Development Platform is installed in the overcloud of HP Helion OpenStack&reg;. 
 
+If you haven't taken the following steps during your HP Helion OpenStack installation, before installing HP Helion Development Platform:
+
+- If you installed HP Helion OpenStack with KVM hypervisor support, you should configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.
+
+- If you installed with ESX hypervisor support, then deploy the compute proxy on the ESX hosts and deploy OVSvApp for HP Virtual Cloud Networking.
+
+
 The system running the installer needs to have Python 2.7. Most modern operating systems include this as part of their base toolkit. This document is geared toward a Linux operating system but this does not preclude the installer from running on other operating systems with some minor modifications to the command-line statements herein.
 
 **NOTE**: The Helion Development Platform expects the cloud management service to communicate with both service and external networks.
@@ -134,7 +141,9 @@ For ALS to install dependencies for deployed applications, you must provide ALS 
 
 ### Download and Configure the Application Lifecycle Service
 
-1. In the **Configure Services** panel locate the Application Lifecycle Service item in the Configure Services table and select **Download Service** and wait for the download to complete.
+1. In the **Configure Services** panel, locate the Application Lifecycle Service item in the Configure Services table.
+
+2. Select **Download Service** and wait for the download to complete.
 
 2. Once the download is complete, click the **Configure Service** button to configure the Application Lifecycle Service and wait for the configuration step to complete.
 
@@ -149,7 +158,9 @@ This section provides details on installing the Database Service from the Develo
 
 #### Availability Zones
 
-To configure the **Database Service** in a highly available manner, it is necessary to create separate availability zones for the compute hosts in the service. The following steps show how to create three availability zones and assign a compute host to the zone.
+To configure the Database Service in a highly available manner, it is necessary to create separate availability zones. As a best practice, HP recommends creating three availability zones. All compute hosts should be placed within one of these availability zones. If a compute host is not associated with an availability zone, the Database Service will not be able to provision a database instance to it. As a result, the Database Service may run out of capacity even though there are compute hosts with free capacity.
+
+The following steps show how to create three availability zones and assign a compute host to the zone.
 
 1. Connect to an overcloud controller node and execute the following commands to create three availability zones named: "AZ-1", "AZ-2" and "AZ-3". 
 	
@@ -272,10 +283,10 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	- **Ephemeral CA Password** (Required) - Specify the password for the Ephemeral CA server. 
 	- **Ephemeral CA IP Address** (Required) - Specify the IP address of Ephemeral CA server.
 	- **Volume Type** (Required) -  The volume type to use when creating database instances.
-	- **Enable HA** - Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times. 
+	- **Enable HA** - Specify if the database service is to be set up in a high-availability (HA) configuration. If selected, each component of the service will have three instances created and active at all times. 
 <br /><br />
 
-		<img src="media/dev_install_database.png"/)>
+		<img src="media/dev_install_database_new.png"/)>
 
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.

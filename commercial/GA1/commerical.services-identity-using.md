@@ -59,12 +59,7 @@ Use the Identity service to configure user access to your cloud domains.
 
 * View information on all your domains, including names, enabled status, ID, and policy links.
 * View information on a specified domain, including the description, enabled status, ID, and policy links.
-* Delete a domain.
-* List the domain roles for a specified user.
-* List domain roles for a specified domain group.
-* Grant a specified role to a domain group.
-* Validate that a group has a specified role on a domain.
-* Revoke a role from a group on a domain.
+
 
 **Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](#CLI) and [API](#API). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 
@@ -87,6 +82,12 @@ Use the Identity service to configure user access to your cloud domains.
 
 * Add a domain to your cloud.
 * Update information for a specified domain, including the description, enabled status, ID, and policy links. 
+* Delete a domain.
+* List the domain roles for a specified user.
+* List domain roles for a specified domain group.
+* Grant a specified role to a domain group.
+* Validate that a group has a specified role on a domain.
+* Revoke a role from a group on a domain.
 
 **Note:** Domain management is currently not available using the Helion OpenStack v1.1 Horizon-based user dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. Domain support is currently only available through the [CLI](#CLI) and [API](#API). No domain information is currently visible in the Horizon-based dashboard and users assigned to a domain will not be able to login to Horizon.
 

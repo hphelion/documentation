@@ -29,8 +29,8 @@ software or services.
 
 **Note**: Do not forward both application and system logs to the same destination.
 
-Papertrail[](#papertrail "Permalink to this headline")
--------------------------------------------------------
+## Papertrail {#logging-examples-papertrail}
+
 1.  [Create an account for Papertrail](https://papertrailapp.com/plans)
 2.  In the Dashboard screen, click *Add Systems*.
 	<img src="content/documentation/devplatform/helion/imagesppt1.png" />
@@ -83,7 +83,7 @@ Loggly supports JSON format with minor configuration changes shown above. Enable
     kato log drain add --format json drain-name tcp://logs.loggly.com:port#
 
 -->
-## Splunk {#splunk}
+## Splunk {#logging-examples-splunk}
 
 1.  Set up [Splunk Server](http://www.splunk.com/download).
 2.  In the Welcome screen, click **Add data**.
