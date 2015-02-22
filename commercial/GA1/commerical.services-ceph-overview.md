@@ -3,6 +3,16 @@ layout: default
 title: "HP Helion OpenStack&#174; Ceph Integration"
 permalink: /helion/openstack/services/ceph/overview/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Storage Engineer
+role2: Storage Architect 
+role3: Storage Administrator 
+role4: Storage Engineer
+role5: Service Developer 
+role6: Cloud Administrator 
+role7: Application Developer 
+authors: Paul F
 
 ---
 <!--UNDER REVISION-->
