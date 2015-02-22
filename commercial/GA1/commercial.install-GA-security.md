@@ -6,6 +6,7 @@ product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
+role3: Security Engineer
 authors: Michael B, 
 
 ---

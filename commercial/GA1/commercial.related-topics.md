@@ -3,6 +3,11 @@ layout: default
 title: "HP Helion OpenStack&#174; Related OpenStack Documentation"
 permalink: /helion/openstack/related-links/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: All
+
+authors: Michael B
 
 ---
 <!--PUBLISHED-->

@@ -3,6 +3,17 @@ layout: default
 title: "HP Helion OpenStack&#174; 1.1 Disaster Recovery"
 permalink: /helion/openstack/disaster/recovery/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Systems Administrator 
+role2: Cloud Architect 
+role3: Storage Administrator 
+role4: Network Administrator 
+role5: Service Developer 
+role6: Cloud Administrator 
+role7: Application Developer 
+role8: Network Engineer 
+authors: Paul F
 
 ---
 <!--UNDER REVISION-->
