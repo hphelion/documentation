@@ -24,7 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor</a></p> 
 
-# HP Helion OpenStack&#174;: DNSaaS Installation and Configuration
+# HP Helion OpenStack&#174; 1.1: DNSaaS Installation and Configuration
 
 Our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network. 
 
@@ -337,6 +337,7 @@ The HA Proxy configuration file will be displayed as the sample below:
 	  balance source
 	  option tcpka
 	  option tcplog
+	  option httpchk GET /
 	   
 	  server 10.22.171.32 10.22.171.32 check inter 2000 rise 2 fall 5
 	  server 10.22.171.22 10.22.171.22 check inter 2000 rise 2 fall 5
