@@ -75,7 +75,7 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
  
 You can find more information on the hypervisor options in the Technical Overview.
 
-### KVM Hypervisor with HP StoreVirtual VSA support {#kvm-Hypervisor}
+### KVM Hypervisor {#kvm-Hypervisor}
 
 Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
 
@@ -89,7 +89,7 @@ HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the co
 
 HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. 
 
-### ESX Hypervisor with HP Virtual Cloud Networking (VCN) application support {#esx-hypervisor}
+### ESX Hypervisor {#esx-hypervisor}
 
 HP Helion OpenStack supports VMWare ESX hypervisor. With our ESX integration, you can provision and manage an overcloud ESX cluster. VMWare vCenter Compute driver is used as a part of ESX integration. The VMware vCenter driver connects to ESX clusters in a vCenter through Compute proxy nodes. A Compute node scheduler sees each cluster as compute and uses the same for scheduling a new instances.
 
