@@ -341,8 +341,6 @@ navigation:
     url: /helion/devplatform/install/
   - text: Development Platform Community Edition Installation & Configuration
     url: /helion/devplatform/install/community/
-  - text: Development Platform Commercial 1.0.1 Update
-    url: /helion/openstack/update/devplat/101/
   - text: Application Developer Resources
     url: /helion/devplatform/appdev/
   - text: IT Ops Resources

@@ -24,7 +24,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/	"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;: Verifying the Install Using Embedded Tests
 
@@ -97,28 +97,33 @@ There are several ways available to customize which tests will be executed.
 
 ### Run only the tests matching a series of white and blacklists. 
 
-To do so customize the content of `/opt/stack/tempest/tests2skip.txt`.
+Whitelist is applied first. The blacklist is executed against the set of tests returned by the whitelist.
+
+* If whitelist is empty, all available tests are fed to blacklist.
+* If blacklist is empty, all tests from whitelist are returned.
 
 Documentation on the format of white and black-lists is available at http://git.openstack.org/cgit/openstack/tripleo-image-elements/tree/elements/tempest/tests2skip.py#n24. 
 
 
 ### Include all API tests
 
-A good selection would only run api tests, and exclude tests that are less relevant for deployment validation, such as negative, admin, cli and thirdparty (EC2) tests:
+A good selection would only run API tests, and exclude tests that are less relevant for deployment validation, such as negative, admin, cli and thirdparty (EC2) tests:
 
-+tempest\.api\.*
+		+tempest\.api\.*
 
 ### Exclude all admin and negative tests
 
-.*[Aa]dmin.*
-.*[Nn]egative.*
+		*[Aa]dmin.*
+		*[Nn]egative.*
 
 ### Exclude CLI and third party tests
 
-tempest\.cli.*
-tempest\.thirdparty\.*
+		tempest\.cli.*
+		tempest\.thirdparty\.*
 
-### Run only the tests for certain services, and exclude specific features: tempest allows doing this via its configuration file. 
+### Run only the tests for certain services, and exclude specific features
+
+Tempest allow you to test specific services and features using tempest.conf.sample configuration file, `tempest.conf.sample`. 
 
 A sample configuration file with inline documentation is deployed under `/opt/stack/tempest/etc/tempest.conf.sample`.
 

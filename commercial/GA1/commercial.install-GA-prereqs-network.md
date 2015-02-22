@@ -70,6 +70,10 @@ If you are installing HP Helion OpenStack for ESX hypervisor support, you must c
 
 <a href="javascript:window.open('/content/documentation/media/topology_esxnew.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP Helion OpenStack architecture diagram for ESX network architecture.</a>(opens in a new window)
 
+**Note**
+
+- CVR is supported (Centralized Virtual Router) is used to route traffic between VMs and outside the cloud. DVR is not supported in ESX deployments.
+
 #### Installing networks for ESX ##### {#install_network_ESX}
 
 For ESX deployments, you must install and configure two specific networks:
