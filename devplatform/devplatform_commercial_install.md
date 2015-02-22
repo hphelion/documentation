@@ -283,10 +283,10 @@ In the **Configure Services** panel locate the Database Service item in the Conf
 	- **Ephemeral CA Password** (Required) - Specify the password for the Ephemeral CA server. 
 	- **Ephemeral CA IP Address** (Required) - Specify the IP address of Ephemeral CA server.
 	- **Volume Type** (Required) -  The volume type to use when creating database instances.
-	- **Enable HA** - Specify if the database service is to be set up in an HA configuration. If selected, each component of the service will have three instances created and active at all times. 
+	- **Enable HA** - Specify if the database service is to be set up in a high-availability (HA) configuration. If selected, each component of the service will have three instances created and active at all times. 
 <br /><br />
 
-		<img src="media/dev_install_database.png"/)>
+		<img src="media/dev_install_database_new.png"/)>
 
 
 2. After all configuration options have been provided, select the **Configure** button to complete the configuration step. Wait for the configuration step to complete and the status to change to **Configured**.
