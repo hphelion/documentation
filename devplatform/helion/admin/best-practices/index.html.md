@@ -241,31 +241,24 @@ some shell operations performed in the export require `sudo` when run interactiv
 
 ### Importing the server data {#importing-the-server-data}
 
-To import Application Lifecycle Service data, transfer the exported .tgz file to the target
-VM or note the hostname of the old VM / Core node.
+To import Application Lifecycle Service data, transfer the exported .tgz file to the target VM or note the hostname of the old VM / Core node.
 
-**Note**
+**Before you Begin**
 
-Before importing data to a new microcloud or cluster, make sure you have
-completed first-user (admin) setup in the Application Lifecycle Service Web UI and accepted
-the terms and conditions.
+Before importing data to a new micro-cloud or cluster:
 
-**Note**
+- Make sure you have completed first-user (admin) setup in the Application Lifecycle Service Horizon console and accepted the terms and conditions.
 
-All roles in the new cluster should be started prior to proceeding with
-import. If you would like all services to be imported, their
-corresponding roles must be enabled (see also [*Importing Apps using
-RabbitMQ
-2.4*](/als/v1/admin/reference/known-issues/#known-issues-rabbit-import)).
+- Ensure that all services you intend to use are enabled. (In previous versions of ALS, different services are disabled by default.)
+- Ensure that all roles required by any services are enabled and running.
 
-Login to the Application Lifecycle Service VM (or Core node) and run
-`kato data import` with the relevant options. For
-example, to import all data into a new cluster from a .tgz file:
+**Import the Data**
+
+Log in to the Application Lifecycle Service VM (or Core node) and run `kato data import` with the appropriate options. For example, to import all data into a new cluster from a .tgz file:
 
     kato data import --cluster helion-export-xxxxxxxxxx.tgz
 
-To import data from a running Application Lifecycle Service system instead, specify the
-hostname of the old Core node:
+To import data from a running Application Lifecycle Service system instead, specify the hostname of the old Core node:
 
     kato data import --cluster helion-host.example.com
 
