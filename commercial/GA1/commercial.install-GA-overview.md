@@ -24,7 +24,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/support-matrix/">Support Matrix &#9654;</a> </p>
 
 
-# HP Helion OpenStack&#174; Installation Overview 
+# HP Helion OpenStack&#174 1.1: Installation Overview 
 
 This document describes the installation process for HP Helion OpenStack 1.1. 
 
@@ -151,6 +151,9 @@ There are a few things you should be aware of before you begin your HP Helion Op
     `/root/stackrc`
 
     `/root/tripleo/tripleo_*_passwords`
+
+* Check if there is a reference about SSL certificates and locations. Append to the end of this reference details about certificates and their location 
+ `/usr/local/share/ca-certificates/ephemeralca-cacert.crt`
 
 * The installation will create two initial Object Storage nodes. If you need additional Object Storage nodes, you must create them manually after installation. 
 
