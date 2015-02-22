@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor</a></p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor </p> 
 
 # HP Helion OpenStack&#174; 1.1: DNSaaS Installation and Configuration
 
@@ -30,7 +30,7 @@ Our managed DNS service, based on the OpenStack Designate project, is engineered
 
 It is important to read through this page before starting your installation as it explains how to install and configure DNS as a service (DNSaaS) for HP Helion OpenStack.
 
-<span style="color: red"><b>Caution</b></span>: Before migrating to DNSaaS 1.1, you ***must*** first [uninstall](#uninstall) DNSaaS 1.0. Do **not** attempt to install version 1.1 over the previous version.
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.1 over the previous version. </p>
 
 
 - [Prerequisites](#preq)
@@ -46,9 +46,7 @@ It is important to read through this page before starting your installation as i
 
 
 ##Prerequisites {#preq}
-<span style="color: red"><b>Caution</b></span>: Before migrating to DNSaaS 1.1, you ***must*** first [uninstall](#uninstall) DNSaaS 1.0. Do **not** attempt to install version 1.1 over the previous version.
-
-**Important**: If the associated project already has existing instances (VMs), the DNS installation will not have sufficient room to complete. An admin must first [increase the quota amounts](/helion/openstack/services/troubleshooting/dns/#increasequotas) to allow sufficient room before beginning the installation.
+<p style="border-style: solid;"><b>Caution</b>: Before migrating to DNSaaS 1.1, you <b><i>must</i></b> first <a href="#uninstall">uninstall</a> DNSaaS 1.0. Do <b>not</b> attempt to install version 1.1 over the previous version. </p>
 
 * HP Helion OpenStack is successfully installed
 * Download [DNSaaS Installer Image](#publication) <br /> 
@@ -107,26 +105,26 @@ Target credentials are the credentials of the user+tenant where the service is t
 
 * Create tenant
 		
-		keystone tenant-create --name dnsaas --description "DNSaaS Service" 
+		$ keystone tenant-create --name dnsaas --description "DNSaaS Service" 
 
 * Create username
 
-		keystone user-create --name dnsaas --tenant dnsaas --email dnsaas@example.com --pass password
+		$ keystone user-create --name dnsaas --tenant dnsaas --email dnsaas@example.com --pass password
 
 * Add role (this role is added for user)
 
-		keystone user-role-add --user dnsaas --tenant dnsaas --role admin
+		$ keystone user-role-add --user dnsaas --tenant dnsaas --role admin
 
 ###Service Credentials {#service-cred}
 Service Credentials are credentials for the user+tenant used to validate end user tokens. Service credentials can only be created after the Target credentials have been successfully created. This user should be in the **service** tenant, have the **admin** and  **\_member_** roles, and be named **designate**.
 
 - Create service credentials
 
-		keystone user-create --name designate --tenant service --email designate@example.com --pass password
+		$ keystone user-create --name designate --tenant service --email designate@example.com --pass password
 
 * Add admin role to service user command 
 
-		keystone user-role-add --user designate --tenant service --role admin
+		$ keystone user-role-add --user designate --tenant service --role admin
  
 ## Sherpa CSU Publication and Booting the Installer VM {#publication}
 
@@ -237,7 +235,7 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
 1. SSH to install VM.
 
-		ssh -i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
+		$ ssh -i samplekey.pem debian@<Floating IP Address associated with the DNS Installer VM>
 
 
 	<!--
@@ -251,16 +249,16 @@ Before proceeding with the DNaaS installation, ensure that you have met all the 
 
 3. Copy the SSH Public Key. 
 
-		cp .ssh/authorized_keys id_rsa.pub
+		$ cp .ssh/authorized_keys id_rsa.pub
 
 
 4. Copy the sample configuration file to your home directory:
 
-     	cp /etc/dnsaas-installer/dnsaas-installer.conf.sample ~/dnsaas-installer.conf
+     	$ cp /etc/dnsaas-installer/dnsaas-installer.conf.sample ~/dnsaas-installer.conf
 
 5. Edit your copy of the configuration file with the required changes:
  
-    	nano dnsaas-installer.conf
+    	$ nano dnsaas-installer.conf
 		
    	A. DEFAULT section:
 
@@ -325,7 +323,7 @@ You must configure HAProxy before you configure the overcloud Load Balance for D
 
 To configure HAProxy use the following command: 
 
-	dnsaas-installer --target-password <Target User Password> haproxy
+	$ dnsaas-installer --target-password <Target User Password> haproxy
 
 The HA Proxy configuration file will be displayed as the sample below:
 	
@@ -343,7 +341,6 @@ The HA Proxy configuration file will be displayed as the sample below:
 	  server 10.22.171.22 10.22.171.22 check inter 2000 rise 2 fall 5
 	  server 10.22.171.21 10.22.171.21 check inter 2000 rise 2 fall 5
 	### END HAPROXY CONFIG
-
 
 After the configuration of HAProxy, SSH to all three overcloud controllers. 
 
@@ -419,7 +416,7 @@ You must perform an initial configuration step to communicate the names of the s
 
 For the "Nameserver FQDNs" gathered during the [prerequisites](#preq) step, issue a `server-create` command for each name to add the server:
  
-	designate server-create --name ns1.example.com.
+	$ designate server-create --name ns1.example.com.
 
 For example :
 
@@ -436,12 +433,12 @@ To uninstall the DNaaS:
 
 1. Enter the following command to list the DNaaS Stack ID:
 
-		heat stack-list
+	`$ heat stack-list`
 
 
 2. Using python-heatclient and the Target Credentials supplied to the installer, verify the DNSaaS Stack ID and delete it.
 
-		heat stack-delete <stack ID>
+		$ heat stack-delete <stack ID>
 
 **Note**: Installer VM can also be deleted, if it is not deleted already.
 
