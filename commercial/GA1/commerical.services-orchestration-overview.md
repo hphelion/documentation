@@ -32,7 +32,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Orchestration Service (Heat) Overview#
+# HP Helion OpenStack&#174; 1.1 Orchestration Service (Heat) Overview#
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
@@ -55,6 +55,12 @@ You can use a low-level, raw REST API access to the Orchestration service. See t
 You can use any of several command-line interface software to access the Orchestration service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/heatclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
+
+### Maintaining Heat templates ###
+Because you can modify Heat templates, any updates to `openstack/tripleo-heat-templates` by design do not automatically overwrite existing templates. If you are using a modified heat template, then update the new templates provided with the installer to reflect your modifications in your previous deployment. 
+
+If you have not made any changes to the original Heat template, then you can safely execute `./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-undercloud` and `./tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud` to update the Heat templates.
+
 
 <!-- 
 ## How To's with the HP Helion Orchestration Service ## {#howto}

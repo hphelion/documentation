@@ -24,7 +24,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/support-matrix/">Support Matrix &#9654;</a> </p>
 
 
-# HP Helion OpenStack&#174 1.1: Installation Overview 
+# HP Helion OpenStack&#174; 1.1: Installation Overview 
 
 This document describes the installation process for HP Helion OpenStack 1.1. 
 
