@@ -385,14 +385,12 @@ navigation:
   - text: ALS Admin Guide
     url: https://apaas-docs.hpcloud.com
   commercial.test:
-  - text: All
-    url: /helion/openstack/siteindex/
-  - text: Version 1.1
-    url: /helion/openstack/
-  - text: Version 1.0
+  - text: Version 1.0  documentation
     url: http://docs.hpcloud.com/helion/openstack/
+  - text: All Version 1.1 documentation
+    url: /helion/openstack/siteindex/
   - text: Getting started
-    url: /helion/openstack/#getstart
+    url: /helion/openstack/
   - text: Installation 
     url: /helion/openstack/install/overview/
   - text: Using HP Helion OpenStack
