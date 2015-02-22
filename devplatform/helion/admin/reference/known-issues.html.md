@@ -73,36 +73,21 @@ Certain processes noted below use non-standard logging formats and are therefore
  
 ##1.01 and previous
 
-###Buildpack config\_vars Deprecated[](#buildpack-config-vars-deprecated "Permalink to this headline") 
+####Buildpack config\_vars Deprecated {#buildpack-config-vars-deprecated}
 
-- [Buildpack config\_vars Deprecated](#buildpack-config-vars-deprecated)
-    -   [Legacy Buildpack and Environment
-        Variables](#legacy-buildpack-and-environment-variables)
-    -   [Service Gateway Log Errors in Maintenance
-        Mode](#service-gateway-log-errors-in-maintenance-mode)
-    -   [Nodes with FATAL or perpetually STARTING
-        processes](#nodes-with-fatal-or-perpetually-starting-processes)
-    -   [Avoiding App Reliance on IP
-        Addresses](#avoiding-app-reliance-on-ip-addresses)
-    -   [Community Forums](#community-forums)
+Buildpacks used to rely on the `config_vars` feature of *bin/release* to set environment variables, but this has been deprecated by Heroku.
 
-Buildpacks used to rely on the `config_vars` feature
-of *bin/release* to set environment variables, but this has been
-deprecated by Heroku.
+The replacement mechanism is to [create a shell script in \$HOME/.profile.d](https://devcenter.heroku.com/articles/profiled) to
+set environment variables. This mechanism is fully supported by the Application Lifecycle Service and is used by all of the built-in buildpacks.
 
-The replacement mechanism is to [crea= e a shell script in
-\$HOME/.profile.d](https://devcenter.heroku.com/articles/profiled) to
-set environment variables. This mechanism is fully supported in Application Lifecycle Service
-/ Cloud Foundry v2, and is used by all of the built-in buildpacks.
-
-###Legacy Buildpack and Environment Variables[](#legacy-buildpack-and-environment-variables "Permalink to this headline")
+####Legacy Buildpack and Environment Variables {#legacy-buildpack-and-environment-variables} 
 
 When using the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks), environment variable values defined in *manifest.yml* cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
 overwritten by the original ones defined at push when the application is restarted.
 
 To modify custom environment variables, re-push the application after changing the values in *manifest.yml*.
 
-###Service Gateway Log Errors in Maintenance Mode[](#service-gateway-log-errors-in-maintenance-mode "Permalink to this headline")
+####Service Gateway Log Errors in Maintenance Mode {#service-gateway-log-errors-in-maintenance-mode}
 
 With Application Lifecycle Service set in [*Maintenance
 Mode*](/als/v1/admin/console/customize/#console-settings), all "\_gateway"
@@ -113,7 +98,7 @@ processes will report the following error once per minute:
 This is normal, and can be safely ignored. The service nodes will
 reconnect once the Controller is taken out of Maintenance Mode.
 
-###Nodes with FATAL or perpetually STARTING processes[](#nodes-with-fatal-or-perpetually-starting-processes "Permalink to this headline")
+####Nodes with FATAL or perpetually STARTING processes {#nodes-with-fatal-or-perpetually-starting-processes}
 
 If the Core node of an Application Lifecycle Service cluster is offline for more than 90
 seconds, `kato status` will show processes on other
@@ -125,7 +110,7 @@ To correct this, run `kato start` (for FATAL
 processes) or `kato restart` (for STARTING
 processes) on all affected nodes.
 
-###Avoiding App Reliance on IP Addresses[](#avoiding-app-reliance-on-ip-addresses "Permalink to this headline")
+###Avoiding App Reliance on IP Addresses {#avoiding-app-reliance-on-ip-addresses}
 
 Cluster configurations make use of private IP addresses for identifying
 the various cluster nodes. Best practice is to avoid the literal use of
@@ -135,8 +120,7 @@ change with cluster configuration.
 If the VM instance can locally resolve a hostname rather than an IP
 address, it's generally best practice to use the hostname.
 
-If not, Application Lifecycle Service provides various [*environment
-variables*](/als/v1/user/reference/environment/#environment-variables)
+If not, Application Lifecycle Service provides various [environment variables](/als/v1/user/reference/environment/#environment-variables)
 so that applications do not need to hardcode them at install time. Some
 examples are `VCAP_SERVICES` and `DATABASE_URL`. We strongly encourage their use.
 
@@ -145,19 +129,16 @@ can't be configured to make use of these variables. If the server that's
 providing the app's database (mysql\_gateway/node for example) gets
 moved to another location, the only way for the app to become aware of
 the new credentials is by restaging the app as noted below. A restart
-isn't sufficient.
+is **not** sufficient.
 
-Choose one of the following according to need, either:
+Choose one of the following sets of commands according to need:
 
-    $ helion delete -n
-    $ helion push -n
+    helion delete -n
+    helion push -n
 
 or:
 
-    $ helion delete -n
-    $ helion update -n
+    helion delete -n
+    helion update -n
 
-Another possible workaround in such cases is to write a script that will
-pull the credentials from `VCAP_SERVICES` and update
-the app's config as needed, then add this script to the pre-running
-hooks.
+Another possible workaround in such cases is to write a script that will pull the credentials from `VCAP_SERVICES`, update the app's configuration as needed, and then add this script to the pre-running hooks.
