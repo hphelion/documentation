@@ -44,7 +44,7 @@ There are some differences in the procedure for removing/replacing nodes dependi
 
 - Controller0: By default, controller0 is the bootstrap controller. Controller1 is temporarily flagged as the bootstrap controller when controller0 is removed.
 - Controller1: By default, nodes are contiguous, so some editing of the templates is required for non-contiguous nodes.
-- Controller2: This is the most straightforward case, the CONTROLSCALE can be adjusted to remove the failed controller and deploy a new one.
+- Controller2: This is the most straightforward case; the CONTROLSCALE can be adjusted to remove the failed controller and deploy a new one.
 
 ##Removing and replacing controller0
 
@@ -128,7 +128,7 @@ Reduce the number of overcloud nodes by 1 and remove the failed node from the ov
 	make overcloud-ce-trickle
 
 
-The template will have been created with controller0 and controller1. We need to change references to controller0 to controller2.
+The template will have been created with controller0 and controller1. We need to change controller0 references  to controller2.
 
 	sed -i 's/controller0/controller2/g' trickle/overcloud-ce-controller
 
@@ -250,7 +250,7 @@ Reduce the number of overcloud nodes by 1 and remove the failed node from the ov
 	export CONTROLSCALE="2"
 	make overcloud-ce-trickle
 
-The template will have been created with controller0 and controller1. We need to change references to controller1 to controller2.
+The template will have been created with controller0 and controller1. We need to change controller1 references to controller2.
 
 
 	sed -i 's/controller1$/controller2/g' trickle/overcloud-ce-controller
@@ -373,7 +373,7 @@ Reduce the number of overcloud nodes by 1 and remove the failed node from the ov
 <!--If CORE-2875 is not fixed, work around that by replacing invalid references to controller2 to controller1.-->
 
 
-Replace invalid references to controller2 to controller1  <!-- ?? -->
+Replace invalid controller2 references to controller1  <!-- ?? -->
 
 	sed -i 's/controller2$/controller1/' trickle/overcloud-ce-controller
 
