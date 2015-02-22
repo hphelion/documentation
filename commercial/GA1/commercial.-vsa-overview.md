@@ -3,6 +3,20 @@ layout: default
 title: "HP Helion OpenStack Edition: VSA Support"
 permalink: /helion/openstack/install/vsa/overview/
 product: commercial.ga
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+role1: Systems Administrator 
+role2: Cloud Architect 
+role3: Storage Administrator 
+role4: Network Administrator 
+role5: Service Developer 
+role6: Cloud Administrator 
+role7: Application Developer 
+role8: Network Engineer 
+role9: Storage Engineer
+role10: Storage Architect 
+role11: Storage Engineer
+authors: Paul F
 
 ---
 <!--UNDER REVISION-->

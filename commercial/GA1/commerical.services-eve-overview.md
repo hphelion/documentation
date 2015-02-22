@@ -4,6 +4,14 @@ title: "HP Helion OpenStack&#174; Service Overview"
 permalink: /helion/openstack/services/eve/overview/
 product: commercial.ga
 
+product-version1: HP Helion OpenStack
+product-version2: HP Helion OpenStack 1.1
+
+role1: Service Developer 
+role2: Cloud Administrator 
+role3: Application Developer 
+authors: Paul F
+
 ---
 <!--PUBLISHED-->
 
