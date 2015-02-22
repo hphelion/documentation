@@ -387,21 +387,21 @@ navigation:
   commercial.test:
   - text: Version 1.0  documentation
     url: http://docs.hpcloud.com/helion/openstack/
-  - text: All Version 1.1 documentation
+  - text: All version 1.1 documentation
     url: /helion/openstack/siteindex/
-  - text: Getting started
+  - text: Getting started with version 1.1
     url: /helion/openstack/
-  - text: Installation 
+  - text: Installing version 1.1  
     url: /helion/openstack/install/overview/
-  - text: Using HP Helion OpenStack
+  - text: Using version 1.1
     url: /helion/openstack/using-hos/
-  - text: Services
+  - text: Services in version 1.1
     url: /helion/openstack/services/overview/
-  - text: Storage
+  - text: Storage and version 1.1
     url: /helion/openstack/storage/
-  - text: Networking
+  - text: Networking (Neutron) in version 1.1
     url: /helion/openstack/services/neutron/installation/intro/
-  - text: Security
-    url: /helion/openstack/install/security/
-  - text: Identity Management
+  - text: Identity Management in version 1.1
     url: /helion/openstack/services/identity/overview/
+  - text: Security in version 1.1
+    url: /helion/openstack/install/security/
