@@ -29,7 +29,7 @@ HP Helion OpenStack offers many services based on the different OpenStack projec
 
 If you're unfamiliar with what's inside the box, have a look at the components inside HP Helion OpenStack on the [Under the Hood](http://docs.hpcloud.com/content/documentation/commercial/GA1/ServicesFlow/index.html) page.
 
-##Get Started with HP Helion OpenStack 
+##Get Started with HP Helion OpenStack {#getstart}
 
 Use the following links and tools to begin working with HP Helion OpenStack:
 
