@@ -292,7 +292,7 @@ The sample output of the above command is given below:
 
 ##Configure HP 3PAR Storeserv as a storage backend with Brocade Zone Manager {#config-brocade}
 
-HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to cinder.conf to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.
+HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to `cinder.conf` to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.
 
 For more information, see  [HP Helion OpenStack&reg; 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager]( /helion/openstack/1.1/services/volume/Fibre/)
 
