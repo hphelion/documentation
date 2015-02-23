@@ -354,7 +354,7 @@ navigation:
   - text: Application Lifecycle Service Configuration and Deployment
     url: /helion/devplatform/1.1/deploy/
   - text: ALS Admin Guide
-    url: /als/v1/admin/
+    url: /helion/devplatform/1.1/als/admin/
   - text: End User License Agreement
     url: /helion/devplatform/1.1/eula/
   - text: Open Source and Third-Party Software License Agreements
