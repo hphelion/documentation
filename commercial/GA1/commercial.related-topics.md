@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Related OpenStack Documentation"
-permalink: /helion/openstack/related-links/
+permalink: /helion/openstack/1.1/related-links/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/dnsaas/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/glossary/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/dnsaas/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/glossary/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&reg; Related OpenStack Documentation

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Undercloud Dashboard: Settings Tab"
-permalink: /helion/openstack/undercloud/admin/settings/
+permalink: /helion/openstack/1.1/undercloud/admin/settings/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1

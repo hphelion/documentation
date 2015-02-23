@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Neutron: High Availability"
-permalink: /helion/openstack/services/neutron/pre/installation/high-availability/
+permalink: /helion/openstack/1.1/services/neutron/pre/installation/high-availability/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -26,7 +26,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> --->
 
 # HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron): High Availability 
 
@@ -191,7 +191,7 @@ The following three services run as singletons in the control plane for the curr
 * [Sherpa](#sherpa) 
 * [nova-consoleauth](#nova-console-auth) 
  
-The above services are deployed and activated on the third controller called **Management Controller**. Automated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the [Backup and Restore](/helion/openstack/backup.restore/) document. 
+The above services are deployed and activated on the third controller called **Management Controller**. Automated failover for these singleton services is not provided and in the event of irrecoverable failure of the management controller server, you must resort to de-commissioning the failed server from the control plane and deploying the management controller on a new server using instructions provided in the [Backup and Restore](/helion/openstack/1.1/backup.restore/) document. 
 
 ####Cinder-Volume {#cinder-volume}
 
@@ -234,7 +234,7 @@ Any one of the controller servers can be shut down for a short duration for main
 
 **Note**: The HA design is only robust against single points of failure and may not protect you against multiple levels of failure. As soon as first-level failure occurs, you must try to fix the symptom/root cause and recover from the failure, as soon as possible.
 
-In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes]( /helion/openstack/removing/failedovercloud/).
+In the unlikely event that one of the controller servers suffers an irreparable hardware failure, you can decommission and delete it from the cluster. You can then deploy the failed controller on a new server and connect it back into the original three node controller cluster. Learn more about [Replacing/Rebuilding Controller Nodes]( /helion/openstack/1.1/removing/failedovercloud/).
 
 ##Highly available cloud infrastructure {#ha-cloud-infra}
 
@@ -263,7 +263,7 @@ You can deploy your KVM Nova-Compute nodes either during initial installation, o
 
 While adding compute nodes post initial installation, you can specify the target physical servers for deploying the compute nodes.
 
-Learn more about [Adding Compute Nodes after Initial Installation](/helion/openstack/install/add/nodes/).
+Learn more about [Adding Compute Nodes after Initial Installation](/helion/openstack/1.1/install/add/nodes/).
 
 ####Nova availability zones {#nova-availability-zone}
 
@@ -286,7 +286,7 @@ The underlying SAN/iQ operating system of the StoreVirtual VSA ensures that the 
 This Network RAID 10 capability ensures that failure of any single server does not cause data loss, and maintains data access to the clients.
 
 Furthermore, each of the VSA nodes of the cluster can be strategically deployed in different zones of your data center for maximum redundancy and resiliency.
-For more information on how to deploy VSA nodes on desired target servers, refer to the[ Deploy VSA](/helion/openstack/install/vsa/) document. 
+For more information on how to deploy VSA nodes on desired target servers, refer to the[ Deploy VSA](/helion/openstack/1.1/install/vsa/) document. 
 
 
 <a href="javascript:window.open('/content/documentation/media/ha-block-storage.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA Block Storage (opens in a new window)</a>
@@ -304,7 +304,7 @@ Cinder availability zones are not supported for general consumption in the curre
 
 ### Object Storage with Swift {#object-storage}
 
-You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Pyringos tool here. Please refer to the [Ringos](/helion/openstack/GA1/services/object/pyringos/) document.
+You can configure your Swift Rings by specifying a target zone for each drive that is added to the ring. Learn more about configuring zones for various drives using the Pyringos tool here. Please refer to the [Ringos](/helion/openstack/1.1/GA1/services/object/pyringos/) document.
 
 <a href="javascript:window.open('/content/documentation/media/ha-swift.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HA Swift  (opens in a new window)</a>
 
@@ -370,7 +370,7 @@ All services running on the Seed VM are not highly available and if the Seed VM 
 
 Ensure the following points:
 
-- Ensure a periodic backup of Seed VM. Please refer to the [Backup and Restore](/helion/openstack/backup.restore/) document for more details.
+- Ensure a periodic backup of Seed VM. Please refer to the [Backup and Restore](/helion/openstack/1.1/backup.restore/) document for more details.
 
 - In case of Seed VM failure, the undercloud continues to function. However, if any of the undercloud nodes crash or is shutdown, it does not boot up as it is dependent on Seed to provide the PXE image.
 
@@ -383,7 +383,7 @@ All the services running on undercloud node are not highly available and if the 
 
 Ensure the following points:
 
-- Ensure the periodic backup of undercloud node. Please refer to the [Backup and Restore](/helion/openstack/backup.restore/) document for more details.
+- Ensure the periodic backup of undercloud node. Please refer to the [Backup and Restore](/helion/openstack/1.1/backup.restore/) document for more details.
 
 - In case of undercloud node failure, the Overcloud continues to function. However, if any of the Overcloud nodes crash or is shutdown, it does not boot up as it is dependent on the undercloud to provide the PXE image.
 
@@ -411,7 +411,7 @@ Worldwide +1 678 745 9010
 
 ##Next Steps {#next-step}
 
-[Post Installation Tasks]( /helion/openstack/services/neutron/post/installation/)
+[Post Installation Tasks]( /helion/openstack/1.1/services/neutron/post/installation/)
 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Ceph Architecture Reference"
-permalink: /helion/openstack/services/object/ceph/archref-1.1/
+permalink: /helion/openstack/1.1/services/object/ceph/archref-1.1/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -28,7 +28,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/swift/deployment-scale-out/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&reg;: Ceph Storage Architecture Reference  {#refarch}
@@ -53,7 +53,7 @@ Helion OpenStack with Ceph Cluster Deployment Example
 
 ## For more information
 
-[Ceph Integration Overview](/helion/openstack/services/ceph/overview/)
+[Ceph Integration Overview](/helion/openstack/1.1/services/ceph/overview/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

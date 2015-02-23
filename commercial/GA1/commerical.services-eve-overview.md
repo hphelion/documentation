@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Service Overview"
-permalink: /helion/openstack/services/eve/overview/
+permalink: /helion/openstack/1.1/services/eve/overview/
 product: commercial.ga
 
 product-version1: HP Helion OpenStack
@@ -59,7 +59,7 @@ You can use any of several language bindings to access HP Helion OpenStack Eve s
 <!--
 ## How To's with the HP Helion OpenStack Image Operations Service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Administration Dashboard](/helion/openstack/manage/administration-dashboard/), the OpenStack [CLI]() or OpenStack [API]().
+The following lists of tasks can be performed by a user or administrator through the [HP Administration Dashboard](/helion/openstack/1.1/manage/administration-dashboard/), the OpenStack [CLI]() or OpenStack [API]().
 
 ###Working with topologies
 
@@ -90,8 +90,8 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/1.1/manage/operational-dashboard/)
+* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/1.1/manage/administration-dashboard/) -->
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

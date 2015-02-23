@@ -20,7 +20,7 @@ advantage of HP Helion OpenStack&reg; to manage infrastructure or software servi
 to enable successful development are available in PHP.
 
 For more information on working with object storage, 
-see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/openstack/services/object/overview/).
+see the [HP Helion OpenStack&reg; Object Storage Service Overview](/helion/openstack/1.1/services/object/overview/).
 
 ## Application Lifecycle Services
 Application Lifecycle Service (ALS) provides a means to execute PHP applications on a managed platform, controlling application lifecycle through a PaaS tier. Deploying

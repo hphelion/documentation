@@ -31,7 +31,7 @@ For example, the number of gigabytes allowed per project can be controlled to ma
 
 ### Modify a quotas ### {#quotamod}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 

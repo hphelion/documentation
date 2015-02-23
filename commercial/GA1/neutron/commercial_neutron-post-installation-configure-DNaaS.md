@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; DNSaaS Configuration"
-permalink: /helion/openstack/services/neutron/post/installation/configure-dnsaas/
+permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/related-links/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/related-links/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&#174;1.1 DNSaaS Configuration (Optional)
 

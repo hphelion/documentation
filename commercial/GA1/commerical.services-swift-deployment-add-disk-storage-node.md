@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/services/swift/deployment/add-disk-object-node/
+permalink: /helion/openstack/1.1/services/swift/deployment/add-disk-object-node/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -26,7 +26,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/services/object/swift/Monitor-cluster/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/services/object/swift/Monitor-cluster/"> NEXT &#9654</a> </p>
 --->
 
 # HP Helion OpenStack&#174;: Add New Scale-out Object Node
@@ -46,7 +46,7 @@ Perform the following procedure to add new scale-out object node.
 
 ##Deploying new object nodes {#deploy-new-object-node}
 
-*  Perform the steps mentioned in [Provision Swift Node(s)]( /helion/openstack/services/swift/provision-nodes/) to deploy a new node.
+*  Perform the steps mentioned in [Provision Swift Node(s)]( /helion/openstack/1.1/services/swift/provision-nodes/) to deploy a new node.
 
 ## Adding nodes and disks to object-ring:1 {#add-disk-node} 
 

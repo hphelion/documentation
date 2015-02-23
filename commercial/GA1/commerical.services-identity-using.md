@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Identity Service (Keystone) Overview"
-permalink: /helion/openstack/services/identity/using/
+permalink: /helion/openstack/1.1/services/identity/using/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,22 +29,22 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/imaging/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/imaging/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Using the Identity Service (Keystone) #
 
 Based on OpenStack Keystone, the HP Helion OpenStack Identity service provides one-stop authentication. 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v3.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-identity-v3.html) or [CLI](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Identity service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/) to work with the Identity service.
 
 **Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
 
-To use Keystone v3 in Horizon, for example to use LDAP, you can manually change the settings. See [Configuring Horizon for Keystone v3](http://15.184.32.138/helion/openstack/services/identity/configure/) for instructions and important restrictions.
+To use Keystone v3 in Horizon, for example to use LDAP, you can manually change the settings. See [Configuring Horizon for Keystone v3](http://15.184.32.138/helion/openstack/1.1/services/identity/configure/) for instructions and important restrictions.
 
 ###Using the API {#API}
  

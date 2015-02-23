@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Configuring your Helion network securely"
-permalink: /helion/openstack/install/security/
+permalink: /helion/openstack/1.1/install/security/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -23,7 +23,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install/esx/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&#174;: Configuring Your Network Securely
 
@@ -143,7 +143,7 @@ A typical deployment would have public to mgmt IP mapping as follows:
 * Overcloud Horizon Dashboard access
 * External url - `https://horizon.fqdn.com/`
 * Internal url (VIP) - `https://<HelionOpenStackInternalVirtualIP>/`
-Note: all access to overcloud services now happens over a TLS connection. Read more about this change in [HP Helion OpenStack TLS Support](/helion/openstack/tls/) HP Helion OpenStack TLS Support
+Note: all access to overcloud services now happens over a TLS connection. Read more about this change in [HP Helion OpenStack TLS Support](/helion/openstack/1.1/tls/) HP Helion OpenStack TLS Support
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: lightgrey; color: black;">
 <th>API</th><th>Public Endpoint</th><th>Management Endpoint</th>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Neutron Administrator Pre and Post Installation"
-permalink: /helion/openstack/services/neutron/installation/intro/
+permalink: /helion/openstack/1.1/services/neutron/installation/intro/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>--->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>--->
 
 # HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron) Administrator Pre and Post Installation Tasks
 
@@ -40,8 +40,8 @@ Helion Network Administrators are responsible for planning for the Neutron netwo
 
 To accomplish these tasks in the most efficient order, this guide organizes the tasks that the network administrator must complete (or verify that are complete) before installing Helion OpenStack, and those tasks that must be accounted for after the Helion OpenStack installation. 
 
-* [Preinstallation Requirement](/helion/openstack/services/neutron/pre/installation/)
-* [Post installation Requirement](/helion/openstack/services/neutron/post/installation/)
+* [Preinstallation Requirement](/helion/openstack/1.1/services/neutron/pre/installation/)
+* [Post installation Requirement](/helion/openstack/1.1/services/neutron/post/installation/)
 
 
 <br>

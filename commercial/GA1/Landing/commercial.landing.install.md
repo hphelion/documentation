@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installing HP Helion OpenStack"
-permalink: /helion/openstack/landing/install/
+permalink: /helion/openstack/1.1/landing/install/
 product: commercial.test
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,26 +23,26 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p>
 -->
 
 # HP Helion OpenStack&#174;: Installing
 
-[Installation overview](/helion/openstack/install/overview/)
+[Installation overview](/helion/openstack/1.1/install/overview/)
 <br> Learn about the installation process for HP Helion OpenStack 1.1
 <hr>
-[Prerequisites](/helion/openstack/install/prereqs/)
+[Prerequisites](/helion/openstack/1.1/install/prereqs/)
 <br>Perform required tasks before you begin the installation.
 <hr>
-[Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
+[Installation and Configuration for KVM Hypervisor](/helion/openstack/1.1/install/kvm/)
 <br>Install HP Helion OpenStack with KVM support.
 <hr>
-[Post-Installation Tasks for KVM](/helion/openstack/install/post-kvm/) 
+[Post-Installation Tasks for KVM](/helion/openstack/1.1/install/post-kvm/) 
 <br>Perform required and optional tasks after you complete the installation.
 <hr>
-[Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
+[Installation and Configuration for ESX Hypervisor](/helion/openstack/1.1/install/esx/)
 <br>Install HP Helion OpenStack with ESX support.
 <hr>
-[Post-Installation Tasks for ESX](/helion/openstack/install/post-esx/)
+[Post-Installation Tasks for ESX](/helion/openstack/1.1/install/post-esx/)
 <br>Perform required and optional tasks after you complete the installation.
 <hr>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Volume Operations Service (Cinder) Overview"
-permalink: /helion/openstack/services/volume/overview/
+permalink: /helion/openstack/1.1/services/volume/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/reporting/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/horizon/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/reporting/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/horizon/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Block Storage Volume Operations (Cinder) Overview #
@@ -52,14 +52,14 @@ HP Helion OpenStack also supports HP StoreServ 3PAR as a Cinder backend.
 
 To perform tasks using the Volume Operations service, you can use the dashboard, API or CLI.
 
-* [Working with HP StoreVirtual VSA](/helion/openstack/install/vsa/)
+* [Working with HP StoreVirtual VSA](/helion/openstack/1.1/install/vsa/)
 
-* [Working with HP 3PAR StoreServ](/helion/openstack/install/3par/)
+* [Working with HP 3PAR StoreServ](/helion/openstack/1.1/install/3par/)
 
 
 
 ### Using the dashboards<a name="UI"></a>
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Volume Operations service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/) to work with the Volume Operations service.
 
 ###Using the API<a name="API"></a>
  
@@ -74,7 +74,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 <!--
 ## How To's with the HP Helion Volume Operations Service<a name="howto"></a>
  
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://developer.openstack.org/api-ref-blockstorage-v2.html) or [CLI](http://docs.openstack.org/cli-reference/content/cinderclient_commands.html).
 
 Depending upon your user type, [user](#user) or [administrator](#admin), you can perform the following tasks.
 

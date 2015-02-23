@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Configuring Horizon for Keystone v3"
-permalink: /helion/openstack/services/identity/configure/
+permalink: /helion/openstack/1.1/services/identity/configure/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/imaging/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/imaging/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Configuring Horizon for Keystone v3

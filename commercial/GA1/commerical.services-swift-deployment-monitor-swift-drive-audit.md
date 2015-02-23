@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Monitor Disk Usage"
-permalink: /helion/openstack/services/object/swift/monitor-swift-drive-audit/
+permalink: /helion/openstack/1.1/services/object/swift/monitor-swift-drive-audit/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,14 +23,14 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
 # HP Helion OpenStack&#174; 1.1 : Monitoring the Drive Audit
 
  Drive audit runs `swift-drive-audit` <which finds>to find an errors in `kern.log`. It reports the list of drives which have errors. The devices which are used for Swift are verified for an error and then reported.  The devices are not automatically unmounted. <!--- so as to allow for the disk to self-heal?(we can use "recover"), if possible.---->
 
-If the disk errors occur the operator must perform the maintenance on the disk by [removing the disk](http://docs.hpcloud.c,om/helion/openstack/services/swift/deployment/remove-existing-disk/) from the Swift cluster or [replacing the disk](http://docs.hpcloud.com/helion/openstack/services/swift/deployment/add-disk-scale-out/) with a new one. 
+If the disk errors occur the operator must perform the maintenance on the disk by [removing the disk](http://docs.hpcloud.c,om/helion/openstack/1.1/services/swift/deployment/remove-existing-disk/) from the Swift cluster or [replacing the disk](http://docs.hpcloud.com/helion/openstack/1.1/services/swift/deployment/add-disk-scale-out/) with a new one. 
 
 Note: Run **Icinga** check once in every 30 minutes for drive audit to complete one run on  a large system.
 

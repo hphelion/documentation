@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/sirius/cli/workflow/
+permalink: /helion/openstack/1.1/sirius/cli/workflow/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -26,7 +26,7 @@ PageRefresh();
 </script>
 
 <!---
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p> -->
 
 
 # HP Helion OpenStack&#174;: Sirius CLI Workflow
@@ -294,7 +294,7 @@ The sample output of the above command is given below:
 
 HP Helion OpenStack&reg; 1.1 supports Brocade FC Zone Manager. You can add the Brocade Zone Manager to cinder.conf to enable Fibre Channel Zone Manager. Also, you can configure HP 3PAR as storage backend with Brocade Zone Manager.
 
-For more information, see  [HP Helion OpenStack&reg; 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager]( /helion/openstack/services/volume/Fibre/)
+For more information, see  [HP Helion OpenStack&reg; 1.1 Block Storage (Cinder): Auto-zoning - Brocade Fibre Channel Zone Manager]( /helion/openstack/1.1/services/volume/Fibre/)
 
 
 ##Reconfigure and update cloud {#reconfigure-update}
@@ -500,7 +500,7 @@ When the update has completed, the Cinder service in the overcloud will be confi
 
 ##More Information {#more-information}
 
-For the complete list of Sirius CLI commands, refer to  the [Sirius Manual]( /helion/openstack/sirius-cli/).
+For the complete list of Sirius CLI commands, refer to  the [Sirius Manual]( /helion/openstack/1.1/sirius-cli/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

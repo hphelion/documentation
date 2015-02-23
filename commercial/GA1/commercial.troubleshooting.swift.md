@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Troubleshooting Scale-Out Swift"
-permalink: /helion/openstack/services/troubleshooting/swift/
+permalink: /helion/openstack/1.1/services/troubleshooting/swift/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 <!--
 
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/reporting/overview/"> NEXT &#9654</a> </p> --->
 
 
 # HP Helion OpenStack&#174;  Troubleshooting Scale-Out Swift
@@ -55,7 +55,7 @@ HP Helion OpenStack does not support Amazon S3 API.
 
 **Resolution**
 
-Create containers using the [Helion OpenStack Object Storage Service](http://15.184.32.138/helion/openstack/services/object/overview/) through the Swift APIs or the Horizon dashboard. 
+Create containers using the [Helion OpenStack Object Storage Service](http://15.184.32.138/helion/openstack/1.1/services/object/overview/) through the Swift APIs or the Horizon dashboard. 
 
 ### Scale-out nodes : os-refresh-configuration fails on Controller Nodes {#refreshfails}
 

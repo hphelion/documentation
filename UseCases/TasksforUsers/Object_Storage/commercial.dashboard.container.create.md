@@ -27,7 +27,7 @@ A container is a storage compartment for your data and provides a way for you to
 
 ### Create a container ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Object Store** tab on the dashboard **Project** panel.
 
@@ -39,7 +39,7 @@ A container is a storage compartment for your data and provides a way for you to
 
 ### Delete a container ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Object Store** tab on the dashboard **Project** panel.
 

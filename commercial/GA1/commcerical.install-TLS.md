@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; TLS Support"
-permalink: /helion/openstack/tls/
+permalink: /helion/openstack/1.1/tls/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion 1.1
@@ -30,7 +30,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install/overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install/overview/">NEXT &#9654;</a> </p>
 -->
 <!-- IMPORTANT!!! The HW support Matrix should be approved by:
 * Gavin Brebner for Helion QA support

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Troubleshooting"
-permalink: /helion/openstack/services/troubleshooting/
+permalink: /helion/openstack/1.1/services/troubleshooting/
 product: commercial.ga
 
 product-version1: HP Helion OpenStack
@@ -30,7 +30,7 @@ PageRefresh();
 </script>
 <!--
 
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/reporting/overview/"> NEXT &#9654</a> </p> --->
 
 
 # HP Helion OpenStack&#174;  Troubleshooting 
@@ -39,21 +39,21 @@ HP Helion OpenStack&#174; is an OpenStack technology coupled with a version of L
 
 You can download the <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/Troubleshooting_Installation_Final.pdf">*HP Helion OpenStack 1.1 Installation Troubleshooting Guide*</a> or review the following topics on line:
 
-* [Installation Troubleshooting](/helion/openstack/services/troubleshooting/install/)
+* [Installation Troubleshooting](/helion/openstack/1.1/services/troubleshooting/install/)
 
-* [ESX and OVSvAPP Troubleshooting](/helion/openstack/services/troubleshooting/esx/)
+* [ESX and OVSvAPP Troubleshooting](/helion/openstack/1.1/services/troubleshooting/esx/)
 
-* [VSA Troubleshooting](/helion/openstack/services/troubleshooting/vsa/)
+* [VSA Troubleshooting](/helion/openstack/1.1/services/troubleshooting/vsa/)
 
-* [Scale-Out Swift Troubleshooting](/helion/openstack/services/troubleshooting/swift/)
+* [Scale-Out Swift Troubleshooting](/helion/openstack/1.1/services/troubleshooting/swift/)
 
-* [DNSaaS issues](/helion/openstack/services/troubleshooting/dns)
+* [DNSaaS issues](/helion/openstack/1.1/services/troubleshooting/dns)
 
-* [Reporting Service Troubleshooting](/helion/openstack/services/reporting/troubleshooting/)
+* [Reporting Service Troubleshooting](/helion/openstack/1.1/services/reporting/troubleshooting/)
 
-* [Logging issues](/helion/openstack/services/troubleshooting/logging/)
+* [Logging issues](/helion/openstack/1.1/services/troubleshooting/logging/)
 
-* [Controller Nodes](/helion/openstack/services/troubleshooting/controller/)
+* [Controller Nodes](/helion/openstack/1.1/services/troubleshooting/controller/)
 
 ### Contacting Customer Service ### {#sos}
 

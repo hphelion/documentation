@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Services"
-permalink: /helion/openstack/services/mapNeutron
+permalink: /helion/openstack/1.1/services/mapNeutron
 product: commercial.ga
 
 ---
@@ -21,13 +21,13 @@ PageRefresh();
 
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Services Map
 <br>
 
 <img src="media/neutron_diagram.png" alt=""><br>
-<a href="/helion/openstack/services/map"><img src="media/back.png" alt=""></a>
+<a href="/helion/openstack/1.1/services/map"><img src="media/back.png" alt=""></a>
 
 ##Neutron
 

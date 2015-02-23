@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Metering Service (Ceilometer): Role Based Access Control (RBAC)"
-permalink: /helion/openstack/services/reporting/RBAC/
+permalink: /helion/openstack/1.1/services/reporting/RBAC/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -235,7 +235,7 @@ For example, the ResellerAdmin role could also be permitted to access **compute\
 	    "telemetry:compute_statistics": "rule:context_is_admin or rule:i_am_reseller",
 		...
 	}
-After a policy change has been made all the API services will need to be [restarted](/helion/openstack/services/reporting/components/#centralagent).
+After a policy change has been made all the API services will need to be [restarted](/helion/openstack/1.1/services/reporting/components/#centralagent).
 
 #### Apply a policy to a non-default role only
 Another example: assign the L3Support role to the **get\_meters** API and exclude all other roles.

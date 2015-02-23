@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Configuring Multipath for 3PAR"
-permalink: /helion/openstack/install/3par/multipath/
+permalink: /helion/openstack/1.1/install/3par/multipath/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Configuring Multipath for 3PAR
 

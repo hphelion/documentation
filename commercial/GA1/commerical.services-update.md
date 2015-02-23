@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Update"
-permalink: /helion/openstack/update/overview/11/
+permalink: /helion/openstack/1.1/update/overview/11/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a>"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a>"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&reg; Update#

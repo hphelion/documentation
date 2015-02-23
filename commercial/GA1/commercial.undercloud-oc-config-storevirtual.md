@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/oc/config/storevirtual/
+permalink: /helion/openstack/1.1/undercloud/oc/config/storevirtual/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 
 </script>
 
-<!---<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
+<!---<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
 # HP Helion OpenStack&#174;: Working With StoreVirtual Backends
@@ -223,7 +223,7 @@ To update your overcloud with the changes, do the following:
 
 ## Next Steps {#next-steps}
 
-To use the newly added Cinder backend, create volume type and associate it with this backend using [Horizon Overcloud Dashboard](/helion/openstack/map/volumetype/) or Cinder CLI.
+To use the newly added Cinder backend, create volume type and associate it with this backend using [Horizon Overcloud Dashboard](/helion/openstack/1.1/map/volumetype/) or Cinder CLI.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Deploy Scale-out Swift Node"
-permalink: /helion/openstack/services/swift/deployment-scale-out/
+permalink: /helion/openstack/1.1/services/swift/deployment-scale-out/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster//"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174;: Deploying Additional Scale-out Object Storage (Swift) Nodes
@@ -74,7 +74,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 <tr style="background-color: white; color: black;">
 	<td><b>Part Power</b></td>
 	<td>Defines the storage cluster capacity. Set the <i>partition power</i> value based on the total amount of storage you expect your entire ring to use.</td>
-    <td>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <a href=" /helion/openstack/services/swift/deployment/ring-power/">Ring Power and Number of Partitions</a>.
+    <td>  The parameter is an exponent: 2^X. Assuming that the average available drive capacity is 1-3 TB. For the partition power values, refer to <a href=" /helion/openstack/1.1/services/swift/deployment/ring-power/">Ring Power and Number of Partitions</a>.
 </td>
 </tr>
 <tr style="background-color: white; color: black;">
@@ -117,7 +117,7 @@ A HP Helion OpenStack&#174; cloud must be deployed. Functional Swift starter nod
 
 ##Prepare the undercloud to manage Swift clusters {#prepare-undercloudswift}
 
-Using the ***ringos*** utility you can add the [provisioned nodes](/helion/openstack/services/swift/provision-nodes/) to the Swift cluster. 
+Using the ***ringos*** utility you can add the [provisioned nodes](/helion/openstack/1.1/services/swift/provision-nodes/) to the Swift cluster. 
 
 1. Enable SSH from the undercloud to the overcloud node by copying the SSH keys from the seed to the undercloud. 
 
@@ -154,7 +154,7 @@ Perform the following steps to deploy scale-out Object nodes:
 	<!---	
 	2. Update the `so_swift_storage_scale` parameter in  `/root/configs/kvm-custom-ips.json ` file according to your storage needs.--->
  
- 	Refer [Provisioning Swift node(s)](/helion/openstack/services/swift/provision-nodes/) for   details of adding physical server for scale-out Swift in `baremetal.csv` file.
+ 	Refer [Provisioning Swift node(s)](/helion/openstack/1.1/services/swift/provision-nodes/) for   details of adding physical server for scale-out Swift in `baremetal.csv` file.
 
 3. Enter the following command to source the environment variables file  for the new values.
 
@@ -258,7 +258,7 @@ The following sample displays the output of forceful formatted disk.
 
 
 **Note**: You can also format disks individually by using `-d <device-name>`.
-For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
+For more details, see the [ringos](/helion/openstack/1.1/GA1/services/object/pyringos/) manual.
 
 Repeat the above steps for all of the object nodes.
 

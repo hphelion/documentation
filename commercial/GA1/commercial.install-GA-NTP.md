@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: VSA Support"
-permalink: /helion/openstack/install/ntp/
+permalink: /helion/openstack/1.1/install/ntp/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#ntp">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/prereqs/#ntp">Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&#174;: Installing an NTP Server
 

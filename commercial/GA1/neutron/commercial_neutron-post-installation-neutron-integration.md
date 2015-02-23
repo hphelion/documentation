@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;1.1 Neutron Integration"
-permalink: /helion/openstack/services/neutron/post/installation/neutron-integration/
+permalink: /helion/openstack/1.1/services/neutron/post/installation/neutron-integration/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> --->
 
 
 # HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron) Integration
@@ -234,9 +234,9 @@ On the seed VM host, perform the following:
 
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
-[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/)
+[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/1.1/install/kvm/)
 
-[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/)
+[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/1.1/install/esx/)
 
 ### Configure Horizon {#horizon}
 

@@ -31,7 +31,7 @@ As an admin, you can specify a *primary* project for each user.
 
 ### Specify a primary project ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the Users link on the Admin dashboard Identity panel.
 

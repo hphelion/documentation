@@ -12,7 +12,7 @@ authors: Jayme P
 <!--PUBLISHED-->
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/glossary/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/3rd-party-license-agreements/"> NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/glossary/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/3rd-party-license-agreements/"> NEXT &#9654;</a> </p>
 -->
 
 # HP Helion Development Platform: Software License Terms
@@ -155,7 +155,7 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 
 ## Part 3: Ancillary and Open Source Software for Software ## {#ancilliary}
 
-Additional license authorizations related to ancillary, third party and open source software components are available at:  [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/). 
+Additional license authorizations related to ancillary, third party and open source software components are available at:  [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/3rd-party-license-agreements/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Compute Service Overview"
-permalink: /helion/openstack/services/compute/overview/
+permalink: /helion/openstack/1.1/services/compute/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -27,7 +27,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/identity/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Compute Service Overview #
@@ -40,7 +40,7 @@ A variety of flavors and images are provided by the HP Helion OpenStack Compute 
 
 <!-- ## Storing Metadata on a Configuration Drive {#configdrive}
 
-The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/services/compute/overview/configdrive) that contains information normally available through the metadata service. --> 
+The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/1.1/services/compute/overview/configdrive) that contains information normally available through the metadata service. --> 
 
 ##Working with the Compute Service ##
 
@@ -48,7 +48,7 @@ To [perform tasks using the Compute service](#howto), you can use the dashboard,
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Compute service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/) to work with the Compute service.
 
 ###Using the API<a name="API"></a>
  
@@ -64,7 +64,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the [API](http://api.openstack.org/api-ref-compute-v2.html), or [CLI](http://docs.openstack.org/cli-reference/content/novaclient_commands.html).
 
 Depending upon your user type, user or administrator, you can perform the following tasks.
 

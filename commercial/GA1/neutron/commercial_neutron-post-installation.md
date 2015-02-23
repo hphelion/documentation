@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Neutron Post Installation"
-permalink: /helion/openstack/services/neutron/post/installation/
+permalink: /helion/openstack/1.1/services/neutron/post/installation/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> --->
 
 # HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron): Post Installation Tasks
 
@@ -41,10 +41,10 @@ The following are typical post-installation configuration options.
 * [Configure Neutron agents](#configure-neutron-agents)
 * [HA / NIC bonding features](#ha-nic)
 * [Tracking masked IP addresses](#tracking-masked-ip)
-* [Configuring Your Network Securely](/helion/openstack/services/neutron/post/installation/configure-network-securely/)
-* [Configure DNSaaS]( /helion/openstack/services/neutron/post/installation/configure-dnsaas/)
-* [Backing up and restoring your Helion OpenStack configuration]( /helion/openstack/backup.restore/)
-* [Neutron Integration](/helion/openstack/services/neutron/post/installation/neutron-integration/)
+* [Configuring Your Network Securely](/helion/openstack/1.1/services/neutron/post/installation/configure-network-securely/)
+* [Configure DNSaaS]( /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/)
+* [Backing up and restoring your Helion OpenStack configuration]( /helion/openstack/1.1/backup.restore/)
+* [Neutron Integration](/helion/openstack/1.1/services/neutron/post/installation/neutron-integration/)
 
 ##Configuring plug-ins {#configure-plug-ins}
 
@@ -170,7 +170,7 @@ Using this information, you can now see all the details of the malicious instanc
 
 ##Next Step
 
-[Configuring Your Network Securely](/helion/openstack/services/neutron/post/installation/configure-network-securely/)
+[Configuring Your Network Securely](/helion/openstack/1.1/services/neutron/post/installation/configure-network-securely/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

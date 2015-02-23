@@ -29,7 +29,7 @@ You must remove all router interfaces before deleting the router, by removing al
 
 ### Delete a router ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Network Topology** link on the **Project** dashboard **Network** panel.
 

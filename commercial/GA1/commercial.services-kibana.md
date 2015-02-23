@@ -34,7 +34,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174;: Kibana Overview
 
-The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud.
+The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/1.1/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud.
 
 Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. 
 

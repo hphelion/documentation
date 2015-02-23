@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Neutron: Hardware and Software Requirement"
-permalink: /helion/openstack/services/neutron/pre/installation/hardware-software/
+permalink: /helion/openstack/1.1/services/neutron/pre/installation/hardware-software/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -26,7 +26,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> --->
 
 # HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron):  Hardware Configuration and Software  Requirements
 
@@ -231,7 +231,7 @@ To meet these hardware configuration requirements, select from the following opt
 
 * [Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
 
-The source for this information is:[Support Matrix]( /helion/openstack/support-matrix/) 
+The source for this information is:[Support Matrix]( /helion/openstack/1.1/support-matrix/) 
 
 
 
@@ -341,7 +341,7 @@ Other requirements and recommendations for the seed cloud host are as follows:
 	**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or visualization configuration.
 
 
-The source for this information is:[Support Matrix]( /helion/openstack/support-matrix/)	
+The source for this information is:[Support Matrix]( /helion/openstack/1.1/support-matrix/)	
 
 ##Match supported configurations {#support-config}
 
@@ -362,7 +362,7 @@ Recommend that you allow for 25% expansion.
 
 ##Next Steps {#next-step}
 
-[HP Helion OpenStack&reg; High Availability for Cloud Networking](/helion/openstack/services/neutron/pre/installation/high-availability/)
+[HP Helion OpenStack&reg; High Availability for Cloud Networking](/helion/openstack/1.1/services/neutron/pre/installation/high-availability/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

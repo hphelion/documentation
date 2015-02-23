@@ -21,7 +21,7 @@ authors: Jayme P
 
 ##Installation
 
-* [HP Helion OpenStack&reg; Installation](/helion/openstack/install/overview/)
+* [HP Helion OpenStack&reg; Installation](/helion/openstack/1.1/install/overview/)
 * [Development Platform Installation and Configuration](/helion/devplatform/install/)
 * [Application Lifecycle Service (ALS) Information](/helion/devplatform/1.1/als/)
 * [Application Lifecycle Service Client Installation](/helion/devplatform/1.1/als/user/client/)

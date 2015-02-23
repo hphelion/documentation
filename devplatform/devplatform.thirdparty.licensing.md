@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/eula/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/siteindex/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/eula/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/siteindex/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion Development Platform: Open Source and Third-Party Software License Agreements {#hp-helion-openstack-beta-open-source-and-third-party-software-license-agreements}

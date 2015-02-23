@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Installation and Configuration"
-permalink: /helion/openstack/install/ovsvapp/
+permalink: /helion/openstack/1.1/install/ovsvapp/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/esx/proxy/">Deploy vCenter ESX compute proxy | <a href="/helion/openstack/install/post-esx/">&#9650; Post-Installation for ESX Hypervisor | <a href="/helion/openstack/install/dnsaas/">Install DNS as a service (DNSaaS) &#9654</a></p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/esx/proxy/">Deploy vCenter ESX compute proxy | <a href="/helion/openstack/1.1/install/post-esx/">&#9650; Post-Installation for ESX Hypervisor | <a href="/helion/openstack/1.1/install/dnsaas/">Install DNS as a service (DNSaaS) &#9654</a></p> 
 
 # HP Helion OpenStack&reg;: Deploying and Configuring OVSvApp on ESX hosts  
 HP Virtual Cloud Networking (VCN) is an enhanced Networking Operations (Neutron) service module of HP Helion OpenStack that delivers network virtualization to orchestrate your data center infrastructure.
@@ -103,7 +103,7 @@ Before you install the OVSvApp, ensure the following:
 
 * Please make sure that ESX host does not have another iteration of the OVSvApp already deployed. 
 
-* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/install/prereqs/#network_prepare) in *Prerequisites*. 
+* The ESX host must be reachable from the server where OVSvApp VM installation is launched. The ipaddress of the ESX hosts should be the same ipaddress with which the vCenter server manages that host. For more information see [Preparing the network for an ESX installation](/helion/openstack/1.1/install/prereqs/#network_prepare) in *Prerequisites*. 
 
 - All ESX hosts must have synchronized time settings. If hosts have different time, the deployment will fail.
 

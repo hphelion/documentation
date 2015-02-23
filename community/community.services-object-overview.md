@@ -54,7 +54,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-objectstorage-v1.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/swiftclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-objectstorage-v1.html).
 
 Depending upon your user type, you can perform the following tasks.
 

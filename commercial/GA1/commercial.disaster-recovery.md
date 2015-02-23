@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; 1.1 Disaster Recovery"
-permalink: /helion/openstack/disaster/recovery/
+permalink: /helion/openstack/1.1/disaster/recovery/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>
 
 --->
 
@@ -515,7 +515,7 @@ In the case of a graceful shutdown of the entire environment, the administrator 
 ## Recovering from failed controllers ##
 In the event that you need to recover a controller, or inadvertently delete a controller, refer to the following link for recovery details.
 
-[http://docs.hpcloud.com//helion/openstack/removing/failedovercloud/#removecontroller1](http://docs.hpcloud.com//helion/openstack/removing/failedovercloud/#removecontroller1 "Recovering a failed or deleted controller")
+[http://docs.hpcloud.com//helion/openstack/1.1/removing/failedovercloud/#removecontroller1](http://docs.hpcloud.com//helion/openstack/1.1/removing/failedovercloud/#removecontroller1 "Recovering a failed or deleted controller")
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

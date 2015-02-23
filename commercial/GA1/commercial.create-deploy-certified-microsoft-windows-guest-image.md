@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack "
-permalink: /helion/openstack/create-deploy/certified-microsoft-windows/guest-image/
+permalink: /helion/openstack/1.1/create-deploy/certified-microsoft-windows/guest-image/
 product: commercial.ga
 
 ---
@@ -19,7 +19,7 @@ PageRefresh();
 </script>
 
 <!---
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p> -->
 
 
 # How to build a certified Microsoft Windows 2012 guest image for HP Helion OpenStack 
@@ -32,7 +32,7 @@ HP Helion OpenStack is HPs hardened, tested, enterprise-grade distribution of Op
 This document describes how to create a Microsoft Windows Server 2012 or 2012 R2 image for deployment within HP Helion OpenStack. This paper also introduces you to the software architecture of HP Helion OpenStack.
 The Microsoft Windows Server images can be created on a 64-bit workstation running Ubuntu 13.10 or higher on physical hardware that supports KVM.
 
-For more information about how to deploy HP Helion OpenStack, see: [http://docs.hpcloud.com/helion/openstack/.](http://docs.hpcloud.com/helion/openstack/.)
+For more information about how to deploy HP Helion OpenStack, see: [http://docs.hpcloud.com/helion/openstack/1.1/.](http://docs.hpcloud.com/helion/openstack/1.1/.)
 
 ##Create and deploy a Microsoft Windows 2012 Server on HP Helion OpenStack
 
@@ -90,7 +90,7 @@ HP Helion Professional Services are available to assist you along each step of y
 ###Learn more at:
 
 * [hp.com/helion/](http://www8.hp.com/us/en/cloud/helion-overview.html)
-* [docs.hpcloud.com/helion/openstack/](http://docs.hpcloud.com/helion/openstack/)
+* [docs.hpcloud.com/helion/openstack/1.1/](http://docs.hpcloud.com/helion/openstack/1.1/)
 * [docs.openstack.org/](http://docs.openstack.org/)
 
 

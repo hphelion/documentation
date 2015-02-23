@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Add Disk to Account and Container Ring"
-permalink: /helion/openstack/services/swift/deployment/add-disk-account-container/
+permalink: /helion/openstack/1.1/services/swift/deployment/add-disk-account-container/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 </script>
 
 <!---
-<p style="font-size: small;"> <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> --->
+<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> --->
 
 
 # HP Helion OpenStack&#174; Adding Disks to Account or Container Rings

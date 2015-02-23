@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Deploy vCenter ESX compute proxy"
-permalink: /helion/openstack/install/esx/proxy/
+permalink: /helion/openstack/1.1/install/esx/proxy/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/post-esx/">&#9650; Post-Installation for ESX Hypervisor | <a href="/helion/openstack/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/post-esx/">&#9650; Post-Installation for ESX Hypervisor | <a href="/helion/openstack/1.1/install/ovsvapp/">Deploy the Open vSwitch vApp &#9654 </a> </p> 
 
 # HP Helion OpenStack&#174; Deploy vCenter ESX compute proxy
 
@@ -41,7 +41,7 @@ The general process for deploying the vCenter ESX compute proxy involves the fol
 
 ## Prerequisites ##
 
-- [Verify your cloud installation](/helion/openstack/install/esx/#verifying-your-installation).
+- [Verify your cloud installation](/helion/openstack/1.1/install/esx/#verifying-your-installation).
 - Set up the management port-group in DVS. Make sure  that there is a proper network connection between the overcloud controller and the port-group.
 - Verify the network connection between the overcloud controller and the proxy.
 - Ping the gateway of the ESX Network or log in to the server where you will deploy the ESX Compute proxy.
@@ -133,7 +133,7 @@ Perform the following steps on the undercloud node using the [EON CLI](#deploy_c
 
 ### Deploy the proxy using the undercloud Horizon dashboard <a name="deploy_ui"></a>
 
-To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the [Register vCenter section](/helion/openstack/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
+To deploy the ESX compute proxy using the undercloud Horizon dashboard, see the [Register vCenter section](/helion/openstack/1.1/undercloud/resource/esx#register-vcenter) of the Virtual Environments document.
 
 ### Deploy the proxy using the EON CLI <a name="deploy_cli"></a>
 
@@ -186,7 +186,7 @@ To deploy the ESX compute proxy using the EON CLI, execute the following steps f
 		netmask = enter the compute proxy netmask
 		gateway = enter the compute proxy gateway
 
-2. Use the [HP EON servcie CLI](/helion/openstack/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/undercloud/eon/cli/) reference.
+2. Use the [HP EON servcie CLI](/helion/openstack/1.1/services/eon/overview/) to deploy the ESX compute proxy. For details refer to the [EON CLI](/helion/openstack/1.1/undercloud/eon/cli/) reference.
 
 		source /root/stackrc
 		eon vcenter-add -name=<VCENTER_NAME> --ip-address=<VCENTER_IP_ADDRESS> --username=<VCENTER_USERNAME> --password=<VCENTER_PASSWORD> --port=<VCENTER_PORT> --proxy-config-file=<COMPUTE PROXY CONFIG FILE>
@@ -251,7 +251,7 @@ Use the following steps to configure SSL between vCenter and the ESX computer pr
 
 - Deploy the Open vSwitch vApp **(REQUIRED)**. 
 
-	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/install/ovsvapp/) document for complete instructions.
+	If you have not deployed the HP Virtual Cloud Networking's Open vSwitch vApp (OVSvApp), see the [Deploying and configuring OVSvApp for HP Virtual Cloud Networking (VCN) on ESX hosts](/helion/openstack/1.1/install/ovsvapp/) document for complete instructions.
 
 	OVSvApp must be installed for HP Helion OpenStack environment to provision VMs in your VMware vCenter environment. Once deployed, OVSvApp appliance enables networking between the tenant Virtual Machines (VMs).
 

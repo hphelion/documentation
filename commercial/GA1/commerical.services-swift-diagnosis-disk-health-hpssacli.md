@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/services/swift/diagnosis-disk-health/hpssacli/
+permalink: /helion/openstack/1.1/services/swift/diagnosis-disk-health/hpssacli/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -28,7 +28,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/overview/"> NEXT &#9654</a> </p>-->
 
 # HP Helion OpenStack&#174;: Diagnosis of disk health using hpssacli utility for HP servers
 
@@ -91,7 +91,7 @@ Use `scp` to copy the utility package on to the servers and install it.
 
 The hpssacli program is now installed. Refer the following section for the collection of the diagnostic report.
 
-This utility is used to monitor the usage of [Object Storage(Swift) disk drive(s)]( /helion/openstack/services/object/swift/disk-drive/). 
+This utility is used to monitor the usage of [Object Storage(Swift) disk drive(s)]( /helion/openstack/1.1/services/object/swift/disk-drive/). 
 
 
 Once the hpssacli package is installed, swift monitoring (ICINGA) scripts monitor the drives. 

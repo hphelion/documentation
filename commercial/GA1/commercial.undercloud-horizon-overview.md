@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/undercloud/horizon/overview/
+permalink: /helion/openstack/1.1/undercloud/horizon/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/prereqs/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&#174;: Undercloud Horizon Overview

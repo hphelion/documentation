@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation and Configuration"
-permalink: /helion/openstack/install/overview/
+permalink: /helion/openstack/1.1/install/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/support-matrix/">Support Matrix &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/1.1/support-matrix/">Support Matrix &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; 1.1: Installation Overview 
@@ -65,9 +65,9 @@ TripleO is OpenStack's official project for deployment, configuration, and life 
 </tr>
 </table>
 
-You can find more information on the seed, undercloud and overcloud in the [Technical Overview](/helion/openstack/technical-overview/).
+You can find more information on the seed, undercloud and overcloud in the [Technical Overview](/helion/openstack/1.1/technical-overview/).
 
-You can find more information on available services in the [Services Overview](/helion/openstack/services/overview/).
+You can find more information on available services in the [Services Overview](/helion/openstack/1.1/services/overview/).
 
 ## Installation options {#install-option}
 
@@ -159,13 +159,13 @@ There are a few things you should be aware of before you begin your HP Helion Op
 
 * All the Helion servers use UTC as a time zone.
 
-* For some known issues that you might encounter during the installation, see [Troubleshooting the Installation](/helion/openstack/services/troubleshooting/install/).
+* For some known issues that you might encounter during the installation, see [Troubleshooting the Installation](/helion/openstack/1.1/services/troubleshooting/install/).
 
 **Important:** When installing HP Helion OpenStack, it is your responsibility to track the physical location (slot number and rack) and associated identifiers (such as MAC addresses) for each physical server to aid in future hardware maintenance. This is necessary because when HP Helion OpenStack is installed on physical servers, the TripleO automation tracks only the MAC network addresses of servers; the physical locations of servers are not tracked. This means there is no automated way to inform a service technician which slot or rack to go to when service is needed on a particular physical server. 
 
 ## First Step ##
 
-Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/support-matrix/).
+Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/1.1/support-matrix/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

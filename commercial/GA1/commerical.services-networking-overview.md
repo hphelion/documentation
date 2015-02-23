@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Networking Service (Neutron) Overview"
-permalink: /helion/openstack/services/networking/overview/
+permalink: /helion/openstack/1.1/services/networking/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/object/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/object/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Networking Service (Neutron) Overview #
@@ -48,7 +48,7 @@ You can also use the Networking service to [identify the actual IP address of a 
 
 Helion Network Administrators are responsible for planning for the Neutron networking service, and once installed, to configure the service to meet the needs of their cloud network users. 
 
-For information, see [Networking Operation (Neutron) Administrator Pre and Post Installation Tasks](/helion/openstack/services/neutron/installation/intro/).
+For information, see [Networking Operation (Neutron) Administrator Pre and Post Installation Tasks](/helion/openstack/1.1/services/neutron/installation/intro/).
 
 ## Working with the Networking service
 
@@ -56,7 +56,7 @@ To perform tasks using the Networking service, you can use the dashboard, API or
 
 ### Using the dashboards<a name="UI"></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Networking service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/) to work with the Networking service.
 
 ###Using the API<a name="API"></a>
  
@@ -72,7 +72,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion OpenStack Networking service ## {#howto}
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/neutronclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-networking-v2.html).
 
 The administrator can work with all projects in a domain. A user can only work with projects associated with that user.-->
 
@@ -80,7 +80,7 @@ The administrator can work with all projects in a domain. A user can only work w
 
 If you know the NAT address of a malicious user, you can identify his actual IP address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
 
-For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/maskedIP).
+For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/1.1/maskedIP).
 
 <!---### Working with networks ###
 

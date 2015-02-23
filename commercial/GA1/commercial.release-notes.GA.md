@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/GA/
+permalink: /helion/openstack/1.1/release-notes/GA/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,7 +23,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; Release Notes
 
@@ -97,14 +97,14 @@ maintenance state. Do NOT proceed with your installation/update if any of the un
 
 For additional information about HP Helion OpenStack, OpenStack Cloud Software, and the HP Helion Support Center:
 
-* [HP Helion OpenStack Documentation web site](/helion/openstack/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
+* [HP Helion OpenStack Documentation web site](/helion/openstack/1.1/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
 * [OpenStack web site](http://www.openstack.org/): Provides information on computing, networking, and storage in OpenStack, various programs such as TripleO, and the OpenStack community.
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Provides a way to report issues with HP Helion OpenStack.
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
+<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/commercial-3rd-party-license-agreements/).-->
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 

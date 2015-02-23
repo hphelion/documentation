@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Create the baremetal.csv File for Installation"
-permalink: /helion/openstack/install/csv/
+permalink: /helion/openstack/1.1/install/csv/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;: Create the baremetal.csv File for Installation #
 
@@ -119,7 +119,7 @@ nodes default to 3 and 2 respectively.
                  For example: HP&#95;Moonshot:0x84:0x72<br><br>
 
                  HP Moonshot hardware will use ipmitool as its power manager.
-                 See the additional notes in the <a href="/helion/openstack/install/moonshot/">HP Moonshot document</a>.</td> </tr><tr>
+                 See the additional notes in the <a href="/helion/openstack/1.1/install/moonshot/">HP Moonshot document</a>.</td> </tr><tr>
           <td>HP&#95;iLO4</td>  <td>Boot HP iLO4 Gen9 systems in UEFI mode.
                  Specify IPMI to boot such nodes in BIOS mode (you must manually
                  set the pending boot mode to BIOS mode).
@@ -138,7 +138,7 @@ follows:
 
 
 
-[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#csv).
 
 
 

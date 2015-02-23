@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&reg; Verifying your installation"
-permalink: /helion/openstack/install/verify/
+permalink: /helion/openstack/1.1/install/verify/
 product: community
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9650; Installation and Configuration for KVM Hypervisor</a> or  <a href="/helion/openstack/install/esx/">&#9650; Installation and Configuration for ESX Hypervisor</a></p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/kvm/">&#9650; Installation and Configuration for KVM Hypervisor</a> or  <a href="/helion/openstack/1.1/install/esx/">&#9650; Installation and Configuration for ESX Hypervisor</a></p> 
 
 # HP Helion OpenStack&reg; Verifying your installation
 

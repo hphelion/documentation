@@ -28,7 +28,7 @@ The following release notes are for the HP Helion Development Platform 1.1 relea
 
 The following features have been changed in the HP Helion Development Platform:
 
-**OpenStack&reg; Juno support** <br />All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+**OpenStack&reg; Juno support** <br />All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
 **Updated Command Line Client** <br />
 The [ALS Cluster Management Tool](/helion/devplatform/1.1/als/client/reference) (cfmgmt.exe). has been updated to provide more options for managing clusters from the command line.

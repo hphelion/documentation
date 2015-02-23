@@ -30,7 +30,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/install/dnsaas/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/esx/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#	9650; UP</a> | <a href="/helion/openstack/1.1/install/dnsaas/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion Development Platform: Community Installation and Configuration

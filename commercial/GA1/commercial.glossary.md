@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Glossary"
-permalink: /helion/openstack/glossary/
+permalink: /helion/openstack/1.1/glossary/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/related-links/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/eula/"> NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/related-links/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/eula/"> NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&#174; Glossary
 

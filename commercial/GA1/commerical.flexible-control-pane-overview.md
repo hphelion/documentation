@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Flexible Control Plane Overview"
-permalink: /helion/openstack/flexiblecontrol/overview/
+permalink: /helion/openstack/1.1/flexiblecontrol/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -40,7 +40,7 @@ This topic covers:
 	- [Configurable Variables](#variables)
 	- [Configuration Files](#configfiles)
 
-Due to length, the [step-by-step installation instructions](/helion/openstack/flexiblecontrol/install/) are available separately.
+Due to length, the [step-by-step installation instructions](/helion/openstack/1.1/flexiblecontrol/install/) are available separately.
 
 ##Overview
 The Flexible Control Plane addresses the following concerns with the existing deployment model:
@@ -117,7 +117,7 @@ Three (3) physical servers are used as VSA nodes.
 - CPU Cores: 8
 - HDD: 8*1 TB
 
-For more information, see [VSA overview](http://15.184.32.138/helion/openstack/install/vsa/overview/#StoreVirtual-overview-jumplink-span).
+For more information, see [VSA overview](http://15.184.32.138/helion/openstack/1.1/install/vsa/overview/#StoreVirtual-overview-jumplink-span).
 
 ###Physical Compute
 PC nodes have the same minimum requirements in Flexible Control Plane as in normal installations.
@@ -137,9 +137,9 @@ The following configuration is used for the underseed (seed host):
 ##Prerequisites {#prereq}
 The Flexible Control Plane configuration has the same prerequisites as HP Helion OpenStack 1.01. Please be sure the environment satisfies the prerequisites before beginning installation.
 
-- [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/install/prereqs/)
-- [Network Topology Requirements](http://docs.hpcloud.com/helion/openstack/technical-overview/)
-- [Hardware/Software Requirements](http://docs.hpcloud.com/helion/openstack/support-matrix/)
+- [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs/)
+- [Network Topology Requirements](http://docs.hpcloud.com/helion/openstack/1.1/technical-overview/)
+- [Hardware/Software Requirements](http://docs.hpcloud.com/helion/openstack/1.1/support-matrix/)
 
 ###KVM Host Setup {#kvmsetup}
 Set up KVM hosts and ensure all the hardware requirements are met and the required prerequisites are fulfilled before you begin your installation. Note that there are further prerequisites beyond those listed for HP Helion OpenStack 1.01 mentioned previously.
@@ -161,7 +161,7 @@ Set up KVM hosts and ensure all the hardware requirements are met and the requir
 	- Set up password-less login for the root user of the same KVM host. This enables the root user of the KVM host to be able to log in to the same KVM host without a password.
 
 ##Configurable Options for Flexible Control Plane {#options}
-The following section describes the environment variables involved in configuring the Flexible Control Plane. These variables are new with Flexible Control Plane, so you won't have seen them before if you are familiar with the HP Helion OpenStack installation process.  You will set them during the installation process outlined in the [installation instructions](/helion/openstack/flexiblecontrol/install). Here, just take note of what is configurable in this release, and what the settings mean.
+The following section describes the environment variables involved in configuring the Flexible Control Plane. These variables are new with Flexible Control Plane, so you won't have seen them before if you are familiar with the HP Helion OpenStack installation process.  You will set them during the installation process outlined in the [installation instructions](/helion/openstack/1.1/flexiblecontrol/install). Here, just take note of what is configurable in this release, and what the settings mean.
 
 ###Configurable Variables {#variables}
 
@@ -213,8 +213,8 @@ Create a VM-plan file (vm-plan) to represent the distribution of virtual machine
 
 
 ####kvms.csv
-A kvms.csv file will also be created later via the [installation instructions](/helion/openstack/flexiblecontrol/install). It is required to define the KVM hosts being used for Flexible Control Plane deployment. This file contains the IP of the KVM host and an account with administrator or root privileges.
+A kvms.csv file will also be created later via the [installation instructions](/helion/openstack/1.1/flexiblecontrol/install). It is required to define the KVM hosts being used for Flexible Control Plane deployment. This file contains the IP of the KVM host and an account with administrator or root privileges.
 
 
 <hr>
-Continue to [step-by-step installation instructions and known issues](/helion/openstack/flexiblecontrol/install).
+Continue to [step-by-step installation instructions and known issues](/helion/openstack/1.1/flexiblecontrol/install).

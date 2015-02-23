@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack"
-permalink: /helion/openstack/vlan/provider/network/
+permalink: /helion/openstack/1.1/vlan/provider/network/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -30,7 +30,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a></p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a></p> 
  
 # HP Helion OpenStack&#174;: Enabling VLAN Provider Network in HP Helion OpenStack 
 

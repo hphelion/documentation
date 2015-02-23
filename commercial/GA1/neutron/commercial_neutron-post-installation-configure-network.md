@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Neutron Configuring Your Network Securely"
-permalink: /helion/openstack/services/neutron/post/installation/configure-network-securely/
+permalink: /helion/openstack/1.1/services/neutron/post/installation/configure-network-securely/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -26,7 +26,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> --->
 
 
 # HP Helion OpenStack&reg; 1.1 Networking Operation (Neutron): Configuring Your Network Securely
@@ -463,9 +463,9 @@ Refer to the ***OpenStack Administrator Guide***, Networking, Authentication and
 
 ##Next Step
 
-* (Optional) [Configure DNSaaS]( /helion/openstack/services/neutron/post/installation/configure-dnsaas/)
-* [Backing up and restoring your Helion OpenStack configuration]( /helion/openstack/backup.restore/)
-* [Neutron Integration](/helion/openstack/services/neutron/post/installation/neutron-integration/)
+* (Optional) [Configure DNSaaS]( /helion/openstack/1.1/services/neutron/post/installation/configure-dnsaas/)
+* [Backing up and restoring your Helion OpenStack configuration]( /helion/openstack/1.1/backup.restore/)
+* [Neutron Integration](/helion/openstack/1.1/services/neutron/post/installation/neutron-integration/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Installing and Configuring the ESX Hypervisor"
-permalink: /helion/openstack/install/esx/
+permalink: /helion/openstack/1.1/install/esx/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor &#9654 </a></p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/prereqs/">Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/post-kvm/">Post-Installation for KVM Hypervisor &#9654 </a></p> 
 
 # HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor
 
@@ -51,7 +51,7 @@ Before starting the installation, review the following sections.
 
 ### Verify Prerequisites {#pre}
 
-To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/install/prereqs/) before you start.
+To ensure successful installation, [perform required pre-installation tasks](/helion/openstack/1.1/install/prereqs/) before you start.
 
 
 ## Installing HP Helion OpenStack {#install}
@@ -95,11 +95,11 @@ Make sure you have met all the hardware requirements and have completed the requ
 
 	The prompt will change to `root@hLinux`.
 
-5. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/install/prereqs/#req-info) file is correct and upload the file to `/root`.
+5. Make sure the information in the [`baremetal.csv` configuration file](/helion/openstack/1.1/install/prereqs/#req-info) file is correct and upload the file to `/root`.
 
-	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/install/prereqs/#req-info) on the *Prerequisites* page.
+	**Note:** For more information on creating this file, refer to [Creating the baremetal.csv file](/helion/openstack/1.1/install/prereqs/#req-info) on the *Prerequisites* page.
 
-6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/), to the seed cloud host.
+6. If you are integrating LDAP into your environment, copy the configuration files, as described in [Integrating LDAP](/helion/openstack/1.1/services/identity/integrate-ldap/), to the seed cloud host.
 
 	a. Copy the `overcloud_keystone_ldap.json` file to the `/root/tripleo/hp_passthrough` folder:
 
@@ -132,23 +132,23 @@ Make sure you have met all the hardware requirements and have completed the requ
  
 		"HP - completed - Tue Oct 23 16:20:20 UTC 2014"
 
-	**Note:** If the installation does not complete properly, refer to the [Troubleshooting](/helion/openstack/services/troubleshooting/) document.
+	**Note:** If the installation does not complete properly, refer to the [Troubleshooting](/helion/openstack/1.1/services/troubleshooting/) document.
 
 If possible, leave this console display open as you will need the passwords to verify the installation. 
 
 ## Verify your installation {#verifying-your-installation}
 
-To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in [Verifying your installation](/helion/openstack/install/verify/).
+To verify that the installation is successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard as shown in [Verifying your installation](/helion/openstack/1.1/install/verify/).
 
 <!-- Not needed in 1.1
 ## Create projects for LDAP users {#ldap}
 
-If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/services/identity/integrate-ldap/#horizon).
+If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, see *Configure Horizon* on the [Integrating LDAP page](/helion/openstack/1.1/services/identity/integrate-ldap/#horizon).
 -->
 
 ## Next Step {#next-steps}
 
-See [Post-Installation for ESX Hypervisor](/helion/openstack/install/post-esx/).
+See [Post-Installation for ESX Hypervisor](/helion/openstack/1.1/install/post-esx/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

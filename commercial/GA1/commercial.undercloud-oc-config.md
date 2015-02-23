@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Overcloud Configuration"
-permalink: /helion/openstack/undercloud/oc/config/
+permalink: /helion/openstack/1.1/undercloud/oc/config/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -31,12 +31,12 @@ PageRefresh();
 
 <!---
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p> -->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p> -->
 
 
 # HP Helion OpenStack&#174;: Manage Overcloud Configuration
 
-The overcloud options define the configurations of the overcloud. You can define the configurations for [ESX Clusters](/helion/openstack/undercloud/oc/config/esx/), [StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/), and [StoreServ Backends](/helion/openstack/undercloud/oc/config/storeserv/).
+The overcloud options define the configurations of the overcloud. You can define the configurations for [ESX Clusters](/helion/openstack/1.1/undercloud/oc/config/esx/), [StoreVirtual Backends](/helion/openstack/1.1/undercloud/oc/config/storevirtual/), and [StoreServ Backends](/helion/openstack/1.1/undercloud/oc/config/storeserv/).
 
 To define the configuration:
 

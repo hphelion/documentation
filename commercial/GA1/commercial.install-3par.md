@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP StoreServ (3PAR) Support"
-permalink: /helion/openstack/install/3par/
+permalink: /helion/openstack/1.1/install/3par/
 product: commercial
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -23,12 +23,12 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"><a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> </p>
+<p style="font-size: small;"><a href="/helion/openstack/1.1/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> </p>
 
 # HP Helion OpenStack&#174;: HP StoreServ (3PAR) Support
 
 
-[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports [Fibre Channel (FC)]( /helion/openstack/services/volume/Fibre/) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
+[HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is a storage array that supports [Fibre Channel (FC)]( /helion/openstack/1.1/services/volume/Fibre/) as well as iSCSI protocol. [HP 3PAR StoreServ](http://www8.hp.com/us/en/products/data-storage/3parstoreserv.html) is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. HP 3PAR StoreServ is also referred to as 3PAR.
 
 HP Helion OpenStack provides a utility service called Sirius which can be used to configure 3PAR StoreServ arrays to realize block storage within the cloud. 
 
@@ -81,11 +81,11 @@ HP 3PAR StoreServ can be configured for the cloud using the Horizon dashboard or
 
 ### Using the dashboards
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/undercloud/manage/resources/overview/) to configure HP StoreServ.(Recommended)
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/undercloud/manage/resources/overview/) to configure HP StoreServ.(Recommended)
 
 ###Using the CLI###
 
-You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/sirius/cli/workflow/)
+You can use the command-line interface to access the HP Sirius service and configure HP StoreServ. See [Configuring Storage Using Sirius](/helion/openstack/1.1/sirius/cli/workflow/)
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 

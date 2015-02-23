@@ -27,7 +27,7 @@ Volumes are block devices that can be attached to instances.
 
 ### Create a volume ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Compute** tab on the dashboard **Project** panel.
 
@@ -54,7 +54,7 @@ Volumes are block devices that can be attached to instances.
 
 ### Edit a volume ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Compute** tab on the dashboard **Project** panel.
 
@@ -70,7 +70,7 @@ Volumes are block devices that can be attached to instances.
 
 ### Delete a volume ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Compute** tab on the dashboard **Project** panel.
 

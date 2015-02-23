@@ -29,7 +29,7 @@ A snapshot is a new image based on a running instance. That snapshot can be used
 
 To create a snapshot:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 

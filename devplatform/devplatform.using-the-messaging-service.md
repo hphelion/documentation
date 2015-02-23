@@ -79,7 +79,7 @@ RabbitMQ clusters have a built-in dashboard for managing the cluster; this allow
 
 - For more information on using RabbitMQ and managing the RabbitMQ cluster, visit the [RabbitMQ documentation site](https://www.rabbitmq.com/documentation.html).
 
-- For more information using HP Helion OpenStack, visit the [documentation page](http://docs.hpcloud.com/helion/openstack/).
+- For more information using HP Helion OpenStack, visit the [documentation page](http://docs.hpcloud.com/helion/openstack/1.1/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

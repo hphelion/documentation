@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation Prerequisites"
-permalink: /helion/openstack/install/prereqs/
+permalink: /helion/openstack/1.1/install/prereqs/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/technical-overview/">&#9664; Technical Overview | <a href="/helion/openstack/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
 
 
 # HP Helion OpenStack&#174;: Installation Prerequisites
@@ -49,7 +49,7 @@ Make sure the following required tasks are completed before you begin the instal
 
 ## Hardware and software requirements {#hardware}
 
-Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
+Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/1.1/support-matrix/).
 
 
 ## Preparing the network {#network_prepare}
@@ -58,7 +58,7 @@ Before installing HP Helion OpenStack, you are responsible for preparing the net
 
 The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
 
-See the [Preparing the Network](/helion/openstack/install/prereqs/network/) page.
+See the [Preparing the Network](/helion/openstack/1.1/install/prereqs/network/) page.
 
 
 ## Preparing the seed cloud host {#seed}
@@ -131,7 +131,7 @@ The HP Helion OpenStack cloud nodes must be configured as NTP clients and point 
 
 You can install NTP on the seed cloud host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network.  You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.
 
-For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
+For information on installing NTP on the seed cloud host, see HP Helion [OpenStack Installation: NTP Server](/helion/openstack/1.1/install/ntp/).
 
 ### Configure proxy information {#proxy}
 
@@ -204,7 +204,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.
 
-For information on editing the JSON environment variables file, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
+For information on editing the JSON environment variables file, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/1.1/install/envars/).
 
 
 ### Prepare baremetal.csv file ### {#csv}
@@ -214,18 +214,18 @@ Before installing, make sure you have created the `baremetal.csv` file that is r
 The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into. In this file you can also specify the role (or node type) for each server so you use the right hardware for different tasks such as storage or compute.  
 
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/).
+For more information, see [Creating the baremetal.csv file](/helion/openstack/1.1/install/csv/).
 
 ### Set a default DNS name server {#name-resolution}
 
-To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/name-resolution/) before installation.
+To set a default DNS name server for your HP Helion OpenStack Commercial cloud, refer to [Enabling Name Resolution from Tenant VMs in the Overcloud](/helion/openstack/1.1/name-resolution/) before installation.
 
 
 ### Integrating LDAP (Lightweight Directory Access Protocol) {#ldap}
 	
 **OPTIONAL** The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
-For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/).
+For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/1.1/services/identity/integrate-ldap/).
 
 ### Disabling SR-IOV ###
 
@@ -237,8 +237,8 @@ The problem appears as overcloud performance delays for certain operations, like
 
 Depending upon your environment, click the appropriate link for the next step in the installation.
 
-* [Installing and configuring on a KVM hypervisor](/helion/openstack/install/kvm)
-* [Installing and configuring on an ESX hypervisor](/helion/openstack/install/esx/)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm)
+* [Installing and configuring on an ESX hypervisor](/helion/openstack/1.1/install/esx/)
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

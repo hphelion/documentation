@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/manage/resources/storage/
+permalink: /helion/openstack/1.1/undercloud/manage/resources/storage/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -30,7 +30,7 @@ PageRefresh();
 </script>
 
 <!---
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p>--> 
 
 
 # HP Helion OpenStack&#174; Working with Storage
@@ -39,8 +39,8 @@ The **Storage** option under the **Resources** Tab allows you to configure stora
 
 The Storage option has two sub options:
 
-* [StoreVirtual](/helion/openstack/undercloud/storage/storevirtual/)
-* [StoreServ](/helion/openstack/undercloud/storage/storeserv/)
+* [StoreVirtual](/helion/openstack/1.1/undercloud/storage/storevirtual/)
+* [StoreServ](/helion/openstack/1.1/undercloud/storage/storeserv/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

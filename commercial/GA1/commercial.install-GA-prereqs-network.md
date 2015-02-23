@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installation Prerequisites"
-permalink: /helion/openstack/install/prereqs/network/
+permalink: /helion/openstack/1.1/install/prereqs/network/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/network/">&#9650; Installation Prerequisites</a>  </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/network/">&#9650; Installation Prerequisites</a>  </p> 
 
 
 # HP Helion OpenStack&#174;: Preparing the Network 

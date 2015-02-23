@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Intergrating LDAP"
-permalink: /helion/openstack/services/identity/integrate-ldap/
+permalink: /helion/openstack/1.1/services/identity/integrate-ldap/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/#ldap">&#9650; Prerequisites</a> </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/#ldap">&#9650; Prerequisites</a> </p> 
 
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 
@@ -59,9 +59,9 @@ The LDAP server connection settings are contained in the `overcloud_keystone_lda
 
 It must be a well-formed, syntax-error free json file.
 
-Section names, supported options and possible values are described in [OpenStack Identity Service documentation](/helion/openstack/services/identity/overview/). The following table lists several important values:
+Section names, supported options and possible values are described in [OpenStack Identity Service documentation](/helion/openstack/1.1/services/identity/overview/). The following table lists several important values:
 
-See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install/connections-json/) for an example `overcloud_keystone_ldap.json` file.
+See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/1.1/install/connections-json/) for an example `overcloud_keystone_ldap.json` file.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 	<tr style="background-color: lightgrey; color: black;">
@@ -162,7 +162,7 @@ See [Sample LDAP Server Connection Settings JSON File](/helion/openstack/install
 
 ## Keystone CA storage and signing key/certificate files {#keystone}
 
-LDAP server might require all connections to be secured though the [TLS protocol](/helion/openstack/tls/). Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
+LDAP server might require all connections to be secured though the [TLS protocol](/helion/openstack/1.1/tls/). Additionally, Keystone may be instructed to validate LDAP server certificate against local CA certificate storage. 
 
 To activate this feature:
 
@@ -186,9 +186,9 @@ To activate this feature:
 
 Follow the steps described in the installation instructions to deploy the overcloud nodes.
 
-[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/install/kvm/#startseed)
+[HP Helion OpenStack&reg;: Installation and Configuration for KVM Hypervisor](/helion/openstack/1.1/install/kvm/#startseed)
 
-[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/install/esx/#startseed)
+[HP Helion OpenStack&reg;: Installation and Configuration for ESX Hypervisor](/helion/openstack/1.1/install/esx/#startseed)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>

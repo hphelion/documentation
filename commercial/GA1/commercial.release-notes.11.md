@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/11/
+permalink: /helion/openstack/1.1/release-notes/11/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,7 +23,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; 1.1 Release Notes
 
@@ -45,13 +45,13 @@ The following features have been added to HP Helion OpenStack, by release.
 
 The following features have been added to HP Helion OpenStack 1.1:
 
-**OpenStack Juno support** All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+**OpenStack Juno support** All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
-**HP Helion OpenStack Metering services** The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.
+**HP Helion OpenStack Metering services** The [HP Helion OpenStack Telemetry and Reporting service](/helion/openstack/1.1/services/reporting/overview/) leverages the OpenStack Ceilometer metering service. The Metering Operations service takes specified measurements of both physical and virtual resources, including physical servers and network devices such as switches and firewalls.
 
 **AppArmor profiles enabled for Compute nodes** AppArmor proactively protects the operating system and applications from external or internal threats, even zero-day attacks, by enforcing good behavior and preventing even unknown application flaws from being exploited. <!--HPM27-->
 
-**Additional Components in Centralized Logging** [Centralized logging support](/helion/openstack/services/logging/overview/) has now been added for the following additional components: <!--HPM-28-->
+**Additional Components in Centralized Logging** [Centralized logging support](/helion/openstack/1.1/services/logging/overview/) has now been added for the following additional components: <!--HPM-28-->
 - HAProxy
 - Syslog
 - Keepalived 
@@ -60,26 +60,26 @@ The following features have been added to HP Helion OpenStack 1.1:
 
 	For information on the SVVP program, see Windows Server Catalog [Server Virtualization Validation Program](http://www.windowsservercatalog.com/svvp/).
 
-**Swift diagnostic checks** New diagnostics checks have been implemented for [Swift cluster](/helion/openstack/services/object/overview/). Diagnostic messages are sent to the [Icinga service](/helion/openstack/services/object/swift/replica-status/). <!--HPM15-->
+**Swift diagnostic checks** New diagnostics checks have been implemented for [Swift cluster](/helion/openstack/1.1/services/object/overview/). Diagnostic messages are sent to the [Icinga service](/helion/openstack/1.1/services/object/swift/replica-status/). <!--HPM15-->
 
 **Improved recovery time** When a virtual IP is moved to another overcloud controller the system, the controller will become available in approximately one minute. <!--HPM121-->
 
 **New Horizon Dashboard functionality** 
 
-**Multipath suppport for 3PAR** HP Helion OpenStack now supports multipathing for network redundancy. Multipathing helps maintain a constant connection between an ESXi host and its storage. See [Configuring Multipath for 3PAR](/helion/openstack/install/3par/multipath/).<!--HPM121-->
+**Multipath suppport for 3PAR** HP Helion OpenStack now supports multipathing for network redundancy. Multipathing helps maintain a constant connection between an ESXi host and its storage. See [Configuring Multipath for 3PAR](/helion/openstack/1.1/install/3par/multipath/).<!--HPM121-->
 
 **Transport Layer Security (TLS) support** HP Helion OpenStack now supports TLS protocols to protect internal traffic for Overcloud OpenStack API and endpoints. <!--HPM16-->
 
-**HP Helion OpenStack Identity service** The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See [Identity Service Overview](/helion/openstack/services/identity/overview/).
+**HP Helion OpenStack Identity service** The Identity service, based on OpenStack Keystone V3 provides one-stop authentication, including Identity, Token, Catalog and Policy services. See [Identity Service Overview](/helion/openstack/1.1/services/identity/overview/).
 
-**Fibre Channel Zone Manager support** The OpenStack Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fibre Channel Zone Manager](/helion/openstack/services/volume/Fibre/).<!--HMP32-->
+**Fibre Channel Zone Manager support** The OpenStack Fibre Channel Zone Manager creates the necessary Fibre Channel zones during an attach of a Block Storage (Cinder) volume. Brocade Fibre Channel Zone Driver performs zoning operations via SSH. See [Configuring Fibre Channel Zone Manager](/helion/openstack/1.1/services/volume/Fibre/).<!--HMP32-->
 
 **Enable Unified Extensible Firmware Interface (UEFI) support for Gen8 and Gen9 HP Servers** UEFI is industry standard set of interfaces between the system firmware, the operating system, and between various components of the system firmware delivers enhanced security benefits for the HP ProLiant Gen8 and Gen9 Server family. UEFI is meant to replace the Basic Input/Output System (BIOS) firmware interface. For more information, see [HP Unified Extensible Firmware Interface](http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=6935826).<!--HPM12-->
 
 **Ruby CLI No Longer Supported** The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
 
 **Compute Service Configuration Drive**
-The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/services/compute/overview/configdrive) that contains information normally available through the metadata service. 
+The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/1.1/services/compute/overview/configdrive) that contains information normally available through the metadata service. 
 
 ### Features in HP Helion OpenStack 1.01 ### {#101}
 
@@ -87,18 +87,18 @@ The following features have been added to HP Helion OpenStack 1.01:
 
 **Defect fixes** - A number of defects were addressed and fixed in this release.
 
-**Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
+**Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/1.1/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
 
-**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/1.1/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
 
 ### Features in HP Helion OpenStack 1.0 ### {#10}
 
 The following features have been added to HP Helion OpenStack 1.0:
 
-**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
+**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image OPerations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
 
-**Other Services** [Other services](/helion/openstack/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
+**Other Services** [Other services](/helion/openstack/1.1/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
 
 **LogStash/ElasticSearch** - This service provides enhanced security and supportability of the cloud by offering centralized logging.
 
@@ -175,7 +175,7 @@ Other issues you might experience when using HP Helion OpenStack:
 
 
 * When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->. 
-* After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
+* After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/1.1/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
 
 * A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack. <!-- (EE-21) -->
 
@@ -204,14 +204,14 @@ to update the HEAT templates.
 
 For additional information about HP Helion OpenStack, OpenStack Cloud Software, and the HP Helion Support Center:
 
-* [HP Helion OpenStack Documentation web site](/helion/openstack/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
+* [HP Helion OpenStack Documentation web site](/helion/openstack/1.1/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
 * [OpenStack web site](http://www.openstack.org/): Provides information on computing, networking, and storage in OpenStack, various programs such as TripleO, and the OpenStack community.
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Provides a way to report issues with HP Helion OpenStack.
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
+<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/commercial-3rd-party-license-agreements/).-->
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 

@@ -27,7 +27,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 ### Uploading an object into a container ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Object Store** tab on the dashboard **Project** panel.
 
@@ -46,7 +46,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 ### Downloading objects from a container ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Object Store** tab on the dashboard **Project** panel.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/services/object/swift/shrink-cluster/
+permalink: /helion/openstack/1.1/services/object/swift/shrink-cluster/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,15 +25,15 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/services/swift/deployment/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/1.1/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 #  HP Helion OpenStack&#174;: Shrink Object Storage (Swift) Cluster
 
 HP Helion OpenStack&reg; allows you to remove Swift cluster in any of the followings ways:
 
-* [Remove an existing Disk from Object Nodes]( /helion/openstack/services/swift/deployment/remove-existing-disk/)
-* [Remove Proxy Node]( /helion/openstack/services/swift/deployment/remove-proxy-node/ )
-* [Removing scale-out Object Storage Node]( /helion/openstack/services/swift/deployment/remove-scale-out-object-node/ )
+* [Remove an existing Disk from Object Nodes]( /helion/openstack/1.1/services/swift/deployment/remove-existing-disk/)
+* [Remove Proxy Node]( /helion/openstack/1.1/services/swift/deployment/remove-proxy-node/ )
+* [Removing scale-out Object Storage Node]( /helion/openstack/1.1/services/swift/deployment/remove-scale-out-object-node/ )
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

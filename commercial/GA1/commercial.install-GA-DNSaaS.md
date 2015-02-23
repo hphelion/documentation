@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: DNSaaS Installation and Configuration"
-permalink: /helion/openstack/install/dnsaas/
+permalink: /helion/openstack/1.1/install/dnsaas/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/install/post-kvm/">Post-Installation for KVM Hypervisor </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/post-esx/">Post-Installation for ESX Hypervisor |  &#9664; <a href="/helion/openstack/1.1/install/post-kvm/">Post-Installation for KVM Hypervisor </p> 
 
 # HP Helion OpenStack&#174; 1.1: DNSaaS Installation and Configuration
 

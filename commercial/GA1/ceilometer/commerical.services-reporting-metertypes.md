@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Metering Service (Ceilometer): Meter Types"
-permalink: /helion/openstack/services/reporting/metertypes/
+permalink: /helion/openstack/1.1/services/reporting/metertypes/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -42,9 +42,9 @@ Each counter contains the following *fields*:
 - the **resource** being measured
 - the **project** **ID** and **user** that the resource is assigned to.
 
-[Alarms](/helion/openstack/services/reporting/alarms/) can be configured to trigger notifications or other actions when a specific metering threshold value has been reached or exceeded.
+[Alarms](/helion/openstack/1.1/services/reporting/alarms/) can be configured to trigger notifications or other actions when a specific metering threshold value has been reached or exceeded.
 
-**Note**: The metering service shares the same High-availability proxy, messaging, and database clusters with the other Information services. To avoid unnecessarily high loads, [non-essential meters can be disabled](/helion/openstack/services/reporting/bestpractices/#meterlist). 
+**Note**: The metering service shares the same High-availability proxy, messaging, and database clusters with the other Information services. To avoid unnecessarily high loads, [non-essential meters can be disabled](/helion/openstack/1.1/services/reporting/bestpractices/#meterlist). 
 
 ##Helion OpenStack Default Meters
 These meters are installed and enabled by default during an HP Helion OpenStack installation. 

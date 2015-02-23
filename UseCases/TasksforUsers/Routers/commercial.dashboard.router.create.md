@@ -29,7 +29,7 @@ When you create a new router, the router does not have any internal interface an
 
 ### Create a router ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Routers** link on the **Project** dashboard **Network** panel.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Flexible Control Plane Installation"
-permalink: /helion/openstack/flexiblecontrol/install/
+permalink: /helion/openstack/1.1/flexiblecontrol/install/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,9 +29,9 @@ PageRefresh();
 </script>
 
 # HP Helion OpenStack&#174; Flexible Control Plane Installation
-As you read in the [overview](/helion/openstack/flexiblecontrol/overview/), HP Helion OpenStack Flexible Control Plane allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP Helion OpenStack features.
+As you read in the [overview](/helion/openstack/1.1/flexiblecontrol/overview/), HP Helion OpenStack Flexible Control Plane allows you to deploy the control plane in a virtual environment, reducing the control plane footprint to just three servers for proof of concept, evaluation, and exploration of HP Helion OpenStack features.
 
-The overview covered the [prerequisites](/helion/openstack/flexiblecontrol/overview/). Now we will walk through the installation.
+The overview covered the [prerequisites](/helion/openstack/1.1/flexiblecontrol/overview/). Now we will walk through the installation.
 
 This topic contains:
 
@@ -45,13 +45,13 @@ This topic contains:
 
 Before you can install the Flexible Control Plane, you will need to:
 
-- [Review prerequisites and configure the infrastructure](/helion/openstack/flexiblecontrol/overview/#prereq) accordingly
-- [Create configuration files](/helion/openstack/flexiblecontrol/overview/#configfiles)
-- [Set up KMV hosts](/helion/openstack/flexiblecontrol/overview/#kvmsetup)
+- [Review prerequisites and configure the infrastructure](/helion/openstack/1.1/flexiblecontrol/overview/#prereq) accordingly
+- [Create configuration files](/helion/openstack/1.1/flexiblecontrol/overview/#configfiles)
+- [Set up KMV hosts](/helion/openstack/1.1/flexiblecontrol/overview/#kvmsetup)
 - Deploy an HP Helion cloud
 
 ##Step-by-step Installation Instructions {#instruct}
-1. On each of the three [KVM hosts](/helion/openstack/flexiblecontrol/overview/#kvmsetup) prepared earlier, create a *brbm* bridge and add the physical NIC which connects to the Helion Management network (that carries the PXE/DHCP, message queue, and other API-related traffic) along with other networks.
+1. On each of the three [KVM hosts](/helion/openstack/1.1/flexiblecontrol/overview/#kvmsetup) prepared earlier, create a *brbm* bridge and add the physical NIC which connects to the Helion Management network (that carries the PXE/DHCP, message queue, and other API-related traffic) along with other networks.
 2. For example, on KVM Host A, the NIC is **eth1**:
 
 		ovs-vsctl add-br brbm
@@ -211,7 +211,7 @@ After modification, the baremetal.csv will look like the one given below.
 		}
 
 
-1. Create the *overcloud-config.json* file with the following contents. For definitions of the variables used and suggested values refer to the list of available [environment variables](http://docs.hpcloud.com/helion/openstack/install/envars). 
+1. Create the *overcloud-config.json* file with the following contents. For definitions of the variables used and suggested values refer to the list of available [environment variables](http://docs.hpcloud.com/helion/openstack/1.1/install/envars). 
  
 		{
 		"cloud_type": "KVM",
@@ -296,14 +296,14 @@ After modification, the baremetal.csv will look like the one given below.
 		HP - completed - Tue Oct 23 16:20:20 UTC 2014
 
 ##Post-Installation Steps {#postinstall}
-- [Verify the installation](http://docs.hpcloud.com/helion/openstack/install/kvm/#verifying-your-installation)
+- [Verify the installation](http://docs.hpcloud.com/helion/openstack/1.1/install/kvm/#verifying-your-installation)
 - Configure Block Storage
-	- [For VSA](http://docs.hpcloud.com/helion/openstack/install/vsa/overview)
-	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/install/3par)
+	- [For VSA](http://docs.hpcloud.com/helion/openstack/1.1/install/vsa/overview)
+	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/1.1/install/3par)
 
 ##Adding the Overcloud Nodes {#addnodes}
 
-For more information, see: [Add, remove and replace nodes](http://docs.hpcloud.com/helion/openstack/technical-overview/#add-remove-replace-nodes-jumplink-span).
+For more information, see: [Add, remove and replace nodes](http://docs.hpcloud.com/helion/openstack/1.1/technical-overview/#add-remove-replace-nodes-jumplink-span).
 
 ##Known Issues and Resolutions {#knownissues}
 
@@ -385,4 +385,4 @@ Hard reboot the spawned instance from the Horizon dashboard to make it reachable
 
 
 <hr>
-Return to the [architectural and configuration files overview](/helion/openstack/flexiblecontrol/overview/) information.
+Return to the [architectural and configuration files overview](/helion/openstack/1.1/flexiblecontrol/overview/) information.

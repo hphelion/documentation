@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Focus Service Overview"
-permalink: /helion/openstack/services/focus/overview/
+permalink: /helion/openstack/1.1/services/focus/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -20,7 +20,7 @@ authors: Paul F
 
 # HP Helion OpenStack&#174; Focus Service Overview #
 
-<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/helion/openstack/prepare/overview/ -->
+<!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md); text from docs.hpcloud.com/helion/openstack/1.1/prepare/overview/ -->
 
 The HP Helion OpenStack Focus service serves as the Topology Design Registry and Repository Service. Focus provides for persistent store and management of TOSCA-based templates. Focus allows you to:
 
@@ -35,7 +35,7 @@ Focus allows you to:
 
 ###Using the Administration Dashboard### {#dashboard}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Focus service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/) to work with the Focus service.
 
 
 ###Using the API to access Focus### {#API}
@@ -53,8 +53,8 @@ For information on how to operate your cloud we suggest you read the [OpenStack 
 
 <!-- hide me Also see the Help topics that are available in the Operational Dashboard and Administration Dashboard.  Website copies are available:
 
-* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/manage/operational-dashboard/)
-* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/manage/administration-dashboard/) -->
+* [HP Helion OpenStack Operational Dashboard Help](/helion/openstack/1.1/manage/operational-dashboard/)
+* [HP Helion OpenStack Administration Dashboard Help](/helion/openstack/1.1/manage/administration-dashboard/) -->
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Compute Service"
-permalink: /helion/openstack/undercloud/resource/esx/compute/
+permalink: /helion/openstack/1.1/undercloud/resource/esx/compute/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -31,7 +31,7 @@ PageRefresh();
 </script>
 <!---
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/vsa/">NEXT &#9654;</a> </p>-->
 
 # HP Helion OpenStack&reg;: Compute Service
 
@@ -43,7 +43,7 @@ A variety of flavors and images are provided by the HP Helion Compute service to
 
 Currently Compute Service has the following option:
 
-* [Virtual Environments (ESX)](/helion/openstack/undercloud/resource/esx/)
+* [Virtual Environments (ESX)](/helion/openstack/1.1/undercloud/resource/esx/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

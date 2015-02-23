@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/storage/storeserv/
+permalink: /helion/openstack/1.1/undercloud/storage/storeserv/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -30,7 +30,7 @@ PageRefresh();
 </script>
 
 <!---
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 <!--what is HP Helion CLoud referring to in bullet 1??-->
 
@@ -38,7 +38,7 @@ PageRefresh();
 
 The StoreServ option allows you to configure HP 3PAR StoreServ as storage. HP 3PAR StoreServ is also referred to as 3PAR. Before you start working with StoreServ, ensure that it is accessible from the undercloud and you have all the required details to register the device using Sirius service.
 
-You can configure a 3PAR device by using the undercloud Horizon dashboard (*recommended*) or the [Sirius client](/helion/openstack/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.
+You can configure a 3PAR device by using the undercloud Horizon dashboard (*recommended*) or the [Sirius client](/helion/openstack/1.1/sirius/cli/workflow/). This page describes the different tasks that you can perform using the StoreServ option in the undercloud Horizon dashboard.
 
 * [Before you begin](#before-you-begin)
 
@@ -298,7 +298,7 @@ Use this option to view the CPG configuration (as defined in OpenStack Configura
 
 ##Next Steps {#next-steps}
 
-[Working with StoreServ Backends](/helion/openstack/undercloud/oc/config/storeserv/)
+[Working with StoreServ Backends](/helion/openstack/1.1/undercloud/oc/config/storeserv/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

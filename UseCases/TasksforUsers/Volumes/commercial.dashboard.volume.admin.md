@@ -27,7 +27,7 @@ A volume type defines the characteristics of a volume. It usually maps to a set 
 
 ### Create a volume type ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **System Panel** tab on the dashboard **Admin** panel.
 
@@ -41,7 +41,7 @@ A volume type defines the characteristics of a volume. It usually maps to a set 
 
 ### Delete a volume type ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **System Panel** tab on the dashboard **Admin** panel.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Managing Moonshot Servers"
-permalink: /helion/openstack/install/moonshot/
+permalink: /helion/openstack/1.1/install/moonshot/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/prereqs/#csv">Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # Managing Moonshot Servers
 
@@ -66,7 +66,7 @@ Using these values
 Consult [HP Moonshot iLO documentation](http://h50146.www5.hp.com/products/software/oe/linux/mainstream/support/whitepaper/pdfs/c03933550-1.pdf) to determine the values needed.
 
 
-[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#csv).
 
 <!--Tom hancock-->
 

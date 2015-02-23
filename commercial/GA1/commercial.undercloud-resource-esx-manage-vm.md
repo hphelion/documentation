@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&reg;: Virtual Environments"
-permalink: /helion/openstack/undercloud/resource/esx/
+permalink: /helion/openstack/1.1/undercloud/resource/esx/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -31,14 +31,14 @@ PageRefresh();
 
 <!---
 
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/vsa/">NEXT &#9654;</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/prereqs/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/vsa/">NEXT &#9654;</a> </p>-->
 
 
 
 ## HP Helion OpenStack&#174;: Working with Virtual Environment(s)
 
 
-The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Horizon dashboard in the undercloud or [EON]( /helion/openstack/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the undercloud.
+The Virtual Environment (ESX) option allows you to configure, manage and control multiple virtual instances. You can configure your ESX hypervisor by either using the Horizon dashboard in the undercloud or [EON]( /helion/openstack/1.1/undercloud/eon/cli/) client. This page describes the different tasks that you can perform using the ESX option in the undercloud.
 <!---
 Virtual Environment is a system which implements, manages, and controls multiple virtual instances. HP Helion OpenStack&reg; supports two types of clouds:KVM and VMWare ESX. 
 
@@ -258,7 +258,7 @@ To unimport one cluster, do the following:
 
 ##Next Steps {#next-steps}
 
-[Working with EXS Clusters]( /helion/openstack/undercloud/oc/config/esx/)
+[Working with EXS Clusters]( /helion/openstack/1.1/undercloud/oc/config/esx/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

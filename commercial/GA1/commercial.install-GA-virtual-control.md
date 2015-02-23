@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;: Installing Overcloud Controllers on Virtual Machines"
-permalink: /helion/openstack/install/hybrid/
+permalink: /helion/openstack/1.1/install/hybrid/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/related-links/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/ovsvapp/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/related-links/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&#174;: Installing Overcloud Controllers on Virtual Machines
 

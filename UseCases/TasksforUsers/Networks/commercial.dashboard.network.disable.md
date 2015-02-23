@@ -27,7 +27,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 ### Enable a network ### {#enablenet}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Networks** link on the **Project** dashboard **Network** panel.
 
@@ -41,7 +41,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 ### Disable a network ### {#disablenet}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Networks** link on the **Project** dashboard **Network** panel.
 

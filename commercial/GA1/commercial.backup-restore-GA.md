@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Back Up and Restore"
-permalink: /helion/openstack/backup.restore/
+permalink: /helion/openstack/1.1/backup.restore/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -24,7 +24,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/install/esx/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install/esx/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Back Up and Restore
@@ -268,7 +268,7 @@ Use the following steps to restore the undercloud:
 
 		 78:e7:d1:22:5d:58,administrator,password,192.168.11.1,12,32768,1900
 
-	For more information on the `baremetal.csv` file, see the [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/install/prereqs#csv).
+	For more information on the `baremetal.csv` file, see the [Installation Prerequisites](http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs#csv).
 
 6. Execute the following script:
 
@@ -559,7 +559,7 @@ If the admin user password was changed from the original password created during
 
 ## For more information ##
 
-For information on Disaster Recovery (DR) and Business Continuity Planning (BCP) plans, see [Disaster Recovery](/helion/openstack/disaster/recovery/).
+For information on Disaster Recovery (DR) and Business Continuity Planning (BCP) plans, see [Disaster Recovery](/helion/openstack/1.1/disaster/recovery/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

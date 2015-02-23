@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Tracking masked IP addresses"
-permalink: /helion/openstack/maskedIP/
+permalink: /helion/openstack/1.1/maskedIP/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1

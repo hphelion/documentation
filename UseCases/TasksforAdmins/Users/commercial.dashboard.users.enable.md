@@ -31,7 +31,7 @@ As an admin, you can [disable](#disableuser) and [enable](#enableuser) users, as
 
 To disable a user:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the Users link on the Admin dashboard Identity panel.
 
@@ -43,7 +43,7 @@ To disable a user:
 
 To enable a user:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the Users link on the Admin dashboard Identity panel.
 

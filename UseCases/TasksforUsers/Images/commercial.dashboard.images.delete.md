@@ -29,7 +29,7 @@ You can delete images, as needed. A deleted image is no longer available. Any in
 
 To delete a private image:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 

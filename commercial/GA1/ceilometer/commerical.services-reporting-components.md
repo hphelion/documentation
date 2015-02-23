@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Metering Service (Ceilometer) Installation"
-permalink: /helion/openstack/services/reporting/components/
+permalink: /helion/openstack/1.1/services/reporting/components/
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 Role1: Systems Administrator 

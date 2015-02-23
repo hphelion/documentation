@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; TripleO Service Overview"
-permalink: /helion/openstack/services/tripleo/overview/
+permalink: /helion/openstack/1.1/services/tripleo/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,14 +29,14 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/compute/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/compute/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&reg; TripleO Service Overview#
 
-TripleO (OpenStack-On-OpenStack) is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack cloud facilities as the foundation. TripleO builds on the [Compute](/helion/openstack/services/compute/overview/), [Networking](/helion/openstack/services/networking/overview/) and [Orchestration](/helion/openstack/services/orchestration/overview/) services to automate fleet management for as few as two machines or a full data center.
+TripleO (OpenStack-On-OpenStack) is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack cloud facilities as the foundation. TripleO builds on the [Compute](/helion/openstack/1.1/services/compute/overview/), [Networking](/helion/openstack/1.1/services/networking/overview/) and [Orchestration](/helion/openstack/1.1/services/orchestration/overview/) services to automate fleet management for as few as two machines or a full data center.
 
-The [HP Helion OpenStack installation](/helion/openstack/install/overview/) follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.
+The [HP Helion OpenStack installation](/helion/openstack/1.1/install/overview/) follows the standard TripleO deployment model, creating a seed, an undercloud and an overcloud.
 
 
 ##Key Terms
@@ -53,7 +53,7 @@ Key terms include:
 
 For information on TripleO, see the official [OpenStack TripleO wiki](https://wiki.openstack.org/wiki/TripleO).
 
-For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/technical-overview/).
+For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/1.1/technical-overview/).
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

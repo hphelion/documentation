@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Neutron Administrator: Preinstallation Requirement"
-permalink: /helion/openstack/services/neutron/pre/installation/
+permalink: /helion/openstack/1.1/services/neutron/pre/installation/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -26,15 +26,15 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> --->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> --->
 
 # HP Helion OpenStack&reg; 1.1  Networking Operation (Neutron) Administrator: Preinstallation Requirement
 
 Before the Helion OpenStack network can be installed, the Helion Network Administrator must complete, or verify have been completed, the tasks described in this section. 
 
 * [Select your hypervisor](#select-hypervior)
-* [Hardware configuration and software requirements](/helion/openstack/services/neutron/pre/installation/hardware-software/)
-* [Plan your High Availability needs](/helion/openstack/services/neutron/pre/installation/high-availability/)
+* [Hardware configuration and software requirements](/helion/openstack/1.1/services/neutron/pre/installation/hardware-software/)
+* [Plan your High Availability needs](/helion/openstack/1.1/services/neutron/pre/installation/high-availability/)
 
 ##Select your hypervisor {#select-hypervior}
 
@@ -56,7 +56,7 @@ To ensure a successful installation, you must satisfy these network configuratio
 * The network interface intended as the bridge interface should be configured and working before running the installer. The installer creates a network bridge on the system running the installer, attaching the bridge interface to the network bridge. The installer uses the IP address of the bridge interface for the network bridge.
 
 
-In addition to preparing all HP Helion OpenStack cloud networks, you need perform additional tasks based on which hypervisor you are using: [KVM](/helion/openstack/install/prereqs/) or [ESX](/helion/openstack/install/prereqs/).
+In addition to preparing all HP Helion OpenStack cloud networks, you need perform additional tasks based on which hypervisor you are using: [KVM](/helion/openstack/1.1/install/prereqs/) or [ESX](/helion/openstack/1.1/install/prereqs/).
 
 
 ###Preparing the network for a KVM installation
@@ -110,15 +110,15 @@ You are responsible for the following before beginning the HP Helion OpenStack i
 
 The following tasks need to be performed on the seed cloud host, where the seed VM will be installed. The seed cloud host is alternatively known as the installer system.
 
-* [Install Ubuntu 14.04 LTS](/helion/openstack/install/prereqs/)
-* [Configure SSH](/helion/openstack/install/prereqs/)
-* [Obtain a public key](/helion/openstack/install/prereqs/)
-* [Install Debian/Ubuntu packages](/helion/openstack/install/prereqs/)
-* [Install and configure NTP](/helion/openstack/install/prereqs/)
-* [Download the installation packages](/helion/openstack/install/prereqs/)
+* [Install Ubuntu 14.04 LTS](/helion/openstack/1.1/install/prereqs/)
+* [Configure SSH](/helion/openstack/1.1/install/prereqs/)
+* [Obtain a public key](/helion/openstack/1.1/install/prereqs/)
+* [Install Debian/Ubuntu packages](/helion/openstack/1.1/install/prereqs/)
+* [Install and configure NTP](/helion/openstack/1.1/install/prereqs/)
+* [Download the installation packages](/helion/openstack/1.1/install/prereqs/)
 * [Editing the JSON Environment Variables File for Installation](#envars)
-* [Create the baremetal.csv file](/helion/openstack/install/prereqs/)
-* [Integrating LDAP (Lightweight Directory Access Protocol)](/helion/openstack/install/prereqs/)
+* [Create the baremetal.csv file](/helion/openstack/1.1/install/prereqs/)
+* [Integrating LDAP (Lightweight Directory Access Protocol)](/helion/openstack/1.1/install/prereqs/)
 
 ####Install Ubuntu 14.04 LTS
 
@@ -167,7 +167,7 @@ After you install the `libvirt` packages, you must reboot or restart `libvirt`:
 NTP is a networking protocol for clock synchronization between computer systems.
 Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as a NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.
 
-For information on installing NTP on the seed cloud host, see [HP Helion OpenStack Installation: NTP Server](/helion/openstack/install/ntp/).
+For information on installing NTP on the seed cloud host, see [HP Helion OpenStack Installation: NTP Server](/helion/openstack/1.1/install/ntp/).
 
 ####Download and unpack the installation package
 
@@ -217,7 +217,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.
 
-For information on editing the JSON environment variables file, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
+For information on editing the JSON environment variables file, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/1.1/install/envars/).
 
 #### Create the baremetal.csv file {#csv}
 
@@ -269,11 +269,11 @@ When creating this file, keep in mind the following:
 	
 **OPTIONAL** The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP)to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
-For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/).
+For information on integrating LDAP, see [HP Helion OpenStack&reg;: Integrating LDAP](/helion/openstack/1.1/services/identity/integrate-ldap/).
 
 ###Next Steps:
 
-[Hardware Configuration and Software  Requirements]( /helion/openstack/services/neutron/pre/installation/hardware-software/)
+[Hardware Configuration and Software  Requirements]( /helion/openstack/1.1/services/neutron/pre/installation/hardware-software/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

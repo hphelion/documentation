@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/services/object/overview/scale-out-swift/
+permalink: /helion/openstack/1.1/services/object/overview/scale-out-swift/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 
 </script>
 
-<a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
+<a href="/helion/openstack/1.1/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a>
 
 # HP Helion OpenStack&reg;: About Scale-out Object Storage (Swift) 
 
@@ -37,12 +37,12 @@ It is recommended to use these Starter servers as host for the following Swift s
 2.	Swift Account
 3.	Swift Container
 
-You can also use the ringos utility to add additional drives to Swift Account and Container rings. For more details, see the [ringos](/helion/openstack/GA1/services/object/pyringos/) manual.
+You can also use the ringos utility to add additional drives to Swift Account and Container rings. For more details, see the [ringos](/helion/openstack/1.1/GA1/services/object/pyringos/) manual.
 
 <!---
 We recommend you use these Starter servers as Swift Proxy Servers for the scaled out Swift cluster. To do this, you can use the *ringos* utility to add additional drives on that server to the Swift Account and Container rings. 
 ---->
-- [Step by step instructions for deploying additional Scale-out Object Storage (Swift) Nodes with HP Helion OpenStack](/helion/openstack/services/swift/deployment-scale-out/)
+- [Step by step instructions for deploying additional Scale-out Object Storage (Swift) Nodes with HP Helion OpenStack](/helion/openstack/1.1/services/swift/deployment-scale-out/)
 
 ##Diagrams 
 

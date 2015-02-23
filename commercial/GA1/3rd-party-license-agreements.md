@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&reg; Open Source and Third-Party Software License Agreements"
-permalink: /helion/openstack/3rd-party-license-agreements/
+permalink: /helion/openstack/1.1/3rd-party-license-agreements/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/eula/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/siteindex/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/eula/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/siteindex/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&reg; Open Source and Third-Party Software License Agreements #

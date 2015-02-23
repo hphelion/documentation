@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Manage Resources"
-permalink: /helion/openstack/undercloud/manage/resources/overview/
+permalink: /helion/openstack/1.1/undercloud/manage/resources/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -29,7 +29,7 @@ PageRefresh();
 
 </script>
 <!---
-<p style="font-size: small;"> <a href="/helion/openstack/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/support-matrix-beta/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/prereqs/">NEXT &#9654;</a> </p>-->
 
 # HP Helion OpenStack&#174;: Manage Resources
 The **Resources** Tab in the undercloud Horizon  dashboard allows you to define resources for your cloud. This tab displays two main options: **Compute** and **Storage**. You can define the configurations for the compute as well as the storage based on your requirements using this tab. 
@@ -38,9 +38,9 @@ The **Resources** Tab in the undercloud Horizon  dashboard allows you to define 
 This option allows you to define the required configurations for your cloud. The following options are displayed under the Resources Tab:
 
 
-* [Compute](/helion/openstack/undercloud/resource/esx/compute/)
+* [Compute](/helion/openstack/1.1/undercloud/resource/esx/compute/)
 
-* [Storage](/helion/openstack/undercloud/manage/resources/storage/)
+* [Storage](/helion/openstack/1.1/undercloud/manage/resources/storage/)
 
 
 

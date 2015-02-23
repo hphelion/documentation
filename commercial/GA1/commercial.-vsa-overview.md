@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Edition: VSA Support"
-permalink: /helion/openstack/install/vsa/overview/
+permalink: /helion/openstack/1.1/install/vsa/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -32,7 +32,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654</a></p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/1.1/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654</a></p> 
 
 # HP Helion OpenStack&reg; Cinder Block Storage Using HP StoreVirtual VSA 
 
@@ -171,7 +171,7 @@ The sizing of the StoreVirtual VSA Management Groups, Clusters and Instances is 
 
 ## Next Step {#next-steps}
 
-- [Deploy and Configure HP StoreVirtual VSA](/helion/openstack/install/vsa/)
+- [Deploy and Configure HP StoreVirtual VSA](/helion/openstack/1.1/install/vsa/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

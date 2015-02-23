@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Enabling Name Resolution from Tenant VMs in the Overcloud"
-permalink: /helion/openstack/name-resolution/
+permalink: /helion/openstack/1.1/name-resolution/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -28,7 +28,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#name-resolution">Prerequisites | <a href="/helion/openstack/install/overview/test/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/prereqs/#name-resolution">Prerequisites | <a href="/helion/openstack/1.1/install/overview/test/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;: Enable Name Resolution from Tenant VMs in the Overcloud
 

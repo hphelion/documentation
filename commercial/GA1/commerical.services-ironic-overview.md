@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Ironic Service Overview"
-permalink: /helion/openstack/services/ironic/overview/
+permalink: /helion/openstack/1.1/services/ironic/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 product-version2: HP Helion OpenStack
@@ -26,7 +26,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/compute/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/dns/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/compute/overview/"> NEXT &#9654</a> </p>
 -->
 # HP Helion OpenStack&reg; Ironic Service Overview#
 
@@ -38,7 +38,7 @@ Ironic is an OpenStack service to provision baremetal, not virtual, machines by 
 
 For information on Ironic, see OpenStack [Ironic's developer documentation](http://docs.openstack.org/developer/ironic/).
 
-For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/technical-overview/).
+For more information on the HP Helion OpenStack deployment model, see [HP Helion OpenStack Technical Overview](/helion/openstack/1.1/technical-overview/).
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

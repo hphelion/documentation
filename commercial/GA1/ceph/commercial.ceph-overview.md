@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/services/ceph/
+permalink: /helion/openstack/1.1/services/ceph/
 product: commercial
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -28,7 +28,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p>
 -->
 
 
@@ -109,20 +109,20 @@ Ceph cluster includes one admin node, one monitor node (MON) and three object st
 The following sections provides details on the integration of Ceph Block Storage with HP Helion OpenStack:
 
 
-1. [HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution: Prerequisites]( /helion/openstack/ceph/prerequisite/)
-2. [HP  Helion OpenStack Installation](/helion/openstack/install/overview/)
-3. [Ceph Manual Installation](/helion/openstack/ceph-manual-install/)
-4. [CEPHX Authentication]( /helion/openstack/ceph-authentications/)
-5. [HP Helion OpenStack Ceph Configuration]( /helion/openstack/ceph-hp-helion-openstack-ceph-configuration/)
-7. [Helion OpenStack Glance-Ceph Interoperability]( /helion/openstack/ceph-hp-helion-openstack-glance-ceph-interoperability/)
-8. [Helion OpenStack Cinder Ceph Storage]( /helion/openstack/ceph-hp-helion-openstack-cinder-ceph-storage)
-9. [Helion OpenStack Nova Ceph Storage]( /helion/openstack/ceph-helion-openstack-nova-ceph-storage/)
-10. [Ceph Rados Gateway]( /helion/openstack/ceph-rados-gateway/)
-11. [Ceph RADOS Gateway- Keystone Authentication](/helion/openstack/ceph-rados-gateway-keystone-authentication/)
-12. [Ceph RADOS Gateway - DMZ HAProxy](/helion/openstack/ceph-rados-gateway-dmz-ha-proxy/)
-12. [HP Helion OpenStack Ceph Storage Administration services](/helion/openstack/ceph-helion-openstack-ceph-storage-administration-services/)
-13. [Ceph Configuration Recovery and Backup Procedure HP Helion Nodes](/helion/openstack/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/)
-14. [Related Topics](/helion/openstack/ceph-related-topics/)
+1. [HP Helion OpenStack Enterprise Edition 1.1 Ceph Firefly 80.7 Storage Solution: Prerequisites]( /helion/openstack/1.1/ceph/prerequisite/)
+2. [HP  Helion OpenStack Installation](/helion/openstack/1.1/install/overview/)
+3. [Ceph Manual Installation](/helion/openstack/1.1/ceph-manual-install/)
+4. [CEPHX Authentication]( /helion/openstack/1.1/ceph-authentications/)
+5. [HP Helion OpenStack Ceph Configuration]( /helion/openstack/1.1/ceph-hp-helion-openstack-ceph-configuration/)
+7. [Helion OpenStack Glance-Ceph Interoperability]( /helion/openstack/1.1/ceph-hp-helion-openstack-glance-ceph-interoperability/)
+8. [Helion OpenStack Cinder Ceph Storage]( /helion/openstack/1.1/ceph-hp-helion-openstack-cinder-ceph-storage)
+9. [Helion OpenStack Nova Ceph Storage]( /helion/openstack/1.1/ceph-helion-openstack-nova-ceph-storage/)
+10. [Ceph Rados Gateway]( /helion/openstack/1.1/ceph-rados-gateway/)
+11. [Ceph RADOS Gateway- Keystone Authentication](/helion/openstack/1.1/ceph-rados-gateway-keystone-authentication/)
+12. [Ceph RADOS Gateway - DMZ HAProxy](/helion/openstack/1.1/ceph-rados-gateway-dmz-ha-proxy/)
+12. [HP Helion OpenStack Ceph Storage Administration services](/helion/openstack/1.1/ceph-helion-openstack-ceph-storage-administration-services/)
+13. [Ceph Configuration Recovery and Backup Procedure HP Helion Nodes](/helion/openstack/1.1/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/)
+14. [Related Topics](/helion/openstack/1.1/ceph-related-topics/)
 
 
 
@@ -135,7 +135,7 @@ The following sections provides details on the integration of Ceph Block Storage
  
 ## Next Steps
 
-[HP  Helion OpenStack Installation](/helion/openstack/install/overview/).
+[HP  Helion OpenStack Installation](/helion/openstack/1.1/install/overview/).
  
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

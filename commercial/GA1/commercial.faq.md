@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; FAQ"
-permalink: /helion/openstack/faq/
+permalink: /helion/openstack/1.1/faq/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -11,7 +11,7 @@ role1: All
 <!--PUBLISHED-->
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/release-notes/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/technical-overview/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/release-notes/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/technical-overview/">NEXT &#9654;</a> </p>
 -->
 
 # HP Helion OpenStack&#174; FAQ#
@@ -163,7 +163,7 @@ You have access to:
 ####Where can I find more information?<a name="MoreInfo"></a>
 
 * [HP Helion OpenStack Portal](http://www8.hp.com/us/en/cloud/hphelion-openstack.html)
-* [HP Helion OpenStack Documentation](https://docs.hpcloud.com/helion/openstack/) 
+* [HP Helion OpenStack Documentation](https://docs.hpcloud.com/helion/openstack/1.1/) 
 <!--* [HP Helion OpenStack Support Forum](https://ask.openstack.org/en/questions/scope:all/sort:activity-desc/tags:hphelion) (Tag your questions with 'HPHelion')-->
 
 ####Where can I report issues with HP Helion OpenStack?<a name="reportissues"></a>

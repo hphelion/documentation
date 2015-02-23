@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Sirius Service Overview"
-permalink: /helion/openstack/services/sirius/overview/
+permalink: /helion/openstack/1.1/services/sirius/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/identity/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Sirius Service Overview #
@@ -43,11 +43,11 @@ To perform tasks using the Sirius service, you can use the Horizon dashboards or
 
 ### Using the dashboards<a name=UI""></a>
 
-You can use the [HP Helion OpenStack Dashboard](/helion/openstack/dashboard/how-works/) to work with the Sirius service.
+You can use the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/dashboard/how-works/) to work with the Sirius service.
 
 ###Using the CLI<a name="cli"></a>
 
-You can use the command-line interface to access HP Sirius service. See [Configuring Your Storage Using Sirius](/helion/openstack/sirius-cli/)
+You can use the command-line interface to access HP Sirius service. See [Configuring Your Storage Using Sirius](/helion/openstack/1.1/sirius-cli/)
 
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

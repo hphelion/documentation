@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: Manage Storage"
-permalink: /helion/openstack/undercloud/storage/storevirtual/
+permalink: /helion/openstack/1.1/undercloud/storage/storevirtual/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -30,12 +30,12 @@ PageRefresh();
 </script>
 
 <!---
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>-->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p>-->
 
 
 # HP Helion OpenStack&#174;: Working with HP StoreVirtual VSA 
 
-The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(*Recommended*) or [Sirius client](/helion/openstack/sirius/cli/workflow/). 
+The StoreVirtual option allows you to configure HP StoreVirtual VSA cluster as storage.You can configure your StoreVirtual by either using the Horizon undercloud dashboard(*Recommended*) or [Sirius client](/helion/openstack/1.1/sirius/cli/workflow/). 
 
 This page describes the different tasks that you can perform using the StoreVirtual option in the Horizon undercloud dashboard.
 
@@ -71,7 +71,7 @@ Before you start working with StoreVirtual, ensure that the following prerequisi
 	
 Use the Horizon undercloud dashboard to register a cluster. When you register a cluster, it registers the cluster to the cloud inventory. The registered cluster can later be added as a back end to the overcloud Cinder.
 
-<!---You can register a cluster by either using the Horizon undercloud dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/sirius-cli/)).-->
+<!---You can register a cluster by either using the Horizon undercloud dashboard or Sirius client. (Refer [User manual for Sirius client](/helion/openstack/1.1/sirius-cli/)).-->
 
 To register the cluster using the Horizon undercloud dashboard, do the following:
 
@@ -190,7 +190,7 @@ Use this option to view the cluster configuration (as defined in the HP Helion O
 
 ## Next Steps {#next-steps}
 
-[Working with StoreVirtual Backends](/helion/openstack/undercloud/oc/config/storevirtual/)
+[Working with StoreVirtual Backends](/helion/openstack/1.1/undercloud/oc/config/storevirtual/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

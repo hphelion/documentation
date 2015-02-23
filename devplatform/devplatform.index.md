@@ -20,7 +20,7 @@ authors: Jayme P
 
 # HP Helion Development Platform: Documentation
 
-Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on [Cloud Foundry](http://cloudfoundry.org/index.html)&trade; and fully integrated with [HP Helion OpenStack](/helion/openstack/)&reg;, the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.
+Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on [Cloud Foundry](http://cloudfoundry.org/index.html)&trade; and fully integrated with [HP Helion OpenStack](/helion/openstack/1.1/)&reg;, the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.
 
 This documentation will help you get up to speed on the  Helion Development Platform as a Developer or Administrator.
 
@@ -54,7 +54,7 @@ The [Database as a Service](/helion/devplatform/connectdatabase/) is optionally 
 
 The [Messaging Service](/helion/devplatform/messageservice/)  provides developers with the ability to provision RabbitMQ clusters using a wizard-based UI directly from Horizon.
 
-- The Messaging Service integrates with [Keystone](/helion/openstack/services/identity/overview/) to remove the need to create separate credentials for RabbitMQ access. 
+- The Messaging Service integrates with [Keystone](/helion/openstack/1.1/services/identity/overview/) to remove the need to create separate credentials for RabbitMQ access. 
 - The Messaging Service allows developers to focus on building their apps without worrying about installing, configuring, and troubleshooting RabbitMQ.
 
 The Messaging Service is optionally installed as part of the Helion Development Platform. If not installed as part of the platform, you can [install](/helion/devplatform/install/#install-messaging) it and then [configure](/helion/devplatform/messageservice/) it for [use from within the Application Lifecycle Service](/helion/devplatform/msgaas/als).
@@ -90,7 +90,7 @@ Use the Helion CLI to deploy your app to the development platform through the co
 Most of the Helion Development Platform documentation assumes that you've already provisioned an environment where you can deploy your apps. There are two ways to deploy Development Platform technology:
  
 - **Quick Start Developer Trial**: The fastest way to set up a functional Helion Development Platform environment is the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) (sandbox) on the public cloud.
-- **Standard Installation**: Install a [Commercial HP Helion OpenStack](/helion/openstack/install/overview/)&reg; cloud and then [install](/helion/devplatform/install/) the Helion Development Platform.  
+- **Standard Installation**: Install a [Commercial HP Helion OpenStack](/helion/openstack/1.1/install/overview/)&reg; cloud and then [install](/helion/devplatform/install/) the Helion Development Platform.  
 
 ----------
 ###[Resources for Application Developers](/helion/devplatform/appdev/)

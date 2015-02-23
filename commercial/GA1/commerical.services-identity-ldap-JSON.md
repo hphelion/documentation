@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Sample LDAP Server Connection Settings File"
-permalink: /helion/openstack/install/connections-json/
+permalink: /helion/openstack/1.1/install/connections-json/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/services/identity/integrate-ldap/"> &#9650; Integrate the Identity Service (Keystone) with LDAP/AD</a></p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/identity/integrate-ldap/"> &#9650; Integrate the Identity Service (Keystone) with LDAP/AD</a></p> 
 
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 
@@ -31,7 +31,7 @@ PageRefresh();
 
 The following is a sample LDAP Server connection settings JSON file with typical values entered. This example is to demonstrate how to complete the JSON values and is not intended for users to copy the values into their cloud.
 
-See [Integrate the Identity Service (Keystone) with LDAP/AD](/helion/openstack/services/identity/integrate-ldap/) for information on using and modifying this file.
+See [Integrate the Identity Service (Keystone) with LDAP/AD](/helion/openstack/1.1/services/identity/integrate-ldap/) for information on using and modifying this file.
 
 		{
 		    "keystone": {

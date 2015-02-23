@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Support Matrix"
-permalink: /helion/openstack/support-matrix/
+permalink: /helion/openstack/1.1/support-matrix/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/technical-overview/"> Technical Overview</a> &#9654</p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/1.1/technical-overview/"> Technical Overview</a> &#9654</p>
 
 <!-- IMPORTANT!!! The HW support Matrix should be approved by:
 * Gavin Brebner for Helion QA support
@@ -46,7 +46,7 @@ This page provides an overview of the hardware and software that is supported fo
 
 ## OpenStack version information {#os}
 
-All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
+All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
 ## Deployment Architecture {#deploy-arch}
 
@@ -89,7 +89,7 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [m710 Server Cartridge](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
 - [m300 Server Cartridge](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
 
-For more information, see [Managing Moonshot Servers](/helion/openstack/install/moonshot/).
+For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/install/moonshot/).
 ### HP ProLiant Tower Servers
 
 - [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5379531)
@@ -538,7 +538,7 @@ There are no software requirements for the undercloud and overcloud controllers 
 
 ## Next Step {#next}
 
-Review the [Technical Overview](/helion/openstack/technical-overview/).
+Review the [Technical Overview](/helion/openstack/1.1/technical-overview/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

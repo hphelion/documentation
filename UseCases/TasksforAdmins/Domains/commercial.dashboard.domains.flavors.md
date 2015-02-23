@@ -35,7 +35,7 @@ An admin user can create, edit, and delete instances as needed.
 
 To create a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2 Click the **Flavors** link on the **Admin** dashboard **System** panel.
 	The flavors in the domain are listed. 
@@ -65,7 +65,7 @@ A message is displayed on successful creation.
 
 To edit a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
 
@@ -87,7 +87,7 @@ Instances that use the flavor are not affected when a flavor is deleted.
 
 To delete a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
 

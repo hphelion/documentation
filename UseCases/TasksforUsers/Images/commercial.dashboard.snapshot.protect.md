@@ -29,7 +29,7 @@ If you want to prevent an image from being deleted, you can make that image *pro
 
 ### Protect an image ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 

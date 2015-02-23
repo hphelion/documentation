@@ -11,7 +11,7 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack
-    url: /helion/openstack/
+    url: /helion/openstack/1.1/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
@@ -229,74 +229,74 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack Documentation Home
-    url: /helion/openstack/
+    url: /helion/openstack/1.1/
   - text: Release Notes
-    url: /helion/openstack/release-notes/101 
+    url: /helion/openstack/1.1/release-notes/101 
   - text: FAQ
-    url: /helion/openstack/faq/  
+    url: /helion/openstack/1.1/faq/  
   - text: Technical Overview
-    url: /helion/openstack/technical-overview/ 
+    url: /helion/openstack/1.1/technical-overview/ 
   - text: Services Overview
-    url: /helion/openstack/services/overview/
+    url: /helion/openstack/1.1/services/overview/
   - text: Support Matrix
-    url: /helion/openstack/support-matrix-beta/ 		
+    url: /helion/openstack/1.1/support-matrix-beta/ 		
   - text: Installation & Configuration Overview
-    url: /helion/openstack/install-beta-overview/	
+    url: /helion/openstack/1.1/install-beta-overview/	
   - text: Installation Prerequisites
-    url: /helion/openstack/install-beta/prereqs/
+    url: /helion/openstack/1.1/install-beta/prereqs/
   - text: Installation for KVM Hypervisor
-    url: /helion/openstack/install-beta/kvm/
+    url: /helion/openstack/1.1/install-beta/kvm/
   - text: Installation for HP StoreVirtual VSA Support
-    url: /helion/openstack/install-beta/vsa/		
+    url: /helion/openstack/1.1/install-beta/vsa/		
   - text: Installation for ESX Hypervisor
-    url: /helion/openstack/install-beta/esx/
+    url: /helion/openstack/1.1/install-beta/esx/
   - text: OVSvApp Deployment for HP VCN on ESX hosts 
-    url: /helion/openstack/install-beta/ovsvapp/
+    url: /helion/openstack/1.1/install-beta/ovsvapp/
   - text: Installation for DNSaaS Support 
-    url: /helion/openstack/install-beta/dnsaas/		
+    url: /helion/openstack/1.1/install-beta/dnsaas/		
   - text: Related Documentation
-    url: /helion/openstack/related-links/	
+    url: /helion/openstack/1.1/related-links/	
   - text: Glossary
-    url: /helion/openstack/glossary/ 	
+    url: /helion/openstack/1.1/glossary/ 	
   - text: Preview Agreement
-    url: /helion/openstack/eula/
+    url: /helion/openstack/1.1/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/3rd-party-license-agreements/
+    url: /helion/openstack/1.1/3rd-party-license-agreements/
   - text: Site Index
-    url: /helion/openstack/siteindex/
+    url: /helion/openstack/1.1/siteindex/
   commercial.ga: 
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack Documentation Home
-    url: /helion/openstack/
+    url: /helion/openstack/1.1/
   - text: Release Notes
-    url: /helion/openstack/release-notes/101/ 
+    url: /helion/openstack/1.1/release-notes/101/ 
   - text: FAQ
-    url: /helion/openstack/faq/  
+    url: /helion/openstack/1.1/faq/  
   - text: Technical Overview
-    url: /helion/openstack/technical-overview/ 
+    url: /helion/openstack/1.1/technical-overview/ 
   - text: Services Overview
-    url: /helion/openstack/services/overview/
+    url: /helion/openstack/1.1/services/overview/
   - text: Support Matrix
-    url: /helion/openstack/support-matrix/ 		
+    url: /helion/openstack/1.1/support-matrix/ 		
   - text: Installation Overview
-    url: /helion/openstack/install/overview/	
+    url: /helion/openstack/1.1/install/overview/	
   - text: Network Security
-    url: /helion/openstack/install/security/
+    url: /helion/openstack/1.1/install/security/
   - text: Back Up and Restore
-    url: /helion/openstack/backup.restore/
+    url: /helion/openstack/1.1/backup.restore/
   - text: Troubleshooting
-    url: /helion/openstack/services/troubleshooting/
+    url: /helion/openstack/1.1/services/troubleshooting/
   - text: Related Documentation
-    url: /helion/openstack/related-links/	
+    url: /helion/openstack/1.1/related-links/	
   - text: Glossary
-    url: /helion/openstack/glossary/ 	
+    url: /helion/openstack/1.1/glossary/ 	
   - text: End User License Agreement
-    url: /helion/openstack/eula/
+    url: /helion/openstack/1.1/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/3rd-party-license-agreements/	
+    url: /helion/openstack/1.1/3rd-party-license-agreements/	
   - text: Site Index
-    url: /helion/openstack/siteindex/
+    url: /helion/openstack/1.1/siteindex/
   11commercial.ga: 
   - text: HP Helion Documentation
     url: /
@@ -386,22 +386,22 @@ navigation:
     url: https://apaas-docs.hpcloud.com
   commercial.test:
   - text: Version 1.0  documentation
-    url: http://docs.hpcloud.com/helion/openstack/
+    url: http://docs.hpcloud.com/helion/openstack/1.1/
   - text: All version 1.1 documentation
-    url: /helion/openstack/siteindex/
+    url: /helion/openstack/1.1/siteindex/
   - text: Getting started with version 1.1
-    url: /helion/openstack/landing/start/
+    url: /helion/openstack/1.1/landing/start/
   - text: Installing version 1.1  
-    url: /helion/openstack/landing/install/
+    url: /helion/openstack/1.1/landing/install/
   - text: Using version 1.1
-    url: /helion/openstack/landing/dashboards/
+    url: /helion/openstack/1.1/landing/dashboards/
   - text: Services in version 1.1
-    url: /helion/openstack/landing/services/
+    url: /helion/openstack/1.1/landing/services/
   - text: Storage in version 1.1
-    url: /helion/openstack/landing/storage/
+    url: /helion/openstack/1.1/landing/storage/
   - text: Networking (Neutron) in version 1.1
-    url: /helion/openstack/landing/network/
+    url: /helion/openstack/1.1/landing/network/
   - text: Identity Management in version 1.1
-    url: /helion/openstack/services/landing/identity/
+    url: /helion/openstack/1.1/services/landing/identity/
   - text: Security in version 1.1
-    url: /helion/openstack/landing/security/
+    url: /helion/openstack/1.1/landing/security/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Add New Proxy Node"
-permalink: /helion/openstack/services/swift/deployment/add-proxy-node/
+permalink: /helion/openstack/1.1/services/swift/deployment/add-proxy-node/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p>
 --->
 
 # HP Helion OpenStack&#174;: Add New Scale-out Proxy Node
@@ -44,7 +44,7 @@ This topic shows how to add a proxy node to the store account and container ring
 
 ##Deploying new node(s) {#deploying-new-node}
 
-Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/services/swift/provision-nodes/) to deploy a new node.
+Perform the steps mentioned in  [Provision Node(s)](/helion/openstack/1.1/services/swift/provision-nodes/) to deploy a new node.
 
 
 ##Update load balancer with new Proxy nodes

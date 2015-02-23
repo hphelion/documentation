@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Editing the JSON Environment Variables File for Installation"
-permalink: /helion/openstack/install/envars/deploy/
+permalink: /helion/openstack/1.1/install/envars/deploy/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -24,11 +24,11 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/install/envars/"> &#9650; Editing the JSON Environment Variables File for Installation</a> </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/envars/"> &#9650; Editing the JSON Environment Variables File for Installation</a> </p> 
 
 # HP Helion OpenStack&reg;: JSON Environment File Deployment Scenarios
 
-Edit the [JSON file](/helion/openstack/install/envars/) based on the applicable scenario:
+Edit the [JSON file](/helion/openstack/1.1/install/envars/) based on the applicable scenario:
 
 - [Environment variables file for a KVM install](#kvm)
 - [Environment variables file for a ESX install](#esx)
@@ -114,7 +114,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 5. Save the file on the seed cloud host.
 
-6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#csv).
 
 ## Environment variables file for an ESX cloud type ## {#esx}
 
@@ -176,7 +176,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 5. Save the file on the seed cloud host.
 
-6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#csv).
 
 ### Deployment Scenario 2: HP Helion OpenStack Deployment with custom IP addresses and a VLAN provider Network for external access ### {#esxtwo}
 
@@ -236,7 +236,7 @@ All VLAN ID's & IP addresses given in the following procedure are examples of cu
 
 5. Save the file on the seed cloud host.
 
-6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#csv).
 
 ## Example JSON file {#example}
 
@@ -377,6 +377,6 @@ The following is an example of a richly configured JSON environment file for a K
 		    }
 		}
 
-[Return to HP Helion OpenStack&reg;: Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
+[Return to HP Helion OpenStack&reg;: Editing the JSON Environment Variables File for Installation](/helion/openstack/1.1/install/envars/).
 
 ----

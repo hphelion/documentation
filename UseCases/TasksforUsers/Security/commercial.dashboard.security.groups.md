@@ -55,7 +55,7 @@ Understanding how the CIDR field works is important to understanding how to cont
 
 To create a security group, do the following:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
 
@@ -79,7 +79,7 @@ To create a security group, do the following:
 
 To create security group rules, do the following:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 
 2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
 

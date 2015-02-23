@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Edition: HP Helion Ceph"
-permalink: /helion/openstack/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/
+permalink: /helion/openstack/1.1/ceph-configuration-recovery-and-backup-procedure-HP-Helion-nodes/
 product: commercial
 
 product-version1: HP Helion OpenStack
@@ -29,7 +29,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/install-beta/esx/">NEXT &#9654;</a> </p>--->
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install-beta/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/install-beta-overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/install-beta/esx/">NEXT &#9654;</a> </p>--->
 
 
 # Ceph Configuration Recovery and Backup Procedure HP Helion Nodes

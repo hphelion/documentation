@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack: Editing the JSON Environment Variables File for Installation"
-permalink: /helion/openstack/install/envars/
+permalink: /helion/openstack/1.1/install/envars/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -24,7 +24,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> &#9664; <a href="/helion/openstack/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> &#9664; <a href="/helion/openstack/1.1/install/prereqs/#envars">Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&reg;:  Editing the JSON Environment Variables File for Installation #
 
@@ -38,13 +38,13 @@ You do not need to be able to create JSON files or need to understand how it fun
 
 The installation package contains a number of JSON template files. You need to be concerned with only one or two, depending upon your install environment: `kvm-custom-ips.json` or `esx-custom-ips.json` `esx-custom-ips-vlan.json`. The files are located in the `/tripleo/config` directory after the installation package is extracted.
 
-Refer to [JSON Environment File Deployment Scenarios](/helion/openstack/install/envars/deploy/) to determine which template file is best for your environment.
+Refer to [JSON Environment File Deployment Scenarios](/helion/openstack/1.1/install/envars/deploy/) to determine which template file is best for your environment.
 
 ## Editing the JSON file
 
 A template JSON file in included in the installation package. You need to edit the JSON file to add values appropriate for your deployment.
 
-See [JSON Environment File Deployment Scenarios](/helion/openstack/install/envars/deploy/) for example JSON files.
+See [JSON Environment File Deployment Scenarios](/helion/openstack/1.1/install/envars/deploy/) for example JSON files.
 
 To edit the JSON environment variables file:
 
@@ -68,7 +68,7 @@ To edit the JSON environment variables file:
 
 5. Save the file on the seed cloud host.
 
-6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#csv).
+6. [Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#csv).
 
 
 ## Definition of Environment variables
@@ -382,7 +382,7 @@ For example:
 			},
 
 
-[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/install/prereqs/#envars).
+[Return to HP Helion OpenStack&reg;: Installation Prerequisites](/helion/openstack/1.1/install/prereqs/#envars).
 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Release Notes"
-permalink: /helion/openstack/release-notes/101/
+permalink: /helion/openstack/1.1/release-notes/101/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -23,7 +23,7 @@ PageRefresh();
 
 </script>
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p>
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p>
 -->
 # HP Helion OpenStack&reg; 1.01 Release Notes
 
@@ -41,13 +41,13 @@ The following features have been added to HP Helion OpenStack, by release.
 
 **Defect fixes** - A number of defects were addressed and fixed in this release.
 
-**Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
+**Security documentation** - A new document is included in this release that contains recommendations for securing your HP Helion OpenStack network. [Configuring your network securely](/helion/openstack/1.1/install/security/) details the firewall rules you can apply at the edge of the HP Helion OpenStack deployment to protect against external abuse and defines router rules within the HP Helion OpenStack deployment to protect against insider abuse or administrative errors.
 
-**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
+**HP Helion OpenStack Flexible Control Plane** The [HP Helion OpenStack Flexible Control Plane](/helion/openstack/1.1/flexiblecontrol/overview) introduces the capacity to deploy the control plane in a virtual environment in addition to the current baremetal physical deployment. This new configuration reduces the control plane footprint to just three servers from the current seven to ten servers.
 
 ### Features in HP Helion OpenStack 1.0 ### 
 
-**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
+**OpenStack Services** - The full set of standard [OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) is in HP Helion OpenStack: Nova (Compute), Swift (Object Operations), Cinder (Volume Operations), Neutron (Networking Operations), Glance (Image Operations), Keystone (Identity Management), Horizon (Helion dashboard), Heat (Orchestration), TripleO, and Ironic.
 
 **Note:** In Helion 1.0, the Compute service is configured to provide only a subset of measurements listed at http://docs.openstack.org/developer/ceilometer/measurements.html#compute-nova for which the origin is listed as notification. This includes: 
 
@@ -61,7 +61,7 @@ The following features have been added to HP Helion OpenStack, by release.
 <tr><td>disk.ephemeral.size</td><td>g</td><td>GB</td><td>inst ID</td><td>Size of ephemeral disk in GB</td></tr>
 </table>
 
-**Other Services** [Other services](/helion/openstack/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
+**Other Services** [Other services](/helion/openstack/1.1/services/overview/#OpenStack/#Other) included in the release include: Sherpa, Sirius, EON, DNSaaS, and DVR. 
 
 **LogStash/ElasticSearch** - This service provides enhanced security and supportability of the cloud by offering centralized logging.
 
@@ -136,7 +136,7 @@ Other issues you might experience when using HP Helion OpenStack:
 
 
 * When you resize an instance of Nova, it produces an error <!--(NOV-6664) -->. 
-* After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
+* After updating the undercloud to HP Helion OpenStack 1.01, existing HP StoreVirtual clusters might not work. The cluster is listed in the Helion Dashboard, but you might not be able to activate or unregister the cluster. If this occurs, you can [manually register a new cluster](/helion/openstack/1.1/undercloud/storage/storevirtual/#register-cluster) with the same name and information as the non-working cluster. You should be able to activate the cluster. <!-- (ANSUPDATE-155) -->
 
 * A Kernel Panic error occurs when a user employs SSH to log in to a virtual machine and attempts to connect to an IP address external to HP Helion OpenStack. <!-- (EE-21) -->
 
@@ -159,14 +159,14 @@ Other issues you might experience when using HP Helion OpenStack:
 
 For additional information about HP Helion OpenStack, OpenStack Cloud Software, and the HP Helion Support Center:
 
-* [HP Helion OpenStack Documentation web site](/helion/openstack/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
+* [HP Helion OpenStack Documentation web site](/helion/openstack/1.1/): Provides information on topics such as installation and configuration, FAQs, and applications for all of the HP Helion OpenStack product offerings.
 * [OpenStack web site](http://www.openstack.org/): Provides information on computing, networking, and storage in OpenStack, various programs such as TripleO, and the OpenStack community.
 * [HP Support Center](http://us-support.external.hp.com/portal/site/hpsc/public): Provides a way to report issues with HP Helion OpenStack.
 
 
 ###Legal Notices and Disclaimer### {#legal-notices-disclaimer}
 
-<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/commercial-3rd-party-license-agreements/).-->
+<!--See the [HP Helion OpenStack Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/commercial-3rd-party-license-agreements/).-->
 
 Linux&reg; is the registered trademark of Linus Torvalds in the U.S. and other countries.
 

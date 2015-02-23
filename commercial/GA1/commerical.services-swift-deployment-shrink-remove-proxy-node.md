@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Object Operations Service Overview"
-permalink: /helion/openstack/services/swift/deployment/remove-proxy-node/
+permalink: /helion/openstack/1.1/services/swift/deployment/remove-proxy-node/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
@@ -25,7 +25,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href=" /helion/openstack/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/overview/"> NEXT &#9654</a> </p>-->
+<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/overview/"> NEXT &#9654</a> </p>-->
 
 # HP Helion OpenStack&#174;: Remove a Proxy Node
 
