@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform PHP Database Sample"
-permalink: /helion/devplatform/workbook/database/php/
+permalink: /helion/devplatform/1.1/workbook/database/php/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -19,7 +19,7 @@ This very simple PHP web app displays the text "Executed query "SELECT "Hello Wo
  
 
 ## Prerequisites
-If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
+If you are missing any of these items, you must [install them](/helion/devplatform/1.1/appdev/).
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.1/als/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/client/) must be installed.
@@ -35,7 +35,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 4. The **MySQL** check box should be checked. If it is not, check it.
 5. Click **Save**.
 
-**Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/). 
+**Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/1.1/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/1.1/connectdatabase/). 
 
 ##Download the Application Files
 [Click here to access the code repository](https://github.com/HelionDevPlatform/helion-mysql-php/).
@@ -43,7 +43,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 ##Deploy the Application
 **Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.1/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/1.1/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
@@ -129,6 +129,6 @@ The *manifest.yml* file contains the configuration information used by ALS to se
 1. ALS requires configuration information so that it can bind to a MySQL service. Configuration information is contained in the *manifest.yml* file.
 1. You will need to provide information about which build pack to use for PHP so that ALS can create an environment for your app. Configuration information is contained in the *manifest.yml* file.
 1. You will need to retrieve connection information for MySQL from the application's environment variables and then parse that information into a connection string that can be used by PHP.
-1. You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+1. You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/1.1/eclipse/).
 
-[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/helloworld/php/) | [Next Sample](/helion/devplatform/workbook/messaging/php/)
+[Exit Samples](/helion/devplatform/1.1/appdev) | [Previous Sample](/helion/devplatform/1.1/workbook/helloworld/php/) | [Next Sample](/helion/devplatform/1.1/workbook/messaging/php/)

@@ -42,7 +42,7 @@ The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
 applications from source code on your local machine you will need to install and use the Helion [Application Lifestyle Service client](/helion/devplatform/1.1/als/user/client/#helion-client-setup).
 
-There is also an [Eclipse plugin](/helion/devplatform/eclipse/) available for the Management Console to facilitate pushing applications.
+There is also an [Eclipse plugin](/helion/devplatform/1.1/eclipse/) available for the Management Console to facilitate pushing applications.
 
 ## Application Lifecycle Service Client {#helion-client}
 
@@ -121,7 +121,7 @@ working directory and push it to Application Lifecycle Service for further stagi
 
 ### Sample Applications[](#sample-applications "Permalink to this headline")
 
-Small [sample applications](/helion/devplatform/appdev/) in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.
+Small [sample applications](/helion/devplatform/1.1/appdev/) in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.
 
 Additional more advanced sample applications are available from [Application Lifecycle Service-Apps](https://github.com/Stackato-Apps) on Github, each with a
 README.md file showing how to deploy it on Application Lifecycle Service.

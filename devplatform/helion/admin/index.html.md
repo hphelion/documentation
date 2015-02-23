@@ -24,7 +24,7 @@ guide covers how to set it up and how to configure it for your end
 users.
 
 ##Wizard-Based Cluster Creation {#wizard-based-cluster-creation}
-You can easily create and access Application Lifecycle Service clusters from the [Project Dashboard](/helion/devplatform/deploy/)       
+You can easily create and access Application Lifecycle Service clusters from the [Project Dashboard](/helion/devplatform/1.1/deploy/)       
 
 
 ##Helion Development Platform Management Console {#management-console}

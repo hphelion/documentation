@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Node Database Sample"
-permalink: /helion/devplatform/workbook/database/node/
+permalink: /helion/devplatform/1.1/workbook/database/node/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -20,7 +20,7 @@ SME1: Sam C
 This very simple Node.js app displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
 ## Prerequisites
-If you are missing any of these items, you will need to [install them](/helion/devplatform/appdev/).
+If you are missing any of these items, you will need to [install them](/helion/devplatform/1.1/appdev/).
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.1/als/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/client/) must be installed.
@@ -36,7 +36,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 4. The **MySQL** check box should be checked. If it is not, check it.
 5. Click **Save**.
 
-**Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/). 
+**Note**: If a more durable or scalable MySQL database service is needed, configure your ALS cluster to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/1.1/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/1.1/connectdatabase/). 
 
 ##Download the Application Files
 [Click here to access the code repository](https://github.com/HelionDevPlatform/helion-mysql-node/).
@@ -44,7 +44,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 ##Deploy the Application
 **Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.1/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
 
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/1.1/eclipse/).
 
 1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
@@ -138,6 +138,6 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service. Configuration information is contained in the *manifest.yml* file.
 2.	You need to retrieve connection information for MySQL from the application's environment variables, and parse the information into a JDBC compliant connection string.
-3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/1.1/eclipse/).
 
-[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/helloworld/node/) | [Next Sample](/helion/devplatform/workbook/messaging/node/)
+[Exit Samples](/helion/devplatform/1.1/appdev) | [Previous Sample](/helion/devplatform/1.1/workbook/helloworld/node/) | [Next Sample](/helion/devplatform/1.1/workbook/messaging/node/)

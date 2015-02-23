@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion OpenStack Development Platform Community Installation"
-permalink: /helion/devplatform/install/community/
+permalink: /helion/devplatform/1.1/install/community/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -35,9 +35,9 @@ PageRefresh();
 
 # HP Helion Development Platform: Community Installation and Configuration
 
-The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/).
+The HP Helion Development Platform currently contains four products: [Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service](/helion/devplatform/1.1/).
 
-**NOTE**: If you are installing the HP Helion Development Platform **Commercial** edition, follow the [HP Helion Development Commercial Installation and Configuration](/helion/devplatform/install/) instructions instead.
+**NOTE**: If you are installing the HP Helion Development Platform **Commercial** edition, follow the [HP Helion Development Commercial Installation and Configuration](/helion/devplatform/1.1/install/) instructions instead.
 
 The following topics explain how to install and configure the HP Helion Development Platform.
 
@@ -419,7 +419,7 @@ In the **Configure Services** panel locate the Marketplace item in the Configure
 				sudo service haproxy reload
 
 
-4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
+4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/1.1/marketplace/#install).
 
 
 ## Troubleshooting {#troubleshooting}

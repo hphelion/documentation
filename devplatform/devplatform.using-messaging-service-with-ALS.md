@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Using the Messaging Service with ALS"
-permalink: /helion/devplatform/msgaas/als/
+permalink: /helion/devplatform/1.1/msgaas/als/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -23,7 +23,7 @@ If the Helion OpenStack&reg; cloud was configured with three availability zones,
 
 To use the Messaging Service ALS, you need to:
 
-1. [Create a RabbitMQ cluster](/helion/devplatform/messageservice/#create) from the OpenStack Dashboard if a cluster does not already exist. 
+1. [Create a RabbitMQ cluster](/helion/devplatform/1.1/messageservice/#create) from the OpenStack Dashboard if a cluster does not already exist. 
 2.	Once a cluster has been created, you can connect an application deployed to ALS with the Messaging Service.
 3.	To connect, you must create an environment variable in the *manifest.yml* file of the application you wish to connect to the Messaging Service. This will tell your application how to connect to the cluster using AMQP. The environment variable can be named anything you prefer. We will use **MQ\_URL** in this example.
 	1.	The connection string and MQ_URL value will look something like: 

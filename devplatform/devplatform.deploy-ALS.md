@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Deploying the Application Lifecycle Service"
-permalink: /helion/devplatform/deploy/
+permalink: /helion/devplatform/1.1/deploy/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -26,7 +26,7 @@ The document covers the following sections:
 - [Configuring and Deploying  an ALS Cluster](#configure)
 
 ##Prerequisites {#prereq}
-You need to have [installed](/helion/devplatform/install/) the Helion Development Platform.
+You need to have [installed](/helion/devplatform/1.1/install/) the Helion Development Platform.
 
 ##Configuring an ALS Cluster {#configure}
 1.	In the Horizon UI, from the **Project** tab, open the **Application Lifecycle Service** tab, and select the **Clusters** sub-tab.<br><img src="media/ALSConfig1.png"/>
@@ -47,7 +47,7 @@ You need to have [installed](/helion/devplatform/install/) the Helion Developmen
 
 5.	Select the **Application Services** tab of the **Create Cluster** dialog, and choose the application services to enable in the cluster.<br><img src="media/ALSConfig4.png"/>
 
-6.	Select the **Database** tab of the **Create** **Cluster** dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an OpenStack&reg; MySQL database can be found [here](/helion/devplatform/connectdatabase/). <br><img src="media/ALSConfig5.png"/>
+6.	Select the **Database** tab of the **Create** **Cluster** dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an OpenStack&reg; MySQL database can be found [here](/helion/devplatform/1.1/connectdatabase/). <br><img src="media/ALSConfig5.png"/>
  
 7.	Click on the **Create** button. You will see the cluster building as shown below.<br><img src="media/ALSConfig6.png"/>
  

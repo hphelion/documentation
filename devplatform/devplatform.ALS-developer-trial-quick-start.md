@@ -1,7 +1,7 @@
 ---
 layout: trial-quick-start-devplatform
 title: "Quick Start Developer Trial"
-permalink: /helion/devplatform/ALS-developer-trial-quick-start/
+permalink: /helion/devplatform/1.1/ALS-developer-trial-quick-start/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -83,7 +83,7 @@ After the *cf-mgmt* tool creates the cluster, it presents you with the ALS Conso
 After you log into the Console, you may wish to access the [ALS User Documentation](/helion/devplatform/1.1/als/user/) for further instructions for creating users and deploying applications.
 
 ## Explore Sample Applications {#samples}
-Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
+Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/1.1/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&reg; services. 
 
 ## Troubleshooting and Termination {#terminate}
 If an error occurs during installation, the easiest response is simply to terminate the cluster and start over. You can also terminate the cluster when you are done exploring your Developer Quick Start Trial.

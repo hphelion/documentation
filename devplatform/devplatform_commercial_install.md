@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion OpenStack Development Platform Installation"
-permalink: /helion/devplatform/install/
+permalink: /helion/devplatform/1.1/install/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -25,7 +25,7 @@ The HP Helion Development Platform currently contains four products: Application
 
 The following topics explain how to install and configure the HP Helion Development Platform.
 
-**NOTE**: If you are installing the HP Helion Development Platform **Community** edition, follow the [HP Helion Development Community Installation and Configuration](/helion/devplatform/install/community/) instructions instead.
+**NOTE**: If you are installing the HP Helion Development Platform **Community** edition, follow the [HP Helion Development Community Installation and Configuration](/helion/devplatform/1.1/install/community/) instructions instead.
 
 * [Prerequisites](#prerequisites)
 * [Installing the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
@@ -421,7 +421,7 @@ In the **Configure Services** panel locate the Application Lifecycle Service ite
 				sudo service haproxy reload
 
 
-4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
+4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/1.1/marketplace/#install).
 
 
 Your installation is now complete. If you have problems, refer to the following Troubleshooting section
