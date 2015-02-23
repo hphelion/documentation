@@ -205,6 +205,7 @@ Review the following topics related to Object Storage (Swift) deployment:
 		* [Network Access (Ping)](/helion/openstack/1.1/services/object/swift/monitor-network-access-ping/)
 		* [Drive Audit]( /helion/openstack/1.1/services/object/swift/monitor-swift-drive-audit/)
 		* [File Ownership](/helion/openstack/1.1/services/object/swift/file-ownership/)
+		* [Diagnosis of disk health using hpssacli utility for HP servers](/helion/openstack/1.1/services/swift/diagnosis-disk-health/hpssacli/)
 
 - [Ringos Tool Overview](/helion/openstack/1.1/GA1/services/object/pyringos/)
 
