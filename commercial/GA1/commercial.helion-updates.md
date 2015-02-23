@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "HP HP Helion OpenStack&#174; 1.1 Update Procedure"
- "
 permalink: /helion/openstack/updates/
 product: commercial.ga
 product-version1: HP Helion OpenStack
