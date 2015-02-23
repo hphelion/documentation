@@ -32,7 +32,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/technical-overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix/"> NEXT &#9654</a> </p>  
 -->
 
-# HP Helion OpenStack&reg; Services Overview
+# HP Helion OpenStack&reg; 1.1: Services Overview
 
 OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.
 

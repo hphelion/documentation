@@ -32,7 +32,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/services/reporting/overview/"> NEXT &#9654</a> </p> --->
 
 
-# HP Helion OpenStack&#174; Installation Troubleshooting
+# HP Helion OpenStack&#174; 1.1: Installation Troubleshooting
 
 This topic provides possible solutions to known issues.
 
@@ -344,7 +344,29 @@ Before you install the HP Helion OpenStack DNSaaS or if you want to use Heat wit
 **Note**: You must have admin ssh access to the overcloud controller.
 <hr>
 
+
+## Seed Generates Restarting libvertd Script Error  {#seed-error}
+
+**System Behavior/Message**
+
+When starting your seed VM, if the script fails showing:
+
+    + echo 'Restarting libvirtd...'
+    Restarting libvirtd...
+    + '[' -e /etc/debian_version ']'
+    + service libvirt-bin restart
+    stop: Unknown job: libvirt-bin
+    start: Unknown job: libvirt-bin
+
+
+**Resolution**
+
+This problem can be caused by your use of `sudo –E` when executing the `hp_ced_host_manager`. Run  `hp_ced_host_manager ` without specifying `sudo –E`.
+
+<hr>
+
 <br>
+
 ## Node in Error Cannot be Controlled by Ironic or Nova {#ironic-error}
 
 **System Behavior/Message**
