@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/ruby/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/ruby/
 published: false
 title: "Developing In Ruby"
 product-version1: HP Helion Development Platform
@@ -47,8 +47,8 @@ the command to run. For example,</p>
 a console application.</p>
 <p>To learn more see:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://docs.hpcloud.com/als/v1/user/deploy/languages/ruby/">Working with applications in ruby</a></li>
-<li>The [manifest.yml](/als/v1/user/deploy/manifestyml/) reference</a></li>
+<li><a class="reference external" href="http://docs.hpcloud.com/helion/devplatform/1.1/als/user/deploy/languages/ruby/">Working with applications in ruby</a></li>
+<li>The [manifest.yml](/helion/devplatform/1.1/als/user/deploy/manifestyml/) reference</a></li>
 </ul>
 </div>
 <div class="section" id="hp-helion-sdk">
@@ -91,14 +91,14 @@ services.</p>
 To learn more about getting and using the SDK see:
 
 
-- [Get Started With the Ruby Library](/als/v1/user/deploy/languages/ruby/getstarted)
-- [Connecting To The Service](/als/v1/user/deploy/languages/ruby/connect)
-- [Object Storage Examples](/als/v1/user/deploy/languages/ruby/objectstore)
+- [Get Started With the Ruby Library](/helion/devplatform/1.1/als/user/deploy/languages/ruby/getstarted)
+- [Connecting To The Service](/helion/devplatform/1.1/als/user/deploy/languages/ruby/connect)
+- [Object Storage Examples](/helion/devplatform/1.1/als/user/deploy/languages/ruby/objectstore)
 
 
 **Note**
 
-See [Buildpacks](/als/v1/user/deploy/buildpack/#buildpacks) for an alternative way
+See [Buildpacks](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks) for an alternative way
 to deploy Ruby on Rails applications.
 
 ### Using Ruby 2.0[](#using-ruby-2-0 "Permalink to this headline")
@@ -172,8 +172,8 @@ Non-HTTP apps that run as an Application Lifecycle Service application under the
 the Health Manager.
 
 To deploy worker applications, you need to use the
-[*command*](/als/v1/user/deploy/manifestyml/#command) key and set the
-[*processes: web*](/als/v1/user/deploy/manifestyml/#web)
+[*command*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#command) key and set the
+[*processes: web*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#web)
 key to Null ("\~").
 
 ### Example[](#example "Permalink to this headline")
@@ -216,7 +216,7 @@ To run `rake stats`, for instance, use the
     $ helion run *appname* bundle exec rake stats
 
 See the [Command
-Reference](/als/v1/user/reference/client-ref/#command-ref-client) for
+Reference](/helion/devplatform/1.1/als/user/reference/client-ref/#command-ref-client) for
 details on the use of `helion run`.
 
 References[](#references "Permalink to this headline")

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/perl/mojo/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/mojo/
 published: false
 title: "Mojolicious"
 product-version1: HP Helion Development Platform
@@ -50,7 +50,7 @@ The *app.pl* file contains the core functionality:
 
 The *manifest.yml* file contains deployment instructions for Application Lifecycle Service.
 See complete details for this file in the [*Configuration With
-manifest.yml*](/als/v1/user/deploy/manifestyml/) section.
+manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/) section.
 
 Examples[](#examples "Permalink to this headline")
 ---------------------------------------------------

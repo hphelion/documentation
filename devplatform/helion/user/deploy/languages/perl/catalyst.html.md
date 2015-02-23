@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/perl/catalyst/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/catalyst/
 published: false
 title: "Catalyst"
 product-version1: HP Helion Development Platform
