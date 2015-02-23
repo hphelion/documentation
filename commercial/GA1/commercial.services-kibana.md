@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Kibana Service"
-permalink: /helion/commercial/services/kibana/
+permalink: /helion/commercial/1.1/services/kibana/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1

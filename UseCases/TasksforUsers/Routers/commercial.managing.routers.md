@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174;  Managing Routers"
-permalink: /helion/commercial/dashboard/managing/routers/
+permalink: /helion/commercial/1.1/dashboard/managing/routers/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Routers
@@ -39,9 +39,9 @@ Access the router commands using the Networks panel on the Project dashboard.
 
 The Network panel contains commands to view a visual representation of your network and to enable you to work with your router.
 
-* [Create a Router](/helion/commercial/dashboard/managing/router/create/)
-* [Delete a Router](/helion/commercial/dashboard/managing/router/delete/)
-* [Connect a network to a router](/helion/commercial/dashboard/managing/router/connect/)
+* [Create a Router](/helion/commercial/1.1/dashboard/managing/router/create/)
+* [Delete a Router](/helion/commercial/1.1/dashboard/managing/router/delete/)
+* [Connect a network to a router](/helion/commercial/1.1/dashboard/managing/router/connect/)
 * Add / Remove an external network to/from a Router</li>
 </ul>
 
@@ -51,8 +51,8 @@ As an admin user, you can work on all of the network(s) in your domain, regardle
 
 An admin can create a shared network, which can be seen in every project in the domain. You can also create an external network.
 
-* [Create a shared network](/helion/commercial/dashboard/managing/network/shared/)
-* [Create an external network](/helion/commercial/dashboard/managing/network/external/)
+* [Create a shared network](/helion/commercial/1.1/dashboard/managing/network/shared/)
+* [Create an external network](/helion/commercial/1.1/dashboard/managing/network/external/)
 
 Access the router commands using the System panel on the Admin dashboard. 
 

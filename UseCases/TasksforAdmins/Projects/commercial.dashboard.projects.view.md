@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Viewing Projects"
-permalink: /helion/commercial/dashboard/managing/projects/viewing/
+permalink: /helion/commercial/1.1/dashboard/managing/projects/viewing/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Viewing all projects in the domain
@@ -37,7 +37,7 @@ As an admin, you can view a list of all projects in a domain and view informatio
 
 	The project name and details; users associated with the project, and project quotas are displayed.
 
-	For information on modifying these settings, see [Managing Projects](/helion/commercial/dashboard/managing/projects/).
+	For information on modifying these settings, see [Managing Projects](/helion/commercial/1.1/dashboard/managing/projects/).
 
 4. Click **Cancel** to exit the screen. 
 

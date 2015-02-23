@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Deleting a Router"
-permalink: /helion/commercial/dashboard/managing/router/delete/
+permalink: /helion/commercial/1.1/dashboard/managing/router/delete/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Deleting a Router
@@ -33,7 +33,7 @@ You must remove all router interfaces before deleting the router, by removing al
 
 2. Click the **Network Topology** link on the **Project** dashboard **Network** panel.
 
-	Determine if the router is connected to a network using the [Network Topology screen](/helion/commercial/dashboard/managing/network/viewing/):
+	Determine if the router is connected to a network using the [Network Topology screen](/helion/commercial/1.1/dashboard/managing/network/viewing/):
 
 	<br><img src="NetworkConnections.png"  alt="" />
 

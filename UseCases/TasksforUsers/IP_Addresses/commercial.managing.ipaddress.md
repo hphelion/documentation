@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Floating IP Addresses"
-permalink: /helion/commercial/dashboard/managing/ipaddresses/
+permalink: /helion/commercial/1.1/dashboard/managing/ipaddresses/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Floating IP Addresses
@@ -31,8 +31,8 @@ You can use the dashboards to create a floating IP address pool that contains IP
 
 As a user, you can:
 
-* [Associate a floating IP address with an instance](/helion/commercial/dashboard/managing/ipaddresses/associate/)
-* [Allocate (create) new floating IP addresses](/helion/commercial/dashboard/managing/ipaddresses/associate/)
+* [Associate a floating IP address with an instance](/helion/commercial/1.1/dashboard/managing/ipaddresses/associate/)
+* [Allocate (create) new floating IP addresses](/helion/commercial/1.1/dashboard/managing/ipaddresses/associate/)
 
 ### Managing your floating IP addresses as an admin ###
 

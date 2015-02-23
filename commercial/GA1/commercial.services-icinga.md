@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Icinga Service"
-permalink: /helion/commercial/services/icinga/
+permalink: /helion/commercial/1.1/services/icinga/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1

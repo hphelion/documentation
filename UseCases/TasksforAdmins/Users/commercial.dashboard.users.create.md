@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating Users"
-permalink: /helion/commercial/dashboard/managing/users/create/
+permalink: /helion/commercial/1.1/dashboard/managing/users/create/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating and Deleting Users
@@ -29,7 +29,7 @@ As an admin, you can [create](#createuser) and [delete](#deleteuser) users.
 
 To create a user:
 
-**Note:** At least [one project must exist](/helion/commercial/dashboard/managing/projects/) before you can create users.
+**Note:** At least [one project must exist](/helion/commercial/1.1/dashboard/managing/projects/) before you can create users.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 

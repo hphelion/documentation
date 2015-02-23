@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Pausing Instances"
-permalink: /helion/commercial/dashboard/managing/instances/pause/
+permalink: /helion/commercial/1.1/dashboard/managing/instances/pause/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Pausing and Un-pausing Instances
@@ -28,7 +28,7 @@ When a user *pauses* an instance, the instance  remains running, but, in a froze
 Users can suspend an instance, for example, in order to make a back up of an instance to prevent the instance  from being used during the process.
 
 
-**Note:** Pausing is different from <a href="/helion/commercial/dashboard/managing/instances/suspend/">suspending an instance</a>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.  
+**Note:** Pausing is different from <a href="/helion/commercial/1.1/dashboard/managing/instances/suspend/">suspending an instance</a>. Suspending stops the instance, stores the contents on the disk. the memory and vCPUs become available to create other instances.  
 
 
 ### Pause an instance ###

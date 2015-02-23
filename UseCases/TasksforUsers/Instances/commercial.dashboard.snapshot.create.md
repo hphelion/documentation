@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating Instance Snapshots"
-permalink: /helion/commercial/dashboard/managing/snapshots/create/
+permalink: /helion/commercial/1.1/dashboard/managing/snapshots/create/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating an Instance Snapshot
@@ -43,7 +43,7 @@ To create a snapshot:
 
 When you create a snapshot, by default the snapshot image can be used only with the current project and it can be deleted.
 
-You can [make the snapshot public](/helion/commercial/dashboard/managing/images/public/) for use in all projects in the domain and you can [protect the image](/helion/commercial/dashboard/managing/images/protect/) from being deleted. 
+You can [make the snapshot public](/helion/commercial/1.1/dashboard/managing/images/public/) for use in all projects in the domain and you can [protect the image](/helion/commercial/1.1/dashboard/managing/images/protect/) from being deleted. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

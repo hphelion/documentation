@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating Images"
-permalink: /helion/commercial/dashboard/managing/images/create/
+permalink: /helion/commercial/1.1/dashboard/managing/images/create/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating Images
@@ -55,7 +55,7 @@ When the ISO image file is complete and ready for use, you use HP Helion OpenSta
 
 5. Click **Create Image** to launch the image.	
 
-6. Optionally, you can click **Launch** to [create a running instance](/helion/commercial/dashboard/managing/instances/create/) based on this image.
+6. Optionally, you can click **Launch** to [create a running instance](/helion/commercial/1.1/dashboard/managing/instances/create/) based on this image.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

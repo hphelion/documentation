@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Adding and Removing Subnets"
-permalink: /helion/commercial/dashboard/managing/network/subnet/
+permalink: /helion/commercial/1.1/dashboard/managing/network/subnet/
 product: commercial.ga
 
 ---
@@ -18,18 +18,18 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Adding and Removing Subnets
 
-When a [network is created](/helion/commercial/dashboard/managing/network/create/), a subnet (short for *subnetwork*) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.
+When a [network is created](/helion/commercial/1.1/dashboard/managing/network/create/), a subnet (short for *subnetwork*) can be assigned upon creation. However, you might need to add a subnet to a network at a later time.
 
 A subnet is a logically visible subdivision of a network. A subnet enables you to group instances logically, while maintaining a single network address to connect to the Internet.
 
 An admin user can create and delete subnets as needed. 
 
-	**Note:** Before you delete a subnet, you must first [delete all ports](/helion/commercial/dashboard/managing/network/ports/) associated with the subnet.
+	**Note:** Before you delete a subnet, you must first [delete all ports](/helion/commercial/1.1/dashboard/managing/network/ports/) associated with the subnet.
 
 ### Add a subnet</h3>
 
@@ -71,7 +71,7 @@ An admin user can create and delete subnets as needed.
 
 ### Delete a subnet ### {#deleteport}</h3>
 
-Before you delete a subnet, you must first [delete all ports](/helion/commercial/dashboard/managing/network/ports/) associated with the subnet.
+Before you delete a subnet, you must first [delete all ports](/helion/commercial/1.1/dashboard/managing/network/ports/) associated with the subnet.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
 

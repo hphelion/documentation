@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack Commercial Managing Domains"
-permalink: /helion/commercial/dashboard/managing/domains/
+permalink: /helion/commercial/1.1/dashboard/managing/domains/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174;  Managing the Domain</h1>
@@ -33,8 +33,8 @@ A flavor defines the compute, memory, and storage capacity of a virtual server t
 
 Use the System panel on the Admin dashboard to:
 
-* [Create, modify, and delete flavors](/helion/commercial/dashboard/managing/flavors/)
-* [Modify access to a flavor](/helion/commercial/dashboard/managing/flavors/access/)
+* [Create, modify, and delete flavors](/helion/commercial/1.1/dashboard/managing/flavors/)
+* [Modify access to a flavor](/helion/commercial/1.1/dashboard/managing/flavors/access/)
 </ul>
 
 ### Managing images for a domain ###
@@ -43,7 +43,7 @@ A virtual machine image is a single file which contains a virtual disk that has 
 
 As an admin, you can determine if an image is available only in the current project or to all projects in the domain (public).
 
-* [Make an instance snapshot public](/helion/commercial/dashboard/managing/snapshots/public/)
+* [Make an instance snapshot public](/helion/commercial/1.1/dashboard/managing/snapshots/public/)
 
 ### Managing Availability Zone and Host Aggregates for a domain</h3>
 
@@ -51,7 +51,7 @@ Host aggregates are a mechanism to further partition an availability zone. Host 
 
 Use the **System** panel in the **Admin** dashboard to modify the availability zones and aggregates for your domain.
 
-* [Create, modify, delete host aggregates](/helion/commercial/dashboard/managing/aggregates/)
+* [Create, modify, delete host aggregates](/helion/commercial/1.1/dashboard/managing/aggregates/)
 
 <!-- not in Community
 ### Enabling and disabling services ###

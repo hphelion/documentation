@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Block Storage Volumes"
-permalink: /helion/commercial/dashboard/managing/volumes/
+permalink: /helion/commercial/1.1/dashboard/managing/volumes/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Block Storage Volumes
@@ -33,10 +33,10 @@ How you interact with these images depends upon your user type, either an admini
 
 As a user, you can work with any volume associated with the active project. 
 
-* [Create, edit and delete a volume](/helion/commercial/dashboard/managing/volume/create/)
-* [Create and delete a snapshot from a volume](/helion/commercial/dashboard/managing/snapshots/create/)
-* [Extend the size of a volume](/helion/commercial/dashboard/managing/volume/extend/)
-* [Attach a volume to a VM instance and detach a volume from VM instance](/helion/commercial/dashboard/managing/volume/attach/)
+* [Create, edit and delete a volume](/helion/commercial/1.1/dashboard/managing/volume/create/)
+* [Create and delete a snapshot from a volume](/helion/commercial/1.1/dashboard/managing/snapshots/create/)
+* [Extend the size of a volume](/helion/commercial/1.1/dashboard/managing/volume/extend/)
+* [Attach a volume to a VM instance and detach a volume from VM instance](/helion/commercial/1.1/dashboard/managing/volume/attach/)
 
 ## <h2>Managing volumes as an admin ##
 

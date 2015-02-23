@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Security"
-permalink: /helion/commercial/dashboard/managing/security/
+permalink: /helion/commercial/1.1/dashboard/managing/security/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Security
@@ -39,9 +39,9 @@ Access the security commands using the Compute panel on the Project dashboard.
 
 Click Access &amp; Security to work with security groups and rules to perform the following tasks:
 
-* [Create a security group](/helion/commercial/dashboard/managing/security/groups/)
-* [Create security group rules](/helion/commercial/dashboard/managing/security/groups/)
-* [Managing Key Pairs](/helion/commercial/dashboard/managing/security/keypairs/)
+* [Create a security group](/helion/commercial/1.1/dashboard/managing/security/groups/)
+* [Create security group rules](/helion/commercial/1.1/dashboard/managing/security/groups/)
+* [Managing Key Pairs](/helion/commercial/1.1/dashboard/managing/security/keypairs/)
 
 ## Managing security as an admin ##
 
@@ -52,7 +52,7 @@ As an admin user, you can work on all of the security groups in your domain, reg
 
 As an admin, you can use role assignments to control access to projects and domains.
 
-Use the Identity panel in the Admin dashboard to [allow users to access groups](/helion/commercial/dashboard/managing/projects/users/). 
+Use the Identity panel in the Admin dashboard to [allow users to access groups](/helion/commercial/1.1/dashboard/managing/projects/users/). 
 
 * Manage role assignment for Users to Domains
 * Manage role assignment for Users to Projects
@@ -64,7 +64,7 @@ Use the Identity panel in the Admin dashboard to [allow users to access groups](
 
 As an admin, you can use the Identity panel in the Admin dashboard to change a user's password.
 
-See: [Changing a User Password](/helion/commercial/dashboard/managing/users/password/change/).
+See: [Changing a User Password](/helion/commercial/1.1/dashboard/managing/users/password/change/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -92,11 +92,11 @@ HP Helion OpenStack uses the following services or software to present user inte
 <br>Learn about the Horizon dashboard to create and manage HP Helion OpenStack resources.
 <hr>
 
-[Icinga](/helion/commercial/services/icinga/)
+[Icinga](/helion/commercial/1.1/services/icinga/)
 <br>Learn abou the Icinga service to monitor the disk usage of Swift storage node(s).
 <hr>
 
-[Kibana](/helion/commercial/services/kibana/)
+[Kibana](/helion/commercial/1.1/services/kibana/)
 <br>Learn about the Kibana service to view logging data across the HP Helion OpenStack cloud.
 
 ## Installation services ## {#install}

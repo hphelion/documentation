@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Object Storage"
-permalink: /helion/commercial/dashboard/managing/objects/
+permalink: /helion/commercial/1.1/dashboard/managing/objects/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Object Storage
@@ -28,15 +28,15 @@ With object store, objects and files are written to multiple disk drives spread 
 You can use the dashboards to create and configure container store instances and move files in and out of store. 
 <p>How you interact with these store instance depends upon your user type, either an administrative user (admin) or a non-administrative user (user). 
 
-**Note:** The administrative user can perform all of the user tasks in addition to the admin tasks, such as [setting a quota for volumes](/helion/commercial/dashboard/managing/projects/).
+**Note:** The administrative user can perform all of the user tasks in addition to the admin tasks, such as [setting a quota for volumes](/helion/commercial/1.1/dashboard/managing/projects/).
 
 ### Managing object storage as a user ###
 
 As a user, you can work with any object storage container associated with the active project. 
 
-* [Create and delete a container](/helion/commercial/dashboard/managing/container/create/)
-* [Upload an object into or download an object from a container](/helion/commercial/dashboard/managing/container/upload/)
-* [Edit and delete an object in a container](/helion/commercial/dashboard/managing/container/edit/)
+* [Create and delete a container](/helion/commercial/1.1/dashboard/managing/container/create/)
+* [Upload an object into or download an object from a container](/helion/commercial/1.1/dashboard/managing/container/upload/)
+* [Edit and delete an object in a container](/helion/commercial/1.1/dashboard/managing/container/edit/)
 
 ### Managing object storage as an admin ###
 

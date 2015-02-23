@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating, Editing and Deleting Volumes"
-permalink: /helion/commercial/dashboard/managing/volume/create/
+permalink: /helion/commercial/1.1/dashboard/managing/volume/create/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174;Creating, Editing, and Deleting Volumes
@@ -66,7 +66,7 @@ Volumes are block devices that can be attached to instances.
 
 6. Click **Edit Volume** to confirm. 
 
-	**Note:** You can [extend a volume](/helion/commercial/dashboard/managing/volume/extend/) by using the **Extend Volume** option available in the **More** drop-down list and entering the new value for volume size.
+	**Note:** You can [extend a volume](/helion/commercial/1.1/dashboard/managing/volume/extend/) by using the **Extend Volume** option available in the **More** drop-down list and entering the new value for volume size.
 
 ### Delete a volume ###
 

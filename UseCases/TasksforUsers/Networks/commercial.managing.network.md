@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Networks"
-permalink: /helion/commercial/dashboard/managing/networks/
+permalink: /helion/commercial/1.1/dashboard/managing/networks/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Networks
@@ -39,9 +39,9 @@ Access the networking commands using the **Networks** panel on the **Project** d
 
 The **Network** panel contains commands to view a visual representation of your network and to enable you to work with your network.
 
-* [View your network](/helion/commercial/dashboard/managing/network/viewing/)
-* [Create or delete a network](/helion/commercial/dashboard/managing/network/create/)
-* [Enable or disable a network](/helion/commercial/dashboard/managing/network/enable/)
+* [View your network](/helion/commercial/1.1/dashboard/managing/network/viewing/)
+* [Create or delete a network](/helion/commercial/1.1/dashboard/managing/network/create/)
+* [Enable or disable a network](/helion/commercial/1.1/dashboard/managing/network/enable/)
 
 ## Managing your network as an admin ##
 
@@ -51,9 +51,9 @@ In addition to all of the user tasks, you can also make a network a shared netwo
 
 Access the networking commands using the **System** panel on the **Admin** dashboard. 
 
-* [Creating externally available networks](/helion/commercial/dashboard/managing/network/external/create/)
-* [Add or remove a subnet to/from a Network](/helion/commercial/dashboard/managing/network/subnet/)
-* [Create, Modify, or Delete a port on a Network](/helion/commercial/dashboard/managing/network/ports/)
+* [Creating externally available networks](/helion/commercial/1.1/dashboard/managing/network/external/create/)
+* [Add or remove a subnet to/from a Network](/helion/commercial/1.1/dashboard/managing/network/subnet/)
+* [Create, Modify, or Delete a port on a Network](/helion/commercial/1.1/dashboard/managing/network/ports/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

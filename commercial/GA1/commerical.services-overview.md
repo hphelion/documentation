@@ -139,11 +139,11 @@ See [Overview of the Horizon Service](/helion/openstack/1.1/services/horizon/ove
 
 **Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.
 
-See [Overview of the Icinga Service](/helion/commercial/services/icinga/).
+See [Overview of the Icinga Service](/helion/commercial/1.1/services/icinga/).
 
 **Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/1.1/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
 
-See [Overview of the Icinga Service](/helion/commercial/services/kibana/).
+See [Overview of the Icinga Service](/helion/commercial/1.1/services/kibana/).
 
 ## Installation services ## {#install}
 

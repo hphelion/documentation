@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Managing Images"
-permalink: /helion/commercial/dashboard/managing/images/
+permalink: /helion/commercial/1.1/dashboard/managing/images/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Managing Images
@@ -29,7 +29,7 @@ To create an image, you upload an ISO image file. After you upload an image, it 
 
 You can use the dashboards to create and configure private virtual machine images, which can be used to create instances.
 
-**Note:** You can also [create an image based on an instance](/helion/commercial/dashboard/managing/images/public/), which is called a *snapshot*.
+**Note:** You can also [create an image based on an instance](/helion/commercial/1.1/dashboard/managing/images/public/), which is called a *snapshot*.
 
 How you interact with these images depends upon your user type, either an administrative user (admin) or a non-administrative user (user). 
 
@@ -43,11 +43,11 @@ Access the image commands using the Compute panel on the Project dashboard.
 
 Click **Images** to perform the following tasks:
 
-* [Create an image](/helion/commercial/dashboard/managing/images/create/)
-* [Modify an image](/helion/commercial/dashboard/managing/images/modify/)
-* [Delete an image](/helion/commercial/dashboard/managing/images/delete/)
-* [View image details](/helion/commercial/dashboard/managing/images/details/)
-* [Protect an image or snapshot from being edited](/helion/commercial/dashboard/managing/images/protect/)
+* [Create an image](/helion/commercial/1.1/dashboard/managing/images/create/)
+* [Modify an image](/helion/commercial/1.1/dashboard/managing/images/modify/)
+* [Delete an image](/helion/commercial/1.1/dashboard/managing/images/delete/)
+* [View image details](/helion/commercial/1.1/dashboard/managing/images/details/)
+* [Protect an image or snapshot from being edited](/helion/commercial/1.1/dashboard/managing/images/protect/)
 
 
 ## Managing images as an admin ##
@@ -58,7 +58,7 @@ Access the admin image commands using the System Panel  on the Admin dashboard.
 
 As an admin, you can determine if the snapshot is available only in the current project or to all projects in the domain.
 
-* [Make an image or snapshot public](/helion/commercial/dashboard/managing/images/public/)
+* [Make an image or snapshot public](/helion/commercial/1.1/dashboard/managing/images/public/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

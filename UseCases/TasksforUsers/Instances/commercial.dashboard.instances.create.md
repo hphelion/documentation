@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating Instances"
-permalink: /helion/commercial/dashboard/managing/instances/create/
+permalink: /helion/commercial/1.1/dashboard/managing/instances/create/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174; Creating Instances
@@ -58,7 +58,7 @@ To create an instance:
 
 	* Select the volume, snapshot, or image from the list that appears.
 
-		Additonal fields appear for the boot source option that create a new volume. For more information, refer to [Managing Block Storage Volumes](/helion/commercial/dashboard/managing/volumes/).
+		Additonal fields appear for the boot source option that create a new volume. For more information, refer to [Managing Block Storage Volumes](/helion/commercial/1.1/dashboard/managing/volumes/).
 5. On the **Access &amp; Security** tab, perform the following tasks:.
 
 	* From the **Keypair** list, select the **keypair** to use with the instance.</li>

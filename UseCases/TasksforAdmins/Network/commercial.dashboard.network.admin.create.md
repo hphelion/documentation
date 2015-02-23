@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Creating Externally Available Networks"
-permalink: /helion/commercial/dashboard/managing/network/external/create/
+permalink: /helion/commercial/1.1/dashboard/managing/network/external/create/
 product: commercial.ga
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/commercial/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/ga1/">NEXT &#9654;</a> 
+<p style="font-size: small;"> <a href="/helion/commercial/1.1/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/1.1/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/1.1/ga1/">NEXT &#9654;</a> 
 -->
 
 # HP Helion OpenStack&#174;  Creating Externally Available Networks
@@ -59,8 +59,8 @@ A non-admin user or admin user can [create](#createnet) and [delete](#deletenet)
 
 To configure a subnet and ports for the network, see:
 
-* [Add, Remove, or Modify a subnet](/helion/commercial/dashboard/managing/network/subnet/)
-* [Create, Modify, or Delete a port](/helion/commercial/dashboard/managing/network/ports/)
+* [Add, Remove, or Modify a subnet](/helion/commercial/1.1/dashboard/managing/network/subnet/)
+* [Create, Modify, or Delete a port](/helion/commercial/1.1/dashboard/managing/network/ports/)
 </ul>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
