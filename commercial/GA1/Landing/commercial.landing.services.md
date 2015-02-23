@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; HP Helion OpenStack Services"
-permalink: /helion/openstack/landing/install/
+permalink: /helion/openstack/landing/services/
 product: commercial.test
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1

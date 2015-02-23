@@ -400,7 +400,7 @@ navigation:
   - text: Storage in version 1.1
     url: /helion/openstack/landing/storage/
   - text: Networking (Neutron) in version 1.1
-    url: /helion/openstack/services/landing/network/
+    url: /helion/openstack/landing/network/
   - text: Identity Management in version 1.1
     url: /helion/openstack/services/landing/identity/
   - text: Security in version 1.1
