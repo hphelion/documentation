@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Using HP Helion OpenStack"
-permalink: /helion/openstack/using-hos/
+title: "HP Helion OpenStack&#174; Using HP Helion OpenStack Dashboards"
+permalink: /helion/openstack/landing/dashboards/
 product: commercial.test
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -26,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p>
 -->
 
-# HP Helion OpenStack&#174;: Using HP Helion OpenStack
+# HP Helion OpenStack&#174;: Using HP Helion OpenStack Dashboards
 
 
 ## Undercloud Horizon Dashboard {#underdash}
@@ -84,6 +84,7 @@ Review the following topics related to the Horizon dashboard:
 <hr>
 [Logging into the Helion Dashboard](/helion/openstack/dashboard/login/)
 <br>Log into the Helion dashboard
+<hr>
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

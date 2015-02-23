@@ -4,7 +4,7 @@ exclude: [README.md, Makefile, stackato-one.yml, stackato-two.yml, jenkins, "unu
 include: [devplatform/stackato/images]
 relative_permalinks: false
 
-#PUBLISHED
+#UNDER_REVISION
 
 navigation: 
   main:
@@ -390,18 +390,18 @@ navigation:
   - text: All version 1.1 documentation
     url: /helion/openstack/siteindex/
   - text: Getting started with version 1.1
-    url: /helion/openstack/
+    url: /helion/openstack/landing/start/
   - text: Installing version 1.1  
-    url: /helion/openstack/install/overview/
+    url: /helion/openstack/landing/install/
   - text: Using version 1.1
-    url: /helion/openstack/using-hos/
+    url: /helion/openstack/landing/dashboards/
   - text: Services in version 1.1
-    url: /helion/openstack/services/overview/
+    url: /helion/openstack/landing/services/
   - text: Storage in version 1.1
-    url: /helion/openstack/storage/
+    url: /helion/openstack/landing/storage/
   - text: Networking (Neutron) in version 1.1
-    url: /helion/openstack/services/neutron/installation/intro/
+    url: /helion/openstack/services/landing/network/
   - text: Identity Management in version 1.1
-    url: /helion/openstack/services/identity/overview/
+    url: /helion/openstack/services/landing/identity/
   - text: Security in version 1.1
-    url: /helion/openstack/install/security/
+    url: /helion/openstack/landing/security/

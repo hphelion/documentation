@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Using HP Helion OpenStack"
-permalink: /helion/openstack/storage/
+permalink: /helion/openstack/landing/storage/
 product: commercial.test
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
@@ -32,21 +32,17 @@ HP Helion OpenStack is provided with two baremetal installation options dependin
 
 ## KVM Hypervisor {#kvm-Hypervisor}
 
-Kernel-based Virtual Machine (KVM) is a virtualization infrastructure for the Linux kernel, which turns it into a hypervisor. KVM requires a processor with hardware virtualization extension.
-
-You can use your KVM cloud with either HP Storevirtual or HP StoreServ (3PAR) storage:
 
 ###  With HP StoreVirtual VSA storage 
 
-HP StoreVirtual VSA Software is a Virtual Storage Appliance that provides the complete array functionality on top of Linux KVM environment without external hardware. VSA eliminates the need for external shared storage required to implement Block Storage features. VSA uses scale-out, distributed clustering to provide a pool of storage with enterprise storage features and simple management at a reduced cost.
-
-For more information, see [Cinder Block Storage Using HP StoreVirtual VSA](/helion/openstack/install/vsa/overview/).
+[Cinder Block Storage Using HP StoreVirtual VSA](/helion/openstack/install/vsa/overview/)
+<br>Learn about HP StoreVirtual VSA Software, a Virtual Storage Appliance for the Linux KVM environment.
+<hr>
 
 ###  With HP StoreServ (3PAR) storage 
 
-HP 3PAR StoreServ is a storage array that supports Fibre Channel (FC) as well as iSCSI protocol. HP 3PAR StoreServ is integrated into the plug-in architecture of the Volume Operation service using the HP 3PAR StoreServ block storage driver. 
-
-For information, see [HP StoreServ (3PAR) Support](/helion/openstack/install/3par/).
+[HP StoreServ (3PAR) Support](/helion/openstack/install/3par/)
+Learn about HP 3PAR StoreServ, a storage array that supports Fibre Channel (FC) as well as iSCSI protocol.
 
 ### Swift Scale-Out cluster 
 
