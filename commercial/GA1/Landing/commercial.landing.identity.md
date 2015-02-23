@@ -40,6 +40,7 @@ Based on Openstack Keystone, the HP Helion Openstack Identify services provides 
 
 [Integrate the Identity Service (Keystone) with LDAP/AD](/helion/openstack/services/identity/integrate-ldap/)
 <br>Learn about how to configure the HP Helion OpenStack Identity service to integrate your organization's existing to use Lightweight Directory Access Protocol (LDAP) service.
+<hr>
 
 [Configuring Horizon for Keystone v3](/helion/openstack/services/identity/configure/)
 <br>Horizon does not support Keystone v3 or domains by default. However, you can manually configure Horizon to use u3.
