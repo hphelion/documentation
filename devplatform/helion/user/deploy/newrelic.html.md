@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/newrelic/
+permalink: /helion/devplatform/1.1/als/user/deploy/newrelic/
 product: devplatform
 title: "New Relic Monitoring"
 product-version1: HP Helion Development Platform
@@ -173,7 +173,7 @@ directory of the application and make some modifications to
 *manifest.yml*.
 
 -   Add a `newrelic.ini` file in
-    [*HOME*](/als/v1/user/reference/environment/#term-home) directory
+    [*HOME*](/helion/devplatform/1.1/als/user/reference/environment/#term-home) directory
     containing the following:
 
         extension=newrelic.so

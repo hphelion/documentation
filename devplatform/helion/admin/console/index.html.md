@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/console/
+permalink: /helion/devplatform/1.1/als/admin/console/
 product: devplatform
 title: "Management Console (Admin View)"
 product-version1: HP Helion Development Platform
@@ -65,14 +65,14 @@ administration and management of the Application Lifecycle Service Server. Many 
 	- [Data Services](#data-services)
 
 ## Management Console Setup and Access {#setup}
-Your hypervisor provides [tty console](/als/v1/user/reference/glossary/#term-tty-console) access to each of its virtual machines. After startup, an Application Lifecycle Service VM displays:
+Your hypervisor provides [tty console](/helion/devplatform/1.1/als/user/reference/glossary/#term-tty-console) access to each of its virtual machines. After startup, an Application Lifecycle Service VM displays:
 
     Application Lifecycle Service Management Console at
     https://helion-xxxx.local
 
-On a [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud) VM where the local network supports [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns), the hostname will be `helion-xxxx.local`. If you have configured the
-[hostname](/als/v1/admin/server/configuration/#server-config-hostname) and
-[DNS](/als/v1/admin/server/configuration/#server-config-dns) of the Application Lifecycle Service server manually, or are connecting to a server administered by someone
+On a [micro cloud](/helion/devplatform/1.1/als/user/reference/glossary/#term-micro-cloud) VM where the local network supports [multicast DNS](/helion/devplatform/1.1/als/user/reference/glossary/#term-multicast-dns), the hostname will be `helion-xxxx.local`. If you have configured the
+[hostname](/helion/devplatform/1.1/als/admin/server/configuration/#server-config-hostname) and
+[DNS](/helion/devplatform/1.1/als/admin/server/configuration/#server-config-dns) of the Application Lifecycle Service server manually, or are connecting to a server administered by someone
 else, supply the assigned hostname instead (ex: *api.helion-test.example.com*).
 
 Enter the URL into your web browser and the Management Console will load. The Console is supported on the following browsers:
@@ -83,7 +83,7 @@ Enter the URL into your web browser and the Management Console will load. The Co
 
 Using a browser which fully support WebSockets is recommended.
 
-**Note**:  The SSL certificate for the Application Lifecycle Service Management Console is self-signed. You will need to manually accept this certificate in your browser. See the [HTTPS section](/als/v1/admin/server/configuration/#server-config-https)
+**Note**:  The SSL certificate for the Application Lifecycle Service Management Console is self-signed. You will need to manually accept this certificate in your browser. See the [HTTPS section](/helion/devplatform/1.1/als/admin/server/configuration/#server-config-https)
 for information on using your own certificate.
 
 When you first access the Management Console, you will be prompted to create a primary administrative user for ALS. Enter an email address as the username, set a secure password, and then review and accept the license agreement.
@@ -93,17 +93,17 @@ When you first access the Management Console, you will be prompted to create a p
 Once you've logged in, you can begin to add other users and admins, enable and disable services, and generally set up the system to your requirements.
 
 Basic Application Lifecycle Service administration can be done through the Management
-Console, but some maintenance and configuration tasks may need to be done at the command line using the *kato* command. See the [Kato Command Reference](/als/v1/admin/reference/kato-ref/#kato-command-ref) for a full list of options.
+Console, but some maintenance and configuration tasks may need to be done at the command line using the *kato* command. See the [Kato Command Reference](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref) for a full list of options.
 
 The Application Lifecycle Service Management Console will periodically send non-identifying pingbacks (Application Lifecycle Service version number and UUID) to HP servers to help improve the web console experience. You can disable this option by setting 
 
 	theme_settings['pingback_allowed'] = false;
 
-in the *settings.js* file as described in the [Customization](/als/v1/admin/console/customize/#customize) documentation.
+in the *settings.js* file as described in the [Customization](/helion/devplatform/1.1/als/admin/console/customize/#customize) documentation.
 
 ## Welcome Page {#welcome}
 
-The top-level page of the Management Console displays quick links to the most used resources and views. The blue buttons are for features also available to regular end users. See [Management Console (User View)](/als/v1/user/console/#user-console-welcome).
+The top-level page of the Management Console displays quick links to the most used resources and views. The blue buttons are for features also available to regular end users. See [Management Console (User View)](/helion/devplatform/1.1/als/user/console/#user-console-welcome).
 
 Available patches for the system, new releases, and the latest news are also displayed on this page.
 
@@ -118,10 +118,10 @@ Green buttons expose Admin-only functionality:
 
 ## Applications {#applications}
 
-The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the [Application View](/als/v1/user/console/#user-console-app) as a Developer of the space it was deployed to.
+The Applications section displays a list of all apps on the server. Click anywhere on the line for an app to view its details. Admins have the same permissions in the [Application View](/helion/devplatform/1.1/als/user/console/#user-console-app) as a Developer of the space it was deployed to.
 
 ## Organizations {#organizations}
-The top level Organizations page allows Admins to add and delete [Organizations](/als/v1/user/deploy/orgs-spaces/#orgs-spaces). Clicking on an organization name opens its details. This view is the same as a regular user's [Organizations view](/als/v1/user/console/#user-console-organizations), but admin users can also edit quotas and add/remove domains, spaces, and users.
+The top level Organizations page allows Admins to add and delete [Organizations](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces). Clicking on an organization name opens its details. This view is the same as a regular user's [Organizations view](/helion/devplatform/1.1/als/user/console/#user-console-organizations), but admin users can also edit quotas and add/remove domains, spaces, and users.
 
 ## Support {#support}
 
@@ -149,7 +149,7 @@ Displays a list of nodes in the current cluster, and what services are running o
 
 To enable or disable services on a node, click the Configure Roles button (cog icon) to see the Node Settings, showing a list of all available roles and checkboxes to enable or disable each one. Click Save to apply changes.
 
-See also the [kato role](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-add) and [kato info](/als/v1/admin/reference/kato-ref/#kato-command-ref-info) command documentation for the CLI equivalents, and the [Cluster Setup](/als/v1/admin/cluster/#cluster-setup) documentation for information on adding nodes to the cluster.
+See also the [kato role](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-role-add) and [kato info](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-info) command documentation for the CLI equivalents, and the [Cluster Setup](/helion/devplatform/1.1/als/admin/cluster/#cluster-setup) documentation for information on adding nodes to the cluster.
 
 ### Available Patches {#patches}
 
@@ -157,11 +157,11 @@ Displays a list of available patches for the current cluster.
 
 ### Applications & Organizations {#app-org}
 
-Links to the [Applications](/als/v1/user/console/#application-view) and [Organizations](/als/v1/user/deploy/orgs-spaces/#orgs-spaces) lists.
+Links to the [Applications](/helion/devplatform/1.1/als/user/console/#application-view) and [Organizations](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces) lists.
 
 ### Domains {#domains}
 
-A filterable list of all domains configured on the system, showing whether they are [Shared or Owned domains](/als/v1/user/deploy/orgs-spaces/#orgs-spaces-domains).
+A filterable list of all domains configured on the system, showing whether they are [Shared or Owned domains](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces-domains).
 
 ### Routes {#routes}
 
@@ -236,7 +236,7 @@ The Settings menu provides access to the following Console and system settings:
 - **Logging Level**: Changes the verbosity of logs from 'debug2' (most verbose) through 'off' (silent).
 - **Support Email**: The email address displayed to end users when errors are encountered. Use an address which is monitored by administrators.
 - **Sample App URLs**: URIs for URIs for JSON files which populate the [Sample Applications](app-store.html#app-store) The URIs need not be public, but must be accessible from the controller node.
-- **Allowed Repos**: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See [Allowed Repositories](/als/v1/admin/server/configuration/#allowed-repositories).
+- **Allowed Repos**: Debian package repositories allowed in application containers. End users can install additional packages (e.g. with  apt-get  or  aptitude) only from these repositories. When adding new repositories, GPG keys for each new repo must also be added to the Docker base container See [Allowed Repositories](/helion/devplatform/1.1/als/admin/server/configuration/#allowed-repositories).
 
 ### Applications {#console-settings-applications}
 
@@ -254,7 +254,7 @@ Various settings and templates to customize the look and feel of the Management 
 - Eula Content: End User License Agreement. Change this only if you are an OEM customer exposing Helion to end users under your own specific licensing terms.
 - Custom Stylesheet: A single CSS file used to override any existing styling in the Management Console. Inspect the Console with browser tools such as Firebug or Chrome Developer Tools to see the class names and IDs.
 
-Detailed instructions for customizing the Console can be found in the [Customization](/als/v1/admin/console/customize/#customize) documentation.
+Detailed instructions for customizing the Console can be found in the [Customization](/helion/devplatform/1.1/als/admin/console/customize/#customize) documentation.
 
 ## DEA {#dea}
 
@@ -277,13 +277,13 @@ A filterable list of Availability Zones on the system.
 - **Enable Private Domain Creation**: When enabled, an organization manager can create private domains for that organization. When disabled, only admin users can create private domains. Default: **Enabled**
 
 ## Logyard {#logyard}
-Lists current log [Drains](/als/v1/admin/server/logging/#logging-drains-system) and the log
-drain retry limits. Drains and limits cannot be changed in this interface; use the [*kato log drain*](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-drain-add)
-commands and [*kato config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config) commands.
+Lists current log [Drains](/helion/devplatform/1.1/als/admin/server/logging/#logging-drains-system) and the log
+drain retry limits. Drains and limits cannot be changed in this interface; use the [*kato log drain*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-log-drain-add)
+commands and [*kato config*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config) commands.
 
 ## Quota Plans {#console-settings-quota-definitions}
 
-Lists the Quota Plans available to apply to Organizations on the system. To edit a definition, click the edit button on the right. To create a new definition, use the [*quota create*](/als/v1/user/reference/client-ref/#command-quota-create) command. 
+Lists the Quota Plans available to apply to Organizations on the system. To edit a definition, click the edit button on the right. To create a new definition, use the [*quota create*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-quota-create) command. 
 
 The following fields can be modified:
 
@@ -302,7 +302,7 @@ The following fields can be modified:
 
 ## Harbor {#harbor}
 
-Settings for the [Harbor](/als/v1/admin/cluster/harbor/#harbor) TCP/UDP port service. See [Harbor: Requirements & Setup](/als/v1/admin/cluster/harbor/#harbor-setup) for more information.
+Settings for the [Harbor](/helion/devplatform/1.1/als/admin/cluster/harbor/#harbor) TCP/UDP port service. See [Harbor: Requirements & Setup](/helion/devplatform/1.1/als/admin/cluster/harbor/#harbor-setup) for more information.
 
 - **External Host**: The public IP (if configured) for the Harbor node.
 - **External Hostname**: The public hostname for the Harbor node.

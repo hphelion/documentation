@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/reference/environment/
+permalink: /helion/devplatform/1.1/als/user/reference/environment/
 product: devplatform
 title: "Environment Variables"
 product-version1: HP Helion Development Platform
@@ -22,10 +22,10 @@ Some environment variables are also available during application [staging](#stag
 
 You can set your own environment variables:
 
--   in an `env:` block in [*manifest.yml*](/als/v1/user/deploy/manifestyml/#env),
+-   in an `env:` block in [*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#env),
 -   via the application's Details page in the [Management
-    Console](/als/v1/admin/console/customize/#management-console), or
--   using the [env-add](/als/v1/user/reference/client-ref/management/#command-env-add)
+    Console](/helion/devplatform/1.1/als/admin/console/customize/#management-console), or
+-   using the [env-add](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-env-add)
     command.
 
 **Note**
@@ -33,7 +33,7 @@ You can set your own environment variables:
 To see a complete list of environment variables in an Application Lifecycle Service application container, deploy the [node-env](https://github.com/Stackato-Apps/node-env) sample.
 
 #### DATABASE\_URL
-Contains an access URL for a database service. If more than one type of database is present, `DATABASE_URL` will not be available. Instead, use the [Database-Specific URL](/als/v1/user/services/data-services/#database-specific-url) variables.
+Contains an access URL for a database service. If more than one type of database is present, `DATABASE_URL` will not be available. Instead, use the [Database-Specific URL](/helion/devplatform/1.1/als/user/services/data-services/#database-specific-url) variables.
 
 Example:
 
@@ -67,7 +67,7 @@ The amount of memory allocated to the application container.
 A list of directories, separated by ":", which are to be searched for the names of executable files to be interpreted as commands.
 
 #### PIP\_OPTS
-Custom/alternate [PIP](/als/v1/user/reference/glossary/#term-pip) repo location. 
+Custom/alternate [PIP](/helion/devplatform/1.1/als/user/reference/glossary/#term-pip) repo location. 
 
  Example:
 
@@ -78,7 +78,7 @@ Custom/alternate [PIP](/als/v1/user/reference/glossary/#term-pip) repo location.
 Application Lifecycle Service alternative for VCAP\_APP\_PORT.
 
 #### PROCESSES\_WEB
-This variable contains the default start command that would be used when [*manifest.yml*](/als/v1/user/deploy/manifestyml/) doesn't override it. It is provided so that users can specify a wrapper around the default command.
+This variable contains the default start command that would be used when [*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/) doesn't override it. It is provided so that users can specify a wrapper around the default command.
 For example:
 
     processes:
@@ -87,14 +87,14 @@ For example:
 Note that `PROCESSES_WEB` may be undefined when Application Lifecycle Service can't determine the default command. This may occur because the app uses a non-standard main application file.
 
 #### PYPM\_OPTS
-Custom/alternate [PyPM](/als/v1/user/reference/glossary/#term-pypm) repo location. Repo mirroring is an undocumented feature. Example:
+Custom/alternate [PyPM](/helion/devplatform/1.1/als/user/reference/glossary/#term-pypm) repo location. Repo mirroring is an undocumented feature. Example:
 
     env:
         PYPM_OPTS: "-R http://pypm-free.activestate.com/2.7/linux-x86_64/"
 
 #### HELION\_APP\_ENV 
 Note: Internal use, subject to change.
-Contains a list of all environment variables set with [env-add](/als/v1/user/reference/client-ref/management/#command-env-add) or through the [manifest.yml](/als/v1/user/deploy/manifestyml/#env) file.
+Contains a list of all environment variables set with [env-add](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-env-add) or through the [manifest.yml](/helion/devplatform/1.1/als/user/deploy/manifestyml/#env) file.
 
 #### HELION\_APP\_NAME
 Contains the application name as specified during application push (or in *manifest.yml*). Available during staging as well as in the application instance.
@@ -102,7 +102,7 @@ Contains the application name as specified during application push (or in *manif
 #### HELION\_APP\_NAME\_UPCASE
 Contains the same value as HELION\_APP\_NAME transformed to uppercase, with dashes replaced by underscores. For example if HELION\_APP\_NAME is "php-info", then HELION\_APP\_NAME\_UPCASE will be "PHP\_INFO".
 
-This makes it possible to access the environment variables for [*harbor*](/als/v1/user/services/port-service/#port-service-env-vars) and [*filesystem*](/als/v1/user/services/filesystem/#file-system-usage) services.
+This makes it possible to access the environment variables for [*harbor*](/helion/devplatform/1.1/als/user/services/port-service/#port-service-env-vars) and [*filesystem*](/helion/devplatform/1.1/als/user/services/filesystem/#file-system-usage) services.
 
 #### HELION\_APP\_ROOT
 This is the "root" directory from the Application Lifecycle Service point of view. It contains app specific HOME directory (app/), the log file directory (logs/) and various scripts.
@@ -129,7 +129,7 @@ Two environment variables would be created:
 Can be set in the local shell to specify the API endpoint target for the `helion` client. When set, the `helion target` command is ignored until the variable is explicitly unset. Can be overridden with the `--target` option.
 
 #### HELION\_UWSGI
-Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in [*manifest.yml*](/als/v1/user/deploy/manifestyml/):
+Set by the Perl and Python frameworks only. It contains the default uswgi start command to run the application via uwsgi. It is provided in case the user wants to add additional uwsgi options in [*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/):
 
         processes:
           web: $HELION_UWSGI --another-uwsgi-option
@@ -144,7 +144,7 @@ This variable contains the port that the application will be exposed on.
 This variable contains all relevant application details for the Application Lifecycle Service Application. (Instance ID, App Name, App Uris, Users/Groups etc.)
 
 #### VCAP\_SERVICES
-Contains connection details, credentials, and meta data for services bound to the application. See [VCAP\_SERVICES](/als/v1/user/services/data-services/#database-services-vcap-services).
+Contains connection details, credentials, and meta data for services bound to the application. See [VCAP\_SERVICES](/helion/devplatform/1.1/als/user/services/data-services/#database-services-vcap-services).
 
 ## Staging Variables {#staging}
 The following environment variables are available during application staging and can be used in buildpacks or staging hooks: 

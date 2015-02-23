@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/best-practices/
+permalink: /helion/devplatform/1.1/als/admin/best-practices/
 product: devplatform
 title: "Best Practices"
 product-version1: HP Helion Development Platform
@@ -62,10 +62,10 @@ With the Core node's public key in place on all cluster nodes, you can
 
 ##Applying Updates {#applying-updates}
 Major version upgrades of Application Lifecycle Service can be done using [*kato node
-upgrade*](/als/v1/admin/server/upgrade/#upgrade) or a [*migration to a new VM
+upgrade*](/helion/devplatform/1.1/als/admin/server/upgrade/#upgrade) or a [*migration to a new VM
 or cluster*](#bestpractices-migration), but patch releases (normally
 minor fixes to particular components) can be applied in place using the
-[*kato patch*](/als/v1/admin/reference/kato-ref/#kato-command-ref-patch)
+[*kato patch*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-patch)
 command.
 
 **Note**: If there is a web proxy on your network between the ASL systems and the ActiveState servers, first configure all nodes as per the Proxy Settings \<server-config-http-proxy\> documentation.
@@ -172,7 +172,7 @@ important when migrating to a new cluster.
 
 #### Custom Services {#custom-services}
 
-Application Lifecycle Service can export and import data from built-in data services running on Application Lifecycle Service nodes, but it has no mechanism to handle data in [external databases](/als/v1/admin/cluster/external-db/#external-db) unless
+Application Lifecycle Service can export and import data from built-in data services running on Application Lifecycle Service nodes, but it has no mechanism to handle data in [external databases](/helion/devplatform/1.1/als/admin/cluster/external-db/#external-db) unless
 *kato export|import* has also been modified to recognize the custom service.
 
 Backing up or moving such databases should be handled separately from databases implemented as an Application Lifecycle Service data service. User applications should be reconfigured and/or redeployed after the update to ensure they connect properly to the new database host.
@@ -191,7 +191,7 @@ the Controller.
 ### Exporting the server data {#exporting-the-server-data}
 
 Data export is done with the [*kato data
-export*](/als/v1/admin/reference/kato-ref/#kato-command-ref-data-export)
+export*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-data-export)
 command. The command can export:
 
 -   internal Application Lifecycle Service data (users, groups, quotas, settings, etc.)
@@ -221,7 +221,7 @@ below).
 
 Exporting data can take several minutes. For clusters with constant
 usage or large numbers of users, apps, and databases, put the exporting
-system in [Maintenance Mode](/als/v1/admin/console/#cloud-controller)
+system in [Maintenance Mode](/helion/devplatform/1.1/als/admin/console/#cloud-controller)
 (e.g. during a scheduled maintenance window) before exporting.
 
 ### Scheduled backups {#scheduled-backups}
@@ -264,7 +264,7 @@ To import data from a running Application Lifecycle Service system instead, spec
 
 ##Upgrading {#upgrade}
 The *kato node upgrade* command was added in this version to allow upgrading Application Lifecycle Service clusters in place. See
-[Upgrading Application Lifecycle Service](/als/v1/admin/server/upgrade/#upgrade) for full
+[Upgrading Application Lifecycle Service](/helion/devplatform/1.1/als/admin/server/upgrade/#upgrade) for full
 instructions.
 
 The *kato data import* command automatically detects if you are upgrading from version 2.x to 3.x and does some special processing to account for differences in the two versions:
@@ -350,7 +350,7 @@ To move database services, application droplets, and application containers to l
 -   mount the filesystem and/or block storage service on the instance (with [quotas enabled](#enabling-filesystem-quotas))
 -   create directories for the items you wish to move,
 -   run the [*kato
-    relocate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-relocate)
+    relocate*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-relocate)
     command(s).
 
 For example:
@@ -373,7 +373,7 @@ For performance reasons, containers should not be relocated to EBS volumes.
 The Application Lifecycle Service filesystem quotas cannot be enforced by the system unless
 they are mounted on partitions which support Linux quotas. This may need
 to be specified explicitly when running the `mount`
-command. The [*kato relocate*](/als/v1/admin/reference/kato-ref/#kato-command-ref-relocate) command
+command. The [*kato relocate*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-relocate) command
 will warn if this is necessary.
 
 For the example above, the `mount` step might look

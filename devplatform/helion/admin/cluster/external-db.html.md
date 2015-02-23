@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/cluster/external-db/
+permalink: /helion/devplatform/1.1/als/admin/cluster/external-db/
 product: devplatform
 title: "External Data Services"
 product-version1: HP Helion Development Platform
@@ -49,7 +49,7 @@ servers, Application Lifecycle Service must have access to an administrator acco
 database server with permissions to create users and databases. The
 credentials for this account, along with the hostname and port of the
 database server, are set in the Application Lifecycle Service configuration (via [*kato
-config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config)).
+config*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config)).
 
 MySQL[](#mysql "Permalink to this headline")
 ---------------------------------------------

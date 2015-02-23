@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/routes/
+permalink: /helion/devplatform/1.1/als/user/reference/client-ref/routes/
 title: "Application Lifecycle Service Command Line Client Reference: Routes"
 product: devplatform
 product-version1: HP Helion Development Platform

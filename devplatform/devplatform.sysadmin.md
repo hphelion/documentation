@@ -23,15 +23,15 @@ authors: Jayme P
 
 * [HP Helion OpenStack&reg; Installation](/helion/openstack/install/overview/)
 * [Development Platform Installation and Configuration](/helion/devplatform/install/)
-* [Application Lifecycle Service (ALS) Information](/als/v1/)
-* [Application Lifecycle Service Client Installation](/als/v1/user/client/)
+* [Application Lifecycle Service (ALS) Information](/helion/devplatform/1.1/als/)
+* [Application Lifecycle Service Client Installation](/helion/devplatform/1.1/als/user/client/)
 * [Installing the Marketplace](/helion/devplatform/marketplace)
 
 ##Administration
-Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/als/v1/user/reference/client-ref/). For more information, see [Organizations](/als/v1/user/reference/client-ref/#organizations).
+Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/). For more information, see [Organizations](/helion/devplatform/1.1/als/user/reference/client-ref/#organizations).
 
-- [Application Lifecycle Service (ALS) Administrators Guide](/als/v1/admin/)
-- [Management Console](/als/v1/user/console/)
-- [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
+- [Application Lifecycle Service (ALS) Administrators Guide](/helion/devplatform/1.1/als/admin/)
+- [Management Console](/helion/devplatform/1.1/als/user/console/)
+- [Logs, Streams, and Drains](/helion/devplatform/1.1/als/user/deploy/app-logs/)
 
 ----

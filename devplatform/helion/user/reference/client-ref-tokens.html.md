@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/tokens/
+permalink: /helion/devplatform/1.1/als/user/reference/client-ref/tokens/
 title: "Application Lifecycle Service Command Line Client Reference: Authentication Tokens"
 product: devplatform
 product-version1: HP Helion Development Platform

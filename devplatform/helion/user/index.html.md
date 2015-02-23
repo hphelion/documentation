@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/
+permalink: /helion/devplatform/1.1/als/user/
 product: devplatform
 title: "Application Lifecycle Service User Guide"
 product-version1: HP Helion Development Platform
@@ -26,75 +26,75 @@ web server, application dependencies, databases, and other services.
 
 ##Quick Start {#quick-start}
 
--   [Quick Start](/als/v1/user/quick-start/)
-    -   [Management Console](/als/v1/user/quick-start/#management-console)
-    -   [Application Lifecycle Service Client](/als/v1/user/quick-start/#helion-client)
-    -   [Setting Organization and Space](/als/v1/user/quick-start/#setting-organization-and-space)
-    -   [Deploying Apps](/als/v1/user/quick-start/#deploying-apps)
+-   [Quick Start](/helion/devplatform/1.1/als/user/quick-start/)
+    -   [Management Console](/helion/devplatform/1.1/als/user/quick-start/#management-console)
+    -   [Application Lifecycle Service Client](/helion/devplatform/1.1/als/user/quick-start/#helion-client)
+    -   [Setting Organization and Space](/helion/devplatform/1.1/als/user/quick-start/#setting-organization-and-space)
+    -   [Deploying Apps](/helion/devplatform/1.1/als/user/quick-start/#deploying-apps)
 
 Application Lifecycle Service Client[](#helion-client "Permalink to this headline")
 -----------------------------------------------------------------
--   [Application Lifecycle Service Client Command Reference](/als/v1/user/reference/client-ref/)
--   [Application Lifecycle Service Client](/als/v1/user/client/)
-    -   [Application Lifecycle Service Client Setup](/als/v1/user/client/#helion-client-setup)
-    -   [Getting Help](/als/v1/user/client/#getting-help)
+-   [Application Lifecycle Service Client Command Reference](/helion/devplatform/1.1/als/user/reference/client-ref/)
+-   [Application Lifecycle Service Client](/helion/devplatform/1.1/als/user/client/)
+    -   [Application Lifecycle Service Client Setup](/helion/devplatform/1.1/als/user/client/#helion-client-setup)
+    -   [Getting Help](/helion/devplatform/1.1/als/user/client/#getting-help)
     -   [Targeting the API
-        Endpoint](/als/v1/user/client/#targeting-the-api-endpoint)
-    -   [HTTP Proxies](/als/v1/user/client/#http-proxies)
-    -   [Removing the Client](/als/v1/user/client/#removing-the-client)
+        Endpoint](/helion/devplatform/1.1/als/user/client/#targeting-the-api-endpoint)
+    -   [HTTP Proxies](/helion/devplatform/1.1/als/user/client/#http-proxies)
+    -   [Removing the Client](/helion/devplatform/1.1/als/user/client/#removing-the-client)
 
 
 
 Deploying Applications[](#deploying-applications "Permalink to this headline")
 -------------------------------------------------------------------------------
 
--   [General Deployment](/als/v1/user/deploy/)
--   [Manifest.yml Options](/als/v1/user/deploy/manifestyml/)
--   [Remote Debugging](/als/v1/user/deploy/app-debug/)
--   [**Frameworks & Languages**](/als/v1/user/deploy/#language-specific-deploy)
+-   [General Deployment](/helion/devplatform/1.1/als/user/deploy/)
+-   [Manifest.yml Options](/helion/devplatform/1.1/als/user/deploy/manifestyml/)
+-   [Remote Debugging](/helion/devplatform/1.1/als/user/deploy/app-debug/)
+-   [**Frameworks & Languages**](/helion/devplatform/1.1/als/user/deploy/#language-specific-deploy)
 	-   Frameworks
-	    -   [Organizations & Spaces](/als/v1/user/deploy/orgs-spaces/)
-	    -   [Buildpacks](/als/v1/user/deploy/buildpack/)
-	    -   [Generic & Standalone Frameworks](/als/v1/user/deploy/other-frameworks/)    
+	    -   [Organizations & Spaces](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/)
+	    -   [Buildpacks](/helion/devplatform/1.1/als/user/deploy/buildpack/)
+	    -   [Generic & Standalone Frameworks](/helion/devplatform/1.1/als/user/deploy/other-frameworks/)    
     -   Languages
-	    -   [Java](/als/v1/user/deploy/languages/java/)
-	    -   [Node.js](/als/v1/user/deploy/languages/node/)
-	    -   [PHP](/als/v1/user/deploy/languages/php/)
+	    -   [Java](/helion/devplatform/1.1/als/user/deploy/languages/java/)
+	    -   [Node.js](/helion/devplatform/1.1/als/user/deploy/languages/node/)
+	    -   [PHP](/helion/devplatform/1.1/als/user/deploy/languages/php/)
 	 
 
 Services[](#services "Permalink to this headline")
 ---------------------------------------------------
 
--   [Data Services](/als/v1/user/services/data-services/)
--   [Persistent File System](/als/v1/user/services/filesystem/)
--   [Memcached Service](/als/v1/user/services/memcached/)
--   [Port Service](/als/v1/user/services/port-service/)
--   [User-Provided Services](/als/v1/user/services/user-provided/)
+-   [Data Services](/helion/devplatform/1.1/als/user/services/data-services/)
+-   [Persistent File System](/helion/devplatform/1.1/als/user/services/filesystem/)
+-   [Memcached Service](/helion/devplatform/1.1/als/user/services/memcached/)
+-   [Port Service](/helion/devplatform/1.1/als/user/services/port-service/)
+-   [User-Provided Services](/helion/devplatform/1.1/als/user/services/user-provided/)
 
 Logging & Monitoring[](#logging-monitoring "Permalink to this headline")
 -------------------------------------------------------------------------
 
--   [Application Logs](/als/v1/user/deploy/app-logs/)
--   [New Relic Monitoring](/als/v1/user/deploy/newrelic/)
+-   [Application Logs](/helion/devplatform/1.1/als/user/deploy/app-logs/)
+-   [New Relic Monitoring](/helion/devplatform/1.1/als/user/deploy/newrelic/)
 
 Management Console[](#management-console "Permalink to this headline")
 -----------------------------------------------------------------------
 
--   [Management Console](/als/v1/admin/console/customize/)
-    -   [Welcome](/als/v1/admin/console/customize/#welcome)
-    -   [Organization View](/als/v1/admin/console/customize/#organization-view)
-    -   [Space View](/als/v1/admin/console/customize/#space-view)
-    -   [Application View](/als/v1/admin/console/customize/#application-view)
+-   [Management Console](/helion/devplatform/1.1/als/admin/console/customize/)
+    -   [Welcome](/helion/devplatform/1.1/als/admin/console/customize/#welcome)
+    -   [Organization View](/helion/devplatform/1.1/als/admin/console/customize/#organization-view)
+    -   [Space View](/helion/devplatform/1.1/als/admin/console/customize/#space-view)
+    -   [Application View](/helion/devplatform/1.1/als/admin/console/customize/#application-view)
     -   [Service Instance
-        View](/als/v1/admin/console/customize/#service-instance-view)
-    -   [Sample Applications](/als/v1/admin/console/customize/#app-store)
-    -   [Support](/als/v1/admin/console/customize/#support)
+        View](/helion/devplatform/1.1/als/admin/console/customize/#service-instance-view)
+    -   [Sample Applications](/helion/devplatform/1.1/als/admin/console/customize/#app-store)
+    -   [Support](/helion/devplatform/1.1/als/admin/console/customize/#support)
 
 Reference[](#reference "Permalink to this headline")
 -----------------------------------------------------
 
--   [Environment Variables](/als/v1/user/reference/environment/)
+-   [Environment Variables](/helion/devplatform/1.1/als/user/reference/environment/)
 -   [Glossary](reference/glossary)
 -   [Troubleshooting](reference/troubleshoot)
--   [Application Lifecycle Service Client API](/als/v1/user/reference/api/)
+-   [Application Lifecycle Service Client API](/helion/devplatform/1.1/als/user/reference/api/)
 

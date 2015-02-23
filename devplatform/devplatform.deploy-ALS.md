@@ -53,6 +53,6 @@ You need to have [installed](/helion/devplatform/install/) the Helion Developmen
  
 8.	Once the cluster has been built, you can access it by clicking on the URL of the created cluster, which can be reached in the **Clusters** view or by the **Cluster Details** page. <br><img src="media/ALSConfig7.png"/>
  
-1. The [Application Lifecycle Service Documentation ](/als/v1/) provides an overview of how to administer and use the configured cluster, which opens up in a separate tab and requires the admin credentials set in step 3 to access and provision.
+1. The [Application Lifecycle Service Documentation ](/helion/devplatform/1.1/als/) provides an overview of how to administer and use the configured cluster, which opens up in a separate tab and requires the admin credentials set in step 3 to access and provision.
 
 ----

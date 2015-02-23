@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/server/
+permalink: /helion/devplatform/1.1/als/admin/server/
 product: devplatform
 title: "Server Configuration"
 product-version1: HP Helion Development Platform
@@ -39,9 +39,9 @@ Unless you've already created a primary admin user in the Management Console. If
 
 Command access to the Application Lifecycle Service server is available in several ways:
 
--   Over the hypervisor's [tty console](/als/v1/user/reference/glossary/#term-tty-console).
+-   Over the hypervisor's [tty console](/helion/devplatform/1.1/als/user/reference/glossary/#term-tty-console).
 
--   The [Application Lifecycle Service Client](/als/v1/user/reference/client-ref/#command-ref-client) command, which in addition to specialized functions can provide remote shell access to the server:
+-   The [Application Lifecycle Service Client](/helion/devplatform/1.1/als/user/reference/client-ref/#command-ref-client) command, which in addition to specialized functions can provide remote shell access to the server:
 
         helion target helion@helion-xxxx.local
         helion ssh api
@@ -56,71 +56,71 @@ Command access to the Application Lifecycle Service server is available in sever
 On the server, the control command for Application Lifecycle Service is called
 `kato`. It is used for configuration and node
 management procedures such as start, stop, role specialization, and
-status checks. For a complete list of options, see the [Kato Command Reference](/als/v1/admin/reference/kato-ref/).
+status checks. For a complete list of options, see the [Kato Command Reference](/helion/devplatform/1.1/als/admin/reference/kato-ref/).
 
 Common Operations[](#common-operations "Permalink to this headline")
 ---------------------------------------------------------------------
 
 Instructions for common operations on the Application Lifecycle Service VM can be found here:
 
--   [Common Server Operations](/als/v1/admin/server/operations/)
-    -   [Server Status](/als/v1/admin/server/operations/#server-status)
+-   [Common Server Operations](/helion/devplatform/1.1/als/admin/server/operations/)
+    -   [Server Status](/helion/devplatform/1.1/als/admin/server/operations/#server-status)
         -   [Starting and Stopping
-            Roles](/als/v1/admin/server/operations/#starting-and-stopping-roles)
-        -   [System Shutdown](/als/v1/admin/server/operations/#system-shutdown)
-    -   [Setting the Time Zone](/als/v1/admin/server/operations/#setting-the-time-zone)
-    -   [Resetting the VM](/als/v1/admin/server/operations/#resetting-the-vm)
+            Roles](/helion/devplatform/1.1/als/admin/server/operations/#starting-and-stopping-roles)
+        -   [System Shutdown](/helion/devplatform/1.1/als/admin/server/operations/#system-shutdown)
+    -   [Setting the Time Zone](/helion/devplatform/1.1/als/admin/server/operations/#setting-the-time-zone)
+    -   [Resetting the VM](/helion/devplatform/1.1/als/admin/server/operations/#resetting-the-vm)
     -   [Monitoring The Application Lifecycle Service
-        Server](/als/v1/admin/server/operations/#monitoring-the-helion-server)
-        -   [Management Console](/als/v1/admin/server/operations/#management-console)
-        -   [New Relic](/als/v1/admin/server/operations/#new-relic)
-        -   [Creating an Admin User](/als/v1/admin/server/operations/#creating-an-admin-user)
-        -   [System Monitoring with Nagios](/als/v1/admin/server/operations/#system-monitoring-with-nagios)
-    -   [Server Backup, Import, and Export](/als/v1/admin/server/operations/#server-backup-import-and-export)
--   [Upgrading Application Lifecycle Service](/als/v1/admin/server/upgrade/)
-    -   [Before an upgrade](/als/v1/admin/server/upgrade/#before-an-upgrade)
-    -   [Executing the upgrade](/als/v1/admin/server/upgrade/#executing-the-upgrade)
+        Server](/helion/devplatform/1.1/als/admin/server/operations/#monitoring-the-helion-server)
+        -   [Management Console](/helion/devplatform/1.1/als/admin/server/operations/#management-console)
+        -   [New Relic](/helion/devplatform/1.1/als/admin/server/operations/#new-relic)
+        -   [Creating an Admin User](/helion/devplatform/1.1/als/admin/server/operations/#creating-an-admin-user)
+        -   [System Monitoring with Nagios](/helion/devplatform/1.1/als/admin/server/operations/#system-monitoring-with-nagios)
+    -   [Server Backup, Import, and Export](/helion/devplatform/1.1/als/admin/server/operations/#server-backup-import-and-export)
+-   [Upgrading Application Lifecycle Service](/helion/devplatform/1.1/als/admin/server/upgrade/)
+    -   [Before an upgrade](/helion/devplatform/1.1/als/admin/server/upgrade/#before-an-upgrade)
+    -   [Executing the upgrade](/helion/devplatform/1.1/als/admin/server/upgrade/#executing-the-upgrade)
 
 Detailed Configuration[](#detailed-configuration "Permalink to this headline")
 -------------------------------------------------------------------------------
 
 To continue configuring the Application Lifecycle Service server, see:
 
--   [Detailed Configuration](/als/v1/admin/server/configuration/)
-    -   [General](/als/v1/admin/server/configuration/#general)
-        -   [Changing the Password](/als/v1/admin/server/configuration/#changing-the-password)
-    -   [Network Setup](/als/v1/admin/server/configuration/#network-setup)
+-   [Detailed Configuration](/helion/devplatform/1.1/als/admin/server/configuration/)
+    -   [General](/helion/devplatform/1.1/als/admin/server/configuration/#general)
+        -   [Changing the Password](/helion/devplatform/1.1/als/admin/server/configuration/#changing-the-password)
+    -   [Network Setup](/helion/devplatform/1.1/als/admin/server/configuration/#network-setup)
         -   [Changing the
-            Hostname](/als/v1/admin/server/configuration/#changing-the-hostname)
+            Hostname](/helion/devplatform/1.1/als/admin/server/configuration/#changing-the-hostname)
         -   [Changing IP
-            Addresses](/als/v1/admin/server/configuration/#changing-ip-addresses)
+            Addresses](/helion/devplatform/1.1/als/admin/server/configuration/#changing-ip-addresses)
         -   [Setting a Static
-            IP](/als/v1/admin/server/configuration/#setting-a-static-ip)
+            IP](/helion/devplatform/1.1/als/admin/server/configuration/#setting-a-static-ip)
         -   [Modifying
-            /etc/hosts](/als/v1/admin/server/configuration/#modifying-etc-hosts)
-        -   [DNS](/als/v1/admin/server/configuration/#dns)
-        -   [Dynamic DNS](/als/v1/admin/server/configuration/#dynamic-dns)
+            /etc/hosts](/helion/devplatform/1.1/als/admin/server/configuration/#modifying-etc-hosts)
+        -   [DNS](/helion/devplatform/1.1/als/admin/server/configuration/#dns)
+        -   [Dynamic DNS](/helion/devplatform/1.1/als/admin/server/configuration/#dynamic-dns)
         -   [Alternate DNS
-            Techniques](/als/v1/admin/server/configuration/#alternate-dns-techniques)
+            Techniques](/helion/devplatform/1.1/als/admin/server/configuration/#alternate-dns-techniques)
         -   [Adding DNS
-            Nameservers](/als/v1/admin/server/configuration/#adding-dns-nameservers)
+            Nameservers](/helion/devplatform/1.1/als/admin/server/configuration/#adding-dns-nameservers)
         -   [TCP/UDP Port
-            Configuration](/als/v1/admin/server/configuration/#tcp-udp-port-configuration)
-        -   [HTTP Proxy](/als/v1/admin/server/configuration/#http-proxy)
+            Configuration](/helion/devplatform/1.1/als/admin/server/configuration/#tcp-udp-port-configuration)
+        -   [HTTP Proxy](/helion/devplatform/1.1/als/admin/server/configuration/#http-proxy)
         -   [Staging Cache & App HTTP
-            Proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy)
-    -   [VM Filesystem Setup](/als/v1/admin/server/configuration/#vm-filesystem-setup)
+            Proxy](/helion/devplatform/1.1/als/admin/server/configuration/#staging-cache-app-http-proxy)
+    -   [VM Filesystem Setup](/helion/devplatform/1.1/als/admin/server/configuration/#vm-filesystem-setup)
     -   [Application Lifecycle Service Data Services vs. High Availability
-        Databases](/als/v1/admin/server/configuration/#helion-data-services-vs-high-availability-databases)
-    -   [HTTPS & SSL](/als/v1/admin/server/configuration/#https-ssl)
+        Databases](/helion/devplatform/1.1/als/admin/server/configuration/#helion-data-services-vs-high-availability-databases)
+    -   [HTTPS & SSL](/helion/devplatform/1.1/als/admin/server/configuration/#https-ssl)
         -   [Using your own SSL
-            certificate](/als/v1/admin/server/configuration/#using-your-own-ssl-certificate)
-        -   [Adding Custom SSL Certs](/als/v1/admin/server/configuration/#adding-custom-ssl-certs-sni)
+            certificate](/helion/devplatform/1.1/als/admin/server/configuration/#using-your-own-ssl-certificate)
+        -   [Adding Custom SSL Certs](/helion/devplatform/1.1/als/admin/server/configuration/#adding-custom-ssl-certs-sni)
         -   [CA Certificate
-            Chaining](/als/v1/admin/server/configuration/#ca-certificate-chaining)
+            Chaining](/helion/devplatform/1.1/als/admin/server/configuration/#ca-certificate-chaining)
         -   [Generating a self-signed SSL
-            certificate](/als/v1/admin/server/configuration/#generating-a-self-signed-ssl-certificate)
-    -   [Quota Definitions](/als/v1/admin/server/configuration/#quota-definitions)
-        -   [sudo](/als/v1/admin/server/configuration/#sudo)
+            certificate](/helion/devplatform/1.1/als/admin/server/configuration/#generating-a-self-signed-ssl-certificate)
+    -   [Quota Definitions](/helion/devplatform/1.1/als/admin/server/configuration/#quota-definitions)
+        -   [sudo](/helion/devplatform/1.1/als/admin/server/configuration/#sudo)
         -   [Allowed
-            Repositories](/als/v1/admin/server/configuration/#allowed-repositories)
+            Repositories](/helion/devplatform/1.1/als/admin/server/configuration/#allowed-repositories)

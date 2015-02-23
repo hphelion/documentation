@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/cluster/cloud-init/
+permalink: /helion/devplatform/1.1/als/admin/cluster/cloud-init/
 product: devplatform
 title: "cloud-init"
 product-version1: HP Helion Development Platform
@@ -42,7 +42,7 @@ cloud-config would add a new DEA node to the cluster:
 -   `extname` when supplied with a fully qualified
     domain name will run `kato rename <extname>` on
     the instance first boot.
--   Roles takes a list of [roles](/als/v1/admin/cluster/#roles) to configure the node with.
+-   Roles takes a list of [roles](/helion/devplatform/1.1/als/admin/cluster/#roles) to configure the node with.
 
 ## Securing the new node {#securing-the-new-node}
 

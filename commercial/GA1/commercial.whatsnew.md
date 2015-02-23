@@ -57,14 +57,14 @@ Allows an HP Helion OpenStack installation on a mix of VMs and physical nodes, s
 ## HP Helion Development Platform
 
 **Updated Command Line Client** <br />
-The [ALS command line client](/als/v1/client/reference) (cfmgmt.exe) has been updated to provide more options.
+The [ALS command line client](/helion/devplatform/1.1/als/client/reference) (cfmgmt.exe) has been updated to provide more options.
 
 **Additional ALS Client Commands**<br />
-More [commands](/als/v1/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
+More [commands](/helion/devplatform/1.1/als/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
 
-- [Control](/als/v1/user/reference/client-ref/control)
-- [Feature Flags](/als/v1/user/reference/client-ref/flags)
-- [Security Groups](/als/v1/user/reference/client-ref/securitygroups)
-- [Space Quotas](/als/v1/user/reference/client-ref/spacequotas) 
+- [Control](/helion/devplatform/1.1/als/user/reference/client-ref/control)
+- [Feature Flags](/helion/devplatform/1.1/als/user/reference/client-ref/flags)
+- [Security Groups](/helion/devplatform/1.1/als/user/reference/client-ref/securitygroups)
+- [Space Quotas](/helion/devplatform/1.1/als/user/reference/client-ref/spacequotas) 
 
 **Ruby CLI No Longer Supported** <br />The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.

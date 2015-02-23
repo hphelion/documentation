@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/node/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/node/
 product: devplatform
 title: "Developing in Node"
 product-version1: HP Helion Development Platform
@@ -29,7 +29,7 @@ automatically installs packages listed in the "dependencies" section
 before starting the server.
 
 Alternatively, you can call NPM directly using
-[*hooks*](/als/v1/user/deploy/manifestyml/#hooks) in the *manifest.yml*
+[*hooks*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#hooks) in the *manifest.yml*
 file. 
 
 For NPM packages which include callable scripts or binaries, executable components are automatically added to the container's \$PATH, so a "global install" (`npm install -g`) is not required.
@@ -60,13 +60,13 @@ Using Data Services[](#using-data-services "Permalink to this headline")
 
 Data services need to be configured with values from VCAP\_SERVICES, DATABASE\_URL, or a database-specific environment
 variable (see also [*Using Configured Database
-Services*](/als/v1/user/services/data-services/#database-accessing)).
+Services*](/helion/devplatform/1.1/als/user/services/data-services/#database-accessing)).
 
 If the database module you use supports URL-formatted connection
 strings, using the
-[DATABASE\_URL](/als/v1/user/services/data-services/#database-database-url)
+[DATABASE\_URL](/helion/devplatform/1.1/als/user/services/data-services/#database-database-url)
 or [*database-specific URL
-variable*](/als/v1/user/services/data-services/#database-specific-url)
+variable*](/helion/devplatform/1.1/als/user/services/data-services/#database-specific-url)
 (REDIS\_URL, MONGODB\_URL, etc.) is often the simplest option.
 
 Use the variable in your code to connect your application to the

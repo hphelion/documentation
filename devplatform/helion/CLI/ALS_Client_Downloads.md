@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/client/download
+permalink: /helion/devplatform/1.1/als/client/download
 product: devplatform
 title: "HP Application Lifecyle Service (ALS) Client"
 product-version1: HP Helion Development Platform

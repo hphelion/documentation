@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/server/operations/
+permalink: /helion/devplatform/1.1/als/admin/server/operations/
 product: devplatform
 title: "Common Server Operations"
 product-version1: HP Helion Development Platform
@@ -40,10 +40,10 @@ To check the status of Application Lifecycle Service:
 This will list all the roles configured to run on the VM, and whether
 they are running, stopped, or starting.
 
-Roles are logical groups of processes (see [kato role info](/als/v1/admin/reference/kato-ref/#kato-command-ref-role-info)) which can be inspected individually with [kato process
-...](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-list) commands.
+Roles are logical groups of processes (see [kato role info](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-role-info)) which can be inspected individually with [kato process
+...](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-process-list) commands.
 
-In particular, the [kato process ready](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready) command is useful for determining if the system is in a state to receive [configuration commands](/als/v1/admin/server/configuration/#server-configuration). For example, to check that all processes for the configured roles are ready:
+In particular, the [kato process ready](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-process-ready) command is useful for determining if the system is in a state to receive [configuration commands](/helion/devplatform/1.1/als/admin/server/configuration/#server-configuration). For example, to check that all processes for the configured roles are ready:
 
     kato process ready all
 
@@ -82,7 +82,7 @@ Resetting the VM[](#resetting-the-vm "Permalink to this headline")
 -------------------------------------------------------------------
 
 If you would like to return an Application Lifecycle Service VM to its original
-"out-of-the-box" configuration, use the [*kato node reset*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) command. This command has two options:
+"out-of-the-box" configuration, use the [*kato node reset*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-node-attach) command. This command has two options:
 
 -   `kato node reset factory`: Resets everything.
     The host will behave as it did on first boot (creating a new
@@ -95,7 +95,7 @@ If you would like to return an Application Lifecycle Service VM to its original
     configuration and data, but leaves first boot (naming) or other
     state info. You would normally run this together with the [*kato
     node
-    setup*](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach)
+    setup*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-node-attach)
     command. For example:
 
         kato node reset soft
@@ -106,18 +106,18 @@ Monitoring The Application Lifecycle Service Server[](#monitoring-the-helion-ser
 
 ### Management Console[](#management-console "Permalink to this headline")
 
-The [*Management Console*](/als/v1/user/console/#management-console) has a Settings page that allows an administrator to monitor the server component and services, and restart or stop services as necessary.
+The [*Management Console*](/helion/devplatform/1.1/als/user/console/#management-console) has a Settings page that allows an administrator to monitor the server component and services, and restart or stop services as necessary.
 
 ### New Relic[](#new-relic "Permalink to this headline")
 
-Please see [*New Relic Server Monitoring*](/als/v1/admin/best-practices/#bestpractices-nrsysmond). New Relic can also be used to [monitor apps](/als/v1/user/deploy/newrelic/#newrelic).
+Please see [*New Relic Server Monitoring*](/helion/devplatform/1.1/als/admin/best-practices/#bestpractices-nrsysmond). New Relic can also be used to [monitor apps](/helion/devplatform/1.1/als/user/deploy/newrelic/#newrelic).
 
 ### Creating an Admin User[](#creating-an-admin-user "Permalink to this headline")
 
 The easiest way to add admin users to Application Lifecycle Service is via the Management
-Console under [Users](/als/v1/admin/console/customize/#console-users). The Management Console will prompt to create the initial admin user the first time you use it.
+Console under [Users](/helion/devplatform/1.1/als/admin/console/customize/#console-users). The Management Console will prompt to create the initial admin user the first time you use it.
 
-If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM [tty console](/als/v1/user/reference/glossary/#term-tty-console) as the *helion* user and run *helion register*:
+If you do not have access to the Management Console, create a user by logging in to the micro cloud or Core node controller via SSH or through the VM [tty console](/helion/devplatform/1.1/als/user/reference/glossary/#term-tty-console) as the *helion* user and run *helion register*:
 
     helion target api.helion-xxxx.local
     helion register superuser@example.net
@@ -131,11 +131,11 @@ Subsequent new users can be added remotely with the Helion client by an admin us
 ### System Monitoring with Nagios[](#system-monitoring-with-nagios "Permalink to this headline")
 
 If Nagios is installed on your server nodes, you can use it to monitor
-and report resource utilization. See the [Best Practices](/als/v1/admin/best-practices/#bestpractices-nagios) documentation for details.
+and report resource utilization. See the [Best Practices](/helion/devplatform/1.1/als/admin/best-practices/#bestpractices-nagios) documentation for details.
 
 ## Server Backup, Import, and Export[](#server-backup-import-and-export "Permalink to this headline")
 
 The import and export functionality can be used to do regular backups,
 or to move the Application Lifecycle Service configuration from one server to another. It is also a means of upgrading the Application Lifecycle Service VM without having to install everything from the ground up.
 
-Please see the [Best Practices](/als/v1/admin/best-practices/#bestpractices-controller-migration) documentation for details on how to [export](/als/v1/admin/best-practices/#bestpractices-migration-export) and [import](/als/v1/admin/best-practices/#bestpractices-migration-import) your data.
+Please see the [Best Practices](/helion/devplatform/1.1/als/admin/best-practices/#bestpractices-controller-migration) documentation for details on how to [export](/helion/devplatform/1.1/als/admin/best-practices/#bestpractices-migration-export) and [import](/helion/devplatform/1.1/als/admin/best-practices/#bestpractices-migration-import) your data.

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/
+permalink: /helion/devplatform/1.1/als/
 product: devplatform
 title: "Application Lifecycle Service Documentation"
 product-version1: HP Helion Development Platform
@@ -27,31 +27,31 @@ hosting provider, it provides the backbone for your private or public PaaS.
 ##ALS Admin Guide {#admin-guide}
 Documentation intended for system operators in charge of setting up, configuring, and maintaining the platform.
 
--   [Application Lifecycle Service Admin Guide](/als/v1/admin/)
-    -   [Wizard-Based Cluster Creation](/als/v1/admin/#wizard-based-cluster-creation)
-    -   [Management Console](/als/v1/admin/#management-console)
-    -   [Server Configuration](/als/v1/admin/#server-configuration)
-    -   [Cluster Configuration](/als/v1/admin/#cluster-configuration)
-    -   [Best Practices](/als/v1/admin/#best-practices)
-    -   [Reference](/als/v1/admin/#reference)
+-   [Application Lifecycle Service Admin Guide](/helion/devplatform/1.1/als/admin/)
+    -   [Wizard-Based Cluster Creation](/helion/devplatform/1.1/als/admin/#wizard-based-cluster-creation)
+    -   [Management Console](/helion/devplatform/1.1/als/admin/#management-console)
+    -   [Server Configuration](/helion/devplatform/1.1/als/admin/#server-configuration)
+    -   [Cluster Configuration](/helion/devplatform/1.1/als/admin/#cluster-configuration)
+    -   [Best Practices](/helion/devplatform/1.1/als/admin/#best-practices)
+    -   [Reference](/helion/devplatform/1.1/als/admin/#reference)
 
 ##ALS User Guide {#user-guide}
 Documentation intended for developers and other end users who will be using a platform set up and maintained by others.
 
--   [Application Lifecycle Service User Guide](/als/v1/user/)
-    -   [Quick Start](/als/v1/user/#quick-start)
-    -   [Application Lifecycle Service Client](/als/v1/user/#helion-client)
-    -   [Deploying Applications](/als/v1/user/#deploying-applications)
-    -   [Services](/als/v1/user/#services)
-    -   [Logging & Monitoring](/als/v1/user/#logging-monitoring)
-    -   [Management Console](/als/v1/user/#management-console)
-    -   [Reference](/als/v1/user/#reference)
+-   [Application Lifecycle Service User Guide](/helion/devplatform/1.1/als/user/)
+    -   [Quick Start](/helion/devplatform/1.1/als/user/#quick-start)
+    -   [Application Lifecycle Service Client](/helion/devplatform/1.1/als/user/#helion-client)
+    -   [Deploying Applications](/helion/devplatform/1.1/als/user/#deploying-applications)
+    -   [Services](/helion/devplatform/1.1/als/user/#services)
+    -   [Logging & Monitoring](/helion/devplatform/1.1/als/user/#logging-monitoring)
+    -   [Management Console](/helion/devplatform/1.1/als/user/#management-console)
+    -   [Reference](/helion/devplatform/1.1/als/user/#reference)
 
 ## Reference
 
-- [ALS Cluster Management Tool](/als/v1/client/reference)
-- [*kato* Command Reference](/als/v1/admin/reference/kato-ref)
-- [ALS Command-Line Client Reference](/als/v1/user/reference/client-ref)
-- [*manifest.yml* Reference](/als/v1/user/deploy/manifestyml)
-- [Environment Variables](/als/v1/user/reference/environment)
-- [Known Issues](/als/v1/admin/reference/known-issues)
+- [ALS Cluster Management Tool](/helion/devplatform/1.1/als/client/reference)
+- [*kato* Command Reference](/helion/devplatform/1.1/als/admin/reference/kato-ref)
+- [ALS Command-Line Client Reference](/helion/devplatform/1.1/als/user/reference/client-ref)
+- [*manifest.yml* Reference](/helion/devplatform/1.1/als/user/deploy/manifestyml)
+- [Environment Variables](/helion/devplatform/1.1/als/user/reference/environment)
+- [Known Issues](/helion/devplatform/1.1/als/admin/reference/known-issues)

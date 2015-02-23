@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/services/data-services/
+permalink: /helion/devplatform/1.1/als/user/services/data-services/
 product: devplatform
 title: "Data Services"
 product-version1: HP Helion Development Platform
@@ -17,7 +17,7 @@ authors: Jayme P
 # HP Helion Development Platform: Application Lifecycle Service Data Services {#index-0}
 
 The Application Lifecycle Service includes a number of data services which can be bound to the
-applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a [persistent file system](/als/v1/user/services/filesystem/#persistent-file-system) service and [Memcached](/als/v1/user/services/memcached/#memcached).
+applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a [persistent file system](/helion/devplatform/1.1/als/user/services/filesystem/#persistent-file-system) service and [Memcached](/helion/devplatform/1.1/als/user/services/memcached/#memcached).
 
 For detailed information on using an **external** database system, see [Using External Database Services](#using-external-databases).
 
@@ -57,7 +57,7 @@ The manifest.yml file can define a lot of application-specific details
 that tell the Application Lifecycle Service Client what to do without having to enter them
 when you run `helion push`. For complete details
 for using the *manifest.yml* file, please see [Configuration With
-*manifest.yml*](/als/v1/user/deploy/manifestyml/).
+*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/).
 
 A simple example telling the Application Lifecycle Service Client to request a MySQL database named
 **cirrusdb**:
@@ -70,12 +70,12 @@ A simple example telling the Application Lifecycle Service Client to request a M
 
 Possible service types are:
 
--   [filesystem](/als/v1/user/reference/glossary/#term-filesystem)
--   [memcached](/als/v1/user/reference/glossary/#term-memcached)
--   [mysql](/als/v1/user/reference/glossary/#term-mysql)
--   [postgresql](/als/v1/user/reference/glossary/#term-postgresql)
--   [rabbitmq](/als/v1/user/reference/glossary/#term-rabbitmq)
--   [redis](/als/v1/user/reference/glossary/#term-redis)
+-   [filesystem](/helion/devplatform/1.1/als/user/reference/glossary/#term-filesystem)
+-   [memcached](/helion/devplatform/1.1/als/user/reference/glossary/#term-memcached)
+-   [mysql](/helion/devplatform/1.1/als/user/reference/glossary/#term-mysql)
+-   [postgresql](/helion/devplatform/1.1/als/user/reference/glossary/#term-postgresql)
+-   [rabbitmq](/helion/devplatform/1.1/als/user/reference/glossary/#term-rabbitmq)
+-   [redis](/helion/devplatform/1.1/als/user/reference/glossary/#term-redis)
 
 To access the database services after they've been created, see [Accessing Database Services](#accessing-database-services).
 
@@ -134,7 +134,7 @@ There are two ways to do this:
 
 2. Pass all parameters in separate commands.
 	
-	These two commands ([helion create-service](/als/v1/user/reference/client-ref/servicemanagement/#command-create-service) and [helion bind-service](/als/v1/user/reference/client-ref/servicemanagement/#command-bind-service)) do the same thing as if all three parameters were passed using `create-service`, but provide additional flexibility to create and configure the service before binding it to an app.
+	These two commands ([helion create-service](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-create-service) and [helion bind-service](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-bind-service)) do the same thing as if all three parameters were passed using `create-service`, but provide additional flexibility to create and configure the service before binding it to an app.
 
 		create-service \<service\> \<name\>
 
@@ -163,13 +163,13 @@ There are two ways to do this:
         +-------------+---+---------+---------------------------+-----------------------+
 
 For further information on the commands for managing services, or to remotely check the settings and credentials of any ALS service, please see
-the [ALS Service Management](/als/v1/user/reference/client-ref/servicemanagement) command reference.
+the [ALS Service Management](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement) command reference.
 
 ##Using Database Service Environment Variables {#using-database-services}
 
-When you bind a database service to an application, [environment variables](/als/v1/user/reference/environment/#environment-variables) containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.
+When you bind a database service to an application, [environment variables](/helion/devplatform/1.1/als/user/reference/environment/#environment-variables) containing that service's host, port, and credentials are added to the application container. You can use these environment variables in your code to connect to the service, rather than having to discover and then hard-code in such details.
 
-Examples of how to parse and use these variables can be found in the [Language-Specific Deployment](/als/v1/user/deploy/#language-specific-deployment) section.
+Examples of how to parse and use these variables can be found in the [Language-Specific Deployment](/helion/devplatform/1.1/als/user/deploy/#language-specific-deployment) section.
 
 ### DATABASE\_URL<a name="database-url"></a>
 
@@ -267,11 +267,11 @@ Container security prevents apps from connecting to arbitrary servers and ports 
 
 ## Directly Accessing Database Services {#accessing-database-services}
 
-You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell) (preferred) or [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) commands.
+You may need to connect to a database service directly for purposes of initial database setup, modifying fields, running queries, or doing backups. These operations can be done using the [helion dbshell](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-dbshell) (preferred) or [helion tunnel](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-tunnel) commands.
 
 ### Via *dbshell* {#using-dbshell}
 
-The [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell) command creates an SSH tunnel to database services. To open an interactive shell to a service:
+The [helion dbshell](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-dbshell) command creates an SSH tunnel to database services. To open an interactive shell to a service:
 
     helion dbshell <application_name> <service_name>
 
@@ -290,7 +290,7 @@ hook in *manifest.yml* such as:
 
 ### Using Tunnel {#using-tunnel}
 
-The [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command is an alternative
+The [helion tunnel](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-tunnel) command is an alternative
 method for accessing database services. The command creates a small Ruby
 application which proxies database requests over HTTP. This is the
 standard method for database access in Cloud Foundry, but tends to be
@@ -425,7 +425,7 @@ staging process is complete but before the app starts to run.
 
 ### Using helion run {#using-helion-run}
 
-To export a MySQL database, use the [helion run](/als/v1/user/reference/client-ref/management/#command-run) command to remotely execute the dbexport tool:
+To export a MySQL database, use the [helion run](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-run) command to remotely execute the dbexport tool:
 
 	helion run [application-name] dbexport service-name > dumpfile.sql
 
@@ -441,7 +441,7 @@ To back up a MySQL database, use the [tunnel](#sqltunnel)
 command to make a connection to the server and export the data using
 `mysqldump`.
 
-Use the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command to access the service (in
+Use the [helion tunnel](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-tunnel) command to access the service (in
 this example a MySQL database named `customerdb`):
 
     helion tunnel customerdb
@@ -467,7 +467,7 @@ this example a MySQL database named `customerdb`):
 Select option **3. mysqldump**. You will be prompted to enter a path to
 where the dump will be saved.
 
-See the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
+See the [helion tunnel](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
 ways of accessing a MySQL database. See [Importing a MySQL database](#importing-a-mysql-database) for details on importing a
 file created by mysqldump into an existing MySQL database service.
 
@@ -479,7 +479,7 @@ To import a MySQL database, use the `helion dbshell` command:
 
     helion dbshell [application name] [service name] < dumpfile.sql
 
-The [helion dbshell](/als/v1/user/reference/client-ref/management/#command-dbshell) command redirects the contents of a local database dump file to the
+The [helion dbshell](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-dbshell) command redirects the contents of a local database dump file to the
 appropriate database client running in the application instance (i.e.
 equivalent to `helion run dbshell ...`). If run
 from a directory containing the *manifest.yml* file, the application and
@@ -489,7 +489,7 @@ service names may be omitted.
 This method of database import is provided for compatibility with Cloud Foundry. It tends to be slower than using `helion run ...`.
 
 To import data from a *mysqldump* file into an existing
-MySQL database service, use the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command:
+MySQL database service, use the [helion tunnel](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-tunnel) command:
 
     helion tunnel <servicename>
 
@@ -519,7 +519,7 @@ Then, import an SQL file with the following command:
 
     mysql --protocol=TCP --host=localhost --port=10000 --user=<user> --password=<pass> <name> < mydatabase.sql
 
-See the [helion tunnel](/als/v1/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
+See the [helion tunnel](/helion/devplatform/1.1/als/user/reference/client-ref/servicemanagement/#command-tunnel) command documentation for other
 ways of accessing a MySQL database. See [Backing up a MySQL database](#backing-up-a-mysql-database) for details on how to create
 a `mysqldump` backup that can then be imported into
 another database service.
@@ -547,7 +547,7 @@ version numbers. For example:
 Update the application code to use the DATABASE\_URL environment
 variable. See the following language-specific documentation:
 
--   [PHP Data Services](/als/v1/user/deploy/languages/php/#php-data-services)
+-   [PHP Data Services](/helion/devplatform/1.1/als/user/deploy/languages/php/#php-data-services)
 
 
 The following changes to sample applications show this modification:
@@ -561,4 +561,4 @@ The following changes to sample applications show this modification:
 
 ##SQLite {#sqlite}
 
-Applications can use an [SQLite database](http://www.sqlite.org/) as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- **always** store the SQLite file on a [Persistent File System](/als/v1/user/services/filesystem/#persistent-file-system) mount point to avoid losing data.
+Applications can use an [SQLite database](http://www.sqlite.org/) as an alternative to Application Lifecycle Service database services. However, since the filesystem of an application container is ephemeral -- destroyed when an application is stopped, restarted, or updated -- **always** store the SQLite file on a [Persistent File System](/helion/devplatform/1.1/als/user/services/filesystem/#persistent-file-system) mount point to avoid losing data.

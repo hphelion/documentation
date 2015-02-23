@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/app-debug/
+permalink: /helion/devplatform/1.1/als/user/deploy/app-debug/
 product: devplatform
 title: "Remote Debugging"
 product-version1: HP Helion Development Platform
@@ -22,12 +22,12 @@ code and the debugging tool or IDE on a port and protocol other than
 standard HTTP(S).
 
 Application Lifecycle Service makes this possible through the [Harbor port
-service](/als/v1/user/services/port-service/#port-service), and the
-[*push*](/als/v1/user/reference/client-ref/#command-push) command has
+service](/helion/devplatform/1.1/als/user/services/port-service/#port-service), and the
+[*push*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-push) command has
 a `-d` option to set up port forwarding for a remote
 debugging session automatically.
 
-See the [JPDA Debugging](/als/v1/user/deploy/languages/java/#java-web-debug) section
+See the [JPDA Debugging](/helion/devplatform/1.1/als/user/deploy/languages/java/#java-web-debug) section
 of the Java deployment documentation for an example.
 
 HELION\_DEBUG\_COMMAND[](#helion-debug-command "Permalink to this headline")
@@ -36,7 +36,7 @@ HELION\_DEBUG\_COMMAND[](#helion-debug-command "Permalink to this headline")
 The command-line client can automatically start a local debugger client or IDE instance with connection information for a newly pushed application.
 
 When the `-d` debugging option is given to
-[*push*](/als/v1/user/reference/client-ref/#command-push) command,
+[*push*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-push) command,
 the client looks for a HELION\_DEBUG\_COMMAND environment variable. If
 present, the command specified in that variable is run after the push
 completes as child process in the foreground (i.e. blocking the parent

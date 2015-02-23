@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/buildpacks/
+permalink: /helion/devplatform/1.1/als/user/reference/client-ref/buildpacks/
 product: devplatform
 title: "Application Lifecycle Service Command Line Client Reference: Buildpacks"
 product-version1: HP Helion Development Platform

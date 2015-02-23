@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/server/router/
+permalink: /helion/devplatform/1.1/als/admin/server/router/
 product: devplatform
 title: "Router"
 product-version1: HP Helion Development Platform
@@ -32,7 +32,7 @@ Application Lifecycle Service's default router ('router2g') supports
 "wss://" secure web sockets) and [SPDY](http://www.chromium.org/spdy).
 
 ## Settings {#settings}
-The Router is configured using [*kato config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). The following settings are configurable:
+The Router is configured using [*kato config*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config). The following settings are configurable:
 
 **client\_inactivity\_timeout**: time (in seconds) the router waits
 for idle clients (default 1200 seconds). To change this:
@@ -86,7 +86,7 @@ snippets to help prevent frame based clickjacking.
 ## WebSockets {#websockets}
 
 Applications using web sockets must use the VCAP\_APP\_PORT or PORT
-[*environment variables*](/als/v1/user/reference/environment/#environment-variables)
+[*environment variables*](/helion/devplatform/1.1/als/user/reference/environment/#environment-variables)
 to set the default listener port of the WebSocket server.
 
 ## SPDY {#router-spdy}

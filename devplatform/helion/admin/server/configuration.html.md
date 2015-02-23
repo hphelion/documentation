@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/server/configuration/
+permalink: /helion/devplatform/1.1/als/admin/server/configuration/
 product: devplatform
 title: "Detailed Configuration"
 product-version1: HP Helion Development Platform
@@ -19,7 +19,7 @@ authors: Jayme P
 # HP Helion Development Platform: Detailed Configuration {#detailed-configuration} 
 
 After booting the VM, run *kato process ready all* before starting the following configuration steps. This command returns **READY** when all configured system processes have started, and is particularly important when using *kato* commands in automated configuration scripts which run immediately after boot (the
-[*--block*](/als/v1/admin/reference/kato-ref/#kato-command-ref-process-ready)
+[*--block*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-process-ready)
 option is useful in this scenario).
 
 **Warning**: All  *kato*  commands should be run as the 'helion' system user, **not as root**. Kato will prompt for the 'helion' user password if sudo permissions are required for a specific operation.
@@ -58,17 +58,17 @@ The default password for the Helion system user is **helion**.  In clusters crea
 
 This password is changed to match the one set for the first administrative user created in the Management Console. Once you've set up the primary Application Lifecycle Service admin account, use that account's password when logging in to the VM at the command line. 
 
-In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of [multiple Controller nodes](/als/v1/admin/cluster/#cluster-multi-controllers)). In this case, it's best to log in to each node in the cluster to change the password
+In an Application Lifecycle Service cluster, this change only happens on the node serving the Management Console pages (which could be one of [multiple Controller nodes](/helion/devplatform/1.1/als/admin/cluster/#cluster-multi-controllers)). In this case, it's best to log in to each node in the cluster to change the password
 manually with the *passwd* command.
 
 ##Network Setup {#network-setup}
 
 ### Changing the Hostname {#changing-the-hostname}
-You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the [kato node rename](/als/v1/admin/reference/kato-ref/#kato-command-ref) command:
+You may want or need to change the hostname of the Application Lifecycle Service system, either to match a DNS record you've created or just to make the system URLs more convenient. This can be done using the [kato node rename](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref) command:
 
     kato node rename mynewname.example.com
 
-This command will change the system hostname in */etc/hostname* and */etc/hosts,* as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the [Management Console](/als/v1/user/console/#management-console).
+This command will change the system hostname in */etc/hostname* and */etc/hosts,* as well as performing some internal configuration for Application Lifecycle Service such as generating a new server certificate for the [Management Console](/helion/devplatform/1.1/als/user/console/#management-console).
 
 mDNS is only supported with ".local" hostnames. If you want to give the
 VM a canonical hostname on an existing network, [configure DNS](#server-config-dns) and disable the **mdns** role:
@@ -78,33 +78,33 @@ VM a canonical hostname on an existing network, [configure DNS](#server-config-d
 **Note**: Application Lifecycle Service takes a while to configure itself at boot (longer at first boot). Check *kato status* to see that core services are running before
 executing *kato node rename*.
 
-In a [cluster](/als/v1/user/reference/glossary/#term-cluster), you
+In a [cluster](/helion/devplatform/1.1/als/user/reference/glossary/#term-cluster), you
 may also need to manually [modify the */etc/hosts file*](#server-config-etc-hosts).
 
 ### Changing IP Addresses {#changing-ip-addresses}
 
-The Application Lifecycle Service *micro cloud* server is initially set up for [DHCP](/als/v1/user/reference/glossary/#term-dhcp) and [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns). This is
+The Application Lifecycle Service *micro cloud* server is initially set up for [DHCP](/helion/devplatform/1.1/als/user/reference/glossary/#term-dhcp) and [multicast DNS](/helion/devplatform/1.1/als/user/reference/glossary/#term-multicast-dns). This is
 often sufficient for local testing, but in this configuration has only a
 single node and can only be privately routed.
 
 As you move toward production use of the server, further configuration
 of IP addresses and hostnames will therefore be required. A production
 Application Lifecycle Service server will most likely be a
-[cluster](/als/v1/user/reference/glossary/#term-cluster) consisting
+[cluster](/helion/devplatform/1.1/als/user/reference/glossary/#term-cluster) consisting
 of several nodes and some of them will require IP addresses and corresponding hostnames.
 
 If your server is to be exposed to the Internet, these addresses must be
 routable and the hostnames must appear in the global DNS. Even if your
 server is to be part of a [*private
-PaaS*](/als/v1/user/reference/glossary/#term-private-paas) for
+PaaS*](/helion/devplatform/1.1/als/user/reference/glossary/#term-private-paas) for
 organizational use only, it must still integrate fully with your network
 services, DHCP and DNS in particular. Finally, in the rare case that
 such services are not available, the Application Lifecycle Service can be configured with static IP addresses and hostnames.
 
 Before we examine these scenarios in detail, let's review the separation
-of roles in a [cluster](/als/v1/admin/cluster/#cluster-setup):
+of roles in a [cluster](/helion/devplatform/1.1/als/admin/cluster/#cluster-setup):
 
--   The **core** node which we conventionally call `api.helion-xxxx.local` in a micro cloud will be given its own hostname and IP address in a cluster so that you can reach it from both the [Management Console](/als/v1/user/console/#management-console) and the command line.
+-   The **core** node which we conventionally call `api.helion-xxxx.local` in a micro cloud will be given its own hostname and IP address in a cluster so that you can reach it from both the [Management Console](/helion/devplatform/1.1/als/user/console/#management-console) and the command line.
 -   At the same time, the other nodes in the cluster will also need to reach the core node, so whatever address is configured on its network interface will have to be known to the network, the primary node, and all the other nodes. This can be the same as the primary address assigned to the core, or a secondary address used purely within the cluster.
 -   The **router** nodes, if separate from the primary, will each require IP addresses of their own, reachable from any load balancer and through any firewall that you put in front of them.
 
@@ -151,7 +151,7 @@ administrator for their addresses.
 
 ### Setting a Static IP {#setting-a-static-ip}
 
-The easiest way to configure an Application Lifecycle Service VM with a static IP address is to use the [kato op static\_ip](/als/v1/admin/reference/kato-ref/#kato-command-ref-op) command.
+The easiest way to configure an Application Lifecycle Service VM with a static IP address is to use the [kato op static\_ip](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-op) command.
 
 This command will prompt for the following inputs:
 
@@ -177,7 +177,7 @@ The command can be run non-interactively with the following arguments:
 - --dns-search-domains (set empty "" to skip)
 - --restart-network
 
-If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, [kato node migrate](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-migrate) is run automatically.
+If the IP address provided differs from the previous one, and the node isn't configured as a micro cloud, [kato node migrate](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-node-migrate) is run automatically.
 
 As a precaution, the command does not automatically restart networking
 services. To do so, run the following commands:
@@ -187,7 +187,7 @@ services. To do so, run the following commands:
 You will see a deprecation warning about the `restart` option, which can safely be ignored in this context.
 
 **Note**
-If you are setting a new static IP *after* having configured a cluster, you must reconfigure all other nodes in the cluster to use the new MBUS IP address. Run [kato node attach](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) on all non-Core nodes. 
+If you are setting a new static IP *after* having configured a cluster, you must reconfigure all other nodes in the cluster to use the new MBUS IP address. Run [kato node attach](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-node-attach) on all non-Core nodes. 
 
 
 Alternatively, these changes could be made by editing the */etc/network/interfaces* file manually. For example:
@@ -244,7 +244,7 @@ but when troubleshooting network issues it never hurts to verify that
 the file is configured correctly.
 
 As well, various components in a
-[Cluster](/als/v1/admin/cluster/#cluster-setup) rely on finding the
+[Cluster](/helion/devplatform/1.1/als/admin/cluster/#cluster-setup) rely on finding the
 cluster nodes in `/etc/hosts`: the Cloud Controller
 and the RabbitMQ service in particular.
 
@@ -260,7 +260,7 @@ that.
 
 Consider an Application Lifecycle Service instance called `helion-test`
 in domain `example.com`. The following example is
-what you should expect to see on a [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud)
+what you should expect to see on a [micro cloud](/helion/devplatform/1.1/als/user/reference/glossary/#term-micro-cloud)
 installation, where all roles are running on the same node:
 
     hostname
@@ -278,7 +278,7 @@ installation, where all roles are running on the same node:
     127.0.0.1       localhost helion-test
     10.0.0.1        helion-test.example.com api.helion-test.example.com
 
-On a [cluster](/als/v1/user/reference/glossary/#term-cluster)
+On a [cluster](/helion/devplatform/1.1/als/user/reference/glossary/#term-cluster)
 installation, the IP address in /etc/hosts will identify the node
 hosting the MBUS, usually the same as the Cloud Controller. On this
 node, you will see a correspondence between the network interface
@@ -295,7 +295,7 @@ example:
 
 ### DNS {#server-config-dns}
 
-The Application Lifecycle Service micro cloud uses [multicast DNS](/als/v1/user/reference/glossary/#term-multicast-dns) to broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local machine or subnet.
+The Application Lifecycle Service micro cloud uses [multicast DNS](/helion/devplatform/1.1/als/user/reference/glossary/#term-multicast-dns) to broadcast its generated hostname (e.g. `helion-xxxx.local`). This mechanism is intended for VMs running on a local machine or subnet.
 
 For production use, the server will need:
 
@@ -319,7 +319,7 @@ application pushed to Application Lifecycle Service as well as the following two
     aok.helion.example.com)
 
 If you intend to expose your applications at URLs on other domains (e.g.
-using [helion map](/als/v1/user/reference/client-ref/#command-map) add these names
+using [helion map](/helion/devplatform/1.1/als/user/reference/client-ref/#command-map) add these names
 to the DNS zone file as well. For example:
 
     app.domain.com              IN    CNAME    helion.example.com
@@ -370,7 +370,7 @@ The quickest way to get wildcard DNS resolution is to use the
 [xip.io](http://xip.io/) service.  This is the approach taken on clusters created with the Horizon Management Console panel or Application Lifecycle Service Installer CLI, and is done as part of the setup process.
 
 [Change your hostname](#server-config-hostname) using [kato node
-rename](/als/v1/admin/reference/kato-ref/#kato-command-ref-node-attach) to
+rename](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-node-attach) to
 match the external IP address with the 'xip.io' domain appended. For
 example:
 
@@ -384,7 +384,7 @@ private subnets as well as public IP addresses.
 ####dnsmasq {#dnsmasq}
 
 Locally, you can run
-[dnsmasq](/als/v1/user/reference/glossary/#term-dnsmasq) as a simple
+[dnsmasq](/helion/devplatform/1.1/als/user/reference/glossary/#term-dnsmasq) as a simple
 DNS proxy which resolves wildcards for
 `*.helion-test.example.com` to
 `10.9.8.7` when line such as the following is
@@ -416,7 +416,7 @@ when running the `kato op static_ip` command (see
 
 ###TCP/UDP Port Configuration {#tcp-udp-port-configuration}
 
-The Application Lifecycle Service [micro cloud](/als/v1/user/reference/glossary/#term-micro-cloud) runs with
+The Application Lifecycle Service [micro cloud](/helion/devplatform/1.1/als/user/reference/glossary/#term-micro-cloud) runs with
 the following ports exposed:
 
 <table>
@@ -450,7 +450,7 @@ port.
 <tr><td>5454</td><td>tcp</td><td>all nodes</td><td>controller</td><td>redis</td></tr>
 </table>
    
-More on  [NATS](/als/v1/user/reference/glossary/#term-nats) communication
+More on  [NATS](/helion/devplatform/1.1/als/user/reference/glossary/#term-nats) communication
     with the MBUS IP (core Cloud Controller)10 is available in the glossary.
 
 Each node can be internally firewalled using
@@ -461,7 +461,7 @@ Comments:
 
 -   Ports 80 and 443 need only be open to the world on router nodes.
 -   Port 4222 should be open on all nodes for
-    [NATS](/als/v1/user/reference/glossary/#term-nats) communication
+    [NATS](/helion/devplatform/1.1/als/user/reference/glossary/#term-nats) communication
     with the MBUS IP (core Cloud Controller)
 -   Port 9022 should be open to allow transfer of droplets to and from
     the DEAs, and Cloud Controllers.
@@ -496,7 +496,7 @@ In some cases, it may be a requirement that any HTTP request is first
 handled through an upstream or parent proxy (HTTP requests may not be
 directly routable otherwise).
 
-In this case it is necessary to tell [Polipo](/als/v1/user/reference/glossary/#term-polipo) about the proxy so it knows how to handle this correctly.
+In this case it is necessary to tell [Polipo](/helion/devplatform/1.1/als/user/reference/glossary/#term-polipo) about the proxy so it knows how to handle this correctly.
 
 Open the Polipo config file `/etc/polipo/config` and
 add the lines:
@@ -523,7 +523,7 @@ Application Lifecycle Service server in `/var/log/polipo/polipo.log`.
 
 ###Staging Cache & App HTTP Proxy {#staging-cache-app-http-proxy}
 
-Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the [HTTP\_PROXY](/als/v1/user/reference/environment/#term-http-proxy) environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.
+Application Lifecycle Service caches all application dependencies that are downloaded by module managers that support the [HTTP\_PROXY](/helion/devplatform/1.1/als/user/reference/environment/#term-http-proxy) environment variable (e.g. pip, PyPM, PPM, NPM, etc). This is limited to 100MB of in-memory cache.
 
 If you have an upstream HTTP proxy that deployed applications and the
 staging system need to traverse to access the internet, use the
@@ -537,7 +537,7 @@ To remove the proxy setting:
     kato op upstream_proxy delete
 
 To set an HTTP proxy exclusively for apps, add an **environment\app\_http\_proxy** setting in the dea\_ng
-config using [kato config set](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example:
+config using [kato config set](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config). For example:
 
     kato config set dea_ng environment/app_http_proxy 10.0.0.47:3000
 
@@ -569,7 +569,7 @@ on external block storage for:
 -   containers (DEA and Stager nodes)
 
 Suggestions for mounting block storage and instructions for relocating
-data can be found in the [Persistent Storage](/als/v1/admin/best-practices/#bestpractices-persistent-storage)
+data can be found in the [Persistent Storage](/helion/devplatform/1.1/als/admin/best-practices/#bestpractices-persistent-storage)
 section.
 
 ##Application Lifecycle Service Data Services vs. High Availability Databases {#helion-data-services-vs-high-availability-databases}
@@ -581,18 +581,18 @@ is recommended.
 To use an external database instead of the data services provided by
 Application Lifecycle Service, specify the database credentials directly in your application
 code instead of using the credentials from the
-[VCAP\_SERVICES](/als/v1/user/reference/environment/#term-vcap-services)
+[VCAP\_SERVICES](/helion/devplatform/1.1/als/user/reference/environment/#term-vcap-services)
 environment variable.
 
 To tie external databases to Application Lifecycle Service as a data service, see the
 examples in the [Adding System
-Services](/als/v1/admin/reference/add-service/#add-service) section.
+Services](/helion/devplatform/1.1/als/admin/reference/add-service/#add-service) section.
 
 ###HTTPS & SSL {#https-ssl}
 
 HTTPS mode provides access to the provisioned apps using wild card SSL
 certificates through the router or
-[Nginx](/als/v1/user/reference/glossary/#term-nginx) web server.
+[Nginx](/helion/devplatform/1.1/als/user/reference/glossary/#term-nginx) web server.
 
 The ALS VM generates self-signed wildcard SSL certificates to match the unique ``.local`` hostname it assigns itself at first boot. These certificates can be found in: 
 
@@ -627,7 +627,7 @@ The Application Lifecycle Service router supports
 [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication), and custom
 SSL certificates for domains resolving to the system can be added using
 the [kato op custom\_ssl\_cert
-install](/als/v1/admin/reference/kato-ref/#kato-command-ref-op) command.
+install](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-op) command.
 Usage:
 
     kato op custom_ssl_cert install <key-path> <cert-path> <domain> [--wildcard-subdomains]
@@ -729,16 +729,16 @@ organization share the defined limits.
 Use the *helion quota ...* commands to modify
 quota definitions:
 
--   [*helion quota configure*](/als/v1/user/reference/client-ref/#command-quota-configure)
+-   [*helion quota configure*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-quota-configure)
 -   [*helion quota
-    create*](/als/v1/user/reference/client-ref/#command-quota-create)
+    create*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-quota-create)
 -   [*helion quota
-    delete*](/als/v1/user/reference/client-ref/#command-quota-delete)
+    delete*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-quota-delete)
 -   [*helion quota
-    list*](/als/v1/user/reference/client-ref/#command-quota-list)
+    list*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-quota-list)
 
 Existing quota definitions can also be viewed and edited in the
-Management Console [Quota Definitions settings](/als/v1/admin/console/customize/#console-settings-quota-definitions)
+Management Console [Quota Definitions settings](/helion/devplatform/1.1/als/admin/console/customize/#console-settings-quota-definitions)
 
 ### sudo {#sudo}
 
@@ -748,7 +748,7 @@ Quota Definitions can give all users in an Organization the use of the **sudo** 
 
 Users (with our without *sudo* permissions) can install Ubuntu packages in application containers by requesting them in the requirements section of an application's *manifest.yml* file. The system allows package installation only from those repositories specified in the **Allowed Repos** list in the Management Console. 
   
- This list can also be viewed and modified at the command line using [kato config](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For example, to view the 
+ This list can also be viewed and modified at the command line using [kato config](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config). For example, to view the 
  current list: 
   
 	   kato config get cloud_controller_ng allowed_repos 
@@ -764,7 +764,7 @@ To add a repository:
 		- deb http://security.ubuntu.com/ubuntu precise-security main universe 
 		- deb http://apt.newrelic.com/debian/ newrelic non-free 
 
-Once a repository has been added to the list, **the GPG key must also be added** to the [Docker base image](/als/v1/admin/server/docker/#modifying-or-updating-the-container-image) on each DEA (or the [Docker registry](/als/v1/admin/server/docker/#creating-a-docker-registry) server if configured). 
+Once a repository has been added to the list, **the GPG key must also be added** to the [Docker base image](/helion/devplatform/1.1/als/admin/server/docker/#modifying-or-updating-the-container-image) on each DEA (or the [Docker registry](/helion/devplatform/1.1/als/admin/server/docker/#creating-a-docker-registry) server if configured). 
 
 For example, to trust the GPG for the New Relic repository, add the following line to the *Dockerfile* for the base image:
 
@@ -772,9 +772,9 @@ For example, to trust the GPG for the New Relic repository, add the following li
 
 ## Container NFS Mounts {#container_NFS}
 
-**Warning**: Reconfiguring ALS to allow user applications to mount NFS partitions has serious security implications. See the [Privileged Containers](/als/v1/admin/server/docker/#docker-privileged-containers) section for details.
+**Warning**: Reconfiguring ALS to allow user applications to mount NFS partitions has serious security implications. See the [Privileged Containers](/helion/devplatform/1.1/als/admin/server/docker/#docker-privileged-containers) section for details.
 
-By default, application containers are unable to mount external filesystems (other than the built-in [Filesystem Service](/als/v1/user/services/filesystem/) via network protocols such as NFS.
+By default, application containers are unable to mount external filesystems (other than the built-in [Filesystem Service](/helion/devplatform/1.1/als/user/services/filesystem/) via network protocols such as NFS.
 
 If the system has been configured to use ref:privileged containers <docker-privileged-containers> and *sudo* permissions have been explicitly allowed in the quota, NFS partitions can be mounted in application containers using application configuration similar to the following manifest.yml excerpt:
 requirements:

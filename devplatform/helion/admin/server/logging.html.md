@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/server/logging/
+permalink: /helion/devplatform/1.1/als/admin/server/logging/
 product: devplatform
 title: "Log Streams"
 product-version1: HP Helion Development Platform
@@ -88,7 +88,7 @@ A "drain" is a receiver for a log stream. Logyard has four kinds:
 
 Drains for system log and cloud event streams can be added by admins
 with the [kato log
-drain](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-drain-add)
+drain](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-log-drain-add)
 command. For example:
 
     kato log drain add --prefix systail.kato mydrain udp://logs.papertrailapp.com:12345
@@ -105,7 +105,7 @@ To delete the drain:
     kato log drain delete mydrain
 
 The [*kato
-history*](/als/v1/admin/reference/kato-ref/#kato-command-ref-history) command
+history*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-history) command
 uses a built-in drain which forwards to a Redis server on the Primary
 node.
 
@@ -179,7 +179,7 @@ streams*](#logging-keys):
 -   syslog.time: syslog formatted time
 
 You can see a list of the default drain formats using [*kato config
-get*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config):
+get*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config):
 
     kato config get logyard drainformats
     apptail: ! '{{.human_time}} {{.source}}.{{.instance_index}}: {{.text}}'
@@ -216,8 +216,8 @@ This could be forwarded to the Papertrail log analysis service:
 
 You can also change the default apptail, event, and systail drain
 formats to modify the output of any drains using these prefixes (e.g.
-[helion drain](/als/v1/user/reference/client-ref/#command-drain-add), Cloud
-Events in the Management Console, and [kato log tail](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-tail)
+[helion drain](/helion/devplatform/1.1/als/user/reference/client-ref/#command-drain-add), Cloud
+Events in the Management Console, and [kato log tail](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-log-tail)
 respectively).
 
 ### Custom Drains[](#custom-drains "Permalink to this headline")
@@ -231,7 +231,7 @@ Guide](https://github.com/HP/logyard-devguide#readme)
 ### Application Drains[](#application-drains "Permalink to this headline")
 
 Drains for application log streams can be added by end users with the
-[*helion drain add*](/als/v1/user/reference/client-ref/#command-drain-add) command. See the [Application Logs](/als/v1/user/deploy/app-logs/#application-logs) section of the documentation for an example.
+[*helion drain add*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-drain-add) command. See the [Application Logs](/helion/devplatform/1.1/als/user/deploy/app-logs/#application-logs) section of the documentation for an example.
 
 ### Drain Status[](#drain-status "Permalink to this headline")
 
@@ -254,7 +254,7 @@ Each message in a log stream is prefixed with a key, identifying what
 type of message it is or to which log stream it belongs. The following
 keys are available for use in defining drains using the
 `--prefix` flag for [*kato log drain
-add*](/als/v1/admin/reference/kato-ref/#kato-command-ref-log-drain-add)).
+add*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-log-drain-add)).
 
 Systail keys are [*configurable*](#logging-systail-manage).
 
@@ -332,7 +332,7 @@ Systail keys are [*configurable*](#logging-systail-manage).
 
 The list above shows the default systail keys. These can keys can be
 modified with the [*kato
-config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config) command to
+config*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config) command to
 add arbitrary system log files to the stream or change the log file
 source for an existing key.
 
@@ -365,7 +365,7 @@ Configuration[](#configuration "Permalink to this headline")
 Application Lifecycle Service has a number of configurable limits on application log drains
 to help prevent performance problems the logging subsystems. These
 settings can all be viewed and set with [*kato
-config*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config) commands as
+config*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config) commands as
 described below:
 
 ### Drain Timeouts[](#drain-timeouts "Permalink to this headline")
@@ -388,7 +388,7 @@ described below:
 
     These timeouts can be configured. To see a list of the configured
     timeouts, use [*kato config
-    get*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
+    get*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config). For
     example:
 
         kato config get logyard retrylimits
@@ -396,7 +396,7 @@ described below:
         tmp.: 25m
 
     To set a time-out (minimum 21m), use [*kato config
-    set*](/als/v1/admin/reference/kato-ref/#kato-command-ref-config). For
+    set*](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config). For
     example, to set the timeout limit to 10 hours on all drains named
     with the prefix "papertrail":
 

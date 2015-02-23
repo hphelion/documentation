@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/services/memcached/
+permalink: /helion/devplatform/1.1/als/user/services/memcached/
 product: devplatform
 title: "Memcached Service"
 product-version1: HP Helion Development Platform
@@ -22,7 +22,7 @@ which can be shared by application instances.
 
 ## Using the Service {#using-the-service}
 
-As with other [data services](/als/v1/user/services/data-services/#data-services), the
+As with other [data services](/helion/devplatform/1.1/als/user/services/data-services/#data-services), the
 location and port of the memcached service is exposed to the application
 via environment variables: MEMCACHE\_URL or VCAP\_SERVICES.
 
@@ -40,7 +40,7 @@ administrator can run the following commands on the Cloud Controller:
     kato config set memcached_node sasl_enabled true
     kato restart memcached_node
 
-With SASL enabled, applications must parse the[*VCAP\_SERVICES*](/als/v1/user/services/data-services/#database-services-vcap-services)
+With SASL enabled, applications must parse the[*VCAP\_SERVICES*](/helion/devplatform/1.1/als/user/services/data-services/#database-services-vcap-services)
 environment variables to extract the `name`, `user`, and `password`
 strings from the memcached `credentials` list. Using SASL with Memcached
 requires client libraries/modules in the application which support

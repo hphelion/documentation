@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/server/aok/
+permalink: /helion/devplatform/1.1/als/admin/server/aok/
 product: devplatform
 title: "AOK Authentication Server"
 product-version1: HP Helion Development Platform
@@ -39,7 +39,7 @@ Users log in to the web-based Horizon Management Console as they would with any 
 ##End User Login: Client {#client}
 
 If the strategy has been changed to something other than **builtin** (see
-[Strategies](#strategies)) then users connecting with the [ALS command-line client](/als/v1/user/client) should be aware that:
+[Strategies](#strategies)) then users connecting with the [ALS command-line client](/helion/devplatform/1.1/als/user/client) should be aware that:
 
 -   The user must enter identifiers in the format expected by the [strategy](#aok-strategies) used by AOK (e.g. username or email
     address).
@@ -76,7 +76,7 @@ names.
 ##Configuration {#configuration}
 
 To configure AOK, set the following keys in the AOK config using the [kato
-config set](/als/v1/admin/reference/kato-ref/#kato-command-ref-config) commands:
+config set](/helion/devplatform/1.1/als/admin/reference/kato-ref/#kato-command-ref-config) commands:
 
 -   strategy:
 

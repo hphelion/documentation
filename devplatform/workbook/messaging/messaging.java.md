@@ -20,9 +20,9 @@ This very simple Servlet-based Java web app displays a simple form that takes a 
 ## Prerequisites
 If you are missing any of these items, please [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an [ALS cluster](/als/v1/admin/cluster/).
-2.	The [Helion command-line interface](/als/v1/user/client/) (CLI) must be installed.
-3.	You must have access to the web-based [Helion Management console](/als/v1/user/console/).
+1.	You must have access to an [ALS cluster](/helion/devplatform/1.1/als/admin/cluster/).
+2.	The [Helion command-line interface](/helion/devplatform/1.1/als/user/client/) (CLI) must be installed.
+3.	You must have access to the web-based [Helion Management console](/helion/devplatform/1.1/als/user/console/).
 
 ##RabbitMQ
 
@@ -65,11 +65,11 @@ If you are not already there, `cd` to the root directory of the sample and execu
 This builds the application with Maven. It will create the *rabbitmq-java-1.0.war* file  within the target directory. 
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.1/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
 
 Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
-1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
+1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
 	
 		helion target https://api.xx.xx.xx.xx.example.com2.	

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/app-logs/
+permalink: /helion/devplatform/1.1/als/user/deploy/app-logs/
 product: devplatform
 title: "Application Logs"
 product-version1: HP Helion Development Platform
@@ -18,18 +18,18 @@ authors: Jayme P
 
 Logs for applications running on Application Lifecycle Service are aggregated into streams so that data from multiple instances can be viewed together and filtered. Application log streams can be accessed via:
 
--   the [*Management Console*](/als/v1/admin/console/customize/#management-console)
+-   the [*Management Console*](/helion/devplatform/1.1/als/admin/console/customize/#management-console)
     using the **View Logs** button on the application Details page, or
--   the [*helion logs*](/als/v1/user/reference/client-ref/#command-logs)
+-   the [*helion logs*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-logs)
     command
 -   application log [*drains*](#application-logs-drain)
 
 Log streams are tailed output from actual log files in each application
 container, which are generally found in the */home/helion/logs/* directory.
 These files can be accessed with the [*helion
-files*](/als/v1/user/reference/client-ref/#command-files) command or from the
+files*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-files) command or from the
 Application details page of the [*Management
-Console*](/als/v1/admin/console/customize/#management-console).
+Console*](/helion/devplatform/1.1/als/admin/console/customize/#management-console).
 
 **Note**
 
@@ -41,7 +41,7 @@ helion logs[](#helion-logs "Permalink to this headline")
 -------------------------------------------------------------
 
 To view an application log stream, use the [*helion
-logs*](/als/v1/user/reference/client-ref/#command-logs) command:
+logs*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-logs) command:
 
     helion logs myapp
 
@@ -72,7 +72,7 @@ line as a JSON object.
 `helion logs` buffers only 400 lines of the log
 stream history (i.e. lines generated prior to it being run). If you need
 earlier log lines, use the [*helion
-files*](/als/v1/user/reference/client-ref/#command-files) command to fetch the
+files*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-files) command to fetch the
 relevant log file from the *logs/* directory or create a log
 [*drain*](#application-logs-drain) preemptively (where possible).
 
@@ -84,7 +84,7 @@ By default, `helion logs` streams log data from
 
 You can add up to five additional files to the log stream by modifying
 the **HELION\_LOG\_FILES** environment variable in the
-[*manifest.yml*](/als/v1/user/deploy/manifestyml/#env) file or using [*helion set-env*](/als/v1/user/reference/client-ref/#command-set-env).
+[*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#env) file or using [*helion set-env*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-set-env).
 
 The variable should contain a list of named files separated with ":" in
 the following format:
@@ -104,7 +104,7 @@ Paths can be fully specified or specified relative to \$HELION\_APP\_ROOT.
 helion drain[](#helion-drain "Permalink to this headline")
 ---------------------------------------------------------------
 
-The [*helion drain add*](/als/v1/user/reference/client-ref/#command-drain-add) command is used to create a log drain which forwards application logs to external log aggregation services, log analysis tools, or Redis databases. For example:
+The [*helion drain add*](/helion/devplatform/1.1/als/user/reference/client-ref/#command-drain-add) command is used to create a log drain which forwards application logs to external log aggregation services, log analysis tools, or Redis databases. For example:
 
     helion drain add myapp appdrain udp://logs.papertrailapp.com:12345
 

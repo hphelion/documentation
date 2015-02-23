@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/cluster/autoscaling/
+permalink: /helion/devplatform/1.1/als/admin/cluster/autoscaling/
 product: devplatform
 title: "DEA Auto Scaling"
 product-version1: HP Helion Development Platform

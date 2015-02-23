@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/manifestyml/
+permalink: /helion/devplatform/1.1/als/user/deploy/manifestyml/
 product: devplatform
 title: "Manifest.yml Options"
 product-version1: HP Helion Development Platform
@@ -15,7 +15,7 @@ authors: Jayme P
 
 # HP Helion Development Platform: Manifest.yml Options {#manifest-yml-options}
 
-The *manifest.yml* file sets application configuration options which are then passed to ALS during the [helion push](/als/v1/user/reference/client-ref/management/#command-push) command.
+The *manifest.yml* file sets application configuration options which are then passed to ALS during the [helion push](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-push) command.
  
 This file is the standard application configuration file format for all Cloud Foundry systems, allowing for portability from those systems to Application Lifecycle Service without configuration changes. See [Application Manifests](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) for the complete canonical documentation. 
 
@@ -194,7 +194,7 @@ buildpack:[](#buildpack "Permalink to this headline")
 ------------------------------------------------------
 
 The Git repository URL for the specific
-[buildpack](/als/v1/user/deploy/buildpack/#buildpacks) used to deploy the application.
+[buildpack](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks) used to deploy the application.
 For example:
 
     name: java-app
@@ -203,23 +203,23 @@ For example:
 
 If unset, Application Lifecycle Service will check to see if the application triggers the
 `detect` scripts in any of its [built-in
-buildpacks](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
+buildpacks](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks-built-in).
 
 framework:[](#framework "Permalink to this headline")
 ------------------------------------------------------
 
 Allows the app to specify a framework and runtime to be used. Specifying
 a value for the `framework` key triggers the use of
-the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy).
+the [Legacy Buildpack](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks-legacy).
 
 **Note**
 
 The keys in the `framework` section are used with
-the [Legacy Buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy) only.
+the [Legacy Buildpack](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks-legacy) only.
 Applications using language or framework-specific buildpacks do not
 require these values, and should instead specify the
 [buildpack](#yml-buildpack) or rely on the detection scripts
-of the [built-in buildpacks](/als/v1/user/deploy/buildpack/#buildpacks-built-in).
+of the [built-in buildpacks](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks-built-in).
 
 ### type:[](#type "Permalink to this headline")
 
@@ -285,10 +285,10 @@ Or:
       start-file: temp.py
 
 This value will be used by the
-[PROCESSES\_WEB](/als/v1/user/reference/environment/#term-processes-web) and
+[PROCESSES\_WEB](/helion/devplatform/1.1/als/user/reference/environment/#term-processes-web) and
 HELION\_START\_FILE environment variables. Any changes to
 HELION\_START\_FILE at runtime will not change the value of
-[PROCESSES\_WEB](/als/v1/user/reference/environment/#term-processes-web) as
+[PROCESSES\_WEB](/helion/devplatform/1.1/als/user/reference/environment/#term-processes-web) as
 the macro is expanded before the pre-running hooks are run.
 
 app-dir[](#app-dir "Permalink to this headline")
@@ -312,7 +312,7 @@ If required, you can also set
 sub-directory of the application \$HOME to be used as the document root.
 
 To launch multiple applications from multiple sub-directories use a
-[*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) file.
+[*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#manifest-yml) file.
 
 ###services: {#services}
 A list of services to create and bind to the application. Each sub key
@@ -338,7 +338,7 @@ name. For example:
     services:
       ${name}-db: mysql
 
-The application name can be set as an option to the [helion push](/als/v1/user/reference/client-ref/management/#command-push) command, overriding
+The application name can be set as an option to the [helion push](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-push) command, overriding
 the **name** value defined in *manifest.yml*. Use this technique when
 pushing multiple versions of the same application (using different
 names) if you want them to use separate databases. For example:
@@ -533,8 +533,8 @@ such as API keys and passwords.
 ### env Attributes[](#env-attributes "Permalink to this headline")
 
 Each environment variable can have attributes which modify the
-interactive behavior of the [ALS client](/als/v1/user/reference/client-ref/) when using the
-[push](/als/v1/user/reference/client-ref/management/#command-push) command. These
+interactive behavior of the [ALS client](/helion/devplatform/1.1/als/user/reference/client-ref/) when using the
+[push](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-push) command. These
 attributes are set with the following keys:
 
 -   **default** (string): The value to use if nothing is entered by the
@@ -572,7 +572,7 @@ is set but no value is given (via "default", "inherit" or the
 
 **Note**
 
-These attributes are only recognized by the [ALS client](/als/v1/user/reference/client-ref/).
+These attributes are only recognized by the [ALS client](/helion/devplatform/1.1/als/user/reference/client-ref/).
 
 ##processes: {#processes}
 
@@ -580,7 +580,7 @@ These attributes are only recognized by the [ALS client](/als/v1/user/reference/
 
 **Note**
 
-Used with the [Legacy buildpack](/als/v1/user/deploy/buildpack/#buildpacks-legacy)
+Used with the [Legacy buildpack](/helion/devplatform/1.1/als/user/deploy/buildpack/#buildpacks-legacy)
 only. When using other buildpacks, create a
 [Procfile](https://devcenter.heroku.com/articles/procfile) in the
 application's root directory.
@@ -592,7 +592,7 @@ custom arguments to uWSGI. For example:
       web: python3.2 app.py
 
 This key is required when using the
-[generic](/als/v1/user/deploy/other-frameworks/#generic-framework) framework, but is
+[generic](/helion/devplatform/1.1/als/user/deploy/other-frameworks/#generic-framework) framework, but is
 optionally available for all other frameworks.
 
 **If defined**, this process is expected to launch a HTTP server bound
@@ -632,7 +632,7 @@ command:[](#command "Permalink to this headline")
 
 Used for worker applications to start a background process. Below is an
 example using the
-[standalone](/als/v1/user/deploy/other-frameworks/#standalone-framework) framework:
+[standalone](/helion/devplatform/1.1/als/user/deploy/other-frameworks/#standalone-framework) framework:
 
     name: helion-worker
     instances: 1
@@ -782,7 +782,7 @@ is not needed and can be included on the same line:
 drain:[](#drain "Permalink to this headline")
 ----------------------------------------------
 
-[Application log drains](/als/v1/user/deploy/app-logs/#application-logs-drain) can be
+[Application log drains](/helion/devplatform/1.1/als/user/deploy/app-logs/#application-logs-drain) can be
 added to an application when it is deployed by describing them in a
 `drain:` block with a drain name and URL:
 

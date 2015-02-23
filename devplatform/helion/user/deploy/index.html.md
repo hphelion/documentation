@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/
+permalink: /helion/devplatform/1.1/als/user/deploy/
 product: devplatform
 title: "General Deployment"
 product-version1: HP Helion Development Platform
@@ -17,7 +17,7 @@ authors: Jayme P
 # HP Helion Development Platform: General Deployment {#general-deployment}
 
 Applications are typically deployed to Application Lifecycle Service by pushing source code
-and configuration to the system's API endpoint using the [CFMGMT client](/als/v1/user/client/#client) or other clients that use the Application Lifecycle Service or Cloud Foundry API.
+and configuration to the system's API endpoint using the [CFMGMT client](/helion/devplatform/1.1/als/user/client/#client) or other clients that use the Application Lifecycle Service or Cloud Foundry API.
 
 The steps for deploying applications will be slightly different
 depending on the application and its requirements. 
@@ -25,17 +25,17 @@ depending on the application and its requirements.
 **Note**
 
 In Application Lifecycle Service 1.0 and later (Cloud Foundry v2 API), application deployment
-is done primarily using [Buildpacks](/als/v1/user/deploy/buildpack/). A special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for existing application configurations.
+is done primarily using [Buildpacks](/helion/devplatform/1.1/als/user/deploy/buildpack/). A special built-in 'Legacy' buildpack handles Cloud Foundry V1 frameworks for existing application configurations.
 
 ##Targeting & Authenticating {#targeting-authenticating}
 
-Before deploying an app, the client must first [target](/als/v1/user/reference/client-ref/gettingstarted/#command-target) Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the Management Console. For example:
+Before deploying an app, the client must first [target](/helion/devplatform/1.1/als/user/reference/client-ref/gettingstarted/#command-target) Application Lifecycle Service's API endpoint URL. This will generally be the same URL that exposes the Management Console. For example:
 
     helion target api.example.com
     Successfully targeted to [https://api.example.hphelion.com]
     ...
 
-Use the [helion login](/als/v1/user/reference/client-ref/gettingstarted/#command-login) command to authenticate with your username and password:
+Use the [helion login](/helion/devplatform/1.1/als/user/reference/client-ref/gettingstarted/#command-login) command to authenticate with your username and password:
 
     helion login <username>
     Attempting login to [https://api.example.hphelion.com]
@@ -65,7 +65,7 @@ If you need to target two or more instances at the same time, use one of the fol
 
 ## Selecting Org & Space {#selecting-org-space}
 
-If your account is a member of multiple [organizations](/als/v1/user/deploy/orgs-spaces/#orgs-spaces), choose which one you
+If your account is a member of multiple [organizations](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces), choose which one you
 want to operate under:
 
     helion switch-org exampleco
@@ -77,7 +77,7 @@ space:
 
 ## Pushing Application Code {#pushing-application-code}
 
-Change to the root directory of your source code project, and use the `helion push` command to deploy your application. If you have a [*manifest.yml*](/als/v1/user/deploy/manifestyml/) config file in this directory, you can use just:
+Change to the root directory of your source code project, and use the `helion push` command to deploy your application. If you have a [*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/) config file in this directory, you can use just:
 
     helion push -n
 
@@ -108,22 +108,22 @@ The output of the push command will be something like:
     OK
     http://env.heli.on/ deployed
 
-The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the [helion logs](/als/v1/user/reference/client-ref/information/#command-logs) command.
+The client will show staging and running logs for the deployment process. To inspect these logs after deployment has finished, use the [helion logs](/helion/devplatform/1.1/als/user/reference/client-ref/information/#command-logs) command.
 
 ##Language-Specific Deployment {#language-specific-deployment}
 
 See each of these sections for language-specific deployment details.
 
--   [Java](/als/v1/user/deploy/languages/java/)
--   [Node](/als/v1/user/deploy/languages/node/)
--   [PHP](/als/v1/user/deploy/languages/php/)
+-   [Java](/helion/devplatform/1.1/als/user/deploy/languages/java/)
+-   [Node](/helion/devplatform/1.1/als/user/deploy/languages/node/)
+-   [PHP](/helion/devplatform/1.1/als/user/deploy/languages/php/)
     
 <!--
-[Ruby](/als/v1/user/deploy/languages/ruby/
-[Python](/als/v1/user/deploy/languages/python/
-[Perl](/als/v1/user/deploy/languages/perl/ 
-[Clojure](/als/v1/user/deploy/languages/clojure/
-[Go](/als/v1/user/deploy/languages/go/
+[Ruby](/helion/devplatform/1.1/als/user/deploy/languages/ruby/
+[Python](/helion/devplatform/1.1/als/user/deploy/languages/python/
+[Perl](/helion/devplatform/1.1/als/user/deploy/languages/perl/ 
+[Clojure](/helion/devplatform/1.1/als/user/deploy/languages/clojure/
+[Go](/helion/devplatform/1.1/als/user/deploy/languages/go/
 -->
 
 ## Configuring Your Application For Application Lifecycle Service {#configuring-your-application-for-helion}
@@ -132,7 +132,7 @@ Most applications should be able to run under Application Lifecycle Service with
 changes.
 
 **manifest.yml**
-:   A [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) file should be added to the root of your application to hold installation details as well as setup configuration instructions for your app.
+:   A [*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#manifest-yml) file should be added to the root of your application to hold installation details as well as setup configuration instructions for your app.
  
 
 **Data Services**
@@ -141,39 +141,39 @@ If you want to use Application Lifecycle Service's data services, your code will
     existence of these environment variables, use them if they exist,
     and otherwise fall back to some default setting.
 
-See the [*Data Services*](/als/v1/user/services/data-services/#data-services) section for further details.
+See the [*Data Services*](/helion/devplatform/1.1/als/user/services/data-services/#data-services) section for further details.
 
 **Environment Variables**
 A number of special environment variables are available during
     staging and runtime. These can be used in
-    [*hooks*](/als/v1/user/deploy/manifestyml/#hooks) or application code
+    [*hooks*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#hooks) or application code
     (for setting up databases, filesystem services, web server options,
     and cron jobs) in places where you would normally use hard-coded
     paths, credentials, or host-specific values.
 
 See the [*Environment
-    Variables*](/als/v1/user/reference/environment/#environment-variables)
+    Variables*](/helion/devplatform/1.1/als/user/reference/environment/#environment-variables)
     section for a complete list.
 
 ### Application Lifecycle Service push {#helion-push} 
 
-The [helion push](/als/v1/user/reference/client-ref/management/#command-push) command
+The [helion push](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-push) command
 creates (or updates) applications on Application Lifecycle Service. It negotiates with the
 API endpoint to reserve application URLs, allocate application
 instances, provision data services, upload application code, and
 optionally stage and start the application.
 
-The command will prompt for options or use those specified in a [*manifest.yml*](/als/v1/user/deploy/manifestyml/#manifest-yml) file.
+The command will prompt for options or use those specified in a [*manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#manifest-yml) file.
 
 **Note**
 
 The application name must be a valid [hostname label](http://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_host_names) meaning that it contains only alphanumeric characters and hyphens.
 
-The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the  [helion start](/als/v1/user/reference/client-ref/management/#command-start) command or the Start button in the [Management Console](/als/v1/admin/console/customize/#user-console-welcome).
+The `push` command implicitly stages and starts the application unless the `--no-start` option is used. With this option, applications are pushed in a pre-staged, stopped state where variables can be added (e.g. for use in staging hooks). The application can then be staged and started with the  [helion start](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-start) command or the Start button in the [Management Console](/helion/devplatform/1.1/als/admin/console/customize/#user-console-welcome).
 
 The client will display staging logs while pushing the application but
 will generally exit before any application logs are visible. To view the
-application logs, use the [helion logs](/als/v1/user/reference/client-ref/information/#command-logs) command.
+application logs, use the [helion logs](/helion/devplatform/1.1/als/user/reference/client-ref/information/#command-logs) command.
 
 ## Allowed File Types {#allowed-file-types}
 
@@ -194,11 +194,11 @@ URLs, application names, and service names:
     must be globally unique, and are allocated on a "first come, first
     serve" basis.
 -   **Application names** must be unique within the scope of the
-    [*space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces). Applications deployed in
+    [*space*](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces). Applications deployed in
     different spaces can have the same name, but the full application
     URL must be globally unique URL.
 -   **Service names** must be unique within the scope of the
-    [*space*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces). The name given to a service
+    [*space*](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces). The name given to a service
     during creation is a pointer to a globally unique string (i.e. the
     *actual* database name in the system as shown by
     VCAP\_SERVICES), so there is no possibility of naming conflicts
@@ -206,7 +206,7 @@ URLs, application names, and service names:
 
 ### URL Assignment
 
-The ALS client assigns URLs for applications as follows during [helion push](/als/v1/user/reference/client-ref/management/#command-push).
+The ALS client assigns URLs for applications as follows during [helion push](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-push).
 
 1. URLs set with the  --url  option take precedence.
 2. If none is set with  --url option, URLs specified in manifest.yml file are used.
@@ -225,14 +225,14 @@ These zones are configured by administrators and take effect automatically when 
 
 Placement zones are groups of DEA nodes which allow for segregation of application instances into different parts of a cluster, possibly with different physical hardware characteristics or network policies.
 
-DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the *--placement-zone* option for the [helion push](/als/v1/user/reference/client-ref/management/#command-push), or by changing the Placement Zone in the application's Settings view in the Management Console.
+DEA nodes are tagged by a administrator with a placement zone name. Users pushing applications can specify which placement zone the application instances are run on by using the *--placement-zone* option for the [helion push](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-push), or by changing the Placement Zone in the application's Settings view in the Management Console.
 
 The other relevant  client commands are:
 
-- [helion placement-zone](/als/v1/user/reference/client-ref/placement/#command-placement-zone): Show the list of DEAs associated with the specified placement zone.
-- [helion placement-zones](/als/v1/user/reference/client-ref/placement/#command-placement-zones): Show the available placement zones.
-- [helion set-placement-zone](/als/v1/user/reference/client-ref/placement/#command-set-placement-zone): Associate the application with a specific placement zone.
-- [helion unset-placement-zone](/als/v1/user/reference/client-ref/placement/#command-unset-placement-zone): Remove the association between an application and its current placement zone.
+- [helion placement-zone](/helion/devplatform/1.1/als/user/reference/client-ref/placement/#command-placement-zone): Show the list of DEAs associated with the specified placement zone.
+- [helion placement-zones](/helion/devplatform/1.1/als/user/reference/client-ref/placement/#command-placement-zones): Show the available placement zones.
+- [helion set-placement-zone](/helion/devplatform/1.1/als/user/reference/client-ref/placement/#command-set-placement-zone): Associate the application with a specific placement zone.
+- [helion unset-placement-zone](/helion/devplatform/1.1/als/user/reference/client-ref/placement/#command-unset-placement-zone): Remove the association between an application and its current placement zone.
 
 ## Application Containers
 
@@ -257,7 +257,7 @@ From within the SSH session, you can run standard Linux commands. For example, t
 
 Cron commands can be provided either in a regular crontab file in the
 root directory of the app, or via the `cron:`
-section in *manifest.yml* (See [*manifest.yml options*](/als/v1/user/deploy/manifestyml/).
+section in *manifest.yml* (See [*manifest.yml options*](/helion/devplatform/1.1/als/user/deploy/manifestyml/).
 
 The `HOME` and `PATH`
 environment variables, as well as all variables that start with
@@ -295,7 +295,7 @@ application's name and the base URL for the system. An application named
 the URL "myblog.example.com".
 
 In addition to this default URL, additional URLs can be set for an
-application using the [helion map](/als/v1/user/reference/client-ref/management/#command-map). The application
+application using the [helion map](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-map). The application
 will respond to requests on the mapped URL, provided a DNS record has
 been set up resolving to Application Lifecycle Service's external IP or hostname.
 
@@ -347,7 +347,7 @@ round robin between available instances of both versions:
 
 As you gain confidence with the new revision, you can increase the
 number of instances of 'myapp-v2' (i.e. phasing that version into
-production rather than cutting over) and eventually [unmap](/als/v1/user/reference/client-ref/management/#command-unmap) 'example.com' from the original 'myapp'.
+production rather than cutting over) and eventually [unmap](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-unmap) 'example.com' from the original 'myapp'.
 
 ##Best Practices {#best-practices}
 
@@ -413,7 +413,7 @@ While both versions of the application are live and mapped to the same
 production URL, the router will round-robin web requests to this URL
 between both versions.
 
-Next, [unmap](/als/v1/user/reference/client-ref/management/#command-unmap) the production URL from the first app:
+Next, [unmap](/helion/devplatform/1.1/als/user/reference/client-ref/management/#command-unmap) the production URL from the first app:
 
     helion unmap customertracker-v1 customertracker.example.com
 
@@ -452,7 +452,7 @@ management. Some examples of this approach are:
 -   Node.js:
 	-   [connect-memcached](https://github.com/balor/connect-memcached#connect-memcached), a session store that uses Memcached
 -   PHP:
-    -   [Persistent Sessions](/als/v1/user/deploy/languages/php/#php-persistent-sessions-filesystem)
+    -   [Persistent Sessions](/helion/devplatform/1.1/als/user/deploy/languages/php/#php-persistent-sessions-filesystem)
     -   [Memcached session support](http://php.net/manual/en/memcached.sessions.php)
 -   Python: 
 	-   [Django "How to use

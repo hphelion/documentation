@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Application Lifecycle Service Client Command Reference"
-permalink: /als/v1/user/reference/client-ref/spaces/
+permalink: /helion/devplatform/1.1/als/user/reference/client-ref/spaces/
 title: "Application Lifecycle Service Command Line Client Reference: Spaces"
 product: devplatform
 product-version1: HP Helion Development Platform
@@ -24,7 +24,7 @@ authors: Jayme P
 - [helion space](#command-space): Show the named space's information. 	
 - [helion spaces](#command-spaces): List the available spaces in the specified organization.
 - [helion space-users](#command-space-users): Show the users for the space by role.
-- [helion switch-space](#command-switch-space): Switch from the current space to the named space. This may switch the [organization](/als/v1/user/reference/client-ref/organizations/) as well. 
+- [helion switch-space](#command-switch-space): Switch from the current space to the named space. This may switch the [organization](/helion/devplatform/1.1/als/user/reference/client-ref/organizations/) as well. 
 - [helion unlink-user-space](#command-unlink-user-space): Remove the specified user from the named space in various roles.
 - [helion update-space](#command-update-space): Change one or more attributes of a space in a single call.
 
@@ -293,7 +293,7 @@ authorization tokens.</td>
 </table>
 
 ## helion switch-space <*NewName*> {#command-switch-space}
-Switch from the current space to the named space. If the new space is in a different [organization](/als/v1/user/reference/client-ref/organizations/), this command may switch the organization as well.
+Switch from the current space to the named space. If the new space is in a different [organization](/helion/devplatform/1.1/als/user/reference/client-ref/organizations/), this command may switch the organization as well.
 
 <table style="text-align: left; vertical-align: top; width:650px;">
 <tr style="background-color: #C8C8C8;">

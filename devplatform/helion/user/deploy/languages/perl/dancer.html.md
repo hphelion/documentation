@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/perl/dancer/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/dancer/
 published: false
 title: "Dancer"
 product-version1: HP Helion Development Platform

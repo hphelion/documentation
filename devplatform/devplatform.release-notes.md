@@ -31,23 +31,23 @@ The following features have been changed in the HP Helion Development Platform:
 **OpenStack&reg; Juno support** <br />All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
 **Updated Command Line Client** <br />
-The [ALS Cluster Management Tool](/als/v1/client/reference) (cfmgmt.exe). has been updated to provide more options for managing clusters from the command line.
+The [ALS Cluster Management Tool](/helion/devplatform/1.1/als/client/reference) (cfmgmt.exe). has been updated to provide more options for managing clusters from the command line.
 
 **Additional ALS Client Commands**<br />
-More [commands](/als/v1/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
+More [commands](/helion/devplatform/1.1/als/user/reference/client-ref/) are now available for managing your ALS deployment from the command line.
 
-- [Control](/als/v1/user/reference/client-ref/control)
-- [Feature Flags](/als/v1/user/reference/client-ref/flags)
-- [Security Groups](/als/v1/user/reference/client-ref/securitygroups)
-- [Space Quotas](/als/v1/user/reference/client-ref/spacequotas) 
+- [Control](/helion/devplatform/1.1/als/user/reference/client-ref/control)
+- [Feature Flags](/helion/devplatform/1.1/als/user/reference/client-ref/flags)
+- [Security Groups](/helion/devplatform/1.1/als/user/reference/client-ref/securitygroups)
+- [Space Quotas](/helion/devplatform/1.1/als/user/reference/client-ref/spacequotas) 
 
 **Ruby CLI No Longer Supported** <br />The Ruby CLI (unix_cli) is no longer supported. Users are advised to consider the Python CLIs as an alternative.
 
 ## Known Issues:
 
-1. **ALS Cluster Create via UI does not provide a way to input proxy settings.** Either use [the workaround](/als/v1/admin/server/configuration/#http-proxy) to input proxy settings or create the cluster with the [ALS Cluster Management Tool](/als/v1/client/reference).
+1. **ALS Cluster Create via UI does not provide a way to input proxy settings.** Either use [the workaround](/helion/devplatform/1.1/als/admin/server/configuration/#http-proxy) to input proxy settings or create the cluster with the [ALS Cluster Management Tool](/helion/devplatform/1.1/als/client/reference).
 
-3. **Inaccessible Clusters Can Be Restarted** If an ALS cluster becomes inaccessible due to environment issues, it can be restarted from the [ALS Cluster Management Tool](/als/v1/client/reference) (cfmgmt.exe).
+3. **Inaccessible Clusters Can Be Restarted** If an ALS cluster becomes inaccessible due to environment issues, it can be restarted from the [ALS Cluster Management Tool](/helion/devplatform/1.1/als/client/reference) (cfmgmt.exe).
 
 4. **Live Migration of Instance in Stopped, Suspended, or Rescued State May Fail** Make sure instances are not in the Stopped, Suspended, or Rescued state before attempting to migrate them to a new host. A 400 error may appear; a message "Failed to migrate instance..." may be received; or the client may quietly time out, leaving the instance stuck in the Migrating state and thus unmanageable. 
 

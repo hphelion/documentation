@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/reference/groups/
+permalink: /helion/devplatform/1.1/als/admin/reference/groups/
 product: devplatform
 title: "Managing Groups, Users & Limits (DEPRECATED)"
 product-version1: HP Helion Development Platform
@@ -20,4 +20,4 @@ authors: Jayme P
 ##* Warning *
 
 Application Lifecycle Service Groups have been **replaced** by [*Organizations and
-Spaces*](/als/v1/user/deploy/orgs-spaces/#orgs-spaces).
+Spaces*](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces).

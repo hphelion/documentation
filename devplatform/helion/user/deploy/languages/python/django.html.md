@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/python/django/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/python/django/
 published: false
 test: "Deploying Django applications"
 product-version1: HP Helion Development Platform
@@ -40,7 +40,7 @@ least the `django` project:
 
 Configuring the Database[](#configuring-database "Permalink to this headline")
 ---------------------------------------------------------------------------
-See [*Using Configured Database Services*](/als/v1/user/services/data-services/#database-accessing) for more information on connecting with database services.
+See [*Using Configured Database Services*](/helion/devplatform/1.1/als/user/services/data-services/#database-accessing) for more information on connecting with database services.
 
 1. You must modify the `DATABASES` variable of your project's *settings.py* as shown below to detect the database service provisioned by helion:
 

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/client/reference
+permalink: /helion/devplatform/1.1/als/client/reference
 product: devplatform
 title: "HP Application Lifecycle Service (ALS) Command-Line Client Reference"
 product-version1: HP Helion Development Platform

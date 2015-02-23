@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/go/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/go/
 product: devplatform
 title: "Go"
 product-version1: HP Helion Development Platform
@@ -87,7 +87,7 @@ a file called .godir, in your project root, containing the path from
 This file is optional, as the framework will automatically be detected
 by Application Lifecycle Service. However, it can still be used to set the app name,
 configure settings, create services, etc. See the [*manifest.yml
-docs*](/als/v1/user/deploy/manifestyml/).
+docs*](/helion/devplatform/1.1/als/user/deploy/manifestyml/).
 
 > name:
 > :   hello-go

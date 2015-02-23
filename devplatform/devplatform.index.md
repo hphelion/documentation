@@ -26,14 +26,14 @@ This documentation will help you get up to speed on the  Helion Development Plat
 
 ##Platform Overview
 
-The [Application Lifecycle Service (ALS)](/als/v1/) is a Cloud Foundry-based, managed runtime environment for applications. 
+The [Application Lifecycle Service (ALS)](/helion/devplatform/1.1/als/) is a Cloud Foundry-based, managed runtime environment for applications. 
 
 - It supports [Java](/helion/devplatform/appdev/#java), [Node](/helion/devplatform/appdev/#node), [PHP](/helion/devplatform/appdev/#PHP), and other language runtimes.
 - It provides easy access to services like MySQL, PostgreSQL, RabbitMQ, and Memcache.
 - It allows Disk, Memory and Placement Zone constraints to be set per application.
 - It provides auto-scaling and application log drains.
  
-The Application Lifecycle Service is [installed](/helion/devplatform/install/#install-als) as part of the Helion Development Platform. You can easily [create and configure](/als/v1/admin/#wizard-based-cluster-creation) Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
+The Application Lifecycle Service is [installed](/helion/devplatform/install/#install-als) as part of the Helion Development Platform. You can easily [create and configure](/helion/devplatform/1.1/als/admin/#wizard-based-cluster-creation) Application Lifecycle Service clusters from the Horizon management console, or explore this service by setting up a [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.
 
 ##Application Services
 The HP Helion Development Platform provides additional Application Services that integrate into the Application Lifecycle Service. These currently include:
@@ -81,7 +81,7 @@ The Helion Development Platform is accessible via the following tools:
 
 **Helion Command-Line Interface (CLI)**<br>
 
-Use the Helion CLI to deploy your app to the development platform through the command line. [Setup](/als/v1/user/client/#helion-client-setup) instructions are available for here both Windows&reg; and Unix/Mac operating systems.
+Use the Helion CLI to deploy your app to the development platform through the command line. [Setup](/helion/devplatform/1.1/als/user/client/#helion-client-setup) instructions are available for here both Windows&reg; and Unix/Mac operating systems.
 
 **Eclipse Plugin**<br>
  If your developers work in the Eclipse IDE, [install and use](/helion/devplatform/eclipse/) the Eclipse plug-in to quickly configure the Helion Development Platform as a deployment target for your app. 

@@ -26,7 +26,7 @@ In order to download and deploy these sample applications, you must have the nec
 - Application Lifecycle Service [Cluster](/helion/devplatform/deploy) available with MySQL and RabbitMQ enabled.
 	- You can also quickly setup a cluster in the free and publicly available Helion cloud as part of the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/): 
 - Logon and password credentials for the cluster.
-- Access to the [Helion command-line interface (CLI)](/als/v1/user/client/)
+- Access to the [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/client/)
 - (Optional) Access to the [Eclipse](/helion/devplatform/eclipse/) deployment plugin.
 
 ##Sample code {#sample}
@@ -40,7 +40,7 @@ Create a database and execute a query against it. <br>
 
 3. [Working with Messaging](/helion/devplatform/workbook/messaging/java/)<br> Enter, send, and display a brief message.<br> 
 
-More Helion [Java](/als/v1/user/deploy/languages/java/) references.
+More Helion [Java](/helion/devplatform/1.1/als/user/deploy/languages/java/) references.
 
 ###Node {#node}
 1.  [Hello World](/helion/devplatform/workbook/helloworld/node/)<br>
@@ -52,7 +52,7 @@ Create a database and execute a query against it.<br>
 
 3. [Working with Messaging](/helion/devplatform/workbook/messaging/node/)<br> Enter, send, and display a brief message.<br> 
 
-More Helion [Node](/als/v1/user/deploy/languages/node/) references.
+More Helion [Node](/helion/devplatform/1.1/als/user/deploy/languages/node/) references.
  
 ###PHP {#PHP}
 1.  [Hello World](/helion/devplatform/workbook/helloworld/php/) <br>
@@ -63,15 +63,15 @@ Create a database and execute a query against it.<br>
 
 3. [Working with Messaging](/helion/devplatform/workbook/messaging/php/)<br> Enter, send, and display a brief message.<br> 
 
-More Helion [PHP](/als/v1/user/deploy/languages/php/) references.
+More Helion [PHP](/helion/devplatform/1.1/als/user/deploy/languages/php/) references.
 
 ###Other references
 - [Installing the Marketplace](/helion/devplatform/marketplace)
-- [ALS command-line interface (CLI) reference](/als/v1/user/reference/client-ref/#command-ref-client)
-- [Application Lifecycle Service (ALS) User's Guide](/als/v1/user/)
-- [Remote Debugging](/als/v1/user/deploy/app-debug/)
-- [The Management Console](/als/v1/user/console/)
-- [Logs, Streams, and Drains](/als/v1/user/deploy/app-logs/)
+- [ALS command-line interface (CLI) reference](/helion/devplatform/1.1/als/user/reference/client-ref/#command-ref-client)
+- [Application Lifecycle Service (ALS) User's Guide](/helion/devplatform/1.1/als/user/)
+- [Remote Debugging](/helion/devplatform/1.1/als/user/deploy/app-debug/)
+- [The Management Console](/helion/devplatform/1.1/als/user/console/)
+- [Logs, Streams, and Drains](/helion/devplatform/1.1/als/user/deploy/app-logs/)
 
 ###Best practices
 

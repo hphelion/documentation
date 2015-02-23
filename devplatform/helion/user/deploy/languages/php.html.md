@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/php/
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/php/
 title: "Developing in PHP"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -45,7 +45,7 @@ the command to <strong>run</strong>. For example:
 </pre></div>
 </div>
 Management of the deployed application and its services happens through a web application or
-a console application. To learn more see the [manifest.yml](/als/v1/user/deploy/manifestyml/) reference</a>.
+a console application. To learn more see the [manifest.yml](/helion/devplatform/1.1/als/user/deploy/manifestyml/) reference</a>.
 
 
 ## Deployment {#deployment}
@@ -58,7 +58,7 @@ The *manifest.yml* must specify **php** as the framework type:
     framework:
             type: php
 
-For more information, see the [manifest.yml](/als/v1/user/deploy/manifestyml/) reference.
+For more information, see the [manifest.yml](/helion/devplatform/1.1/als/user/deploy/manifestyml/) reference.
 
 ## Application URL {#application-url}
 
@@ -75,8 +75,8 @@ Non-HTTP apps that run as an Application Lifecycle Service application under the
 the Health Manager.
 
 To deploy worker applications, you need to use the
-[*command*](/als/v1/user/deploy/manifestyml/#command) key and set the
-[*processes: web*](/als/v1/user/deploy/manifestyml/#web)
+[*command*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#command) key and set the
+[*processes: web*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#web)
 key to Null ("\~").
 
 ### Example {#example}
@@ -89,7 +89,7 @@ key to Null ("\~").
 
 ## Database Services {#database-services}
 
-### [DATABASE\_URL](/als/v1/user/services/data-services/#database-url/)
+### [DATABASE\_URL](/helion/devplatform/1.1/als/user/services/data-services/#database-url/)
 
 Authentication details for your configured database services can be
 found in the **$\_SERVER** variable, under 
@@ -108,7 +108,7 @@ found in the **$\_SERVER** variable, under
         echo $url_parts['port'];
     ?>
 
-### [VCAP\_SERVICES](/als/v1/user/services/data-services/#vcap-services/)
+### [VCAP\_SERVICES](/helion/devplatform/1.1/als/user/services/data-services/#vcap-services/)
 
     <?php
         $services = getenv("VCAP_SERVICES");
@@ -176,7 +176,7 @@ One of the issues with managing a PHP application running multiple
 instances is dealing with user sessions.
 
 If your application uses a [*shared filesystem
-service*](/als/v1/user/services/filesystem/#persistent-file-system), you
+service*](/helion/devplatform/1.1/als/user/services/filesystem/#persistent-file-system), you
 can store user sessions there. The following *manifest.yml* snippet
 creates a persistent filesystem service, creates a directory for
 sessions, and writes a PHP config file to set the path to the session
@@ -189,7 +189,7 @@ directory:
       - mkdir -p "$HELION_FILESYSTEM"/sessions
       - echo "session.save_path = $HELION_FILESYSTEM/sessions" > "$HELION_APP_ROOT"/apache/php/sessions.ini
 
-For better performance, use a [*Memcached*](/als/v1/user/services/memcached/#memcached) service for
+For better performance, use a [*Memcached*](/helion/devplatform/1.1/als/user/services/memcached/#memcached) service for
 session storage instead:
 
     services:

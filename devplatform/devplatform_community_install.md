@@ -153,7 +153,7 @@ This section provides details on installing the HP Helion Development Platform A
 
 For the Application Lifecycle service to install dependencies for deployed applications, you must provide Application Lifecycle service with outbound Internet connectivity. 
 
-This process is documented in Step 7 of ["Starting the seed and building your cloud"](/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](/als/v1/admin/server/configuration/#http-proxy). 
+This process is documented in Step 7 of ["Starting the seed and building your cloud"](/helion/community/install/#startseed) in the baremetal installation instructions.  If an HTTP Proxy is required for Internet downloads, follow the instructions in the [Administration Guide](/helion/devplatform/1.1/als/admin/server/configuration/#http-proxy). 
 
 ### Connect to the Download Service {#als-connect}
 

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/admin/
+permalink: /helion/devplatform/1.1/als/admin/
 product: devplatform
 title: "Application Lifecycle Service Admin Guide" 
 product-version1: HP Helion Development Platform
@@ -29,106 +29,106 @@ You can easily create and access Application Lifecycle Service clusters from the
 
 ##Helion Development Platform Management Console {#management-console}
 
--   [Management Console](/als/v1/user/console/#management-console)
+-   [Management Console](/helion/devplatform/1.1/als/user/console/#management-console)
 -   [Sample Applications](console/app-store)
 
 ##Advanced/Manual Server Configuration {#server-configuration}
 This section covers advanced configuration settings that allow you to modify default cluster component behavior. 
 
--   [Server Configuration](/als/v1/admin/server/)
+-   [Server Configuration](/helion/devplatform/1.1/als/admin/server/)
     -   [Accessing Server via the Command
-        Line](/als/v1/admin/server/#accessing-server-via-the-command-line)
-    -   [Common Operations](/als/v1/admin/server/#common-operations)
+        Line](/helion/devplatform/1.1/als/admin/server/#accessing-server-via-the-command-line)
+    -   [Common Operations](/helion/devplatform/1.1/als/admin/server/#common-operations)
     -   [Detailed
-        Configuration](/als/v1/admin/server/#detailed-configuration)
--   [Router](/als/v1/admin/server/router/)
-    -   [Settings](/als/v1/admin/server/router/#settings)
-    -   [WebSockets](/als/v1/admin/server/router/#websockets)
-    -   [SPDY](/als/v1/admin/server/router/#router-spdy)
--   [Docker & Fence](/als/v1/admin/server/docker/)
+        Configuration](/helion/devplatform/1.1/als/admin/server/#detailed-configuration)
+-   [Router](/helion/devplatform/1.1/als/admin/server/router/)
+    -   [Settings](/helion/devplatform/1.1/als/admin/server/router/#settings)
+    -   [WebSockets](/helion/devplatform/1.1/als/admin/server/router/#websockets)
+    -   [SPDY](/helion/devplatform/1.1/als/admin/server/router/#router-spdy)
+-   [Docker & Fence](/helion/devplatform/1.1/als/admin/server/docker/)
     -   [Modifying or Updating the Container
-        Image](/als/v1/admin/server/docker/#modifying-or-updating-the-container-image)
-    -   [Admin Hooks](/als/v1/admin/server/docker/#admin-hooks)
+        Image](/helion/devplatform/1.1/als/admin/server/docker/#modifying-or-updating-the-container-image)
+    -   [Admin Hooks](/helion/devplatform/1.1/als/admin/server/docker/#admin-hooks)
     -   [Creating a Docker
-        Registry](/als/v1/admin/server/docker/#creating-a-docker-registry)
--   [Log Streams](/als/v1/admin/server/logging/)
-    -   [Logyard](/als/v1/admin/server/logging/#logyard)
-    -   [Drains](/als/v1/admin/server/logging/#drains)
-    -   [Configuration](/als/v1/admin/server/logging/#configuration)
-    -   [Debugging Logyard](/als/v1/admin/server/logging/#debugging-logyard)
--   [AOK Authentication Server](/als/v1/admin/server/aok/)
-    -   [End User Login](/als/v1/admin/server/aok/#end-user-login)
-    -   [Strategies](/als/v1/admin/server/aok/#strategies)
-    -   [Configuration](/als/v1/admin/server/aok/#configuration)
-    -   [User Management](/als/v1/admin/server/aok/#user-management)
-    -   [First Admin User Setup](/als/v1/admin/server/aok/#first-admin-user-setup)
+        Registry](/helion/devplatform/1.1/als/admin/server/docker/#creating-a-docker-registry)
+-   [Log Streams](/helion/devplatform/1.1/als/admin/server/logging/)
+    -   [Logyard](/helion/devplatform/1.1/als/admin/server/logging/#logyard)
+    -   [Drains](/helion/devplatform/1.1/als/admin/server/logging/#drains)
+    -   [Configuration](/helion/devplatform/1.1/als/admin/server/logging/#configuration)
+    -   [Debugging Logyard](/helion/devplatform/1.1/als/admin/server/logging/#debugging-logyard)
+-   [AOK Authentication Server](/helion/devplatform/1.1/als/admin/server/aok/)
+    -   [End User Login](/helion/devplatform/1.1/als/admin/server/aok/#end-user-login)
+    -   [Strategies](/helion/devplatform/1.1/als/admin/server/aok/#strategies)
+    -   [Configuration](/helion/devplatform/1.1/als/admin/server/aok/#configuration)
+    -   [User Management](/helion/devplatform/1.1/als/admin/server/aok/#user-management)
+    -   [First Admin User Setup](/helion/devplatform/1.1/als/admin/server/aok/#first-admin-user-setup)
     -   [Regular LDAP User
-        Setup](/als/v1/admin/server/aok/#regular-ldap-user-setup)
--   [Upgrading Application Lifecycle Service](/als/v1/admin/server/upgrade/)
-    -   [Before an upgrade](/als/v1/admin/server/upgrade/#before-an-upgrade)
+        Setup](/helion/devplatform/1.1/als/admin/server/aok/#regular-ldap-user-setup)
+-   [Upgrading Application Lifecycle Service](/helion/devplatform/1.1/als/admin/server/upgrade/)
+    -   [Before an upgrade](/helion/devplatform/1.1/als/admin/server/upgrade/#before-an-upgrade)
     -   [Executing the
-        upgrade](/als/v1/admin/server/upgrade/#executing-the-upgrade)
+        upgrade](/helion/devplatform/1.1/als/admin/server/upgrade/#executing-the-upgrade)
 
 ##Advanced/Manual Cluster Configuration {#cluster-configuration}
 
 This section provides information on how to set up a standalone cluster and modify default cluster level settings.
 
--   [Cluster Setup](/als/v1/admin/cluster/)
-    -   [Roles](/als/v1/admin/cluster/#roles)
+-   [Cluster Setup](/helion/devplatform/1.1/als/admin/cluster/)
+    -   [Roles](/helion/devplatform/1.1/als/admin/cluster/#roles)
     -   [Preparing the Core
-        Node](/als/v1/admin/cluster/#preparing-the-core-node)
+        Node](/helion/devplatform/1.1/als/admin/cluster/#preparing-the-core-node)
     -   [Attaching Nodes and Enabling
-        Roles](/als/v1/admin/cluster/#attaching-nodes-and-enabling-roles)
-    -   [Example Clusters](/als/v1/admin/cluster/#example-clusters)
+        Roles](/helion/devplatform/1.1/als/admin/cluster/#attaching-nodes-and-enabling-roles)
+    -   [Example Clusters](/helion/devplatform/1.1/als/admin/cluster/#example-clusters)
     -   [Roles Requiring Persistent or Shared
-        Storage](/als/v1/admin/cluster/#roles-requiring-persistent-or-shared-storage)
-    -   [Port Configuration](/als/v1/admin/cluster/#port-configuration)
-    -   [Multiple Controllers](/als/v1/admin/cluster/#multiple-controllers)
+        Storage](/helion/devplatform/1.1/als/admin/cluster/#roles-requiring-persistent-or-shared-storage)
+    -   [Port Configuration](/helion/devplatform/1.1/als/admin/cluster/#port-configuration)
+    -   [Multiple Controllers](/helion/devplatform/1.1/als/admin/cluster/#multiple-controllers)
     -   [Load Balancer and Multiple
-        Routers](/als/v1/admin/cluster/#load-balancer-and-multiple-routers)
--   [DEA Auto Scaling](/als/v1/admin/cluster/autoscaling/)
-    -   [DEA Template](/als/v1/admin/cluster/autoscaling/#dea-template)
+        Routers](/helion/devplatform/1.1/als/admin/cluster/#load-balancer-and-multiple-routers)
+-   [DEA Auto Scaling](/helion/devplatform/1.1/als/admin/cluster/autoscaling/)
+    -   [DEA Template](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#dea-template)
     -   [DEA Scaling
-        configuration](/als/v1/admin/cluster/autoscaling/#dea-scaling-configuration)
+        configuration](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#dea-scaling-configuration)
     -   [Enabling
-        Auto-Scaling](/als/v1/admin/cluster/autoscaling/#enabling-auto-scaling)
-    -   [Configuration and Tuning](/als/v1/admin/cluster/autoscaling/#configuration-and-tuning-advanced)
-    -   [Writing custom scaling plugins](/als/v1/admin/cluster/autoscaling/#writing-custom-scaling-plugins-advanced)
-    -   [Troubleshooting](/als/v1/admin/cluster/autoscaling/#troubleshooting)
-    -   [Testing](/als/v1/admin/cluster/autoscaling/#testing)
--   [cloud-init](/als/v1/admin/cluster/cloud-init/)
+        Auto-Scaling](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#enabling-auto-scaling)
+    -   [Configuration and Tuning](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#configuration-and-tuning-advanced)
+    -   [Writing custom scaling plugins](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#writing-custom-scaling-plugins-advanced)
+    -   [Troubleshooting](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#troubleshooting)
+    -   [Testing](/helion/devplatform/1.1/als/admin/cluster/autoscaling/#testing)
+-   [cloud-init](/helion/devplatform/1.1/als/admin/cluster/cloud-init/)
     -   [Securing the new
-        node](/als/v1/admin/cluster/cloud-init/#securing-the-new-node)
+        node](/helion/devplatform/1.1/als/admin/cluster/cloud-init/#securing-the-new-node)
     -   [Custom System
-        Configuration](/als/v1/admin/cluster/cloud-init/#custom-system-configuration)
--   [External Data Services](/als/v1/admin/cluster/external-db/)
+        Configuration](/helion/devplatform/1.1/als/admin/cluster/cloud-init/#custom-system-configuration)
+-   [External Data Services](/helion/devplatform/1.1/als/admin/cluster/external-db/)
     -   [General
-        Principles](/als/v1/admin/cluster/external-db/#general-principles)
-    -   [MySQL](/als/v1/admin/cluster/external-db/#mysql)
-    -   [PostgreSQL](/als/v1/admin/cluster/external-db/#postgresql)
-    -   [Troubleshooting](/als/v1/admin/cluster/external-db/#troubleshooting)
--   [Harbor: TCP/UDP Port Service](/als/v1/admin/cluster/harbor/)
-    -   [Architecture](/als/v1/admin/cluster/harbor/#architecture)
-    -   [Requirements & Setup](/als/v1/admin/cluster/harbor/#requirements-setup)
-    -   [Troubleshooting](/als/v1/admin/cluster/harbor/#troubleshooting)
+        Principles](/helion/devplatform/1.1/als/admin/cluster/external-db/#general-principles)
+    -   [MySQL](/helion/devplatform/1.1/als/admin/cluster/external-db/#mysql)
+    -   [PostgreSQL](/helion/devplatform/1.1/als/admin/cluster/external-db/#postgresql)
+    -   [Troubleshooting](/helion/devplatform/1.1/als/admin/cluster/external-db/#troubleshooting)
+-   [Harbor: TCP/UDP Port Service](/helion/devplatform/1.1/als/admin/cluster/harbor/)
+    -   [Architecture](/helion/devplatform/1.1/als/admin/cluster/harbor/#architecture)
+    -   [Requirements & Setup](/helion/devplatform/1.1/als/admin/cluster/harbor/#requirements-setup)
+    -   [Troubleshooting](/helion/devplatform/1.1/als/admin/cluster/harbor/#troubleshooting)
 
 ##Best Practices {#best-practices}
 
--   [Best Practices](/als/v1/admin/best-practices/)
-    -   [Applying Updates](/als/v1/admin/best-practices/#applying-updates)
-    -   [Backup & Migration](/als/v1/admin/best-practices/#backup-migration)
+-   [Best Practices](/helion/devplatform/1.1/als/admin/best-practices/)
+    -   [Applying Updates](/helion/devplatform/1.1/als/admin/best-practices/#applying-updates)
+    -   [Backup & Migration](/helion/devplatform/1.1/als/admin/best-practices/#backup-migration)
     -   [Upgrading (v1.0 and
-        later)](/als/v1/admin/best-practices/#upgrade)
+        later)](/helion/devplatform/1.1/als/admin/best-practices/#upgrade)
 	- [Persistent
-        Storage](/als/v1/admin/best-practices/#storage)
-- [Hello World Custom Drain Sample](/als/v1/admin/best-practices/logging-examples/#hello-world-custom-drain)
+        Storage](/helion/devplatform/1.1/als/admin/best-practices/#storage)
+- [Hello World Custom Drain Sample](/helion/devplatform/1.1/als/admin/best-practices/logging-examples/#hello-world-custom-drain)
 
 ##Reference {#reference}
--   [Kato Command Reference](/als/v1/admin/reference/kato-ref/)
--   [Client Command Reference](/als/v1/user/reference/client-ref)
--   [Managing Groups, Users & Limits](/als/v1/user/deploy/orgs-spaces/#orgs-spaces)
--   [Architectural Design](/als/v1/admin/reference/architecture/)
--   [Glossary](/als/v1/user/reference/glossary/)
--   [Troubleshooting](/als/v1/admin/reference/troubleshoot/)
--   [Adding System Services](/als/v1/admin/reference/add-service/)
+-   [Kato Command Reference](/helion/devplatform/1.1/als/admin/reference/kato-ref/)
+-   [Client Command Reference](/helion/devplatform/1.1/als/user/reference/client-ref)
+-   [Managing Groups, Users & Limits](/helion/devplatform/1.1/als/user/deploy/orgs-spaces/#orgs-spaces)
+-   [Architectural Design](/helion/devplatform/1.1/als/admin/reference/architecture/)
+-   [Glossary](/helion/devplatform/1.1/als/user/reference/glossary/)
+-   [Troubleshooting](/helion/devplatform/1.1/als/admin/reference/troubleshoot/)
+-   [Adding System Services](/helion/devplatform/1.1/als/admin/reference/add-service/)
 

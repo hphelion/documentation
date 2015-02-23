@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/client/
+permalink: /helion/devplatform/1.1/als/user/client/
 product: devplatform
 title: "Application Lifecycle Service Command Line Client"
 product-version1: HP Helion Development Platform
@@ -22,7 +22,7 @@ to Application Lifecycle Service. You can use it to push application code up to 
 start and stop applications, create data services and link them to
 applications, and a number of other application management operations.
 
-The [Command Reference](/als/v1/user/reference/client-ref/#command-ref-client) has full
+The [Command Reference](/helion/devplatform/1.1/als/user/reference/client-ref/#command-ref-client) has full
 descriptions of all client commands and options. These details are also
 available at the command line via the *helion help* command.
 
@@ -59,7 +59,7 @@ To get a list of available commands or help on a particular command:
 
     $ helion help [COMMAND]
 
-See also the [Command Reference](/als/v1/user/reference/client-ref/#command-ref-client) for a full
+See also the [Command Reference](/helion/devplatform/1.1/als/user/reference/client-ref/#command-ref-client) for a full
 list of commands.
 
 ##Targeting the API Endpoint {#targeting-the-api-endpoint}

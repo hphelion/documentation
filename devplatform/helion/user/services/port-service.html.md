@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/services/port-service/
+permalink: /helion/devplatform/1.1/als/user/services/port-service/
 product: devplatform
 title: "Port Service (Harbor)"
 product-version1: HP Helion Development Platform
@@ -17,7 +17,7 @@ authors: Jayme P
 # HP Helion Development Platform: Port Service (Harbor) {#port-service-harbor}
 
 HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless [processes:
-web:](/als/v1/user/deploy/manifestyml/#web) is set to
+web:](/helion/devplatform/1.1/als/user/deploy/manifestyml/#web) is set to
 "\~").
 
 If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.
@@ -36,7 +36,7 @@ Additional ports are provisioned like any other data service. To request a port 
 
     helion create-service harbor debug-port
 
-To request a port from Harbor in the **manifest.yml** file, add it in the [**services**](/als/v1/user/deploy/manifestyml/#services) block.
+To request a port from Harbor in the **manifest.yml** file, add it in the [**services**](/helion/devplatform/1.1/als/user/deploy/manifestyml/#services) block.
 For example:
 
     name: port-test
@@ -93,7 +93,7 @@ following two settings will also be shown:
 
 To remotely check the settings and credentials of any Application Lifecycle Service service,
 use the [**helion
-service**](/als/v1/user/reference/client-ref/#command-services) command.
+service**](/helion/devplatform/1.1/als/user/reference/client-ref/#command-services) command.
 
 ## Harbor Environment Variables {#port-service-env-vars}
 
@@ -133,7 +133,7 @@ container with a construct such as:
 **Note**
 
 To use declarations like these in
-[*hooks*](/als/v1/user/deploy/manifestyml/#hooks), put them in a
+[*hooks*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#hooks), put them in a
 separate bash script. Brace expansion and grouping cannot be used directly in YAML files.
 
 ##Setting the Port Protocols {#setting-the-port-protocols}

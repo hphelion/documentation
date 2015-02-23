@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/reference/api/
+permalink: /helion/devplatform/1.1/als/user/reference/api/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -18,6 +18,6 @@ HP Helion Development Platform Application Lifecycle Service is fully compatible
 
 ### Related Documentation
 
-* [Client Command Reference](/als/v1/user/reference/client-ref/)
-* [*kato* Command Reference](/als/v1/admin/reference/kato-ref/)
+* [Client Command Reference](/helion/devplatform/1.1/als/user/reference/client-ref/)
+* [*kato* Command Reference](/helion/devplatform/1.1/als/admin/reference/kato-ref/)
 

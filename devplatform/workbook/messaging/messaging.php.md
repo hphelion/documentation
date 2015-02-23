@@ -22,9 +22,9 @@ This very simple PHP web app displays a simple form that takes a string from the
 ## Prerequisites
 If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
 
-- Access to an Application Lifecycle Service (ALS) [Cluster](/als/v1/admin/cluster/)
-- The  [Helion command-line interface (CLI)](/als/v1/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/als/v1/user/console/).
+- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.1/als/admin/cluster/)
+- The  [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/client/) must be installed.
+- Access to the web-based [Helion Management Console](/helion/devplatform/1.1/als/user/console/).
 
 ##RabbitMQ
 If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
@@ -43,11 +43,11 @@ If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
 [Click here to access the code repository](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/als/v1/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.1/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
 Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
-1.	Open the [Helion command-line interface (CLI)](/als/v1/user/reference/client-ref/)
+1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
 	
 		helion target https://api.xx.xx.xx.xx.example.com2.	
