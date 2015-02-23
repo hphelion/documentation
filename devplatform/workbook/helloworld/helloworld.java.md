@@ -18,7 +18,7 @@ SME1: Sam C
 This Servlet-based Java web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
 ##Prerequisites
-If you are missing any of these items, you must [install them](/helion/devplatform/1.1/appdev/).
+If you are missing any of these items, you must [install them](/helion/devplatform/1.1/appdev/). 
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.1/als/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/client/) must be installed.
