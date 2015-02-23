@@ -59,7 +59,7 @@ API:
 
 ### Example[](#example "Permalink to this headline")
 
-The [Java database sample](/helion/devplatform/workbook/database/java/) sample
+The [Java database sample](/helion/devplatform/1.1/workbook/database/java/) sample
 demonstrates a simple Java application using a MySQL service.
 
 ## CATALINA\_OPTS {#catalina-opts}

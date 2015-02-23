@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform PHP Hello World Sample"
-permalink: /helion/devplatform/workbook/helloworld/php/
+permalink: /helion/devplatform/1.1/workbook/helloworld/php/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -19,7 +19,7 @@ SME1: Sam C
 This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
 ##Prerequisites
-If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
+If you are missing any of these items, you must [install them](/helion/devplatform/1.1/appdev/).
 
 - Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.1/als/admin/cluster/)
 - The  [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/client/) must be installed.
@@ -38,7 +38,7 @@ The *composer.json* file is completely optional; however, certain buildpacks may
 ##Deploy the Application
 **Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.1/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
-The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/eclipse/) to deploy.
+The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/1.1/eclipse/) to deploy.
 
 1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br> If you are not, execute
@@ -86,6 +86,6 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 
 ##Key Learnings
 1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
-2. You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
+2. You can deploy your app using either the Helion CLI or the Eclipse [plugin](/helion/devplatform/1.1/eclipse/).
 
-[Exit Samples](/helion/devplatform/appdev) | [Previous Sample](/helion/devplatform/workbook/messaging/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)
+[Exit Samples](/helion/devplatform/1.1/appdev) | [Previous Sample](/helion/devplatform/1.1/workbook/messaging/php/) | [Next Sample](/helion/devplatform/1.1/workbook/database/php/)

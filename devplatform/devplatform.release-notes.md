@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Release Notes"
-permalink: /helion/devplatform/release-notes/
+permalink: /helion/devplatform/1.1/release-notes/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version3: HP Helion Development Platform 1.1

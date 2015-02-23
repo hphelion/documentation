@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Using the Messaging Service"
-permalink: /helion/devplatform/messageservice/
+permalink: /helion/devplatform/1.1/messageservice/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -33,8 +33,8 @@ The following topics explain how to create and manage a RabbitMQ instance:
 
 ##Prerequisites
 
-1. Install the [HP Helion Development Platform](/helion/devplatform/install/). 
-2. [Configure](/helion/devplatform/install/#install-database) the services.
+1. Install the [HP Helion Development Platform](/helion/devplatform/1.1/install/). 
+2. [Configure](/helion/devplatform/1.1/install/#install-database) the services.
 
 ##Creating a RabbitMQ Cluster {#create}
 The following guide will demonstrate how to deploy a multi-node RabbitMQ cluster using the Messaging Service.

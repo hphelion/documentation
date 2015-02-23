@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Working with the Marketplace"
-permalink: /helion/devplatform/marketplace/
+permalink: /helion/devplatform/1.1/marketplace/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -40,7 +40,7 @@ The Marketplace deploys packages of services and applications to specified envir
 - **Environments** are groups of Applications managed by a single tenant. Applications within a single Environment *may* be logically related to one another, but do not have to be.  Applications in different Environments are always independent from one another. 
 
 ##<a name="prereq"></a>Prerequisites
-Install the Marketplace component of the [HP Helion Development Platform](/helion/devplatform/install/) during the Development Platform install process.
+Install the Marketplace component of the [HP Helion Development Platform](/helion/devplatform/1.1/install/) during the Development Platform install process.
 
 ##<a name="install"></a>Installing a Package
 In this example, the package being installed is the Vertica 7 Community Edition package.

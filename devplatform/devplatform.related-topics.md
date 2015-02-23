@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Related Documentation"
-permalink: /helion/devplatform/related-topics/
+permalink: /helion/devplatform/1.1/related-topics/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1

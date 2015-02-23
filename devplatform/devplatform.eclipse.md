@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "Using the Eclipse Deployment Plugin"
-permalink: /helion/devplatform/eclipse/
+permalink: /helion/devplatform/1.1/eclipse/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -33,7 +33,7 @@ Before you begin, we recommend having [Eclipse IDE for Java EE developers](https
 1. Once Eclipse has reloaded, open the Servers window by navigating to Window-> Show View-> Servers. Note that if you have a different version of Eclipse, you might need to go to Window -> Show View -> Other -> Servers.<br><img src="media/eclipse4.png"/>
 2. Launch the HP Helion Development Platform plugin by clicking on the **Add New Server** link in the Servers window.  
 2. Select **HP Helion Development Platform** from the tree view and click **Next**.<br><img src="media/eclipse5.png"/><img src="media/eclipse6.png"/>
-3. Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the [Quick Start Developer Trial](/helion/devplatform/ALS-developer-trial-quick-start/) in the public cloud.<br><img src="media/eclipse7.png"/>
+3. Add a new Cloud URL by hitting the Manage Cloud button.  Enter the URL of your ALS cluster and give it a name. If you don't have an ALS cluster set up, the fastest way to create one is to use the [Quick Start Developer Trial](/helion/devplatform/1.1/ALS-developer-trial-quick-start/) in the public cloud.<br><img src="media/eclipse7.png"/>
 - **Note**: You may receive a warning that the peer is not authenticated, this is expected behavior as ALS images use a self-signed certificate. Select Yes when prompted with this error message.
 	<img src="media/eclipse8.png"/>
 4. Enter the credentials used to access your ALS cluster in the resulting dialog and then click **Validate Account** to ensure that the plugin can access the URL.

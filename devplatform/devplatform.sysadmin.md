@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Documentation for  IT Ops"
-permalink: /helion/devplatform/sysadmin/
+permalink: /helion/devplatform/1.1/sysadmin/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -22,10 +22,10 @@ authors: Jayme P
 ##Installation
 
 * [HP Helion OpenStack&reg; Installation](/helion/openstack/1.1/install/overview/)
-* [Development Platform Installation and Configuration](/helion/devplatform/install/)
+* [Development Platform Installation and Configuration](/helion/devplatform/1.1/install/)
 * [Application Lifecycle Service (ALS) Information](/helion/devplatform/1.1/als/)
 * [Application Lifecycle Service Client Installation](/helion/devplatform/1.1/als/user/client/)
-* [Installing the Marketplace](/helion/devplatform/marketplace)
+* [Installing the Marketplace](/helion/devplatform/1.1/marketplace)
 
 ##Administration
 Access control is role-based, with each role granting permissions in either an organization or an application space. To create users and manage user roles, use the ALS  [Command Line Interface (CLI)](/helion/devplatform/1.1/als/user/reference/client-ref/). For more information, see [Organizations](/helion/devplatform/1.1/als/user/reference/client-ref/#organizations).

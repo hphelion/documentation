@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform Software License Terms" 
-permalink: /helion/devplatform/eula/
+permalink: /helion/devplatform/1.1/eula/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -25,7 +25,7 @@ authors: Jayme P
 
 **1. Applicability.** This end user license agreement (the "Agreement") governs the use of accompanying HP Helion Development Platform Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.
 
-**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/devplatform/3rd-party-license-agreements/).
+**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/devplatform/1.1/3rd-party-license-agreements/).
 
 **3. Authorization**. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.
 

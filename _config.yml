@@ -15,7 +15,7 @@ navigation:
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
-    url: /helion/devplatform/
+    url: /helion/devplatform/1.1/
   - text: HP Helion Public Cloud
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
@@ -336,29 +336,29 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion Development Platform Documentation Home
-    url: /helion/devplatform/
+    url: /helion/devplatform/1.1/
   - text: Development Platform Installation & Configuration
-    url: /helion/devplatform/install/
+    url: /helion/devplatform/1.1/install/
   - text: Development Platform Community Edition Installation & Configuration
-    url: /helion/devplatform/install/community/
+    url: /helion/devplatform/1.1/install/community/
   - text: Application Developer Resources
-    url: /helion/devplatform/appdev/
+    url: /helion/devplatform/1.1/appdev/
   - text: IT Ops Resources
-    url: /helion/devplatform/sysadmin/
+    url: /helion/devplatform/1.1/sysadmin/
   - text: Sample Code
-    url: /helion/devplatform/appdev/#sample
+    url: /helion/devplatform/1.1/appdev/#sample
   - text: Release Notes
-    url: /helion/devplatform/release-notes/
+    url: /helion/devplatform/1.1/release-notes/
   - text: Related Documentation
-    url: /helion/devplatform/related-topics/
+    url: /helion/devplatform/1.1/related-topics/
   - text: Application Lifecycle Service Configuration and Deployment
-    url: /helion/devplatform/deploy/
+    url: /helion/devplatform/1.1/deploy/
   - text: ALS Admin Guide
     url: /als/v1/admin/
   - text: End User License Agreement
-    url: /helion/devplatform/eula/
+    url: /helion/devplatform/1.1/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/devplatform/3rd-party-license-agreements/
+    url: /helion/devplatform/1.1/3rd-party-license-agreements/
   apinavigation:
   - text: Site home page
     url: /
