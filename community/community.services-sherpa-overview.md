@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/identity/overview/"> NEXT &#9654</a> </p>
+<p style="font-size: small;"> <a href="/helion/community/services/tripleo/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
 # HP Helion OpenStack&#174; Community Sherpa Service Overview #
