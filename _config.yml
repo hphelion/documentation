@@ -405,3 +405,400 @@ navigation:
     url: /helion/openstack/1.1/services/landing/identity/
   - text: Security in version 1.1
     url: /helion/openstack/1.1/landing/security/
+  main1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack
+    url: /helion/openstack/
+  - text: HP Helion OpenStack Community 
+    url: /helion/community/
+  - text: HP Helion Development Platform 
+    url: /helion/devplatform/
+  - text: HP Helion Public Cloud
+    url: /publiccloud/overview/
+  - text: HP Cloud Service Automation
+    url: /automation/
+  - text: HP CloudSystem
+    url: /cloudsystem/
+  - text: HP Cloud OS (Deprecated)
+    url: /cloudos/
+  public-cloud1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion Public Cloud Documentation
+    url: /publiccloud/overview/
+  - text: Available Services
+    url: /publiccloud/services/
+  - text: Language Bindings
+    url: /publiccloud/bindings/
+  - text: APIs
+    url: /publiccloud/api/
+  - text: CLIs
+    url: /publiccloud/cli/
+  - text: Site Overview 
+    url: /publiccloud/site-overview/
+  mc1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Overview
+    url: /mc/
+  - text: Main Dashboard
+    url: /mc/dashboard/
+  - text: Console Pages Site Map
+    url: /mc/sitemap/
+  mc-compute1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Console Overview
+    url: /mc/
+  - text: Servers Screen
+    url: /mc/compute/servers/
+  - text: Images Screen
+    url: /mc/compute/images/
+  - text: Volumes Screen
+    url: /mc/compute/volumes/
+  - text: Network Screen
+    url: /mc/compute/networks/
+  - text: Security Groups Screen
+    url: /mc/compute/security-groups/
+  - text: Floating IPs Screen
+    url: /mc/compute/floating-ips/
+  - text: Key Pairs Screen
+    url: /mc/compute/key-pairs/
+  - text: Console Pages Site Map
+    url: /mc/sitemap/
+  mc-object-storage1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Console Overview
+    url: /mc/
+  - text: Object Storage Dashboard
+    url: /mc/object-storage/
+  - text: Use Cases
+    url: /mc/object-storage/use-cases/
+  unix-cli1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Overview
+    url: /cli/unix/
+  - text: Installation
+    url: /cli/unix/2/install/
+  - text: Account Configuration
+    url: /cli/unix/2/configuration/
+  - text: Advanced Account Management
+    url: /cli/unix/2/account-management/
+  - text: Compute Examples
+    url: /cli/unix/2/compute/
+  - text: Object Storage Examples
+    url: /cli/unix/2/object-storage/
+  - text: CDN Examples
+    url: /cli/unix/2/cdn/
+  - text: Block Storage Examples
+    url: /cli/unix/2/block-storage/
+  - text: DNS Examples
+    url: /cli/unix/2/dns/
+  - text: CLI Reference
+    url: /cli/unix/2/reference/
+  - text: CLI for v12.12
+    url: /cli/unix#1212
+  - text: Release Notes
+    url: /cli/unix/release-notes/
+  win-cli1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Overview
+    url: /cli/windows/
+  - text: Installation
+    url: /cli/windows/installation/
+  - text: Non-Service Specific Commands
+    url: /cli/windows/commands/
+  - text: Compute Examples
+    url: /cli/windows/compute/
+  - text: Object Storage Examples
+    url: /cli/windows/containers-and-folders/
+  - text: Block Storage Examples
+    url: /cli/windows/block-storage/
+  - text: CLI Reference
+    url: /cli/windows/reference/
+  - text: Getting Help
+    url: /cli/windows/help/
+  - text: Release Notes
+    url: /cli/windows/release-notes/
+  win-2-cli1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Overview
+    url: /cli/windows/2/
+  - text: Installation
+    url: /cli/windows/2/installation/
+  - text: Non-Service Specific Commands
+    url: /cli/windows/2/commands/
+  - text: Compute Examples
+    url: /cli/windows/2/compute/
+  - text: Object Storage Examples
+    url: /cli/windows/2/containers-and-folders/
+  - text: Block Storage Examples
+    url: /cli/windows/2/block-storage/
+  - text: CLI Reference
+    url: /cli/windows/2/reference/
+  - text: Getting Help
+    url: /cli/windows/2/help/
+  - text: Release Notes
+    url: /cli/windows/2/release-notes/
+  nova-cli1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Site home page
+    url: /publiccloud/overview/
+  - text: Overview
+    url: /publiccloud/cli/openstack/
+  - text: Installation
+    url: https://community.hpcloud.com/article/cloud-135-cli-installation-instructions
+  fog1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Overview
+    url: /bindings/fog/
+  - text: Installation
+    url: /bindings/fog/install/
+  - text: Connecting to the Service
+    url: /bindings/fog/connect/
+  - text: Object Storage Examples
+    url: /bindings/fog/object-storage/
+  - text: Compute Examples
+    url: /bindings/fog/compute/
+  - text: CDN Examples
+    url: /bindings/fog/cdn/
+  - text: Block Storage Examples
+    url: /bindings/fog/block-storage/
+  - text: Release Notes
+    url: /bindings/fog/release-notes/
+  jclouds1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: Overview
+    url: /bindings/jclouds/
+  - text: Compute Examples
+    url: /bindings/jclouds/compute/
+  - text: CDN Examples
+    url: /bindings/jclouds/cdn/
+  - text: Object Storage Examples
+    url: /bindings/jclouds/object-storage/
+  cloudos1.0:
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Cloud OS Home  (Deprecated)
+    url: /cloudos/
+  - text: Prepare
+    url: /cloudos/prepare/  	
+  - text: Install
+    url: /cloudos/install/
+  - text: Manage
+    url: /cloudos/manage/
+  - text: Develop
+    url: /cloudos/develop/
+  - text: Community Forum
+    url: /cloudos/forum/		
+  - text: OpenStack Links
+    url: /cloudos/openstack/	
+  - text: Site Index
+    url: /cloudos/siteindex/
+  community1.0: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack Community Documentation Home
+    url: /helion/community/
+  - text: Release Notes
+    url: /helion/community/release-notes/  	
+  - text: FAQ
+    url: /helion/community/faq/ 		
+  - text: Installation & Configuration
+    url: /helion/community/install-overview/		
+  - text: Related Documentation
+    url: /helion/community/related-links/	
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/community/3rd-party-license-agreements/	
+  - text: End User License Agreement
+    url: /helion/community/eula/
+  - text: Site Index
+    url: /helion/community/siteindex/
+  commercial1.0: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack Documentation Home
+    url: /helion/openstack/
+  - text: Release Notes
+    url: /helion/openstack/release-notes/101 
+  - text: FAQ
+    url: /helion/openstack/faq/  
+  - text: Technical Overview
+    url: /helion/openstack/technical-overview/ 
+  - text: Services Overview
+    url: /helion/openstack/services/overview/
+  - text: Support Matrix
+    url: /helion/openstack/support-matrix-beta/ 		
+  - text: Installation & Configuration Overview
+    url: /helion/openstack/install-beta-overview/	
+  - text: Installation Prerequisites
+    url: /helion/openstack/install-beta/prereqs/
+  - text: Installation for KVM Hypervisor
+    url: /helion/openstack/install-beta/kvm/
+  - text: Installation for HP StoreVirtual VSA Support
+    url: /helion/openstack/install-beta/vsa/		
+  - text: Installation for ESX Hypervisor
+    url: /helion/openstack/install-beta/esx/
+  - text: OVSvApp Deployment for HP VCN on ESX hosts 
+    url: /helion/openstack/install-beta/ovsvapp/
+  - text: Installation for DNSaaS Support 
+    url: /helion/openstack/install-beta/dnsaas/		
+  - text: Related Documentation
+    url: /helion/openstack/related-links/	
+  - text: Glossary
+    url: /helion/openstack/glossary/ 	
+  - text: Preview Agreement
+    url: /helion/openstack/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/openstack/3rd-party-license-agreements/
+  - text: Site Index
+    url: /helion/openstack/siteindex/
+  commercial.ga1.0: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack Documentation Home
+    url: /helion/openstack/
+  - text: Release Notes
+    url: /helion/openstack/release-notes/101/ 
+  - text: FAQ
+    url: /helion/openstack/faq/  
+  - text: Technical Overview
+    url: /helion/openstack/technical-overview/ 
+  - text: Services Overview
+    url: /helion/openstack/services/overview/
+  - text: Support Matrix
+    url: /helion/openstack/support-matrix/ 		
+  - text: Installation Overview
+    url: /helion/openstack/install/overview/	
+  - text: Network Security
+    url: /helion/openstack/install/security/
+  - text: Back Up and Restore
+    url: /helion/openstack/backup.restore/
+  - text: Troubleshooting
+    url: /helion/openstack/services/troubleshooting/
+  - text: Related Documentation
+    url: /helion/openstack/related-links/	
+  - text: Glossary
+    url: /helion/openstack/glossary/ 	
+  - text: End User License Agreement
+    url: /helion/openstack/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/openstack/3rd-party-license-agreements/	
+  - text: Site Index
+    url: /helion/openstack/siteindex/
+  11commercial.ga1.0: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack 1.1 Documentation Home
+    url: /11helion/openstack/
+  - text: Release Notes
+    url: /11helion/openstack/release-notes/101/ 
+  - text: FAQ
+    url: /11helion/openstack/faq/  
+  - text: Technical Overview
+    url: /11helion/openstack/technical-overview/ 
+  - text: Services Overview
+    url: /11helion/openstack/services/overview/
+  - text: Support Matrix
+    url: /11helion/openstack/support-matrix/ 		
+  - text: Installation Overview
+    url: /11helion/openstack/install/overview/	
+  - text: Update Overview
+    url: /11helion/openstack/update/overview/101/
+  - text: Network Security
+    url: /11helion/openstack/install/security/
+  - text: Back Up and Restore
+    url: /11helion/openstack/backup.restore/
+  - text: Troubleshooting
+    url: /11helion/openstack/services/troubleshooting/
+  - text: Related Documentation
+    url: /11helion/openstack/related-links/	
+  - text: Glossary
+    url: /11helion/openstack/glossary/ 	
+  - text: End User License Agreement
+    url: /11helion/openstack/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /11helion/openstack/3rd-party-license-agreements/	
+  - text: Site Index
+    url: /11helion/openstack/siteindex/
+  devplatform1.0: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion Development Platform Documentation Home
+    url: /helion/devplatform/
+  - text: Development Platform Installation & Configuration
+    url: /helion/devplatform/install/
+  - text: Development Platform Community Edition Installation & Configuration
+    url: /helion/devplatform/install/community/
+  - text: Application Developer Resources
+    url: /helion/devplatform/appdev/
+  - text: IT Ops Resources
+    url: /helion/devplatform/sysadmin/
+  - text: Sample Code
+    url: /helion/devplatform/appdev/#sample
+  - text: Release Notes
+    url: /helion/devplatform/release-notes/
+  - text: Related Documentation
+    url: /helion/devplatform/related-topics/
+  - text: Application Lifecycle Service Configuration and Deployment
+    url: /helion/devplatform/deploy/
+  - text: ALS Admin Guide
+    url: /als/v1/admin/
+  - text: End User License Agreement
+    url: /helion/devplatform/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/devplatform/3rd-party-license-agreements/
+  apinavigation1.0:
+  - text: Site home page
+    url: /
+  - text: API Overview
+    url: /publiccloud/api/
+  - text: Identity Service
+    url: /publiccloud/api/identity/
+  - text: Object Storage
+    url: /publiccloud/api/object-storage/
+  - text: Compute Service
+    url: /publiccloud/api/compute/
+  - text: Block Storage
+    url: /publiccloud/api/block-storage/
+  - text: CDN
+    url: /publiccloud/api/CDN/
+  - text: RDB for MySQL
+    url: /publiccloud/api/dbaas/
+  - text: Load Balancer
+    url: /publiccloud/api/lbaas/
+  - text: DNS
+    url: /publiccloud/api/dns/
+  - text: Monitoring
+    url: /publiccloud/api/monitoring/
+  - text: ALS Admin Guide
+    url: https://apaas-docs.hpcloud.com
+  commercial.test1.0:
+  - text: Version 1.0  documentation
+    url: http://docs.hpcloud.com/helion/openstack/
+  - text: All version 1.1 documentation
+    url: /helion/openstack/siteindex/
+  - text: Getting started with version 1.1
+    url: /helion/openstack/landing/start/
+  - text: Installing version 1.1  
+    url: /helion/openstack/landing/install/
+  - text: Using version 1.1
+    url: /helion/openstack/landing/dashboards/
+  - text: Services in version 1.1
+    url: /helion/openstack/landing/services/
+  - text: Storage in version 1.1
+    url: /helion/openstack/landing/storage/
+  - text: Networking (Neutron) in version 1.1
+    url: /helion/openstack/landing/network/
+  - text: Identity Management in version 1.1
+    url: /helion/openstack/services/landing/identity/
+  - text: Security in version 1.1
+    url: /helion/openstack/landing/security/
