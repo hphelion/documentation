@@ -164,7 +164,7 @@ To remove a node:
 	
 		9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,overcloudsoswiftstorage,IPMI
 
-    To delete the node change the role of OvercloudSOSwiftProxy in the `baremetal.csv` file as follows: 
+    To delete the node change the role of overcloudsoswiftstorage in the `baremetal.csv` file as follows: 
 
 		9C:B6:54:AD:55:A8,administrator,gone2far,10.1.192.50,12,73728,70,overcloudsoswiftstorage:deleted,IPMI
  
