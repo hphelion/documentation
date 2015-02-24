@@ -340,12 +340,12 @@ To install packages from custom repository/mirror. Use the
 variables*](/helion/devplatform/1.1/als/user/reference/environment/#environment-variables).
 
 Application dependencies such as web frameworks or modules from PyPI can
-be installed using [*PyPM*](/helion/devplatform/1.1/als/admin/reference/glossary/#term-pypm)
-and/or [*pip*](/helion/devplatform/1.1/als/admin/reference/glossary/#term-pip).
+be installed using [*PyPM*](/helion/devplatform/1.1/als/user/reference/glossary/#term-pypm)
+and/or [*pip*](/helion/devplatform/1.1/als/user/reference/glossary/#term-pip).
 
 ### PyPM[](#pypm "Permalink to this headline")
 
-Definition [*PyPM*](/helion/devplatform/1.1/als/admin/reference/glossary/#term-pypm)
+Definition [*PyPM*](/helion/devplatform/1.1/als/user/reference/glossary/#term-pypm)
 
 To install packages during application deployment with PyPM, add the
 requirements to manifest.yml:
@@ -369,13 +369,13 @@ variable.
 
 ### pip[](#pip "Permalink to this headline")
 
-Definition [*pip*](/helion/devplatform/1.1/als/admin/reference/glossary/#term-pip)
+Definition [*pip*](/helion/devplatform/1.1/als/user/reference/glossary/#term-pip)
 
 In addition - or as alternative - to
-[*PyPM*](/helion/devplatform/1.1/als/admin/reference/glossary/#term-pypm), your application
+[*PyPM*](/helion/devplatform/1.1/als/user/reference/glossary/#term-pypm), your application
 can also make use of pip to install certain dependencies. The above
 tornado-chat-mongo sample installs "pycurl" using
-[*pip*](/helion/devplatform/1.1/als/admin/reference/glossary/#term-pip):
+[*pip*](/helion/devplatform/1.1/als/user/reference/glossary/#term-pip):
 
     requirements:
       pypm:

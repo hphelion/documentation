@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/cgiapppsgi/
-published: false
+published: true
 title: "CGI::Application::PSGI"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
