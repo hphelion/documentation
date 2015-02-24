@@ -8,7 +8,7 @@ published: false
 ---
 <!--PUBLISHED-->
 
-#UNIX CLI for HP Helion Public Cloud 13.5 Reference
+# UNIX CLI for HP Helion Public Cloud 13.5 Reference
 
 If you are using v12.12, click [here](https://docs.hpcloud.com/cli/unix/reference) for documentation.
 ___________________
