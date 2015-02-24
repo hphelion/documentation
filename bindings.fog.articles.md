@@ -8,7 +8,7 @@ tags: fog authentication howto
 published: false
 ---
 <!--PUBLISHED-->
-#Ruby Fog Bindings for HP Helion Public Cloud: Articles on how to use our Ruby Fog bindings#
+# Ruby Fog Bindings for HP Helion Public Cloud: Articles on how to use our Ruby Fog bindings#
 
 ##Important Notice##
 

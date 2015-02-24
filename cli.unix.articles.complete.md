@@ -9,7 +9,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#UNIX CLI for HP Helion Public Cloud: Using bash shell command completion v12.12#
+# UNIX CLI for HP Helion Public Cloud: Using bash shell command completion v12.12#
 
 ___________________
 
