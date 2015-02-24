@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/
-published: false
+published: true
 title: "Perl"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
