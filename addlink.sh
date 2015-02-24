@@ -21,7 +21,8 @@ oldpermalink=`grep "^permalink:"  $oldversion | sed 's:permalink.* /::' `
 #	Insert the 1.1 permalink into the 1.0 file as a link right after the title.
 
 	#find the title line number
-	awk '/^#[^#]/ {print }' $oldversion
+	echo $oldversion
+	awk '/^#[^#]/ {print FNR}' $oldversion
  echo " "
 #	Insert the 1.0 permalink into the 1.1 file as a link right after the title.
 
