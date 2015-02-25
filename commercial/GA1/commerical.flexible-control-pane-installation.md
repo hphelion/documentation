@@ -40,167 +40,66 @@ Before you can install the Flexible Control Plane, you will need to:
 - Deploy an HP Helion cloud
 
 ##Step-by-step Installation Instructions {#instruct}
-1. On each of the three [KVM hosts](/helion/openstack/flexiblecontrol/overview/#kvmsetup) prepared earlier, create a *brbm* bridge and add the physical NIC which connects to the Helion Management network (that carries the PXE/DHCP, message queue, and other API-related traffic) along with other networks.
-2. For example, on KVM Host A, the NIC is **eth1**:
-
-		ovs-vsctl add-br brbm
-		ovs-vsctl add-port brbm eth1
-		export BRIDGE_INTERFACE=brbm
-		ifconfig brbm 192.168.124.2
-		ifconfig eth1 0.0.0.0
-		route add default gw 192.168.124.1
 
 
-1. Similarly, for KVM Hosts B and C
+1. The system will need to create a baremetal bridge on each host, onto which it will add a port for the external 	device. The system will also move the IP address of the external device to the bridge device.
+   This creates a baremetal network through which the virtual machines will communicate with each other and with the real baremetal systems.
 
-		ovs-vsctl add-br brbm
-		ovs-vsctl add-port brbm eth0
-		export BRIDGE_INTERFACE=brbm
-		ifconfig brbm 192.168.124.3
-		ovs-vsctl add-br brbm
-		ovs-vsctl add-port brbm eth0
-		export BRIDGE_INTERFACE=brbm
-		ifconfig brbm 192.168.124.4
-1. Log in to KVM Host A.
-2. Create an SSH key by executing:
- 
-		ssh-keygen -t rsa -N
+  	 If the external device name on the system running the installer and seed VM is NOT called eth0, then determine the device name BEFORE running the next
+   step and
 
+   	 	$ export BRIDGE_INTERFACE=<devicename>
 
-3. Copy the private and public keys to KVM Hosts B and C.
+   		e.g. $ export BRIDGE_INTERFACE=em1
 
- 
-		ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.124.3
-		scp /root/.ssh/id_rsa 192.168.124.3:/root/.ssh/
-4. Test and ensure that you can connect to Hosts B and C from A without having to provide any password.
-5. Download and extract the installer to the */root* folder on KVM Host A.
- 
-		cd /root
-		tar zxvf ee_installer.tgz
-8. Enable the Flexible Control Plane feature.
+   		or
+   	 
+		$ export BRIDGE_INTERFACE=eth5
 
-		bash /root/tripleo/tripleo-incubator/scripts/hp_ced_enable_hybrid.sh
-
-1. Create a kvms.csv file with the details of the three KVM hosts:
- 
-		cat > /root/kvms.csv <<EOF
-		192.168.124.2,root
-		192.168.124.3,root
-		192.168.124.4,root
-		EOF
+  	 In the same manner, establish the value of BRIDGE_INTERFACE for each remote host (see below).
 
 
+2.    Set up the remote hosts. You must set up each remote host identified in your vm-plan file.
 
-1. Set the required environment variables. Note that by default, 8 VMs are created with the configuration: 8GB RAM, 1 CPU and 512GB HDD. We recommend increasing the CPU and RAM for this feature to a minimum of 12 CPU cores and 16384MB RAM, as we have done here.
+	 a. Create a user on *each* remote host to run the virtual machines.
 
-		export NODE_CPU=12
-		export NODE_MEM=16384
-		export HP_VM_MODE=HYBRID
-		export HP_VM_MODE_MULTIKVM=3
+	You can create a new user or use an existing user. The user much have sufficient privileges to launch virtual machines using libvirt, for example being a member of the 'libvirtd' group. This user is denoted <kvmuser> below, and the host is denoted <kvmhost>.
 
+	b. Create a virtual power key on the seed's host. As root, run this command on the seed's host:
 
-1. Initiate the seed VM installation.
+   		$ export BRIDGE_INTERFACE=<devicename>
 
-		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --create-seed |& tee install.log
+   		$ export HP_VM_MODE=hybrid
 
-1. Wait for the message
+    	$ bash /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh --local-setup
 
-		-completed setup seed
+  	 This command will perform all prerequisite system checks and create an SSH key that can be used for virtual power operations between host, if the key does not previously exist.
 
-2. Once the seed VM installation completes, you will observe that the process has created shell VMs on the 3 KVM hosts provided in the kvms.csv file.
-3. This process also creates a virtual power public key on KVM Host A. Copy this file to KVM hosts B and C.
- 
-		ssh-copy-id -i/root/.ssh/id_rsa_virt_power.pub root@192.168.124.3
-		ssh-copy-id -i/root/.ssh/id_rsa_virt_power.pub root@192.168.124.4
- 
-7. Log in to the seed VM and change to the /root directory. A baremetal.csv file should exist in this location. This file contains information about the virtual machines that will be created when step 22 is executed. 
-The baremetal.csv file will appear as shown below. Note the last 2 columns. Without any change, the undercloud and overcloud controllers would be distributed randomly, which could result in a non high-availability (HA) configuration.
- 
+	c. Append the key to the <kvmuser>'s authorized_keys file on *each* remote host.
+    
+	As root:
 
-		00:17:00:3a:7d:25,root,undefined,192.168.124.2,12,16384,512,vm,all
-		00:7e:d1:97:ca:b6,root,undefined,192.168.124.3,12,16384,512,vm,all
-		00:e8:3f:a9:7e:a2,root,undefined,192.168.124.4,12,16384,512,vm,all
-		00:43:e3:33:9e:7f,root,undefined,192.168.124.2,12,16384,512,vm,all
-		00:5d:ff:f4:80:a2,root,undefined,192.168.124.3,12,16384,512,vm,all
-		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
-		00:65:cc:54:b1:0f,root,undefined,192.168.124.2,12,16384,512,vm,all
-In order to ensure that the overcloud control plane nodes land on different KVM hosts to maintain HA, modify the baremetal.csv file and update the last column as shown below such that the overcloud controller nodes represented by the 2nd, 3rd and 4th row land on different KVM hosts.
-After modification, the baremetal.csv will look like the one given below. 
+    	$ scp /root/.ssh/virtual-power-key.pub <kvmuser>@<kvmhost>:
 
+   		$ ssh <kvmuser>@<kvmhost>
 
-		00:17:00:3a:7d:25,root,undefined,192.168.124.2,12,16384,512,vm,all
-		00:7e:d1:97:ca:b6,root,undefined,192.168.124.2,12,16384,512,vm,occm
-		00:e8:3f:a9:7e:a2,root,undefined,192.168.124.3,12,16384,512,vm,occ1
-		00:43:e3:33:9e:7f,root,undefined,192.168.124.4,12,16384,512,vm,occ2
-		00:5d:ff:f4:80:a2,root,undefined,192.168.124.3,12,16384,512,vm,all
-		00:2b:8a:73:29:82,root,undefined,192.168.124.4,12,16384,512,vm,all
+   		$ cat virtual-power-key.pub >> ~<kvmuser>/.ssh/authorized_keys
 
-	Now, in order to add baremetal nodes that will be used as compute nodes and/or VSA nodes, modify the baremetal.csv file and add the required information about the physical nodes, as shown below. The final baremetal.csv will look like the following.
+   		$ chmod 600 ~<kvmuser>/.ssh/authorized_keys
 
-		00:65:cc:54:b1:af,iloAdmin,iloPassword,192.168.1.51,12,12288,1000,bm,vsa
-		00:65:cc:54:b1:bf,iloAdmin,iloPassword,192.168.1.52,12,12288,1000,bm,vsa
-		00:65:cc:54:b1:ca,iloAdmin,iloPassword,192.168.1.53,12,12288,1000,bm,vsa
-		00:65:cc:54:b1:ff,iloAdmin,iloPassword,192.168.1.54,40,98304,2000,bm,ocN
-		00:65:cc:54:b1:25,iloAdmin,iloPassword,192.168.1.55,40,98304,2000,bm,ocN
-		00:65:cc:54:b2:26,iloAdmin,iloPassword,192.168.1.56,40,98304,2000,bm,ocN
-		00:65:cc:54:b2:27,iloAdmin,iloPassword,192.168.1.57,40,98304,2000,bm,ocN
+	d. Copy hp_ced_host_manager.sh to *each* remote host.
+
+    	e.g. $ scp /root/work/tripleo/tripleo-incubator/scripts/hp_ced_host_manager.sh \
+             <kvmuser>@<kvmhost>:hp_ced_host_manager.sh
+
+	e. As root on *each* remote host run:
+
+    	$ export BRIDGE_INTERFACE=<devicename>
+
+    	$ bash -x ~<kvmuser>/hp_ced_host_manager.sh --remote-setup
 
 
-
-1. Create the user-defined *uc\_custom\_flavors.json* file, which specifies the values and contains mapping of the node_type. The format is shown below. Note that while the overcloud controllers have different flavor names (controllerMgmtFlavor, controller0Flavor, controller1Flavor) they must all be of the same configuration.
-
-		{
-		"flavors": [
-		{
-		"name": "controllerMgmtFlavor",
-		"memory": 16384,
-		"disk": 512,
-		"cpu": 12,
-		"arch": "amd64",
-		"hw_type": "vm",
-		"node_type": "occm"
-		},
-		{
-		"name": "controller0Flavor",
-		"memory": 16384,
-		"disk": 512,
-		"cpu": 12,
-		"arch": "amd64",
-		"hw_type": "vm",
-		"node_type": "occ1"
-		},
-		{
-		"name": "controller1Flavor",
-		"memory": 16384,
-		"disk": 512,
-		"cpu": 12,
-		"arch": "amd64",
-		"hw_type": "vm",
-		"node_type": "occ2"
-		},
-		{
-		"name": "vsaFlavor",
-		"memory": "12288",
-		"disk": "1000",
-		"cpu": "12",
-		"arch": "amd64",
-		"hw_type": "bm",
-		"node_type": "vsa"
-		},
-		{
-		"name": "computeFlavor",
-		"memory": "98304",
-		"disk": "2000",
-		"cpu": "40",
-		"arch": "amd64",
-		"hw_type": "bm",
-		"node_type": "ocN"
-		}
-		]
-		}
-
-
-1. Create the *overcloud-config.json* file with the following contents. For definitions of the variables used and suggested values refer to the list of available [environment variables](http://docs.hpcloud.com/helion/openstack/install/envars). 
+3. Create the *overcloud-config.json* file with the following contents. For definitions of the variables used and suggested values refer to the list of available [environment variables](http://docs.hpcloud.com/helion/openstack/install/envars). 
  
 		{
 		"cloud_type": "KVM",
@@ -274,9 +173,55 @@ After modification, the baremetal.csv will look like the one given below.
 
 
 
-1. Start the installation
- 
-		bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |& tee install.log
+1. Build the cloud (all of the following commands should be run from /root)
+
+	a. Login to the seed
+
+		$ ssh root@192.0.2.1
+
+	b. Update a file called '/root/baremetal.csv' in the following format:
+
+		<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_managemenment>
+
+	c. For full details of this file format consult README-baremetal.txt
+
+   	The VMs you have pre-provisioned should already be present in this file so you need to add the details of the physical hardware you want to add to the system.
+
+	d. Run the second stage, that is, configure under and overclouds.
+
+   Export all relevant environment variables, 
+
+	e.g. $ export OVERCLOUD_NTP_SERVER=<ip>
+   (For full details of applicable settings, consult README-baremetal.txt)
+
+   Important: As these are hybrid systems, some of the defaults for real hardware should not
+   be applied to virtual machines:
+
+	   $ export UNDERCLOUD_NeutronPublicInterface=eth0
+	
+	   $ export OVERCLOUD_NeutronPublicInterface=eth0
+	
+	   $ export OVERCLOUD_VIRTUAL_INTERFACE=br-ex
+
+
+
+Notes:
+   OVERCLOUD_NeutronPublicInterface - you should set this to the value of the name
+   of the interface that carries the neutron external traffic on your overcloud
+   control nodes.
+   The default value for hybrid installs is eth0 which is suitable for virtual
+   machines, so you should NOT need to set this value.
+   The same applies to UNDERCLOUD_NeutronPublicInterface.
+
+   OVERCLOUD_HYPERVISOR_PUBLIC_INTERFACE - you should set this to the value of
+   the name of the interface that carries the neutron external traffic on your
+   overcloud compute nodes.
+   The default value is eth2. If this is correct you do not need to set this variable.
+   e.g. $ export OVERCLOUD_HYPERVISOR_PUBLIC_INTERFACE=eth1
+
+    $ bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh
+
+
 
 
 
@@ -285,14 +230,14 @@ After modification, the baremetal.csv will look like the one given below.
 		HP - completed - Tue Oct 23 16:20:20 UTC 2014
 
 ##Post-Installation Steps {#postinstall}
-- [Verify the installation](http://docs.hpcloud.com/helion/openstack/install/kvm/#verifying-your-installation)
+- [Verify the installation](/helion/openstack/install/kvm/#verifying-your-installation)
 - Configure Block Storage
-	- [For VSA](http://docs.hpcloud.com/helion/openstack/install/vsa/overview)
-	- [For 3PAR](http://docs.hpcloud.com/helion/openstack/install/3par)
+	- [For VSA](/helion/openstack/install/vsa/overview)
+	- [For 3PAR](/helion/openstack/install/3par)
 
 ##Adding the Overcloud Nodes {#addnodes}
 
-For more information, see: [Add, remove and replace nodes](http://docs.hpcloud.com/helion/openstack/technical-overview/#add-remove-replace-nodes-jumplink-span).
+For more information, see: [Add, remove and replace nodes](/helion/openstack/technical-overview/#add-remove-replace-nodes-jumplink-span).
 
 ##Known Issues and Resolutions {#knownissues}
 
