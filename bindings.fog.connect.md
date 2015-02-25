@@ -7,7 +7,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#Ruby Fog Bindings for HP Helion Public Cloud: Connecting to the HP Helion Public Cloud Service
+# Ruby Fog Bindings for HP Helion Public Cloud: Connecting to the HP Helion Public Cloud Service
 
 ##Important Notice##
 

@@ -9,7 +9,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#UNIX CLI for HP Helion Public Cloud: Generating verbose debugging output v12.12#
+# UNIX CLI for HP Helion Public Cloud: Generating verbose debugging output v12.12#
 
 ___________________
 

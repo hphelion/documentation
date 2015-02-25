@@ -7,7 +7,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI v12.12
+# UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI v12.12
 ___________________
 
 ###Important Notice###

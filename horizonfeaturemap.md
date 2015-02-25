@@ -9,7 +9,7 @@ published: false
 <!--PUBLISHED-->
 
 
-#Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console
+# Feature Mapping: HP Classic Console to the HP Helion Public Cloud Console
 
 HP encourages you to transition to HP Helion Public Cloud 13.5 as soon as possible. The 13.5 version allows you to take advantage of significant product enhancements, including the new HP Helion Public Cloud Console based on the OpenStack Horizon dashboard project.  Early transition also ensures uninterrupted service when support for the previous (12.12) version ends on June 1, 2014.
 

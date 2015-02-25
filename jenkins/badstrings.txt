@@ -1,3 +1,4 @@
+hpasscli
 CloudStack
 cloudstack
 [bB]are [mM]etal

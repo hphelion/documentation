@@ -20,7 +20,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/community/install-overview/">&#9664; PREV</a> | <a href="/helion/community/install-overview/">&#9650; UP</a> | <a href="/helion/community/install-virtual/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&#174; 1.0 Community Baremetal Installation and Configuration
+# HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
 
 This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. 
 
@@ -236,12 +236,15 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 
 	**IMPORTANT:** Ensure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting. Refer to the [Network configuration](#additional-hardware-configuration) section.
 
-5. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands, 
+5. Set the IP address of an NTP server accessible on the public interface for overcloud and undercloud hosts using the following commands 
 
-	To set this variable:
+	**Example:**
+
+	The example sets the NTP server address. Do not copy this address.
 
 	`export OVERCLOUD_NTP_SERVER=192.0.1.128`
 <br>	`export UNDERCLOUD_NTP_SERVER=192.0.1.128`
+
 
 6. If required, set the following environmental variables, which can affect your installation. Some of these variables set public, or floating, IP addresses. The floating IP addresses cannot be in the same range as the private network addresses (by default, 10.x.x.x)
 
@@ -348,6 +351,9 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 8. From `/root`, install and configure the undercloud and overcloud by running the following command. 
 
 	`bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh`
+
+10. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.
+
 
 	When the deployment completes, message similar to the following is displayed:
 

@@ -8,7 +8,7 @@ product: identity
 
 ---
 <!--PUBLISHED-->
-#HP Helion Public Cloud Identity Services v2 API
+# HP Helion Public Cloud Identity Services v2 API
 
 *If you are using the v3 Identity Services API, click [here for those API references](/publiccloud/api/identity/).*
 

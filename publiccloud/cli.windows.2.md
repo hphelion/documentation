@@ -7,7 +7,7 @@ product: win-2-cli
 ---
 <!--PUBLISHED-->
 
-#HP Helion Public Cloud CLI Software for Windows PowerShell
+# HP Helion Public Cloud CLI Software for Windows PowerShell
 
 The HP Helion Public Cloud command-line interface (CLI) software for Windows PowerShell is a tool which allows Windows users to manage their HP Helion Public Cloud services from the command line.
 

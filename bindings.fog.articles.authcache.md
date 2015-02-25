@@ -8,7 +8,7 @@ tags: fog authentication caching
 published: false
 ---
 <!--PUBLISHED-->
-#Ruby Fog bindings for HP Helion Public Cloud: Using authentication caching#
+# Ruby Fog bindings for HP Helion Public Cloud: Using authentication caching#
 
 
 ##Important Notice##
