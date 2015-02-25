@@ -7,7 +7,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#Ruby Fog Bindings for HP Helion Public Cloud Block Storage v2.0 Examples
+# Ruby Fog Bindings for HP Helion Public Cloud Block Storage v2.0 Examples
 
 HP Helion Public Cloud block storage provides support for volumes and snapshots. A volume can store boot images, user data or both. They provide customers with persistent and flexible permanent storage. You can think of it as list of USB devices, that can be plugged in anywhere at will. Volumes can be attached to server instances and mounted. 
 

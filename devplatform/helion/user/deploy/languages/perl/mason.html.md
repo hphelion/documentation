@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/perl/mason/
-published: false
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/mason/
+published: true
 title: "Mason"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -73,7 +73,7 @@ In the *app.psgi* file:
             $app;
     };
 
-The *manifest.yml* file contains deployment instructions for Application Lifecycle Service. See complete details for this file in the [*Configuration With manifest.yml*](/als/v1/user/deploy/manifestyml/) section.
+The *manifest.yml* file contains deployment instructions for Application Lifecycle Service. See complete details for this file in the [*Configuration With manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/) section.
 
 Examples[](#examples "Permalink to this headline")
 ---------------------------------------------------

@@ -7,7 +7,7 @@ published: false
 
 ---
 <!--PUBLISHED-->
-#Ruby Fog Bindings for HP Helion Public Cloud Block Storage Examples
+# Ruby Fog Bindings for HP Helion Public Cloud Block Storage Examples
 
 ##Important Notice##
 

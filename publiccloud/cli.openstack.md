@@ -6,7 +6,7 @@ product: nova-cli
 
 ---
 <!--PUBLISHED-->
-#Work with HP Helion Public Cloud using the CLI#
+# Work with HP Helion Public Cloud using the CLI#
 
 You can interact with HP Helion Public Cloud using the native OpenStack&trade; Command-Line Interface (CLI) tools.
  

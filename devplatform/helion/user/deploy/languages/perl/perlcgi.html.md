@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
-permalink: /als/v1/user/deploy/languages/perl/perlcgi/
-published: false
+permalink: /helion/devplatform/1.1/als/user/deploy/languages/perl/perlcgi/
+published: true
 title: "Perl CGI"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -22,7 +22,7 @@ the default PATH and supports module installation via
 [*PPM*](index.html#perl-ppm) and [*cpanm*](index.html#perl-cpanm).
 
 Unlike the 'perl' framework, setting the
-[*start-file*](/als/v1/user/deploy/manifestyml/#start-file) option
+[*start-file*](/helion/devplatform/1.1/als/user/deploy/manifestyml/#start-file) option
 has no effect, as there is no permanently running application. A new
 instance of a CGI script is started for each request.
 
