@@ -5,7 +5,7 @@ permalink: /helion/community/services/identity/configure/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

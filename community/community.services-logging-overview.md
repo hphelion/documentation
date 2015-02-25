@@ -5,7 +5,7 @@ permalink: /helion/community/services/logging/overview/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

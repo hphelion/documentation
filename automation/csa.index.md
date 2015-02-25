@@ -4,7 +4,7 @@ title: "HP Cloud Service Automation"
 permalink: /automation/
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # HP Cloud Service Automation #
 

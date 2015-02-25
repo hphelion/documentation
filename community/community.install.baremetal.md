@@ -5,7 +5,7 @@ permalink: /helion/community/install/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

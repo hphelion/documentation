@@ -5,7 +5,7 @@ permalink: /helion/community/services/horizon/overview/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 

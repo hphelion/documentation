@@ -5,7 +5,7 @@ permalink: /helion/community/services/tripleo/overview/
 product: community
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <script>
 
