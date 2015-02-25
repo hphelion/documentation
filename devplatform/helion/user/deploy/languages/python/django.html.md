@@ -1,7 +1,6 @@
 ---
 layout: default-devplatform
 permalink: /helion/devplatform/1.1/als/user/deploy/languages/python/django/
-published: false
 test: "Deploying Django applications"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1

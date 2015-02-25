@@ -137,7 +137,7 @@ The following are the known issues for HP Helion OpenStack Community edition:
 		sudo service nova-conductor restart
 		sudo service neutron-openvswitch-agent restart
 
-
+4. **Live Migration of Instance in Stopped, Suspended, or Rescued State May Fail** Make sure instances are not in the Stopped, Suspended, or Rescued state before attempting to migrate them to a new host. A 400 error may appear; a message "Failed to migrate instance..." may be received; or the client may quietly time out, leaving the instance stuck in the Migrating state and thus unmanageable.
 ##For further information## {#for-further-information}
 
 The kit comes with a README.txt which lists a number of recommendations and requirements. Please read and follow it carefully.
