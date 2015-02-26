@@ -15,7 +15,7 @@ echo 'running documentation/jenkins/check.sh'
 rm checktmp > /dev/null 2>&1  
 rm permalinklist1.txt  > /dev/null 2>&1  
 rm filepermalink1.txt > /dev/null 2>&1  
-
+rm tmp > /dev/null 2>&1  
 
 echo " "
 echo " "
