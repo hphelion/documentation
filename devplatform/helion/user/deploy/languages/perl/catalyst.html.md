@@ -13,8 +13,8 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Catalyst[](#catalyst "Permalink to this headline")
-===================================================
+# HP Helion Development Platform: Catalyst {#catalyst}
+[See the Helion OpenStack 1.0 version of this page](/helion/devplatform/1.0/als/user/deploy/languages/catalyst/)
 
 Catalyst is a framework for building web applications, which will run on
 Application Lifecycle Service. To learn more about Catalyst, see the [Catalyst
@@ -22,9 +22,7 @@ documentation](https://metacpan.org/module/Catalyst). Also, take a look
 at the Application Lifecycle Service sample apps listed below to see some working code
 examples.
 
-Home Directory[](#home-directory "Permalink to this headline")
----------------------------------------------------------------
-
+## Home Directory {#home-directory}
 Catalyst makes different assumptions on its Home directory depending on
 whether or not it is installed in @INC. It makes this distinction based
 on the presence of a *Makefile.PL* or *BUILD.PL* file in the app
@@ -38,8 +36,7 @@ variables. For example, you could set CATALYST\_HOME in *manifest.yml*:
     env:
       CATALYST_HOME: $HOME
 
-Examples[](#examples "Permalink to this headline")
----------------------------------------------------
+## Examples {#examples}
 
 -   [Catalyst Tutorial
     2](https://github.com/Stackato-Apps/catalyst-tut2): Sample

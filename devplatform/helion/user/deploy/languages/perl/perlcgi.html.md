@@ -13,8 +13,8 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Perl CGI[](#perl-cgi "Permalink to this headline")
-===================================================
+# HP Helion Development Platform: Perl CGI {#perl-cgi}
+[See the Helion OpenStack 1.0 version of this page](/helion/devplatform/1.0/als/user/deploy/languages/perlcgi/)
 
 The 'perlcgi' framework can be used to run *any* CGI script, but (like
 the [*perl*](index.html#perl-index) framework) it provides ActivePerl in
@@ -30,8 +30,7 @@ Perl scripts deployed with this framework should begin with:
 
     #!/usr/bin/env perl
 
-Example[](#example "Permalink to this headline")
--------------------------------------------------
+Example {#example}
 
 -   [perlcgi-env](https://github.com/Stackato-Apps/perlcgi-env): A
     simple Perl CGI script that displays environment variables.

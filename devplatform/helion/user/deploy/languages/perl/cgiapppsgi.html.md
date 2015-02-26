@@ -13,8 +13,8 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: CGI Application::PSGI[](#cgi-application-psgi "Permalink to this headline")
-=============================================================================
+# HP Helion Development Platform: CGI Application: PSGI {#cgi-application-psgi}
+[See the Helion OpenStack 1.0 version of this page](/helion/devplatform/1.0/als/user/deploy/languages/cgiapppsgi/)
 
 An app using the CGI::Application::PSGI framework needs an *app.psgi*
 and *requirements.txt* file.
@@ -58,7 +58,6 @@ The `Plack::Middleware::ContentLength` code adds the
 Content-Length header which is currently required for Perl apps under
 Application Lifecycle Service.
 
-Examples[](#examples "Permalink to this headline")
----------------------------------------------------
+## Examples {#examples}
 
 -   [Rubric](https://github.com/Stackato-Apps/rubric): The winning entry from our Application Lifecycle Service contest.
