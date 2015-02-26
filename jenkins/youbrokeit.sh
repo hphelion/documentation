@@ -15,7 +15,7 @@ echo 'running documentation/jenkins/check.sh'
 rm checktmp > /dev/null 2>&1  
 rm permalinklist1.txt  > /dev/null 2>&1  
 rm filepermalink1.txt > /dev/null 2>&1  
-
+rm tmp > /dev/null 2>&1  
 
 echo " "
 echo " "
@@ -28,7 +28,7 @@ echo  ""
 
 for i in `find . -path ./redirects -prune -o -name "*.md" | grep -v "/redirects"`
 	do
-		if [[ -z $(head $i | grep "published: false") ]];
+		if [[ -z $(head  -50 $i | grep "published: false") ]];
 		then
  
  
@@ -46,8 +46,9 @@ done
  
 
 
-for i in `cat permalinklist1.txt | sed 's/ *//g'  | grep -v http | sort | uniq`
+for i in `cat permalinklist1.txt | sed 's/ *//g'  | grep -v http | sort | uniq | sed 's:/$::' `
 do 
+
 	if [[ -z $(grep $i filepermalink1.txt ) ]];
 	then
 		echo  ""
