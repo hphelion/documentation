@@ -13,8 +13,8 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Mason[](#mason "Permalink to this headline")
-=============================================
+# HP Helion Development Platform: Mason {#mason}
+[See the Helion OpenStack 1.0 version of this page](/helion/devplatform/1.0/als/user/deploy/languages/mason/)
 
 Mason is a templating system that can handle web requests directly via
 PSGI, or act as the view layer for web frameworks such as Catalyst or
@@ -75,8 +75,7 @@ In the *app.psgi* file:
 
 The *manifest.yml* file contains deployment instructions for Application Lifecycle Service. See complete details for this file in the [*Configuration With manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/) section.
 
-Examples[](#examples "Permalink to this headline")
----------------------------------------------------
+## Examples {#examples}
 
 -   [Mason Hello
     World](https://github.com/Stackato-Apps/mason-helloworld): Hello

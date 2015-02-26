@@ -13,8 +13,8 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Mojolicious[](#mojolicious "Permalink to this headline")
-=========================================================
+# HP Helion Development Platform: Mojolicious {#mojolicious}
+[See the Helion OpenStack 1.0 version of this page](/helion/devplatform/1.0/als/user/deploy/languages/mojo/)
 
 Mojolicious is a web framework with a native PSGI interface which is
 easy to build and run on Application Lifecycle Service.
@@ -49,11 +49,10 @@ The *app.pl* file contains the core functionality:
     app->start;
 
 The *manifest.yml* file contains deployment instructions for Application Lifecycle Service.
-See complete details for this file in the [*Configuration With
-manifest.yml*](/helion/devplatform/1.1/als/user/deploy/manifestyml/) section.
+See complete details for this file in the [Configuration With
+manifest.yml](/helion/devplatform/1.1/als/user/deploy/manifestyml/) section.
 
-Examples[](#examples "Permalink to this headline")
----------------------------------------------------
+## Examples {#examples}
 
 -   [Mojo Hello
     World](https://github.com/Stackato-Apps/mojo-helloworld): the

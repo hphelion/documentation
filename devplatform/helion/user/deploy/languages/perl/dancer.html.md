@@ -13,8 +13,8 @@ authors: Jayme P
 ---
 <!--PUBLISHED-->
 
-# HP Helion Development Platform: Dancer[](#dancer "Permalink to this headline")
-===============================================
+# HP Helion Development Platform: Dancer {#dancer}
+[See the Helion OpenStack 1.0 version of this page](/helion/devplatform/1.0/als/user/deploy/languages/dancer/)
 
 An app using the Dancer framework needs an *app.psgi* and
 *requirements.txt* file.
@@ -32,8 +32,7 @@ In the *app.psgi* file, for a simple implementation:
     get '/' => sub { "hello world!" };
     dance;
 
-Examples[](#examples "Permalink to this headline")
----------------------------------------------------
+Examples {#examples}
 
 -   [Dancer Hello
     World](https://github.com/Stackato-Apps/dancer-helloworld): Hello
