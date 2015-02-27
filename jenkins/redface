@@ -9,7 +9,7 @@ rm filepermalink.txt > /dev/null 2>&1
 
 echo " "
 echo " "
-echo  Checking for embarrassing strings and structural errors... 
+echo  Checking the $GIT_BRANCH branch for embarrassing strings and structural errors... 
 
  
 echo " "
@@ -22,7 +22,7 @@ if [[ -n "$(sed ':a;N;$!ba;s/\n/ /g'  $i | sed 's|-->|-->\n|g' | sed 's|<!--.*--
 						echo $i
 					fi
 done
-echo 1 
+ 
   
 #Set Internal Field Separator to % (to preserve white space at the beginning and end of badstrings)
 IFS='%'
@@ -30,16 +30,14 @@ IFS='%'
 
 #Search yml files for HTML codes
 cat ./jenkins/badYAMLstrings.txt |
+
 while read BAD
 do
 
-echo 3
-
   #Do a recursive grep for all yml files for the badstring and assign result to RESULT
-     
-     RESULT=`find . -name "*.yml" -exec grep -H  "${BAD}" {} \;`
+     RESULT=`find . -name "*.yml" -exec grep "${BAD}" {} \;`
 
-echo 4
+
      #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$RESULT" ]
           then
@@ -53,16 +51,13 @@ echo 4
 
 done  
 
-echo 5
-
 #Read badstrings and pipe into loop
 cat ./jenkins/badstrings.txt |
 while read BAD
 do
 
-echo 6
      #Do a recursive grep on all md files for the badstring and assign result to RESULT
-     RESULT=`find . -name "*.md" -exec grep -H  "${BAD}" {} \;`
+     RESULT=`find . -name "*.md" -exec grep "${BAD}" {} \;`
 	
      #If RESULT is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$RESULT" ]
@@ -76,8 +71,8 @@ echo 6
      fi
 done  
 
-echo 7
-BADCHAR=`grep -r --include="*.md" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -vF '\`'`
+
+BADCHAR=`find . -name "*.md" -exec sed 's/\([\x80-\xFF]\)/ BAD CHAR\>\> \1 \<\<BAD CHAR/ ' {} \; | grep "BAD CHAR"`
 	      #If BADCHAR is not empty, then write the bad string and the result to stout, and write 1 to the file checktmp
      if [ -z "$BADCHAR" ]
           then
@@ -92,9 +87,6 @@ BADCHAR=`grep -r --include="*.md" --color='auto'  -P -n "[\x80-\xFF]" ./ |grep -
 #Read chcktemp and assign content to EXIT (indicating that at least one error was found)
 EXIT=`cat checktmp` > /dev/null 2>&1
 
-rm checktmp > /dev/null 2>&1
-rm permalinklist.txt  > /dev/null 2>&1
-rm filepermalink.txt > /dev/null 2>&1
 
 #Exit script with 1 if an error was found.  Otherwise exit with 0.
 if [ -z "$EXIT" ]
@@ -103,3 +95,6 @@ if [ -z "$EXIT" ]
      else
           exit 1
 fi
+
+
+#find . -name "*.md" -exec sed 's/\([\x80-\xFF]\)/ BAD CHAR\>\> \1 \<\<BAD CHAR/ ' {} \; | grep "BAD CHAR"
