@@ -526,7 +526,7 @@ qemu-system-x86 qemu-kvm
 2. If you've just installed the libvirt packages above, you will need to restart libvirt:
 $ sudo /etc/init.d/libvirt-bin restart
 3. Ensure that the root user has a public key. Login as root:
-$ sudo su -<br>
+$ sudo su -<br />
 	Check whether .ssh/id_rsa exists:
 	$ ls~root/.ssh/id_rsa
 If the key does not exist, create one, omitting a passphrase (just hit return):

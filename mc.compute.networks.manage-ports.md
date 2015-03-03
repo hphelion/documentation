@@ -22,7 +22,7 @@ Create network with a subnet (DHCP port)
 Add subnet to existing network (DHCP port)
 Create router
 
-<br><img src="media/network-fields.png"  alt="" />
+<br /><img src="media/network-fields.png"  alt="" />
 
 This page covers how to create and delete a port using the networks screen of the management console (MC).  This page covers the following topics:
 

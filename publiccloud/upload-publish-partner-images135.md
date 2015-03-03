@@ -258,7 +258,7 @@ To deploy an image in HP Helion Public Cloud, you must define/set the following 
 
 **Property**
 
-* architecture = `x86_64` or `i686`<br>
+* architecture = `x86_64` or `i686`<br />
     This property is used by Nova to spin up instances and you must set it to either x86_64 or i686.
 
 ##### Displaying images in the HP Helion Public Cloud management console<a name="publishReqsDisplay"></a>
@@ -498,7 +498,7 @@ For example, to set the `image type` property to `disk`, run the following comma
 <pre>
 $ glance image-update <image_name_or_id> --property com.hp__1__image_type=disk</pre>
 
-<br>
+<br />
 <img src="media/glance-image-property.png" width="580" alt="" />
 
 You can run this command for each required property, or you can include all the required properties in one command. For example:
@@ -527,7 +527,7 @@ To display information about an image, run the following command:
 <pre>
 $ glance image-show <image_name_or_id></pre>
 
-<br>
+<br />
 <img src="media/glance-image-details.png" width="580" alt="" />
 
 #### Curl<a name="publishCurlShow"></a>
@@ -544,7 +544,7 @@ To make an image public, run the `glance image-update` command:
 
 <pre>
 $ glance image-update <image_name_or_id> --is-public=true</pre>
-<br>
+<br />
 <img src="media/glance-image-public.png" width="580" alt="" />
 
 #### Curl<a name="publishCurlPublic"></a>

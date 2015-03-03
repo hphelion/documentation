@@ -81,7 +81,7 @@ The Network Topology tab is a physical representation of your network configurat
 
 After activating the Compute 13.5 region, HP Helion Public Cloud creates a default network that looks similar to the following diagram. Login to the [HP Helion Public Cloud Console](https://horizon.hpcloud.com/) and select the Network Topology tab under the Project section.
 
-   <br><img src="media/compute-network-topology-def-crop.png"  alt="" />
+   <br /><img src="media/compute-network-topology-def-crop.png"  alt="" />
 
 A default router (here, labeled Router 1) is created and attached to the external network (labeled "Ext-Net") so it can be reached from the Internet. A default network (labeled Network1) is also created and attached to the router.
 
@@ -144,15 +144,15 @@ To create a network and subnet, use the following steps:
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 3. Click **Create Network**. 
-	<br><img src="media/compute-network-new-network-create.png"  alt="" />
+	<br /><img src="media/compute-network-new-network-create.png"  alt="" />
 
 4. On the **Network** tab, enter a name for the network  and leave the **Admin State** selected.  
-	<br><img src="media/compute-network-new-network.png"  alt="" />
+	<br /><img src="media/compute-network-new-network.png"  alt="" />
 
 5. Click **Next** to configure a subnet for the network. 
 
 6. On the **Subnet** tab:
-	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
+	<br /><img src="media/compute-network-new-network-sub.png"  alt="" />
 
 	- Leave the **Create Subnet** option selected.
 	- In the **Subnet Name** field, enter a name for the subnet.
@@ -164,7 +164,7 @@ To create a network and subnet, use the following steps:
 11. Click **Next**. 
 
 11. On the **Subnet Details** tab
-	<br><img src="media/compute-network-new-network-sub-det.png"  alt="" />
+	<br /><img src="media/compute-network-new-network-sub-det.png"  alt="" />
 
 	- DHCP is enabled by default. If you do not want to use the DCHP server on this subnet, clear the **Enable DHCP** option.
 	- To create an allocation pool, enter the starting and ending IP addresses you want for your subnet in the text entry fields, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.
@@ -177,7 +177,7 @@ The network is created, but not attached to the router. To connect to the router
 
 To see a graphic display of your network setup, click **Network Topology** under **Manage Network** in the left-hand navigation. 
 
-   <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
+   <br /><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
 #### Using the CLI to create a network and subnet #### {#CreateNetworkCLI}
 
@@ -237,7 +237,7 @@ The network is created, but not attached to the router. To connect to the router
 
 To see a graphic display of your network setup, login to the [Horizon Console](https://horizon.hpcloud.com/). Click **Network Topology** under **Manage Network** in the left-hand navigation.  
 
-   <br><img src="media/compute-network-topology-create-crop.png"  alt="" />
+   <br /><img src="media/compute-network-topology-create-crop.png"  alt="" />
 
 
 
@@ -412,7 +412,7 @@ To create an instance or your network, use the following steps:
 	    nova boot --flavor "100" --image "75845" --key_name "default" --security_groups "default" -block_device_mapping vda=50357:::0 --nic network-id=UUID1 TEST_SERVER
 
 	The output displays, similar to the following:
-    <br><img src="media/Python_Create_Instance.png"  alt="" />
+    <br /><img src="media/Python_Create_Instance.png"  alt="" />
 
 ##For further information## {#ForFurtherInformation}
 
