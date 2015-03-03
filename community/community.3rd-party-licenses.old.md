@@ -48,7 +48,7 @@ commercial license.
 
 ### Copyright Notice
 
-&copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
+&#169; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
 
 ## Open Source Licenses## {#open-source-licenses}
@@ -216,7 +216,7 @@ entity.
 restricted or conditioned by this License or by law, and Licensor promises not
 to interfere with or be responsible for such uses by You.
 
-This license is Copyright &copy; 2003-2004 Lawrence E. Rosen. All rights reserved.
+This license is Copyright &#169; 2003-2004 Lawrence E. Rosen. All rights reserved.
 Permission is hereby granted to copy and distribute this license without
 modification. This license may not be modified without the express written
 permission of its copyright owner.
@@ -499,7 +499,7 @@ This notice is provided with respect to the following components which may be in
 * pyasn1-0.1.7
 
 
-Copyright &copy; &lt;YEAR>, &lt;OWNER>
+Copyright &#169; &lt;YEAR>, &lt;OWNER>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -540,7 +540,7 @@ This notice is provided with respect to the following components which may be in
 * python-keystoneclient
 * python-novaclient
 
-Copyright &copy; &lt;YEAR>, &lt;OWNER>
+Copyright &#169; &lt;YEAR>, &lt;OWNER>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -638,7 +638,7 @@ This notice is provided with respect to the following components which may be in
 GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
 
-Copyright &copy; 1989, 1991 Free Software Foundation, Inc.,
+Copyright &#169; 1989, 1991 Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 Everyone is permitted to copy and distribute verbatim copies
@@ -927,7 +927,7 @@ To do so, attach the following notices to the program.  It is safest
 to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found. &lt;one line to give the program's name and a brief idea of what it does.>
-Copyright &copy; &lt;year>  &lt;name of author>
+Copyright &#169; &lt;year>  &lt;name of author>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -948,7 +948,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program is interactive, make it output a short notice like this
 when it starts in an interactive mode:
 
-Gnomovision version 69, Copyright &copy; year name of author
+Gnomovision version 69, Copyright &#169; year name of author
 Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type 'show c' for details.
@@ -984,7 +984,7 @@ This notice is provided with respect to the following components which may be in
 GNU GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
 
-Copyright &copy; 2007 Free Software Foundation, Inc. http://fsf.org/
+Copyright &#169; 2007 Free Software Foundation, Inc. http://fsf.org/
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
@@ -1612,7 +1612,7 @@ state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
 &lt;one line to give the program's name and a brief idea of what it does.>
-Copyright &copy; &lt;year>  &lt;name of author>
+Copyright &#169; &lt;year>  &lt;name of author>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -1632,7 +1632,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-&lt;program>  Copyright &copy; &lt;year>  &lt;name of author>
+&lt;program>  Copyright &#169; &lt;year>  &lt;name of author>
 This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type 'show c' for details.
@@ -1664,7 +1664,7 @@ This notice is provided with respect to the following components which may be in
 GNU Lesser General Public License Version 2.1 (LGPL v2.1) <br />
 Version 2.1, February 1999
 
-Copyright &copy; 1991, 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+Copyright &#169; 1991, 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 (This is the first released version of the Lesser GPL. It also counts as the successor of the GNU Library Public License, 
@@ -1970,7 +1970,7 @@ where the full notice is found.
 
 &lt;one line to give the library's name and a brief idea of what it does.>
 
-Copyright &copy; &lt;year> &lt;name of author>
+Copyright &#169; &lt;year> &lt;name of author>
 
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public 
 License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
@@ -2004,7 +2004,7 @@ This notice is provided with respect to the following components which may be in
 GNU LESSER GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
 
-Copyright &copy; 2007 Free Software Foundation, Inc. http://fsf.org/
+Copyright &#169; 2007 Free Software Foundation, Inc. http://fsf.org/
 
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
@@ -2166,7 +2166,7 @@ This notice is provided with respect to the following components which may be in
 
 * MarkupSafe-0.19
 
-Copyright &copy; 2010 by Armin Ronacher and contributors.  See AUTHORS
+Copyright &#169; 2010 by Armin Ronacher and contributors.  See AUTHORS
 for more details.
 
 Some rights reserved.
@@ -2234,7 +2234,7 @@ This notice is provided with respect to the following components which may be in
 * WebOb-1.3.1
 * xattr-0.7.5
 
-Copyright &copy; &lt;year> &lt;copyright holders> 
+Copyright &#169; &lt;year> &lt;copyright holders> 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2445,7 +2445,7 @@ This notice is provided with respect to the following components which may be in
 
 * dnspython-1.11.1
 
-Copyright &copy; 2001-2003 Nominum, Inc.
+Copyright &#169; 2001-2003 Nominum, Inc.
 
 Permission to use, copy, modify, and distribute this software and its documentation for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
@@ -2828,7 +2828,7 @@ This notice is provided with respect to the following components which may be in
 zlib.h -- interface of the 'zlib' general purpose compression library
 version 1.2.2, October 3rd, 2004
 
-Copyright &copy; 1995-2004 Jean-loup Gailly and Mark Adler
+Copyright &#169; 1995-2004 Jean-loup Gailly and Mark Adler
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
@@ -2858,7 +2858,7 @@ This notice is provided with respect to the following components which may be in
 
 Zope Public License (ZPL) Version 2.0
 
-This software is Copyright &copy; Zope Corporation &trade; and
+This software is Copyright &#169; Zope Corporation &trade; and
 Contributors. All rights reserved.
 
 This license has been certified as open source. It has also
@@ -5157,7 +5157,7 @@ It was downloaded from:
 
 Upstream Author: Thomas Habets (thomas@habets.pp.se)
 
-Copyright: Copyright &copy; 2000-2008 Thomas Habets (thomas@habets.pp.se)
+Copyright: Copyright &#169; 2000-2008 Thomas Habets (thomas@habets.pp.se)
 
 License:
 
@@ -5180,7 +5180,7 @@ License:
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
 
-The Debian packaging is &copy; 2008, Giuseppe Iuculano (giuseppe@iuculano.it) and
+The Debian packaging is &#169; 2008, Giuseppe Iuculano (giuseppe@iuculano.it) and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
 
@@ -6008,7 +6008,7 @@ Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
- &copy; 2010, Oracle and/or its affiliats.
+ &#169; 2010, Oracle and/or its affiliats.
 
 
 Files: ./src/libarchive/*
@@ -7175,7 +7175,7 @@ Disclaimer: Modified from Autogenerated by CDBS. The notices for the embedded
  ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
- &copy; 2010, Oracle and/or its affiliats.
+ &#169; 2010, Oracle and/or its affiliats.
 
 
 Files: ./src/libarchive/*
@@ -10196,7 +10196,7 @@ Comments:
  ) Terms and Conditions.
  .
  The above text is subject to this copyright notice:
- &copy; 2010, Oracle and/or its affiliats.
+ &#169; 2010, Oracle and/or its affiliats.
 
 Files: cmd-line-utils/libedit/config.h
  dbug/example1.c

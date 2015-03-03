@@ -11,7 +11,7 @@ product: public-cloud
 
 ## Identity  ## {#identity}
 
-Copyright &copy; 2010-2013 OpenStack Foundation.   All rights reserved.
+Copyright &#169; 2010-2013 OpenStack Foundation.   All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -22,9 +22,9 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Object Storage ## {#object-storage}
 
-Modifications Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
+Modifications Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
-Copyright &copy; 2010-2013 OpenStack Foundation.   All rights reserved.
+Copyright &#169; 2010-2013 OpenStack Foundation.   All rights reserved.
 
 This reference is for software developers who develop applications by using the OpenStack&trade; Object Storage Application Programming Interface (API) v1.
 
@@ -39,15 +39,15 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## CDN ## {#cdn}
 
-Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
+Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
 ----
 
 ## Compute ## {#compute}
 
-Modifications Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
+Modifications Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
-Copyright &copy; 2009, 2010, 2011, 2012, 2013 OpenStack Foundation.  All rights reserved.
+Copyright &#169; 2009, 2010, 2011, 2012, 2013 OpenStack Foundation.  All rights reserved.
 
 **OpenStack Compute API v2 and Extensions Reference**
 
@@ -60,9 +60,9 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Block Storage (Bock) ## {#block-storage}
 
-Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
+Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
-Copyright &copy; 2013 OpenStack Foundation
+Copyright &#169; 2013 OpenStack Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -73,7 +73,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Relational Database (RDB) ## {#dbaas}
 
-Copyright &copy; 2010, 2011, 2012, 2013 OpenStack Foundation
+Copyright &#169; 2010, 2011, 2012, 2013 OpenStack Foundation
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -84,15 +84,15 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Load Balancing as a Service (LBaaS) ## {#lbaas}
 
-Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
+Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
 ----
 
 ## Domain Name Service (DNS) ## {#dnsaas}
 
-Copyright &copy; 2012 Endre Karlson for Bouvet ASA
+Copyright &#169; 2012 Endre Karlson for Bouvet ASA
 
-Copyright &copy; 2012 New Dream Network, LLC (DreamHost)
+Copyright &#169; 2012 New Dream Network, LLC (DreamHost)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -103,6 +103,6 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ## Monitoring as a Service (MaaS) ## {#monitoring}
 
-Copyright &copy; 2013 Hewlett-Packard Development Company, L.P.
+Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
 ----
