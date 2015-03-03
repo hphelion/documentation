@@ -243,7 +243,7 @@ This section explains how to deploy and configure the undercloud and overcloud, 
 	The example sets the NTP server address. Do not copy this address.
 
 	`export OVERCLOUD_NTP_SERVER=192.0.1.128`
-<br>	`export UNDERCLOUD_NTP_SERVER=192.0.1.128`
+<br />	`export UNDERCLOUD_NTP_SERVER=192.0.1.128`
 
 
 6. If required, set the following environmental variables, which can affect your installation. Some of these variables set public, or floating, IP addresses. The floating IP addresses cannot be in the same range as the private network addresses (by default, 10.x.x.x)

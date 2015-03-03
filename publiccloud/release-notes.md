@@ -86,7 +86,7 @@ The following are our best-practices recommendations for versions 13.5.
 
 * For best performance when transferring large files (greater than 700MB for downloads and 1GB for uploads), use either the [Public Cloud Console](https://horizon.hpcloud.com).
 * For easiest password reset, use the [HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) interface.
-* To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br>
+* To create a snapshot for an instance booted from a block volume, follow these steps for best results:<br />
     - Shut down the instance
     - Delete the instance and wait until the volume is marked as `available`
     - Take a snapshot of the volume using a utility such as the python cinder binding
@@ -116,7 +116,7 @@ The following are the known issues for Version 13.5 of the HP Helion Public Clou
 * Sometimes under certain circumstances in the Windows CLI, the `ls` command displays some fields as blank.  To view the contents of these fields, display the information using the [HP Helion Public Cloud Console](/publiccloud/hpcloudconsole) interface. The fields are:
     - The `Attached To` and `Server Attached To` fields are may display as blank after you attach a server to a volume using the [Attach-Volume](/publiccloud/cli/windows/reference#Attach-Volume) command
     - The `Ext Gateway` field may display as blank after you execute the [Update-Router](/publiccloud/cli/windows/reference#Update-Router) command
-    - The `Assigned Network Addresses` field may display as blank after you execute the [New-Server](/publiccloud/cli/windows/reference#New-Server) command<br>
+    - The `Assigned Network Addresses` field may display as blank after you execute the [New-Server](/publiccloud/cli/windows/reference#New-Server) command<br />
     
 ####HP Helion Public Cloud Console####
 

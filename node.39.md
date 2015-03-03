@@ -113,7 +113,7 @@ Here is an example of using the Nova command:
         % export NOVA_PASSWORD= mypassword
         % nova ...
 
-## Euca2ools and EC2&trade; compatibility
+## Euca2ools and EC2&#8482; compatibility
 The Identity Service is compatible with euca2ools and EC2 compatibly for HP Helion Public Cloud Compute by setting environment variables in a way similar to the Object Storage backward compatibility described above.  To use euca200ls, you set your environment variables as follows:
 
 * EC2-URL - set to:

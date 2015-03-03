@@ -27,7 +27,7 @@ The HP Helion Public Cloud services provides compute support using two abstracti
 
 This page discusses the following topics:
 
-* [Connecting to the Service](#ConnectingtotheService)<br>
+* [Connecting to the Service](#ConnectingtotheService)<br />
 **Model Layer Examples**
 * [Server Operations](#ModelServerOperations)
 * [Server Metadata Operations](#ModelServerMetadataOperations)
@@ -36,7 +36,7 @@ This page discusses the following topics:
 * [Image Metadata Operations](#ModelImageMetadataOperations)
 * [Keypair Operations](#ModelKeypairOperations)
 * [Security Groups Operations](#ModelSecurityGroupsOperations)
-* [Address Operations](#ModelAddressOperations)<br>
+* [Address Operations](#ModelAddressOperations)<br />
 **Request Layer Examples**
 * [Server Operations](#RequestServerOperations)
 * [Server Metadata Operations](#RequestServerMetadataOperations)
