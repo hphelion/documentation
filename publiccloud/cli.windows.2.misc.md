@@ -50,7 +50,7 @@ If you want to revert back to the defaults as defined in your CLI.config file ju
 
            Set-config -resetcfg
 
-In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the <b><font face="courier">set-config -s</b></font" command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments. 
+In addition to changing individual configuration items, you can also swap in entire full configuration environments by inserting a new configuration file with the <b><font face="courier">set-config -s</font></b> command.  This is useful if you are using multiple environments at your site--for example, you have a set of credentials that you use for development, but a different set of credentials for performing testing.  Substituting in a different config file gives you a quick way to switch back and forth between those environments. 
 
 When you set to a new config file and the new file contains different credentials, you have to re-evaluate the list of Containers that the current user has access to. Changing your credentials is equivalent to changing your identity, and you may own just a small subset of Containers after the change. In this example you can see this rebinding in action.
 
@@ -58,7 +58,7 @@ When you set to a new config file and the new file contains different credential
 
 ## Viewing Your Service Catalog
 
-If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <b><font face="courier">get-config -v</b></font> command, as shown below: 
+If you want to take a look at your service catalog--for example, if you have modified some of your configuration credentials, and have authenticated them--you can use the <b><font face="courier">get-config -v</font></b> command, as shown below: 
 
 <img src="media/viewing%20config%20file.jpg" width="580" height="547" alt="" />
 

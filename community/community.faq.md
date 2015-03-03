@@ -652,7 +652,7 @@ To launch the Operational Dashboard:
 
 1. Get the IP address of your main control plane node via <b><font color="red"><yet to be defined process></font></b>
 2. Open a web browser pointing to the IP address.
-3. Log in as the 'admin' user using the admin password provided via <b><font color="red"><yet to be defined process><
+3. Log in as the 'admin' user using the admin password provided via <b><font color="red"><yet to be defined process></b>
 pre-defined login creds: I cannot comment at this point. The admin password MAY be hard-coded into 
 images provided, or MAY be randomly generated during install.
 Note - don't refer to &ldquo;ZIP&rdquo;  files. I doubt we'll use the zip format.<.font></b>
