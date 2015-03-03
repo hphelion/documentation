@@ -2858,7 +2858,7 @@ This notice is provided with respect to the following components which may be in
 
 Zope Public License (ZPL) Version 2.0
 
-This software is Copyright &#169; Zope Corporation &trade; and
+This software is Copyright &#169; Zope Corporation &#8482; and
 Contributors. All rights reserved.
 
 This license has been certified as open source. It has also
@@ -2878,13 +2878,13 @@ following conditions are met:
    disclaimer in the documentation and/or other materials
    provided with the distribution.
 
-3. The name Zope Corporation &trade; must not be used to
+3. The name Zope Corporation &#8482; must not be used to
    endorse or promote products derived from this software
    without prior written permission from Zope Corporation.
 
 4. The right to distribute this software or to use it for
    any purpose does not give you the right to use Servicemarks
-   (sm) or Trademarks &trade; of Zope Corporation. Use of them is
+   (sm) or Trademarks &#8482; of Zope Corporation. Use of them is
    covered in a separate agreement (see
    http://www.zope.com/Marks).
 

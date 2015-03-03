@@ -26,7 +26,7 @@ Modifications Copyright &#169; 2013 Hewlett-Packard Development Company, L.P.
 
 Copyright &#169; 2010-2013 OpenStack Foundation.   All rights reserved.
 
-This reference is for software developers who develop applications by using the OpenStack&trade; Object Storage Application Programming Interface (API) v1.
+This reference is for software developers who develop applications by using the OpenStack&#8482; Object Storage Application Programming Interface (API) v1.
 
 **OpenStack Object Storage API v1 Reference**
 
