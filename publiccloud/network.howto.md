@@ -49,7 +49,7 @@ You can use the Horizon Cloud Console to perform the following tasks:
 - [Rename a network object](#RenameNet)
 
 All of the procedures in this section require that you [be able to access](#access) the Networks or Routers tab in the Project section of the Horizon Cloud Console, <a name="NetworkTab"></a>as shown:
-   <br><img src="media/network-tab-crop.png"  alt="" />
+   <br /><img src="media/network-tab-crop.png"  alt="" />
 
 ### How to create a network and subnet ### {#Creating}
 
@@ -60,17 +60,17 @@ To create a network and subnet, use the following steps:
 2. Select the [Networks tab](#NetworkTab) under the Project section.
 
 3. Click **Create Network**. 
-	<br><img src="media/compute-network-new-network-create.png"  alt="" />
+	<br /><img src="media/compute-network-new-network-create.png"  alt="" />
 
 4. On the **Network** tab, 
-	<br><img src="media/compute-network-new-network.png"  alt="" />
+	<br /><img src="media/compute-network-new-network.png"  alt="" />
 	- Enter a name for the network.
 	- Leave the **Admin State** selected to launch the network in the enabled state or clear the field to disable the new network.  
 
 6. Click **Next** to configure a subnet for the network. 
 
 7. On the **Subnet** tab: 
-	<br><img src="media/compute-network-new-network-sub.png"  alt="" />
+	<br /><img src="media/compute-network-new-network-sub.png"  alt="" />
 	- Enter the subnet name.
 	- Enter a network address range for the subnet in CIDR (Classless Inter-Domain Routing) format in the **Network Address** field,  for example: 192.168.0.0/24.
 	- Select IPv4 or IPv6, as appropriate, in the **IP Version** field.
@@ -80,7 +80,7 @@ To create a network and subnet, use the following steps:
 8. Click **Next**. 
 
 9. On the **Subnet Details** tab:
-	<br><img src="media/compute-network-new-network-sub-det.png"  alt="" />
+	<br /><img src="media/compute-network-new-network-sub-det.png"  alt="" />
 	- Clear the **Enable DHCP** option, as needed, to not use the network as a DCHP. DHCP is enabled by default.
 		If enabled, the subnet will serve as your DHCP server. Instances associated with the subnet will be assigned an IP address from this pool. . 
 	- Optionally, enter the starting and ending IP addresses you want for your DHCP allocation pool in the **Allocation Pools** field, in the format IP_ADDR,IP_ADDR. For example: `192.168.1.10,192.168.1.120`.
@@ -103,7 +103,7 @@ You can delete a network, as needed. Before deleting a network, you must [disabl
 3. On the Networks screen, locate the network which you want to delete.
 
 4. In the Actions column, click **More** > **Delete Network** for your the network. 
-	<br><img src="media/network-delete.png"  alt="" />
+	<br /><img src="media/network-delete.png"  alt="" />
 
 5. In the confirmation dialog, click **Delete Network**.
 
@@ -125,7 +125,7 @@ You can to disable a port or enable a network as follows:
 5. In the Edit Network screen:
 	- select the **Admin State** option to enable the network
 	- clear the **Admin State** option to disable the network
-	<br><img src="media/network-enable.png"  alt="" />
+	<br /><img src="media/network-enable.png"  alt="" />
 
 6. Click **Save Changes**.
 
@@ -193,7 +193,7 @@ To enable or disable a port:
 	- select **Admin State** to enable the port
 	- clear **Admin State** to disable the port
 
-	<br><img src="media/network-port-edit.png"  alt="" />
+	<br /><img src="media/network-port-edit.png"  alt="" />
 
 6. Click **Save Changes**.
 

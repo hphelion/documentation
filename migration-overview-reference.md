@@ -107,10 +107,10 @@ To generate a key pair using the classic management console:
 1. Log in to the [classic management console](https://console.hpcloud.com/manage). 
 
 	The log in page appears as shown: 
-    <br><img src="media/cloud_login.png"  alt="" />
+    <br /><img src="media/cloud_login.png"  alt="" />
 
 2. In the Dashboard, click the appropriate compute region for the 13.5 instance, as shown.
-<br><img src="media/regions.png"  alt="" />
+<br /><img src="media/regions.png"  alt="" />
 
 3. From the menu, select **Key Pairs**. 
 
@@ -119,7 +119,7 @@ To generate a key pair using the classic management console:
 4. Click **Add Key Pair**.
 
 	The **Name** field displays, as shown.
-	<br><img src="media/mc_keypair_add.png"  alt="" />
+	<br /><img src="media/mc_keypair_add.png"  alt="" />
 
 5. In the **Name** field, enter a name for the key pair. 
 
@@ -128,7 +128,7 @@ To generate a key pair using the classic management console:
 6. Click **Create Key**.
 
 	After creating the key pair, the classic management console displays the contents of the private key, as shown. 
-	<br><img src="media/mc_keypair_key.png"  alt="" />
+	<br /><img src="media/mc_keypair_key.png"  alt="" />
 
 7. Click **Download** to save the private key in a PEM file on the local system or copy the key pairs into a text editor and Save the file in the PEM format on the local system. 
 
@@ -224,10 +224,10 @@ To generate a key pair in UNIX:
 	`cat KEYPAIR_NAME2.pem`
 
 	The key pair file contains text similar to the following:
-	<br><img src="media/keypair_unix.png"  alt="" />
+	<br /><img src="media/keypair_unix.png"  alt="" />
 
 5. Copy the entire output into a text file on the local system, as shown in the following figure, and save the file in the PEM format. Note the location for future use.
-	<br><img src="media/keypair_copy_text.png"  alt="" />
+	<br /><img src="media/keypair_copy_text.png"  alt="" />
 	
 ###Generating a Key Pair using the Python Novaclient CLI### {#keypairnova}
 
@@ -250,10 +250,10 @@ To generate a key pair using the Python Novaclient commands.
 	**Note**: There is a 255-character limit in the NAME field. You will see a "Invalid keypair name (HTTP 400)" error if exceed that limit.
 
 	Novaclient creates the key pair. The private key pair displays, similar to the following. 
-<br><img src="media/keypair_python.png"  alt="" />
+<br /><img src="media/keypair_python.png"  alt="" />
 
 3. Copy the key pair into a text editor, as shown in the following figure, and save the file in the PEM format. Note the location for future use.
-<br><img src="media/keypair_copy_text.png"  alt="" />
+<br /><img src="media/keypair_copy_text.png"  alt="" />
 
 	**Note**: If you plan to connect to an instance using PuTTY, convert the PEM file to PPK file for use in PuTTY using a program such as PuTTYgen. For more information, see [Converting Your Keypair File](https://community.hpcloud.com/article/converting-your-keypair-file). 
 
@@ -279,10 +279,10 @@ To generate a new public key using an existing private key:
 	Use only alphanumeric characters for the key pair name. Do not use spaces or special characters, such as periods. Refer to [Naming Convention Best Practices](https://community.hpcloud.com/article/naming-convention-best-practices) for more information.
 
 6. Click **Show Public Key Field**. The **Show Public Key** field displays, as shown.
-<br><img src="media/keypair_show_public.png"  alt="" />
+<br /><img src="media/keypair_show_public.png"  alt="" />
 
 7. Copy and paste your public key into the text box, as shown. 
-<br><img src="media/keypair_own.png"  alt="" />
+<br /><img src="media/keypair_own.png"  alt="" />
 
 8. Click **Create Key**.
 
@@ -363,7 +363,7 @@ To create a new security group:
 5. Enter a name and description for the security group in the fields that appear.
 
 	A new security group is listed, similar to the following image.
-	<br><img src="media/sec_group_new.png"  alt="" />
+	<br /><img src="media/sec_group_new.png"  alt="" />
 
 6. Click the name of the security group in the list to edit that group using the steps in the [following section](#securitygroupconsoleedit).
 
@@ -392,7 +392,7 @@ To modify a security group:
 		-  Remote IP Prefix. Enter the IP address and associated network mask that the rule affects, [using CIDR](#securitygroupcidr).
 
 	- Delete a rule by clicking **Delete** in the **Manage** column for that rule, as shown. 
-<br><img src="media/sec_group_delete.png" alt="" />
+<br /><img src="media/sec_group_delete.png" alt="" />
 
 
 ###Controlling traffic using the API### {#securitygroupapi}
@@ -491,7 +491,7 @@ To modify a security group:
 	`nova secgroup-list`
 
 	A list of security groups displays, similar to the following: 
-	<br><img src="media/Python_secgroup_list.png" alt="" />
+	<br /><img src="media/Python_secgroup_list.png" alt="" />
 
 3. Execute the following command to display the rules in a specified security group.
 
@@ -507,7 +507,7 @@ To modify a security group:
 	`nova secgroup-list-rules default`
 
 	A list of rules in that security group displays, similar to the following: 
-	<br><img src="media/Python_secgroup_list_rules.png" alt="" />
+	<br /><img src="media/Python_secgroup_list_rules.png" alt="" />
 
 		- The ICMP rule allows all ICMP traffic.
 		- The TCP port 22 rule allows SSH traffic over port 22.
@@ -669,14 +669,14 @@ To create an ephemeral instance using Python Novaclient commands:
 	    nova boot --flavor "100" --image "75845" --key_name "az1" --security_groups "default" -block_device_mapping vda=50357:::0 --nic network-id=UUID1 TEST_SERVER
 
 	The output displays, similar to the following:
-    <br><img src="media/Python_Create_Instance.png"  alt="" />
+    <br /><img src="media/Python_Create_Instance.png"  alt="" />
 
 3. Use the following command to allocate a floating IP address that you can attach to the instance.
 
 	`nova floating-ip-create`
 
 	HP Helion Public Cloud Compute version 13.5 does not assign a public IP address automatically. To connect with the instance, you must assign a *floating* public IP address to the instance. 
-	<br><img src="media/floating_ip_create.png"  alt="" />
+	<br /><img src="media/floating_ip_create.png"  alt="" />
 
 4. Use the following command to attach the floating IP to an instance:
 
@@ -814,10 +814,10 @@ To create a persistent instance using Python Novaclient commands:
 	`nova image-list`
 
 	A list of images displays, with an ID on the left column.
-	<br><img src="media/image-list.png"  alt="" />
+	<br /><img src="media/image-list.png"  alt="" />
 
 	**Note**: Multi-part images (where the kernel and RAM disk are separate) do not work as bootable volumes. You can identify a multi-part volume in an image list if the image names are identical, as shown in the following example.
-	<br><img src="media/image-list_multi.png"  alt="" />
+	<br /><img src="media/image-list_multi.png"  alt="" />
 	
 3. Create the volume using the following command:</p>
 
@@ -840,7 +840,7 @@ To create a persistent instance using Python Novaclient commands:
 	`nova volume-list`
 
 	The output appears similar to the following:
-	<br><img src="media/Python_Volume_List.png" alt="" />
+	<br /><img src="media/Python_Volume_List.png" alt="" />
 	
 5. Obtain a flavor, key pair name, security group name, and flavor ID to use with the instance. Use the following commands to obtain these values, as needed:
 	
@@ -870,7 +870,7 @@ To create a persistent instance using Python Novaclient commands:
 	For a definition of each property, see the previous section, [Creating an ephemeral instance using Python Novaclient commands](#createephinstancepyth).
 
 	Output similar to the following indicates that the persistent instance has been created:
-	<br><img src="media/Python_nova_boot.png" alt="" />
+	<br /><img src="media/Python_nova_boot.png" alt="" />
 
 
 8. Use the following command to allocate a floating IP address that you can attach to the instance.
@@ -1357,7 +1357,7 @@ To create a block volume and attach the volume to the instance:
 	The following example creates a new volume with the name `MyNewVolume`, a description of `MyNewVolume Description` and a volume size of 10 gigabytes. 
 
     `PS HPCS:\\> New-Volume "MyNewVolume" "MyNewVolume Description" 10 "test|data"`
-	<br><img src="media/volume_create_ps.png"  alt="" />
+	<br /><img src="media/volume_create_ps.png"  alt="" />
 
 4. Attach the volume to an existing server by executing the following command, using the appropriate values:
 

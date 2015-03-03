@@ -81,7 +81,7 @@ commercial license.
 
 ### Copyright Notice
 
-Hewlett-Packard Company Confidential &copy; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
+Hewlett-Packard Company Confidential &#169; Copyright 2012-2014 Hewlett-Packard Development Company, L.P.
 
 ### Trademark Notices
 
@@ -461,7 +461,7 @@ HP acknowledges the redistribution of the following open source component that a
 
 * asm, Version 3.3.1
 
-Copyright &copy; 2000-2011 INRIA, France Telecom <br />
+Copyright &#169; 2000-2011 INRIA, France Telecom <br />
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -492,7 +492,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 * bouncycastle, Version 1.47, 1.46 
 
-Copyright &copy; 2000 - 2013 The Legion Of The Bouncy Castle (http://www.bouncycastle.org) 
+Copyright &#169; 2000 - 2013 The Legion Of The Bouncy Castle (http://www.bouncycastle.org) 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, 
@@ -526,7 +526,7 @@ COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
 1.2. "Contributor Version" means the combination of the Original Software, prior Modifications used by a 
 Contributor (if any), and the Modifications made by that particular Contributor.
 
-1.3. "Covered Software" means (a) the Original Software, or (b) Modifications, or &copy; the combination of files 
+1.3. "Covered Software" means (a) the Original Software, or (b) Modifications, or &#169; the combination of files 
 containing Original Software with files containing Modifications, in each case including portions thereof.
 
 1.4. "Executable" means the Covered Software in any form other than Source Code. 
@@ -788,7 +788,7 @@ COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0 1
 1.2. Contributor Version means the combination of the Original Software, prior Modifications used by a Contributor (if any), 
 and the Modifications made by that particular Contributor.  
 
-1.3. Covered Software means (a) the Original Software, or (b) Modifications, or &copy; the combination of files containing 
+1.3. Covered Software means (a) the Original Software, or (b) Modifications, or &#169; the combination of files containing 
 Original Software with files containing Modifications, in each case including portions thereof.  
 
 1.4. Executable means the Covered Software in any form other than Source Code.  
@@ -1013,7 +1013,7 @@ HP acknowledges the redistribution of the following open source components that 
 1.2. "Contributor Version" means the combination of the Original Software, prior Modifications used by a 
 Contributor (if any), and the Modifications made by that particular Contributor.
 
-1.3. "Covered Software" means (a) the Original Software, or (b) Modifications, or &copy; the combination of files 
+1.3. "Covered Software" means (a) the Original Software, or (b) Modifications, or &#169; the combination of files 
 containing Original Software with files containing Modifications, in each case including portions thereof.
 
 1.4. "Executable" means the Covered Software in any form other than Source Code.
@@ -1267,7 +1267,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 * dom4j, Version 1.6.1
 
-Copyright 2001-2005 &copy; MetaStuff, Ltd. All Rights Reserved. 
+Copyright 2001-2005 &#169; MetaStuff, Ltd. All Rights Reserved. 
 
 Redistribution and use of this software and associated documentation ("Software"), with or without modification, are 
 permitted provided that the following conditions are met: 
@@ -1465,9 +1465,9 @@ HP acknowledges the redistribution of the following open source components that 
 
 The flex manual is placed under the same licensing conditions as the rest of flex: 
 
-Copyright &copy; 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2012 The Flex Project. 
+Copyright &#169; 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2012 The Flex Project. 
 
-Copyright &copy; 1990, 1997 The Regents of the University of California. All rights reserved. 
+Copyright &#169; 1990, 1997 The Regents of the University of California. All rights reserved. 
 
 This code is derived from software contributed to Berkeley by Vern Paxson. 
 
@@ -1498,7 +1498,7 @@ HP acknowledges the redistribution of the following open source components that 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 2, June 1991
 
-Copyright &copy; 1989, 1991 Free Software Foundation, Inc.,
+Copyright &#169; 1989, 1991 Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
 Everyone is permitted to copy and distribute verbatim copies
@@ -1787,7 +1787,7 @@ To do so, attach the following notices to the program.  It is safest
 to attach them to the start of each source file to most effectively
 convey the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found. &lt;one line to give the program's name and a brief idea of what it does.>
-Copyright &copy; &lt;year>  &lt;name of author>
+Copyright &#169; &lt;year>  &lt;name of author>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -1808,7 +1808,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program is interactive, make it output a short notice like this
 when it starts in an interactive mode:
 
-Gnomovision version 69, Copyright &copy; year name of author
+Gnomovision version 69, Copyright &#169; year name of author
 Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type 'show c' for details.
@@ -1845,7 +1845,7 @@ HP acknowledges the redistribution of the following open source components that 
 GNU GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
 
-Copyright &copy; 2007 Free Software Foundation, Inc. http://fsf.org/
+Copyright &#169; 2007 Free Software Foundation, Inc. http://fsf.org/
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 
@@ -2473,7 +2473,7 @@ state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
 &lt;one line to give the program's name and a brief idea of what it does.>
-Copyright &copy; &lt;year>  &lt;name of author>
+Copyright &#169; &lt;year>  &lt;name of author>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -2493,7 +2493,7 @@ Also add information on how to contact you by electronic and paper mail.
 If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-&lt;program>  Copyright &copy; &lt;year>  &lt;name of author>
+&lt;program>  Copyright &#169; &lt;year>  &lt;name of author>
 This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type 'show c' for details.
@@ -2530,7 +2530,7 @@ HP acknowledges the redistribution of the following open source components that 
 GNU Lesser General Public License Version 2.1 (LGPL v2.1) <br />
 Version 2.1, February 1999
 
-Copyright &copy; 1991, 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+Copyright &#169; 1991, 1999 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 (This is the first released version of the Lesser GPL. It also counts as the successor of the GNU Library Public License, 
@@ -2836,7 +2836,7 @@ where the full notice is found.
 
 &lt;one line to give the library's name and a brief idea of what it does.>
 
-Copyright &copy; &lt;year> &lt;name of author>
+Copyright &#169; &lt;year> &lt;name of author>
 
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public 
 License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
@@ -2870,7 +2870,7 @@ HP acknowledges the redistribution of the following open source components that 
 GNU LESSER GENERAL PUBLIC LICENSE <br />
 Version 3, 29 June 2007
 
-Copyright &copy; 2007 Free Software Foundation, Inc. http://fsf.org/
+Copyright &#169; 2007 Free Software Foundation, Inc. http://fsf.org/
 
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
@@ -3035,7 +3035,7 @@ COPYRIGHTS AND LICENSES (based on BSD License)
 
 For work developed by the HSQL Development Group:
 
-Copyright &copy; 2001-2010, The HSQL Development Group <br />
+Copyright &#169; 2001-2010, The HSQL Development Group <br />
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following 
@@ -3061,7 +3061,7 @@ THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 For work originally developed by the Hypersonic SQL Group:
 
-Copyright &copy; 1995-2000 by the Hypersonic SQL Group.
+Copyright &#169; 1995-2000 by the Hypersonic SQL Group.
 
 All rights reserved. 
 
@@ -3117,7 +3117,7 @@ HP acknowledges the redistribution of the following open source component that a
 
 * json, Version 20090211
 
-Copyright &copy; 2002 JSON.org
+Copyright &#169; 2002 JSON.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, 
@@ -3141,7 +3141,7 @@ HP acknowledges the redistribution of the following open source component that a
 
 * libjsr305-java, Version 2.0.1
 
-Copyright &copy; 2007-2009, JSR305 expert group <br /> 
+Copyright &#169; 2007-2009, JSR305 expert group <br /> 
 All rights reserved.
 
 http://www.opensource.org/licenses/bsd-license.php
@@ -3645,7 +3645,7 @@ under the License.
 The Original Code is RabbitMQ.
 
 The Initial Developer of the Original Code is VMware, Ltd.
-Copyright &copy; 2007-2012 VMware, Inc.  All Rights Reserved.
+Copyright &#169; 2007-2012 VMware, Inc.  All Rights Reserved.
 
 NOTE: The text of this Exhibit A may differ slightly from the text of
 the notices in the Source Code files of the Original Code. You should
@@ -3722,7 +3722,7 @@ berkeleydb-info_us@oracle.com.
 
     =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
     /* 
-    * Copyright &copy; 1990-2009 Oracle. All rights reserved. 
+    * Copyright &#169; 1990-2009 Oracle. All rights reserved. 
     *
     * Redistribution and use in source and binary forms, with or without 
     * modification, are permitted provided that the following conditions 
@@ -3756,7 +3756,7 @@ berkeleydb-info_us@oracle.com.
     * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
     */ 
     /*
-    * Copyright &copy; 1990, 1993, 1994, 1995 
+    * Copyright &#169; 1990, 1993, 1994, 1995 
     * The Regents of the University of California. All rights reserved. 
     * 
     * Redistribution and use in source and binary forms, with or without 
@@ -3783,7 +3783,7 @@ berkeleydb-info_us@oracle.com.
     * SUCH DAMAGE. 
     */
     /* 
-    * Copyright &copy; 1995, 1996 
+    * Copyright &#169; 1995, 1996 
     * The President and Fellows of Harvard University. All rights reserved. 
     * 
     * Redistribution and use in source and binary forms, with or without 
@@ -3812,7 +3812,7 @@ berkeleydb-info_us@oracle.com.
     */ =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
     /***
     * ASM: a very small and fast Java bytecode manipulation framework 
-    * Copyright &copy; 2000-2005 INRIA, France Telecom 
+    * Copyright &#169; 2000-2005 INRIA, France Telecom 
     * All rights reserved. 
     * 
     * Redistribution and use in source and binary forms, with or without 
@@ -3869,7 +3869,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 -------------------------------------------------------------------- <br />
 The PHP License, version 3.01  <br />
-Copyright &copy; 1999 - 2012 The PHP Group. All rights reserved.  <br />
+Copyright &#169; 1999 - 2012 The PHP Group. All rights reserved.  <br />
 --------------------------------------------------------------------  <br />
 
 Redistribution and use in source and binary forms, with or without
@@ -3942,9 +3942,9 @@ HP acknowledges the redistribution of the following open source components that 
 
 PostgreSQL Database Management System (formerly known as Postgres, then as Postgres95) 
 
-Portions Copyright &copy; 1996-2013, The PostgreSQL Global Development Group 
+Portions Copyright &#169; 1996-2013, The PostgreSQL Global Development Group 
 
-Portions Copyright &copy; 1994, The Regents of the University of California
+Portions Copyright &#169; 1994, The Regents of the University of California
 
 Permission to use, copy, modify, and distribute this software and its documentation for any purpose, without fee, and without 
 a written agreement is hereby granted, provided that the above copyright notice and this paragraph and the following two 
@@ -3967,7 +3967,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 * python-django, Version 1.5
 
-Copyright &copy; Django Software Foundation and individual contributors. All rights reserved.
+Copyright &#169; Django Software Foundation and individual contributors. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following 
 conditions are met:
@@ -3996,7 +3996,7 @@ HP acknowledges the redistribution of the following open source component that a
 * sl4j-log4j12, Version 1.6.4
 * jul-to-slf4j-stub, Version 1.0
 
-Copyright &copy; 2004-2013 QOS.ch
+Copyright &#169; 2004-2013 QOS.ch
 
 All rights reserved. Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
 associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the 
@@ -4017,7 +4017,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 * runit, Version 2.1.1
 
-Copyright &copy; 2001-2008, Gerrit Pape All rights reserved.
+Copyright &#169; 2001-2008, Gerrit Pape All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following 
 conditions are met:
@@ -4044,7 +4044,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 * stax2-api, Version 3.1.1
 
-Copyright &copy; 2005- Tatu Saloranta, tatu.saloranta@iki.fi
+Copyright &#169; 2005- Tatu Saloranta, tatu.saloranta@iki.fi
 
 All rights reserved.
 
@@ -4073,7 +4073,7 @@ HP acknowledges the redistribution of the following open source components that 
 
 Sudo is distributed under the following license:
 
-Copyright &copy; 1994-1996, 1998-2013
+Copyright &#169; 1994-1996, 1998-2013
 
 Todd C. Miller &lt;Todd.Miller@courtesan.com>
 
@@ -4100,7 +4100,7 @@ HP acknowledges the redistribution of the following open source component that a
 
 <pre>
    /*
-    * Copyright &copy; 2011, 2013 Tatsuhiro Tsujikawa
+    * Copyright &#169; 2011, 2013 Tatsuhiro Tsujikawa
     *
     * Permission is hereby granted, free of charge, to any person
     * obtaining a copy of this software and associated documentation
@@ -4130,9 +4130,9 @@ HP acknowledges the redistribution of the following open source components that 
 
 * python-virtualenv, Version 1.7.2
 
-Copyright &copy; 2007 Ian Bicking and Contributors <br />
-Copyright &copy; 2009 Ian Bicking, The Open Planning Project <br />
-Copyright &copy; 2011-2013 The virtualenv developers
+Copyright &#169; 2007 Ian Bicking and Contributors <br />
+Copyright &#169; 2009 Ian Bicking, The Open Planning Project <br />
+Copyright &#169; 2011-2013 The virtualenv developers
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

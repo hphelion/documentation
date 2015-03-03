@@ -60,7 +60,7 @@ The following hardware is supported for Helion OpenStack Community edition for b
 
 - [ML310 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5249594)
 - [DL350 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5260584)
-<br>
+<br />
 ### HP Proliant Scalable Systems
 
 - [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/#!view=grid&page=1&facet=ProLiant-SL-Scalable)

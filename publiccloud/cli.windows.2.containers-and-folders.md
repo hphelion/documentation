@@ -154,19 +154,19 @@ div.WordSection1
   border-left:none;border-bottom:solid black 1.0pt;border-right:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><strong><span style='color:black'>Name</span></strong></p>
+  normal'><b><span style='color:black'>Name</span></b></p>
   </td>
   <td width=303 valign=top style='width:227.4pt;border-top:solid black 1.0pt;
   border-left:none;border-bottom:solid black 1.0pt;border-right:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><strong><span style='color:black'>Description</span></strong></p>
+  normal'><b><span style='color:black'>Description</span></b></p>
   </td>
   <td width=390 valign=top style='width:292.5pt;border-top:solid black 1.0pt;
   border-left:none;border-bottom:solid black 1.0pt;border-right:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><strong><span style='color:black'>Example</span></strong></p>
+  normal'><b><span style='color:black'>Example</span></b></p>
   </td>
  </tr>
  <tr>
