@@ -41,7 +41,7 @@ When you have completed your jclouds compute operations, you need to finish by c
 
      computeCtx.close(); 
 
-*Note*: You cannot specify an availability zone if it has not been activated.  To activate an availability zone, go to the [Management Console dashboard](https://console.hpcloud.com/) and click the <font face="courier"><strong>Activate</font></strong> button.
+*Note*: You cannot specify an availability zone if it has not been activated.  To activate an availability zone, go to the [Management Console dashboard](https://console.hpcloud.com/) and click the <font face="courier"><b>Activate</font></b> button.
 
 <h2 id="VolumeOperations">Volume Operations</h2>
 
