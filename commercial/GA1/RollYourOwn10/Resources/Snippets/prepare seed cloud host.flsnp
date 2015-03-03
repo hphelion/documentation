@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <body>
-        <MadCap:dropDown MadCap:conditions="_HPc_iDoc_Conditions.ESX,_HPc_iDoc_Conditions.KVM">
+        <MadCap:dropDown MadCap:conditions="xHPc_iDoc_Conditions.ESX,xHPc_iDoc_Conditions.KVM">
             <MadCap:dropDownHead>
                 <MadCap:dropDownHotspot style="font-weight: bold;">[ ] Prepare the seed cloud host</MadCap:dropDownHotspot>
             </MadCap:dropDownHead>
