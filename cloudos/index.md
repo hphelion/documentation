@@ -11,7 +11,7 @@ product: cloudos
 
 HP Cloud OS has been deprecated as of 7 May 2014. If you have HP Cloud OS installed the documentation is still accessible here. 
 
-We encourage to try our new <a href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221000%22%7D/Show">HP Helion OpenStack&reg; Community edition</a>. It is  pure and free-to-license distribution of OpenStack technology coupled with a Linux operating system that speeds deployment and simplifies the management of small scale open cloud environments. 
+We encourage to try our new <a href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221000%22%7D/Show">HP Helion OpenStack&#174; Community edition</a>. It is  pure and free-to-license distribution of OpenStack technology coupled with a Linux operating system that speeds deployment and simplifies the management of small scale open cloud environments. 
 
 Or if you need more functionality, check out our enterprise-grade <a href="https://helion.hpwsportal.com/#/Product/%7B%22productId%22%3A%221247%22%7D/Show">HP Helion OpenStack</a> distribution designed for administrators and developers who want a hardened enterprise-grade product set that speeds deployment and simplifies management of private clouds and infrastructure services for developers, enterprises and service providers..
 

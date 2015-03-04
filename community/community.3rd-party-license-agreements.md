@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&reg; Community Open Source and Third-Party Software License Agreements"
+title: "HP Helion OpenStack&#174; Community Open Source and Third-Party Software License Agreements"
 permalink: /helion/community/3rd-party-license-agreements/
 product: community
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/eula/">&#9664; PREV | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/siteindex/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&reg; Community Open Source and Third-Party Software License Agreements #
+# HP Helion OpenStack&#174; Community Open Source and Third-Party Software License Agreements #
 
 The Open Source and Third-Party Software License Agreements for HP Helion OpenStack Communitry are available as a PDF download.
 

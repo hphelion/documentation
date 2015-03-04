@@ -17,10 +17,10 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&reg; Community 1.4 Release Notes
+# HP Helion OpenStack&#174; Community 1.4 Release Notes
 
-<!--**Product Name:** HP Helion OpenStack&reg; Community
-**OpenStack&reg; release name:** Icehouse-->
+<!--**Product Name:** HP Helion OpenStack&#174; Community
+**OpenStack&#174; release name:** Icehouse-->
 
 Thanks for your interest in HP Helion OpenStack Community! These release notes contain the following information about this release:
 
