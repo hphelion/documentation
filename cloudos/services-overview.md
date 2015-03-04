@@ -8,7 +8,7 @@ product: compute
 <!--PUBLISHED-->
 # HP Cloud OS Services Overview #
 
-HP Cloud OS 1.0 is built upon OpenStack&reg; cloud technology. 
+HP Cloud OS 1.0 is built upon OpenStack&#174; cloud technology. 
 
 HP Cloud OS is a foundation technology that HP uses for Converged Cloud Architecture. HP Cloud OS is broken down into a set of services and architecture that act like a datacenter-level operating system (DCOS).
 

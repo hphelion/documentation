@@ -109,7 +109,7 @@ An example of a cloud resource is resource pool definitions that you can use to 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td style="min-width:100px;"> <b>Quantum</b> (new name &mdash; <b>Neutron</b>) </td>
+<td style="min-width:100px;"> <b>Quantum</b> (new name &#8212; <b>Neutron</b>) </td>
 <td> Networking </td> 
 <td> Provides network management for VMs. </td>
 </tr>
@@ -570,22 +570,22 @@ The Images window shows all non-snapshot images with the following formats:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: white; color: black;">
-<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &#8212; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>ISO</b> &mdash; Optical Disk Image </td>
-<td> <b>QCOW2</b> &mdash; QEMU Emulator </td> 
+<td> <b>ISO</b> &#8212; Optical Disk Image </td>
+<td> <b>QCOW2</b> &#8212; QEMU Emulator </td> 
 </tr>
 	 
 <tr style="background-color: white; color: black;">
 <td> <b>RAW</b> </td>
-<td> <b>VDI</b> &mdash; Virtual Disk Image </td> 
+<td> <b>VDI</b> &#8212; Virtual Disk Image </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>VHD</b> &mdash; Virtual Hard Disk Image </td>
-<td> <b>VMDK</b> &mdash; Virtual Machine Disk Image </td> 
+<td> <b>VHD</b> &#8212; Virtual Hard Disk Image </td>
+<td> <b>VMDK</b> &#8212; Virtual Machine Disk Image </td> 
 </tr>
 
 </table> 
@@ -866,8 +866,8 @@ To edit a region instance:
 4. Select the <b>Info</b> tab to update the <b>Name</b>.
 
 5. Select the <b>Security Groups</b> tab to edit security groups. Use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups.
-  * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
-  * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+  * <b>All Security Groups</b> &#8212; A list of security groups that are associated with the project, but not the instance.
+  * <b>Instance Security Groups</b> &#8212; A list of security groups that are currently associated with the instance.
 
 6. Click <b>Save</b>.
 
@@ -1099,22 +1099,22 @@ Launchable images must be in one of the following formats:
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: white; color: black;">
-<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &#8212; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>ISO</b> &mdash; Optical Disk Image </td>
-<td> <b>QCOW2</b> &mdash; QEMU Emulator </td> 
+<td> <b>ISO</b> &#8212; Optical Disk Image </td>
+<td> <b>QCOW2</b> &#8212; QEMU Emulator </td> 
 </tr>
 	 
 <tr style="background-color: white; color: black;">
 <td> <b>RAW</b> </td>
-<td> <b>VDI</b> &mdash; Virtual Disk Image </td> 
+<td> <b>VDI</b> &#8212; Virtual Disk Image </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>VHD</b> &mdash; Virtual Hard Disk Image </td>
-<td> <b>VMDK</b> &mdash; Virtual Machine Disk Image </td> 
+<td> <b>VHD</b> &#8212; Virtual Hard Disk Image </td>
+<td> <b>VMDK</b> &#8212; Virtual Machine Disk Image </td> 
 </tr>
 
 </table> 
@@ -2083,8 +2083,8 @@ To edit a project instance:
 4. Select the <b>Info</b> tab to update the <b>Name</b>.
 
 5. In the <b>Security Groups</b> tab, edit security groups, use the plus symbol (<b>+</b>) to add groups and the minus symbol (<b>-</b>) to remove groups:
-  * <b>All Security Groups</b> &mdash; A list of security groups that are associated with the project, but not the instance.
-  * <b>Instance Security Groups</b> &mdash; A list of security groups that are currently associated with the instance.
+  * <b>All Security Groups</b> &#8212; A list of security groups that are associated with the project, but not the instance.
+  * <b>Instance Security Groups</b> &#8212; A list of security groups that are currently associated with the instance.
 
 6. Click <b>Save</b>.
 
@@ -2156,7 +2156,7 @@ To resume an instance:
 
 #### How to Hard Reboot an Instance
 
-Rebooting an instance is similar to cycling power on a physical server &mdash; the operating system is restarted from scratch. Rebooting temporarily makes the 
+Rebooting an instance is similar to cycling power on a physical server &#8212; the operating system is restarted from scratch. Rebooting temporarily makes the 
 VM and all the services it hosts unavailable. In a common use case, your installation requires a reboot because you installed new software.
 
 To reboot an instance:
@@ -2260,7 +2260,7 @@ To terminate one or more instances:
 
 **Concepts:**
 
-Volumes are the disk storage volumes that have been created in the project. Volumes are persistent &mdash; you can create data in these volumes and attach 
+Volumes are the disk storage volumes that have been created in the project. Volumes are persistent &#8212; you can create data in these volumes and attach 
 them to various VMs (instances) over time, as needed.
 
 To see a list of volumes:
@@ -2399,22 +2399,22 @@ When you launch a VM, the launch is based on an image. This Images view lists on
 <table style="text-align: left; vertical-align: top; min-width:700px;">
 
 <tr style="background-color: white; color: black;">
-<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &mdash; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
+<td colspan="2"> <b>AMI (Amazon Machine Image)</b> &#8212; Not valid unless it is associated with a kernel image (AKI) and a RAMdisk Image (ARI). </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>ISO</b> &mdash; Optical Disk Image </td>
-<td> <b>QCOW2</b> &mdash; QEMU Emulator </td> 
+<td> <b>ISO</b> &#8212; Optical Disk Image </td>
+<td> <b>QCOW2</b> &#8212; QEMU Emulator </td> 
 </tr>
 	 
 <tr style="background-color: white; color: black;">
 <td> <b>RAW</b> </td>
-<td> <b>VDI</b> &mdash; Virtual Disk Image </td> 
+<td> <b>VDI</b> &#8212; Virtual Disk Image </td> 
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> <b>VHD</b> &mdash; Virtual Hard Disk Image </td>
-<td> <b>VMDK</b> &mdash; Virtual Machine Disk Image </td> 
+<td> <b>VHD</b> &#8212; Virtual Hard Disk Image </td>
+<td> <b>VMDK</b> &#8212; Virtual Machine Disk Image </td> 
 </tr>
 
 </table> 
@@ -3057,7 +3057,7 @@ You can use the Administration Dashboard to create a keypair, or to import a key
 
 3. On the <b>Keypairs</b> tab, click <b>Create Keypair</b>.
 
-4. Enter a <b>Keypair Name</b> &mdash; free-form text that does not include spaces, for example: <code>testonlykeypair</code>.
+4. Enter a <b>Keypair Name</b> &#8212; free-form text that does not include spaces, for example: <code>testonlykeypair</code>.
 
 5. Click <b>Create Keypair</b>.
 

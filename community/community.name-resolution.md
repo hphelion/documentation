@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&reg;: Enable Name Resolution from Tenant VMs in the Overcloud
+# HP Helion OpenStack&#174;: Enable Name Resolution from Tenant VMs in the Overcloud
 
 This page provides instructions for setting a default DNS name server for your HP Helion OpenStack cloud. These steps need to be performed prior to installation.
 

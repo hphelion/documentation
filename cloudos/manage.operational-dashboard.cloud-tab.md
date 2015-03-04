@@ -198,7 +198,7 @@ and numbers with no spaces or special characters. </p>
 
 <tr style="background-color: white; color: black;">
 <td> <b>Description</b>   </td>
-<td> Optional &mdash; Type a description of the node. </td>
+<td> Optional &#8212; Type a description of the node. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -351,7 +351,7 @@ There are multiple use cases where you would prefer to have separate compute reg
 including its own message queue and database.
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:700px; border: 1px dotted #000000;"> <b>Note:</b> Each region must use unique 
-nodes &mdash; managed nodes cannot be shared between regions.</p> 
+nodes &#8212; managed nodes cannot be shared between regions.</p> 
 
 
 ### Manage Clouds Page
@@ -403,12 +403,12 @@ the status displays Active.   </td>
 <td> <b>More</b> </td>
 <td> Provides the following options:
 <ul>
-<li><b>Launch Dashboard</b> &mdash; Opens the Administration Dashboard login on a new tab in the browser. 
+<li><b>Launch Dashboard</b> &#8212; Opens the Administration Dashboard login on a new tab in the browser. 
 You can login with the Admin account and password you specified on the Create Cloud > Attributes dialog. 
-<li><b>Extend Compute Region</b> &mdash; Opens the Extend Compute Region Dialog.
-<li><b>Reduce Compute Region</b> &mdash; Opens the Reduce Compute Region Dialog.
-<li><b>Remove Compute Region</b> &mdash; Opens the Remove Compute Region Dialog.
-<li><b>Remove Cloud</b> &mdash; Opens the Remove Cloud Dialog.
+<li><b>Extend Compute Region</b> &#8212; Opens the Extend Compute Region Dialog.
+<li><b>Reduce Compute Region</b> &#8212; Opens the Reduce Compute Region Dialog.
+<li><b>Remove Compute Region</b> &#8212; Opens the Remove Compute Region Dialog.
+<li><b>Remove Cloud</b> &#8212; Opens the Remove Cloud Dialog.
 </ul>
 <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Some of the above actions might not always available, 
@@ -483,8 +483,8 @@ the cloud controller services.
 <td> <b>Keystone Signing</b> </td>
 <td> Set the Keystone Signing method based upon the authentication scheme: <br />
 <ul>
-<li><b>PKI</b> &mdash; (default setting) Large token that contains token information such as the user ID and user roles.
-<li><b>UUID</b> &mdash; alternative 32-character token choice.
+<li><b>PKI</b> &#8212; (default setting) Large token that contains token information such as the user ID and user roles.
+<li><b>UUID</b> &#8212; alternative 32-character token choice.
 </ul>
 </td>
 </tr>
@@ -522,7 +522,7 @@ file system associated with the Local Volume File. </td>
 <td> Trash user's password for a granted user's role on a trash project(s) in the Administration Dashboard.
 <br /> <br />
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; border: 1px dotted #000000;"> <b>Note:</b> Remember these passwords. You will be using these as 
-appropriate to login to the Administration Dashboard &mdash; see <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
+appropriate to login to the Administration Dashboard &#8212; see <a href="/cloudos/manage/operational-dashboard/cloud-tab/#manage-clouds-page">Manage Clouds page</a>. </p> 
 </td>
 </tr>
 
@@ -890,16 +890,16 @@ The following table describes the Manage Clouds Details page UI elements:
 <td> <b>Cloud Attributes</b> </td>
 <td>
 <ul>
-<li> <b>Keystone Signing</b> &mdash;Specified <code>keystone.signing</code> method: <code>PKI</code> (default) or <code>UUID</code>. </li>
-<li> <b>Networking Mode</b> &mdash; Specified networking mode: <code>gre</code> (default). </li>
-<li> <b>Local Volume File Name</b> &mdash; Path of the local volume file name. </li>
-<li> <b>Maximum Volume File Size (GB)</b> &mdash; Number specified for the maximum volume allowed in gigabytes. </li>
+<li> <b>Keystone Signing</b> &#8212;Specified <code>keystone.signing</code> method: <code>PKI</code> (default) or <code>UUID</code>. </li>
+<li> <b>Networking Mode</b> &#8212; Specified networking mode: <code>gre</code> (default). </li>
+<li> <b>Local Volume File Name</b> &#8212; Path of the local volume file name. </li>
+<li> <b>Maximum Volume File Size (GB)</b> &#8212; Number specified for the maximum volume allowed in gigabytes. </li>
 </ul>
 </td>
 </tr>
 
 <tr style="background-color: #f8f8f8; color: black;">
-<td colspan="2"> <b>Regions Tabs</b> &mdash; Each region is a separate tab with the following information specific to each region. </td>
+<td colspan="2"> <b>Regions Tabs</b> &#8212; Each region is a separate tab with the following information specific to each region. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -929,7 +929,7 @@ The following table describes the Manage Clouds Details page UI elements:
 
 <tr style="background-color: white; color: black;">
 <td> <b>Compute Region Attributes</b> </td>
-<td> <b>Hypervisor</b> &mdash; selected hypervisor for the selected region.  </td>
+<td> <b>Hypervisor</b> &#8212; selected hypervisor for the selected region.  </td>
 </tr>
 
 </table> 

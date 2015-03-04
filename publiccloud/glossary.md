@@ -74,7 +74,7 @@ For a quick search of the [Knowledge Base](https://community.hpcloud.com/knowled
 :    HP's cloud computing platform, designed to provision and manage large networks of virtual machines. 
 
 ###[Cloud Compute Unit (CCU)](https://community.hpcloud.com/search/knowledge/CCU) ### {#CloudCompute}
-:    An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
+:    An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&#174; 2012 Xeon&#174; 2.60 GHz CPU.
 
 ###[CodePlex](https://community.hpcloud.com/search/knowledge/CodePlex) ### {#CodePlex}
 :    An open source project-hosting web site maintained by Microsoft.

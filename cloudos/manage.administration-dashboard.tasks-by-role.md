@@ -99,15 +99,15 @@ Use log level to capture more detailed log files when you need to troubleshoot, 
 
 Log levels are:
 
-* <b>Debug</b> &mdash; Writes the most detailed log file messages.
+* <b>Debug</b> &#8212; Writes the most detailed log file messages.
 
-* <b>Info</b> &mdash; Writes informational, warning, error, and critical messages to the log file.
+* <b>Info</b> &#8212; Writes informational, warning, error, and critical messages to the log file.
 
-* <b>Warning</b> &mdash; Writes warning, error, and critical messages to the log file. Informational messages are not written.
+* <b>Warning</b> &#8212; Writes warning, error, and critical messages to the log file. Informational messages are not written.
 
-* <b>Error</b> &mdash; Writes error and critical messages to the log file. Informational and warning messages are not written.
+* <b>Error</b> &#8212; Writes error and critical messages to the log file. Informational and warning messages are not written.
 
-* <b>Critical</b> &mdash; Writes only critical messages to the log file. Informational, error, and warning messages are not written.
+* <b>Critical</b> &#8212; Writes only critical messages to the log file. Informational, error, and warning messages are not written.
 
 The default log level is Info. To change the default, select a log level from the drop down list.
 

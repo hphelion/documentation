@@ -22,7 +22,7 @@ PageRefresh();
 -->
 # HP Helion OpenStack&#174; Community Baremetal Installation and Configuration
 
-This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &mdash; ideal for a small-scale, private cloud. 
+This page explains how to install and configure HP Helion OpenStack Community baremetal multi-node deployment &#8212; ideal for a small-scale, private cloud. 
 
 This installation, which is launched on an installer system, deploys to a minimum of 7 baremetal servers, to which you can add up to 36 compute nodes:
 

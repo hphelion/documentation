@@ -17,9 +17,9 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&reg; Community Documentation Home
+# HP Helion OpenStack&#174; Community Documentation Home
 
-The HP Helion OpenStack Community edition is OpenStack technology coupled with a version of Linux&reg; provided by HP designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
+The HP Helion OpenStack Community edition is OpenStack technology coupled with a version of Linux&#174; provided by HP designed for administrators and developers who want to quickly stand up an OpenStack cloud. The Community edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. It supports up to 30 physical nodes and 600 virtual nodes making it ideal for small-scale and proof of concept deployments.
 <!-- Next 2 graphs, text from Jim Gardner email 4/24
 HP Helion OpenStack Community Edition is a pure and free-to-license distribution that speeds deployment and simplifies the management of small scale open cloud environments and infrastructure services. 
 
