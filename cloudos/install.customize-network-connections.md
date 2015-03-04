@@ -83,7 +83,7 @@ In Dual mode, the default settings assume that all the nodes have their interfac
 
 In Dual mode, if the wiring of networks between the nodes are non-contiguous and/or not in sequence, you need to change the default mapping:
 
-* Example 1: For all the nodes, `eth0 - admin`, `eth1 - public`, `eth2 - private` &mdash; the Connections table must be customized to look like the following:
+* Example 1: For all the nodes, `eth0 - admin`, `eth1 - public`, `eth2 - private` &#8212; the Connections table must be customized to look like the following:
 
     intf0 - 1Gb (preferred) on 1st port
 	
@@ -91,7 +91,7 @@ In Dual mode, if the wiring of networks between the nodes are non-contiguous and
 	
     intf2 - 1Gb (preferred) on 2nd port
 
-* Example 2: For all the nodes, `eth0 - admin`, `eth2 - os_sdn`, `eth4 - public/external` &mdash; the Connections table must be customized to look like the following:
+* Example 2: For all the nodes, `eth0 - admin`, `eth2 - os_sdn`, `eth4 - public/external` &#8212; the Connections table must be customized to look like the following:
 
     intf0 - 1Gb (preferred) on 1st port
 	
@@ -156,7 +156,7 @@ teaming uses the "adaptive load balancing" algorithm. Other values used with tea
 * 3: Broadcast policy (broadcast)
 * 4: IEEE 802.3ad Dynamic link aggregation (802.3ad)
 * 5: Adaptive transmit load balancing (balance-tlb)
-* 6: Adaptive load balancing (balance-alb) &mdash; Mode 6 includes balance-tlb + receive load balancing (rlb) for IPV4 traffic. 
+* 6: Adaptive load balancing (balance-alb) &#8212; Mode 6 includes balance-tlb + receive load balancing (rlb) for IPV4 traffic. 
 The receive load balancing is achieved by ARP negotiation. The bonding driver intercepts the ARP Replies sent by the server on their 
 way out and overwrites the src hw address with the unique hardware address of one of the slaves in the bond such that different clients use 
 different hardware addresses for the server.

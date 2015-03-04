@@ -1311,7 +1311,7 @@ Used in swift.conf cluster_hash. See the <a href="http://swiftstack.com/openstac
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> S3 &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> S3 &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1346,7 +1346,7 @@ See the <a href="https://github.com/fujita/swift3" target="swift3">Swift3 docume
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> StaticWeb &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> StaticWeb &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1359,7 +1359,7 @@ and optional file listings. See the
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> TempURL &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> TempURL &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1370,7 +1370,7 @@ See the <a href="https://github.com/openstack/swift/blob/master/swift/common/mid
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> FormPOST &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> FormPOST &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1381,7 +1381,7 @@ See the <a href="https://github.com/openstack/swift/blob/master/swift/common/mid
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> Domain Remap &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> Domain Remap &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1405,7 +1405,7 @@ account parts of a domain to path parameters that the proxy server understands. 
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> CNAME Lookup &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> CNAME Lookup &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
@@ -1432,7 +1432,7 @@ further down the WSGI chain. </td>
 </tr>
 
 <tr>
-<td colspan="3" style="background-color: #C8C8C8;"> Ratelimit &mdash; Note: currently not supported. </td>
+<td colspan="3" style="background-color: #C8C8C8;"> Ratelimit &#8212; Note: currently not supported. </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
