@@ -17,10 +17,10 @@ Or if you need more functionality, check out our enterprise-grade <a href="https
 
 Dive into these categorized topics to learn about HP Cloud OS:
 
-1. <a href="/cloudos/prepare/">Prepare</a> &mdash; Topics to help you get started: video tutorials &amp; more
-2. <a href="/cloudos/install/">Install</a> &mdash; Instructions to install &amp; configure your cloud
-3. <a href="/cloudos/manage/">Manage</a>   &mdash; Info covering utilities, troubleshooting, &amp; dashboards
-4. <a href="/cloudos/develop/">Develop</a> &mdash; Details on the REST API and reference documentation
+1. <a href="/cloudos/prepare/">Prepare</a> &#8212; Topics to help you get started: video tutorials &amp; more
+2. <a href="/cloudos/install/">Install</a> &#8212; Instructions to install &amp; configure your cloud
+3. <a href="/cloudos/manage/">Manage</a>   &#8212; Info covering utilities, troubleshooting, &amp; dashboards
+4. <a href="/cloudos/develop/">Develop</a> &#8212; Details on the REST API and reference documentation
 
 <table>
 <tr>

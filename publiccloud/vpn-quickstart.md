@@ -121,7 +121,7 @@ If you have not previously created an account and activated the Compute service 
 
 ##Create a new Ubuntu server instance
 
-Set up a new Ubuntu server instance&mdash;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
+Set up a new Ubuntu server instance&#8212;separate from your other VPC gateway machines and using the command line. Test the setup of this new server.
 
 1. Install Nova and Neutron Python client on this server. See the [Knowledge Base](https://community.hpcloud.com/article/cloud-135-cli-installation-instructions) for instructions.
 2. Verify that you can access the Nova and Neutron APIs for your tenant from this Python Client by running nova `list` and neutron `port-list` commands.
@@ -195,7 +195,7 @@ To boot a Compute service instance you will need to know which [operating system
 
 #### Boot the gateway instance and test instance
 
-Boot two instances&mdash;one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.
+Boot two instances&#8212;one to use as the VPN gateway (vm-gateway) and the other (vm-test) to test with.
 
 - --image:  the name or ID of the image to launch.  View available images by running **nova image-list**
  

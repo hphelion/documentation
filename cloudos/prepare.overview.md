@@ -88,23 +88,23 @@ These execution components works together to create a cloud environment for a cu
 The kernel layer is based on the OpenStack infrastructure set of services.  All of Cloud OS is OpenStack powered.  If we look at the kernel and the services that comprise it, 
 we utilize services from OpenStack such as:
 
-* **Keystone** &mdash; the OpenStack identity management service.  The Keystone service allows users and groups and multi-tenancy to be built into all the services that are based on HP Cloud OS.  
+* **Keystone** &#8212; the OpenStack identity management service.  The Keystone service allows users and groups and multi-tenancy to be built into all the services that are based on HP Cloud OS.  
 
-* **Glance** &mdash; the OpenStack image library service; Glance allows you to have a set of images that you can use to bootstrap virtual machines across the cloud, 
+* **Glance** &#8212; the OpenStack image library service; Glance allows you to have a set of images that you can use to bootstrap virtual machines across the cloud, 
 and manage all those images.
 
-* **Nova** &mdash; the OpenStack service for managing the various hypervisors and a virtual machines that you have across environment, whether it's a KVM Hypervisor, 
+* **Nova** &#8212; the OpenStack service for managing the various hypervisors and a virtual machines that you have across environment, whether it's a KVM Hypervisor, 
 a Microsoft Hyper-V, or VMware ESXi Hypervisor.
 
-* **Cinder** &mdash; the OpenStack volume management service that allows you to take your storage architecture and infrastructure, and create volumes that can be attached 
+* **Cinder** &#8212; the OpenStack volume management service that allows you to take your storage architecture and infrastructure, and create volumes that can be attached 
 to the virtual environment within the cloud.
 
-* **Quantum (Neutron)** &mdash; the virtual networking service in OpenStack that allows you to create and provision virtual networks. 
+* **Quantum (Neutron)** &#8212; the virtual networking service in OpenStack that allows you to create and provision virtual networks. 
 
-* **Swift** &mdash; the OpenStack highly available, distributed, eventually consistent object/blob store. Organizations can use Swift to store lots of data efficiently, 
+* **Swift** &#8212; the OpenStack highly available, distributed, eventually consistent object/blob store. Organizations can use Swift to store lots of data efficiently, 
 safely, and cheaply.
 
-* **Horizon** &mdash; the OpenStack dashboard, which provides a web based user interface to OpenStack services including Nova, Swift, Keystone, and so on.  
+* **Horizon** &#8212; the OpenStack dashboard, which provides a web based user interface to OpenStack services including Nova, Swift, Keystone, and so on.  
 HP Cloud OS has provided an enhanced version with two UI dashboards, as described later in this topic.
 
 Along with these services that make up the kernel layer of Cloud OS, we also have a set of plugins that attach to your infrastructure environment. 

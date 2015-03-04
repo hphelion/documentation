@@ -93,9 +93,9 @@ resources throughout a datacenter, all managed through a dashboard that gives ad
 
 HP Cloud is based on a common architecture. This enables HP to provide its customers with choice, confidence, and consistency.
 
-* Choice &mdash; HP Cloud enables the customer to choose from any combination of: cloud delivery model (public, private or managed); OS; hypervisor; combination of infrastructure elements; and partners.
-* Confidence &mdash; HP Cloud allows the customer to manage and secure the delivery of applications and services across a combination of delivery models (public, private, managed); and provides the confidence that the cloud will scale - with the appropriate SLA expectations - for future business needs.
-* Consistency &mdash; HP Cloud provides the customer with a common architecture, and allows for workload portability across delivery models - providing the customer with a single consumption experience.
+* Choice &#8212; HP Cloud enables the customer to choose from any combination of: cloud delivery model (public, private or managed); OS; hypervisor; combination of infrastructure elements; and partners.
+* Confidence &#8212; HP Cloud allows the customer to manage and secure the delivery of applications and services across a combination of delivery models (public, private, managed); and provides the confidence that the cloud will scale - with the appropriate SLA expectations - for future business needs.
+* Consistency &#8212; HP Cloud provides the customer with a common architecture, and allows for workload portability across delivery models - providing the customer with a single consumption experience.
 
 ## What does HP Cloud OS support?
 

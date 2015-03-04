@@ -65,15 +65,15 @@ This overview introduces the install module terms, concepts and tips.
 
 ### Terminology
 
-**Install Module** &mdash; An install module represents a mechanism through which specific cloud services are configured
+**Install Module** &#8212; An install module represents a mechanism through which specific cloud services are configured
 and deployed. Each install module will specify one or more Roles that it can fulfill.
 
-**Role** &mdash; A role identifies a type of service that is provided by the install module. Roles represent a logical
+**Role** &#8212; A role identifies a type of service that is provided by the install module. Roles represent a logical
 service provided by the install module, but, may in fact be comprised of multiple processes that will
 be installed and configured on the target node. An install module may support one or more roles. For
 example, the Nova install module supports both the multi-controller role as well as the multi-compute role.
 
-**Proposal** &mdash; A proposal is a named deployment configuration for a given install module. More than one proposal (deployment configuration) can be created for a given install module.
+**Proposal** &#8212; A proposal is a named deployment configuration for a given install module. More than one proposal (deployment configuration) can be created for a given install module.
 
 Before you go through the procedures to apply the install modules, review the next section for information about the process of applying and customizing install modules.
 
@@ -370,8 +370,8 @@ To apply the Nova install module:
 
 The Nova install module supports the following roles:
 
-* Hp Cos Nova 100-multi-controller &mdash; This role determines which node provides the infrastructure management and API services.
-* Hp Cos Nova 100-multi-compute &mdash; This role identifies the Compute Nodes that act as virtualization hosts.
+* Hp Cos Nova 100-multi-controller &#8212; This role determines which node provides the infrastructure management and API services.
+* Hp Cos Nova 100-multi-compute &#8212; This role identifies the Compute Nodes that act as virtualization hosts.
 
 > **Tip**: As a best practice, the Compute Controller should be assigned the Nova-multi-controller role and the Nova-multi-volume role. The remaining managed nodes that are designated as Compute Nodes can be assigned to the Nova-multi-compute role.
 

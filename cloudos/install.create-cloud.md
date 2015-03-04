@@ -176,31 +176,31 @@ To create a cloud:
 
 5. Select the Attributes tab to specify property values required to create a Cloud.
 
-* Keystone Signing &mdash; Set the Keystone Signing method based upon the authentication
+* Keystone Signing &#8212; Set the Keystone Signing method based upon the authentication
 scheme: UUID or PKI.  PKI (the default setting) is a large token that contains token information such as the user ID
 and user roles. UUID is the alternative 32-character token choice.
 
-* Networking mode &mdash; Specify gre (default setting). Local and Flat are not supported.
+* Networking mode &#8212; Specify gre (default setting). Local and Flat are not supported.
 
-* Local Volume File Name &mdash; Name of the file to be created on the target node's file system
+* Local Volume File Name &#8212; Name of the file to be created on the target node's file system
 and used with `losetup` when creating the logical volume group.  
 
-* Maximum Volume File Size (GB) &mdash; Specify the maximum size of the file created on the
+* Maximum Volume File Size (GB) &#8212; Specify the maximum size of the file created on the
 target node's file system to represent the size of the cinder volume. If the file size is too big
 for the file system, the size of the file will be capped at 90% of the free space in that file
 system (at the time of creation). Best practice is to adjust the size to a value appropriate for
 the file-system associated with the Local Volume File.
 
-* Admin User Password &mdash; Admin user's password for a granted administrator role on an
+* Admin User Password &#8212; Admin user's password for a granted administrator role on an
 Admin project in the Administration Dashboard.
 
-* Arch User Password &mdash; Architect user's password for a granted architect role on an Admin
+* Arch User Password &#8212; Architect user's password for a granted architect role on an Admin
 project in the Administration Dashboard.
 
-* Trash User Password &mdash; Trash user's password for a granted user's role on a trash project
+* Trash User Password &#8212; Trash user's password for a granted user's role on a trash project
 in the Administration Dashboard.
 
-**Remember the passwords** &mdash; You will use them to log into the HP Cloud OS Administration Dashboard.
+**Remember the passwords** &#8212; You will use them to log into the HP Cloud OS Administration Dashboard.
 
 When you're ready, click **Create Cloud**. The cloud will go through a series of steps to create an active cloud, showing the percent (%) completed.
 

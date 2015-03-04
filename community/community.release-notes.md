@@ -47,23 +47,23 @@ The following sections list the features in the current version, 1.4, and previo
 
 ### Features in HP Helion OpenStack Community 1.4
 
-**Additional overcloud controllers for high availability** &mdash; The number of installed overcloud controller nodes has been increased to 3. The additional nodes should allow Community to continue operating if a single control node fails. Previously, the Community edition installed a single overcloud controller node. 
+**Additional overcloud controllers for high availability** &#8212; The number of installed overcloud controller nodes has been increased to 3. The additional nodes should allow Community to continue operating if a single control node fails. Previously, the Community edition installed a single overcloud controller node. 
 
-**Icinga monitoring support** &mdash; Icinga V1.11.5 is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
+**Icinga monitoring support** &#8212; Icinga V1.11.5 is an open source monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting. For more information, see the [Icinga web site](https://www.icinga.org/). 
 
-**Kibana interface support** &mdash; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
+**Kibana interface support** &#8212; Kibana is an open source (Apache Licensed), browser based analytics and search dashboard for ElasticSearch. For more information, see the [Kibana web site](http://www.elasticsearch.org/guide/en/kibana/current/_introduction.html) 
 
-**OpenStack Juno-2 development milestone** &mdash; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1.
+**OpenStack Juno-2 development milestone** &#8212; HP Helion OpenStack Community edition fully supports the second milestone of the OpenStack Juno development cycle, including features and bug fixes implemented since Juno-1.
 
-**Distributed Virtual Routing (DVR)** &mdash; HP Helion OpenStack Community edition fully supports the DVR implemented in OpenStack Juno-3 plus some fixes from Juno-final.
+**Distributed Virtual Routing (DVR)** &#8212; HP Helion OpenStack Community edition fully supports the DVR implemented in OpenStack Juno-3 plus some fixes from Juno-final.
 
 ### Features in HP Helion OpenStack Community GA
 
-**Pure OpenStack technology** &mdash; This edition allows you to experience a cloud deployment using [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO).
+**Pure OpenStack technology** &#8212; This edition allows you to experience a cloud deployment using [OpenStack TripleO](https://wiki.openstack.org/wiki/TripleO).
 
-**Speeds cloud service delivery** &mdash; Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
+**Speeds cloud service delivery** &#8212; Outstanding launch pad for your small-scale open cloud environment or proof-of-concept cloud services, with simple, fast creation of cloud environments and applications to speed business value.
 
-**Close-to-trunk release** &mdash; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology, closely tracking the community trunk release.
+**Close-to-trunk release** &#8212; Allows your lab or small-scale production environment to continue to benefit from the very latest capabilities of OpenStack technology, closely tracking the community trunk release.
 
 
 ##Supported services ## {#supported-services} 
