@@ -162,7 +162,7 @@ Security groups and security group rules allows administrators and tenants the a
 When a port is created in Networking it is associated with a security group. If a security group is not specified the port will be associated with a *default* security group. By default this group will drop all ingress traffic and allow all egress. Rules can be added to this group in order to change the behavior.
 
 ### 2.3 Entity Relationship Diagram
-<img src="media/networking_overview.jpg">Networking Object Relationships</a>
+<img src="media/networking_overview.jpg"></img>
 
 ### 2.4 Service Quotas
 Quotas are established for the following resources on a per-project basis. Quotas may be increased by contacting Public Cloud Support.
