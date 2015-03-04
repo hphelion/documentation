@@ -73,16 +73,16 @@ through Nagios to run whenever the admin needs to clean up the database.
 
 The Clean-up Utility consists of the following four Nagios services:
 
-* **Cloud clean db objects** &mdash; Cleans up the user and all the key pairs associated with that user from the database. 
+* **Cloud clean db objects** &#8212; Cleans up the user and all the key pairs associated with that user from the database. 
 For projects, removes the element from the database table or sets the "elements deleted" flag for the project. 
 Removes hardware flavors that are marked for deletion and are no longer being used by a VM instance. 
 Cleans up tokens that are expired for more than 24 hour, and for roles, removes the roles from the database table.
 
-* **Cloud clean deleted objects** &mdash;-Cleans up referential integrity issues in the database.
+* **Cloud clean deleted objects** &#8212;-Cleans up referential integrity issues in the database.
 
-* **Cloud clean outdated objects** &mdash; Deletes unused data that meets the deletion criteria.
+* **Cloud clean outdated objects** &#8212; Deletes unused data that meets the deletion criteria.
 
-* **Cloud clean tokens** &mdash; Cleans up tokens that have been expired for more than 24 hours from the database.
+* **Cloud clean tokens** &#8212; Cleans up tokens that have been expired for more than 24 hours from the database.
 
 
 ## Using Nagios

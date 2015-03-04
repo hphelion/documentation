@@ -94,31 +94,31 @@ more nodes to form a cloud environment. These are composite services that are in
 together into a single cloud solution. Services are exposed or published as RESTful APIs.
 The list of services that can be deployed for HP Cloud OS are:
 
-* Keystone (Identity Management Service)&mdash; An OpenStack service to provide identity (domain,
+* Keystone (Identity Management Service)&#8212; An OpenStack service to provide identity (domain,
 project and users) management, access token, and service catalog functionality.
 
-* Glance (Image Repository Service)&mdash; An OpenStack service to provide for discovering,
+* Glance (Image Repository Service)&#8212; An OpenStack service to provide for discovering,
 registering, and retrieving virtual machine images.
 
-* Nova (Compute Controller and Compute Node Service)&mdash; An OpenStack service to provide a
+* Nova (Compute Controller and Compute Node Service)&#8212; An OpenStack service to provide a
 compute fabric controller.
 
-* Cinder (Volume Connectivity Service)&mdash; An OpenStack service to provide volume management.
+* Cinder (Volume Connectivity Service)&#8212; An OpenStack service to provide volume management.
 
-* Quantum (Neutron) (Network Connectivity Service)&mdash; An OpenStack service to create and provision virtual networks.
+* Quantum (Neutron) (Network Connectivity Service)&#8212; An OpenStack service to create and provision virtual networks.
 
-* Swift (OpenStack Object Store) &mdash; An OpenStack service to store and retrieve lots of data in virtual containers.  
+* Swift (OpenStack Object Store) &#8212; An OpenStack service to store and retrieve lots of data in virtual containers.  
 
-* Graffiti (Resource Pool Registry and Capability Tagging Service) &mdash; An HP Cloud OS service to support
+* Graffiti (Resource Pool Registry and Capability Tagging Service) &#8212; An HP Cloud OS service to support
 diverse functions: discovering, registering, and retrieving resource pool definitions for compute, network, and volume resources; 
 a dictionary of the cloud's capabilities; a searchable directory to find cloud resources based on their capabilities; and 
 dynamic binding, describing the requirements instead of static binding.  
 
-* Eve (Topology Provisioning Service)&mdash; An HP Cloud OS service to provide for provisioning lifecycle
+* Eve (Topology Provisioning Service)&#8212; An HP Cloud OS service to provide for provisioning lifecycle
 of a TOSCA-based infrastructure topology design of the compute, network, and volume resources
 in a defined resource pool. Also provides security and management.
 
-* Focus (Topology Document Repository Service)&mdash; An HP Cloud OS service to provide for
+* Focus (Topology Document Repository Service)&#8212; An HP Cloud OS service to provide for
 discovering, registering, versioning, and retrieving of document types necessary to describe
 TOSCA-based infrastructure topologies.
 

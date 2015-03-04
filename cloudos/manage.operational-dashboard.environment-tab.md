@@ -73,14 +73,14 @@ If you want to make changes, you need to start over by re-installing the HP Clou
 For procedural instructions, see <a href="/cloudos/install/">Install and Configure Your Cloud</a>.
 </p>
 
-* **Cloud Administration Node Internet Access** &mdash; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
+* **Cloud Administration Node Internet Access** &#8212; Configure to set up Internet access on the HP Cloud OS Administration node. You will need Internet access for downloading hot fixes and updates using the [Hot Fixes](/cloudos/manage/operational-dashboard/cloud-tab/#hot-fixes) panel, 
 or the [Updates and Extensions](/cloudos/manage/operational-dashboard/cloud-tab/#updates-and-extensions) panel.
 
-* **(Optional) External DNS Server** &mdash; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
+* **(Optional) External DNS Server** &#8212; Configure to add the IP address of the external DNS server your Cloud OS environment is using to access named websites within your cloud.
 
-* **Cloud Administration Node Time Settings** &mdash; Configure to reflect the current time to ensure that the Cloud is created successfully.
+* **Cloud Administration Node Time Settings** &#8212; Configure to reflect the current time to ensure that the Cloud is created successfully.
 
-* **(Optional) Email Notification Settings** &mdash; Configure to send email notifications when the Cloud and Compute Region operations complete because this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
+* **(Optional) Email Notification Settings** &#8212; Configure to send email notifications when the Cloud and Compute Region operations complete because this takes some time. By enabling and setting this prerequisite, you can be alerted by e-mail when each operation completes.
 
 	
 ### Prerequisites Page
@@ -1030,13 +1030,13 @@ The following table describes the Networks page UI elements:
 <td> Lists the available network types: 
 
 <ul>
-<li><b>admin</b> &mdash; Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, 
+<li><b>admin</b> &#8212; Used for administrative functions, such as managed node installation, TFTP booting, DHCP assignments, system logs, backups, 
 and other monitoring tasks. This also carries cinder-volume traffic. Must be an isolated private network.</li>
-<li><b>bmc</b> &mdash; Baseboard Management Controller LAN network for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only.</li>
-<li><b>bmc_vlan</b> &mdash; Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only.</li>
-<li><b>os_sdn</b> &mdash; OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, 
+<li><b>bmc</b> &#8212; Baseboard Management Controller LAN network for Intelligent Platform Management Interface (IPMI) traffic. For test purposes only.</li>
+<li><b>bmc_vlan</b> &#8212; Baseboard Management Controller VLAN (IPMI traffic VLAN). For test purposes only.</li>
+<li><b>os_sdn</b> &#8212; OpenStack Software-Defined-Network. This network is for data traffic between the Virtual Machine instances, 
 and the traffic from the instances to the Cloud Controller Node. Must be an isolated private network.</li>
-<li><b>public</b> &mdash; Public or corporate network that is attached to your cloud infrastructure.  Must provide a pool of IP addresses 
+<li><b>public</b> &#8212; Public or corporate network that is attached to your cloud infrastructure.  Must provide a pool of IP addresses 
 for the Cloud Controller node for floating IP assignments. Size of the pool depends on the number of Virtual Machine instances. 
 This network handles traffic to the outside world for the instances.</li>
 </ul>
@@ -1324,13 +1324,13 @@ The following table describes the admin network type address range default UI el
 <tr style="background-color: white; color: black;">
 <td><b>Node Types</b> and address ranges </td>
 <td> 
-<b>admin:</b> IP range for the HP Cloud OS Administration node &mdash; 192.168.124.10 to 192.168.124.11 <br /> <br />
+<b>admin:</b> IP range for the HP Cloud OS Administration node &#8212; 192.168.124.10 to 192.168.124.11 <br /> <br />
 
-<b>dhcp:</b> Temporary IP address assignment for the PXE booted nodes &mdash; 192.168.124.21 to 192.168.124.80  <br /> <br />
+<b>dhcp:</b> Temporary IP address assignment for the PXE booted nodes &#8212; 192.168.124.21 to 192.168.124.80  <br /> <br />
 
-<b>host:</b> Permanent admin network IP address assignment for the participating nodes &mdash; 192.168.124.81 to 192.168.124.160  <br /> <br />
+<b>host:</b> Permanent admin network IP address assignment for the participating nodes &#8212; 192.168.124.81 to 192.168.124.160  <br /> <br />
 
-<b>switch:</b> This is for test purposes only &mdash; 192.168.124.241 to 192.168.124.250 
+<b>switch:</b> This is for test purposes only &#8212; 192.168.124.241 to 192.168.124.250 
 </td>
 </tr>
 
@@ -1520,8 +1520,8 @@ The following table describes the Create Network dialog UI elements:
 <td> <b>Bridge Enabled</b> </td>
 <td> Select True or False.
 <ul>
-<li> <b>False</b> (Recommended) &mdash; Do not add a bridge interface on top of the interface for the corresponding network.
-<li> <b>True</b> &mdash; Add a bridge interface on top of the interface for the corresponding network.
+<li> <b>False</b> (Recommended) &#8212; Do not add a bridge interface on top of the interface for the corresponding network.
+<li> <b>True</b> &#8212; Add a bridge interface on top of the interface for the corresponding network.
 </ul>
 </td>
 </tr>
@@ -1539,10 +1539,10 @@ The following table describes the Create Network dialog UI elements:
 <td><b>VLAN Enabled</b> </td>
 <td> Select True or False. 
 <ul>
-<li> <b>False</b> (Recommended) &mdash; Keep this default value if the networks  (particularly os_sdn and public) co-exist on 
+<li> <b>False</b> (Recommended) &#8212; Keep this default value if the networks  (particularly os_sdn and public) co-exist on 
 <b>separate</b> physical interfaces; if so, VLAN Enabled must be set to False. This means that the Network Mode will be set to <b>dual</b> by default on the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </li>
-<li> <b>True</b> &mdash; Set to True if the networks (particularly os_sdn and public) co-exist on the same physical network; 
+<li> <b>True</b> &#8212; Set to True if the networks (particularly os_sdn and public) co-exist on the same physical network; 
 if so, VLAN Enabled must be set to True. This means that the Network Mode will be set to <b>single</b> by default on the 
 <a href="/cloudos/manage/operational-dashboard/environment-tab/#confirm-complete-install-dialog">Confirm Complete Install Dialog</a>. </li>
 </ul>

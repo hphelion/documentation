@@ -64,9 +64,9 @@ resources, as well as the ability to provision a composite topology described by
             
 For details about the user interface dialogs, click Help from the top banner of the dashboards, or see on this site:
 
-* <a href="/cloudos/manage/operational-dashboard/">HP Cloud OS Operational Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
+* <a href="/cloudos/manage/operational-dashboard/">HP Cloud OS Operational Dashboard Help</a> &#8212; This document is a copy of the Help that's available in the HP Cloud OS Operational Dashboard.  
 
-* <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a> &mdash; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
+* <a href="/cloudos/manage/administration-dashboard/">HP Cloud OS Administration Dashboard Help</a> &#8212; This document is a copy of the Help that's available in the HP Cloud OS Administration Dashboard. 
          
 To submit REST API calls, you will need your OpenStack Keystone v2 authentication credentials so you can generate security tokens. 
 The steps are described in the [API Security Tokens](#api-security-tokens) section of this topic.
@@ -265,7 +265,7 @@ You can include the returned token's value on the <code> ?/token=&lt;value> </co
 
 ## Next Step
 
-We are updating our API use case documentation &mdash; coming soon.
+We are updating our API use case documentation &#8212; coming soon.
 
 <!-- Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1). --> 
 

@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/compute/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&reg; Community TripleO Service Overview#
+# HP Helion OpenStack&#174; Community TripleO Service Overview#
 
 TripleO (OpenStack-On-OpenStack) is a service that handles installing, upgrading and operating OpenStack clouds using OpenStack cloud facilities as the foundation. TripleO builds on the [Compute](/helion/community/services/compute/overview/), [Networking](/helion/community/services/networking/overview/) and [Orchestration](/helion/community/services/orchestration/overview/) services to automate fleet management for as few as two machines or a full data center.
 

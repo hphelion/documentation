@@ -109,11 +109,11 @@ To edit the admin address ranges:
 3. Review the default configurations for each Node Type, IPV4 Start Addr, IPV4 End Addr.
 Following are the default Node Types and address ranges:
 
- a. **admin**: IP range for the Admin Node &mdash; 192.168.124.10 to 192.168.124.11
+ a. **admin**: IP range for the Admin Node &#8212; 192.168.124.10 to 192.168.124.11
 
- b. **dhcp**: Temporary IP address assignment for the PXE booted nodes &mdash; 192.168.124.21 to 192.168.124.80
+ b. **dhcp**: Temporary IP address assignment for the PXE booted nodes &#8212; 192.168.124.21 to 192.168.124.80
 
- c. **host**: Permanent admin network IP address assignment for the participating nodes &mdash; 192.168.124.81 to 192.168.124.160
+ c. **host**: Permanent admin network IP address assignment for the participating nodes &#8212; 192.168.124.81 to 192.168.124.160
 
  d. **switch**: This is for test purposes only.
 

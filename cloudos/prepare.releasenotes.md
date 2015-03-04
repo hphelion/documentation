@@ -30,11 +30,11 @@ This topic provides information about the HP Cloud OS 1.20 Sandbox release.
 
 ##New and Updated in HP Cloud OS 1.20## {#120features}
 
-**Simplified service delivery** &mdash; A simplified administration tool for the installation and management of an OpenStack infrastructure as a 
+**Simplified service delivery** &#8212; A simplified administration tool for the installation and management of an OpenStack infrastructure as a 
 service cloud provides easier installation and configuration processes. The tool reduces manually intensive operational processes from hundreds 
 of steps over multiple packages - to a single, simple, automated process.
 
-**Enhanced lifecycle management with model-based infrastructure <br />topology** &mdash; Streamline IT operations and lower operational risk and costs 
+**Enhanced lifecycle management with model-based infrastructure <br />topology** &#8212; Streamline IT operations and lower operational risk and costs 
 by using automated deployment of applications on heterogeneous, hybrid cloud service environments:
 
 * **Graffiti**:  Enables you to find cloud resources in a searchable directory based on their capabilities
@@ -42,7 +42,7 @@ by using automated deployment of applications on heterogeneous, hybrid cloud ser
 * **Focus**:  Enables you to manage lifecycles of multi-tier infrastructure topology models
 * **Swift**:  Allows you to store large amounts of data efficiently, safely, and cheaply
 
-**Important enhancements and updates** &mdash; This release of the HP Cloud OS software provides the following new and improved functionality:
+**Important enhancements and updates** &#8212; This release of the HP Cloud OS software provides the following new and improved functionality:
 
 * Lifecycle actions are now available against the running VMs
 * New topology designer with deployment profiles

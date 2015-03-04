@@ -232,7 +232,7 @@ Based on the OpenStack Nova project, the HP Helion Public Cloud Compute service 
 <p>
 <b>&#42;&#42;</b>New sizes/configurations</p>
 
-**Note:** An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&reg; 2012 Xeon&reg; 2.60 GHz CPU.
+**Note:** An HP Helion Public Cloud Compute Unit (CCU) is a unit of CPU capacity that describes the amount of compute power that a virtual core has available to it. Thus 6.5 CCUs are roughly equivalent to the minimum power of one logical core (a hardware hyper-thread) of an Intel&#174; 2012 Xeon&#174; 2.60 GHz CPU.
 
 ## Region-wide resources ## {#AZ}
 Each region--US East and US West--consists of three physically isolated availability zones in which you can create instances and/or block storage volumes. You can use resources spread across multiple availability zones to create an application with high availability.  When you work in a region, the following objects are region wide:
