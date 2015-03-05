@@ -137,7 +137,8 @@ publishes status updates for it. Once the provisioning is finished, the job is m
 <li> application_topology </li>
 <li> infrastructure_topology </li>
 <li> platform_topology </li>
-</ul></td>
+</ul>
+</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
