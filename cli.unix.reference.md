@@ -664,7 +664,7 @@ Add the container `my_cdn_container` to the CDN in the  availability zone `regio
 Get the value of an attribute of a CDN container.
 
 ###Syntax
-`hpcloud cdn:containers:get <name> <attribute>`
+`hpcloud cdn:containers:get &#60;name> &#60;attribute>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -705,7 +705,7 @@ Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
 Get the location of a container on the CDN.
 
 ###Syntax
-`hpcloud cdn:containers:location <name>`
+`hpcloud cdn:containers:location &#60;name>`
 
 ###Options
 **-s, --ssl**
@@ -774,7 +774,7 @@ Delete the container `my_cdn_container for the availability zone `region-a.geo-1
 Set attributes on a CDN container.
 
 ###Syntax
-`hpcloud cdn:containers:set <name> <attribute> <value>`
+`hpcloud cdn:containers:set &#60;name> &#60;attribute> &#60;value>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1100,7 +1100,7 @@ List dns domain `test.com.`:
 Add a DNS domain.
 
 ###Syntax
-`hpcloud dns:add <name> <email>`
+`hpcloud dns:add &#60;name> &#60;email>`
 
 ###Options
 **-t, --ttl=TTL**
@@ -1136,7 +1136,7 @@ Create a new DNS domain `mydomain.com` with email address `email@example.com` an
 List the records associated with the DNS domain.
 
 ###Syntax
-`hpcloud dns:records <name_or_id>`
+`hpcloud dns:records &#60;name_or_id>`
 
 ###Options
 **-c, --columns=COLUMNS**
@@ -1173,7 +1173,7 @@ List records for DNS domain `test.com`:
 Add a DNS record.
 
 ###Syntax
-`hpcloud dns:records:add <domain> <name> <type> <data>`
+`hpcloud dns:records:add &#60;domain> &#60;name> &#60;type> &#60;data>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1200,7 +1200,7 @@ Create a DNS record for domain `mydomain.com` and `A` record for `www.mydomain.c
 Remove a DNS record.
 
 ###Syntax
-`hpcloud dns:records:remove <domain> <name ...>`
+`hpcloud dns:records:remove &#60;domain> &#60;name ...>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1227,7 +1227,7 @@ Remove record `www.mydomain.com` from the domain `mydomain.com`.
 Update a DNS record.
 
 ###Syntax
-`hpcloud dns:records:update <domain> <name> <type> <data>`
+`hpcloud dns:records:update &#60;domain> &#60;name> &#60;type> &#60;data>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1291,7 +1291,7 @@ Delete the DNS domain `my-dns` for availability zone `az-2.region-a.geo-1`:
 List the servers associated with the DNS domain.
 
 ###Syntax
-`hpcloud dns:servers <name_or_id>`
+`hpcloud dns:servers &#60;name_or_id>`
 
 ###Options
 **-c, --columns=COLUMNS**
@@ -1328,7 +1328,7 @@ List servers for the DNS domain `test.com.`:
 Update a DNS domain.
 
 ###Syntax
-`hpcloud dns:update <name>`
+`hpcloud dns:update &#60;name>`
 
 ###Options
 **-e, --email=EMAIL**
@@ -1489,7 +1489,7 @@ List images for availability zone `az-2.region-a.geo-1`:
 Add an image from an existing server.
 
 ###Syntax
-`hpcloud images:add <name> <server_name>`
+`hpcloud images:add &#60;name> &#60;server_name>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1570,7 +1570,7 @@ List the metadata for image `565394` for availability zone `az-2.region-a.geo-1`
 Add metadata to an image.
 
 ###Syntax
-`hpcloud images:metadata:add <name> <metadata>`
+`hpcloud images:metadata:add &#60;name> &#60;metadata>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -1870,7 +1870,7 @@ Remove 'mykey' and 'spare' from the private key storage
 Display the public keys of a key pair.
 
 ###Syntax
-`hpcloud keypairs:public_key <name>`
+`hpcloud keypairs:public_key &#60;name>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2208,7 +2208,7 @@ List the security groups for availability zone `az-2.region-a.geo-1`:
 Add a security group.
 
 ###Syntax
-`hpcloud securitygroups:add <name> <description>`
+`hpcloud securitygroups:add &#60;name> &#60;description>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2445,7 +2445,7 @@ List the servers for availability zone `az-2.region-a.geo-1`:
 Add a server.
 
 ###Syntax
-`hpcloud servers:add <name> <flavor> -k, --key-name=KEY_NAME`
+`hpcloud servers:add &#60;name> &#60;flavor> -k, --key-name=KEY_NAME`
 
 ###Options
 **-k, --key-name=KEY_NAME**
@@ -2546,7 +2546,7 @@ Display the password of the winserver:
 List the metadata for a server.
 
 ###Syntax
-`hpcloud servers:metadata <name_or_id>`
+`hpcloud servers:metadata &#60;name_or_id>`
 
 ###Options
 **-c, --columns=COLUMNS**
@@ -2585,7 +2585,7 @@ List server metadata for availability zone `az-2region-a.geo-1`:
 Add metadata to a server.
 
 ###Syntax
-`hpcloud servers:metadata:add <name_or_id> <metadata>`
+`hpcloud servers:metadata:add &#60;name_or_id> &#60;metadata>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2614,7 +2614,7 @@ Add the specified metadata to the server (if the metadata exists, it is updated)
 Remove metadata from a server.
 
 ###Syntax
-`hpcloud servers:metadata:remove <name> <metadata_key> ...`
+`hpcloud servers:metadata:remove &#60;name> &#60;metadata_key> ...`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -2882,7 +2882,7 @@ List the detail information about snapshot `testsnap`:
 Create a snapshot.
 
 ###Syntax
-`hpcloud snapshots:add <name> <volume>`
+`hpcloud snapshots:add &#60;name> &#60;volume>`
 
 ###Options
 **-d, --description=DESCRIPTION**
@@ -2919,7 +2919,7 @@ Creates the new snapshot 'my_snapshot' from the specified volume with the descri
 Remove a snapshot or snapshots (specified by name or ID).
 
 ###Syntax
-`hpcloud snapshots:remove <name_or_id> [name_or_id ...]`
+`hpcloud snapshots:remove &#60;name_or_id> [name_or_id ...]`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -3045,7 +3045,7 @@ List the details for volume `testvol`:
 Add a volume.
 
 ###Syntax
-`hpcloud volumes:add <name> [size]`
+`hpcloud volumes:add &#60;name> [size]`
 
 ###Options
 **-d, --description=DESCRIPTION**
@@ -3885,7 +3885,7 @@ Add the container `my_cdn_container` to the CDN in the  availability zone `regio
 Get the value of an attribute of a CDN container.
 
 ###Syntax
-`hpcloud cdn:containers:get <name> <attribute>`
+`hpcloud cdn:containers:get &#60;name> &#60;attribute>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -3926,7 +3926,7 @@ Get the value of the attribute `X-Ttl` for availability zone `regioni-a.geo`:
 Get the location of a container on the CDN.
 
 ###Syntax
-`hpcloud cdn:containers:location <name>`
+`hpcloud cdn:containers:location &#60;name>`
 
 ###Options
 **-s, --ssl**
@@ -3995,7 +3995,7 @@ Delete the container `my_cdn_container for the availability zone `region-a.geo-1
 Set attributes on a CDN container.
 
 ###Syntax
-`hpcloud cdn:containers:set <name> <attribute> <value>`
+`hpcloud cdn:containers:set &#60;name> &#60;attribute> &#60;value>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -4321,7 +4321,7 @@ List dns domain `test.com.`:
 Add a DNS domain.
 
 ###Syntax
-`hpcloud dns:add <name> <email>`
+`hpcloud dns:add &#60;name> &#60;email>`
 
 ###Options
 **-t, --ttl=TTL**
@@ -4357,7 +4357,7 @@ Create a new DNS domain `mydomain.com` with email address `email@example.com` an
 List the records associated with the DNS domain.
 
 ###Syntax
-`hpcloud dns:records <name_or_id>`
+`hpcloud dns:records &#60;name_or_id>`
 
 ###Options
 **-c, --columns=COLUMNS**
@@ -4394,7 +4394,7 @@ List records for DNS domain `test.com`:
 Add a DNS record.
 
 ###Syntax
-`hpcloud dns:records:add <domain> <name> <type> <data>`
+`hpcloud dns:records:add &#60;domain> &#60;name> &#60;type> &#60;data>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -4421,7 +4421,7 @@ Create a DNS record for domain `mydomain.com` and `A` record for `www.mydomain.c
 Remove a DNS record.
 
 ###Syntax
-`hpcloud dns:records:remove <domain> <name ...>`
+`hpcloud dns:records:remove &#60;domain> &#60;name ...>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -4448,7 +4448,7 @@ Remove record `www.mydomain.com` from the domain `mydomain.com`.
 Update a DNS record.
 
 ###Syntax
-`hpcloud dns:records:update <domain> <name> <type> <data>`
+`hpcloud dns:records:update &#60;domain> &#60;name> &#60;type> &#60;data>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -4512,7 +4512,7 @@ Delete the DNS domain `my-dns` for availability zone `az-2.region-a.geo-1`:
 List the servers associated with the DNS domain.
 
 ###Syntax
-`hpcloud dns:servers <name_or_id>`
+`hpcloud dns:servers &#60;name_or_id>`
 
 ###Options
 **-c, --columns=COLUMNS**
@@ -4549,7 +4549,7 @@ List servers for the DNS domain `test.com.`:
 Update a DNS domain.
 
 ###Syntax
-`hpcloud dns:update <name>`
+`hpcloud dns:update &#60;name>`
 
 ###Options
 **-e, --email=EMAIL**
@@ -4710,7 +4710,7 @@ List images for availability zone `az-2.region-a.geo-1`:
 Add an image from an existing server.
 
 ###Syntax
-`hpcloud images:add <name> <server_name>`
+`hpcloud images:add &#60;name> &#60;server_name>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -4791,7 +4791,7 @@ List the metadata for image `565394` for availability zone `az-2.region-a.geo-1`
 Add metadata to an image.
 
 ###Syntax
-`hpcloud images:metadata:add <name> <metadata>`
+`hpcloud images:metadata:add &#60;name> &#60;metadata>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -5091,7 +5091,7 @@ Remove 'mykey' and 'spare' from the private key storage
 Display the public keys of a key pair.
 
 ###Syntax
-`hpcloud keypairs:public_key <name>`
+`hpcloud keypairs:public_key &#60;name>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -5429,7 +5429,7 @@ List the security groups for availability zone `az-2.region-a.geo-1`:
 Add a security group.
 
 ###Syntax
-`hpcloud securitygroups:add <name> <description>`
+`hpcloud securitygroups:add &#60;name> &#60;description>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -5666,7 +5666,7 @@ List the servers for availability zone `az-2.region-a.geo-1`:
 Add a server.
 
 ###Syntax
-`hpcloud servers:add <name> <flavor> -k, --key-name=KEY_NAME`
+`hpcloud servers:add &#60;name> &#60;flavor> -k, --key-name=KEY_NAME`
 
 ###Options
 **-k, --key-name=KEY_NAME**
@@ -5767,7 +5767,7 @@ Display the password of the winserver:
 List the metadata for a server.
 
 ###Syntax
-`hpcloud servers:metadata <name_or_id>`
+`hpcloud servers:metadata &#60;name_or_id>`
 
 ###Options
 **-c, --columns=COLUMNS**
@@ -5806,7 +5806,7 @@ List server metadata for availability zone `az-2region-a.geo-1`:
 Add metadata to a server.
 
 ###Syntax
-`hpcloud servers:metadata:add <name_or_id> <metadata>`
+`hpcloud servers:metadata:add &#60;name_or_id> &#60;metadata>`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -5835,7 +5835,7 @@ Add the specified metadata to the server (if the metadata exists, it is updated)
 Remove metadata from a server.
 
 ###Syntax
-`hpcloud servers:metadata:remove <name> <metadata_key> ...`
+`hpcloud servers:metadata:remove &#60;name> &#60;metadata_key> ...`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -6103,7 +6103,7 @@ List the detail information about snapshot `testsnap`:
 Create a snapshot.
 
 ###Syntax
-`hpcloud snapshots:add <name> <volume>`
+`hpcloud snapshots:add &#60;name> &#60;volume>`
 
 ###Options
 **-d, --description=DESCRIPTION**
@@ -6140,7 +6140,7 @@ Creates the new snapshot 'my_snapshot' from the specified volume with the descri
 Remove a snapshot or snapshots (specified by name or ID).
 
 ###Syntax
-`hpcloud snapshots:remove <name_or_id> [name_or_id ...]`
+`hpcloud snapshots:remove &#60;name_or_id> [name_or_id ...]`
 
 ###Options
 **-z, --availability-zone=AVAILABILITY_ZONE**
@@ -6266,7 +6266,7 @@ List the details for volume `testvol`:
 Add a volume.
 
 ###Syntax
-`hpcloud volumes:add <name> [size]`
+`hpcloud volumes:add &#60;name> [size]`
 
 ###Options
 **-d, --description=DESCRIPTION**
