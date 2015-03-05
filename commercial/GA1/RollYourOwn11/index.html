@@ -3599,7 +3599,7 @@ chmod 0600 $/root/tripleo/overcloud-env.json</p>
                             <p class="codebox"><span style="font-size: 10pt;">ssh root@&lt;seed_VM_IP_address&gt;</span>
                             </p>
                             <p> It might take a few moments for the seed VM to become reachable.</p>
-                            <p>6. When prompted for host authentication, type yes to allow the SSH connection to proceed. The prompt will change to root@hLinux. Make sure the information in the baremetal.csv configuration file file is correct and upload the file to /root.</p>
+                            <p>9. When prompted for host authentication, type yes to allow the SSH connection to proceed. The prompt will change to root@hLinux. Make sure the information in the baremetal.csv configuration file file is correct and upload the file to /root.</p>
                            
                             <p>a. Copy the tripleo-overcloud-password file to the /root/tripleo folder.</p>
                             <p class="codebox">scp tripleo-overcloud-passwords root@192.0.2.1:/root/tripleo/tripleo-overcloud-passwords</p>
@@ -3611,14 +3611,14 @@ chmod 0600 $/root/tripleo/overcloud-env.json</p>
 For example: root@hLinux:# /usr/bin/ipmitool -U admin -P password -H 10.20.50.25 -I lanplus power status
 
 Chassis Power is on.</pre></div>
-                            <p>8. The system will power off your computers. If you wish, you can optionally use the IPMItool to manually power off each baremetal system specified in your baremetal.csv file before proceeding with the installation.</p>
+                            <p>10. The system will power off your computers. If you wish, you can optionally use the IPMItool to manually power off each baremetal system specified in your baremetal.csv file before proceeding with the installation.</p>
                             <p><b>IMPORTANT</b>: Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.</p>
-                            <p>9. Load the kvm-custom-ips.json file for the undercloud and overcloud nodes using the source command. The source command executes the content of the file passed as argument, in the current shell.</p>
+                            <p>11. Load the kvm-custom-ips.json file for the undercloud and overcloud nodes using the source command. The source command executes the content of the file passed as argument, in the current shell.</p>
                             <p class="codebox">source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json</p>
-                            <p>10. Install and configure the undercloud and overcloud by running the following command from /root. This step creates a log file for the installation process which could be useful for debugging.</p>
+                            <p>12. Install and configure the undercloud and overcloud by running the following command from /root. This step creates a log file for the installation process which could be useful for debugging.</p>
                             <p class="codebox">bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |&amp; tee cloud_install.log</p>
                             <p>Output messages will indicate when the undercloud and overcloud controllers become active, services are created and configured, and other aspects of the installation are executed.</p>
-                            <p>11. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.</p>
+                            <p>13. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.</p>
                             <p>If your installation is successful, a message similar to the following is displayed:</p>
                             <p class="codebox"><span style="font-size: 10pt;">"HP - completed - Tue Oct 23 16:20:20 UTC 2014"</span>
                             </p>
