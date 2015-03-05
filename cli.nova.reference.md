@@ -19,7 +19,7 @@ provides you the usage, description, and option information for the [`volume-cre
 ##add-floating-ip## {#add-floating-ip}
 Add a floating IP address to a server
 ###Syntax
-`nova add-floating-ip <server> <address>`
+`nova add-floating-ip &#60;server> &#60;address>`
 
 **server**
 :  Name or ID of a server
@@ -35,7 +35,7 @@ Add the floating IP address 15.185.105.97 to instance ID 694541:
 ##add-secgroup## {#add-secgroup}
 Adds a security group to an instance
 ###Syntax
-`nova add-secgroup <server> <secgroup>`
+`nova add-secgroup &#60;server> &#60;secgroup>`
 
 **server**
 :  Name or ID of a server
@@ -52,7 +52,7 @@ Add the security group `default' to instance ID 694541:
 ##backup-create## {#backup-create}
 Creates a backup of a Volume.
 ###Syntax
-`nova backup-create [--container <container>] [--display_name <display_name>] [--display_description <display_description>] <volume_id>`
+`nova backup-create [--container &#60;container>] [--display_name &#60;display_name>] [--display_description &#60;display_description>] &#60;volume_id>`
 
 **container**
 : Name of the container (default is `hpvolumebackups`).
@@ -76,7 +76,7 @@ This example creates a backup of volume `68453` to a directory in the container 
 ##backup-delete## {#backup-delete}
 Remove a backup.
 ###Syntax
-`nova backup-delete <backup_id>`
+`nova backup-delete &#60;backup_id>`
 
 **backup_id**
 : ID of the volume to delete.
@@ -114,7 +114,7 @@ Display all the created backups:
 ##backup-restore## {#backup-restore}
 Restore a backup
 ###Syntax
-`nova backup-restore [--volume_id <volume_id>] <backup_id>`
+`nova backup-restore [--volume_id &#60;volume_id>] &#60;backup_id>`
 
 **backup_id**
 :  ID of the backup  to restore.
@@ -133,7 +133,7 @@ Restore backup ID `37` to volume ID `68495`:
 ##backup-show## {#backup-show}
 Show details about a backup.
 ###Syntax
-`nova backup-show <backup_id>`
+`nova backup-show &#60;backup_id>`
 
 **backup_id**
 :  ID of the backup  to display.
@@ -162,7 +162,7 @@ List the details about backup `37`:
 ##boot## {#boot}
 Boot a new server
 ###Syntax
-`nova boot [--flavor <flavor>] [--image <image>] [--meta <key=value>] [--file <dst-path=src-path>] [--key_name <key_name>] [--user_data <user-data>] [--security_groups <security_groups>] [--block_device_mapping <dev_name=mapping>] [--nic <net-id=net-uuid,v4-fixed-ip=ip-addr>] [--config-drive <value>] <backup>`
+`nova boot [--flavor &#60;flavor>] [--image &#60;image>] [--meta &#60;key=value>] [--file &#60;dst-path=src-path>] [--key_name &#60;key_name>] [--user_data &#60;user-data>] [--security_groups &#60;security_groups>] [--block_device_mapping &#60;dev_name=mapping>] [--nic &#60;net-id=net-uuid,v4-fixed-ip=ip-addr>] [--config-drive &#60;value>] &#60;backup>`
 
 **backup**
 :  Name for the new server.
@@ -177,7 +177,7 @@ Boot a new server
 : Record arbitrary key/value metadata. May be give multiple times.
 
 **file**
-:  Store arbitrary files from <src-path> locally to <dst-path> on the new server. You may store up to 5 files.
+:  Store arbitrary files from &#60;src-path> locally to &#60;dst-path> on the new server. You may store up to 5 files.
 
 **key_name**
 :  Key name of keypair that should be created earlier with the command keypair-add.
@@ -189,7 +189,7 @@ Boot a new server
 :  Comma-separated list of security group names.
                         
 **block_device_mapping**
-:  Block device mapping in the format <dev_name=<id>:<type>:<size(GB)>:<delete_on_terminate>.
+:  Block device mapping in the format &#60;dev_name=&#60;id>:&#60;type>:&#60;size(GB)>:&#60;delete_on_terminate>.
 
 **nic**
 :  Create a NIC on the server. Specify option multiple times to create multiple NICs. net-id: attach NIC to network with this UUID (optional) v4-fixed-ip: IPv4 fixed address for NIC (optional).
@@ -350,7 +350,7 @@ Get a VNC console of type `novnc` for the server with the ID 122:
 ##image-create## {#image-create}
 Create a new image by taking a snapshot of a running server.
 ###Syntax
-`nova image-create <server> <name>`
+`nova image-create &#60;server> &#60;name>`
 
 **server**
 :  Name or ID of server.
@@ -466,7 +466,7 @@ Display details of your image including all set metadata values:
 ##keypair-add## {#keypair-add}
 Create a new key pair for use with instances
 ###Syntax
-`nova keypair-add [--pub_key <pub-key>] <name>`
+`nova keypair-add [--pub_key &#60;pub-key>] &#60;name>`
 
 **name**
 :  Name of the key pair.
@@ -502,7 +502,7 @@ Create a new key pair to use with instances, using the `publickeyfile.pub` publi
 ##keypair-delete## {#keypair-delete}
 Delete a key pair (designatedby its ID).
 ###Syntax
-`nova keypair-delete <name>`
+`nova keypair-delete &#60;name>`
 
 **name**
 :  Name of the key pair.
@@ -531,7 +531,7 @@ Display the key pairs:
 ##list## {#list}
 List active servers.
 ###Syntax
-`nova list [--reservation_id <reservation_id>] [--recurse_zones <0|1>] [--ip <ip_regexp>] [--ip6 <ip6_regexp>] [--name <name_regexp>] [--instance_name <name_regexp>] [--status <status>] [--flavor <flavor>] [--image <image>] [--host <hostname>]`
+`nova list [--reservation_id &#60;reservation_id>] [--recurse_zones &#60;0|1>] [--ip &#60;ip_regexp>] [--ip6 &#60;ip6_regexp>] [--name &#60;name_regexp>] [--instance_name &#60;name_regexp>] [--status &#60;status>] [--flavor &#60;flavor>] [--image &#60;image>] [--host &#60;hostname>]`
 
 **reservation_id**
 :  Only return instances that match reservation_id.
@@ -688,7 +688,7 @@ Remove security group default from server `703829`:
 ##rename## {#rename}
 Rename a server.
 ###Syntax
-`nova rename <server> <name>`
+`nova rename &#60;server> &#60;name>`
 
 **server**
 :  The current name of the server you want to change.
@@ -791,7 +791,7 @@ Add a rule to group `pgroup`:
 ##secgroup-create## {#secgroup-create}
 Create a security group.
 ###Syntax
-`nova secgroup-create <name> <description>`
+`nova secgroup-create &#60;name> &#60;description>`
 
 **name**
 :  Name of the security group.
