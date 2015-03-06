@@ -112,7 +112,7 @@ Which produces output similar to the following:
 
 3. Assuming 16.103.148.249 is the malicious IP address: for each ***qrouter***, run the command:
 
-        ip netns exec qrouter-0fa45f02-6e89-4707-89f3-0f7c31cf03bf iptables -L -v -t nat | grep &ldquo;16.103.148.249&rdquo;
+        ip netns exec qrouter-0fa45f02-6e89-4707-89f3-0f7c31cf03bf iptables -L -v -t nat | grep &#8220;16.103.148.249&#8221;
 
     Producing output similar to the following:
 

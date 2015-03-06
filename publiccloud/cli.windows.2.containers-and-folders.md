@@ -669,7 +669,7 @@ the response of the "ls" command.
     <container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <FolderNames />
       <object>
-        <name>anothertest.txt</name>
+        &#60;name>anothertest.txt</name>
         <content_type>text/plain</content_type>
         <ObjectType>File</ObjectType>
         <StorageObjectType>File</StorageObjectType>

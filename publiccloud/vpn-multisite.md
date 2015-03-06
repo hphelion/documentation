@@ -78,7 +78,7 @@ For simplicity, assume that all routers you will connect use the IKE and IPsec p
 
 	Configure the IKE SA as follows
 	- Authentication Method    : Pre-Shared Key
-	- Pre-Shared Key           : &ldquo;abcd&rdquo;  
+	- Pre-Shared Key           : &#8220;abcd&#8221; 
 	- Authentication Algorithm : sha1
 	- Encryption Algorithm     : aes-128-cbc
 	- Lifetime                 : 28800 seconds
@@ -154,7 +154,7 @@ The *config setup* subsection in the `IPsec.conf` file defines the general confi
 
 Setting to all logs all Pluto-related messages, but control only enables the control related messages.
 
-**Note:** Other strongSwan paramaters and configuration options are not covered here. For detailed information, refer to the [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation)  or the &ldquo; VPN Quick Start Guide.&rdquo; 
+**Note:** Other strongSwan paramaters and configuration options are not covered here. For detailed information, refer to the [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation)  or the &#8220;VPN Quick Start Guide.&#8221;
 
 ####Customize the IPsec.conf file
 Modify the configuration file for your connections.
@@ -352,8 +352,8 @@ The *ipsec.conf* file can hold multiple connection sections. Because we have thr
 
 	#include /var/lib/strongswan/ipsec.secrets.inc
 	10.2.79.21 209.65.244.238 192.168.1.50 : PSK "abcd" 
-	10.2.79.21 209.65.244.239 172.168.2.50 : PSK &ldquo; siteb&rdquo; 
-	10.2.79.21 209.65.244.240 172.168.1.50 : PSK &rldquo; sitec&rdquo; 
+	10.2.79.21 209.65.244.239 172.168.2.50 : PSK &#8220; siteb&#8221;
+	10.2.79.21 209.65.244.240 172.168.1.50 : PSK &#8220; sitec&#8221;
 
 back to the [top](#top)
 
