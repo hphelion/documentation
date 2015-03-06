@@ -1528,7 +1528,7 @@ N/A
 </li>
 <li><p><em>networks</em> (required) - A list of networks to attach the server to. If there is only one network (the default network) the networks parameter may be omitted and the server will be attached to that network. If there are multiple networks available the networks parameter is required. Each network element contains either a <em>uuid</em> parameter giving the uuid of the network (and optionally a <em>fixed_ip</em> giving an address in the network), or a <em>port</em> parameter giving the uuid of a port. If the network uuid is specified the create operation will create a new port on the network. If the port uuid is specified the port must have been previously created using the Network API.</p>
 </li>
-</li>
+
 <li><p><em>password</em> - None - Not supported. </p>
 </li>
 <li><p><em>accessIPv4</em> - None - Not supported</p>
