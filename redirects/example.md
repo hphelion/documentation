@@ -15,6 +15,6 @@ Give your file the same name as the file that you are redirecting to.
 
 Change UNDER REVISION as appropriate for your situation.
 
-Remove the "publish:false" line from the header--it's only here to prevent this example from being built.
+Remove the "publish:false" line from the header; it's only here to prevent this example from being built.
 -->
 

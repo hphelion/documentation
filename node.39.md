@@ -101,7 +101,7 @@ If you are using the nova command line tools or programs that make use of the py
 * Tenant name. This is now the same concept as project id. The tenant name is your email address.
 * Username. This is your email address that you log into the Management Console with.
 * Password. This is the password you use to log onto the Management Console.
-* Version. You must set this to &ldquo;1.1&rdquo;
+* Version. You must set this to &#8220;1.1&#8221;
 
 Here is an example of using the Nova command:
 
@@ -119,7 +119,7 @@ The Identity Service is compatible with euca2ools and EC2 compatibly for HP Heli
 * EC2-URL - set to:
     * Compute endpoint (from the publicURL field in the Service Catalog)
     * Remove path /v1.1/<tenant-id>
-    * Add path &ldquo;/services/Cloud&rdquo;
+    * Add path &#8220;/services/Cloud&#8220;
 * EC2_ACCESS_KEY - is <tenant_id>:<access_key>
 * EC2-SECRET_KEY - use the secretKey from the response shown above.
 

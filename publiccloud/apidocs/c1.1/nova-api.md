@@ -1528,7 +1528,7 @@ N/A
 </li>
 <li><p><em>networks</em> (required) - A list of networks to attach the server to. If there is only one network (the default network) the networks parameter may be omitted and the server will be attached to that network. If there are multiple networks available the networks parameter is required. Each network element contains either a <em>uuid</em> parameter giving the uuid of the network (and optionally a <em>fixed_ip</em> giving an address in the network), or a <em>port</em> parameter giving the uuid of a port. If the network uuid is specified the create operation will create a new port on the network. If the port uuid is specified the port must have been previously created using the Network API.</p>
 </li>
-</li>
+
 <li><p><em>password</em> - None - Not supported. </p>
 </li>
 <li><p><em>accessIPv4</em> - None - Not supported</p>
@@ -1975,7 +1975,7 @@ JSON
 XML
 
     <server>
-        <name>{name}</name>
+        &#60;name>{name}</name>
     </server>
 
 **Success Response**
@@ -5760,7 +5760,7 @@ XML
                 <public_key>
                     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRhFDIz1RJDgUW2tTRTZpJpbJyQbrUy586balui6Hj3g5I0Qogw42SRXr4EpM8S26M28OsfI3nfxPXQnJz41oUxutBrxaOo0wySinWE7imaDL7i4YE7pj8X3tPTDNzmmPI/VWheS97GwZcTdl3sI/wy4Fm/DOqU/DhpxmgfhKyOuhI65dNRglJN1RqQ6jc8i2egqAU5ZvDL1D9lBYjsKwwFtQXRU80DncbPdVtAITeR9X4CGsHKqTSAMbELfa4NZyX0y3AgYvJq9DpK1ySc5Y0f+iTuqvQvdsB69uTB8/n24ThV9GpiguashYlrWKcBKIxNcpEdg+Tla0zOPVro16x roland.hochmuth@hp.com
                 </public_key>
-                <name>
+                &#60;name>
                     hochmuth.pub
                 </name>
                 <fingerprint>
@@ -5773,7 +5773,7 @@ XML
                 <public_key>
                     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDRhFDIz1RJDgUW2tTRTZpJpbJyQbrUy586balui6Hj3g5I0Qogw42SRXr4EpM8S26M28OsfI3nfxPXQnJz41oUxutBrxaOo0wySinWE7imaDL7i4YE7pj8X3tPTDNzmmPI/VWheS97GwZcTdl3sI/wy4Fm/DOqU/DhpxmgfhKyOuhI65dNRglJN1RqQ6jc8i2egqAU5ZvDL1D9lBYjsKwwFtQXRU80DncbPdVtAITeR9X4CGsHKqTSAMbELfa4NZyX0y3AgYvJq9DpK1ySc5Y0f+iTuqvQvdsB69uTB8/n24ThV9GpiguashYlrWKcBKIxNcpEdg+Tla0zOPVro16x roland.hochmuth@hp.com
                 </public_key>
-                <name>
+                &#60;name>
                     key.pub
                 </name>
                 <fingerprint>
@@ -5786,7 +5786,7 @@ XML
                 <public_key>
                     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQChJO5vnbzIRU45LFdm5ohdFtIDQo1jPB1xSnWu2vJtyw5wGFjoclpuFLstPMRDixloNTh36ff3XnW6Nb4CTpm5Vwz0V6Im2q56vTbS246Lw0+3fDSrnmwFkuJ7rqI5AKZkN4zJg/iJdsuJ768K7yVzwMHP/FWy6bUdRZm5ETjM2w== 
                 </public_key>
-                <name>
+                &#60;name>
                     keypair-1
                 </name>
                 <fingerprint>
@@ -5799,7 +5799,7 @@ XML
                 <public_key>
                     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDZcOCJGRF2REub4+j5Y6LnF7Lk4xyvpdeqAEZYRJe8lC0YOhkF9PxOAQnSgRuAvcmFiff9E1Dt9yLCSlU40zRClLEMwchG4S51y4JI/mbMwppWKYxgPnIa9rHSIccEtZbhBU1MkwpUHeRcZE+b60y5xXiYSmVacmtwDZ89qf6TvQ== 
                 </public_key>
-                <name>
+                &#60;name>
                     keypair-2
                 </name>
                 <fingerprint>
@@ -5848,7 +5848,7 @@ XML
 
     <?xml version="1.0" ?>
     <keypair>
-        <name>keypair-2</name>
+        &#60;name>keypair-2</name>
     </keypair>
 
 **Response Data**
@@ -5893,7 +5893,7 @@ XML
         <user_id>
             13311562627589
         </user_id>
-        <name>
+        &#60;name>
             keypair-2
         </name>
         <fingerprint>
@@ -5943,7 +5943,7 @@ XML
         <public_key>
             ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQChJO5vnbzIRU45LFdm5ohdFtIDQo1jPB1xSnWu2vJtyw5wGFjoclpuFLstPMRDixloNTh36ff3XnW6Nb4CTpm5Vwz0V6Im2q56vTbS246Lw0+3fDSrnmwFkuJ7rqI5AKZkN4zJg/iJdsuJ768K7yVzwMHP/FWy6bUdRZm5ETjM2w== 
         </public_key>
-        <name>
+        &#60;name>
             keypair-1
         </name>
         <fingerprint>
@@ -6330,7 +6330,7 @@ XML
 
     <?xml version="1.0" ?>
     <addSecurityGroup xmlns="http://docs.openstack.org/compute/api/v2">
-        <name>security-group-2</name>
+        &#60;name>security-group-2</name>
     </addSecurityGroup>
 
 **Response Data**
@@ -6374,7 +6374,7 @@ XML
 
     <?xml version="1.0" ?>
     <removeSecurityGroup xmlns="http://docs.openstack.org/compute/api/v2">
-        <name>security-group-2</name>
+        &#60;name>security-group-2</name>
     </removeSecurityGroup>
 
 **Response Data**
@@ -6522,7 +6522,7 @@ XML
                         <tenant_id>
                             36991859863737
                         </tenant_id>
-                        <name>
+                        &#60;name>
                             default
                         </name>
                     </group>

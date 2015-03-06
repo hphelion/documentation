@@ -190,7 +190,7 @@ To list the currently-available servers:
 
 <!--To reset a password for an existing server:
 
-    PS HPCS:\\> Reset-Password -id "3245" -p "testpassword08"-->
+    PS HPCS:\\> Reset-Password -id "3245" -p "testpassword08" -->
 
 To update the name of an existing server:
 

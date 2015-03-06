@@ -204,7 +204,7 @@ Boot two instances&#8212;one to use as the VPN gateway (vm-gateway) and the othe
 
 Example: 
   
-    nova boot --image <image-name> --flavor=100 --key_name=<keypair-name> --security-groups=<security-group-name> --nic port-id=<portid-1> <name of vm>
+    nova boot --image <image-name> --flavor=100 --key_name=<keypair-name> --security-groups=<security-group-name> --nic port-id=<portid-1> &#60;name of vm>
 
 Example:  Create the gateway instance 
 
@@ -467,7 +467,7 @@ back to the [top](#top)
 - [strongSwan User Documentation](http://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation "strongSwan User Documentation")
 - [strongSwan ipsec.conf reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecConf)
 - [strongSwan ipsec.secrets reference](http://wiki.strongswan.org/projects/strongswan/wiki/IpsecSecrets)
-- [strongSwan ipsec.conf: conn <name> reference](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
+- [strongSwan ipsec.conf: conn &#60;name> reference](http://wiki.strongswan.org/projects/strongswan/wiki/ConnSection)
 - [strongSwan net2net-psk/ reference](http://www.strongswan.org/uml/testresults/ikev2/net2net-psk/)
 
 back to the [top](#top)
