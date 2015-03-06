@@ -6754,7 +6754,7 @@ Create a security group rule. Security group rules specify the traffic that is a
 <li><p><em>parent_group_id</em> (required) - xsd:int - ID of the security group to which this rule will belong. </p>
 </li>
 <li><p><em>ip_protocol</em> - Packets using <em>ip_protocol</em> are delivered to the server. If <em>ip_protocol</em> is specified, then <em>from_port</em> and <em>to_port</em> must also be specified. If <em>ip_protocol</em> is omitted, traffic is delivered without regard to protocol. </p>
-<p>Legal values are:<ul>
+<p>Legal values are:</p><ul>
 <li><em>TCP</em> 
 </li>
 <li><em>UDP</em> 
