@@ -729,7 +729,7 @@ padding: 25px;
             </div>
             <div style="margin-top: 3in;   padding-top: 20pt;">
                 <p style="font-weight: normal;font-style: normal;font-size: 10pt">Customized output from: </p>
-                <h1><span style="font-weight: normal;font-style: normal;font-size: 18pt;"><span class="xHPc_Basic_VariablesxHP_Book_Title">Roll Your Own Installation Guide for HP Helion OpenStack&#174 1.0</span></span>
+                <h1><span style="font-weight: normal;font-style: normal;font-size: 18pt;"><span class="xHPc_Basic_VariablesxHP_Book_Title">Roll Your Own Installation Guide for HP Helion OpenStack&#174; 1.1</span></span>
                 </h1>
             </div>
             <div style="margin-top: 2in">
@@ -2199,9 +2199,9 @@ by clicking the button. You must save or print from this location in the page. V
 
 
 After creating the overcloud_keystone_ldap.json file, copy it to the /root/tripleo/hp_passthrough folder:
-											<p class="codebox">scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
+											<p class="codebox">scp overcloud_keystone_ldap.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
 											Place overcloud-env.json file (if created as per <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#keystone-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a>) into the /root/tripleo folder.
-											<p class="codebox">scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json</p>
+											<p class="codebox">scp overcloud-env.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/overcloud-env.json</p>
 
 
 
@@ -3585,13 +3585,13 @@ Note also:
 
 
 <p>5. Copy the overcloud_keystone_ldap.json file you just created to the /root/tripleo/hp_passthrough folder:</p>
-<p class="codebox">scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
+<p class="codebox">scp overcloud_keystone_ldap.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
 
 <p>6. Export content of ldap.json file using the OVERCLOUD_EXTRA_CONFIG environment variable:</p>
 <p class="codebox">export OVERCLOUD_EXTRA_CONFIG=$(cat ldap.json)</p>
 
 <p>7. Place overcloud-env.json file (if created) into /root/tripleo folder.</p>
-<p class="codebox">scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json<br>
+<p class="codebox">scp overcloud-env.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/overcloud-env.json<br>
 chmod 0600 $/root/tripleo/overcloud-env.json</p>
 
 
