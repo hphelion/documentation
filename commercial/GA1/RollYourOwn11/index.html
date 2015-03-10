@@ -835,7 +835,7 @@ padding: 25px;
             <div class="iDoc_textblock">
                 <h2>All-in-one guide to your cloud installation</h2>
                 <div class="iDoc_textblockbody">
-                    <p>Installing HP Helion OpenStack requires proper selection and preparation of your baremetal servers,  installation of a hypervisor, the Ubuntu OS, the seed cloud, the undercloud, and finally the overcloud, with storage configurations, LDAP integration, and so forth following the completed installation.</p>
+                    <p>Installing HP Helion OpenStack requires proper selection and preparation of your baremetal servers,  installation of a hypervisor and host operating system for the seed cloud, the undercloud, and finally the overcloud, with storage configurations, LDAP integration, and so forth following the completed installation.</p>
                 </div>
             </div>
             <div class="iDoc_textblock">
@@ -920,7 +920,7 @@ padding: 25px;
                         <div class="MCDropDownHead_0"><a class="dropDownHotspot_1" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Prepare the network</b></a>
                         </div>
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_0" style="display: none;">
-                            <p>Before installing HP Helion OpenStack, you are responsible for preparing the network for all installations.The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the management network as described in this section.</p>
+                            <p>Before installing HP Helion OpenStack, you are responsible for preparing the network for all installations. The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the management network as described in this section.</p>
                             <p>To ensure a successful installation, you must satisfy these network configuration requirements:</p>
                             <ul>
                                 <li value="1">The machine hosting the seed VM, and all baremetal systems have to be connected to a management network.</li>
@@ -979,10 +979,7 @@ Finish the installation.</p>
 
                             <h3>Disabling SR-IOV</h3>
 
-<p>In the HP Helion OpenStack 1.1 release, there is a performance issue with hardware that is configured to support Single Root I/O Virtualization (SR-IOV) on undercloud nodes.</p>
-
-<p>The problem appears as overcloud performance delays for certain operations, like attempting to SSH into a compute node. The problem is related to DNS performance. The DNS service for the overcloud is the dnsmasq process. Occasionally the openvswitch on the undercloud drops packets which are destined for the dnsmasq tap device. The reason the openvswitch occasionally has problems is due to it seeing the tap device MAC address as a source MAC address on eth0. This source MAC address can flap between the tap device and eth0. </p>
-<p>Properly, the source address should only be the tap device. Because SR-IOV is enabled, a broadcast from the tap device MAC address as source is being sent back by the NIC through eth0. To fix this problem, HP recommends that you disable SR-IOV in the NIC BIOS (not just in the kernel) on undercloud nodes.</p>
+<p>In the HP Helion OpenStack 1.1 release,  we recommend that you disable SR-IOV in the NIC BIOS (not just in the kernel) on undercloud nodes. (See <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/prereqs/">Installation Prerequisites</a> for more infomation.)</p>
 
 
                             <div class="MCDropDown_0">
@@ -1080,7 +1077,7 @@ Finish the installation.</p>
                 <h2 id="iDoc_stepblock">Network preparation in detail (for ESX)</h2>
                 <div class="iDoc_stepbody">
  <div class="MCDropDown_0">
-                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_14" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Configure proxy information </b></a>
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_14" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Configure proxy information (if necessary) </b></a>
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_14" style="display: none;">
                                     <p>Before you begin your installation on the seed VM host, if necessary configure the proxy information for your environment using the following steps:</p>
@@ -1286,7 +1283,7 @@ Note also:
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_11" style="display: none;">
 <div>
 <p>The following is a list of the values that can be specified in the JSON environment variables file.</p>
-<p><b>Important: </b>Some of these values are optional. If a value is optional, enter a value, if needed. If you do not need to specify an optional value, delete the value from the JSON file. Do not set optional variables to empty strings, as this might override a default value with the empty strig.</p>
+<p><b>Important: </b>Some of these values are optional. If a value is optional, enter a value, if needed. If you do not need to specify an optional value, delete the value from the JSON file. Do not set optional variables to empty strings, as this might override a default value with the empty string.</p>
 <p>node_min_disk - Use this variable to set the global minimum acceptable disk size for the installation in GiB.</p>
 <p>The default disk sizes per role are set as defined in the Support Matrix. You should only set this value to override those defaults. You should deploy with at least the recommended disk size in all cases.</p>
 <p>controller_scale - (optional) Specify the number of overcloud controllers.</p>
@@ -1333,9 +1330,9 @@ Note also:
 <div class="codebox">  Do not copy these addresses they are only examples<br>
 <pre>
 "dns": {
-    "seed_server": "19.65.175.150:8080",
-    "undercloud_server": "19.65.175.150:8080",
-    "overcloud_server": "19.65.175.150:8080"
+    "seed_server": "19.65.175.150",
+    "undercloud_server": "19.65.175.150",
+    "overcloud_server": "19.65.175.150"
 }</pre></div>
 <p></p>
 <p><b>NTP</b> </p>
@@ -1377,7 +1374,7 @@ Note also:
 <p></p>
 <p><b>SVC </b></p>
 <p>The following values appear under svc.</p>
-<p>These variables configure the required Service network. See Configure the Service network at the end of this page.</p>
+<p>These variables configure the required Service network.</p>
 <p><b>Note: </b>These variables are optional for the ESX cloud type.</p>
 <pre>interface -
 interface_default_route -
@@ -2567,7 +2564,7 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
                     
 
 <div class="MCDropDown_0">
-                        <div class="MCDropDownHead_0"><a class="dropDownHotspot_1" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_29" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Configure proxy information</b></a>
+                        <div class="MCDropDownHead_0"><a class="dropDownHotspot_1" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_29" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Configure proxy information (if necessary)</b></a>
                         </div>
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_29" style="display: none;">
                             <p>Before you begin your installation on the seed VM host, if your environment uses a proxy server to access the Internet, configure the proxy information using the following steps:</p>
@@ -2593,6 +2590,10 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_23" style="display: none;">
                         	<p>HP Helion OpenStack architecture diagram for KVM network architecture.</p>
                     <p>You are responsible for providing the internal and external customer router and making sure the external, IPMI, and service networks are routed to and from the management network.</p>
+                    <p>Notes</p>
+                                    <ul><li>Distributed Virtual Routing (DVR) is used to route traffic between VMs and outside the cloud. As such, every Compute Node has a connection to the external network.</li>
+                            <li>Access to OpenStack service APIs is from the management network.</li>
+                            <li>The network path for platform service log messages is from the VM, to the service network (installed as a second vNIC), to the Customer Router, to the management network, to the undercloud RabbitMQ, to LogStash.</li></ul>
                             <img src="topology_kvm.png" />
                         </div>
                     </div>
@@ -2607,7 +2608,7 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
 
                             <p>Before you begin, you must download the required HP Helion OpenStack installation package(s):</p>
                             <p>Register and then log in to download the required installation package(s) from the <a href="https://helion.hpwsportal.com/#/Product/{&quot;productId&quot;:&quot;1247&quot;}/Show" target="_blank">HP Helion Product Website</a> <![CDATA[ ]]></p>
-                            <p>HP Helion OpenStack allows you to manage the ESX hypervisor, manage the VMware vCenter, and provision virtual machines. Following are installation instructions for HP Helion OpenStack on a suitably specified and prepared system.</p>
+                            <p>Following are installation instructions for HP Helion OpenStack on a suitably specified and prepared system.</p>
                             <p>1. Log in to your seed cloud host as root:</p>
                             <p class="codebox"><span style="font-size: 10pt;">sudo su -</span>
                             </p>
@@ -2617,12 +2618,6 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
                             </p>
                             <p>This creates and populates a tripleo/ directory within the root directory.</p>
                  
-
-
-
-                            <p>•Distributed Virtual Routing (DVR) is used to route traffic between VMs and outside the cloud. As such, every Compute Node has a connection to the external network.</p>
-                            <p>•Access to OpenStack service APIs is from the management network.</p>
-                            <p>•The network path for platform service log messages is from the VM, to the service network (installed as a second vNIC), to the Customer Router, to the management network, to the undercloud RabbitMQ, to LogStash.</p>
                         </div>
                     </div>
                     <div MadCap:conditions="xHPc_iDoc_Conditions.KVM">
@@ -2631,7 +2626,7 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
                             </div>
                             <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_25" style="display: none;">
                            <p>The following is a list of the values that can be specified in the JSON environment variables file.</p>
-<p><b>Important: </b>Some of these values are optional. If a value is optional, enter a value, if needed. If you do not need to specify an optional value, delete the value from the JSON file. Do not set optional variables to empty strings, as this might override a default value with the empty strig.</p>
+<p><b>Important: </b>Some of these values are optional. If a value is optional, enter a value, if needed. If you do not need to specify an optional value, delete the value from the JSON file. Do not set optional variables to empty strings, as this might override a default value with the empty string.</p>
 <p>node_min_disk - Use this variable to set the global minimum acceptable disk size for the installation in GiB.</p>
 <p>The default disk sizes per role are set as defined in the Support Matrix. You should only set this value to override those defaults. You should deploy with at least the recommended disk size in all cases.</p>
 <p>controller_scale - (optional) Specify the number of overcloud controllers.</p>
@@ -2678,9 +2673,9 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
 <div class="codebox">  Do not copy these addresses they are only examples<br>
 <pre>
 "dns": {
-    "seed_server": "19.65.175.150:8080",
-    "undercloud_server": "19.65.175.150:8080",
-    "overcloud_server": "19.65.175.150:8080",
+    "seed_server": "19.65.175.150",
+    "undercloud_server": "19.65.175.150",
+    "overcloud_server": "19.65.175.150",
 }</pre></div>
 <p></p>
 <p><b>NTP</b> </p>
@@ -2722,7 +2717,7 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
 <p></p>
 <p><b>SVC </b></p>
 <p>The following values appear under svc.</p>
-<p>These variables configure the required Service network. See Configure the Service network at the end of this page.</p>
+<p>These variables configure the required Service network. </p>
 <p><b>Note: </b>These variables are optional for the ESX cloud type.</p>
 <pre>interface -
 interface_default_route -
@@ -3587,15 +3582,13 @@ Note also:
 <p>5. Copy the overcloud_keystone_ldap.json file you just created to the /root/tripleo/hp_passthrough folder:</p>
 <p class="codebox">scp overcloud_keystone_ldap.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
 
-<p>6. Export content of ldap.json file using the OVERCLOUD_EXTRA_CONFIG environment variable:</p>
-<p class="codebox">export OVERCLOUD_EXTRA_CONFIG=$(cat ldap.json)</p>
 
-<p>7. Place overcloud-env.json file (if created) into /root/tripleo folder.</p>
+<p>6. Place overcloud-env.json file (if created) into /root/tripleo folder.</p>
 <p class="codebox">scp overcloud-env.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/overcloud-env.json<br>
 chmod 0600 $/root/tripleo/overcloud-env.json</p>
 
 
- <p>8. To build the cloud, start by logging in to the seed VM. Run the following command from /root using the IP address of seed VM as defined in the kvm_custom_ips.json environment variables file. The IP address should be listed in the output, such as to login ssh root@192.0.2.1.:</p>
+ <p>7. To build the cloud, start by logging in to the seed VM. Run the following command from /root using the IP address of seed VM as defined in the kvm_custom_ips.json environment variables file. The IP address should be listed in the output, such as to login ssh root@192.0.2.1.:</p>
                             <p class="codebox"><span style="font-size: 10pt;">ssh root@&lt;seed_VM_IP_address&gt;</span>
                             </p>
                             <p> It might take a few moments for the seed VM to become reachable.</p>
@@ -3611,14 +3604,14 @@ chmod 0600 $/root/tripleo/overcloud-env.json</p>
 For example: root@hLinux:# /usr/bin/ipmitool -U admin -P password -H 10.20.50.25 -I lanplus power status
 
 Chassis Power is on.</pre></div>
-                            <p>10. The system will power off your computers. If you wish, you can optionally use the IPMItool to manually power off each baremetal system specified in your baremetal.csv file before proceeding with the installation.</p>
+                            <p>8. The system will power off your computers. If you wish, you can optionally use the IPMItool to manually power off each baremetal system specified in your baremetal.csv file before proceeding with the installation.</p>
                             <p><b>IMPORTANT</b>: Make sure that each system is configured in the BIOS to stay powered off in the event of being shutdown rather than automatically restarting.</p>
-                            <p>11. Load the kvm-custom-ips.json file for the undercloud and overcloud nodes using the source command. The source command executes the content of the file passed as argument, in the current shell.</p>
+                            <p>9. Load the kvm-custom-ips.json file for the undercloud and overcloud nodes using the source command. The source command executes the content of the file passed as argument, in the current shell.</p>
                             <p class="codebox">source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json</p>
-                            <p>12. Install and configure the undercloud and overcloud by running the following command from /root. This step creates a log file for the installation process which could be useful for debugging.</p>
+                            <p>10. Install and configure the undercloud and overcloud by running the following command from /root. This step creates a log file for the installation process which could be useful for debugging.</p>
                             <p class="codebox">bash -x /root/tripleo/tripleo-incubator/scripts/hp_ced_installer.sh |&amp; tee cloud_install.log</p>
                             <p>Output messages will indicate when the undercloud and overcloud controllers become active, services are created and configured, and other aspects of the installation are executed.</p>
-                            <p>13. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.</p>
+                            <p>11. When the deployment completes, a message displays asking you to submit information on the install to HP. Enter Y to submit or any other key to not submit.</p>
                             <p>If your installation is successful, a message similar to the following is displayed:</p>
                             <p class="codebox"><span style="font-size: 10pt;">"HP - completed - Tue Oct 23 16:20:20 UTC 2014"</span>
                             </p>
