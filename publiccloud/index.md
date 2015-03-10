@@ -66,7 +66,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
  <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/solutions/">HP Helion Cloud Solutions </a></span></p>
 </td>
-Built, tested, and validated by HP cloud experts, our optimized cloud solutions are based on HP Helion OpenStack, industry-leading HP ProLiant servers and supporting HP Helion product and service offerings. Solutions like HP Helion Content Depot and HP Helion Rack include everything you need to be successful when facing a demanding cloud use case. 
+<td>Built, tested, and validated by HP cloud experts, our optimized cloud solutions are based on HP Helion OpenStack, industry-leading HP ProLiant servers and supporting HP Helion product and service offerings. Solutions like HP Helion Content Depot and HP Helion Rack include everything you need to be successful when facing a demanding cloud use case. 
 
 </td>
 </tr>
