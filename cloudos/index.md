@@ -28,8 +28,8 @@ Dive into these categorized topics to learn about HP Cloud OS:
 <td style="text-align: center; vertical-align: middle;"><a href="/cloudos/install/" title="Instructions to install &amp; configure your cloud, using automated or advanced options"><img src="media/cloudos-install.jpg" border="0"/></a></td>
 </tr>
 <tr>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/manage/" title="Information about the HP Cloud OS dashboards, troubleshooting, and utilities"><img src="media/cloudos-manage.jpg" border="0"/></td>
-<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/develop/" title="Details about the HP Cloud OS REST API and where to find installed reference documentation"><img src="media/cloudos-develop.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/manage/" title="Information about the HP Cloud OS dashboards, troubleshooting, and utilities"></a><img src="media/cloudos-manage.jpg" border="0"/></td>
+<td style="text-align: center; vertical-align: middle;"><a href="/cloudos/develop/" title="Details about the HP Cloud OS REST API and where to find installed reference documentation"></a><img src="media/cloudos-develop.jpg" border="0"/></td>
 </tr>
 </table>
 

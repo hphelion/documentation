@@ -176,7 +176,7 @@ HP Helion OpenStack is a hardened product set that speeds deployment and simplif
 
 * Enterprises looking toward trials or PoCs for evaluation and development to gain an early competitive advantage from a distro that is hardened for enterprise. 
 * Enterprises seeking a small-scale private cloud deployment, looking at Community edition as a longer-term play over a PoC are ideal for a support package upsell.
-* Smart enterprise developers who are interested in participating in the OpenStack community and being on the leading edge of the &ldquo;New Style of IT&rdquo;  transformation.
+* Smart enterprise developers who are interested in participating in the OpenStack community and being on the leading edge of the &#8220;New Style of IT&#8221;  transformation.
 
 ####What are the main benefits of the HP Helion OpenStack Community edition and the features that support them? #### {#MainBenefits}
 
@@ -477,7 +477,7 @@ Yes. The advantage of open source is clients can avoid vendor lock-in. Standards
 ####Where can I deploy the HP Helion OpenStack Community edition? {WhereDeploy} 
 
 ####Is the HP Helion OpenStack Community edition integrated with other HP cloud products and solutions? #### {#IntegratedwithOtherProducts}
-Yes. These products will reference &ldquo;Powered by HP Helion OpenStack.&rdquo; 
+Yes. These products will reference &#8220;Powered by HP Helion OpenStack.&#8221;
 
 ####What OpenStack components are supported in the HP Helion OpenStack Community edition? #### {#SupportedComponents}
 
@@ -655,7 +655,7 @@ To launch the Operational Dashboard:
 3. Log in as the 'admin' user using the admin password provided via <b><font color="red"><yet to be defined process></b>
 pre-defined login creds: I cannot comment at this point. The admin password MAY be hard-coded into 
 images provided, or MAY be randomly generated during install.
-Note - don't refer to &ldquo;ZIP&rdquo;  files. I doubt we'll use the zip format.<.font></b>
+Note - don't refer to &#8220;ZIP&#8221;  files. I doubt we'll use the zip format.<.font></b>
 
 
 

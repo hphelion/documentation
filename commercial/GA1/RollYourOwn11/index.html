@@ -729,7 +729,7 @@ padding: 25px;
             </div>
             <div style="margin-top: 3in;   padding-top: 20pt;">
                 <p style="font-weight: normal;font-style: normal;font-size: 10pt">Customized output from: </p>
-                <h1><span style="font-weight: normal;font-style: normal;font-size: 18pt;"><span class="xHPc_Basic_VariablesxHP_Book_Title">Roll Your Own Installation Guide for HP Helion OpenStack&#174 1.0</span></span>
+                <h1><span style="font-weight: normal;font-style: normal;font-size: 18pt;"><span class="xHPc_Basic_VariablesxHP_Book_Title">Roll Your Own Installation Guide for HP Helion OpenStack&#174; 1.1</span></span>
                 </h1>
             </div>
             <div style="margin-top: 2in">
@@ -1327,15 +1327,15 @@ Note also:
 <p>/DEFAULT/enabled_backends - The enabled_backends values for all of the storage methods are combined into a single value.</p>
 <p><b>DNS</b> </p>
 <p>The following values appear under dns for configuring your DNS servers:</p>
-<p>seed_nameserver - Use this variable to specify the DNS server for the seed.</p>
-<p>undercloud_nameserver - Use this variable to specify the DNS server for the undercloud.</p>
-<p>overcloud_nameserver - Use this variable to specify the DNS server for the overcloud.</p>
+<p>seed_server - Use this variable to specify the DNS server for the seed.</p>
+<p>undercloud_server - Use this variable to specify the DNS server for the undercloud.</p>
+<p>overcloud_server - Use this variable to specify the DNS server for the overcloud.</p>
 <div class="codebox">  Do not copy these addresses they are only examples<br>
 <pre>
 "dns": {
-    "seed_nameserver": "19.65.175.150:8080",
-    "undercloud_nameserver": "19.65.175.150:8080",
-    "overcloud_nameserver": "19.65.175.150:8080",
+    "seed_server": "19.65.175.150:8080",
+    "undercloud_server": "19.65.175.150:8080",
+    "overcloud_server": "19.65.175.150:8080"
 }</pre></div>
 <p></p>
 <p><b>NTP</b> </p>
@@ -2199,9 +2199,9 @@ by clicking the button. You must save or print from this location in the page. V
 
 
 After creating the overcloud_keystone_ldap.json file, copy it to the /root/tripleo/hp_passthrough folder:
-											<p class="codebox">scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
+											<p class="codebox">scp overcloud_keystone_ldap.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
 											Place overcloud-env.json file (if created as per <a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/services/identity/integrate-ldap/#keystone-jumplink-span" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">HP Helion OpenStack&#174;: Keystone CA storage and signing key/certificate files</a>) into the /root/tripleo folder.
-											<p class="codebox">scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json</p>
+											<p class="codebox">scp overcloud-env.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/overcloud-env.json</p>
 
 
 
@@ -2672,15 +2672,15 @@ For details refer here to the <span class="MCPopup"><a href="javascript:void(0);
 <p>/DEFAULT/enabled_backends - The enabled_backends values for all of the storage methods are combined into a single value.</p>
 <p><b>DNS</b> </p>
 <p>The following values appear under dns for configuring your DNS servers:</p>
-<p>seed_nameserver - Use this variable to specify the DNS server for the seed.</p>
-<p>undercloud_nameserver - Use this variable to specify the DNS server for the undercloud.</p>
-<p>overcloud_nameserver - Use this variable to specify the DNS server for the overcloud.</p>
+<p>seed_server - Use this variable to specify the DNS server for the seed.</p>
+<p>undercloud_server - Use this variable to specify the DNS server for the undercloud.</p>
+<p>overcloud_server - Use this variable to specify the DNS server for the overcloud.</p>
 <div class="codebox">  Do not copy these addresses they are only examples<br>
 <pre>
 "dns": {
-    "seed_nameserver": "19.65.175.150:8080",
-    "undercloud_nameserver": "19.65.175.150:8080",
-    "overcloud_nameserver": "19.65.175.150:8080",
+    "seed_server": "19.65.175.150:8080",
+    "undercloud_server": "19.65.175.150:8080",
+    "overcloud_server": "19.65.175.150:8080",
 }</pre></div>
 <p></p>
 <p><b>NTP</b> </p>
@@ -3585,13 +3585,13 @@ Note also:
 
 
 <p>5. Copy the overcloud_keystone_ldap.json file you just created to the /root/tripleo/hp_passthrough folder:</p>
-<p class="codebox">scp overcloud_keystone_ldap.json root@<seed_VM_IP_address>:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
+<p class="codebox">scp overcloud_keystone_ldap.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/hp_passthrough/overcloud_keystone_ldap.json</p>
 
 <p>6. Export content of ldap.json file using the OVERCLOUD_EXTRA_CONFIG environment variable:</p>
 <p class="codebox">export OVERCLOUD_EXTRA_CONFIG=$(cat ldap.json)</p>
 
 <p>7. Place overcloud-env.json file (if created) into /root/tripleo folder.</p>
-<p class="codebox">scp overcloud-env.json root@<seed_VM_IP_address>:/root/tripleo/overcloud-env.json<br>
+<p class="codebox">scp overcloud-env.json root@&lt;seed_VM_IP_address&gt;:/root/tripleo/overcloud-env.json<br>
 chmod 0600 $/root/tripleo/overcloud-env.json</p>
 
 

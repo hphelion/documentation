@@ -1239,7 +1239,7 @@ The following example shows an XML response where there is one error. In this ex
     <number_deleted>2</number_deleted>
     <number_not_found>4</number_not_found>
     <errors>
-    <object><name>/v1/12345678912345/mycontainer</name><status>409 Conflict</status></object></errors>
+    <object>&#60;name>/v1/12345678912345/mycontainer</name><status>409 Conflict</status></object></errors>
     </delete>
 
 The following shows a JSON response. This text has been reformatted for clarity:
@@ -1880,12 +1880,12 @@ XML
 
      <account name="12345678912345">  
        <container>
-         <name>test_container_1</name>
+         &#60;name>test_container_1</name>
          <count>2</count>
          <bytes>78</bytes>
        </container>
        <container>
-         <name>test_container_2</name>
+         &#60;name>test_container_2</name>
          <count>1</count>
          <bytes>17</bytes>
        </container>
@@ -2223,14 +2223,14 @@ XML
     <?xml version="1.0" encoding="UTF-8"?>
     <container name="test_container_1">
         <object>
-            <name>test_object_1</name>
+            &#60;name>test_object_1</name>
             <hash>4281c348eaf83e70ddce0e07221c3d28</hash>
             <bytes>14</bytes>
             <content_type>application/octet-stream</content_type>
             <last_modified>2009-02-03T05:26:32.612278</last_modified>
         </object>
         <object>
-            <name>test_object_2</name>
+            &#60;name>test_object_2</name>
             <hash>b039efe731ad111bc1b0ef221c3849d0</hash>
             <bytes>64</bytes>
             <content_type>application/octet-stream</content_type>
