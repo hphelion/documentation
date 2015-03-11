@@ -8,7 +8,7 @@ product: commercial.ga
 <!--UNDER REVISION-->
 
 
-#HP Helion Optimized Cloud Solution
+# HP Helion Optimized Cloud Solution
 
 Pre-built, pre-configured and pre-tested by HP cloud experts, HP optimized cloud solutions make it easier and faster for organizations to get cloud services up and running. Based on extensive experience from deploying hundreds of cloud projects and running one of the world's largest OpenStack-based public cloud, optimized cloud solutions are architected with best practices that save our customers months of design and deployment time, reduce support issues and make it easier to scale. HP optimized cloud solutions are based on HP's industry leading product and services, providing everything you need to be successful when facing a demanding cloud use case. 
 
