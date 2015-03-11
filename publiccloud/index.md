@@ -50,7 +50,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 </tr>
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudsystem/">HP CloudSystem Enterprise</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudsystem/">HP CloudSystem Foundatation</a></span></p>
 </td>
 <td>Integrates hardware and software to deliver core Infrastructure as a Service provisioning and lifecycle management of compute, network and storage resources.
 </td>
