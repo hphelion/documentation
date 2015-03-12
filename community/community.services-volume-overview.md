@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Community Block Storage Volume Operations Overview"
+permalink: /helion/community/services/volume/overview/
 product: community
 
 ---
