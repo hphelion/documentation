@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Identity Service Overview"
+title: "HP Cloud OS Identity Service Overview "
 permalink: /cloudos/services/identity/overview/
 product: compute
 

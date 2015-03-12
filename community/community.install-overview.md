@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Community Installation and Configuration"
+title: "HP Helion OpenStack&#174; Community Installation Overview"
 permalink: /helion/community/install-overview/
 product: community
 

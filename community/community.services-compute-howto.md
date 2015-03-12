@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To's with the HP Helion OpenStack&#174; Community Compute Service"
+title: "HP Helion OpenStack&#174; 1.1: Community How To's with the Compute Service"
 permalink: /cloudos/community/services/compute/howto/
 product: community
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/cloudos/community/services/compute/overview">&#9664; PREV</a> | <a href="/cloudos/community/services/overview/">&#9650; UP</a> | <a href="/cloudos/community/services/identity/overview/"> NEXT &#9654</a> </p>
 -->
 
-#  HP Helion OpenStack&#174; 1.1: Community How To's with the Compute Service  
+# HP Helion OpenStack&#174; 1.1: Community How To's with the Compute Service  
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud -->
 

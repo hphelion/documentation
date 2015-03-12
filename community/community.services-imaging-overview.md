@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Image Operation Service Overview"
+title: "HP Helion OpenStack&#174; Image Operations Service Overview"
 permalink: /helion/community/services/imaging/overview/
 product: community
 

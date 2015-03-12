@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud: Upload and Make Public a Partner Image"
+title: "HP Helion Public Cloud: How to Upload a Partner Image and Make it Public"
 permalink: /publiccloud/upload-publish-partner-images135/
 product: public-cloud
 

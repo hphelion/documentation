@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Compute Sherpa Overview"
+title: "HP Helion OpenStack&#174; Community Sherpa Service Overview"
 permalink: /helion/community/services/sherpa/overview/
 product: community
 

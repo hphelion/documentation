@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To's with the Network Service HP Cloud OS  Networking Service"
+title: "How To's with the HP Cloud OS Networking Service "
 permalink: /cloudos/services/networking/howto/
 product: compute
 

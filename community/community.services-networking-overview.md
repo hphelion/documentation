@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Networking Service Overview"
+title: "HP Helion OpenStack&#174; Community Networking Service Overview"
 permalink: /helion/community/services/networking/overview/
 product: community
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/object/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174;  Community Networking Service Overview #
+# HP Helion OpenStack&#174; Community Networking Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 

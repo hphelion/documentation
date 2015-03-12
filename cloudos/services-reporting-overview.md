@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Telemetry and Reporting Service Overview"
+title: "HP Cloud OS Telemetry and Reporting (Ceilometer) Service Overview "
 permalink: /cloudos/services/reporting/overview/
 product: compute
 

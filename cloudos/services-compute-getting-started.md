@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud OS Compute Service"
+title: "Getting Started with HP Cloud OS Compute Service "
 permalink: /cloudos/services/compute/getting-started/
 product: compute
 

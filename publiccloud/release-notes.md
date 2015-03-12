@@ -1,12 +1,12 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud Release Notes"
+title: "HP Helion Public Cloud Release Notes "
 permalink: /publiccloud/release-notes/
 product: public-cloud
 
 ---
 <!--PUBLISHED-->
-# HP Helion Public Cloud Release Notes  #
+# HP Helion Public Cloud Release Notes #
 
 This page contains the following information on our software package:
 

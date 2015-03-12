@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publiccloud/api/dns/
-title: "HP Helion Public Cloud DNS API"
+title: "HP Helion Public Cloud DNS API Specifications"
 description: "HP Helion Public Cloud DNS as a Service (DNSaaS) API Specification"
 version: v1
 keywords: "dns, domain name service, routing"

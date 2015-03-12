@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud services"
+title: "HP Helion Public Cloud Services"
 permalink: /publiccloud/services/
 product: public-cloud
 
