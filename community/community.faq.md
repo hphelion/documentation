@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174;: Community FAQ"
+title: "HP Helion OpenStack&#174; Community FAQ"
 permalink: /helion/community/faq/
 product: community
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Volume Service Overview"
+title: "HP Cloud OS Volume Service Overview "
 permalink: /cloudos/services/volume/overview/
 product: compute
 

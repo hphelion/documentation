@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publiccloud/api/block-storage/
-title: "HP Helion Public Cloud Block Storage API"
+title: "HP Helion Public Cloud Block Storage API Specification"
 description: "HP Helion Public Cloud Block Storage API Specification"
 keywords: "block storage, volume, cinder, bootable volume, volume backup"
 product: block-storage

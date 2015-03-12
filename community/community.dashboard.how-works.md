@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to use the HP Helion OpenStack&#174; Dashboards"
+title: "HP Helion OpenStack&#174; Community: How to use the Helion Dashboards"
 permalink: /helion/community/dashboard/how-works/
 product: community
 

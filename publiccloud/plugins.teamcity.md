@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud Networking: Quick Start Guide"
+title: "HP TeamCity Plugin for HP Helion Public Cloud"
 permalink: /publiccloud/compute/teamcity/
 product: public-cloud
 

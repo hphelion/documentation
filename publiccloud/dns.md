@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud DNS Overview"
+title: "HP Helion Public Cloud Domain Name Service (DNS) Overview"
 permalink: /publiccloud/dns/
 product: public-cloud 
 

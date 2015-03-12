@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Create a Cloud"
+title: "Create a Cloud 	"
 permalink: /cloudos/install/create-cloud/
 product: cloudos
 
@@ -20,7 +20,7 @@ PageRefresh();
 
 <p style="font-size: small;"> <a href="/cloudos/install/complete-admin-node-installation/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | <a href="/cloudos/install/launch-admin-dashboard/">NEXT &#9654;</a> </p>
 
-# 	
+# Create a Cloud 	
 
 Now that the Admin Node is installed, it's time to create your cloud. 
 

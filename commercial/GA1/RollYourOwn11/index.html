@@ -923,8 +923,13 @@ padding: 25px;
                             <p>Before installing HP Helion OpenStack, you are responsible for preparing the network for all installations. The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the management network as described in this section.</p>
                             <p>To ensure a successful installation, you must satisfy these network configuration requirements:</p>
                             <ul>
+
+
+
+
+
                                 <li value="1">The machine hosting the seed VM, and all baremetal systems have to be connected to a management network.</li>
-                                <li value="2">Nodes on this management network must be able to reach the iLO subsystem (HP Integreated Lights-Out) (or other lights out management (LOM) remote management capabilities) of each baremetal system to enable host reboots as part of the install process.</li>
+                                <li value="2">Nodes on this management network must be able to reach the IPMI (or iLO (HP Integrated Lights-Out) or other lights out management (LOM) or remote management capabilities) subsystem of each baremetal system to enable host reboots as part of the install process</li>
                                 <li value="3">The Helion OpenStack architecture requires that the IPMI network is a separate network and a route exists from the management network to the IPMI network for iLO access (or LOM), as explained above.</li>
                                 <li value="4">Ensure network interfaces that are not used for PXE boot are disabled from the BIOS to prevent PXE boot attempts from those devices.</li>
                                 <li value="5">If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.</li>
@@ -959,23 +964,23 @@ Finish the installation.</p>
                                 <li style="font-size: 10pt;" value="4">libvirt-bin</li>
                                 <li style="font-size: 10pt;" value="5">openvswitch-switch</li>
                                 <li style="font-size: 10pt;" value="6">openvswitch-common</li>
-                                <li style="font-size: 10pt;" value="7">python-libvirt</li>
+                                <li style="font-size: 10pt;" value="7">python-libvirt</li> 
+                                <li style="font-size: 10pt;" value="7">ntpdate</li>
                                 
                             </ul>
-<p>Optionally, we recommend that you install the following packages, which will enable to you interact with the installed nodes:</p>
-<ul>
-                                <li style="font-size: 10pt;" value="1">xrdp</li>
-                                <li style="font-size: 10pt;" value="2">xfce4</li>
-<li style="font-size: 10pt;" value="8">libssl-dev</li>
-                                <li style="font-size: 10pt;" value="9">libffi-dev</li>
-                                <li style="font-size: 10pt;" value="10">virt-manager</li>
-                                <li style="font-size: 10pt;" value="11">chromium-browser</li></ul>
-
                             <p>Use the following command to install these packages:</p>
-                            <p class="codebox"><span style="font-size: 10pt;">sudo apt-get install -y xrdp xfce4 libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libssl-dev libffi-dev virt-manager chromium-browser</span>
+                            <p class="codebox"><span style="font-size: 10pt;">sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm ntpdate</span>
                             </p>
-                            <p>After you install the libvirt packages, you must reboot or restart libvirt:</p>
-                            <p class="codebox">sudo /etc/init.d/libvirt-bin restart</p>
+<p>Other recommendations for the seed cloud host are as follows:</p>
+<ul>
+                                <li style="font-size: 10pt;" value="1">A browser to manage the undercloud or overcloud;</li>
+                                <li style="font-size: 10pt;" value="2">A simple command line tool, such as IPMItool, to determine the state of cloud nodes;</li>
+								<li style="font-size: 10pt;" value="8">A desktop emulator, such as Virtual Machine Manager, to monitor and access cloud nodes.</li>
+ </ul>
+ 								<p><b>Important: This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualization configuration.</b></p>
+
+
+
 
                             <h3>Disabling SR-IOV</h3>
 
@@ -986,8 +991,11 @@ Finish the installation.</p>
                                 <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_0" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Install and configure NTP</b></a>
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_2" style="display: none;">
-                                    <p>NTP is a networking protocol for clock synchronization between computer systems.</p>
-                                    <p>Before you start the installation, you must install NTP on the seed cloud host (installation system) and configure it as an NTP server. You will configure the undercloud and overcloud systems as NTP clients during the installation process.</p>
+                                <p> NTP is a networking protocol for clock synchronization between computer systems.<br>
+
+								The HP Helion OpenStack cloud nodes must be configured as NTP clients and point to the same NTP server.<br>
+
+								You can install NTP on the seed cloud host and configure it as an NTP server. Or, you can use a pre-existing NTP server that is reachable from the management network. You will also need to configure the undercloud and overcloud systems as NTP clients pointing to the NTP server you have chosen to use during the installation process.</p>
                                     <p>All the Helion servers use UTC as a time zone.</p>
                                     <p>Note: NTP clients should use only stratum 2 and higher servers</p>
                                     <p><b>Configure NTP</b>
@@ -3674,7 +3682,7 @@ echo $OVERCLOUD_IP</pre>
                         <div class="MCDropDownHead_0"><a class="dropDownHotspot_1" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_32" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Create projects for LDAP users</b></a>
                         </div>
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_32" style="display: none;">
-                            <p>If you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. For more information, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/ldap#horizon" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Configure Horizon on the Integrating LDAP</a></span> or visit the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/ldap#horizon" target="_blank">Configure Horizon on the Integrating LDAP</a>.</p>
+                            <p>Note: if you are integrating LDAP into your environment, you need to configure the Horizon dashboard for users. <!--For more information, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/install/ldap#horizon" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Configure Horizon on the Integrating LDAP</a></span> or visit the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/install/ldap#horizon" target="_blank">Configure Horizon on the Integrating LDAP</a>.--></p>
                         </div>
                     </div>
 
@@ -3682,7 +3690,7 @@ echo $OVERCLOUD_IP</pre>
                                 <div class="MCDropDownHead_0"><a class="dropDownHotspot_1" href="javascript:void(0);" id="MCDropDownHotSpot_2127199652_34" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="SkinSupport/xHP_Exp_expand.png" MadCap:altsrc="SkinSupport/xHP_Exp_collapse.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( 'SkinSupport/xHP_Exp_collapse.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" /><b>&#11036; Configure HP Helion OpenStack tenant networks to use VLAN Provider Network.</b></a>
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_34" style="display: none;">
-                                    <p>HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenant's virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
+                                    <p>HP Helion OpenStack defaults to VxLAN to support tenant network isolation in a KVM Cloud Type. You can configure VLAN on HP Helion OpenStack to enable communication with tenants' virtual machines hosted in a legacy infrastructure and/or based on VMWare ESX.</p>
                                     <p>For instructions, open <span class="MCPopup"><a href="javascript:void(0);" MadCap:src="http://docs.hpcloud.com/helion/openstack/1.1/vlan/provider/network/" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot_0">Enabling VLAN Provider Network in HP Helion OpenStack</a></span> or visit the Helion docs site: <a href="http://docs.hpcloud.com/helion/openstack/1.1/vlan/provider/network/" target="_blank">Enabling VLAN Provider Network in HP Helion OpenStack.</a></p>
                                 </div>
                             </div>

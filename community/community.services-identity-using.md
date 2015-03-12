@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Identity Service Overview"
+title: "HP Helion OpenStack&#174; Using the Identity Service"
 permalink: /helion/community/services/identity/using/
 product: community
 

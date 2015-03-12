@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publiccloud/api/monitoring/
-title: "HP Helion Public Cloud Monitoring API"
+title: "HP Helion Public Cloud Monitoring API Specifications"
 description: "HP Helion Public Cloud Monitoring API Specifications"
 keywords: "monitoring, maas"
 product: monitoring

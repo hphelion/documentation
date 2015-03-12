@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud Service Automation"
+title: "HP Cloud Service Automation "
 permalink: /automation/
 
 ---

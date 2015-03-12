@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud OS Eve Service"
+title: "Getting Started with HP Cloud OS Eve Service "
 permalink: /cloudos/services/eve/getting-started/
 product: compute
 
