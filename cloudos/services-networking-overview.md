@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Networking Service Overview"
+title: "HP Cloud OS Networking Service Overview "
 permalink: /cloudos/services/networking/overview/
 product: compute
 

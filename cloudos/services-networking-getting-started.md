@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud OS Networking Service"
+title: "Getting Started with HP Cloud OS Networking Service "
 permalink: /cloudos/services/networking/getting-started/
 product: compute
 

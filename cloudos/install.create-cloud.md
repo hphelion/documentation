@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Create a Cloud"
+title: "Create a Cloud 	"
 permalink: /cloudos/install/create-cloud/
 product: cloudos
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publiccloud/api/object-storage/
-title: "HP Helion Public Cloud Object Storage API"
+title: "HP Helion Public Cloud Object Storage API Specification"
 description: "HP Helion Public Cloud Object Storage API Specifications"
 keywords: "swift, object storage"
 product: object-storage

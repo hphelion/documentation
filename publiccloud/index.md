@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion Documentation"	
+title: "Welcome to HP Helion Documentation"
 permalink: /
 
 ---

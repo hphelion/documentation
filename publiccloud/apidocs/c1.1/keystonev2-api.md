@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publiccloud/api/v2identity/
-title: "HP Helion Public Cloud v2 Identity Services API"
+title: "HP Helion Public Cloud Identity Services v2 API"
 description: "HP Helion Public Cloud v2 Identity Services API documentation."
 keywords: "Keystone, Identity Services"
 product: identity

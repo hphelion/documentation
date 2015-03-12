@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Tracking masked IP addresses"
+title: "HP Helion OpenStack&#174; Community: Tracking masked IP addresses when using network address translation (NAT)"
 permalink: /helion/community/maskedIP/
 product: community
 

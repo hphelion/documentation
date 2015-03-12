@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "An Introduction To Using CDN With Object Storage"
+title: "HP Helion Public Cloud Compute An Introduction To Using CDN With Object Storage"
 permalink: /publiccloud/object-storage/tutorial/introduction/
 product:
   - cdn

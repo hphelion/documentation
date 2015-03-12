@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Community Enabling name resolution from tenant VMs in the overcloud"
+title: "HP Helion OpenStack&#174;: Enable Name Resolution from Tenant VMs in the Overcloud"
 permalink: /helion/community/name-resolution/
 product: community
 

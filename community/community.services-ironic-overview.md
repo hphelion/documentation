@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Ironic Service Overview"
+title: "HP Helion OpenStack&#174; Community Ironic Service Overview"
 permalink: /helion/community/services/ironic/overview/
 product: community
 

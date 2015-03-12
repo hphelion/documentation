@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud OS Telemetry and Reporting Service"
+title: "Getting Started with HP Cloud OS Telemetry and Reporting (Ceilometer) Service "
 permalink: /cloudos/services/reporting/getting-started/
 product: compute
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Icinga Service"
+title: "HP Helion OpenStack&#174; Horizon Service Overview"
 permalink: /helion/community/services/icinga/
 product: community
 

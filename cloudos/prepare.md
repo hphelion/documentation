@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS - Get Started"
+title: "Prepare: Get Started with HP Cloud OS"
 permalink: /cloudos/prepare/
 product: cloudos
 

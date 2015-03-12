@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Community Release Notes"
+title: "HP Helion OpenStack&#174; Community 1.4 Release Notes"
 permalink: /helion/community/release-notes/
 product: community
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud OS Peer Service"
+title: "Getting Started with HP Cloud OS Peer Service "
 permalink: /cloudos/services/peer/getting-started/
 product: compute
 

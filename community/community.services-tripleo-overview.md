@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; TripleO Service Overview"
+title: "HP Helion OpenStack&#174; Community TripleO Service Overview"
 permalink: /helion/community/services/tripleo/overview/
 product: community
 
