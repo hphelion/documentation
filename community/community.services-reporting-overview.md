@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Community Services Overview"
+title: "HP Helion OpenStack&#174; Telemetry and Reporting Service Overview"
 permalink: /helion/community/services/reporting/overview/
 product: community
 
