@@ -394,6 +394,8 @@ navigation:
     url: /helion/openstack/1.1/support-matrix/ 		
   - text: Installation Overview
     url: /helion/openstack/1.1/install/overview/	
+  - text: Roll Your Own Installation Guide
+    url: /content/documentation/commercial/GA1/RollYourOwn11/index.html
   - text: Network Security
     url: /helion/openstack/1.1/install/security/
   - text: Back Up and Restore
