@@ -923,8 +923,13 @@ padding: 25px;
                             <p>Before installing HP Helion OpenStack, you are responsible for preparing the network for all installations. The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the management network as described in this section.</p>
                             <p>To ensure a successful installation, you must satisfy these network configuration requirements:</p>
                             <ul>
+
+•  . 
+•  
+
+
                                 <li value="1">The machine hosting the seed VM, and all baremetal systems have to be connected to a management network.</li>
-                                <li value="2">Nodes on the IPMI network must be able to reach the iLO subsystem (HP Integreated Lights-Out) (or other lights out management (LOM) remote management capabilities) of each baremetal system to enable host reboots as part of the install process.</li>
+                                <li value="2">Nodes on this management network must be able to reach the IPMI (or iLO (HP Integrated Lights-Out) or other lights out management (LOM) or remote management capabilities) subsystem of each baremetal system to enable host reboots as part of the install process</li>
                                 <li value="3">The Helion OpenStack architecture requires that the IPMI network is a separate network and a route exists from the management network to the IPMI network for iLO access (or LOM), as explained above.</li>
                                 <li value="4">Ensure network interfaces that are not used for PXE boot are disabled from the BIOS to prevent PXE boot attempts from those devices.</li>
                                 <li value="5">If you have other DHCP servers on the same network as your system, you must ensure that the DHCP server does not hand out IP addresses to your physical nodes as they PXE boot.</li>
