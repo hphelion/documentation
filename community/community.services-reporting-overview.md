@@ -70,36 +70,36 @@ The following lists of tasks can be performed by a user or administrator through
 
 The Telemetry and Reporting service collects metrics across multiple projects in your domain. 
 
-- **Recording metering data** -- Track metering data.
-- **Recording metering events** -- Record a metering event.
-- **Viewing a list of meters** -- Display a list of available meters based on the types of measurements.
-- **Clearing expired metering data** -- Remove expired metering data using the CLI.
+- **Recording metering data** - Track metering data.
+- **Recording metering events** - Record a metering event.
+- **Viewing a list of meters** - Display a list of available meters based on the types of measurements.
+- **Clearing expired metering data** - Remove expired metering data using the CLI.
 
 ### Working with resource data ###
 
 The Telemetry and Reporting service monitors *resources* in your environment. A resource is any object that is being monitored by the Telemetry and Reporting service (for example, an instance, a network, or an image). 
 
-- **Viewing information on metered resources** -- Obtain a list of available resources.
-- **Viewing details about a specific resource** -- Obtain information on a specific resource.
+- **Viewing information on metered resources** - Obtain a list of available resources.
+- **Viewing details about a specific resource** - Obtain information on a specific resource.
 
 ### Working with the Ceilometer service reporting actions ###
 
 The HP Telemetry and Reporting actions are accessible using a REST API.
 
-- **Viewing a list of usage data for a specific meter** -- List usage data for your meters.
-- **Viewing a list of computed statistics across a time range** -- Obtain statistical data.
-- **Viewing a list of API capabilities supported by current driver** -- Obtain information on the API capabilities supported.
+- **Viewing a list of usage data for a specific meter** - List usage data for your meters.
+- **Viewing a list of computed statistics across a time range** - Obtain statistical data.
+- **Viewing a list of API capabilities supported by current driver** - Obtain information on the API capabilities supported.
 
 ## Working with Alarms ##
 
 The Telemetry and Reporting contains threshold alarms that you can configure to issue notifications for specific behaviors.
 
-- **Creating, updating and deleting alarms** -- Create, modify, and delete alarms using the API.
-- **Recording alarm changes** -- Track changes to Ceilometer alarms using the API.
-- **Viewing a list of alarms, based on filter criteria** -- Obtain a list of alarms based on specified criteria.
-- **Viewing details on a specific alarm** -- Obtain information on a specific alarm.
-- **Viewing the state of an alarm** -- Get details on the state of a specific alarm.
-- **Viewing the history of a specific alarm** -- Obtain a historical list of a specific alarm usage.
+- **Creating, updating and deleting alarms** - Create, modify, and delete alarms using the API.
+- **Recording alarm changes** - Track changes to Ceilometer alarms using the API.
+- **Viewing a list of alarms, based on filter criteria** - Obtain a list of alarms based on specified criteria.
+- **Viewing details on a specific alarm** - Obtain information on a specific alarm.
+- **Viewing the state of an alarm** - Get details on the state of a specific alarm.
+- **Viewing the history of a specific alarm** - Obtain a historical list of a specific alarm usage.
  -->
 
 ## For more information ##

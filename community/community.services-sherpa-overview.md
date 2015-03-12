@@ -31,7 +31,7 @@ You can make purchases using a self-service account on the public web server. On
 Content may include patches, plugins, images, models, and so forth that may be used to update, improve, extend, or provide content for the cloud.
 
 
-<!---Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
+<!-- Compute allows you to work with *flavors*, which are unique combinations of disk space, memory capacity, and CPU; *images*, which are collections of files used as a base installation, typically operating systems such as Ubuntu 10.10; and *servers*, which are virtual instances created using a flavor and an image
 
 A variety of flavors and images are provided by HP Compute that can be used to create a wide mix of servers.
 
@@ -54,17 +54,17 @@ To perform tasks using the Sherpa service, you can use the Horizon dashboards.
 
 You can use the HP Helion OpenStack Dashboard to work with the Sherpa service.
 
-<!---###Using the API ### {#API}
+<!-- ###Using the API ### {#API}
  
 You can use a low-level, raw REST API access to the HP Compute service. See the [OpenStack Compute API v2.0 Reference](http://api.openstack.org/api-ref-compute-v2.html).-->
 
-<!---###Using the CLI### {#cli}
+<!-- ###Using the CLI### {#cli}
 
 You can use the command-line interface software to access Sherpa. See the [to give the hyperlink].
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).-->
 
-<!---## How To's with the HP Helion OpenStack Compute Service ## {#howto}-->
+<!-- ## How To's with the HP Helion OpenStack Compute Service ## {#howto}-->
 
 <!-- Taken from http://wiki.hpcloud.net/display/core/Core+Edition+Use+cases#CoreEditionUsecases-OverCloud 
 
@@ -76,7 +76,7 @@ When Sherpa is deployed in the undercloud and connected to the remote catalog we
 
 Sherpa may also be deployed in the overcloud to provide new content or workloads to be deployed within the overcloud. <!-- how?? -->
 
-<!---### Tasks performed by users ###
+<!-- ### Tasks performed by users ###
 
 The following Compute service tasks are usually performed by someone with the *user* role.
 
@@ -84,26 +84,26 @@ The following Compute service tasks are usually performed by someone with the *u
 
 When working with the Compute service, you can perform a number of tasks with your virtual machine instances, including creating and deleting instances, starting and stopping an instance, and attaching a storage volume to an instance.
 
-- **Launching an instance** -- Create a new virtual machine.
-- **Launching an instance that boots from a Volume** -- Create a bootable virtual machine associated with a bootable volume. 
-- **Rebooting an instance** -- Reboot an instance.
-- **Rebuilding an instance** -- Rebuild an instance as needed.
-- **Starting and stopping an instance** -- Use the Compute service to start and stop an instance.
-- **Creating and deleting a snapshot of an instance** -- Create a snapshot of an instance that you can use to create other instances.
-- **Rescuing and un-rescuing an instance** -- Rescue a instance.
-- **Deleting an instance** -- Delete an instance that is no longer needed.
-- **Attaching and detaching volumes** -- Attach a storage volume to an instance and detach the volume, when no longer needed.
-- **Viewing an instance console log** -- Display a log of virtual machine activity.
-- **Viewing a VNC console connection to an instance** -- Remotely connect to an instance using a VNC (Virtual Network Computing) console. 
-- **Associating and disassociating a floating IP address** -- Allocate and associate floating IP addresses to an instance. 
+- **Launching an instance** - Create a new virtual machine.
+- **Launching an instance that boots from a Volume** - Create a bootable virtual machine associated with a bootable volume. 
+- **Rebooting an instance** - Reboot an instance.
+- **Rebuilding an instance** - Rebuild an instance as needed.
+- **Starting and stopping an instance** - Use the Compute service to start and stop an instance.
+- **Creating and deleting a snapshot of an instance** - Create a snapshot of an instance that you can use to create other instances.
+- **Rescuing and un-rescuing an instance** - Rescue a instance.
+- **Deleting an instance** - Delete an instance that is no longer needed.
+- **Attaching and detaching volumes** - Attach a storage volume to an instance and detach the volume, when no longer needed.
+- **Viewing an instance console log** - Display a log of virtual machine activity.
+- **Viewing a VNC console connection to an instance** - Remotely connect to an instance using a VNC (Virtual Network Computing) console. 
+- **Associating and disassociating a floating IP address** - Allocate and associate floating IP addresses to an instance. 
 
 #### Working with security ####
 
 You can use different tools to help secure your cloud.
 
-- **Working with security groups** -- Create, modify, and delete the security groups in your project.
-- **Working with security group rules** -- Create, modify, delete a security group rule that control traffic to or from instances.
-- **Working with key pairs** -- Create and delete the key pairs that control access to the instances in your environment. You can also import an existing key pair.
+- **Working with security groups** - Create, modify, and delete the security groups in your project.
+- **Working with security group rules** - Create, modify, delete a security group rule that control traffic to or from instances.
+- **Working with key pairs** - Create and delete the key pairs that control access to the instances in your environment. You can also import an existing key pair.
 
 ### Tasks performed by an Administrator ###
 
@@ -129,9 +129,9 @@ Use the Compute service to enable or disable services available in a project.
 
 When working with the Compute service, you can perform a number of tasks with your virtual machines (VM).
 
-- **Locking and unlocking instances** -- Lock or unlock an instance, as needed.
-- **Pausing and un-pausing instances** -- Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
-- **Suspending and resuming virtual machines** -- Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
+- **Locking and unlocking instances** - Lock or unlock an instance, as needed.
+- **Pausing and un-pausing instances** - Pause and un-pause an instance. The `pause` command stores the state of the instance in RAM. A paused instance continues to run in a frozen state.
+- **Suspending and resuming virtual machines** - Suspend and un-suspend an instance. When you suspend an instance, its instance state is stored on disk, all memory is written to disk, and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available.-->
 
 For more general information on how to operate your cloud, refer to the [OpenStack Operations Guide](http://docs.openstack.org/ops/). 
 
