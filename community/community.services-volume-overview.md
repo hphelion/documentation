@@ -98,10 +98,10 @@ Use the Volume Operations service to create an image based on an existing volume
 
 Using the HP Volume Operations service, a user can modify volume objects.
 
-- **Update the metadata of a volume** -- Modify the metadata associated with a volume.
-- **Rename a volume** -- Change the name of an existing volume.
-- **Extend a Volume** -- Increase the storage capacity of a volume.
-- **Transfer a volume between users** -- Transfer a volume between users.
+- **Update the metadata of a volume** - Modify the metadata associated with a volume.
+- **Rename a volume** - Change the name of an existing volume.
+- **Extend a Volume** - Increase the storage capacity of a volume.
+- **Transfer a volume between users** - Transfer a volume between users.
 
 ### Tasks performed by an Administrator<a name="admin"></a>
 
