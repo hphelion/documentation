@@ -924,8 +924,8 @@ padding: 25px;
                             <p>To ensure a successful installation, you must satisfy these network configuration requirements:</p>
                             <ul>
 
-•  . 
-•  
+
+
 
 
                                 <li value="1">The machine hosting the seed VM, and all baremetal systems have to be connected to a management network.</li>
@@ -964,11 +964,12 @@ Finish the installation.</p>
                                 <li style="font-size: 10pt;" value="4">libvirt-bin</li>
                                 <li style="font-size: 10pt;" value="5">openvswitch-switch</li>
                                 <li style="font-size: 10pt;" value="6">openvswitch-common</li>
-                                <li style="font-size: 10pt;" value="7">python-libvirt</li>
+                                <li style="font-size: 10pt;" value="7">python-libvirt</li> 
+                                <li style="font-size: 10pt;" value="7">ntpdate</li>
                                 
                             </ul>
                             <p>Use the following command to install these packages:</p>
-                            <p class="codebox"><span style="font-size: 10pt;">sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm libffi-dev ntpdate</span>
+                            <p class="codebox"><span style="font-size: 10pt;">sudo apt-get install -y libvirt-bin openvswitch-switch openvswitch-common python-libvirt qemu-kvm ntpdate</span>
                             </p>
 <p>Other recommendations for the seed cloud host are as follows:</p>
 <ul>
