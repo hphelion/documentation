@@ -898,7 +898,7 @@ devplatform2.0:
     url: /helion/devplatform/eula/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/devplatform/3rd-party-license-agreements/
-  apinavigation1.0:
+ apinavigation1.0:
   - text: Site home page
     url: /
   - text: API Overview
