@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Log In"
+title: "HP Helion OpenStack&#174; Community: Logging into the Dashboards"
 permalink: /helion/community/dashboard/login/
 product: commercial
 

@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "What's New with the HP Helion Public Cloud Console"
+title: "What's New with the HP Helion Public Cloud Console "
 permalink: /publiccloud/whats_new_with_HP_Cloud_Console/
 product: public-cloud
 

@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud CLI Software for Windows PowerShell Object Storage Examples"
+title: "HP Helion Public Cloud CLI Software for Windows PowerShell: Object Storage Examples"
 permalink: /publiccloud/cli/windows/containers-and-folders/
 product: win-2-cli
 

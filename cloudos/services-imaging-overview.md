@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Image Service Overview"
+title: "HP Cloud OS Image Service Overview "
 permalink: /cloudos/services/imaging/overview/
 product: compute
 

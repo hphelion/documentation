@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "HP Helion Public Cloud Object Storage  API"
+title: "HP Helion Public Cloud Object Storage API"
 permalink: /object-storage/api/
 product: object-storage
 published: false
 
 ---
 <!--PUBLISHED-->
-# HP Helion Public Cloud Object Storage  API
+# HP Helion Public Cloud Object Storage API
 
 Surf on over to our [Object Storage API Reference](/publiccloud/api/object-storage) for lots of details on the HP Helion Public Cloud object storage service.  
 

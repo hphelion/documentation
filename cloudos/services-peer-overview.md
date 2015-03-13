@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Cloud OS Peer Service Overview"
+title: "HP Cloud OS Peer Service Overview "
 permalink: /cloudos/services/peer/overview/
 product: compute
 

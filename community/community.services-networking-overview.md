@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Networking Service Overview"
+title: "HP Helion OpenStack&#174; Community Networking Service Overview"
 permalink: /helion/community/services/networking/overview/
 product: community
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/object/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174;  Community Networking Service Overview #
+# HP Helion OpenStack&#174; Community Networking Service Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 
@@ -67,23 +67,23 @@ If you know the NAT address of a malicious user, you can identify his actual IP 
 
 For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/community/maskedIP).
 
-<!---### Working with networks ###
+<!-- ### Working with networks ###
 
 You can perform the following tasks:
 
-- **Adding, modifying and removing a network** -- Create, delete, and modify your network.
-- **Adding, modifying and removing a port on your network** -- Create, delete, and modify ports on your network.
-- **Adding and removing a subnet to a network** -- Create, delete, and modify subnets associated with your network, as needed.
-- **Creating an external network** -- Create an external network for your environment. Only an administrator can create an external network.
+- **Adding, modifying and removing a network** - Create, delete, and modify your network.
+- **Adding, modifying and removing a port on your network** - Create, delete, and modify ports on your network.
+- **Adding and removing a subnet to a network** - Create, delete, and modify subnets associated with your network, as needed.
+- **Creating an external network** - Create an external network for your environment. Only an administrator can create an external network.
 
 ### Working with routers ###
 
 You can perform the following tasks:
 
-- **Adding and removing a network to a router** -- Attach or detach a network to your router.
-- **Adding, modifying or removing a router** -- Add, modify or remove a router from your network.
-- **Adding, modifying or removing an interface** -- Add, modify or remove an interface from your router.
-- **Adding and removing an external network to a router** -- Attach or detach a router from an external network. -->
+- **Adding and removing a network to a router** - Attach or detach a network to your router.
+- **Adding, modifying or removing a router** - Add, modify or remove a router from your network.
+- **Adding, modifying or removing an interface** - Add, modify or remove an interface from your router.
+- **Adding and removing an external network to a router** - Attach or detach a router from an external network. -->
 
 ## For more information ##
 

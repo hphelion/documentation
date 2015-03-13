@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud RDB Overview"
+title: "HP Helion Public Cloud Relational Database (RDB) Overview"
 permalink: /publiccloud/rdb/
 product: rdb
 

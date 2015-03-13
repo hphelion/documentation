@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud Monitoring Overview"
+title: "HP Helion Public Cloud Monitoring Overview "
 permalink: /publiccloud/maas/
 product: public-cloud 
 

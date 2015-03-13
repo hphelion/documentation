@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started with HP Cloud OS Image Service"
+title: "Getting Started with HP Cloud OS Image Service "
 permalink: /cloudos/services/imaging/getting-started/
 product: compute
 

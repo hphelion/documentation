@@ -1,6 +1,6 @@
 ---
 layout: public-cloud
-title: "HP Helion Public Cloud Python Nova Client"
+title: "Work with HP Helion Public Cloud using the CLI"
 permalink: /publiccloud/cli/openstack/
 product: nova-cli
 
