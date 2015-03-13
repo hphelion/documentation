@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Horizon Service Overview"
+title: "HP Helion OpenStack&#174; Icinga Service"
 permalink: /helion/community/services/icinga/
 product: community
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/community/services/object/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href=" /helion/community/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174;: Icinga Service
+# HP Helion OpenStack&#174; Icinga Service
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s).
 
