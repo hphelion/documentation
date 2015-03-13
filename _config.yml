@@ -501,7 +501,7 @@ devplatform2.0:
     url: /helion/devplatform/1.2/eula/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/devplatform/1.2/3rd-party-license-agreements/
-  apinavigation:
+ apinavigation:
   - text: Site home page
     url: /
   - text: API Overview
