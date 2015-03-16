@@ -22,7 +22,7 @@ Below you can find a full reference of supported HP Helion Public Cloud CLI soft
      PS: HPCS:\> cd "my container:"
      PS: HPCS:\> new-container -name "my new container"
 
-<!--DOUG: Modify the fonts in the syntax sections--perhaps create a Jira case for them?-->
+<!--DOUG: Modify the fonts in the syntax sections-??-perhaps create a Jira case for them?-->
 <!--DOUG: Create a CDN examples page?-->
 <!--DOUG: include a section on environment variables, such as ENABLE-CREDENTIAL-TRACKING? Full list from Travis.-->
 
