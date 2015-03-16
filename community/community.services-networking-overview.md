@@ -53,7 +53,7 @@ You can use any of several command-line interface software to access Networking.
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
  
-<!---
+<!--
 
 ## How To's with the HP Helion OpenStack Networking Service ## {#howto}
 
