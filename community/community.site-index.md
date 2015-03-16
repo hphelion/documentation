@@ -37,8 +37,8 @@ PageRefresh();
 * [Hardware and software requirements](/helion/community/hwsw-requirements/)
 * [Network Architecture and Configuration -- Baremetal Installations Only](/helion/community/network-requirements/)
 * [Enable name resolution from tenant VMs in the overcloud](/helion/community/name-resolution/)
-* [Baremetal Installation and Configuration](#/helion/community/install/)
-* [Virtual Installation and Configuration](#/helion/community/install-virtual/)
+* [Baremetal Installation and Configuration](/helion/community/install/)
+* [Virtual Installation and Configuration](/helion/community/install-virtual/)
 
 ### Horizon Dashboard
 
