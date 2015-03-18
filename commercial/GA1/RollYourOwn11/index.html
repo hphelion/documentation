@@ -1677,7 +1677,7 @@ by clicking the button. You must save or print from this location in the page. V
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_15" style="display: none;">
                                     <ol>
                                         <li value="1">Make sure you are logged into the seed VM host as root. If not, execute: 
-                                        	<p class="codebox"><span style="font-size: 10pt;">sudo su -</span></p></li>
+                                        	<p class="codebox"><span style="font-size: 10pt;">sudo -i</span></p></li>
                                         <li value="2">Execute the <i>esx-custom-ips.json</i> created earlier file using the source command. The source command executes the content of the file passed as an argument, in the current shell.<p class="codebox"><![CDATA[
                            
 								]]><code>source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/esx-custom-ips.json</code></p></li>
@@ -3061,7 +3061,7 @@ Note also:
                         </div>
                         <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_30" style="display: none;">
                             <p>1. Make sure you are logged into the seed VM host as root. If not, run:</p>
-                            <p class="codebox">sudo su -</p>
+                            <p class="codebox">sudo -i</p>
                             <p>2. Execute the kvm-custom-ips.json file using the source command. The source command executes the content of the file passed as argument, in the current shell.</p>
                             <p class="codebox">source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json</p>
                             <p>3. Start the seed VM installation by entering the following command:</p>
@@ -3640,10 +3640,10 @@ Chassis Power is on.</pre></div>
                                 <p>3. Point your web browser on the seed cloud host to the undercloud Horizon console using the UNDERCLOUD_IP_ADDRESS obtained after the install.</p>
                                 <p>4. If you did not retrieve the undercloud IP from the end of the install, enter the following command:</p>
                                 <div class="codebox">
-<pre>. /root/tripleo/tripleo-undercloud-passwords
-TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/undercloudrc
-UNDERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
-echo $UNDERCLOUD_IP</pre>
+<pre>. /root/stackrc
+UNDERCLOUD_IP=$(nova list | cut -d '|' -f 7 | grep ctlplane | awk -F  = '{print $2}')
+echo $UNDERCLOUD_IP
+</pre>
        
                                 </div>
                                 <p>5. Log in as admin using the corresponding passwords obtained in step 2.</p>
@@ -3657,10 +3657,12 @@ echo $UNDERCLOUD_IP</pre>
                                 <p>2. Point your web browser on the seed cloud host to the overcloud Horizon console using the OVERCLOUD_IP_ADDRESS obtained after the install.</p>
                                 <p>If you did not retrieve the overcloud IP from the end of the install, enter the following command:</p>
                                 <div class="codebox">
-<pre>. /root/tripleo/tripleo-overcloud-passwords
-TE_DATAFILE=/root/tripleo/ce_env.json . /root/tripleo/tripleo-incubator/overcloudrc
-OVERCLOUD_IP=$(heat output-show overcloud KeystoneURL | cut -d: -f2 | sed s,/,,g )
-echo $OVERCLOUD_IP</pre>
+<pre>. /root/tripleo/tripleo-undercloud-passwords
+TE_DATAFILE=/root/tripleo/ce_env.json
+. /root/tripleo/tripleo-incubator/undercloudrc
+OVERCLOUD_IP=$(heat output-show overcloud-ce-controller KeystoneURL | cut -d: -f2 | sed s,/,,g )
+echo $OVERCLOUD_IP
+</pre>
                                 </div>
                                 <p>3. Log in as demo or admin using the corresponding passwords obtained in step 1.</p>
                                 <p>4. In the Horizon console, you can obtain the IP address of the demo VM:</p>
