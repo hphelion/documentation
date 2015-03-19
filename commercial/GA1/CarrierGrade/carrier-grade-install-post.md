@@ -1,0 +1,56 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174; 1.1: Post-Installation for ESX Hypervisor"
+permalink: /helion/openstack/carrier/install/post-esx/
+product: commercial.ga
+product-version1: HP Helion OpenStack 1.1
+role1: Storage Administrator
+role2: Storage Architect
+authors: Michael B, 
+
+---
+<!--PUBLISHED-->
+
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<p style="font-size: small;"><a href="/helion/openstack/1.1/install/esx"> &#9664; Installing on an ESX hypervisor </a> | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a>  </p> 
+
+
+# HP Helion OpenStack&#174; 1.1: Post-Installation for ESX Hypervisor
+
+After you have completed and verified the HP Helion OpenStack installation, perform the following tasks as appropriate.
+
+## Deploy vCenter ESX Compute Proxy **(REQUIRED)**
+
+The HP Helion OpenStack vCenter ESX compute proxy is a driver that enables the Compute service to communicate with a VMware vCenter server that manages one or more ESX hosts. The HP Helion OpenStack Compute service (Nova) requires this driver to interface with VMWare ESX hypervisor APIs.
+
+See [Deploy vCenter ESX compute proxy](/helion/openstack/1.1/install/esx/proxy/).
+
+
+## Install DNS as a service (DNSaaS) **(Optional)**
+
+If you have not installed DNSaaS, see [DNSaaS Installation and Configuration](/helion/openstack/1.1/install/dnsaas/).
+
+DNSaaS is our managed DNS service, based on the OpenStack Designate project, is engineered to help you create, publish, and manage your DNS zones and records securely and efficiently to either a public or private DNS server network.
+
+## Create and deploy Microsoft SVVP server Microsoft as a Compute (Nova) VM. **(Optional)**
+
+You can create and deploy a Microsoft Windows Server that is Microsoft SVVP (Server Virtualization Validation Program) compliant on HP Helion OpenStack as a Nova compute VM. 
+
+See [How to build a Microsoft Windows Server guest image for HP Helion OpenStack](/helion/openstack/1.1/create-deploy/certified-microsoft-windows/guest-image/).
+
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+
+---
