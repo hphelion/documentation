@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; 1.1: Support Matrix"
-permalink: /helion/openstack/1.1/support-matrix/
+permalink: /helion/openstack/carrier/support-matrix/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
