@@ -71,7 +71,7 @@ Ranges to identify the incorrect address.
 
 <!-- fixed:
 **Tip:** Before editing any network's settings, take a screenshot of the default values. When you start
-editing, the defaults disappear -- there is no reset.
+editing, the defaults disappear -??- there is no reset.
 --> 
 
 ## Customize the Admin Network
