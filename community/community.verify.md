@@ -139,7 +139,7 @@ You can access these services with the following steps:
 
 	a. From the seed cloud host log in to the undercloud as super user:
 
-		ssh heat-admin@&#60;undercloud IP> 
+		ssh heat-admin@<undercloud IP> 
 		sudo su - 
 
 	b. Enter the following command to display the password:
