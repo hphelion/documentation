@@ -21,4 +21,4 @@ HP Helion Rack combines leading HP ProLiant DL Gen 9 servers optimized for flexi
 
 ##HP Helion Rack solution technical documents and white papers:
 * [HP Helion Rack Solution Architecture Document](http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-7655ENW&cc=us&lc=en)
-* [HP Helion Rack Technical White Paper (PDF])(http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-7451ENW&cc=us&lc=en)
+* [HP Helion Rack Technical White Paper (PDF)](http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-7451ENW&cc=us&lc=en)
