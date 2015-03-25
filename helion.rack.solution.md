@@ -5,7 +5,7 @@ permalink: /helion/solutions/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 
 # HP Helion Optimized Cloud Solution
@@ -20,5 +20,5 @@ HP Helion Rack is a pre-configured, pre-tuned and pre-tested private cloud solut
 HP Helion Rack combines leading HP ProLiant DL Gen 9 servers optimized for flexible workloads and HP Helion OpenStack with built-in expertise and best practices from HP OpenStack technology contributions and operating one of the largest OpenStack public clouds. The solution delivers both IaaS and PaaS to support modern development practices by integrating HP Helion Development Platform.
 
 ##HP Helion Rack solution technical documents and white papers:
-* HP Helion Rack Solution Architecture Document
-* HP Helion Rack Technical White Paper (PDF)
+* [HP Helion Rack Solution Architecture Document](http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-7655ENW&cc=us&lc=en)
+* [HP Helion Rack Technical White Paper (PDF])(http://www8.hp.com/h20195/V2/GetDocument.aspx?docname=4AA5-7451ENW&cc=us&lc=en)
