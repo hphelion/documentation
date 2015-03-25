@@ -2239,12 +2239,14 @@ After creating the overcloud_keystone_ldap.json file, copy it to the /root/tripl
                                 </div>
                                 <div class="MCDropDownBody_0" id="MCDropDownBody_2127199652_16" style="display: none;">
                                     <p>To verify that the installation has been successful, connect to the HP Helion OpenStack dashboard and the undercloud dashboard. </p>
-                                    <p><b>Connecting to the undercloud Horizon console</b>
+                                    <p><b>Connecting to the undercloud Horizon dashboard</b>
                                     </p>
                                     <ol>
-                                        <li value="1">From the seed VM, connect to the undercloud and obtain the password for the admin user</li>
+                                        <li value="1">From the seed cloud host, connect to the undercloud and obtain the password for the admin user
                                         
-                                    <p class="codebox"><span style="font-size: 10pt;">cat /root/tripleo/tripleo-undercloud-passwords</span></p></li>
+                                    <p class="codebox"><pre>cat /root/tripleo/tripleo-undercloud-passwords
+
+UNDERCLOUD_ADMIN_PASSWORD=</pre></p></li>
                                         <li value="2">Point your web browser on the seed cloud host to the undercloud Horizon console using the UNDERCLOUD_IP_ADDRESS obtained after the install.
                                     <p>If you did not retrieve the undercloud IP at the end of the installation, enter the following command:</p>
 <div class="codebox"><p style="font-size: 10pt;">
@@ -2257,10 +2259,10 @@ echo $UNDERCLOUD_IP</pre>
                                         <li value="3">Log in as admin using the corresponding password just obtained.</li>
                                         
                                     </ol>
-                                    <p><b>Connecting to the overcloud Horizon console</b>
+                                    <p><b>Connecting to the overcloud Horizon dashboard</b>
                                     </p>
                                     <ol>
-                                        <li value="1">From the seed VM, connect to the overcloud Horizon console.</li>
+                                        <li value="1">From the seed cloud host, connect to the overcloud Horizon dashboard.</li>
                                         <li value="2">Obtain the passwords for the demo and admin users
                                     <p class="codebox"><span style="font-size: 10pt;">cat /root/tripleo/tripleo-overcloud-passwords</span></p></li>
                                         <li value="3">Point your web browser on the seed cloud host to the overcloud Horizon console using the OVERCLOUD_IP_ADDRESS obtained after the install.</li>
