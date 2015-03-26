@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Configuring Networking with DCN"
-permalink: /helion/openstack/1.1/
+permalink: /helion/openstack/carrier/install/network/
 product: carrier-grade
 
 ---

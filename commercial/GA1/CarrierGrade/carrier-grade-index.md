@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Documentation Home"
-permalink: /helion/openstack/1.1/
+permalink: /helion/openstack/carrier/
 product: carrier-grade
 
 ---
@@ -22,7 +22,7 @@ PageRefresh();
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
-Helion CSP is HP’s Cloud Management SW for NFV Cloud in a Telco network environment
+Helion CSP is HP's Cloud Management SW for NFV Cloud in a Telco network environment
 
 Helion CSP is based on HP Helion Openstack EE but with significantly enhanced and optimized functionality, availability, scale and  performance to meet the needs of NFV Cloud deployments
 
@@ -38,7 +38,7 @@ Helion CSP is sold, and supported as a separate SW entity from HP Helion Opensta
 
 * Central control plane but resources are distributed across geography interconnected by WAN
 * VNF resource requirement definition, policy based resource scheduling & placement
-* VNF Orchestration – Policy based Auto-scaling
+* VNF Orchestration - Policy based Auto-scaling
 * Integrated Physical and Virtual resource monitoring and self-healing
 * Highly Resilient and hitless upgrades
 * High performance data plane 
@@ -69,8 +69,8 @@ CGH-VNF-zoom.png
 
 	Example -
 		VNFc A = VMs - A1, A2, A3, A4
-		VNFc B = VMs – B1, B2, B3, B4
-		VNFc C = VMs – C1, C2, C3, C4
+		VNFc B = VMs - B1, B2, B3, B4
+		VNFc C = VMs - C1, C2, C3, C4
 
 * Some VNFs will want to pin user sessions to the same VM while some other VNFs will not care
 * Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)

@@ -36,7 +36,7 @@ The complete component list follows:
 
 * **Virtualized Services Controller**. The HP VSC is the industry's most powerful SDN controller. It functions as the robust network control plane for DCs, maintaining a full view of per-tenant network and service topologies.
 
-	Through the VSC, virtual routing and switching constructs are established to program the network forwarding plane, the HP VRS, using the OpenFlow™ protocol.
+	Through the VSC, virtual routing and switching constructs are established to program the network forwarding plane, the HP VRS, using the OpenFlow protocol.
 
 	The VSC communicates with the VSD policy engine using Extensible Messaging and Presence Protocol (XMPP). An ejabberd XMPP server/cluster is used to distribute messages between the VSD and VSC entities.
 
