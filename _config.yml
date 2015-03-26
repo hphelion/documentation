@@ -382,7 +382,7 @@ navigation:
     url: /
   - text: HP Helion OpenStack 1.1 Documentation Home
     url: /helion/openstack/1.1/
-  - text: HP Helion OpenStack 1.1 Documentation Site Index
+  - text: Site Index
     url: /helion/openstack/1.1/siteindex/
   - text: Release Notes
     url: /helion/openstack/1.1/release-notes/11/
