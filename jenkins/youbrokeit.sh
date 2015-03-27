@@ -38,14 +38,14 @@ sed ':a;N;$!ba;s/\n/ /g' $i   | sed 's|-->|-->\n|g' | sed 's|<!--.*-->||g' | sed
 
 
 grep permalink $i | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink1.txt
-echo "/master-toc/" | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink1.txt
+
 
 fi
 done
 
 
+echo "/master-toc/" | sed 's|.* /|/|' | sed 's|\/$||' >> filepermalink1.txt
  
-
 
 for i in `cat permalinklist1.txt | sed 's/ *//g'  | grep -v http | sort | uniq | sed 's:/$::' `
 do 
