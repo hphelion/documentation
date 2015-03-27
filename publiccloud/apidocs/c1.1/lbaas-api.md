@@ -10,9 +10,9 @@ product: lbaas
 <!--PUBLISHED-->
 # HP Helion Public Cloud Load Balancer Service API
 
-**Date:** May 2014
+**Date:** March 2015
 
-**Document Version:** 1.1
+**Document Version:** 1.2
 
 ## 1. Overview
 
@@ -32,10 +32,11 @@ This API definition represents the Load Balancer as a Service (LBaaS) in Beta re
 
 ### 1.2 Document Revision History ###
 
-|Document Version|Date            |Description|
-|:--------       | :------------  | :------ |
-|1.0     | April 2014  | Initial entry |
-|1.1 | May 2014 | HP Helion updates |
+| Document Version | Date | Description |
+| :-------- | :------------ | :------ |
+| 1.0 | April 2014 | Initial entry |
+| 1.1 | May 2014 | HP Helion updates |
+| 1.2 | March 2015 | Updated Endpoints |
 
 ## 2. Architecture View
 ### 2.1 Overview
@@ -163,12 +164,12 @@ By default, the API supports persistent connections via HTTP/1.1 keep-alives. Al
 
 Absolute limits are limits which prohibit a user from creating too many LBaaS resources. For example, 'maxNodesPerLoadbalancer' identifies the total number of nodes that may be associated with a given load balancer. Limits for a specific tenant may be queried for using the 'GET /limits' API. This will return the limit values which apply to the tenant who made the request.
 
-|Limited Resource          |Description                                              |
-|:-------------------------|:--------------------------------------------------------|
-|maxLoadBalancers          |Maximum number of load balancers allowed for this tenant |
-|maxNodesPerLoadBalancer   |Maximum number of nodes allowed for each load balancer   |
-|maxLoadBalancerNameLength |Maximum length allowed for a load balancer name          |
-|maxVIPsPerLoadBalancer    |Maximum number of Virtual IPs for each load balancer     |
+| Limited Resource | Description |
+| :----- | :------ |
+| maxLoadBalancers | Maximum number of load balancers allowed for this tenant |
+| maxNodesPerLoadBalancer | Maximum number of nodes allowed for each load balancer |
+| maxLoadBalancerNameLength | Maximum length allowed for a load balancer name |
+| maxVIPsPerLoadBalancer    | Maximum number of Virtual IPs for each load balancer |
 
 ### 4.6 Faults
 
@@ -205,22 +206,24 @@ What is currently ***not*** supported:
 
 The following are the non-configurable, default load balancer settings.
 
-| Setting                    | Value                                                                                 |
-|:---------------------------|---------------------------------------------------------------------------------------|                                                                          
-| TCP                        | Ports 443, 8443 are supported.                                                        |
-| HTTP                       | Ports 80, 8080 are supported.                                                        
-| TCP Sessions               | Source-IP Affinity turned ON by default. No current option to turn this function OFF. |
-| HTTP Sessions              | Session Persistence is turned ON by default. The session persistent cookie name is SERVID and the contents will be "id-xxxxx" where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function.                       |
-| HTTP X-Forwarded-For (XFF) | On by default                                                                         |
-| Assignable IP Addresses    | Only Compute service IP range; no support for external IP addresses for nodes. |
+| Setting | Value |
+| :----- | :----- |
+| TCP | Ports 443, 8443 are supported. |
+| HTTP | Ports 80, 8080 are supported. |
+| TCP Sessions | Source-IP Affinity turned ON by default. No current option to turn this function OFF. |
+| HTTP Sessions | Session Persistence is turned ON by default. The session persistent cookie name is SERVID and the contents will be "id-xxxxx" where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function. |
+| HTTP X-Forwarded-For (XFF) | On by default |
+| Assignable IP Addresses | Only Compute service IP range; no support for external IP addresses for nodes. |
 
 ## 5. REST API Specifications
 
 The following is a summary of all supported LBaaS API resources and methods. Each resource and method is defined in detail in the subsequent sections. 
 
-**Host**: https://region-a.geo-1.lbaas.hpcloudsvc.com
+**Hosts**:   
+US West - https://region-a.geo-1.ns-load-balancer.hpcloudsvc.com   
+US East - https://region-b.geo-1.ns-load-balancer.hpcloudsvc.com
 
-**BaseURI**: {Host}
+**BaseURI**: {Host}/v1.1
 
 **Derived resource identifiers:**
 
@@ -248,8 +251,7 @@ The following is a summary of all supported LBaaS API resources and methods. Eac
 |Node                |[Create a new load balancer node](#api-node-create)  |POST   |/v1.1/loadbalancers/{loadbalancerId}/nodes          |
 |Node                |[Update a load balancer node](#api-node-modify)      |PUT    |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
 |Node                |[Delete a load balancer node](#api-node-delete)      |DELETE |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
-|Virtual IP          |[Get list of virtual IPs](#api-vips)                 |GET    |/v1.1/loadbalancers/{loadbalancerId}/virtualips     |
-|Logs                |[Archive log file to Object Storage](#api-logs)      |POST   |/v1.1/loadbalancers/{loadbalancerId}/logs           |
+|Virtual IP          |[Get list of virtual IPs](#api-vips)                 |GET    |/v1.1/loadbalancers/{loadbalancerId}/virtualips     |          |
 |Health Monitor      |[Get a load balancer monitor](#api-monitor-status)   |GET    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor  |
 |Health Monitor      |[Update a load balancer monitor](#api-monitor-modify)|PUT    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor  |
 |Health Monitor      |[Reset a load balancer monitor](#api-monitor-delete) |DELETE |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor  |
@@ -839,7 +841,7 @@ If the request cannot be fulfilled due to insufficient or invalid data, an HTTP 
 
 By default, the system will create a load balancer with protocol set to HTTP, port set to 80 (or 443 if protocol is TCP), and assign a public IPV4 address to the load balancer. The default algorithm used is set to ROUND_ROBIN. 
 
-The load balancer options consist of a 30 second timeout for client connections (30,000ms) and 3 retries. Valid timeout values range from 0 to 1000 seconds (1,000,000 ms) with 0 indicating no timeout. retries can range from 0 to 256.
+The load balancer options consist of a 30 second timeout for client connections (30,000ms) and 3 retries. Valid timeout values range from 0 to 1000 seconds (1,000,000 ms) with 0 indicating no timeout. retries can range from 0 to 100.
 
 A load balancer name has a max length that can be queried when querying limits.
 
@@ -1550,86 +1552,9 @@ The response body contains the load balancer VIP list requested or 404, if not f
                 	]
 	}
 
-#### 5.9 Logs ####
-##### 5.9.1 Archive log file to Object Storage ##### {#api-logs}
-##### POST /v1.1/loadbalancers/{loadbalancerId}/logs
 
-**Description**
-
-The operation tells the load balancer to push the current log file into an Object Storage container. The status of the load balancer will be set to 'PENDING_UPDATE' during the operation and back to 'ACTIVE' upon success or failure. A success/failure message can be found in the 'statusDescription' field when getting the load balancer details.
-
-**Load Balancer Status Values**
-
-|Status Name     |Description                                                  |
-|:---------------|:------------------------------------------------------------|
-|ACTIVE          |Load balancer is in an operational state                     |
-|PENDING_UPDATE  |Load balancer is in the process of an update                 |
-
-By default with empty POST data the load balancer will upload to the swift account owned by the same tenant as the load balancer in a container called 'lbaaslogs'.  To change this the following optional parameters need to be provided in the POST body:
-
-**objectStoreBasePath :** the object store container to use
-
-**objectStoreEndpoint :** the object store endpoint to use including project ID, for example: https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/1234567890123
-
-**authToken :** an authentication token to the object store for the load balancer to use
-
-**Request Data**
-
-The caller is required to provide a request data with the POST which includes the appropriate information to upload logs.
-
-**Query Parameters Supported**
-
-None required.
-
-**Required HTTP Header Values**
-
-* X-Auth-Token   
-* Accept: application/json   
-* Content-Type: application/json
-
-**Request Body**
-
-The request body must follow the correct format for new load balancer creation, examples....
-
-**A request that uploads the logs to a different object store**
-
-	{
-    		"objectStoreBasePath": "mylblogs",
-    		"objectStoreEndpoint": "https://region-b.geo-1.objects.hpcloudsvc.com:443/v1/1234567890123",
-                "authToken": "HPAuth_d17efd"
-	} 
-
-**Normal Response Code**
-
-| HTTP Status Code | Description         |
-|:-----------------|:--------------------|
-|202               |Accepted             |
-
-**Response Body**
-
-An empty response body will be returned
-
-**Error Response Codes**
-
-| HTTP Status Code | Description         |
-|:-----------------|:--------------------|
-|400               |Bad Request          |
-|401               |Unauthorized         |
-|404               |Not Found            |
-|405               |Not Allowed          |
-|500               |LBaaS Fault          |
-|503               |Service Unavailable  |
-
-**Curl Request**
-
-	curl -i -k -X POST -H "X-Auth-Token: {Auth_Token}" --data "{}" {BaseURI}/v1.1/loadbalancers/{loadbalancerId}/logs
-
-**Response**
-
-202 status with no response body.
-
-#### 5.10 Health Monitor ####
-##### 5.10.1 Get Load Balancer Health Monitor ##### {#api-monitor-status}
+#### 5.9 Health Monitor ####
+##### 5.9.1 Get Load Balancer Health Monitor ##### {#api-monitor-status}
 ##### GET /v1.1/loadbalancers/{loadbalancerId}/healthmonitor
 
 **Description**
@@ -1695,7 +1620,7 @@ or..
     "path": "/healthcheck"
 	}
 
-##### 5.10.2 Update Load Balancer Health Monitor ##### {#api-monitor-modify}
+##### 5.9.2 Update Load Balancer Health Monitor ##### {#api-monitor-modify}
 ##### PUT /v1.1/loadbalancers/{loadbalancerId}/healthmonitor
 
 **Description**
@@ -1808,7 +1733,7 @@ or..
     "path": "/healthcheck"
 	}
 
-##### 5.10.3 Reset Load Balancer Health Monitor ##### {#api-monitor-delete}
+##### 5.9.3 Reset Load Balancer Health Monitor ##### {#api-monitor-delete}
 ##### DELETE /v1.1/loadbalancers/{loadbalancerId}/healthmonitor
 
 **Description**
