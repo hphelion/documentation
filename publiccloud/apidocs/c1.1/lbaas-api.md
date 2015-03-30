@@ -304,14 +304,15 @@ The response body contains information regarding a specific LBaaS API version.
 
 **Error Response Codes**
 
-|HTTP Status Code  |Description          |
-|:-----------------|:--------------------|
-|400               |Bad Request          |
-|401               |Unauthorized         |
-|404               |Not Found            |
-|405               |Not Allowed          |
-|500               |LBaaS Fault          |
-|503               |Service Unavailable  |
+| HTTP Status Code | Description |
+| :------ | :------- |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 404 | Not Found |
+| 405 | Not Allowed |
+| 500 | LBaaS Fault |
+| 503 | Service Unavailable |
+
 **Curl Request**
 
 	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/
