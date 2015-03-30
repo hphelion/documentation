@@ -184,7 +184,7 @@ The following are the non-configurable, default load balancer settings.
 | Setting | Value |
 | :------ | :------ |
 | TCP | Ports 443, 8443 are supported. |
-| HTTP | Ports 80, 8080,8088 are supported. |
+| HTTP | Ports 80, 8080, 8088 are supported. |
 | TCP Sessions | Source-IP Affinity turned ON by default. No current option to turn this function OFF. |
 | HTTP Sessions | Session Persistence is turned ON by default. The session persistent cookie name is SERVERID and the contents will be "id-xxxxx" where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function. |
 | HTTP X-Forwarded-For (XFF) | On by default |
@@ -318,7 +318,7 @@ The response body contains information regarding a specific LBaaS API version.
 
 **Response**
 
-{
+	{
     "versions": [
         {
             "status": "CURRENT",
@@ -332,7 +332,7 @@ The response body contains information regarding a specific LBaaS API version.
             ]
         }
     ]
-}
+	}
 
 #### 5.3 Limits ####
 ##### 5.3.1 Get List of LBaaS API Limits ##### {#api-limits}
@@ -456,7 +456,7 @@ The response body contains the currently supported protocols and port numbers.
 
 **Response**
 
-{
+	{
     "protocols": [
         {
             "name": "HTTP",
@@ -483,7 +483,7 @@ The response body contains the currently supported protocols and port numbers.
             "port": 3306
         }
     ]
-}
+	}
 
 #### 5.5 Algorithms ####
 ##### 5.5.1 Get List Of Supported LBaaS Algorithms ##### {#api-algorithms}
@@ -545,7 +545,7 @@ The response body contains the currently supported algorithms.
 
 **Response**
 
-{
+	{
     "algorithms": [
         {
             "name": "ROUND_ROBIN"
@@ -554,7 +554,7 @@ The response body contains the currently supported algorithms.
             "name": "LEAST_CONNECTIONS"
         }
     ]
-}
+	}
 
 #### 5.6 Load Balancers ####
 ##### 5.6.1 Get List Of All Load Balancers ##### {#api-list}
@@ -622,6 +622,7 @@ The response body contains a list of load balancers for the tenant making the re
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
 |503               |Service Unavailable  |
+
 **Curl Request**
 
 	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/loadbalancers
@@ -700,6 +701,7 @@ The response body contains the load balancer requested or 404, if not found.
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
 |503               |Service Unavailable  |
+
 **Curl Request**
 
 	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/loadbalancers/{loadbalancerID}
@@ -755,12 +757,12 @@ If the status returned is set to 'BUILD', then using the identifier of the load 
 
 **Load Balancer Status Values**
 
-|Status Name     |Description                                                  |
-|:---------------|:------------------------------------------------------------|
-|BUILD           |Load balancer is in a building state and not yet operational |
-|ACTIVE          |Load balancer is in an operational state                     |
-|PENDING_UPDATE  |Load balancer is in the process of an update                 |
-|ERROR           |Load balancer is in an error state and not operational       |
+| Status Name | Description |
+| :------- | :------- |
+| BUILD | Load balancer is in a building state and not yet operational |
+| ACTIVE | Load balancer is in an operational state |
+| PENDING_UPDATE | Load balancer is in the process of an update |
+| ERROR | Load balancer is in an error state and not operational |
 
 The caller of this operation must specify at least the following attributes of the load balancer:
 
@@ -1068,6 +1070,7 @@ None.
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
 |503               |Service Unavailable  |
+
 **Curl Example**
 
 	curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/loadbalancers/{loadbalancerID}
@@ -1120,6 +1123,7 @@ The response body contains the load balancer nodes requested or 404, if not foun
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
 |503               |Service Unavailable  |
+
 **Curl Example**
 
 	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/loadbalancers/{loadbalancerID}/nodes
@@ -1195,6 +1199,7 @@ The response body contains the load balancer node requested or 404, if not found
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
 |503               |Service Unavailable  |
+
 **Curl Example**
 
 	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId}
@@ -1413,6 +1418,7 @@ None.
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
 |503               |Service Unavailable  |
+
 **Curl Request**
 
 	curl -i -k -X DELETE -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId}
@@ -1719,12 +1725,6 @@ None.
 **Response**
 
 202 status with no response body.
-
-| Function           | Description                                         | Method| Path                                         |
-|:-------------------|-----------------------------------------------------|-------|----------------------------------------------|
-|Health Monitor      |[Get a load balancer monitor](#api-monitor-status)   |GET    |/v1.1/{ver}/loadbalancers/{loadbalancerId}/healthmonitor  |
-|Health Monitor      |[Update a load balancer monitor](#api-monitor-modify)|PUT    |/v1.1/{ver}/loadbalancers/{loadbalancerId}/healthmonitor  |
-|Health Monitor      |[Reset a load balancer monitor](#api-monitor-delete) |DELETE |/v1.1/{ver}/loadbalancers/{loadbalancerId}/healthmonitor  |
 
 #### 6. Features Currently Not Implemented or Supported ####
 
