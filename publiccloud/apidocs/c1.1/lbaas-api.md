@@ -226,7 +226,7 @@ US East - https://region-b.geo-1.ns-load-balancer.hpcloudsvc.com
 | Node |[Update a load balancer node](#api-node-modify) | PUT    |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
 | Node |[Delete a load balancer node](#api-node-delete) | DELETE |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
 | Virtual IP |[Get list of virtual IPs](#api-vips) | GET |/v1.1/loadbalancers/{loadbalancerId}/virtualips |
-| ealth Monitor |[Get a load balancer monitor](#api-monitor-status) | GET    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
+| Health Monitor |[Get a load balancer monitor](#api-monitor-status) | GET    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
 | Health Monitor |[Update a load balancer monitor](#api-monitor-modify) | PUT |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
 | Health Monitor |[Reset a load balancer monitor](#api-monitor-delete) | DELETE |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
 
