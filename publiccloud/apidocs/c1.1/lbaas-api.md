@@ -32,16 +32,16 @@ This API definition represents the Load Balancer as a Service (LBaaS) in Beta re
 
 ### 1.2 Document Revision History ###
 
-| Document Version | Date | Description |
+| Document Version| Date | Description |
 | :-------- | :------------ | :------ |
 | 1.0 | April 2014 | Initial entry |
 | 1.1 | May 2014 | HP Helion updates |
-| 1.2 | March 2015 | Updated Endpoints |
+| 1.2 | March 2015 | Updates for new Netscaler offering |
 
 ## 2. Architecture View
 ### 2.1 Overview
 
-The Load Balancer as a Service (LBaaS) is a set of APIs that provide a RESTful interface for the creation and management of load balancers in the cloud. Currently only application servers hosted in the HP Public Cloud are supported. The LBaaS APIs defined are integrated within the HP Helion API ecosystem including integration with the Identity management system, billing and monitoring systems.
+The Load Balancer as a Service (LBaaS) is a set of APIs that provide a RESTful interface for the creation and management of load balancers in the cloud. Currently only application servers hosted in the HP Helion Public Cloud are supported. The LBaaS APIs defined are integrated within the HP Helion API ecosystem including integration with the Identity management system, billing and monitoring systems.
 
 ### 2.2 Conceptual/Logical Architecture View
 
@@ -90,55 +90,30 @@ Once a user authenticates using the RESTful API, a service catalog will list the
 
 *The following is an example of LBaaS service information within the service catalog including roles and endpoints:* 
 
-	 "user": {
-	    "id": "59267322167978",
-	    "name": "lbaas_user",
-	    "roles": [
-	      {
-	        "id": "83241756956007",
-	        "serviceId": "220",
-	        "name": "lbaas-user",
-	        "tenantId": "11223344556677"
-	      },
-	      {
-	        "id": "00000000004024",
-	        "serviceId": "140",
-	        "name": "user",
-	        "tenantId": "11223344556677"
-	      },
-	      {
-	        "id": "00000000004013",
-	        "serviceId": "130",
-	        "name": "block-admin",
-	        "tenantId": "11223344556677"
-	      }
+	"serviceCatalog": [
+		{
+			region_id: "region-a.geo-1.private-beta"
+			links: {
+			self: "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/2201_P"
+		}
+			url: "https://region-a.geo-1.ns-load-balancer.hpcloudsvc.com/v1.1"
+			region: "region-a.geo-1.private-beta"
+			interface: "public"
+			service_Id: "220"
+			id: "2201_P"
+		}
+		{
+			region_id: "region-b.geo-1.private-beta"
+			links: {
+			self: "https://region-b.geo-1.identity.hpcloudsvc.com:35357/v3/endpoints/2204_P"
+		}
+			url: "https://region-b.geo-1.ns-load-balancer.hpcloudsvc.com/v1.1"
+			region: "region-b.geo-1.private-beta"
+			interface: "public"
+			service_Id: "220"
+			id: "2204_P"
+		}
 	    ]
-	  },
-	  "serviceCatalog": [
-	    {
-	      "name": "Identity",
-	      "type": "identity",
-	      "endpoints": [{
-	        "publicURL": "https:\/\/usa.region-b.geo-1.identity.hpcloudsvc.com:35357\/v2.0\/",
-	        "region": "region-b.geo-1",
-	        "versionId": "2.0",
-	        "versionInfo": "https:\/\/usa.region-b.geo-1.identity-internal.hpcloudsvc.com:35357\/v2.0\/"
-	      }]
-	    },
-	    {
-	      "name": "Load Balancer",
-	      "type": "hpext:lbaas",
-	      "endpoints": [{
-	        "tenantId": "11223344556677",
-	        "publicURL": "https:\/\/usa.region-b.geo-1.lbaas.hpcloudsvc.com\/v1.1",
-	        "publicURL2": "",
-	        "region": "region-b.geo-1",
-	        "versionId": "1.1",
-	        "versionInfo": "https:\/\/usa.region-b.geo-1.lbaas.hpcloudsvc.com\/v1.1",
-	        "versionList": "https:\/\/usa.region-b.geo-1.lbaas.hpcloudsvc.com"
-	      }]
-	    }
-	]
 
 ## 4. General API Information 
 
@@ -165,11 +140,11 @@ By default, the API supports persistent connections via HTTP/1.1 keep-alives. Al
 Absolute limits are limits which prohibit a user from creating too many LBaaS resources. For example, 'maxNodesPerLoadbalancer' identifies the total number of nodes that may be associated with a given load balancer. Limits for a specific tenant may be queried for using the 'GET /limits' API. This will return the limit values which apply to the tenant who made the request.
 
 | Limited Resource | Description |
-| :----- | :------ |
+| :------ | :------- |
 | maxLoadBalancers | Maximum number of load balancers allowed for this tenant |
 | maxNodesPerLoadBalancer | Maximum number of nodes allowed for each load balancer |
 | maxLoadBalancerNameLength | Maximum length allowed for a load balancer name |
-| maxVIPsPerLoadBalancer    | Maximum number of Virtual IPs for each load balancer |
+| maxVIPsPerLoadBalancer | Maximum number of Virtual IPs for each load balancer |
 
 ### 4.6 Faults
 
@@ -207,11 +182,11 @@ What is currently ***not*** supported:
 The following are the non-configurable, default load balancer settings.
 
 | Setting | Value |
-| :----- | :----- |
+| :------ | :------ |
 | TCP | Ports 443, 8443 are supported. |
-| HTTP | Ports 80, 8080 are supported. |
+| HTTP | Ports 80, 8080, 8088 are supported. |
 | TCP Sessions | Source-IP Affinity turned ON by default. No current option to turn this function OFF. |
-| HTTP Sessions | Session Persistence is turned ON by default. The session persistent cookie name is SERVID and the contents will be "id-xxxxx" where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function. |
+| HTTP Sessions | Session Persistence is turned ON by default. The session persistent cookie name is SERVERID and the contents will be "id-xxxxx" where the x value will be the load balancer node ID.  No current option to turn this function OFF or edit the default HTTP cookie for this function. |
 | HTTP X-Forwarded-For (XFF) | On by default |
 | Assignable IP Addresses | Only Compute service IP range; no support for external IP addresses for nodes. |
 
@@ -219,42 +194,41 @@ The following are the non-configurable, default load balancer settings.
 
 The following is a summary of all supported LBaaS API resources and methods. Each resource and method is defined in detail in the subsequent sections. 
 
-**Hosts**:   
+**Host**:   
 US West - https://region-a.geo-1.ns-load-balancer.hpcloudsvc.com   
 US East - https://region-b.geo-1.ns-load-balancer.hpcloudsvc.com
 
-**BaseURI**: {Host}/v1.1
+**BaseURI**: {Host}
 
 **Derived resource identifiers:**
 
-**{loadbalancerId}**  is the unique identifier for a load balancer returned by the LBaaS service.
+**{loadbalancerId}** is the unique identifier for a load balancer returned by the LBaaS service.
 
 **{nodeId}** is the unique identifier for a load balancer node returned by the LBaaS service.
 
 ### 5.1 Service API Operations
 #### 5.1.1 LBaaS API Summary Table
 
-|Resource            |Operation                                            |Method |Path                                                          |
-|:-------------------|:----------------------------------------------------|:------|:-------------------------------------------------------------|
-|Versions            |[Get list of all API versions](#api-versions)        |GET    |/v1.1/                                              |
-|Versions            |[Get specific API version](#api-version)             |GET    |/v1.1/                                              |
-|Limits              |[Get list of LBaaS limits](#api-limits)              |GET    |/v1.1/limits                                        |
-|Protocols           |[Get list of supported protocols](#api-protocols)    |GET    |/v1.1/protocols                                     |
-|Algorithms          |[Get list of supported algorithms](#api-algorithms)  |GET    |/v1.1/algorithms                                    |
-|Load Balancer       |[Get list of all load balancers](#api-list)          |GET    |/v1.1/loadbalancers                                 |
-|Load Balancer       |[Get load balancer details](#api-status)             |GET    |/v1.1/loadbalancers/{loadbalancerId}                |
-|Load Balancer       |[Create a new load balancer](#api-create)            |POST   |/v1.1/loadbalancers                                 |
-|Load Balancer       |[Update load balancer attributes](#api-modify)       |PUT    |/v1.1/loadbalancers/{loadbalancerId}                |
-|Load Balancer       |[Delete an existing load balancer](#api-delete)      |DELETE |/v1.1/loadbalancers/{loadbalancerId}                |
-|Node                |[Get list of load balancer nodes](#api-node-list)    |GET    |/v1.1/loadbalancers/{loadbalancerId}/nodes          |
-|Node                |[Get a specific load balancer node](#api-node-status)|GET    |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
-|Node                |[Create a new load balancer node](#api-node-create)  |POST   |/v1.1/loadbalancers/{loadbalancerId}/nodes          |
-|Node                |[Update a load balancer node](#api-node-modify)      |PUT    |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
-|Node                |[Delete a load balancer node](#api-node-delete)      |DELETE |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
-|Virtual IP          |[Get list of virtual IPs](#api-vips)                 |GET    |/v1.1/loadbalancers/{loadbalancerId}/virtualips     |          |
-|Health Monitor      |[Get a load balancer monitor](#api-monitor-status)   |GET    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor  |
-|Health Monitor      |[Update a load balancer monitor](#api-monitor-modify)|PUT    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor  |
-|Health Monitor      |[Reset a load balancer monitor](#api-monitor-delete) |DELETE |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor  |
+| Resource | Operation | Method | Path |
+| :------ | :------ | :------ | :------ |
+| Versions | [Get specific API version](#api-version) | GET | /v1.1/ |
+| Limits | [Get list of LBaaS limits](#api-limits) | GET | /v1.1/limits |
+| Protocols | [Get list of supported protocols](#api-protocols) | GET | /v1.1/protocols |
+| Algorithms | [Get list of supported algorithms](#api-algorithms) | GET    |/v1.1/algorithms |
+| Load Balancer | [Get list of all load balancers](#api-list) | GET |/v1.1/loadbalancers |
+| Load Balancer | [Get load balancer details](#api-status) | GET |/v1.1/loadbalancers/{loadbalancerId} |
+| Load Balancer |[Create a new load balancer](#api-create) | POST   |/v1.1/loadbalancers |
+| Load Balancer |[Update load balancer attributes](#api-modify) | PUT    |/v1.1/loadbalancers/{loadbalancerId} |
+| Load Balancer |[Delete an existing load balancer](#api-delete) | DELETE |/v1.1/loadbalancers/{loadbalancerId} |
+| Node |[Get list of load balancer nodes](#api-node-list) | GET    |/v1.1/loadbalancers/{loadbalancerId}/nodes |
+| Node |[Get a specific load balancer node](#api-node-status) | GET    |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
+| Node |[Create a new load balancer node](#api-node-create) | POST   |/v1.1/loadbalancers/{loadbalancerId}/nodes |
+| Node |[Update a load balancer node](#api-node-modify) | PUT    |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
+| Node |[Delete a load balancer node](#api-node-delete) | DELETE |/v1.1/loadbalancers/{loadbalancerId}/nodes/{nodeId} |
+| Virtual IP |[Get list of virtual IPs](#api-vips) | GET |/v1.1/loadbalancers/{loadbalancerId}/virtualips |
+| ealth Monitor |[Get a load balancer monitor](#api-monitor-status) | GET    |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
+| Health Monitor |[Update a load balancer monitor](#api-monitor-modify) | PUT |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
+| Health Monitor |[Reset a load balancer monitor](#api-monitor-delete) | DELETE |/v1.1/loadbalancers/{loadbalancerId}/healthmonitor |
 
 #### 5.1.2 Common Request Headers 
 
@@ -295,70 +269,7 @@ US East - https://region-b.geo-1.ns-load-balancer.hpcloudsvc.com
 	Date: Tue, 30 Oct 2012 16:22:35 GMT
 
 #### 5.2 Versions ####
-##### 5.2.1 Get a List of All LBaaS API Versions Supported ##### {#api-versions}
-##### GET /v1.1/
-
-**Description**
-
-This method allows querying the LBaaS service for all supported versions it supports. This method is also advertised within the Keystone service catalog which is presented upon user login. All versions listed can be used for LBaaS.
-
-**Request Data**
-
-None required.
-
-**Query Parameters Supported**
-
-None required.
-
-**Required HTTP Header Values**
-
-X-Auth-Token
-
-**Request Body**
-
-None required.
-
-**Normal Response Code**
-
-|HTTP Status Code  |Description          |
-|:-----------------|:--------------------|
-|200               |OK                   |
-
-**Response Body**
-
-The response body contains a list of all supported versions of LBaaS.
-
-**Error Response Codes**
-
-|HTTP Status Code  |Description          |
-|:-----------------|:--------------------|
-|400               |Bad Request          |
-|401               |Unauthorized         |
-|404               |Not Found            |
-|405               |Not Allowed          |
-|500               |LBaaS Fault          |
-
-**Curl Request**
-
-	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/
-
-**Response**
-
-	{
-	versions: [1]
-		0:  {
-		status: "CURRENT"
-		updated: "2012-12-18T18:30:02.25Z"
-		id: "v1.1"
-		links: [1]
-			0:  {
-			href: "http://wiki.openstack.org/Atlas-LB"
-			rel: "self"
-			}
-		}
-	}
-
-##### 5.2.2 Get Specific LBaaS API Version Information ##### {#api-version}
+##### 5.2.1 Get Specific LBaaS API Version Information ##### {#api-version}
 ##### GET /v1.1/
 
 **Description**
@@ -400,7 +311,7 @@ The response body contains information regarding a specific LBaaS API version.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
-
+|503               |Service Unavailable  |
 **Curl Request**
 
 	curl -i -k -X GET -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Auth-Token: {Auth_Token}' {BaseURI}/v1.1/
@@ -408,17 +319,19 @@ The response body contains information regarding a specific LBaaS API version.
 **Response**
 
 	{
-	versions: [1]
-		0:  {
-		status: "CURRENT"
-		updated: "2012-12-18T18:30:02.25Z"
-		id: "v1.1"
-		links: [1]
-			0:  {
-			href: "http://wiki.openstack.org/Atlas-LB"
-			rel: "self"
-			}
-		}
+    "versions": [
+        {
+            "status": "CURRENT",
+            "updated": "2012-12-18T18:30:02.25Z",
+            "id": "v1.1",
+            "links": [
+                {
+                    "href": "http://wiki.openstack.org/Atlas-LB",
+                    "rel": "self"
+                }
+            ]
+        }
+    ]
 	}
 
 #### 5.3 Limits ####
@@ -429,12 +342,12 @@ The response body contains information regarding a specific LBaaS API version.
 
 This method allows querying the LBaaS service for a list of API limits which apply on a tenant basis. Each tenant may not utilize LBaaS API resources exceeding these limits and will receive and over limit error if attempted (413).
 
-|Returned Limit Name       |Value                                                    |
-|:-------------------------|:--------------------------------------------------------|
-|maxLoadBalancers          |Maximum number of load balancers allowed for this tenant |
-|maxNodesPerLoadBalancer   |Maximum number of nodes allowed for each load balancer   |
-|maxLoadBalancerNameLength |Maximum length allowed for a load balancer name          |
-|maxVIPsPerLoadBalancer    |Maximum number of Virtual IPs for each load balancer     |
+| Returned Limit Name | Value |
+| :------ | :------- |
+| maxLoadBalancers | Maximum number of load balancers allowed for this tenant |
+| maxNodesPerLoadBalancer | Maximum number of nodes allowed for each load balancer |
+| maxLoadBalancerNameLength | Maximum length allowed for a load balancer name |
+| maxVIPsPerLoadBalancer | Maximum number of Virtual IPs for each load balancer |
 
 **Request Data**
 
@@ -471,6 +384,7 @@ The response body contains information regarding limits imposed for the tenant m
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Request**
 
@@ -534,6 +448,7 @@ The response body contains the currently supported protocols and port numbers.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Request**
 
@@ -542,19 +457,32 @@ The response body contains the currently supported protocols and port numbers.
 **Response**
 
 	{
-	protocols: [3]
-		0:  {
-		name: "HTTP"
-		port: "80"
-		}
-		1:  {
-		name: "HTTPS"
-		port: "443"
-		}
-		2:  {
-		name: "TCP"
-		port: "*"
-		}
+    "protocols": [
+        {
+            "name": "HTTP",
+            "port": 80
+        },
+        {
+            "name": "HTTP",
+            "port": 8080
+        },
+        {
+            "name": "HTTP",
+            "port": 8088
+        },
+        {
+            "name": "TCP",
+            "port": 443
+        },
+        {
+            "name": "TCP",
+            "port": 8443
+        },
+        {
+            "name": "GALERA",
+            "port": 3306
+        }
+    ]
 	}
 
 #### 5.5 Algorithms ####
@@ -609,6 +537,7 @@ The response body contains the currently supported algorithms.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Request**
 
@@ -617,13 +546,14 @@ The response body contains the currently supported algorithms.
 **Response**
 
 	{
-	algorithms: [2]
-		0:  {
-		name: "ROUND_ROBIN"
-		}
-		1:  {
-		name: "LEAST_CONNECTIONS"
-		}
+    "algorithms": [
+        {
+            "name": "ROUND_ROBIN"
+        },
+        {
+            "name": "LEAST_CONNECTIONS"
+        }
+    ]
 	}
 
 #### 5.6 Load Balancers ####
@@ -691,6 +621,7 @@ The response body contains a list of load balancers for the tenant making the re
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Request**
 
@@ -704,11 +635,11 @@ The response body contains a list of load balancers for the tenant making the re
            		"name":"lb-site1",
            		"id":"71",
            		"protocol":"HTTP",
-           		"port":"80",
+           		"port":80,
            		"algorithm":"LEAST_CONNECTIONS",
            		"status":"ACTIVE",
            		"created":"2010-11-30T03:23:42Z",
-           		"updated":5.18510-11-30T03:23:44Z",
+           		"updated":"5.18510-11-30T03:23:44Z",
                 "nodeCount":2,
                 "options": {"timeout": 30000, "retries": 3}
          	},
@@ -716,7 +647,7 @@ The response body contains a list of load balancers for the tenant making the re
            		"name":"lb-site2",
            		"id":"166",
            		"protocol":"TCP",
-           		"port":"443",
+           		"port":443,
            		"algorithm":"ROUND_ROBIN",
            		"status":"ACTIVE",
            		"created":"2010-11-30T03:23:42Z",
@@ -769,6 +700,7 @@ The response body contains the load balancer requested or 404, if not found.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Request**
 
@@ -780,7 +712,7 @@ The response body contains the load balancer requested or 404, if not found.
       		"id": "2000",
       		"name":"sample-loadbalancer",
       		"protocol":"HTTP",
-      		"port": "80",
+      		"port": 80,
       		"algorithm":"ROUND_ROBIN",
       		"status":"ACTIVE",
             "statusDescription":"",
@@ -790,7 +722,7 @@ The response body contains the load balancer requested or 404, if not found.
             "options": {"timeout": 30000, "retries": 3},
       		"virtualIps":[
                     	{
-                       		"id": "1000",
+                       		"id": 1000,
                        		"address":"15.186.1.1",
                        		"type":"PUBLIC",
                        		"ipVersion":"IPV4"
@@ -800,14 +732,14 @@ The response body contains the load balancer requested or 404, if not found.
                       {
                          	"id": "1041",
                          	"address":"15.185.1.1",
-                         	"port": "80",
+                         	"port": 80,
                          	"condition":"ENABLED",
                          	"status":"ONLINE"
                        },
                        {
                          	"id": "1411",
                          	"address":"15.185.1.2",
-                         	"port": "80",
+                         	"port": 80,
                          	"condition":"ENABLED",
                          	"status":"ONLINE"
                        }
@@ -825,12 +757,12 @@ If the status returned is set to 'BUILD', then using the identifier of the load 
 
 **Load Balancer Status Values**
 
-|Status Name     |Description                                                  |
-|:---------------|:------------------------------------------------------------|
-|BUILD           |Load balancer is in a building state and not yet operational |
-|ACTIVE          |Load balancer is in an operational state                     |
-|PENDING_UPDATE  |Load balancer is in the process of an update                 |
-|ERROR           |Load balancer is in an error state and not operational       |
+| Status Name | Description |
+| :------- | :------- |
+| BUILD | Load balancer is in a building state and not yet operational |
+| ACTIVE | Load balancer is in an operational state |
+| PENDING_UPDATE | Load balancer is in the process of an update |
+| ERROR | Load balancer is in an error state and not operational |
 
 The caller of this operation must specify at least the following attributes of the load balancer:
 
@@ -874,11 +806,11 @@ The request body must follow the correct format for new load balancer creation, 
     		"nodes":      [
                     	{
                       		"address": "15.185.1.1",
-                      		"port": "80"
+                      		"port": 80
                     	},
                     	{
                       		"address": "15.185.1.2",
-                      		"port": "81"
+                      		"port": 81
                     	}
                 ]
 	} 
@@ -887,18 +819,18 @@ The request body must follow the correct format for new load balancer creation, 
 
 	{
 	"name":"a-new-loadbalancer",
-		"port":"80",
+		"port":80,
 		"protocol":"HTTP",
 		"options": {"timeout": 30000, "retries": 3},
 		"virtualIps": [
                    {
-                      "id":"39"
+                      "id":39
                    }
                  ],
 		"nodes":      [
                    {
                       "address":"15.185.1.1",
-                      "port":"80",
+                      "port":80,
                       "condition":"ENABLED"
                    }
                  ]
@@ -920,7 +852,7 @@ The response body contains the load balancer requested or appropriate error.
     		"name": "a-new-loadbalancer",
     		"id": "144",
     		"protocol": "HTTP",
-    		"port": "83",
+    		"port": 83,
     		"algorithm": "ROUND_ROBIN",
     		"status": "BUILD",
     		"created": "2011-04-13T14:18:07Z",
@@ -929,7 +861,7 @@ The response body contains the load balancer requested or appropriate error.
     		"virtualIps": [
                     {
                       	"address": "3ffe:1900:4545:3:200:f8ff:fe21:67cf",
-                      	"id": "39",
+                      	"id": 39,
                       	"type": "PUBLIC",
                       	"ipVersion": "IPV6"
                     }
@@ -938,7 +870,7 @@ The response body contains the load balancer requested or appropriate error.
                     {
                       	"address": "15.185.1.1",
                       	"id": "653",
-                      	"port": "80",
+                      	"port": 80,
                       	"status": "ONLINE",
                       	"condition": "ENABLED"
                     }
@@ -967,11 +899,11 @@ The response body contains the load balancer requested or appropriate error.
     		"nodes":      [
                     {
                       	"address": "15.185.229.153",
-                      	"port": "443"
+                      	"port": 443
                     },
                    {
                       	"address": "15.185.226.163",
-                      	"port": "443"
+                      	"port": 443
                     },
                    ],
 	}
@@ -983,7 +915,7 @@ The response body contains the load balancer requested or appropriate error.
 **Response**
 
 	{
-		"port":"443",
+		"port":443,
 		"id":"10",
 		"protocol":"tcp",
 		"updated":"2013-02-10T18:20Z",
@@ -991,14 +923,14 @@ The response body contains the load balancer requested or appropriate error.
 		"status":"BUILD",
 		"nodes":[
 			{	
-				"port":"443",
+				"port":443,
 				"id":"19",
 				"condition":"ENABLED",
 				"status":"ONLINE",
 				"address":"15.185.229.153"
 			},
 			{
-				"port":"443",
+				"port":443,
 				"id":"20",
 				"condition":"ENABLED",
 				"status":"ONLINE",
@@ -1008,7 +940,7 @@ The response body contains the load balancer requested or appropriate error.
 		"name":"lb #1",
 		"virtualIps":[
 			{
-				"id":"5",
+				"id":5,
 				"address":"15.185.96.125",
 				"ipVersion":"IPV_4",
 				"type":"PUBLIC"
@@ -1076,7 +1008,7 @@ None.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
-
+|503               |Service Unavailable  |
 **Example**
 
 **Contents of Request file lb.json**
@@ -1137,6 +1069,7 @@ None.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Example**
 
@@ -1189,6 +1122,7 @@ The response body contains the load balancer nodes requested or 404, if not foun
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Example**
 
@@ -1201,21 +1135,21 @@ The response body contains the load balancer nodes requested or 404, if not foun
               	{
                 	"id":"410",
                 	"address":"15.185.1.1",
-                	"port":"80",
+                	"port":80,
                 	"condition":"ENABLED",
                 	"status":"ONLINE"
               	},
               	{
                 	"id":"236",
                 	"address":"15.185.1.2",
-                	"port":"80",
+                	"port":80,
                 	"condition":"ENABLED",
                 	"status":"ONLINE"
               	},
               	{
                 	"id":"2815",
                 	"address":"15.185.1.3",
-                	"port":"83",
+                	"port":83,
                 	"condition":"DISABLED",
                 	"status":"OFFLINE"
               	},
@@ -1264,6 +1198,7 @@ The response body contains the load balancer node requested or 404, if not found
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Example**
 
@@ -1274,7 +1209,7 @@ The response body contains the load balancer node requested or 404, if not found
 	{
 		"id":"410",
 		"address":"15.185.1.2",
-		"port":"80",
+		"port":80,
 		"condition":"ENABLED",
 		"status":"ONLINE"
 	}
@@ -1322,7 +1257,7 @@ The response body contains the load balancer requested or 404, if not found.
 |405               |Not Allowed          |
 |413               |Over Limit           |
 |500               |LBaaS Fault          |
-
+|503               |Service Unavailable  |
 **Example** 
 
 **Contents of Request file nodes.json**
@@ -1331,15 +1266,15 @@ The response body contains the load balancer requested or 404, if not found.
 	"nodes": [
              		{
                			"address": "15.185.1.1",
-               			"port": "80"
+               			"port": 80
              		},
              		{
                			"address": "15.185.2.1",
-               			"port": "80"
+               			"port": 80
              		},
              		{
                			"address": "15.185.2.2",
-               			"port": "88",
+               			"port": 88,
                			"condition": "DISABLED"
              		}
            	]
@@ -1356,21 +1291,21 @@ The response body contains the load balancer requested or 404, if not found.
              		{
                			"id": "7298",
                			"address": "15.185.1.1",
-               			"port": "80",
+               			"port": 80,
                			"condition": "ENABLED",
                			"status": "ONLINE"
              		},
              		{
                			"id": "293",
                			"address": "15.185.2.1",
-               			"port": "80",
+               			"port": 80,
                			"condition": "ENABLED",
                			"status": "OFFLINE"
              		},
              		{
                			"id": "183",
                			"address": "15.185.2.2",
-               			"port": "88",
+               			"port": 88,
                			"condition": "DISABLED",
                			"status": "OFFLINE"
              		}
@@ -1421,7 +1356,7 @@ None.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
-
+|503               |Service Unavailable  |
 **Example**
 
 **Contents of Request file node.json**
@@ -1482,6 +1417,7 @@ None.
 |404               |Not Found            |
 |405               |Not Allowed          |
 |500               |LBaaS Fault          |
+|503               |Service Unavailable  |
 
 **Curl Request**
 
@@ -1544,14 +1480,13 @@ The response body contains the load balancer VIP list requested or 404, if not f
 	{
 	"virtualIps": [
                  	{
-                   		"id": "1021",
+                   		"id": 1021,
                    		"address": "15.186.10.210",
                    		"type": "PUBLIC",
                    		"ipVersion": "IPV4"
                  	}
                 	]
 	}
-
 
 #### 5.9 Health Monitor ####
 ##### 5.9.1 Get Load Balancer Health Monitor ##### {#api-monitor-status}
@@ -1790,12 +1725,6 @@ None.
 **Response**
 
 202 status with no response body.
-
-| Function           | Description                                         | Method| Path                                         |
-|:-------------------|-----------------------------------------------------|-------|----------------------------------------------|
-|Health Monitor      |[Get a load balancer monitor](#api-monitor-status)   |GET    |/v1.1/{ver}/loadbalancers/{loadbalancerId}/healthmonitor  |
-|Health Monitor      |[Update a load balancer monitor](#api-monitor-modify)|PUT    |/v1.1/{ver}/loadbalancers/{loadbalancerId}/healthmonitor  |
-|Health Monitor      |[Reset a load balancer monitor](#api-monitor-delete) |DELETE |/v1.1/{ver}/loadbalancers/{loadbalancerId}/healthmonitor  |
 
 #### 6. Features Currently Not Implemented or Supported ####
 
