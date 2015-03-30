@@ -194,8 +194,8 @@ The following are the non-configurable, default load balancer settings.
 
 The following is a summary of all supported LBaaS API resources and methods. Each resource and method is defined in detail in the subsequent sections. 
 
-**Host**:
-US West - https://region-a.geo-1.ns-load-balancer.hpcloudsvc.com
+**Host**:   
+US West - https://region-a.geo-1.ns-load-balancer.hpcloudsvc.com   
 US East - https://region-b.geo-1.ns-load-balancer.hpcloudsvc.com
 
 **BaseURI**: {Host}
