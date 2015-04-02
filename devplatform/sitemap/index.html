@@ -2082,22 +2082,22 @@ PageRefresh();
 window.onload=function() {
 	var links=document.getElementsByTagName('a');
 
-for (i=0; i<links.length; i++) {
+for (i=0; i<links.length; ) {
 	newlinks=links[i].innerHTML; 
 	if (newlinks=='<img src="/images/HP_Helion_logo_72.png" style="position: absolute;top: 10px;" alt="HP Helion" />'){
-		break;
+		i++;
 	}	
 
 	else if (newlinks=='Helion@HP'){
-		break;
+		i++;
 	}
 
 	else if (newlinks=='Support'){
-		break;
+		i++;
 	}
 
 	else if (newlinks=='Contact'){
-		break;
+		i++
 	}
 
 	else {
@@ -2106,6 +2106,7 @@ for (i=0; i<links.length; i++) {
 	links[i].innerHTML=newer[1];
     if (newer[2]) {
         links[i].innerHTML=newer[1]+newer[2];
+        i++;
     }
   }
 }   
