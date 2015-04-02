@@ -454,8 +454,6 @@ navigation:
     url: /helion/devplatform/1.1/
   - text: Development Platform Installation & Configuration
     url: /helion/devplatform/1.1/install/
-  - text: Development Platform Community Edition Installation & Configuration
-    url: /helion/devplatform/1.1/install/community/
   - text: Application Developer Resources
     url: /helion/devplatform/1.1/appdev/
   - text: IT Ops Resources
