@@ -20,8 +20,6 @@
 	<script src="/js/metrics.js"></script> 
 	<style type="text/css">
 
-
-
 #cont{
 margin:auto;
 width:800px;
@@ -107,15 +105,61 @@ font-weight:bold;
 }
 table {
 
-	border: 0px;
-	background: #ffffff;
+	border: 0px !important; 
+	background: #ffffff !important;
 }
 </style>
 
 
 </head>
 <body> 
+  <div id="wrapper">
+    <!--[if lt IE 7]>
+    	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header-container">
+      <header class="header">
+      	<div class="top-bar" style="height: 75px;">
+		
+      		<div class="search-wrapper wrapper container_16">
+			
+      			<a href="#" class="sales-rep show-320 show-480 hide-768"><span aria-hidden="true" class="icon-icon-sales-rep"></span></a>
+      			<nav class="sub-nav" >
+				<a href="http://docs.hpcloud.com/" class="logo" ><img src="/images/HP_Helion_logo_72.png" class="speclogo"/></a>
+        			<ul>
+					
+ 
 
+         
+        				<li><a href="http://www8.hp.com/us/en/cloud/helion-portfolio.html">Helion@HP</a></li>
+						<li><a href="https://h30580.www3.hp.com">Support</a></li>
+        				<li><a href="mailto:heliondocs@hp.com">Contact</a></li>
+						
+        				 
+        			</ul>
+      			</nav>
+          </div>
+      	</div>
+		
+      </header>
+    </div>
+		<div id="main-container">
+			<div id="main" class="wrapper clearfix container_16">
+				<div id="content" class="grid_10 suffix_1">
+	<article>
+		<!--PUBLISHED-->
+
+<script>
+<![CDATA[
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+]]>
+</script>
 
 
 <div id="cont">
@@ -670,7 +714,7 @@ table {
 <tr valign="top">
 <td class="lbullet">&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td class="lbullet">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td class="lbullet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td class="lbullet">&nbsp;&nbsp;&nbsp;&nbsp;nbsp;</td>
 <td class="lbullet">&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td class="lbullet">&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td class="lpart" colspan="95"><div class="lhead">clojure
@@ -1937,19 +1981,117 @@ table {
 </div>
 
 
+			</div> <!-- #main -->
+		</div> <!-- #main-container -->
+	</div> <!-- #wrapper -->
+
+		
+  <footer class="footer">
+    <div class="container_16">
+    	<div class="wrapper grid_16">
+    		<ul class="footer-social">
+    			<li class="twitter"><a href="https://twitter.com/hphelioncloud"></a></li>
+    			<li class="youtube"><a href="http://www.youtube.com/hpcloud"></a></li>
+    			<li class="rss"><a href="http://h30499.www3.hp.com/hpeb/rss/board?board.id=sws-661"></a></li>
+    			<li class="facebook"><a href="https://www.facebook.com/HPCloud"></a></li>
+    			<li class="linkedin stretch"><a href="https://www.linkedin.com/company/hewlett-packard"></a></li>
+    		</ul>
+    		<ul class="contact-info">
+    			<li>In the U.S.<br />1-855-61CLOUD</li>
+    			<li>Worldwide<br />+1678-745-9010</li>
+    			<li class="col-3">Online Support<br /><a href="mailto:support@hpcloud.com">Email</a> 
+				<!-- comment out per JC
+				or <span class="link" onclick="jQuery('#hpcloud-chat-button a').click();">Chat with us</span>
+				-->
+				</li>
+    		</ul>
+    		<div class="copyright">
+    			<p>The OpenStack&reg; Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.</p><br />
+    			<p>&copy; 2015 Hewlett-Packard Development Company, L.P.<br /><a href="http://www.hpcloud.com/legal-documents">HP Cloud legal documents and privacy policy</a></p>
+    		</div>
+    	</div>
+    </div>
+  </footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/jquery-1.8.2f.min.js"><\/script>')</script>
+
+  <script src="/js/combined.js"></script>
+  <script>
+      __HP_CHAT_CONF = {};
+      __HP_CHAT_CONF.sales = true;
+      __HP_CHAT_CONF.support = true;
+    </script>
+	
+    <script> //removed per JC
+    //(function($, window) {
+    //    $(window).load(function() {
+    //    var sNew = document.createElement("script");
+    //  sNew.async = true;
+    //sNew.src = 'https://a248.e.akamai.net/cdn.hpcloudsvc.com/gcbb18d905d32174e6eb205943b0dea4a/prodae1/chat.js';
+    //var s0 = document.getElementsByTagName('script')[0];
+    //s0.parentNode.insertBefore(sNew, s0);
+    //});
+    //})(jQuery, this);
+    </script>
+    <script>
+        //Executes your code when the DOM is ready.  Acts the same as $(document).ready().
+        function styleRestCmds() {
+            $("h5:contains('GET')").addClass('rest_cmd cmd_get');
+            $("h5:contains('POST')").addClass('rest_cmd cmd_post');
+            $("h5:contains('FormPOST')").removeClass('rest_cmd cmd_post');
+            $("h5:contains('PUT')").addClass('rest_cmd cmd_put');
+            $("h5:contains('COPY')").addClass('rest_cmd cmd_copy');
+            $("h5:contains('PATCH')").addClass('rest_cmd cmd_patch');
+            $("h5:contains('HEAD')").addClass('rest_cmd cmd_head');
+            $("h5:contains('DELETE')").addClass('rest_cmd cmd_delete');
+        }
+
+        $(function() {
+            //Calls the tocify method on your HTML div.
+            $("#toc").tocify({
+                'selectors': 'h2,h3,h4',
+                'showAndHideOnScroll': false,
+                'hideEffect': 'slideUp',
+                'scrollTo': 55    // Amount of space between top of page and selected content
+              }
+            );
+            // Style the REST commands
+            styleRestCmds();
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript">
 window.onload=function() {
 	var links=document.getElementsByTagName('a');
 
 for (i=0; i<links.length; i++) {
-	newlinks=links[i].innerHTML; 
-	
+	newlinks=links[i].innerText; 
+	if (newlinks.substring(0,4)=='HP H'){
     newer=newlinks.split(':');
     
-	links[i].innerHTML=newer[1];
+	links[i].innerText=newer[1];
     if (newer[2]) {
-        links[i].innerHTML=newer[1]+newer[2];
+        links[i].innerText=newer[1]+newer[2];
     }
+}
   }
    
 };
