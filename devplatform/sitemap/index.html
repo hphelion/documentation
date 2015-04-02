@@ -2083,12 +2083,12 @@ window.onload=function() {
 	var links=document.getElementsByTagName('a');
 
 for (i=0; i<links.length; i++) {
-	newlinks=links[i].innerHTML; 
+	newlinks=links[i].innerText; 
     newer=newlinks.split(':');
     
-	links[i].innerHTML=newer[1];
+	links[i].innerText=newer[1];
     if (newer[2]) {
-        links[i].innerHTML=newer[1]+newer[2];
+        links[i].innerText=newer[1]+newer[2];
     }
 }   
 }
