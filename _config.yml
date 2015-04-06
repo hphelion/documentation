@@ -415,7 +415,7 @@ navigation:
   carrier-grade: 
   - text: HP Helion Documentation
     url: /
-  - text: HP Helion OpenStack 1.1 Documentation Home
+  - text: HP Helion OpenStack Carrier Grade Documentation Home
     url: /helion/openstack/carrier/
   - text: Site Index
     url: /helion/openstack/carrier/siteindex/
