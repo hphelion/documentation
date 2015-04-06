@@ -37,12 +37,12 @@ Helion CSP is sold, and supported as a separate SW entity from HP Helion Opensta
 
 Use the following links and tools to begin working with HP Helion OpenStack:
 
-* [HP Helion OpenStack Carrier Grade Overview](/helion/openstack/carrier/overview)
-* [HP Lifecycle Manager Overview](/helion/openstack/carrier/hlm/overivew)
-* [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview)
+* [HP Helion OpenStack Carrier Grade Overview](/helion/openstack/carrier/overview/)
+* [HP Lifecycle Manager Overview](/helion/openstack/carrier/hlm/overivew/)
+* [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
-* [HP/WindRiver Integration Overview](/helion/openstack/carrier/wr/overview)
-* [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview)
+* [HP Helion OpenStack Carrier Grade WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/)
+* [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview/)
 * [Manage Your HP Helion OpenStack Carrier Grade Cloud](/helion/commercial/carrier/dashboard/managing/)
 
 
