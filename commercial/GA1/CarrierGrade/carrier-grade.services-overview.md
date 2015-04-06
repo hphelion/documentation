@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Services Overview"
-permalink: /helion/openstack/1.1/carrier/services/overview/
+permalink: /helion/openstack/carrier/services/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
