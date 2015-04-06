@@ -412,6 +412,39 @@ navigation:
     url: /helion/openstack/1.1/eula/
   - text: Open Source and Third-Party Software License Agreements
     url: /helion/openstack/1.1/3rd-party-license-agreements/	
+  carrier-grade: 
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack 1.1 Documentation Home
+    url: /helion/openstack/carrier/
+  - text: Site Index
+    url: /helion/openstack/carrier/siteindex/
+  - text: Release Notes
+    url: /helion/openstack/carrier/release-notes/
+  - text: FAQ
+    url: /helion/openstack/carrier/faq/  
+  - text: Technical Overview
+    url: /helion/openstack/carrier/technical-overview/ 
+  - text: Services Overview
+    url: /helion/openstack/carrier/services/overview/
+  - text: Support Matrix
+    url: /helion/openstack/carrier/support-matrix/ 		
+  - text: Installation Overview
+    url: /helion/openstack/carrier/install/overview/	
+  - text: Network Security
+    url: /helion/openstack/carrier/install/security/
+  - text: Back Up and Restore
+    url: /helion/openstack/carrier/backup.restore/
+  - text: Troubleshooting
+    url: /helion/openstack/carrier/services/troubleshooting/
+  - text: Related Documentation
+    url: /helion/openstack/1.1/related-links/	
+  - text: Glossary
+    url: /helion/openstack/1.1/glossary/ 	
+  - text: End User License Agreement
+    url: /helion/openstack/carrier/eula/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /helion/openstack/carrier/3rd-party-license-agreements/
   11commercial.ga: 
   - text: HP Helion Documentation
     url: /

@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; 1.1: Support Matrix"
 permalink: /helion/openstack/carrier/support-matrix/
-product: commercial.ga
+product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
@@ -65,14 +65,23 @@ The following diagrams depict simplified deployment scenarios:
 The following hardware has been tested and verified to work with HP Helion OpenStack:
 
 
-### HP ProLiant BladeSystem
+### HLM System
+
+For the HLM system, the following servers are supported for the current release.
+
+### HP Helion OpenStack Region
+
+For the HP Helion OpenStack Region, the following servers are supported for the current release.
+
+
+**HP ProLiant BladeSystem**
 
 - [BL460c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177949)
 - [BL460c Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271227)
 - [BL660c Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5268287)
 
 
-### HP ProLiant Rack Servers 
+**HP ProLiant Rack Servers** 
 
 - [DL360 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7252836)
 - [DL380 Gen9](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7271241)
@@ -83,7 +92,8 @@ The following hardware has been tested and verified to work with HP Helion OpenS
 - [DL580 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177957)
 
 <!-- Hiding until confirmation
-### HP Moonshot Servers
+**HP Moonshot Servers**
+
 - [m710 Server Cartridge](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
 - [m300 Server Cartridge](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
 
@@ -91,24 +101,27 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 
 -->
 
-### HP ProLiant Scalable Systems
+**HP ProLiant Scalable Systems**
 
 - [SL230s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177937)
 - [SL250s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177941)
 - [SL270s Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=5177945)
 - [SL4540 Gen8](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=7611044)
 
-### IBM systems ###
+**IBM systems**
 
 - [IBM System x3550 M4 Server](http://www-03.ibm.com/systems/x/hardware/rack/x3550m4/)
 
-### Dell systems###
+**Dell systems**
 
 - [Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
 
 
+### WR Region
 
+For the WR Region, the following servers are supported for the current release.
 
+- WindRiver Titanium
 
 ## Supported Configurations {#supportedconfigurations}
 
