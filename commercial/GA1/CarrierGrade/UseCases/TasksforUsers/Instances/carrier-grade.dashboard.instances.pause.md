@@ -39,10 +39,11 @@ To pause an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Pause Instance**.
-<p>The status of the instance reports *Paused*.</p> 
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Pause Instance**.
 
-4. Note that many of the commands on the **More** menu are not available for a paused instance.
+	The status of the instance reports *Paused*.
+
+**Note:** Many of the commands on the **More** menu are not available for a paused instance.
 
 ### Un-pause an instance ###
 
@@ -52,9 +53,9 @@ To unpause an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Resume Instance**.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Resume Instance**.
 
-	Note that all of the commands on the **More** menu are available.
+	The status of the instance reports *Active*.
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

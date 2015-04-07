@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Managing Security Groups"
+title: "HP Helion OpenStack&#174; Carrier Grade: Managing Key Pairs"
 permalink: /helion/commercial/carrier/dashboard/managing/security/keypairs/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Managing Security Groups
+# HP Helion OpenStack&#174; Carrier Grade: Managing Key Pairs
 
 Use this option to manage and view key pairs.
 
@@ -32,6 +32,7 @@ The following tasks can be performed by a user:
 * [Create Keypairs](#createKeypairs)
 * [Delete Keypairs](#deleteKeypairs)
 * [Import Keypairs](#importKeypairs)
+
 
 ### Create Keypairs ### {#createKeypairs}
 
@@ -73,7 +74,7 @@ To delete a keypair, do the following:
 
 	A message displays if the key pair is deleted.
 
-### Import Keypairs {#Import Keypairs}
+### Import Keypairs {#ImportKeypairs}
 
 To import a keypair, do the following:
 

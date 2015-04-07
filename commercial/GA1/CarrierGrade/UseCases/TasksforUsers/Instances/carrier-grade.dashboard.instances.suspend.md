@@ -38,7 +38,9 @@ To suspend an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Suspend Instance**.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select ** Suspend Instance**.
+
+	The progress of the suspend is displayed in the **Task** column on the **Instances** screen.
 
 	The status of the instance reports *Suspended*.
 
@@ -50,9 +52,11 @@ To resume an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click **More &gt; Resume Instance**.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Resume Instance**.
 
-	The status of the instance reports *Running*. 
+	The progress of the resume is displayed in the **Task** column on the **Instances** screen.
+
+	The status of the instance reports *Active*. 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

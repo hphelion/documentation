@@ -35,9 +35,9 @@ To rebooot an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click **Soft Reboot Instance** or **Hard Reboot Instance**.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Soft Reboot Instance** or **Hard Reboot Instance**.
 
-4. In the confirmation screen, click **Reboot Instance** to reboot.
+4. In the confirmation screen, click **Soft Reboot Instance** or **Hard Reboot Instance**.
 
 	The progress of the reboot is displayed in the **Task** column on the **Instances** screen.
 

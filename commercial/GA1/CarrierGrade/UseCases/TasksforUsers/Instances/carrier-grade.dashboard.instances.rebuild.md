@@ -35,14 +35,11 @@ To rebuild an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to rebuild, click **Menu &gt; Rebuild Instance**.
+3. In the **Instances** screen, for the instance you want to rebuild, click the arrow icon in the **Actions** menu  and select **Rebuild Instance**.
 
-4. In the **Rebuild Instances** screen:
+4. In the **Rebuild Instances** screen, select the image to use to rebuild the instance. You can select the same image or rebuild using a different image.
 
-	* Select the image to use to rebuild the instance. You can select the same image or rebuild using a different image.
-	* Specify whether the instance will automatically partition, based on the image, or you will manually partition the instance.
-
-5. In the confirmation screen, click **Rebuild Instance**.
+5. Click **Rebuild Instance**.
 
 	The progress of the reboot is displayed in the **Task** column on the **Instances** screen.
 

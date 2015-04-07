@@ -32,7 +32,7 @@ Use the **Compute** panel on the **Project** dashboard to:
 * [Reboot an instance](/helion/commercial/carrier/dashboard/managing/instances/reboot/)
 * [Rebuild an instance](/helion/commercial/carrier/dashboard/managing/instances/rebuild/)
 * [Suspend and resume an instance](/helion/commercial/carrier/dashboard/managing/instances/suspend/)
-* [Pause and resume an instance](/helion/commercial/carrier/dashboard/managing/instances/pause/)
+* [Pause and un-pausing an instance](/helion/commercial/carrier/dashboard/managing/instances/pause/)
 * [Create an instance snapshot](/helion/commercial/carrier/dashboard/managing/images/public/)
 
 You can also [associate, or assign, a floating IP address](/helion/commercial/carrier/dashboard/managing/ipaddresses/) to an instance. A floating IP address makes the instance available on the external network.

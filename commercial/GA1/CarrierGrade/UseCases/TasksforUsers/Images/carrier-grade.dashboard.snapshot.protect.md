@@ -33,7 +33,7 @@ If you want to prevent an image from being deleted, you can make that image *pro
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Images** screen, for the image you want to protect, click **More &gt; Edit**.
+3. In the **Images** screen, for the image you want to protect, click the arrow icon in the **Actions** menu and select **Edit**.
 
 4. In the **Update Image** screen, select **Protected**.
 

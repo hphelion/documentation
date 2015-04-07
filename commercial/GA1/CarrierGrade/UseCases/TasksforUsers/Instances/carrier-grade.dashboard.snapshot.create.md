@@ -33,15 +33,15 @@ To create a snapshot:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to create a snapshot, click **Create Snapshot**.
+3. In the **Instances** screen, for the instance you want to create a snapshot, click the arrow icon in the **Actions** menu and select **Create Snapshot**.
 
 4. On the **Create Snapshot** tab, enter a name for the snapshot.
 
-5. Click **Launch** to launch the instance.
+5. Click **Create Snapshot** to launch the instance.
 
 	A snapshot image is created on the **Images** link.
 
-When you create a snapshot, by default the snapshot image can be used only with the current project and it can be deleted.
+When you create a snapshot, by default the snapshot image can be used only with the current project.
 
 You can [make the snapshot public](/helion/commercial/carrier/dashboard/managing/images/public/) for use in all projects in the domain and you can [protect the image](/helion/commercial/carrier/dashboard/managing/images/protect/) from being deleted. 
 
