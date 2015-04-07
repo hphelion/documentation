@@ -42,7 +42,7 @@ A virtual machine image is a single file which contains a virtual disk that has 
 
 As an admin, you can determine if an image is available only in the current project or to all projects in the domain (public).
 
-* [Make an instance snapshot public](/helion/commercial/carrier/dashboard/managing/snapshots/public/)
+* [Make an instance snapshot public](/helion/commercial/carrier/dashboard/managing/images/public/)
 
 ### Managing Availability Zone and Host Aggregates for a domain
 
