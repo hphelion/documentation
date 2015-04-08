@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade: Stopping and Restarting Instances
 
-Users can stop and restart instances as needed. 
+Users can stop and restart instances as needed.
 
 
 ### Stop an instance ###
