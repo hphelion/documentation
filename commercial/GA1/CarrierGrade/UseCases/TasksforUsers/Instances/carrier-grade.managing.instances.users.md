@@ -35,6 +35,7 @@ Use the **Compute** panel on the **Project** dashboard to:
 * [Pause and un-pausing an instance](/helion/commercial/carrier/dashboard/managing/instances/pause/)
 * [Create an instance snapshot](/helion/commercial/carrier/dashboard/managing/images/public/)
 * [Associate, or assign, a floating IP address to an instance](/helion/commercial/carrier/dashboard/managing/instances/ipaddresses/) 
+* [Launch a console session to an instance](/helion/commercial/carrier/dashboard/managing/instances/console/)
 
 The **Compute** panel looks similar to the following. Click the image to view in a new window:
 

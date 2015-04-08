@@ -33,7 +33,11 @@ To launch a console:
 
 3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Console**.
 
+	You might need to click through messages granting permission to access the console. 
 
+	<img src="media/CGH-Helion-Instance-Launch-Console.png" width="500">
+
+4. Log in with the appropriate user name and password.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
