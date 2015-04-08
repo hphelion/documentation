@@ -29,7 +29,7 @@ An admin user can create a shared network as needed.
 
 ### Create a network
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Networks** link on the **Admin** dashboard **Network** panel.
 

@@ -27,7 +27,7 @@ When you [create an image](/helion/commercial/carrier/dashboard/managing/images/
 
 ### Make an image public
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 

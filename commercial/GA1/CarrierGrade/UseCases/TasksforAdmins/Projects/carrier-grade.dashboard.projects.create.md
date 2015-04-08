@@ -27,7 +27,7 @@ As an admin, you can [create](#projectcreate) and [delete](#projectsdel) project
 
 ### Create a project ### {#projectcreate}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 
@@ -59,7 +59,7 @@ As an admin, you can [create](#projectcreate) and [delete](#projectsdel) project
 
 As an admin, you can delete projects. Compute instances associated with a project will not be deleted.
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 

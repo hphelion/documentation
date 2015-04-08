@@ -29,7 +29,7 @@ A non-admin user or admin user can [create](#createnet) and [delete](#deletenet)
 
 ### Create an externally available network ### {#createnet}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Networks** link on the **Project** dashboard **Network** panel.
 
