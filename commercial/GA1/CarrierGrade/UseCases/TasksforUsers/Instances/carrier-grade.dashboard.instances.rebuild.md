@@ -31,7 +31,7 @@ A rebuild operation always removes data injected into the file system through se
 
 To rebuild an instance:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 

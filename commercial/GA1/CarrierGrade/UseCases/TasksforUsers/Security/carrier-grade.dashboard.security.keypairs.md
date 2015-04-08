@@ -38,7 +38,7 @@ The following tasks can be performed by a user:
 
 To create a keypair, do the following:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
 
@@ -62,7 +62,7 @@ To create a keypair, do the following:
 
 To delete a keypair, do the following:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
 
@@ -78,7 +78,7 @@ To delete a keypair, do the following:
 
 To import a keypair, do the following:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
 

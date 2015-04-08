@@ -33,7 +33,7 @@ When the ISO image file is complete and ready for use, you use HP Helion OpenSta
 
 ### Create an image ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 

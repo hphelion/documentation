@@ -30,7 +30,7 @@ Compute instances are virtual machines that run inside the cloud.
 
 To create an instance:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 

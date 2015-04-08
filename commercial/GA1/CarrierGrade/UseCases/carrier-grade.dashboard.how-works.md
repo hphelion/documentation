@@ -32,7 +32,7 @@ PageRefresh();
 
 
 <!-- Hide until use cases are official
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/manage/">&#9650; UP</a> | <a href="/helion/openstack/1.1/dashboard/users/">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/manage/">&#9650; UP</a> | <a href="/helion/openstack/carrier/dashboard/users/">NEXT &#9654;</a> </p>
 -->
 # HP Helion OpenStack&#174; Carrier Grade: How to use the Helion Dashboards
 
@@ -47,9 +47,9 @@ The interface, based on OpenStack Horizon, is grouped into dashboards, including
 Across the top are menus to switch between projects and menus where you can access user settings.
 
 <!--
-How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/1.1/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/1.1/dashboard/users/).
+How you interact with your network environment depends upon your user type, either an [administrative user (admin)](/helion/openstack/carrier/dashboard/admin/) or a [non-administrative user (user)](/helion/openstack/carrier/dashboard/users/).
 -->
-To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/1.1/dashboard/login/). 
+To access the dashboard, [enter the dashboard URL in a supported browser and log in](/helion/openstack/carrier/dashboard/login/). 
 
 At the bottom of this page, you can see some of the services you can manage right from the dashboard.
 

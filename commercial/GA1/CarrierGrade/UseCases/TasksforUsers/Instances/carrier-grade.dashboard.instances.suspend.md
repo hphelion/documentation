@@ -34,7 +34,7 @@ Users can suspend an instance, for example, to free up the resources used by an 
 
 To suspend an instance:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
@@ -48,7 +48,7 @@ To suspend an instance:
 
 To resume an instance:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
