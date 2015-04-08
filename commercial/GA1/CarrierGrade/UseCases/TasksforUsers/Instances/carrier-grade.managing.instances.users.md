@@ -38,8 +38,9 @@ Use the **Compute** panel on the **Project** dashboard to:
 You can also [associate, or assign, a floating IP address](/helion/commercial/carrier/dashboard/managing/ipaddresses/) to an instance. A floating IP address makes the instance available on the external network.
 
 The **Compute** panel looks similar to the following:
-
 <img src="media/CGH-Helion-Compute" width="500">
+
+<a href="javascript:window.open('/content/documentation/media/CGH-Helion-Compute','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
 
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
