@@ -38,16 +38,11 @@ Volumes are block devices that can be attached to instances.
 5. In the **Create Volume** dialog box, enter the relevant information for the volume: 
 
 	* **Volume Name:** Enter a name for the volume  
-
 	* **Description:** Provide a brief description (optional).  
-
-	* **Type:** Leave this field blank
-	* **Size:** Enter the size of the volume in gigabytes  
-
-	* 
-**Volume Source:** Select one of the following options: 
+	* **Volume Source:** Select one of the following options: 
 		* No source, empty volume - creates an empty volume and does not contain a file system or a partition table  
 		* Image - a new field for Use image as a source displays. You can select the image from the list.  
+	* **Size:** Enter the size of the volume in gigabytes  	
 	* **Availability Zone:** Select the availability zone. By default, this value is set to 'any availability zone'.  
 
 6. Click **Create Volume** to confirm.  
