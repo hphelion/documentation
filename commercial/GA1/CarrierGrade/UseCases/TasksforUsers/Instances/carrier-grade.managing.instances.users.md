@@ -37,7 +37,7 @@ Use the **Compute** panel on the **Project** dashboard to:
 * [Associate, or assign, a floating IP address to an instance](/helion/commercial/carrier/dashboard/managing/instances/ipaddresses/) 
 * [Launch a console session to an instance](/helion/commercial/carrier/dashboard/managing/instances/console/)
 
-The **Compute** panel looks similar to the following. Click the image to view in a new window:
+The **Compute** panel looks similar to the following. Click the image to view in a new window: 
 
 <img src="media/CGH-Helion-Compute" width="500">
 
