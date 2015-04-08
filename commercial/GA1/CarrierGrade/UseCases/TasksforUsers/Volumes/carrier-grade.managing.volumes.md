@@ -37,12 +37,11 @@ To work with volumes [launch the HP Helion OpenStack Helion Dashboard](/helion/o
 
 The **Compute** panel looks similar to the following. Click the image to view in a new window: 
 
-<img src="media/CGH-Helion-Volumes.jpg"/>
+<img src="media/CGH-Helion-Volumes.png"/>
 
-<a href="javascript:window.open('/content/documentation/media/media/CGH-Helion-Volumes.jpg','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
+<a href="javascript:window.open('/content/documentation/media/media/CGH-Helion-Volumes.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
 
 For details on a volume, click the volume name. 
-
 
 ## Managing volumes as a user ##
 
