@@ -33,7 +33,19 @@ You can use the dashboards to create and configure private virtual machine image
 
 How you interact with these images depends upon your user type, either an administrative user (admin) or a non-administrative user (user). 
 
-**Note:** The admin can perform all of the user tasks in addition to the admin tasks.
+To work with images [launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+
+* For non-admin users, click **Project** > **Compute** > **Images**. The volumes in the current project are listed.
+* For admin users, click **Admin** > **Images**. The volumes in the current domain are listed.
+
+The **Images** panel looks similar to the following. Click the image to view in a new window: 
+
+<img src="media/CGH-Helion-Images.png"/>
+
+<a href="javascript:window.open('/content/documentation/media/media/CGH-Helion-Images.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
+
+For details on an image, click the image name. 
+
 
 ## Managing images as a user ##
 
@@ -48,6 +60,9 @@ Click **Images** to perform the following tasks:
 * [Delete an image](/helion/commercial/carrier/dashboard/managing/images/delete/)
 * [View image details](/helion/commercial/carrier/dashboard/managing/images/details/)
 * [Protect an image or snapshot from being edited](/helion/commercial/carrier/dashboard/managing/images/protect/)
+
+**Note:** The admin can perform all of the user tasks in addition to the admin tasks.
+
 
 
 ## Managing images as an admin ##

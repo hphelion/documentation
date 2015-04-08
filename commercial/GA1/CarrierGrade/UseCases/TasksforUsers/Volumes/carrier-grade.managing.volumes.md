@@ -35,7 +35,7 @@ To work with volumes [launch the HP Helion OpenStack Helion Dashboard](/helion/o
 * For non-admin users, click **Project** > **Compute** > **Volumes**. The volumes in the current project are listed.
 * For admin users, click **Admin** > **Volumes**. The volumes in the current domain are listed.
 
-The **Compute** panel looks similar to the following. Click the image to view in a new window: 
+The **Volumes** panel looks similar to the following. Click the image to view in a new window: 
 
 <img src="media/CGH-Helion-Volumes.png"/>
 
