@@ -25,6 +25,8 @@ PageRefresh();
 
 After you've created one or more volumes, you can attach them to instances, one instance at a time.
 
+You can view the status of a volume in the Volumes tab of the dashboard. The volume is either **Available** or **In-Use**. You can attach any volume that is available to an instance.
+
 ### Attach a volume to an instance ###
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
@@ -33,7 +35,7 @@ After you've created one or more volumes, you can attach them to instances, one 
 
 3. In the **Compute** panel, click **Volumes**.
 
-4. Select the volume to add to an instance and click **Edit Attachments**.
+4. In the **Volumes** screen, for the volume you want to attach, click the arrow icon in the **Actions** menu and select **Edit Attchments**.
 
 5. In the **Manage Volume Attachments** dialog box, select an instance.
 
@@ -41,7 +43,9 @@ After you've created one or more volumes, you can attach them to instances, one 
 
 7. Click **Attach Volume**.
 
-The dashboard shows the instance to which the volume is now attached and the device name. You can view the status of a volume in the Volumes tab of the dashboard. The volume is either Available or In-use. Now you can log in to the instance and mount, format, and use the disk.
+The dashboard shows the volume is In-Use and lists the instance to which the volume is now attached. You can now log in to the instance and mount, format, and use the disk. 
+
+**Note:** Not all of the **Action** menu items are available for an attached volume.
 
 ### Detach a volume from a VM instance ###
 
@@ -51,9 +55,11 @@ The dashboard shows the instance to which the volume is now attached and the dev
 
 3. In the **Compute** panel, click **Volumes**.
 
-4. Select the volume you want to detach and click **Edit Attachments**.
+4. In the **Volumes** screen, for the volume you want to detach, click the arrow icon in the **Actions** menu and select **Edit Attchments**.
 
 5. Click **Detach Volume** to confirm your changes.
+
+The dashboard shows the volume is available.
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

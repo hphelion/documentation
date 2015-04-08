@@ -34,7 +34,7 @@ How you interact with these images depends upon your user type, either an admini
 As a user, you can work with any volume associated with the active project. 
 
 * [Create, edit and delete a volume](/helion/commercial/carrier/dashboard/managing/volume/create/)
-* [Create and delete a snapshot from a volume](/helion/commercial/carrier/dashboard/managing/volume/snapshot/create/)
+* [Create a snapshot from a volume](/helion/commercial/carrier/dashboard/managing/volume/snapshot/create/)
 * [Extend the size of a volume](/helion/commercial/carrier/dashboard/managing/volume/extend/)
 * [Attach a volume to a VM instance and detach a volume from VM instance](/helion/commercial/carrier/dashboard/managing/volume/attach/)
 
@@ -42,7 +42,7 @@ As a user, you can work with any volume associated with the active project.
 
 **Note:** The administrative user can perform all of the user tasks in addition to the admin tasks.
 
-* <a href="#create_volume_type">Creating and deleting a volume type</a>
+* [Creating and deleting a volume type](/helion/commercial/carrier/dashboard/managing/volume/admin/)
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

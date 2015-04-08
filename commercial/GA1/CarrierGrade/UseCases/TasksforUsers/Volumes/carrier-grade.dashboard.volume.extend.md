@@ -33,9 +33,11 @@ You can extend the size of a volume, as needed.
 
 3. In the **Compute** panel, click **Volumes**.
 
-4. From the **More** list on the volume you want to extend, select **Extend Volume**.
+4. In the **Volumes** screen, for the volume you want to extend,  click the arrow icon in the **Actions** menu and select **Extend Volume**.
 
-5. In the **Extend Volume** dialog box, select the size from the drop-down and click **Extend Volume** to confirm.
+5. In the **Extend Volume** dialog box, enter a larger size (in GB) in the **New Size** field. The new size must be larger than the current size.
+
+6. Click **Extend Volume** to confirm.
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
