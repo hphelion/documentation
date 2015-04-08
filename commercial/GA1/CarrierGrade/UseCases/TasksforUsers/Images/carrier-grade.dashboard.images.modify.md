@@ -27,7 +27,7 @@ You can modify images, as needed, to change the name and description of the imag
 
 ### Modify an image ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 

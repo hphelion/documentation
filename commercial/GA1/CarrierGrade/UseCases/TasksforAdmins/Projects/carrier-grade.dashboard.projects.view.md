@@ -27,7 +27,7 @@ As an admin, you can view a list of all projects in a domain and view informatio
 
 ### View projects ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/1.1/dashboard/login/).
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
 
