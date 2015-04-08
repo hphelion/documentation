@@ -25,6 +25,8 @@ PageRefresh();
 
 You can use the dashboards to manage instances created by other users. 
 
+<img src="media/CGH-Helion-Compute">
+
 Use the **Compute** panel on the **Project** dashboard to:
 
 * [Create a new instance](/helion/commercial/carrier/dashboard/managing/instances/create/)
