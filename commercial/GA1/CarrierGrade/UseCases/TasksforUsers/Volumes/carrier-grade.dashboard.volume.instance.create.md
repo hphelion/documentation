@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating an Instance Snapshot"
+title: "HP Helion OpenStack&#174; Carrier Grade: Creating an Instance from a Volume"
 permalink: /helion/commercial/carrier/dashboard/managing/volume/instance/create/
 product: carrier-grade
 

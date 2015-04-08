@@ -29,6 +29,21 @@ You can create and configure volumes; create snapshots of volumes; update the me
 
 How you interact with these images depends upon your user type, either an administrative user (admin) or a non-administrative user (user). 
 
+
+To work with volumes [launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+
+* For non-admin users, click **Project** > **Compute** > **Volumes**. The volumes in the current project are listed.
+* For admin users, click **Admin** > **Volumes**. The volumes in the current domain are listed.
+
+The **Compute** panel looks similar to the following. Click the image to view in a new window: 
+
+<img src="media/CGH-Helion-Volumes.jpg"/>
+
+<a href="javascript:window.open('/content/documentation/media/media/CGH-Helion-Volumes.jpg','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
+
+For details on a volume, click the volume name. 
+
+
 ## Managing volumes as a user ##
 
 As a user, you can work with any volume associated with the active project. 
