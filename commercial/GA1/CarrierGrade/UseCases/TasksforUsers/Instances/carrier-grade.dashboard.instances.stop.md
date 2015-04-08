@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Pausing and Un-pausing Instances"
-permalink: /helion/commercial/carrier/dashboard/managing/instances/pause/
+permalink: /helion/commercial/carrier/dashboard/managing/instances/stop/
 product: carrier-grade
 
 ---
