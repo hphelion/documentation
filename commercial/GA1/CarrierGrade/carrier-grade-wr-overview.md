@@ -8,7 +8,7 @@ product-version2: HP Helion OpenStack 1.1
 role1: All
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
