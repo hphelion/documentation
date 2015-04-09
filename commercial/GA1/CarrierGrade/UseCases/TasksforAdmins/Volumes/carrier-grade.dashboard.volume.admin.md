@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade: Creating and Deleting a Volume Types
 
-A volume type defines the characteristics of a volume. It usually maps to a set of capabilities of the storage back-end driver that is used for this volume. For example: &quot;Backup&quot;,&quot;SSD&quot;,  etc.
+A volume type defines the characteristics of a volume. It usually maps to a set of capabilities of the storage back-end driver that is used for this volume. 
 
 ### Create a volume type ###
 
