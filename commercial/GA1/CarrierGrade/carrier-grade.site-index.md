@@ -33,7 +33,7 @@ The documentation for HP Helion OpenStack includes the following:
 
 
 * [HP Helion OpenStack Carrier Grade Overview](/helion/openstack/carrier/overview/)
-* [HP Lifecycle Manager Overview](/helion/openstack/carrier/hlm/overview/)
+* [HP Lifecycle Management Overview](/helion/openstack/carrier/hlm/overview/)
 * [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
 * [HP/WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/)

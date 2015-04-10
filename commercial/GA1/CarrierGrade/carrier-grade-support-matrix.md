@@ -28,9 +28,9 @@ PageRefresh();
  
 To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
 
-## Support Matrix for HP LifeCycle Manager
+## Support Matrix for HP Lifecycle Management
 
-To ensure the performance and stability of the HP LifeCycle Manager environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for HP LifeCycle Manager](/helion/openstack/carrier/support-matrix/hlm/).
+To ensure the performance and stability of the HP Lifecycle Management environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for HP Lifecycle Management](/helion/openstack/carrier/support-matrix/hlm/).
 
 
 ## Support Matrix for HP Helion OpenStack

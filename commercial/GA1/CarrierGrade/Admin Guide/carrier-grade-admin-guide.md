@@ -36,11 +36,11 @@ Use the following links for information on administrative tasks you can perform 
 - [Technical overview](/helion/openstack/carrier/technical-overview/)
 - [Troubleshooting](/helion/openstack/carrier/services/troubleshooting/)
 
-## Administering the HP Helion OpenStack Carrier Grade using Helion LifeCycle Manager
+## Administering the HP Helion OpenStack Carrier Grade using Helion Lifecycle Management
 
 Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and do....
 
-For information on the administrative tasks you can perform using HLM, see [Using Helion LifeCycle Manager](/helion/openstack/carrier/admin/hlm/).
+For information on the administrative tasks you can perform using HLM, see [Using Helion Lifecycle Management](/helion/openstack/carrier/admin/hlm/).
 
 ## Administering the HP Helion OpenStack Region
 
