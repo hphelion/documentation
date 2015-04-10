@@ -20,9 +20,9 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade: Distributed Cloud Networking (DCN) Overview
 
-<!-- From http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c04518178-1.pdf -->
+<!-- From http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c04518178-1.pdf HP DCN Overview -->
 
-Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.
+Distributed Cloud Networking (DCN) is a Software-Defined Networking (SDN) solution that provides data center (DC) network virtualization and automatically establishes connectivity between compute resources upon their creation.	
 
 Leveraging programmable business logic and a powerful policy engine, the HP DCN provides an open and highly responsive solution that scales to meet the stringent needs of massive multi-tenant DCs. The HP DCN is a software solution that can be deployed over an existing DC IP network fabric.
 
