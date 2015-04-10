@@ -30,41 +30,52 @@ PageRefresh();
 
 Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and do...
 
-The following list is based on the tabs in the WR Titanium UI, as shown during recent demo.
+<!-- Taken from https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface -->
 
-A.	Viewing your cloud (Overview tab)
+A.	Deploy cloud. An entire cloud is deployed. 
 
-B.	Managing Inventory
+B.	Stop component. A service component is stopped. 
 
-C.	Managing Hypervisors
+C.	Start service or component in a given control plane. Start and stop can operate on both entire services, or components on the service. 
 
-D.	Managing Power
+D.	Restart service. All of the components of the service are restarted. 
 
-E.	Managing Instances
+E.	Apply a patch to a cloud
 
-F.	Managing Server Options
+F.	Apply a hot-fix to a cloud
 
-G.	Managing Volumes
+G.	Apply a software update to a cloud
 
-H.	Managing Flavors
+H.	Upgrade the cloud. Not supported by HCSP 1.0. 
 
-I.	Managing Images
+I.	Change the configuration of the cloud. Cloud configuration changes include changing properties for a given service component, adding a new service, and adding/removing resource nodes.
 
-J.	Managing Networks
+J.	Rollback the configuration of the cloud. Revert to a previous checkpoint of the cloud configuration. 
 
-K.	Managing Routers
+K.	Add a compute node to a resource pool. Adding and removing resource nodes. 
 
-L.	Managing Defaults Values
+L.	Modify the security credentials for mysql
 
-M.	Fault Management
+M.	Modify configuration of Swift rings
 
-N.	Managing System Configuration
+N.	Put a node into maintenance mode
 
-O.	Managing System Info
+O.	Shutdown a control plane
 
-P.	Managing Projects
+P.	Add/remove a control plane. This is not something that will be published to customers, but not something we need to prevent
 
-Q.	Managing Users
+Q.	Create cloud definition
+
+R.	List sample clouds
+
+S.	Provision nodes to be used in cloud
+
+T.	Display current cloud topology
+
+U.	Display the desired state cloud topology. 
+
+V.	Explain current/desired state cloud topology
+
 
 
 
