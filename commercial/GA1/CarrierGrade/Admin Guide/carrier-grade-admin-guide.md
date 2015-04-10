@@ -40,7 +40,7 @@ Use the following links for information on administrative tasks you can perform 
 
 Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and do....
 
-For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/openstack/carrier/admin/helion/)
+For information on the administrative tasks you can perform using HLM, see [Using Helion LifeCycle Manager](/helion/openstack/carrier/admin/hlm/).
 
 ## Administering the HP Helion OpenStack Region
 
@@ -48,7 +48,9 @@ For information on the administrative tasks you can perform in the HP Helion Ope
 
 ## Administering HP Distributed Cloud Networking (DCN)
 
-Using DCN, you can do...
+Using DCN, you can install and upgrade HP Helion OpenStack Carrier Grade and do...
+
+For information on the administrative tasks you can perform using DCN, see [Administering HP Distributed Cloud Networking (DCN)](/helion/openstack/carrier/admin/dcn/).
 
 ## Administering the WindRiver Region
 
