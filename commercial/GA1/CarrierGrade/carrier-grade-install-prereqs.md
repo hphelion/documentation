@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; 1.1: Installation Prerequisites"
 permalink: /helion/openstack/carrier/install/prereqs/
-product: commercial.ga
+product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect

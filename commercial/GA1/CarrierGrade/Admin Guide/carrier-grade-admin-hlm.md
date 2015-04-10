@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Using Helion Lifecycle Management"
 permalink: /helion/openstack/carrier/admin/hlm/
-product: commercial.ga
+product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 role1: All
@@ -28,7 +28,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade: Using Helion Lifecycle Management
 
-Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and do...
+Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and can perform the following:
 
 <!-- Taken from https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface -->
 

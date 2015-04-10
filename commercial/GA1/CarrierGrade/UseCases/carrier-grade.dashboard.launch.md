@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Logging into the Helion Dashboards"
 permalink: /helion/openstack/carrier/dashboard/login/
-product: commercial.ga
+product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 role1: Systems Administrator 

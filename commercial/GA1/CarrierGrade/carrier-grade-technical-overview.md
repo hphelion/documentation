@@ -2,7 +2,7 @@
 layout: default
 title: "HP Helion OpenStack&#174; 1.1: Technical Overview"
 permalink: /helion/openstack/carrier/technical-overview/
-product: commercial.ga
+product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.0
 product-version3: HP Helion OpenStack 1.0.1
