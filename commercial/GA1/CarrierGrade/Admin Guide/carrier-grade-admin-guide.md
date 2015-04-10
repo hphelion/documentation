@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Administrators Guide"
-permalink: /helion/openstack/carrier/admin/helion/
+permalink: /helion/openstack/carrier/admin/
 product: commercial.ga
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
