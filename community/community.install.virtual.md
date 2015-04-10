@@ -29,7 +29,7 @@ It is important to read through this page before starting your installation. Bef
 
 * [Installation requirements](#hardware-and-network-requirements)
 
-	* [Hardware requirements](#hardware)
+	* [Hardware requirements](#virtual)
 	* [Software requirements](#software)
 
 * [Before you begin](#before-you-begin)
