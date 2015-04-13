@@ -431,8 +431,8 @@ navigation:
     url: /helion/openstack/carrier/support-matrix/ 		
   - text: Installation Overview
     url: /helion/openstack/carrier/install/overview/	
-  - text: Network Security
-    url: /helion/openstack/carrier/install/security/
+  - text: Administrator Guide
+    url: /helion/openstack/carrier/admin/
   - text: Back Up and Restore
     url: /helion/openstack/carrier/backup.restore/
   - text: Troubleshooting
