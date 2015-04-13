@@ -47,7 +47,7 @@ To configure a virtual datacenter:
 
 ## Next Step
 
-[Create the DNS/NTP Data Center Network Management VM](/helion/openstack/carrier/install/guest-vm/)
+[Create the Guest VM](/helion/openstack/carrier/install/guest-vm/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
