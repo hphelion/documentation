@@ -36,6 +36,7 @@ This document describes the installation process for HP Helion OpenStack Carrier
 * [Create a Virtual Data center for DNS/NTP Network Management](/helion/openstack/carrier/install/datacenter/)
 * [Create the DNS/NTP Data Center Network Management VM](/helion/openstack/carrier/install/guest-vm/)
 * [Create the Guest VM](/helion/openstack/carrier/install/guest-vm/)
+* [Create the VSD Node](/helion/openstack/carrier/install/prereqs/)
 
 
 ## First Step ##

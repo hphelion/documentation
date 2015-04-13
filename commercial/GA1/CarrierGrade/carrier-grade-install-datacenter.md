@@ -41,7 +41,7 @@ To configure a virtual datacenter:
 		login: root
 		Password: cghelion
 
-5. Execute the  `ntpd –q` command to synchronize the time with the NTP server.
+5. Execute the `ntpd –q` command to synchronize the time with the NTP server.
 
 6. Execute the `ntpq –p` command to make sure the NTP servers are listed.
 

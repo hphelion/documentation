@@ -79,62 +79,89 @@ You can install the below list of packages on your guest VM to get xrdp session 
 
 3. Reboot the VM
 
-Configure XRDP for the remote desktop connection to access the server remotely as follows.
+## Configure XRDP for the remote desktop connection to access the server remotely as follows.
 
-Increase # of sessions
-•	vi /etc/xrdp/sesman.ini
-update the MaxSessions=1 to 50
-echo "xfce4-session" > ~/.xinitrc
-•	sudo /etc/init.d/xrdp restart
-•	sudo –i
+1. Increase the maximum number of simultaneous session on terminal server to 50 by editing the `sesman.ini` file.
 
-Update the below file to get your xrdp GUI display works as expected [to fix the gray screen display]
+		vi /etc/xrdp/sesman.ini
 
-vi /etc/xrdp/startwm.sh
+		MaxSessions=1 to 50
 
-#!/bin/sh
+2. Configure xfce4 to launch when starting Xorg, put xfce4-session in the ~/.xinitrc file: 
 
-if [ -r /etc/default/locale ]; then
-  . /etc/default/locale
-  export LANG LANGUAGE
-fi
+	echo "xfce4-session" > ~/.xinitrc
 
-#. /etc/X11/Xsession
-. /usr/bin/startxfce4
-[ make sure you add a space after “.”]
+3. Restart xrdp:
 
-               sudo /etc/init.d/xrdp restart
+	sudo /etc/init.d/xrdp restart
 
-Install Google Chrome Browser
+4. Switch to the root user:
 
-	vi /etc/apt/sources.list
-add this line
-deb http://dl.google.com/linux/deb/ stable non-free main
+	sudo –i
 
-From Google Site:
-Command line key installation for APT
-On an APT-based system (Debian, Ubuntu, etc.), download the key and then use apt to install it.
+## Configure the xrdp display
+
+When you connect to xrdp from some remote desktop applications, the xrdp display might appear gray. Use the following steps before starting the HP Helion OpenStack Carrier Grade installation to prevent the problem.
+
+1. Update the startwm.sh file to point to the `xsession` file. The xsession program is a session manager.
+
+	a. Open the `startwm.sh` file:
+
+		vi /etc/xrdp/startwm.sh
+
+	b. Modify the file as follows:
+
+		!/bin/sh
+
+		if [ -r /etc/default/locale ]; then
+		. /etc/default/locale
+		export LANG LANGUAGE
+		fi
+
+		. /etc/X11/Xsession
+		. /usr/bin/startxfce4
+
+	c. Save and close the file.
+
+2. Restart the xrdp service:
+
+	sudo /etc/init.d/xrdp restart
+
+## Install Google Chrome Browser
+
+Use the following commands to install Google Chrome browser on the guest VM.
+
+1. Add the Google repository to your sources by adding the following line to the `sources.list` file:
+
+		vi /etc/apt/sources.list
+
+		deb http://dl.google.com/linux/deb/ stable non-free main
+
+2. Download a repository key then use apt to install it.
+
 		wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-Recent versions of apt-get will automatically attempt to verify packages on download. If an appropriate key is not found or if the package is corrupted, you will get a message like the following:
-WARNING: The following packages cannot be authenticated!
-packagename
-		apt-get update
-		apt-get install google-chrome-stable
 
-                 If you are seeing issue with above step, download the bits and install.
-                 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-                 Deb package is also available in FTC Jump Server 15.242.209.6/D/DCN/Tools[ Login with CDL lab 
-                 credentials]
-                 then:  
-	"sudo dpkg -i ./google-chrome*.deb"
-	sudo apt-get install -f
-              
-Now from FTC Jump server you should be able to  XRDP to guest session,  get to Browser and login to the VSD dashboard  once your VSD node is up.
-URL: https://10.10.10.10:8443/  [IP of VSD]
+3. Update your sources:
+		sudo apt-get update
+
+4. Install the package:
+
+		sudo apt-get install google-chrome-stable
+
+5. Verify that the guest VM is installed completely: 
+
+	a. From the KVM host, use XRDP to guest VM  
+
+	b. Launch the Google Chrome browser 
+
+	c. Login to the VSD dashboard using the following URL when your VSD node is available:
+
+		https://<VSD_IP_Address>:8443/  
 
 
+## Next Step
 
-
+ [Create the VSD Node](/helion/openstack/carrier/install/prereqs/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
