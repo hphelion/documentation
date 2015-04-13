@@ -26,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p>
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Administrators Guide
+# HP Helion OpenStack&#174; Carrier Grade: Administrators Guide 
 
 Use the following links for information on administrative tasks you can perform for the HP Helion OpenStack Carrier Grade:
 
