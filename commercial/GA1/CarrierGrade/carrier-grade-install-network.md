@@ -72,7 +72,7 @@ Before installing HP Helion OpenStack Carrier Grade, you are responsible for pre
 
 If you have multiple NICs, you can aggregate the multiple interfaces into a single logical *bonded* interface
 
-For example, if you run `ifconfig` on your KVM host and you see `em1/em2` or `eth1/ethx` interfaces, you create a bonded interface on the KVM host. If you don’t want bond the interfaces, make sure `emx` or `ethx` is in the interfaces files.
+For example, if you run `ifconfig` on your KVM host and you see `em1/em2` or `eth1/ethx` interfaces, you create a bonded interface on the KVM host. If you do not want bond the interfaces, make sure `emx` or `ethx` is in the interfaces files.
 
 To create a bond on the KVM host :
 
@@ -95,7 +95,7 @@ To create a bond on the KVM host :
 		iface bond0 inet manual #=>(Change to em1 if Single NIC Setup)
 		ovs_bridge br-kvm
 		ovs_type OVSBond #==>(Change to OVSPort for Single NIC Setup)
-		ovs_bonds p3p1 p3p2 #=>(remove line for Single NIC Setup and if you have em1/em2 change as “ovs bonds em1 em2”)
+		ovs_bonds p3p1 p3p2 #=>(remove line for Single NIC Setup and if you have em1/em2 change as "ovs bonds em1 em2")
 		ovs_options bond_mode=active-backup #=>(remove line for Single NIC Setup)
 		#DCN ALL Virtual Env - Bridges
 		auto br-ctl
@@ -120,6 +120,10 @@ To create a bond on the KVM host :
 4. Make sure you have this route entry on the KVM host once your `br-kvm` is configured
  
 5. Make sure that you can connect to an external [NTP server](/helion/openstack/carrier/install/ntp/) and check that you can connect to an external network after exporting the proxy. 
+
+## Next Step
+
+[Configure a Virtual Router During Installation](/helion/openstack/carrier/install/virt-router/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

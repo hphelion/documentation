@@ -26,18 +26,28 @@ To configure a virtual datacenter:
 
 1. Copy the `dns-ntp-server.qcow2` to /var/lib/libvirt/images folder on your kvm host.
 
+2. Execute the following commands:
+
 		virsh define dns-ntp-server.xml
 		virsh autostart dns-ntp-server
 		virsh start dns-ntp-server
 
-The VM should be up in few min. Login to virt-manager to get to the VM or use “virsh console <vm>” from kvm host.
-Make sure if your NIC1 has br-ctl
- 
-You can login using root/cghelion
-Run “ntpd –q” and check the output
-Run “ntpq –p” command to see if the ntp servers are listed.
+	The VM should be up in few minutes. 
 
+3. Use a tool, such as Virtual Machine Manager, to make sure that the network is configured with `br-ctl` for `NIC1`
 
+4.  Launch the HLM Node console and log in using the following defaults:
+
+		login: root
+		Password: cghelion
+
+5. Execute the  `ntpd –q` command to synchronize the time with the NTP server.
+
+6. Execute the `ntpq –p` command to make sure the NTP servers are listed.
+
+## Next Step
+
+[Create the DNS/NTP Data Center Network Management VM](/helion/openstack/carrier/install/guest-vm/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

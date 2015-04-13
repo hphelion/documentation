@@ -30,11 +30,15 @@ To configure a virtual router:
 	* virsh autostart router
 	* virsh start router
 
-	The VM should be up in few min. Login to virt-manager to get to the VM or use “virsh console <vm>” from kvm host.
+	The VM should be up in few min. Login to virt-manager to get to the VM or use `virsh console <vm>` from kvm host.
 
 2. Use a tool, such as Virtual Machine Manager, to make sure that the network is configured with `br-kvm` for `NIC1` and `br-ctl` for `NIC2`.
  
 3. Make sure that you can connect to an external [NTP server](/helion/openstack/carrier/install/ntp/) and check that you can connect to an external network after exporting the proxy.
+
+## Next Step:
+
+[Create a Virtual Data center for DNS/NTP Network Management](/helion/openstack/carrier/install/datacenter/).
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

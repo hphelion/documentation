@@ -34,12 +34,12 @@ This document describes the installation process for HP Helion OpenStack Carrier
 * [Prepare the Network for Installation](/helion/openstack/carrier/install/network/)
 * [Configure a Virtual Router During Installation](/helion/openstack/carrier/install/virt-router/)
 * [Create a Virtual Data center for DNS/NTP Network Management](/helion/openstack/carrier/install/datacenter/)
-* 
+* [Create the DNS/NTP Data Center Network Management VM](/helion/openstack/carrier/install/guest-vm/)
 
 
 ## First Step ##
 
-Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/1.1/support-matrix/).
+Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/carrier/support-matrix/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
