@@ -80,13 +80,13 @@ Once your VM is up and running, use the following steps to configure the VSC nod
 
 	d. Enter the name of the DNS domain, 
 
-		dns‐domain <dns‐name>
+		dns-domain <dns-name>
 
 	**Example:** helion.cg
 
 	e. Enter the static routes for the management IP network
 
-		static‐route <ip‐prefix/ip‐prefix‐length> next‐hop <IP_address>
+		static-route <ip-prefix/ip-prefix-length> next-hop <IP_address>
 
 	**Example:** 
 
