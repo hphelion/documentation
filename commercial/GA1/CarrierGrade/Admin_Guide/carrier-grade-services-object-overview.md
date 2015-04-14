@@ -12,7 +12,7 @@ role2: Storage Architect
 authors: Ranjan J, Keshava HP, Sameer V, Jayme P, Binamra S
 
 ---
-<!--UNDER REVIEW-->
+<!--UNDER REVISION-->
 
 <script>
 

@@ -13,7 +13,7 @@ role1: Cloud Architect
 authors: Michael B, 
 
 ---
-<!--UNDER REVIEW-->
+<!--UNDER REVISION-->
 
 <script>
 

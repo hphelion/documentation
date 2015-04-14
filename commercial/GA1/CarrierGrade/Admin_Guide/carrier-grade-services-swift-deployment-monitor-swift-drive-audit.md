@@ -10,7 +10,7 @@ role2: Storage Architect
 authors: Karthik P, Keshava HP, Binamra S
 
 ---
-<!--UNDER REVIEW-->
+<!--UNDER REVISION-->
 
 <script>
 

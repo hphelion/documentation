@@ -11,7 +11,7 @@ role1: Storage Administrator
 role2: Storage Architect
 authors: Sameer V, Vandana S
 ---
-<!--UNDER REVIEW-->
+<!--UNDER REVISION-->
 
 <script>
 
