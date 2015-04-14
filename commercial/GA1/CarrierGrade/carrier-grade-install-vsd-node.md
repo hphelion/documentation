@@ -35,7 +35,7 @@ The VSD is the policy and analytics engine for the HP DCN solution. All VSD comp
 
 2. Run the following command to extract the installer files: 
 
-		tar –zxvf Nuage-VSD-3.0.0_HP_r3.0-16-QCOW.tar.gz
+		tar -zxvf Nuage-VSD-3.0.0_HP_r3.0-16-QCOW.tar.gz
 
 	You should see `VSD-3.0.0_HP_r3.0_16.qcow2` file once you extract. 
 
@@ -78,10 +78,10 @@ The VSD is the policy and analytics engine for the HP DCN solution. All VSD comp
 12. Stop, synchronize and restart the NTP service using the following commands: 
 
 		service ntpd stop
-		ntpd –q
+		ntpd -q
 		service ntpd start
 
-13. Use the `ntpq –p` command to make sure the NTP servers are listed.
+13. Use the `ntpq -p` command to make sure the NTP servers are listed.
  
 16. Use the `ntpstat` command to Make sure that NTP is synchronized.
 
@@ -94,7 +94,7 @@ The VSD is the policy and analytics engine for the HP DCN solution. All VSD comp
 
 17. Use the following command to install the VSD node:
 
-		/opt/vsd/install.sh -x xmpp.<yourdomain> -t s –y
+		/opt/vsd/install.sh -x xmpp.<yourdomain> -t s -y
 
 	The command output indicates the approximate time the installation might take.
 
@@ -128,7 +128,7 @@ You can use xrdp to connect to the gurst VM from the KVM host and launch the VSD
 4. Create a user for Plugin Login: 
 
 		Created user: OSadmin password: OSadmin 
-		Granted Groups “CMS Group” 
+		Granted Groups "CMS Group" 
 		License: ( temp license info ) review DCN Bits and license setup Pending 
 
 5. Apply the License
@@ -142,7 +142,7 @@ You can use xrdp to connect to the gurst VM from the KVM host and launch the VSD
 
 ## Next step {#nextstep}
 
-[Create the VSD Node](/helion/openstack/carrier/install/vsc-node/)
+[Create the VSC Node](/helion/openstack/carrier/install/vsc-node/)
 
 <!--
 * [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm)

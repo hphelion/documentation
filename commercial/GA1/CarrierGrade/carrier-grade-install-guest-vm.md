@@ -97,7 +97,7 @@ You can install the below list of packages on your guest VM to get xrdp session 
 
 4. Switch to the root user:
 
-	sudo –i
+	sudo -i
 
 ## Configure the xrdp display
 
