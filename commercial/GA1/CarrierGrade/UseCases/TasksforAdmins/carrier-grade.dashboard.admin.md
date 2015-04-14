@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Using as an Admin User"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Using as an Admin User"
 permalink: /helion/commercial/carrier/dashboard/managing/admin/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Using as an Admin User
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Using as an Admin User
 
 The Admin dashboard enables you to work within the current cloud domain. You can access tools to work with the Compute, Network, Object Operations, and Orchestration services.
 

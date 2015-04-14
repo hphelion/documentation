@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating a Shared Network"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Shared Network"
 permalink: /helion/commercial/carrier/dashboard/managing/network/shared/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Creating a Shared Network
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Shared Network
 
 A shared network is visible to all projects in the domain. Instances have a single NIC, and receive a fixed IP address from the subnet(s) associated with that network. 
 

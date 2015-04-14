@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Create the VSD Node"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the VSD Node"
 permalink: /helion/openstack/carrier/install/vsd-node/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -25,11 +25,17 @@ PageRefresh();
 <p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Create the VSD Node
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the VSD Node
 
-There are three main components in the HP DCN solution: HP Virtualized Services Directory (HP VSD), HP Virtualized Services Controller (HP VSC) and HP Virtual Routing and Switching (HP VRS).
+[HP Virtualized Services Directory (HP VSD)](http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885) (HP VSD) is a component of HP Distributed Cloud Networking.
 
-The VSD is the policy and analytics engine for the HP DCN solution. All VSD components should be installed on 
+There are three main components in the HP DCN solution: HP VSD, HP Virtualized Services Controller (HP VSC) and HP Virtual Routing and Switching (HP VRS).
+
+The HP VSD is the policy and analytics engine for the HP DCN solution. All HP VSD components should be installed on 
+
+**Note:** You can download the complete [HP Distributed Cloud Networking manuals](http://h20565.www2.hp.com/portal/site/hpsc/public/psi/home/?sp4ts.oid=7268885&ac.admitted=1429029354732.876444892.492883150#manuals), in needed.
+
+Use the following steps to install the HP VSD node in the HP Helion OpenStack Carrier Grade cloud:
 
 1. On the KVM host, change to the directory where you copied the installer files and locate the `Nuage-VSD-3.0.0_HP_r3.0-16-QCOW.tar.gz` file.
 

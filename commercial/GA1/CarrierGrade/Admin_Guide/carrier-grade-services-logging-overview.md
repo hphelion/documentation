@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Centralized Logging Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Centralized Logging Overview"
 permalink: /helion/openstack/carrier/services/logging/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Centralized Logging Overview
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Centralized Logging Overview
 
 Because a typical HP Helion OpenStack cloud consists of multiple servers, locating a specific log from a specific server can be difficult.
 

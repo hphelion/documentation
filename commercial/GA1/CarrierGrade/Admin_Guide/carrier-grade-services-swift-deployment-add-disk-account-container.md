@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Adding Disks to Account or Container Rings"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding Disks to Account or Container Rings"
 permalink: /helion/openstack/carrier/services/swift/deployment/add-disk-account-container/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> -->
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Adding Disks to Account or Container Rings
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding Disks to Account or Container Rings
 
 Proxy nodes store account and container objects. When new disks are added to a proxy node, the new disks expand the storage capacity of the account and container rings. We also recommend to use same sets of disks for account and container.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Viewing Image Details"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Viewing Image Details"
 permalink: /helion/commercial/carrier/dashboard/managing/images/details/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Viewing Image Details
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Viewing Image Details
 
 To view image details:
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).

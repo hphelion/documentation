@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Identity Service (Keystone) Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Identity Service (Keystone) Overview"
 permalink: /helion/openstack/carrier/services/identity/overview/
 product: carrier-grade
 product: carrier-grade
@@ -26,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/compute/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/imaging/overview/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Identity Service (Keystone) Overview #
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Identity Service (Keystone) Overview #
 
 <!-- modeled after HP Cloud Networking Getting Started (network.getting.started.md) -->
 

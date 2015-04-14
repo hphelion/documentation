@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Add New Scale-out Proxy Node"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Add New Scale-out Proxy Node"
 permalink: /helion/openstack/carrier/services/swift/deployment/add-proxy-node/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -28,7 +28,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/swift/deployment/add-disk-storage-node/"> NEXT &#9654</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Add New Scale-out Proxy Node
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Add New Scale-out Proxy Node
 
 This topic shows how to add a proxy node to the store account and container ring.
 

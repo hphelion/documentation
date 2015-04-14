@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Preparing the Network for Installation"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Preparing the Network for Installation"
 permalink: /helion/openstack/carrier/install/network/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade: Preparing the Network for Installation 
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Preparing the Network for Installation 
 
 Before installing HP Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations. 
 

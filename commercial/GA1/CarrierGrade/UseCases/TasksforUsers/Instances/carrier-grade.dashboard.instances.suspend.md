@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Suspending and Resuming Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Suspending and Resuming Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/suspend/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Suspending and Resuming Instances
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Suspending and Resuming Instances
 
 When a user *suspends* an instance, the contents of the instance are stored on disk and the instance is stopped. Suspending an instance is similar to placing a device in hibernation; memory and vCPUs become available to create other instances.
 

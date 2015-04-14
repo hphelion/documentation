@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Managing the Domain"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing the Domain"
 permalink: /helion/commercial/carrier/dashboard/managing/domains/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Managing the Domain
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing the Domain
 
 A domain is a high-level container for the projects, users, and groups that define administrative boundaries for management of those entities. A domain can represent an individual, company, or operator-owned space.
 

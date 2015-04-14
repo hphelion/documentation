@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating an Instance from a Volume"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating an Instance from a Volume"
 permalink: /helion/commercial/carrier/dashboard/managing/volume/instance/create/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Creating a Instance Using a Volume
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Instance Using a Volume
 
 Compute instances are virtual machines that run inside the cloud. You can create an instance directly from the  **Volumes** screen. 
 

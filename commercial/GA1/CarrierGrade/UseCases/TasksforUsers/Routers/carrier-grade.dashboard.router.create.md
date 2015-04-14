@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating a Router"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Router"
 permalink: /helion/commercial/carrier/dashboard/managing/router/create/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Creating a Router
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Router
 
 A network connects to the router through an interface. You must create an interface between the network and router to remotely connect to the network and any instances on that network through the router.
 

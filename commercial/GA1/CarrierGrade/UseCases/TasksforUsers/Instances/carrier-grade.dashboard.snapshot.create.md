@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating an Instance Snapshot"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating an Instance Snapshot"
 permalink: /helion/commercial/carrier/dashboard/managing/snapshots/create/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Creating an Instance Snapshot
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating an Instance Snapshot
 
 A snapshot is a new image based on a running instance. That snapshot can be used as the base for new instances. 
 

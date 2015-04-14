@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Site Index"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Site Index"
 permalink: /helion/openstack/carrier/siteindex/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -26,7 +26,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p>
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Site Index
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Site Index
 
 
 The documentation for HP Helion OpenStack includes the following:

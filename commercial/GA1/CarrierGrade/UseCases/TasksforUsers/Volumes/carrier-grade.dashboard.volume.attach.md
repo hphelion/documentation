@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Attaching and Detaching Volume Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Attaching and Detaching Volume Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/volume/attach/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Attaching and Detaching Volume Instances
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Attaching and Detaching Volume Instances
 
 After you've created one or more volumes, you can attach them to instances, one instance at a time.
 

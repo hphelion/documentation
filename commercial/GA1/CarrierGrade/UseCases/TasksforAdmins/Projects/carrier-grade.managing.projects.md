@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Managing Projects"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Projects"
 permalink: /helion/commercial/carrier/dashboard/managing/projects/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Managing Projects #
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Projects #
 
 You can manage access to projects by assigning users and setting primary projects. You can also control resources by managing operational quotas.
 

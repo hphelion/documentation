@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Create the Guest VM"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the Guest VM"
 permalink: /helion/openstack/carrier/install/guest-vm/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade: Create the Guest VM 
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the Guest VM 
 
 In order to configure and work with the Virtualized Services Directory (VSD), you must create a guest VM in the HP Helion OpenStack Carrier Grade cloud.
 

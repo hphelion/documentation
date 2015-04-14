@@ -24,7 +24,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/1.1/technical-overview/"> Technical Overview &#9654;</a></p>
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Support Matrix
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Support Matrix
  
 To ensure the performance and stability of the HP Helion OpenStack environment, it is very important to meet the requirements and conform to the recommendations.
 

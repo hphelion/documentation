@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating Instances"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/console/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Launch a Console Window
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Launch a Console Window
 
 You can use the Helion dashboard to launch a console session to an instance.
 

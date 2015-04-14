@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Monitoring the Mount Points using Icinga"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitoring the Mount Points using Icinga"
 permalink: /helion/openstack/carrier/services/object/swift/mount-points/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -29,7 +29,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/carrier/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Monitoring the Mount Points using Icinga
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitoring the Mount Points using Icinga
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admins monitor the  mount point of all the swift nodes.
 

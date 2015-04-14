@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Documentation Home"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Documentation Home"
 permalink: /helion/openstack/carrier/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade: Documentation Home
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Documentation Home
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 

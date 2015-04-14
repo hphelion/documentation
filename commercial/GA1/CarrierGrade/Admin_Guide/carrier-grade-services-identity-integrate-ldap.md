@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Integrate the Identity Service (Keystone) with LDAP/AD"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Integrate the Identity Service (Keystone) with LDAP/AD"
 permalink: /helion/openstack/carrier/services/identity/integrate-ldap/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -27,7 +27,7 @@ PageRefresh();
 
 <!-- Based on https://wiki.hpcloud.net/display/csbu/Integrating+Keystone+with+LDAP+in+Helion+1.1 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Integrate the Identity Service (Keystone) with LDAP/AD 
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Integrate the Identity Service (Keystone) with LDAP/AD 
 
 The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes.	 LDAP integration can be performed during the HP Helion OpenStack installation process.
 

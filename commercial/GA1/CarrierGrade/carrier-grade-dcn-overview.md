@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Distributed Cloud Networking Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Distributed Cloud Networking Overview"
 permalink: /helion/openstack/carrier/dcn/overview/
 product: carrier-grade
 
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade: Distributed Cloud Networking (DCN) Overview
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Distributed Cloud Networking (DCN) Overview
 
 <!-- From http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c04518178-1.pdf HP DCN Overview -->
 

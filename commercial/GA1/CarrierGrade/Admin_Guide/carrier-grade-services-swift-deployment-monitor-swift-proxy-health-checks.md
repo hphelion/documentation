@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Monitor the Object Storage (Swift) Proxy Health"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitor the Object Storage (Swift) Proxy Health"
 permalink: /helion/openstack/carrier/services/object/swift/monitor-swift-proxy-health-checks/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -27,7 +27,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/services/object/overview/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href=" /helion/openstack/carrier/services/swift/deployment/"> NEXT &#9654</a> </p>-->
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Monitor the Object Storage (Swift) Proxy Health
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Monitor the Object Storage (Swift) Proxy Health
 
 The ***Icinga*** service, which runs in the undercloud, helps cloud admin monitor the  status of the Swift proxy of all swift nodes.
 

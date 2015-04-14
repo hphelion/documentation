@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Creating an Image from a Volume"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating an Image from a Volume"
 permalink: /helion/commercial/carrier/dashboard/managing/volume/image/create/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Creating a Image Using a Volume
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating a Image Using a Volume
 
 You can use a volume to create a new virtual machine image.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Deleting Images"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Deleting Images"
 permalink: /helion/commercial/carrier/dashboard/managing/images/delete/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Deleting Images
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Deleting Images
 
 You can delete images, as needed. A deleted image is no longer available. Any instances launched from the deleted instance are not affected.
 

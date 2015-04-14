@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Extending the Size of a Volume"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Extending the Size of a Volume"
 permalink: /helion/commercial/carrier/dashboard/managing/volume/extend/
 product: carrier-grade
 
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Extending the Size of a Volume
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Extending the Size of a Volume
 
 You can extend the size of a volume, as needed.
 

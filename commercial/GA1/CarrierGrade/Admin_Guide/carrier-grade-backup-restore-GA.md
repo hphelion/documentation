@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Back Up and Restore"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Back Up and Restore"
 permalink: /helion/openstack/carrier/backup.restore/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -27,7 +27,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/install/esx/">NEXT &#9654;</a> </p>
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Back Up and Restore
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Back Up and Restore
 
 The default HP Helion OpenStack environment consists of a three-node cluster for most of the services plus other services such as RabbitMQ and MySQL. It is resilient to individual node failures as well as network split-brain situations.
 

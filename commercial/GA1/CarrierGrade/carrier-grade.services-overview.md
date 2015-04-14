@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Services Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Services Overview"
 permalink: /helion/openstack/carrier/services/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -32,7 +32,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/support-matrix/"> NEXT &#9654</a> </p>  
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Services Overview
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Services Overview
 [See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/overview/)
 
 OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Removing and Replacing a Failed Overcloud Controller"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Removing and Replacing a Failed Overcloud Controller"
 permalink: /helion/openstack/carrier/removing/failedovercloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -32,7 +32,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/">&#9664; PREV | <a href="/helion/openstack/carrier/">&#9650; UP</a> | <a href="/helion/openstack/carrier/faq/">NEXT &#9654; </a></p>
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade: Removing and Replacing a Failed Overcloud Controller
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Removing and Replacing a Failed Overcloud Controller
 
 The three-node Overcloud Controller cluster provides a highly available Cloud Control Plane. In the event of a single point of failure in any one of the Controller nodes, the following procedures will allow you to recover that functionality.
 

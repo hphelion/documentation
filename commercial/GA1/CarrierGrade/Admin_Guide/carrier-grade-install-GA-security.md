@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Configuring Your Network Securely"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring Your Network Securely"
 permalink: /helion/openstack/carrier/install/security/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -25,7 +25,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/install/esx/">NEXT &#9654;</a> </p>
 -->
-# HP Helion OpenStack&#174; Carrier Grade: Configuring Your Network Securely
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring Your Network Securely
 
 This document provides guidance on configuring your HP Helion OpenStack network securely
 

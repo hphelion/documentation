@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Installation Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Overview"
 permalink: /helion/openstack/carrier/install/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
@@ -25,7 +25,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/1.1/support-matrix/">Support Matrix &#9654;</a> </p>
 
 
-# HP Helion OpenStack&#174; Carrier Grade: Installation Overview 
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Overview 
 
 This document describes the installation process for HP Helion OpenStack Carrier Grade. 
 
@@ -37,6 +37,7 @@ This document describes the installation process for HP Helion OpenStack Carrier
 * [Create the DNS/NTP Data Center Network Management VM](/helion/openstack/carrier/install/guest-vm/)
 * [Create the Guest VM](/helion/openstack/carrier/install/guest-vm/)
 * [Create the VSD Node](/helion/openstack/carrier/install/prereqs/)
+* [Create the HLM Node](/helion/openstack/carrier/install/hlm-node/)
 
 
 ## First Step ##

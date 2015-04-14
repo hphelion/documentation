@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade: Remove a Proxy Node"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Remove a Proxy Node"
 permalink: /helion/openstack/carrier/services/swift/deployment/remove-proxy-node/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -27,7 +27,7 @@ PageRefresh();
 <!--
 <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/overview/"> NEXT &#9654</a> </p>-->
 
-# HP Helion OpenStack&#174; Carrier Grade: Remove a Proxy Node
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Remove a Proxy Node
 
 It is recommended that you gradually reduce the weight in the ring and change the disk in the Swift cluster to avoid poor performance. 
 

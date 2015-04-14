@@ -24,7 +24,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/1.1/technical-overview/"> Technical Overview &#9654;</a></p>
 
 
-# HP Helion OpenStack&#174; Carrier Grade:Support Matrix for the Wind River Region
+# HP Helion OpenStack&#174; Carrier Grade (Alpha):Support Matrix for the Wind River Region
 
 To ensure the performance and stability of the Wind River region of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the following recommendations.
 
