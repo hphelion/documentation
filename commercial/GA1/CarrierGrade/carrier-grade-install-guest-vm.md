@@ -161,7 +161,7 @@ Use the following commands to install Google Chrome browser on the guest VM.
 
 ## Next Step
 
- [Create the VSD Node](/helion/openstack/carrier/install/prereqs/)
+ [Create the VSD Node](/helion/openstack/carrier/install/vsd-node/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
