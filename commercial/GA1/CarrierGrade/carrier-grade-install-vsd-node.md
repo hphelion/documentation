@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade: Create the VSD Node"
-permalink: /helion/openstack/carrier/install/prereqs/
+permalink: /helion/openstack/carrier/install/vsd-node/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -106,8 +106,43 @@ Verify that your HP VSD(s) are up and running by using the following command:
 
 	service vsd status
 
+## Configure VSD
+
+You can use xrdp to connect to the gurst VM from the KVM host and launch the VSD dashboard to create required users and apply the required license.
+
+
+
+1. Launch a web browser, such as Google Chrome.
+
+2. Navigate to the IP address of the VSD:
+
+		https://<VSD_IP_Address>:8443/
+
+3. Log in with the default credentials:  
+
+		User Name: Csproot 
+		Password: csproot 
+		Organization: csp 
+		VSD Server : auto 
+
+4. Create a user for Plugin Login: 
+
+		Created user: OSadmin password: OSadmin 
+		Granted Groups “CMS Group” 
+		License: ( temp license info ) review DCN Bits and license setup Pending 
+
+5. Apply the License
+
+	a. From VSD Dashboard, click the **Open VSP Configuration** tab on the top right corner of the dashboard.  
+
+	b. Click the **Licenses** tab and click **+**. 
+
+	c. Copy and paste the license you received from HP Networks customer support representative into the field.
+
+
 ## Next step {#nextstep}
 
+[Create the VSD Node](/helion/openstack/carrier/install/vsc-node/)
 
 <!--
 * [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm)
