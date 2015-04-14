@@ -157,7 +157,7 @@ To generate the key pair using the API:
 
 		<?xml version="1.0" ?>
 		<keypair>
-		    &#60;name>{Name}</name>
+		    <name>{Name}</name>
 		</keypair>
 
 	JSON
@@ -174,7 +174,7 @@ To generate the key pair using the API:
 
 		<?xml version="1.0" ?>
 			<keypair>
-				&#60;name>keypair-2</name>
+				<name>keypair-2</name>
 			</keypair>
 
 	JSON
@@ -416,7 +416,7 @@ To create a security zone and add rules:
 
 		<?xml version="1.0" ?>
 			<addSecurityGroup xmlns="http://docs.openstack.org/compute/api/v2">
-    		&#60;name>security-group-2</name>
+    		<name>security-group-2</name>
 		</addSecurityGroup>
 
 	JSON
@@ -466,7 +466,7 @@ To create a new security group:
 
 2. Execute the following command to create a security group.
 
-	`nova secgroup-create &#60;name> <"description">`
+	`nova secgroup-create <name> <"description">`
 
 	Where 
 
@@ -1292,7 +1292,7 @@ To create a block volume and attach the volume to the instance:
 
 2. Execute the following command to add a new volume, using the appropriate values:
 
-    `$ hpcloud volumes:add &#60;name> <size>`
+    `$ hpcloud volumes:add <name> <size>`
 
 	Where
 
