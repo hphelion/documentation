@@ -26,17 +26,22 @@ PageRefresh();
 
 
 # HP Helion OpenStack&#174; Carrier Grade: Installation Overview 
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/install/overview/)
 
-This document describes the installation process for HP Helion OpenStack 1.1. 
+This document describes the installation process for HP Helion OpenStack Carrier Grade. 
 
-Install HP Helion OpenStack
-Install/Configure Virtual Networking with DCN
+* Review the Support Matrix and Technical Overview
+* Review the [Prerequisites](/helion/openstack/carrier/install/prereqs/).
+* [Prepare the Network for Installation](/helion/openstack/carrier/install/network/)
+* [Configure a Virtual Router During Installation](/helion/openstack/carrier/install/virt-router/)
+* [Create a Virtual Data center for DNS/NTP Network Management](/helion/openstack/carrier/install/datacenter/)
+* [Create the DNS/NTP Data Center Network Management VM](/helion/openstack/carrier/install/guest-vm/)
+* [Create the Guest VM](/helion/openstack/carrier/install/guest-vm/)
+* [Create the VSD Node](/helion/openstack/carrier/install/prereqs/)
 
 
 ## First Step ##
 
-Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/1.1/support-matrix/).
+Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/carrier/support-matrix/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

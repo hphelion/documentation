@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Installing an HLM Node on a KVM Server: Distributed Cloud Networking Overview"
-permalink: /helion/openstack/carrier/install/hlm/
+permalink: /helion/openstack/carrier/install/baremetal/
 product: carrier-grade
 
 ---
