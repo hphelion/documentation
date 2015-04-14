@@ -48,7 +48,7 @@ Viewing the contents of a directory or container:
 
 Creating a new file or object into an existing directory or container:
 
-        Blob testBlob = blobStore.blobBuilder("testblob").payload("<content>").name("&#60;name>").build();
+        Blob testBlob = blobStore.blobBuilder("testblob").payload("<content>").name("<name>").build();
         String etag = blobStore.putBlob(<container>, testBlob); // the creation of the blob returns the etag value
 
 Viewing a file or object from an existing directory or container:
