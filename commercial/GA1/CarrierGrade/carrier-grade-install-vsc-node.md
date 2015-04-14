@@ -68,7 +68,7 @@ Once your VM is up and running, use the following steps to configure the VSC nod
 
 	b. Enter the Management IP address: 
 
-		address <ip‐prefix/ip‐prefix‐length>
+		address <ip-prefix/ip-prefix-length>
 
 	**Example:** 10.10.10.20/24
 
