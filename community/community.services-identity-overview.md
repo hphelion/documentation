@@ -63,22 +63,7 @@ The Identity service primarily works on the following key concepts:
 
 A domain is a high-level container for [projects](#project), [users](#user) and [groups](#group).
 
-Each is owned by exactly one domain. Users, however, can be associated with multiple projects by granting roles to the user on a project, including projects owned by other domains.
-
-Each domain defines a namespace where certain API-visible name attributes exist, which affects whether those names must be globally unique or unique within that domain. In the Identity API, the uniqueness of the following attributes is as follows:
-
-    Domain Name. 
-
-    Role Name. Globally unique across all domains.
-
-    User Name. Unique within the owning domain.
-
-    Project Name. Unique within the owning domain.
-
-    Group Name. Unique within the owning domain.
-
-
-**Note:** Domain management is not available using the Helion OpenStack Dashboard. You can use the [API](#API) or [CLI](#CLI) for domain management instead. Also, any user and associated with a Domain will not be able to login to Horizon.
+**Note:** [Domain management](/helion/community/services/identity/using/#userdomains) is not available using the Helion OpenStack Dashboard. You can use the [API](#API) or [CLI](#CLI) for [domain management](/helion/community/services/identity/using/#userdomains) instead. Also, any user associated with a Domain will not be able to log in to Horizon.
 
 
 ### Project ### {#project}

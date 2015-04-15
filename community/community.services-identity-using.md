@@ -29,17 +29,17 @@ The following lists of tasks can be performed by a user or administrator through
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with the Identity service.
+You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with many aspects of the Identity service.
 
-Note: Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+**Note**: [Domain management](#userdomains) is not available using the Helion OpenStack Dashboard. You can use the CLI for [domain management](#userdomains) instead.
 
 ###Using the API {#API}
  
-You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
+You can use a low-level, raw REST API to access the Identity service. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
 
 ###Using the CLI {#cli}
 
-You can use the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+You can use the command-line interface software to access the Identity service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
@@ -51,7 +51,10 @@ Depending upon your user type, [user](#user) or [administrator](#admin), you can
 The following Identity service tasks are usually performed by someone with the *user* role.
 
 
-### Working with domains ### {#userdomains}
+### Working with domains {#userdomains}
+A domain is a high-level container for [projects](/helion/community/services/identity/overview/#project), [users](/helion/community/services/identity/overview/#user) and [groups](/helion/community/services/identity/overview/#group). Each is owned by exactly one domain. Users, however, can be associated with multiple *projects* by granting roles to the user on a project, including projects owned by other domains.
+
+Domain management is not available using the Helion OpenStack Horizon console. You can use the [API](/helion/community/services/identity/overview/#API) or [CLI](/helion/community/services/identity/overview/#CLI) for domain management instead. Also, any user and associated with a Domain will not be able to log in to Horizon.
 
 Use the Identity service to configure user access to your cloud domains.
 
@@ -63,6 +66,14 @@ Use the Identity service to configure user access to your cloud domains.
 * Grant a specified role to a domain group.
 * Validate that a group has a specified role on a domain.
 * Revoke a role from a group on a domain.
+
+Each domain defines a namespace where certain API-visible name attributes exist, which affects whether those names must be globally unique or unique within that domain. In the Identity API, the uniqueness of the following attributes is as follows:
+
+* Domain Name
+* Role Name: Globally unique across all domains
+* User Name: Unique within the owning domain.
+* Project Name: Unique within the owning domain
+* Group Name: Unique within the owning domain
 
 ### Listing Projects ####
 
@@ -145,7 +156,7 @@ Use the Identity service to configure policies.
 * Update a specified policy, including names, IDs, and the user that owns the policy. 
 * Delete a policy.
 
-**REVIEWERS: ARE ADMINS ABLE TO PERFORM THESE TASKS? THEY CAME FROM AN EARLIER DRAFT OF THE IDENTITY DOCS.** 
+<!--**REVIEWERS: ARE ADMINS ABLE TO PERFORM THESE TASKS? THEY CAME FROM AN EARLIER DRAFT OF THE IDENTITY DOCS.** 
 
 ### Manage Endpoints
 
@@ -171,7 +182,7 @@ Configure federated access for use in HP Helion OpenStack.
 
 Use the Identity service to reset a password for a user.
 
-
+-->
 
 
 ## For more information ##
