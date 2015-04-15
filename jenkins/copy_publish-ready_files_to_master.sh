@@ -17,20 +17,23 @@ fi
 
 #Checkout the branch to merge to master.
 
-
+echo 1
 git fetch --all
 git reset --hard origin/master
 
+echo 2
 git branch --set-upstream  ${BRANCH} origin/${BRANCH}
 git branch --set-upstream  master origin/master
  
+echo 3
 git checkout -f master
 git pull origin
 
+echo 4
 git checkout -f ${BRANCH}
 git pull origin 
    
-
+echo 5
 #Search to ensure that every md file contains one of the publish flag comments strings . 
 #(If any file does not contain a comment string, report the names of the missing files and exit with an error message.)
 
