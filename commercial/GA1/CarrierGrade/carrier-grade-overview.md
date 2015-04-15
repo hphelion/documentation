@@ -75,7 +75,7 @@ CGH-VNF-zoom.png
 * Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)
 * Some vNICs of a VNF could be using SR-IOV while others are connected to the vSwitch 
 
-CGH-NVF-Global.png
+<img src="media/CGH-NVF-Global.png" />
 
 HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/1.1/services/overview/) for a complete list of services. 
 
