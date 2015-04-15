@@ -49,50 +49,34 @@ Depending upon your user type, [user](#user) or [administrator](#admin), you can
 ## Tasks performed by users {#user}
 
 The following Identity service tasks are usually performed by someone with the *user* role.
-
-
-### Working with domains {#userdomains}
-A domain is a high-level container for [projects](/helion/community/services/identity/overview/#project), [users](/helion/community/services/identity/overview/#user) and [groups](/helion/community/services/identity/overview/#group). Each is owned by exactly one domain. Users, however, can be associated with multiple *projects* by granting roles to the user on a project, including projects owned by other domains.
-
-Domain management is not available using the Helion OpenStack Horizon console. You can use the [API](/helion/community/services/identity/overview/#API) or [CLI](/helion/community/services/identity/overview/#CLI) for domain management instead. Also, any user and associated with a Domain will not be able to log in to Horizon.
-
-Use the Identity service to configure user access to your cloud domains.
-
+### Listing Domains
 * View information on all your domains, including names, enabled status, ID, and policy links.
 * View information on a specified domain, including the description, enabled status, ID, and policy links.
+
+### Listing Projects ####
+
+Use the Identity service to view a list of projects in your cloud environment.
+
+### Working with projects {#userprojects}
+
+All project-level tasks must be performed by an administrator.
+
+## Tasks performed by an Administrator {#admin}
+
+The following Identity service tasks are usually performed by someone with the *administrator* role.
+
+### Working with domains ### {#admindomains}
+
+Use the Identity service to configure user access to your cloud domains. For detailed information, see [Domain Management](/helion/openstack/1.1/services/identity/domains/).
+
+* Add a domain to your cloud.
+* Update information for a specified domain, including the description, enabled status, ID, and policy links. 
 * Delete a domain.
 * List the domain roles for a specified user.
 * List domain roles for a specified domain group.
 * Grant a specified role to a domain group.
 * Validate that a group has a specified role on a domain.
 * Revoke a role from a group on a domain.
-
-Each domain defines a namespace where certain API-visible name attributes exist, which affects whether those names must be globally unique or unique within that domain. In the Identity API, the uniqueness of the following attributes is as follows:
-
-* Domain Name
-* Role Name: Globally unique across all domains
-* User Name: Unique within the owning domain.
-* Project Name: Unique within the owning domain
-* Group Name: Unique within the owning domain
-
-### Listing Projects ####
-
-Use the Identity service to view a list of projects in your cloud environment.
-
-### Working with projects ### {#userprojects}
-
-All project-level tasks must be performed by an administrator.
-
-## Tasks performed by an Administrator<a name="admin"></a>
-
-The following Identity service tasks are usually performed by someone with the *administrator* role.
-
-### Working with domains ### {#admindomains}
-
-Use the Identity service to configure user access to your cloud domains.
-
-* Add a domain to your cloud.
-* Update information for a specified domain, including the description, enabled status, ID, and policy links. 
 
 ### Working with projects ### {#adminprojects}
 
