@@ -26,7 +26,7 @@ To install of HP Helion OpenStack:
 
 1. Use a tool such as KVM virt-manager to create three blank VMs (no operating system) on the KVM host, called `ccn1`, `ccn2`, and `cpn1` using the xml files [ccn1.xml, ccn2.xml, ccn3.xml
 
-2. Create three blank VM image files and resize them  using the following commands:
+2. Create three blank VM image files and resize them using the following commands:
 
 		touch /var/lib/libvirt/images/ccn1.img
 		touch /var/lib/libvirt/images/ccn2.img
@@ -130,7 +130,7 @@ To configure the installation environment:
 If you want to login onto any of the client VMs, use credentials `root/iforgot`
 
 
-## Deploy the HLM VM
+## Prepare the environment for installation
 
 At this point, the networking settings and PXE clients are ready to proceed deploy the HLM VM on those 3 nodes using CLM network. 
 
@@ -159,59 +159,63 @@ At this point, the networking settings and PXE clients are ready to proceed depl
 
 	a. Change to the new cloud directory you created
 
-	cd ~/<cloudname>
+		cd ~/<cloudname>
 
 	b. Modify the `serverConfig.json` with the IP address of the PXE eth1 interface of the cloud nodes.
 
-	c. Modify environmentConfig.json -
+	c. Modify `environmentConfig.json` to add details of CLM network: 
 
-Add details of CLM network here, 
+		"cidr":<IP_Address>
+		"start-address":<IP_Address>
 
-Example:
+	**Example:**
 
-"cidr": "192.168.101.0/24",
+		"cidr": "192.168.101.0/24",
+		"start-address": "192.168.101.100"
 
-"start-address": "192.168.101.100"
+	**NOTE:** The HP Helion Configuration Processor will assign the first address of the CLM address range to itself for serving python and debian repositories.Make sure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.
 
-IMPORTANT NOTE: Helion Configuration Processor will assign the first address of the CLM address range to itself for serving python and deb repositories - so you need to ensure that you set the first IP address of the CLM range for the eth2 (CLM) address of the HLM node.
+	d. Modify `ccp-1x3-as.json` to specify the number of controllers; enter 2.
 
-iv) Modify ccp-1x3-as.json
+		"member-count": 2, //number of controllers on the plane
 
-a) "member-count": 2, //number of controllers on the plane
+	e. Modify the `definition.json` file to specify the number of compute nodes; enter 1.
 
-v) Modify definition.json
+	"count": 1, //number of computes in the resource pool
 
-"count": 1, //number of computes in the resource pool. Since we try with one compute node it is shown as 1.
+For bare metal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
 
-6) For bare metal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
+## Deploy the HLM VM
 
-7) Once you have correctly edited all the json "Cloud Model" files, you are ready to run Helion Configuration Processor on these
+After you have modified each the JSON Cloud Model files, you can run the Helion Configuration Processor against the files.
 
-cd <cloudname> (e.g. cd padawan)
+1. On the HLM Node, execute the following command: 
 
-hcfgproc -d definition.json
+		cd <cloudname> 
 
-    hcfgproc script gets installed in /usr/local/bin by the prepare-env script and will generate a clouds/ directory within the <cloudname> dir.
+2. Execute the following command. The `hcfgproc` script gets installed in /usr/local/bin by the prepare-env script and will generate a clouds/ directory within the <cloudname> dir.
 
-8) In this generated cloud, eyeball the CloudDiagram, hosts.hf, and net/interfaces.d/eth?.cfg files to ensure the network settings meet your expectations.
+		hcfgproc -d definition.json
 
-9) Now you are ready to initialize network interfaces on all the cloud nodes - do this using
+3. In this generated cloud, verify that the CloudDiagram, `hosts.hf`, and `net/interfaces.d/eth.cfg` files to make sure the network settings are correct.
 
-hnetinit <cloudname> (e.g. "hnetinit padawan" - you can run this command from anywhere - it will look for <cloudname> under ~ directory and run ansible from it to initialize network interfaces for that cloud.
+4. Initialize the network interfaces on all the cloud nodes using the following command:
 
-10) After hnetinit, all your cloud nodes CLM network interfaces should be set correctly. Now you are ready to deploy and configure the cloud services - do this using
+		hnetinit <cloudname>
 
-hdeploy <cloudname> (e.g. "hdeploy padawan" - you can run this command from anywhere - it will look for <cloudname> under ~ directory and run ansible from it to install and configure all the cloud services.
+	You can run this command from anywhere. The script looks for <cloudname> under the ~ directory and will run Ansible from it to initialize network interfaces for that cloud.
 
-11) Currently it is showing some errors but the entire script runs end to end. Your mileage may vary.
+	When this script completes, all cloud nodes CLM network interfaces should be set correctly. 
 
-12) May the force be with you!
+5. Deploy and configure the cloud services using the following command:
 
+		hdeploy <cloudname> 
+
+	You can run this command from anywhere. The script looks for <cloudname> under the ~ directory and will run Ansible from it to install and configure all the cloud services.
 
 
 ## Next Step
 
-[Create the HLM Node](/helion/openstack/carrier/install/hlm-node/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
