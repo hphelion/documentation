@@ -58,7 +58,7 @@ virtual machine process, called the HP VSC Node.
 		Ifconfig
 		Route entries
 
-	If you don’t see the interfaces and IP as expected, reboot the VM and check again.  Check the route entries and ping other interfaces after reboot
+	If you do not see the interfaces and IP as expected, reboot the VM and check again.  Check the route entries and ping other interfaces after reboot
 
 5. Verify that you can ping other VMs
 

@@ -183,7 +183,7 @@ At this point, the networking settings and PXE clients are ready to proceed depl
 
 	"count": 1, //number of computes in the resource pool
 
-For bare metal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
+For baremetal environment or virtual env with fancy networking - you will have to edit the logical network and environment config json files to represent your desired configuration.
 
 ## Deploy the HLM VM
 
