@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade Overview"
+title: "HP Helion OpenStack&#174; Overview"
 permalink: /helion/openstack/carrier/helion/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade Overview
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): HP Helion OpenStack Overview
 
 HP Helion OpenStack is a commercial-grade distribution of OpenStack, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility and, as part of the HP Helion portfolio, it is backed by a wide range of related cloud products, services, and professional support.
 

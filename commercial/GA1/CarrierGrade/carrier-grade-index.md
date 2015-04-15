@@ -43,7 +43,8 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
 * [HP Helion OpenStack Carrier Grade WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/)
 * [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview/)
-* [Manage Your HP Helion OpenStack Carrier Grade Cloud](/helion/commercial/carrier/dashboard/managing/)
+* [Administrators Guide](/helion/openstack/carrier/admin/)
+* [User Guide](/helion/commercial/carrier/dashboard/managing/)
 
 
 There's a lot of information out there to help you get going with your services. We recommend you browse through the [site index](/helion/openstack/carrier/siteindex/) for a full list of the technical content pages available on the site.
