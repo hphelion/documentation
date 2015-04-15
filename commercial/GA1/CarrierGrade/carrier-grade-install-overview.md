@@ -38,6 +38,7 @@ This document describes the installation process for HP Helion OpenStack Carrier
 * [Create the Guest VM](/helion/openstack/carrier/install/guest-vm/)
 * [Create the VSD Node](/helion/openstack/carrier/install/prereqs/)
 * [Create the HLM Node](/helion/openstack/carrier/install/hlm-node/)
+* [Install HP Helion OpenStack](/helion/openstack/carrier/install/vsc-node/)
 
 
 ## First Step ##
