@@ -29,17 +29,17 @@ The following lists of tasks can be performed by a user or administrator through
 
 ### Using the dashboards {#UI}
 
-You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with the Identity service.
+You can use the [HP Helion OpenStack Dashboard](/helion/community/dashboard/how-works/) to work with many aspects of the Identity service.
 
-Note: Domain management is not available using the Helion OpenStack Dashboard. You can use the CLI for domain management instead.
+**Note**: [Domain management](#userdomains) is not available using the Helion OpenStack Dashboard. You can use the CLI for [domain management](#userdomains) instead.
 
 ###Using the API {#API}
  
-You can use a low-level, raw REST API to access  HP Identity. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
+You can use a low-level, raw REST API to access the Identity service. See the [OpenStack Identity API v2.0 Reference](http://api.openstack.org/api-ref-identity-v2.html).
 
 ###Using the CLI {#cli}
 
-You can use the command-line interface software to access HP Identity. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
+You can use the command-line interface software to access the Identity service. See the [OpenStack Command Line Interface Reference](http://docs.openstack.org/cli-reference/content/keystoneclient_commands.html).
 
 For more information on installing the CLI, see [Install the OpenStack command-line clients](http://docs.openstack.org/user-guide/content/install_clients.html).
 
@@ -49,39 +49,34 @@ Depending upon your user type, [user](#user) or [administrator](#admin), you can
 ## Tasks performed by users {#user}
 
 The following Identity service tasks are usually performed by someone with the *user* role.
-
-
-### Working with domains ### {#userdomains}
-
-Use the Identity service to configure user access to your cloud domains.
-
+### Listing Domains
 * View information on all your domains, including names, enabled status, ID, and policy links.
 * View information on a specified domain, including the description, enabled status, ID, and policy links.
+
+### Listing Projects ####
+
+Use the Identity service to view a list of projects in your cloud environment.
+
+### Working with projects {#userprojects}
+
+All project-level tasks must be performed by an administrator.
+
+## Tasks performed by an Administrator {#admin}
+
+The following Identity service tasks are usually performed by someone with the *administrator* role.
+
+### Working with domains ### {#admindomains}
+
+Use the Identity service to configure user access to your cloud domains. For detailed information, see [Domain Management](/helion/openstack/1.1/services/identity/domains/).
+
+* Add a domain to your cloud.
+* Update information for a specified domain, including the description, enabled status, ID, and policy links. 
 * Delete a domain.
 * List the domain roles for a specified user.
 * List domain roles for a specified domain group.
 * Grant a specified role to a domain group.
 * Validate that a group has a specified role on a domain.
 * Revoke a role from a group on a domain.
-
-### Listing Projects ####
-
-Use the Identity service to view a list of projects in your cloud environment.
-
-### Working with projects ### {#userprojects}
-
-All project-level tasks must be performed by an administrator.
-
-## Tasks performed by an Administrator<a name="admin"></a>
-
-The following Identity service tasks are usually performed by someone with the *administrator* role.
-
-### Working with domains ### {#admindomains}
-
-Use the Identity service to configure user access to your cloud domains.
-
-* Add a domain to your cloud.
-* Update information for a specified domain, including the description, enabled status, ID, and policy links. 
 
 ### Working with projects ### {#adminprojects}
 
@@ -145,7 +140,7 @@ Use the Identity service to configure policies.
 * Update a specified policy, including names, IDs, and the user that owns the policy. 
 * Delete a policy.
 
-**REVIEWERS: ARE ADMINS ABLE TO PERFORM THESE TASKS? THEY CAME FROM AN EARLIER DRAFT OF THE IDENTITY DOCS.** 
+<!--**REVIEWERS: ARE ADMINS ABLE TO PERFORM THESE TASKS? THEY CAME FROM AN EARLIER DRAFT OF THE IDENTITY DOCS.** 
 
 ### Manage Endpoints
 
@@ -171,7 +166,7 @@ Configure federated access for use in HP Helion OpenStack.
 
 Use the Identity service to reset a password for a user.
 
-
+-->
 
 
 ## For more information ##
