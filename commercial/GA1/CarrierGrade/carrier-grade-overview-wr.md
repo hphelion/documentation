@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade Overview"
-permalink: /helion/openstack/carrier/HP/WindRiver Integration Overview](/helion/openstack/carrier/wr/overview//overivew/
+permalink: /helion/openstack/carrier/HP/WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
