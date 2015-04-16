@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Documentation Home"
-permalink: /helion/openstack/carrier/
+permalink: /helion/openstack/carrier/home/
 product: carrier-grade
 
 ---
@@ -22,16 +22,9 @@ PageRefresh();
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
-HP Helion OpenStack Carrier Grade integrates WindRiver technologies with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities 
+HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack, the leading open source cloud computing platform. 
 
-Helion CSP is based on HP Helion Openstack EE but with significantly enhanced and optimized functionality, availability, scale and  performance to meet the needs of NFV Cloud deployments
-
-Helion CSP leverages (includes) WindRiver Linux, KVM and virtual switch SW for reliable and accelerated data plane
-
-HP will contribute enhancements and optimizations made to Helion CSP for NFV to upstream Openstack
-
-Helion CSP is sold, and supported as a separate SW entity from HP Helion Openstack EE
-
+HP Helion OpenStack Carrier Grade enables carrier grade network functions virtualization (NFV) capabilities to provide communications service providers (CSPs) with an open source based cloud platform that meets their demanding reliability requirements and accelerate their transition to NFV deployments. 
 
 ##Get Started with HP Helion OpenStack {#getstart}
 
@@ -45,9 +38,6 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 * [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview/)
 * [Administrators Guide](/helion/openstack/carrier/admin/)
 * [User Guide](/helion/commercial/carrier/dashboard/managing/)
-
-
-There's a lot of information out there to help you get going with your services. We recommend you browse through the [site index](/helion/openstack/carrier/siteindex/) for a full list of the technical content pages available on the site.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
