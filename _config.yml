@@ -953,3 +953,24 @@ navigation:
     url: /helion/openstack/services/landing/identity/
   - text: Security in version 1.1
     url: /helion/openstack/landing/security/
+  carrier-grade-temp:
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack
+    url: /helion/openstack/1.1/
+  - text: HP Helion OpenStack Community 
+    url: /helion/community/
+  - text: HP Helion OpenStack Carrier Grade (Alpha)
+    url: /helion/openstack/carrier/home/
+  - text: HP Helion Development Platform 
+    url: /helion/devplatform/1.1/
+  - text: HP Helion Public Cloud
+    url: /publiccloud/overview/
+  - text: HP Cloud Service Automation
+    url: /automation/
+  - text: HP CloudSystem
+    url: /cloudsystem/
+  - text: HP Cloud OS (Deprecated)
+    url: /cloudos/
+
+
