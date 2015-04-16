@@ -20,7 +20,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Documentation Home
 
-<!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
+<!-- From HP/WR OpenStack Summit press release  http://www.windriver.com/news/press/pr.html?ID=13261-->
 
 HP Helion OpenStack Carrier Grade is a carrier-grade distribution of OpenStack, the leading open source cloud computing platform. 
 
@@ -34,10 +34,12 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 * [HP Lifecycle Management Overview](/helion/openstack/carrier/hlm/overview/)
 * [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
-* [HP Helion OpenStack Carrier Grade WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/)
 * [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview/)
 * [Administrators Guide](/helion/openstack/carrier/admin/)
 * [User Guide](/helion/commercial/carrier/dashboard/managing/)
+
+<!-- Hide for alpha * [HP Helion OpenStack Carrier Grade WindRiver Integration Overview](/helion/openstack/carrier/wr/overview/) -->
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
