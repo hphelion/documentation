@@ -957,7 +957,7 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack
-    url: /helion/openstack/1.1/
+    url: /helion/openstack/carrier/home/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion OpenStack Carrier Grade (Alpha)
