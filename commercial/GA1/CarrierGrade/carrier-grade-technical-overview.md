@@ -18,7 +18,6 @@ authors: Sameer V, Pranoy R, Michael B
 <p style="font-size: small;"><a href="/helion/openstack/1.1/support-matrix/"> &#9664; Support Matrix | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/prereqs/"> Prerequisites &#9654</a></p> -->
 
 # HP Helion OpenStack&#174; 1.1: Technical Overview
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/technical-overview/)
 
 This page introduces you to HP Helion OpenStack, an enterprise-grade distribution of the OpenStack cloud operating system.
 
