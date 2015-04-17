@@ -30,7 +30,73 @@ PageRefresh();
 
 Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and can perform the following:
 
-<!-- Taken from https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface -->
+<!-- From Kenobi LCM4Cloud.pptx per Bryan Murray -->
+
+## Provisioning
+
+* Provision <Type> Node
+* Deprovision <Type> Node
+* Prepare SAN Storage to boot <Type> Node
+* Prepare additional SAN Storage for <Type> Node
+* Prepare additional local storage for <Type> Node
+* Prepare Bonded NIC for <Type> Node
+* Provision virtual <Type> Node on physical <Type> Node
+* Deprovision virtual <Type> Node on physical <Type> Node
+* Determine NIC port enumeration map for <Type> Node
+* Determine Storage map for <Type> Node
+
+
+## Deployment
+
+* Build <Type> Control Plane - Service Tier <ID>
+* Destroy <Type> Control Plane - Service Tier <ID>
+* Build <Type> Resource Cluster
+* Destroy <Type> Resource Cluster
+* Add Member to <Type> Control Plane - Service Tier <ID>
+* Remove Member from <Type> Control Plane - Service Tier <ID>
+* Add <Type> Resource Single Node to <Type> Control Plane
+* Remove <Type> Resource Single Node from <Type> Control Plane
+* Add <Type> Resource Cluster to <Type> Control Plane
+* Remove <Type> Resource Cluster from <Type> Control Plane
+
+## Maintenance
+
+* Modify <Type> Control Plane Options
+* Offline Member <ID> of <Type> Control Plane - Service Tier <ID>
+* Online Member <ID> of <Type> Control Plane - Service Tier <ID>
+* Offline <Type> Resource Single <ID>
+* Online <Type> Resource Single <ID>
+* Offline <Type> Resource Cluster <ID>
+* Online <Type> Resource Cluster <ID>
+* Audit <Type> Resource Node compliance
+
+## Recovery
+
+* Backup data from <Type> Control Plane
+* Restore data to a <Type> Control Plane
+* Rebuild <Type> Control Plane - Service Tier <ID>
+* Rebuild <Type> Resource Cluster
+* Rebuild <Type> Cloud Instance <ID>
+
+## Migration
+
+* Offline Migration of <Type> Control Plane:  <Type> Service Cluster from Service Tier <ID> to Service Tier <ID>
+* Rolling Migration of <Type> Control Plane:  <Type> Service Cluster from Service Tier <ID> to Service Tier <ID>
+* Offline Migration of <Type> Control Plane:  <Type> Service Single from Service Tier <ID> to Service Tier <ID>
+
+## Update/Upgrade
+* Rolling Hot-fix to <Type> Control Plane
+* Rolling Hot-fix to <Type> Resource Single
+* Rolling Hot-fix to <Type> Resource Cluster
+* Rolling Update to <Type> Control Plane
+* Rolling Update to <Type> Resource Single
+* Rolling Update to <Type> Resource Cluster
+* Rolling Upgrade to <Type> Control Plane
+* Rolling Upgrade to <Type> Resource Single
+* Rolling Upgrade to <Type> Resource Cluster
+
+
+<!-- Taken from https://rndwiki2.atlanta.hp.com/confluence/display/cloudos/HLM+Command+Line+Interface
 
 A.	Deploy cloud. An entire cloud is deployed. 
 
@@ -75,7 +141,7 @@ T.	Display current cloud topology
 U.	Display the desired state cloud topology. 
 
 V.	Explain current/desired state cloud topology
-
+-->
 
 
 
