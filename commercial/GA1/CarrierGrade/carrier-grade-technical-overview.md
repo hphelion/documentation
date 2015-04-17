@@ -14,7 +14,8 @@ authors: Sameer V, Pranoy R, Michael B
 
 <!--UNDER REVISION-->
 
-<p style="font-size: small;"><a href="/helion/openstack/1.1/support-matrix/"> &#9664; Support Matrix | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/prereqs/"> Prerequisites &#9654</a></p> 
+<!--
+<p style="font-size: small;"><a href="/helion/openstack/1.1/support-matrix/"> &#9664; Support Matrix | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/prereqs/"> Prerequisites &#9654</a></p> -->
 
 # HP Helion OpenStack&#174; 1.1: Technical Overview
 [See the Helion OpenStack 1.0 version of this page](/helion/openstack/technical-overview/)
@@ -44,6 +45,8 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 The following diagram depicts a simplified deployment scenario using KVM.
 
 <img src="media/CGH-architecture-alpha.png" width="500" /)>
+<a href="javascript:window.open('/content/documentation/media/CGH-architecture-alpha.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
+
 
 
 ## Hardware requirement {#hardware-req}
