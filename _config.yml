@@ -957,9 +957,9 @@ navigation:
     url: /helion/openstack/landing/security/
   carrier-grade-temp:
   - text: HP Helion Documentation
-    url: /
+    url: /helion/openstack/carrier/
   - text: HP Helion OpenStack
-    url: /helion/openstack/carrier/home/
+    url: /helion/openstack/1.1/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion OpenStack Carrier Grade (Alpha)

@@ -20,7 +20,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Overview
 
-Use the following steps to create a virtual machine on the KVM server for HP Helion Lifecycle Management. 
+Use the following steps to install HP Helion OpenStack Carrier Grade in a baremetal environment. 
 
 1. [Prepare the Network for Installation](/helion/openstack/carrier/install/bm/network/prepare/)
 

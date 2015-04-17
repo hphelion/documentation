@@ -63,17 +63,17 @@ HP Helion OpenStack Carrier Grade is sold, and supported as a separate software 
 
 <img src="media/CGH-VNF-zoom.png" />
 
-* A Single composite VNF can consist of multiple sub-component VNFs with their own specialized functionality (e.g. control plane, service plane, data plane)
-* Each sub-component VNF can have multiple VMs utilized in a load-balanced fashion for scaling capacity 
+* A Single composite VNF can consist of multiple sub-component VNFs with their own specialized functionality (e.g. control plane, service plane, data plane)
+* Each sub-component VNF can have multiple VMs utilized in a load-balanced fashion for scaling capacity 
 
 	Example -
 		VNFc A = VMs - A1, A2, A3, A4
 		VNFc B = VMs - B1, B2, B3, B4
 		VNFc C = VMs - C1, C2, C3, C4
 
-* Some VNFs will want to pin user sessions to the same VM  while some other VNFs will not care
-* Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)
-* Some vNICs of a VNF could be using SR-IOV while others are connected to the vSwitch 
+* Some VNFs will want to pin user sessions to the same VM while some other VNFs will not care
+* Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)
+* Some vNICs of a VNF could be using SR-IOV while others are connected to the vSwitch 
 
 <img src="media/CGH-NVF-Global.png" />
 
