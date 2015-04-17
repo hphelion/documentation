@@ -34,7 +34,7 @@ Use the following links and tools to begin working with HP Helion OpenStack:
 * [HP Lifecycle Management Overview](/helion/openstack/carrier/hlm/overview/)
 * [HP Helion OpenStack Overview](/helion/openstack/carrier/helion/overview/)
 * [HP Distributed Cloud Networking (DCN) Overview](/helion/openstack/carrier/dcn/overview/)
-* [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/overview/)
+* [Installing HP Helion Carrier Grade](/helion/openstack/carrier/install/bm/overview/)
 * [Administrators Guide](/helion/openstack/carrier/admin/)
 * [User Guide](/helion/commercial/carrier/dashboard/managing/)
 
