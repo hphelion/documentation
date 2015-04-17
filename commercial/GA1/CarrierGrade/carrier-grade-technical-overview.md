@@ -28,9 +28,9 @@ It is  designed to offer a number of value-added services that complement and en
 
 * [HP Helion OpenStack services](#Helion-services)
 * [Deployment architecture](#deploy-arch)
-* [Hardware requirement](#hardware-req)
 * [Network architecture](#networkarch)
-* [Backup and Restore nodes](#backup-restore-nodes)
+* [Hardware requirement](#hardware-req)
+
 
 
 ## HP Helion OpenStack Services- Functional Overview {#Helion-services}
@@ -48,13 +48,6 @@ The following diagram depicts a simplified deployment scenario using KVM.
 <img src="media/CGH-architecture-alpha.png" width="500" /)>
 <a href="javascript:window.open('/content/documentation/media/CGH-architecture-alpha.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">View larger image (opens in a new window)</a>
 
-
-
-## Hardware requirement {#hardware-req}
-
-For more information of Hardware configurations see the [Support Matrix](/helion/openstack/carrier/support-matrix/).
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ## Network architecture {#networkarch}
 
@@ -112,6 +105,13 @@ The following information describes the network configuration for the [physical 
 <td> Tenant Underlay Network from WR region </td>
 </tr>
 </table>
+
+## Hardware requirement {#hardware-req}
+
+For more information of Hardware configurations see the [Support Matrix](/helion/openstack/carrier/support-matrix/).
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 <!--
 ### Backup and Restore nodes {#backup-restore-nodes}
