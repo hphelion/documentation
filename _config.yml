@@ -417,34 +417,14 @@ navigation:
     url: /
   - text: HP Helion OpenStack Carrier Grade Documentation Home
     url: /helion/openstack/carrier/
-  - text: Site Index
-    url: /helion/openstack/carrier/siteindex/
-  - text: Release Notes
-    url: /helion/openstack/carrier/release-notes/
-  - text: FAQ
-    url: /helion/openstack/carrier/faq/  
-  - text: Technical Overview
-    url: /helion/openstack/carrier/technical-overview/ 
-  - text: Services Overview
-    url: /helion/openstack/carrier/services/overview/
   - text: Support Matrix
     url: /helion/openstack/carrier/support-matrix/ 		
   - text: Installation Overview
-    url: /helion/openstack/carrier/install/overview/	
+    url: /helion/openstack/carrier/install/bm/overview/	
   - text: Administrator Guide
     url: /helion/openstack/carrier/admin/
-  - text: Back Up and Restore
-    url: /helion/openstack/carrier/backup.restore/
-  - text: Troubleshooting
-    url: /helion/openstack/carrier/services/troubleshooting/
-  - text: Related Documentation
-    url: /helion/openstack/1.1/related-links/	
-  - text: Glossary
-    url: /helion/openstack/1.1/glossary/ 	
-  - text: End User License Agreement
-    url: /helion/openstack/carrier/eula/
-  - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/carrier/3rd-party-license-agreements/
+  - text: User Guide
+    url: /helion/commercial/carrier/dashboard/managing/
   11commercial.ga: 
   - text: HP Helion Documentation
     url: /
@@ -975,3 +955,24 @@ navigation:
     url: /helion/openstack/services/landing/identity/
   - text: Security in version 1.1
     url: /helion/openstack/landing/security/
+  carrier-grade-temp:
+  - text: HP Helion Documentation
+    url: /
+  - text: HP Helion OpenStack
+    url: /helion/openstack/carrier/home/
+  - text: HP Helion OpenStack Community 
+    url: /helion/community/
+  - text: HP Helion OpenStack Carrier Grade (Alpha)
+    url: /helion/openstack/carrier/home/
+  - text: HP Helion Development Platform 
+    url: /helion/devplatform/1.1/
+  - text: HP Helion Public Cloud
+    url: /publiccloud/overview/
+  - text: HP Cloud Service Automation
+    url: /automation/
+  - text: HP CloudSystem
+    url: /cloudsystem/
+  - text: HP Cloud OS (Deprecated)
+    url: /cloudos/
+
+
