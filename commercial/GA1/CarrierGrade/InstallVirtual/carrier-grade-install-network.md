@@ -84,41 +84,76 @@ To create a bond on the KVM host :
 
 2. Modifiy the `/etc/network/interfaces` file to the following (DHCP EXAMPLE):
 
-		# Bridge for KVM HOST
-		auto br-kvm
-		allow-ovs br-kvm
-		iface br-kvm inet dhcp
-		ovs_type OVSBridge
-		ovs_ports bond0 #=>(Change to em1 if Single NIC Setup is seen in your setup)
-		# Bond for KVM Bridge change to any ports you need em1 or eth0 as needed replacing p3p1 etc (Below is 10GB interface on DL360)
-		allow-br-kvm bond0 #=>(Change to em1 if Single NIC Setup)
-		iface bond0 inet manual #=>(Change to em1 if Single NIC Setup)
-		ovs_bridge br-kvm
-		ovs_type OVSBond #==>(Change to OVSPort for Single NIC Setup)
-		ovs_bonds p3p1 p3p2 #=>(remove line for Single NIC Setup and if you have em1/em2 change as "ovs bonds em1 em2")
-		ovs_options bond_mode=active-backup #=>(remove line for Single NIC Setup)
-		#DCN ALL Virtual Env - Bridges
+		# The loopback network interface
+		auto lo
+		iface lo inet loopback
+
+		#BR-CTL BRIDGE - UNTAGGED PXE NETWORK CIDR
 		auto br-ctl
 		allow-ovs br-ctl
-		iface br-ctl inet manual
+		iface br-ctl inet static
+		address 10.200.73.11
+		netmask 255.255.255.0
+		gateway 10.200.73.1
 		ovs_type OVSBridge
+		ovs_ports em1
 
-		auto br-data
-		allow-ovs br-data
-		iface br-data inet manual
-		ovs_type OVSBridge
+		#Bring up interface online
+		allow-br-ctl em1
+		iface em1 inet manual
+		ovs_bridge br-ctl
+		ovs_type OVSPort
 
 	Sample /etc/network/interfaces file from KVM host 
 	<img src="media/CGH-interfaces-file" >
 
-3. Create interface and ovs bridges by doing ifup each Interface added:
+3. Reboot the system using the following command:
 
-		ifup br-kvm
+		sudo /etc/init.d/networking restart
+
+3. Execute the `ifconfig -a` command to output OVS bridge details. If the bridge is not present, execute the following commands to restart the bridge:
+
+		ifdown br-ctl
 		ifup br-ctl
-		ifup br-data
 
-4. Make sure you have this route entry on the KVM host once your `br-kvm` is configured
- 
+
+5.	Enable the `br-ctl` network that is used for associating with HLM VM
+
+	a. Create br-ctl.xml file like below. Ensure respective VLAN ID for CLM is used.
+
+		<network>
+			<name>br-ctl</name>
+			<forward mode='bridge'/>
+			<bridge name='br-ctl'/>
+			<virtualport type='openvswitch'/>
+			<portgroup name='CLM'>
+				<vlan>
+					<tag id='1574'/>
+				</vlan>
+			</portgroup>
+		</network>
+
+	b. Execute the following commands:
+
+		virsh net-define br-ctl.xml
+		virsh net-start br-ctl
+		virsh net-autostart br-ctl
+		virsh net-list should display default and br-ctl 
+		
+	c.	Display information on the bridge:		
+
+		ovs-vsctl show 
+
+	The output should appear similar to the following example:
+
+		Bridge br-ctl
+			Port "em1"
+				Interface "em1"
+			Port br-ctl
+				Interface br-ctl
+					type: internal
+		ovs_version: "2.0.2"
+
 5. Make sure that you can connect to an external [NTP server](/helion/openstack/carrier/install/ntp/) and check that you can connect to an external network after exporting the proxy. 
 
 ## Next Step
