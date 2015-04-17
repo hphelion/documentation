@@ -65,124 +65,65 @@ The following information describes the network configuration for the [physical 
 <tr style="background-color: #C8C8C8;">
 <th> Network </th>
 <th> Description </th>
-<th> VLAN type </th>
-
-
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> IPMI / iLO </td>
-<td> Network for server hardware management </td>
-<td> Untagged </td>
-
-</tr>
-<tr style="background-color: white; color: black;">
-<td> Undercloud management </td>
-<td> <ul><li>Traffic for undercloud internal OpenStack calls, Image Operation service downloads, and so forth.</li>
-<li>Provides access to undercloud API endpoints</li>
-<li>Used to PXE boot overcloud servers</li>
-</ul> </td>
-<td> Untagged </td>
-
+<td> CLM / OBS</td>
+<td> Cloud Management and Object Store Network (shared with WR)</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Overcloud management </td>
-<td> Traffic for overcloud internal OpenStack calls, Image Operations service downloads, and so forth. </td>
-<td> Untagged </td>
-
+<td> PXE </td>
+<td> Boot/initial configuration network. Untagged </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> SDN </td>
-<td> Network between workload VMs, for example VxLAN traffic. </td>
-<td> Untagged </td>
-
+<td> CAN </td>
+<td> Consumer Access Network (shared with WR)</td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Storage </td>
-<td> iSCSi traffic between VMs and storage products like StoreVirtual </td>
-<td> Untagged </td>
-
+<td> EXT </td>
+<td> External network (routable between WR and Helion (B2B) region through respective TUL) AND can be on a separate interface (intf*) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> External </td>
-<td><ul><li> Connected to internet or intranet</li>
-<li>Provides floating IPs</li></ul> </td>
-<td> Tagged </td>
-
+<td> CTL </td>
+<td> IPMI/iLO network (shared with WR) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Service </td>
-<td>Connects trusted VMs in overcloud to communicate with cloud infrastructure components in undercloud</td>
-<td>Tagged</td>
-
+<td> BLS </td>
+<td>Block Storage Network (shared with WR) </td>
 </tr>
 
 <tr style="background-color: white; color: black;">
-<td> Object Storage (Swift) </td>
-<td> Communication between Object Operations servers (includes user data)  </td>
-<td> Untagged </td>
-
+<td> DCM </td>
+<td>Data Center Management network </td>
 </tr>
 
+<tr style="background-color: white; color: black;">
+<td> TUL (Swift) </td>
+<td> Tenant Underlay Network  </td>
+</tr>
+
+<tr style="background-color: white; color: black;">
+<td> WR-TUL (Swift) </td>
+<td> Tenant Underlay Network from WR region </td>
+</tr>
 </table>
 
-### Virtual networks {#virtual}
-The logical networks listed in the following table are implemented as VLANs on the physical network. The virtual networks are different for [KVM](#virtualkvm) and [ESX](#virtualesx).
-
-#### Virtual networks for KVM hypervisor support  {#virtualkvm}
-
-The logical networks listed in the following table are implemented as VLANs on the physical network.
-<table>
-
-<tr style="background-color: #C8C8C8;">
-    <th>Network</th>
-    <th>Description</th>
-    <th>VLAN type</th>
-
-  </tr>
-<tr style="background-color: white; color: black;">
-    <td> <b>Management</b></td>
-    <td>This network is used for most cloud traffic including PXE boot nodes, tenant access to service APIs, internal API traffic between (one services to another), HA heartbeats, tenant access to services, VxLAN traffic for between tenant VMs, VM access to block and object storage, object storage replication and synchronization between StoreVirtual VSAs, Object Operations service nodes, MySQL clusters, RabbitMQ clusters, keepalived, [HDN](https://helion.hpwsportal.com) access to the product catalog, logging traffic to centralized logging, monitoring checks to Icinga.</td>
-    <td>untagged</td>
-
-  </tr>
-<tr style="background-color: white; color: black;">
-    <td><b>Service</b></td>
-    <td>Trusted VMs communicate with the cloud infrastructure component.</td>
-    <td>tagged</td>
-
-  </tr>
-</td>  <tr style="background-color: white; color: black;">
-    <td><b>Fibre Channel</b></td>
-    <td> Fibre Channel SAN (Storage Area Network) used for data path between Compute Servers and 3PAR arrays.
-    <td> </td>
-
-<tr style="background-color: white; color: black;">
-    <td><b>External</b></td>
-	<td>This network connects compute nodes and controller nodes to the Internet or Intranet. External network access is required for DVR routing from compute nodes. 
-
-	<br />Floating IPs on the external network can be attached only to VMs that require a public IP address.
-    <td>tagged</td>
-  </tr>
-</table>
-
-
-
+<!--
 ### Backup and Restore nodes {#backup-restore-nodes}
 
 Backup and restore scripts and procedures are provided for the seed VM, undercloud, overcloud management controller (running singleton services like Sherpa), and the MySQL database deployed in the controller cluster. These scripts are to be used by administrators managing the OpenStack Cloud.
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.
 
- For more information see [HP Helion OpenStack&#174; Back Up and Restore](/helion/openstack/1.1/backup.restore/)
+For more information see [HP Helion OpenStack&#174; Back Up and Restore](/helion/openstack/1.1/backup.restore/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
+-->
  
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
 
