@@ -43,7 +43,7 @@ You can deploy HP Helion OpenStack in two different environments depending on th
 
 The following diagram depicts a simplified deployment scenario using KVM.
 
-<img src="media/CGH-architecture-alpha.png"/)>
+<img src="media/CGH-architecture-alpha.png" width="500" /)>
 
 
 ## Hardware requirement {#hardware-req}
