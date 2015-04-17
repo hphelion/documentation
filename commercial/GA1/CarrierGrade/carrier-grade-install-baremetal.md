@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Installing an HLM Node on a KVM Server"
-permalink: /helion/openstack/carrier/install/bm/hlm-vm/
+title: "HP Helion OpenStack&#174; Installation Overivew"
+permalink: /helion/openstack/carrier/install/bm/overview/
 product: carrier-grade
 
 ---
@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing an HLM Node on a KVM Server
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Overview
 
 Use the following steps to create a virtual machine on the KVM server for HP Helion Lifecycle Management. 
 

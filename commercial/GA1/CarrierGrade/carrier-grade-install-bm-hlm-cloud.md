@@ -90,7 +90,7 @@ To configure the HLM cloud:
 
 	The `hcfgproc script` is installed in `/usr/local/bin` by the `prepare-env` script and generates a `clouds/` directory in the <cloudname> dir.
 
-8. In this generated cloud, review the the CloudDiagram, `hosts.hf`, and `net/interfaces.d/eth.cfg` files to make sure the network settings are correct.
+8. In this generated cloud, review the CloudDiagram, `hosts.hf`, and `net/interfaces.d/eth.cfg` files to make sure the network settings are correct.
 
 9. Initialize network interfaces on all the cloud nodes using the following command:
 
