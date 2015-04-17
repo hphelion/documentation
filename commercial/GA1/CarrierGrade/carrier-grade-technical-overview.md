@@ -127,8 +127,6 @@ For more information see [HP Helion OpenStack&#174; Back Up and Restore](/helion
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 -->
  
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593;</a>
-
 ----
 
 
