@@ -49,7 +49,7 @@ To ensure the performance and stability of the Wind River region of the HP Helio
 
 ## Next Step
 
-[Preparing the Network for Installation](/helion/openstack/carrier/install/network/prepare/)
+[Preparing the Network for Installation](/helion/openstack/carrier/install/bm/network/prepare/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

@@ -22,7 +22,7 @@ PageRefresh();
 
 Use the following steps to create a virtual machine on the KVM server for HP Helion Lifecycle Management. 
 
-1. [Prepare the Network for Installation](/helion/openstack/carrier/install/network/prepare/)
+1. [Prepare the Network for Installation](/helion/openstack/carrier/install/bm/network/prepare/)
 
 2. [Create the HLM Virtual Machine](/helion/openstack/carrier/install/bm/hlm-vm/)
 
