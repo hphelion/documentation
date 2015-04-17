@@ -423,6 +423,8 @@ navigation:
     url: /helion/openstack/carrier/install/bm/overview/	
   - text: Administrator Guide
     url: /helion/openstack/carrier/admin/
+  - text: User Guide
+    url /helion/commercial/carrier/dashboard/managing/
   11commercial.ga: 
   - text: HP Helion Documentation
     url: /
