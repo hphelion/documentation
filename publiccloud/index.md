@@ -48,7 +48,13 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <td>Provides open, heterogeneous, extensible enterprise-grade cloud service lifecycle management to design and orchestrate full stack services. CSA embraces existing automation assets with an enhanced orchestration engine, which provides IT with an informed, transparent delivery of secure compliant services for the hybrid cloud.
 </td>
 </tr>
+<tr valign="top">
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/codar/">HP Codar </a></span></p>
+</td>
+<td>A continuous delivery solution that provides automated deployment and release management of complex multi-tier applications across the application lifecycle.
 
+</td>
+</tr>
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/cloudsystem/">HP CloudSystem Foundation</a></span></p>
 </td>
@@ -70,13 +76,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 
 </td>
 </tr>
-<tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/codar/">HP Codar </a></span></p>
-</td>
-<td>A continuous delivery solution that provides automated deployment and release management of complex multi-tier applications across the application lifecycle.
 
-</td>
-</tr>
 </table>
 </div>
 
