@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/network/prepare/">&#9664; Preparing the Network for Installation</a> | <a href="/helion/openstack/carrier/install/overview/">&#9650; Installation Overview</a> |  <a href="/helion/openstack/carrier/install/bm/network-install/"> Provisioning the Network&#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/network/prepare/">&#9664; Preparing the Network for Installation</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> |  <a href="/helion/openstack/carrier/install/bm/network-install/"> Provisioning the Network&#9654;</a> </p> 
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Virtual Machine

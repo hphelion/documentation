@@ -18,6 +18,8 @@ PageRefresh();
 
 </script>
 
+<a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/hlm/overview/"> Helion Lifecycle Management (HLM) Overview &#9654;</a></p>
+
 # HP Helion OpenStack&#174; Carrier Grade: Overview
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
@@ -77,7 +79,7 @@ HP Helion OpenStack Carrier Grade is sold, and supported as a separate software 
 
 <img src="media/CGH-NVF-Global.png" />
 
-HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/1.1/services/overview/) for a complete list of services. 
+HP Helion OpenStack offers many services based on the different OpenStack projects to provide the functionality you need. Visit the [HP Helion OpenStack Services Overview page](/helion/openstack/carrier/services/overview/) for a complete list of services. 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

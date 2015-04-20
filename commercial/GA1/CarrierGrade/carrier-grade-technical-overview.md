@@ -15,7 +15,7 @@ authors: Sameer V, Pranoy R, Michael B
 <!--UNDER REVISION-->
 
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/"> &#9664; Support Matrix | <a href="/helion/openstack/carrier/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/network/prepare/"> Preparing the Network for Installation</a></p>
+<p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/"> &#9664; Support Matrix | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/network/prepare/"> Preparing the Network for Installation</a></p>
 
 # HP Helion OpenStack&#174; 1.1: Technical Overview
 
