@@ -45,12 +45,14 @@ This page provides an overview of the hardware and software that is supported fo
 
 All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
+<!--
 ## Deployment Architecture {#deploy-arch}
 
-The following diagrams depict simplified deployment scenarios:
+The following diagram depicts simplified deployment scenarios:
 
 * <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
 * <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
+-->
 
 ## Supported Hardware {#supportedhw}
 
