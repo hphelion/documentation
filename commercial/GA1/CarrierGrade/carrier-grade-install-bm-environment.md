@@ -21,9 +21,8 @@ onLoad="window.refresh"
 PageRefresh();	
 
 </script>
-<!--
-<p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
--->
+
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/network-install/">&#9664; Provisioning the Network</a> | <a href="/helion/openstack/carrier/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/hlm-cloud/"> Deploying the HLM Cloud &#9654;</a> </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring the installation environment
 
