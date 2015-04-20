@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Install HP Helion OpenStack"
-permalink: /helion/openstack/carrier/install/vsc-node/
+permalink: /helion/openstack/carrier/install/helion/
 product: carrier-grade
 
 ---

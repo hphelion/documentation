@@ -21,18 +21,15 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!--
 <p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
-
+-->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Node
 
 Helion Lifecycle Management (HLM) consists of the ongoing operations /maintenance as well as the initial deployment of the Helion system as shown above.
 
-HP VSC must run on a dedicated hardware server as the only 
-virtual machine process, called the HP VSC Node.
-
-## Create the VSC node VM
+## Create the HLM VM
 
 1. Copy the `cg-hlm.qcow2` to `/var/lib/libvirt/images` folder on your KVM host.
 

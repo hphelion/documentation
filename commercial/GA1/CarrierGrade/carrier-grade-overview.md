@@ -22,17 +22,17 @@ PageRefresh();
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
-HP Helion OpenStack Carrier Grade integrates WindRiver technologies with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities 
+HP Helion OpenStack Carrier Grade integrates Wind River technologies with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities. 
+HP Helion OpenStack Carrier Grade is based on [HP Helion Openstack 1.1](/helion/openstack/1.1/) but with significantly enhanced and optimized functionality, availability, scale and  performance to meet the needs of NFV cloud deployments.
 
-Helion CSP is based on HP Helion Openstack EE but with significantly enhanced and optimized functionality, availability, scale and  performance to meet the needs of NFV Cloud deployments
+HP Helion OpenStack Carrier Grade uses multi-core HP Proliant rack-mounted servers with storage and networking along with the [Wind River Titanium Server](http://www.windriver.com/products/titanium-server/), [HP Distributed Cloud Networking](http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885), Kernel-based Virtual Machine (KVM), and virtual switch software for reliable and accelerated data plane.
 
-Helion CSP leverages (includes) WindRiver Linux, KVM and virtual switch SW for reliable and accelerated data plane
+HP will contribute enhancements and optimizations made to HP Helion OpenStack Carrier Grade for NFV to upstream Openstack.
 
-HP will contribute enhancements and optimizations made to Helion CSP for NFV to upstream Openstack
+HP Helion OpenStack Carrier Grade is sold, and supported as a separate software entity from HP Helion Openstack.
 
-Helion CSP is sold, and supported as a separate SW entity from HP Helion Openstack EE
 
-## Focus areas for Helion CSP
+## Focus areas for HP Helion OpenStack Carrier Grade
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
@@ -48,7 +48,7 @@ Helion CSP is sold, and supported as a separate SW entity from HP Helion Opensta
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
-CGH-NVF-Env.png
+<img src="media/CGH-NVF-Env.png" />
 
 	vCPE scenario example
 		VNF A = vRouter (vPE)
@@ -61,19 +61,19 @@ CGH-NVF-Env.png
 		VNF B = URL Enrichment Engine
 		VNF C = Video Optimizer
 
-CGH-VNF-zoom.png
+<img src="media/CGH-VNF-zoom.png" />
 
-* A Single composite VNF can consist of multiple sub-component VNFs with their own specialized functionality (e.g. control plane, service plane, data plane)
-* Each sub-component VNF can have multiple VMs utilized in a load-balanced fashion for scaling capacity 
+* A Single composite VNF can consist of multiple sub-component VNFs with their own specialized functionality (e.g. control plane, service plane, data plane)
+* Each sub-component VNF can have multiple VMs utilized in a load-balanced fashion for scaling capacity 
 
 	Example -
 		VNFc A = VMs - A1, A2, A3, A4
 		VNFc B = VMs - B1, B2, B3, B4
 		VNFc C = VMs - C1, C2, C3, C4
 
-* Some VNFs will want to pin user sessions to the same VM while some other VNFs will not care
-* Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)
-* Some vNICs of a VNF could be using SR-IOV while others are connected to the vSwitch 
+* Some VNFs will want to pin user sessions to the same VM while some other VNFs will not care
+* Each VM may have multiple vNICs and on multiple networks (intra-VNF, storage, external, management etc.)
+* Some vNICs of a VNF could be using SR-IOV while others are connected to the vSwitch 
 
 <img src="media/CGH-NVF-Global.png" />
 

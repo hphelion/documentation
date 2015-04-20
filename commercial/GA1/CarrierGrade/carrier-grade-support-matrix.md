@@ -20,9 +20,9 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-
+<!-- 
 <p style="font-size: small;"> <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/1.1/technical-overview/"> Technical Overview &#9654;</a></p>
-
+-->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Support Matrix
  
@@ -41,10 +41,15 @@ To ensure the performance and stability of the HP Helion OpenStack environment, 
 
 For key requirements needed HP Distributed Cloud Networking (DCN), see [Support Matrix for HP Distributed Cloud Networking](/helion/openstack/carrier/support-matrix/dcn/).
 
+<!-- Hide for alpha
 ## Support Matrix for the WindRiver Region
 
 To ensure the performance and stability of the Wind River region of the HP Helion OpenStack Carrier Grade environment, it is very important to meet the requirements and conform to the recommendations listed in [Support Matrix for the Wind River Region](/helion/openstack/carrier/support-matrix/wr/).
+-->
 
+## Next Step
+
+[Preparing the Network for Installation](/helion/openstack/carrier/install/bm/network/prepare/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

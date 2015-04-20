@@ -418,11 +418,15 @@ navigation:
   - text: HP Helion OpenStack Carrier Grade Documentation Home
     url: /helion/openstack/carrier/
   - text: Support Matrix
-    url: /helion/openstack/carrier/support-matrix/ 		
+    url: /helion/openstack/carrier/support-matrix/ 
+  - text: Technical Overview
+    url: /helion/openstack/carrier/technical-overview/
   - text: Installation Overview
-    url: /helion/openstack/carrier/install/overview/	
+    url: /helion/openstack/carrier/install/bm/overview/	
   - text: Administrator Guide
     url: /helion/openstack/carrier/admin/
+  - text: User Guide
+    url: /helion/commercial/carrier/dashboard/managing/
   11commercial.ga: 
   - text: HP Helion Documentation
     url: /
@@ -953,3 +957,24 @@ navigation:
     url: /helion/openstack/services/landing/identity/
   - text: Security in version 1.1
     url: /helion/openstack/landing/security/
+  carrier-grade-temp:
+  - text: HP Helion Documentation
+    url: /helion/openstack/carrier/
+  - text: HP Helion OpenStack
+    url: /helion/openstack/1.1/
+  - text: HP Helion OpenStack Community 
+    url: /helion/community/
+  - text: HP Helion OpenStack Carrier Grade (Alpha)
+    url: /helion/openstack/carrier/home/
+  - text: HP Helion Development Platform 
+    url: /helion/devplatform/1.1/
+  - text: HP Helion Public Cloud
+    url: /publiccloud/overview/
+  - text: HP Cloud Service Automation
+    url: /automation/
+  - text: HP CloudSystem
+    url: /cloudsystem/
+  - text: HP Cloud OS (Deprecated)
+    url: /cloudos/
+
+
