@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/hlm/overview/"> Helion Lifecycle Management (HLM) Overview &#9654;</a></p>
+<p style="font-size: small;"><a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/hlm/overview/"> Helion Lifecycle Management (HLM) Overview &#9654;</a></p>
 
 # HP Helion OpenStack&#174; Carrier Grade: Overview
 

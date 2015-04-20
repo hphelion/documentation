@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/helion/overview/"> &#9664; HP Helion OpenStack Overview | <a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/dcn/overview/"> Distributed Cloud Networking (DCN) Overview &#9654;</a></p>
+<p style="font-size: small;"><a href="/helion/openstack/carrier/hlm/overview/"> &#9664; Helion Lifecycle Management (HLM) Overview | <a href="/helion/openstack/carrier/home/">&#9650; Documentation Home</a> | <a href="/helion/openstack/carrier/dcn/overview/"> Distributed Cloud Networking (DCN) Overview &#9654;</a></p>
 
 
 
