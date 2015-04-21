@@ -314,7 +314,7 @@ or
 
 ## Software Requirements {#software-requirements}
 
-There are no software requirements for the the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.
+There are no software requirements for the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.
 
 The servers should be baremetal before installation.
 
