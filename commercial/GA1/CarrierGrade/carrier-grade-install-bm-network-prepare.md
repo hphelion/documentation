@@ -18,7 +18,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/hlm-vm/"> Create the HLM Virtual Machine &#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/prereqs/">&#9664; Installation Prerequisites</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/hlm-vm/"> Create the HLM Virtual Machine &#9654;</a> </p> 
 
 
 
