@@ -27,6 +27,28 @@ PageRefresh();
 
 To ensure the performance and stability of the Wind River region of the HP Lifecycle Management environment, it is very important to meet the requirements and conform to the following recommendations.
 
+## Software Requirements
+
+The KVM Host is a computer running buntu Server 14.04.2 LTS. The following packages are also required:
+
+* ntp 
+* firefox 
+* gedit 
+* xrdp 
+* xfce4 
+* qemu-kvm 
+* libvirt-bin 
+* openvswitch-switch 
+* openvswitch-common 
+* python-libvirt 
+* qemu-system-x86 
+* libssl-dev 
+* libffi-dev 
+* git 
+* python-virtualenv 
+* python-dev virt-manager
+
+
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
 ----
