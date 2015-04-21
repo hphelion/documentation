@@ -34,9 +34,23 @@ To provision the required networks:
 
 1. On your KVM host, download the `cg-hos.tar.gz.gpg` and HLM node image `cg-hlm.qcow2`to the `root` directory
 
-2. Provision `cg-hlm.qcow2` on your KVM host (min ram: 4096, disk: 20 GB) and create/assign new DHCP NAT network for backdoor (ssh) access to HLM node called `bkd`. Assign `bkd` as `eth0` interface.
+2. Use the following command to decrypt and untar the GPG file. You will be prompted for the password: `cghelion`.
 
-3. Assign the PXE network as `eth1` and the CLM network as `eth2` interface.
+		gpg -d cg-hos.tar.gz.gpg | tar -xzvf –
+
+3. Provision `cg-hlm.qcow2` on your KVM host and create/assign new DHCP NAT network for SSH access to HLM node called `bkd`.
+
+		qemu-img create -f qcow2 cg-hlm.qcow2
+
+	**QUESTION: WHAT IS COMMAND TO DO THIS??**
+
+4. Use the following commands to configure `bkd` as `eth0` interface; the PXE network as `eth1`; and the CLM network as `eth2` interface.
+
+		iface eth0 bkd
+		iface eth1 pxe
+		iface eth2 clm
+
+	**QUESTION: WHAT IS COMMAND TO DO THIS??**
 
 	(Note: We strongly recommend using HLM VM from virt-manager console as following section involves running scripts that restart the network at multiple points)
 

@@ -53,7 +53,6 @@ To configure the installation environment:
 
 		./hlm_updatepackages.sh
 
-
 	This command syncs the debian and pip files in the `packages` directory onto static repo on HLM node.
 
 5. Execute the following command and supply the PXE network details when prompted:
@@ -94,6 +93,7 @@ To configure the installation environment:
 
 	At this point Cobbler is up and running.
 
+<!-- Aldready done??
 8.	Edit `/etc/network/interfaces` file to provide CLM network details on the eth2 interface
 
 		auto lo
@@ -141,7 +141,7 @@ To configure the installation environment:
 		network 10.200.74.0
 		broadcast 10.200.74.255
 		gateway 10.200.74.1
-
+-->
 
 
 ## Next step {#nextstep}

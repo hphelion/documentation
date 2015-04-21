@@ -34,11 +34,23 @@ The network configuration appears similar to the following image:
 
 You will now configure the HLM cloud on those three nodes using CLM network. 
 
+## Boot the baremetal nodes
+
+Before starting the HLM cloud installation, boot PXE-boot the [required number of baremetal servers] for cloud deployment using DHCP and cobbler service running on HLM VM.
+
+
+a.	In iLO, set boot order to hard-disk and set one time option to network and press reset. 
+b.	Once networking and partitioning is chosen, it should boot up with hlinux image and IP address provided by DHCP Cobbler running in HLM VM.
+c.	In this exercise, 5 baremetal nodes are provisioned. Controllers - 3 , Compute - 2
+d.	Login credentials for baremetal nodes – root/iforgot
+
+
+
 To configure the HLM cloud:
 
 1. Change to the following directory:
 
-		cd ~/cg-hlm/hlm-build
+		cd /cg-hlm/hlm-build
 
 2. Run the following command to import code from the installation files and copy the code to `/opt/share/hlm` on the HLM node:
 

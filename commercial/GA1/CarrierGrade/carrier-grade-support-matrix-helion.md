@@ -102,8 +102,6 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 
 HP supports the following configurations for HP Helion OpenStack deployment:
 
-
-
 - Host Interconnects/Protocols: 
    
       * 10Gb Software iSCSI
@@ -124,9 +122,7 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 
 You must have the following hardware configuration:
 
-- At least 8 and no more than 100 baremetal systems meeting the requirements as listed below.
-
-Additional requirements are as follows:
+- 5 baremetal systems meeting the requirements as listed below.
 
 - For systems with multiple NICs, only one NIC may be active or connected.
 
