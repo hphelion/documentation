@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; 1.1: Open Source and Third-Party Software License Agreements"
-permalink: /helion/openstack/carrier/3rd-party-license-agreements/helion/
-product: commercial.ga
+permalink: /helion/openstack/carrier/3rd-party-license-agreements/
+product: carrier-grade
 product-version1: HP Helion OpenStack
 product-version2: HP Helion OpenStack 1.1
 role1: All

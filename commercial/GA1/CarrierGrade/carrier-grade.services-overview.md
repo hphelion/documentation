@@ -33,9 +33,11 @@ PageRefresh();
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Services Overview
-[See the Helion OpenStack 1.0 version of this page](/helion/openstack/services/overview/)
 
 OpenStack is comprised of several integrated services. Each service works through an API (application programming interface) that allows services to work together and allows users to interact with the services.
+
+
+## HP Helion OpenStack services
 
 HP Helion OpenStack includes a number of additional services to work with your cloud. 
 
@@ -48,7 +50,7 @@ HP Helion OpenStack includes a number of additional services to work with your c
 
 In addition to the APIs, you can interact with the most services through a graphic user interface (dashboard or console) or a command line interface (CLI).
 
-##Service User Accounts {#service}
+### Service User Accounts {#service}
 The HP Helion OpenStack installation process creates a **service** **user** account for each installed service. Service user accounts require elevated privileges to validate end user tokens. It is therefore strongly recommended that you do ***not*** add these service user accounts to any project because this could allow project users to access services they should not have permission to access. 
 
 The service user accounts include, but are not limited to, the following:
@@ -64,99 +66,88 @@ The service user accounts include, but are not limited to, the following:
 - Ceilometer
 - Ceph
 
-## OpenStack Services {#OpenStack}
+### OpenStack Services {#OpenStack}
 
 The following services are foundation technologies used by the HP Helion OpenStack. Based on OpenStack technology, HP Helion OpenStack comprises of a set of services and architecture that defines a data-center-level operating system (DCOS).
 
-For information on enabling and maintaining each of these OpenStack services, see [Network Administrator Notes](/helion/openstack/1.1/network/administrator/notes/).
+For information on enabling and maintaining each of these OpenStack services, see [Network Administrator Notes](/helion/openstack/carrier/network/administrator/notes/).
 
-**Compute Operations**. The Compute service manages the hypervisors and virtual machines in your environment. Also known as **Nova**. 
+**Compute Operations (Nova)**. The Compute service manages the hypervisors and virtual machines in your environment. 
 
-See [Overview of the Compute service](/helion/openstack/1.1/services/compute/overview/).
+See [Overview of the Compute service](/helion/openstack/carrier/services/compute/overview/).
 
-**Identity**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
+**Identity Management (Keystone)**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. 
 
-See [Overview of the Identity Management service](/helion/openstack/1.1/services/identity/overview).
+See [Overview of the Identity Management service](/helion/openstack/carrier/services/identity/overview).
 
-**Image Operations**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as **Glance**.
+**Image Operations (Glance)**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as **Glance**.
 
-See [Overview of the Image service](/helion/openstack/1.1/services/imaging/overview).
+See [Overview of the Image service](/helion/openstack/carrier/services/imaging/overview).
 
-**Networking Operations**. The Networking service enables you to create and manage virtual networks. Also known as **Neutron**.
+**Networking Operations (Neutron)**. The Networking service enables you to create and manage virtual networks. 
 
-See [Overview of the Networking service](/helion/openstack/1.1/services/networking/overview).
+See [Overview of the Networking service](/helion/openstack/carrier/services/networking/overview).
 
-**Object Operations**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. Also known as **Swift**.
+**Object Operations (Swift)**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. 
 
-See [Overview of the Object Operations service](/helion/openstack/1.1/services/object/overview/).
+See [Overview of the Object Operations service](/helion/openstack/carrier/services/object/overview/).
 
-**Orchestration**. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a [YAML](http://www.yaml.org/) file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  Also known as **Heat**.
+**Orchestration (Heat)**. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a [YAML](http://www.yaml.org/) file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  
 
-See [Overview of the Orchestration service](/helion/openstack/1.1/services/orchestration/overview).
+See [Overview of the Orchestration service](/helion/openstack/carrier/services/orchestration/overview).
 
-**Volume Operations**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. Also known as **Cinder**.
+**Volume Operations (Cinder)**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. 
 
-See [Overview of the Volume Operations Service](/helion/openstack/1.1/services/volume/overview).
+See [Overview of the Volume Operations Service](/helion/openstack/carrier/services/volume/overview).
 
-**Metering**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. Also known as **Ceilometer**.
+<!--
+**Metering (Ceilometer)**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. 
 
-See [Overview of the Metering Service](/helion/openstack/1.1/services/reporting/overview/).
-
+See [Overview of the Metering Service](/helion/openstack/carrier/services/reporting/overview/).
+-->
 
 **Ceph**. Ceph is an Open Source, scalable, software defined storage running on HP Servers which provides block and object storage with unified management. 
 
-See [Overview of the Ceph Service]( /helion/openstack/1.1/services/ceph/)
+See [Overview of the Ceph Service]( /helion/openstack/carrier/services/ceph/)
 
 <!-- Not in Commerical
 **Loom**. The Loom service facilitates the comprehension and manipulation of complex systems using the Unity dashboard.
 
-See [Overview of the Loom Service](/helion/openstack/1.1/services/loom/overview/).
+See [Overview of the Loom Service](/helion/openstack/carrier/services/loom/overview/).
 -->
 
-## HP Services ## {#hp}
+### HP Services ### {#hp}
 
 The following services have been developed by HP for use with the HP Helion OpenStack.
 
 **Sirius**. HP Helion OpenStack Sirius service assists the Cloud Administrator in the configuration of storage services (like Cinder and Swift) which run in the Overcloud on various storage devices.
 
-See [Overview of Sirius Service](/helion/openstack/1.1/services/sirius/overview/)
+See [Overview of Sirius Service](/helion/openstack/carrier/services/sirius/overview/)
 
 **EON**. ESX on border (EON) service is an inventory which interacts with the VMware vCenter server and collects the information available at the datacenters and clusters. These information is used for deployment and configuration of ESX Proxy Compute node. EON service is deployed in undercloud controller node.
 
-See [Overview of EON Service](/helion/openstack/1.1/services/eon/overview/)
+See [Overview of EON Service](/helion/openstack/carrier/services/eon/overview/)
 
 **Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment.  
 
-See [Overview of Sherpa Service](/helion/openstack/1.1/services/sherpa/overview).
+See [Overview of Sherpa Service](/helion/openstack/carrier/services/sherpa/overview).
 
 ## Dashboard services ## {#dash}
 
 HP Helion OpenStack uses the following services or software to present user interfaces to aspects of HP Helion OpenStack.
 
-**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/1.1/dashboard/how-works/) for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack. 
+**Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/carrier/dashboard/how-works/) for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack. 
 
 You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
 See [Overview of the Horizon Service](/helion/openstack/1.1/services/horizon/overview/).
 
 **Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.
 
-See [Overview of the Icinga Service](/helion/commercial/1.1/services/icinga/).
+See [Overview of the Icinga Service](/helion/commercial/carrier/services/icinga/).
 
-**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/1.1/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
+**Kibana**. The Kibana service, which runs in the undercloud, is the user interface into the [centralized logging service](/helion/openstack/carrier/services/logging/overview/) that helps view logging data across the HP Helion OpenStack cloud. Kibana is an open-source software project.
 
-See [Overview of the Icinga Service](/helion/commercial/1.1/services/kibana/).
-
-## Installation services ## {#install}
-
-The following services are used only during the HP Helion OpenStack installation:
-
-**TripleO**. TripleO (which stands for OpenStack-on-OpenStack) is a program designed to facilitate the installation of an OpenStack cloud. The HP Helion OpenStack installation process uses TripleO.
-
-See [Overview of the TripleO Service](/helion/openstack/1.1/services/tripleo/overview/).
-
-**Ironic**. The Ironic service runs during the installation for provisioning of the controller and KVM compute host in a baremetal deployment.
-
-See [Overview of the Ironic Service](/helion/openstack/1.1/services/ironic/overview/).
+See [Overview of the Icinga Service](/helion/commercial/carrier/services/kibana/).
 
 ## Other services and features {#Other}
 
@@ -164,11 +155,11 @@ The following services and features can be used with HP Helion OpenStack.
 
 **Centralized Logging**. The HP Helion OpenStack Centralized Logging uses a number of services and systems to collect logs throughout the cloud into a central system. The administrator can use a single graphic interface to view log information in charts, graphs, tables, histograms, and other forms. 
 
-See [Centralized Logging Overview](/helion/openstack/1.1/services/logging/overview/).
+See [Centralized Logging Overview](/helion/openstack/carrier/services/logging/overview/).
 
 **DNSaaS**. The HP Helion OpenStack DNSaaS (Domain Name System as a Service) provides a way to display, create, modify, and delete DNS records on the assigned DNS server network. 
 
-See [Overview of the DNS as a Service](/helion/openstack/1.1/install/dnsaas/).
+See [Overview of the DNS as a Service](/helion/openstack/carrier/install/dnsaas/).
 
 
 
