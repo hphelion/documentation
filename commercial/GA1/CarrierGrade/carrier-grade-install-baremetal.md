@@ -24,7 +24,7 @@ Use the following steps to install HP Helion OpenStack Carrier Grade in a bareme
 
 1. Review the [Technical Overview](/helion/openstack/carrier/technical-overview/) for information on the HP Helion OpenStack Carrier Grade environment.
 
-2. Review the [Support Matrix](helion/openstack/carrier/support-matrix/) to make sure your environment meets the minimum requirements.
+2. Review the [Support Matrix](/helion/openstack/carrier/support-matrix/) to make sure your environment meets the minimum requirements.
 
 3. [Installation Prerequisites](/helion/openstack/carrier/install/prereqs/)
 
