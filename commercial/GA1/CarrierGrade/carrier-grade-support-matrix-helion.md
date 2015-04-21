@@ -30,20 +30,13 @@ To ensure the performance and stability of the HP Helion OpenStack environment, 
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
-* [OpenStack version information](#os)
-* [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
-* [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
 * [Software Requirements](#software-requirements)
-	* [Software requirements for the Seed Cloud Host](#seed-requirements)
+	* [Software requirements for the KVM Host](#seed-requirements)
 	* [Software requirements for the undercloud and overcloud](#seed-ucoc)
 * [Guest OS Support Matrix](#guestOS)
 
-
-## OpenStack version information {#os}
-
-All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
 
 <!--
 ## Deployment Architecture {#deploy-arch}
@@ -323,40 +316,9 @@ or
 
 ## Software Requirements {#software-requirements}
 
-Note the following software requirements:
+There are no software requirements for the the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.
 
-### Software requirements for the seed cloud host  {#seed-requirements}
-
-The KVM Host is a computer running buntu Server 14.04.2 LTS. The following packages are also required:
-
-* ntp 
-* firefox 
-* gedit 
-* xrdp 
-* xfce4 
-* qemu-kvm 
-* libvirt-bin 
-* openvswitch-switch 
-* openvswitch-common 
-* python-libvirt 
-* qemu-system-x86 
-* libssl-dev 
-* libffi-dev 
-* git 
-* python-virtualenv 
-* python-dev 
-* virt-manager
-
-Other recommendations for the seed cloud host are as follows:
-
-- Installing a simple command line tool, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes;
-- Enabling the BIOS serial console if your iLO management system supports it. For information on the BIOS serial console, see [Integrated Lights Out 3 Virtual Serial Port configuration and operation](http://h20565.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c00263709). 
-
-**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualization configuration.
-
-### Software requirements for the undercloud and overcloud  {#seed-ucoc}
-
-There are no software requirements for the undercloud and overcloud servers because all required software is contained within the images deployed on the system.
+The servers should be baremetal before installation.
 
 ## Guest OS Support Matrix {#guestOS}
 
