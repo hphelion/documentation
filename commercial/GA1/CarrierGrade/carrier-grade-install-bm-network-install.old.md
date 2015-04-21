@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Provisioning the Network"
-permalink: /helion/openstack/carrier/install/bm/network-install/
+permalink: /helion/openstack/carrier/install/bm/network-install/old/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -36,7 +36,7 @@ To provision the required networks:
 
 2. Use the following command to decrypt and untar the GPG file. You will be prompted for the password: `cghelion`.
 
-		gpg -d cg-hos.tar.gz.gpg | tar -xzvf –
+		gpg -d cg-hos.tar.gz.gpg | tar -xzvf 
 
 3. Provision `cg-hlm.qcow2` on your KVM host and create/assign new DHCP NAT network for SSH access to HLM node called `bkd`.
 
