@@ -428,7 +428,7 @@ navigation:
   - text: User Guide
     url: /helion/commercial/carrier/dashboard/managing/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/carrier/3rd-party-license-agreements/	
+    url: /helion/openstack/carrier/3rd-party-license-agreements/
   11commercial.ga: 
   - text: HP Helion Documentation
     url: /
