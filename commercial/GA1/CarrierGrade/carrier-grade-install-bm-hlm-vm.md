@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/network/prepare/">&#9664; Preparing the Network for Installation</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> |  <a href="/helion/openstack/carrier/install/bm/network-install/"> Provisioning the Network&#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/network/prepare/">&#9664; Preparing the Network for Installation</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> |  <a href="/helion/openstack/carrier/install/bm/environment/"> Configuring the installation environment &#9654;</a> </p> 
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Virtual Machine
@@ -150,7 +150,7 @@ Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance
 
 ## Next step {#nextstep}
 
-[Provisioning the Network](/helion/openstack/carrier/install/bm/network-install/)
+[Configuring the installation environment](/helion/openstack/carrier/install/bm/environment/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

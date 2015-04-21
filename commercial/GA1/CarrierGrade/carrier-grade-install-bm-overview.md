@@ -32,11 +32,9 @@ Use the following steps to install HP Helion OpenStack Carrier Grade in a bareme
 
 5. [Create the HLM Virtual Machine](/helion/openstack/carrier/install/bm/hlm-vm/)
 
-6. [Provision the Network](/helion/openstack/carrier/install/bm/network-install/)
+6. [Configure the installation environment](/helion/openstack/carrier/install/bm/environment/)
 
-7. [Configure the installation environment](/helion/openstack/carrier/install/bm/environment/)
-
-8. [Deploying the HLM Cloud](/helion/openstack/carrier/install/bm/hlm-cloud/)
+7. [Deploying the HLM Cloud](/helion/openstack/carrier/install/bm/hlm-cloud/)
 
 ## First Step ##
 
