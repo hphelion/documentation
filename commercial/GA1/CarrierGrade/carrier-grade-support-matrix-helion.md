@@ -50,10 +50,6 @@ The following diagram depicts simplified deployment scenarios:
 The following hardware has been tested and verified to work with HP Helion OpenStack:
 
 
-### HLM System
-
-For the HLM system, the following servers are supported for the current release.
-
 ### HP Helion OpenStack Region
 
 For the HP Helion OpenStack Region, the following servers are supported for the current release.

@@ -23,7 +23,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Alpha): Support Matrix</a> |  <a href="/helion/openstack/carrier/support-matrix/helion/"> Support Matrix for HP Helion OpenStack &#9654;</a> </p>
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha):Support Matrix for the HP Lifecycle Management
+# HP Helion OpenStack&#174; Carrier Grade (Alpha):Support Matrix for the KVM Host
 
 To ensure the performance and stability of the Wind River region of the HP Lifecycle Management environment, it is very important to meet the requirements and conform to the following recommendations.
 
@@ -48,6 +48,10 @@ The KVM Host is a computer running buntu Server 14.04.2 LTS. The following packa
 * python-virtualenv 
 * python-dev virt-manager
 
+
+## Supported Hardware {#supportedhw}
+
+The following servers are supported for use as the KVM host in the current release.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
