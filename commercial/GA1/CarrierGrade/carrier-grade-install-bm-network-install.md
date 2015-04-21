@@ -32,7 +32,7 @@ This script takes an input JSON file `vm.json` and creates three blank (no opera
 
 To provision the required networks:
 
-1. On your kvm host, download the `cg-hos.tar.gz.gpg` and HLM node image `cg-hlm.qcow2`to the `root` directory
+1. On your KVM host, download the `cg-hos.tar.gz.gpg` and HLM node image `cg-hlm.qcow2`to the `root` directory
 
 2. Provision `cg-hlm.qcow2` on your KVM host (min ram: 4096, disk: 20 GB) and create/assign new DHCP NAT network for backdoor (ssh) access to HLM node called `bkd`. Assign `bkd` as `eth0` interface.
 

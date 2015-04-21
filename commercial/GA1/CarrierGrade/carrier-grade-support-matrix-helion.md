@@ -33,8 +33,6 @@ This page provides an overview of the hardware and software that is supported fo
 * [Supported Hardware](#supportedhw)
 * [Hardware Requirements](#baremetal)
 * [Software Requirements](#software-requirements)
-	* [Software requirements for the KVM Host](#seed-requirements)
-	* [Software requirements for the undercloud and overcloud](#seed-ucoc)
 * [Guest OS Support Matrix](#guestOS)
 
 
