@@ -52,6 +52,38 @@ The KVM Host is a computer running buntu Server 14.04.2 LTS. The following packa
 ## Supported Hardware {#supportedhw}
 
 The following servers are supported for use as the KVM host in the current release.
+<table>
+<tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
+<th>Node Type</th>
+<th>Role</th>
+<th>Required Number</th>
+<th>Server Hardware</th>
+<th>Minimum Requirements and Recommendations</th>
+</tr>
+
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td rowspan="4"> KVM Host</td>
+<td rowspan="4">Installation/Management</td>
+<td rowspan="4">1</td>
+<td>Disk </td>
+<td> 20 GB
+</td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>Memory </td>
+<td>4,096 MB</td>
+</tr>
+<tr style="background-color: white; color: black;">
+<td>Network </td>
+<td> </td>
+</tr>
+<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<td>CPU </td>
+<td> </td>
+
+</table>
+
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
