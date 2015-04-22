@@ -2,14 +2,14 @@
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation: Deploy and Configure HP StoreVirtual VSA"
 permalink: /helion/openstack/carrier/install/vsa/
-product: commercial.ga
-product-version1: HP Helion OpenStack Carrier Grade (Alpha):
+product: carrier-grade
+product-version1: HP Helion OpenStack Carrier Grade
 role1: Storage Administrator
 role2: Storage Architect
 authors: Michael B, Paul F
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -43,254 +43,25 @@ This page provides detailed instructions on deployment of HP StoreVirtual VSA St
 * [Adding a StoreVirtual node to an existing Management Group](#adding-a-node)
 * [Next Steps](#next-steps)
 
-##Deployment and Configuration Procedure Overview {#high-level-view}
+## Installing HP StoreVirtual VSA
 
-The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.
+Use the following steps to install HP StoreVirtual VSA in your HP Helion OpenStack Carrier Grade cloud.
 
+1. On the KVM host, change to the directory where your cloud is installed. 
 
-<a href="javascript:window.open('/content/documentation/media/storevirtual-integration.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">HP StoreVirtual VSA Deployment and Configuration Procedure (opens in a new window)</a>
+    Go to the folder where cloud is created
+    Change Directory to services/cinder/blocks/
+    This folder will have a cinder_conf_default.sample file. Copy that file to cinder_conf_default and update with your customized values. The parameters in file are as follows. If required more parameters can be added to this file.
 
+hplefthand_username = <username>
+hplefthand_password = <password>
+hplefthand_clustername = <Cluster Name>
+hplefthand_api_url = https://<Iscsi Virtual IP address>/lhos
 
-<!--1 - **Install CMC**
-     
-   [Install CMC](#install-hp-storevirtual-cmc) on the seed node where the seed cloud is running. The CMC binary comes with the HP Helion OpenStack installer and is present in the **Tripleo** directory. 
+    Run hcfgproc. This will copy the parameters in cinder_conf_default to the cinder.conf file in the CND-SVC role.
+    Next time when the CND-SVC role is implemented it will have the StoreVirtual Information.
 
-2 - **Add VSA Baremetal nodes to ironic database**
-	
-   * Identify the hardware for StoreVirtual deployment and enroll the Baremetal to the ironic database.
 
-   * Log in to the undercloud and source the environment variables(source stackrc).
-
-   * Execute ironic CLI commands from the undercloud to enroll the Baremetal into ironic database.
-   
-   * [Deploy StoreVirtual storage systems](#deployment-vsa).
-
-3a - **Run update cloud script to provision VSA node**
-
-   * After the [enrollment of the new Baremetal server](#deployment-vsa) in the undercloud, log in to the seed cloud.
-
-   * Update the *overcloud.json* file for StoreVirtual deployment and apply the configuration.
-	
-   * Execute the update cloud script.
-
-3b - **Discover StoreVirtual in CMC**
-
-   * After updating the cloud, StoreVirtual system is deployed in the new Baremetal server that is enrolled.
-
-   * Create StoreVirtual cluster.
-
-   * The IP address of the StoreVirtual storage system can be retrieved from `/etc/vsa/vsa_network_config.json` file in StoreVirtual node.
-
-   * Launch the CMC and discover the StoreVirtual systems that have been deployed.
-
-3c - **Create VSA cluster**
-
-   * After discovering the StoreVirtual storage systems in CMC, [create the StoreVirtual cluster and management group](#create-cluster) from CMC.
-
-4a - **Launch the undercloud Horizon dashboard**
-
-4b - **Register VSA cluster**
-
-4c - **Create VSA backend**
-
-4d- **Get Cinder configuration for VSA backend**
-
-   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/carrier/undercloud/oc/config/storevirtual/) system.
-	
-   * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
-
-5a - **Update `overcloud-config.json` file with cinder configuration**
-
-   With the advise generated from the above steps, update the overcloud-config.json file in the seed cloud.
-
-5b - **Run update cloud script to update cinder.conf**
-
-   * The cinder.conf in the overcloud should be updated after updating the overcloud-config.json file in the seed cloud.
-
-   * Execute [update cloud script](/helion/openstack/carrier/undercloud/oc/config/storevirtual/) from seed cloud. -->
-
-
-##Installing HP StoreVirtual VSA Centralized Management Console (CMC) on Linux {#install-hp-storevirtual-cmc}
-
-In order to configure the HP StoreVirtual VSA nodes, you must first install the CMC. You can manage all connected StoreVirtual VSA instances from single CMC connected to HP Helion OpenStack management network.
-
-
-### Prerequisites {#prerequisites}
-
-* You must be running the X Windows System to install the CMC.
-
-* We recommend that you install CMC on the same KVM host that is used to run the seed VM. This host has direct network connectivity to servers running HP StoreVirtual VSA. However, you may select an alternate host as long as it is accessible from the HP Helion OpenStack management network.
-
-
-**Note**: These changes are required for 64-bit operating system only.
-
-* Execute the following commands:
-
-		# apt-get update
-		# dpkg --add-architecture i386
-		# apt-get install openjdk-7-jdk:i386
-
-### Installation {#installation}
-
-1. Verify if the CMC installer file inside `tripleo` directory (packaged with the HP Helion OpenStack&#174; installer) has executable permission. If not, execute the following command:
-
-		# chmod +x CMC_11.5.01.0079.0_Installer_Linux.bin
-
-2. Launch the installer:
-
-		# ./CMC_11.5.01.0079.0_Installer_Linux.bin
-
-3. Follow the steps in the console-based installation wizard to complete the installation.
-
-4. To start the CMC, if you have direct GUI access:<br />
- From the directory in which the files are installed, click the **HP Store Virtual Centralized Management Console** to launch CMC.  
-
-	**Note**: To launch the CMC from command line (CLI), navigate to the location where it is installed and enter: 
-			
-     	# ./"HP Store Virtual Centralized Management Console".
-
-	Alternatively, if you use a remote server, you can connect to the head node using XRDP and configure the storage using CMC through an RDP session:
-
-	To do this, on the head node enter:
-		
-		apt-get install xrdp
-		
-		service xrdp start
-		
-	From a Windows laptop (for example), use RDP (mstsc.exe), enter the IP address of the head node, and click **Connect**.
-		
-	At the login prompt enter you credentials and click **OK**. When the remote desktop connection screen opens, click on the RDP terminal session and enter:
-		
-		cd /opt/hp/storevirtual/ui
-		
-		java -jar UI.jar
-		
-	to start the CMC GUI.
-
-	**Note:** In the event that you cannot see what you are typing in the RDP terminal session, enter:
-
-		xterm -fg black -bg white &
-
-	A second RDP terminal session will open in the RDP session and you can then proceed as above - that is:
-
-		cd /opt/hp/storevirtual/ui
-		
-		java -jar UI.jar
-
-	to start the CMC GUI.
-
-
-
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-##Deploying HP StoreVirtual VSA {#deploy-vsa}
-
-
-###Prerequisites {#prerequisites-vsa}
-
-Ensure the following prerequisites are fulfilled before HP StoreVirtual Storage systems are deployed:
-
-* Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `#ironic node-list` in the undercloud server does not have any free nodes.This is required to register a new node which matches the disk requirements for StoreVirtual and is picked by the installer for StoreVirtual deployment.
-
- 
-* Ensure that you have created a minimum of two(2) RAID groups. You can create a maximum of eight(8) groups. The first RAID group where the OS image is deployed is not considered for StoreVirtual storage.
-
-* Each physical disk should be RAID protected and should not be RAID 0. You can use RAID 5 and above. <!--For more details, refer - [**Storevirtual documentation LINK**]-->
-
-* For deploying StoreVirtual systems without Adaptive Optimization (AO) the setup must have a minimum two(2) disks(/dev/sda, /dev/sdb).
-
-* For deploying StoreVirtual systems with Adaptive Optimization (AO) the setup must have at least three(3) disks(/dev/sda, /dev/sdb,/dev/sdc). The disk /dev/sdb should be a Solid State Drive(SSD).
-
-
-* Ensure that you create the RAID group for SSD drives immediately after creating the RAID group for boot volume. For example: If three RAID groups are to be created. The following is recommended :
-
-      **Step 1**: Create the first RAID group for HDD drives and mark this as boot volume(/dev/sda)
-        
-	   **Step 2**: Create the second RAID group for SSD drives which should be used as Tier 0 for AO (/dev/sdb)
-         
-	   **Step 3**: Create the third RAID group for HDD drives which will be used as Tier 1(/dev/sdc)
-
-* Seed Cloud is installed and is running.
- 
-The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack&#174; and has a maximum limit of 50 TB per node. Hence the total amount of the configured storage on an individual StoreVirtual node should not exceed 50 TB. To extend the 50 TB per node limit, you can add nodes. A VSA cluster can support up to 16 nodes, which means configured storage on a VSA cluster can be as much as 800 TB.
-
-**Note**: Use of StoreVirtual VSA is included with your Helion OpenStack license.  When installing StoreVirtual VSA under the Helion OpenStack license, the CMC may display a message that some features are not licensed. This message displays in error and can be ignored if you have licensed the physical server with a Helion OpenStack license. 
-
-<!--<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
-
-
-#### Enrolling the New Baremetal Server {#enroll-new-baremetal-server}
-
-The following steps to deploy HP StoreVirtual VSA are optional if you have not already added VSA in your initial installation:
-
-
-**Note:** Before enrolling the new Baremetal server for StoreVirtual deployment, ensure that `ironic node-list` in the undercloud server does not have any free nodes suitable for StoreVirtual installation. If a suitable node is available, skip the Baremetal registration steps and go to **step 5** below.
-
-
-You must add a server to the cloud inventory to handle the increased number of nodes. 
-
-Perform the following steps to add a physical server:
-
-1. Log in to the seed VM:
-
-		ssh root@<Seed IP Address>
-
-2. Make the respective Baremetal entry in `/root/baremetal.csv`.   
-	
-3. Add the node to `baremetal.csv` at the end.
-
-		<mac_address>,<user>,<password>,<ip_address>,<no_of_cpus>,<memory_MB>,<diskspace_GiB>,<role>,<power_managemenment>
-
-	The following sample displays the output of the above command:
-
-		E8:39:35:2B:FA:30,administrator,password,10.Carrier Grade (Alpha):92.46,12,73728,70,OvercloudVSAAOStorage,IPMI
-		9C:B6:54:AD:55:A8,administrator,gone2far,10.Carrier Grade (Alpha):92.50,12,73728,70,OvercloudVSAStorage,IPMI
-
-
-
-  	Ensure that a new node is added at the end of the file. 
-
-3. Edit the scale counts in JSON environment variables file (for example: `kvm-custom-ips.json`) that was used during the initial installation to define the appropriate scale number:
-
-		"vsa_scale": "<no of StoreVirtual systems>"
-		"vsa_ao_scale": "<no of StoreVirtual systems with AO enabled>"
-
-
-
-4. Source the environment variables file created during initial installation.
-
-		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/<environment variables file name>
-
-	For example:
-
-		# source tripleo/tripleo-incubator/scripts/hp_ced_load_config.sh tripleo/configs/kvm-custom-ips.json
-
-
-5. Run the installer script:
-
-		bash -x tripleo/tripleo-incubator/scripts/hp_ced_installer.sh --update-overcloud 2>&1 | tee update.log
-
-
-   This will register a new Ironic node and create a new Nova instance and a new Heat stack.
-
-<!--**Caution**: Do not provision proxy and scale-out object nodes together. The requirements are different for proxy nodes and scale-out object nodes. It is recommended that you use HP DL380 or HP SL230 servers for Proxy nodes and SL4540 servers for scale-out Object storage nodes.-->
- <!--	**Note**: While deploying a scale-out **proxy** node ensure that the value of `vsa_scale` is unchanged. While deploying a scale-out **object** node ensure that the value of `vsa_ao_scale` is unchanged.-->
-**NOTE**: For HP StoreVirtual VSA, a management group with two storage systems and a Failover Manager is the minimum configuration for automated fault tolerant operations. Configurations greater than two systems can be redundant and do not require a Failover Manager. The Failover Manager is a specialized version of the LeftHand OS software designed to operate as a manager and provide automated failover capability. It runs as a virtual appliance and must be installed on a separate system/VM  other than the storage systems in the SAN.
-
- 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-### Setting the public interface parameter ###
-As of Helion Carrier Grade (Alpha):, you have to specify the public interface parameter when you are planning to configure VSA in:
-
-- FLAT mode (no VLAN)
-- FCP mode
-- VLAN provider mode
-
-To specify the public interface, edit the VSA_PUBLIC_INTERFACE variable in the `~/tripleo/overcloud-env.json` file. 
- 
 
 ##Verifying StoreVirtual installation status {#verify-install}
 

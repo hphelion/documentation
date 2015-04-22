@@ -2,9 +2,9 @@
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Cinder Block Storage Using HP StoreVirtual VSA"
 permalink: /helion/openstack/carrier/install/vsa/overview/
-product: commercial.ga
+product: carrier-grade
 product-version1: HP Helion OpenStack
-product-version2: HP Helion OpenStack Carrier Grade (Alpha):
+product-version2: HP Helion OpenStack Carrier Grade
 role1: Systems Administrator 
 role2: Cloud Architect 
 role3: Storage Administrator 
@@ -19,7 +19,7 @@ role11: Storage Engineer
 authors: Paul F
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>

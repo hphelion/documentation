@@ -32,7 +32,11 @@ Use the following links for information on administrative tasks you can perform 
 
 ## Administering the HP Helion OpenStack Region
 
-For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/openstack/carrier/admin/helion/).
+For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/)
+
+<!-- Hiding for alpha
+(/helion/openstack/carrier/admin/helion/).
+-->
 
 ## Adding Cinder Storage
 

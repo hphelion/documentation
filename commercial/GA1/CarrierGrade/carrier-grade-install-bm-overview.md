@@ -49,7 +49,7 @@ Use the following process to install HP Helion OpenStack Carrier Grade in a bare
 
 ## First Step ##
 
-Before you start, make sure your environment meets the hardware and software requirements. See the [Support Matrix](/helion/openstack/carrier/support-matrix/).
+Before you start, make sure your environment meets the hardware and software requirements. See the [Technical Overview](/helion/openstack/carrier/technical-overview/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
