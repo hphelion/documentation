@@ -42,7 +42,7 @@ To provision the required networks:
 
 		qemu-img create -f qcow2 cg-hlm.qcow2
 
-	**QUESTION: WHAT IS COMMAND TO DO THIS??**
+	**QUESTION: WHAT IS COMMAND TO DO THIS?**
 
 4. Use the following commands to configure `bkd` as `eth0` interface; the PXE network as `eth1`; and the CLM network as `eth2` interface.
 
@@ -50,7 +50,7 @@ To provision the required networks:
 		iface eth1 pxe
 		iface eth2 clm
 
-	**QUESTION: WHAT IS COMMAND TO DO THIS??**
+	**QUESTION: WHAT IS COMMAND TO DO THIS?**
 
 	(Note: We strongly recommend using HLM VM from virt-manager console as following section involves running scripts that restart the network at multiple points)
 

@@ -23,19 +23,11 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing Instances
 
-You can use the dashboards to manage instances created by other users. 
+Instances are virtual machines that run inside the cloud.
 
-Use the **Compute** panel on the **Project** dashboard to:
+How you interact with instances depends upon your user type, either an administrative user (admin) or a non-administrative user (user).
 
-* [Create a new instance](/helion/commercial/carrier/dashboard/managing/instances/create/)
-* [Terminate an instance](/helion/commercial/carrier/dashboard/managing/instances/terminate/)
-* [Reboot an instance](/helion/commercial/carrier/dashboard/managing/instances/reboot/)
-* [Rebuild an instance](/helion/commercial/carrier/dashboard/managing/instances/rebuild/)
-* [Suspend and resume an instance](/helion/commercial/carrier/dashboard/managing/instances/suspend/)
-* [Pause and un-pausing an instance](/helion/commercial/carrier/dashboard/managing/instances/pause/)
-* [Create an instance snapshot](/helion/commercial/carrier/dashboard/managing/images/public/)
-* [Associate, or assign, a floating IP address to an instance](/helion/commercial/carrier/dashboard/managing/instances/ipaddresses/) 
-* [Launch a console session to an instance](/helion/commercial/carrier/dashboard/managing/instances/console/)
+**Note:** The admin can perform all of the user tasks in addition to the admin tasks. For some tasks, the admin will need to use the **Project** > **Compute** > **Instances** panel.
 
 To work with instances [launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/). Then, click **Project** > **Compute** > **Instances**. The instances in the current project are listed.
 
@@ -46,6 +38,32 @@ The **Instances** panel looks similar to the following. Click the image to view 
 <a href="javascript:window.open('/content/documentation/media/CGH-Helion-Instance','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">Click here to view a larger image in a new window.</a>
 
 For details on an instance, click the image name. 
+
+
+## Managing instances as a user
+
+As a user, you can work with the instance(s) in the active project.
+
+You can use the dashboards to manage instances created by the admin. 
+
+Use the **Compute** panel on the **Project** dashboard to:
+
+* [Create a new instance](/helion/commercial/carrier/dashboard/managing/instances/create/)
+* [Terminate an instance](/helion/commercial/carrier/dashboard/managing/instances/terminate/)
+* [Reboot an instance](/helion/commercial/carrier/dashboard/managing/instances/reboot/)
+* [Rebuild an instance](/helion/commercial/carrier/dashboard/managing/instances/rebuild/)
+* [Resize an Instance](/helion/commercial/carrier/dashboard/managing/instances/resize/)
+* [Suspend and resume an instance](/helion/commercial/carrier/dashboard/managing/instances/suspend/)
+* [Pause and un-pausing an instance](/helion/commercial/carrier/dashboard/managing/instances/pause/)
+* [Create an instance snapshot](/helion/commercial/carrier/dashboard/managing/images/public/)
+* [Associate, or assign, a floating IP address to an instance](/helion/commercial/carrier/dashboard/managing/instances/ipaddresses/) 
+* [Launch a console session to an instance](/helion/commercial/carrier/dashboard/managing/instances/console/)
+
+## Managing instances as an admin
+
+As an admin user, you can work on all of the instance(s) in your domain, regardless of which project the instance is associated with.
+
+* [Migrate or Live Migrate and instance](/helion/commercial/carrier/dashboard/managing/instances/migrate/)
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 
