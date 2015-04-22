@@ -28,7 +28,8 @@ Compute flavors are machine configurations that describe the amount of memory, n
 An admin user can create, edit, and delete instances as needed. 
 
 * [Create a flavor](#createflavor)
-* [Edit a flavor](#editflavor")
+* [Edit a flavor](#editflavor)
+* [Edit flavor metadata](#editmeta)
 * [Delete a flavor](#deleteflavor)
 
 ### Create a flavor ### {#createflavor}
@@ -37,7 +38,7 @@ To create a flavor:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2 Click the **Flavors** link on the **Admin** dashboard **System** panel.
+2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
 	The flavors in the domain are listed. 
 
 3. Click **Create Flavor**. 
@@ -81,6 +82,12 @@ To edit a flavor:
 
 A message is displayed on successful edit.
 
+### Managing Metadata {#editmeta}
+
+Compute uses a metadata service for virtual machine instances to retrieve instance-specific data. 
+
+You can add and remove metadata for flavors, see [Managing Metadata](/helion/commercial/carrier/dashboard/managing/metadata/).
+
 ### Delete a flavor ### {#deleteflavor}
 
 Instances that use the flavor are not affected when a flavor is deleted.
@@ -93,7 +100,7 @@ To delete a flavor:
 
 	The flavors in the domain are listed. 
 
-3. For the flavor you want to modify, click **More &gt; Delete Flavor**. 
+3. For the flavor you want to modify, click the arrow icon in the **Actions** menu and select **Delete Flavor**. 
 
 4. In the confirmation screen, click **Delete Flavor**.
 <p>A message is displayed on successful delete.</p> 

@@ -39,7 +39,7 @@ To assign a floating IP address to an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. For the network you want to associate the IP address, click **More &gt; Associate Floating IP**.
+3. For the network you want to associate the IP address, click the arrow icon in the **Actions** menu and select **Associate Floating IP**.
 
 	**Note:** Instances that are in error cannot be assigned a floating IP address. 
 
@@ -61,7 +61,7 @@ To allocate a floating IP address:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. For the network you want to associate the IP address, click **More &gt; Associate Floating IP**.
+3. For the network you want to associate the IP address, click the arrow icon in the **Actions** menu and select **Associate Floating IP**.
 
 4. In the **Manage Floating IP Associations** screen, click the **+** button next to the **IP Address** list.
 
@@ -81,7 +81,7 @@ To remove a floating IP address from an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. For the network you want to disassociate the IP address, click **More &gt; Disassociate Floating IP**.
+3. For the network you want to disassociate the IP address, click the arrow icon in the **Actions** menu and select **Disassociate Floating IP**.
 
 4. In the confirmation screen, click **Disassociate Floating IP**.
 

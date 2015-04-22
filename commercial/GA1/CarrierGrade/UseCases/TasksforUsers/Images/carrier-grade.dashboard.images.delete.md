@@ -35,11 +35,11 @@ To delete a private image:
 
 3. In the **Images** screen, click **Project** to display all images associated with your project.
 
-4. In the **Images** screen, click the check box next to the image name you want to delete. To select all images, click the check box next to **Image Name** the top row of the image list.
+4. In the **Images** screen, for the image you want to delete, click the arrow icon in the **Actions** menu and select **Delete**.
 
-5. Click **Delete** to delete the image.
+	To delete multiple images, click the check box next to name of each image to delete. Click **Delete Images**.
 
-6. The image is no longer available. Any instances launched from the deleted instance are not affected.
+5. The image is no longer available. Any instances launched from the deleted instance are not affected.
 
 <p><a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a></p>
 

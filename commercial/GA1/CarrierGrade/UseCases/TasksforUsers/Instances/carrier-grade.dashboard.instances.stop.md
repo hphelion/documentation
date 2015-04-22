@@ -34,7 +34,7 @@ To stop an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Stop Instance**.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Shut Off Instance**.
 
 	The status of the instance reports *Shutoff*.
 
@@ -48,7 +48,7 @@ To restart an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click **Start Instance" in the **Actions** column.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Start Instance**.
 
 	The status of the instance reports *Active*.
 

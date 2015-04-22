@@ -31,6 +31,7 @@ As an administrator you can manage the host aggregates in your domain:
 
 * [Create a host aggregate](#createagg)
 * [Modify a host aggregate](#editagg)
+* [Managing Metadata](#editmeta)
 * [Delete a host aggregate](#deleteagg)
 
 ### Create a host aggregate ### {#createagg}
@@ -71,7 +72,7 @@ As an administrator you can manage the host aggregates in your domain:
 
 	**To change the hosts associated with the aggregate:**
 
-	a. For the aggregate you want to edit click **More &gt; Manage Hosts*
+	a. For the aggregate you want to edit, click the arrow icon in the **Actions** menu and select **Manage Hosts**.
 
 	b. Add a host to the aggregate by clicking the **+** icon next to each project in the **All Available Hosts** column.
 
@@ -79,13 +80,23 @@ As an administrator you can manage the host aggregates in your domain:
 
 	d. Click **Save** when done.
 
+### Managing Metadata {#editmeta}
+
+Compute uses a metadata service for virtual machine instances to retrieve instance-specific data. 
+
+You can add and remove metadata for host aggregates, see [Managing Metadata](/helion/commercial/carrier/dashboard/managing/metadata/).
+
+
 ### Delete a host aggregate ### {#deleteagg}
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Host Aggregates** link on the **Admin** dashboard **System** panel.
 
-3. In the Host Aggregates screen, for the aggregate you want to delete, click **More &gt; Delete Host Aggregate**.
+3. In the Host Aggregates screen, for the aggregate you want to delete,  click the arrow icon in the **Actions** menu and select **Delete Host Aggregate**.
+
+	To delete multiple host aggregates, click the check box next to name of each host aggregate to delete. Click **Delete Host Aggregates**.
+
 
 4. In the confirmation screen, click **Delete Host Aggregate**.
 

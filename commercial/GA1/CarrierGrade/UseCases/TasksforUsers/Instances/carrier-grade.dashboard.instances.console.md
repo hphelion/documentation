@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Launch a Console Window"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/console/
 product: carrier-grade
 

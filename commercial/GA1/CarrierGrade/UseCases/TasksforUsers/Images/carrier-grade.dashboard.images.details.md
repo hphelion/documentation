@@ -29,9 +29,10 @@ To view image details:
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 
 3. Click the name of the image.
-<p>**Note:** When your cursor is on the image name, the name is underlined.</p>
 
-4. The Image Details screen shows detailed information about the image, including:
+	**Note:** When your cursor is on the image name, the name is underlined.
+
+4. The **Image Details** screen shows detailed information about the image, including:
 
 	* name and ID
 	* status
