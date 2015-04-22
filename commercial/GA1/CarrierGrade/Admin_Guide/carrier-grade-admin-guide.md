@@ -30,7 +30,16 @@ PageRefresh();
 
 Use the following links for information on administrative tasks you can perform for the HP Helion OpenStack Carrier Grade:
 
+## Administering the HP Helion OpenStack Region
 
+For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/openstack/carrier/admin/helion/).
+
+## Adding Cinder Storage
+
+You can install 
+
+
+<!-- Hide for alpha
 - [Release Notes](/helion/openstack/carrier/release-notes/) 
 - [FAQs](/helion/openstack/carrier/faq/)  
 - [Technical overview](/helion/openstack/carrier/technical-overview/)
@@ -55,6 +64,8 @@ For information on the administrative tasks you can perform using DCN, see [Admi
 ## Administering the WindRiver Region
 
 For information on the administrative tasks you can perform in the WindRiver region, see [Administering the WindRiver Region](/helion/openstack/carrier/admin/wr/)
+
+-->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  
