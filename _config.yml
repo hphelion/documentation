@@ -421,6 +421,8 @@ navigation:
     url: /helion/openstack/carrier/support-matrix/ 
   - text: Technical Overview
     url: /helion/openstack/carrier/technical-overview/
+  - text: Services Overview
+    url: /helion/openstack/carrier/services/overview/
   - text: Installation Overview
     url: /helion/openstack/carrier/install/bm/overview/	
   - text: Administrator Guide
