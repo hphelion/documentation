@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Networks"
-permalink: /helion/commercial/carrier/dashboard/managing/network/enable/
+permalink: /helion/commercial/carrier/dashboard/managing/network/enable/provider/
 product: carrier-grade
 
 ---
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Tenant Networks
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Provider Networks
 
 A network is a pluggable, scalable and API-driven system for managing networks and IP addresses. You can [enable](#enablenet) or [disable](#disablenet) networks, as needed.
 
@@ -29,7 +29,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Networks** link on the **Project** dashboard **Network** panel.
+2. Click the **Networks** link on the **Admin** dashboard **System** panel.
 
 	The network(s) for the selected project appear. 
 
@@ -43,7 +43,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Networks** link on the **Project** dashboard **Network** panel.
+2. Click the **Networks** link on the **Admin** dashboard **System** panel.
 
 	The network(s) for the selected project appear. 
 

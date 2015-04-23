@@ -40,8 +40,8 @@ Access the networking commands using the **Networks** panel on the **Project** d
 The **Network** panel contains commands to view a visual representation of your network and to enable you to work with your network.
 
 * [View your network](/helion/commercial/carrier/dashboard/managing/network/viewing/)
-* [Create or delete a network](/helion/commercial/carrier/dashboard/managing/network/create/)
-* [Enable or disable a network](/helion/commercial/carrier/dashboard/managing/network/enable/)
+* [Create or delete a tenant network](/helion/commercial/carrier/dashboard/managing/network/create/)
+* [Enable or disable a tenant network](/helion/commercial/carrier/dashboard/managing/network/enable/)
 
 ## Managing your network as an admin ##
 
@@ -51,8 +51,9 @@ In addition to all of the user tasks, you can also make a network a shared netwo
 
 Access the networking commands using the **System** panel on the **Admin** dashboard. 
 
-* [Creating externally available networks](/helion/commercial/carrier/dashboard/managing/network/external/create/)
-* [Add or remove a subnet to/from a Network](/helion/commercial/carrier/dashboard/managing/network/subnet/)
+* [Creating provider networks](/helion/commercial/carrier/dashboard/managing/network/external/create/)
+* * [Enable or disable a provider network](/helion/commercial/carrier/dashboard/managing/network/enable/provider/)
+* [Delete a provider network](/helion/commercial/carrier/dashboard/managing/network/external/delete/provider/)
 * [Create, Modify, or Delete a port on a Network](/helion/commercial/carrier/dashboard/managing/network/ports/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
