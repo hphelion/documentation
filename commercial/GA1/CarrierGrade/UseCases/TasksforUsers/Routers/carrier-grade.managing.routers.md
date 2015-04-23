@@ -51,6 +51,7 @@ As an admin user, you can work on all of the network(s) in your domain, regardle
 
 An admin can create a shared network, which can be seen in every project in the domain. You can also create an external network.
 
+* [Delete a router](/helion/commercial/carrier/dashboard/managing/router/admin/delete/)
 * [Create a shared network](/helion/commercial/carrier/dashboard/managing/network/shared/)
 * [Create an external network](/helion/commercial/carrier/dashboard/managing/network/external/)
 
