@@ -103,7 +103,7 @@ You can use the dashboards to manage instances created by other users. You can l
 
 For more information, see [Managing Instances](/helion/commercial/carrier/dashboard/instances/).
 
-### Manage project quotas ###
+### Managing project quotas ###
 
 You can use the dashboards to manage maximum allowable values for various elements for all projects.
 

@@ -29,7 +29,7 @@ As an admin, you can [add](#useradd) and [remove](#userdel) user access to each 
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
+2. Click the **Identity** dashboard, then the **Projects** link.
 
 3. For the project you want to modify, click the **Modify Users** button.
 
@@ -46,7 +46,7 @@ As an admin, you can [add](#useradd) and [remove](#userdel) user access to each 
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
+2. Click the **Identity** dashboard, then the **Projects** link.
 
 3. For the project you want to modify, click the **Modify Users** button.
 

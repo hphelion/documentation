@@ -23,6 +23,10 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Managing project quotas
 
+You can change the default values that appear for quotas when [creating a new project](/helion/commercial/carrier/dashboard/managing/projects/creating/).
+
+To set default values:
+
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **System Information** link on the **Admin** dashboard **Defaults** panel.

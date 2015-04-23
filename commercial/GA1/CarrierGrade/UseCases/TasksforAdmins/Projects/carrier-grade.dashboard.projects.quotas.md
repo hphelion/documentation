@@ -29,29 +29,30 @@ To prevent system capacities from being exhausted without notification, you can 
 
 For example, the number of gigabytes allowed per project can be controlled to make sure that a single project does not consume all of the disk space. 
 
+Default values are set on the [Default screen](/helion/commercial/carrier/dashboard/managing/quotas/).
+
 ### Modify a quotas ### {#quotamod}
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Projects** link on the **Admin** dashboard **Identity** panel.
+2. Click the **Identity** dashboard, then the **Projects** link.
 
-3. For the project you want to modify, click **More &gt; Modify Quotas**. 
-
+3. For the project you want to modify, click the arrow icon in the **Actions** menu and select **Modify Quotas**. 
 4. In the **Edit Project** screen, click the **Quota** tab (should be active).
 
-5. Edit and of the following fields:
+5. Edit any of the following fields:
 
-	* Metadata Items - Enter the maximum number of metadata items allowed for the project.
-	* VCPUs - Enter the maximum number of instance cores allowed for the project.
-	* Instances - Enter the maximum number of instances allowed for the project.
-	* Injected Files - Enter the maximum number of injected files allowed for the project.
-	* Injected File Content Bytes - Enter the maximum number of content bytes allowed per injected file  for the project.
-	* Volumes - Enter the maximum number of volumes allowed for the project.
-	* Volume Snapshots - Enter the maximum number of volume snapshots allowed for the project.
+	* Metadata Items. Metadata items allowed for each instance.
+	* VCPUs. Instance cores allowed for each project.
+	* Instances. Instances allowed for each project.
+	* Injected Files. Injected files allowed for each project.
+	* Injected File Content Bytes. Content bytes allowed for each injected file.
+	* Volumes. Volumes allowed for each project.
+	* Volume Snapshots. Volume snapshots allowed for each project.
 	* Total Size of Volumes and Snapshots- Enter the maximum total size for all volumes and snapshots allowed for the project.
-	* RAM - Enter the maximum megabytes of instance RAM allowed  for the project.
+	* RAM (MB). RAM megabytes allowed for each instance.
 
-6. Click **Save**.<br />
+6. Click **Save**.
 
 	A message is displayed on successful modification.
 

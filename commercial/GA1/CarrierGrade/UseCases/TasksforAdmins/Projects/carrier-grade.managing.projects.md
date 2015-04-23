@@ -30,7 +30,13 @@ You can manage access to projects by assigning users and setting primary project
 As an admin, you can use create projects and allow specific users to access each project:
 
 * [Create and delete projects](/helion/commercial/carrier/dashboard/managing/projects/creating/)
+
+### Modifing a project
+
+As an admin, you can:
+
 * [View details on a project](/helion/commercial/carrier/dashboard/managing/projects/viewing/)
+* [Modify project details](/helion/commercial/carrier/dashboard/managing/projects/edit/)
 * [Add and remove users to a project](/helion/commercial/carrier/dashboard/managing/projects/users/)
 
 ### Managing quotas 

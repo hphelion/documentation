@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating and Deleting Projects"
-permalink: /helion/commercial/carrier/dashboard/managing/projects/creating/
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Modifying Projects"
+permalink: /helion/commercial/carrier/dashboard/managing/projects/edit/
 product: carrier-grade
 
 ---
@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating and Deleting Projects
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Modify Projects
 
 As an admin, you can [create](#projectcreate) and [delete](#projectsdel) projects. 
 
