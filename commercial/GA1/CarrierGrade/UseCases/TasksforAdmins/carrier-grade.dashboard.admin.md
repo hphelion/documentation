@@ -94,15 +94,25 @@ You can use the dashboard to define user roles that can be used to control acces
 For more information, see [Managing Roles](/helion/commercial/carrier/dashboard/managing/roles/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
+-->
 
 ### Managing instances ###
 
-You can use the dashboards to manage instances created by other users. You can lock, pause, suspend a particular instance and you can also migrate an instance to a different host system. 
-with minimal downtime (live migrate).
+You can use the dashboards to manage instances created by other users. You can lock, pause, suspend a particular instance and you can also migrate an instance to a different host system.
 
 For more information, see [Managing Instances](/helion/commercial/carrier/dashboard/instances/).
--->
+
+### Manage project quotas ###
+
+You can use the dashboards to manage maximum allowable values for various elements for all projects.
+
+For more information, see [Managing project quotas](/helion/commercial/carrier/dashboard/managing/quotas/).
+
+### Viewing information on services
+
+You can view information for OpenStack services.
+
+See [Viewing Services Information](/helion/commercial/carrier/dashboard/managing/system-info/)
 
 
 ----
