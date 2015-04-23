@@ -25,13 +25,16 @@ PageRefresh();
 
 You can modify images, as needed, to change the name and description of the image, or protect and un-protect the image.
 
-### Modify an image ###
+* [Modify an image](#edit)
+* [Edit image metadata](#editmeta)
+
+### Modify an image ### {#edit}
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Images** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Images** screen, click **More** then click **Edit** next to the image you want to modify.
+3. In the **Images** screen, click **Edit** next to the image you want to modify.
 
 4. Update the image information:
 
@@ -42,6 +45,13 @@ You can modify images, as needed, to change the name and description of the imag
 	**Note:** Fields that cannot be modified are shaded.
 
 5, When complete, click **Update Image**. 
+
+### Managing Metadata {#editmeta}
+
+Compute uses a metadata service for virtual machine instances to retrieve instance-specific data. 
+
+You can add and remove metadata for flavors, see [Managing Metadata](/helion/commercial/carrier/dashboard/managing/metadata/).
+
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

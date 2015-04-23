@@ -23,7 +23,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 
 
 <tr valign="top">
-<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/community/">HP Helion OpenStack&#174; Community</a></span></p>
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/community/">HP Helion OpenStack Community</a></span></p>
 </td>
 <td>Pure and free-to-license distribution of OpenStack technology for small scale open cloud environments. </td>
 </tr>
@@ -31,7 +31,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/devplatform/1.1/">HP Helion Development Platform</a></span></p>
 </td>
-<td>Based on Cloud Foundry&#8482;, this free add-on for HP Helion OpenStack Community empowers developers and IT professionals with an open development platform designed for agility.
+<td>Based on Cloud Foundry&#8482;, this add-on for Helion OpenStack empowers developers and IT professionals with an open development platform designed for agility.
 </td>
 </tr>
 

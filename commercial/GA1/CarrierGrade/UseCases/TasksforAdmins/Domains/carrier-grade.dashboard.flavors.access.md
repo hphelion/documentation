@@ -35,7 +35,7 @@ As an admin, you can [allow specific projects to have access to a flavor](#add) 
 
 	The flavors for in the domain are listed. 
 
-3. For the flavor you want to modify, click **More &gt; Modify Access**.
+3. For the flavor you want to modify, click **Edit Flavor &gt; Modify Access**.
 
 4. Click the **+** icon next to a project in the **All Projects** column to allow the project to access the flavor.
 
@@ -53,7 +53,7 @@ As an admin, you can [allow specific projects to have access to a flavor](#add) 
 
 	The flavors for in the domain are listed. 
 
-3. For the flavor you want to modify, click **More &gt; Modify Access**.
+3. For the flavor you want to modify, click **Edit Flavor &gt; Modify Access**.
 
 4. Click the **-** icon next to a project in the **Selected projects** column to remove the flavor from the project.
 

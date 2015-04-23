@@ -29,13 +29,14 @@ The dashboards are based on OpenStack Horizon and provide enhanced features.
 
 Refer to these documentation resources:
 
+* [Using HP Helion OpenStack for Administrators](helion/commercial/carrier/dashboard/admin/) - Describes the Operational Dashboard user interface dialogs and options.
 
-* [How to use the HP Helion OpenStack Dashboards](/helion/openstack/carrier/dashboard/how-works/) - Describes the Project and Administration dashboard user interface dialogs and options. 
 * [Using HP Helion OpenStack for Users](/helion/commercial/carrier/dashboard/managing/nonadmin/) - Describes the Operational Dashboard user interface dialogs and options.
 
-**Note:** Administrators can perform all of the user tasks in addition to the [admin tasks](/helion/commercial/carrier/dashboard/managing/admin/).
+	**Note:** Administrators can perform all of the user tasks in addition to the [admin tasks](/helion/commercial/carrier/dashboard/managing/admin/).
 
-* [Using HP Helion OpenStack for Administrators](helion/commercial/carrier/dashboard/admin/) - Describes the Operational Dashboard user interface dialogs and options.
+* [How to use the HP Helion OpenStack Dashboards](/helion/openstack/carrier/dashboard/how-works/) - Describes the Project and Administration dashboard user interface dialogs and options. 
+
 
 <!--
 * [HP Helion OpenStack: Building Images](/helion/commercial/carrier/manage/image-builder/) &#8212; Shows you how to use Disk Image Builder to create images for the HP Helion OpenStack.

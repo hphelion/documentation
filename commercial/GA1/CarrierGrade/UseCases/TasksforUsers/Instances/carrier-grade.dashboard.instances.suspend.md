@@ -38,7 +38,7 @@ To suspend an instance:
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select ** Suspend Instance**.
+3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Suspend Instance**.
 
 	The progress of the suspend is displayed in the **Task** column on the **Instances** screen.
 

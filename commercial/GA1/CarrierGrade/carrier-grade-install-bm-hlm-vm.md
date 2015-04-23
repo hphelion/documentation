@@ -21,19 +21,21 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
--->
+
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/network/prepare/">&#9664; Preparing the Network for Installation</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> |  <a href="/helion/openstack/carrier/install/bm/environment/"> Configuring the installation environment &#9654;</a> </p> 
+
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the HLM Virtual Machine
 
-Helion Lifecycle Management (HLM) consists of the ongoing operations /maintenance as well as the initial deployment of the Helion system as shown above.
+Helion Lifecycle Management (HLM) consists of the ongoing operations/maintenance as well as the initial deployment of the HP Helion OpenStack Carrier Grade system.
 
 ## Create the HLM VM
 
-1. Copy the latest cg-hlm.qcow2 image to the KVM host. 
+1. Copy the latest `cg-hlm.qcow2` image to the KVM host. 
 
-2. Using a tool such as virt-manager to create HLM VM with latest qcow2 image provided. Assign default, PXE and CLM networks to this VM.
+2. Using a tool such as Virtual Manager (virt-manager) to create HLM VM with latest qcow2 image provided. You installed Virtual Manager when you installed Ubuntu packages in the [Prerequistes](/helion/openstack/carrier/install/prereqs/) steps.
+
+	Assign default, PXE and CLM networks to this VM.
 
 3.	Shutdown the HLM VM
 
@@ -68,7 +70,64 @@ Helion Lifecycle Management (HLM) consists of the ongoing operations /maintenanc
 
 	At this point, HLM VM should be up and running with required 3 interfaces.
 
-5.	Use the following command to display the port details for the CLM VLAN:
+	**Note:** The default log in credentials for the HLM VM are as follows:
+
+		Username: root
+		Password: cghelion
+
+5. Edit the `/etc/network/interfaces` file to associate eth1 with the PXE network and eth2 with the CLM network: 
+
+		auto lo
+		iface lo inet loopback
+	
+		auto eth0
+		iface eth0 inet dhcp
+		
+		auto eth1
+		iface eth1 inet static
+		address <IP_Address>
+		netmask <Netmask>
+		network <IP_Address>
+		broadcast <IP_Address>
+		gateway <IP_Address>
+		
+		auto eth2
+		iface eth2 inet static
+		address <IP_Address>
+		netmask <Netmask>
+		network <IP_Address>
+		broadcast <IP_Address>
+		gateway <IP_Address>
+
+		**Example:** 
+
+		auto lo
+		iface lo inet loopback
+		
+		auto eth0
+		iface eth0 inet dhcp
+		
+		auto eth1
+		iface eth1 inet static
+		address 10.200.73.12
+		netmask 255.255.255.0
+		network 10.200.73.0
+		broadcast 10.200.73.255
+		gateway 10.200.73.1
+		
+		auto eth2
+		iface eth2 inet static
+		address 10.200.74.12
+		netmask 255.255.255.0
+		network 10.200.74.0
+		broadcast 10.200.74.255
+		gateway 10.200.74.1
+
+6.	Use the following command to restart the Ubuntu Network (Neutron) service:
+
+		/etc/init.d/networking restart
+
+6.	Use the following command to display the port details for the CLM VLAN:
 
 		ovs-vsctl show
 
@@ -91,7 +150,7 @@ Helion Lifecycle Management (HLM) consists of the ongoing operations /maintenanc
 
 ## Next step {#nextstep}
 
-[Provisioning the Network](/helion/openstack/carrier/install/bm/network-install/)
+[Configuring the installation environment](/helion/openstack/carrier/install/bm/environment/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

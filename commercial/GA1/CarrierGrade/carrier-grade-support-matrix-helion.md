@@ -21,7 +21,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a>  | <a href="/helion/openstack/1.1/technical-overview/"> Technical Overview &#9654;</a></p>
+<p style="font-size: small;"><a href="/helion/openstack/carrier/support-matrix/hlm/">&#9664; Support Matrix for the HP Lifecycle Management</a> | <a href="/helion/openstack/carrier/support-matrix/">&#9650; HP Helion OpenStack Carrier Grade (Alpha): Support Matrix</a> | <a href="/helion/openstack/carrier/support-matrix/dcn/"> Support Matrix for HP Distributed Cloud Networking (DCN) &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Support Matrix for HP Helion OpenStack
@@ -30,36 +30,25 @@ To ensure the performance and stability of the HP Helion OpenStack environment, 
 
 This page provides an overview of the hardware and software that is supported for HP Helion OpenStack, including setup and configuration information. 
 
-* [OpenStack version information](#os)
-* [Deployment Architecture](#deploy-arch)
 * [Supported Hardware](#supportedhw)
-* [Supported Configurations](#supportedconfigurations)
 * [Hardware Requirements](#baremetal)
 * [Software Requirements](#software-requirements)
-	* [Software requirements for the Seed Cloud Host](#seed-requirements)
-	* [Software requirements for the undercloud and overcloud](#seed-ucoc)
 * [Guest OS Support Matrix](#guestOS)
 
 
-## OpenStack version information {#os}
-
-All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/).
-
+<!--
 ## Deployment Architecture {#deploy-arch}
 
-The following diagrams depict simplified deployment scenarios:
+The following diagram depicts simplified deployment scenarios:
 
 * <a href="javascript:window.open('/content/documentation/media/topology_kvm.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">KVM deployment of HP Helion OpenStack</a> (opens in a new window)
 * <a href="javascript:window.open('/content/documentation/media/topology_esx.png','_blank','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')">ESX deployment of HP Helion OpenStack</a> (opens in a new window)
+-->
 
 ## Supported Hardware {#supportedhw}
 
 The following hardware has been tested and verified to work with HP Helion OpenStack:
 
-
-### HLM System
-
-For the HLM system, the following servers are supported for the current release.
 
 ### HP Helion OpenStack Region
 
@@ -108,18 +97,10 @@ For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/inst
 
 - [Power Edge R620](http://www.dell.com/us/business/p/poweredge-r620/pd)
 
-
-### WR Region
-
-For the WR Region, the following servers are supported for the current release.
-
-- WindRiver Titanium
-
+<!--
 ## Supported Configurations {#supportedconfigurations}
 
 HP supports the following configurations for HP Helion OpenStack deployment:
-
-
 
 - Host Interconnects/Protocols: 
    
@@ -136,14 +117,12 @@ HP supports the following configurations for HP Helion OpenStack deployment:
 - 3PAR InForm OS Version: 3.1.3 MU1 to 3.2.1 MU1
 
 	* HP StoreVirtual 4000 series: driver 11.5.01.0079.0 (Helion Embedded)
-
+-->
 ## Hardware Requirements {#baremetal}
 
 You must have the following hardware configuration:
 
-- At least 8 and no more than 100 baremetal systems meeting the requirements as listed below.
-
-Additional requirements are as follows:
+- 5 baremetal systems meeting the requirements as listed below.
 
 - For systems with multiple NICs, only one NIC may be active or connected.
 
@@ -159,42 +138,42 @@ Additional requirements are as follows:
 
 	To use the Dynamic Smart Array adapter, enter the system ROM-Based Setup Utility (RBSU) and set the adapter to `Enable SATA AHCI Support` to allow the use of the adapter in non-RAID mode. However, for reliability this is not recommended.
 
-The following table lists the minimum requirements required for installation of each type of node. 
+The following table lists the minimum requirements required for installation of each type of node. See the [Technical Overview](/helion/openstack/carrier/technical-overview/) for an architecture diagram.
 
 <table style="text-align: left; vertical-align: top;">
 
 <tr style="background-color: #C8C8C8; text-align: left; vertical-align: top;">
 <th>Node Type</th>
-<th>Role Name</th>
+<th>Role</th>
 <th>Required Number</th>
 <th>Server Hardware</th>
 <th>Minimum Requirements and Recommendations</th>
 </tr>
 
-
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Seed Cloud Host </td>
-<td rowspan="4">N/A</td>
+<td rowspan="4"> Ctl 0 </td>
+<td rowspan="4">Undercloud Controller</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
-<td> 1TB - This host will store the downloaded images as well as act as a host where backup data is preserved.</td>
+<td> 512GB
+</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td> Memory </td>
-<td>16GB</td>
+<td>Memory </td>
+<td>32GB </td>
 </tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
+<tr style="background-color: white; color: black;">
 <td>Network </td>
-<td> 1 x 10GB NIC</td>
+<td> 1 x 10 GB NIC with PXE support</td>
 </tr>
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
-<td> 4 CPU cores</td>
-</tr>
+<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
+
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Undercloud Controller</td>
-<td rowspan="4">Undercloud</td>
+<td rowspan="4">Ctl 1</td>
+<td rowspan="4">Overcloud Controller</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
 <td>512GB</td>
@@ -213,9 +192,9 @@ The following table lists the minimum requirements required for installation of 
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud Controller </td>
-<td rowspan="4">OvercloudControl</td>
-<td rowspan="4">3</td>
+<td rowspan="4">Ctl 2 </td>
+<td rowspan="4">Overcloud Controller</td>
+<td rowspan="4">1</td>
 <td>Disk </td>
 <td> 512GB
  </td>
@@ -234,9 +213,9 @@ The following table lists the minimum requirements required for installation of 
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud Compute Server </td>
-<td rowspan="4">OvercloudCompute</td>
-<td rowspan="4">1-100</td>
+<td rowspan="4"> Compute Node1 </td>
+<td rowspan="4">Overcloud Compute</td>
+<td rowspan="4">1</td>
 <td>Disk </td>
 <td> 512GB. 100GB is required for HP Moonshot Servers.</td>
 
@@ -255,29 +234,8 @@ The following table lists the minimum requirements required for installation of 
 </tr>
 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud Swift Server </td>
-<td rowspan="4">OvercloudSwiftStorage</td>
-<td rowspan="4">2</td>
-<td>Disk </td>
-<td> 512GB
-</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Memory </td>
-<td>32GB </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>CPU </td>
-<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4"> Overcloud VSA Server </td>
-<td rowspan="4">OvercloudVSAStorage</td>
+<td rowspan="4"> Compute Node2 </td>
+<td rowspan="4">Overcloud Compute</td>
 <td rowspan="4">1</td>
 <td>Disk </td>
 <td> 512GB
@@ -294,69 +252,8 @@ The following table lists the minimum requirements required for installation of 
 <tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
 <td>CPU </td>
 <td> 8 CPU cores - Intel or AMD 64-bit processor</td>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4">Overcloud StoreVirtual VSA Server</td>
-<td rowspan="4">OvercloudVSAAOStorage</td>
-<td rowspan="4">3</td>
-<td>Disk </td>
-<td> 512GB
-</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Memory </td>
-<td>32GB </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>CPU </td>
-<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
 </tr>
 
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4">Scaleout Swift Storage</td>
-<td rowspan="4">OvercloudSOSwiftStorage</td>
-<td rowspan="4">0</td>
-<td>Disk </td>
-<td> 512GB
-</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Memory </td>
-<td>32GB </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>CPU </td>
-<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
-</tr>
-
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td rowspan="4">Scaleout Swift Proxy</td>
-<td rowspan="4">OvercloudSOSwiftProxy</td>
-<td rowspan="4">0</td>
-<td>Disk </td>
-<td> 512GB
-</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>Memory </td>
-<td>32GB </td>
-</tr>
-<tr style="background-color: white; color: black;">
-<td>Network </td>
-<td> 1 x 10 GB NIC with PXE support</td>
-</tr>
-<tr style="background-color: white; color: black; text-align: left; vertical-align: top;">
-<td>CPU </td>
-<td> 8 CPU cores - Intel or AMD 64-bit processor</td>
-</tr>
 </table>
 
 **Notes:** 
@@ -409,32 +306,9 @@ or
 
 ## Software Requirements {#software-requirements}
 
-Note the following software requirements:
+There are no software requirements for the servers where the HP Helion OpenStack region will be installed because all required software is contained within the images deployed on the system.
 
-### Software requirements for the seed cloud host  {#seed-requirements}
-
-The Seed Cloud Host is a computer running Ubuntu 14.04 or Debian 8. The following packages are also required: 
-
-- qemu-kvm
-- libvirt-bin
-- openvswitch-switch
-- openvswitch-common
-- python-libvirt
-- ntpdate
-
-Other recommendations for the seed cloud host are as follows:
-
-- Installing a browser to manage the undercloud or overcloud;
-- Installing a simple command line tool, such as [IPMItool](http://sourceforge.net/projects/ipmitool/), to determine the state of cloud nodes;
-- Installing a desktop emulator, such as [Virtual Machine Manager](http://virt-manager.org/), to monitor and access cloud nodes.
-- Enabling the BIOS serial console if your iLO management system supports it. For information on the BIOS serial console, see [Integrated Lights Out 3 Virtual Serial Port configuration and operation](http://h20565.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c00263709). 
-
-**Important:** This system might be reconfigured during the installation process so a dedicated system is recommended. Reconfiguration might include installing additional software packages, and changes to the network or virtualization configuration.
-
-### Software requirements for the undercloud and overcloud  {#seed-ucoc}
-
-There are no software requirements for the undercloud and overcloud servers because all required software is contained within the images deployed on the system.
-
+The servers should be baremetal before installation.
 
 ## Guest OS Support Matrix {#guestOS}
 

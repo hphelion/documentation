@@ -21,7 +21,7 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> 
 -->
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Networks
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling Tenant Networks
 
 A network is a pluggable, scalable and API-driven system for managing networks and IP addresses. You can [enable](#enablenet) or [disable](#disablenet) networks, as needed.
 
@@ -35,7 +35,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 3. For the network to enable or disable, click **Edit Network**.
 
-4. In the **Edit Network** screen, select **Admin State** to enable the port
+4. From the **Admin State** list, select **UP** to enable the network.
 
 5. Click **Save Changes**.  
 
@@ -49,7 +49,7 @@ A network is a pluggable, scalable and API-driven system for managing networks a
 
 3. For the network to disable, click **Edit Network**.
 
-4. In the **Edit Network** screen, clear **Admin State** to disable the port.
+4. From the **Admin State** list, select **DOWN** to disable the network.
 
 5. Click **Save Changes**.  
 

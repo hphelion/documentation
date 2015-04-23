@@ -21,9 +21,8 @@ onLoad="window.refresh"
 PageRefresh();	
 
 </script>
-<!--
-<p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx"> Installing on an ESX hypervisor&#9654;</a> </p> 
--->
+
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/hlm-vm/">&#9664; Create the HLM Virtual Machine</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/hlm-cloud/"> Deploying the HLM Cloud &#9654;</a> </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring the installation environment
 
@@ -53,7 +52,6 @@ To configure the installation environment:
 4. Populate HLM node with required contents using the following command:
 
 		./hlm_updatepackages.sh
-
 
 	This command syncs the debian and pip files in the `packages` directory onto static repo on HLM node.
 
@@ -95,6 +93,7 @@ To configure the installation environment:
 
 	At this point Cobbler is up and running.
 
+<!-- Aldready done??
 8.	Edit `/etc/network/interfaces` file to provide CLM network details on the eth2 interface
 
 		auto lo
@@ -142,7 +141,7 @@ To configure the installation environment:
 		network 10.200.74.0
 		broadcast 10.200.74.255
 		gateway 10.200.74.1
-
+-->
 
 
 ## Next step {#nextstep}

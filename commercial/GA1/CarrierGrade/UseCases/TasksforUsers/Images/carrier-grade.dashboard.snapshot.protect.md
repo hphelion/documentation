@@ -39,7 +39,7 @@ If you want to prevent an image from being deleted, you can make that image *pro
 
 5. Click **Update Image**.
 
-The image is protected and the **Delete Image** command is removed from the **More** menu.
+The image is protected and the **Delete Image** command is removed from the **Edit** menu.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

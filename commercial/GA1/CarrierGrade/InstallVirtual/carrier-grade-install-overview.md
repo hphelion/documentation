@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/1.1/support-matrix/">Support Matrix &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/">&#9650; HP Helion OpenStack Documentation Home</a> | <a href="/helion/openstack/carrier/support-matrix/">Support Matrix &#9654;</a> </p>
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation Overview 

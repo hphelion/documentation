@@ -18,12 +18,15 @@ PageRefresh();
 
 </script>
 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/prereqs/">&#9664; Installation Prerequisites</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/install/bm/hlm-vm/"> Create the HLM Virtual Machine &#9654;</a> </p> 
+
+
+
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Preparing the Network for Installation 
 
 Before installing HP Helion OpenStack Carrier Grade, you are responsible for preparing the network for all installations. 
 
-
-1. Modifiy the `/etc/network/interfaces` file to the following (DHCP EXAMPLE):
+1. Modifiy the `/etc/network/interfaces` file to the following:
 
 		# The loopback network interface
 		auto lo
@@ -52,15 +55,14 @@ Before installing HP Helion OpenStack Carrier Grade, you are responsible for pre
 
 		sudo /etc/init.d/networking restart
 
-3. Execute the `ifconfig -a` command to output OVS bridge details. If the bridge is not present, execute the following commands to restart the bridge:
+4. Use the `ifconfig -a` command to output OVS bridge details. If the bridge is not present, execute the following commands to restart the bridge:
 
 		ifdown br-ctl
 		ifup br-ctl
 
+5. Enable the `br-ctl` network that is used for associating with HLM VM
 
-5.	Enable the `br-ctl` network that is used for associating with HLM VM
-
-	a. Create br-ctl.xml file like below. Ensure respective VLAN ID for CLM is used.
+	a. Create br-ctl.xml file like below. Make sure you specify the correct VLAN ID for the CLM network portgroup.
 
 		<network>
 			<name>br-ctl</name>
@@ -74,16 +76,19 @@ Before installing HP Helion OpenStack Carrier Grade, you are responsible for pre
 			</portgroup>
 		</network>
 
-	b. Execute the following commands:
+	b. Use the following commands to create and start the `br-ctl` network using the specified XML file:
 
 		virsh net-define br-ctl.xml
 		virsh net-start br-ctl
 		virsh net-autostart br-ctl
-		virsh net-list should display default and br-ctl 
-		
-	c.	Display information on the bridge:		
 
-		ovs-vsctl show 
+	c. Use the following command to display details on the default and `br-ctl` networks. 
+		
+		virsh net-list
+
+	d. Use the following command to display information on the bridge:
+
+		ovs-vsctl
 
 	The output should appear similar to the following example:
 

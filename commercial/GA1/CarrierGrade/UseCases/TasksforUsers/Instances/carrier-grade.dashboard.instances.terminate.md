@@ -31,7 +31,9 @@ You can terminate an instance, as needed.
 
 2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
 
-3. In the **Instances** screen, for the instance you want to terminate, click **Terminate Instance**.
+3. In the **Instances** screen, for the instance you want to terminate, for the instance you want to delete, click the arrow icon in the **Actions** menu and select **Terminate Instance**.
+
+	To delete multiple instances, click the check box next to name of each instance to delete. Click **Terminate Instances**.
 
 3. In the confirmation screen that appears, click **Terminate Instance**.
 

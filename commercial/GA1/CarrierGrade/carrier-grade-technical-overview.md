@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Technical Overview"
+title: "HP Helion OpenStack&#174; Carrier Grade: Technical Overview"
 permalink: /helion/openstack/carrier/technical-overview/
 product: carrier-grade
 product-version1: HP Helion OpenStack
@@ -14,10 +14,10 @@ authors: Sameer V, Pranoy R, Michael B
 
 <!--UNDER REVISION-->
 
-<!--
-<p style="font-size: small;"><a href="/helion/openstack/1.1/support-matrix/"> &#9664; Support Matrix | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/prereqs/"> Prerequisites &#9654</a></p> -->
 
-# HP Helion OpenStack&#174; 1.1: Technical Overview
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/carrier/support-matrix/">Support Matrix &#9654;</a></p>
+
+# HP Helion OpenStack&#174; Carrier Grade: Technical Overview
 
 This page introduces you to HP Helion OpenStack, an enterprise-grade distribution of the OpenStack cloud operating system.
 
@@ -46,7 +46,7 @@ The following diagram depicts a simplified deployment scenario using KVM.
 <!-- This image is for alpha release only. Replace for beta -->
 
 
-<a href="javascript:window.open('/content/documentation/media/CGH-architecture-alpha.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/CGH-architecture-alpha.png" width="750" /></a>
+<a href="javascript:window.open('/content/documentation/media/CGH-architecture-alpha-2.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/CGH-architecture-alpha-2.png" width="750" /></a>
 Click to view larger image; click **Back** to return.
 
 

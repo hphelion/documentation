@@ -47,12 +47,9 @@ The Network panel contains commands to view a visual representation of your netw
 
 ## Managing your router as an admin ##
 
-As an admin user, you can work on all of the network(s) in your domain, regardless of which project the network is associated with.
+As an admin user, you can work on all of the router(s) in your domain, regardless of which project the network is associated with.
 
-An admin can create a shared network, which can be seen in every project in the domain. You can also create an external network.
-
-* [Create a shared network](/helion/commercial/carrier/dashboard/managing/network/shared/)
-* [Create an external network](/helion/commercial/carrier/dashboard/managing/network/external/)
+* [Delete a router](/helion/commercial/carrier/dashboard/managing/router/admin/delete/)
 
 Access the router commands using the System panel on the Admin dashboard. 
 
