@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; 1.1: Installation: Deploy and Configure HP StoreVirtual VSA"
-permalink: /helion/openstack/1.1/install/vsa/
+title: "HP Helion OpenStack&#174; 1.1: Installing HP StoreVirtual VSA Overview"
+permalink: /helion/openstack/1.1/install/vsa/overview/
 product: commercial.ga
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -9,7 +9,7 @@ role2: Storage Architect
 authors: Michael B, Paul F
 
 ---
-<!--PUBLISHED-->
+<!--UNDER REVISION-->
 
 
 <script>
@@ -23,16 +23,13 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Cinder Block Storage Using HP StoreVirtual VSA </a> | <a href="/helion/openstack/1.1/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/1.1/undercloud/oc/config/storevirtual/">Working With StoreVirtual Backends &#9654;</a>
+<a href="/helion/openstack/carrier/install/vsa/">Installing HP StoreVirtual VSA &#9654;</a>
 </p> 
 
 
-# HP Helion OpenStack&#174; 1.1: Deploying HP StoreVirtual VSA 
+# HP Helion OpenStack&#174; 1.1: Installing HP StoreVirtual VSA Overview
 
 This page provides an overview of the instructions on how to deploy HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. 
-
-
-## Deployment and Configuration Procedure Overview {#high-level-view}
 
 The following diagram gives an overview of the steps involved in deploying, configuring and integrating StoreVirtual nodes into your cloud. The subsequent sections provide the detailed instructions on integration workflow.
 
@@ -98,16 +95,9 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
    * Execute [update cloud script](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) from seed cloud. -->
 
-
-
-
-
-
-
 ## Next Step {#next-steps}
 
-[Working with HP StoreVirtual VSA](/helion/openstack/1.1/undercloud/storage/storevirtual/) REQUIRED
-
+[Installing HP StoreVirtual VSA](/helion/openstack/carrier/install/vsa/")
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
