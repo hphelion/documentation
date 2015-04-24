@@ -23,6 +23,7 @@ PageRefresh();
 </script>
 
 
+<p style="font-size: small;">
 <a href="/helion/openstack/carrier/install/vsa/">Installing HP StoreVirtual VSA &#9654;</a>
 </p> 
 

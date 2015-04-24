@@ -22,10 +22,10 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/vsa/">&#9664; Deploying HP StoreVirtual VSA </a>| <a href="/helion/openstack/carrier/install/vsa/cluster/">Creating a StoreVirtual Cluster and adding it to a new Management Group &#9654;</a>
+
+<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/vsa/">&#9664; Deploying HP StoreVirtual VSA </a> | <a href="/helion/openstack/carrier/install/vsa/cluster/">Creating a StoreVirtual Cluster and adding it to a new Management Group &#9654;</a>
 </p> 
--->
+
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA Centralized Management Console (CMC) and Deploying VSA
 
