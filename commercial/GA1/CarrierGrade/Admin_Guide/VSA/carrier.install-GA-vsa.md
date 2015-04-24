@@ -63,7 +63,7 @@ The next time the `CND-SVC` role is implemented, the role will have the StoreVir
 
 ## Next Step {#next-steps}
 
-[Installing HP StoreVirtual VSA Centralized Management Console (CMC) and Deploying VSA](/helion/openstack/carrier/install/vsa/deploy/)
+[Deploying HP StoreVirtual VSA Storage Sytems](/helion/openstack/carrier/install/vsa/deploy/)
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
