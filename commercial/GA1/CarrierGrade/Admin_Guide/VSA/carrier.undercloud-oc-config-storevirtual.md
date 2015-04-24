@@ -29,7 +29,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/undercloud/storage/storevirtual/">&#9664; Working with HP StoreVirtual VSA </a> 
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/undercloud/storage/storevirtual/">&#9664; Working with HP StoreVirtual VSA </a> </p>
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Working With StoreVirtual Backends

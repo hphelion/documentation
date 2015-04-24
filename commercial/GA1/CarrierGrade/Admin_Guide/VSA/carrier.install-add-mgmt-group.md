@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/vsa/cluster/">&#9664; Creating a StoreVirtual Cluster and Adding it to a New Management Group </a>| <a href="/helion/openstack/1.1/undercloud/storage/storevirtual/">Working with HP StoreVirtual VSA &#9654;</a>
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/vsa/cluster/">&#9664; Creating a StoreVirtual Cluster and Adding it to a New Management Group </a>| <a href="/helion/openstack/carrier/undercloud/storage/storevirtual/">Working with HP StoreVirtual VSA &#9654;</a>
 </p> 
 
 
