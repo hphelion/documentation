@@ -29,7 +29,7 @@ A container is a storage compartment for your data and provides a way for you to
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Object Store** tab on the dashboard **Project** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
 
 3. In the **Object Store** panel, click **Containers**.
 
@@ -41,7 +41,7 @@ A container is a storage compartment for your data and provides a way for you to
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Object Store** tab on the dashboard **Project** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
 
 3. In the **Object Store** pan, click **Containers**.
 

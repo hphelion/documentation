@@ -31,9 +31,7 @@ You can view the status of a volume in the Volumes tab of the dashboard. The vol
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 4. In the **Volumes** screen, for the volume you want to attach, click the arrow icon in the **Actions** menu and select **Edit Attchments**.
 
@@ -51,9 +49,7 @@ The dashboard shows the volume is In-Use and lists the instance to which the vol
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 4. In the **Volumes** screen, for the volume you want to detach, click the arrow icon in the **Actions** menu and select **Edit Attchments**.
 

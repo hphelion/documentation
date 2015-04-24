@@ -31,9 +31,7 @@ To create a snapshot:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 3. In the **Volumes** screen, for the volume you want to create a snapshot, click the arrow icon in the **Actions** menu and select **Create Snapshot**.
 

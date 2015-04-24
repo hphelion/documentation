@@ -40,7 +40,7 @@ To create a keypair, do the following:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Access &amp; Security** link.
 
 	The Access &amp; Security page is displayed with four tabs, **Security Groups**, **Key Pairs**, **Floating IPs**, and **API Access**. By default, **Security Groups** is the active tab. 
 
@@ -64,7 +64,7 @@ To delete a keypair, do the following:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Access &amp; Security** link.
 
 3. Click the **Key Pairs** tab to activate it.
 
@@ -80,7 +80,7 @@ To import a keypair, do the following:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Access &amp; Security** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Access &amp; Security** link.
 
 3. Click the **Key Pairs** tab to activate it.
 

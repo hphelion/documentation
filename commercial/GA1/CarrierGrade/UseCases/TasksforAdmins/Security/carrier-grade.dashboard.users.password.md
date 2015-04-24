@@ -27,7 +27,7 @@ PageRefresh();
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Users** link on the **Admin** dashboard **Identity** panel.
+2. Click the **Identity** dashboard, then the **Users** link.
 
 3. In the **Users** screen, for the user you want to modify, click **Edit**.
 

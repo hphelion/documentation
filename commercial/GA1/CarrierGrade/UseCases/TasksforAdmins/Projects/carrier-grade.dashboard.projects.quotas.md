@@ -35,7 +35,7 @@ Default values are set on the [Default screen](/helion/commercial/carrier/dashbo
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Identity** dashboard, then the **Projects** link.
+2. Click the **Identity** panel, then the **Projects** link.
 
 3. For the project you want to modify, click the arrow icon in the **Actions** menu and select **Modify Quotas**. 
 4. In the **Edit Project** screen, click the **Quota** tab (should be active).

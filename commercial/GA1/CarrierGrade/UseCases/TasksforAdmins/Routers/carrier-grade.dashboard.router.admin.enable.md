@@ -29,7 +29,7 @@ You can enable or disable routers, as needed.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Routers** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Routers** link.
 
 	The routers for the selected project appear. 
 
@@ -43,7 +43,7 @@ You can enable or disable routers, as needed.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Routers** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Routers** link.
 
 	The routers for the selected project appear. 
 

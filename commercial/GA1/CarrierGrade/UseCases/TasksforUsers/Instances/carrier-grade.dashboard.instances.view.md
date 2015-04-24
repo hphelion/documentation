@@ -36,7 +36,7 @@ To view information on your instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Overview** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Overview** link.
 
 3. Click the name of the instance to view. The following information is listed:
 

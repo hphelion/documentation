@@ -37,7 +37,7 @@ To migrate an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Instances** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Instances** link.
 
 3. In the **Instances** screen, for the instance you want to migrate, click the arrow icon in the **Actions** menu and select **Migrate Instance**.
 

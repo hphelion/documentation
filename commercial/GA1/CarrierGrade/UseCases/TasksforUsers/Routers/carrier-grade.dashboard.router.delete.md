@@ -31,7 +31,7 @@ You must remove all router interfaces before deleting the router, by removing al
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Network Topology** link on the **Project** dashboard **Network** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Network Topology** link.
 
 	Determine if the router is connected to a network using the [Network Topology screen](/helion/commercial/carrier/dashboard/managing/network/viewing/):
 

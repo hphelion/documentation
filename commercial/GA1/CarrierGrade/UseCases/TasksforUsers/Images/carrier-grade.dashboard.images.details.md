@@ -26,7 +26,7 @@ PageRefresh();
 To view image details:
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Images** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Images** link.
 
 3. Click the name of the image.
 

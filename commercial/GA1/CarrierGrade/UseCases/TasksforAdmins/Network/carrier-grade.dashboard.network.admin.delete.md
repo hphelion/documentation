@@ -31,7 +31,7 @@ Instances must be disassociated from any network you want to delete.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Networks** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 
 	The network(s) for the selected project appear. 
 

@@ -25,7 +25,7 @@ PageRefresh();
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **System Information** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **System Information** link.
 
 3. View the following information on these tabs:
 

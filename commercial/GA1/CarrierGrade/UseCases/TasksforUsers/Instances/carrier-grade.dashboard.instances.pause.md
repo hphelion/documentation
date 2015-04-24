@@ -37,7 +37,7 @@ To pause an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 
 3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Pause Instance**.
 
@@ -51,7 +51,7 @@ To unpause an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 
 3. In the **Instances** screen, for the instance you want to modify, click the arrow icon in the **Actions** menu and select **Resume Instance**.
 

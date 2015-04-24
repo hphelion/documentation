@@ -29,7 +29,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Object Store** tab on the dashboard **Project** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
 
 3. In the **Object Store** panel, click **Containers**.
 
@@ -47,7 +47,7 @@ An object is the basic storage entity that represents a file you store in the Op
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Object Store** tab on the dashboard **Project** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Object Store** link.
 
 3. In the **Object Store** panel, click **Containers**.
 

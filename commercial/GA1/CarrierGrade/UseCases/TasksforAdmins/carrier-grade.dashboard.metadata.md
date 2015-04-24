@@ -35,7 +35,7 @@ To add and remove metadata:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the component link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the component link.
 
 	The flavors in the domain are listed. 
 
@@ -50,24 +50,6 @@ To add and remove metadata:
 	Metadata terms in the **Existing Metadata** column are associated with the current flavor. 
 
 5. Click **Save**.
-
-
-### Delete a flavor ### {#deleteflavor}
-
-Instances that use the flavor are not affected when a flavor is deleted.
-
-To delete a flavor:
-
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
-
-2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
-
-	The flavors in the domain are listed. 
-
-3. For the flavor you want to modify, click **Edit Flavor > Delete Flavor**. 
-
-4. In the confirmation screen, click **Delete Flavor**.
-<p>A message is displayed on successful delete.</p> 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

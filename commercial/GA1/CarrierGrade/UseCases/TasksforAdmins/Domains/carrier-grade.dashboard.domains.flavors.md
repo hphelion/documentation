@@ -38,7 +38,8 @@ To create a flavor:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
+
 	The flavors in the domain are listed. 
 
 3. Click **Create Flavor**. 
@@ -68,7 +69,7 @@ To edit a flavor:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 
 	The flavors in the domain are listed. 
 
@@ -96,7 +97,7 @@ To delete a flavor:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Flavors** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 
 	The flavors in the domain are listed. 
 

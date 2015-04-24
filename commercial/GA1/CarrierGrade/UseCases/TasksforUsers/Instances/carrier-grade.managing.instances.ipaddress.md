@@ -37,7 +37,7 @@ To assign a floating IP address to an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 
 3. For the network you want to associate the IP address, click the arrow icon in the **Actions** menu and select **Associate Floating IP**.
 
@@ -59,7 +59,7 @@ To allocate a floating IP address:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 
 3. For the network you want to associate the IP address, click the arrow icon in the **Actions** menu and select **Associate Floating IP**.
 
@@ -79,7 +79,7 @@ To remove a floating IP address from an instance:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Instances** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 
 3. For the network you want to disassociate the IP address, click the arrow icon in the **Actions** menu and select **Disassociate Floating IP**.
 

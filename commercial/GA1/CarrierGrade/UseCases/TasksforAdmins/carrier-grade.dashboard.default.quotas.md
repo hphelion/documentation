@@ -29,7 +29,7 @@ To set default values:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **System Information** link on the **Admin** dashboard **Defaults** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Defaults** link.
 
 3. Edit any of the following values:
 

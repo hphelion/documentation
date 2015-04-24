@@ -29,7 +29,7 @@ When you [create an image](/helion/commercial/carrier/dashboard/managing/images/
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Images** link on the **Project** dashboard **Compute** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Images** link.
 
 3. In the **Images** screen, for the image you want to protect, click **More &gt; Edit**.
 4. In the **Update Image** screen, select **Public**.

@@ -31,7 +31,7 @@ When you create a new router, the router does not have any internal interface an
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Routers** link on the **Project** dashboard **Network** panel.
+2. Click the **Project** dashboard, then the **System** panel, then the **Routers** link.
 
 	The routers for the selected project appear. 
 

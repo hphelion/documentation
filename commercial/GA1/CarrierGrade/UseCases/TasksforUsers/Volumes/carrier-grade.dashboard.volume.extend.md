@@ -29,9 +29,7 @@ You can extend the size of a volume, as needed.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 4. In the **Volumes** screen, for the volume you want to extend,  click the arrow icon in the **Actions** menu and select **Extend Volume**.
 

@@ -31,16 +31,16 @@ You can edit the device associated with a port and change the admin state, as ne
 
 As an admin, you can: 
 
-* [create a port](#createport)
-* [change the device associated with the port](#editport)
-* [change the admin state between Up or Down](#editport)
-* [delete a port](#deleteport)
+* [Create a port](#createport)
+* [Change the device associated with the port](#editport)
+* [Change the admin state between Up or Down](#editport)
+* [Delete a port](#deleteport)
 
 ### Create a port ### {#createport}
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Networks** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 
 	The network(s) for the selected project appear. 
 
@@ -68,7 +68,7 @@ As an admin, you can:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Networks** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 
 	The network(s) for the selected project appear. 
 
@@ -92,7 +92,7 @@ As an admin, you can:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Networks** link on the **Admin** dashboard **System** panel.
+2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 
 	The network(s) for the selected project appear. 
 

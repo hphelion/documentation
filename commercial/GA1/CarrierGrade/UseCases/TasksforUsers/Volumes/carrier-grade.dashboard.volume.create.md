@@ -29,9 +29,7 @@ Volumes are block devices that can be attached to instances.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 4. Click **Create Volume**.
 
@@ -51,9 +49,7 @@ Volumes are block devices that can be attached to instances.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 4. Under the **Actions** column, click **Edit Volume**, next to the volume you want to edit.  	.
 
@@ -67,9 +63,7 @@ Volumes are block devices that can be attached to instances.
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 4. Select the volume(s) that you want to delete.
 

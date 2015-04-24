@@ -29,9 +29,7 @@ To create a backup:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
 
-2. Click the **Compute** tab on the dashboard **Project** panel.
-
-3. In the **Compute** panel, click **Volumes**.
+2. Click the **Project** dashboard, then the **System** panel, then the **Volumes** link.
 
 3. In the **Volumes** screen, for the volume you want to backup, click the arrow icon in the **Actions** menu and select **Create Backup**.
 
