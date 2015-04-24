@@ -416,7 +416,7 @@ navigation:
   - text: HP Helion Documentation
     url: /helion/openstack/carrier/
   - text: HP Helion OpenStack Carrier Grade Documentation Home
-    url: /helion/openstack/carrier/
+    url: /helion/openstack/carrier/home/
   - text: Support Matrix
     url: /helion/openstack/carrier/support-matrix/ 
   - text: Technical Overview
