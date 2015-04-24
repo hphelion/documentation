@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/vsa/verify/">&#9664; Verifying StoreVirtual Installation Status </a> | <a href="/helion/openstack/carrier/install/vsa/add-mgmt/">Adding HP StoreVirtual VSA System to an Existing Management Group &#9654;</a>
+<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/vsa/deploy/">&#9664; Deploying HP StoreVirtual VSA Storage Sytems </a> | <a href="/helion/openstack/carrier/install/vsa/add-mgmt/">Adding HP StoreVirtual VSA System to an Existing Management Group &#9654;</a>
 </p> 
 
 # Creating a StoreVirtual Cluster and Adding it to a New Management Group

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installation: Deploy and Configure HP StoreVirtual VSA"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA"
 permalink: /helion/openstack/carrier/install/vsa/
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Installing HP StoreVirtual VSA Overview </a> | <a href="/helion/openstack/carrier/install/vsa/deploy/">Installing HP StoreVirtual VSA Centralized Management Console (CMC) and Deploying VSA &#9654;</a>
+<p style="font-size: small;"><a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Installing HP StoreVirtual VSA Overview </a> | <a href="/helion/openstack/carrier/install/vsa/deploy/">Deploying HP StoreVirtual VSA Storage Sytems &#9654;</a>
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA
