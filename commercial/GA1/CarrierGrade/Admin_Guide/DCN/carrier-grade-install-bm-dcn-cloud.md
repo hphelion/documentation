@@ -24,7 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/environment/">&#9664; Configuring the installation environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
 
-# HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the HLM and DCN Clouds 
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the Cloud 
 
 At this point, the networking settings and PXE clients are up and running. 
 
@@ -53,7 +53,7 @@ For each baremetal system:
 
 		ssh <IP_Address>
 
-## Deploy the HLM and Helion clouds
+## Configure the HLM cloud
 
 Once all of the baremetal systems are configured and running, you can install the HLM cloud.
 
@@ -70,13 +70,13 @@ To configure the HLM cloud:
 3. Use the following commands to create new cloud template. This command will create a directory <cloudname> in root folder)
 
 		cd ~
-		hnewcloud <cloudname> <template_name>
+		hnewcloud <cloudname> demo
 
-	**Example**
+	This command creates a new cloud called <cloudname> from the *demo* sample.
 
-		hnewcloud DemoCloud demo
+	For example, the following command creates ~/HLMcloud cloud config files from the demo sample: 
 
-	This command creates a new cloud called DemoCloud from the *demo* template.
+		hnewcloud HLMcloud demo
 
 4. Change to the new cloud directory:
 
@@ -104,6 +104,7 @@ To configure the HLM cloud:
 
 6. Run the Helion Configuration Processor on the configuration files you have modified:
 
+		cd <cloudname> 
 		hcfgproc -d definition.json
 
 	The `hcfgproc script` is installed in `/usr/local/bin` by the `prepare-env` script and generates a `clouds/` directory in the <cloudname> dir.
@@ -125,8 +126,9 @@ To configure the HLM cloud:
 	You can run this command from anywhere.
 
 
-When this command completes, the HP DCN installation is complete.
+When this command completes, the HP Helion OpenStack Carrier Grade (Alpha) installation is complete.
 
+Basic cloud operations can be performed by logging into the Horizon interface using `CAN` IP address specified in `/etc/hosts` file on any cloud node.
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
