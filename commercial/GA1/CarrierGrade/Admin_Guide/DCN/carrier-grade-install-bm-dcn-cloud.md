@@ -21,9 +21,9 @@ onLoad="window.refresh"
 PageRefresh();	
 
 </script>
-
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/environment/">&#9664; Configuring the installation environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
-
+<!--
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/environment/">&#9664; Configuring the installation Environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
+-->
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the DCN Cloud 
 
 After the [HLM and Helion clouds are installed and running](/helion/openstack/carrier/install/bm/hlm-cloud/), you can install the HP Distributed Cloud Networking (DCN).
