@@ -27,39 +27,111 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA
 
-This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend. It covers the following topics:
-
+This page provides detailed instructions on deployment of HP StoreVirtual VSA Storage Nodes, and their configuration as Cinder backend.
 
 Use the following steps to install HP StoreVirtual VSA in your HP Helion OpenStack Carrier Grade cloud.
 
-1. On the KVM host, change to the directory where your cloud is installed. 
+## Prerequisites
 
-2. Go to the folder where cloud is created.
+* KVM must be installed:
 
-3. Change Directory to services/cinder/blocks/
+	sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager
+	sudo apt-get install ubuntu-vm-builder
+	sudo apt-get update
 
-	This folder contains a `cinder_conf_default.sample` file. 
+* Optionally install Virtual Manager
 
-4. Copy that file to `cinder_conf_default` using any standard method, such as the `cp` command:
+	sudo apt-get install virt-manager
 
-		cp cinder_conf_default.sample cinder_conf_default
+* Verify that KVM was installed correctly
 
-5.  Modify the `cinder_conf_default` with values based on your environment. 
+	virsh -c qemu:///system list
+	virsh net-list --all
 
-	The parameters in file are as follows. If required more parameters can be added to this file.
+To install KVM VSA:
 
-		hplefthand_username = <username>
-		hplefthand_password = <password>
-		hplefthand_clustername = <Cluster Name>
-		hplefthand_api_url = https://<Iscsi Virtual IP address>/lhos
+1. Create a Bridge Network
 
-6. Run the following command to copy the parameters in the `cinder_conf_default` to the `cinder.conf` file in the `CND-SVC` role.
+		sudo apt-get install qemu
+		sudo apt-get install libcap2-bin
+		sudo setcap cap_net_admin=ei /usr/bin/qemu-system-x86_64
+		sudo vi /etc/security/capability.conf
+		"cap_net_admin   <username>"
 
-		hcfgproc
+		sudo vi /etc/network/interfaces
 
-The next time the `CND-SVC` role is implemented, the role will have the StoreVirtual Information.
+		iface eth0 inet manual
+		iface eth0 inet dhcp
 
+		auto br0
+		iface br0 inet dhcp
+			bridge_ports eth0
+			bridge_stp off
+			bridge_fd 0
+			bridge_maxwait 0
+		
+		sudo invoke-rc.d networking restart
 
+2. Download the installer binary (installer) and the KVM OS disk image `KVM-VSA-<version>.img.gz`.
+
+3. Create a JSON Input file by running the following commands: 
+
+		./installer -create-default-json" , or 
+		./installer -create-default-json" -disks <n> -tiering
+
+	This input file tells the installer how to configure the VM. 
+   
+	**Example**
+
+	The following is an example of the default-input.json: 
+
+		{
+			"HostName": "newHost", 
+			"OSImageStoragePool": "default",
+			"Personality": "VSA",
+			"SANiQ_Preferred": 0,
+			"Networks": [
+				{   
+					"DHCP": 1,
+					"IPAddress": "", 
+					"Subnet": "", 
+					"Gateway": "",
+					"NetworkInterface": "default"
+				}   
+			],  
+			"Disks": [
+				{   
+					"Location": "default",
+					"Size": "500G"
+					"Tier": "Tier 0"
+				},  
+				{   
+					"Location": "/dev/sdc",
+					"Size": ""
+					"Tier": "Tier 1"
+				}   
+			]   
+		}
+
+	**Notes:** 
+
+	* To assign static IP for the VM, DHCP needs to be 0 and IP address, Subnet mask and Default gateway fields must be filled in. Similarly, to have a dynamic IP DHCP needs to be 1 and the other fields need to be empty. 
+
+	* `NetworkInterface` must match the fields available in `virsh net-list --all`.
+	
+	* `SANiQ_Preferred` is the preferred NIC interface for SAN/iQ. Select 0 or 1.
+
+	* Disk Location can be a storage pool, as found in in `virsh pool-list`; Or can be a raw device. 
+
+	* `OSImageStoragePool` is where the OS image will be located. This needs to be a valid storage pool.
+
+4. Use the following command to install a VSA/FOM on the KVM hypervisor:
+
+	./installer [--no-prompt] [--debug] <JSON Input File> <KVM-VSA-<version>.img.gz
+
+5. Use the following command to verify that the VM is running
+
+	virsh -c qemu:///system list
 
 ## Next Step {#next-steps}
 
