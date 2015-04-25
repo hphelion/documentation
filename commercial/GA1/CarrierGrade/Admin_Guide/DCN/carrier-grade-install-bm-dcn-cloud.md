@@ -6,7 +6,7 @@ product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
 role2: Storage Architect
-authors: Michael B, 
+authors: Michael B,  
 
 ---
 <!--UNDER REVISION-->
