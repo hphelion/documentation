@@ -24,6 +24,7 @@ PageRefresh();
 
 <p style="font-size: small;"><a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Installing HP StoreVirtual VSA Overview </a> | <a href="/helion/openstack/carrier/install/vsa/deploy/">Deploying HP StoreVirtual VSA Storage Sytems &#9654;</a></p>
 
+<!-- From Installing HPStoreVirtual.docx at https://wiki.hpcloud.net/pages/viewpage.action?pageId=49097241 -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA
 
