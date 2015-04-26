@@ -36,7 +36,7 @@ To complete the Admin Node installation:
  special characters. In the current release, it must end in .com, .org, .net, .edu, .mil, .gov, or .local. <!-- It may end in any valid web domain type, such as (but not limited to) 
 .com, .org, .net, .edu, .mil, .gov. -->
 
- b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Network Settings (Required)](/cloudos/install/customize-network-settings). 
+ b. **Network Mode:** Select the displayed option, Dual, Single, or Teaming. For related details, see [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/). 
  <!-- 
  The DUAL / SINGLE option is based on your network infrastructure and previously 
  selected choices. If you have separate wired networks for admin, os_sdn and public, you want DUAL. The recommended practice is to use DUAL. 

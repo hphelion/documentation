@@ -9,7 +9,7 @@ published: false
 <!--PUBLISHED-->
 # HP Helion Public Cloud v12.12 Python Novaclient CLI Installation#
 
-Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Helion Public Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes) for the latest features.-->
+Before you can begin working with the Novaclient CLI software, you have to install the package.  The instructions below work for Ubuntu, CentOS and Windows installations.<!-- Take a look at the [HP Helion Public Cloud Python Novaclient CLI - Release Notes](/cli/nova/release-notes/) for the latest features.-->
 
 This page provides you with the installation information for the following operating systems:
 
@@ -82,7 +82,7 @@ The installation procedure in this section is valid for Ubuntu versions 11.04, 1
 
         source .bashrc
         
-You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).
+You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference/).
 
 
 ##CentOS Installation## {#CentOS}
@@ -158,7 +158,7 @@ Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use 
 
         source .bashrc
         
-You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).
+You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference/).
 
 <!-- For information on how to install on versions of Ubuntu prior to Release 6.2, please check ou the [Linux Installation knowledge base article](https://community.hpcloud.com/article/python-novaclient-linux-installation).-->
 
@@ -239,7 +239,7 @@ Where the `USERNAME`, `PASSWORD`, and `TENANT_NAME` values are the ones you use 
 
         source .bashrc
         
-You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference).-->
+You can now access your `nova` commands.  For a full list of commands, surf on over to our [CLI Reference page](/cli/nova/reference/).-->
 
 
 ##Windows Installation## {#Windows}

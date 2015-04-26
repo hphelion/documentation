@@ -48,7 +48,7 @@ Now the `list` command with verbose debugging enabled:
 
 In this example, you can see it authorizes and then provides a list of containers.
 
-For additional information, take a look at the [CLI Reference page](/cli/unix/reference).
+For additional information, take a look at the [CLI Reference page](/cli/unix/reference/).
 
 ##For more information## {#articles}
 

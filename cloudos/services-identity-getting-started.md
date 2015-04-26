@@ -34,7 +34,7 @@ You can use the Administration Dashbord to access HP Cloud OS Identity service. 
 
 ###Using the API to access Identity### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Identity. See the [HP Cloud OS Identity Service API page](/api/v13/identity).
+You can use a low-level, raw REST API access to HP Cloud OS Identity. See the [HP Cloud OS Identity Service API page](/api/v13/identity/).
 
 ###Using the CLI### {#cli}
 

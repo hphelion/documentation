@@ -49,7 +49,7 @@ You can use the Administration Dashbord to access HP Cloud OS Imaging service. S
 
 ###Using the API to access Imaging### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Image Service API page](/api/v13/image).
+You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Image Service API page](/api/v13/image/).
 
 ###Using the CLI### {#cli}
 

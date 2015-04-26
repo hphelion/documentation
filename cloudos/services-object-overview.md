@@ -34,7 +34,7 @@ Key terms include:
 
 ###Using the API to access Imaging### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Object Storage Service API page](/api/v13/object-storage).
+You can use a low-level, raw REST API access to HP Cloud OS Imaging service. See the [HP Cloud OS Object Storage Service API page](/api/v13/object-storage/).
 
 ###Using the CLI### {#cli}
 

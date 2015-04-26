@@ -38,48 +38,48 @@ The Kernel Layer acts like an Operating System Kernel across a Data Center for C
 
 **Compute Operations**. This service manage the various hypervisors and virtual machines. Also known as *Nova*.
 
-- [Overview of the Compute service](/cloudos/services/compute/overview)
-- [Getting started with the Compute service](/cloudos/services/compute/getting-started)
+- [Overview of the Compute service](/cloudos/services/compute/overview/)
+- [Getting started with the Compute service](/cloudos/services/compute/getting-started/)
 - [How To's with the Compute service](/cloudos/services/compute/howto/)
 
 
 **Networking Operations**. Allows you to provision and create virtual networks. Also known as *Neutron* or *Quantam*.
 
-- [Overview of the Networking service](/cloudos/services/networking/overview)
-- [Getting started with the Networking service](/cloudos/services/networking/getting-started)
+- [Overview of the Networking service](/cloudos/services/networking/overview/)
+- [Getting started with the Networking service](/cloudos/services/networking/getting-started/)
 - [How To's with the Networking Service](/cloudos/services/networking/howto/)
 
 
 **Volume Operations**. Taking your storage and attaching it to your virtual environment and cloud. Also known as *Cinder*.
 
-- [Overview of the Volume Operations Service](/cloudos/services/volume/overview)
-- [Getting started with the Cloud OS Volume Management service](/cloudos/services/volume/getting-started)
+- [Overview of the Volume Operations Service](/cloudos/services/volume/overview/)
+- [Getting started with the Cloud OS Volume Management service](/cloudos/services/volume/getting-started/)
 - [How To's with the HP Cloud OS Volume Management service](/cloudos/services/volume/howto/)
 
 
 **Image Operations**. Glance allows you to maintain images which you can use to bootstrap virtual machines across the cloud and then manage them. Also known as *Glance*.
 
-- [Overview of the Image service](/cloudos/services/imaging/overview)
-- [Getting started with the Cloud OS Image Management service](/cloudos/services/imaging/getting-started)
+- [Overview of the Image service](/cloudos/services/imaging/overview/)
+- [Getting started with the Cloud OS Image Management service](/cloudos/services/imaging/getting-started/)
 - [How To's with the HP Cloud OS Image Management Service](/cloudos/services/imaging/howto/)
 
 
 **Identity Management**. Allows for group and multi-tenant creation.  Also known as *Keystone*.
 
-- [Overview of the Identity Management service](/cloudos/services/identity/overview)
-- [Getting started with the Identity Management service](/cloudos/services/identity/getting-started)
+- [Overview of the Identity Management service](/cloudos/services/identity/overview/)
+- [Getting started with the Identity Management service](/cloudos/services/identity/getting-started/)
 - [How To's with the Identity Management Service](/cloudos/services/identity/howto/)
 
 **Object Operations**. Allows for group and multi-tenant creation.  Also known as *Swift*.
 
-- [Overview of the Object Opertations service](/cloudos/services/object/overview)
-- [Getting started with the Cloud OS Object Management service](/cloudos/services/object/getting-started)
+- [Overview of the Object Opertations service](/cloudos/services/object/overview/)
+- [Getting started with the Cloud OS Object Management service](/cloudos/services/object/getting-started/)
 - [How To's with the Object Operations service](/cloudos/services/object/howto/)
 
 **Telemetry and Reporting**. Allows .  Also known as *Ceilometer*.
 
-- [Overview of the Telemetry and Reporting service](/cloudos/services/reporting/overview)
-- [Getting started with the Telemetry and Reporting service](/cloudos/services/reporting/getting-started)
+- [Overview of the Telemetry and Reporting service](/cloudos/services/reporting/overview/)
+- [Getting started with the Telemetry and Reporting service](/cloudos/services/reporting/getting-started/)
 - [How To's with the Telemetry and Reporting service](/cloudos/services/reporting/howto/)
 
 ### Base layer ### {#base}
@@ -100,20 +100,20 @@ Eden also provides scalability and manageability around services and a way to co
 **Peer** A resource pool registry; Allows you to interact with other clouds.
 HP Public is a resource pool registry, which allows you to tap into any OpenStack cloud. This allows for a hybrid cloud approach for sharing resources. Example: using HP Public Cloud Services in conjunction with your internal private cloud services.
 
-- [Overview of the Peer service](/cloudos/services/peer/overview)
+- [Overview of the Peer service](/cloudos/services/peer/overview/)
 - [Getting started with the Peer service](/cloudos/services/peer/getting-started/)
 - Peer service use cases/solutions/how to use/examples
 
 **Eve**. Provisioning, templates, build around templates
 provisioning service allowing you to create templates and provision those templates for infrastructure. This allows to take advantage of the orchestration feature in HP Cloud OS and OpenStack. Eve can be used across multiple clouds
 
-- [Overview of the Eve service](/cloudos/services/eve/overview)
+- [Overview of the Eve service](/cloudos/services/eve/overview/)
 - [Getting started with the Eve service](/cloudos/services/eve/getting-started/)
 - Eve service use cases/solutions/how to use/examples
 
 **Focus** Managing templates, binding documents, versioning. An internal service to manage the documents and templates. Versioning and document relationship is also a function provided by Focus.
 
-- [Overview of the Compute service](/cloudos/services/focus/overview)
+- [Overview of the Compute service](/cloudos/services/focus/overview/)
 - [Getting started with the Focus service](/cloudos/services/focus/getting-started/)
 - Use cases/solutions/how to use/examples
 

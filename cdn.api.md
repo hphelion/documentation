@@ -9,7 +9,7 @@ published: false
 <!--PUBLISHED-->
 # HP Helion Public Cloud CDN API
 
-Surf on over to our [CDN API Reference](/api/CDN) for lots of details on the HP Helion Public Cloud CDN service.  
+Surf on over to our [CDN API Reference](/api/CDN/) for lots of details on the HP Helion Public Cloud CDN service.  
 
 <!-- For a detailed overview of how to interact with the CDN REST API using cURL:
 

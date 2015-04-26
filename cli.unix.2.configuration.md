@@ -126,7 +126,7 @@ To show the servers on `account2` rather than the default, run:
 
    $ hpcloud servers -a account2
 
-Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/2/reference) to determine if a particular command supports the option.
+Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/2/reference/) to determine if a particular command supports the option.
 
 ## Specifying an Availability Zone for a Single Operation ## {#DefiningAZsPerCommand}
 You can specify an availability zone for a single command line operation without affecting your account's base credentials and quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see the regions you are activated in with the `hpcloud account:catalog` command.
@@ -135,4 +135,4 @@ To view servers using the `region-b.geo-1` availability zone:
 
    $ hpcloud servers -z region-b.geo-1
    
-Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/2/reference) to determine if a particular command supports the option.
+Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/2/reference/) to determine if a particular command supports the option.

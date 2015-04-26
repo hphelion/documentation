@@ -37,7 +37,7 @@ This page discusses the following topics:
 
 ##Connecting to the Service## {#ConnectingtotheService}
 
-For information on connecting to the service, please see the [Connecting to the HP Helion Public Cloud](/bindings/fog/connect) page.
+For information on connecting to the service, please see the [Connecting to the HP Helion Public Cloud](/bindings/fog/connect/) page.
 
 ##Using the Model Abstraction## {#UsingtheModelAbstraction}
 

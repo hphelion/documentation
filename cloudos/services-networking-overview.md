@@ -25,7 +25,7 @@ You can use the Administration Dashbord to access HP Cloud OS Networking service
 
 ###Using the API to access Networking### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Networking. See the [HP Cloud OS Networking Service API page](/api/v13/networking).
+You can use a low-level, raw REST API access to HP Cloud OS Networking. See the [HP Cloud OS Networking Service API page](/api/v13/networking/).
 
 ###Using the CLI### {#cli}
 

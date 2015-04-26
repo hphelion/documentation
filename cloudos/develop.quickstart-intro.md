@@ -268,7 +268,7 @@ You can include the returned token's value on the <code> ?/token=&lt;value> </co
 
 We are updating our API use case documentation &#8212; coming soon.
 
-<!-- Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1). --> 
+<!-- Proceed to the next API Quick Start topic, [Use Case 1: Define &amp; Provision a Topology](/cloudos/develop/quickstart-usecase1/). --> 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

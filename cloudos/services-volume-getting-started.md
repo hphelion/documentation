@@ -17,7 +17,7 @@ Once created, you can easily disconnect Block Storage volumes from one instance 
 
 ###Using the API to access Networking### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Volume service. See the [HP Cloud OS Block Storage Service API page](/api/v13/block-storage).
+You can use a low-level, raw REST API access to HP Cloud OS Volume service. See the [HP Cloud OS Block Storage Service API page](/api/v13/block-storage/).
 
 ###Using the CLI### {#cli}
 

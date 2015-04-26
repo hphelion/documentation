@@ -97,5 +97,5 @@ The Get-Notes command gives you the ability to view release notes for the curren
 
 Recommended Links
 
-* [Index](/cli/windows) 
-* [Command Line Reference](/cli/windows/reference) 
+* [Index](/cli/windows/) 
+* [Command Line Reference](/cli/windows/reference/) 

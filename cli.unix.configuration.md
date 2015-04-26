@@ -112,7 +112,7 @@ To show the servers on `account2` rather than the default:
 
    $ hpcloud servers -a account2
 
-Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/reference) to determine if a particular command supports the option.
+Most commands allow you to use the `-a` option; see the [UNIX CLI Reference page](/cli/unix/reference/) to determine if a particular command supports the option.
 
 ## Specifying an Availability Zone for a Single Operation ## {#DefiningAZsPerCommand}
 Availability Zone can be specified for a single command line operation and does not affect your account's base credentials. You can use this switch to quickly perform an operation in another availability zone not specified in your profile. To run a command on a different availability zone, use the `-z` option.  You can see [the full list of current availability zones](#ListofAZs) down at the bottom of this page.
@@ -121,7 +121,7 @@ To view servers using the `az-2.region-a.geo-1` availability zone:
 
    $ hpcloud servers -z az-2.region-a.geo-1
    
-Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/reference) to determine if a particular command supports the option.
+Most commands allow you to use the `-z` option; see the [UNIX CLI Reference page](/cli/unix/reference/) to determine if a particular command supports the option.
 
 ## Full List of Current Availability Zones ## {#ListofAZs}
 The current usable availability zones for the compute service (`compute_availability_zone`):
@@ -144,12 +144,12 @@ The current usable availability zones for the block storage service (`block_avai
 
 ##Related topics
 
-* [Installation](/cli/unix/install)
-* [Advanced Account Management](/cli/unix/account-management)
-* [Compute Examples](/cli/unix/compute)
-* [Object Storage Examples](/cli/unix/object-storage)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
+* [Installation](/cli/unix/install/)
+* [Advanced Account Management](/cli/unix/account-management/)
+* [Compute Examples](/cli/unix/compute/)
+* [Object Storage Examples](/cli/unix/object-storage/)
+* [CDN Examples](/cli/unix/cdn/)
+* [Block Storage Examples](/cli/unix/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/dns/)
+* [CLI Reference](/cli/unix/reference/)

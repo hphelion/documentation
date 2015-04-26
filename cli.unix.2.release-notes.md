@@ -31,7 +31,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
 HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
 ________________________________________
-These are the release notes for the UNIX CLI for HP Helion Public Cloud.  The current release number for the [UNIX CLI software](/cli/unix) is version 2.0.0, released on 09/17/13.
+These are the release notes for the UNIX CLI for HP Helion Public Cloud.  The current release number for the [UNIX CLI software](/cli/unix/) is version 2.0.0, released on 09/17/13.
 
 * [Release 2.0.0 Features](#v2_0_0)
 * [Release 1.9.0 Features](#v1_9_0)

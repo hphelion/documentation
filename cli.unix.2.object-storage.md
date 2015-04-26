@@ -294,4 +294,4 @@ Now use the `migrate` command and specify the source account, source container (
     chewy.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     Copied chewy.htm => :disney
 
-For more information, see [Object Store Migration](/cli/unix/articles/migration).
+For more information, see [Object Store Migration](/cli/unix/articles/migration/).

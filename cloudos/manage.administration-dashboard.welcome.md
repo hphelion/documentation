@@ -386,7 +386,7 @@ Before you can access the HP Cloud OS Administration Dashboard, someone in your 
 to install, set up, configure, and stand up a cloud environment. Use Operational Dashboard to set up and install an Admin node, create a cloud, 
 define compute regions, and apply updates and extensions to your cloud. See the [HP Cloud OS Operational Dashboard Help](/cloudos/manage/operational-dashboard/).
 
-For instructions on how to use an advanced method of installing a cloud, see [Install and Configure Your Clouds](/cloudos/install).
+For instructions on how to use an advanced method of installing a cloud, see [Install and Configure Your Clouds](/cloudos/install/).
 
 ## How to Log in to the Administration Dashboard
 

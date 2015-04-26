@@ -92,4 +92,4 @@ And of course you can also delete snapshots using the following command:
 
 This removes the snapshot with the ID of 1111.
 
-For more details on the block storage commands, see the [Block Storage](/cli/windows/reference#BlockStorage) section of the [Windows CLI Reference](/cli/windows/reference) page and [Getting Help](/cli/windows/help).
+For more details on the block storage commands, see the [Block Storage](/cli/windows/reference#BlockStorage) section of the [Windows CLI Reference](/cli/windows/reference/) page and [Getting Help](/cli/windows/help/).

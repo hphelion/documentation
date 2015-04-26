@@ -214,4 +214,4 @@ Terminating images in a group:
 
         cs.destroyNodesMatching(inGroup("myGroup"));
 
-See the [HP Helion Public Cloud Java/Clojure jclouds Binding](/bindings/jclouds) page for further information on the jclouds bindings.
+See the [HP Helion Public Cloud Java/Clojure jclouds Binding](/bindings/jclouds/) page for further information on the jclouds bindings.

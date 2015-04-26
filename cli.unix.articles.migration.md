@@ -35,7 +35,7 @@ You can perform object migration from the AWS, Google, and Rackspace services.  
 
 ##Getting started migrating your data## {#GettingStarted}
 
-First you need to [download and install the latest Unix CLI client](/cli/unix/install) and set up your HP Helion Public Cloud account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
+First you need to [download and install the latest Unix CLI client](/cli/unix/install/) and set up your HP Helion Public Cloud account as the default.  Next, create a UNIX CLI account with the credentials of the source from which you wish to migrate objects.  Use the `-p` option of the [`account:setup`](/cli/unix/reference#account:setup) to specify an alternate provider.  If you use the `-p` option with AWS, Google or Rackspace, you are prompted to enter the provider-appropriate credentials, and the `account:setup` command attempts to verify the account.  
 
 **Note**: You can use this account only to perform migrations.  
 

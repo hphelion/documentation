@@ -286,17 +286,17 @@ Once the account is set up, use the `migrate` command and specify the source acc
     chewy.htm:  100% |ooooooooooooooooooooooooooooooooooooo| Time: 00:00:00
     Copied chewy.htm => :disney
 
-Another article on [Object Store Migration](/cli/unix/articles/migration).
+Another article on [Object Store Migration](/cli/unix/articles/migration/).
 
 
 ##Related topics
 
-* [Installation](/cli/unix/install)
-* [Account Configuration](/cli/unix/configuration)
-* [Advanced Account Management](/cli/unix/account-management)
-* [Compute Examples](/cli/unix/compute)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
+* [Installation](/cli/unix/install/)
+* [Account Configuration](/cli/unix/configuration/)
+* [Advanced Account Management](/cli/unix/account-management/)
+* [Compute Examples](/cli/unix/compute/)
+* [CDN Examples](/cli/unix/cdn/)
+* [Block Storage Examples](/cli/unix/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/dns/)
+* [CLI Reference](/cli/unix/reference/)

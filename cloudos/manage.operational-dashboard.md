@@ -27,11 +27,11 @@ PageRefresh();
 
 Welcome to the HP Cloud OS Operational Dashboard Help, which provides information about its user interface dialogs and options.
 
-* [How the Operational Dashboard Works](/cloudos/manage/operational-dashboard/how-opdash-works)
+* [How the Operational Dashboard Works](/cloudos/manage/operational-dashboard/how-opdash-works/)
 
-* [Operational Dashboard: Environment Tab](/cloudos/manage/operational-dashboard/environment-tab)
+* [Operational Dashboard: Environment Tab](/cloudos/manage/operational-dashboard/environment-tab/)
 
-* [Operational Dashboard: Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab)
+* [Operational Dashboard: Cloud Tab](/cloudos/manage/operational-dashboard/cloud-tab/)
 
-* [Operational Dashboard: Settings Tab](/cloudos/manage/operational-dashboard/settings-tab)
+* [Operational Dashboard: Settings Tab](/cloudos/manage/operational-dashboard/settings-tab/)
 

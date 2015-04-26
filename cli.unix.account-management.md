@@ -87,12 +87,12 @@ To change the connection timeout value for the `hp` account:
 
 ##Related topics
 
-* [Installation](/cli/unix/install)
-* [Account Configuration](/cli/unix/configuration)
-* [Compute Examples](/cli/unix/compute)
-* [Object Storage Examples](/cli/unix/object-storage)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
+* [Installation](/cli/unix/install/)
+* [Account Configuration](/cli/unix/configuration/)
+* [Compute Examples](/cli/unix/compute/)
+* [Object Storage Examples](/cli/unix/object-storage/)
+* [CDN Examples](/cli/unix/cdn/)
+* [Block Storage Examples](/cli/unix/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/dns/)
+* [CLI Reference](/cli/unix/reference/)

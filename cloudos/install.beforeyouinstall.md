@@ -193,7 +193,7 @@ to the outside world for the instances. </td>
 </table> 
 
 \* Default configuration of network tagging to combine logical networks onto a single physical network. Recommended practice is to use a separate Network for each type of network instead of
-VLAN. See [Customize Network Settings (Required)](/cloudos/install/customize-network-settings) for instructions on customizing the os_sdn, public and admin networks.
+VLAN. See [Customize Network Settings (Required)](/cloudos/install/customize-network-settings/) for instructions on customizing the os_sdn, public and admin networks.
 
 
 ### Storage Infrastructure
