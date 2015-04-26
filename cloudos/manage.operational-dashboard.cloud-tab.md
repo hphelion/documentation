@@ -38,7 +38,7 @@ they are displayed.
 * [Updates and Extensions](#updates-and-extensions) 
 
 <p style="background-color:#f8f8f8; padding:4px 4px 4px 4px; min-width:600px; border: 1px dotted #000000;"> <b>Note:</b> The Cloud tab does not appear until you have 
-completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab">Environment tab</a>.</p>
+completed all the installation steps on the <a href="/cloudos/manage/operational-dashboard/environment-tab/">Environment tab</a>.</p>
 
 For procedural instructions, see [Install and Configure Your Clouds](/cloudos/install/).
 

@@ -17,7 +17,7 @@ PageRefresh();
  
 </script>
 
-<p style="font-size: small;"> <a href="/cloudos/install/advanced-cloud-setup">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/install/advanced-cloud-setup/">&#9664; PREV</a> | <a href="/cloudos/install/">&#9650; UP</a> | NEXT &#9654; </p>
 
 
 # Install Modules Reference

@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-usecase2">&#9664; PREV</a> | <a href="/cloudos/develop/">&#9650; UP</a> | NEXT &#9654; </p>
+<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-usecase2/">&#9664; PREV</a> | <a href="/cloudos/develop/">&#9650; UP</a> | NEXT &#9654; </p>
 
 # Use Case 3: Title TBS
 

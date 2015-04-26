@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-intro">&#9664; PREV</a> | <a href="/cloudos/develop/">&#9650; UP</a> | <a href="/cloudos/develop/quickstart-usecase2">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-intro/">&#9664; PREV</a> | <a href="/cloudos/develop/">&#9650; UP</a> | <a href="/cloudos/develop/quickstart-usecase2/">NEXT &#9654;</a> </p>
 
 # Use Case 1: Define &amp; Provision a Topology
 

@@ -18,7 +18,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-usecase1">&#9664; PREV</a> | <a href="/cloudos/develop/">&#9650; UP</a> | <a href="/cloudos/develop/quickstart-usecase3">NEXT &#9654;</a> </p>
+<p style="font-size: small;"> <a href="/cloudos/develop/quickstart-usecase1/">&#9664; PREV</a> | <a href="/cloudos/develop/">&#9650; UP</a> | <a href="/cloudos/develop/quickstart-usecase3/">NEXT &#9654;</a> </p>
 
 # Use Case 2: Deprovision a Topology
 

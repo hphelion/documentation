@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/1.1/install/esx"> &#9664; Installing on an ESX hypervisor </a> | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a>  </p> 
+<p style="font-size: small;"><a href="/helion/openstack/1.1/install/esx/"> &#9664; Installing on an ESX hypervisor </a> | <a href="/helion/openstack/1.1/install/overview/test/">&#9650; Installation Overview</a>  </p> 
 
 
 # HP Helion OpenStack&#174; 1.1: Post-Installation for ESX Hypervisor
