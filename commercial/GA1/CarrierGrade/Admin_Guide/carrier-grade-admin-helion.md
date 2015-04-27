@@ -53,7 +53,7 @@ Review the following topics related to Object Storage (Swift) deployment:
 
 	- Scale up or expand 
 		- [Deploy New  Object Storage (Swift)](/helion/openstack/carrier/services/swift/deployment-scale-out/)
-		- [Add New Storage Servers](/helion/openstack/carrier/services/swift/provision-nodes)
+		- [Add New Storage Servers](/helion/openstack/carrier/services/swift/provision-nodes/)
 		- [Extend a Object Storage (Swift) Cluster](/helion/openstack/carrier/services/object/swift/expand-cluster/)
 		- [Add a New Scale-out Object Node](/helion/openstack/carrier/services/swift/deployment/add-disk-object-node/)
 		- [Add a New Scale-out Proxy Node](/helion/openstack/carrier/services/swift/deployment/add-proxy-node/)
@@ -107,10 +107,12 @@ Review the following topics related to Object Storage (Swift) deployment:
 - [Ceph Service Overview]( /helion/openstack/carrier/services/ceph/)
 - [Sherpa Service Overview](/helion/openstack/carrier/services/sherpa/overview/)
 - [Sirius Service Overview](/helion/openstack/carrier/services/sirius/overview/)
-	- [Sirius CLI Workflow](/helion/openstack/carrier/sirius/cli/workflow)
+	- [Sirius CLI Workflow](/helion/openstack/carrier/sirius/cli/workflow/)
 	- [Configuring Your Storage Using Sirius](/helion/openstack/carrier/sirius-cli/)
 - [Tripleo Service Overview](/helion/openstack/carrier/services/tripleo/overview/)
 - [Volume Operations Service Overview](/helion/openstack/carrier/services/volume/overview/)
+
+
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

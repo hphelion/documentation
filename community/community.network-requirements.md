@@ -50,7 +50,7 @@ The table in this section provides an overview of the physical network configura
   baremetal systems must be on a common network.
 
 <!--
-For detailed information, see the [Reference architecture](/helion/community//reference-architecture/).
+For detailed information, see the [Reference architecture](/helion/community/reference-architecture/).
 --> 
 
 <table style="text-align: left; vertical-align: top; width:700px;">

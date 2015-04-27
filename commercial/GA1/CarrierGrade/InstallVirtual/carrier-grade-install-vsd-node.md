@@ -151,7 +151,7 @@ You can use xrdp to connect to the gurst VM from the KVM host and launch the VSD
 [Create the VSC Node](/helion/openstack/carrier/install/vsc-node/)
 
 <!--
-* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm/)
 * [Installing and configuring on an ESX hypervisor](/helion/openstack/1.1/install/esx/)
 -->
 

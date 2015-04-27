@@ -23,7 +23,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Community Site Index
 
-#### [HP Helion OpenStack Community Documentation Home](/helion/community)
+#### [HP Helion OpenStack Community Documentation Home](/helion/community/)
 
 #### Getting started with HP Helion OpenStack Community
 

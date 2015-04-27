@@ -302,7 +302,7 @@ Fore more information, see https://help.ubuntu.com/community/NetworkManager#Disa
 [Prepare the Network for Installation](/helion/openstack/carrier/install/network/)
 
 <!--
-* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm/)
 * [Installing and configuring on an ESX hypervisor](/helion/openstack/1.1/install/esx/)
 -->
 

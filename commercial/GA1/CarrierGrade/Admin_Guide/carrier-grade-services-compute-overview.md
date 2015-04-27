@@ -40,7 +40,7 @@ A variety of flavors and images are provided by the HP Helion OpenStack Compute 
 
 <!-- ## Storing Metadata on a Configuration Drive {#configdrive}
 
-The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/carrier/services/compute/overview/configdrive) that contains information normally available through the metadata service. --> 
+The HP Helion OpenStack compute service can be configured to [write metadata to a special configuration drive](/helion/openstack/carrier/services/compute/overview/configdrive/) that contains information normally available through the metadata service. --> 
 
 ##Working with the Compute Service ##
 

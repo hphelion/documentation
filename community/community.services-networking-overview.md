@@ -65,7 +65,7 @@ The administrator can work with all projects in a domain. A user can only work w
 
 If you know the NAT address of a malicious user, you can identify his actual IP address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
 
-For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/community/maskedIP).
+For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/community/maskedIP/).
 
 <!-- ### Working with networks ###
 
