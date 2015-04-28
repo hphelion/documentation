@@ -162,40 +162,53 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 		imagelocation=<libvirt_images_folder_location>
 
-4. Edit your KVM's primary interface IP under \ansible-playbooks\roles\HLM-PRE-REQ\defaults\main.yml in case of Static IP on KVM Host
+4. Edit the `\ansible-playbooks\roles\HLM-PRE-REQ\defaults\main.yml` file to specify the KVM host primary interface IP under, in case of Static IP on KVM Host
 
-Check hosts file under /root/infra-ansible-playbooks, make sure your hlm_kvm_host ip is correct
+5. Check hosts file under /root/infra-ansible-playbooks, make sure your hlm_kvm_host ip is correct
 
-[hlm_kvm_host]
+		[hlm_kvm_host]
 
-192.168.122.1
+		192.168.122.1
 
-    Create br-ctl bridge and virtual network by running:
+6. Create `br-ctl` bridge and virtual network by running:
 
-           ansible-playbook -i hosts hlm-kvm-pre-req.yml
+		ansible-playbook -i hosts hlm-kvm-pre-req.yml
 
-    This will drop an extra file under /etc/network/ - Do following via iLO console interface
-        If your kvm host has a DHCP IP - check file dhcpipinterface, edit as necessary and rename to "interfaces" file
-        If your kvm host has a STATIC IP - check file staticipinterface, edit as necessary and rename to "interfaces" file
-        Run
-              Ifdown br-ctl
-              Ifdown << yourinterface >>
-              Ifup br-ctl
-              Ifup << yourinterface >>
-    Please note the step 2 has been kept manual for reason - many times you might loose ssh connection with your server due to above steps.
-    Run "ifconfig | more" - make sure br-ctl has the IP address that was earlier set to the primary interface
-    Reboot the setup.
-    Run "ifconfig | more" - make sure br-ctl has the IP address that was earlier set to the primary interface and primary interface DOESN’T have an IP
-    Route -n
+	This will drop an extra file under `/etc/network/`.  
+
+7. Do following via iLO console interface
+
+	* If your KVM host has a DHCP IP, edit the `dhcpipinterface` file as needed, and save the file as `interfaces`.
+	
+	* If your KVM host has a STATIC IP, edit the `staticipinterface` file as needed, and save the file as `interfaces`.
+
+8. Use the `ifconfig -a` command to output OVS bridge details. If the bridge is not present, execute the following commands to restart the bridge:
+
+		ifdown br-ctl
+		ifdown << yourinterface >>
+		ifup br-ctl
+		ifup << yourinterface >>
+
+9. Run the following command to make sure `br-ctl` has the IP address that was earlier set to the primary interface.
+
+		`ifconfig | more`
+
+9. Reboot the setup.
+
+10. Run the following command to make sure `br-ctl` has the IP address that was earlier set to the primary interface and primary interface does not have an IP address.
+
+		`ifconfig | more`
+
+11. Use the following command to view the results of the routing configuration:
+
+		route -n
  
+	The routing table should appear similar to the following:
 
+	<img src="media/CGH-install-route-table.png" />
 
+## Next Step
 
+[Create the HLM Virtual Machine](/helion/openstack/carrier/install/pb/hlm-vm/)
 
-        
-        
-
-
-    http://15.242.209.8/cg-hos-builds/
-    Note: Use your CDL credentials and sFTP way to download them
 ----
