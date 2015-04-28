@@ -28,9 +28,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/">&#9664; PREV | <a href="/helion/openstack/carrier/">&#9650; UP</a> | <a href="/helion/openstack/carrier/faq/">NEXT &#9654; </a></p>
--->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/">&#9664; PREV | <a href="/helion/openstack/carrier/">&#9650; UP</a> | <a href="/helion/openstack/carrier/faq/">NEXT &#9654; </a></p> -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Removing and Replacing a Failed Overcloud Controller
 

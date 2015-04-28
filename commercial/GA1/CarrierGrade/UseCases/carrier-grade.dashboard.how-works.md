@@ -31,9 +31,8 @@ PageRefresh();
 </script>
 
 
-<!-- Hide until use cases are official
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/manage/">&#9650; UP</a> | <a href="/helion/openstack/carrier/dashboard/users/">NEXT &#9654;</a> </p>
--->
+<!-- Hide until use cases are official <p style="font-size: small;"> <a href="/helion/openstack/carrier/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/manage/">&#9650; UP</a> | <a href="/helion/openstack/carrier/dashboard/users/">NEXT &#9654;</a> </p> -->
+
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): How to use the Helion Dashboards
 
 The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.  

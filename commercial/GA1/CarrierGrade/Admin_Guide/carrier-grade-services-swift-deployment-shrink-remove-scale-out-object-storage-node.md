@@ -25,8 +25,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/overview/"> NEXT &#9654</a> </p>-->
+<!-- <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/overview/scale-out-swift/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/services/overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/overview/"> NEXT &#9654</a> </p>-->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Remove Scale-out Object Storage Node
 

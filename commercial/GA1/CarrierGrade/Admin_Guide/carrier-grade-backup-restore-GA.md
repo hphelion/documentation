@@ -23,9 +23,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!--
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/install/esx/">NEXT &#9654;</a> </p>
--->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/carrier/install/kvm/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/install-overview/">&#9650; UP</a> | <a href="/helion/openstack/carrier/install/esx/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Back Up and Restore
 
