@@ -982,7 +982,7 @@ navigation:
     url: /cloudos/
   eucalyptus:
   - text: Eucalyptus Master Services Agreement
-    url: /eucalyptus/masterlicense
+    url: /eucalyptus/masterservice
   - text: Open Source and Third-Party Software License Agreements
     url: /eucalyptus/3rd-party-license-agreements
 
