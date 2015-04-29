@@ -161,6 +161,8 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 2. Copy the `cg-hos.tar.gz.gpg` and `cg-hos-dcn.tar.gz.gpg` to the `/root/infra-ansible-playbooks/roles/HLM-CFG/` directory.
 
+	The password to decrypt the files is `cghelion`.
+
 ## Next Step
 
 [Prepare the Network for Installation](/helion/openstack/carrier/install/pb/network/prepare/)

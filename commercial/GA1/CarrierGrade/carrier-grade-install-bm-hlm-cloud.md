@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the Cloud"
-permalink: /helion/openstack/carrier/install/bm/hlm-cloud/
+permalink: /helion/openstack/carrier/install/pm/hlm-cloud/
 product: carrier-grade
 product-version1: HP Helion OpenStack 1.1
 role1: Storage Administrator
@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/carrier/install/bm/environment/">&#9664; Configuring the installation environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/pb/hlm-vm/">&#9664; Configuring the installation environment</a> | <a href="/helion/openstack/carrier/install/bm/overview/">&#9650; Installation Overview</a>  </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Deploying the HLM and DCN Clouds 
 
@@ -82,35 +82,57 @@ To configure the HLM cloud:
 
 	cd ~/<cloudname>
 
-5. Update cloud template json files:
+5. Modify the `node-provision.json` file to configure the IP address of the PXE eth1 interface of the cloud nodes:
 
-	a. Modify the `nodes.json` file to configure the IP address of the PXE eth1 interface of the cloud nodes
+	* name - An identifying name for the system you want to add in cobbler; such as `ccn1` or `ccn2`.
+	* Pxe-mac-address - The MAC address of the interface you want to pxe boot onto (not the ILO MAC address).
+	* Pxe-interface - The interface name for the PXE boot (for example: eth0).
+	* pm_type - The power management type; use `ipmilan` for baremetal installations.
+	* pm_ip - The power management IP; use iLO IP address for baremetal installations.
+	* pm_user - The power management user name; use the iLO username.
+	* pm_pass - The power management password; use the iLO password.
+	* node_group - Set to the same value as 'node-type' in the `nodes.json` file.
+	* failure_zone - Set to the same value as set in the `nodes.json` file.
+	* vendor - Set to the same value as set in the `nodes.json` file.
+	* model - Set to the same value as set in the `nodes.json` file.
+	* os_partition_size - Set to the same value as set in the `nodes.json` file.
+	* data_partition_size - Set to the same value as set in the `nodes.json` file.
 
-	b. Modify the `environment.json` file to configure the VLANs and network addresses that need to be configured for respective cloud nodes. 
+6. Run the following command:
+
+		hprovision <cloudname>
+
+	This script PXE boots the nodes specified in the `node-provision.json` file. 
+
+	The script also creates the `nodes.json` file in the <cloudname> directory, with the information required to deploy the HP Helion OpenStack cloud, including the PXE IP addresses and MAC addresses of the nodes to be used in cloud deployment. 
+
+7. Verify that `nodes.json` file has the correct IP addresses.
+
+		cat <cloudname>
+
+8. Modify the `environment.json` file to configure the VLANs and network addresses that need to be configured for respective cloud nodes. 
 
 	* The three controller nodes should have CLM, CAN, EXT, BLS on eth0 and TUL on eth1. 
 	
 	* The two compute nodes should have CLM, EXT, BLS on eth0 and TUL on eth1.  
 
-	c. Modify `lnet-control-data.json` to configure the details of desired logical networks that have mapping to `environmentConfig.json` file.
-
-	d. Modify the `ccp-1x3-as.json` file to set the number of controllers on the plane to 3.
+9. Modify the `ccp-3-1-1-dcn-as.json` file to set the number of controllers on the plane to 3.
 
 		"member-count": 3, //number of controllers on the plane
 
-	e. Modify the `definition.json` file to set the number of computes in the resource pool to 2.
+10. Modify the `definition.json` file to set the number of computes in the resource pool to 2.
 
 		"count": 2, //number of computes in the resource pool. 
 
-6. Run the Helion Configuration Processor on the configuration files you have modified:
+11. Run the Helion Configuration Processor on the configuration files you have modified:
 
 		hcfgproc -d definition.json
 
 	The `hcfgproc script` is installed in `/usr/local/bin` by the `prepare-env` script and generates a `clouds/` directory in the <cloudname> dir.
 
-8. In this generated cloud, review the CloudDiagram, `hosts.hf`, and `net/interfaces.d/eth.cfg` files to make sure the network settings are correct.
+12. In this generated cloud, review the CloudDiagram, `hosts.hf`, and `net/interfaces.d/eth.cfg` files to make sure the network settings are correct.
 
-9. Initialize network interfaces on all the cloud nodes using the following command:
+13. Initialize network interfaces on all the cloud nodes using the following command:
 
 		hnetinit <cloudname> 
 
@@ -118,7 +140,7 @@ To configure the HLM cloud:
 
 	After this command completes, all cloud nodes and CLM network interfaces should be set correctly. 
 
-10. Deploy and configure the cloud services using the following command:
+14. Deploy and configure the cloud services using the following command:
 
 		hdeploy <cloudname> 
 
