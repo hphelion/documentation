@@ -980,5 +980,11 @@ navigation:
     url: /cloudsystem/
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
-
+  eucalyptus:
+  - text: Some link here
+    url: /blah/
+  - text: Some other link here
+    url: /yadda/
+  - text: Yet another link here
+    url: /und-so-weiter/
 
