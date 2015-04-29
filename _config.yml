@@ -129,6 +129,8 @@ navigation:
     url: /helion/community/
   - text: HP Helion Development Platform 
     url: /helion/devplatform/1.1/
+- text: HP Eucalyptus
+    url: /euca/
   - text: HP Helion Public Cloud
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
