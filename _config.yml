@@ -129,7 +129,7 @@ navigation:
     url: /helion/community/
   - text: HP Helion Development Platform 
     url: /helion/devplatform/1.1/
-- text: HP Eucalyptus
+  - text: HP Eucalyptus
     url: /eucalyptus/
   - text: HP Helion Public Cloud
     url: /publiccloud/overview/
