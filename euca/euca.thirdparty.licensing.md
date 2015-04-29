@@ -3,7 +3,7 @@ layout: eucalyptus
 title: "HP Helion Eucalyptus: Open Source and Third-Party Software License Agreements"
 permalink: /eucalyptus/3rd-party-license-agreements/
 product: eucalyptus
-product-version1:HP Helion Eucalyptus
+product-version1: HP Helion Eucalyptus
 authors: Greg L
 
 ---
