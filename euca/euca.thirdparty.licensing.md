@@ -15,6 +15,9 @@ authors: Greg L
 
 The Open Source and Third-Party Software License Agreements for HP Helion Eucalpytus are available as a PDF download.
 
+
+
 <!--[Download the PDF document]( )-->
+Download link goes here.
 
 Please allow sufficient time for the document to fully load.
