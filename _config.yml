@@ -983,8 +983,8 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   eucalyptus:
-  - text: Some link here
-    url: /blah/
+  - text: Open Source and Third-Party Software License Agreements
+    url: /eucalyptus/3rd-party-license-agreements
   - text: Some other link here
     url: /yadda/
   - text: Yet another link here
