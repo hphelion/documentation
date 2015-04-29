@@ -117,7 +117,7 @@ include: [commercial/GA1/Resources/_HP_iDoc_Resources/_HP_iDoc_zoomout.png]
 
 relative_permalinks: false
 
-#PUBLISH
+#UNDER REVISION
 
 navigation: 
   main:
@@ -980,5 +980,11 @@ navigation:
     url: /cloudsystem/
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
-
+  eucalyptus:
+  - text: Open Source and Third-Party Software License Agreements
+    url: /eucalyptus/3rd-party-license-agreements
+  - text: Eucalyptus Master License Agreement
+    url: /eucalyptus/masterlicense
+  - text: Yet another link here
+    url: /und-so-weiter/
 
