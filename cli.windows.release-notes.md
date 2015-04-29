@@ -9,7 +9,7 @@ published: false
 <!--PUBLISHED-->
 # Release Notes for the HP Helion Public Cloud CLI Software for Windows PowerShell #
 
-These are the release notes for the HP Helion Public Cloud CLI software for Windows PowerShell.  The current release number for the [HP Helion Public Cloud CLI software for Windows PowerShell](/cli/windows) is version 1.3.3.9, released on 4/22/2013.  These release notes contain the following information:
+These are the release notes for the HP Helion Public Cloud CLI software for Windows PowerShell.  The current release number for the [HP Helion Public Cloud CLI software for Windows PowerShell](/cli/windows/) is version 1.3.3.9, released on 4/22/2013.  These release notes contain the following information:
 
 * [Release 1.3.3.9 Features](#v1339)
 * [Release 1.3.1.9 Features](#v1319)

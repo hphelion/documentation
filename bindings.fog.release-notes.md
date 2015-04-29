@@ -133,7 +133,7 @@ None in this release.
 This release contains the following new features:
 
 * Support for `user_agent` string in the header added.  You can use a client application to set a User-Agent via the provider, so that the calling client can be identified.
-* Block storage support added.  See [the block storage examples](/bindings/fog/block-storage) page for details.
+* Block storage support added.  See [the block storage examples](/bindings/fog/block-storage/) page for details.
 * Snapshot support in block storage added. 
 * Volume support in block storage added.
 * `put_object` and `get_object` updated to accept blocks for block storage. You can create and retrieve storage objects in smaller chunks and display the progress of the operation.
@@ -157,9 +157,9 @@ This release contains the following new features:
 * New `security_groups` attribute added to the server model.
 * Support for future availability zones for all HP services added.
 * Parameter `hp_avl_zone` is now a required parameter for all HP services.
-* Support for console output in the [Compute](/bindings/fog/compute) service added.
-* Helper method for the [CDN](/bindings/fog/cdn) public SSL URL added.
-* Tests added for [Storage](/bindings/fog/object-storage), [Compute](/bindings/fog/compute) and [CDN](/bindings/fog/cdn) services.
+* Support for console output in the [Compute](/bindings/fog/compute/) service added.
+* Helper method for the [CDN](/bindings/fog/cdn/) public SSL URL added.
+* Tests added for [Storage](/bindings/fog/object-storage/), [Compute](/bindings/fog/compute/) and [CDN](/bindings/fog/cdn/) services.
 * Quality of mocks modified to match implementation.
 
 ###Known Issues###

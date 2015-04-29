@@ -32,7 +32,7 @@ HP Helion Public Cloud has contributed the Unix CLI back to the open source comm
 
 _________________________________________
 
-Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Helion Public Cloud Unix CLI - Release Notes](/cli/unix/release-notes) for the latest features.
+Before you can begin working with the UNIX CLI, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [HP Helion Public Cloud Unix CLI - Release Notes](/cli/unix/release-notes/) for the latest features.
 
 To install the UNIX CLI software, follow these steps:
 
@@ -68,7 +68,7 @@ You can find the values for these variables through the [HP Helion Public Cloud 
 
 Please be sure to confirm the default values for `Auth Uri` and your various zones and regions where services are activated.
 
-Now that you've finished installing the software package, it's time to [perform a few configuration steps](/cli/unix/configuration)!
+Now that you've finished installing the software package, it's time to [perform a few configuration steps](/cli/unix/configuration/)!
 
 ## Uninstalling ##  {#Unistalling}
 

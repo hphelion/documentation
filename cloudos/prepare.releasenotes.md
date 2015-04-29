@@ -194,7 +194,7 @@ For additional related information on HP Cloud OS:
 * [HP Cloud OS FAQs](/cloudos/prepare/faqs/): Answers to frequently asked questions, including where you can download the HP Cloud OS ISO package.
 * [HP Cloud OS Video Tutorials](/cloudos/prepare/videos/): Videos from a range of HP experts to help you learn about HP Cloud OS and OpenStack.
 * [HP Cloud OS Technical Overview](/cloudos/prepare/overview/): Introduces the HP Cloud OS architecture, its components and services, and the HP Cloud OS relationship with OpenStack.
-* [Install &amp; Configure Your Cloud](/cloudos/install): A set of sequential topics that explain how to install and configure your cloud with HP Cloud OS.
+* [Install &amp; Configure Your Cloud](/cloudos/install/): A set of sequential topics that explain how to install and configure your cloud with HP Cloud OS.
 * [HP Cloud OS Utilities](/cloudos/manage/utilities/): Describes the HP Cloud OS utilities.
 * [HP Cloud OS Troubleshooting](/cloudos/manage/troubleshooting/): Advice to resolve issues you may encounter with HP Cloud OS.
 * [HP Cloud OS Open Source and Third-Party Software License Agreements](/cloudos/os-3rd-party-license-agreements/): License information regarding the HP Cloud OS product. This topic includes legal notices and the disclaimer for experimental software.

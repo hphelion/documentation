@@ -101,4 +101,4 @@ To remove volume `kweller`, run:
     $ hpcloud volumes:remove kweller
     Removed volume 'kweller'.
 
-For complete information on all the UNIX CLI for HP Helion Public Cloud block storage commands (and all the other UNIX CLI for HP Helion Public Cloud service commands), please see [UNIX CLI for HP Helion Public Cloud Reference](/cli/unix/2/reference) page.
+For complete information on all the UNIX CLI for HP Helion Public Cloud block storage commands (and all the other UNIX CLI for HP Helion Public Cloud service commands), please see [UNIX CLI for HP Helion Public Cloud Reference](/cli/unix/2/reference/) page.

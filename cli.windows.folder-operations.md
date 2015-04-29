@@ -48,5 +48,5 @@ Finally, when we're done with a folder we can simply remove it. Note that when y
 
 Recommended Links
 
-+ [Index](/cli/windows)
-+ [Working with Metadata](/cli/windows/metadata)
++ [Index](/cli/windows/)
++ [Working with Metadata](/cli/windows/metadata/)

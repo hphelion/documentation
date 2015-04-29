@@ -57,7 +57,7 @@ To connect to the HP Helion Public Cloud Service, follow these steps:
                <other optional parameters>
                )
 
-Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute), [Storage](/bindings/fog/object-storage), or [CDN](/bindings/fog/cdn). Please surf on over to the [Block Storage page](/bindings/fog/block-storage) for the details on how to connect to that service.
+Where `SERVICE-NAME` can be [Compute](/bindings/fog/compute/), [Storage](/bindings/fog/object-storage/), or [CDN](/bindings/fog/cdn/). Please surf on over to the [Block Storage page](/bindings/fog/block-storage/) for the details on how to connect to that service.
 
 **Note**: You must use the `:hp_access_key` parameter rather than the now-deprecated  `:hp_account_id` parameter you might have used in previous Ruby Fog versions.
 

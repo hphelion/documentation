@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/community/eula/">&#9664; PREV | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/siteindex/">NEXT &#9654;</a> </p>
--->
+<!-- <p style="font-size: small;"> <a href="/helion/community/eula/">&#9664; PREV | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/siteindex/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Community Open Source and Third-Party Software License Agreements #
 

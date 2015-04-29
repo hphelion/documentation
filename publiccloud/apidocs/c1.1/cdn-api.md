@@ -134,7 +134,7 @@ In this example, our web site will have two HTML pages ("index.html", "about/ind
 
     <html>
     <title1>Home Page</title>
-    <p>There is more information in this <a href="/about">sub page</a></p>
+    <p>There is more information in this <a href="/about/">sub page</a></p>
 
 The subpage ("about/html") looks like this:
 

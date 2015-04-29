@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p>
--->
+<!-- <p style="font-size: small;"> <a href="/helion/community/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/install-overview/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Community Network Architecture and Configuration -- Baremetal Installations Only
 
@@ -50,7 +48,7 @@ The table in this section provides an overview of the physical network configura
   baremetal systems must be on a common network.
 
 <!--
-For detailed information, see the [Reference architecture](/helion/community//reference-architecture/).
+For detailed information, see the [Reference architecture](/helion/community/reference-architecture/).
 --> 
 
 <table style="text-align: left; vertical-align: top; width:700px;">

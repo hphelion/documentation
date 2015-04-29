@@ -24,13 +24,13 @@ HP Helion Public Cloud has contributed the Unix CLI back to the open source comm
 _________________________________________
 
 
-Before you can begin working with the UNIX CLI for HP Helion Public Cloud, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [UNIX CLI for HP Helion Public Cloud - Release Notes](/cli/unix/release-notes) for the latest features.
+Before you can begin working with the UNIX CLI for HP Helion Public Cloud, you have to install the package (of course!).  The instructions below work for Ubuntu, MacOS X, and CentOS installations.  Take a look at the [UNIX CLI for HP Helion Public Cloud - Release Notes](/cli/unix/release-notes/) for the latest features.
 
 [You can download the latest version of the UNIX CLI for HP Helion Public Cloud software here (Version 1.9.1)](/file/hpcloud-1.9.1.gem)!
 
 To install the UNIX CLI for HP Helion Public Cloud software, follow these steps:
 
-1. Start by [installing](/bindings/fog/install) the [Ruby Fog Bindings for HP Helion Public Cloud](/bindings/fog) software on which the UNIX CLI for HP Helion Public Cloud depends.
+1. Start by [installing](/bindings/fog/install/) the [Ruby Fog Bindings for HP Helion Public Cloud](/bindings/fog/) software on which the UNIX CLI for HP Helion Public Cloud depends.
 
 2. Download and install the UNIX CLI for HP Helion Public Cloud gem using curl:
 
@@ -65,7 +65,7 @@ You can find the values for these variables on through the [HP Helion Public Clo
 
 Please be sure to confirm the default values for `Auth Uri` and your various zones and regions where services are activated.
 
-Now that you've finished installing the software package, it's time to [perform a few configuration steps](/cli/unix/configuration)!
+Now that you've finished installing the software package, it's time to [perform a few configuration steps](/cli/unix/configuration/)!
 
 ## Uninstalling ##  {#Unistalling}
 
@@ -76,12 +76,12 @@ Its recommended that you uninstall a previous version prior to upgrading. To uni
 
 ##Related topics
 
-* [Account Configuration](/cli/unix/configuration)
-* [Advanced Account Management](/cli/unix/account-management)
-* [Compute Examples](/cli/unix/compute)
-* [Object Storage Examples](/cli/unix/object-storage)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
+* [Account Configuration](/cli/unix/configuration/)
+* [Advanced Account Management](/cli/unix/account-management/)
+* [Compute Examples](/cli/unix/compute/)
+* [Object Storage Examples](/cli/unix/object-storage/)
+* [CDN Examples](/cli/unix/cdn/)
+* [Block Storage Examples](/cli/unix/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/dns/)
+* [CLI Reference](/cli/unix/reference/)

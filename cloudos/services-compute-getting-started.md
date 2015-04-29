@@ -21,7 +21,7 @@ A variety of flavors and images are provided by HP Cloud compute that can be use
 
 ###Using the API to access Networking### {#API}
  
-You can use a low-level, raw REST API access to HP Cloud OS Compute See the [HP Cloud OS Compute Service API page](/api/v13/compute).
+You can use a low-level, raw REST API access to HP Cloud OS Compute See the [HP Cloud OS Compute Service API page](/api/v13/compute/).
 
 ###Using the CLI### {#cli}
 

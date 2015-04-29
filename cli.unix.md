@@ -40,33 +40,33 @@ Access the following documentation and resources:
 
 ##Version 13.5 (Unix CLI for HP Helion Public Cloud 2.0) documentation {#135}
 
-* [Installation](/cli/unix/2/install)
-* [Account Configuration](/cli/unix/2/configuration)
-* [Advanced Account Management](/cli/unix/2/account-management)
-* [Compute Examples](/cli/unix/2/compute)
-* [Object Storage Examples](/cli/unix/2/object-storage)
-* [CDN Examples](/cli/unix/2/cdn)
-* [Block Storage Examples](/cli/unix/2/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/2/dns)
-* [CLI Reference](/cli/unix/2/reference)
-* [Release Notes](/cli/unix/release-notes)
+* [Installation](/cli/unix/2/install/)
+* [Account Configuration](/cli/unix/2/configuration/)
+* [Advanced Account Management](/cli/unix/2/account-management/)
+* [Compute Examples](/cli/unix/2/compute/)
+* [Object Storage Examples](/cli/unix/2/object-storage/)
+* [CDN Examples](/cli/unix/2/cdn/)
+* [Block Storage Examples](/cli/unix/2/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/2/dns/)
+* [CLI Reference](/cli/unix/2/reference/)
+* [Release Notes](/cli/unix/release-notes/)
 
 ##Version 12.12 (Unix CLI for HP Helion Public Cloud 1.9) documentation {#1212}
 
-* [Installation](/cli/unix/install)
-* [Account Configuration](/cli/unix/configuration)
-* [Advanced Account Management](/cli/unix/account-management)
-* [Compute Examples](/cli/unix/compute)
-* [Object Storage Examples](/cli/unix/object-storage)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
-* [Release Notes](/cli/unix/release-notes)
+* [Installation](/cli/unix/install/)
+* [Account Configuration](/cli/unix/configuration/)
+* [Advanced Account Management](/cli/unix/account-management/)
+* [Compute Examples](/cli/unix/compute/)
+* [Object Storage Examples](/cli/unix/object-storage/)
+* [CDN Examples](/cli/unix/cdn/)
+* [Block Storage Examples](/cli/unix/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/dns/)
+* [CLI Reference](/cli/unix/reference/)
+* [Release Notes](/cli/unix/release-notes/)
 
-For some release-by-release information, take a look at [the UNIX CLI for HP Helion Public Cloud release notes](/cli/unix/release-notes)!
+For some release-by-release information, take a look at [the UNIX CLI for HP Helion Public Cloud release notes](/cli/unix/release-notes/)!
 
 ##Download the software## {#downloads}
 
@@ -79,13 +79,13 @@ Download the UNIX CLI for HP Helion Public Cloud software for the HP Helion Publ
 
 For more tips and How-tos on using your UNIX CLI for HP Helion Public Cloud, see [UNIX CLI for HP Helion Public Cloud: Articles on to use the UNIX CLI for HP Helion Public Cloud](/cli/unix/articles/).
 
-* [Using bash command completion](/cli/unix/articles/complete)
-* [Generating verbose debugging output](/cli/unix/articles/debugging)
-* [Accessing servers with managed key pairs](/cli/unix/articles/managedkeypairs)
-* [Performing object store migration](/cli/unix/articles/migration)
-* [Generating custom reports](/cli/unix/articles/reports)
-* [Performing large file uploads](/cli/unix/articles/large)
-* [Creating servers with user data](/cli/unix/articles/userdata)
-* [Modifying report paging](/cli/unix/articles/paging)
-* [Creating servers with custom personality](/cli/unix/articles/personality)
-* [Creating servers with custom user data](/cli/unix/articles/userdata)
+* [Using bash command completion](/cli/unix/articles/complete/)
+* [Generating verbose debugging output](/cli/unix/articles/debugging/)
+* [Accessing servers with managed key pairs](/cli/unix/articles/managedkeypairs/)
+* [Performing object store migration](/cli/unix/articles/migration/)
+* [Generating custom reports](/cli/unix/articles/reports/)
+* [Performing large file uploads](/cli/unix/articles/large/)
+* [Creating servers with user data](/cli/unix/articles/userdata/)
+* [Modifying report paging](/cli/unix/articles/paging/)
+* [Creating servers with custom personality](/cli/unix/articles/personality/)
+* [Creating servers with custom user data](/cli/unix/articles/userdata/)

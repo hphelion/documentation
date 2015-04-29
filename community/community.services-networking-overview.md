@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/community/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/object/overview/"> NEXT &#9654</a> </p>
--->
+<!-- <p style="font-size: small;"> <a href="/helion/community/services/imaging/overview/">&#9664; PREV</a> | <a href="/helion/community/services/overview/">&#9650; UP</a> | <a href="/helion/community/services/object/overview/"> NEXT &#9654</a> </p> -->
 
 # HP Helion OpenStack&#174; Community Networking Service Overview #
 
@@ -65,7 +63,7 @@ The administrator can work with all projects in a domain. A user can only work w
 
 If you know the NAT address of a malicious user, you can identify his actual IP address. HP Helion OpenStack offers several methods to lookup the Networking Service VM associated with the source of the abusive network traffic.
 
-For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/community/maskedIP).
+For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/community/maskedIP/).
 
 <!-- ### Working with networks ###
 

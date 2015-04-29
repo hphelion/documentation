@@ -251,7 +251,7 @@ To apply the install modules in Mozilla Firefox or Google Chrome:
 
  c. Click Create to open the created install module's Edit Proposal page.
 
- d. Make sure the default values for the proposal are correct. For a complete list of all install modules and their default values, see the [Install Modules Reference](/cloudos/install/install-modules-reference).
+ d. Make sure the default values for the proposal are correct. For a complete list of all install modules and their default values, see the [Install Modules Reference](/cloudos/install/install-modules-reference/).
 
  e. Make the node-to-role associations. In the proposal section, notice the Available Nodes and the Roles. Use the following notes to associate a node to a role, or to remove a node from a role. When the install module is Applied, the node-to-role association(s) will be used to determine which of the install module's roles (also known as 'services') will be applied to which node.
   * In the Edit Proposal view, select the controller name in the Available Nodes list to drag it to the appropriate role. You may need to remove a node in order to add a node to a role, if there can only be one node associated with the role.

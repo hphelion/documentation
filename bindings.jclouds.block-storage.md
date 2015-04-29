@@ -107,4 +107,4 @@ Delete a snapshot:
       Boolean deleted = volumeApi.deleteSnapshot("<snapshotID>");  
 
 
-See the [HP Helion Public Cloud jclouds Java/Clojure Bindings](/bindings/jclouds) page for further information on the jclouds binding.
+See the [HP Helion Public Cloud jclouds Java/Clojure Bindings](/bindings/jclouds/) page for further information on the jclouds binding.

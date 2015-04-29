@@ -165,7 +165,7 @@ To add a new persistent server (specifying a flavor, a bootable volume, a keynam
     $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
     Created server 'bat' with id '535545'.
 
-There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
 
 Display the console of a server:
 
@@ -276,7 +276,7 @@ To add a new key pair and save it to a file:
     $ hpcloud keypairs:add mykeypair2 --output
     Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
-There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+There is also an article about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
 
 To add a new key pair by importing public key data:
 
@@ -380,12 +380,12 @@ To remove or release an existing address:
 
 ##Related topics
 
-* [Installation](/cli/unix/install)
-* [Account Configuration](/cli/unix/configuration)
-* [Advanced Account Management](/cli/unix/account-management)
-* [Object Storage Examples](/cli/unix/object-storage)
-* [CDN Examples](/cli/unix/cdn)
-* [Block Storage Examples](/cli/unix/block-storage)
-* [Volume Management](/block-storage/volume)
-* [DNS Examples](/cli/unix/dns)
-* [CLI Reference](/cli/unix/reference)
+* [Installation](/cli/unix/install/)
+* [Account Configuration](/cli/unix/configuration/)
+* [Advanced Account Management](/cli/unix/account-management/)
+* [Object Storage Examples](/cli/unix/object-storage/)
+* [CDN Examples](/cli/unix/cdn/)
+* [Block Storage Examples](/cli/unix/block-storage/)
+* [Volume Management](/block-storage/volume/)
+* [DNS Examples](/cli/unix/dns/)
+* [CLI Reference](/cli/unix/reference/)

@@ -9,7 +9,7 @@ published: false
 <!--PUBLISHED-->
 # HP Helion Public Cloud CLI Software for Windows PowerShell Object Storage Examples #
 
-One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/object-storage) for overview information on Object Storage.)
+One of the key features of the HP Helion Public Cloud CLI software for Windows PowerShell Object Storage is that it provides a way to store and retrieve objects in a highly redundant cluster of publicly accessible physical machines hosted in HP data centers.  This page provides examples for how to use Object Storage via the Windows PowerShell CLI.  (See the [HP Helion Public Cloud Object Storage Overview](/object-storage/) for overview information on Object Storage.)
 
 **Note:** When referencing an argument, like a container name, that has a space, use quotes to access that resource. For example:
      
@@ -1147,4 +1147,4 @@ The `-sk` option is your API secret key, and the `-ak` option is your access key
 
 For additional information on this command, see [Migrating your files with the Windows CLI](http://h30499.www3.hp.com/t5/Grounded-in-the-Cloud/Migrating-your-files-with-the-Windows-CLI/ba-p/6470822#.U20mfFf7Ex5) blog post. 
 
-For a full description of the options available with the **Migrate-Drive** command, please see the [Migrate-Drive](/cli/windows/reference#Migrate-Drive) section of the [Windows CLI Reference](/cli/windows/reference) page.
+For a full description of the options available with the **Migrate-Drive** command, please see the [Migrate-Drive](/cli/windows/reference#Migrate-Drive) section of the [Windows CLI Reference](/cli/windows/reference/) page.

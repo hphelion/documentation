@@ -16,5 +16,5 @@ In addition, you can also see how one would view meta-data on an existing object
 
 Recommended Links 
  
-* [Index](/publiccloud/cli/windows)
-* [Misc Features](/publiccloud/cli/windows/misc)
+* [Index](/publiccloud/cli/windows/)
+* [Misc Features](/publiccloud/cli/windows/misc/)

@@ -17,5 +17,5 @@ In addition, you can also see how one would view meta-data on an existing object
 
 Recommended Links 
  
-* [Index](/cli/windows)
-* [Misc Features](/cli/windows/misc)
+* [Index](/cli/windows/)
+* [Misc Features](/cli/windows/misc/)

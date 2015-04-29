@@ -24,11 +24,11 @@ PageRefresh();
 
 Swift is the OpenStack object/blob storage service for cloud computing. You can use Swift to store lots of data efficiently, safely, and cheaply.
 
-If you [Setup Swift](/cloudos/install/setup-swift) already, this topic explains how to deploy the service.
+If you [Setup Swift](/cloudos/install/setup-swift/) already, this topic explains how to deploy the service.
 
 ## Swift Deployment Steps
 
-After creating the cloud and defining your compute regions (see [Create a Cloud](/cloudos/install/create-cloud) ), you can deploy Swift in your cloud by following these steps:
+After creating the cloud and defining your compute regions (see [Create a Cloud](/cloudos/install/create-cloud/) ), you can deploy Swift in your cloud by following these steps:
 
 1. Launch the HP Cloud OS Installation Dashboard. Its URL is http://192.168.124.10:3000.  For the Installation Dashboard's login, see the dashboard credentials topic on the <a href="https://cloudos.hpwsportal.com" target="new"> HP Cloud OS Catalog</a> portal. (Requires registration and login.)
 

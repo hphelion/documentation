@@ -140,7 +140,7 @@ If a service supports the HP Cloud OS API Documentation application, you see RES
 
 Click <b>REST API</b> to start the documentation application for a service.
 
-For information about how to use the documentation application, see the [Develop](/cloudos/develop) topic.
+For information about how to use the documentation application, see the [Develop](/cloudos/develop/) topic.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

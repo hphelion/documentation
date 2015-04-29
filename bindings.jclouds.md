@@ -58,10 +58,10 @@ For jclouds-specific requirements, please see the jclouds user guide for [Using 
 
 The jclouds library is well documented on the community web site, but for specific examples using HP's provider, see:
 
-* [Object Storage Examples](/bindings/jclouds/object-storage)
-* [Compute Examples](/bindings/jclouds/compute)
-* [CDN Examples](/bindings/jclouds/cdn)
-* [Block Storage Examples](/bindings/jclouds/block-storage)
+* [Object Storage Examples](/bindings/jclouds/object-storage/)
+* [Compute Examples](/bindings/jclouds/compute/)
+* [CDN Examples](/bindings/jclouds/cdn/)
+* [Block Storage Examples](/bindings/jclouds/block-storage/)
 
 ##Having trouble? ## {#HavingTrouble}
 See the [release notes](http://jclouds.apache.org/releasenotes/) for further information, or you can [get help over at the Forums](https://community.hpcloud.com).

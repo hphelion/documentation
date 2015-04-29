@@ -20,7 +20,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
 + The UNIX CLI has moved to the HP Helion Public Cloud Github repository
 
-  + In order to encourage development by the community, HP Helion Public Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli).
+  + In order to encourage development by the community, HP Helion Public Cloud is sharing it with the community as open source, hosted on [https://github.com/hpcloud/unix_cli](https://github.com/hpcloud/unix_cli/).
  
   + However, [links to 12.12 and 13.5 UNIX CLI downloads](#downloads), and all documentation, are still currently available on docs.hpcloud.com, as usual.
 
@@ -28,7 +28,7 @@ We wanted to ensure you were aware of the changes that may affect you during thi
 
   + Although the CLI has moved into the open source community, showstoppers and significant defects will be examined and addressed by the HP Helion Public Cloud SDK/CLI team on a case-by-case basis.
 
-HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli).
+HP Helion Public Cloud has contributed the Unix CLI back to the open source community, and you can get support, access the documentation, and download the source code [here](https://github.com/hpcloud/unix_cli/).
 _________________________________________
 
 This page addresses performing compute tasks using HP Helion Public Cloud with examples for the following command types:
@@ -47,9 +47,9 @@ See the following for compute service how-tos [Using the compute service](/compu
 
 See the following articles for advanced compute features:
 
-* [User Data aka Cloud Init](/cli/unix/articles/userdata)
-* [Creating Servers with Personality](/cli/unix/articles/personality)
-* [Accessing Servers with Managed Keypairs](/cli/unix/articles/managedkeypairs)
+* [User Data aka Cloud Init](/cli/unix/articles/userdata/)
+* [Creating Servers with Personality](/cli/unix/articles/personality/)
+* [Accessing Servers with Managed Keypairs](/cli/unix/articles/managedkeypairs/)
 
 
 
@@ -164,7 +164,7 @@ To add a new key pair and save it to a file, run:
     $ hpcloud keypairs:add mykeypair2 --output
     Created key pair 'mykeypair2' and saved it in a file at '/home/terry/.hpcloud/keypairs/mykeypair2.pem'.
 
-For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+For additional information, see [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
 
 To add a new key pair by importing public key data, run:
 
@@ -230,7 +230,7 @@ To add a new persistent server (specifying a flavor, a bootable volume, a keynam
     $ hpcloud servers:add bat large -i 5575 -v bootable -k brat
     Created server 'bat' with id '2f574231'.
 
-Information at the following link provides information about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs).
+Information at the following link provides information about creating and [Accessing Servers with Managed Key Pairs](/cli/unix/articles/managedkeypairs/).
 
 To display the console of a server, run:
 
@@ -307,7 +307,7 @@ To remove an existing server or servers (you can specify one or more servers by 
 To create a Windows compute instance, you need to specify:
 
 * The file that contains the private segment of your key pair in PEM format
-* A security group with port 3389 open (for RDP); see [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands) for information on opening a port on a security group.  
+* A security group with port 3389 open (for RDP); see [security group rules](/cli/unix/2/compute#SecurityGroupRuleCommands/) for information on opening a port on a security group.  
 
 Windows servers are a little slower to start up than other servers, taking from only a few minutes up to fifteen minutes.
 

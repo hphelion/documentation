@@ -30,7 +30,7 @@ and the separate Compute node(s). Optional: This topic also explains how to setu
 As indicated in the [Installation Overview](/cloudos/install/overview#preview-of-the-installation-steps) topic, you have a choice at this point: 
 
 * You can follow the wizard-based steps presented in this topic (recommended)
-* Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup) to apply and configure the install modules yourself.
+* Or you can perform the [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/) to apply and configure the install modules yourself.
 
 When you create a cloud using the process defined in this topic, a number of OpenStack and HP Cloud OS 
 install modules are automatically configured and deployed for you. In most cases, the automated deployment of install modules will suffice. 
@@ -274,7 +274,7 @@ This statement assumes you have already zeroed out the disks, as described in th
 For information about applying install modules, including Swift, see two topics: 
 
 * [Advanced Cloud Setup](/cloudos/install/advanced-cloud-setup/)
-* [Install Modules Reference](/cloudos/install/install-modules-reference)
+* [Install Modules Reference](/cloudos/install/install-modules-reference/)
 
 When you're ready, manage your cloud environment by launching the HP Cloud OS Administration Dashboard.  To get there, click More > Launch Dashboard for the cloud you created.  For more, see [Launch the Administration Dashboard](/cloudos/install/launch-admin-dashboard/).
 

@@ -24,11 +24,11 @@ PageRefresh();
 
 This topic describes the steps to customize the network connections. These steps are optional. 
 
-**Caution:** If you plan to customize the connections, you must do it before you complete the steps described in [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation). 
+**Caution:** If you plan to customize the connections, you must do it before you complete the steps described in [Complete Admin Node Installation (Required)](/cloudos/install/complete-admin-node-installation/). 
 After that, the connections dialogs are read only. Once the install process is triggered, no changes can be made. If you want to make changes, 
 you need to start over by re-installing the Admin Node.  
 
-Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Before You Install](/cloudos/install/before-you-install), 
+Based on the network infrastructure suggested in the "Plan the Infrastructure for a Cloud" section of [Before You Install](/cloudos/install/before-you-install/), 
 you must customize the Connections settings in the Connections view.
 
 After the enumeration of ports is consistent across all servers in the cloud, the Connections view defines those ports into a set of logical connections (interfaces) that will be used to eventually

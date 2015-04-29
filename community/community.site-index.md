@@ -17,13 +17,11 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/">&#9664; PREV</a> | <a href="/helion/">&#9650; UP</a> | NEXT &#9654; </p>
--->
+<!-- <p style="font-size: small;"> <a href="/helion/">&#9664; PREV</a> | <a href="/helion/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
 # HP Helion OpenStack&#174; Community Site Index
 
-#### [HP Helion OpenStack Community Documentation Home](/helion/community)
+#### [HP Helion OpenStack Community Documentation Home](/helion/community/)
 
 #### Getting started with HP Helion OpenStack Community
 

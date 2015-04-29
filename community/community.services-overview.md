@@ -17,9 +17,7 @@ PageRefresh();
 
 </script>
 
-<!--
-<p style="font-size: small;"> <a href="/helion/community/technical-overview/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/support-matrix/"> NEXT &#9654</a> </p>  
--->
+<!-- <p style="font-size: small;"> <a href="/helion/community/technical-overview/">&#9664; PREV</a> | <a href="/helion/community/">&#9650; UP</a> | <a href="/helion/community/support-matrix/"> NEXT &#9654</a> </p>  -->
 
 # HP Helion OpenStack&#174; Community Services Overview
 
@@ -60,15 +58,15 @@ See [Overview of the Compute service](/helion/community/services/compute/overvie
 
 **Identity Management**. The Identity Management service enables you to create and administer users and security groups, and control access to your cloud environment. Also known as **Keystone**.
 
-See [Overview of the Identity Management service](/helion/community/services/identity/overview).
+See [Overview of the Identity Management service](/helion/community/services/identity/overview/).
 
 **Image Operations**. The Image Operations service enables you to create and maintain server images, which you can use to launch virtual machines across the cloud. Also known as **Glance**.
 
-See [Overview of the Image service](/helion/community/services/imaging/overview).
+See [Overview of the Image service](/helion/community/services/imaging/overview/).
 
 **Networking Operations**. The Networking service enables you to create and manage virtual networks. Also known as **Neutron**.
 
-See [Overview of the Networking service](/helion/community/services/networking/overview).
+See [Overview of the Networking service](/helion/community/services/networking/overview/).
 
 **Object Operations**. The Object Operations service enables you to store and retrieve data. Object Storage is a distributed storage system for static data such as virtual machine images, photo storage, email storage, backups and archives. Also known as **Swift**.
 
@@ -76,11 +74,11 @@ See [Overview of the Object Operations service](/helion/community/services/objec
 
 **Orchestration**. The Orchestration service provides a template-based orchestration for describing a cloud application. A Heat template is a [YAML](http://www.yaml.org/) file that describes the infrastructure for a cloud application. Templates contain vendor-independent specifications for launching a particular service or application.  Also known as **Heat**.
 
-See [Overview of the Orchestration service](/helion/community/services/orchestration/overview).
+See [Overview of the Orchestration service](/helion/community/services/orchestration/overview/).
 
 **Volume Operations**. The Volume Operations service enables you to attach storage volumes to the virtual instances in your cloud environment. The service provides persistent block level storage devices for use with your Compute instances. Also known as **Cinder**.
 
-See [Overview of the Volume Operations Service](/helion/community/services/volume/overview).
+See [Overview of the Volume Operations Service](/helion/community/services/volume/overview/).
 
 **Metering**. The Metering service enables a single infrastructure to collect measurements throughout your cloud environment. Also known as **Ceilometer**.
 
@@ -102,7 +100,7 @@ See [Overview of the Loom Service](/helion/community/services/loom/overview/).
 
 **Sherpa**. The Sherpa service provides a link to the remote web catalog. The catalog provides a repository of software that can be purchased and downloaded into the Cloud OS environment.  
 
-See [Overview of Sherpa Service](/helion/community/services/sherpa/overview).
+See [Overview of Sherpa Service](/helion/community/services/sherpa/overview/).
 
 **TripleO**. TripleO (which stands for OpenStack-on-OpenStack) is a program designed to facilitate the installation of an OpenStack cloud. The HP Helion OpenStack Community installation process uses TripleO.
 
