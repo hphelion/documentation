@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion Eucapylptus"
+title: "HP Helion Eucalyptus"
 permalink: /eucalyptus/
 product: eucalyptus
 
@@ -11,3 +11,5 @@ product: eucalyptus
 #HP Helion Eucalyptus
 
 Perfered by koalas everywhere for a meal in the cloud!
+
+[Complete product documentation](https://www.eucalyptus.com/eucalyptus-cloud/documentation) is available.
