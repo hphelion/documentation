@@ -1,20 +1,20 @@
 ---
 layout: eucalyptus
-title: "HP Eucalyptus: Open Source and Third-Party Software License Agreements"
+title: "HP Helion Eucalyptus: Open Source and Third-Party Software License Agreements"
 permalink: /eucalyptus/3rd-party-license-agreements/
 product: eucalyptus
-product-version1:HP Eucalyptus
+product-version1:HP Helion Eucalyptus
 role1: none
 authors: Greg L
 
 ---
-<!--Under Revision-->
+<!--UNDER REVISION-->
 
-# HP Eucalpytus: Open Source and Third-Party Software License Agreements 
+# HP Helion Eucalpytus: Open Source and Third-Party Software License Agreements 
 
  
 
-The Open Source and Third-Party Software License Agreements for HP Helion Development Platform are available as a PDF download.
+The Open Source and Third-Party Software License Agreements for HP Helion Eucalpytus are available as a PDF download.
 
 <!--[Download the PDF document]( )-->
 
