@@ -32,7 +32,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/carrier/install/post-kvm/">&#9650; Post-Installation for KVM Hypervisor</a> | <a href="/helion/openstack/carrier/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654</a></p> 
+<a href="/helion/openstack/carrier/install/vsa/">Deploy and Configure HP StoreVirtual VSA &#9654;</a></p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Cinder Block Storage Using HP StoreVirtual VSA 
 
