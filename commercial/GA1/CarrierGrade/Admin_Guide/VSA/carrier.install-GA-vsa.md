@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/1.1/install/vsa/overview/">&#9664; Installing HP StoreVirtual VSA Overview </a> | <a href="/helion/openstack/carrier/install/vsa/deploy/">Deploying HP StoreVirtual VSA Storage Sytems &#9654;</a></p>
+<p style="font-size: small;"><a href="/helion/openstack/carrier/install/vsa/overview/">&#9664; Installing HP StoreVirtual VSA Overview </a> | <a href="/helion/openstack/carrier/install/vsa/deploy/">Deploying HP StoreVirtual VSA Storage Sytems &#9654;</a></p>
 
 <!-- From Installing HPStoreVirtual.docx at https://wiki.hpcloud.net/pages/viewpage.action?pageId=49097241 -->
 
@@ -36,18 +36,18 @@ Use the following steps to install HP StoreVirtual VSA in your HP Helion OpenSta
 
 * KVM must be installed:
 
-	sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager
-	sudo apt-get install ubuntu-vm-builder
-	sudo apt-get update
+		sudo apt-get install qemu-kvm libvirt-bin bridge-utils virt-manager
+		sudo apt-get install ubuntu-vm-builder
+		sudo apt-get update
 
 * Optionally install Virtual Manager
 
-	sudo apt-get install virt-manager
+		sudo apt-get install virt-manager
 
 * Verify that KVM was installed correctly
 
-	virsh -c qemu:///system list
-	virsh net-list --all
+		virsh -c qemu:///system list
+		virsh net-list --all
 
 To install KVM VSA:
 
@@ -128,11 +128,11 @@ To install KVM VSA:
 
 4. Use the following command to install a VSA/FOM on the KVM hypervisor:
 
-	./installer [--no-prompt] [--debug] <JSON Input File> <KVM-VSA-<version>.img.gz
+		./installer [--no-prompt] [--debug] <JSON Input File> <KVM-VSA-<version>.img.gz
 
 5. Use the following command to verify that the VM is running
 
-	virsh -c qemu:///system list
+		virsh -c qemu:///system list
 
 ## Next Step {#next-steps}
 

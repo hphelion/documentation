@@ -58,7 +58,9 @@ The license for the StoreVirtual VSA license is bundled with HP Helion OpenStack
 
 <!--<img src="media/storevirtual-cluster-network-diagram1.png"/>-->
 
+## Next Step
 
+[Creating a StoreVirtual Cluster and adding it to a new Management Group](/helion/openstack/carrier/install/vsa/cluster/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 
