@@ -48,22 +48,22 @@ To create a cluster, do the following:
 	By default, the CMC is configured to discover the StoreVirtual nodes in the subnet in which it is installed. You can manually add the nodes also.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc1.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc1.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 2. In the CMC UI, click **Find** and then click **Find Systems** from the left panel.<br /> Find Systems dialogue box is displayed.<br />
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc2.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc2.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 3. You can choose **Add** or **Find** option to search the system. <br />Find option  starts searching for the nodes in the same subnet as that of CMC. Add option displays an **Enter IP** pop-up box to enter the IP of the StoreVirtual system.
 
 	**Note:**To get the details of the HP StoreVirtual VSA IP, log in to StoreVirtual system and check `/mnt/state/vsa/vsa_network_config.json` file and select the second option, which is listed under "vsa network".
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc3.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc3.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc4.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc4.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 4. Click **OK** to proceed, or click **Cancel** to cancel the process.<br />The node is discovered and the details are displayed in a tabular format in the Find Systems dialogue box.
 
@@ -76,12 +76,12 @@ To create a cluster, do the following:
 8. Click **Close** to return to the Home page.<br /> The discovered nodes are displayed under **Available Systems** option in the left panel.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc5.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc5.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 9.  To add the node to a management group, right-click the node to display a menu and select **Add to a New Management Group**.<br /> Management Groups, Clusters, And Volumes wizard is displayed.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc6.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc6.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 10.  In the **Management Group Name** box, enter a name for the management group and click **Next** to display the Add Administrative User page.
 
@@ -112,7 +112,7 @@ To create a cluster, do the following:
 18. Click **Next**.<br />The Management Group and Cluster is created and displays in the Home page of CMC.
 
 	<a href="javascript:window.open('/content/documentation/media/storevirtual-cmc7.png','_self','toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"><img src="media/storevirtual-cmc7.png" width="500" /></a>
-	Click to view larger image; click **Back** to return.
+<br>	Click to view larger image; click **Back** to return.
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
