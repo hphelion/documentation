@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Installing HP StoreVirtual VSA"
-permalink: /helion/openstack/carrier/install/vsa/old/
+permalink: /helion/openstack/carrier/install/vsa/old/	
 product: carrier-grade
 product-version1: HP Helion OpenStack Carrier Grade
 role1: Storage Administrator
