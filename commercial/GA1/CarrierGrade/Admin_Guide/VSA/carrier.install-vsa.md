@@ -30,7 +30,7 @@ PageRefresh();
 
 This page provides detailed instructions on installing HP StoreVirtual VSA Centralized Management Console (CMC) and deploying HP StoreVirtual VSA Storage Nodes in your HP Helion OpenStack Carrier Grade cloud.
 
-## Prerequisites
+## Prerequisites 
 
 * KVM must be installed:
 
