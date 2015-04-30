@@ -26,9 +26,9 @@ PageRefresh();
 <p style="font-size: small;"> <a href="/helion/openstack/carrier/install/vsa/deploy/">&#9664; Deploying HP StoreVirtual VSA Storage Sytems </a> | <a href="/helion/openstack/carrier/install/vsa/add-mgmt/">Adding HP StoreVirtual VSA System to an Existing Management Group &#9654;</a>
 </p> 
 
-# Creating a StoreVirtual Cluster and Adding it to a New Management Group
+# Creating a StoreVirtual Cluster and Adding to a Management Group
 
-After 
+After HP StoreVirtual Storage systems are deployed, you must create clusters and add the clusters to a management group. 
 
 **Prerequisites**
 
