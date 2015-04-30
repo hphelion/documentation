@@ -981,10 +981,9 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   eucalyptus:
+  - text: Eucalyptus Master Services Agreement
+    url: /eucalyptus/masterservice
   - text: Open Source and Third-Party Software License Agreements
     url: /eucalyptus/3rd-party-license-agreements
-  - text: Eucalyptus Master License Agreement
-    url: /eucalyptus/masterlicense
-  - text: Yet another link here
-    url: /und-so-weiter/
+
 
