@@ -981,7 +981,7 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   eucalyptus:
-  - text: Eucalyptus Master Services Agreement
+  - text: Master Services Agreement
     url: /eucalyptus/masterservice
 
 
