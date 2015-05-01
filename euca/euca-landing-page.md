@@ -20,4 +20,4 @@ Visit these links to learn more:
 
 - [Documentation](https://www.eucalyptus.com/eucalyptus-cloud/documentation)
 - [Support](https://www.eucalyptus.com/support)
-- [Support matrix](http://docs.hpcloud.com/helion/openstack/1.1/support-matrix/)
+- [Support matrix](https://www.eucalyptus.com/eucalyptus-cloud/iaas/compatibility)
