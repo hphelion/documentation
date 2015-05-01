@@ -7,7 +7,7 @@ product: eucalyptus
 ---
 <!--PUBLISHED-->
  
-#HP Helion Eucalyptus
+#HP Helion Eucalyptus Documentation Home
 
 HP Helion Eucalyptus is open source software for building AWS-compatible hybrid clouds using IT resources that you control. It gives IT the ability to provide the same self-service capabilities users demand without sacrificing control over data security and while keeping cloud costs down. Compatibility with the AWS API enables agile development teams to programmatically self-provision resources using the same tools and processes used with the public cloud.
 
