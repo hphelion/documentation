@@ -37,7 +37,7 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/eucalyptus/">HP Helion Eucalyptus</a></span></p>
 </td>
-<td>Open source software that enables IT leaders to easily build, deploy and manage AWS compatible hybrid clouds. With HP Helion Eucalyptus, users can rapidly migrate existing AWS applications and workloads to a private or managed cloud environment.
+<td>Open source software that enables IT leaders to easily build, deploy and manage AWS-compatible hybrid clouds. With HP Helion Eucalyptus, users can rapidly migrate existing AWS applications and workloads to a private or managed cloud environment.
 </td>
 </tr>
 
