@@ -968,10 +968,10 @@ navigation:
     url: /helion/openstack/1.1/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
-  - text: HP Helion OpenStack Carrier Grade (Alpha)
-    url: /helion/openstack/carrier/home/
   - text: HP Helion Development Platform 
     url: /helion/devplatform/1.1/
+  - text: HP Helion Eucalyptus
+    url: /eucalyptus/
   - text: HP Helion Public Cloud
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
@@ -983,7 +983,5 @@ navigation:
   eucalyptus:
   - text: Eucalyptus Master Services Agreement
     url: /eucalyptus/masterservice
-  - text: Open Source and Third-Party Software License Agreements
-    url: /eucalyptus/3rd-party-license-agreements
 
 
