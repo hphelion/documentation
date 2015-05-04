@@ -24,7 +24,7 @@ PageRefresh();
 
 <!-- From Helion-CSP-Edition.pptx  https://wiki.hpcloud.net/download/attachments/32052622/Helion-CSP-Edition.pptx?version=1&modificationDate=1426628637000&api=v2 -->
 
-HP Helion OpenStack Carrier Grade integrates Wind River technologies with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities. 
+HP Helion OpenStack Carrier Grade integrates Wind River Linux with HP Helion OpenStack to enable carrier grade network functions virtualization (NFV) capabilities. 
 HP Helion OpenStack Carrier Grade is based on [HP Helion Openstack 1.1](/helion/openstack/1.1/) but with significantly enhanced and optimized functionality, availability, scale and  performance to meet the needs of NFV cloud deployments.
 
 HP Helion OpenStack Carrier Grade uses multi-core HP Proliant rack-mounted servers with storage and networking along with the [Wind River Titanium Server](http://www.windriver.com/products/titanium-server/), [HP Distributed Cloud Networking](http://www8.hp.com/us/en/products/networking-switches/product-detail.html?oid=7268885), Kernel-based Virtual Machine (KVM), and virtual switch software for reliable and accelerated data plane.
