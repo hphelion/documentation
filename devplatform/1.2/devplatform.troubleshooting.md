@@ -1,0 +1,133 @@
+---
+layout: default-devplatform
+title: "HP Helion 1.2 Development Platform: Installation Troubleshooting"
+permalink: /helion/devplatform/1.2/install/troubleshooting/
+product: devplatform2.0
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+role1: Systems Administrator 
+role2: System Engineer
+role3: Cloud Administrator
+role4: Network Administrator
+role5: Application Developer
+Role6: Security Engineer
+role7: Application Developer 
+role8: ISV Developer
+role9: Service Developer
+authors: Jayme P
+
+---
+<!--UNDER REVISION-->
+
+
+# HP Helion 1.2 Development Platform: Installation Troubleshooting
+
+- [Installation](#installation)
+- [Download](#download)
+- [Horizon](#horizon)
+- [DBaaS](#dbaas) (database)
+- [ALS](#ALS) (Application Lifecycle Service)
+- [Marketplace](#marketplace)
+- [Creating Instances](#instance-create)
+
+## Installation {#installation}
+
+###Command line installer fails to install
+ Resolution: **Set** https\_proxy and **unset** http\_proxy values.
+
+###Command line installer fails to install with Authentication Error 
+Even after fixing some errors and retrying, the command line installation fails.
+
+Resolution: 
+
+1. Locate and open the *dev-platform-installer* folder. This folder is created by the installation process.
+	- Delete the *.env* folder.
+	- Delete the *dev-platform-installer.conf* file.
+3. [Run the install command](/helion/devplatform/1.2/install/#commandline) again with all command line options.
+
+## Download {#download}
+
+### Service is stuck in download
+
+The *tmp* directory has run out of space. Mount the *tmp* directory to a larger partition and try again. If it fails again, reset the download.
+
+1. Log in to Horizon as an Admin user.
+2. In the **Admin** tenant, click **Project** and then **Object Store**.
+3. Open the **sherpa-cache** folder and delete the **wscatalog.<id\>** folder which contains the cached download.
+4. Download the service again.
+
+### Download terminates and remains stuck in "Staging" status
+
+Only applies to Development Platform services. After the image download terminates for some reason, the download is reattempted. The status of the service in the Configure Services view remains stuck at "Staging" and does not progress to "Available".
+
+ Resolution: Completely delete the service before reattempting download.
+
+1. Log in to Horizon as an Admin user.
+2. Delete the images for that service.
+3. In the Admin tenant, click **Project** and then **Object Store**.
+4. Go to Containers and delete the heat-templates for the service.
+3. Go to Containers > Sherpa-cache and delete the wscatalog folder for that service.
+
+If the status on the Configure Services view does not change to "Available", Sherpa is looking at the file cache. To clear this, remove the cache and restart Apache.
+
+1. Log in to the controller management node.
+2. Delete the directory */var/cache/sherpa/ws.xxxx*
+1. Delete the contents of the */var/lib/Sherpa/data* folder.
+2. Apache must be restarted before this change will take effect. <br />Run:
+		
+		service apache2 restart 
+
+
+## Horizon {#horizon}
+###Installed Development Platform services do not appear in Horizon
+
+Even though the service was installed successfully, the service does not appear in the appropriate tab.
+ 
+Resolution: After installing any Helion Development Platform service, log out of Horizon and then back in to refresh the UI.
+
+###Deleted service still appears in Horizon
+
+Even though the Development Platform stack has been deleted, the service still shows up in Horizon.
+
+Resolution: Delete the service manually from the Keystone endpoint list. <br /> Start the command line client and enter:
+
+	keystone endpoint-delete $<id>
+
+##DBaaS {#dbaas}
+
+###DbaaS configuration fails
+ 
+Resolution: Make sure that you can create a volume and attach it to instances. HP Helion OpenStack supports VSA and 3PAR, but not LVM. Make sure your installation is configured to use either VSA or 3PAR.
+
+###DbaaS instance fails to start
+Resolution: Check if you can create and start a Nova instance with the same flavor and verify you can attach a volume to that Nova instance. Verify that the Nova flavors have not been updated to invalid values. Verify that the flavor's ID is correct, as flavor updates cause the flavor IDs to change.
+
+## Marketplace {#marketplace}
+
+###Vertica installation fails after successful Marketplace installation
+
+Resolution: Immediately after installing Marketplace, log out of Horizon and then back in before beginning the Vertica installation. 
+
+##ALS {#ALS}
+
+**ALS cluster creation fails after successful installation of ALS and DBaaS.**
+ 
+Resolution: Make sure DBaaS is functional and responsive by creating a new DBaaS instance. If DBaaS is installed in the environment, ALS expects DBaaS to respond to API requests.
+
+**ALS Constructor fails with "No valid host was found" Error**
+
+Resolution: Attempt to spin up a Nova instance with **Flavor** set to **Tiny**. Verify that the Nova flavors were NOT updated to invalid values. Verify the Flavor IDs, as updates cause flavor IDs to change.
+
+##Creating Instances {#instance-create}
+
+###DbaaS instances, ALS clusters, Marketplace, and Messaging clusters all fail to start.
+
+Resolution: Nova and Neutron quotas have been exceeded. Increase quotas to support your desired configuration.
+
+###Issue: "No valid host was found" Error Received During Installation of the Development Platform and DNaaS
+
+Resolution: This Nova error could have multiple causes. Do not assume that  it is out of compute resources. Check the *nova-scheduler* logs on the overcloud controllers to find the actual reason why Nova failed to schedule the instance; correct the issue; and then attempt the DNSaaS deployment again.
+
+
+
+
