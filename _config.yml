@@ -124,11 +124,11 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack
-    url: /helion/openstack/1.1/
+    url: /helion/openstack/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
-    url: /helion/devplatform/1.1/
+    url: /helion/devplatform/
   - text: HP Helion Eucalyptus
     url: /eucalyptus/
   - text: HP Helion Public Cloud
@@ -344,76 +344,76 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack Documentation Home
-    url: /helion/openstack/1.1/
+    url: /helion/openstack/
   - text: Release Notes
-    url: /helion/openstack/1.1/release-notes/11/ 
+    url: /helion/openstack/release-notes/11/ 
   - text: FAQ
-    url: /helion/openstack/1.1/faq/  
+    url: /helion/openstack/faq/  
   - text: Technical Overview
-    url: /helion/openstack/1.1/technical-overview/ 
+    url: /helion/openstack/technical-overview/ 
   - text: Services Overview
-    url: /helion/openstack/1.1/services/overview/
+    url: /helion/openstack/services/overview/
   - text: Support Matrix
-    url: /helion/openstack/1.1/support-matrix-beta/ 		
+    url: /helion/openstack/support-matrix-beta/ 		
   - text: Installation & Configuration Overview
-    url: /helion/openstack/1.1/install-beta-overview/	
+    url: /helion/openstack/install-beta-overview/	
   - text: Installation Prerequisites
-    url: /helion/openstack/1.1/install-beta/prereqs/
+    url: /helion/openstack/install-beta/prereqs/
   - text: Installation for KVM Hypervisor
-    url: /helion/openstack/1.1/install-beta/kvm/
+    url: /helion/openstack/install-beta/kvm/
   - text: Installation for HP StoreVirtual VSA Support
-    url: /helion/openstack/1.1/install-beta/vsa/		
+    url: /helion/openstack/install-beta/vsa/		
   - text: Installation for ESX Hypervisor
-    url: /helion/openstack/1.1/install-beta/esx/
+    url: /helion/openstack/install-beta/esx/
   - text: OVSvApp Deployment for HP VCN on ESX hosts 
-    url: /helion/openstack/1.1/install-beta/ovsvapp/
+    url: /helion/openstack/install-beta/ovsvapp/
   - text: Installation for DNSaaS Support 
-    url: /helion/openstack/1.1/install-beta/dnsaas/		
+    url: /helion/openstack/install-beta/dnsaas/		
   - text: Related Documentation
-    url: /helion/openstack/1.1/related-links/	
+    url: /helion/openstack/related-links/	
   - text: Glossary
-    url: /helion/openstack/1.1/glossary/ 	
+    url: /helion/openstack/glossary/ 	
   - text: Preview Agreement
-    url: /helion/openstack/1.1/eula/
+    url: /helion/openstack/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/1.1/3rd-party-license-agreements/
+    url: /helion/openstack/3rd-party-license-agreements/
   - text: Site Index
-    url: /helion/openstack/1.1/siteindex/
+    url: /helion/openstack/siteindex/
   commercial.ga: 
   - text: HP Helion Documentation
     url: /
   - text: HP Helion OpenStack 1.1 Documentation Home
-    url: /helion/openstack/1.1/
+    url: /helion/openstack/
   - text: Site Index
-    url: /helion/openstack/1.1/siteindex/
+    url: /helion/openstack/siteindex/
   - text: Release Notes
-    url: /helion/openstack/1.1/release-notes/11/
+    url: /helion/openstack/release-notes/11/
   - text: FAQ
-    url: /helion/openstack/1.1/faq/  
+    url: /helion/openstack/faq/  
   - text: Technical Overview
-    url: /helion/openstack/1.1/technical-overview/ 
+    url: /helion/openstack/technical-overview/ 
   - text: Services Overview
-    url: /helion/openstack/1.1/services/overview/
+    url: /helion/openstack/services/overview/
   - text: Support Matrix
-    url: /helion/openstack/1.1/support-matrix/ 		
+    url: /helion/openstack/support-matrix/ 		
   - text: Installation Overview
-    url: /helion/openstack/1.1/install/overview/	
+    url: /helion/openstack/install/overview/	
   - text: Roll Your Own Installation Guide
     url: /content/documentation/commercial/GA1/RollYourOwn11/index.html
   - text: Network Security
-    url: /helion/openstack/1.1/install/security/
+    url: /helion/openstack/install/security/
   - text: Back Up and Restore
-    url: /helion/openstack/1.1/backup.restore/
+    url: /helion/openstack/backup.restore/
   - text: Troubleshooting
-    url: /helion/openstack/1.1/services/troubleshooting/
+    url: /helion/openstack/services/troubleshooting/
   - text: Related Documentation
-    url: /helion/openstack/1.1/related-links/	
+    url: /helion/openstack/related-links/	
   - text: Glossary
-    url: /helion/openstack/1.1/glossary/ 	
+    url: /helion/openstack/glossary/ 	
   - text: End User License Agreement
-    url: /helion/openstack/1.1/eula/
+    url: /helion/openstack/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/openstack/1.1/3rd-party-license-agreements/	
+    url: /helion/openstack/3rd-party-license-agreements/	
   carrier-grade: 
   - text: HP Helion Documentation
     url: /helion/openstack/carrier/
@@ -472,54 +472,54 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: HP Helion Development Platform Documentation Home
-    url: /helion/devplatform/1.1/
+    url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
-    url: /helion/devplatform/1.1/install/
+    url: /helion/devplatform/install/
   - text: Application Developer Resources
-    url: /helion/devplatform/1.1/appdev/
+    url: /helion/devplatform/appdev/
   - text: IT Ops Resources
-    url: /helion/devplatform/1.1/sysadmin/
+    url: /helion/devplatform/sysadmin/
   - text: Sample Code
-    url: /helion/devplatform/1.1/appdev/#sample
+    url: /helion/devplatform/appdev/#sample
   - text: Release Notes
-    url: /helion/devplatform/1.1/release-notes/
+    url: /helion/devplatform/release-notes/
   - text: Related Documentation
-    url: /helion/devplatform/1.1/related-topics/
+    url: /helion/devplatform/related-topics/
   - text: Application Lifecycle Service Configuration and Deployment
-    url: /helion/devplatform/1.1/deploy/
+    url: /helion/devplatform/deploy/
   - text: ALS Admin Guide
-    url: /helion/devplatform/1.1/als/admin/
+    url: /helion/devplatform/als/admin/
   - text: End User License Agreement
-    url: /helion/devplatform/1.1/eula/
+    url: /helion/devplatform/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/devplatform/1.1/3rd-party-license-agreements/
+    url: /helion/devplatform/3rd-party-license-agreements/
   devplatform2.0: 
   - text: HP Helion Documentation
     url: /
   - text: HP Helion Development Platform Documentation Home
-    url: /helion/devplatform/1.2/
+    url: /helion/devplatform/
   - text: Development Platform Installation & Configuration
-    url: /helion/devplatform/1.2/install/
+    url: /helion/devplatform/install/
   - text: Development Platform Community Edition Installation & Configuration
-    url: /helion/devplatform/1.2/install/community/
+    url: /helion/devplatform/install/community/
   - text: Application Developer Resources
-    url: /helion/devplatform/1.2/appdev/
+    url: /helion/devplatform/appdev/
   - text: IT Ops Resources
-    url: /helion/devplatform/1.2/sysadmin/
+    url: /helion/devplatform/sysadmin/
   - text: Sample Code
-    url: /helion/devplatform/1.2/appdev/#sample
+    url: /helion/devplatform/appdev/#sample
   - text: Release Notes
-    url: /helion/devplatform/1.2/release-notes/
+    url: /helion/devplatform/release-notes/
   - text: Related Documentation
-    url: /helion/devplatform/1.2/related-topics/
+    url: /helion/devplatform/related-topics/
   - text: Application Lifecycle Service Configuration and Deployment
-    url: /helion/devplatform/1.2/deploy/
+    url: /helion/devplatform/deploy/
   - text: ALS Admin Guide
-    url: /helion/devplatform/1.2/als/admin/
+    url: /helion/devplatform/als/admin/
   - text: End User License Agreement
-    url: /helion/devplatform/1.2/eula/
+    url: /helion/devplatform/eula/
   - text: Open Source and Third-Party Software License Agreements
-    url: /helion/devplatform/1.2/3rd-party-license-agreements/
+    url: /helion/devplatform/3rd-party-license-agreements/
   apinavigation:
   - text: Site home page
     url: /
@@ -547,25 +547,25 @@ navigation:
     url: https://apaas-docs.hpcloud.com
   commercial.test:
   - text: Version 1.0  documentation
-    url: http://docs.hpcloud.com/helion/openstack/1.1/
+    url: http://docs.hpcloud.com/helion/openstack/
   - text: All version 1.1 documentation
-    url: /helion/openstack/1.1/siteindex/
+    url: /helion/openstack/siteindex/
   - text: Getting started with version 1.1
-    url: /helion/openstack/1.1/landing/start/
+    url: /helion/openstack/landing/start/
   - text: Installing version 1.1  
-    url: /helion/openstack/1.1/landing/install/
+    url: /helion/openstack/landing/install/
   - text: Using version 1.1
-    url: /helion/openstack/1.1/landing/dashboards/
+    url: /helion/openstack/landing/dashboards/
   - text: Services in version 1.1
-    url: /helion/openstack/1.1/landing/services/
+    url: /helion/openstack/landing/services/
   - text: Storage in version 1.1
-    url: /helion/openstack/1.1/landing/storage/
+    url: /helion/openstack/landing/storage/
   - text: Networking (Neutron) in version 1.1
-    url: /helion/openstack/1.1/landing/network/
+    url: /helion/openstack/landing/network/
   - text: Identity Management in version 1.1
-    url: /helion/openstack/1.1/services/landing/identity/
+    url: /helion/openstack/services/landing/identity/
   - text: Security in version 1.1
-    url: /helion/openstack/1.1/landing/security/
+    url: /helion/openstack/landing/security/
   main1.0:
   - text: HP Helion Documentation
     url: /
@@ -967,11 +967,11 @@ navigation:
   - text: HP Helion Documentation
     url: /helion/openstack/carrier/
   - text: HP Helion OpenStack
-    url: /helion/openstack/1.1/
+    url: /helion/openstack/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
   - text: HP Helion Development Platform 
-    url: /helion/devplatform/1.1/
+    url: /helion/devplatform/
   - text: HP Helion Public Cloud
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
