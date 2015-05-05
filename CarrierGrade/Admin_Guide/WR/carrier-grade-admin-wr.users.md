@@ -39,26 +39,29 @@ The wrsroot Account
 This is a local, per-host, account created automatically when a new host is provisioned. On controller nodes, this
 account is available even before the config_controller script is executed.
 The default initial password is wrsroot.
-• The initial password must be changed immediately when you log in to controller-0 for the first time. For details,
+
+* The initial password must be changed immediately when you log in to controller-0 for the first time. For details,
 see the Titanium Server Software Installation Guide.
-• After five consecutive unsuccessful login attempts, further attempts are blocked for about five minutes.
+
+* After five consecutive unsuccessful login attempts, further attempts are blocked for about five minutes.
 Subsequent password changes must be executed on the active controller to ensure that they propagate to all other
 hosts in the cluster. Otherwise, they remain local to the host where they were executed, and are overwritten on the
 next reboot to match the password on the active controller.
 From the wrsroot account, you can execute commands requiring different privileges.
-• You can execute non-root level commands as a regular Linux user directly.
+
+* You can execute non-root level commands as a regular Linux user directly.
 If you do not have sufficient privileges to execute a command as a regular Linux user, you may receive a
 permissions error, or in some cases, the command may be reported as not found.
-• You can execute root-level commands as the root user.
+* You can execute root-level commands as the root user.
 Titanium Server | Titanium Server Overview | 17
 To become the root user, use the sudo command to elevate your privileges, followed by the command to be
 executed. For example, to run the config_controller command as the root user:
-$ sudo config_controller
+ sudo config_controller
 If a password is requested, provide the password for the wrsroot account.
-• You can execute OpenStack administrative commands as the Keystone admin user.
+* You can execute OpenStack administrative commands as the Keystone admin user.
 Source the script /etc/nova/openrc while working on the active controller to acquire Keystone
 administrative privileges.
-$ source /etc/nova/openrc
+ source /etc/nova/openrc
 [wrsroot@controller-0 ~(keystone_admin)]$
 The system prompt changes to indicate the new acquired privileges.
 Note:
@@ -82,23 +85,24 @@ managed; changes made on any host are propagated automatically to all hosts on t
 In other respects, LDAP user accounts behave as any local user account. They can be added to the sudoers list, and
 can acquire OpenStack administration credentials when executing on the active controller.
 LDAP user accounts share the following set of attributes:
-• The initial password is the name of the account.
-• The initial password must be changed immediately upon first login.
-• Requirements for new passwords include:
-• to be at least eight characters long
-• to have at least one lowercase character
-• to differ in at least three characters from the previous password
-• not to be evidently trivial to guess, such as a2345678, or a reversed version of the old password
-• Login sessions are logged out automatically after about 15 minutes of inactivity.
-• The accounts block following five consecutive unsuccessful login attempts. They unblock automatically after a
+* The initial password is the name of the account.
+* The initial password must be changed immediately upon first login.
+* Requirements for new passwords include:
+	* to be at least eight characters long
+	* to have at least one lowercase character
+	* to differ in at least three characters from the previous password
+	* not to be evidently trivial to guess, such as a2345678, or a reversed version of the old password
+* Login sessions are logged out automatically after about 15 minutes of inactivity.
+* The accounts block following five consecutive unsuccessful login attempts. They unblock automatically after a
 period of about five minutes.
 Titanium Server | Titanium Server Overview | 18
-• Home directories are created dynamically on first login. Note that home directories for local user accounts are
+* Home directories are created dynamically on first login. Note that home directories for local user accounts are
 created when the accounts are created.
-• All authentication attempts are recorded on the file /var/log/auth.log of the target host.
-• Home directories and passwords are backed up and restored by the system backup utilities.
+* All authentication attempts are recorded on the file /var/log/auth.log of the target host.
+* Home directories and passwords are backed up and restored by the system backup utilities.
 The following LDAP user accounts are available by default on newly deployed hosts, regardless of their personality:
 admin
+
 A cloud administrative account, comparable in purpose to the default admin account used in the web
 management interface.
 This user account operates on a restricted Linux shell, with very limited access to native Linux commands.
