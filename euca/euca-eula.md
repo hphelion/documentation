@@ -7,16 +7,10 @@ role1: All
 authors: Jayme P
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 # HP Helion Eucalyptus: Master Services Agreement
 
+The Master Services Agreement is available as a PDF download.
 
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
-
-## Part 3: Ancillary and Open Source Software ## {#ancilliary}
-
-Additional license authorizations related to ancillary, third party and open source software components are available at: [HP Helion Eucalyptus&#174; Open Source and Third-Party Software License Agreements](/eucalyptus/3rd-party-license-agreements/). 
-
-
-<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+- <a href="http://gaf2871b9d2d13cf45c1306b35bf01764.cdn.hpcloudsvc.com/HP Eucalyptus Master Services Agreement (MSA) for Products and Services_30 April_2015.pdf">Download the PDF document.</a>

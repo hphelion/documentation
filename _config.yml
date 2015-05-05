@@ -117,7 +117,7 @@ include: [commercial/GA1/Resources/_HP_iDoc_Resources/_HP_iDoc_zoomout.png]
 
 relative_permalinks: false
 
-#UNDER REVISION
+#PUBLISHED
 
 navigation: 
   main:
@@ -129,6 +129,8 @@ navigation:
     url: /helion/community/
   - text: HP Helion Development Platform 
     url: /helion/devplatform/1.1/
+  - text: HP Helion Eucalyptus
+    url: /eucalyptus/
   - text: HP Helion Public Cloud
     url: /publiccloud/overview/
   - text: HP Cloud Service Automation
@@ -968,8 +970,6 @@ navigation:
     url: /helion/openstack/1.1/
   - text: HP Helion OpenStack Community 
     url: /helion/community/
-  - text: HP Helion OpenStack Carrier Grade (Alpha)
-    url: /helion/openstack/carrier/home/
   - text: HP Helion Development Platform 
     url: /helion/devplatform/1.1/
   - text: HP Helion Public Cloud
@@ -981,9 +981,7 @@ navigation:
   - text: HP Cloud OS (Deprecated)
     url: /cloudos/
   eucalyptus:
-  - text: Eucalyptus Master Services Agreement
+  - text: Master Services Agreement
     url: /eucalyptus/masterservice
-  - text: Open Source and Third-Party Software License Agreements
-    url: /eucalyptus/3rd-party-license-agreements
 
 

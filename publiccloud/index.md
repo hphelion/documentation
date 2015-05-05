@@ -4,7 +4,7 @@ title: "Welcome to HP Helion Documentation"
 permalink: /
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
 <!-- <iframe src="https://player.vimeo.com/video/38064508?title=0&amp;byline=0&amp;portrait=0" width="580" height="420" frameborder="0"> </iframe> -->
 
@@ -21,7 +21,6 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <td>A commercial grade software solution that enables customers to deploy private, managed, hybrid, and public cloud services based on OpenStack.  HP Helion OpenStack reduces complexity of cloud deployments, and is the underlying platform for the Helion Development Platform.</td>
 </tr>
 
-
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/helion/community/">HP Helion OpenStack Community</a></span></p>
 </td>
@@ -34,6 +33,14 @@ HP Helion provides public, private, and managed cloud solutions to get you movin
 <td>Based on Cloud Foundry&#8482;, this add-on for Helion OpenStack empowers developers and IT professionals with an open development platform designed for agility.
 </td>
 </tr>
+
+<tr valign="top">
+<td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/eucalyptus/">HP Helion Eucalyptus</a></span></p>
+</td>
+<td>Open source software that enables IT leaders to easily build, deploy and manage AWS-compatible hybrid clouds. With HP Helion Eucalyptus, users can rapidly migrate existing AWS applications and workloads to a private or managed cloud environment.
+</td>
+</tr>
+
 
 <tr valign="top">
 <td style="border-width : 0px;"><p style=" text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><span style=" background-color: transparent; text-decoration: none;"><a href="/publiccloud/overview/">HP Helion Public Cloud</a></span></p>
