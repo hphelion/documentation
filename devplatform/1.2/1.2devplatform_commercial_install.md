@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Commercial Installation and Configuration"
-permalink: /helion/devplatform/1.2/install/
+permalink: /helion/devplatform/install/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -23,7 +23,7 @@ authors: Jayme P, Patrick F
 
 The HP Helion Development Platform (HDP) currently contains four components: Application Lifecycle Service (ALS), Marketplace Service, Messaging Service and Database Service.
 
-The following topics explain how to install and configure the HP Helion Development Platform. There is also [Troubleshooting](/helion/devplatform/1.2/install/troubleshooting/) documentation to handle issues that may occur.
+The following topics explain how to install and configure the HP Helion Development Platform. There is also [Troubleshooting](/helion/devplatform/install/troubleshooting/) documentation to handle issues that may occur.
 
 * [Prerequisites](#prerequisites)
 * [Downloading, Installing, and Updating the HP Helion Development Platform](#installing-the-hp-helion-development-platform)
@@ -40,7 +40,7 @@ The HP Helion Development Platform is installed in the overcloud of HP Helion Op
 
 Before you begin installation:
 
-- The Cinder block storage service must be configured with either [VSA](/helion/openstack/1.1/install/vsa/overview/) or [3Par](/helion/openstack/1.1/install/3par/).
+- The Cinder block storage service must be configured with either [VSA](/helion/openstack/install/vsa/overview/) or [3Par](/helion/openstack/install/3par/).
  
 - If you installed HP Helion OpenStack&#174; with **KVM** hypervisor support, configure HP StoreVirtual VSA for Block Storage or configure HP 3PAR StoreServ Storage.
 
@@ -635,10 +635,10 @@ Increase the Ports quota to at least 100 using the following command in the [Net
 	**Note:** Downloading multiple services simultaneously is not supported, and will
 	leave the server in an error state.
  
-4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/1.1/marketplace/#install).
+4. Log back into the Horizon console as a non-admin user. Click on the **Marketplace** panel under the current Project to begin using the Marketplace Service. You may now install [Marketplace packages](/helion/devplatform/marketplace/#install).
 
 
-Your installation is now complete. If you encounter problems, refer to the [Troubleshooting](/helion/devplatform/1.1/install/troubleshooting/) documentation.
+Your installation is now complete. If you encounter problems, refer to the [Troubleshooting](/helion/devplatform/install/troubleshooting/) documentation.
 
 
 

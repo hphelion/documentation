@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/java/
+permalink: /helion/devplatform/als/user/deploy/languages/java/
 title: "HP Helion 1.2 Development Platform: Developing in Java"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -17,7 +17,7 @@ authors: Jayme P
 
 Whether you're deploying an application to the HP Helion Development Platform, a Cloud Foundry-based Platform as a Service (PaaS), or writing applications that take advantage of HP Helion OpenStack&#174; to manage infrastructure or software services, tools to enable successful development are available in Java.
 
-Deployable [sample applications](/helion/devplatform/1.2/appdev/#java) are available in this language.
+Deployable [sample applications](/helion/devplatform/appdev/#java) are available in this language.
 
 ## Using JDBC[](#using-jdbc "Permalink to this headline")
 
@@ -59,7 +59,7 @@ API:
 
 ### Example[](#example "Permalink to this headline")
 
-The [Java database sample](/helion/devplatform/1.2/workbook/database/java/) sample
+The [Java database sample](/helion/devplatform/workbook/database/java/) sample
 demonstrates a simple Java application using a MySQL service.
 
 ## CATALINA\_OPTS {#catalina-opts}

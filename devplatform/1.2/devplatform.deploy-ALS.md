@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Configuring and Deploying an Application Lifecycle Service Cluster"
-permalink: /helion/devplatform/1.2/deploy/
+permalink: /helion/devplatform/deploy/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -27,7 +27,7 @@ The document covers the following sections:
 - [Configuring and Deploying  an ALS Cluster](#configure)
 
 ##Prerequisites {#prereq}
-You need to have [installed](/helion/devplatform/1.2/install/) the Helion Development Platform.
+You need to have [installed](/helion/devplatform/install/) the Helion Development Platform.
 
 ##Configuring an ALS Cluster {#configure}
 1.	In the Horizon UI, from the **Project** tab, open the **Application Lifecycle Service** tab, and select the **Clusters** sub-tab.<br /><img src="media/ALSConfig1.png"/>
@@ -48,12 +48,12 @@ You need to have [installed](/helion/devplatform/1.2/install/) the Helion Develo
 
 5.	Select the **Application Services** tab of the **Create Cluster** dialog, and choose the application services to enable in the cluster.<br /><img src="media/ALSConfig4.png"/>
 
-6.	Select the **Database** tab of the **Create** **Cluster** dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an OpenStack&#174; MySQL database can be found [here](/helion/devplatform/1.2/connectdatabase/). <br /><img src="media/ALSConfig5.png"/>
+6.	Select the **Database** tab of the **Create** **Cluster** dialog, and choose the databases to enable in the cluster. Detailed notes on how to create or connect to an OpenStack&#174; MySQL database can be found [here](/helion/devplatform/connectdatabase/). <br /><img src="media/ALSConfig5.png"/>
  
 7.	Click on the **Create** button. You will see the cluster building as shown below.<br /><img src="media/ALSConfig6.png"/>
  
 8.	Once the cluster has been built, you can access it by clicking on the URL of the created cluster, which can be reached in the **Clusters** view or by the **Cluster Details** page. <br /><img src="media/ALSConfig7.png"/>
  
-1. The [Application Lifecycle Service Documentation ](/helion/devplatform/1.2/als/) provides an overview of how to administer and use the configured cluster, which opens up in a separate tab and requires the admin credentials set in step 3 to access and provision.
+1. The [Application Lifecycle Service Documentation ](/helion/devplatform/als/) provides an overview of how to administer and use the configured cluster, which opens up in a separate tab and requires the admin credentials set in step 3 to access and provision.
 
 ----

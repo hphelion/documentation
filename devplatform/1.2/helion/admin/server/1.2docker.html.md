@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/server/docker/
+permalink: /helion/devplatform/als/admin/server/docker/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Docker and Fence"
 product-version1: HP Helion Development Platform
@@ -19,7 +19,7 @@ authors: Jayme P
 # HP Helion 1.2 Development Platform: Docker and Fence {#docker-fence "Permalink to this headline"}
 [See the Helion 1.0 Development Platform version of this page](/als/v1/admin/server/docker/)
 
-Application Lifecycle Service's [DEA role](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-dea) runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the *fence* process, which in turn uses
+Application Lifecycle Service's [DEA role](/helion/devplatform/als/admin/reference/architecture/#architecture-dea) runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the *fence* process, which in turn uses
 [Docker](http://docs.docker.io/en/latest/) to create and destroy Linux
 containers on demand.
 
@@ -35,7 +35,7 @@ accessible if needed to customize or create new container images.
 
 Application containers are created from a base Docker image (a template used to create Linux containers). Admins can create new images to add specific software required by applications or update operating system packages.
 
-See also the [Upgrade the Docker Image](/helion/devplatform/1.2/als/admin/best-practices/#upgrade-docker) section in the [Best Practices](/helion/devplatform/1.2/als/admin/best-practices/) reference, which shows how to modify the Docker base image **without** changing *kato config*. 
+See also the [Upgrade the Docker Image](/helion/devplatform/als/admin/best-practices/#upgrade-docker) section in the [Best Practices](/helion/devplatform/als/admin/best-practices/) reference, which shows how to modify the Docker base image **without** changing *kato config*. 
 
 To create a new base image for Application Lifecycle Service to use for application containers, perform the following steps **on all nodes running the DEA role**:
 
@@ -81,7 +81,7 @@ If an administrator wants to run arbitrary commands in all application
 containers, global admin hooks can be set to run immediately after
 corresponding user-specified deployment hooks (pre-staging,
 post-staging, pre-running) set in application 
-[manifest.yml](/helion/devplatform/1.2/als/user/deploy/manifestyml/) files.
+[manifest.yml](/helion/devplatform/als/user/deploy/manifestyml/) files.
 
 These hooks must be:
 
@@ -178,7 +178,7 @@ as a central repository for your container templates.
 
         sudo docker build -rm -t api.paas.example.com:49156/exampleco/newimg .
 
-	If the new image is simply an updated version of the default base image, you can tag the image **helion/stack-alsek:latest** (as described in the [Ubuntu Security Updates](/helion/devplatform/1.2/als/admin/best-practices/#bestpractices-ubuntu-security) and skip the following step. 
+	If the new image is simply an updated version of the default base image, you can tag the image **helion/stack-alsek:latest** (as described in the [Ubuntu Security Updates](/helion/devplatform/als/admin/best-practices/#bestpractices-ubuntu-security) and skip the following step. 
 
 
 5.  Push the newly built Docker image to the registry:
@@ -200,7 +200,7 @@ as a central repository for your container templates.
     This step only needs to be done once, as the configuration change is
     shared with all nodes.
 
-The [Upgrade the Docker Image](/helion/devplatform/1.2/als/admin/best-practices/#upgrade-docker) section in the [Best Practices](/helion/devplatform/1.2/als/admin/best-practices/) documentation explains how to modify the Docker base image without changing *kato config*. 
+The [Upgrade the Docker Image](/helion/devplatform/als/admin/best-practices/#upgrade-docker) section in the [Best Practices](/helion/devplatform/als/admin/best-practices/) documentation explains how to modify the Docker base image without changing *kato config*. 
 
 
 ## Privileged Containers {#docker-privileged-containers} 

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/cgiapppsgi/
+permalink: /helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/
 published: true
 title: "HP Helion 1.2 Development Platform: CGI Application: PSGI "
 product-version1: HP Helion Development Platform

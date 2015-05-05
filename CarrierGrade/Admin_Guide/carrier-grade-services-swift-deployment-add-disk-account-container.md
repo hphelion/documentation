@@ -26,7 +26,7 @@ PageRefresh();
 
 <!-- <p style="font-size: small;"> <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9664; PREV</a> | <a href=" /helion/openstack/carrier/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/carrier/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> -->
 
-<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/swift/deployment/add-proxy-node/">&#9664; PREV</a> | <a href=" /helion/openstack/1.1/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/1.1/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> 
+<p style="font-size: small;"> <a href=" /helion/openstack/services/swift/deployment/add-proxy-node/">&#9664; PREV</a> | <a href=" /helion/openstack/services/object/swift/expand-cluster/">&#9650; UP</a> | <a href="/helion/openstack/services/swift/deployment/add-disk-scale-out/"> NEXT &#9654</a> </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Adding Disks to Account or Container Rings
 

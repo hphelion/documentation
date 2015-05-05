@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/client-ref/spacequotas/
+permalink: /helion/devplatform/als/user/reference/client-ref/spacequotas/
 title: "HP Helion 1.2 Development Platform: ALS Command Reference: Space Quotas"
 product: devplatform2.0
 product-version1: HP Helion Development Platform

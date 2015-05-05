@@ -155,7 +155,7 @@ To use, given number of zones and the maximum number of disk drives anticipated 
 </table>
 
 
- <a href=" /helion/openstack/1.1/services/swift/deployment-scale-out/"> Back</a> 
+ <a href=" /helion/openstack/services/swift/deployment-scale-out/"> Back</a> 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

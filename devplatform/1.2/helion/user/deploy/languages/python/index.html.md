@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/python/
+permalink: /helion/devplatform/als/user/deploy/languages/python/
 published: true
 title: "HP Helion 1.2 Development Platform: Developing In Python "
 product-version1: HP Helion Development Platform
@@ -62,8 +62,8 @@ launch the application.</li>
 Management of the deployed application and its services happens through a web
 user interface or a command line client.  To learn more see:
 
-- [Working with applications in Python](/helion/devplatform/1.2/als/user/deploy/languages/python/)
-- The [manifest.yml](/helion/devplatform/1.2/als/user/deploy/manifestyml/) reference.
+- [Working with applications in Python](/helion/devplatform/als/user/deploy/languages/python/)
+- The [manifest.yml](/helion/devplatform/als/user/deploy/manifestyml/) reference.
 
 ## Controlling HP Helion with your Application {#controlling-hp-helion-with-your-application}
 If your Python application is going to control HP Helion resources, it can
@@ -114,13 +114,13 @@ That example used the unified OpenStack CLI.  A similar thing would work for
 the network or object store clients.
    
 By default, Application Lifecycle Service uses the built-in Python
-[*Buildpack*](/helion/devplatform/1.2/als/user/deploy/buildpack/#buildpacks) to deploy Python
+[*Buildpack*](/helion/devplatform/als/user/deploy/buildpack/#buildpacks) to deploy Python
 applications. To deploy applications using this buildpack, your
 application will need the following in the root directory of the
 application:
 
 -   a list of module requirements in a
-    [*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/),
+    [*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/),
     [requirements.txt
     (pip)](http://www.pip-installer.org/en/latest/cookbook.html#requirements-files),
     or *requirements.pypm* ([pypm](http://code.activestate.com/pypm/))
@@ -146,7 +146,7 @@ Python with the Legacy Buildpack[](#python-with-the-legacy-buildpack "Permalink 
 
 If your Python application has configuration for running on Application Lifecycle Service
 2.10 or earlier, you can deploy it using the [*Legacy
-Buildpack*](/helion/devplatform/1.2/als/user/deploy/buildpack/#buildpacks-legacy), which provides an
+Buildpack*](/helion/devplatform/als/user/deploy/buildpack/#buildpacks-legacy), which provides an
 updated version of the old Python framework.
 
 With the Legacy Buildpack, applications are run with
@@ -168,12 +168,12 @@ uWSGI*](#uwsgi-python-static-files).
 Django[](#django "Permalink to this headline")
 -----------------------------------------------
 
--   [Deploying Django applications](/helion/devplatform/1.2/als/user/deploy/languages/python/django/)
-    -   [Getting started](/helion/devplatform/1.2/als/user/deploy/languages/python/django/#getting-started)
-    -   [Configuring database](/helion/devplatform/1.2/als/user/deploy/languages/python/django/#configuring-database)
-    -   [Configuring static media](/helion/devplatform/1.2/als/user/deploy/languages/python/django/#configuring-static-media)
+-   [Deploying Django applications](/helion/devplatform/als/user/deploy/languages/python/django/)
+    -   [Getting started](/helion/devplatform/als/user/deploy/languages/python/django/#getting-started)
+    -   [Configuring database](/helion/devplatform/als/user/deploy/languages/python/django/#configuring-database)
+    -   [Configuring static media](/helion/devplatform/als/user/deploy/languages/python/django/#configuring-static-media)
     -   [Configuring project
-        location](/helion/devplatform/1.2/als/user/deploy/languages/python/django/#configuring-project-location)
+        location](/helion/devplatform/als/user/deploy/languages/python/django/#configuring-project-location)
 
 Application URL[](#application-url "Permalink to this headline")
 -----------------------------------------------------------------
@@ -247,9 +247,9 @@ Non-HTTP apps that run as an Application Lifecycle Service application under the
 the Health Manager.
 
 To deploy worker applications, you need to use the
-[*command*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#command) key and set the
+[*command*](/helion/devplatform/als/user/deploy/manifestyml/#command) key and set the
 [*processes:
-web*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#web) key to
+web*](/helion/devplatform/als/user/deploy/manifestyml/#web) key to
 Null ("\~").
 
 ### Example {#example}
@@ -266,7 +266,7 @@ Null ("\~").
 
 It is possible to serve static files with uWSGI using
 `processes: web:` in the
-[*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/) file to specify
+[*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/) file to specify
 folders that will be served statically and not by the app.
 
 To make a single folder serve statically, use `--check-static`:
@@ -316,18 +316,18 @@ for an example.
 **Note**
 
 To install packages from custom repository/mirror. Use the
-[*PIP\_OPTS*](/helion/devplatform/1.2/als/user/reference/environment/#term-pip-opts) or
-[*PYPM\_OPTS*](/helion/devplatform/1.2/als/user/reference/environment/#term-pypm-opts)
+[*PIP\_OPTS*](/helion/devplatform/als/user/reference/environment/#term-pip-opts) or
+[*PYPM\_OPTS*](/helion/devplatform/als/user/reference/environment/#term-pypm-opts)
 [*environment
-variables*](/helion/devplatform/1.2/als/user/reference/environment/#environment-variables).
+variables*](/helion/devplatform/als/user/reference/environment/#environment-variables).
 
 Application dependencies such as web frameworks or modules from PyPI can
-be installed using [*PyPM*](/helion/devplatform/1.2/als/user/reference/glossary/#term-pypm)
-and/or [*pip*](/helion/devplatform/1.2/als/user/reference/glossary/#term-pip).
+be installed using [*PyPM*](/helion/devplatform/als/user/reference/glossary/#term-pypm)
+and/or [*pip*](/helion/devplatform/als/user/reference/glossary/#term-pip).
 
 ### PyPM[](#pypm "Permalink to this headline")
 
-Definition [*PyPM*](/helion/devplatform/1.2/als/user/reference/glossary/#term-pypm)
+Definition [*PyPM*](/helion/devplatform/als/user/reference/glossary/#term-pypm)
 
 To install packages during application deployment with PyPM, add the
 requirements to manifest.yml:
@@ -351,13 +351,13 @@ variable.
 
 ### pip {#pip}
 
-Definition [*pip*](/helion/devplatform/1.2/als/user/reference/glossary/#term-pip)
+Definition [*pip*](/helion/devplatform/als/user/reference/glossary/#term-pip)
 
 In addition - or as alternative - to
-[*PyPM*](/helion/devplatform/1.2/als/user/reference/glossary/#term-pypm), your application
+[*PyPM*](/helion/devplatform/als/user/reference/glossary/#term-pypm), your application
 can also make use of pip to install certain dependencies. The above
 tornado-chat-mongo sample installs "pycurl" using
-[*pip*](/helion/devplatform/1.2/als/user/reference/glossary/#term-pip):
+[*pip*](/helion/devplatform/als/user/reference/glossary/#term-pip):
 
     requirements:
       pypm:

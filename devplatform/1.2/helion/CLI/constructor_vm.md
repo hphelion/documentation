@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/client/constructor
+permalink: /helion/devplatform/als/client/constructor
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: HP Application Lifecycle Service (ALS) Constructor Virtual Machine"
 product-version1: HP Helion Development Platform
@@ -124,7 +124,7 @@ During the boot process the CVM will detect that a [*cloud-init*](http://cloudin
 8. The CVM terminates. (Unless the termination is [overridden](#disable).)
 
 ## Method #4: Boot Without a Configuration File (Helion public cloud) {#publiccloud}
-This is the process used for the [Developer Quick-Start trial](/helion/devplatform/1.2/ALS-developer-trial-quick-start/). During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta. 
+This is the process used for the [Developer Quick-Start trial](/helion/devplatform/ALS-developer-trial-quick-start/). During the boot process the CVM will detect that a configuration file is not present. When the user logs in, the CVM will prompt the user to run a script which will create a configuration file specifically tailored for the public beta. 
 
 **Note**: Using this method requires the user to set up the network to the CVM properly, including all routing information, security groups, ssh keys, accessible IP addresses, and so on.
 

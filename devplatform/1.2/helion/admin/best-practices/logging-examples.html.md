@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/best-practices/logging-examples/
+permalink: /helion/devplatform/als/admin/best-practices/logging-examples/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Log Drain Examples "
 product-version1: HP Helion Development Platform
@@ -50,7 +50,7 @@ software or services.
 	
 		kato log drain add drain-name udp://logs.papertrailapp.com:port#
 
-Papertrail requires systail log lines to have `<13>l` at the beginning of each line. Make sure the drain you are forwarding is formatted this way (see example in [*Saving Custom Log Formats*](/helion/devplatform/1.2/als/admin/server/logging/#logging-drains-save-format)).
+Papertrail requires systail log lines to have `<13>l` at the beginning of each line. Make sure the drain you are forwarding is formatted this way (see example in [*Saving Custom Log Formats*](/helion/devplatform/als/admin/server/logging/#logging-drains-save-format)).
 
 <!-- Loggly[](#loggly "Permalink to this headline")
 

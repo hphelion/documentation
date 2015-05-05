@@ -1,6 +1,6 @@
 ---
-permalink: /helion/openstack/1.1/services/
-redirect: /helion/openstack/1.1/services/overview/
+permalink: /helion/openstack/services/
+redirect: /helion/openstack/services/overview/
 layout: redirect
 
 ---

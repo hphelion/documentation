@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/other-frameworks/
+permalink: /helion/devplatform/als/user/deploy/other-frameworks/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Generic and Standalone Frameworks"
 product-version1: HP Helion Development Platform
@@ -28,7 +28,7 @@ not fit any of the other frameworks available in Application Lifecycle Service.
 These two frameworks make no assumptions about the application type and
 can be customized to run a wide variety of non-standard applications.
 
-Any language [*runtime*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#runtime)
+Any language [*runtime*](/helion/devplatform/als/user/deploy/manifestyml/#runtime)
 available on the server can be specified in the config file. If a
 runtime is not specified, Python 2.7 is made available by default.
 
@@ -36,13 +36,13 @@ Generic[](#generic "Permalink to this headline")
 -------------------------------------------------
 
 The Generic framework requires a custom [*processes:
-web:*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#processes) setting in
+web:*](/helion/devplatform/als/user/deploy/manifestyml/#processes) setting in
 *manifest.yml* specifying a command to start the web process (e.g. a
 custom web server).
 
 The example below shows a web process that serves static files from the
 application directory using Python's
-[SimpleHTTPServer](/helion/devplatform/1.2/als/admin/server/):
+[SimpleHTTPServer](/helion/devplatform/als/admin/server/):
 
     framework:
         type: generic
@@ -51,14 +51,14 @@ application directory using Python's
 
 If you wish to run an application *without* a web interface (i.e. a
 background "worker" process), [*set 'processes: web:' to
-Null*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#processes-web-null) or use the
+Null*](/helion/devplatform/als/user/deploy/manifestyml/#processes-web-null) or use the
 Standalone framework instead.
 
 Standalone[](#standalone "Permalink to this headline")
 -------------------------------------------------------
 
 The Standalone framework uses a custom command specified in the
-[*command:*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#command) key to start a
+[*command:*](/helion/devplatform/als/user/deploy/manifestyml/#command) key to start a
 background worker process.
 
 The example below shows *manifest.yml* configuration for an application

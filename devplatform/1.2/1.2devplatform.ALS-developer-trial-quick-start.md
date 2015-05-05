@@ -1,7 +1,7 @@
 ---
 layout: trial-quick-start-devplatform-10
 title: "HP Helion 1.2 Development Platform: Quick Start Developer Trial "
-permalink: /helion/devplatform/1.2/ALS-developer-trial-quick-start/
+permalink: /helion/devplatform/ALS-developer-trial-quick-start/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -38,7 +38,7 @@ The Quick Start Developer Trial is the fastest way to create a sandbox environme
 Before you can begin your Quick Start Developer Trial, you will need to do three things.
 
 1. Register for your free <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a> account. Please keep your username and password handy as you will be asked for them during installation.
-2. [Download and install](/helion/devplatform/1.2/als/client/download/) the *cf-mgmt* command-line tool appropriate for your operating system.
+2. [Download and install](/helion/devplatform/als/client/download/) the *cf-mgmt* command-line tool appropriate for your operating system.
 3. [Download](http://clients.als.hpcloud.com/1.2/config/trial.yml) the Trial.yml file.
 
 <!--If you don't already have a user account on the <a href="https://horizon.hpcloud.com/register" target="_blank">HP Helion Public Cloud</a>, take advantage of the <a href="http://www.hpcloud.com/cloud-credit" target="_blank">free trial offer</a> to sign up now. You will be asked to provide a phone number for verification and a credit card during registration, but there is no charge.-->
@@ -84,10 +84,10 @@ The cluster will be running on a single virtual machine in your account that wil
 
 After the *cf-mgmt* tool creates the cluster, it presents you with the ALS Console URL. This URL will have the form *api.<*ipaddress*>.xip.io*  For example: *api.255.255.255.255.xip.io* <br /> Use this URL in your web browser to navigate to the web-based ALS management console and then log in using the first username and first password you specified in step 9. <br />**Note**: When launching the web-based ALS management console, you may be "warned" that the site has a self-signed certificate or that the site is "not trusted". These "warnings" can be safely ignored.
 
-After you log into the Console, you may wish to access the [ALS User Documentation](/helion/devplatform/1.2/als/user/) for further instructions for creating users and deploying applications.
+After you log into the Console, you may wish to access the [ALS User Documentation](/helion/devplatform/als/user/) for further instructions for creating users and deploying applications.
 
 ## Explore Sample Applications {#samples}
-Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/1.2/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&#174; services. 
+Your infrastructure is now ready for development. You can find some simple sample applications in our [Application Developer](/helion/devplatform/appdev/) section. These sample applications provide insight on how to push applications and connect applications to HP Helion OpenStack&#174; services. 
 
 ## Troubleshooting and Termination {#terminate}
 If an error occurs during installation, the easiest response is simply to terminate the cluster and start over. You can also terminate the cluster when you are done exploring your Developer Quick Start Trial.

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/services/port-service/
+permalink: /helion/devplatform/als/user/services/port-service/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Port Service (Harbor) "
 product-version1: HP Helion Development Platform
@@ -18,7 +18,7 @@ authors: Jayme P
 [See the Helion 1.0 Development Platform version of this page](/als/v1/user/services/port-service/)
 
 HTTP and HTTPS ports and routing are provided automatically for all web applications deployed to Application Lifecycle Service (unless [processes:
-web:](/helion/devplatform/1.2/als/user/deploy/manifestyml/#web) is set to
+web:](/helion/devplatform/als/user/deploy/manifestyml/#web) is set to
 "\~").
 
 If your application requires additional TCP or UDP ports, use the Harbor service to allocate them.
@@ -37,7 +37,7 @@ Additional ports are provisioned like any other data service. To request a port 
 
     helion create-service harbor debug-port
 
-To request a port from Harbor in the **manifest.yml** file, add it in the [**services**](/helion/devplatform/1.2/als/user/deploy/manifestyml/#services) block.
+To request a port from Harbor in the **manifest.yml** file, add it in the [**services**](/helion/devplatform/als/user/deploy/manifestyml/#services) block.
 For example:
 
     name: port-test
@@ -94,7 +94,7 @@ following two settings will also be shown:
 
 To remotely check the settings and credentials of any Application Lifecycle Service service,
 use the [**helion
-service**](/helion/devplatform/1.2/als/user/reference/client-ref/#command-services) command.
+service**](/helion/devplatform/als/user/reference/client-ref/#command-services) command.
 
 ## Harbor Environment Variables {#port-service-env-vars}
 
@@ -134,7 +134,7 @@ container with a construct such as:
 **Note**
 
 To use declarations like these in
-[*hooks*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#hooks), put them in a
+[*hooks*](/helion/devplatform/als/user/deploy/manifestyml/#hooks), put them in a
 separate bash script. Brace expansion and grouping cannot be used directly in YAML files.
 
 ##Setting the Port Protocols {#setting-the-port-protocols}

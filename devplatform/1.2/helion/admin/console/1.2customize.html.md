@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/console/customize/
+permalink: /helion/devplatform/als/admin/console/customize/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Management Console Customization "
 product-version1: HP Helion Development Platform
@@ -21,7 +21,7 @@ authors: Jayme P
 # HP Helion 1.2 Development Platform: Management Console Customization {#customization}
 [See the Helion 1.0 Development Platform version of this page](/als/v1/admin/console/customize/)
 
-The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the [Management Console](/helion/devplatform/1.2/als/user/console/#management-console) interface.
+The Management Console can be extensively customized and themed. Administrators can add or remove runtimes, frameworks and services from the system, and change the look and content of the [Management Console](/helion/devplatform/als/user/console/#management-console) interface.
 
 -   [Console Settings](#console-settings)
 	-   [Product](#product)

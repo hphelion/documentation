@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/client-ref/management/
+permalink: /helion/devplatform/als/user/reference/client-ref/management/
 title: "HP Helion 1.2 Development Platform: ALS Command Reference: Management"
 product: devplatform2.0
 product-version1: HP Helion Development Platform

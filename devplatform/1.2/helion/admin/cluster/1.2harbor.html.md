@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/cluster/harbor/
+permalink: /helion/devplatform/als/admin/cluster/harbor/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Harbor TCP/UDP Port Service "
 product-version1: HP Helion Development Platform
@@ -31,7 +31,7 @@ router in Application Lifecycle Service is designed for HTTP(S) traffic only, if
 applications require other protocols, consider setting up Harbor.
 
 Information on using the Harbor port service with deployed applications
-is in the [Port Service (Harbor) documentation](/helion/devplatform/1.2/als/user/services/port-service/#port-service).
+is in the [Port Service (Harbor) documentation](/helion/devplatform/als/user/services/port-service/#port-service).
 
 ## Architecture {#architecture}
 
@@ -52,7 +52,7 @@ externally facing port.
 
 ## Requirements & Setup {#requirements-setup}
 
-An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other [data service roles](/helion/devplatform/1.2/als/admin/cluster/#data-services-nodes).
+An Application Lifecycle Service VM can be configured as a Harbor node in the same way as other [data service roles](/helion/devplatform/als/admin/cluster/#data-services-nodes).
 For example:
 
     kato node attach -e harbor CORE_IP
@@ -69,7 +69,7 @@ view the current port range on the Harbor node by entering:
 
 For each new service provisioned, Harbor will chose a random unassigned
 port from this range. This range can be set in the Management Console's
-[Settings](/helion/devplatform/1.2/als/admin/console/customize/#console-settings) section, or by
+[Settings](/helion/devplatform/als/admin/console/customize/#console-settings) section, or by
 using the `kato config set ...` command.
 
 A Harbor node can run standalone, or on the same node as your router. This may be the preferred option if you wish to use the same DNS name for Harbor and Router services. Otherwise, create a new DNS entry for the Harbor node so that consumers of the port do not have to address it by its external IP.

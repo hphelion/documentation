@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/reference/troubleshoot/
+permalink: /helion/devplatform/als/admin/reference/troubleshoot/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Troubleshooting "
 product-version1: HP Helion Development Platform
@@ -112,7 +112,7 @@ the Application Lifecycle Service client reported incorrectly.
 This error is reported when the Application Lifecycle Service server does not have an IP
 Address. To investigate and resolve, try the following:
 
--   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [tty console](/helion/devplatform/1.2/als/user/reference/glossary/#term-tty-console):
+-   Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [tty console](/helion/devplatform/als/user/reference/glossary/#term-tty-console):
 
         arp -n
 

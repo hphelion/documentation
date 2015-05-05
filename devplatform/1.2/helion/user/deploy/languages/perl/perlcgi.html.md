@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/perlcgi/
+permalink: /helion/devplatform/als/user/deploy/languages/perl/perlcgi/
 title: "HP Helion 1.2 Development Platform: Perl CGI "
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -16,7 +16,7 @@ authors: Jayme P
 
 The *perlcgi* framework can be used to run *any* CGI script, but, like the [perl](index.html#perl-index) framework, it provides ActivePerl in the default PATH and supports module installation via [PPM](index.html#perl-ppm) and [*cpanm*](index.html#perl-cpanm).
 
-Unlike the perl framework, setting the [*start-file*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#start-file) option
+Unlike the perl framework, setting the [*start-file*](/helion/devplatform/als/user/deploy/manifestyml/#start-file) option
 has no effect, as there is no permanently running application. A new
 instance of a CGI script is started for each request.
 

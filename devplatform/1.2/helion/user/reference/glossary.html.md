@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/glossary/
+permalink: /helion/devplatform/als/user/reference/glossary/
 title: "HP Helion 1.2 Development Platform: Glossary"
 product: devplatform2.0
 product-version1: HP Helion Development Platform

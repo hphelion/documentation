@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/troubleshoot/
+permalink: /helion/devplatform/als/user/reference/troubleshoot/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Troubleshooting"
 product-version1: HP Helion Development Platform
@@ -19,7 +19,7 @@ authors: Jayme P
 
 ## SSH to Failed Containers[](#ssh-to-failed-containers "Permalink to this headline")
 
-For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [container](/helion/devplatform/1.2/als/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/) for details on the `helion ssh` command.
+For troubleshooting and diagnostic purposes, it is possible to use helion ssh to access a [container](/helion/devplatform/als/user/reference/glossary/#term-container) that has recently failed or did not start correctly. Containers are kept for one hour before being reclaimed. See the [Command Reference](/helion/devplatform/als/user/reference/client-ref/) for details on the `helion ssh` command.
 
 ## Checking the Logs[](#checking-the-logs "Permalink to this headline")
 
@@ -62,7 +62,7 @@ This error is reported when the Application Lifecycle Service server does not ha
 
 
 
-- Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [tty console](/helion/devplatform/1.2/als/user/reference/glossary/#term-tty-console):
+- Verify the ARP tables on the hypervisor host, and on the Application Lifecycle Service server through its [tty console](/helion/devplatform/als/user/reference/glossary/#term-tty-console):
 
         arp -n
 

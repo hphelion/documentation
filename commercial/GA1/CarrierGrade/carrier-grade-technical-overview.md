@@ -34,7 +34,7 @@ It is  designed to offer a number of value-added services that complement and en
 
 ## HP Helion OpenStack Services- Functional Overview {#Helion-services}
 
-The following table outlines the functionality of HP Helion OpenStack services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](/helion/openstack/1.1/services/overview/) page.
+The following table outlines the functionality of HP Helion OpenStack services based on the type of users - Users and Administrators. For a complete description of these services, see the [Services Overview](/helion/openstack/services/overview/) page.
 
 
 ## Deployment architecture {#deploy-arch}  
@@ -121,7 +121,7 @@ Backup and restore scripts and procedures are provided for the seed VM, underclo
 
 Backup and Restore of VM instances/snapshots and volumes/snapshots for workloads in the cloud is supported using the Object Storage service.
 
-For more information see [HP Helion OpenStack&#174; Back Up and Restore](/helion/openstack/1.1/backup.restore/)
+For more information see [HP Helion OpenStack&#174; Back Up and Restore](/helion/openstack/backup.restore/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 -->

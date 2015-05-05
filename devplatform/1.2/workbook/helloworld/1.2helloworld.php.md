@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: PHP Hello World Sample"
-permalink: /helion/devplatform/1.2/workbook/helloworld/php/
+permalink: /helion/devplatform/workbook/helloworld/php/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -20,10 +20,10 @@ SME1: Sam C
 This very simple PHP web app displays the text "Hello World!". This is a demonstration of the minimum requirements to build a functional application. Use this sample to ensure that you have set up your environment for deployment to Helion Development Platform.
 
 ##Prerequisites
-- An installation of the [HP Helion Development Platform](/helion/devplatform/1.2/install/).
-- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.2/als/admin/cluster/)
-- Access to the [Helion command-line client (CLI)](/helion/devplatform/1.2/als/user/client/).
-- Access to the web-based [ALS Management Console](/helion/devplatform/1.2/als/user/console/).
+- An installation of the [HP Helion Development Platform](/helion/devplatform/install/).
+- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/als/admin/cluster/)
+- Access to the [Helion command-line client (CLI)](/helion/devplatform/als/user/client/).
+- Access to the web-based [ALS Management Console](/helion/devplatform/als/user/console/).
 - Register for access to the [HP Helion Development Platform](https://helion.hpwsportal.com/catalog.html#/Home/Show) (HDN).
 
 <!--
@@ -43,11 +43,11 @@ instructions further down. But before you push the button, ensure that you have 
 This app uses the [Cloud Foundry PHP buildpack](https://github.com/cloudfoundry/php-buildpack). For more technical details about buildpacks and the *composer.json* file, please see the README included in the [download package](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.2/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
-The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/1.2/eclipse/) to deploy.
+The Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally [use the plugin](/helion/devplatform/eclipse/) to deploy.
 
-1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.2/als/user/reference/client-ref/)
+1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br /> If you are not, execute
 	
 		helion target https://api.xx.xx.xx.xx.xip.io	
@@ -88,6 +88,6 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 
 ##Key Learnings
 1. ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
-2. You interact with and deploy your app using the [ALS command line client](/helion/devplatform/1.2/als/user/reference/client-ref/) or the web-based [ALS Management Console](/helion/devplatform/1.2/als/user/console/).
+2. You interact with and deploy your app using the [ALS command line client](/helion/devplatform/als/user/reference/client-ref/) or the web-based [ALS Management Console](/helion/devplatform/als/user/console/).
 
-[Exit Samples](/helion/devplatform/1.2/appdev/) | [Previous Sample](/helion/devplatform/1.2/workbook/messaging/php/) | [Next Sample](/helion/devplatform/1.2/workbook/database/php/)
+[Exit Samples](/helion/devplatform/appdev/) | [Previous Sample](/helion/devplatform/workbook/messaging/php/) | [Next Sample](/helion/devplatform/workbook/database/php/)

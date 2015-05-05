@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"><a href="/helion/openstack/1.1/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/1.1/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/1.1/install/kvm/">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/1.1/install/esx/"> Installing on an ESX hypervisor&#9654;</a> </p> 
+<p style="font-size: small;"><a href="/helion/openstack/technical-overview/">&#9664; Technical Overview</a> | <a href="/helion/openstack/install/overview/">&#9650; Installation Overview</a> | <a href="/helion/openstack/install/kvm/">Installing on a KVM hypervisor &#9654;</a> OR <a href="/helion/openstack/install/esx/"> Installing on an ESX hypervisor&#9654;</a> </p> 
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Create the VSD Node
@@ -151,8 +151,8 @@ You can use xrdp to connect to the gurst VM from the KVM host and launch the VSD
 [Create the VSC Node](/helion/openstack/carrier/install/vsc-node/)
 
 <!--
-* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm/)
-* [Installing and configuring on an ESX hypervisor](/helion/openstack/1.1/install/esx/)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/install/kvm/)
+* [Installing and configuring on an ESX hypervisor](/helion/openstack/install/esx/)
 -->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

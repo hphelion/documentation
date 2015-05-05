@@ -29,7 +29,7 @@ PageRefresh();
 </script>
 
 
-<p style="font-size: small;"> <a href=" /helion/openstack/1.1/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/support-matrix/"> NEXT &#9654</a> </p>  
+<p style="font-size: small;"> <a href=" /helion/openstack/services/overview/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/support-matrix/"> NEXT &#9654</a> </p>  
 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Services Overview
@@ -142,7 +142,7 @@ HP Helion OpenStack uses the following services or software to present user inte
 **Horizon** The Horizon service is the basis of the [HP Helion OpenStack dashboards](/helion/openstack/carrier/dashboard/how-works/) for creating and managing HP Helion OpenStack resources. The Horizon dashboard is developed by HP for use with HP Helion OpenStack. 
 
 You can use the HP Helion OpenStack dashboard to view, allocate, and manage all virtual resources within a cloud. 
-See [Overview of the Horizon Service](/helion/openstack/1.1/services/horizon/overview/).
+See [Overview of the Horizon Service](/helion/openstack/services/horizon/overview/).
 
 <!-- Hiding for Alpha
 **Icinga** The Icinga service, which runs in the undercloud, helps cloud admins monitor the disk usage of Swift storage node(s). Icinga is an open-source software project.

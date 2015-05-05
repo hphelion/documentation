@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/server/upgrade/
+permalink: /helion/devplatform/als/admin/server/upgrade/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: In-Place Upgrades of ALS Nodes and Clusters "
 product-version1: HP Helion Development Platform
@@ -19,7 +19,7 @@ authors: Jayme P
 # HP Helion 1.2 Development Platform: In-Place Upgrades of ALS Nodes and Clusters {#upgrading-helion}
 [See the Helion 1.0 Development Platform version of this page](/als/v1/admin/server/upgrade/)
 
-Application Lifecycle Service provides the ability to upgrade a node or cluster in place via [kato node upgrade](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-upgrade) without the need to rebuild the entire cluster. This section covers how the upgrade process works.
+Application Lifecycle Service provides the ability to upgrade a node or cluster in place via [kato node upgrade](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-upgrade) without the need to rebuild the entire cluster. This section covers how the upgrade process works.
 
 -  [Before an upgrade](#before-an-upgrade)
 	-  [Maintenance Mode](#maintenance-mode)
@@ -40,13 +40,13 @@ Application Lifecycle Service provides the ability to upgrade a node or cluster 
 ##Before an upgrade {#before-an-upgrade}
 Ensure that you have the latest version of the Application Lifecycle Service installed before updating any nodes or clusters.
 
-If [kato patch](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-patch) has not been applied consistently, [kato node upgrade](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach) can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.
+If [kato patch](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-patch) has not been applied consistently, [kato node upgrade](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach) can still be executed. It will first upgrade the node to the latest release, which will include all of the interim patches.
 
 
 ###Free Disk Space
 Each node in the cluster to be upgraded requires at least 4GB free disk space except for the cache node, which needs at least 10GB free.
 
-If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and [migrating the data](/helion/devplatform/1.2/als/admin/best-practices/#backup-migration) rather than upgrading in place.
+If sufficient disk space cannot be reserved in the existing cluster for an upgrade, consider creating a new cluster and [migrating the data](/helion/devplatform/als/admin/best-practices/#backup-migration) rather than upgrading in place.
 
 To add additional space on the cache node specifically for the upgrade:
 
@@ -64,7 +64,7 @@ Use the **free** or **vmstat** commands to determine how much memory is availabl
 
 ### Maintenance Mode {#maintenance-mode}
 
-Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the [Cloud Controller Settings](/helion/devplatform/1.2/als/admin/console/customize/#console-settings-maintenance-mode) or the following *kato* command:
+Before beginning an upgrade, put Application Lifecycle Service in maintenance mode using the [Cloud Controller Settings](/helion/devplatform/als/admin/console/customize/#console-settings-maintenance-mode) or the following *kato* command:
 
     kato config set cloud_controller_ng maintenance_mode true
 
@@ -72,7 +72,7 @@ This shuts down API requests but continues to serve web requests. The Management
 
 ### Backups or Snapshots {#backup-snapshot}
  
-Back up all system and user data by performing a [data export](/helion/devplatform/1.2/als/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/helion/devplatform/1.2/als/admin/best-practices/#bestpractices-snapshots) of all nodes in your hypervisor.  
+Back up all system and user data by performing a [data export](/helion/devplatform/als/admin/best-practices/#backup-migration) (recommended) or create [snapshots](/helion/devplatform/als/admin/best-practices/#bestpractices-snapshots) of all nodes in your hypervisor.  
 
 ### Proxy settings for Upgrades {#proxy-settings}
 
@@ -83,7 +83,7 @@ public URIs:
 -   [https://pkg.helion.com](https://pkg.helion.com/)
 
 This may require setting the HTTPS\_PROXY environment variable on each
-node if a proxy is in use on your network. See [Upstream Proxy Settings](/helion/devplatform/1.2/als/admin/server/configuration/#http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
+node if a proxy is in use on your network. See [Upstream Proxy Settings](/helion/devplatform/als/admin/server/configuration/#http-proxy) for instructions on configuring upstream proxies. For upgrades specifically, the **http\_proxy** environment variable must be set in the shell you'll be running the upgrade from. For example:
 	
 	export http_proxy=http://intproxy.example.com: 
 
@@ -105,7 +105,7 @@ With passwordless sudo in effect on all nodes, *kato node upgrade* should run wi
 
 ###Extra DEA Nodes {#extraDEA}
 
-While the upgrade is in progress, DEAs will be [retired](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach) one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one [DEA node](/helion/devplatform/1.2/als/admin/cluster/#dea-nodes) to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.
+While the upgrade is in progress, DEAs will be [retired](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach) one at a time and the hosted applications will be moved to other DEAs. If the system is operating at or close to capacity (all DEAs are fully populated) it will be necessary to add at least one [DEA node](/helion/devplatform/als/admin/cluster/#dea-nodes) to the cluster before proceeding. Customers are typically permitted to exceed their node/memory license allocation during an upgrade.
 
 
 ##Executing the upgrade {#executing-the-upgrade}
@@ -163,7 +163,7 @@ The default role order is:
 
 Nodes are matched to this ordering by the roles they have enabled. Any nodes that don't match (e.g. data service nodes) are added to the end to be upgraded last.
 
-The order can be overridden with the [--role-order](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
+The order can be overridden with the [--role-order](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-upgrade)
 option.
 
 ### Node Upgrade Process {#node-upgrade-process}
@@ -187,7 +187,7 @@ A pre-upgrade validation check is performed on the node to check that it is in w
 
 **Warning**: Use this option only if you get failures running *kato node inspect* that are known to be caused by systems outside of the control of Application Lifecycle Service, or if directed by HP Application Lifecycle Service Support.
 
-Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then [retired](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-retire) to ensure any applications running on the node are evacuated before the upgrade takes place.
+Next, the upgrade packages are downloaded and a validation check is performed on the files to make sure everything required for an upgrade is available. If the node is a DEA node it is then [retired](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-retire) to ensure any applications running on the node are evacuated before the upgrade takes place.
 
 After the components have been upgraded, the node is restarted and then post-upgrade validation takes place. If any failures occur, the upgrade process is stopped and you will be given the option to roll back the upgrade. As with the pre-upgrade validation, this can be skipped using the *--ignore-inspect-failures* option (see warning above).
 
@@ -244,11 +244,11 @@ Network connectivity errors during the upgrade process can cause it to fail. In 
 
 ###App Store Proxy Settings
 
-Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, [reset the proxy information](/helion/devplatform/1.2/als/admin/server/configuration/#http-proxy) for your network.
+Proxy settings for the App Store may be lost during an upgrade. If the App Store cannot fetch data after an upgrade, and your system is behind an HTTP(S) proxy, [reset the proxy information](/helion/devplatform/als/admin/server/configuration/#http-proxy) for your network.
 
 ###Upgrading with Customizations
 
-Many files and directories in the ALS VM are overwritten during an upgrade. The [Customization instructions](/helion/devplatform/1.2/als/admin/console/customize/) document best practices which are safe for upgrades, but some customers may have modified the system further.
+Many files and directories in the ALS VM are overwritten during an upgrade. The [Customization instructions](/helion/devplatform/als/admin/console/customize/) document best practices which are safe for upgrades, but some customers may have modified the system further.
 
 Customizations made within the following directories **will** be deleted or undone during an upgrade:
 
@@ -271,7 +271,7 @@ If you have made customizations in these places or in other areas not described 
 ###Custom Buildpacks
 
 **Warning**: Any custom buildpacks added to the system prior to the upgrade will be lost.
-Custom buildpacks must be [restored](/helion/devplatform/1.2/als/user/deploy/buildpack/#custom-buildpacks) to the system after an upgrade.
+Custom buildpacks must be [restored](/helion/devplatform/als/user/deploy/buildpack/#custom-buildpacks) to the system after an upgrade.
 
 ### Clearing the Browser Cache
 After an upgrade, certain Management Console JavaScript and CSS files may persist in the browser. For example, Firefox users may see the following error in the Applications view:
@@ -286,7 +286,7 @@ When migrating applications from Helion OpenStack&#174; 1.0 to 1.1, applications
 support for ``https_proxy`` may fail during staging (or pre-running 
 hooks) because ``https_proxy`` is now always defined during these 
 stages, even when there is no upstream proxy behind the [builtin 
-proxy](/helion/devplatform/1.2/als/admin/server/configuration/#staging-cache-app-http-proxy). 
+proxy](/helion/devplatform/als/admin/server/configuration/#staging-cache-app-http-proxy). 
 
 ### Missing Kato Utility {#missing-kato}
 

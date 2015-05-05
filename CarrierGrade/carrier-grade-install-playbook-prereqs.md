@@ -27,7 +27,7 @@ This document describes the prerequisite steps and one time setup on your KVM ho
 
 ## Hardware and software requirements {#hardware}
 
-Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/1.1/support-matrix/).
+Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
 
 ## Preparing the baremetal systems {#prepbare}
 

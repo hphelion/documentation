@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/reference/kato-ref/
+permalink: /helion/devplatform/als/admin/reference/kato-ref/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Kato Command Reference "
 product-version1: HP Helion Development Platform

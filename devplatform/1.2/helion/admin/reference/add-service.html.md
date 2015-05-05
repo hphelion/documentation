@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/reference/add-service/
+permalink: /helion/devplatform/als/admin/reference/add-service/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Adding System Services"
 product-version1: HP Helion Development Platform
@@ -24,9 +24,9 @@ The Application Lifecycle Service has three *Service* definitions:
 
 -   **System Services**: Service *types* (e.g. MySQL, RabbitMQ, Filesystem) available for use.
 -   **Provisioned Services**: *Instances* of the System Services created for use by end-user applications.
--   [**User-Provided Service Instances**](/helion/devplatform/1.2/als/user/services/user-provided/): Credentials and connection information for *external* services.
+-   [**User-Provided Service Instances**](/helion/devplatform/als/user/services/user-provided/): Credentials and connection information for *external* services.
 
-The [helion services](/helion/devplatform/1.2/als/user/reference/client-ref/#command-services) command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.
+The [helion services](/helion/devplatform/als/user/reference/client-ref/#command-services) command will show a list of all System Services available on the current target. This command will also display a list of Provisioned Services allocated to the currently authenticated user.
 
 Administrators can configure external data services to work in the same way that core System Services do, providing users and applications with access to existing software and infrastructure.
 
@@ -61,7 +61,7 @@ Descriptions of the settings from the **services** block in this file can be fou
 - [Service Broker API: Catalog Management](http://docs.cloudfoundry.org/services/api.html#catalog-mgmt)
 - [Catalog Metadata](http://docs.cloudfoundry.org/services/catalog-metadata.html)
 
-Once the echo-service application has been deployed, an admin can add the service broker with the [add-service-broker](/helion/devplatform/1.2/als/user/reference/client-ref/#command-add-service-broker) command.
+Once the echo-service application has been deployed, an admin can add the service broker with the [add-service-broker](/helion/devplatform/als/user/reference/client-ref/#command-add-service-broker) command.
 
 	helion add-service-broker
 	Enter name: echo-broker

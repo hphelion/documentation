@@ -1,7 +1,7 @@
 ---
 layout: 1.0default-devplatform
 title: "HP Helion Development Platform: Software License Terms"
-permalink: /helion/devplatform/1.2/eula/
+permalink: /helion/devplatform/eula/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -11,7 +11,7 @@ authors: Jayme P
 ---
 <!--UNDER REVISION-->
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/glossary/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/3rd-party-license-agreements/"> NEXT &#9654;</a> </p> -->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/glossary/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/3rd-party-license-agreements/"> NEXT &#9654;</a> </p> -->
 
 # HP Helion Development Platform: Software License Terms
 [See the Helion 1.1 Development Platform version of this page](/helion/devplatform/eula/)
@@ -24,7 +24,7 @@ authors: Jayme P
 
 **1. Applicability.** This end user license agreement (the "Agreement") governs the use of accompanying HP Helion Development Platform Software ("Software"), unless it is subject to a separate agreement between you and Hewlett-Packard Company and its subsidiaries ("HP"). By downloading, copying, or using the Software you agree to this Agreement.
 
-**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/devplatform/1.2/3rd-party-license-agreements/).
+**2. Terms.** This Agreement includes supporting material accompanying the Software or referenced by HP, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are below and at [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/devplatform/3rd-party-license-agreements/).
 
 **3. Authorization**. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.
 
@@ -154,7 +154,7 @@ Subject to Customer's compliance with the terms and conditions of this Agreement
 
 ## Part 3: Ancillary and Open Source Software ## {#ancilliary}
 
-Additional license authorizations related to ancillary, third party and open source software components are available at:  [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/openstack/1.1/3rd-party-license-agreements/). 
+Additional license authorizations related to ancillary, third party and open source software components are available at:  [HP Helion Development Platform Open Source and Third-Party Software License Agreements](/helion/openstack/3rd-party-license-agreements/). 
 
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/">&#9650; Installation Prerequisites</a>  </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/">&#9650; Installation Prerequisites</a>  </p> 
 
 
 # HP Helion OpenStack&#174; 1.1: Preparing the Network 

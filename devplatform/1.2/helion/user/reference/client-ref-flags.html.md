@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/client-ref/flags/
+permalink: /helion/devplatform/als/user/reference/client-ref/flags/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: ALS Command Reference: Feature Flags"
 product-version1: HP Helion Development Platform

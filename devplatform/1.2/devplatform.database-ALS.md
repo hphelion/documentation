@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Connecting the Database Service with the Application Lifecycle Service"
-permalink: /helion/devplatform/1.2/connectdatabase/
+permalink: /helion/devplatform/connectdatabase/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1

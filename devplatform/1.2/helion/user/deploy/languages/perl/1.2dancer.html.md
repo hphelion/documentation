@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/dancer/
+permalink: /helion/devplatform/als/user/deploy/languages/perl/dancer/
 title: "HP Helion 1.2 Development Platform: Dancer "
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1

@@ -59,7 +59,7 @@ The HP Helion OpenStack Community edition is a free-to-license distribution that
 
 The Community edition enables customers to evaluate HP Helion OpenStack, build a better proof-of-concept, or deploy small-scale private clouds.
 
-To expand to larger, enterprise-grade installations, upgrade to the [full version](/helion/openstack/1.1/) of HP Helion OpenStack.
+To expand to larger, enterprise-grade installations, upgrade to the [full version](/helion/openstack/) of HP Helion OpenStack.
 
 ###Is there a cost associated with this distribution? #### {#distrocost} 
 
@@ -109,24 +109,24 @@ HP OpenStack Helion does not support an update utility to update from previous r
 
 ###Does HP Helion OpenStack include an Operating System (OS)? {#includeOS}
 
-Yes. It includes an integrated Linux&#174; host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the [Support Matrix](/helion/openstack/1.1/support-matrix/).
+Yes. It includes an integrated Linux&#174; host OS hardened and tested for this distribution. All supported hardware and software configurations are laid out in the [Support Matrix](/helion/openstack/support-matrix/).
 
 ###Which OpenStack release does this distribution include? {#releaseversion}
 
-All of the [HP Helion OpenStack services](/helion/openstack/1.1/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/). [Learn more](http://www.hpcloud.com/learning-center) about HP's commitment to OpenStack and how we're making it even better.
+All of the [HP Helion OpenStack services](/helion/openstack/services/overview/#OpenStack) have been updated to [OpenStack Juno](http://www.openstack.org/software/juno/). [Learn more](http://www.hpcloud.com/learning-center) about HP's commitment to OpenStack and how we're making it even better.
  
 ###Is the HP Helion OpenStack Community edition upgradable? {#upgrade}
 
-To expand to larger, enterprise-grade installations, upgrade to the [full version](/helion/openstack/1.1/) of HP Helion OpenStack.
+To expand to larger, enterprise-grade installations, upgrade to the [full version](/helion/openstack/) of HP Helion OpenStack.
 
 ###Can HP Helion OpenStack Community edition be run on non-HP hardware? {#nonhphardware}
 
-HP Helion OpenStack does not require HP-branded hardware. All supported hardware and software configurations are laid out in the [Support Matrix](/helion/openstack/1.1/support-matrix/).  
+HP Helion OpenStack does not require HP-branded hardware. All supported hardware and software configurations are laid out in the [Support Matrix](/helion/openstack/support-matrix/).  
 
 ##More Information
 
 ###Is there an alternative to the Community Edition? {#alternative}
-[HP Helion OpenStack](/helion/openstack/1.1/) is a commercial-grade distribution of OpenStack, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility.
+[HP Helion OpenStack](/helion/openstack/) is a commercial-grade distribution of OpenStack, the leading open source cloud computing platform. This distribution, backed by HP, enables customers to more easily build, manage, and use open-source based hybrid clouds in a resilient, maintainable platform. HP Helion OpenStack enables cost-effective scalability of IT services and business agility.
 
 ###Where can I find more information? {#MoreInfo}
 

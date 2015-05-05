@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/quick-start/
+permalink: /helion/devplatform/als/user/quick-start/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Prerequisites "
 product-version1: HP Helion Development Platform
@@ -29,7 +29,7 @@ you will need:
 
 ## Management Console {#management-console}
 
-The web interface for Application Lifecycle Service is called the [Management Console](/helion/devplatform/1.2/als/admin/console/customize/#management-console). You can use it to:
+The web interface for Application Lifecycle Service is called the [Management Console](/helion/devplatform/als/admin/console/customize/#management-console). You can use it to:
 
 -   see your current usage and quota
 -   monitor and manage applications you have deployed
@@ -41,15 +41,15 @@ been set up for you on the system.
 
 The interface should be mostly self-explanatory. It exposes most of the
 functionality you have access to as an end user, but to deploy your own
-applications from source code on your local machine you will need to install and use the Helion [Application Lifestyle Service client](/helion/devplatform/1.2/als/user/client/#helion-client-setup).
+applications from source code on your local machine you will need to install and use the Helion [Application Lifestyle Service client](/helion/devplatform/als/user/client/#helion-client-setup).
 
-There is also an [Eclipse plugin](/helion/devplatform/1.2/eclipse/) available for the Management Console to facilitate pushing applications.
+There is also an [Eclipse plugin](/helion/devplatform/eclipse/) available for the Management Console to facilitate pushing applications.
 
 ## Application Lifecycle Service Client {#helion-client}
 
 The Helion client pushes applications and provides access to the system from the command line.
 
-1.  [Download the client for your platform](/helion/devplatform/1.2/als/client/download).
+1.  [Download the client for your platform](/helion/devplatform/als/client/download).
 2.  Unzip the archive in a convenient directory.
 3.  Add the executable to your system/shell \$PATH by:
 	- moving it to a directory in your \$PATH,
@@ -58,7 +58,7 @@ The Helion client pushes applications and provides access to the system from the
 4.  Confirm that the client is installed correctly by executing
     `cfmgmt help`.
 
-Refer to the [Application Lifecycle Service Client Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/#command-ref-client) for a complete list of commands and options.
+Refer to the [Application Lifecycle Service Client Command Reference](/helion/devplatform/als/user/reference/client-ref/#command-ref-client) for a complete list of commands and options.
 
 ### Target and Login {#target-and-login}
 
@@ -85,7 +85,7 @@ have been created for you:
 ## Setting Organization and Space {#setting-organization-and-space}
 
 If you are logging in for the first time, your user account will not
-automatically choose an [Organization and Space](/helion/devplatform/1.2/als/user/deploy/orgs-spaces/#orgs-spaces) for deployment. You will need to set these manually.
+automatically choose an [Organization and Space](/helion/devplatform/als/user/deploy/orgs-spaces/#orgs-spaces) for deployment. You will need to set these manually.
 
 To set the Organization you belong to:
 
@@ -108,7 +108,7 @@ To set the Space you want to deploy applications to:
 **Note**:If your account is not a member of a Space, you will need an
 Organization Manager to add you as a Developer. If you are an
 Organization Manager or Admin, you can create new Spaces in the
-[*Management Console*](/helion/devplatform/1.2/als/admin/console/customize/#user-console-space) or with the [*helion create-space*](/helion/devplatform/1.2/als/user/reference/client-ref/#command-create-space) command.
+[*Management Console*](/helion/devplatform/als/admin/console/customize/#user-console-space) or with the [*helion create-space*](/helion/devplatform/als/user/reference/client-ref/#command-create-space) command.
 
 ## Deploying Apps {#deploying-apps}
 
@@ -122,12 +122,12 @@ working directory and push it to Application Lifecycle Service for further stagi
 
 ### Sample Applications[](#sample-applications "Permalink to this headline")
 
-Small [sample applications](/helion/devplatform/1.2/appdev/) in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.
+Small [sample applications](/helion/devplatform/appdev/) in various  programming languages are available. These applications demonstrate the basics of ALS deployment (hello world), connect to a database, and exercise the messaging service.
 
 Additional more advanced sample applications are available from [Application Lifecycle Service-Apps](https://github.com/Stackato-Apps) on Github, each with a
 README.md file showing how to deploy it on Application Lifecycle Service.
 
-Many of these have a [*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/) configuration
+Many of these have a [*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/) configuration
 file, so you can skip the interactive prompts by using the
 `-n` option.
 
@@ -142,5 +142,5 @@ application or run:
 	helion open [appname]
 
 Documentation on configuring applications in specific languages and
-frameworks is available in the [*Deploying Apps*](/helion/devplatform/1.2/als/user/deploy/#deploying-apps) section.
+frameworks is available in the [*Deploying Apps*](/helion/devplatform/als/user/deploy/#deploying-apps) section.
 

@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/services/filesystem/
+permalink: /helion/devplatform/als/user/services/filesystem/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Persistent File System "
 product-version1: HP Helion Development Platform
@@ -97,7 +97,7 @@ accessed within the container using constructs such as:
 **Note**
 
 To use declarations like these in
-[*hooks*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#hooks), put them in a
+[*hooks*](/helion/devplatform/als/user/deploy/manifestyml/#hooks), put them in a
 separate bash script. Brace expansion and grouping cannot be used
 directly in YAML files.
 
@@ -124,9 +124,9 @@ information for all services:
         }
 -->
 Since the [*environment
-variables*](/helion/devplatform/1.2/als/user/reference/environment/#environment-variables) are
+variables*](/helion/devplatform/als/user/reference/environment/#environment-variables) are
 available during the staging process, it is possible to make use of them
-in the [*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/) file to
+in the [*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/) file to
 configure a filesystem service and create a symlink to it for use by the
 app. (see example below)
 

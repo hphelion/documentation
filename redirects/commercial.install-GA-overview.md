@@ -1,6 +1,6 @@
 ---
-permalink: /helion/openstack/1.1/install/overview/test/
-redirect: /helion/openstack/1.1/install/overview/
+permalink: /helion/openstack/install/overview/test/
+redirect: /helion/openstack/install/overview/
 layout: redirect
 
 ---

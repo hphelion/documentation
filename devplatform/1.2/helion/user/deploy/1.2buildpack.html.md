@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/buildpack/
+permalink: /helion/devplatform/als/user/deploy/buildpack/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Buildpacks"
 product-version1: HP Helion Development Platform
@@ -44,7 +44,7 @@ set a specific **runtime** as well. For example:
       type: python
       runtime: python32
 
-**Note**: When using the Legacy Buildpack, config-defined environment variable values can only be updated by re-pushing the application with new settings (see [Legacy Buildpack and Environment Variables](/helion/devplatform/1.2/als/admin/reference/known-issues/#known-issues-legacy-env)).
+**Note**: When using the Legacy Buildpack, config-defined environment variable values can only be updated by re-pushing the application with new settings (see [Legacy Buildpack and Environment Variables](/helion/devplatform/als/admin/reference/known-issues/#known-issues-legacy-env)).
 
 ### Custom Buildpacks[](#custom-buildpacks "Permalink to this headline")
 To specify the exact buildpack to use for deploying your application,

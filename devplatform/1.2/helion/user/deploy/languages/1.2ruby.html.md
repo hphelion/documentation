@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/ruby/
+permalink: /helion/devplatform/als/user/deploy/languages/ruby/
 title: "HP Helion 1.2 Development Platform: Developing In Ruby"
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -44,8 +44,8 @@ the command to run. For example,
 Management of the deployed application and its services happens through a web application or a console application.
 To learn more see:
 
-* [Working with applications in Ruby](/helion/devplatform/1.2/als/user/deploy/languages/ruby/)
-* The [manifest.yml](/helion/devplatform/1.2/als/user/deploy/manifestyml/) reference.
+* [Working with applications in Ruby](/helion/devplatform/als/user/deploy/languages/ruby/)
+* The [manifest.yml](/helion/devplatform/als/user/deploy/manifestyml/) reference.
 
 ## HP Helion SDK {#hp-helion-sdk}
 
@@ -82,7 +82,7 @@ To understand how it works, here is an example of writing and reading from objec
 	file.content_type # => text/plain
 
 
-**Note**: See [Buildpacks](/helion/devplatform/1.2/als/user/deploy/buildpack/#buildpacks) for an alternative way to deploy Ruby on Rails applications.
+**Note**: See [Buildpacks](/helion/devplatform/als/user/deploy/buildpack/#buildpacks) for an alternative way to deploy Ruby on Rails applications.
 
 ## Using Ruby 2.0 {#using-ruby-2-0}
 
@@ -153,8 +153,8 @@ Non-HTTP apps that run as an Application Lifecycle Service application under the
 the Health Manager.
 
 To deploy worker applications, you need to use the
-[*command*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#command) key and set the
-[*processes: web*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#web)
+[*command*](/helion/devplatform/als/user/deploy/manifestyml/#command) key and set the
+[*processes: web*](/helion/devplatform/als/user/deploy/manifestyml/#web)
 key to Null ("\~").
 
 ### Example {#example}
@@ -190,7 +190,7 @@ To run `rake stats`, for instance, use the `helion run` command:
 
     helion run *appname* bundle exec rake stats
 
-See the [ALS Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/#command-ref-client) for details on the use of `helion run`.
+See the [ALS Command Reference](/helion/devplatform/als/user/reference/client-ref/#command-ref-client) for details on the use of `helion run`.
 
 ## References {#references}
 

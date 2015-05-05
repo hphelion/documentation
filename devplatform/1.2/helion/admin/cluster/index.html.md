@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/cluster/
+permalink: /helion/devplatform/als/admin/cluster/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Cluster Setup"
 product-version1: HP Helion Development Platform
@@ -22,9 +22,9 @@ authors: Jayme P
 # HP Helion 1.2 Development Platform: Cluster Setup 
 [See the Helion 1.0 Development Platform version of this page](/als/v1/admin/cluster/)
 
-This process begins with an installed [micro cloud](/helion/devplatform/1.2/als/user/reference/glossary/#term-micro-cloud), which must then be cloned across several [nodes](/helion/devplatform/1.2/als/user/reference/glossary/#term-node). You connect to each node in turn and tell it which [role](/helion/devplatform/1.2/als/user/reference/glossary/#term-role)s it is to serve, thereby distributing the processing load for maximum performance. 
+This process begins with an installed [micro cloud](/helion/devplatform/als/user/reference/glossary/#term-micro-cloud), which must then be cloned across several [nodes](/helion/devplatform/als/user/reference/glossary/#term-node). You connect to each node in turn and tell it which [role](/helion/devplatform/als/user/reference/glossary/#term-role)s it is to serve, thereby distributing the processing load for maximum performance. 
 
-In HP Helion, the Clusters Panel in the [ALS management console](/helion/devplatform/1.2/als/user/console/) makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the [Cluster Configuration tool](/helion/devplatform/1.2/als/client/reference) or [*kato*](/helion/devplatform/1.2/als/admin/reference/kato-ref/) commands.
+In HP Helion, the Clusters Panel in the [ALS management console](/helion/devplatform/als/user/console/) makes these tasks much easier to accomplish. If you prefer to use the command line, you can also use the [Cluster Configuration tool](/helion/devplatform/als/client/reference) or [*kato*](/helion/devplatform/als/admin/reference/kato-ref/) commands.
 
 - [Node Roles](#roles)
 -   [Preparing the Core Node](#preparing-the-core-node)
@@ -56,32 +56,32 @@ In HP Helion, the Clusters Panel in the [ALS management console](/helion/devplat
 
 ##Node Roles {#roles}
 
-An Application Lifecycle Service [node](/helion/devplatform/1.2/als/user/reference/glossary/#term-node) can
+An Application Lifecycle Service [node](/helion/devplatform/als/user/reference/glossary/#term-node) can
 take on one or more of the following roles:
 
--   [primary](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-primary)
--   [controller](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-cloud-controller)
--   [router](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-router)
--   [dea](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-droplet-execution-agents)
+-   [primary](/helion/devplatform/als/admin/reference/architecture/#architecture-primary)
+-   [controller](/helion/devplatform/als/admin/reference/architecture/#architecture-cloud-controller)
+-   [router](/helion/devplatform/als/admin/reference/architecture/#architecture-router)
+-   [dea](/helion/devplatform/als/admin/reference/architecture/#architecture-droplet-execution-agents)
 -   mdns (intended for micro clouds)
--   [filesystem](/helion/devplatform/1.2/als/user/services/filesystem/#creating-a-persistent-file-system)
--   [mysql](/helion/devplatform/1.2/als/user/reference/glossary/#term-mysql)
--   [postgresql](/helion/devplatform/1.2/als/user/reference/glossary/#term-postgresql)
--   [rabbit](/helion/devplatform/1.2/als/user/reference/glossary/#term-RabbitMQ)
--   [redis](/helion/devplatform/1.2/als/user/reference/glossary/#term-Redis)
--   [memcached](/helion/devplatform/1.2/als/user/services/memcached/)
--   [Harbor](/helion/devplatform/1.2/als/admin/cluster/harbor/) (TCP/UDP port service)
+-   [filesystem](/helion/devplatform/als/user/services/filesystem/#creating-a-persistent-file-system)
+-   [mysql](/helion/devplatform/als/user/reference/glossary/#term-mysql)
+-   [postgresql](/helion/devplatform/als/user/reference/glossary/#term-postgresql)
+-   [rabbit](/helion/devplatform/als/user/reference/glossary/#term-RabbitMQ)
+-   [redis](/helion/devplatform/als/user/reference/glossary/#term-Redis)
+-   [memcached](/helion/devplatform/als/user/services/memcached/)
+-   [Harbor](/helion/devplatform/als/admin/cluster/harbor/) (TCP/UDP port service)
 
 The command line tool used to configure Application Lifecycle Service servers is called
-[kato](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref). You can see a
+[kato](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref). You can see a
 list of the available roles at the command line by running the [kato
-info](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-info) command.
+info](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-info) command.
 
 Setup of cluster nodes is done using the [kato
-node](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach) setup,
+node](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach) setup,
 add, attach, and remove sub-commands.
 
-The [kato info](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-info)
+The [kato info](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-info)
 command will show:
 
 -   **assigned roles**: roles currently configured to run on the node
@@ -92,10 +92,10 @@ command will show:
 
 In an Application Lifecycle Service cluster, one node is dedicated as the Core node. This node
 will have a
-[controller](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-cloud-controller),
-[primary](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-primary),
-[base](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-base), and
-[router](/helion/devplatform/1.2/als/admin/reference/architecture/#architecture-router) role but
+[controller](/helion/devplatform/als/admin/reference/architecture/#architecture-cloud-controller),
+[primary](/helion/devplatform/als/admin/reference/architecture/#architecture-primary),
+[base](/helion/devplatform/als/admin/reference/architecture/#architecture-base), and
+[router](/helion/devplatform/als/admin/reference/architecture/#architecture-router) role but
 can also include additional roles.
 
 Boot an Application Lifecycle Service VM and set up the Core node as described below, then add
@@ -103,7 +103,7 @@ the other nodes and assign roles.
 
 ### CORE\_IP[](#core-ip "Permalink to this headline")
 
-A [static IP address](/helion/devplatform/1.2/als/admin/server/configuration/#setting-a-static-ip) is
+A [static IP address](/helion/devplatform/als/admin/server/configuration/#setting-a-static-ip) is
 necessary to provide a consistent network interface for other nodes to connect to. This address is called the MBUS IP. If your IaaS or cloud orchestration software provides IP addresses which persist indefinitely and are not reset on reboot you may not have to set this explicitly.
 
 Take note of the internal IP address of the Core node. It will be required in the following steps to configure additional nodes to attach to the Core node. 
@@ -114,18 +114,18 @@ networking. To check the IP address, run:
 
     ifconfig eth0
 
-If necessary, use the kato [*op static_ip*](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-op-static_ip) command to set the static IP address:
+If necessary, use the kato [*op static_ip*](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-op-static_ip) command to set the static IP address:
 
 
     kato op static_ip
 
 **Note**
 
- If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-migrate) on the Core node, then [kato node attach](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes. 
+ If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-migrate) on the Core node, then [kato node attach](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes. 
 
 ### Hostname {#hostname}
 
-Next, set the **fully qualified hostname** of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the [DNS record](/helion/devplatform/1.2/als/admin/server/configuration/#server-config-dns) created for
+Next, set the **fully qualified hostname** of the Core node. This is required so that Application Lifecycle Service's internal configuration matches the [DNS record](/helion/devplatform/als/admin/server/configuration/#server-config-dns) created for
 this system.
 
 To set the hostname, run:
@@ -145,7 +145,7 @@ If you are building a cluster with multiple Routers separate from the Core node,
 
 A wildcard DNS record is necessary to resolve not only the API endpoint,
 but all applications which will subsequently be deployed on the PaaS.
-[Create a wildcard DNS record](/helion/devplatform/1.2/als/admin/server/configuration/#server-config-dns) for the [Core node](#core-node) or [Load Balancer/Router](#load-balancer-and-multiple-routers).
+[Create a wildcard DNS record](/helion/devplatform/als/admin/server/configuration/#server-config-dns) for the [Core node](#core-node) or [Load Balancer/Router](#load-balancer-and-multiple-routers).
 
 ### Core Node {#core-node}
 
@@ -170,12 +170,12 @@ node and assigning their particular roles.
 ## Attaching Nodes and Enabling Roles {#attaching-nodes-and-enabling-roles}
 
 Adding nodes to the cluster involves attaching the new VMs to the Core
-node's IP address using the [kato node attach](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach)
+node's IP address using the [kato node attach](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach)
 command. This command will check that the new node has a version number
 compatible with the Core node before attaching it.
 
 Roles can be added (or removed) on the new node after attaching using
-the [kato role](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-role-add)
+the [kato role](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-role-add)
 command, but it is generally preferable to enable roles during the
 `kato attach` step using the `-e` (enable) option as described below for each of the node types.
 
@@ -198,12 +198,12 @@ run the following command on the data services node:
 
 **Note**
 
-The [Harbor](/helion/devplatform/1.2/als/admin/cluster/harbor) port service needs a publicly
-routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the [Harbor Requirements & Setup](/helion/devplatform/1.2/als/admin/cluster/harbor/#requirements-setup) documentation for details.
+The [Harbor](/helion/devplatform/als/admin/cluster/harbor) port service needs a publicly
+routable IP and exposed port range if you want to provide externally accessible TCP and UDP ports for user applications. See the [Harbor Requirements & Setup](/helion/devplatform/als/admin/cluster/harbor/#requirements-setup) documentation for details.
 
 ### DEA Nodes {#dea-nodes}
 
-Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the [kato node attach](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach) command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:
+Nodes which stage application code and run application containers are called Droplet Execution Agents (DEAs). Once the controller node is running, you can begin to add some of these nodes with the [kato node attach](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach) command. To turn a generic Application Lifecycle Service VM into a DEA and connect it to the Core node:
 
     kato node attach -e dea CORE_IP
 
@@ -218,7 +218,7 @@ following command on the Core node:
 
 ### Removing Nodes {#removing-nodes}
 
-Use the [kato node remove](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-detach) to
+Use the [kato node remove](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-detach) to
 remove a node from the cluster. Run the following command on the core
 node.
 
@@ -227,7 +227,7 @@ node.
 ### Role Configuration using the Management Console {#role-configuration-using-the-management-console}
 
 Once cluster nodes are connected to the Core node, roles can be enabled
-or disabled using the [manual cluster configuration](/helion/devplatform/1.2/als/admin/#cluster-configuration) options in the Management
+or disabled using the [manual cluster configuration](/helion/devplatform/als/admin/#cluster-configuration) options in the Management
 Console.
 
 ## Example Clusters {#example-clusters}
@@ -325,12 +325,12 @@ recommended.
 
 In clusters with multiple Cloud Controllers, the nodes **must** share a common */home/helion/helion/data* mount point as described [below](#cluster-multi-controllers) in order to work together properly.
 
-See the [Persistent Storage](/helion/devplatform/1.2/als/admin/best-practices/#bestpractices-persistent-storage) documentation for instructions on relocating service data, application
+See the [Persistent Storage](/helion/devplatform/als/admin/best-practices/#bestpractices-persistent-storage) documentation for instructions on relocating service data, application
 droplets, and containers.
 
 ## Port Configuration {#port-configuration}
 
-The Application Lifecycle Service [micro cloud](/helion/devplatform/1.2/als/user/reference/glossary/#term-micro-cloud) runs with the following ports exposed:
+The Application Lifecycle Service [micro cloud](/helion/devplatform/als/user/reference/glossary/#term-micro-cloud) runs with the following ports exposed:
 
 <table>
 <tr>
@@ -364,7 +364,7 @@ port.
 <tr><td>5432</td><td>tcp</td><td>dea/controller</td><td>postgresql nodes</td><td>postgreSQL</td></tr>
 <tr><td>5454</td><td>tcp</td><td>all nodes</td><td>controller</td><td>redis</td></tr>
 </table>
-More information about [NATS](/helion/devplatform/1.2/als/user/reference/glossary/#term-NATS) is available in the Glossary.
+More information about [NATS](/helion/devplatform/als/user/reference/glossary/#term-NATS) is available in the Glossary.
 
 Each node can be internally firewalled using
 [iptables](http://manpages.ubuntu.com/manpages/man8/iptables.8) to
@@ -374,7 +374,7 @@ apply the above rules.
 
 -   Ports 80 and 443 need only be open to the world on router nodes.
 -   Port 4222 should be open on all nodes for
-    [NATS](/helion/devplatform/1.2/als/user/reference/glossary/#term-NATS) communication
+    [NATS](/helion/devplatform/als/user/reference/glossary/#term-NATS) communication
     with the MBUS IP (core Cloud Controller)
 -   Port 9022 should be open to allow transfer of droplets to and from
     the DEAs, and Cloud Controllers.
@@ -396,11 +396,11 @@ apply the above rules.
 
 **Note**: Harbor (Port Service) Node Configuration
 
-The optional [Harbor](/helion/devplatform/1.2/als/admin/cluster/harbor/#harbor) TCP/UDP port service must be
+The optional [Harbor](/helion/devplatform/als/admin/cluster/harbor/#harbor) TCP/UDP port service must be
 set up on a node with a public network interface if you wish to enable
 port forwarding for user applications. The security group or firewall
 settings for this node should make the configured port range accessible
-publicly. See [Harbor Setup](/helion/devplatform/1.2/als/admin/cluster/harbor/#harbor-setup) for full
+publicly. See [Harbor Setup](/helion/devplatform/als/admin/cluster/harbor/#harbor-setup) for full
 configuration instructions.
 
 ## Multiple Controllers {#multiple-controllers}
@@ -450,7 +450,7 @@ Routers. Though most users will prefer to use a hardware load balancer
 or elastic load balancing service provided by the cloud hosting
 provider, an Application Lifecycle Service VM can be configured to take on this role.
 
-The [kato node setup load\_balancer](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-setup-load_balancer)
+The [kato node setup load\_balancer](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-setup-load_balancer)
 command retrieves IP addresses of every router in the cluster and
 configures an nginx process to distribute load (via round-robin) among a
 pool of Routers and handle SSL termination.
@@ -462,7 +462,7 @@ multiple Routers:
 
 The Load Balancer is the primary point of entry to the cluster. It must
 have a public-facing IP address and take on the primary hostname for the
-system as [configured in DNS](/helion/devplatform/1.2/als/admin/server/configuration/#server-config-dns). Run the following on Load Balancer node:
+system as [configured in DNS](/helion/devplatform/als/admin/server/configuration/#server-config-dns). Run the following on Load Balancer node:
 
     kato node rename *hostname.example.com*
 
@@ -522,6 +522,6 @@ Router nodes. For example:
 The load balancer terminates SSL connections, so SSL certificates must
 be set up and maintained on this node.
 
-See the [Using your own SSL certificate](/helion/devplatform/1.2/als/admin/server/configuration/#using-your-own-ssl-certificate) and [CA Certificate Chaining](/helion/devplatform/1.2/als/admin/server/configuration/#ca-certificate-chaining) sections for Application Lifecycle Service Load Balancer instructions.
+See the [Using your own SSL certificate](/helion/devplatform/als/admin/server/configuration/#using-your-own-ssl-certificate) and [CA Certificate Chaining](/helion/devplatform/als/admin/server/configuration/#ca-certificate-chaining) sections for Application Lifecycle Service Load Balancer instructions.
 
 For other load balancers, consult the documentation for your device or service on uploading/updating server certificates.

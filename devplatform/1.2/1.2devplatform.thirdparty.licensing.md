@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion Development Platform: Open Source and Third-Party Software License Agreements "
-permalink: /helion/devplatform/1.2/3rd-party-license-agreements/
+permalink: /helion/devplatform/3rd-party-license-agreements/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -18,7 +18,7 @@ onLoad="window.refresh"
 PageRefresh();
 </script>
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/eula/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/siteindex/">NEXT &#9654;</a> </p> -->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/eula/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/siteindex/">NEXT &#9654;</a> </p> -->
 
 # HP Helion Development Platform: Open Source and Third-Party Software License Agreements {#hp-helion-openstack-beta-open-source-and-third-party-software-license-agreements}
 

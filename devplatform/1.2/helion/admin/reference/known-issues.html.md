@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/reference/known-issues/
+permalink: /helion/devplatform/als/admin/reference/known-issues/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Known Issues"
 product-version1: HP Helion Development Platform
@@ -24,13 +24,13 @@ Please keep up to date with the latest Known Issues, FAQs and announcements in o
 ##1.1
 ###Changing the MBUS IP (Core node)
 
-If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/helion/devplatform/1.2/als/admin/reference/kato-ref#kato-command-ref-node-migrate) or [kato op static ip](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-op-static_ip) on the Core node, then [kato node attach](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes to set the new MBUS IP.
+If the IP address of the Core node changes, you must reconfigure the cluster to use the new MBUS IP address. Run [kato node migrate](/helion/devplatform/als/admin/reference/kato-ref#kato-command-ref-node-migrate) or [kato op static ip](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-op-static_ip) on the Core node, then [kato node attach](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-attach) on all other cluster nodes to set the new MBUS IP.
 
 ###Adding New Relic Repositories
 
 The New Relic system monitoring (**newrelic-sysmond**) and PHP application monitoring (**newrelic-php5**) packages are no longer pre-installed in the ALS default Docker base container.
 
-To allow end users to install these packages in the [requirements](/helion/devplatform/1.2/als/user/deploy/manifestyml/#requirements) section of their application config, admins should [add New Relic repository URLS and keys](/helion/devplatform/1.2/als/admin/server/configuration/#allowed-repositories) to the system configuration.
+To allow end users to install these packages in the [requirements](/helion/devplatform/als/user/deploy/manifestyml/#requirements) section of their application config, admins should [add New Relic repository URLS and keys](/helion/devplatform/als/admin/server/configuration/#allowed-repositories) to the system configuration.
 
 ###PHP 5.5 Repositories
 
@@ -45,7 +45,7 @@ Administrators can add the [PPA for PHP 5.5](https://launchpad.net/~ondrej/+arch
 
 ###Kato data users export/import broken
 
-The **kato data users export** and **kato data users import** commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The [kato data import](/helion/devplatform/1.2/als/admin/reference/kato-ref#kato-command-ref-data-import) and [kato data export](/helion/devplatform/1.2/als/admin/reference/kato-ref#kato-command-ref-data-export) commands are still available for migrating users from one ALS installation to another.
+The **kato data users export** and **kato data users import** commands, which save and load lists of users to and from CSV files, are non-functional in the current release. The [kato data import](/helion/devplatform/als/admin/reference/kato-ref#kato-command-ref-data-import) and [kato data export](/helion/devplatform/als/admin/reference/kato-ref#kato-command-ref-data-export) commands are still available for migrating users from one ALS installation to another.
 
 ###Kato node reset factory with NOPASSWD
 
@@ -77,7 +77,7 @@ set environment variables. This mechanism is fully supported by the Application 
 
 ####Legacy Buildpack and Environment Variables {#legacy-buildpack-and-environment-variables} 
 
-When using the [Legacy Buildpack](/helion/devplatform/1.2/als/user/deploy/buildpack/#buildpacks), environment variable values defined in *manifest.yml* cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
+When using the [Legacy Buildpack](/helion/devplatform/als/user/deploy/buildpack/#buildpacks), environment variable values defined in *manifest.yml* cannot be updated without re-pushing the application with new settings. Changes to variables made in the Management Console will be
 overwritten by the original ones defined at push when the application is restarted.
 
 To modify custom environment variables, re-push the application after changing the values in *manifest.yml*.
@@ -85,7 +85,7 @@ To modify custom environment variables, re-push the application after changing t
 ####Service Gateway Log Errors in Maintenance Mode {#service-gateway-log-errors-in-maintenance-mode}
 
 With Application Lifecycle Service set in [*Maintenance
-Mode*](/helion/devplatform/1.2/als/admin/console/customize/#console-settings), all "\_gateway"
+Mode*](/helion/devplatform/als/admin/console/customize/#console-settings), all "\_gateway"
 processes will report the following error once per minute:
 
     Failed registering with cloud controller, status=503
@@ -115,7 +115,7 @@ change with cluster configuration.
 If the VM instance can locally resolve a hostname rather than an IP
 address, it's generally best practice to use the hostname.
 
-If not, Application Lifecycle Service provides various [environment variables](/helion/devplatform/1.2/als/user/reference/environment/#environment-variables)
+If not, Application Lifecycle Service provides various [environment variables](/helion/devplatform/als/user/reference/environment/#environment-variables)
 so that applications do not need to hardcode them at install time. Some
 examples are `VCAP_SERVICES` and `DATABASE_URL`. We strongly encourage their use.
 

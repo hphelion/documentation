@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/client-ref/buildpacks/
+permalink: /helion/devplatform/als/user/reference/client-ref/buildpacks/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: ALS Command Reference: Buildpacks"
 product-version1: HP Helion Development Platform

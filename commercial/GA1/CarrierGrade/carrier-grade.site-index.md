@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/">&#9650; UP</a> | NEXT &#9654; </p> -->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/3rd-party-license-agreements/">&#9664; PREV</a> | <a href="/helion/openstack/">&#9650; UP</a> | NEXT &#9654; </p> -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Site Index
 
@@ -52,7 +52,7 @@ Review the following topics before you start the installation:
 
 This topic provides you links to OpenStack documentation that you might find helpful when working with HP Helion OpenStack.\:
 
-* [Related documentation](/helion/openstack/1.1/related-links/)
+* [Related documentation](/helion/openstack/related-links/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
  

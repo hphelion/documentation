@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/client/reference
+permalink: /helion/devplatform/als/client/reference
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: HP Helion ALS Cluster Management Tool Reference"
 product-version1: HP Helion Development Platform

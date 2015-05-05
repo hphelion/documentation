@@ -64,7 +64,7 @@ For more information on installing the CLI, see [Install the OpenStack command-l
 
 ## How To's with the HP Helion Telemetry and Reporting Service<a name="howto"></a>
 
-The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/1.1/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
+The following lists of tasks can be performed by a user or administrator through the [HP Helion OpenStack Dashboard](/helion/openstack/ga/dashboard/how-works/), the OpenStack [CLI](http://docs.openstack.org/cli-reference/content/ceilometerclient_commands.html) or OpenStack [API](http://developer.openstack.org/api-ref-telemetry-v2.html).
 
 ### Working with the Telemetry and Reporting service collection actions ###
 

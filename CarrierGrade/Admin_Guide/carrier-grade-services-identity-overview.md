@@ -52,7 +52,7 @@ The Identity service confirms that incoming request are being made by the user w
 
 **Group management** -  The HP Helion OpenStack Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, the admin can assign a role to the group. Every group is in a [domain](#domain). 
 
-**[Domain management](/helion/openstack/1.1/services/identity/domains/)** - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a [domain](#domain) and assign roles to users and groups.
+**[Domain management](/helion/openstack/services/identity/domains/)** - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a [domain](#domain) and assign roles to users and groups.
 
 Administrators can create multiple [domains](#domain), which allow for the isolation of projects and users. The admin can assign users, groups, and projects right to a specific domain, but restrict rights in other domains. Domain admins manage resources in their own domains. 
 
@@ -64,9 +64,9 @@ The Identity service primarily works on the following key concepts:
 
 A domain is a high-level container for [projects](#project), [users](#user) and [groups](#group).
 
-For detailed information, Getting Started, and API references, see [Domain Management](/helion/openstack/1.1/services/identity/domains/).
+For detailed information, Getting Started, and API references, see [Domain Management](/helion/openstack/services/identity/domains/).
 
-**Note:** Regardless of the backend used (LDAP or MySQL), [domain management](/helion/openstack/1.1/services/identity/domains/) is not available using the Horizon dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. 
+**Note:** Regardless of the backend used (LDAP or MySQL), [domain management](/helion/openstack/services/identity/domains/) is not available using the Horizon dashboard. This initial implementation is targeted at sysadmins and developers interested in creating and deploying Domains for initial proof of concept deployments. 
 
 Each domain can point to its own identity source.  For example, LDAP, Active Directory or the local Keystone MySQL can be configured as identity sources on a per domain basis.
 
@@ -135,11 +135,11 @@ A network-accessible address, usually described by a URL, where a service may be
 ## Next Steps ## {#next}
 
 ### Working with Domain Management
-For detailed information, Getting Started, and API references, see [Domain Management](/helion/openstack/1.1/services/identity/domains/).
+For detailed information, Getting Started, and API references, see [Domain Management](/helion/openstack/services/identity/domains/).
 
 ### Configure Horizon for Keystone V3
 
-To enable Keystone v3 in the Horizon dashboard, manually change the settings. See [Configuring Horizon for Keystone v3](/helion/openstack/1.1/services/identity/configure/) for instructions and important restrictions. 
+To enable Keystone v3 in the Horizon dashboard, manually change the settings. See [Configuring Horizon for Keystone v3](/helion/openstack/services/identity/configure/) for instructions and important restrictions. 
 
 ### Integrate the Identity Service (Keystone) with LDAP/AD
 

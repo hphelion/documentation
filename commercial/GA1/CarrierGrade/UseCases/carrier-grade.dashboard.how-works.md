@@ -31,7 +31,7 @@ PageRefresh();
 </script>
 
 
-<!-- Hide until use cases are official <p style="font-size: small;"> <a href="/helion/openstack/carrier/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/1.1/manage/">&#9650; UP</a> | <a href="/helion/openstack/carrier/dashboard/users/">NEXT &#9654;</a> </p> -->
+<!-- Hide until use cases are official <p style="font-size: small;"> <a href="/helion/openstack/carrier/dashboard/admin/">&#9664; PREV</a> | <a href="/helion/openstack/manage/">&#9650; UP</a> | <a href="/helion/openstack/carrier/dashboard/users/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): How to use the Helion Dashboards
 
@@ -68,7 +68,7 @@ Use the **Settings** dashboard to change your display language and settings, you
  
 Click **Settings** in the user menu to display the Settings dashboard. 
 
-For a look at the dashboard options, see [Horizon Overview](/helion/openstack/1.1/services/horizon/overview/)
+For a look at the dashboard options, see [Horizon Overview](/helion/openstack/services/horizon/overview/)
 
  <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

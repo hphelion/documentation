@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/client/
+permalink: /helion/devplatform/als/user/client/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: HP Helion Application Lifecycle Service Client "
 product-version1: HP Helion Development Platform
@@ -21,7 +21,7 @@ authors: Jayme P
 The Helion ALS client is the command-line interface for the Application Lifecycle Service. You can use it to push application code up to the server, start and stop applications, create data services and link them to
 applications, and a number of other application management operations.
 
-The [Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/#command-ref-client) has full
+The [Command Reference](/helion/devplatform/als/user/reference/client-ref/#command-ref-client) has full
 descriptions of all client commands and options. These details are also
 available at the command line via the *helion help* command.
 
@@ -31,7 +31,7 @@ available at the command line via the *helion help* command.
 - [Configuration](#configuration)
 - [Uninstallation](#removing-the-client)
 - [Getting Help from Within the Client](#getting-help)
-- [Full Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/#command-ref-client)
+- [Full Command Reference](/helion/devplatform/als/user/reference/client-ref/#command-ref-client)
 
 ##Application Lifecycle Service Client Installation {#helion-client-setup}
 
@@ -39,7 +39,7 @@ available at the command line via the *helion help* command.
 [Cygwin](http://www.cygwin.com/) is not supported.
 
 ### Download {#download}
-You may [download the ALS client](/helion/devplatform/1.2/als/client/download/) appropriate for your operating system.
+You may [download the ALS client](/helion/devplatform/als/client/download/) appropriate for your operating system.
 
 Or you may download the client from within the Horizon console:
 
@@ -72,7 +72,7 @@ After installation, perform the following configuration steps before attempting 
 
 #### Target the API endpoint {#targeting-the-api-endpoint}
 
-Before you can use the client, you must [set the target URL](/helion/devplatform/1.2/als/user/reference/client-ref/gettingstarted/#command-target), which is also known as the API Endpoint. This tells the client the location where it will push applications to. For example:
+Before you can use the client, you must [set the target URL](/helion/devplatform/als/user/reference/client-ref/gettingstarted/#command-target), which is also known as the API Endpoint. This tells the client the location where it will push applications to. For example:
 
    	helion target api.helion.example.com
 
@@ -103,5 +103,5 @@ To get a list of available commands or help on a particular command, enter:
 
     helion help [COMMAND]
 
-See also the [Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/#command-ref-client) for a full
+See also the [Command Reference](/helion/devplatform/als/user/reference/client-ref/#command-ref-client) for a full
 list of commands.

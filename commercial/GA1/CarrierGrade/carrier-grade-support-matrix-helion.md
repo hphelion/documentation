@@ -78,7 +78,7 @@ For the HP Helion OpenStack Region, the following servers are supported for the 
 - [m710 Server Cartridge](http://www8.hp.com/in/en/products/proliant-servers/product-detail.html?oid=7398911)
 - [m300 Server Cartridge](http://www8.hp.com/us/en/products/proliant-servers/product-detail.html?oid=6488204#!tab=features)
 
-For more information, see [Managing Moonshot Servers](/helion/openstack/1.1/install/moonshot/).
+For more information, see [Managing Moonshot Servers](/helion/openstack/install/moonshot/).
 
 -->
 
@@ -407,7 +407,7 @@ A **Certified** Guest OS has been officially tested by the OS vendor, or by HP u
 
 ## Next Step {#next}
 
-Review the [Technical Overview](/helion/openstack/1.1/technical-overview/).
+Review the [Technical Overview](/helion/openstack/technical-overview/).
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

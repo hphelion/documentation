@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/orgs-spaces/
+permalink: /helion/devplatform/als/user/deploy/orgs-spaces/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Organizations and Spaces"
 product-version1: HP Helion Development Platform
@@ -29,7 +29,7 @@ An organization is a top-level group of users, spaces, and domains. Only
 Application Lifecycle Service admins (accounts with global superuser privileges) can manage
 Organizations.
 
-Each organization is assigned a [Quota Definition](/helion/devplatform/1.2/als/admin/server/configuration/#server-config-quota-definitions), a set of limits on memory, applications, and service instances which is shares between all members of the organization.
+Each organization is assigned a [Quota Definition](/helion/devplatform/als/admin/server/configuration/#server-config-quota-definitions), a set of limits on memory, applications, and service instances which is shares between all members of the organization.
 
 ## Spaces {#spaces}
 
@@ -50,7 +50,7 @@ fully-qualified sub-domain (e.g. "myapp.myorg.example.com").
 
 ## Management {#management}
 
-You can manage spaces and organizations with the [helion client](/helion/devplatform/1.2/als/user/client/) or the [Management Console](/helion/devplatform/1.2/als/user/console/).
+You can manage spaces and organizations with the [helion client](/helion/devplatform/als/user/client/) or the [Management Console](/helion/devplatform/als/user/console/).
 
 ## Users and Roles {#users-roles}
 

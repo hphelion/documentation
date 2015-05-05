@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/reference/architecture/
+permalink: /helion/devplatform/als/admin/reference/architecture/
 product: devplatform2.0
 title: " HP Helion 1.2 Development Platform: Architectural Design "
 product-version1: HP Helion Development Platform
@@ -34,7 +34,7 @@ authors: Jayme P
  -   [Other data services](#architecture-other-data-services)
 -   [Role Groups](#architecture-role-groups)
 
-The Application Lifecycle Service VM is a stand-alone [micro cloud](/helion/devplatform/1.2/als/user/reference/glossary/#term-micro-cloud) virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
+The Application Lifecycle Service VM is a stand-alone [micro cloud](/helion/devplatform/als/user/reference/glossary/#term-micro-cloud) virtual machine with all the components necessary for running a test environment in one instance. For use on a larger scale, the VM can be cloned and assigned specific roles: Router, Cloud Controller, Droplet Execution
 Agents (DEAs, or worker nodes), or specific database services.
 
 <img src="/content/documentation/devplatform/helion/images/helion-architecture-diagram.png" />
@@ -59,9 +59,9 @@ In a cluster setup, all nodes performing other roles are attached to the MBUS IP
 
 The Controller manages most of the operations of an Application Lifecycle Service system. It hosts the Management Console, provides the API endpoint for client access, manages the cloud\_controller\_ng process, provisions services, dispatches applications for staging and deployment, and (with the Health Manager) tracks the availability of DEA nodes. The Cloud Controller allocates instances of an application across available DEA nodes, prioritizing eligible nodes that are running the fewest instances of that app already. This maintains an even distribution of instances of an app across the pool. 
 
-In a cluster setup, the Controller role must run on the [Core node](/helion/devplatform/1.2/als/admin/cluster/#server-cluster-core-node) that all other VM's in the cluster connect to.
+In a cluster setup, the Controller role must run on the [Core node](/helion/devplatform/als/admin/cluster/#server-cluster-core-node) that all other VM's in the cluster connect to.
 
-A single Controller is sufficient for small and mid-sized clusters, but [multiple Controllers](/helion/devplatform/1.2/als/admin/cluster/#cluster-multi-controllers) can be configured if necessary for larger implementations.
+A single Controller is sufficient for small and mid-sized clusters, but [multiple Controllers](/helion/devplatform/als/admin/cluster/#cluster-multi-controllers) can be configured if necessary for larger implementations.
 
 ### Router {#architecture-router}
 
@@ -72,7 +72,7 @@ For smaller configurations, the router can be run on the same Application Lifecy
 
 When additional DEAs are in use and traffic increases, additional
 routers can be added to handle the load. This will require a [load
-balancer](/helion/devplatform/1.2/als/admin/cluster/#cluster-load-balancer) to be available
+balancer](/helion/devplatform/als/admin/cluster/#cluster-load-balancer) to be available
 in the cluster.
 
 ### Droplet Execution Agents {#architecture-droplet-execution-agents}

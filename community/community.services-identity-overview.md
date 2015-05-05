@@ -51,7 +51,7 @@ The Identity service provides Identity, Token, Catalog and Policy services:
 
 **Group management** -  The HP Helion OpenStack Identity Service allows administrators to create groups and add users to groups. Then, rather than assign a role to each user individually, assign a role to the group. Every group is in a domain. 
 
-**[Domain management](/helion/openstack/1.1/services/identity/domains/)** - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a domain and assign roles to users and groups.
+**[Domain management](/helion/openstack/services/identity/domains/)** - The HP Helion OpenStack Identity Service allows administrators to create tenants, users, and groups within a domain and assign roles to users and groups.
 
 ## Key Components
 
@@ -60,9 +60,9 @@ The Identity service primarily works on the following key concepts:
 ### Domain ### {#domain}
 A domain is a high-level container for [projects](#project), [users](#user) and [groups](#group).
 
-For detailed information, Getting Started, and API references, see [Domain Management](/helion/openstack/1.1/services/identity/domains/).
+For detailed information, Getting Started, and API references, see [Domain Management](/helion/openstack/services/identity/domains/).
 
-**Note:** Regardless of the backend used (LDAP or MySQL), [domain management](/helion/openstack/1.1/services/identity/domains/) is not available using the Horizon dashboard. You can use the [API](#API) or [CLI](#CLI) for domain management instead. Also, any user associated with a Domain will not be able to log in to Horizon.
+**Note:** Regardless of the backend used (LDAP or MySQL), [domain management](/helion/openstack/services/identity/domains/) is not available using the Horizon dashboard. You can use the [API](#API) or [CLI](#CLI) for domain management instead. Also, any user associated with a Domain will not be able to log in to Horizon.
 
 ### Project ### {#project}
 

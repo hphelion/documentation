@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/admin/console/app-store/
+permalink: /helion/devplatform/als/admin/console/app-store/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Sample Applications "
 product-version1: HP Helion Development Platform
@@ -27,19 +27,19 @@ filesystem.
 - [Adding the Sample Applications to the Application Lifecycle Service](#adding-the-app-store-to-helion)
 
 
-Users have access to the main Sample Applications interface (see the [Application Lifecycle Service User Guide](/helion/devplatform/1.2/als/user/), but do not have access to add new applications or add/modify the definition file.
+Users have access to the main Sample Applications interface (see the [Application Lifecycle Service User Guide](/helion/devplatform/als/user/), but do not have access to add new applications or add/modify the definition file.
 
 ##Creating Sample Applications {#creating-an-app-store}
 
 The Sample Applications interface exposes multiple "stores" which specify the
 available applications. These stores are sourced from definition files
-specified in the main [Settings](/helion/devplatform/1.2/als/admin/console/#settings) page of
+specified in the main [Settings](/helion/devplatform/als/admin/console/#settings) page of
 the Management Console or set using [kato
-config](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-config).
+config](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-config).
 
 ### Sample Applications Definition File {#app-store-definition}
 
-[YAML](/helion/devplatform/1.2/als/user/reference/glossary/#term-YAML) files describe the settings for each set of apps, including the container and a link to the source  repository for
+[YAML](/helion/devplatform/als/user/reference/glossary/#term-YAML) files describe the settings for each set of apps, including the container and a link to the source  repository for
 each app. For example:
 
     store:
@@ -115,7 +115,7 @@ This is an array of items (see YAML format above), one for each app in the conta
 :   Branch name, tag name, or exact commit hash to use. If unspecified, the HEAD commit of *master* branch is used.
 
 **framework**
-:   The framework the app uses, if the app is deployed using the [Legacy Buildpack](/helion/devplatform/1.2/als/user/deploy/buildpack/#buildpacks-legacy)(e.g. perl, python, node, rails3).
+:   The framework the app uses, if the app is deployed using the [Legacy Buildpack](/helion/devplatform/als/user/deploy/buildpack/#buildpacks-legacy)(e.g. perl, python, node, rails3).
 
 **icon**
 :   An image used for the app icon specified either as a full URL, a file relative to the **store** key **icon-url**
@@ -133,7 +133,7 @@ This is an array of items (see YAML format above), one for each app in the conta
 :   Memory requirements of the app (integer, in MB).
 
 **runtime**
-:   The runtime, if the app is deployed using the [Legacy Buildpack](/helion/devplatform/1.2/als/user/deploy/buildpack/#buildpacks-legacy) (e.g. java, python32, ruby19, php, perl518).
+:   The runtime, if the app is deployed using the [Legacy Buildpack](/helion/devplatform/als/user/deploy/buildpack/#buildpacks-legacy) (e.g. java, python32, ruby19, php, perl518).
 **services**
 :   Data services required by the app.
 
@@ -150,7 +150,7 @@ any web server at a URL accessible from the Cloud Controller.
 ##Adding the Sample Applications to Application Lifecycle Service {#adding-the-app-store-to-helion}
 
 1.  Log into the [Management
-    Console](/helion/devplatform/1.2/als/user/console/#management-console),
+    Console](/helion/devplatform/als/user/console/#management-console),
 2.  Select **Settings \> Cloud Controller** from the menu.
 3.  In the **Sample Applications URLs** section, enter a name and content URL for
     your store definition YAML file then click **Add Sample Applications URL**.
@@ -158,7 +158,7 @@ any web server at a URL accessible from the Cloud Controller.
 To confirm the Sample Applications are loading correctly, select **Sample Applications** in the menu and view the list of applications displayed. A **CC Catalog Manager** error appears in the Event Log if a Sample Applications URL fails to load.
 
 Sample Applications URLs can also be viewed, added, deleted, enabled, and disabled
-with [kato config](/helion/devplatform/1.2/als/admin/reference/kato-ref/#kato-command-ref-config). For
+with [kato config](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-config). For
 example:
 
     kato config get cloud_controller_ng app_store

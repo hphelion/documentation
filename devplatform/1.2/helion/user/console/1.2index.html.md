@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/console/
+permalink: /helion/devplatform/als/user/console/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Management Console: User View "
 product-version1: HP Helion Development Platform
@@ -20,7 +20,7 @@ authors: Jayme P
 
 The Management Console is a web interface for Application Lifecycle Service (ALS). Using the same API as the Helion CLI client, it provides access to a subset of features for deploying, scaling, and configuring applications as well as monitoring quota usage, and viewing logs.
 
-The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the [Console Admin Guide](/helion/devplatform/1.2/als/admin/console/). 
+The interface differs for Admin and non-Admin users. The features described below are available and visible to end users. For information on the Management Console view for Admins, see the [Console Admin Guide](/helion/devplatform/als/admin/console/). 
 
 - [Welcome Page](#welcome)
 - [Applications List](#app-list)
@@ -35,9 +35,9 @@ The interface differs for Admin and non-Admin users. The features described belo
 ## Welcome Page {#welcome}
 The top-level page of the Management Console displays quick links to the most commonly used resources:
 
--   **Read the Documentation**: By default, this links to the ALS documentation at [docs.hpcloud.com](/helion/devplatform/1.2/als/)
+-   **Read the Documentation**: By default, this links to the ALS documentation at [docs.hpcloud.com](/helion/devplatform/als/)
 -   **Contact Support**: Link to the [Support](#user-console-support) page.
--   **Download the Client**: Link to the locally hosted [CLI client](/helion/devplatform/1.2/als/user/client/#client) download.
+-   **Download the Client**: Link to the locally hosted [CLI client](/helion/devplatform/als/user/client/#client) download.
 -   **Deploy Sample Applications**: Link to the [Sample Applications](#user-console-app-store).
 -   **Organizations Membership**: Link to the end user view of the [Organizations](#user-console-welcome) page.
 -   **Account Details**: Shows the account details of the current user. Also accessible from the drop down list at the top left.
@@ -86,24 +86,24 @@ This view also includes the following **Tabs**:
 
 ## Organizations List {#organization-list}
 
-The Organizations list is accessible from the top menu. It shows all [Organizations](/helion/devplatform/1.2/als/user/deploy/orgs-spaces/#orgs-spaces) which the current user is a member of. The list is searchable by name.
+The Organizations list is accessible from the top menu. It shows all [Organizations](/helion/devplatform/als/user/deploy/orgs-spaces/#orgs-spaces) which the current user is a member of. The list is searchable by name.
 
 Clicking on any Organization name opens the Organization view.
 
 ### Organization View {#organization-view}
-The Organizations page shows a list of all [Organizations](/helion/devplatform/1.2/als/user/deploy/orgs-spaces/#orgs-spaces) that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.
+The Organizations page shows a list of all [Organizations](/helion/devplatform/als/user/deploy/orgs-spaces/#orgs-spaces) that the current user is a member of. Depending on how ALS has been set up, it is possible be a member of only a single Organization.
 
 Clicking on the Organization's name opens a view of that organization, including the following tabs:
 
 -   **Spaces**: A list of Spaces that belong to the Organization, showing the current number of applications and services deployed to that space. Clicking on a Space in the list opens a [view of that Space](#space-view).
--   **Users**: A list of Users who are members of the Organization, showing the Email address and Organization [Roles](/helion/devplatform/1.2/als/user/deploy/orgs-spaces/#orgs-spaces-roles) of each.
+-   **Users**: A list of Users who are members of the Organization, showing the Email address and Organization [Roles](/helion/devplatform/als/user/deploy/orgs-spaces/#orgs-spaces-roles) of each.
     -   **Users**: can view organization quotas, domains, spaces and users.
     -   **Manager**: can add domains and spaces to the organization, but not users.
 -   **Space Quota Plans**: A filterable list of space quota plans.
 -   **Quota Usage**:
     -   **Memory**: The amount of RAM (in GB) available to the Organization, and how much of it is currently used by applications.
     -   **Services**: The number of deployed / allotted services.
--   **Domains**: Domains belonging to the Organization that can be used by applications deployed to [Spaces](/helion/devplatform/1.2/als/user/deploy/orgs-spaces/#orgs-spaces) in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called *acme* on a PaaS with the address *api.example.org* might have the domain *\*.acme.example.org*.
+-   **Domains**: Domains belonging to the Organization that can be used by applications deployed to [Spaces](/helion/devplatform/als/user/deploy/orgs-spaces/#orgs-spaces) in the Organization. Typically, these will be a subdomain of the Application Lifecycle Service system itself. For example, an Organization called *acme* on a PaaS with the address *api.example.org* might have the domain *\*.acme.example.org*.
 
 **Note**: There is currently no interface in the Management Console for Managers, Auditors, or Billing Managers to view or adjust billing/payment info and spending limits.
 
@@ -135,7 +135,7 @@ The summary of a service displays:
 - the service instance name (not the canonical database name)
 - its current state
 
-For more information on a service instance, such as its credentials, use the [helion service](/helion/devplatform/1.2/als/user/reference/client-ref/services/#command-service) command.
+For more information on a service instance, such as its credentials, use the [helion service](/helion/devplatform/als/user/reference/client-ref/services/#command-service) command.
 
 **Credentials**
 
@@ -144,7 +144,7 @@ If a the service is a User Provided Service, new credentials can be added and ex
 
 **App Bindings**
 
-A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application](/helion/devplatform/1.2/als/admin/console/#applications).
+A list of applications that have bindings to this service instance. Clicking an app name opens an [administrative view of that application](/helion/devplatform/als/admin/console/#applications).
 
 ##Sample Applications {#sample-apps}
 

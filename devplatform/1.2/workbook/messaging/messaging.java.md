@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Java RabbitMQ Messaging Sample"
-permalink: /helion/devplatform/1.2/workbook/messaging/java/
+permalink: /helion/devplatform/workbook/messaging/java/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -19,11 +19,11 @@ SME1: Sam C
 This very simple Servlet-based Java web app displays a simple form that takes a string from the user, adds the message to a queue, reads it from the queue and prints the message back to the screen. This is a demonstration of the minimum requirements to build an application that can connect to a RabbitMQ cluster provided by ALS and interact with it. Use this sample to ensure that you have set up your environment correctly for connecting to and working with RabbitMQ on the Helion Development Platform.
 
 ## Prerequisites
-If you are missing any of these items, please [install them](/helion/devplatform/1.2/appdev/).
+If you are missing any of these items, please [install them](/helion/devplatform/appdev/).
 
-1.	You must have access to an [ALS cluster](/helion/devplatform/1.2/als/admin/cluster/).
-2.	The [Helion command-line interface](/helion/devplatform/1.2/als/user/client/) (CLI) must be installed.
-3.	You must have access to the web-based [Helion Management console](/helion/devplatform/1.2/als/user/console/).
+1.	You must have access to an [ALS cluster](/helion/devplatform/als/admin/cluster/).
+2.	The [Helion command-line interface](/helion/devplatform/als/user/client/) (CLI) must be installed.
+3.	You must have access to the web-based [Helion Management console](/helion/devplatform/als/user/console/).
 
 ###RabbitMQ
 
@@ -36,7 +36,7 @@ If the RabbitMQ service is not enabled on your cluster, or if you are not sure, 
 1. Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
 1. Click **Save**.
 
-**Note**: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/1.2/messageservice/) to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.
+**Note**: If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow [these instructions](/helion/devplatform/messageservice/) to create and manage a RabbitMQ cluster in the Messaging Service and link that instance to your ALS cluster.
 
 ###JDK
 
@@ -70,11 +70,11 @@ If you are not already there, `cd` to the root directory of the sample and execu
 This builds the application with Maven. It will create the *rabbitmq-java-1.0.war* file  within the target directory. 
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.2/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages.
 
-Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the [plugin](/helion/devplatform/1.2/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform. If you are using Eclipse, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
-1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.2/als/user/reference/client-ref/)
+1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br /> If you are not, execute
 	
 		helion target https://api.xx.xx.xx.xx.xip.io	
@@ -197,6 +197,6 @@ The *manifest.yml* file is the configuration information used by ALS to set up t
 1.	You will need to provide configuration information so that ALS can bind to a RabbitMQ service.
 2.	You need to provide configuration information so that ALS can create an environment for your app. Tools such as Maven generate the *pom.xml* files for you.
 3.	You need to retrieve connection information for RabbitMQ from the application's environment variables.
-4.	You interact with and deploy your app using the Helion CLI or the [Eclipse deployment plugin](/helion/devplatform/1.2/eclipse/).
+4.	You interact with and deploy your app using the Helion CLI or the [Eclipse deployment plugin](/helion/devplatform/eclipse/).
 
-[Exit Samples](/helion/devplatform/1.2/appdev/) | [Previous Sample](/helion/devplatform/1.2/workbook/database/java/) | [Next Sample](/helion/devplatform/1.2/workbook/helloworld/java/)
+[Exit Samples](/helion/devplatform/appdev/) | [Previous Sample](/helion/devplatform/workbook/database/java/) | [Next Sample](/helion/devplatform/workbook/helloworld/java/)

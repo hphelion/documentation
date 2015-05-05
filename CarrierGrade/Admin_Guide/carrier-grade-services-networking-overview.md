@@ -40,7 +40,7 @@ The Networking service also provides an API to configure and manage a variety of
 
 You can use the Networking service to connect guest servers or you can define and configure your own virtual network topology.
 
-You can also use the Networking service to identify the actual IP address of a malicious user, if you know the user's NAT address. For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/1.1/maskedIP/).
+You can also use the Networking service to identify the actual IP address of a malicious user, if you know the user's NAT address. For more information, see [Tracking masked IP addresses when using network address translation (NAT)](/helion/openstack/maskedIP/).
 
 ## Installing the Networking service ##
 

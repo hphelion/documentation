@@ -82,7 +82,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
 4d- **Get Cinder configuration for VSA backend**
 
-   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) system.
+   * Launch the Horizon Dashboard to [register and create backend for StoreVirtual](/helion/openstack/undercloud/oc/config/storevirtual/) system.
 	
    * After creating the backend, generate the Cinder backend advisory for StoreVirtual.
 
@@ -94,7 +94,7 @@ The following diagram gives an overview of the steps involved in deploying, conf
 
    * The cinder.conf in the overcloud should be updated after updating the overcloud-config.json file in the seed cloud.
 
-   * Execute [update cloud script](/helion/openstack/1.1/undercloud/oc/config/storevirtual/) from seed cloud. -->
+   * Execute [update cloud script](/helion/openstack/undercloud/oc/config/storevirtual/) from seed cloud. -->
 
 ## Next Step {#next-steps}
 

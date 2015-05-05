@@ -29,7 +29,7 @@ onLoad="window.refresh"
 PageRefresh();
 
 </script>
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/managing/volumes/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/dashboard/users/">&#9650; UP</a> | <a href="/helion/openstack/1.1/managing/routers/">NEXT &#9654;</a> </p> -->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/managing/volumes/">&#9664; PREV</a> | <a href="/helion/openstack/carrier/dashboard/users/">&#9650; UP</a> | <a href="/helion/openstack/managing/routers/">NEXT &#9654;</a> </p> -->
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Logging into the Dashboards
 

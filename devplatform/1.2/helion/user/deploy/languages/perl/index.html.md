@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/perl/
+permalink: /helion/devplatform/als/user/deploy/languages/perl/
 title: "HP Helion 1.2 Development Platform: Perl "
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -36,7 +36,7 @@ allows you to set PSGI-specific configurations in a separate file.
 
 It is possible to [serve static files with uWSGI](#uwsgi-perl-static-files).
 
-The [*perlcgi*](/helion/devplatform/1.2/als/user/deploy/languages/perl/perlcgi/#perlcgi) framework is also available for
+The [*perlcgi*](/helion/devplatform/als/user/deploy/languages/perl/perlcgi/#perlcgi) framework is also available for
 running traditional Perl CGI applications without PSGI.
 
 ## Deploying Applications {#deploying-applications}
@@ -44,12 +44,12 @@ running traditional Perl CGI applications without PSGI.
 The following is a list of pages with details for deploying various
 application types.
 
--   [CGI:Application:PSGI](/helion/devplatform/1.2/als/user/deploy/languages/perl/cgiapppsgi/)
--   [Perl CGI](/helion/devplatform/1.2/als/user/deploy/languages/perl/perlcgi/)
--   [Catalyst](/helion/devplatform/1.2/als/user/deploy/languages/perl/catalyst/)
--   [Mason](/helion/devplatform/1.2/als/user/deploy/languages/perl/mason/)
--   [Mojolicious](/helion/devplatform/1.2/als/user/deploy/languages/perl/mojo/)
--   [Dancer](/helion/devplatform/1.2/als/user/deploy/languages/perl/dancer/)
+-   [CGI:Application:PSGI](/helion/devplatform/als/user/deploy/languages/perl/cgiapppsgi/)
+-   [Perl CGI](/helion/devplatform/als/user/deploy/languages/perl/perlcgi/)
+-   [Catalyst](/helion/devplatform/als/user/deploy/languages/perl/catalyst/)
+-   [Mason](/helion/devplatform/als/user/deploy/languages/perl/mason/)
+-   [Mojolicious](/helion/devplatform/als/user/deploy/languages/perl/mojo/)
+-   [Dancer](/helion/devplatform/als/user/deploy/languages/perl/dancer/)
 
 ##Database Services {#database-services}
 
@@ -98,9 +98,9 @@ Non-HTTP apps that run as an Application Lifecycle Service application under the
 the Health Manager.
 
 To deploy worker applications, you need to use the
-[*command*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#command) key and set the
+[*command*](/helion/devplatform/als/user/deploy/manifestyml/#command) key and set the
 [*processes:
-web*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#web) key to
+web*](/helion/devplatform/als/user/deploy/manifestyml/#web) key to
 Null ("\~").
 
 ### Example {#example}
@@ -127,7 +127,7 @@ versions of most CPAN modules and frameworks are available.
 
 Modules required by your app can be specified by adding a
 `requirements:` section to the
-[*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/) file. For example:
+[*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/) file. For example:
 
     requirements:
       ppm:
@@ -233,7 +233,7 @@ large test suites.
 
 To disable testing for cpanm in staging, set
 [PERL\_CPANM\_OPT](http://search.cpan.org/dist/App-cpanminus/bin/cpanm#OPTIONS)
-to '--notest' in [*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/):
+to '--notest' in [*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/):
 
     name: myapp
     env:
@@ -253,7 +253,7 @@ options in PERL\_CPANM\_OPT:
 
 It is possible to serve static files with uWSGI using
 `processes: web:` in the
-[*manifest.yml*](/helion/devplatform/1.2/als/user/deploy/manifestyml/) file to specify
+[*manifest.yml*](/helion/devplatform/als/user/deploy/manifestyml/) file to specify
 folders that will be served statically and not by the app.
 
 To make a single folder serve statically, use `--check-static`:

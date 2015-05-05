@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Using the Database Service"
-permalink: /helion/devplatform/1.2/databaseservice/
+permalink: /helion/devplatform/databaseservice/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -28,8 +28,8 @@ The following topics explain how to create and manage a database:
 - [Attach a Floating IP](#floatIP)
 
 ##Prerequisites
-1. Install the [HP Helion Development Platform](/helion/devplatform/1.2/install/). 
-2. [Configure](/helion/devplatform/1.2/install/#install-database) the database service.
+1. Install the [HP Helion Development Platform](/helion/devplatform/install/). 
+2. [Configure](/helion/devplatform/install/#install-database) the database service.
 
 ##Creating a Database Instance {#create}
 1. Log into the Horizon console.

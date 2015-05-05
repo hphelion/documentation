@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "HP Helion OpenStack&#174; 1.1: LDAP Domain Configuration"
-permalink: /helion/openstack/1.1/services/addLDAP
+permalink: /helion/openstack/services/addLDAP
 product: commercial.ga
 
 ---
@@ -20,7 +20,7 @@ PageRefresh();
 
 
 
-<!-- <p style="font-size: small;"> <a href="/helion/openstack/1.1/">&#9664; PREV | <a href="/helion/openstack/1.1/">&#9650; UP</a> | <a href="/helion/openstack/1.1/faq/">NEXT &#9654; </a></p> -->
+<!-- <p style="font-size: small;"> <a href="/helion/openstack/">&#9664; PREV | <a href="/helion/openstack/">&#9650; UP</a> | <a href="/helion/openstack/faq/">NEXT &#9654; </a></p> -->
 
 # HP Helion OpenStack&#174; 1.1: LDAP Domain Configuration
 <br />
@@ -71,6 +71,6 @@ For example, if the service provider creates a domain called "domainA", then the
 	tls_cacertfile = /mnt/state/etc/keystone/ssl/certs/ca.pem
 	tls_req_cert = demand
 
-For information on all the attributes you can set for openLDAP/Active Directory, please refer to [LDAP connection settings](/helion/openstack/1.1/services/identity/integrate-ldap/).
+For information on all the attributes you can set for openLDAP/Active Directory, please refer to [LDAP connection settings](/helion/openstack/services/identity/integrate-ldap/).
  
 Once the LDAP domain configuration as described above is complete, you must restart Apache and Keystone for the settings to take effect.

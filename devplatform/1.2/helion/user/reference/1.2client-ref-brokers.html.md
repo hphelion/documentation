@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/reference/client-ref/brokers/
+permalink: /helion/devplatform/als/user/reference/client-ref/brokers/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: ALS Command Reference: Brokers"
 product-version1: HP Helion Development Platform

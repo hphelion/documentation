@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/
+permalink: /helion/devplatform/als/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Application Lifecycle Service Documentation "
 product-version1: HP Helion Development Platform
@@ -28,31 +28,31 @@ hosting provider, it provides the backbone for your private or public PaaS.
 ##ALS Admin Guide {#admin-guide}
 Documentation intended for system operators in charge of setting up, configuring, and maintaining the platform.
 
--   [Application Lifecycle Service Admin Guide](/helion/devplatform/1.2/als/admin/)
-    -   [Wizard-Based Cluster Creation](/helion/devplatform/1.2/als/admin/#wizard-based-cluster-creation)
-    -   [Management Console](/helion/devplatform/1.2/als/admin/#management-console)
-    -   [Server Configuration](/helion/devplatform/1.2/als/admin/#server-configuration)
-    -   [Cluster Configuration](/helion/devplatform/1.2/als/admin/#cluster-configuration)
-    -   [Best Practices](/helion/devplatform/1.2/als/admin/#best-practices)
-    -   [Reference](/helion/devplatform/1.2/als/admin/#reference)
+-   [Application Lifecycle Service Admin Guide](/helion/devplatform/als/admin/)
+    -   [Wizard-Based Cluster Creation](/helion/devplatform/als/admin/#wizard-based-cluster-creation)
+    -   [Management Console](/helion/devplatform/als/admin/#management-console)
+    -   [Server Configuration](/helion/devplatform/als/admin/#server-configuration)
+    -   [Cluster Configuration](/helion/devplatform/als/admin/#cluster-configuration)
+    -   [Best Practices](/helion/devplatform/als/admin/#best-practices)
+    -   [Reference](/helion/devplatform/als/admin/#reference)
 
 ##ALS User Guide {#user-guide}
 Documentation intended for developers and other end users who will be using a platform set up and maintained by others.
 
--   [Application Lifecycle Service User Guide](/helion/devplatform/1.2/als/user/)
-    -   [Quick Start](/helion/devplatform/1.2/als/user/#quick-start)
-    -   [Application Lifecycle Service Client](/helion/devplatform/1.2/als/user/#helion-client)
-    -   [Deploying Applications](/helion/devplatform/1.2/als/user/#deploying-applications)
-    -   [Services](/helion/devplatform/1.2/als/user/#services)
-    -   [Logging & Monitoring](/helion/devplatform/1.2/als/user/#logging-monitoring)
-    -   [Management Console](/helion/devplatform/1.2/als/user/#management-console)
-    -   [Reference](/helion/devplatform/1.2/als/user/#reference)
+-   [Application Lifecycle Service User Guide](/helion/devplatform/als/user/)
+    -   [Quick Start](/helion/devplatform/als/user/#quick-start)
+    -   [Application Lifecycle Service Client](/helion/devplatform/als/user/#helion-client)
+    -   [Deploying Applications](/helion/devplatform/als/user/#deploying-applications)
+    -   [Services](/helion/devplatform/als/user/#services)
+    -   [Logging & Monitoring](/helion/devplatform/als/user/#logging-monitoring)
+    -   [Management Console](/helion/devplatform/als/user/#management-console)
+    -   [Reference](/helion/devplatform/als/user/#reference)
 
 ## Reference
 
-- [ALS Cluster Management Tool](/helion/devplatform/1.2/als/client/reference/)
-- [*kato* Command Reference](/helion/devplatform/1.2/als/admin/reference/kato-ref/)
-- [ALS Command-Line Client Reference](/helion/devplatform/1.2/als/user/reference/client-ref/)
-- [*manifest.yml* Reference](/helion/devplatform/1.2/als/user/deploy/manifestyml/)
-- [Environment Variables](/helion/devplatform/1.2/als/user/reference/environment/)
-- [Known Issues](/helion/devplatform/1.2/als/admin/reference/known-issues/)
+- [ALS Cluster Management Tool](/helion/devplatform/als/client/reference/)
+- [*kato* Command Reference](/helion/devplatform/als/admin/reference/kato-ref/)
+- [ALS Command-Line Client Reference](/helion/devplatform/als/user/reference/client-ref/)
+- [*manifest.yml* Reference](/helion/devplatform/als/user/deploy/manifestyml/)
+- [Environment Variables](/helion/devplatform/als/user/reference/environment/)
+- [Known Issues](/helion/devplatform/als/admin/reference/known-issues/)

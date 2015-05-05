@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/clojure/
+permalink: /helion/devplatform/als/user/deploy/languages/clojure/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Clojure "
 product-version1: HP Helion Development Platform

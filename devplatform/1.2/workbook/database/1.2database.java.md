@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Java MySQL Database Sample"
-permalink: /helion/devplatform/1.2/workbook/database/java/
+permalink: /helion/devplatform/workbook/database/java/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -22,11 +22,11 @@ SME1: Sam C
 This very simple Servlet-based Java webapp displays the text "Executed query "SELECT "Hello World!"".", and then the result of that query: "Hello World". This is a demonstration of the minimum requirements to build an application that can connect to a MySQL database provided by ALS and run queries against it. Use this sample to ensure that you have set up your environment for connecting to and working with MySQL on the Helion Development Platform. 
 
 ##Prerequisites
-If you are missing any of these items, you must [install them](/helion/devplatform/1.2/appdev/).
+If you are missing any of these items, you must [install them](/helion/devplatform/appdev/).
 
-- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.2/als/admin/cluster/)
-- The  [Helion command-line interface (CLI)](/helion/devplatform/1.2/als/user/client/) must be installed.
-- Access to the web-based [Helion Management Console](/helion/devplatform/1.2/als/user/console/).
+- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/als/admin/cluster/)
+- The  [Helion command-line interface (CLI)](/helion/devplatform/als/user/client/) must be installed.
+- Access to the web-based [Helion Management Console](/helion/devplatform/als/user/console/).
 
 ###MySQL
 
@@ -39,7 +39,7 @@ If the MySQL service is not enabled on your cluster, or if you are not sure, fol
 4. The **MySQL** check box should be checked. If it is not, check it.
 5. Click **Save**.
 
-**NOTE**: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/1.2/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/1.2/connectdatabase/).
+**NOTE**: If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. For more information, refer to [Using the Database Service](/helion/devplatform/databaseservice/) and [Connecting the Database Service with ALS](/helion/devplatform/connectdatabase/).
 
 ###JDK
 
@@ -76,11 +76,11 @@ This builds the application with Maven. It will create the *mysql-java-1.0.war* 
 
 
 ##Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.2/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
-Use the Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally use the [plugin](/helion/devplatform/1.2/eclipse/) to deploy.
+Use the Helion client to deploy your app to Helion Development Platform.  If you are using Eclipse, you can optionally use the [plugin](/helion/devplatform/eclipse/) to deploy.
 
-1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/1.2/als/user/reference/client-ref/)
+1.	Open the [Helion command-line interface (CLI)](/helion/devplatform/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br /> If you are not, execute
 	
 		helion target https://api.xx.xx.xx.xx.xip.io	
@@ -162,6 +162,6 @@ The *manifest.yml* file contains configuration information used by ALS to set up
 ##Key Learnings
 1.	You need to provide configuration information so that ALS can bind to a MySQL service. Configuration information is contained in the *manifest.yml* file.
 2.	You need to retrieve connection information for MySQL from the application's environment variables and then parse the information into a JDBC-compliant connection string.
-3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/1.2/eclipse/).
+3.	You interact with and deploy your app using the Helion CLI or the Eclipse [plugin](/helion/devplatform/eclipse/).
 
-[Exit Samples](/helion/devplatform/1.2/appdev/) | [Previous Sample](/helion/devplatform/1.2/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/1.2/workbook/messaging/java/)
+[Exit Samples](/helion/devplatform/appdev/) | [Previous Sample](/helion/devplatform/workbook/helloworld/java/) | [Next Sample](/helion/devplatform/workbook/messaging/java/)

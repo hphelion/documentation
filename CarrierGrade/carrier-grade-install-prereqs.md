@@ -52,7 +52,7 @@ Make sure the following required tasks are completed before you begin the instal
 
 ## Hardware and software requirements {#hardware}
 
-Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/1.1/support-matrix/).
+Before you start, if you have not done so already, make sure your environment meets the hardware and software requirements. See the [HP Helion OpenStack Support Matrix](/helion/openstack/support-matrix/).
 
 <!-- hiding
 ## Preparing the network {#network_prepare}
@@ -61,7 +61,7 @@ Before installing HP Helion OpenStack, you are responsible for preparing the net
 
 The network is not installed or managed by the cloud. You must install and manage the network and make sure there is a route to the Management network as described in this section.
 
-See the [Preparing the Network](/helion/openstack/1.1/install/prereqs/network/) page.
+See the [Preparing the Network](/helion/openstack/install/prereqs/network/) page.
 -->
 
 ## Preparing the baremetal systems {#prepbare}
@@ -241,7 +241,7 @@ Before you begin, you must download the required HP Helion OpenStack installatio
 
 To make the HP Helion OpenStack installation process easier, you can enter all of the environment variables required by the installer into a JSON file that will be executed automatically. A JSON file is included in the installation package that you can modify with your environment variables.
 
-For information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/1.1/install/envars/).
+For information, see [Editing the JSON Environment Variables File for Installation](/helion/openstack/install/envars/).
 -->
 <!--
 ### Prepare baremetal.csv file ### {#csv}
@@ -251,7 +251,7 @@ Before installing, ensure you have created the `baremetal.csv` file that is requ
 The `baremetal.csv` file informs the installer of the size of each server that each node will be installed into. In this file you can also specify the role (or node type) for each server so you use the right hardware for different tasks such as storage or compute.  
 
 
-For more information, see [Creating the baremetal.csv file](/helion/openstack/1.1/install/csv/).
+For more information, see [Creating the baremetal.csv file](/helion/openstack/install/csv/).
 -->
 
 ### Set a default DNS name server {#name-resolution}
@@ -263,7 +263,7 @@ To set a default DNS name server for your HP Helion OpenStack Commercial cloud, 
 	
 **OPTIONAL** The HP Helion OpenStack Identity service can use Lightweight Directory Access Protocol (LDAP) to integrate your organization's existing directory service and user account management processes. LDAP intergration must be performed during the HP Helion OpenStack installation process.
 
-For information on integrating LDAP, see [HP Helion OpenStack&#174;: Integrating LDAP](/helion/openstack/1.1/services/identity/integrate-ldap/).
+For information on integrating LDAP, see [HP Helion OpenStack&#174;: Integrating LDAP](/helion/openstack/services/identity/integrate-ldap/).
 -->
 
 ### Disabling SR-IOV ###
@@ -302,8 +302,8 @@ Fore more information, see https://help.ubuntu.com/community/NetworkManager#Disa
 [Prepare the Network for Installation](/helion/openstack/carrier/install/network/)
 
 <!--
-* [Installing and configuring on a KVM hypervisor](/helion/openstack/1.1/install/kvm/)
-* [Installing and configuring on an ESX hypervisor](/helion/openstack/1.1/install/esx/)
+* [Installing and configuring on a KVM hypervisor](/helion/openstack/install/kvm/)
+* [Installing and configuring on an ESX hypervisor](/helion/openstack/install/esx/)
 -->
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>

@@ -23,7 +23,7 @@ PageRefresh();
 </script>
 
 <!--
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/vsa/">&#9664; Deploying HP StoreVirtual VSA </a> | <a href="/helion/openstack/carrier/install/vsa/cluster/">Verifying StoreVirtual Installation Status &#9654;</a>
+<p style="font-size: small;"> <a href="/helion/openstack/install/vsa/">&#9664; Deploying HP StoreVirtual VSA </a> | <a href="/helion/openstack/carrier/install/vsa/cluster/">Verifying StoreVirtual Installation Status &#9654;</a>
 </p> 
 -->
 

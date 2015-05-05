@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Installation Troubleshooting"
-permalink: /helion/devplatform/1.2/install/troubleshooting/
+permalink: /helion/devplatform/install/troubleshooting/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -43,7 +43,7 @@ Resolution:
 1. Locate and open the *dev-platform-installer* folder. This folder is created by the installation process.
 	- Delete the *.env* folder.
 	- Delete the *dev-platform-installer.conf* file.
-3. [Run the install command](/helion/devplatform/1.2/install/#commandline) again with all command line options.
+3. [Run the install command](/helion/devplatform/install/#commandline) again with all command line options.
 
 ## Download {#download}
 

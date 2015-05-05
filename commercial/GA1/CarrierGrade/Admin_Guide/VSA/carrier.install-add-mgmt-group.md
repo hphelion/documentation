@@ -60,7 +60,7 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 ## Next Step
 
-[Working with HP StoreVirtual VSA](/helion/openstack/1.1/undercloud/storage/storevirtual/)
+[Working with HP StoreVirtual VSA](/helion/openstack/undercloud/storage/storevirtual/)
 
 ----
 

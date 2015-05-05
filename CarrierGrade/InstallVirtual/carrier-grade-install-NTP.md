@@ -22,7 +22,7 @@ PageRefresh();
 
 </script>
 
-<p style="font-size: small;"> <a href="/helion/openstack/1.1/install/prereqs/#ntp">&#9664; Prerequisites | <a href="/helion/openstack/1.1/install/overview/"> &#9650; Installation Overview</a> </p> 
+<p style="font-size: small;"> <a href="/helion/openstack/install/prereqs/#ntp">&#9664; Prerequisites | <a href="/helion/openstack/install/overview/"> &#9650; Installation Overview</a> </p> 
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Configuring NTP
 

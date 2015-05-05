@@ -1,6 +1,6 @@
 ---
 layout: default-devplatform
-permalink: /helion/devplatform/1.2/als/user/deploy/languages/node/
+permalink: /helion/devplatform/als/user/deploy/languages/node/
 product: devplatform2.0
 title: "HP Helion 1.2 Development Platform: Developing in Node "
 product-version1: HP Helion Development Platform
@@ -21,7 +21,7 @@ Application Lifecycle Service has a built in Node framework with multiple versio
 [Node.js](http://nodejs.org/) runtime. [NPM](https://npmjs.org/) is used
 to install Node packages automatically.
 
-Deployable [sample applications](/helion/devplatform/1.2/appdev/#node) are available in this language.
+Deployable [sample applications](/helion/devplatform/appdev/#node) are available in this language.
 
 ## NPM {#node-npm}
 
@@ -31,7 +31,7 @@ automatically installs packages listed in the "dependencies" section
 before starting the server.
 
 Alternatively, you can call NPM directly using
-[*hooks*](/helion/devplatform/1.2/als/user/deploy/manifestyml/#hooks) in the *manifest.yml*
+[*hooks*](/helion/devplatform/als/user/deploy/manifestyml/#hooks) in the *manifest.yml*
 file. 
 
 For NPM packages which include callable scripts or binaries, executable components are automatically added to the container's \$PATH, so a "global install" (`npm install -g`) is not required.
@@ -61,13 +61,13 @@ Using Data Services[](#using-data-services "Permalink to this headline")
 
 Data services need to be configured with values from VCAP\_SERVICES, DATABASE\_URL, or a database-specific environment
 variable (see also [Using Configured Database
-Services](/helion/devplatform/1.2/als/user/services/data-services/#database-accessing)).
+Services](/helion/devplatform/als/user/services/data-services/#database-accessing)).
 
 If the database module you use supports URL-formatted connection
 strings, using the
-[DATABASE\_URL](/helion/devplatform/1.2/als/user/services/data-services/#database-database-url)
+[DATABASE\_URL](/helion/devplatform/als/user/services/data-services/#database-database-url)
 or [database-specific URL
-variable](/helion/devplatform/1.2/als/user/services/data-services/#database-specific-url)
+variable](/helion/devplatform/als/user/services/data-services/#database-specific-url)
 (REDIS\_URL, MONGODB\_URL, etc.) is often the simplest option.
 
 Use the variable in your code to connect your application to the

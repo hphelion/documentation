@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: PHP RabbitMQ Messaging Sample"
-permalink: /helion/devplatform/1.2/workbook/messaging/php/
+permalink: /helion/devplatform/workbook/messaging/php/
 product: devplatform2.0
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.1
@@ -22,10 +22,10 @@ This very simple PHP web app displays a simple form that takes a string from the
 
 ## Prerequisites {#prereq}
 
-- An installation of the [HP Helion Development Platform](/helion/devplatform/1.2/install/).
-- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/1.2/als/admin/cluster/)
-- Access to the [Helion command-line client (CLI)](/helion/devplatform/1.2/als/user/client/).
-- Access to the web-based [ALS Management Console](/helion/devplatform/1.2/als/user/console/).
+- An installation of the [HP Helion Development Platform](/helion/devplatform/install/).
+- Access to an Application Lifecycle Service (ALS) [Cluster](/helion/devplatform/als/admin/cluster/)
+- Access to the [Helion command-line client (CLI)](/helion/devplatform/als/user/client/).
+- Access to the web-based [ALS Management Console](/helion/devplatform/als/user/console/).
 - The RabbitMQ service is not enabled by default. Check and [make sure it is enabled](#rabbitmq).
 - Register for access to the [HP Helion Development Platform](https://helion.hpwsportal.com/catalog.html#/Home/Show) (HDN).
 
@@ -48,7 +48,7 @@ If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
 1. Both of the **Rabbit** and **Rabbit3** check boxes should be checked. If they are not, check them.
 1. Click **Save**.
 
-**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/1.2/messageservice/) in the Messaging Service, and link that instance to your [ALS cluster](/helion/devplatform/1.2/msgaas/als/).
+**NOTE:** If an application needs increased message throughput and/or increased availability beyond the single-instance, unmanaged RabbitMQ service provided by ALS, please follow these instructions to [create and manage a RabbitMQ cluster](/helion/devplatform/messageservice/) in the Messaging Service, and link that instance to your [ALS cluster](/helion/devplatform/msgaas/als/).
 
 ### Download the Application Files
 [Click here to access the code repository](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
@@ -58,11 +58,11 @@ If the RabbitMQ service is not enabled, or you are not sure, follow these steps:
 This app uses the [Cloud Foundry PHP buildpack](https://github.com/cloudfoundry/php-buildpack). For more technical details about buildpacks and the *composer.json* file, please see the README included in the [download package](https://github.com/HelionDevPlatform/helion-rabbitmq-php/).
 
 ### Deploy the Application
-**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/1.2/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
+**Note**: Application Lifecycle Service clusters that require an upstream HTTP proxy to access the internet will need to be [made aware of the proxy](/helion/devplatform/als/admin/server/configuration/#staging-cache-app-http-proxy). The sample applications require access to the Internet in order to download dependent packages. 
 
-Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/1.2/eclipse/).
+Use the Helion client to deploy your app to Helion Development Platform.  If you have Eclipse installed, you have the option to use the [plugin](/helion/devplatform/eclipse/).
 
-1.	Open the [ALS command-line interface (CLI)](/helion/devplatform/1.2/als/user/reference/client-ref/)
+1.	Open the [ALS command-line interface (CLI)](/helion/devplatform/als/user/reference/client-ref/)
 3.	Ensure that you are targeting your desired environment.  <br /> If you are not, execute
 	
 		helion target https://api.xx.xx.xx.xx.xip.io	
@@ -132,7 +132,7 @@ This section of the ProcessForm.php file shows how to retrieve the connection in
 - You need to provide configuration information so that ALS can bind to the RabbitMQ service. Configuration information is contained in the *manifest.yml* file.
 - ALS requires configuration information to create an environment for your app, including buildpack information for PHP. Configuration information is contained in the *manifest.yml* file.
 - You will need to retrieve connection information for RabbitMQ from the application's environment variables.
-- You interact with and deploy your app using the [ALS command line client](/helion/devplatform/1.2/als/user/reference/client-ref/) or the web-based [ALS Management Console](/helion/devplatform/1.2/als/user/console/).
+- You interact with and deploy your app using the [ALS command line client](/helion/devplatform/als/user/reference/client-ref/) or the web-based [ALS Management Console](/helion/devplatform/als/user/console/).
 
-[Exit Samples](/helion/devplatform/1.2/appdev/) | [Previous Sample](/helion/devplatform/1.2/workbook/database/php/) | [Next Sample](/helion/devplatform/1.2/workbook/helloworld/php/)
+[Exit Samples](/helion/devplatform/appdev/) | [Previous Sample](/helion/devplatform/workbook/database/php/) | [Next Sample](/helion/devplatform/workbook/helloworld/php/)
  
