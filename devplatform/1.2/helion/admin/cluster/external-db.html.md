@@ -19,7 +19,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: External Data Services {#external-data-services}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/cluster/external-db/)
+
 
 - [General Principles](#general-principles)
 - [MySQL](#mysql)

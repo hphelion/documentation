@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Generic and Standalone Frameworks[](#generic-standalone-frameworks "Permalink to this headline")
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/other-frameworks/)
+
 ===============================================================================================
 
 The Generic and Standalone frameworks are for applications that might

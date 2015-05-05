@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: User-Provided Services {#user-provided-services}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/services/user-provided/)
+
 
 User-provided service instances allow you connect applications running
 on Application Lifecycle Service to specified external data services, without hard coding the

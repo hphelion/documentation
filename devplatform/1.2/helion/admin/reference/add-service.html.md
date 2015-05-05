@@ -18,7 +18,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Adding System Services[](#adding-system-services "Permalink to this headline")
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/reference/add-service/)
+
 
 The Application Lifecycle Service has three *Service* definitions:
 

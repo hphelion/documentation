@@ -19,7 +19,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Connecting the Database Service with the Application Lifecycle Service
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/connectdatabase/)
+
 If a more durable or scalable MySQL database service is needed, ensure your ALS cluster is configured to use a database instance or master/slave pair provided by the Database Service. This is an option at cluster create time.
 
 <img src="media/databaseALS.png"/>

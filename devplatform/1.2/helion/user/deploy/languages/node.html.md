@@ -14,7 +14,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Developing in Node {#node-js}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/languages/node/)
+
 
 
 Application Lifecycle Service has a built in Node framework with multiple versions of the

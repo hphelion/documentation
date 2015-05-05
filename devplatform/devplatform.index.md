@@ -19,7 +19,7 @@ authors: Jayme P
 <!--PUBLISHED-->
 
 # HP Helion 1.1 Development Platform: Documentation
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/1.0/)
+
 
 Welcome! The HP Helion Development Platform is a Platform-as-a-Service (PaaS) that helps developers build great cloud-native applications across private and public clouds.  Based on [Cloud Foundry](http://cloudfoundry.org/index.html)&#8482; and fully integrated with [HP Helion OpenStack](/helion/openstack/1.1/)&#174;, the HP Helion Development Platform is open and interoperable, ensuring that developers can focus on building the right app for any environment.
 

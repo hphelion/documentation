@@ -14,7 +14,7 @@ authors: Jayme P
 ---
 <!--UNDER REVISION-->
 # HP Helion 1.2 Development Platform: Resources for Application Developers
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/appdev/)
+
 
 HP has created a series of small, simplified sample applications to help you understand and exercise the Development Platform services.
 

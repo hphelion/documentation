@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Application Lifecycle Service Data Services {#index-0}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/services/data-services/)
+
 
 The Application Lifecycle Service includes a number of data services which can be bound to the
 applications you deploy. These include several databases (PostgreSQL, MySQL, Redis), the RabbitMQ messaging service, a [persistent file system](/helion/devplatform/als/user/services/filesystem/#persistent-file-system) service and [Memcached](/helion/devplatform/als/user/services/memcached/#memcached).

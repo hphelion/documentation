@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: HP Helion Application Lifecycle Service Client {#helion-client}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/client/)
+
 
 
 The Helion ALS client is the command-line interface for the Application Lifecycle Service. You can use it to push application code up to the server, start and stop applications, create data services and link them to

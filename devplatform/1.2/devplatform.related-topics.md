@@ -20,7 +20,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Related Documentation
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/related-topics/)
+
 
 The HP Helion Development Platform is based on Cloud Foundry&#8482; and OpenStack&#174; technology along with an HP-configured Linux operating system.
 

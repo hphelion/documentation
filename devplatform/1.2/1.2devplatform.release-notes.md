@@ -20,7 +20,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Release Notes for HP Helion Development Platform 1.2
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/release-notes/)
+
 
 
 The following release notes are for the HP Helion Development Platform 1.2 released in February 2015. We hope you enjoy the release!

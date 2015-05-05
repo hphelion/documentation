@@ -17,7 +17,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Docker and Fence {#docker-fence "Permalink to this headline"}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/server/docker/)
+
 
 Application Lifecycle Service's [DEA role](/helion/devplatform/als/admin/reference/architecture/#architecture-dea) runs Linux containers to isolate user applications during staging and at runtime. Management of these application containers is handled by the *fence* process, which in turn uses
 [Docker](http://docs.docker.io/en/latest/) to create and destroy Linux

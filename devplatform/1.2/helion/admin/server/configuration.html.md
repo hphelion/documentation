@@ -17,7 +17,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Detailed Configuration {#detailed-configuration} 
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/server/configuration/)
+
 
 After booting the VM, run *kato process ready all* before starting the following configuration steps. This command returns **READY** when all configured system processes have started, and is particularly important when using *kato* commands in automated configuration scripts which run immediately after boot (the
 [*--block*](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-process-ready)

@@ -14,7 +14,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Manifest.yml Options {#manifest-yml-options}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/manifestyml/)
+
 
 The *manifest.yml* file sets application configuration options which are then passed to ALS during the [helion push](/helion/devplatform/als/user/reference/client-ref/management/#command-push) command.
  

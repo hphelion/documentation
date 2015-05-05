@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Glossary
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/reference/glossary/)
+
 
 #### AMQP {#term-AMQP}
 Acronym for [Advanced Message Queuing Protocol](http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol).

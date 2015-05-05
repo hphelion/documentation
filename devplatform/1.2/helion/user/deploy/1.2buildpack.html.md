@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Buildpacks[](#buildpacks "Permalink to this headline")
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/buildpack/)
+
 =======================================================
 
 [Buildpacks](https://devcenter.heroku.com/articles/buildpacks) are

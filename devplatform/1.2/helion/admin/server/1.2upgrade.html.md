@@ -17,7 +17,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: In-Place Upgrades of ALS Nodes and Clusters {#upgrading-helion}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/server/upgrade/)
+
 
 Application Lifecycle Service provides the ability to upgrade a node or cluster in place via [kato node upgrade](/helion/devplatform/als/admin/reference/kato-ref/#kato-command-ref-node-upgrade) without the need to rebuild the entire cluster. This section covers how the upgrade process works.
 

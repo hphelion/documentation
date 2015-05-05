@@ -18,7 +18,7 @@ authors: Jayme P
 ---
 <!--UNDER REVISION-->
 # HP Helion 1.2 Development Platform: Resources for IT Ops {#sysadmin}
-[See the Helion 1.0 Development Platform version of this page](/helion/devplatform/sysadmin/)
+
 
 ##Installation
 

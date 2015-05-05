@@ -15,7 +15,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: General Deployment {#general-deployment}
-[See the Helion 1.0 Development Platform version of this page](/als/v1/user/deploy/)
+
 
 Applications are typically deployed to Application Lifecycle Service by pushing source code and configuration to the system's API endpoint using the [*cf-mgmt* cluster management tool](/helion/devplatform/als/user/client/#client) or other clients that use the Application Lifecycle Service or Cloud Foundry API.
 

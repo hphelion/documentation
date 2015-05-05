@@ -20,7 +20,7 @@ authors: Jayme P
 <!--UNDER REVISION-->
 
 # HP Helion 1.2 Development Platform: Cluster Setup 
-[See the Helion 1.0 Development Platform version of this page](/als/v1/admin/cluster/)
+
 
 This process begins with an installed [micro cloud](/helion/devplatform/als/user/reference/glossary/#term-micro-cloud), which must then be cloned across several [nodes](/helion/devplatform/als/user/reference/glossary/#term-node). You connect to each node in turn and tell it which [role](/helion/devplatform/als/user/reference/glossary/#term-role)s it is to serve, thereby distributing the processing load for maximum performance. 
 
