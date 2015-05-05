@@ -1,0 +1,61 @@
+---
+layout: default
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating Images"
+permalink: /helion/commercial/carrier/dashboard/managing/images/create/
+product: carrier-grade
+
+---
+<!--UNDER REVISION-->
+
+<script>
+
+function PageRefresh {
+onLoad="window.refresh"
+}
+
+PageRefresh();
+
+</script>
+
+<!-- <p style="font-size: small;"> <a href="/helion/commercial/carrier/ga1/install/">&#9664; PREV</a> | <a href="/helion/commercial/carrier/ga1/install-overview/">&#9650; UP</a> | <a href="/helion/commercial/carrier/ga1/">NEXT &#9654;</a></p> -->
+
+# HP Helion OpenStack&#174; Carrier Grade (Alpha): Creating Images
+
+Creating a new image for use in HP Helion OpenStack requires two general steps.
+
+The first step is to create an ISO image file outside of your HP Helion OpenStack. 
+
+When the ISO image file is complete and ready for use, you use HP Helion OpenStack to upload the image to your cloud.
+
+**Note:** After you upload an image, it is considered *golden* and you cannot change it.
+
+### Create an image ###
+
+1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+
+2. Click the **Project** dashboard, then the **System** panel, then the **Images** link.
+
+3. In the **Images** screen, click **Create Image**.
+
+4. In the **Create an Image** screen, provide the image information:
+
+	* Name - Enter a name for the image.
+	* Description - Optionally, enter a brief description of the image.
+	* Image Source - Choose the image source from the list. Your choices are Image Location and Image File.
+	* Image File or Image Location - Based on your selection for Image Source, you either enter the location URL of the image in the Image Location field. or browse to the image file on your system and add it.
+		**Note:** The Image Location field must be a valid and direct URL to the image binary. URLs that redirect or serve error pages will result in unusable images.
+	* Format - Select the correct format (for example, QCOW2) for the image.
+	* Architecture - Specify the architecture. For example, i386 for a 32-bit architecture or x86-64 for a 64-bit architecture.
+	* Minimum Disk - Enter the minimum disk size required to boot the image. Leave the field blank to specify no minimum. 
+	* Minimum RAM (MB) - Enter the minimum memory size required to boot the image. Leave the field blank to specify no minimum.
+	* Public - Select this option to make the image public to all users with access to the current project. Leave the option clear to allow the image to be used in all projects in the domain.
+	* Protected - Select this option to prevent the image from being deleted.  Leave the option clear to allow the image to be deleted.
+
+5. Click **Create Image** to launch the image.	
+
+6. Optionally, you can click **Launch** to [create a running instance](/helion/commercial/carrier/dashboard/managing/instances/create/) based on this image.
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+----

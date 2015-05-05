@@ -1,0 +1,25 @@
+---
+layout: default-devplatform
+permalink: /helion/devplatform/1.2/als/user/reference/api/
+title: "HP Helion 1.2 Development Platform: Application Lifecycle Service API "
+product: devplatform2.0
+product-version1: HP Helion Development Platform
+product-version2: HP Helion Development Platform 1.1
+role1: Application Developer 
+role2: ISV Developer
+role3: Service Developer
+role4: Systems Administrator
+authors: Jayme P
+
+---
+<!--UNDER REVISION-->
+
+# HP Helion 1.2 Development Platform: Application Lifecycle Service API {#helion-client-api}
+
+HP Helion Development Platform Application Lifecycle Service is fully compatible with the [Cloud Foundry v2 API](http://docs.cloudfoundry.org/services/api-v2.0.html).
+
+### Related Documentation
+
+* [Client Command Reference](/helion/devplatform/1.2/als/user/reference/client-ref/)
+* [*kato* Command Reference](/helion/devplatform/1.2/als/admin/reference/kato-ref/)
+
