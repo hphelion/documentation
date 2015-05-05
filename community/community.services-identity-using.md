@@ -65,7 +65,7 @@ The following Identity service tasks are usually performed by someone with the *
 
 ### Working with domains ### {#admindomains}
 
-Use the Identity service to configure user access to your cloud domains. For detailed information, see [Domain Management](/helion/openstack/services/identity/domains/).
+Use the Identity service to configure user access to your cloud domains. For detailed information, see [Domain Management](/helion/openstack/1.1/services/identity/domains/).
 
 * Add a domain to your cloud.
 * Update information for a specified domain, including the description, enabled status, ID, and policy links. 
