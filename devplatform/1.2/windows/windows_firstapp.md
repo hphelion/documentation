@@ -59,21 +59,20 @@ This tutorial requires the following software components:
 	
 	<img src="media/windows_deploy_contextmenu.png">
  
-7. In the first **Cloud Foundry Publish Profile** dialog, enter the URL for the ALS cluster, and a user and password with publishing privileges:
+7. In the first **Cloud Foundry Publish Profile** dialog, enter the URL for the ALS cluster, and a user and password with publishing privileges. Check the **Skip SSL Validation** checkbox if your Helion OpenStack installation uses self-signed certificates:
 	<img src="media/windows_publish_credentials.png" />
  
 8. In the second **Cloud Foundry Publish Profile**, enter the following values and click **Publish**:
-	* **Organization:** <span style="color:red">How do they determine this value?</span>
-	* **Space:** <span style="color:red">How do they determine this value?</span>
+	* **Organization and Space:** Select from one of the provided options.
+	* **Name:** The name of the application (provided).
 	* **Stack:** Leave as <code>win2012r2</code>
-	* **Routes**: <span style="color:red">How do they determine this value?</span>
-	* **Name:** The friendly name of the application
-	* **Memory**: <span style="color:red">How do they determine this value?</span>
-	* **Instances**: <span style="color:red">How do they determine this value?</span>
-	* **Services**: Enter the services to bind to the application. Example: <code>ContosoUniversity-db,mssql2012,default</code>
-	* **Build Locally**: Check to verify that the application builds locally before deploying. The application will build on the server after deployment.
-	* **Configuration**: <span style="color:red">How do they determine this value?</span>
-	* **Platform:** <span style="color:red">How do they determine this value?</span>
+	* **Routes**: Typically the same as the **Name** entry.
+	* **Memory**: The amount of memory the application will use (e.g. 512 MB).
+	* **Instances**: The number of separate installations of the application (e.g. 1).
+	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2012,default</code>
+	* **Build Locally**: Check to build the application locally before deployment, rather than building on the server.
+	* **Configuration**: Set the build configuration (e.g. Debug).
+	* **Platform**: Set the target CPU platform (e.g. Any CPU).
 
 	<span style="color:red">Need updated version of this screenshot</span>:
 	<img src="media/windows_publish_deployinfo.png" /> 
@@ -81,7 +80,7 @@ This tutorial requires the following software components:
 17. Refresh Cloud Foundry Explorer
  
 	<span style="color:red">Screenshot here</span>
-18. Right click "Contoso" app and select **Browse**:
+18. Right click the "Contoso" application and select **Browse**:
  
 	<span style="color:red">Screenshot here</span>
 
@@ -123,11 +122,11 @@ One advantage of using the command line is that you can use Mac or Linux as well
     		${name}-db:
       		type: mssql-2012
 
-2. Use the <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code>:
+2. Use the <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
 	
-		helion push --stack win2012r2 
+		helion push --stack win2012r2 -n
 
-3. When the push completes, the command line will show the application URL.
+3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
 
 	<span style="color:red">Screenshot here</span> 
 5. Browse to the application URL to verify the deployment. 

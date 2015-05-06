@@ -45,8 +45,6 @@ Helion Development Platform version 1.2 adds tools for creating instances of Win
 * Support for creating instances that include Microsoft SQL Server Express. 
 * Integrated buildpack support for building applications with dependencies and services.
 
-<span style="color:red">Other features/ selling points to be added here?</span>.
-
 Windows and .NET support is enabled by adding this functionality to an existing HDP 1.2 installation.
 
 For the 1.2 release, we support creating the following types of instances:
@@ -90,8 +88,10 @@ In order to run .NET framework applications, HDP requires that Windows DEA nodes
 ### .NET tool set: 
 
 * Cloud Foundry Explorer: This Visual Studio plugin performs simple management tasks such as starting or stopping an application, deleting a service, or renaming a route.
-* .NET MSbuild tasks: These MSBuild processes allow you to build and deploy .NET applications as part of the usual build process for your application.
-* .NET SDK: These libraries allow you to programmatically access your Cloud Foundry service
+* Cloud Foundry MSbuild tasks: These MSBuild processes allow you to build and deploy .NET applications as part of the usual build process for your application.
+* Cloud Foundry .NET SDK: These libraries allow you to programmatically access your Cloud Foundry service
+
+For more information about downloading and using these tools, see <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>.
 
 ## Process {#process}
 
@@ -126,7 +126,7 @@ Windows support in HDP has software requirements including the following:
 * Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
 * The Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a>
 * Any edition of Visual Studio 2013, including the Community (free) edition.
-* The <a href="/helion/devplatform/1.2/windowsdea/deployingnet">Cloud Foundry Explorer Visual Studio plugin</a>. This plugin can be found by searching for <span style="color:red">Cloud Foundry Explorer</span> in the *Extensions and Updates* module of Visual Studio.
+* The <a href="/helion/devplatform/1.2/windowsdea/deployingnet">Cloud Foundry Explorer Visual Studio plugin</a>. This plugin can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 * HDP supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
