@@ -28,6 +28,7 @@ An admin user can create, edit, and delete instances as needed.
 * [Create a flavor](#createflavor)
 * [Edit a flavor](#editflavor)
 * [Edit flavor metadata](#editmeta)
+* [Configure extra specifications](#extra)
 * [Delete a flavor](#deleteflavor)
 
 ### Create a flavor ### {#createflavor}
@@ -35,6 +36,8 @@ An admin user can create, edit, and delete instances as needed.
 To create a flavor:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+
+	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 
@@ -58,14 +61,20 @@ To create a flavor:
 
 	By default, no project is specified as having access the flavor. If none is specified, all projects can access the flavor.
 
-8. Click **Create Flavor** to create a new the flavor.<br />
+8. Click **Create Flavor** to create a new the flavor.
+
 A message is displayed on successful creation.
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
 
 ### Edit a flavor ### {#editflavor}
 
 To edit a flavor:
 
 1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+
+	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 
@@ -81,11 +90,27 @@ To edit a flavor:
 
 A message is displayed on successful edit.
 
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
 ### Managing Metadata {#editmeta}
 
 Compute uses a metadata service for virtual machine instances to retrieve instance-specific data. 
 
 You can add and remove metadata for flavors, see [Managing Metadata](/helion/commercial/carrier/dashboard/managing/metadata/).
+
+<a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
+
+
+### Creating extra specifications {#extra}
+
+Extra specifications are key-value pairs you can add to an existing flavor to be included when the flavor is used with a new virtual machine. 
+
+<hr>
+**Note:** This feature applies to the Wind River Linux region only.
+<hr>
+
+You can edit an existing flavor to include additional attributes using extra specifications. See [Configuring Flavor Extra Specifications](/helion/commercial/carrier/dashboard/managing/flavors/extra/).
 
 ### Delete a flavor ### {#deleteflavor}
 
