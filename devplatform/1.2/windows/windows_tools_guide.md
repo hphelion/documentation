@@ -55,7 +55,7 @@ Follow these steps to install the Cloud Foundry Explorer:
 
 The explorer can be opened in Visual Studio under View -&gt;Other Windows -&gt;Cloud Foundry Explorer. The explorer window shows endpoints that you have successfully connected to:
 
-<img src="media/windows_cf_explorer.png" />
+<img src="media/windows_cf_explorer.PNG" />
 
 The Cloud Foundry Explorer Window displays the following types of nodes:
 
