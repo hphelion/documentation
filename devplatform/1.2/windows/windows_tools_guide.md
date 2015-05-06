@@ -28,7 +28,7 @@ This document contains the following sections:
 ###.NET tools:
 * [Cloud Foundry Explorer](#cloudfoundryexplorer)
 * [Cloud Foundry MSBuild Tasks](#msbuild)
-* [Helion Development Platform .NET SDK](#sdk)
+* [Cloud Foundry .NET SDK](#sdk)
 
 ### Setup tools:
 * [ALS Cluster Management (cf-mgmt)](#ALS)
@@ -81,7 +81,7 @@ For an example of how to deploy an application from Visual Studio, see <a href="
 
 ### Cloud Foundry MSBuild Tasks {#msbuild}
 
-These MSBuild processes allow you to build and deploy .NET applications as part of the usual build process for your application. 
+These MSBuild processes allow you to build and deploy .NET applications to Cloud Foundry instances as part of the usual build process for your application. 
 
 The MSBuild tasks can be installed using NuGet:
 
@@ -122,7 +122,7 @@ For more information on the ALS cluster management tool, see <a href="http://doc
 
 The ALS cluster management tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
-### Helion Client {#helion)
+### Helion Client {#helion}
 
 This tool is used to deploy applications from the command line. The same tool is used for deploying applications to Windows and Linux instances.
 
