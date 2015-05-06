@@ -21,13 +21,13 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows and .NET Tools Guide 
 
-Helion Development Platform (HDP) 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based applications. This document describes how to obtain and use these tools.
+Helion Development Platform (HDP) 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based applications. This document describes how to install and use these tools.
 
 This document contains the following sections:
 
 ###.NET tools:
 * [Cloud Foundry Explorer](#cloudfoundryexplorer)
-* [MSBuild scripts](#msbuild)
+* [Cloud Foundry MSBuild Tasks](#msbuild)
 * [Helion Development Platform .NET SDK](#sdk)
 
 ### Setup tools:
@@ -39,7 +39,7 @@ This document contains the following sections:
  
 
 ## .NET tools
-### Cloud Foundry Explorer
+### Cloud Foundry Explorer {#cloudfoundryexplorer}
 
 This Visual Studio 2013 plugin is used to deploy and manage .NET applications. The plugin can be used in any edition of VS 2013, including the Community (free) edition.
 
@@ -51,13 +51,44 @@ Follow these steps to install the Cloud Foundry Explorer:
 2. Search for the **Cloud Foundry Explorer** extension.
 3. Install the extension from the search results.
 
+#### The Cloud Foundry Explorer Window
+
+The explorer can be opened in Visual Studio under View -&gt;Other Windows -&gt;Cloud Foundry Explorer. The explorer window shows endpoints that you have successfully connected to:
+
+<img src="media/windows_cf_explorer.png" />
+
+The Cloud Foundry Explorer Window displays the following types of nodes:
+
+* **CloudFoundryTarget**: Lists version, URL, login credentials, and whether to ignore SSL errors (e.g. from using self-signed certificates).
+* **Organization**: Lists current roles in organization, organization name, and creation date
+* **Space**: Lists current roles in space, space name, and creation date
+* **AppsCollection**: The deployed applications
+* **App**: Each deployed application. Shows creation date, application name, buildpack, max memory, and instance count.
+* **Service**: Shows current roles in service, service name, creation date
+* **Route**: Shows the domain for the route, and which applications bind to it
+* **AppFiles**: A collection of files used by an application
+* **File**: Files are listed in an AppFiles collection. Shows the filename for the file.
+* **ServicesCollection**: Shows details for the service collection
+* **RoutesCollection**: Shows details for the route collection
+
+##### Special node types
+* **CloudError** <span style="color:red">What to say about this?</span>
+* **LoadingPlaceholder** <span style="color:red">What to say about this?</span>
+
 #### Deploying an application
 
 For an example of how to deploy an application from Visual Studio, see <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET Application</a>.
 
-### MSBuild scripts {#msbuild}
+### Cloud Foundry MSBuild Tasks {#msbuild}
 
-<span style="color:red">To be determined</a>
+These MSBuild processes allow you to build and deploy .NET applications as part of the usual build process for your application. 
+
+The MSBuild tasks can be installed using NuGet:
+
+* Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
+* Search for **Cloud Foundry MSBuild Tasks**
+* Click **Install**
+ 
 
 ### Cloud Foundry .NET SDK {#sdk}
 
