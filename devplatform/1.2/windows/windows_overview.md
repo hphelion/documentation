@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Windows DEA Overview"
-permalink: /helion/devplatform/1.2/windowsdea/
+permalink: /helion/devplatform/1.2/windows/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
