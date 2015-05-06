@@ -35,7 +35,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): How to use the Helion Dashboards
 
-The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud.  
+The HP Helion OpenStack Commercial dashboards are browser-based user interfaces that allow you to interact with the HP Helion OpenStack Commercial overcloud. The overcloud is the end-user OpenStack cloud. 
 
 The interface, based on OpenStack Horizon, is grouped into dashboards, including [Project](#DashProject), [Admin](#DashAdmin) and [Settings](#DashSettings). Tabs on the left side of the interface expand and contract to show available commands grouped into **panels**. 
 
