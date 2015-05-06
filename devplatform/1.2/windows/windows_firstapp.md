@@ -57,10 +57,10 @@ This tutorial requires the following software components:
 5. Save <code>web.config</code>.
 6. Right click the project and select **Publish to Cloud Foundry**.
 	
-	<img src="/media/windows_deploy_contextmenu.png">
+	<img src="media/windows_deploy_contextmenu.png">
  
 7. In the first **Cloud Foundry Publish Profile** dialog, enter the URL for the ALS cluster, and a user and password with publishing privileges:
-	<img src="/media/windows_publish_credentials.png" />
+	<img src="media/windows_publish_credentials.png" />
  
 8. In the second **Cloud Foundry Publish Profile**, enter the following values and click **Publish**:
 	* **Organization:** <span style="color:red">How do they determine this value?</span>
@@ -76,7 +76,7 @@ This tutorial requires the following software components:
 	* **Platform:** <span style="color:red">How do they determine this value?</span>
 
 	<span style="color:red">Need updated version of this screenshot</span>:
-	<img src="/media/windows_publish_deployinfo.png" /> 
+	<img src="media/windows_publish_deployinfo.png" /> 
  
 17. Refresh Cloud Foundry Explorer
  

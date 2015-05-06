@@ -140,7 +140,7 @@ Windows Server licensing for Windows DEAs and Windows SQL Server instances consi
 
 For more information on licensing Windows Server, see <a href="https://www.microsoft.com/en-us/licensing/product-licensing/windows-server-2012-r2.aspx">Windows Server 2012 Volume Licensing</a>, or contact your Microsoft licensing representative.
 
-## Next Steps {#nextsteps]
+## Next Steps {#nextsteps}
 
 * <a href="/helion/devplatform/1.2/windows/building_windows">Building and Deploying Windows and SQL Server Express Images</a>
 * <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET application 
