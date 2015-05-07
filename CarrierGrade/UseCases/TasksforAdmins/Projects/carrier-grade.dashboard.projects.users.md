@@ -25,7 +25,7 @@ As an admin, you can [add](#useradd) and [remove](#userdel) user access to each 
 
 ### Add a user to a project ### {#useradd}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Identity** dashboard, then the **Projects** link.
 
@@ -42,7 +42,7 @@ As an admin, you can [add](#useradd) and [remove](#userdel) user access to each 
 
 ### Remove a user from a project ### {#userdel}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Identity** dashboard, then the **Projects** link.
 

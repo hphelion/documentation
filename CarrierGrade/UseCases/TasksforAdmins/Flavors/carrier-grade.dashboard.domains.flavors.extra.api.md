@@ -24,7 +24,7 @@ PageRefresh();
 You can accommodate the use of guest heartbeats on a VM using an extra specification.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 Select this option when you expect one or more of the guest applications running on the virtual machine to make use of the Titanium Server Heartbeat client API. For more information about the Heartbeat API, refer to the Titanium

@@ -34,7 +34,7 @@ As an administrator you can manage the host aggregates in your domain:
 
 ### Create a host aggregate ### {#createagg}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Host Aggregates** link.
 
@@ -54,7 +54,7 @@ As an administrator you can manage the host aggregates in your domain:
 
 ### Modify a Host Aggregate ### {#editagg}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Host Aggregates** link.
 
@@ -87,7 +87,7 @@ You can add and remove metadata for host aggregates, see [Managing Metadata](/he
 
 ### Delete a host aggregate ### {#deleteagg}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Host Aggregates** link.
 

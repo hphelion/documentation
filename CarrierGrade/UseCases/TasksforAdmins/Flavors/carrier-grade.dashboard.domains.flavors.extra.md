@@ -24,7 +24,7 @@ PageRefresh();
 Compute flavors are machine configurations that describe the amount of memory, number of CPUs, and storage capacity of instances. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 You can edit an existing flavor to include additional attributes using extra specifications.
@@ -35,7 +35,7 @@ The **Extra Specs** tab lists extra specifications that have been added for the 
 
 To add a new extra specification:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
@@ -73,7 +73,7 @@ A message is displayed on successful creation.
 
 To edit a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
@@ -109,7 +109,7 @@ Instances that use the flavor are not affected when a flavor is deleted.
 
 To delete a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 

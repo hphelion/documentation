@@ -28,7 +28,7 @@ How you interact with instances depends upon your user type, either an administr
 
 **Note:** The admin can perform all of the user tasks in addition to the admin tasks. For some tasks, the admin will need to use the **Project** > **Compute** > **Instances** panel.
 
-To work with instances [launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/). Then, Click the **Project** dashboard, then the **System** panel, then the **Instances** link. The instances in the current project are listed.
+To work with instances [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/). Then, Click the **Project** dashboard, then the **System** panel, then the **Instances** link. The instances in the current project are listed.
 
 The **Instances** panel looks similar to the following. Click the image to view in a new window: 
 

@@ -27,7 +27,7 @@ A non-admin user or admin user can <a href="#createnet">create</a> and <a href="
 
 ### Create a network ### {#createnet}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Networks** link.
 
@@ -71,7 +71,7 @@ A non-admin user or admin user can <a href="#createnet">create</a> and <a href="
 
 ### Delete a network ### {#deletenet}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Networks** link.
 

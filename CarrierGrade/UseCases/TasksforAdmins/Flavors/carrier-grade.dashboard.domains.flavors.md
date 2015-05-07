@@ -35,7 +35,7 @@ An admin user can create, edit, and delete instances as needed.
 
 To create a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
@@ -72,7 +72,7 @@ A message is displayed on successful creation.
 
 To edit a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 	* Use the IP address for the appropriate region where you want to make the change, either: the hLinux region or the Wind River Linux region.
 
@@ -107,7 +107,7 @@ You can add and remove metadata for flavors, see [Managing Metadata](/helion/com
 Extra specifications are key-value pairs you can add to an existing flavor to be included when the flavor is used with a new virtual machine. 
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 You can edit an existing flavor to include additional attributes using extra specifications. See [Configuring Flavor Extra Specifications](/helion/commercial/carrier/dashboard/managing/flavors/extra/).
@@ -118,7 +118,7 @@ Instances that use the flavor are not affected when a flavor is deleted.
 
 To delete a flavor:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 
