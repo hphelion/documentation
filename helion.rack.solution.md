@@ -2,7 +2,6 @@
 layout: default
 title: "HP Helion Optimized Cloud Solution"
 permalink: /helion/solutions/
-product: commercial.ga
 
 ---
 <!--PUBLISHED-->
