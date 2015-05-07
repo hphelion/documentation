@@ -108,7 +108,7 @@ Windows support in HDP has software requirements including the following:
 
 * An HP Helion Public Cloud account.
 * Any edition of Visual Studio 2013, including the Community (free) edition.
-* The <a href="/helion/devplatform/preview/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extensio can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
+* The <a href="/helion/devplatform/preview/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 * HDP supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
@@ -124,8 +124,8 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 ## Next Steps {#nextsteps}
 
-* <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET application</a> 
-* <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>
+* <a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET application</a> 
+* <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>
 
 
 
