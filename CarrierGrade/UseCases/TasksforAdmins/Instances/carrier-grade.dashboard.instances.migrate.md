@@ -41,7 +41,7 @@ To migrate an instance:
 
 4. In the **Confirm Migrate Instance** screen, select **Migrate Instance**. 
 
-	Refer to teh Flavor Details list for information on the selected falvor.
+	Refer to the Flavor Details list for information on the selected falvor.
 
 	The **Total RAM** meter under Project Limits will show how the resized instance affects the RAM allocated for the project.
 
