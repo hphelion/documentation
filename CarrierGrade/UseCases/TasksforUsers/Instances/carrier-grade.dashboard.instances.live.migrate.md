@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Resizing Instances"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Live Migration of Virtual Machines"
 permalink: /helion/commercial/carrier/dashboard/managing/instances/live/migrate/
 product: carrier-grade
 
