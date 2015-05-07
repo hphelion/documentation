@@ -40,6 +40,11 @@ For information on the administrative tasks you can perform in the HP Helion Ope
 
 You can install 
 
+### Live Migration of Virtual Machines
+
+Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal disruption of the guest applications. This can happen automatically, or upon request by the system administrator.
+
+For more information, see [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/).
 
 <!-- Hide for alpha
 - [Release Notes](/helion/openstack/carrier/release-notes/) 
@@ -57,11 +62,6 @@ For information on the administrative tasks you can perform using HLM, see [Usin
 
 For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/openstack/carrier/admin/helion/)
 
-### Live Migration of Virtual Machines
-
-Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal disruption of the guest applications. This can happen automatically, or upon request by the system administrator.
-
-For more information, see [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/).
 
 
 ## Administering HP Distributed Cloud Networking (DCN)
