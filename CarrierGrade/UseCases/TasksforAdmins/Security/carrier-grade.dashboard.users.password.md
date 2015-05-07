@@ -23,7 +23,7 @@ PageRefresh();
 <p>As an admin, you can change the password for a user, as needed. You do not need to know the current password in order to assign a new password.</p>
 ### Change a Password
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Identity** dashboard, then the **Users** link.
 

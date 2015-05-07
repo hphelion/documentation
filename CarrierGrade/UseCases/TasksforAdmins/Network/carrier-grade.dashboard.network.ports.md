@@ -36,7 +36,7 @@ As an admin, you can:
 
 ### Create a port ### {#createport}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 
@@ -64,7 +64,7 @@ As an admin, you can:
 
 ###Edit a port {#editport}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 
@@ -88,7 +88,7 @@ As an admin, you can:
 
 ###Delete a port {#deleteport}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Networks** link.
 

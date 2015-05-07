@@ -21,7 +21,7 @@ PageRefresh();
 
 # HP Helion OpenStack&#174; Carrier Grade (Alpha): Viewing Services Information
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **System Information** link.
 

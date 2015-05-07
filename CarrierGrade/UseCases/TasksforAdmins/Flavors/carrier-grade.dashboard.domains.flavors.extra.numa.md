@@ -24,7 +24,7 @@ PageRefresh();
 You can use flavor extra specs or image properties to allocate virtual memory and vCPU resources to virtual NUMA nodes.
 
 <hr>
-**Note:** This feature applies to the Wind River Linux region only.
+**Note:** This feature applies to the Wind River Linux servers only.
 <hr>
 
 By default, the memory and CPU resources defined for a flavor are assigned to a single virtual NUMA node, which is mapped to an available host NUMA node when an instance is launched or migrated. You can specify the use of multiple NUMA nodes using either flavor extra specifications (which take the general form hw:specification), or image properties (which take the general form hw_specification).

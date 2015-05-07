@@ -48,7 +48,7 @@ where `router_name` is a name assigned to the router.
 
 To create an instance:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 

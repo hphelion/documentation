@@ -27,7 +27,7 @@ As an admin, you can [allow specific projects to have access to a flavor](#add) 
 
 ### Allowing a project to access a flavor ### {#add}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Admin** dashboard, then the **System** panel, then the **Flavors** link.
 
@@ -45,7 +45,7 @@ As an admin, you can [allow specific projects to have access to a flavor](#add) 
 
 ### Preventing a project from accessing a flavor ### {#remove}
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **System** panel, then the **Admin** dashboard, then the **Flavors** link.
 

@@ -25,7 +25,7 @@ As an admin, you can view usage information on each project.
 
 ### View project usage ###
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Identity** dashboard, then the **Projects** link.
 

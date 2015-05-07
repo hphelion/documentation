@@ -29,7 +29,7 @@ With a soft reboot, the operating system is signaled to restart, which allows fo
 
 To rebooot an instance:
 
-1. [Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/).
+1. [Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/).
 
 2. Click the **Project** dashboard, then the **System** panel, then the **Instances** link.
 

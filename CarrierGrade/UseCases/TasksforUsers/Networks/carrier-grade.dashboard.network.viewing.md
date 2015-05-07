@@ -25,7 +25,7 @@ The **Network Topology** screen is a physical representation of your network con
 
 Your network looks similar to the following diagram. 
 
-[Launch the HP Helion OpenStack Helion Dashboard](/helion/openstack/carrier/dashboard/login/) and click the **Project** dashboard, then the **System** panel, then the  **Network Topology** link.
+[Launch the HP Helion OpenStack Horizon Dashboard](/helion/openstack/carrier/dashboard/login/) and click the **Project** dashboard, then the **System** panel, then the  **Network Topology** link.
 
 <br /><img src="media/compute-network-topology-def-crop.png"  alt="" />
 
