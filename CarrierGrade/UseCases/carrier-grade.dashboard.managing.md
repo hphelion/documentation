@@ -27,7 +27,7 @@ The dashboards are based on OpenStack Horizon and provide enhanced features.
 
 Refer to these documentation resources:
 
-* [Using HP Helion OpenStack for Administrators](helion/commercial/carrier/dashboard/admin/) - Describes the Operational Dashboard user interface dialogs and options.
+* [Administering the HP Helion OpenStack Region](/helion/commercial/carrier/dashboard/managing/admin/) - Describes the Operational Dashboard user interface dialogs and options.
 
 * [Using HP Helion OpenStack for Users](/helion/commercial/carrier/dashboard/managing/nonadmin/) - Describes the Operational Dashboard user interface dialogs and options.
 

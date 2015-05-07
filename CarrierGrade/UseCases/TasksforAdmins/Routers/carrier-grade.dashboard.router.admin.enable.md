@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Deleting a Router"
+title: "HP Helion OpenStack&#174; Carrier Grade (Alpha): Enabling and Disabling a Router"
 permalink: /helion/commercial/carrier/dashboard/managing/router/admin/enable/
 product: carrier-grade
 

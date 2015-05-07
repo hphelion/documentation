@@ -40,6 +40,11 @@ For information on the administrative tasks you can perform in the HP Helion Ope
 
 You can install 
 
+### Live Migration of Virtual Machines
+
+Live migration occurs when a virtual machine is transferred to execute on a different compute node with minimal disruption of the guest applications. This can happen automatically, or upon request by the system administrator.
+
+For more information, see [Live Migration of Virtual Machines](/helion/commercial/carrier/dashboard/managing/).
 
 <!-- Hide for alpha
 - [Release Notes](/helion/openstack/carrier/release-notes/) 
@@ -53,9 +58,11 @@ Using HLM, you can install and upgrade HP Helion OpenStack Carrier Grade and do.
 
 For information on the administrative tasks you can perform using HLM, see [Using Helion Lifecycle Management](/helion/openstack/carrier/admin/hlm/).
 
-## Administering the HP Helion OpenStack Region
+## Administering HP Helion OpenStack Carrier Grade
 
 For information on the administrative tasks you can perform in the HP Helion OpenStack region, see [Administering the HP Helion OpenStack Region](/helion/openstack/carrier/admin/helion/)
+
+
 
 ## Administering HP Distributed Cloud Networking (DCN)
 
@@ -63,7 +70,7 @@ Using DCN, you can install and upgrade HP Helion OpenStack Carrier Grade and do.
 
 For information on the administrative tasks you can perform using DCN, see [Administering HP Distributed Cloud Networking (DCN)](/helion/openstack/carrier/admin/dcn/).
 
-## Administering the WindRiver Region
+## Administering the Wind River Linux Region
 
 For information on the administrative tasks you can perform in the WindRiver region, see [Administering the WindRiver Region](/helion/openstack/carrier/admin/wr/)
 

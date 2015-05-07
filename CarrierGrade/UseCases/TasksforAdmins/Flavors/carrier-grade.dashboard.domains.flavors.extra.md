@@ -60,7 +60,7 @@ To add a new extra specification:
 	* Guest Heartbeat. Enables the Heartbeat API for use by guests on the VM. For more information, see [Enabling the Heartbeat API for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/api/).
 	* VCPU Scheduler Policy. Sets the scheduling priority for non-boot virtual CPUs. For more information, see [Configuring vCPU Scheduling and Priority](/helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/sched/)
 	* Minimum Number of CPUs. Sets the minimum number of virtual CPUs for the flavor.
-	* Local Storage. Specifies whether to use local or remote ephemeral storage resources.
+	* Local Storage. Specifies whether to use local or remote ephemeral storage resources. For more information, see [Specifying Local Storage for a VM](/helion/commercial/carrier/dashboard/managing/flavors/extra/vcpu/storage/).
 
 6. Click **Create** to create a new the flavor.
 
