@@ -105,7 +105,7 @@ To add a SQL Server role to a Windows instance, use the following syntax:
 
 		cf-mgmt add-service mssql2014 --load <file name>.yml
 
-For more information on the ALS cluster management tool, see <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference</a>.
+For more information on the ALS cluster management tool, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/reference">HP Helion ALS Cluster Management Tool Reference</a>.
 
 The ALS cluster management tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
@@ -117,7 +117,7 @@ To deploy a .NET application to a Windows instance, use the following syntax fro
 
 		helion push --stack win2012r2 
 
-For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</a>
+For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/user/reference/client-ref">Application Lifecycle Service Client Command Reference</a>
 
 The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
