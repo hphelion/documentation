@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Windows and .NET Applications Tools Guide"
-permalink: /helion/devplatform/1.2/windows/tools_guide
+permalink: /helion/devplatform/preview/tools_guide
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -75,7 +75,7 @@ The Cloud Foundry Explorer Window displays the following types of nodes:
 
 #### Deploying an application
 
-For an example of how to deploy an application from Visual Studio, see <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET Application</a>.
+For an example of how to deploy an application from Visual Studio, see <a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET Application</a>.
 
 ### Cloud Foundry MSBuild Tasks {#msbuild}
 

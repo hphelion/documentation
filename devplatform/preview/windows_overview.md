@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Windows Overview"
-permalink: /helion/devplatform/1.2/windows/
+permalink: /helion/devplatform/preview/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -42,7 +42,7 @@ Helion Development Platform version 1.2 adds tools for creating instances of Win
 
 * Organizations can run their .NET server applications in the same Helion OpenStack environment as their Linux applications.
 * A consistent tooling experience for deploying Windows and Linux applications: The same <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">application deployment and cluster management tools</a> can be used for both Windows and Linux deployments.
-* Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/1.2/windows/visualstudio">Visual Studio extension</a> for deploying and managing applications.
+* Additional developer tools, including an SDK for programmatic access to services, and a <a href="/helion/devplatform/preview/deployingnet">Visual Studio extension</a> for deploying and managing applications.
 * Feature-rich application sandboxing, including memory and CPU management, and application isolation. This allows applications to coexist within a single ALS cluster, saving the overhead of running a separate operating system for each application.
 * Support for creating Windows instances that include Microsoft SQL Server Express. 
 * Integrated buildpack support for building applications with dependencies and services.
@@ -90,13 +90,13 @@ In order to run .NET framework applications, HDP requires that Windows DEA nodes
 * Cloud Foundry MSBuild tasks: These MSBuild processes allow you to build and deploy .NET applications as part of the usual build process for your application.
 * Cloud Foundry .NET SDK: These libraries allow you to programmatically interact with the Cloud Foundry APIs.
 
-For more information about downloading and using these tools, see <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>.
+For more information about downloading and using these tools, see <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>.
 
 ## Process {#process}
 
 At a high level, running .NET applications in HDP involves the following process:
 
-1. Download the <a href="https://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Helion client tool</a>.
+1. Download the <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Helion client tool</a>.
 2. Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.
 3. Optionally, install the Cloud Foundry .NET SDK (for programmatic access to services.)
 4. Build your application.
@@ -108,7 +108,7 @@ Windows support in HDP has software requirements including the following:
 
 * An HP Helion Public Cloud account.
 * Any edition of Visual Studio 2013, including the Community (free) edition.
-* The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extensio can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
+* The <a href="/helion/devplatform/preview/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extensio can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 * HDP supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
