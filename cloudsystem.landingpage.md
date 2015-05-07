@@ -2,7 +2,6 @@
 layout: default
 title: "HP Helion CloudSystem"
 permalink: /cloudsystem/
-product: commercial.ga
 authors: Kathleen J.
 role1: Systems Administrator 
 role2: Data Center Architect 

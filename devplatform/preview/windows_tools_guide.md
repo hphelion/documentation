@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows and .NET Tools Guide 
 
+<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
+
 Helion Development Platform (HDP) 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based applications. This document describes how to install and use these tools.
 
 This document contains the following sections:
@@ -33,11 +35,7 @@ This document contains the following sections:
 ### Setup tools:
 * [ALS Cluster Management (cf-mgmt)](#ALS)
 * [Helion client (helion)](#helion)
-
-### Windows Image Tool:
-* [Glazier](#glazier)
  
-
 ## .NET tools
 ### Cloud Foundry Explorer {#cloudfoundryexplorer}
 
@@ -72,8 +70,8 @@ The Cloud Foundry Explorer Window displays the following types of nodes:
 * **RoutesCollection**: Shows details for the route collection
 
 ##### Special node types
-* **CloudError** <span style="color:red">What to say about this?</span>
-* **LoadingPlaceholder** <span style="color:red">What to say about this?</span>
+* **CloudError**
+* **LoadingPlaceholder** 
 
 #### Deploying an application
 
@@ -94,17 +92,6 @@ The MSBuild tasks can be installed using NuGet:
 
 The SDK is used for programmatic access to controlling Windows images and .NET applications. Using the SDK, developers can create build and deployment automation.
 
-<span style="color:red">To be determined</a>
-
-## Windows Image tool
-### Glazier {#glazier}
-
-Glazier is the tool used to create Windows images for deployment to Helion OpenStack (HOS) Application Lifecycle Service (ALS) clusters. 
-
-Glazier can be downloaded from the following location: <a href="">Download</a> <span style="color:red">(Need final link)
-
-For information on Glazier, see <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>.
-
 ## Setup Tools
 ### ALS Cluster Management Tool (cf-mgmt) {#ALS}
 
@@ -118,7 +105,7 @@ To add a SQL Server role to a Windows instance, use the following syntax:
 
 		cf-mgmt add-service mssql2014 --load <file name>.yml
 
-For more information on the ALS cluster management tool, see <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/client/reference">HP Helion ALS Cluster Management Tool Reference</a>.
+For more information on the ALS cluster management tool, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/reference">HP Helion ALS Cluster Management Tool Reference</a>.
 
 The ALS cluster management tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
@@ -130,7 +117,7 @@ To deploy a .NET application to a Windows instance, use the following syntax fro
 
 		helion push --stack win2012r2 
 
-For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.2/als/user/reference/client-ref">HP Helion 1.2 Development Platform: Application Lifecycle Service Client Command Reference</a>
+For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/user/reference/client-ref">Application Lifecycle Service Client Command Reference</a>
 
 The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
