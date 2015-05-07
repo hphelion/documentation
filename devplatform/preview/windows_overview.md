@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
+<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
+
 Helion Development Platform (HDP) version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of HDP. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
 
 This document contains the following sections:
@@ -77,10 +79,6 @@ HDP 1.2 supports SQL Server Express 2012 and SQL Server Express 2014. SQL Server
 
 In order to run .NET framework applications, HDP requires that Windows DEA nodes be deployed. The tools used to create and deploy Windows DEA nodes, and to deploy .NET Framework applications, include the following:
 
-### Windows image tool set: 
-
-* Glazier (*create-glazier*): This tool creates a Windows image for deploment to Helion OpenStack. Due to licensing constraints, Windows images must be created by the licensed user.
-
 ### Management tool set:
 
 * ALS Cluster management (*cf-mgmt*): This tool adds Windows DEAs and SQL Server services to your cluster.
@@ -96,20 +94,7 @@ For more information about downloading and using these tools, see <a href="/heli
 
 ## Process {#process}
 
-At a high level, running .NET applications in HDP involves two processes:
-
-* [Enabling Windows in HDP (Installation)](#enablingwindows)
-* [Application development and deployment](#development)
-
-### Enabling Windows in HDP (Installation) {#enablingwindows}
-
-1. Obtain a Windows 2012R2 server license and ISO image.
-2. Download the <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Glazier</a> tool.
-3. Use the Glazier tool to create and upload your Windows images.
-4. Add Windows DEAs to your cluster
-5. Add SQL Server services to your cluster.
-
-### Application development and deployment {#development}
+At a high level, running .NET applications in HDP involves the following process:
 
 1. Download the <a href="https://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">Helion client tool</a>.
 2. Install the Cloud Foundry Explorer and Cloud Foundry MSBuild tasks in Visual Studio.
@@ -121,13 +106,9 @@ At a high level, running .NET applications in HDP involves two processes:
 
 Windows support in HDP has software requirements including the following:
 
-* A deployment of HOS 1.1. Deployment to HOS 1.0 is not supported.
-* A licensed, retail, English language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
-* Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
-* Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
-* The Glazier tool: <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Download</a>
+* An HP Helion Public Cloud account.
 * Any edition of Visual Studio 2013, including the Community (free) edition.
-* The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
+* The <a href="/helion/devplatform/1.2/windows/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extensio can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
 * HDP supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
@@ -143,13 +124,7 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 ## Next Steps {#nextsteps}
 
-* <a href="/helion/devplatform/1.2/windows/building_windows">Building and Deploying Windows and SQL Server Express Images</a>
 * <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET application</a> 
-* <a href="/helion/devplatform/1.2/windows/glazier/">Glazier Reference Guide</a>
-* <a href="/helion/devplatform/1.2/windows/custom_buildpacks">Creating Custom Buildpacks for Windows  Applications</a>
-* <a href="/helion/devplatform/1.2/windows/connecting_services/">Connecting Services to a Windows  Application</a>
-* <a href="/helion/devplatform/1.2/windows/deploying">Deploying Windows Applications to Specific Servers</a>
-* <a href="/helion/devplatform/1.2/windows/powershell">Controlling Windows with PowerShell</a>
 * <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>
 
 
