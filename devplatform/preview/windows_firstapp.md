@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Deploying your first .NET Application"
-permalink: /helion/devplatform/1.2/windows/deployingnet
+permalink: /helion/devplatform/preview/deployingnet
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -30,7 +30,7 @@ This tutorial demonstrates how to deploy an application to a Windows Server inst
 This tutorial requires the following software components:
 
 * Visual Studio 2013. Any edition is supported, including the Community (Free) edition.
-* Cloud Foundry Explorer and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a> for more details. 
+* Cloud Foundry Explorer and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> for more details. 
 * Download and extract the <a href="https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8">Contoso University Sample Application</a>.
 
 ## Deploy the sample application from Visual Studio
@@ -90,7 +90,7 @@ That's it! You are ready to use your application.
 
 ## Deploy the sample application from the command line
 
-You do not need Visual Studio to deploy your application. You can deploy it using the command line using the Helion client tool. For more information about using the Helion client tool with Windows applications, see <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>.
+You do not need Visual Studio to deploy your application. You can deploy it using the command line using the Helion client tool. For more information about using the Helion client tool with Windows applications, see <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>.
 
 
 One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. By default, the client tool uploads the application, and the application is built on the server.
@@ -130,7 +130,4 @@ One advantage of using the command line is that you can use Mac or Linux as well
 
 3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
 
-	<span style="color:red">Screenshot here</span> 
 5. Browse to the application URL to verify the deployment. 
-
-	<span style="color:red">Screenshot here</span> 
