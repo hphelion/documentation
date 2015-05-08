@@ -33,7 +33,7 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 
 1. In the deployment information window, enter the service information in the **Service** field in the format <code>Service Name, Service Type, Service Plan</code>:
 
-	<img src="/media/windows_services.png" />
+	<img src="media/windows_services.png" />
 2. Deploy your application.
 3. Once the application gets successfully created, your VCAP_Services file will have a node such as the following:
 
@@ -60,10 +60,10 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 4. Add dependencies.
 	1. Add a JSON package. In this case, you'll install **JSON.NET**. Open the **Manage NuGet Packages** dialog and search for **JSON.NET**. Click **Install**. 
 	
-		<img src="windows_nuget_json.png" />
+		<img src="media/windows_nuget_json.png" />
 	2. Add a Redis client. In this case, you'll install **StackExchange.Redis**.Open the **Manage NuGet Packages** dialog and search for **StackExchange.Redis**. Click **Install**.
 	
-		<img src="windows_nuget_redis.png" />
+		<img src="media/windows_nuget_redis.png" />
 5. To verify that the services are working, create a new MVC5 View (CSHTML) page with the following contents:
 
 		<p>
@@ -105,7 +105,7 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 	5. Displays the returned string
 6. Deploy and open the application. You will see the following result:
 
-		<img src="/media/windows_redis_result.png" />
+		<img src="media/windows_redis_result.png" />
 
 
 

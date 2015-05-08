@@ -28,8 +28,15 @@ A **Buildpack** is a collection of scripts that specify what frameworks and runt
 When you build and deploy a Windows application, the following steps take place:
 
 1. You will be prompted for connection data (Endpoint, login, and password), and whether to ignore SSL errors. You should check "Ignore SSL errors" in the dialog if your deployment environment uses self-signed SSL certificates.
-	<img src="/media/windows_publish_credentials.png"
+
+	<img src="media/windows_publish_credentials.png" />
 2. Application settings are collected from <code>manifest.yml</code>.
 3. If a local build is requested, projects in the solution directory are deployed to a temporary folder and compiled with **MSBuild**.
 4. Projects are deployed using the **CloudFoundry MS Build Tasks**.
-5.  
+
+After the project is deployed, the IIS Buildpack performs the following tasks:
+
+5. If there is no solution or project file present, the application is simply copied to the production directory.
+6. If a project file is present, but no solution file, the application is built with **MSBuild** with no parameters.
+7. If a solution file is present, NuGet packages listed in the solution file will be restored, and the application will be built with **MSBuild**, and the 
+8. 
