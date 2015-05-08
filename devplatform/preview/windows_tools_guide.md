@@ -61,21 +61,65 @@ The explorer can be opened in Visual Studio under View -&gt;Other Windows -&gt;C
 
 The Cloud Foundry Explorer Window displays the following types of nodes:
 
-* **Cloud Foundry Target**: Lists version, URL, login credentials, and whether to ignore SSL errors (e.g. from using self-signed certificates).
-* **Organization**: Lists current roles in organization, organization name, and creation date
-* **Space**: Lists current roles in space, space name, and creation date
-* **Apps**: The deployed applications
-* **App**: Each deployed application. Shows creation date, application name, buildpack, max memory, and instance count.
-* **Service**: Shows current roles in service, service name, creation date
-* **Route**: Shows the domain for the route, and which applications bind to it
-* **AppFiles**: A collection of files used by an application
-* **File**: Files are listed in an AppFiles collection. Shows the filename for the file.
-* **Services**: Shows details for the service collection
-* **Routes**: Shows details for the route collection
+<table>
+ <tr>
+  <th><p>Node Type</p></th>
+  <th><p>Supported Actions</p></th>
+  <th><p>Description</p></th>
+ </tr>
+ <tr>
+  <td><p><strong>Target</strong></p></td>
+  <td><p>Refresh, Remove</p></td>
+  <td><p>Lists version, URL, login credentials, and whether to ignore SSL errors (e.g. from using self-signed certificates).</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Organizations</strong></p></td>
+  <td><p>Refresh, Remove</p></td>
+  <td><p>Lists current roles in organization, organization name, and creation date</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Spaces</strong></p></td>
+  <td><p>Refresh, Remove</p></td>
+  <td><p>Lists current roles in space, space name, and creation date</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Applications</strong></p></td>
+  <td><p>Refresh, Remove</p></td>
+  <td><p>The deployed applications</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Application</strong></p></td>
+  <td><p>View App in Browser, Start, Restart, Stop and Delete</p></td>
+  <td><p>Each deployed application. Shows creation date, application name, buildpack, max memory, and instance count.</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Services</strong></p></td>
+  <td><p>Refresh, Remove</p></td>
+  <td><p>Shows details for the service collection</p></td>
+ </tr>
+ </tr>
+ <tr>
+  <td><p><strong>Service</strong></p></td>
+  <td><p>Delete</p></td>
+  <td><p>Shows current roles in service, service name, creation date</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Routes</strong></p></td>
+  <td><p>Refresh, Remove</p></td>
+  <td><p>Shows details for the route collection</p></td>
+ </tr>
+ <tr>
+  <td><p><strong>Route</strong></p></td>
+  <td><p>Delete</p></td>
+  <td><p>Shows the domain for the route, and which applications bind to it</p></td>
+ </tr>
+</table>
 
 #### Deploying an application
 
 For an example of how to deploy an application from Visual Studio, see <a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET Application</a>.
+
+**Note:** Currently, only Web Application Projects can be deployed from Cloud Foundry Explorer; Web Site Projects are not supported. Web Site Projects can still be deployed from the command line.
 
 ### Cloud Foundry MSBuild Tasks {#msbuild}
 
