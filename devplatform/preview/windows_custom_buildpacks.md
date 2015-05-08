@@ -21,7 +21,7 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying Windows Applications with the IIS Buildpack
 
-*Windows and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
+*Windows, .NET, SQL Server, and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
 
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
@@ -38,20 +38,19 @@ When you build and deploy a Windows application, the following steps take place:
 
 After the project is deployed, the IIS Buildpack performs the following tasks:
 
-5. If there is no solution or project file present, the application is simply copied to the "Output Path" directory specified in the project configuration.
-6. If a project file is present, but no solution file, the application is built with **MSBuild** with no parameters, and the built application is copied to the "Output Path" directory specified in the project configuration.
-7. If a solution file is present, NuGet packages listed in the solution file will be restored, and the application will be built with **MSBuild**, and the application is copied to the "Output Path" directory specified in the project configuration.
+5. If there is no solution or project file present, the application is simply copied to the "Build Path" directory (This is a directory determined internally by the Buildpack).
+6. If a project file is present, but no solution file, the application is built with **MSBuild** with no parameters, and the built application is copied to the "Build Path" directory.
+7. If a solution file is present, NuGet packages listed in the solution file will be restored, and the application will be built with **MSBuild**, and the application is copied to the "Build Path" directory.
 
 
 This process can fail if any of the following are true:
 
 1. There is more than one solution file present
 2. The number of folders in the deployed site is not correct
-3. There is no <code>Web.Config</code> file in the root of the "Output Path" directory after deployment
+3. There is no <code>Web.Config</code> file in the root of the "Build Path" directory after deployment
 
-The following diagram shows all of the steps in the pre-publish and post-publish process:
+For more information, please refer to the <a href="https://github.com/hpcloud/cf-iis8-buildpack">Buildpack git project</a>.
 
-<img src="media/windows_publish_flowchart.png" />
 
 ---
 <div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
