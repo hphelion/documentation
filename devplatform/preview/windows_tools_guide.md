@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Windows and .NET Applications Tools Guide"
-permalink: /helion/devplatform/1.2/windows/tools_guide
+permalink: /helion/devplatform/preview/tools_guide
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -21,9 +21,13 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows and .NET Tools Guide 
 
+*Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
 Helion Development Platform (HDP) 1.2 adds tooling support for deploying Windows images and .NET Framework HTTP-based applications. This document describes how to install and use these tools.
+
+
 
 This document contains the following sections:
 
@@ -57,25 +61,21 @@ The explorer can be opened in Visual Studio under View -&gt;Other Windows -&gt;C
 
 The Cloud Foundry Explorer Window displays the following types of nodes:
 
-* **CloudFoundryTarget**: Lists version, URL, login credentials, and whether to ignore SSL errors (e.g. from using self-signed certificates).
+* **Cloud Foundry Target**: Lists version, URL, login credentials, and whether to ignore SSL errors (e.g. from using self-signed certificates).
 * **Organization**: Lists current roles in organization, organization name, and creation date
 * **Space**: Lists current roles in space, space name, and creation date
-* **AppsCollection**: The deployed applications
+* **Apps**: The deployed applications
 * **App**: Each deployed application. Shows creation date, application name, buildpack, max memory, and instance count.
 * **Service**: Shows current roles in service, service name, creation date
 * **Route**: Shows the domain for the route, and which applications bind to it
 * **AppFiles**: A collection of files used by an application
 * **File**: Files are listed in an AppFiles collection. Shows the filename for the file.
-* **ServicesCollection**: Shows details for the service collection
-* **RoutesCollection**: Shows details for the route collection
-
-##### Special node types
-* **CloudError**
-* **LoadingPlaceholder** 
+* **Services**: Shows details for the service collection
+* **Routes**: Shows details for the route collection
 
 #### Deploying an application
 
-For an example of how to deploy an application from Visual Studio, see <a href="/helion/devplatform/1.2/windows/deployingnet">Deploying your first .NET Application</a>.
+For an example of how to deploy an application from Visual Studio, see <a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET Application</a>.
 
 ### Cloud Foundry MSBuild Tasks {#msbuild}
 
@@ -87,31 +87,27 @@ The MSBuild tasks can be installed using NuGet:
 * Search for **Cloud Foundry MSBuild Tasks**
 * Click **Install**
  
+For more information on MSBuild, see <a href="https://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild on MSDN</a>.
 
 ### Cloud Foundry .NET SDK {#sdk}
 
 The SDK is used for programmatic access to controlling Windows images and .NET applications. Using the SDK, developers can create build and deployment automation.
 
+The Cloud Foundry .NET SDK can be installed using NuGet:
+
+* Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
+* Search for **Cloud Foundry .NET SDK**
+* Click **Install**
+
+
+
 ## Setup Tools
-### ALS Cluster Management Tool (cf-mgmt) {#ALS}
-
-This tool is used to add services to new ALS clusters. The same tool is used for Linux and Windows instances.
-
-To add a DEA role to a Windows instance, use the following syntax:
-
-		cf-mgmt add-role dea --load <file name>.yml
-
-To add a SQL Server role to a Windows instance, use the following syntax:
-
-		cf-mgmt add-service mssql2014 --load <file name>.yml
-
-For more information on the ALS cluster management tool, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/reference">HP Helion ALS Cluster Management Tool Reference</a>.
-
-The ALS cluster management tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
 ### Helion Client {#helion}
 
 This tool is used to deploy applications from the command line. The same tool is used for deploying applications to Windows and Linux instances.
+
+**Note:** .NET applications are built on the server using **MSBuild**. You should verify that your application builds with **MSBuild** before deploying.
 
 To deploy a .NET application to a Windows instance, use the following syntax from the same folder as your <code>manifest.yml</code> file:
 
@@ -121,7 +117,10 @@ For more information on the Helion client, see <a href="http://docs.hpcloud.com/
 
 The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
 
-
+---
+<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a>
+</div>
+ <div align="center"><a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET Application</a> | Windows and .NET Tools Guide</div>
 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Deploying your first .NET Application"
-permalink: /helion/devplatform/1.2/windows/deployingnet
+permalink: /helion/devplatform/preview/deployingnet
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying your first .NET Application 
 
+*Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
 This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack (HOS) environment using the toolset provided. For the purposes of this tutorial, you'll deploy the Microsoft's Contoso University sample application.
@@ -30,7 +32,7 @@ This tutorial demonstrates how to deploy an application to a Windows Server inst
 This tutorial requires the following software components:
 
 * Visual Studio 2013. Any edition is supported, including the Community (Free) edition.
-* Cloud Foundry Explorer and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a> for more details. 
+* Cloud Foundry Explorer and Cloud Foundry MSBuild tasks. See <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> for more details. 
 * Download and extract the <a href="https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8">Contoso University Sample Application</a>.
 
 ## Deploy the sample application from Visual Studio
@@ -71,26 +73,25 @@ This tutorial requires the following software components:
 	* **Routes**: Typically the same as the **Name** entry.
 	* **Memory**: The amount of memory the application will use (e.g. 512 MB).
 	* **Instances**: The number of separate installations of the application (e.g. 1).
-	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2012,default</code>
+	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2014,default</code>
 	* **Build Locally**: Check to build the application locally before deployment, rather than building on the server.
 	* **Configuration**: Set the build configuration (e.g. Debug).
 	* **Platform**: Set the target CPU platform (e.g. Any CPU).
 
-	<span style="color:red">Need updated version of this screenshot</span>:
-	<img src="media/windows_publish_deployinfo.png" /> 
+	<img src="media/windows_deploy_cf.png" /> 
  
 17. Refresh Cloud Foundry Explorer
  
-	<span style="color:red">Screenshot here</span>
+	<img src="media/windows_refresh.png" />
 18. Right click the "Contoso" application and select **Browse**:
  
-	<span style="color:red">Screenshot here</span>
+	<img src="media/windows_viewbrowser.png" />
 
 That's it! You are ready to use your application.
 
 ## Deploy the sample application from the command line
 
-You do not need Visual Studio to deploy your application. You can deploy it using the command line using the Helion client tool. For more information about using the Helion client tool with Windows applications, see <a href="/helion/devplatform/1.2/windows/tools_guide">Windows and .NET Tools Guide</a>.
+You do not need Visual Studio to deploy your application. You can deploy it using the command line using the Helion client tool. For more information about using the Helion client tool with Windows applications, see <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>.
 
 
 One advantage of using the command line is that you can use Mac or Linux as well as Windows to deploy your application. By default, the client tool uploads the application, and the application is built on the server.
@@ -122,7 +123,7 @@ One advantage of using the command line is that you can use Mac or Linux as well
  			mem: 512M
   			services:
     		${name}-db:
-      		type: mssql-2012
+      		type: mssql-2014
 
 2. Use the <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
 	
@@ -130,7 +131,9 @@ One advantage of using the command line is that you can use Mac or Linux as well
 
 3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
 
-	<span style="color:red">Screenshot here</span> 
 5. Browse to the application URL to verify the deployment. 
 
-	<span style="color:red">Screenshot here</span> 
+---
+<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
+
+<div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a></div>

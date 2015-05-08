@@ -5,7 +5,7 @@ permalink: /codar/
 product: commercial.ga
 
 ---
-<!--UNDER REVISION-->
+<!--PUBLISHED-->
 
  
 #HP Codar
