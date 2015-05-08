@@ -29,7 +29,7 @@ Having a bit of trouble navigating our site, and so you're looking for a single 
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Block Storage Overview](/publiccloud/block-storage/)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Block Storage API](/publiccloud/api/block-storage/)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Content Delivery Network (CDN) Overview](/publiccloud/cdn/)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/publiccloud/cdn/api/)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CDN API](/publiccloud/api/CDN/)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Relational Database (RDB) Overview](/publiccloud/rdb/)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RDB API](/publiccloud/api/dbaas/)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;[HP Helion Public Cloud Load Balancer as a Service (LBaaS) Overview](/publiccloud/lbaas/)<br />
