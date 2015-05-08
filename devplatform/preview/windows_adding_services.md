@@ -107,6 +107,10 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 
 	<img src="media/windows_redis_result.png" />
 
+---
+<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
 
+<div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
+<div align="center">Adding Services to a Windows Application | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
 

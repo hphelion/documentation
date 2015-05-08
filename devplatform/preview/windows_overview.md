@@ -125,6 +125,8 @@ For more information on licensing Windows Server, see <a href="https://www.micro
 
 * <a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET application</a> 
 * <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a>
+* <a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> 
+* <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a>
 
 
 

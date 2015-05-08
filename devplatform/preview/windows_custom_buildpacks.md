@@ -50,3 +50,9 @@ This process can fail if any of the following are true:
 The following diagram shows all of the steps in the pre-publish and post-publish process:
 
 <img src="media/windows_publish_flowchart.png" />
+
+---
+<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
+
+<div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a> </div>
+<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | Deploying Windows Applications with the IIS Buildpack</div>

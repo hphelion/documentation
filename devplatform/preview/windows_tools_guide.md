@@ -162,9 +162,10 @@ For more information on the Helion client, see <a href="http://docs.hpcloud.com/
 The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download/">Download</a>
 
 ---
-<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a>
-</div>
- <div align="center"><a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide</div>
+<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
+
+<div align="center"> <a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide </div>
+<div align="center"><a href="/helion/devplatform/preview/adding_services/">Adding Services to a Windows Application</a> | <a href="/helion/devplatform/preview/buildpack/">Deploying Windows Applications with the IIS Buildpack</a></div>
 
 
 
