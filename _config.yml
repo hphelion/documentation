@@ -246,23 +246,24 @@ navigation:
   - text: HP Helion Documentation
     url: /
   - text: Overview
-    url: /cli/windows/2/
+    url: /publiccloud/cli/windows/
   - text: Installation
-    url: /cli/windows/2/installation/
+    url: /publiccloud/cli/windows/installation/
   - text: Non-Service Specific Commands
-    url: /cli/windows/2/commands/
+    url: /publiccloud/cli/windows/commands/
   - text: Compute Examples
-    url: /cli/windows/2/compute/
+    url: /publiccloud/cli/windows/compute/
   - text: Object Storage Examples
-    url: /cli/windows/2/containers-and-folders/
+    url: /publiccloud/cli/windows/containers-and-folders/
   - text: Block Storage Examples
-    url: /cli/windows/2/block-storage/
+    url: /publiccloud/cli/windows/block-storage/
   - text: CLI Reference
-    url: /cli/windows/2/reference/
+    url: /publiccloud/cli/windows/reference/
   - text: Getting Help
-    url: /cli/windows/2/help/
+    url: /publiccloud/cli/windows/help/
   - text: Release Notes
-    url: /cli/windows/2/release-notes/
+    url: /publiccloud/cli/windows/release-notes/
+
   nova-cli:
   - text: HP Helion Documentation
     url: /
