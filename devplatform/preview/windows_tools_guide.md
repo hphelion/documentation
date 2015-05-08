@@ -87,6 +87,7 @@ The MSBuild tasks can be installed using NuGet:
 * Search for **Cloud Foundry MSBuild Tasks**
 * Click **Install**
  
+For more information on MSBuild, see <a href="https://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild on MSDN</a>.
 
 ### Cloud Foundry .NET SDK {#sdk}
 
@@ -97,6 +98,8 @@ The Cloud Foundry .NET SDK can be installed using NuGet:
 * Right-click the project in **Solution Explorer** and select **Manage NuGet Packages**.
 * Search for **Cloud Foundry .NET SDK**
 * Click **Install**
+
+
 
 ## Setup Tools
 

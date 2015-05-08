@@ -73,20 +73,20 @@ This tutorial requires the following software components:
 	* **Routes**: Typically the same as the **Name** entry.
 	* **Memory**: The amount of memory the application will use (e.g. 512 MB).
 	* **Instances**: The number of separate installations of the application (e.g. 1).
-	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2012,default</code>
+	* **Services**: Enter the services to bind to the application, in the form <code>Name, service type, quota</code>, with separate services separated by semicolons. Example: <code>ContosoUniversity-db,mssql2014,default</code>
 	* **Build Locally**: Check to build the application locally before deployment, rather than building on the server.
 	* **Configuration**: Set the build configuration (e.g. Debug).
 	* **Platform**: Set the target CPU platform (e.g. Any CPU).
 
 	<span style="color:red">Need updated version of this screenshot</span>:
-	<img src="media/windows_publish_deployinfo.png" /> 
+	<img src="media/windows_deploy.png" /> 
  
 17. Refresh Cloud Foundry Explorer
  
-	<span style="color:red">Screenshot here</span>
+	<img src="media/windows_refresh.png" />
 18. Right click the "Contoso" application and select **Browse**:
  
-	<span style="color:red">Screenshot here</span>
+	<img src="media/windows_viewbrowser.png" />
 
 That's it! You are ready to use your application.
 
@@ -124,7 +124,7 @@ One advantage of using the command line is that you can use Mac or Linux as well
  			mem: 512M
   			services:
     		${name}-db:
-      		type: mssql-2012
+      		type: mssql-2014
 
 2. Use the <a href="https://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Helion ALS Client</a> (Helion.exe) to deploy the application. Run this command in the same directory as <code>manifest.yml</code> (The <code>-n</code> parameter suppresses prompts about defaults that the script uses):
 	
