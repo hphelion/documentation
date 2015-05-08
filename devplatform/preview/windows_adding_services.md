@@ -105,7 +105,7 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 	5. Displays the returned string
 6. Deploy and open the application. You will see the following result:
 
-		<img src="media/windows_redis_result.png" />
+	<img src="media/windows_redis_result.png" />
 
 
 

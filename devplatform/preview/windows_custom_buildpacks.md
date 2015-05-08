@@ -36,7 +36,17 @@ When you build and deploy a Windows application, the following steps take place:
 
 After the project is deployed, the IIS Buildpack performs the following tasks:
 
-5. If there is no solution or project file present, the application is simply copied to the production directory.
-6. If a project file is present, but no solution file, the application is built with **MSBuild** with no parameters.
-7. If a solution file is present, NuGet packages listed in the solution file will be restored, and the application will be built with **MSBuild**, and the 
-8. 
+5. If there is no solution or project file present, the application is simply copied to the "Output Path" directory specified in the project configuration.
+6. If a project file is present, but no solution file, the application is built with **MSBuild** with no parameters, and the built application is copied to the "Output Path" directory specified in the project configuration.
+7. If a solution file is present, NuGet packages listed in the solution file will be restored, and the application will be built with **MSBuild**, and the application is copied to the "Output Path" directory specified in the project configuration.
+
+
+This process can fail if any of the following are true:
+
+1. There is more than one solution file present
+2. The number of folders in the deployed site is not correct
+3. There is no <code>Web.Config</code> file in the root of the "Output Path" directory after deployment
+
+The following diagram shows all of the steps in the pre-publish and post-publish process:
+
+<img src="media/windows_publish_flowchart.png" />
