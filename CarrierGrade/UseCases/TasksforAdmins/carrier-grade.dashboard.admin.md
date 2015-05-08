@@ -64,7 +64,7 @@ For more information, see [Managing Host Aggregates](/helion/commercial/carrier/
 
 You can use the dashboards to manage instances created by other users. You can lock, pause, suspend a particular instance and you can also migrate an instance to a different host system.
 
-For more information, see [Managing Instances](/helion/commercial/carrier/dashboard/instances/).
+For more information, see [Managing Instances](/helion/commercial/carrier/dashboard/managing/instances/users/).
 
 ### Managing volumes
 
