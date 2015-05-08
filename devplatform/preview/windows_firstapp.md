@@ -78,8 +78,7 @@ This tutorial requires the following software components:
 	* **Configuration**: Set the build configuration (e.g. Debug).
 	* **Platform**: Set the target CPU platform (e.g. Any CPU).
 
-	<span style="color:red">Need updated version of this screenshot</span>:
-	<img src="media/windows_deploy.png" /> 
+	<img src="media/windows_deploy_cf.png" /> 
  
 17. Refresh Cloud Foundry Explorer
  
