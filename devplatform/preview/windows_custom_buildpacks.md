@@ -23,6 +23,8 @@ authors: Patrick F
 
 *Windows and IIS are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.*
 
+<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
+
 A **Buildpack** is a collection of scripts that specify what frameworks and runtimes are to be deployed with an application. 
 
 When you build and deploy a Windows application, the following steps take place:

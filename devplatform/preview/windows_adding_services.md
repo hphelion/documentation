@@ -23,6 +23,8 @@ authors: Patrick F
 
 *Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
 
+<span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
+
 Windows applications can be bound to services running in your deployment environment such as Redis or MySQL. To do so, you need to have a NuGet package that can communicate with those services. 
 
 The following tutorial demonstrates how to add a Redis collection to your .NET application.
@@ -31,7 +33,7 @@ The following tutorial demonstrates how to add a Redis collection to your .NET a
 
 ## Adding a service to a .NET application
 
-1. In the deployment information window, enter the service information in the **Service** field in the format <code>Service Name, Service Type, Service Plan</code>:
+1. When deploying your application using <a href="/helion/devplatform/preview/tools_guide/#cloudfoundryexplorer">Cloud Foundry Explorer</a>, in the deployment information window, enter the service information in the **Service** field in the format <code>Service Name, Service Type, Service Plan</code>:
 
 	<img src="media/windows_services.png" />
 2. Deploy your application.
