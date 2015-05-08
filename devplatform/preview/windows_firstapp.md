@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Deploying your first .NET Application"
-permalink: /helion/devplatform/preview/deployingnet
+permalink: /helion/devplatform/preview/deployingnet/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
