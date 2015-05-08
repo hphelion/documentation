@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Windows and .NET Applications Tools Guide"
-permalink: /helion/devplatform/preview/tools_guide
+permalink: /helion/devplatform/preview/tools_guide/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
@@ -159,12 +159,12 @@ To deploy a .NET application to a Windows instance, use the following syntax fro
 
 For more information on the Helion client, see <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/user/reference/client-ref">Application Lifecycle Service Client Command Reference</a>
 
-The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download">Download</a>
+The Helion client tool can be downloaded from the following location: <a href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/download/">Download</a>
 
 ---
 <div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a>
 </div>
- <div align="center"><a href="/helion/devplatform/preview/deployingnet">Deploying your first .NET Application</a> | Windows and .NET Tools Guide</div>
+ <div align="center"><a href="/helion/devplatform/preview/deployingnet/">Deploying your first .NET Application</a> | Windows and .NET Tools Guide</div>
 
 
 

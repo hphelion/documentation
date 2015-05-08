@@ -1,7 +1,7 @@
 ---
 layout: default-devplatform
 title: "HP Helion 1.2 Development Platform: Deploying Windows Applications with PowerShell"
-permalink: /helion/devplatform/preview/powershell
+permalink: /helion/devplatform/preview/powershell/
 product: devplatform
 product-version1: HP Helion Development Platform
 product-version2: HP Helion Development Platform 1.2
