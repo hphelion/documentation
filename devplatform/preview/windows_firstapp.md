@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Deploying your first .NET Application 
 
+*Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Deveoper Preview</span>
 
 This tutorial demonstrates how to deploy an application to a Windows Server instance running in an HP Helion OpenStack (HOS) environment using the toolset provided. For the purposes of this tutorial, you'll deploy the Microsoft's Contoso University sample application.
@@ -131,3 +133,8 @@ One advantage of using the command line is that you can use Mac or Linux as well
 3. When the push completes, the command line will show the application URL (e.g. ContosoUniversity.xx.xx.xx.xx.xip.io).
 
 5. Browse to the application URL to verify the deployment. 
+
+---
+<div align="center"><a href="/helion/devplatform/preview/">Windows Overview</a> </div>
+
+<div align="center"> Deploying your first .NET Application | <a href="/helion/devplatform/preview/tools_guide">Windows and .NET Tools Guide</a></div>

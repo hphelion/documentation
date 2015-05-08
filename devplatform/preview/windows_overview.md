@@ -21,6 +21,8 @@ authors: Patrick F
 
 # HP Helion 1.2 Development Platform: Windows Overview
 
+*Windows is either a registered trademark or trademark of Microsoft Corporation in the United States and/or other countries.*
+
 <span style="color:red">**Note**: Helion Development Platform 1.2 is currently only available on HP Helion Public Cloud as part of the Developer Preview</span>
 
 Helion Development Platform (HDP) version 1.2 includes a full end-to-end solution for creating and deploying .NET Framework applications. Windows developers can now leverage their knowledge and use the tools they are accustomed to in order to leverage the power of HDP. HTTP-based .NET applications that follow the <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry application model</a> are a great fit for this feature support.
@@ -33,7 +35,6 @@ This document contains the following sections:
 * [Windows Tools](#tools)
 * [Process](#process)
 * [Software Requirements](#softwarerequirements)
-* [Windows Instance Licensing](#licensing)
 * [Next Steps](#nextsteps)
 
 ## Overview {#overview}
@@ -81,7 +82,6 @@ In order to run .NET framework applications, HDP requires that Windows DEA nodes
 
 ### Management tool set:
 
-* ALS Cluster management (*cf-mgmt*): This tool adds Windows DEAs and SQL Server services to your cluster.
 * ALS Client (*helion*): This tool deploys .NET applications (run with the <code>--stack win2012r2</code> switch). The ALS client can deploy Windows applications from Windows, Linux, or MacOS X environments.
 
 ### .NET tool set: 
@@ -109,7 +109,6 @@ Windows support in HDP has software requirements including the following:
 * An HP Helion Public Cloud account.
 * Any edition of Visual Studio 2013, including the Community (free) edition.
 * The <a href="/helion/devplatform/preview/deployingnet">Cloud Foundry Explorer Visual Studio extension</a>. This extension can be found by searching for **Cloud Foundry Explorer** in the *Extensions and Updates* module of Visual Studio.
-* HDP supports .NET applications created with .NET versions 2.0 through 4.5.2.
 
 ## Windows Instance Licensing {#licensing}
 
