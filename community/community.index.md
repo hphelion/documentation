@@ -30,7 +30,7 @@ This page covers the following topics:
 * [Available Services](#services)
 * [Starting to work with HP Helion OpenStack Community](#start)
 * [REST API information](#api)
-* [For further information](furtherinfo)
+* [For further information](#furtherinfo)
 
 ## Available Services ## {#services}
 
