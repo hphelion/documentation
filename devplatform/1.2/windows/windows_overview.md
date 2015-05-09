@@ -36,7 +36,7 @@ This document contains the following sections:
 
 ## Overview {#overview}
 
-Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion OpenStack environment, and Visual Studio components for deploying .NET HTTP-based applications to those server instances. Benefits of Windows/ .NET support include:
+Helion Development Platform version 1.2 adds tools for creating instances of Windows Server 2012 R2 to a Helion OpenStack environment, and Visual Studio components for deploying .NET HTTP-based applications to those server instances. Benefits of Windows/.NET support include:
 
 * Organizations can run their .NET server applications in the same Helion OpenStack environment as their Linux applications.
 * A consistent tooling experience for deploying Windows and Linux applications: The same <a href="https://docs.hpcloud.com/helion/devplatform/1.2/als/client/download">application deployment and cluster management tools</a> can be used for both Windows and Linux deployments.
@@ -49,15 +49,15 @@ Windows and .NET support is enabled by adding this functionality to an existing 
 
 For the 1.2 release, we support creating the following types of instances:
 
-* Windows Server 2012 r2 with DEA (Droplet Execution Agent) role
-* Windows Server 2012 r2 with SQL Server 2012 Express
-* Windows Server 2012 r2 with SQL Server 2014 Express
+* Windows Server 2012 R2 with DEA (Droplet Execution Agent) role
+* Windows Server 2012 R2 with SQL Server 2012 Express
+* Windows Server 2012 R2 with SQL Server 2014 Express
 
 HDP treats deployment of .NET applications in the same way as Linux applications (such as Java or PHP appplications). .NET applications require a <a href="/helion/devplatform/1.2/als/user/deploy/buildpack/">buildpack</a> to specify the dependencies and <a href="/helion/devplatform/1.2/als/user/services/user-provided/">services</a> that can be bound to the application. .NET applications are deployed into a sandbox environment similar to Warden in Cloud Foundry. 
 
 ## Supported .NET Application Types {#apps}
 
-HDP supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">CloudFoundry</a> applications. 
+HDP supports HTTP-based applications, including ASP.NET and WCF. Design considerations for Windows DEA applications are the same as for <a href="http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html">Cloud Foundry</a> applications. 
 
 HDP provides an integrated IIS buildpack which supports the following technologies:
 
@@ -103,7 +103,7 @@ At a high level, running .NET applications in HDP involves two processes:
 
 ### Enabling Windows in HDP (Installation) {#enablingwindows}
 
-1. Obtain a Windows 2012R2 server license and ISO image.
+1. Obtain a Windows 2012 R2 server license and ISO image.
 2. Download the <a href="https://drive.google.com/a/hp.com/folderviewid=0By3HV5Aek7gYfjg3TUVGT1RxeGhhZTBvN2JBR3Y4UWZZWXkycEprUGhSc0J3a19XcHJaTXM&usp=sharing">Glazier</a> tool.
 3. Use the Glazier tool to create and upload your Windows images.
 4. Add Windows DEAs to your cluster
@@ -121,7 +121,7 @@ At a high level, running .NET applications in HDP involves two processes:
 
 Windows support in HDP has software requirements including the following:
 
-* A deployment of HOS 1.1. Deployment to HOS 1.0 is not supported.
+* A deployment of HOS 1.1.1. HDP 1.2 is not supported on HOS 1.0 or HOS 1.1.
 * A licensed, retail, English language Windows 2012 R2 ISO image. Evaluation versions and non-English versions are not supported. This image can be obtained through a MSDN subscription for development and test purposes, but images for use in a production environment must be obtained through the OEM channel. See [Windows Instance Licensing](#licensing) for details.
 * Virtual Box version 4.3.26 or later: <a href="https://www.virtualbox.org/wiki/Downloads">Download</a>
 * Virtio drivers version 0.1-81: <a href="http://alt.fedoraproject.org/pub/alt/virtio-win/stable/virtio-win-0.1-81.iso">Download</a>
