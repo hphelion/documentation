@@ -149,7 +149,7 @@ To add a StoreVirtual system to any existing Management Group, do the following:
 
 ## Next Step {#next-steps}
 
-[Adding HP StoreVirtual VSA System to an Existing Management Group]("/helion/openstack/carrier/install/vsa/add-mgmt/)
+[Adding HP StoreVirtual VSA System to an Existing Management Group](/helion/openstack/carrier/install/vsa/add-mgmt/)
 
 <a href="#top" style="padding:14px 0px 14px 0px; text-decoration: none;"> Return to Top &#8593; </a>
 

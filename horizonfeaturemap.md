@@ -35,7 +35,7 @@ This page contains the following sections:
 
 [HP Helion Public Cloud Services 12.12 to 13.5 transition overview](https://docs.hpcloud.com/migration-overview/?jumpid=em_R11646_us/en/b_to_b/hpcs/email_13.5_Console/hpcs_migration-overview/20131218&elq=31433aa6c52548059ccea9f4ddbff345&elqCampaignId=)
 
-[Getting Started with HP Helion Public Cloud Console](/hpcloudconsole)
+[Getting Started with HP Helion Public Cloud Console](/hpcloudconsole/)
 
 
 

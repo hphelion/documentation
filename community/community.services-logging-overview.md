@@ -34,12 +34,12 @@ In addition to each of the [HP Helion services](/helion/community/services/overv
 
 This document describes the Centralized Logging feature and contains the following sections:
 
-* [Installation](install)
-* [Centralized Logging components](components)
-* [Centralized Logging log types](types)
-* [Kibana configuration](kibana)
-	* [Logging into Kibana](interface)
-* [For more information](info)
+* [Installation](#install)
+* [Centralized Logging components](#components)
+* [Centralized Logging log types](#types)
+* [Kibana configuration](#kibana)
+	* [Logging into Kibana](#interface)
+* [For more information](#info)
 
 ## Installation ## {#install}
 
